@@ -18,4 +18,4 @@ export default function StickyNavbar({ children, className = '' }: StickyNavbarP
       {children}
     </div>
   );
-};
+}

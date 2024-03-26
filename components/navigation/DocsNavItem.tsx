@@ -11,8 +11,8 @@ export interface DocsNavItemProps {
   inactiveClassName?: string;
   activeClassName?: string;
   bucket?: {
-      className: string;
-      icon: React.ComponentType<any>;
+    className: string;
+    icon: React.ComponentType<any>;
   };
 }
 
@@ -69,7 +69,10 @@ export default function DocsNavItem({
       <div className={classes}>
         <Link href={href || slug} className='inline-block w-full' onClick={onClick}>
           {bucket && (
-            <div className={`${(slug === '/docs' ? slug === activeSlug : activeSlug.startsWith(slug)) ? bucket.className : ''} inline-block rounded`} style={{ marginRight: '5px', marginBottom: '-6px', padding: '2px' }}>
+            <div
+              className={`${(slug === '/docs' ? slug === activeSlug : activeSlug.startsWith(slug)) ? bucket.className : ''} inline-block rounded`}
+              style={{ marginRight: '5px', marginBottom: '-6px', padding: '2px' }}
+            >
               <bucket.icon className='size-5' />
             </div>
           )}
@@ -78,4 +81,4 @@ export default function DocsNavItem({
       </div>
     </div>
   );
-};
+}

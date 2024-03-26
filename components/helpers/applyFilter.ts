@@ -40,9 +40,11 @@ export function sortFilter(arr: { value: string }[]): { value: string }[] {
  * @param data Array of data objects to filter.
  * @param setFilters Function to update the filters.
  */
-export const applyFilterList = (checks: FilterCriteria[],
+export const applyFilterList = (
+  checks: FilterCriteria[],
   data: DataObject[],
-  setFilters: (lists: { [key: string]: FilterOption[] }) => void): void => {
+  setFilters: (lists: { [key: string]: FilterOption[] }) => void
+): void => {
   if (Object.keys(checks).length) {
     const lists: { [key: string]: FilterOption[] } = {};
 
@@ -127,9 +129,11 @@ export const applyFilterList = (checks: FilterCriteria[],
  * @param onFilter Function to apply the filter action.
  * @param query Filter criteria.
  */
-export const onFilterApply = (inputData: DataObject[],
+export const onFilterApply = (
+  inputData: DataObject[],
   onFilter: (result: DataObject[], query: Filter) => void,
-  query: Filter): void => {
+  query: Filter
+): void => {
   let result = inputData;
 
   if (query && Object.keys(query).length >= 1) {

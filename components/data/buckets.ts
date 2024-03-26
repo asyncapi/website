@@ -41,7 +41,7 @@ export const buckets: Bucket[] = [
   {
     name: 'guides',
     title: 'Guides',
-    description: 'Our Guides section teaches AsyncAPI\'s capabilities at a high level.',
+    description: "Our Guides section teaches AsyncAPI's capabilities at a high level.",
     link: '/docs/guides',
     className: 'bg-primary-200',
     borderClassName: 'border-primary-200',
@@ -88,7 +88,7 @@ export const buckets: Bucket[] = [
     href: '/docs/community',
     icon: IconUsers
   }
-].map(bucket => {
+].map((bucket) => {
   return {
     ...bucket,
     href: bucket.link,

@@ -5,7 +5,5 @@ import FlyoutMenu from './FlyoutMenu';
  * @description Component representing the learning panel.
  */
 export default function LearningPanel() {
-  return (
-    <FlyoutMenu items={buckets} />
-  );
+  return <FlyoutMenu items={buckets} />;
 }

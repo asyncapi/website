@@ -41,10 +41,7 @@ export default function LinkComponent({ children, locale, ...props }: LinkCompon
   /*
     If explicit href is provided, and the language-specific paths for the current language do not include the href, or if the href starts with "http", render a standard Link
   */
-  if (
-    (props.href && i18nPaths[language] && !i18nPaths[language].includes(href)) ||
-    href.includes('http', 0)
-  ) {
+  if ((props.href && i18nPaths[language] && !i18nPaths[language].includes(href)) || href.includes('http', 0)) {
     return (
       <Link href={href} passHref legacyBehavior>
         {children}
@@ -76,5 +73,9 @@ export default function LinkComponent({ children, locale, ...props }: LinkCompon
 }
 
 export const LinkText = ({ href, children }: LinkComponentProps) => {
-  return <Link href={href || ''} legacyBehavior>{children}</Link>;
+  return (
+    <Link href={href || ''} legacyBehavior>
+      {children}
+    </Link>
+  );
 };

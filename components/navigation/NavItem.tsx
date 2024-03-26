@@ -37,17 +37,16 @@ export default function NavItem({
 
   if (href && !hasDropdown) {
     return (
-      (<Link
+      <Link
         href={href}
         target={target}
         rel='noopener noreferrer'
         className={`${className} font-body text-base font-semibold leading-6 text-gray-700 transition duration-150 ease-in-out hover:text-gray-900 focus:text-gray-900 focus:outline-none ${
           router.pathname.startsWith(href) ? 'text-black' : 'text-gray-700'
-        }`}>
-
+        }`}
+      >
         {text}
-
-      </Link>)
+      </Link>
     );
   }
 
@@ -61,28 +60,23 @@ export default function NavItem({
 
   if (href) {
     return (
-      (<Link
+      <Link
         href={href}
         {...attrs}
-        className={`${attrs.className} ${
-          router.pathname.startsWith(href) ? 'text-black' : 'text-gray-700'
-        }`}
+        className={`${attrs.className} ${router.pathname.startsWith(href) ? 'text-black' : 'text-gray-700'}`}
         target={target}
-        data-testid='NavItem-Link'>
+        data-testid='NavItem-Link'
+      >
         <span>{text}</span>
         {hasDropdown && <NavItemDropdown />}
-      </Link>)
+      </Link>
     );
   }
 
   return (
-    <button
-      type='button'
-      {...attrs}
-      className={`${attrs.className} text-gray-700`}
-    >
+    <button type='button' {...attrs} className={`${attrs.className} text-gray-700`}>
       <span>{text}</span>
       {hasDropdown && <NavItemDropdown />}
     </button>
   );
-};
+}

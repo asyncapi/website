@@ -9,17 +9,19 @@ export function useOutsideClick(callback: (e: MouseEvent) => void): RefObject<HT
   const callbackRef = useRef<((e: MouseEvent) => void) | null>(null);
   const innerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => { callbackRef.current = callback; }, [callback]);
+  useEffect(() => {
+    callbackRef.current = callback;
+  }, [callback]);
+
   useEffect(() => {
     /**
      * @description Handles the click event outside the specified element.
      * @param {MouseEvent} e - The click event.
      */
     function handleClick(e: MouseEvent) {
-      if (innerRef.current && callbackRef.current &&
-        !innerRef.current.contains(e.target as Node)
-      ) callbackRef.current(e);
+      if (innerRef.current && callbackRef.current && !innerRef.current.contains(e.target as Node)) callbackRef.current(e);
     }
+
     document.addEventListener('click', handleClick);
 
     return () => document.removeEventListener('click', handleClick);

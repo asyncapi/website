@@ -28,14 +28,15 @@ const communityItems: CommunityItem[] = [
     title: 'Slack Workspace',
     href: 'https://asyncapi.com/slack-invite',
     target: '_blank',
-    description: 'Need help? Want to share something? Join our Slack workspace. We\'re nice people :)'
+    description: "Need help? Want to share something? Join our Slack workspace. We're nice people :)"
   },
   {
     icon: IconContributing,
     title: 'Contributing',
     href: 'https://github.com/asyncapi?type=source#-contribute-to-asyncapi',
     target: '_blank',
-    description: 'We are always welcoming and looking for contributions. If you are interested check out our contribution guide.'
+    description:
+      'We are always welcoming and looking for contributions. If you are interested check out our contribution guide.'
   },
   {
     icon: IconTSC,
@@ -53,7 +54,8 @@ const communityItems: CommunityItem[] = [
     icon: IconDashboard,
     title: 'Dashboard',
     href: '/community/dashboard',
-    description: 'Just need a good first issue to start your contribution journey? or want to see what topics are hot in discussion?'
+    description:
+      'Just need a good first issue to start your contribution journey? or want to see what topics are hot in discussion?'
   },
   {
     icon: IconMeetings,

@@ -30,24 +30,23 @@ export default function NavMenu({ items = [] }: NavMenuProps) {
         <div className='shadow-xs overflow-hidden rounded-lg'>
           <div className='relative z-20 grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
             {items.map((item, index) => (
-              (<Link
+              <Link
                 href={item.href}
                 key={index}
                 target={item.target || '_self'}
                 rel='noopener noreferrer'
                 className='-m-3 block space-y-1 rounded-md p-3 transition duration-150 ease-in-out hover:bg-gray-50'
-                data-testid='NavMenu-Link'>
+                data-testid='NavMenu-Link'
+              >
                 <Paragraph typeStyle={ParagraphTypeStyle.sm} textColor='text-gray-900' className='font-semibold'>
                   {item.text}
                 </Paragraph>
-                <Paragraph typeStyle={ParagraphTypeStyle.sm}>
-                  {item.description}
-                </Paragraph>
-              </Link>)
+                <Paragraph typeStyle={ParagraphTypeStyle.sm}>{item.description}</Paragraph>
+              </Link>
             ))}
           </div>
         </div>
       </div>
     </div>
   );
-};
+}

@@ -20,7 +20,7 @@ interface EventFilterProps {
  */
 export default function EventFilter({ data, setData }: EventFilterProps) {
   const localTime = moment().format('YYYY-MM-DD');
-  const currentDate = `${localTime  }T00:00:00.000Z`;
+  const currentDate = `${localTime}T00:00:00.000Z`;
   const filterList: string[] = ['All', 'Upcoming', 'Recorded'];
   const [active, setActive] = useState<string>('All');
 
@@ -30,14 +30,18 @@ export default function EventFilter({ data, setData }: EventFilterProps) {
         setData(getEvents(data));
         break;
       case 'Upcoming':
-        setData(getEvents(data).filter((a: Event) => {
-          return a.date.format() > currentDate;
-        }));
+        setData(
+          getEvents(data).filter((a: Event) => {
+            return a.date.format() > currentDate;
+          })
+        );
         break;
       case 'Recorded':
-        setData(getEvents(data).filter((a: Event) => {
-          return a.date.format() < currentDate;
-        }));
+        setData(
+          getEvents(data).filter((a: Event) => {
+            return a.date.format() < currentDate;
+          })
+        );
         break;
       default:
         setData(getEvents(data));
@@ -46,7 +50,10 @@ export default function EventFilter({ data, setData }: EventFilterProps) {
   }, [active, data, setData, currentDate]);
 
   return (
-    <div className='flex w-full justify-between rounded-md bg-secondary-200 p-2 text-secondary-600 sm:w-[400px]' data-testid='EventFilters-main'>
+    <div
+      className='flex w-full justify-between rounded-md bg-secondary-200 p-2 text-secondary-600 sm:w-[400px]'
+      data-testid='EventFilters-main'
+    >
       {filterList.map((list) => (
         <div
           data-testid='EventFilter-click'

@@ -1,6 +1,6 @@
 enum LabelColor {
   Gray = 'gray',
-  Green = 'green',
+  Green = 'green'
 }
 
 interface LabelProps {
@@ -9,10 +9,10 @@ interface LabelProps {
 }
 
 /**
-* @description Component representing a label with optional color styling.
-* @param {string} props.text - The text to be displayed in the label.
-* @param {LabelColor} [props.color=LabelColor.Gray] - The color of the label, either 'gray' or 'green'. Default is 'gray'.
-*/
+ * @description Component representing a label with optional color styling.
+ * @param {string} props.text - The text to be displayed in the label.
+ * @param {LabelColor} [props.color=LabelColor.Gray] - The color of the label, either 'gray' or 'green'. Default is 'gray'.
+ */
 export default function Label({ text, color = LabelColor.Gray }: LabelProps) {
   let colorClasses: string;
 

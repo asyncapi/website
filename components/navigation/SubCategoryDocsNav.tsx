@@ -27,11 +27,7 @@ export interface SubCategoryDocsNavProps {
  * @param {string} props.activeItem - The slug of the currently active item.
  * @param {Function} props.onClick - The onClick event handler.
  */
-export default function SubCategoryDocsNav({
-  subCategory,
-  activeItem,
-  onClick
-}: SubCategoryDocsNavProps) {
+export default function SubCategoryDocsNav({ subCategory, activeItem, onClick }: SubCategoryDocsNavProps) {
   const [openSubCategoryChildren, setOpenSubCategoryChildren] = useState(activeItem.startsWith(subCategory.item.slug));
 
   const onClickHandler = () => {
@@ -55,14 +51,10 @@ export default function SubCategoryDocsNav({
           {...subCategory.item}
           activeSlug={activeItem}
           defaultClassName={`font-body text-sm text-black leading-8 ${
-            subCategory.children
-              ? 'hover:font-semibold'
-              : 'hover:text-secondary-600'
+            subCategory.children ? 'hover:font-semibold' : 'hover:text-secondary-600'
           }`}
           inactiveClassName='font-regular'
-          activeClassName={
-            subCategory.children ? 'font-semibold' : 'text-secondary-600'
-          }
+          activeClassName={subCategory.children ? 'font-semibold' : 'text-secondary-600'}
           onClick={onClickHandler}
         />
       </div>

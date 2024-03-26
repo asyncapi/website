@@ -79,11 +79,9 @@ export default function Filter({ data, onFilter, checks, className }: FilterProp
 
               const queryParams = new URLSearchParams(newQuery as { [key: string]: string }).toString();
 
-              router.push(`${router.pathname}?${queryParams}`,
-                undefined,
-                {
-                  shallow: true
-                });
+              router.push(`${router.pathname}?${queryParams}`, undefined, {
+                shallow: true
+              });
             }}
             selected={selected}
             className={`${className} md:mr-4`}

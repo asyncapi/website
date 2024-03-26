@@ -7,10 +7,10 @@ import DocsNav from './DocsNav';
 
 export interface DocsMobileMenuProps {
   post: {
-      slug: string;
+    slug: string;
   };
   navigation: {
-      [key: string]: any;
+    [key: string]: any;
   };
   onClickClose?: () => void;
 }
@@ -22,19 +22,12 @@ export interface DocsMobileMenuProps {
  * @param {Object} props.navigation - The navigation data.
  * @param {Function} [props.onClickClose] - The function to handle closing the mobile menu.
  */
-export default function DocsMobileMenu({
-  post,
-  navigation,
-  onClickClose = () => {}
-}:DocsMobileMenuProps) {
+export default function DocsMobileMenu({ post, navigation, onClickClose = () => {} }: DocsMobileMenuProps) {
   return (
     <div className='z-60 lg:hidden'>
       <div className='fixed inset-0 z-40 flex'>
         <div className='fixed inset-0'>
-          <div
-            className='absolute inset-0 bg-gray-600 opacity-75'
-            onClick={onClickClose}
-          ></div>
+          <div className='absolute inset-0 bg-gray-600 opacity-75' onClick={onClickClose}></div>
         </div>
         <div className='relative flex w-full max-w-xs flex-1 flex-col bg-white'>
           <div className='absolute right-0 top-0 -mr-14 p-1'>
@@ -43,18 +36,8 @@ export default function DocsMobileMenu({
               className='flex size-12 items-center justify-center rounded-full focus:bg-gray-600 focus:outline-none'
               aria-label='Close sidebar'
             >
-              <svg
-                className='size-6 text-white'
-                stroke='currentColor'
-                fill='none'
-                viewBox='0 0 24 24'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth='2'
-                  d='M6 18L18 6M6 6l12 12'
-                />
+              <svg className='size-6 text-white' stroke='currentColor' fill='none' viewBox='0 0 24 24'>
+                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M6 18L18 6M6 6l12 12' />
               </svg>
             </button>
           </div>
@@ -74,21 +57,14 @@ export default function DocsMobileMenu({
             <nav className='mb-4 mt-5 px-2'>
               <ul>
                 {Object.values(navigation).map((navItem) => (
-                  <DocsNav
-                    key={navItem.item.title}
-                    item={navItem}
-                    active={post.slug}
-                    onClick={onClickClose}
-                  />
+                  <DocsNav key={navItem.item.title} item={navItem} active={post.slug} onClick={onClickClose} />
                 ))}
               </ul>
             </nav>
           </div>
         </div>
-        <div className='w-14 shrink-0'>
-          {/* Force sidebar to shrink to fit close icon */}
-        </div>
+        <div className='w-14 shrink-0'>{/* Force sidebar to shrink to fit close icon */}</div>
       </div>
     </div>
   );
-};
+}
