@@ -1,6 +1,6 @@
 import type { SponsorType } from '@/types/components/sponsors/SponsorType';
 
-export const Silversponsors : SponsorType[] = [
+export const Silversponsors: SponsorType[] = [
   {
     name: 'Bump.sh',
     website: 'https://bump.sh/asyncapi?utm_source=asyncapi&utm_medium=referral&utm_campaign=sponsor',

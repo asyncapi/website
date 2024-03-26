@@ -3,7 +3,7 @@ import { sponsors } from './SponsorsList';
 interface SponsorsProps {
   className: string;
   showSupportBanner: boolean;
-};
+}
 
 /**
  * This component displays Silver Sponsors.
@@ -11,19 +11,12 @@ interface SponsorsProps {
  * @param {string} props.className - Additional CSS classes for styling.
  * @param {boolean} props.showSupportBanner - Indicates whether support banner should be displayed.
  */
-export default function Sponsors({
-  className = '',
-  showSupportBanner = true
-}: SponsorsProps): React.ReactNode {
+export default function Sponsors({ className = '', showSupportBanner = true }: SponsorsProps): React.ReactNode {
   return (
     <div className={`text-center ${className}`}>
       <ul className='mb-4 flex flex-wrap items-center justify-center md:px-4'>
         {sponsors.map((sponsor, index) => (
-          <li
-            key={index}
-            className='w-2/3 sm:w-1/4 md:w-1/3 lg:w-1/5'
-            data-testid='Sponsors-list'
-          >
+          <li key={index} className='w-2/3 sm:w-1/4 md:w-1/3 lg:w-1/5' data-testid='Sponsors-list'>
             <a
               href={sponsor.website}
               target='_blank'

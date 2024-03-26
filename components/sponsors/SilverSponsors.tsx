@@ -3,7 +3,7 @@ import { Silversponsors } from './SilverSponsorsList';
 interface SilverSponsorsProps {
   className: string;
   showSupportBanner: boolean;
-};
+}
 
 /**
  * This component displays Silver Sponsors.
@@ -11,9 +11,7 @@ interface SilverSponsorsProps {
  * @param {string} props.className - Additional CSS classes for styling.
  * @param {boolean} props.showSupportBanner - Indicates whether support banner should be displayed.
  */
-export default function SilverSponsors({
-  className = ''
-}: SilverSponsorsProps): React.ReactNode {
+export default function SilverSponsors({ className = '' }: SilverSponsorsProps): React.ReactNode {
   return (
     <div className={`text-center ${className}`}>
       <div className='mb-8 flex flex-wrap items-center justify-center md:px-4'>
