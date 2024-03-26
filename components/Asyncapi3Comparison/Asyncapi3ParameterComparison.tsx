@@ -31,26 +31,50 @@ export default function Asyncapi3ParameterComparison({ className = '' }: Asyncap
                   <div className={'m-2 border border-yellow-600 bg-white p-2'}>
                     parameter
                     <div className='flex flex-1 flex-wrap'>
-                      <div className={`${hoverState.location ? 'bg-orange-300' : 'bg-white '  } m-2 flex-1 border border-orange-300 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, location: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, location: false }))}>
+                      <div
+                        className={`${hoverState.location ? 'bg-orange-300' : 'bg-white '} m-2 flex-1 border border-orange-300 p-2`}
+                        onMouseOver={() => setHoverState((prevState) => ({ ...prevState, location: true }))}
+                        onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, location: false }))}
+                      >
                         location
                       </div>
-                      <div className={`${hoverState.description ? 'bg-orange-300' : 'bg-white '  } m-2 flex-1 border border-orange-300 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, description: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, description: false }))}>
+                      <div
+                        className={`${hoverState.description ? 'bg-orange-300' : 'bg-white '} m-2 flex-1 border border-orange-300 p-2`}
+                        onMouseOver={() => setHoverState((prevState) => ({ ...prevState, description: true }))}
+                        onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, description: false }))}
+                      >
                         description
                       </div>
                       <div className='m-2 flex-1 border border-yellow-600 bg-white p-2'>
                         schema
                         <div className='flex flex-1 flex-wrap'>
                           <div className={'m-2 flex-1 bg-white p-2'}>type</div>
-                          <div className={`${hoverState.enum ? 'bg-orange-300' : 'bg-white '  } m-2 flex-1 border border-orange-300 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, enum: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, enum: false }))}>
+                          <div
+                            className={`${hoverState.enum ? 'bg-orange-300' : 'bg-white '} m-2 flex-1 border border-orange-300 p-2`}
+                            onMouseOver={() => setHoverState((prevState) => ({ ...prevState, enum: true }))}
+                            onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, enum: false }))}
+                          >
                             enum
                           </div>
-                          <div className={`${hoverState.examples ? 'bg-orange-300' : 'bg-white '  } m-2 flex-1 border border-orange-300 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, examples: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, examples: false }))}>
+                          <div
+                            className={`${hoverState.examples ? 'bg-orange-300' : 'bg-white '} m-2 flex-1 border border-orange-300 p-2`}
+                            onMouseOver={() => setHoverState((prevState) => ({ ...prevState, examples: true }))}
+                            onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, examples: false }))}
+                          >
                             examples
                           </div>
-                          <div className={`${hoverState.default ? 'bg-orange-300' : 'bg-white '  } m-2 flex-1 border border-orange-300 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, default: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, default: false }))}>
+                          <div
+                            className={`${hoverState.default ? 'bg-orange-300' : 'bg-white '} m-2 flex-1 border border-orange-300 p-2`}
+                            onMouseOver={() => setHoverState((prevState) => ({ ...prevState, default: true }))}
+                            onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, default: false }))}
+                          >
                             default
                           </div>
-                          <div className={`${hoverState.description ? 'bg-orange-300' : 'bg-white '  } m-2 flex-1 border border-orange-300 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, description: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, description: false }))}>
+                          <div
+                            className={`${hoverState.description ? 'bg-orange-300' : 'bg-white '} m-2 flex-1 border border-orange-300 p-2`}
+                            onMouseOver={() => setHoverState((prevState) => ({ ...prevState, description: true }))}
+                            onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, description: false }))}
+                          >
                             description
                           </div>
                           <div className={'m-2 flex-1 bg-white p-2'}>pattern</div>
@@ -78,19 +102,39 @@ export default function Asyncapi3ParameterComparison({ className = '' }: Asyncap
                   <div className={'m-2 border border-yellow-600 bg-white p-2'}>
                     parameter
                     <div className='flex flex-1 flex-wrap'>
-                      <div className={`${hoverState.location ? 'bg-orange-300' : 'bg-white '  } m-2 flex-1 border border-orange-300 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, location: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, location: false }))}>
+                      <div
+                        className={`${hoverState.location ? 'bg-orange-300' : 'bg-white '} m-2 flex-1 border border-orange-300 p-2`}
+                        onMouseOver={() => setHoverState((prevState) => ({ ...prevState, location: true }))}
+                        onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, location: false }))}
+                      >
                         location
                       </div>
-                      <div className={`${hoverState.description ? 'bg-orange-300' : 'bg-white '  } m-2 flex-1 border border-orange-300 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, description: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, description: false }))}>
+                      <div
+                        className={`${hoverState.description ? 'bg-orange-300' : 'bg-white '} m-2 flex-1 border border-orange-300 p-2`}
+                        onMouseOver={() => setHoverState((prevState) => ({ ...prevState, description: true }))}
+                        onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, description: false }))}
+                      >
                         description
                       </div>
-                      <div className={`${hoverState.enum ? 'bg-orange-300' : 'bg-white '  } m-2 flex-1 border border-orange-300 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, enum: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, enum: false }))}>
+                      <div
+                        className={`${hoverState.enum ? 'bg-orange-300' : 'bg-white '} m-2 flex-1 border border-orange-300 p-2`}
+                        onMouseOver={() => setHoverState((prevState) => ({ ...prevState, enum: true }))}
+                        onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, enum: false }))}
+                      >
                         enum
                       </div>
-                      <div className={`${hoverState.examples ? 'bg-orange-300' : 'bg-white '  } m-2 flex-1 border border-orange-300 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, examples: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, examples: false }))}>
+                      <div
+                        className={`${hoverState.examples ? 'bg-orange-300' : 'bg-white '} m-2 flex-1 border border-orange-300 p-2`}
+                        onMouseOver={() => setHoverState((prevState) => ({ ...prevState, examples: true }))}
+                        onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, examples: false }))}
+                      >
                         examples
                       </div>
-                      <div className={`${hoverState.default ? 'bg-orange-300' : 'bg-white '  } m-2 flex-1 border border-orange-300 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, default: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, default: false }))}>
+                      <div
+                        className={`${hoverState.default ? 'bg-orange-300' : 'bg-white '} m-2 flex-1 border border-orange-300 p-2`}
+                        onMouseOver={() => setHoverState((prevState) => ({ ...prevState, default: true }))}
+                        onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, default: false }))}
+                      >
                         default
                       </div>
                     </div>
@@ -103,4 +147,4 @@ export default function Asyncapi3ParameterComparison({ className = '' }: Asyncap
       </div>
     </div>
   );
-};
+}

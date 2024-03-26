@@ -26,14 +26,26 @@ export default function Asyncapi3MetaComparison({ className = '' }: Asyncapi3Met
       <div className='ml-1 flex-1 border border-black p-2'>
         <h3 className='mb-4 ml-2 font-sans text-lg font-medium'>AsyncAPI 2.x</h3>
         <div>
-          <div className={`${hoverState.Info ? 'bg-blue-100 ' : ' '  }m-2 border border-blue-300 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Info: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, Info: false }))}>
+          <div
+            className={`${hoverState.Info ? 'bg-blue-100 ' : ' '}m-2 border border-blue-300 p-2`}
+            onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Info: true }))}
+            onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Info: false }))}
+          >
             Info
           </div>
           <div className='flex flex-1 flex-wrap'>
-            <div className={`${hoverState.Tags ? 'bg-pink-300' : ' '  } m-2 flex flex-1 items-center justify-center border border-black p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Tags: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, Tags: false }))}>
+            <div
+              className={`${hoverState.Tags ? 'bg-pink-300' : ' '} m-2 flex flex-1 items-center justify-center border border-black p-2`}
+              onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Tags: true }))}
+              onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Tags: false }))}
+            >
               <p>Tags</p>
             </div>
-            <div className={`${hoverState.External ? 'bg-green-500' : ' '  } m-2 flex flex-1 items-center justify-center border border-black p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, External: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, External: false }))}>
+            <div
+              className={`${hoverState.External ? 'bg-green-500' : ' '} m-2 flex flex-1 items-center justify-center border border-black p-2`}
+              onMouseOver={() => setHoverState((prevState) => ({ ...prevState, External: true }))}
+              onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, External: false }))}
+            >
               <p>External Docs</p>
             </div>
           </div>
@@ -42,13 +54,25 @@ export default function Asyncapi3MetaComparison({ className = '' }: Asyncapi3Met
       <div className='ml-1 flex-1 border border-black p-2'>
         <h3 className='mb-4 ml-2 font-sans text-lg font-medium'>AsyncAPI 3.0</h3>
         <div>
-          <div className={`${hoverState.Info ? 'bg-blue-100 ' : ' '  }m-2 border border-blue-300 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Info: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, Info: false }))}>
+          <div
+            className={`${hoverState.Info ? 'bg-blue-100 ' : ' '}m-2 border border-blue-300 p-2`}
+            onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Info: true }))}
+            onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Info: false }))}
+          >
             Info
             <div className='flex flex-1 flex-wrap'>
-              <div className={`${hoverState.Tags ? 'bg-pink-300' : ' '  } m-2 flex flex-1 items-center justify-center border border-black p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Tags: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, Tags: false }))}>
+              <div
+                className={`${hoverState.Tags ? 'bg-pink-300' : ' '} m-2 flex flex-1 items-center justify-center border border-black p-2`}
+                onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Tags: true }))}
+                onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Tags: false }))}
+              >
                 <p>Tags</p>
               </div>
-              <div className={`${hoverState.External ? 'bg-green-500' : ' '  } m-2 flex flex-1 items-center justify-center border border-black p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, External: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, External: false }))}>
+              <div
+                className={`${hoverState.External ? 'bg-green-500' : ' '} m-2 flex flex-1 items-center justify-center border border-black p-2`}
+                onMouseOver={() => setHoverState((prevState) => ({ ...prevState, External: true }))}
+                onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, External: false }))}
+              >
                 <p>External Docs</p>
               </div>
             </div>
@@ -57,4 +81,4 @@ export default function Asyncapi3MetaComparison({ className = '' }: Asyncapi3Met
       </div>
     </div>
   );
-};
+}

@@ -38,45 +38,37 @@ export default function Asyncapi3ChannelComparison({ className = '' }: AsyncAPI3
 
         <div>
           <div
-            className={`${hoverState.Paths ? 'bg-yellow-100' : ' '  } m-2 border border-yellow-300 p-2`}
+            className={`${hoverState.Paths ? 'bg-yellow-100' : ' '} m-2 border border-yellow-300 p-2`}
             onMouseEnter={() => handleMouseEnter('Paths')}
             onMouseLeave={() => handleMouseLeave('Paths')}
           >
-           Channels
-
+            Channels
             <div className='flex flex-1 flex-wrap'>
               <div
-                className={`${hoverState.PathItem ? 'bg-yellow-300' : 'bg-white'  } m-2 border border-yellow-600 p-2`}
+                className={`${hoverState.PathItem ? 'bg-yellow-300' : 'bg-white'} m-2 border border-yellow-600 p-2`}
                 onMouseOver={() => handleMouseEnter('PathItem')}
                 onMouseLeave={() => handleMouseLeave('PathItem')}
               >
-               Channel Item
-
+                Channel Item
                 <div className='flex flex-1 flex-wrap'>
                   <div
-                    className={`${hoverState.Operation ? 'bg-orange-100' : 'bg-white '  } m-2 flex-1 border border-orange-300 p-2`}
+                    className={`${hoverState.Operation ? 'bg-orange-100' : 'bg-white '} m-2 flex-1 border border-orange-300 p-2`}
                     onMouseOver={() => handleMouseEnter('Operation')}
                     onMouseLeave={() => handleMouseLeave('Operation')}
                   >
-                   Operation (Publish and Subscribe)
-
+                    Operation (Publish and Subscribe)
                     <div className='flex flex-1 flex-col flex-wrap'>
                       <div className='flex flex-1 flex-wrap'>
                         <div
-                          className={`${hoverState.Message ? 'bg-red-400' : 'bg-white'  } m-2 flex-1 border border-red-600 p-2`}
+                          className={`${hoverState.Message ? 'bg-red-400' : 'bg-white'} m-2 flex-1 border border-red-600 p-2`}
                           onMouseEnter={() => handleMouseEnter('Message')}
                           onMouseLeave={() => handleMouseLeave('Message')}
                         >
-                         Messages
+                          Messages
                           <div className='m-2 mr-1 box-border flex-1 border border-black p-2'>
-                           Message
-
-                            <div className='m-2 mr-1 box-border flex-1 border border-black p-2'>
-                             Headers
-                            </div>
-                            <div className='m-2 mr-1 box-border flex-1 border border-black p-2'>
-                             Payload
-                            </div>
+                            Message
+                            <div className='m-2 mr-1 box-border flex-1 border border-black p-2'>Headers</div>
+                            <div className='m-2 mr-1 box-border flex-1 border border-black p-2'>Payload</div>
                           </div>
                         </div>
                       </div>
@@ -93,58 +85,48 @@ export default function Asyncapi3ChannelComparison({ className = '' }: AsyncAPI3
 
         <div>
           <div
-            className={`${hoverState.Paths ? 'bg-yellow-100' : ' '  } m-2 border border-yellow-300 p-2`}
+            className={`${hoverState.Paths ? 'bg-yellow-100' : ' '} m-2 border border-yellow-300 p-2`}
             onMouseEnter={() => handleMouseEnter('Paths')}
             onMouseLeave={() => handleMouseLeave('Paths')}
           >
-           Channels
-
+            Channels
             <div
-              className={`${hoverState.PathItem ? 'bg-yellow-300' : 'bg-white'  } m-2 border border-yellow-600 p-2`}
+              className={`${hoverState.PathItem ? 'bg-yellow-300' : 'bg-white'} m-2 border border-yellow-600 p-2`}
               onMouseOver={() => handleMouseEnter('PathItem')}
               onMouseLeave={() => handleMouseLeave('PathItem')}
             >
-             Channel
+              Channel
               <div className='flex flex-1 flex-col flex-wrap'>
                 <div
-                  className={`${hoverState.Message ? 'bg-red-400' : 'bg-white'  } m-2 flex-1 border border-red-600 p-2`}
+                  className={`${hoverState.Message ? 'bg-red-400' : 'bg-white'} m-2 flex-1 border border-red-600 p-2`}
                   onMouseEnter={() => handleMouseEnter('Message')}
                   onMouseLeave={() => handleMouseLeave('Message')}
                 >
-                 Messages
+                  Messages
                   <div className='m-2 mr-1 box-border flex-1 border border-black p-2'>
-                   Message
-
-                    <div className='m-2 mr-1 box-border flex-1 border border-black p-2'>
-                     Headers
-                    </div>
-                    <div className='m-2 mr-1 box-border flex-1 border border-black p-2'>
-                     Payload
-                    </div>
+                    Message
+                    <div className='m-2 mr-1 box-border flex-1 border border-black p-2'>Headers</div>
+                    <div className='m-2 mr-1 box-border flex-1 border border-black p-2'>Payload</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className={`${hoverState.Operation ? 'bg-yellow-100' : ' '  } m-2 border border-yellow-300 p-2`}
+            className={`${hoverState.Operation ? 'bg-yellow-100' : ' '} m-2 border border-yellow-300 p-2`}
             onMouseEnter={() => handleMouseEnter('Operation')}
             onMouseLeave={() => handleMouseLeave('Operation')}
           >
-           Operations
+            Operations
             <div className='flex flex-1 flex-wrap'>
               <div className='m-2 flex-1 border border-orange-300 p-2'>
-               Operation
+                Operation
                 <div className='flex flex-1 flex-col flex-wrap'>
                   <div className='m-2 border border-blue-500 bg-white p-2 hover:bg-blue-200'>
-                   action (send or receive)
+                    action (send or receive)
                   </div>
-                  <div className='m-2 border border-blue-500 bg-white p-2 hover:bg-blue-200'>
-                   channel
-                  </div>
-                  <div className='m-2 border border-blue-500 bg-white p-2 hover:bg-blue-200'>
-                   messages
-                  </div>
+                  <div className='m-2 border border-blue-500 bg-white p-2 hover:bg-blue-200'>channel</div>
+                  <div className='m-2 border border-blue-500 bg-white p-2 hover:bg-blue-200'>messages</div>
                 </div>
               </div>
             </div>

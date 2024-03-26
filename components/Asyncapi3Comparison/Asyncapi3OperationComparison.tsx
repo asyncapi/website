@@ -20,9 +20,7 @@ export default function Asyncapi3OperationComparison({ className = '' }: Asyncap
               <div className='m-2 border border-yellow-600 p-2'>
                 Channel Item
                 <div className='flex flex-1 flex-wrap'>
-                  <div className='m-2 flex-1 border border-orange-300 p-2'>
-                    Operation (Publish and Subscribe)
-                  </div>
+                  <div className='m-2 flex-1 border border-orange-300 p-2'>Operation (Publish and Subscribe)</div>
                 </div>
               </div>
             </div>
@@ -38,9 +36,7 @@ export default function Asyncapi3OperationComparison({ className = '' }: Asyncap
               <div className='m-2 flex-1 border border-orange-300 p-2'>
                 Operation
                 <div className='flex flex-1 flex-col flex-wrap'>
-                  <div className='m-2 border border-blue-500 bg-white p-2'>
-                    action (send or receive)
-                  </div>
+                  <div className='m-2 border border-blue-500 bg-white p-2'>action (send or receive)</div>
                 </div>
               </div>
             </div>
@@ -49,4 +45,4 @@ export default function Asyncapi3OperationComparison({ className = '' }: Asyncap
       </div>
     </div>
   );
-};
+}

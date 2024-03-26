@@ -8,7 +8,7 @@ export interface Asyncapi3SchemaFormatComparisonProps {
  * @description React component for comparing AsyncAPI schema formats between versions 2.x and 3.0.
  * @param {string} [props.className=''] - Additional CSS classes for styling.
  */
-export default function Asyncapi3SchemaFormatComparison({ className = '' } : Asyncapi3SchemaFormatComparisonProps) {
+export default function Asyncapi3SchemaFormatComparison({ className = '' }: Asyncapi3SchemaFormatComparisonProps) {
   const [hoverState, setHoverState] = useState({
     SchemaFormat: false,
     Payload: false,
@@ -29,13 +29,25 @@ export default function Asyncapi3SchemaFormatComparison({ className = '' } : Asy
                   <div className={'m-2 border border-yellow-600 bg-white p-2'}>
                     message
                     <div className='flex flex-1 flex-wrap'>
-                      <div className={`${hoverState.SchemaFormat ? 'bg-orange-100' : 'bg-white '  } m-2 flex-1 border border-orange-300 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, SchemaFormat: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, SchemaFormat: false }))}>
+                      <div
+                        className={`${hoverState.SchemaFormat ? 'bg-orange-100' : 'bg-white '} m-2 flex-1 border border-orange-300 p-2`}
+                        onMouseOver={() => setHoverState((prevState) => ({ ...prevState, SchemaFormat: true }))}
+                        onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, SchemaFormat: false }))}
+                      >
                         schemaFormat
                       </div>
-                      <div className={`${hoverState.Payload ? 'bg-yellow-300' : 'bg-white'  } m-2 flex-1 border border-yellow-600 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Payload: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, Payload: false }))}>
+                      <div
+                        className={`${hoverState.Payload ? 'bg-yellow-300' : 'bg-white'} m-2 flex-1 border border-yellow-600 p-2`}
+                        onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Payload: true }))}
+                        onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Payload: false }))}
+                      >
                         payload
                         <div className='flex flex-1 flex-wrap'>
-                          <div className={`${hoverState.Schema ? 'bg-blue-300' : 'bg-white'  } m-2 flex-1 border border-orange-300 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Schema: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, Schema: false }))}>
+                          <div
+                            className={`${hoverState.Schema ? 'bg-blue-300' : 'bg-white'} m-2 flex-1 border border-orange-300 p-2`}
+                            onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Schema: true }))}
+                            onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Schema: false }))}
+                          >
                             schema
                           </div>
                         </div>
@@ -60,13 +72,25 @@ export default function Asyncapi3SchemaFormatComparison({ className = '' } : Asy
                   <div className={'m-2 border border-yellow-600 bg-white p-2'}>
                     message
                     <div className='flex flex-1 flex-wrap'>
-                      <div className={`${hoverState.Payload ? 'bg-yellow-300' : 'bg-white'  } m-2 border border-yellow-600 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Payload: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, Payload: false }))}>
+                      <div
+                        className={`${hoverState.Payload ? 'bg-yellow-300' : 'bg-white'} m-2 border border-yellow-600 p-2`}
+                        onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Payload: true }))}
+                        onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Payload: false }))}
+                      >
                         payload
                         <div className='flex flex-1 flex-wrap'>
-                          <div className={`${hoverState.SchemaFormat ? 'bg-orange-100' : 'bg-white '  } m-2 flex-1 border border-orange-300 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, SchemaFormat: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, SchemaFormat: false }))}>
+                          <div
+                            className={`${hoverState.SchemaFormat ? 'bg-orange-100' : 'bg-white '} m-2 flex-1 border border-orange-300 p-2`}
+                            onMouseOver={() => setHoverState((prevState) => ({ ...prevState, SchemaFormat: true }))}
+                            onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, SchemaFormat: false }))}
+                          >
                             schemaFormat
                           </div>
-                          <div className={`${hoverState.Schema ? 'bg-blue-300' : 'bg-white'  } m-2 flex-1 border border-orange-300 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Schema: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, Schema: false }))}>
+                          <div
+                            className={`${hoverState.Schema ? 'bg-blue-300' : 'bg-white'} m-2 flex-1 border border-orange-300 p-2`}
+                            onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Schema: true }))}
+                            onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Schema: false }))}
+                          >
                             schema
                           </div>
                         </div>
@@ -81,4 +105,4 @@ export default function Asyncapi3SchemaFormatComparison({ className = '' } : Asy
       </div>
     </div>
   );
-};
+}

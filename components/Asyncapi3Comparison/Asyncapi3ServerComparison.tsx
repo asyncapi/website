@@ -30,7 +30,11 @@ export default function Asyncapi3ServerComparison({ className = '' }: Asyncapi3S
               <div className='m-2 border border-blue-600 p-2'>
                 Server
                 <div className='flex flex-1 flex-wrap'>
-                  <div className={`${hoverState.Host || hoverState.Path ? 'bg-pink-300' : ' '  } m-2 flex flex-1 items-center justify-center border border-black p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Host: true, Path: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, Host: false, Path: false }))}>
+                  <div
+                    className={`${hoverState.Host || hoverState.Path ? 'bg-pink-300' : ' '} m-2 flex flex-1 items-center justify-center border border-black p-2`}
+                    onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Host: true, Path: true }))}
+                    onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Host: false, Path: false }))}
+                  >
                     <p>Url</p>
                   </div>
                 </div>
@@ -48,10 +52,18 @@ export default function Asyncapi3ServerComparison({ className = '' }: Asyncapi3S
               <div className='m-2 border border-blue-600 p-2'>
                 Server
                 <div className='flex flex-1 flex-wrap'>
-                  <div className={`${hoverState.Host ? 'bg-pink-300' : ' '  } m-2 mr-1 box-border flex-1 border border-black p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Host: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, Host: false }))}>
+                  <div
+                    className={`${hoverState.Host ? 'bg-pink-300' : ' '} m-2 mr-1 box-border flex-1 border border-black p-2`}
+                    onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Host: true }))}
+                    onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Host: false }))}
+                  >
                     <p>Host</p>
                   </div>
-                  <div className={`${hoverState.Path ? 'bg-pink-300' : ' '  } m-2 mr-1 box-border flex-1 border border-black p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Path: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, Path: false }))}>
+                  <div
+                    className={`${hoverState.Path ? 'bg-pink-300' : ' '} m-2 mr-1 box-border flex-1 border border-black p-2`}
+                    onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Path: true }))}
+                    onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Path: false }))}
+                  >
                     <p>Pathname</p>
                   </div>
                 </div>
@@ -62,4 +74,4 @@ export default function Asyncapi3ServerComparison({ className = '' }: Asyncapi3S
       </div>
     </div>
   );
-};
+}
