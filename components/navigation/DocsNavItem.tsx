@@ -12,7 +12,10 @@ export interface DocsNavItemProps {
   defaultClassName?: string;
   inactiveClassName?: string;
   activeClassName?: string;
-  bucket?: Bucket;
+  bucket?: {
+    className: string;
+    icon: React.ComponentType<any>;
+  };
 }
 
 /**
@@ -54,7 +57,7 @@ export default function DocsNavItem({
   href,
   activeSlug,
   sectionSlug,
-  onClick = () => {},
+  onClick = () => { },
   defaultClassName = '',
   inactiveClassName = '',
   activeClassName = '',
