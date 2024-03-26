@@ -19,7 +19,9 @@ export function useOutsideClick(callback: (e: MouseEvent) => void): RefObject<HT
      * @param {MouseEvent} e - The click event.
      */
     function handleClick(e: MouseEvent) {
-      if (innerRef.current && callbackRef.current && !innerRef.current.contains(e.target as Node)) callbackRef.current(e);
+      if (innerRef.current && callbackRef.current && !innerRef.current.contains(e.target as Node)) {
+        callbackRef.current(e);
+      }
     }
 
     document.addEventListener('click', handleClick);

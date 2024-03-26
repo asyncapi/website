@@ -1,14 +1,14 @@
 import React from 'react';
 
+import type { IDoc } from '@/types/post';
+
 import { DOCS_INDEX_NAME, SearchButton } from '../AlgoliaSearch';
 import ClickableLogo from '../ClickableLogo';
 import IconLoupe from '../icons/Loupe';
 import DocsNav from './DocsNav';
 
 export interface DocsMobileMenuProps {
-  post: {
-    slug: string;
-  };
+  post: IDoc;
   navigation: {
     [key: string]: any;
   };
