@@ -1,7 +1,5 @@
 import Link from 'next/link';
 
-import type { Bucket } from '../data/buckets';
-
 export interface DocsNavItemProps {
   title: string;
   slug: string;
@@ -57,7 +55,7 @@ export default function DocsNavItem({
   href,
   activeSlug,
   sectionSlug,
-  onClick = () => { },
+  onClick = () => {},
   defaultClassName = '',
   inactiveClassName = '',
   activeClassName = '',
