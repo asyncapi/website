@@ -6,7 +6,7 @@ import IconClipboard from '../icons/Clipboard';
 
 interface CodeBlockProps {
   children: string;
-  codeBlocks?: {code: string; title?: string; language?: string}[];
+  codeBlocks?: { code: string; title?: string; language?: string }[];
   className?: string;
   highlightClassName?: string;
   highlightedLines?: number[];
@@ -30,7 +30,7 @@ interface Theme {
     backgroundColor?: string;
     fontStyle?: string;
     textDecoration?: string;
-  }
+  };
 }
 
 const theme: Theme = {
@@ -209,7 +209,7 @@ export default function CodeBlock({
   showLineNumbers = true,
   startingLineNumber = 1,
   textSizeClassName = 'text-xs'
-} : CodeBlockProps): React.ReactNode {
+}: CodeBlockProps): React.ReactNode {
   const [activeBlock, setActiveBlock] = useState<number>(0);
   const [showIsCopied, setShowIsCopied] = useState<boolean>(false);
 
@@ -226,7 +226,7 @@ export default function CodeBlock({
    */
   function onClickCopy() {
     // check if navigator with clipboard exists (fallback for older browsers)
-    if (navigator && navigator.clipboard && (codeBlocks && codeBlocks[activeBlock])) {
+    if (navigator && navigator.clipboard && codeBlocks && codeBlocks[activeBlock]) {
       navigator.clipboard.writeText(codeBlocks[activeBlock].code).then(() => {
         setShowIsCopied(true);
         setTimeout(() => {
@@ -246,17 +246,15 @@ export default function CodeBlock({
           <div className='pb-3 pl-1 pt-0 text-xs'>
             <nav>
               <ul>
-                {
-                  codeBlocks?.map((block, index) => (
-                    <li
-                      key={index}
-                      className={activeBlock === index ? tabItemsActiveClassNames : tabItemsClassNames}
-                      onClick={() => setActiveBlock(index)}
-                    >
-                      {block.title || block.language}
-                    </li>
-                  ))
-                }
+                {codeBlocks?.map((block, index) => (
+                  <li
+                    key={index}
+                    className={activeBlock === index ? tabItemsActiveClassNames : tabItemsClassNames}
+                    onClick={() => setActiveBlock(index)}
+                  >
+                    {block.title || block.language}
+                  </li>
+                ))}
               </ul>
             </nav>
           </div>
@@ -266,7 +264,7 @@ export default function CodeBlock({
           <Highlight
             className={`pb-2 pt-px text-sm font-medium font-ligatures-contextual
               ${showLineNumbers ? 'ml-0' : 'ml-3'} ${textSizeClassName}`}
-            language={codeBlocks &&  codeBlocks[activeBlock].language ? codeBlocks[activeBlock].language : language}
+            language={codeBlocks && codeBlocks[activeBlock].language ? codeBlocks[activeBlock].language : language}
             style={theme}
             showLineNumbers={showLineNumbers}
             startingLineNumber={startingLineNumber}
@@ -311,30 +309,29 @@ export default function CodeBlock({
             <span className='mr-2 inline-block size-2.5 rounded-full bg-mac-window-maximize'></span>
           </div>
         )}
-        {
-          showCopy && (
-            <div className='z-10'>
-              <button
-                onClick={onClickCopy}
-                className='absolute right-2 top-1 z-50 cursor-pointer bg-code-editor-dark text-xs
+        {showCopy && (
+          <div className='z-10'>
+            <button
+              onClick={onClickCopy}
+              className='absolute right-2 top-1 z-50 cursor-pointer bg-code-editor-dark text-xs
                 text-gray-500 hover:text-gray-300 focus:outline-none'
-                title='Copy to clipboard'
-                data-test='copy-button'
-              >
-                {
-                  showIsCopied &&
-                  <span className='mr-2 inline-block pl-2 pt-1' data-testid='clicked-text'>Copied!</span>
-                }
-                <span className='inline-block pt-1'><IconClipboard className='-mt-0.5 inline-block size-4' /></span>
-              </button>
-            </div>
-          )
-        }
+              title='Copy to clipboard'
+              data-test='copy-button'
+            >
+              {showIsCopied && (
+                <span className='mr-2 inline-block pl-2 pt-1' data-testid='clicked-text'>
+                  Copied!
+                </span>
+              )}
+              <span className='inline-block pt-1'>
+                <IconClipboard className='-mt-0.5 inline-block size-4' />
+              </span>
+            </button>
+          </div>
+        )}
         {renderHighlight()}
       </div>
-      {showCaption && caption && (
-        <Caption>{caption}</Caption>
-      )}
+      {showCaption && caption && <Caption>{caption}</Caption>}
     </>
   );
-};
+}

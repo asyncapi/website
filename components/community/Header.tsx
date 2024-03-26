@@ -8,23 +8,19 @@ import Heading from '../typography/Heading';
 
 interface HeaderProps {
   className?: string;
-};
+}
 
 /**
  * @description This component displays Header.
  * @param {HeaderProps} props - The props for Header component.
  * @param {string} props.className - Additional CSS classes for styling.
  */
-export default function Header({
-  className = ''
-}: HeaderProps) {
+export default function Header({ className = '' }: HeaderProps) {
   return (
-    <div className={`md:mt-0' data-testid='Header-hero-heading mt-10 flex flex-col items-center justify-center text-center ${className}`}>
-      <Heading
-        className='countdown-text-gradient font-bold'
-        level={HeadingLevel.h6}
-        typeStyle={HeadingTypeStyle.xs}
-      >
+    <div
+      className={`md:mt-0' data-testid='Header-hero-heading mt-10 flex flex-col items-center justify-center text-center ${className}`}
+    >
+      <Heading className='countdown-text-gradient font-bold' level={HeadingLevel.h6} typeStyle={HeadingTypeStyle.xs}>
         AsyncAPI Community
       </Heading>
       <div className='mt-10' data-testid='Header-heading-1'>
@@ -41,11 +37,9 @@ export default function Header({
           typeStyle={HeadingTypeStyle.bodyMd}
           textColor='text-gray-700'
           className='text-sm text-slate-500'
-
         >
-          We&apos;re an OSS community that&apos;s passionate about AsyncAPI. Join us in
-          building the future of Event Driven APIs by asking questions,
-          sharing ideas, and building connections.
+          We&apos;re an OSS community that&apos;s passionate about AsyncAPI. Join us in building the future of Event
+          Driven APIs by asking questions, sharing ideas, and building connections.
         </Heading>
       </div>
       <div className='mt-10'>
@@ -59,4 +53,4 @@ export default function Header({
       </div>
     </div>
   );
-};
+}

@@ -3,7 +3,7 @@ import { goldSponsors } from './GoldSponsorsList';
 interface GoldSponsorsProps {
   className?: string;
   showSupportBanner?: boolean;
-};
+}
 
 /**
  * @description This component displays Gold Sponsors.
@@ -11,9 +11,7 @@ interface GoldSponsorsProps {
  * @param {string} props.className - Additional CSS classes for styling.
  * @param {boolean} props.showSupportBanner - Indicates whether support banner should be displayed.
  */
-export default function GoldSponsors({
-  className = ''
-}: GoldSponsorsProps): React.ReactNode {
+export default function GoldSponsors({ className = '' }: GoldSponsorsProps): React.ReactNode {
   return (
     <div className={`text-center ${className}`}>
       <div className='mb-8 flex flex-wrap items-center justify-center md:px-4'>

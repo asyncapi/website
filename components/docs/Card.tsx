@@ -24,11 +24,13 @@ interface CardProps {
  * @param {string} props.className - CSS class for styling the card.
  * @param {IconType} props.Icon - The Icon component for the card.
  */
-export default function Card({ title, description, link, className, Icon } : CardProps) {
+export default function Card({ title, description, link, className, Icon }: CardProps) {
   return (
     <Link href={link} className='cursor-pointer' data-testid='Docs-link'>
-      <div className='h-full rounded-lg border border-gray-200 p-6 shadow-md transition-all duration-300 ease-in-out
-          hover:shadow-lg'>
+      <div
+        className='h-full rounded-lg border border-gray-200 p-6 shadow-md transition-all duration-300 ease-in-out
+          hover:shadow-lg'
+      >
         <div data-testid='Docs-div-contents'>
           <Heading
             level={HeadingLevel.h3}
@@ -37,8 +39,11 @@ export default function Card({ title, description, link, className, Icon } : Car
             id={title}
           >
             <div className='flex flex-row items-center'>
-              <div className={`flex size-12 shrink-0 items-center justify-center rounded-lg ${className}
-                  text-gray-900 sm:size-12`} data-testid='Docs-icon'>
+              <div
+                className={`flex size-12 shrink-0 items-center justify-center rounded-lg ${className}
+                  text-gray-900 sm:size-12`}
+                data-testid='Docs-icon'
+              >
                 <Icon className='size-6' />
               </div>
               <span className='ml-4'>{title}</span>
@@ -51,4 +56,4 @@ export default function Card({ title, description, link, className, Icon } : Car
       </div>
     </Link>
   );
-};
+}
