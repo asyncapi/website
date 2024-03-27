@@ -9,7 +9,7 @@ interface AnnouncementRemainingDaysProps {
 /**
  * @description The announcement remaining days
  * @param {string} props.dateTime - The date and time of the announcement
- * @param {String} props.eventName - The name of the event
+ * @param {string} props.eventName - The name of the event
  */
 export default function AnnouncementRemainingDays({ dateTime, eventName }: AnnouncementRemainingDaysProps) {
   const date = moment(dateTime);

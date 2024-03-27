@@ -23,16 +23,16 @@ interface BannerProps {
 
 /**
  * @description The banner to use for Announcement
- * @param {String} props.title - The title of the banner
- * @param {String} props.dateLocation - The date and location of the banner
- * @param {String} props.cfaText - The call for action text
- * @param {String} props.eventName - The name of the event
- * @param {String} props.cfpDeadline - The deadline for the call for speakers
- * @param {String} props.link - The link of the banner
- * @param {String} props.city - The city of the banner
+ * @param {string} props.title - The title of the banner
+ * @param {string} props.dateLocation - The date and location of the banner
+ * @param {string} props.cfaText - The call for action text
+ * @param {string} props.eventName - The name of the event
+ * @param {string} props.cfpDeadline - The deadline for the call for speakers
+ * @param {string} props.link - The link of the banner
+ * @param {string} props.city - The city of the banner
  * @param {Boolean} props.activeBanner - Whether the banner is active
  * @param {Boolean} props.small - Whether the banner is small
- * @param {String} props.className - The class name of the banner
+ * @param {string} props.className - The class name of the banner
  */
 export default function Banner({
   title,

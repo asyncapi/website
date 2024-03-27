@@ -17,12 +17,12 @@ interface ITOCProps {
 }
 
 /**
- * @param className - The class name of the TOC
- * @param cssBreakingPoint - The CSS breaking point of the TOC
- * @param toc - The table of contents
- * @param contentSelector - The content selector
- * @param depth - The depth of the TOC
  * @description The table of contents
+ * @param {string} props.className - The class name of the component
+ * @param {string} props.cssBreakingPoint - The CSS breaking point
+ * @param {Array} props.toc - The table of contents
+ * @param {string} props.contentSelector - The content selector
+ * @param {number} props.depth - The depth of the table of contents
  */
 export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSelector, depth = 2 }: ITOCProps) {
   const [open, setOpen] = useState(false);

@@ -14,11 +14,11 @@ interface IHeadProps {
 }
 
 /**
- * @param {String} props.title - The title of the page
- * @param {String} props.description - The description of the page
- * @param {String} props.image - The image of the page
- * @param {String} props.rssTitle - The RSS title of the page
- * @param {String} props.rssLink - The RSS link of the page
+ * @param {string} props.title - The title of the page
+ * @param {string} props.description - The description of the page
+ * @param {string} props.image - The image of the page
+ * @param {string} props.rssTitle - The RSS title of the page
+ * @param {string} props.rssLink - The RSS link of the page
  * @description The head of the page with the meta tags
  */
 export default function HeadComponent({

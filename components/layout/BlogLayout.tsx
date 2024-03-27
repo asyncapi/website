@@ -20,8 +20,8 @@ interface IBlogLayoutProps {
 
 /**
  * @description The blog layout with the post and its content
- * @param props.post - The blog post to render in the layout
- * @param props.children - The content of the blog post
+ * @param {IPosts['blog'][number]} props.post - The post
+ * @param {React.ReactNode} props.children - The children
  */
 export default function BlogLayout({
   post,

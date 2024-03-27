@@ -12,7 +12,7 @@ interface IAnnouncementHeroProps {
 }
 
 /**
- * @param {String} props.className - The class name of the announcement hero
+ * @param {string} props.className - The class name of the announcement hero
  * @param {Boolean} props.small - Whether the banner is small
  * @param {Boolean} props.hideVideo - Whether the video should be hidden
  * @description The announcement hero
