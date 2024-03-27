@@ -8,8 +8,9 @@ import Button from './Button';
  * @returns {React.ReactElement}
  */
 export default function OpenInStudioButton({ text = 'Open in Studio', className = '' }) {
-  const sampleSpec =
-    encodeURI('https://raw.githubusercontent.com/asyncapi/asyncapi/master/examples/simple-asyncapi.yml');
+  const sampleSpec = encodeURI(
+    'https://raw.githubusercontent.com/asyncapi/asyncapi/master/examples/simple-asyncapi.yml'
+  );
 
   return (
     <Button

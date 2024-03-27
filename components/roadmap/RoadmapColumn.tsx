@@ -33,15 +33,14 @@ export default function RoadmapColumn({
   return (
     <div className='mt-8 lg:mt-4'>
       <div className='p-4 text-center' data-testid='RoadmapColumn-heading'>
-        <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.smSemibold} >{title}</Heading>
-        <Paragraph typeStyle={ParagraphTypeStyle.md} className='mt-2'>{description}</Paragraph>
+        <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.smSemibold}>
+          {title}
+        </Heading>
+        <Paragraph typeStyle={ParagraphTypeStyle.md} className='mt-2'>
+          {description}
+        </Paragraph>
       </div>
-      <RoadmapList
-        items={items}
-        colorClass={colorClass}
-        showConnector={false}
-        childrenCollapsed={childrenCollapsed}
-      />
+      <RoadmapList items={items} colorClass={colorClass} showConnector={false} childrenCollapsed={childrenCollapsed} />
     </div>
   );
 }
