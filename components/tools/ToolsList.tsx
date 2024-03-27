@@ -20,24 +20,26 @@ export default function ToolsList({ toolsListData }: ToolsListProp) {
   return (
     <div className='' data-testid='ToolsList-main' >
       {Object.keys(toolsListData).map((categoryName, index) => {
-        if (toolsListData[categoryName].toolsList.length > 0) return (
-          <div className='my-8' key={index} id={categoryName}>
-            <Heading typeStyle={HeadingTypeStyle.mdSemibold} className='my-2' >
-              {categoryName}
-            </Heading>
-            <Paragraph typeStyle={ParagraphTypeStyle.sm}>
-              {toolsListData[categoryName].description}
-            </Paragraph>
-            <hr className='my-8' />
-            <div className='flex grid-cols-3 flex-col gap-8 lg:grid'>
-              {toolsListData[categoryName].toolsList.map((tool, toolIndex) => (
-                <ToolsCard key={toolIndex} toolData={tool} />
-              ))}
+        if (toolsListData[categoryName].toolsList.length > 0) {
+          return (
+            <div className='my-8' key={index} id={categoryName}>
+              <Heading typeStyle={HeadingTypeStyle.mdSemibold} className='my-2' >
+                {categoryName}
+              </Heading>
+              <Paragraph typeStyle={ParagraphTypeStyle.sm}>
+                {toolsListData[categoryName].description}
+              </Paragraph>
+              <hr className='my-8' />
+              <div className='flex grid-cols-3 flex-col gap-8 lg:grid'>
+                {toolsListData[categoryName].toolsList.map((tool, toolIndex) => (
+                  <ToolsCard key={toolIndex} toolData={tool} />
+                ))}
+              </div>
             </div>
-          </div>
-        );
-
-        return null;
+          );
+        } else {
+          return null;
+        }
       })}
     </div>
   );

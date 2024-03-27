@@ -1,7 +1,5 @@
-import { Category } from "@/types/components/tools/ToolDataType";
-
 // Various categories to define the category in which a tool has to be listed
-const categoryList: Category[] = [
+const categoryList = [
   {
     name: "APIs",
     tag: "api",

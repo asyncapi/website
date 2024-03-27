@@ -26,7 +26,6 @@ export default function CategoryDropdown({ setopenCategory }: CategoryDropdownPr
                 <a href={`#${categoryName}`} key={index} className='block px-4 py-2 hover:bg-gray-100' data-testid='CategoryDropdown-link'>{categoryName}</a>
               </div>);
           }
-
           return null;
         })}
       </div>

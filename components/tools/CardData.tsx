@@ -50,6 +50,7 @@ export const CardData = ({
   };
   const domNode = useRef<HTMLSpanElement>(null);
 
+  // Decide whether to show full description or not in the card based on the number of lines occupied by the description.
   useEffect(() => {
     const divHeight = domNode.current?.offsetHeight || 0;
     const numberOfLines = divHeight / 20;
@@ -61,6 +62,7 @@ export const CardData = ({
     }
   }, [visible]);
 
+  // Decide whether the user click outside this component (card description) or not.
   useEffect(() => {
     const maybeHandler = (event: MouseEvent) => {
       setOutsideClick(true);

@@ -5,7 +5,7 @@ interface SelectTagsProps {
 };
 
 /**
- * @description This component displays tags.
+ * @description This component displays tags. These tags are displayed for languages and technologies in the tools card.
  *
  * @param {SelectTagsProps} props - The props for the Select Tags component.
  * @param {string} props.name - The content to be displayed inside the tag.
