@@ -16,15 +16,15 @@ export default function Home() {
   const { t } = useTranslation('landing-page');
 
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
+    <main className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}>
       <div className='flex flex-col items-center justify-center gap-2 md:flex-row'>
         <Button
           className='block w-full md:w-auto'
           text={t('main.docs_btn')}
-          href='/docs' icon={<IconArrowRight className='-mb-1 size-5' />}
-          data-testid='Hero-Button' />
+          href='/docs'
+          icon={<IconArrowRight className='-mb-1 size-5' />}
+          data-testid='Hero-Button'
+        />
         {/* Wrap SearchButton with AlgoliaSearch component */}
         <AlgoliaSearch>
           <SearchButton
@@ -38,13 +38,10 @@ export default function Home() {
                 <span className='flex-auto'>{t('main.search_btn')}</span>
                 {actionKey && (
                   <kbd className='font-sans font-semibold'>
-                    <abbr
-                      title={actionKey.key}
-                      className='no-underline'
-                    >
+                    <abbr title={actionKey.key} className='no-underline'>
                       {actionKey.shortKey}
                     </abbr>{' '}
-                        K
+                    K
                   </kbd>
                 )}
               </>
