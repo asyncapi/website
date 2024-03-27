@@ -27,7 +27,7 @@ export const banners = [
     city: 'Bengaluru',
     dateLocation: '30th of November, 2023 | Bengaluru, India',
     cfaText: 'Grab Free Tickets',
-    eventName: 'AACoT\'23 Bengaluru Edition',
+    eventName: "AACoT'23 Bengaluru Edition",
     cfpDeadline: cfpDeadlineIndia,
     link: 'https://conference.asyncapi.com/venue/bangalore',
     show: showBannerIndia
@@ -37,7 +37,7 @@ export const banners = [
     city: 'Paris',
     dateLocation: '8th of December, 2023 | Paris, France',
     cfaText: 'Get Free Tickets',
-    eventName: 'AACoT\'23 Paris Edition',
+    eventName: "AACoT'23 Paris Edition",
     cfpDeadline: cfpDeadlineFrance,
     link: 'https://ticket.apidays.global/event/apidays-paris-2023/8a1f3904-e2be-4c69-a880-37d2ddf1027d/cart?coupon=ASYNCAPICONF23',
     show: showBannerFrance

@@ -16,7 +16,7 @@ interface ILayoutProps {
  * @description The layout with the content
  * @param props.children - The content of the layout
  */
-export default function Layout({ children }: ILayoutProps) : JSX.Element {
+export default function Layout({ children }: ILayoutProps): JSX.Element {
   const { pathname } = useRouter();
   const posts = getAllPosts();
   // const allDocPosts = posts.docs.filter((p) => p.slug.startsWith('/docs/'));
@@ -31,22 +31,22 @@ export default function Layout({ children }: ILayoutProps) : JSX.Element {
     //   </DocsLayout>
     // </div>
     // );
-  } if (pathname.startsWith('/blog/')) {
+  }
+  if (pathname.startsWith('/blog/')) {
     const post = getPostBySlug(pathname, 'blog');
 
     return (
-      <div data-testid='Blogs-main-container' >
+      <div data-testid='Blogs-main-container'>
         <BlogLayout post={post as unknown as IPosts['blog'][number]} navItems={posts.blog}>
           {children}
         </BlogLayout>
       </div>
     );
-  } if (pathname === '/blog') {
+  }
+  if (pathname === '/blog') {
     return (
       <div data-testid='Blogs-sub-container'>
-        <BlogContext.Provider value={{ navItems: posts.blog }}>
-          {children}
-        </BlogContext.Provider>
+        <BlogContext.Provider value={{ navItems: posts.blog }}>{children}</BlogContext.Provider>
       </div>
     );
   }

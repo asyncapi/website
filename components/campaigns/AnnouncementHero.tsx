@@ -35,7 +35,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
   };
 
   useEffect(() => {
-    const interval = setInterval(() => setActiveIndex(index => index + 1), 5000);
+    const interval = setInterval(() => setActiveIndex((index) => index + 1), 5000);
 
     return () => {
       clearInterval(interval);
@@ -54,23 +54,24 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
         </div>
         <div className='relative flex w-5/6 flex-col items-center justify-center gap-2 pr-3'>
           <div className='relative h-[18rem] w-full overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
-            {banners.map((banner, index) => (
-              banner.show && (
-                <Banner
-                  key={index}
-                  title={banner.title}
-                  dateLocation={banner.dateLocation}
-                  cfaText={banner.cfaText}
-                  eventName={banner.eventName}
-                  cfpDeadline={banner.cfpDeadline}
-                  link={banner.link}
-                  city={banner.city}
-                  activeBanner={index === activeIndex % len}
-                  className={className}
-                  small={small}
-                />
-              )
-            ))}
+            {banners.map(
+              (banner, index) =>
+                banner.show && (
+                  <Banner
+                    key={index}
+                    title={banner.title}
+                    dateLocation={banner.dateLocation}
+                    cfaText={banner.cfaText}
+                    eventName={banner.eventName}
+                    cfpDeadline={banner.cfpDeadline}
+                    link={banner.link}
+                    city={banner.city}
+                    activeBanner={index === activeIndex % len}
+                    className={className}
+                    small={small}
+                  />
+                )
+            )}
           </div>
           <div className='m-auto flex justify-center'>
             {banners.map((banner, index) => (

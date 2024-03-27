@@ -14,8 +14,11 @@ class MyDocument extends Document {
           {/* Load Work Sans font */}
           <link rel='preconnect' href='https://fonts.googleapis.com' />
           <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='anonymous' />
-          { /* eslint-disable-next-line max-len */ }
-          <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Work+Sans:wght@200;300;400;500;600;700;800;900&display=swap' rel='stylesheet' />
+          {/* eslint-disable-next-line max-len */}
+          <link
+            href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Work+Sans:wght@200;300;400;500;600;700;800;900&display=swap'
+            rel='stylesheet'
+          />
 
           {/* Icons */}
           <link rel='icon' href='/favicon.ico' />

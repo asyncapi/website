@@ -4,9 +4,9 @@ interface ISupportItemType {
   imgTitle: string;
   imgClass: string;
   section: number;
-};
+}
 
-export const items : ISupportItemType[] = [
+export const items: ISupportItemType[] = [
   {
     href: 'https://slack.com/media-kit',
     imgSrc: '/img/supportus/slack.webp',

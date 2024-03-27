@@ -13,7 +13,7 @@ import TOC from '../TOC';
 import Container from './Container';
 
 interface IBlogLayoutProps {
-  post: IPosts['blog'][number]
+  post: IPosts['blog'][number];
   children: React.ReactNode;
   navItems?: IPosts['blog'];
 }
@@ -23,9 +23,12 @@ interface IBlogLayoutProps {
  * @param props.post - The blog post to render in the layout
  * @param props.children - The content of the blog post
  */
-export default function BlogLayout({ post, children,
+export default function BlogLayout({
+  post,
+  children,
   // eslint-disable-next-line unused-imports/no-unused-vars, no-unused-vars
-  navItems } : IBlogLayoutProps) {
+  navItems
+}: IBlogLayoutProps) {
   const router = useRouter();
 
   if (!post) return <ErrorPage statusCode={404} />;
@@ -48,10 +51,7 @@ export default function BlogLayout({ post, children,
         />
         <main className='mt-8 px-4 sm:px-6 lg:max-w-172 lg:flex-1 lg:pl-0 lg:pr-8 xl:max-w-172'>
           <header className='pr-4 sm:pr-6 md:pr-8'>
-            <h1
-              className='font-normal font-sans text-4xl text-gray-800 antialiased'
-              data-testid='BlogLayout-main'
-            >
+            <h1 className='font-normal font-sans text-4xl text-gray-800 antialiased' data-testid='BlogLayout-main'>
               {post.title}
             </h1>
             <div className='mt-6 flex items-center'>
@@ -62,20 +62,20 @@ export default function BlogLayout({ post, children,
                 <p className='text-sm font-medium leading-5 text-gray-900'>
                   <span className='hover:underline'>
                     {post.authors
-                      .map((author, index) => author.link ? (
-                        <a key={index} href={author.link}>
-                          {author.name}
-                        </a>
-                      ) : (
-                        author.name
-                      ))
+                      .map((author, index) =>
+                        author.link ? (
+                          <a key={index} href={author.link}>
+                            {author.name}
+                          </a>
+                        ) : (
+                          author.name
+                        )
+                      )
                       .reduce((prev, curr) => [prev, ' & ', curr] as any)}
                   </span>
                 </p>
                 <div className='flex text-sm leading-5 text-gray-500'>
-                  <time dateTime={post.date}>
-                    {moment(post.date).format('MMMM D, YYYY')}
-                  </time>
+                  <time dateTime={post.date}>{moment(post.date).format('MMMM D, YYYY')}</time>
                   <span className='mx-1'>&middot;</span>
                   <span>{post.readingTime} min read</span>
                 </div>
@@ -83,11 +83,7 @@ export default function BlogLayout({ post, children,
             </div>
           </header>
           <article className='mb-32'>
-            <Head
-              title={post.title}
-              description={post.excerpt}
-              image={post.cover}
-            />
+            <Head title={post.title} description={post.excerpt} image={post.cover} />
             <HtmlHead>
               <script
                 type='text/javascript'
@@ -113,12 +109,7 @@ export default function BlogLayout({ post, children,
               `}</style>
               {post.canonical && <link rel='canonical' href={post.canonical} />}
             </HtmlHead>
-            <img
-              src={post.cover}
-              alt={post.coverCaption}
-              title={post.coverCaption}
-              className='my-6 w-full'
-            />
+            <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className='my-6 w-full' />
             {children}
           </article>
         </main>

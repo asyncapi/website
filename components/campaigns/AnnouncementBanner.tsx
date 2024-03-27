@@ -9,17 +9,17 @@ import Paragraph from '../typography/Paragraph';
 import AnnouncementRemainingDays from './AnnouncementRemainingDays';
 
 interface BannerProps {
-    title: string;
-    dateLocation: string;
-    cfaText: string;
-    eventName: string;
-    cfpDeadline: string;
-    link: string;
-    city: string;
-    activeBanner: boolean;
-    small: boolean;
-    className: string;
-  }
+  title: string;
+  dateLocation: string;
+  cfaText: string;
+  eventName: string;
+  cfpDeadline: string;
+  link: string;
+  city: string;
+  activeBanner: boolean;
+  small: boolean;
+  className: string;
+}
 
 /**
  * @description The banner to use for Announcement
@@ -34,7 +34,18 @@ interface BannerProps {
  * @param {Boolean} props.small - Whether the banner is small
  * @param {String} props.className - The class name of the banner
  */
-export default function Banner({ title, dateLocation, cfaText, eventName, cfpDeadline, link, city, activeBanner, small, className }: BannerProps) {
+export default function Banner({
+  title,
+  dateLocation,
+  cfaText,
+  eventName,
+  cfpDeadline,
+  link,
+  city,
+  activeBanner,
+  small,
+  className
+}: BannerProps) {
   return (
     <div
       className={`absolute size-full rounded border border-gray-200 bg-gray-50 py-6
@@ -42,29 +53,16 @@ export default function Banner({ title, dateLocation, cfaText, eventName, cfpDea
           ${activeBanner ? 'z-10 scale-100 opacity-100' : 'z-0 scale-90 opacity-0'}`}
       data-testid='AnnouncementHero-main-div'
     >
-      <Heading
-        className='countdown-text-gradient'
-        level={HeadingLevel.h2}
-        typeStyle={HeadingTypeStyle.lg} >
+      <Heading className='countdown-text-gradient' level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg}>
         {title}
       </Heading>
-      <Heading
-        className='countdown-text-gradient'
-        level={HeadingLevel.h2}
-        typeStyle={HeadingTypeStyle.md} >
+      <Heading className='countdown-text-gradient' level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.md}>
         {city}
       </Heading>
-      <Paragraph typeStyle={ParagraphTypeStyle.lg}>
-        {dateLocation}
-      </Paragraph>
+      <Paragraph typeStyle={ParagraphTypeStyle.lg}>{dateLocation}</Paragraph>
       <AnnouncementRemainingDays dateTime={cfpDeadline} eventName={eventName} />
       <div className='mt-6 space-x-2 pb-2'>
-        <Button
-          href={link}
-          target='_blank'
-          text={cfaText}
-          data-testid='AnnouncementHero-submit-session'
-        />
+        <Button href={link} target='_blank' text={cfaText} data-testid='AnnouncementHero-submit-session' />
       </div>
     </div>
   );

@@ -2,17 +2,11 @@ import '../styles/globals.css';
 
 import { MDXProvider } from '@mdx-js/react';
 import type { AppProps } from 'next/app';
+import React from 'react';
 
-import Layout from '@/components/layout/Layout';
-import AppContext from '@/context/AppContext';
-import {
-  defaultLanguage,
-  defaultNamespace,
-  I18nProvider,
-  languages,
-  namespaces
-} from '@/utils/i18n';
-
+import Layout from '../components/layout/Layout';
+import AppContext from '../context/AppContext';
+import { defaultLanguage, defaultNamespace, I18nProvider, languages, namespaces } from '../utils/i18n';
 import loadLocales from '../utils/locales';
 
 /**
