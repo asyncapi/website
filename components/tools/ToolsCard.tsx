@@ -35,7 +35,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
       setShowMoreDescription(true);
     } else {
       setShowMoreDescription(false);
-    };
+    }
   }, []);
 
   let onGit = false;
@@ -64,135 +64,175 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
             <Heading typeStyle={HeadingTypeStyle.smSemibold}>{toolData.title}</Heading>
             <div
               className='size-fit min-w-[5.3rem] rounded-md border border-green-600 bg-green-100 p-1 text-center text-xs text-green-600'
-              onMouseEnter={() => (setTimeout(() => { if (!visible.desc) setVisible({ ...visible, desc: true }); }, 400))}
+              onMouseEnter={() =>
+                setTimeout(() => {
+                  if (!visible.desc) setVisible({ ...visible, desc: true });
+                }, 400)
+              }
             >
               <span
                 className='group relative'
-                onMouseLeave={() => (setTimeout(() => { if (visible.desc) setVisible({ ...visible, desc: false }); }, 300))}
+                onMouseLeave={() =>
+                  setTimeout(() => {
+                    if (visible.desc) setVisible({ ...visible, desc: false });
+                  }, 300)
+                }
               >
                 {toolData.filters?.hasCommercial === false ? 'Open Source' : 'Commercial'}
-                {visible.desc && <span className='absolute -left-2/3 top-8 z-10 w-48 -translate-x-12 rounded border border-gray-200 bg-white px-2 py-1 text-left text-gray-700 shadow-md'>
-                  {Data.properties.filters.properties.hasCommercial.description}
-                </span>}
+                {visible.desc && (
+                  <span className='absolute -left-2/3 top-8 z-10 w-48 -translate-x-12 rounded border border-gray-200 bg-white px-2 py-1 text-left text-gray-700 shadow-md'>
+                    {Data.properties.filters.properties.hasCommercial.description}
+                  </span>
+                )}
               </span>
             </div>
           </div>
           <div className='relative'>
             <Paragraph typeStyle={ParagraphTypeStyle.sm}>
-              <div ref={descriptionRef} className={`w-full ${showMoreDescription ? 'cursor-pointer' : ''}`} onMouseEnter={() => (setTimeout(() => { if (showMoreDescription) setShowDescription(true); }, 500))}>
-                <TextTruncate
-                  element='span'
-                  line={3}
-                  text={toolData.description}
-                /></div>
+              <div
+                ref={descriptionRef}
+                className={`w-full ${showMoreDescription ? 'cursor-pointer' : ''}`}
+                onMouseEnter={() =>
+                  setTimeout(() => {
+                    if (showMoreDescription) setShowDescription(true);
+                  }, 500)
+                }
+              >
+                <TextTruncate element='span' line={3} text={toolData.description} />
+              </div>
             </Paragraph>
-            {showDescription && <div className='absolute top-0 z-10 w-full border border-gray-200 bg-white p-2 shadow-md' onMouseLeave={() => (setShowDescription(false))}>
-              <Paragraph typeStyle={ParagraphTypeStyle.sm} className=''>
-                {toolData.description}
-              </Paragraph>
-            </div>}
+            {showDescription && (
+              <div
+                className='absolute top-0 z-10 w-full border border-gray-200 bg-white p-2 shadow-md'
+                onMouseLeave={() => setShowDescription(false)}
+              >
+                <Paragraph typeStyle={ParagraphTypeStyle.sm} className=''>
+                  {toolData.description}
+                </Paragraph>
+              </div>
+            )}
           </div>
         </div>
       </div>
       <hr className='mx-6' />
       <div className='grow'>
-        {(toolData.filters?.language || toolData?.filters?.technology?.length) ? <div className='my-6'>
-          {toolData.filters.language && <div className='mx-6 flex flex-col gap-2'>
-            <CardData
-              className='text-sm
+        {toolData.filters?.language || toolData?.filters?.technology?.length ? (
+          <div className='my-6'>
+            {toolData.filters.language && (
+              <div className='mx-6 flex flex-col gap-2'>
+                <CardData
+                  className='text-sm
               text-gray-700'
-              heading='LANGUAGE'
-              data={Data.properties.filters.properties.language.description}
-              type='lang'
-              visible={visible}
-              setVisible={setVisible}
-              read={readMore}
-              setRead={setReadMore}
-            />
-            <div className='flex gap-2'>
-              {toolData.filters?.language && toolData.filters?.language.map((item, index) => (
-                <Tag key={index}
-                  name={item.name}
-                  bgColor={item.color}
-                  borderColor={item.borderColor}
+                  heading='LANGUAGE'
+                  data={Data.properties.filters.properties.language.description}
+                  type='lang'
+                  visible={visible}
+                  setVisible={setVisible}
+                  read={readMore}
+                  setRead={setReadMore}
                 />
-              ))}
-            </div>
-          </div>}
-          {toolData.filters?.technology?.length && <div className='mx-6 my-4 flex flex-col gap-2'>
-            <CardData
-              className='text-sm text-gray-700'
-              heading='TECHNOLOGIES'
-              data={Data.properties.filters.properties.technology.description}
-              type='tech'
-              visible={visible}
-              setVisible={setVisible}
-              read={readMore}
-              setRead={setReadMore}
-            />
-            <div className='flex flex-wrap gap-2'>
-              {toolData.filters?.technology && toolData.filters.technology.map((item, index) => (
-                <Tag key={index}
-                  name={item.name}
-                  bgColor={item.color}
-                  borderColor={item.borderColor}
-                />
-              ))}
-            </div>
-          </div>}
-        </div> :
-          <div className='relative size-full p-8 text-center text-gray-700'>
-            <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'> No further details provided </div>
-          </div>}
-      </div>
-      {(toolData?.links?.repoUrl || toolData?.links?.websiteUrl || toolData?.links?.docsUrl) && <>
-        <hr className='' />
-        <div className='flex'>
-          {toolData.links.repoUrl && <>
-            {onGit ?
-              <a className='w-full cursor-pointer border-x px-1 py-6 text-center hover:bg-gray-200' href={toolData.links.repoUrl} target='_blank' rel='noreferrer' data-testid='ToolsCard-repoUrl'>
-                <div className='m-auto flex w-fit gap-2'>
-                  <img
-                    src='/img/logos/github-black.svg'
-                    alt='GitHub'
-                    className='w-5'
-                  />
-                  <div className='text-sm text-gray-700'>View Github</div>
+                <div className='flex gap-2'>
+                  {toolData.filters?.language &&
+                    toolData.filters?.language.map((item, index) => (
+                      <Tag key={index} name={item.name} bgColor={item.color} borderColor={item.borderColor} />
+                    ))}
                 </div>
-              </a> :
-              <a className='w-full cursor-pointer border-x border-gray-200 px-1 py-6 text-center hover:bg-gray-200' href={toolData.links.repoUrl} target='_blank' rel='noreferrer'>
+              </div>
+            )}
+            {toolData.filters?.technology?.length && (
+              <div className='mx-6 my-4 flex flex-col gap-2'>
+                <CardData
+                  className='text-sm text-gray-700'
+                  heading='TECHNOLOGIES'
+                  data={Data.properties.filters.properties.technology.description}
+                  type='tech'
+                  visible={visible}
+                  setVisible={setVisible}
+                  read={readMore}
+                  setRead={setReadMore}
+                />
+                <div className='flex flex-wrap gap-2'>
+                  {toolData.filters?.technology &&
+                    toolData.filters.technology.map((item, index) => (
+                      <Tag key={index} name={item.name} bgColor={item.color} borderColor={item.borderColor} />
+                    ))}
+                </div>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className='relative size-full p-8 text-center text-gray-700'>
+            <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
+              {' '}
+              No further details provided{' '}
+            </div>
+          </div>
+        )}
+      </div>
+      {(toolData?.links?.repoUrl || toolData?.links?.websiteUrl || toolData?.links?.docsUrl) && (
+        <>
+          <hr className='' />
+          <div className='flex'>
+            {toolData.links.repoUrl && (
+              <>
+                {onGit ? (
+                  <a
+                    className='w-full cursor-pointer border-x px-1 py-6 text-center hover:bg-gray-200'
+                    href={toolData.links.repoUrl}
+                    target='_blank'
+                    rel='noreferrer'
+                    data-testid='ToolsCard-repoUrl'
+                  >
+                    <div className='m-auto flex w-fit gap-2'>
+                      <img src='/img/logos/github-black.svg' alt='GitHub' className='w-5' />
+                      <div className='text-sm text-gray-700'>View Github</div>
+                    </div>
+                  </a>
+                ) : (
+                  <a
+                    className='w-full cursor-pointer border-x border-gray-200 px-1 py-6 text-center hover:bg-gray-200'
+                    href={toolData.links.repoUrl}
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    <div className='m-auto flex w-fit gap-2'>
+                      <div className='text-sm text-gray-700'>View Source Code</div>
+                    </div>
+                  </a>
+                )}
+              </>
+            )}
+            {toolData.links.websiteUrl && (
+              <a
+                className='w-full cursor-pointer border-x border-gray-200 px-1 py-6 text-center hover:bg-gray-200'
+                href={toolData.links.websiteUrl}
+                target='_blank'
+                rel='noreferrer'
+                data-testid='ToolsCard-websiteUrl'
+              >
                 <div className='m-auto flex w-fit gap-2'>
-                  <div className='text-sm text-gray-700'>View Source Code</div>
+                  <img src='/img/illustrations/icons/share.svg' alt='Share' className='w-5' />
+                  <div className='text-sm text-gray-700'>Visit Website</div>
                 </div>
               </a>
-            }
-          </>}
-          {toolData.links.websiteUrl && (
-            <a className='w-full cursor-pointer border-x border-gray-200 px-1 py-6 text-center hover:bg-gray-200' href={toolData.links.websiteUrl} target='_blank' rel='noreferrer' data-testid='ToolsCard-websiteUrl'>
-              <div className='m-auto flex w-fit gap-2'>
-                <img
-                  src='/img/illustrations/icons/share.svg'
-                  alt='Share'
-                  className='w-5'
-                />
-                <div className='text-sm text-gray-700'>Visit Website</div>
-              </div>
-            </a>
-          )}
-          {toolData.links.docsUrl && (
-            <a className='w-full cursor-pointer border-x border-gray-200 px-1 py-6 text-center hover:bg-gray-200' href={toolData.links.docsUrl} target='_blank' rel='noreferrer' data-testid='ToolsCard-docsUrl'>
-              <div className='m-auto flex w-fit gap-2'>
-                <img
-                  src='/img/illustrations/icons/docs-icon.svg'
-                  alt='Docs'
-                  className='w-5'
-                />
-                <div className='text-sm text-gray-700'>Visit Docs</div>
-              </div>
-            </a>
-          )}
-        </div>
-      </>}
+            )}
+            {toolData.links.docsUrl && (
+              <a
+                className='w-full cursor-pointer border-x border-gray-200 px-1 py-6 text-center hover:bg-gray-200'
+                href={toolData.links.docsUrl}
+                target='_blank'
+                rel='noreferrer'
+                data-testid='ToolsCard-docsUrl'
+              >
+                <div className='m-auto flex w-fit gap-2'>
+                  <img src='/img/illustrations/icons/docs-icon.svg' alt='Docs' className='w-5' />
+                  <div className='text-sm text-gray-700'>Visit Docs</div>
+                </div>
+              </a>
+            )}
+          </div>
+        </>
+      )}
     </div>
   );
-};
+}

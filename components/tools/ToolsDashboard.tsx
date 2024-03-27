@@ -161,7 +161,9 @@ export default function ToolsDashboard() {
     updateToolsList();
   }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, searchName]);
 
-  const isFiltered = Boolean(isPaid !== 'all' || isAsyncAPIOwner || languages.length || technologies.length || categories.length);
+  const isFiltered = Boolean(
+    isPaid !== 'all' || isAsyncAPIOwner || languages.length || technologies.length || categories.length
+  );
 
   return (
     <ToolFilter>
@@ -171,7 +173,8 @@ export default function ToolsDashboard() {
             <div className='relative h-auto w-full' ref={filterRef as React.LegacyRef<HTMLDivElement>}>
               <div
                 className='flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-1 text-sm text-gray-700 shadow hover:border-gray-600 hover:shadow-md'
-                onClick={() => setOpenFilter(!openFilter)} data-testid='ToolsDashboard-Filters-Click'
+                onClick={() => setOpenFilter(!openFilter)}
+                data-testid='ToolsDashboard-Filters-Click'
               >
                 <FilterIcon />
                 <div>Filter</div>
@@ -200,7 +203,7 @@ export default function ToolsDashboard() {
               )}
             </div>
           </div>
-          <div className='flex h-14 w-[100%] rounded-lg border border-gray-300 px-4 py-1 text-sm text-gray-700 shadow hover:border-gray-600 focus:border-gray-600 lg:w-4/5'>
+          <div className='flex h-14 w-full rounded-lg border border-gray-300 px-4 py-1 text-sm text-gray-700 shadow hover:border-gray-600 focus:border-gray-600 lg:w-4/5'>
             <SearchIcon className='my-auto opacity-70' />
             <input
               className='w-11/12 flex-1 border-none outline-none focus:ring-0'
@@ -217,9 +220,9 @@ export default function ToolsDashboard() {
           </div>
         </div>
         {isFiltered && (
-          <div className='mt-4 flex cursor-pointer items-center text-gray-600 hover:text-black' onClick={clearFilters} >
+          <div className='mt-4 flex cursor-pointer items-center text-gray-600 hover:text-black' onClick={clearFilters}>
             <Cross />
-            <span className='ml-3' >Clear Filters</span>
+            <span className='ml-3'>Clear Filters</span>
           </div>
         )}
         {loading ? (
@@ -242,4 +245,4 @@ export default function ToolsDashboard() {
       </div>
     </ToolFilter>
   );
-};
+}

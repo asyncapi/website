@@ -14,7 +14,7 @@ interface CardDataProps {
   setVisible: React.Dispatch<React.SetStateAction<VisibleDataListType>>;
   type: keyof VisibleDataListType;
   className?: string;
-};
+}
 
 /**
  * @description This component displays Card.

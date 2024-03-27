@@ -9,7 +9,7 @@ interface FiltersDropdownProps {
   checkedOptions?: string[];
   setCheckedOptions: React.Dispatch<React.SetStateAction<string[]>>;
   className?: string;
-};
+}
 
 /**
  * @description This component displays Filter Dropdown Component.
@@ -27,29 +27,36 @@ export default function FiltersDropdown({
 }: FiltersDropdownProps) {
   const handleClickOption = (event: React.MouseEvent, option: string) => {
     const isChecked = checkedOptions.includes(option);
-    const updatedOptions = isChecked
-      ? checkedOptions.filter(item => item !== option)
-      : [...checkedOptions, option];
+    const updatedOptions = isChecked ? checkedOptions.filter((item) => item !== option) : [...checkedOptions, option];
 
     setCheckedOptions(updatedOptions);
   };
 
   return (
-    <div className={twMerge(`max-w-lg flex gap-2 flex-wrap p-2 duration-200 delay-150 ${className}`)} data-testid='FiltersDropdown-div'>
+    <div
+      className={twMerge(`max-w-lg flex gap-2 flex-wrap p-2 duration-200 delay-150 ${className}`)}
+      data-testid='FiltersDropdown-div'
+    >
       {dataList.map((data, index) => {
         const checked = checkedOptions.includes(data.name);
 
         return (
           <div
             key={index}
-            className={twMerge(`border border-secondary-600 text-secondary-600 p-1 pb-0 rounded-2xl flex gap-1 cursor-pointer items-start ${checked ? 'bg-secondary-600 text-white' : ''}`)}
+            className={twMerge(
+              `border border-secondary-600 text-secondary-600 p-1 pb-0 rounded-2xl flex gap-1 cursor-pointer items-start ${checked ? 'bg-secondary-600 text-white' : ''}`
+            )}
             onClick={(event) => handleClickOption(event, data.name)}
           >
-            {checked ? <img src='/img/illustrations/icons/CheckedIcon.svg' alt='checked' /> : <img src='/img/illustrations/icons/UncheckedIcon.svg' alt='unchecked' />}
-            <div className='mb-[1px] mt-[-1px] text-xs'>{data.name}</div>
+            {checked ? (
+              <img src='/img/illustrations/icons/CheckedIcon.svg' alt='checked' />
+            ) : (
+              <img src='/img/illustrations/icons/UncheckedIcon.svg' alt='unchecked' />
+            )}
+            <div className='-mt-px mb-px text-xs'>{data.name}</div>
           </div>
         );
       })}
     </div>
   );
-};
+}

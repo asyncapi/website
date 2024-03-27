@@ -18,17 +18,15 @@ interface ToolsListProp {
  */
 export default function ToolsList({ toolsListData }: ToolsListProp) {
   return (
-    <div className='' data-testid='ToolsList-main' >
+    <div className='' data-testid='ToolsList-main'>
       {Object.keys(toolsListData).map((categoryName, index) => {
         if (toolsListData[categoryName].toolsList.length > 0) {
           return (
             <div className='my-8' key={index} id={categoryName}>
-              <Heading typeStyle={HeadingTypeStyle.mdSemibold} className='my-2' >
+              <Heading typeStyle={HeadingTypeStyle.mdSemibold} className='my-2'>
                 {categoryName}
               </Heading>
-              <Paragraph typeStyle={ParagraphTypeStyle.sm}>
-                {toolsListData[categoryName].description}
-              </Paragraph>
+              <Paragraph typeStyle={ParagraphTypeStyle.sm}>{toolsListData[categoryName].description}</Paragraph>
               <hr className='my-8' />
               <div className='flex grid-cols-3 flex-col gap-8 lg:grid'>
                 {toolsListData[categoryName].toolsList.map((tool, toolIndex) => (
@@ -37,10 +35,10 @@ export default function ToolsList({ toolsListData }: ToolsListProp) {
               </div>
             </div>
           );
-        } else {
-          return null;
         }
+
+        return null;
       })}
     </div>
   );
-};
+}
