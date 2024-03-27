@@ -3,13 +3,7 @@ import '../styles/globals.css';
 
 import type { AppProps } from 'next/app';
 
-import {
-  defaultLanguage,
-  defaultNamespace,
-  I18nProvider,
-  languages,
-  namespaces
-} from '@/utils/i18n';
+import { defaultLanguage, defaultNamespace, I18nProvider, languages, namespaces } from '@/utils/i18n';
 
 import loadLocales from '../utils/locales';
 
