@@ -61,6 +61,22 @@ export default function ToolDashboard() {
     };
   });
 
+  // Navigates the user to the specific categories on providing the URL
+  useEffect(() => {
+    if (!loading) {
+        const urlPath = router.asPath;
+        const elementIndex = urlPath.lastIndexOf('#');
+        if (elementIndex !== -1) {
+          const element = urlPath.substring(elementIndex + 1).replace(/%20/g, ' ');
+            const DOMElement = document.getElementById(element);
+            if (DOMElement) {
+              DOMElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+            }            
+        }
+    }
+  }, [loading]);
+
+
   // Function to update the list of tools according to the current filters applied
   const updateToolsList = () => {
     let tempToolsList = {};
