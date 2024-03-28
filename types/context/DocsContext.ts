@@ -1,4 +1,4 @@
-import { IDocs } from "../post";
+import { IDoc } from "../post";
   
 export interface NavigationItem {
     title: string;
@@ -9,6 +9,6 @@ export interface NavigationItems {
 }
   
 export interface DocsContextType {
-    post: IDocs;
+    post: IDoc;
     navItems: NavigationItems;
 }

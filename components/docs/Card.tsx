@@ -1,6 +1,5 @@
 import Link from 'next/link';
 
-import type { IconType } from '@/types/components/IconType';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
@@ -12,7 +11,7 @@ interface CardProps {
   description: string;
   link: string;
   className: string;
-  Icon: IconType;
+  Icon: React.ComponentType<any>;
 }
 
 /**

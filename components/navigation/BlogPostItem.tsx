@@ -52,8 +52,8 @@ export default forwardRef(function BlogPostItem(
   return (
     <li className={`rounded-lg ${className}`} ref={ref} id={id}>
       <article className='h-full rounded-lg'>
-        <Link legacyBehavior href={post.slug} passHref>
-          <a
+        <Link href={post.slug}>
+          <span
             className={
               'flex h-full cursor-pointer flex-col divide-y divide-gray-200 overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'
             }
@@ -75,15 +75,15 @@ export default forwardRef(function BlogPostItem(
                     {post.type}
                   </span>
                 </Paragraph>
-                <Link legacyBehavior href={post.slug}>
-                  <a className='block'>
+                <Link href={post.slug}>
+                  <span className='block'>
                     <Heading level={HeadingLevel.h5} typeStyle={HeadingTypeStyle.smSemibold} className='mt-2'>
                       {post.title}
                     </Heading>
                     <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-3'>
                       <TextTruncate element='span' line={4} text={post.excerpt} />
                     </Paragraph>
-                  </a>
+                  </span>
                 </Link>
               </div>
               <div className='mt-6 flex items-center'>
@@ -123,7 +123,7 @@ export default forwardRef(function BlogPostItem(
                 </div>
               </div>
             </div>
-          </a>
+          </span>
         </Link>
       </article>
     </li>
