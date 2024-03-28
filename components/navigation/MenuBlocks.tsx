@@ -33,14 +33,17 @@ export default function MenuBlocks({ items = [] }: MenuBlocksProps) {
         const isExternalHref = item.href && item.href.startsWith('http');
 
         return (
-          <LinkComponent href={item.comingSoon ? '' : item.href} key={index}>
-            <a
+          <LinkComponent
+            href={item.comingSoon ? '' : item.href}
+            key={index}
+            target={isExternalHref ? '_blank' : undefined}
+            rel={isExternalHref ? 'noopener noreferrer' : undefined}
+          >
+            <span
               data-testid='MenuBlocks-Link'
               className={`-m-3 flex items-start space-x-4 rounded-lg p-3 transition duration-150 ease-in-out ${
                 router.asPath === item.href ? 'bg-secondary-100 shadow-sm' : 'hover:bg-gray-50'
               }`}
-              target={isExternalHref ? '_blank' : undefined}
-              rel={isExternalHref ? 'noopener noreferrer' : undefined}
             >
               <div
                 className={`flex size-10 shrink-0 items-center justify-center rounded-lg ${
@@ -59,7 +62,7 @@ export default function MenuBlocks({ items = [] }: MenuBlocksProps) {
                   {item.description}
                 </Paragraph>
               </div>
-            </a>
+            </span>
           </LinkComponent>
         );
       })}

@@ -9,6 +9,8 @@ interface LinkComponentProps {
   locale?: string;
   href?: string;
   legacyBehavior?: boolean;
+  target?: string;
+  rel?: string;
 }
 
 /**
@@ -19,13 +21,20 @@ interface LinkComponentProps {
  * @param {string} [props.href] - The URL the link points to.
  * @param {boolean} [props.legacyBehavior=false] - Whether to use the legacy behavior for the link.
  */
-export default function LinkComponent({ children, locale, legacyBehavior = false, ...props }: LinkComponentProps) {
+export default function LinkComponent({
+  children,
+  locale,
+  legacyBehavior = false,
+  target = '_self',
+  rel = '',
+  ...props
+}: LinkComponentProps) {
   const router = useRouter();
 
   // If there is no router available (e.g., during server-side rendering & cypress tests), render a standard Link
   if (!router) {
     return (
-      <Link href={props.href || ''} legacyBehavior={legacyBehavior}>
+      <Link href={props.href || ''} legacyBehavior={legacyBehavior} target={target} rel={rel}>
         {children}
       </Link>
     );
@@ -45,7 +54,7 @@ export default function LinkComponent({ children, locale, legacyBehavior = false
   */
   if ((props.href && i18nPaths[language] && !i18nPaths[language].includes(href)) || href.includes('http', 0)) {
     return (
-      <Link href={href} legacyBehavior={legacyBehavior} passHref>
+      <Link href={href} legacyBehavior={legacyBehavior} passHref target={target} rel={rel}>
         {children}
       </Link>
     );
@@ -68,15 +77,21 @@ export default function LinkComponent({ children, locale, legacyBehavior = false
   href = href.replace(/([^:/]|^)\/{2,}/g, '$1/');
 
   return (
-    <Link href={href} legacyBehavior={legacyBehavior} passHref>
+    <Link href={href} legacyBehavior={legacyBehavior} target={target} rel={rel} passHref>
       {children}
     </Link>
   );
 }
 
-export const LinkText = ({ href, children, legacyBehavior = false }: LinkComponentProps) => {
+export const LinkText = ({
+  href,
+  children,
+  legacyBehavior = false,
+  target = '_self',
+  rel = ''
+}: LinkComponentProps) => {
   return (
-    <Link href={href || ''} legacyBehavior={legacyBehavior}>
+    <Link href={href || ''} target={target} rel={rel} legacyBehavior={legacyBehavior}>
       {children}
     </Link>
   );
