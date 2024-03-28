@@ -1,17 +1,19 @@
 import { createContext } from 'react';
-import { DocsContextType } from '@/types/context/DocsContext';
+
+import type { DocsContextType } from '@/types/context/DocsContext';
 
 export default createContext<DocsContextType>({
   post: {
-    title: "",
+    title: '',
     weight: 0,
     toc: [],
     readingTime: 0,
-    excerpt: "",
-    sectionSlug: "",
+    excerpt: '',
+    sectionSlug: '',
     sectionWeight: 0,
-    id: "",
+    id: '',
     isIndex: true,
-    slug: ""
-  },navItems: {}
+    slug: ''
+  },
+  navItems: {}
 });
