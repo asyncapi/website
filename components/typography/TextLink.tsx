@@ -31,7 +31,6 @@ export default function TextLink({ href, className = '', target = '_blank', chil
       className={classNames}
       id={id}
       data-testid='TextLink-href'
-      legacyBehavior
     >
       <span className={classNames}>{children}</span>
     </Link>

@@ -19,7 +19,7 @@ interface FilterOption {
 
 /**
  * @description Sorts an array of objects based on a string property called 'value'.
- * @param arr Array of objects with a 'value' property of type string.
+ * @param {{ value: string }[]} arr - Array of objects with a 'value' property of type string.
  */
 export function sortFilter(arr: { value: string }[]): { value: string }[] {
   return arr.sort((a, b) => {
@@ -36,9 +36,9 @@ export function sortFilter(arr: { value: string }[]): { value: string }[] {
 
 /**
  * @description Apply filters to data and update the filters.
- * @param checks Array of filter criteria objects.
- * @param data Array of data objects to filter.
- * @param setFilters Function to update the filters.
+ * @param {FilterCriteria[]} checks - Array of filter criteria objects.
+ * @param {DataObject[]} data - Array of data objects to filter.
+ * @param {(lists: { [key: string]: FilterOption[] }) => void} setFilters - Function to update the filters.
  */
 export const applyFilterList = (
   checks: FilterCriteria[],
@@ -125,9 +125,9 @@ export const applyFilterList = (
 
 /**
  * @description Apply filters to data and trigger the filter action.
- * @param data Array of data objects to filter.
- * @param onFilter Function to apply the filter action.
- * @param query Filter criteria.
+ * @param {DataObject[]} inputData - Array of data objects to filter.
+ * @param {(result: DataObject[], query: Filter) => void} onFilter - Function to apply the filter action.
+ * @param {Filter} query - Filter criteria.
  */
 export const onFilterApply = (
   inputData: DataObject[],

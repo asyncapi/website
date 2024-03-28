@@ -39,19 +39,23 @@ export interface DocsNavProps {
 
 const serializedBuckets: SerializedBuckets = buckets.reduce(
   (acc, bucket) => {
+    // Create a new entry in the accumulator for the current bucket's name (or an empty string if missing)
     acc[bucket.name || ''] = {
+      // Spread the existing properties of the bucket object into the new entry
       ...bucket,
+      // Combine the existing className and borderClassName properties into a single className property
       className: `${bucket.className || ''} ${bucket.borderClassName || ''}`
     };
 
-    return acc;
+    return acc; // Return the updated accumulator for the next iteration
   },
+  // Define an initial accumulator object with a pre-defined entry for "welcome" bucket
   {
     welcome: {
       icon: IconHome,
       className: 'bg-gray-300 border-gray-300'
     }
-  } as SerializedBuckets
+  } as SerializedBuckets // Initial value of the accumulator
 );
 
 /**

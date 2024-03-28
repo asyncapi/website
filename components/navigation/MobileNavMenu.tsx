@@ -47,7 +47,7 @@ export default function MobileNavMenu({ onClickClose = () => {} }: MobileNavMenu
         <div className='shadow-xs divide-y-2 divide-gray-50 rounded-lg bg-white'>
           <div className='space-y-6 px-5 pb-6 pt-5'>
             <div className='flex items-center justify-between'>
-              <Link href='/' passHref className='cursor-pointer' data-testid='MobileNav-Logo' legacyBehavior>
+              <Link href='/' passHref className='cursor-pointer' data-testid='MobileNav-Logo'>
                 <AsyncAPILogo className='h-8 w-auto' />
               </Link>
               <div className='justify-content -mr-2 flex flex-row items-center' data-testid='MobileNav-button'>
@@ -121,7 +121,6 @@ export default function MobileNavMenu({ onClickClose = () => {} }: MobileNavMenu
                       rel='noopener noreferrer'
                       className='mb-4 block rounded-lg py-1 text-base font-medium leading-6 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-50'
                       data-testid='MobileNav-others'
-                      legacyBehavior
                     >
                       {item.text}
                     </Link>

@@ -23,7 +23,7 @@ export default function LinkComponent({ children, locale, ...props }: LinkCompon
   // If there is no router available (e.g., during server-side rendering & cypress tests), render a standard Link
   if (!router) {
     return (
-      <Link href={props.href || ''} passHref legacyBehavior>
+      <Link href={props.href || ''} passHref>
         {children}
       </Link>
     );
@@ -43,7 +43,7 @@ export default function LinkComponent({ children, locale, ...props }: LinkCompon
   */
   if ((props.href && i18nPaths[language] && !i18nPaths[language].includes(href)) || href.includes('http', 0)) {
     return (
-      <Link href={href} passHref legacyBehavior>
+      <Link href={href} passHref>
         {children}
       </Link>
     );
@@ -66,7 +66,7 @@ export default function LinkComponent({ children, locale, ...props }: LinkCompon
   href = href.replace(/([^:/]|^)\/{2,}/g, '$1/');
 
   return (
-    <Link href={href} passHref legacyBehavior>
+    <Link href={href} passHref>
       {children}
     </Link>
   );
@@ -74,7 +74,7 @@ export default function LinkComponent({ children, locale, ...props }: LinkCompon
 
 export const LinkText = ({ href, children }: LinkComponentProps) => {
   return (
-    <Link href={href || ''} legacyBehavior>
+    <Link href={href || ''}>
       {children}
     </Link>
   );

@@ -18,7 +18,7 @@ export interface SelectProps {
  * @description Select component for form dropdown.
  * @param {string} [props.className=''] - Additional CSS classes for the select element.
  * @param {(value: string) => void} [props.onChange=() => {}] - Function to handle onChange event.
- * @param {Array<{ value: string, text: string }>} props.options - Array of options for the select dropdown.
+ * @param {Option[]} props.options - Array of options for the select dropdown.
  * @param {string} props.selected - Value of the currently selected option.
  */
 export default function Select({ className = '', onChange = () => {}, options, selected }: SelectProps) {
