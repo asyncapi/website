@@ -5,6 +5,7 @@ import TextLink from "./typography/TextLink";
 import Paragraph from "./typography/Paragraph";
 import Loader from "./Loader";
 import { useTranslation } from "../lib/i18n";
+import axios from "axios";
 
 export default function NewsletterSubscribe({
   className = 'p-8 text-center',
@@ -19,7 +20,7 @@ export default function NewsletterSubscribe({
   const [status, setStatus] = useState("normal");
 
   const { t } = useTranslation('common');
-
+  
   const headTextColor = dark ? 'text-white' : ''
   const paragraphTextColor = dark ? 'text-gray-300' : ''
 
@@ -31,21 +32,38 @@ export default function NewsletterSubscribe({
       email: email,
       interest: type
     }
+    
+    // email validation abstract api key here -- 
+    const api_key = "";
 
-    fetch("/.netlify/functions/newsletter_subscription", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    }).then((res) => {
-      if (res.status === 200) {
-        setFormStatus("success");
-      } else {
-        setFormStatus("error");
-      }
-      return res.json()
-    }).then((data) => console.log(data))
+    axios.get(`https://emailvalidation.abstractapi.com/v1/?api_key=${api_key}&email=${data.email}`)
+      .then(res => {
+        if (res.status === 200) {
+          if (res.data.deliverability !== "DELIVERABLE") {
+            setFormStatus("invalid");
+          } else {
+            fetch("/.netlify/functions/newsletter_subscription", {
+              method: "POST",
+              body: JSON.stringify(data),
+              headers: {
+                'Content-Type': 'application/json',
+              }
+            }).then((res) => {
+              if (res.status === 200) {
+                setFormStatus("success");
+              } else {
+                setFormStatus("error");
+              }
+              return res.json()
+            }).then((data) => console.log(data))
+          }
+        } else {
+          setFormStatus("error");
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      })
   }
 
   const setFormStatus = (formResponse) => {
@@ -55,7 +73,7 @@ export default function NewsletterSubscribe({
     }, 10000);
   }
 
-  if (status === "success") {
+  if (status !== "normal") { 
     return (
       <div className={className} data-testid="NewsletterSubscribe-main">
         <Heading
@@ -64,28 +82,19 @@ export default function NewsletterSubscribe({
           typeStyle="heading-lg"
           className="mb-4"
         >
-          {t('newsletterCTA.successTitle')}
-        </Heading>
+          {status === "success" && t('newsletterCTA.successTitle')}
+          {status === "error" && t('newsletterCTA.errorTitle')}
+          {status === "invalid" && t('newsletterCTA.invalidTitle')}
+        </Heading>  
         <Paragraph className="mb-8" textColor={paragraphTextColor}>
-        {t('newsletterCTA.subtitle')}
-        </Paragraph>
-      </div>
-    )
-  }
-
-  if (status === "error") {
-    return (
-      <div className={className} data-testid="NewsletterSubscribe-main">
-        <Heading
-          level="h3"
-          textColor={headTextColor}
-          typeStyle="heading-lg"
-          className="mb-4"
-        >
-          {t('newsletterCTA.errorTitle')}
-        </Heading>
-        <Paragraph className="mb-8" textColor={paragraphTextColor}>
-          {t('newsletterCTA.errorSubtitle')}{' '}<TextLink href="https://github.com/asyncapi/website/issues/new?template=bug.md" target="_blank">{t('newsletterCTA.errorLinkText')}</TextLink> 
+          {status === "success" && t('newsletterCTA.subtitle')}
+          {status === "error" && (
+            <>
+              {t('newsletterCTA.errorSubtitle')}{' '}
+              <TextLink href="https://github.com/asyncapi/website/issues/new?template=bug.md" target="_blank">{t('newsletterCTA.errorLinkText')}</TextLink>
+            </>
+          )}
+          {status === "invalid" && t('newsletterCTA.invalidSubtitle')}
         </Paragraph>
       </div>
     )

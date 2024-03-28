@@ -8,7 +8,9 @@
         "successTitle": "Thank you for subscribing!",
         "errorTitle": "Something went wrong",
         "errorSubtitle": "Subscription failed, please let us know about it by submitting a bug",
-        "errorLinkText": "here"
+        "errorLinkText": "here",
+        "invalidTitle": "Enter the Correct Email!",
+        "invalidSubtitle": "Please verify if you have entered the correct email address. If there's a mistake, kindly correct it."
     },
     "newsroomSection": {
         "title": "Latest news and blogs",
