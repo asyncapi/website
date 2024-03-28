@@ -13,7 +13,6 @@ export interface Bucket {
   link?: string;
   className?: string;
   borderClassName?: string;
-  Icon?: React.ComponentType<any>;
   href?: string;
   icon?: React.ComponentType<any> | null;
 }
