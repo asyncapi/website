@@ -73,9 +73,5 @@ export default function LinkComponent({ children, locale, ...props }: LinkCompon
 }
 
 export const LinkText = ({ href, children }: LinkComponentProps) => {
-  return (
-    <Link href={href || ''}>
-      {children}
-    </Link>
-  );
+  return <Link href={href || ''}>{children}</Link>;
 };
