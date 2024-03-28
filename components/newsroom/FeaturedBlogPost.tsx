@@ -43,8 +43,8 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
   return (
     <div className={`rounded-lg ${className}`}>
       <article className='h-full rounded-lg'>
-        <Link legacyBehavior href={post.slug} passHref>
-          <a
+        <Link href={post.slug}>
+          <span
             className={
               'flex h-full cursor-pointer flex-col divide-y divide-gray-200 overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg md:max-w-164 md:flex-row'
             }
@@ -66,15 +66,15 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
                     {post.type}
                   </span>
                 </Paragraph>
-                <Link legacyBehavior href={post.slug}>
-                  <a className='block' data-testid='FeaturedBlog-title'>
+                <Link href={post.slug}>
+                  <span className='block' data-testid='FeaturedBlog-title'>
                     <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.smSemibold} className='mt-2'>
                       {post.title}
                     </Heading>
                     <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-3'>
                       <TextTruncate element='span' line={2} text={post.excerpt} />
                     </Paragraph>
-                  </a>
+                  </span>
                 </Link>
               </div>
               <div className='mt-6 flex items-center'>
@@ -116,7 +116,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
                 </div>
               </div>
             </div>
-          </a>
+          </span>
         </Link>
       </article>
     </div>

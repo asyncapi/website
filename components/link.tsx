@@ -8,6 +8,7 @@ interface LinkComponentProps {
   children: React.ReactNode;
   locale?: string;
   href?: string;
+  legacyBehavior?: boolean;
 }
 
 /**
@@ -16,14 +17,15 @@ interface LinkComponentProps {
  * @param {React.ReactNode} props.children - The content to render within the Link.
  * @param {string} [props.locale] - The locale for the link.
  * @param {string} [props.href] - The URL the link points to.
+ * @param {boolean} [props.legacyBehavior=false] - Whether to use the legacy behavior for the link.
  */
-export default function LinkComponent({ children, locale, ...props }: LinkComponentProps) {
+export default function LinkComponent({ children, locale, legacyBehavior = false, ...props }: LinkComponentProps) {
   const router = useRouter();
 
   // If there is no router available (e.g., during server-side rendering & cypress tests), render a standard Link
   if (!router) {
     return (
-      <Link href={props.href || ''} passHref>
+      <Link href={props.href || ''} legacyBehavior={legacyBehavior}>
         {children}
       </Link>
     );
@@ -43,7 +45,7 @@ export default function LinkComponent({ children, locale, ...props }: LinkCompon
   */
   if ((props.href && i18nPaths[language] && !i18nPaths[language].includes(href)) || href.includes('http', 0)) {
     return (
-      <Link href={href} passHref>
+      <Link href={href} legacyBehavior={legacyBehavior} passHref>
         {children}
       </Link>
     );
@@ -66,12 +68,16 @@ export default function LinkComponent({ children, locale, ...props }: LinkCompon
   href = href.replace(/([^:/]|^)\/{2,}/g, '$1/');
 
   return (
-    <Link href={href} passHref>
+    <Link href={href} legacyBehavior={legacyBehavior} passHref>
       {children}
     </Link>
   );
 }
 
-export const LinkText = ({ href, children }: LinkComponentProps) => {
-  return <Link href={href || ''}>{children}</Link>;
+export const LinkText = ({ href, children, legacyBehavior = false }: LinkComponentProps) => {
+  return (
+    <Link href={href || ''} legacyBehavior={legacyBehavior}>
+      {children}
+    </Link>
+  );
 };
