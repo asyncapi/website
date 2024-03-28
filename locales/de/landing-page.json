@@ -69,6 +69,29 @@
         "supportedByPosttext": " für weitere Informationen."
     },
     "testimonials": {
-        "title": "Was die Experten sagen"
+        "title": "Was die Experten sagen",
+        "data": [
+            {
+                "authorName": "Matt McLarty",
+                "authorDescription": "Globaler Leiter der API-Strategy bei MuleSoft",
+                "text":"Microservices unterstreichen die Notwendigkeit einer ereignisgesteuerten Kommunikation in verteilten Architekturen. AsyncAPI bringt die Vielfalt des REST-API-Ökosystems in asynchrone APIs."
+            },
+            {
+                "authorName":"Bill Doerrfeld",
+                "authorDescription":"Chefredakteur bei Nordic APIs",
+                "text":"Auch ereignisgesteuerte APIs verdienen Aufmerksamkeit! AsyncAPI bringt die zahlreichen Vorteile einer maschinen- und menschenlesbaren Spezifikation für diese nuancierten Ansätze mit sich."
+            },
+            {
+                "authorName":"Jonathan Schabowsky",
+                "authorDescription":"Senior-Architekt im Büro des CTO bei Solace",
+                "text":"Entwickler müssen in der Lage sein, schnell und konsistent ereignisgesteuerte Anwendungen zu erstellen, die einen Mehrwert für das Geschäft bieten und in Echtzeit auf Kundenbedürfnisse reagieren. Ich kann nicht zählen, wie oft ich von Entwicklern gehört habe, die nach OpenAPI/Swagger-ähnlichen Werkzeugen für die asynchrone und ereignisgesteuerte Welt gefragt haben, und genau das ist es, was die AsyncAPI-Initiative verwirklicht."
+            },
+            {
+                "authorName":"Eric Horesnyi",
+                "authorDescription":"Geschäftsführer bei Streamdata.io",
+                "text":"Wir konzentrieren uns seit 2014 auf ereignisgesteuerte APIs und danken den Mitwirkenden von AsyncAPI jeden Tag dafür, dass sie die Community auf gemeinsame Standards hin lenken."
+            }
+    
+            ]
     }
 }

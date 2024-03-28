@@ -69,6 +69,29 @@
         "supportedByPosttext": " for more info."
     },
     "testimonials": {
-        "title": "What the experts are saying"
+        "title": "What the experts are saying",
+        "data": {
+        "0":{
+            "authorName": "Matt McLarty",
+            "authorDescription": "Global Leader of API Strategy at MuleSoft",
+            "text":"Microservices underline the need for event-based communication in distributed architectures. AsyncAPI brings the richness of the REST API ecosystem to asynchronous APIs."
+        },
+        "1":{
+            "authorName":"Bill Doerrfeld",
+            "authorDescription":"Editor in Chief at Nordic APIs",
+            "text":"Event-driven APIs need love too! AsyncAPI brings the many benefits of a machine/human-readable specification to these nuanced approaches."
+        },
+        "2":{
+            "authorName":"Jonathan Schabowsky",
+            "authorDescription":"Sr. Architect, Office of the CTO at Solace",
+            "text":"Developers need to be able to quickly and consistently create event-driven applications that provide business value and react to customer needs in realtime. I can't count how many times I've heard developers ask for OpenAPI/Swagger style tools for the asynchronous and event-driven world, and that is exactly what the AsyncAPI initiative is making a reality."
+        },
+        "3":{
+            "authorName":"Eric Horesnyi",
+            "authorDescription":"CEO at Streamdata.io",
+            "text":"We’ve been focusing on event-driven APIs since 2014 and thank the AsyncAPI contributors every day for driving the community towards common standards."
+        }
+
+    }
     }
 }
