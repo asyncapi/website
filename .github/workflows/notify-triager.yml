@@ -11,6 +11,23 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4.1.1
 
+      - name: Get commit message
+        id: commit-message
+        run: |
+          commit_message=$(git log --format=%B -n 1 ${{ github.event.pull_request.head.sha }})
+          echo "commit_message=$commit_message" >> $GITHUB_OUTPUT
+
+      - name: Check if last commit is a merge commit
+        id: check-merge-branch
+        run: |
+          if [[ ${{ steps.commit-message.outputs.commit_message }} == *"Merge branch"* ]]; then
+            echo "Last commit is a merge commit"
+            echo "skip" >> $GITHUB_OUTPUT
+          else
+            echo "Last commit message does not contain Merge branch"
+            echo "proceed" >> $GITHUB_OUTPUT
+          fi
+
       - name: Check PR Changes for .md files
         id: md-pr-changes
         uses: tj-actions/changed-files@aa08304bd477b800d468db44fe10f6c61f7f7b11 # version 42.1.0 https://github.com/tj-actions/changed-files/releases/tag/v42.1.0
