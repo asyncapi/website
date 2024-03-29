@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface IContainerProps {
   children: React.ReactNode;
   fluid?: boolean;
@@ -16,10 +18,10 @@ interface IContainerProps {
  * @param {Boolean} props.fluid - Whether the container is fluid
  * @param {Boolean} props.flex - Whether the container is flex
  * @param {Boolean} props.wide - Whether the container is wide
- * @param {String} props.padding - The padding of the container
+ * @param {string} props.padding - The padding of the container
  * @param {Boolean} props.flexReverse - Whether the container is flex reverse
- * @param {String} props.cssBreakingPoint - The CSS breaking point of the container
- * @param {String} props.className - The class name of the container
+ * @param {string} props.cssBreakingPoint - The CSS breaking point of the container
+ * @param {string} props.className - The class name of the container
  * @param {React.ElementType} props.as - The element type of the container
  */
 export default function Container({

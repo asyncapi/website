@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AsyncAPILogo from './AsyncAPILogo';
 
 interface IClickableLogoProps {
-  href: string;
+  href?: string;
   className?: string;
   logoClassName?: string;
 }
@@ -16,10 +16,8 @@ interface IClickableLogoProps {
  */
 export default function ClickableLogo({ href = '/', className = 'flex', logoClassName }: IClickableLogoProps) {
   return (
-    <Link href={href}>
-      <a className={className}>
-        <AsyncAPILogo className={logoClassName} />
-      </a>
+    <Link href={href} className={className}>
+      <AsyncAPILogo className={logoClassName} />
     </Link>
   );
 }
