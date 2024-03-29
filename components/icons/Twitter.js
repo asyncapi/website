@@ -1,12 +1,12 @@
-export default function IconTwitter({ className }) {
-  return (
-    <svg className={className} width="50px" height="50px" viewBox="0 0 1200 1227" fill="currentColor" >
-    <path
-        fillRule="evenodd"
-        d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"
-        fill="currentColor"
-        clip-fillrule="evenodd" >
-        </path>
-    </svg>
-  )
+export default function IconTwitter({ className, isHovered, setIsHovered }) {
+	return (
+		<svg 
+      className={className}
+      fill='currentColor'
+      viewBox="0 0 23 23"
+    >
+			<path d="M 2.3671875 3 L 9.4628906 13.140625 L 2.7402344 21 L 5.3808594 21 L 10.644531 14.830078 L 14.960938 21 L 21.871094 21 L 14.449219 10.375 L 20.740234 3 L 18.140625 3 L 13.271484 8.6875 L 9.2988281 3 L 2.3671875 3 z M 6.2070312 5 L 8.2558594 5 L 18.033203 19 L 16.001953 19 L 6.2070312 5 z" />
+		</svg>
+	);
 }
+

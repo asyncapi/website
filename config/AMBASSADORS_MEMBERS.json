@@ -98,6 +98,55 @@
     ]
   },
   {
+    "name": "Giri Venkatesan",
+    "github": "gvensan",
+    "twitter": "giri_venkatesan",
+    "country": "🇮🇳",
+    "bio": "Giri Venkatesan, a follower and proponent of AsyncAPI and teams up with companies & SIs to design event-driven architecture and asynchronous APIs. To guide those discussions, I draw upon years of integration and implementation experience, particularly with Solace platforms. I've been a follower of AsyncAPI since 2022, and written blogs and delivered talks at conferences and AsyncAPI confrence tours.",
+    "linkedin": "girivenkatesan",
+    "company": "Solace",
+    "title": "Developer Advocate, Office of the CTO at Solace",
+    "img": "https://avatars.githubusercontent.com/u/4477169?s=96&v=4",
+    "contributions": [
+      {
+        "type": "article",
+        "title": "Bridging Design and Runtime Gaps: AsyncAPI in Event-Driven Architecture",
+        "date": {
+          "year": 2024,
+          "month": "February"
+        },
+        "link": "https://www.linux.com/news/bridging-design-and-runtime-gaps-asyncapi-in-event-driven-architecture/"
+      },
+      {
+        "type": "talk",
+        "title": "Bridging the Gap between Design and Runtime in EDA with AsyncAPI and CI/CD",
+        "date": {
+          "year": 2023,
+          "month": "November"
+        },
+        "link": "https://www.youtube.com/watch?v=CXt-fy82PCk"
+      },
+      {
+        "type": "talk",
+        "title": "Bridging the Gap between Design and Runtime in EDA with AsyncAPI",
+        "date": {
+          "year": 2023,
+          "month": "August"
+        },
+        "link": "https://www.youtube.com/watch?v=ewpADLeLNE4"
+      },
+      {
+        "type": "article",
+        "title": "AsyncAPI + Spring Cloud Stream = Event-Driven Microservices Made Easy",
+        "date": {
+          "year": 2021,
+          "month": "November"
+        },
+        "link": "https://www.youtube.com/watch?v=3EeMHhbwyOQ&t=4142s"
+      }
+    ]
+  },
+  {
     "name": "Hugo Guerrero",
     "img": "https://avatars.githubusercontent.com/u/1001939?v=4",
     "bio": "Hugo Guerrero is a developer advocate for APIs and Event-driven Architecture. He assists organizations in this role by creating, editing, and curating product content shared with the community through webinars, conferences, and other activities. He works on open source software with major private and federal public sector clients looking to connect and extend their system architecture. He has over 20 years of experience as a developer, consultant, architect, and software development manager.",

@@ -64,7 +64,7 @@ function Eventindex() {
       <div className="mt-24 w-full h-auto sm:h-[400px]">
         <div className="w-full h-full bg-confBg rounded-md bg-cover bg-center p-10 flex flex-col justify-between text-white">
           <img data-testid="RecordingsCard-img"
-            src="/img/logos/confLogo.webp"
+            src="/img/logos/confLogo.png"
             alt="conf-logo"
             className="w-[100px] sm:w-[150px]"
           />
@@ -74,11 +74,11 @@ function Eventindex() {
               typeStyle="heading-sm-semibold"
               className="mt-10 lg:text-2xl"
             >
-              Watch the AsyncAPI 2022 conference recordings from anywhere around
+              Watch the AsyncAPI 2023 conference recordings from anywhere around
               the world for free
             </Heading>
             <a data-testid="Recordings-Link"
-              href="https://www.youtube.com/playlist?list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl"
+              href="https://www.youtube.com/playlist?list=PLbi1gRlP7pijHAnmN-n_OiTH6CAXxGthw&si=st3gY7Ri5uzhechB"
               target="_blank"
               rel="noreferrer"
             >
