@@ -12,13 +12,9 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ],
-      "score": 33.59942688366328
+      "score": 33.886601472412536
     },
     {
       "id": "I_kwDODou01c5BZZv-",
@@ -38,7 +34,7 @@
           "color": "f9dd4b"
         }
       ],
-      "score": 26.707236753681066
+      "score": 27.28158593117958
     },
     {
       "id": "I_kwDOBW5R_c5Pi3rO",
@@ -61,6 +57,17 @@
       "score": 22.68679251119144
     },
     {
+      "id": "PR_kwDOFLhIt85js7KX",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore: add documents CoC Committee and Incident Resolution Procedures",
+      "author": "Barbanio",
+      "resourcePath": "/asyncapi/community/pull/1013",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 22.112443333692923
+    },
+    {
       "id": "PR_kwDOFLhIt85bqKL8",
       "isPR": true,
       "isAssigned": false,
@@ -72,15 +79,15 @@
       "score": 22.112443333692923
     },
     {
-      "id": "PR_kwDOFLhIt85js7KX",
+      "id": "PR_kwDOBW5R_c5paEWn",
       "isPR": true,
       "isAssigned": false,
-      "title": "chore: add documents CoC Committee and Incident Resolution Procedures",
-      "author": "Barbanio",
-      "resourcePath": "/asyncapi/community/pull/1013",
-      "repo": "asyncapi/community",
+      "title": "feat: migrate navigation",
+      "author": "vishvamsinh28",
+      "resourcePath": "/asyncapi/website/pull/2765",
+      "repo": "asyncapi/website",
       "labels": [],
-      "score": 20.38939580119737
+      "score": 21.25091956744515
     },
     {
       "id": "PR_kwDODou01c5Iv4zR",
@@ -91,7 +98,27 @@
       "resourcePath": "/asyncapi/studio/pull/553",
       "repo": "asyncapi/studio",
       "labels": [],
-      "score": 20.38939580119737
+      "score": 21.25091956744515
+    },
+    {
+      "id": "I_kwDODou01c5AqLB8",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "\"Open with Studio\" button for Markdown files.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/218",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 20.67657038994663
     },
     {
       "id": "I_kwDOGJ23c85V9C3c",
@@ -126,26 +153,6 @@
       "score": 19.815046623698855
     },
     {
-      "id": "I_kwDODou01c5AqLB8",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "\"Open with Studio\" button for Markdown files.",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/218",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "keep-open",
-          "color": "f9dd4b"
-        }
-      ],
-      "score": 19.527872034949596
-    },
-    {
       "id": "I_kwDOFDnrNc51TZDT",
       "isPR": false,
       "isAssigned": true,
@@ -170,28 +177,17 @@
       "score": 18.953522857451077
     },
     {
-      "id": "PR_kwDOFDnrNc5dgyM7",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add POC for measuring adoption",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/cli/pull/859",
-      "repo": "asyncapi/cli",
-      "labels": [],
-      "score": 18.091999091203302
-    },
-    {
-      "id": "I_kwDODou01c5E_LV0",
+      "id": "I_kwDOBW5R_c580Z0o",
       "isPR": false,
       "isAssigned": false,
-      "title": "Create onboarding for features of Studio",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/studio/issues/284",
-      "repo": "asyncapi/studio",
+      "title": "New Contributor Guide and Maintenance Setup",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/2586",
+      "repo": "asyncapi/website",
       "labels": [
         {
           "name": "enhancement",
-          "color": "a2eeef"
+          "color": "84b6eb"
         }
       ],
       "score": 17.517649913704783
@@ -199,8 +195,23 @@
   ],
   "goodFirstIssues": [
     {
+      "id": "I_kwDOFDnrNc6DvxH4",
+      "title": "[BUG] Missing on-workflow-trigger for update-docs-in-website action",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/cli/issues/1301",
+      "repo": "asyncapi/cli",
+      "author": "Souvikns",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
       "id": "I_kwDODou01c6C8lNQ",
-      "title": "FIx linting issues in studio-next",
+      "title": "Fix linting issues in studio-next",
       "isAssigned": false,
       "resourcePath": "/asyncapi/studio/issues/1029",
       "repo": "asyncapi/studio",
@@ -331,25 +342,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh38572qE9",
-      "title": "Add runtime tests for Python",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1745",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "Python generator",
-          "color": "5319e7"
         }
       ]
     },
