@@ -6,7 +6,7 @@ import type { Language, Technology, VisibleDataListType } from '@/types/componen
 
 import tags from '../../config/all-tags.json';
 import ToolFilter, { ToolFilterContext } from '../../context/ToolFilterContext';
-import categoryList from '../../scripts/tools/categorylist';
+import { categoryList } from '../../scripts/tools/categorylist';
 import Data from '../../scripts/tools/tools-schema.json';
 import Button from '../buttons/Button';
 import ArrowDown from '../icons/ArrowDown';
