@@ -18,11 +18,11 @@ enum FormStatus {
 }
 
 interface NewsletterSubscribeProps {
-  className: string;
-  dark: boolean;
-  title: string;
-  subtitle: string;
-  type: string;
+  className?: string;
+  dark?: boolean;
+  title?: string;
+  subtitle?: string;
+  type?: string;
 }
 
 /**
