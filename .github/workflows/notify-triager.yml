@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4.1.1
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Get commit message
         id: commit-message
@@ -20,12 +22,12 @@ jobs:
       - name: Check if last commit is a merge commit
         id: check-merge-branch
         run: |
-          if [[ ${{ steps.commit-message.outputs.commit_message }} == *"Merge branch"* ]]; then
+          if [[ "${{ steps.commit-message.outputs.commit_message }}" == *"Merge branch"* ]]; then
             echo "Last commit is a merge commit"
-            echo "skip" >> $GITHUB_OUTPUT
+            echo "isMergeCommit=true" >> $GITHUB_OUTPUT
           else
             echo "Last commit message does not contain Merge branch"
-            echo "proceed" >> $GITHUB_OUTPUT
+            echo "isMergeCommit=false" >> $GITHUB_OUTPUT
           fi
 
       - name: Check PR Changes for .md files
@@ -62,7 +64,7 @@ jobs:
           echo "codeTriagers=$codeTriagers" >> $GITHUB_ENV
 
       - name: Add Reviewers for code files
-        if: steps.non-md-pr-changes.outputs.any_changed == 'true'
+        if: steps.check-merge-branch.outputs.isMergeCommit == 'false' && steps.non-md-pr-changes.outputs.any_changed == 'true'
         run: |
           IFS=' ' read -r -a codeTriagers <<< "${{ env.codeTriagers }}"
           reviewers=$(printf ', "%s"' "${codeTriagers[@]}")
@@ -77,7 +79,7 @@ jobs:
           }"
 
       - name: Add Reviewers for doc files
-        if: steps.md-pr-changes.outputs.any_changed == 'true'
+        if: steps.check-merge-branch.outputs.isMergeCommit == 'false' && steps.md-pr-changes.outputs.any_changed == 'true'
         run: |
           IFS=' ' read -r -a docTriagers <<< "${{ env.docTriagers }}"
           reviewers=$(printf ', "%s"' "${docTriagers[@]}")
