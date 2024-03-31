@@ -202,7 +202,7 @@
     {
       "id": "I_kwDOFDnrNc6DvxH4",
       "title": "[BUG] Missing on-workflow-trigger for update-docs-in-website action",
-      "isAssigned": true,
+      "isAssigned": false,
       "resourcePath": "/asyncapi/cli/issues/1301",
       "repo": "asyncapi/cli",
       "author": "Souvikns",
