@@ -5,6 +5,7 @@ import Paragraph from '../typography/Paragraph'
 export default function toolsList({ toolsData }) {
   const categoryRefs = useRef({});
 
+// Below UseEffect scrolls the page to a specific category referenced in the URL hash.
   useEffect(() => {
     const hash = window.location.hash;
     if (hash) {
@@ -14,7 +15,8 @@ export default function toolsList({ toolsData }) {
         categoryRef.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
-  }, []);
+  },[]);
+
   return (
     <div className="" data-testid="ToolsList-main" >
       {Object.keys(toolsData).map((categoryName, index) => {
