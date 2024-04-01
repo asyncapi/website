@@ -69,9 +69,9 @@ function generateEditLink(post: IPost) {
 
 /**
  * @description DocsLayout component
- * @param {IPost} props.post
- * @param {NavigationItems} props.navItems
- * @param {React.ReactNode} props.children
+ * @param {IPost} props.post The post to render in the layout
+ * @param {NavigationItems} props.navItems Navigation items for the post
+ * @param {React.ReactNode} props.children The children to render in the layout
  */
 export default function DocsLayout({ post, navItems = {}, children }: IDocsLayoutProps) {
   const posts = getAllPosts();
