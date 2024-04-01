@@ -1,14 +1,14 @@
-import { IDoc } from "../post";
-  
+import type { IDoc } from '../post';
+
 export interface NavigationItem {
-    title: string;
+  title: string;
 }
-  
+
 export interface NavigationItems {
-    [key: string]: NavigationItem;
+  [key: string]: NavigationItem;
 }
-  
+
 export interface DocsContextType {
-    post: IDoc;
-    navItems: NavigationItems;
+  post: IDoc;
+  navItems: NavigationItems;
 }

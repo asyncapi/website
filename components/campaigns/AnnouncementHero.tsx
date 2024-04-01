@@ -9,6 +9,7 @@ import { banners } from './banners';
 interface IAnnouncementHeroProps {
   className?: string;
   small?: boolean;
+  hideVideo?: boolean;
 }
 
 /**
