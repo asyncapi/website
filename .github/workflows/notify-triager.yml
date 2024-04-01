@@ -11,7 +11,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4.1.1
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Get commit message
         id: commit-message
