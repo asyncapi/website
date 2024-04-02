@@ -3,11 +3,15 @@ import { useEffect, useState } from 'react';
 
 import GitHubIssue from './buttons/GitHubIssue';
 
+interface IFeedbackProps {
+  className?: string;
+}
+
 /**
  * @description A component that allows users to submit feedback
- * @param {string} className - The class name for the component
+ * @param {string} props.className - The class name for the component
  */
-export default function Feedback(className: string = '') {
+export default function Feedback({ className }: IFeedbackProps) {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
   const [feedback, setFeedback] = useState('');
