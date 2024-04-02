@@ -1,31 +1,41 @@
-import { useContext } from 'react'
-import Head from 'next/head'
-import AppContext from '../context/AppContext'
-import ReactGA from 'react-ga'
-import TagManager from 'react-gtm-module'
+import { useContext, useEffect } from 'react';
+import Head from 'next/head';
+import AppContext from '../context/AppContext';
+import ReactGA from 'react-ga';
+import TagManager from 'react-gtm-module';
 
 export default function HeadComponent({
   title,
   description = 'Open source tools to easily build and maintain your event-driven architecture. All powered by the AsyncAPI specification, the industry standard for defining asynchronous APIs.',
   image = '/img/social/website-card.jpg',
   rssTitle = 'RSS Feed for AsyncAPI Initiative Blog',
-  rssLink = '/rss.xml'
+  rssLink = '/rss.xml',
 }) {
-  const url = process.env.DEPLOY_PRIME_URL || process.env.DEPLOY_URL || "http://localhost:3000"
-  const { path = '' } = useContext(AppContext)
-  const permalink = `${url}${path}`
-  let type = 'website'
-  if (path.startsWith('/docs') || path.startsWith('/blog')) type = 'article'
-  if (!image.startsWith('http') && !image.startsWith('https')) image = `${url}${image}`
-  const permTitle = 'AsyncAPI Initiative for event-driven APIs'
-  title = title ? `${title} | ${permTitle}` : permTitle
+  const url = process.env.DEPLOY_PRIME_URL || process.env.DEPLOY_URL || 'http://localhost:3000';
+  const appContext = useContext(AppContext);
+  const { path = '' } = appContext || {};
+
+  const permalink = `${url}${path}`;
+  let type = 'website';
+
+  if (path.startsWith('/docs') || path.startsWith('/blog')) {
+    type = 'article';
+  }
+
+  if (!image.startsWith('http') && !image.startsWith('https')) {
+    image = `${url}${image}`;
+  }
+
+  const permTitle = 'AsyncAPI Initiative for event-driven APIs';
+  title = title ? `${title} | ${permTitle}` : permTitle;
 
   //enable google analytics
-  if (typeof window !== 'undefined') {
+  if (typeof window !== 'undefined' && window.location.hostname.includes('asyncapi.com')) {
     TagManager.initialize({gtmId: 'GTM-T58BTVQ'})
     ReactGA.initialize('UA-109278936-1')
     ReactGA.pageview(window.location.pathname + window.location.search)
   }
+
 
   return (
     <Head>
@@ -50,13 +60,13 @@ export default function HeadComponent({
       <meta itemProp="name" content={title} />
       <meta itemProp="description" content={description} />
       <meta itemProp="image" content={image} />
-      
+
       {/* Twitter Card data */}
       <meta name="twitter:card" value="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
-      
+
       {/* Open Graph data */}
       <meta property="og:title" content={title} />
       <meta property="og:type" content={type} />
@@ -66,5 +76,5 @@ export default function HeadComponent({
 
       <title>{title}</title>
     </Head>
-  )
+  );
 }

@@ -14,13 +14,13 @@ export default function Meeting({
 }) {
 
   return (
-    <a href={youtube} target="_blank" rel="noreferrer">
+    <a href={youtube} target="_blank" rel="noreferrer"  data-testid="Meeting-link">
       <div
         className={`meeting-card overflow-hidden p-4 bg-${bg} w-full lg:w-[300px] h-[300px] cursor-pointer hover:bg-dark hover:text-white flex flex-col justify-between`}
       >
         <div>
-          <h3 className="text-xl">{name}</h3>
-          <div>
+          <h3 className="text-xl" data-testid="Meeting-heading">{name}</h3>
+          <div data-testid="Meeting-paragraph">
             <Paragraph typeStyle="body-sm" className="my-4" textColor="white">
               {purpose}
             </Paragraph>
@@ -28,7 +28,7 @@ export default function Meeting({
         </div>
         <div className="flex items-center justify-between">
           <Paragraph typeStyle="body-md" className="my-4">
-            <strong>Host:</strong>
+            <strong  data-testid="Meeting-host">Host:</strong>
             {hostProfile ? (
               <TextLink
                 href={hostProfile}

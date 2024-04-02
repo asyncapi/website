@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import Heading from '../../components/typography/Heading';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
@@ -46,7 +45,7 @@ function CommunityIndexPage() {
           </Heading>
         </div>
       </div>
-      <div>
+      <div data-testid="CommunityIndex-HomeCard">
         <HomeCards
           headline="Thanking our AsyncAPI Ambassadors"
           title="Ambassador Programs"
@@ -58,7 +57,7 @@ function CommunityIndexPage() {
         />
       </div>
       <div className="md:flex md:justify-between w-full mt-20">
-        <div className="md:w-[50%]">
+        <div className="md:w-[50%]" data-testid="CommunityIndex-IssuesCard">
           <Card
             taglineBg="bg-pink-100"
             bg="bg-code-editor-dark"
@@ -71,8 +70,8 @@ function CommunityIndexPage() {
             link="/community/dashboard"
           />
         </div>
-        <div className="md:w-[45%] flex flex-col justify-between mt-10 md:mt-0">
-          <div>
+        <div className="md:w-[45%] flex flex-col justify-between mt-10 md:mt-0" data-testid="CommunityIndex-SmallsCards">
+          <div data-testid="CommunityIndex-Newsroom-Card">
             <Card
               type="small"
               tagline="Newsroom"
@@ -82,7 +81,7 @@ function CommunityIndexPage() {
               link="/community/newsroom"
             />
           </div>
-          <div className="mt-10 md:mt-0">
+          <div className="mt-10 md:mt-0" data-testid="CommunityIndex-Toolings-Card">
             <Card
               type="small"
               taglineBg=""
@@ -136,47 +135,29 @@ function CommunityIndexPage() {
           </ul>
         </div>
       </div>
-      <div className="md:flex md:justify-between w-full mt-20">
-        <div className="md:w-[45%] flex flex-col justify-between mt-10 md:mt-0">
-          <div>
-            <Card
-              type="small"
-              tagline="Goals"
-              icon="🎯"
-              heading="Community Goals 2023"
-              description="Look into the AsyncAPI community building/maintenance goals for
-              2023 and help us improve."
-              link="https://github.com/asyncapi/community/discussions/513"
-            />
-          </div>
-          <div className="mt-10 md:mt-0">
-            <Card
-              type="small"
-              taglineBg=""
-              tagline="Contributors"
-              icon="🏅"
-              heading="Recognize AsyncAPI OSS contributors"
-              description="Recognize the people who inspire and contribute to our OSS
-                    project and community."
-              bg="bg-primary-200"
-              link="https://github.com/orgs/asyncapi/discussions/593"
-            />
-          </div>
-        </div>
-        <div className="md:w-[50%] mt-10 md:mt-0">
+      <div className="flex sm:flex-row flex-col mt-10">
+        <div className="m-5" data-testid="CommunityCards-Goals">
           <Card
-            taglineBg="bg-primary-200"
-            heading="Meet Folks Redefining the Initiative"
-            description="Learn how to become a Technical Steering Committee (TSC) member and see our current members."
+            type="small"
+            tagline="Goals"
+            icon="🎯"
+            heading="2024 AsyncAPI Community Goals"
+            description="Help us improve our 2024 AsyncAPI community building and maintenance goals."
+            link="https://github.com/orgs/asyncapi/discussions/948"
+          />
+        </div>
+        <div className="m-5" data-testid="CommunityCards-TSC">
+          <Card
+            type="small"
             tagline="TSC"
             icon="🚀"
-            btnText="Meet all TSC members"
-            btnBg="fill-primary-500 text-primary-500"
+            heading="Meet Folks Redefining the Initiative"
+            description="Learn how to become a Technical Steering Committee (TSC) member and see our current members."
             link="/community/tsc"
           />
         </div>
       </div>
-      <div className="">
+      <div className="" data-testid="CommunityCards-Slack">
         <HomeCards
           headline="All community info, tracked"
           title="AsyncAPI Slack"
@@ -189,7 +170,30 @@ function CommunityIndexPage() {
           className="bg-channelCover"
         />
       </div>
-      <div className="bg-dark py-12 mt-8 md:mt-20 rounded-lg">
+      <div className="flex sm:flex-row flex-col mt-10">
+        <div className="m-5">
+          <Card
+            type="small"
+            tagline="Finance"
+            icon="💰"
+            heading="Track Initiative Spending with Budget Analysis"
+            description="Explore our transparent finance section for a detailed analysis of our project's budget. See how we track expenses and gain insights into funds allocation."
+            link="/finance"
+          />
+        </div>
+        <div className="m-5">
+          <Card
+            type="small"
+            tagline="Store"
+            icon="🛒"
+            heading="Swags and Goodies"
+            description="Explore our swag collection of AsyncAPI-themed t-shirts and goodies."
+            link="https://www.store.asyncapi.com/"
+            bg="bg-primary-200"
+          />
+        </div>
+      </div>
+      <div className="bg-dark py-12 mt-8 md:mt-20 rounded-lg" data-testid="CommunityCard-subscribe">
         <NewsletterSubscribe dark />
       </div>
     </GenericLayout>

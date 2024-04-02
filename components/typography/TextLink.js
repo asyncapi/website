@@ -14,7 +14,7 @@ export default function TextLink({
         <>
             {' '}
             <Link href={href}>
-                <a id={id} target={target} rel="noreferrer noopener" className={classNames}>
+                <a data-testid="TextLink-href" id={id} target={target} rel="noreferrer noopener" className={classNames}>
                     {children}
                 </a>
             </Link>

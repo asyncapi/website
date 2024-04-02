@@ -1,13 +1,8 @@
 import { useContext, useState } from "react";
-import NavBar from "../../components/navigation/NavBar";
 import JobsContext from "../../context/JobsContext";
 import JobPostItem from "../../components/navigation/JobPostItem";
-import Footer from "../../components/Footer";
-import Head from "../../components/Head";
 import Filter from "../../components/navigation/Filter";
-import AnnouncementHero from "../../components/campaigns/AnnoucementHero";
 import Empty from "../../components/illustrations/empty";
-import StickyNavbar from "../../components/navigation/StickyNavbar"
 import Heading from "../../components/typography/Heading";
 import Paragraph from "../../components/typography/Paragraph";
 import TextLink from "../../components/typography/TextLink";

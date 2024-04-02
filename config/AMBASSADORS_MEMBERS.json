@@ -55,12 +55,12 @@
     "title": "Senior Solution Architect / Head of API Experience and Operations",
     "github": "danielkocot",
     "twitter": "dk_1977",
-    "linkedin": "daniel-kocot",
+    "linkedin": "danielkocot",
     "company": "Codecentric AG",
     "country": "🇩🇪",
     "contributions": [
       {
-        "type": "article",
+	"type": "article",
         "title": "AsyncAPI - Documentation of event and message-driven architectures",
         "date": {
           "year": 2021,
@@ -68,32 +68,81 @@
         },
         "link": "https://blog.codecentric.de/en/2021/09/asyncapi-documentation-event-message-driven-architectures/?hmsr=joyk.com&utm_source=joyk.com&utm_medium=referral"
       },
-      {
-        "type": "article",
+      {	
+       	"type": "article",
         "title": "AsyncAPI specification updates",
         "date": {
           "year": 2022,
           "month": "February"
         },
-        "link": "https://blog.codecentric.de/en/2022/02/asyncapi-version-2-3-0-specification-updates/"
+       	"link": "https://blog.codecentric.de/en/2022/02/asyncapi-version-2-3-0-specification-updates/"
       },
       {
         "type": "presentation",
-        "title": "AsyncAPI 101",
+       	"title": "AsyncAPI 101",
         "date": {
           "year": 2022,
           "month": "May"
-        },
+	},
         "link": "https://www.buildingiot.de/veranstaltung-13856-0-asyncapi-101.html"
       },
       {
         "type": "presentation",
-        "title": "Adopting AsyncAPI in Enterprisey Contexts, AsyncAPI Conference",
+       	"title": "Adopting AsyncAPI in Enterprisey Contexts, AsyncAPI Conference",
         "date": {
           "year": 2022,
           "month": "November"
+       	},
+       	"link": "https://www.youtube.com/watch?v=_wTcV63jrnU"
+      }
+    ]
+  },
+  {
+    "name": "Giri Venkatesan",
+    "github": "gvensan",
+    "twitter": "giri_venkatesan",
+    "country": "🇮🇳",
+    "bio": "Giri Venkatesan, a follower and proponent of AsyncAPI and teams up with companies & SIs to design event-driven architecture and asynchronous APIs. To guide those discussions, I draw upon years of integration and implementation experience, particularly with Solace platforms. I've been a follower of AsyncAPI since 2022, and written blogs and delivered talks at conferences and AsyncAPI confrence tours.",
+    "linkedin": "girivenkatesan",
+    "company": "Solace",
+    "title": "Developer Advocate, Office of the CTO at Solace",
+    "img": "https://avatars.githubusercontent.com/u/4477169?s=96&v=4",
+    "contributions": [
+      {
+        "type": "article",
+        "title": "Bridging Design and Runtime Gaps: AsyncAPI in Event-Driven Architecture",
+        "date": {
+          "year": 2024,
+          "month": "February"
         },
-        "link": "https://www.youtube.com/watch?v=_wTcV63jrnU"
+        "link": "https://www.linux.com/news/bridging-design-and-runtime-gaps-asyncapi-in-event-driven-architecture/"
+      },
+      {
+        "type": "talk",
+        "title": "Bridging the Gap between Design and Runtime in EDA with AsyncAPI and CI/CD",
+        "date": {
+          "year": 2023,
+          "month": "November"
+        },
+        "link": "https://www.youtube.com/watch?v=CXt-fy82PCk"
+      },
+      {
+        "type": "talk",
+        "title": "Bridging the Gap between Design and Runtime in EDA with AsyncAPI",
+        "date": {
+          "year": 2023,
+          "month": "August"
+        },
+        "link": "https://www.youtube.com/watch?v=ewpADLeLNE4"
+      },
+      {
+        "type": "article",
+        "title": "AsyncAPI + Spring Cloud Stream = Event-Driven Microservices Made Easy",
+        "date": {
+          "year": 2021,
+          "month": "November"
+        },
+        "link": "https://www.youtube.com/watch?v=3EeMHhbwyOQ&t=4142s"
       }
     ]
   },
@@ -151,6 +200,90 @@
           "month": "December"
         },
         "link": "https://www.youtube.com/watch?v=_kIE-qtpwTA&t=9s"
+      }
+    ]
+  },
+  {
+    "name": "Ivan Garcia Sainz-Aja",
+    "github": "ivangsa",
+    "twitter": "ivangsa",
+    "bio": "Java Architect with a deep understanding of Java, Spring-Boot, Spring-Cloud technologies, specializing in Domain-Driven Design (DDD) and Event-Driven Architectures creating Software Easy to Understand. Building ZenWave 360º. ZenWave 360º is a set of tools built on the foundations of Domain Driven Design and API-First principles for Event-Driven Architectures, to help you create software easy to understand. https://www.zenwave360.io/",
+    "linkedin": "ivangarciasainzaja",
+    "company": "SNGULAR",
+    "title": "Java Architect. Speaker. Building ZenWave 360°.",  
+    "img": "https://avatars.githubusercontent.com/u/1246876?v=4",
+    "contributions": [
+      {
+        "type": "iniciative_driver",
+        "title": "AsyncAPI Conference On Tour 2023 - Madrid",
+        "date": {
+          "year": 2023,
+          "month": "October"
+        },
+        "link": "https://www.youtube.com/playlist?list=PLbi1gRlP7pihD-7XYb6c9wcTdkavDzF3_"
+      },
+      {
+        "type": "iniciative_driver",
+        "title": "ZenWave SDK - Code Generator for AsyncAPI with Spring Cloud Streams",
+        "date": {
+          "year": 2024,
+          "month": "2022"
+        },
+        "link": "https://www.zenwave360.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/"
+      },
+      {
+        "type": "article",
+        "title": "API-First with AsyncAPI",
+        "date": {
+          "year": 2023,
+          "month": "March"
+        },
+        "link": "https://www.zenwave360.io/posts/API-First-with-AsyncAPI-And-ZenWave-SDK/"
+      },
+      {
+        "type": "article",
+        "title": "ZenWave AsyncAPI Code Generator",
+        "date": {
+          "year": 2023,
+          "month": "March"
+        },
+        "link": "https://www.zenwave360.io/posts/ZenWave-AsyncAPI-Code-Generator/"
+      },
+      {
+        "type": "article",
+        "title": "Generating AsyncAPI definition files from JDL with ZenWaveSDK",
+        "date": {
+          "year": 2023,
+          "month": "April"
+        },
+        "link": "https://www.zenwave360.io/posts/JHipster-As-IDL-for-AsyncAPIv2/"
+      },
+      {
+        "type": "presentation",
+        "title": "KIT - API-First with AsyncAPI for Event Driven Architectures",
+        "date": {
+          "year": 2023,
+          "month": "May"
+        },
+        "link": "https://www.youtube.com/watch?v=EoWFZfmspFM"
+      },
+      {
+        "type": "presentation",
+        "title": "Practical Event Storming with AsyncAPI v3 and ZenWave SDK",
+        "date": {
+          "year": 2023,
+          "month": "October"
+        },
+        "link": "https://www.youtube.com/watch?v=-uHONzz-a6U"
+      },
+      {
+        "type": "presentation",
+        "title": "Code Generation For Enterprise Integration Patterns w/ AsyncAPI & ZenWave SDK",
+        "date": {
+          "year": 2023,
+          "month": "October"
+        },
+        "link": "https://www.youtube.com/watch?v=gUsoD8RaCuw"
       }
     ]
   },
@@ -225,10 +358,10 @@
     "github": "M3lkior",
     "twitter": "ldussart",
     "country": "🇫🇷",
-    "bio": "Ludovic is an Ineat employee since 10 years. Starting as java developer, he is now Solutions Architect and work with his customers to build digital products, EDA oriented when possible. His first contributions on AsyncAPI was in 2020 around the kafka and avro specifications. Since this day, Ludovic talk about AsyncAPI in the North of France compagnies in order to speedup the initiative adoption.",
+    "bio": "Ludovic is a Solutions Architect, working with his customers to build EDA-oriented digital products wherever possible. His first contributions to AsyncAPI date back to 2020 around the kafka and avro specifications. Since then, Ludovic has been spreading the word about AsyncAPI to companies in Northern France, to accelerate adoption of the initiative.",
     "linkedin": "ludovic-dussart-846a8063",
-    "company": "Ineat",
-    "title": "Solutions Architect",
+    "company": "zatsit",
+    "title": "Solutions Architect / DevRel",
     "img": "https://avatars.githubusercontent.com/u/5501911?s=400&u=d3f33c22f67788aba810ba8e910452aff62ad7c9&v=4",
     "contributions": [
       {
@@ -309,7 +442,7 @@
         "date": {
           "year": 2023
         },
-        "link": ""
+        "link": "https://www.asyncapi.com/casestudies/adeogroup"
       },
       {
         "type": "presentation",
@@ -319,6 +452,100 @@
           "month": "March"
         },
         "link": ""
+      },
+      {
+        "type": "presentation",
+        "title": "Standardisez votre monde d'événements en documentant vos EDA avec AsyncAPI ! - Cloud Nord 2023",
+        "date": {
+          "year": 2023,
+          "month": "October"
+        },
+        "link": "https://www.youtube.com/watch?v=pFMmQVppV6s"
+      },
+      {
+        "type": "special contribution",
+        "title": "Stay at API Days AsyncAPI Booth to share with attendees.",
+        "date": {
+          "year": 2023,
+          "month": "December"
+        },
+        "link": ""
+      },
+      {
+        "type": "presentation",
+        "title": "Quoi de neuf dans AsyncAPI v3 ? Découvrez le en live avec la migration du use-case Adeo",
+        "date": {
+          "year": 2023,
+          "month": "December"
+        },
+        "link": "https://www.youtube.com/watch?v=WCK9_ZDv6K4"
+      }
+    ]
+  },
+  {
+    "name": "Mete Atamel",
+    "github": "meteatamel",
+    "twitter": "meteatamel",
+    "country": "🇬🇧",
+    "bio": "Mete is a Software Engineer and a Developer Advocate with 18+ years of experience. Currently, he works in the Developer Relations team at Google in London. He builds tools, demos, tutorials, and gives talks to educate and help developers to be successful on Google Cloud. As a regular speaker at tech conferences, he has spoken over 345+ events since 2016 on modern application development topics such as Kubernetes, Istio, Knative, serverless, event-driven architectures, and microservice orchestration. Prior to his current role, he was a Software Engineer/Architect/Tech Lead at Nokia, EMC, Adobe, Skype, and Microsoft building various client and server technologies, resulting in multiple patents.",
+    "linkedin": "mete-atamel",
+    "company": "Google",
+    "title": "Software Engineer and Developer Advocate at Google",
+    "img": "https://avatars.githubusercontent.com/u/1177542?v=4",
+    "contributions": [
+      {
+        "type": "article",
+        "title": "AsyncAPI Basics",
+        "date": {
+          "year": 2023,
+          "month": "May"
+        },
+        "link": "https://medium.com/google-cloud/asyncapi-basics-6e6394c9587"
+      },
+      {
+        "type": "article",
+        "title": "AsyncAPI Tools",
+        "date": {
+          "year": 2023,
+          "month": "May"
+        },
+        "link": "https://medium.com/google-cloud/asyncapi-tools-dd59f9236b20"
+      },
+      {
+        "type": "article",
+        "title": "Understanding AsyncAPI’s publish & subscribe semantics with an example",
+        "date": {
+          "year": 2023,
+          "month": "May"
+        },
+        "link": "https://medium.com/google-cloud/understanding-asyncapis-publish-subscribe-semantics-with-an-example-cfa1cc3faef5"
+      },
+      {
+        "type": "article",
+        "title": "CloudEvents + AsyncAPI",
+        "date": {
+          "year": 2023,
+          "month": "May"
+        },
+        "link": "https://medium.com/google-cloud/cloudevents-asyncapi-fa8ef63f28e0"
+      },
+      {
+        "type": "article",
+        "title": "Google Cloud Pub/Sub + AsyncAPI",
+        "date": {
+          "year": 2023,
+          "month": "May"
+        },
+        "link": "https://medium.com/google-cloud/google-cloud-pub-sub-asyncapi-6ea3c1ed3c49"
+      },
+      {
+        "type": "presentation",
+        "title": "Open standards for building event-driven applications in the cloud",
+        "date": {
+          "year": 2023,
+          "month": "June"
+        },
+        "link": "https://www.youtube.com/watch?v=6Igp4DhK_hE"
       }
     ]
   }

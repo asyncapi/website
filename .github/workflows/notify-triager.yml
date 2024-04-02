@@ -1,0 +1,95 @@
+name: Notify Triagers
+
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize, edited, ready_for_review]
+
+jobs:
+  Notify-triagers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4.1.1
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Get commit message
+        id: commit-message
+        run: |
+          commit_message=$(git log --format=%B -n 1 ${{ github.event.pull_request.head.sha }})
+          echo "commit_message=$commit_message" >> $GITHUB_OUTPUT
+
+      - name: Check if last commit is a merge commit
+        id: check-merge-branch
+        run: |
+          if [[ "${{ steps.commit-message.outputs.commit_message }}" == *"Merge branch"* ]]; then
+            echo "Last commit is a merge commit"
+            echo "isMergeCommit=true" >> $GITHUB_OUTPUT
+          else
+            echo "Last commit message does not contain Merge branch"
+            echo "isMergeCommit=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check PR Changes for .md files
+        id: md-pr-changes
+        uses: tj-actions/changed-files@aa08304bd477b800d468db44fe10f6c61f7f7b11 # version 42.1.0 https://github.com/tj-actions/changed-files/releases/tag/v42.1.0
+        with:
+          files: |
+            **.md
+
+      - name: Check PR Changes for non-.md files
+        id: non-md-pr-changes
+        uses: tj-actions/changed-files@aa08304bd477b800d468db44fe10f6c61f7f7b11 # version 42.1.0 https://github.com/tj-actions/changed-files/releases/tag/v42.1.0
+        with:
+          files: |
+            !**.md
+
+
+      - name: Extract Doc Triage Maintainers
+        id: doc-triager
+        run: |
+          docTriagers=$(grep '^#' CODEOWNERS | tail -n 2 | head -n 1)
+          echo "docTriagers: $docTriagers"
+          prefix="#docTriagers: "
+          docTriagers=${docTriagers#$prefix}
+          echo "docTriagers=$docTriagers" >> $GITHUB_ENV
+
+      - name: Extract Code Triage Maintainers
+        id: code-triager
+        run: |
+          codeTriagers=$(grep '^#' CODEOWNERS | tail -n 1)
+          echo "codeTriagers: $codeTriagers"
+          prefix="#codeTriagers: "
+          codeTriagers=${codeTriagers#$prefix}
+          echo "codeTriagers=$codeTriagers" >> $GITHUB_ENV
+
+      - name: Add Reviewers for code files
+        if: steps.check-merge-branch.outputs.isMergeCommit == 'false' && steps.non-md-pr-changes.outputs.any_changed == 'true'
+        run: |
+          IFS=' ' read -r -a codeTriagers <<< "${{ env.codeTriagers }}"
+          reviewers=$(printf ', "%s"' "${codeTriagers[@]}")
+          reviewers=[${reviewers:2}]
+          curl \
+          -X POST \
+          -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/requested_reviewers \
+          -d "{
+            \"reviewers\": $reviewers
+          }"
+
+      - name: Add Reviewers for doc files
+        if: steps.check-merge-branch.outputs.isMergeCommit == 'false' && steps.md-pr-changes.outputs.any_changed == 'true'
+        run: |
+          IFS=' ' read -r -a docTriagers <<< "${{ env.docTriagers }}"
+          reviewers=$(printf ', "%s"' "${docTriagers[@]}")
+          reviewers=[${reviewers:2}]
+          curl \
+          -X POST \
+          -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/requested_reviewers \
+          -d "{
+            \"reviewers\": $reviewers
+          }"

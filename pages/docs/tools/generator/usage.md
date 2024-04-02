@@ -4,10 +4,10 @@ weight: 30
 ---
 
 There are two ways to use the generator:
-- [Generator CLI](#generator-cli)
+- [AsyncAPI CLI](#generator-cli)
 - [Generator library](#using-as-a-modulepackage)
 
-## Generator CLI
+## AsyncAPI CLI
 ```bash
 Usage: asyncapi generate fromTemplate <asyncapi> <template> [<options>]
 
@@ -43,7 +43,7 @@ npm install <folder>
 
 ### Global templates installed with `yarn` or `npm`
 
-You can preinstall templates globally before installing the generator CLI. The generator first tries to locate the template in local dependencies; if absent it checks where the global generator packages are installed.
+You can preinstall templates globally before installing the [AsyncAPI CLI](https://www.asyncapi.com/docs/tools/cli). The generator first tries to locate the template in local dependencies; if absent it checks where the global generator packages are installed.
 
 ```bash
 npm install -g @asyncapi/html-template@0.16.0
@@ -111,14 +111,15 @@ Install [Docker](https://docs.docker.com/get-docker/) first, then use docker to 
 docker run --rm -it \
 -v [ASYNCAPI SPEC FILE LOCATION]:/app/asyncapi.yml \
 -v [GENERATED FILES LOCATION]:/app/output \
-asyncapi/generator [COMMAND HERE]
+asyncapi/cli [COMMAND HERE]
 
-# Example that you can run inside the generator directory after cloning this repository. First, you specify the mount in the location of your AsyncAPI specification file and then you mount it in the directory where the generation result should be saved.
+# Example that you can run inside the cli directory after cloning this repository. First, you specify the mount in the location of your AsyncAPI specification file and then you mount it in the directory where the generation result should be saved.
 docker run --rm -it \
--v ${PWD}/test/docs/dummy.yml:/app/asyncapi.yml \
--v ${PWD}/output:/app/output \
-asyncapi/generator -o /app/output /app/asyncapi.yml @asyncapi/html-template --force-write
+   -v ${PWD}/test/fixtures/asyncapi_v1.yml:/app/asyncapi.yml \
+   -v ${PWD}/output:/app/output \
+   asyncapi/cli generate fromTemplate -o /app/output /app/asyncapi.yml @asyncapi/html-template --force-write
 ```
+Note: Use ``` ` ``` instead of `\` for Windows.
 
 ### CLI usage with `npx` instead of `npm`
 
@@ -148,4 +149,4 @@ try {
 }
 ```
 
-See the [API documentation](api.md) for more examples and full API reference information.
+See the [API documentation](api) for more examples and full API reference information.

@@ -1,6 +1,4 @@
 import React from 'react';
-import NavBar from '../components/navigation/NavBar';
-import StickyNavbar from '../components/navigation/StickyNavbar';
 import Heading from '../components/typography/Heading';
 import AnnouncementHero from '../components/campaigns/AnnoucementHero';
 import Button from '../components/buttons/Button';
@@ -9,9 +7,6 @@ function ErrorPage() {
   const image = '/img/illustrations/illustration.webp';
   return (
     <div className="text-center">
-      <StickyNavbar>
-        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
-      </StickyNavbar>
      
       <div className='items-center justify-center mt-20 flex-col md:flex-row'>
           <div>
@@ -27,7 +22,6 @@ function ErrorPage() {
                 </Heading>
               </div>
             </header>
-            <AnnouncementHero />
           </div>
           <div>
             <img src={image} className="mx-auto w-52" />
