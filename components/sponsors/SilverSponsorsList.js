@@ -13,5 +13,10 @@ export const Silversponsors = [
       name: 'HiveMQ',
       url: 'https://www.hivemq.com/',
       image: '/img/sponsors/hivemq_logo.png'
+    },
+    {
+      name: 'Aklivity',
+      url: 'https://www.aklivity.io/',
+      image: '/img/sponsors/aklivity_logo.png'
     }
   ];

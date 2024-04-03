@@ -1,5 +1,23 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/h8b5TxnDFb4/hqdefault.jpg",
+    "title": "Community Meeting, Tuesday April 2nd 2024",
+    "description": "https://github.com/asyncapi/community/issues/1123.",
+    "videoId": "h8b5TxnDFb4"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/nHPxZxngifc/hqdefault.jpg",
+    "title": "Community Growth Working Group - 27th of March",
+    "description": "https://github.com/asyncapi/community/issues/1118.",
+    "videoId": "nHPxZxngifc"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/6pL3jGIzR3k/hqdefault.jpg",
+    "title": "AACoT&#39;24 Community Meeting, Wednesday March 27th 2024",
+    "description": "https://github.com/asyncapi/community/issues/1110.",
+    "videoId": "6pL3jGIzR3k"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/tgirxaSueMw/hqdefault.jpg",
     "title": "Essential building blocks (26th of March)",
     "description": "https://github.com/asyncapi/community/issues/1107.",
@@ -10,23 +28,5 @@
     "title": "AsyncAPI Marketing in 2024 - kick off",
     "description": "https://github.com/asyncapi/community/issues/1109.",
     "videoId": "lLE8ta4xn3g"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/ANuUwrtv1CI/hqdefault.jpg",
-    "title": "Google Summer of Code 2024 - FAQ, 14:00 UTC Thursday March 21st 2024",
-    "description": "https://github.com/asyncapi/community/issues/1103.",
-    "videoId": "ANuUwrtv1CI"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/AlIm6AIEjbk/hqdefault.jpg",
-    "title": "Community Meeting, 8:00 UTC Tuesday March 19th 2024",
-    "description": "https://github.com/asyncapi/community/issues/1103.",
-    "videoId": "AlIm6AIEjbk"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/4t4nAmDekDA/hqdefault.jpg",
-    "title": "AACoT&#39;24 Community Meeting, Wednesday February 7th 2024",
-    "description": "https://github.com/asyncapi/community/issues/1041.",
-    "videoId": "4t4nAmDekDA"
   }
 ]
