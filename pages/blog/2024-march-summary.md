@@ -13,8 +13,14 @@ authors:
 excerpt: 'Community update for March'
 featured: true
 ---
+We are excited to announce and welcome our new Silver sponsor, [Aklivity](https://www.aklivity.io/), to the AsyncAPI Initiative.
 
-We are excited to have [RedHat](https://www.redhat.com/en) back as our Bronze sponsor for the AsyncAPI Initiative in 2024. We extend our gratitude to [Hugo Guerrero](https://www.linkedin.com/in/hugo-guerrero), our AsyncAPI Ambassador, for connecting the right people from RedHat.
+
+<a href='https://www.aklivity.io/' target='_blank'>
+<img src='/img/sponsors/aklivity_logo.png' alt='aklivity' width='500px' />
+</a>
+
+Additionally, we welcome back [RedHat](https://www.redhat.com/en) back as our Bronze sponsor for the AsyncAPI Initiative in 2024. We extend our gratitude to [Hugo Guerrero](https://www.linkedin.com/in/hugo-guerrero), our AsyncAPI Ambassador, for connecting the right people from RedHat.
 
 <a href='https://www.redhat.com/' target='_blank'>
 <img src='/img/sponsors/redhat.svg' alt='redhat' width='500px' />
@@ -43,10 +49,14 @@ Check out [this live demo on Test Containers and AsyncAPI/Kafka](https://www.you
 
 Be sure to test and try [Springwolf's live demo and documentation](https://www.springwolf.dev/).
 
-- ### IBM 
+- ### Java Code Generator
 We are excited to share that the [Java code generator](https://lnkd.in/d4jeDmMv) now supports AsyncAPI v3 and is the first generator template to support v3. Thanks to [Dale Lane](https://www.linkedin.com/in/dalelane/) and other IBM folks for contributing to this milestone in developing AsyncAPI tools. 
 
 Read how you can [Accelerate event-driven projects with AsyncAPI v3](https://community.ibm.com/community/user/integration/blogs/dale-lane1/2024/03/21/asyncapi-3) for more details.
+
+- ### jasyncapi
+The [jasyncapi](https://github.com/asyncapi/jasyncapi) is a Java code-first tool for the AsyncAPI specification that now supports V3, thanks to [Pavel Bodiachevskii](https://www.linkedin.com/in/pavel-bo/) and other contributors. Be sure to [check the latest jasyncapi release](https://github.com/asyncapi/jasyncapi/releases/tag/1.0.0-EAP-3) for breaking changes.
+
 
 ## AsyncAPI Bounty Program
 We are excited that the AsyncAPI Bounty Program Q2 is already underway after the success of the first quarter. Though we had one issue that wasn't completed,  it resulted in the participant's suspension until the 3rd quarter; we are happy that the ball is rolling forward. 
@@ -56,7 +66,10 @@ We still have a few issues that haven't been assigned yet. If you are interested
 ## Community Discussions
 
 - ### AsyncAPI Working Groups
-After officially establishing Working Groups in the initiative, we are happy to share that we now have a Developer Experience working group. This working group aims to empower the AsyncAPI user journey through intuitive onboarding, tools, and a frictionless experience. If you want to join the working group or would like to read more about it, please check out the [Developer Experience Working Group](https://github.com/orgs/asyncapi/discussions/1099) discussion.
+After officially establishing Working Groups in the initiative, we are happy to share that we now have the following:
+- **Developer Experience Working Group**. This group aims to empower the AsyncAPI user journey through intuitive onboarding, tools, and a frictionless experience. If you want to join the working group or would like to read more about it, please check out the [Developer Experience Working Group](https://github.com/orgs/asyncapi/discussions/1099) discussion.
+- **Community Growth Working Group**. This group's goal is to ensure that the AsyncAPI community grows in a healthy and sustainable way. If you're interested, you can participate by commenting on the[ Community Growth Working Group](https://github.com/orgs/asyncapi/discussions/1094) discussion.
+- **Essential Building Blocks Working Group**. The goal is to provide fundamental building blocks that enable a similar developer experience across languages such as C#/.NET, Kotlin, Java, Go, Python,  and TypeScript/JavaScript. Anyone can join and contribute by sharing your interest in the [Essential Building Blocks Working Group](https://github.com/orgs/asyncapi/discussions/1128) discussion.
 
 - ### Marketing
 We have started moving forward with the marketing discussion and had a meeting to streamline the work; please [watch the marketing recording](https://www.youtube.com/watch?v=lLE8ta4xn3g) or [listen through Spotify](https://open.spotify.com/episode/5lTXkF1uYogJS7WM1x2ukN?si=5856a9bab3414439) for more context. One way we are moving forward with the discussion is to create a marketing working group and start inviting experts and sponsors to join us. We have also outlined some recommendations for hiring someone full-time to handle this aspect. If you want to help us with our planned steps or join the efforts, please [share your comments on the Marketing activity discussion](https://github.com/orgs/asyncapi/discussions/1062).
