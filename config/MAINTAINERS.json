@@ -71,6 +71,18 @@
         ]
     },
     {
+        "name": "Ashish Padhy",
+        "github": "Shurtu-gal",
+        "linkedin": "ashish-padhy3023",
+        "slack": "U0572R8J927",
+        "twitter": "Shurtu_Gal",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "github-action-for-cli"
+        ]
+    },
+    {
         "name": "Cameron Rushton",
         "github": "cameronrushton",
         "slack": "U01DVKKAV5K",
@@ -363,6 +375,19 @@
         ]
     },
     {
+        "name": "Samir AMZANI",
+        "github": "Amzani",
+        "slack": "U01N6AW5V5G",
+        "twitter": "amzani",
+        "linkedin": "amzani",
+        "availableForHire": false,
+        "company": "Postman",
+        "isTscMember": true,
+        "repos": [
+            "studio"
+        ]
+    },
+    {
         "name": "Sergio Moya",
         "github": "smoya",
         "linkedin": "smoya",
@@ -372,16 +397,18 @@
         "company": "Postman",
         "isTscMember": true,
         "repos": [
-            "bindings",
-            "converter-go",
-            "event-gateway",
-            "go-watermill-template",
-            "infra",
-            "parser-api",
-            "parser-go",
-            "server-api",
             "spec",
             "spec-json-schemas",
+            "bindings",
+            "parser-api",
+            "parser-js",
+            "avro-schema-parser",
+            "openapi-schema-parser",
+            "raml-dt-schema-parser",
+            "server-api",
+            "parser-go",
+            "converter-go",
+            "go-watermill-template",
             "template-for-go-projects"
         ]
     },
@@ -659,6 +686,40 @@
         "repos": [
             "website",
             "community"
+        ]
+    },
+    {
+        "name": "Ashmit JaiSarita Gupta",
+        "github": "devilkiller-ag",
+        "linkedin": "jaisarita",
+        "twitter": "jaisarita",
+        "slack": "U062LA14E58",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "modelina"
+        ]
+    },
+    {
+        "name": "Sambhav Gupta",
+        "github": "sambhavgupta0705",
+        "linkedin": "sambhavgupta0705",
+        "twitter": "sambhavgupta75",
+        "slack": "U04630DU3N3",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "website"
+        ]
+    },
+    {
+        "name": "Viacheslav Turovskyi",
+        "github": "aeworxet",
+        "slack": "U01G3U01SVC",
+        "availableForHire": false,
+        "isTscMember": false,
+        "repos": [
+            "bundler"
         ]
     }
 ]

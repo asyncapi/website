@@ -132,6 +132,9 @@ module.exports = {
           minimize: '#ffbd2e',
           maximize: '#28c93f',
         },
+        violet:'#8054F2',
+        darkGunMetal:'#212526',
+        linkedin: '#0077b5'
       },
       scale: {
         25: '.25',

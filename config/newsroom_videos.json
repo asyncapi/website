@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/-OsMet9h_dg/hqdefault.jpg",
-    "title": "3 Request/Reply Use Cases",
-    "description": "Explain Request/Reply use cases to me like I'm a 5 year old.",
-    "videoId": "-OsMet9h_dg"
+    "image_url": "https://i.ytimg.com/vi/h8b5TxnDFb4/hqdefault.jpg",
+    "title": "Community Meeting, Tuesday April 2nd 2024",
+    "description": "https://github.com/asyncapi/community/issues/1123.",
+    "videoId": "h8b5TxnDFb4"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/WCK9_ZDv6K4/hqdefault.jpg",
-    "title": "Quoi de neuf dans AsyncAPI v3 ? Découvrez le en live avec la migration du use-case Adeo(14th Dece…",
-    "description": "Participez à ce live pour découvrir les nouveautés de la V3 et comment migrer une version 2 en version 3 sur un use-case de ...",
-    "videoId": "WCK9_ZDv6K4"
+    "image_url": "https://i.ytimg.com/vi/nHPxZxngifc/hqdefault.jpg",
+    "title": "Community Growth Working Group - 27th of March",
+    "description": "https://github.com/asyncapi/community/issues/1118.",
+    "videoId": "nHPxZxngifc"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/yOc_fI-i9C8/hqdefault.jpg",
-    "title": "Community Meeting(12th December)",
-    "description": "https://github.com/asyncapi/community/issues/979.",
-    "videoId": "yOc_fI-i9C8"
+    "image_url": "https://i.ytimg.com/vi/6pL3jGIzR3k/hqdefault.jpg",
+    "title": "AACoT&#39;24 Community Meeting, Wednesday March 27th 2024",
+    "description": "https://github.com/asyncapi/community/issues/1110.",
+    "videoId": "6pL3jGIzR3k"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/g6CPg77Lf5Q/hqdefault.jpg",
-    "title": "AsyncAPI Conf on Tour 2023 in Bangalore, India",
-    "description": "AACoT'23 Bangalore Edition live from Postman Offices in India.",
-    "videoId": "g6CPg77Lf5Q"
+    "image_url": "https://i.ytimg.com/vi/tgirxaSueMw/hqdefault.jpg",
+    "title": "Essential building blocks (26th of March)",
+    "description": "https://github.com/asyncapi/community/issues/1107.",
+    "videoId": "tgirxaSueMw"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/p68PUXDMsks/hqdefault.jpg",
-    "title": "Community Meeting(November 28th, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/918.",
-    "videoId": "p68PUXDMsks"
+    "image_url": "https://i.ytimg.com/vi/lLE8ta4xn3g/hqdefault.jpg",
+    "title": "AsyncAPI Marketing in 2024 - kick off",
+    "description": "https://github.com/asyncapi/community/issues/1109.",
+    "videoId": "lLE8ta4xn3g"
   }
 ]
