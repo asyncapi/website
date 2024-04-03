@@ -20,7 +20,7 @@ We are excited to announce and welcome our new Silver sponsor, [Aklivity](https:
 <img src='/img/sponsors/aklivity_logo.png' alt='aklivity' width='500px' />
 </a>
 
-Additionally, we welcome back [RedHat](https://www.redhat.com/en) back as our Bronze sponsor for the AsyncAPI Initiative in 2024. We extend our gratitude to [Hugo Guerrero](https://www.linkedin.com/in/hugo-guerrero), our AsyncAPI Ambassador, for connecting the right people from RedHat.
+Additionally, we welcome back [RedHat](https://www.redhat.com/en) back as our Bronze sponsor for 2024. We extend our gratitude to [Hugo Guerrero](https://www.linkedin.com/in/hugo-guerrero), our AsyncAPI Ambassador, for connecting the right people from RedHat.
 
 <a href='https://www.redhat.com/' target='_blank'>
 <img src='/img/sponsors/redhat.svg' alt='redhat' width='500px' />
