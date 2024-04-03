@@ -31,10 +31,8 @@ jobs:
             echo "isMergeCommit=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Checkout base repository master branch
-        run: |
-          git fetch https://github.com/$GITHUB_REPOSITORY.git master:base_master
-          git checkout base_master
+      - name: Checkout Repository
+        uses: actions/checkout@v4.1.1
 
       - name: Check PR Changes for .md files
         id: md-pr-changes
