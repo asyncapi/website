@@ -35,11 +35,11 @@ The call for speakers for [AACoT'24 Helsinki Edition](https://conference.asyncap
 If you missed the deadline for submitting a talk, we are happy to share that the proposals for AACoT'24 London will soon be open. Be sure to start drafting your proposals and prepare to join us in September.
 
 ## Spec X Tooling
-It's been a while since we released the [AsyncAPI v3](https://www.asyncapi.com/blog/release-notes-3.0.0), and its adoption and support over the past few months have been amazing. We are happy to share some of the projects that are doing cool stuff with v3:
+It's been a while since we released [AsyncAPI v3](https://www.asyncapi.com/blog/release-notes-3.0.0), and its adoption and support over the past few months have been amazing. We are happy to share some of the projects that are doing cool stuff with v3:
 
 
 - ### Microcks
-[Microcks](https://microcks.io/) is an open-source cloud-native platform for mocking and testing contracts. It is designed to work in isolation and cut dependencies, making contract testing easier. Microcks supports various protocols, including AsyncAPI, REST, and OpenAPI. It is the first open-source tool under the CNCF Sandbox project to support AsyncAPI v3 officially; [read all about it in the Microcks v1.9 release article](https://microcks.io/blog/microcks-1.9.0-release/).
+[Microcks](https://microcks.io/) is an open-source cloud-native platform for mocking and testing contracts. It is designed to work in isolation and cut dependencies, making contract testing easier. Microcks supports various protocols, including AsyncAPI, REST, and OpenAPI. It is the first open-source tool under the CNCF Sandbox project to officially support AsyncAPI v3; read all about it in the [Microcks v1.9 release article](https://microcks.io/blog/microcks-1.9.0-release/).
 
 Check out [this live demo on Test Containers and AsyncAPI/Kafka](https://www.youtube.com/watch?v=VsTj0hyYiAA&t=262s) to learn more.
 
@@ -65,13 +65,13 @@ We still have a few issues that haven't been assigned yet. If you are interested
 
 ## Community Discussions
 
-- ### AsyncAPI Working Groups
+### AsyncAPI Working Groups
 After officially establishing Working Groups in the initiative, we are happy to share that we now have the following:
-- **Developer Experience Working Group**. This group aims to empower the AsyncAPI user journey through intuitive onboarding, tools, and a frictionless experience. If you want to join the working group or would like to read more about it, please check out the [Developer Experience Working Group](https://github.com/orgs/asyncapi/discussions/1099) discussion.
-- **Community Growth Working Group**. This group's goal is to ensure that the AsyncAPI community grows in a healthy and sustainable way. If you're interested, you can participate by commenting on the[ Community Growth Working Group](https://github.com/orgs/asyncapi/discussions/1094) discussion.
-- **Essential Building Blocks Working Group**. The goal is to provide fundamental building blocks that enable a similar developer experience across languages such as C#/.NET, Kotlin, Java, Go, Python,  and TypeScript/JavaScript. Anyone can join and contribute by sharing your interest in the [Essential Building Blocks Working Group](https://github.com/orgs/asyncapi/discussions/1128) discussion.
+- **Developer Experience Working Group**. This group aims to empower the AsyncAPI user journey through intuitive onboarding, tools, and a frictionless experience. If you want to join the working group or would like to read more about it, please check out the [Developer Experience Working Group discussion](https://github.com/orgs/asyncapi/discussions/1099).
+- **Community Growth Working Group**. This group's goal is to ensure that the AsyncAPI community grows in a healthy and sustainable way. If you're interested, you can participate by commenting on the [Community Growth Working Group discussion](https://github.com/orgs/asyncapi/discussions/1094).
+- **Essential Building Blocks Working Group**. The goal is to provide fundamental building blocks that enable a similar developer experience across languages such as C#/.NET, Kotlin, Java, Go, Python,  and TypeScript/JavaScript. Anyone can join and contribute by sharing their interest in the [Essential Building Blocks Working Group discussion](https://github.com/orgs/asyncapi/discussions/1128).
 
-- ### Marketing
+### Marketing
 We have started moving forward with the marketing discussion and had a meeting to streamline the work; please [watch the marketing recording](https://www.youtube.com/watch?v=lLE8ta4xn3g) or [listen through Spotify](https://open.spotify.com/episode/5lTXkF1uYogJS7WM1x2ukN?si=5856a9bab3414439) for more context. One way we are moving forward with the discussion is to create a marketing working group and start inviting experts and sponsors to join us. We have also outlined some recommendations for hiring someone full-time to handle this aspect. If you want to help us with our planned steps or join the efforts, please [share your comments on the Marketing activity discussion](https://github.com/orgs/asyncapi/discussions/1062).
 
 ## TSC x Ambassadors
