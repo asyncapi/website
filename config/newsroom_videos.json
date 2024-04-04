@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/6lVMY_Fc0Vs/hqdefault.jpg",
+    "title": "Cheat Sheet Poster - Content discussion, Wednesday April 3rd 2024",
+    "description": "https://github.com/asyncapi/community/issues/1126.",
+    "videoId": "6lVMY_Fc0Vs"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/h8b5TxnDFb4/hqdefault.jpg",
     "title": "Community Meeting, Tuesday April 2nd 2024",
     "description": "https://github.com/asyncapi/community/issues/1123.",
@@ -22,11 +28,5 @@
     "title": "Essential building blocks (26th of March)",
     "description": "https://github.com/asyncapi/community/issues/1107.",
     "videoId": "tgirxaSueMw"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/lLE8ta4xn3g/hqdefault.jpg",
-    "title": "AsyncAPI Marketing in 2024 - kick off",
-    "description": "https://github.com/asyncapi/community/issues/1109.",
-    "videoId": "lLE8ta4xn3g"
   }
 ]
