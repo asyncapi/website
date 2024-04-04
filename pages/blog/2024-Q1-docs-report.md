@@ -39,7 +39,7 @@ Presented below are the analytics for documentation sections developed during th
 |`tutorials/getting-started/request-reply` | 455   | 109  |
 
 
-### Top Searches: Algolia Analytics
+## Top Searches: Algolia Analytics
 We've identified the most popular searches within the AsyncAPI documentation, as tracked by our Algolia analytics. `Kafka` and `WebSocket` are amongst the most frequently searched terms in our documentation. 
 
 Here are the top 15 queries: 
@@ -125,6 +125,6 @@ E --> H
 
 ---
 
-### Contribute to AsyncAPI Documentation
+## Contribute to AsyncAPI Documentation
 
 To get started as a docs contributor, follow the steps in the [AsyncAPI Technical Writer Onboarding Checklist](https://github.com/asyncapi/community/blob/master/docs/onboarding-guide/docs-onboarding-checklist.md).
