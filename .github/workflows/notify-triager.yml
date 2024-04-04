@@ -31,7 +31,7 @@ jobs:
             echo "isMergeCommit=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Checkout Repository
+      - name: Checkout asyncapi/website Repository
         uses: actions/checkout@v4.1.1
 
       - name: Check PR Changes for .md files
