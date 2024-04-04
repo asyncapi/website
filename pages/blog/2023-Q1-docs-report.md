@@ -12,7 +12,6 @@ authors:
     link: https://www.linkedin.com/in/alejandra-quetzalli/
     byline: During Q1 2023, AsyncAPI Docs had 26,875 sessions and 13,506 unique users!
 excerpt: Did you know that you can contribute Docs to AsyncAPI as well? Code isn't the only way to contribute to OSS; Dev Docs are a huge help that benefit the entire OSS ecosystem.
-featured: true
 ---
 
 # AsyncAPI Documentation Report - Q1 2023
