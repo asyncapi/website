@@ -1,11 +1,12 @@
 import { useRouter } from 'next/router';
 
-import type { IPosts } from '@/types/post';
+import type { NavigationItems } from '@/types/context/DocsContext';
+import type { IPost, IPosts } from '@/types/post';
 
 import BlogContext from '../../context/BlogContext';
-import { getAllPosts, getPostBySlug } from '../../utils/api';
+import { getAllPosts, getDocBySlug, getPostBySlug } from '../../utils/api';
 import BlogLayout from './BlogLayout';
-// import DocsLayout from './DocsLayout';
+import DocsLayout from './DocsLayout';
 import GenericPostLayout from './GenericPostLayout';
 
 interface ILayoutProps {
@@ -19,18 +20,18 @@ interface ILayoutProps {
 export default function Layout({ children }: ILayoutProps): JSX.Element {
   const { pathname } = useRouter();
   const posts = getAllPosts();
-  // const allDocPosts = posts.docs.filter((p) => p.slug.startsWith('/docs/'));
+  const allDocPosts = posts.docs.filter((p) => p.slug.startsWith('/docs/')) as unknown as NavigationItems;
 
   if (pathname.startsWith('/docs')) {
-    // const post = getDocBySlug(posts.docs as IPost[], pathname);
+    const post = getDocBySlug(posts.docs as IPost[], pathname) as IPost;
 
-    return <></>;
-    // <div data-testid='Docs-main-container'>
-    //   <DocsLayout post={post} navItems={allDocPosts}>
-    //     {children}
-    //   </DocsLayout>
-    // </div>
-    // );
+    return (
+      <div data-testid='Docs-main-container'>
+        <DocsLayout post={post} navItems={allDocPosts}>
+          {children}
+        </DocsLayout>
+      </div>
+    );
   }
   if (pathname.startsWith('/blog/')) {
     const post = getPostBySlug(pathname, 'blog');
