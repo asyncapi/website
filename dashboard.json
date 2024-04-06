@@ -34,7 +34,7 @@
           "color": "f9dd4b"
         }
       ],
-      "score": 27.28158593117958
+      "score": 28.430284286176615
     },
     {
       "id": "I_kwDOBW5R_c5Pi3rO",
@@ -77,17 +77,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 22.112443333692923
-    },
-    {
-      "id": "PR_kwDOBW5R_c5paEWn",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: migrate navigation",
-      "author": "vishvamsinh28",
-      "resourcePath": "/asyncapi/website/pull/2765",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 21.25091956744515
     },
     {
       "id": "PR_kwDODou01c5Iv4zR",
@@ -190,6 +179,22 @@
           "color": "84b6eb"
         }
       ],
+      "score": 18.091999091203302
+    },
+    {
+      "id": "I_kwDODou01c5E_LV0",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Create onboarding for features of Studio",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/studio/issues/284",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
       "score": 17.517649913704783
     }
   ],
@@ -197,7 +202,7 @@
     {
       "id": "I_kwDOFDnrNc6DvxH4",
       "title": "[BUG] Missing on-workflow-trigger for update-docs-in-website action",
-      "isAssigned": true,
+      "isAssigned": false,
       "resourcePath": "/asyncapi/cli/issues/1301",
       "repo": "asyncapi/cli",
       "author": "Souvikns",
@@ -206,21 +211,6 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODou01c6C8lNQ",
-      "title": "Fix linting issues in studio-next",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/studio/issues/1029",
-      "repo": "asyncapi/studio",
-      "author": "Amzani",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -533,10 +523,6 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },

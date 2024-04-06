@@ -119,10 +119,38 @@
     "date": "2024-04-16T08:00:00.000Z"
   },
   {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=a3NvNHBzOWpzNW5vdGhyc3U1MXF2ZGM2MzQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1125",
+    "banner": "https://github.com/asyncapi/community/assets/40604284/d5358c67-20c3-48a9-b61c-cbea54bbf95c",
+    "date": "2024-04-30T08:00:00.000Z"
+  },
+  {
     "title": "Cheat Sheet Poster - Content discussion",
     "calLink": "https://www.google.com/calendar/event?eid=dHA1MWNlZTl2c3RkOWxwdTk4YzBkZWtxcGMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1126",
     "banner": "",
     "date": "2024-04-03T10:00:00.000Z"
+  },
+  {
+    "title": "Essential building blocks",
+    "calLink": "https://www.google.com/calendar/event?eid=c2pqamo4YXUwMWg1YmdqbDE3bXZncWpzb2cgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1144",
+    "banner": "",
+    "date": "2024-04-09T18:00:00.000Z"
+  },
+  {
+    "title": "AACoT'24 Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=NmJlNWE0dmlhZnZvNmwzNnRmNGp1OW1sNzQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1147",
+    "banner": "https://github.com/asyncapi/community/assets/66913810/8769dbe0-baef-42f7-b55e-74f5a288da55",
+    "date": "2024-04-10T14:00:00.000Z"
+  },
+  {
+    "title": "AACoT'24 Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=ZnZqMm41aDk3M2NxcWxnOXFyYWFqMDJrcW8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1148",
+    "banner": "https://github.com/asyncapi/community/assets/66913810/43114d9e-ee7f-4479-8714-475d67a374aa",
+    "date": "2024-04-24T14:00:00.000Z"
   }
 ]

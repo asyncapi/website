@@ -12,7 +12,6 @@ authors:
     link: https://www.linkedin.com/in/alejandra-quetzalli/
     byline: During Q4 2023, AsyncAPI Docs had a total of 19,267 sessions and 6,447 unique users.
 excerpt: In Q4, AsyncAPI docs had primary engagement across the tutorials and reference content buckets. 
-featured: true
 ---
 
 # AsyncAPI Documentation Report - Q4 2023
