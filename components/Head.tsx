@@ -8,22 +8,23 @@ import AppContext from '../context/AppContext';
 interface IHeadProps {
   title: string;
   description?: string;
-  image: string;
+  image?: string;
   rssTitle?: string;
   rssLink?: string;
 }
 
 /**
+ * @description The HeadComponent is the head of the page with the meta tags.
+ *
  * @param {string} props.title - The title of the page
  * @param {string} props.description - The description of the page
  * @param {string} props.image - The image of the page
  * @param {string} props.rssTitle - The RSS title of the page
  * @param {string} props.rssLink - The RSS link of the page
- * @description The head of the page with the meta tags
  */
 export default function HeadComponent({
   title,
-  description = `Open source tools to easily build and maintain your event-driven architecture. 
+  description = `Open source tools to easily build and maintain your event-driven architecture.
                 All powered by the AsyncAPI specification, the industry standard for defining asynchronous APIs.`,
   image = '/img/social/website-card.jpg',
   rssTitle = 'RSS Feed for AsyncAPI Initiative Blog',
