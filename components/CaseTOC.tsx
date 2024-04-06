@@ -78,11 +78,12 @@ const convertContentToTocItems = (content: any[], level: number = 1): TocItem[] 
  */
 function TOCItem({ item, index, currSelected, closeMenu }: TOCItemProps) {
   const [open, setOpen] = useState(false);
+  const active = useMemo(() => checkIfActive(item, currSelected), [item, currSelected]);
+
   const handleClick = () => {
     closeMenu();
     setOpen(false);
   };
-  const active = useMemo(() => checkIfActive(item, currSelected), [item, currSelected]);
 
   return (
     <>
