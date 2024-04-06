@@ -21,5 +21,12 @@ export const Silversponsors: SponsorType[] = [
     altText: 'HiveMQ',
     imageSrc: '/img/sponsors/hivemq_logo.png',
     imageClass: 'inline-block sm:h-9'
+  },
+  {
+    name: 'Aklivity',
+    website: 'https://www.aklivity.io/',
+    altText: 'Aklivity',
+    imageSrc: '/img/sponsors/aklivity_logo.png',
+    imageClass: 'inline-block sm:h-9'
   }
 ];
