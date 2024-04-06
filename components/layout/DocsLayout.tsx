@@ -12,7 +12,6 @@ import DocsContext from '../../context/DocsContext';
 import { getAllPosts } from '../../utils/api';
 import { DOCS_INDEX_NAME, SearchButton } from '../AlgoliaSearch';
 import DocsButton from '../buttons/DocsButton';
-import AnnouncementHero from '../campaigns/AnnouncementHero';
 import Feedback from '../Feedback';
 import Head from '../Head';
 import ArrowRight from '../icons/ArrowRight';
@@ -146,7 +145,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                 </div>
               )}
 
-              <AnnouncementHero className='ml-6' hideVideo={true} />
+              {/* <AnnouncementHero className='ml-6' hideVideo={true} /> */}
 
               <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
                 <TOC

@@ -72,7 +72,7 @@ export default function Heading({
   }
 
   return (
-    <Tag id={id} className={twMerge(textColor, classNames)}>
+    <Tag id={id} className={twMerge(`${textColor} ${classNames}`)}>
       {children}
     </Tag>
   );

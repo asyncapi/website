@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Button from '@/components/buttons/Button';
-import AnnouncementHero from '@/components/campaigns/AnnouncementHero';
 import Heading from '@/components/typography/Heading';
 
 /**
@@ -14,10 +13,10 @@ export default function ErrorPage() {
     <div className='text-center'>
       <div className='mt-20 flex-col items-center justify-center md:flex-row'>
         <div>
-          <AnnouncementHero className='my-4' />
+          {/* <AnnouncementHero className='my-4' /> */}
           <header className='mt-12 px-2 '>
             <div className='text-center'>
-              <Heading className='mb-4 md:text-sm'>
+              <Heading className='mb-4'>
                 Oops, The page you are looking
                 <span className='leading-12 block md:-mt-4'> for doesn&apos;t exist</span>
               </Heading>
