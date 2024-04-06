@@ -9,7 +9,7 @@ import Link from 'next/link';
 import NavItemDropdown from '../icons/NavItemDropdown';
 import { useState } from 'react';
 
-export default function MobileNavMenu({ onClickClose = () => {} }) {
+export default function MobileNavMenu({ onClickClose = () => {},LanguageSelector }) {
   const [open, setOpen] = useState();
   function showMenu(menu) {
     if (open === menu) {
@@ -30,6 +30,7 @@ export default function MobileNavMenu({ onClickClose = () => {} }) {
                 </a>
               </Link>
               <div className="flex flex-row items-center justify-content -mr-2" data-testid="MobileNav-button">
+                {LanguageSelector}
                 <SearchButton
                   className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
                   aria-label="Open Search"
