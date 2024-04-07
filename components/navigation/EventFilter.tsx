@@ -1,16 +1,14 @@
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 
+import type { Event } from '@/types/pages/events/Event';
+
 import { getEvents } from '../../utils/staticHelpers';
 
 enum ActiveState {
   All = 'All',
   Upcoming = 'Upcoming',
   Recorded = 'Recorded'
-}
-
-interface Event {
-  date: moment.Moment;
 }
 
 interface EventFilterProps {
@@ -37,15 +35,15 @@ export default function EventFilter({ data, setData }: EventFilterProps) {
         break;
       case ActiveState.Upcoming:
         setData(
-          getEvents(data).filter((a: Event) => {
-            return a.date.format() > currentDate;
+          getEvents(data).filter((event: Event) => {
+            return moment(event.date).format() > currentDate;
           })
         );
         break;
       case ActiveState.Recorded:
         setData(
-          getEvents(data).filter((a: Event) => {
-            return a.date.format() < currentDate;
+          getEvents(data).filter((event: Event) => {
+            return moment(event.date).format() < currentDate;
           })
         );
         break;
