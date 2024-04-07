@@ -5,7 +5,7 @@ import Caption from '../Caption';
 import IconClipboard from '../icons/Clipboard';
 
 interface CodeBlockProps {
-  children: string;
+  children?: string;
   codeBlocks?: { code: string; title?: string; language?: string }[];
   className?: string;
   highlightClassName?: string;
@@ -196,7 +196,7 @@ const theme: Theme = {
  * @param {string} props.title - The title of the code block (default is the specified language).
  */
 export default function CodeBlock({
-  children,
+  children = '',
   codeBlocks,
   className = '',
   highlightClassName = '',
