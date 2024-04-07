@@ -9,6 +9,7 @@ import ScrollButton from '@/components/buttons/ScrollButton';
 import Banner from '@/components/campaigns/Banner';
 import Footer from '@/components/footer/Footer';
 import Layout from '@/components/layout/Layout';
+import { MDXProvider } from '@/components/MDX';
 import NavBar from '@/components/navigation/NavBar';
 import StickyNavbar from '@/components/navigation/StickyNavbar';
 import AppContext from '@/context/AppContext';
@@ -28,28 +29,30 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   };
 
   return (
-    <AppContext.Provider value={{ path: router.asPath }}>
-      <I18nProvider i18n={i18n}>
+    <I18nProvider i18n={i18n}>
+      <AppContext.Provider value={{ path: router.asPath }}>
         <Head>
           <script async defer src='https://buttons.github.io/buttons.js'></script>
         </Head>
-        <AlgoliaSearch>
-          <div className='flex min-h-screen flex-col'>
-            <Banner />
-            <StickyNavbar>
-              <NavBar className='mx-auto block max-w-screen-xl px-4 sm:px-6 lg:px-8' />
-            </StickyNavbar>
-            <Layout>
-              <Component {...pageProps} />
-              <ScrollButton />
-            </Layout>
-            <div className='mt-auto'>
-              <Footer />
+        <MDXProvider>
+          <AlgoliaSearch>
+            <div className='flex min-h-screen flex-col'>
+              <Banner />
+              <StickyNavbar>
+                <NavBar className='mx-auto block max-w-screen-xl px-4 sm:px-6 lg:px-8' />
+              </StickyNavbar>
+              <Layout>
+                <Component {...pageProps} />
+                <ScrollButton />
+              </Layout>
+              <div className='mt-auto'>
+                <Footer />
+              </div>
             </div>
-          </div>
-        </AlgoliaSearch>
-      </I18nProvider>
-    </AppContext.Provider>
+          </AlgoliaSearch>
+        </MDXProvider>
+      </AppContext.Provider>
+    </I18nProvider>
   );
 }
 

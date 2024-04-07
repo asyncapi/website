@@ -145,6 +145,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                 </div>
               )}
 
+              {/* @TODO Will uncomment the component once it is in use */}
               {/* <AnnouncementHero className='ml-6' hideVideo={true} /> */}
 
               <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>

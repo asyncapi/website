@@ -10,6 +10,11 @@ import SponsorshipTiers from '../components/FinancialSummary/SponsorshipTiers';
 import SuccessStories from '../components/FinancialSummary/SuccessStories';
 import Container from '../components/layout/Container';
 
+/**
+ * @description The FinancialSummary is the financial summary page of the website.
+ * It contains the AsyncAPI summary, sponsorship tiers, other forms, expense breakdown,
+ * bar chart, success stories, and contact us components.
+ */
 export default function FinancialSummary() {
   const [windowWidth, setWindowWidth] = useState<number>(0);
 
@@ -19,6 +24,7 @@ export default function FinancialSummary() {
     setWindowWidth(window.innerWidth);
   };
 
+  // Handle window resize event to update the window width state value for responsive design purposes
   useEffect(() => {
     handleResizeRef.current!();
     window.addEventListener('resize', handleResizeRef.current!);

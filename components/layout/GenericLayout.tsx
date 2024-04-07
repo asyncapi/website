@@ -38,6 +38,7 @@ export default function GenericLayout({
       <Head title={title} description={description} image={image} />
       <Container wide={wide}>
         <div data-testid='GenericLayout-banner'>
+          {/* @TODO Will uncomment the component once it is in use */}
           {/* <AnnouncementHero
             className={`m-4 text-center ${hideBanner && 'hidden'}`}
             small={true}
