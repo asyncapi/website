@@ -11,8 +11,8 @@ import Button from '../../components/buttons/Button'
 export default function GeneratorPage() {
   function renderButtons () {
     return (
-      <div className="mt-8">
-        {/* <Button
+      <div className="mt-8 flex flex-col sm:flex-row sm:w-full gap-2">
+       {/* <Button
           text="Learn more"
           href="/docs/tools/generator"
           iconPosition="left"
@@ -23,7 +23,7 @@ export default function GeneratorPage() {
           className="ml-2 block mt-2 md:mt-0 md:inline-block w-full sm:w-auto"
           href="https://www.github.com/asyncapi/generator"
         />
-       <Button text="View Docs" href="/docs/tools/generator" className="ml-2 mt-2 md:mt-0 w-full sm:w-auto"/>
+       <Button text="View Docs" href="/docs/tools/generator" className="w-full sm:w-auto"/>
       </div>
     );
   }
