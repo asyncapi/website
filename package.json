@@ -106,6 +106,7 @@
     "@types/react-dom": "^18",
     "@types/react-syntax-highlighter": "^15.5.11",
     "@types/react-text-truncate": "^0.14.4",
+    "@types/react-youtube-embed": "^1.0.4",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
     "dedent": "^1.5.1",
