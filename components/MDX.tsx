@@ -84,6 +84,9 @@ interface MermaidDiagramProps {
 function MermaidDiagram({ graph }: MermaidDiagramProps) {
   const [svg, setSvg] = useState<string | null>(null);
 
+  /**
+   * @description Renders the Mermaid diagram.
+   */
   useLayoutEffect(() => {
     if (!graph) {
       return;
