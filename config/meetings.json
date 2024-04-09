@@ -119,13 +119,6 @@
     "date": "2024-04-16T08:00:00.000Z"
   },
   {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=a3NvNHBzOWpzNW5vdGhyc3U1MXF2ZGM2MzQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1125",
-    "banner": "https://github.com/asyncapi/community/assets/40604284/d5358c67-20c3-48a9-b61c-cbea54bbf95c",
-    "date": "2024-04-30T08:00:00.000Z"
-  },
-  {
     "title": "Cheat Sheet Poster - Content discussion",
     "calLink": "https://www.google.com/calendar/event?eid=dHA1MWNlZTl2c3RkOWxwdTk4YzBkZWtxcGMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1126",
@@ -152,5 +145,12 @@
     "url": "https://github.com/asyncapi/community/issues/1148",
     "banner": "https://github.com/asyncapi/community/assets/66913810/43114d9e-ee7f-4479-8714-475d67a374aa",
     "date": "2024-04-24T14:00:00.000Z"
+  },
+  {
+    "title": "Community Growth Working Group",
+    "calLink": "https://www.google.com/calendar/event?eid=NWluOTRmcG9vYjVjcWoydjVocDAzbjJtb2sgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1154",
+    "banner": "",
+    "date": "2024-04-09T14:00:00.000Z"
   }
 ]
