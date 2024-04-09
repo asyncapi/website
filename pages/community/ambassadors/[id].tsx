@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { Ambassador } from '@/types/pages/community/Ambassador';
+import type { Ambassador } from '@/types/pages/community/Community';
 import { HeadingTypeStyle } from '@/types/typography/Heading';
 
 import IconGithub from '../../../components/icons/Github';

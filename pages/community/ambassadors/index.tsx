@@ -2,7 +2,7 @@ import { sortBy } from 'lodash';
 import Link from 'next/link';
 import React from 'react';
 
-import type { Ambassador } from '@/types/pages/community/Ambassador';
+import type { Ambassador } from '@/types/pages/community/Community';
 import { HeadingTypeStyle } from '@/types/typography/Heading';
 
 import Button from '../../../components/buttons/Button';

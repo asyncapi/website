@@ -2,7 +2,7 @@
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import React, { useState } from 'react';
 
-import type { Event } from '@/types/pages/events/Event';
+import type { Event } from '@/types/pages/community/Community';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 

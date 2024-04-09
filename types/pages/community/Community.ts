@@ -1,3 +1,11 @@
+export interface Event {
+  title: string;
+  calLink: string;
+  url: string;
+  banner: string;
+  date: string;
+}
+
 export interface Contribution {
   title: string;
   link: string;
@@ -22,4 +30,17 @@ export interface Ambassador {
   githubUrl?: string;
   linkedinUrl?: string;
   twitterUrl?: string;
+};
+
+export interface Tsc {
+  name: string;
+  avatarUrl?: string;
+  isTscMember: boolean;
+  availableForHire: boolean;
+  github: string;
+  linkedin?: string;
+  slack: string;
+  twitter?: string;
+  company?: string;
+  repos: any;
 };
