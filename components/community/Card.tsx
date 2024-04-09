@@ -12,13 +12,13 @@ import Paragraph from '../typography/Paragraph';
 interface CardProps {
   icon: string;
   tagline: string;
-  taglineBg: string;
+  taglineBg?: string;
   type?: CardType;
   heading: string;
   description: string;
   bg: string;
-  btnText: string;
-  btnBg: string;
+  btnText?: string;
+  btnBg?: string;
   link: string;
 }
 
@@ -38,13 +38,13 @@ interface CardProps {
 export default function Card({
   icon,
   tagline,
-  taglineBg,
+  taglineBg = '',
   type = CardType.LARGE,
   heading,
   description,
   bg,
-  btnText,
-  btnBg,
+  btnText = '',
+  btnBg = '',
   link
 }: CardProps) {
   if (type === CardType.SMALL) {
