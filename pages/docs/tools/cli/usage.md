@@ -29,7 +29,7 @@ $ npm install -g @asyncapi/cli
 $ asyncapi COMMAND
 running command...
 $ asyncapi (--version)
-@asyncapi/cli/1.7.3 linux-x64 node-v18.19.1
+@asyncapi/cli/1.7.3 linux-x64 node-v18.20.1
 $ asyncapi --help [COMMAND]
 USAGE
   $ asyncapi COMMAND
