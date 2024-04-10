@@ -1,5 +1,17 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/JDRJ33_wH2Q/hqdefault.jpg",
+    "title": "Essential Building Blocks Working Group, Tuesday April 9th 2024",
+    "description": "https://github.com/asyncapi/community/issues/1144.",
+    "videoId": "JDRJ33_wH2Q"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/IG_m_KfN9XI/hqdefault.jpg",
+    "title": "Community Growth Working Group, Tuesday April 9th 2024",
+    "description": "https://github.com/asyncapi/community/issues/1154.",
+    "videoId": "IG_m_KfN9XI"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/6lVMY_Fc0Vs/hqdefault.jpg",
     "title": "Cheat Sheet Poster - Content discussion, Wednesday April 3rd 2024",
     "description": "https://github.com/asyncapi/community/issues/1126.",
@@ -16,17 +28,5 @@
     "title": "Community Growth Working Group - 27th of March",
     "description": "https://github.com/asyncapi/community/issues/1118.",
     "videoId": "nHPxZxngifc"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/6pL3jGIzR3k/hqdefault.jpg",
-    "title": "AACoT&#39;24 Community Meeting, Wednesday March 27th 2024",
-    "description": "https://github.com/asyncapi/community/issues/1110.",
-    "videoId": "6pL3jGIzR3k"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/tgirxaSueMw/hqdefault.jpg",
-    "title": "Essential building blocks (26th of March)",
-    "description": "https://github.com/asyncapi/community/issues/1107.",
-    "videoId": "tgirxaSueMw"
   }
 ]
