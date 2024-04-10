@@ -37,26 +37,6 @@
       "score": 28.430284286176615
     },
     {
-      "id": "I_kwDOBW5R_c5Pi3rO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Epic roadmap to the new AsyncAPI community section",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/website/issues/903",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "keep-open",
-          "color": "ffee84"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        }
-      ],
-      "score": 22.68679251119144
-    },
-    {
       "id": "PR_kwDOFLhIt85js7KX",
       "isPR": true,
       "isAssigned": false,
@@ -87,7 +67,7 @@
       "resourcePath": "/asyncapi/studio/pull/553",
       "repo": "asyncapi/studio",
       "labels": [],
-      "score": 21.25091956744515
+      "score": 21.825268744943667
     },
     {
       "id": "I_kwDODou01c5AqLB8",
@@ -142,30 +122,6 @@
       "score": 19.815046623698855
     },
     {
-      "id": "I_kwDOFDnrNc51TZDT",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Improve CLI UI and UX",
-      "author": "fmvilas",
-      "resourcePath": "/asyncapi/cli/issues/872",
-      "repo": "asyncapi/cli",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "bounty",
-          "color": "0e8a16"
-        },
-        {
-          "name": "level/medium",
-          "color": "0e8a16"
-        }
-      ],
-      "score": 18.953522857451077
-    },
-    {
       "id": "I_kwDOBW5R_c580Z0o",
       "isPR": false,
       "isAssigned": false,
@@ -182,6 +138,17 @@
       "score": 18.091999091203302
     },
     {
+      "id": "PR_kwDOFLhIt85oVQqh",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: docs automation for website",
+      "author": "AnimeshKumar923",
+      "resourcePath": "/asyncapi/community/pull/1082",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 17.804824502454043
+    },
+    {
       "id": "I_kwDODou01c5E_LV0",
       "isPR": false,
       "isAssigned": false,
@@ -196,24 +163,25 @@
         }
       ],
       "score": 17.517649913704783
+    },
+    {
+      "id": "I_kwDOCVQpZM5M_dcV",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "DocsUI: Messages Object output",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
+      "repo": "asyncapi/asyncapi-react",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 16.943300736206268
     }
   ],
   "goodFirstIssues": [
-    {
-      "id": "I_kwDOFDnrNc6DvxH4",
-      "title": "[BUG] Missing on-workflow-trigger for update-docs-in-website action",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/1301",
-      "repo": "asyncapi/cli",
-      "author": "Souvikns",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ]
-    },
     {
       "id": "I_kwDOE8Qh386CSg4-",
       "title": "Java generator does not include import for dictionary models",
@@ -569,25 +537,6 @@
       "author": "AceTheCreator",
       "area": "Unknown",
       "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODwv8N85yTwat",
-      "title": "venues addresses to be clickable links that take you you google map location",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/conference-website/issues/202",
-      "repo": "asyncapi/conference-website",
-      "author": "derberg",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
