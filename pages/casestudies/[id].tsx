@@ -3,7 +3,7 @@ import Paragraph from "../../components/typography/Paragraph";
 import Heading from "../../components/typography/Heading";
 import CaseStudiesList from "../../config/case-studies.json";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import { getMDXComponents } from "../../components/MDX.js";
+import { getMDXComponents } from "@/components/MDX";
 import { serialize } from "next-mdx-remote/serialize";
 import GenericLayout from "../../components/layout/GenericLayout";
 import CaseTOC from "../../components/CaseTOC";
