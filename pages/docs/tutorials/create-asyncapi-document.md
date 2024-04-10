@@ -12,9 +12,9 @@ Let's pretend you have a company called Smarty Lighting, and you install smart-c
 
 You want to build a system that can turn streetlights on and off based on their environmental conditions: 
 
-- You will implement an event-driven architecture (EDA) with a message broker in its "center."
+- You will implement an *event-driven architecture (EDA)* with a message broker in its "center."
 
-- The Streetlights application will receive information about environmental lighting.
+- The Streetlights application will receive information about environmental lighting conditions.
 
 - The Streetlights application will connect to the broker and receive a stream of events from all the streetlights devices reporting their conditions.
 
@@ -73,7 +73,7 @@ channels:
             id:
               type: integer
               minimum: 0
-              description: Id of the streetlight.
+              description: ID of the streetlight.
             lumens:
               type: integer
               minimum: 0
@@ -90,7 +90,7 @@ operations:
       $ref: '#/channels/lightMeasured'`}
 </CodeBlock>
 
-Let's break it down into pieces:
+Let's break the above code snippet down into pieces:
 
 <CodeBlock>
 {`asyncapi: 3.0.0
@@ -134,7 +134,7 @@ Now, let's move on to the `channels` section. In the `servers` section, you spec
 
 In this example, `light/measured` is the channel address. From the Streetlight application example perspective, it means that `light/measured` is the topic's name in the MQTT broker.
 
-Next is the `payload` property, which is used to understand how the event should look like when transfered over the specific channel:
+Next is the payload property. It is used to understand how the event should look like when publishing to that channel
 
 <CodeBlock>
 {`      payload:
