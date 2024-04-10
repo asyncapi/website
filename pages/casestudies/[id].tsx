@@ -3,7 +3,7 @@ import Paragraph from "../../components/typography/Paragraph";
 import Heading from "../../components/typography/Heading";
 import CaseStudiesList from "../../config/case-studies.json";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import { getMDXComponents } from "@/components/MDX";
+import { getMDXComponents } from "../../components/MDX";
 import { serialize } from "next-mdx-remote/serialize";
 import GenericLayout from "../../components/layout/GenericLayout";
 import CaseTOC from "../../components/CaseTOC";
@@ -165,11 +165,14 @@ const Index: React.FC<IndexProps> = ({
                 {contacts.map((item, index) => (
                   <div key={index}>
                     <Heading typeStyle={HeadingTypeStyle.lg}>
-                      <Link href={item.link}>
-                        <a className="text-md leading-5 font-medium text-gray-900 hover:underline" target="_blank">
-                          {item.name}
-                          {index !== contacts.length - 1 ? ", " : " "}
-                        </a>
+                      <Link
+                        href={item.link}
+                        className="text-md leading-5 font-medium text-gray-900 hover:underline"
+                        target="_blank">
+
+                        {item.name}
+                        {index !== contacts.length - 1 ? ", " : " "}
+
                       </Link>
                     </Heading>
                   </div>
@@ -190,10 +193,13 @@ const Index: React.FC<IndexProps> = ({
                 <Heading typeStyle={HeadingTypeStyle.lg}>{casestudy.company.description}</Heading>
                 <Heading className="mt-10" typeStyle={HeadingTypeStyle.lg}>
                   tl;dr just go and have a look at
-                  <Link href={"/" + casestudy.asyncapi.fullExample}>
-                    <a className="ml-2 text-secondary-500 underline hover:text-gray-800 font-medium transition ease-in-out duration-300" target="_blank">
+                  <Link
+                    href={"/" + casestudy.asyncapi.fullExample}
+                    className="ml-2 text-secondary-500 underline hover:text-gray-800 font-medium transition ease-in-out duration-300"
+                    target="_blank">
+                    
                       full production-used AsyncAPI document
-                    </a>
+                    
                   </Link>
                 </Heading>
               </div>
