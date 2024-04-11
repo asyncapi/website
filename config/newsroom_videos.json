@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/c-AA6xbaMAw/hqdefault.jpg",
+    "title": "AACoT&#39;24 Community Meeting, Wednesday April 10th 2024",
+    "description": "https://github.com/asyncapi/community/issues/1147.",
+    "videoId": "c-AA6xbaMAw"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/JDRJ33_wH2Q/hqdefault.jpg",
     "title": "Essential Building Blocks Working Group, Tuesday April 9th 2024",
     "description": "https://github.com/asyncapi/community/issues/1144.",
@@ -22,11 +28,5 @@
     "title": "Community Meeting, Tuesday April 2nd 2024",
     "description": "https://github.com/asyncapi/community/issues/1123.",
     "videoId": "h8b5TxnDFb4"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/nHPxZxngifc/hqdefault.jpg",
-    "title": "Community Growth Working Group - 27th of March",
-    "description": "https://github.com/asyncapi/community/issues/1118.",
-    "videoId": "nHPxZxngifc"
   }
 ]
