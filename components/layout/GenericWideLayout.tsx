@@ -33,6 +33,7 @@ export default function GenericWideLayout({
     <>
       <Head title={title} description={description} image={image} />
       <Row>
+        {/* @TODO Will uncomment the component once it is in use */}
         {/* <AnnouncementHero className='m-4 text-center' small={true} /> */}
         {children}
       </Row>

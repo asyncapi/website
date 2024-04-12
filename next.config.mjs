@@ -12,9 +12,9 @@ import withMDX from '@next/mdx';
 const nextConfig = {
   pageExtensions: ['tsx', 'ts', 'md'],
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: true
   },
-  output: "export",
+  output: 'export',
   webpack(config, { isServer, defaultLoaders }) {
     if (!isServer) {
       config.resolve.fallback.fs = false;
@@ -28,39 +28,25 @@ const nextConfig = {
         {
           loader: '@mdx-js/loader',
           options: {
-            remarkPlugins: [
-              frontmatter,
-              gemoji,
-              headingId,
-              slug,
-              images,
-              a11yEmoji,
-            ],
-          },
-        },
-      ],
+            remarkPlugins: [frontmatter, gemoji, headingId, slug, images, a11yEmoji]
+          }
+        }
+      ]
     });
 
     return config;
-  },
+  }
 };
 
 const mdxConfig = withMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [
-      frontmatter,
-      gemoji,
-      headingId,
-      slug,
-      images,
-      a11yEmoji,
-    ],
-    rehypePlugins: [],
-  },
+    remarkPlugins: [frontmatter, gemoji, headingId, slug, images, a11yEmoji],
+    rehypePlugins: []
+  }
 });
 
 export default {
   ...mdxConfig,
-  ...nextConfig,
+  ...nextConfig
 };

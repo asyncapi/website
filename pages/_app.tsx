@@ -1,13 +1,20 @@
 import '../styles/globals.css';
 
-import { MDXProvider } from '@mdx-js/react';
 import type { AppProps } from 'next/app';
+import Head from 'next/head';
 import React from 'react';
 
-import Layout from '../components/layout/Layout';
-import AppContext from '../context/AppContext';
-import { defaultLanguage, defaultNamespace, I18nProvider, languages, namespaces } from '../utils/i18n';
-import loadLocales from '../utils/locales';
+import AlgoliaSearch from '@/components/AlgoliaSearch';
+import ScrollButton from '@/components/buttons/ScrollButton';
+import Banner from '@/components/campaigns/Banner';
+import Footer from '@/components/footer/Footer';
+import Layout from '@/components/layout/Layout';
+import { MDXProvider } from '@/components/MDX';
+import NavBar from '@/components/navigation/NavBar';
+import StickyNavbar from '@/components/navigation/StickyNavbar';
+import AppContext from '@/context/AppContext';
+import { defaultLanguage, defaultNamespace, I18nProvider, languages, namespaces } from '@/utils/i18n';
+import loadLocales from '@/utils/locales';
 
 /**
  * @description The MyApp component is the root component for the application.
@@ -22,15 +29,30 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   };
 
   return (
-    <AppContext.Provider value={{ path: router.asPath }}>
-      <I18nProvider i18n={i18n}>
+    <I18nProvider i18n={i18n}>
+      <AppContext.Provider value={{ path: router.asPath }}>
+        <Head>
+          <script async defer src='https://buttons.github.io/buttons.js'></script>
+        </Head>
         <MDXProvider>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          <AlgoliaSearch>
+            <div className='flex min-h-screen flex-col'>
+              <Banner />
+              <StickyNavbar>
+                <NavBar className='mx-auto block max-w-screen-xl px-4 sm:px-6 lg:px-8' />
+              </StickyNavbar>
+              <Layout>
+                <Component {...pageProps} />
+                <ScrollButton />
+              </Layout>
+              <div className='mt-auto'>
+                <Footer />
+              </div>
+            </div>
+          </AlgoliaSearch>
         </MDXProvider>
-      </I18nProvider>
-    </AppContext.Provider>
+      </AppContext.Provider>
+    </I18nProvider>
   );
 }
 
