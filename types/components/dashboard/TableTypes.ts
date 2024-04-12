@@ -5,8 +5,8 @@ export interface LabelType {
 export interface Issue {
   title: string;
   repo: string;
-  area: string;
+  area?: string;
   resourcePath: string;
-  isPR: boolean;
+  isPR?: boolean;
   labels: LabelType[];
 };

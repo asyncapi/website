@@ -1,7 +1,8 @@
 import { useFloating } from '@floating-ui/react-dom-interactions';
 import type { RefObject } from 'react';
-import { Issue } from '@/types/components/dashboard/TableTypes';
 import { useEffect, useRef, useState } from 'react';
+
+import type { Issue } from '@/types/components/dashboard/TableTypes';
 
 import Select from '../../form/Select';
 
@@ -52,7 +53,6 @@ function useOutsideAlerter(ref: RefObject<any>, setOpen: (open: boolean) => void
  */
 export default function Filters({
   className,
-  issues,
   allIssues,
   selectedRepo,
   selectedArea,
@@ -70,8 +70,8 @@ export default function Filters({
   useOutsideAlerter(wrapperRef, setOpen);
   const areas = allIssues.map((issue) => issue.area);
   const uniqueAreas = ['All', ...Array.from(new Set(areas))].map((area) => ({
-    value: area,
-    text: area
+    value: area === undefined ? 'All' : area,
+    text: area === undefined ? 'All' : area
   }));
 
   const repos = allIssues.map((issue) => issue.repo);
