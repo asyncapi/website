@@ -1,7 +1,7 @@
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 
-import type { Event } from '@/types/pages/events/Event';
+import type { IEvent } from '@/types/event';
 
 import { getEvents } from '../../utils/staticHelpers';
 
@@ -12,15 +12,15 @@ enum ActiveState {
 }
 
 interface EventFilterProps {
-  data: Event[];
-  setData: React.Dispatch<React.SetStateAction<Event[]>>;
+  data: IEvent[];
+  setData: React.Dispatch<React.SetStateAction<IEvent[]>>;
 }
 
 /**
  * @description A component for filtering events based on date.
  * @param {Object} props - The props for the EventFilter component.
- * @param {Event[]} props.data - The array of events to filter.
- * @param {React.Dispatch<React.SetStateAction<Event[]>>} props.setData - The function to update the filtered events.
+ * @param {IEvent[]} props.data - The array of events to filter.
+ * @param {React.Dispatch<React.SetStateAction<IEvent[]>>} props.setData - The function to update the filtered events.
  */
 export default function EventFilter({ data, setData }: EventFilterProps) {
   const localTime = moment().format('YYYY-MM-DD');
@@ -35,14 +35,14 @@ export default function EventFilter({ data, setData }: EventFilterProps) {
         break;
       case ActiveState.Upcoming:
         setData(
-          getEvents(data).filter((event: Event) => {
+          getEvents(data).filter((event: IEvent) => {
             return moment(event.date).format() > currentDate;
           })
         );
         break;
       case ActiveState.Recorded:
         setData(
-          getEvents(data).filter((event: Event) => {
+          getEvents(data).filter((event: IEvent) => {
             return moment(event.date).format() < currentDate;
           })
         );
@@ -62,9 +62,8 @@ export default function EventFilter({ data, setData }: EventFilterProps) {
         <div
           data-testid='EventFilter-click'
           key={list}
-          className={`w-[100px] cursor-pointer p-3 text-center ${
-            active === list ? 'rounded-md bg-secondary-600 text-white' : 'hover:text-black'
-          }`}
+          className={`w-[100px] cursor-pointer p-3 text-center ${active === list ? 'rounded-md bg-secondary-600 text-white' : 'hover:text-black'
+            }`}
           onClick={() => setActive(list)}
         >
           {list}

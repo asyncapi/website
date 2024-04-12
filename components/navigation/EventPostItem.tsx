@@ -2,8 +2,8 @@ import { ArrowRightIcon } from '@heroicons/react/outline';
 import moment from 'moment';
 import React from 'react';
 
-import type { Event } from '@/types/pages/events/Event';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
+import type { IEvent } from '@/types/event';
 
 import IconCalendar from '../icons/Calendar';
 import Community from '../icons/Community';
@@ -12,7 +12,7 @@ import Webinar from '../icons/Webinar';
 import Heading from '../typography/Heading';
 
 interface EventPostItemProps {
-  post: Event;
+  post: IEvent;
   className?: string;
   id: string;
 }
