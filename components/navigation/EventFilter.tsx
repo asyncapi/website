@@ -62,8 +62,9 @@ export default function EventFilter({ data, setData }: EventFilterProps) {
         <div
           data-testid='EventFilter-click'
           key={list}
-          className={`w-[100px] cursor-pointer p-3 text-center ${active === list ? 'rounded-md bg-secondary-600 text-white' : 'hover:text-black'
-            }`}
+          className={`w-[100px] cursor-pointer p-3 text-center ${
+            active === list ? 'rounded-md bg-secondary-600 text-white' : 'hover:text-black'
+          }`}
           onClick={() => setActive(list)}
         >
           {list}
