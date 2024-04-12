@@ -1,16 +1,13 @@
 import { useFloating } from '@floating-ui/react-dom-interactions';
 import type { RefObject } from 'react';
+import { Issue } from '@/types/components/dashboard/TableTypes';
 import { useEffect, useRef, useState } from 'react';
 
 import Select from '../../form/Select';
 
-interface Issue {
-  repo: string;
-  area: string;
-}
-
 interface FilterProps {
   className?: string;
+  issues: Issue[];
   allIssues: Issue[];
   selectedRepo: string;
   selectedArea: string;
@@ -46,6 +43,7 @@ function useOutsideAlerter(ref: RefObject<any>, setOpen: (open: boolean) => void
  *
  * @param {FilterProps} props - The props for the component.
  * @param {string} props.className - The class name for the component.
+ * @param {Issue[]} props.issues - The list of issues to filter.
  * @param {Issue[]} props.allIssues - The list of all issues.
  * @param {string} props.selectedRepo - The selected repository.
  * @param {string} props.selectedArea - The selected area.
@@ -54,6 +52,7 @@ function useOutsideAlerter(ref: RefObject<any>, setOpen: (open: boolean) => void
  */
 export default function Filters({
   className,
+  issues,
   allIssues,
   selectedRepo,
   selectedArea,

@@ -1,7 +1,7 @@
-import type { RowItemType } from '@/types/components/dashboard/TableRowType';
+import type { Issue } from '@/types/components/dashboard/TableTypes';
 
 interface RowProps {
-  item: RowItemType;
+  item: Issue;
 }
 
 /**

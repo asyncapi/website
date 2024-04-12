@@ -1,10 +1,10 @@
-import type { RowItemType } from '@/types/components/dashboard/TableRowType';
+import type { Issue } from '@/types/components/dashboard/TableTypes';
 
 import Row from './Row';
 
 interface TableProps {
-  title: string;
-  data: RowItemType[];
+  title: React.ReactElement;
+  data: Issue[];
   className: string;
   listClassName: string;
 }
@@ -13,10 +13,10 @@ interface TableProps {
  * @description Table component.
  *
  * @param {TableProps} props - The props for the component.
- * @param {TableProps.title} props.title - The title of the table.
- * @param {TableProps.data} props.data - The data to display.
- * @param {TableProps.className} props.className - The class name for the table.
- * @param {TableProps.listClassName} props.listClassName - The class name for the list.
+ * @param {React.ReactElement} props.title - The title of the table.
+ * @param {Issue[]} props.data - The data to display.
+ * @param {string} props.className - The class name for the table.
+ * @param {string} props.listClassName - The class name for the list.
  */
 export default function Table({ title, data, className, listClassName }: TableProps) {
   return (

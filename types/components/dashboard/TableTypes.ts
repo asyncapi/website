@@ -2,10 +2,11 @@ export interface LabelType {
   name: string;
 };
 
-export interface RowItemType {
+export interface Issue {
+  title: string;
+  repo: string;
+  area: string;
   resourcePath: string;
   isPR: boolean;
-  repo: string;
-  title: string;
   labels: LabelType[];
 };
