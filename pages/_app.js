@@ -29,7 +29,7 @@ function App({ Component, pageProps, router }) {
   };
 
   return (
-    <I18nProvider i18n={i18n} /* Pass the i18n options to the i18n provider */>
+    <I18nProvider i18n={i18n} defaultNS={'translation'}/* Pass the i18n options to the i18n provider */>
       <AppContext.Provider value={{ path: router.asPath }}>
         <Head>
           <script async defer src="https://buttons.github.io/buttons.js"></script>
