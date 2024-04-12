@@ -4,7 +4,9 @@ import AlgoliaSearch, { SearchButton } from '@/components/AlgoliaSearch';
 import Button from '@/components/buttons/Button';
 import IconArrowRight from '@/components/icons/ArrowRight';
 import IconLoupe from '@/components/icons/Loupe';
+import type { IBlogPost } from '@/types/post';
 
+import posts from '../config/posts.json';
 import { useTranslation } from '../utils/i18n';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -14,6 +16,12 @@ const inter = Inter({ subsets: ['latin'] });
  */
 export default function Home() {
   const { t } = useTranslation('landing-page');
+
+  const logType = (value: IBlogPost) => {
+    console.log(value);
+  };
+
+  logType(posts.blog[2]);
 
   return (
     <main className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}>
@@ -28,8 +36,8 @@ export default function Home() {
         {/* Wrap SearchButton with AlgoliaSearch component */}
         <AlgoliaSearch>
           <SearchButton
-            className={`flex w-full items-center space-x-3 rounded-md border border-secondary-500 
-              bg-secondary-100 px-4 py-3 text-left text-secondary-500 shadow-md transition-all 
+            className={`flex w-full items-center space-x-3 rounded-md border border-secondary-500
+              bg-secondary-100 px-4 py-3 text-left text-secondary-500 shadow-md transition-all
               duration-500 ease-in-out hover:bg-secondary-500 hover:text-white md:w-auto`}
           >
             {({ actionKey }) => (
