@@ -37,6 +37,17 @@
       "score": 28.430284286176615
     },
     {
+      "id": "PR_kwDOFLhIt85sHzf3",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add instruction how voting automation works",
+      "author": "AayushSaini101",
+      "resourcePath": "/asyncapi/community/pull/1155",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 26.420062164931807
+    },
+    {
       "id": "PR_kwDOFLhIt85js7KX",
       "isPR": true,
       "isAssigned": false,
@@ -106,22 +117,6 @@
       "score": 20.102221212448114
     },
     {
-      "id": "I_kwDOBW5R_c5BIl5P",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Add new page for collecting user testing participants",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/website/issues/529",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ],
-      "score": 19.815046623698855
-    },
-    {
       "id": "I_kwDOBW5R_c580Z0o",
       "isPR": false,
       "isAssigned": false,
@@ -149,22 +144,6 @@
       "score": 17.804824502454043
     },
     {
-      "id": "I_kwDODou01c5E_LV0",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create onboarding for features of Studio",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/studio/issues/284",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 17.517649913704783
-    },
-    {
       "id": "I_kwDOCVQpZM5M_dcV",
       "isPR": false,
       "isAssigned": true,
@@ -179,6 +158,22 @@
         }
       ],
       "score": 16.943300736206268
+    },
+    {
+      "id": "I_kwDOBW5R_c5RVOOY",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Community cards implementation.",
+      "author": "Mayaleeeee",
+      "resourcePath": "/asyncapi/website/issues/930",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ],
+      "score": 16.08177696995849
     }
   ],
   "goodFirstIssues": [
@@ -854,40 +849,6 @@
       ]
     },
     {
-      "id": "I_kwDOFGbvC85AWog3",
-      "title": "Automate Helm chart release version bump",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/event-gateway/issues/86",
-      "repo": "asyncapi/event-gateway",
-      "author": "smoya",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "keep-open",
-          "color": "1DAEAC"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFGbvC84_LkcI",
-      "title": "Create better Kubernetes liveness, readiness and startup Probes",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/event-gateway/issues/77",
-      "repo": "asyncapi/event-gateway",
-      "author": "smoya",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "keep-open",
-          "color": "1DAEAC"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOBW5R_c48lGJg",
       "title": "Add visual on the \"generator\" and maybe others....",
       "isAssigned": false,
@@ -903,25 +864,6 @@
         {
           "name": "🎨 design",
           "color": "0D67D3"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFGbvC8473gxV",
-      "title": "Define a better API that can be used by other applications",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/event-gateway/issues/47",
-      "repo": "asyncapi/event-gateway",
-      "author": "smoya",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "help wanted",
-          "color": "008672"
-        },
-        {
-          "name": "keep-open",
-          "color": "1DAEAC"
         }
       ]
     },
