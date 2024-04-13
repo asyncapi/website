@@ -12,7 +12,7 @@ Let's pretend you have a company called Smarty Lighting, and you install smart-c
 
 You want to build a system that can turn streetlights on and off based on their environmental conditions: 
 
-- You will implement an *event-driven architecture (EDA)* with a message broker in its "center."
+- You will implement an event-driven architecture (EDA) with a message broker in its "center."
 
 - The Streetlights application will receive information about environmental lighting conditions.
 
