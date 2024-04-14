@@ -12,7 +12,6 @@ export default function HeadComponent({
   rssLink = '/rss.xml',
 }) {
   const url = process.env.NEXT_PUBLIC_DEPLOY_PRIME_URL || process.env.NEXT_PUBLIC_DEPLOY_URL || 'http://localhost:3000';
-  console.log(url);
   const appContext = useContext(AppContext);
   const { path = '' } = appContext || {};
 
@@ -40,7 +39,6 @@ export default function HeadComponent({
 
   return (
     <Head>
-      console.log(process.env.DEPLOY_URL)
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
