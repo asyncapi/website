@@ -3,7 +3,6 @@ import Head from 'next/head';
 import AppContext from '../context/AppContext';
 import ReactGA from 'react-ga';
 import TagManager from 'react-gtm-module';
-require('dotenv').config();
 
 export default function HeadComponent({
   title,
