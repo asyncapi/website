@@ -1,6 +1,17 @@
 {
   "hotDiscussions": [
     {
+      "id": "PR_kwDOFLhIt85sHzf3",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add instruction how voting automation works",
+      "author": "AayushSaini101",
+      "resourcePath": "/asyncapi/community/pull/1155",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 35.03529982740957
+    },
+    {
       "id": "I_kwDOFLhIt84-OUI3",
       "isPR": false,
       "isAssigned": false,
@@ -35,17 +46,6 @@
         }
       ],
       "score": 28.430284286176615
-    },
-    {
-      "id": "PR_kwDOFLhIt85sHzf3",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: add instruction how voting automation works",
-      "author": "AayushSaini101",
-      "resourcePath": "/asyncapi/community/pull/1155",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 26.420062164931807
     },
     {
       "id": "PR_kwDOFLhIt85js7KX",
@@ -114,7 +114,7 @@
           "color": "a2eeef"
         }
       ],
-      "score": 20.102221212448114
+      "score": 20.38939580119737
     },
     {
       "id": "I_kwDOBW5R_c580Z0o",
