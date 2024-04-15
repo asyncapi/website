@@ -1,8 +1,8 @@
 import { ButtonIconPosition } from '@/types/components/buttons/ButtonPropsType';
 
+import { useTranslation } from '../../utils/i18n';
 import IconSubscribe from '../icons/Subscribe';
 import Button from './Button';
-// import { useTranslation } from '../../lib/i18n';
 import type { IButtonDefaultProps } from './types';
 
 interface IGoogleCalendarButtonProps extends IButtonDefaultProps {}
@@ -22,13 +22,11 @@ export default function GoogleCalendarButton({
   iconPosition = ButtonIconPosition.LEFT,
   className
 }: IGoogleCalendarButtonProps) {
-  // const { t } = useTranslation('common');
+  const { t } = useTranslation('common');
 
   return (
     <Button
-      // TODO: add this again when we have i18n
-      // text={t(text)}
-      text={text}
+      text={t(text)}
       icon={<IconSubscribe />}
       href={href}
       iconPosition={iconPosition}
