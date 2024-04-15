@@ -27,6 +27,8 @@ solution: |
 technical: #We need some more technical information related to case study.
   languages:
     - bash
+  frameworks: 
+    - # cant be removed is expected to exist
   protocols:
     - AMQP
   architecture: |
@@ -123,7 +125,7 @@ asyncapi: #More specific details about AsyncAPI itself and how is it used.
   versions:
     - 3.0
   storage: |
-    repositoriy for the customer wiki that describes the topics and the messages that can be subscribed to.
+    Git repositoriy that functions as "customer Wiki" where every relevant documents about the exiting infrastructure is stored .
   editing: |
     If changes for any topic are applied by a customer the documentation pipline generates the AsyncAPI file using a bash script.
   audience: #Specify if AsyncAPI audience is internal or external or both.
@@ -132,7 +134,7 @@ asyncapi: #More specific details about AsyncAPI itself and how is it used.
   documentation: |
     Documentation is generated via AsyncAPI CLI and published to the wiki right after the AsyncAPI file is generated.
   bindings: |
-    #Specify what bindings are used by their name and provide description on what level you use bindings. Provide examples if possible.
+    none
   tools: |
     * [AsyncAPI Generator](https://github.com/asyncapi/generator):
       * [markdown-template](https://github.com/asyncapi/markdown-template).
