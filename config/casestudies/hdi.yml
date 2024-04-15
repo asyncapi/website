@@ -117,6 +117,8 @@ technical: #We need some more technical information related to case study.
 schemas: #It is useful and interesting to learn how teams handle messages schemas.
   description: JSON Schema
   storage: Git repository where customer can store their own config files for the service bus.
+  registry: #Are you using schema registry solution? which one? cant be removed
+  versioning: #How do you handle versioning of schemas? cant be removed
   validation: Validated using [Ajv](https://ajv.js.org/)
 asyncapi: #More specific details about AsyncAPI itself and how is it used.
   usecase: |
@@ -128,9 +130,13 @@ asyncapi: #More specific details about AsyncAPI itself and how is it used.
     Git repositoriy that functions as "customer Wiki" where every relevant documents about the exiting infrastructure is stored .
   editing: |
     If changes for any topic are applied by a customer the documentation pipline generates the AsyncAPI file using a bash script.
+  maintainers: | 
+    none
   audience: #Specify if AsyncAPI audience is internal or external or both.
     internal: true
     external: false
+  extensions: |
+    none
   documentation: |
     Documentation is generated via AsyncAPI CLI and published to the wiki right after the AsyncAPI file is generated.
   bindings: |
@@ -138,5 +144,5 @@ asyncapi: #More specific details about AsyncAPI itself and how is it used.
   tools: |
     * [AsyncAPI Generator](https://github.com/asyncapi/generator):
       * [markdown-template](https://github.com/asyncapi/markdown-template).
-  fullExample: #Should be url to full example of the case study. So later in the UI we can show it as "https://studio.asyncapi.com/?url=https://deploy-preview-921--asyncapi-website.netlify.app/resources/casestudies/adeo/asyncapi.yaml" so the example can be previewed in the AsyncAPI Studio easily.
+  fullExample: resources/casestudies/hdi/asyncapi.yaml
 additionalResources: #Provide some additional resources if there are such. Just block of text with links to articles or videos about the case study.

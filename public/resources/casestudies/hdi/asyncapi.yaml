@@ -1,0 +1,151 @@
+asyncapi: 3.0.0
+info:
+  title: customer-example
+  version: 1.0.0
+  description: |
+    This is an AsyncAPI document for customer-example.
+    It contains every Topic owned by the customer in form of channel. 
+    Dowload the coresponding schema files from the following link:
+servers:
+  box-apac:
+    host: namespace.servicebus.windows.net
+    protocol: amqp
+    description: Azure Service Bus namespace endpoint for box.
+  box-emea:
+    host: namespace.servicebus.windows.net
+    protocol: amqp
+    description: Azure Service Bus namespace endpoint for box.
+channels:
+  helloworld-emea:
+    servers:
+      - $ref: '#/servers/box-emea'
+    address: https://namespace.servicebus.windows.net/topic/example/helloworld
+    messages:
+      helloworld:
+        name: helloworld-Message
+        contentType: application/json
+        payload:
+          $ref: '#/components/schemas/helloworld-topic-v1.json'
+  test-topic-emea:
+    servers:
+      - $ref: '#/servers/box-emea'
+    address: https://namespace.servicebus.windows.net/topic/example/test-topic
+    messages:
+      test-topic:
+        name: test-topic-Message
+        contentType: application/json
+        payload:
+          $ref: '#/components/schemas/test-topic-v1.json'
+  test-pipeline-emea:
+    servers:
+      - $ref: '#/servers/box-emea'
+    address: https://namespace.servicebus.windows.net/topic/example/test-pipeline
+    messages:
+      test-pipeline:
+        name: test-pipeline-Message
+        contentType: application/json
+        payload:
+          $ref: '#/components/schemas/test-topic-v1.json'
+  source1-emea:
+    servers:
+      - $ref: '#/servers/box-emea'
+    address: https://namespace.servicebus.windows.net/topic/example/source1
+    messages:
+      source1:
+        name: source1-Message
+        contentType: application/json
+        payload:
+          $ref: '#/components/schemas/test-topic-v1.json'
+operations:
+  helloworld-emea:
+    action: send
+    channel:
+      $ref: '#/channels/helloworld-emea'
+    messages:
+      - $ref: '#/channels/helloworld-emea/messages/helloworld'
+  test-topic-emea:
+    action: send
+    channel:
+      $ref: '#/channels/test-topic-emea'
+    messages:
+      - $ref: '#/channels/test-topic-emea/messages/test-topic'
+  test-pipeline-emea:
+    action: send
+    channel:
+      $ref: '#/channels/test-pipeline-emea'
+    messages:
+      - $ref: '#/channels/test-pipeline-emea/messages/test-pipeline'
+  source1-emea:
+    action: send
+    channel:
+      $ref: '#/channels/source1-emea'
+    messages:
+      - $ref: '#/channels/source1-emea/messages/source1'
+components:
+  schemas:
+    test-topic-v1.json:
+      $schema: http://json-schema.org/draft-06/schema#
+      type: object
+      properties:
+        eventType:
+          type: object
+          enum:
+            - create
+            - update
+            - delete
+        hotel:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            slogan:
+              type: string
+            location:
+              type: string
+            total_number_of_rooms:
+              type: integer
+            currently_available_rooms:
+              type: integer
+            currently_occupied_rooms:
+              type: integer
+          required:
+            - id
+            - name
+      required:
+        - eventType
+        - hotel
+    helloworld-topic-v1.json:
+      $schema: http://json-schema.org/draft-06/schema#
+      type: object
+      properties:
+        eventType:
+          type: object
+          enum:
+            - create
+            - update
+            - delete
+        hotel:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            slogan:
+              type: string
+            location:
+              type: string
+            total_number_of_rooms:
+              type: integer
+            currently_available_rooms:
+              type: integer
+            currently_occupied_rooms:
+              type: integer
+          required:
+            - id
+            - name
+      required:
+        - eventType
+        - hotel
