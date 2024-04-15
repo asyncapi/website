@@ -1,9 +1,9 @@
 import { ButtonIconPosition } from '@/types/components/buttons/ButtonPropsType';
 
+import { useTranslation } from '../../utils/i18n';
 import IconGoogleCalendar from '../icons/GoogleCalendar';
 import Button from './Button';
 import type { IButtonDefaultProps } from './types';
-import { useTranslation } from '../../utils/i18n';
 
 interface IGoogleCalendarButtonProps extends IButtonDefaultProps {}
 

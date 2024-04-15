@@ -1,8 +1,8 @@
 import { ButtonIconPosition } from '@/types/components/buttons/ButtonPropsType';
 
+import { useTranslation } from '../../utils/i18n';
 import IconCalendar from '../icons/Calendar';
 import Button from './Button';
-import { useTranslation } from '../../utils/i18n';
 import type { IButtonDefaultProps } from './types';
 
 interface IICSFButtonProps extends IButtonDefaultProps {}
