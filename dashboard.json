@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/community/pull/1155",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 35.03529982740957
+      "score": 41.35314077989326
     },
     {
       "id": "I_kwDOFLhIt84-OUI3",
@@ -54,17 +54,6 @@
       "title": "chore: add documents CoC Committee and Incident Resolution Procedures",
       "author": "Barbanio",
       "resourcePath": "/asyncapi/community/pull/1013",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 22.112443333692923
-    },
-    {
-      "id": "PR_kwDOFLhIt85bqKL8",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: add Bounty Program Rules",
-      "author": "aeworxet",
-      "resourcePath": "/asyncapi/community/pull/897",
       "repo": "asyncapi/community",
       "labels": [],
       "score": 22.112443333692923
@@ -160,20 +149,26 @@
       "score": 16.943300736206268
     },
     {
-      "id": "I_kwDOBW5R_c5RVOOY",
-      "isPR": false,
+      "id": "PR_kwDOE8Qh385kzOtQ",
+      "isPR": true,
       "isAssigned": false,
-      "title": "Community cards implementation.",
-      "author": "Mayaleeeee",
-      "resourcePath": "/asyncapi/website/issues/930",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ],
-      "score": 16.08177696995849
+      "title": "feat: add Avro Schema input processor",
+      "author": "akkshitgupta",
+      "resourcePath": "/asyncapi/modelina/pull/1753",
+      "repo": "asyncapi/modelina",
+      "labels": [],
+      "score": 16.943300736206268
+    },
+    {
+      "id": "PR_kwDODou01c5YJ7kV",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "Add Form component",
+      "author": "KhudaDad414",
+      "resourcePath": "/asyncapi/studio/pull/773",
+      "repo": "asyncapi/studio",
+      "labels": [],
+      "score": 15.507427792459973
     }
   ],
   "goodFirstIssues": [
@@ -569,21 +564,6 @@
         {
           "name": "🎨 design",
           "color": "0D67D3"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5rh81V",
-      "title": "[📑 Docs]: suggestions on 'create-asyncapi-document.md' file",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1945",
-      "repo": "asyncapi/website",
-      "author": "AnimeshKumar923",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
         }
       ]
     },
