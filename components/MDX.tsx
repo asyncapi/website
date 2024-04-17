@@ -258,7 +258,11 @@ export function getMDXComponents() {
         className={`${props.className || ''} border-b border-gray-200 px-6 py-4 text-sm leading-5 tracking-tight text-gray-700`}
       />
     ),
-    pre: (props: React.HTMLProps<HTMLPreElement>) => CodeComponent(props.children as CodeComponentProps),
+    pre: (props: React.HTMLProps<HTMLPreElement>) => {
+      console.log((props.children as React.ReactElement)?.props);
+
+      return CodeComponent((props.children as React.ReactElement)?.props);
+    },
     code: (props: React.HTMLProps<HTMLElement>) => (
       <code
         {...props}
