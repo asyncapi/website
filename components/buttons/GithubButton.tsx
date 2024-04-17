@@ -19,7 +19,7 @@ interface IGithubButtonProps extends IButtonDefaultProps {
  * @param {string} props.className - The class name to be applied to the button.
  */
 export default function GithubButton({
-  text = 'githubButton',
+  text = 'View on GitHub',
   href = 'https://github.com/asyncapi',
   target = '_blank',
   iconPosition = ButtonIconPosition.LEFT,
