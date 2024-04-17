@@ -65,7 +65,7 @@ function renderButtons(): JSX.Element {
  * @description The Parsers page component.
  */
 export default function ParsersPage() {
-    const description = 'Use our parsers to build your own tools or add AsyncAPI support to your product.';
+  const description = 'Use our parsers to build your own tools or add AsyncAPI support to your product.';
   const image = '/img/social/parsers-card.jpg';
 
   return (
