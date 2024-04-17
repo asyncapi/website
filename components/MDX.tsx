@@ -148,7 +148,7 @@ function CodeComponent({ children, className = '', metastring = '', ...rest }: C
       caption={caption}
       className={`${className || ''} rounded`}
       language={language}
-      showLineNumbers={children && typeof children === 'string' && children.split('\n').length > 2 ? true : undefined}
+      showLineNumbers={children.split('\n').length > 2}
     >
       {children}
     </CodeBlock>
@@ -259,8 +259,6 @@ export function getMDXComponents() {
       />
     ),
     pre: (props: React.HTMLProps<HTMLPreElement>) => {
-      console.log((props.children as React.ReactElement)?.props);
-
       return CodeComponent((props.children as React.ReactElement)?.props);
     },
     code: (props: React.HTMLProps<HTMLElement>) => (
