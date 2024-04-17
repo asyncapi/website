@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/community/pull/1155",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 41.35314077989326
+      "score": 43.076188312388815
     },
     {
       "id": "I_kwDOFLhIt84-OUI3",
@@ -56,7 +56,7 @@
       "resourcePath": "/asyncapi/community/pull/1013",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 22.112443333692923
+      "score": 22.9739670999407
     },
     {
       "id": "PR_kwDODou01c5Iv4zR",
@@ -106,6 +106,17 @@
       "score": 20.38939580119737
     },
     {
+      "id": "PR_kwDOE8Qh385kzOtQ",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add Avro Schema input processor",
+      "author": "akkshitgupta",
+      "resourcePath": "/asyncapi/modelina/pull/1753",
+      "repo": "asyncapi/modelina",
+      "labels": [],
+      "score": 19.815046623698855
+    },
+    {
       "id": "I_kwDOBW5R_c580Z0o",
       "isPR": false,
       "isAssigned": false,
@@ -146,17 +157,6 @@
           "color": "ededed"
         }
       ],
-      "score": 16.943300736206268
-    },
-    {
-      "id": "PR_kwDOE8Qh385kzOtQ",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add Avro Schema input processor",
-      "author": "akkshitgupta",
-      "resourcePath": "/asyncapi/modelina/pull/1753",
-      "repo": "asyncapi/modelina",
-      "labels": [],
       "score": 16.943300736206268
     },
     {

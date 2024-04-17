@@ -140,13 +140,6 @@
     "date": "2024-04-10T14:00:00.000Z"
   },
   {
-    "title": "AACoT'24 Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=ZnZqMm41aDk3M2NxcWxnOXFyYWFqMDJrcW8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1148",
-    "banner": "https://github.com/asyncapi/community/assets/66913810/43114d9e-ee7f-4479-8714-475d67a374aa",
-    "date": "2024-04-24T14:00:00.000Z"
-  },
-  {
     "title": "Community Growth Working Group",
     "calLink": "https://www.google.com/calendar/event?eid=NWluOTRmcG9vYjVjcWoydjVocDAzbjJtb2sgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1154",
@@ -168,10 +161,10 @@
     "date": "2024-04-15T14:00:00.000Z"
   },
   {
-    "title": "Community Growth Working Group",
-    "calLink": "https://www.google.com/calendar/event?eid=cHRvZzhrbzQ0cnZ1ZTE2aDJqazE3bGU5Z3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1174",
+    "title": "Marketing - Next steps",
+    "calLink": "https://www.google.com/calendar/event?eid=bG5rcGc3bWZuODhrajU2aGtxamtvajI4c28gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1175",
     "banner": "",
-    "date": "2024-04-22T14:00:00.000Z"
+    "date": "2024-04-25T14:00:00.000Z"
   }
 ]
