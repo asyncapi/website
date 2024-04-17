@@ -129,6 +129,16 @@ export default function NavBar({
     setOpen(null);
   }, [asPath]);
 
+  const LanguagePicker = (
+    <LanguageSelect
+      options={uniqueLangs}
+      onChange={(value) => {
+        changeLanguage(value.toLowerCase(), true);
+      }}
+      className=""
+      selected={i18n.language ? i18n.language.toUpperCase() : "EN"}
+    />
+  );
   return (
     <div className={`bg-white ${className} z-50`}>
       {/* <a href="#main-content" className="block md:inline-block absolute transform -translate-y-20 focus:translate-y-0 bg-gray-100 text-gray-700 p-5 text-md font-semibold" alt="Skip to main content">Skip to main content</a> */}
@@ -146,6 +156,7 @@ export default function NavBar({
         )}
 
         <div className="flex flex-row items-center justify-center -mr-2 -my-2 lg:hidden" data-testid="Navbar-search">
+        {LanguagePicker}
           <SearchButton
             className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
             aria-label="Open Search"
@@ -207,14 +218,7 @@ export default function NavBar({
             </SearchButton>
 
             {/* // Language Picker Component */}
-            <LanguageSelect
-              options={uniqueLangs}
-              onChange={(value) => {
-                changeLanguage(value.toLowerCase(), true);
-              }}
-              className=""
-              selected={i18n.language ? i18n.language.toUpperCase() : "EN"}
-            />
+            {LanguagePicker}
 
             <GithubButton text="Star on GitHub" href="https://github.com/asyncapi/spec" className="py-2 ml-2" inNav="true" />
           </div>
@@ -223,7 +227,7 @@ export default function NavBar({
       </div>
 
       {/* Mobile menu, show/hide based on mobile menu state. */}
-      {mobileMenuOpen && <MobileNavMenu onClickClose={() => setMobileMenuOpen(false)} />}
+      {mobileMenuOpen && <MobileNavMenu  onClickClose={() => setMobileMenuOpen(false)} LanguagePicker={LanguagePicker}/>}
 
     </div>
   )
