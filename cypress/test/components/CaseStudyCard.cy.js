@@ -2,8 +2,6 @@ import React from 'react';
 import { mount } from 'cypress/react';
 import CaseStudyCard from '../../../components/CaseStudyCard';
 import CaseStudiesList from '../../../config/case-studies.json';
-import AdoptersList from '../../../config/adopters.json';
-import Casestudies from '../../../pages/casestudies';
 
 describe('CaseStudyCard Component', () => {
 

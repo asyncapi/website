@@ -15,6 +15,8 @@ import {
 } from "../lib/i18n";
 import loadLocales from "../lib/locales";
 import '../styles/globals.css'
+import StickyNavbar from '../components/navigation/StickyNavbar';
+import NavBar from '../components/navigation/NavBar';
 
 function App({ Component, pageProps, router }) {
 
@@ -36,6 +38,9 @@ function App({ Component, pageProps, router }) {
           <AlgoliaSearch>
             <div className="flex flex-col min-h-screen">
               <Banner />
+              <StickyNavbar>
+                <NavBar className="block max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8" />
+              </StickyNavbar>
               <Layout>
                 <Component {...pageProps} />
                 <ScrollButton />
