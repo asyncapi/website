@@ -248,7 +248,7 @@ export default function DemoAnimation({ className = '' }) {
             <OpenInStudioButton />
           </div>
           <MacWindow
-            className={`bg-gray-50 border-gray-200 border shadow-lg min-h-full transition-all duration-500 ease-in-out ${showControls ? 'transform -translate-x-full h-0 opacity-0 lg:h-auto lg:opacity-100 lg:-translate-x-3/4' : ''}`}
+            className={`bg-gray-50 border-gray-200 border shadow-lg min-h-full transition-all duration-500 ease-in-out ${showControls ? 'transform -translate-x-full h-0 opacity-0 lg:h-auto  lg:-translate-x-3/4' : ''}`}
             contentClassName="text-left h-full text-gray-800 text-sm font-medium transition-all duration-500 ease-in-out"
             title="Account Service Documentation"
           >
