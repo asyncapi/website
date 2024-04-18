@@ -56,7 +56,7 @@ export default function Index() {
           <h1 className='mt-10  text-3xl font-semibold md:text-4xl lg:text-5xl' data-testid='Ambassadors-title'>
             Teachers. Champions. <span className='countdown-text-gradient'>Ambassadors!</span>
           </h1>
-          <Heading typeStyle={HeadingTypeStyle.bodySm} textColor='text-gray-700' className='mt-5 text-slate-500'>
+          <Heading typeStyle={HeadingTypeStyle.bodyLg} textColor='text-gray-700' className='mt-5 text-slate-500'>
             Passionate about event-driven architectures or message-driven APIs? Become an AsyncAPI Ambassador and help
             the OSS community build the future of APIs.
           </Heading>
@@ -84,7 +84,7 @@ export default function Index() {
         <div className='flex justify-center'>
           <div className='mt-10 text-center lg:w-[55%]' data-testid='Ambassadors-contributions'>
             <Heading typeStyle={HeadingTypeStyle.lg}>AsyncAPI Ambassador Contributions</Heading>
-            <Heading typeStyle={HeadingTypeStyle.bodySm} textColor='text-gray-700' className='mt-5 text-slate-500'>
+            <Heading typeStyle={HeadingTypeStyle.bodyLg} textColor='text-gray-700' className='mt-5 text-slate-500'>
               AsyncAPI Ambassadors are passionate about APIs and AsyncAPI. They share their interest, expertise, and
               excitement within their communities to help others build better software.
             </Heading>
@@ -104,7 +104,7 @@ export default function Index() {
       </div>
       <div className='mt-20 text-center'>
         <Heading typeStyle={HeadingTypeStyle.lg}>Join these AsyncAPI Ambassadors</Heading>
-        <Heading typeStyle={HeadingTypeStyle.bodySm} textColor='text-gray-700' className='mt-5 text-slate-500'>
+        <Heading typeStyle={HeadingTypeStyle.bodyLg} textColor='text-gray-700' className='mt-5 text-slate-500'>
           Learn and share knowledge with community members
         </Heading>
         <div
@@ -166,7 +166,7 @@ export default function Index() {
         <div className='flex justify-center'>
           <div className='mt-10 text-center lg:w-[55%]' data-testid='Events-token'>
             <Heading typeStyle={HeadingTypeStyle.lg}>Tokens of our appreciation</Heading>
-            <Heading typeStyle={HeadingTypeStyle.bodySm} textColor='text-gray-700' className='mt-5 text-slate-500'>
+            <Heading typeStyle={HeadingTypeStyle.bodyLg} textColor='text-gray-700' className='mt-5 text-slate-500'>
               We appreciate your commitment and passion for sharing your knowledge with your communities. Let us support
               you!
             </Heading>
@@ -196,7 +196,7 @@ export default function Index() {
           <div className='flex justify-center'>
             <div className='p-4 text-center text-white lg:w-[65%]'>
               <Heading typeStyle={HeadingTypeStyle.lg}>Become an AsyncAPI Ambassador</Heading>
-              <Heading typeStyle={HeadingTypeStyle.bodySm}>
+              <Heading typeStyle={HeadingTypeStyle.bodyLg}>
                 The AsyncAPI Ambassador program is now open for applications! If you&apos;re selected, you&apos;ll join
                 AsyncAPI&apos;s mission of helping community members all over the world, build the future of
                 Event-Driven APIs.

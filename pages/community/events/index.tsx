@@ -124,13 +124,13 @@ export default function EventIndex() {
               Explore numerous AsyncAPI's livestreams, specifically curated
             </Paragraph>
           </div>
-          <div className='mt-10 flex flex-col lg:mt-0 lg:flex-row'>
+          <div className='flex lg:flex-row flex-col mt-10 lg:mt-0'>
             <div className='' data-testid='CommunityMeeting-Card'>
               <Meeting
                 name='Community Meeting'
                 purpose='This is an open community meeting to discuss important topics around the AsyncAPI Initiative regularly. We organize it every two weeks in different time zones.'
                 host='Azeez Elegbede'
-                bg='gray-100'
+                bg='bg-gray-100'
                 hostProfile='https://github.com/AceTheCreator'
                 youtube='https://www.youtube.com/playlist?list=PLbi1gRlP7pijUwZJErzyYf_Rc-PWu4lXS'
               />
@@ -150,7 +150,7 @@ export default function EventIndex() {
           <div className=''>
             <Meeting
               name='Thinking Out Loud'
-              bg='gray-100'
+              bg='bg-gray-100'
               purpose='This is a live stream about diverse topics related to the AsyncAPI Initiative and Event-Driven Architectures. It is always an open discussion between a host and a guest.'
               host='Fran Mendez'
               hostProfile='https://github.com/fmvilas'
@@ -169,7 +169,7 @@ export default function EventIndex() {
           <div className=''>
             <Meeting
               name='Ad Hoc Meeting'
-              bg='gray-100'
+              bg='bg-gray-100'
               purpose="Do you want to discuss something with the community and our other meeting formats don't apply? Use this meeting to schedule ad hoc topics with the community."
               host='Any of the hosts'
               youtube='https://www.youtube.com/asyncapi'
@@ -177,7 +177,7 @@ export default function EventIndex() {
           </div>
         </div>
       </div>
-      <div className='mt-8 rounded-lg bg-dark py-12 md:mt-20'>
+      <div className='mt-8 rounded-lg bg-dark py-12 md:mt-20 text-white'>
         <NewsletterSubscribe
           dark={true}
           type='Meetings'

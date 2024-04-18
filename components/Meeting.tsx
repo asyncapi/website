@@ -36,7 +36,7 @@ export default function Meeting({
   return (
     <a href={youtube} target='_blank' rel='noreferrer' data-testid='Meeting-link'>
       <div
-        className={`meeting-card bg- overflow-hidden p-4${bg} flex h-[300px] w-full cursor-pointer flex-col justify-between hover:bg-dark hover:text-white lg:w-[300px]`}
+        className={`meeting-card bg-overflow-hidden p-4 flex h-[300px] w-full cursor-pointer flex-col justify-between hover:bg-dark hover:text-white lg:w-[300px] ${bg}`}
       >
         <div>
           <h3 className='text-xl' data-testid='Meeting-heading'>

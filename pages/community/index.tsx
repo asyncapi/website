@@ -67,7 +67,7 @@ export default function CommunityIndexPage() {
         />
       </div>
       <div className='mt-20 w-full md:flex md:justify-between'>
-        <div className='md:w-1/2' data-testid='CommunityIndex-IssuesCard'>
+        <div className='md:w-1/2 text-white' data-testid='CommunityIndex-IssuesCard'>
           <Card
             taglineBg='bg-pink-100'
             bg='bg-code-editor-dark'

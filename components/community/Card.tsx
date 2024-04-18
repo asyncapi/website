@@ -81,7 +81,7 @@ export default function Card({
       data-testid='Card-lg-bg'
     >
       <div
-        className={`flex w-min justify-between rounded-xl p-2 text-center text-xs ${taglineBg}`}
+        className={`flex w-min justify-between rounded-xl p-2 text-center text-xs text-black ${taglineBg}`}
         data-testid='Card-lg-tagline'
       >
         <span>{icon}</span> <span className='ml-[5px]'>{tagline}</span>

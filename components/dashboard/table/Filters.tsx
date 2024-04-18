@@ -20,6 +20,9 @@ interface FilterProps {
  * @description Hook that alerts clicks outside of the passed ref
  */
 function useOutsideAlerter(ref: RefObject<any>, setOpen: (open: boolean) => void) {
+  /**
+   * @description This useEffect handles the click event outside of the element
+   */
   useEffect(() => {
     /**
      * @description Alert if clicked on outside of element
