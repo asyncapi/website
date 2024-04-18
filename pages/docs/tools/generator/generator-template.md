@@ -67,22 +67,10 @@ components:
 
 1. Create a new directory for your template named **python-mqtt-client-template**.
 2. Install the AsyncAPI CLI using the command `npm install -g @asyncapi/cli`.
-3. Create a new folder **test/fixtures** with a file named **asyncapi.yml** in your fixtures directory. This file is used to define the **structure** of your template. You can copy the above example and paste it in your **asyncapi.yml** document.
-4. Create a new file named **package.json** in your **python-mqtt-client-template** directory. This file is used to define the **dependencies** for your template.
-5. Create a new folder **python-mqtt-client-template/template**. Create a new file named **index.js** in your **template** directory. This file is used to define the **logic** for your template.
-6. Create a **test.py** file to validate the logic of your application. Don't worry about this file for now. The tutorial will tell you how to create it later.
-
-Now your directory should look like this:
-
-```
-python-mqtt-client-template 
-├── template
-│   └── index.js
-├── test
-│   └── fixtures
-│       └── asyncapi.yml
-└── package.json
-```
+3. Create a new folder **test/fixtures** with a file named **asyncapi.yml** in your fixtures directory. This file is used to define the **structure** of your template. 
+4. Create a new file named **package.json** in your template directory. This file is used to define the **dependencies** for your template.
+5. Create a new file named **index.js** in your **template** directory. This file is used to define the **logic** for your template.
+6. Create a **test.py** file to validate the logic of your application.
 
 Lets break it down:
 
@@ -122,7 +110,7 @@ Here's what is contained in the code snippet above:
   - **supportedProtocols** - A list that specifies which protocols are supported by your template.
 - **dependencies** - specifies which version of [`@asyncapi/generator-react-sdk`](https://github.com/asyncapi/generator-react-sdk) should be used.
 
-Navigate to the ****python-mqtt-client-template** directory. Run the command `npm install` on your terminal to install the dependencies specified in **package.json**.
+Run the command `npm install` on your terminal to install the dependencies specified in **package.json**.
 
 ### index.js file
 
@@ -155,7 +143,7 @@ The `asyncapi.info().title()` returns `Temperature Service`.
 
 ### Test using AsyncAPI CLI
 
-To see this in action, navigate to the **python-mqtt-client-template** directory. Then, run `asyncapi generate fromTemplate test/fixtures/asyncapi.yml ./ -o test/project` command on your terminal. If successful, you'll see the message below on your terminal:
+To see this in action, run `asyncapi generate fromTemplate test/fixtures/asyncapi.yml ./ -o test/project` command on your terminal. If successful, you'll see the message below on your terminal:
 
 ``` cmd
 Generation in progress. Keep calm and wait a bit... done
@@ -185,7 +173,7 @@ In this section, you'll:
 
 ### 1. Create the client
 
-Here is the sample code to be pasted in the client.py you generated above running the `asyncapi generate fromTemplate test/fixtures/asyncapi.yml ./ -o test/project` command. It uses the `paho-mqtt` package.
+The following is the sample code of the Python client you generated [above](#test-using-asyncapi-cli) using the Paho-MQTT library after running the `asyncapi generate fromTemplate test/fixtures/asyncapi.yml ./ -o test/project` command.
 
 ``` python
 # 1
@@ -224,20 +212,6 @@ In summary, this code sets up an MQTT client using the Paho-MQTT library. It con
 
 You'll interact with the Temperature Service using the client module you created above. You'll create an instance of the client using `client = TemperatureServiceClient()` and then use `client.sendTemperatureChange` function to publish messages that Temperature Service is subscribed to.
 Create a **test/project/test.py** file in your project and add the code snippet below:
-
-Now your directory should look like this:
-
-```
-python-mqtt-client-template
-├── template
-│   └── index.js
-└── test
-    ├── fixtures
-    │   └── asyncapi.yml
-    └── project
-        ├── client.py
-        └── test.py
-```
 
 ``` python
 from client import TemperatureServiceClient
@@ -461,7 +435,7 @@ You'll then need to template to dynamically generate `sendTemperatureDrop` and `
 </Text>
 ```
 
-It's recommended to put reusable components outside the template directory in a new directory called components. You'll create a component that will dynamically generate functions in the output for as many channels as there are in your AsyncAPI document that contains a `publish` operation. Add the following code in the **python-mqtt-client-template/components/TopicFunction.js** file, after creating the **python-mqtt-client-template/components/** directory:
+It's recommended to put reusable components outside template directory in a new directory called **components**. You'll create a component that will dynamically generate functions in the output for as many channels as there are in your AsyncAPI document that contain a `publish` operation. Add the following code in **components/TopicFunction.js** file:
 
 ```js
 /*
@@ -537,23 +511,6 @@ export default function ({ asyncapi, params }) {
 }
 
 ```
-
-Now your directory should look like this:
-
-```
-python-mqtt-client-template
-├── components
-│   └── TopicFunction.js
-├── template
-│   └── index.js
-└── test
-    ├── fixtures
-    │   └── asyncapi.yml
-    └── project
-        ├── client.py
-        └── test.py
-```
-
 
 Run `npm test` on your terminal to ensure everything works as expected.
 
