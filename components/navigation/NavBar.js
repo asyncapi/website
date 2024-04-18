@@ -129,7 +129,7 @@ export default function NavBar({
     setOpen(null);
   }, [asPath]);
 
-  const LanguagePicker = (
+  const LanguageSelector = (
     <LanguageSelect
       options={uniqueLangs}
       onChange={(value) => {
@@ -156,7 +156,8 @@ export default function NavBar({
         )}
 
         <div className="flex flex-row items-center justify-center -mr-2 -my-2 lg:hidden" data-testid="Navbar-search">
-        {LanguagePicker}
+        {/* // Language Selector for Mobile */}
+        {LanguageSelector}
           <SearchButton
             className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
             aria-label="Open Search"
@@ -217,8 +218,8 @@ export default function NavBar({
               <IconLoupe />
             </SearchButton>
 
-            {/* // Language Picker Component */}
-            {LanguagePicker}
+            {/* // Language Selector for normal screen */}
+            {LanguageSelector}
 
             <GithubButton text="Star on GitHub" href="https://github.com/asyncapi/spec" className="py-2 ml-2" inNav="true" />
           </div>
@@ -227,7 +228,7 @@ export default function NavBar({
       </div>
 
       {/* Mobile menu, show/hide based on mobile menu state. */}
-      {mobileMenuOpen && <MobileNavMenu  onClickClose={() => setMobileMenuOpen(false)} LanguagePicker={LanguagePicker}/>}
+      {mobileMenuOpen && <MobileNavMenu  onClickClose={() => setMobileMenuOpen(false)} LanguageSelector={LanguageSelector}/>}
 
     </div>
   )
