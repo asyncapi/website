@@ -56,7 +56,18 @@
       "resourcePath": "/asyncapi/community/pull/1013",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 22.9739670999407
+      "score": 23.26114168868996
+    },
+    {
+      "id": "PR_kwDOFLhIt85bqKL8",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add Bounty Program Rules",
+      "author": "aeworxet",
+      "resourcePath": "/asyncapi/community/pull/897",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 22.112443333692923
     },
     {
       "id": "PR_kwDODou01c5Iv4zR",
@@ -158,20 +169,24 @@
         }
       ],
       "score": 16.943300736206268
-    },
-    {
-      "id": "PR_kwDODou01c5YJ7kV",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "Add Form component",
-      "author": "KhudaDad414",
-      "resourcePath": "/asyncapi/studio/pull/773",
-      "repo": "asyncapi/studio",
-      "labels": [],
-      "score": 15.507427792459973
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOFiHfqc6F__UO",
+      "title": "[BUG] File Reading Method in the Example script is not appropriate",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/optimizer/issues/251",
+      "repo": "asyncapi/optimizer",
+      "author": "KhudaDad414",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
     {
       "id": "I_kwDOE8Qh386CSg4-",
       "title": "Java generator does not include import for dictionary models",
@@ -260,21 +275,6 @@
         {
           "name": "C# generator",
           "color": "c5def5"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCVQpZM58chHc",
-      "title": "Workflows failing because of some leftovers scripts",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/asyncapi-react/issues/888",
-      "repo": "asyncapi/asyncapi-react",
-      "author": "derberg",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
         }
       ]
     },
