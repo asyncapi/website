@@ -1,15 +1,15 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/dp9mPQINYd4/hqdefault.jpg",
-    "title": "Community Meeting, 8:00 UTC Tuesday April 16th 2024",
-    "description": "https://github.com/asyncapi/community/issues/1124.",
-    "videoId": "dp9mPQINYd4"
-  },
-  {
     "image_url": "https://i.ytimg.com/vi/EMQgIuRyq1o/hqdefault.jpg",
     "title": "Essential Building Blocks Working Group, Tuesday April 16th 2024",
     "description": "https://github.com/asyncapi/community/issues/1159.",
     "videoId": "EMQgIuRyq1o"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/dp9mPQINYd4/hqdefault.jpg",
+    "title": "Community Meeting, 8:00 UTC Tuesday April 16th 2024",
+    "description": "https://github.com/asyncapi/community/issues/1124.",
+    "videoId": "dp9mPQINYd4"
   },
   {
     "image_url": "https://i.ytimg.com/vi/9gQrpEsKs5E/hqdefault.jpg",
