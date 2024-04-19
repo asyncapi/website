@@ -31,6 +31,7 @@ export default function GenericPostLayout({ post, children }: IGenericPostLayout
 
   return (
     <GenericPostContext.Provider value={{ post }}>
+      {/* @TODO Will uncomment the component once it is in use */}
       {/* <AnnouncementHero className='m-4 text-center' small={true} /> */}
       <Container>
         <main className='mt-8 px-4 sm:px-6' data-testid='GenericPostLayout-main-div'>

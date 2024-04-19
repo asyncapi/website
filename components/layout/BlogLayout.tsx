@@ -40,13 +40,14 @@ export default function BlogLayout({
 
   return (
     <BlogContext.Provider value={{ post }}>
+      {/* @TODO Will uncomment the component once it is in use */}
       {/* <AnnouncementHero className='mx-8 my-4' /> */}
       <Container cssBreakingPoint='lg' flex flexReverse>
         <TOC
           toc={post.toc}
           cssBreakingPoint='lg'
-          className={`sticky top-20 mt-4 max-h-screen overflow-y-auto bg-blue-100 p-4 lg:top-24 
-            lg:-mr-20 lg:mt-2 lg:max-h-(screen-16) lg:min-w-40 lg:max-w-64 lg:border-l lg:border-gray-200 
+          className={`sticky top-20 mt-4 max-h-screen overflow-y-auto bg-blue-100 p-4 lg:top-24
+            lg:-mr-20 lg:mt-2 lg:max-h-(screen-16) lg:min-w-40 lg:max-w-64 lg:border-l lg:border-gray-200
             lg:bg-transparent lg:pb-8 lg:pt-0 xl:-mr-36 xl:min-w-72`}
         />
         <main className='mt-8 px-4 sm:px-6 lg:max-w-172 lg:flex-1 lg:pl-0 lg:pr-8 xl:max-w-172'>
