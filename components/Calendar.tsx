@@ -1,3 +1,4 @@
+import moment from 'moment';
 import { twMerge } from 'tailwind-merge';
 
 import type { IEvent } from '@/types/event';
@@ -38,13 +39,13 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
           <li key={index} data-testid='Calendar-list-item'>
             <a href={event.url} className='mb-1 mt-2 flex grow flex-col items-start sm:flex-row sm:items-center'>
               <div className='inline-flex h-12 min-w-12 flex-row rounded-full bg-pink-500 font-bold text-white'>
-                <span className='flex-1 self-center text-center'>{event.date.format('D')}</span>
+                <span className='flex-1 self-center text-center'>{moment(event.date).format('D')}</span>
               </div>
               <div className='grow text-left sm:mt-0 sm:pl-6'>
                 <h2 className='title-font text-xl font-medium text-gray-900 hover:text-gray-500'>{event.title}</h2>
                 <p className='text-gray-600'>
-                  {event.date.local().format('LLLL')} UTC
-                  {event.date.local().format('Z')}
+                  {moment(event.date).local().format('LLLL')} UTC
+                  {moment(event.date).local().format('Z')}
                 </p>
               </div>
             </a>
