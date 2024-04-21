@@ -22,7 +22,8 @@ export default function Newsroom() {
           Latest Updates
         </Heading>
         <Paragraph typeStyle={ParagraphTypeStyle.md} className='mx-auto mt-5 max-w-2xl'>
-          Get a glimpse of latest news, events, and blog posts. Want to publish a blog post? We love community stories.&nbsp;
+          Get a glimpse of latest news, events, and blog posts. Want to publish a blog post? We love community
+          stories.&nbsp;
           <TextLink href='https://github.com/asyncapi/website/issues/new?template=blog.md' target='_blank'>
             Submit yours!
           </TextLink>

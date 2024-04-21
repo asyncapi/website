@@ -124,7 +124,7 @@ export default function EventIndex() {
               Explore numerous AsyncAPI's livestreams, specifically curated
             </Paragraph>
           </div>
-          <div className='flex lg:flex-row flex-col mt-10 lg:mt-0'>
+          <div className='mt-10 flex flex-col lg:mt-0 lg:flex-row'>
             <div className='' data-testid='CommunityMeeting-Card'>
               <Meeting
                 name='Community Meeting'
@@ -177,7 +177,7 @@ export default function EventIndex() {
           </div>
         </div>
       </div>
-      <div className='mt-8 rounded-lg bg-dark py-12 md:mt-20 text-white'>
+      <div className='mt-8 rounded-lg bg-dark py-12 text-white md:mt-20'>
         <NewsletterSubscribe
           dark={true}
           type='Meetings'
