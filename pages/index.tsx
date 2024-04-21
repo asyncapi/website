@@ -4,9 +4,7 @@ import AlgoliaSearch, { SearchButton } from '@/components/AlgoliaSearch';
 import Button from '@/components/buttons/Button';
 import IconArrowRight from '@/components/icons/ArrowRight';
 import IconLoupe from '@/components/icons/Loupe';
-import type { IBlogPost } from '@/types/post';
 
-import posts from '../config/posts.json';
 import { useTranslation } from '../utils/i18n';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -16,12 +14,6 @@ const inter = Inter({ subsets: ['latin'] });
  */
 export default function Home() {
   const { t } = useTranslation('landing-page');
-
-  const logType = (value: IBlogPost) => {
-    console.log(value);
-  };
-
-  logType(posts.blog[2]);
 
   return (
     <main className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}>

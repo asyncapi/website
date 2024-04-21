@@ -136,7 +136,6 @@ function CodeComponent({ children, className = '', metastring = '', ...rest }: C
   const maybeLanguage = className.match(/language-([\w\d\-_]+)/);
   const language = maybeLanguage && maybeLanguage.length >= 2 ? maybeLanguage[1] : undefined;
 
-  console.log(children);
   if (language === 'mermaid') {
     return <MermaidDiagram graph={children} />;
   }
@@ -257,11 +256,7 @@ export function getMDXComponents() {
         className={`${props.className || ''} border-b border-gray-200 px-6 py-4 text-sm leading-5 tracking-tight text-gray-700`}
       />
     ),
-    pre: (props: React.HTMLProps<HTMLPreElement>) => {
-      console.log((props.children as React.ReactElement)?.props);
-
-      return CodeComponent((props.children as React.ReactElement)?.props);
-    },
+    pre: (props: React.HTMLProps<HTMLPreElement>) => CodeComponent((props.children as React.ReactElement)?.props),
     code: (props: React.HTMLProps<HTMLElement>) => (
       <code
         {...props}
