@@ -63,7 +63,7 @@ export default function Card({
             </Heading>
           </div>
           <div className='mt-2' data-testid='Card-desc'>
-            <Paragraph textColor={bg ? 'text-black' : 'text-gray-600'} typeStyle={ParagraphTypeStyle.sm}>
+            <Paragraph textColor={bg === 'bg-white' ? 'text-gray-600' : 'text-black'} typeStyle={ParagraphTypeStyle.sm}>
               {description}
             </Paragraph>
           </div>

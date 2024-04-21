@@ -49,7 +49,7 @@ export default function CommunityIndexPage() {
             level={HeadingLevel.h2}
             typeStyle={HeadingTypeStyle.bodyLg}
             textColor='text-gray-700'
-            className='text-sm text-slate-500'
+            className='text-slate-500'
           >
             Join the conversation with over 10k+ developers from literally everywhere.
           </Heading>

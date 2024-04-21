@@ -50,13 +50,13 @@ export default function Meeting({
         </div>
         <div className='flex items-center justify-between'>
           <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4'>
-            <strong data-testid='Meeting-host'>Host:</strong>
+            <strong data-testid='Meeting-host'>Host:&nbsp;</strong>
             {hostProfile ? (
               <TextLink href={hostProfile} target='_blank' className='hover:text-primary-500'>
                 {host}
               </TextLink>
             ) : (
-              ` ${host}.`
+              `${host}.`
             )}
           </Paragraph>
           <div>

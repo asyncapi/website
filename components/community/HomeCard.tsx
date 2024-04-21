@@ -42,7 +42,7 @@ export default function HomeCards({ headline, title, description, btnText, link,
             level={HeadingLevel.h2}
             typeStyle={HeadingTypeStyle.bodyLg}
             textColor='text-gray-700'
-            className='mt-10 text-sm text-slate-500'
+            className='mt-10 text-slate-500'
           >
             {description}
           </Heading>

@@ -36,7 +36,7 @@ interface NewsletterSubscribeProps {
  * @param {string} props.type - The type of subscription.
  */
 export default function NewsletterSubscribe({
-  className = 'p-8 text-center text-white',
+  className = 'p-8 text-center text-black',
   dark = false,
   title = 'Subscribe to our newsletter to receive news about AsyncAPI.',
   subtitle = 'We respect your inbox. No spam, promise ✌️',

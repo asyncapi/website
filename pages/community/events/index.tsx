@@ -50,7 +50,7 @@ export default function EventIndex() {
               className='text-slate-500'
             >
               All events/meetings are live streamed to all AsyncAPI social media accounts. To learn more about meetings
-              setup and automation
+              setup and automation&nbsp;
               <TextLink
                 href='https://github.com/asyncapi/community/blob/master/MEETINGS_ORGANIZATION.md'
                 target='_blank'
