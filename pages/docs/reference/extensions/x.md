@@ -21,12 +21,12 @@ Name of the Twitter username.
 ## Extension Location 
 
 This extension can be used in the following locations:
-- [Info Object](https://www.asyncapi.com/docs/reference/specification/v2.6.0#infoObject)
+- [Info Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#infoObject)
 
 ## Example
 
 ```yaml
-asyncapi: '2.6.0'
+asyncapi: '3.0.0'
 info
   title: Strretlights Kafka API
   version: '1.0.0'
