@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/community/pull/1155",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 43.076188312388815
+      "score": 45.37358502238288
     },
     {
       "id": "I_kwDOFLhIt84-OUI3",
@@ -81,6 +81,22 @@
       "score": 21.825268744943667
     },
     {
+      "id": "I_kwDOBW5R_c5J6qNe",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Measuring AsyncAPI spec adoption",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/780",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ],
+      "score": 20.96374497869589
+    },
+    {
       "id": "I_kwDODou01c5AqLB8",
       "isPR": false,
       "isAssigned": false,
@@ -128,6 +144,22 @@
       "score": 19.815046623698855
     },
     {
+      "id": "PR_kwDOFLhIt85q-42Y",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: initial infra for slack intergration",
+      "author": "Shurtu-gal",
+      "resourcePath": "/asyncapi/community/pull/1131",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "bounty",
+          "color": "0E8A16"
+        }
+      ],
+      "score": 19.240697446200336
+    },
+    {
       "id": "I_kwDOBW5R_c580Z0o",
       "isPR": false,
       "isAssigned": false,
@@ -142,48 +174,21 @@
         }
       ],
       "score": 18.091999091203302
-    },
-    {
-      "id": "PR_kwDOFLhIt85oVQqh",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: docs automation for website",
-      "author": "AnimeshKumar923",
-      "resourcePath": "/asyncapi/community/pull/1082",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 17.804824502454043
-    },
-    {
-      "id": "I_kwDOCVQpZM5M_dcV",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "DocsUI: Messages Object output",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
-      "repo": "asyncapi/asyncapi-react",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 16.943300736206268
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOFiHfqc6F__UO",
-      "title": "[BUG] File Reading Method in the Example script is not appropriate",
+      "id": "I_kwDOBW5R_c6GUTRu",
+      "title": "Extensions are redirecting to 404 page",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/optimizer/issues/251",
-      "repo": "asyncapi/optimizer",
-      "author": "KhudaDad414",
-      "area": "javascript",
+      "resourcePath": "/asyncapi/website/issues/2890",
+      "repo": "asyncapi/website",
+      "author": "sambhavgupta0705",
+      "area": "Unknown",
       "labels": [
         {
           "name": "bug",
-          "color": "d73a4a"
+          "color": "ee0701"
         }
       ]
     },
