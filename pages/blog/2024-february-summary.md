@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: AsyncAPI Community Manager
 excerpt: 'Community update for February'
-featured: true
 ---
 
 We are starting the year off with a bang as we got accepted to the [Google Summer of Code 2024](https://summerofcode.withgoogle.com/programs/2024/organizations/asyncapi) program after two years of rejections. It is an incredible achievement for the community, and we wouldn't have done it without our Doc's Lead,  [Alejandra Quetzalli](https://www.linkedin.com/in/alejandra-quetzalli/), who crafted an excellent proposal, and [Elegbede Azeez](https://twitter.com/_acebuild). We are very excited to have received this opportunity, and you can read [the AsyncAPI Project Ideas Page](https://github.com/asyncapi/community/blob/master/mentorship/summerofcode/2024/asyncapi-gsoc-ideas-page.md) for in-depth details on participating projects.
