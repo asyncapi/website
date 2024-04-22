@@ -182,6 +182,24 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                       </div>
                       <div>
                         <span className="text-sm font-sans antialiased text-gray-800">
+                          Want to interactively navigate the new v3.0.0?&nbsp;
+                        </span>
+                        <span className="text-sm font-sans antialiased text-gray-800">
+                          Check&nbsp;
+                          <Link href="/spec-json-schema">
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`cursor-pointer font-body text-sm leading-6 underline font-medium text-secondary-500 hover:text-secondary-600 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150`}
+                            >
+                              Version 3 visualizer
+                            </a>
+                          </Link>
+                          .
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-sm font-sans antialiased text-gray-800">
                           Interested in release notes of other versions of the
                           specification?&nbsp;
                         </span>
