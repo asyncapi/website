@@ -270,7 +270,7 @@ export default function CodeBlock({
             startingLineNumber={startingLineNumber}
             lineNumberContainerStyle={{
               paddingLeft: '0.5em',
-              background: '#252f3f',
+              background: '#252f3f'
             }}
             lineNumberStyle={(lineNumber: number) => {
               const isHighlighted = highlightedLines && highlightedLines.includes(lineNumber);
