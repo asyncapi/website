@@ -1,9 +1,8 @@
 import { ButtonIconPosition } from '@/types/components/buttons/ButtonPropsType';
 
+import { useTranslation } from '../../utils/i18n';
 import IconCalendar from '../icons/Calendar';
 import Button from './Button';
-// TODO: add this again when we have i18n
-// import { useTranslation } from '../../lib/i18n';
 import type { IButtonDefaultProps } from './types';
 
 interface IICSFButtonProps extends IButtonDefaultProps {}
@@ -23,14 +22,11 @@ export default function ICSFButton({
   iconPosition = ButtonIconPosition.LEFT,
   className
 }: IICSFButtonProps) {
-  // TODO: add this again when we have i18n
-  // const { t } = useTranslation('common');
+  const { t } = useTranslation('common');
 
   return (
     <Button
-      // TODO: add this again when we have i18n
-      // text={t(text)}
-      text={text}
+      text={t(text)}
       icon={<IconCalendar />}
       href={href}
       iconPosition={iconPosition}

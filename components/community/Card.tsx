@@ -12,13 +12,13 @@ import Paragraph from '../typography/Paragraph';
 interface CardProps {
   icon: string;
   tagline: string;
-  taglineBg: string;
+  taglineBg?: string;
   type?: CardType;
   heading: string;
   description: string;
   bg: string;
-  btnText: string;
-  btnBg: string;
+  btnText?: string;
+  btnBg?: string;
   link: string;
 }
 
@@ -38,13 +38,13 @@ interface CardProps {
 export default function Card({
   icon,
   tagline,
-  taglineBg,
+  taglineBg = '',
   type = CardType.LARGE,
   heading,
   description,
   bg,
-  btnText,
-  btnBg,
+  btnText = '',
+  btnBg = '',
   link
 }: CardProps) {
   if (type === CardType.SMALL) {
@@ -63,7 +63,7 @@ export default function Card({
             </Heading>
           </div>
           <div className='mt-2' data-testid='Card-desc'>
-            <Paragraph textColor={bg ? 'text-black' : 'text-gray-600'} typeStyle={ParagraphTypeStyle.sm}>
+            <Paragraph textColor={bg === 'bg-white' ? 'text-gray-600' : 'text-black'} typeStyle={ParagraphTypeStyle.sm}>
               {description}
             </Paragraph>
           </div>
@@ -81,7 +81,7 @@ export default function Card({
       data-testid='Card-lg-bg'
     >
       <div
-        className={`flex w-min justify-between rounded-xl p-2 text-center text-xs ${taglineBg}`}
+        className={`flex w-min justify-between rounded-xl p-2 text-center text-xs text-black ${taglineBg}`}
         data-testid='Card-lg-tagline'
       >
         <span>{icon}</span> <span className='ml-[5px]'>{tagline}</span>
