@@ -25,7 +25,7 @@ export default function ErrorPage() {
           </header>
         </div>
         <div>
-          <img src={image} className='mx-auto w-52' />
+          <img src={image} alt='Not Found' className='mx-auto w-52' />
         </div>
       </div>
 
