@@ -203,7 +203,7 @@ const Index: React.FC<IndexProps> = ({
               <div className='flex flex-wrap gap-1' id='Contacts'>
                 {contacts.map((item, index) => (
                   <div key={index}>
-                    <Heading typeStyle={HeadingTypeStyle.lg}>
+                    <Heading typeStyle={HeadingTypeStyle.bodyLg}>
                       <Link
                         href={item.link}
                         className='text-md font-medium leading-5 text-gray-900 hover:underline'
@@ -230,8 +230,8 @@ const Index: React.FC<IndexProps> = ({
                 </span>
               </div>
               <div className='mt-10'>
-                <Heading typeStyle={HeadingTypeStyle.lg}>{casestudy.company.description}</Heading>
-                <Heading className='mt-10' typeStyle={HeadingTypeStyle.lg}>
+                <Heading typeStyle={HeadingTypeStyle.bodyLg}>{casestudy.company.description}</Heading>
+                <Heading className='mt-10' typeStyle={HeadingTypeStyle.bodyLg}>
                   tl;dr just go and have a look at
                   <Link
                     href={`/${casestudy.asyncapi.fullExample}`}
