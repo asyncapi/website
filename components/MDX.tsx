@@ -93,10 +93,8 @@ function MermaidDiagram({ graph }: MermaidDiagramProps) {
     }
 
     try {
-      const svgElement = document.createElement('div');
-
-      mermaid.mermaidAPI.render(uuid(), graph, svgElement).then(() => {
-        setSvg(svgElement.innerHTML);
+      mermaid.mermaidAPI.render(uuid(), graph, (svgGraph) => {
+        setSvg(svgGraph);
       });
     } catch (e) {
       setSvg(null);

@@ -28,8 +28,8 @@ export default function Home() {
         {/* Wrap SearchButton with AlgoliaSearch component */}
         <AlgoliaSearch>
           <SearchButton
-            className={`flex w-full items-center space-x-3 rounded-md border border-secondary-500 
-              bg-secondary-100 px-4 py-3 text-left text-secondary-500 shadow-md transition-all 
+            className={`flex w-full items-center space-x-3 rounded-md border border-secondary-500
+              bg-secondary-100 px-4 py-3 text-left text-secondary-500 shadow-md transition-all
               duration-500 ease-in-out hover:bg-secondary-500 hover:text-white md:w-auto`}
           >
             {({ actionKey }) => (
