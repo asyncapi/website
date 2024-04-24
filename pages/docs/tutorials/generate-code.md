@@ -37,7 +37,7 @@ import CliInstallation from '../../../assets/docs/fragments/cli-installation.md'
 
 1. Trigger the creation of the Glee project:
     <CodeBlock language="bash">
-    {`asyncapi new glee --name=tutorial --template tutorial`}
+    {`asyncapi new glee --name=tutorial --template=tutorial`}
     </CodeBlock>
 
     Let's break down the previous command:
