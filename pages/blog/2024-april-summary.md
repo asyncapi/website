@@ -20,7 +20,7 @@ We are excited and commend [Specmatic](https://specmatic.in/) for their commitme
 
 We are thrilled to announce that AACoT'24 will return to London this year, and [the Call for Speakers is now open](https://conference.asyncapi.com/venue/London). Start preparing your proposals today, and get ready to join us in September!
 
-On an exciting note, we plan to host an online edition sometime this year. For more context, [please attend the upcoming community meeting](https://github.com/asyncapi/community/issues/1184).
+On an exciting note, we're considering having an online edition sometime this year; [please attend the upcoming community meeting](https://github.com/asyncapi/community/issues/1184) for more context.
 
 
 ## Spec X Tooling
@@ -29,6 +29,8 @@ The [AsyncAPI Optimizer](https://github.com/asyncapi/optimizer) has reached v1.0
 [Aklivity](https://www.aklivity.io/), one of the initiative sponsors, is developing Zilla, a multi-protocol service proxy for Kafka that now supports AsyncAPI v3 for configuration and validation. Please [read the announcement blog](https://www.aklivity.io/post/announcing-openapi-and-asyncapi-support-in-zilla) for more technical details and explore [the Zilla Petstore Kafka API v2 docs](https://tinyurl.com/zilla-petstore-kafka-v2) or [Petstore app demo](https://github.com/aklivity/zilla-demos/blob/main/petstore/README.md).
 
 In our efforts to improve the contributor experience, we have introduced new help commands: **/ptal**, which pings reviewers to please take a look at the PR, and **/update**, which triggers the AsyncAPI bot to update a PR to the latest upstream. We are grateful to [Priyansh Mehta](https://github.com/Priyansh61), [Khuda Dad Nomani](https://www.linkedin.com/in/khudadadnomani), and [Ashish Padhy](https://www.linkedin.com/in/ashish-padhy3023) for their contributions.
+
+Don't worry if you don't remember all these commands; you can always use the **/help** command in a pull request, and the AsyncAPI bot will share a list of available commands with you.
 
 ## Community Discussions
 Here are some community discussions that require your attention:
