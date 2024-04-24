@@ -101,6 +101,7 @@
   "devDependencies": {
     "@netlify/functions": "^2.6.0",
     "@netlify/plugin-nextjs": "^4.41.3",
+    "@types/lodash": "^4.17.0",
     "@types/node": "^20",
     "@types/react": "^18.0.1",
     "@types/react-dom": "^18",

@@ -36,7 +36,7 @@ export default function Header({ className = '' }: HeaderProps) {
           level={HeadingLevel.h2}
           typeStyle={HeadingTypeStyle.bodyMd}
           textColor='text-gray-700'
-          className='text-sm text-slate-500'
+          className='text-slate-500'
         >
           We&apos;re an OSS community that&apos;s passionate about AsyncAPI. Join us in building the future of Event
           Driven APIs by asking questions, sharing ideas, and building connections.
