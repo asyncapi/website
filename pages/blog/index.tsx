@@ -72,7 +72,7 @@ export default function BlogIndexPage() {
               Find the latest and greatest stories from our community
             </Paragraph>
             <Paragraph typeStyle={ParagraphTypeStyle.md} className='mx-auto mt-4 max-w-2xl'>
-              Want to publish a blog post? We love community stories.
+              Want to publish a blog post? We love community stories.{' '}
               <TextLink href='https://github.com/asyncapi/website/issues/new?template=blog.md' target='_blank'>
                 Submit yours!
               </TextLink>
@@ -87,7 +87,7 @@ export default function BlogIndexPage() {
                 height='18px'
                 width='18px'
               />
-              <TextLink href='/rss.xml'>RSS Feed</TextLink>, too!
+              <TextLink href='/rss.xml'> RSS Feed</TextLink>, too!
             </Paragraph>
           </div>
           <div className='mx:64 mt-12 md:flex md:justify-center lg:justify-start'>
