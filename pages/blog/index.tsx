@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import type { FC } from 'react';
 import { useContext, useState } from 'react';
 
 import Empty from '@/components/illustrations/Empty';
@@ -14,7 +13,10 @@ import type { IBlogPost } from '@/types/post';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
-const BlogIndexPage: FC = () => {
+/**
+ * @description The BlogIndexPage is the blog index page of the website.
+ */
+export default function BlogIndexPage() {
   const router = useRouter();
   const { navItems } = useContext(BlogContext);
 
@@ -121,6 +123,4 @@ const BlogIndexPage: FC = () => {
       </div>
     </GenericLayout>
   );
-};
-
-export default BlogIndexPage;
+}
