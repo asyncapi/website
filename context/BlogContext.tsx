@@ -4,5 +4,5 @@ import type { IBlog } from '@/types/post';
 
 export default createContext<{ post?: IBlog[number]; navItems?: IBlog }>({
   post: undefined,
-  navItems: undefined
+  navItems: []
 });

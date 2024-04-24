@@ -1,6 +1,5 @@
 import aspectRatioPlugin from '@tailwindcss/aspect-ratio';
 import formsPlugin from '@tailwindcss/forms';
-import lineClampPlugin from '@tailwindcss/line-clamp';
 import typographyPlugin from '@tailwindcss/typography';
 import type { Config } from 'tailwindcss';
 import colors from 'tailwindcss/colors';
@@ -210,7 +209,6 @@ const config: Config = {
     formsPlugin,
     typographyPlugin,
     aspectRatioPlugin,
-    lineClampPlugin,
     plugin(({ addUtilities }) => {
       const utilities = {
         '.hljs-asyncapi-file': {
