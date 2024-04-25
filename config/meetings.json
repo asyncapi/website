@@ -140,13 +140,6 @@
     "date": "2024-04-10T14:00:00.000Z"
   },
   {
-    "title": "AACoT'24 Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=ZnZqMm41aDk3M2NxcWxnOXFyYWFqMDJrcW8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1148",
-    "banner": "https://github.com/asyncapi/community/assets/66913810/43114d9e-ee7f-4479-8714-475d67a374aa",
-    "date": "2024-04-24T14:00:00.000Z"
-  },
-  {
     "title": "Community Growth Working Group",
     "calLink": "https://www.google.com/calendar/event?eid=NWluOTRmcG9vYjVjcWoydjVocDAzbjJtb2sgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1154",
@@ -166,5 +159,38 @@
     "url": "https://github.com/asyncapi/community/issues/1169",
     "banner": "",
     "date": "2024-04-15T14:00:00.000Z"
+  },
+  {
+    "title": "Marketing - Next steps",
+    "calLink": "https://www.google.com/calendar/event?eid=bG5rcGc3bWZuODhrajU2aGtxamtvajI4c28gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1175",
+    "banner": "",
+    "date": "2024-04-25T14:00:00.000Z"
+  },
+  {
+    "title": "Essential Building Blocks Working Group",
+    "calLink": "https://www.google.com/calendar/event?eid=M2RqZ3FmODRyZzRxM3RwOW9uMHEyNzVudjQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1177",
+    "banner": "",
+    "date": "2024-04-23T18:00:00.000Z"
+  },
+  {
+    "title": "Maintainers Growth Working Group Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=NGZ0NWZiNWw0MzJsbGR0M2Ewdm5kcGNkYzEgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "date": "2024-04-22T14:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=cmk4OTNzZGxvZDd2NHZxb243cG44NzlibWsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1184",
+    "banner": "https://github.com/asyncapi/community/assets/40604284/d5358c67-20c3-48a9-b61c-cbea54bbf95c",
+    "date": "2024-04-30T16:00:00.000Z"
+  },
+  {
+    "title": "Essential Building Blocks Working Group",
+    "calLink": "https://www.google.com/calendar/event?eid=cjNxYm9sOXIwNDlpazY5MmoyNHE3NGxoZHMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1186",
+    "banner": "",
+    "date": "2024-04-30T18:00:00.000Z"
   }
 ]

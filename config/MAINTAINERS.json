@@ -680,7 +680,8 @@
         "availableForHire": false,
         "isTscMember": false,
         "repos": [
-            "bundler"
+            "bundler",
+            "optimizer"
         ]
     }
 ]
