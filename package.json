@@ -69,7 +69,7 @@
     "markdown-to-txt": "^2.0.1",
     "markdown-toc": "^1.2.0",
     "md5": "^2.3.0",
-    "mermaid": "^10.8.0",
+    "mermaid": "9.3.0",
     "moment": "^2.30.1",
     "next": "14.1.0",
     "next-mdx-remote": "^4.4.1",
@@ -102,6 +102,7 @@
   "devDependencies": {
     "@netlify/functions": "^2.6.0",
     "@netlify/plugin-nextjs": "^4.41.3",
+    "@types/lodash": "^4.17.0",
     "@types/node": "^20",
     "@types/react": "^18.0.1",
     "@types/react-dom": "^18",

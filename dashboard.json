@@ -1,6 +1,17 @@
 {
   "hotDiscussions": [
     {
+      "id": "PR_kwDOFLhIt85sHzf3",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add instruction how voting automation works",
+      "author": "AayushSaini101",
+      "resourcePath": "/asyncapi/community/pull/1155",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 45.37358502238288
+    },
+    {
       "id": "I_kwDOFLhIt84-OUI3",
       "isPR": false,
       "isAssigned": false,
@@ -37,26 +48,6 @@
       "score": 28.430284286176615
     },
     {
-      "id": "I_kwDOBW5R_c5Pi3rO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Epic roadmap to the new AsyncAPI community section",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/website/issues/903",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "keep-open",
-          "color": "ffee84"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        }
-      ],
-      "score": 22.68679251119144
-    },
-    {
       "id": "PR_kwDOFLhIt85js7KX",
       "isPR": true,
       "isAssigned": false,
@@ -65,6 +56,26 @@
       "resourcePath": "/asyncapi/community/pull/1013",
       "repo": "asyncapi/community",
       "labels": [],
+      "score": 23.26114168868996
+    },
+    {
+      "id": "I_kwDOBW5R_c5J6qNe",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Measuring AsyncAPI spec adoption",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/780",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "keep-open",
+          "color": "ffee84"
+        }
+      ],
       "score": 22.112443333692923
     },
     {
@@ -87,7 +98,7 @@
       "resourcePath": "/asyncapi/studio/pull/553",
       "repo": "asyncapi/studio",
       "labels": [],
-      "score": 21.25091956744515
+      "score": 21.825268744943667
     },
     {
       "id": "I_kwDODou01c5AqLB8",
@@ -110,6 +121,22 @@
       "score": 20.67657038994663
     },
     {
+      "id": "PR_kwDOFLhIt85q-42Y",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: initial infra for slack intergration",
+      "author": "Shurtu-gal",
+      "resourcePath": "/asyncapi/community/pull/1131",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "bounty",
+          "color": "0E8A16"
+        }
+      ],
+      "score": 20.67657038994663
+    },
+    {
       "id": "I_kwDOGJ23c85V9C3c",
       "isPR": false,
       "isAssigned": false,
@@ -123,47 +150,18 @@
           "color": "a2eeef"
         }
       ],
-      "score": 20.102221212448114
+      "score": 20.38939580119737
     },
     {
-      "id": "I_kwDOBW5R_c5BIl5P",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Add new page for collecting user testing participants",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/website/issues/529",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ],
+      "id": "PR_kwDOE8Qh385kzOtQ",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add Avro Schema input processor",
+      "author": "akkshitgupta",
+      "resourcePath": "/asyncapi/modelina/pull/1753",
+      "repo": "asyncapi/modelina",
+      "labels": [],
       "score": 19.815046623698855
-    },
-    {
-      "id": "I_kwDOFDnrNc51TZDT",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Improve CLI UI and UX",
-      "author": "fmvilas",
-      "resourcePath": "/asyncapi/cli/issues/872",
-      "repo": "asyncapi/cli",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "bounty",
-          "color": "0e8a16"
-        },
-        {
-          "name": "level/medium",
-          "color": "0e8a16"
-        }
-      ],
-      "score": 18.953522857451077
     },
     {
       "id": "I_kwDOBW5R_c580Z0o",
@@ -180,37 +178,21 @@
         }
       ],
       "score": 18.091999091203302
-    },
-    {
-      "id": "I_kwDODou01c5E_LV0",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create onboarding for features of Studio",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/studio/issues/284",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 17.517649913704783
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOFDnrNc6DvxH4",
-      "title": "[BUG] Missing on-workflow-trigger for update-docs-in-website action",
+      "id": "I_kwDOBW5R_c6GUTRu",
+      "title": "Extensions are redirecting to 404 page",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/1301",
-      "repo": "asyncapi/cli",
-      "author": "Souvikns",
+      "resourcePath": "/asyncapi/website/issues/2890",
+      "repo": "asyncapi/website",
+      "author": "sambhavgupta0705",
       "area": "Unknown",
       "labels": [
         {
           "name": "bug",
-          "color": "d73a4a"
+          "color": "ee0701"
         }
       ]
     },
@@ -302,21 +284,6 @@
         {
           "name": "C# generator",
           "color": "c5def5"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCVQpZM58chHc",
-      "title": "Workflows failing because of some leftovers scripts",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/asyncapi-react/issues/888",
-      "repo": "asyncapi/asyncapi-react",
-      "author": "derberg",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
         }
       ]
     },
@@ -576,25 +543,6 @@
       ]
     },
     {
-      "id": "I_kwDODwv8N85yTwat",
-      "title": "venues addresses to be clickable links that take you you google map location",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/conference-website/issues/202",
-      "repo": "asyncapi/conference-website",
-      "author": "derberg",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
       "id": "I_kwDODtTERs5wDOAH",
       "title": "Support decimal min and max",
       "isAssigned": false,
@@ -625,21 +573,6 @@
         {
           "name": "🎨 design",
           "color": "0D67D3"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5rh81V",
-      "title": "[📑 Docs]: suggestions on 'create-asyncapi-document.md' file",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1945",
-      "repo": "asyncapi/website",
-      "author": "AnimeshKumar923",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
         }
       ]
     },
@@ -905,40 +838,6 @@
       ]
     },
     {
-      "id": "I_kwDOFGbvC85AWog3",
-      "title": "Automate Helm chart release version bump",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/event-gateway/issues/86",
-      "repo": "asyncapi/event-gateway",
-      "author": "smoya",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "keep-open",
-          "color": "1DAEAC"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFGbvC84_LkcI",
-      "title": "Create better Kubernetes liveness, readiness and startup Probes",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/event-gateway/issues/77",
-      "repo": "asyncapi/event-gateway",
-      "author": "smoya",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "keep-open",
-          "color": "1DAEAC"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOBW5R_c48lGJg",
       "title": "Add visual on the \"generator\" and maybe others....",
       "isAssigned": false,
@@ -954,25 +853,6 @@
         {
           "name": "🎨 design",
           "color": "0D67D3"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFGbvC8473gxV",
-      "title": "Define a better API that can be used by other applications",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/event-gateway/issues/47",
-      "repo": "asyncapi/event-gateway",
-      "author": "smoya",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "help wanted",
-          "color": "008672"
-        },
-        {
-          "name": "keep-open",
-          "color": "1DAEAC"
         }
       ]
     },
