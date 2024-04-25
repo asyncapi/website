@@ -36,7 +36,7 @@ Don't worry if you don't remember all these commands; you can always use the **/
 Here are some community discussions that require your attention:
 
 ### Marketing
-After some weeks of discussing the marketing efforts, we are now looking for someone to fill the role of **Community Marketing Specialist**. Please have a look at the[ AsyncAPI Community Marketing Specialist Hiring discussion](https://github.com/orgs/asyncapi/discussions/1176) for additional context on the role.
+After some weeks of discussing the marketing efforts, we are now looking for someone to fill the role of **Community Marketing Specialist**. Please have a look at the [AsyncAPI Community Marketing Specialist Hiring discussion](https://github.com/orgs/asyncapi/discussions/1176) for additional context on the role.
 
 ### AsyncAPI Working Groups
 We have a new Conference Coordination Working Group that focuses on planning, managing, and creating a seamless way to enhance the conference experience. If you want to join the working group or read more about their work, please check out the [Conference Coordination Working Group discussion](https://github.com/orgs/asyncapi/discussions/1170).
