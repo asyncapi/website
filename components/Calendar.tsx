@@ -29,6 +29,8 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
     'https://calendar.google.com/calendar/embed?src=c_q9tseiglomdsj6njuhvbpts11c%40group.calendar.google.com&ctz=UTC';
   const eventsExist = eventsData.length > 0;
 
+  console.log(getEvents(eventsData, size));
+
   return (
     <div className={twMerge('overflow-hidden rounded-md border border-gray-200 bg-white p-4', className)}>
       <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.mdSemibold}>
