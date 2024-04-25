@@ -15,7 +15,7 @@ export default function HomePage() {
       <Head title='AsyncAPI Initiative for event-driven APIs' />
       <div className='h-screen'>
         <div className='mx-auto my-60 flex w-fit animate-pulse gap-4 text-black'>
-          <img src={loader} className='mx-auto w-16' />
+          <img alt='Loading...' src={loader} className='mx-auto w-16' />
           <div className='my-auto text-xl'>Loading...</div>
         </div>
       </div>
