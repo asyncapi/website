@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Typing from 'react-typing-animation';
+import Typing from 'react-typist-component';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
@@ -43,7 +43,7 @@ export default function DemoAnimation({ className = '' }: IDemoAnimationProps) {
   const [showEmailDescription, setShowEmailDescription] = useState(false);
   const [finished, setFinished] = useState(false);
   const [showControls, setShowControls] = useState(false);
-  const typingSpeed = 60;
+  const typingDelay = 60;
 
   useEffect(() => {
     if (finished) {
@@ -66,7 +66,7 @@ export default function DemoAnimation({ className = '' }: IDemoAnimationProps) {
    */
   function renderTyping(children: React.ReactNode, callback: () => void) {
     return (
-      <Typing speed={typingSpeed} cursor={<Cursor />} onFinishedTyping={callback}>
+      <Typing typingDelay={typingDelay} cursor={<Cursor />} onTypingDone={callback}>
         {children}
       </Typing>
     );
@@ -100,7 +100,7 @@ export default function DemoAnimation({ className = '' }: IDemoAnimationProps) {
       return (
         <>
           {common}
-          <Typing speed={typingSpeed} cursor={<Cursor />} onFinishedTyping={descriptionCallback}>
+          <Typing typingDelay={typingDelay} cursor={<Cursor />} onTypingDone={descriptionCallback}>
             <div>
               <span className='text-teal-400'>&nbsp;&nbsp;description:</span> This service is in charge of processing
               user signups :rocket:
@@ -218,7 +218,7 @@ export default function DemoAnimation({ className = '' }: IDemoAnimationProps) {
       return (
         <>
           {common}
-          <Typing speed={typingSpeed} cursor={<Cursor />} onFinishedTyping={descriptionCallback}>
+          <Typing typingDelay={typingDelay} cursor={<Cursor />} onTypingDone={descriptionCallback}>
             <div>
               <span className='text-teal-400'>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description:
@@ -263,7 +263,7 @@ export default function DemoAnimation({ className = '' }: IDemoAnimationProps) {
       return (
         <>
           {common}
-          <Typing speed={typingSpeed} cursor={<Cursor />} onFinishedTyping={descriptionCallback}>
+          <Typing typingDelay={typingDelay} cursor={<Cursor />} onTypingDone={descriptionCallback}>
             <div>
               <span className='text-teal-400'>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description:

@@ -4,6 +4,7 @@ import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 import { useTranslation } from '../utils/i18n';
 import AlgoliaSearch, { SearchButton } from './AlgoliaSearch'; // Import AlgoliaSearch component
 import Button from './buttons/Button';
+import DemoAnimation from './DemoAnimation';
 import Features from './features';
 import ArrowRight from './icons/ArrowRight';
 import IconLoupe from './icons/Loupe';
@@ -76,7 +77,9 @@ export default function Hero({ className = '' }: HeroProps) {
             </a>
           </Paragraph>
         </div>
-        <div className='mt-8 md:mt-16'>{/* <DemoAnimation /> */}</div>
+        <div className='mt-8 md:mt-16'>
+          <DemoAnimation />
+        </div>
         <Features />
       </header>
     </>
