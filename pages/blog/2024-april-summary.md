@@ -30,7 +30,7 @@ The [AsyncAPI Optimizer](https://github.com/asyncapi/optimizer) has reached v1.0
 
 In our efforts to improve the contributor experience, we have introduced new help commands: **/ptal**, which pings reviewers to please take a look at the PR, and **/update**, which triggers the AsyncAPI bot to update a PR to the latest upstream. We are grateful to [Priyansh Mehta](https://github.com/Priyansh61), [Khuda Dad Nomani](https://www.linkedin.com/in/khudadadnomani), and [Ashish Padhy](https://www.linkedin.com/in/ashish-padhy3023) for their contributions.
 
-Don't worry if you don't remember all these commands; you can always use the **/help** command in a pull request, and the AsyncAPI bot will share a list of available commands with you.
+Don't worry if you don't remember all these commands; you can always use the **/help** command in a pull request, and the AsyncAPI bot will share a list of available commands.
 
 ## Community Discussions
 Here are some community discussions that require your attention:
@@ -40,6 +40,9 @@ After some weeks of discussing the marketing efforts, we are now looking for som
 
 ### AsyncAPI Working Groups
 We have a new Conference Coordination Working Group that focuses on planning, managing, and creating a seamless way to enhance the conference experience. If you want to join the working group or read more about their work, please check out the [Conference Coordination Working Group discussion](https://github.com/orgs/asyncapi/discussions/1170).
+
+## TSC x Ambassadors
+We're thrilled to announce a new automated TSC voting system! We want to thank [Aayush Saini](https://github.com/AayushSaini101) for working on the implementation, as this will make the voting process smoother, more efficient, and more transparent. With this new system, we hope to encourage greater participation and engagement. Please make sure to [read the voting docs](https://github.com/asyncapi/community/blob/master/voting.md) to familiarize yourself with the new voting system.
 
 ## Coming in May
 - **AACoT'24 Helsinki** - The Helsinki Edition will take place on May 28th and 29th. Please keep an eye out for announcements on community tickets on Slack and our social channels.
