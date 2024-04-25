@@ -9,7 +9,6 @@ interface FilterCriteria {
 
 interface Filter {
   [key: string]: string;
-  value: string;
 }
 
 interface FilterOption {

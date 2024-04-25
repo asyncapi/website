@@ -1,20 +1,19 @@
-import type { NextRouter } from 'next/router';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 import Select from '../form/Select';
 import { applyFilterList, onFilterApply } from '../helpers/applyFilter';
 
-export interface Option {
-  value: string;
-  text: string;
+interface Check {
+  name: string;
+  [key: string]: any;
 }
 
-export interface FilterProps {
+interface FilterProps {
   data: any[];
   onFilter: (data: any[]) => void;
-  checks: { name: string; options?: Option[] }[];
-  className: string;
+  checks: Check[];
+  className?: string;
 }
 
 /**
@@ -26,68 +25,59 @@ export interface FilterProps {
  * @param {string} [props.className] - Additional CSS classes for styling.
  */
 export default function Filter({ data, onFilter, checks, className }: FilterProps) {
-  const router: NextRouter = useRouter();
-  const [filters, setFilters] = useState<{ [key: string]: Option[] }>({});
-  const [query, setQuery] = useState<{ [key: string]: string }>({});
+  const route = useRouter();
+  const [filters, setFilters] = useState<Record<string, any>>({});
+  const [routeQuery, setQuery] = useState<Record<string, any>>({});
 
-  // Set initial query and filter options when router changes
   useEffect(() => {
-    setQuery(router.query as { [key: string]: string });
+    setQuery(route.query);
     applyFilterList(checks, data, setFilters);
-  }, [router]);
+  }, [route]);
 
-  // Apply filter when query or data changes
   useEffect(() => {
-    const filterWithValue = { value: JSON.stringify(query), ...query };
+    onFilterApply(data, onFilter, routeQuery);
+  }, [routeQuery]);
 
-    onFilterApply(data, onFilter, filterWithValue);
-  }, [query, data, onFilter]);
+  return checks.map((check) => {
+    let selected = '';
 
-  return (
-    <>
-      {checks.map((check) => {
-        let selected = '';
+    if (Object.keys(routeQuery).length) {
+      if (routeQuery[check.name]) {
+        selected = `${routeQuery[check.name]}`;
+      }
+    }
+    const selectOptions = [
+      {
+        value: '',
+        text: `Filter by ${check.name}...`
+      },
+      ...(filters[check.name] || [])
+    ];
 
-        if (Object.keys(query).length) {
-          if (query[check.name]) {
-            selected = `${query[check.name]}`;
+    return (
+      <Select
+        key={check.name}
+        options={selectOptions}
+        onChange={(e) => {
+          const { query } = route;
+          const newQuery = {
+            ...query
+          };
+
+          if (e) {
+            newQuery[check.name] = e;
           }
-        }
+          if (newQuery) {
+            const queryParams = new URLSearchParams(newQuery as { [key: string]: string }).toString();
 
-        const selectOptions: Option[] = [
-          {
-            value: '',
-            text: `Filter by ${check.name}...`
-          },
-          ...(filters[check.name] || [])
-        ];
-
-        return (
-          <Select
-            key={check.name}
-            options={selectOptions}
-            onChange={(e) => {
-              const { query: currentQuery } = router;
-              const newQuery = {
-                ...currentQuery,
-                [check.name]: e
-              };
-
-              if (!e) {
-                delete newQuery[check.name];
-              }
-
-              const queryParams = new URLSearchParams(newQuery as { [key: string]: string }).toString();
-
-              router.push(`${router.pathname}?${queryParams}`, undefined, {
-                shallow: true
-              });
-            }}
-            selected={selected}
-            className={`${className} md:mr-4`}
-          />
-        );
-      })}
-    </>
-  );
+            route.push(`${route.pathname}?${queryParams}`, undefined, {
+              shallow: true
+            });
+          }
+        }}
+        selected={selected}
+        className={`${className} md:mr-4`}
+      />
+    );
+  });
 }
