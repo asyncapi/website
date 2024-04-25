@@ -137,22 +137,6 @@
       "score": 20.67657038994663
     },
     {
-      "id": "I_kwDOGJ23c85V9C3c",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Support `referenceIntoComponents` for other components than `message`",
-      "author": "thake",
-      "resourcePath": "/asyncapi/bundler/issues/97",
-      "repo": "asyncapi/bundler",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 20.38939580119737
-    },
-    {
       "id": "PR_kwDOE8Qh385kzOtQ",
       "isPR": true,
       "isAssigned": false,
@@ -164,20 +148,31 @@
       "score": 19.815046623698855
     },
     {
-      "id": "I_kwDOBW5R_c580Z0o",
-      "isPR": false,
+      "id": "PR_kwDOFLhIt85oVQqh",
+      "isPR": true,
       "isAssigned": false,
-      "title": "New Contributor Guide and Maintenance Setup",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/issues/2586",
-      "repo": "asyncapi/website",
+      "title": "feat: docs automation for website",
+      "author": "AnimeshKumar923",
+      "resourcePath": "/asyncapi/community/pull/1082",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 17.804824502454043
+    },
+    {
+      "id": "I_kwDOCVQpZM5M_dcV",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "DocsUI: Messages Object output",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
+      "repo": "asyncapi/asyncapi-react",
       "labels": [
         {
-          "name": "enhancement",
-          "color": "84b6eb"
+          "name": "stale",
+          "color": "ededed"
         }
       ],
-      "score": 18.091999091203302
+      "score": 16.943300736206268
     }
   ],
   "goodFirstIssues": [
