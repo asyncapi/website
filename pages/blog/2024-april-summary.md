@@ -10,11 +10,11 @@ authors:
     photo: /img/avatars/thulieblack.webp
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: AsyncAPI Community Manager
-excerpt: 'Community update for April'
+excerpt: 'April Community update'
 featured: true
 ---
 
-We are excited and commend [Specmatic](https://specmatic.in/) for their commitment to supporting open-source projects. They have sponsored [Pavel Bodiachevskii](https://www.linkedin.com/in/pavel-bo/), whose project assists in parsing AsyncAPI specs in Java and converting the parsed specs into executable contracts using the jasyncapi library. This kind of support is truly invaluable to the community and open-source maintainers. Please [check out the latest jasyncapi release](https://github.com/asyncapi/jasyncapi/releases/tag/1.0.0-RC) for more details.
+We are excited and commend [Specmatic](https://specmatic.in/) for their commitment to supporting open-source projects. They have sponsored [Pavel Bodiachevskii](https://www.linkedin.com/in/pavel-bo/), whose project assists in parsing AsyncAPI specs in Java and converting the parsed specs into executable contracts using the `jasyncapi` library. This kind of support is truly invaluable to the community and open-source maintainers. Please [check out the latest `jasyncapi` release](https://github.com/asyncapi/jasyncapi/releases/tag/1.0.0-RC) for more details.
 
 ## AsyncAPI Conf on Tour
 
@@ -33,7 +33,7 @@ In our efforts to improve the contributor experience, we have introduced new hel
 Don't worry if you don't remember all these commands; you can always use the **/help** command in a pull request, and the AsyncAPI bot will share a list of available commands.
 
 ## Community Discussions
-Here are some community discussions that require your attention:
+Below are some community discussions that require attention.
 
 ### Marketing
 After some weeks of discussing the marketing efforts, we are now looking for someone to fill the role of **Community Marketing Specialist**. Please have a look at the [AsyncAPI Community Marketing Specialist Hiring discussion](https://github.com/orgs/asyncapi/discussions/1176) for additional context on the role.
