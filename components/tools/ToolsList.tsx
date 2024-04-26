@@ -26,7 +26,7 @@ export default function ToolsList({ toolsListData }: ToolsListProp) {
               <Heading typeStyle={HeadingTypeStyle.mdSemibold} className='my-2'>
                 {categoryName}
               </Heading>
-              <Paragraph typeStyle={ParagraphTypeStyle.sm}>{toolsListData[categoryName].description}</Paragraph>
+              <Paragraph typeStyle={ParagraphTypeStyle.md}>{toolsListData[categoryName].description}</Paragraph>
               <hr className='my-8' />
               <div className='flex grid-cols-3 flex-col gap-8 lg:grid'>
                 {toolsListData[categoryName].toolsList.map((tool, toolIndex) => (

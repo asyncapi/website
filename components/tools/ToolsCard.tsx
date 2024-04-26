@@ -90,7 +90,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
           </div>
           <div className='relative'>
             <Paragraph typeStyle={ParagraphTypeStyle.sm}>
-              <div
+              <span
                 ref={descriptionRef}
                 className={`w-full ${showMoreDescription ? 'cursor-pointer' : ''}`}
                 onMouseEnter={() =>
@@ -100,7 +100,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
                 }
               >
                 <TextTruncate element='span' line={3} text={toolData.description} />
-              </div>
+              </span>
             </Paragraph>
             {showDescription && (
               <div
@@ -122,8 +122,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
             {toolData.filters.language && (
               <div className='mx-6 flex flex-col gap-2'>
                 <CardData
-                  className='text-sm
-              text-gray-700'
+                  className='text-sm'
                   heading='LANGUAGE'
                   data={Data.properties.filters.properties.language.description}
                   type='lang'
@@ -143,7 +142,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
             {toolData.filters?.technology?.length && (
               <div className='mx-6 my-4 flex flex-col gap-2'>
                 <CardData
-                  className='text-sm text-gray-700'
+                  className='text-sm'
                   heading='TECHNOLOGIES'
                   data={Data.properties.filters.properties.technology.description}
                   type='tech'

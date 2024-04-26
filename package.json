@@ -95,7 +95,7 @@
     "remark-slug": "^7.0.1",
     "swiper": "^11.0.7",
     "tailwind-merge": "^2.2.1",
-    "tailwindcss": "^3.4.1",
+    "tailwindcss": "^3.4.3",
     "typescript": "^5.3.3",
     "yaml": "^2.3.4"
   },
