@@ -1,33 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "PR_kwDOFLhIt85sHzf3",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: add instruction how voting automation works",
-      "author": "AayushSaini101",
-      "resourcePath": "/asyncapi/community/pull/1155",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 45.66075961113214
-    },
-    {
-      "id": "I_kwDOFLhIt84-OUI3",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create educational & technical video explaining AsyncAPI's main features",
-      "author": "alequetzalli",
-      "resourcePath": "/asyncapi/community/issues/155",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 33.886601472412536
-    },
-    {
       "id": "I_kwDODou01c5BZZv-",
       "isPR": false,
       "isAssigned": false,
@@ -101,6 +74,17 @@
       "score": 21.825268744943667
     },
     {
+      "id": "PR_kwDOE8Qh385kzOtQ",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add Avro Schema input processor",
+      "author": "akkshitgupta",
+      "resourcePath": "/asyncapi/modelina/pull/1753",
+      "repo": "asyncapi/modelina",
+      "labels": [],
+      "score": 20.96374497869589
+    },
+    {
       "id": "I_kwDODou01c5AqLB8",
       "isPR": false,
       "isAssigned": false,
@@ -137,17 +121,6 @@
       "score": 20.67657038994663
     },
     {
-      "id": "PR_kwDOE8Qh385kzOtQ",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add Avro Schema input processor",
-      "author": "akkshitgupta",
-      "resourcePath": "/asyncapi/modelina/pull/1753",
-      "repo": "asyncapi/modelina",
-      "labels": [],
-      "score": 19.815046623698855
-    },
-    {
       "id": "PR_kwDOFLhIt85oVQqh",
       "isPR": true,
       "isAssigned": false,
@@ -173,6 +146,33 @@
         }
       ],
       "score": 16.943300736206268
+    },
+    {
+      "id": "I_kwDOFLhIt84-OUI3",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Create educational & technical video explaining AsyncAPI's main features",
+      "author": "alequetzalli",
+      "resourcePath": "/asyncapi/community/issues/155",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 16.332916763847894
+    },
+    {
+      "id": "PR_kwDOBW5R_c5p28Vu",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: navigation to correct heading in tools section",
+      "author": "Vishal2002",
+      "resourcePath": "/asyncapi/website/pull/2790",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 14.645904026212197
     }
   ],
   "goodFirstIssues": [
@@ -188,25 +188,6 @@
         {
           "name": "bug",
           "color": "ee0701"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh386CSg4-",
-      "title": "Java generator does not include import for dictionary models",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1892",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "Java generator",
-          "color": "d4c5f9"
         }
       ]
     },
