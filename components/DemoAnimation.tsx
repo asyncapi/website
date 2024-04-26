@@ -358,7 +358,8 @@ export default function DemoAnimation({ className = '' }: IDemoAnimationProps) {
                   </div>
 
                   <div className='mt-4 rounded bg-code-editor-dark p-4 font-mono text-gray-400'>
-                    <div className='text-gray-500'>&sol;&sol; Example</div>
+                    {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
+                    <div className='text-gray-500'>// Example</div>
                     <div>&nbsp;</div>
                     <div>{'{'}</div>
                     <div className={transitionClassNames(showDisplayName)}>
