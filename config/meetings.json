@@ -178,5 +178,19 @@
     "title": "Maintainers Growth Working Group Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=NGZ0NWZiNWw0MzJsbGR0M2Ewdm5kcGNkYzEgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "date": "2024-04-22T14:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=cmk4OTNzZGxvZDd2NHZxb243cG44NzlibWsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1184",
+    "banner": "https://github.com/asyncapi/community/assets/40604284/d5358c67-20c3-48a9-b61c-cbea54bbf95c",
+    "date": "2024-04-30T16:00:00.000Z"
+  },
+  {
+    "title": "Essential Building Blocks Working Group",
+    "calLink": "https://www.google.com/calendar/event?eid=cjNxYm9sOXIwNDlpazY5MmoyNHE3NGxoZHMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1186",
+    "banner": "",
+    "date": "2024-04-30T18:00:00.000Z"
   }
 ]
