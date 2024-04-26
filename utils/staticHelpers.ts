@@ -3,10 +3,10 @@ import moment from 'moment';
 import type { IEvent } from '@/types/event';
 
 /**
- *
- * @param events
- * @param size
- * @returns
+ * Retrieves events sorted by date.
+ * @param {IEvent[]} events - The list of events to retrieve.
+ * @param {number} [size] - The optional maximum number of events to return.
+ * @returns {any[]} The sorted list of events.
  */
 export function getEvents(events: IEvent[], size?: number) {
   let meetingsWithDates: any = events.map((event) => ({
