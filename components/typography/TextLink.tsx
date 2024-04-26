@@ -24,15 +24,18 @@ export default function TextLink({ href, className = '', target = '_blank', chil
   );
 
   return (
-    <Link
-      href={href}
-      target={target}
-      rel='noreferrer noopener'
-      className={classNames}
-      id={id}
-      data-testid='TextLink-href'
-    >
-      <span className={classNames}>{children}</span>
-    </Link>
+    <>
+      {' '}
+      <Link
+        href={href}
+        target={target}
+        rel='noreferrer noopener'
+        className={classNames}
+        id={id}
+        data-testid='TextLink-href'
+      >
+        <span className={classNames}>{children}</span>
+      </Link>
+    </>
   );
 }

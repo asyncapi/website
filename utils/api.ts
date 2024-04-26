@@ -15,22 +15,19 @@ export function getAllPosts(): IPosts {
  * @param {string} [type=''] - The type of the post.
  * @returns {Object | undefined} The post if found, undefined otherwise.
  */
-export function getPostBySlug(
-  slug: string,
-  type: string = ''
-) {
-  if(type)
-    return (posts as any)[type].find((post: IPost) => post.slug === slug && !post.isSection )
-  else {
-      let item;
-      Object.entries(posts).forEach(([key, value]) => {
-        let content
-        if(key!== 'docsTree')
-          content = (posts as any)[key].find((post: IPost) => post.slug === slug && !post.isSection)
-          if(content) item = content
-      })
-      return item
-    }
+export function getPostBySlug(slug: string, type: string = '') {
+  if (type) return (posts as any)[type].find((post: IPost) => post.slug === slug && !post.isSection);
+
+  let item;
+
+  Object.entries(posts).forEach(([key]) => {
+    let content;
+
+    if (key !== 'docsTree') content = (posts as any)[key].find((post: IPost) => post.slug === slug && !post.isSection);
+    if (content) item = content;
+  });
+
+  return item;
 }
 
 /**
@@ -39,11 +36,6 @@ export function getPostBySlug(
  * @param {string} slug - The slug of the document.
  * @returns {Object | undefined} The document if found, undefined otherwise.
  */
-export function getDocBySlug(
-  structuredPosts: IPost[],
-  slug: string
-): object | undefined {
-  return structuredPosts.find(
-    (post) => post.slug === slug && !post.isSection
-  );
+export function getDocBySlug(structuredPosts: IPost[], slug: string): object | undefined {
+  return structuredPosts.find((post) => post.slug === slug && !post.isSection);
 }
