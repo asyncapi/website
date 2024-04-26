@@ -291,7 +291,7 @@ export default function CodeBlock({
               };
             }}
             codeTagProps={{
-              className: 'mr-8'
+              className: 'mr-8 pl-2'
             }}
           >
             {codeBlocks ? [codeBlocks[activeBlock].code] : ''}
