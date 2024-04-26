@@ -277,7 +277,8 @@ export default function CodeBlock({
 
               return {
                 display: 'inline-block',
-                padding: '0 0.5em',
+                marginLeft: '16px',
+                paddingRight: '16px',
                 background: isHighlighted ? '#252f3f' : 'inherit',
                 color: isHighlighted ? '#A3ACAD' : '#8B9394'
               };
@@ -291,7 +292,7 @@ export default function CodeBlock({
               };
             }}
             codeTagProps={{
-              className: 'mr-8 pl-2'
+              className: 'mr-8'
             }}
           >
             {codeBlocks ? [codeBlocks[activeBlock].code] : ''}
