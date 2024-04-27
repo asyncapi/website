@@ -74,14 +74,19 @@
       "score": 21.825268744943667
     },
     {
-      "id": "PR_kwDOE8Qh385kzOtQ",
+      "id": "PR_kwDOFLhIt85q-42Y",
       "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add Avro Schema input processor",
-      "author": "akkshitgupta",
-      "resourcePath": "/asyncapi/modelina/pull/1753",
-      "repo": "asyncapi/modelina",
-      "labels": [],
+      "isAssigned": true,
+      "title": "feat: initial infra for slack intergration",
+      "author": "Shurtu-gal",
+      "resourcePath": "/asyncapi/community/pull/1131",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "bounty",
+          "color": "0E8A16"
+        }
+      ],
       "score": 20.96374497869589
     },
     {
@@ -100,22 +105,6 @@
         {
           "name": "keep-open",
           "color": "f9dd4b"
-        }
-      ],
-      "score": 20.67657038994663
-    },
-    {
-      "id": "PR_kwDOFLhIt85q-42Y",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: initial infra for slack intergration",
-      "author": "Shurtu-gal",
-      "resourcePath": "/asyncapi/community/pull/1131",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "bounty",
-          "color": "0E8A16"
         }
       ],
       "score": 20.67657038994663
@@ -173,6 +162,17 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 14.645904026212197
+    },
+    {
+      "id": "PR_kwDOFLhIt85rY7Lw",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: add Maintainers Growth Working Group",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/community/pull/1143",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 14.358729437462937
     }
   ],
   "goodFirstIssues": [
@@ -313,21 +313,6 @@
       ]
     },
     {
-      "id": "I_kwDOE8Qh38572csq",
-      "title": "Add Avro support",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1741",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOE8Qh38572bME",
       "title": "Add JSON Type definition support ",
       "isAssigned": false,
@@ -358,21 +343,6 @@
         {
           "name": "website",
           "color": "57A793"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh3857KkLT",
-      "title": "Introduce Modelina CLI that can be extended by AsyncAPI CLI",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/modelina/issues/1724",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
