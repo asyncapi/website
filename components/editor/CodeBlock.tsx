@@ -268,16 +268,19 @@ export default function CodeBlock({
             style={theme}
             showLineNumbers={showLineNumbers}
             startingLineNumber={startingLineNumber}
-            lineNumberContainerProps={{
-              className: 'pl-2 float-left left-0 sticky bg-code-editor-dark',
-              style: {}
+            lineNumberContainerStyle={{
+              paddingLeft: '0.5em',
+              background: '#252f3f'
             }}
-            lineNumberProps={(lineNumber: number) => {
+            lineNumberStyle={(lineNumber: number) => {
               const isHighlighted = highlightedLines && highlightedLines.includes(lineNumber);
 
               return {
-                className: `${isHighlighted ? 'bg-code-editor-dark-highlight text-gray-500' : 'text-gray-600'}
-                block pl-2 pr-2`
+                display: 'inline-block',
+                marginLeft: '16px',
+                paddingRight: '16px',
+                background: isHighlighted ? '#252f3f' : 'inherit',
+                color: isHighlighted ? '#A3ACAD' : '#8B9394'
               };
             }}
             wrapLines={true}

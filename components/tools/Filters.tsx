@@ -73,8 +73,11 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
 
     // Set the params key only when the default value of the key changes. This is to know when the user actually applies filter(s).
 
+    if (checkPaid !== 'all') {
+      searchParams.set('pricing', checkPaid);
+    }
     if (checkOwner) {
-      searchParams.set('owned', isAsyncAPIOwner ? 'true' : 'false');
+      searchParams.set('owned', checkOwner ? 'true' : 'false');
     }
     if (checkedTechnology.length > 0) {
       searchParams.set('techs', checkedTechnology.join(','));

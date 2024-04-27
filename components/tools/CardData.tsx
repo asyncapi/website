@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import TextTruncate from 'react-text-truncate';
+import { twMerge } from 'tailwind-merge';
 
 import type { VisibleDataListType } from '@/types/components/tools/ToolDataType';
 
@@ -79,7 +80,7 @@ export const CardData = ({
   }, []);
 
   return (
-    <div className={className || 'text-left text-sm text-gray-500'}>
+    <div className={twMerge('text-left text-sm text-gray-500', className)}>
       {heading}
       <span className='group relative'>
         {outsideClick && visible[type] && (
