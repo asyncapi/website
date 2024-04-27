@@ -26,6 +26,23 @@ export default function ToolDashboard() {
   const [toolsList, setToolsList] = useState({}); // state variable used to set the list of tools according to the filters applied
   const [checkToolsList, setCheckToolsList] = useState(true); // state variable used to check whether any tool is available according to the needs of the user.
 
+  const scrollToHash = () => {
+    setLoading(true)
+    const path = router.asPath;
+    const hash = path.split("#")[1]?.replace(/%20/g, ' '); //to extract after hash from path
+    if (hash) {
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'instant', block: 'start' });
+      }
+      setLoading(false)
+    }
+  }
+
+  useEffect(()=>{
+    scrollToHash() // scroll to the hash
+  }, [toolsList])
+
   // useEffect function to enable the close Modal feature when clicked outside of the modal
   useEffect(() => {
     const checkIfClickOutside = (e) => {
