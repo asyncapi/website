@@ -36,8 +36,8 @@ export default function RoadmapList({
   childrenCollapsed = true
 }: IRoadmapListProps) {
   return (
-    <>
-      items && items.length && (
+    items &&
+    items.length && (
       <ul className={className} data-testid='RoadmapList-list'>
         {!collapsed &&
           items.map((item, index) => (
@@ -50,7 +50,6 @@ export default function RoadmapList({
             />
           ))}
       </ul>
-      )
-    </>
+    )
   );
 }

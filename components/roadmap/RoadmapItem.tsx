@@ -32,7 +32,7 @@ export interface IRoadmapItemProps {
  */
 export default function RoadmapItem({ item, colorClass, showConnector = true, collapsed = true }: IRoadmapItemProps) {
   const [isCollapsed, setIsCollapsed] = useState(collapsed);
-  const isCollapsible = item.solutions !== null || item.implementations !== null;
+  const isCollapsible = item.solutions !== undefined;
 
   const connectorClasses = 'border-l-2 border-dashed border-gray-300';
   const classNames = `pt-2 ${showConnector && connectorClasses}`;
