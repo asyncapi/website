@@ -12,12 +12,6 @@
     "videoId": "OpViKeJcEUA"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/9Aw7-gYrJyY/hqdefault.jpg",
-    "title": "Maintainers Growth Working Group, Tuesday April 22nd 2024",
-    "description": "https://github.com/asyncapi/community/issues/1174.",
-    "videoId": "9Aw7-gYrJyY"
-  },
-  {
     "image_url": "https://i.ytimg.com/vi/EMQgIuRyq1o/hqdefault.jpg",
     "title": "Essential Building Blocks Working Group, Tuesday April 16th 2024",
     "description": "https://github.com/asyncapi/community/issues/1159.",
@@ -28,5 +22,11 @@
     "title": "Essential Building Blocks Working Group, Tuesday April 9th 2024",
     "description": "https://github.com/asyncapi/community/issues/1144.",
     "videoId": "JDRJ33_wH2Q"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/6lVMY_Fc0Vs/hqdefault.jpg",
+    "title": "Cheat Sheet Poster - Content discussion, Wednesday April 3rd 2024",
+    "description": "https://github.com/asyncapi/community/issues/1126.",
+    "videoId": "6lVMY_Fc0Vs"
   }
 ]
