@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: AsyncAPI Community Manager
 excerpt: 'Community update for March'
-featured: true
 ---
 We are excited to announce and welcome our new Silver sponsor, [Aklivity](https://www.aklivity.io/), to the AsyncAPI Initiative.
 
