@@ -20,7 +20,7 @@ export default function GeneratorPage() {
           className="w-full mb-2 sm:w-auto sm:mb-0 sm:mr-2"
         /> */}
         <GithubButton
-          className="ml-2 block mt-2 md:mt-0 md:inline-block w-full sm:w-auto"
+          className="ml-2 block mt-2 md:mt-0 md:inline-block w-full sm:w-auto sm:ml-0"
           href="https://www.github.com/asyncapi/generator"
         />
        <Button text="View Docs" href="/docs/tools/generator" className="w-full sm:w-auto"/>
