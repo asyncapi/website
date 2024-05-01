@@ -198,7 +198,7 @@ export default function CliPage() {
           <div className='mt-20 bg-white lg:py-12'>
             <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
               <div className='mb-16 text-center'>
-                <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.smSemibold}>
+                <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.mdSemibold}>
                   {t('cli.featuresTitle')}
                 </Heading>
                 <Paragraph className='mx-auto mt-3 max-w-lg text-center lg:pr-4'>

@@ -139,7 +139,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
                 </div>
               </div>
             )}
-            {toolData.filters?.technology?.length && (
+            {toolData.filters.technology?.length !== 0 && (
               <div className='mx-6 my-4 flex flex-col gap-2'>
                 <CardData
                   className='text-sm'

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
@@ -43,11 +42,9 @@ export default function Features() {
                 </div>
                 <div className='flex justify-between'>
                   {feature.links.map((link) => (
-                    <Link href={link.href} key={link.label}>
-                      <TextLink id={link.id} href={link.href} className='mt-6 inline-block'>
-                        {t(`features.${feature.id}.links.${link.id}`)}
-                      </TextLink>
-                    </Link>
+                    <TextLink id={link.id} href={link.href} key={link.id} className='mt-6 inline-block'>
+                      {t(`features.${feature.id}.links.${link.id}`)}
+                    </TextLink>
                   ))}
                 </div>
               </li>

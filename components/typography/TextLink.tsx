@@ -34,7 +34,7 @@ export default function TextLink({ href, className = '', target = '_blank', chil
         id={id}
         data-testid='TextLink-href'
       >
-        <span className={classNames}>{children}</span>
+        {children}
       </Link>
     </>
   );

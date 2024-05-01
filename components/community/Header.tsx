@@ -18,7 +18,8 @@ interface HeaderProps {
 export default function Header({ className = '' }: HeaderProps) {
   return (
     <div
-      className={`md:mt-0' data-testid='Header-hero-heading mt-10 flex flex-col items-center justify-center text-center ${className}`}
+      className={`mt-10 flex flex-col items-center justify-center text-center md:mt-0 ${className}`}
+      data-testid='Header-hero-heading'
     >
       <Heading className='countdown-text-gradient font-bold' level={HeadingLevel.h6} typeStyle={HeadingTypeStyle.xs}>
         AsyncAPI Community
