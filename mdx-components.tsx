@@ -1,4 +1,4 @@
-import { MDXProvider as CoreMDXProvider } from '@mdx-js/react';
+import type { MDXComponents } from 'mdx/types';
 import mermaid from 'mermaid';
 import Link from 'next/link';
 import { useLayoutEffect, useState } from 'react';
@@ -16,20 +16,20 @@ import {
 } from 'react-twitter-embed';
 import YouTube from 'react-youtube-embed';
 
-import Button from './buttons/Button';
-import ChapterSuggestions from './buttons/ChapterSuggestions';
-import Caption from './Caption';
-import DocsCards from './docs/DocsCards';
-import CodeBlock from './editor/CodeBlock';
-import Figure from './Figure';
-import GeneratorInstallation from './GeneratorInstallation';
-import Column from './layout/Column';
-import Row from './layout/Row';
-import NewsletterSubscribe from './NewsletterSubscribe';
-import Profiles from './Profiles';
-import Remember from './Remember';
-import Sponsors from './sponsors/Sponsors';
-import Warning from './Warning';
+import Button from '@/components/buttons/Button';
+import ChapterSuggestions from '@/components/buttons/ChapterSuggestions';
+import Caption from '@/components/Caption';
+import DocsCards from '@/components/docs/DocsCards';
+import CodeBlock from '@/components/editor/CodeBlock';
+import Figure from '@/components/Figure';
+import GeneratorInstallation from '@/components/GeneratorInstallation';
+import Column from '@/components/layout/Column';
+import Row from '@/components/layout/Row';
+import NewsletterSubscribe from '@/components/NewsletterSubscribe';
+import Profiles from '@/components/Profiles';
+import Remember from '@/components/Remember';
+import Sponsors from '@/components/sponsors/Sponsors';
+import Warning from '@/components/Warning';
 
 let mermaidInitialized = false;
 
@@ -292,18 +292,16 @@ export function getMDXComponents() {
   };
 }
 
-const mdxComponents = getMDXComponents();
+export function useMDXComponents(components: MDXComponents): MDXComponents {
+  const mdxComponents = getMDXComponents();
 
-interface MDXProviderProps {
-  children: React.ReactNode;
-}
+  console.log({
+    ...components,
+    ...mdxComponents
+  });
 
-/**
- * @description This component provides MDX components.
- *
- * @param {MDXProviderProps} props - The props for the MDXProvider component.
- * @param {React.ReactNode} props.children - The children to render.
- */
-export function MDXProvider({ children }: MDXProviderProps) {
-  return <CoreMDXProvider components={mdxComponents}>{children}</CoreMDXProvider>;
+  return {
+    ...components,
+    ...mdxComponents
+  };
 }
