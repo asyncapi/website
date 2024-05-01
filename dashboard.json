@@ -32,6 +32,22 @@
       "score": 23.26114168868996
     },
     {
+      "id": "PR_kwDOFLhIt85q-42Y",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: initial infra for slack intergration",
+      "author": "Shurtu-gal",
+      "resourcePath": "/asyncapi/community/pull/1131",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "bounty",
+          "color": "0E8A16"
+        }
+      ],
+      "score": 22.68679251119144
+    },
+    {
       "id": "I_kwDOBW5R_c5J6qNe",
       "isPR": false,
       "isAssigned": false,
@@ -72,53 +88,6 @@
       "repo": "asyncapi/studio",
       "labels": [],
       "score": 21.825268744943667
-    },
-    {
-      "id": "PR_kwDOE8Qh385kzOtQ",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add Avro Schema input processor",
-      "author": "akkshitgupta",
-      "resourcePath": "/asyncapi/modelina/pull/1753",
-      "repo": "asyncapi/modelina",
-      "labels": [],
-      "score": 20.96374497869589
-    },
-    {
-      "id": "I_kwDODou01c5AqLB8",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "\"Open with Studio\" button for Markdown files.",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/218",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "keep-open",
-          "color": "f9dd4b"
-        }
-      ],
-      "score": 20.67657038994663
-    },
-    {
-      "id": "PR_kwDOFLhIt85q-42Y",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: initial infra for slack intergration",
-      "author": "Shurtu-gal",
-      "resourcePath": "/asyncapi/community/pull/1131",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "bounty",
-          "color": "0E8A16"
-        }
-      ],
-      "score": 20.67657038994663
     },
     {
       "id": "PR_kwDOFLhIt85oVQqh",
@@ -164,6 +133,37 @@
       "score": 16.332916763847894
     },
     {
+      "id": "PR_kwDODou01c5YJ7kV",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "Add Form component",
+      "author": "KhudaDad414",
+      "resourcePath": "/asyncapi/studio/pull/773",
+      "repo": "asyncapi/studio",
+      "labels": [],
+      "score": 16.08177696995849
+    },
+    {
+      "id": "I_kwDOBW5R_c49A2ZS",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Add an AsyncAPI poster showing all features at a glance",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/website/issues/425",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "bounty",
+          "color": "0e8a16"
+        }
+      ],
+      "score": 15.794602381209232
+    },
+    {
       "id": "PR_kwDOBW5R_c5p28Vu",
       "isPR": true,
       "isAssigned": false,
@@ -176,6 +176,21 @@
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOE8Qh386HJeIz",
+      "title": "[BUG] Implement avro schema data type ",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1974",
+      "repo": "asyncapi/modelina",
+      "author": "akkshitgupta",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "avro",
+          "color": "EC3D91"
+        }
+      ]
+    },
     {
       "id": "I_kwDOBW5R_c6GUTRu",
       "title": "Extensions are redirecting to 404 page",
@@ -313,21 +328,6 @@
       ]
     },
     {
-      "id": "I_kwDOE8Qh38572csq",
-      "title": "Add Avro support",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1741",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOE8Qh38572bME",
       "title": "Add JSON Type definition support ",
       "isAssigned": false,
@@ -358,21 +358,6 @@
         {
           "name": "website",
           "color": "57A793"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh3857KkLT",
-      "title": "Introduce Modelina CLI that can be extended by AsyncAPI CLI",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/modelina/issues/1724",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -497,21 +482,6 @@
           "name": "enhancement",
           "color": "a2eeef"
         },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc5ydvaR",
-      "title": "Nested block is redundant.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/822",
-      "repo": "asyncapi/cli",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
