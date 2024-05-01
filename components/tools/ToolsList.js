@@ -4,6 +4,7 @@ import { useRef, useEffect } from 'react';
 import Paragraph from '../typography/Paragraph'
 export default function toolsList({ toolsData }) {
   const categoryRefs = useRef({});
+  const containerRef = useRef(null);
 
 // Below UseEffect scrolls the page to a specific category referenced in the URL hash.
   useEffect(() => {
@@ -12,13 +13,13 @@ export default function toolsList({ toolsData }) {
       const decodedHash = decodeURIComponent(hash.slice(1));
       const categoryRef = categoryRefs.current[decodedHash];
       if (categoryRef) {
-        categoryRef.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        categoryRef.scrollIntoView({ behavior: 'smooth', block: 'start', inline:'nearest' });
       }
     }
   },[]);
 
   return (
-    <div className="" data-testid="ToolsList-main" >
+    <div ref={containerRef} data-testid="ToolsList-main" className="max-h-screen overflow-y-auto"  >
       {Object.keys(toolsData).map((categoryName, index) => {
         if(toolsData[categoryName].toolsList.length > 0) return (
           <div className='my-8' key={index} id={categoryName} ref={el => categoryRefs.current[categoryName] = el}>
