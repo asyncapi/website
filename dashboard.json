@@ -32,6 +32,22 @@
       "score": 23.26114168868996
     },
     {
+      "id": "PR_kwDOFLhIt85q-42Y",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: initial infra for slack intergration",
+      "author": "Shurtu-gal",
+      "resourcePath": "/asyncapi/community/pull/1131",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "bounty",
+          "color": "0E8A16"
+        }
+      ],
+      "score": 22.68679251119144
+    },
+    {
       "id": "I_kwDOBW5R_c5J6qNe",
       "isPR": false,
       "isAssigned": false,
@@ -74,22 +90,6 @@
       "score": 21.825268744943667
     },
     {
-      "id": "PR_kwDOFLhIt85q-42Y",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: initial infra for slack intergration",
-      "author": "Shurtu-gal",
-      "resourcePath": "/asyncapi/community/pull/1131",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "bounty",
-          "color": "0E8A16"
-        }
-      ],
-      "score": 20.96374497869589
-    },
-    {
       "id": "PR_kwDOFLhIt85oVQqh",
       "isPR": true,
       "isAssigned": false,
@@ -117,6 +117,17 @@
       "score": 16.943300736206268
     },
     {
+      "id": "PR_kwDODou01c5YJ7kV",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "Add Form component",
+      "author": "KhudaDad414",
+      "resourcePath": "/asyncapi/studio/pull/773",
+      "repo": "asyncapi/studio",
+      "labels": [],
+      "score": 16.65612614745701
+    },
+    {
       "id": "I_kwDOFLhIt84-OUI3",
       "isPR": false,
       "isAssigned": false,
@@ -133,6 +144,26 @@
       "score": 16.332916763847894
     },
     {
+      "id": "I_kwDOBW5R_c49A2ZS",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Add an AsyncAPI poster showing all features at a glance",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/website/issues/425",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "bounty",
+          "color": "0e8a16"
+        }
+      ],
+      "score": 16.08177696995849
+    },
+    {
       "id": "PR_kwDOBW5R_c5p28Vu",
       "isPR": true,
       "isAssigned": false,
@@ -142,40 +173,24 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 14.645904026212197
-    },
-    {
-      "id": "PR_kwDOFLhIt85rY7Lw",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: add Maintainers Growth Working Group",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/community/pull/1143",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 14.358729437462937
-    },
-    {
-      "id": "I_kwDOFLhIt85_y16Y",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Automate Slack user groups + channels creation and management",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/community/issues/1072",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "bounty",
-          "color": "0E8A16"
-        }
-      ],
-      "score": 14.07155484871368
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOE8Qh386HJeIz",
+      "title": "[BUG] Implement avro schema data type ",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1974",
+      "repo": "asyncapi/modelina",
+      "author": "akkshitgupta",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "avro",
+          "color": "EC3D91"
+        }
+      ]
+    },
     {
       "id": "I_kwDOBW5R_c6GUTRu",
       "title": "Extensions are redirecting to 404 page",
@@ -467,21 +482,6 @@
           "name": "enhancement",
           "color": "a2eeef"
         },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc5ydvaR",
-      "title": "Nested block is redundant.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/822",
-      "repo": "asyncapi/cli",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
