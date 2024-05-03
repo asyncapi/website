@@ -1,13 +1,13 @@
 ---
 title: 'x' 
-weight: 11
+weight: 12
 ---
 
-# Twitter Extension
-This document defines how to use `twitter` extension in AsyncAPI documents.
+# Twitter/X Extension
+This document defines how to use `x` extension in AsyncAPI documents.
 
 ## Overview 
-This extension allows you to provide the Twitter username of the account representing the team/company of the API.
+This extension allows you to provide the Twitter/X username of the account representing the team/company of the API.
 
 ## Version
 Current version is `0.1.0`.
@@ -16,7 +16,7 @@ Current version is `0.1.0`.
 
 ### Type: String
 
-Name of the Twitter username.
+Name of the Twitter/X username.
 
 ## Extension Location 
 
@@ -30,5 +30,5 @@ asyncapi: '3.0.0'
 info
   title: Strretlights Kafka API
   version: '1.0.0'
-  x-twitter: StreetLightData
+  x-x: StreetLightData
 ```
