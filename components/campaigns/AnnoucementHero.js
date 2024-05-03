@@ -24,9 +24,9 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
   
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const cfpDeadlineIndia = '2023-11-30T06:00:00Z'
+  const cfpDeadlineLondon = '2024-07-12T06:00:00Z'
   const cfpDeadlineFrance = '2023-12-06T06:00:00Z'
-  const showBannerIndia = shouldShowBanner(cfpDeadlineIndia);
+  const showBannerLondon = shouldShowBanner(cfpDeadlineLondon);
   const showBannerFrance = shouldShowBanner(cfpDeadlineFrance);
 
   const Banner = ({ title, dateLocation, cfaText, eventName, cfpDeadline, link, city, activeBanner }) => {
@@ -66,13 +66,13 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
   const banners = [
     {
       title: "AsyncAPI Conf",
-      city: "Bengaluru",
-      dateLocation: "30th of November, 2023 | Bengaluru, India",
-      cfaText: "Grab Free Tickets",
-      eventName: "AACoT'23 Bengaluru Edition",
-      cfpDeadline: cfpDeadlineIndia,
-      link: "https://conference.asyncapi.com/venue/bangalore",
-      show: showBannerIndia
+      city: "London",
+      dateLocation: "18 - 19 of September, 2024 | United Kingdom, London",
+      cfaText: "Submit Your Proposals",
+      eventName: "AACoT'24 London Edition",
+      cfpDeadline: cfpDeadlineLondon,
+      link: "https://conference.asyncapi.com/venue/London",
+      show: showBannerLondon
     },
     {
       title: "AsyncAPI Conf",
