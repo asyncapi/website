@@ -1,12 +1,5 @@
 [
   {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=dDhmcGZna2lhZmtpZHJhNW4yZ2NjaTVzNmMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1016",
-    "banner": "https://user-images.githubusercontent.com/40604284/297103292-e05b8e50-1203-4452-8b2d-0983a48a7925.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDU0MTkwMzksIm5iZiI6MTcwNTQxODczOSwicGF0aCI6Ii80MDYwNDI4NC8yOTcxMDMyOTItZTA1YjhlNTAtMTIwMy00NDUyLThiMmQtMDk4M2E0OGE3OTI1LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAxMTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMTE2VDE1MjUzOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWFjY2EzYzg2NjNmNTQxOWQxODUxYWMxODlhZWVjNzkwYWRlOWQ5ODkxOTQ4NDhkYWFjNjZjOGU1YTcwMzhhMDYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.hs63wNh2t8iH1xayTqIFvprHHa2Z--RfIA9k3q2lD4Y",
-    "date": "2024-01-23T16:00:00.000Z"
-  },
-  {
     "title": "AsyncAPI v3 retrospective",
     "calLink": "https://www.google.com/calendar/event?eid=ZnNjNTllMW9ydGIwOHEzZTYxY3NncHRyZzQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1019",

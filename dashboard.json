@@ -1,24 +1,15 @@
 {
   "hotDiscussions": [
     {
-      "id": "I_kwDODou01c5BZZv-",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Open Graph link preview image according to the document to open",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/224",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "keep-open",
-          "color": "f9dd4b"
-        }
-      ],
-      "score": 28.430284286176615
+      "id": "PR_kwDOFLhIt85q-42Y",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: initial infra for slack intergration",
+      "author": "Shurtu-gal",
+      "resourcePath": "/asyncapi/community/pull/1131",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 25.27136380993477
     },
     {
       "id": "PR_kwDOFLhIt85js7KX",
@@ -30,22 +21,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 23.26114168868996
-    },
-    {
-      "id": "PR_kwDOFLhIt85q-42Y",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: initial infra for slack intergration",
-      "author": "Shurtu-gal",
-      "resourcePath": "/asyncapi/community/pull/1131",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "bounty",
-          "color": "0E8A16"
-        }
-      ],
-      "score": 22.68679251119144
     },
     {
       "id": "I_kwDOBW5R_c5J6qNe",
@@ -172,7 +147,27 @@
       "resourcePath": "/asyncapi/website/pull/2790",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 14.645904026212197
+      "score": 14.933078614961456
+    },
+    {
+      "id": "I_kwDOFLhIt85_y16Y",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Automate Slack user groups + channels creation and management",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/community/issues/1072",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "bounty",
+          "color": "0E8A16"
+        }
+      ],
+      "score": 14.358729437462937
     }
   ],
   "goodFirstIssues": [
