@@ -4,7 +4,7 @@ import Banner from '../../../../components/campaigns/Banner';
 
 // .skip should be removed once the Banner component is rendered in the website with default functionalities
 describe('Banner Component', () => {
-  it('should not render the banner when the date is not within the valid range', () => {
+  it.skip('should not render the banner when the date is not within the valid range', () => {
     const today = new Date();
     const [day,  month, year] = [today.getUTCDate(),  today.getUTCMonth(),  today.getUTCFullYear()];
     if (year > 2022 || month !== 10 || day < 6) {
@@ -18,21 +18,21 @@ describe('Banner Component', () => {
     }
   });
 
-  it('should render the banner when the date is within the valid range', () => {
+  it.skip('should render the banner when the date is within the valid range', () => {
     const mockDate = new Date(2021, 10, 12).getTime();
     cy.clock(mockDate);
     mount(<Banner />);
     cy.get('[data-testid="Banner-main-div"]').should('be.visible');
   });
 
-  it('should display the correct message when the date is within the valid range', () => {
+  it.skip('should display the correct message when the date is within the valid range', () => {
     const mockDate = new Date(2021, 10, 12).getTime();
     cy.clock(mockDate);
     mount(<Banner />);
     cy.contains('.font-medium', 'AsyncAPI Conference 2022 has ended').should('be.visible');
   });
 
-  it('should have a link to the recordings playlist', () => {
+  it.skip('should have a link to the recordings playlist', () => {
     const mockDate = new Date(2021, 10, 12).getTime();
     cy.clock(mockDate);
     mount(<Banner />);
@@ -42,7 +42,7 @@ describe('Banner Component', () => {
       .should('have.attr', 'rel', 'noopener noreferrer');
   });
 
-  it('should have the max-w-screen-xl class in the div element', () => {
+  it.skip('should have the max-w-screen-xl class in the div element', () => {
     const mockDate = new Date(2021, 10, 12).getTime();
     cy.clock(mockDate);
     mount(<Banner />);
