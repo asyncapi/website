@@ -62,11 +62,11 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
 
   const banners = [
     {
-      title: "AsyncAPI Conf",
+      title: "AsyncAPI Conf on Tour'24",
       city: "London",
       dateLocation: "18 - 19 of September, 2024 | United Kingdom, London",
-      cfaText: "Submit Your Proposals",
-      eventName: "AACoT'24 London Edition",
+      cfaText: "Apply To Speak",
+      eventName: "the end of Call for Speakers",
       cfpDeadline: cfpDeadlineLondon,
       link: "https://conference.asyncapi.com/venue/London",
       show: showBannerLondon
