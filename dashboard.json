@@ -1,6 +1,26 @@
 {
   "hotDiscussions": [
     {
+      "id": "I_kwDOFLhIt85_y16Y",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Automate Slack user groups + channels creation and management",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/community/issues/1072",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "bounty",
+          "color": "0E8A16"
+        }
+      ],
+      "score": 103.67002653848242
+    },
+    {
       "id": "PR_kwDOFLhIt85q-42Y",
       "isPR": true,
       "isAssigned": true,
@@ -9,7 +29,7 @@
       "resourcePath": "/asyncapi/community/pull/1131",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 25.27136380993477
+      "score": 26.707236753681066
     },
     {
       "id": "PR_kwDOFLhIt85js7KX",
@@ -148,26 +168,6 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 14.933078614961456
-    },
-    {
-      "id": "I_kwDOFLhIt85_y16Y",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Automate Slack user groups + channels creation and management",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/community/issues/1072",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "bounty",
-          "color": "0E8A16"
-        }
-      ],
-      "score": 14.358729437462937
     }
   ],
   "goodFirstIssues": [
@@ -370,6 +370,10 @@
           "color": "a2eeef"
         },
         {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
           "name": "📑 docs",
           "color": "E50E99"
         }
@@ -387,6 +391,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         },
         {
           "name": "📑 docs",
