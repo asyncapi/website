@@ -305,10 +305,7 @@ What is the benefit of writing/republishing on the AsyncAPI blog? Visibility amo
   </tr>
   <tr>
     <td align="center">
-    <Link href="/blog/openapi-vs-asyncapi-burning-questions" passHref>
-      <a>
-      AsyncAPI vs OpenAPI: Answers to Your Burning Questions About Two Leading API Specs
-      </a></Link> (September 2021)
+      [AsyncAPI vs OpenAPI: Answers to Your Burning Questions About Two Leading API Specs](/blog/openapi-vs-asyncapi-burning-questions) (September 2021)
     </td>
     <td align="center">
       8 107
@@ -321,10 +318,7 @@ What is the benefit of writing/republishing on the AsyncAPI blog? Visibility amo
   </tr>
   <tr>
     <td align="center">
-    <Link href="/blog/understanding-asyncapis" passHref>
-      <a>
-      Understanding AsyncAPIs with a Practical Example
-      </a></Link> (March 2021)
+      [Understanding AsyncAPIs with a Practical Example](/blog/understanding-asyncapis) (March 2021)
     </td>
     <td align="center">
       6 161
@@ -337,10 +331,7 @@ What is the benefit of writing/republishing on the AsyncAPI blog? Visibility amo
   </tr>
   <tr>
     <td align="center">
-    <Link href="/blog/websocket-part2" passHref>
-      <a>
-      Creating AsyncAPI for WebSocket API - Step by Step
-      </a></Link> (April 2021)
+      [Creating AsyncAPI for WebSocket API - Step by Step](/blog/websocket-part2) (April 2021)
     </td>
     <td align="center">
       5 049
@@ -644,9 +635,7 @@ Huge applause :clap: to all [our sponsors](https://opencollective.com/asyncapi#s
     </td>
     <td align="center">
       $15,093.31 Marketing and Maintainance<br/>
-      $3,000.00 Donation to <a href="https://opencollective.com/json-schema">
-        JSON Schema
-      </a> 
+      $3,000.00 Donation to <a href="https://opencollective.com/json-schema">JSON Schema</a> 
     </td>
     <td>
       $56 252.68

@@ -19,9 +19,9 @@ export default function DocsButton({ post, className = '' }: IDocsButtonProps) {
     <div className={`mb-4 flex h-full flex-row gap-4 ${className}`}>
       <div className='h-auto w-1/2'>
         {post?.prevPage && (
-          <Link href={post.prevPage.href} passHref>
+          <Link href={post.prevPage.href}>
             <div
-              className={`cursor-pointer rounded border border-gray-200 p-4 text-center shadow-md transition-all 
+              className={`cursor-pointer rounded border border-gray-200 p-4 text-center shadow-md transition-all
                             duration-300 ease-in-out hover:border-gray-300 hover:shadow-lg lg:text-left`}
             >
               <div className='text-secondary-500' data-testid='DocsButton-Prevdiv'>
@@ -50,9 +50,9 @@ export default function DocsButton({ post, className = '' }: IDocsButtonProps) {
       </div>
       <div className='h-auto w-1/2'>
         {post?.nextPage && (
-          <Link href={post.nextPage.href} className='h-auto' passHref>
+          <Link href={post.nextPage.href} className='h-auto'>
             <div
-              className={`h-full cursor-pointer rounded border border-gray-200 p-4 text-center shadow-md 
+              className={`h-full cursor-pointer rounded border border-gray-200 p-4 text-center shadow-md
                           transition-all duration-300 ease-in-out hover:border-gray-300 hover:shadow-lg lg:text-right`}
             >
               <div className='text-secondary-500' data-testid='DocsButton-Nextdiv'>

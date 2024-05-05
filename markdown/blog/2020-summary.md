@@ -25,8 +25,8 @@ This post is not 100% just in numbers and analytics. It is also a summary of all
 
 ## Important moments
 
-1. Our first ever <Link href="/blog/asyncapi-conference-kick-off" passHref><a>AsyncAPI Online Conference</a></Link>. This pandemic edition turned out to be a very successful event that powered us up for the rest of the year
-2. We took active part in <Link href="/blog/hacktoberfest-summary-2020" passHref><a>Hacktoberfest</a></Link> as maintainers and increased the number of contributions to the project
+1. Our first ever <Link href="/blog/asyncapi-conference-kick-off"> AsyncAPI Online Conference</Link>. This pandemic edition turned out to be a very successful event that powered us up for the rest of the year
+2. We took active part in <Link href="/blog/hacktoberfest-summary-2020">Hacktoberfest</Link> as maintainers and increased the number of contributions to the project
 3. AsyncAPI was featured in InfoQ's [Software Architecture and Design InfoQ Trends Report—April 2020](https://www.infoq.com/articles/architecture-trends-2020/) that directly brought 1963 new users to the AsyncAPI website
 4. AsyncAPI showed up on [Technology Radar](https://www.thoughtworks.com/radar/tools/asyncapi) that took 1051 users directly to the AsyncAPI website
 5. Our two core tools reached their first major release
@@ -308,9 +308,7 @@ What is the benefit of writing/republishing on the AsyncAPI blog? Visibility amo
   </tr>
   <tr>
     <td align="center">
-      <Link href="/blog/automated-releases" passHref><a>
-      Full automation of release to NPM and Docker Hub with GitHub Actions and Conventional Commits
-      </a></Link> (March 2020)
+        [Full automation of release to NPM and Docker Hub with GitHub Actions and Conventional Commits](/blog/automated-releases) (March 2020)
     </td>
     <td align="center">
       9 318
@@ -323,10 +321,7 @@ What is the benefit of writing/republishing on the AsyncAPI blog? Visibility amo
   </tr>
   <tr>
     <td align="center">
-    <Link href="/blog/asyncapi_codegen_scst" passHref>
-      <a>
-      AsyncAPI Code Generation: Microservices Using Spring Cloud Stream
-      </a></Link> (June 2020)
+      [AsyncAPI Code Generation: Microservices Using Spring Cloud Stream](/blog/asyncapi_codegen_scst) (June 2020)
     </td>
     <td align="center">
       8 508
@@ -339,10 +334,7 @@ What is the benefit of writing/republishing on the AsyncAPI blog? Visibility amo
   </tr>
   <tr>
     <td align="center">
-    <Link href="/blog/an-api-strategist-explores-event-driven-apis" passHref>
-      <a>
-      An API Strategist Explores Event-Driven APIs
-      </a></Link> (May 2019)
+      [An API Strategist Explores Event-Driven APIs](/blog/an-api-strategist-explores-event-driven-apis) (May 2019)
     </td>
     <td align="center">
       3 451
@@ -892,9 +884,7 @@ We enabled the [GitHub sponsoring](https://github.com/sponsors/asyncapi) this ye
     </td>
     <td align="center">
       $52 371 Maintanance<br/>
-      $3 750 <a href="https://opencollective.com/json-schema">
-        JSON Schema
-      </a> 
+      $3 750 <a href="https://opencollective.com/json-schema"> JSON Schema </a> 
     </td>
     <td>
       $1 493,64

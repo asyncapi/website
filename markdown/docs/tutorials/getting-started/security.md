@@ -136,7 +136,7 @@ components:
 
 <Remember title="Hint">
 
-Learn more about the several kinds of <Link href="/docs/reference/specification/v2.5.0#securitySchemeObject" passHref><a className="text-teal-600 font-medium hover:underline cursor-pointer">security schemes</a></Link>.
+Learn more about the several kinds of <Link href="/docs/reference/specification/v2.5.0#securitySchemeObject"><span className="text-teal-600 font-medium hover:underline cursor-pointer">security schemes</span></Link>.
 
 </Remember>
 

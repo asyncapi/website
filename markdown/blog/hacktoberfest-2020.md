@@ -16,7 +16,7 @@ authors:
 <Warning
 title="HacktoberFest 2020 has finished"
 description={
-<span>Check out our <Link href="/blog/hacktoberfest-summary-2020" passHref><a>summary blog post</a></Link>. There are lots of good insights!</span>
+<span>Check out our <Link href="/blog/hacktoberfest-summary-2020">summary blog post</Link>. There are lots of good insights!</span>
 }
 />
 
@@ -92,9 +92,9 @@ Still not sure if you can make it? Don't worry. We want to host office hours thr
 
 We stream to our official media accounts:
 
-- https://www.twitch.tv/asyncapi
-- https://www.youtube.com/asyncapi
-- https://twitter.com/AsyncAPISpec
+- [https://www.twitch.tv/asyncapi](https://www.twitch.tv/asyncapi)
+- [https://www.youtube.com/asyncapi](https://www.youtube.com/asyncapi)
+- [https://twitter.com/AsyncAPISpec](https://twitter.com/AsyncAPISpec)
 
 You can also join us in a more asynchronous discussion on [Slack](https://www.asyncapi.com/slack-invite/). For updates and latest news, the best is to follow our [Twitter account](https://twitter.com/AsyncAPISpec).
 

@@ -166,10 +166,10 @@ servers:
 
       The resulting token must be provided in the "token" field of any new private WebSocket feed subscription: 
       ```
-      {
+      \{
         "event": "subscribe",
         "subscription":
-        {
+        \{
           "name": "ownTrades",
           "token": "WW91ciBhdXRoZW50aWNhdGlvbiB0b2tlbiBnb2VzIGhlcmUu"
         }
@@ -474,10 +474,10 @@ servers:
 
       The resulting token must be provided in the "token" field of any new private WebSocket feed subscription: 
       ```
-      {
+      \{
         "event": "subscribe",
         "subscription":
-        {
+        \{
           "name": "ownTrades",
           "token": "WW91ciBhdXRoZW50aWNhdGlvbiB0b2tlbiBnb2VzIGhlcmUu"
         }
