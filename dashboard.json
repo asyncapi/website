@@ -74,17 +74,6 @@
       "score": 22.112443333692923
     },
     {
-      "id": "PR_kwDODou01c5Iv4zR",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: added table of contents and introduction document for Studio tool",
-      "author": "Jagrutiti",
-      "resourcePath": "/asyncapi/studio/pull/553",
-      "repo": "asyncapi/studio",
-      "labels": [],
-      "score": 21.825268744943667
-    },
-    {
       "id": "PR_kwDOFLhIt85oVQqh",
       "isPR": true,
       "isAssigned": false,
@@ -168,6 +157,17 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 14.933078614961456
+    },
+    {
+      "id": "PR_kwDOFLhIt85rY7Lw",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: add Maintainers Growth Working Group",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/community/pull/1143",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 14.07155484871368
     }
   ],
   "goodFirstIssues": [
@@ -601,6 +601,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
