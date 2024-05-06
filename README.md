@@ -33,8 +33,8 @@ This repository contains the sources of AsyncAPI website:
 
 Use the following tools to set up the project:
 
-- [Node.js](https://nodejs.org/) v16.0.0+
-- [npm](https://www.npmjs.com/) v8.10.0+
+- [Node.js](https://nodejs.org/) v20.12.0+
+- [npm](https://www.npmjs.com/) v10.5.0+
 
 ## Run locally
 
@@ -116,6 +116,24 @@ After cloning repository to your local, perform the following steps from the roo
     ```
 
 Now you're running AsyncAPI website in a development mode. Container is mapped with your local copy of the website. Whenever you make changes to the code, the website will refresh and changes visible in localhost:3000.
+
+## Lint the code
+To lint the code, run the following command:
+```
+npm run lint
+```
+
+To fix the linting issues, run the following command:
+```
+npm run lint:fix
+```
+
+## Start the production server
+To build and run a production-ready website, run the following command:
+```
+npm run build && npm run start
+```
+Generated files of the website go to the `.next` folder.
 
 ## Updating information about project finance
 
