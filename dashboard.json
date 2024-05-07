@@ -29,7 +29,7 @@
       "resourcePath": "/asyncapi/community/pull/1131",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 26.707236753681066
+      "score": 29.578982641173653
     },
     {
       "id": "PR_kwDOFLhIt85js7KX",
@@ -83,22 +83,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 17.804824502454043
-    },
-    {
-      "id": "I_kwDOCVQpZM5M_dcV",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "DocsUI: Messages Object output",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
-      "repo": "asyncapi/asyncapi-react",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 16.943300736206268
     },
     {
       "id": "PR_kwDODou01c5YJ7kV",
@@ -168,6 +152,26 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 14.07155484871368
+    },
+    {
+      "id": "I_kwDODou01c5BZZv-",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Open Graph link preview image according to the document to open",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/224",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 13.703040335770691
     }
   ],
   "goodFirstIssues": [
@@ -236,21 +240,6 @@
         {
           "name": "bounty",
           "color": "0E8A16"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385_rNaC",
-      "title": "Create a one for all input document for runtime to test all functionality",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1825",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -637,6 +626,10 @@
           "color": "a2eeef"
         },
         {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
           "name": "Kotlin generator",
           "color": "61A95C"
         }
@@ -654,6 +647,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         },
         {
           "name": "Kotlin generator",
