@@ -29,7 +29,7 @@
       "resourcePath": "/asyncapi/community/pull/1131",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 29.578982641173653
+      "score": 31.589204762418465
     },
     {
       "id": "PR_kwDOFLhIt85js7KX",
@@ -132,6 +132,17 @@
       "score": 16.08177696995849
     },
     {
+      "id": "PR_kwDOFLhIt85rY7Lw",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: add Maintainers Growth Working Group",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/community/pull/1143",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 15.507427792459973
+    },
+    {
       "id": "PR_kwDOBW5R_c5p28Vu",
       "isPR": true,
       "isAssigned": false,
@@ -143,35 +154,28 @@
       "score": 14.933078614961456
     },
     {
-      "id": "PR_kwDOFLhIt85rY7Lw",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: add Maintainers Growth Working Group",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/community/pull/1143",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 14.07155484871368
-    },
-    {
-      "id": "I_kwDODou01c5BZZv-",
+      "id": "I_kwDOFi_gUM5hpuWl",
       "isPR": false,
-      "isAssigned": false,
-      "title": "Open Graph link preview image according to the document to open",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/224",
-      "repo": "asyncapi/studio",
+      "isAssigned": true,
+      "title": "Improve kafka adapter",
+      "author": "KhudaDad414",
+      "resourcePath": "/asyncapi/glee/issues/411",
+      "repo": "asyncapi/glee",
       "labels": [
         {
           "name": "enhancement",
           "color": "a2eeef"
         },
         {
-          "name": "keep-open",
-          "color": "f9dd4b"
+          "name": "good first issue",
+          "color": "7057ff"
+        },
+        {
+          "name": "area/typescript",
+          "color": "007acc"
         }
       ],
-      "score": 13.703040335770691
+      "score": 13.78438025996442
     }
   ],
   "goodFirstIssues": [
@@ -590,10 +594,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
@@ -765,25 +765,6 @@
         {
           "name": "stale",
           "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5IRxcq",
-      "title": "[📑 Docs]: update docs issues in ALL repos that are missing the `area/docs` label ",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/682",
-      "repo": "asyncapi/website",
-      "author": "alequetzalli",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
         }
       ]
     },
