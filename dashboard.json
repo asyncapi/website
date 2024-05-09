@@ -18,18 +18,7 @@
           "color": "0E8A16"
         }
       ],
-      "score": 103.67002653848242
-    },
-    {
-      "id": "PR_kwDOFLhIt85q-42Y",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: initial infra for slack intergration",
-      "author": "Shurtu-gal",
-      "resourcePath": "/asyncapi/community/pull/1131",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 31.589204762418465
+      "score": 103.95720112723167
     },
     {
       "id": "PR_kwDOFLhIt85js7KX",
@@ -132,17 +121,6 @@
       "score": 16.08177696995849
     },
     {
-      "id": "PR_kwDOFLhIt85rY7Lw",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: add Maintainers Growth Working Group",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/community/pull/1143",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 15.507427792459973
-    },
-    {
       "id": "PR_kwDOBW5R_c5p28Vu",
       "isPR": true,
       "isAssigned": false,
@@ -176,6 +154,37 @@
         }
       ],
       "score": 13.78438025996442
+    },
+    {
+      "id": "I_kwDODou01c5BZZv-",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Open Graph link preview image according to the document to open",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/224",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 13.703040335770691
+    },
+    {
+      "id": "I_kwDOFLhIt85bebeO",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Meeting Banners Storage",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/issues/568",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 13.497205671215161
     }
   ],
   "goodFirstIssues": [
