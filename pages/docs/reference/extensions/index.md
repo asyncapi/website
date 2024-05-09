@@ -12,4 +12,4 @@ AsyncAPI extensions are those that are preceded by `x-`. (Example: `x-linkedin`)
 
 ## Adding your extension to the catalog
 
-If you'd like to add your extension to the catalog, please submit a pull request to [Extensions Catalog](https://github.com/asyncapi/extensions-catalog) repository. Make sure the extension doesn't exist already, in which case it would be better to improve the existing one so everybody benefits from it.
+If you'd like to add your extension to the catalog, please submit a pull request to the [Extensions Catalog](https://github.com/asyncapi/extensions-catalog) repository. Make sure the extension doesn't exist already; otherwise, it's better to improve the existing one.
