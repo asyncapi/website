@@ -63,17 +63,6 @@
       "score": 22.112443333692923
     },
     {
-      "id": "PR_kwDOFLhIt85oVQqh",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: docs automation for website",
-      "author": "AnimeshKumar923",
-      "resourcePath": "/asyncapi/community/pull/1082",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 17.804824502454043
-    },
-    {
       "id": "PR_kwDODou01c5YJ7kV",
       "isPR": true,
       "isAssigned": false,
@@ -82,7 +71,7 @@
       "resourcePath": "/asyncapi/studio/pull/773",
       "repo": "asyncapi/studio",
       "labels": [],
-      "score": 16.65612614745701
+      "score": 16.943300736206268
     },
     {
       "id": "I_kwDOFLhIt84-OUI3",
@@ -185,6 +174,17 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 13.497205671215161
+    },
+    {
+      "id": "PR_kwDOCoBobc5tRBZn",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore: introduce the turborepo to the parser.js",
+      "author": "ayushnau",
+      "resourcePath": "/asyncapi/parser-js/pull/992",
+      "repo": "asyncapi/parser-js",
+      "labels": [],
+      "score": 12.635681904967385
     }
   ],
   "goodFirstIssues": [
@@ -200,21 +200,6 @@
         {
           "name": "avro",
           "color": "EC3D91"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c6GUTRu",
-      "title": "Extensions are redirecting to 404 page",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/2890",
-      "repo": "asyncapi/website",
-      "author": "sambhavgupta0705",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
         }
       ]
     },
@@ -713,6 +698,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         },
         {
           "name": "keep",
