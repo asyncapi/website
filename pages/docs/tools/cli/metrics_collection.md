@@ -46,4 +46,7 @@ To disable tracking, please run the following command:
 Once disabled, if you want to enable tracking back again then run:  
 `asyncapi config analytics --enable`
 
+In case you do not know the current status of analytics, then you can append the "--status" flag to be aware of it:
+`asyncapi config analytics --status`
+
 Remember that keeping this tracking enabled will help AsyncAPI community to provide better specifications and tools in the future.

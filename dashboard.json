@@ -1,24 +1,24 @@
 {
   "hotDiscussions": [
     {
-      "id": "I_kwDODou01c5BZZv-",
+      "id": "I_kwDOFLhIt85_y16Y",
       "isPR": false,
-      "isAssigned": false,
-      "title": "Open Graph link preview image according to the document to open",
+      "isAssigned": true,
+      "title": "Automate Slack user groups + channels creation and management",
       "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/224",
-      "repo": "asyncapi/studio",
+      "resourcePath": "/asyncapi/community/issues/1072",
+      "repo": "asyncapi/community",
       "labels": [
         {
           "name": "enhancement",
           "color": "a2eeef"
         },
         {
-          "name": "keep-open",
-          "color": "f9dd4b"
+          "name": "bounty",
+          "color": "0E8A16"
         }
       ],
-      "score": 28.430284286176615
+      "score": 103.95720112723167
     },
     {
       "id": "PR_kwDOFLhIt85js7KX",
@@ -30,22 +30,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 23.26114168868996
-    },
-    {
-      "id": "PR_kwDOFLhIt85q-42Y",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: initial infra for slack intergration",
-      "author": "Shurtu-gal",
-      "resourcePath": "/asyncapi/community/pull/1131",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "bounty",
-          "color": "0E8A16"
-        }
-      ],
-      "score": 22.68679251119144
     },
     {
       "id": "I_kwDOBW5R_c5J6qNe",
@@ -79,41 +63,14 @@
       "score": 22.112443333692923
     },
     {
-      "id": "PR_kwDODou01c5Iv4zR",
+      "id": "PR_kwDODou01c5YJ7kV",
       "isPR": true,
       "isAssigned": false,
-      "title": "docs: added table of contents and introduction document for Studio tool",
-      "author": "Jagrutiti",
-      "resourcePath": "/asyncapi/studio/pull/553",
+      "title": "Add Form component",
+      "author": "KhudaDad414",
+      "resourcePath": "/asyncapi/studio/pull/773",
       "repo": "asyncapi/studio",
       "labels": [],
-      "score": 21.825268744943667
-    },
-    {
-      "id": "PR_kwDOFLhIt85oVQqh",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: docs automation for website",
-      "author": "AnimeshKumar923",
-      "resourcePath": "/asyncapi/community/pull/1082",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 17.804824502454043
-    },
-    {
-      "id": "I_kwDOCVQpZM5M_dcV",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "DocsUI: Messages Object output",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
-      "repo": "asyncapi/asyncapi-react",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
       "score": 16.943300736206268
     },
     {
@@ -133,17 +90,6 @@
       "score": 16.332916763847894
     },
     {
-      "id": "PR_kwDODou01c5YJ7kV",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "Add Form component",
-      "author": "KhudaDad414",
-      "resourcePath": "/asyncapi/studio/pull/773",
-      "repo": "asyncapi/studio",
-      "labels": [],
-      "score": 16.08177696995849
-    },
-    {
       "id": "I_kwDOBW5R_c49A2ZS",
       "isPR": false,
       "isAssigned": true,
@@ -161,7 +107,7 @@
           "color": "0e8a16"
         }
       ],
-      "score": 15.794602381209232
+      "score": 16.08177696995849
     },
     {
       "id": "PR_kwDOBW5R_c5p28Vu",
@@ -172,7 +118,73 @@
       "resourcePath": "/asyncapi/website/pull/2790",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 14.645904026212197
+      "score": 14.933078614961456
+    },
+    {
+      "id": "I_kwDOFi_gUM5hpuWl",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Improve kafka adapter",
+      "author": "KhudaDad414",
+      "resourcePath": "/asyncapi/glee/issues/411",
+      "repo": "asyncapi/glee",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "good first issue",
+          "color": "7057ff"
+        },
+        {
+          "name": "area/typescript",
+          "color": "007acc"
+        }
+      ],
+      "score": 13.78438025996442
+    },
+    {
+      "id": "I_kwDODou01c5BZZv-",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Open Graph link preview image according to the document to open",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/224",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 13.703040335770691
+    },
+    {
+      "id": "I_kwDOFLhIt85bebeO",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Meeting Banners Storage",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/issues/568",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 13.497205671215161
+    },
+    {
+      "id": "PR_kwDOCoBobc5tRBZn",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore: introduce the turborepo to the parser.js",
+      "author": "ayushnau",
+      "resourcePath": "/asyncapi/parser-js/pull/992",
+      "repo": "asyncapi/parser-js",
+      "labels": [],
+      "score": 12.635681904967385
     }
   ],
   "goodFirstIssues": [
@@ -188,21 +200,6 @@
         {
           "name": "avro",
           "color": "EC3D91"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c6GUTRu",
-      "title": "Extensions are redirecting to 404 page",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/2890",
-      "repo": "asyncapi/website",
-      "author": "sambhavgupta0705",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
         }
       ]
     },
@@ -241,21 +238,6 @@
         {
           "name": "bounty",
           "color": "0E8A16"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385_rNaC",
-      "title": "Create a one for all input document for runtime to test all functionality",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1825",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -375,6 +357,10 @@
           "color": "a2eeef"
         },
         {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
           "name": "📑 docs",
           "color": "E50E99"
         }
@@ -392,6 +378,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         },
         {
           "name": "📑 docs",
@@ -630,6 +620,10 @@
           "color": "a2eeef"
         },
         {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
           "name": "Kotlin generator",
           "color": "61A95C"
         }
@@ -647,6 +641,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         },
         {
           "name": "Kotlin generator",
@@ -700,6 +698,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         },
         {
           "name": "keep",
@@ -761,25 +763,6 @@
         {
           "name": "stale",
           "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5IRxcq",
-      "title": "[📑 Docs]: update docs issues in ALL repos that are missing the `area/docs` label ",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/682",
-      "repo": "asyncapi/website",
-      "author": "alequetzalli",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
         }
       ]
     },
