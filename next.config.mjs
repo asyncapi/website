@@ -4,7 +4,7 @@ import gemoji from 'remark-gemoji-to-emoji';
 import a11yEmoji from '@fec/remark-a11y-emoji';
 import slug from 'remark-slug';
 import headingId from 'remark-heading-id';
-import remarkGfm from "remark-gfm";
+import remarkGfm from 'remark-gfm';
 import withMDX from '@next/mdx';
 
 /**
