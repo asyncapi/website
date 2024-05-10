@@ -95,6 +95,7 @@
     "recharts": "^2.12.2",
     "remark-frontmatter": "^5.0.0",
     "remark-gemoji-to-emoji": "^1.1.0",
+    "remark-gfm": "^4.0.0",
     "remark-heading-id": "^1.0.1",
     "remark-images": "^4.0.0",
     "remark-slug": "^7.0.1",
