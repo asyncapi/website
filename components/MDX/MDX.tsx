@@ -16,27 +16,28 @@ import {
 } from 'react-twitter-embed';
 import YouTube from 'react-youtube-embed';
 
-import Asyncapi3ChannelComparison from './Asyncapi3Comparison/Asyncapi3ChannelComparison';
-import Asyncapi3IdAndAddressComparison from './Asyncapi3Comparison/Asyncapi3IdAndAddressComparison';
-import Asyncapi3MetaComparison from './Asyncapi3Comparison/Asyncapi3MetaComparison';
-import Asyncapi3OperationComparison from './Asyncapi3Comparison/Asyncapi3OperationComparison';
-import Asyncapi3ParameterComparison from './Asyncapi3Comparison/Asyncapi3ParameterComparison';
-import Asyncapi3SchemaFormatComparison from './Asyncapi3Comparison/Asyncapi3SchemaFormatComparison';
-import Asyncapi3ServerComparison from './Asyncapi3Comparison/Asyncapi3ServerComparison';
-import Button from './buttons/Button';
-import ChapterSuggestions from './buttons/ChapterSuggestions';
-import Caption from './Caption';
-import DocsCards from './docs/DocsCards';
-import CodeBlock from './editor/CodeBlock';
-import Figure from './Figure';
-import GeneratorInstallation from './GeneratorInstallation';
-import Column from './layout/Column';
-import Row from './layout/Row';
-import NewsletterSubscribe from './NewsletterSubscribe';
-import Profiles from './Profiles';
-import Remember from './Remember';
-import Sponsors from './sponsors/Sponsors';
-import Warning from './Warning';
+import Asyncapi3ChannelComparison from '../Asyncapi3Comparison/Asyncapi3ChannelComparison';
+import Asyncapi3IdAndAddressComparison from '../Asyncapi3Comparison/Asyncapi3IdAndAddressComparison';
+import Asyncapi3MetaComparison from '../Asyncapi3Comparison/Asyncapi3MetaComparison';
+import Asyncapi3OperationComparison from '../Asyncapi3Comparison/Asyncapi3OperationComparison';
+import Asyncapi3ParameterComparison from '../Asyncapi3Comparison/Asyncapi3ParameterComparison';
+import Asyncapi3SchemaFormatComparison from '../Asyncapi3Comparison/Asyncapi3SchemaFormatComparison';
+import Asyncapi3ServerComparison from '../Asyncapi3Comparison/Asyncapi3ServerComparison';
+import Button from '../buttons/Button';
+import ChapterSuggestions from '../buttons/ChapterSuggestions';
+import Caption from '../Caption';
+import DocsCards from '../docs/DocsCards';
+import CodeBlock from '../editor/CodeBlock';
+import Figure from '../Figure';
+import GeneratorInstallation from '../GeneratorInstallation';
+import Column from '../layout/Column';
+import Row from '../layout/Row';
+import NewsletterSubscribe from '../NewsletterSubscribe';
+import Profiles from '../Profiles';
+import Remember from '../Remember';
+import Sponsors from '../sponsors/Sponsors';
+import Warning from '../Warning';
+import { Table, TableCell, TableHeader, TableRow } from './MDXTable';
 
 let mermaidInitialized = false;
 
@@ -288,6 +289,10 @@ export function getMDXComponents() {
         {props.children}
       </Link>
     ),
+    Tr: TableRow,
+    Td: TableCell,
+    Th: TableHeader,
+    Table,
     Asyncapi3ChannelComparison,
     Asyncapi3IdAndAddressComparison,
     Asyncapi3MetaComparison,

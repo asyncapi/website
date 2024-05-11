@@ -4,9 +4,20 @@ const path = require('path');
 const SRC_DIR = 'markdown';
 const TARGET_DIR = 'pages';
 
+const whiteListTags = ['a', 'br', 'div'];
+
 // Check if target directory doesn't exist then create it
 if (!fs.existsSync(TARGET_DIR)) {
   fs.mkdirSync(TARGET_DIR, { recursive: true });
+}
+
+function capitalizeJsxTags(content) {
+  return content.replace(/<\/?(\w+)/g, function (match, letter) {
+    if (whiteListTags.includes(letter.toLowerCase())) {
+      return match; // return the match as is, without capitalizing
+    }
+    return `<${match[1] === '/' ? '/' : ''}${letter[0].toUpperCase()}${letter.slice(1)}`;
+  });
 }
 
 function copyAndRenameFiles(srcDir, targetDir) {
@@ -27,9 +38,11 @@ function copyAndRenameFiles(srcDir, targetDir) {
       // Read file content
       let content = fs.readFileSync(srcPath, 'utf8');
 
-      content = content.replace(/{/g, '\{');
+      content = content.replace(/{/g, '{');
 
       content = content.replace(/<!--([\s\S]*?)-->/g, '{/*$1*/}');
+
+      content = capitalizeJsxTags(content);
 
       // Write content to target directory
       fs.writeFileSync(targetPath, content, 'utf8');
