@@ -135,6 +135,16 @@ npm run build && npm run start
 ```
 Generated files of the website go to the `.next` folder.
 
+## Start the netlify production server
+To start a local development server for the build tool using the configuration and environment variables set for local development with the Netlify CLI, run the following command:
+```
+netlify dev
+```
+To start the server using the configuration and environment variables set for `dev` or `all` deploy contexts, run the following command:
+```
+netlify dev --context production
+```
+
 ## Updating information about project finance
 
 AsyncAPI Financial Summary page aims to provide transparency and clarity regarding the organization's financial activities. It serves as a platform to showcase how donations are accepted, different sponsorship options, and how the generated funds are utilized.
