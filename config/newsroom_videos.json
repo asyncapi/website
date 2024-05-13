@@ -1,32 +1,32 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/eQed8AKDlsM/hqdefault.jpg",
+    "title": "Marketing - WG setup and hiring, 14:00 UTC Wednesday May 9th 2024",
+    "description": "https://github.com/asyncapi/community/issues/1192.",
+    "videoId": "eQed8AKDlsM"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/33uFRKeSSfM/hqdefault.jpg",
+    "title": "Community X Conference Meeting , Tuesday April 30th 2024",
+    "description": "https://github.com/asyncapi/community/issues/1184.",
+    "videoId": "33uFRKeSSfM"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/aJxXEF11r5s/hqdefault.jpg",
+    "title": "Marketing - Next steps, Thursday April 25th 2024",
+    "description": "https://github.com/asyncapi/community/issues/1175.",
+    "videoId": "aJxXEF11r5s"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/OpViKeJcEUA/hqdefault.jpg",
     "title": "Essential Building Blocks Working Group, Tuesday April 22nd 2024",
     "description": "https://github.com/asyncapi/community/issues/1177.",
     "videoId": "OpViKeJcEUA"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/9Aw7-gYrJyY/hqdefault.jpg",
-    "title": "Maintainers Growth Working Group, Tuesday April 22nd 2024",
-    "description": "https://github.com/asyncapi/community/issues/1174.",
-    "videoId": "9Aw7-gYrJyY"
-  },
-  {
     "image_url": "https://i.ytimg.com/vi/EMQgIuRyq1o/hqdefault.jpg",
     "title": "Essential Building Blocks Working Group, Tuesday April 16th 2024",
     "description": "https://github.com/asyncapi/community/issues/1159.",
     "videoId": "EMQgIuRyq1o"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/JDRJ33_wH2Q/hqdefault.jpg",
-    "title": "Essential Building Blocks Working Group, Tuesday April 9th 2024",
-    "description": "https://github.com/asyncapi/community/issues/1144.",
-    "videoId": "JDRJ33_wH2Q"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/6lVMY_Fc0Vs/hqdefault.jpg",
-    "title": "Cheat Sheet Poster - Content discussion, Wednesday April 3rd 2024",
-    "description": "https://github.com/asyncapi/community/issues/1126.",
-    "videoId": "6lVMY_Fc0Vs"
   }
 ]
