@@ -184,7 +184,7 @@
       "resourcePath": "/asyncapi/parser-js/pull/992",
       "repo": "asyncapi/parser-js",
       "labels": [],
-      "score": 12.635681904967385
+      "score": 12.922856493716644
     }
   ],
   "goodFirstIssues": [
@@ -554,6 +554,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         },
         {
           "name": "C# generator",
