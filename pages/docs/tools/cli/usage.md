@@ -422,6 +422,9 @@ FLAGS
                                  unstaged files or not empty dir (defaults to false)
       --map-base-url=<value>     Maps all schema references from base url to local folder
       --no-interactive           Disable interactive mode and run with the provided flags.
+      --registry-url             Specifies the URL of the private registry for fetching templates and dependencies
+      --registry-auth            The registry username and password encoded with base64, formatted as username:password
+      --registry-token           The npm registry authentication token, that can be passed instead of base64 encoded username and password
 
 DESCRIPTION
   Generates whatever you want using templates compatible with AsyncAPI Generator.
