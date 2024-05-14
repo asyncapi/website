@@ -16,20 +16,28 @@ import {
 } from 'react-twitter-embed';
 import YouTube from 'react-youtube-embed';
 
-import Button from './buttons/Button';
-import ChapterSuggestions from './buttons/ChapterSuggestions';
-import Caption from './Caption';
-import DocsCards from './docs/DocsCards';
-import CodeBlock from './editor/CodeBlock';
-import Figure from './Figure';
-import GeneratorInstallation from './GeneratorInstallation';
-import Column from './layout/Column';
-import Row from './layout/Row';
-import NewsletterSubscribe from './NewsletterSubscribe';
-import Profiles from './Profiles';
-import Remember from './Remember';
-import Sponsors from './sponsors/Sponsors';
-import Warning from './Warning';
+import Asyncapi3ChannelComparison from '../Asyncapi3Comparison/Asyncapi3ChannelComparison';
+import Asyncapi3IdAndAddressComparison from '../Asyncapi3Comparison/Asyncapi3IdAndAddressComparison';
+import Asyncapi3MetaComparison from '../Asyncapi3Comparison/Asyncapi3MetaComparison';
+import Asyncapi3OperationComparison from '../Asyncapi3Comparison/Asyncapi3OperationComparison';
+import Asyncapi3ParameterComparison from '../Asyncapi3Comparison/Asyncapi3ParameterComparison';
+import Asyncapi3SchemaFormatComparison from '../Asyncapi3Comparison/Asyncapi3SchemaFormatComparison';
+import Asyncapi3ServerComparison from '../Asyncapi3Comparison/Asyncapi3ServerComparison';
+import Button from '../buttons/Button';
+import ChapterSuggestions from '../buttons/ChapterSuggestions';
+import Caption from '../Caption';
+import DocsCards from '../docs/DocsCards';
+import CodeBlock from '../editor/CodeBlock';
+import Figure from '../Figure';
+import GeneratorInstallation from '../GeneratorInstallation';
+import Column from '../layout/Column';
+import Row from '../layout/Row';
+import NewsletterSubscribe from '../NewsletterSubscribe';
+import Profiles from '../Profiles';
+import Remember from '../Remember';
+import Sponsors from '../sponsors/Sponsors';
+import Warning from '../Warning';
+import { Table, TableCell, TableHeader, TableRow } from './MDXTable';
 
 let mermaidInitialized = false;
 
@@ -154,6 +162,15 @@ function CodeComponent({ children, className = '', metastring = '', ...rest }: C
 }
 
 /**
+ * @description This component renders a text for MDX files
+ * @param props.content - The content to render.
+ * @param props.className - The className to apply to the text.
+ */
+function Text({ content = '', className = '' }) {
+  return <span className={className}>{content}</span>;
+}
+
+/**
  * @description This function returns MDX components.
  */
 export function getMDXComponents() {
@@ -264,14 +281,33 @@ export function getMDXComponents() {
       />
     ),
     hr: (props: React.HTMLProps<HTMLHRElement>) => <hr {...props} className={`${props.className || ''} my-8`} />,
+    Link: (props: React.HTMLProps<HTMLHRElement>) => (
+      <Link
+        href={props.href || '/'}
+        className='border-b border-secondary-400 font-body font-semibold text-gray-900 antialiased transition duration-300 ease-in-out hover:border-secondary-500'
+      >
+        {props.children}
+      </Link>
+    ),
+    Tr: TableRow,
+    Td: TableCell,
+    Th: TableHeader,
+    Table,
+    Asyncapi3ChannelComparison,
+    Asyncapi3IdAndAddressComparison,
+    Asyncapi3MetaComparison,
+    Asyncapi3OperationComparison,
+    Asyncapi3ParameterComparison,
+    Asyncapi3SchemaFormatComparison,
+    Asyncapi3ServerComparison,
     CodeBlock,
     ChapterSuggestions,
     YouTube,
     Remember,
+    Text,
     Warning,
     Sponsors,
     Caption,
-    Link,
     Row,
     Column,
     Figure,

@@ -14,9 +14,6 @@ asyncapi convert asyncapi.json --output=asyncapi_v3.json --target-version=3.0.0
 
 For a detailed read-through about all the changes (non-breaking as well), read all the [v3 release notes](/blog/release-notes-3.0.0) first to acquire additional context about the changes introduced in v3.
 
-import {Asyncapi3ChannelComparison, Asyncapi3IdAndAddressComparison, Asyncapi3MetaComparison, Asyncapi3OperationComparison,Asyncapi3SchemaFormatComparison, Asyncapi3ServerComparison,
-Asyncapi3ParameterComparison} from '../../../components/Asyncapi3Comparison'
-
 ## Moved metadata
 
 In v2, two properties of `tags` and `externalDocs` were placed outside of the [Info Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#infoObject). For consistency, `info` has been moved in v3. 

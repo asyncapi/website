@@ -279,7 +279,7 @@ io.of("/admin").on("connection", (socket) => {
 });
 ```
 
-I’ve slightly tweaked the original source located at <https://github.com/socketio/socket.io/tree/master/examples/chat> to include acknowledgments and bindings, so that I can showcase the full spectrum of the AsyncAPI specification.
+I’ve slightly tweaked the original source located at [https://github.com/socketio/socket.io/tree/master/examples/chat](https://github.com/socketio/socket.io/tree/master/examples/chat) to include acknowledgments and bindings, so that I can showcase the full spectrum of the AsyncAPI specification.
 
 Let’s start by defining the version of the specification as well as the info object which provides metadata about the service:
 
@@ -483,7 +483,7 @@ components:
           required: [token]
 ```
 
-The modified server source code is pushed at <https://github.com/dedoussis/asyncapi-socket.io-example>, along with the above AsyncAPI spec, which can be viewed using the [AsyncAPI playground](https://playground.asyncapi.io/?url=https://raw.githubusercontent.com/dedoussis/asyncapi-socket.io-example/main/asyncapi.yaml).
+The modified server source code is pushed at [https://github.com/dedoussis/asyncapi-socket.io-example](https://github.com/dedoussis/asyncapi-socket.io-example), along with the above AsyncAPI spec, which can be viewed using the [AsyncAPI playground](https://playground.asyncapi.io/?url=https://raw.githubusercontent.com/dedoussis/asyncapi-socket.io-example/main/asyncapi.yaml).
 
 Note that there is no point in documenting the [reserved events](https://socket.io/docs/v4/emit-cheatsheet/#Reserved-events) since all Socket.IO APIs support these by default.
 
@@ -493,7 +493,7 @@ In parallel to this exercise I have been developing [Asynction](https://github.c
 
 In [this example](https://github.com/dedoussis/asynction/tree/main/example), I forked the minimal chat application that we documented above and re-implemented the server in python, using Asynction. Be mindful of the `x-handler` and `x-handlers` extensions that have been introduced to relate AsyncAPI entities (such as message or channel objects) to python callables (event handlers).
 
-You may find extensive documentation of Asynction at: <https://asynction.dedouss.is>
+You may find extensive documentation of Asynction at: [https://asynction.dedouss.is](https://asynction.dedouss.is)
 
 The framework is still at a beta stage, so please get in touch before using it in a production setup.
 
