@@ -63,6 +63,22 @@
       "score": 22.112443333692923
     },
     {
+      "id": "I_kwDOBW5R_c580Z0o",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "New Contributor Guide and Maintenance Setup",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/2586",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ],
+      "score": 18.091999091203302
+    },
+    {
       "id": "PR_kwDODou01c5YJ7kV",
       "isPR": true,
       "isAssigned": false,
@@ -72,22 +88,6 @@
       "repo": "asyncapi/studio",
       "labels": [],
       "score": 16.943300736206268
-    },
-    {
-      "id": "I_kwDOFLhIt84-OUI3",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create educational & technical video explaining AsyncAPI's main features",
-      "author": "alequetzalli",
-      "resourcePath": "/asyncapi/community/issues/155",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 16.332916763847894
     },
     {
       "id": "I_kwDOBW5R_c49A2ZS",
@@ -107,7 +107,23 @@
           "color": "0e8a16"
         }
       ],
-      "score": 16.08177696995849
+      "score": 16.36895155870775
+    },
+    {
+      "id": "I_kwDOFLhIt84-OUI3",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Create educational & technical video explaining AsyncAPI's main features",
+      "author": "alequetzalli",
+      "resourcePath": "/asyncapi/community/issues/155",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 16.332916763847894
     },
     {
       "id": "PR_kwDOBW5R_c5p28Vu",
@@ -174,17 +190,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 13.497205671215161
-    },
-    {
-      "id": "PR_kwDOCoBobc5tRBZn",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore: introduce the turborepo to the parser.js",
-      "author": "ayushnau",
-      "resourcePath": "/asyncapi/parser-js/pull/992",
-      "repo": "asyncapi/parser-js",
-      "labels": [],
-      "score": 12.922856493716644
     }
   ],
   "goodFirstIssues": [
