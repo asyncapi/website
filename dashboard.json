@@ -79,17 +79,6 @@
       "score": 18.091999091203302
     },
     {
-      "id": "PR_kwDODou01c5YJ7kV",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "Add Form component",
-      "author": "KhudaDad414",
-      "resourcePath": "/asyncapi/studio/pull/773",
-      "repo": "asyncapi/studio",
-      "labels": [],
-      "score": 16.943300736206268
-    },
-    {
       "id": "I_kwDOBW5R_c49A2ZS",
       "isPR": false,
       "isAssigned": true,
@@ -107,7 +96,18 @@
           "color": "0e8a16"
         }
       ],
-      "score": 16.36895155870775
+      "score": 16.943300736206268
+    },
+    {
+      "id": "PR_kwDODou01c5YJ7kV",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "Add Form component",
+      "author": "KhudaDad414",
+      "resourcePath": "/asyncapi/studio/pull/773",
+      "repo": "asyncapi/studio",
+      "labels": [],
+      "score": 16.943300736206268
     },
     {
       "id": "I_kwDOFLhIt84-OUI3",
