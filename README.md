@@ -128,6 +128,11 @@ To fix the linting issues, run the following command:
 npm run lint:fix
 ```
 
+To lint the mdx files, run the following command:
+```
+npm run lint:mdx
+```
+
 ## Start the production server
 To build and run a production-ready website, run the following command:
 ```
