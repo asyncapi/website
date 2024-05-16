@@ -27,7 +27,7 @@ $ npm install -g @asyncapi/cli
 $ asyncapi COMMAND
 running command...
 $ asyncapi (--version)
-@asyncapi/cli/1.13.0 linux-x64 node-v18.20.2
+@asyncapi/cli/1.14.0 linux-x64 node-v18.20.2
 $ asyncapi --help [COMMAND]
 USAGE
   $ asyncapi COMMAND
@@ -98,7 +98,7 @@ EXAMPLES
   $ asyncapi bundle ./asyncapi.yaml -o final-asyncapi.yaml --base ../public-api/main.yaml --baseDir ./social-media/comments-service
 ```
 
-_See code: [src/commands/bundle.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/bundle.ts)_
+_See code: [src/commands/bundle.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/bundle.ts)_
 
 ## `asyncapi config`
 
@@ -112,7 +112,7 @@ DESCRIPTION
   CLI config settings
 ```
 
-_See code: [src/commands/config/index.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/config/index.ts)_
+_See code: [src/commands/config/index.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/config/index.ts)_
 
 ## `asyncapi config analytics`
 
@@ -132,7 +132,7 @@ DESCRIPTION
   Enable or disable analytics for metrics collection
 ```
 
-_See code: [src/commands/config/analytics.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/config/analytics.ts)_
+_See code: [src/commands/config/analytics.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/config/analytics.ts)_
 
 ## `asyncapi config context`
 
@@ -146,7 +146,7 @@ DESCRIPTION
   Manage short aliases for full paths to AsyncAPI documents
 ```
 
-_See code: [src/commands/config/context/index.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/config/context/index.ts)_
+_See code: [src/commands/config/context/index.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/config/context/index.ts)_
 
 ## `asyncapi config context add CONTEXT-NAME SPEC-FILE-PATH`
 
@@ -168,7 +168,7 @@ DESCRIPTION
   Add a context to the store
 ```
 
-_See code: [src/commands/config/context/add.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/config/context/add.ts)_
+_See code: [src/commands/config/context/add.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/config/context/add.ts)_
 
 ## `asyncapi config context current`
 
@@ -185,7 +185,7 @@ DESCRIPTION
   Shows the current context that is being used
 ```
 
-_See code: [src/commands/config/context/current.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/config/context/current.ts)_
+_See code: [src/commands/config/context/current.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/config/context/current.ts)_
 
 ## `asyncapi config context edit CONTEXT-NAME NEW-SPEC-FILE-PATH`
 
@@ -206,7 +206,7 @@ DESCRIPTION
   Edit a context in the store
 ```
 
-_See code: [src/commands/config/context/edit.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/config/context/edit.ts)_
+_See code: [src/commands/config/context/edit.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/config/context/edit.ts)_
 
 ## `asyncapi config context init [CONTEXT-FILE-PATH]`
 
@@ -229,7 +229,7 @@ DESCRIPTION
   Initialize context
 ```
 
-_See code: [src/commands/config/context/init.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/config/context/init.ts)_
+_See code: [src/commands/config/context/init.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/config/context/init.ts)_
 
 ## `asyncapi config context list`
 
@@ -246,7 +246,7 @@ DESCRIPTION
   List all the stored contexts in the store
 ```
 
-_See code: [src/commands/config/context/list.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/config/context/list.ts)_
+_See code: [src/commands/config/context/list.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/config/context/list.ts)_
 
 ## `asyncapi config context remove CONTEXT-NAME`
 
@@ -266,7 +266,7 @@ DESCRIPTION
   Delete a context from the store
 ```
 
-_See code: [src/commands/config/context/remove.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/config/context/remove.ts)_
+_See code: [src/commands/config/context/remove.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/config/context/remove.ts)_
 
 ## `asyncapi config context use CONTEXT-NAME`
 
@@ -286,7 +286,7 @@ DESCRIPTION
   Set a context as current
 ```
 
-_See code: [src/commands/config/context/use.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/config/context/use.ts)_
+_See code: [src/commands/config/context/use.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/config/context/use.ts)_
 
 ## `asyncapi config versions`
 
@@ -303,7 +303,7 @@ DESCRIPTION
   Show versions of AsyncAPI tools used
 ```
 
-_See code: [src/commands/config/versions.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/config/versions.ts)_
+_See code: [src/commands/config/versions.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/config/versions.ts)_
 
 ## `asyncapi convert [SPEC-FILE]`
 
@@ -325,7 +325,7 @@ DESCRIPTION
   Convert asyncapi documents older to newer versions
 ```
 
-_See code: [src/commands/convert.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/convert.ts)_
+_See code: [src/commands/convert.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/convert.ts)_
 
 ## `asyncapi diff OLD NEW`
 
@@ -365,7 +365,7 @@ DESCRIPTION
   Find diff between two asyncapi files
 ```
 
-_See code: [src/commands/diff.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/diff.ts)_
+_See code: [src/commands/diff.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/diff.ts)_
 
 ## `asyncapi generate`
 
@@ -379,7 +379,7 @@ DESCRIPTION
   Generate typed models or other things like clients, applications or docs using AsyncAPI Generator templates.
 ```
 
-_See code: [src/commands/generate/index.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/generate/index.ts)_
+_See code: [src/commands/generate/index.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/generate/index.ts)_
 
 ## `asyncapi generate fromTemplate ASYNCAPI TEMPLATE`
 
@@ -423,7 +423,7 @@ EXAMPLES
   $ asyncapi generate fromTemplate asyncapi.yaml @asyncapi/html-template --param version=1.0.0 singleFile=true --output ./docs --force-write
 ```
 
-_See code: [src/commands/generate/fromTemplate.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/generate/fromTemplate.ts)_
+_See code: [src/commands/generate/fromTemplate.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/generate/fromTemplate.ts)_
 
 ## `asyncapi generate models LANGUAGE FILE`
 
@@ -489,7 +489,7 @@ DESCRIPTION
   Generates typed models
 ```
 
-_See code: [src/commands/generate/models.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/generate/models.ts)_
+_See code: [src/commands/generate/models.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/generate/models.ts)_
 
 ## `asyncapi new`
 
@@ -546,7 +546,7 @@ EXAMPLES
   $ asyncapi new --file-name=my-asyncapi.yml --example=default-example.yml --no-tty	 - create a new file with a specific name, using one of the examples and without interactive mode
 ```
 
-_See code: [src/commands/new/index.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/new/index.ts)_
+_See code: [src/commands/new/index.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/new/index.ts)_
 
 ## `asyncapi new file`
 
@@ -603,7 +603,7 @@ EXAMPLES
   $ asyncapi new --file-name=my-asyncapi.yml --example=default-example.yml --no-tty	 - create a new file with a specific name, using one of the examples and without interactive mode
 ```
 
-_See code: [src/commands/new/file.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/new/file.ts)_
+_See code: [src/commands/new/file.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/new/file.ts)_
 
 ## `asyncapi new glee`
 
@@ -625,7 +625,7 @@ DESCRIPTION
   Creates a new Glee project
 ```
 
-_See code: [src/commands/new/glee.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/new/glee.ts)_
+_See code: [src/commands/new/glee.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/new/glee.ts)_
 
 ## `asyncapi optimize [SPEC-FILE]`
 
@@ -663,7 +663,7 @@ EXAMPLES
   $ asyncapi optimize ./asyncapi.yaml --optimization=remove-components --output=terminal --no-tty
 ```
 
-_See code: [src/commands/optimize.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/optimize.ts)_
+_See code: [src/commands/optimize.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/optimize.ts)_
 
 ## `asyncapi start`
 
@@ -677,7 +677,7 @@ DESCRIPTION
   Start asyncapi studio
 ```
 
-_See code: [src/commands/start/index.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/start/index.ts)_
+_See code: [src/commands/start/index.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/start/index.ts)_
 
 ## `asyncapi start studio`
 
@@ -696,7 +696,7 @@ DESCRIPTION
   starts a new local instance of Studio
 ```
 
-_See code: [src/commands/start/studio.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/start/studio.ts)_
+_See code: [src/commands/start/studio.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/start/studio.ts)_
 
 ## `asyncapi validate [SPEC-FILE]`
 
@@ -724,5 +724,5 @@ DESCRIPTION
   validate asyncapi file
 ```
 
-_See code: [src/commands/validate.ts](https://github.com/asyncapi/cli/blob/v1.13.0/src/commands/validate.ts)_
+_See code: [src/commands/validate.ts](https://github.com/asyncapi/cli/blob/v1.14.0/src/commands/validate.ts)_
 <!-- commandsstop -->
