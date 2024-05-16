@@ -80,7 +80,6 @@ export default function Button({
 
   return (
     <Link
-      passHref
       {...props}
       target={target}
       rel='noopener noreferrer'

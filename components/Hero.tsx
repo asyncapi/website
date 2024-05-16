@@ -4,6 +4,7 @@ import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 import { useTranslation } from '../utils/i18n';
 import AlgoliaSearch, { SearchButton } from './AlgoliaSearch'; // Import AlgoliaSearch component
 import Button from './buttons/Button';
+import AnnouncementHero from './campaigns/AnnouncementHero';
 import DemoAnimation from './DemoAnimation';
 import Features from './features';
 import ArrowRight from './icons/ArrowRight';
@@ -26,8 +27,7 @@ export default function Hero({ className = '' }: HeroProps) {
 
   return (
     <>
-      {/* @TODO Will uncomment the component once it is in use */}
-      {/* <AnnouncementHero className='my-4' /> */}
+      <AnnouncementHero className='my-4' />
       <header className={`mt-12 px-2 ${className}`}>
         <div className='text-center'>
           <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.xl} className='mb-4'>

@@ -9,7 +9,7 @@ import ScrollButton from '@/components/buttons/ScrollButton';
 import Banner from '@/components/campaigns/Banner';
 import Footer from '@/components/footer/Footer';
 import Layout from '@/components/layout/Layout';
-import { MDXProvider } from '@/components/MDX';
+import { MDXProvider } from '@/components/MDX/MDX';
 import NavBar from '@/components/navigation/NavBar';
 import StickyNavbar from '@/components/navigation/StickyNavbar';
 import AppContext from '@/context/AppContext';

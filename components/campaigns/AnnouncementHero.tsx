@@ -22,6 +22,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
   const [activeIndex, setActiveIndex] = useState(0);
 
   const len = banners.length;
+  const numberOfVisibleBanners = banners.filter((banner) => banner.show).length;
 
   const goToPrevious = () => {
     setActiveIndex((prevIndex) => (prevIndex === 0 ? len - 1 : prevIndex - 1));
@@ -46,13 +47,15 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
   return (
     <Container as='section' padding='' className={'text-center'}>
       <div className='relative flex flex-row items-center justify-center overflow-x-hidden md:gap-4'>
-        <div
-          className={`absolute left-0 top-1/2 z-10 mb-2 flex size-8 -translate-y-1/2 cursor-pointer
+        {numberOfVisibleBanners > 1 && (
+          <div
+            className={`absolute left-0 top-1/2 z-10 mb-2 flex size-8 -translate-y-1/2 cursor-pointer
           items-center justify-center rounded-full bg-primary-500 opacity-50 hover:bg-primary-600 md:opacity-100`}
-          onClick={goToPrevious}
-        >
-          <ArrowLeft className='w-4 text-white' />
-        </div>
+            onClick={goToPrevious}
+          >
+            <ArrowLeft className='w-4 text-white' />
+          </div>
+        )}
         <div className='relative flex w-5/6 flex-col items-center justify-center gap-2 pr-3'>
           <div className='relative h-72 w-full overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
             {banners.map(
@@ -86,13 +89,15 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
             ))}
           </div>
         </div>
-        <div
-          className={`absolute right-0 top-1/2 z-10 mb-2 size-8 -translate-y-1/2 cursor-pointer
+        {numberOfVisibleBanners > 1 && (
+          <div
+            className={`absolute right-0 top-1/2 z-10 mb-2 size-8 -translate-y-1/2 cursor-pointer
                       rounded-full bg-primary-500 opacity-50 hover:bg-primary-600 md:opacity-100`}
-          onClick={goToNext}
-        >
-          <ArrowRight className='text-white' />
-        </div>
+            onClick={goToNext}
+          >
+            <ArrowRight className='text-white' />
+          </div>
+        )}
       </div>
     </Container>
   );

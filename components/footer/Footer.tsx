@@ -18,8 +18,8 @@ export default function Footer() {
         <nav className='flex flex-wrap justify-between py-4 sm:py-10'>
           <div className='mr-14 w-full md:w-auto'>
             <div className=''>
-              <Link href='/'>
-                <span className='cursor-pointer' aria-label='AsyncAPI' data-testid='Footer-logo-link'>
+              <Link href='/' aria-label='AsyncAPI'>
+                <span className='cursor-pointer' data-testid='Footer-logo-link'>
                   <AsyncAPILogoLight className='mt-3 h-10 w-auto' />
                 </span>
               </Link>
