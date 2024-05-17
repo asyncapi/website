@@ -229,24 +229,55 @@ This repository has the following structure:
 <!-- If you make any changes in the project structure, remember to update it. -->
 
 ```text
-  ├── .github                     # Definitions of GitHub workflows, pull request and issue templates
-  ├── components                  # Various generic components such as "Button", "Figure", etc.
-  ├── config                      # Transformed static data to display on the pages such as blog posts etc.
-  ├── context                     # Various React's contexts used in website
-  ├── css                         # Various CSS files
-  ├── lib                         # Various JS code for preparing static data to render in pages
-  ├── pages                       # Website's pages source. It includes raw markdown files and React page templates.
-  │    ├── about                  # Raw blog for /about page
-  │    ├── blog                   # Blog posts
-  │    ├── docs                   # Blog for /docs/* pages
-  │    └── tools                  # Various pages to describe tools
-  ├── public                      # Data for site metadata and static blog such as images
-  ├── scripts                     # Scripts used in the build and dev processes
-  ├── next.config.js              # Next.js configuration file
-  ├── netlify                     # Code that runs on Netlify
-  │    ├── edge-functions         # Netlify Edge-Functions code
-  ├── postcss.config.js           # PostCSS configuration file
-  └── tailwind.config.js          # TailwindCSS configuration file
+  ├── .github                                  # Definitions of GitHub workflows, pull request and issue templates
+  ├── assets                                   # Various assets
+  |    ├── docs                                # Documentation assets
+  |        | fragments                         # Docuentation for CLI installation and contribution.
+  ├── components                               # Various generic components such as "Button", "Figure", etc.
+  ├── config                                   # Transformed static data to display on the pages such as blog posts etc.
+  ├── context                                  # Various React's contexts used in website
+  ├── locales                                  # Translations for the website
+  ├── markdown                                 # Markdown files for the website
+       ├── about                               # Markdown files for the /about page
+       ├── blog                                # Markdown files for the blog posts
+       ├── docs                                # Markdown files for the /docs/* pages
+  ├── netlify                                  # Code that runs on Netlify
+  ├── pages                                    # Website's pages source. It includes raw markdown files and React page templates.
+  │    ├── about                               # Raw blog for /about page
+  │    ├── blog                                # Blog posts
+  │    ├── docs                                # Blog for /docs/* pages
+  │    └── tools                               # Various pages to describe tools
+  ├── public                                   # Data for site metadata and static blog such as images
+  ├── scripts                                  # Scripts used in the build and dev processes
+  ├── styles                                   # Various CSS files
+  ├── templates                                # Various template markdown files
+  ├── types                                    #  Various typeScript types used in the website
+  ├── utils                                    # Various JS code for preparing static data to render in pages
+  ├── .all-contributorsrc                      # File having details of all contributors
+  ├── .dockerignore                            # Docker ignore file
+  ├── .editorconfig                            # Editor configuration file
+  ├── .eslintrc                                # ESLint configuration file
+  ├── .gitignore                               # Git ignore file
+  ├── .gitpod.yml                              # Gitpod configuration file
+  ├── .remarkrc                                # Configuration file for remark
+  ├── ADDING_TRANSLATIONS.md                   # Guide on how to add translations
+  ├── CODE_OF_CONDUCT.md                       # Code of conduct
+  ├── Contributing.md                          # Contributing guidelines
+  ├── dashboard.json                           # Data for dashboard page
+  ├── Dockerfile                               # Dockerfile for building the website
+  ├── LICENSE                                  # License file 
+  ├── mlc_config.json                          # Configuration file for markdown-link-checker
+  ├── netlify.toml                             # Netlify configuration file
+  ├── next-env.d.ts                            # Next.js environment types
+  ├── next-i18next-static-site.config.js       # Next.js i18next configuration file
+  ├── next.config.mjs                          # Next.js configuration file
+  ├── package-lock.json                        # NPM package lock file
+  ├── package.json                             # NPM package configuration file
+  ├── postcss.config.js                        # PostCSS configuration file
+  ├── README.md                                # Project's README file
+  ├── roadmap.json                             # Data for roadmap page
+  ├── tailwind.config.js                       # TailwindCSS configuration file
+  └── tsconfig.json                            # TypeScript configuration file
 ```
 
 ## Connect with AsyncAPI Community
