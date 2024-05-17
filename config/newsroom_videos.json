@@ -1,5 +1,23 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/8F3mTwf7JEs/hqdefault.jpg",
+    "title": "Essential Building Blocks Working Group, 18:00 UTC Tuesday May 14th 2024",
+    "description": "https://github.com/asyncapi/community/issues/1200.",
+    "videoId": "8F3mTwf7JEs"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/KvVRyUpV4m4/hqdefault.jpg",
+    "title": "Community Meeting, 8:00 UTC Tuesday May 14th 2024",
+    "description": "https://github.com/asyncapi/community/issues/1201.",
+    "videoId": "KvVRyUpV4m4"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/eQed8AKDlsM/hqdefault.jpg",
+    "title": "Marketing - WG setup and hiring, 14:00 UTC Wednesday May 9th 2024",
+    "description": "https://github.com/asyncapi/community/issues/1192.",
+    "videoId": "eQed8AKDlsM"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/33uFRKeSSfM/hqdefault.jpg",
     "title": "Community X Conference Meeting , Tuesday April 30th 2024",
     "description": "https://github.com/asyncapi/community/issues/1184.",
@@ -10,23 +28,5 @@
     "title": "Marketing - Next steps, Thursday April 25th 2024",
     "description": "https://github.com/asyncapi/community/issues/1175.",
     "videoId": "aJxXEF11r5s"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/OpViKeJcEUA/hqdefault.jpg",
-    "title": "Essential Building Blocks Working Group, Tuesday April 22nd 2024",
-    "description": "https://github.com/asyncapi/community/issues/1177.",
-    "videoId": "OpViKeJcEUA"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/EMQgIuRyq1o/hqdefault.jpg",
-    "title": "Essential Building Blocks Working Group, Tuesday April 16th 2024",
-    "description": "https://github.com/asyncapi/community/issues/1159.",
-    "videoId": "EMQgIuRyq1o"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/JDRJ33_wH2Q/hqdefault.jpg",
-    "title": "Essential Building Blocks Working Group, Tuesday April 9th 2024",
-    "description": "https://github.com/asyncapi/community/issues/1144.",
-    "videoId": "JDRJ33_wH2Q"
   }
 ]

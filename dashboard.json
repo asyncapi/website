@@ -63,42 +63,20 @@
       "score": 22.112443333692923
     },
     {
-      "id": "PR_kwDOFLhIt85oVQqh",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: docs automation for website",
-      "author": "AnimeshKumar923",
-      "resourcePath": "/asyncapi/community/pull/1082",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 17.804824502454043
-    },
-    {
-      "id": "PR_kwDODou01c5YJ7kV",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "Add Form component",
-      "author": "KhudaDad414",
-      "resourcePath": "/asyncapi/studio/pull/773",
-      "repo": "asyncapi/studio",
-      "labels": [],
-      "score": 16.65612614745701
-    },
-    {
-      "id": "I_kwDOFLhIt84-OUI3",
+      "id": "I_kwDOBW5R_c580Z0o",
       "isPR": false,
       "isAssigned": false,
-      "title": "Create educational & technical video explaining AsyncAPI's main features",
-      "author": "alequetzalli",
-      "resourcePath": "/asyncapi/community/issues/155",
-      "repo": "asyncapi/community",
+      "title": "New Contributor Guide and Maintenance Setup",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/2586",
+      "repo": "asyncapi/website",
       "labels": [
         {
           "name": "enhancement",
-          "color": "a2eeef"
+          "color": "84b6eb"
         }
       ],
-      "score": 16.332916763847894
+      "score": 18.091999091203302
     },
     {
       "id": "I_kwDOBW5R_c49A2ZS",
@@ -118,7 +96,23 @@
           "color": "0e8a16"
         }
       ],
-      "score": 16.08177696995849
+      "score": 16.943300736206268
+    },
+    {
+      "id": "I_kwDOFLhIt84-OUI3",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Create educational & technical video explaining AsyncAPI's main features",
+      "author": "alequetzalli",
+      "resourcePath": "/asyncapi/community/issues/155",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 16.332916763847894
     },
     {
       "id": "PR_kwDOBW5R_c5p28Vu",
@@ -153,6 +147,17 @@
           "color": "007acc"
         }
       ],
+      "score": 13.78438025996442
+    },
+    {
+      "id": "PR_kwDOCoBobc5tRBZn",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore: introduce the turborepo to the parser.js",
+      "author": "ayushnau",
+      "resourcePath": "/asyncapi/parser-js/pull/992",
+      "repo": "asyncapi/parser-js",
+      "labels": [],
       "score": 13.78438025996442
     },
     {
@@ -200,21 +205,6 @@
         {
           "name": "avro",
           "color": "EC3D91"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c6GUTRu",
-      "title": "Extensions are redirecting to 404 page",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/2890",
-      "repo": "asyncapi/website",
-      "author": "sambhavgupta0705",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
         }
       ]
     },
@@ -321,6 +311,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -571,6 +565,10 @@
           "color": "a2eeef"
         },
         {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
           "name": "C# generator",
           "color": "c5def5"
         }
@@ -713,6 +711,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         },
         {
           "name": "keep",
