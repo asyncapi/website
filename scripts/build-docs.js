@@ -8,7 +8,8 @@ function buildNavTree(navItems) {
     }
     
     //first we make sure that list of items lists main section items and then sub sections, documents last
-    const sortedItems = sortBy(navItems, ['isRootSection', 'weight', 'isSection']);
+  const sortedItems = sortBy(navItems, ['isRootSection', 'weight', 'isSection']);
+  console.log(sortedItems)
   
     sortedItems.forEach(item => {
       //identify main sections

@@ -67,7 +67,11 @@ export default function DocsLayout({ post, navItems = {}, children }) {
 
   const [showMenu, setShowMenu] = useState(false);
   const navigation = posts['docsTree'];
-
+  if (router.pathname.includes('v3.0.0-explorer')) {
+    return <article className="">
+      {children}
+    </article>
+  }
   return (
     <DocsContext.Provider value={{ post, navItems }}>
       <div className="bg-white px-4 sm:px-6 lg:px-8 w-full xl:max-w-7xl xl:mx-auto">

@@ -18,7 +18,8 @@ import Figure from '../components/Figure'
 import Profile from '../components/Profile'
 import GeneratorInstallation from '../components/GeneratorInstallation'
 import NewsletterSubscribe from '../components/NewsletterSubscribe'
-import { DocsCards } from '../components/docs/DocsCards'
+import { DocsCards } from '../components/docs/DocsCards';
+import Visualizer from "./docs/Visualizer";
 
 let mermaidInitialized = false;
 initializeMermaid();
@@ -75,6 +76,7 @@ export function getMDXComponents() {
     Column,
     Figure,
     DocsCards,
+    Visualizer,
     GeneratorInstallation,
     NewsletterSubscribe,
     TwitterTimelineEmbed,
