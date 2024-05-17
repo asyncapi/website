@@ -1,15 +1,102 @@
 {
   "hotDiscussions": [
     {
-      "id": "PR_kwDOFLhIt85sHzf3",
+      "id": "I_kwDOFLhIt85_y16Y",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Automate Slack user groups + channels creation and management",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/community/issues/1072",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "bounty",
+          "color": "0E8A16"
+        }
+      ],
+      "score": 103.95720112723167
+    },
+    {
+      "id": "PR_kwDOFLhIt85js7KX",
       "isPR": true,
       "isAssigned": false,
-      "title": "docs: add instruction how voting automation works",
-      "author": "AayushSaini101",
-      "resourcePath": "/asyncapi/community/pull/1155",
+      "title": "chore: add documents CoC Committee and Incident Resolution Procedures",
+      "author": "Barbanio",
+      "resourcePath": "/asyncapi/community/pull/1013",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 43.076188312388815
+      "score": 23.26114168868996
+    },
+    {
+      "id": "I_kwDOBW5R_c5J6qNe",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Measuring AsyncAPI spec adoption",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/780",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "keep-open",
+          "color": "ffee84"
+        }
+      ],
+      "score": 22.112443333692923
+    },
+    {
+      "id": "PR_kwDOFLhIt85bqKL8",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add Bounty Program Rules",
+      "author": "aeworxet",
+      "resourcePath": "/asyncapi/community/pull/897",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 22.112443333692923
+    },
+    {
+      "id": "I_kwDOBW5R_c580Z0o",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "New Contributor Guide and Maintenance Setup",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/2586",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ],
+      "score": 18.091999091203302
+    },
+    {
+      "id": "I_kwDOBW5R_c49A2ZS",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Add an AsyncAPI poster showing all features at a glance",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/website/issues/425",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "bounty",
+          "color": "0e8a16"
+        }
+      ],
+      "score": 16.943300736206268
     },
     {
       "id": "I_kwDOFLhIt84-OUI3",
@@ -25,7 +112,53 @@
           "color": "a2eeef"
         }
       ],
-      "score": 33.886601472412536
+      "score": 16.332916763847894
+    },
+    {
+      "id": "PR_kwDOBW5R_c5p28Vu",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: navigation to correct heading in tools section",
+      "author": "Vishal2002",
+      "resourcePath": "/asyncapi/website/pull/2790",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 14.933078614961456
+    },
+    {
+      "id": "I_kwDOFi_gUM5hpuWl",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Improve kafka adapter",
+      "author": "KhudaDad414",
+      "resourcePath": "/asyncapi/glee/issues/411",
+      "repo": "asyncapi/glee",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "good first issue",
+          "color": "7057ff"
+        },
+        {
+          "name": "area/typescript",
+          "color": "007acc"
+        }
+      ],
+      "score": 13.78438025996442
+    },
+    {
+      "id": "PR_kwDOCoBobc5tRBZn",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore: introduce the turborepo to the parser.js",
+      "author": "ayushnau",
+      "resourcePath": "/asyncapi/parser-js/pull/992",
+      "repo": "asyncapi/parser-js",
+      "labels": [],
+      "score": 13.78438025996442
     },
     {
       "id": "I_kwDODou01c5BZZv-",
@@ -45,164 +178,33 @@
           "color": "f9dd4b"
         }
       ],
-      "score": 28.430284286176615
+      "score": 13.703040335770691
     },
     {
-      "id": "PR_kwDOFLhIt85js7KX",
-      "isPR": true,
+      "id": "I_kwDOFLhIt85bebeO",
+      "isPR": false,
       "isAssigned": false,
-      "title": "chore: add documents CoC Committee and Incident Resolution Procedures",
-      "author": "Barbanio",
-      "resourcePath": "/asyncapi/community/pull/1013",
+      "title": "Meeting Banners Storage",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/issues/568",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 23.26114168868996
-    },
-    {
-      "id": "PR_kwDOFLhIt85bqKL8",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: add Bounty Program Rules",
-      "author": "aeworxet",
-      "resourcePath": "/asyncapi/community/pull/897",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 22.112443333692923
-    },
-    {
-      "id": "PR_kwDODou01c5Iv4zR",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: added table of contents and introduction document for Studio tool",
-      "author": "Jagrutiti",
-      "resourcePath": "/asyncapi/studio/pull/553",
-      "repo": "asyncapi/studio",
-      "labels": [],
-      "score": 21.825268744943667
-    },
-    {
-      "id": "I_kwDODou01c5AqLB8",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "\"Open with Studio\" button for Markdown files.",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/218",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "keep-open",
-          "color": "f9dd4b"
-        }
-      ],
-      "score": 20.67657038994663
-    },
-    {
-      "id": "I_kwDOGJ23c85V9C3c",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Support `referenceIntoComponents` for other components than `message`",
-      "author": "thake",
-      "resourcePath": "/asyncapi/bundler/issues/97",
-      "repo": "asyncapi/bundler",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 20.38939580119737
-    },
-    {
-      "id": "PR_kwDOE8Qh385kzOtQ",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add Avro Schema input processor",
-      "author": "akkshitgupta",
-      "resourcePath": "/asyncapi/modelina/pull/1753",
-      "repo": "asyncapi/modelina",
-      "labels": [],
-      "score": 19.815046623698855
-    },
-    {
-      "id": "I_kwDOBW5R_c580Z0o",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "New Contributor Guide and Maintenance Setup",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/issues/2586",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ],
-      "score": 18.091999091203302
-    },
-    {
-      "id": "PR_kwDOFLhIt85oVQqh",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: docs automation for website",
-      "author": "AnimeshKumar923",
-      "resourcePath": "/asyncapi/community/pull/1082",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 17.804824502454043
-    },
-    {
-      "id": "I_kwDOCVQpZM5M_dcV",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "DocsUI: Messages Object output",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
-      "repo": "asyncapi/asyncapi-react",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 16.943300736206268
+      "score": 13.497205671215161
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOFiHfqc6F__UO",
-      "title": "[BUG] File Reading Method in the Example script is not appropriate",
+      "id": "I_kwDOE8Qh386HJeIz",
+      "title": "[BUG] Implement avro schema data type ",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/optimizer/issues/251",
-      "repo": "asyncapi/optimizer",
-      "author": "KhudaDad414",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh386CSg4-",
-      "title": "Java generator does not include import for dictionary models",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1892",
+      "resourcePath": "/asyncapi/modelina/issues/1974",
       "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
+      "author": "akkshitgupta",
       "area": "typescript",
       "labels": [
         {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "Java generator",
-          "color": "d4c5f9"
+          "name": "avro",
+          "color": "EC3D91"
         }
       ]
     },
@@ -241,21 +243,6 @@
         {
           "name": "bounty",
           "color": "0E8A16"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385_rNaC",
-      "title": "Create a one for all input document for runtime to test all functionality",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1825",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -324,21 +311,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh38572csq",
-      "title": "Add Avro support",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1741",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
+        },
         {
-          "name": "enhancement",
-          "color": "a2eeef"
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -377,21 +353,6 @@
       ]
     },
     {
-      "id": "I_kwDOE8Qh3857KkLT",
-      "title": "Introduce Modelina CLI that can be extended by AsyncAPI CLI",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/modelina/issues/1724",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOE8Qh3857KYj1",
       "title": "Add input document for OpenAPI",
       "isAssigned": false,
@@ -403,6 +364,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         },
         {
           "name": "📑 docs",
@@ -422,6 +387,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         },
         {
           "name": "📑 docs",
@@ -519,21 +488,6 @@
       ]
     },
     {
-      "id": "I_kwDOFDnrNc5ydvaR",
-      "title": "Nested block is redundant.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/822",
-      "repo": "asyncapi/cli",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
       "id": "I_kwDODtTERs5wDOAH",
       "title": "Support decimal min and max",
       "isAssigned": false,
@@ -611,6 +565,10 @@
           "color": "a2eeef"
         },
         {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
           "name": "C# generator",
           "color": "c5def5"
         }
@@ -675,6 +633,10 @@
           "color": "a2eeef"
         },
         {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
           "name": "Kotlin generator",
           "color": "61A95C"
         }
@@ -692,6 +654,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         },
         {
           "name": "Kotlin generator",
@@ -745,6 +711,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         },
         {
           "name": "keep",
@@ -806,25 +776,6 @@
         {
           "name": "stale",
           "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5IRxcq",
-      "title": "[📑 Docs]: update docs issues in ALL repos that are missing the `area/docs` label ",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/682",
-      "repo": "asyncapi/website",
-      "author": "alequetzalli",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
         }
       ]
     },
