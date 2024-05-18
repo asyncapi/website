@@ -138,10 +138,10 @@ To build and run a production-ready website, run the following command:
 ```
 npm run build && npm run start
 ```
-Generated files of the website go to the `.next` folder.
+Generated files of the website go in the `.next` folder.
 
 ## Start the netlify production server
-To start a local development server for the build tool using the configuration and environment variables set for local development with the Netlify CLI, run the following command:
+Start a local development server for the build tool using the configuration and environment variables set for local development with the Netlify CLI:
 ```
 netlify dev
 ```
