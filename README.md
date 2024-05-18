@@ -253,29 +253,8 @@ This repository has the following structure:
   ├── templates                                # Various template markdown files
   ├── types                                    #  Various typeScript types used in the website
   ├── utils                                    # Various JS code for preparing static data to render in pages
-  ├── .all-contributorsrc                      # File having details of all contributors
-  ├── .dockerignore                            # Docker ignore file
-  ├── .editorconfig                            # Editor configuration file
-  ├── .eslintrc                                # ESLint configuration file
-  ├── .gitignore                               # Git ignore file
-  ├── .gitpod.yml                              # Gitpod configuration file
-  ├── .remarkrc                                # Configuration file for remark
-  ├── ADDING_TRANSLATIONS.md                   # Guide on how to add translations
-  ├── CODE_OF_CONDUCT.md                       # Code of conduct
-  ├── Contributing.md                          # Contributing guidelines
-  ├── dashboard.json                           # Data for dashboard page
-  ├── Dockerfile                               # Dockerfile for building the website
-  ├── LICENSE                                  # License file 
-  ├── mlc_config.json                          # Configuration file for markdown-link-checker
-  ├── netlify.toml                             # Netlify configuration file
-  ├── next-env.d.ts                            # Next.js environment types
-  ├── next-i18next-static-site.config.js       # Next.js i18next configuration file
   ├── next.config.mjs                          # Next.js configuration file
-  ├── package-lock.json                        # NPM package lock file
-  ├── package.json                             # NPM package configuration file
-  ├── postcss.config.js                        # PostCSS configuration file
   ├── README.md                                # Project's README file
-  ├── roadmap.json                             # Data for roadmap page
   ├── tailwind.config.js                       # TailwindCSS configuration file
   └── tsconfig.json                            # TypeScript configuration file
 ```
