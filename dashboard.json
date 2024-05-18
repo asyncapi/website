@@ -99,17 +99,6 @@
       "score": 16.943300736206268
     },
     {
-      "id": "PR_kwDODou01c5YJ7kV",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "Add Form component",
-      "author": "KhudaDad414",
-      "resourcePath": "/asyncapi/studio/pull/773",
-      "repo": "asyncapi/studio",
-      "labels": [],
-      "score": 16.943300736206268
-    },
-    {
       "id": "I_kwDOFLhIt84-OUI3",
       "isPR": false,
       "isAssigned": false,
@@ -158,6 +147,17 @@
           "color": "007acc"
         }
       ],
+      "score": 13.78438025996442
+    },
+    {
+      "id": "PR_kwDOCoBobc5tRBZn",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore: introduce the turborepo to the parser.js",
+      "author": "ayushnau",
+      "resourcePath": "/asyncapi/parser-js/pull/992",
+      "repo": "asyncapi/parser-js",
+      "labels": [],
       "score": 13.78438025996442
     },
     {
@@ -311,6 +311,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },

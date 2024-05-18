@@ -7,20 +7,6 @@
     "date": "2024-02-08T15:00:00.000Z"
   },
   {
-    "title": "AACoT'24 Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=YjY3Z3BxdGMzdmRlZmxmNzJpMmQ3MzQwMm8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1041",
-    "banner": "https://user-images.githubusercontent.com/66913810/300802575-5ace2c11-9b6d-4904-b22a-5507ee381360.png",
-    "date": "2024-02-07T14:00:00.000Z"
-  },
-  {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=YnMwYjNoaDVpamYwdjlpcTkwOXRjcmxqODggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1042",
-    "banner": "https://github.com/asyncapi/community/assets/40604284/01c2b8de-fa5c-44dd-81a5-70cb96df4813",
-    "date": "2024-02-06T08:00:00.000Z"
-  },
-  {
     "title": "Community Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=ZzZ0OG1iNmkyZW5lbnF2bnE5ZnY5ZW9ua28gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1067",
@@ -227,5 +213,12 @@
     "url": "https://github.com/asyncapi/community/issues/1210",
     "banner": "",
     "date": "2024-05-28T18:00:00.000Z"
+  },
+  {
+    "title": "Maintainers Growth Working Group",
+    "calLink": "https://www.google.com/calendar/event?eid=ZG45NjF1dXIyc2ZuajkwMTQwMWtxNGhma28gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1212",
+    "banner": "",
+    "date": "2024-05-22T14:00:00.000Z"
   }
 ]
