@@ -241,7 +241,7 @@ This repository has the following structure:
        ├── about                               # Markdown files for the /about page
        ├── blog                                # Markdown files for the blog posts
        ├── docs                                # Markdown files for the /docs/* pages
-  ├── netlify                                  # Code that runs on Netlify
+  ├── netlify                                  # Contains Netlify serverless functions to run on Netlify
   ├── pages                                    # Website's pages source. It includes raw markdown files and React page templates.
   │    ├── about                               # Raw blog for /about page
   │    ├── blog                                # Blog posts
