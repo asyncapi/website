@@ -4,7 +4,7 @@ const path = require('path');
 const SRC_DIR = 'markdown';
 const TARGET_DIR = 'pages';
 
-const whiteListTags = ['a', 'br', 'div'];
+const whiteListTags = ['a', 'br', 'div', 'b', 'i'];
 
 // Check if target directory doesn't exist then create it
 if (!fs.existsSync(TARGET_DIR)) {
