@@ -121,8 +121,9 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
             // this need to be separate because the `-` in "Pre-release" will get removed by `capitalize()` function
             details.title += " (Pre-release)"
           }
-        } else if(details.slug.includes('/reference/specification/') && details.title) {
-          details.title = details.title
+          if (fileBaseName.includes('Explorer')) {
+            details.title += " - Explorer"
+          }
         }
         
 
