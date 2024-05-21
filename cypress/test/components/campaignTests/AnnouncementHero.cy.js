@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from '@cypress/react';
-import AnnouncementHero from '../../../../components/campaigns/AnnoucementHero';
+import AnnouncementHero from '../../../../components/campaigns/AnnouncementHero';
 beforeEach(() => {
   const mockDate = new Date('2023-05-01T00:00:00Z');
   cy.clock(mockDate.getTime());
@@ -25,7 +25,7 @@ describe('AnnouncementHero Component', () => {
     // Assert the event details
     cy.get('[data-testid="Paragraph-test"]').should('exist');
     cy.get('h2').should('exist');
-  
+
   });
 
   it.skip('should have a link and text for the button', () => {

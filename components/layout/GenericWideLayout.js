@@ -1,5 +1,5 @@
 import Head from '../Head'
-import AnnouncementHero from '../campaigns/AnnoucementHero'
+import AnnouncementHero from '../campaigns/AnnouncementHero'
 import Row from './Row'
 
 export default function GenericWideLayout({

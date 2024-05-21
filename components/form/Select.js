@@ -12,7 +12,7 @@ export default function Select({
       value={selected}
     >
       {options.map((option, index) => (
-        <option key={index} selected={option.value === selected} value={option.value} data-testid="Option-form">
+        <option key={index} value={option.value} data-testid="Option-form">
           {option.text}
         </option>
       ))}

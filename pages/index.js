@@ -1,6 +1,4 @@
-import NavBar from '../components/navigation/NavBar'
 import Head from '../components/Head'
-import StickyNavbar from '../components/navigation/StickyNavbar'
 import { languageDetection } from "../lib/i18n";
 
 function HomePage() {

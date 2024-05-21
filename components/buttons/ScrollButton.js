@@ -1,33 +1,37 @@
-import React ,{useEffect,useState} from 'react';
+import React, { useEffect, useState } from 'react';
+import useEventListener from '../../hooks/useEventListener';
 
 
-function ScrollButton(){
-    const [backToTopButton,setBackToTopButton]=useState(false);
-    const scrollImage = '/img/loaders/scroll.svg'
-    useEffect(()=>{
-        window.addEventListener("scroll",()=>{
-            if(window.scrollY>150){
-                setBackToTopButton(true)
-            }
-            else{
-                setBackToTopButton(false);
+function ScrollButton() {
+  const [backToTopButton, setBackToTopButton] = useState(false);
+  const scrollImage = '/img/loaders/scroll.svg'
 
-            }
-        })
-    },[])
-
-    const scrollUp=()=>{
-        window.scrollTo({
-            top:0,
-            behaviour:"smooth"
-
-        })
+  function handleScroll() {
+    if (window.scrollY > 150) {
+      setBackToTopButton(true)
     }
-    return <div className="fixed bottom-14 right-4 h-16 w-12 z-40">
-        {backToTopButton &&(
-            <button className="rounded-full shadow-md bg-white " onClick={scrollUp}> <img src={scrollImage}/></button>
-        )}
-    </div>
+    else {
+      setBackToTopButton(false);
+
+    }
+  }
+
+  useEventListener("scroll", handleScroll);
+
+
+
+  const scrollUp = () => {
+    window.scrollTo({
+      top: 0,
+      behaviour: "smooth"
+
+    })
+  }
+  return <div className="fixed bottom-14 right-4 h-16 w-12 z-40">
+    {backToTopButton && (
+      <button className="rounded-full shadow-md bg-white " onClick={scrollUp}> <img src={scrollImage} /></button>
+    )}
+  </div>
 }
 
 

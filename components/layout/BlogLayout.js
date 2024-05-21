@@ -7,7 +7,7 @@ import BlogContext from '../../context/BlogContext';
 import TOC from '../TOC';
 import Container from './Container';
 import AuthorAvatars from '../AuthorAvatars';
-import AnnouncementHero from '../campaigns/AnnoucementHero';
+import AnnouncementHero from '../campaigns/AnnouncementHero';
 
 export default function BlogLayout({ post, children }) {
   if (!post) return <ErrorPage statusCode={404} />;

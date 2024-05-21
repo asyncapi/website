@@ -6,6 +6,7 @@ import Container from '../layout/Container'
 import AnnouncementRemainingDays from './AnnouncementRemainingDays'
 import ArrowLeft from '../icons/ArrowLeft'
 import ArrowRight from '../icons/ArrowRight'
+import useInterval from '../../hooks/useInterval'
 
 function shouldShowBanner(cfpDeadline) {
   const currentDate = new Date(); // G et the current date
@@ -89,12 +90,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
     setActiveIndex(index);
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => setActiveIndex(index => index + 1), 5000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, [activeIndex]);
+  useInterval(() => setActiveIndex(index => index + 1), 5000)
 
   return (
     <Container as="section" padding='' className={`text-center`}>

@@ -3,7 +3,7 @@ import ErrorPage from 'next/error'
 import Head from '../Head'
 import GenericPostContext from '../../context/GenericPostContext'
 import Container from './Container'
-import AnnouncementHero from '../campaigns/AnnoucementHero'
+import AnnouncementHero from '../campaigns/AnnouncementHero'
 
 export default function GenericPostLayout({ post, children }) {
   if (!post) return <ErrorPage statusCode={404} />

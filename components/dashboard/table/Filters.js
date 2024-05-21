@@ -38,7 +38,6 @@ export default function Filters({
     placement: 'left-start',
     open,
   });
-  
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef, setOpen);
   const areas = allIssues.map((issue) => issue.area);
@@ -63,7 +62,6 @@ export default function Filters({
         className={`cursor-pointer ${className}`}
         data-testid="Filters-img-container"
       />
-        
         <div ref={wrapperRef} >
         {open && (
           <div

@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Button from '../Button';
 
 const Pagination = ({ issuesPerPage, currentPage, totalIssues, paginate }) => {
-  const pageNumbers = [];
+
+  const pageNumbers = useMemo(() => {
+    for (let i = 1; i <= Math.ceil(totalIssues / issuesPerPage); i++) {
+      pageNumbers.push(i);
+    }
+  }, []);
+
   const lowerBound = Math.min(
     currentPage * issuesPerPage - issuesPerPage + 1,
     totalIssues
   );
   const upperBound = Math.min(currentPage * issuesPerPage, totalIssues);
-  for (let i = 1; i <= Math.ceil(totalIssues / issuesPerPage); i++) {
-    pageNumbers.push(i);
-  }
+
 
   return (
     <div className="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between">
@@ -29,14 +33,14 @@ const Pagination = ({ issuesPerPage, currentPage, totalIssues, paginate }) => {
         />
         {pageNumbers.map((number) => (
           <Button
-          data-testid={`Pagination-page-button-${number}`}
+            data-testid={`Pagination-page-button-${number}`}
             key={number}
             text={number}
             onClick={(event) => {
               event.preventDefault();
               paginate(number);
             }}
-           
+
           />
         ))}
         <Button

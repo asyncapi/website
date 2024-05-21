@@ -8,6 +8,7 @@ import ExpenseBreakdown from "../components/FinancialSummary/ExpenseBreakdown";
 import BarChartComponent from "../components/FinancialSummary/BarChartComponent";
 import SuccessStories from "../components/FinancialSummary/SuccessStories";
 import ContactUs from "../components/FinancialSummary/ContactUs";
+import useEventListener from '../hooks/useEventListener'
 
 export default function FinancialSummary() {
   const [windowWidth, setWindowWidth] = useState(0);
@@ -20,12 +21,9 @@ export default function FinancialSummary() {
 
   useEffect(() => {
     handleResizeRef.current();
-    window.addEventListener("resize", handleResizeRef.current);
-
-    return () => {
-      window.removeEventListener("resize", handleResizeRef.current);
-    };
   }, []);
+
+  useEventListener("resize", handleResizeRef.current);
 
   const title = "AsyncAPI Finance Summary";
   const description = "Financial Summary of AsyncAPI";

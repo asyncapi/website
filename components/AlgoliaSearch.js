@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { DocSearchModal } from '@docsearch/react'
 import clsx from 'clsx'
+import useEventListener from '../hooks/useEventListener'
 
 export const INDEX_NAME = 'asyncapi';
 export const DOCS_INDEX_NAME = 'asyncapi-docs';
@@ -105,33 +106,27 @@ function Hit({ hit, children }) {
 }
 
 function useDocSearchKeyboardEvents({ isOpen, onOpen, onClose }) {
-  useEffect(() => {
-    function onKeyDown(event) {
-      if (
-        (event.keyCode === 27 && isOpen) ||
-        (event.key === 'k' && (event.metaKey || event.ctrlKey)) ||
-        (!isEditingContent(event) && event.key === '/' && !isOpen)
-      ) {
-        event.preventDefault();
+  function onKeyDown(event) {
+    if (
+      (event.keyCode === 27 && isOpen) ||
+      (event.key === 'k' && (event.metaKey || event.ctrlKey)) ||
+      (!isEditingContent(event) && event.key === '/' && !isOpen)
+    ) {
+      event.preventDefault();
 
-        if (isOpen) {
-          onClose()
-        } else if (!document.body.classList.contains('DocSearch--active')) {
-          let indexName = INDEX_NAME;
-          if (typeof document !== 'undefined') {
-            const loc = document.location;
-            indexName = loc.pathname.startsWith('/docs') ? DOCS_INDEX_NAME : INDEX_NAME;
-          }
-          onOpen(indexName)
+      if (isOpen) {
+        onClose()
+      } else if (!document.body.classList.contains('DocSearch--active')) {
+        let indexName = INDEX_NAME;
+        if (typeof document !== 'undefined') {
+          const loc = document.location;
+          indexName = loc.pathname.startsWith('/docs') ? DOCS_INDEX_NAME : INDEX_NAME;
         }
+        onOpen(indexName)
       }
     }
-
-    window.addEventListener('keydown', onKeyDown)
-    return () => {
-      window.removeEventListener('keydown', onKeyDown)
-    }
-  }, [isOpen, onOpen, onClose]);
+  }
+  useEventListener("keydown", onKeyDown);
 }
 
 export function SearchButton({ children, indexName = INDEX_NAME, ...props }) {
@@ -139,28 +134,23 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }) {
   const searchButtonRef = useRef();
   const actionKey = getActionKey();
 
-  useEffect(() => {
-    function onKeyDown(event) {
-      if (searchButtonRef && searchButtonRef.current === document.activeElement && onInput) {
-        if (/[a-zA-Z0-9]/.test(String.fromCharCode(event.keyCode))) {
-          onInput(event)
-        }
+  function onKeyDown(event) {
+    if (searchButtonRef && searchButtonRef.current === document.activeElement && onInput) {
+      if (/[a-zA-Z0-9]/.test(String.fromCharCode(event.keyCode))) {
+        onInput(event)
       }
     }
+  }
 
-    window.addEventListener('keydown', onKeyDown)
-    return () => {
-      window.removeEventListener('keydown', onKeyDown)
-    }
-  }, [onInput, searchButtonRef]);
+  useEventListener("keydown", onKeyDown);
 
   return (
-    <button 
-      type="button" 
-      ref={searchButtonRef} 
+    <button
+      type="button"
+      ref={searchButtonRef}
       onClick={() => {
         onOpen(indexName);
-      }} 
+      }}
       {...props}
       data-testid="Search-Button"
     >
