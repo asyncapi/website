@@ -5,6 +5,7 @@ import IconGuide from '../icons/Guide'
 import IconSpec from '../icons/Spec'
 import IconUsers from '../icons/Users'
 import IconMigration from '../icons/Migration'
+import Explorer from '../icons/Explorer'
 
 export const buckets = [
   {
@@ -69,6 +70,15 @@ export const buckets = [
     className: 'bg-orange-200',
     borderClassName: 'border-orange-200',
     Icon: IconUsers,
+  },
+    {
+    name: 'Explorer',
+    title: 'Specification Explorer',
+    description: 'Simplifying our Specification JSON Schema like a pro.',
+    link: '/docs/reference/specification/v3.0.0-Explorer',
+    className: 'bg-teal-200',
+    borderClassName: 'border-orange-200',
+    Icon: Explorer,
   },
 ].map(bucket => {
   // we need such a mapping for some parts of website, e.g navigation blocks use the `icon` property, not `Icon` etc.
