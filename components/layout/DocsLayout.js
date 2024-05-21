@@ -112,7 +112,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
       </div>
           </div>
 
-  if (router.pathname.includes('v3.0.0-Explorer')) {
+  if (router.pathname.includes('v3.0.0-explorer')) {
     return <div>
       <div className='absolute top-24 left-2 z-10'>
         <Button
