@@ -1,12 +1,5 @@
 [
   {
-    "title": "AsyncAPI v3 retrospective",
-    "calLink": "https://www.google.com/calendar/event?eid=ZnNjNTllMW9ydGIwOHEzZTYxY3NncHRyZzQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1019",
-    "banner": "",
-    "date": "2024-02-08T15:00:00.000Z"
-  },
-  {
     "title": "Community Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=ZzZ0OG1iNmkyZW5lbnF2bnE5ZnY5ZW9ua28gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1067",
@@ -220,5 +213,12 @@
     "url": "https://github.com/asyncapi/community/issues/1212",
     "banner": "",
     "date": "2024-05-22T14:00:00.000Z"
+  },
+  {
+    "title": "Developer Experience Working Group",
+    "calLink": "https://www.google.com/calendar/event?eid=YW9odDduajFpNGJiNHZvaDV0OWhjN2M5dmcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1216",
+    "banner": "",
+    "date": "2024-05-22T10:00:00.000Z"
   }
 ]
