@@ -1,9 +1,9 @@
 ---
-title: "Hello world"
+title: "Send 'Hello world' message"
 weight: 30
 ---
 
-Let's define an application that's capable of receiving a `"hello {name}"` message:
+Let's define an application that's capable of sending a `"hello {name}"` message:
 
 <CodeBlock>
 {`asyncapi: 3.0.0
@@ -19,8 +19,8 @@ channels:
           type: string
           pattern: '^hello .+$'
 operations:
-  receiveHello:
-    action: 'receive'
+  sendHello:
+    action: 'send'
     channel:
       $ref: '#/channels/hello'`}
 </CodeBlock>
@@ -41,8 +41,8 @@ channels:
           type: string
           pattern: '^hello .+$'
 operations:
-  receiveHello:
-    action: 'receive'
+  sendHello:
+    action: 'send'
     channel:
       $ref: '#/channels/hello'`}
 </CodeBlock>
@@ -63,8 +63,8 @@ channels:
           type: string
           pattern: '^hello .+$'
 operations:
-  receiveHello:
-    action: 'receive'
+  sendHello:
+    action: 'send'
     channel:
       $ref: '#/channels/hello'`}
 </CodeBlock>
@@ -85,8 +85,8 @@ channels:
           type: string
           pattern: '^hello .+$'
 operations:
-  receiveHello:
-    action: 'receive'
+  sendHello:
+    action: 'send'
     channel:
       $ref: '#/channels/hello'`}
 </CodeBlock>
@@ -109,12 +109,12 @@ channels:
           type: string
           pattern: '^hello .+$'
 operations:
-  receiveHello:
+  sendHello:
     action: 'receive'
     channel:
       $ref: '#/channels/hello'`}
 </CodeBlock>
 
-The `operations` section is where you describe what the application is doing. Each operation has a unique identifier for example, `receiveHello`.
+The `operations` section is where you describe what the application is doing. Each operation has a unique identifier for example, `sendHello`.
 
-In the above example, you see that the `Hello world application` is a consumer listening to the `sayHelloMessage` message from the `hello` channel. In other words, you can say that the `Hello world application` subscribes to the `hello` topic to `receive` the `sayHelloMessage` message. That AsyncAPI document describes what the `Hello world application` is doing, not what others can do with it. 
+In the above example, you see that the `Hello world application` is a producer sending the `sayHelloMessage` message from the `hello` channel. In other words, you can say that the `Hello world application` pubishes to the `hello` topic to `send` the `sayHelloMessage` message. That AsyncAPI document describes what the `Hello world application` is doing, not what others can do with it. 
