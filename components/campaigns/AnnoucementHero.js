@@ -29,7 +29,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
   const Banner = ({ title, dateLocation, cfaText, eventName, cfpDeadline, link, city, activeBanner }) => {
     return (
       <div
-        className={`bg-gray-50 w-full h-full border border-gray-200 absolute py-6 rounded transform transition-transform ${className} ${small ? 'mb-4' : 'mx-3 mt-3 p-3 mb-6'
+        className={`bg-gray-50 w-full h-full border border-gray-200 py-6 rounded transform transition-transform ${className} ${small ? 'mb-4' : 'mx-3 mt-3 p-3 mb-6'
           } ${activeBanner ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-90 z-0'}`} data-testid="AnnouncementHero-main-div"
       >
         <Heading
@@ -103,7 +103,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
           <ArrowLeft className='w-4 text-white' />
         </div>}
         <div className='relative w-5/6 pr-3 flex flex-col gap-2 justify-center items-center'>
-          <div className='relative w-full h-[18rem] lg:w-[38rem] lg:h-[17rem] overflow-hidden'>
+          <div className='relative w-full min-h-[18rem] lg:w-[38rem] lg:h-[17rem] overflow-hidden'>
           {banners.map((banner, index) => (
             banner.show && (
               <Banner
