@@ -111,6 +111,28 @@
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
+      },
+      {
+        "title": "Zod Sockets",
+        "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
+        "links": {
+          "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
+          "repoUrl": "https://github.com/RobinTail/zod-sockets"
+        },
+        "filters": {
+          "language": "TypeScript",
+          "technology": [
+            "Node.js",
+            "TypeScript"
+          ],
+          "categories": [
+            "code-first",
+            "dsl",
+            "framework"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
       }
     ]
   },
@@ -292,33 +314,61 @@
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
+      },
+      {
+        "title": "Zod Sockets",
+        "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
+        "links": {
+          "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
+          "repoUrl": "https://github.com/RobinTail/zod-sockets"
+        },
+        "filters": {
+          "language": "TypeScript",
+          "technology": [
+            "Node.js",
+            "TypeScript"
+          ],
+          "categories": [
+            "code-first",
+            "dsl",
+            "framework"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
       }
     ]
   },
   "Frameworks": {
     "description": "The following is a list of API/application frameworks that make use of AsyncAPI.",
-    "toolsList": []
+    "toolsList": [
+      {
+        "title": "Zod Sockets",
+        "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
+        "links": {
+          "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
+          "repoUrl": "https://github.com/RobinTail/zod-sockets"
+        },
+        "filters": {
+          "language": "TypeScript",
+          "technology": [
+            "Node.js",
+            "TypeScript"
+          ],
+          "categories": [
+            "code-first",
+            "dsl",
+            "framework"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      }
+    ]
   },
   "GitHub Actions": {
     "description": "The following is a list of GitHub Actions that you can use in your workflows",
     "toolsList": [
-      {
-        "title": "GitHub Action for Generator",
-        "description": "GitHub Action to generate all the things from your AsyncAPI document using the AsyncAPI generator",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/github-action-for-generator"
-        },
-        "filters": {
-          "technology": [
-            "AsyncAPI Generator"
-          ],
-          "categories": [
-            "github-action"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      },
       {
         "title": "GitHub Action for Generator",
         "description": null,
@@ -334,6 +384,23 @@
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "GitHub Action for CLI",
+        "description": "GitHub Action with generator, validator, converter and others - all in one for your AsyncAPI documents with AsyncAPI CLI as backbone",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/github-action-for-cli"
+        },
+        "filters": {
+          "technology": [
+            "AsyncAPI CLI"
+          ],
+          "categories": [
+            "github-action"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       }
     ]
@@ -635,19 +702,15 @@
     "description": "The following is a list of templates compatible with AsyncAPI Generator. You can use them to generate apps, clients or documentation from your AsyncAPI documents.",
     "toolsList": [
       {
-        "title": "Java Spring Template",
-        "description": "Java Spring template for the AsyncAPI Generator",
+        "title": "Node.js Websockets Template",
+        "description": "Node.js WebSockets template for the AsyncAPI Generator. It showcases how from a single AsyncAPI document you can generate a server and a client at the same time.",
         "links": {
-          "repoUrl": "https://github.com/asyncapi/java-spring-template"
+          "repoUrl": "https://github.com/asyncapi/nodejs-ws-template"
         },
         "filters": {
-          "language": [
-            "javascript"
-          ],
+          "language": "javascript",
           "technology": [
-            "Springboot",
-            "Maven",
-            "Gradle"
+            "Node.js"
           ],
           "categories": [
             "generator-template"
@@ -693,6 +756,28 @@
         }
       },
       {
+        "title": "Java Spring Template",
+        "description": "Java Spring template for the AsyncAPI Generator",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/java-spring-template"
+        },
+        "filters": {
+          "language": [
+            "javascript"
+          ],
+          "technology": [
+            "Springboot",
+            "Maven",
+            "Gradle"
+          ],
+          "categories": [
+            "generator-template"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      },
+      {
         "title": "Java Template",
         "description": "Java template for the AsyncAPI Generator",
         "links": {
@@ -704,24 +789,6 @@
           ],
           "technology": [
             "Java"
-          ],
-          "categories": [
-            "generator-template"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      },
-      {
-        "title": "Node.js Websockets Template",
-        "description": "Node.js WebSockets template for the AsyncAPI Generator. It showcases how from a single AsyncAPI document you can generate a server and a client at the same time.",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/nodejs-ws-template"
-        },
-        "filters": {
-          "language": "javascript",
-          "technology": [
-            "Node.js"
           ],
           "categories": [
             "generator-template"

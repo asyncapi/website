@@ -9,8 +9,8 @@ You can use the generator library to generate whatever you want in your event-dr
   
 ## Prerequisites
 Before you install and use the AsyncAPI CLI and the generator library, ensure you meet the prerequisites below, then [install the CLI](#installation).
-1. Node.js v12.16 and higher
-2. Npm v6.13.7 and higher
+1. Node.js v18.12.0 and higher
+2. Npm v8.19.0 and higher
    
 To verify the versions of Node and Npm you have, run the following command on your terminal:
 ```
@@ -53,7 +53,7 @@ You can install in Linux by using `dpkg`, a package manager for debian:
 For further installation instructions for different operating systems, read the [AsyncAPI CLI documentation](https://github.com/asyncapi/cli#installation).
 
 > **Remember:** 
-> Each [community-developed template](https://github.com/search?q=topic%3Aasyncapi+topic%3Agenerator+topic%3Atemplate) is dependent on a certain version of the generator for it to work correctly. Before you install the generator CLI, check the template's `package.json` for the version of the generator CLI your template is compatible with. Read the [versioning docs](versioning) to learn why it's important to use certain generator versions with your templates.
+> Each [community-developed template](https://github.com/search?q=topic%3Aasyncapi+topic%3Agenerator+topic%3Atemplate) is dependent on a certain version of the generator for it to work correctly. Before you install the AsyncAPI CLI, check the template's `package.json` for the version of the AsyncAPI CLI your template is compatible with. Read the [versioning docs](versioning) to learn why it's important to use certain generator versions with your templates.
 
 ### Update AsyncAPI CLI
 There are several reasons why you might want to update your generator version:

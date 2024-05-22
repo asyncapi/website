@@ -2,6 +2,8 @@
 title: "Template development"
 weight: 80
 ---
+> **Note**
+> It is advised against attempting to manually template types and models from scratch using the AsyncAPI templating engines such as Nunjucks and React render engines. Instead, it is recommended to use [AsyncAPI Modelina](/docs/tools/generator/model-generation) a dedicated library for model generation.
 
 ## Minimum template requirements
 
@@ -33,7 +35,7 @@ The above example will produce an `asyncapi.md` file where usage of the AsyncAPI
 
 Before the generation process begins, the generator installs the template into its dependencies. A `package.json` file is necessary to identify the template name.
 
-The following block shows an example `package.json` file that points to the [React Render Engine](react-render-engine.md) and necessary dependencies:
+The following block shows an example `package.json` file that points to the [React Render Engine](react-render-engine) and necessary dependencies:
 
 ```json
 {
@@ -62,7 +64,7 @@ You must configure the generator's `package.json` file to contain JSON objects w
 |`parameters[param].default`| Any | Default value of the parameter if not specified. Shouldn't be used for mandatory `required=true` parameters.
 |`parameters[param].required`| Boolean | Whether the parameter is required or not.
 
-The above table lists some configuration options that help the generator achieve a specific set of tasks throughout the generation process. The `generator` property from 'package.json' contains all the configuration information. To learn more about template configuration and various supported parameters, read the [generator configuration file](configuration-file.md).
+The above table lists some configuration options that help the generator achieve a specific set of tasks throughout the generation process. The `generator` property from 'package.json' contains all the configuration information. To learn more about template configuration and various supported parameters, read the [generator configuration file](configuration-file).
 
 > Whenever you make a change to the package.json, make sure you perform an update by running `npm install`;  this command synchronizes with the `package-lock.json` and validates the file.
 
@@ -130,12 +132,12 @@ Newer:
 <Text>Version is: **{params.version || asyncapi.info.version()}**</Text>
 ```
 
-Now that you have added all the configuration options, you can start the generation process using the generator CLI. You can pass these parameters via the CLI: `--param name=value or -p name=value`.
+Now that you have added all the configuration options, you can start the generation process using the AsyncAPI CLI. You can pass these parameters via the CLI: `--param name=value or -p name=value`.
 The above configuration helps template users override the existing version with a new version on the command line. (Example: `-p version=2.0.0`)
 
 ## Hooks
 
-[Hooks](hooks.md) enable templates to perform multiple tasks. You can add Hooks to your template as fractions of code. In the template, you must store it in the `hooks` directory under the template directory. You can also store it in other modules and external libraries or configure it inside the template. The generation process can perform multiple actions.
+[Hooks](hooks) enable templates to perform multiple tasks. You can add Hooks to your template as fractions of code. In the template, you must store it in the `hooks` directory under the template directory. You can also store it in other modules and external libraries or configure it inside the template. The generation process can perform multiple actions.
 
 **Templates** can perform multiple actions _before_ or _after_ the generation process with the help of **hooks**.
 

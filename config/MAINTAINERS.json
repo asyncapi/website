@@ -59,15 +59,15 @@
         ]
     },
     {
-        "name": "Arjun Garg",
-        "github": "arjungarg07",
-        "linkedin": "arjungarg17",
-        "slack": "U01QX79S734",
-        "twitter": "ArjunGarg07",
+        "name": "Ashish Padhy",
+        "github": "Shurtu-gal",
+        "linkedin": "ashish-padhy3023",
+        "slack": "U0572R8J927",
+        "twitter": "Shurtu_Gal",
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
-            "cupid"
+            "github-action-for-cli"
         ]
     },
     {
@@ -195,7 +195,7 @@
     },
     {
         "name": "Ludovic Dussart",
-        "github": "m3lkior",
+        "github": "M3lkior",
         "linkedin": "ludovic-dussart-846a8063",
         "slack": "U01BM49KL3Z",
         "twitter": "ldussart",
@@ -363,6 +363,19 @@
         ]
     },
     {
+        "name": "Samir AMZANI",
+        "github": "Amzani",
+        "slack": "U01N6AW5V5G",
+        "twitter": "amzani",
+        "linkedin": "amzani",
+        "availableForHire": false,
+        "company": "Postman",
+        "isTscMember": true,
+        "repos": [
+            "studio"
+        ]
+    },
+    {
         "name": "Sergio Moya",
         "github": "smoya",
         "linkedin": "smoya",
@@ -372,16 +385,18 @@
         "company": "Postman",
         "isTscMember": true,
         "repos": [
-            "bindings",
-            "converter-go",
-            "event-gateway",
-            "go-watermill-template",
-            "infra",
-            "parser-api",
-            "parser-go",
-            "server-api",
             "spec",
             "spec-json-schemas",
+            "bindings",
+            "parser-api",
+            "parser-js",
+            "avro-schema-parser",
+            "openapi-schema-parser",
+            "raml-dt-schema-parser",
+            "server-api",
+            "parser-go",
+            "converter-go",
+            "go-watermill-template",
             "template-for-go-projects"
         ]
     },
@@ -473,19 +488,6 @@
         "isTscMember": true,
         "repos": [
             "java-template"
-        ]
-    },
-    {
-        "name": "David Boyne",
-        "github": "boyney123",
-        "twitter": "boyney123",
-        "slack": "U020GN9C6FM",
-        "availableForHire": false,
-        "company": "AWS",
-        "isTscMember": true,
-        "repos": [
-            "studio",
-            "cli"
         ]
     },
     {
@@ -589,20 +591,6 @@
         ]
     },
     {
-        "name": "Barba\u00f1o Gonz\u00e1lez",
-        "linkedin": "barbano-gonzalez-moreno",
-        "twitter": "BarbanoGonzalez",
-        "github": "barbanio",
-        "slack": "U01J42QDSLU",
-        "availableForHire": false,
-        "company": "Postman",
-        "isTscMember": true,
-        "repos": [
-            "training",
-            "community"
-        ]
-    },
-    {
         "name": "Kenneth Aasan",
         "github": "kennethaasan",
         "slack": "U037S2HK4TS",
@@ -659,6 +647,41 @@
         "repos": [
             "website",
             "community"
+        ]
+    },
+    {
+        "name": "Ashmit JaiSarita Gupta",
+        "github": "devilkiller-ag",
+        "linkedin": "jaisarita",
+        "twitter": "jaisarita",
+        "slack": "U062LA14E58",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "modelina"
+        ]
+    },
+    {
+        "name": "Sambhav Gupta",
+        "github": "sambhavgupta0705",
+        "linkedin": "sambhavgupta0705",
+        "twitter": "sambhavgupta75",
+        "slack": "U04630DU3N3",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "website"
+        ]
+    },
+    {
+        "name": "Viacheslav Turovskyi",
+        "github": "aeworxet",
+        "slack": "U01G3U01SVC",
+        "availableForHire": false,
+        "isTscMember": false,
+        "repos": [
+            "bundler",
+            "optimizer"
         ]
     }
 ]

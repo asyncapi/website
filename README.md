@@ -34,7 +34,7 @@ This repository contains the sources of AsyncAPI website:
 Use the following tools to set up the project:
 
 - [Node.js](https://nodejs.org/) v16.0.0+
-- [npm](https://www.npmjs.com/) v7.10.0+
+- [npm](https://www.npmjs.com/) v8.10.0+
 
 ## Run locally
 
@@ -162,7 +162,32 @@ All AsyncAPI JSON Schema definition files are being served within the `/definiti
 This is possible thanks to the following:
 
 1. A [Netlify Rewrite rule](https://docs.netlify.com/routing/redirects/rewrites-proxies/) located in the [netlify.toml](netlify.toml) file, which acts as proxy for all requests to the `/definitions/<file>` path, serving the content from GH without having an HTTP redirect.
-2. A [Netlify Edge Function](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/) that modifies the `Content-Type` header of the rewrite response to become `application/schema+json`. This lets tooling, such as [Hyperjump](https://json-schema.hyperjump.io), to fetch the schemas directly from their URL.
+2. A [Netlify Edge Function](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/) that modifies the `Content-Type` header of the rewrite response to become `application/schema+json`. This lets tooling, such as [Hyperjump](https://json-schema.hyperjump.io), to fetch the schemas directly from their URL.  
+  Please find a flowchart explaining the flow this edge function should accomplish:
+  ```mermaid
+  flowchart TD
+    Request(Request) -->schema-related{Is it requesting Schemas?}
+    schema-related -->|No| req_no_schemas[Let the original request go through]
+    req_no_schemas --> Response(Response)
+    schema-related -->|Yes| req_schemas[Fetch from GitHub]
+    req_schemas-->req_json{Was requesting a .json file?}
+    
+    req_json -->|No| Response(Response)
+    req_json -->|Yes| response_status{Response Status?}
+    
+    response_status -->|2xx| response_ok[OK]
+    response_status -->|304| response_cached[Not Modified]
+    response_status -->|Any other| response_ko
+
+    response_ok --> set_headers[Set Response Content-Type header to application/schema+json]
+    set_headers --> send_metric_success[Send success metric]
+    response_cached -- cached:true --> send_metric_success
+    response_ko --> send_metric_error[Send error metric]
+
+    send_metric_success -- file served from raw GH --> Response(Response)
+    send_metric_error --the errored response --> Response(Response)
+  ```
+   
 
 ## Project structure
 
@@ -194,21 +219,21 @@ This repository has the following structure:
 ## Connect with AsyncAPI Community
 
 <p align="left">
-    <a href="https://asyncapi.slack.com/" target="blank">
-      <img align="center" src="https://img.icons8.com/color/48/null/slack-new.png" alt="AsyncAPI Slack" height="30" width="40" />
-    </a>
-    <a href="https://twitter.com/asyncapispec" target="blank">
-      <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="AsyncAPI Twitter" height="30" width="40" />
-    </a>
-    <a href="https://www.linkedin.com/company/asyncapi" target="blank">
-      <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="AsyncAPI LinkedIn" height="30" width="40" />
-    </a>
-    <a href="https://www.youtube.com/c/asyncapi" target="blank">
-      <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="AsyncAPI YouTube" height="30" width="40" />
-    </a>
-    <a href="https://www.twitch.tv/asyncapi" target="blank">
-      <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitch.svg" alt="AsyncAPI Twitch" height="30" width="40" />
-    </a>
+<a href="https://asyncapi.slack.com/" alt="AsyncAPI Slack">
+  <img src="https://img.shields.io/badge/Slack-AsyncAPI-@website.svg?logo=slack&color=yellow" />
+</a>
+<a href="https://twitter.com/asyncapispec" target="_blank">
+  <img src="https://img.shields.io/badge/asyncapi-%23gray.svg?style=flat&logo=X&label=Twitter&labelColor=rgb(86%2C86%2C86)" alt="AsyncAPI Twitter">
+</a>
+<a href="https://www.linkedin.com/company/asyncapi" target="_blank">
+  <img src="https://img.shields.io/badge/asyncapi-%230077B5.svg?logo=linkedin&logoColor=white&label=LinkedIn&labelColor=rgb(86%2C86%2C86)&style=flat" alt="AsyncAPI LinkedIn">
+</a>
+<a href="https://www.youtube.com/c/asyncapi" target="_blank">
+  <img src="https://img.shields.io/badge/YouTube-AsyncAPI-red?style=flat&logo=youtube&logoColor=white" alt="YouTube">
+</a>
+<a href="https://www.twitch.tv/asyncapi" target="_blank">
+  <img src="https://img.shields.io/badge/asyncapi-%23833fe6?style=flat&logo=twitch&label=Twitch&logoColor=white" alt="AsyncAPI Twitch">
+</a>
 </p>
 
 ## AsyncAPI Contributors ✨

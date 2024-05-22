@@ -5,7 +5,7 @@ weight: 50
 
 ## Template
 
-A template is a project that specifies the generation process output by using the AsyncAPI generator and an [AsyncAPI document](asyncapi-file.md). These files describe the generation results depending on the AsyncAPI document's content.
+A template is a project that specifies the generation process output by using the AsyncAPI generator and an [AsyncAPI document](asyncapi-document). These files describe the generation results depending on the AsyncAPI document's content.
 
 Examples outputs:
 
@@ -16,7 +16,7 @@ Examples outputs:
 
 A template is an independent Node.js project unrelated to the `generator` repository. AsyncAPI templates are managed, released, and published separately. You can also create templates and manage templates on your own.
 
-The generator uses the official [Arborist](https://www.npmjs.com/package/@npmcli/arborist) NPM library. (This means templates do not have to be published to package managers to use them.) Arborist helps the generator fetch the template's source code and use it for the generation process. 
+The generator uses the official [Arborist](https://www.npmjs.com/package/@npmcli/arborist) NPM library. (This means templates do not have to be published to package managers to use them.) Arborist helps the generator fetch the template's source code and use it for the generation process. By default, this library pulls data from the default NPM registry, which is https://registry.npmjs.org. You can also configure the generator to fetch templates that are private or hosted in different NPM registry
 
 You can store template projects on a local drive or as a `git` repository during the development process. 
 
@@ -24,7 +24,7 @@ You can store template projects on a local drive or as a `git` repository during
 
 1. Template is provided as input to the **Generator**.
 2. **asyncapi** is the original AsyncAPI document injected into your template file by default.
-3. **params** are the parameters you pass to the generator CLI. Later, you can also pass these **params** further to other components. 
+3. **params** are the parameters you pass to the AsyncAPI CLI. Later, you can also pass these **params** further to other components. 
 4. The generator passes both the original **asyncapi**, the original AsyncAPI document, and the **params** to the **Template Context**.
 5. Concurrently, the generator passes **Template files** to the **Render engine** as well. AsyncAPI uses two render engines — _react_ and _nunjucks_.
 6. Once the Render Engine receives both the Template Files and the Template Context, it injects all the dynamic values into your react or nunjucks engine, based on the Template Files using the Template Context.
