@@ -56,7 +56,7 @@ function setup() {
   mf.mock("*", (req) => {
     console.log(req.url);
     
-    if( req.url === metricURL ) {
+    if (req.url === metricURL) {
       metricCalls++;
     }
 
@@ -116,4 +116,103 @@ Deno.test("serve-definitions test for invalidRequests", async () => {
   assertEquals(metricCalls, 0);
 
   mf.uninstall();
+});
+
+Deno.test("serve-definitions test for various response statuses", async () => {
+  const testCases = [
+    { requestURL: "https://asyncapi.com/definitions/2.4.0/info.json", status: 200, mockParam: "GET@https://asyncapi.com/definitions/2.4.0/info.json" },
+    { requestURL: "https://asyncapi.com/definitions/2.4.0/info.json", status: 304, mockParam: "GET@https://asyncapi.com/definitions/2.4.0/info.json" },
+    { requestURL: "https://asyncapi.com/definitions/2.4.0/info.json", status: 404, mockParam: "GET@https://asyncapi.com/definitions/2.4.0/info.json" },
+    { requestURL: "https://asyncapi.com/definitions/2.4.0/info.json", status: 500, mockParam: "GET@https://asyncapi.com/definitions/2.4.0/info.json" }, 
+  ];
+
+  for (const { requestURL, status, mockParam } of testCases) {
+    console.log("Testing: " + requestURL);
+
+    mf.install();
+
+    mf.mock("*", () => {
+      return new Response(status === 200 ? JSON.stringify({ url: requestURL }) : null, {
+        status,
+      });
+    });
+
+    const request = new Request(requestURL, { method: "GET" });
+    const response = await serveDefinitions(request, context as Context);
+
+    if (status === 200) {
+      const body = response.body ? await response.json() : null;
+      assertEquals(response.status, status);
+      assertEquals(body?.url, requestURL);
+    } else {
+      assertEquals(response.status, status);
+    }
+
+    if (status === 200 || status === 304) {
+      metricCalls++;
+    }
+
+    
+    console.log("\n");
+    mf.uninstall();
+  }
+
+  assertEquals(metricCalls, testCases.filter((testCase) => testCase.status === 200 || testCase.status === 304).length);
+});
+
+Deno.test("serve-definitions test for schema-unrelated requests", async () => {
+  setup();
+
+  const schemaUnrelatedRequests = [
+    "https://asyncapi.com/definitions/asyncapi.yaml",
+    "https://asyncapi.com/schema-store/2.4.0.JSON",
+    "https://asyncapi.com/foobar",
+    "https://asyncapi.com/",
+  ];
+
+  for (const requestURL of schemaUnrelatedRequests) {
+    console.log("Testing: " + requestURL);
+    const request = new Request(requestURL, { method: "GET" });
+    const response = await serveDefinitions(request, context as Context);
+
+    assertEquals(response, undefined);
+  }
+
+  mf.uninstall();
+});
+
+Deno.test("serve-definitions test for schema-related non-JSON requests", async () => {
+  setup();
+  metricCalls = 0;
+
+  const schemaRelatedNonJsonRequests = [
+    "https://asyncapi.com/schema-store/2.5.0-without-$id",
+  ];
+
+  for (const requestURL of schemaRelatedNonJsonRequests) {
+    const context = {
+      next: () => {
+        return new Response(JSON.stringify({ url: requestURL }), {
+          status: 200,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+      },
+      log: () => {},
+    }
+
+    console.log("Testing: " + requestURL);
+    const request = new Request(requestURL, { method: "GET" });
+    const response = await serveDefinitions(request, context as unknown as Context);
+    const body = response?.body ? await response.json() : null;
+
+    assertEquals(response?.status, 200);
+    assertEquals(body.url, requestURL);
+    assertEquals(response.headers.get("Content-Type"), "application/json"); // Default content type for non-JSON requests
+  }
+
+  mf.uninstall();
+
+  assertEquals(metricCalls, 0);
 });
