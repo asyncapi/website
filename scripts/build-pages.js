@@ -4,7 +4,7 @@ const path = require('path');
 const SRC_DIR = 'markdown';
 const TARGET_DIR = 'pages';
 
-const whiteListTags = ['a', 'br', 'div', 'b', 'i'];
+const capitalizeTags = ['table', 'tr', 'td', 'th', 'thead', 'tbody'];
 
 // Check if target directory doesn't exist then create it
 if (!fs.existsSync(TARGET_DIR)) {
@@ -13,10 +13,10 @@ if (!fs.existsSync(TARGET_DIR)) {
 
 function capitalizeJsxTags(content) {
   return content.replace(/<\/?(\w+)/g, function (match, letter) {
-    if (whiteListTags.includes(letter.toLowerCase())) {
-      return match; // return the match as is, without capitalizing
+    if (capitalizeTags.includes(letter.toLowerCase())) {
+      return `<${match[1] === '/' ? '/' : ''}${letter[0].toUpperCase()}${letter.slice(1)}`;
     }
-    return `<${match[1] === '/' ? '/' : ''}${letter[0].toUpperCase()}${letter.slice(1)}`;
+    return match;
   });
 }
 
