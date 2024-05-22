@@ -14,7 +14,7 @@ export default function AuthorAvatars({ authors = [] }) {
       );
 
       return author.link ? (
-        <a alt={author.name} href={author.link} data-testid="AuthorAvatars-link">
+        <a key={index} alt={author.name} href={author.link} data-testid="AuthorAvatars-link">
           {avatar}
         </a>
       ) : (

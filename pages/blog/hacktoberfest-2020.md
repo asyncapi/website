@@ -13,12 +13,7 @@ authors:
     byline: AsyncAPI Maintainer and Community Guardian
 ---
 
-<Warning
-title="HacktoberFest 2020 has finished"
-description={
-<span>Check out our <Link href="/blog/hacktoberfest-summary-2020" passHref><a>summary blog post</a></Link>. There are lots of good insights!</span>
-}
-/>
+<Warning title="HacktoberFest 2020 has finished" description={<span>Check out our <Link href="/blog/hacktoberfest-summary-2020" passHref>summary blog post</Link>. There are lots of good insights!</span>}/>
 
 ## What is AsyncAPI
 

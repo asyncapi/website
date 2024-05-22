@@ -10,7 +10,7 @@ import DocsButton from '../buttons/DocsButton';
 import ArrowRight from '../icons/ArrowRight';
 import Feedback from '../Feedback';
 import Heading from '../typography/Heading';
-import AnnouncementHero from '../campaigns/AnnoucementHero';
+import AnnouncementHero from '../campaigns/AnnouncementHero';
 import { SearchButton, DOCS_INDEX_NAME } from '../AlgoliaSearch';
 import IconLoupe from '../icons/Loupe';
 import { getAllPosts } from '../../lib/api';

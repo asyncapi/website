@@ -2,7 +2,7 @@ import Button from './buttons/Button'
 import ArrowRight from './icons/ArrowRight'
 import Features from '../components/features'
 import DemoAnimation from './DemoAnimation'
-import AnnouncementHero from '../components/campaigns/AnnoucementHero'
+import AnnouncementHero from '../components/campaigns/AnnouncementHero'
 import Heading from './typography/Heading'
 import Paragraph from './typography/Paragraph'
 import AlgoliaSearch, { SearchButton } from './AlgoliaSearch'; // Import AlgoliaSearch component

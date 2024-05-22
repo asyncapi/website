@@ -1,13 +1,13 @@
 import React from 'react';
 import Heading from '../components/typography/Heading';
-import AnnouncementHero from '../components/campaigns/AnnoucementHero';
+import AnnouncementHero from '../components/campaigns/AnnouncementHero';
 import Button from '../components/buttons/Button';
 
 function ErrorPage() {
   const image = '/img/illustrations/illustration.webp';
   return (
     <div className="text-center">
-     
+
       <div className='items-center justify-center mt-20 flex-col md:flex-row'>
           <div>
             <AnnouncementHero className="my-4" />
@@ -16,7 +16,6 @@ function ErrorPage() {
                 <Heading className="mb-4 md:text-sm">
                   Oops, The page you are looking {` `}
                   <span className="block md:-mt-4 leading-12">
-                    {' '}
                     for doesn't exist
                   </span>
                 </Heading>
@@ -27,7 +26,7 @@ function ErrorPage() {
             <img src={image} className="mx-auto w-52" />
           </div>
         </div>
-   
+
 
       <div className="text-center mt-8">
         <Button

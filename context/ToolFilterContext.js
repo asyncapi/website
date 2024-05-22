@@ -5,7 +5,7 @@ export const ToolFilterContext = createContext();
 
 export default function ToolFilter({ children }) {
   const router = useRouter();
-  const [isPaid, setisPaid] = useState("all");
+  const [isPaid, setIsPaid] = useState("all");
   const [isAsyncAPIOwner, setAsyncAPIOwner] = useState(false);
   const [languages, setLanguages] = useState([]);
   const [technologies, setTechnologies] = useState([]);
@@ -17,7 +17,7 @@ export default function ToolFilter({ children }) {
 
     let { pricing, owned, langs, techs, categories } = router.query;
 
-    setisPaid(pricing || "all");
+    setIsPaid(pricing || "all");
     setAsyncAPIOwner(owned === "true");
     setLanguages(langs?.split(",") || []);
     setTechnologies(techs?.split(",") || []);

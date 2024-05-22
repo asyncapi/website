@@ -1,6 +1,6 @@
 import Head from '../Head';
 import Container from './Container';
-import AnnouncementHero from '../campaigns/AnnoucementHero';
+import AnnouncementHero from '../campaigns/AnnouncementHero';
 
 export default function GenericLayout({
   title,

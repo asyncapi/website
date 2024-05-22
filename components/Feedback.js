@@ -6,8 +6,8 @@ export default function Feedback(className = '') {
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
     const [feedback, setFeedback] = useState('');
-    const { asPath, pathname } = useRouter();
-    
+    const { asPath } = useRouter();
+
     useEffect(() => {
         setSubmitted(false);
         setError(false);
@@ -15,7 +15,7 @@ export default function Feedback(className = '') {
 
     const date_stamp = new Date()
     const time_stamp = date_stamp.toUTCString();
-    
+
     async function handleSubmit(e) {
         e.preventDefault();
         const data = {
@@ -30,7 +30,7 @@ export default function Feedback(className = '') {
                 'Content-Type': 'application/json',
             },
         }).then((response) => {
-            
+
             if (response.status === 200) {
                 setSubmitted(true);
             }
@@ -41,6 +41,9 @@ export default function Feedback(className = '') {
             console.log(response);
         }).then(data =>{
             console.log(data);
+        }).catch((error)=>{
+            console.log(error);
+            setError(true);
         })
     }
 
