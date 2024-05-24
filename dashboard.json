@@ -29,27 +29,7 @@
       "resourcePath": "/asyncapi/community/pull/1013",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 23.26114168868996
-    },
-    {
-      "id": "I_kwDOBW5R_c5J6qNe",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Measuring AsyncAPI spec adoption",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/issues/780",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "keep-open",
-          "color": "ffee84"
-        }
-      ],
-      "score": 22.112443333692923
+      "score": 23.548316277439216
     },
     {
       "id": "PR_kwDOFLhIt85bqKL8",
@@ -96,7 +76,18 @@
           "color": "0e8a16"
         }
       ],
-      "score": 16.943300736206268
+      "score": 17.517649913704783
+    },
+    {
+      "id": "I_kwDOCVQpZM5M_dcV",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "DocsUI: Messages Object output",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
+      "repo": "asyncapi/asyncapi-react",
+      "labels": [],
+      "score": 17.230475324955524
     },
     {
       "id": "I_kwDOFLhIt84-OUI3",
@@ -126,6 +117,17 @@
       "score": 14.933078614961456
     },
     {
+      "id": "PR_kwDOCoBobc5tRBZn",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore: introduce the turborepo to the parser.js",
+      "author": "ayushnau",
+      "resourcePath": "/asyncapi/parser-js/pull/992",
+      "repo": "asyncapi/parser-js",
+      "labels": [],
+      "score": 14.358729437462937
+    },
+    {
       "id": "I_kwDOFi_gUM5hpuWl",
       "isPR": false,
       "isAssigned": true,
@@ -147,17 +149,6 @@
           "color": "007acc"
         }
       ],
-      "score": 13.78438025996442
-    },
-    {
-      "id": "PR_kwDOCoBobc5tRBZn",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore: introduce the turborepo to the parser.js",
-      "author": "ayushnau",
-      "resourcePath": "/asyncapi/parser-js/pull/992",
-      "repo": "asyncapi/parser-js",
-      "labels": [],
       "score": 13.78438025996442
     },
     {
@@ -226,7 +217,7 @@
     {
       "id": "I_kwDOCxglSM6Bxg4I",
       "title": "Convert OpenAPI 3.0 to AsyncAPI 3.0",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/converter-js/issues/233",
       "repo": "asyncapi/converter-js",
       "author": "jonaslagoni",
@@ -465,6 +456,10 @@
         {
           "name": "bug",
           "color": "d73a4a"
+        },
+        {
+          "name": "keep-open",
+          "color": "fce14b"
         }
       ]
     },
