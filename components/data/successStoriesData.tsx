@@ -5,8 +5,8 @@ import TextLink from '../typography/TextLink';
 
 /**
  *
- * @param param0
- * @returns
+ * @param {React.ReactNode} props.children
+ * @returns React.ReactNode
  */
 export function DescriptionComponent({ children }: { children: React.ReactNode }) {
   return <React.Fragment>{children}</React.Fragment>;
