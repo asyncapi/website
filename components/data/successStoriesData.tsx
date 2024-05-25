@@ -4,9 +4,8 @@ import React from 'react';
 import TextLink from '../typography/TextLink';
 
 /**
- *
- * @param {React.ReactNode} props.children
- * @returns React.ReactNode
+ * @description renders each item's description in the format of React.ReactNode
+ * @param {React.ReactNode} props.children contain descriptions of each story
  */
 export function DescriptionComponent({ children }: { children: React.ReactNode }) {
   return <React.Fragment>{children}</React.Fragment>;
