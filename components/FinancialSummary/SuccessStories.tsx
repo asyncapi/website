@@ -1,5 +1,4 @@
 import { successStories } from '../data/successStoriesData';
-import TextLink from '../typography/TextLink';
 
 /**
  * @description SuccessStories component displays success stories related to financial support.
@@ -23,11 +22,6 @@ export default function SuccessStories() {
               <div key={index} className='m-4 p-2'>
                 <h1 className='mb-2 text-2xl font-semibold'>{story.title}</h1>
                 <p className='text-base text-darkGunMetal'>{story.description}</p>
-                {story.linkText && story.linkUrl && (
-                  <TextLink href={story.linkUrl} target='_blank' className='text-violet'>
-                    {story.linkText}
-                  </TextLink>
-                )}
               </div>
             ))}
           </div>
