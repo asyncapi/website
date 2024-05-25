@@ -264,31 +264,31 @@ components:
       summary: Action triggered when a successful WebSocket connection is established
       payload:
         $ref: '#/components/schemas/hello'
-schemas:
-  hello:
-    type: object
-    properties:
-      type:
-        type: string
-        description: A hello string confirming WebSocket connection
-      connection_info:
-        type: object
-        properties:
-          app_id:
-            type: string
-          num_connections:
-            type: integer
-          debug_info:
-            type: object
-            properties:
-              host:
-                type: string
-              started:
-                type: string
-              build_number:
-                type: integer
-              approximate_connection_time:
-                type: integer
+  schemas:
+    hello:
+      type: object
+      properties:
+        type:
+          type: string
+          description: A hello string confirming WebSocket connection
+        connection_info:
+          type: object
+          properties:
+            app_id:
+              type: string
+            num_connections:
+              type: integer
+            debug_info:
+              type: object
+              properties:
+                host:
+                  type: string
+                started:
+                  type: string
+                build_number:
+                  type: integer
+                approximate_connection_time:
+                  type: integer
     reaction:
       type: object
       properties:

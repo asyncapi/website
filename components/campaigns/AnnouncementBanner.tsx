@@ -48,7 +48,7 @@ export default function Banner({
 }: BannerProps) {
   return (
     <div
-      className={`absolute size-full rounded border border-gray-200 bg-gray-50 py-6
+      className={`size-full rounded border border-gray-200 bg-gray-50 py-6
           transition-transform${className} ${small ? 'mb-4' : 'mx-3 mb-6 mt-3 p-3'}
           ${activeBanner ? 'z-10 scale-100 opacity-100' : 'z-0 scale-90 opacity-0'}`}
       data-testid='AnnouncementHero-main-div'
