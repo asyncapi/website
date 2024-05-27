@@ -18,7 +18,7 @@
           "color": "0E8A16"
         }
       ],
-      "score": 103.95720112723167
+      "score": 104.24437571598092
     },
     {
       "id": "PR_kwDOFLhIt85js7KX",
@@ -29,7 +29,7 @@
       "resourcePath": "/asyncapi/community/pull/1013",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 23.548316277439216
+      "score": 22.9739670999407
     },
     {
       "id": "PR_kwDOFLhIt85bqKL8",
@@ -59,26 +59,6 @@
       "score": 18.091999091203302
     },
     {
-      "id": "I_kwDOBW5R_c49A2ZS",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Add an AsyncAPI poster showing all features at a glance",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/website/issues/425",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "bounty",
-          "color": "0e8a16"
-        }
-      ],
-      "score": 17.517649913704783
-    },
-    {
       "id": "I_kwDOCVQpZM5M_dcV",
       "isPR": false,
       "isAssigned": true,
@@ -88,22 +68,6 @@
       "repo": "asyncapi/asyncapi-react",
       "labels": [],
       "score": 17.230475324955524
-    },
-    {
-      "id": "I_kwDOFLhIt84-OUI3",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create educational & technical video explaining AsyncAPI's main features",
-      "author": "alequetzalli",
-      "resourcePath": "/asyncapi/community/issues/155",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 16.332916763847894
     },
     {
       "id": "PR_kwDOBW5R_c5p28Vu",
@@ -181,6 +145,28 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 13.497205671215161
+    },
+    {
+      "id": "PR_kwDODou01c5r4UjU",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: Enhancement of Visual Json Schema Editor",
+      "author": "Gmin2",
+      "resourcePath": "/asyncapi/studio/pull/1065",
+      "repo": "asyncapi/studio",
+      "labels": [],
+      "score": 13.497205671215161
+    },
+    {
+      "id": "PR_kwDOFDnrNc5tl-_j",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "test: replicate incorrect bundling and missing assertions part of #1323",
+      "author": "francocm",
+      "resourcePath": "/asyncapi/cli/pull/1389",
+      "repo": "asyncapi/cli",
+      "labels": [],
+      "score": 12.061332727468868
     }
   ],
   "goodFirstIssues": [
@@ -268,6 +254,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
