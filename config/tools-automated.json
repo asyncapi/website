@@ -91,28 +91,6 @@
         }
       },
       {
-        "title": "SIO-AsyncAPI",
-        "description": "This is code-first approach to generate AsyncAPI specification from Socket.IO server.",
-        "links": {
-          "websiteUrl": "https://github.com/daler-rahimov/sio-asyncapi",
-          "docsUrl": "https://github.com/daler-rahimov/sio-asyncapi",
-          "repoUrl": "https://github.com/daler-rahimov/sio-asyncapi"
-        },
-        "filters": {
-          "language": "Python",
-          "technology": [
-            "Socket.IO",
-            "Flask"
-          ],
-          "categories": [
-            "code-first",
-            "api"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": false
-        }
-      },
-      {
         "title": "Zod Sockets",
         "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
         "links": {
@@ -129,6 +107,28 @@
             "code-first",
             "dsl",
             "framework"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "SIO-AsyncAPI",
+        "description": "This is code-first approach to generate AsyncAPI specification from Socket.IO server.",
+        "links": {
+          "websiteUrl": "https://github.com/daler-rahimov/sio-asyncapi",
+          "docsUrl": "https://github.com/daler-rahimov/sio-asyncapi",
+          "repoUrl": "https://github.com/daler-rahimov/sio-asyncapi"
+        },
+        "filters": {
+          "language": "Python",
+          "technology": [
+            "Socket.IO",
+            "Flask"
+          ],
+          "categories": [
+            "code-first",
+            "api"
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
@@ -290,6 +290,28 @@
     "description": "Writing YAML by hand is no fun, and maybe you don't want a GUI, so use a Domain Specific Language to write AsyncAPI in your language of choice.",
     "toolsList": [
       {
+        "title": "Zod Sockets",
+        "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
+        "links": {
+          "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
+          "repoUrl": "https://github.com/RobinTail/zod-sockets"
+        },
+        "filters": {
+          "language": "TypeScript",
+          "technology": [
+            "Node.js",
+            "TypeScript"
+          ],
+          "categories": [
+            "code-first",
+            "dsl",
+            "framework"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
         "title": "ZenWave SDK",
         "description": "DDD and API-First for Event-Driven Microservices",
         "links": {
@@ -310,28 +332,6 @@
             "dsl",
             "mocking-and-testing",
             "cli"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": false
-        }
-      },
-      {
-        "title": "Zod Sockets",
-        "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
-        "links": {
-          "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
-          "repoUrl": "https://github.com/RobinTail/zod-sockets"
-        },
-        "filters": {
-          "language": "TypeScript",
-          "technology": [
-            "Node.js",
-            "TypeScript"
-          ],
-          "categories": [
-            "code-first",
-            "dsl",
-            "framework"
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
