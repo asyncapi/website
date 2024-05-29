@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AsyncAPI Initiative Jobs RSS Feed</title>
+    <link>https://www.asyncapi.com/jobs/rss.xml</link>
+    <atom:link rel="self" href="https://www.asyncapi.com/jobs/rss.xml" type="application/rss+xml"/>
+    <description>AsyncAPI Initiative Jobs Board</description>
+    <language>en-gb</language>
+    <copyright>Made with :love: by the AsyncAPI Initiative.</copyright>
+    <webMaster>info@asyncapi.io (AsyncAPI Initiative)</webMaster>
+    <pubDate>Tue, 21 May 2024 23:10:04 GMT</pubDate>
+    <generator>next.js</generator>
+    <item>
+      <title>Head of Developer Experience</title>
+      <description>About the team
+
+We are a bunch of builders who want to enable other builders to do great things by providing an awesome platform and API for them. We are low hierarchy, no bullshit, trust and transpar</description>
+      <link>https://www.asyncapi.com/jobs/head-of-dx-upvest?utm_source=rss</link>
+      <category>jobs</category>
+      <guid isPermaLink="true">https://www.asyncapi.com/jobs/head-of-dx-upvest?utm_source=rss</guid>
+      <pubDate>Fri, 30 Jul 2021 05:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Open Source Developer Advocate</title>
+      <description>About the team
+
+Postman is the world’s leading API collaboration platform used by more than 15 million developers and 500,000 organizations worldwide. Postman was founded on a straightforward premise:</description>
+      <link>https://www.asyncapi.com/jobs/dev-rel-postman?utm_source=rss</link>
+      <category>jobs</category>
+      <guid isPermaLink="true">https://www.asyncapi.com/jobs/dev-rel-postman?utm_source=rss</guid>
+      <pubDate>Thu, 01 Jul 2021 05:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Technical Writer</title>
+      <description>About the team
+
+Postman is the world’s leading API collaboration platform used by more than 15 million developers and 500,000 organizations worldwide. Postman was founded on a straightforward premise:</description>
+      <link>https://www.asyncapi.com/jobs/tech-writer-postman?utm_source=rss</link>
+      <category>jobs</category>
+      <guid isPermaLink="true">https://www.asyncapi.com/jobs/tech-writer-postman?utm_source=rss</guid>
+      <pubDate>Thu, 01 Jul 2021 05:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>UI/UX/DX Designer</title>
+      <description>We are a tiny team working on the AsyncAPI Initiative. We are hiring a UI/UX/DX designer to help us design more awesome UI and CLI tools for developers.
+
+TL;DR
+
+:bulb: Developer tools &amp; CLI developer </description>
+      <link>https://www.asyncapi.com/jobs/ui-ux-dx-designer?utm_source=rss</link>
+      <category>jobs</category>
+      <guid isPermaLink="true">https://www.asyncapi.com/jobs/ui-ux-dx-designer?utm_source=rss</guid>
+      <pubDate>Thu, 01 Jul 2021 05:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>API Architect</title>
+      <description>About the team
+
+We are an open API banking platform, focused on creating cutting-edge technology for financial institutions.
+The platform allows banks the fast and flexible deployment of features that</description>
+      <link>https://www.asyncapi.com/jobs/apiture-api-architect?utm_source=rss</link>
+      <category>jobs</category>
+      <guid isPermaLink="true">https://www.asyncapi.com/jobs/apiture-api-architect?utm_source=rss</guid>
+      <pubDate>Mon, 21 Jun 2021 23:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>
