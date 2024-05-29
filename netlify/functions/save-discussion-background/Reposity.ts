@@ -1,18 +1,17 @@
 import { fetchGraphql } from './helpers';
-import { Discussion, DiscussionCategory, Reply } from './index.d';
+import type { Discussion, DiscussionCategory, Reply } from './index.d';
 
 export namespace Repository {
+
   /**
    * Parse the discussion categories that a repository has.
    * @param {string} repoName - The name of the repository.
    * @param {string} repoOwner - Organization/User that owns the repo.
    * @return {Promise<DiscussionCategory[]>} An array containing all of the discussion categories that the repo has.
    */
-  export async function getDiscussionCategories(
-    repoOwner: string,
-    repoName: string
-  ): Promise<DiscussionCategory[]> {
-    const query = `query { 
+  export async function getDiscussionCategories(repoOwner: string,
+    repoName: string): Promise<DiscussionCategory[]> {
+    const query = `query {
       repository(owner: "${repoOwner}", name: "${repoName}"){
         id
         discussionCategories(first: 10) {
@@ -24,14 +23,13 @@ export namespace Repository {
       }
     }`;
     const { repository } = await fetchGraphql(query);
+
     return repository.discussionCategories.nodes;
   }
 
-  export async function getRepositoryId(
-    owner: string,
-    name: string
-  ): Promise<string> {
-    const query = `query { 
+  export async function getRepositoryId(owner: string,
+    name: string): Promise<string> {
+    const query = `query {
       repository(owner: "${owner}", name: "${name}"){
         id
         discussionCategories(first: 10) {
@@ -44,6 +42,7 @@ export namespace Repository {
     }`;
 
     const { repository } = await fetchGraphql(query);
+
     return repository.id as string;
   }
 
@@ -54,12 +53,10 @@ export namespace Repository {
    * @param {string} categoryId - Discussion category Id.
    *
    */
-  export async function createDiscussion(
-    discussion: Discussion,
+  export async function createDiscussion(discussion: Discussion,
     repositoryId: string,
     categoryId: string,
-    slackURL: string
-  ) {
+    slackURL: string) {
     const body = `${discussion.body}
 
 ---
@@ -85,13 +82,12 @@ _This discussion has been created from a [slack discussion](${slackURL}). Please
     const { createDiscussion } = await fetchGraphql(query);
     const discussionId = createDiscussion.discussion.id;
     const discussionURL = createDiscussion.discussion.url;
+
     return { discussionId, discussionURL };
   }
 
-  export async function createDicussionReply(
-    gitHubDiscussionId: string,
-    reply: Reply
-  ): Promise<string> {
+  export async function createDicussionReply(gitHubDiscussionId: string,
+    reply: Reply): Promise<string> {
     const query = `
       mutation {
         addDiscussionComment(
@@ -107,6 +103,7 @@ _This discussion has been created from a [slack discussion](${slackURL}). Please
         }
     `;
     const { addDiscussionComment } = await fetchGraphql(query);
+
     return addDiscussionComment.comment.id;
   }
 
@@ -116,8 +113,7 @@ _This discussion has been created from a [slack discussion](${slackURL}). Please
    */
   export async function markAnswer(commentId: string) {
     console.log('marking the answer...');
-    await fetchGraphql(
-      `
+    await fetchGraphql(`
       mutation {
         markDiscussionCommentAsAnswer(input: {id: "${commentId}" }) {
           discussion {
@@ -125,8 +121,7 @@ _This discussion has been created from a [slack discussion](${slackURL}). Please
           }
         }
       }
-      `
-    ).catch((err) => {
+      `).catch((err) => {
       // do nothing since the type of discussion does not accept answers.
     });
   }
