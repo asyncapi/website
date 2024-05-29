@@ -5,7 +5,7 @@ import IconSpec from '../icons/Spec';
 import IconTutorials from '../icons/Tutorials';
 import IconUseCases from '../icons/UseCases';
 import IconUsers from '../icons/Users';
-import Explorer from '../icons/Explorer';
+import IconExplorer from '../icons/Explorer';
 
 export interface Bucket {
   name: string;
@@ -96,7 +96,7 @@ export const buckets: Bucket[] = [
     link: '/docs/reference/specification/v3.0.0-Explorer',
     className: 'bg-teal-200',
     borderClassName: 'border-orange-200',
-    Icon: Explorer,
+    icon: IconExplorer
   }
 ].map((bucket) => {
   return {

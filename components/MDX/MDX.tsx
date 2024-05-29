@@ -38,6 +38,7 @@ import Remember from '../Remember';
 import Sponsors from '../sponsors/Sponsors';
 import Warning from '../Warning';
 import { Table, TableCell, TableHeader, TableRow } from './MDXTable';
+import Visualizer from '../docs/Visualizer';
 
 let mermaidInitialized = false;
 
@@ -324,7 +325,8 @@ export function getMDXComponents() {
     TwitterDMButton,
     TwitterVideoEmbed,
     TwitterOnAirButton,
-    Profiles
+    Profiles,
+    Visualizer
   };
 }
 

@@ -20,6 +20,8 @@ import DocsMobileMenu from '../navigation/DocsMobileMenu';
 import DocsNav from '../navigation/DocsNav';
 import TOC from '../TOC';
 import Heading from '../typography/Heading';
+import Button from '../buttons/Button';
+import IconMenuCenter from '../icons/CenterMenu';
 
 interface IDocsLayoutProps {
   post: IPost;
@@ -76,6 +78,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
   const posts = getAllPosts();
   const router = useRouter();
   const [showMenu, setShowMenu] = useState(false);
+  const [explorerDocMenu, setExplorerDocMenu] = useState(false)
 
   if (!post) return <ErrorPage statusCode={404} />;
   if (post.title === undefined) throw new Error('Post title is required');
@@ -86,50 +89,79 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
 
   const navigation = posts.docsTree;
 
+  const sidebar = <div
+    className="hidden lg:flex lg:flex-shrink-0"
+    data-testid="DocsLayout-main"
+  >
+    <div className="flex flex-col w-72 border-r border-gray-200 bg-white py-2">
+      <div className="flex-1 flex flex-col md:overflow-y-auto md:sticky md:top-20 md:max-h-(screen-14)">
+        <SearchButton
+          className="mt-8 mb-4 mr-2 flex items-center text-left text-sm space-x-3 px-3 py-1.5 bg-white hover:bg-secondary-100 border-gray-300 hover:border-secondary-500 border text-gray-700 hover:text-secondary-500 shadow-sm transition-all duration-500 ease-in-out rounded-md"
+          indexName={DOCS_INDEX_NAME}
+        >
+          {({ actionKey }) => (
+            <>
+              <IconLoupe />
+              <span className="flex-auto">Search docs...</span>
+              {actionKey && (
+                <kbd className="font-sans font-semibold">
+                  <abbr title={actionKey.key} className="no-underline">
+                    {actionKey.shortKey}
+                  </abbr>{' '}
+                  K
+                </kbd>
+              )}
+            </>
+          )}
+        </SearchButton>
+        <nav className="flex-1 bg-white">
+          <ul>
+            {Object.values(navigation).map((navItem) => (
+              <DocsNav
+                key={navItem.item.title}
+                item={navItem}
+                active={post.slug}
+                onClick={() => setShowMenu(false)}
+              />
+            ))}
+          </ul>
+        </nav>
+      </div>
+      </div>
+          </div>
+  if (router.pathname.includes('v3.0.0-explorer')) {
+    return <div>
+      <div className='absolute top-24 left-2 z-10'>
+        <Button
+          className="h-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:border-gray-500 focus:outline-none focus:ring-0 focus:ring-black"
+          text="Menu"
+          icon={<IconMenuCenter className='w-6 h-6 fill-gray-700' />}
+          onClick={() => {
+            if (explorerDocMenu) {
+              setExplorerDocMenu(false)
+            } else {
+              setExplorerDocMenu(true)
+            }
+          }}
+        />
+        {explorerDocMenu &&
+          <div className='mt-2 explorer-menu-wrapper'>
+            {sidebar}
+          </div>
+       }
+      </div>
+          <article className="">
+      {children}
+    </article>
+    </div>
+  }
   return (
     <DocsContext.Provider value={{ post, navItems }}>
       <div className='w-full bg-white px-4 sm:px-6 lg:px-8 xl:mx-auto xl:max-w-7xl'>
         {showMenu && <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />}
         <div className='flex flex-row' id='main-content'>
           {/* <!-- Static sidebar for desktop --> */}
-          <div className='hidden lg:flex lg:shrink-0' data-testid='DocsLayout-main'>
-            <div className='flex w-72 flex-col border-r border-gray-200 bg-white py-2'>
-              <div className='flex flex-1 flex-col md:sticky md:top-20 md:max-h-(screen-14) md:overflow-y-auto'>
-                <SearchButton
-                  className='mb-4 mr-2 mt-8 flex items-center space-x-3 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-left text-sm text-gray-700 shadow-sm transition-all duration-500 ease-in-out hover:border-secondary-500 hover:bg-secondary-100 hover:text-secondary-500'
-                  indexName={DOCS_INDEX_NAME}
-                >
-                  {({ actionKey }) => (
-                    <>
-                      <IconLoupe />
-                      <span className='flex-auto'>Search docs...</span>
-                      {actionKey && (
-                        <kbd className='font-sans font-semibold'>
-                          <abbr title={actionKey.key} className='no-underline'>
-                            {actionKey.shortKey}
-                          </abbr>{' '}
-                          K
-                        </kbd>
-                      )}
-                    </>
-                  )}
-                </SearchButton>
-
-                <nav className='flex-1 bg-white'>
-                  <ul>
-                    {Object.values(navigation).map((navItem) => (
-                      <DocsNav
-                        key={navItem.item.title}
-                        item={navItem}
-                        active={post.slug}
-                        onClick={() => setShowMenu(false)}
-                      />
-                    ))}
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </div>
+          {sidebar}
           <div className='flex w-0 max-w-full flex-1 flex-col lg:max-w-(screen-16)'>
             <main className='relative z-0 pb-6 pt-2 focus:outline-none md:py-6' tabIndex={0}>
               {!showMenu && (
