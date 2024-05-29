@@ -1,3 +1,4 @@
+import IconExplorer from '../icons/Explorer';
 import IconGettingStarted from '../icons/GettingStarted';
 import IconGuide from '../icons/Guide';
 import IconMigration from '../icons/Migration';
@@ -5,7 +6,6 @@ import IconSpec from '../icons/Spec';
 import IconTutorials from '../icons/Tutorials';
 import IconUseCases from '../icons/UseCases';
 import IconUsers from '../icons/Users';
-import IconExplorer from '../icons/Explorer';
 
 export interface Bucket {
   name: string;

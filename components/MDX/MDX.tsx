@@ -27,6 +27,7 @@ import Button from '../buttons/Button';
 import ChapterSuggestions from '../buttons/ChapterSuggestions';
 import Caption from '../Caption';
 import DocsCards from '../docs/DocsCards';
+import Visualizer from '../docs/Visualizer';
 import CodeBlock from '../editor/CodeBlock';
 import Figure from '../Figure';
 import GeneratorInstallation from '../GeneratorInstallation';
@@ -38,7 +39,6 @@ import Remember from '../Remember';
 import Sponsors from '../sponsors/Sponsors';
 import Warning from '../Warning';
 import { Table, TableCell, TableHeader, TableRow } from './MDXTable';
-import Visualizer from '../docs/Visualizer';
 
 let mermaidInitialized = false;
 
