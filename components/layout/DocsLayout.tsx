@@ -172,16 +172,15 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                         <span className='font-sans text-sm text-gray-800 antialiased'>
                           {`What is new in v${post.title}? Have a look at the `}
                         </span>
-                        <Link href={post.releaseNoteLink}>
-                          <a
-                            target='_blank'
-                            rel='noopener noreferrer'
-                            className={
-                              'cursor-pointer font-body text-sm font-medium leading-6 text-secondary-500 underline transition duration-150 ease-in-out hover:text-secondary-600 focus:text-gray-900 focus:outline-none'
-                            }
-                          >
-                            release notes
-                          </a>
+                        <Link
+                          href={post.releaseNoteLink}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className={
+                            'cursor-pointer font-body text-sm font-medium leading-6 text-secondary-500 underline transition duration-150 ease-in-out hover:text-secondary-600 focus:text-gray-900 focus:outline-none'
+                          }
+                        >
+                          release notes
                         </Link>
                         .
                       </div>
@@ -191,16 +190,15 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                         </span>
                         <span className='font-sans text-sm text-gray-800 antialiased'>
                           Check&nbsp;
-                          <Link href='https://www.asyncapi.com/blog?tags=Release+Notes'>
-                            <a
-                              target='_blank'
-                              rel='noopener noreferrer'
-                              className={
-                                'cursor-pointer font-body text-sm font-medium leading-6 text-secondary-500 underline transition duration-150 ease-in-out hover:text-secondary-600 focus:text-gray-900 focus:outline-none'
-                              }
-                            >
-                              list of release notes
-                            </a>
+                          <Link
+                            href='https://www.asyncapi.com/blog?tags=Release+Notes'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className={
+                              'cursor-pointer font-body text-sm font-medium leading-6 text-secondary-500 underline transition duration-150 ease-in-out hover:text-secondary-600 focus:text-gray-900 focus:outline-none'
+                            }
+                          >
+                            list of release notes
                           </Link>
                           .
                         </span>
