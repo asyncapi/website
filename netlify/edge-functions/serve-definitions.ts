@@ -18,7 +18,7 @@ const URL_DEST_DEFINITIONS = "https://raw.githubusercontent.com/asyncapi/spec-js
 const SchemasRelatedRequestRegex = /^\/[\w\-]*\/?(?:([\w\-\.]*\/)?([\w\-$%\.]*\.json))?$/
 
 export default async (request: Request, context: Context) => {
-  let rewriteRequest = buildRewrite(request);
+  const rewriteRequest = buildRewrite(request);
   let response: Response;
   if (rewriteRequest === null) {
     // This is a Schema-unrelated request. Let it go through and do not intercept it.
@@ -30,7 +30,7 @@ export default async (request: Request, context: Context) => {
 
   const isRequestingAFile = request.url.endsWith('.json');
   if (isRequestingAFile) {
-    var metricName: string
+    let metricName: string
     const metricAttributes = {
       'responseStatus': response.status,
       'responseStatusText': response.statusText,
@@ -50,12 +50,12 @@ export default async (request: Request, context: Context) => {
       switch (response.status) {
         case 304:
           metricName = "asyncapi.jsonschema.download.success";
-          metricAttributes["cached"] = true;
+          metricAttributes.cached = true;
           break;
         default:
           // Notifying NR of the error.
           metricName = "asyncapi.jsonschema.download.error";
-          console.log("Error downloading JSON Schema file: " + response.status + " " + response.statusText);
+          console.log(`Error downloading JSON Schema file: ${  response.status  } ${  response.statusText}`);
           break;
       }
     }
@@ -79,12 +79,12 @@ function buildRewrite(originalRequest: Request): (Request | null) {
 
   if (definitionVersion === undefined) {
     // If no file is specified, the whole bundled schema will be served
-    url = URL_DEST_SCHEMAS + `/${file}`;
+    url = `${URL_DEST_SCHEMAS  }/${file}`;
   } else {
-    url = URL_DEST_DEFINITIONS + `/${definitionVersion}${file}`;
+    url = `${URL_DEST_DEFINITIONS  }/${definitionVersion}${file}`;
   }
 
-  originalRequest.headers.set('Authorization', 'token ' + GITHUB_TOKEN);
+  originalRequest.headers.set('Authorization', `token ${  GITHUB_TOKEN}`);
 
   return new Request(url, {
     method: originalRequest.method,
@@ -132,7 +132,7 @@ async function sendMetricToNR(context: Context, metric: NRMetric) {
 }
 
 function newNRMetricCount(name: string, originalRequest: Request, rewriteRequest: Request, attributes: any = {}): NRMetric {
-  var metric = new NRMetric(name, NRMetricType.Count, 1);
+  const metric = new NRMetric(name, NRMetricType.Count, 1);
   metric["interval.ms"] = 1;
 
   const splitPath = new URL(originalRequest.url).pathname.split("/");
@@ -165,10 +165,15 @@ enum NRMetricType {
 
 class NRMetric {
   name: string;
+
   value: number | any;
+
   timestamp: number;
+
   "interval.ms": number;
+
   type: NRMetricType;
+
   attributes: any;
 
   constructor(name: string, type = NRMetricType.Count, value = 1, timestamp = Date.now()) {

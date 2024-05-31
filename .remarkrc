@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    "lint",
+    "mdx"
+  ],
+  "settings": {
+    "mdx": {
+      "acornInjectPlugins": []
+    }
+  }
+}
