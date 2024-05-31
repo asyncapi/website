@@ -89,13 +89,13 @@ The structure of the payload value depends on the number of arguments expected:
   <Tbody>
     <Tr>
       <Td>No args expected</Td>
-      <Td><InlineCode>{`socket.emit("hello")`}</InlineCode></Td>
+      <Td><inlineCode>{`socket.emit("hello")`}</inlineCode></Td>
       <Td>n/a — Payload field should be omitted</Td>
       <Td><CodeBlock showLineNumbers={false}>{`name: hello`}</CodeBlock></Td>
     </Tr>
     <Tr>
       <Td>Single arg expected</Td>
-      <Td><InlineCode>{`socket.emit("hello", {foo: “bar”})`}</InlineCode></Td>
+      <Td><inlineCode>{`socket.emit("hello", {foo: “bar”})`}</inlineCode></Td>
       <Td>Any <a href="https://json-schema.org/understanding-json-schema/reference/type.html">type</a> other than <a href="https://json-schema.org/understanding-json-schema/reference/array.html#tuple-validation">tuple</a></Td>
       <Td>
         <CodeBlock showLineNumbers={false}>{`name: hello
@@ -109,7 +109,7 @@ payload:
     </Tr>
     <Tr>
       <Td>Multiple args expected</Td>
-      <Td><InlineCode>{`socket.emit("hello", {foo: “bar”}, 1)`}</InlineCode></Td>
+      <Td><inlineCode>{`socket.emit("hello", {foo: “bar”}, 1)`}</inlineCode></Td>
       <Td><a href="https://json-schema.org/understanding-json-schema/reference/array.html#tuple-validation">Tuple type</a></Td>
       <Td>
         <CodeBlock showLineNumbers={false}>{`name: hello

@@ -36,66 +36,66 @@ And because everything is hidden behind interfaces, we can encapsulate many Ente
 See [AsyncAPI and Spring Cloud Streams 3 Configuration Options](https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/#options) and [ZenWave Maven Plugin](/ZenWave-Code-Generator/Maven-Plugin) for more details.
 
 ```xml
-<Plugin>
-    <GroupId>io.github.zenwave360.zenwave-sdk</GroupId>
-    <ArtifactId>zenwave-sdk-maven-plugin</ArtifactId>
-    <Version>${zenwave.version}</Version>
-    <Configuration>
-        <InputSpec>classpath:/model/asyncapi.yml</InputSpec>
-        <AddCompileSourceRoot>true</AddCompileSourceRoot>
-        <AddTestCompileSourceRoot>true</AddTestCompileSourceRoot>
-    </Configuration>
-    <Executions>
+<plugin>
+    <groupId>io.github.zenwave360.zenwave-sdk</groupId>
+    <artifactId>zenwave-sdk-maven-plugin</artifactId>
+    <version>${zenwave.version}</version>
+    <configuration>
+        <inputSpec>classpath:/model/asyncapi.yml</inputSpec>
+        <addCompileSourceRoot>true</addCompileSourceRoot>
+        <addTestCompileSourceRoot>true</addTestCompileSourceRoot>
+    </configuration>
+    <executions>
         {/* DTOs */}
-        <Execution>
-            <Id>generate-asyncapi-dtos</Id>
-            <Phase>generate-sources</Phase>
-            <Goals>
-                <Goal>generate</Goal>
-            </Goals>
-            <Configuration>
-                <GeneratorName>jsonschema2pojo</GeneratorName>
-                <ConfigOptions>
-                    <ModelPackage>io.zenwave360.example.core.domain.events</ModelPackage>
-                    {/*        <Jsonschema2pojo.includeTypeInfo>true</Jsonschema2pojo.includeTypeInfo>*/}
-                    <Jsonschema2pojo.useLongIntegers>true</Jsonschema2pojo.useLongIntegers>
-                </ConfigOptions>
-            </Configuration>
-        </Execution>
+        <execution>
+            <id>generate-asyncapi-dtos</id>
+            <phase>generate-sources</phase>
+            <goals>
+                <goal>generate</goal>
+            </goals>
+            <configuration>
+                <generatorName>jsonschema2pojo</generatorName>
+                <configOptions>
+                    <modelPackage>io.zenwave360.example.core.domain.events</modelPackage>
+                    {/*        <jsonschema2pojo.includeTypeInfo>true</jsonschema2pojo.includeTypeInfo>*/}
+                    <jsonschema2pojo.useLongIntegers>true</jsonschema2pojo.useLongIntegers>
+                </configOptions>
+            </configuration>
+        </execution>
         {/* Generate PROVIDER */}
-        <Execution>
-            <Id>generate-asyncapi</Id>
-            <Phase>generate-sources</Phase>
-            <Goals>
-                <Goal>generate</Goal>
-            </Goals>
-            <Configuration>
-                <GeneratorName>spring-cloud-streams3</GeneratorName>
-                <ConfigOptions>
-                    <Role>provider</Role>
-                    <Style>imperative</Style>
-                    <TransactionalOutbox>mongodb</TransactionalOutbox>
-                    <ModelPackage>io.zenwave360.example.core.domain.events</ModelPackage>
-                    <ProducerApiPackage>io.zenwave360.example.core.outbound.events</ProducerApiPackage>
-                    <ConsumerApiPackage>io.zenwave360.example.adapters.commands</ConsumerApiPackage>
-                </ConfigOptions>
-            </Configuration>
-        </Execution>
-    </Executions>
+        <execution>
+            <id>generate-asyncapi</id>
+            <phase>generate-sources</phase>
+            <goals>
+                <goal>generate</goal>
+            </goals>
+            <configuration>
+                <generatorName>spring-cloud-streams3</generatorName>
+                <configOptions>
+                    <role>provider</role>
+                    <style>imperative</style>
+                    <transactionalOutbox>mongodb</transactionalOutbox>
+                    <modelPackage>io.zenwave360.example.core.domain.events</modelPackage>
+                    <producerApiPackage>io.zenwave360.example.core.outbound.events</producerApiPackage>
+                    <consumerApiPackage>io.zenwave360.example.adapters.commands</consumerApiPackage>
+                </configOptions>
+            </configuration>
+        </execution>
+    </executions>
 
-    <Dependencies>
-        <Dependency>
-            <GroupId>io.github.zenwave360.zenwave-sdk.plugins</GroupId>
-            <ArtifactId>asyncapi-spring-cloud-streams3</ArtifactId>
-            <Version>${zenwave.version}</Version>
-        </Dependency>
-        <Dependency>
-            <GroupId>io.github.zenwave360.zenwave-sdk.plugins</GroupId>
-            <ArtifactId>asyncapi-jsonschema2pojo</ArtifactId>
-            <Version>${zenwave.version}</Version>
-        </Dependency>
-    </Dependencies>
-</Plugin>
+    <dependencies>
+        <dependency>
+            <groupId>io.github.zenwave360.zenwave-sdk.plugins</groupId>
+            <artifactId>asyncapi-spring-cloud-streams3</artifactId>
+            <version>${zenwave.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.zenwave360.zenwave-sdk.plugins</groupId>
+            <artifactId>asyncapi-jsonschema2pojo</artifactId>
+            <version>${zenwave.version}</version>
+        </dependency>
+    </dependencies>
+</plugin>
 ```
 
 ![ZenWave StreamCloudStreams AsyncAPI](/img/posts/zenwave/spring-cloud-streams3-generated.png)
@@ -252,7 +252,7 @@ spring.cloud.stream.bindings:
 
 ZenWave SDK provides `x-runtime-expression` for automatic header population at runtime. Values for this extension property are:
 
-- `$message.payload#/<Json pointer fragment>`: follows the same format as AsyncAPI [Correlation ID](https://www.asyncapi.com/docs/reference/specification/v2.5.0#correlationIdObject) object.
+- `$message.payload#/<json pointer fragment>`: follows the same format as AsyncAPI [Correlation ID](https://www.asyncapi.com/docs/reference/specification/v2.5.0#correlationIdObject) object.
 - `$tracingIdSupplier`: will use the tracing id `java.function.Supplier` configured in your Spring context.
 
 ```yaml
@@ -273,10 +273,10 @@ ZenWave SDK provides `x-runtime-expression` for automatic header population at r
 ```
 
 ```xml
-<ConfigOption>
-    <TracingIdSupplierQualifier>myTracingIdSupplier</TracingIdSupplierQualifier>{/* default is "tracingIdSupplier" */}
-    <RuntimeHeadersProperty>x-custom-runtime-expression</RuntimeHeadersProperty>{/* you can also override this extension property name */}
-</ConfigOption>
+<configOption>
+    <tracingIdSupplierQualifier>myTracingIdSupplier</tracingIdSupplierQualifier>{/* default is "tracingIdSupplier" */}
+    <runtimeHeadersProperty>x-custom-runtime-expression</runtimeHeadersProperty>{/* you can also override this extension property name */}
+</configOption>
 ```
 
 ```java

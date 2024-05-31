@@ -51,7 +51,7 @@ Templating is a vast topic that is impossible to cover in a single post. In Java
 
 All examples shown in this post can be explored in action in below CodeSandbox project.
 
-<Iframe src="https://codesandbox.io/embed/learning-nunjucks-wis89?autoresize=1&codemirror=1&fontsize=14&theme=dark" className="w-full h-64 border-0 rounded overflow-hidden" title="learning-nunjucks" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+<iframe src="https://codesandbox.io/embed/learning-nunjucks-wis89?autoresize=1&codemirror=1&fontsize=14&theme=dark" className="w-full h-64 border-0 rounded overflow-hidden" title="learning-nunjucks" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
 
 In this learning project, I created a simple Express app that handles super short documentation generated from the AsyncAPI file. It is just a small sample of things that you can get from AsyncAPI using Nunjucks.
 
@@ -74,10 +74,10 @@ Then I could use it multiple times, for example in these sentences:
 The {{ apiName }} is licensed under {{ asyncapi.info().license().name() }}.
 
 {/* Sentence 2 */}
-<P>
+<p>
   Here you can find a list of channels to which you can publish and
-  <Strong>{{ apiName }}</Strong> is subscribed to:
-</P>
+  <strong>{{ apiName }}</strong> is subscribed to:
+</p>
 ```
 
 ### Built-in filters
@@ -165,7 +165,7 @@ You can share static parts of the template. This allows you to decrease the size
 
 ```html
 {/* content of space.html file */}
-<Hr />
+<hr />
 <br />
 ```
 
@@ -185,7 +185,7 @@ First you define a macro:
 
 ```html
 {% macro listEl(value) %}
-<Li><Strong>{{ value }}</Strong></Li>
+<li><strong>{{ value }}</strong></li>
 {% endmacro %}
 ```
 

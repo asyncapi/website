@@ -21,24 +21,24 @@ Let’s break down some best practices and tips to avoid ending up in a hell of 
 
 The best practice for organizing AsyncAPI files in your microservices architecture is to have a file per microservice. This way, you end up with multiple independent files that define your application.
 
-<Figure>
-  <Img src="/img/posts/organizing-asyncapi-documents-1.webp" title="One publisher and one subscriber, both sharing the UserSignUp message."/>
-  <Figcaption className="text-center text-gray-400 text-sm">One publisher and one subscriber, both sharing the UserSignUp message.</Figcaption>
-</Figure>
+<figure>
+  <img src="/img/posts/organizing-asyncapi-documents-1.webp" title="One publisher and one subscriber, both sharing the UserSignUp message."/>
+  <figcaption className="text-center text-gray-400 text-sm">One publisher and one subscriber, both sharing the UserSignUp message.</figcaption>
+</figure>
 
 Microservices are meant to do a single thing and to do it well and, very importantly, they must be independently deployable. However, if you have a publisher and multiple consumers, you quickly end up having something like the following:
 
-<Figure>
-  <Img src="/img/posts/organizing-asyncapi-documents-2.webp" title="One publisher and various subscribers. All of them sharing the UserSignUp message."/>
-  <Figcaption className="text-center text-gray-400 text-sm">One publisher and various subscribers. All of them sharing the UserSignUp message.</Figcaption>
-</Figure>
+<figure>
+  <img src="/img/posts/organizing-asyncapi-documents-2.webp" title="One publisher and various subscribers. All of them sharing the UserSignUp message."/>
+  <figcaption className="text-center text-gray-400 text-sm">One publisher and various subscribers. All of them sharing the UserSignUp message.</figcaption>
+</figure>
 
 It’s clear there’s a dependency between all of them: the _UserSignedUp_ message. If at some point to want to change it, you’ll have to go through all of the files and change it. It’s a tedious task we want to avoid, so we can make use of the _$ref_ capability of AsyncAPI to simplify things:
 
-<Figure>
-  <Img src="/img/posts/organizing-asyncapi-documents-3.webp" title="The value of $ref should be “common/messages.json#UserSignedUp”."/>
-  <Figcaption className="text-center text-gray-400 text-sm">The value of $ref should be “common/messages.json#UserSignedUp”.</Figcaption>
-</Figure>
+<figure>
+  <img src="/img/posts/organizing-asyncapi-documents-3.webp" title="The value of $ref should be “common/messages.json#UserSignedUp”."/>
+  <figcaption className="text-center text-gray-400 text-sm">The value of $ref should be “common/messages.json#UserSignedUp”.</figcaption>
+</figure>
 
 Now, if you have to add something to the _UserSignedUp_ message, it’s just a matter of changing one file. Depending on your setup, you may have to restart your services to get the new definition. However, as simple and straightforward as it may seem, you must take care not to introduce breaking changes in the message definition. Otherwise, you’ll have inconsistent states while some services got the new message definition and some didn’t yet. Here comes the importance of versioning your messages, but that makes for another blog post alone.
 

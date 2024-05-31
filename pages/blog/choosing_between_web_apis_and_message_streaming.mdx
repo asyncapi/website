@@ -122,13 +122,13 @@ Now that the client is subscribed to a topic, it will receive notifications when
 
 ```
 POST https://my.callback/path
-<<Project created event>>
+<<project created event>>
 
 POST https://my.callback/path
-<<Project archived event>>
+<<project archived event>>
 
 POST https://my.callback/path
-<<Project updated event>>
+<<project updated event>>
 ```
 
 Notice how our conversation became more interesting. We now can be notified when things change or critical business events occur; without needing to modify and redeploy the API to support a new integration that emerges in the future. This is called loose coupling, and it helps our systems be used in new ways without the originator of the messages even knowing about current and future subscribers.
@@ -138,9 +138,9 @@ Those familiar with message brokers will realize that this is familiar. The diff
 ![Streaming API conversation](/img/posts/choosing_between_web_apis_and_message_streaming/convo-6.webp)
 
 ```
-<<Request last 12 messages from project_messages topic>>
+<<request last 12 messages from project_messages topic>>
 
-<<Retrieve and send last 12 messages from project_messages topic>>
+<<retrieve and send last 12 messages from project_messages topic>>
 ```
 
 This feature is useful when we need to go aggregate values or perform a new calculation we previously didn’t realize we needed.

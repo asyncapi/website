@@ -31,7 +31,7 @@ Am I just showing off? It sounds like, but that is not my intention. I wish to p
 
 Full automation means that the release process if fully automated with no manual steps. What else did you think?
 
-<Iframe src="https://giphy.com/embed/6uGhT1O4sxpi8" width="480" height="240" frameBorder="0" className="giphy-embed" allowFullScreen />
+<iframe src="https://giphy.com/embed/6uGhT1O4sxpi8" width="480" height="240" frameBorder="0" className="giphy-embed" allowFullScreen />
 
 Your responsibility is just to merge a pull request. The automation handles the rest.
 
@@ -173,8 +173,8 @@ Release workflow, instead of pushing directly to the release branch, should comm
   with:
     token: ${{ secrets.GH_TOKEN }}
     commit-message: 'chore(release): ${{ steps.extractver.outputs.version }}'
-    committer: asyncapi-bot <Info@asyncapi.io>
-    author: asyncapi-bot <Info@asyncapi.io>
+    committer: asyncapi-bot <info@asyncapi.io>
+    author: asyncapi-bot <info@asyncapi.io>
     title: 'chore(release): ${{ steps.extractver.outputs.version }}'
     body: 'Version bump in package.json and package-lock.json for release [${{ steps.extractver.outputs.version }}](https://github.com/${{github.repository}}/releases/tag/v${{ steps.extractver.outputs.version }})'
     branch: version-bump/${{ steps.extractver.outputs.version }}
@@ -265,8 +265,8 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN }}
           commit-message: 'chore(release): ${{ steps.extractver.outputs.version }}'
-          committer: asyncapi-bot <Info@asyncapi.io>
-          author: asyncapi-bot <Info@asyncapi.io>
+          committer: asyncapi-bot <info@asyncapi.io>
+          author: asyncapi-bot <info@asyncapi.io>
           title: 'chore(release): ${{ steps.extractver.outputs.version }}'
           body: 'Version bump in package.json and package-lock.json for release [${{ steps.extractver.outputs.version }}](https://github.com/${{github.repository}}/releases/tag/v${{ steps.extractver.outputs.version }})'
           branch: version-bump/${{ steps.extractver.outputs.version }}
@@ -341,7 +341,7 @@ For a detailed reference, you can look into [this pull request](https://github.c
 
 Automate all the things, don't waste time. Automate releases, even if you are a purist that for years followed a rule of using [imperative mood](https://chris.beams.io/posts/git-commit/#imperative) in commit subject and now, after looking on prefixes from Conventional Commits you feel pure disgust.
 
-<Iframe src="https://giphy.com/embed/8PmTor9XVnD3sxXHRe" width="480" height="435" frameBorder="0" className="giphy-embed" allowFullScreen />
+<iframe src="https://giphy.com/embed/8PmTor9XVnD3sxXHRe" width="480" height="435" frameBorder="0" className="giphy-embed" allowFullScreen />
 
 In the end, you can always use something different, custom approach, like reacting to merges from pull requests with the specific label only. If you have time to reinvent the wheel, go for it.
 

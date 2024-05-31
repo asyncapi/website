@@ -125,11 +125,11 @@ npm install --save @asyncapi/react-component@next
 2️⃣ In your **App.vue** just add this code:
 
 ```vue
-<Template>
+<template>
   <div ref="asyncapi"></div>
-</Template>
+</template>
 
-<Script>
+<script>
 import AsyncApiStandalone from '@asyncapi/react-component/browser/standalone';
 
 // AsyncAPI specification, fetched or pasted.
@@ -148,9 +148,9 @@ export default {
     AsyncApiStandalone.render({ schema, config }, container);
   }
 }
-</Script>
+</script>
 
-<Style scope src="@/assets/asyncapi.min.css"></Style>
+<style scope src="@/assets/asyncapi.min.css"></style>
 ```
 
 As you can see on **line 6**, you need to import the **AsyncApiStandalone** bundle with command
@@ -172,11 +172,11 @@ import './assets/asyncapi.min.css'
 You can also import it at the end of the **App.vue** file with:
 
 ```Vue
-<Style scope src='./assets/asyncapi.min.css'></Style>
+<style scope src='./assets/asyncapi.min.css'></style>
 ```
 Second way; import styles from `@asyncapi/react-component` package:
 ```Vue
-<Style scope src='@asyncapi/react-component/style/default.min.css'></Style>
+<style scope src='@asyncapi/react-component/style/default.min.css'></style>
 ```
 
 ---
@@ -188,20 +188,20 @@ To generate documentation from your AsyncAPI file, you can use it as an element 
 1️⃣ Just create an **.html** file, then copy and paste this code:
 
 ```html
-<Script src="https://unpkg.com/@asyncapi/web-component@1.0.0-next.39/lib/asyncapi-web-component.js" defer></Script>
+<script src="https://unpkg.com/@asyncapi/web-component@1.0.0-next.39/lib/asyncapi-web-component.js" defer></script>
 
-<Asyncapi-component
+<asyncapi-component
   schema='{"asyncapi":"2.4.0","info":{"title":"Account Service","version":"1.0.0","description":"This service is in charge of processing user signups"},"channels":{"user/signedup":{"subscribe":{"message":{"$ref":"#/components/messages/UserSignedUp"}}}},"components":{"messages":{"UserSignedUp":{"payload":{"type":"object","properties":{"displayName":{"type":"string","description":"Name of the user"},"email":{"type":"string","format":"email","description":"Email of the user"}}}}}}}'
 
   config='{"show": {"sidebar": true}}'
 
   cssImportPath="https://unpkg.com/@asyncapi/react-component@1.0.0-next.39/styles/default.min.css">
-</Asyncapi-component>
+</asyncapi-component>
 ```
 
 2️⃣ If you need support for old browsers then you need to add this script as well:
 ```html
-<Script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.5.0/webcomponents-bundle.js"></Script>
+<script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.5.0/webcomponents-bundle.js"></script>
 ```
 
 That is it! 🤯 Just awesome!
@@ -216,7 +216,7 @@ If you want to render documentation from your AsyncAPI file without the use of a
 
 2️⃣ To get AsyncAPI document styling, in the **head** element enter:
 ```html
-<Link rel="stylesheet" href="https://unpkg.com/@asyncapi/react-component@1.0.0-next.39/styles/default.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@asyncapi/react-component@1.0.0-next.39/styles/default.min.css">
 ```
 
 3️⃣ In the **body** element type the following:
@@ -224,8 +224,8 @@ If you want to render documentation from your AsyncAPI file without the use of a
 ```html
  <div id="asyncapi"></div>
 
-    <Script src="https://unpkg.com/@asyncapi/react-component@1.0.0-next.39/browser/standalone/index.js"></Script>
-    <Script>
+    <script src="https://unpkg.com/@asyncapi/react-component@1.0.0-next.39/browser/standalone/index.js"></script>
+    <script>
         AsyncApiStandalone.render({
             schema: '{"asyncapi":"2.4.0","info":{"title":"Account Service","version":"1.0.0","description":"This service is in charge of processing user signups"},"channels":{"user/signedup":{"subscribe":{"message":{"$ref":"#/components/messages/UserSignedUp"}}}},"components":{"messages":{"UserSignedUp":{"payload":{"type":"object","properties":{"displayName":{"type":"string","description":"Name of the user"},"email":{"type":"string","format":"email","description":"Email of the user"}}}}}}}'
             ,
@@ -235,12 +235,12 @@ If you want to render documentation from your AsyncAPI file without the use of a
                 }
             },
         }, document.getElementById('asyncapi'));
-    </Script>
+    </script>
 ```
 
 This fetches everything required from the bundle
 ```html
-<Script src="https://unpkg.com/@asyncapi/react-component@1.0.0-next.39/browser/standalone/index.js"></Script>
+<script src="https://unpkg.com/@asyncapi/react-component@1.0.0-next.39/browser/standalone/index.js"></script>
 ```
 
 There is one more way to configure the AsyncAPI component.

@@ -24,7 +24,7 @@ This is what [they](https://raisingchildren.net.au/babies/development/developmen
 
 That is about it. We do not want to just sit, relax, and enjoy lunch anymore. ** It's time for us to start moving, exploring, and not stopping but making a stand in the industry**. We have great years ahead of us. Trust me. Soon you'll learn that work on AsyncAPI will lift off to another level.
 
-<Img src="https://media.giphy.com/media/Xw6yFn7frR3Y4/giphy.gif" />
+<img src="https://media.giphy.com/media/Xw6yFn7frR3Y4/giphy.gif" />
 
 Join us during these strange pandemic times in asynchronous remote celebration, whenever and wherever you can.
 
@@ -98,13 +98,13 @@ Now it should be easier for you to use this component in non-React projects. Tha
 
 ```html
 <!DOCTYPE html>
-<Html>
+<html>
 
-<Head>
-    <Meta charset="utf-8">
-    <Title>AsyncAPI Web Component Demo</Title>
-    <Script src="https://unpkg.com/@asyncapi/web-component@0.17.5/lib/asyncapi-web-component.js" defer></Script>
-    <Script>
+<head>
+    <meta charset="utf-8">
+    <title>AsyncAPI Web Component Demo</title>
+    <script src="https://unpkg.com/@asyncapi/web-component@0.17.5/lib/asyncapi-web-component.js" defer></script>
+    <script>
         var schema = {
             url: "https://raw.githubusercontent.com/asyncapi/asyncapi/master/examples/simple-asyncapi.yml"
         };
@@ -112,16 +112,16 @@ Now it should be easier for you to use this component in non-React projects. Tha
         window.onload = function() {
             document.getElementById("asyncapi").schema = schema;
         }
-    </Script>
-</Head>
+    </script>
+</head>
 
-<Body>
+<body>
 
-    <Asyncapi-component id="asyncapi" cssImportPath="https://unpkg.com/@asyncapi/react-component@0.17.5/lib/styles/fiori.css"></Asyncapi-component>
+    <asyncapi-component id="asyncapi" cssImportPath="https://unpkg.com/@asyncapi/react-component@0.17.5/lib/styles/fiori.css"></asyncapi-component>
 
-</Body>
+</body>
 
-</Html>
+</html>
 ```
 
 There is also a sample project where you can see how this Web component plays together with Angular.

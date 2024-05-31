@@ -245,7 +245,7 @@ We just showed how simple it was to capture `order` events from three different 
 Let's keep it simple here and route events from all sources to a new Kafka topic called `unified-orders`. To do that, we'll start by creating a new Kafka target:
 
 ```sh
-tmctl create target kafka --name unified-orders-target --topic unified-orders --bootstrapServers <ServerURL>
+tmctl create target kafka --name unified-orders-target --topic unified-orders --bootstrapServers <serverURL>
 ```
 
 And then we can define a "catch-all" trigger that will send all events to that target:
