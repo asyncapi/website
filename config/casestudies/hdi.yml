@@ -11,7 +11,7 @@ company:
     - name: Vladislav Zwenihorodski
       link: https://www.linkedin.com/in/vladislav-zwenihorodski-9680a1209/
 challenges: |
-  The HDI has various platform teams, among them the Integration Platform Team, which offers three products: API Management, Event Hub, and the Azure Service Bus.  
+  The HDI has various platform teams, among them the Integration Platform Team, which offers three products: Azure API Management, Azure Event Hub, and the Azure Service Bus.  
   For synchronous communication, we already use OpenAPI, as such we want to ensure the same level of transparency and discoverability for asynchronous scenarios as well.
   Our central platform team offers the Azure Service Bus with self-service capabilities. 
   Customers are able to manage their own topics and subscriptions by simply modifying the according values in their repositories. 
