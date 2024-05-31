@@ -10,9 +10,8 @@ const { buildNavTree, addDocButtons } = require('./build-docs')
 let specWeight = 100
 const result = {
   docs: [],
-  blog: [], 
+  blog: [],
   about: [],
-  jobs: [],
   docsTree: {}
 }
 const releaseNotes = []
@@ -21,9 +20,7 @@ const postDirectories = [
   // order of these directories is important, as the blog should come before docs, to create a list of available release notes, which will later be used to release-note-link for spec docs
   [`${basePath}/blog`, '/blog'],
   [`${basePath}/docs`, '/docs'],
-  [`${basePath}/about`, '/about'],
-  [`${basePath}/jobs`, '/jobs'],
-  [`${basePath}/community`, '/community'],
+  [`${basePath}/about`, '/about']
 ];
 
 const addItem = (details) => {
@@ -33,8 +30,6 @@ const addItem = (details) => {
     result["blog"].push(details)
   else if(details.slug.startsWith('/about'))
     result["about"].push(details)
-  else if(details.slug.startsWith('/jobs'))
-    result["jobs"].push(details)
   else {}
 }
 
@@ -58,7 +53,7 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
     for (let file of files) {
       let details
       const fileName = [directory, file].join('/')
-      const fileNameWithSection = [fileName, '_section.md'].join('/')
+      const fileNameWithSection = [fileName, '_section.mdx'].join('/')
       const slug = fileName.replace(new RegExp(`^${basePath}`), '')
       const slugElements = slug.split('/');
       if (isDirectory(fileName)) {
@@ -76,7 +71,7 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
            details.parent = slugElements[slugElements.length - 2]
            details.sectionId = slugElements[slugElements.length - 1]
         }
-        if (!details.parent) { 
+        if (!details.parent) {
           details.isRootSection = true
           details.rootSectionId = slugElements[slugElements.length - 1]
         }
@@ -85,7 +80,7 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
         addItem(details)
         const rootId = details.parent || details.rootSectionId
         walkDirectories([[fileName, slug]], result, details.weight, details.title, details.sectionId, rootId)
-      } else if (file.endsWith('.md') && !fileName.endsWith('/_section.md')) {
+      } else if (file.endsWith('.mdx') && !fileName.endsWith('/_section.mdx')) {
         const fileContent = readFileSync(fileName, 'utf-8')
         // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
         const { data, content } = frontMatter(fileContent, {})
@@ -93,14 +88,14 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
         details.toc = toc(content, { slugify: slugifyToC }).json
         details.readingTime = Math.ceil(readingTime(content).minutes)
         details.excerpt = details.excerpt || markdownToTxt(content).substr(0, 200)
-        details.sectionSlug = sectionSlug || slug.replace(/\.md$/, '')
+        details.sectionSlug = sectionSlug || slug.replace(/\.mdx$/, '')
         details.sectionWeight = sectionWeight
         details.sectionTitle = sectionTitle
         details.sectionId = sectionId
         details.rootSectionId = rootSectionId
         details.id = fileName
-        details.isIndex = fileName.endsWith('/index.md')
-        details.slug = details.isIndex ? sectionSlug : slug.replace(/\.md$/, '')
+        details.isIndex = fileName.endsWith('/index.mdx')
+        details.slug = details.isIndex ? sectionSlug : slug.replace(/\.mdx$/, '')
         if(details.slug.includes('/reference/specification/') && !details.title) {
           const fileBaseName = basename(data.slug)  // ex. v2.0.0 | v2.1.0-next-spec.1
           const fileName = fileBaseName.split('-')[0] // v2.0.0 | v2.1.0
@@ -123,19 +118,20 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
             details.title += " (Pre-release)"
           }
         }
-        
+
 
 
         // To create a list of available ReleaseNotes list, which will be used to add details.releaseNoteLink attribute.
         if(file.startsWith("release-notes") && dir[1] === "/blog"){
-          const fileName_without_extension = file.slice(0,-3)
+          const fileName_without_extension = file.slice(0,-4)
           // removes the file extension. For example, release-notes-2.1.0.md -> release-notes-2.1.0
           const version = fileName_without_extension.slice(fileName_without_extension.lastIndexOf("-")+1)
+
           // gets the version from the name of the releaseNote .md file (from /blog). For example, version = 2.1.0 if fileName_without_extension = release-notes-2.1.0
           releaseNotes.push(version)
           // releaseNotes is the list of all available releaseNotes
         }
-        
+
         addItem(details)
       }
     }

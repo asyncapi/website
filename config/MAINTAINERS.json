@@ -48,6 +48,18 @@
         ]
     },
     {
+        "name": "Ansh Goyal",
+        "github": "anshgoyalevil",
+        "linkedin": "thisisanshg",
+        "slack": "U057J527M24",
+        "twitter": "thisisanshg",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "website"
+        ]
+    },
+    {
         "name": "Anand Sunderraman",
         "github": "anandsunderraman",
         "linkedin": "anand-sunderraman-a6b7a131",
@@ -680,7 +692,8 @@
         "availableForHire": false,
         "isTscMember": false,
         "repos": [
-            "bundler"
+            "bundler",
+            "optimizer"
         ]
     }
 ]
