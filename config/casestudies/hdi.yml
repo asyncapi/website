@@ -33,7 +33,7 @@ technical: #We need some more technical information related to case study.
     - Nothing specific
   protocols:
     - AMQP
-  broker: Azure Service Bus
+  brokers: Azure Service Bus
   testing: |
     The AsyncAPI document is validated using the AsyncAPI CLI to confirm that the document is correctly formatted and adheres to the AsyncAPI specification.
   architecture: |
