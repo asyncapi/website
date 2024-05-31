@@ -2,7 +2,7 @@ id: hdiglobal
 company:
   name: HDI Global SE
   description: The HDI brand operates in Germany and internationally, offering life and property/casualty insurance services. They cater to both private individuals and corporate clients, and have been providing industrial insurance since 2016.
-  customers: 5000
+  customers: "5000"
   industry: Insurance
   revenue: 9.1 Mrd. EUR
   website: https://www.hdi.global/
@@ -30,9 +30,10 @@ technical: #We need some more technical information related to case study.
   languages:
     - bash
   frameworks: 
-    - # cant be removed is expected to exist
+    - Nothing specific
   protocols:
     - AMQP
+  broker: Azure Service Bus
   testing: |
     The AsyncAPI document is validated using the AsyncAPI CLI to confirm that the document is correctly formatted and adheres to the AsyncAPI specification.
   architecture: |
@@ -136,7 +137,7 @@ asyncapi: #More specific details about AsyncAPI itself and how is it used.
     - The AsyncAPI document serves as a source for generating data transfer objects (DTOs) in Java, for example, by using the AsyncAPI Java generator. 
       These DTOs are used in the code to ensure type safety and to provide a clear understanding of the data structure.
   versions:
-    - 3.0
+    - '3.0.0'
   storage: |
     A seperate Git repository functions as a "customer Wiki", serving as a central location for all relevant documents about the existing infrastructure. 
     This includes the AsyncAPI document, which provides a comprehensive overview of the asynchronous communication in our system.
@@ -159,4 +160,4 @@ asyncapi: #More specific details about AsyncAPI itself and how is it used.
     * [AsyncAPI Generator](https://github.com/asyncapi/generator):
       * [markdown-template](https://github.com/asyncapi/markdown-template).
   fullExample: resources/casestudies/hdi/asyncapi.yaml
-additionalResources: null
+additionalResources: ' '
