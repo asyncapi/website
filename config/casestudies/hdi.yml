@@ -119,7 +119,8 @@ technical: #We need some more technical information related to case study.
             }
       ```
   codegen: |
-    #Explain if you use code generation, what you generate and how. Provide examples if possible.
+    Our team does not use code generation tools. 
+    However, our customers are free to use any tool they prefer to generate DTOs from the AsyncAPI document.
 schemas: #It is useful and interesting to learn how teams handle messages schemas.
   description: JSON Schema
   storage: A Git repository functions as a self-service portal where customers can manage their own configurations for the Azure Service Bus. 
