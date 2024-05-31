@@ -159,3 +159,4 @@ asyncapi: #More specific details about AsyncAPI itself and how is it used.
     * [AsyncAPI Generator](https://github.com/asyncapi/generator):
       * [markdown-template](https://github.com/asyncapi/markdown-template).
   fullExample: resources/casestudies/hdi/asyncapi.yaml
+additionalResources: null
