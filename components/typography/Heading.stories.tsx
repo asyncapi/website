@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
@@ -23,6 +22,16 @@ const meta: Meta<typeof Heading> = {
     },
     className: {
       control: { type: 'text' }
+    },
+    textColor: {
+      table: {
+        disable: true
+      }
+    },
+    id: {
+      table: {
+        disable: true
+      }
     }
   }
 };

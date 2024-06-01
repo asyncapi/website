@@ -11,7 +11,8 @@ export interface ParagraphProps {
 }
 
 /**
- * Paragraph
+ * Paragraph component is used to render a paragraph element with different type of styles.
+ *
  * @param {ParagraphTypeStyle} props.typeStyle contains the type of paragraph style. ParagraphTypeStyle.lg is by default
  * @param {string} props.textColor contains text color for the paragraph. 'text-gray-700' is by default
  * @param {string} props.fontWeight contains class name for applying font weight in the paragraph

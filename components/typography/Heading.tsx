@@ -12,7 +12,8 @@ export interface HeadingProps {
 }
 
 /**
- * Heading
+ * Heading component is used to render a heading element with different styles and sizes.
+ *
  * @param {HeadingTypeStyle} props.typeStyle contains the type of heading style. HeadingTypeStyle.lg is default
  * @param {HeadingLevel} props.level contains the level of heading. HeadingLevel.h2 is by default
  * @param {string} props.textColor contains text color for the heading. 'text-primary-800' is by default
