@@ -18,4 +18,3 @@ cypress/screenshots
 cypress/videos
 /config/finance/json-data/*
 *.mdx
-*storybook.log
