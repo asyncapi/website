@@ -1,6 +1,6 @@
 ---
 title: "Community Update: May 2024"
-date: 2024-06-06T06:00:00+01:00
+date: 2024-06-05T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
