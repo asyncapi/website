@@ -33,8 +33,8 @@ This repository contains the sources of AsyncAPI website:
 
 Use the following tools to set up the project:
 
-- [Node.js](https://nodejs.org/) v16.0.0+
-- [npm](https://www.npmjs.com/) v8.10.0+
+- [Node.js](https://nodejs.org/) v20.12.0+
+- [npm](https://www.npmjs.com/) v10.5.0+
 
 ## Run locally
 
@@ -117,6 +117,39 @@ After cloning repository to your local, perform the following steps from the roo
 
 Now you're running AsyncAPI website in a development mode. Container is mapped with your local copy of the website. Whenever you make changes to the code, the website will refresh and changes visible in localhost:3000.
 
+## Lint the code
+To lint the code, run the following command:
+```
+npm run lint
+```
+
+To fix the linting issues, run the following command:
+```
+npm run lint:fix
+```
+
+To lint the mdx files, run the following command:
+```
+npm run lint:mdx
+```
+
+## Start the production server
+To build and run a production-ready website, run the following command:
+```
+npm run build && npm run start
+```
+Generated files of the website go in the `.next` folder.
+
+## Start the netlify production server
+Start a local development server for the build tool using the configuration and environment variables set for local development with the Netlify CLI:
+```
+netlify dev
+```
+To start the server using the configuration and environment variables set for `dev` or `all` deploy contexts, run the following command:
+```
+netlify dev --context production
+```
+
 ## Updating information about project finance
 
 AsyncAPI Financial Summary page aims to provide transparency and clarity regarding the organization's financial activities. It serves as a platform to showcase how donations are accepted, different sponsorship options, and how the generated funds are utilized.
@@ -196,24 +229,34 @@ This repository has the following structure:
 <!-- If you make any changes in the project structure, remember to update it. -->
 
 ```text
-  ├── .github                     # Definitions of GitHub workflows, pull request and issue templates
-  ├── components                  # Various generic components such as "Button", "Figure", etc.
-  ├── config                      # Transformed static data to display on the pages such as blog posts etc.
-  ├── context                     # Various React's contexts used in website
-  ├── css                         # Various CSS files
-  ├── lib                         # Various JS code for preparing static data to render in pages
-  ├── pages                       # Website's pages source. It includes raw markdown files and React page templates.
-  │    ├── about                  # Raw blog for /about page
-  │    ├── blog                   # Blog posts
-  │    ├── docs                   # Blog for /docs/* pages
-  │    └── tools                  # Various pages to describe tools
-  ├── public                      # Data for site metadata and static blog such as images
-  ├── scripts                     # Scripts used in the build and dev processes
-  ├── next.config.js              # Next.js configuration file
-  ├── netlify                     # Code that runs on Netlify
-  │    ├── edge-functions         # Netlify Edge-Functions code
-  ├── postcss.config.js           # PostCSS configuration file
-  └── tailwind.config.js          # TailwindCSS configuration file
+  ├── .github                                  # Definitions of GitHub workflows, pull request and issue templates
+  ├── assets                                   # Various assets
+  |    ├── docs                                # Documentation assets
+  |        | fragments                         # Docuentations for CLI installation and contribution.
+  ├── components                               # Various generic components such as "Button", "Figure", etc.
+  ├── config                                   # Transformed static data to display on the pages such as blog posts etc.
+  ├── context                                  # Various React's contexts used in website
+  ├── locales                                  # Translations for the website
+  ├── markdown                                 # Markdown files for the website
+       ├── about                               # Markdown files for the /about page
+       ├── blog                                # Markdown files for the blog posts
+       ├── docs                                # Markdown files for the /docs/* pages
+  ├── netlify                                  # Contains Netlify serverless functions to run on Netlify
+  ├── pages                                    # Website's pages source. It includes raw markdown files and React page templates.
+  │    ├── about                               # Raw blog for /about page
+  │    ├── blog                                # Blog posts
+  │    ├── docs                                # Blog for /docs/* pages
+  │    └── tools                               # Various pages to describe tools
+  ├── public                                   # Data for site metadata and static blog such as images
+  ├── scripts                                  # Scripts used in the build and dev processes
+  ├── styles                                   # Various CSS files
+  ├── templates                                # Various template markdown files
+  ├── types                                    #  Various typeScript types used in the website
+  ├── utils                                    # Various JS code for preparing static data to render in pages
+  ├── next.config.mjs                          # Next.js configuration file
+  ├── README.md                                # Project's README file
+  ├── tailwind.config.js                       # TailwindCSS configuration file
+  └── tsconfig.json                            # TypeScript configuration file
 ```
 
 ## Connect with AsyncAPI Community

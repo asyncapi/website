@@ -1,155 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "PR_kwDOFLhIt85q-42Y",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: initial infra for slack intergration",
-      "author": "Shurtu-gal",
-      "resourcePath": "/asyncapi/community/pull/1131",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 25.27136380993477
-    },
-    {
-      "id": "PR_kwDOFLhIt85js7KX",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore: add documents CoC Committee and Incident Resolution Procedures",
-      "author": "Barbanio",
-      "resourcePath": "/asyncapi/community/pull/1013",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 23.26114168868996
-    },
-    {
-      "id": "I_kwDOBW5R_c5J6qNe",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Measuring AsyncAPI spec adoption",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/issues/780",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "keep-open",
-          "color": "ffee84"
-        }
-      ],
-      "score": 22.112443333692923
-    },
-    {
-      "id": "PR_kwDOFLhIt85bqKL8",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: add Bounty Program Rules",
-      "author": "aeworxet",
-      "resourcePath": "/asyncapi/community/pull/897",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 22.112443333692923
-    },
-    {
-      "id": "PR_kwDODou01c5Iv4zR",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: added table of contents and introduction document for Studio tool",
-      "author": "Jagrutiti",
-      "resourcePath": "/asyncapi/studio/pull/553",
-      "repo": "asyncapi/studio",
-      "labels": [],
-      "score": 21.825268744943667
-    },
-    {
-      "id": "PR_kwDOFLhIt85oVQqh",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: docs automation for website",
-      "author": "AnimeshKumar923",
-      "resourcePath": "/asyncapi/community/pull/1082",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 17.804824502454043
-    },
-    {
-      "id": "I_kwDOCVQpZM5M_dcV",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "DocsUI: Messages Object output",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
-      "repo": "asyncapi/asyncapi-react",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 16.943300736206268
-    },
-    {
-      "id": "PR_kwDODou01c5YJ7kV",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "Add Form component",
-      "author": "KhudaDad414",
-      "resourcePath": "/asyncapi/studio/pull/773",
-      "repo": "asyncapi/studio",
-      "labels": [],
-      "score": 16.65612614745701
-    },
-    {
-      "id": "I_kwDOFLhIt84-OUI3",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create educational & technical video explaining AsyncAPI's main features",
-      "author": "alequetzalli",
-      "resourcePath": "/asyncapi/community/issues/155",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 16.332916763847894
-    },
-    {
-      "id": "I_kwDOBW5R_c49A2ZS",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Add an AsyncAPI poster showing all features at a glance",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/website/issues/425",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "bounty",
-          "color": "0e8a16"
-        }
-      ],
-      "score": 16.08177696995849
-    },
-    {
-      "id": "PR_kwDOBW5R_c5p28Vu",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: navigation to correct heading in tools section",
-      "author": "Vishal2002",
-      "resourcePath": "/asyncapi/website/pull/2790",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.933078614961456
-    },
-    {
       "id": "I_kwDOFLhIt85_y16Y",
       "isPR": false,
       "isAssigned": true,
@@ -167,7 +18,155 @@
           "color": "0E8A16"
         }
       ],
+      "score": 104.24437571598092
+    },
+    {
+      "id": "PR_kwDOFLhIt85js7KX",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore: add documents CoC Committee and Incident Resolution Procedures",
+      "author": "Barbanio",
+      "resourcePath": "/asyncapi/community/pull/1013",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 22.9739670999407
+    },
+    {
+      "id": "PR_kwDOFLhIt85bqKL8",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add Bounty Program Rules",
+      "author": "aeworxet",
+      "resourcePath": "/asyncapi/community/pull/897",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 22.112443333692923
+    },
+    {
+      "id": "I_kwDOBW5R_c580Z0o",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "New Contributor Guide and Maintenance Setup",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/2586",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ],
+      "score": 18.091999091203302
+    },
+    {
+      "id": "I_kwDOCVQpZM5M_dcV",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "DocsUI: Messages Object output",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
+      "repo": "asyncapi/asyncapi-react",
+      "labels": [],
+      "score": 17.230475324955524
+    },
+    {
+      "id": "PR_kwDOBW5R_c5p28Vu",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: navigation to correct heading in tools section",
+      "author": "Vishal2002",
+      "resourcePath": "/asyncapi/website/pull/2790",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 14.933078614961456
+    },
+    {
+      "id": "PR_kwDOCoBobc5tRBZn",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore: introduce the turborepo to the parser.js",
+      "author": "ayushnau",
+      "resourcePath": "/asyncapi/parser-js/pull/992",
+      "repo": "asyncapi/parser-js",
+      "labels": [],
       "score": 14.358729437462937
+    },
+    {
+      "id": "I_kwDOFi_gUM5hpuWl",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Improve kafka adapter",
+      "author": "KhudaDad414",
+      "resourcePath": "/asyncapi/glee/issues/411",
+      "repo": "asyncapi/glee",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "good first issue",
+          "color": "7057ff"
+        },
+        {
+          "name": "area/typescript",
+          "color": "007acc"
+        }
+      ],
+      "score": 13.78438025996442
+    },
+    {
+      "id": "I_kwDODou01c5BZZv-",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Open Graph link preview image according to the document to open",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/224",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 13.703040335770691
+    },
+    {
+      "id": "I_kwDOFLhIt85bebeO",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Meeting Banners Storage",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/issues/568",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 13.497205671215161
+    },
+    {
+      "id": "PR_kwDODou01c5r4UjU",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: Enhancement of Visual Json Schema Editor",
+      "author": "Gmin2",
+      "resourcePath": "/asyncapi/studio/pull/1065",
+      "repo": "asyncapi/studio",
+      "labels": [],
+      "score": 13.497205671215161
+    },
+    {
+      "id": "PR_kwDOFDnrNc5tl-_j",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "test: replicate incorrect bundling and missing assertions part of #1323",
+      "author": "francocm",
+      "resourcePath": "/asyncapi/cli/pull/1389",
+      "repo": "asyncapi/cli",
+      "labels": [],
+      "score": 12.061332727468868
     }
   ],
   "goodFirstIssues": [
@@ -183,21 +182,6 @@
         {
           "name": "avro",
           "color": "EC3D91"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c6GUTRu",
-      "title": "Extensions are redirecting to 404 page",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/2890",
-      "repo": "asyncapi/website",
-      "author": "sambhavgupta0705",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
         }
       ]
     },
@@ -219,7 +203,7 @@
     {
       "id": "I_kwDOCxglSM6Bxg4I",
       "title": "Convert OpenAPI 3.0 to AsyncAPI 3.0",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/converter-js/issues/233",
       "repo": "asyncapi/converter-js",
       "author": "jonaslagoni",
@@ -236,21 +220,6 @@
         {
           "name": "bounty",
           "color": "0E8A16"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385_rNaC",
-      "title": "Create a one for all input document for runtime to test all functionality",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1825",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -285,6 +254,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -319,6 +292,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -370,6 +347,10 @@
           "color": "a2eeef"
         },
         {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
           "name": "📑 docs",
           "color": "E50E99"
         }
@@ -387,6 +368,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         },
         {
           "name": "📑 docs",
@@ -461,6 +446,10 @@
         {
           "name": "bug",
           "color": "d73a4a"
+        },
+        {
+          "name": "keep-open",
+          "color": "fce14b"
         }
       ]
     },
@@ -561,6 +550,10 @@
           "color": "a2eeef"
         },
         {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
           "name": "C# generator",
           "color": "c5def5"
         }
@@ -625,6 +618,10 @@
           "color": "a2eeef"
         },
         {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
           "name": "Kotlin generator",
           "color": "61A95C"
         }
@@ -642,6 +639,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         },
         {
           "name": "Kotlin generator",
@@ -695,6 +696,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         },
         {
           "name": "keep",
@@ -756,25 +761,6 @@
         {
           "name": "stale",
           "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5IRxcq",
-      "title": "[📑 Docs]: update docs issues in ALL repos that are missing the `area/docs` label ",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/682",
-      "repo": "asyncapi/website",
-      "author": "alequetzalli",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
         }
       ]
     },
