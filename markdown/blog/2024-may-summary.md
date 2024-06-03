@@ -42,7 +42,7 @@ We are also seeking volunteers to help organize our upcoming online conference i
 Our [AsyncAPI Website](https://www.asyncapi.com/en) has successfully migrated to NextJS + TypeScript for easy maintenance. Thanks to [Akshat Nema](https://www.linkedin.com/in/akshat-nema) for leading this fantastic work and for contributions made by [Ashmit Gupta](https://www.linkedin.com/in/jaisarita), [Ashish Padhy](https://www.linkedin.com/in/ashish-padhy3023), [Vishvamsinh Vaghela](https://www.linkedin.com/in/vishvamsinh-vaghela-591695217/), [Ansh Goyal](https://www.linkedin.com/in/thisisanshg), and [Sambhav Gupta](https://www.linkedin.com/in/sambhavgupta0705). Please [review the new codebase on GitHub](https://github.com/asyncapi/website) and [check out the pull request with the website migration changes](https://github.com/asyncapi/website/pull/2710).
 
 ## Spec x Tooling
-We're excited to announce that a new case study from [HDI Global SE](https://www.hdi.global/) is in progress and will soon be available on our website. Please keep an eye on Slack for the announcement when it's ready. For a quick sneak peek of the work-in-progress, be sure to check out the [HDI Global SE case study preview](https://github.com/asyncapi/website/pull/3010).
+We're excited to announce that a new case study from [HDI Global SE](https://www.hdi.global/) is in progress and will soon be available on our website. Please keep an eye on Slack for the announcement when it's ready. For a quick sneak peek of the work-in-progress, check out the [HDI Global SE case study preview](https://github.com/asyncapi/website/pull/3010).
 
 ## AsyncAPI Bounty Program
 The [AsyncAPI Bounty Program is now accepting issues for Q3](https://github.com/orgs/asyncapi/discussions/963#discussioncomment-9599187). If you maintain any AsyncAPI repository and have backlog issues you don't have time to address, please consider submitting them. We encourage the submission of design and documentation issues. For more details and to track the current progress for Q2, please check out the [Bounty Board](https://github.com/orgs/asyncapi/projects/36).
@@ -54,7 +54,7 @@ We are exploring ways to fund our project, such as monetizing YouTube. If you kn
 
 ### Slack Admin Rights for CoC Committee
 
-We are updating and finalizing the new AsyncAPI Code of Conduct Committee documentation. To help ensure the safety of the Slack workspace, we are holding an open vote to grant admin rights to full-time CoCC members. For more details and to cast your vote, please refer to the [Proposal for Slack Admin Rights for CoC Main Committee discussion](https://github.com/asyncapi/community/issues/1227).
+We are updating and finalizing the new AsyncAPI Code of Conduct Committee documentation. To help ensure the safety of the Slack workspace, we are holding an open vote to grant admin rights to full-time CoCC members. For more details and to cast your vote, please look at the [Proposal for Slack Admin Rights for CoC Main Committee discussion](https://github.com/asyncapi/community/issues/1227).
 
 ## New Hire
 
