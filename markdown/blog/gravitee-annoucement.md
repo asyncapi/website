@@ -4,7 +4,7 @@ date: 2024-06-04T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
-cover: /Users/user/website/public/img/posts/marketing-images/gravitee-announcement.webp
+cover: /img/posts/marketing-images/gravitee-announcement.webp
 authors:
   - name: Atinuke Oluwabamikemi Kayode
     photo: /img/avatars/bami.webp
