@@ -8,7 +8,7 @@
   NODE_ENV = "development"
 
 [build]
-  command = "npm i -g prettier && npm run build"
+  command = "npm run build"
   functions = "netlify/functions"
   publish = "out"
 
