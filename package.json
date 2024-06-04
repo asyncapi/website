@@ -23,7 +23,7 @@
     "generate:tools": "node scripts/build-tools.js",
     "storybook": "storybook dev -p 6006",
     "chromatic": "chromatic --exit-zero-on-changes",
-    "build-storybook": "storybook build"
+    "build:storybook": "storybook build"
   },
   "repository": {
     "type": "git",
@@ -149,10 +149,5 @@
     "remark-lint": "^10.0.0",
     "remark-mdx": "^3.0.1",
     "storybook": "^8.1.5"
-  },
-  "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
   }
 }
