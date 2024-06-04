@@ -16,22 +16,22 @@ excerpt: 'Migration journey of the AsyncAPI Website, features introduced, and fu
 featured: true
 ---
 
-We're thrilled to announce the successful migration of the AsyncAPI website from JavaScript and Next.js v12 to TypeScript and Next.js v14! This exciting upgrade unlocks a new chapter for the website, paving the way for improved scalability, streamlined feature implementation, and the powerful capabilities of Next.js. As a bonus, this migration also enabled a well-documented codebase and streamlined our testing process by reducing the reliance on Cypress tests. In this blog post, we'll delve into the exciting journey behind the migration and sharing what's new in the website. I'll share insights into our team's efforts, the research and planning involved, the challenges we tackled, the valuable lessons learned, and what exciting plans lie ahead for the AsyncAPI website.
+We're thrilled to announce the successful migration of the AsyncAPI website from JavaScript and Next.js v12 to TypeScript and Next.js v14! This exciting upgrade unlocks a new chapter for the website, paving the way for improved scalability, streamlined feature implementation, and the powerful capabilities of Next.js. As a bonus, this migration also enabled a well-documented codebase and streamlined our testing process by reducing the reliance on Cypress tests. In this blog post, we'll delve into the exciting journey behind the migration and share what's new on the website. I'll share insights into our team's efforts, the research and planning involved, the challenges we tackled, the valuable lessons learned, and what exciting plans lie ahead for the AsyncAPI website.
 
 This migration journey spanned from February to May 2024, and it involved a dedicated team of contributors and maintainers passionate about the AsyncAPI Initiative and the ecosystem of tools it provides. We'd like to give a shout-out to our amazing team: [Lukasz Gornicki](https://www.linkedin.com/in/lukasz-gornicki-a621914/), [Rohit T](https://www.linkedin.com/in/rohit-t-0124a4242?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app), [Akshat Nema](https://www.linkedin.com/in/akshat-nema/), [Ansh Goyal](https://www.linkedin.com/in/thisisanshg/), [Ashish Padhy](https://www.linkedin.com/in/ashish-padhy3023/), [Sambhav Gupta](https://www.linkedin.com/in/sambhavgupta0705/), [Vishvamsinh Vaghela](https://www.linkedin.com/in/vishvamsinh-vaghela-591695217/), and myself, [Ashmit JaiSarita Gupta](https://ashmit.dev). Their expertise and commitment were instrumental in achieving this exciting upgrade for the AsyncAPI website.
 
 ## What's new on the website?
-The migration to Next.js v14 and TypeScript brought about several significant transformations to the AsyncAPI website. These changes paved the way for a more performant, scalable, and developer-friendly experience:
+The migration to Next.js v14 and TypeScript brought several significant transformations to the AsyncAPI website. These changes paved the way for a more performant, scalable, and developer-friendly experience.
 
 **Streamlined Development Workflow:** TypeScript integration introduces static typing to the codebase, enhancing code maintainability, reducing errors, and providing better autocompletion. This simplifies the development process and promotes cleaner code.
 
-**Component Refactoring:** A significant portion of the migration involved meticulously refactoring website components within the Next.js framework. This ensures optimal performance and lays the groundwork for future feature development.
+**Component Refactoring:** Much of the migration involved meticulously refactoring website components within the Next.js framework. This ensures optimal performance and lays the groundwork for future feature development.
 
-**Improved Testability:** The move to TypeScript also enhances our testing capabilities. Static type checking helps identify potential issues early in the development cycle, leading to a more robust and reliable website.
+**Improved Testability:** Moving to TypeScript also enhances our testing capabilities. Static type checking helps identify potential issues early in the development cycle, leading to a more robust and reliable website.
 
-**Improved Code Clarity with JSDoc:** For developers diving deeper into the codebase, we've added comprehensive JSDoc documentation for all components and their parameters. This documentation provides clear explanations of each component's purpose and function, along with detailed information about the parameters it accepts. This enhanced clarity simplifies understanding of the website's code structure and functionality, making it easier for developers to contribute. This will also help to generate proper docs for UI components in the UI Kit which I am currently developing as a part of my Google Summer of Code project.
+**Improved Code Clarity with JSDoc:** For developers diving deeper into the codebase, we've added comprehensive JSDoc documentation for all components and their parameters. This documentation clearly explains each component's purpose and function, along with detailed information about the parameters it accepts. This enhanced clarity simplifies understanding of the website's code structure and functionality, making it easier for developers to contribute. This will also help generate proper docs for UI components in the UI Kit, which I am currently developing as a part of my Google Summer of Code project.
 
-**Enhanced Documentation and Blog Structure:** To streamline content management and leverage Next.js capabilities, we've introduced a new directory structure. Previously housed in the `pages/docs` and `pages/blog` directories, our documentation and blog now reside in the `markdown/docs` and `markdown/blog` directories respectively. This change allows for better organization and integration with Next.js's built-in features for handling static content.
+**Enhanced Documentation and Blog Structure:** We've introduced a new directory structure to streamline content management and leverage Next.js capabilities. Previously housed in the `pages/docs` and `pages/blog` directories, our documentation and blog now reside in the `markdown/docs` and `markdown/blog` directories, respectively. This change allows for better organization and integration with Next.js's built-in features for handling static content.
 
 **Consistent Code Formatting:** We've implemented well-defined Prettier and ESLint rules to enforce consistent code formatting and style across the entire codebase. This not only improves code readability and maintainability but also simplifies collaboration among developers.
 
@@ -53,16 +53,16 @@ Our migration strategy involved a meticulously planned, five-phase approach. Eac
 
 - **Setup Context:** The second phase involved establishing contexts for elements like blogs, docs, and the tool filter system. 
 
-- **Migrating Components:** This was the longest phase of the migration in which we migrated over 250 components compromising icons, navigation, layout, buttons, dashboard, typography, tools, etc. Additionally, this phase involved the strategic elimination of any redundant components, and optimizing the website's overall structure. It took us around the whole of March and April to complete this phase.
+- **Migrating Components:** This was the longest migration phase in which we migrated over 250 components compromising icons, navigation, layout, buttons, dashboard, typography, tools, etc. Additionally, this phase involved the strategic elimination of any redundant components and optimizing the website's overall structure. It took us around the whole of March and April to complete this phase.
 
-- **Migrating Pages:** In this phase, we migrated the pages of our website. Since all the components were already migrated this step was easy and quick for us.
+- **Migrating Pages:** In this phase, we migrated the pages of our website. Since all the components were migrated, this step was easy and quick for us.
 
-- **Final Touches and Launch:** In the final step we migrated Netlify functions, updated the readme, conducted a manual comparison between the old and new websites to address any UI discrepancies, resolved bugs, and took feedback from the community. Finally, we integrated the migrated website onto the main branch and deployed it to production.
+- **Final Touches and Launch:** In the final step, we migrated Netlify functions, updated the readme, conducted a manual comparison between the old and new websites to address any UI discrepancies, resolved bugs, and took feedback from the community. Finally, we integrated the migrated website onto the main branch and deployed it to production.
 
 ## Challenges we faced
 No significant project is without its hurdles, and our migration journey was no exception. Here are some of the challenges that we faced:
 
-**Challenge:** How to manage PRs that will be opened during the migration? <br></br>
+**Challenge:** How do you manage PRs that will be opened during the migration? <br></br>
 **Solution:** We tried to merge all PRs to the migrated website instead of the production website. However, the urgent changes were merged into the master branch and then pulled into the migrate-ts branch.
 
 
@@ -74,12 +74,12 @@ No significant project is without its hurdles, and our migration journey was no 
 **Solution:**  We decided and created a coding guideline to be followed by all team members.
 
 
-**Challenge:** Encountering usage of a `lowlight` package that wasn’t installed as a dependency. More interestingly, there's nothing like `lowlight.registerLanguage` as per their API docs which were in the old website. <br></br>
-**Solution:**  This was the funniest part, the old codebase used `lowlight.registerLanguage` which was not provided by the lowlight API. We noticed that the codebase was working fine without `lowlight`, so we removed every usage of it.
+**Challenge:** Encountering usage of a `lowlight` package that wasn’t installed as a dependency. More interestingly, there's nothing like `lowlight.registerLanguage` as per their API docs, which were on the old website. <br></br>
+**Solution:** This was the funniest part; the old codebase used `lowlight.registerLanguage`, which was not provided by the lowlight API. We noticed the codebase worked fine without `lowlight`, so we removed every usage.
 
 
 **Challenge:** Error in rendering custom JSX components inside .md files. <br></br>
-**Solution:** This was the most annoying error that we faced and it remained unresolved for several weeks. Finally, we all assembled in a huddle call to fight with this and got the solution. It required to be converted into mdx file with proper format. We used prettier and eslint rules to get the proper format after converting all .md files.
+**Solution:** This was the most annoying error that we faced, and it remained unresolved for several weeks. Finally, we all assembled in a huddle call to fight with this and got the solution. It required to be converted into mdx file with proper format. We used prettier and eslint rules to get the proper format after converting all .md files.
 
 
 ## What’s next?
