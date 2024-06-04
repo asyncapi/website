@@ -80,6 +80,7 @@
     "next-mdx-remote": "^4.4.1",
     "node-fetch": "^3.3.2",
     "postcss": "^8.4.35",
+    "prettier": "^3.3.0",
     "react": "^18",
     "react-dom": "^18",
     "react-ga": "^3.3.1",
