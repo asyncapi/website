@@ -72,7 +72,7 @@ Comparing this to the previous year, we are proud of this current trajectory and
 
 | No | Project Idea | Mentor/s | Category | Mentee/s |
 | --- | --- | --- | --- | --- |
-| 1 | [Add help/{command} endpoint](https://github.com/asyncapi/server-api/issues/144) | [David Pereira](https://github.com/BOLT04) | Engineering | [Prince Rajpoot](https://github.com/princerajpoot20) |
+| 1 | [Add help/\{command} endpoint](https://github.com/asyncapi/server-api/issues/144) | [David Pereira](https://github.com/BOLT04) | Engineering | [Prince Rajpoot](https://github.com/princerajpoot20) |
 | 2 | [Website UI Kit design/dev project](https://github.com/asyncapi/design-system/issues/4) | [AceTheCreator](https://github.com/AceTheCreator) | Design | [AISHAT MUIBUDEEN](https://github.com/Mayaleeeee) |
 | 3 | [MVP integration of extensions catalog with AsyncAPI tools](https://github.com/asyncapi/extensions-catalog/issues/78) | [Lukasz Gornicki](https://github.com/derberg) | Engineering | [Sambhav Gupta](https://github.com/sambhavgupta0705) |
 | 4 | [Documenting how different protocols work with AsyncAPI](https://github.com/orgs/asyncapi/discussions/533) | [Alejandra Quetzalli](https://github.com/alequetzalli) | Documentation | [Cynthia Peter](https://github.com/CynthiaPeter), [Arya Gupta](https://github.com/Arya-Gupta), [Joy Almeida](https://github.com/J0SAL), [Vaishnavi Nandakumar](https://github.com/VaishnaviNandakumar)|
