@@ -35,7 +35,7 @@ We recently wrapped up our first conference of the year in Helsinki and are grat
 
 Next, we'll be heading to London for our next event. We are still [accepting proposals for speakers](https://conference.asyncapi.com/venue/London), and we encourage anyone who would like to share their expertise or insights with the community to apply. The deadline for submissions is July 12th.
 
-We are also seeking volunteers to help organize our upcoming online conference in October. If you are interested in being involved in the planning process, hosting, designing, or contributing to the conference page, [please take a moment to fill out the Call for Volunteers form](https://lnkd.in/gAUgTtyB), and we will be in touch soon.
+We also seek volunteers to help organize our upcoming online conference in October. If you are interested in being involved in the planning process, hosting, designing, or contributing to the conference page, [please take a moment to fill out the Call for Volunteers form](https://lnkd.in/gAUgTtyB), and we will be in touch soon.
 
 ## AsyncAPI Website Migration
 
