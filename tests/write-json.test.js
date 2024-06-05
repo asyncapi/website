@@ -1,6 +1,7 @@
 const { promises: fs } = require('fs');
 const { convertToJson } = require('../scripts/utils');
 const writeJSON = require("../scripts/utils/write-json");
+const {jsonString,yamlString,jsonObject,invalidString} = require("./fixtures/utilsData")
 
 jest.mock('fs', () => ({
   promises: {
@@ -21,18 +22,15 @@ describe('writeJSON', () => {
   test('should read a file, convert it to JSON, and write the JSON to another file', async () => {
     const readPath = 'config/testInput.yaml';
     const writePath = 'config/testOutput.json';
-    const fileContent = `name: AsyncAPI
-age: 5`;
-    const jsonContent = { name: 'AsyncAPI', age: 5 };
 
-    fs.readFile.mockResolvedValue(fileContent);
-    convertToJson.mockReturnValue(jsonContent);
+    fs.readFile.mockResolvedValue(yamlString);
+    convertToJson.mockReturnValue(jsonObject);
 
     await writeJSON(readPath, writePath);
 
     expect(fs.readFile).toHaveBeenCalledWith(readPath, 'utf-8');
-    expect(convertToJson).toHaveBeenCalledWith(fileContent);
-    expect(fs.writeFile).toHaveBeenCalledWith(writePath, JSON.stringify(jsonContent));
+    expect(convertToJson).toHaveBeenCalledWith(yamlString);
+    expect(fs.writeFile).toHaveBeenCalledWith(writePath, JSON.stringify(jsonObject));
   });
 
   test('should log an error if reading the file fails', async () => {
@@ -55,11 +53,9 @@ age: 5`;
   test('should log an error if converting the file content to JSON fails', async () => {
     const readPath = 'config/testInput.yaml';
     const writePath = 'config/testOutput.json';
-    const fileContent = `name: AsyncAPI
-age: 5`;
     const error = new Error('Conversion error');
 
-    fs.readFile.mockResolvedValue(fileContent);
+    fs.readFile.mockResolvedValue(yamlString);
     convertToJson.mockImplementation(() => {
       throw error;
     });
@@ -77,13 +73,10 @@ age: 5`;
   test('should log an error if writing the file fails', async () => {
     const readPath = 'config/testInput.yaml';
     const writePath = 'config/testOutput.json';
-    const fileContent = `name: AsyncAPI
-age: 5`;
-    const jsonContent = { name: 'AsyncAPI', age: 5 };
     const error = new Error('File write error');
 
-    fs.readFile.mockResolvedValue(fileContent);
-    convertToJson.mockReturnValue(jsonContent);
+    fs.readFile.mockResolvedValue(yamlString);
+    convertToJson.mockReturnValue(jsonObject);
     fs.writeFile.mockRejectedValue(error);
     const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
 
