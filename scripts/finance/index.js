@@ -1,6 +1,6 @@
 const { promises: { mkdir } } = require('fs');
 const { resolve } = require('path');
-const writeJSON = require('../write-json')
+const writeJSON = require('../utils/write-json')
 
 module.exports = async function buildFinanceInfoList() {
     try {
