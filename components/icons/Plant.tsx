@@ -2,7 +2,7 @@
 /**
  * @description Icons for asyncapi website
  */
-export default function IconPaper(props: React.SVGProps<SVGSVGElement>) {
+export default function IconPlant(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg fill='currentColor' viewBox='0 0 18 18' {...props}>
       <path
