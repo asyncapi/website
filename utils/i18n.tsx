@@ -9,10 +9,13 @@ import {
   Trans,
 } from 'react-i18next';
 import nextI18nextStaticSiteConfig from '../next-i18next-static-site.config';
+import HeadComponent from "../components/Head";
 
 // Translation exports from react-i18next
 export { useTranslation, withTranslation, Translation, Trans };
-
+import App from "../pages/_app";
+import { title } from 'process';
+import { head } from 'lodash';
 interface Config {
   languages: string[];
   defaultLanguage: string;
@@ -160,7 +163,7 @@ export const I18nProvider = (props: any) => {
     }
   }, [options.allowHydration]);
 
-  return hydration ? props.children : null;
+  return hydration ? props.children : <HeadComponent title='App'/>;
 };
 
 /**
