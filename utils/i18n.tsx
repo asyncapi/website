@@ -163,7 +163,8 @@ export const I18nProvider = (props: any) => {
     }
   }, [options.allowHydration]);
 
-  return hydration ? props.children : <HeadComponent title='App'/>;
+  return hydration ? props.children : <HeadComponent title=''/>;
+  //  
 };
 
 /**

@@ -15,7 +15,6 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true
   },
-  output: 'export',
   webpack(config, { isServer }) {
     if (!isServer) {
       config.resolve.fallback.fs = false;
