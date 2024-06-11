@@ -1,19 +1,25 @@
-/* eslint-disable lines-around-comment */
 import React from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
 export interface HeadingProps {
+  // eslint-disable-next-line prettier/prettier
+
   /** Contains the type of heading style. HeadingTypeStyle.lg is default */
   typeStyle?: HeadingTypeStyle;
+
   /** Contains the level of heading. HeadingLevel.h2 is by default */
   level?: HeadingLevel;
+
   /** Contains text color for the heading. 'text-primary-800' is by default */
   textColor?: string;
+
   /** Contains additional classes that should be added to the component */
   className?: string;
+
   /** Contains all the child elements bounded inside component */
   children?: React.ReactNode;
+
   /** Contains an id to be appended on heading */
   id?: string;
 }
