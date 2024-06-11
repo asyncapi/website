@@ -23,7 +23,7 @@ Gravitee is a leading open-source API management platform designed to empower or
 
 ## What This Partnership Means for AsyncAPI
 
-Gravitee’s sponsorship as a Platinum partner is a testament to their commitment to advancing the open-source ecosystem and supporting innovative API solutions. This support is instrumental in advancing the AsyncAPI initiative. Their expertise in API Management will be invaluable as we continue to develop and refine AsyncAPI specifications and tools. This collaboration will enable AsyncAPI to:
+Gravitee’s sponsorship as a Platinum partner is a testament to their commitment to advancing the open-source ecosystem and supporting innovative API solutions. This support is instrumental in advancing the AsyncAPI initiative. Their expertise in API management will be invaluable as we continue to develop and refine AsyncAPI specifications and tools. This collaboration will enable AsyncAPI to:
 
   - **Enhance Community Support:** With Gravitee's backing, we can provide more resources, events, and initiatives to support our vibrant community of developers and contributors. Additionally, Gravitee's Platinum sponsorship includes a generous donation to the AsyncAPI Conf on Tour, further amplifying our reach and impact within the developer community.
 
