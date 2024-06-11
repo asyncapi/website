@@ -1,7 +1,7 @@
 const { promises: fs } = require('fs');
 const { convertToJson } = require('../scripts/utils');
 const writeJSON = require("../scripts/utils/write-json");
-const {jsonString,yamlString,jsonObject,invalidString} = require("./fixtures/utilsData")
+const {yamlString, jsonObject} = require("./fixtures/utilsData");
 
 jest.mock('fs', () => ({
   promises: {
@@ -33,7 +33,7 @@ describe('writeJSON', () => {
     expect(fs.writeFile).toHaveBeenCalledWith(writePath, JSON.stringify(jsonObject));
   });
 
-  test('should log an error if reading the file fails', async () => {
+  test('should log an error and throw if reading the file fails', async () => {
     const readPath = 'config/testInput.yaml';
     const writePath = 'config/testOutput.json';
     const error = new Error('File read error');
@@ -41,7 +41,7 @@ describe('writeJSON', () => {
     fs.readFile.mockRejectedValue(error);
     const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
 
-    await writeJSON(readPath, writePath);
+    await expect(writeJSON(readPath, writePath)).rejects.toThrow(error);
 
     expect(consoleErrorSpy).toHaveBeenCalledWith(
       `Error reading file from path ${readPath}:`,
@@ -50,7 +50,7 @@ describe('writeJSON', () => {
     consoleErrorSpy.mockRestore();
   });
 
-  test('should log an error if converting the file content to JSON fails', async () => {
+  test('should log an error and throw if converting the file content to JSON fails', async () => {
     const readPath = 'config/testInput.yaml';
     const writePath = 'config/testOutput.json';
     const error = new Error('Conversion error');
@@ -61,7 +61,7 @@ describe('writeJSON', () => {
     });
     const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
 
-    await writeJSON(readPath, writePath);
+    await expect(writeJSON(readPath, writePath)).rejects.toThrow(error);
 
     expect(consoleErrorSpy).toHaveBeenCalledWith(
       'Error converting content to JSON:',
@@ -70,7 +70,7 @@ describe('writeJSON', () => {
     consoleErrorSpy.mockRestore();
   });
 
-  test('should log an error if writing the file fails', async () => {
+  test('should log an error and throw if writing the file fails', async () => {
     const readPath = 'config/testInput.yaml';
     const writePath = 'config/testOutput.json';
     const error = new Error('File write error');
@@ -80,7 +80,7 @@ describe('writeJSON', () => {
     fs.writeFile.mockRejectedValue(error);
     const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
 
-    await writeJSON(readPath, writePath);
+    await expect(writeJSON(readPath, writePath)).rejects.toThrow(error);
 
     expect(consoleErrorSpy).toHaveBeenCalledWith(
       `Error writing JSON to path ${writePath}:`,

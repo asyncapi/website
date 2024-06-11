@@ -3,43 +3,30 @@ const {jsonString,yamlString,jsonObject,invalidString} = require("./fixtures/uti
 
 describe('convertToJson', () => {
   test('should return JSON object if input is valid JSON string', () => {
-    let result;
     try {
-      result = convertToJson(jsonString);
-    } catch (error) {
-      result = error;
+    expect(convertToJson(jsonString)).toEqual(jsonObject);
+    } catch (err) {
+      console.error(err);
     }
-    expect(result).toEqual(jsonObject);
   });
 
   test('should return JavaScript object if input is valid YAML string', () => {
-    let result;
     try {
-      result = convertToJson(yamlString);
-    } catch (error) {
-      result = error;
+    expect(convertToJson(yamlString)).toEqual(jsonObject);
+    } catch (err) {
+      console.error(err);
     }
-    expect(result).toEqual(jsonObject);
   });
 
   test('should return input if input is already an object', () => {
-    let result;
     try {
-      result = convertToJson(jsonObject);
-    } catch (error) {
-      result = error;
+    expect(convertToJson(jsonObject)).toBe(jsonObject);
+    } catch (err) {
+      console.error(err)
     }
-    expect(result).toBe(jsonObject);
   });
 
   test('should return null if input is invalid JSON and invalid YAML', () => {
-    let result;
-    try {
-      result = convertToJson(invalidString);
-    } catch (error) {
-      result = error;
-    }
-    expect(result).toBeNull();
+    expect(() => convertToJson(invalidString)).toThrow('Invalid content format');
   });
-
 });

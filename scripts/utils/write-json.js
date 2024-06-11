@@ -10,7 +10,7 @@ module.exports = async function writeJSON(readPath, writePath) {
         readContent = await readFile(readPath, 'utf-8');
     } catch (error) {
         console.error(`Error reading file from path ${readPath}:`, error);
-        return;
+        throw error;
     }
 
     // Attempt to convert content to JSON
@@ -18,7 +18,7 @@ module.exports = async function writeJSON(readPath, writePath) {
         jsonContent = convertToJson(readContent);
     } catch (error) {
         console.error('Error converting content to JSON:', error);
-        return;
+        throw error;
     }
 
     // Attempt to write the JSON content to file
@@ -26,5 +26,6 @@ module.exports = async function writeJSON(readPath, writePath) {
         await writeFile(writePath, JSON.stringify(jsonContent));
     } catch (error) {
         console.error(`Error writing JSON to path ${writePath}:`, error);
+        throw error;
     }
 };
