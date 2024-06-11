@@ -104,7 +104,7 @@ You can also catch up on the live recording from [AACoT'23 Madrid](https://www.y
 I want to express my gratitude to these individuals and many others for their unwavering dedication in assisting with AACoT'23 behind the scenes. 
 They contributed to the design of website prototypes, conference design implementation, creating promotional videos, reviewing Call for Papers (CfPs), editing conference recordings, and providing constant communication and support. I am genuinely thankful for their hard work and commitment.
 
-<Profile profiles={[
+<Profiles profiles={[
 {
     name: 'Aishat Muibudeen',
     avatar: 'https://avatars.githubusercontent.com/Mayaleeeee',
