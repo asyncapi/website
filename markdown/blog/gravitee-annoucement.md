@@ -1,5 +1,5 @@
 ---
-title: "Gravitee Sponsorship Annoucement"
+title: "Gravitee Sponsorship Announcement"
 date: 2024-06-04T06:00:00+01:00
 type: Communication
 tags:
@@ -9,8 +9,8 @@ authors:
   - name: Atinuke Oluwabamikemi Kayode
     photo: /img/avatars/bami.webp
     link: https://www.linkedin.com/in/atinuke-oluwabamikemi-kayode-5b838b1b7/
-    byline: AsyncAPI Community Marketing Speacialist
-excerpt: 'Gravitee Sponsorship Annoucement'
+    byline: AsyncAPI Community Marketing Specialist
+excerpt: 'Gravitee Sponsorship Announcement'
 featured: true
 ---
 
@@ -31,11 +31,10 @@ Gravitee’s sponsorship as a Platinum partner is a testament to their commitmen
 
   - **Foster Innovation:** This partnership will drive further innovation within the AsyncAPI ecosystem, encouraging the development of new tools and integrations that benefit the entire community.
 
-  ## A Heartfelt Thank You to Gravitee
+## A Heartfelt Thank You to Gravitee
 
-  We are profoundly grateful to Gravitee for their continued support and commitment to the AsyncAPI initiative. Their sponsorship is instrumental in advancing our mission to enhance event-driven architectures and make asynchronous APIs more accessible and efficient for developers worldwide. 
-  By joining us as a Platinum Sponsor and contributing to AsyncAPI Conf on Tour, Gravitee is playing a vital role in shaping the future of asynchronous API development.
+We are profoundly grateful to Gravitee for their continued support and commitment to the AsyncAPI initiative. Their sponsorship is instrumental in advancing our mission to enhance event-driven architectures and make asynchronous APIs more accessible and efficient for developers worldwide. Gravitee plays a vital role in shaping the future of asynchronous API development by joining us as a Platinum Sponsor and contributing to AsyncAPI Conf on Tour.
 
-We're excited to have Gravitee.io on board as a Platinum Sponsor, and we look forward to a continued collaboration in advancing the AsyncAPI ecosystem!
+We're excited to have Gravitee.io on board as a Platinum Sponsor, and we look forward to continued collaboration in advancing the AsyncAPI ecosystem!
 
 For more information about Gravitee and their API management solutions, visit [Gravitee.io](https://www.gravitee.io/). To learn more about AsyncAPI and our mission, visit [AsyncAPI](https://www.asyncapi.com/en).
