@@ -10,18 +10,16 @@ import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import editOptions from '../../config/edit-page-config.json';
 import DocsContext from '../../context/DocsContext';
 import { getAllPosts } from '../../utils/api';
-import { DOCS_INDEX_NAME, SearchButton } from '../AlgoliaSearch';
 import Button from '../buttons/Button';
 import DocsButton from '../buttons/DocsButton';
 import Feedback from '../Feedback';
 import Head from '../Head';
 import ArrowRight from '../icons/ArrowRight';
 import IconMenuCenter from '../icons/CenterMenu';
-import IconLoupe from '../icons/Loupe';
 import DocsMobileMenu from '../navigation/DocsMobileMenu';
-import DocsNav from '../navigation/DocsNav';
 import TOC from '../TOC';
 import Heading from '../typography/Heading';
+import DocsNavWrapper from '../navigation/DocsNavWrapper';
 
 interface IDocsLayoutProps {
   post: IPost;
@@ -89,45 +87,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
 
   const navigation = posts.docsTree;
 
-  const sidebar = (
-    <div className='hidden lg:flex lg:shrink-0' data-testid='DocsLayout-main'>
-      <div className='flex w-72 flex-col border-r border-gray-200 bg-white py-2'>
-        <div className='flex flex-1 flex-col md:sticky md:top-20 md:max-h-(screen-14) md:overflow-y-auto'>
-          <SearchButton
-            className='mb-4 mr-2 mt-8 flex items-center space-x-3 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-left text-sm text-gray-700 shadow-sm transition-all duration-500 ease-in-out hover:border-secondary-500 hover:bg-secondary-100 hover:text-secondary-500'
-            indexName={DOCS_INDEX_NAME}
-          >
-            {({ actionKey }) => (
-              <>
-                <IconLoupe />
-                <span className='flex-auto'>Search docs...</span>
-                {actionKey && (
-                  <kbd className='font-sans font-semibold'>
-                    <abbr title={actionKey.key} className='no-underline'>
-                      {actionKey.shortKey}
-                    </abbr>{' '}
-                    K
-                  </kbd>
-                )}
-              </>
-            )}
-          </SearchButton>
-          <nav className='flex-1 bg-white'>
-            <ul>
-              {Object.values(navigation).map((navItem) => (
-                <DocsNav
-                  key={navItem.item.title}
-                  item={navItem}
-                  active={post.slug}
-                  onClick={() => setShowMenu(false)}
-                />
-              ))}
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  );
+  const sidebar = <DocsNavWrapper setShowMenu={setShowMenu} navigation={navigation} post={post} />
 
   if (router.pathname.includes('v3.0.0-explorer')) {
     return (
