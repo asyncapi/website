@@ -17,9 +17,9 @@ import Head from '../Head';
 import ArrowRight from '../icons/ArrowRight';
 import IconMenuCenter from '../icons/CenterMenu';
 import DocsMobileMenu from '../navigation/DocsMobileMenu';
+import DocsNavWrapper from '../navigation/DocsNavWrapper';
 import TOC from '../TOC';
 import Heading from '../typography/Heading';
-import DocsNavWrapper from '../navigation/DocsNavWrapper';
 
 interface IDocsLayoutProps {
   post: IPost;
@@ -87,7 +87,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
 
   const navigation = posts.docsTree;
 
-  const sidebar = <DocsNavWrapper setShowMenu={setShowMenu} navigation={navigation} post={post} />
+  const sidebar = <DocsNavWrapper setShowMenu={setShowMenu} navigation={navigation} post={post} />;
 
   if (router.pathname.includes('v3.0.0-explorer')) {
     return (

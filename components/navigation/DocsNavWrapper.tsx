@@ -1,7 +1,8 @@
-import { IDocsTree, IPost } from "@/types/post";
-import { DOCS_INDEX_NAME, SearchButton } from "../AlgoliaSearch";
-import IconLoupe from "../icons/Loupe";
-import DocsNav from "./DocsNav";
+import type { IDocsTree, IPost } from '@/types/post';
+
+import { DOCS_INDEX_NAME, SearchButton } from '../AlgoliaSearch';
+import IconLoupe from '../icons/Loupe';
+import DocsNav from './DocsNav';
 
 interface IDocsNavWrapperProps {
   post: IPost;
@@ -15,10 +16,8 @@ interface IDocsNavWrapperProps {
  * @param {IDocsTree} props.navigation Navigation items for the docs nav
  * @param {React.Dispatch} props.setShowMenu The dispatch for showing docs nav
  */
-
-
-export default function DocsNavWrapper({setShowMenu, navigation, post }: IDocsNavWrapperProps) {
-    return (
+export default function DocsNavWrapper({ setShowMenu, navigation, post }: IDocsNavWrapperProps) {
+  return (
     <div className='hidden lg:flex lg:shrink-0' data-testid='DocsLayout-main'>
       <div className='flex w-72 flex-col border-r border-gray-200 bg-white py-2'>
         <div className='flex flex-1 flex-col md:sticky md:top-20 md:max-h-(screen-14) md:overflow-y-auto'>
@@ -43,7 +42,6 @@ export default function DocsNavWrapper({setShowMenu, navigation, post }: IDocsNa
           </SearchButton>
           <nav className='flex-1 bg-white'>
             <ul>
-              // @ts-ignore
               {Object.values(navigation).map((navItem) => (
                 <DocsNav
                   key={navItem.item.title}
@@ -57,5 +55,5 @@ export default function DocsNavWrapper({setShowMenu, navigation, post }: IDocsNa
         </div>
       </div>
     </div>
-    )
+  );
 }
