@@ -24,7 +24,7 @@ export default function Table({ title, data, className, listClassName }: TablePr
       <div className='inline-flex w-full rounded bg-white p-5'>
         <h2 className='w-full text-base font-semibold'>{title}</h2>
       </div>
-      <div className='min-w-full inline-block overflow-y-scroll'>
+      <div className='min-w-full inline-block overflow-y-auto scrollbar-hide'>
         {data.length === 0 && (
           <div className='w-full p-5 text-base font-medium'>
             <p>There aren&apos;t any good first issues open for the given repository and area at the moment.</p>

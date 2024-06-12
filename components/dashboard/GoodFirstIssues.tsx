@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import type { Issue } from '@/types/components/dashboard/TableTypes';
 
@@ -32,6 +32,8 @@ export function filterIssues(issues: Issue[], filters: FiltersType): Issue[] {
     result = result.filter((issue) => issue.area === filters.selectedArea);
   }
 
+  console.log(result);
+
   return result;
 }
 
@@ -45,18 +47,21 @@ export default function GoodFirstIssues({ issues }: GoodFirstIssuesProps) {
   const [selectedRepo, setSelectedRepo] = useState('All');
   const [selectedArea, setSelectedArea] = useState('All');
 
-  // Get current issues
-
-  let filteredIssues = issues;
-
   const allIssues = issues;
 
-  if (selectedRepo !== 'All') {
-    filteredIssues = filteredIssues.filter((issue) => issue.repo === selectedRepo);
-  }
-  if (selectedArea !== 'All') {
-    filteredIssues = filteredIssues.filter((issue) => issue.area === selectedArea);
-  }
+
+  const filteredIssues = useMemo(() => {
+    let result = issues;
+
+    if (selectedRepo !== 'All') {
+      result = result.filter((issue) => issue.repo === selectedRepo);
+    }
+    if (selectedArea !== 'All') {
+      result = result.filter((issue) => issue.area === selectedArea);
+    }
+
+    return result;
+  }, [issues, selectedRepo, selectedArea]); 
 
   return (
     <Table
