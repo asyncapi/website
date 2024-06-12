@@ -1,6 +1,6 @@
 ---
 title: "Migration of AsyncAPI Website to Next.js v14 and TypeScript"
-date: 2024-06-07T12:00:00+05:30
+date: 2024-06-04T12:00:00+05:30
 type: Engineering
 tags:
   - Website

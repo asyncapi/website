@@ -4,9 +4,6 @@
     X-Frame-Options = "ALLOW-FROM https://www.youtube.com/"
     Access-Control-Allow-Origin = "*"
 
-[context.production.environment]
-  NODE_ENV = "development"
-
 [build]
   command = "npm run build"
   functions = "netlify/functions"
