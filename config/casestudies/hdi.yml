@@ -132,7 +132,7 @@ schemas: #It is useful and interesting to learn how teams handle messages schema
     It does not perform any other form of validation or processing of the data.
 asyncapi: #More specific details about AsyncAPI itself and how is it used.
   usecase: |
-    - The AsyncAPI file is used for documentation purposes by the platform team. 
+    - The AsyncAPI documents are used for documentation purposes by the platform team. 
       It provides a comprehensive overview of the asynchronous communication in our system, including the available topics and the structure of the messages.
     - The AsyncAPI document serves as a source for generating data transfer objects (DTOs) in Java, for example, by using the AsyncAPI Java generator. 
       These DTOs are used in the code to ensure type safety and to provide a clear understanding of the data structure.
