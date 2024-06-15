@@ -23,9 +23,9 @@ Let's take a moment to reminisce about the very beginning. The buzz started with
 
 This variety opened the doors to an overwhelming wave of applications - more than 90, in fact, from contributors of various skills and backgrounds, each one rich with potential. Given the wealth of talent and ideas, our biggest hurdle was our budget, which allowed us to fund positions for only 13 candidates. After much consideration and deliberation, we made the challenging but rewarding decision to move forward with 10 of the 21 proposals.
 
-| Project Ideas | Applications | Selected Candidates |
-|---------------|--------------|---------------------|
-|   21          | 90           | 13                  |
+| Proposed Project Ideas | Selected Project Ideas | Candidate Applications | Selected Candidates |
+|------------------------|------------------------|------------------------|---------------------|
+|   21                   |   10                   |  90                    |  13                 |
 
 ## Common Mistakes from Applicants
 
