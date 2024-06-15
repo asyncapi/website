@@ -31,9 +31,6 @@ export function filterIssues(issues: Issue[], filters: FiltersType): Issue[] {
   if (filters.selectedArea !== 'Area - All') {
     result = result.filter((issue) => issue.area === filters.selectedArea);
   }
-
-  
-
   return result;
 }
 
@@ -61,9 +58,6 @@ export default function GoodFirstIssues({ issues }: GoodFirstIssuesProps) {
     }
 
     setFilteredIssues(result);
-    
-
-
   },[issues, selectedRepo, selectedArea]);
 
 
