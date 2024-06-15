@@ -66,7 +66,7 @@ During the program, eight projects ranging from engineering to design and writin
 
 It is important to note that each project chosen for the program was on the receiving end of profound contributions during this phase. However, for brevity, we’ve highlighted only a selection.
 
-#### Mentees Success 
+#### Mentees Successes  
 
 While all the selected projects received outstanding contributions from the mentees, I'm pleased to share some of the successes experienced by the mentees who participated in this program after its completion.
 
@@ -85,7 +85,7 @@ Firstly, we'd like to thank everyone who made this program possible, and we are 
 
 ## How To Connect With Us
 
-- Join [our Slack workspace](https://www.asyncapi.com/slack-invite). Just make sure to follow our [Slack etiquette](https://github.com/asyncapi/.github/blob/master/slack-etiquette.md) and [the code of conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
+- Join [our Slack workspace](https://www.asyncapi.com/slack-invite). Be sure to follow our [Slack etiquette](https://github.com/asyncapi/.github/blob/master/slack-etiquette.md) and [the code of conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
 - Join the dedicated Mentorship channel `#mentorships` that we use for all mentorship discussions. All mentees and mentors are there.
 
 > Photo by <a href="https://unsplash.com/@spacex?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">SpaceX</a> on <a href="https://unsplash.com/photos/gray-spacecraft-taking-off-during-daytime-OHOU-5UVIYQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
