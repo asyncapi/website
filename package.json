@@ -22,7 +22,6 @@
     "generate:videos": "node scripts/build-newsroom-videos.js",
     "generate:tools": "node scripts/build-tools.js",
     "dev:storybook": "storybook dev -p 6006",
-    "chromatic": "chromatic --exit-zero-on-changes",
     "build:storybook": "storybook build"
   },
   "repository": {
@@ -130,7 +129,6 @@
     "@types/react-youtube-embed": "^1.0.4",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
-    "chromatic": "^11.5.0",
     "dedent": "^1.5.1",
     "eslint": "^8",
     "eslint-config-airbnb-typescript": "^17.1.0",
