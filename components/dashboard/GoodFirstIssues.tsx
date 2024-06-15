@@ -56,7 +56,6 @@ export default function GoodFirstIssues({ issues }: GoodFirstIssuesProps) {
     if (selectedArea !== 'All') {
       result = result.filter((issue) => issue.area === selectedArea);
     }
-
     setFilteredIssues(result);
   },[issues, selectedRepo, selectedArea]);
 
