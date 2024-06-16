@@ -14,7 +14,7 @@ describe('convertToJson', () => {
     expect(convertToJson(jsonObject)).toBe(jsonObject);
   });
 
-  test('should return null if input is invalid JSON and invalid YAML', () => {
+  test('should throw an error if input is invalid JSON and invalid YAML', () => {
     try {
       convertToJson(invalidString);
     } catch (error) {
