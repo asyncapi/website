@@ -1,11 +1,10 @@
-@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
 @import url(https://cdn.jsdelivr.net/npm/@docsearch/css@3);
 
-@import "swiper/css";
-@import "swiper/css/a11y";
-@import "swiper/css/navigation";
-@import "swiper/css/pagination";
-@import "swiper/css/scrollbar";
+@import 'swiper/css';
+@import 'swiper/css/a11y';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import 'swiper/css/scrollbar';
 
 @tailwind base;
 @tailwind components;
@@ -19,7 +18,7 @@ body {
   scroll-behavior: smooth;
 }
 
-li>p {
+li > p {
   display: inline;
 }
 
@@ -51,11 +50,11 @@ abbr[title] {
 
 @keyframes GradientAnimation {
   0% {
-    background-position: 0% 50%
+    background-position: 0% 50%;
   }
 
   100% {
-    background-position: 200% 50%
+    background-position: 200% 50%;
   }
 }
 
@@ -110,7 +109,8 @@ abbr[title] {
   padding: 0;
 }
 
-.DocSearch-Help > a:focus, .DocSearch-Help > a:hover {
+.DocSearch-Help > a:focus,
+.DocSearch-Help > a:hover {
   outline: none;
   text-decoration: underline;
 }
@@ -130,8 +130,8 @@ abbr[title] {
   }
 }
 
-@media (max-width: 767px){
-  .orbits{
+@media (max-width: 767px) {
+  .orbits {
     display: none;
   }
 }
@@ -338,6 +338,6 @@ abbr[title] {
   color: white;
 }
 
-.meeting-card:hover > div:nth-child(2) > p  {
+.meeting-card:hover > div:nth-child(2) > p {
   color: white;
 }
