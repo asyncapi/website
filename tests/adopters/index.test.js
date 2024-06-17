@@ -1,8 +1,8 @@
 const { resolve } = require('path');
-const writeJSON = require('../../scripts/utils/write-json');
+const writeJSON = require('../../scripts/utils/readAndWriteJson.js');
 const buildAdoptersList = require('../../scripts/adopters/index');
 
-jest.mock('../../scripts/utils/write-json');
+jest.mock('../../scripts/utils/readAndWriteJson.js');
 
 describe('buildAdoptersList', () => {
   beforeEach(() => {

@@ -17,6 +17,7 @@ describe('convertToJson', () => {
   test('should throw an error if input is invalid JSON and invalid YAML', () => {
     try {
       convertToJson(invalidString);
+      expect(convertToJson(invalidString)).toBeUndefined();
     } catch (error) {
       expect(error.message).toBe('Invalid content format');
     }

@@ -1,6 +1,6 @@
 const { promises: { mkdir } } = require('fs');
 const { resolve } = require('path');
-const writeJSON = require('../utils/write-json')
+const writeJSON = require('../utils/readAndWriteJson.js')
 
 module.exports = async function buildFinanceInfoList() {
     try {
@@ -21,7 +21,7 @@ module.exports = async function buildFinanceInfoList() {
         await writeJSON(expensesLinkPath, expensesLinkJsonPath);
 
     } catch (err) {
-        console.error(err);
-        throw err;
+        console.error('Error occurred while building finance info list:', err);
+        throw new Error(`Failed to build finance info list: ${err.message}`);
     }
 };
