@@ -5,9 +5,6 @@ const buildAdoptersList = require('../../scripts/adopters/index');
 jest.mock('../../scripts/utils/readAndWriteJson.js');
 
 describe('buildAdoptersList', () => {
-  beforeEach(() => {
-    jest.clearAllMocks();
-  });
 
   test('should call writeJSON with correct arguments', async () => {
     const expectedReadPath = 'config/adopters.yml';

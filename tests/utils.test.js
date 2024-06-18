@@ -19,7 +19,7 @@ describe('convertToJson', () => {
       convertToJson(invalidString);
       expect(convertToJson(invalidString)).toBeUndefined();
     } catch (error) {
-      expect(error.message).toBe('Invalid content format');
+      expect(error.message.includes("Invalid content format")).toBeTruthy();
     }
   });
 });

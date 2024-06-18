@@ -21,7 +21,6 @@ module.exports = async function buildFinanceInfoList() {
         await writeJSON(expensesLinkPath, expensesLinkJsonPath);
 
     } catch (err) {
-        console.error('Error occurred while building finance info list:', err);
-        throw new Error(`Failed to build finance info list: ${err.message}`);
+        throw new Error(err);
     }
 };
