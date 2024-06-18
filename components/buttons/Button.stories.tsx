@@ -90,6 +90,27 @@ export const SmallButton: Story = {
   }
 };
 
+export const SuccessButton: Story = {
+  args: {
+    text: 'Success',
+    className: 'bg-[#2db84c] hover:bg-[#36de5b]'
+  }
+};
+
+export const WarningButton: Story = {
+  args: {
+    text: 'Warning',
+    className: 'bg-[#fbc000] hover:bg-[#ffd400]'
+  }
+};
+
+export const ErrorButton: Story = {
+  args: {
+    text: 'Error',
+    className: 'bg-[#e25a71] hover:bg-[#ff6575]'
+  }
+};
+
 export const ButtonWithIconOnLeft: Story = {
   args: {
     text: 'AsyncAPI icon on left',
@@ -113,26 +134,5 @@ export const ButtonWithOnlyIcon: Story = {
     className: 'flex items-center justify-center',
     icon: 'AsyncAPI Icon',
     iconPosition: ButtonIconPosition.LEFT
-  }
-};
-
-export const SuccessButton: Story = {
-  args: {
-    text: 'Success',
-    className: 'bg-[#2db84c] hover:bg-[#36de5b]'
-  }
-};
-
-export const WarningButton: Story = {
-  args: {
-    text: 'Warning',
-    className: 'bg-[#fbc000] hover:bg-[#ffd400]'
-  }
-};
-
-export const ErrorButton: Story = {
-  args: {
-    text: 'Error',
-    className: 'bg-[#e25a71] hover:bg-[#ff6575]'
   }
 };
