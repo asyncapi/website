@@ -49,6 +49,7 @@ export default forwardRef(function BlogPostItem(
     default:
   }
 
+  
   return (
     <li className={`rounded-lg ${className}`} ref={ref} id={id}>
       <article className='h-full rounded-lg'>
@@ -93,26 +94,32 @@ export default forwardRef(function BlogPostItem(
                 <div className='ml-3'>
                   <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.xsSemibold} textColor='text-gray-900'>
                     <span className='hover:underline'>
-                      {post.authors
-                        .map((author, index) =>
-                          author.link ? (
-                            <a
-                              key={index}
-                              data-alt={author.name}
-                              href={author.link}
-                              onClick={(e) => {
-                                e.stopPropagation();
-                              }}
-                              target='_blank'
-                              rel='noreferrer'
-                            >
-                              {author.name}
-                            </a>
-                          ) : (
-                            author.name
-                          )
-                        )
-                        .reduce((prev, curr) => [prev, ' & ', curr].join(''))}
+                      {
+                         post.authors
+                         .map((author, index) =>
+                           author.link ? (
+                             <a
+                               key={index}
+                               data-alt={author.name}
+                               href={author.link}
+                               onClick={(e) => {
+                                 e.stopPropagation();
+                               }}
+                               target='_blank'
+                               rel='noreferrer'
+                             >
+                               {author.name}
+                             </a>
+                           ) : (
+                             author.name
+                           )
+                         )
+                         .reduce((prev, curr) => (
+                           <>
+                             {prev} & {curr}
+                           </>
+                         ))
+                      }
                     </span>
                   </Heading>
                   <Paragraph typeStyle={ParagraphTypeStyle.sm} className='flex'>
