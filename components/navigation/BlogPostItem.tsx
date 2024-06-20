@@ -49,7 +49,6 @@ export default forwardRef(function BlogPostItem(
     default:
   }
 
-  
   return (
     <li className={`rounded-lg ${className}`} ref={ref} id={id}>
       <article className='h-full rounded-lg'>
