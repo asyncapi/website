@@ -9,7 +9,7 @@ import Head from '../Head';
 
 const typeSchema = schema as unknown as JSONSchema7Object;
 
-interface IGenericLayoutProps {
+interface IGenericExplorerProps {
   title: string;
   description: string;
 }
@@ -17,7 +17,7 @@ interface IGenericLayoutProps {
 /**
  * @description This component renders the spec explorer.
  */
-function Visualizer({ title, description }: IGenericLayoutProps) {
+function Visualizer({ title, description }: IGenericExplorerProps) {
   return (
     <div>
       <Head title={title} description={description} />
