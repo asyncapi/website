@@ -82,6 +82,6 @@ Firstly, we'd like to thank everyone who made this program possible, and we are 
 ## How To Connect With Us
 
 - Join [our AsyncAPI Slack workspace](https://www.asyncapi.com/slack-invite). Be sure to follow our [Slack etiquette](https://github.com/asyncapi/.github/blob/master/slack-etiquette.md) and [our code of conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
-- Join the dedicated Mentorship channel `#mentorships` that we use for all mentorship discussions. All mentees and mentors are there.
+- Join the dedicated Mentorship channel `#09_mentorships` that we use for all mentorship discussions. All mentees and mentors are there.
 
 > Photo by <a href="https://unsplash.com/@spacex?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">SpaceX</a> on <a href="https://unsplash.com/photos/gray-spacecraft-taking-off-during-daytime-OHOU-5UVIYQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
