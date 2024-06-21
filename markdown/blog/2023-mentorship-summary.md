@@ -58,7 +58,7 @@ During the program, eight projects ranging from engineering to design and writin
 
 - **[Website UI Kit design/dev project](https://github.com/asyncapi/design-system/issues/4)**: Thanks to the success of this program, the AsyncAPI website got a design system, which is something we really wanted. Now whenever someone works on the website, there's a consistent way of doing things design-wise. 
 - **[Simulator Desktop Application](https://github.com/asyncapi/community/issues/691)**:  The AsyncAPI simulator, which started as a project in GSoC '21 and was just a command-line tool, now has a version that works on desktops. Now it's easier for people to use it right from their computers. 
-- **[Documenting how different protocols work with AsyncAPI](https://github.com/orgs/asyncapi/discussions/533)**: A group of four candidates embarked on a detailed project documenting the interaction between various protocols and AsyncAPI. Thanks to the program, they developed and published two series of tutorials covering how to use AsyncAPI with the [Kafka]([https://www.asyncapi.com/docs/tutorials/websocket](https://www.asyncapi.com/docs/tutorials/websocket)) and [Websocket]([https://www.asyncapi.com/docs/tutorials/websocket](https://www.asyncapi.com/docs/tutorials/websocket)) protocols.
+- **[Documenting how different protocols work with AsyncAPI](https://github.com/orgs/asyncapi/discussions/533)**: A group of four candidates embarked on a detailed project documenting the interaction between various protocols and AsyncAPI. Thanks to the program, they developed and published two series of tutorials covering how to use AsyncAPI with the [Kafka](/docs/tutorials/kafka) which has gotten 3559 views since it release, and [Websocket](/docs/tutorials/websocket) protocols which has gotten 2689 views.
 - **[Add support for translations](https://github.com/asyncapi/website/issues/267)**: Thanks to the implementation of the i18n, the AsyncAPI website now supports translation. It will be easier to add support for multiple languages on the website. 
 - **[Rewriting Nodejs template to react engine with support for AsyncAPI v3](https://github.com/asyncapi/nodejs-template/issues/133)**: We overhauled the template by the program's success, transitioning from Nunjucks to the React template engine. Additionally the template now supports new AsyncAPI v3. This makes the template much easier to extend in the future with new features.
 
@@ -68,9 +68,22 @@ During the program, eight projects ranging from engineering to design and writin
 
 While all the selected projects received outstanding contributions from the mentees, I'm pleased to share some of the successes experienced by the mentees who participated in this program after its completion.
 
-- **Path to Maintainership**: After the program, some mentees, including Maya, Ansh, Sambhav, and Rishi, became maintainers of certain projects due to the knowledge they gained during the mentorship program.
+- **Path to Maintainership**: After the program, the following mentees became maintainers of certain projects due to the knowledge they gained during the mentorship program.
+
+  - [AISHAT MUIBUDEEN](https://github.com/Mayaleeeee): Design maintainer in the [AsyncAPI Website](https://github.com/asyncapi/website)
+  - [Ansh Goyal](https://github.com/anshgoyalevil/): Committer in the [AsyncAPI Website](https://github.com/asyncapi/website)
+  - [Sambhav Gupta](https://github.com/sambhavgupta0705): Code triager maintainer in [AsyncAPI Website](https://github.com/asyncapi/website)
+  - [Kaushik Rishi](https://github.com/kaushik-rishi): Code maintainer in [Nodejs Template](https://github.com/asyncapi/nodejs-template)
+  - [Vaishnavi Nandakumar](https://github.com/VaishnaviNandakumar): Docs triager maintainer in [AsyncAPI Website](https://github.com/asyncapi/website)
+  - [Joy Almeida](https://github.com/J0SAL): Docs triager maintainer in [AsyncAPI Website](https://github.com/asyncapi/website)
+
 - **Active Contributors**: With the dedication and guidance provided by our mentorship program, many mentees have grown into active contributors, driving positive change and making significant impacts within our community. Their journeys from eager learners to influential leaders stand as a testament to the power of mentorship and the potential within each participant.
-- **Full Circle**: A few of these mentees have come full circle and now serve as mentors in this year’s Google Summer of Code (GSoC). Their transition from mentees to mentors is a testament to their exceptional growth and dedication. These individuals, once guided and nurtured through our program, are now giving back by sharing their knowledge and experience with the next generation of mentees. We are incredibly proud of their achievements and their commitment to fostering a culture of learning and mentorship.
+- **Full Circle**: A few of these mentees have come full circle and now serve as mentors in this year’s Google Summer of Code (GSoC). Their transition from mentees to mentors is a testament to their exceptional growth and dedication. These individuals, once guided and nurtured through our program, are now giving back by sharing their knowledge and experience with the next generation of mentees. We are incredibly proud of their achievements and their commitment to fostering a culture of learning and mentorship. Here's the the list of mentees who became mentors
+
+  - [AISHAT MUIBUDEEN](https://github.com/Mayaleeeee): GSoC mentor for the [AsyncAPI Website UI Kit Development](https://github.com/asyncapi/community/blob/master/mentorship/summerofcode/2024/asyncapi-gsoc-ideas-page.md#5-asyncapi-website-ui-kit-development)
+  - [Ansh Goyal](https://github.com/anshgoyalevil/): GSoC mentor for [Script Stability Enhancement for AsyncAPI Website](https://github.com/asyncapi/community/blob/master/mentorship/summerofcode/2024/asyncapi-gsoc-ideas-page.md#2-script-stability-enhancement-for-asyncapi-website)
+  - [Sambhav Gupta](https://github.com/anshgoyalevil/): GSoC co-mentor for [Script Stability Enhancement for AsyncAPI Website](https://github.com/asyncapi/community/blob/master/mentorship/summerofcode/2024/asyncapi-gsoc-ideas-page.md#2-script-stability-enhancement-for-asyncapi-website)
+
 - **Outside the community benefit**: Thanks to the invaluable support and guidance from the program, some mentees received job offers and sought-after internships.
 
 The achievements of these individuals highlight the transformative power of mentorship, demonstrating how dedicated support can unlock potential and pave the way for professional success. The program's successes are a testament to the hard work of our mentees and the unwavering commitment of our mentors to fostering growth and excellence.
