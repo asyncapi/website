@@ -28,5 +28,12 @@ export const Silversponsors: SponsorType[] = [
     altText: 'Aklivity',
     imageSrc: '/img/sponsors/aklivity_logo.png',
     imageClass: 'inline-block sm:h-9'
+  },
+  {
+    name: 'SmartBear',
+    website: 'https://smartbear.com',
+    altText: 'SmartBear',
+    imageSrc: '/img/sponsors/smartbear_logo.png',
+    imageClass: 'inline-block sm:h-9'
   }
 ];
