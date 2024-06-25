@@ -29,7 +29,7 @@ interface BlogPostItemProps {
  */
 export default forwardRef(function BlogPostItem(
   { post, className = '', id = '' }: BlogPostItemProps,
-  ref: Ref<HTMLLIElement>,
+  ref: Ref<HTMLLIElement>
 ) {
   let typeColors: [string, string] = ['bg-indigo-100', 'text-indigo-800'];
 
@@ -51,27 +51,24 @@ export default forwardRef(function BlogPostItem(
 
   return (
     <li className={`rounded-lg ${className}`} ref={ref} id={id}>
-      <article className="h-full rounded-lg">
+      <article className='h-full rounded-lg'>
         <Link href={post.slug}>
           <span
             className={
               'flex h-full cursor-pointer flex-col divide-y divide-gray-200 overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'
             }
-            data-testid="BlogPostItem-Link"
+            data-testid='BlogPostItem-Link'
           >
             <img
-              className="h-48 w-full object-cover"
+              className='h-48 w-full object-cover'
               src={post.cover}
-              alt=""
-              loading="lazy"
-              data-testid="BlogPostItem-Img"
+              alt=''
+              loading='lazy'
+              data-testid='BlogPostItem-Img'
             />
-            <div className="flex flex-1 flex-col justify-between bg-white p-6">
-              <div className="flex-1">
-                <Paragraph
-                  typeStyle={ParagraphTypeStyle.sm}
-                  textColor="text-indigo-500"
-                >
+            <div className='flex flex-1 flex-col justify-between bg-white p-6'>
+              <div className='flex-1'>
+                <Paragraph typeStyle={ParagraphTypeStyle.sm} textColor='text-indigo-500'>
                   <span
                     className={`inline-flex items-center rounded-full px-3 py-0.5 ${typeColors[0]} ${typeColors[1]}`}
                   >
@@ -79,38 +76,23 @@ export default forwardRef(function BlogPostItem(
                   </span>
                 </Paragraph>
                 <Link href={post.slug}>
-                  <span className="block">
-                    <Heading
-                      level={HeadingLevel.h5}
-                      typeStyle={HeadingTypeStyle.smSemibold}
-                      className="mt-2"
-                    >
+                  <span className='block'>
+                    <Heading level={HeadingLevel.h5} typeStyle={HeadingTypeStyle.smSemibold} className='mt-2'>
                       {post.title}
                     </Heading>
-                    <Paragraph
-                      typeStyle={ParagraphTypeStyle.sm}
-                      className="mt-3"
-                    >
-                      <TextTruncate
-                        element="span"
-                        line={4}
-                        text={post.excerpt}
-                      />
+                    <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-3'>
+                      <TextTruncate element='span' line={4} text={post.excerpt} />
                     </Paragraph>
                   </span>
                 </Link>
               </div>
-              <div className="mt-6 flex items-center">
-                <div className="relative shrink-0">
+              <div className='mt-6 flex items-center'>
+                <div className='relative shrink-0'>
                   <AuthorAvatars authors={post.authors} />
                 </div>
-                <div className="ml-3">
-                  <Heading
-                    level={HeadingLevel.h3}
-                    typeStyle={HeadingTypeStyle.xsSemibold}
-                    textColor="text-gray-900"
-                  >
-                    <span className="hover:underline">
+                <div className='ml-3'>
+                  <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.xsSemibold} textColor='text-gray-900'>
+                    <span className='hover:underline'>
                       {post.authors
                         .map((author, index) =>
                           author.link ? (
@@ -121,14 +103,14 @@ export default forwardRef(function BlogPostItem(
                               onClick={(e) => {
                                 e.stopPropagation();
                               }}
-                              target="_blank"
-                              rel="noreferrer"
+                              target='_blank'
+                              rel='noreferrer'
                             >
                               {author.name}
                             </a>
                           ) : (
                             author.name
-                          ),
+                          )
                         )
                         .reduce((prev, curr) => (
                           <>
@@ -137,11 +119,9 @@ export default forwardRef(function BlogPostItem(
                         ))}
                     </span>
                   </Heading>
-                  <Paragraph typeStyle={ParagraphTypeStyle.sm} className="flex">
-                    <time dateTime={post.date}>
-                      {moment(post.date).format('MMMM D, YYYY')}
-                    </time>
-                    <span className="mx-1">&middot;</span>
+                  <Paragraph typeStyle={ParagraphTypeStyle.sm} className='flex'>
+                    <time dateTime={post.date}>{moment(post.date).format('MMMM D, YYYY')}</time>
+                    <span className='mx-1'>&middot;</span>
                     <span>{post.readingTime} min read</span>
                   </Paragraph>
                 </div>
