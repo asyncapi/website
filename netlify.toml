@@ -7,7 +7,6 @@
 [build]
   command = "npm run build"
   functions = "netlify/functions"
-  publish = "out"
 
 [build.environment]
   NPM_FLAGS = "--production=false"
