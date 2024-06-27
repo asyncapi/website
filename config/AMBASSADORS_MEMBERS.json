@@ -548,5 +548,36 @@
         "link": "https://www.youtube.com/watch?v=6Igp4DhK_hE"
       }
     ]
+  },
+  {
+    "name": "Raphael De Lio",
+    "github": "raphaeldelio",
+    "twitter": "raphaeldelio",
+    "linkedin": "raphaeldelio",
+    "country": "🇧🇷",
+    "bio": "Raphael De Lio is a passionate software engineer who loves to think about solutions and ways to improve anything he touches. He was born in Brazil, lived in Portugal for five years, and now works as a consultant in the Netherlands. In his quest for knowledge, Raphael has always valued learning and sharing insights with others. This pursuit not only led him to Xebia, a place where he found a community of engineers who share his enthusiasm for technology and continuous improvement but also to becoming the co-organizer of the Amsterdam Kotlin MeetUp, where he has been able to enable other speakers to share their knowledge as well.",
+    "company": "Xebia",
+    "title": "Software Consultant at Xebia",
+    "img": "https://avatars.githubusercontent.com/u/25641721?v=4",
+    "contributions": [
+      {
+        "type": "article",
+        "title": "AsyncAPI — A standard specification for documenting Event-Driven Applications",
+        "date": {
+          "year": 2024,
+          "month": "February"
+        },
+        "link": "https://medium.com/@raphaeldelio/asyncapi-a-standard-for-documenting-event-driven-applications-8ff657119036"
+      },
+      {
+        "type": "presentation",
+        "title": "AsyncAPI & Springwolf - Automated documentation (and more)",
+        "date": {
+          "year": 2024,
+          "month": "May"
+        },
+        "link": "https://www.youtube.com/watch?v=DylvTW_ia4Y"
+      }
+    ]
   }
 ]
