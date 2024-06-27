@@ -17,4 +17,6 @@ async function start() {
   await buildFinanceInfoList();
 }
 
+module.exports = start;
+
 start();
