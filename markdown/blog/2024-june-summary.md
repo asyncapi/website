@@ -29,7 +29,7 @@ We are fast approaching the [Call for Speakers for AACoT'24 London deadline](htt
 As we plan for the Online Edition in October, we intend to host the conference on Wednesday, 30th October. Please share your thoughts or vote in the [AsyncAPI Online Conference discussion](https://github.com/orgs/asyncapi/discussions/1297) if you agree or would like to propose a new date.
 
 ## AsyncAPI Mentorship Program
-We've had a few people asking if we'll be hosting our annual AsyncAPI Mentorship Program this year, and the answer is yes. We're planning to start the program around September, as we're currently focusing on mentorships under Google Summer of Code. While this may seem far off, it will allow us time to plan properly, especially as we aim to include more Maintainership projects in the program.
+We've had a few people asking if we'll be hosting our annual AsyncAPI Mentorship Program this year, and the answer is yes. We're planning to start the program around September, as we're currently focusing on mentorships under Google Summer of Code. Although this may seem far off, it will allow us time to plan properly, especially as we aim to include more Maintainership projects in the program. As we are in preparation for this, you can read about how the previous [AsyncAPI Mentorship Program in 2023 went](https://www.asyncapi.com/blog/2023-mentorship-summary).
 
 Please keep an eye on our Slack channel for further announcements.
 
