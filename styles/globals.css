@@ -341,3 +341,13 @@ abbr[title] {
 .meeting-card:hover > div:nth-child(2) > p  {
   color: white;
 }
+
+.explorer-menu-wrapper > div > div{
+  border: 1px solid rgb(228, 228, 228);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.explorer-menu-wrapper > div > div > div > button {
+  margin-top: 0px;
+}

@@ -99,11 +99,10 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
         if(details.slug.includes('/reference/specification/') && !details.title) {
           const fileBaseName = basename(data.slug)  // ex. v2.0.0 | v2.1.0-next-spec.1
           const fileName = fileBaseName.split('-')[0] // v2.0.0 | v2.1.0
-
           details.weight = specWeight--
 
-          if(fileName.startsWith('v')) {
-            details.title = capitalize(fileName.slice(1))
+          if (fileName.startsWith('v')) {
+             details.title = capitalize(fileName.slice(1)) 
           } else {
             details.title = capitalize(fileName)
           }
@@ -117,9 +116,10 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
             // this need to be separate because the `-` in "Pre-release" will get removed by `capitalize()` function
             details.title += " (Pre-release)"
           }
+          if (fileBaseName.includes('explorer')) {
+            details.title += " - Explorer"
+          }
         }
-
-
 
         // To create a list of available ReleaseNotes list, which will be used to add details.releaseNoteLink attribute.
         if(file.startsWith("release-notes") && dir[1] === "/blog"){

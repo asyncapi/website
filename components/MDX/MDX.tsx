@@ -27,6 +27,7 @@ import Button from '../buttons/Button';
 import ChapterSuggestions from '../buttons/ChapterSuggestions';
 import Caption from '../Caption';
 import DocsCards from '../docs/DocsCards';
+import Visualizer from '../docs/Visualizer';
 import CodeBlock from '../editor/CodeBlock';
 import Figure from '../Figure';
 import GeneratorInstallation from '../GeneratorInstallation';
@@ -324,7 +325,8 @@ export function getMDXComponents() {
     TwitterDMButton,
     TwitterVideoEmbed,
     TwitterOnAirButton,
-    Profiles
+    Profiles,
+    Visualizer
   };
 }
 

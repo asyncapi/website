@@ -10,14 +10,14 @@ import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import editOptions from '../../config/edit-page-config.json';
 import DocsContext from '../../context/DocsContext';
 import { getAllPosts } from '../../utils/api';
-import { DOCS_INDEX_NAME, SearchButton } from '../AlgoliaSearch';
+import Button from '../buttons/Button';
 import DocsButton from '../buttons/DocsButton';
 import Feedback from '../Feedback';
 import Head from '../Head';
 import ArrowRight from '../icons/ArrowRight';
-import IconLoupe from '../icons/Loupe';
+import IconMenuCenter from '../icons/CenterMenu';
 import DocsMobileMenu from '../navigation/DocsMobileMenu';
-import DocsNav from '../navigation/DocsNav';
+import DocsNavWrapper from '../navigation/DocsNavWrapper';
 import TOC from '../TOC';
 import Heading from '../typography/Heading';
 
@@ -76,6 +76,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
   const posts = getAllPosts();
   const router = useRouter();
   const [showMenu, setShowMenu] = useState(false);
+  const [explorerDocMenu, setExplorerDocMenu] = useState(false);
 
   if (!post) return <ErrorPage statusCode={404} />;
   if (post.title === undefined) throw new Error('Post title is required');
@@ -86,50 +87,38 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
 
   const navigation = posts.docsTree;
 
+  const sidebar = <DocsNavWrapper setShowMenu={setShowMenu} navigation={navigation} post={post} />;
+
+  if (router.pathname.includes('v3.0.0-explorer')) {
+    return (
+      <div>
+        <div className='absolute left-2 top-24 z-10'>
+          <Button
+            className='inline-flex h-full justify-center rounded-md border border-gray-300 bg-white py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:border-gray-500 focus:outline-none focus:ring-0 focus:ring-black'
+            text='Menu'
+            icon={<IconMenuCenter className='size-6 fill-gray-700' />}
+            onClick={() => {
+              if (explorerDocMenu) {
+                setExplorerDocMenu(false);
+              } else {
+                setExplorerDocMenu(true);
+              }
+            }}
+          />
+          {explorerDocMenu && <div className='explorer-menu-wrapper mt-2'>{sidebar}</div>}
+        </div>
+        <article className=''>{children}</article>
+      </div>
+    );
+  }
+
   return (
     <DocsContext.Provider value={{ post, navItems }}>
       <div className='w-full bg-white px-4 sm:px-6 lg:px-8 xl:mx-auto xl:max-w-7xl'>
         {showMenu && <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />}
         <div className='flex flex-row' id='main-content'>
           {/* <!-- Static sidebar for desktop --> */}
-          <div className='hidden lg:flex lg:shrink-0' data-testid='DocsLayout-main'>
-            <div className='flex w-72 flex-col border-r border-gray-200 bg-white py-2'>
-              <div className='flex flex-1 flex-col md:sticky md:top-20 md:max-h-(screen-14) md:overflow-y-auto'>
-                <SearchButton
-                  className='mb-4 mr-2 mt-8 flex items-center space-x-3 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-left text-sm text-gray-700 shadow-sm transition-all duration-500 ease-in-out hover:border-secondary-500 hover:bg-secondary-100 hover:text-secondary-500'
-                  indexName={DOCS_INDEX_NAME}
-                >
-                  {({ actionKey }) => (
-                    <>
-                      <IconLoupe />
-                      <span className='flex-auto'>Search docs...</span>
-                      {actionKey && (
-                        <kbd className='font-sans font-semibold'>
-                          <abbr title={actionKey.key} className='no-underline'>
-                            {actionKey.shortKey}
-                          </abbr>{' '}
-                          K
-                        </kbd>
-                      )}
-                    </>
-                  )}
-                </SearchButton>
-
-                <nav className='flex-1 bg-white'>
-                  <ul>
-                    {Object.values(navigation).map((navItem) => (
-                      <DocsNav
-                        key={navItem.item.title}
-                        item={navItem}
-                        active={post.slug}
-                        onClick={() => setShowMenu(false)}
-                      />
-                    ))}
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </div>
+          {sidebar}
           <div className='flex w-0 max-w-full flex-1 flex-col lg:max-w-(screen-16)'>
             <main className='relative z-0 pb-6 pt-2 focus:outline-none md:py-6' tabIndex={0}>
               {!showMenu && (

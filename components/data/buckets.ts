@@ -1,3 +1,4 @@
+import IconExplorer from '../icons/Explorer';
 import IconGettingStarted from '../icons/GettingStarted';
 import IconGuide from '../icons/Guide';
 import IconMigration from '../icons/Migration';
@@ -87,6 +88,15 @@ export const buckets: Bucket[] = [
     borderClassName: 'border-orange-200',
     href: '/docs/community',
     icon: IconUsers
+  },
+  {
+    name: 'Explorer',
+    title: 'Specification Explorer',
+    description: 'Simplifying our Specification JSON Schema like a pro.',
+    link: '/docs/reference/specification/v3.0.0-Explorer',
+    className: 'bg-teal-200',
+    borderClassName: 'border-orange-200',
+    icon: IconExplorer
   }
 ].map((bucket) => {
   return {
