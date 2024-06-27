@@ -54,13 +54,13 @@ It's important to mention that we evaluated both the mentees and the mentors dur
 
 #### Projects success
 
-During the program, eight projects ranging from engineering to design and writing got some pretty great help. Let's shine a light on some of these projects:
+During the program, eight projects ranging from engineering to design and writing got some great help. Let's shine a light on some of these projects:
 
 - **[Website UI Kit design/dev project](https://github.com/asyncapi/design-system/issues/4)**: Thanks to the success of this program, the AsyncAPI website got a design system, which is something we really wanted. Now whenever someone works on the website, there's a consistent way of doing things design-wise. 
 - **[Simulator Desktop Application](https://github.com/asyncapi/community/issues/691)**:  The AsyncAPI simulator, which started as a project in GSoC '21 and was just a command-line tool, now has a version that works on desktops. Now it's easier for people to use it right from their computers. 
-- **[Documenting how different protocols work with AsyncAPI](https://github.com/orgs/asyncapi/discussions/533)**: A group of four candidates embarked on a detailed project documenting the interaction between various protocols and AsyncAPI. Thanks to the program, they developed and published two series of tutorials covering how to use AsyncAPI with the [Kafka](/docs/tutorials/kafka) which has gotten 3559 views since it release, and [Websocket](/docs/tutorials/websocket) protocols which has gotten 2689 views.
+- **[Documenting how different protocols work with AsyncAPI](https://github.com/orgs/asyncapi/discussions/533)**: A group of four candidates embarked on a detailed project documenting the interaction between various protocols and AsyncAPI. Thanks to the program, they developed and published two series of tutorials covering how to use AsyncAPI with the [Kafka](/docs/tutorials/kafka), which has gotten 3559 views since its release, and [Websocket](/docs/tutorials/websocket) protocols which has gotten 2689 views.
 - **[Add support for translations](https://github.com/asyncapi/website/issues/267)**: Thanks to the implementation of the i18n, the AsyncAPI website now supports translation. It will be easier to add support for multiple languages on the website. 
-- **[Rewriting Nodejs template to react engine with support for AsyncAPI v3](https://github.com/asyncapi/nodejs-template/issues/133)**: We overhauled the template by the program's success, transitioning from Nunjucks to the React template engine. Additionally the template now supports new AsyncAPI v3. This makes the template much easier to extend in the future with new features.
+- **[Rewriting Nodejs template to react engine with support for AsyncAPI v3](https://github.com/asyncapi/nodejs-template/issues/133)**: We overhauled the template by the program's success, transitioning from Nunjucks to the React template engine. Additionally, the template now supports the new AsyncAPI v3; this makes the template much easier to extend in the future with new features.
 
 > Note: Each project chosen for the program was on the receiving end of profound contributions during this phase. For brevity, we’ve highlighted only a selection.
 
@@ -71,14 +71,14 @@ While all the selected projects received outstanding contributions from the ment
 - **Path to Maintainership**: After the program, the following mentees became maintainers of certain projects due to the knowledge they gained during the mentorship program.
 
   - [AISHAT MUIBUDEEN](https://github.com/Mayaleeeee): Design maintainer in the [AsyncAPI Website](https://github.com/asyncapi/website)
-  - [Ansh Goyal](https://github.com/anshgoyalevil/): Committer in the [AsyncAPI Website](https://github.com/asyncapi/website)
+  - [Ansh Goyal](https://githunshgoyalevi,l/): Committer in the [AsyncAPI Website](https://github.com/asyncapi/website)
   - [Sambhav Gupta](https://github.com/sambhavgupta0705): Code triager maintainer in [AsyncAPI Website](https://github.com/asyncapi/website)
-  - [Kaushik Rishi](https://github.com/kaushik-rishi): Code maintainer in [Nodejs Template](https://github.com/asyncapi/nodejs-template)
+  - [Kaushik Rishi](https://github.com/kaushik-rishi): Code maintainer in [Nodejs Template](https://github.com,/asyncapi/nodejs-template)
   - [Vaishnavi Nandakumar](https://github.com/VaishnaviNandakumar): Docs triager maintainer in [AsyncAPI Website](https://github.com/asyncapi/website)
   - [Joy Almeida](https://github.com/J0SAL): Docs triager maintainer in [AsyncAPI Website](https://github.com/asyncapi/website)
 
 - **Active Contributors**: With the dedication and guidance provided by our mentorship program, many mentees have grown into active contributors, driving positive change and making significant impacts within our community. Their journeys from eager learners to influential leaders stand as a testament to the power of mentorship and the potential within each participant.
-- **Full Circle**: A few of these mentees have come full circle and now serve as mentors in this year’s Google Summer of Code (GSoC). Their transition from mentees to mentors is a testament to their exceptional growth and dedication. These individuals, once guided and nurtured through our program, are now giving back by sharing their knowledge and experience with the next generation of mentees. We are incredibly proud of their achievements and their commitment to fostering a culture of learning and mentorship. Here's the the list of mentees who became mentors
+- **Full Circle**: A few of these mentees have come full circle and now serve as mentors in this year’s Google Summer of Code (GSoC). Their transition from mentees to mentors is a testament to their exceptional growth and dedication. Once guided and nurtured through our program, these individuals are now giving back by sharing their knowledge and experience with the next generation of mentees. We are incredibly proud of their achievements and commitment to fostering a culture of learning and mentorship. Here's the list of mentees who became mentors:
 
   - [AISHAT MUIBUDEEN](https://github.com/Mayaleeeee): GSoC mentor for the [AsyncAPI Website UI Kit Development](https://github.com/asyncapi/community/blob/master/mentorship/summerofcode/2024/asyncapi-gsoc-ideas-page.md#5-asyncapi-website-ui-kit-development)
   - [Ansh Goyal](https://github.com/anshgoyalevil/): GSoC mentor for [Script Stability Enhancement for AsyncAPI Website](https://github.com/asyncapi/community/blob/master/mentorship/summerofcode/2024/asyncapi-gsoc-ideas-page.md#2-script-stability-enhancement-for-asyncapi-website)
@@ -90,11 +90,11 @@ The achievements of these individuals highlight the transformative power of ment
 
 ## What's Next? 
 
-Firstly, we'd like to thank everyone who made this program possible, and we are looking forward to the next edition, which will commence on the 20th of June 2024. If you are interested in participating in the next edition as a sponsor or contributor, please contact us.
+Firstly, we'd like to thank everyone who made this program possible, and we are looking forward to the next edition, which will commence on the 20th of June 2024. If you are interested in participating in the next edition as a sponsor or contributor, please get in touch with us.
 
 ## How To Connect With Us
 
 - Join [our AsyncAPI Slack workspace](https://www.asyncapi.com/slack-invite). Be sure to follow our [Slack etiquette](https://github.com/asyncapi/.github/blob/master/slack-etiquette.md) and [our code of conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
-- Join the dedicated Mentorship channel `#09_mentorships` that we use for all mentorship discussions. All mentees and mentors are there.
+- Join the dedicated Mentorship channel `#09_mentorships` for all mentorship discussions. All mentees and mentors are there.
 
 > Photo by <a href="https://unsplash.com/@spacex?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">SpaceX</a> on <a href="https://unsplash.com/photos/gray-spacecraft-taking-off-during-daytime-OHOU-5UVIYQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
