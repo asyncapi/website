@@ -1,6 +1,6 @@
 ---
 title: "AsyncAPI Mentorship Program Summary - 2023"
-date: 2024-06-14T06:00:00+01:00
+date: 2024-06-28T06:00:00+01:00
 type: Community
 tags:
   - Mentorship 
