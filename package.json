@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npm run build-scripts && next -p 3000",
     "build": "npm run build-scripts && next build",
-    "test":"",
+    "test": "jest --passWithNoTests",
     "build:pages": "node scripts/build-pages.js && npm run format:mdx",
     "build:posts": "node scripts/index.js",
     "build-scripts": "npm run build:pages && npm run lint:mdx && npm run build:posts",
