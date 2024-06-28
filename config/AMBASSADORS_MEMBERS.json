@@ -579,5 +579,36 @@
         "link": "https://www.youtube.com/watch?v=DylvTW_ia4Y"
       }
     ]
+  },
+  {
+    "name": "Hari Krishnan",
+    "github": "harikrishnan83",
+    "twitter": "harikrishnan83",
+    "linkedin": "harikrishnan83",
+    "country": "🇮🇳",
+    "bio": "Co-creator of Specmatic and Perfiz. I also advise organizations, both large and small, on their transformation journey. Apart from bringing ideas to life as working software products, I coach developers, project managers, product owners, and engineering leaders. I have spoken at several conferences, including AACoT 2023, API Specification Conference (#ASC2022), API World, SeleniumConf, Agile2021, Agile India, TestingUY 2021, SREConf, PyCon Singapore, RubyConf India. My areas of interest include distributed systems, concurrency, high-performance application architecture, coaching, and training.",
+    "company": "Specmatic and Polarizer Technologies",
+    "title": "Co-founder and CTO at Specmatic, Founder, and CEO at Polarizer Technologies",
+    "img": "https://raw.githubusercontent.com/harikrishnan83/harikrishnan83/master/HariKrishnan-profile.jpg",
+    "contributions": [
+      {
+        "type": "talk",
+        "title": "Kafka and JMS Mocking with AsyncAPI",
+        "date": {
+          "year": 2023,
+          "month": "November"
+        },
+        "link": "https://www.youtube.com/watch?v=9yRf75p_kTU"
+      },
+      {
+        "type": "talk",
+        "title": "Unshackling Your System Under Test: Shift-Left Testing Through Dependency Isolation (Kafka Mocks with AsyncAPI specification)",
+        "date": {
+          "year": 2024,
+          "month": "June"
+        },
+        "link": "https://confengine.com/conferences/selenium-conf-2024/proposal/20021/unshackling-your-system-under-test-shift-left-testing-through-dependency-isolation"
+      }
+    ]
   }
 ]
