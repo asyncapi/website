@@ -18,5 +18,9 @@
   {
     "value": "reference/extensions/",
     "href": "https://github.com/asyncapi/extensions-catalog/tree/master/extensions"
+  },
+  {
+    "value": "reference/bindings/",
+    "href": "https://github.com/asyncapi/bindings/tree/master/"
   }
 ]
