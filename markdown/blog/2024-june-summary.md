@@ -45,6 +45,24 @@ In recent weeks, [Aishat Muibudeen](https://github.com/Mayaleeeee) (Maya) has be
 ### Marketing Working Group
 We have a new Marketing Working Group; the group aims to use marketing strategies to accomplish two key objectives: promoting AsyncAPI adoption and showcasing community achievements. It envisions close collaboration between the AsyncAPI community and sponsors by strategically demonstrating AsyncAPI capabilities and celebrating community successes. If you're interested in participating, please join the [Marketing WG meeting on Tuesday, 2nd July, at 14:00 UTC](https://github.com/asyncapi/community/issues/1292).
 
+## TSC x Ambassadors
+We are excited to welcome two new additions to our Ambassadors. Please help us welcome [Raphael De Lio](https://www.linkedin.com/in/raphaeldelio), Software Consultant at Xebia, and [Hari Krishnan](https://www.linkedin.com/in/harikrishnan83), Co-Founder and CTO at Specmatic.
+
+<Profiles profiles={[
+  {
+    name: 'Raphael De Lio',
+    avatar: 'https://avatars.githubusercontent.com/u/25641721?v=4"',
+    link: 'https://github.com/raphaeldelio'
+  },
+  {
+    name: 'Hari Krishnan',
+    avatar: 'https://raw.githubusercontent.com/harikrishnan83/harikrishnan83/master/HariKrishnan-profile.jpg',
+    link: 'https://github.com/harikrishnan83'
+  }
+]} />
+
+If you are interested in joining the program or want to know more about our current ambassadors, please visit our [AsyncAPI Ambassadors Program Page](https://www.asyncapi.com/community/ambassadors).
+
 ## Coming in July
 
 - **AACoT'24 London CFP Deadline** - [The Call for Speakers for AACoT'24 London Edition](https://conference.asyncapi.com/venue/london) will close on the 12th of July. Please submit your proposal soon and prepare to share your knowledge with the community.
