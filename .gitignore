@@ -20,3 +20,4 @@ cypress/videos
 *.mdx
 *storybook.log
 /storybook-static/
+coverage
