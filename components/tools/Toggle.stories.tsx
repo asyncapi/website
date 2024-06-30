@@ -13,17 +13,29 @@ export default meta;
 
 type Story = StoryObj<typeof Toggle>;
 
-export const DefaultToggle: Story = (args: ToggleProps) => {
-  const [{ checked }, updateArgs] = useArgs();
+export const DefaultToggle: Story = {
+  args: {
+    checked: true,
+    label: 'Toggle me!'
+  },
 
-  const setChecked = () => {
-    updateArgs({ checked: !checked });
-  };
+  render: (args: ToggleProps) => {
+    const [{ checked }, updateArgs] = useArgs();
 
-  return <Toggle {...args} checked={checked} setChecked={setChecked} />;
+    const setChecked = () => {
+      updateArgs({ checked: !checked });
+    };
+
+    return <Toggle {...args} checked={checked} setChecked={setChecked} />;
+  }
 };
 
-DefaultToggle.args = {
-  checked: true,
-  label: 'Toggle me!'
+export const ColorfulToggle: Story = {
+  ...DefaultToggle,
+
+  args: {
+    ...DefaultToggle.args,
+    bgColor: 'bg-gray-200',
+    checkedStateBgColor: 'bg-primary-500'
+  }
 };

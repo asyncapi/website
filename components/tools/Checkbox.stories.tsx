@@ -13,22 +13,37 @@ export default meta;
 
 type Story = StoryObj<typeof Checkbox>;
 
-export const DefaultCheckbox: Story = (args: CheckboxProps) => {
-  const [{ checked }, updateArgs] = useArgs();
+export const DefaultCheckbox: Story = {
+  args: {
+    name: 'Check me!',
+    checked: true,
+    bgColor: 'bg-white',
+    textColor: 'text-secondary-600',
+    borderColor: 'border-secondary-600',
+    checkedStateBgColor: 'bg-secondary-600',
+    checkedStateTextColor: 'text-white'
+  },
 
-  const handleClickOption = () => {
-    updateArgs({ checked: !checked });
-  };
+  render: (args: CheckboxProps) => {
+    const [{ checked }, updateArgs] = useArgs();
 
-  return <Checkbox {...args} checked={checked} handleClickOption={handleClickOption} />;
+    const handleClickOption = () => {
+      updateArgs({ checked: !checked });
+    };
+
+    return <Checkbox {...args} checked={checked} handleClickOption={handleClickOption} />;
+  }
 };
 
-DefaultCheckbox.args = {
-  name: 'Check me!',
-  checked: true,
-  bgColor: 'bg-white',
-  textColor: 'text-secondary-600',
-  borderColor: 'border-secondary-600',
-  checkedStateBgColor: 'bg-secondary-600',
-  checkedStateTextColor: 'text-white'
+export const ColorfulCheckbox: Story = {
+  ...DefaultCheckbox,
+
+  args: {
+    ...DefaultCheckbox.args,
+    bgColor: 'bg-gray-200',
+    textColor: 'text-primary-500',
+    borderColor: 'border-primary-500',
+    checkedStateBgColor: 'bg-primary-500',
+    checkedStateTextColor: 'text-white'
+  }
 };
