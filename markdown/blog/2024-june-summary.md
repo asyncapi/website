@@ -22,6 +22,16 @@ We have some fantastic news to share: we are pleased to welcome [IBM](https://ww
 
 If you are interested in supporting the AsyncAPI Initiative or would like to know how we spend our donations, please take a look at our [AsyncAPI Financial Summary](https://www.asyncapi.com/finance) for detailed breakdowns.
 
+## Postman Partnership Changes
+In recent developments, several dedicated professionals from Postman who worked full-time on the AsyncAPI Initiative have unfortunately been affected by layoffs, and this marks the end of a dedicated partnership with [Postman that lasted over three years](https://github.com/blog/asyncapi-partners-with-postman).
+
+Despite the recent changes, it's important to note that Postman's dedication to AsyncAPI remains strong. The decision to let go of these talented individuals does not diminish the value or importance of AsyncAPI. Postman continues to acknowledge and support the significance of AsyncAPI in the industry and has significantly increased its financial backing for AsyncAPI.
+
+Postman has elevated its support to the Platinum level with an additional contribution of $12,000. Moreover, Postman will also become a Platinum sponsor for the AsyncAPI Conf on Tour, offering a $5,000 contribution. Additionally, they will allocate an extra $10,000 to further initiatives within the AsyncAPI ecosystem.
+
+## Opportunities for Skilled Professionals
+For those professionals impacted by the recent layoffs, we urge the AsyncAPI community to come forward and help them in their job search. A list containing all names, profile descriptions, and contact information is available. We encourage the wider [community to share this information and assist these professionals in finding new opportunities](https://docs.google.com/spreadsheets/d/1LSL2Tt72h29S8UoxCHeBEuwWGhbnpJPEI6Psa5dLqkQ).
+
 ## AsyncAPI Conf on Tour
 We are fast approaching the [Call for Speakers for AACoT'24 London deadline](https://conference.asyncapi.com/venue/london). We encourage anyone to submit their proposals and share your expertise with the community.
 
@@ -43,7 +53,7 @@ We want to express our gratitude to [Viacheslav Turovskyi](https://github.com/ae
 In recent weeks, [Aishat Muibudeen](https://github.com/Mayaleeeee) (Maya) has been conducting a UX audit on the AsyncAPI website and has identified user experience issues. In the audit, she proposed redesigning the website to address these issues and improve the overall experience. Please read the [Proposal to Redesign the AsyncAPI Website](https://github.com/asyncapi/website/issues/3018) for more details.
 
 ### Marketing Working Group
-We have a new Marketing Working Group; the group aims to use marketing strategies to accomplish two key objectives: promoting AsyncAPI adoption and showcasing community achievements. It envisions close collaboration between the AsyncAPI community and sponsors by strategically demonstrating AsyncAPI capabilities and celebrating community successes. If you're interested in participating, please join the [Marketing WG meeting on Tuesday, 2nd July, at 14:00 UTC](https://github.com/asyncapi/community/issues/1292).
+We have a new Marketing Working Group; the group aims to use marketing strategies to accomplish two key objectives: promoting AsyncAPI adoption and showcasing community achievements. It envisions close collaboration between the AsyncAPI community and sponsors by strategically demonstrating AsyncAPI capabilities and celebrating community successes. If you're interested in participating, please join the [Marketing WG channel on Slack](https://asyncapi.slack.com/archives/C077R6HCDB3).
 
 ## TSC x Ambassadors
 We are excited to welcome two new additions to our Ambassadors. Please help us welcome [Raphael De Lio](https://www.linkedin.com/in/raphaeldelio), Software Consultant at Xebia, and [Hari Krishnan](https://www.linkedin.com/in/harikrishnan83), Co-Founder and CTO at Specmatic.
