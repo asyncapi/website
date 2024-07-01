@@ -23,14 +23,14 @@ We have some fantastic news to share: we are pleased to welcome [IBM](https://ww
 If you are interested in supporting the AsyncAPI Initiative or would like to know how we spend our donations, please take a look at our [AsyncAPI Financial Summary](https://www.asyncapi.com/finance) for detailed breakdowns.
 
 ## Postman Partnership Changes
-In recent developments, several dedicated professionals from Postman who worked full-time on the AsyncAPI Initiative have unfortunately been affected by layoffs, and this marks the end of a dedicated partnership with [Postman that lasted over three years](https://www.asyncapi.com/blog/asyncapi-partners-with-postman).
+In recent developments, several dedicated professionals from Postman who worked full-time on the AsyncAPI Initiative have unfortunately been affected by structural changes marking the end of a devoted partnership with [Postman that lasted over three years](https://www.asyncapi.com/blog/asyncapi-partners-with-postman).
 
 Despite the recent changes, it's important to note that Postman's dedication to AsyncAPI remains strong. The decision to let go of these talented individuals does not diminish the value or importance of AsyncAPI. Postman continues to acknowledge and support the significance of AsyncAPI in the industry and has significantly increased its financial backing for AsyncAPI.
 
 Postman has elevated its support to the Platinum level with an additional contribution of $12,000. Moreover, Postman will also become a Platinum sponsor for the AsyncAPI Conf on Tour, offering a $5,000 contribution. Additionally, they will allocate an extra $10,000 to further initiatives within the AsyncAPI ecosystem.
 
 ## Opportunities for Skilled Professionals
-For those professionals impacted by the recent layoffs, we urge the AsyncAPI community to come forward and help them in their job search. A list containing all names, profile descriptions, and contact information is available. We encourage the wider community to [share this information and assist these professionals in finding new opportunities](https://docs.google.com/spreadsheets/d/1LSL2Tt72h29S8UoxCHeBEuwWGhbnpJPEI6Psa5dLqkQ).
+For those professionals impacted by the changes, we urge the AsyncAPI community to come forward and help them in their job search. A list containing all names, profile descriptions, and contact information is available. We encourage the wider community to [share this information and assist these professionals in finding new opportunities](https://docs.google.com/spreadsheets/d/1LSL2Tt72h29S8UoxCHeBEuwWGhbnpJPEI6Psa5dLqkQ).
 
 ## AsyncAPI Conf on Tour
 We are fast approaching the [Call for Speakers for AACoT'24 London deadline](https://conference.asyncapi.com/venue/london). We encourage anyone to submit their proposals and share your expertise with the community.
