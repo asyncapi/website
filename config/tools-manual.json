@@ -345,7 +345,7 @@
                     "docsUrl": "https://docs.bump.sh/help/"
                 },
                 "filters": {
-                    "categories": ["documentation-generator", "directory"],
+                    "categories": ["documentation-generator"],
                     "hasCommercial": true
                 }
             },
