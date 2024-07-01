@@ -30,7 +30,7 @@ Despite the recent changes, it's important to note that Postman's dedication to 
 Postman has elevated its support to the Platinum level with an additional contribution of $12,000. Moreover, Postman will also become a Platinum sponsor for the AsyncAPI Conf on Tour, offering a $5,000 contribution. Additionally, they will allocate an extra $10,000 to further initiatives within the AsyncAPI ecosystem.
 
 ## Opportunities for Skilled Professionals
-For those professionals impacted by the recent layoffs, we urge the AsyncAPI community to come forward and help them in their job search. A list containing all names, profile descriptions, and contact information is available. We encourage the wider [community to share this information and assist these professionals in finding new opportunities](https://docs.google.com/spreadsheets/d/1LSL2Tt72h29S8UoxCHeBEuwWGhbnpJPEI6Psa5dLqkQ).
+For those professionals impacted by the recent layoffs, we urge the AsyncAPI community to come forward and help them in their job search. A list containing all names, profile descriptions, and contact information is available. We encourage the wider community to [share this information and assist these professionals in finding new opportunities](https://docs.google.com/spreadsheets/d/1LSL2Tt72h29S8UoxCHeBEuwWGhbnpJPEI6Psa5dLqkQ).
 
 ## AsyncAPI Conf on Tour
 We are fast approaching the [Call for Speakers for AACoT'24 London deadline](https://conference.asyncapi.com/venue/london). We encourage anyone to submit their proposals and share your expertise with the community.
