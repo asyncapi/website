@@ -116,7 +116,7 @@
         "linkedin": "emilianozublena",
         "slack": "U01LYC8PW0M",
         "availableForHire": false,
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "asyncapi-php-template"
         ]
@@ -126,7 +126,6 @@
         "github": "fmvilas",
         "slack": "U34F2JRRS",
         "availableForHire": false,
-        "company": "Postman",
         "linkedin": "fmvilas",
         "isTscMember": true,
         "repos": [
@@ -135,14 +134,10 @@
             "openapi-schema-parser",
             "asyncapi-react",
             "glee",
-            "generator",
-            "nodejs-template",
             "nodejs-ws-template",
             "parser-js",
-            "playground",
             "spec",
             "spec-json-schemas",
-            "website",
             "bindings"
         ]
     },
@@ -152,8 +147,7 @@
         "linkedin": "geraldloeffler",
         "slack": "U01P5QDLP0X",
         "availableForHire": false,
-        "company": "Salesforce",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "bindings"
         ]
@@ -200,6 +194,7 @@
         "linkedin": "laurentbroudoux",
         "slack": "U018NLDV5E1",
         "availableForHire": false,
+        "company": "Postman",
         "isTscMember": true,
         "repos": [
             "bindings"
@@ -212,7 +207,7 @@
         "slack": "U01BM49KL3Z",
         "twitter": "ldussart",
         "availableForHire": false,
-        "company": "Ineat",
+        "company": "zatsit",
         "isTscMember": true,
         "repos": [
             "avro-schema-parser"
@@ -228,24 +223,17 @@
         "company": "Postman",
         "isTscMember": true,
         "repos": [
-            "avro-schema-parser",
-            "openapi-schema-parser",
-            "chatbot",
             "diff",
-            "cli",
             "generator-filters",
             "generator-hooks",
             "github-action-for-generator",
             "generator",
             "nodejs-template",
             "nodejs-ws-template",
-            "parser-js",
-            "playground",
             "spec",
             "spec-json-schemas",
             "template-for-generator-templates",
-            "website",
-            "bundler"
+            "website"
         ]
     },
     {
@@ -254,14 +242,11 @@
         "availableForHire": false,
         "linkedin": "maciej-urba\u0144czyk-909547164",
         "slack": "U01EB02BP7A",
-        "company": "Postman",
+        "company": "Travelping GmbH",
         "isTscMember": true,
         "repos": [
             "asyncapi-react",
-            "chatbot",
-            "cli",
             "converter-go",
-            "event-gateway",
             "generator-react-sdk",
             "generator",
             "html-template",
@@ -269,7 +254,6 @@
             "modelina",
             "parser-js",
             "parser-go",
-            "playground",
             "server-api",
             "template-for-go-projects",
             "website"
@@ -293,8 +277,7 @@
         "github": "damaru-inc",
         "availableForHire": false,
         "slack": "UH3B166TD",
-        "company": "Solace",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "java-spring-cloud-stream-template",
             "python-paho-template",
@@ -309,12 +292,9 @@
         "linkedin": "missy-turco-a476a6126",
         "availableForHire": false,
         "company": "Postman",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
-            "brand",
-            "design-system",
-            "studio",
-            "website"
+            "brand"
         ]
     },
     {
@@ -461,7 +441,6 @@
         "slack": "U02FP8WBFQE",
         "linkedin": "danielr",
         "availableForHire": false,
-        "company": "IBM",
         "isTscMember": true,
         "repos": [
             "java-template"
@@ -474,7 +453,7 @@
         "availableForHire": false,
         "slack": "U02FT2TKM37",
         "company": "IBM",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "java-template"
         ]
@@ -486,7 +465,7 @@
         "slack": "U02FPPCEH6H",
         "availableForHire": false,
         "company": "IBM",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "java-template"
         ]
@@ -497,7 +476,7 @@
         "availableForHire": false,
         "slack": "U02G8MDDEF3",
         "company": "IBM",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "java-template"
         ]
@@ -533,7 +512,7 @@
         "linkedin": "rondebajyoti",
         "availableForHire": false,
         "company": "Narvar",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "modelina"
         ]
@@ -583,7 +562,7 @@
         "twitter": "vladimirgorej",
         "availableForHire": false,
         "company": "SmartBear",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "bindings",
             "spec",
