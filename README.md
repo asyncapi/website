@@ -27,7 +27,8 @@ This repository contains the sources of AsyncAPI website:
 
 - It's powered by [Next.js](https://nextjs.org/),
 - It uses [Tailwind](https://tailwindcss.com/) CSS framework,
-- It's build and deployed with [Netlify](https://www.netlify.com/).
+- It's build and deployed with [Netlify](https://www.netlify.com/),
+- It uses [Storybook](https://storybook.js.org/) as a frontend workshop and for dociuenting UI components.
 
 ## Requirements
 
@@ -69,6 +70,14 @@ Use the following tools to set up the project:
 
 7. Access the live development server at [localhost:3000](http://localhost:3000).
 
+8. To run the storybook locally:
+
+```bash
+    npm run dev:storybook
+```
+
+9. Access the live storybook development server at [localhost:6006](http://localhost:6006).
+
 
 ## Compose new blog post
 
@@ -88,13 +97,21 @@ To spin up a Gitpod codespace, go to http://gitpod.io/#https://github.com/asynca
 
 ### Build
 
-To build a production-ready website, run the following command:
+1. To build a production-ready website, run the following command:
 
 ```bash
 npm run build
 ```
 
 Generated files of the website go to the `.next` folder.
+
+2. To build the production-ready storybook, run the following command:
+
+```bash
+npm run build:storybook
+```
+
+Generated files of the storybook go to the `storybook-static` folder.
 
 ### Run locally using Docker
 
