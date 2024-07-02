@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import type { Issue } from '@/types/components/dashboard/TableTypes';
 
@@ -31,7 +31,6 @@ export function filterIssues(issues: Issue[], filters: FiltersType): Issue[] {
   if (filters.selectedArea !== 'Area - All') {
     result = result.filter((issue) => issue.area === filters.selectedArea);
   }
-
   return result;
 }
 
@@ -44,19 +43,22 @@ export function filterIssues(issues: Issue[], filters: FiltersType): Issue[] {
 export default function GoodFirstIssues({ issues }: GoodFirstIssuesProps) {
   const [selectedRepo, setSelectedRepo] = useState('All');
   const [selectedArea, setSelectedArea] = useState('All');
-
-  // Get current issues
-
-  let filteredIssues = issues;
+  const [filteredIssues, setFilteredIssues] = useState(issues);
 
   const allIssues = issues;
 
-  if (selectedRepo !== 'All') {
-    filteredIssues = filteredIssues.filter((issue) => issue.repo === selectedRepo);
-  }
-  if (selectedArea !== 'All') {
-    filteredIssues = filteredIssues.filter((issue) => issue.area === selectedArea);
-  }
+ useEffect(()=>{
+      let result = issues;
+
+    if (selectedRepo !== 'All') {
+      result = result.filter((issue) => issue.repo === selectedRepo);
+    }
+    if (selectedArea !== 'All') {
+      result = result.filter((issue) => issue.area === selectedArea);
+    }
+    setFilteredIssues(result);
+  },[issues, selectedRepo, selectedArea]);
+
 
   return (
     <Table
