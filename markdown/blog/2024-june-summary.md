@@ -23,7 +23,7 @@ We have some fantastic news to share: we are pleased to welcome [IBM](https://ww
 If you are interested in supporting the AsyncAPI Initiative or would like to know how we spend our donations, please take a look at our [AsyncAPI Financial Summary](https://www.asyncapi.com/finance) for detailed breakdowns.
 
 ## Postman Partnership Changes
-In recent developments, several dedicated professionals from Postman who worked full-time on the AsyncAPI Initiative have unfortunately been affected by structural changes marking the end of a partnership with [Postman that lasted over three years](https://www.asyncapi.com/blog/asyncapi-partners-with-postman).
+In recent developments, several dedicated professionals from Postman who worked full-time on the AsyncAPI Initiative have unfortunately been affected by structural changes marking the end of a [partnership with Postman that lasted over three years](https://www.asyncapi.com/blog/asyncapi-partners-with-postman).
 
 Despite the recent changes, it's important to note that Postman's dedication to AsyncAPI remains strong. The decision to let go of these talented individuals does not diminish the value or importance of AsyncAPI. Postman continues to acknowledge and support the significance of AsyncAPI in the industry and has significantly increased its financial backing for AsyncAPI.
 
