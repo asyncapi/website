@@ -45,10 +45,10 @@ export default function MobileNavMenu({ onClickClose = () => {} }: MobileNavMenu
     <div className='fixed inset-x-0 top-0 z-60 max-h-full origin-top-right overflow-y-auto py-2 transition lg:hidden'>
       <div className='rounded-lg shadow-lg'>
         <div className='shadow-xs divide-y-2 divide-gray-50 rounded-lg bg-white'>
-          <div className='space-y-6 px-5 pb-6 pt-5'>
+          <div className='space-y-6 px-4 pb-6 pt-4'>
             <div className='flex items-center justify-between'>
               <Link href='/' className='cursor-pointer' data-testid='MobileNav-Logo'>
-                <AsyncAPILogo className='h-8 w-auto' />
+                <AsyncAPILogo className='h-10 w-auto' />
               </Link>
               <div className='justify-content -mr-2 flex flex-row items-center' data-testid='MobileNav-button'>
                 <SearchButton
