@@ -44,7 +44,7 @@ We've had a few people asking if we'll be hosting our annual AsyncAPI Mentorship
 Please keep an eye on our Slack channel for further announcements.
 
 ## AsyncAPI Bounty Program
-The  AsyncAPI Bounty Program Q3 is in full swing, with 9 out of 10 issues already assigned and being worked on. Meanwhile, half of the Q2 issues are still in progress. We are pleased to see the program positively impacting the community. 
+The AsyncAPI Bounty Program Q3 is in full swing, with 9 out of 10 issues already assigned and being worked on. Meanwhile, half of the Q2 issues are still in progress. We are pleased to see the program positively impacting the community. 
 We want to express our gratitude to [Viacheslav Turovskyi](https://github.com/aeworxet) for his dedication to running the program smoothly and ensuring that participants adhere to the Bounty Rules. For more details on the submitted issues, please take a look at the [AsyncAPI Bounty Program Board](https://github.com/orgs/asyncapi/projects/36).
 
 ## Community Discussions
