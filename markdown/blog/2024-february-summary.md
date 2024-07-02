@@ -51,7 +51,7 @@ We have important discussions that require the community's attention:
 
 We are excited to welcome five new [Technical Steering Committee](https://www.asyncapi.com/community/tsc) (TSC) members.
 
-<Profile profiles={[
+<Profiles profiles={[
 {
     name: 'Ashish Padhy',
     avatar: 'https://avatars.githubusercontent.com/Shurtu-gal',
@@ -81,7 +81,7 @@ We are excited to welcome five new [Technical Steering Committee](https://www.as
 
 Additionally, we have a new addition to the [AsyncAPI Ambassadors](https://www.asyncapi.com/community/ambassadors) team, raising the number to seven.
 
-<Profile profiles={[
+<Profiles profiles={[
   {
     name: 'Iván García Sainz-Aja',
     avatar: 'https://avatars.githubusercontent.com/ivangsa',

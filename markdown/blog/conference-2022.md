@@ -89,7 +89,7 @@ Special thanks to Restream for supporting us with their amazing product for medi
 
 ### Meet the volunteers
 
-<Profile profiles={[
+<Profiles profiles={[
 {
     name: 'Aishat Muibudeen',
     avatar: 'https://avatars.githubusercontent.com/Mayaleeeee',

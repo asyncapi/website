@@ -44,7 +44,7 @@ This is a huge amount of work, and we are really proud that so many wonderful pe
 
 We want to thank everyone personally who submitted improvements to our repositories. Here are the names of our heroes:
 
-<Profile profiles={[
+<Profiles profiles={[
   {
     name: 'Amishakumari544 -  1 PR',
     avatar: 'https://avatars.githubusercontent.com/Amishakumari544',
