@@ -67,6 +67,10 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 /github-actions /tools/github-actions 301!
 # TOOLS-REDIRECTION:END
 
+# SHORT-URL-REDIRECTION:START
+/s/example https://github.com/asyncapi/spec/blob/master/examples/streetlights-mqtt-asyncapi.yml 301!
+# SHORT-URL-REDIRECTION:END
+
 # Additional redirection
 /community/meetings /community/events 301!
 /cheatsheet https://github.com/asyncapi/website/tree/master/cheatsheet 302!

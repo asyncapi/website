@@ -258,6 +258,25 @@ This repository has the following structure:
   ├── tailwind.config.js                       # TailwindCSS configuration file
   └── tsconfig.json                            # TypeScript configuration file
 ```
+## Short Url Redirections
+
+Short urls are used in website to make redirections by using a short alias for given address on this website.
+
+These type of urls should be implemented as follows: 
+
+1. This website uses address like `/s/:short-alias` to create short urls. 
+
+2. Such redirections can be made using the `_redirects` file.
+Location of file: `(root)/public/_redirects`
+
+3. These short urls must use the section `SHORT-URL-REDIRECTION` inside the `_redirects`.
+
+An Example url in `_redirects`  looks like 
+```yaml
+/s/example https://github.com/asyncapi/spec/blob/master/examples/streetlights-mqtt-asyncapi.yml 301!
+```
+
+
 
 ## Connect with AsyncAPI Community
 
