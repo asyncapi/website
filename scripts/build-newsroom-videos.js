@@ -1,6 +1,6 @@
 const { writeFileSync } = require('fs');
 const { resolve } = require('path');
-const fetch = require('node-fetch')
+const fetch = require('node-fetch-2')
 async function buildNewsroomVideos() {
 
     try {
