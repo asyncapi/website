@@ -1,6 +1,10 @@
 const { promises: { mkdir } } = require('fs');
 const { resolve } = require('path');
+<<<<<<< HEAD
 const writeJSON = require('../utils/write-json')
+=======
+const writeJSON = require('../utils/readAndWriteJson.js')
+>>>>>>> master
 
 module.exports = async function buildFinanceInfoList() {
     try {
@@ -21,7 +25,6 @@ module.exports = async function buildFinanceInfoList() {
         await writeJSON(expensesLinkPath, expensesLinkJsonPath);
 
     } catch (err) {
-        console.error(err);
-        throw err;
+        throw new Error(err);
     }
 };
