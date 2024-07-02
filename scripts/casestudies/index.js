@@ -1,12 +1,12 @@
 const { readdir, writeFile, readFile } = require('fs').promises;
-const { convertToJson } = require('../utils');
+const { convertToJson } = require('../../scripts/utils');
 const { resolve } = require('path');
 
 const dirWithCaseStudy = 'config/casestudies';
 module.exports = async function buildCaseStudiesList() {
-    let files = await readdir(dirWithCaseStudy);
-    let caseStudiesList = [];
     try {
+        let files = await readdir(dirWithCaseStudy);
+        let caseStudiesList = [];
         for (let file of files) {
             const caseStudyFileName = [dirWithCaseStudy, file].join('/');
             const caseStudyContent = await readFile(caseStudyFileName, 'utf-8');
@@ -19,7 +19,7 @@ module.exports = async function buildCaseStudiesList() {
             )
         }
     } catch (err) {
-        console.log(err);
-        throw err
+        console.error(err);
+        throw err;
     }
 };
