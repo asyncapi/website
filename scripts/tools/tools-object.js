@@ -9,7 +9,6 @@ addFormats(ajv, ["uri"])
 const validate = ajv.compile(schema)
 const { convertToJson } = require('../utils');
 
-
 // Config options set for the Fuse object
 const options = {
   includeScore: true,
@@ -25,7 +24,7 @@ const fuse = new Fuse(categoryList, options)
 // isAsyncAPIrepo boolean variable to define whether the tool repository is under 
 // AsyncAPI organization or not, to create a JSON tool object as required in the frontend 
 // side to show ToolCard.
-const createToolObject = async (toolFile, repositoryUrl='', repoDescription='', isAsyncAPIrepo='') => {
+const createToolObject = async (toolFile, repositoryUrl = '', repoDescription = '', isAsyncAPIrepo = '') => {
   let resultantObject = {
     title: toolFile.title,
     description: toolFile?.description ? toolFile.description : repoDescription,
@@ -67,19 +66,24 @@ async function convertTools(data) {
         let reference_id = tool.url.split("=")[1];
         let download_url = `https://raw.githubusercontent.com/${tool.repository.full_name}/${reference_id}/${tool.path}`;
 
+        console.log(`Fetching tool file from URL: ${download_url}`);
         const { data: toolFileContent } = await axios.get(download_url);
+        console.log(`Data received from URL ${download_url}:`, toolFileContent);
 
         //some stuff can be YAML
         const jsonToolFileContent = await convertToJson(toolFileContent)
+        console.log(`Converted JSON content:`, jsonToolFileContent);
 
         //validating against JSON Schema for tools file
         const isValid = await validate(jsonToolFileContent)
-
+        console.log(`Validation result: ${isValid}`);
+        
         if (isValid) {
           let repositoryUrl = tool.repository.html_url;
           let repoDescription = tool.repository.description;
           let isAsyncAPIrepo = tool.repository.owner.login === "asyncapi";
           let toolObject = await createToolObject(jsonToolFileContent, repositoryUrl, repoDescription, isAsyncAPIrepo);
+          console.log(`Created tool object:`, toolObject);
 
           // Tool Object is appended to each category array according to Fuse search for categories inside Tool Object
           jsonToolFileContent.filters.categories.forEach(async (category) => {
@@ -110,4 +114,4 @@ async function convertTools(data) {
   return finalToolsObject;
 }
 
-module.exports = {convertTools, createToolObject}
+module.exports = { convertTools, createToolObject }

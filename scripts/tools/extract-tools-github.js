@@ -12,7 +12,9 @@ const getData = async () => {
         },
       }
     );
-    
+  
+    console.log("This data is fetched from getData function in extract-tools-github.js",result)
+   
     return result.data;
   } catch (err) {
     console.log(err);
