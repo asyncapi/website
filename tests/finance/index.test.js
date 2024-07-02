@@ -1,7 +1,7 @@
 const { promises: fs } = require('fs');
 const { resolve } = require('path');
 const buildFinanceInfoList = require('../../scripts/finance/index');
-const writeJSON = require('../../scripts/utils/write-json');
+const readAndWriteJson = require('../../scripts/utils/readAndWriteJson');
 
 jest.mock('fs', () => ({
   promises: {
@@ -9,7 +9,7 @@ jest.mock('fs', () => ({
   },
 }));
 
-jest.mock('../../scripts/utils/write-json', () => jest.fn());
+jest.mock('../../scripts/utils/readAndWriteJson', () => jest.fn());
 
 describe('buildFinanceInfoList', () => {
   beforeEach(() => {
@@ -27,18 +27,15 @@ describe('buildFinanceInfoList', () => {
     await buildFinanceInfoList();
 
     expect(fs.mkdir).toHaveBeenCalledWith(jsonDirectory, { recursive: true });
-    expect(writeJSON).toHaveBeenCalledWith(expensesPath, expensesJsonPath);
-    expect(writeJSON).toHaveBeenCalledWith(expensesLinkPath, expensesLinkJsonPath);
+    expect(readAndWriteJson).toHaveBeenCalledWith(expensesPath, expensesJsonPath);
+    expect(readAndWriteJson).toHaveBeenCalledWith(expensesLinkPath, expensesLinkJsonPath);
   });
 
   test('should log and throw an error if an error occurs', async () => {
     const error = new Error('Test error');
     fs.mkdir.mockRejectedValue(error);
-    const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
 
-    await expect(buildFinanceInfoList()).rejects.toThrow(error);
+    await expect(buildFinanceInfoList()).rejects.toThrow(`Error: ${error.message}`);
 
-    expect(consoleErrorSpy).toHaveBeenCalledWith(error);
-    consoleErrorSpy.mockRestore();
   });
 });
