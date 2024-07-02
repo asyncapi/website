@@ -1,9 +1,8 @@
 import Head from 'next/head';
 import { useContext } from 'react';
-import ReactGA from 'react-ga';
-import TagManager from 'react-gtm-module';
 
 import AppContext from '../context/AppContext';
+import Analytics from './Analytics';
 
 interface IHeadProps {
   title: string;
@@ -50,13 +49,6 @@ export default function HeadComponent({
 
   const currTitle = title ? `${title} | ${permTitle}` : permTitle;
 
-  // enable google analytics
-  if (typeof window !== 'undefined' && window.location.hostname.includes('asyncapi.com')) {
-    TagManager.initialize({ gtmId: 'GTM-T58BTVQ' });
-    ReactGA.initialize('UA-109278936-1');
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }
-
   return (
     <Head>
       <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
@@ -82,6 +74,9 @@ export default function HeadComponent({
       <meta property='og:url' content={permalink} />
       <meta property='og:image' content={currImage} />
       <meta property='og:description' content={description} />
+
+      {/* GTM + GA4 */}
+      <Analytics />
 
       <title>{currTitle}</title>
     </Head>
