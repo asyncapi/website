@@ -45,14 +45,11 @@ describe('buildCaseStudiesList', () => {
     expect(writeFile).toHaveBeenCalledWith(caseStudiesJsonPath, JSON.stringify([jsonContent1, jsonContent2]));
   });
 
-  test('should log and throw an error if an error occurs', async () => {
+  test('should throw an error if an error occurs', async () => {
     const error = new Error('Test error');
     readdir.mockRejectedValue(error);
-    const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
 
-    await expect(buildCaseStudiesList()).rejects.toThrow(error);
+    await expect(buildCaseStudiesList()).rejects.toThrow(`Error: ${error.message}`);
 
-    expect(consoleErrorSpy).toHaveBeenCalledWith(error);
-    consoleErrorSpy.mockRestore();
   });
 });

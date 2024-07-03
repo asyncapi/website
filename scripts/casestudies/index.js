@@ -19,7 +19,6 @@ module.exports = async function buildCaseStudiesList() {
             )
         }
     } catch (err) {
-        console.error(err);
-        throw err;
+        throw new Error(err);
     }
 };
