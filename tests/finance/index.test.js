@@ -1,7 +1,7 @@
 const { promises: fs } = require('fs');
 const { resolve } = require('path');
 const buildFinanceInfoList = require('../../scripts/finance/index');
-const readAndWriteJson = require('../../scripts/utils/readAndWriteJson');
+const writeJSON = require('../../scripts/utils/readAndWriteJson');
 
 jest.mock('fs', () => ({
   promises: {
@@ -27,8 +27,8 @@ describe('buildFinanceInfoList', () => {
     await buildFinanceInfoList();
 
     expect(fs.mkdir).toHaveBeenCalledWith(jsonDirectory, { recursive: true });
-    expect(readAndWriteJson).toHaveBeenCalledWith(expensesPath, expensesJsonPath);
-    expect(readAndWriteJson).toHaveBeenCalledWith(expensesLinkPath, expensesLinkJsonPath);
+    expect(writeJSON).toHaveBeenCalledWith(expensesPath, expensesJsonPath);
+    expect(writeJSON).toHaveBeenCalledWith(expensesLinkPath, expensesLinkJsonPath);
   });
 
   test('should log and throw an error if an error occurs', async () => {
