@@ -11,20 +11,19 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: AsyncAPI Community Manager
 excerpt: 'May Community update'
-featured: true
 ---
 
 May has been a fantastic month for our community. We are delighted to announce that [Gravitee](https://gravitee.io/) has joined us as our new Platinum sponsor; thanks to [Georgie Burrows](https://www.linkedin.com/in/georgieburrows/) for making this happen.
 
 
 <a href='https://gravitee.io/' target='_blank'>
-<img src='/img/sponsors/gravitee.io_logo.jpg' alt='gravitee' width='500px' />
+<img src='/img/sponsors/gravitee.io_logo.jpg' alt='Gravitee.io' width='500px' />
 </a>
 
-Furthermore, we are thrilled to welcome [SmartBear](http://www.smartbear.com/) as our Silver sponsor.
+Furthermore, we are thrilled to welcome [SmartBear](http://www.smartbear.com/) as our Silver sponsor; thanks to [Frank Kilcommins](https://www.linkedin.com/in/frank-kilcommins/) for making this happen.
 
 <a href='http://www.smartbear.com/' target='_blank'>
-<img src='/img/sponsors/sb_logo.jpg' alt='smartbear' width='500px' />
+<img src='/img/sponsors/smartbear_logo.png' alt='SmartBear' width='500px' />
 </a>
 
 We cannot thank our sponsors enough for their unwavering support. Your contributions are truly invaluable.

@@ -548,5 +548,67 @@
         "link": "https://www.youtube.com/watch?v=6Igp4DhK_hE"
       }
     ]
+  },
+  {
+    "name": "Raphael De Lio",
+    "github": "raphaeldelio",
+    "twitter": "raphaeldelio",
+    "linkedin": "raphaeldelio",
+    "country": "🇧🇷",
+    "bio": "Raphael De Lio is a passionate software engineer who loves to think about solutions and ways to improve anything he touches. He was born in Brazil, lived in Portugal for five years, and now works as a consultant in the Netherlands. In his quest for knowledge, Raphael has always valued learning and sharing insights with others. This pursuit not only led him to Xebia, a place where he found a community of engineers who share his enthusiasm for technology and continuous improvement but also to becoming the co-organizer of the Amsterdam Kotlin MeetUp, where he has been able to enable other speakers to share their knowledge as well.",
+    "company": "Xebia",
+    "title": "Software Consultant at Xebia",
+    "img": "https://avatars.githubusercontent.com/u/25641721?v=4",
+    "contributions": [
+      {
+        "type": "article",
+        "title": "AsyncAPI — A standard specification for documenting Event-Driven Applications",
+        "date": {
+          "year": 2024,
+          "month": "February"
+        },
+        "link": "https://medium.com/@raphaeldelio/asyncapi-a-standard-for-documenting-event-driven-applications-8ff657119036"
+      },
+      {
+        "type": "presentation",
+        "title": "AsyncAPI & Springwolf - Automated documentation (and more)",
+        "date": {
+          "year": 2024,
+          "month": "May"
+        },
+        "link": "https://www.youtube.com/watch?v=DylvTW_ia4Y"
+      }
+    ]
+  },
+  {
+    "name": "Hari Krishnan",
+    "github": "harikrishnan83",
+    "twitter": "harikrishnan83",
+    "linkedin": "harikrishnan83",
+    "country": "🇮🇳",
+    "bio": "Co-creator of Specmatic and Perfiz. I also advise organizations, both large and small, on their transformation journey. Apart from bringing ideas to life as working software products, I coach developers, project managers, product owners, and engineering leaders. I have spoken at several conferences, including AACoT 2023, API Specification Conference (#ASC2022), API World, SeleniumConf, Agile2021, Agile India, TestingUY 2021, SREConf, PyCon Singapore, RubyConf India. My areas of interest include distributed systems, concurrency, high-performance application architecture, coaching, and training.",
+    "company": "Specmatic and Polarizer Technologies",
+    "title": "Co-founder and CTO at Specmatic, Founder, and CEO at Polarizer Technologies",
+    "img": "https://raw.githubusercontent.com/harikrishnan83/harikrishnan83/master/HariKrishnan-profile.jpg",
+    "contributions": [
+      {
+        "type": "talk",
+        "title": "Kafka and JMS Mocking with AsyncAPI",
+        "date": {
+          "year": 2023,
+          "month": "November"
+        },
+        "link": "https://www.youtube.com/watch?v=9yRf75p_kTU"
+      },
+      {
+        "type": "talk",
+        "title": "Unshackling Your System Under Test: Shift-Left Testing Through Dependency Isolation (Kafka Mocks with AsyncAPI specification)",
+        "date": {
+          "year": 2024,
+          "month": "June"
+        },
+        "link": "https://confengine.com/conferences/selenium-conf-2024/proposal/20021/unshackling-your-system-under-test-shift-left-testing-through-dependency-isolation"
+      }
+    ]
   }
 ]
