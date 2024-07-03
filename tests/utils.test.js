@@ -14,20 +14,12 @@ describe('convertToJson', () => {
     expect(convertToJson(jsonObject)).toBe(jsonObject);
   });
 
-<<<<<<< HEAD
-  test('should return null if input is invalid JSON and invalid YAML', () => {
-    try {
-      convertToJson(invalidString);
-    } catch (error) {
-      expect(error.message).toBe('Invalid content format');
-=======
   test('should throw an error if input is invalid JSON and invalid YAML', () => {
     try {
       convertToJson(invalidString);
       expect(convertToJson(invalidString)).toBeUndefined();
     } catch (error) {
       expect(error.message.includes("Invalid content format")).toBeTruthy();
->>>>>>> master
     }
   });
 });
