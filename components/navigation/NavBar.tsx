@@ -32,10 +32,15 @@ const isMobile = isMobileDevice();
  * @param {string} [props.className=''] - Additional CSS classes for styling.
  * @param {boolean} [props.hideLogo=false] - Indicates whether to hide the logo.
  */
-export default function NavBar({ className = '', hideLogo = false }: NavBarProps) {
+export default function NavBar({
+  className = '',
+  hideLogo = false,
+}: NavBarProps) {
   const router: NextRouter = useRouter();
   const { pathname, query, asPath } = router;
-  const [open, setOpen] = useState<'learning' | 'tooling' | 'community' | null>(null);
+  const [open, setOpen] = useState<'learning' | 'tooling' | 'community' | null>(
+    null,
+  );
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const { i18n } = useTranslation();
 
@@ -64,7 +69,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   const uniqueLangs = getUniqueLangs().map((lang) => ({
     key: lang,
     text: lang,
-    value: lang
+    value: lang,
   }));
 
   /**
@@ -73,7 +78,10 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
    * @param {boolean} langPicker - Indicates whether the change is from the language picker.
    *                              If true, stores the language in local storage.
    */
-  const changeLanguage = async (locale: string, langPicker: boolean): Promise<void> => {
+  const changeLanguage = async (
+    locale: string,
+    langPicker: boolean,
+  ): Promise<void> => {
     // Verifies if the language change is from langPicker or the browser-api
     if (langPicker) {
       localStorage.setItem('i18nLang', locale);
@@ -146,44 +154,66 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
 
   return (
     <div className={`bg-white ${className} z-50`}>
-      <div className='flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-10'>
+      <div className="flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-10">
         {!hideLogo && (
-          <div className='lg:w-auto lg:flex-1'>
-            <div className='flex'>
-              <Link href='/' className='cursor-pointer' aria-label='AsyncAPI' data-testid='Navbar-logo'>
-                <AsyncAPILogo className='w-auto' />
+          <div className="lg:w-auto lg:flex-1">
+            <div className="flex">
+              <Link
+                href="/"
+                className="cursor-pointer"
+                aria-label="AsyncAPI"
+                data-testid="Navbar-logo"
+              >
+                <AsyncAPILogo className="w-auto" />
               </Link>
             </div>
           </div>
         )}
 
-        <div className='-my-2 -mr-2 flex flex-row items-center justify-center lg:hidden' data-testid='Navbar-search'>
+        <div
+          className="-my-2 -mr-2 flex flex-row items-center justify-center lg:hidden"
+          data-testid="Navbar-search"
+        >
           <SearchButton
-            className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
-            aria-label='Open Search'
+            className="flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none"
+            aria-label="Open Search"
           >
             <IconLoupe />
           </SearchButton>
           <button
             onClick={() => setMobileMenuOpen(true)}
-            type='button'
-            className='inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
+            type="button"
+            className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none"
           >
-            <svg className='size-6' stroke='currentColor' fill='none' viewBox='0 0 24 24'>
+            <svg
+              className="size-6"
+              stroke="currentColor"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
               <title>Menu</title>
-              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M4 6h16M4 12h16M4 18h16' />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             </svg>
           </button>
         </div>
 
         <nav
-          className='hidden w-full space-x-6 lg:flex lg:items-center lg:justify-end xl:space-x-10'
-          data-testid='Navbar-main'
+          className="hidden w-full space-x-6 lg:flex lg:items-center lg:justify-end xl:space-x-10"
+          data-testid="Navbar-main"
         >
-          <div className='relative' onMouseLeave={() => showMenu(null)} ref={learningRef}>
+          <div
+            className="relative"
+            onMouseLeave={() => showMenu(null)}
+            ref={learningRef}
+          >
             <NavItem
-              text='Docs'
-              href='/docs'
+              text="Docs"
+              href="/docs"
               onClick={() => showOnClickMenu('learning')}
               onMouseEnter={() => showMenu('learning')}
               hasDropdown
@@ -191,10 +221,14 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             {open === 'learning' && <LearningPanel />}
           </div>
 
-          <div className='relative' onMouseLeave={() => showMenu(null)} ref={toolingRef}>
+          <div
+            className="relative"
+            onMouseLeave={() => showMenu(null)}
+            ref={toolingRef}
+          >
             <NavItem
-              text='Tools'
-              href='/tools'
+              text="Tools"
+              href="/tools"
               onClick={() => showOnClickMenu('tooling')}
               onMouseEnter={() => showMenu('tooling')}
               hasDropdown
@@ -202,10 +236,14 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             {open === 'tooling' && <ToolsPanel />}
           </div>
 
-          <div className='relative' onMouseLeave={() => showMenu(null)} ref={communityRef}>
+          <div
+            className="relative"
+            onMouseLeave={() => showMenu(null)}
+            ref={communityRef}
+          >
             <NavItem
-              text='Community'
-              href='/community'
+              text="Community"
+              href="/community"
               onClick={() => showOnClickMenu('community')}
               onMouseEnter={() => showMenu('community')}
               hasDropdown
@@ -214,13 +252,19 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
           </div>
 
           {otherItems.map((item, index) => (
-            <NavItem href={item.href} key={index} text={item.text} target={item.target} className={item.className} />
+            <NavItem
+              href={item.href}
+              key={index}
+              text={item.text}
+              target={item.target}
+              className={item.className}
+            />
           ))}
 
-          <div className='justify-content flex flex-row items-center'>
+          <div className="justify-content flex flex-row items-center">
             <SearchButton
-              className='mr-2 flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
-              aria-label='Open Search'
+              className="mr-2 flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none"
+              aria-label="Open Search"
             >
               <IconLoupe />
             </SearchButton>
@@ -231,14 +275,14 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               onChange={(value) => {
                 changeLanguage(value.toLowerCase(), true);
               }}
-              className=''
+              className=""
               selected={i18n.language ? i18n.language.toUpperCase() : 'EN'}
             />
 
             <GithubButton
-              text='Star on GitHub'
-              href='https://github.com/asyncapi/spec'
-              className='ml-2 py-2'
+              text="Star on GitHub"
+              href="https://github.com/asyncapi/spec"
+              className="ml-2 py-2"
               inNav={true}
             />
           </div>
@@ -246,7 +290,9 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
       </div>
 
       {/* Mobile menu, show/hide based on mobile menu state. */}
-      {mobileMenuOpen && <MobileNavMenu onClickClose={() => setMobileMenuOpen(false)} />}
+      {mobileMenuOpen && (
+        <MobileNavMenu onClickClose={() => setMobileMenuOpen(false)} />
+      )}
     </div>
   );
 }
