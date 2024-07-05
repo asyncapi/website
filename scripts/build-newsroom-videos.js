@@ -1,10 +1,9 @@
 const { writeFileSync } = require('fs');
 const { resolve } = require('path');
-const fetch = require('node-fetch')
-async function buildNewsroomVideos() {
+const fetch = require('node-fetch');
 
+async function buildNewsroomVideos() {
     try {
-        let data;
         const response = await fetch('https://youtube.googleapis.com/youtube/v3/search?' + new URLSearchParams({
             key: process.env.YOUTUBE_TOKEN,
             part: 'snippet',
@@ -13,32 +12,37 @@ async function buildNewsroomVideos() {
             type: 'video',
             order: 'Date',
             maxResults: 5,
-        }))
-        data = await response.json()
-        const videoDataItems = data.items.map((video) => {
-            return {
-                image_url: video.snippet.thumbnails.high.url,
-                title: video.snippet.title,
-                description: video.snippet.description,
-                videoId: video.id.videoId,
-            }
-        })
-        const videoData = JSON.stringify(videoDataItems, null, '  ');
-        console.log('The following are the Newsroom Youtube videos: ', videoData)
+        }));
 
-        try {
-            writeFileSync(
-                resolve(__dirname, '../config', 'newsroom_videos.json'),
-                videoData
-            );
-        } catch (err) {
-            console.error(err);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
+
+        const data = await response.json();
+
+        if (!data || !data.items) {
+            throw new Error('Invalid data structure received from YouTube API');
+        }
+
+        const videoDataItems = data.items.map((video) => ({
+            image_url: video.snippet.thumbnails.high.url,
+            title: video.snippet.title,
+            description: video.snippet.description,
+            videoId: video.id.videoId,
+        }));
+
+        const videoData = JSON.stringify(videoDataItems, null, '  ');
+        console.log('The following are the Newsroom Youtube videos: ', videoData);
+
+        writeFileSync(
+            resolve(__dirname, '../config', 'newsroom_videos.json'),
+            videoData
+        );
+
         return videoData;
     } catch (err) {
-        console.log(err)
+        throw new Error(`Failed to build newsroom videos: ${err.message}`);
     }
 }
 
-buildNewsroomVideos()
-module.exports={buildNewsroomVideos}
+module.exports = { buildNewsroomVideos };
