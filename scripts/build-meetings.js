@@ -5,7 +5,7 @@ const { google } = require('googleapis');
 async function buildMeetings() {
   const auth = new google.auth.GoogleAuth({
     scopes: ['https://www.googleapis.com/auth/calendar'],
-    credentials: JSON.parse(process.env.CALENDAR_SERVICE_ACCOUNT),
+    credentials: process.env.CALENDAR_SERVICE_ACCOUNT ? JSON.parse(process.env.CALENDAR_SERVICE_ACCOUNT) : undefined,
   });
 
   const calendar = google.calendar({ version: 'v3', auth });
@@ -21,7 +21,7 @@ async function buildMeetings() {
       Date.parse(currentTime) + 30 * 24 * 60 * 60 * 1000
     ).toISOString();
     const eventsList = await calendar.events.list({
-      calendarId:  process.env.CALENDAR_ID,
+      calendarId: process.env.CALENDAR_ID,
       timeMax: timeMax,
       timeMin: timeMin,
     });
@@ -40,14 +40,15 @@ async function buildMeetings() {
     });
 
     const eventsForHuman = JSON.stringify(eventsItems, null, '  ');
-    // console.log('The following events got fetched', eventsForHuman);
+    console.log('The following events got fetched', eventsForHuman);
 
     writeFileSync(
       resolve(__dirname, '../config', 'meetings.json'),
       eventsForHuman
     );
-  } catch (e) {
-    console.error(e);
+  } catch (err) {
+    throw new Error(err)
   }
 }
-buildMeetings();
+
+module.exports = { buildMeetings };
