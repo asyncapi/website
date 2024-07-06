@@ -38,4 +38,26 @@ describe('buildFinanceInfoList', () => {
     await expect(buildFinanceInfoList()).rejects.toThrow(`Error: ${error.message}`);
 
   });
+
+  test('should throw an error if directory creation fails', async () => {
+    const error = new Error('Cannot create directory');
+    fs.mkdir.mockRejectedValue(error);
+
+    await expect(buildFinanceInfoList()).rejects.toThrow(`Error: ${error.message}`);
+  });
+
+  test('should throw an error if writing JSON fails due to malformed YAML', async () => {
+    const error = new Error('Invalid YAML structure');
+    writeJSON.mockRejectedValue(error);
+
+    await expect(buildFinanceInfoList()).rejects.toThrow(`Error: ${error.message}`);
+  });
+
+  test('should throw an error if source YAML file is not found', async () => {
+    const error = new Error('ENOENT: no such file or directory');
+    writeJSON.mockRejectedValue(error);
+
+    await expect(buildFinanceInfoList()).rejects.toThrow(`Error: ${error.message}`);
+  });
+
 });
