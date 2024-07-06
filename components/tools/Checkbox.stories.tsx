@@ -16,12 +16,7 @@ type Story = StoryObj<typeof Checkbox>;
 export const DefaultCheckbox: Story = {
   args: {
     name: 'Check me!',
-    checked: true,
-    bgColor: 'bg-white',
-    textColor: 'text-secondary-600',
-    borderColor: 'border-secondary-600',
-    checkedStateBgColor: 'bg-secondary-600',
-    checkedStateTextColor: 'text-white'
+    checked: true
   },
 
   render: (args: CheckboxProps) => {
