@@ -19,7 +19,7 @@ export default function SlackButton({
   href = '/slack-invite',
   target = '_blank',
   iconPosition = ButtonIconPosition.LEFT,
-  className
+  className = ''
 }: ISlackButtonProps) {
   return (
     <Button

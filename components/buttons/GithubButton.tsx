@@ -22,7 +22,7 @@ export default function GithubButton({
   href = 'https://github.com/asyncapi',
   target = '_blank',
   iconPosition = ButtonIconPosition.LEFT,
-  className,
+  className = '',
   inNav
 }: IGithubButtonProps) {
   const { t } = useTranslation('common');
