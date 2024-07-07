@@ -1,9 +1,9 @@
 import { ButtonIconPosition, ButtonSize } from '@/types/components/buttons/ButtonPropsType';
 
+import type { IButtonDefaultProps } from '../../types/components/buttons/types';
 import { useTranslation } from '../../utils/i18n';
 import IconGithub from '../icons/Github';
 import Button from './Button';
-import type { IButtonDefaultProps } from './types';
 
 interface IGithubButtonProps extends IButtonDefaultProps {
   inNav?: boolean;
@@ -22,7 +22,7 @@ export default function GithubButton({
   href = 'https://github.com/asyncapi',
   target = '_blank',
   iconPosition = ButtonIconPosition.LEFT,
-  className,
+  className = '',
   inNav
 }: IGithubButtonProps) {
   const { t } = useTranslation('common');
