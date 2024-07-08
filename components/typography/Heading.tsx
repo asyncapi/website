@@ -3,22 +3,29 @@ import React from 'react';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
 export interface HeadingProps {
+  // eslint-disable-next-line prettier/prettier
+
+  /** Contains the type of heading style. HeadingTypeStyle.lg is default */
   typeStyle?: HeadingTypeStyle;
+
+  /** Contains the level of heading. HeadingLevel.h2 is by default */
   level?: HeadingLevel;
+
+  /** Contains text color for the heading. 'text-primary-800' is by default */
   textColor?: string;
+
+  /** Contains additional classes that should be added to the component */
   className?: string;
+
+  /** Contains all the child elements bounded inside component */
   children?: React.ReactNode;
+
+  /** Contains an id to be appended on heading */
   id?: string;
 }
 
 /**
- * Heading
- * @param {HeadingTypeStyle} props.typeStyle contains the type of heading style. HeadingTypeStyle.lg is default
- * @param {HeadingLevel} props.level contains the level of heading. HeadingLevel.h2 is by default
- * @param {string} props.textColor contains text color for the heading. 'text-primary-800' is by default
- * @param {string} props.className contains additional classes that should be added to the component
- * @param {React.ReactNode} props.children contains all the child elements bounded inside component
- * @param {string} props.id contains an id to be appended on heading
+ * Heading component is used to render a heading element with different styles and sizes.
  */
 export default function Heading({
   typeStyle = HeadingTypeStyle.lg,
