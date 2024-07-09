@@ -4,16 +4,38 @@ import { twMerge } from 'tailwind-merge';
 import { ButtonIconPosition, ButtonSize, ButtonType } from '@/types/components/buttons/ButtonPropsType';
 
 type IButtonProps = {
+  // eslint-disable-next-line prettier/prettier
+
+  /** The text to be displayed on the button. */
   text: string;
-  icon?: React.ReactNode;
-  iconPosition?: ButtonIconPosition;
-  target?: string;
-  bgClassName?: string;
-  textClassName?: string;
-  buttonSize?: ButtonSize;
+
+  /** The type of the button. Defaults to 'button'. */
   type?: ButtonType;
+
+  /** The size of the button. Defaults to 'default'. */
+  buttonSize?: ButtonSize;
+
+  /** The class name to be applied to the button. */
+  className?: string;
+
+  /** The class name to be applied to the button's background. */
+  bgClassName?: string;
+
+  /** The class name to be applied to the button's text. */
+  textClassName?: string;
+
+  /** The icon to be displayed on the button. */
+  icon?: React.ReactNode;
+
+  /** The position of the icon. Defaults to 'right'. */
+  iconPosition?: ButtonIconPosition;
+
+  /** The target attribute for the anchor tag. Defaults to '_self'. */
+  target?: string;
 } & (
   | ({
+      // eslint-disable-next-line prettier/prettier
+      /** The href attribute for the anchor tag. */
       href: string;
     } & React.AnchorHTMLAttributes<HTMLAnchorElement>)
   | ({
@@ -22,20 +44,9 @@ type IButtonProps = {
 );
 
 /**
- * @name Button
- * @param {string} props.text - The text to be displayed on the button.
- * @param {ButtonType} props.type - The type of the button. Defaults to 'button'.
- * @param {string} props.target - The target attribute for the anchor tag. Defaults to '_self'.
- * @param {React.ReactNode} props.icon - The icon to be displayed on the button.
- * @param {ButtonIconPosition} props.iconPosition - The position of the icon. Defaults to 'right'.
- * @param {string} props.className - The class name to be applied to the button.
- * @param {string} props.bgClassName - The class name to be applied to the button's background.
- * @param {string} props.textClassName - The class name to be applied to the button's text.
- * @param {ButtonSize} props.buttonSize - The size of the button. Defaults to 'default'.
- * @param {string} props.href - The href attribute for the anchor tag.
- * @description The Button component is a reusable button component that can be used to render a button or an anchor tag
- * @description The component accepts button or anchor tag props based on the presence of the href prop.
- * @description If the href prop is present, the component will render an anchor tag,
+ * The Button component is a reusable button component that can be used to render a button or an anchor tag.
+ * The component accepts button or anchor tag props based on the presence of the href prop.
+ * If the href prop is present, the component will render an anchor tag,
  * otherwise it will render a button tag.
  */
 export default function Button({
@@ -44,7 +55,7 @@ export default function Button({
   target = '_self',
   icon,
   iconPosition = ButtonIconPosition.RIGHT,
-  className,
+  className = '',
   bgClassName = twMerge('bg-primary-500 hover:bg-primary-400'),
   textClassName = twMerge('text-white'),
   buttonSize,
