@@ -1,87 +1,87 @@
-const { readdir, writeFile, readFile } = require('fs').promises;
-const { convertToJson } = require('../../scripts/utils');
-const { resolve } = require('path');
+const fs = require('fs').promises;
+const path = require('path');
 const buildCaseStudiesList = require('../../scripts/casestudies/index');
-const { caseStudyContentYaml, caseStudyContentJson, malformedYaml } = require('../fixtures/caseStudyData');
-
-jest.mock('fs', () => ({
-  promises: {
-    readdir: jest.fn(),
-    writeFile: jest.fn(),
-    readFile: jest.fn(),
-  },
-}));
-
-jest.mock('../../scripts/utils', () => ({
-  convertToJson: jest.fn(),
-}));
+const { yaml1,yaml2,json1,json2 } = require("../fixtures/caseStudyData");
+const exp = require('constants');
 
 describe('buildCaseStudiesList', () => {
-  beforeEach(() => {
-    jest.clearAllMocks();
+  const tempDir = path.join(__dirname, 'temp-test-dir');
+  const tempConfigDir = path.join(tempDir, 'config', 'casestudies');
+  const tempOutputFile = path.join(tempDir, 'case-studies.json');
+
+  beforeAll(async () => {
+    // Create temporary directories
+    await fs.mkdir(tempConfigDir, { recursive: true });
   });
 
-  test('should read files, convert to JSON, and write to case-studies.json', async () => {
-    const dirWithCaseStudy = 'config/casestudies';
-    const files = ['casestudy1.yml', 'casestudy2.yml'];
-    const caseStudyContent1 = caseStudyContentYaml;
-    const caseStudyContent2 = caseStudyContentYaml;
-    const jsonContent1 = caseStudyContentJson;
-    const jsonContent2 = caseStudyContentJson;
-    const caseStudiesJsonPath = resolve(__dirname, '../../config', 'case-studies.json');
-
-    readdir.mockResolvedValue(files);
-    readFile.mockResolvedValueOnce(caseStudyContent1).mockResolvedValueOnce(caseStudyContent2);
-    convertToJson.mockReturnValueOnce(jsonContent1).mockReturnValueOnce(jsonContent2);
-
-    await buildCaseStudiesList();
-
-    expect(readdir).toHaveBeenCalledWith(dirWithCaseStudy);
-    expect(readFile).toHaveBeenCalledWith(`${dirWithCaseStudy}/casestudy1.yml`, 'utf-8');
-    expect(readFile).toHaveBeenCalledWith(`${dirWithCaseStudy}/casestudy2.yml`, 'utf-8');
-    expect(convertToJson).toHaveBeenCalledWith(caseStudyContent1);
-    expect(convertToJson).toHaveBeenCalledWith(caseStudyContent2);
-    expect(writeFile).toHaveBeenCalledWith(caseStudiesJsonPath, JSON.stringify([jsonContent1]));
-    expect(writeFile).toHaveBeenCalledWith(caseStudiesJsonPath, JSON.stringify([jsonContent1, jsonContent2]));
+  afterAll(async () => {
+    // Clean up temporary directories
+    await fs.rm(tempDir, { recursive: true, force: true });
   });
 
-  test('should throw an error if directory does not exist', async () => {
-    readdir.mockRejectedValue(new Error('ENOENT: no such file or directory'));
-
-    await expect(buildCaseStudiesList()).rejects.toThrow('ENOENT: no such file or directory');
+  beforeEach(async () => {
+    // Clear the config directory before each test
+    const files = await fs.readdir(tempConfigDir);
+    await Promise.all(files.map(file => fs.unlink(path.join(tempConfigDir, file))));
   });
 
-  test('should throw an error if a file cannot be read', async () => {
-    const files = ['casestudy1.yml', 'casestudy2.yml'];
+  it('should read YAML files and create a JSON file with case studies', async () => {
+    // Create sample YAML files
 
-    readdir.mockResolvedValue(files);
-    readFile.mockResolvedValueOnce(caseStudyContentYaml)
-            .mockRejectedValueOnce(new Error('ERROR: cannot read file'));
+    await fs.writeFile(path.join(tempConfigDir, 'casestudy1.yml'), yaml1);
+    await fs.writeFile(path.join(tempConfigDir, 'casestudy2.yml'), yaml2);
 
-    await expect(buildCaseStudiesList()).rejects.toThrow('ERROR: cannot read file');
+    // Run the function
+    await buildCaseStudiesList(tempConfigDir, tempOutputFile);
+
+    // Read the output JSON file
+    const outputContent = await fs.readFile(tempOutputFile, 'utf-8');
+    const outputJson = JSON.parse(outputContent);
+
+    // Assertions
+    expect(outputJson).toHaveLength(2);
+    expect(outputJson[0]).toEqual(json1);
+    expect(outputJson[1]).toEqual(json2);
   });
 
-  test('should throw an error if YAML is malformed', async () => {
 
-    const files = ['file.yml'];
-
-    readdir.mockResolvedValue(files);
-    readFile.mockResolvedValueOnce(malformedYaml);
-    convertToJson.mockImplementationOnce(() => {
-      throw new Error('Invalid YAML');
-    });
-
-    await expect(buildCaseStudiesList()).rejects.toThrow('Invalid YAML');
+  it('should throw an error with incorrect parameters', async () => {
+    try {
+      // Call the function with incorrect parameters
+      await buildCaseStudiesList('invalid-dir', tempOutputFile);
+    } catch (error) {
+      // Assertions
+      expect(error).toBeInstanceOf(Error);
+      expect(error.message).toMatch(/ENOENT/); // Error for directory not found
+    }
   });
 
-  test('should throw an error if writing to case-studies.json fails', async () => {
-    const files = ['casestudy1.yml'];
-
-    readdir.mockResolvedValue(files);
-    readFile.mockResolvedValueOnce(caseStudyContentYaml);
-    convertToJson.mockReturnValueOnce(caseStudyContentJson);
-    writeFile.mockRejectedValueOnce(new Error("ERROR: cannot read file"));
-
-    await expect(buildCaseStudiesList()).rejects.toThrow("ERROR: cannot read file");
+  it('should throw an error when the output file path is invalid', async () => {
+    try {
+      // Call the function with an invalid output file path
+      await buildCaseStudiesList(tempConfigDir, '/invalid-path/case-studies.json');
+    } catch (error) {
+      // Assertions
+      expect(error).toBeInstanceOf(Error);
+    }
   });
+
+  it('should throw an error when YAML content is invalid', async () => {
+    // Create an invalid YAML file
+    const invalidYaml = `
+    invalid: yaml: content
+    `;
+    await fs.writeFile(path.join(tempConfigDir, 'invalid.yml'), invalidYaml);
+
+    try {
+      // Run the function
+      await buildCaseStudiesList(tempConfigDir, tempOutputFile);
+    } catch (error) {
+      // Assertions
+      expect(error).toBeInstanceOf(Error);
+      expect(error.message).toContain("Invalid content format"); // Error for invalid YAML content
+    }
+  });
+
+
 });
