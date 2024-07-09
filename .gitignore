@@ -17,5 +17,7 @@ meetings.json
 cypress/screenshots
 cypress/videos
 /config/finance/json-data/*
-*.mdx
+/pages/**/*.mdx
+*storybook.log
+/storybook-static/
 coverage
