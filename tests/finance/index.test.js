@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const buildFinanceInfoList = require('../../scripts/finance/index');
-const {expensesYaml,expensesLinkYaml,expensesJson,expensesLinkJson} = require("../fixtures/financeData")
+const {expensesYaml,expensesLinkYaml,expensesjson,expensesLinkjson} = require("../fixtures/financeData")
 
 describe('buildFinanceInfoList', () => {
   const testDir = path.resolve(__dirname, 'test-finance-info');
@@ -48,8 +48,8 @@ describe('buildFinanceInfoList', () => {
     const expensesJson = JSON.parse(fs.readFileSync(expensesJsonPath, 'utf8'));
     const expensesLinkJson = JSON.parse(fs.readFileSync(expensesLinkJsonPath, 'utf8'));
 
-    expect(expensesJson).toEqual(expensesJson);
-    expect(expensesLinkJson).toEqual(expensesLinkJson);
+    expect(expensesJson).toEqual(expensesjson);
+    expect(expensesLinkJson).toEqual(expensesLinkjson);
   });
 
   it('should throw an error if YAML files are not found', async () => {
