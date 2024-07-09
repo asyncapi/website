@@ -1,63 +1,105 @@
-// const { promises: fs } = require('fs');
-// const { resolve } = require('path');
-// const buildFinanceInfoList = require('../../scripts/finance/index');
-// const writeJSON = require('../../scripts/utils/readAndWriteJson');
+const fs = require('fs');
+const path = require('path');
+const buildFinanceInfoList = require('../../scripts/finance/index');
+const {expensesYaml,expensesLinkYaml,expensesJson,expensesLinkJson} = require("../fixtures/financeData")
 
-// jest.mock('fs', () => ({
-//   promises: {
-//     mkdir: jest.fn(),
-//   },
-// }));
+describe('buildFinanceInfoList', () => {
+  const testDir = path.resolve(__dirname, 'test-finance-info');
+  const configDir = 'config';
+  const financeDir = 'finance';
+  const year = '2024';
+  const jsonDataDir = 'json-data';
 
-// jest.mock('../../scripts/utils/readAndWriteJson', () => jest.fn());
+  beforeAll(() => {
+    // Create test directory structure
+    fs.mkdirSync(path.resolve(testDir, configDir, financeDir, year), { recursive: true });
+    
+    fs.writeFileSync(path.resolve(testDir, configDir, financeDir, year, 'Expenses.yml'), expensesYaml);
+    fs.writeFileSync(path.resolve(testDir, configDir, financeDir, year, 'ExpensesLink.yml'), expensesLinkYaml);
+  });
 
-// describe('buildFinanceInfoList', () => {
-//   beforeEach(() => {
-//     jest.clearAllMocks();
-//   });
+  afterAll(() => {
+    // Clean up test directory
+    fs.rmSync(testDir, { recursive: true, force: true });
+  });
 
-//   test('should create the necessary directory and write JSON files', async () => {
-//     const currentDir = resolve(__dirname, '../../');
-//     const expensesPath = resolve(currentDir, 'config', 'finance', '2024', 'Expenses.yml');
-//     const expensesLinkPath = resolve(currentDir, 'config', 'finance', '2024', 'ExpensesLink.yml');
-//     const jsonDirectory = resolve(currentDir, 'config', 'finance', 'json-data', '2024');
-//     const expensesJsonPath = resolve(jsonDirectory, 'Expenses.json');
-//     const expensesLinkJsonPath = resolve(jsonDirectory, 'ExpensesLink.json');
+  it('should create JSON files from YAML files', async () => {
+    await buildFinanceInfoList({
+      currentDir: testDir,
+      configDir,
+      financeDir,
+      year,
+      jsonDataDir
+    });
 
-//     await buildFinanceInfoList();
+    const jsonDir = path.resolve(testDir, configDir, financeDir, jsonDataDir, year);
+    
+    // Check if JSON directory was created
+    expect(fs.existsSync(jsonDir)).toBe(true);
 
-//     expect(fs.mkdir).toHaveBeenCalledWith(jsonDirectory, { recursive: true });
-//     expect(writeJSON).toHaveBeenCalledWith(expensesPath, expensesJsonPath);
-//     expect(writeJSON).toHaveBeenCalledWith(expensesLinkPath, expensesLinkJsonPath);
-//   });
+    // Check if JSON files were created
+    const expensesJsonPath = path.resolve(jsonDir, 'Expenses.json');
+    const expensesLinkJsonPath = path.resolve(jsonDir, 'ExpensesLink.json');
+    
+    expect(fs.existsSync(expensesJsonPath)).toBe(true);
+    expect(fs.existsSync(expensesLinkJsonPath)).toBe(true);
 
-//   test('should log and throw an error if an error occurs', async () => {
-//     const error = new Error('Test error');
-//     fs.mkdir.mockRejectedValue(error);
+    // Check contents of JSON files
+    const expensesJson = JSON.parse(fs.readFileSync(expensesJsonPath, 'utf8'));
+    const expensesLinkJson = JSON.parse(fs.readFileSync(expensesLinkJsonPath, 'utf8'));
 
-//     await expect(buildFinanceInfoList()).rejects.toThrow(`Error: ${error.message}`);
+    expect(expensesJson).toEqual(expensesJson);
+    expect(expensesLinkJson).toEqual(expensesLinkJson);
+  });
 
-//   });
+  it('should throw an error if YAML files are not found', async () => {
+    try {
+      await buildFinanceInfoList({
+        currentDir: testDir,
+        configDir,
+        financeDir,
+        year: '2023', // Non-existent year
+        jsonDataDir
+      });
+    } catch (error) {
+      expect(error).toBeInstanceOf(Error);
+      expect(error.message).toMatch(/ENOENT/); // Expecting a "no such file or directory" error
+    }
+  });
 
-//   test('should throw an error if directory creation fails', async () => {
-//     const error = new Error('Cannot create directory');
-//     fs.mkdir.mockRejectedValue(error);
+  it('should throw an error if JSON directory creation fails', async () => {
+    try {
+      await buildFinanceInfoList({
+        currentDir: testDir,
+        configDir,
+        financeDir,
+        year,
+        jsonDataDir: 'nonexistent-dir' // Invalid JSON data directory path
+      });
+    } catch (error) {
+      expect(error).toBeInstanceOf(Error);
+      expect(error.message).toMatch(/ENOENT/); // Expecting a "no such file or directory" error
+    }
+  });
 
-//     await expect(buildFinanceInfoList()).rejects.toThrow(`Error: ${error.message}`);
-//   });
+  it('should throw an error if YAML content is invalid', async () => {
+    // Write invalid YAML content
+    const invalidYaml = `
+      invalid yaml content
+    `;
+    fs.writeFileSync(path.resolve(testDir, configDir, financeDir, year, 'InvalidExpenses.yml'), invalidYaml);
 
-//   test('should throw an error if writing JSON fails due to malformed YAML', async () => {
-//     const error = new Error('Invalid YAML structure');
-//     writeJSON.mockRejectedValue(error);
-
-//     await expect(buildFinanceInfoList()).rejects.toThrow(`Error: ${error.message}`);
-//   });
-
-//   test('should throw an error if source YAML file is not found', async () => {
-//     const error = new Error('ENOENT: no such file or directory');
-//     writeJSON.mockRejectedValue(error);
-
-//     await expect(buildFinanceInfoList()).rejects.toThrow(`Error: ${error.message}`);
-//   });
-
-// });
+    try {
+      await buildFinanceInfoList({
+        currentDir: testDir,
+        configDir,
+        financeDir,
+        year,
+        jsonDataDir
+      });
+    } catch (error) {
+      expect(error).toBeInstanceOf(Error);
+      expect(error.message).toMatch(/YAMLException/); // Expecting a YAML parsing error
+    }
+  });
+});
