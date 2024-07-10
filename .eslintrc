@@ -3,7 +3,8 @@
     "airbnb-base",
     "next/core-web-vitals",
     "eslint:recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:storybook/recommended"
   ],
   "env": {
     "browser": true,
@@ -52,7 +53,11 @@
   "overrides": [
     // Configuration for TypeScript files
     {
-      "files": ["**/*.ts", "**/*.tsx", "netlify/*.ts"],
+      "files": [
+        "**/*.ts",
+        "**/*.tsx",
+        "netlify/*.ts"
+      ],
       "plugins": [
         "@typescript-eslint",
         "tailwindcss",
@@ -63,7 +68,8 @@
         "plugin:tailwindcss/recommended",
         "airbnb-typescript",
         "next/core-web-vitals",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended",
+        "plugin:storybook/recommended"
       ],
       "parserOptions": {
         "project": "./tsconfig.json"
@@ -93,7 +99,9 @@
         "unused-imports/no-unused-imports": "error",
         "unused-imports/no-unused-vars": [
           "error",
-          { "argsIgnorePattern": "^_" }
+          {
+            "argsIgnorePattern": "^_"
+          }
         ],
         // Variables
         "init-declarations": "off",
@@ -192,7 +200,10 @@
             "ignoreChainWithDepth": 4
           }
         ],
-        "newline-after-var": ["error", "always"],
+        "newline-after-var": [
+          "error",
+          "always"
+        ],
         "no-array-constructor": "error",
         "no-lonely-if": "error",
         "no-mixed-operators": "off",
@@ -294,7 +305,9 @@
       }
     },
     {
-      "files": ["components/logos/*"],
+      "files": [
+        "components/logos/*"
+      ],
       "rules": {
         "max-len": "off"
       }
