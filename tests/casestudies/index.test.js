@@ -37,7 +37,6 @@ describe('buildCaseStudiesList', () => {
     const outputContent = await fs.readFile(tempOutputFile, 'utf-8');
     const outputJson = JSON.parse(outputContent);
 
-    // Assertions
     expect(outputJson).toHaveLength(2);
     expect(outputJson[0]).toEqual(json1);
     expect(outputJson[1]).toEqual(json2);
@@ -46,10 +45,8 @@ describe('buildCaseStudiesList', () => {
 
   it('should throw an error with incorrect parameters', async () => {
     try {
-      // Call the function with incorrect parameters
       await buildCaseStudiesList('invalid-dir', tempOutputFile);
     } catch (error) {
-      // Assertions
       expect(error).toBeInstanceOf(Error);
       expect(error.message).toMatch(/ENOENT/); // Error for directory not found
     }
@@ -60,7 +57,6 @@ describe('buildCaseStudiesList', () => {
       // Call the function with an invalid output file path
       await buildCaseStudiesList(tempConfigDir, '/invalid-path/case-studies.json');
     } catch (error) {
-      // Assertions
       expect(error).toBeInstanceOf(Error);
     }
   });
@@ -73,10 +69,8 @@ describe('buildCaseStudiesList', () => {
     await fs.writeFile(path.join(tempConfigDir, 'invalid.yml'), invalidYaml);
 
     try {
-      // Run the function
       await buildCaseStudiesList(tempConfigDir, tempOutputFile);
     } catch (error) {
-      // Assertions
       expect(error).toBeInstanceOf(Error);
       expect(error.message).toContain("Invalid content format"); // Error for invalid YAML content
     }
