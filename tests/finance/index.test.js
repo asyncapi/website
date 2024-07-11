@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const buildFinanceInfoList = require('../../scripts/finance/index');
-const {expensesYaml,expensesLinkYaml,expensesjson,expensesLinkjson} = require("../fixtures/financeData")
+const { expensesYaml, expensesLinkYaml, expensesjson, expensesLinkjson } = require("../fixtures/financeData")
 
 describe('buildFinanceInfoList', () => {
   const testDir = path.resolve(__dirname, 'test-finance-info');
@@ -13,7 +13,7 @@ describe('buildFinanceInfoList', () => {
   beforeAll(() => {
     // Create test directory structure
     fs.mkdirSync(path.resolve(testDir, configDir, financeDir, year), { recursive: true });
-    
+
     fs.writeFileSync(path.resolve(testDir, configDir, financeDir, year, 'Expenses.yml'), expensesYaml);
     fs.writeFileSync(path.resolve(testDir, configDir, financeDir, year, 'ExpensesLink.yml'), expensesLinkYaml);
   });
@@ -33,14 +33,14 @@ describe('buildFinanceInfoList', () => {
     });
 
     const jsonDir = path.resolve(testDir, configDir, financeDir, jsonDataDir, year);
-    
+
     // Check if JSON directory was created
     expect(fs.existsSync(jsonDir)).toBe(true);
 
     // Check if JSON files were created
     const expensesJsonPath = path.resolve(jsonDir, 'Expenses.json');
     const expensesLinkJsonPath = path.resolve(jsonDir, 'ExpensesLink.json');
-    
+
     expect(fs.existsSync(expensesJsonPath)).toBe(true);
     expect(fs.existsSync(expensesLinkJsonPath)).toBe(true);
 

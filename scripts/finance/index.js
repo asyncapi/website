@@ -3,12 +3,12 @@ const { resolve } = require('path');
 const writeJSON = require('../utils/readAndWriteJson.js');
 
 module.exports = async function buildFinanceInfoList({
-    currentDir = resolve(__dirname, '../../'),
-    configDir = 'config',
-    financeDir = 'finance',
-    year = '2024',
-    jsonDataDir = 'json-data'
-} = {}) {
+    currentDir,
+    configDir,
+    financeDir,
+    year,
+    jsonDataDir
+}) {
     try {
         const expensesPath = resolve(currentDir, configDir, financeDir, year, 'Expenses.yml');
         const expensesLinkPath = resolve(currentDir, configDir, financeDir, year, 'ExpensesLink.yml');
