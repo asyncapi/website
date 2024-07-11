@@ -134,7 +134,7 @@ Now, let's move on to the `channels` section. In the `servers` section, you spec
 
 In this example, `light/measured` is the channel address. From the Streetlight application example perspective, it means that `light/measured` is the topic's name in the MQTT broker.
 
-Next is the payload property. It is used to understand how the event should look like when publishing to that channel
+Next is the payload property. It is used to understand what the event should look like when publishing to that channel
 
 <CodeBlock>
 {`      payload:
