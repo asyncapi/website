@@ -58,6 +58,7 @@ USAGE
 * [`asyncapi new`](#asyncapi-new)
 * [`asyncapi new file`](#asyncapi-new-file)
 * [`asyncapi new glee`](#asyncapi-new-glee)
+* [`asyncapi new template`](#asyncapi-new-glee)
 * [`asyncapi optimize [SPEC-FILE]`](#asyncapi-optimize-spec-file)
 * [`asyncapi start`](#asyncapi-start)
 * [`asyncapi start studio`](#asyncapi-start-studio)
@@ -633,6 +634,24 @@ DESCRIPTION
 ```
 
 _See code: [src/commands/new/glee.ts](https://github.com/asyncapi/cli/blob/v2.0.3/src/commands/new/glee.ts)_
+
+## `asyncapi new template`
+
+Creates a new template
+
+```
+USAGE
+  $ asyncapi new glee [-h] [-n <value>] [-t <value>] [-renderer <value>]
+
+FLAGS
+  -h, --help              Show CLI help.
+  -n, --name=<value>      [default: project] Name of the Project
+  -t, --template=<value>  [default: default] Name of the Template
+  -r  --renderer=<value>  [default: react] Name of the renderer engine
+
+DESCRIPTION
+  Creates a new template project
+```
 
 ## `asyncapi optimize [SPEC-FILE]`
 
