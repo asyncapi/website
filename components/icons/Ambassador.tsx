@@ -2,7 +2,7 @@
 /**
  * @description Icons for asyncapi website
  */
-export default function IconArrowDown({ className = '' }) {
+export default function IconAmbassador({ className = '' }) {
   return (
     <svg
       width='11'

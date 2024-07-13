@@ -1,12 +1,12 @@
 [
   {
-    "name": "Alejandra Quetzalli",
+    "name": "Quetzalli Writes",
     "img": "https://avatars.githubusercontent.com/u/19964402?v=4",
-    "bio": "Alejandra Quetzalli is the upcoming author (2023) of the book titled 'Designing Developer Documentation as a Product', which will be published by the Apress Publishing Company. Alejandra has been in tech for 9 years, working with SEO, Paid Search, Full-Stack development, UX, Developer Relations, and Technical Writing (Engineering Documentation). She's currently a core OSS contributor for Docs, DevRel, and Community Building at AsyncAPI Initiative. She's also a member of the AsyncAPI Technical Steering Committee (TSC).",
+    "bio": "Quetzalli Writes is an author of the book titled 'Docs-as-Ecosystem', which was published by the Apress Publishing Company. Quetzalli has been in tech for 9 years, working with SEO, Paid Search, Full-Stack development, UX, Developer Relations, and Technical Writing (Engineering Documentation). She's currently a core OSS contributor for Docs, DevRel, and Community Building at AsyncAPI Initiative. She's also a member of the AsyncAPI Technical Steering Committee (TSC).",
     "title": "DevRel & DevDocs @AsyncAPI",
-    "github": "alequetzalli",
-    "twitter": "QuetzalliAle",
-    "linkedin": "alejandra-quetzalli",
+    "github": "quetzalliwrites",
+    "twitter": "QuetzalliWrites",
+    "linkedin": "quetzalli-writes",
     "company": "Postman",
     "country": "🇲🇽",
     "contributions": [
@@ -209,7 +209,7 @@
     "twitter": "ivangsa",
     "bio": "Java Architect with a deep understanding of Java, Spring-Boot, Spring-Cloud technologies, specializing in Domain-Driven Design (DDD) and Event-Driven Architectures creating Software Easy to Understand. Building ZenWave 360º. ZenWave 360º is a set of tools built on the foundations of Domain Driven Design and API-First principles for Event-Driven Architectures, to help you create software easy to understand. https://www.zenwave360.io/",
     "linkedin": "ivangarciasainzaja",
-    "company": "SNGULAR",
+    "company": "IZERTIS",
     "title": "Java Architect. Speaker. Building ZenWave 360°.",  
     "img": "https://avatars.githubusercontent.com/u/1246876?v=4",
     "contributions": [
