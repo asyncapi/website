@@ -4,7 +4,7 @@
   "description": "AsyncAPI website",
   "private": true,
   "scripts": {
-    "dev": "npm run build-scripts && next",
+    "dev": "npm run build-scripts && next dev",
     "build": "npm run build-scripts && next build",
     "test": "jest --passWithNoTests",
     "build:pages": "node scripts/build-pages.js && npm run format:mdx",
