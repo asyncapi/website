@@ -1,9 +1,9 @@
 const { google } = require('googleapis');
-const { writeFileSync } = require('fs');
+const path = require("path")
+const { readFileSync, mkdirSync, rmSync } = require('fs');
 const { buildMeetings } = require('../scripts/build-meetings');
 const { mockEvents } = require('../tests/fixtures/meetingsData')
 
-jest.mock('fs');
 jest.mock('googleapis', () => {
     const events = {
         list: jest.fn(),
@@ -24,23 +24,29 @@ jest.mock('googleapis', () => {
 
 describe('buildMeetings', () => {
     const originalEnv = process.env;
+    const testDir = path.join(__dirname, 'test_output');
 
     beforeEach(() => {
         jest.clearAllMocks();
         process.env = { ...originalEnv };
         process.env.CALENDAR_SERVICE_ACCOUNT = JSON.stringify({ key: 'test_key' });
         process.env.CALENDAR_ID = 'test_calendar_id';
+
+        mkdirSync(testDir, { recursive: true });
     });
 
     afterEach(() => {
         process.env = originalEnv;
+
+        rmSync(testDir, { recursive: true, force: true });
     });
 
     it('should fetch events, process them, and write to a file', async () => {
 
         google.calendar().events.list.mockResolvedValue({ data: { items: mockEvents } });
 
-        await buildMeetings();
+        const outputFilePath = path.join(testDir, 'meetings.json');
+        await buildMeetings(outputFilePath);
 
         expect(google.auth.GoogleAuth).toHaveBeenCalledWith({
             scopes: ['https://www.googleapis.com/auth/calendar'],
@@ -53,10 +59,8 @@ describe('buildMeetings', () => {
             timeMin: expect.any(String),
         });
 
-        expect(writeFileSync).toHaveBeenCalledWith(
-            expect.stringContaining('meetings.json'),
-            expect.stringContaining('Community Meeting')
-        );
+        const fileContent = readFileSync(outputFilePath, 'utf8');
+        expect(fileContent).toContain('Community Meeting');
     });
 
     it('should throw an error if the Google API call fails', async () => {
@@ -71,11 +75,24 @@ describe('buildMeetings', () => {
         const mockEvents = [];
         google.calendar().events.list.mockResolvedValue({ data: { items: mockEvents } });
 
-        await buildMeetings();
+        const outputFilePath = path.join(testDir, 'meetings.json');
+        await buildMeetings(outputFilePath);
 
         expect(google.auth.GoogleAuth).toHaveBeenCalledWith({
             scopes: ['https://www.googleapis.com/auth/calendar'],
             credentials: undefined,
         });
+
+        const fileContent = readFileSync(outputFilePath, 'utf8');
+        expect(fileContent).toBe('[]');
     });
+
+    it('should throw an error with incorrect parameters', async () => {
+        try {
+          await buildMeetings("randomPath");
+        } catch (error) {
+          expect(error).toBeInstanceOf(Error);
+          expect(error.message).toMatch(/ENOENT/);
+        }
+      });
 });
