@@ -2,7 +2,7 @@ const { writeFileSync } = require('fs');
 const { resolve } = require('path');
 const fetch = require('node-fetch');
 
-async function buildNewsroomVideos() {
+async function buildNewsroomVideos(writePath = resolve(__dirname, '../config', 'newsroom_videos.json')) {
     try {
         const response = await fetch('https://youtube.googleapis.com/youtube/v3/search?' + new URLSearchParams({
             key: process.env.YOUTUBE_TOKEN,
@@ -34,10 +34,7 @@ async function buildNewsroomVideos() {
         const videoData = JSON.stringify(videoDataItems, null, '  ');
         console.log('The following are the Newsroom Youtube videos: ', videoData);
 
-        writeFileSync(
-            resolve(__dirname, '../config', 'newsroom_videos.json'),
-            videoData
-        );
+        writeFileSync(writePath,videoData);
 
         return videoData;
     } catch (err) {

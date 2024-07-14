@@ -1,35 +1,38 @@
 const { buildNewsroomVideos } = require('../scripts/build-newsroom-videos');
-const { writeFileSync } = require('fs');
 const fetch = require('node-fetch');
 const { resolve } = require('path');
+const { mkdirSync, readFileSync, rmSync } = require('fs');
+const { mockApiResponse, expectedResult } = require('./fixtures/newsroomData');
 
-const { mockApiResponse,expectedResult } = require('./fixtures/newsroomData')
-
-const resolvedPath = resolve(__dirname, '../config', 'newsroom_videos.json');
+const testDir = resolve(__dirname, 'test_config');
+const testFilePath = resolve(testDir, 'newsroom_videos.json');
 
 jest.mock('node-fetch', () => jest.fn());
-jest.mock('fs', () => ({
-    writeFileSync: jest.fn(),
-}));
 
 describe('buildNewsroomVideos', () => {
     beforeEach(() => {
         fetch.mockClear();
-        writeFileSync.mockClear();
         process.env.YOUTUBE_TOKEN = 'testkey';
+
+        mkdirSync(testDir, { recursive: true });
+    });
+
+    afterEach(() => {
+        rmSync(testDir, { recursive: true, force: true });
     });
 
     it('should fetch video data and write to file', async () => {
-
         fetch.mockResolvedValue({
             ok: true,
             json: jest.fn().mockResolvedValue(mockApiResponse),
         });
 
-        const result = await buildNewsroomVideos();
+        const result = await buildNewsroomVideos(testFilePath);
 
         expect(fetch).toHaveBeenCalledWith(expect.stringContaining('https://youtube.googleapis.com/youtube/v3/search?'));
-        expect(writeFileSync).toHaveBeenCalledWith(resolvedPath,expectedResult);
+        
+        const response = readFileSync(testFilePath, 'utf8');
+        expect(response).toEqual(expectedResult);
 
         expect(result).toEqual(expectedResult);
     });
@@ -37,21 +40,7 @@ describe('buildNewsroomVideos', () => {
     it('should handle fetch errors', async () => {
         fetch.mockRejectedValue(new Error('Fetch error'));
 
-        await expect(buildNewsroomVideos()).rejects.toThrow('Failed to build newsroom videos: Fetch error');
-    });
-
-    it('should handle file write errors', async () => {
-
-        fetch.mockResolvedValue({
-            ok: true,
-            json: jest.fn().mockResolvedValue(mockApiResponse),
-        });
-
-        writeFileSync.mockImplementation(() => {
-            throw new Error('Write error');
-        });
-
-        await expect(buildNewsroomVideos()).rejects.toThrow('Failed to build newsroom videos: Write error');
+        await expect(buildNewsroomVideos(testFilePath)).rejects.toThrow('Failed to build newsroom videos: Fetch error');
     });
 
     it('should handle invalid API response', async () => {
@@ -60,6 +49,14 @@ describe('buildNewsroomVideos', () => {
             json: jest.fn().mockResolvedValue({}),
         });
 
-        await expect(buildNewsroomVideos()).rejects.toThrow('Failed to build newsroom videos: Invalid data structure received from YouTube API');
+        await expect(buildNewsroomVideos(testFilePath)).rejects.toThrow('Failed to build newsroom videos: Invalid data structure received from YouTube API');
     });
+
+    it('should throw an error with incorrect parameters', async () => {
+        try {
+          await buildNewsroomVideos('randomePath');
+        } catch (error) {
+          expect(error.message).toContain("Failed to build newsroom videos");
+        }
+      });
 });
