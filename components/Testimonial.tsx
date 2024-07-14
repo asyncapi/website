@@ -1,4 +1,4 @@
-import Quote from './icons/Quote';
+import IconQuote from './icons/Quote';
 import Paragraph from './typography/Paragraph';
 
 interface TestimonialProps {
@@ -30,7 +30,7 @@ export default function Testimonial({
     <li className={`p-4 sm:px-6 md:flex md:flex-row md:py-4 md:pr-0 ${className}`}>
       <blockquote className='mt-8 md:flex md:grow md:flex-col'>
         <div className='relative text-lg font-medium leading-7 text-gray-600 md:flex-1'>
-          <Quote className='absolute left-0 top-0 size-8 -translate-y-2 text-primary-500' />
+          <IconQuote className='absolute left-0 top-0 size-8 -translate-y-2 text-primary-500' />
           <Paragraph className='relative pl-10 text-left'>{text}</Paragraph>
         </div>
         <footer className='mt-6'>
