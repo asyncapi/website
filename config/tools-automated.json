@@ -720,17 +720,15 @@
         }
       },
       {
-        "title": "Java Template",
-        "description": "Java template for the AsyncAPI Generator",
+        "title": "Node.js Websockets Template",
+        "description": "Node.js WebSockets template for the AsyncAPI Generator. It showcases how from a single AsyncAPI document you can generate a server and a client at the same time.",
         "links": {
-          "repoUrl": "https://github.com/asyncapi/java-template"
+          "repoUrl": "https://github.com/asyncapi/nodejs-ws-template"
         },
         "filters": {
-          "language": [
-            "javascript"
-          ],
+          "language": "javascript",
           "technology": [
-            "Java"
+            "Node.js"
           ],
           "categories": [
             "generator-template"
@@ -758,6 +756,26 @@
         }
       },
       {
+        "title": "Java Template",
+        "description": "Java template for the AsyncAPI Generator",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/java-template"
+        },
+        "filters": {
+          "language": [
+            "javascript"
+          ],
+          "technology": [
+            "Java"
+          ],
+          "categories": [
+            "generator-template"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      },
+      {
         "title": "Java Spring Template",
         "description": "Java Spring template for the AsyncAPI Generator",
         "links": {
@@ -771,24 +789,6 @@
             "Springboot",
             "Maven",
             "Gradle"
-          ],
-          "categories": [
-            "generator-template"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      },
-      {
-        "title": "Node.js Websockets Template",
-        "description": "Node.js WebSockets template for the AsyncAPI Generator. It showcases how from a single AsyncAPI document you can generate a server and a client at the same time.",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/nodejs-ws-template"
-        },
-        "filters": {
-          "language": "javascript",
-          "technology": [
-            "Node.js"
           ],
           "categories": [
             "generator-template"
