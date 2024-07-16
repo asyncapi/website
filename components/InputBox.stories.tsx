@@ -19,13 +19,13 @@ const Input: Story = {
   },
 
   render: (args: InputBoxProps) => {
-    const [{ value }, updateValue] = useArgs();
+    const [{ inputValue }, updateArgs] = useArgs();
 
     const setValue = (newValue: string) => {
-      updateValue({ inputValue: newValue });
+      updateArgs({ inputValue: newValue });
     };
 
-    return <InputBox {...args} inputValue={value} setInput={setValue} />;
+    return <InputBox {...args} inputValue={inputValue} setInput={setValue} />;
   }
 };
 
