@@ -1,15 +1,15 @@
 export enum ButtonSize {
   SMALL = 'small',
-  DEFAULT = 'default',
+  DEFAULT = 'default'
 }
 
 export enum ButtonType {
   SUBMIT = 'submit',
   RESET = 'reset',
-  BUTTON = 'button',
+  BUTTON = 'button'
 }
 
 export enum ButtonIconPosition {
   LEFT = 'left',
-  RIGHT = 'right',
+  RIGHT = 'right'
 }

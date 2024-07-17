@@ -1,16 +1,18 @@
 interface SelectTagsProps {
+  // eslint-disable-next-line prettier/prettier
+
+  /** The content to be displayed inside the tag. */
   name?: string;
+
+  /** The color of the tag. */
   bgColor: string;
+
+  /** The border color of the tag. */
   borderColor: string;
 }
 
 /**
- * @description This component displays tags. These tags are displayed for languages and technologies in the tools card.
- *
- * @param {SelectTagsProps} props - The props for the Select Tags component.
- * @param {string} props.name - The content to be displayed inside the tag.
- * @param {string} props.bgColor - The color of the tag.
- * @param {string} props.borderColor - The border color of the tag.
+ * This component displays tags. These tags are displayed for languages and technologies in the tools card.
  */
 export default function SelectTags({ name = '', bgColor, borderColor }: SelectTagsProps) {
   return (

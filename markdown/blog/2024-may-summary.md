@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: AsyncAPI Community Manager
 excerpt: 'May Community update'
-featured: true
 ---
 
 May has been a fantastic month for our community. We are delighted to announce that [Gravitee](https://gravitee.io/) has joined us as our new Platinum sponsor; thanks to [Georgie Burrows](https://www.linkedin.com/in/georgieburrows/) for making this happen.
