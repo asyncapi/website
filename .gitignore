@@ -7,9 +7,17 @@ node_modules
 out
 config/posts.json
 config/case-studies.json
+config/adopters.json
 public/rss.xml
 .env.local
 yarn.lock
 meetings.json
 .netlify
 .env
+cypress/screenshots
+cypress/videos
+/config/finance/json-data/*
+/pages/**/*.mdx
+*storybook.log
+/storybook-static/
+coverage

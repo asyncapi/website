@@ -1,6 +1,9 @@
 const rssFeed = require('./build-rss');
 const buildPostList = require('./build-post-list');
 const buildCaseStudiesList = require('./casestudies');
+const buildAdoptersList = require('./adopters')
+const buildFinanceInfoList = require('./finance');
+const { resolve } = require('path');
 
 async function start() {
   await buildPostList();
@@ -10,13 +13,20 @@ async function start() {
     'AsyncAPI Initiative Blog',
     'rss.xml'
   );
-  rssFeed(
-    'jobs',
-    'AsyncAPI Initiative Jobs RSS Feed',
-    'AsyncAPI Initiative Jobs Board',
-    'jobs/rss.xml'
+  await buildCaseStudiesList(
+    'config/casestudies',
+    resolve(__dirname, '../config', 'case-studies.json')
   );
-  await buildCaseStudiesList();
+  await buildAdoptersList();
+  await buildFinanceInfoList({
+    currentDir: '.',
+    configDir: 'config',
+    financeDir: 'finance',
+    year: '2024',
+    jsonDataDir: 'json-data'
+  });
 }
+
+module.exports = start;
 
 start();

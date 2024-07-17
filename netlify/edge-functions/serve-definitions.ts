@@ -7,31 +7,36 @@ const NR_METRICS_ENDPOINT = Deno.env.get("NR_METRICS_ENDPOINT") || "https://metr
 const URL_DEST_SCHEMAS = "https://raw.githubusercontent.com/asyncapi/spec-json-schemas/master/schemas";
 const URL_DEST_DEFINITIONS = "https://raw.githubusercontent.com/asyncapi/spec-json-schemas/master/definitions";
 
-// Legitimate request: 
+// Schemas-related request:
 //   Patterns: /<source> OR /<source>/<file> OR /<source>/<version>/<file>
 //   Examples: /definitions OR /schema-store/2.5.0-without-$id.json OR /definitions/2.4.0/info.json
-// Non-legitimate request: 
+// Schemas-unrelated request:
 //   Patterns: /<source>/<randompath>/*
 //   Examples: /definitions/asyncapi.yaml OR /schema-store/2.4.0.JSON (uppercase)
 //
-// Non-legitimate requests should not use our GitHub Token and affect the rate limit. Those shouldn't send metrics to NR either as they just add noise.
-const legitimateRequestRegex = /^\/[\w\-]*\/?(?:([\w\-\.]*\/)?([\w\-$%\.]*\.json))?$/
+// Schemas-unrelated requests should not use our GitHub Token and affect the rate limit. Those shouldn't send metrics to NR either as they just add noise.
+const SchemasRelatedRequestRegex = /^\/[\w\-]*\/?(?:([\w\-\.]*\/)?([\w\-$%\.]*\.json))?$/
 
 export default async (request: Request, context: Context) => {
-  let rewriteRequest = buildRewrite(request);
-
+  const rewriteRequest = buildRewrite(request);
   let response: Response;
   if (rewriteRequest === null) {
-    rewriteRequest = request;
-
-    response = await context.next();
-  } else {
-    // Fetching the definition file
-    response = await fetch(rewriteRequest);
+    // This is a Schema-unrelated request. Let it go through and do not intercept it.
+    return await context.next();
   }
+
+  // Fetching the definition file
+  response = await fetch(rewriteRequest);
 
   const isRequestingAFile = request.url.endsWith('.json');
   if (isRequestingAFile) {
+    let metricName: string
+    const metricAttributes = {
+      'responseStatus': response.status,
+      'responseStatusText': response.statusText,
+      'cached': false,
+    };
+
     if (response.ok) {
       // Manually cloning the response so we can modify the headers as they are immutable
       response = new Response(response.body, response);
@@ -40,27 +45,30 @@ export default async (request: Request, context: Context) => {
       // This lets tooling fetch the schemas directly from their URL.
       response.headers.set("Content-Type", "application/schema+json");
 
-      // Sending metrics to NR.
-      const metric = newNRMetricCount("asyncapi.jsonschema.download.success", request, rewriteRequest)
-
-      await sendMetricToNR(context, metric);
+      metricName = "asyncapi.jsonschema.download.success";
     } else {
-      // Notifying NR of the error.
-      const attributes = {
-        "responseStatus": response.status,
-        "responseStatusText": response.statusText,
-      };
-      const metric = newNRMetricCount("asyncapi.jsonschema.download.error", request, rewriteRequest, attributes);
-
-      await sendMetricToNR(context, metric);
+      switch (response.status) {
+        case 304:
+          metricName = "asyncapi.jsonschema.download.success";
+          metricAttributes.cached = true;
+          break;
+        default:
+          // Notifying NR of the error.
+          metricName = "asyncapi.jsonschema.download.error";
+          console.log(`Error downloading JSON Schema file: ${  response.status  } ${  response.statusText}`);
+          break;
+      }
     }
+
+    // Sending metrics to NR.
+    await sendMetricToNR(context, newNRMetricCount(metricName, request, rewriteRequest, metricAttributes));
   }
 
   return response;
 };
 
 function buildRewrite(originalRequest: Request): (Request | null) {
-  const extractResult = legitimateRequestRegex.exec(new URL(originalRequest.url).pathname);
+  const extractResult = SchemasRelatedRequestRegex.exec(new URL(originalRequest.url).pathname);
   if (extractResult === null) {
     return null;
   }
@@ -71,17 +79,16 @@ function buildRewrite(originalRequest: Request): (Request | null) {
 
   if (definitionVersion === undefined) {
     // If no file is specified, the whole bundled schema will be served
-    url = URL_DEST_SCHEMAS + `/${file}`;
+    url = `${URL_DEST_SCHEMAS  }/${file}`;
   } else {
-    url = URL_DEST_DEFINITIONS + `/${definitionVersion}${file}`;
+    url = `${URL_DEST_DEFINITIONS  }/${definitionVersion}${file}`;
   }
+
+  originalRequest.headers.set('Authorization', `token ${  GITHUB_TOKEN}`);
 
   return new Request(url, {
     method: originalRequest.method,
-    headers: new Headers({
-      // Setting GH Token to increase GH rate limit to 5,000 req/h.
-      'Authorization': "token " + GITHUB_TOKEN,
-    }),
+    headers: originalRequest.headers,
   });
 }
 
@@ -125,11 +132,11 @@ async function sendMetricToNR(context: Context, metric: NRMetric) {
 }
 
 function newNRMetricCount(name: string, originalRequest: Request, rewriteRequest: Request, attributes: any = {}): NRMetric {
-  var metric = new NRMetric(name, NRMetricType.Count, 1);
+  const metric = new NRMetric(name, NRMetricType.Count, 1);
   metric["interval.ms"] = 1;
 
   const splitPath = new URL(originalRequest.url).pathname.split("/");
-  // Examples: 
+  // Examples:
   //   /definitions/2.4.0/info.json => file = info.json
   //   /definitions/2.4.0.json      => file = 2.4.0.json
   const file = splitPath.slice(-1).pop();
@@ -158,10 +165,15 @@ enum NRMetricType {
 
 class NRMetric {
   name: string;
+
   value: number | any;
+
   timestamp: number;
+
   "interval.ms": number;
+
   type: NRMetricType;
+
   attributes: any;
 
   constructor(name: string, type = NRMetricType.Count, value = 1, timestamp = Date.now()) {

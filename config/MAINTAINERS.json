@@ -1,0 +1,678 @@
+[
+    {
+        "name": "Aishat Muibudeen",
+        "github": "Mayaleeeee",
+        "linkedin": "aishatmuibudeen",
+        "slack": "U03CNHGEUR1",
+        "twitter": "maya_ux_ui",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "website"
+        ]
+    },
+    {
+        "name": "Aayush Sahu",
+        "github": "aayushmau5",
+        "linkedin": "aayushmau5",
+        "slack": "U01QRHR1ABH",
+        "twitter": "aayushmau5",
+        "availableForHire": false,
+        "isTscMember": true,
+        "repos": [
+            "diff"
+        ]
+    },
+    {
+        "name": "Abir Pal",
+        "linkedin": "imabp",
+        "slack": "U01S8EQ9LQ2",
+        "twitter": "imabptweets",
+        "github": "imabp",
+        "availableForHire": false,
+        "isTscMember": true,
+        "repos": [
+            "problem"
+        ]
+    },
+    {
+        "name": "Akshat Nema",
+        "github": "akshatnema",
+        "linkedin": "akshat-nema",
+        "slack": "U02TAMG2VKN",
+        "twitter": "AksNema",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "website"
+        ]
+    },
+    {
+        "name": "Ansh Goyal",
+        "github": "anshgoyalevil",
+        "linkedin": "thisisanshg",
+        "slack": "U057J527M24",
+        "twitter": "thisisanshg",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "website"
+        ]
+    },
+    {
+        "name": "Anand Sunderraman",
+        "github": "anandsunderraman",
+        "linkedin": "anand-sunderraman-a6b7a131",
+        "slack": "U0231F9KXNK",
+        "availableForHire": false,
+        "isTscMember": true,
+        "repos": [
+            "go-watermill-template"
+        ]
+    },
+    {
+        "name": "Ashish Padhy",
+        "github": "Shurtu-gal",
+        "linkedin": "ashish-padhy3023",
+        "slack": "U0572R8J927",
+        "twitter": "Shurtu_Gal",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "github-action-for-cli"
+        ]
+    },
+    {
+        "name": "Cameron Rushton",
+        "github": "cameronrushton",
+        "slack": "U01DVKKAV5K",
+        "availableForHire": false,
+        "company": "Solace",
+        "isTscMember": true,
+        "repos": [
+            "java-spring-cloud-stream-template",
+            "python-paho-template",
+            "bindings"
+        ]
+    },
+    {
+        "name": "Dale Lane",
+        "github": "dalelane",
+        "linkedin": "dalelane",
+        "slack": "U01EYAFR5BR",
+        "twitter": "dalelane",
+        "availableForHire": false,
+        "isTscMember": true,
+        "company": "IBM",
+        "repos": [
+            "avro-schema-parser",
+            "bindings",
+            "java-template"
+        ]
+    },
+    {
+        "name": "Emiliano Zublena",
+        "github": "emilianozublena",
+        "linkedin": "emilianozublena",
+        "slack": "U01LYC8PW0M",
+        "availableForHire": false,
+        "isTscMember": false,
+        "repos": [
+            "asyncapi-php-template"
+        ]
+    },
+    {
+        "name": "Fran M\u00e9ndez",
+        "github": "fmvilas",
+        "slack": "U34F2JRRS",
+        "availableForHire": false,
+        "linkedin": "fmvilas",
+        "isTscMember": true,
+        "repos": [
+            "raml-dt-schema-parser",
+            "avro-schema-parser",
+            "openapi-schema-parser",
+            "asyncapi-react",
+            "glee",
+            "nodejs-ws-template",
+            "parser-js",
+            "spec",
+            "spec-json-schemas",
+            "bindings"
+        ]
+    },
+    {
+        "name": "Gerald Loeffler",
+        "github": "geraldloeffler",
+        "linkedin": "geraldloeffler",
+        "slack": "U01P5QDLP0X",
+        "availableForHire": false,
+        "isTscMember": false,
+        "repos": [
+            "bindings"
+        ]
+    },
+    {
+        "name": "Jonas Lagoni",
+        "github": "jonaslagoni",
+        "linkedin": "jonaslagoni",
+        "slack": "UQ2ANBG1E",
+        "availableForHire": false,
+        "company": "Postman",
+        "isTscMember": true,
+        "repos": [
+            "dotnet-nats-template",
+            "ts-nats-template",
+            "generator-react-sdk",
+            "generator",
+            "modelina",
+            "parser-js",
+            "parser-api",
+            "simulator"
+        ]
+    },
+    {
+        "name": "Khuda Dad Nomani",
+        "github": "khudadad414",
+        "twitter": "KhudaDadNomani",
+        "linkedin": "khudadadnomani",
+        "slack": "U01RVRD1TCL",
+        "availableForHire": false,
+        "company": "Postman",
+        "isTscMember": true,
+        "repos": [
+            "bindings",
+            "glee",
+            ".github",
+            "optimizer"
+        ]
+    },
+    {
+        "name": "Laurent Broudoux",
+        "github": "lbroudoux",
+        "twitter": "lbroudoux",
+        "linkedin": "laurentbroudoux",
+        "slack": "U018NLDV5E1",
+        "availableForHire": false,
+        "company": "Postman",
+        "isTscMember": true,
+        "repos": [
+            "bindings"
+        ]
+    },
+    {
+        "name": "Ludovic Dussart",
+        "github": "M3lkior",
+        "linkedin": "ludovic-dussart-846a8063",
+        "slack": "U01BM49KL3Z",
+        "twitter": "ldussart",
+        "availableForHire": false,
+        "company": "zatsit",
+        "isTscMember": true,
+        "repos": [
+            "avro-schema-parser"
+        ]
+    },
+    {
+        "name": "Lukasz Gornicki",
+        "github": "derberg",
+        "linkedin": "lukasz-gornicki-a621914",
+        "slack": "UD698Q5LM",
+        "twitter": "derberq",
+        "availableForHire": false,
+        "company": "Postman",
+        "isTscMember": true,
+        "repos": [
+            "diff",
+            "generator-filters",
+            "generator-hooks",
+            "github-action-for-generator",
+            "generator",
+            "nodejs-template",
+            "nodejs-ws-template",
+            "spec",
+            "spec-json-schemas",
+            "template-for-generator-templates",
+            "website"
+        ]
+    },
+    {
+        "name": "Maciej Urba\u0144czyk",
+        "github": "magicmatatjahu",
+        "availableForHire": false,
+        "linkedin": "maciej-urba\u0144czyk-909547164",
+        "slack": "U01EB02BP7A",
+        "company": "Travelping GmbH",
+        "isTscMember": true,
+        "repos": [
+            "asyncapi-react",
+            "converter-go",
+            "generator-react-sdk",
+            "generator",
+            "html-template",
+            "markdown-template",
+            "modelina",
+            "parser-js",
+            "parser-go",
+            "server-api",
+            "template-for-go-projects",
+            "website"
+        ]
+    },
+    {
+        "name": "Azeez Elegbede",
+        "linkedin": "acebuild",
+        "github": "acethecreator",
+        "twitter": "_acebuild",
+        "slack": "U01RWDD69PZ",
+        "company": "Postman",
+        "availableForHire": false,
+        "isTscMember": true,
+        "repos": [
+            "chatbot"
+        ]
+    },
+    {
+        "name": "Michael Davis",
+        "github": "damaru-inc",
+        "availableForHire": false,
+        "slack": "UH3B166TD",
+        "isTscMember": false,
+        "repos": [
+            "java-spring-cloud-stream-template",
+            "python-paho-template",
+            "bindings"
+        ]
+    },
+    {
+        "name": "Missy Turco",
+        "github": "mcturco",
+        "twitter": "missyturco",
+        "slack": "U02JVEQ6S9W",
+        "linkedin": "missy-turco-a476a6126",
+        "availableForHire": false,
+        "company": "Postman",
+        "isTscMember": false,
+        "repos": [
+            "brand"
+        ]
+    },
+    {
+        "name": "Nektarios Fifes",
+        "github": "nektariosfifes",
+        "linkedin": "nektarios-fifes-372740220",
+        "slack": "U01SE93Q48N",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "simulator"
+        ]
+    },
+    {
+        "name": "Pavel Bodiachevskii",
+        "github": "pakisan",
+        "slack": "U0132LQU8C9",
+        "twitter": "pbodiachevskii",
+        "availableForHire": false,
+        "isTscMember": true,
+        "repos": [
+            "jasyncapi"
+        ]
+    },
+    {
+        "name": "Philip Schlesinger",
+        "github": "theschles",
+        "slack": "U054UUYBNLF",
+        "twitter": "philschlesinger",
+        "availableForHire": false,
+        "isTscMember": true,
+        "repos": [
+            "jasyncapi-idea-plugin"
+        ]
+    },
+    {
+        "name": "Prince Rajpoot",
+        "github": "princerajpoot20",
+        "linkedin": "princerajpoot",
+        "slack": "U04STTQHV18",
+        "twitter": "iamPrince_2003",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "studio"
+        ]
+    },
+    {
+        "name": "Richard Coppen",
+        "github": "rcoppen",
+        "linkedin": "richard-coppen",
+        "slack": "U01L3FH3BUH",
+        "availableForHire": false,
+        "company": "IBM",
+        "isTscMember": true,
+        "repos": [
+            "bindings"
+        ]
+    },
+    {
+        "name": "Samir AMZANI",
+        "github": "Amzani",
+        "slack": "U01N6AW5V5G",
+        "twitter": "amzani",
+        "linkedin": "amzani",
+        "availableForHire": false,
+        "company": "Postman",
+        "isTscMember": true,
+        "repos": [
+            "studio"
+        ]
+    },
+    {
+        "name": "Sergio Moya",
+        "github": "smoya",
+        "linkedin": "smoya",
+        "slack": "UN22ZTLHG",
+        "twitter": "smoyac",
+        "availableForHire": false,
+        "company": "Postman",
+        "isTscMember": true,
+        "repos": [
+            "spec",
+            "spec-json-schemas",
+            "bindings",
+            "parser-api",
+            "parser-js",
+            "avro-schema-parser",
+            "openapi-schema-parser",
+            "raml-dt-schema-parser",
+            "server-api",
+            "parser-go",
+            "converter-go",
+            "go-watermill-template",
+            "template-for-go-projects"
+        ]
+    },
+    {
+        "name": "Souvik De",
+        "github": "souvikns",
+        "slack": "U01SGCZMJKW",
+        "twitter": "souvik_ns",
+        "linkedin": "souvik-de-a2b941169",
+        "availableForHire": false,
+        "company": "Postman",
+        "isTscMember": true,
+        "repos": [
+            "cli",
+            "bundler",
+            "glee"
+        ]
+    },
+    {
+        "name": "Alejandra Quetzalli",
+        "github": "alequetzalli",
+        "twitter": "QuetzalliAle",
+        "slack": "U02AKC14WAJ",
+        "linkedin": "alejandra-quetzalli",
+        "availableForHire": false,
+        "company": "Postman",
+        "isTscMember": true,
+        "repos": [
+            "website",
+            "training",
+            "community"
+        ]
+    },
+    {
+        "name": "David Pereira",
+        "github": "bolt04",
+        "twitter": "BOLT2938",
+        "slack": "U02EC8BT0TX",
+        "linkedin": "jos\u00e9-david-pereira-13ba5315a",
+        "availableForHire": false,
+        "company": "Create IT",
+        "isTscMember": true,
+        "repos": [
+            "server-api"
+        ]
+    },
+    {
+        "name": "Daniel Raper",
+        "github": "dan-r",
+        "slack": "U02FP8WBFQE",
+        "linkedin": "danielr",
+        "availableForHire": false,
+        "isTscMember": true,
+        "repos": [
+            "java-template"
+        ]
+    },
+    {
+        "name": "Kieran Murphy",
+        "github": "kieranm1999",
+        "linkedin": "kieran-murphy-175b0412b",
+        "availableForHire": false,
+        "slack": "U02FT2TKM37",
+        "company": "IBM",
+        "isTscMember": false,
+        "repos": [
+            "java-template"
+        ]
+    },
+    {
+        "name": "Tom Jefferson",
+        "github": "jefflufc",
+        "linkedin": "t-jefferson",
+        "slack": "U02FPPCEH6H",
+        "availableForHire": false,
+        "company": "IBM",
+        "isTscMember": false,
+        "repos": [
+            "java-template"
+        ]
+    },
+    {
+        "name": "Lewis Relph",
+        "github": "lewis-relph",
+        "availableForHire": false,
+        "slack": "U02G8MDDEF3",
+        "company": "IBM",
+        "isTscMember": false,
+        "repos": [
+            "java-template"
+        ]
+    },
+    {
+        "name": "Semen Tenishchev",
+        "github": "tenischev",
+        "linkedin": "semen-tenishchev",
+        "availableForHire": true,
+        "slack": "U011D1DAU6S",
+        "isTscMember": true,
+        "repos": [
+            "java-spring-template"
+        ]
+    },
+    {
+        "name": "Samridhi Agrawal",
+        "github": "samridhi-98",
+        "slack": "U02T2MY9W5T",
+        "linkedin": "samridhi-agrawal-1713201ab",
+        "availableForHire": false,
+        "company": "ThoughtWorks",
+        "isTscMember": true,
+        "repos": [
+            "modelina"
+        ]
+    },
+    {
+        "name": "Debajyoti Halder",
+        "github": "ron-debajyoti",
+        "twitter": "rondebajyoti",
+        "slack": "U02UK9RUPGQ",
+        "linkedin": "rondebajyoti",
+        "availableForHire": false,
+        "company": "Narvar",
+        "isTscMember": false,
+        "repos": [
+            "modelina"
+        ]
+    },
+    {
+        "name": "Ivan Garcia Sainz-Aja",
+        "github": "ivangsa",
+        "linkedin": "ivangarciasainzaja",
+        "slack": "UTCN3ET4M",
+        "availableForHire": false,
+        "company": "SNGULAR",
+        "isTscMember": true,
+        "repos": [
+            "vs-asyncapi-preview"
+        ]
+    },
+    {
+        "name": "Florence Njeri",
+        "github": "florence-njeri",
+        "linkedin": "florencenjeri",
+        "slack": "U03D18YKX2M",
+        "twitter": "njericodes",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "generator"
+        ]
+    },
+    {
+        "name": "Jeremy Whitlock",
+        "github": "whitlockjc",
+        "linkedin": "whitlockjc",
+        "slack": "U03HBC08EBB",
+        "twitter": "whitlockjc",
+        "availableForHire": false,
+        "company": "Google",
+        "isTscMember": true,
+        "repos": [
+            "bindings"
+        ]
+    },
+    {
+        "name": "Vladim\u00edr Gorej",
+        "github": "char0n",
+        "linkedin": "vladimirgorej",
+        "slack": "U03NV5L4S49",
+        "twitter": "vladimirgorej",
+        "availableForHire": false,
+        "company": "SmartBear",
+        "isTscMember": false,
+        "repos": [
+            "bindings",
+            "spec",
+            "spec-json-schemas"
+        ]
+    },
+    {
+        "name": "Alexander Wichmann",
+        "github": "visualbean",
+        "linkedin": "alexcarlsen",
+        "slack": "U04C58GB8TF",
+        "availableForHire": false,
+        "company": "The LEGO Group",
+        "isTscMember": true,
+        "repos": [
+            "bindings"
+        ]
+    },
+    {
+        "name": "Kenneth Aasan",
+        "github": "kennethaasan",
+        "slack": "U037S2HK4TS",
+        "twitter": "kennethaasan",
+        "availableForHire": false,
+        "company": "Sportradar",
+        "isTscMember": true,
+        "repos": [
+            "modelina"
+        ]
+    },
+    {
+        "name": "Heiko Henning",
+        "github": "greenrover",
+        "slack": "U03AC4G51H8",
+        "availableForHire": false,
+        "company": "mtrail GmbH",
+        "isTscMember": true,
+        "repos": [
+            "protobuf-schema-parser"
+        ]
+    },
+    {
+        "name": "connil",
+        "github": "connil",
+        "slack": "U03A51H8",
+        "availableForHire": false,
+        "company": "GmbH",
+        "isTscMember": false,
+        "repos": [
+            "dotnet-rabbitmq-template"
+        ]
+    },
+    {
+        "name": "mr-nuno",
+        "github": "mr-nuno",
+        "slack": "U03A5145",
+        "availableForHire": false,
+        "company": "GmbH",
+        "isTscMember": false,
+        "repos": [
+            "dotnet-rabbitmq-template"
+        ]
+    },
+    {
+        "name": "Thulisile Sibanda",
+        "github": "thulieblack",
+        "linkedin": "v-thulisile-sibanda",
+        "twitter": "thulieblack",
+        "slack": "U03CNJPMT7C",
+        "availableForHire": false,
+        "company": "AsyncAPI Initiative",
+        "isTscMember": true,
+        "repos": [
+            "website",
+            "community"
+        ]
+    },
+    {
+        "name": "Ashmit JaiSarita Gupta",
+        "github": "devilkiller-ag",
+        "linkedin": "jaisarita",
+        "twitter": "jaisarita",
+        "slack": "U062LA14E58",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "modelina"
+        ]
+    },
+    {
+        "name": "Sambhav Gupta",
+        "github": "sambhavgupta0705",
+        "linkedin": "sambhavgupta0705",
+        "twitter": "sambhavgupta75",
+        "slack": "U04630DU3N3",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "website"
+        ]
+    },
+    {
+        "name": "Viacheslav Turovskyi",
+        "github": "aeworxet",
+        "slack": "U01G3U01SVC",
+        "availableForHire": false,
+        "isTscMember": false,
+        "repos": [
+            "bundler",
+            "optimizer"
+        ]
+    }
+]

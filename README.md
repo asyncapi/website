@@ -2,11 +2,24 @@
 
 ---
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-45-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b2137407-b765-46c4-95b5-a72d9b1592ab/deploy-status)](https://app.netlify.com/sites/asyncapi-website/deploys)
+<br/>
+<p align="center">
+    <a href="https://github.com/asyncapi/website/graphs/contributors" alt="AsyncAPI GitHub website contributors">
+      <img src="https://img.shields.io/github/contributors/asyncapi/website?color=orange" />
+    </a>
+    <a href="https://github.com/asyncapi/website/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22" alt="Good First AsyncAPI issue">
+      <img src="https://img.shields.io/github/issues/asyncapi/website/good%20first%20issue.svg?color=%23DDDD00" />
+    </a>
+    <a href="https://asyncapi.slack.com/" alt="AsyncAPI Slack">
+      <img src="https://img.shields.io/badge/Slack-AsyncAPI-@website.svg?logo=slack&color=yellow" />
+    </a>
+    <a href="https://app.netlify.com/sites/asyncapi-website/deploys">
+      <img src="https://api.netlify.com/api/v1/badges/b2137407-b765-46c4-95b5-a72d9b1592ab/deploy-status" />
+    </a>
+    <a href="https://github.com/asyncapi/website" alt="AsyncAPI Apache License">
+      <img src="https://img.shields.io/github/license/asyncapi/website.svg" />
+    </a>
+</p>
 
 ## Overview
 
@@ -14,15 +27,15 @@ This repository contains the sources of AsyncAPI website:
 
 - It's powered by [Next.js](https://nextjs.org/),
 - It uses [Tailwind](https://tailwindcss.com/) CSS framework,
-- It's build and deployed with [Netlify](https://www.netlify.com/).
+- It's build and deployed with [Netlify](https://www.netlify.com/),
+- It uses [Storybook](https://storybook.js.org/) as a frontend workshop and for dociuenting UI components.
 
 ## Requirements
 
 Use the following tools to set up the project:
 
-- [Node.js](https://nodejs.org/) v16.0.0+
-- [npm](https://www.npmjs.com/) v7.10.0+
-
+- [Node.js](https://nodejs.org/) v20.12.0+
+- [npm](https://www.npmjs.com/) v10.5.0+
 
 ## Run locally
 
@@ -57,6 +70,14 @@ Use the following tools to set up the project:
 
 7. Access the live development server at [localhost:3000](http://localhost:3000).
 
+8. To run the storybook locally:
+
+```bash
+    npm run dev:storybook
+```
+
+9. Access the live storybook development server at [localhost:6006](http://localhost:6006).
+
 
 ## Compose new blog post
 
@@ -76,13 +97,93 @@ To spin up a Gitpod codespace, go to http://gitpod.io/#https://github.com/asynca
 
 ### Build
 
-To build a production-ready website, run the following command:
+1. To build a production-ready website, run the following command:
 
 ```bash
 npm run build
 ```
 
 Generated files of the website go to the `.next` folder.
+
+2. To build the production-ready storybook, run the following command:
+
+```bash
+npm run build:storybook
+```
+
+Generated files of the storybook go to the `storybook-static` folder.
+
+### Run locally using Docker
+
+#### Prerequisites:
+
+- [install Docker](https://docs.docker.com/get-docker/)
+
+
+After cloning repository to your local, perform the following steps from the root of the repository.
+
+#### Steps:
+1. Build the Docker image:
+    ```bash 
+    docker build -t asyncapi-website .`
+    ```
+2. Start the container:
+    ```bash
+    docker run --rm -it -v "$PWD":/async -p 3000:3000 asyncapi-website
+    ```
+
+Now you're running AsyncAPI website in a development mode. Container is mapped with your local copy of the website. Whenever you make changes to the code, the website will refresh and changes visible in localhost:3000.
+
+## Lint the code
+To lint the code, run the following command:
+```
+npm run lint
+```
+
+To fix the linting issues, run the following command:
+```
+npm run lint:fix
+```
+
+To lint the mdx files, run the following command:
+```
+npm run lint:mdx
+```
+
+## Start the production server
+To build and run a production-ready website, run the following command:
+```
+npm run build && npm run start
+```
+Generated files of the website go in the `.next` folder.
+
+## Start the netlify production server
+Start a local development server for the build tool using the configuration and environment variables set for local development with the Netlify CLI:
+```
+netlify dev
+```
+To start the server using the configuration and environment variables set for `dev` or `all` deploy contexts, run the following command:
+```
+netlify dev --context production
+```
+
+## Updating information about project finance
+
+AsyncAPI Financial Summary page aims to provide transparency and clarity regarding the organization's financial activities. It serves as a platform to showcase how donations are accepted, different sponsorship options, and how the generated funds are utilized.
+
+### How to update information
+
+- YAML files must be stored in the `config/finance` directory.
+
+- Create separate folders for each year under `config/finance`, such as `config/finance/2023`. Inside each year's folder, include two YAML files: `Expenses.yml` and `ExpensesLink.yml`.
+
+- In `Expenses.yml`, record expenses for each month, specifying the `Category` and `Amount`.
+
+- In `ExpensesLink.yml`, provide discussion links related to expense categories.
+
+- When a new year begins, create a corresponding folder for that year under `config/finance` and place the YAML files inside the folder for that specific year. For example, create a folder named `config/finance/2024` for the year 2024 and `config/finance/2025` for the year 2025. Place the YAML file for each respective year inside its designated folder.
+
+- Modify the years within the `scripts/finance/index.js` , `lib/getUniqueCategories.js` and `components/FinancialSummary/BarChartComponent.js` to handle data for different years effectively.
 
 ## Case studies
 
@@ -111,7 +212,32 @@ All AsyncAPI JSON Schema definition files are being served within the `/definiti
 This is possible thanks to the following:
 
 1. A [Netlify Rewrite rule](https://docs.netlify.com/routing/redirects/rewrites-proxies/) located in the [netlify.toml](netlify.toml) file, which acts as proxy for all requests to the `/definitions/<file>` path, serving the content from GH without having an HTTP redirect.
-2. A [Netlify Edge Function](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/) that modifies the `Content-Type` header of the rewrite response to become `application/schema+json`. This lets tooling, such as [Hyperjump](https://json-schema.hyperjump.io), to fetch the schemas directly from their URL.
+2. A [Netlify Edge Function](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/) that modifies the `Content-Type` header of the rewrite response to become `application/schema+json`. This lets tooling, such as [Hyperjump](https://json-schema.hyperjump.io), to fetch the schemas directly from their URL.  
+  Please find a flowchart explaining the flow this edge function should accomplish:
+  ```mermaid
+  flowchart TD
+    Request(Request) -->schema-related{Is it requesting Schemas?}
+    schema-related -->|No| req_no_schemas[Let the original request go through]
+    req_no_schemas --> Response(Response)
+    schema-related -->|Yes| req_schemas[Fetch from GitHub]
+    req_schemas-->req_json{Was requesting a .json file?}
+    
+    req_json -->|No| Response(Response)
+    req_json -->|Yes| response_status{Response Status?}
+    
+    response_status -->|2xx| response_ok[OK]
+    response_status -->|304| response_cached[Not Modified]
+    response_status -->|Any other| response_ko
+
+    response_ok --> set_headers[Set Response Content-Type header to application/schema+json]
+    set_headers --> send_metric_success[Send success metric]
+    response_cached -- cached:true --> send_metric_success
+    response_ko --> send_metric_error[Send error metric]
+
+    send_metric_success -- file served from raw GH --> Response(Response)
+    send_metric_error --the errored response --> Response(Response)
+  ```
+   
 
 ## Project structure
 
@@ -120,27 +246,57 @@ This repository has the following structure:
 <!-- If you make any changes in the project structure, remember to update it. -->
 
 ```text
-  ├── .github                     # Definitions of GitHub workflows, pull request and issue templates
-  ├── components                  # Various generic components such as "Button", "Figure", etc.
-  ├── config                      # Transformed static data to display on the pages such as blog posts etc.
-  ├── context                     # Various React's contexts used in website
-  ├── css                         # Various CSS files
-  ├── lib                         # Various JS code for preparing static data to render in pages
-  ├── pages                       # Website's pages source. It includes raw markdown files and React page templates.
-  │    ├── about                  # Raw blog for /about page
-  │    ├── blog                   # Blog posts
-  │    ├── docs                   # Blog for /docs/* pages
-  │    └── tools                  # Various pages to describe tools
-  ├── public                      # Data for site metadata and static blog such as images
-  ├── scripts                     # Scripts used in the build and dev processes
-  ├── next.config.js              # Next.js configuration file
-  ├── netlify                     # Code that runs on Netlify
-  │    ├── edge-functions         # Netlify Edge-Functions code
-  ├── postcss.config.js           # PostCSS configuration file
-  └── tailwind.config.js          # TailwindCSS configuration file
+  ├── .github                                  # Definitions of GitHub workflows, pull request and issue templates
+  ├── assets                                   # Various assets
+  |    ├── docs                                # Documentation assets
+  |        | fragments                         # Docuentations for CLI installation and contribution.
+  ├── components                               # Various generic components such as "Button", "Figure", etc.
+  ├── config                                   # Transformed static data to display on the pages such as blog posts etc.
+  ├── context                                  # Various React's contexts used in website
+  ├── locales                                  # Translations for the website
+  ├── markdown                                 # Markdown files for the website
+       ├── about                               # Markdown files for the /about page
+       ├── blog                                # Markdown files for the blog posts
+       ├── docs                                # Markdown files for the /docs/* pages
+  ├── netlify                                  # Contains Netlify serverless functions to run on Netlify
+  ├── pages                                    # Website's pages source. It includes raw markdown files and React page templates.
+  │    ├── about                               # Raw blog for /about page
+  │    ├── blog                                # Blog posts
+  │    ├── docs                                # Blog for /docs/* pages
+  │    └── tools                               # Various pages to describe tools
+  ├── public                                   # Data for site metadata and static blog such as images
+  ├── scripts                                  # Scripts used in the build and dev processes
+  ├── styles                                   # Various CSS files
+  ├── templates                                # Various template markdown files
+  ├── types                                    #  Various typeScript types used in the website
+  ├── utils                                    # Various JS code for preparing static data to render in pages
+  ├── next.config.mjs                          # Next.js configuration file
+  ├── README.md                                # Project's README file
+  ├── tailwind.config.js                       # TailwindCSS configuration file
+  └── tsconfig.json                            # TypeScript configuration file
 ```
 
-## Contributors
+## Connect with AsyncAPI Community
+
+<p align="left">
+<a href="https://asyncapi.slack.com/" alt="AsyncAPI Slack">
+  <img src="https://img.shields.io/badge/Slack-AsyncAPI-@website.svg?logo=slack&color=yellow" />
+</a>
+<a href="https://twitter.com/asyncapispec" target="_blank">
+  <img src="https://img.shields.io/badge/asyncapi-%23gray.svg?style=flat&logo=X&label=Twitter&labelColor=rgb(86%2C86%2C86)" alt="AsyncAPI Twitter">
+</a>
+<a href="https://www.linkedin.com/company/asyncapi" target="_blank">
+  <img src="https://img.shields.io/badge/asyncapi-%230077B5.svg?logo=linkedin&logoColor=white&label=LinkedIn&labelColor=rgb(86%2C86%2C86)&style=flat" alt="AsyncAPI LinkedIn">
+</a>
+<a href="https://www.youtube.com/c/asyncapi" target="_blank">
+  <img src="https://img.shields.io/badge/YouTube-AsyncAPI-red?style=flat&logo=youtube&logoColor=white" alt="YouTube">
+</a>
+<a href="https://www.twitch.tv/asyncapi" target="_blank">
+  <img src="https://img.shields.io/badge/asyncapi-%23833fe6?style=flat&logo=twitch&label=Twitch&logoColor=white" alt="AsyncAPI Twitch">
+</a>
+</p>
+
+## AsyncAPI Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
@@ -207,6 +363,19 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://linkfree.eddiehub.io/rukundob451"><img src="https://avatars.githubusercontent.com/u/67878128?v=4?s=100" width="100px;" alt="Benjamin Rukundo"/><br /><sub><b>Benjamin Rukundo</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=rukundob451" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/tthijm"><img src="https://avatars.githubusercontent.com/u/59415467?v=4?s=100" width="100px;" alt="tthijm"/><br /><sub><b>tthijm</b></sub></a><br /><a href="#infra-tthijm" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://cynthiapeter.com"><img src="https://avatars.githubusercontent.com/u/33583060?v=4?s=100" width="100px;" alt="Cynthia Peter"/><br /><sub><b>Cynthia Peter</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=CynthiaPeter" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://florence-njeri.github.io/NjeriPortfolio"><img src="https://avatars.githubusercontent.com/u/40742916?v=4?s=100" width="100px;" alt="Florence Njeri"/><br /><sub><b>Florence Njeri</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=Florence-Njeri" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://ansh.live"><img src="https://avatars.githubusercontent.com/u/94157520?v=4?s=100" width="100px;" alt="Ansh Goyal"/><br /><sub><b>Ansh Goyal</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=anshgoyalevil" title="Code">💻</a> <a href="https://github.com/asyncapi/website/pulls?q=is%3Apr+reviewed-by%3Aanshgoyalevil" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/SumantxD"><img src="https://avatars.githubusercontent.com/u/65810424?v=4?s=100" width="100px;" alt="Sumant.xD"/><br /><sub><b>Sumant.xD</b></sub></a><br /><a href="#infra-SumantxD" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://shrianshagarwal.in"><img src="https://avatars.githubusercontent.com/u/41548480?v=4?s=100" width="100px;" alt="Shriansh Agarwal"/><br /><sub><b>Shriansh Agarwal</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=Shriansh2002" title="Code">💻</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/reachaadrika"><img src="https://avatars.githubusercontent.com/u/64789514?v=4?s=100" width="100px;" alt="Aadrika Bhargava"/><br /><sub><b>Aadrika Bhargava</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=reachaadrika" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/vishvamsinh28"><img src="https://avatars.githubusercontent.com/u/90895835?v=4?s=100" width="100px;" alt="Vishvamsinh Vaghela"/><br /><sub><b>Vishvamsinh Vaghela</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=vishvamsinh28" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/AnimeshKumar923"><img src="https://avatars.githubusercontent.com/u/99868037?v=4?s=100" width="100px;" alt="Animesh Kumar"/><br /><sub><b>Animesh Kumar</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=AnimeshKumar923" title="Documentation">📖</a> <a href="https://github.com/asyncapi/website/pulls?q=is%3Apr+reviewed-by%3AAnimeshKumar923" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/captain-Akshay"><img src="https://avatars.githubusercontent.com/u/59491379?v=4?s=100" width="100px;" alt="Akshay Sharma"/><br /><sub><b>Akshay Sharma</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=captain-Akshay" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://web-yuvrxj-afk.vercel.app/"><img src="https://avatars.githubusercontent.com/u/63532070?v=4?s=100" width="100px;" alt="Yuvraj Singh Sisodiya"/><br /><sub><b>Yuvraj Singh Sisodiya</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=yuvrxj-afk" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Shiva953"><img src="https://avatars.githubusercontent.com/u/120790871?v=4?s=100" width="100px;" alt="Neutron"/><br /><sub><b>Neutron</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=Shiva953" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/sagarkori143"><img src="https://avatars.githubusercontent.com/u/129517558?v=4?s=100" width="100px;" alt="Sagar Kori"/><br /><sub><b>Sagar Kori</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=sagarkori143" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
