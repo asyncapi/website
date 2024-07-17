@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: AsyncAPI Community Manager
 excerpt: 'April Community update'
-featured: true
 ---
 
 We are excited and commend [Specmatic](https://specmatic.in/) for their commitment to supporting open-source projects. They have sponsored [Pavel Bodiachevskii](https://www.linkedin.com/in/pavel-bo/), whose project assists in parsing AsyncAPI specs in Java and converting the parsed specs into executable contracts using the `jasyncapi` library. This kind of support is truly invaluable to the community and open-source maintainers. Please [check out the latest `jasyncapi` release](https://github.com/asyncapi/jasyncapi/releases/tag/1.0.0-RC) for more details.

@@ -1,4 +1,4 @@
-import Ambassador from '../icons/Ambassador';
+import IconAmbassador from '../icons/Ambassador';
 import IconContributing from '../icons/Contributing';
 import IconDashboard from '../icons/Dashboard';
 import IconGithubOrganization from '../icons/GithubOrganization';
@@ -45,7 +45,7 @@ const communityItems: CommunityItem[] = [
     description: 'Get to know what is a TSC member, how you can become one, and meet our current TSC members.'
   },
   {
-    icon: Ambassador,
+    icon: IconAmbassador,
     title: 'Ambassadors',
     href: '/community/ambassadors',
     description: 'Passionate about APIs? Become an AsyncAPI Ambassador and help shape the future of APIs.'

@@ -8,7 +8,7 @@ function buildNavTree(navItems) {
     }
     
     //first we make sure that list of items lists main section items and then sub sections, documents last
-    const sortedItems = sortBy(navItems, ['isRootSection', 'weight', 'isSection']);
+  const sortedItems = sortBy(navItems, ['isRootSection', 'weight', 'isSection']);
   
     sortedItems.forEach(item => {
       //identify main sections
@@ -125,7 +125,7 @@ function addDocButtons(docPosts, treePosts){
           title: structuredPosts[index+1].title,
           href: structuredPosts[index+1].slug
         }
-      }else{
+      } else {
         nextPage = {
           title: `${structuredPosts[index+1].title} - ${structuredPosts[index+2].title}`,
           href: structuredPosts[index+2].slug
