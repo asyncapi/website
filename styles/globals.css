@@ -1,11 +1,11 @@
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
 @import url(https://cdn.jsdelivr.net/npm/@docsearch/css@3);
 
-@import "swiper/swiper.min";
-@import "swiper/modules/a11y/a11y.min";
-@import "swiper/modules/navigation/navigation.min";
-@import "swiper/modules/pagination/pagination.min";
-@import "swiper/modules/scrollbar/scrollbar.min";
+@import "swiper/css";
+@import "swiper/css/a11y";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import "swiper/css/scrollbar";
 
 @tailwind base;
 @tailwind components;
@@ -340,4 +340,14 @@ abbr[title] {
 
 .meeting-card:hover > div:nth-child(2) > p  {
   color: white;
+}
+
+.explorer-menu-wrapper > div > div{
+  border: 1px solid rgb(228, 228, 228);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.explorer-menu-wrapper > div > div > div > button {
+  margin-top: 0px;
 }
