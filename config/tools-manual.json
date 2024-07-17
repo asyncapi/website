@@ -46,6 +46,18 @@
                 }
             },
             {
+                "title": "AsyncApi.Net.Generator",
+                "description": "Code-first AsyncAPI documentation generator and ui",
+                "links": {
+                    "repoUrl": "https://github.com/yurvon-screamo/asyncapi.net"
+                },
+                "filters": {
+                    "language": "C#",
+                    "technology": [".NET", "ASP.NET"],
+                    "categories": ["code-first"]
+                }
+            },
+            {
                 "title": "Saunter",
                 "description": "Saunter is an AsyncAPI documentation generator for dotnet. Generates (and hosts) an AsyncAPI schema document from your code.",
                 "links": {

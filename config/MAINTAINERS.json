@@ -1,7 +1,7 @@
 [
     {
         "name": "Aishat Muibudeen",
-        "github": "mayaleeeee",
+        "github": "Mayaleeeee",
         "linkedin": "aishatmuibudeen",
         "slack": "U03CNHGEUR1",
         "twitter": "maya_ux_ui",
@@ -48,6 +48,18 @@
         ]
     },
     {
+        "name": "Ansh Goyal",
+        "github": "anshgoyalevil",
+        "linkedin": "thisisanshg",
+        "slack": "U057J527M24",
+        "twitter": "thisisanshg",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "website"
+        ]
+    },
+    {
         "name": "Anand Sunderraman",
         "github": "anandsunderraman",
         "linkedin": "anand-sunderraman-a6b7a131",
@@ -56,18 +68,6 @@
         "isTscMember": true,
         "repos": [
             "go-watermill-template"
-        ]
-    },
-    {
-        "name": "Arjun Garg",
-        "github": "arjungarg07",
-        "linkedin": "arjungarg17",
-        "slack": "U01QX79S734",
-        "twitter": "ArjunGarg07",
-        "availableForHire": true,
-        "isTscMember": true,
-        "repos": [
-            "cupid"
         ]
     },
     {
@@ -116,7 +116,7 @@
         "linkedin": "emilianozublena",
         "slack": "U01LYC8PW0M",
         "availableForHire": false,
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "asyncapi-php-template"
         ]
@@ -126,7 +126,6 @@
         "github": "fmvilas",
         "slack": "U34F2JRRS",
         "availableForHire": false,
-        "company": "Postman",
         "linkedin": "fmvilas",
         "isTscMember": true,
         "repos": [
@@ -135,14 +134,10 @@
             "openapi-schema-parser",
             "asyncapi-react",
             "glee",
-            "generator",
-            "nodejs-template",
             "nodejs-ws-template",
             "parser-js",
-            "playground",
             "spec",
             "spec-json-schemas",
-            "website",
             "bindings"
         ]
     },
@@ -152,8 +147,7 @@
         "linkedin": "geraldloeffler",
         "slack": "U01P5QDLP0X",
         "availableForHire": false,
-        "company": "Salesforce",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "bindings"
         ]
@@ -200,6 +194,7 @@
         "linkedin": "laurentbroudoux",
         "slack": "U018NLDV5E1",
         "availableForHire": false,
+        "company": "Postman",
         "isTscMember": true,
         "repos": [
             "bindings"
@@ -207,12 +202,12 @@
     },
     {
         "name": "Ludovic Dussart",
-        "github": "m3lkior",
+        "github": "M3lkior",
         "linkedin": "ludovic-dussart-846a8063",
         "slack": "U01BM49KL3Z",
         "twitter": "ldussart",
         "availableForHire": false,
-        "company": "Ineat",
+        "company": "zatsit",
         "isTscMember": true,
         "repos": [
             "avro-schema-parser"
@@ -228,24 +223,17 @@
         "company": "Postman",
         "isTscMember": true,
         "repos": [
-            "avro-schema-parser",
-            "openapi-schema-parser",
-            "chatbot",
             "diff",
-            "cli",
             "generator-filters",
             "generator-hooks",
             "github-action-for-generator",
             "generator",
             "nodejs-template",
             "nodejs-ws-template",
-            "parser-js",
-            "playground",
             "spec",
             "spec-json-schemas",
             "template-for-generator-templates",
-            "website",
-            "bundler"
+            "website"
         ]
     },
     {
@@ -254,14 +242,11 @@
         "availableForHire": false,
         "linkedin": "maciej-urba\u0144czyk-909547164",
         "slack": "U01EB02BP7A",
-        "company": "Postman",
+        "company": "Travelping GmbH",
         "isTscMember": true,
         "repos": [
             "asyncapi-react",
-            "chatbot",
-            "cli",
             "converter-go",
-            "event-gateway",
             "generator-react-sdk",
             "generator",
             "html-template",
@@ -269,7 +254,6 @@
             "modelina",
             "parser-js",
             "parser-go",
-            "playground",
             "server-api",
             "template-for-go-projects",
             "website"
@@ -293,8 +277,7 @@
         "github": "damaru-inc",
         "availableForHire": false,
         "slack": "UH3B166TD",
-        "company": "Solace",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "java-spring-cloud-stream-template",
             "python-paho-template",
@@ -309,12 +292,9 @@
         "linkedin": "missy-turco-a476a6126",
         "availableForHire": false,
         "company": "Postman",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
-            "brand",
-            "design-system",
-            "studio",
-            "website"
+            "brand"
         ]
     },
     {
@@ -397,16 +377,18 @@
         "company": "Postman",
         "isTscMember": true,
         "repos": [
-            "bindings",
-            "converter-go",
-            "event-gateway",
-            "go-watermill-template",
-            "infra",
-            "parser-api",
-            "parser-go",
-            "server-api",
             "spec",
             "spec-json-schemas",
+            "bindings",
+            "parser-api",
+            "parser-js",
+            "avro-schema-parser",
+            "openapi-schema-parser",
+            "raml-dt-schema-parser",
+            "server-api",
+            "parser-go",
+            "converter-go",
+            "go-watermill-template",
             "template-for-go-projects"
         ]
     },
@@ -459,7 +441,6 @@
         "slack": "U02FP8WBFQE",
         "linkedin": "danielr",
         "availableForHire": false,
-        "company": "IBM",
         "isTscMember": true,
         "repos": [
             "java-template"
@@ -472,7 +453,7 @@
         "availableForHire": false,
         "slack": "U02FT2TKM37",
         "company": "IBM",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "java-template"
         ]
@@ -484,7 +465,7 @@
         "slack": "U02FPPCEH6H",
         "availableForHire": false,
         "company": "IBM",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "java-template"
         ]
@@ -495,22 +476,9 @@
         "availableForHire": false,
         "slack": "U02G8MDDEF3",
         "company": "IBM",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "java-template"
-        ]
-    },
-    {
-        "name": "David Boyne",
-        "github": "boyney123",
-        "twitter": "boyney123",
-        "slack": "U020GN9C6FM",
-        "availableForHire": false,
-        "company": "AWS",
-        "isTscMember": true,
-        "repos": [
-            "studio",
-            "cli"
         ]
     },
     {
@@ -544,7 +512,7 @@
         "linkedin": "rondebajyoti",
         "availableForHire": false,
         "company": "Narvar",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "modelina"
         ]
@@ -594,7 +562,7 @@
         "twitter": "vladimirgorej",
         "availableForHire": false,
         "company": "SmartBear",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "bindings",
             "spec",
@@ -611,20 +579,6 @@
         "isTscMember": true,
         "repos": [
             "bindings"
-        ]
-    },
-    {
-        "name": "Barba\u00f1o Gonz\u00e1lez",
-        "linkedin": "barbano-gonzalez-moreno",
-        "twitter": "BarbanoGonzalez",
-        "github": "barbanio",
-        "slack": "U01J42QDSLU",
-        "availableForHire": false,
-        "company": "Postman",
-        "isTscMember": true,
-        "repos": [
-            "training",
-            "community"
         ]
     },
     {
@@ -708,6 +662,17 @@
         "isTscMember": true,
         "repos": [
             "website"
+        ]
+    },
+    {
+        "name": "Viacheslav Turovskyi",
+        "github": "aeworxet",
+        "slack": "U01G3U01SVC",
+        "availableForHire": false,
+        "isTscMember": false,
+        "repos": [
+            "bundler",
+            "optimizer"
         ]
     }
 ]
