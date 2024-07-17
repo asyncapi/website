@@ -56,3 +56,5 @@ function copyAndRenameFiles(srcDir, targetDir) {
 }
 
 copyAndRenameFiles(SRC_DIR, TARGET_DIR);
+
+module.exports = {copyAndRenameFiles,capitalizeJsxTags}
