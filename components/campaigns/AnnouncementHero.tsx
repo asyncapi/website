@@ -20,7 +20,7 @@ interface IAnnouncementHeroProps {
  */
 export default function AnnouncementHero({ className = '', small = false }: IAnnouncementHeroProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-
+   
   const len = banners.length;
   const numberOfVisibleBanners = banners.filter((banner) => banner.show).length;
 
@@ -43,6 +43,10 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
       clearInterval(interval);
     };
   }, [activeIndex]);
+
+  if (numberOfVisibleBanners === 0) {
+    return null;
+  }
 
   return (
     <Container as='section' padding='' className={'text-center'}>
