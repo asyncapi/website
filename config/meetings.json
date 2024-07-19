@@ -1,34 +1,6 @@
 [
   {
     "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=dDhmcGZna2lhZmtpZHJhNW4yZ2NjaTVzNmMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1016",
-    "banner": "https://user-images.githubusercontent.com/40604284/297103292-e05b8e50-1203-4452-8b2d-0983a48a7925.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDU0MTkwMzksIm5iZiI6MTcwNTQxODczOSwicGF0aCI6Ii80MDYwNDI4NC8yOTcxMDMyOTItZTA1YjhlNTAtMTIwMy00NDUyLThiMmQtMDk4M2E0OGE3OTI1LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAxMTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMTE2VDE1MjUzOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWFjY2EzYzg2NjNmNTQxOWQxODUxYWMxODlhZWVjNzkwYWRlOWQ5ODkxOTQ4NDhkYWFjNjZjOGU1YTcwMzhhMDYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.hs63wNh2t8iH1xayTqIFvprHHa2Z--RfIA9k3q2lD4Y",
-    "date": "2024-01-23T16:00:00.000Z"
-  },
-  {
-    "title": "AsyncAPI v3 retrospective",
-    "calLink": "https://www.google.com/calendar/event?eid=ZnNjNTllMW9ydGIwOHEzZTYxY3NncHRyZzQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1019",
-    "banner": "",
-    "date": "2024-02-08T15:00:00.000Z"
-  },
-  {
-    "title": "AACoT'24 Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=YjY3Z3BxdGMzdmRlZmxmNzJpMmQ3MzQwMm8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1041",
-    "banner": "https://user-images.githubusercontent.com/66913810/300802575-5ace2c11-9b6d-4904-b22a-5507ee381360.png",
-    "date": "2024-02-07T14:00:00.000Z"
-  },
-  {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=YnMwYjNoaDVpamYwdjlpcTkwOXRjcmxqODggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1042",
-    "banner": "https://github.com/asyncapi/community/assets/40604284/01c2b8de-fa5c-44dd-81a5-70cb96df4813",
-    "date": "2024-02-06T08:00:00.000Z"
-  },
-  {
-    "title": "Community Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=ZzZ0OG1iNmkyZW5lbnF2bnE5ZnY5ZW9ua28gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1067",
     "banner": "https://github.com/asyncapi/community/assets/40604284/897e0278-8da4-41dc-b2b2-b5add9370d6f",
@@ -173,5 +145,80 @@
     "url": "https://github.com/asyncapi/community/issues/1177",
     "banner": "",
     "date": "2024-04-23T18:00:00.000Z"
+  },
+  {
+    "title": "Maintainers Growth Working Group Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=NGZ0NWZiNWw0MzJsbGR0M2Ewdm5kcGNkYzEgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "date": "2024-04-22T14:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=cmk4OTNzZGxvZDd2NHZxb243cG44NzlibWsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1184",
+    "banner": "https://github.com/asyncapi/community/assets/40604284/d5358c67-20c3-48a9-b61c-cbea54bbf95c",
+    "date": "2024-04-30T16:00:00.000Z"
+  },
+  {
+    "title": "Essential Building Blocks Working Group",
+    "calLink": "https://www.google.com/calendar/event?eid=cjNxYm9sOXIwNDlpazY5MmoyNHE3NGxoZHMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1186",
+    "banner": "",
+    "date": "2024-04-30T18:00:00.000Z"
+  },
+  {
+    "title": "Marketing - WG setup and hiring",
+    "calLink": "https://www.google.com/calendar/event?eid=cjdhZTcxM25zNG1pMzloc2g5b2I3aTMyaG8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1192",
+    "banner": "",
+    "date": "2024-05-09T14:00:00.000Z"
+  },
+  {
+    "title": "Maintainers Growth Working Group",
+    "calLink": "https://www.google.com/calendar/event?eid=ZG9tMTVxazhybm5vMnE2cHIxbG4wOHQ3djAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1197",
+    "banner": "",
+    "date": "2024-05-08T14:00:00.000Z"
+  },
+  {
+    "title": "Essential Building Blocks Working Group",
+    "calLink": "https://www.google.com/calendar/event?eid=ZzQ4aDFsbnZpaXBmZ2h2amdrdWpxZXZrYmcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1200",
+    "banner": "",
+    "date": "2024-05-14T18:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=bG5pdGoxcWZjc3VxMnJib2p2ZXZpYW8xM3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1201",
+    "banner": "https://github.com/asyncapi/community/assets/40604284/0b128389-fad9-4342-bbc6-4e5624327374",
+    "date": "2024-05-14T08:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=OWZwaWlyOWJ0dmExcDJ0c2llaXZiMXA3M3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1202",
+    "banner": "https://github.com/asyncapi/community/assets/40604284/be6af5ec-9697-4ba4-a70b-4b9dd2c54c78",
+    "date": "2024-05-28T16:00:00.000Z"
+  },
+  {
+    "title": "Essential Building Blocks Working Group",
+    "calLink": "https://www.google.com/calendar/event?eid=Z2M2dWxkZWI1YzY1amJydTQzcTlrYW1uZzggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1210",
+    "banner": "",
+    "date": "2024-05-28T18:00:00.000Z"
+  },
+  {
+    "title": "Maintainers Growth Working Group",
+    "calLink": "https://www.google.com/calendar/event?eid=ZG45NjF1dXIyc2ZuajkwMTQwMWtxNGhma28gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1212",
+    "banner": "",
+    "date": "2024-05-22T14:00:00.000Z"
+  },
+  {
+    "title": "Developer Experience Working Group",
+    "calLink": "https://www.google.com/calendar/event?eid=ZWd1bWVrMjNrN3JoM3A3cXJndmZvNGFsdmsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1220",
+    "banner": "",
+    "date": "2024-05-23T14:00:00.000Z"
   }
 ]
