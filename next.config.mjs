@@ -15,14 +15,18 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true
   },
-  output: 'export',
+//   output: 'export',
   webpack(config, { isServer }) {
     if (!isServer) {
       config.resolve.fallback.fs = false;
     }
 
     return config;
-  }
+  },
+  i18n:{
+	defaultLocale: 'en',
+	locales: ['en', 'de'],
+}
 };
 
 const mdxConfig = withMDX({
