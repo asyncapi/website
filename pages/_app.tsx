@@ -8,6 +8,7 @@ import AlgoliaSearch from '@/components/AlgoliaSearch';
 import ScrollButton from '@/components/buttons/ScrollButton';
 import Banner from '@/components/campaigns/Banner';
 import Footer from '@/components/footer/Footer';
+import HeadComponent from '@/components/Head';
 import Layout from '@/components/layout/Layout';
 import { MDXProvider } from '@/components/MDX/MDX';
 import NavBar from '@/components/navigation/NavBar';
@@ -29,6 +30,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   };
 
   return (
+    <>
+    <HeadComponent title='AsyncAPI' />
     <I18nProvider i18n={i18n}>
       <AppContext.Provider value={{ path: router.asPath }}>
         <Head>
@@ -53,6 +56,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         </MDXProvider>
       </AppContext.Provider>
     </I18nProvider>
+    </>
   );
 }
 
