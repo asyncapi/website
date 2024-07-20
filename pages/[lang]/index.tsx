@@ -28,7 +28,7 @@ import Testimonial from '../../components/Testimonial';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
 import TextLink from '../../components/typography/TextLink';
-import { getAllLanguageSlugs } from '../../utils/i18n';
+import { languages } from '@/utils/i18n';
 
 /**
  * @description The HomePage is the landing page of the website.
@@ -233,7 +233,11 @@ export default function HomePage() {
  * @returns {object} The paths object containing all language slugs.
  */
 export async function getStaticPaths() {
-  const paths = getAllLanguageSlugs();
+  const paths = languages.map((lang) => ({
+    params: {
+      lang
+    }
+  }));
 
   return {
     paths,

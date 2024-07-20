@@ -1,7 +1,8 @@
+import { useTranslation } from 'next-i18next';
+
 import { ButtonIconPosition, ButtonSize } from '@/types/components/buttons/ButtonPropsType';
 
 import type { IButtonDefaultProps } from '../../types/components/buttons/types';
-import { useTranslation } from '../../utils/i18n';
 import IconGithub from '../icons/Github';
 import Button from './Button';
 

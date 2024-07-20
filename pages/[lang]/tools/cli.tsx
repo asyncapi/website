@@ -71,6 +71,7 @@ const features: Feature[] = [
  * @description The CLI tools page that displays the AsyncAPI CLI tool.
  */
 export default function CliPage() {
+  console.log('obfject');
   const { t } = useTranslation('tools');
 
   /**
@@ -258,6 +259,8 @@ export async function getStaticPaths() {
 export async function getStaticProps({ locale }:{
     locale: string
 }) {
+  console.log(locale);
+
   return {
     props: {
       ...(await serverSideTranslations(locale, [

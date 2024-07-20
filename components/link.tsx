@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { defaultLanguage, languages } from '../utils/i18n';
-import i18nPaths from '../utils/i18nPaths';
+import { defaultLanguage, i18nPaths, languages }  from '@/utils/i18n';
 
 interface LinkComponentProps {
   children: React.ReactNode;
@@ -44,6 +43,7 @@ export default function LinkComponent({
 
   // Detect current language based on the path or query parameter
   const slug = asPath.split('/')[1];
+
   const langSlug = languages.includes(slug) && slug;
   const language: string = query.lang && typeof query.lang === 'string' ? query.lang : langSlug || defaultLanguage; // Ensure language is always a string
 

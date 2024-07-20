@@ -2,6 +2,7 @@ import '../styles/globals.css';
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { appWithTranslation } from 'next-i18next';
 import React from 'react';
 
 import AlgoliaSearch from '@/components/AlgoliaSearch';
@@ -9,6 +10,7 @@ import ScrollButton from '@/components/buttons/ScrollButton';
 import Banner from '@/components/campaigns/Banner';
 import Footer from '@/components/footer/Footer';
 import Layout from '@/components/layout/Layout';
+import { MDXProvider } from '@/components/MDX/MDX';
 import NavBar from '@/components/navigation/NavBar';
 import StickyNavbar from '@/components/navigation/StickyNavbar';
 import AppContext from '@/context/AppContext';
@@ -19,6 +21,7 @@ import AppContext from '@/context/AppContext';
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
       <AppContext.Provider value={{ path: router.asPath }}>
+        <MDXProvider>
         <Head>
           <script async defer src='https://buttons.github.io/buttons.js'></script>
         </Head>
@@ -37,8 +40,9 @@ function MyApp({ Component, pageProps, router }: AppProps) {
               </div>
             </div>
           </AlgoliaSearch>
+          </MDXProvider>
       </AppContext.Provider>
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);

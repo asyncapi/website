@@ -12,10 +12,9 @@ export default function HomePage() {
 
   const router = useRouter();
 
-  useEffect(() => {
-    console.log('object');
-    router.push('/en');
-  }, [router]);
+//   useEffect(() => {
+//     router.push('/en');
+//   }, [router]);
 
   return (
     <>
