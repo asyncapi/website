@@ -241,11 +241,6 @@ export async function getStaticPaths() {
   };
 }
 
-/**
- * @description This function fetches the language content for the landing page.
- * @param {object} params The language parameter.
- * @returns {object} The language content for the landing page.
- */
 // export async function getStaticProps({ params }: any) {
 //   const language = getLanguage(params.lang);
 
@@ -255,14 +250,20 @@ export async function getStaticPaths() {
 //     }
 //   };
 // }
-
-export async function getStaticProps({ locale }) {
+/**
+ * @description This function fetches the language content for the landing page.
+ * @param {object} params The language parameter.
+ * @returns {object} The language content for the landing page.
+ */
+export async function getStaticProps({ locale }:{
+     locale: string
+}) {
   return {
     props: {
       ...(await serverSideTranslations(locale, [
         'common',
         'tools',
-		'landing-page'
+        'landing-page'
       ]))
       // Will be passed to the page component as props
     }
