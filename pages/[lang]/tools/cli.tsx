@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { BadgeCheckIcon, CodeIcon, DocumentAddIcon, GlobeIcon } from '@heroicons/react/outline';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import React from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
@@ -11,7 +12,7 @@ import CodeBlock from '../../../components/editor/CodeBlock';
 import GenericLayout from '../../../components/layout/GenericLayout';
 import Heading from '../../../components/typography/Heading';
 import Paragraph from '../../../components/typography/Paragraph';
-import { getAllLanguageSlugs, getLanguage, useTranslation } from '../../../utils/i18n';
+import { getAllLanguageSlugs, useTranslation } from '../../../utils/i18n';
 
 interface Feature {
   name: string;
@@ -254,12 +255,25 @@ export async function getStaticPaths() {
  * @param { params: { lang: string } }
  * @returns { props: { language: string } }
  */
-export async function getStaticProps({ params }: any) {
-  const language = getLanguage(params.lang);
+// export async function getStaticProps({ params }: any) {
+//   const language = getLanguage(params.lang);
 
+//   return {
+//     props: {
+//       language
+//     }
+//   };
+// }
+
+export async function getStaticProps({ locale }) {
   return {
     props: {
-      language
+      ...(await serverSideTranslations(locale, [
+        'common',
+        'tools',
+		'landing-page'
+      ]))
+      // Will be passed to the page component as props
     }
   };
 }

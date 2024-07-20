@@ -1,3 +1,5 @@
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import React from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
@@ -26,7 +28,7 @@ import Testimonial from '../../components/Testimonial';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
 import TextLink from '../../components/typography/TextLink';
-import { getAllLanguageSlugs, getLanguage, useTranslation } from '../../utils/i18n';
+import { getAllLanguageSlugs } from '../../utils/i18n';
 
 /**
  * @description The HomePage is the landing page of the website.
@@ -244,12 +246,25 @@ export async function getStaticPaths() {
  * @param {object} params The language parameter.
  * @returns {object} The language content for the landing page.
  */
-export async function getStaticProps({ params }: any) {
-  const language = getLanguage(params.lang);
+// export async function getStaticProps({ params }: any) {
+//   const language = getLanguage(params.lang);
 
+//   return {
+//     props: {
+//       language
+//     }
+//   };
+// }
+
+export async function getStaticProps({ locale }) {
   return {
     props: {
-      language
+      ...(await serverSideTranslations(locale, [
+        'common',
+        'tools',
+		'landing-page'
+      ]))
+      // Will be passed to the page component as props
     }
   };
 }
