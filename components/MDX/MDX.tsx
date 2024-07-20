@@ -330,7 +330,7 @@ export function getMDXComponents() {
   };
 }
 
-const mdxComponents = getMDXComponents();
+export const mdxComponents = getMDXComponents();
 
 interface MDXProviderProps {
   children: React.ReactNode;

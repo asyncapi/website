@@ -255,23 +255,15 @@ export async function getStaticPaths() {
  * @param { params: { lang: string } }
  * @returns { props: { language: string } }
  */
-// export async function getStaticProps({ params }: any) {
-//   const language = getLanguage(params.lang);
-
-//   return {
-//     props: {
-//       language
-//     }
-//   };
-// }
-
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({ locale }:{
+    locale: string
+}) {
   return {
     props: {
       ...(await serverSideTranslations(locale, [
         'common',
         'tools',
-		'landing-page'
+        'landing-page'
       ]))
       // Will be passed to the page component as props
     }

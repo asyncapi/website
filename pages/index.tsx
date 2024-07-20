@@ -1,4 +1,6 @@
-import { languageDetection } from '@/utils/i18n';
+
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 import Head from '../components/Head';
 
@@ -8,7 +10,12 @@ import Head from '../components/Head';
 export default function HomePage() {
   const loader: string = 'img/loaders/loader.png'; // preloader image for the tools
 
-  languageDetection();
+  const router = useRouter();
+
+  useEffect(() => {
+    console.log('object');
+    router.push('/en');
+  }, [router]);
 
   return (
     <>
