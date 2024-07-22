@@ -82,6 +82,7 @@
     "moment": "^2.30.1",
     "next": "14.1.1",
     "next-i18next": "^15.3.0",
+    "next-language-detector": "^1.1.0",
     "next-mdx-remote": "^4.4.1",
     "node-fetch": "^3.3.2",
     "node-fetch-2": "npm:node-fetch@^2.7.0",
