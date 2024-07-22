@@ -1,4 +1,3 @@
-import { useTranslation } from 'next-i18next';
 
 import { ButtonIconPosition, ButtonSize } from '@/types/components/buttons/ButtonPropsType';
 
@@ -26,11 +25,9 @@ export default function GithubButton({
   className = '',
   inNav
 }: IGithubButtonProps) {
-  const { t } = useTranslation('common');
-
   return (
     <Button
-      text={t(text)}
+      text={text}
       icon={<IconGithub className='-mt-1 inline-block size-6' />}
       href={href}
       iconPosition={iconPosition}
