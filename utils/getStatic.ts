@@ -51,7 +51,7 @@ export function makeStaticProps(ns = {}) {
         console.log(ctx, 'ctx');
 
         return {
-            props: await getI18nProps(ctx, ns)
+            props: await getI18nProps(ctx, ns as any)
         };
     };
 }
