@@ -23,7 +23,7 @@ export function useRedirect(to: string | undefined): any {
             return;
         }
 
-        languageDetector.cache(detectedLng);
+        languageDetector.cache!(detectedLng!);
         router.replace(`/${detectedLng}${toUrl}`);
     });
 
