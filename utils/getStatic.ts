@@ -30,7 +30,7 @@ export const getStaticPaths = () => ({
  * @param ns - An array of namespaces to be loaded.
  * @returns An object containing the internationalization props.
  */
-export async function getI18nProps(ctx, ns = ['common']) {
+export async function getI18nProps(ctx:any, ns = ['common']) {
     const locale = ctx?.params?.lang;
 
     console.log(locale, 'here');
@@ -47,7 +47,7 @@ export async function getI18nProps(ctx, ns = ['common']) {
  * @returns A function that retrieves the static props.
  */
 export function makeStaticProps(ns = {}) {
-    return async function getStaticProps(ctx) {
+    return async function getStaticProps(ctx:any) {
         console.log(ctx, 'ctx');
 
         return {
