@@ -1,10 +1,11 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { BadgeCheckIcon, CodeIcon, DocumentAddIcon, GlobeIcon } from '@heroicons/react/outline';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import React from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
+import { getStaticPaths, makeStaticProps } from '@/utils/getStatic';
+import { useTranslation } from '@/utils/i18n';
 
 import Button from '../../../components/buttons/Button';
 import GithubButton from '../../../components/buttons/GithubButton';
@@ -12,7 +13,10 @@ import CodeBlock from '../../../components/editor/CodeBlock';
 import GenericLayout from '../../../components/layout/GenericLayout';
 import Heading from '../../../components/typography/Heading';
 import Paragraph from '../../../components/typography/Paragraph';
-import { getAllLanguageSlugs, useTranslation } from '../../../utils/i18n';
+
+const getStaticProps = makeStaticProps(['tools', 'footer']);
+
+export { getStaticPaths, getStaticProps };
 
 interface Feature {
   name: string;
@@ -238,37 +242,37 @@ export default function CliPage() {
   );
 }
 
-/**
- * @description Get the language for the CLI page.
- * @returns { paths: { params: { lang: string } }[]; fallback: boolean }
- */
-export async function getStaticPaths() {
-  const paths = getAllLanguageSlugs();
+// /**
+//  * @description Get the language for the CLI page.
+//  * @returns { paths: { params: { lang: string } }[]; fallback: boolean }
+//  */
+// export async function getStaticPaths() {
+//   const paths = getAllLanguageSlugs();
 
-  return {
-    paths,
-    fallback: false
-  };
-}
+//   return {
+//     paths,
+//     fallback: false
+//   };
+// }
 
-/**
- * @description Get the language for the CLI page.
- * @param { params: { lang: string } }
- * @returns { props: { language: string } }
- */
-export async function getStaticProps({ locale }:{
-    locale: string
-}) {
-  console.log(locale);
+// /**
+//  * @description Get the language for the CLI page.
+//  * @param { params: { lang: string } }
+//  * @returns { props: { language: string } }
+//  */
+// export async function getStaticProps({ locale }:{
+//     locale: string
+// }) {
+//   console.log(locale);
 
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, [
-        'common',
-        'tools',
-        'landing-page'
-      ]))
-      // Will be passed to the page component as props
-    }
-  };
-}
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(locale, [
+//         'common',
+//         'tools',
+//         'landing-page'
+//       ]))
+//       // Will be passed to the page component as props
+//     }
+//   };
+// }
