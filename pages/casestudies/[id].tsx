@@ -65,9 +65,9 @@ const renderContent = (
           {item.title}
         </Heading>
         {item.content && (
-          <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4'>
+          <div className='my-4'>
             <MDXRemote {...item.content} components={allComponents} />
-          </Paragraph>
+          </div>
         )}
         {item.items && (
           <div className='mt-4 items-center'>
