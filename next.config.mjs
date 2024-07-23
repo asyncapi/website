@@ -24,11 +24,7 @@ const nextConfig = {
     return config;
   },
   'trailingSlash': true,
-//   i18n:{
-// 	defaultLocale: 'en',
-// 	locales: ['en', 'de'],
-// 	react: { useSuspense: false },// this line
-// }
+
 };
 
 const mdxConfig = withMDX({
