@@ -22,11 +22,18 @@ const nextConfig = {
     }
 
     return config;
-  }
+  },
+  'trailingSlash': true,
+//   i18n:{
+// 	defaultLocale: 'en',
+// 	locales: ['en', 'de'],
+// 	react: { useSuspense: false },// this line
+// }
 };
 
 const mdxConfig = withMDX({
   extension: /\.mdx?$/,
+  providerImportSource: "@mdx-js/react",
   options: {
     remarkPlugins: [frontmatter, gemoji, headingId, slug, images, a11yEmoji, remarkGfm],
     rehypePlugins: []

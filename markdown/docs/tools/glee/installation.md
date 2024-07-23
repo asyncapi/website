@@ -80,7 +80,7 @@ These scripts refer to the different stages of developing an application.
 
 #### Create `asyncapi.yaml` file and other required directories
 
-Create a yaml file that supports capable of receiving a "hello {name}" message with the protocol as `ws` and the channel name  as `hello` the hello API will subscribe to. The operationId property is `onHello` that's the name of function and the payload property is type string publishing to that channel.
+Create a yaml file that supports capable of receiving a "hello \{name\}" message with the protocol as `ws` and the channel name as `hello` the hello API will subscribe to. The operationId property is `onHello` that's the name of function and the payload property is type string publishing to that channel.
 
 ```yaml
 asyncapi: 3.0.0

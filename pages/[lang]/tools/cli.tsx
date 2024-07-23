@@ -4,6 +4,8 @@ import React from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
+import { getStaticPaths, makeStaticProps } from '@/utils/getStatic';
+import { useTranslation } from '@/utils/i18n';
 
 import Button from '../../../components/buttons/Button';
 import GithubButton from '../../../components/buttons/GithubButton';
@@ -11,7 +13,10 @@ import CodeBlock from '../../../components/editor/CodeBlock';
 import GenericLayout from '../../../components/layout/GenericLayout';
 import Heading from '../../../components/typography/Heading';
 import Paragraph from '../../../components/typography/Paragraph';
-import { getAllLanguageSlugs, getLanguage, useTranslation } from '../../../utils/i18n';
+
+const getStaticProps = makeStaticProps(['tools', 'common']);
+
+export { getStaticPaths, getStaticProps };
 
 interface Feature {
   name: string;
@@ -70,6 +75,7 @@ const features: Feature[] = [
  * @description The CLI tools page that displays the AsyncAPI CLI tool.
  */
 export default function CliPage() {
+  console.log('obfject');
   const { t } = useTranslation('tools');
 
   /**
@@ -236,30 +242,37 @@ export default function CliPage() {
   );
 }
 
-/**
- * @description Get the language for the CLI page.
- * @returns { paths: { params: { lang: string } }[]; fallback: boolean }
- */
-export async function getStaticPaths() {
-  const paths = getAllLanguageSlugs();
+// /**
+//  * @description Get the language for the CLI page.
+//  * @returns { paths: { params: { lang: string } }[]; fallback: boolean }
+//  */
+// export async function getStaticPaths() {
+//   const paths = getAllLanguageSlugs();
 
-  return {
-    paths,
-    fallback: false
-  };
-}
+//   return {
+//     paths,
+//     fallback: false
+//   };
+// }
 
-/**
- * @description Get the language for the CLI page.
- * @param { params: { lang: string } }
- * @returns { props: { language: string } }
- */
-export async function getStaticProps({ params }: any) {
-  const language = getLanguage(params.lang);
+// /**
+//  * @description Get the language for the CLI page.
+//  * @param { params: { lang: string } }
+//  * @returns { props: { language: string } }
+//  */
+// export async function getStaticProps({ locale }:{
+//     locale: string
+// }) {
+//   console.log(locale);
 
-  return {
-    props: {
-      language
-    }
-  };
-}
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(locale, [
+//         'common',
+//         'tools',
+//         'landing-page'
+//       ]))
+//       // Will be passed to the page component as props
+//     }
+//   };
+// }
