@@ -77,7 +77,6 @@ const features: Feature[] = [
 export default function CliPage() {
   console.log('obfject');
   const { t } = useTranslation('tools');
-  const { t: commonT } = useTranslation('common');
 
   /**
    * @description Render the buttons on the CLI page.
@@ -87,7 +86,6 @@ export default function CliPage() {
     return (
       <div className='mt-8'>
         <GithubButton
-          text={commonT('githubButton')}
           className='mt-2 block w-full sm:w-auto md:mt-0 md:inline-block'
           href='https://www.github.com/asyncapi/cli'
         />

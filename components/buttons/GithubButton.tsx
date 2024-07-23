@@ -1,7 +1,7 @@
-
 import { ButtonIconPosition, ButtonSize } from '@/types/components/buttons/ButtonPropsType';
 
 import type { IButtonDefaultProps } from '../../types/components/buttons/types';
+import { useTranslation } from '../../utils/i18n';
 import IconGithub from '../icons/Github';
 import Button from './Button';
 
@@ -25,9 +25,11 @@ export default function GithubButton({
   className = '',
   inNav
 }: IGithubButtonProps) {
+  const { t } = useTranslation('common');
+
   return (
     <Button
-      text={text}
+      text={t(text)}
       icon={<IconGithub className='-mt-1 inline-block size-6' />}
       href={href}
       iconPosition={iconPosition}
