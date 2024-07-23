@@ -45,7 +45,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
   }, [activeIndex]);
 
   return (
-    <Container as='section' padding='' className={'text-center'}>
+    <Container as='section' padding='' className={`text-center ${numberOfVisibleBanners === 0 ? 'hidden' : ''}`}>
       <div className='relative flex flex-row items-center justify-center overflow-x-hidden md:gap-4'>
         {numberOfVisibleBanners > 1 && (
           <div
