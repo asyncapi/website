@@ -246,33 +246,3 @@ export default function CliPage() {
 //  * @description Get the language for the CLI page.
 //  * @returns { paths: { params: { lang: string } }[]; fallback: boolean }
 //  */
-// export async function getStaticPaths() {
-//   const paths = getAllLanguageSlugs();
-
-//   return {
-//     paths,
-//     fallback: false
-//   };
-// }
-
-// /**
-//  * @description Get the language for the CLI page.
-//  * @param { params: { lang: string } }
-//  * @returns { props: { language: string } }
-//  */
-// export async function getStaticProps({ locale }:{
-//     locale: string
-// }) {
-//   console.log(locale);
-
-//   return {
-//     props: {
-//       ...(await serverSideTranslations(locale, [
-//         'common',
-//         'tools',
-//         'landing-page'
-//       ]))
-//       // Will be passed to the page component as props
-//     }
-//   };
-// }

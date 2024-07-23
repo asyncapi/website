@@ -148,11 +148,6 @@ function CodeComponent({ children, className = '', metastring = '', ...rest }: C
   if (language === 'mermaid') {
     return <MermaidDiagram graph={children} />;
   }
-  if (!children) {
-    console.log('No children');
-
-    return <div>No children</div>;
-  }
 
   return (
     <CodeBlock
