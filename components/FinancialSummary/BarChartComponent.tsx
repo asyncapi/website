@@ -3,11 +3,12 @@ import { Bar, BarChart, CartesianGrid, Legend, Tooltip, YAxis } from 'recharts';
 
 import type { ExpenseItem, ExpensesLinkItem } from '@/types/FinancialSummary/BarChartComponent';
 
-import ExpensesData from '../../config/finance/json-data/2024/Expenses.json';
-import ExpensesLinkData from '../../config/finance/json-data/2024/ExpensesLink.json';
+// import ExpensesData from '../../config/finance/json-data/2024/Expenses.json';
 import { getUniqueCategories } from '../../utils/getUniqueCategories';
 import CustomTooltip from './CustomTooltip';
 import ExpensesCard from './ExpensesCard';
+
+const currentYear = new Date().getFullYear();
 
 /**
  * @description BarChartComponent component displays a bar chart for expense analysis.
@@ -19,8 +20,11 @@ export default function BarChartComponent() {
   const [windowWidth, setWindowWidth] = useState<number>(0);
 
   // Extracting unique categories and months from the data
-  const categories: string[] = getUniqueCategories();
+  const [categories, setCategories] = useState<string[]>([]);
+  const [ExpensesData, setExpensesData] = useState<{ [month: string]: ExpenseItem[] }>({});
+
   const months: string[] = Object.keys(ExpensesData);
+  const [ExpensesLinkData, setExpensesLinkData] = useState<ExpensesLinkItem[]>([]);
 
   // Effect hook to update windowWidth state on resize
   useEffect(() => {
@@ -31,6 +35,11 @@ export default function BarChartComponent() {
     // Initial setup and event listener
     handleResize();
     window.addEventListener('resize', handleResize);
+    import(`../../config/finance/json-data/${currentYear}/ExpensesLink.json`).then((data) =>
+      setExpensesLinkData(data.default)
+    );
+    getUniqueCategories().then((data) => setCategories(data));
+    import(`../../config/finance/json-data/${currentYear}/Expenses.json`).then((data) => setExpensesData(data.default));
 
     // Cleanup function to remove event listener
     return () => {
