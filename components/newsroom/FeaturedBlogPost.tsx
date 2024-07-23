@@ -43,7 +43,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
   return (
     <div className={`rounded-lg ${className}`}>
       <article className='h-full rounded-lg'>
-        <Link href={post.slug}>
+        <div >
           <span
             className={
               'flex h-full cursor-pointer flex-col divide-y divide-gray-200 overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg md:max-w-164 md:flex-row'
@@ -117,7 +117,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
               </div>
             </div>
           </span>
-        </Link>
+        </div>
       </article>
     </div>
   );
