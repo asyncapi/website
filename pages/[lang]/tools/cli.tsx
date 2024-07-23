@@ -85,7 +85,7 @@ export default function CliPage() {
   function renderButtons() {
     return (
       <div className='mt-8'>
-        <GithubButton
+        <GithubButton text='View on Github'
           className='mt-2 block w-full sm:w-auto md:mt-0 md:inline-block'
           href='https://www.github.com/asyncapi/cli'
         />
