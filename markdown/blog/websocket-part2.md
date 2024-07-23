@@ -165,16 +165,17 @@ servers:
       The API client must request an authentication "token" via the following REST API endpoint "GetWebSocketsToken" to connect to WebSockets Private endpoints. For more details, read https://support.kraken.com/hc/en-us/articles/360034437672-How-to-retrieve-a-WebSocket-authentication-token-Example-code-in-Python-3
 
       The resulting token must be provided in the "token" field of any new private WebSocket feed subscription: 
-      ```
+      
       \{
         "event": "subscribe",
         "subscription":
         \{
           "name": "ownTrades",
           "token": "WW91ciBhdXRoZW50aWNhdGlvbiB0b2tlbiBnb2VzIGhlcmUu"
-        }
-      }
-      ```
+        \}
+      \}
+	  
+      
 ```
 
 ### Endpoints aka Channels
@@ -473,16 +474,16 @@ servers:
       The API client must request an authentication "token" via the following REST API endpoint "GetWebSocketsToken" to connect to WebSockets Private endpoints. For more details read https://support.kraken.com/hc/en-us/articles/360034437672-How-to-retrieve-a-WebSocket-authentication-token-Example-code-in-Python-3
 
       The resulting token must be provided in the "token" field of any new private WebSocket feed subscription: 
-      ```
+      
       \{
         "event": "subscribe",
         "subscription":
         \{
           "name": "ownTrades",
           "token": "WW91ciBhdXRoZW50aWNhdGlvbiB0b2tlbiBnb2VzIGhlcmUu"
-        }
-      }
-      ```
+        \}
+      \}
+      
 
 channels:
   /:

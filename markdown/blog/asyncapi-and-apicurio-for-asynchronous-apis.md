@@ -58,7 +58,7 @@ In practice, the definition can become quite long. Consider the below example fr
     defaultContentType: application/json
 
     channels:
-      smartylighting.streetlights.1.0.event.{streetlightId}.lighting.measured:
+      smartylighting.streetlights.1.0.event.\{streetlightId\}.lighting.measured:
         description: The topic on which measured values may be produced and consumed.
         parameters:
           streetlightId:
@@ -161,7 +161,7 @@ For example, it is possible to add a key for Kafka messages:
 
     ...
     channels:
-      smartylighting.streetlights.1.0.event.{streetlightId}.lighting.measured:
+      smartylighting.streetlights.1.0.event.\{streetlightId\}.lighting.measured:
         description: The topic on which measured values may be produced and consumed.
         parameters:
           streetlightId:

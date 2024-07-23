@@ -15,7 +15,7 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true
   },
-//   output: 'export',
+  output: 'export',
   webpack(config, { isServer }) {
     if (!isServer) {
       config.resolve.fallback.fs = false;
@@ -33,6 +33,7 @@ const nextConfig = {
 
 const mdxConfig = withMDX({
   extension: /\.mdx?$/,
+  providerImportSource: "@mdx-js/react",
   options: {
     remarkPlugins: [frontmatter, gemoji, headingId, slug, images, a11yEmoji, remarkGfm],
     rehypePlugins: []

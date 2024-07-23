@@ -10,7 +10,6 @@ import ScrollButton from '@/components/buttons/ScrollButton';
 import Banner from '@/components/campaigns/Banner';
 import Footer from '@/components/footer/Footer';
 import Layout from '@/components/layout/Layout';
-import { MDXProvider } from '@/components/MDX/MDX';
 import NavBar from '@/components/navigation/NavBar';
 import StickyNavbar from '@/components/navigation/StickyNavbar';
 import AppContext from '@/context/AppContext';
@@ -21,7 +20,7 @@ import AppContext from '@/context/AppContext';
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
       <AppContext.Provider value={{ path: router.asPath }}>
-        <MDXProvider>
+        {/* <MDXProvider components={mdxComponents}> */}
         <Head>
           <script async defer src='https://buttons.github.io/buttons.js'></script>
         </Head>
@@ -40,7 +39,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
               </div>
             </div>
           </AlgoliaSearch>
-          </MDXProvider>
+          {/* </MDXProvider> */}
       </AppContext.Provider>
   );
 }
