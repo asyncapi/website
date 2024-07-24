@@ -167,8 +167,6 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
         )}
 
         <div className='-my-2 -mr-2 flex flex-row items-center justify-center lg:hidden' data-testid='Navbar-search'>
-          {/* // Language Selector for Mobile */}
-        {LanguageSelector}
           <SearchButton
             className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
             aria-label='Open Search'
@@ -250,7 +248,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
       </div>
 
       {/* Mobile menu, show/hide based on mobile menu state. */}
-      {mobileMenuOpen && <MobileNavMenu  onClickClose={() => setMobileMenuOpen(false)} LanguageSelector={LanguageSelector}/>}
+      {mobileMenuOpen && <MobileNavMenu  onClickClose={() => setMobileMenuOpen(false)} uniqueLangs={uniqueLangs} changeLanguage={changeLanguage}/>}
     </div>
   );
 }

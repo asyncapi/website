@@ -19,14 +19,16 @@ interface MenuItem {
 
 interface MobileNavMenuProps {
   onClickClose?: () => void;
-  LanguageSelector: JSX.Element;
+
+  uniqueLangs: { key: string; text: string; value: string }[];
+  changeLanguage: (locale: string, langPicker: boolean) => void;
 }
 
 /**
  * @description MobileNavMenu component for displaying a responsive navigation menu on mobile devices.
  * @param {MobileNavMenuProps} props - The props for the MobileNavMenu component.
  */
-export default function MobileNavMenu({ onClickClose = () => {}, LanguageSelector  }: MobileNavMenuProps) {
+export default function MobileNavMenu({ onClickClose = () => {}, uniqueLangs, changeLanguage  }: MobileNavMenuProps) {
   const [open, setOpen] = useState<string | null>(null);
 
   /**
@@ -129,8 +131,29 @@ export default function MobileNavMenu({ onClickClose = () => {}, LanguageSelecto
               </div>
             </div>
           </div>
-          <div className='space-y-2 px-5 py-2'>
-          {LanguageSelector}
+          <div className='space-y-2 px-5 py-2'  onClick={() => showMenu('language')}>
+          <div className='grid gap-4'>
+          <div>
+                <h4 className='mb-4 flex justify-between font-medium text-gray-800'>
+                  <a className='cursor-pointer flex gap-2 items-center'>Language <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5">
+  <path strokeLinecap="round" strokeLinejoin="round" d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802" />
+</svg>
+</a>
+                  <NavItemDropdown />
+                </h4>
+                {open === 'language' &&
+                  uniqueLangs.map((lang) => (
+                    <button
+                      key={lang.key}
+                      onClick={() => changeLanguage(lang.value.toLowerCase(), true)}
+                      className='mb-4 block rounded-lg py-1 text-base font-medium leading-6 text-start  w-full text-gray-700 transition duration-150 ease-in-out hover:bg-gray-50'
+                      data-testid='MobileNav-language-item'
+                    >
+                      {lang.text} 
+                    </button>
+                  ))}
+          </div>
+          </div>
           </div>
         </div>
       </div>
