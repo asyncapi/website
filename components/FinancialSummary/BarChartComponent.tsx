@@ -7,8 +7,6 @@ import { getUniqueCategories } from '../../utils/getUniqueCategories';
 import CustomTooltip from './CustomTooltip';
 import ExpensesCard from './ExpensesCard';
 
-const currentYear = new Date().getFullYear();
-
 /**
  * @description BarChartComponent component displays a bar chart for expense analysis.
  */
@@ -33,6 +31,8 @@ export default function BarChartComponent() {
 
     // Initial setup and event listener
     handleResize();
+    const currentYear = new Date().getFullYear();
+
     window.addEventListener('resize', handleResize);
     import(`../../config/finance/json-data/${currentYear}/ExpensesLink.json`).then((data) =>
       setExpensesLinkData(data.default)
