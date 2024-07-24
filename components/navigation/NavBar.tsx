@@ -7,6 +7,7 @@ import { defaultLanguage, languages, useTranslation } from '../../utils/i18n';
 import i18nPaths from '../../utils/i18nPaths';
 import { SearchButton } from '../AlgoliaSearch';
 import AsyncAPILogo from '../AsyncAPILogo';
+import AsyncAPILogoLight from '../AsyncAPILogoLight'
 import GithubButton from '../buttons/GithubButton';
 import { isMobileDevice } from '../helpers/is-mobile';
 import { useOutsideClick } from '../helpers/use-outside-click';
@@ -18,6 +19,8 @@ import MobileNavMenu from './MobileNavMenu';
 import NavItem from './NavItem';
 import otherItems from './otherItems';
 import ToolsPanel from './ToolsPanel';
+import DarkModeToggle from '../DarkModeToggle';
+import { useTheme } from "next-themes";
 
 interface NavBarProps {
   className?: string;
@@ -38,6 +41,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   const [open, setOpen] = useState<'learning' | 'tooling' | 'community' | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const { i18n } = useTranslation();
+  const {theme} = useTheme();
 
   /**
    * Retrieves unique language options based on the current path and i18nPaths configuration.
@@ -145,14 +149,24 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   }, [asPath]);
 
   return (
-    <div className={`bg-white ${className} z-50`}>
+    <div className={`dark:bg-black bg-white ${className} z-50`}>
       <div className='flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-10'>
         {!hideLogo && (
           <div className='lg:w-auto lg:flex-1'>
             <div className='flex'>
-              <Link href='/' className='cursor-pointer' aria-label='AsyncAPI' data-testid='Navbar-logo'>
-                <AsyncAPILogo className='w-auto' />
+            { theme !== 'light' ? (
+              <Link href="/" legacyBehavior>
+                <a className="cursor-pointer" aria-label="AsyncAPI" data-testid="Navbar-logo">
+                  <AsyncAPILogoLight className="h-8 w-auto sm:h-8" />
+                </a>
               </Link>
+            ) : (
+              <Link href="/" legacyBehavior>
+                <a className="cursor-pointer" aria-label="AsyncAPI" data-testid="Navbar-logo">
+                  <AsyncAPILogo className="h-8 w-auto sm:h-8" />
+                </a>
+              </Link>
+            )}
             </div>
           </div>
         )}
@@ -224,7 +238,6 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             >
               <IconLoupe />
             </SearchButton>
-
             {/* // Language Picker Component */}
             <LanguageSelect
               options={uniqueLangs}
@@ -236,11 +249,14 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             />
 
             <GithubButton
-              text='Star on GitHub'
+              text=''
               href='https://github.com/asyncapi/spec'
-              className='ml-2 py-2'
+              className='p-2 m-2'
               inNav={true}
             />
+
+            <DarkModeToggle/>
+
           </div>
         </nav>
       </div>

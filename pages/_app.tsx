@@ -15,6 +15,7 @@ import StickyNavbar from '@/components/navigation/StickyNavbar';
 import AppContext from '@/context/AppContext';
 import { defaultLanguage, defaultNamespace, I18nProvider, languages, namespaces } from '@/utils/i18n';
 import loadLocales from '@/utils/locales';
+import { ThemeProvider } from "next-themes"
 
 /**
  * @description The MyApp component is the root component for the application.
@@ -30,6 +31,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 
   return (
     <I18nProvider i18n={i18n}>
+      <ThemeProvider attribute="class">
       <AppContext.Provider value={{ path: router.asPath }}>
         <Head>
           <script async defer src='https://buttons.github.io/buttons.js'></script>
@@ -52,6 +54,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           </AlgoliaSearch>
         </MDXProvider>
       </AppContext.Provider>
+      </ThemeProvider>
     </I18nProvider>
   );
 }
