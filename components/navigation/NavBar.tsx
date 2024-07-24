@@ -143,7 +143,16 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
     setMobileMenuOpen(false);
     setOpen(null);
   }, [asPath]);
-
+  const LanguageSelector = (
+    <LanguageSelect
+      options={uniqueLangs}
+      onChange={(value) => {
+        changeLanguage(value.toLowerCase(), true);
+      }}
+      className=""
+      selected={i18n.language ? i18n.language.toUpperCase() : "EN"}
+    />
+  );
   return (
     <div className={`bg-white ${className} z-50`}>
       <div className='flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-10'>
@@ -158,6 +167,8 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
         )}
 
         <div className='-my-2 -mr-2 flex flex-row items-center justify-center lg:hidden' data-testid='Navbar-search'>
+          {/* // Language Selector for Mobile */}
+        {LanguageSelector}
           <SearchButton
             className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
             aria-label='Open Search'
@@ -225,15 +236,8 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               <IconLoupe />
             </SearchButton>
 
-            {/* // Language Picker Component */}
-            <LanguageSelect
-              options={uniqueLangs}
-              onChange={(value) => {
-                changeLanguage(value.toLowerCase(), true);
-              }}
-              className=''
-              selected={i18n.language ? i18n.language.toUpperCase() : 'EN'}
-            />
+            {/* // Language Selector for normal screen */}
+            {LanguageSelector}
 
             <GithubButton
               text='Star on GitHub'
@@ -246,7 +250,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
       </div>
 
       {/* Mobile menu, show/hide based on mobile menu state. */}
-      {mobileMenuOpen && <MobileNavMenu onClickClose={() => setMobileMenuOpen(false)} />}
+      {mobileMenuOpen && <MobileNavMenu  onClickClose={() => setMobileMenuOpen(false)} LanguageSelector={LanguageSelector}/>}
     </div>
   );
 }

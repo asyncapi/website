@@ -19,13 +19,14 @@ interface MenuItem {
 
 interface MobileNavMenuProps {
   onClickClose?: () => void;
+  LanguageSelector: JSX.Element;
 }
 
 /**
  * @description MobileNavMenu component for displaying a responsive navigation menu on mobile devices.
  * @param {MobileNavMenuProps} props - The props for the MobileNavMenu component.
  */
-export default function MobileNavMenu({ onClickClose = () => {} }: MobileNavMenuProps) {
+export default function MobileNavMenu({ onClickClose = () => {}, LanguageSelector  }: MobileNavMenuProps) {
   const [open, setOpen] = useState<string | null>(null);
 
   /**
@@ -51,6 +52,7 @@ export default function MobileNavMenu({ onClickClose = () => {} }: MobileNavMenu
                 <AsyncAPILogo className='h-10 w-auto' />
               </Link>
               <div className='justify-content -mr-2 flex flex-row items-center' data-testid='MobileNav-button'>
+              
                 <SearchButton
                   className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
                   aria-label='Open Search'
@@ -126,6 +128,9 @@ export default function MobileNavMenu({ onClickClose = () => {} }: MobileNavMenu
                   ))}
               </div>
             </div>
+          </div>
+          <div className='space-y-2 px-5 py-2'>
+          {LanguageSelector}
           </div>
         </div>
       </div>
