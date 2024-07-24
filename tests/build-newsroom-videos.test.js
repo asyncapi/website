@@ -1,5 +1,5 @@
 const { buildNewsroomVideos } = require('../scripts/build-newsroom-videos');
-const fetch = require('node-fetch');
+const fetch = require('node-fetch-2');
 const { resolve } = require('path');
 const { mkdirSync, readFileSync, rmSync } = require('fs');
 const { mockApiResponse, expectedResult } = require('./fixtures/newsroomData');
@@ -7,7 +7,7 @@ const { mockApiResponse, expectedResult } = require('./fixtures/newsroomData');
 const testDir = resolve(__dirname, 'test_config');
 const testFilePath = resolve(testDir, 'newsroom_videos.json');
 
-jest.mock('node-fetch', () => jest.fn());
+jest.mock('node-fetch-2', () => jest.fn());
 
 describe('buildNewsroomVideos', () => {
     beforeEach(() => {

@@ -1,6 +1,6 @@
 const { writeFileSync } = require('fs');
 const { resolve } = require('path');
-const fetch = require('node-fetch');
+const fetch = require('node-fetch-2');
 
 async function buildNewsroomVideos(writePath = resolve(__dirname, '../config', 'newsroom_videos.json')) {
     try {
@@ -15,7 +15,7 @@ async function buildNewsroomVideos(writePath = resolve(__dirname, '../config', '
         }));
 
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            throw new Error(`HTTP error! with status code: ${response.status}`);
         }
 
         const data = await response.json();
