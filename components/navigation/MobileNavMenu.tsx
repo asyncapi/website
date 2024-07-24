@@ -146,7 +146,7 @@ export default function MobileNavMenu({ onClickClose = () => {}, uniqueLangs, ch
                     <button
                       key={lang.key}
                       onClick={() => changeLanguage(lang.value.toLowerCase(), true)}
-                      className='mb-4 block rounded-lg py-1 text-base font-medium leading-6 text-start  w-full text-gray-700 transition duration-150 ease-in-out hover:bg-gray-50'
+                      className='mb-4 ml-2 block rounded-lg py-1 text-base font-medium leading-6 text-start  w-full text-gray-700 transition duration-150 ease-in-out hover:bg-gray-50'
                       data-testid='MobileNav-language-item'
                     >
                       {lang.text} 
