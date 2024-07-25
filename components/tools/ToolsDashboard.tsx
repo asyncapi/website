@@ -147,7 +147,9 @@ export default function ToolsDashboard() {
       const element = document.getElementById(elementID);
 
       if (element) {
+        document.documentElement.style.scrollPaddingTop = '6rem';
         element.scrollIntoView({ behavior: 'smooth' });
+        document.documentElement.style.scrollPaddingTop = '0';
       }
     }
   }, []);
