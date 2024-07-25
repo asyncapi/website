@@ -28,6 +28,37 @@ export default function ToolsDashboard() {
   const { isPaid, isAsyncAPIOwner, languages, technologies, categories } = useContext(ToolFilterContext);
   const [searchName, setSearchName] = useState<string>(''); // state variable used to get the search name
   const [checkToolsList, setCheckToolsList] = useState<boolean>(true); // state variable used to check whether any tool is available according to the needs of the user.
+
+  // useEffect function to enable the close Modal feature when clicked outside of the modal
+  useEffect(() => {
+    const checkIfClickOutside = (event: MouseEvent) => {
+      if (openFilter && filterRef.current && !filterRef.current.contains(event.target as Node)) {
+        setOpenFilter(false);
+      }
+    };
+
+    document.addEventListener('mousedown', checkIfClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', checkIfClickOutside);
+    };
+  });
+
+  // useEffect function to enable the close Category dropdown Modal feature when clicked outside of the modal
+  useEffect(() => {
+    const checkIfClickOutside = (event: MouseEvent) => {
+      if (openCategory && categoryRef.current && !categoryRef.current.contains(event.target as Node)) {
+        setopenCategory(false);
+      }
+    };
+
+    document.addEventListener('mousedown', checkIfClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', checkIfClickOutside);
+    };
+  });
+
   const toolsList = useMemo(() => {
     let tempToolsList: ToolsListData = {};
 
@@ -107,36 +138,6 @@ export default function ToolsDashboard() {
 
     return tempToolsList;
   }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, searchName]);
-
-  // useEffect function to enable the close Modal feature when clicked outside of the modal
-  useEffect(() => {
-    const checkIfClickOutside = (event: MouseEvent) => {
-      if (openFilter && filterRef.current && !filterRef.current.contains(event.target as Node)) {
-        setOpenFilter(false);
-      }
-    };
-
-    document.addEventListener('mousedown', checkIfClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', checkIfClickOutside);
-    };
-  });
-
-  // useEffect function to enable the close Category dropdown Modal feature when clicked outside of the modal
-  useEffect(() => {
-    const checkIfClickOutside = (event: MouseEvent) => {
-      if (openCategory && categoryRef.current && !categoryRef.current.contains(event.target as Node)) {
-        setopenCategory(false);
-      }
-    };
-
-    document.addEventListener('mousedown', checkIfClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', checkIfClickOutside);
-    };
-  });
 
   // useEffect to scroll to the opened category when url has category as element id
   useEffect(() => {
