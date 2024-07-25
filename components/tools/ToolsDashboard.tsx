@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useMemo, useRef, useState } from 'react';
 
 import type { ToolsListData } from '@/types/components/tools/ToolDataType';
 
@@ -20,9 +20,6 @@ const ToolsData = ToolsDataList as ToolsListData;
  */
 export default function ToolsDashboard() {
   const router = useRouter();
-  const loader = 'img/loaders/loader.png'; // preloader image for the tools
-
-  const [loading, setLoading] = useState<boolean>(false); // used to handle the preloader on the page
   const filterRef = useRef<HTMLDivElement>(); // used to provide ref to the Filter menu and outside click close feature
   const categoryRef = useRef<HTMLDivElement>(); // used to provide ref to the Category menu and outside click close feature
   const [openFilter, setOpenFilter] = useState<boolean>(false);
@@ -30,49 +27,8 @@ export default function ToolsDashboard() {
   // filter parameters extracted from the context
   const { isPaid, isAsyncAPIOwner, languages, technologies, categories } = useContext(ToolFilterContext);
   const [searchName, setSearchName] = useState<string>(''); // state variable used to get the search name
-  const [toolsList, setToolsList] = useState<ToolsListData>({}); // state variable used to set the list of tools according to the filters applied
   const [checkToolsList, setCheckToolsList] = useState<boolean>(true); // state variable used to check whether any tool is available according to the needs of the user.
-
-  // useEffect function to enable the close Modal feature when clicked outside of the modal
-  useEffect(() => {
-    const checkIfClickOutside = (event: MouseEvent) => {
-      if (openFilter && filterRef.current && !filterRef.current.contains(event.target as Node)) {
-        setOpenFilter(false);
-      }
-    };
-
-    document.addEventListener('mousedown', checkIfClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', checkIfClickOutside);
-    };
-  });
-
-  // sets the preloader on the page for 1 second
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  }, []);
-
-  // useEffect function to enable the close Category dropdown Modal feature when clicked outside of the modal
-  useEffect(() => {
-    const checkIfClickOutside = (event: MouseEvent) => {
-      if (openCategory && categoryRef.current && !categoryRef.current.contains(event.target as Node)) {
-        setopenCategory(false);
-      }
-    };
-
-    document.addEventListener('mousedown', checkIfClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', checkIfClickOutside);
-    };
-  });
-
-  // Function to update the list of tools according to the current filters applied
-  const updateToolsList = () => {
+  const toolsList = useMemo(() => {
     let tempToolsList: ToolsListData = {};
 
     // Tools data list is first filtered according to the category filter if applied by the user.
@@ -149,17 +105,58 @@ export default function ToolsDashboard() {
       }
     });
 
-    setToolsList(tempToolsList);
-  };
+    return tempToolsList;
+  }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, searchName]);
 
+  // useEffect function to enable the close Modal feature when clicked outside of the modal
+  useEffect(() => {
+    const checkIfClickOutside = (event: MouseEvent) => {
+      if (openFilter && filterRef.current && !filterRef.current.contains(event.target as Node)) {
+        setOpenFilter(false);
+      }
+    };
+
+    document.addEventListener('mousedown', checkIfClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', checkIfClickOutside);
+    };
+  });
+
+  // useEffect function to enable the close Category dropdown Modal feature when clicked outside of the modal
+  useEffect(() => {
+    const checkIfClickOutside = (event: MouseEvent) => {
+      if (openCategory && categoryRef.current && !categoryRef.current.contains(event.target as Node)) {
+        setopenCategory(false);
+      }
+    };
+
+    document.addEventListener('mousedown', checkIfClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', checkIfClickOutside);
+    };
+  });
+
+  // useEffect to scroll to the opened category when url has category as element id
+  useEffect(() => {
+    const { hash } = window.location;
+
+    setopenCategory(true);
+
+    if (hash) {
+      const element = document.getElementById(hash.slice(1));
+
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [document]);
+  // Function to update the list of tools according to the current filters applied
   const clearFilters = () => {
     setOpenFilter(false);
     router.push('/tools', undefined, { shallow: true });
   };
-
-  useEffect(() => {
-    updateToolsList();
-  }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, searchName]);
 
   const isFiltered = Boolean(
     isPaid !== 'all' || isAsyncAPIOwner || languages.length || technologies.length || categories.length
@@ -225,23 +222,16 @@ export default function ToolsDashboard() {
             <span className='ml-3'>Clear Filters</span>
           </div>
         )}
-        {loading ? (
-          <div className='mx-auto my-24 flex w-fit animate-pulse gap-4 text-black'>
-            <img src={loader} alt='loading' className='mx-auto w-16' />
-            <div className='my-auto text-xl'>Loading Tools...</div>
-          </div>
-        ) : (
-          <div className='mt-0'>
-            {checkToolsList ? (
-              <ToolsList toolsListData={toolsList} />
-            ) : (
-              <div className='p-4'>
-                <img src='/img/illustrations/not-found.webp' alt='not found' className='m-auto w-1/2' />
-                <div className='text-center text-lg'> Sorry, we don&apos;t have tools according to your needs. </div>
-              </div>
-            )}
-          </div>
-        )}
+        <div className='mt-0 scroll-p-16'>
+          {checkToolsList ? (
+            <ToolsList toolsListData={toolsList} />
+          ) : (
+            <div className='p-4'>
+              <img src='/img/illustrations/not-found.webp' alt='not found' className='m-auto w-1/2' />
+              <div className='text-center text-lg'> Sorry, we don&apos;t have tools according to your needs. </div>
+            </div>
+          )}
+        </div>
       </div>
     </ToolFilter>
   );
