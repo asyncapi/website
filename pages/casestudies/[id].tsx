@@ -14,6 +14,7 @@ import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
 import CaseStudiesList from '../../config/case-studies.json';
 import { generateCaseStudyContent } from '../../utils/staticHelpers';
+import { readYamlFile } from '@/components/helpers/read-yaml-file';
 
 interface IndexProps {
   casestudy: ICaseStudy;
@@ -34,6 +35,7 @@ interface IndexProps {
   asyncapiBindings: MDXRemoteSerializeResult;
   asyncapiTools: MDXRemoteSerializeResult;
   additionalResources: MDXRemoteSerializeResult;
+  fullExample: MDXRemoteSerializeResult;
 }
 
 const renderContent = (
@@ -96,6 +98,7 @@ const renderContent = (
  */
 export async function getStaticProps({ params }: { params: { id: string } }) {
   const data = CaseStudiesList.filter((p: { id: string }) => p.id === params.id);
+  const asyncApiDoc = await readYamlFile(data[0].asyncapi.fullExample);
 
   return {
     props: {
@@ -116,6 +119,7 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
       asyncapiDocumentation: await serialize(data[0].asyncapi.documentation),
       asyncapiBindings: await serialize(data[0].asyncapi.bindings),
       asyncapiTools: await serialize(data[0].asyncapi.tools),
+      fullExample: await serialize(asyncApiDoc),
       additionalResources: await serialize(data[0].additionalResources)
     }
   };
@@ -153,6 +157,7 @@ const Index: React.FC<IndexProps> = ({
   asyncapiDocumentation,
   asyncapiBindings,
   asyncapiTools,
+  fullExample,
   additionalResources
 }) => {
   const image = '/img/social/website-card.png';
@@ -177,6 +182,7 @@ const Index: React.FC<IndexProps> = ({
     asyncapiBindings,
     asyncapiTools,
     additionalResources,
+    fullExample,
     casestudy
   });
 
