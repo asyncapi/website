@@ -145,7 +145,7 @@ export default function ToolsDashboard() {
     setopenCategory(true);
 
     if (hash) {
-      const element = document.getElementById(hash.slice(1));
+      const element = document.getElementById(decodeURIComponent(hash.slice(1)));
 
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
