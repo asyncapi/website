@@ -142,16 +142,15 @@ export default function ToolsDashboard() {
   useEffect(() => {
     const { hash } = window.location;
 
-    setopenCategory(true);
-
     if (hash) {
-      const element = document.getElementById(decodeURIComponent(hash.slice(1)));
+      const elementID = decodeURIComponent(hash.slice(1));
+      const element = document.getElementById(elementID);
 
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
-  }, [document]);
+  }, []);
   // Function to update the list of tools according to the current filters applied
   const clearFilters = () => {
     setOpenFilter(false);
@@ -222,7 +221,7 @@ export default function ToolsDashboard() {
             <span className='ml-3'>Clear Filters</span>
           </div>
         )}
-        <div className='mt-0 scroll-p-16'>
+        <div className='mt-0'>
           {checkToolsList ? (
             <ToolsList toolsListData={toolsList} />
           ) : (
