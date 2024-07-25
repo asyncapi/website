@@ -29,7 +29,6 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
   // Decide whether to show full description or not in the card based on the number of lines occupied by the description.
   useEffect(() => {
     if (descriptionRef.current) {
-      console.log(descriptionRef.current?.scrollHeight, descriptionRef.current?.clientHeight);
       setIsTruncated(descriptionRef.current?.scrollHeight! > descriptionRef.current?.clientHeight!);
     }
   }, [descriptionRef.current]);
