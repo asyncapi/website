@@ -52,11 +52,17 @@ describe('buildNewsroomVideos', () => {
         await expect(buildNewsroomVideos(testFilePath)).rejects.toThrow('Failed to build newsroom videos: Invalid data structure received from YouTube API');
     });
 
+    it('should handle HTTP status code', async () => {
+        fetch.mockResolvedValue({
+            ok: false,
+            status: 404,
+            json: jest.fn().mockResolvedValue({}),
+        });
+
+        await expect(buildNewsroomVideos(testFilePath)).rejects.toThrow('Failed to build newsroom videos: HTTP error! with status code: 404');
+    });
+
     it('should throw an error with incorrect parameters', async () => {
-        try {
-          await buildNewsroomVideos('randomePath');
-        } catch (error) {
-          expect(error.message).toContain("Failed to build newsroom videos");
-        }
-      });
+        await expect(buildNewsroomVideos('randomePath')).rejects.toThrow("Failed to build newsroom videos");
+    });
 });
