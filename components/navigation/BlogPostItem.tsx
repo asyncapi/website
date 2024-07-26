@@ -132,5 +132,4 @@ export default forwardRef(function BlogPostItem(
       </article>
     </li>
   );
-}
-);
+});
