@@ -2,7 +2,7 @@ const { writeFileSync } = require('fs');
 const { resolve } = require('path');
 const { google } = require('googleapis');
 
-async function buildMeetings(writePath = resolve(__dirname, '../config', 'meetings.json')) {
+async function buildMeetings(writePath) {
   const auth = new google.auth.GoogleAuth({
     scopes: ['https://www.googleapis.com/auth/calendar'],
     credentials: process.env.CALENDAR_SERVICE_ACCOUNT ? JSON.parse(process.env.CALENDAR_SERVICE_ACCOUNT) : undefined,
@@ -47,5 +47,7 @@ async function buildMeetings(writePath = resolve(__dirname, '../config', 'meetin
     throw new Error(err)
   }
 }
+
+buildMeetings(resolve(__dirname, '../config', 'meetings.json')).catch(err => console.error(err));
 
 module.exports = { buildMeetings };
