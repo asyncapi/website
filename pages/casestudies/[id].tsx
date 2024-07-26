@@ -3,6 +3,7 @@ import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { MDXRemote } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 
+import { readYamlFile } from '@/components/helpers/read-yaml-file';
 import type { ICaseStudy } from '@/types/post';
 import { HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
@@ -14,7 +15,6 @@ import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
 import CaseStudiesList from '../../config/case-studies.json';
 import { generateCaseStudyContent } from '../../utils/staticHelpers';
-import { readYamlFile } from '@/components/helpers/read-yaml-file';
 
 interface IndexProps {
   casestudy: ICaseStudy;
