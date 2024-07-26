@@ -3,7 +3,7 @@ import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { MDXRemote } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 
-import { readYamlFile } from '@/components/helpers/read-yaml-file';
+import readYamlFile from '@/components/helpers/read-yaml-file';
 import type { ICaseStudy } from '@/types/post';
 import { HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';

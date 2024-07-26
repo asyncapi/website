@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 
-export const readYamlFile = async (fileName: string) => {
+export default async function readYamlFile(fileName: string) {
   try {
     const data = await fs.readFile(`./public/${fileName}`, 'utf-8');
     const yamlString = `\`\`\`yaml\n${data}\`\`\``;
