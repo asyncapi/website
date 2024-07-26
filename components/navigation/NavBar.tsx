@@ -149,10 +149,11 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
       onChange={(value) => {
         changeLanguage(value.toLowerCase(), true);
       }}
-      className=""
-      selected={i18n.language ? i18n.language.toUpperCase() : "EN"}
+      className=''
+      selected={i18n.language ? i18n.language.toUpperCase() : 'EN'}
     />
   );
+
   return (
     <div className={`bg-white ${className} z-50`}>
       <div className='flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-10'>
@@ -248,7 +249,13 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
       </div>
 
       {/* Mobile menu, show/hide based on mobile menu state. */}
-      {mobileMenuOpen && <MobileNavMenu  onClickClose={() => setMobileMenuOpen(false)} uniqueLangs={uniqueLangs} changeLanguage={changeLanguage}/>}
+      {mobileMenuOpen && (
+        <MobileNavMenu
+          onClickClose={() => setMobileMenuOpen(false)}
+          uniqueLangs={uniqueLangs}
+          changeLanguage={changeLanguage}
+        />
+      )}
     </div>
   );
 }
