@@ -149,7 +149,6 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
       onChange={(value) => {
         changeLanguage(value.toLowerCase(), true);
       }}
-      className=''
       selected={i18n.language ? i18n.language.toUpperCase() : 'EN'}
     />
   );
