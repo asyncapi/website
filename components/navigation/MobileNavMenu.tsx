@@ -54,7 +54,7 @@ export default function MobileNavMenu({ onClickClose = () => {}, uniqueLangs, ch
                 <AsyncAPILogo className='h-10 w-auto' />
               </Link>
               <div className='justify-content -mr-2 flex flex-row items-center' data-testid='MobileNav-button'>
-              
+
                 <SearchButton
                   className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
                   aria-label='Open Search'
@@ -149,7 +149,7 @@ export default function MobileNavMenu({ onClickClose = () => {}, uniqueLangs, ch
                       className='mb-4 ml-2 block rounded-lg py-1 text-sm font-medium leading-6 text-start  w-full text-gray-700 transition duration-150 ease-in-out hover:bg-gray-50'
                       data-testid='MobileNav-language-item'
                     >
-                      {lang.text} 
+                      {lang.text}
                     </button>
                   ))}
           </div>
