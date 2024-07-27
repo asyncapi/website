@@ -9,22 +9,23 @@ const DarkModeToggle = () => {
   const toggleDarkMode = () => {
     if (!isClickable) return;
 
-    setIsClickable(false); 
+    setIsClickable(false);
     const newTheme = isDarkMode ? 'light' : 'dark';
+
     setTheme(newTheme);
     setIsDarkMode(!isDarkMode);
 
     setTimeout(() => {
       setIsClickable(true);
-    }, 500); 
+    }, 500);
   };
 
   return (
-    <button onClick={toggleDarkMode} className="dark-mode-toggle mx-4" disabled={!isClickable}>
+    <button onClick={toggleDarkMode} className='dark-mode-toggle mx-4' disabled={!isClickable}>
       {isDarkMode ? (
-        <img src="/img/illustrations/sun.webp" alt="Dark Mode" width={27} height={27} />
+        <img src='/img/illustrations/sun.webp' alt='Dark Mode' width={27} height={27} />
       ) : (
-        <img src="/img/illustrations/moon.webp" alt="Light Mode" width={27} height={27} />
+        <img src='/img/illustrations/moon.webp' alt='Light Mode' width={27} height={27} />
       )}
     </button>
   );

@@ -10,9 +10,6 @@ import learningItems from './learningItems';
 import MenuBlocks from './MenuBlocks';
 import otherItems from './otherItems';
 import toolingItems from './toolingItems';
-import AsyncAPILogoLight from '../AsyncAPILogoLight';
-import { useTheme } from 'next-themes';
-import DarkModeToggle from '../DarkModeToggle';
 
 interface MenuItem {
   href: string;
@@ -50,17 +47,16 @@ export default function MobileNavMenu({ onClickClose = () => {} }: MobileNavMenu
         <div className='shadow-xs divide-y-2 divide-gray-50 rounded-lg bg-white'>
           <div className='space-y-6 px-4 pb-6 pt-4'>
             <div className='flex items-center justify-between'>
-            
-            <Link href="/" className="flex">
-                <span className="cursor-pointer" data-testid="MobileNav-Logo">
-                  <AsyncAPILogo className="h-8 w-auto" />
+              <Link href='/' className='flex'>
+                <span className='cursor-pointer' data-testid='MobileNav-Logo'>
+                  <AsyncAPILogo className='h-8 w-auto' />
                 </span>
               </Link>
 
-            {/* Commenting out this button for now. We can uncomment it after 
+              {/* Commenting out this button for now. We can uncomment it after
             Tailwind classes for dark mode are applied to every page on website. */}
 
-            {/* <DarkModeToggle/> */}
+              {/* <DarkModeToggle/> */}
 
               <div className='justify-content -mr-2 flex flex-row items-center' data-testid='MobileNav-button'>
                 <SearchButton
