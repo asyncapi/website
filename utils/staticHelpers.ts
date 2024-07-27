@@ -64,6 +64,7 @@ export const generateCaseStudyContent = (data: any) => {
     asyncapiBindings,
     asyncapiTools,
     additionalResources,
+    fullExample,
     casestudy
   } = data;
   const { languages } = casestudy.technical;
@@ -166,6 +167,10 @@ export const generateCaseStudyContent = (data: any) => {
           ]
         }
       ]
+    },
+    {
+      title: "Production-use AsyncAPI document",
+      content: fullExample,
     }
   ];
 };
