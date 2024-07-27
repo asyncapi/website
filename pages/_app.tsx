@@ -31,7 +31,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 
   return (
     <I18nProvider i18n={i18n}>
-      <ThemeProvider attribute='class'>
+      {/* remove default theme after dark mode is completed */}
+      <ThemeProvider attribute='class' defaultTheme="light">
         <AppContext.Provider value={{ path: router.asPath }}>
           <Head>
             <script async defer src='https://buttons.github.io/buttons.js'></script>
