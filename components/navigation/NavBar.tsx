@@ -248,14 +248,17 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               selected={i18n.language ? i18n.language.toUpperCase() : 'EN'}
             />
 
-            <GithubButton
-              text=''
-              href='https://github.com/asyncapi/spec'
-              className='p-2 m-2'
-              inNav={true}
+            <GithubButton 
+                text="Star on GitHub" 
+                href="https://github.com/asyncapi/spec" 
+                className="py-2 ml-2" 
+                inNav={true} 
             />
 
-            <DarkModeToggle/>
+            {/* Commenting out this button for now. We can uncomment it after 
+            Tailwind classes for dark mode are applied to every page on website. */}
+
+            {/* <DarkModeToggle/> */}
 
           </div>
         </nav>

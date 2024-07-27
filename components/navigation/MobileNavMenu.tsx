@@ -50,7 +50,18 @@ export default function MobileNavMenu({ onClickClose = () => {} }: MobileNavMenu
         <div className='shadow-xs divide-y-2 divide-gray-50 rounded-lg bg-white'>
           <div className='space-y-6 px-4 pb-6 pt-4'>
             <div className='flex items-center justify-between'>
-            <DarkModeToggle/>
+            
+            <Link href="/" className="flex">
+                <span className="cursor-pointer" data-testid="MobileNav-Logo">
+                  <AsyncAPILogo className="h-8 w-auto" />
+                </span>
+              </Link>
+
+            {/* Commenting out this button for now. We can uncomment it after 
+            Tailwind classes for dark mode are applied to every page on website. */}
+
+            {/* <DarkModeToggle/> */}
+
               <div className='justify-content -mr-2 flex flex-row items-center' data-testid='MobileNav-button'>
                 <SearchButton
                   className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
