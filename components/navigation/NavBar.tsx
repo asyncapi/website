@@ -1,14 +1,12 @@
 import Link from 'next/link';
 import type { NextRouter } from 'next/router';
 import { useRouter } from 'next/router';
-import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
 import { defaultLanguage, languages, useTranslation } from '../../utils/i18n';
 import i18nPaths from '../../utils/i18nPaths';
 import { SearchButton } from '../AlgoliaSearch';
 import AsyncAPILogo from '../AsyncAPILogo';
-import AsyncAPILogoLight from '../AsyncAPILogoLight';
 import GithubButton from '../buttons/GithubButton';
 import { isMobileDevice } from '../helpers/is-mobile';
 import { useOutsideClick } from '../helpers/use-outside-click';
@@ -40,7 +38,8 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   const [open, setOpen] = useState<'learning' | 'tooling' | 'community' | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const { i18n } = useTranslation();
-  const { theme } = useTheme();
+  // commented for dark mode
+  // const { theme } = useTheme();
 
   /**
    * Retrieves unique language options based on the current path and i18nPaths configuration.
@@ -152,7 +151,8 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
       <div className='flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-10'>
         {!hideLogo && (
           <div className='lg:w-auto lg:flex-1'>
-            <div className='flex'>
+            {/* commented for dark mode */}
+            {/* <div className='flex'>
               {theme !== 'light' ? (
                 <Link href='/' legacyBehavior>
                   <a className='cursor-pointer' aria-label='AsyncAPI' data-testid='Navbar-logo'>
@@ -166,6 +166,12 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
                   </a>
                 </Link>
               )}
+            </div> */}
+
+            <div className='flex'>
+              <Link href='/' className='cursor-pointer' aria-label='AsyncAPI' data-testid='Navbar-logo'>
+                <AsyncAPILogo className='w-auto' />
+              </Link>
             </div>
           </div>
         )}
