@@ -36,10 +36,12 @@ In the meantime, please start preparing your talk submissions and get ready to p
 
 ## Spec x Tooling
 
+### New Project
+
 After a successful vote, we will onboard a new project called [Kotlin-asyncapi](https://github.com/OpenFolder/kotlin-asyncapi). This project consists of code-first tools that simplify the creation of AsyncAPI documentation for Kotlin applications. It allows developers to write the AsyncAPI docs in Kotlin code using a DSL or generate it directly from the code. Additionally, it integrates with Spring Boot to serve the generated docs via a REST endpoint.
 For more details, [please refer to the open discussion on Donate kotlin-asyncapi](https://github.com/asyncapi/community/issues/1313). If you want to familiarize yourself with the codebase, [check out the kotlin-asyncapi repository](https://github.com/OpenFolder/kotlin-asyncapi).
 
-
+### Call for New Maintainers
 The [TypeScript/Node.js NATS](https://github.com/asyncapi/ts-nats-template) and [.NET C# NATS template](https://github.com/asyncapi/dotnet-nats-template) generators are looking for new maintainers. If you want to maintain these templates, please express your interest in the [ts-nats-template discussion](https://github.com/asyncapi/ts-nats-template/issues/650) or the [dotnet-nats-template discussion](https://github.com/asyncapi/dotnet-nats-template/issues/651).
 
 
