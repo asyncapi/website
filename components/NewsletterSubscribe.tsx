@@ -125,7 +125,7 @@ export default function NewsletterSubscribe({
         {subtitle}
       </Paragraph>
       {status === 'loading' ? (
-        <Loader dark={dark} />
+        <Loader loaderText={'Waiting for response...'} loaderType={'circular'} dark={dark} />
       ) : (
         <form className='flex flex-col gap-4 md:flex-row' onSubmit={handleSubmit}>
           <input
