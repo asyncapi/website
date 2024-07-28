@@ -2,10 +2,18 @@ import Link from 'next/link';
 import React from 'react';
 
 export interface FAQ {
+  // eslint-disable-next-line prettier/prettier
+
+  /** The question of the FAQ Item. */
   title: string;
+
+  /** The answer of the FAQ Item. */
   content: React.ReactNode;
 }
 
+/**
+ * This is the FAQ list. It contains the frequently asked questions and their answers.
+ */
 export const faqList: FAQ[] = [
   {
     title: 'What is the goal of the project?',
