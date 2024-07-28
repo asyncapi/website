@@ -112,7 +112,11 @@ export default forwardRef(function BlogPostItem(
                             author.name
                           )
                         )
-                        .reduce((prev, curr) => [prev, ' & ', curr].join(''))}
+                        .reduce((prev, curr) => (
+                          <>
+                            {prev} & {curr}
+                          </>
+                        ))}
                     </span>
                   </Heading>
                   <Paragraph typeStyle={ParagraphTypeStyle.sm} className='flex'>
