@@ -14,7 +14,7 @@ const buildTools = async () => {
       resolve(__dirname, '../config', 'tools-automated.json'),
       JSON.stringify(automatedTools, null, '  ')
     );
-    await combineTools(automatedTools, manualTools);
+    await combineTools(automatedTools, manualTools, resolve(__dirname, '../../config', 'tools.json'), resolve(__dirname, '../../config', 'all-tags.json'));
   } catch (err) {
     console.log(err);
     throw err
