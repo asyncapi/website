@@ -1,13 +1,27 @@
 import React from 'react';
 
 export interface AccordionItemProps {
+  // eslint-disable-next-line prettier/prettier
+
+  /** The index of the accordion item. */
   itemIndex: number;
+
+  /** The title of the accordion item. */
   title: string;
+
+  /** The content of the accordion item. */
   content: React.ReactNode;
+
+  /** The active state of the accordion item. */
   isActive: boolean;
+
+  /** The function to set the active index of the accordion item. */
   setActiveIndex: (index: number | null) => void;
 }
 
+/**
+ * This AccordionItem component is a child component of the Accordion component. It is responsible for rendering the individual accordion items.
+ */
 const AccordionItem = ({ itemIndex, title, content, isActive, setActiveIndex }: AccordionItemProps) => {
   const handleClick = () => {
     const nextIndex = isActive ? null : itemIndex;
