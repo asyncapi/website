@@ -14,22 +14,24 @@ import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 
 interface BlogPostItemProps {
+  // eslint-disable-next-line prettier/prettier
+
+  /** The blog post data. */
   post: IBlogPost;
+
+  /** Additional CSS classes for styling. */
   className?: string;
+
+  /** The HTML id attribute for the component. */
   id?: string;
 }
 
 /**
- * @description Functional component representing a single blog post item.
- * @param {Object} props - Props for the BlogPostItem component.
- * @param {IBlogPost} props.post - The blog post data.
- * @param {string} [props.className=''] - Additional CSS classes for styling.
- * @param {string} [props.id=''] - The HTML id attribute for the component.
- * @param {Ref<HTMLLIElement>} ref - Reference object for the component.
+ * Functional component representing a single blog post item.
  */
 export default forwardRef(function BlogPostItem(
   { post, className = '', id = '' }: BlogPostItemProps,
-  ref: Ref<HTMLLIElement>
+  ref: Ref<HTMLLIElement> /** Reference object for the component. */
 ) {
   let typeColors: [string, string] = ['bg-indigo-100', 'text-indigo-800'];
 
