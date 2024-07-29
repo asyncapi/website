@@ -43,7 +43,9 @@ The following is a summary of the ideal contribution flow.
     └───────────────────────┘
 ```
 
-Issues and pull requests without activity from the creator within 14 days will be automatically closed. However, closure does not mean rejection. If you wish to revisit a closed issue or pull request, feel free to open a new one referencing the closed item.
+Issues and pull requests without activity from the creator within 14 days will be automatically closed by triager or committer. However, closure does not mean rejection. If you wish to revisit a closed issue or pull request, feel free to open a new one referencing the closed item.
+
+Issues and pull requests without activity from the triager or committer within 14 days may occure for many different reasons. Creator may use `/ptal` comment in the pull request to call out maintainers.
 
 ### Issues
 
@@ -61,24 +63,23 @@ Get familiar with our document that explains the [Git workflow](https://github.c
 
 ## Conventional commits
 
-Our repositories follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) specification. Releasing to GitHub and NPM is done with the support of [semantic-release](https://semantic-release.gitbook.io/semantic-release/).
+Our repositories follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) specification.
 
 Pull requests should have a title that follows the specification; otherwise, merging is blocked. If you are not familiar with the specification, simply ask maintainers to modify it. You can also use this cheatsheet if you want:
 
-- `fix: ` prefix in the title indicates that PR is a bug fix and PATCH release must be triggered.
-- `feat: ` prefix in the title indicates that PR is a feature and MINOR release must be triggered.
-- `docs: ` prefix in the title indicates that PR is only related to the documentation and there is no need to trigger release.
-- `chore: ` prefix in the title indicates that PR is only related to cleanup in the project and there is no need to trigger release.
-- `test: ` prefix in the title indicates that PR is only related to tests and there is no need to trigger release.
-- `refactor: ` prefix in the title indicates that PR is only related to refactoring and there is no need to trigger release.
-
-What about a MAJOR release? Just add `!` to the prefix, like `fix!: ` or `refactor!: `
+- `fix: ` prefix in the title indicates that PR is a bug fix.
+- `feat: ` prefix in the title indicates that PR is a feature.
+- `docs: ` prefix in the title indicates that PR is only related to the documentation.
+- `chore: ` prefix in the title indicates that PR is only related to cleanup in the project.
+- `test: ` prefix in the title indicates that PR is only related to tests.
+- `refactor: ` prefix in the title indicates that PR is only related to refactoring.
 
 A prefix that follows specification is not enough. Remember that the title must be clear and descriptive with the usage of [imperative mood](https://chris.beams.io/posts/git-commit/#imperative).
 
 Happy contributing! :heart:
 
 ## License
+
 When you submit changes, your submissions are understood to be under the same [Apache 2.0 License](https://github.com/asyncapi/asyncapi/blob/master/LICENSE) that covers the project. Feel free to [contact the maintainers](https://www.asyncapi.com/slack-invite) if that's a concern.
 
 ## Contribution recognition
@@ -100,7 +101,7 @@ Triagers are responsible for labeling, commenting, and assisting with issue and 
 - Triagers assess newly-opened issues and pull requests.
 - Responsibilities include labeling issues and pull requests, commenting, closing, and reopening items as needed, and assisting users and novice contributors.
 - Triagers play a crucial role in enforcing the contributor guide and maintaining a clean backlog.
-- If a triager plans to become a committer, they should consult with existing committers to gradually gain more rights.
+- If a triager plans to become a committer, they should consult with existing committers to gradually gain more rights. It's crucial to earn the trust of existing committers so they feel confident in your ability to merge PRs. A triager should consistently demonstrate their dedication by regularly fulfilling their duties and actively reviewing PRs, providing code/docs suggestions and recommendations. This shows the committers that triager is knowledgeable about the docs/codebase and committed to maintaining its quality.
 
 ### Committer
 
