@@ -1,16 +1,20 @@
 const { promises: { mkdir } } = require('fs');
 const { resolve } = require('path');
-const writeJSON = require('../utils/readAndWriteJson.js')
+const writeJSON = require('../utils/readAndWriteJson.js');
 
-module.exports = async function buildFinanceInfoList() {
+module.exports = async function buildFinanceInfoList({
+    currentDir,
+    configDir,
+    financeDir,
+    year,
+    jsonDataDir
+}) {
     try {
-        const currentDir = resolve(__dirname, '../../');
-
-        const expensesPath = resolve(currentDir, 'config', 'finance', '2024', 'Expenses.yml');
-        const expensesLinkPath = resolve(currentDir, 'config', 'finance', '2024', 'ExpensesLink.yml');
+        const expensesPath = resolve(currentDir, configDir, financeDir, year, 'Expenses.yml');
+        const expensesLinkPath = resolve(currentDir, configDir, financeDir, year, 'ExpensesLink.yml');
 
         // Ensure the directory exists before writing the files
-        const jsonDirectory = resolve(currentDir, 'config', 'finance', 'json-data', '2024');
+        const jsonDirectory = resolve(currentDir, configDir, financeDir, jsonDataDir, year);
         await mkdir(jsonDirectory, { recursive: true });
 
         // Write Expenses and ExpensesLink to JSON files
@@ -19,7 +23,6 @@ module.exports = async function buildFinanceInfoList() {
 
         const expensesLinkJsonPath = resolve(jsonDirectory, 'ExpensesLink.json');
         await writeJSON(expensesLinkPath, expensesLinkJsonPath);
-
     } catch (err) {
         throw new Error(err);
     }

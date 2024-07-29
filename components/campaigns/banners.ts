@@ -15,18 +15,18 @@ function shouldShowBanner(cfpDeadline: string) {
   return true;
 }
 
-const cfpDeadlineLondon = '2024-07-12T06:00:00Z';
-const showBannerLondon = shouldShowBanner(cfpDeadlineLondon);
+const cfpDeadlineParis = '2024-09-20T06:00:00Z';
+const showBannerParis = shouldShowBanner(cfpDeadlineParis);
 
 export const banners = [
   {
     title: "AsyncAPI Conf on Tour'24",
-    city: 'London',
-    dateLocation: '18 - 19 of September, 2024 | United Kingdom, London',
+    city: 'Paris',
+    dateLocation: '3rd - 5th of December, 2024 | France, Paris',
     cfaText: 'Apply To Speak',
     eventName: 'the end of Call for Speakers',
-    cfpDeadline: cfpDeadlineLondon,
-    link: 'https://conference.asyncapi.com/venue/London',
-    show: showBannerLondon
+    cfpDeadline: cfpDeadlineParis,
+    link: 'https://conference.asyncapi.com/venue/Paris',
+    show: showBannerParis
   }
 ];
