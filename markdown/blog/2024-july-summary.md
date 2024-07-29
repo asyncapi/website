@@ -41,9 +41,13 @@ In the meantime, please start preparing your talk submissions and get ready to p
 After a successful vote, we will onboard a new project called [Kotlin-asyncapi](https://github.com/OpenFolder/kotlin-asyncapi). This project consists of code-first tools that simplify the creation of AsyncAPI documentation for Kotlin applications. It allows developers to write the AsyncAPI docs in Kotlin code using a DSL or generate it directly from the code. Additionally, it integrates with Spring Boot to serve the generated docs via a REST endpoint.
 For more details, [please refer to the open discussion on Donate kotlin-asyncapi](https://github.com/asyncapi/community/issues/1313). If you want to familiarize yourself with the codebase, [check out the kotlin-asyncapi repository](https://github.com/OpenFolder/kotlin-asyncapi).
 
+Thanks to [Lorenz Simon](https://github.com/lorenzsimon), who chose to move the project under the AsyncAPI umbrella to enable collaboration with a wider community. Lorenz is also searching for volunteers to join him as project maintainers.
+
 ### Call for New Maintainers
 The [TypeScript/Node.js NATS](https://github.com/asyncapi/ts-nats-template) and [.NET C# NATS template](https://github.com/asyncapi/dotnet-nats-template) generators are looking for new maintainers. If you want to maintain these templates, please express your interest in the [ts-nats-template discussion](https://github.com/asyncapi/ts-nats-template/issues/650) or the [dotnet-nats-template discussion](https://github.com/asyncapi/dotnet-nats-template/issues/651).
 
+## AsyncAPI Bounty Program
+[The AsyncAPI Bounty Program Q3](https://github.com/orgs/asyncapi/projects/36/?pane=info) is making good progress. Out of the 9 assigned issues, 3 are now complete. [We have awarded $600 for the completed tasks, and an additional $400 will be processed by the end of July](https://opencollective.com/asyncapi/expenses?searchTerm=bounty&collectiveSlug=asyncapi&period=2024-06-30T22%3A00%3A00.000Z%E2%86%92all).
 
 ## Mentorship Programs
 Our Google Summer of Code'24 mentors have recently submitted their mid-term evaluations, and we are thrilled that 7 out of 8 mentees passed their evaluation. We still have one more mid-term evaluation, and I'm confident they will also pass, as the mentees are working hard on their contributions.
@@ -51,7 +55,7 @@ Our Google Summer of Code'24 mentors have recently submitted their mid-term eval
 [You can check out the accepted AsyncAPI project list](https://summerofcode.withgoogle.com/programs/2024/organizations/asyncapi) and see what the mentees are working on.
 
 ## Technical Steering Committee
-To improve transparency in the project and ensure regular monitoring of the TSC's participation, we have implemented an automated update voting report. The report provides detailed information about the voting process, and [you can check out the first version of the TSC Overview doc report](https://github.com/asyncapi/community/blob/master/TSC_VOTING_OVERVIEW.md).
+To improve transparency in the project and ensure regular monitoring of the TSC's participation, we have implemented an automated report of TSC voting with support from [Aayush Saini](https://github.com/AayushSaini101). The report provides detailed information about the voting process, and [you can check out the first version of the TSC Overview doc report](https://github.com/asyncapi/community/blob/master/TSC_VOTING_OVERVIEW.md).
 
 As a TSC member, if you identify incorrect data, [please create an issue in the community repository](https://github.com/asyncapi/community/issues) with the correct information, as it will allow us to review and address any issues with the automation process or voting discrepancies.
 
