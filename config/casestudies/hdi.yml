@@ -35,8 +35,7 @@ technical: #We need some more technical information related to case study.
   protocols:
     - AMQP
   brokers: Azure Service Bus
-  testing: |
-    The AsyncAPI document is validated using the AsyncAPI CLI to confirm that the document is correctly formatted and adheres to the AsyncAPI specification right after creation and befor being commited to the documentation repository.
+  testing: n/a
   architecture: |
     The following [enterprise integration patterns](https://www.enterpriseintegrationpatterns.com/patterns/messaging) are applied : 
     - [Message Channel](https://www.enterpriseintegrationpatterns.com/patterns/messaging/MessageChannel.html)
@@ -209,6 +208,8 @@ asyncapi: #More specific details about AsyncAPI itself and how is it used.
     If changes for any topic are applied by a customer, the documentation pipeline is triggered. 
     This pipeline uses a bash script to read the updated configuration from the customer's repository. 
     It then generates a new AsyncAPI document reflecting these changes.
+
+    The AsyncAPI document is validated using the AsyncAPI CLI to confirm that the document is correctly formatted and adheres to the AsyncAPI specification right after creation and befor being commited to the documentation repository.
   maintainers: | 
     Customers maintain this document automatically by maintaining their own topic configurations.
   audience: #Specify if AsyncAPI audience is internal or external or both.
