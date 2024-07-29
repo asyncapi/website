@@ -60,8 +60,8 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
             <ArrowLeft className='w-4 text-white' />
           </div>
         )}
-        <div className='relative flex w-5/6 flex-col items-center justify-center gap-2 pr-3'>
-          <div className='relative min-h-72 w-full overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
+        <div className='relative flex w-5/6 flex-col items-center justify-center gap-2'>
+          <div className='relative flex min-h-72 w-full items-center justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
             {banners.map(
               (banner, index) =>
                 banner.show && (
