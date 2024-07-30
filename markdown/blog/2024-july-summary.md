@@ -46,6 +46,9 @@ Thanks to [Lorenz Simon](https://github.com/lorenzsimon), who chose to move the 
 ### Call for New Maintainers
 The [TypeScript/Node.js NATS](https://github.com/asyncapi/ts-nats-template) and [.NET C# NATS template](https://github.com/asyncapi/dotnet-nats-template) generators are looking for new maintainers. If you want to maintain these templates, please express your interest in the [ts-nats-template discussion](https://github.com/asyncapi/ts-nats-template/issues/650) or the [dotnet-nats-template discussion](https://github.com/asyncapi/dotnet-nats-template/issues/651).
 
+### AsyncAPI v3 Support
+We are excited to have the AsyncAPI Validator by [Waleed Ashraf](https://github.com/WaleedAshraf) as one of the latest projects to support v3. The AsyncAPI Validator project validates your messages against your AsyncAPI document. Be sure to test and [try out the AsyncAPI Validator for your projects](https://github.com/WaleedAshraf/asyncapi-validator).
+
 ## AsyncAPI Bounty Program
 [The AsyncAPI Bounty Program Q3](https://github.com/orgs/asyncapi/projects/36/?pane=info) is making good progress. Out of the 9 assigned issues, 3 are now complete. [We have awarded $600 for the completed tasks, and an additional $400 will be processed by the end of July](https://opencollective.com/asyncapi/expenses?searchTerm=bounty&collectiveSlug=asyncapi&period=2024-06-30T22%3A00%3A00.000Z%E2%86%92all).
 
