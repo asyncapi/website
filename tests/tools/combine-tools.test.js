@@ -154,4 +154,34 @@ describe('combineTools function', () => {
     expect(fs.existsSync(tagsPath)).toBe(true);
   });
 
+  it('should handle tools with multiple languages, including new ones', async () => {
+    const toolWithMultipleLanguages = {
+      title: 'Multi-Language Tool',
+      filters: {
+        language: ['JavaScript', 'Python', 'NewLanguage'],
+        technology: ['Node.js']
+      },
+      links: { repoUrl: 'https://github.com/example/multi-language-tool' }
+    };
+  
+    const automatedTools = {
+      'category1': {
+        description: 'Category 1 Description',
+        toolsList: [toolWithMultipleLanguages]
+      }
+    };
+  
+    await combineTools(automatedTools, {}, toolsPath, tagsPath);
+  
+    const combinedTools = readJSON(toolsPath);
+    const tool = combinedTools.category1.toolsList[0];
+  
+    expect(tool.filters.language).toHaveLength(3);
+    expect(tool.filters.language).toContainEqual(expect.objectContaining({ name: 'JavaScript' }));
+    expect(tool.filters.language).toContainEqual(expect.objectContaining({ name: 'Python' }));
+    expect(tool.filters.language).toContainEqual(expect.objectContaining({ name: 'NewLanguage' }));
+  
+    const tagsData = readJSON(tagsPath);
+    expect(tagsData.languages).toContainEqual(expect.objectContaining({ name: 'NewLanguage' }));
+  });
 });
