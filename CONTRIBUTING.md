@@ -43,7 +43,7 @@ The following is a summary of the ideal contribution flow.
     └───────────────────────┘
 ```
 
-Issues and pull requests without activity from the creator within 14 days will be automatically closed by triager or committer. However, closure does not mean rejection. If you wish to revisit a closed issue or pull request, feel free to open a new one referencing the closed item.
+Issues and pull requests without activity from the creator within 14 days will be automatically closed by a triager or committer. However, closure does not mean rejection. If you wish to revisit a closed issue or pull request, feel free to open a new one referencing the closed item.
 
 Issues and pull requests without activity from the triager or committer within 14 days may occure for many different reasons. Creator may use `/ptal` comment in the pull request to call out maintainers.
 
@@ -57,7 +57,7 @@ Please use our issues templates that provide you with hints on what information 
 
 ### Pull Requests
 
-**Please make sure you open an issue before starting with a Pull Request unless it's a typo or a really obvious error.** Pull requests are the best way to propose changes to the specification. If there was no issue created first where maintainers discussed if a pull request is needed, the pull request may be rejected.
+**Please make sure you open an issue before starting with a Pull Request unless it's a typo or a really obvious error.** Pull requests are the best way to propose changes to the specification. If no issue was created first to discuss the need for a pull request, it may be rejected.
 
 Get familiar with our document that explains the [Git workflow](https://github.com/asyncapi/community/blob/master/git-workflow.md) used in our repositories.
 
