@@ -67,7 +67,7 @@ Our repositories follow the [Conventional Commits](https://www.conventionalcommi
 
 Pull requests should have a title that follows the specification; otherwise, merging is blocked. If you are not familiar with the specification, simply ask maintainers to modify it. You can also use this cheatsheet if you want:
 
-- `fix: ` prefix in the title indicates that PR is a bug fix.
+- `fix: ` prefix in the title indicates that the PR is a bug fix.
 - `feat: ` prefix in the title indicates that PR is a feature.
 - `docs: ` prefix in the title indicates that PR is only related to the documentation.
 - `chore: ` prefix in the title indicates that PR is only related to cleanup in the project.
@@ -90,9 +90,9 @@ We use the [All Contributors](https://allcontributors.org/docs/en/specification)
 
 To streamline project management and facilitate onboarding, the maintainer's set up in the project includes two roles: `triager` and `committer`.
 
-There are also two separate areas of responsibility: docs and code. There can be a committer responsible for code only, and there can also be a triager responsible for docs only. There can also be a maintainer that holds all roles and participages in different areas.
+There are also two separate areas of responsibility: docs and code. There can be a committer responsible for code only, and there can also be a triager responsible for docs only. There can also be a maintainer that holds all roles and participates in different areas.
 
-We recognize that because of the size of the project and its complexity, areas of responsibility can also get more granular. For example, there can be a committer responsible for docs but only community docs or a committeer responsible only for project design. These exceptions are assessed and approved by project maintainers.
+We recognize that because of the size of the project and its complexity, areas of responsibility can also get more granular. For example, there can be a committer responsible for docs but only community docs or a committer responsible only for project design. These exceptions are assessed and approved by project maintainers.
 
 ### Triager
 
