@@ -68,11 +68,11 @@ Our repositories follow the [Conventional Commits](https://www.conventionalcommi
 Pull requests should have a title that follows the specification; otherwise, merging is blocked. If you are not familiar with the specification, simply ask maintainers to modify it. You can also use this cheatsheet if you want:
 
 - `fix: ` prefix in the title indicates that the PR is a bug fix.
-- `feat: ` prefix in the title indicates that PR is a feature.
-- `docs: ` prefix in the title indicates that PR is only related to the documentation.
-- `chore: ` prefix in the title indicates that PR is only related to cleanup in the project.
-- `test: ` prefix in the title indicates that PR is only related to tests.
-- `refactor: ` prefix in the title indicates that PR is only related to refactoring.
+- `feat: ` prefix in the title indicates that the PR is a feature.
+- `docs: ` prefix in the title indicates that the PR is only related to the documentation.
+- `chore: ` prefix in the title indicates that the PR is only related to cleanup in the project.
+- `test: ` prefix in the title indicates that the PR is only related to tests.
+- `refactor: ` prefix in the title indicates that the PR is only related to refactoring.
 
 A prefix that follows specification is not enough. Remember that the title must be clear and descriptive with the usage of [imperative mood](https://chris.beams.io/posts/git-commit/#imperative).
 
