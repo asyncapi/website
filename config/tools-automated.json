@@ -370,23 +370,6 @@
     "description": "The following is a list of GitHub Actions that you can use in your workflows",
     "toolsList": [
       {
-        "title": "GitHub Action for Generator",
-        "description": null,
-        "links": {
-          "repoUrl": "https://github.com/actions-marketplace-validations/asyncapi_github-action-for-generator"
-        },
-        "filters": {
-          "technology": [
-            "AsyncAPI Generator"
-          ],
-          "categories": [
-            "github-action"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": false
-        }
-      },
-      {
         "title": "GitHub Action for CLI",
         "description": "GitHub Action with generator, validator, converter and others - all in one for your AsyncAPI documents with AsyncAPI CLI as backbone",
         "links": {
@@ -401,6 +384,23 @@
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
+        }
+      },
+      {
+        "title": "GitHub Action for Generator",
+        "description": null,
+        "links": {
+          "repoUrl": "https://github.com/actions-marketplace-validations/asyncapi_github-action-for-generator"
+        },
+        "filters": {
+          "technology": [
+            "AsyncAPI Generator"
+          ],
+          "categories": [
+            "github-action"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       }
     ]
@@ -640,24 +640,6 @@
     "description": "The following is a list of extensions for different IDEs like VSCode, IntelliJ IDEA and others",
     "toolsList": [
       {
-        "title": "asyncapi-preview",
-        "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
-        },
-        "filters": {
-          "technology": [
-            "VSCode",
-            "SmartPaste"
-          ],
-          "categories": [
-            "ide-extension"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      },
-      {
         "title": "jAsyncAPI - IDEA plugin",
         "description": "Idea plugin for the java-asyncapi - Helps to edit and validate AsyncAPI schemas.",
         "links": {
@@ -670,6 +652,24 @@
           "technology": [
             "JetBrains",
             "IntelliJ IDEA"
+          ],
+          "categories": [
+            "ide-extension"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      },
+      {
+        "title": "asyncapi-preview",
+        "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
+        },
+        "filters": {
+          "technology": [
+            "VSCode",
+            "SmartPaste"
           ],
           "categories": [
             "ide-extension"
@@ -702,17 +702,15 @@
     "description": "The following is a list of templates compatible with AsyncAPI Generator. You can use them to generate apps, clients or documentation from your AsyncAPI documents.",
     "toolsList": [
       {
-        "title": "Java Template",
-        "description": "Java template for the AsyncAPI Generator",
+        "title": "Node.js Multiprotocol Template",
+        "description": "This template generates a server using your AsyncAPI document. It supports multiple different protocols, like Kafka or MQTT.  It is designed in the way that generated code is a library and with it's API you can start the server, send messages or register a middleware for listening incoming messages. Runtime message validation included.",
         "links": {
-          "repoUrl": "https://github.com/asyncapi/java-template"
+          "repoUrl": "https://github.com/asyncapi/nodejs-template"
         },
         "filters": {
-          "language": [
-            "javascript"
-          ],
+          "language": "javascript",
           "technology": [
-            "Java"
+            "Node.js"
           ],
           "categories": [
             "generator-template"
@@ -740,19 +738,17 @@
         }
       },
       {
-        "title": "Java Spring Template",
-        "description": "Java Spring template for the AsyncAPI Generator",
+        "title": "Java Template",
+        "description": "Java template for the AsyncAPI Generator",
         "links": {
-          "repoUrl": "https://github.com/asyncapi/java-spring-template"
+          "repoUrl": "https://github.com/asyncapi/java-template"
         },
         "filters": {
           "language": [
             "javascript"
           ],
           "technology": [
-            "Springboot",
-            "Maven",
-            "Gradle"
+            "Java"
           ],
           "categories": [
             "generator-template"
@@ -780,15 +776,19 @@
         }
       },
       {
-        "title": "Node.js Multiprotocol Template",
-        "description": "This template generates a server using your AsyncAPI document. It supports multiple different protocols, like Kafka or MQTT.  It is designed in the way that generated code is a library and with it's API you can start the server, send messages or register a middleware for listening incoming messages. Runtime message validation included.",
+        "title": "Java Spring Template",
+        "description": "Java Spring template for the AsyncAPI Generator",
         "links": {
-          "repoUrl": "https://github.com/asyncapi/nodejs-template"
+          "repoUrl": "https://github.com/asyncapi/java-spring-template"
         },
         "filters": {
-          "language": "javascript",
+          "language": [
+            "javascript"
+          ],
           "technology": [
-            "Node.js"
+            "Springboot",
+            "Maven",
+            "Gradle"
           ],
           "categories": [
             "generator-template"
