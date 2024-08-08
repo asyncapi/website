@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import type { AccordionItemType } from '@/types/components/AccordionItemType';
+
 import Accordion from './Accordion';
 
 const meta: Meta<typeof Accordion> = {
@@ -11,7 +13,7 @@ export default meta;
 
 type Story = StoryObj<typeof Accordion>;
 
-const sampleAccordionItemList = [
+const sampleAccordionItemList: AccordionItemType[] = [
   {
     title: 'Accordion Item 1',
     content: 'This is the content of accordion item 1.'

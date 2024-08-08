@@ -1,11 +1,8 @@
 import React from 'react';
 
-import AccordionItem from './AccordionItem';
+import type { AccordionItemType } from '@/types/components/AccordionItemType';
 
-interface AccordionItemType {
-  title: string;
-  content: React.ReactNode;
-}
+import AccordionItem from './AccordionItem';
 
 export interface AccordionProps {
   accordionItems: AccordionItemType[];

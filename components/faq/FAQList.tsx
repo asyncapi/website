@@ -1,15 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-export interface FAQ {
-  // eslint-disable-next-line prettier/prettier
-
-  /** The question of the FAQ Item. */
-  title: string;
-
-  /** The answer of the FAQ Item. */
-  content: React.ReactNode;
-}
+import type { AccordionItemType as FAQ } from '@/types/components/AccordionItemType';
 
 /**
  * This is the FAQ list. It contains the frequently asked questions and their answers.
