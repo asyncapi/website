@@ -143,6 +143,15 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
     setMobileMenuOpen(false);
     setOpen(null);
   }, [asPath]);
+  const LanguageSelector = (
+    <LanguageSelect
+      options={uniqueLangs}
+      onChange={(value) => {
+        changeLanguage(value.toLowerCase(), true);
+      }}
+      selected={i18n.language ? i18n.language.toUpperCase() : 'EN'}
+    />
+  );
 
   return (
     <div className={`bg-white ${className} z-50`}>
@@ -225,15 +234,8 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               <IconLoupe />
             </SearchButton>
 
-            {/* // Language Picker Component */}
-            <LanguageSelect
-              options={uniqueLangs}
-              onChange={(value) => {
-                changeLanguage(value.toLowerCase(), true);
-              }}
-              className=''
-              selected={i18n.language ? i18n.language.toUpperCase() : 'EN'}
-            />
+            {/* // Language Selector for normal screen */}
+            {LanguageSelector}
 
             <GithubButton
               text='Star on GitHub'
@@ -246,7 +248,13 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
       </div>
 
       {/* Mobile menu, show/hide based on mobile menu state. */}
-      {mobileMenuOpen && <MobileNavMenu onClickClose={() => setMobileMenuOpen(false)} />}
+      {mobileMenuOpen && (
+        <MobileNavMenu
+          onClickClose={() => setMobileMenuOpen(false)}
+          uniqueLangs={uniqueLangs}
+          changeLanguage={changeLanguage}
+        />
+      )}
     </div>
   );
 }
