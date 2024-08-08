@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { ButtonType } from '@/types/components/buttons/ButtonPropsType';
+import { InputTypes } from '@/types/components/InputBoxPropsType';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
 import { useTranslation } from '../utils/i18n';
@@ -130,14 +131,14 @@ export default function NewsletterSubscribe({
       ) : (
         <form className='flex flex-col gap-4 md:flex-row' onSubmit={handleSubmit}>
           <InputBox
-            inputType='text'
+            inputType={InputTypes.TEXT}
             inputName='name'
             placeholder={t('newsletterCTA.nameInput')}
             inputValue={name}
             setInput={setName}
           />
           <InputBox
-            inputType='email'
+            inputType={InputTypes.EMAIL}
             inputName='email'
             placeholder={t('newsletterCTA.emailInput')}
             inputValue={email}

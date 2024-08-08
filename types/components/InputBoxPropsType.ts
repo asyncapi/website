@@ -1,8 +1,13 @@
+export enum InputTypes {
+  TEXT = 'text',
+  EMAIL = 'email',
+  NUMBER = 'number'
+}
 export interface InputBoxProps {
   // eslint-disable-next-line prettier/prettier
 
   /** Type of the input. */
-  inputType: string;
+  inputType: InputTypes | string;
 
   /** Name of the input. */
   inputName: string;

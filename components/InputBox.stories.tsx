@@ -2,6 +2,7 @@ import { useArgs } from '@storybook/preview-api';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import type { InputBoxProps } from '@/types/components/InputBoxPropsType';
+import { InputTypes } from '@/types/components/InputBoxPropsType';
 
 import InputBox from './InputBox';
 
@@ -34,7 +35,7 @@ export const TextInput: Story = {
   ...Input,
 
   args: {
-    inputType: 'text',
+    inputType: InputTypes.TEXT,
     inputName: 'Name',
     placeholder: 'AsyncAPI Initiative'
   }
@@ -44,7 +45,7 @@ export const EmailInput: Story = {
   ...Input,
 
   args: {
-    inputType: 'email',
+    inputType: InputTypes.EMAIL,
     inputName: 'Email',
     placeholder: 'press@asyncapi.io'
   }
