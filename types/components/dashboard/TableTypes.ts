@@ -1,6 +1,6 @@
 export interface LabelType {
   name: string;
-};
+}
 
 export interface Issue {
   title: string;
@@ -9,4 +9,4 @@ export interface Issue {
   resourcePath: string;
   isPR?: boolean;
   labels: LabelType[];
-};
+}
