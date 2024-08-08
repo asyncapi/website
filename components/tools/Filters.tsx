@@ -13,6 +13,7 @@ import ArrowDown from '../icons/ArrowDown';
 import { CardData } from './CardData';
 import FiltersDisplay from './FiltersDisplay';
 import FiltersDropdown from './FiltersDropdown';
+import Toggle from './Toggle';
 
 interface FiltersProps {
   setOpenFilter: React.Dispatch<React.SetStateAction<boolean>>;
@@ -164,20 +165,7 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
             />
           </div>
           <div className='flex gap-4'>
-            <label className='relative inline-flex cursor-pointer items-center'>
-              <input
-                type='checkbox'
-                value={isAsyncAPIOwner ? 'true' : 'false'}
-                className='peer sr-only'
-                onChange={() => setCheckOwner(!checkOwner)}
-              />
-              <div
-                className={twMerge(
-                  `w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all ${checkOwner ? 'after:translate-x-full after:border-white bg-secondary-500' : ''}`
-                )}
-              ></div>
-            </label>
-            <div className='text-sm font-medium'>Show only AsyncAPI-owned tools</div>
+            <Toggle checked={checkOwner} setChecked={setCheckOwner} label='Show only AsyncAPI-owned tools' />
           </div>
         </div>
         <hr className='my-4' />
