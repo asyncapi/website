@@ -2,6 +2,7 @@ import '../styles/globals.css';
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { ThemeProvider } from 'next-themes';
 import React from 'react';
 
 import AlgoliaSearch from '@/components/AlgoliaSearch';
@@ -30,28 +31,31 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 
   return (
     <I18nProvider i18n={i18n}>
-      <AppContext.Provider value={{ path: router.asPath }}>
-        <Head>
-          <script async defer src='https://buttons.github.io/buttons.js'></script>
-        </Head>
-        <MDXProvider>
-          <AlgoliaSearch>
-            <div className='flex min-h-screen flex-col'>
-              <Banner />
-              <StickyNavbar>
-                <NavBar className='mx-auto block max-w-screen-xl px-4 sm:px-6 lg:px-8' />
-              </StickyNavbar>
-              <Layout>
-                <Component {...pageProps} />
-                <ScrollButton />
-              </Layout>
-              <div className='mt-auto'>
-                <Footer />
+      {/* remove default theme after dark mode is completed */}
+      <ThemeProvider attribute='class' defaultTheme='light'>
+        <AppContext.Provider value={{ path: router.asPath }}>
+          <Head>
+            <script async defer src='https://buttons.github.io/buttons.js'></script>
+          </Head>
+          <MDXProvider>
+            <AlgoliaSearch>
+              <div className='flex min-h-screen flex-col'>
+                <Banner />
+                <StickyNavbar>
+                  <NavBar className='mx-auto block max-w-screen-xl px-4 sm:px-6 lg:px-8' />
+                </StickyNavbar>
+                <Layout>
+                  <Component {...pageProps} />
+                  <ScrollButton />
+                </Layout>
+                <div className='mt-auto'>
+                  <Footer />
+                </div>
               </div>
-            </div>
-          </AlgoliaSearch>
-        </MDXProvider>
-      </AppContext.Provider>
+            </AlgoliaSearch>
+          </MDXProvider>
+        </AppContext.Provider>
+      </ThemeProvider>
     </I18nProvider>
   );
 }

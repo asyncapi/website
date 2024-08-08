@@ -70,6 +70,7 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './config/**/*.json'
   ],
+  darkMode:"class",
   theme: {
     fontWeight: {
       'extra-light': '200',

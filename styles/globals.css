@@ -351,3 +351,9 @@ abbr[title] {
 .explorer-menu-wrapper > div > div > div > button {
   margin-top: 0px;
 }
+
+@layer base{
+  body {
+      @apply dark:bg-slate-800 bg-white
+  }
+}

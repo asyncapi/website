@@ -38,6 +38,8 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   const [open, setOpen] = useState<'learning' | 'tooling' | 'community' | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const { i18n } = useTranslation();
+  // commented for dark mode
+  // const { theme } = useTheme();
 
   /**
    * Retrieves unique language options based on the current path and i18nPaths configuration.
@@ -145,10 +147,27 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   }, [asPath]);
 
   return (
-    <div className={`bg-white ${className} z-50`}>
+    <div className={`bg-white dark:bg-black ${className} z-50`}>
       <div className='flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-10'>
         {!hideLogo && (
           <div className='lg:w-auto lg:flex-1'>
+            {/* commented for dark mode */}
+            {/* <div className='flex'>
+              {theme !== 'light' ? (
+                <Link href='/' legacyBehavior>
+                  <a className='cursor-pointer' aria-label='AsyncAPI' data-testid='Navbar-logo'>
+                    <AsyncAPILogoLight className='h-8 w-auto sm:h-8' />
+                  </a>
+                </Link>
+              ) : (
+                <Link href='/' legacyBehavior>
+                  <a className='cursor-pointer' aria-label='AsyncAPI' data-testid='Navbar-logo'>
+                    <AsyncAPILogo className='h-8 w-auto sm:h-8' />
+                  </a>
+                </Link>
+              )}
+            </div> */}
+
             <div className='flex'>
               <Link href='/' className='cursor-pointer' aria-label='AsyncAPI' data-testid='Navbar-logo'>
                 <AsyncAPILogo className='w-auto' />
@@ -224,7 +243,6 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             >
               <IconLoupe />
             </SearchButton>
-
             {/* // Language Picker Component */}
             <LanguageSelect
               options={uniqueLangs}
@@ -241,6 +259,11 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               className='ml-2 py-2'
               inNav={true}
             />
+
+            {/* Commenting out this button for now. We can uncomment it after
+            Tailwind classes for dark mode are applied to every page on website. */}
+
+            {/* <DarkModeToggle/> */}
           </div>
         </nav>
       </div>
