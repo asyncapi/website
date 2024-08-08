@@ -1,4 +1,5 @@
-import type { Context } from "netlify:edge";
+// Changes to URL from 'netlify:edge' because we don't have package aliasing setup in our workflow.
+import type { Context } from "https://edge-bootstrap.netlify.app/v1/index.ts";
 
 const GITHUB_TOKEN = Deno.env.get("GITHUB_TOKEN_NR");
 const NR_API_KEY = Deno.env.get("NR_API_KEY");
@@ -69,7 +70,8 @@ export default async (request: Request, context: Context) => {
 
 function buildRewrite(originalRequest: Request): (Request | null) {
   const extractResult = SchemasRelatedRequestRegex.exec(new URL(originalRequest.url).pathname);
-  if (extractResult === null) {
+  // No need to rewrite the request if it's not a legitimate request for a definition file
+  if (extractResult === null || extractResult.length < 2 || !extractResult[2]) {
     return null;
   }
 
