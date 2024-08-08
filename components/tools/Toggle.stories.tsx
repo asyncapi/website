@@ -1,7 +1,8 @@
 import { useArgs } from '@storybook/preview-api';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import type { ToggleProps } from './Toggle';
+import type { ToggleProps } from '@/types/components/tools/TogglePropsType';
+
 import Toggle from './Toggle';
 
 const meta: Meta<typeof Toggle> = {
