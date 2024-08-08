@@ -3,7 +3,7 @@ import React from 'react';
 
 import { HeadingTypeStyle } from '@/types/typography/Heading';
 
-import AsyncAPILogoLight from '../AsyncAPILogoLight';
+import AsyncAPILogoLight from '../logos/AsyncAPILogoLight';
 import Heading from '../typography/Heading';
 import type { InitiativeLink, SocialMediaLink } from './FooterList';
 import { initiativeLinks, socialMediaLinks } from './FooterList';
