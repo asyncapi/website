@@ -1,7 +1,8 @@
 import { useArgs } from '@storybook/preview-api';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import type { InputBoxProps } from './InputBox';
+import type { InputBoxProps } from '@/types/components/InputBoxPropsType';
+
 import InputBox from './InputBox';
 
 const meta: Meta<typeof InputBox> = {
