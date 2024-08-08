@@ -15,8 +15,7 @@ const getData = async () => {
     
     return result.data;
   } catch (err) {
-    console.log(err);
-    throw err;
+    throw new Error(err)
   }
 };
 
