@@ -5,6 +5,8 @@ import AxwayLogo from './Axway';
 import SlackLogo from './Slack';
 import AdidasLogo from './Adidas';
 import SalesforceLogo from './Salesforce';
+import AsyncAPILogo from './AsyncAPILogo';
+import AsyncAPILogoLight from './AsyncAPILogoLight';
 
 <Meta title="Design System/Logos" />
 
@@ -13,29 +15,31 @@ import SalesforceLogo from './Salesforce';
 These are the logos of various companies used in the AsyncAPI website.
 
 <IconGallery>
-  <IconItem name="SAP">
-    <SapLogo />
-  </IconItem>
+<IconItem name="SAP">
+  <SapLogo />
+</IconItem>
 
-{' '}
+<IconItem name="AsyncAPI Full Logo">
+  <AsyncAPILogo />
+</IconItem>
+
+<IconItem name="AsyncAPI Full Logo Light" style={{ backgroundColor: 'black' }}>
+  <AsyncAPILogoLight />
+</IconItem>
 
 <IconItem name="Axway">
   <AxwayLogo />
 </IconItem>
 
-{' '}
-
 <IconItem name="Slack">
   <SlackLogo />
 </IconItem>
-
-{' '}
 
 <IconItem name="Adidas">
   <AdidasLogo />
 </IconItem>
 
-  <IconItem name="Salesforce">
-    <SalesforceLogo />
-  </IconItem>
+<IconItem name="Salesforce">
+  <SalesforceLogo />
+</IconItem>
 </IconGallery>

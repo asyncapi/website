@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import AsyncAPILogo from './icons/AsyncAPILogo';
+import AsyncAPILogo from './logos/AsyncAPILogo';
 
 interface IClickableLogoProps {
   href?: string;

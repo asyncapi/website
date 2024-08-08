@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 import { SearchButton } from '../AlgoliaSearch';
-import AsyncAPILogo from '../icons/AsyncAPILogo';
+import AsyncAPILogo from '../logos/AsyncAPILogo';
 import NavItemDropdown from '../icons/NavItemDropdown';
 import SearchIcon from '../icons/SearchIcon';
 import communityItems from './communityItems';

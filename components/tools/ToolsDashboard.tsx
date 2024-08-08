@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { useContext, useEffect, useRef, useState } from 'react';
 
+import AsyncAPIColorIcon from '@/components/icons/AsyncAPIColorIcon';
 import type { ToolsListData } from '@/types/components/tools/ToolDataType';
 
 import ToolsDataList from '../../config/tools.json';
@@ -226,7 +227,7 @@ export default function ToolsDashboard() {
           </div>
         )}
         {loading ? (
-          <Loader loaderText='Loading Tools...' loaderType={'icon'} pulsating />
+          <Loader loaderText='Loading Tools...' loaderIcon={<AsyncAPIColorIcon alt='Loading...' />} pulsating />
         ) : (
           <div className='mt-0'>
             {checkToolsList ? (

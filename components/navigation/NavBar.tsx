@@ -9,7 +9,7 @@ import { SearchButton } from '../AlgoliaSearch';
 import GithubButton from '../buttons/GithubButton';
 import { isMobileDevice } from '../helpers/is-mobile';
 import { useOutsideClick } from '../helpers/use-outside-click';
-import AsyncAPILogo from '../icons/AsyncAPILogo';
+import AsyncAPILogo from '../logos/AsyncAPILogo';
 import IconLoupe from '../icons/Loupe';
 import LanguageSelect from '../languageSelector/LanguageSelect';
 import CommunityPanel from './CommunityPanel';
