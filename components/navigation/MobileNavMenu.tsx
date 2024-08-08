@@ -2,9 +2,9 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 import { SearchButton } from '../AlgoliaSearch';
-import AsyncAPILogo from '../logos/AsyncAPILogo';
 import NavItemDropdown from '../icons/NavItemDropdown';
 import SearchIcon from '../icons/SearchIcon';
+import AsyncAPILogo from '../logos/AsyncAPILogo';
 import communityItems from './communityItems';
 import learningItems from './learningItems';
 import MenuBlocks from './MenuBlocks';
@@ -25,7 +25,7 @@ interface MobileNavMenuProps {
  * @description MobileNavMenu component for displaying a responsive navigation menu on mobile devices.
  * @param {MobileNavMenuProps} props - The props for the MobileNavMenu component.
  */
-export default function MobileNavMenu({ onClickClose = () => { } }: MobileNavMenuProps) {
+export default function MobileNavMenu({ onClickClose = () => {} }: MobileNavMenuProps) {
   const [open, setOpen] = useState<string | null>(null);
 
   /**
