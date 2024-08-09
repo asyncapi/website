@@ -147,7 +147,7 @@ Create two AsyncAPI documents. Treat those two servers as separate services that
 
 You can use AsyncAPI also to describe the security of your API. You can describe in a machine-readable way the security mechanism that protects the server. Several [security schemes](https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md#securitySchemeObject) are supported. In Kraken's case, I could not figure out what kind of security scheme they use from their docs.  They seem to have a non-standard set up for getting the authorization token, which is why the only option was to put a human-readable-only description there.
 
-```yaml
+~~~yaml
 servers:
   public:
     url: ws.kraken.com
@@ -165,17 +165,17 @@ servers:
       The API client must request an authentication "token" via the following REST API endpoint "GetWebSocketsToken" to connect to WebSockets Private endpoints. For more details, read https://support.kraken.com/hc/en-us/articles/360034437672-How-to-retrieve-a-WebSocket-authentication-token-Example-code-in-Python-3
 
       The resulting token must be provided in the "token" field of any new private WebSocket feed subscription: 
-      
-      \{
+      ```
+      {
         "event": "subscribe",
         "subscription":
-        \{
+        {
           "name": "ownTrades",
           "token": "WW91ciBhdXRoZW50aWNhdGlvbiB0b2tlbiBnb2VzIGhlcmUu"
         }
       }
-      
-```
+      ```
+~~~
 
 ### Endpoints aka Channels
 
@@ -436,7 +436,7 @@ For **automation** road described in section [Choosing the right road to Rome](#
 
 > You can open this document directly in AsyncAPI Studio by clicking [this](https://studio.asyncapi.com?url=https://gist.githubusercontent.com/derberg/4e419d6ff5870c7c3f5f443e8bd30535/raw/5e9b733b80a0209ba5520e5f41ab18c2a112e0a9/asyncapi-websocket-kraken.yml) link. Compare it also with the [original documentation](https://docs.kraken.com/websockets/).
 
-```yml
+~~~yml
 asyncapi: 2.0.0
 
 info:
@@ -473,15 +473,16 @@ servers:
       The API client must request an authentication "token" via the following REST API endpoint "GetWebSocketsToken" to connect to WebSockets Private endpoints. For more details read https://support.kraken.com/hc/en-us/articles/360034437672-How-to-retrieve-a-WebSocket-authentication-token-Example-code-in-Python-3
 
       The resulting token must be provided in the "token" field of any new private WebSocket feed subscription: 
-      
-      \{
+      ```
+      {
         "event": "subscribe",
         "subscription":
-        \{
+        {
           "name": "ownTrades",
           "token": "WW91ciBhdXRoZW50aWNhdGlvbiB0b2tlbiBnb2VzIGhlcmUu"
         }
       }
+      ```
       
 
 channels:
@@ -809,6 +810,6 @@ components:
         type: string
         description: Format of each pair is "A/B", where A and B are ISO 4217-A3 for standardized assets and popular unique symbol if not standardized.
         pattern: '[A-Z\s]+\/[A-Z\s]+'
-```
+~~~
 
 Stay tuned for more articles around WebSocket and AsyncAPI. Share your feedback and connect with the AsyncAPI community in our [Slack workspace](https://www.asyncapi.com/slack-invite/).
