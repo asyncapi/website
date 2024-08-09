@@ -3,6 +3,7 @@ import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { MDXRemote } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 
+import { readYamlFile } from '@/components/helpers/read-yaml-file';
 import type { ICaseStudy } from '@/types/post';
 import { HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
@@ -34,6 +35,7 @@ interface IndexProps {
   asyncapiBindings: MDXRemoteSerializeResult;
   asyncapiTools: MDXRemoteSerializeResult;
   additionalResources: MDXRemoteSerializeResult;
+  fullExample: MDXRemoteSerializeResult;
 }
 
 const renderContent = (
@@ -96,6 +98,7 @@ const renderContent = (
  */
 export async function getStaticProps({ params }: { params: { id: string } }) {
   const data = CaseStudiesList.filter((p: { id: string }) => p.id === params.id);
+  const asyncApiDoc = await readYamlFile(data[0].asyncapi.fullExample);
 
   return {
     props: {
@@ -116,6 +119,7 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
       asyncapiDocumentation: await serialize(data[0].asyncapi.documentation),
       asyncapiBindings: await serialize(data[0].asyncapi.bindings),
       asyncapiTools: await serialize(data[0].asyncapi.tools),
+      fullExample: await serialize(asyncApiDoc),
       additionalResources: await serialize(data[0].additionalResources)
     }
   };
@@ -153,6 +157,7 @@ const Index: React.FC<IndexProps> = ({
   asyncapiDocumentation,
   asyncapiBindings,
   asyncapiTools,
+  fullExample,
   additionalResources
 }) => {
   const image = '/img/social/website-card.png';
@@ -177,6 +182,7 @@ const Index: React.FC<IndexProps> = ({
     asyncapiBindings,
     asyncapiTools,
     additionalResources,
+    fullExample,
     casestudy
   });
 
