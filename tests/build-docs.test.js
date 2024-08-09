@@ -68,15 +68,39 @@ describe('Documentation Navigation Functions', () => {
           },
         },
       };
-
+  
       const result = addDocButtons(docPosts, treePosts);
-
-      expect(result).toHaveLength(5);
-      expect(result[0].content).toBe('Welcome content');
-      expect(result[2]).toHaveProperty('nextPage');
-      expect(result[2]).toHaveProperty('prevPage');
-      expect(result[2].nextPage.title).toBe('Page 2');
-      expect(result[2].prevPage.title).toBe('Welcome');
+  
+      expect(result).toHaveLength(4);
+      expect(result[0]).toEqual({
+        title: 'Welcome',
+        slug: '/docs',
+        content: 'Welcome content'
+      });
+      expect(result[1]).toEqual({
+        isRootSection: true,
+        title: 'Section 1'
+      });
+      expect(result[2]).toEqual({
+        title: 'Page 1',
+        slug: '/docs/section1/page1',
+        nextPage: {
+          title: 'Page 2',
+          href: '/docs/section1/page2'
+        },
+        prevPage: {
+          title: 'Section 1',
+          href: undefined
+        }
+      });
+      expect(result[3]).toEqual({
+        title: 'Page 2',
+        slug: '/docs/section1/page2',
+        prevPage: {
+          title: 'Page 1',
+          href: '/docs/section1/page1'
+        }
+      });
     });
   });
 });
