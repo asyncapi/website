@@ -5,7 +5,6 @@ const fs = require('fs')
 const schema = require("./tools-schema.json");
 const Ajv = require("ajv")
 const addFormats = require("ajv-formats")
-const { resolve } = require('path');
 const Fuse = require("fuse.js");
 const ajv = new Ajv()
 addFormats(ajv, ["uri"])
@@ -106,7 +105,7 @@ const getFinalTool = async (toolObject) => {
 
 // Combine the automated tools and manual tools list into single JSON object file, and 
 // lists down all the language and technology tags in one JSON file.
-const combineTools = async (automatedTools, manualTools) => {
+const combineTools = async (automatedTools, manualTools, toolsPath, tagsPath) => {
     for (const key in automatedTools) {
         let finalToolsList = [];
         if (automatedTools[key].toolsList.length) {
@@ -136,14 +135,8 @@ const combineTools = async (automatedTools, manualTools) => {
         finalToolsList.sort((tool, anotherTool) => tool.title.localeCompare(anotherTool.title));
         finalTools[key].toolsList = finalToolsList
     }
-    fs.writeFileSync(
-        resolve(__dirname, '../../config', 'tools.json'),
-        JSON.stringify(finalTools)
-    );
-    fs.writeFileSync(
-        resolve(__dirname, '../../config', 'all-tags.json'),
-        JSON.stringify({ languages: languageList, technologies: technologyList }),
-    )
+    fs.writeFileSync(toolsPath,JSON.stringify(finalTools));
+    fs.writeFileSync(tagsPath,JSON.stringify({ languages: languageList, technologies: technologyList }),)
 }
 
 module.exports = { combineTools }
