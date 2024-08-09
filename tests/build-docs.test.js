@@ -1,5 +1,5 @@
 const { buildNavTree, addDocButtons, convertDocPosts } = require('../scripts/build-docs');
-// Mock lodash sortBy function
+
 jest.mock('lodash/sortBy', () => jest.fn(arr => arr));
 
 describe('Documentation Navigation Functions', () => {
