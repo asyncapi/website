@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { defaultLanguage, languages } from '../utils/i18n';
-import i18nPaths from '../utils/i18nPaths';
+import { defaultLanguage, i18nPaths, languages } from '@/utils/i18n';
 
 interface LinkComponentProps {
   children: React.ReactNode;

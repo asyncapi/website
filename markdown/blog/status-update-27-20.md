@@ -74,7 +74,7 @@ We are getting a bit tired of Nunjucks and how hard it is to debug and read the 
 
 The last meeting took place on Tuesday, 23rd of June, 4PM UTC. Meeting notes are available [here](https://github.com/asyncapi/asyncapi/issues/394).
 
-<Youtube id="LDanOihP9i4" />
+<YouTube id="LDanOihP9i4" />
 
 The next meeting is scheduled for next Tuesday, 7th of July, 8AM UTC. 
 

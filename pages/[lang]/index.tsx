@@ -1,6 +1,8 @@
+import { useTranslation } from 'next-i18next';
 import React from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
+import { getStaticPaths, makeStaticProps } from '@/utils/getStatic';
 
 import Button from '../../components/buttons/Button';
 import GoogleCalendarButton from '../../components/buttons/GoogleCalendarButton';
@@ -26,7 +28,10 @@ import Testimonial from '../../components/Testimonial';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
 import TextLink from '../../components/typography/TextLink';
-import { getAllLanguageSlugs, getLanguage, useTranslation } from '../../utils/i18n';
+
+const getStaticProps = makeStaticProps(['landing-page', 'footer', 'common']);
+
+export { getStaticPaths, getStaticProps };
 
 /**
  * @description The HomePage is the landing page of the website.
@@ -230,26 +235,3 @@ export default function HomePage() {
  * @description This function generates all language slugs for the landing page.
  * @returns {object} The paths object containing all language slugs.
  */
-export async function getStaticPaths() {
-  const paths = getAllLanguageSlugs();
-
-  return {
-    paths,
-    fallback: false
-  };
-}
-
-/**
- * @description This function fetches the language content for the landing page.
- * @param {object} params The language parameter.
- * @returns {object} The language content for the landing page.
- */
-export async function getStaticProps({ params }: any) {
-  const language = getLanguage(params.lang);
-
-  return {
-    props: {
-      language
-    }
-  };
-}

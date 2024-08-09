@@ -38,7 +38,7 @@ import Profiles from '../Profiles';
 import Remember from '../Remember';
 import Sponsors from '../sponsors/Sponsors';
 import Warning from '../Warning';
-import { Table, TableCell, TableHeader, TableRow } from './MDXTable';
+import { Table, TableBody, TableCell, TableHeader, TableRow, Thead } from './MDXTable';
 
 let mermaidInitialized = false;
 
@@ -174,8 +174,8 @@ function Text({ content = '', className = '' }) {
 /**
  * @description This function returns MDX components.
  */
-export function getMDXComponents() {
-  return {
+const getMDXComponents =
+ {
     h1: (props: React.HTMLProps<HTMLHeadingElement>) => (
       <h1
         {...props}
@@ -293,6 +293,8 @@ export function getMDXComponents() {
     Tr: TableRow,
     Td: TableCell,
     Th: TableHeader,
+    Tbody: TableBody,
+    Thead,
     Table,
     Asyncapi3ChannelComparison,
     Asyncapi3IdAndAddressComparison,
@@ -328,9 +330,8 @@ export function getMDXComponents() {
     Profiles,
     Visualizer
   };
-}
 
-const mdxComponents = getMDXComponents();
+export const mdxComponents = getMDXComponents;
 
 interface MDXProviderProps {
   children: React.ReactNode;

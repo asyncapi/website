@@ -22,11 +22,14 @@ const nextConfig = {
     }
 
     return config;
-  }
+  },
+  'trailingSlash': true,
+
 };
 
 const mdxConfig = withMDX({
   extension: /\.mdx?$/,
+  providerImportSource: "@mdx-js/react",
   options: {
     remarkPlugins: [frontmatter, gemoji, headingId, slug, images, a11yEmoji, remarkGfm],
     rehypePlugins: []
