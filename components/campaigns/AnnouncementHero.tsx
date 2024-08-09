@@ -44,8 +44,12 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
     };
   }, [activeIndex]);
 
+  if (numberOfVisibleBanners === 0) {
+    return null;
+  }
+
   return (
-    <Container as='section' padding='' className={'text-center'}>
+    <Container as='section' padding='' className='text-center'>
       <div className='relative flex flex-row items-center justify-center overflow-x-hidden md:gap-4'>
         {numberOfVisibleBanners > 1 && (
           <div
@@ -57,7 +61,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
           </div>
         )}
         <div className='relative flex w-5/6 flex-col items-center justify-center gap-2'>
-          <div className='relative flex items-center justify-center min-h-72 w-full overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
+          <div className='relative flex min-h-72 w-full items-center justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
             {banners.map(
               (banner, index) =>
                 banner.show && (
