@@ -242,7 +242,3 @@ export default function CliPage() {
   );
 }
 
-// /**
-//  * @description Get the language for the CLI page.
-//  * @returns { paths: { params: { lang: string } }[]; fallback: boolean }
-//  */
