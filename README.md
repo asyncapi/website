@@ -249,7 +249,7 @@ This repository has the following structure:
   ├── .github                                  # Definitions of GitHub workflows, pull request and issue templates
   ├── assets                                   # Various assets
   |    ├── docs                                # Documentation assets
-  |        | fragments                         # Docuentations for CLI installation and contribution.
+  |        | fragments                         # Documentations for CLI installation and contribution.
   ├── components                               # Various generic components such as "Button", "Figure", etc.
   ├── config                                   # Transformed static data to display on the pages such as blog posts etc.
   ├── context                                  # Various React's contexts used in website
