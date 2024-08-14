@@ -28,7 +28,7 @@ This repository contains the sources of AsyncAPI website:
 - It's powered by [Next.js](https://nextjs.org/),
 - It uses [Tailwind](https://tailwindcss.com/) CSS framework,
 - It's build and deployed with [Netlify](https://www.netlify.com/),
-- It uses [Storybook](https://storybook.js.org/) as a frontend workshop and for dociuenting UI components.
+- It uses [Storybook](https://storybook.js.org/) as a frontend workshop and for documenting UI components.
 
 ## Requirements
 
