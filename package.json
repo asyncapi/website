@@ -4,7 +4,7 @@
   "description": "AsyncAPI website",
   "private": true,
   "scripts": {
-    "dev": "npm run build-scripts && next -p 3000",
+    "dev": "npm run build-scripts && next dev",
     "build": "npm run build-scripts && next build",
     "test": "jest --passWithNoTests",
     "build:pages": "node scripts/build-pages.js && npm run format:mdx",
@@ -64,7 +64,7 @@
     "ajv": "^8.12.0",
     "ajv-formats": "^2.1.1",
     "autoprefixer": "^10.4.17",
-    "axios": "^1.6.7",
+    "axios": "^1.7.4",
     "clsx": "^2.1.0",
     "cssnano": "^6.0.3",
     "dotenv": "^16.4.4",
