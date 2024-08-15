@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router';
 import { useContext, useEffect, useRef, useState } from 'react';
 
-import AsyncAPIColorIcon from '@/components/icons/AsyncAPIColorIcon';
 import type { ToolsListData } from '@/types/components/tools/ToolDataType';
 
 import ToolsDataList from '../../config/tools.json';
@@ -10,7 +9,6 @@ import ArrowDown from '../icons/ArrowDown';
 import Cross from '../icons/Cross';
 import FilterIcon from '../icons/Filter';
 import SearchIcon from '../icons/Search';
-import Loader from '../Loader';
 import CategoryDropdown from './CategoryDropdown';
 import Filters from './Filters';
 import ToolsList from './ToolsList';
@@ -22,6 +20,7 @@ const ToolsData = ToolsDataList as ToolsListData;
  */
 export default function ToolsDashboard() {
   const router = useRouter();
+  const loader = 'img/loaders/loader.png'; // preloader image for the tools
 
   const [loading, setLoading] = useState<boolean>(false); // used to handle the preloader on the page
   const filterRef = useRef<HTMLDivElement>(); // used to provide ref to the Filter menu and outside click close feature
@@ -227,7 +226,10 @@ export default function ToolsDashboard() {
           </div>
         )}
         {loading ? (
-          <Loader loaderText='Loading Tools...' loaderIcon={<AsyncAPIColorIcon alt='Loading...' />} pulsating />
+          <div className='mx-auto my-24 flex w-fit animate-pulse gap-4 text-black'>
+            <img src={loader} alt='loading' className='mx-auto w-16' />
+            <div className='my-auto text-xl'>Loading Tools...</div>
+          </div>
         ) : (
           <div className='mt-0'>
             {checkToolsList ? (

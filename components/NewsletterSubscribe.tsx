@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import IconCircularLoader from '@/components/icons/CircularLoader';
 import { ButtonType } from '@/types/components/buttons/ButtonPropsType';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
@@ -126,7 +125,7 @@ export default function NewsletterSubscribe({
         {subtitle}
       </Paragraph>
       {status === 'loading' ? (
-        <Loader loaderText={'Waiting for response...'} loaderIcon={<IconCircularLoader dark />} dark={dark} />
+        <Loader dark={dark} />
       ) : (
         <form className='flex flex-col gap-4 md:flex-row' onSubmit={handleSubmit}>
           <input
