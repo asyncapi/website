@@ -16,8 +16,32 @@ jest.mock('../config/posts.json', () => ({
       title: 'Test Post 2',
       slug: '/blog/test-post-2',
       excerpt: 'This is another test post',
-      date: '2024-07-07',
+      date: '2024-07-06',
       featured: false
+    },
+    {
+      title: 'PNG Post',
+      slug: '/blog/png-post',
+      excerpt: 'This is a post with PNG image',
+      date: '2024-07-05',
+      featured: false,
+      cover: '/img/test-cover.png'
+    },
+    {
+      title: 'SVG Post',
+      slug: '/blog/svg-post',
+      excerpt: 'This is a post with SVG image',
+      date: '2024-07-04',
+      featured: false,
+      cover: '/img/test-cover.svg'
+    },
+    {
+      title: 'WebP Post',
+      slug: '/blog/webp-post',
+      excerpt: 'This is a post with WebP image',
+      date: '2024-07-03',
+      featured: false,
+      cover: '/img/test-cover.webp'
     }
   ]
 }), { virtual: true });
@@ -63,15 +87,13 @@ describe('rssFeed', () => {
 
     const filePath = path.join(__dirname, '..', 'public', outputPath);
     const fileContent = fs.readFileSync(filePath, 'utf8');
-    
-    const firstItemIndex = fileContent.indexOf('<item>');
-    const secondItemIndex = fileContent.indexOf('<item>', firstItemIndex + 1);
 
-    const firstItemTitleMatch = fileContent.slice(firstItemIndex, secondItemIndex).match(/<title>(.*?)<\/title>/);
-    const secondItemTitleMatch = fileContent.slice(secondItemIndex).match(/<title>(.*?)<\/title>/);
-
-    expect(firstItemTitleMatch[1]).toBe('Test Post 1');
-    expect(secondItemTitleMatch[1]).toBe('Test Post 2');
+    const itemTitles = fileContent.match(/<title>(.*?)<\/title>/g);
+    expect(itemTitles[1]).toContain('Test Post 1');
+    expect(itemTitles[2]).toContain('Test Post 2');
+    expect(itemTitles[3]).toContain('PNG Post');
+    expect(itemTitles[4]).toContain('SVG Post');
+    expect(itemTitles[5]).toContain('WebP Post');
   });
 
   it('should add enclosure for posts with cover image', () => {
@@ -95,9 +117,6 @@ describe('rssFeed', () => {
     const desc = 'Test blog RSS feed';
     const outputPath = 'test-output/blog.xml';
 
-    const posts = require('../config/posts.json');
-    posts.blog[0].cover = '/img/test-cover.png';
-
     rssFeed(type, title, desc, outputPath);
 
     const filePath = path.join(__dirname, '..', 'public', outputPath);
@@ -105,5 +124,9 @@ describe('rssFeed', () => {
 
     expect(fileContent).toContain('<enclosure url="https://www.asyncapi.com/img/test-cover.png"');
     expect(fileContent).toContain('type="image/png"');
+    expect(fileContent).toContain('<enclosure url="https://www.asyncapi.com/img/test-cover.svg"');
+    expect(fileContent).toContain('type="image/svg+xml"');
+    expect(fileContent).toContain('<enclosure url="https://www.asyncapi.com/img/test-cover.webp"');
+    expect(fileContent).toContain('type="image/webp"');
   });
 });
