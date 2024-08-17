@@ -61,7 +61,7 @@ jobs:
         with:
           node-version: "${{ steps.nodeversion.outputs.version }}"
       - name: Install dependencies
-        run: npm install --no-optional
+        run: npm ci
       - if: steps.packagejson.outputs.exists == 'true'
         name: Test
         run: npm test --if-present
