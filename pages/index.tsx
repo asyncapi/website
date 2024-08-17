@@ -1,7 +1,6 @@
-
-
 import Head from '../components/Head';
 import { Redirect } from '../utils/redirect';
+
 /**
  * @description This is the home page which is the first page that loads when the user visits the website.
  */

@@ -10,6 +10,7 @@ class MyDocument extends Document {
   }
 
   render() {
+    // eslint-disable-next-line no-underscore-dangle
     const currentLocale = this.props.__NEXT_DATA__.query.locale || i18nextConfig.i18n.defaultLocale;
 
     return (

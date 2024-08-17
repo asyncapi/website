@@ -1,8 +1,9 @@
+import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 
 import { ButtonType } from '@/types/components/buttons/ButtonPropsType';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
-import { useTranslation } from 'next-i18next';
+
 import Button from './buttons/Button';
 import Loader from './Loader';
 import Heading from './typography/Heading';

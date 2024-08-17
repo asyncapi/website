@@ -124,7 +124,8 @@ export default function ModelinaPlaygroundPage() {
                 npm install @asyncapi/modelina
               </CodeBlock>
               <div className='flex justify-center gap-x-2 lg:justify-start'>
-                <GithubButton text='View on Github'
+                <GithubButton
+                  text='View on Github'
                   className='mt-2 block md:mt-0 md:inline-block'
                   href='https://www.github.com/asyncapi/modelina'
                 />

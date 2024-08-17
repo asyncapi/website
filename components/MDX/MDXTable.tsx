@@ -65,7 +65,7 @@ export function TableHeader(props: React.HTMLProps<HTMLTableCellElement>) {
  * @returns The rendered `<tbody>` element.
  */
 export function TableBody(props: React.HTMLProps<HTMLTableSectionElement>) {
-    return <tbody {...props} className={`${props.className || ''}`} />;
+  return <tbody {...props} className={`${props.className || ''}`} />;
 }
 
 /**
@@ -75,5 +75,5 @@ export function TableBody(props: React.HTMLProps<HTMLTableSectionElement>) {
  * @returns The rendered `<tbody>` element.
  */
 export function Thead(props: React.HTMLProps<HTMLTableSectionElement>) {
-    return <thead {...props} className={`${props.className || ''}`} />;
+  return <thead {...props} className={`${props.className || ''}`} />;
 }
