@@ -60,10 +60,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "${{ steps.nodeversion.outputs.version }}"
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       - if: steps.packagejson.outputs.exists == 'true'
         name: Test
         run: npm test --if-present
