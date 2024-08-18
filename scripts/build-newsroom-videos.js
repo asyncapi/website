@@ -14,15 +14,7 @@ async function buildNewsroomVideos(writePath) {
             maxResults: 5,
         }));
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! with status code: ${response.status}`);
-        }
-
         const data = await response.json();
-
-        if (!data || !data.items) {
-            throw new Error('Invalid data structure received from YouTube API');
-        }
 
         const videoDataItems = data.items.map((video) => ({
             image_url: video.snippet.thumbnails.high.url,
@@ -43,6 +35,5 @@ async function buildNewsroomVideos(writePath) {
 }
 
 buildNewsroomVideos(resolve(__dirname, '../config', 'newsroom_videos.json'))
-    .catch(err => console.error(err));
 
 module.exports = { buildNewsroomVideos };
