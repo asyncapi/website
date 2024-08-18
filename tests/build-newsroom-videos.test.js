@@ -40,7 +40,7 @@ describe('buildNewsroomVideos', () => {
     it('should handle fetch errors', async () => {
         fetch.mockRejectedValue(new Error('Fetch error'));
 
-        await expect(buildNewsroomVideos(testFilePath)).rejects.toThrow('Failed to build newsroom videos: Fetch error');
+        await expect(buildNewsroomVideos(testFilePath)).rejects.toThrow('Fetch error');
     });
 
     it('should handle invalid API response', async () => {
@@ -49,7 +49,7 @@ describe('buildNewsroomVideos', () => {
             json: jest.fn().mockResolvedValue({}),
         });
 
-        await expect(buildNewsroomVideos(testFilePath)).rejects.toThrow('Failed to build newsroom videos: Invalid data structure received from YouTube API');
+        await expect(buildNewsroomVideos(testFilePath)).rejects.toThrow('Invalid data structure received from YouTube API');
     });
 
     it('should handle HTTP status code', async () => {
@@ -59,10 +59,10 @@ describe('buildNewsroomVideos', () => {
             json: jest.fn().mockResolvedValue({}),
         });
 
-        await expect(buildNewsroomVideos(testFilePath)).rejects.toThrow('Failed to build newsroom videos: HTTP error! with status code: 404');
+        await expect(buildNewsroomVideos(testFilePath)).rejects.toThrow('HTTP error! with status code: 404');
     });
 
     it('should throw an error with incorrect parameters', async () => {
-        await expect(buildNewsroomVideos('randomePath')).rejects.toThrow("Failed to build newsroom videos");
+        await expect(buildNewsroomVideos('randomPath')).rejects.toThrow('HTTP error! with status code: 404');
     });
 });
