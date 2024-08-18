@@ -5,11 +5,18 @@ jest.mock('axios');
 
 describe('getData', () => {
   it('should return data when API call is successful', async () => {
+
     const mockData = {
       data: {
         name: '.asyncapi-tool',
         path: 'asyncapi/.asyncapi-tool',
       },
+    };
+
+    const apiBaseUrl = 'https://api.github.com/search/code?q=filename:.asyncapi-tool';
+    const headers = {
+      accept: 'application/vnd.github.text-match+json',
+      authorization: `token ${process.env.GITHUB_TOKEN}`,
     };
 
     axios.get.mockResolvedValue(mockData);
@@ -18,13 +25,7 @@ describe('getData', () => {
 
     expect(result).toEqual(mockData.data);
     expect(axios.get).toHaveBeenCalledWith(
-      'https://api.github.com/search/code?q=filename:.asyncapi-tool',
-      {
-        headers: {
-          accept: 'application/vnd.github.text-match+json',
-          authorization: `token ${process.env.GITHUB_TOKEN}`,
-        },
-      },
+      apiBaseUrl, { headers }
     );
   });
 

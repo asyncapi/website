@@ -12,10 +12,10 @@ const getData = async () => {
         },
       }
     );
-    
+
     return result.data;
   } catch (err) {
-    throw new Error(err)
+    throw err;
   }
 };
 
