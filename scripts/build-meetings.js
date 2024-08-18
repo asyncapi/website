@@ -42,12 +42,14 @@ async function buildMeetings(writePath) {
     const eventsForHuman = JSON.stringify(eventsItems, null, '  ');
     console.log('The following events got fetched', eventsForHuman);
 
-    writeFileSync(writePath,eventsForHuman);
+    writeFileSync(writePath, eventsForHuman);
   } catch (err) {
     throw new Error(err)
   }
 }
 
-buildMeetings(resolve(__dirname, '../config', 'meetings.json')).catch(err => console.error(err));
+if (require.main === module) {
+  buildMeetings(resolve(__dirname, '../config', 'meetings.json'))
+}
 
 module.exports = { buildMeetings };
