@@ -18,6 +18,7 @@ async function buildNewsroomVideos(writePath) {
     }
 
     const data = await response.json();
+    console.log(data)
 
     if (!data.items || !Array.isArray(data.items)) {
         throw new Error('Invalid data structure received from YouTube API');
@@ -38,12 +39,8 @@ async function buildNewsroomVideos(writePath) {
     return videoData;
 }
 
-// Only call buildNewsroomVideos if this script is run directly (not required/imported as a module)
 if (require.main === module) {
-    const writePath = resolve(__dirname, '../config', 'newsroom_videos.json');
-    buildNewsroomVideos(writePath).then(result => {
-        console.log('Newsroom videos successfully built.');
-    })
+    buildNewsroomVideos(resolve(__dirname, '../config', 'newsroom_videos.json'))
 }
 
 module.exports = { buildNewsroomVideos };
