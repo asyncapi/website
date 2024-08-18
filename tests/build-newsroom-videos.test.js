@@ -30,7 +30,7 @@ describe('buildNewsroomVideos', () => {
         const result = await buildNewsroomVideos(testFilePath);
 
         expect(fetch).toHaveBeenCalledWith(expect.stringContaining('https://youtube.googleapis.com/youtube/v3/search?'));
-        
+
         const response = readFileSync(testFilePath, 'utf8');
         expect(response).toEqual(expectedResult);
 

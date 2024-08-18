@@ -43,6 +43,7 @@ if (require.main === module) {
     const writePath = resolve(__dirname, '../config', 'newsroom_videos.json');
     buildNewsroomVideos(writePath).then(result => {
         console.log('Newsroom videos successfully built.');
-    })}
+    })
+}
 
 module.exports = { buildNewsroomVideos };
