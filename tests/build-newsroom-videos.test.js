@@ -31,7 +31,16 @@ describe('buildNewsroomVideos', () => {
 
         const result = await buildNewsroomVideos(testFilePath);
 
-        expect(fetch).toHaveBeenCalledWith(expect.stringContaining('https://youtube.googleapis.com/youtube/v3/search?'));
+        const expectedUrl = new URL('https://youtube.googleapis.com/youtube/v3/search');
+        expectedUrl.searchParams.set('key', 'testkey');
+        expectedUrl.searchParams.set('part', 'snippet');
+        expectedUrl.searchParams.set('channelId', 'UCIz9zGwDLbrYQcDKVXdOstQ');
+        expectedUrl.searchParams.set('eventType', 'completed');
+        expectedUrl.searchParams.set('type', 'video');
+        expectedUrl.searchParams.set('order', 'Date');
+        expectedUrl.searchParams.set('maxResults', '5');
+
+        expect(fetch).toHaveBeenCalledWith(expectedUrl.toString());
         const response = readFileSync(testFilePath, 'utf8');
         expect(response).toEqual(expectedResult);
         expect(result).toEqual(expectedResult);
