@@ -1,4 +1,4 @@
-const { writeFileSync, readFileSync, rmSync, mkdirSync } = require('fs');
+const { readFileSync, rmSync, mkdirSync } = require('fs');
 const { resolve } = require('path');
 const { buildNewsroomVideos } = require('../scripts/build-newsroom-videos');
 const { mockApiResponse, expectedResult } = require('./fixtures/newsroomData');
