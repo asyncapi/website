@@ -49,5 +49,5 @@ export const Silversponsors: SponsorType[] = [
     altText: 'Best Route Planning and Route Optimization Software',
     imageSrc: '/img/sponsors/route4me_logo.png',
     imageClass: 'inline-block sm:h-9'
-  },
+  }
 ];
