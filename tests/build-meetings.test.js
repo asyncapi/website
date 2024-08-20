@@ -23,13 +23,11 @@ jest.mock('googleapis', () => {
 });
 
 describe('buildMeetings', () => {
-    const originalEnv = process.env;
     const testDir = path.join(__dirname, 'test_output');
     const outputFilePath = path.join(testDir, 'meetings.json');
 
     beforeEach(() => {
         jest.clearAllMocks();
-        process.env = { ...originalEnv };
         process.env.CALENDAR_SERVICE_ACCOUNT = JSON.stringify({ key: 'test_key' });
         process.env.CALENDAR_ID = 'test_calendar_id';
 
@@ -37,7 +35,6 @@ describe('buildMeetings', () => {
     });
 
     afterEach(() => {
-        process.env = originalEnv;
         rmSync(testDir, { recursive: true, force: true });
     });
 
