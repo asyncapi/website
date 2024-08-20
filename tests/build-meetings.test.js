@@ -63,9 +63,9 @@ describe('buildMeetings', () => {
     it('should throw an error if the Google API call fails', async () => {
         google.calendar().events.list.mockRejectedValue(new Error('Google API error'));
 
-        try{
+        try {
             await buildMeetings(outputFilePath)
-        }catch(err){
+        } catch (err) {
             expect(err.message).toContain('Google API error');
         }
     });
@@ -91,10 +91,27 @@ describe('buildMeetings', () => {
             throw new Error('Authentication failed');
         });
 
-        try{
+        try {
             await buildMeetings(outputFilePath)
-        }catch(err){
+        } catch (err) {
             expect(err.message).toContain('Authentication failed')
         }
     });
+
+    it('should handle file write errors', async () => {
+        google.auth.GoogleAuth.mockImplementation(() => ({
+            getClient: jest.fn(),
+        }));
+
+        google.calendar().events.list.mockResolvedValue({ data: { items: mockEvents } });
+
+        const invalidPath = '/root/invalid_dir/meetings.json';
+
+        try {
+            await buildMeetings(invalidPath);
+        } catch (err) {
+            expect(err.message).toMatch(/ENOENT|EACCES/);
+        }
+    });
+
 });

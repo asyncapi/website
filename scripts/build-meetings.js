@@ -5,7 +5,7 @@ const { google } = require('googleapis');
 async function buildMeetings(writePath) {
   let auth;
   let calendar;
-  
+
   try {
     auth = new google.auth.GoogleAuth({
       scopes: ['https://www.googleapis.com/auth/calendar'],
@@ -60,7 +60,7 @@ async function buildMeetings(writePath) {
 }
 
 if (require.main === module) {
-    buildMeetings(resolve(__dirname, '../config', 'meetings.json'));
+  buildMeetings(resolve(__dirname, '../config', 'meetings.json'));
 }
 
 module.exports = { buildMeetings };
