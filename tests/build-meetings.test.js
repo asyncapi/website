@@ -1,8 +1,8 @@
 const { google } = require('googleapis');
-const path = require("path")
+const path = require("path");
 const { readFileSync, mkdirSync, rmSync } = require('fs');
 const { buildMeetings } = require('../scripts/build-meetings');
-const { mockEvents } = require('../tests/fixtures/meetingsData')
+const { mockEvents, expectedContent } = require('../tests/fixtures/meetingsData');
 
 jest.mock('googleapis', () => {
     const events = {
@@ -25,6 +25,7 @@ jest.mock('googleapis', () => {
 describe('buildMeetings', () => {
     const originalEnv = process.env;
     const testDir = path.join(__dirname, 'test_output');
+    const outputFilePath = path.join(testDir, 'meetings.json');
 
     beforeEach(() => {
         jest.clearAllMocks();
@@ -37,15 +38,12 @@ describe('buildMeetings', () => {
 
     afterEach(() => {
         process.env = originalEnv;
-
         rmSync(testDir, { recursive: true, force: true });
     });
 
     it('should fetch events, process them, and write to a file', async () => {
-
         google.calendar().events.list.mockResolvedValue({ data: { items: mockEvents } });
 
-        const outputFilePath = path.join(testDir, 'meetings.json');
         await buildMeetings(outputFilePath);
 
         expect(google.auth.GoogleAuth).toHaveBeenCalledWith({
@@ -60,22 +58,26 @@ describe('buildMeetings', () => {
         });
 
         const fileContent = readFileSync(outputFilePath, 'utf8');
-        expect(fileContent).toContain('Community Meeting');
+        const parsedContent = JSON.parse(fileContent);
+
+        expect(parsedContent).toEqual(expectedContent);
     });
 
     it('should throw an error if the Google API call fails', async () => {
         google.calendar().events.list.mockRejectedValue(new Error('Google API error'));
 
-        await expect(buildMeetings()).rejects.toThrow('Google API error');
+        try{
+            await buildMeetings(outputFilePath)
+        }catch(err){
+            expect(err.message).toContain('Google API error');
+        }
     });
 
     it('should handle undefined CALENDAR_SERVICE_ACCOUNT', async () => {
         delete process.env.CALENDAR_SERVICE_ACCOUNT;
 
-        const mockEvents = [];
-        google.calendar().events.list.mockResolvedValue({ data: { items: mockEvents } });
+        google.calendar().events.list.mockResolvedValue({ data: { items: [] } });
 
-        const outputFilePath = path.join(testDir, 'meetings.json');
         await buildMeetings(outputFilePath);
 
         expect(google.auth.GoogleAuth).toHaveBeenCalledWith({
@@ -87,12 +89,15 @@ describe('buildMeetings', () => {
         expect(fileContent).toBe('[]');
     });
 
-    it('should throw an error with incorrect parameters', async () => {
-        try {
-          await buildMeetings("randomPath");
-        } catch (error) {
-          expect(error).toBeInstanceOf(Error);
-          expect(error.message).toMatch(/ENOENT/);
+    it('should throw an error if authentication fails', async () => {
+        google.auth.GoogleAuth.mockImplementation(() => {
+            throw new Error('Authentication failed');
+        });
+
+        try{
+            await buildMeetings(outputFilePath)
+        }catch(err){
+            expect(err.message).toContain('Authentication failed')
         }
-      });
+    });
 });

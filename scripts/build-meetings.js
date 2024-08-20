@@ -3,12 +3,21 @@ const { resolve } = require('path');
 const { google } = require('googleapis');
 
 async function buildMeetings(writePath) {
-  const auth = new google.auth.GoogleAuth({
-    scopes: ['https://www.googleapis.com/auth/calendar'],
-    credentials: process.env.CALENDAR_SERVICE_ACCOUNT ? JSON.parse(process.env.CALENDAR_SERVICE_ACCOUNT) : undefined,
-  });
+  let auth;
+  let calendar;
+  
+  try {
+    auth = new google.auth.GoogleAuth({
+      scopes: ['https://www.googleapis.com/auth/calendar'],
+      credentials: process.env.CALENDAR_SERVICE_ACCOUNT ? JSON.parse(process.env.CALENDAR_SERVICE_ACCOUNT) : undefined,
+    });
 
-  const calendar = google.calendar({ version: 'v3', auth });
+    calendar = google.calendar({ version: 'v3', auth });
+
+  } catch (err) {
+    throw new Error(`Authentication failed: ${err.message}`);
+  }
+
   let eventsItems;
 
   try {
@@ -20,6 +29,7 @@ async function buildMeetings(writePath) {
     const timeMax = new Date(
       Date.parse(currentTime) + 30 * 24 * 60 * 60 * 1000
     ).toISOString();
+
     const eventsList = await calendar.events.list({
       calendarId: process.env.CALENDAR_ID,
       timeMax: timeMax,
@@ -43,13 +53,14 @@ async function buildMeetings(writePath) {
     console.log('The following events got fetched', eventsForHuman);
 
     writeFileSync(writePath, eventsForHuman);
+
   } catch (err) {
-    throw new Error(err)
+    throw new Error(`Failed to fetch or process events: ${err.message}`);
   }
 }
 
 if (require.main === module) {
-  buildMeetings(resolve(__dirname, '../config', 'meetings.json'))
+    buildMeetings(resolve(__dirname, '../config', 'meetings.json'));
 }
 
 module.exports = { buildMeetings };

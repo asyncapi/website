@@ -12,4 +12,14 @@ const mockEvents = [
     },
 ];
 
-module.exports = { mockEvents }
+const expectedContent = [
+    {
+        banner: "https://example.com/banner.jpg",
+        calLink: "https://www.google.com/calendar/event?eid=example",
+        date: "2024-02-20T16:00:00.000Z",
+        title: "Community Meeting",
+        url: "https://github.com/asyncapi/community/issues/123"
+    },
+];
+
+module.exports = { mockEvents, expectedContent }
