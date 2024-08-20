@@ -48,7 +48,7 @@ describe('buildNewsroomVideos', () => {
 
     it('should handle fetch errors', async () => {
         fetch.mockRejectedValue(new Error('Fetch error'));
-    
+
         try {
             await buildNewsroomVideos(testFilePath);
         } catch (err) {
@@ -90,7 +90,7 @@ describe('buildNewsroomVideos', () => {
         });
 
         const invalidPath = '/invalid_dir/newsroom_videos.json';
-        
+
         try {
             await buildNewsroomVideos(invalidPath);
         } catch (err) {
