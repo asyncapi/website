@@ -39,7 +39,7 @@ export interface Tsc {
   availableForHire?: boolean;
   github: string;
   linkedin?: string;
-  slack: string;
+  slack?: string;
   twitter?: string;
   company?: string;
   repos: any;
