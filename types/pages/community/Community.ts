@@ -43,5 +43,5 @@ export interface Tsc {
   twitter?: string;
   company?: string;
   repos: any;
-  githubID: string
+  githubID: number
 };
