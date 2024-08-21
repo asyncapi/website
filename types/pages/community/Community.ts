@@ -36,7 +36,7 @@ export interface Tsc {
   name: string;
   avatarUrl?: string;
   isTscMember: boolean;
-  availableForHire: boolean;
+  availableForHire?: boolean;
   github: string;
   linkedin?: string;
   slack: string;
