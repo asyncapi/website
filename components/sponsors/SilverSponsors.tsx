@@ -20,7 +20,7 @@ export default function SilverSponsors({ className = '' }: SilverSponsorsProps):
             key={index}
             href={sponsor.website}
             target='_blank'
-            className='relative block w-full p-4 text-center sm:w-1/2 md:w-1/3 lg:w-1/4'
+            className='relative block w-2/3 p-4 text-center sm:w-1/2 md:w-1/3 lg:w-1/4'
             rel='noopener noreferrer'
             data-testid='SilverSponsors-link'
           >
