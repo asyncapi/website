@@ -42,4 +42,9 @@ const mockRssData = {
     ]
 };
 
-module.exports = { mockRssData };
+const type = 'blog';
+const title = 'Test Blog RSS';
+const desc = 'Test blog RSS feed';
+const outputPath = 'test-output/blog.xml';
+
+module.exports = { mockRssData, title, type, desc, outputPath };

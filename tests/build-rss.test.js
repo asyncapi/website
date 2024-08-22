@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const rssFeed = require('../scripts/build-rss');
-const { mockRssData } = require('./fixtures/rssData');
+const { mockRssData, title, type, desc, outputPath } = require('./fixtures/rssData');
 
 jest.mock('../config/posts.json', () => mockRssData, { virtual: true })
 
@@ -22,10 +22,6 @@ describe('rssFeed', () => {
   });
 
   it('should generate RSS feed and write to file', () => {
-    const type = 'blog';
-    const title = 'Test Blog RSS';
-    const desc = 'Test blog RSS feed';
-    const outputPath = 'test-output/blog.xml';
 
     rssFeed(type, title, desc, outputPath);
 
@@ -37,10 +33,6 @@ describe('rssFeed', () => {
   });
 
   it('should sort posts by date and featured status', () => {
-    const type = 'blog';
-    const title = 'Test Blog RSS';
-    const desc = 'Test blog RSS feed';
-    const outputPath = 'test-output/blog.xml';
 
     rssFeed(type, title, desc, outputPath);
 
@@ -56,10 +48,6 @@ describe('rssFeed', () => {
   });
 
   it('should add enclosure for posts with cover image', () => {
-    const type = 'blog';
-    const title = 'Test Blog RSS';
-    const desc = 'Test blog RSS feed';
-    const outputPath = 'test-output/blog.xml';
 
     rssFeed(type, title, desc, outputPath);
 
@@ -71,10 +59,6 @@ describe('rssFeed', () => {
   });
 
   it('should set correct enclosure type based on image extension', () => {
-    const type = 'blog';
-    const title = 'Test Blog RSS';
-    const desc = 'Test blog RSS feed';
-    const outputPath = 'test-output/blog.xml';
 
     rssFeed(type, title, desc, outputPath);
 
