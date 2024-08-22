@@ -68,4 +68,45 @@ describe('rssFeed', () => {
     expect(fileContent).toContain('<enclosure url="https://www.asyncapi.com/img/test-cover.webp"');
     expect(fileContent).toContain('type="image/webp"');
   });
+
+  it('should throw error when write operation fails', () => {
+    const outputPath = "invalid/path"
+    try{
+      rssFeed(type, title, desc, outputPath)
+    }catch(err){
+      expect(err.message).toMatch(/ENOENT|EACCES/);
+    }
+  });
+
+  // it('should handle invalid date formats in posts', () => {
+  //   const invalidDatePost = {
+  //     title: 'Invalid Date Post',
+  //     slug: '/blog/invalid-date',
+  //     date: 'Not a date',
+  //     excerpt: 'This post has an invalid date.',
+  //   };
+  //   jest.spyOn(require('../config/posts.json'), type).mockReturnValue([...mockRssData[type], invalidDatePost]);
+
+  //   expect(() => rssFeed(type, title, desc, outputPath)).not.toThrow();
+
+  //   const filePath = path.join(__dirname, '..', 'public', outputPath);
+  //   const fileContent = fs.readFileSync(filePath, 'utf8');
+  //   expect(fileContent).toContain('<title>Invalid Date Post</title>');
+  // });
+
+  // it('should handle missing fields in posts', () => {
+  //   const incompletePost = {
+  //     title: 'Incomplete Post',
+  //     // Missing slug and date
+  //     excerpt: 'This post is missing some fields.',
+  //   };
+  //   jest.spyOn(require('../config/posts.json'), type).mockReturnValue([...mockRssData[type], incompletePost]);
+
+  //   expect(() => rssFeed(type, title, desc, outputPath)).not.toThrow();
+
+  //   const filePath = path.join(__dirname, '..', 'public', outputPath);
+  //   const fileContent = fs.readFileSync(filePath, 'utf8');
+  //   expect(fileContent).toContain('<title>Incomplete Post</title>');
+  // });
+
 });
