@@ -3,7 +3,7 @@ const path = require('path');
 const rssFeed = require('../scripts/build-rss');
 const { mockRssData, title, type, desc, outputPath } = require('./fixtures/rssData');
 
-jest.mock('../config/posts.json', () => mockRssData, { virtual: true })
+jest.mock('../config/posts.json', () => mockRssData, { virtual: true });
 
 describe('rssFeed', () => {
   const testOutputDir = path.join(__dirname, '..', 'public', 'test-output');
@@ -22,7 +22,6 @@ describe('rssFeed', () => {
   });
 
   it('should generate RSS feed and write to file', () => {
-
     rssFeed(type, title, desc, outputPath);
 
     const filePath = path.join(__dirname, '..', 'public', outputPath);
@@ -33,7 +32,6 @@ describe('rssFeed', () => {
   });
 
   it('should sort posts by date and featured status', () => {
-
     rssFeed(type, title, desc, outputPath);
 
     const filePath = path.join(__dirname, '..', 'public', outputPath);
@@ -48,7 +46,6 @@ describe('rssFeed', () => {
   });
 
   it('should add enclosure for posts with cover image', () => {
-
     rssFeed(type, title, desc, outputPath);
 
     const filePath = path.join(__dirname, '..', 'public', outputPath);
@@ -59,7 +56,6 @@ describe('rssFeed', () => {
   });
 
   it('should set correct enclosure type based on image extension', () => {
-
     rssFeed(type, title, desc, outputPath);
 
     const filePath = path.join(__dirname, '..', 'public', outputPath);
