@@ -43,6 +43,7 @@ async function buildNewsroomVideos(writePath) {
     }
 }
 
+/* istanbul ignore next */
 if (require.main === module) {
     buildNewsroomVideos(resolve(__dirname, '../config', 'newsroom_videos.json'))
 }
