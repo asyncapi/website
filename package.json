@@ -86,7 +86,7 @@
     "node-fetch": "^3.3.2",
     "node-fetch-2": "npm:node-fetch@^2.7.0",
     "postcss": "^8.4.35",
-    "prettier": "^3.3.0",
+    "prettier": "^3.3.3",
     "react": "^18",
     "react-dom": "^18",
     "react-ga": "^3.3.1",
