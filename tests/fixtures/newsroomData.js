@@ -46,4 +46,4 @@ const expectedResult = JSON.stringify([
     },
 ], null, '  ');
 
-module.exports = {mockApiResponse,expectedResult}
+module.exports = { mockApiResponse, expectedResult }
