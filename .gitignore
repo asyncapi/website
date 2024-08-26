@@ -21,4 +21,4 @@ cypress/videos
 *storybook.log
 /storybook-static/
 coverage
-tests/testCache/*
+tests/testCache/
