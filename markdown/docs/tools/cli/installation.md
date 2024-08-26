@@ -5,7 +5,7 @@ weight: 30
 
 ## Node and npm
 
-To use the AsyncAPI CLI tool, you must install NPM and Node.js version 10 or higher. To check if you already have both installed, run the following commands in your terminal:
+To use the AsyncAPI CLI tool, you must install NPM and Node.js version 16 or higher. To check if you already have both installed, run the following commands in your terminal:
 
 ```sh
 # check if node is installed
