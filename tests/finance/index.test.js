@@ -4,7 +4,7 @@ const buildFinanceInfoList = require('../../scripts/finance/index');
 const { expensesYaml, expensesLinkYaml, expensesjson, expensesLinkjson } = require("../fixtures/financeData")
 
 describe('buildFinanceInfoList', () => {
-  const testDir = path.resolve(__dirname, 'test-finance-info');
+  const testDir = path.resolve(__dirname, '../testCache');
   const configDir = 'config';
   const financeDir = 'finance';
   const year = '2024';
