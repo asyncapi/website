@@ -4,7 +4,7 @@ const buildCaseStudiesList = require('../../scripts/casestudies/index');
 const { yaml1,yaml2,json1,json2 } = require("../fixtures/caseStudyData");
 
 describe('buildCaseStudiesList', () => {
-  const tempDir = path.join(__dirname, 'temp-test-dir');
+  const tempDir = path.join(__dirname, '..', 'tempcache');
   const tempConfigDir = path.join(tempDir, 'config', 'casestudies');
   const tempOutputFile = path.join(tempDir, 'case-studies.json');
 
