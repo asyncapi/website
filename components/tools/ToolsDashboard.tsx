@@ -59,6 +59,7 @@ export default function ToolsDashboard() {
     };
   });
 
+  // useMemo function to filter the tools according to the filters applied by the user
   const toolsList = useMemo(() => {
     let tempToolsList: ToolsListData = {};
 
