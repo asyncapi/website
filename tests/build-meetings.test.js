@@ -23,7 +23,7 @@ jest.mock('googleapis', () => {
 });
 
 describe('buildMeetings', () => {
-    const testDir = path.join(__dirname, 'test_output');
+    const testDir = path.join(__dirname, 'testCache');
     const outputFilePath = path.join(testDir, 'meetings.json');
 
     beforeEach(() => {
