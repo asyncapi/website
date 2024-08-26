@@ -92,10 +92,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
                   }, 500)
                 }
               >
-                <div
-                  ref={descriptionRef}
-                  className={`line-clamp-3 max-h-[4.5em] overflow-hidden text-ellipsis ${isTruncated && 'after:content-["..."]'}`}
-                >
+                <div ref={descriptionRef} className={`line-clamp-3 ${isTruncated && 'after:content-["..."]'}`}>
                   {toolData.description}
                 </div>
               </span>
