@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { createRef, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
 import type { ToolsListData } from '@/types/components/tools/ToolDataType';
 
@@ -137,6 +137,12 @@ export default function ToolsDashboard() {
       }
     });
 
+    Object.keys(tempToolsList).map((category) => {
+      tempToolsList[category].elementRef = createRef();
+
+      return tempToolsList;
+    });
+
     return tempToolsList;
   }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, searchName]);
 
@@ -146,11 +152,11 @@ export default function ToolsDashboard() {
 
     if (hash) {
       const elementID = decodeURIComponent(hash.slice(1));
-      const element = document.getElementById(elementID);
+      const element = toolsList[elementID]?.elementRef!;
 
-      if (element) {
+      if (element.current) {
         document.documentElement.style.scrollPaddingTop = '6rem';
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.current.scrollIntoView({ behavior: 'smooth' });
         document.documentElement.style.scrollPaddingTop = '0';
       }
     }
