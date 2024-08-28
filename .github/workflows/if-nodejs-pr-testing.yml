@@ -1,4 +1,3 @@
-# It does magic only if there is package.json file in the root of the project
 name: PR testing - if Node project
 
 on:
@@ -72,3 +71,14 @@ jobs:
         name: Run release assets generation to make sure PR does not break it
         shell: bash
         run: npm run generate:assets --if-present
+      
+      - if: steps.packagejson.outputs.exists == 'true'
+        name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          fail_ci_if_error: true
+          files: ./coverage/lcov.info
+          flags: unittests
+          name: codecov-umbrella
+          token: ${{ secrets.CODECOV_TOKEN }}
+          verbose: true
