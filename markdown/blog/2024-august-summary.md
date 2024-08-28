@@ -74,12 +74,13 @@ For more in-depth information, [explore the HDI Case Study on our website](https
 
 We are pleased to welcome [Manuel Ottlik](https://www.linkedin.com/in/manuelottlik), Product Owner of the Integration Platform at HDI Global SE, as our [AsyncAPI Ambassador](https://www.asyncapi.com/community/ambassadors/manuelottlik).
 
-<Profiles profiles={[
+  <Profiles profiles={[
   {
     name: 'Manuel Ottlik',
     avatar: 'https://avatars.githubusercontent.com/u/25641721?v=4"',
     link: 'https://www.github.com/manuelottlik'
   }
+]} />
 
 If you want to join the program or learn more about our current ambassadors, please visit our A[syncAPI Ambassador Program Page](https://www.asyncapi.com/community/ambassadors).
 
