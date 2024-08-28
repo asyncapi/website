@@ -77,7 +77,7 @@ We are pleased to welcome [Manuel Ottlik](https://www.linkedin.com/in/manuelottl
   <Profiles profiles={[
   {
     name: 'Manuel Ottlik',
-    avatar: 'https://avatars.githubusercontent.com/u/25641721?v=4"',
+    avatar: 'https://avatars.githubusercontent.com/u/28919003?v=4',
     link: 'https://www.github.com/manuelottlik'
   }
 ]} />
