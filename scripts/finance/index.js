@@ -1,6 +1,5 @@
 const {
-    promises: { mkdir },
-    writeFileSync
+    promises: { mkdir }
 } = require('fs');
 const { resolve } = require('path');
 const writeJSON = require('../utils/readAndWriteJson.js');
