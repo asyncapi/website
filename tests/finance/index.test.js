@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const buildFinanceInfoList = require('../../scripts/finance/index');
-const { expensesYaml, expensesLinkYaml, expensesjson, expensesLinkjson } = require("../fixtures/financeData")
+const { expensesYaml, expensesLinkYaml, expensesjson, expensesLinkjson } = require('../fixtures/financeData');
 
 describe('buildFinanceInfoList', () => {
   const testDir = path.resolve(__dirname, 'test-finance-info');
@@ -32,7 +32,7 @@ describe('buildFinanceInfoList', () => {
       jsonDataDir
     });
 
-    const jsonDir = path.resolve(testDir, configDir, financeDir, jsonDataDir, year);
+    const jsonDir = path.resolve(testDir, configDir, financeDir, jsonDataDir);
 
     // Check if JSON directory was created
     expect(fs.existsSync(jsonDir)).toBe(true);
