@@ -4,7 +4,7 @@ export default create({
   // Brand Information
   brandTitle: 'AsyncAPI Initiative',
   brandUrl: 'https://www.asyncapi.com/',
-  brandImage: 'img/logos/asyncapi-horizontal-logo.svg',
+  brandImage: 'img/logos/asyncapi-horizontal-white-logo.svg',
   brandTarget: '_blank',
 
   // Typography
@@ -13,7 +13,7 @@ export default create({
 
 
   // Themes
-  base: 'light',
+  base: 'dark',
 
   /* -- FULL THEME IS NOT BEING USED DUE TO LACK OF STORYBOOK SUPPORT FOR CUSTOMIZING THE SETTINGS & ACTIONS BAR BG/TEXTCOLOR INDEPENDENTLY. --
   colorPrimary: '#47BCEE',
