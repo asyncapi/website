@@ -22,9 +22,7 @@ const nextConfig = {
     }
 
     return config;
-  },
-  'trailingSlash': true,
-
+  }
 };
 
 const mdxConfig = withMDX({
