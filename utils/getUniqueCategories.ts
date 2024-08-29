@@ -8,7 +8,6 @@ import Expenses from '../config/finance/json-data/Expenses.json';
  */
 export const getUniqueCategories = (): string[] => {
     const allCategories: string[] = [];
-
     for (const month in Expenses) {
         Expenses[month as keyof typeof Expenses].forEach((entry: { Category: string }) => {
             if (!allCategories.includes(entry.Category)) {
@@ -16,6 +15,5 @@ export const getUniqueCategories = (): string[] => {
             }
         });
     }
-
     return allCategories;
 };
