@@ -34,7 +34,9 @@ export default function FiltersDropdown({
 
   return (
     <div
-      className={twMerge(`max-w-lg flex gap-2 flex-wrap p-2 duration-200 delay-150 ${className}`)}
+      className={twMerge(
+        `max-w-lg flex flex-col max-h-[40vh] gap-1 overflow-y-auto p-2 px-0 duration-200 delay-150 bg-gray-400 ${className}`
+      )}
       data-testid='FiltersDropdown-div'
     >
       {dataList.map((data, index) => {
@@ -44,7 +46,7 @@ export default function FiltersDropdown({
           <div
             key={index}
             className={twMerge(
-              `border border-secondary-600 text-secondary-600 p-1 pb-0 rounded-2xl flex gap-1 cursor-pointer items-start ${checked ? 'bg-secondary-600 text-white' : ''}`
+              `hover:bg-gray-500 text-black p-1 gap-1 flex cursor-pointer items-start ${checked ? 'bg-gray-600 text-white' : ''}`
             )}
             onClick={(event) => handleClickOption(event, data.name)}
           >
