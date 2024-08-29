@@ -14,5 +14,12 @@ export const sponsors: SponsorType[] = [
     imageSrc: '/img/sponsors/gravitee.io_logo.jpg',
     altText: 'Gravitee.io',
     imageClass: 'inline-block px-4 sm:h-14'
+  },
+  {
+    name: 'Postman',
+    website: 'https://www.postman.com',
+    imageSrc: '/img/sponsors/postman.png',
+    altText: 'Postman',
+    imageClass: 'inline-block px-4 sm:h-18'
   }
 ];
