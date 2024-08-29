@@ -8,8 +8,16 @@ const buildFinanceInfoList = require('./finance');
 
 async function start() {
   await buildPostList();
-  rssFeed('blog', 'AsyncAPI Initiative Blog RSS Feed', 'AsyncAPI Initiative Blog', 'rss.xml');
-  await buildCaseStudiesList('config/casestudies', resolve(__dirname, '../config', 'case-studies.json'));
+  rssFeed(
+    'blog',
+    'AsyncAPI Initiative Blog RSS Feed',
+    'AsyncAPI Initiative Blog',
+    'rss.xml'
+  );
+  await buildCaseStudiesList(
+    'config/casestudies',
+    resolve(__dirname, '../config', 'case-studies.json')
+  );
   await buildAdoptersList();
   const financeDir = resolve('.', 'config', 'finance');
 
