@@ -14,7 +14,7 @@ async function start() {
   const financeDir = resolve('.', 'config', 'finance');
 
   // loop through all the files finance in directory and find the latest year to build the finance info list
-  const yearList = fs
+  const yearsList = fs
     .readdirSync(financeDir)
     // filter out any files that are not numbers
     .filter((file) => {
@@ -25,7 +25,11 @@ async function start() {
       return parseFloat(b) - parseFloat(a);
     });
 
-  const latestYear = yearList[0];
+  if (yearsList.length === 0) {
+    throw new Error('No finance data found in the finance directory.');
+  }
+
+  const latestYear = yearsList[0];
 
   await buildFinanceInfoList({
     currentDir: '.',
