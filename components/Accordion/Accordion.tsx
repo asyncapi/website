@@ -5,10 +5,16 @@ import type { AccordionItemType } from '@/types/components/AccordionItemType';
 import AccordionItem from './AccordionItem';
 
 export interface AccordionProps {
+  // eslint-disable-next-line prettier/prettier
+
+  /** List of accordian items objects each containing title and content. */
   accordionItems: AccordionItemType[];
 }
 
-const Accordion = ({ accordionItems = [] }: AccordionProps) => {
+/**
+ * This is the Accordion component. It displays a list of items that can be expanded or collapsed.
+ */
+export default function Accordion({ accordionItems = [] }: AccordionProps) {
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
 
   return (
@@ -25,6 +31,4 @@ const Accordion = ({ accordionItems = [] }: AccordionProps) => {
       ))}
     </div>
   );
-};
-
-export default Accordion;
+}

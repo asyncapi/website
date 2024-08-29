@@ -1,14 +1,28 @@
 import React from 'react';
 
 export interface AccordionItemProps {
+  // eslint-disable-next-line prettier/prettier
+
+  /** Index of the accordion item. */
   itemIndex: number;
+
+  /** Title of the accordion item. */
   title: string;
+
+  /** Content of the accordion item. */
   content: React.ReactNode;
+
+  /** Whether the accordion item is active(open) or not. */
   isActive: boolean;
+
+  /** Function to set the active index of the accordion item. */
   setActiveIndex: (index: number | null) => void;
 }
 
-const AccordionItem = ({ itemIndex, title, content, isActive, setActiveIndex }: AccordionItemProps) => {
+/**
+ * This is the AccordionItem component. It displays a single item that can be expanded or collapsed.
+ */
+export default function AccordionItem({ itemIndex, title, content, isActive, setActiveIndex }: AccordionItemProps) {
   const handleClick = () => {
     const nextIndex = isActive ? null : itemIndex;
 
@@ -50,6 +64,4 @@ const AccordionItem = ({ itemIndex, title, content, isActive, setActiveIndex }: 
       )}
     </div>
   );
-};
-
-export default AccordionItem;
+}
