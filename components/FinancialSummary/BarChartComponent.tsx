@@ -3,6 +3,8 @@ import { Bar, BarChart, CartesianGrid, Legend, Tooltip, YAxis } from 'recharts';
 
 import type { ExpenseItem, ExpensesLinkItem } from '@/types/FinancialSummary/BarChartComponent';
 
+import ExpensesData from '../../config/finance/json-data/Expenses.json';
+import ExpensesLinkData from '../../config/finance/json-data/ExpensesLink.json';
 import { getUniqueCategories } from '../../utils/getUniqueCategories';
 import CustomTooltip from './CustomTooltip';
 import ExpensesCard from './ExpensesCard';
@@ -17,11 +19,8 @@ export default function BarChartComponent() {
   const [windowWidth, setWindowWidth] = useState<number>(0);
 
   // Extracting unique categories and months from the data
-  const [categories, setCategories] = useState<string[]>([]);
-  const [ExpensesData, setExpensesData] = useState<{ [month: string]: ExpenseItem[] }>({});
-
+  const categories: string[] = getUniqueCategories();
   const months: string[] = Object.keys(ExpensesData);
-  const [ExpensesLinkData, setExpensesLinkData] = useState<ExpensesLinkItem[]>([]);
 
   // Effect hook to update windowWidth state on resize
   useEffect(() => {
@@ -31,14 +30,7 @@ export default function BarChartComponent() {
 
     // Initial setup and event listener
     handleResize();
-    const currentYear = new Date().getFullYear();
-
     window.addEventListener('resize', handleResize);
-    import(`../../config/finance/json-data/${currentYear}/ExpensesLink.json`).then((data) =>
-      setExpensesLinkData(data.default)
-    );
-    getUniqueCategories().then((data) => setCategories(data));
-    import(`../../config/finance/json-data/${currentYear}/Expenses.json`).then((data) => setExpensesData(data.default));
 
     // Cleanup function to remove event listener
     return () => {
