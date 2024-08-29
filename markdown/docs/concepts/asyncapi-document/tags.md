@@ -5,7 +5,7 @@ weight: 63
 
 A tag functions as a label or category for logically grouping related entities like channels or servers in an event-driven system. The `tag` object facilitates the organization of channels, operations, or other components, categorizing them based on functionality, purpose, or other relevant criteria.
 
-In AyncAPI, the `tags` object is a list of individual `tag` objects. Each `tag` within this collection can be defined with a specific name, accompanied by an optional description that offers additional insight into the tag's intended purpose or usage.
+In AsyncAPI, the `tags` object is a list of individual `tag` objects. Each `tag` within this collection can be defined with a specific name, accompanied by an optional description that offers additional insight into the tag's intended purpose or usage.
 
 You can define `tags` in the [`components` object](/docs/reference/specification/latest#componentsObject) of an AsyncAPI document, which enables the reusability of the tags. If you include `tags` in the `components` object, they can be re-used by using [reference objects](/docs/reference/specification/latest#referenceObject).
 
