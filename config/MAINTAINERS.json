@@ -8,8 +8,11 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
-            "website"
-        ]
+            "website",
+            "conference-website",
+            "brand"
+        ],
+        "githubID": 105395613
     },
     {
         "name": "Aayush Sahu",
@@ -21,7 +24,8 @@
         "isTscMember": true,
         "repos": [
             "diff"
-        ]
+        ],
+        "githubID": 54525741
     },
     {
         "name": "Abir Pal",
@@ -33,7 +37,8 @@
         "isTscMember": true,
         "repos": [
             "problem"
-        ]
+        ],
+        "githubID": 53480076
     },
     {
         "name": "Akshat Nema",
@@ -45,7 +50,8 @@
         "isTscMember": true,
         "repos": [
             "website"
-        ]
+        ],
+        "githubID": 76521428
     },
     {
         "name": "Ansh Goyal",
@@ -57,7 +63,8 @@
         "isTscMember": true,
         "repos": [
             "website"
-        ]
+        ],
+        "githubID": 94157520
     },
     {
         "name": "Anand Sunderraman",
@@ -68,7 +75,8 @@
         "isTscMember": true,
         "repos": [
             "go-watermill-template"
-        ]
+        ],
+        "githubID": 4500774
     },
     {
         "name": "Ashish Padhy",
@@ -79,21 +87,25 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
-            "github-action-for-cli"
-        ]
+            "github-action-for-cli",
+            "cli"
+        ],
+        "githubID": 100484401
     },
     {
         "name": "Cameron Rushton",
-        "github": "cameronrushton",
+        "github": "CameronRushton",
         "slack": "U01DVKKAV5K",
         "availableForHire": false,
         "company": "Solace",
         "isTscMember": true,
         "repos": [
+            "spec-json-schemas",
+            "bindings",
             "java-spring-cloud-stream-template",
-            "python-paho-template",
-            "bindings"
-        ]
+            "python-paho-template"
+        ],
+        "githubID": 32455969
     },
     {
         "name": "Dale Lane",
@@ -105,10 +117,13 @@
         "isTscMember": true,
         "company": "IBM",
         "repos": [
-            "avro-schema-parser",
+            "spec",
+            "spec-json-schemas",
             "bindings",
+            "avro-schema-parser",
             "java-template"
-        ]
+        ],
+        "githubID": 1444788
     },
     {
         "name": "Emiliano Zublena",
@@ -118,8 +133,9 @@
         "availableForHire": false,
         "isTscMember": false,
         "repos": [
-            "asyncapi-php-template"
-        ]
+            "php-template"
+        ],
+        "githubID": 466639
     },
     {
         "name": "Fran M\u00e9ndez",
@@ -129,28 +145,35 @@
         "linkedin": "fmvilas",
         "isTscMember": true,
         "repos": [
-            "raml-dt-schema-parser",
-            "avro-schema-parser",
-            "openapi-schema-parser",
-            "asyncapi-react",
-            "glee",
-            "nodejs-ws-template",
-            "parser-js",
             "spec",
             "spec-json-schemas",
-            "bindings"
-        ]
+            "asyncapi-react",
+            "extensions-catalog",
+            "converter-js",
+            "bindings",
+            "enterprise-patterns",
+            "raml-dt-schema-parser",
+            "openapi-schema-parser",
+            "html-template",
+            "markdown-template",
+            "nodejs-ws-template",
+            "generator-hooks",
+            "brand"
+        ],
+        "githubID": 242119
     },
     {
         "name": "Gerald Loeffler",
-        "github": "geraldloeffler",
+        "github": "GeraldLoeffler",
         "linkedin": "geraldloeffler",
         "slack": "U01P5QDLP0X",
         "availableForHire": false,
         "isTscMember": false,
         "repos": [
+            "spec-json-schemas",
             "bindings"
-        ]
+        ],
+        "githubID": 1985716
     },
     {
         "name": "Jonas Lagoni",
@@ -161,19 +184,23 @@
         "company": "Postman",
         "isTscMember": true,
         "repos": [
-            "dotnet-nats-template",
-            "ts-nats-template",
-            "generator-react-sdk",
+            "spec-json-schemas",
             "generator",
-            "modelina",
             "parser-js",
+            "converter-js",
+            "ts-nats-template",
+            "dotnet-nats-template",
+            "generator-react-sdk",
+            "modelina",
+            "simulator",
             "parser-api",
-            "simulator"
-        ]
+            "EDAVisualiser"
+        ],
+        "githubID": 13396189
     },
     {
         "name": "Khuda Dad Nomani",
-        "github": "khudadad414",
+        "github": "KhudaDad414",
         "twitter": "KhudaDadNomani",
         "linkedin": "khudadadnomani",
         "slack": "U01RVRD1TCL",
@@ -181,11 +208,13 @@
         "company": "Postman",
         "isTscMember": true,
         "repos": [
-            "bindings",
-            "glee",
+            "spec-json-schemas",
+            "studio",
             ".github",
-            "optimizer"
-        ]
+            "optimizer",
+            "glee"
+        ],
+        "githubID": 32505158
     },
     {
         "name": "Laurent Broudoux",
@@ -197,8 +226,10 @@
         "company": "Postman",
         "isTscMember": true,
         "repos": [
+            "spec-json-schemas",
             "bindings"
-        ]
+        ],
+        "githubID": 1538635
     },
     {
         "name": "Ludovic Dussart",
@@ -211,7 +242,8 @@
         "isTscMember": true,
         "repos": [
             "avro-schema-parser"
-        ]
+        ],
+        "githubID": 5501911
     },
     {
         "name": "Lukasz Gornicki",
@@ -223,18 +255,31 @@
         "company": "Postman",
         "isTscMember": true,
         "repos": [
-            "diff",
-            "generator-filters",
-            "generator-hooks",
-            "github-action-for-generator",
+            "spec",
+            "website",
+            "spec-json-schemas",
             "generator",
+            "asyncapi-react",
+            "extensions-catalog",
+            "bindings",
+            "enterprise-patterns",
+            "html-template",
+            "markdown-template",
             "nodejs-template",
             "nodejs-ws-template",
-            "spec",
-            "spec-json-schemas",
+            "java-spring-template",
+            "github-action-for-cli",
+            ".github",
+            "jasyncapi",
+            "generator-hooks",
+            "vs-asyncapi-preview",
             "template-for-generator-templates",
-            "website"
-        ]
+            "community",
+            "diff",
+            "chatbot",
+            "infra"
+        ],
+        "githubID": 6995927
     },
     {
         "name": "Maciej Urba\u0144czyk",
@@ -245,32 +290,45 @@
         "company": "Travelping GmbH",
         "isTscMember": true,
         "repos": [
-            "asyncapi-react",
-            "converter-go",
-            "generator-react-sdk",
+            "website",
             "generator",
+            "asyncapi-react",
+            "parser-go",
+            "parser-js",
+            "converter-js",
+            "converter-go",
+            "studio",
             "html-template",
             "markdown-template",
+            "github-action-for-cli",
+            "ts-nats-template",
+            "dotnet-nats-template",
+            "template-for-generator-templates",
+            "generator-react-sdk",
             "modelina",
-            "parser-js",
-            "parser-go",
-            "server-api",
             "template-for-go-projects",
-            "website"
-        ]
+            "diff",
+            "chatbot",
+            "server-api",
+            "EDAVisualiser",
+            "problem"
+        ],
+        "githubID": 20404945
     },
     {
         "name": "Azeez Elegbede",
         "linkedin": "acebuild",
-        "github": "acethecreator",
+        "github": "AceTheCreator",
         "twitter": "_acebuild",
         "slack": "U01RWDD69PZ",
         "company": "Postman",
         "availableForHire": false,
         "isTscMember": true,
         "repos": [
+            "conference-website",
             "chatbot"
-        ]
+        ],
+        "githubID": 40604284
     },
     {
         "name": "Michael Davis",
@@ -279,45 +337,39 @@
         "slack": "UH3B166TD",
         "isTscMember": false,
         "repos": [
+            "spec-json-schemas",
+            "bindings",
             "java-spring-cloud-stream-template",
-            "python-paho-template",
-            "bindings"
-        ]
-    },
-    {
-        "name": "Missy Turco",
-        "github": "mcturco",
-        "twitter": "missyturco",
-        "slack": "U02JVEQ6S9W",
-        "linkedin": "missy-turco-a476a6126",
-        "availableForHire": false,
-        "company": "Postman",
-        "isTscMember": false,
-        "repos": [
-            "brand"
-        ]
+            "python-paho-template"
+        ],
+        "githubID": 3926925
     },
     {
         "name": "Nektarios Fifes",
-        "github": "nektariosfifes",
+        "github": "NektariosFifes",
         "linkedin": "nektarios-fifes-372740220",
         "slack": "U01SE93Q48N",
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
             "simulator"
-        ]
+        ],
+        "githubID": 61620751
     },
     {
         "name": "Pavel Bodiachevskii",
-        "github": "pakisan",
+        "github": "Pakisan",
         "slack": "U0132LQU8C9",
         "twitter": "pbodiachevskii",
         "availableForHire": false,
         "isTscMember": true,
         "repos": [
-            "jasyncapi"
-        ]
+            "spec-json-schemas",
+            "tck",
+            "jasyncapi",
+            "jasyncapi-idea-plugin"
+        ],
+        "githubID": 3388414
     },
     {
         "name": "Philip Schlesinger",
@@ -328,7 +380,8 @@
         "isTscMember": true,
         "repos": [
             "jasyncapi-idea-plugin"
-        ]
+        ],
+        "githubID": 901430
     },
     {
         "name": "Prince Rajpoot",
@@ -340,7 +393,8 @@
         "isTscMember": true,
         "repos": [
             "studio"
-        ]
+        ],
+        "githubID": 44585452
     },
     {
         "name": "Richard Coppen",
@@ -351,8 +405,10 @@
         "company": "IBM",
         "isTscMember": true,
         "repos": [
+            "spec-json-schemas",
             "bindings"
-        ]
+        ],
+        "githubID": 30902631
     },
     {
         "name": "Samir AMZANI",
@@ -364,8 +420,10 @@
         "company": "Postman",
         "isTscMember": true,
         "repos": [
-            "studio"
-        ]
+            "studio",
+            "cli"
+        ],
+        "githubID": 554438
     },
     {
         "name": "Sergio Moya",
@@ -379,22 +437,24 @@
         "repos": [
             "spec",
             "spec-json-schemas",
-            "bindings",
-            "parser-api",
-            "parser-js",
-            "avro-schema-parser",
-            "openapi-schema-parser",
-            "raml-dt-schema-parser",
-            "server-api",
             "parser-go",
+            "parser-js",
             "converter-go",
+            "bindings",
+            "raml-dt-schema-parser",
+            "openapi-schema-parser",
+            "avro-schema-parser",
             "go-watermill-template",
-            "template-for-go-projects"
-        ]
+            "template-for-go-projects",
+            "parser-api",
+            "server-api",
+            "infra"
+        ],
+        "githubID": 1083296
     },
     {
         "name": "Souvik De",
-        "github": "souvikns",
+        "github": "Souvikns",
         "slack": "U01SGCZMJKW",
         "twitter": "souvik_ns",
         "linkedin": "souvik-de-a2b941169",
@@ -403,28 +463,28 @@
         "isTscMember": true,
         "repos": [
             "cli",
-            "bundler",
-            "glee"
-        ]
+            "glee",
+            "bundler"
+        ],
+        "githubID": 41781438
     },
     {
-        "name": "Alejandra Quetzalli",
-        "github": "alequetzalli",
-        "twitter": "QuetzalliAle",
+        "name": "Quetzalli Writes",
+        "github": "quetzalliwrites",
+        "twitter": "QuetzalliWrites",
         "slack": "U02AKC14WAJ",
-        "linkedin": "alejandra-quetzalli",
+        "linkedin": "quetzalli-writes",
         "availableForHire": false,
         "company": "Postman",
         "isTscMember": true,
         "repos": [
-            "website",
-            "training",
-            "community"
-        ]
+            "website"
+        ],
+        "githubID": 19964402
     },
     {
         "name": "David Pereira",
-        "github": "bolt04",
+        "github": "BOLT04",
         "twitter": "BOLT2938",
         "slack": "U02EC8BT0TX",
         "linkedin": "jos\u00e9-david-pereira-13ba5315a",
@@ -433,7 +493,8 @@
         "isTscMember": true,
         "repos": [
             "server-api"
-        ]
+        ],
+        "githubID": 18630253
     },
     {
         "name": "Daniel Raper",
@@ -444,11 +505,12 @@
         "isTscMember": true,
         "repos": [
             "java-template"
-        ]
+        ],
+        "githubID": 1384852
     },
     {
         "name": "Kieran Murphy",
-        "github": "kieranm1999",
+        "github": "KieranM1999",
         "linkedin": "kieran-murphy-175b0412b",
         "availableForHire": false,
         "slack": "U02FT2TKM37",
@@ -456,11 +518,12 @@
         "isTscMember": false,
         "repos": [
             "java-template"
-        ]
+        ],
+        "githubID": 45017928
     },
     {
         "name": "Tom Jefferson",
-        "github": "jefflufc",
+        "github": "JEFFLUFC",
         "linkedin": "t-jefferson",
         "slack": "U02FPPCEH6H",
         "availableForHire": false,
@@ -468,7 +531,8 @@
         "isTscMember": false,
         "repos": [
             "java-template"
-        ]
+        ],
+        "githubID": 54025356
     },
     {
         "name": "Lewis Relph",
@@ -479,22 +543,24 @@
         "isTscMember": false,
         "repos": [
             "java-template"
-        ]
+        ],
+        "githubID": 91530893
     },
     {
         "name": "Semen Tenishchev",
-        "github": "tenischev",
+        "github": "Tenischev",
         "linkedin": "semen-tenishchev",
         "availableForHire": true,
         "slack": "U011D1DAU6S",
         "isTscMember": true,
         "repos": [
             "java-spring-template"
-        ]
+        ],
+        "githubID": 4137916
     },
     {
         "name": "Samridhi Agrawal",
-        "github": "samridhi-98",
+        "github": "Samridhi-98",
         "slack": "U02T2MY9W5T",
         "linkedin": "samridhi-agrawal-1713201ab",
         "availableForHire": false,
@@ -502,20 +568,8 @@
         "isTscMember": true,
         "repos": [
             "modelina"
-        ]
-    },
-    {
-        "name": "Debajyoti Halder",
-        "github": "ron-debajyoti",
-        "twitter": "rondebajyoti",
-        "slack": "U02UK9RUPGQ",
-        "linkedin": "rondebajyoti",
-        "availableForHire": false,
-        "company": "Narvar",
-        "isTscMember": false,
-        "repos": [
-            "modelina"
-        ]
+        ],
+        "githubID": 54466041
     },
     {
         "name": "Ivan Garcia Sainz-Aja",
@@ -527,11 +581,12 @@
         "isTscMember": true,
         "repos": [
             "vs-asyncapi-preview"
-        ]
+        ],
+        "githubID": 1246876
     },
     {
         "name": "Florence Njeri",
-        "github": "florence-njeri",
+        "github": "Florence-Njeri",
         "linkedin": "florencenjeri",
         "slack": "U03D18YKX2M",
         "twitter": "njericodes",
@@ -539,7 +594,8 @@
         "isTscMember": true,
         "repos": [
             "generator"
-        ]
+        ],
+        "githubID": 40742916
     },
     {
         "name": "Jeremy Whitlock",
@@ -551,8 +607,10 @@
         "company": "Google",
         "isTscMember": true,
         "repos": [
+            "spec-json-schemas",
             "bindings"
-        ]
+        ],
+        "githubID": 98899
     },
     {
         "name": "Vladim\u00edr Gorej",
@@ -564,22 +622,26 @@
         "company": "SmartBear",
         "isTscMember": false,
         "repos": [
-            "bindings",
             "spec",
-            "spec-json-schemas"
-        ]
+            "spec-json-schemas",
+            "bindings"
+        ],
+        "githubID": 193286
     },
     {
         "name": "Alexander Wichmann",
-        "github": "visualbean",
+        "github": "VisualBean",
         "linkedin": "alexcarlsen",
         "slack": "U04C58GB8TF",
         "availableForHire": false,
         "company": "The LEGO Group",
         "isTscMember": true,
         "repos": [
-            "bindings"
-        ]
+            "spec-json-schemas",
+            "bindings",
+            "saunter"
+        ],
+        "githubID": 5294032
     },
     {
         "name": "Kenneth Aasan",
@@ -591,18 +653,23 @@
         "isTscMember": true,
         "repos": [
             "modelina"
-        ]
+        ],
+        "githubID": 1437394
     },
     {
         "name": "Heiko Henning",
-        "github": "greenrover",
+        "github": "GreenRover",
         "slack": "U03AC4G51H8",
         "availableForHire": false,
         "company": "mtrail GmbH",
         "isTscMember": true,
         "repos": [
+            "spec",
+            "spec-json-schemas",
+            "bindings",
             "protobuf-schema-parser"
-        ]
+        ],
+        "githubID": 512850
     },
     {
         "name": "connil",
@@ -613,7 +680,8 @@
         "isTscMember": false,
         "repos": [
             "dotnet-rabbitmq-template"
-        ]
+        ],
+        "githubID": 6583798
     },
     {
         "name": "mr-nuno",
@@ -624,7 +692,8 @@
         "isTscMember": false,
         "repos": [
             "dotnet-rabbitmq-template"
-        ]
+        ],
+        "githubID": 1067841
     },
     {
         "name": "Thulisile Sibanda",
@@ -637,8 +706,10 @@
         "isTscMember": true,
         "repos": [
             "website",
+            "conference-website",
             "community"
-        ]
+        ],
+        "githubID": 66913810
     },
     {
         "name": "Ashmit JaiSarita Gupta",
@@ -650,7 +721,8 @@
         "isTscMember": true,
         "repos": [
             "modelina"
-        ]
+        ],
+        "githubID": 43639341
     },
     {
         "name": "Sambhav Gupta",
@@ -662,7 +734,8 @@
         "isTscMember": true,
         "repos": [
             "website"
-        ]
+        ],
+        "githubID": 81870866
     },
     {
         "name": "Viacheslav Turovskyi",
@@ -671,8 +744,224 @@
         "availableForHire": false,
         "isTscMember": false,
         "repos": [
-            "bundler",
-            "optimizer"
-        ]
+            "optimizer",
+            "bundler"
+        ],
+        "githubID": 16149591
+    },
+    {
+        "name": "Rohit",
+        "github": "TRohit20",
+        "twitter": "TRRohit20",
+        "isTscMember": false,
+        "repos": [
+            "website"
+        ],
+        "githubID": 108233235
+    },
+    {
+        "name": "Bhaswati Roy ",
+        "github": "BhaswatiRoy",
+        "twitter": "swiftiebhaswati",
+        "isTscMember": false,
+        "repos": [
+            "website"
+        ],
+        "githubID": 78029145
+    },
+    {
+        "name": "Vaishnavi ",
+        "github": "VaishnaviNandakumar",
+        "isTscMember": false,
+        "repos": [
+            "website"
+        ],
+        "githubID": 41518119
+    },
+    {
+        "name": "Joy Almeida",
+        "github": "J0SAL",
+        "twitter": "_j0sal",
+        "isTscMember": false,
+        "repos": [
+            "website"
+        ],
+        "githubID": 52382282
+    },
+    {
+        "name": "Mihael Bosnjak",
+        "github": "mboss37",
+        "isTscMember": false,
+        "repos": [
+            "spec-json-schemas",
+            "bindings"
+        ],
+        "githubID": 29606687
+    },
+    {
+        "name": "Steve Head",
+        "github": "SrfHead",
+        "isTscMember": false,
+        "repos": [
+            "spec-json-schemas",
+            "bindings"
+        ],
+        "githubID": 13767299
+    },
+    {
+        "name": "Dec Kolakowski",
+        "github": "dpwdec",
+        "isTscMember": false,
+        "repos": [
+            "spec-json-schemas",
+            "bindings"
+        ],
+        "githubID": 51292634
+    },
+    {
+        "name": "Ian Cooper",
+        "github": "iancooper",
+        "twitter": "ICooper",
+        "isTscMember": false,
+        "repos": [
+            "spec-json-schemas",
+            "bindings"
+        ],
+        "githubID": 45537
+    },
+    {
+        "name": "Michael Wildman",
+        "github": "m-wild",
+        "isTscMember": false,
+        "repos": [
+            "saunter"
+        ],
+        "githubID": 3260812
+    },
+    {
+        "name": "yurvon-screamo",
+        "github": "yurvon-screamo",
+        "isTscMember": false,
+        "repos": [
+            "saunter"
+        ],
+        "githubID": 109030262
+    },
+    {
+        "name": "Jonathan Stoikovitch",
+        "github": "jstoiko",
+        "twitter": "jstoiko",
+        "isTscMember": false,
+        "repos": [
+            "raml-dt-schema-parser"
+        ],
+        "githubID": 9660342
+    },
+    {
+        "name": "Rishi",
+        "github": "kaushik-rishi",
+        "twitter": "KaushikRishi07",
+        "isTscMember": false,
+        "repos": [
+            "nodejs-template"
+        ],
+        "githubID": 52498617
+    },
+    {
+        "name": "Akshit Gupta",
+        "github": "akkshitgupta",
+        "twitter": "akkshitgupta",
+        "availableForHire": true,
+        "isTscMember": false,
+        "repos": [
+            "modelina"
+        ],
+        "githubID": 96991785
+    },
+    {
+        "name": "Leigh Johnson",
+        "github": "leigh-johnson",
+        "twitter": "grepLeigh",
+        "isTscMember": false,
+        "repos": [
+            "modelina"
+        ],
+        "githubID": 2601819
+    },
+    {
+        "name": "Zbigniew Malcherczyk",
+        "github": "ferror",
+        "isTscMember": false,
+        "repos": [
+            "modelina"
+        ],
+        "githubID": 17534504
+    },
+    {
+        "name": "artur-ciocanu",
+        "github": "artur-ciocanu",
+        "isTscMember": false,
+        "repos": [
+            "modelina"
+        ],
+        "githubID": 743192
+    },
+    {
+        "name": "Vinit Shahdeo",
+        "github": "vinitshahdeo",
+        "twitter": "Vinit_Shahdeo",
+        "availableForHire": true,
+        "isTscMember": false,
+        "repos": [
+            "diff"
+        ],
+        "githubID": 20594326
+    },
+    {
+        "name": "Anubhav Vats",
+        "github": "onbit-uchenik",
+        "twitter": "postmanlabs",
+        "availableForHire": true,
+        "isTscMember": false,
+        "repos": [
+            "diff"
+        ],
+        "githubID": 46771418
+    },
+    {
+        "name": "Akshaya Gurlhosur",
+        "github": "AGurlhosur",
+        "isTscMember": false,
+        "repos": [
+            "java-template"
+        ],
+        "githubID": 91530186
+    },
+    {
+        "name": "Philip Schlesinger @ Cryoport",
+        "github": "philCryoport",
+        "isTscMember": false,
+        "repos": [
+            "jasyncapi-idea-plugin"
+        ],
+        "githubID": 28901899
+    },
+    {
+        "name": "nathanaelweber",
+        "github": "nathanaelweber",
+        "isTscMember": false,
+        "repos": [
+            "protobuf-schema-parser"
+        ],
+        "githubID": 40006685
+    },
+    {
+        "name": "Barbanio Gonz\u00e1lez",
+        "github": "Barbanio",
+        "isTscMember": false,
+        "repos": [
+            "learning-paths"
+        ],
+        "githubID": 77982319
     }
 ]

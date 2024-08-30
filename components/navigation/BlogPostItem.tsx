@@ -14,22 +14,24 @@ import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 
 interface BlogPostItemProps {
+  // eslint-disable-next-line prettier/prettier
+
+  /** The blog post data. */
   post: IBlogPost;
+
+  /** Additional CSS classes for styling. */
   className?: string;
+
+  /** The HTML id attribute for the component. */
   id?: string;
 }
 
 /**
- * @description Functional component representing a single blog post item.
- * @param {Object} props - Props for the BlogPostItem component.
- * @param {IBlogPost} props.post - The blog post data.
- * @param {string} [props.className=''] - Additional CSS classes for styling.
- * @param {string} [props.id=''] - The HTML id attribute for the component.
- * @param {Ref<HTMLLIElement>} ref - Reference object for the component.
+ * Functional component representing a single blog post item.
  */
 export default forwardRef(function BlogPostItem(
   { post, className = '', id = '' }: BlogPostItemProps,
-  ref: Ref<HTMLLIElement>
+  ref: Ref<HTMLLIElement> /** Reference object for the component. */
 ) {
   let typeColors: [string, string] = ['bg-indigo-100', 'text-indigo-800'];
 
@@ -50,7 +52,7 @@ export default forwardRef(function BlogPostItem(
   }
 
   return (
-    <li className={`rounded-lg ${className}`} ref={ref} id={id}>
+    <li className={`list-none rounded-lg ${className}`} ref={ref} id={id}>
       <article className='h-full rounded-lg'>
         <Link href={post.slug}>
           <span
@@ -112,7 +114,11 @@ export default forwardRef(function BlogPostItem(
                             author.name
                           )
                         )
-                        .reduce((prev, curr) => [prev, ' & ', curr].join(''))}
+                        .reduce((prev, curr) => (
+                          <>
+                            {prev} & {curr}
+                          </>
+                        ))}
                     </span>
                   </Heading>
                   <Paragraph typeStyle={ParagraphTypeStyle.sm} className='flex'>
