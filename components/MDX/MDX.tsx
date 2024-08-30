@@ -29,6 +29,7 @@ import Caption from '../Caption';
 import DocsCards from '../docs/DocsCards';
 import Visualizer from '../docs/Visualizer';
 import CodeBlock from '../editor/CodeBlock';
+import FAQ from '../faq/FAQ';
 import Figure from '../Figure';
 import GeneratorInstallation from '../GeneratorInstallation';
 import Column from '../layout/Column';
@@ -310,6 +311,7 @@ const getMDXComponents = {
   Row,
   Column,
   Figure,
+  FAQ,
   DocsCards,
   GeneratorInstallation,
   NewsletterSubscribe,
