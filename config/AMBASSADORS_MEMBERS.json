@@ -1,12 +1,12 @@
 [
   {
-    "name": "Alejandra Quetzalli",
+    "name": "Quetzalli Writes",
     "img": "https://avatars.githubusercontent.com/u/19964402?v=4",
-    "bio": "Alejandra Quetzalli is the upcoming author (2023) of the book titled 'Designing Developer Documentation as a Product', which will be published by the Apress Publishing Company. Alejandra has been in tech for 9 years, working with SEO, Paid Search, Full-Stack development, UX, Developer Relations, and Technical Writing (Engineering Documentation). She's currently a core OSS contributor for Docs, DevRel, and Community Building at AsyncAPI Initiative. She's also a member of the AsyncAPI Technical Steering Committee (TSC).",
+    "bio": "Quetzalli Writes is an author of the book titled 'Docs-as-Ecosystem', which was published by the Apress Publishing Company. Quetzalli has been in tech for 9 years, working with SEO, Paid Search, Full-Stack development, UX, Developer Relations, and Technical Writing (Engineering Documentation). She's currently a core OSS contributor for Docs, DevRel, and Community Building at AsyncAPI Initiative. She's also a member of the AsyncAPI Technical Steering Committee (TSC).",
     "title": "DevRel & DevDocs @AsyncAPI",
-    "github": "alequetzalli",
-    "twitter": "QuetzalliAle",
-    "linkedin": "alejandra-quetzalli",
+    "github": "quetzalliwrites",
+    "twitter": "QuetzalliWrites",
+    "linkedin": "quetzalli-writes",
     "company": "Postman",
     "country": "🇲🇽",
     "contributions": [
@@ -209,7 +209,7 @@
     "twitter": "ivangsa",
     "bio": "Java Architect with a deep understanding of Java, Spring-Boot, Spring-Cloud technologies, specializing in Domain-Driven Design (DDD) and Event-Driven Architectures creating Software Easy to Understand. Building ZenWave 360º. ZenWave 360º is a set of tools built on the foundations of Domain Driven Design and API-First principles for Event-Driven Architectures, to help you create software easy to understand. https://www.zenwave360.io/",
     "linkedin": "ivangarciasainzaja",
-    "company": "SNGULAR",
+    "company": "IZERTIS",
     "title": "Java Architect. Speaker. Building ZenWave 360°.",  
     "img": "https://avatars.githubusercontent.com/u/1246876?v=4",
     "contributions": [
@@ -608,6 +608,82 @@
           "month": "June"
         },
         "link": "https://confengine.com/conferences/selenium-conf-2024/proposal/20021/unshackling-your-system-under-test-shift-left-testing-through-dependency-isolation"
+      }
+    ]
+  },
+  {
+    "name": "Manuel Ottlik",
+    "github": "manuelottlik",
+    "twitter": "",
+    "linkedin": "manuelottlik",
+    "country": "🇩🇪",
+    "bio": "Manuel is the Product Owner of the Global Integration Platform at HDI Global SE. He sold his first software at the age of thirteen and has been developing software ever since. After graduating, he joined the financial industry in API management and eventually moved to HDI Global SE to merge a service bus, API management and an event broker into an integration platform for the cloud division. In addition to his work at HDI Global SE, he is co-founder of a small company in the education software sector and freelance writer for heise.de and its magazines.",
+    "company": "HDI Global SE",
+    "title": "Product Owner Integration Platform & PBAC Platform",
+    "img": "https://avatars.githubusercontent.com/u/28919003?v=4",
+    "contributions": [
+      {
+        "type": "talk",
+        "title": "Event-Driven Architecture und REST-APIs: Es gibt keine Konkurrenz!",
+        "date": {
+          "year": 2023,
+          "month": "April"
+        },
+        "link": ""
+      },
+      {
+        "type": "talk",
+        "title": "Event-driven Architecture and REST-APIs: It's not a competition",
+        "date": {
+          "year": 2023,
+          "month": "May"
+        },
+        "link": ""
+      },
+      {
+        "type": "talk",
+        "title": "Event-driven Architecture and REST-APIs: It's not a competition",
+        "date": {
+          "year": 2023,
+          "month": "September"
+        },
+        "link": ""
+      },
+      {
+        "type": "talk",
+        "title": "Event-Driven Architecture und REST-APIs: Es gibt keine Konkurrenz!",
+        "date": {
+          "year": 2023,
+          "month": "October"
+        },
+        "link": ""
+      },
+      {
+        "type": "talk",
+        "title": "Event-driven Architecture and REST-APIs: It's not a competition",
+        "date": {
+          "year": 2023,
+          "month": "December"
+        },
+        "link": "https://drive.google.com/file/d/1KN-iuw0P4nOYNhnT15RQvgq5YqGy4ECC/view?usp=sharing"
+      },
+      {
+        "type": "talk",
+        "title": "Eine Registry, sie alle zu knechten: Schemata von Entitäten mit xRegistry für alle Integrationsprodukte zentralisieren",
+        "date": {
+          "year": 2024,
+          "month": "April"
+        },
+        "link": ""
+      },
+      {
+        "type": "article",
+        "title": "AsyncAPI - HDI Global SE Case Study",
+        "date": {
+          "year": 2024,
+          "month": "July"
+        },
+        "link": "https://www.asyncapi.com/casestudies/hdiglobal"
       }
     ]
   }
