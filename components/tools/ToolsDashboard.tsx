@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { createRef, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
+import AsyncAPIColorIcon from '@/components/icons/AsyncAPIColorIcon';
 import type { ToolsListData } from '@/types/components/tools/ToolDataType';
 
 import ToolsDataList from '../../config/tools.json';
@@ -9,6 +10,7 @@ import ArrowDown from '../icons/ArrowDown';
 import Cross from '../icons/Cross';
 import FilterIcon from '../icons/Filter';
 import SearchIcon from '../icons/Search';
+import Loader from '../Loader';
 import CategoryDropdown from './CategoryDropdown';
 import Filters from './Filters';
 import ToolsList from './ToolsList';
