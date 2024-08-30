@@ -436,7 +436,7 @@ For **automation** road described in section [Choosing the right road to Rome](#
 
 > You can open this document directly in AsyncAPI Studio by clicking [this](https://studio.asyncapi.com?url=https://gist.githubusercontent.com/derberg/4e419d6ff5870c7c3f5f443e8bd30535/raw/5e9b733b80a0209ba5520e5f41ab18c2a112e0a9/asyncapi-websocket-kraken.yml) link. Compare it also with the [original documentation](https://docs.kraken.com/websockets/).
 
-~~~yml
+~~~yaml
 asyncapi: 2.0.0
 
 info:
@@ -483,7 +483,6 @@ servers:
         }
       }
       ```
-      
 
 channels:
   /:
