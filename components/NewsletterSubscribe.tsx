@@ -1,10 +1,13 @@
 import { useState } from 'react';
 
+import IconCircularLoader from '@/components/icons/CircularLoader';
 import { ButtonType } from '@/types/components/buttons/ButtonPropsType';
+import { InputTypes } from '@/types/components/InputBoxPropsType';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
 import { useTranslation } from '../utils/i18n';
 import Button from './buttons/Button';
+import InputBox from './InputBox';
 import Loader from './Loader';
 import Heading from './typography/Heading';
 import Paragraph from './typography/Paragraph';
@@ -125,28 +128,22 @@ export default function NewsletterSubscribe({
         {subtitle}
       </Paragraph>
       {status === 'loading' ? (
-        <Loader dark={dark} />
+        <Loader loaderText={'Waiting for response...'} loaderIcon={<IconCircularLoader dark />} dark={dark} />
       ) : (
         <form className='flex flex-col gap-4 md:flex-row' onSubmit={handleSubmit}>
-          <input
-            type='text'
-            name='name'
+          <InputBox
+            inputType={InputTypes.TEXT}
+            inputName='name'
             placeholder={t('newsletterCTA.nameInput')}
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className='form-input block w-full rounded-md sm:text-sm sm:leading-5 md:mt-0 md:flex-1'
-            required
-            data-testid='NewsletterSubscribe-text-input'
+            inputValue={name}
+            setInput={setName}
           />
-          <input
-            type='email'
-            name='email'
+          <InputBox
+            inputType={InputTypes.EMAIL}
+            inputName='email'
             placeholder={t('newsletterCTA.emailInput')}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className='form-input mt-2 block w-full rounded-md sm:text-sm sm:leading-5 md:mt-0 md:flex-1'
-            required
-            data-testid='NewsletterSubscribe-email-input'
+            inputValue={email}
+            setInput={setEmail}
           />
           <Button
             type={ButtonType.SUBMIT}
