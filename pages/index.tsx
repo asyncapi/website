@@ -1,16 +1,13 @@
-import Head from '../components/Head';
-import { Redirect } from '../utils/redirect';
 import AsyncAPIColorIcon from '@/components/icons/AsyncAPIColorIcon';
 import Loader from '@/components/Loader';
 
+import Head from '../components/Head';
+import { Redirect } from '../utils/redirect';
 
 /**
  * @description This is the home page which is the first page that loads when the user visits the website.
  */
 export default function HomePage() {
-
-  const loader: string = 'img/loaders/loader.png'; // preloader image for the tools
-
   Redirect();
 
   return (
