@@ -6,15 +6,19 @@ const manualTools = require('../config/tools-manual.json')
 const fs = require('fs');
 const { resolve } = require('path');
 
+let toolsPath = resolve(__dirname, '../../config', 'tools.json')
+let tagsPath = resolve(__dirname, '../../config', 'all-tags.json')
+let automatedToolsPath = resolve(__dirname, '../config', 'tools-automated.json')
+
 const buildTools = async () => {
   try {
     let githubExtractData = await getData();
     let automatedTools = await convertTools(githubExtractData);
     fs.writeFileSync(
-      resolve(__dirname, '../config', 'tools-automated.json'),
+      automatedToolsPath,
       JSON.stringify(automatedTools, null, '  ')
     );
-    await combineTools(automatedTools, manualTools, resolve(__dirname, '../../config', 'tools.json'), resolve(__dirname, '../../config', 'all-tags.json'));
+    await combineTools(automatedTools, manualTools, toolsPath, tagsPath);
   } catch (err) {
     console.log(err);
     throw err
