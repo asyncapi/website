@@ -50,11 +50,12 @@ Thanks to the Bounty Program Participants AsyncAPI got:
 
 The Bounty Program gives AsyncAPI Maintainers possibility:
 
-- To announce a financial reward for GitHub issues that are currently in demand by the maintained project or the AsyncAPI Initiative in general, on which AsyncAPI Maintainers can either work and get rewarded themselves or delegate these issues to regular contributors who have more time and/or required expertise.
+- To announce a financial reward for GitHub issues that are currently in demand by the maintained project or the AsyncAPI Initiative as a whole, on which AsyncAPI Maintainers can either work and get rewarded themselves or delegate those issues to regular contributors who have more time and/or the necessary expertise.
 
 
 ### Benefits for Bounty Program Participants
-Usual benefits of the Bounty Program for its Participants who just start their career journey are:
+
+Typical benefits of the Bounty Program for its Participants who are in the early stages of their career are:
 
 - Development of a better approach to the evaluation of issues (it's fun reading messages from two months ago saying, '1-2 weeks left'.)
 
@@ -63,7 +64,7 @@ Usual benefits of the Bounty Program for its Participants who just start their c
 - Development of the possibility to showcase to the potential employer real-world work not obscured by an NDA.
 
 
-With all that said, we invite you to join a finally sure way to directly sponsor (and get rewarded for) FOSS development.
+With all that said, join a finally sure way to directly sponsor (and get rewarded for) FOSS development.
 
 Giggly thing as a finishing touch: [PR](https://github.com/asyncapi/website/pull/3111/files) for a bug due to which several lines were output incorrectly to the frontend.
 
