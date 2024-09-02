@@ -106,7 +106,7 @@ To get started as a Docs contributor:
 #### Tag me in your AsyncAPI Doc PRs
 Do you have a documentation contributor question, and you're wondering how to tag me into a GitHub discussion or PR? Never fear!
 
-Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/asyncapi/community/discussions/categories/docs) via my GitHub handle, [`/alequetzalli`](https://github.com/alequetzalli) 🐙.
+Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/asyncapi/community/discussions/categories/docs) via my GitHub handle, [`/alequetzalli`](https://github.com/quetzalliwrites) 🐙.
 
 #### Talk to me
 I want and need to listen 👂🏽 to all of your perspectives and ideas. Please don't be shy to express to me what you think needs to be documented first or what is missing. 📝 There's a lot of good work ahead, but **you** determine _our content roadmap_ because the OSS community needs should always come first.✨
