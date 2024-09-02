@@ -84,7 +84,7 @@ We are pleased to welcome [Manuel Ottlik](https://www.linkedin.com/in/manuelottl
   }
 ]} />
 
-If you want to join the program or learn more about our current ambassadors, please visit our A[syncAPI Ambassador Program Page](https://www.asyncapi.com/community/ambassadors).
+If you want to join the program or learn more about our current ambassadors, please visit our [AsyncAPI Ambassador Program Page](https://www.asyncapi.com/community/ambassadors).
 
 ## Coming in September
 - **AACoT'24 London** - [The London Edition will take place on September 18th and 19th](https://conference.asyncapi.com/venue/London). Be sure to get your tickets. See you there!!
