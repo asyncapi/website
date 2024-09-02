@@ -47,7 +47,7 @@ Additionally, we will soon announce the Call for Proposals for our Online Confer
 ## Spec x Tooling
 
 ### OpenAPI to AsyncAPI Converter
-We love seeing the impact of the [AsyncAPI Bounty Program](https://github.com/orgs/asyncapi/projects/36/?pane=info) and how it solves community needs. One recently completed project introduced an OpenAPI 3.0 to AsyncAPI 3.0 convertor. The converter enables the easy transition of OpenAPI 3.0 documents to AsyncAPI v3. Thanks to Mintu Gogoi's effort and contribution, as well as Jonas Lagoni, for reviewing, providing feedback, and providing guidance until the issue completion.
+We love seeing the impact of the [AsyncAPI Bounty Program](https://github.com/orgs/asyncapi/projects/36/?pane=info) and how it solves community needs. One recently completed project introduced an OpenAPI 3.0 to AsyncAPI 3.0 convertor. The converter enables the easy transition of OpenAPI 3.0 documents to AsyncAPI v3. Thanks to [Mintu Gogoi's](https://github.com/Gmin2) effort and contribution, as well as [Jonas Lagoni](https://github.com/jonaslagoni), for reviewing, providing feedback, and providing guidance until the issue completion.
 
 For more details about the converter, [please check the AsyncAPI converter readme](https://github.com/asyncapi/converter-js/blob/master/README.md#openapi-30-to-asyncapi-30-conversion).
 
