@@ -62,7 +62,9 @@ Be sure to visit the [AsyncAPI Developer Network portal](https://asyncapi-develo
 The donation for [Kotlin-AsyncAPI](https://github.com/asyncapi/kotlin-asyncapi) is complete, and the repository has successfully migrated under the AsyncAPI organization. Many thanks to [Lorenz Simon](https://github.com/lorenzsimon), and we are pleased to welcome him as a new AsyncAPI maintainer as well.
 
 ## AsyncAPI Mentorship Program
+The planning for the 3rd cohort of the AsyncAPI Mentorship Program is already underway. In this edition, we prioritize projects that promote maintainership, meaning project ideas should align with our goals and pave the way for contributors to evolve into maintainers.
 
+If you have an exciting project idea that should be part of the program, please share it in the [Mentorship Program 2024 discussion](https://github.com/orgs/asyncapi/discussions/1361). If you want to participate as a mentor, [please read more in the AsyncAPI Call for Mentors discussion](https://github.com/orgs/asyncapi/discussions/1350).
 
 ## Case Studies
 We're thrilled to announce the publication of our second case study. The HDI Global brand provides life and property/casualty insurance services in Germany and internationally. They serve individuals and corporate clients and have offered industrial insurance since 2016.
