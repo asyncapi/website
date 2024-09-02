@@ -61,6 +61,12 @@ Be sure to visit the [AsyncAPI Developer Network portal](https://asyncapi-develo
 ### Kotlin-AsyncAPI
 The donation for [Kotlin-AsyncAPI](https://github.com/asyncapi/kotlin-asyncapi) is complete, and the repository has successfully migrated under the AsyncAPI organization. Many thanks to [Lorenz Simon](https://github.com/lorenzsimon), and we are pleased to welcome him as a new AsyncAPI maintainer as well.
 
+### AsyncAPI Maintainers List
+
+Thanks to our bounty program and support from [Mateusz Szostok](https://github.com/mszostok) we're now maintaining the list of all AsyncAPI Maintainers in one place in automated way. Functionality is based on GitHub feature called `CODEOWNERS`. Each repository contains such file and it is the source of truth for us. New automation keeps an eye on these files and updates [MAINTAINERS.yaml](https://github.com/asyncapi/community/blob/master/MAINTAINERS.yaml). In such a large organization it is hard to manually follow all the changes in ownership of certain repositories.
+
+Thanks to the automation we also know that the current number of maintainers in AsyncAPI Initiative is **72**.
+
 ## AsyncAPI Mentorship Program
 The planning for the 3rd cohort of the AsyncAPI Mentorship Program is already underway. In this edition, we prioritize projects that promote maintainership, meaning project ideas should align with our goals and pave the way for contributors to evolve into maintainers.
 
