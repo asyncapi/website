@@ -42,7 +42,9 @@ As promised, we have some free community tickets for the conference; [please vis
 
 If you are unable to attend our London conference, we will also be heading to the Paris conference on December 5th. [Our Call for Proposals is still open](https://conference.asyncapi.com/venue/Paris), and we encourage everyone to submit a proposal and share their expertise with the community. 
 
-Additionally, we will soon announce the Call for Proposals for our Online Conference, scheduled for October 30th. Don't miss this opportunity to participate in and join us for this virtual event.
+
+Additionally, [the Call for Proposals for our Online Conference is open](https://conference.asyncapi.com/venue/Online). Don't miss this opportunity to participate in and join us for this virtual event. 
+The deadline for proposal submissions will be on the 20th of September.
 
 ## Spec x Tooling
 
