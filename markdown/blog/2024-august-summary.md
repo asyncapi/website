@@ -63,9 +63,10 @@ The donation for [Kotlin-AsyncAPI](https://github.com/asyncapi/kotlin-asyncapi) 
 
 ### AsyncAPI Maintainers List
 
-Thanks to our bounty program and support from [Mateusz Szostok](https://github.com/mszostok) we're now maintaining the list of all AsyncAPI Maintainers in one place in automated way. Functionality is based on GitHub feature called `CODEOWNERS`. Each repository contains such file and it is the source of truth for us. New automation keeps an eye on these files and updates [MAINTAINERS.yaml](https://github.com/asyncapi/community/blob/master/MAINTAINERS.yaml). In such a large organization it is hard to manually follow all the changes in ownership of certain repositories.
+Thanks to our bounty program and support from [Mateusz Szostok](https://github.com/mszostok), we're now maintaining the list of all AsyncAPI Maintainers in one place in an automated way. 
+The functionality is based on GitHub feature called `CODEOWNERS`. Each repository contains such a file and is the truth source for us. The new automation keeps an eye on these files and updates [MAINTAINERS.yaml](https://github.com/asyncapi/community/blob/master/MAINTAINERS.yaml). In such a large organization, it is hard to follow all the changes in ownership of certain repositories manually.
 
-Thanks to the automation we also know that the current number of maintainers in AsyncAPI Initiative is **72**.
+Thanks to the automation, we also know that the current number of maintainers in the AsyncAPI Initiative is **72**.
 
 ## AsyncAPI Mentorship Program
 The planning for the 3rd cohort of the AsyncAPI Mentorship Program is already underway. In this edition, we prioritize projects that promote maintainership, meaning project ideas should align with our goals and pave the way for contributors to evolve into maintainers.
