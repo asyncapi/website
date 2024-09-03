@@ -1,21 +1,21 @@
 ---
-title: 'Http Authentication(Bearer Token)'
+title: 'HTTP Authentication (Bearer Token)'
 weight: 80
 ---
 
-## Getting started with Bearer Token authentication
+## Getting Started with Bearer Token Authentication
 
-Bearer Token authentication is one of the most popular forms of authentication and is widely used because of its perceived security. This guide will walk through how to implement bearer token authentication in Glee.
+Bearer Token authentication is one of the most popular forms of authentication and is widely used due to its perceived security. This guide will walk you through how to implement bearer token authentication in Glee.
 
-A sample `asyncapi.yaml` for a server with security requirements and user password security scheme is shown below:
+Below is a sample `asyncapi.yaml` for a server with security requirements and a user password security scheme:
 
 ```yaml
-##server asyncAPI schema
+## Server AsyncAPI Schema
 asyncapi: 3.0.0
 info:
-  title: AsyncAPI IMDB server
+  title: AsyncAPI IMDB Server
   version: 1.0.0
-  description: This app is a dummy server that would stream the trending/upcoming anime.
+  description: This app is a dummy server that streams trending/upcoming anime.
 servers:
   trendingAnimeServer:
     host: 'localhost:8081'
@@ -37,7 +37,7 @@ components:
 A sample `asyncapi.yaml` for a client that implements some of the requirements of the server above:
 
 ```yaml
-##client asyncAPI schema
+## Client AsyncAPI Schema
 servers:
   trendingAnime:
     host: localhost:8081
@@ -61,49 +61,46 @@ components:
 
 ```
 
-The Client asyncapi.yaml file **does't need to implement all the security requirements in the server, it only needs to implement the ones that it uses like *http (bearer token)* here.**
+The Client `asyncapi.yaml` file **doesn't need to implement all the security requirements of the server; it only needs to implement the ones it uses, like *http (bearer token)* here.**
 
 ### Client Side
 
-Following the client `asyncapi.yaml` file above, create a file named `trendingAnime.ts` in the `auth` directory, since that is the server that has the security Property. 
+Following the client `asyncapi.yaml` file above, create a file named `trendingAnime.ts` in the `auth` directory, since that is the server that has the security property. 
 
 ```bash
 touch auth/trendingAnime.ts
 ```
 
-When using the `bearer` security scheme, it is important that you pass the parameters as follows:
+When using the `bearer` security scheme, pass the parameters as follows:
 
 ```js
-export async clientAuth({ parsedAsyncAPI, serverName }) {
+export async function clientAuth({ parsedAsyncAPI, serverName }) {
   return {
     token: process.env.TOKEN
   }
 }
 ```
 
-Glee will utilize the `token` for server authentication, employing it in the header with the format: Authorization: Bearer {token}.
+Glee will utilize the `token` for server authentication, employing it in the header with the format: `Authorization: Bearer \{token\}`.
 
-### Server side
+### Server Side
 
-From the server `asyncapi.yaml` file above, create a file named `trendingAnimeServer.ts` in the `auth` directory, since that is the server that has the security Property. 
+From the server `asyncapi.yaml` file above, create a file named `trendingAnimeServer.ts` in the `auth` directory, since that is the server that has the security property. 
 
 ```bash
 touch auth/trendingAnimeServer.ts
 ```
 
-On the server side, you can retrieve the values as follows
+On the server side, you can retrieve the values as follows:
 
 ```js
 
-export async serverAuth({ authProps, done }) {
+export async function serverAuth({ authProps, done }) {
   authProps.getToken()
-  // your authentication logic here...
-  done(true|false)
+  // Your authentication logic here...
+  done(true || false)
 }
 
 ```
 
-So, `getToken()` returns a string which contains the token that is sent from the client.
-
-
-
+So, `getToken()` returns a string containing the token sent from the client.
