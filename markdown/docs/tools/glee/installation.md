@@ -100,9 +100,7 @@ These scripts serve different development stages:
 
 #### Setting up `asyncapi.yaml` and Required Directories
 
-
 Craft an `asyncapi.yaml` file capable of receiving a "hello \{name\}" message via WebSocket (`ws`) protocol on the `hello` channel. Define the operation ID as `onHello`, indicating the function to be called, and set the payload type to string for publishing on that channel.
-
 
 ```yaml
 # AsyncAPI Specification for Hello, Glee!
