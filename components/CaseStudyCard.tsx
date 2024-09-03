@@ -2,6 +2,7 @@ import type { ICaseStudies } from '@/types/post';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 import Paragraph from './typography/Paragraph';
+import Link from 'next/link';
 
 interface ICaseStudyCardProps {
   studies?: ICaseStudies;
@@ -19,7 +20,7 @@ export default function CaseStudyCard({ studies = [] }: ICaseStudyCardProps) {
   return (
     <div className='flex flex-wrap pt-10 lg:grid lg:grid-cols-3 lg:gap-8 lg:text-center'>
       {studies.map((study, index) => (
-        <a key={index} href={`${study.id}`}>
+        <Link key={index} href={`${study.id}`}>
           <div
             className='max-w-sm overflow-hidden rounded-md border border-gray-200 bg-white p-4'
             data-testid='CaseStudyCard-main'
@@ -31,7 +32,7 @@ export default function CaseStudyCard({ studies = [] }: ICaseStudyCardProps) {
               {study.company.description}
             </Paragraph>
           </div>
-        </a>
+        </Link>
       ))}
     </div>
   );
