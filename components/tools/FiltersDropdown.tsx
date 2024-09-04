@@ -4,7 +4,7 @@ import type { Category, Language, Technology } from '@/types/components/tools/To
 
 type DataList = Language[] | Technology[] | Category[];
 
-interface FiltersDropdownProps {
+export interface FiltersDropdownProps {
   dataList?: DataList;
   checkedOptions?: string[];
   setCheckedOptions: React.Dispatch<React.SetStateAction<string[]>>;
