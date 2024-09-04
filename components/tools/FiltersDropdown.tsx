@@ -2,6 +2,8 @@ import { twMerge } from 'tailwind-merge';
 
 import type { Category, Language, Technology } from '@/types/components/tools/ToolDataType';
 
+import Checkbox from './Checkbox';
+
 type DataList = Language[] | Technology[] | Category[];
 
 interface FiltersDropdownProps {
@@ -25,7 +27,7 @@ export default function FiltersDropdown({
   setCheckedOptions,
   className = ''
 }: FiltersDropdownProps) {
-  const handleClickOption = (event: React.MouseEvent, option: string) => {
+  const handleClickOption = (option: string) => {
     const isChecked = checkedOptions.includes(option);
     const updatedOptions = isChecked ? checkedOptions.filter((item) => item !== option) : [...checkedOptions, option];
 
@@ -40,22 +42,7 @@ export default function FiltersDropdown({
       {dataList.map((data, index) => {
         const checked = checkedOptions.includes(data.name);
 
-        return (
-          <div
-            key={index}
-            className={twMerge(
-              `border border-secondary-600 text-secondary-600 p-1 pb-0 rounded-2xl flex gap-1 cursor-pointer items-start ${checked ? 'bg-secondary-600 text-white' : ''}`
-            )}
-            onClick={(event) => handleClickOption(event, data.name)}
-          >
-            {checked ? (
-              <img src='/img/illustrations/icons/CheckedIcon.svg' alt='checked' />
-            ) : (
-              <img src='/img/illustrations/icons/UncheckedIcon.svg' alt='unchecked' />
-            )}
-            <div className='-mt-px mb-px text-xs'>{data.name}</div>
-          </div>
-        );
+        return <Checkbox key={index} name={data.name} checked={checked} handleClickOption={handleClickOption} />;
       })}
     </div>
   );
