@@ -25,7 +25,7 @@ export default function FiltersDropdown({
   setCheckedOptions,
   className = ''
 }: FiltersDropdownProps) {
-  const handleClickOption = (event: React.MouseEvent, option: string) => {
+  const handleClickOption = (event: React.MouseEvent<HTMLDivElement, MouseEvent>, option: string) => {
     const isChecked = checkedOptions.includes(option);
     const updatedOptions = isChecked ? checkedOptions.filter((item) => item !== option) : [...checkedOptions, option];
 
