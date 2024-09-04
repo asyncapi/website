@@ -60,7 +60,12 @@ function generateEditLink(post: IPost) {
   if (isHrefToFile) last = '';
 
   return (
-    <a target='_blank' rel='noopener noreferrer' href={`${target?.href}/${last}`} className='ml-1 underline'>
+    <a
+      target='_blank'
+      rel='noopener noreferrer'
+      href={`${target?.href}/${last.slice(0, -1)}`}
+      className='ml-1 underline'
+    >
       {EditPage}
     </a>
   );
