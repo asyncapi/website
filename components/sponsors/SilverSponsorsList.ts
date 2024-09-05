@@ -35,5 +35,19 @@ export const Silversponsors: SponsorType[] = [
     altText: 'SmartBear',
     imageSrc: '/img/sponsors/smartbear_logo.png',
     imageClass: 'inline-block sm:h-9'
+  },
+  {
+    name: 'HDI',
+    website: 'https://www.hdi.global/',
+    altText: 'HDI',
+    imageSrc: '/img/sponsors/hdi_logo.png',
+    imageClass: 'inline-block sm:h-9'
+  },
+  {
+    name: 'Route4Me',
+    website: 'https://route4me.com',
+    altText: 'Best Route Planning and Route Optimization Software',
+    imageSrc: '/img/sponsors/route4me_logo.png',
+    imageClass: 'inline-block sm:h-9'
   }
 ];
