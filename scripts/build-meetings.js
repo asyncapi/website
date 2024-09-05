@@ -59,6 +59,7 @@ async function buildMeetings(writePath) {
   }
 }
 
+/* istanbul ignore next */
 if (require.main === module) {
   buildMeetings(resolve(__dirname, '../config', 'meetings.json'));
 }
