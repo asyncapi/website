@@ -43,7 +43,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
   return (
     <div className={`rounded-lg ${className}`}>
       <article className='h-full rounded-lg'>
-        <div>
+        <Link href={post.slug}>
           <span
             className={
               'flex h-full cursor-pointer flex-col divide-y divide-gray-200 overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg md:max-w-164 md:flex-row'
@@ -66,7 +66,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
                     {post.type}
                   </span>
                 </Paragraph>
-                <Link href={post.slug}>
+                <div>
                   <span className='block' data-testid='FeaturedBlog-title'>
                     <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.smSemibold} className='mt-2'>
                       {post.title}
@@ -75,7 +75,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
                       <TextTruncate element='span' line={2} text={post.excerpt} />
                     </Paragraph>
                   </span>
-                </Link>
+                </div>
               </div>
               <div className='mt-6 flex items-center'>
                 <div className='relative shrink-0' data-testid='FeaturedBlog-Authorimg'>
@@ -117,7 +117,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
               </div>
             </div>
           </span>
-        </div>
+        </Link>
       </article>
     </div>
   );
