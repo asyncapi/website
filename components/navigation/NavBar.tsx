@@ -1,17 +1,18 @@
 import Link from 'next/link';
 import type { NextRouter } from 'next/router';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 
-import { defaultLanguage, languages, useTranslation } from '../../utils/i18n';
-import i18nPaths from '../../utils/i18nPaths';
+import { defaultLanguage, i18nPaths, languages } from '@/utils/i18n';
+
 import { SearchButton } from '../AlgoliaSearch';
-import AsyncAPILogo from '../AsyncAPILogo';
 import GithubButton from '../buttons/GithubButton';
 import { isMobileDevice } from '../helpers/is-mobile';
 import { useOutsideClick } from '../helpers/use-outside-click';
 import IconLoupe from '../icons/Loupe';
 import LanguageSelect from '../languageSelector/LanguageSelect';
+import AsyncAPILogo from '../logos/AsyncAPILogo';
 import CommunityPanel from './CommunityPanel';
 import LearningPanel from './LearningPanel';
 import MobileNavMenu from './MobileNavMenu';
