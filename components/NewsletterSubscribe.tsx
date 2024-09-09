@@ -1,3 +1,4 @@
+import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 
 import IconCircularLoader from '@/components/icons/CircularLoader';
@@ -5,7 +6,6 @@ import { ButtonType } from '@/types/components/buttons/ButtonPropsType';
 import { InputTypes } from '@/types/components/InputBoxPropsType';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
-import { useTranslation } from '../utils/i18n';
 import Button from './buttons/Button';
 import InputBox from './InputBox';
 import Loader from './Loader';
