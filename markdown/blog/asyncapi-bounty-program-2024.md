@@ -1,6 +1,6 @@
 ---
 title: 'AsyncAPI Bounty Program Summary - 2024'
-date: 2024-09-05T00:00:00+00:00
+date: 2024-09-12T00:00:00+00:00
 type: Community
 tags:
   - Community
@@ -43,7 +43,7 @@ Thanks to the Bounty Program Participants AsyncAPI got:
 
 - Not just any but AMAZING [cheat sheet poster](https://github.com/asyncapi/website/issues/425#issuecomment-2121214509) ([Aishat Muibudeen](https://github.com/Mayaleeeee)): It is not only available [for download](https://asyncapi.com/cheatsheet), but is also used at AsyncAPI conferences.
 
-![](/img/posts/bounty-program/362263381-acc75432-0f58-4c96-a65f-f172d34ee4ec.png)
+![](/img/posts/bounty-program/362263381-acc75432-0f58-4c96-a65f-f172d34ee4ec.jpg)
 
 
 ### Benefits for AsyncAPI Maintainers
