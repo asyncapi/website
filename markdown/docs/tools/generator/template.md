@@ -65,7 +65,7 @@ Template Name | Description | Source code
 `@asyncapi/go-watermill-template` | Generates Go client using Watermill | [GO watermill template](https://github.com/asyncapi/go-watermill-template)
 `@asyncapi/dotnet-nats-template` | Generates .NET C# client using NATS | [.NET C# NATS template](https://github.com/asyncapi/dotnet-nats-template)
 
-<!-- TEMPLATES-LIST:END  -->
+<!-- TEMPLATES-LIST:END -->
 
 > Some of these templates are maintained by various third-party organizations. The README file usually contains this information and more, such as configuration options the user can pass to the template, usage, technical requirements, etc.
 
