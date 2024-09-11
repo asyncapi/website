@@ -83,6 +83,6 @@ Looking ahead to December, we’ll have some free passes for the Paris event too
 
 Of course, we’ll have a booth again. This time, it won’t just be AsyncAPI and OpenAPI folks—our friends from JSON Schema will join too.
 
-Since it’s the fourth time we’ll be hosting this booth, I have a feeling it’s time to take things up a notch. We need to be more organized, include more community members, and maybe even secure some dedicated funding. A rebranding could be in order, too—perhaps renaming the booth to `Open API Standards`. We could also broaden the scope to include experts from the open-source tooling ecosystem that build on top of these standards and operate under open governance.
+Since it’s the fourth time we’ll be hosting this booth, I have a feeling it’s time to take things up a notch. We need to be more organized, include more community members, and maybe even secure some dedicated funding. A rebranding could be in order, too—perhaps renaming the booth to `Open API Standards`. We could also broaden the scope to include experts from the open-source tooling ecosystem that builds on top of these standards and operates under open governance.
 
 Enjoy!
