@@ -59,16 +59,6 @@ describe('rssFeed', () => {
     expect(itemTitles[5]).toContain('Non-Featured Post 2');
   });
 
-  it('should add enclosure for posts with cover image', () => {
-    rssFeed(type, title, desc, outputPath);
-
-    const filePath = path.join(__dirname, '..', 'public', outputPath);
-    const fileContent = fs.readFileSync(filePath, 'utf8');
-
-    expect(fileContent).toContain('<enclosure url="https://www.asyncapi.com/img/test-cover.jpg"');
-    expect(fileContent).toContain('type="image/jpeg"');
-  });
-
   it('should set correct enclosure type based on image extension', () => {
     rssFeed(type, title, desc, outputPath);
 
@@ -91,5 +81,5 @@ describe('rssFeed', () => {
       expect(err.message).toMatch(/ENOENT|EACCES/);
     }
   });
-  
+
 });
