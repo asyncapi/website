@@ -62,7 +62,7 @@ asyncapi generate fromTemplate ${specPath} ${template} ${params}`;
    * @returns {string} The Docker command.
    */
   function getDockerCode(): string {
-    return `docker run --rm -it -v \${PWD}/example:/app/example -v \${PWD}/output:/app/output \\
+    return `docker run --rm -it --user=root -v \${PWD}/example:/app/example -v \${PWD}/output:/app/output \\
 asyncapi/cli generate fromTemplate ${specPath} ${template} ${params}`;
   }
 
