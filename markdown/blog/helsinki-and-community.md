@@ -1,16 +1,17 @@
 ---
 title: "AsyncAPI Conference Helsinki and the API Specs and Standards Concept"
-date: 2024-09-25T06:00:00+01:00
+date: 2024-09-12T06:00:00+01:00
 type: Communication
 tags:
   - Conference
-cover: /img/posts/2024-blog-banner/blog-banner-april.webp
+cover: /img/posts/helsinki-and-community/booth-top.webp
 authors:
   - name: Lukasz Gornicki
     photo: /img/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Executive Director
 excerpt: 'Conferences are great. They bring communities together and give people a platform to share their experiences. But is that enough?'
+featured: true
 ---
 
 ## How It All Started
@@ -58,12 +59,6 @@ I then presented an overview of AsyncAPI use cases, demonstrating how different 
 The talks were engaging, and the questions that followed were great. But the best conversations, the most technical and insightful ones, happened at the `API Specs and Standards` booth. We teamed up with friends from the OpenAPI Initiative, and together we had deep, meaningful discussions.
 
 <Figure
-  src="/img/posts/helsinki-and-community/booth-top.webp"
-  caption="OpenAPI and AsyncAPI experts side by side."
-  className="text-center"
-/>
-
-<Figure
   src="/img/posts/helsinki-and-community/booth-front.webp"
   caption="OpenAPI and AsyncAPI experts side by side. From left: Lukasz, Erik, Frank, Hugo, and Jonas."
   className="text-center"
@@ -90,3 +85,5 @@ Of course, we’ll have a booth again. This time, it won’t just be AsyncAPI an
 Since it’s the fourth time we’ll be hosting this booth, I have a feeling it’s time to take things up a notch. We need to be more organized, include more community members, and maybe even secure some dedicated funding. A rebranding could be in order, too—perhaps renaming the booth to `Open API Standards`. We could also broaden the scope to include experts from the open-source tooling ecosystem that build on top of these standards and operate under open governance.
 
 Enjoy!
+
+> Photo by <a href="https://unsplash.com/@hannahbusing?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Hannah Busing</a> on <a href="https://unsplash.com/photos/Zyx1bK9mqmA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
