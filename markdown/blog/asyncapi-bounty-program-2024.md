@@ -48,7 +48,7 @@ Thanks to the Bounty Program Participants, AsyncAPI got:
 
 ### Benefits for AsyncAPI Maintainers
 
-The Bounty Program gives AsyncAPI Maintainers possibility:
+The Bounty Program gives AsyncAPI Maintainers the possibility:
 
 - To announce a financial reward for GitHub issues that are currently in demand by the maintained project or the AsyncAPI Initiative as a whole, on which AsyncAPI Maintainers can either work and get rewarded themselves or delegate those issues to regular contributors who have more time and/or the necessary expertise.
 
