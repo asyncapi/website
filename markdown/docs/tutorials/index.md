@@ -22,5 +22,5 @@ To get started as a Docs contributor:
 ### Docs contributor questions
 Do you have a documentation contributor question and you're wondering how to tag me into a GitHub discussion or PR? Never fear!
 
-Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/asyncapi/community/discussions/categories/docs) via my GitHub handle, [`alequetzalli`](https://github.com/alequetzalli) 🐙.
+Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/asyncapi/community/discussions/categories/docs) via my GitHub handle, [`alequetzalli`](https://github.com/quetzalliwrites) 🐙.
 </Remember>

@@ -169,6 +169,6 @@ Huge applause to:
 - [Maciej Urbanczyk](https://github.com/magicmatatjahu) for detailed review
 - [Akshat Nema](https://twitter.com/AksNema) for implementation. Akshat demonstrated a lot of patience here. As an individual contributor, he waited for the merge for quite some time. There was a long discussion, many parties involved. Many contributors lost interest in such long-running PRs. Not Akshat! :muscle:
 
-Anyway, I recommend you follow [Alejandra](https://twitter.com/QuetzalliAle) and her [regular docs-related updates](https://gist.github.com/alequetzalli).
+Anyway, I recommend you follow [Alejandra](https://twitter.com/quetzalliwrites) and her [regular docs-related updates](https://gist.github.com/quetzalliwrites).
 
 > Photo by <a href="https://unsplash.com/@mitchel3uo">Mitchell Luo</a> on <a href="https://unsplash.com/photos/H3htK85wwnU">Unsplash</a>
