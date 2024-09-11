@@ -16,17 +16,18 @@ featured: true
 
 ## How It All Started
 
-After three years of hosting online conferences (2020-2022), the AsyncAPI community felt it was time for something different—an in-person event. We wanted to meet people face-to-face, to confirm that behind the virtual interactions were real humans, not bots. Humans we could have meaningful conversations with!
+After three years of hosting online conferences (2020-2022), the AsyncAPI community felt it was time for something different— an in-person event. We wanted to meet people face-to-face, to confirm that behind the virtual interactions were real humans, the ones you could have meaningful conversations with, not bots!
 
 In 2023, we organized multiple events under the brand `AsyncAPI Conf on Tour`. One of them took place at [APIDays Paris](https://www.apidays.global/paris2023/), made possible by the amazing folks behind [APIDays](https://www.apidays.global/), who share our belief in the future of strong API specifications and standards.
 
-It was a fantastic opportunity, but I had one major concern—how do we find our community members in an event with thousands of attendees? How do we have meaningful conversations? And how do we engage with people who don’t yet know about AsyncAPI? As you probably know, conference talks end, and people scatter. It’s easy to lose them in the crowd.
+It was a fantastic opportunity, but we had one major concern—how do we find our community members in an event with thousands of attendees? How do we have meaningful conversations? And how do we engage with people who don’t know about AsyncAPI yet? 
+As you probably know, conference talks end, and people scatter. It’s easy to lose them in the crowd.
 
 One of the best places to meet people at conferences is at the sponsor booths. But as an open-source, community-driven project, we don’t have the budget for that kind of setup.
 
 Once again, [APIDays](https://www.apidays.global/) came to the rescue and offered us a booth.
 
-We decided to take it one step further—not just a booth for AsyncAPI, but a shared space for other open-source communities. At Paris 2023, we organized the first `API Specs & Standards` booth, bringing together experts from AsyncAPI, OpenAPI, and JSON Schema. We created a vendor-neutral, safe space for knowledge exchange, where experts from different companies shared their expertise without pushing for their products.
+We decided to take it one step further—not just a booth for AsyncAPI, but a shared space for other open-source communities. At Paris 2023, we organized the first `API Specs & Standards` booth, bringing together AsyncAPI, OpenAPI, and JSON Schema experts. We created a vendor-neutral, safe space for knowledge exchange, where experts from different companies shared their expertise without pushing for their products.
 
 ## AsyncAPI Conf on Tour at APIDays Helsinki 2024
 
