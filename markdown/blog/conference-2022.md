@@ -97,8 +97,8 @@ Special thanks to Restream for supporting us with their amazing product for medi
   }, 
   {
     name: 'Alejandra Quetzalli',
-    avatar: 'https://avatars.githubusercontent.com/quetzalliwrites',
-    link: 'https://github.com/quetzalliwrites'
+    avatar: 'https://avatars.githubusercontent.com/alequetzalli',
+    link: 'https://github.com/alequetzalli'
   },
   {
     name: 'Azeez Elegbede',
