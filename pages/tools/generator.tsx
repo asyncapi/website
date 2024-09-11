@@ -32,7 +32,7 @@ function renderButtons(): JSX.Element {
       <Button
         text='View Docs'
         href='/docs/tools/generator'
-        className='ml-2 mt-2 block w-full sm:w-auto md:mt-0 md:inline-block'
+        className='mt-2 block w-full sm:ml-0 sm:w-auto md:ml-2 md:mt-0 md:inline-block'
       />
     </div>
   );
