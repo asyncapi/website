@@ -31,7 +31,7 @@ During one year of existence of the [AsyncAPI Bounty Program](https://github.com
 
 
 ### Benefits for AsyncAPI GitHub Organization
-Thanks to the Bounty Program Participants AsyncAPI got:
+Thanks to the Bounty Program Participants, AsyncAPI got:
 
 - [Automation in Technical Steering Committee voting process](https://github.com/orgs/asyncapi/projects/36/views/4?sliceBy%5BcolumnId%5D=78904519&sliceBy%5Bvalue%5D=community%231093&filterQuery=) ([Aayush Saini](https://github.com/AayushSaini101)): New automation and the [process around voting](https://github.com/asyncapi/community/blob/master/voting.md) have been introduced, as well as [transparent summaries](https://github.com/asyncapi/community/blob/master/TSC_VOTING_OVERVIEW.md) of each voting activity.
 
