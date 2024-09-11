@@ -1,4 +1,4 @@
-const rssFeed = require('./build-rss');
+const { rssFeed } = require('./build-rss');
 const buildPostList = require('./build-post-list');
 const buildCaseStudiesList = require('./casestudies');
 const buildAdoptersList = require('./adopters')

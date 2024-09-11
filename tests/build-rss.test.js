@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const rssFeed = require('../scripts/build-rss');
+const { rssFeed } = require('../scripts/build-rss');
 const { mockRssData, title, type, desc, outputPath } = require('./fixtures/rssData');
 
 jest.mock('../config/posts.json', () => mockRssData, { virtual: true });
