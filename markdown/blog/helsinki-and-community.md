@@ -57,7 +57,7 @@ I then presented an overview of AsyncAPI use cases, demonstrating how different 
   className="text-center"
 />
 
-The talks were engaging, and the questions that followed were great. But the best conversations, the most technical and insightful ones, happened at the `API Specs and Standards` booth. We teamed up with friends from the OpenAPI Initiative, and together we had deep, meaningful discussions.
+The talks were engaging, and the questions that followed were great. But the best, most technical, and insightful conversations happened at the `API Specs and Standards` booth. We teamed up with friends from the OpenAPI Initiative and had deep, meaningful discussions.
 
 <Figure
   src="/img/posts/helsinki-and-community/booth-front.webp"
