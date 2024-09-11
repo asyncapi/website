@@ -21,7 +21,6 @@ module.exports = function rssFeed(type, title, desc, outputPath) {
       .sort((i1, i2) => {
         const i1Date = new Date(i1.date)
         const i2Date = new Date(i2.date)
-
         if (i1.featured && !i2.featured) return -1
         if (!i1.featured && i2.featured) return 1
         return i2Date - i1Date

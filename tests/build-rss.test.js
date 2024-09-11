@@ -31,18 +31,32 @@ describe('rssFeed', () => {
     expect(fileContent).toContain('<title>Test Blog RSS</title>');
   });
 
-  it('should sort posts by date and featured status', () => {
+  it('should prioritize featured posts over non-featured ones', () => {
     rssFeed(type, title, desc, outputPath);
-
+  
     const filePath = path.join(__dirname, '..', 'public', outputPath);
     const fileContent = fs.readFileSync(filePath, 'utf8');
-
+  
     const itemTitles = fileContent.match(/<title>(.*?)<\/title>/g);
+    
     expect(itemTitles[1]).toContain('Test Post 1');
-    expect(itemTitles[2]).toContain('Test Post 2');
-    expect(itemTitles[3]).toContain('PNG Post');
-    expect(itemTitles[4]).toContain('SVG Post');
-    expect(itemTitles[5]).toContain('WebP Post');
+    expect(itemTitles[2]).toContain('Another Featured Post');
+    expect(itemTitles[3]).toContain('Non-Featured Post 1');
+  });
+
+  it('should sort posts by date in descending order', () => {
+    rssFeed(type, title, desc, outputPath);
+  
+    const filePath = path.join(__dirname, '..', 'public', outputPath);
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+  
+    const itemTitles = fileContent.match(/<title>(.*?)<\/title>/g);
+    
+    expect(itemTitles[1]).toContain('Test Post 1');
+    expect(itemTitles[2]).toContain('Another Featured Post');
+    expect(itemTitles[3]).toContain('Non-Featured Post 1');
+    expect(itemTitles[4]).toContain('Non-Featured Post 3');
+    expect(itemTitles[5]).toContain('Non-Featured Post 2');
   });
 
   it('should add enclosure for posts with cover image', () => {
@@ -77,5 +91,5 @@ describe('rssFeed', () => {
       expect(err.message).toMatch(/ENOENT|EACCES/);
     }
   });
-
+  
 });
