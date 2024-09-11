@@ -66,6 +66,6 @@ Typical benefits of the Bounty Program for its Participants who are in the early
 
 With all that said, join a finally sure way to directly sponsor (and get rewarded for) FOSS development.
 
-Giggly thing as a finishing touch: [PR](https://github.com/asyncapi/website/pull/3111/files) for a bug due to which several lines were output incorrectly to the frontend.
+Giggly thing as a finishing touch: [PR](https://github.com/asyncapi/website/pull/3111/files) for a bug due to which several lines were output incorrectly to the front end.
 
 Co-authored-by: [Lukasz Gornicki](https://github.com/derberg)
