@@ -4,6 +4,8 @@ import React from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
+import { getStaticPaths, makeStaticProps } from '@/utils/getStatic';
+import { useTranslation } from '@/utils/i18n';
 
 import Button from '../../../components/buttons/Button';
 import GithubButton from '../../../components/buttons/GithubButton';
@@ -11,7 +13,10 @@ import CodeBlock from '../../../components/editor/CodeBlock';
 import GenericLayout from '../../../components/layout/GenericLayout';
 import Heading from '../../../components/typography/Heading';
 import Paragraph from '../../../components/typography/Paragraph';
-import { getAllLanguageSlugs, getLanguage, useTranslation } from '../../../utils/i18n';
+
+const getStaticProps = makeStaticProps(['tools', 'common']);
+
+export { getStaticPaths, getStaticProps };
 
 interface Feature {
   name: string;
@@ -80,6 +85,7 @@ export default function CliPage() {
     return (
       <div className='mt-8'>
         <GithubButton
+          text='View on Github'
           className='mt-2 block w-full sm:w-auto md:mt-0 md:inline-block'
           href='https://www.github.com/asyncapi/cli'
         />
@@ -234,32 +240,4 @@ export default function CliPage() {
       </div>
     </GenericLayout>
   );
-}
-
-/**
- * @description Get the language for the CLI page.
- * @returns { paths: { params: { lang: string } }[]; fallback: boolean }
- */
-export async function getStaticPaths() {
-  const paths = getAllLanguageSlugs();
-
-  return {
-    paths,
-    fallback: false
-  };
-}
-
-/**
- * @description Get the language for the CLI page.
- * @param { params: { lang: string } }
- * @returns { props: { language: string } }
- */
-export async function getStaticProps({ params }: any) {
-  const language = getLanguage(params.lang);
-
-  return {
-    props: {
-      language
-    }
-  };
 }

@@ -1,5 +1,7 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
+import i18nextConfig from '../next-i18next.config';
+
 class MyDocument extends Document {
   static async getInitialProps(ctx: any) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -8,8 +10,11 @@ class MyDocument extends Document {
   }
 
   render() {
+    // eslint-disable-next-line no-underscore-dangle
+    const currentLocale = this.props.__NEXT_DATA__.query.locale || i18nextConfig.i18n.defaultLocale;
+
     return (
-      <Html lang='en'>
+      <Html lang={currentLocale as string}>
         <Head>
           {/* Load Work Sans font */}
           <link rel='preconnect' href='https://fonts.googleapis.com' />
