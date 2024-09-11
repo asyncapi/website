@@ -49,7 +49,7 @@ Jonas followed with a detailed overview of the AsyncAPI tooling ecosystem, showc
   className="text-center"
 />
 
-I then presented an overview of AsyncAPI use cases, demonstrating how different companies are using AsyncAPI in production, all based on real data we’ve gathered over the years. You can explore all of this in our [AsyncAPI case studies](/casestudies).
+I then presented an overview of AsyncAPI use cases, demonstrating how different companies use AsyncAPI in production, all based on real data we’ve gathered over the years. You can explore all of this in our [AsyncAPI case studies](/casestudies).
 
 <Figure
   src="/img/posts/helsinki-and-community/lukasz.webp"
