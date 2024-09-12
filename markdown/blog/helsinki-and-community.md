@@ -1,6 +1,6 @@
 ---
 title: "AsyncAPI Conference Helsinki and the API Specs and Standards Concept"
-date: 2024-09-12T06:00:00+01:00
+date: 2024-09-13T06:00:00+01:00
 type: Communication
 tags:
   - Conference
