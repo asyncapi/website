@@ -1,4 +1,5 @@
-import { TwitterTimelineEmbed } from 'react-twitter-embed';
+import dynamic from 'next/dynamic';
+import { useEffect, useState } from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
@@ -15,6 +16,17 @@ import NewsroomYoutube from './NewsroomYoutube';
  * @description This component displays the latest updates, blog posts, news, and videos.
  */
 export default function Newsroom() {
+  const TwitterTimelineEmbed = dynamic(
+    () => import('react-twitter-embed').then((mod) => mod.TwitterTimelineEmbed),
+    { ssr: false } // Disable server-side rendering for this component
+  );
+
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <>
       <div className='mt-12 text-center' data-testid='Newsroom-main'>
@@ -78,7 +90,9 @@ export default function Newsroom() {
           </div>
           <div className='w-full px-2 md:w-1/2 md:pl-4 md:pr-0'>
             <div className='mx-auto mt-8 w-full rounded-xl shadow-md md:mt-0' data-testid='Newsroom-Twitter'>
-              <TwitterTimelineEmbed sourceType='profile' screenName='AsyncAPISpec' options={{ tweetLimit: '2' }} />
+              {isClient && (
+                <TwitterTimelineEmbed sourceType='profile' screenName='AsyncAPISpec' options={{ tweetLimit: 2 }} />
+              )}
             </div>
           </div>
         </div>
