@@ -60,8 +60,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "${{ steps.nodeversion.outputs.version }}"
-      - if: steps.packagejson.outputs.exists == 'true'
-        name: Install dependencies
+
+      - name: Install dependencies
         run: npm ci
       - if: steps.packagejson.outputs.exists == 'true'
         name: Test
@@ -81,5 +81,6 @@ jobs:
           fail_ci_if_error: true
           files: ./coverage/lcov.info
           name: codecov-umbrella
+          flags: unittests
           token: ${{ secrets.CODECOV_TOKEN }}
           verbose: true
