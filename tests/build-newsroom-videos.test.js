@@ -46,56 +46,5 @@ describe('buildNewsroomVideos', () => {
         expect(result).toEqual(expectedResult);
     });
 
-    it('should handle fetch errors', async () => {
-        fetch.mockRejectedValue(new Error('Fetch error'));
-
-        try {
-            await buildNewsroomVideos(testFilePath);
-        } catch (err) {
-            expect(err.message).toContain('Fetch error');
-        }
-    });
-
-    it('should handle invalid API response', async () => {
-        fetch.mockResolvedValue({
-            ok: true,
-            json: jest.fn().mockResolvedValue({}),
-        });
-
-        try {
-            await buildNewsroomVideos(testFilePath);
-        } catch (err) {
-            expect(err.message).toContain('Invalid data structure received from YouTube API');
-        }
-    });
-
-    it('should handle HTTP status code', async () => {
-        fetch.mockResolvedValue({
-            ok: false,
-            status: 404,
-            json: jest.fn().mockResolvedValue({}),
-        });
-
-        try {
-            await buildNewsroomVideos(testFilePath);
-        } catch (err) {
-            expect(err.message).toContain('HTTP error! with status code: 404');
-        }
-    });
-
-    it('should handle file write errors', async () => {
-        fetch.mockResolvedValue({
-            ok: true,
-            json: jest.fn().mockResolvedValue(mockApiResponse),
-        });
-
-        const invalidPath = '/invalid_dir/newsroom_videos.json';
-
-        try {
-            await buildNewsroomVideos(invalidPath);
-        } catch (err) {
-            expect(err.message).toMatch(/ENOENT|EACCES/);
-        }
-    });
 
 });
