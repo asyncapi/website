@@ -75,7 +75,7 @@ jobs:
         run: npm run generate:assets --if-present
 
       - if: steps.packagejson.outputs.exists == 'true'
-        name: Upload coverage to Codecov
+        name: Upload Coverage to Codecov
         uses: codecov/codecov-action@e28ff129e5465c2c0dcc6f003fc735cb6ae0c673
         with:
           fail_ci_if_error: true
