@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: AsyncAPI Community Manager
 excerpt: In 2023, we hosted our very first in-person conference edition. Find out how it all went down!
-featured: true
 ---
 
 For three consecutive years, we have hosted online conferences, and in 2023, we decided to take it up a notch and move to in-person events.

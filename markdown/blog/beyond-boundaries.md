@@ -12,8 +12,7 @@ authors:
   - name: Azeez Elegbede
     photo: /img/avatars/ace.webp
     link: https://twitter.com/_acebuild
-    byline: AsyncAPI Preacher
-featured: true    
+    byline: AsyncAPI Preacher 
 ---
 
 In 2022 we piloted our innovative mentorship program that focuses on open-source software(OSS). We envisioned a platform where aspiring developers could learn, grow, and contribute to exciting projects while receiving guidance from experienced mentors.
