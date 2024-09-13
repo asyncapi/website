@@ -22,7 +22,11 @@ describe('rssFeed', () => {
   });
 
   it('should generate RSS feed and write to file', () => {
-    rssFeed(type, title, desc, outputPath);
+    try {
+      rssFeed(type, title, desc, outputPath);
+    } catch (err) {
+      throw new Error('Error encountered during test execution:', err)
+    }
 
     const filePath = path.join(__dirname, '..', 'public', outputPath);
     expect(fs.existsSync(filePath)).toBe(true);
@@ -32,26 +36,34 @@ describe('rssFeed', () => {
   });
 
   it('should prioritize featured posts over non-featured ones', () => {
-    rssFeed(type, title, desc, outputPath);
-  
+    try {
+      rssFeed(type, title, desc, outputPath);
+    } catch (err) {
+      throw new Error('Error encountered during test execution:', err)
+    }
+
     const filePath = path.join(__dirname, '..', 'public', outputPath);
     const fileContent = fs.readFileSync(filePath, 'utf8');
-  
+
     const itemTitles = fileContent.match(/<title>(.*?)<\/title>/g);
-    
+
     expect(itemTitles[1]).toContain('Test Post 1');
     expect(itemTitles[2]).toContain('Another Featured Post');
     expect(itemTitles[3]).toContain('Non-Featured Post 1');
   });
 
   it('should sort posts by date in descending order', () => {
-    rssFeed(type, title, desc, outputPath);
-  
+    try {
+      rssFeed(type, title, desc, outputPath);
+    } catch (err) {
+      throw new Error('Error encountered during test execution:', err)
+    }
+
     const filePath = path.join(__dirname, '..', 'public', outputPath);
     const fileContent = fs.readFileSync(filePath, 'utf8');
-  
+
     const itemTitles = fileContent.match(/<title>(.*?)<\/title>/g);
-    
+
     expect(itemTitles[1]).toContain('Test Post 1');
     expect(itemTitles[2]).toContain('Another Featured Post');
     expect(itemTitles[3]).toContain('Non-Featured Post 1');
@@ -60,7 +72,11 @@ describe('rssFeed', () => {
   });
 
   it('should set correct enclosure type based on image extension', () => {
-    rssFeed(type, title, desc, outputPath);
+    try {
+      rssFeed(type, title, desc, outputPath);
+    } catch (err) {
+      throw new Error('Error encountered during test execution:', err)
+    }
 
     const filePath = path.join(__dirname, '..', 'public', outputPath);
     const fileContent = fs.readFileSync(filePath, 'utf8');
@@ -75,9 +91,9 @@ describe('rssFeed', () => {
 
   it('should throw error when write operation fails', () => {
     const outputPath = "invalid/path"
-    try{
+    try {
       rssFeed(type, title, desc, outputPath)
-    }catch(err){
+    } catch (err) {
       expect(err.message).toMatch(/ENOENT|EACCES/);
     }
   });
