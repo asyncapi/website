@@ -610,5 +610,121 @@
         "link": "https://confengine.com/conferences/selenium-conf-2024/proposal/20021/unshackling-your-system-under-test-shift-left-testing-through-dependency-isolation"
       }
     ]
+  },
+  {
+    "name": "Manuel Ottlik",
+    "github": "manuelottlik",
+    "twitter": "",
+    "linkedin": "manuelottlik",
+    "country": "🇩🇪",
+    "bio": "Manuel is the Product Owner of the Global Integration Platform at HDI Global SE. He sold his first software at the age of thirteen and has been developing software ever since. After graduating, he joined the financial industry in API management and eventually moved to HDI Global SE to merge a service bus, API management and an event broker into an integration platform for the cloud division. In addition to his work at HDI Global SE, he is co-founder of a small company in the education software sector and freelance writer for heise.de and its magazines.",
+    "company": "HDI Global SE",
+    "title": "Product Owner Integration Platform & PBAC Platform",
+    "img": "https://avatars.githubusercontent.com/u/28919003?v=4",
+    "contributions": [
+      {
+        "type": "talk",
+        "title": "Event-Driven Architecture und REST-APIs: Es gibt keine Konkurrenz!",
+        "date": {
+          "year": 2023,
+          "month": "April"
+        },
+        "link": ""
+      },
+      {
+        "type": "talk",
+        "title": "Event-driven Architecture and REST-APIs: It's not a competition",
+        "date": {
+          "year": 2023,
+          "month": "May"
+        },
+        "link": ""
+      },
+      {
+        "type": "talk",
+        "title": "Event-driven Architecture and REST-APIs: It's not a competition",
+        "date": {
+          "year": 2023,
+          "month": "September"
+        },
+        "link": ""
+      },
+      {
+        "type": "talk",
+        "title": "Event-Driven Architecture und REST-APIs: Es gibt keine Konkurrenz!",
+        "date": {
+          "year": 2023,
+          "month": "October"
+        },
+        "link": ""
+      },
+      {
+        "type": "talk",
+        "title": "Event-driven Architecture and REST-APIs: It's not a competition",
+        "date": {
+          "year": 2023,
+          "month": "December"
+        },
+        "link": "https://drive.google.com/file/d/1KN-iuw0P4nOYNhnT15RQvgq5YqGy4ECC/view?usp=sharing"
+      },
+      {
+        "type": "talk",
+        "title": "Eine Registry, sie alle zu knechten: Schemata von Entitäten mit xRegistry für alle Integrationsprodukte zentralisieren",
+        "date": {
+          "year": 2024,
+          "month": "April"
+        },
+        "link": ""
+      },
+      {
+        "type": "article",
+        "title": "AsyncAPI - HDI Global SE Case Study",
+        "date": {
+          "year": 2024,
+          "month": "July"
+        },
+        "link": "https://www.asyncapi.com/casestudies/hdiglobal"
+      }
+    ]
+  },
+  {
+    "name": "Lorna Mitchell",
+    "bio": "Lorna is based in Yorkshire, UK; she is a technology leader and expert in developer experience, passionate about enhancing APIs and developer tools. In her day job as VP of Developer Experience at Redocly, she works on API and documentation tools for technical teams. Lorna is a published author and a regular speaker at conferences, sharing her insights on a variety of tech-related topics. Lorna serves on the OpenUK board, is on the Technical Steering Committee for OpenAPI specification, and maintains open source projects. To learn more about Lorna's activities, visit her website at https://lornajane.net.",
+    "title": "APIs and Open Source",
+    "img": "https://lornajane.net/wp-content/uploads/2011/08/IMG_9410-smaller.jpg",
+    "github": "lornajane",
+    "twitter": "lornajane",
+    "linkedin": "lornajane",
+    "company": "Redocly",
+    "country": "UK",
+    "contributions": [
+      {
+        "type": "presentation",
+        "title": "API Governance for AsyncAPI",
+        "date": {
+          "year": 2023,
+          "month": "September"
+        },
+        "link": "https://noti.st/lornajane/aOuXwe/api-governance-for-asyncapi"
+      },
+      {
+        "type": "presentation",
+        "title": "AsyncAPI for Apache Kafka",
+        "date": {
+          "year": 2021,
+          "month": "May"
+        },
+        "link": "https://videos.confluent.io/watch/hzjXP8QmLtYRNPukNFUu2D?"
+      },
+      {
+        "type": "article",
+        "title": "Lint AsyncAPI with Redocly CLI",
+        "date": {
+          "year": 2023,
+          "month": "August"
+        },
+        "link": "https://redocly.com/docs/cli/guides/lint-asyncapi"
+      }
+    ]
   }
 ]

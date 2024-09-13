@@ -66,7 +66,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
                     {post.type}
                   </span>
                 </Paragraph>
-                <Link href={post.slug}>
+                <div>
                   <span className='block' data-testid='FeaturedBlog-title'>
                     <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.smSemibold} className='mt-2'>
                       {post.title}
@@ -75,7 +75,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
                       <TextTruncate element='span' line={2} text={post.excerpt} />
                     </Paragraph>
                   </span>
-                </Link>
+                </div>
               </div>
               <div className='mt-6 flex items-center'>
                 <div className='relative shrink-0' data-testid='FeaturedBlog-Authorimg'>
