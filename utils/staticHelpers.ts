@@ -18,14 +18,14 @@ export function getEvents(events: IEvent[], size?: number) {
 
   if (size) {
     return meetingsWithDates
-      .filter((meeting: any) => meeting.date > moment(new Date().toDateString()))
+      .filter((meeting: any) => meeting.date > moment(new Date()))
       .slice(0, size || meetingsWithDates.length);
   }
 
   const sortedMeetings: any = [];
 
   for (const meeting of meetingsWithDates) {
-    if (meeting.date > moment(new Date().toDateString())) {
+    if (meeting.date > moment(new Date())) {
       sortedMeetings.push(meeting);
     }
   }
@@ -35,7 +35,7 @@ export function getEvents(events: IEvent[], size?: number) {
   });
 
   for (const meeting of meetingsWithDates) {
-    if (meeting.date < moment(new Date().toDateString())) {
+    if (meeting.date < moment(new Date())) {
       sortedMeetings.push(meeting);
     }
   }
@@ -64,6 +64,7 @@ export const generateCaseStudyContent = (data: any) => {
     asyncapiBindings,
     asyncapiTools,
     additionalResources,
+    fullExample,
     casestudy
   } = data;
   const { languages } = casestudy.technical;
@@ -166,6 +167,10 @@ export const generateCaseStudyContent = (data: any) => {
           ]
         }
       ]
+    },
+    {
+      title: "Production-use AsyncAPI document",
+      content: fullExample,
     }
   ];
 };

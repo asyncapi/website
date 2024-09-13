@@ -27,7 +27,7 @@ export default function Header() {
           href='https://github.com/asyncapi?type=source#-contribute-to-asyncapi'
           target='_blank'
         />
-        <GithubButton className='lg:mt-0' />
+        <GithubButton text='View on Github' className='lg:mt-0' />
         <SlackButton className='lg:mt-0' />
       </div>
     </div>
