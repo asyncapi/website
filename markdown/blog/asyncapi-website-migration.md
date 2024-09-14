@@ -13,7 +13,6 @@ authors:
     link: https://ashmit.dev/
     byline: Modelina Website Maintainer
 excerpt: 'Migration journey of the AsyncAPI Website, features introduced, and future plans.'
-featured: true
 ---
 
 We're thrilled to announce the successful migration of the AsyncAPI website from JavaScript and Next.js v12 to TypeScript and Next.js v14! This exciting upgrade unlocks a new chapter for the website, paving the way for improved scalability, streamlined feature implementation, and the powerful capabilities of Next.js. As a bonus, this migration also enabled a well-documented codebase and streamlined our testing process by reducing the reliance on Cypress tests. In this blog post, we'll delve into the exciting journey behind the migration and share what's new on the website. I'll share insights into our team's efforts, the research and planning involved, the challenges we tackled, the valuable lessons learned, and what exciting plans lie ahead for the AsyncAPI website.

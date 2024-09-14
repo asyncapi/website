@@ -11,7 +11,6 @@ authors:
     photo: /img/avatars/ace.webp
     link: https://twitter.com/_acebuild
     byline: AsyncAPI Preacher
-featured: true
 ---
 
 
