@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: AsyncAPI Community Manager
 excerpt: '2023 Year in Review'
-featured: true
 ---
 
 It's almost unbelievable that we are in 2024. And if you are reading this, Happy New Year to you and your loved ones. Continuing the tradition, we look at how the community has grown over the last 365 days and look forward to our next phase.

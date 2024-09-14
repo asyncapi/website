@@ -1,42 +1,64 @@
 ---
-title: 'Installation guide'
-weight: 20
+
+title: 'Glee Installation Guide'
+weight: 30
+
 ---
 
-## Glee Installation
+### Preparing for Installation
 
-Before installing Glee into your project, make sure you have pre-installed NPM, NodeJs and [AsyncAPI CLI](https://github.com/asyncapi/cli) tools on your system.
+Before starting with Glee, ensure that NPM, Node.js, and the [AsyncAPI CLI](https://github.com/asyncapi/cli) are already set up on your system.
 
-### Automatic Installation
+> Need help installing AsyncAPI CLI? Check out the [CLI Installation Guide](https://www.asyncapi.com/docs/tools/cli/installation).
 
-The best way to get started with Glee is by using AsyncAPI CLI, which sets up everything automatically for you. 
-To create a project, run:
+### Starting with Glee
+
+Creating a new Glee application can be approached in three distinct ways:
+  * [Begin with an existing AsyncAPI document](#initialize-with-an-asyncapi-document).
+  * [Use a predefined template](#start-with-a-template).
+  * [Opt for Manual Installation](#manual-installation) (recommended for advanced users keen on understanding Glee's inner workings).
+
+### Initialize with an AsyncAPI Document
+If you already have an AsyncAPI specification file, you can jumpstart your project by using the `-f` or `--file` flag to specify the file path. The CLI will leverage this to set up your project.
 
 ```sh
-asyncapi new glee
+asyncapi new glee -f asyncapi.yaml
 ```
 
-> For more information on how to install the AsynAPI CLI, you can review the [CLI installation guide](https://www.asyncapi.com/docs/tools/cli/installation).
+This command generates all necessary files. Just open the project in your editor, and start integrating your authentication and business logic.
 
-On installation, you'll find next steps after your project created:
+### Start with a Template
+
+For those without a custom AsyncAPI file and looking to experiment, starting with a template is an excellent choice. These are simple Glee projects that the AsyncAPI CLI can generate for you.
+
+Use the `-t` or `--template` flag to specify the template name. Currently, two templates are available:
+
+1) **default**: Responds with a string upon receiving a string.
+2) **tutorial**: Designed for [this tutorial](https://www.asyncapi.com/docs/tutorials/generate-code).
+
+To initiate a project with the default template:
+
+```sh
+asyncapi new glee -t default
+```
+
+After installation, follow these steps:
 
 ```
-Your project "project" has been created successfully!
-
 Next steps:
 
   cd project
-  npm install
+  npm install --ignore-scripts
   npm run dev
 
-Also, you can already open the project in your favorite editor and start tweaking it
+Feel free to open the project in your preferred editor and start customizing it.
 ```
 
-While making twists to your application, you can follow along with our getting started guide on the relevant page.
+Refer to our Getting Started guide for further assistance during customization.
 
 ### Manual Installation
 
-To manually create a new app, create a new folder e.g. `myapp` so the folder structure would look like below;
+For a hands-on setup, start by creating a new directory, e.g., `myapp`, and structure it as follows:
 
 ```
 ├─ functions          (required)
@@ -51,14 +73,14 @@ To manually create a new app, create a new folder e.g. `myapp` so the folder str
 ├─ package.json       (required)
 ```
 
-Install the required packages inside a new folder:
+Inside this new folder, initialize and install Glee:
 
 ```js
 npm init -y
 npm install @asyncapi/glee
 ```
 
-Open your package.json file and add the following scripts:
+Edit your `package.json` to include the following scripts:
 
 ```js
 {
@@ -70,19 +92,18 @@ Open your package.json file and add the following scripts:
 }
 ```
 
-These scripts refer to the different stages of developing an application.
+These scripts serve different development stages:
 
-- `glee docs`: This script generates documentation for your project using the "Glee" documentation tool. This documentation includes information about your project's APIs, modules, and usage instructions.
+- `glee docs`: Generates your project documentation.
+- `glee dev`: Starts a local development server, building your project in a development-friendly environment.
+- `glee start`: Launches your project for production use.
 
-- `glee dev`: This script is used for starting a development server. It launches a local development server, build your project in development mode, or perform other development-related tasks.
+#### Setting up `asyncapi.yaml` and Required Directories
 
-- `glee start`: This script is responsible for starting your project or application. It is used to launch a production-ready server or application instance.
-
-#### Create `asyncapi.yaml` file and other required directories
-
-Create a yaml file that supports capable of receiving a "hello {name}" message with the protocol as `ws` and the channel name  as `hello` the hello API will subscribe to. The operationId property is `onHello` that's the name of function and the payload property is type string publishing to that channel.
+Craft an `asyncapi.yaml` file capable of receiving a "hello \{name\}" message via WebSocket (`ws`) protocol on the `hello` channel. Define the operation ID as `onHello`, indicating the function to be called, and set the payload type to string for publishing on that channel.
 
 ```yaml
+# AsyncAPI Specification for Hello, Glee!
 asyncapi: 3.0.0
 info:
   title: 'Hello, Glee!'
@@ -102,9 +123,6 @@ operations:
     action: receive
     channel:
       $ref: '#/channels/hello'
-    reply:
-      channel:
-        $ref: "#/channels/hello"
   SendHello:
     action: send
     channel: 
@@ -116,19 +134,21 @@ components:
         type: string
 ```
 
-Create an operation function `onHello.js` inside `myapp/functions`:
+Create a function `onHello.js` in `myapp/functions`:
 
 ```js
 export default async function (event) {  
   return {
-    reply: [{
+    send: [{
+      server: "websockets",
+      channel: "hello",
       payload: `Hello from Glee! You said: "${event.payload}".`
     }]
   }
 }
 ```
 
-#### Run the Development Server
+#### Launching the Development Server
 
-- Run `npm run dev` to start the development server.
-- Connect to `ws://localhost:3000/hello` and send a WebSocket request with a payload e.g. {"john"}
+- Execute `npm run dev` to start the server.
+- Connect to `ws://localhost:3000/hello` and send a WebSocket request like `{"john"}`.

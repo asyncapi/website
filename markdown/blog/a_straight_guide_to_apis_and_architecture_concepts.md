@@ -12,7 +12,6 @@ authors:
     photo: /img/avatars/barbano.webp
     link: https://www.linkedin.com/in/barbano-gonzalez-moreno
 excerpt: Basic concepts about APIs and architectures for beginners and non-developers.
-featured: true
 ---
 
 It has not been such a long journey into the technology realm for me. Then I started to work at AsyncAPI, and suddenly, I needed to understand a complex world. New terms, code, and ways of seeing things were waiting for me. Coming from other fields of knowledge, the challenge was huge. How to begin? How to have a clue?
