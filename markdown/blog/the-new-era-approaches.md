@@ -12,7 +12,6 @@ authors:
     photo: /img/avatars/jonaslagoni.webp
     link: https://www.linkedin.com/in/jonaslagoni/
 excerpt: "An update around AsyncAPI 3.0, where we are, what is remaining, release schedule, and a first look at 3.0"
-featured: true
 ---
 
 Back in [March 2022](https://www.asyncapi.com/blog/async-api-spec-3.0-release), you heard the first official words around AsyncAPI 3.0. Since then, a lot of people have been working diligently across many expertise to bring it to life. And with its current state, it's finally time to give an update on the progress.
