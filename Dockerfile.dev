@@ -13,7 +13,9 @@ COPY . .
 # Expose the port for development (if needed)
 EXPOSE 3000
 
-# Set environment variables for development (optional)
+# Set environment variables for development
 ENV NODE_ENV=development
 
 CMD ["npm", "run", "dev"]
+
+# Build command -> docker build -f Dockerfile.dev --build-arg NODE_ENV=development -t app-dev .

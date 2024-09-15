@@ -1,0 +1,31 @@
+FROM node:18-alpine AS build
+
+WORKDIR /async
+
+# Install all dependencies
+COPY package.json package-lock.json ./
+RUN npm install
+
+# Copy the rest of the application files
+COPY . .
+
+# Production Stage
+FROM node:18-alpine
+
+WORKDIR /async
+
+# Install production dependencies only
+COPY package.json package-lock.json ./
+RUN npm install --only=production
+
+# Copy built files from the build stage
+COPY --from=build /async .
+
+EXPOSE 3000
+
+# Set environment variables for production
+ENV NODE_ENV=production
+
+CMD ["npm", "run", "start"]
+
+# Build command -> docker build -f Dockerfile.prod --build-arg NODE_ENV=production -t app-prod .
