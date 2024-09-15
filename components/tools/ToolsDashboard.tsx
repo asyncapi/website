@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router';
-import { useContext, useEffect, useRef, useState } from 'react';
+import { createRef, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
-import AsyncAPIColorIcon from '@/components/icons/AsyncAPIColorIcon';
 import type { ToolsListData } from '@/types/components/tools/ToolDataType';
 
 import ToolsDataList from '../../config/tools.json';
@@ -10,7 +9,6 @@ import ArrowDown from '../icons/ArrowDown';
 import Cross from '../icons/Cross';
 import FilterIcon from '../icons/Filter';
 import SearchIcon from '../icons/Search';
-import Loader from '../Loader';
 import CategoryDropdown from './CategoryDropdown';
 import Filters from './Filters';
 import ToolsList from './ToolsList';
@@ -22,8 +20,6 @@ const ToolsData = ToolsDataList as ToolsListData;
  */
 export default function ToolsDashboard() {
   const router = useRouter();
-
-  const [loading, setLoading] = useState<boolean>(false); // used to handle the preloader on the page
   const filterRef = useRef<HTMLDivElement>(); // used to provide ref to the Filter menu and outside click close feature
   const categoryRef = useRef<HTMLDivElement>(); // used to provide ref to the Category menu and outside click close feature
   const [openFilter, setOpenFilter] = useState<boolean>(false);
@@ -31,7 +27,6 @@ export default function ToolsDashboard() {
   // filter parameters extracted from the context
   const { isPaid, isAsyncAPIOwner, languages, technologies, categories } = useContext(ToolFilterContext);
   const [searchName, setSearchName] = useState<string>(''); // state variable used to get the search name
-  const [toolsList, setToolsList] = useState<ToolsListData>({}); // state variable used to set the list of tools according to the filters applied
   const [checkToolsList, setCheckToolsList] = useState<boolean>(true); // state variable used to check whether any tool is available according to the needs of the user.
 
   // useEffect function to enable the close Modal feature when clicked outside of the modal
@@ -49,14 +44,6 @@ export default function ToolsDashboard() {
     };
   });
 
-  // sets the preloader on the page for 1 second
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  }, []);
-
   // useEffect function to enable the close Category dropdown Modal feature when clicked outside of the modal
   useEffect(() => {
     const checkIfClickOutside = (event: MouseEvent) => {
@@ -72,8 +59,8 @@ export default function ToolsDashboard() {
     };
   });
 
-  // Function to update the list of tools according to the current filters applied
-  const updateToolsList = () => {
+  // useMemo function to filter the tools according to the filters applied by the user
+  const toolsList = useMemo(() => {
     let tempToolsList: ToolsListData = {};
 
     // Tools data list is first filtered according to the category filter if applied by the user.
@@ -150,17 +137,35 @@ export default function ToolsDashboard() {
       }
     });
 
-    setToolsList(tempToolsList);
-  };
+    Object.keys(tempToolsList).map((category) => {
+      tempToolsList[category].elementRef = createRef();
 
+      return tempToolsList;
+    });
+
+    return tempToolsList;
+  }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, searchName]);
+
+  // useEffect to scroll to the opened category when url has category as element id
+  useEffect(() => {
+    const { hash } = window.location;
+
+    if (hash) {
+      const elementID = decodeURIComponent(hash.slice(1));
+      const element = toolsList[elementID]?.elementRef!;
+
+      if (element.current) {
+        document.documentElement.style.scrollPaddingTop = '6rem';
+        element.current.scrollIntoView({ behavior: 'smooth' });
+        document.documentElement.style.scrollPaddingTop = '0';
+      }
+    }
+  }, []);
+  // Function to update the list of tools according to the current filters applied
   const clearFilters = () => {
     setOpenFilter(false);
     router.push('/tools', undefined, { shallow: true });
   };
-
-  useEffect(() => {
-    updateToolsList();
-  }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, searchName]);
 
   const isFiltered = Boolean(
     isPaid !== 'all' || isAsyncAPIOwner || languages.length || technologies.length || categories.length
@@ -226,20 +231,16 @@ export default function ToolsDashboard() {
             <span className='ml-3'>Clear Filters</span>
           </div>
         )}
-        {loading ? (
-          <Loader loaderText='Loading Tools...' loaderIcon={<AsyncAPIColorIcon alt='Loading...' />} pulsating />
-        ) : (
-          <div className='mt-0'>
-            {checkToolsList ? (
-              <ToolsList toolsListData={toolsList} />
-            ) : (
-              <div className='p-4'>
-                <img src='/img/illustrations/not-found.webp' alt='not found' className='m-auto w-1/2' />
-                <div className='text-center text-lg'> Sorry, we don&apos;t have tools according to your needs. </div>
-              </div>
-            )}
-          </div>
-        )}
+        <div className='mt-0'>
+          {checkToolsList ? (
+            <ToolsList toolsListData={toolsList} />
+          ) : (
+            <div className='p-4'>
+              <img src='/img/illustrations/not-found.webp' alt='not found' className='m-auto w-1/2' />
+              <div className='text-center text-lg'> Sorry, we don&apos;t have tools according to your needs. </div>
+            </div>
+          )}
+        </div>
       </div>
     </ToolFilter>
   );
