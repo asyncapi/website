@@ -134,20 +134,20 @@ export default function NewsletterSubscribe({
           <InputBox
             inputType={InputTypes.TEXT}
             inputName='name'
-            placeholder={t('newsletterCTA.nameInput')}
+            placeholder={t('Your Name')}
             inputValue={name}
             setInput={setName}
           />
           <InputBox
             inputType={InputTypes.EMAIL}
             inputName='email'
-            placeholder={t('newsletterCTA.emailInput')}
+            placeholder={t('Your Email')}
             inputValue={email}
             setInput={setEmail}
           />
           <Button
             type={ButtonType.SUBMIT}
-            text={t('newsletterCTA.subscribeBtn')}
+            text={t('Subscribe')}
             className='mt-2 w-full md:mr-2 md:mt-0 md:flex-1'
             href=''
           />
