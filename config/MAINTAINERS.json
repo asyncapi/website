@@ -276,8 +276,7 @@
             "template-for-generator-templates",
             "community",
             "diff",
-            "chatbot",
-            "infra"
+            "chatbot"
         ],
         "githubID": 6995927
     },
@@ -447,8 +446,7 @@
             "go-watermill-template",
             "template-for-go-projects",
             "parser-api",
-            "server-api",
-            "infra"
+            "server-api"
         ],
         "githubID": 1083296
     },
@@ -972,5 +970,14 @@
             "kotlin-asyncapi"
         ],
         "githubID": 39913716
+    },
+    {
+        "name": "Jonas S\u00fcskind",
+        "github": "sueskind",
+        "isTscMember": false,
+        "repos": [
+            "kotlin-asyncapi"
+        ],
+        "githubID": 52210599
     }
 ]

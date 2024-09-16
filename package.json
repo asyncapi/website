@@ -22,6 +22,7 @@
     "generate:dashboard": "node scripts/dashboard/build-dashboard.js",
     "generate:videos": "node scripts/build-newsroom-videos.js",
     "generate:tools": "node scripts/build-tools.js",
+    "test:netlify": "deno test --allow-env --trace-ops netlify/**/*.test.ts",
     "dev:storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build"
   },

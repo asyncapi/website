@@ -12,7 +12,6 @@ authors:
     link: https://www.linkedin.com/in/alejandra-quetzalli/
     byline: During Q1 2024, AsyncAPI docs had a total of 26,923 sessions and 8,128 unique users. 
 excerpt: During Q1 2024, AsyncAPI docs had a total of 26,923 sessions and 8,128 unique users.
-featured: true
 ---
 
 # AsyncAPI Documentation Report - Q1 2024
