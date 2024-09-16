@@ -1,0 +1,20 @@
+name: Run tests for netlify edge-functions
+
+on:
+  workflow_dispatch
+
+jobs:
+  netlify-tests:
+    strategy:
+      matrix:
+        deno-version: [1.30.0]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Deno
+        uses: denolib/setup-deno@v2
+        with:
+          deno-version: ${{ matrix.deno-version }}
+      - name: Test with Deno
+        run: deno test --allow-env --trace-ops
+      
