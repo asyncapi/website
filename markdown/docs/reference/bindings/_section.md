@@ -1,4 +1,4 @@
 ---
 title: Bindings
-weight: 15
+weight: 11
 ---

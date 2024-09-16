@@ -1,5 +1,9 @@
 [
   {
+    "value": "reference/bindings/",
+    "href": "https://github.com/asyncapi/bindings/tree/master"
+  },
+  {
     "value": "/tools/generator",
     "href": "https://github.com/asyncapi/generator/tree/master/docs"
   },
