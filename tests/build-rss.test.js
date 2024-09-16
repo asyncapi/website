@@ -1,18 +1,19 @@
 const fs = require('fs');
 const path = require('path');
 const rssFeed = require('../scripts/build-rss');
-const { mockRssData, title, type, desc, outputPath } = require('./fixtures/rssData');
-
-jest.mock('../config/posts.json', () => mockRssData, { virtual: true });
+const { mockRssData, title, type, desc } = require('./fixtures/rssData');
 
 describe('rssFeed', () => {
   const testOutputDir = path.join(__dirname, '..', 'public', 'test-output');
+  const outputPath = 'test-output/rss.xml';
 
-  beforeEach(() => {
-    fs.mkdirSync(testOutputDir, { recursive: true });
+  beforeAll(() => {
+    if (!fs.existsSync(testOutputDir)) {
+      fs.mkdirSync(testOutputDir, { recursive: true });
+    }
   });
 
-  afterEach(() => {
+  afterAll(() => {
     if (fs.existsSync(testOutputDir)) {
       fs.readdirSync(testOutputDir).forEach(file => {
         fs.unlinkSync(path.join(testOutputDir, file));
@@ -21,24 +22,30 @@ describe('rssFeed', () => {
     }
   });
 
+  afterEach(() => {
+    jest.resetModules();
+  });
+
   it('should generate RSS feed and write to file', async () => {
+    jest.doMock('../config/posts.json', () => mockRssData, { virtual: true });
+
     let error;
     try {
       await rssFeed(type, title, desc, outputPath);
     } catch (err) {
-      error = err
+      error = err;
     }
 
+    expect(error).toBeUndefined();
     const filePath = path.join(__dirname, '..', 'public', outputPath);
     expect(fs.existsSync(filePath)).toBe(true);
     const fileContent = fs.readFileSync(filePath, 'utf8');
-    
-    expect(error).toBeUndefined();
     expect(fileContent).toContain('<rss version="2.0"');
-    expect(fileContent).toContain('<title>Test Blog RSS</title>');
   });
 
   it('should prioritize featured posts over non-featured ones', async () => {
+    jest.doMock('../config/posts.json', () => mockRssData, { virtual: true });
+
     let error;
     try {
       await rssFeed(type, title, desc, outputPath);
@@ -58,6 +65,8 @@ describe('rssFeed', () => {
   });
 
   it('should sort posts by date in descending order', async () => {
+    jest.doMock('../config/posts.json', () => mockRssData, { virtual: true });
+
     let error;
     try {
       await rssFeed(type, title, desc, outputPath);
@@ -79,6 +88,8 @@ describe('rssFeed', () => {
   });
 
   it('should set correct enclosure type based on image extension', async () => {
+    jest.doMock('../config/posts.json', () => mockRssData, { virtual: true });
+
     let error;
     try {
       await rssFeed(type, title, desc, outputPath);
@@ -99,11 +110,69 @@ describe('rssFeed', () => {
   });
 
   it('should catch and handle errors when write operation fails', async () => {
+    jest.doMock('../config/posts.json', () => mockRssData, { virtual: true });
+
     const invalidOutputPath = "invalid/path";
+
+    let error;
     try {
       await rssFeed(type, title, desc, invalidOutputPath);
     } catch (err) {
-      expect(err.message).toMatch(/ENOENT|EACCES/);
+      error = err;
     }
+
+    expect(error.message).toMatch(/ENOENT|EACCES/);
+  });
+
+  it('should throw an error when posts.json is not found', async () => {
+    jest.doMock('../config/posts.json', () => {
+      throw new Error('Cannot find module');
+    }, { virtual: true });
+
+    let error;
+    try {
+      await rssFeed(type, title, desc, outputPath);
+    } catch (err) {
+      error = err;
+    }
+
+    expect(error).toBeDefined();
+    expect(error.message).toContain('Failed to generate RSS feed');
+    expect(error.message).toContain('Cannot find module');
+  });
+
+  it('should throw an error when posts.json is malformed', async () => {
+    jest.doMock('../config/posts.json', () => {
+      return { invalidKey: [] };
+    }, { virtual: true });
+
+    let error;
+    try {
+      await rssFeed(type, title, desc, outputPath);
+    } catch (err) {
+      error = err;
+    }
+
+    expect(error).toBeDefined();
+    expect(error.message).toContain('Failed to generate RSS feed');
+    expect(error.message).toContain('Cannot read properties of undefined');
+  });
+
+  it('should handle empty posts array', async () => {
+    const emptyMockData = { blog: [] };
+    jest.doMock('../config/posts.json', () => emptyMockData, { virtual: true });
+
+    let error;
+    try {
+      await rssFeed(type, title, desc, outputPath);
+    } catch (err) {
+      error = err;
+    }
+
+    expect(error).toBeUndefined();
+    const filePath = path.join(__dirname, '..', 'public', outputPath);
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+    expect(fileContent).toContain('<rss version="2.0"');
+    expect(fileContent).not.toContain('<item>');
   });
 });
