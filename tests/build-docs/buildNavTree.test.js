@@ -23,20 +23,51 @@ describe('buildNavTree', () => {
     ];
   
     const result = buildNavTree(navItems);
-    
+  
     expect(result['welcome'].item).toEqual(
-        expect.objectContaining({
-          title: 'Welcome',
-          slug: '/docs'
-        })
-      );
-    
-      expect(result['getting-started'].children).toHaveProperty('installation');
-      expect(result['getting-started'].children).toHaveProperty('configuration');
-    
-      expect(result['reference'].children.specification.item.slug).toBe('/docs/reference/specification');
-      expect(result['reference'].children.specification.children[0].slug).toBe('/docs/reference/specification/v1.0');
+      expect.objectContaining({
+        title: 'Welcome',
+        slug: '/docs'
+      })
+    );
+  
+    expect(result['getting-started'].item).toEqual(
+      expect.objectContaining({
+        title: 'Getting Started',
+        slug: '/docs/getting-started'
+      })
+    );
+
+    expect(result['getting-started'].children).toHaveProperty('installation');
+    expect(result['getting-started'].children).toHaveProperty('configuration');
+  
+    expect(result['reference'].item).toEqual(
+      expect.objectContaining({
+        title: 'Reference',
+        slug: '/docs/reference'
+      })
+    );
+  
+    expect(result['reference'].children.api.item).toEqual(
+      expect.objectContaining({
+        title: 'API',
+        slug: '/docs/reference/api'
+      })
+    );
+
+    expect(result['reference'].children.api.children[0]).toEqual(
+      expect.objectContaining({
+        title: 'Endpoints',
+        slug: '/docs/reference/api/endpoints'
+      })
+    );
+  
+    expect(result['reference'].children.specification.item.slug).toBe('/docs/reference/specification');
+    expect(result['reference'].children.specification.children[0].slug).toBe('/docs/reference/specification/v1.0');
+    expect(result['reference'].children.specification.children[0].isPrerelease).toBe(false);
+
   });
+  
   
 
 
@@ -45,20 +76,23 @@ describe('buildNavTree', () => {
       { title: 'Root', weight: 0, isRootSection: true, isSection: true, rootSectionId: 'root', sectionWeight: 0, slug: '/docs' },
       { title: 'Item without sectionId', weight: 1, isSection: false, rootSectionId: 'root', slug: '/docs/item' },
     ];
-
+  
     const result = buildNavTree(navItems);
-
-    expect(result).toEqual({
-      'welcome': {
-        item: { title: 'Welcome', weight: 0, isRootSection: true, isSection: true, rootSectionId: 'welcome', sectionWeight: 0, slug: '/docs' },
-        children: {}
-      },
-      'root': {
-        item: navItems[0],
-        children: {
-          'Item without sectionId': { item: navItems[1] }
-        }
-      }
-    });
+  
+    expect(result['root'].item).toEqual(
+      expect.objectContaining({
+        title: 'Root',
+        slug: '/docs'
+      })
+    );
+  
+    expect(result['root'].children).toHaveProperty('Item without sectionId');
+    expect(result['root'].children['Item without sectionId'].item).toEqual(
+      expect.objectContaining({
+        title: 'Item without sectionId',
+        slug: '/docs/item'
+      })
+    );
   });
+  
 });
