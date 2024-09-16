@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import TextTruncate from 'react-text-truncate';
 
 import type { ToolData, VisibleDataListType } from '@/types/components/tools/ToolDataType';
 import { HeadingTypeStyle } from '@/types/typography/Heading';
@@ -23,21 +22,16 @@ interface ToolsCardProp {
  */
 export default function ToolsCard({ toolData }: ToolsCardProp) {
   const [showDescription, setShowDescription] = useState<boolean>(false);
-  const [showMoreDescription, setShowMoreDescription] = useState<boolean>(false);
+  const [isTruncated, setIsTruncated] = useState<boolean>(false);
   const [readMore, setReadMore] = useState<boolean>(false);
   const descriptionRef = useRef<HTMLDivElement>(null);
 
   // Decide whether to show full description or not in the card based on the number of lines occupied by the description.
   useEffect(() => {
-    const divHeight = descriptionRef.current?.offsetHeight || 0;
-    const numberOfLines = divHeight / 20;
-
-    if (numberOfLines > 3) {
-      setShowMoreDescription(true);
-    } else {
-      setShowMoreDescription(false);
+    if (descriptionRef.current) {
+      setIsTruncated(descriptionRef.current?.scrollHeight! > descriptionRef.current?.clientHeight!);
     }
-  }, []);
+  }, [descriptionRef.current]);
 
   let onGit = false;
 
@@ -91,17 +85,19 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
           <div className='relative'>
             <Paragraph typeStyle={ParagraphTypeStyle.sm}>
               <span
-                ref={descriptionRef}
-                className={`w-full ${showMoreDescription ? 'cursor-pointer' : ''}`}
+                className={`w-full ${isTruncated ? 'cursor-pointer' : ''}`}
                 onMouseEnter={() =>
                   setTimeout(() => {
-                    if (showMoreDescription) setShowDescription(true);
+                    if (isTruncated) setShowDescription(true);
                   }, 500)
                 }
               >
-                <TextTruncate element='span' line={3} text={toolData.description} />
+                <div ref={descriptionRef} className={`line-clamp-3 ${isTruncated && 'after:content-["..."]'}`}>
+                  {toolData.description}
+                </div>
               </span>
             </Paragraph>
+
             {showDescription && (
               <div
                 className='absolute top-0 z-10 w-full border border-gray-200 bg-white p-2 shadow-md'
