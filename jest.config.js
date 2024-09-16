@@ -1,5 +1,7 @@
 module.exports = {
-  verbose: true, // display individual test results with the test suite hierarchy
-  collectCoverage: true, // collect test coverage information\
-  collectCoverageFrom: ['scripts/**/*.js']
+  verbose: true,
+  collectCoverage: true,
+  collectCoverageFrom: ['scripts/**/*.js'],
+  // To disallow netlify edge function tests from running
+  testMatch: ['**/tests/**/*.test.*', '!**/netlify/**/*.test.*'],
 };

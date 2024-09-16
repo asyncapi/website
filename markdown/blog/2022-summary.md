@@ -11,7 +11,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Dev Comm Keeper
 excerpt: 'tl;dr We do not see any negative trends indicating that the interest in the project got stale and that the community is not growing anymore.'
-featured: true
 ---
 
 It is a good practice to sometimes stop and turn back. Sometimes you need to see what you left behind, what successes made you go that far, and what things you missed and never had time to enjoy or explore. The more often you do it, the better your decisions may be in the future. It is essential to do it at least once a year in open source.

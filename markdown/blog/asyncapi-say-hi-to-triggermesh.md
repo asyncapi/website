@@ -10,7 +10,6 @@ authors:
     link: https://twitter.com/j_michaux
     byline: Product at TriggerMesh
 excerpt: TriggerMesh makes it easy to reliably pipe events from any source to any destination. Let's use it to read from AsyncAPI channels, and see how to autogenerate the TriggerMesh config.
-featured: true
 ---
 
 This tutorial demonstrates how to use AsyncAPI with TriggerMesh. It shows how the two play nicely together because TriggerMesh can easily ingest, transform, filter, and route events from channels defined in an AsyncAPI definition. This is one of many possible ways to use the two technologies together. This post assumes you have basic knowledge of AsyncAPI already, but are potentially new to TriggerMesh.

@@ -12,7 +12,6 @@ authors:
     link: https://twitter.com/acethecreator
     byline: Software Engineer & Open-Source Advocate 
 excerpt: "The release of AsyncAPI 2.6 added an exciting feature which is the support for Apache Pulsar"
-featured: true
 ---
 
 The new version of the AsyncAPI specification - 2.6.0 - is now available.
