@@ -21,12 +21,8 @@ describe('rssFeed', () => {
     }
   });
 
-  it('should generate RSS feed and write to file', () => {
-    try {
-      rssFeed(type, title, desc, outputPath);
-    } catch (err) {
-      console.error('Error encountered during test execution:', err)
-    }
+  it('should generate RSS feed and write to file', async () => {
+    await rssFeed(type, title, desc, outputPath);
 
     const filePath = path.join(__dirname, '..', 'public', outputPath);
     expect(fs.existsSync(filePath)).toBe(true);
@@ -35,12 +31,8 @@ describe('rssFeed', () => {
     expect(fileContent).toContain('<title>Test Blog RSS</title>');
   });
 
-  it('should prioritize featured posts over non-featured ones', () => {
-    try {
-      rssFeed(type, title, desc, outputPath);
-    } catch (err) {
-      console.error('Error encountered during test execution:', err)
-    }
+  it('should prioritize featured posts over non-featured ones', async () => {
+    await rssFeed(type, title, desc, outputPath);
 
     const filePath = path.join(__dirname, '..', 'public', outputPath);
     const fileContent = fs.readFileSync(filePath, 'utf8');
@@ -52,12 +44,8 @@ describe('rssFeed', () => {
     expect(itemTitles[3]).toContain('Non-Featured Post 1');
   });
 
-  it('should sort posts by date in descending order', () => {
-    try {
-      rssFeed(type, title, desc, outputPath);
-    } catch (err) {
-      console.error('Error encountered during test execution:', err)
-    }
+  it('should sort posts by date in descending order', async () => {
+    await rssFeed(type, title, desc, outputPath);
 
     const filePath = path.join(__dirname, '..', 'public', outputPath);
     const fileContent = fs.readFileSync(filePath, 'utf8');
@@ -71,12 +59,8 @@ describe('rssFeed', () => {
     expect(itemTitles[5]).toContain('Non-Featured Post 2');
   });
 
-  it('should set correct enclosure type based on image extension', () => {
-    try {
-      rssFeed(type, title, desc, outputPath);
-    } catch (err) {
-      console.error('Error encountered during test execution:', err)
-    }
+  it('should set correct enclosure type based on image extension', async () => {
+    await rssFeed(type, title, desc, outputPath);
 
     const filePath = path.join(__dirname, '..', 'public', outputPath);
     const fileContent = fs.readFileSync(filePath, 'utf8');
@@ -89,13 +73,12 @@ describe('rssFeed', () => {
     expect(fileContent).toContain('type="image/webp"');
   });
 
-  it('should throw error when write operation fails', () => {
-    const outputPath = "invalid/path"
+  it('should catch and handle errors when write operation fails', async () => {
+    const invalidOutputPath = "invalid/path";
     try {
-      rssFeed(type, title, desc, outputPath)
+      await rssFeed(type, title, desc, invalidOutputPath);
     } catch (err) {
       expect(err.message).toMatch(/ENOENT|EACCES/);
     }
   });
-
 });
