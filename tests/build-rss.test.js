@@ -22,36 +22,55 @@ describe('rssFeed', () => {
   });
 
   it('should generate RSS feed and write to file', async () => {
-    await rssFeed(type, title, desc, outputPath);
+    let error;
+    try {
+      await rssFeed(type, title, desc, outputPath);
+    } catch (err) {
+      error = err
+    }
 
     const filePath = path.join(__dirname, '..', 'public', outputPath);
     expect(fs.existsSync(filePath)).toBe(true);
     const fileContent = fs.readFileSync(filePath, 'utf8');
+    
+    expect(error).toBeUndefined();
     expect(fileContent).toContain('<rss version="2.0"');
     expect(fileContent).toContain('<title>Test Blog RSS</title>');
   });
 
   it('should prioritize featured posts over non-featured ones', async () => {
-    await rssFeed(type, title, desc, outputPath);
+    let error;
+    try {
+      await rssFeed(type, title, desc, outputPath);
+    } catch (err) {
+      error = err
+    }
 
     const filePath = path.join(__dirname, '..', 'public', outputPath);
     const fileContent = fs.readFileSync(filePath, 'utf8');
 
     const itemTitles = fileContent.match(/<title>(.*?)<\/title>/g);
 
+    expect(error).toBeUndefined();
     expect(itemTitles[1]).toContain('Test Post 1');
     expect(itemTitles[2]).toContain('Another Featured Post');
     expect(itemTitles[3]).toContain('Non-Featured Post 1');
   });
 
   it('should sort posts by date in descending order', async () => {
-    await rssFeed(type, title, desc, outputPath);
+    let error;
+    try {
+      await rssFeed(type, title, desc, outputPath);
+    } catch (err) {
+      error = err
+    }
 
     const filePath = path.join(__dirname, '..', 'public', outputPath);
     const fileContent = fs.readFileSync(filePath, 'utf8');
 
     const itemTitles = fileContent.match(/<title>(.*?)<\/title>/g);
 
+    expect(error).toBeUndefined();
     expect(itemTitles[1]).toContain('Test Post 1');
     expect(itemTitles[2]).toContain('Another Featured Post');
     expect(itemTitles[3]).toContain('Non-Featured Post 1');
@@ -60,11 +79,17 @@ describe('rssFeed', () => {
   });
 
   it('should set correct enclosure type based on image extension', async () => {
-    await rssFeed(type, title, desc, outputPath);
+    let error;
+    try {
+      await rssFeed(type, title, desc, outputPath);
+    } catch (err) {
+      error = err
+    }
 
     const filePath = path.join(__dirname, '..', 'public', outputPath);
     const fileContent = fs.readFileSync(filePath, 'utf8');
 
+    expect(error).toBeUndefined();
     expect(fileContent).toContain('<enclosure url="https://www.asyncapi.com/img/test-cover.png"');
     expect(fileContent).toContain('type="image/png"');
     expect(fileContent).toContain('<enclosure url="https://www.asyncapi.com/img/test-cover.svg"');
