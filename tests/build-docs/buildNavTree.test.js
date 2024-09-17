@@ -8,7 +8,7 @@ describe('buildNavTree', () => {
     jest.clearAllMocks();
   });
 
-  test('should create a tree structure from nav items', () => {
+  it('should create a tree structure from nav items', () => {
 
     const result = buildNavTree(basicNavItems);
 
@@ -56,7 +56,7 @@ describe('buildNavTree', () => {
 
   });
 
-  test('should handle items without sectionId', () => {
+  it('should handle items without sectionId', () => {
 
     const result = buildNavTree(sectionNavItems);
 
@@ -76,7 +76,7 @@ describe('buildNavTree', () => {
     );
   });
 
-  test('should throw and catch an error if a parent section is missing', () => {
+  it('should throw and catch an error if a parent section is missing', () => {
 
     try {
       buildNavTree(orphanNavItems);
@@ -85,7 +85,7 @@ describe('buildNavTree', () => {
     }
   });
 
-  test('should throw and catch an error if no valid specification version is found', () => {
+  it('should throw and catch an error if no valid specification version is found', () => {
 
     try {
       buildNavTree(missingSpecVersion);
@@ -94,7 +94,7 @@ describe('buildNavTree', () => {
     }
   });
 
-  test('should throw and catch a generic error if something unexpected happens', () => {
+  it('should throw and catch a generic error if something unexpected happens', () => {
 
     try {
       buildNavTree(nullNavItems);
