@@ -102,77 +102,83 @@ function addDocButtons(docPosts, treePosts) {
   let structuredPosts = [];
   let rootSections = [];
 
-  // Traversing the whole DocTree and storing each post inside them in sequential order
-  Object.keys(treePosts).forEach((rootElement) => {
-    structuredPosts.push(treePosts[rootElement].item)
-    if (treePosts[rootElement].children) {
-      let children = treePosts[rootElement].children
-      Object.keys(children).forEach((child) => {
-        let docChildArray = convertDocPosts(children[child])
-        structuredPosts = [...structuredPosts, ...docChildArray]
-      })
-    }
-  })
-  // Appending the content of welcome page pf Docs from the posts.json
-  structuredPosts[0] = docPosts.filter(p => p.slug === '/docs')[0]
-
-  // Traversing the strucutredPosts in order to add `nextPage` and `prevPage` details for each page
-  let countDocPages = structuredPosts.length
-  structuredPosts = structuredPosts.map((post, index) => {
-    // post item specifying the root Section or sub-section in the docs are excluded as 
-    // they doesn't comprise any Doc Page or content to be shown in website. 
-    if (post?.isRootSection || post?.isSection || index == 0) {
-      if (post?.isRootSection || index == 0)
-        rootSections.push(post.title)
-      return post
-    }
-
-    let nextPage = {}, prevPage = {}
-    let docPost = post;
-
-    // checks whether the next page for the current docPost item exists or not
-    if (index + 1 < countDocPages) {
-      // checks whether the next item inside structuredPosts is a rootElement or a sectionElement
-      // if yes, it goes again to a next to next item in structuredPosts to link the nextPage
-      if (!structuredPosts[index + 1].isRootElement && !structuredPosts[index + 1].isSection) {
-        nextPage = {
-          title: structuredPosts[index + 1].title,
-          href: structuredPosts[index + 1].slug
-        }
-      } else {
-        nextPage = {
-          title: `${structuredPosts[index + 1].title} - ${structuredPosts[index + 2].title}`,
-          href: structuredPosts[index + 2].slug
-        }
+  try {
+    // Traversing the whole DocTree and storing each post inside them in sequential order
+    Object.keys(treePosts).forEach((rootElement) => {
+      structuredPosts.push(treePosts[rootElement].item);
+      if (treePosts[rootElement].children) {
+        let children = treePosts[rootElement].children;
+        Object.keys(children).forEach((child) => {
+          let docChildArray = convertDocPosts(children[child]);
+          structuredPosts = [...structuredPosts, ...docChildArray];
+        });
       }
-      docPost = { ...docPost, nextPage }
-    }
+    });
 
-    // checks whether the previous page for the current docPost item exists or not
-    if (index > 0) {
-      // checks whether the previous item inside structuredPosts is a rootElement or a sectionElement
-      // if yes, it goes again to a next previous item in structuredPosts to link the prevPage
-      if (!structuredPosts[index - 1]?.isRootElement && !structuredPosts[index - 1]?.isSection) {
-        prevPage = {
-          title: structuredPosts[index - 1].title,
-          href: structuredPosts[index - 1].slug
+    // Appending the content of welcome page of Docs from the posts.json
+    structuredPosts[0] = docPosts.filter(p => p.slug === '/docs')[0];
+
+    // Traversing the structuredPosts in order to add `nextPage` and `prevPage` details for each page
+    let countDocPages = structuredPosts.length;
+    structuredPosts = structuredPosts.map((post, index) => {
+      // Post item specifying the root Section or sub-section in the docs are excluded as 
+      // they don't comprise any Doc Page or content to be shown in website. 
+      if (post?.isRootSection || post?.isSection || index == 0) {
+        if (post?.isRootSection || index == 0) {
+          rootSections.push(post.title);
         }
-        docPost = { ...docPost, prevPage }
-      } else {
-        // additonal check for the first page of Docs so that it doesn't give any Segementation fault
-        if (index - 2 >= 0) {
+        return post;
+      }
+
+      let nextPage = {}, prevPage = {};
+      let docPost = post;
+
+      // Checks whether the next page for the current docPost item exists or not
+      if (index + 1 < countDocPages) {
+        // Checks whether the next item inside structuredPosts is a rootElement or a sectionElement
+        // If yes, it goes again to a next to next item in structuredPosts to link the nextPage
+        if (!structuredPosts[index + 1].isRootElement && !structuredPosts[index + 1].isSection) {
+          nextPage = {
+            title: structuredPosts[index + 1].title,
+            href: structuredPosts[index + 1].slug
+          };
+        } else {
+          nextPage = {
+            title: `${structuredPosts[index + 1].title} - ${structuredPosts[index + 2].title}`,
+            href: structuredPosts[index + 2].slug
+          };
+        }
+        docPost = { ...docPost, nextPage };
+      }
+
+      // Checks whether the previous page for the current docPost item exists or not
+      if (index > 0) {
+        // Checks whether the previous item inside structuredPosts is a rootElement or a sectionElement
+        // If yes, it goes again to a next previous item in structuredPosts to link the prevPage
+        if (!structuredPosts[index - 1]?.isRootElement && !structuredPosts[index - 1]?.isSection) {
           prevPage = {
-            title: `${structuredPosts[index - 1]?.isRootSection ? rootSections[rootSections.length - 2] : rootSections[rootSections.length - 1]} - ${structuredPosts[index - 2].title}`,
-            href: structuredPosts[index - 2].slug
+            title: structuredPosts[index - 1].title,
+            href: structuredPosts[index - 1].slug
+          };
+          docPost = { ...docPost, prevPage };
+        } else {
+          // Additional check for the first page of Docs so that it doesn't give any segmentation fault
+          if (index - 2 >= 0) {
+            prevPage = {
+              title: `${structuredPosts[index - 1]?.isRootSection ? rootSections[rootSections.length - 2] : rootSections[rootSections.length - 1]} - ${structuredPosts[index - 2].title}`,
+              href: structuredPosts[index - 2].slug
+            };
+            docPost = { ...docPost, prevPage };
           }
-          docPost = { ...docPost, prevPage }
         }
       }
-    }
-    return docPost
-  })
-  return structuredPosts
-}
+      return docPost;
+    });
 
+  } catch (err) {
+    throw new Error("An error occurred while adding doc buttons:", err);
+  }
+  return structuredPosts;
+}
 
 module.exports = { buildNavTree, addDocButtons, convertDocPosts }
