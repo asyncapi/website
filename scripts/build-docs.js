@@ -1,71 +1,86 @@
-const sortBy = require('lodash/sortBy')
+const sortBy = require('lodash/sortBy');
+
 function buildNavTree(navItems) {
+  try {
     const tree = {
       'welcome': {
         item: { title: 'Welcome', weight: 0, isRootSection: true, isSection: true, rootSectionId: 'welcome', sectionWeight: 0, slug: '/docs' },
         children: {}
       }
-    }
-    
-    //first we make sure that list of items lists main section items and then sub sections, documents last
-  const sortedItems = sortBy(navItems, ['isRootSection', 'weight', 'isSection']);
-  
+    };
+
+    // First, we make sure that the list of items lists main section items, then subsections, documents last
+    const sortedItems = sortBy(navItems, ['isRootSection', 'weight', 'isSection']);
+
     sortedItems.forEach(item => {
-      //identify main sections
+      // Identify main sections
       if (item.isRootSection) {
-        tree[item.rootSectionId] = { item, children: {} }
+        tree[item.rootSectionId] = { item, children: {} };
       }
-  
-      //identify subsections
+
+      // Identify subsections
       if (item.parent) {
-        tree[item.parent].children[item.sectionId] = { item, children: [] }
+        if (!tree[item.parent]) {
+          throw new Error(`Parent section ${item.parent} not found for item ${item.title}`);
+        }
+        tree[item.parent].children[item.sectionId] = { item, children: [] };
       }
-  
+
+      // Handle documents
       if (!item.isSection) {
         if (item.sectionId) {
-          let section = tree[item.rootSectionId].children[item.sectionId];
+          let section = tree[item.rootSectionId]?.children[item.sectionId];
           if (!section) {
-            tree[item.rootSectionId].children[item.sectionId] = { item, children: [] }
+            tree[item.rootSectionId].children[item.sectionId] = { item, children: [] };
           }
-          tree[item.rootSectionId].children[item.sectionId].children.push(item)
+          tree[item.rootSectionId].children[item.sectionId].children.push(item);
         } else {
           tree[item.rootSectionId].children[item.title] = { item };
         }
       }
-    })
-  
+    });
+
     for (const [rootKey, rootValue] of Object.entries(tree)) {
       const allChildren = rootValue.children;
       const allChildrenKeys = Object.keys(allChildren);
-  
+
       rootValue.children = allChildrenKeys
         .sort((prev, next) => {
           return allChildren[prev].item.weight - allChildren[next].item.weight;
-        }).reduce(
-          (obj, key) => { 
-            obj[key] = allChildren[key]; 
-            return obj;
-          }, 
-          {}
-        );
-  
-      //handling subsections
+        })
+        .reduce((obj, key) => {
+          obj[key] = allChildren[key];
+          return obj;
+        }, {});
+
+      // Handling subsections
       if (allChildrenKeys.length > 1) {
         for (const key of allChildrenKeys) {
-          allChildren[key].children?.sort((prev, next) => {
-            return prev.weight - next.weight;
-          });
-  
-          // point in slug for specification subgroup to the latest specification version
+          if (allChildren[key].children) {
+            allChildren[key].children.sort((prev, next) => {
+              return prev.weight - next.weight;
+            });
+          }
+
+          // Point slug for specification subgroup to the latest specification version
           if (rootKey === 'reference' && key === 'specification') {
-            allChildren[key].item.href = allChildren[key].children.find(c => c.isPrerelease === undefined).slug;
+            const latestVersion = allChildren[key].children.find(c => c.isPrerelease === undefined);
+            if (!latestVersion) {
+              throw new Error('No valid specification version found');
+            }
+            allChildren[key].item.href = latestVersion.slug;
           }
         }
       }
     }
-  
+
     return tree;
+
+  } catch (err) {
+    throw new Error(`Failed to build navigation tree: ${err.message}`);
+  }
 }
+
 
  // A recursion function, works on the logic of Depth First Search to traverse all the root and child posts of the 
  // DocTree to get sequential order of the Doc Posts

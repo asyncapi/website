@@ -21,16 +21,16 @@ describe('buildNavTree', () => {
       { title: 'v2.0', weight: 1, isSection: false, rootSectionId: 'reference', sectionId: 'specification', slug: '/docs/reference/specification/v2.0', isPrerelease: true },
       { title: 'v3.0', weight: 2, isSection: false, rootSectionId: 'reference', sectionId: 'specification', slug: '/docs/reference/specification/v3.0' }
     ];
-  
+
     const result = buildNavTree(navItems);
-  
+
     expect(result['welcome'].item).toEqual(
       expect.objectContaining({
         title: 'Welcome',
         slug: '/docs'
       })
     );
-  
+
     expect(result['getting-started'].item).toEqual(
       expect.objectContaining({
         title: 'Getting Started',
@@ -40,14 +40,14 @@ describe('buildNavTree', () => {
 
     expect(result['getting-started'].children).toHaveProperty('installation');
     expect(result['getting-started'].children).toHaveProperty('configuration');
-  
+
     expect(result['reference'].item).toEqual(
       expect.objectContaining({
         title: 'Reference',
         slug: '/docs/reference'
       })
     );
-  
+
     expect(result['reference'].children.api.item).toEqual(
       expect.objectContaining({
         title: 'API',
@@ -61,31 +61,28 @@ describe('buildNavTree', () => {
         slug: '/docs/reference/api/endpoints'
       })
     );
-  
+
     expect(result['reference'].children.specification.item.slug).toBe('/docs/reference/specification');
     expect(result['reference'].children.specification.children[0].slug).toBe('/docs/reference/specification/v1.0');
     expect(result['reference'].children.specification.children[0].isPrerelease).toBe(false);
 
   });
-  
-  
-
 
   test('should handle items without sectionId', () => {
     const navItems = [
       { title: 'Root', weight: 0, isRootSection: true, isSection: true, rootSectionId: 'root', sectionWeight: 0, slug: '/docs' },
       { title: 'Item without sectionId', weight: 1, isSection: false, rootSectionId: 'root', slug: '/docs/item' },
     ];
-  
+
     const result = buildNavTree(navItems);
-  
+
     expect(result['root'].item).toEqual(
       expect.objectContaining({
         title: 'Root',
         slug: '/docs'
       })
     );
-  
+
     expect(result['root'].children).toHaveProperty('Item without sectionId');
     expect(result['root'].children['Item without sectionId'].item).toEqual(
       expect.objectContaining({
@@ -94,5 +91,42 @@ describe('buildNavTree', () => {
       })
     );
   });
-  
+
+  test('should throw and catch an error if a parent section is missing', () => {
+    const navItems = [
+      { title: 'Orphaned Subsection', weight: 0, isSection: true, rootSectionId: 'root', sectionId: 'orphan', parent: 'non-existent-parent', slug: '/docs/orphaned' },
+    ];
+
+    try {
+      buildNavTree(navItems);
+    } catch (err) {
+      expect(err.message).toContain('Parent section non-existent-parent not found for item Orphaned Subsection');
+    }
+  });
+
+  test('should throw and catch an error if no valid specification version is found', () => {
+    const navItems = [
+      { title: 'Reference', weight: 2, isRootSection: true, isSection: true, rootSectionId: 'reference', sectionWeight: 2, slug: '/docs/reference' },
+      { title: 'Specification', weight: 1, isSection: true, rootSectionId: 'reference', sectionId: 'specification', parent: 'reference', slug: '/docs/reference/specification' },
+      { title: 'v1.0', weight: 0, isSection: false, rootSectionId: 'reference', sectionId: 'specification', slug: '/docs/reference/specification/v1.0', isPrerelease: true },
+      { title: 'v2.0', weight: 1, isSection: false, rootSectionId: 'reference', sectionId: 'specification', slug: '/docs/reference/specification/v2.0', isPrerelease: true }
+    ];
+
+    try {
+      buildNavTree(navItems);
+    } catch (err) {
+      expect(err.message).toContain('No valid specification version found');
+    }
+  });
+
+  test('should throw and catch a generic error if something unexpected happens', () => {
+    const navItems = null;
+
+    try {
+      buildNavTree(navItems);
+    } catch (err) {
+      expect(err.message).toContain("Cannot read properties of null (reading 'forEach')");
+    }
+  });
+
 });
