@@ -9,16 +9,16 @@ function buildNavTree(navItems) {
       }
     };
 
-    // First, we make sure that the list of items lists main section items, then subsections, documents last
+    //first we make sure that list of items lists main section items and then sub sections, documents last
     const sortedItems = sortBy(navItems, ['isRootSection', 'weight', 'isSection']);
 
     sortedItems.forEach(item => {
-      // Identify main sections
+      //identify main sections
       if (item.isRootSection) {
         tree[item.rootSectionId] = { item, children: {} };
       }
 
-      // Identify subsections
+      //identify subsections
       if (item.parent) {
         if (!tree[item.parent]) {
           throw new Error(`Parent section ${item.parent} not found for item ${item.title}`);
