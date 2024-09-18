@@ -19,7 +19,11 @@ function renderButtons(): JSX.Element {
         icon={<IconRocket className="inline-block w-6 h-6 -mt-1" />}
         className="w-full mb-2 sm:w-auto sm:mb-0 sm:mr-2"
       /> */}
-      <GithubButton className='w-full sm:w-auto' href='https://www.github.com/asyncapi/github-action-for-generator' />
+      <GithubButton
+        text='View on Github'
+        className='w-full sm:w-auto'
+        href='https://www.github.com/asyncapi/github-action-for-generator'
+      />
     </div>
   );
 }
