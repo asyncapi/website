@@ -2,7 +2,11 @@ const fs = require('fs')
 const json2xml = require('jgexml/json2xml')
 
 function getAllPosts() {
-  return require('../config/posts.json')
+  try {
+    return require('../config/posts.json');
+  } catch (err) {
+    throw new Error('Cannot find posts.json');
+  }
 }
 
 function clean(s) {
@@ -18,6 +22,7 @@ function clean(s) {
 module.exports = function rssFeed(type, title, desc, outputPath) {
   return new Promise((resolve, reject) => {
     try {
+
       const posts = getAllPosts()[`${type}`]
         .sort((i1, i2) => {
           const i1Date = new Date(i1.date)
