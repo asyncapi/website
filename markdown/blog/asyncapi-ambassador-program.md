@@ -10,7 +10,6 @@ authors:
     photo: /img/avatars/barbano.webp
     link: https://www.linkedin.com/in/barbano-gonzalez-moreno
 excerpt: Information about AsyncAPI Ambassador Program.
-featured: true
 ---
 
 AsyncAPI and its community have grown exponentially during the last few months. As a feedback exercise, both the project and the community are getting stronger with one another. The community is the driving force that leads the initiative and the bigger it gets, the greater the consistency and potential it has. It’s amazing to see a vast number of people who invest their time in disseminating and promoting the initiative through talks, articles, workshops, and program direction... 
