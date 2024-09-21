@@ -20,8 +20,12 @@ const buildTools = async () => {
     );
     await combineTools(automatedTools, manualTools, toolsPath, tagsPath);
   } catch (err) {
-    throw new Error("An error occurred while building tools:", err.message);
+    throw new Error(`An error occurred while building tools: ${err.message}`);
   }
 };
 
-buildTools();
+if (require.main === module) {
+  buildTools();
+}
+
+module.exports = {buildTools}
