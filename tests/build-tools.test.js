@@ -26,11 +26,81 @@ describe('buildTools', () => {
         writeFileSync(toolsPath, JSON.stringify(initialToolsData));
     });
 
+    afterAll(() => {
+        rmSync(testDir, { recursive: true, force: true });
+    });
+
     beforeEach(() => {
         jest.clearAllMocks();
     });
 
+    it('should extract, convert, combine tools, and write to file', async () => {
+
+        getData.mockResolvedValue(mockExtractData);
+        convertTools.mockResolvedValue(mockConvertedData);
+        combineTools.mockResolvedValue(true);
+
+        await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
+
+        const automatedToolsContent = readFileSync(automatedToolsPath, 'utf8');
+        expect(JSON.parse(automatedToolsContent)).toEqual(mockConvertedData);
+
+        const manualToolsData = JSON.parse(readFileSync(manualToolsPath, 'utf8'));
+        const tagsData = JSON.parse(readFileSync(tagsPath, 'utf8'));
+        expect(combineTools).toHaveBeenCalledWith(mockConvertedData, manualToolsData, toolsPath, tagsPath);
+
+        const toolsContent = readFileSync(toolsPath, 'utf8');
+        expect(toolsContent).toBeDefined();
+        expect(tagsData).toBeDefined();
+    });
+
+    it('should handle getData error', async () => {
+        getData.mockRejectedValue(new Error('Extract error'));
+
+        try {
+            await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
+        } catch (err) {
+            expect(err.message).toContain('Extract error');
+        }
+    });
+
+    it('should handle convertTools error', async () => {
+
+        getData.mockResolvedValue(mockExtractData);
+        convertTools.mockRejectedValue(new Error('Convert error'));
+
+        try {
+            await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
+        } catch (err) {
+            expect(err.message).toContain('Convert error');
+        }
+    });
+
+    it('should handle combineTools error', async () => {
+
+        getData.mockResolvedValue(mockExtractData);
+        convertTools.mockResolvedValue(mockConvertedData);
+        combineTools.mockRejectedValue(new Error('Combine Tools error'));
+
+        try {
+            await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
+        } catch (err) {
+            expect(err.message).toContain('Combine Tools error');
+        }
+    });
+
     it('should handle file write errors', async () => {
 
+        getData.mockResolvedValue(mockExtractData);
+        convertTools.mockResolvedValue(mockConvertedData);
+        combineTools.mockResolvedValue(true);
+
+        const invalidPath = '/invalid_dir/tools.json';
+
+        try {
+            await buildTools(invalidPath, manualToolsPath, toolsPath, tagsPath);
+        } catch (err) {
+            expect(err.message).toMatch(/ENOENT|EACCES/);
+        }
     });
 });
