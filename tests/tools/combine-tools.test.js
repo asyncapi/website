@@ -225,5 +225,37 @@ describe('combineTools function', () => {
       borderColor: 'border-[#40ccf7]'
     });
   });
-
+  it('should add a new language when it is not found in the existing languages list', async () => {
+    const toolWithNewLanguage = {
+      title: 'New Language Tool',
+      filters: {
+        language: 'Go',  // A language that is not in the mocked `languagesColor` list
+        technology: ['Node.js']
+      },
+      links: { repoUrl: 'https://github.com/example/new-language-tool' }
+    };
+  
+    const automatedTools = {
+      'category1': {
+        description: 'Category 1 Description',
+        toolsList: [toolWithNewLanguage]
+      }
+    };
+  
+    await combineTools(automatedTools, {}, toolsPath, tagsPath);
+  
+    const combinedTools = readJSON(toolsPath);
+    const tool = combinedTools.category1.toolsList[0];
+  
+    expect(tool.filters.language).toHaveLength(1);
+    expect(tool.filters.language).toContainEqual(expect.objectContaining({ name: 'Go' }));
+  
+    const tagsData = readJSON(tagsPath);
+    expect(tagsData.languages).toContainEqual({
+      name: 'Go',
+      color: 'bg-[#57f281]',       // The default color that gets added
+      borderColor: 'border-[#37f069]'
+    });
+  });
+  
 });
