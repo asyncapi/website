@@ -10,7 +10,7 @@ jest.mock('../scripts/tools/tools-object');
 jest.mock('../scripts/tools/combine-tools');
 
 describe('buildTools', () => {
-    const testDir = resolve(__dirname, 'test_config');
+    const testDir = resolve(__dirname, 'testCache');
     const toolsPath = resolve(testDir, 'tools.json');
     const tagsPath = resolve(testDir, 'all-tags.json');
     const automatedToolsPath = resolve(testDir, 'tools-automated.json');
