@@ -229,7 +229,7 @@ describe('combineTools function', () => {
     const toolWithNewLanguage = {
       title: 'New Language Tool',
       filters: {
-        language: 'Go',  // A language that is not in the mocked `languagesColor` list
+        language: 'Go',
         technology: ['Node.js']
       },
       links: { repoUrl: 'https://github.com/example/new-language-tool' }
@@ -253,7 +253,7 @@ describe('combineTools function', () => {
     const tagsData = readJSON(tagsPath);
     expect(tagsData.languages).toContainEqual({
       name: 'Go',
-      color: 'bg-[#57f281]',       // The default color that gets added
+      color: 'bg-[#57f281]',
       borderColor: 'border-[#37f069]'
     });
   });
