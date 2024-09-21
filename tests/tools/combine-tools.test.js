@@ -225,5 +225,5 @@ describe('combineTools function', () => {
       borderColor: 'border-[#40ccf7]'
     });
   });
-  
+
 });
