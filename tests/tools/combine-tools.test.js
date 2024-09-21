@@ -184,4 +184,46 @@ describe('combineTools function', () => {
     const tagsData = readJSON(tagsPath);
     expect(tagsData.languages).toContainEqual(expect.objectContaining({ name: 'NewLanguage' }));
   });
+
+  it('should add a new language and technology when not found in the existing lists', async () => {
+    const toolWithNewTags = {
+      title: 'New Tags Tool',
+      filters: {
+        language: 'NewLanguage',
+        technology: ['NewTechnology']
+      },
+      links: { repoUrl: 'https://github.com/example/new-tags-tool' }
+    };
+  
+    const automatedTools = {
+      'category1': {
+        description: 'Category 1 Description',
+        toolsList: [toolWithNewTags]
+      }
+    };
+  
+    await combineTools(automatedTools, {}, toolsPath, tagsPath);
+  
+    const combinedTools = readJSON(toolsPath);
+    const tool = combinedTools.category1.toolsList[0];
+  
+    expect(tool.filters.language).toHaveLength(1);
+    expect(tool.filters.language).toContainEqual(expect.objectContaining({ name: 'NewLanguage' }));
+  
+    expect(tool.filters.technology).toHaveLength(1);
+    expect(tool.filters.technology).toContainEqual(expect.objectContaining({ name: 'NewTechnology' }));
+  
+    const tagsData = readJSON(tagsPath);
+    expect(tagsData.languages).toContainEqual({
+      name: 'NewLanguage',
+      color: 'bg-[#57f281]',
+      borderColor: 'border-[#37f069]'
+    });
+    expect(tagsData.technologies).toContainEqual({
+      name: 'NewTechnology',
+      color: 'bg-[#61d0f2]',
+      borderColor: 'border-[#40ccf7]'
+    });
+  });
+  
 });
