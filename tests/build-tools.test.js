@@ -4,13 +4,14 @@ const { getData } = require('../scripts/tools/extract-tools-github');
 const { convertTools } = require('../scripts/tools/tools-object');
 const { combineTools } = require('../scripts/tools/combine-tools');
 const { buildTools } = require('../scripts/build-tools');
+const { tagsData, manualTools, mockConvertedData, initialToolsData, mockExtractData } = require('../tests/fixtures/buildToolsData');
 
 jest.mock('../scripts/tools/extract-tools-github');
 jest.mock('../scripts/tools/tools-object');
 jest.mock('../scripts/tools/combine-tools');
 
 describe('buildTools', () => {
-    const testDir = resolve(__dirname, 'testCache');
+    const testDir = resolve(__dirname, 'test_config');
     const toolsPath = resolve(testDir, 'tools.json');
     const tagsPath = resolve(testDir, 'all-tags.json');
     const automatedToolsPath = resolve(testDir, 'tools-automated.json');
@@ -19,38 +20,9 @@ describe('buildTools', () => {
     beforeAll(() => {
         mkdirSync(testDir, { recursive: true });
 
-        const tagsData = [
-            { id: 1, name: 'tag1' },
-            { id: 2, name: 'tag2' }
-        ];
         writeFileSync(tagsPath, JSON.stringify(tagsData));
-
-        const manualTools = [
-            { id: 1, tool: 'manualTool1' },
-            { id: 2, tool: 'manualTool2' }
-        ];
-        const mockConvertedData = [
-            { id: 1, tool: 'tool1' },
-            { id: 2, tool: 'tool2' }
-        ];
-
         writeFileSync(automatedToolsPath, JSON.stringify(mockConvertedData));
         writeFileSync(manualToolsPath, JSON.stringify(manualTools));
-
-        const initialToolsData = [
-            {
-                title: "API Tracker",
-                description: "Explore public AsyncAPI specifications.",
-            },
-            {
-                title: "AsyncAPI Server API",
-                description: "Official tools for AsyncAPI.",
-            },
-            {
-                title: "AsyncAPI Generator",
-                description: "Generate AsyncAPI documents effortlessly.",
-            },
-        ];
         writeFileSync(toolsPath, JSON.stringify(initialToolsData));
     });
 
@@ -63,8 +35,6 @@ describe('buildTools', () => {
     });
 
     it('should extract, convert, combine tools, and write to file', async () => {
-        const mockExtractData = [{ name: 'tool1' }, { name: 'tool2' }];
-        const mockConvertedData = [{ id: 1, tool: 'tool1' }, { id: 2, tool: 'tool2' }];
 
         getData.mockResolvedValue(mockExtractData);
         convertTools.mockResolvedValue(mockConvertedData);
@@ -95,7 +65,7 @@ describe('buildTools', () => {
     });
 
     it('should handle convertTools error', async () => {
-        const mockExtractData = [{ name: 'tool1' }, { name: 'tool2' }];
+
         getData.mockResolvedValue(mockExtractData);
         convertTools.mockRejectedValue(new Error('Convert error'));
 
@@ -107,8 +77,6 @@ describe('buildTools', () => {
     });
 
     it('should handle combineTools error', async () => {
-        const mockExtractData = [{ name: 'tool1' }, { name: 'tool2' }];
-        const mockConvertedData = [{ id: 1, tool: 'tool1' }, { id: 2, tool: 'tool2' }];
 
         getData.mockResolvedValue(mockExtractData);
         convertTools.mockResolvedValue(mockConvertedData);
@@ -122,8 +90,6 @@ describe('buildTools', () => {
     });
 
     it('should handle file write errors', async () => {
-        const mockExtractData = [{ name: 'tool1' }, { name: 'tool2' }];
-        const mockConvertedData = [{ id: 1, tool: 'tool1' }, { id: 2, tool: 'tool2' }];
 
         getData.mockResolvedValue(mockExtractData);
         convertTools.mockResolvedValue(mockConvertedData);
