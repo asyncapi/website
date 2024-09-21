@@ -24,6 +24,7 @@ const buildTools = async () => {
   }
 };
 
+/* istanbul ignore next */
 if (require.main === module) {
   buildTools();
 }
