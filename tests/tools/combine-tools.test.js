@@ -3,6 +3,16 @@ const path = require('path');
 const { combineTools } = require('../../scripts/tools/combine-tools');
 const { createToolObject } = require('../../scripts/tools/tools-object');
 
+// jest.mock('ajv', () => {
+//   const Ajv = jest.fn();
+//   Ajv.prototype.compile = jest.fn().mockReturnValue(() => true);
+//   return Ajv;
+// });
+
+// jest.mock('ajv-formats', () => {
+//   return jest.fn();
+// });
+
 jest.mock('../../scripts/tools/tags-color', () => ({
   languagesColor: [
     { name: 'JavaScript', color: 'bg-[#57f281]', borderColor: 'border-[#37f069]' },
