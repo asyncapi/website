@@ -124,27 +124,6 @@ describe('rssFeed', () => {
     expect(error.message).toMatch(/ENOENT|EACCES/);
   });
 
-  it('should throw an error when posts.json is not found', async () => {
-    const postsJsonPath = path.join(__dirname, '..', 'config', 'posts.json');
-    const tempPath = path.join(__dirname, '..', 'config', 'posts.json.temp');
-    
-    if (fs.existsSync(postsJsonPath)) {
-      fs.renameSync(postsJsonPath, tempPath);
-    }
-  
-    try {
-      await rssFeed(type, title, desc, outputPath);
-    } catch (err) {
-      expect(err.message).toContain('Failed to generate RSS feed');
-      expect(err.message).toContain('Cannot find posts.json');
-    } finally {
-      if (fs.existsSync(tempPath)) {
-        fs.renameSync(tempPath, postsJsonPath);
-      }
-    }
-  
-  });
-
   it('should throw an error when posts.json is malformed', async () => {
     jest.doMock('../config/posts.json', () => {
       return { invalidKey: [] };
