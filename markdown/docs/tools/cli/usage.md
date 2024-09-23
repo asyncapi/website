@@ -308,11 +308,11 @@ _See code: [src/commands/config/versions.ts](https://github.com/asyncapi/cli/blo
 
 ## `asyncapi convert [SPEC-FILE]`
 
-Convert asyncapi documents older to newer versions
+Convert asyncapi documents older to newer versions or or OpenAPI documents to AsyncAPI
 
 ```
 USAGE
-  $ asyncapi convert [SPEC-FILE] [-h] [-o <value>] [-t <value>]
+  $ asyncapi convert [SPEC-FILE] [-h] [-o <value>] [-t <value>] [-p <value>]
 
 ARGUMENTS
   SPEC-FILE  spec path, url, or context-name
@@ -320,10 +320,12 @@ ARGUMENTS
 FLAGS
   -h, --help                    Show CLI help.
   -o, --output=<value>          path to the file where the result is saved
+  -p, --perspective=<option>    [default: server] Perspective to use when converting OpenAPI to AsyncAPI (client or server). Note: This option is only applicable for OpenAPI to AsyncAPI conversions.
+                                <options: client|server>
   -t, --target-version=<value>  [default: 3.0.0] asyncapi version to convert to
 
 DESCRIPTION
-  Convert asyncapi documents older to newer versions
+  Convert asyncapi documents older to newer versions or or OpenAPI documents to AsyncAPI
 ```
 
 _See code: [src/commands/convert.ts](https://github.com/asyncapi/cli/blob/v2.3.12/src/commands/convert.ts)_
