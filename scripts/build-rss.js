@@ -2,11 +2,7 @@ const fs = require('fs')
 const json2xml = require('jgexml/json2xml')
 
 function getAllPosts() {
-  try {
-    return require('../config/posts.json');
-  } catch (err) {
-    throw new Error('Cannot find posts.json');
-  }
+  return require('../config/posts.json');
 }
 
 function clean(s) {
