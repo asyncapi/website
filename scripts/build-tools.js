@@ -24,8 +24,8 @@ const buildTools = async (automatedToolsPath, manualToolsPath, toolsPath, tagsPa
 if (require.main === module) {
   const automatedToolsPath = resolve(__dirname, '../config', 'tools-automated.json');
   const manualToolsPath = resolve(__dirname, '../config', 'tools-manual.json');
-  const toolsPath = resolve(__dirname, '../../config', 'tools.json');
-  const tagsPath = resolve(__dirname, '../../config', 'all-tags.json');
+  const toolsPath = resolve(__dirname, '../config', 'tools.json');
+  const tagsPath = resolve(__dirname, '../config', 'all-tags.json');
 
   buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
 }
