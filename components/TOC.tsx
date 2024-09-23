@@ -47,7 +47,7 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
   return (
     <div
       className={twMerge(`${className} ${tocItems.length ? '' : 'hidden'} 
-      ${cssBreakingPoint === 'xl' ? 'xl:block' : 'lg:block'} md:top-24 md:max-h-(screen-14) z-20`)}
+      ${cssBreakingPoint === 'xl' ? 'xl:block' : 'lg:block'} md:top-24 md:max-h-(screen-14) mb-6 z-20`)}
       onClick={() => setOpen(!open)}
     >
       <div
