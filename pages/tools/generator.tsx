@@ -16,7 +16,7 @@ import Paragraph from '../../components/typography/Paragraph';
  */
 function renderButtons(): JSX.Element {
   return (
-    <div className='mt-8'>
+    <div className='mt-8 space-y-4 md:space-y-0'>
       {/* <Button
         text="Learn more"
         href="/docs/tools/generator"
@@ -32,7 +32,7 @@ function renderButtons(): JSX.Element {
       <Button
         text='View Docs'
         href='/docs/tools/generator'
-        className='ml-2 mt-2 block w-full sm:w-auto md:mt-0 md:inline-block'
+        className='md:ml-2 mt-2 block w-fit md:mt-0 md:inline-block'
       />
     </div>
   );
