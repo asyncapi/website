@@ -1,0 +1,21 @@
+name: Run tests for netlify edge-functions
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
+
+jobs:
+  netlify-tests:
+    strategy:
+      matrix:
+        deno-version: [1.46.0]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Deno
+        uses: denoland/setup-deno@3a041055d2e2068f6e2c59904ee0ec2dfa9d9665
+        with:
+          deno-version: ${{ matrix.deno-version }}
+      - name: Test with Deno
+        run: deno test --allow-env --trace-ops netlify/**/*.test.ts
+      
