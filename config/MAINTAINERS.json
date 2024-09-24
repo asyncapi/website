@@ -87,6 +87,7 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
+            "studio",
             "github-action-for-cli",
             "cli"
         ],
@@ -276,8 +277,7 @@
             "template-for-generator-templates",
             "community",
             "diff",
-            "chatbot",
-            "infra"
+            "chatbot"
         ],
         "githubID": 6995927
     },
@@ -447,8 +447,7 @@
             "go-watermill-template",
             "template-for-go-projects",
             "parser-api",
-            "server-api",
-            "infra"
+            "server-api"
         ],
         "githubID": 1083296
     },
@@ -720,6 +719,7 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
+            "website",
             "modelina"
         ],
         "githubID": 43639341
@@ -963,5 +963,34 @@
             "learning-paths"
         ],
         "githubID": 77982319
+    },
+    {
+        "name": "Lorenz Simon",
+        "github": "lorenzsimon",
+        "isTscMember": false,
+        "repos": [
+            "kotlin-asyncapi"
+        ],
+        "githubID": 39913716
+    },
+    {
+        "name": "Jonas S\u00fcskind",
+        "github": "sueskind",
+        "isTscMember": false,
+        "repos": [
+            "kotlin-asyncapi"
+        ],
+        "githubID": 52210599
+    },
+    {
+        "name": "Andrei",
+        "github": "gimlet2",
+        "twitter": "gimlet2",
+        "availableForHire": true,
+        "isTscMember": false,
+        "repos": [
+            "kotlin-asyncapi"
+        ],
+        "githubID": 758568
     }
 ]
