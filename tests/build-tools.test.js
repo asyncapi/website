@@ -47,11 +47,15 @@ describe('buildTools', () => {
 
         const manualToolsData = JSON.parse(readFileSync(manualToolsPath, 'utf8'));
         const tagsData = JSON.parse(readFileSync(tagsPath, 'utf8'));
-        expect(combineTools).toHaveBeenCalledWith(mockConvertedData, manualToolsData, toolsPath, tagsPath);
-
+        const toolsData = JSON.parse(readFileSync(toolsPath, 'utf8'));
         const toolsContent = readFileSync(toolsPath, 'utf8');
+        
+        expect(combineTools).toHaveBeenCalledWith(mockConvertedData, manualToolsData, toolsPath, tagsPath);
+        
         expect(toolsContent).toBeDefined();
         expect(tagsData).toBeDefined();
+        expect(toolsData).toEqual(initialToolsData);
+        expect(tagsData).toEqual(tagsData);
     });
 
     it('should handle getData error', async () => {
