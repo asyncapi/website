@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
@@ -11,10 +13,14 @@ import NewsroomArticle from './NewsroomArticle';
 import NewsroomBlogPosts from './NewsroomBlogPosts';
 import NewsroomYoutube from './NewsroomYoutube';
 
+
 /**
  * @description This component displays the latest updates, blog posts, news, and videos.
  */
 export default function Newsroom() {
+
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <>
       <div className='mt-12 text-center' data-testid='Newsroom-main'>
@@ -78,7 +84,13 @@ export default function Newsroom() {
           </div>
           <div className='w-full px-2 md:w-1/2 md:pl-4 md:pr-0'>
             <div className='mx-auto mt-8 w-full rounded-xl shadow-md md:mt-0' data-testid='Newsroom-Twitter'>
-              <TwitterTimelineEmbed sourceType='profile' screenName='AsyncAPISpec' options={{ tweetLimit: '2' }} />
+            {!isLoaded && <p> Loading Tweets... </p>}
+              <TwitterTimelineEmbed
+                sourceType='profile'
+                screenName='AsyncAPISpec'
+                options={{ height: '400' }}
+                onLoad={() => setIsLoaded(true)}
+              />
             </div>
           </div>
         </div>
