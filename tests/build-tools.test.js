@@ -20,10 +20,7 @@ describe('buildTools', () => {
     beforeAll(() => {
         mkdirSync(testDir, { recursive: true });
 
-        writeFileSync(tagsPath, JSON.stringify(tagsData));
-        writeFileSync(automatedToolsPath, JSON.stringify(mockConvertedData));
         writeFileSync(manualToolsPath, JSON.stringify(manualTools));
-        writeFileSync(toolsPath, JSON.stringify(initialToolsData));
     });
 
     afterAll(() => {
@@ -35,10 +32,21 @@ describe('buildTools', () => {
     });
 
     it('should extract, convert, combine tools, and write to file', async () => {
+        getData.mockImplementation(async () => {
+            writeFileSync(automatedToolsPath, JSON.stringify(mockExtractData));
+            return mockExtractData;
+        });
 
-        getData.mockResolvedValue(mockExtractData);
-        convertTools.mockResolvedValue(mockConvertedData);
-        combineTools.mockResolvedValue(true);
+        convertTools.mockImplementation(async () => {
+            writeFileSync(automatedToolsPath, JSON.stringify(mockConvertedData));
+            return mockConvertedData;
+        });
+
+        combineTools.mockImplementation(async () => {
+            writeFileSync(toolsPath, JSON.stringify(initialToolsData));
+            writeFileSync(tagsPath, JSON.stringify(tagsData));
+            return true;
+        });
 
         await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
 
@@ -46,16 +54,13 @@ describe('buildTools', () => {
         expect(JSON.parse(automatedToolsContent)).toEqual(mockConvertedData);
 
         const manualToolsData = JSON.parse(readFileSync(manualToolsPath, 'utf8'));
-        const tagsData = JSON.parse(readFileSync(tagsPath, 'utf8'));
-        const toolsData = JSON.parse(readFileSync(toolsPath, 'utf8'));
-        const toolsContent = readFileSync(toolsPath, 'utf8');
-        
+        const tagsFileData = JSON.parse(readFileSync(tagsPath, 'utf8'));
+        const toolsFileData = JSON.parse(readFileSync(toolsPath, 'utf8'));
+
         expect(combineTools).toHaveBeenCalledWith(mockConvertedData, manualToolsData, toolsPath, tagsPath);
-        
-        expect(toolsContent).toBeDefined();
-        expect(tagsData).toBeDefined();
-        expect(toolsData).toEqual(initialToolsData);
-        expect(tagsData).toEqual(tagsData);
+
+        expect(toolsFileData).toEqual(initialToolsData);
+        expect(tagsFileData).toEqual(tagsData);
     });
 
     it('should handle getData error', async () => {
@@ -69,7 +74,6 @@ describe('buildTools', () => {
     });
 
     it('should handle convertTools error', async () => {
-
         getData.mockResolvedValue(mockExtractData);
         convertTools.mockRejectedValue(new Error('Convert error'));
 
@@ -81,7 +85,6 @@ describe('buildTools', () => {
     });
 
     it('should handle combineTools error', async () => {
-
         getData.mockResolvedValue(mockExtractData);
         convertTools.mockResolvedValue(mockConvertedData);
         combineTools.mockRejectedValue(new Error('Combine Tools error'));
@@ -94,7 +97,6 @@ describe('buildTools', () => {
     });
 
     it('should handle file write errors', async () => {
-
         getData.mockResolvedValue(mockExtractData);
         convertTools.mockResolvedValue(mockConvertedData);
         combineTools.mockResolvedValue(true);
