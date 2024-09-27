@@ -172,7 +172,7 @@ I would like to thank the experts for taking their time at the conference and vo
 ## AsyncAPI Conf in Paris
 As you can tell, London was a success, and now there's an opportunity to be part of another fantastic AsyncAPI conference in Paris. [The Call for Proposals for Paris](https://conference.asyncapi.com/venue/Paris) will soon close on the 12th of October, and we encourage anyone to apply.
 
-## AsyncAPI Bounty
+## AsyncAPI Bounty Program
 This month, we celebrate a significant milestone: the first anniversary of the official launch of the AsyncAPI Bounty Program. Our goal has been and continues to recognize and reward the efforts of our maintainers and contributors and to challenge the notion that contributing to Open Source is always free. You can learn about the history of the AsyncAPI Program from [the redistribution of Open Collective funds discussion](https://github.com/orgs/asyncapi/discussions/541#discussioncomment-5462792).
 
 As a community, we have greatly benefited from the program. For example, we have used the AsyncAPI Cheat Sheet at conferences, saved costs on Digital Ocean, and implemented an automated TSC voting process. For more details, [please read the AsyncAPI Bounty Program Summary](https://www.asyncapi.com/blog/asyncapi-bounty-program-2024).
