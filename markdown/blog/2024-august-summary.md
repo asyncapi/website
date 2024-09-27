@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: AsyncAPI Community Manager
 excerpt: 'August Community Update'
-featured: true
 ---
 
 The summer holidays are almost over, but the community hasn't slowed down. We've been receiving great news, and I'm thrilled to share that our list of sponsors is growing.
