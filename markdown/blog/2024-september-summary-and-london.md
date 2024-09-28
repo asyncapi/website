@@ -103,8 +103,8 @@ All the talks were incredible, and even the questions asked during the sessions 
 
 ### API Specs And Standards Booth
 We teamed up with the OpenAPI Initiative team at the booth and had many insightful conversations. 
-The first day was buzzingly busy, and it was interesting to see how many people were not familiar with AsyncAPI and the community. Our maintainers and ambassadors did an amazing job educating and answering questions about the community, specification, and tooling.
-
+The first day was bustling with activity, and it was interesting to see how many people were not familiar with AsyncAPI and the community. 
+They were very intrigued by how a bunch of folks with diverse expertise and skills from different continents and companies came together to represent AsyncAPI despite having never met. Our maintainers and ambassadors did a fantastic job educating and answering questions about the community, specification, and tooling.
 <Figure
   src="/img/posts/london-conf-2024/booth-day-1.webp"
   caption="AsyncAPI Maintainers and Ambassadors Answering Some Questions."
