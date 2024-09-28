@@ -119,9 +119,8 @@ describe('rssFeed', () => {
       await rssFeed(type, title, desc, invalidOutputPath);
     } catch (err) {
       error = err;
+      expect(error.message).toMatch(/ENOENT|EACCES/);
     }
-
-    expect(error.message).toMatch(/ENOENT|EACCES/);
   });
 
   it('should throw an error when posts.json is malformed', async () => {
@@ -134,11 +133,10 @@ describe('rssFeed', () => {
       await rssFeed(type, title, desc, outputPath);
     } catch (err) {
       error = err;
+      expect(error).toBeDefined();
+      expect(error.message).toContain('Failed to generate RSS feed');
+      expect(error.message).toContain('Cannot read properties of undefined');
     }
-
-    expect(error).toBeDefined();
-    expect(error.message).toContain('Failed to generate RSS feed');
-    expect(error.message).toContain('Cannot read properties of undefined');
   });
 
   it('should handle empty posts array', async () => {
@@ -158,4 +156,28 @@ describe('rssFeed', () => {
     expect(fileContent).toContain('<rss version="2.0"');
     expect(fileContent).not.toContain('<item>');
   });
+
+  it('should throw an error when post is missing required fields', async () => {
+    const incompletePostMockData = {
+      blog: [
+        {
+          slug: '/blog/incomplete-post',
+          excerpt: 'This post is incomplete',
+          date: '2024-07-05',
+          featured: false,
+        },
+      ],
+    };
+    jest.doMock('../config/posts.json', () => incompletePostMockData, { virtual: true });
+
+    let error;
+    try {
+      await rssFeed(type, title, desc, outputPath);
+    } catch (err) {
+      error = err;
+      expect(error).toBeDefined();
+      expect(error.message).toContain('Missing required fields');
+    }
+  });
+
 });

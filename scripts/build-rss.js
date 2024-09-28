@@ -21,6 +21,9 @@ module.exports = function rssFeed(type, title, desc, outputPath) {
 
       const posts = getAllPosts()[`${type}`]
         .sort((i1, i2) => {
+          if (!i1.date || !i2.date) {
+            throw new Error('Missing date in post data');
+          }
           const i1Date = new Date(i1.date)
           const i2Date = new Date(i2.date)
           if (i1.featured && !i2.featured) return -1
@@ -51,6 +54,9 @@ module.exports = function rssFeed(type, title, desc, outputPath) {
       rss.channel.item = []
 
       for (let post of posts) {
+        if (!post.title || !post.slug || !post.excerpt || !post.date) {
+          throw new Error('Missing required fields in post data');
+        }
         const link = `${base}${post.slug}${tracking}`;
         const item = { title: post.title, description: clean(post.excerpt), link, category: type, guid: { '@isPermaLink': true, '': link }, pubDate: new Date(post.date).toUTCString() }
         if (post.cover) {
@@ -71,7 +77,12 @@ module.exports = function rssFeed(type, title, desc, outputPath) {
 
       feed.rss = rss
 
-      const xml = json2xml.getXml(feed, '@', '', 2)
+      let xml;
+      try {
+        xml = json2xml.getXml(feed, '@', '', 2);
+      } catch (xmlError) {
+        throw new Error(`XML conversion error: ${xmlError.message}`);
+      }
       fs.writeFileSync(`./public/${outputPath}`, xml, 'utf8')
       resolve(`RSS feed generated successfully at ${outputPath}`);
     } catch (err) {
