@@ -1,6 +1,29 @@
 const { convertTools, createToolObject } = require('../../scripts/tools/tools-object');
 const axios = require('axios');
 
+const { mockData,
+  mockToolFileContent,
+  toolFileT1,
+  expectedObjectT1,
+  repoDescription,
+  repositoryUrl,
+  isAsyncAPIrepo,
+  toolFileT2,
+  expectedObjectT2,
+  expectedObjectT3,
+  dataWithUnknownCategory,
+  toolFileContent,
+  invalidToolFileContent,
+  invalidToolData,
+  duplicateToolData,
+  duplicateToolFileContent,
+  dataWithUnknownCategoryOnce,
+  unknownToolFileContent,
+  invalidToolFileContentJSON,
+  invalidJsonContent,
+  missingToolPropertyContent
+} = require("../fixtures/toolsObjectData")
+
 jest.mock('axios');
 
 jest.mock('../../scripts/tools/categorylist', () => ({
@@ -10,35 +33,6 @@ jest.mock('../../scripts/tools/categorylist', () => ({
   ]
 }));
 
-const mockData = {
-  items: [
-    {
-      name: '.asyncapi-tool-example',
-      url: 'https://api.github.com/repositories/351453552/contents/.asyncapi-tool?ref=61855e7365a881e98c2fe667a658a0005753d873',
-      repository: {
-        full_name: 'asyncapi/example-repo',
-        html_url: 'https://github.com/asyncapi/example-repo',
-        description: 'Example repository',
-        owner: {
-          login: 'asyncapi'
-        }
-      },
-      path: '.asyncapi-tool'
-    }
-  ]
-};
-
-const mockToolFileContent = `
-title: Example Tool
-description: This is an example tool.
-links:
-  repoUrl: https://github.com/asyncapi/example-repo
-filters:
-  categories:
-    - Category1
-  hasCommercial: true
-`;
-
 describe('Tools Object', () => {
 
   beforeEach(() => {
@@ -47,67 +41,15 @@ describe('Tools Object', () => {
   });
 
   it('should create a tool object with provided parameters', async () => {
-    const toolFile = {
-      title: 'Example Tool',
-      description: 'This is an example tool.',
-      links: {
-        repoUrl: 'https://github.com/asyncapi/example-repo'
-      },
-      filters: {
-        categories: ['Category1'],
-        hasCommercial: true
-      }
-    };
-    const repositoryUrl = 'https://github.com/asyncapi/example-repo';
-    const repoDescription = 'Example repository';
-    const isAsyncAPIrepo = true;
 
-    const expectedObject = {
-      title: 'Example Tool',
-      description: 'This is an example tool.',
-      links: {
-        repoUrl: 'https://github.com/asyncapi/example-repo'
-      },
-      filters: {
-        categories: ['Category1'],
-        hasCommercial: true,
-        isAsyncAPIOwner: true
-      }
-    };
-
-    const result = await createToolObject(toolFile, repositoryUrl, repoDescription, isAsyncAPIrepo);
-    expect(result).toEqual(expectedObject);
+    const result = await createToolObject(toolFileT1, repositoryUrl, repoDescription, isAsyncAPIrepo);
+    expect(result).toEqual(expectedObjectT1);
   });
 
   it('should use repoDescription when toolFile.description is not provided', async () => {
-    const toolFile = {
-      title: 'Example Tool',
-      links: {
-        repoUrl: 'https://github.com/asyncapi/example-repo'
-      },
-      filters: {
-        categories: ['Category1']
-      }
-    };
-    const repositoryUrl = 'https://github.com/asyncapi/example-repo';
-    const repoDescription = 'Example repository';
-    const isAsyncAPIrepo = true;
 
-    const expectedObject = {
-      title: 'Example Tool',
-      description: 'Example repository',
-      links: {
-        repoUrl: 'https://github.com/asyncapi/example-repo'
-      },
-      filters: {
-        categories: ['Category1'],
-        hasCommercial: false,
-        isAsyncAPIOwner: true
-      }
-    };
-
-    const result = await createToolObject(toolFile, repositoryUrl, repoDescription, isAsyncAPIrepo);
-    expect(result).toEqual(expectedObject);
+    const result = await createToolObject(toolFileT2, repositoryUrl, repoDescription, isAsyncAPIrepo);
+    expect(result).toEqual(expectedObjectT2);
   });
 
   it('should convert tools data correctly', async () => {
@@ -115,62 +57,11 @@ describe('Tools Object', () => {
 
     const result = await convertTools(mockData);
 
-    const expectedObject = {
-      Category1: {
-        description: 'Description for Category1',
-        toolsList: [
-          {
-            title: 'Example Tool',
-            description: 'This is an example tool.',
-            links: {
-              repoUrl: 'https://github.com/asyncapi/example-repo'
-            },
-            filters: {
-              categories: ['Category1'],
-              hasCommercial: true,
-              isAsyncAPIOwner: true
-            }
-          }
-        ]
-      },
-      Others: {
-        description: 'Other tools category',
-        toolsList: []
-      }
-    };
-
-    expect(result).toEqual(expect.objectContaining(expectedObject));
+    expect(result).toEqual(expect.objectContaining(expectedObjectT3));
     expect(axios.get).toHaveBeenCalledTimes(1);
   });
 
   it('should assign tool to Others category if no matching category is found', async () => {
-    const dataWithUnknownCategory = {
-      items: [
-        {
-          name: '.asyncapi-tool-unknown',
-          url: 'https://api.github.com/repositories/351453552/contents/.asyncapi-tool?ref=61855e7365a881e98c2fe667a658a0005753d873',
-          repository: {
-            full_name: 'asyncapi/unknown-repo',
-            html_url: 'https://github.com/asyncapi/unknown-repo',
-            description: 'Unknown repository',
-            owner: {
-              login: 'asyncapi'
-            }
-          },
-          path: '.asyncapi-tool'
-        }
-      ]
-    };
-
-    const toolFileContent = `
-title: Unknown Tool
-description: This tool has an unknown category.
-links:
-  repoUrl: https://github.com/asyncapi/unknown-repo
-filters:
-  categories:
-    - UnknownCategory
-`;
 
     axios.get.mockResolvedValue({ data: toolFileContent });
 
@@ -181,34 +72,6 @@ filters:
   });
 
   it('should log errors for invalid .asyncapi-tool file', async () => {
-    const invalidToolFileContent = `
-    title: Invalid Tool
-    description: This tool has invalid schema.
-    links:
-      repoUrl: https://github.com/asyncapi/invalid-repo
-    filters:
-      categories:
-        - Category1
-      invalidField: true
-    `;
-
-    const invalidToolData = {
-      items: [
-        {
-          name: '.asyncapi-tool-invalid',
-          url: 'https://api.github.com/repositories/351453552/contents/.asyncapi-tool?ref=invalidref',
-          repository: {
-            full_name: 'asyncapi/invalid-repo',
-            html_url: 'https://github.com/asyncapi/invalid-repo',
-            description: 'Invalid repository',
-            owner: {
-              login: 'asyncapi'
-            }
-          },
-          path: '.asyncapi-tool'
-        }
-      ]
-    };
 
     axios.get.mockResolvedValue({ data: invalidToolFileContent });
 
@@ -229,46 +92,6 @@ filters:
   });
 
   it('should add duplicate tool objects to the same category', async () => {
-    const duplicateToolData = {
-      items: [
-        {
-          name: '.asyncapi-tool-duplicate',
-          url: 'https://api.github.com/repositories/351453552/contents/.asyncapi-tool?ref=duplicate1',
-          repository: {
-            full_name: 'asyncapi/duplicate-repo',
-            html_url: 'https://github.com/asyncapi/duplicate-repo',
-            description: 'Duplicate repository',
-            owner: {
-              login: 'asyncapi'
-            }
-          },
-          path: '.asyncapi-tool'
-        },
-        {
-          name: '.asyncapi-tool-duplicate',
-          url: 'https://api.github.com/repositories/351453552/contents/.asyncapi-tool?ref=duplicate2',
-          repository: {
-            full_name: 'asyncapi/duplicate-repo',
-            html_url: 'https://github.com/asyncapi/duplicate-repo',
-            description: 'Duplicate repository',
-            owner: {
-              login: 'asyncapi'
-            }
-          },
-          path: '.asyncapi-tool'
-        }
-      ]
-    };
-
-    const duplicateToolFileContent = `
-    title: Duplicate Tool
-    description: This is a duplicate tool.
-    links:
-      repoUrl: https://github.com/asyncapi/duplicate-repo
-    filters:
-      categories:
-        - Category1
-    `;
 
     axios.get.mockResolvedValue({ data: duplicateToolFileContent });
 
@@ -280,50 +103,10 @@ filters:
   });
 
   it('should add tool to Others category only once', async () => {
-    const dataWithUnknownCategory = {
-      items: [
-        {
-          name: '.asyncapi-tool-unknown',
-          url: 'https://api.github.com/repositories/351453552/contents/.asyncapi-tool?ref=unknown1',
-          repository: {
-            full_name: 'asyncapi/unknown-repo',
-            html_url: 'https://github.com/asyncapi/unknown-repo',
-            description: 'Unknown repository',
-            owner: {
-              login: 'asyncapi'
-            }
-          },
-          path: '.asyncapi-tool'
-        },
-        {
-          name: '.asyncapi-tool-unknown',
-          url: 'https://api.github.com/repositories/351453552/contents/.asyncapi-tool?ref=unknown2',
-          repository: {
-            full_name: 'asyncapi/unknown-repo',
-            html_url: 'https://github.com/asyncapi/unknown-repo',
-            description: 'Unknown repository',
-            owner: {
-              login: 'asyncapi'
-            }
-          },
-          path: '.asyncapi-tool'
-        }
-      ]
-    };
-
-    const unknownToolFileContent = `
-    title: Unknown Tool
-    description: This tool has an unknown category.
-    links:
-      repoUrl: https://github.com/asyncapi/unknown-repo
-    filters:
-      categories:
-        - UnknownCategory
-    `;
 
     axios.get.mockResolvedValue({ data: unknownToolFileContent });
 
-    const result = await convertTools(dataWithUnknownCategory);
+    const result = await convertTools(dataWithUnknownCategoryOnce);
 
     const uniqueTools = result.Others.toolsList.filter((tool, index, self) =>
       index === self.findIndex((t) => t.title === tool.title)
@@ -344,18 +127,8 @@ filters:
   });
 
   it('should throw an error if JSON schema validation fails', async () => {
-    const invalidToolFileContent = `
-    title: Invalid Tool
-    description: This tool has invalid schema.
-    links:
-      repoUrl: https://github.com/asyncapi/invalid-repo
-    filters:
-      categories:
-        - Category1
-      invalidField: true
-    `;
 
-    axios.get.mockResolvedValue({ data: invalidToolFileContent });
+    axios.get.mockResolvedValue({ data: invalidToolFileContentJSON });
 
     try {
       await convertTools(mockData);
@@ -366,12 +139,6 @@ filters:
   });
 
   it('should throw an error if toolFile cannot be converted to JSON', async () => {
-    const invalidJsonContent = `
-      title: Invalid Tool
-      description: This is an invalid JSON
-      links:
-        repoUrl: https://github.com/asyncapi/invalid-repo
-    `;
 
     axios.get.mockResolvedValue({ data: invalidJsonContent });
 
@@ -390,12 +157,6 @@ filters:
   });
 
   it('should throw an error if a required tool property is missing', async () => {
-    const missingToolPropertyContent = `
-      title: Missing Property Tool
-      description: This tool is missing required properties
-      links:
-        repoUrl: https://github.com/asyncapi/missing-property
-    `;
 
     axios.get.mockResolvedValue({ data: missingToolPropertyContent });
 
