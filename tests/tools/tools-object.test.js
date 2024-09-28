@@ -40,10 +40,12 @@ filters:
 `;
 
 describe('Tools Object', () => {
+  
   beforeEach(() => {
     axios.get.mockClear();
     console.error = jest.fn();
   });
+
   it('should create a tool object with provided parameters', async () => {
     const toolFile = {
       title: 'Example Tool',
@@ -195,7 +197,7 @@ filters:
         - Category1
       invalidField: true
     `;
-  
+
     const invalidToolData = {
       items: [
         {
@@ -213,13 +215,13 @@ filters:
         }
       ]
     };
-  
+
     axios.get.mockResolvedValue({ data: invalidToolFileContent });
-  
+
     await convertTools(invalidToolData);
-  
+
     console.log('All console.error calls:', console.error.mock.calls);
-  
+
     const allErrorMessages = console.error.mock.calls.flat();
     expect(allErrorMessages).toEqual(
       expect.arrayContaining([
@@ -314,7 +316,7 @@ filters:
         }
       ]
     };
-  
+
     const unknownToolFileContent = `
     title: Unknown Tool
     description: This tool has an unknown category.
@@ -324,15 +326,15 @@ filters:
       categories:
         - UnknownCategory
     `;
-  
+
     axios.get.mockResolvedValue({ data: unknownToolFileContent });
-  
+
     const result = await convertTools(dataWithUnknownCategory);
-  
+
     const uniqueTools = result.Others.toolsList.filter((tool, index, self) =>
       index === self.findIndex((t) => t.title === tool.title)
     );
-  
+
     expect(uniqueTools).toHaveLength(1);
     expect(uniqueTools[0].title).toBe('Unknown Tool');
   });
