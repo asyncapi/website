@@ -60,9 +60,20 @@ const missingDateMockData = {
   ],
 };
 
+const incompletePostMockData = {
+  blog: [
+    {
+      slug: '/blog/incomplete-post',
+      excerpt: 'This post is incomplete',
+      date: '2024-07-05',
+      featured: false,
+    },
+  ],
+};
+
 const type = 'blog';
 const title = 'Test Blog RSS';
 const desc = 'Test blog RSS feed';
 const outputPath = 'test-output/blog.xml';
 
-module.exports = { mockRssData, title, type, desc, outputPath, missingDateMockData };
+module.exports = { mockRssData, title, type, desc, outputPath, missingDateMockData, incompletePostMockData };

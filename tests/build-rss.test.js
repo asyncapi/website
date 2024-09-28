@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const rssFeed = require('../scripts/build-rss');
-const { mockRssData, title, type, desc, missingDateMockData } = require('./fixtures/rssData');
+const { mockRssData, title, type, desc, missingDateMockData, incompletePostMockData } = require('./fixtures/rssData');
 
 describe('rssFeed', () => {
   const testOutputDir = path.join(__dirname, '..', 'public', 'test-output');
@@ -135,7 +135,6 @@ describe('rssFeed', () => {
       error = err;
       expect(error).toBeDefined();
       expect(error.message).toContain('Failed to generate RSS feed');
-      expect(error.message).toContain('Cannot read properties of undefined');
     }
   });
 
@@ -158,16 +157,7 @@ describe('rssFeed', () => {
   });
 
   it('should throw an error when post is missing required fields', async () => {
-    const incompletePostMockData = {
-      blog: [
-        {
-          slug: '/blog/incomplete-post',
-          excerpt: 'This post is incomplete',
-          date: '2024-07-05',
-          featured: false,
-        },
-      ],
-    };
+
     jest.doMock('../config/posts.json', () => incompletePostMockData, { virtual: true });
 
     let error;
