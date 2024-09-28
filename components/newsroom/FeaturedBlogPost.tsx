@@ -87,18 +87,9 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
                       {post.authors
                         .map((author, index) =>
                           author.link ? (
-                            <a
-                              key={index}
-                              data-alt={author.name}
-                              href={author.link}
-                              onClick={(e) => {
-                                e.stopPropagation();
-                              }}
-                              target='_blank'
-                              rel='noreferrer'
-                            >
+                            <span key={index} data-alt={author.name} rel='noreferrer'>
                               {author.name}
-                            </a>
+                            </span>
                           ) : (
                             author.name
                           )
