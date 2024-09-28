@@ -40,7 +40,7 @@ filters:
 `;
 
 describe('Tools Object', () => {
-  
+
   beforeEach(() => {
     axios.get.mockClear();
     console.error = jest.fn();
@@ -178,12 +178,6 @@ filters:
 
     expect(result.Others.toolsList).toHaveLength(1);
     expect(result.Others.toolsList[0].title).toBe('Unknown Tool');
-  });
-
-  it('should throw an error if axios.get fails', async () => {
-    axios.get.mockRejectedValue(new Error('Network Error'));
-
-    await expect(convertTools(mockData)).rejects.toThrow('Network Error');
   });
 
   it('should log errors for invalid .asyncapi-tool file', async () => {
@@ -338,5 +332,88 @@ filters:
     expect(uniqueTools).toHaveLength(1);
     expect(uniqueTools[0].title).toBe('Unknown Tool');
   });
+
+  it('should throw an error if axios.get fails', async () => {
+    axios.get.mockRejectedValue(new Error('Network Error'));
+
+    try {
+      await convertTools(mockData)
+    } catch (err) {
+      expect(err.message).toContain("Network Error")
+    }
+  });
+
+  it('should throw an error if JSON schema validation fails', async () => {
+    const invalidToolFileContent = `
+    title: Invalid Tool
+    description: This tool has invalid schema.
+    links:
+      repoUrl: https://github.com/asyncapi/invalid-repo
+    filters:
+      categories:
+        - Category1
+      invalidField: true
+    `;
+
+    axios.get.mockResolvedValue({ data: invalidToolFileContent });
+
+    try {
+      await convertTools(mockData);
+    } catch (err) {
+      expect(err).toBeInstanceOf(Error);
+      expect(err.message).toContain('Invalid .asyncapi-tool file');
+    }
+  });
+
+  it('should throw an error if toolFile cannot be converted to JSON', async () => {
+    const invalidJsonContent = `
+      title: Invalid Tool
+      description: This is an invalid JSON
+      links:
+        repoUrl: https://github.com/asyncapi/invalid-repo
+    `;
+
+    axios.get.mockResolvedValue({ data: invalidJsonContent });
+
+    jest.doMock('../../scripts/utils', () => ({
+      convertToJson: jest.fn(() => {
+        throw new Error('Invalid JSON format');
+      })
+    }));
+
+    try {
+      await convertTools(mockData);
+    } catch (err) {
+      expect(err).toBeInstanceOf(Error);
+      expect(err.message).toBe('Error processing tool: Invalid JSON format');
+    }
+  });
+
+  it('should throw an error if a required tool property is missing', async () => {
+    const missingToolPropertyContent = `
+      title: Missing Property Tool
+      description: This tool is missing required properties
+      links:
+        repoUrl: https://github.com/asyncapi/missing-property
+    `;
+
+    axios.get.mockResolvedValue({ data: missingToolPropertyContent });
+
+    jest.doMock('../../scripts/utils', () => ({
+      convertToJson: jest.fn(() => {
+        return {
+          title: 'Missing Property Tool',
+        };
+      })
+    }));
+
+    try {
+      await convertTools(mockData);
+    } catch (err) {
+      expect(err).toBeInstanceOf(Error);
+      expect(err.message).toContain('Missing required tool properties');
+    }
+  });
+
 });
 
