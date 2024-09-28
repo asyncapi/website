@@ -77,12 +77,7 @@ module.exports = function rssFeed(type, title, desc, outputPath) {
 
       feed.rss = rss
 
-      let xml;
-      try {
-        xml = json2xml.getXml(feed, '@', '', 2);
-      } catch (xmlError) {
-        throw new Error(`XML conversion error: ${xmlError.message}`);
-      }
+      const xml = json2xml.getXml(feed, '@', '', 2);
       fs.writeFileSync(`./public/${outputPath}`, xml, 'utf8')
       resolve(`RSS feed generated successfully at ${outputPath}`);
     } catch (err) {

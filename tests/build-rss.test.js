@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const rssFeed = require('../scripts/build-rss');
-const { mockRssData, title, type, desc } = require('./fixtures/rssData');
+const { mockRssData, title, type, desc, missingDateMockData } = require('./fixtures/rssData');
 
 describe('rssFeed', () => {
   const testOutputDir = path.join(__dirname, '..', 'public', 'test-output');
@@ -177,6 +177,20 @@ describe('rssFeed', () => {
       error = err;
       expect(error).toBeDefined();
       expect(error.message).toContain('Missing required fields');
+    }
+  });
+
+  it('should throw an error when a post is missing a date field during sorting', async () => {
+  
+    jest.doMock('../config/posts.json', () => missingDateMockData, { virtual: true });
+  
+    let error;
+    try {
+      await rssFeed(type, title, desc, outputPath);
+    } catch (err) {
+      error = err;
+      expect(error).toBeDefined();
+      expect(error.message).toContain('Missing date in post data');
     }
   });
 

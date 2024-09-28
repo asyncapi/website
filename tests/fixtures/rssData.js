@@ -42,9 +42,27 @@ const mockRssData = {
   ],
 };
 
+const missingDateMockData = {
+  blog: [
+    {
+      title: 'Post without Date',
+      slug: '/blog/no-date-post',
+      excerpt: 'This post is missing a date',
+      featured: false,
+    },
+    {
+      title: 'Valid Post',
+      slug: '/blog/valid-post',
+      excerpt: 'This post has a valid date',
+      date: '2024-07-05',
+      featured: true,
+    },
+  ],
+};
+
 const type = 'blog';
 const title = 'Test Blog RSS';
 const desc = 'Test blog RSS feed';
 const outputPath = 'test-output/blog.xml';
 
-module.exports = { mockRssData, title, type, desc, outputPath };
+module.exports = { mockRssData, title, type, desc, outputPath, missingDateMockData };
