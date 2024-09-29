@@ -3,19 +3,6 @@ const path = require('path');
 const { combineTools } = require('../../scripts/tools/combine-tools');
 const { createToolObject } = require('../../scripts/tools/tools-object');
 
-const Ajv = require('ajv');
-
-// Mock the entire Ajv module
-jest.mock('ajv', () => {
-  return jest.fn().mockImplementation(() => {
-    return {
-      compile: jest.fn()
-    };
-  });
-});
-jest.mock('ajv-formats', () => {
-  return jest.fn();
-});
 jest.mock('../../scripts/tools/tags-color', () => ({
   languagesColor: [
     { name: 'JavaScript', color: 'bg-[#57f281]', borderColor: 'border-[#37f069]' },
@@ -133,12 +120,6 @@ describe('combineTools function', () => {
   });
 
   it('should log validation errors to console.error', async () => {
-    const mockValidate = jest.fn().mockReturnValue(true);
-    mockValidate.errors = [{ message: 'Invalid tool' }];
-
-    // Get the mocked Ajv instance and set the compile method to return our mockValidate
-    const ajvInstance = new Ajv();
-    ajvInstance.compile.mockReturnValue(mockValidate);
     const invalidTool = { title: 'Invalid Tool' };
     const automatedTools = {
       'category1': {
