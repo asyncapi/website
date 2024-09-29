@@ -2,6 +2,24 @@ const fs = require('fs');
 const path = require('path');
 const { combineTools } = require('../../scripts/tools/combine-tools');
 
+jest.mock('ajv', () => {
+  const Ajv = jest.fn();
+  Ajv.prototype.compile = jest.fn().mockImplementation(() => {
+    return (data) => {
+
+      if (data.title === 'Invalid Tool') {
+        return false;
+      }
+      return true;
+    };
+  });
+  return Ajv;
+});
+
+jest.mock('ajv-formats', () => {
+  return jest.fn();
+});
+
 jest.mock('../../scripts/tools/tags-color', () => ({
   languagesColor: [
     { name: 'JavaScript', color: 'bg-[#57f281]', borderColor: 'border-[#37f069]' },
@@ -34,6 +52,7 @@ describe('combineTools function', () => {
   beforeAll(() => {
     manualTools = readJSON(manualToolsPath);
     automatedTools = readJSON(automatedToolsPath);
+
   });
 
   afterAll(() => {
@@ -114,7 +133,6 @@ describe('combineTools function', () => {
   });
 
   it('should log validation errors to console.error', async () => {
-
     let consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});
 
     const invalidTool = { title: 'Invalid Tool' };
@@ -141,6 +159,8 @@ describe('combineTools function', () => {
 
     expect(fs.existsSync(toolsPath)).toBe(true);
     expect(fs.existsSync(tagsPath)).toBe(true);
+
+    consoleErrorMock.mockRestore();
   });
 
   it('should handle tools with multiple languages, including new ones', async () => {
@@ -247,4 +267,33 @@ describe('combineTools function', () => {
       borderColor: 'border-[#37f069]'
     });
   });
+
+  it('should handle valid tool objects', async () => {
+
+    const validTool = {
+      title: 'Valid Tool',
+      filters: {
+        language: 'JavaScript',
+        technology: ['Node.js']
+      },
+      links: { repoUrl: 'https://github.com/asyncapi/valid-tool' }
+    };
+  
+    const automatedTools = {
+      category1: {
+        description: 'Category 1 Description',
+        toolsList: []
+      }
+    };
+  
+    const manualTools = {
+      category1: {
+        toolsList: [validTool]
+      }
+    };
+  
+    await combineTools(automatedTools, manualTools, toolsPath, tagsPath);
+  
+  });
+  
 });
