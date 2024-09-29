@@ -3,18 +3,11 @@ const path = require('path');
 const { combineTools } = require('../../scripts/tools/combine-tools');
 
 jest.mock('ajv', () => {
-  const Ajv = jest.fn();
-  Ajv.prototype.compile = jest.fn().mockImplementation(() => {
-    return (data) => {
-
-      if (data.title === 'Invalid Tool') {
-        return false;
-      }
-      return true;
-    };
-  });
-  return Ajv;
+  return jest.fn().mockImplementation(() => ({
+    compile: jest.fn().mockImplementation(() => (data) => data.title !== 'Invalid Tool'),
+  }));
 });
+
 
 jest.mock('ajv-formats', () => {
   return jest.fn();
@@ -133,7 +126,7 @@ describe('combineTools function', () => {
   });
 
   it('should log validation errors to console.error', async () => {
-    let consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});
+    let consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => { });
 
     const invalidTool = { title: 'Invalid Tool' };
     const automatedTools = {
@@ -172,7 +165,7 @@ describe('combineTools function', () => {
       },
       links: { repoUrl: 'https://github.com/example/multi-language-tool' }
     };
-  
+
     const automatedTools = {
       'category1': {
         description: 'Category 1 Description',
@@ -181,15 +174,15 @@ describe('combineTools function', () => {
     };
 
     await combineTools(automatedTools, {}, toolsPath, tagsPath);
-  
+
     const combinedTools = readJSON(toolsPath);
     const tool = combinedTools.category1.toolsList[0];
-  
+
     expect(tool.filters.language).toHaveLength(3);
     expect(tool.filters.language).toContainEqual(expect.objectContaining({ name: 'JavaScript' }));
     expect(tool.filters.language).toContainEqual(expect.objectContaining({ name: 'Python' }));
     expect(tool.filters.language).toContainEqual(expect.objectContaining({ name: 'NewLanguage' }));
-  
+
     const tagsData = readJSON(tagsPath);
     expect(tagsData.languages).toContainEqual(expect.objectContaining({ name: 'NewLanguage' }));
   });
@@ -203,7 +196,7 @@ describe('combineTools function', () => {
       },
       links: { repoUrl: 'https://github.com/example/new-tags-tool' }
     };
-  
+
     const automatedTools = {
       'category1': {
         description: 'Category 1 Description',
@@ -212,16 +205,16 @@ describe('combineTools function', () => {
     };
 
     await combineTools(automatedTools, {}, toolsPath, tagsPath);
-  
+
     const combinedTools = readJSON(toolsPath);
     const tool = combinedTools.category1.toolsList[0];
-  
+
     expect(tool.filters.language).toHaveLength(1);
     expect(tool.filters.language).toContainEqual(expect.objectContaining({ name: 'NewLanguage' }));
-  
+
     expect(tool.filters.technology).toHaveLength(1);
     expect(tool.filters.technology).toContainEqual(expect.objectContaining({ name: 'NewTechnology' }));
-  
+
     const tagsData = readJSON(tagsPath);
     expect(tagsData.languages).toContainEqual({
       name: 'NewLanguage',
@@ -244,7 +237,7 @@ describe('combineTools function', () => {
       },
       links: { repoUrl: 'https://github.com/example/new-language-tool' }
     };
-  
+
     const automatedTools = {
       'category1': {
         description: 'Category 1 Description',
@@ -253,13 +246,13 @@ describe('combineTools function', () => {
     };
 
     await combineTools(automatedTools, {}, toolsPath, tagsPath);
-  
+
     const combinedTools = readJSON(toolsPath);
     const tool = combinedTools.category1.toolsList[0];
-  
+
     expect(tool.filters.language).toHaveLength(1);
     expect(tool.filters.language).toContainEqual(expect.objectContaining({ name: 'Go' }));
-  
+
     const tagsData = readJSON(tagsPath);
     expect(tagsData.languages).toContainEqual({
       name: 'Go',
@@ -269,7 +262,6 @@ describe('combineTools function', () => {
   });
 
   it('should handle valid tool objects', async () => {
-
     const validTool = {
       title: 'Valid Tool',
       filters: {
@@ -278,22 +270,33 @@ describe('combineTools function', () => {
       },
       links: { repoUrl: 'https://github.com/asyncapi/valid-tool' }
     };
-  
+
     const automatedTools = {
       category1: {
         description: 'Category 1 Description',
         toolsList: []
       }
     };
-  
+
     const manualTools = {
       category1: {
         toolsList: [validTool]
       }
     };
-  
+
     await combineTools(automatedTools, manualTools, toolsPath, tagsPath);
-  
+
+
+    const tagsData = readJSON(tagsPath);
+    expect(tagsData.languages).toContainEqual({
+      name: 'JavaScript',
+      color: 'bg-[#57f281]',
+      borderColor: 'border-[#37f069]'
+    });
+    expect(tagsData.technologies).toContainEqual({
+      name: 'Node.js',
+      color: 'bg-[#61d0f2]',
+      borderColor: 'border-[#40ccf7]'
+    });
   });
-  
 });
