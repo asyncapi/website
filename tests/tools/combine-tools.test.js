@@ -3,16 +3,6 @@ const path = require('path');
 const { combineTools } = require('../../scripts/tools/combine-tools');
 const { createToolObject } = require('../../scripts/tools/tools-object');
 
-// jest.mock('ajv', () => {
-//   const Ajv = jest.fn();
-//   Ajv.prototype.compile = jest.fn().mockReturnValue(() => true);
-//   return Ajv;
-// });
-
-// jest.mock('ajv-formats', () => {
-//   return jest.fn();
-// });
-
 jest.mock('../../scripts/tools/tags-color', () => ({
   languagesColor: [
     { name: 'JavaScript', color: 'bg-[#57f281]', borderColor: 'border-[#37f069]' },
@@ -31,11 +21,7 @@ jest.mock('../../scripts/tools/categorylist', () => ({
   ]
 }));
 
-jest.mock('../../scripts/tools/tools-object', () => ({
-  createToolObject: jest.fn((tool, isAsyncAPIrepo) => {
-    return { ...tool, isAsyncAPIrepo };
-  })
-}));
+jest.mock('../../scripts/tools/tools-object');
 
 const readJSON = (filePath) => JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
@@ -47,7 +33,6 @@ describe('combineTools function', () => {
 
   let manualTools;
   let automatedTools;
-
   let consoleErrorMock;
 
   beforeAll(() => {
@@ -134,7 +119,6 @@ describe('combineTools function', () => {
     expect(toolTitles).toEqual(['Tool A', 'Tool Z']);
   });
 
-
   it('should log validation errors to console.error', async () => {
     const invalidTool = { title: 'Invalid Tool' };
     const automatedTools = {
@@ -181,6 +165,8 @@ describe('combineTools function', () => {
       }
     };
   
+    createToolObject.mockImplementation((tool) => Promise.resolve(tool));
+
     await combineTools(automatedTools, {}, toolsPath, tagsPath);
   
     const combinedTools = readJSON(toolsPath);
@@ -212,6 +198,8 @@ describe('combineTools function', () => {
       }
     };
   
+    createToolObject.mockImplementation((tool) => Promise.resolve(tool));
+
     await combineTools(automatedTools, {}, toolsPath, tagsPath);
   
     const combinedTools = readJSON(toolsPath);
@@ -235,6 +223,7 @@ describe('combineTools function', () => {
       borderColor: 'border-[#40ccf7]'
     });
   });
+
   it('should add a new language when it is not found in the existing languages list', async () => {
     const toolWithNewLanguage = {
       title: 'New Language Tool',
@@ -251,7 +240,9 @@ describe('combineTools function', () => {
         toolsList: [toolWithNewLanguage]
       }
     };
-  
+
+    createToolObject.mockImplementation((tool) => Promise.resolve(tool));
+
     await combineTools(automatedTools, {}, toolsPath, tagsPath);
   
     const combinedTools = readJSON(toolsPath);
@@ -267,5 +258,4 @@ describe('combineTools function', () => {
       borderColor: 'border-[#37f069]'
     });
   });
-  
 });
