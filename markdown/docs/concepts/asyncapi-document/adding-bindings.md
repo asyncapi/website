@@ -3,7 +3,9 @@ title: Adding bindings
 weight: 260
 ---
 
-Bindings in AsyncAPI provide a way to add protocol-specific information to the AsyncAPI documentation. They can be added to different document parts, such as servers, channels, or messages; they specify standard details specific to a particular protocol. The purpose of bindings is to enhance the API's understanding and usage by providing additional context and configuration options for different protocols.
+import BindingsOverview from '../../../../assets/docs/fragments/bindings-overview.md' 
+
+<BindingsOverview/>
 
 The following diagram highlights the sections where bindings can be implemented:
 
