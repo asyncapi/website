@@ -32,7 +32,7 @@ jest.mock('../../scripts/tools/categorylist', () => ({
 }));
 
 jest.mock('../../scripts/tools/tools-object', () => ({
-  createToolObject: jest.fn((tool, _, __, isAsyncAPIrepo) => {
+  createToolObject: jest.fn((tool, isAsyncAPIrepo) => {
     return { ...tool, isAsyncAPIrepo };
   })
 }));
