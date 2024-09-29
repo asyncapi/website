@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const { combineTools } = require('../../scripts/tools/combine-tools');
-const { createToolObject } = require('../../scripts/tools/tools-object');
 
 jest.mock('../../scripts/tools/tags-color', () => ({
   languagesColor: [
@@ -21,8 +20,6 @@ jest.mock('../../scripts/tools/categorylist', () => ({
   ]
 }));
 
-jest.mock('../../scripts/tools/tools-object');
-
 const readJSON = (filePath) => JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
 describe('combineTools function', () => {
@@ -33,13 +30,10 @@ describe('combineTools function', () => {
 
   let manualTools;
   let automatedTools;
-  let consoleErrorMock;
 
   beforeAll(() => {
     manualTools = readJSON(manualToolsPath);
     automatedTools = readJSON(automatedToolsPath);
-
-    consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterAll(() => {
@@ -120,6 +114,9 @@ describe('combineTools function', () => {
   });
 
   it('should log validation errors to console.error', async () => {
+
+    let consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});
+
     const invalidTool = { title: 'Invalid Tool' };
     const automatedTools = {
       'category1': {
@@ -132,8 +129,6 @@ describe('combineTools function', () => {
         toolsList: [invalidTool]
       }
     };
-
-    createToolObject.mockImplementation((tool) => Promise.resolve(tool));
 
     await combineTools(automatedTools, manualTools, toolsPath, tagsPath);
 
@@ -164,8 +159,6 @@ describe('combineTools function', () => {
         toolsList: [toolWithMultipleLanguages]
       }
     };
-  
-    createToolObject.mockImplementation((tool) => Promise.resolve(tool));
 
     await combineTools(automatedTools, {}, toolsPath, tagsPath);
   
@@ -197,8 +190,6 @@ describe('combineTools function', () => {
         toolsList: [toolWithNewTags]
       }
     };
-  
-    createToolObject.mockImplementation((tool) => Promise.resolve(tool));
 
     await combineTools(automatedTools, {}, toolsPath, tagsPath);
   
@@ -240,8 +231,6 @@ describe('combineTools function', () => {
         toolsList: [toolWithNewLanguage]
       }
     };
-
-    createToolObject.mockImplementation((tool) => Promise.resolve(tool));
 
     await combineTools(automatedTools, {}, toolsPath, tagsPath);
   
