@@ -299,4 +299,35 @@ describe('combineTools function', () => {
       borderColor: 'border-[#40ccf7]'
     });
   });
+
+  it('should handle tool objects without repoUrl', async () => {
+    const toolWithoutRepoUrl = {
+      title: 'Tool Without Repo',
+      filters: {
+        language: 'Python',
+        technology: ['Flask']
+      },
+      links: {}
+    };
+  
+    const automatedTools = {
+      category1: {
+        description: 'Category 1 Description',
+        toolsList: []
+      }
+    };
+  
+    const manualTools = {
+      category1: {
+        toolsList: [toolWithoutRepoUrl]
+      }
+    };
+  
+    await combineTools(automatedTools, manualTools, toolsPath, tagsPath);
+  
+    const combinedTools = readJSON(toolsPath);
+    const tool = combinedTools.category1.toolsList[0];
+  
+    expect(tool.isAsyncAPIrepo).toBeUndefined();  
+    });
 });
