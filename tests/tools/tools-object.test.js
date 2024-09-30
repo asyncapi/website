@@ -77,8 +77,6 @@ describe('Tools Object', () => {
 
     await convertTools(invalidToolData);
 
-    console.log('All console.error calls:', console.error.mock.calls);
-
     const allErrorMessages = console.error.mock.calls.flat();
     expect(allErrorMessages).toEqual(
       expect.arrayContaining([
