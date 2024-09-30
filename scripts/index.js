@@ -1,9 +1,10 @@
+const { resolve } = require('path');
+const fs = require('fs');
 const rssFeed = require('./build-rss');
 const buildPostList = require('./build-post-list');
 const buildCaseStudiesList = require('./casestudies');
-const buildAdoptersList = require('./adopters')
+const buildAdoptersList = require('./adopters');
 const buildFinanceInfoList = require('./finance');
-const { resolve } = require('path');
 
 async function start() {
   await buildPostList();
@@ -18,11 +19,31 @@ async function start() {
     resolve(__dirname, '../config', 'case-studies.json')
   );
   await buildAdoptersList();
+  const financeDir = resolve('.', 'config', 'finance');
+
+  // loop through all the files finance in directory and find the latest year to build the finance info list
+  const yearsList = fs
+    .readdirSync(financeDir)
+    // filter out any files that are not numbers
+    .filter((file) => {
+      return !Number.isNaN(parseFloat(file));
+    })
+    // sort the years in descending order
+    .sort((a, b) => {
+      return parseFloat(b) - parseFloat(a);
+    });
+
+  if (yearsList.length === 0) {
+    throw new Error('No finance data found in the finance directory.');
+  }
+
+  const latestYear = yearsList[0];
+
   await buildFinanceInfoList({
     currentDir: '.',
     configDir: 'config',
     financeDir: 'finance',
-    year: '2024',
+    year: latestYear,
     jsonDataDir: 'json-data'
   });
 }
