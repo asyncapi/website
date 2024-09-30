@@ -15,7 +15,7 @@ function shouldShowBanner(cfpDeadline: string) {
   return true;
 }
 
-const cfpDeadlineParis = '2024-09-20T06:00:00Z';
+const cfpDeadlineParis = '2024-10-12T06:00:00Z';
 const showBannerParis = shouldShowBanner(cfpDeadlineParis);
 
 export const banners = [
