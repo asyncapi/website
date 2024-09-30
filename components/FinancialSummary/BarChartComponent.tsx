@@ -3,8 +3,8 @@ import { Bar, BarChart, CartesianGrid, Legend, Tooltip, YAxis } from 'recharts';
 
 import type { ExpenseItem, ExpensesLinkItem } from '@/types/FinancialSummary/BarChartComponent';
 
-import ExpensesData from '../../config/finance/json-data/2024/Expenses.json';
-import ExpensesLinkData from '../../config/finance/json-data/2024/ExpensesLink.json';
+import ExpensesData from '../../config/finance/json-data/Expenses.json';
+import ExpensesLinkData from '../../config/finance/json-data/ExpensesLink.json';
 import { getUniqueCategories } from '../../utils/getUniqueCategories';
 import CustomTooltip from './CustomTooltip';
 import ExpensesCard from './ExpensesCard';
