@@ -67,7 +67,7 @@ During the break, the `API Specs and Standards Booth` was busy with people inter
   className="text-center"
 />
 
-Dale gave a session on how much information you need to know to design a solution around a topic and illustrated the critical additional information a provider of an asynchronous API needs to provide.
+Dale gave a session on how much information you need to know to design a solution around Kafka topics and illustrated the critical additional information a provider of an asynchronous API needs to provide.
 
 <Figure
   src="/img/posts/london-conf-2024/dale.webp"
