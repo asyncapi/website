@@ -84,77 +84,118 @@ const manualToolsT4 = {
 const toolWithNewTagsT6 = {
     title: 'New Tags Tool',
     filters: {
-      language: 'NewLanguage',
-      technology: ['NewTechnology']
+        language: 'NewLanguage',
+        technology: ['NewTechnology']
     },
     links: { repoUrl: 'https://github.com/example/new-tags-tool' }
-  };
+};
 
-  const automatedToolsT6 = {
+const automatedToolsT6 = {
     'category1': {
-      description: 'Category 1 Description',
-      toolsList: [toolWithNewTagsT6]
+        description: 'Category 1 Description',
+        toolsList: [toolWithNewTagsT6]
     }
-  };
+};
 
-  const toolWithNewLanguageT7 = {
+const toolWithNewLanguageT7 = {
     title: 'New Language Tool',
     filters: {
-      language: 'Go',
-      technology: ['Node.js']
+        language: 'Go',
+        technology: ['Node.js']
     },
     links: { repoUrl: 'https://github.com/example/new-language-tool' }
-  };
+};
 
-  const automatedToolsT7 = {
+const automatedToolsT7 = {
     'category1': {
-      description: 'Category 1 Description',
-      toolsList: [toolWithNewLanguageT7]
+        description: 'Category 1 Description',
+        toolsList: [toolWithNewLanguageT7]
     }
-  };
+};
 
-  const validToolT8 = {
+const validToolT8 = {
     title: 'Valid Tool',
     filters: {
-      language: 'JavaScript',
-      technology: ['Node.js']
+        language: 'JavaScript',
+        technology: ['Node.js']
     },
     links: { repoUrl: 'https://github.com/asyncapi/valid-tool' }
-  };
+};
 
-  const automatedToolsT8 = {
+const automatedToolsT8 = {
     category1: {
-      description: 'Category 1 Description',
-      toolsList: []
+        description: 'Category 1 Description',
+        toolsList: []
     }
-  };
+};
 
-  const manualToolsT8 = {
+const manualToolsT8 = {
     category1: {
-      toolsList: [validToolT8]
+        toolsList: [validToolT8]
     }
-  };
+};
 
-  const toolWithoutRepoUrlT9 = {
+const toolWithoutRepoUrlT9 = {
     title: 'Tool Without Repo',
     filters: {
-      language: 'Python',
-      technology: ['Flask']
+        language: 'Python',
+        technology: ['Flask']
     },
     links: {}
-  };
+};
 
-  const automatedToolsT9 = {
+const automatedToolsT9 = {
     category1: {
-      description: 'Category 1 Description',
-      toolsList: []
+        description: 'Category 1 Description',
+        toolsList: []
     }
-  };
+};
 
-  const manualToolsT9 = {
+const manualToolsT9 = {
     category1: {
-      toolsList: [toolWithoutRepoUrlT9]
+        toolsList: [toolWithoutRepoUrlT9]
     }
-  };
+};
 
-module.exports = { expectedDataT1, manualToolsWithMissingData, manualToolsToSort, automatedToolsT5, automatedToolsT4, manualToolsT4, automatedToolsT6, automatedToolsT7, automatedToolsT8, manualToolsT8, automatedToolsT9, manualToolsT9 }
+const invalidAutomatedToolsT10 = {
+    invalidCategory: {
+        description: 'Invalid Category Description',
+        toolsList: []
+    }
+};
+
+const manualToolsWithInvalidURLT11 = {
+    category1: {
+        toolsList: [
+            {
+                title: 'Tool with Invalid URL',
+                filters: { language: 'JavaScript' },
+                links: { repoUrl: 'invalid-url' }
+            }
+        ]
+    }
+};
+
+const circularTool = {
+    title: 'Circular Tool',
+    filters: {
+        language: 'JavaScript',
+        technology: ['Node.js']
+    },
+    links: { repoUrl: 'https://github.com/asyncapi/circular-tool' }
+};
+
+const automatedToolsT12 = {
+    category1: {
+        description: 'Category 1',
+        toolsList: [circularTool]
+    }
+};
+
+const invalidManualToolsT13 = {
+    category1: {
+        toolsList: [{ title: 'Invalid Tool' }]
+    }
+};
+
+module.exports = { expectedDataT1, manualToolsWithMissingData, manualToolsToSort, automatedToolsT5, automatedToolsT4, manualToolsT4, automatedToolsT6, automatedToolsT7, automatedToolsT8, manualToolsT8, automatedToolsT9, manualToolsT9, invalidManualToolsT13, circularTool, automatedToolsT12, invalidAutomatedToolsT10, manualToolsWithInvalidURLT11 }

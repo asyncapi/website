@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { combineTools } = require('../../scripts/tools/combine-tools');
-const { expectedDataT1, manualToolsWithMissingData, manualToolsToSort, automatedToolsT5, automatedToolsT4, manualToolsT4, automatedToolsT6, automatedToolsT7, automatedToolsT8, manualToolsT8, automatedToolsT9, manualToolsT9 } = require('../fixtures/combineToolsData')
+const { expectedDataT1, manualToolsWithMissingData, manualToolsToSort, automatedToolsT5, automatedToolsT4, manualToolsT4, automatedToolsT6, automatedToolsT7, automatedToolsT8, manualToolsT8, automatedToolsT9, manualToolsT9, invalidManualToolsT13, automatedToolsT12, invalidAutomatedToolsT10, manualToolsWithInvalidURLT11, circularTool } = require('../fixtures/combineToolsData')
 
 jest.mock('ajv', () => {
   return jest.fn().mockImplementation(() => ({
@@ -201,74 +201,38 @@ describe('combineTools function', () => {
   });
 
   it('should throw an error when there is an invalid category', async () => {
-    const invalidAutomatedTools = {
-      invalidCategory: {
-        description: 'Invalid Category Description',
-        toolsList: []
-      }
-    };
 
     try {
-      await combineTools(invalidAutomatedTools, manualTools, toolsPath, tagsPath);
+      await combineTools(invalidAutomatedToolsT10, manualTools, toolsPath, tagsPath);
     } catch (err) {
       expect(err.message).toContain('Error combining tools');
     }
   });
 
   it('should throw an error when URL parsing fails', async () => {
-    const manualToolsWithInvalidURL = {
-      category1: {
-        toolsList: [
-          {
-            title: 'Tool with Invalid URL',
-            filters: { language: 'JavaScript' },
-            links: { repoUrl: 'invalid-url' }
-          }
-        ]
-      }
-    };
 
     try {
-      await combineTools(automatedTools, manualToolsWithInvalidURL, toolsPath, tagsPath);
+      await combineTools(automatedTools, manualToolsWithInvalidURLT11, toolsPath, tagsPath);
     } catch (err) {
       expect(err.message).toContain('Invalid URL');
     }
   });
 
   it('should handle errors when processing tools with circular references', async () => {
-    const circularTool = {
-      title: 'Circular Tool',
-      filters: {
-        language: 'JavaScript',
-        technology: ['Node.js']
-      },
-      links: { repoUrl: 'https://github.com/asyncapi/circular-tool' }
-    };
+
     circularTool.circular = circularTool;
 
-    const automatedTools = {
-      category1: {
-        description: 'Category 1',
-        toolsList: [circularTool]
-      }
-    };
-
     try {
-      await combineTools(automatedTools, {}, toolsPath, tagsPath);
+      await combineTools(automatedToolsT12, {}, toolsPath, tagsPath);
     } catch (err) {
       expect(err.message).toContain('Converting circular structure to JSON');
     }
   });
 
   it('should throw an error when invalid manualTools data is passed', async () => {
-    const invalidManualTools = {
-      category1: {
-        toolsList: [{ title: 'Invalid Tool' }]
-      }
-    };
 
     try {
-      await combineTools(automatedTools, invalidManualTools, toolsPath, tagsPath);
+      await combineTools(automatedTools, invalidManualToolsT13, toolsPath, tagsPath);
     } catch (err) {
       expect(err.message).toBe('Error processing tool: Cannot read property \'language\' of undefined');
     }
