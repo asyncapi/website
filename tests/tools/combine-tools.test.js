@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { combineTools } = require('../../scripts/tools/combine-tools');
+const { expectedDataT1, manualToolsWithMissingData, manualToolsToSort, automatedToolsT5, automatedToolsT4, manualToolsT4, automatedToolsT6 } = require('../fixtures/combineToolsData')
 
 jest.mock('ajv', () => {
   return jest.fn().mockImplementation(() => ({
@@ -62,36 +63,10 @@ describe('combineTools function', () => {
     const tagsData = readJSON(tagsPath);
     expect(tagsData).toHaveProperty('languages');
     expect(tagsData).toHaveProperty('technologies');
-    expect(tagsData.languages).toContainEqual({
-      name: 'JavaScript',
-      color: 'bg-[#57f281]',
-      borderColor: 'border-[#37f069]'
-    });
-    expect(tagsData.languages).toContainEqual({
-      name: 'Python',
-      color: 'bg-[#3572A5]',
-      borderColor: 'border-[#3572A5]'
-    });
-    expect(tagsData.technologies).toContainEqual({
-      name: 'Node.js',
-      color: 'bg-[#61d0f2]',
-      borderColor: 'border-[#40ccf7]'
-    });
-    expect(tagsData.technologies).toContainEqual({
-      name: 'Flask',
-      color: 'bg-[#000000]',
-      borderColor: 'border-[#FFFFFF]'
-    });
+    expect(tagsData).toEqual(expectedDataT1)
   });
 
   it('should handle tools with missing language or technology', async () => {
-    const manualToolsWithMissingData = [
-      {
-        title: 'Tool C',
-        filters: {},
-        links: { repoUrl: 'https://github.com/asyncapi/tool-c' }
-      }
-    ];
 
     await combineTools({}, manualToolsWithMissingData, toolsPath, tagsPath);
 
@@ -100,23 +75,6 @@ describe('combineTools function', () => {
   });
 
   it('should sort tools alphabetically by title', async () => {
-    const manualToolsToSort = {
-      category1: {
-        description: 'Sample Category',
-        toolsList: [
-          {
-            title: 'Tool Z',
-            filters: { language: 'JavaScript' },
-            links: { repoUrl: 'https://github.com/asyncapi/tool-z' }
-          },
-          {
-            title: 'Tool A',
-            filters: { language: 'Python' },
-            links: { repoUrl: 'https://github.com/asyncapi/tool-a' }
-          }
-        ]
-      }
-    };
 
     await combineTools(manualToolsToSort, {}, toolsPath, tagsPath);
 
@@ -126,22 +84,10 @@ describe('combineTools function', () => {
   });
 
   it('should log validation errors to console.error', async () => {
+
     let consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => { });
 
-    const invalidTool = { title: 'Invalid Tool' };
-    const automatedTools = {
-      'category1': {
-        description: 'Category 1 Description',
-        toolsList: []
-      }
-    };
-    const manualTools = {
-      'category1': {
-        toolsList: [invalidTool]
-      }
-    };
-
-    await combineTools(automatedTools, manualTools, toolsPath, tagsPath);
+    await combineTools(automatedToolsT4, manualToolsT4, toolsPath, tagsPath);
 
     const errorCalls = console.error.mock.calls;
 
@@ -157,23 +103,8 @@ describe('combineTools function', () => {
   });
 
   it('should handle tools with multiple languages, including new ones', async () => {
-    const toolWithMultipleLanguages = {
-      title: 'Multi-Language Tool',
-      filters: {
-        language: ['JavaScript', 'Python', 'NewLanguage'],
-        technology: ['Node.js']
-      },
-      links: { repoUrl: 'https://github.com/example/multi-language-tool' }
-    };
 
-    const automatedTools = {
-      'category1': {
-        description: 'Category 1 Description',
-        toolsList: [toolWithMultipleLanguages]
-      }
-    };
-
-    await combineTools(automatedTools, {}, toolsPath, tagsPath);
+    await combineTools(automatedToolsT5, {}, toolsPath, tagsPath);
 
     const combinedTools = readJSON(toolsPath);
     const tool = combinedTools.category1.toolsList[0];
@@ -188,23 +119,8 @@ describe('combineTools function', () => {
   });
 
   it('should add a new language and technology when not found in the existing lists', async () => {
-    const toolWithNewTags = {
-      title: 'New Tags Tool',
-      filters: {
-        language: 'NewLanguage',
-        technology: ['NewTechnology']
-      },
-      links: { repoUrl: 'https://github.com/example/new-tags-tool' }
-    };
 
-    const automatedTools = {
-      'category1': {
-        description: 'Category 1 Description',
-        toolsList: [toolWithNewTags]
-      }
-    };
-
-    await combineTools(automatedTools, {}, toolsPath, tagsPath);
+    await combineTools(automatedToolsT6, {}, toolsPath, tagsPath);
 
     const combinedTools = readJSON(toolsPath);
     const tool = combinedTools.category1.toolsList[0];
