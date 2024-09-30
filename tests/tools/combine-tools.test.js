@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { combineTools } = require('../../scripts/tools/combine-tools');
-const { expectedDataT1, manualToolsWithMissingData, manualToolsToSort, automatedToolsT5, automatedToolsT4, manualToolsT4, automatedToolsT6 } = require('../fixtures/combineToolsData')
+const { expectedDataT1, manualToolsWithMissingData, manualToolsToSort, automatedToolsT5, automatedToolsT4, manualToolsT4, automatedToolsT6, automatedToolsT7, automatedToolsT8, manualToolsT8, automatedToolsT9, manualToolsT9 } = require('../fixtures/combineToolsData')
 
 jest.mock('ajv', () => {
   return jest.fn().mockImplementation(() => ({
@@ -145,23 +145,8 @@ describe('combineTools function', () => {
   });
 
   it('should add a new language when it is not found in the existing languages list', async () => {
-    const toolWithNewLanguage = {
-      title: 'New Language Tool',
-      filters: {
-        language: 'Go',
-        technology: ['Node.js']
-      },
-      links: { repoUrl: 'https://github.com/example/new-language-tool' }
-    };
 
-    const automatedTools = {
-      'category1': {
-        description: 'Category 1 Description',
-        toolsList: [toolWithNewLanguage]
-      }
-    };
-
-    await combineTools(automatedTools, {}, toolsPath, tagsPath);
+    await combineTools(automatedToolsT7, {}, toolsPath, tagsPath);
 
     const combinedTools = readJSON(toolsPath);
     const tool = combinedTools.category1.toolsList[0];
@@ -178,29 +163,8 @@ describe('combineTools function', () => {
   });
 
   it('should handle valid tool objects', async () => {
-    const validTool = {
-      title: 'Valid Tool',
-      filters: {
-        language: 'JavaScript',
-        technology: ['Node.js']
-      },
-      links: { repoUrl: 'https://github.com/asyncapi/valid-tool' }
-    };
 
-    const automatedTools = {
-      category1: {
-        description: 'Category 1 Description',
-        toolsList: []
-      }
-    };
-
-    const manualTools = {
-      category1: {
-        toolsList: [validTool]
-      }
-    };
-
-    await combineTools(automatedTools, manualTools, toolsPath, tagsPath);
+    await combineTools(automatedToolsT8, manualToolsT8, toolsPath, tagsPath);
 
 
     const tagsData = readJSON(tagsPath);
@@ -217,29 +181,8 @@ describe('combineTools function', () => {
   });
 
   it('should handle tool objects without repoUrl', async () => {
-    const toolWithoutRepoUrl = {
-      title: 'Tool Without Repo',
-      filters: {
-        language: 'Python',
-        technology: ['Flask']
-      },
-      links: {}
-    };
 
-    const automatedTools = {
-      category1: {
-        description: 'Category 1 Description',
-        toolsList: []
-      }
-    };
-
-    const manualTools = {
-      category1: {
-        toolsList: [toolWithoutRepoUrl]
-      }
-    };
-
-    await combineTools(automatedTools, manualTools, toolsPath, tagsPath);
+    await combineTools(automatedToolsT9, manualToolsT9, toolsPath, tagsPath);
 
     const combinedTools = readJSON(toolsPath);
     const tool = combinedTools.category1.toolsList[0];

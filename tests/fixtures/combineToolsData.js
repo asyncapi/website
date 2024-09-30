@@ -97,4 +97,64 @@ const toolWithNewTagsT6 = {
     }
   };
 
-module.exports = { expectedDataT1, manualToolsWithMissingData, manualToolsToSort, automatedToolsT5, automatedToolsT4, manualToolsT4, automatedToolsT6 }
+  const toolWithNewLanguageT7 = {
+    title: 'New Language Tool',
+    filters: {
+      language: 'Go',
+      technology: ['Node.js']
+    },
+    links: { repoUrl: 'https://github.com/example/new-language-tool' }
+  };
+
+  const automatedToolsT7 = {
+    'category1': {
+      description: 'Category 1 Description',
+      toolsList: [toolWithNewLanguageT7]
+    }
+  };
+
+  const validToolT8 = {
+    title: 'Valid Tool',
+    filters: {
+      language: 'JavaScript',
+      technology: ['Node.js']
+    },
+    links: { repoUrl: 'https://github.com/asyncapi/valid-tool' }
+  };
+
+  const automatedToolsT8 = {
+    category1: {
+      description: 'Category 1 Description',
+      toolsList: []
+    }
+  };
+
+  const manualToolsT8 = {
+    category1: {
+      toolsList: [validToolT8]
+    }
+  };
+
+  const toolWithoutRepoUrlT9 = {
+    title: 'Tool Without Repo',
+    filters: {
+      language: 'Python',
+      technology: ['Flask']
+    },
+    links: {}
+  };
+
+  const automatedToolsT9 = {
+    category1: {
+      description: 'Category 1 Description',
+      toolsList: []
+    }
+  };
+
+  const manualToolsT9 = {
+    category1: {
+      toolsList: [toolWithoutRepoUrlT9]
+    }
+  };
+
+module.exports = { expectedDataT1, manualToolsWithMissingData, manualToolsToSort, automatedToolsT5, automatedToolsT4, manualToolsT4, automatedToolsT6, automatedToolsT7, automatedToolsT8, manualToolsT8, automatedToolsT9, manualToolsT9 }
