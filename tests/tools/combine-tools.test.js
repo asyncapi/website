@@ -1,7 +1,25 @@
 const fs = require('fs');
 const path = require('path');
 const { combineTools } = require('../../scripts/tools/combine-tools');
-const { expectedDataT1, manualToolsWithMissingData, manualToolsToSort, automatedToolsT5, automatedToolsT4, manualToolsT4, automatedToolsT6, automatedToolsT7, automatedToolsT8, manualToolsT8, automatedToolsT9, manualToolsT9, invalidManualToolsT13, automatedToolsT12, invalidAutomatedToolsT10, manualToolsWithInvalidURLT11, circularTool } = require('../fixtures/combineToolsData')
+const {
+  expectedDataT1,
+  manualToolsWithMissingData,
+  manualToolsToSort,
+  automatedToolsT5,
+  automatedToolsT4,
+  manualToolsT4,
+  automatedToolsT6,
+  automatedToolsT7,
+  automatedToolsT8,
+  manualToolsT8,
+  automatedToolsT9,
+  manualToolsT9,
+  invalidManualToolsT13,
+  automatedToolsT12,
+  invalidAutomatedToolsT10,
+  manualToolsWithInvalidURLT11,
+  circularTool
+} = require('../fixtures/combineToolsData')
 
 jest.mock('ajv', () => {
   return jest.fn().mockImplementation(() => ({

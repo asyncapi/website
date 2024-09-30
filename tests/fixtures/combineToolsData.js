@@ -198,4 +198,22 @@ const invalidManualToolsT13 = {
     }
 };
 
-module.exports = { expectedDataT1, manualToolsWithMissingData, manualToolsToSort, automatedToolsT5, automatedToolsT4, manualToolsT4, automatedToolsT6, automatedToolsT7, automatedToolsT8, manualToolsT8, automatedToolsT9, manualToolsT9, invalidManualToolsT13, circularTool, automatedToolsT12, invalidAutomatedToolsT10, manualToolsWithInvalidURLT11 }
+module.exports = {
+    expectedDataT1,
+    manualToolsWithMissingData,
+    manualToolsToSort,
+    automatedToolsT5,
+    automatedToolsT4,
+    manualToolsT4,
+    automatedToolsT6,
+    automatedToolsT7,
+    automatedToolsT8,
+    manualToolsT8,
+    automatedToolsT9,
+    manualToolsT9,
+    invalidManualToolsT13,
+    circularTool,
+    automatedToolsT12,
+    invalidAutomatedToolsT10,
+    manualToolsWithInvalidURLT11
+}
