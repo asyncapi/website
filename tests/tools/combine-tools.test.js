@@ -309,25 +309,109 @@ describe('combineTools function', () => {
       },
       links: {}
     };
-  
+
     const automatedTools = {
       category1: {
         description: 'Category 1 Description',
         toolsList: []
       }
     };
-  
+
     const manualTools = {
       category1: {
         toolsList: [toolWithoutRepoUrl]
       }
     };
-  
+
     await combineTools(automatedTools, manualTools, toolsPath, tagsPath);
-  
+
     const combinedTools = readJSON(toolsPath);
     const tool = combinedTools.category1.toolsList[0];
-  
-    expect(tool.isAsyncAPIrepo).toBeUndefined();  
-    });
+
+    expect(tool.isAsyncAPIrepo).toBeUndefined();
+  });
+
+  it('should throw an error when fs.writeFileSync fails', async () => {
+    let invalidPath = "this/is/not/valid"
+
+    try {
+      await combineTools(automatedTools, manualTools, invalidPath, invalidPath);
+    } catch (err) {
+      expect(err.message).toMatch(/ENOENT|EACCES/);
+    }
+  });
+
+  it('should throw an error when there is an invalid category', async () => {
+    const invalidAutomatedTools = {
+      invalidCategory: {
+        description: 'Invalid Category Description',
+        toolsList: []
+      }
+    };
+
+    try {
+      await combineTools(invalidAutomatedTools, manualTools, toolsPath, tagsPath);
+    } catch (err) {
+      expect(err.message).toContain('Error combining tools');
+    }
+  });
+
+  it('should throw an error when URL parsing fails', async () => {
+    const manualToolsWithInvalidURL = {
+      category1: {
+        toolsList: [
+          {
+            title: 'Tool with Invalid URL',
+            filters: { language: 'JavaScript' },
+            links: { repoUrl: 'invalid-url' }
+          }
+        ]
+      }
+    };
+
+    try {
+      await combineTools(automatedTools, manualToolsWithInvalidURL, toolsPath, tagsPath);
+    } catch (err) {
+      expect(err.message).toContain('Invalid URL');
+    }
+  });
+
+  it('should handle errors when processing tools with circular references', async () => {
+    const circularTool = {
+      title: 'Circular Tool',
+      filters: {
+        language: 'JavaScript',
+        technology: ['Node.js']
+      },
+      links: { repoUrl: 'https://github.com/asyncapi/circular-tool' }
+    };
+    circularTool.circular = circularTool;
+
+    const automatedTools = {
+      category1: {
+        description: 'Category 1',
+        toolsList: [circularTool]
+      }
+    };
+
+    try {
+      await combineTools(automatedTools, {}, toolsPath, tagsPath);
+    } catch (err) {
+      expect(err.message).toContain('Converting circular structure to JSON');
+    }
+  });
+
+  it('should throw an error when invalid manualTools data is passed', async () => {
+    const invalidManualTools = {
+      category1: {
+        toolsList: [{ title: 'Invalid Tool' }]
+      }
+    };
+
+    try {
+      await combineTools(automatedTools, invalidManualTools, toolsPath, tagsPath);
+    } catch (err) {
+      expect(err.message).toBe('Error processing tool: Cannot read property \'language\' of undefined');
+    }
+  });
 });

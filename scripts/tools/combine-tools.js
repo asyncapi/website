@@ -6,6 +6,7 @@ const schema = require("./tools-schema.json");
 const Ajv = require("ajv")
 const addFormats = require("ajv-formats")
 const Fuse = require("fuse.js");
+const { error } = require("console");
 const ajv = new Ajv()
 addFormats(ajv, ["uri"])
 const validate = ajv.compile(schema)
@@ -106,37 +107,41 @@ const getFinalTool = async (toolObject) => {
 // Combine the automated tools and manual tools list into single JSON object file, and 
 // lists down all the language and technology tags in one JSON file.
 const combineTools = async (automatedTools, manualTools, toolsPath, tagsPath) => {
-    for (const key in automatedTools) {
-        let finalToolsList = [];
-        if (automatedTools[key].toolsList.length) {
-            for (const tool of automatedTools[key].toolsList) {
-                finalToolsList.push(await getFinalTool(tool))
-            }
-        }
-        if (manualTools[key] && manualTools[key].toolsList.length) {
-            for (const tool of manualTools[key].toolsList) {
-                let isAsyncAPIrepo;
-                const isValid = await validate(tool)
-                if (isValid) {
-                    if (tool?.links?.repoUrl) {
-                        const url = new URL(tool.links.repoUrl)
-                        isAsyncAPIrepo = url.href.startsWith("https://github.com/asyncapi/")
-                    } else isAsyncAPIrepo = false
-                    let toolObject = await createToolObject(tool, "", "", isAsyncAPIrepo)
-                    finalToolsList.push(await getFinalTool(toolObject))
-                } else {
-                    console.error('Script is not failing, it is just dropping errors for further investigation');
-                    console.error(`Invalid ${tool.title} .asyncapi-tool file.`);
-                    console.error(`Located in manual-tools.json file`);
-                    console.error('Validation errors:', JSON.stringify(validate.errors, null, 2));
+    try {
+        for (const key in automatedTools) {
+            let finalToolsList = [];
+            if (automatedTools[key].toolsList.length) {
+                for (const tool of automatedTools[key].toolsList) {
+                    finalToolsList.push(await getFinalTool(tool))
                 }
             }
+            if (manualTools[key] && manualTools[key].toolsList.length) {
+                for (const tool of manualTools[key].toolsList) {
+                    let isAsyncAPIrepo;
+                    const isValid = await validate(tool)
+                    if (isValid) {
+                        if (tool?.links?.repoUrl) {
+                            const url = new URL(tool.links.repoUrl)
+                            isAsyncAPIrepo = url.href.startsWith("https://github.com/asyncapi/")
+                        } else isAsyncAPIrepo = false
+                        let toolObject = await createToolObject(tool, "", "", isAsyncAPIrepo)
+                        finalToolsList.push(await getFinalTool(toolObject))
+                    } else {
+                        console.error('Script is not failing, it is just dropping errors for further investigation');
+                        console.error(`Invalid ${tool.title} .asyncapi-tool file.`);
+                        console.error(`Located in manual-tools.json file`);
+                        console.error('Validation errors:', JSON.stringify(validate.errors, null, 2));
+                    }
+                }
+            }
+            finalToolsList.sort((tool, anotherTool) => tool.title.localeCompare(anotherTool.title));
+            finalTools[key].toolsList = finalToolsList
         }
-        finalToolsList.sort((tool, anotherTool) => tool.title.localeCompare(anotherTool.title));
-        finalTools[key].toolsList = finalToolsList
+        fs.writeFileSync(toolsPath, JSON.stringify(finalTools));
+        fs.writeFileSync(tagsPath, JSON.stringify({ languages: languageList, technologies: technologyList }),)
+    } catch (err) {
+        throw new Error(`Error combining tools: ${err}`);
     }
-    fs.writeFileSync(toolsPath,JSON.stringify(finalTools));
-    fs.writeFileSync(tagsPath,JSON.stringify({ languages: languageList, technologies: technologyList }),)
 }
 
 module.exports = { combineTools }
