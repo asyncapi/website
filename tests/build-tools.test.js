@@ -19,9 +19,9 @@ describe('buildTools', () => {
         fs.writeFileSync(manualToolsPath, JSON.stringify(manualTools));
     });
 
-    // afterAll(() => {
-    //     fs.rmSync(testDir, { recursive: true, force: true });
-    // });
+    afterAll(() => {
+        fs.rmSync(testDir, { recursive: true, force: true });
+    });
 
     beforeEach(() => {
         jest.clearAllMocks();
