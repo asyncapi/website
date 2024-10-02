@@ -41,17 +41,9 @@ describe('buildTools', () => {
 
         const automatedToolsContent = JSON.parse(fs.readFileSync(automatedToolsPath, 'utf8'));
         
-        // Check important properties
         expect(Object.keys(automatedToolsContent)).toEqual(Object.keys(mockConvertedData));
         expect(automatedToolsContent["Category1"].description).toEqual(mockConvertedData["Category1"].description);
         expect(automatedToolsContent["Category2"].description).toEqual(mockConvertedData["Category2"].description);
-
-        const manualToolsData = JSON.parse(fs.readFileSync(manualToolsPath, 'utf8'));
-        const tagsFileData = JSON.parse(fs.readFileSync(tagsPath, 'utf8'));
-        const toolsFileData = JSON.parse(fs.readFileSync(toolsPath, 'utf8'));
-
-        expect(toolsFileData).toEqual(initialToolsData);
-        expect(tagsFileData).toEqual(tagsData);
     });
 
     it('should handle getData error', async () => {

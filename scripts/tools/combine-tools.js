@@ -135,6 +135,7 @@ const combineTools = async (automatedTools, manualTools, toolsPath, tagsPath) =>
         finalToolsList.sort((tool, anotherTool) => tool.title.localeCompare(anotherTool.title));
         finalTools[key].toolsList = finalToolsList
     }
+    console.log('Final tools object:', finalTools);
     fs.writeFileSync(toolsPath,JSON.stringify(finalTools));
     fs.writeFileSync(tagsPath,JSON.stringify({ languages: languageList, technologies: technologyList }),)
 }
