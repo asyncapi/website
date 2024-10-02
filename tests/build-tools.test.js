@@ -10,17 +10,16 @@ jest.mock('../scripts/tools/categorylist', () => ({
         { name: 'Category1', description: 'Description for Category1' },
         { name: 'Category2', description: 'Description for Category2' }
     ]
-}));
-
+})); 
 
 jest.mock('../scripts/tools/tags-color', () => ({
     languagesColor: [
-      { name: 'JavaScript', color: 'bg-[#f1e05a]', borderColor: 'border-[#f1e05a]' },
-      { name: 'Python', color: 'bg-[#3572A5]', borderColor: 'border-[#3572A5]' }
+        { name: 'JavaScript', color: 'bg-[#f1e05a]', borderColor: 'border-[#f1e05a]' },
+        { name: 'Python', color: 'bg-[#3572A5]', borderColor: 'border-[#3572A5]' }
     ],
     technologiesColor: [
-      { name: 'React', color: 'bg-[#61dafb]', borderColor: 'border-[#61dafb]' },
-      { name: 'Node.js', color: 'bg-[#68a063]', borderColor: 'border-[#68a063]' }
+        { name: 'React', color: 'bg-[#61dafb]', borderColor: 'border-[#61dafb]' },
+        { name: 'Node.js', color: 'bg-[#68a063]', borderColor: 'border-[#68a063]' }
     ]
 }));
 
@@ -77,32 +76,36 @@ describe('buildTools', () => {
     });
 
     it('should handle convertTools error', async () => {
-        axios.get.mockResolvedValue({ data: mockExtractData });
-        jest.spyOn(require('../scripts/tools/tools-object'), 'convertTools').mockRejectedValue(new Error('Convert error'));
+        axios.get.mockResolvedValue({ data: { items: [{ name: '.invalid-tool' }] } });
 
         try {
             await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
         } catch (err) {
-            expect(err.message).toContain('Convert error');
+            expect(err.message).toContain('Invalid .asyncapi-tool file.');
         }
     });
 
     it('should handle combineTools error', async () => {
         axios.get.mockResolvedValue({ data: mockExtractData });
-        jest.spyOn(require('../scripts/tools/tools-object'), 'convertTools').mockResolvedValue(mockConvertedData);
-        jest.spyOn(require('../scripts/tools/combine-tools'), 'combineTools').mockRejectedValue(new Error('Combine Tools error'));
+        const invalidManualTools = [
+            {
+                title: "Invalid Tool",
+                description: "Description for invalid tool",
+                links: { repoUrl: "https://github.com/invalid/tool" },
+                filters: { categories: ["InvalidCategory"], language: "UnknownLanguage", technology: ["UnknownTech"] }
+            }
+        ];
+        fs.writeFileSync(manualToolsPath, JSON.stringify(invalidManualTools));
 
         try {
             await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
         } catch (err) {
-            expect(err.message).toContain('Combine Tools error');
+            expect(err.message).toContain('Invalid Invalid Tool .asyncapi-tool file.');
         }
     });
 
     it('should handle file write errors', async () => {
         axios.get.mockResolvedValue({ data: mockExtractData });
-        jest.spyOn(require('../scripts/tools/tools-object'), 'convertTools').mockResolvedValue(mockConvertedData);
-        jest.spyOn(require('../scripts/tools/combine-tools'), 'combineTools').mockResolvedValue(true);
 
         const invalidPath = '/invalid_dir/tools.json';
 
