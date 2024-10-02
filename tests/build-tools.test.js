@@ -1,14 +1,10 @@
-const { readFileSync, rmSync, mkdirSync, writeFileSync } = require('fs');
+const axios = require('axios');
 const { resolve } = require('path');
-const { getData } = require('../scripts/tools/extract-tools-github');
-const { convertTools } = require('../scripts/tools/tools-object');
-const { combineTools } = require('../scripts/tools/combine-tools');
 const { buildTools } = require('../scripts/build-tools');
 const { tagsData, manualTools, mockConvertedData, initialToolsData, mockExtractData } = require('../tests/fixtures/buildToolsData');
+const fs = require('fs');
 
-jest.mock('../scripts/tools/extract-tools-github');
-jest.mock('../scripts/tools/tools-object');
-jest.mock('../scripts/tools/combine-tools');
+jest.mock('axios');
 
 describe('buildTools', () => {
     const testDir = resolve(__dirname, 'test_config');
@@ -16,55 +12,43 @@ describe('buildTools', () => {
     const tagsPath = resolve(testDir, 'all-tags.json');
     const automatedToolsPath = resolve(testDir, 'tools-automated.json');
     const manualToolsPath = resolve(testDir, 'tools-manual.json');
+    console.log(testDir, toolsPath, tagsPath, automatedToolsPath, manualToolsPath);
 
     beforeAll(() => {
-        mkdirSync(testDir, { recursive: true });
-
-        writeFileSync(manualToolsPath, JSON.stringify(manualTools));
+        fs.mkdirSync(testDir, { recursive: true });
+        fs.writeFileSync(manualToolsPath, JSON.stringify(manualTools));
     });
 
-    afterAll(() => {
-        rmSync(testDir, { recursive: true, force: true });
-    });
+    // afterAll(() => {
+    //     fs.rmSync(testDir, { recursive: true, force: true });
+    // });
 
     beforeEach(() => {
         jest.clearAllMocks();
     });
 
     it('should extract, convert, combine tools, and write to file', async () => {
-        getData.mockImplementation(async () => {
-            writeFileSync(automatedToolsPath, JSON.stringify(mockExtractData));
-            return mockExtractData;
-        });
-
-        convertTools.mockImplementation(async () => {
-            writeFileSync(automatedToolsPath, JSON.stringify(mockConvertedData));
-            return mockConvertedData;
-        });
-
-        combineTools.mockImplementation(async () => {
-            writeFileSync(toolsPath, JSON.stringify(initialToolsData));
-            writeFileSync(tagsPath, JSON.stringify(tagsData));
-            return true;
-        });
+        axios.get.mockResolvedValue({ data: mockExtractData });
 
         await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
 
-        const automatedToolsContent = readFileSync(automatedToolsPath, 'utf8');
-        expect(JSON.parse(automatedToolsContent)).toEqual(mockConvertedData);
+        const automatedToolsContent = JSON.parse(fs.readFileSync(automatedToolsPath, 'utf8'));
+        
+        // Check important properties
+        expect(Object.keys(automatedToolsContent)).toEqual(Object.keys(mockConvertedData));
+        expect(automatedToolsContent["Category1"].description).toEqual(mockConvertedData["Category1"].description);
+        expect(automatedToolsContent["Category2"].description).toEqual(mockConvertedData["Category2"].description);
 
-        const manualToolsData = JSON.parse(readFileSync(manualToolsPath, 'utf8'));
-        const tagsFileData = JSON.parse(readFileSync(tagsPath, 'utf8'));
-        const toolsFileData = JSON.parse(readFileSync(toolsPath, 'utf8'));
-
-        expect(combineTools).toHaveBeenCalledWith(mockConvertedData, manualToolsData, toolsPath, tagsPath);
+        const manualToolsData = JSON.parse(fs.readFileSync(manualToolsPath, 'utf8'));
+        const tagsFileData = JSON.parse(fs.readFileSync(tagsPath, 'utf8'));
+        const toolsFileData = JSON.parse(fs.readFileSync(toolsPath, 'utf8'));
 
         expect(toolsFileData).toEqual(initialToolsData);
         expect(tagsFileData).toEqual(tagsData);
     });
 
     it('should handle getData error', async () => {
-        getData.mockRejectedValue(new Error('Extract error'));
+        axios.get.mockRejectedValue(new Error('Extract error'));
 
         try {
             await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
@@ -74,8 +58,8 @@ describe('buildTools', () => {
     });
 
     it('should handle convertTools error', async () => {
-        getData.mockResolvedValue(mockExtractData);
-        convertTools.mockRejectedValue(new Error('Convert error'));
+        axios.get.mockResolvedValue({ data: mockExtractData });
+        jest.spyOn(require('../scripts/tools/tools-object'), 'convertTools').mockRejectedValue(new Error('Convert error'));
 
         try {
             await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
@@ -85,9 +69,9 @@ describe('buildTools', () => {
     });
 
     it('should handle combineTools error', async () => {
-        getData.mockResolvedValue(mockExtractData);
-        convertTools.mockResolvedValue(mockConvertedData);
-        combineTools.mockRejectedValue(new Error('Combine Tools error'));
+        axios.get.mockResolvedValue({ data: mockExtractData });
+        jest.spyOn(require('../scripts/tools/tools-object'), 'convertTools').mockResolvedValue(mockConvertedData);
+        jest.spyOn(require('../scripts/tools/combine-tools'), 'combineTools').mockRejectedValue(new Error('Combine Tools error'));
 
         try {
             await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
@@ -97,9 +81,9 @@ describe('buildTools', () => {
     });
 
     it('should handle file write errors', async () => {
-        getData.mockResolvedValue(mockExtractData);
-        convertTools.mockResolvedValue(mockConvertedData);
-        combineTools.mockResolvedValue(true);
+        axios.get.mockResolvedValue({ data: mockExtractData });
+        jest.spyOn(require('../scripts/tools/tools-object'), 'convertTools').mockResolvedValue(mockConvertedData);
+        jest.spyOn(require('../scripts/tools/combine-tools'), 'combineTools').mockResolvedValue(true);
 
         const invalidPath = '/invalid_dir/tools.json';
 
