@@ -49,31 +49,6 @@ const mockConvertedData = {
     }
 };
 
-const initialToolsData = {
-    "Category1": {
-        description: "Description for Category1",
-        toolsList: [
-            {
-                title: "Tool 1",
-                description: "Description for tool 1",
-                links: { repoUrl: "https://github.com/tool1" },
-                filters: { categories: ["Category1"], language: "JavaScript", technology: ["React"] }
-            }
-        ]
-    },
-    "Category2": {
-        description: "Description for Category2",
-        toolsList: [
-            {
-                title: "Tool 2",
-                description: "Description for tool 2",
-                links: { repoUrl: "https://github.com/tool2" },
-                filters: { categories: ["Category2"], language: "Python", technology: ["Node.js"] }
-            }
-        ]
-    }
-};
-
 const mockExtractData = {
     items: [
         {
@@ -105,6 +80,5 @@ module.exports = {
     tagsData,
     manualTools,
     mockConvertedData,
-    initialToolsData,
     mockExtractData,
 };

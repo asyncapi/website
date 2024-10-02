@@ -1,7 +1,7 @@
 const axios = require('axios');
 const { resolve } = require('path');
 const { buildTools } = require('../scripts/build-tools');
-const { tagsData, manualTools, mockConvertedData, initialToolsData, mockExtractData } = require('../tests/fixtures/buildToolsData');
+const { tagsData, manualTools, mockConvertedData, mockExtractData } = require('../tests/fixtures/buildToolsData');
 const fs = require('fs');
 
 jest.mock('axios');
@@ -30,7 +30,6 @@ describe('buildTools', () => {
     const tagsPath = resolve(testDir, 'all-tags.json');
     const automatedToolsPath = resolve(testDir, 'tools-automated.json');
     const manualToolsPath = resolve(testDir, 'tools-manual.json');
-    console.log(testDir, toolsPath, tagsPath, automatedToolsPath, manualToolsPath);
 
     beforeAll(() => {
         fs.mkdirSync(testDir, { recursive: true });
@@ -53,12 +52,16 @@ describe('buildTools', () => {
         const automatedToolsContent = JSON.parse(fs.readFileSync(automatedToolsPath, 'utf8'));
         const combinedToolsContent = JSON.parse(fs.readFileSync(toolsPath, 'utf8'));
         const tagsContent = JSON.parse(fs.readFileSync(tagsPath, 'utf8'));
+
         expect(Object.keys(automatedToolsContent)).toEqual(Object.keys(mockConvertedData));
         expect(automatedToolsContent["Category1"].description).toEqual(mockConvertedData["Category1"].description);
         expect(automatedToolsContent["Category2"].description).toEqual(mockConvertedData["Category2"].description);
 
         expect(combinedToolsContent).toHaveProperty('Category1');
         expect(combinedToolsContent).toHaveProperty('Category2');
+        expect(combinedToolsContent["Category1"].description).toEqual(mockConvertedData["Category1"].description);
+        expect(combinedToolsContent["Category2"].description).toEqual(mockConvertedData["Category2"].description);
+
         expect(tagsContent).toEqual(tagsData);
 
     });
