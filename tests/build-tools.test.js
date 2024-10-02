@@ -13,6 +13,17 @@ jest.mock('../scripts/tools/categorylist', () => ({
 }));
 
 
+jest.mock('../scripts/tools/tags-color', () => ({
+    languagesColor: [
+      { name: 'JavaScript', color: 'bg-[#f1e05a]', borderColor: 'border-[#f1e05a]' },
+      { name: 'Python', color: 'bg-[#3572A5]', borderColor: 'border-[#3572A5]' }
+    ],
+    technologiesColor: [
+      { name: 'React', color: 'bg-[#61dafb]', borderColor: 'border-[#61dafb]' },
+      { name: 'Node.js', color: 'bg-[#68a063]', borderColor: 'border-[#68a063]' }
+    ]
+}));
+
 describe('buildTools', () => {
     const testDir = resolve(__dirname, 'test_config');
     const toolsPath = resolve(testDir, 'tools.json');
@@ -40,10 +51,16 @@ describe('buildTools', () => {
         await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
 
         const automatedToolsContent = JSON.parse(fs.readFileSync(automatedToolsPath, 'utf8'));
-        
+        const combinedToolsContent = JSON.parse(fs.readFileSync(toolsPath, 'utf8'));
+        const tagsContent = JSON.parse(fs.readFileSync(tagsPath, 'utf8'));
         expect(Object.keys(automatedToolsContent)).toEqual(Object.keys(mockConvertedData));
         expect(automatedToolsContent["Category1"].description).toEqual(mockConvertedData["Category1"].description);
         expect(automatedToolsContent["Category2"].description).toEqual(mockConvertedData["Category2"].description);
+
+        expect(combinedToolsContent).toHaveProperty('Category1');
+        expect(combinedToolsContent).toHaveProperty('Category2');
+        expect(tagsContent).toEqual(tagsData);
+
     });
 
     it('should handle getData error', async () => {
