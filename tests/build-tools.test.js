@@ -5,6 +5,13 @@ const { tagsData, manualTools, mockConvertedData, initialToolsData, mockExtractD
 const fs = require('fs');
 
 jest.mock('axios');
+jest.mock('../scripts/tools/categorylist', () => ({
+    categoryList: [
+        { name: 'Category1', description: 'Description for Category1' },
+        { name: 'Category2', description: 'Description for Category2' }
+    ]
+}));
+
 
 describe('buildTools', () => {
     const testDir = resolve(__dirname, 'test_config');
