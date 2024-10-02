@@ -308,7 +308,7 @@ _See code: [src/commands/config/versions.ts](https://github.com/asyncapi/cli/blo
 
 ## `asyncapi convert [SPEC-FILE]`
 
-Convert asyncapi documents older to newer versions or OpenAPI documents to AsyncAPI
+Convert asyncapi documents older to newer versions or OpenAPI | postman-collection documents to AsyncAPI
 
 ```
 USAGE
@@ -318,12 +318,12 @@ ARGUMENTS
   SPEC-FILE  spec path, url, or context-name
 
 FLAGS
-  -f, --format=<option>         (required) [default: asyncapi] Specify the format to convert from (openapi or asyncapi)
-                                <options: openapi|asyncapi>
+  -f, --format=<option>         (required) [default: asyncapi] Specify the format to convert from (openapi or asyncapi or postman-collection)
+                                <options: openapi|asyncapi|postman-collection>
   -h, --help                    Show CLI help.
   -o, --output=<value>          path to the file where the result is saved
   -p, --perspective=<option>    [default: server] Perspective to use when converting OpenAPI to AsyncAPI (client or
-                                server). Note: This option is only applicable for OpenAPI to AsyncAPI conversions.
+                                server). Note: This option is only applicable for OpenAPI | postman-collection to AsyncAPI conversions.
                                 <options: client|server>
   -t, --target-version=<value>  [default: 3.0.0] asyncapi version to convert to
 
