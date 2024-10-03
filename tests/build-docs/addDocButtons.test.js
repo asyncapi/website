@@ -54,26 +54,38 @@ describe('addDocButtons', () => {
   });
 
   it('should throw an error if treePosts is missing', () => {
+    let error;
+
     try {
       addDocButtons(docPosts, undefined);
     } catch (err) {
-      expect(err.message).toMatch(/An error occurred while adding doc buttons:/);
+      error = err
+      expect(err.message).toContain("An error occurred while adding doc buttons:");
     }
+    expect(error).toBeDefined()
   });
 
   it('should throw an error if docPosts is missing', () => {
+    let error;
+
     try {
       addDocButtons(undefined, treePosts);
     } catch (err) {
-      expect(err.message).toMatch(/An error occurred while adding doc buttons:/);
+      error = err
+      expect(err.message).toContain("An error occurred while adding doc buttons:");
     }
+    expect(error).toBeDefined()
   });
 
   it('should handle invalid data structure in treePosts', () => {
+    let error;
+
     try {
       addDocButtons(docPosts, invalidTreePosts);
     } catch (err) {
-      expect(err.message).toMatch(/An error occurred while adding doc buttons:/);
+      error = err;
+      expect(err.message).toContain("An error occurred while adding doc buttons:");
     }
+    expect(error).toBeDefined()
   });
 });
