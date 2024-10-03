@@ -36,11 +36,6 @@ const mockTreePosts = {
     },
 };
 
-const invalidTreePosts = {
-    welcome: {
-        item: { title: 'Welcome', isRootSection: true, slug: '/docs' },
-        children: null,
-    },
-};
+const invalidTreePosts = ['tree1','tree2','tree3','tree4'];
 
 module.exports = { docPosts, treePosts, mockDocPosts, mockTreePosts, invalidTreePosts };
