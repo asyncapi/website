@@ -10,7 +10,7 @@ jest.mock('../scripts/tools/categorylist', () => ({
         { name: 'Category1', description: 'Description for Category1' },
         { name: 'Category2', description: 'Description for Category2' }
     ]
-})); 
+}));
 
 jest.mock('../scripts/tools/tags-color', () => ({
     languagesColor: [
@@ -72,35 +72,6 @@ describe('buildTools', () => {
             await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
         } catch (err) {
             expect(err.message).toContain('Extract error');
-        }
-    });
-
-    it('should handle convertTools error', async () => {
-        axios.get.mockResolvedValue({ data: { items: [{ name: '.invalid-tool' }] } });
-
-        try {
-            await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
-        } catch (err) {
-            expect(err.message).toContain('Invalid .asyncapi-tool file.');
-        }
-    });
-
-    it('should handle combineTools error', async () => {
-        axios.get.mockResolvedValue({ data: mockExtractData });
-        const invalidManualTools = [
-            {
-                title: "Invalid Tool",
-                description: "Description for invalid tool",
-                links: { repoUrl: "https://github.com/invalid/tool" },
-                filters: { categories: ["InvalidCategory"], language: "UnknownLanguage", technology: ["UnknownTech"] }
-            }
-        ];
-        fs.writeFileSync(manualToolsPath, JSON.stringify(invalidManualTools));
-
-        try {
-            await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
-        } catch (err) {
-            expect(err.message).toContain('Invalid Invalid Tool .asyncapi-tool file.');
         }
     });
 

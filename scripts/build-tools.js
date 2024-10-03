@@ -8,12 +8,12 @@ const buildTools = async (automatedToolsPath, manualToolsPath, toolsPath, tagsPa
   try {
     let githubExtractData = await getData();
     let automatedTools = await convertTools(githubExtractData);
-    
+
     fs.writeFileSync(
       automatedToolsPath,
       JSON.stringify(automatedTools, null, '  ')
     );
-    
+
     await combineTools(automatedTools, require(manualToolsPath), toolsPath, tagsPath);
   } catch (err) {
     throw new Error(`An error occurred while building tools: ${err.message}`);
