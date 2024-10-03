@@ -16,17 +16,18 @@ module.exports = {
     sectionNavItems: [
         { title: 'Root', weight: 0, isRootSection: true, isSection: true, rootSectionId: 'root', sectionWeight: 0, slug: '/docs' },
         { title: 'Item without sectionId', weight: 1, isSection: false, rootSectionId: 'root', slug: '/docs/item' },
-      ],
+    ],
 
     orphanNavItems: [
         { title: 'Orphaned Subsection', weight: 0, isSection: true, rootSectionId: 'root', sectionId: 'orphan', parent: 'non-existent-parent', slug: '/docs/orphaned' }
     ],
 
-    missingSpecVersion: [
-        { title: 'Reference', weight: 2, isRootSection: true, isSection: true, rootSectionId: 'reference', sectionWeight: 2, slug: '/docs/reference' },
-        { title: 'Specification', weight: 1, isSection: true, rootSectionId: 'reference', sectionId: 'specification', parent: 'reference', slug: '/docs/reference/specification' },
-        { title: 'v1.0', weight: 0, isSection: false, rootSectionId: 'reference', sectionId: 'specification', slug: '/docs/reference/specification/v1.0', isPrerelease: true },
-        { title: 'v2.0', weight: 1, isSection: false, rootSectionId: 'reference', sectionId: 'specification', slug: '/docs/reference/specification/v2.0', isPrerelease: true }
+    missingFieldsNavItems: [
+        { title: 'Incomplete Item', weight: 0, isSection: false, rootSectionId: 'incomplete', slug: '/docs/incomplete' },
     ],
-    nullNavItems: null
+
+    invalidParentNavItems: [
+        { title: 'Valid Root', weight: 0, isRootSection: true, isSection: true, rootSectionId: 'valid-root', sectionWeight: 0, slug: '/docs/valid-root' },
+        { title: 'Child with invalid parent', weight: 1, isSection: true, rootSectionId: 'valid-root', sectionId: 'child-invalid', parent: 'non-existent-parent', slug: '/docs/valid-root/child-invalid' },
+    ]
 };

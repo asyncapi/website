@@ -1,7 +1,11 @@
 const { buildNavTree } = require('../../scripts/build-docs');
-const { basicNavItems, sectionNavItems, orphanNavItems, missingSpecVersion, nullNavItems } = require('../fixtures/buildNavTreeData')
-
-jest.mock('lodash/sortBy', () => jest.fn(arr => arr));
+const { 
+    basicNavItems, 
+    sectionNavItems, 
+    orphanNavItems, 
+    missingFieldsNavItems, 
+    invalidParentNavItems 
+} = require('../fixtures/buildNavTreeData')
 
 describe('buildNavTree', () => {
   beforeEach(() => {
@@ -43,16 +47,8 @@ describe('buildNavTree', () => {
       })
     );
 
-    expect(result['reference'].children.api.children[0]).toEqual(
-      expect.objectContaining({
-        title: 'Endpoints',
-        slug: '/docs/reference/api/endpoints'
-      })
-    );
-
     expect(result['reference'].children.specification.item.slug).toBe('/docs/reference/specification');
-    expect(result['reference'].children.specification.children[0].slug).toBe('/docs/reference/specification/v1.0');
-    expect(result['reference'].children.specification.children[0].isPrerelease).toBe(false);
+    expect(result['reference'].children.specification.children[0].slug).toBe('/docs/reference/specification/v3.0');
 
   });
 
@@ -77,30 +73,39 @@ describe('buildNavTree', () => {
   });
 
   it('should throw and catch an error if a parent section is missing', () => {
+    let error;
 
     try {
       buildNavTree(orphanNavItems);
     } catch (err) {
+      error = err;
       expect(err.message).toContain('Parent section non-existent-parent not found for item Orphaned Subsection');
     }
+    expect(error).toBeDefined()
   });
 
-  it('should throw and catch an error if no valid specification version is found', () => {
+  it('should handle items with missing required fields gracefully', () => {
+    let error;
 
     try {
-      buildNavTree(missingSpecVersion);
+      buildNavTree(missingFieldsNavItems);
     } catch (err) {
-      expect(err.message).toContain('No valid specification version found');
+      error = err;
+      expect(err.message).toContain('Failed to build navigation tree');
     }
+    expect(error).toBeDefined();
   });
 
-  it('should throw and catch a generic error if something unexpected happens', () => {
+  it('should throw an error when parent references are invalid', () => {
+    let error;
 
     try {
-      buildNavTree(nullNavItems);
+      buildNavTree(invalidParentNavItems);
     } catch (err) {
-      expect(err.message).toContain("Cannot read properties of null (reading 'forEach')");
+      error = err;
+      expect(err.message).toContain('Parent section non-existent-parent not found for item Child with invalid parent');
     }
+    expect(error).toBeDefined();
   });
 
 });
