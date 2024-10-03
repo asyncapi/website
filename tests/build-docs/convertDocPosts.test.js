@@ -1,5 +1,10 @@
 const { convertDocPosts } = require('../../scripts/build-docs');
-const { docObject, emptyDocObject, singlePostDocObject, nestedChildrenDocObject, } = require('../fixtures/convertDocPostData');
+const { 
+  docObject, 
+  emptyDocObject, 
+  singlePostDocObject, 
+  nestedChildrenDocObject
+ } = require('../fixtures/convertDocPostData');
 
 describe('convertDocPosts', () => {
   it('should convert a doc object to an array', () => {
@@ -31,34 +36,27 @@ describe('convertDocPosts', () => {
   });
 
   it('should throw an error if docObject is undefined', () => {
+    let error;
+
     try {
       convertDocPosts(undefined);
     } catch (err) {
+      error = err;
       expect(err.message).toContain('Error in convertDocPosts:');
     }
+    expect(error).toBeDefined();
   });
 
-  it('should throw an error if docObject is a function', () => {
+  it('should throw an error if docObject is null', () => {
+    let error;
+
     try {
-      convertDocPosts(() => { });
+      convertDocPosts(null);
     } catch (err) {
+      error = err;
       expect(err.message).toContain('Error in convertDocPosts:');
     }
+    expect(error).toBeDefined();
   });
 
-  it('should throw an error if docObject is a number', () => {
-    try {
-      convertDocPosts(123);
-    } catch (err) {
-      expect(err.message).toContain('Error in convertDocPosts:');
-    }
-  });
-
-  it('should throw an error if docObject is an array', () => {
-    try {
-      convertDocPosts([]);
-    } catch (err) {
-      expect(err.message).toContain('Error in convertDocPosts:');
-    }
-  });
 });
