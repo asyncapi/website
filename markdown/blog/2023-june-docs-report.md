@@ -10,7 +10,7 @@ authors:
   - name: Alejandra Quetzalli
     photo: /img/avatars/canela-ale.webp
     link: https://www.linkedin.com/in/alejandra-quetzalli/
-    byline: In June 2023, the AsyncAPI documentation had 7,827 sessions and 4,203 unique users, including 2,566 new users.
+excerpt: In June 2023, the AsyncAPI documentation had 7,827 sessions and 4,203 unique users, including 2,566 new users.
 ---
 
 # AsyncAPI Docs Report - June 2023
