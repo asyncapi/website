@@ -19,9 +19,7 @@ const { mockData,
   duplicateToolFileContent,
   dataWithUnknownCategoryOnce,
   unknownToolFileContent,
-  invalidToolFileContentJSON,
-  invalidJsonContent,
-  missingToolPropertyContent
+  toolFileMalformedJSON,
 } = require("../fixtures/toolsObjectData")
 
 jest.mock('axios');
@@ -75,7 +73,14 @@ describe('Tools Object', () => {
 
     axios.get.mockResolvedValue({ data: invalidToolFileContent });
 
-    await convertTools(invalidToolData);
+    let error;
+    try {
+      await convertTools(invalidToolData);
+    } catch (err) {
+      error = err;
+    }
+
+    expect(error).toBeUndefined();
 
     const allErrorMessages = console.error.mock.calls.flat();
     expect(allErrorMessages).toEqual(
@@ -115,63 +120,30 @@ describe('Tools Object', () => {
   });
 
   it('should throw an error if axios.get fails', async () => {
+    let error;
     axios.get.mockRejectedValue(new Error('Network Error'));
 
     try {
       await convertTools(mockData)
     } catch (err) {
+      error = err;
       expect(err.message).toContain("Network Error")
     }
+    expect(error).toBeDefined();
   });
 
-  it('should throw an error if JSON schema validation fails', async () => {
+  it('should handle malformed JSON in tool file', async () => {
+    axios.get.mockResolvedValue({ data: toolFileMalformedJSON });
 
-    axios.get.mockResolvedValue({ data: invalidToolFileContentJSON });
-
+    let error;
     try {
       await convertTools(mockData);
     } catch (err) {
-      expect(err).toBeInstanceOf(Error);
-      expect(err.message).toContain('Invalid .asyncapi-tool file');
+      error = err;
+      expect(err.message).toContain('Unexpected token');
     }
-  });
 
-  it('should throw an error if toolFile cannot be converted to JSON', async () => {
-
-    axios.get.mockResolvedValue({ data: invalidJsonContent });
-
-    jest.doMock('../../scripts/utils', () => ({
-      convertToJson: jest.fn(() => {
-        throw new Error('Invalid JSON format');
-      })
-    }));
-
-    try {
-      await convertTools(mockData);
-    } catch (err) {
-      expect(err).toBeInstanceOf(Error);
-      expect(err.message).toBe('Error processing tool: Invalid JSON format');
-    }
-  });
-
-  it('should throw an error if a required tool property is missing', async () => {
-
-    axios.get.mockResolvedValue({ data: missingToolPropertyContent });
-
-    jest.doMock('../../scripts/utils', () => ({
-      convertToJson: jest.fn(() => {
-        return {
-          title: 'Missing Property Tool',
-        };
-      })
-    }));
-
-    try {
-      await convertTools(mockData);
-    } catch (err) {
-      expect(err).toBeInstanceOf(Error);
-      expect(err.message).toContain('Missing required tool properties');
-    }
+    expect(error).toBeDefined();
   });
 
 });

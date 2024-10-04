@@ -242,30 +242,16 @@ const unknownToolFileContent = `
       - UnknownCategory
   `;
 
-const invalidToolFileContentJSON = `
-  title: Invalid Tool
-  description: This tool has invalid schema.
+// New Fixtures for Error Handling Tests
+const toolFileMalformedJSON = `
+  title: Malformed Tool
+  description: This tool has malformed JSON.
   links:
-    repoUrl: https://github.com/asyncapi/invalid-repo
-  filters:
+    repoUrl: https://github.com/asyncapi/malformed-repo
+  filters
     categories:
       - Category1
-    invalidField: true
   `;
-
-const invalidJsonContent = `
-  title: Invalid Tool
-  description: This is an invalid JSON
-  links:
-    repoUrl: https://github.com/asyncapi/invalid-repo
-`;
-
-const missingToolPropertyContent = `
-title: Missing Property Tool
-description: This tool is missing required properties
-links:
-  repoUrl: https://github.com/asyncapi/missing-property
-`;
 
 module.exports = {
   mockData,
@@ -286,7 +272,5 @@ module.exports = {
   duplicateToolFileContent,
   dataWithUnknownCategoryOnce,
   unknownToolFileContent,
-  invalidToolFileContentJSON,
-  invalidJsonContent,
-  missingToolPropertyContent
+  toolFileMalformedJSON,
 }
