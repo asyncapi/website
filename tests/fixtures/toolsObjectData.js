@@ -242,7 +242,6 @@ const unknownToolFileContent = `
       - UnknownCategory
   `;
 
-// New Fixtures for Error Handling Tests
 const toolFileMalformedJSON = `
   title: Malformed Tool
   description: This tool has malformed JSON.
