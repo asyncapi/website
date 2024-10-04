@@ -255,4 +255,5 @@ describe('combineTools function', () => {
       expect(err.message).toBe('Error processing tool: Cannot read property \'language\' of undefined');
     }
   });
+  
 });
