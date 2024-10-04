@@ -142,6 +142,8 @@ const combineTools = async (automatedTools, manualTools, toolsPath, tagsPath) =>
     } catch (err) {
         throw new Error(`Error combining tools: ${err}`);
     }
+    fs.writeFileSync(toolsPath,JSON.stringify(finalTools));
+    fs.writeFileSync(tagsPath,JSON.stringify({ languages: languageList, technologies: technologyList }),)
 }
 
 module.exports = { combineTools }
