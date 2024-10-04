@@ -6,7 +6,6 @@ const schema = require("./tools-schema.json");
 const Ajv = require("ajv")
 const addFormats = require("ajv-formats")
 const Fuse = require("fuse.js");
-const { error } = require("console");
 const ajv = new Ajv()
 addFormats(ajv, ["uri"])
 const validate = ajv.compile(schema)
@@ -142,8 +141,6 @@ const combineTools = async (automatedTools, manualTools, toolsPath, tagsPath) =>
     } catch (err) {
         throw new Error(`Error combining tools: ${err}`);
     }
-    fs.writeFileSync(toolsPath,JSON.stringify(finalTools));
-    fs.writeFileSync(tagsPath,JSON.stringify({ languages: languageList, technologies: technologyList }),)
 }
 
 module.exports = { combineTools }

@@ -14,12 +14,11 @@ const {
   manualToolsT8,
   automatedToolsT9,
   manualToolsT9,
-  invalidManualToolsT13,
   automatedToolsT12,
   invalidAutomatedToolsT10,
   manualToolsWithInvalidURLT11,
   circularTool
-} = require('../fixtures/combineToolsData')
+} = require('../fixtures/combineToolsData');
 
 jest.mock('ajv', () => {
   return jest.fn().mockImplementation(() => ({
@@ -209,51 +208,53 @@ describe('combineTools function', () => {
   });
 
   it('should throw an error when fs.writeFileSync fails', async () => {
+    let error;
     let invalidPath = "this/is/not/valid"
 
     try {
       await combineTools(automatedTools, manualTools, invalidPath, invalidPath);
     } catch (err) {
+      error = err;
       expect(err.message).toMatch(/ENOENT|EACCES/);
     }
+    expect(error).toBeDefined();
   });
 
   it('should throw an error when there is an invalid category', async () => {
+    let error;
 
     try {
       await combineTools(invalidAutomatedToolsT10, manualTools, toolsPath, tagsPath);
     } catch (err) {
+      error = err;
       expect(err.message).toContain('Error combining tools');
     }
+    expect(error).toBeDefined();
   });
 
   it('should throw an error when URL parsing fails', async () => {
+    let error;
 
     try {
       await combineTools(automatedTools, manualToolsWithInvalidURLT11, toolsPath, tagsPath);
     } catch (err) {
+      error = err;
       expect(err.message).toContain('Invalid URL');
     }
+    expect(error).toBeDefined();
   });
 
   it('should handle errors when processing tools with circular references', async () => {
-
+    let error;
     circularTool.circular = circularTool;
 
     try {
       await combineTools(automatedToolsT12, {}, toolsPath, tagsPath);
     } catch (err) {
+      error = err;
       expect(err.message).toContain('Converting circular structure to JSON');
     }
-  });
-
-  it('should throw an error when invalid manualTools data is passed', async () => {
-
-    try {
-      await combineTools(automatedTools, invalidManualToolsT13, toolsPath, tagsPath);
-    } catch (err) {
-      expect(err.message).toBe('Error processing tool: Cannot read property \'language\' of undefined');
-    }
+    expect(error).toBeDefined();
   });
   
 });

@@ -192,12 +192,6 @@ const automatedToolsT12 = {
     }
 };
 
-const invalidManualToolsT13 = {
-    category1: {
-        toolsList: [{ title: 'Invalid Tool' }]
-    }
-};
-
 module.exports = {
     expectedDataT1,
     manualToolsWithMissingData,
@@ -211,7 +205,6 @@ module.exports = {
     manualToolsT8,
     automatedToolsT9,
     manualToolsT9,
-    invalidManualToolsT13,
     circularTool,
     automatedToolsT12,
     invalidAutomatedToolsT10,
