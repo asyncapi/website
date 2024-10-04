@@ -1,10 +1,12 @@
 const { buildNavTree } = require('../../scripts/build-docs');
+
 const { 
     basicNavItems, 
     sectionNavItems, 
     orphanNavItems, 
     missingFieldsNavItems, 
-    invalidParentNavItems 
+    invalidParentNavItems,
+    multipleSubsectionsNavItems 
 } = require('../fixtures/buildNavTreeData')
 
 describe('buildNavTree', () => {
@@ -106,6 +108,26 @@ describe('buildNavTree', () => {
       expect(err.message).toContain('Parent section non-existent-parent not found for item Child with invalid parent');
     }
     expect(error).toBeDefined();
+  });
+
+  it('should sort children within subsections based on weight', () => {
+    const result = buildNavTree(multipleSubsectionsNavItems);
+
+    const apiChildren = result['reference'].children.api.children;
+    expect(apiChildren[0].title).toBe('Authentication');
+    expect(apiChildren[1].title).toBe('Endpoints');
+    expect(apiChildren[2].title).toBe('Rate Limiting');
+
+    const specChildren = result['reference'].children.specification.children;
+    expect(specChildren[0].title).toBe('v1.0');
+    expect(specChildren[1].title).toBe('v2.0');
+    expect(specChildren[2].title).toBe('v3.0');
+
+    expect(apiChildren[0].weight).toBeLessThan(apiChildren[1].weight);
+    expect(apiChildren[1].weight).toBeLessThan(apiChildren[2].weight);
+
+    expect(specChildren[0].weight).toBeLessThan(specChildren[1].weight);
+    expect(specChildren[1].weight).toBeLessThan(specChildren[2].weight);
   });
 
 });
