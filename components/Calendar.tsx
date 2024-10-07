@@ -42,9 +42,10 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
                 <span className='flex-1 self-center text-center'>{moment(event.date).format('D')}</span>
               </div>
               <div className='grow text-left sm:mt-0 sm:pl-6'>
-                <h2 className='text-xl font-medium text-gray-900 hover:text-gray-500'>{event.title}</h2>
-                <p className='text-sm text-gray-600'>
-                  {moment(event.date).local().format('LLLL')} UTC {moment(event.date).local().format('Z')}
+                <h2 className='title-font text-xl font-medium text-gray-900 hover:text-gray-500'>{event.title}</h2>
+                <p className='text-gray-600'>
+                  {moment(event.date).local().format('LLLL')} UTC
+                  {moment(event.date).local().format('Z')}
                 </p>
               </div>
             </a>
@@ -56,7 +57,7 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
           <GoogleCalendarButton href={CALENDAR_URL} text={t('calendar.viewCalendarBtn')} />
         </div>
       ) : (
-        <div className='mt-2 text-sm text-gray-700'>{t('calendar.noMeetingsMessage')}</div>
+        <div className='mt-2 text-gray-700'>{t('calendar.noMeetingsMessage')}</div>
       )}
     </div>
   );
