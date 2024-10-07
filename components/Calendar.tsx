@@ -56,7 +56,7 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
           <GoogleCalendarButton
             href={CALENDAR_URL}
             text={t('calendar.viewCalendarBtn')}
-            className='mx-auto flex items-center justify-center h-10 sm:h-12 w-32 sm:w-40 md:w-48 text-sm '
+            className='mx-auto flex h-10 w-32 items-center justify-center text-sm sm:h-12 sm:w-40 md:w-48'
           />
         </div>
       ) : (
