@@ -122,13 +122,27 @@ abbr[title] {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-@media (min-width: 300px) and (max-width: 400px) {
+@media (min-width: 1000px) {
   .calendar-container {
-    padding: 30px 35px; 
-    margin: 10px 20px 20px 35px;     
-    max-width: 100%; 
-    
+    padding: 40px; 
+    margin: 20px 0; 
+    width: 100%;
+    height: 100%;
+  }
+  .calendar-title {
+    font-size: 50px;
+  }
+  .calendar-button {
+    font-size: 50px;
+  }
+}  
+  
+@media (min-width: 300px) and (max-width: 1000px) {
+  .calendar-container {
+    padding: 35px 35px; 
+    margin: 0px 0px 20px 10px;     
+    width: 100%; 
+    height: 100%;
   }
   .calendar-title {
     font-size: 25px;
