@@ -7,7 +7,7 @@ const { mockData,
   expectedObjectT1,
   repoDescription,
   repositoryUrl,
-  isAsyncAPIrepo,
+  isAsyncAPIOwner,
   toolFileT2,
   expectedObjectT2,
   expectedObjectT3,
@@ -40,13 +40,13 @@ describe('Tools Object', () => {
 
   it('should create a tool object with provided parameters', async () => {
 
-    const result = await createToolObject(toolFileT1, repositoryUrl, repoDescription, isAsyncAPIrepo);
+    const result = await createToolObject(toolFileT1, repositoryUrl, repoDescription, isAsyncAPIOwner);
     expect(result).toEqual(expectedObjectT1);
   });
 
   it('should use repoDescription when toolFile.description is not provided', async () => {
 
-    const result = await createToolObject(toolFileT2, repositoryUrl, repoDescription, isAsyncAPIrepo);
+    const result = await createToolObject(toolFileT2, repositoryUrl, repoDescription, isAsyncAPIOwner);
     expect(result).toEqual(expectedObjectT2);
   });
 

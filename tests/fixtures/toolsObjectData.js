@@ -54,7 +54,7 @@ const expectedObjectT1 = {
 
 const repositoryUrl = 'https://github.com/asyncapi/example-repo';
 const repoDescription = 'Example repository';
-const isAsyncAPIrepo = true;
+const isAsyncAPIOwner = true;
 
 const toolFileT2 = {
   title: 'Example Tool',
@@ -259,7 +259,7 @@ module.exports = {
   expectedObjectT1,
   repoDescription,
   repositoryUrl,
-  isAsyncAPIrepo,
+  isAsyncAPIOwner,
   toolFileT2,
   expectedObjectT2,
   expectedObjectT3,
