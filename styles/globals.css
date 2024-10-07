@@ -123,6 +123,22 @@ abbr[title] {
   text-overflow: ellipsis;
 }
 
+@media (min-width: 300px) and (max-width: 400px) {
+  .calendar-container {
+    padding: 30px 35px; 
+    margin: 10px 20px 20px 35 px;     
+    max-width: 100%; 
+    
+  }
+  .calendar-title {
+    font-size: 25px;
+  }
+
+  .calendar-button {
+    font-size: 25px;
+  }
+}
+
 /* adjust DocsSearch mobile styles */
 @media (max-width: 750px) {
   .DocSearch-Container {
