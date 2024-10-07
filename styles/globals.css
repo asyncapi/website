@@ -122,36 +122,6 @@ abbr[title] {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-@media (min-width: 1000px) {
-  .calendar-container {
-    padding: 40px; 
-    margin: 20px 0; 
-    width: 100%;
-    height: 100%;
-  }
-  .calendar-title {
-    font-size: 50px;
-  }
-  .calendar-button {
-    font-size: 50px;
-  }
-}  
-  
-@media (min-width: 300px) and (max-width: 1000px) {
-  .calendar-container {
-    padding: 35px 35px; 
-    margin: 0px 0px 20px 10px;     
-    width: 100%; 
-    height: 100%;
-  }
-  .calendar-title {
-    font-size: 25px;
-  }
-
-  .calendar-button {
-    font-size: 25px;
-  }
-}
 
 /* adjust DocsSearch mobile styles */
 @media (max-width: 750px) {
