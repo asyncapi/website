@@ -53,7 +53,7 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
         ))}
       </ul>
       {eventsExist ? (
-        <div className='pt-4' data-testid='Calendar-button'>
+        <div className='pt-4' data-testid='calendar-button'>
           <GoogleCalendarButton href={CALENDAR_URL} text={t('calendar.viewCalendarBtn')} />
         </div>
       ) : (
