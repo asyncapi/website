@@ -126,7 +126,7 @@ abbr[title] {
 @media (min-width: 300px) and (max-width: 400px) {
   .calendar-container {
     padding: 30px 35px; 
-    margin: 10px 20px 20px 35 px;     
+    margin: 10px 20px 20px 35px;     
     max-width: 100%; 
     
   }
