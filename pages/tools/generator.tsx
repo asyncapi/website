@@ -16,7 +16,7 @@ import Paragraph from '../../components/typography/Paragraph';
  */
 function renderButtons(): JSX.Element {
   return (
-    <div className='mt-8'>
+    <div className='mt-8 space-y-5'>
       {/* <Button
         text="Learn more"
         href="/docs/tools/generator"
@@ -26,13 +26,13 @@ function renderButtons(): JSX.Element {
       /> */}
       <GithubButton
         text='View on Github'
-        className='w-full sm:w-auto'
+        className='w-full sm:w-fit'
         href='https://www.github.com/asyncapi/generator'
       />
       <Button
         text='View Docs'
         href='/docs/tools/generator'
-        className='ml-2 mt-2 block w-full sm:w-auto md:mt-0 md:inline-block'
+        className='md:ml-2 mt-2 block w-fit md:mt-0 md:inline-block'
       />
     </div>
   );
