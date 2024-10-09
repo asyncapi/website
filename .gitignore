@@ -21,3 +21,4 @@ cypress/videos
 *storybook.log
 /storybook-static/
 coverage
+deno.lock

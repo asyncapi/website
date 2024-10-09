@@ -87,6 +87,7 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
+            "studio",
             "github-action-for-cli",
             "cli"
         ],
@@ -188,8 +189,6 @@
             "generator",
             "parser-js",
             "converter-js",
-            "ts-nats-template",
-            "dotnet-nats-template",
             "generator-react-sdk",
             "modelina",
             "simulator",
@@ -300,8 +299,6 @@
             "html-template",
             "markdown-template",
             "github-action-for-cli",
-            "ts-nats-template",
-            "dotnet-nats-template",
             "template-for-generator-templates",
             "generator-react-sdk",
             "modelina",
@@ -718,6 +715,7 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
+            "website",
             "modelina"
         ],
         "githubID": 43639341
@@ -979,5 +977,16 @@
             "kotlin-asyncapi"
         ],
         "githubID": 52210599
+    },
+    {
+        "name": "Andrei",
+        "github": "gimlet2",
+        "twitter": "gimlet2",
+        "availableForHire": true,
+        "isTscMember": false,
+        "repos": [
+            "kotlin-asyncapi"
+        ],
+        "githubID": 758568
     }
 ]
