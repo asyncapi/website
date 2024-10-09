@@ -30,7 +30,7 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
   const eventsExist = eventsData.length > 0;
 
   return (
-    <div className={twMerge('overflow-hidden rounded-md border border-gray-200 bg-white p-4', className)}>
+    <div className={twMerge('overflow-hidden rounded-md border border-gray-200 bg-white p-4 h-full', className)}>
       <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.mdSemibold}>
         {t('calendar.title')}
       </Heading>
