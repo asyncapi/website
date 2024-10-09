@@ -5,6 +5,7 @@ const fs = require('fs');
 const { resolve } = require('path');
 
 const buildTools = async (automatedToolsPath, manualToolsPath, toolsPath, tagsPath) => {
+
   try {
     let githubExtractData = await getData();
     let automatedTools = await convertTools(githubExtractData);
@@ -13,8 +14,9 @@ const buildTools = async (automatedToolsPath, manualToolsPath, toolsPath, tagsPa
       automatedToolsPath,
       JSON.stringify(automatedTools, null, '  ')
     );
-
+    
     await combineTools(automatedTools, require(manualToolsPath), toolsPath, tagsPath);
+
   } catch (err) {
     throw new Error(`An error occurred while building tools: ${err.message}`);
   }
