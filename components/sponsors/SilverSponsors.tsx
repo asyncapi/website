@@ -1,3 +1,4 @@
+import ResponsiveImage from './ResponsiveImage';
 import { Silversponsors } from './SilverSponsorsList';
 
 interface SilverSponsorsProps {
@@ -24,11 +25,11 @@ export default function SilverSponsors({ className = '' }: SilverSponsorsProps):
             rel='noopener noreferrer'
             data-testid='SilverSponsors-link'
           >
-            <img
-              className={sponsor.imageClass}
+            <ResponsiveImage
               src={sponsor.imageSrc}
               alt={sponsor.altText}
-              data-testid='SilverSponsors-img'
+              className={sponsor.imageClass}
+              dataTestId='SilverSponsors-img'
             />
           </a>
         ))}
