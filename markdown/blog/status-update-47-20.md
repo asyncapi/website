@@ -39,7 +39,7 @@ Try out the project by following :point_down: instructions:
 
 ### Generator GitHub Action 1.0
 
-Yes, our official [GitHub Action for Generator](https://github.com/marketplace/actions/generator-for-asyncapi-documents) already uses the latest Generator and is released under v1. 
+Yes, our official [GitHub Action for Generator](https://github.com/marketplace/actions/generator-validator-converter-and-others-all-in-one-for-your-asyncapi-docs) already uses the latest Generator and is released under v1. 
 
 ```yaml
 - name: Generating HTML from my AsyncAPI document
