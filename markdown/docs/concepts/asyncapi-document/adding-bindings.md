@@ -3,7 +3,7 @@ title: Adding bindings
 weight: 260
 ---
 
-import BindingsOverview from '../../../../assets/docs/fragments/bindings-overview.md' 
+import BindingsOverview from '@/assets/docs/fragments/bindings-overview.md'
 
 <BindingsOverview/>
 
