@@ -29,7 +29,7 @@ It is important to have [Node.js](https://nodejs.org/en/download/) installed whi
 
 </Remember>
 
-import CliInstallation from '../../../assets/docs/fragments/cli-installation.md' 
+import CliInstallation from '@/assets/docs/fragments/cli-installation.md'
 
 <CliInstallation/>
 
