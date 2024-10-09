@@ -28,7 +28,7 @@ export default function MenuBlocks({ items = [] }: MenuBlocksProps) {
   const router = useRouter();
 
   return (
-    <>
+    <div className='py-2'>
       {items.map((item, index) => {
         const isExternalHref = item.href && item.href.startsWith('http');
 
@@ -66,6 +66,6 @@ export default function MenuBlocks({ items = [] }: MenuBlocksProps) {
           </LinkComponent>
         );
       })}
-    </>
+    </div>
   );
 }
