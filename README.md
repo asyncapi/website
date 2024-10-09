@@ -125,7 +125,7 @@ After cloning repository to your local, perform the following steps from the roo
 #### Steps:
 1. Build the Docker image:
     ```bash 
-    docker build -t asyncapi-website .`
+    docker build -t asyncapi-website .
     ```
 2. Start the container:
     ```bash
