@@ -28,7 +28,7 @@ export default function MenuBlocks({ items = [] }: MenuBlocksProps) {
   const router = useRouter();
 
   return (
-    <div className='py-2'>
+    <>
       {items.map((item, index) => {
         const isExternalHref = item.href && item.href.startsWith('http');
 
@@ -41,7 +41,7 @@ export default function MenuBlocks({ items = [] }: MenuBlocksProps) {
           >
             <span
               data-testid='MenuBlocks-Link'
-              className={`-m-3 flex items-start space-x-4 rounded-lg p-3 transition duration-150 ease-in-out ${
+              className={`-mx-3 mt-1 flex items-start space-x-4 rounded-lg p-3 transition duration-150 ease-in-out ${
                 router.asPath === item.href ? 'bg-secondary-100 shadow-sm' : 'hover:bg-gray-50'
               }`}
             >
@@ -66,6 +66,6 @@ export default function MenuBlocks({ items = [] }: MenuBlocksProps) {
           </LinkComponent>
         );
       })}
-    </div>
+    </>
   );
 }
