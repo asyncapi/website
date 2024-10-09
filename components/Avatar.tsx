@@ -31,11 +31,5 @@ export default function Avatar({ name, photo, link, className }: AvatarProps) {
     />
   );
 
-  return link ? (
-    <a href={link} data-testid='Avatars-link'>
-      {avatar}
-    </a>
-  ) : (
-    <React.Fragment>{avatar}</React.Fragment>
-  );
+  return link ? <span data-testid='Avatars-link'>{avatar}</span> : <React.Fragment>{avatar}</React.Fragment>;
 }
