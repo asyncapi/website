@@ -1,7 +1,7 @@
 import moment from 'moment';
 import Link from 'next/link';
 import type { Ref } from 'react';
-import { forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 import TextTruncate from 'react-text-truncate';
 
 import { BlogPostType } from '@/types/components/navigation/BlogPostType';
@@ -77,16 +77,14 @@ export default forwardRef(function BlogPostItem(
                     {post.type}
                   </span>
                 </Paragraph>
-                <Link href={post.slug}>
-                  <span className='block'>
-                    <Heading level={HeadingLevel.h5} typeStyle={HeadingTypeStyle.smSemibold} className='mt-2'>
-                      {post.title}
-                    </Heading>
-                    <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-3'>
-                      <TextTruncate element='span' line={4} text={post.excerpt} />
-                    </Paragraph>
-                  </span>
-                </Link>
+                <span className='block'>
+                  <Heading level={HeadingLevel.h5} typeStyle={HeadingTypeStyle.smSemibold} className='mt-2'>
+                    {post.title}
+                  </Heading>
+                  <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-3'>
+                    <TextTruncate element='span' line={4} text={post.excerpt} />
+                  </Paragraph>
+                </span>
               </div>
               <div className='mt-6 flex items-center'>
                 <div className='relative shrink-0'>
@@ -94,30 +92,21 @@ export default forwardRef(function BlogPostItem(
                 </div>
                 <div className='ml-3'>
                   <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.xsSemibold} textColor='text-gray-900'>
-                    <span className='hover:underline'>
+                    <span>
                       {post.authors
                         .map((author, index) =>
                           author.link ? (
-                            <a
-                              key={index}
-                              data-alt={author.name}
-                              href={author.link}
-                              onClick={(e) => {
-                                e.stopPropagation();
-                              }}
-                              target='_blank'
-                              rel='noreferrer'
-                            >
+                            <span key={index} data-alt={author.name}>
                               {author.name}
-                            </a>
+                            </span>
                           ) : (
                             author.name
                           )
                         )
                         .reduce((prev, curr) => (
-                          <>
+                          <React.Fragment>
                             {prev} & {curr}
-                          </>
+                          </React.Fragment>
                         ))}
                     </span>
                   </Heading>
