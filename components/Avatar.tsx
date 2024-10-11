@@ -32,16 +32,17 @@ export default function Avatar({ name, photo, link, className }: AvatarProps) {
   );
 
   return link ? (
-    <span
+    <button
       onClick={(e) => {
         e.preventDefault();
 
         window.open(link, '_blank');
       }}
       data-testid='Avatars-link'
+      className='cursor-pointer border-none bg-inherit p-0'
     >
       {avatar}
-    </span>
+    </button>
   ) : (
     <React.Fragment>{avatar}</React.Fragment>
   );

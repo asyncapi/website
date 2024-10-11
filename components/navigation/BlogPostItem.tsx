@@ -96,9 +96,10 @@ export default forwardRef(function BlogPostItem(
                       {post.authors
                         .map((author, index) =>
                           author.link ? (
-                            <span
+                            <button
                               key={index}
                               data-alt={author.name}
+                              className='cursor-pointer border-none bg-inherit p-0 hover:underline'
                               onClick={(e) => {
                                 e.preventDefault();
 
@@ -107,7 +108,7 @@ export default forwardRef(function BlogPostItem(
                               }}
                             >
                               {author.name}
-                            </span>
+                            </button>
                           ) : (
                             author.name
                           )
