@@ -96,15 +96,24 @@ export default forwardRef(function BlogPostItem(
                       {post.authors
                         .map((author, index) =>
                           author.link ? (
-                            <span key={index} data-alt={author.name}>
+                            <span
+                              key={index}
+                              data-alt={author.name}
+                              onClick={(e) => {
+                                e.preventDefault();
+
+                                // Handle the click event, e.g., navigate to author.link
+                                window.open(author.link, '_blank');
+                              }}
+                            >
                               {author.name}
                             </span>
                           ) : (
                             author.name
                           )
                         )
-                        .reduce((prev, curr) => (
-                          <React.Fragment>
+                        .reduce((prev, curr, index) => (
+                          <React.Fragment key={`author-${index}`}>
                             {prev} & {curr}
                           </React.Fragment>
                         ))}

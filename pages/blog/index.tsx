@@ -60,8 +60,8 @@ export default function BlogIndexPage() {
   const image = '/img/social/blog.webp';
 
   useEffect(() => {
-    setIsClient(router.isReady);
-  }, [router.isReady]);
+    setIsClient(true);
+  }, []);
 
   return (
     <GenericLayout title='Blog' description={description} image={image} wide>
