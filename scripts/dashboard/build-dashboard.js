@@ -1,7 +1,6 @@
 const { writeFileSync } = require('fs');
 const { resolve } = require('path');
 const { graphql } = require('@octokit/graphql');
-const { Promise } = require('node-fetch');
 const { Queries } = require('./issue-queries');
 
 async function getHotDiscussions(discussions) {
