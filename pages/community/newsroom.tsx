@@ -1,7 +1,8 @@
+import React from 'react';
+
 import Container from '../../components/layout/Container';
 import GenericLayout from '../../components/layout/GenericLayout';
 import NewsroomSection from '../../components/newsroom/Newsroom';
-import React from 'react';
 
 /**
  * @description Newsroom page.

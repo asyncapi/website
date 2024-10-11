@@ -1,9 +1,8 @@
 import Link from 'next/link';
-import React from 'react';
-
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { MDXRemote } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
+import React from 'react';
 
 import { readYamlFile } from '@/components/helpers/read-yaml-file';
 import type { ICaseStudy } from '@/types/post';

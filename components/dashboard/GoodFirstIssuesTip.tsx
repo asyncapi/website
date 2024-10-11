@@ -1,7 +1,5 @@
-import React from 'react';
-
 import { useFloating } from '@floating-ui/react-dom-interactions';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 /**
  * @description A tooltip that appears when the user hovers over the Good First Issues icon.

@@ -1,6 +1,5 @@
-import React from 'react';
 import { useRouter } from 'next/router';
-import { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import type { Language, Technology, VisibleDataListType } from '@/types/components/tools/ToolDataType';

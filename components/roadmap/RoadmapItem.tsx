@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 // Since a roadmap item can contain nested roadmap lists, we need to import RoadmapList to display them.
 /* eslint-disable import/no-cycle*/

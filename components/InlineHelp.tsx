@@ -1,5 +1,4 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { registerClickAway } from './helpers/click-away';
 import QuestionMark from './icons/QuestionMark';

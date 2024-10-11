@@ -1,5 +1,5 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
 import AsyncAPIColorIcon from '@/components/icons/AsyncAPIColorIcon';
 import IconCircularLoader from '@/components/icons/CircularLoader';

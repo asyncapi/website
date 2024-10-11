@@ -1,4 +1,5 @@
 import React from 'react';
+
 import type { ICaseStudies } from '@/types/post';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 

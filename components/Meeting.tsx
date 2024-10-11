@@ -1,5 +1,5 @@
-import React from 'react';
 import { ArrowRightIcon } from '@heroicons/react/outline';
+import React from 'react';
 
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 

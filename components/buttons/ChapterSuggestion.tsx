@@ -1,6 +1,6 @@
-import React from 'react';
 import Link from 'next/link';
 import type { HTMLAttributeAnchorTarget } from 'react';
+import React from 'react';
 import type { Url } from 'url';
 
 import IconArrowRight from '../icons/ArrowRight';

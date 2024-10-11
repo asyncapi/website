@@ -1,5 +1,6 @@
-import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import React from 'react';
+
+import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
 import GithubButton from '../../components/buttons/GithubButton';
 import CodeBlock from '../../components/editor/CodeBlock';

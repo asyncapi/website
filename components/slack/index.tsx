@@ -1,4 +1,5 @@
 import React from 'react';
+
 import SlackMessage from './Message';
 
 interface SlackProps {

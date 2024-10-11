@@ -1,5 +1,5 @@
-import React from 'react';
 import moment from 'moment';
+import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import type { IEvent } from '@/types/event';

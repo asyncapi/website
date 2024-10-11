@@ -1,6 +1,7 @@
+import React from 'react';
+
 import ToolsDashboard from '@/components/tools/ToolsDashboard';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
-import React from 'react';
 
 import GenericLayout from '../../components/layout/GenericLayout';
 import Heading from '../../components/typography/Heading';

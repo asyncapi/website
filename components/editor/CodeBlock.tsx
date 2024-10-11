@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Highlight from 'react-syntax-highlighter';
 
 import Caption from '../Caption';

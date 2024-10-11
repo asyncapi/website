@@ -1,7 +1,8 @@
+import React from 'react';
+
 import type { ICaseStudies } from '@/types/post';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
-import React from 'react';
 
 import CaseStudyCard from '../../components/CaseStudyCard';
 import GenericLayout from '../../components/layout/GenericLayout';

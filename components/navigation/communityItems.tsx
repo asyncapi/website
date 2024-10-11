@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 
 import IconAmbassador from '../icons/Ambassador';
 import IconContributing from '../icons/Contributing';

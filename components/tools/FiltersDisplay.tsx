@@ -1,5 +1,5 @@
-import { twMerge } from 'tailwind-merge';
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 interface FiltersDisplayProps {
   checkedOptions?: string[];
