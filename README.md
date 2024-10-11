@@ -134,6 +134,24 @@ After cloning repository to your local, perform the following steps from the roo
 
 Now you're running AsyncAPI website in a development mode. Container is mapped with your local copy of the website. Whenever you make changes to the code, the website will refresh and changes visible in localhost:3000.
 
+## Use shared Markdown fragments
+
+To minimize the duplication of content and make it easier to maintain, there are shared fragments you can use when working with Markdown files. These fragments are stored in the `/assets/docs/fragments` directory.
+
+To include a fragment in a Markdown file:
+
+1. Import the fragment at the top of the file (but below the frontmatter) using the following syntax:
+
+    ```md
+    import DesiredFragmentName from '@/assets/docs/fragments/fragmentYouWantToImport.md';
+    ```
+
+1. Add the imported fragment to the desired location in the Markdown file using the following syntax:
+
+    ```md
+    <DesiredFragmentName />
+    ```
+
 ## Lint the code
 To lint the code, run the following command:
 ```
