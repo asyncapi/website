@@ -1,3 +1,4 @@
+import React from 'react';
 import { ButtonIconPosition, ButtonSize } from '@/types/components/buttons/ButtonPropsType';
 
 import type { IButtonDefaultProps } from '../../types/components/buttons/types';

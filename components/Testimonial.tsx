@@ -1,3 +1,4 @@
+import React from 'react';
 import IconQuote from './icons/Quote';
 import Paragraph from './typography/Paragraph';
 

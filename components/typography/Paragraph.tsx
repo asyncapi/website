@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { twMerge } from 'tailwind-merge';
 
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';

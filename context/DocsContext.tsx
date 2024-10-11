@@ -1,3 +1,4 @@
+import React from 'react';
 import { createContext } from 'react';
 
 import type { DocsContextType } from '@/types/context/DocsContext';

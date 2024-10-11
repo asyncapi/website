@@ -1,3 +1,4 @@
+import React from 'react';
 import moment from 'moment';
 import ErrorPage from 'next/error';
 import HtmlHead from 'next/head';

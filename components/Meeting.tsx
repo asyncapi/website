@@ -1,3 +1,4 @@
+import React from 'react';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';

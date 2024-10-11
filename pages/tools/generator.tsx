@@ -1,5 +1,6 @@
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
+import React from 'react';
 
 import Button from '../../components/buttons/Button';
 import GithubButton from '../../components/buttons/GithubButton';

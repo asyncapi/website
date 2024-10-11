@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { twMerge } from 'tailwind-merge';
 
 import type { SelectProps } from '../form/Select';

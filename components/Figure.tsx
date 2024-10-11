@@ -1,3 +1,4 @@
+import React from 'react';
 import { Float } from '@/types/components/FigurePropsType';
 
 import Caption from './Caption';

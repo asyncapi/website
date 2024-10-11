@@ -1,3 +1,5 @@
+import React from 'react';
+
 import IconAmbassador from '../icons/Ambassador';
 import IconContributing from '../icons/Contributing';
 import IconDashboard from '../icons/Dashboard';

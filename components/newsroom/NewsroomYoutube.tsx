@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { useState } from 'react';
 import { A11y, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';

@@ -1,3 +1,4 @@
+import React from 'react';
 import { useArgs } from '@storybook/preview-api';
 import type { Meta, StoryObj } from '@storybook/react';
 

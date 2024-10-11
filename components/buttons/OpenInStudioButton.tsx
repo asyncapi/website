@@ -1,3 +1,4 @@
+import React from 'react';
 import IconRocket from '../icons/Rocket';
 import Button from './Button';
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import type { IDocsTree, IPost } from '@/types/post';
 
 import { DOCS_INDEX_NAME, SearchButton } from '../AlgoliaSearch';

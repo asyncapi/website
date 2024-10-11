@@ -1,4 +1,5 @@
 import { twMerge } from 'tailwind-merge';
+import React from 'react';
 
 import type { Category, Language, Technology } from '@/types/components/tools/ToolDataType';
 

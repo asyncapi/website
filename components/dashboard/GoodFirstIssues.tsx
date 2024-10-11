@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 
 import type { Issue } from '@/types/components/dashboard/TableTypes';

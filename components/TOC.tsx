@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import Scrollspy from 'react-scrollspy';
 import { twMerge } from 'tailwind-merge';

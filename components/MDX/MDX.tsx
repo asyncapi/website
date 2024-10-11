@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { MDXProvider as CoreMDXProvider } from '@mdx-js/react';
 import mermaid from 'mermaid';
 import Link from 'next/link';

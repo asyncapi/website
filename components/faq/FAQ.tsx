@@ -1,3 +1,4 @@
+import React from 'react';
 import Accordion from '@/components/Accordion/Accordion';
 
 import { faqList } from './FAQList';
