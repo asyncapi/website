@@ -1,3 +1,5 @@
+import React from 'react';
+
 import ToolsDashboard from '@/components/tools/ToolsDashboard';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
