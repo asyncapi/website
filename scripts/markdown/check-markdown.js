@@ -2,7 +2,11 @@ const fs = require('fs');
 const matter = require('gray-matter');
 const path = require('path');
 
-// Helper function to check if a string is a valid URL
+/**
+ * Checks if a given string is a valid URL.
+ * @param {string} str - The string to validate as a URL.
+ * @returns {boolean} True if the string is a valid URL, false otherwise.
+ */
 function isValidURL(str) {
     try {
         new URL(str);
@@ -12,8 +16,13 @@ function isValidURL(str) {
     }
 }
 
-// Function to validate frontmatter
-function validateFrontmatter(frontmatter, filePath) {
+/**
+ * Validates the frontmatter of a blog post.
+ * @param {object} frontmatter - The frontmatter object to validate.
+ * @param {string} filePath - The path to the file being validated.
+ * @returns {string[]|null} An array of validation error messages, or null if no errors.
+ */
+function validateBlogs(frontmatter) {
     const requiredAttributes = ['title', 'date', 'type', 'tags', 'cover', 'authors'];
     const errors = [];
 
@@ -51,6 +60,9 @@ function validateFrontmatter(frontmatter, filePath) {
                 if (author.link && !isValidURL(author.link)) {
                     errors.push(`Invalid URL for author at index ${index}: ${author.link}`);
                 }
+                if (!author.photo) {
+                    errors.push(`Author at index ${index} is missing a photo`);
+                }
             });
         }
     }
@@ -58,8 +70,35 @@ function validateFrontmatter(frontmatter, filePath) {
     return errors.length ? errors : null;
 }
 
-// Main function to check markdown files
-function checkMarkdownFiles(folderPath) {
+/**
+ * Validates the frontmatter of a documentation file.
+ * @param {object} frontmatter - The frontmatter object to validate.
+ * @param {string} filePath - The path to the file being validated.
+ * @returns {string[]|null} An array of validation error messages, or null if no errors.
+ */
+function validateDocs(frontmatter) {
+    const errors = [];
+
+    // Check if title exists and is a string
+    if (!frontmatter.title || typeof frontmatter.title !== 'string') {
+        errors.push('Title is missing or not a string');
+    }
+
+    // Check if weight exists and is a number
+    if (frontmatter.weight === undefined || typeof frontmatter.weight !== 'number') {
+        errors.push('Weight is missing or not a number');
+    }
+
+    return errors.length ? errors : null;
+}
+
+/**
+ * Recursively checks markdown files in a folder and validates their frontmatter.
+ * @param {string} folderPath - The path to the folder to check.
+ * @param {Function} validateFunction - The function used to validate the frontmatter.
+ * @param {string} [relativePath=''] - The relative path of the folder for logging purposes.
+ */
+function checkMarkdownFiles(folderPath, validateFunction, relativePath = '') {
     fs.readdir(folderPath, (err, files) => {
         if (err) {
             console.error('Error reading directory:', err);
@@ -68,22 +107,34 @@ function checkMarkdownFiles(folderPath) {
 
         files.forEach(file => {
             const filePath = path.join(folderPath, file);
-            if (path.extname(file) === '.md') {
-                const fileContent = fs.readFileSync(filePath, 'utf-8');
-                const { data: frontmatter } = matter(fileContent);
+            const relativeFilePath = path.join(relativePath, file);
 
-                const errors = validateFrontmatter(frontmatter, filePath);
-                if (errors) {
-                    console.error(`Errors in file ${file}:`);
-                    errors.forEach(error => console.error(`  - ${error}`));
-                } else {
-                    console.log(`File ${file} is valid`);
+            fs.stat(filePath, (err, stats) => {
+                if (err) {
+                    console.error('Error reading file stats:', err);
+                    return;
                 }
-            }
+
+                // Recurse if directory, otherwise validate markdown file
+                if (stats.isDirectory()) {
+                    checkMarkdownFiles(filePath, validateFunction, relativeFilePath);
+                } else if (path.extname(file) === '.md') {
+                    const fileContent = fs.readFileSync(filePath, 'utf-8');
+                    const { data: frontmatter } = matter(fileContent);
+
+                    const errors = validateFunction(frontmatter);
+                    if (errors) {
+                        console.error(`Errors in file ${relativeFilePath}:`);
+                        errors.forEach(error => console.error(`  - ${error}`));
+                    }
+                }
+            });
         });
     });
 }
 
-// Replace with the path to your folder containing markdown files
-const folderPath = './../../markdown/blog';
-checkMarkdownFiles(folderPath);
+const docsFolderPath = path.resolve(__dirname, '../../markdown/docs');
+const blogsFolderPath = path.resolve(__dirname, '../../markdown/blog');
+
+checkMarkdownFiles(docsFolderPath, validateDocs);
+checkMarkdownFiles(blogsFolderPath, validateBlogs);
