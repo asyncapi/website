@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Silversponsors } from './SilverSponsorsList';
 
 interface SilverSponsorsProps {

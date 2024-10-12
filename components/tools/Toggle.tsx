@@ -1,3 +1,4 @@
+import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import type { ToggleProps } from '@/types/components/tools/TogglePropsType';
