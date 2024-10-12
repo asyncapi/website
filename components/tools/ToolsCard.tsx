@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import type { ToolData, VisibleDataListType } from '@/types/components/tools/ToolDataType';
 import { HeadingTypeStyle } from '@/types/typography/Heading';
@@ -92,9 +92,12 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
                   }, 500)
                 }
               >
-                <div ref={descriptionRef} className={`line-clamp-3 ${isTruncated && 'after:content-["..."]'}`}>
+                <span
+                  ref={descriptionRef}
+                  className={`line-clamp-3 inline-block ${isTruncated && 'after:ml-1 after:content-["..."]'}`}
+                >
                   {toolData.description}
-                </div>
+                </span>
               </span>
             </Paragraph>
 
