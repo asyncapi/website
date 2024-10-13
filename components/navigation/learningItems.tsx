@@ -1,3 +1,5 @@
+import type React from 'react';
+
 import IconGradCap from '../icons/GradCap';
 import IconGuide from '../icons/Guide';
 import IconMigration from '../icons/Migration';

@@ -1,3 +1,5 @@
+import React from 'react';
+
 /**
  * @description Icons for asyncapi website
  */

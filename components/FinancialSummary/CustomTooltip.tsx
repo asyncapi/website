@@ -1,3 +1,5 @@
+import React from 'react';
+
 import type { CustomTooltipProps } from '@/types/FinancialSummary/BarChartComponent';
 
 /**
