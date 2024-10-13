@@ -1,4 +1,5 @@
 import { TerminalIcon } from '@heroicons/react/outline';
+import type React from 'react';
 
 import IconGenerator from '../icons/Generator';
 import IconGithubActions from '../icons/GithubActions';

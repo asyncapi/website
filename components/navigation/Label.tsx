@@ -1,3 +1,5 @@
+import React from 'react';
+
 enum LabelColor {
   Gray = 'gray',
   Green = 'green'

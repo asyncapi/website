@@ -1,3 +1,5 @@
+import React from 'react';
+
 import GoodFirstIssues from '../../components/dashboard/GoodFirstIssues';
 import Header from '../../components/dashboard/Header';
 import Table from '../../components/dashboard/table/Table';

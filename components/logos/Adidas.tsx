@@ -1,3 +1,5 @@
+import React from 'react';
+
 /**
  * @description Logo for Adidas
  * @param {string} className - used to style the svg

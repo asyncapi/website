@@ -1,3 +1,5 @@
+import React from 'react';
+
 import type { Issue } from '@/types/components/dashboard/TableTypes';
 
 import Row from './Row';
