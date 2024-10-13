@@ -258,7 +258,6 @@
             "website",
             "spec-json-schemas",
             "generator",
-            "asyncapi-react",
             "extensions-catalog",
             "bindings",
             "enterprise-patterns",
@@ -321,6 +320,7 @@
         "availableForHire": false,
         "isTscMember": true,
         "repos": [
+            "asyncapi-react",
             "conference-website",
             "chatbot"
         ],
