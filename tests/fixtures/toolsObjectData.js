@@ -16,16 +16,17 @@ const mockData = {
   ]
 };
 
-const mockToolFileContent = `
-  title: Example Tool
-  description: This is an example tool.
-  links:
-    repoUrl: https://github.com/asyncapi/example-repo
-  filters:
-    categories:
-      - Category1
+const mockToolFileContent = {
+  title: "Example Tool",
+  description: "This is an example tool.",
+  links: {
+    repoUrl: "https://github.com/asyncapi/example-repo"
+  },
+  filters: {
+    categories: ["Category1"],
     hasCommercial: true
-  `;
+  }
+};
 
 const toolFileT1 = {
   title: 'Example Tool',
@@ -121,26 +122,28 @@ const dataWithUnknownCategory = {
   ]
 };
 
-const toolFileContent = `
-  title: Unknown Tool
-  description: This tool has an unknown category.
-  links:
-    repoUrl: https://github.com/asyncapi/unknown-repo
-  filters:
-    categories:
-      - UnknownCategory
-  `;
+const toolFileContent = {
+  title: "Unknown Tool",
+  description: "This tool has an unknown category.",
+  links: {
+    repoUrl: "https://github.com/asyncapi/unknown-repo"
+  },
+  filters: {
+    categories: ["UnknownCategory"]
+  }
+};
 
-const invalidToolFileContent = `
-  title: Invalid Tool
-  description: This tool has invalid schema.
-  links:
-    repoUrl: https://github.com/asyncapi/invalid-repo
-  filters:
-    categories:
-      - Category1
+const invalidToolFileContent = {
+  title: "Invalid Tool",
+  description: "This tool has invalid schema.",
+  links: {
+    repoUrl: "https://github.com/asyncapi/invalid-repo"
+  },
+  filters: {
+    categories: ["Category1"],
     invalidField: true
-  `;
+  }
+};
 
 const invalidToolData = {
   items: [
@@ -191,15 +194,16 @@ const duplicateToolData = {
   ]
 };
 
-const duplicateToolFileContent = `
-  title: Duplicate Tool
-  description: This is a duplicate tool.
-  links:
-    repoUrl: https://github.com/asyncapi/duplicate-repo
-  filters:
-    categories:
-      - Category1
-  `;
+const duplicateToolFileContent = {
+  title: "Duplicate Tool",
+  description: "This is a duplicate tool.",
+  links: {
+    repoUrl: "https://github.com/asyncapi/duplicate-repo"
+  },
+  filters: {
+    categories: ["Category1"]
+  }
+};
 
 const dataWithUnknownCategoryOnce = {
   items: [
@@ -232,15 +236,16 @@ const dataWithUnknownCategoryOnce = {
   ]
 };
 
-const unknownToolFileContent = `
-  title: Unknown Tool
-  description: This tool has an unknown category.
-  links:
-    repoUrl: https://github.com/asyncapi/unknown-repo
-  filters:
-    categories:
-      - UnknownCategory
-  `;
+const unknownToolFileContent = {
+  title: "Unknown Tool",
+  description: "This tool has an unknown category.",
+  links: {
+    repoUrl: "https://github.com/asyncapi/unknown-repo"
+  },
+  filters: {
+    categories: ["UnknownCategory"]
+  }
+};
 
 const toolFileMalformedJSON = `
   title: Malformed Tool
@@ -272,4 +277,4 @@ module.exports = {
   dataWithUnknownCategoryOnce,
   unknownToolFileContent,
   toolFileMalformedJSON,
-}
+};

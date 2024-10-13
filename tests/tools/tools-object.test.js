@@ -140,10 +140,9 @@ describe('Tools Object', () => {
       await convertTools(mockData);
     } catch (err) {
       error = err;
-      expect(err.message).toContain('Unexpected token');
     }
-
     expect(error).toBeDefined();
+    expect(error.message).toContain('Unexpected token');
   });
 
 });
