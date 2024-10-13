@@ -183,5 +183,4 @@ describe('rssFeed', () => {
       expect(error.message).toContain('Missing date in post data');
     }
   });
-
 });
