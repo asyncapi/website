@@ -1,3 +1,5 @@
+import React from 'react';
+
 import type { ICaseStudies } from '@/types/post';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
