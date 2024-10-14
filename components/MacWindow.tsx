@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface IMacWindowProps {
   className?: string;
   contentClassName?: string;

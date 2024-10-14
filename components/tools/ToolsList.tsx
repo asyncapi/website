@@ -1,3 +1,5 @@
+import React from 'react';
+
 import type { ToolsListData } from '@/types/components/tools/ToolDataType';
 import { HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';

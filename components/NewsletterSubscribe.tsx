@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import IconCircularLoader from '@/components/icons/CircularLoader';
 import { ButtonType } from '@/types/components/buttons/ButtonPropsType';
