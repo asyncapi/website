@@ -1,3 +1,5 @@
+import React from 'react';
+
 import LightBulb from './icons/LightBulb';
 
 interface RememberProps {
