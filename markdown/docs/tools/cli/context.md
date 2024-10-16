@@ -123,7 +123,7 @@ Map of filesystem paths to target AsyncAPI documents.
 
 Field Pattern | Type | Description
 ---|:---:|---
-{contextName} | `string` | An optional string value representing filesystem path to the target AsyncAPI document.
+\{contextName\} | `string` | An optional string value representing filesystem path to the target AsyncAPI document.
 
 ### <a name="minimalEmptyContextFile"></a>Minimal Empty Context File
 Raw JSON:

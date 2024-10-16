@@ -1,45 +1,44 @@
 ---
-title: 'Authentication functions'
+title: 'Authentication Functions'
 weight: 70
 ---
 
-# Getting started with Authentication functions
+# Getting Started with Authentication Functions
 
-Authentication in Glee can be done using authentication functions. Authentication functions are files that export either one or both of the `clientAuth` and `serverAuth` Node.js functions:
+Authentication in Glee can be implemented using authentication functions. These functions are files that export one or both of the following Node.js functions: `clientAuth` and `serverAuth`:
 
 ```js
 /* websocket.js */
 
 export async function serverAuth({ authProps, done }) {
-  //server auth logic
+  // Server authentication logic
 }
 
 export async function clientAuth({ parsedAsyncAPI, serverName }) {
-  //client auth logic
+  // Client authentication logic
 }
 ```
 
-Glee looks for authentication files in the `auth` directory by default but it can be configured using [glee config file](env-vars-config).
-The name of the authentication file should be the name of the targeted server that the authentication logic should work for.
+Glee searches for authentication files in the `auth` directory by default. However, this can be configured using the [glee config file](env-vars-config). The authentication file's name should match the targeted server for which the authentication logic is intended.
 
-## Supported Authentication Values in asyncapi.yaml file
+## Supported Authentication Values in the asyncapi.yaml File
 
-AsyncAPI currently supports a variety of authentication formats as specified in the [documentation](https://www.asyncapi.com/docs/reference/specification/v3.0.0#securitySchemeObject), however Glee supports the following authentication schemas.
+AsyncAPI supports a variety of authentication formats as specified in its [documentation](https://www.asyncapi.com/docs/reference/specification/v3.0.0#securitySchemeObject). Glee, however, supports the following authentication schemas:
 
 - userPassword
 - http ("bearer")
 - httpApiKey
 - Oauth2
 
-A sample `asyncapi.yaml` for a **server** with security requirements and a `userPassword` security schemes is shown below:
+Below is an example of a `asyncapi.yaml` file for a **server** with security requirements and a `userPassword` security scheme:
 
 ```yaml
-##server asyncAPI schema
+## Server AsyncAPI Schema
 asyncapi: 3.0.0
 info:
-  title: AsyncAPI IMDB server
+  title: AsyncAPI IMDB Server
   version: 1.0.0
-  description: This app is a dummy server that would stream the trending/upcoming anime.
+  description: This app is a dummy server that streams trending/upcoming anime.
 servers:
   trendingAnimeServer:
     host: 'localhost:8081'
@@ -53,13 +52,12 @@ components:
   securitySchemes:
     userPass:
       type: userPassword
-
 ```
 
-A sample `asyncapi.yaml` for a **client** that implements some of the requirements of the server above is as follows:
+Here's an example for a **client** that implements some requirements of the server mentioned above:
 
 ```yaml
-##client asyncAPI schema
+## Client AsyncAPI Schema
 servers:
   trendingAnime:
     host: localhost:8081
@@ -78,29 +76,28 @@ components:
   securitySchemes:
     userPass:
       type: userPassword
-
 ```
 
-Glee can act as both a server and a client. So the need for `serverAuth` and `clientAuth`. Glee acts as a client when the server name is included in the `x-remoteServers` property in the `asyncapi.yaml` file.
+Glee can function as both a server and a client. Hence, the need for both `serverAuth` and `clientAuth` functions arises. Glee acts as a client when the server name is included in the `x-remoteServers` property in the `asyncapi.yaml` file.
 
-When Glee acts as a client, it can connect to a Glee server, and when Glee acts as a server it accepts connections from other Glee clients. Hence a Glee application can both accept connections from clients while also sending requests to other Glee applications (servers) at the same time.
+When Glee operates as a client, it can connect to a Glee server. Conversely, as a server, it accepts connections from other Glee clients. Thus, a Glee application can accept connections from clients while also sending requests to other Glee servers.
 
-When a security requirement is specified in the `asyncapi.yaml` file and Glee acts as a server, the `serverAuth` function should be implemented, if Glee acts as a client then the `clientAuth` function should be implemented. If Glee is being used as both client and server, then it should have both the `clientAuth` and `serverAuth` functions.
+If a security requirement is specified in the `asyncapi.yaml` file, and Glee acts as a server, the `serverAuth` function should be implemented. If Glee acts as a client, then `clientAuth` should be implemented. If Glee is used as both client and server, both functions are necessary.
 
 ## Server Authentication in Glee
 
-The `serverAuth` function takes an argument that can be destructured as follows
+The `serverAuth` function takes an argument that can be destructured as follows:
 
 | Attribute  | Description                                                     |
 | ---------- | --------------------------------------------------------------- |
-| done       | The done function that tells the server to proceed.             |
-| authProps  | The authentication parameters recieved from the client.         |
-| serverName | The name of the server/broker from which the event was emitted. |
-| doc        | The parsedAsyncAPI schema                                       |
+| done       | The function that signals the server to proceed.                |
+| authProps  | The authentication parameters received from the client.         |
+| serverName | The name of the server/broker emitting the event.               |
+| doc        | The parsed AsyncAPI schema.                                     |
 
-#### done() function
+#### done() Function
 
-The `done()` parameter in the `serverAuth` function allows the broker/server to know what to do next depending on the boolean value you pass to it.
+The `done()` parameter in the `serverAuth` function signals to the broker/server what action to take next, based on the boolean value passed.
 
 ```js
 /* websocket.js */
@@ -113,22 +110,22 @@ export async function serverAuth({ authProps, done }) {
   }
 }
 ```
+
 **Parameters for done():**
 
-*Authentication Result (Boolean): true for success, false for failure.*
+- Authentication Result (Boolean): `true` for success, `false` for failure.
 
-When `true` is passed to the done parameter, the server/broker knows to go ahead and allow the client to connect, which means authentication has succeeded. However if the `done` parameter is called with `false` then the server knows to throw an error message and reject the client, which means authentication has failed.
+Passing `true` to the `done` parameter indicates that authentication has succeeded, and the server/broker can proceed to allow the client to connect. Conversely, if `false` is passed, the server will reject the client, indicating failed authentication.
 
-`done()` should always be the last thing called in a `serverAuth` function, Glee won't execute any logic beyond the `done()` call.
+The `done()` call should always be the last in the `serverAuth` function, as Glee will not execute any logic beyond this call.
 
 #### authProps
 
-`authProps` implements a couple of methods that allows the server to retrieve the authentication parameters from the client, below are the current available methods;
+The `authProps` parameter includes methods for the server to retrieve authentication parameters from the client. The current available methods are as follows:
 
 ```js
 export async function serverAuth({ authProps, done }) {
-  //some network request
-
+  // Some network request
   authProps.getOauthToken()
   authProps.getHttpAPIKeys('api_key')
   authProps.getToken()
@@ -140,23 +137,23 @@ export async function serverAuth({ authProps, done }) {
 
 | Method                 | Description                                                                                      |
 | ---------------------- | ------------------------------------------------------------------------------------------------ |
-| `getOauthToken()`      | returns the oauth authentication parameter                                                       |
-| `getHttpAPIKeys(name)` | returns the HttpAPIKeys parameter with the specified name from either headers or query parameter |
-| `getToken()`           | returns the http bearer token parameter                                                          |
-| `getUserPass()`        | returns username and password parameters                                                         |
+| `getOauthToken()`      | Returns the OAuth authentication parameter.                                                      |
+| `getHttpAPIKeys(name)` | Returns the HttpAPIKeys parameter with the specified name from either headers or query parameter |
+| `getToken()`           | Returns the HTTP bearer token parameter.                                                         |
+| `getUserPass()`        | Returns username and password parameters.                                                        |
 
 ## Client Authentication in Glee
 
-The `clientAuth` function also takes an argument, and it's argument can be destructured as follows
+The `clientAuth` function also takes an argument that can be destructured as follows:
 
 | Attribute      | Description                                                                           |
 | -------------- | ------------------------------------------------------------------------------------- |
-| parsedAsyncAPI | The parsedAsyncAPI schema.                                                            |
-| serverName     | The name of the server/broker from with the authentication parameters are being sent. |
+| parsedAsyncAPI | The parsed AsyncAPI schema.                                                           |
+| serverName     | The server/broker's name from which the authentication parameters are being sent.     |
 
-### Possible authentication parameters
+### Possible Authentication Parameters
 
-The possible authentication parameters are shown in the code snippet below:
+The code snippet below illustrates the possible authentication parameters:
 
 ```js
 export async function clientAuth({ serverName }) {
@@ -165,18 +162,18 @@ export async function clientAuth({ serverName }) {
     oauth: process.env.OAUTH2,
     apiKey: process.env.APIKEY,
     userPass: {
-      user: process.env.user,
-      password: process.env.password,
+      user: process.env.USER,
+      password: process.env.PASSWORD,
     },
   }
 }
 ```
 
-The name of the authentication parameters should be the same as **the names specified in the `asyncapi.yaml` file.**
+The names of the authentication parameters should match **the names specified in the `asyncapi.yaml` file**.
 
-| auth type                             | values                                                                 |
+| Auth Type                             | Values                                                                 |
 | ------------------------------------- | ---------------------------------------------------------------------- |
-| http bearer (JWT)                     | Value should be a JWT string                                           |
-| Oauth2                                | The value should should be a string                                    |
-| httpApiKey in headers or query params | The value should be a string                                           |
-| userPass                              | The value should be an object with the user and password as properties |
+| HTTP bearer (JWT)                     | Value should be a JWT string.                                          |
+| OAuth2                                | Value should be a string.                                              |
+| httpApiKey in headers or query params | Value should be a string.                                              |
+| userPass                              | Value should be an object with the user and password as properties.    |

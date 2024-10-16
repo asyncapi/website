@@ -12,7 +12,6 @@ authors:
     link: https://twitter.com/AksNema
     byline: AsyncAPI Maintainer and Dev Akshat Nema
 excerpt: "Announcing our newly released AsyncAPI tools dashboard!"
-featured: true
 ---
 
 We already know that the present list of tools used inside AsyncAPI is presented on [AsyncAPI Tools Overview](/docs/tools) and it is manually maintained inside the GitHub repository. All the tools are sorted according to the different categories in which they are used and maintained by the contributors. But we don't have a way to filter the tools according to our interest 🤔, like languages, technologies used in it, open-source tools, etc. Also, what if you want to add your tool to the list, what you will do 🤔? Do you have to create a PR?

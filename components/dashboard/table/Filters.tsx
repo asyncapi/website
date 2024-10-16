@@ -1,6 +1,6 @@
 import { useFloating } from '@floating-ui/react-dom-interactions';
 import type { RefObject } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import type { Issue } from '@/types/components/dashboard/TableTypes';
 

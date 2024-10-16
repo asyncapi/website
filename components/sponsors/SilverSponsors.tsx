@@ -1,4 +1,5 @@
 import ResponsiveImage from './ResponsiveImage';
+import React from 'react';
 import { Silversponsors } from './SilverSponsorsList';
 
 interface SilverSponsorsProps {

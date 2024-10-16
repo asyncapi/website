@@ -1,3 +1,5 @@
+import React from 'react';
+
 import IconExclamation from './icons/Exclamation';
 
 interface WarningProps {

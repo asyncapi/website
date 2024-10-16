@@ -3,19 +3,19 @@ title: 'HttpApiKey Authentication'
 weight: 90
 ---
 
-## Getting started with httpAPIKey authentication
+## Getting Started with HttpAPIKey Authentication
 
-This guide will walk through how to implement authentication using the `httpAPiKey` security scheme in Glee.
+This guide will walk you through how to implement authentication using the `httpApiKey` security scheme in Glee.
 
-A sample `asyncapi.yaml` for a server with security requirements and user `HttpApiKey` security scheme is shown below:
+Below is a sample `asyncapi.yaml` for a server with security requirements and the `HttpApiKey` security scheme:
 
 ```yaml
-##server asyncAPI schema
+## Server AsyncAPI Schema
 asyncapi: 3.0.0
 info:
-  title: AsyncAPI IMDB server
+  title: AsyncAPI IMDB Server
   version: 1.0.0
-  description: This app is a dummy server that would stream the trending/upcoming anime.
+  description: This app is a dummy server that streams the trending/upcoming anime.
 servers:
   trendingAnimeServer:
     host: 'localhost:8081'
@@ -37,7 +37,7 @@ components:
 A sample `asyncapi.yaml` for a client that implements some of the requirements of the server above:
 
 ```yaml
-##client asyncAPI schema
+## Client AsyncAPI Schema
 servers:
   trendingAnime:
     host: localhost:8081
@@ -58,38 +58,36 @@ components:
       type: httpApiKey
       name: api_key
       in: query
-      
 
 ```
 
-The `httpApiKey` could be in either the header or query parameter.
+The `httpApiKey` can be located in either the header or query parameter.
 
-The Client asyncapi.yaml file **does not need to implement all the security requirements in the server, it only needs to implement the ones that it uses like *httpApiKey* here.**
+The client `asyncapi.yaml` file **does not need to implement all the security requirements of the server; it only needs to implement the ones it uses, like *httpApiKey* here.**
 
 ### Client Side
 
-Following the client `asyncapi.yaml` file above, create a file named `trendingAnime.ts` in the `auth` directory, since that is the server that has the security Property. 
+Following the client `asyncapi.yaml` file above, create a file named `trendingAnime.ts` in the `auth` directory, as this is the server that has the security property. 
 
 ```bash
 touch auth/trendingAnime.ts
 ```
 
-When using the `HttpApiKey` security scheme, it is important that you pass the parameters as follows:
+When using the `HttpApiKey` security scheme, it is important to pass the parameters as follows:
 
 ```js
-export async clientAuth({ parsedAsyncAPI, serverName }) {
+export async function clientAuth({ parsedAsyncAPI, serverName }) {
   return {
     apiKey: process.env.APIKEY
   }
 }
 ```
 
-`apiKey` should be the name of the security requirement as specified in your `asyncapi.yaml` file, and it's value should be a string.
+`apiKey` should be the name of the security requirement as specified in your `asyncapi.yaml` file, and its value should be a string.
 
+### Server Side
 
-### Server side
-
-From the server `asyncapi.yaml` file above, create a file named `trendingAnimeServer.ts` in the `auth` directory, since that is the server that has the security Property. 
+From the server `asyncapi.yaml` file above, create a file named `trendingAnimeServer.ts` in the `auth` directory, as this is the server that has the security property. 
 
 ```bash
 touch auth/trendingAnimeServer.ts
@@ -99,8 +97,8 @@ On the server side, you can retrieve the values as follows:
 
 ```js
 
-export async serverAuth({ authProps, done }) {
-  authProps.getHttpAPIKeys('api_key')()
+export async function serverAuth({ authProps, done }) {
+  authProps.getHttpAPIKeys('api_key')
   
   done(true)
 }

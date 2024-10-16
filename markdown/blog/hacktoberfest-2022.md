@@ -5,7 +5,6 @@ type: Community
 tags:
   - Hacktoberfest
 cover: /img/posts/asyncapiXhacktoberfest.webp
-featured: true
 authors:
   - name: Azeez Elegbede
     photo: /img/avatars/ace.webp

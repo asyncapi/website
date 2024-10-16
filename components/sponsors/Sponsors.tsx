@@ -1,4 +1,5 @@
 import ResponsiveImage from './ResponsiveImage';
+import React from 'react';
 import { sponsors } from './SponsorsList';
 
 interface SponsorsProps {

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import type { ToolsListData } from '@/types/components/tools/ToolDataType';
 import { HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
@@ -22,7 +24,7 @@ export default function ToolsList({ toolsListData }: ToolsListProp) {
       {Object.keys(toolsListData).map((categoryName, index) => {
         if (toolsListData[categoryName].toolsList.length > 0) {
           return (
-            <div className='my-8' key={index} id={categoryName}>
+            <div className='my-8' key={index} id={categoryName} ref={toolsListData[categoryName].elementRef}>
               <Heading typeStyle={HeadingTypeStyle.mdSemibold} className='my-2'>
                 {categoryName}
               </Heading>

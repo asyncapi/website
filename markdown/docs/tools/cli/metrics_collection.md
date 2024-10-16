@@ -1,3 +1,8 @@
+---
+title: 'Metrics Collection'
+weight: 60
+---
+
 # Metrics collection guideline
 
 AsyncAPI **anonymously** tracks command executions to improve the specification and tools, ensuring no sensitive data reaches our servers. It aids in comprehending how AsyncAPI tools are used and adopted, facilitating ongoing improvements to our specifications and tools.

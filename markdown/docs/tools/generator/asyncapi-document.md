@@ -41,7 +41,7 @@ graph LR
 The AsyncAPI document's content is accessible to you while writing your template in two distinct ways:
 
 - The `originalAsyncAPI`, which is a stringified version of the AsyncAPI document provided as input, without any modifications.
-- The `asyncapi` (`AsyncAPIDocument`) which is an object with a set of helper functions, that comes as a result of the `Parser` manipulating the `originalAyncAPI` .The `asyncapi` functions make it easier to access the contents of AsyncAPI documents in your templates.
+- The `asyncapi` (`AsyncAPIDocument`) which is an object with a set of helper functions, that comes as a result of the `Parser` manipulating the `originalAsyncAPI` .The `asyncapi` functions make it easier to access the contents of AsyncAPI documents in your templates.
 
 In the following sections, you will learn how to use either the **originalAsyncAPI** or the **asyncapi** in your template.
 

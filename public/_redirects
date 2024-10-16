@@ -53,7 +53,7 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 /asyncapi-react https://asyncapi.github.io/asyncapi-react 301!
 
 # Slack
-/slack-invite https://join.slack.com/t/asyncapi/shared_invite/zt-2h8eqemvq-Iq96dTS_zrrNjKt6C8hjvQ 302!
+/slack-invite https://join.slack.com/t/asyncapi/shared_invite/zt-2q37kkext-RlUOZvxwtCcSHdLhZJByQw 302!
 
 # Central Maven repository verification
 /OSSRH-63280 https://github.com/asyncapi/java-asyncapi

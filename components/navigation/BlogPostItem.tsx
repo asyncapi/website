@@ -1,7 +1,7 @@
 import moment from 'moment';
 import Link from 'next/link';
 import type { Ref } from 'react';
-import { forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 import TextTruncate from 'react-text-truncate';
 
 import { BlogPostType } from '@/types/components/navigation/BlogPostType';
@@ -14,22 +14,24 @@ import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 
 interface BlogPostItemProps {
+  // eslint-disable-next-line prettier/prettier
+
+  /** The blog post data. */
   post: IBlogPost;
+
+  /** Additional CSS classes for styling. */
   className?: string;
+
+  /** The HTML id attribute for the component. */
   id?: string;
 }
 
 /**
- * @description Functional component representing a single blog post item.
- * @param {Object} props - Props for the BlogPostItem component.
- * @param {IBlogPost} props.post - The blog post data.
- * @param {string} [props.className=''] - Additional CSS classes for styling.
- * @param {string} [props.id=''] - The HTML id attribute for the component.
- * @param {Ref<HTMLLIElement>} ref - Reference object for the component.
+ * Functional component representing a single blog post item.
  */
 export default forwardRef(function BlogPostItem(
   { post, className = '', id = '' }: BlogPostItemProps,
-  ref: Ref<HTMLLIElement>
+  ref: Ref<HTMLLIElement> /** Reference object for the component. */
 ) {
   let typeColors: [string, string] = ['bg-indigo-100', 'text-indigo-800'];
 
@@ -50,7 +52,7 @@ export default forwardRef(function BlogPostItem(
   }
 
   return (
-    <li className={`rounded-lg ${className}`} ref={ref} id={id}>
+    <li className={`list-none rounded-lg ${className}`} ref={ref} id={id}>
       <article className='h-full rounded-lg'>
         <Link href={post.slug}>
           <span
@@ -75,16 +77,14 @@ export default forwardRef(function BlogPostItem(
                     {post.type}
                   </span>
                 </Paragraph>
-                <Link href={post.slug}>
-                  <span className='block'>
-                    <Heading level={HeadingLevel.h5} typeStyle={HeadingTypeStyle.smSemibold} className='mt-2'>
-                      {post.title}
-                    </Heading>
-                    <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-3'>
-                      <TextTruncate element='span' line={4} text={post.excerpt} />
-                    </Paragraph>
-                  </span>
-                </Link>
+                <span className='block'>
+                  <Heading level={HeadingLevel.h5} typeStyle={HeadingTypeStyle.smSemibold} className='mt-2'>
+                    {post.title}
+                  </Heading>
+                  <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-3'>
+                    <TextTruncate element='span' line={4} text={post.excerpt} />
+                  </Paragraph>
+                </span>
               </div>
               <div className='mt-6 flex items-center'>
                 <div className='relative shrink-0'>
@@ -92,30 +92,31 @@ export default forwardRef(function BlogPostItem(
                 </div>
                 <div className='ml-3'>
                   <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.xsSemibold} textColor='text-gray-900'>
-                    <span className='hover:underline'>
+                    <span>
                       {post.authors
                         .map((author, index) =>
                           author.link ? (
-                            <a
+                            <button
                               key={index}
                               data-alt={author.name}
-                              href={author.link}
+                              className='cursor-pointer border-none bg-inherit p-0 hover:underline'
                               onClick={(e) => {
-                                e.stopPropagation();
+                                e.preventDefault();
+
+                                // Handle the click event, e.g., navigate to author.link
+                                window.open(author.link, '_blank');
                               }}
-                              target='_blank'
-                              rel='noreferrer'
                             >
                               {author.name}
-                            </a>
+                            </button>
                           ) : (
                             author.name
                           )
                         )
-                        .reduce((prev, curr) => (
-                          <>
+                        .reduce((prev, curr, index) => (
+                          <React.Fragment key={`author-${index}`}>
                             {prev} & {curr}
-                          </>
+                          </React.Fragment>
                         ))}
                     </span>
                   </Heading>

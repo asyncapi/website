@@ -1,3 +1,4 @@
+import React from 'react';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';

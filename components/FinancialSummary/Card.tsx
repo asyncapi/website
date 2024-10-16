@@ -1,6 +1,8 @@
+import React from 'react';
+
 import type { ExpenseItem, Expenses } from '@/types/FinancialSummary/BarChartComponent';
 
-import ExpensesLinkData from '../../config/finance/json-data/2024/ExpensesLink.json';
+import ExpensesLinkData from '../../config/finance/json-data/ExpensesLink.json';
 
 /**
  * @description Card component displays expense details for a specific month.

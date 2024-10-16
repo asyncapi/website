@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: AsyncAPI Community Manager
 excerpt: 'July Community Update'
-featured: true
 ---
 It's been a month since our partnership with Postman ended, and some of our maintainers at AsyncAPI lost their jobs. However, we are proud of sponsors like IBM, who continue to support open source and the Initiative. Please take a moment to read [Salma Saeed's](https://www.linkedin.com/in/s-saeed/) article [on how IBM is supporting AsyncAPI in breaking the boundaries of Event-Driven Architecture](https://www.ibm.com/blog/ibm-continues-to-support-opensource-asyncapi-in-breaking-the-boundaries-of-event-driven-architectures).
 

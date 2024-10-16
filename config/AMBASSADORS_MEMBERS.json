@@ -686,5 +686,45 @@
         "link": "https://www.asyncapi.com/casestudies/hdiglobal"
       }
     ]
+  },
+  {
+    "name": "Lorna Mitchell",
+    "bio": "Lorna is based in Yorkshire, UK; she is a technology leader and expert in developer experience, passionate about enhancing APIs and developer tools. In her day job as VP of Developer Experience at Redocly, she works on API and documentation tools for technical teams. Lorna is a published author and a regular speaker at conferences, sharing her insights on a variety of tech-related topics. Lorna serves on the OpenUK board, is on the Technical Steering Committee for OpenAPI specification, and maintains open source projects. To learn more about Lorna's activities, visit her website at https://lornajane.net.",
+    "title": "APIs and Open Source",
+    "img": "https://lornajane.net/wp-content/uploads/2011/08/IMG_9410-smaller.jpg",
+    "github": "lornajane",
+    "twitter": "lornajane",
+    "linkedin": "lornajane",
+    "company": "Redocly",
+    "country": "UK",
+    "contributions": [
+      {
+        "type": "presentation",
+        "title": "API Governance for AsyncAPI",
+        "date": {
+          "year": 2023,
+          "month": "September"
+        },
+        "link": "https://noti.st/lornajane/aOuXwe/api-governance-for-asyncapi"
+      },
+      {
+        "type": "presentation",
+        "title": "AsyncAPI for Apache Kafka",
+        "date": {
+          "year": 2021,
+          "month": "May"
+        },
+        "link": "https://videos.confluent.io/watch/hzjXP8QmLtYRNPukNFUu2D?"
+      },
+      {
+        "type": "article",
+        "title": "Lint AsyncAPI with Redocly CLI",
+        "date": {
+          "year": 2023,
+          "month": "August"
+        },
+        "link": "https://redocly.com/docs/cli/guides/lint-asyncapi"
+      }
+    ]
   }
 ]

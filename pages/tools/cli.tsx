@@ -1,4 +1,5 @@
 import { BadgeCheckIcon, CodeIcon, DocumentAddIcon, GlobeIcon } from '@heroicons/react/outline';
+import React from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
@@ -50,6 +51,7 @@ function renderButtons(): JSX.Element {
   return (
     <div className='mt-8'>
       <GithubButton
+        text='View on Github'
         className='mt-2 block w-full sm:w-auto md:mt-0 md:inline-block'
         href='https://www.github.com/asyncapi/cli'
       />

@@ -10,6 +10,8 @@ January:
   - Category: AsyncAPI Conf on Tour 2023
     Amount: '318.98'
 February:
+  - Category: Bounty Program
+    Amount: '400.00'
   - Category: JSON Schema Sponsorship
     Amount: '250.00'
   - Category: Community Manager
@@ -51,3 +53,46 @@ May:
     Amount: '825.00'
   - Category: Swag Store
     Amount: '526.51'
+  - Category: Bounty Program
+    Amount: '800.00'
+  - Category: Community Marketing Specialist
+    Amount: '1000.00'
+June:
+  - Category: JSON Schema Sponsorship
+    Amount: '250.00'
+  - Category: Community Manager
+    Amount: '2000.00'
+  - Category: Community Marketing Specialist
+    Amount: '2000.00'
+  - Category: Bounty Program
+    Amount: '800.00'
+  - Category: Swag Store
+    Amount: '526.51'
+July:
+  - Category: JSON Schema Sponsorship
+    Amount: '250.00'
+  - Category: Community Manager
+    Amount: '2000.00'
+  - Category: Bounty Program
+    Amount: '1000.00'
+  - Category: Swag Store
+    Amount: '526.51'
+  - Category: Community Marketing Specialist
+    Amount: '2000.00'
+  - Category: AsyncAPI Conf on Tour 2024
+    Amount: '2083.41'
+August:
+  - Category: JSON Schema Sponsorship
+    Amount: '250.00'
+  - Category: Community Manager
+    Amount: '2000.00'
+  - Category: Bounty Program
+    Amount: '1600.00'
+  - Category: Swag Store
+    Amount: '2556.42'
+  - Category: Community Marketing Specialist
+    Amount: '2000.00'
+  - Category: 3rd Party Services
+    Amount: '1354.35'
+  - Category: AsyncAPI Conf on Tour 2024
+    Amount: '1384.70'

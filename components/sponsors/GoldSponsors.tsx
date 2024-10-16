@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { goldSponsors } from './GoldSponsorsList';
 import ResponsiveImage from './ResponsiveImage';
 
