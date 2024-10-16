@@ -80,5 +80,6 @@ jobs:
         with:
           fail_ci_if_error: true
           files: ./coverage/lcov.info
+          flags: unittests
           token: ${{ secrets.CODECOV_TOKEN }}
           verbose: true
