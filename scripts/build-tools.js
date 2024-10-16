@@ -2,7 +2,7 @@ const { getData } = require('./tools/extract-tools-github');
 const { convertTools } = require('./tools/tools-object');
 const { combineTools } = require('./tools/combine-tools');
 const fs = require('fs');
-const { resolve } = require('path');
+const path = require('path');
 
 const buildTools = async (automatedToolsPath, manualToolsPath, toolsPath, tagsPath) => {
   try {
@@ -22,10 +22,10 @@ const buildTools = async (automatedToolsPath, manualToolsPath, toolsPath, tagsPa
 
 /* istanbul ignore next */
 if (require.main === module) {
-  const automatedToolsPath = resolve(__dirname, '../config', 'tools-automated.json');
-  const manualToolsPath = resolve(__dirname, '../config', 'tools-manual.json');
-  const toolsPath = resolve(__dirname, '../config', 'tools.json');
-  const tagsPath = resolve(__dirname, '../config', 'all-tags.json');
+  const automatedToolsPath = path.join(__dirname, '../config', 'tools-automated.json');
+  const manualToolsPath = path.join(__dirname, '../config', 'tools-manual.json');
+  const toolsPath = path.join(__dirname, '../config', 'tools.json');
+  const tagsPath = path.join(__dirname, '../config', 'all-tags.json');
 
   buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
 }
