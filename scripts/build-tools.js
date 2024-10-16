@@ -22,7 +22,6 @@ const buildTools = async (automatedToolsPath, manualToolsPath, toolsPath, tagsPa
 
 /* istanbul ignore next */
 if (require.main === module) {
-  
   const automatedToolsPath = path.join(__dirname, '../config', 'tools-automated.json');
   const manualToolsPath = path.join(__dirname, '../config', 'tools-manual.json');
   const toolsPath = path.join(__dirname, '../config', 'tools.json');
