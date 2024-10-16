@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 
 interface ResponsiveImageProps {
   src: string;
-  alt?: string;
+  alt: string;
   className?: string;
   dataTestId: string;
 }
@@ -16,10 +16,22 @@ interface ResponsiveImageProps {
  * @param {string} props.className - Additional CSS class names for styling the image.
  * @param {string} props.dataTestId - A string for identifying the element during testing.
  */
-const ResponsiveImage: React.FC<ResponsiveImageProps> = ({ src, alt, className, dataTestId }) => {
+const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
+  src,
+  alt,
+  className,
+  dataTestId,
+}) => {
   const classNameMerged = twMerge('w-full h-12 object-contain', className);
 
-  return <img src={src} alt={alt} className={`${classNameMerged}`} data-testid={dataTestId} />;
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={`${classNameMerged}`}
+      data-testid={dataTestId}
+    />
+  );
 };
 
 export default ResponsiveImage;
