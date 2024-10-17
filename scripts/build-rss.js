@@ -57,7 +57,7 @@ module.exports = async function rssFeed(type, title, desc, outputPath) {
 
     for (let post of posts) {
       if (!post.title || !post.slug || !post.excerpt || !post.date) {
-        throw new Error('Missing required fields in post data');
+        return Promise.reject(new Error('Missing required fields in post data'));
       }
       const link = `${base}${post.slug}${tracking}`;
       const { title, excerpt, date } = post;
@@ -94,6 +94,6 @@ module.exports = async function rssFeed(type, title, desc, outputPath) {
     await fs.writeFile(`./public/${outputPath}`, xml, 'utf8');
     return `RSS feed generated successfully at ${outputPath}`;
   } catch (err) {
-    throw new Error(`Failed to generate RSS feed: ${err.message}`);
+    return Promise.reject(new Error(`Failed to generate RSS feed: ${err.message}`));
   }
 };
