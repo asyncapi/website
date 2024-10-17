@@ -16,7 +16,7 @@ excerpt: AsyncAPI community got rich with two GitHub Actions that you can use fo
 ---
 
 > tl;dr
-> AsyncAPI community got rich with two GitHub Actions that you can use for [validation](https://github.com/marketplace/actions/asyncapi-github-action) and [generation](https://github.com/marketplace/actions/generator-for-asyncapi-documents).
+> AsyncAPI community got rich with two GitHub Actions that you can use for [validation](https://github.com/marketplace/actions/asyncapi-github-action) and [generation](https://github.com/marketplace/actions/generator-validator-converter-and-others-all-in-one-for-your-asyncapi-docs).
 
 GitHub organized a [hackathon for GitHub Actions](https://githubhackathon.com/#hackathon). There is no better reason to work on a solution if there is a bag of swags waiting for you <img className="inline-block w-5 h-5 ml-1" src="https://emojipedia-us.s3.amazonaws.com:443/content/2020/04/05/trollface-github-emojipedia.png"/>
 
@@ -25,7 +25,7 @@ The hackathon was only a trigger, the right moment to decide that we should enga
 Two AsyncAPI related actions we crafted in March are:
 
 - Our community member, [Waleed Ashraf](https://twitter.com/WaleedAshraf01/) created [an action](https://github.com/marketplace/actions/asyncapi-github-action) to validate AsyncAPI documents with our [parser](https://github.com/asyncapi/parser-js/)
-- We also created [official AsyncAPI action](https://github.com/marketplace/actions/generator-for-asyncapi-documents) for our [generator](https://github.com/asyncapi/generator/).
+- We also created [official AsyncAPI action](https://github.com/marketplace/actions/generator-validator-converter-and-others-all-in-one-for-your-asyncapi-docs) for our [generator](https://github.com/asyncapi/generator/).
 
 ## Writing a GitHub Action
 
