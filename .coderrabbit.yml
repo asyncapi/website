@@ -20,3 +20,4 @@ tools:
     enabled: true
 chat:
   auto_reply: true
+  
