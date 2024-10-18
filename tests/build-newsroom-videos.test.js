@@ -11,9 +11,6 @@ describe('buildNewsroomVideos', () => {
     const testFilePath = resolve(testDir, 'newsroom_videos.json');
 
     beforeAll(() => {
-        if (!existsSync(testDir)) {
-            mkdirSync(testDir, { recursive: true });
-        }
         process.env.YOUTUBE_TOKEN = 'testkey';
     });
 
@@ -24,6 +21,9 @@ describe('buildNewsroomVideos', () => {
     });
 
     beforeEach(() => {
+        if (!existsSync(testDir)) {
+            mkdirSync(testDir, { recursive: true });
+        }
         fetch.mockClear();
     });
 
