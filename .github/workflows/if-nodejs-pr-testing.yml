@@ -90,7 +90,7 @@ jobs:
         if: steps.packagejson.outputs.exists == 'true'
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GH_TOKEN }}
           script: |
             const output = `steps.markdown_check.outputs.markdown_output`;
             let body = "### Markdown Check Results\n\n";
