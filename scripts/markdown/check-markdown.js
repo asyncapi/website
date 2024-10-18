@@ -34,7 +34,7 @@ function validateBlogs(frontmatter) {
     });
 
     // Validate date format
-    if (frontmatter.date && isNaN(Date.parse(frontmatter.date))) {
+    if (frontmatter.date && Number.isNaN(Date.parse(frontmatter.date))) {
         errors.push(`Invalid date format: ${frontmatter.date}`);
     }
 
@@ -126,6 +126,7 @@ function checkMarkdownFiles(folderPath, validateFunction, relativePath = '') {
                     if (errors) {
                         console.log(`Errors in file ${relativeFilePath}:`);
                         errors.forEach(error => console.log(`${error}\n`));
+                        process.exitCode = 1;
                     }
                 }
             });
