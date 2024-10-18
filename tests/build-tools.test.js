@@ -1,5 +1,5 @@
 const axios = require('axios');
-const path = require('path');
+const { resolve } = require('path');
 const { buildTools } = require('../scripts/build-tools');
 const { tagsData, manualTools, mockConvertedData, mockExtractData } = require('../tests/fixtures/buildToolsData');
 const fs = require('fs');
@@ -24,11 +24,11 @@ jest.mock('../scripts/tools/tags-color', () => ({
 }));
 
 describe('buildTools', () => {
-    const testDir = path.join(__dirname, 'test_config');
-    const toolsPath = path.join(testDir, 'tools.json');
-    const tagsPath = path.join(testDir, 'all-tags.json');
-    const automatedToolsPath = path.join(testDir, 'tools-automated.json');
-    const manualToolsPath = path.join(testDir, 'tools-manual.json');
+    const testDir = resolve(__dirname, 'test_config');
+    const toolsPath = resolve(testDir, 'tools.json');
+    const tagsPath = resolve(testDir, 'all-tags.json');
+    const automatedToolsPath = resolve(testDir, 'tools-automated.json');
+    const manualToolsPath = resolve(testDir, 'tools-manual.json');
 
     beforeAll(() => {
         fs.mkdirSync(testDir, { recursive: true });
@@ -78,7 +78,7 @@ describe('buildTools', () => {
     it('should handle file write errors', async () => {
         axios.get.mockResolvedValue({ data: mockExtractData });
 
-        const invalidPath = path.join('/invalid_dir', 'tools.json');
+        const invalidPath = '/invalid_dir/tools.json';
 
         try {
             await buildTools(invalidPath, manualToolsPath, toolsPath, tagsPath);
