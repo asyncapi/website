@@ -80,8 +80,8 @@ jobs:
         name: Run markdown checks
         id: markdown_check
         run: |
-          OUTPUT=$(npm run test:md || true) 
-          echo "markdown_output=$OUTPUT" >> $GITHUB_OUTPUT
+          ERRORS=$(npm run test:md) 
+          echo "markdown_output=$ERRORS" >> $GITHUB_OUTPUT
 
       # Post a comment using sticky-pull-request-comment
       - name: Comment on PR with markdown issues
