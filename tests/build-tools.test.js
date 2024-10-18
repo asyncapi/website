@@ -29,14 +29,17 @@ describe('buildTools', () => {
     const tagsPath = resolve(testDir, 'all-tags.json');
     const automatedToolsPath = resolve(testDir, 'tools-automated.json');
     const manualToolsPath = resolve(testDir, 'tools-manual.json');
+    let consoleErrorMock;
 
     beforeAll(() => {
         fs.mkdirSync(testDir, { recursive: true });
         fs.writeFileSync(manualToolsPath, JSON.stringify(manualTools));
+        consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});
     });
 
     afterAll(() => {
         fs.rmSync(testDir, { recursive: true, force: true });
+        consoleErrorMock.mockRestore();
     });
 
     beforeEach(() => {

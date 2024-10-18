@@ -59,16 +59,20 @@ describe('combineTools function', () => {
 
   let manualTools;
   let automatedTools;
+  let consoleErrorMock;
 
   beforeAll(() => {
     manualTools = readJSON(manualToolsPath);
     automatedTools = readJSON(automatedToolsPath);
 
+    consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterAll(() => {
     if (fs.existsSync(toolsPath)) fs.unlinkSync(toolsPath);
     if (fs.existsSync(tagsPath)) fs.unlinkSync(tagsPath);
+
+    consoleErrorMock.mockRestore();
   });
 
   it('should combine tools and create correct JSON files', async () => {
@@ -102,8 +106,6 @@ describe('combineTools function', () => {
 
   it('should log validation errors to console.error', async () => {
 
-    let consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => { });
-
     await combineTools(automatedToolsT4, manualToolsT4, toolsPath, tagsPath);
 
     const errorCalls = console.error.mock.calls;
@@ -115,8 +117,6 @@ describe('combineTools function', () => {
 
     expect(fs.existsSync(toolsPath)).toBe(true);
     expect(fs.existsSync(tagsPath)).toBe(true);
-
-    consoleErrorMock.mockRestore();
   });
 
   it('should handle tools with multiple languages, including new ones', async () => {
@@ -256,5 +256,4 @@ describe('combineTools function', () => {
     }
     expect(error).toBeDefined();
   });
-  
 });
