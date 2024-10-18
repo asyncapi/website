@@ -10,6 +10,7 @@ const buildTools = async (automatedToolsPath, manualToolsPath, toolsPath, tagsPa
     let automatedTools = await convertTools(githubExtractData);
     
     const automatedDir = dirname(automatedToolsPath);
+
     if (!fs.existsSync(automatedDir)) {
       fs.mkdirSync(automatedDir, { recursive: true });
     }
