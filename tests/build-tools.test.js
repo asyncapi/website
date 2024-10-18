@@ -32,13 +32,19 @@ describe('buildTools', () => {
     let consoleErrorMock;
 
     beforeAll(() => {
-        fs.mkdirSync(testDir, { recursive: true });
-        fs.writeFileSync(manualToolsPath, JSON.stringify(manualTools));
+        if (!fs.existsSync(testDir)) {
+            fs.mkdirSync(testDir, { recursive: true });
+        }
+        if (!fs.existsSync(manualToolsPath)) {
+            fs.writeFileSync(manualToolsPath, JSON.stringify(manualTools));
+        }
         consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});
     });
 
     afterAll(() => {
-        fs.rmSync(testDir, { recursive: true, force: true });
+        if (fs.existsSync(testDir)) {
+            fs.rmSync(testDir, { recursive: true, force: true });
+        }
         consoleErrorMock.mockRestore();
     });
 
@@ -48,6 +54,10 @@ describe('buildTools', () => {
 
     it('should extract, convert, combine tools, and write to file', async () => {
         axios.get.mockResolvedValue({ data: mockExtractData });
+
+        if (!fs.existsSync(testDir)) {
+            fs.mkdirSync(testDir, { recursive: true });
+        }
 
         await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
 
@@ -65,7 +75,6 @@ describe('buildTools', () => {
         expect(combinedToolsContent["Category2"].description).toEqual(mockConvertedData["Category2"].description);
 
         expect(tagsContent).toEqual(tagsData);
-
     });
 
     it('should handle getData error', async () => {
