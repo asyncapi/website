@@ -82,7 +82,7 @@ jobs:
         run: |
           OUTPUT=$(npm run test:md || true) 
           echo "$OUTPUT" | tee markdown_output.txt
-          echo "::set-output name=markdown_output::$OUTPUT"
+          echo "markdown_output=$OUTPUT" >> $GITHUB_OUTPUT
 
       # Post a comment using sticky-pull-request-comment
       - name: Comment on PR with markdown issues
