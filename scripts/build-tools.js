@@ -2,13 +2,17 @@ const { getData } = require('./tools/extract-tools-github');
 const { convertTools } = require('./tools/tools-object');
 const { combineTools } = require('./tools/combine-tools');
 const fs = require('fs');
-const { resolve } = require('path');
+const { resolve, dirname } = require('path');
 
 const buildTools = async (automatedToolsPath, manualToolsPath, toolsPath, tagsPath) => {
   try {
     let githubExtractData = await getData();
     let automatedTools = await convertTools(githubExtractData);
+    const automatedDir = dirname(automatedToolsPath);
 
+    if (!fs.existsSync(automatedDir)) {
+      fs.mkdirSync(automatedDir, { recursive: true });
+    }
     fs.writeFileSync(
       automatedToolsPath,
       JSON.stringify(automatedTools, null, '  ')
