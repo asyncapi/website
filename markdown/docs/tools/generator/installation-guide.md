@@ -73,7 +73,7 @@ To uninstall the generator, use the following command:
 npm uninstall @asyncapi/cli -g
 ``` 
 
-> :memo: **Note:**  To use the generator in your CI/CD pipeline to automate whatever you generate for your event-driven architecture apps, install the AsyncAPI CLI in your pipeline. If you are using GitHub Actions, use [Github Actions for Generator](https://github.com/marketplace/actions/generator-for-asyncapi-documents).
+> :memo: **Note:**  To use the generator in your CI/CD pipeline to automate whatever you generate for your event-driven architecture apps, install the AsyncAPI CLI in your pipeline. If you are using GitHub Actions, use [Github Actions for Generator](https://github.com/marketplace/actions/generator-validator-converter-and-others-all-in-one-for-your-asyncapi-docs).
 
 ## Generator library in Node.js apps
 Use the generator library in your Node.js projects by installing it via the following command: `npm install @asyncapi/generator`.
