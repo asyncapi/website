@@ -83,12 +83,10 @@ jobs:
           OUTPUT=$(npm run test:md || true) 
           echo "$OUTPUT" | tee markdown_output.txt
           echo "::set-output name=markdown_output::$OUTPUT"
-        shell: bash
-
 
       # Post a comment using sticky-pull-request-comment
       - name: Comment on PR with markdown issues
-        if: ${{ always() && steps.markdown_check.outputs.markdown_output != '' }}
+        if: ${{ steps.markdown_check.outputs.markdown_output != '' }}
         uses: marocchino/sticky-pull-request-comment@3d60a5b2dae89d44e0c6ddc69dd7536aec2071cd
         with:
           header: markdown-check-error
