@@ -20,12 +20,15 @@ describe('buildPostList', () => {
 
     mkdirSync(join(tempDir, 'blog'), { recursive: true });
     writeFileSync(join(tempDir, 'blog', 'release-notes-2.1.0.mdx'), '---\ntitle: Release Notes 2.1.0\n---\nThis is a release note.');
+    console.log('Written blog post file:', join(tempDir, 'blog', 'release-notes-2.1.0.mdx'));
 
     mkdirSync(join(tempDir, 'docs'), { recursive: true });
     writeFileSync(join(tempDir, 'docs', 'index.mdx'), '---\ntitle: Docs Home\n---\nThis is the documentation homepage.');
+    console.log('Written docs index file:', join(tempDir, 'docs', 'index.mdx'));
 
     mkdirSync(join(tempDir, 'about'), { recursive: true });
     writeFileSync(join(tempDir, 'about', 'index.mdx'), '---\ntitle: About Us\n---\nThis is the about page.');
+    console.log('Written about file:', join(tempDir, 'about', 'index.mdx'));
 
     mkdirSync(join(tempDir, 'docs', 'reference', 'specification'), { recursive: true });
   });
@@ -35,12 +38,18 @@ describe('buildPostList', () => {
   });
 
   it('builds a post list and writes the result to a file', async () => {
+    console.log('Post directories:', postDirectories);
+    console.log('Output file path:', writeFilePath);
+
     await buildPostList(postDirectories, tempDir, writeFilePath);
+    console.log('Post list built and written to:', writeFilePath);
 
     const outputExists = existsSync(writeFilePath);
+    console.log('Output file exists:', outputExists);
     expect(outputExists).toBe(true);
 
     const output = JSON.parse(readFileSync(writeFilePath, 'utf-8'));
+    console.log('Output file content:', output)
 
     expect(output).toHaveProperty('docs');
     expect(output).toHaveProperty('blog');
@@ -48,6 +57,7 @@ describe('buildPostList', () => {
     expect(output).toHaveProperty('docsTree');
 
     const blogEntry = output.blog.find(item => item.slug === '/blog/release-notes-2.1.0');
+    console.log('Blog entry found:', blogEntry);
     expect(blogEntry).toBeDefined();
     expect(blogEntry.title).toBe('Release Notes 2.1.0');
   });
