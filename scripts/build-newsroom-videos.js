@@ -1,9 +1,13 @@
-const { writeFileSync } = require('fs');
-const { resolve } = require('path');
+const { writeFileSync, mkdirSync, existsSync } = require('fs');
+const { resolve, dirname } = require('path');
 const fetch = require('node-fetch-2');
 
 async function buildNewsroomVideos(writePath) {
     try {
+        const dir = dirname(writePath);
+        if (!existsSync(dir)) {
+            mkdirSync(dir, { recursive: true });
+        }
         const response = await fetch('https://youtube.googleapis.com/youtube/v3/search?' + new URLSearchParams({
             key: process.env.YOUTUBE_TOKEN,
             part: 'snippet',
