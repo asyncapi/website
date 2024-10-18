@@ -82,7 +82,7 @@ jobs:
         run: |
           ERRORS="$(npm run test:md)"
           echo "markdown_output<<EOF"
-          $ERRORS" 
+          $ERRORS
           echo EOF 
           >> "$GITHUB_OUTPUT"
 
