@@ -125,7 +125,7 @@ function checkMarkdownFiles(folderPath, validateFunction, relativePath = '') {
                     const errors = validateFunction(frontmatter);
                     if (errors) {
                         console.log(`Errors in file ${relativeFilePath}:`);
-                        errors.forEach(error => console.log(`${error}\n`));
+                        errors.forEach(error => console.log(` - ${error}`));
                         process.exitCode = 1;
                     }
                 }
