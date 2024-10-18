@@ -85,29 +85,31 @@ jobs:
           echo "::set-output name=markdown_output::$OUTPUT"
         shell: bash
 
-      # Parse the output and post a comment on GitHub PR
-      - name: Post markdown check results
-        if: steps.packagejson.outputs.exists == 'true'
-        uses: actions/github-script@v6
+
+      # Post a comment using sticky-pull-request-comment
+      - name: Comment on PR with markdown issues
+        if: ${{ always() && steps.markdown_check.outputs.markdown_output != '' }}
+        uses: marocchino/sticky-pull-request-comment@v2.5.0
         with:
-          github-token: ${{ secrets.GH_TOKEN }}
-          script: |
-            const output = `steps.markdown_check.outputs.markdown_output`;
-            let body = "### Markdown Check Results\n\n";
-            if (output.includes('Errors in file')) {
-              const errorLines = output.split('\\n').filter(line => line.startsWith('Errors in file'));
-              errorLines.forEach(errorLine => {
-                body += `- ${errorLine}\\n`;
-              });
-            } else {
-              body += "✅ No markdown issues found.";
-            }
-            github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.payload.pull_request.number,
-              body: body
-            })
+          header: markdown-check-error
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          message: |
+            ### Markdown Check Results
+
+            We found issues in the following markdown files:
+
+            ```
+            ${{ steps.markdown_check.outputs.markdown_output }}
+            ```
+
+      # Delete the comment if there are no issues
+      - if: ${{ steps.markdown_check.outputs.markdown_output == '' }}
+        name: Delete markdown check comment
+        uses: marocchino/sticky-pull-request-comment@v2.5.0
+        with:
+          header: markdown-check-error
+          delete: true
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - if: steps.packagejson.outputs.exists == 'true'
         name: Upload Coverage to Codecov
