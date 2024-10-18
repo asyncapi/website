@@ -8,6 +8,7 @@ const buildTools = async (automatedToolsPath, manualToolsPath, toolsPath, tagsPa
   try {
     let githubExtractData = await getData();
     let automatedTools = await convertTools(githubExtractData);
+    
     const automatedDir = dirname(automatedToolsPath);
 
     if (!fs.existsSync(automatedDir)) {
