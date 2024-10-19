@@ -144,5 +144,4 @@ describe('Tools Object', () => {
     expect(error).toBeDefined();
     expect(error.message).toContain('Unexpected token');
   });
-
 });
