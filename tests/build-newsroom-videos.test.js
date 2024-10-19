@@ -1,4 +1,4 @@
-const { readFileSync, rmSync, mkdirSync } = require('fs');
+const { readFileSync, removeSync, mkdirpSync } = require('fs-extra');
 const { resolve } = require('path');
 const { buildNewsroomVideos } = require('../scripts/build-newsroom-videos');
 const { mockApiResponse, expectedResult } = require('./fixtures/newsroomData');
@@ -11,12 +11,12 @@ describe('buildNewsroomVideos', () => {
     const testFilePath = resolve(testDir, 'newsroom_videos.json');
 
     beforeAll(() => {
-        mkdirSync(testDir, { recursive: true });
+        mkdirpSync(testDir);
         process.env.YOUTUBE_TOKEN = 'testkey';
     });
 
     afterAll(() => {
-        rmSync(testDir, { recursive: true, force: true });
+        removeSync(testDir);
     });
 
     beforeEach(() => {

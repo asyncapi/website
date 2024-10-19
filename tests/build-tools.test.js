@@ -2,7 +2,7 @@ const axios = require('axios');
 const { resolve } = require('path');
 const { buildTools } = require('../scripts/build-tools');
 const { tagsData, manualTools, mockConvertedData, mockExtractData } = require('../tests/fixtures/buildToolsData');
-const fs = require('fs');
+const fs = require('fs-extra');
 
 jest.mock('axios');
 jest.mock('../scripts/tools/categorylist', () => ({
@@ -34,12 +34,12 @@ describe('buildTools', () => {
     beforeAll(() => {
         consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});
 
-        fs.mkdirSync(testDir, { recursive: true });
-        fs.writeFileSync(manualToolsPath, JSON.stringify(manualTools));
+        fs.ensureDirSync(testDir);
+        fs.outputFileSync(manualToolsPath, JSON.stringify(manualTools));
     });
 
     afterAll(() => {
-        fs.rmSync(testDir, { recursive: true, force: true });
+        fs.removeSync(testDir);
         consoleErrorMock.mockRestore();
     });
 
@@ -66,7 +66,6 @@ describe('buildTools', () => {
         expect(combinedToolsContent["Category2"].description).toEqual(mockConvertedData["Category2"].description);
 
         expect(tagsContent).toEqual(tagsData);
-
     });
 
     it('should handle getData error', async () => {
