@@ -9,7 +9,7 @@ const buildTools = async (automatedToolsPath, manualToolsPath, toolsPath, tagsPa
     let githubExtractData = await getData();
     let automatedTools = await convertTools(githubExtractData);
 
-    fs.writeFileSync(automatedToolsPath, JSON.stringify(automatedTools, null, '  '));
+    await fs.writeFile(automatedToolsPath, JSON.stringify(automatedTools, null, '  '));
 
     await combineTools(automatedTools, require(manualToolsPath), toolsPath, tagsPath);
   } catch (err) {
