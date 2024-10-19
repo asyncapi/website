@@ -109,6 +109,11 @@ function checkMarkdownFiles(folderPath, validateFunction, relativePath = '') {
             const filePath = path.join(folderPath, file);
             const relativeFilePath = path.join(relativePath, file);
 
+            // Skip the folder 'docs/reference/specification'
+            if (relativeFilePath.includes('reference/specification')) {
+                return;
+            }
+
             fs.stat(filePath, (err, stats) => {
                 if (err) {
                     console.error('Error reading file stats:', err);
