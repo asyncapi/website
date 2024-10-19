@@ -1,4 +1,4 @@
-const { readFileSync, rmSync, mkdirSync } = require('fs');
+const { readFileSync, rmSync, mkdirSync, existsSync } = require('fs');
 const { resolve } = require('path');
 const { buildNewsroomVideos } = require('../scripts/build-newsroom-videos');
 const { mockApiResponse, expectedResult } = require('./fixtures/newsroomData');
@@ -11,15 +11,19 @@ describe('buildNewsroomVideos', () => {
     const testFilePath = resolve(testDir, 'newsroom_videos.json');
 
     beforeAll(() => {
-        mkdirSync(testDir, { recursive: true });
         process.env.YOUTUBE_TOKEN = 'testkey';
     });
 
     afterAll(() => {
-        rmSync(testDir, { recursive: true, force: true });
+        if (existsSync(testDir)) {
+            rmSync(testDir, { recursive: true, force: true });
+        }
     });
 
     beforeEach(() => {
+        if (!existsSync(testDir)) {
+            mkdirSync(testDir, { recursive: true });
+        }
         fetch.mockClear();
     });
 
@@ -28,6 +32,10 @@ describe('buildNewsroomVideos', () => {
             ok: true,
             json: jest.fn().mockResolvedValue(mockApiResponse),
         });
+
+        if (!existsSync(testDir)) {
+            mkdirSync(testDir, { recursive: true });
+        }
 
         const result = await buildNewsroomVideos(testFilePath);
 
@@ -41,6 +49,7 @@ describe('buildNewsroomVideos', () => {
         expectedUrl.searchParams.set('maxResults', '5');
 
         expect(fetch).toHaveBeenCalledWith(expectedUrl.toString());
+
         const response = readFileSync(testFilePath, 'utf8');
         expect(response).toEqual(expectedResult);
         expect(result).toEqual(expectedResult);
@@ -97,5 +106,4 @@ describe('buildNewsroomVideos', () => {
             expect(err.message).toMatch(/ENOENT|EACCES/);
         }
     });
-
 });

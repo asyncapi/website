@@ -2,13 +2,18 @@ const { getData } = require('./tools/extract-tools-github');
 const { convertTools } = require('./tools/tools-object');
 const { combineTools } = require('./tools/combine-tools');
 const fs = require('fs');
-const path = require('path');
+const { resolve, dirname } = require('path');
 
 const buildTools = async (automatedToolsPath, manualToolsPath, toolsPath, tagsPath) => {
   try {
     let githubExtractData = await getData();
     let automatedTools = await convertTools(githubExtractData);
+    
+    const automatedDir = dirname(automatedToolsPath);
 
+    if (!fs.existsSync(automatedDir)) {
+      fs.mkdirSync(automatedDir, { recursive: true });
+    }
     fs.writeFileSync(
       automatedToolsPath,
       JSON.stringify(automatedTools, null, '  ')
@@ -22,10 +27,10 @@ const buildTools = async (automatedToolsPath, manualToolsPath, toolsPath, tagsPa
 
 /* istanbul ignore next */
 if (require.main === module) {
-  const automatedToolsPath = path.join(__dirname, '../config', 'tools-automated.json');
-  const manualToolsPath = path.join(__dirname, '../config', 'tools-manual.json');
-  const toolsPath = path.join(__dirname, '../config', 'tools.json');
-  const tagsPath = path.join(__dirname, '../config', 'all-tags.json');
+  const automatedToolsPath = resolve(__dirname, '../config', 'tools-automated.json');
+  const manualToolsPath = resolve(__dirname, '../config', 'tools-manual.json');
+  const toolsPath = resolve(__dirname, '../config', 'tools.json');
+  const tagsPath = resolve(__dirname, '../config', 'all-tags.json');
 
   buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
 }
