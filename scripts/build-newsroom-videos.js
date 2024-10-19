@@ -1,4 +1,4 @@
-const { writeFileSync } = require('fs-extra');
+const { writeFile } = require('fs-extra');
 const { resolve } = require('path');
 const fetch = require('node-fetch-2');
 
@@ -35,7 +35,7 @@ async function buildNewsroomVideos(writePath) {
         const videoData = JSON.stringify(videoDataItems, null, '  ');
         console.log('The following are the Newsroom Youtube videos: ', videoData);
 
-        writeFileSync(writePath, videoData);
+        await writeFile(writePath, videoData);
 
         return videoData;
     } catch (err) {
