@@ -5,9 +5,11 @@ const fetch = require('node-fetch-2');
 async function buildNewsroomVideos(writePath) {
     try {
         const dir = dirname(writePath);
+        
         if (!existsSync(dir)) {
             mkdirSync(dir, { recursive: true });
         }
+
         const response = await fetch('https://youtube.googleapis.com/youtube/v3/search?' + new URLSearchParams({
             key: process.env.YOUTUBE_TOKEN,
             part: 'snippet',
@@ -23,7 +25,6 @@ async function buildNewsroomVideos(writePath) {
         }
 
         const data = await response.json();
-        console.log(data)
 
         if (!data.items || !Array.isArray(data.items)) {
             throw new Error('Invalid data structure received from YouTube API');
@@ -39,7 +40,7 @@ async function buildNewsroomVideos(writePath) {
         const videoData = JSON.stringify(videoDataItems, null, '  ');
         console.log('The following are the Newsroom Youtube videos: ', videoData);
 
-        writeFileSync(writePath, videoData);
+        await retryWriteFile(writePath, videoData);
 
         return videoData;
     } catch (err) {
@@ -47,9 +48,26 @@ async function buildNewsroomVideos(writePath) {
     }
 }
 
+async function retryWriteFile(filePath, data, retries = 3, delay = 1000) {
+    for (let attempt = 0; attempt < retries; attempt++) {
+        try {
+            writeFileSync(filePath, data);
+            console.log(`File written successfully to ${filePath}`);
+            break;
+        } catch (err) {
+            if (err.code === 'ENOENT') {
+                console.error(`ENOENT error on attempt ${attempt + 1}. Retrying in ${delay}ms...`);
+                await new Promise((resolve) => setTimeout(resolve, delay));
+            } else {
+                throw err;
+            }
+        }
+    }
+}
+
 /* istanbul ignore next */
 if (require.main === module) {
-    buildNewsroomVideos(resolve(__dirname, '../config', 'newsroom_videos.json'))
+    buildNewsroomVideos(resolve(__dirname, '../config', 'newsroom_videos.json'));
 }
 
 module.exports = { buildNewsroomVideos };
