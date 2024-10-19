@@ -2,7 +2,7 @@ const axios = require('axios');
 const { resolve } = require('path');
 const { buildTools } = require('../scripts/build-tools');
 const { tagsData, manualTools, mockConvertedData, mockExtractData } = require('../tests/fixtures/buildToolsData');
-const fs = require('fs');
+const fs = require('fs-extra');
 
 jest.mock('axios');
 jest.mock('../scripts/tools/categorylist', () => ({
@@ -32,19 +32,14 @@ describe('buildTools', () => {
     let consoleErrorMock;
 
     beforeAll(() => {
-        if (!fs.existsSync(testDir)) {
-            fs.mkdirSync(testDir, { recursive: true });
-        }
-        if (!fs.existsSync(manualToolsPath)) {
-            fs.writeFileSync(manualToolsPath, JSON.stringify(manualTools));
-        }
         consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});
+
+        fs.ensureDirSync(testDir);
+        fs.outputFileSync(manualToolsPath, JSON.stringify(manualTools));
     });
 
     afterAll(() => {
-        if (fs.existsSync(testDir)) {
-            fs.rmSync(testDir, { recursive: true, force: true });
-        }
+        fs.removeSync(testDir);
         consoleErrorMock.mockRestore();
     });
 
@@ -54,10 +49,6 @@ describe('buildTools', () => {
 
     it('should extract, convert, combine tools, and write to file', async () => {
         axios.get.mockResolvedValue({ data: mockExtractData });
-
-        if (!fs.existsSync(testDir)) {
-            fs.mkdirSync(testDir, { recursive: true });
-        }
 
         await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
 
