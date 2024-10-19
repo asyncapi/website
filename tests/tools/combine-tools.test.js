@@ -256,5 +256,4 @@ describe('combineTools function', () => {
     }
     expect(error).toBeDefined();
   });
-  
 });
