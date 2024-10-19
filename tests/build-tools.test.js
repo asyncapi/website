@@ -3,7 +3,6 @@ const { resolve } = require('path');
 const { buildTools } = require('../scripts/build-tools');
 const { tagsData, manualTools, mockConvertedData, mockExtractData } = require('../tests/fixtures/buildToolsData');
 const fs = require('fs');
-const { beforeEach, afterEach } = require('node:test');
 
 jest.mock('axios');
 jest.mock('../scripts/tools/categorylist', () => ({
@@ -54,10 +53,15 @@ describe('buildTools', () => {
     beforeEach(() => {
         jest.clearAllMocks();
         
-        if (!fs.existsSync(manualToolsPath)) {
-            fs.writeFileSync(manualToolsPath, JSON.stringify(manualTools));
+        if (!fs.existsSync(testDir)) {
+          fs.mkdirSync(testDir, { recursive: true });
         }
-    });
+    
+        if (!fs.existsSync(manualToolsPath)) {
+          fs.writeFileSync(manualToolsPath, JSON.stringify(manualTools));
+        }
+      });
+      
 
     it('should extract, convert, combine tools, and write to file', async () => {
         axios.get.mockResolvedValue({ data: mockExtractData });

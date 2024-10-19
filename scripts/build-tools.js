@@ -17,7 +17,9 @@ const buildTools = async (automatedToolsPath, manualToolsPath, toolsPath, tagsPa
 
     await retryWriteFile(automatedToolsPath, JSON.stringify(automatedTools, null, '  '));
 
-    await combineTools(automatedTools, require(manualToolsPath), toolsPath, tagsPath);
+    const manualTools = JSON.parse(fs.readFileSync(manualToolsPath, 'utf-8'));
+
+    await combineTools(automatedTools, manualTools, toolsPath, tagsPath);
   } catch (err) {
     throw new Error(`An error occurred while building tools: ${err.message}`);
   }
