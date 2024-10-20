@@ -103,6 +103,10 @@ async function getHotDiscussions(discussions) {
         }
       })
     );
+
+    // eslint-disable-next-line no-await-in-loop
+    await pause(1000);
+
     result.push(...batchResults);
   }
   result.sort((ElemA, ElemB) => ElemB.score - ElemA.score);
