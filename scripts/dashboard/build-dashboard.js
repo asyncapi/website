@@ -133,7 +133,7 @@ async function mapGoodFirstIssues(issues) {
 
 function getLabel(issue, filter) {
   const result = issue.labels.nodes.find((label) => label.name.startsWith(filter));
-  return result && result.name.split('/')[1];
+  return result?.name.split('/')[1];
 }
 
 function monthsSince(date) {
