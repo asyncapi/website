@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { buckets } from '../data/buckets';
 import FlyoutMenu from './FlyoutMenu';
 
