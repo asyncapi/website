@@ -29,6 +29,8 @@ async function getDiscussions(query, pageSize, endCursor = null) {
       );
     }
 
+    await pause(500);
+
     const { hasNextPage } = result.search.pageInfo;
 
     if (!hasNextPage) {
@@ -102,9 +104,6 @@ async function getHotDiscussions(discussions) {
       })
     );
     result.push(...batchResults);
-
-    // eslint-disable-next-line no-await-in-loop
-    await pause(1000);
   }
   result.sort((ElemA, ElemB) => ElemB.score - ElemA.score);
   const filteredResult = result.filter((issue) => issue.author !== 'asyncapi-bot');
@@ -142,11 +141,11 @@ function monthsSince(date) {
 
 async function start() {
   try {
-    const issues = await getDiscussions(Queries.hotDiscussionsIssues, 20);
-    const PRs = await getDiscussions(Queries.hotDiscussionsPullRequests, 20);
-    await pause(1000);
-    const rawGoodFirstIssues = await getDiscussions(Queries.goodFirstIssues, 20);
-    await pause(1000);
+    const [issues, PRs, rawGoodFirstIssues] = await Promise.all([
+      getDiscussions(Queries.hotDiscussionsIssues, 20),
+      getDiscussions(Queries.hotDiscussionsPullRequests, 20),
+      getDiscussions(Queries.goodFirstIssues, 20)
+    ]);
     const discussions = issues.concat(PRs);
     const [hotDiscussions, goodFirstIssues] = await Promise.all([
       getHotDiscussions(discussions),
