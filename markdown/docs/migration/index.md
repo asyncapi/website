@@ -1,5 +1,6 @@
 ---
 title: "Overview"
+weight: 1
 ---
 Migration to a new major version is always difficult, and AsyncAPI is no exception, but we want to provide as smooth a transition as possible.
 
