@@ -3,6 +3,11 @@ const { resolve } = require('path');
 const { graphql } = require('@octokit/graphql');
 const { Queries } = require('./issue-queries');
 
+/**
+ * Introduces a delay in the execution flow.
+ * @param {number} ms - The number of milliseconds to pause.
+ * @returns {Promise<void>} A promise that resolves after the specified delay.
+ */
 async function pause(ms) {
   return new Promise((res) => {
     setTimeout(res, ms);
@@ -60,49 +65,54 @@ async function getDiscussionByID(isPR, id) {
   }
 }
 
+async function processHotDiscussions(batch) {
+  return Promise.all(
+    batch.map(async (discussion) => {
+      try {
+        // eslint-disable-next-line no-underscore-dangle
+        const isPR = discussion.__typename === 'PullRequest';
+        if (discussion.comments.pageInfo.hasNextPage) {
+          const fetchedDiscussion = await getDiscussionByID(isPR, discussion.id);
+          discussion = fetchedDiscussion.node;
+        }
+
+        const interactionsCount =
+          discussion.reactions.totalCount +
+          discussion.comments.totalCount +
+          discussion.comments.nodes.reduce((acc, curr) => acc + curr.reactions.totalCount, 0);
+
+        const finalInteractionsCount = isPR
+          ? interactionsCount +
+            discussion.reviews.totalCount +
+            discussion.reviews.nodes.reduce((acc, curr) => acc + curr.comments.totalCount, 0)
+          : interactionsCount;
+        return {
+          id: discussion.id,
+          isPR,
+          isAssigned: !!discussion.assignees.totalCount,
+          title: discussion.title,
+          author: discussion.author ? discussion.author.login : '',
+          resourcePath: discussion.resourcePath,
+          repo: `asyncapi/${discussion.repository.name}`,
+          labels: discussion.labels ? discussion.labels.nodes : [],
+          score: finalInteractionsCount / (monthsSince(discussion.timelineItems.updatedAt) + 2) ** 1.8
+        };
+      } catch (e) {
+        console.error(`there was some issues while parsing this item: ${JSON.stringify(discussion)}`);
+        throw e;
+      }
+    })
+  );
+}
+
 async function getHotDiscussions(discussions) {
   const result = [];
+  const batchSize = 5;
 
-  for (let i = 0; i < discussions.length; i += 5) {
-    const batch = discussions.slice(i, i + 5);
+  for (let i = 0; i < discussions.length; i += batchSize) {
+    const batch = discussions.slice(i, i + batchSize);
     // eslint-disable-next-line no-await-in-loop
-    const batchResults = await Promise.all(
-      batch.map(async (discussion) => {
-        try {
-          // eslint-disable-next-line no-underscore-dangle
-          const isPR = discussion.__typename === 'PullRequest';
-          if (discussion.comments.pageInfo.hasNextPage) {
-            const fetchedDiscussion = await getDiscussionByID(isPR, discussion.id);
-            discussion = fetchedDiscussion.node;
-          }
-
-          const interactionsCount =
-            discussion.reactions.totalCount +
-            discussion.comments.totalCount +
-            discussion.comments.nodes.reduce((acc, curr) => acc + curr.reactions.totalCount, 0);
-
-          const finalInteractionsCount = isPR
-            ? interactionsCount +
-              discussion.reviews.totalCount +
-              discussion.reviews.nodes.reduce((acc, curr) => acc + curr.comments.totalCount, 0)
-            : interactionsCount;
-          return {
-            id: discussion.id,
-            isPR,
-            isAssigned: !!discussion.assignees.totalCount,
-            title: discussion.title,
-            author: discussion.author ? discussion.author.login : '',
-            resourcePath: discussion.resourcePath,
-            repo: `asyncapi/${discussion.repository.name}`,
-            labels: discussion.labels ? discussion.labels.nodes : [],
-            score: finalInteractionsCount / (monthsSince(discussion.timelineItems.updatedAt) + 2) ** 1.8
-          };
-        } catch (e) {
-          console.error(`there was some issues while parsing this item: ${JSON.stringify(discussion)}`);
-          throw e;
-        }
-      })
-    );
+    const batchResults = await processHotDiscussions(batch);
 
     // eslint-disable-next-line no-await-in-loop
     await pause(1000);
