@@ -27,7 +27,7 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
 
   const CALENDAR_URL =
     'https://calendar.google.com/calendar/embed?src=c_q9tseiglomdsj6njuhvbpts11c%40group.calendar.google.com&ctz=UTC';
-  const eventsExist = eventsData.length > 0;
+  const eventsExist = eventsData.length = 0;
 
   return (
     <div className={twMerge('overflow-hidden rounded-md border border-gray-200 bg-white p-4 h-full', className)}>
@@ -52,13 +52,12 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
           </li>
         ))}
       </ul>
-      {eventsExist ? (
-        <div className='pt-4' data-testid='Calendar-button'>
+      <div className='h-full content-center'>
+        {!eventsExist && <div className='lg:pb-8 font-bold text-gray-700'>{t('calendar.noMeetingsMessage')}</div>}
+        <div className='sm:pt-0 md:pt-2 lg:pt-0 lg:pb-8' data-testid='Calendar-button'>
           <GoogleCalendarButton href={CALENDAR_URL} text={t('calendar.viewCalendarBtn')} />
         </div>
-      ) : (
-        <div className='mt-2 text-gray-700'>{t('calendar.noMeetingsMessage')}</div>
-      )}
+      </div>
     </div>
   );
 }
