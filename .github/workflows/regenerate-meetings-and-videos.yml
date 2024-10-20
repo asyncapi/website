@@ -1,6 +1,6 @@
 name: List everyday latest list of AsyncAPI Meetings, Newsroom Videos and Dashboard data.
 
-on: 
+on:
   workflow_dispatch:
   schedule:
   #every day at midnight
@@ -23,7 +23,7 @@ jobs:
         - name: Check package-lock version
           uses: asyncapi/.github/.github/actions/get-node-version-from-package-lock@master
           id: lockversion
-  
+
         - name: Use Node.js
           uses: actions/setup-node@v3
           with:
@@ -45,7 +45,7 @@ jobs:
             committer: asyncapi-bot <info@asyncapi.io>
             author: asyncapi-bot <info@asyncapi.io>
             title: 'chore: update meetings.json and newsrooom_videos.json'
-            branch: update-meetings/${{ github.job }}
+            branch: update-meetings/${{ github.sha }}
         - if: failure() # Only, on failure, send a message on the 94_bot-failing-ci slack channel
           name: Report workflow run status to Slack
           uses: 8398a7/action-slack@fbd6aa58ba854a740e11a35d0df80cb5d12101d8 #using https://github.com/8398a7/action-slack/releases/tag/v3.15.1
