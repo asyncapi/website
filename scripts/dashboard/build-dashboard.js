@@ -1,7 +1,6 @@
 const { writeFileSync } = require('fs');
 const { resolve } = require('path');
 const { graphql } = require('@octokit/graphql');
-const { Promise } = require('node-fetch');
 const { Queries } = require('./issue-queries');
 
 async function getHotDiscussions(discussions) {
@@ -24,12 +23,13 @@ async function getHotDiscussions(discussions) {
 
         const finalInteractionsCount = isPR
           ? interactionsCount +
-          discussion.reviews.totalCount +
-          discussion.reviews.nodes.reduce(
-            (acc, curr) => acc + curr.comments.totalCount,
-            0
-          )
+            discussion.reviews.totalCount +
+            discussion.reviews.nodes.reduce(
+              (acc, curr) => acc + curr.comments.totalCount,
+              0
+            )
           : interactionsCount;
+
         return {
           id: discussion.id,
           isPR,
@@ -45,7 +45,7 @@ async function getHotDiscussions(discussions) {
         };
       } catch (e) {
         console.error(
-          `there was some issues while parsing this item: ${JSON.stringify(
+          `There were some issues while parsing this item: ${JSON.stringify(
             discussion
           )}`
         );
@@ -57,12 +57,14 @@ async function getHotDiscussions(discussions) {
   const filteredResult = result.filter(issue => issue.author !== 'asyncapi-bot');
   return filteredResult.slice(0, 12);
 }
+
 async function writeToFile(content) {
   writeFileSync(
     resolve(__dirname, '..', '..', 'dashboard.json'),
     JSON.stringify(content, null, '  ')
   );
 }
+
 async function mapGoodFirstIssues(issues) {
   return issues.map((issue) => ({
     id: issue.id,
@@ -87,11 +89,9 @@ function getLabel(issue, filter) {
   return result && result.name.split('/')[1];
 }
 
-
 function monthsSince(date) {
   const seconds = Math.floor((new Date() - new Date(date)) / 1000);
-  // 2592000 = number of seconds in a month = 30 * 24 * 60 * 60
-  const months = seconds / 2592000;
+  const months = seconds / 2592000;  // 2592000 = seconds in a month
   return Math.floor(months);
 }
 
@@ -112,7 +112,7 @@ async function getDiscussions(query, pageSize, endCursor = null) {
         `limit = ${result.rateLimit.limit}`,
         `remaining = ${result.rateLimit.remaining}`,
         `resetAt = ${result.rateLimit.resetAt}`
-      )
+      );
     }
 
     const hasNextPage = result.search.pageInfo.hasNextPage;
@@ -125,9 +125,11 @@ async function getDiscussions(query, pageSize, endCursor = null) {
       );
     }
   } catch (e) {
-    console.error(e);
+    console.error('Error fetching discussions:', e);
+    throw e;
   }
 }
+
 async function getDiscussionByID(isPR, id) {
   try {
     let result = await graphql(isPR ? Queries.pullRequestById : Queries.issueById, {
@@ -135,14 +137,14 @@ async function getDiscussionByID(isPR, id) {
       headers: {
         authorization: `token ${process.env.GITHUB_TOKEN}`,
       },
-
-    }
-    );
+    });
     return result;
   } catch (e) {
-    console.error(e);
+    console.error(`Error fetching discussion by ID: ${id}`, e);
+    throw e;
   }
 }
+
 async function start() {
   try {
     const [issues, PRs, rawGoodFirstIssues] = await Promise.all([
@@ -150,17 +152,21 @@ async function start() {
       getDiscussions(Queries.hotDiscussionsPullRequests, 20),
       getDiscussions(Queries.goodFirstIssues, 20),
     ]);
+
     const discussions = issues.concat(PRs);
     const [hotDiscussions, goodFirstIssues] = await Promise.all([
       getHotDiscussions(discussions),
       mapGoodFirstIssues(rawGoodFirstIssues),
     ]);
-    writeToFile({ hotDiscussions, goodFirstIssues });
+
+    await writeToFile({ hotDiscussions, goodFirstIssues });
   } catch (e) {
-    console.log('There were some issues parsing data from github.')
-    console.log(e);
+    console.log('There were some issues parsing data from GitHub.');
+    console.error(e);
+    throw e;
   }
 }
+
 start();
 
-module.exports = { getLabel, monthsSince, mapGoodFirstIssues, getHotDiscussions, getDiscussionByID }
+module.exports = { getLabel, monthsSince, mapGoodFirstIssues, getHotDiscussions, getDiscussionByID };
