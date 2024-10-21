@@ -38,6 +38,7 @@ interface NewsletterSubscribeProps {
  * @param {string} props.title - The title of the Subscribe card.
  * @param {string} props.subtitle - The subtitle of the Subscribe card.
  * @param {string} props.type - The type of subscription.
+ * @param {string} props.errorSubtitle - The error subtitle to be displayed.
  */
 export default function NewsletterSubscribe({
   className = 'p-8 text-center text-black',

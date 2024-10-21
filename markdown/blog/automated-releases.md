@@ -23,7 +23,7 @@ Repetitive tasks are tedious. If what you do manually can be automated, then wha
 
 A couple of minutes here, a couple of minutes there and all of a sudden you do not have time on more important things, on innovation. Automation makes it easier to scale and eliminates errors. Distractions consume time and make you less productive.
 
-We kick ass at [AsyncAPI Initiative](https://www.asyncapi.com/) at the moment. We started to improve our tooling regularly. We are now periodically sharing project status in our [newsletter](https://www.asyncapi.com/newsletter), and host [bi-weekly open meetings](https://github.com/asyncapi/asyncapi/issues/115), but most important is that we just recently updated our roadmap.
+We kick ass at [AsyncAPI Initiative](https://www.asyncapi.com/) at the moment. We started to improve our tooling regularly. We are now periodically sharing project status in our [newsletter](https://www.asyncapi.com/en/newsletter), and host [bi-weekly open meetings](https://github.com/asyncapi/asyncapi/issues/115), but most important is that we just recently updated our roadmap.
 
 Am I just showing off? It sounds like, but that is not my intention. I wish to point out we are productive, and we want to continue this trend and automation helps here a lot. If you have libraries that you want to release regularly and you plan additional ones to come, you need to focus on release automation.
 
