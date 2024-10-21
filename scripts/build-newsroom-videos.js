@@ -1,4 +1,4 @@
-const { writeFileSync } = require('fs');
+const { writeFileSync } = require('fs-extra');
 const { resolve } = require('path');
 const fetch = require('node-fetch-2');
 
@@ -19,7 +19,7 @@ async function buildNewsroomVideos(writePath) {
         }
 
         const data = await response.json();
-        console.log(data)
+        console.log(data);
 
         if (!data.items || !Array.isArray(data.items)) {
             throw new Error('Invalid data structure received from YouTube API');
