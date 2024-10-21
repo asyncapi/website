@@ -45,4 +45,4 @@ We're thrilled to announce a new automated TSC voting system! We want to thank [
 
 ## Coming in May
 - **AACoT'24 Helsinki** - The Helsinki Edition will take place on May 28th and 29th. Please keep an eye out for announcements on community tickets on Slack and our social channels.
-- **AsyncAPI Community Updates Newsletter** - The May Edition issue will arrive in your inbox this coming week. Ensure [you subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/newsletter); you don't want to miss out.
+- **AsyncAPI Community Updates Newsletter** - The May Edition issue will arrive in your inbox this coming week. Ensure [you subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/en/newsletter); you don't want to miss out.

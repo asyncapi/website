@@ -48,5 +48,5 @@ Google Summer of Code'23 is coming to an end soon, and our esteemed mentors are 
 We are calling for votes to establish our first Code of Conduct Committee that will enforce and ensure every community member follows and doesn't violate it. Please make sure to drop a comment with your nominations to the [AsyncAPI Code of Conduct Refresh discussion](https://github.com/orgs/asyncapi/discussions/682).
 
 ## Coming in September
-- **AsyncAPI Community Updates Newsletter** - The next issue will drop in August's first week. Stay informed about the latest community activities by [subscribing to the AsyncAPI Newsletter](https://www.asyncapi.com/newsletter). 
+- **AsyncAPI Community Updates Newsletter** - The next issue will drop in August's first week. Stay informed about the latest community activities by [subscribing to the AsyncAPI Newsletter](https://www.asyncapi.com/en/newsletter). 
 - **AACoT'23 London Edition** - Our first AACoT'23 stop will be held at the [IBM London office](https://www.ibm.com/uk-en/events/ibm-london) on the 20th of September. [Be sure to get your tickets](https://opencollective.com/asyncapi/events/asyncapi-conference-on-tour-6b3c0aa1/contribute/aacot-london-edition-61313) before they run out. See you there!

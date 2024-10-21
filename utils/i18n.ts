@@ -7,11 +7,13 @@ interface I18nPaths {
 export const i18nPaths: I18nPaths = {
   en: [
     '', // Homepage Route
-    '/tools/cli'
+    '/tools/cli',
+    '/newsletter'
   ],
   de: [
     '', // Homepage Route
-    '/tools/cli'
+    '/tools/cli',
+    '/newsletter'
   ]
 };
 

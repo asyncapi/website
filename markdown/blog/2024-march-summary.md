@@ -81,4 +81,4 @@ We are excited to welcome [Giri Venkatesan](https://www.linkedin.com/in/girivenk
 />
 
 ## Coming in April
-- **AsyncAPI Community Updates Newsletter** - The April Edition issue will drop on the 2nd week. Make sure [you're subscribed to the AsyncAPI Newsletter](https://www.asyncapi.com/newsletter); you don't want to miss out!
+- **AsyncAPI Community Updates Newsletter** - The April Edition issue will drop on the 2nd week. Make sure [you're subscribed to the AsyncAPI Newsletter](https://www.asyncapi.com/en/newsletter); you don't want to miss out!

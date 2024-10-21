@@ -93,4 +93,4 @@ Exciting times for our growing community!
 
 ## Coming in March
 - **AACoT'24 Helsinki Call for Speakers** - We will announce our Call for Speakers for AACoT'24 Helsinki by the first week of March. Start crafting those proposals and get ready to submit them.
-- **AsyncAPI Community Updates Newsletter** - The March Edition issue will drop on the 6th. Make sure [you're subscribed to the AsyncAPI Newsletter](https://www.asyncapi.com/newsletter); you don't want to miss out!
+- **AsyncAPI Community Updates Newsletter** - The March Edition issue will drop on the 6th. Make sure [you're subscribed to the AsyncAPI Newsletter](https://www.asyncapi.com/en/newsletter); you don't want to miss out!

@@ -196,5 +196,5 @@ We are excited to welcome [Lorna Mitchell](https://www.linkedin.com/in/lornajane
 ]} />
 
 ## Coming in October
-- **AsyncAPI Community Updates Newsletter** - The October Edition issue will arrive in your inbox on the 9th. [Ensure you subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/newsletter); you don't want to miss out.
+- **AsyncAPI Community Updates Newsletter** - The October Edition issue will arrive in your inbox on the 9th. [Ensure you subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/en/newsletter); you don't want to miss out.
 - **AsyncAPI Online Conference** - [The Online Conference will take place on the 30th of October](https://conference.asyncapi.com/venue/Online). Be sure to check the website for the Agenda and Speakers.

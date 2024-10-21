@@ -46,6 +46,6 @@ We have some exciting things planned for May, such as:
 
 - **Parser-JS v2** - We eagerly anticipate the release of the main implementation of the Parser API, the Parser-JS v2. You can follow the process on [Parser-JS v2 GitHub issue](https://github.com/asyncapi/parser-js/issues/585) and join the conversation in the `#tooling` channel on Slack.
 - **AsyncAPI Podcast** - Did you know that AsyncAPI has a podcast? If you didn't, now you know! The best part? We are dropping an episode in May. Get to know the community builders and the work they do. [Be sure to subscribe to the AsyncAPI Podcast](https://open.spotify.com/show/73BrcNwJ5ZI9ygR8nfElZi).
-- **AsyncAPI Community Updates Newsletter** - We will drop the next issue in the first week of May. Be sure to [subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/newsletter) if you like to stay on top of the latest activities happening across the community.
+- **AsyncAPI Community Updates Newsletter** - We will drop the next issue in the first week of May. Be sure to [subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/en/newsletter) if you like to stay on top of the latest activities happening across the community.
 
 Till next time, keep your head held high. **You got this!**

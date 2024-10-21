@@ -62,4 +62,4 @@ We are pleased to welcome [Oluwabamikemi Kayode](https://www.linkedin.com/in/ati
 
 ## Coming in June
 - **AsyncAPI Mentorship Program** - Many have been wondering if we will have a third cohort of the AsyncAPI Mentorship Program and when it will start. Be sure to keep an eye out for announcements this month.
-- **AsyncAPI Community Updates Newsletter** - The June Edition issue will arrive in your inbox this week. Ensure [you subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/newsletter); you don't want to miss out.
+- **AsyncAPI Community Updates Newsletter** - The June Edition issue will arrive in your inbox this week. Ensure [you subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/en/newsletter); you don't want to miss out.

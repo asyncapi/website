@@ -41,5 +41,5 @@ Missed the live streaming of AACoT'23 Madrid? Don't fret! Catch up on all the se
 <YouTube id="FN5eR1Zqh9c?si" />
 
 ## Coming in November
-- **AsyncAPI Community Updates Newsletter** - The next issue will drop on the 9th of November. Make sure to [subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/newsletter). 
+- **AsyncAPI Community Updates Newsletter** - The next issue will drop on the 9th of November. Make sure to [subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/en/newsletter). 
 - **AACoT'23 Bangalore Edition** - Our next stop for AACoT'23 will be held at the [Postman Bangalore office](https://www.postman.com/company/about-postman/) on the 30th of November. [Be sure to get your tickets](https://opencollective.com/asyncapi/events/asyncapi-conference-on-tour-6b3c0aa1/contribute/aacot-london-edition-66187) to join us. See you there!

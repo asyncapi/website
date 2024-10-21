@@ -76,4 +76,4 @@ If you are interested in joining the program or want to know more about our curr
 
 - **AACoT'24 London CFP Deadline** - [The Call for Speakers for AACoT'24 London Edition](https://conference.asyncapi.com/venue/london) will close on the 12th of July. Please submit your proposal soon and prepare to share your knowledge with the community.
 
-- **AsyncAPI Community Updates Newsletter** - The July Edition issue will arrive in your inbox on Thursday the 4th. Ensure [you subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/newsletter).
+- **AsyncAPI Community Updates Newsletter** - The July Edition issue will arrive in your inbox on Thursday the 4th. Ensure [you subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/en/newsletter).

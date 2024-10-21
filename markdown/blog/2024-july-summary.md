@@ -63,4 +63,4 @@ As a TSC member, if you identify incorrect data, [please create an issue in the 
 
 
 ## Coming in August
-- **AsyncAPI Community Updates Newsletter** - The August Edition issue will arrive in your inbox on the 7th. Ensure [you subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/newsletter).
+- **AsyncAPI Community Updates Newsletter** - The August Edition issue will arrive in your inbox on the 7th. Ensure [you subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/en/newsletter).
