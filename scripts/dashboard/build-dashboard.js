@@ -45,11 +45,11 @@ async function getHotDiscussions(discussions) {
         };
       } catch (e) {
         console.error(
-          `there was some issues while parsing this item: ${JSON.stringify(
+          `There was some issues while parsing this item: ${JSON.stringify(
             discussion
           )}`
         );
-        throw e;
+        throw e; // Throw the error instead of logging
       }
     })
   );
@@ -57,12 +57,14 @@ async function getHotDiscussions(discussions) {
   const filteredResult = result.filter(issue => issue.author !== 'asyncapi-bot');
   return filteredResult.slice(0, 12);
 }
+
 async function writeToFile(content) {
   writeFileSync(
     resolve(__dirname, '..', '..', 'dashboard.json'),
     JSON.stringify(content, null, '  ')
   );
 }
+
 async function mapGoodFirstIssues(issues) {
   return issues.map((issue) => ({
     id: issue.id,
@@ -86,7 +88,6 @@ function getLabel(issue, filter) {
   );
   return result && result.name.split('/')[1];
 }
-
 
 function monthsSince(date) {
   const seconds = Math.floor((new Date() - new Date(date)) / 1000);
@@ -112,7 +113,7 @@ async function getDiscussions(query, pageSize, endCursor = null) {
         `limit = ${result.rateLimit.limit}`,
         `remaining = ${result.rateLimit.remaining}`,
         `resetAt = ${result.rateLimit.resetAt}`
-      )
+      );
     }
 
     const hasNextPage = result.search.pageInfo.hasNextPage;
@@ -126,8 +127,10 @@ async function getDiscussions(query, pageSize, endCursor = null) {
     }
   } catch (e) {
     console.error(e);
+    throw e; // Throw the error instead of logging
   }
 }
+
 async function getDiscussionByID(isPR, id) {
   try {
     let result = await graphql(isPR ? Queries.pullRequestById : Queries.issueById, {
@@ -135,14 +138,14 @@ async function getDiscussionByID(isPR, id) {
       headers: {
         authorization: `token ${process.env.GITHUB_TOKEN}`,
       },
-
-    }
-    );
+    });
     return result;
   } catch (e) {
     console.error(e);
+    throw e; // Throw the error instead of logging
   }
 }
+
 async function start() {
   try {
     const [issues, PRs, rawGoodFirstIssues] = await Promise.all([
@@ -157,10 +160,12 @@ async function start() {
     ]);
     writeToFile({ hotDiscussions, goodFirstIssues });
   } catch (e) {
-    console.log('There were some issues parsing data from github.')
+    console.log('There were some issues parsing data from github.');
     console.log(e);
+    throw e; // Throw the error instead of logging
   }
 }
+
 start();
 
-module.exports = { getLabel, monthsSince, mapGoodFirstIssues, getHotDiscussions, getDiscussionByID }
+module.exports = { getLabel, monthsSince, mapGoodFirstIssues, getHotDiscussions, getDiscussionByID };
