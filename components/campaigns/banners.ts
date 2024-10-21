@@ -20,7 +20,7 @@ const showBannerParis = shouldShowBanner(cfpDeadlineParis);
 
 export const banners = [
   {
-    title: "AsyncAPI Online Conference 2024",
+    title: "AsyncAPI Online Conference'24",
     city: 'YouTube',
     dateLocation: '30th of October, 2024 | YouTube & LinkedIn',
     cfaText: 'Join us Live',
