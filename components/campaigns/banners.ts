@@ -23,8 +23,8 @@ export const banners = [
     title: "AsyncAPI Online Conference 2024",
     city: 'YouTube',
     dateLocation: '30th of October, 2024 | YouTube & LinkedIn',
-    cfaText: 'Join us for the AsyncAPI Online Conference',
-    eventName: 'Live on YouTube & LinkedIn',
+    cfaText: 'Join us Live',
+    eventName: 'the AsyncAPI Online Conference',
     cfpDeadline: cfpDeadlineParis,
     link: 'https://www.youtube.com/live/F9wHxd-v2f0?si=kPCqgUzqAKC0FaqJ',
     show: showBannerParis
