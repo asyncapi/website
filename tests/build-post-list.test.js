@@ -42,6 +42,7 @@ describe('buildPostList', () => {
     expect(outputExists).toBe(true);
 
     const output = JSON.parse(readFileSync(writeFilePath, 'utf-8'));
+    console.log(output)
 
     expect(output).toHaveProperty('docs');
     expect(output).toHaveProperty('blog');
@@ -60,6 +61,7 @@ describe('buildPostList', () => {
     await buildPostList(postDirectories, tempDir, writeFilePath);
 
     const output = JSON.parse(readFileSync(writeFilePath, 'utf-8'));
+    console.log(output)
 
     expect(output.docs.length).toBeGreaterThan(0);
     expect(output.docs.find(item => item.title === 'Section 1')).toBeDefined();
@@ -71,6 +73,7 @@ describe('buildPostList', () => {
     await buildPostList(postDirectories, tempDir, writeFilePath);
 
     const output = JSON.parse(readFileSync(writeFilePath, 'utf-8'));
+    console.log(output)
 
     const firstReleaseNote = output.blog.find(item => item.slug === '/blog/release-notes-2.1.0');
     const secondReleaseNote = output.blog.find(item => item.slug === '/blog/release-notes-2.1.1');
