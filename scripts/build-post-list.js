@@ -1,5 +1,5 @@
 const { readdirSync, statSync, existsSync, readFileSync, writeFileSync } = require('fs')
-const { resolve, basename } = require('path')
+const { basename } = require('path')
 const frontMatter = require('gray-matter')
 const toc = require('markdown-toc')
 const { slugify } = require('markdown-toc/lib/utils')
@@ -15,36 +15,36 @@ const result = {
   docsTree: {}
 }
 const releaseNotes = []
-const basePath = 'pages'
-const postDirectories = [
-  // order of these directories is important, as the blog should come before docs, to create a list of available release notes, which will later be used to release-note-link for spec docs
-  [`${basePath}/blog`, '/blog'],
-  [`${basePath}/docs`, '/docs'],
-  [`${basePath}/about`, '/about']
-];
 
 const addItem = (details) => {
-  if(details.slug.startsWith('/docs'))
+  if (details.slug.startsWith('/docs'))
     result["docs"].push(details)
-  else if(details.slug.startsWith('/blog'))
+  else if (details.slug.startsWith('/blog'))
     result["blog"].push(details)
-  else if(details.slug.startsWith('/about'))
+  else if (details.slug.startsWith('/about'))
     result["about"].push(details)
-  else {}
+  else { }
 }
 
-module.exports = async function buildPostList() {
-  walkDirectories(postDirectories, result)
-  const treePosts = buildNavTree(result["docs"].filter((p) => p.slug.startsWith('/docs/')))
-  result["docsTree"] = treePosts
-  result["docs"] = addDocButtons(result["docs"], treePosts)
-  if (process.env.NODE_ENV === 'production') {
-    // console.log(inspect(result, { depth: null, colors: true }))
+async function buildPostList(postDirectories, basePath, writeFilePath) {
+  try {
+    if (postDirectories.length === 0) {
+      throw new Error('Error while building post list: No post directories provided');
+    }
+    walkDirectories(postDirectories, result, basePath)
+    const treePosts = buildNavTree(result["docs"].filter((p) => p.slug.startsWith('/docs/')))
+    result["docsTree"] = treePosts
+    result["docs"] = addDocButtons(result["docs"], treePosts)
+    if (process.env.NODE_ENV === 'production') {
+      // console.log(inspect(result, { depth: null, colors: true }))
+    }
+    writeFileSync(writeFilePath, JSON.stringify(result, null, '  '))
+  } catch (error) {
+    throw new Error(`Error while building post list: ${error.message}`);
   }
-  writeFileSync(resolve(__dirname, '..', 'config', 'posts.json'), JSON.stringify(result, null, '  '))
 }
 
-function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, sectionId, rootSectionId) {
+function walkDirectories(directories, result, basePath, sectionWeight = 0, sectionTitle, sectionId, rootSectionId) {
   for (let dir of directories) {
     let directory = dir[0]
     let sectionSlug = dir[1] || ''
@@ -68,8 +68,8 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
         }
         details.isSection = true
         if (slugElements.length > 3) {
-           details.parent = slugElements[slugElements.length - 2]
-           details.sectionId = slugElements[slugElements.length - 1]
+          details.parent = slugElements[slugElements.length - 2]
+          details.sectionId = slugElements[slugElements.length - 1]
         }
         if (!details.parent) {
           details.isRootSection = true
@@ -79,7 +79,7 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
         details.slug = slug
         addItem(details)
         const rootId = details.parent || details.rootSectionId
-        walkDirectories([[fileName, slug]], result, details.weight, details.title, details.sectionId, rootId)
+        walkDirectories([[fileName, slug]], result, basePath, details.weight, details.title, details.sectionId, rootId)
       } else if (file.endsWith('.mdx') && !fileName.endsWith('/_section.mdx')) {
         const fileContent = readFileSync(fileName, 'utf-8')
         // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
@@ -96,18 +96,18 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
         details.id = fileName
         details.isIndex = fileName.endsWith('/index.mdx')
         details.slug = details.isIndex ? sectionSlug : slug.replace(/\.mdx$/, '')
-        if(details.slug.includes('/reference/specification/') && !details.title) {
+        if (details.slug.includes('/reference/specification/') && !details.title) {
           const fileBaseName = basename(data.slug)  // ex. v2.0.0 | v2.1.0-next-spec.1
           const fileName = fileBaseName.split('-')[0] // v2.0.0 | v2.1.0
           details.weight = specWeight--
 
           if (fileName.startsWith('v')) {
-             details.title = capitalize(fileName.slice(1)) 
+            details.title = capitalize(fileName.slice(1))
           } else {
             details.title = capitalize(fileName)
           }
 
-          if(releaseNotes.includes(details.title)){
+          if (releaseNotes.includes(details.title)) {
             details.releaseNoteLink = `/blog/release-notes-${details.title}`
           }
 
@@ -122,10 +122,10 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
         }
 
         // To create a list of available ReleaseNotes list, which will be used to add details.releaseNoteLink attribute.
-        if(file.startsWith("release-notes") && dir[1] === "/blog"){
-          const fileName_without_extension = file.slice(0,-4)
+        if (file.startsWith("release-notes") && dir[1] === "/blog") {
+          const fileName_without_extension = file.slice(0, -4)
           // removes the file extension. For example, release-notes-2.1.0.md -> release-notes-2.1.0
-          const version = fileName_without_extension.slice(fileName_without_extension.lastIndexOf("-")+1)
+          const version = fileName_without_extension.slice(fileName_without_extension.lastIndexOf("-") + 1)
 
           // gets the version from the name of the releaseNote .md file (from /blog). For example, version = 2.1.0 if fileName_without_extension = release-notes-2.1.0
           releaseNotes.push(version)
@@ -159,3 +159,5 @@ function isDirectory(dir) {
 function capitalize(text) {
   return text.split(/[\s\-]/g).map(word => `${word[0].toUpperCase()}${word.substr(1)}`).join(' ')
 }
+
+module.exports = {slugifyToC, buildPostList}
