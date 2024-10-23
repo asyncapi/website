@@ -92,7 +92,6 @@ module.exports = async function rssFeed(type, title, desc, outputPath) {
 
     const xml = json2xml.getXml(feed, '@', '', 2);
     await fs.writeFile(`./public/${outputPath}`, xml, 'utf8');
-    return `RSS feed generated successfully at ${outputPath}`;
   } catch (err) {
     return Promise.reject(new Error(`Failed to generate RSS feed: ${err.message}`));
   }

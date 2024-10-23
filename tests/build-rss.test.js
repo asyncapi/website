@@ -31,7 +31,7 @@ describe('rssFeed', () => {
 
     let error;
     try {
-      await expect(rssFeed(type, title, desc, outputPath)).resolves.not.toThrow();
+      await expect(rssFeed(type, title, desc, outputPath)).resolves.toBeUndefined()
     } catch (err) {
       error = err;
     }
@@ -48,7 +48,7 @@ describe('rssFeed', () => {
 
     let error;
     try {
-      await expect(rssFeed(type, title, desc, outputPath)).resolves.not.toThrow();
+      await expect(rssFeed(type, title, desc, outputPath)).resolves.toBeUndefined()
     } catch (err) {
       error = err
     }
@@ -69,7 +69,7 @@ describe('rssFeed', () => {
 
     let error;
     try {
-      await expect(rssFeed(type, title, desc, outputPath)).resolves.not.toThrow();
+      await expect(rssFeed(type, title, desc, outputPath)).resolves.toBeUndefined()
     } catch (err) {
       error = err
     }
@@ -92,7 +92,7 @@ describe('rssFeed', () => {
 
     let error;
     try {
-      await expect(rssFeed(type, title, desc, outputPath)).resolves.not.toThrow();
+      await expect(rssFeed(type, title, desc, outputPath)).resolves.toBeUndefined()
     } catch (err) {
       error = err
     }
@@ -145,7 +145,7 @@ describe('rssFeed', () => {
 
     let error;
     try {
-      await expect(rssFeed(type, title, desc, outputPath)).resolves.not.toThrow();
+      await expect(rssFeed(type, title, desc, outputPath)).resolves.toBeUndefined()
     } catch (err) {
       error = err;
     }
