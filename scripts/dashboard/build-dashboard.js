@@ -155,11 +155,9 @@ function monthsSince(date) {
 
 async function start() {
   try {
-    const [issues, PRs, rawGoodFirstIssues] = await Promise.all([
-      getDiscussions(Queries.hotDiscussionsIssues, 20),
-      getDiscussions(Queries.hotDiscussionsPullRequests, 20),
-      getDiscussions(Queries.goodFirstIssues, 20)
-    ]);
+    const issues = await getDiscussions(Queries.hotDiscussionsIssues, 20);
+    const PRs = await getDiscussions(Queries.hotDiscussionsPullRequests, 20);
+    const rawGoodFirstIssues = await getDiscussions(Queries.goodFirstIssues, 20);
     const discussions = issues.concat(PRs);
     const [hotDiscussions, goodFirstIssues] = await Promise.all([
       getHotDiscussions(discussions),
