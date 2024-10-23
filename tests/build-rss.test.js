@@ -31,7 +31,7 @@ describe('rssFeed', () => {
 
     let error;
     try {
-      await rssFeed(type, title, desc, outputPath);
+      await expect(rssFeed(type, title, desc, outputPath)).resolves.not.toThrow();
     } catch (err) {
       error = err;
     }
@@ -48,7 +48,7 @@ describe('rssFeed', () => {
 
     let error;
     try {
-      await rssFeed(type, title, desc, outputPath);
+      await expect(rssFeed(type, title, desc, outputPath)).resolves.not.toThrow();
     } catch (err) {
       error = err
     }
@@ -69,7 +69,7 @@ describe('rssFeed', () => {
 
     let error;
     try {
-      await rssFeed(type, title, desc, outputPath);
+      await expect(rssFeed(type, title, desc, outputPath)).resolves.not.toThrow();
     } catch (err) {
       error = err
     }
@@ -92,7 +92,7 @@ describe('rssFeed', () => {
 
     let error;
     try {
-      await rssFeed(type, title, desc, outputPath);
+      await expect(rssFeed(type, title, desc, outputPath)).resolves.not.toThrow();
     } catch (err) {
       error = err
     }
@@ -116,7 +116,8 @@ describe('rssFeed', () => {
 
     let error;
     try {
-      await rssFeed(type, title, desc, invalidOutputPath);
+      await expect(rssFeed(type, title, desc, invalidOutputPath))
+      .rejects.toThrow(/ENOENT|EACCES/);
     } catch (err) {
       error = err;
       expect(error.message).toMatch(/ENOENT|EACCES/);
@@ -130,7 +131,7 @@ describe('rssFeed', () => {
 
     let error;
     try {
-      await rssFeed(type, title, desc, outputPath);
+      await expect(rssFeed(type, title, desc, outputPath)).rejects.toThrow('Failed to generate RSS feed');
     } catch (err) {
       error = err;
       expect(error).toBeDefined();
@@ -144,7 +145,7 @@ describe('rssFeed', () => {
 
     let error;
     try {
-      await rssFeed(type, title, desc, outputPath);
+      await expect(rssFeed(type, title, desc, outputPath)).resolves.not.toThrow();
     } catch (err) {
       error = err;
     }
@@ -162,7 +163,7 @@ describe('rssFeed', () => {
 
     let error;
     try {
-      await rssFeed(type, title, desc, outputPath);
+      await expect(rssFeed(type, title, desc, outputPath)).rejects.toThrow('Missing required fields');
     } catch (err) {
       error = err;
       expect(error).toBeDefined();
@@ -176,7 +177,7 @@ describe('rssFeed', () => {
   
     let error;
     try {
-      await rssFeed(type, title, desc, outputPath);
+      await expect(rssFeed(type, title, desc, outputPath)).rejects.toThrow('Missing date in post data');
     } catch (err) {
       error = err;
       expect(error).toBeDefined();

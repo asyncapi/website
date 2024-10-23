@@ -19,19 +19,19 @@ module.exports = async function rssFeed(type, title, desc, outputPath) {
   try {
 
     let posts = getAllPosts()[`${type}`]
-    posts = posts.filter(post => {
-      if (!post.date) {
-        return false;
-      }
-      return true;
-    });
+    const missingDatePosts = posts.filter(post => !post.date);
+    posts = posts.filter(post => post.date);
     posts.sort((i1, i2) => {
-      const i1Date = new Date(i1.date)
-      const i2Date = new Date(i2.date)
-      if (i1.featured && !i2.featured) return -1
-      if (!i1.featured && i2.featured) return 1
-      return i2Date - i1Date
-    })
+      const i1Date = new Date(i1.date);
+      const i2Date = new Date(i2.date);
+      if (i1.featured && !i2.featured) return -1;
+      if (!i1.featured && i2.featured) return 1;
+      return i2Date - i1Date;
+    });
+
+    if (missingDatePosts.length > 0) {
+      return Promise.reject(new Error('Missing date in post data'));
+    }
 
     const base = 'https://www.asyncapi.com'
     const tracking = '?utm_source=rss';
