@@ -21,7 +21,6 @@ interface IAnnouncementHeroProps {
 export default function AnnouncementHero({ className = '', small = false }: IAnnouncementHeroProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const len = banners.length;
   const visibleBanners = useMemo(() => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)), [banners]);
   const numberOfVisibleBanners = visibleBanners.length;
 
@@ -80,11 +79,11 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
             ))}
           </div>
           <div className='m-auto flex justify-center'>
-            {banners.map((banner, index) => (
+            {visibleBanners.map((banner, index) => (
               <div
                 key={index}
                 className={`mx-1 size-2 cursor-pointer rounded-full ${
-                  activeIndex % len === index ? 'bg-primary-500' : 'bg-gray-300'
+                  activeIndex % numberOfVisibleBanners === index ? 'bg-primary-500' : 'bg-gray-300'
                 }`}
                 onClick={() => goToIndex(index)}
               />
