@@ -4,7 +4,7 @@ import ArrowLeft from '../icons/ArrowLeft';
 import ArrowRight from '../icons/ArrowRight';
 import Container from '../layout/Container';
 import Banner from './AnnouncementBanner';
-import { banners } from './banners';
+import { banners, shouldShowBanner } from './banners';
 
 interface IAnnouncementHeroProps {
   className?: string;
@@ -22,7 +22,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
   const [activeIndex, setActiveIndex] = useState(0);
 
   const len = banners.length;
-  const numberOfVisibleBanners = banners.filter((banner) => banner.show).length;
+  const numberOfVisibleBanners = banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)).length;
 
   const goToPrevious = () => {
     setActiveIndex((prevIndex) => (prevIndex === 0 ? len - 1 : prevIndex - 1));
@@ -64,7 +64,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
           <div className='relative flex min-h-72 w-full items-center justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
             {banners.map(
               (banner, index) =>
-                banner.show && (
+                shouldShowBanner(banner.cfpDeadline) && (
                   <Banner
                     key={index}
                     title={banner.title}

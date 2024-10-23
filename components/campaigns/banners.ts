@@ -3,7 +3,7 @@
  * @returns Whether the banner should be shown
  * @description Check if the current date is after the deadline
  */
-function shouldShowBanner(cfpDeadline: string) {
+export function shouldShowBanner(cfpDeadline: string) {
   const currentDate = new Date(); // G et the current date
   const deadline = new Date(cfpDeadline); // Convert the cfpDeadline string to a Date object
 
@@ -15,9 +15,6 @@ function shouldShowBanner(cfpDeadline: string) {
   return true;
 }
 
-const cfpDeadlineParis = '2024-10-30T06:00:00Z';
-const showBannerParis = shouldShowBanner(cfpDeadlineParis);
-
 export const banners = [
   {
     title: "AsyncAPI Online Conference'24",
@@ -25,8 +22,7 @@ export const banners = [
     dateLocation: '30th of October, 2024 | YouTube & LinkedIn',
     cfaText: 'Join us Live',
     eventName: 'the AsyncAPI Online Conference',
-    cfpDeadline: cfpDeadlineParis,
-    link: 'https://www.youtube.com/live/F9wHxd-v2f0?si=kPCqgUzqAKC0FaqJ',
-    show: showBannerParis
+    cfpDeadline: '2024-10-30T06:00:00Z',
+    link: 'https://www.youtube.com/live/F9wHxd-v2f0?si=kPCqgUzqAKC0FaqJ'
   }
 ];
