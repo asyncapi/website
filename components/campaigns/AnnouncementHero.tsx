@@ -25,11 +25,11 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
   const numberOfVisibleBanners = visibleBanners.length;
 
   const goToPrevious = () => {
-    setActiveIndex((prevIndex) => (prevIndex === 0 ? len - 1 : prevIndex - 1));
+    setActiveIndex((prevIndex) => (prevIndex === 0 ? numberOfVisibleBanners - 1 : prevIndex - 1));
   };
 
   const goToNext = () => {
-    setActiveIndex((prevIndex) => (prevIndex === len - 1 ? 0 : prevIndex + 1));
+    setActiveIndex((prevIndex) => (prevIndex === numberOfVisibleBanners - 1 ? 0 : prevIndex + 1));
   };
 
   const goToIndex = (index: number) => {
@@ -72,7 +72,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
                 cfpDeadline={banner.cfpDeadline}
                 link={banner.link}
                 city={banner.city}
-                activeBanner={index === activeIndex % len}
+                activeBanner={index === activeIndex % numberOfVisibleBanners}
                 className={className}
                 small={small}
               />
