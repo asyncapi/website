@@ -116,8 +116,7 @@ describe('rssFeed', () => {
 
     let error;
     try {
-      await expect(rssFeed(type, title, desc, invalidOutputPath))
-      .rejects.toThrow(/ENOENT|EACCES/);
+      await expect(rssFeed(type, title, desc, invalidOutputPath)).rejects.toThrow(/ENOENT|EACCES/);
     } catch (err) {
       error = err;
       expect(error.message).toMatch(/ENOENT|EACCES/);
