@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 import ArrowLeft from '../icons/ArrowLeft';
 import ArrowRight from '../icons/ArrowRight';
@@ -22,7 +22,8 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
   const [activeIndex, setActiveIndex] = useState(0);
 
   const len = banners.length;
-  const numberOfVisibleBanners = banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)).length;
+  const visibleBanners = useMemo(() => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)), [banners]);
+  const numberOfVisibleBanners = visibleBanners.length;
 
   const goToPrevious = () => {
     setActiveIndex((prevIndex) => (prevIndex === 0 ? len - 1 : prevIndex - 1));
@@ -62,24 +63,21 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
         )}
         <div className='relative flex w-5/6 flex-col items-center justify-center gap-2'>
           <div className='relative flex min-h-72 w-full items-center justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
-            {banners.map(
-              (banner, index) =>
-                shouldShowBanner(banner.cfpDeadline) && (
-                  <Banner
-                    key={index}
-                    title={banner.title}
-                    dateLocation={banner.dateLocation}
-                    cfaText={banner.cfaText}
-                    eventName={banner.eventName}
-                    cfpDeadline={banner.cfpDeadline}
-                    link={banner.link}
-                    city={banner.city}
-                    activeBanner={index === activeIndex % len}
-                    className={className}
-                    small={small}
-                  />
-                )
-            )}
+            {visibleBanners.map((banner, index) => (
+              <Banner
+                key={index}
+                title={banner.title}
+                dateLocation={banner.dateLocation}
+                cfaText={banner.cfaText}
+                eventName={banner.eventName}
+                cfpDeadline={banner.cfpDeadline}
+                link={banner.link}
+                city={banner.city}
+                activeBanner={index === activeIndex % len}
+                className={className}
+                small={small}
+              />
+            ))}
           </div>
           <div className='m-auto flex justify-center'>
             {banners.map((banner, index) => (
