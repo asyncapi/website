@@ -2,7 +2,7 @@
 name: PR testing - if Node project
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, reopened, synchronize, ready_for_review]
   push:
     branches: [master]
