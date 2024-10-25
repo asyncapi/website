@@ -1,5 +1,5 @@
 const rssFeed = require('../scripts/build-rss');
-const buildPostList = require('../scripts/build-post-list');
+const {buildPostList} = require('../scripts/build-post-list');
 const buildCaseStudiesList = require('../scripts/casestudies');
 const buildAdoptersList = require('../scripts/adopters');
 const buildFinanceInfoList = require('../scripts/finance');
