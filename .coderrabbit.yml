@@ -1,0 +1,50 @@
+language: "en-US"
+reviews:
+  profile: "assertive"
+  request_changes_workflow: false
+  high_level_summary: true
+  poem: true
+  review_status: true
+  auto_review:
+    enabled: true
+tools:
+  spellcheck:
+    enabled: true
+  markdownlint:
+    enabled: true
+  biome:
+    enabled: true
+  ruff:
+    enabled: true
+  github-checks:
+    enabled: true
+    timeout_ms: 180000
+  languagetool:
+    enabled: true
+    enabled_only: false
+    level: default
+  hadolint:
+    enabled: true
+  yamllint:
+    enabled: true
+  gitleaks:
+    enabled: true
+  eslint:
+    enabled: true
+  actionlint:
+    enabled: true
+  semgrep:
+    enabled: true
+chat:
+  auto_reply: true
+  custom_messages:
+    greeting: "Thanks for the mention! I'll review your code shortly."
+    farewell: "I've completed the review. Let me know if you need any clarification!"
+knowledge_base:
+  opt_out: false
+  learnings:
+    scope: "local"
+  issues:
+    scope: "local"
+  pull_requests:
+    scope: "local"
