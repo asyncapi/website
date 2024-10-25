@@ -265,10 +265,10 @@ components:
       type: oauth2
       flows:
         implicit:
-          authorizationUrl: https://example.com/api/oauth/dialog
+          authorizationUrl: 'https://example.com/api/oauth/dialog'
           availableScopes:
-            write:pets: modify pets in your account
-            read:pets: read your pets
+            'write:pets': modify pets in your account
+            'read:pets': read your pets
       scopes:
         - 'write:pets'
 ```
@@ -291,10 +291,10 @@ components:
       type: oauth2
       flows:
         implicit:
-          authorizationUrl: https://example.com/api/oauth/dialog
+          authorizationUrl: 'https://example.com/api/oauth/dialog'
           availableScopes:
-            write:pets: modify pets in your account
-            read:pets: read your pets
+            'write:pets': modify pets in your account
+            'read:pets': read your pets
       scopes:
         - "write:pets"
 ```
