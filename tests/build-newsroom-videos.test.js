@@ -1,22 +1,23 @@
-const { readFileSync, rmSync, mkdirSync } = require('fs');
-const { resolve } = require('path');
+const { readFileSync, removeSync, mkdirpSync } = require('fs-extra');
+const { resolve, join } = require('path');
 const { buildNewsroomVideos } = require('../scripts/build-newsroom-videos');
 const { mockApiResponse, expectedResult } = require('./fixtures/newsroomData');
 const fetch = require('node-fetch-2');
+const os = require('os');
 
 jest.mock('node-fetch-2', () => jest.fn());
 
 describe('buildNewsroomVideos', () => {
-    const testDir = resolve(__dirname, 'test_config');
+    const testDir = join(os.tmpdir(), 'test_config');
     const testFilePath = resolve(testDir, 'newsroom_videos.json');
 
     beforeAll(() => {
-        mkdirSync(testDir, { recursive: true });
+        mkdirpSync(testDir);
         process.env.YOUTUBE_TOKEN = 'testkey';
     });
 
     afterAll(() => {
-        rmSync(testDir, { recursive: true, force: true });
+        removeSync(testDir);
     });
 
     beforeEach(() => {
@@ -89,7 +90,7 @@ describe('buildNewsroomVideos', () => {
             json: jest.fn().mockResolvedValue(mockApiResponse),
         });
 
-        const invalidPath = '/invalid_dir/newsroom_videos.json';
+        const invalidPath = resolve(os.tmpdir(), 'invalid_dir', 'newsroom_videos.json');
 
         try {
             await buildNewsroomVideos(invalidPath);
@@ -97,5 +98,4 @@ describe('buildNewsroomVideos', () => {
             expect(err.message).toMatch(/ENOENT|EACCES/);
         }
     });
-
 });

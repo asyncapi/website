@@ -1,0 +1,17 @@
+{
+  "category1": {
+    "description": "Sample Category",
+    "toolsList": [
+      {
+        "title": "Tool B",
+        "filters": {
+          "language": "Python",
+          "technology": ["Flask"]
+        },
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/tool-b"
+        }
+      }
+    ]
+  }
+}
