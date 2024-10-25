@@ -351,3 +351,14 @@ abbr[title] {
 .explorer-menu-wrapper > div > div > div > button {
   margin-top: 0px;
 }
+
+button#sidebarToggle {
+  width: 50px; /* or any fixed size */
+  height: 50px;
+  display: inline-block;
+  background-color: white; /* for default */
+}
+
+button#sidebarToggle.open {
+  background-color: black; /* changes color when open */
+}

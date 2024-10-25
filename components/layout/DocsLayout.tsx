@@ -20,6 +20,8 @@ import DocsMobileMenu from '../navigation/DocsMobileMenu';
 import DocsNavWrapper from '../navigation/DocsNavWrapper';
 import TOC from '../TOC';
 import Heading from '../typography/Heading';
+import HideIcon from '../icons/HideIcon';
+import ShowIcon from '../icons/ShowIcon';
 
 interface IDocsLayoutProps {
   post: IPost;
@@ -78,6 +80,13 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
   const [showMenu, setShowMenu] = useState(false);
   const [explorerDocMenu, setExplorerDocMenu] = useState(false);
 
+  // New state to toggle the sidebar
+  const [isSidebarVisible, setisSidebarVisible] = useState(true);
+
+  const toggleSidebar = () => {
+    setisSidebarVisible(!isSidebarVisible);  //toggle the state
+  }
+
   if (!post) return <ErrorPage statusCode={404} />;
   if (post.title === undefined) throw new Error('Post title is required');
 
@@ -116,9 +125,25 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
     <DocsContext.Provider value={{ post, navItems }}>
       <div className='w-full bg-white px-4 sm:px-6 lg:px-8 xl:mx-auto xl:max-w-7xl'>
         {showMenu && <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />}
+
+          <div className='flex flex-row' id='main-content'>
+            {/* togggle button */}
+            <button id='sidebarToggle' onClick={toggleSidebar} className='p-2 bg-slate-500 hover:bg-slate-700 rounded-md'>
+            {isSidebarVisible ? <HideIcon /> : <ShowIcon />}
+          </button>
+
+            {/* Conditionally render the sidebar */}
+          {isSidebarVisible && (
+            <div className='lg:flex lg:shrink-0'>
+              {sidebar}
+            </div>
+          )}
+
+
+        </div>
+        {/* Conditionally hide the main content when the sidebar is visible */}
+        {!isSidebarVisible && (
         <div className='flex flex-row' id='main-content'>
-          {/* <!-- Static sidebar for desktop --> */}
-          {sidebar}
           <div className='flex w-0 max-w-full flex-1 flex-col lg:max-w-(screen-16)'>
             <main className='relative z-0 pb-6 pt-2 focus:outline-none md:py-6' tabIndex={0}>
               {!showMenu && (
@@ -209,6 +234,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
             </main>
           </div>
         </div>
+        )}
       </div>
     </DocsContext.Provider>
   );
