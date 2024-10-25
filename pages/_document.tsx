@@ -1,4 +1,5 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
+import React from 'react';
 
 import i18nextConfig from '../next-i18next.config';
 

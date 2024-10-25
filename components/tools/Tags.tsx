@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface SelectTagsProps {
   // eslint-disable-next-line prettier/prettier
 

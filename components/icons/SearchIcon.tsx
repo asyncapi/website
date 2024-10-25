@@ -1,3 +1,5 @@
+import React from 'react';
+
 /**
  * @description Icon for search button
  * @param {string} props.className - The class name for styling the icon.

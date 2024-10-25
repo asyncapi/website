@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { buckets } from '../data/buckets';
 import DocsArrow from '../icons/DocsArrow';
