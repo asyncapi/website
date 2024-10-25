@@ -28,10 +28,16 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
 
   const CALENDAR_URL =
     'https://calendar.google.com/calendar/embed?src=c_q9tseiglomdsj6njuhvbpts11c%40group.calendar.google.com&ctz=UTC';
-  const eventsExist = eventsData.length > 0;
+  const currentDate = new Date();
+  const eventsExist = eventsData?.filter((event: IEvent) => moment(event.date).isAfter(currentDate)).length > 0;
 
   return (
-    <div className={twMerge('overflow-hidden rounded-md border border-gray-200 bg-white p-4 h-full', className)}>
+    <div
+      className={twMerge(
+        'overflow-hidden rounded-md border border-gray-200 bg-white p-4 h-full flex flex-col gap-2',
+        className
+      )}
+    >
       <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.mdSemibold}>
         {t('calendar.title')}
       </Heading>
@@ -43,7 +49,7 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
                 <span className='flex-1 self-center text-center'>{moment(event.date).format('D')}</span>
               </div>
               <div className='grow text-left sm:mt-0 sm:pl-6'>
-                <h2 className='title-font text-xl font-medium text-gray-900 hover:text-gray-500'>{event.title}</h2>
+                <h2 className='title-font font-medium text-gray-900 hover:text-gray-500'>{event.title}</h2>
                 <p className='text-gray-600'>
                   {moment(event.date).local().format('LLLL')} UTC
                   {moment(event.date).local().format('Z')}
