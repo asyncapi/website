@@ -28,6 +28,17 @@
       "score": 19.527872034949596
     },
     {
+      "id": "PR_kwDOBW5R_c52BRgf",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: added test for build-rss.js",
+      "author": "vishvamsinh28",
+      "resourcePath": "/asyncapi/website/pull/3101",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 19.240697446200336
+    },
+    {
       "id": "PR_kwDOFLhIt85oVQqh",
       "isPR": true,
       "isAssigned": false,
@@ -37,17 +48,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 18.37917367995256
-    },
-    {
-      "id": "PR_kwDOBW5R_c52BRgf",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: added test for build-rss.js",
-      "author": "vishvamsinh28",
-      "resourcePath": "/asyncapi/website/pull/3101",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 17.517649913704783
     },
     {
       "id": "I_kwDOGQYLdM5AX1lK",
@@ -67,7 +67,7 @@
           "color": "0E8A16"
         }
       ],
-      "score": 15.794602381209232
+      "score": 16.08177696995849
     },
     {
       "id": "PR_kwDOFLhIt853IEwA",
@@ -130,26 +130,6 @@
       "score": 12.922856493716644
     },
     {
-      "id": "I_kwDOBW5R_c5Pi3rO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Epic roadmap to the new AsyncAPI community section",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/website/issues/903",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "keep-open",
-          "color": "ffee84"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        }
-      ],
-      "score": 11.073163907693488
-    },
-    {
       "id": "I_kwDODwv8N86BkfYV",
       "isPR": false,
       "isAssigned": false,
@@ -164,6 +144,17 @@
         }
       ],
       "score": 10.912634372471834
+    },
+    {
+      "id": "PR_kwDOFLhIt85bqKL8",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add Bounty Program Rules",
+      "author": "aeworxet",
+      "resourcePath": "/asyncapi/community/pull/897",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 10.657920261154981
     }
   ],
   "goodFirstIssues": [
