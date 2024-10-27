@@ -56,7 +56,10 @@ module.exports = async function rssFeed(type, title, desc, outputPath) {
     rss.channel.item = []
 
     for (let post of posts) {
-      if (!post.title || !post.slug || !post.excerpt || !post.date) {
+      const invalidPosts = posts.filter(post =>
+        !post.title || !post.slug || !post.excerpt || !post.date
+      );
+      if (invalidPosts.length > 0) {
         return Promise.reject(new Error('Missing required fields in post data'));
       }
       const link = `${base}${post.slug}${tracking}`;
