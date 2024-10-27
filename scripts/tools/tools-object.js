@@ -9,7 +9,6 @@ addFormats(ajv, ["uri"])
 const validate = ajv.compile(schema)
 const { convertToJson } = require('../utils');
 
-
 // Config options set for the Fuse object
 const options = {
   includeScore: true,
