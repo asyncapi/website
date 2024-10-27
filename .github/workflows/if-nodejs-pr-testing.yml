@@ -2,7 +2,7 @@
 name: PR testing - if Node project
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, reopened, synchronize, ready_for_review]
   push:
     branches: [master]
@@ -42,6 +42,11 @@ jobs:
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # Checkout the merge commit instead of the pull request head commit for a pull request
+          # Fallback to the head commit if its not a pull request
+          ref: ${{ github.event.pull_request.number != '' && format('refs/pull/{0}/merge', github.event.pull_request.number) || github.ref }}
+
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Check if Node.js project and has package.json
         id: packagejson
@@ -61,8 +66,7 @@ jobs:
         name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "${{ steps.nodeversion.outputs.version }}"
-
+          node-version: '${{ steps.nodeversion.outputs.version }}'
       - name: Install dependencies
         run: npm ci
       - if: steps.packagejson.outputs.exists == 'true'
@@ -75,6 +79,41 @@ jobs:
         name: Run release assets generation to make sure PR does not break it
         shell: bash
         run: npm run generate:assets --if-present
+
+      # Run the test:md script and capture output
+      - if: ${{ steps.packagejson.outputs.exists == 'true' && matrix.os == 'ubuntu-latest' }}
+        name: Run markdown checks
+        id: markdown_check
+        run: |
+          ERRORS=$(npm run test:md | sed -n '/Errors in file/,$p')
+          echo "markdown_output<<EOF" >> $GITHUB_OUTPUT
+          echo "$ERRORS" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      # Post a comment using sticky-pull-request-comment
+      - name: Comment on PR with markdown issues
+        if: ${{ steps.markdown_check.outputs.markdown_output != '' && matrix.os == 'ubuntu-latest' }}
+        uses: marocchino/sticky-pull-request-comment@3d60a5b2dae89d44e0c6ddc69dd7536aec2071cd
+        with:
+          header: markdown-check-error
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          message: |
+            ### Markdown Check Results
+
+            We found issues in the following markdown files:
+
+            ```
+            ${{ steps.markdown_check.outputs.markdown_output }}
+            ```
+
+      # Delete the comment if there are no issues
+      - if: ${{ steps.markdown_check.outputs.markdown_output == '' && matrix.os == 'ubuntu-latest' }}
+        name: Delete markdown check comment
+        uses: marocchino/sticky-pull-request-comment@3d60a5b2dae89d44e0c6ddc69dd7536aec2071cd
+        with:
+          header: markdown-check-error
+          delete: true
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - if: steps.packagejson.outputs.exists == 'true'
         name: Upload Coverage to Codecov
