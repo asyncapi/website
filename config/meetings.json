@@ -1,24 +1,10 @@
 [
   {
-    "title": "Essential Building Blocks Working Group",
-    "calLink": "https://www.google.com/calendar/event?eid=M2pxNGNwZnRqNGpjcDg2cXVnc3VqZ2wwMHMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1294",
-    "banner": "",
-    "date": "2024-07-16T18:00:00.000Z"
-  },
-  {
     "title": "Community Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=am5kcG50YW9obGUzcmVucWZqMTQ4NDlsbjQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1305",
     "banner": "https://github.com/asyncapi/community/assets/40604284/65376079-c5e8-467d-b513-21dfaba4570f",
     "date": "2024-07-23T16:00:00.000Z"
-  },
-  {
-    "title": "Marketing WG Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=Z3NzN2JvcjdnY2diMnJpczA4dWMxMGh2ZGcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1309",
-    "banner": "",
-    "date": "2024-07-16T14:00:00.000Z"
   },
   {
     "title": "Marketing WG Meeting",
@@ -159,5 +145,19 @@
     "url": "https://github.com/asyncapi/community/issues/1562",
     "banner": "",
     "date": "2024-10-30T10:00:00.000Z"
+  },
+  {
+    "title": "Conference Dry Run",
+    "calLink": "https://www.google.com/calendar/event?eid=ZmR1c25lZG1wc2swOWloNDd2c2VudWc5OTggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1566",
+    "banner": "",
+    "date": "2024-10-28T16:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI + WebSocket: The Collaborative Combo ",
+    "calLink": "https://www.google.com/calendar/event?eid=bGo4aXNjNzg3Ym5tbWRtb2wxZ2ZuMmtxN2sgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1569",
+    "banner": "https://github.com/user-attachments/assets/0cdfc741-e61d-4710-bb0a-af9f7485ff9a",
+    "date": "2024-11-01T13:00:00.000Z"
   }
 ]

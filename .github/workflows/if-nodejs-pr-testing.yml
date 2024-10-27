@@ -2,7 +2,7 @@
 name: PR testing - if Node project
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, reopened, synchronize, ready_for_review]
   push:
     branches: [master]
@@ -42,6 +42,11 @@ jobs:
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # Checkout the merge commit instead of the pull request head commit for a pull request
+          # Fallback to the head commit if its not a pull request
+          ref: ${{ github.event.pull_request.number != '' && format('refs/pull/{0}/merge', github.event.pull_request.number) || github.ref }}
+
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Check if Node.js project and has package.json
         id: packagejson
@@ -76,7 +81,7 @@ jobs:
         run: npm run generate:assets --if-present
 
       # Run the test:md script and capture output
-      - if: steps.packagejson.outputs.exists == 'true'
+      - if: ${{ steps.packagejson.outputs.exists == 'true' && matrix.os == 'ubuntu-latest' }}
         name: Run markdown checks
         id: markdown_check
         run: |
@@ -87,7 +92,7 @@ jobs:
 
       # Post a comment using sticky-pull-request-comment
       - name: Comment on PR with markdown issues
-        if: ${{ steps.markdown_check.outputs.markdown_output != '' }}
+        if: ${{ steps.markdown_check.outputs.markdown_output != '' && matrix.os == 'ubuntu-latest' }}
         uses: marocchino/sticky-pull-request-comment@3d60a5b2dae89d44e0c6ddc69dd7536aec2071cd
         with:
           header: markdown-check-error
@@ -102,7 +107,7 @@ jobs:
             ```
 
       # Delete the comment if there are no issues
-      - if: ${{ steps.markdown_check.outputs.markdown_output == '' }}
+      - if: ${{ steps.markdown_check.outputs.markdown_output == '' && matrix.os == 'ubuntu-latest' }}
         name: Delete markdown check comment
         uses: marocchino/sticky-pull-request-comment@3d60a5b2dae89d44e0c6ddc69dd7536aec2071cd
         with:
