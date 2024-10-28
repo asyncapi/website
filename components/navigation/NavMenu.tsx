@@ -39,7 +39,7 @@ export default function NavMenu({ items = [] }: NavMenuProps) {
                 data-testid='NavMenu-Link'
               >
                 <Paragraph typeStyle={ParagraphTypeStyle.sm} textColor='text-gray-900' className='font-semibold'>
-                {item.text}
+                  {item.text}
                 </Paragraph>
                 <Paragraph typeStyle={ParagraphTypeStyle.sm}>{item.description}</Paragraph>
               </Link>
