@@ -81,3 +81,15 @@
   resources:
     - title: "Slides: AsyncAPI For Platform Self-Service: A GitOps Tale"
       link: https://drive.google.com/file/d/1y67PI8NaITPPwZAiDF2Zs7ISfcIpqMV8/view?usp=sharing
+
+- companyName: Adidas
+  useCase: AsyncAPI is a standard for defining asynchronous APIs using Apache Kafka. AsyncAPI governed under official guidelines. AsyncAPI is promoted to be used for documentation and code generation.
+  resources:
+    - title: "Docs: AsyncAPI and Kafka Guidelines"
+      link: https://adidas.gitbook.io/api-guidelines/asynchronous-api-guidelines/kafka-asynchronous-guidelines/a_introduction/why-asyncapi
+
+- companyName: Morgan Stanley
+  useCase: AsyncAPI is promoted not only inside the company but also as a standard for FinOS Foundation for managing architecture as code.
+  resources:
+    - title: "Slides: Deploying WebSockets with AsyncAPI and Architecture as Code"
+      link: https://drive.google.com/file/d/1YzLwQZsMUXGwj_Lsqv-ZnvV2knuowWrS/view?usp=drive_link
