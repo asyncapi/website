@@ -50,7 +50,7 @@ export default function SubCategoryDocsNav({ subCategory, activeItem, onClick }:
         <DocsNavItem
           {...subCategory.item}
           activeSlug={activeItem}
-          defaultClassName={`font-body text-sm text-black leading-8 ${
+          defaultClassName={`font-body text-sm text-blue-600 leading-8 ${
             subCategory.children ? 'hover:font-semibold' : 'hover:text-secondary-600'
           }`}
           inactiveClassName='font-regular'
