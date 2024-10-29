@@ -23,6 +23,7 @@
     "generate:videos": "node scripts/build-newsroom-videos.js",
     "generate:tools": "node scripts/build-tools.js",
     "test:netlify": "deno test --allow-env --trace-ops netlify/**/*.test.ts",
+    "test:md": "node scripts/markdown/check-markdown.js",
     "dev:storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build"
   },
@@ -69,6 +70,7 @@
     "clsx": "^2.1.0",
     "cssnano": "^6.0.3",
     "dotenv": "^16.4.4",
+    "fs-extra": "^11.2.0",
     "fuse.js": "^7.0.0",
     "googleapis": "^133.0.0",
     "gray-matter": "^4.0.3",

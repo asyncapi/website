@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Select from '../form/Select';
 import { applyFilterList, onFilterApply } from '../helpers/applyFilter';
