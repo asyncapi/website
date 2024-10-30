@@ -62,7 +62,11 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
         )}
         <div className='relative flex w-5/6 flex-col items-center justify-center gap-2'>
           <div className='relative flex min-h-72 w-full items-center justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
-            {visibleBanners.map((banner, index) => (
+          {visibleBanners.map((banner, index) => {
+            // Only render active banner and immediate neighbors
+          const isVisible = Math.abs(index - (activeIndex % numberOfVisibleBanners)) <= 1;
+           if (!isVisible) return null;
+          return(
               <Banner
                 key={index}
                 title={banner.title}
@@ -76,7 +80,8 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
                 className={className}
                 small={small}
               />
-            ))}
+          );
+        })}
           </div>
           <div className='m-auto flex justify-center'>
             {visibleBanners.map((banner, index) => (
