@@ -37,9 +37,6 @@ tools:
     enabled: true
 chat:
   auto_reply: true
-  custom_messages:
-    greeting: "Thanks for the mention! I'll review your code shortly."
-    farewell: "I've completed the review. Let me know if you need any clarification!"
 knowledge_base:
   opt_out: false
   learnings:
