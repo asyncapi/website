@@ -54,7 +54,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
         {numberOfVisibleBanners > 1 && (
           <div
             className={`absolute left-0 top-1/2 z-10 mb-2 flex size-8 -translate-y-1/2 cursor-pointer
-          items-center justify-center rounded-full bg-primary-500 opacity-50 hover:bg-primary-600 md:opacity-100`}
+              items-center justify-center rounded-full bg-primary-500 opacity-50 hover:bg-primary-600 md:opacity-100`}
             onClick={goToPrevious}
           >
             <ArrowLeft className='w-4 text-white' />
@@ -62,26 +62,30 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
         )}
         <div className='relative flex w-5/6 flex-col items-center justify-center gap-2'>
           <div className='relative flex min-h-72 w-full items-center justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
-          {visibleBanners.map((banner, index) => {
-            // Only render active banner and immediate neighbors
-          const isVisible = Math.abs(index - (activeIndex % numberOfVisibleBanners)) <= 1;
-           if (!isVisible) return null;
-          return(
-              <Banner
-                key={index}
-                title={banner.title}
-                dateLocation={banner.dateLocation}
-                cfaText={banner.cfaText}
-                eventName={banner.eventName}
-                cfpDeadline={banner.cfpDeadline}
-                link={banner.link}
-                city={banner.city}
-                activeBanner={index === activeIndex % numberOfVisibleBanners}
-                className={className}
-                small={small}
-              />
-          );
-        })}
+            {visibleBanners.map((banner, index) => {
+              // Only render active banner and immediate neighbors
+              const isVisible = Math.abs(index - (activeIndex % numberOfVisibleBanners)) <= 1;
+
+              if (!isVisible) {
+                return null;
+              }
+
+              return (
+                <Banner
+                  key={index}
+                  title={banner.title}
+                  dateLocation={banner.dateLocation}
+                  cfaText={banner.cfaText}
+                  eventName={banner.eventName}
+                  cfpDeadline={banner.cfpDeadline}
+                  link={banner.link}
+                  city={banner.city}
+                  activeBanner={index === activeIndex % numberOfVisibleBanners}
+                  className={className}
+                  small={small}
+                />
+              );
+            })}
           </div>
           <div className='m-auto flex justify-center'>
             {visibleBanners.map((banner, index) => (
@@ -98,7 +102,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
         {numberOfVisibleBanners > 1 && (
           <div
             className={`absolute right-0 top-1/2 z-10 mb-2 size-8 -translate-y-1/2 cursor-pointer
-                      rounded-full bg-primary-500 opacity-50 hover:bg-primary-600 md:opacity-100`}
+              rounded-full bg-primary-500 opacity-50 hover:bg-primary-600 md:opacity-100`}
             onClick={goToNext}
           >
             <ArrowRight className='text-white' />
