@@ -91,13 +91,6 @@
     "date": "2024-10-15T08:00:00.000Z"
   },
   {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=amw3ZTBwZWllOTViYmMzMGFpNDhtdW9pZDggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1546",
-    "banner": "https://github.com/user-attachments/assets/123ebfbe-6662-47ae-b36c-c2ba2e5d40f9",
-    "date": "2024-10-29T16:00:00.000Z"
-  },
-  {
     "title": "Let's talk about contributing Hacktoberfest Edition",
     "calLink": "https://www.google.com/calendar/event?eid=Zm9lMzRvM2F2MGljbWplZDJnNWYwczIwMzQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1549",
