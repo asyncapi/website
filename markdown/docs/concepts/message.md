@@ -18,7 +18,7 @@ A{{sender application}} --> b --> C{{receiver application}}
   
 ```
 
-The diagram above illustrates the sender application that transmits a message to the receiver application.
+The diagram above illustrates how a sender application transmits a message through a channel to a receiver application, demonstrating the basic flow of message-based communication.
 
 ## Messages vs Events
 A **message** conveys information between applications, while an **event** is a message that provides details of something that has already occurred. A crucial aspect to note is that depending on the type of information a message carries, it can either be an event, query, or command. Check the diagram below.
