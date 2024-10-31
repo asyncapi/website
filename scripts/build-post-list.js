@@ -160,4 +160,4 @@ function capitalize(text) {
   return text.split(/[\s\-]/g).map(word => `${word[0].toUpperCase()}${word.substr(1)}`).join(' ')
 }
 
-module.exports = {slugifyToC, buildPostList}
+module.exports = { slugifyToC, buildPostList }
