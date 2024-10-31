@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import IconArrowRight from '../icons/ArrowRight';
 import Modal from '../Modal';

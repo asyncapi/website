@@ -1,3 +1,5 @@
+import React from 'react';
+
 import type { IChapterSuggestionProps } from './ChapterSuggestion';
 import ChapterSuggestion from './ChapterSuggestion';
 
