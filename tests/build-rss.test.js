@@ -44,37 +44,41 @@ describe('rssFeed', () => {
 
   it('should prioritize featured posts over non-featured ones', async () => {
     jest.doMock('../config/posts.json', () => mockRssData, { virtual: true });
-
-    await expect(rssFeed(type, title, desc, outputPath)).resolves.toBeUndefined()
-
-
+  
+    await expect(rssFeed(type, title, desc, outputPath)).resolves.toBeUndefined();
+  
     const filePath = path.join(__dirname, '..', 'public', outputPath);
     const fileContent = fs.readFileSync(filePath, 'utf8');
-
+  
     const parsedContent = parser.parse(fileContent);
     const itemTitles = parsedContent.rss.channel.item.map(item => item.title);
-
-    expect(itemTitles[0]).toContain('Test Post 1');
-    expect(itemTitles[1]).toContain('Another Featured Post');
-    expect(itemTitles[2]).toContain('Non-Featured Post 1');
+  
+    expect(itemTitles[0]).toBe('Test Post 1');
+    expect(itemTitles[1]).toBe('Another Featured Post');
+  
+    expect(itemTitles[2]).toBe('Post with Special Characters: & < > "');
+    expect(itemTitles[3]).toBe('Post with UTC Date Format');
+    expect(itemTitles[4]).toBe('Non-Featured Post 1');
+    expect(itemTitles[5]).toBe('Non-Featured Post 3');
   });
-
+  
   it('should sort posts by date in descending order', async () => {
     jest.doMock('../config/posts.json', () => mockRssData, { virtual: true });
-
-    await expect(rssFeed(type, title, desc, outputPath)).resolves.toBeUndefined()
-
+  
+    await expect(rssFeed(type, title, desc, outputPath)).resolves.toBeUndefined();
+  
     const filePath = path.join(__dirname, '..', 'public', outputPath);
     const fileContent = fs.readFileSync(filePath, 'utf8');
-
+  
     const parsedContent = parser.parse(fileContent);
     const itemTitles = parsedContent.rss.channel.item.map(item => item.title);
-
-    expect(itemTitles[0]).toContain('Test Post 1');
-    expect(itemTitles[1]).toContain('Another Featured Post');
-    expect(itemTitles[2]).toContain('Non-Featured Post 1');
-    expect(itemTitles[3]).toContain('Non-Featured Post 3');
-    expect(itemTitles[4]).toContain('Non-Featured Post 2');
+  
+    expect(itemTitles[0]).toBe('Test Post 1');
+    expect(itemTitles[1]).toBe('Another Featured Post')
+    expect(itemTitles[2]).toBe('Post with Special Characters: & < > "');
+    expect(itemTitles[3]).toBe('Post with UTC Date Format');
+    expect(itemTitles[4]).toBe('Non-Featured Post 1');
+    expect(itemTitles[5]).toBe('Non-Featured Post 3');
   });
 
   it('should set correct enclosure type based on image extension', async () => {
