@@ -1,12 +1,5 @@
 [
   {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=am5kcG50YW9obGUzcmVucWZqMTQ4NDlsbjQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1305",
-    "banner": "https://github.com/asyncapi/community/assets/40604284/65376079-c5e8-467d-b513-21dfaba4570f",
-    "date": "2024-07-23T16:00:00.000Z"
-  },
-  {
     "title": "Marketing WG Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=b2twOWkyZ3ExcGxnYnAxbzBobzA1MWxvcW8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1321",
