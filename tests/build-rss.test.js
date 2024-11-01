@@ -7,18 +7,21 @@ describe('rssFeed', () => {
   const testOutputDir = path.join(__dirname, '..', 'public', 'test-output');
   const outputPath = 'test-output/rss.xml';
 
-  beforeAll(() => {
-    if (!fs.existsSync(testOutputDir)) {
-      fs.mkdirSync(testOutputDir, { recursive: true });
+  beforeAll(async () => {
+    try {
+      await fs.promises.mkdir(testOutputDir, { recursive: true });
+    } catch (err) {
+      throw new Error(`Error while creating temp dir: ${err.message}`);
     }
   });
 
-  afterAll(() => {
-    if (fs.existsSync(testOutputDir)) {
-      fs.readdirSync(testOutputDir).forEach(file => {
-        fs.unlinkSync(path.join(testOutputDir, file));
-      });
-      fs.rmdirSync(testOutputDir);
+  afterAll(async () => {
+    try {
+      const files = await fs.promises.readdir(testOutputDir);
+      await Promise.all(files.map(file => fs.promises.unlink(path.join(testOutputDir, file))));
+      await fs.promises.rmdir(testOutputDir);
+    } catch (err) {
+      throw new Error(`Error while deleting temp dir: ${err.message}`);
     }
   });
 
@@ -125,9 +128,9 @@ describe('rssFeed', () => {
   });
 
   it('should throw an error when a post is missing a date field during sorting', async () => {
-  
+
     jest.doMock('../config/posts.json', () => missingDateMockData, { virtual: true });
-  
+
     await expect(rssFeed(type, title, desc, outputPath)).rejects.toThrow('Failed to generate RSS feed: Missing date in posts: Post without Date');
 
   });
