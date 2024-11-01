@@ -30,7 +30,7 @@ module.exports = async function rssFeed(type, title, desc, outputPath) {
     });
 
     if (missingDatePosts.length > 0) {
-      throw new Error('Missing date in post data');
+      throw new Error(`Missing date in posts: ${missingDatePosts.map(p => p.title || p.slug).join(', ')}`);
     }
 
     const base = 'https://www.asyncapi.com'
@@ -55,10 +55,10 @@ module.exports = async function rssFeed(type, title, desc, outputPath) {
     rss.channel.generator = 'next.js'
     rss.channel.item = []
 
-   const invalidPosts = posts.filter(post =>
+    const invalidPosts = posts.filter(post =>
       !post.title || !post.slug || !post.excerpt || !post.date
     );
-    
+
     if (invalidPosts.length > 0) {
       throw new Error('Missing required fields in post data');
     }

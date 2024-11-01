@@ -128,7 +128,7 @@ describe('rssFeed', () => {
   
     jest.doMock('../config/posts.json', () => missingDateMockData, { virtual: true });
   
-    await expect(rssFeed(type, title, desc, outputPath)).rejects.toThrow('Missing date in post data');
+    await expect(rssFeed(type, title, desc, outputPath)).rejects.toThrow('Failed to generate RSS feed: Missing date in posts: Post without Date');
 
   });
 });
