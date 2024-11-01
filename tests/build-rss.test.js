@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const rssFeed = require('../scripts/build-rss');
+const { XMLParser } = require('fast-xml-parser');
+const parser = new XMLParser({ ignoreAttributes: false });
 const { mockRssData, title, type, desc, missingDateMockData, incompletePostMockData } = require('./fixtures/rssData');
 
 describe('rssFeed', () => {
@@ -49,11 +51,12 @@ describe('rssFeed', () => {
     const filePath = path.join(__dirname, '..', 'public', outputPath);
     const fileContent = fs.readFileSync(filePath, 'utf8');
 
-    const itemTitles = fileContent.match(/<title>(.*?)<\/title>/g);
+    const parsedContent = parser.parse(fileContent);
+    const itemTitles = parsedContent.rss.channel.item.map(item => item.title);
 
-    expect(itemTitles[1]).toContain('Test Post 1');
-    expect(itemTitles[2]).toContain('Another Featured Post');
-    expect(itemTitles[3]).toContain('Non-Featured Post 1');
+    expect(itemTitles[0]).toContain('Test Post 1');
+    expect(itemTitles[1]).toContain('Another Featured Post');
+    expect(itemTitles[2]).toContain('Non-Featured Post 1');
   });
 
   it('should sort posts by date in descending order', async () => {
@@ -64,13 +67,14 @@ describe('rssFeed', () => {
     const filePath = path.join(__dirname, '..', 'public', outputPath);
     const fileContent = fs.readFileSync(filePath, 'utf8');
 
-    const itemTitles = fileContent.match(/<title>(.*?)<\/title>/g);
+    const parsedContent = parser.parse(fileContent);
+    const itemTitles = parsedContent.rss.channel.item.map(item => item.title);
 
-    expect(itemTitles[1]).toContain('Test Post 1');
-    expect(itemTitles[2]).toContain('Another Featured Post');
-    expect(itemTitles[3]).toContain('Non-Featured Post 1');
-    expect(itemTitles[4]).toContain('Non-Featured Post 3');
-    expect(itemTitles[5]).toContain('Non-Featured Post 2');
+    expect(itemTitles[0]).toContain('Test Post 1');
+    expect(itemTitles[1]).toContain('Another Featured Post');
+    expect(itemTitles[2]).toContain('Non-Featured Post 1');
+    expect(itemTitles[3]).toContain('Non-Featured Post 3');
+    expect(itemTitles[4]).toContain('Non-Featured Post 2');
   });
 
   it('should set correct enclosure type based on image extension', async () => {

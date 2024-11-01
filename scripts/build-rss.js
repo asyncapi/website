@@ -60,7 +60,7 @@ module.exports = async function rssFeed(type, title, desc, outputPath) {
     );
 
     if (invalidPosts.length > 0) {
-      throw new Error('Missing required fields in post data');
+      throw new Error(`Missing required fields in posts: ${invalidPosts.map(p => p.title || p.slug).join(', ')}`);
     }
 
     for (let post of posts) {
