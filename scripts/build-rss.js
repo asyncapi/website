@@ -55,13 +55,15 @@ module.exports = async function rssFeed(type, title, desc, outputPath) {
     rss.channel.generator = 'next.js'
     rss.channel.item = []
 
+   const invalidPosts = posts.filter(post =>
+      !post.title || !post.slug || !post.excerpt || !post.date
+    );
+    
+    if (invalidPosts.length > 0) {
+      throw new Error('Missing required fields in post data');
+    }
+
     for (let post of posts) {
-      const invalidPosts = posts.filter(post =>
-        !post.title || !post.slug || !post.excerpt || !post.date
-      );
-      if (invalidPosts.length > 0) {
-        throw new Error('Missing required fields in post data');
-      }
       const link = `${base}${post.slug}${tracking}`;
       const { title, excerpt, date } = post;
       const pubDate = new Date(date).toUTCString();
