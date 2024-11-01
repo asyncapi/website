@@ -1,6 +1,23 @@
 const fs = require('fs')
 const json2xml = require('jgexml/json2xml')
 
+const MIME_TYPES = {
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.png': 'image/png',
+  '.svg': 'image/svg+xml',
+  '.webp': 'image/webp',
+  '.gif': 'image/gif',
+  '.bmp': 'image/bmp',
+  '.tiff': 'image/tiff',
+  '.tif': 'image/tiff'
+};
+
+function getMimeType(url) {
+  const ext = path.extname(url).toLowerCase();
+  return MIME_TYPES[ext] || 'application/octet-stream'; // Fallback MIME type
+}
+
 function getAllPosts() {
   return require('../config/posts.json')
 }
@@ -53,16 +70,11 @@ module.exports = function rssFeed(type, title, desc, outputPath) {
     const link = `${base}${post.slug}${tracking}`;
     const item = { title: post.title, description: clean(post.excerpt), link, category: type, guid: { '@isPermaLink': true, '': link }, pubDate: new Date(post.date).toUTCString() }
     if (post.cover) {
-      const enclosure = {};
-      enclosure["@url"] = base+post.cover;
-      enclosure["@length"] = 15026; // dummy value, anything works
-      enclosure["@type"] = 'image/jpeg';
-      if (typeof enclosure["@url"] === 'string') {
-        let tmp = enclosure["@url"].toLowerCase();
-        if (tmp.indexOf('.png')>=0) enclosure["@type"] = 'image/png';
-        if (tmp.indexOf('.svg')>=0) enclosure["@type"] = 'image/svg+xml';
-        if (tmp.indexOf('.webp')>=0) enclosure["@type"] = 'image/webp';
-      }
+      const enclosure = {
+        "@url": `${base}${post.cover}`,
+        "@length": 15026, // Dummy value, replace with actual size if available
+        "@type": getMimeType(`${base}${post.cover}`) // Pass the full URL to getMimeType
+      };
       item.enclosure = enclosure;
     }
     rss.channel.item.push(item)
