@@ -30,7 +30,7 @@ module.exports = async function rssFeed(type, title, desc, outputPath) {
     });
 
     if (missingDatePosts.length > 0) {
-      return Promise.reject(new Error('Missing date in post data'));
+      throw new Error('Missing date in post data');
     }
 
     const base = 'https://www.asyncapi.com'
@@ -60,7 +60,7 @@ module.exports = async function rssFeed(type, title, desc, outputPath) {
         !post.title || !post.slug || !post.excerpt || !post.date
       );
       if (invalidPosts.length > 0) {
-        return Promise.reject(new Error('Missing required fields in post data'));
+        throw new Error('Missing required fields in post data');
       }
       const link = `${base}${post.slug}${tracking}`;
       const { title, excerpt, date } = post;
@@ -96,6 +96,6 @@ module.exports = async function rssFeed(type, title, desc, outputPath) {
     const xml = json2xml.getXml(feed, '@', '', 2);
     await fs.writeFile(`./public/${outputPath}`, xml, 'utf8');
   } catch (err) {
-    return Promise.reject(new Error(`Failed to generate RSS feed: ${err.message}`));
+    throw new Error(`Failed to generate RSS feed: ${err.message}`);
   }
 };
