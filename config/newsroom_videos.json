@@ -1,5 +1,17 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/XGn8v0yBfOI/hqdefault.jpg",
+    "title": "AsyncAPI Online Conference 2024💜",
+    "description": "AsyncAPI Online Conference 2024   Welcome to the AsyncAPI Online Conference 2024 Edition.",
+    "videoId": "XGn8v0yBfOI"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/Hy3-C6V2ir8/hqdefault.jpg",
+    "title": "AsyncAPI Conference Dry Run",
+    "description": "Setup and conference prep.",
+    "videoId": "Hy3-C6V2ir8"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/2WUchTKDPfs/hqdefault.jpg",
     "title": "Marketing WG Meeting, 14:00 UTC Tuesday October 22nd 2024",
     "description": "https://github.com/asyncapi/community/issues/1553.",
@@ -16,17 +28,5 @@
     "title": "Community Meeting, 8:00 UTC Tuesday October 15th 2024",
     "description": "https://github.com/asyncapi/community/issues/1545.",
     "videoId": "maMQC97q_6E"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/P1ZqaVBb6XM/hqdefault.jpg",
-    "title": "AsyncAPI Mentorship Program FAQ, 11:00 UTC Thursday October 10th 2024",
-    "description": "https://github.com/asyncapi/community/issues/1550.",
-    "videoId": "P1ZqaVBb6XM"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/4jaACa7geT0/hqdefault.jpg",
-    "title": "Design Onboarding Call, 10:00 UTC Thursday September 12th 2024",
-    "description": "https://github.com/asyncapi/community/issues/1372.",
-    "videoId": "4jaACa7geT0"
   }
 ]
