@@ -28,17 +28,6 @@
       "score": 19.527872034949596
     },
     {
-      "id": "PR_kwDOFLhIt85oVQqh",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: docs automation for website",
-      "author": "AnimeshKumar923",
-      "resourcePath": "/asyncapi/community/pull/1082",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 18.37917367995256
-    },
-    {
       "id": "PR_kwDOBW5R_c52BRgf",
       "isPR": true,
       "isAssigned": false,
@@ -47,7 +36,18 @@
       "resourcePath": "/asyncapi/website/pull/3101",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 17.517649913704783
+      "score": 19.527872034949596
+    },
+    {
+      "id": "PR_kwDOFLhIt85oVQqh",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: docs automation for website",
+      "author": "AnimeshKumar923",
+      "resourcePath": "/asyncapi/community/pull/1082",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 18.666348268701817
     },
     {
       "id": "I_kwDOGQYLdM5AX1lK",
@@ -67,7 +67,7 @@
           "color": "0E8A16"
         }
       ],
-      "score": 15.794602381209232
+      "score": 17.230475324955524
     },
     {
       "id": "PR_kwDOFLhIt853IEwA",
@@ -78,7 +78,7 @@
       "resourcePath": "/asyncapi/community/pull/1333",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 15.220253203710714
+      "score": 15.507427792459973
     },
     {
       "id": "I_kwDOFLhIt85bebeO",
@@ -89,7 +89,7 @@
       "resourcePath": "/asyncapi/community/issues/568",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 14.933078614961456
+      "score": 15.220253203710714
     },
     {
       "id": "PR_kwDOCHlHJM54CmhW",
@@ -130,24 +130,15 @@
       "score": 12.922856493716644
     },
     {
-      "id": "I_kwDOBW5R_c5Pi3rO",
-      "isPR": false,
+      "id": "PR_kwDOBW5R_c59wJxU",
+      "isPR": true,
       "isAssigned": false,
-      "title": "Epic roadmap to the new AsyncAPI community section",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/website/issues/903",
+      "title": "fix: css alignment of calendar component on the home page",
+      "author": "dishafaujdar",
+      "resourcePath": "/asyncapi/website/pull/3276",
       "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "keep-open",
-          "color": "ffee84"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        }
-      ],
-      "score": 11.073163907693488
+      "labels": [],
+      "score": 11.199808961221091
     },
     {
       "id": "I_kwDODwv8N86BkfYV",

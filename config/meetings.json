@@ -1,12 +1,5 @@
 [
   {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=am5kcG50YW9obGUzcmVucWZqMTQ4NDlsbjQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1305",
-    "banner": "https://github.com/asyncapi/community/assets/40604284/65376079-c5e8-467d-b513-21dfaba4570f",
-    "date": "2024-07-23T16:00:00.000Z"
-  },
-  {
     "title": "Marketing WG Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=b2twOWkyZ3ExcGxnYnAxbzBobzA1MWxvcW8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1321",
@@ -91,13 +84,6 @@
     "date": "2024-10-15T08:00:00.000Z"
   },
   {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=amw3ZTBwZWllOTViYmMzMGFpNDhtdW9pZDggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1546",
-    "banner": "https://github.com/user-attachments/assets/123ebfbe-6662-47ae-b36c-c2ba2e5d40f9",
-    "date": "2024-10-29T16:00:00.000Z"
-  },
-  {
     "title": "Let's talk about contributing Hacktoberfest Edition",
     "calLink": "https://www.google.com/calendar/event?eid=Zm9lMzRvM2F2MGljbWplZDJnNWYwczIwMzQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1549",
@@ -152,5 +138,12 @@
     "url": "https://github.com/asyncapi/community/issues/1566",
     "banner": "",
     "date": "2024-10-28T16:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI + WebSocket: The Collaborative Combo ",
+    "calLink": "https://www.google.com/calendar/event?eid=bGo4aXNjNzg3Ym5tbWRtb2wxZ2ZuMmtxN2sgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1569",
+    "banner": "https://github.com/user-attachments/assets/0cdfc741-e61d-4710-bb0a-af9f7485ff9a",
+    "date": "2024-11-01T13:00:00.000Z"
   }
 ]
