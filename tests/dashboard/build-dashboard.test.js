@@ -1,6 +1,7 @@
 const { graphql } = require('@octokit/graphql');
-const { promises: fs, mkdirSync, rmSync } = require('fs');
+const { promises: fs, mkdirSync, rmSync } = require('fs-extra');
 const { resolve } = require('path');
+const os = require('os');
 const {
   getLabel,
   monthsSince,
@@ -8,8 +9,8 @@ const {
   getHotDiscussions,
   getDiscussionByID,
   writeToFile,
+  start
 } = require('../../scripts/dashboard/build-dashboard');
-const os = require('os');
 
 jest.mock('@octokit/graphql');
 
@@ -109,4 +110,71 @@ describe('GitHub Discussions Processing', () => {
     expect(content).toEqual({ test: true });
   });
 
+  it('should process and write hot discussions and good first issues to a file', async () => {
+    const mockIssue = {
+      id: 'issue1',
+      __typename: 'Issue',
+      title: 'Test Issue',
+      author: { login: 'author1' },
+      resourcePath: '/path/to/issue',
+      repository: { name: 'repo' },
+      assignees: { totalCount: 1 },
+      reactions: { totalCount: 5 },
+      comments: {
+        totalCount: 2,
+        nodes: [{ reactions: { totalCount: 1 } }],
+        pageInfo: { hasNextPage: false }
+      },
+      labels: { nodes: [{ name: 'area/docs' }] },
+      timelineItems: { updatedAt: new Date().toISOString() }
+    };
+
+    const mockPR = {
+      id: 'pr1',
+      __typename: 'PullRequest',
+      title: 'Test PR',
+      author: { login: 'author2' },
+      resourcePath: '/path/to/pr',
+      repository: { name: 'repo' },
+      assignees: { totalCount: 0 },
+      reactions: { totalCount: 3 },
+      comments: {
+        totalCount: 1,
+        nodes: [{ reactions: { totalCount: 1 } }],
+        pageInfo: { hasNextPage: false }
+      },
+      reviews: {
+        totalCount: 1,
+        nodes: [{ comments: { totalCount: 1 } }]
+      },
+      labels: { nodes: [{ name: 'good first issue' }] },
+      timelineItems: { updatedAt: new Date().toISOString() }
+    };
+
+    const tempFilePath = resolve(tempDir, 'dashboard.json');
+
+    graphql.mockResolvedValueOnce({ search: { nodes: [mockIssue], pageInfo: { hasNextPage: false } } });
+    graphql.mockResolvedValueOnce({ search: { nodes: [mockPR], pageInfo: { hasNextPage: false } } });
+    graphql.mockResolvedValueOnce({ search: { nodes: [mockIssue], pageInfo: { hasNextPage: false } } });
+
+    await start(tempFilePath);
+
+    const content = JSON.parse(await fs.readFile(tempFilePath, 'utf-8'));
+    expect(content.hotDiscussions).toBeDefined();
+    expect(content.goodFirstIssues).toBeDefined();
+    expect(content.hotDiscussions).toHaveLength(1);
+    expect(content.goodFirstIssues).toHaveLength(1);
+    expect(content.hotDiscussions[0]).toMatchObject({
+      id: 'issue1',
+      title: 'Test Issue',
+      author: 'author1',
+      repo: 'asyncapi/repo'
+    });
+    expect(content.goodFirstIssues[0]).toMatchObject({
+      id: 'issue1',
+      title: 'Test Issue',
+      area: 'docs',
+      author: 'author1'
+    });
+  });
 });

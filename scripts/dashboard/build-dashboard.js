@@ -1,4 +1,4 @@
-const { writeFileSync } = require('fs');
+const { writeFile } = require('fs-extra');
 const { resolve } = require('path');
 const { graphql } = require('@octokit/graphql');
 const { Queries } = require('./issue-queries');
@@ -44,10 +44,10 @@ async function getDiscussions(query, pageSize, endCursor = null) {
     return result.search.nodes.concat(await getDiscussions(query, pageSize, result.search.pageInfo.endCursor));
   } catch (e) {
     console.error(e);
-
     return Promise.reject(e);
   }
 }
+
 async function getDiscussionByID(isPR, id) {
   try {
     const result = await graphql(isPR ? Queries.pullRequestById : Queries.issueById, {
@@ -60,7 +60,6 @@ async function getDiscussionByID(isPR, id) {
     return result;
   } catch (e) {
     console.error(e);
-
     return Promise.reject(e);
   }
 }
@@ -69,7 +68,6 @@ async function processHotDiscussions(batch) {
   return Promise.all(
     batch.map(async (discussion) => {
       try {
-        // eslint-disable-next-line no-underscore-dangle
         const isPR = discussion.__typename === 'PullRequest';
         if (discussion.comments.pageInfo.hasNextPage) {
           const fetchedDiscussion = await getDiscussionByID(isPR, discussion.id);
@@ -86,6 +84,7 @@ async function processHotDiscussions(batch) {
           discussion.reviews.totalCount +
           discussion.reviews.nodes.reduce((acc, curr) => acc + curr.comments.totalCount, 0)
           : interactionsCount;
+
         return {
           id: discussion.id,
           isPR,
@@ -111,21 +110,20 @@ async function getHotDiscussions(discussions) {
 
   for (let i = 0; i < discussions.length; i += batchSize) {
     const batch = discussions.slice(i, i + batchSize);
-    // eslint-disable-next-line no-await-in-loop
     const batchResults = await processHotDiscussions(batch);
-
-    // eslint-disable-next-line no-await-in-loop
     await pause(1000);
-
     result.push(...batchResults);
   }
+
   result.sort((ElemA, ElemB) => ElemB.score - ElemA.score);
   const filteredResult = result.filter((issue) => issue.author !== 'asyncapi-bot');
   return filteredResult.slice(0, 12);
 }
+
 async function writeToFile(content, writePath) {
-  writeFileSync(writePath, JSON.stringify(content, null, '  '));
+  await writeFile(writePath, JSON.stringify(content, null, '  '));
 }
+
 async function mapGoodFirstIssues(issues) {
   return issues.map((issue) => ({
     id: issue.id,
@@ -163,7 +161,7 @@ async function start(writePath) {
       getHotDiscussions(discussions),
       mapGoodFirstIssues(rawGoodFirstIssues)
     ]);
-    writeToFile(writePath, { hotDiscussions, goodFirstIssues });
+    return await writeToFile({ hotDiscussions, goodFirstIssues }, writePath);
   } catch (e) {
     console.log('There were some issues parsing data from github.');
     console.log(e);
@@ -174,4 +172,4 @@ if (require.main === module) {
   start(resolve(__dirname, '..', '..', 'dashboard.json'));
 }
 
-module.exports = { getLabel, monthsSince, mapGoodFirstIssues, getHotDiscussions, getDiscussionByID, writeToFile };
+module.exports = { getLabel, monthsSince, mapGoodFirstIssues, getHotDiscussions, getDiscussionByID, writeToFile, start };
