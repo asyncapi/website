@@ -83,8 +83,8 @@ async function processHotDiscussions(batch) {
 
         const finalInteractionsCount = isPR
           ? interactionsCount +
-            discussion.reviews.totalCount +
-            discussion.reviews.nodes.reduce((acc, curr) => acc + curr.comments.totalCount, 0)
+          discussion.reviews.totalCount +
+          discussion.reviews.nodes.reduce((acc, curr) => acc + curr.comments.totalCount, 0)
           : interactionsCount;
         return {
           id: discussion.id,
@@ -123,8 +123,8 @@ async function getHotDiscussions(discussions) {
   const filteredResult = result.filter((issue) => issue.author !== 'asyncapi-bot');
   return filteredResult.slice(0, 12);
 }
-async function writeToFile(content) {
-  writeFileSync(resolve(__dirname, '..', '..', 'dashboard.json'), JSON.stringify(content, null, '  '));
+async function writeToFile(content, writePath) {
+  writeFileSync(writePath, JSON.stringify(content, null, '  '));
 }
 async function mapGoodFirstIssues(issues) {
   return issues.map((issue) => ({
@@ -153,7 +153,7 @@ function monthsSince(date) {
   return Math.floor(months);
 }
 
-async function start() {
+async function start(writePath) {
   try {
     const issues = await getDiscussions(Queries.hotDiscussionsIssues, 20);
     const PRs = await getDiscussions(Queries.hotDiscussionsPullRequests, 20);
@@ -163,12 +163,15 @@ async function start() {
       getHotDiscussions(discussions),
       mapGoodFirstIssues(rawGoodFirstIssues)
     ]);
-    writeToFile({ hotDiscussions, goodFirstIssues });
+    writeToFile(writePath, { hotDiscussions, goodFirstIssues });
   } catch (e) {
     console.log('There were some issues parsing data from github.');
     console.log(e);
   }
 }
-start();
 
-module.exports = { getLabel, monthsSince, mapGoodFirstIssues, getHotDiscussions, getDiscussionByID };
+if (require.main === module) {
+  start(resolve(__dirname, '..', '..', 'dashboard.json'));
+}
+
+module.exports = { getLabel, monthsSince, mapGoodFirstIssues, getHotDiscussions, getDiscussionByID, writeToFile };
