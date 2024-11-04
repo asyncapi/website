@@ -20,12 +20,12 @@ It gave me the idea to propose bringing back the online edition as part of the A
 I want to express my gratitude to our financial sponsors, [Gravitee.io](https://www.gravitee.io/) and [Postman](https://www.postman.com/), as well as to the speakers for their engaging talks and the conference volunteers (*be sure to check out the Hall of Fame section*). [I encourage you to watch the recorded sessions if you missed the event](https://www.youtube.com/watch?v=XGn8v0yBfOI&t=1895s). A playlist of the talks and their slides will also be available on the [conference website](https://conference.asyncapi.com/).
 
 
-## AsyncAPI Community Building and Maintainance Goals Proposal 2025
+## AsyncAPI Community Building and Maintenance Goals Proposal 2025
 As we approach the end of 2024, we have a proposal outlining the community building and maintenance goals we should prioritize in 2025. Please note that the AsyncAPI community manager will manage and oversee these goals. The goals are poised to address some of the challenges our community is facing, such as the limited number of maintainers and the lack of onboarding materials, and pave the way for a more vibrant and thriving community.
 
 I encourage everyone to participate in the open discussion and share your thoughts and solutions. [Please take a moment to review the open PR related to the AsyncAPI Community Building Goals for 2025](https://github.com/asyncapi/community/pull/1575).
 
-## AsyncAPI Conference's
+## AsyncAPI Conferences
 
 ### AsyncAPI Conf in Paris 2024
 We are excited to announce that the final AsyncAPI Conference will be held on December 5th in Paris, thanks to the amazing team at APIdays. [The draft agenda is now available on our conference website](https://conference.asyncapi.com/venue/Paris), and the lineup of speakers looks fantastic.
@@ -87,12 +87,12 @@ I want to extend a heartfelt thank you to the incredible volunteers who generous
     link: 'https://github.com/iambami/'
   },
   {
-    name: 'Sarvesh Patil,
+    name: 'Sarvesh Patil',
     avatar: 'https://avatars.githubusercontent.com/u/111660124?v=4',
     link: 'https://github.com/Light13008'
   },
   {
-    name: 'Roland Awoda,
+    name: 'Roland Awoda',
     avatar: 'https://avatars.githubusercontent.com/u/43998101?v=4',
     link: 'https://github.com/rolandawoda'
   },
@@ -126,7 +126,8 @@ I want to extend a heartfelt thank you to the incredible volunteers who generous
     avatar: 'https://avatars.githubusercontent.com/u/143710076?v=4',
     link: 'https://github.com/Oloso-surur'
   }
-]} />
+]} 
+/>
 
 ## Coming in November
 - **AsyncAPI Community Updates Newsletter** - The November Edition issue will arrive in your inbox on the 8th. [Ensure you subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/newsletter); you don't want to miss out.
