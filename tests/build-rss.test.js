@@ -32,6 +32,7 @@ describe('rssFeed', () => {
   });
 
   it('should generate RSS feed and write to file', async () => {
+    
     jest.doMock('../config/posts.json', () => mockRssData, { virtual: true });
 
     await expect(rssFeed(type, title, desc, outputPath)).resolves.toBeUndefined()
