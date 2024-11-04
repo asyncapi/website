@@ -56,6 +56,10 @@ function walkDirectories(directories, result, basePath, sectionWeight = 0, secti
       const fileNameWithSection = join(fileName, '_section.mdx')
       const slug = normalize(fileName.replace(new RegExp(`^${basePath}`), '')).replace(/\\/g, '/')
       const slugElements = slug.split('/')
+
+      console.log(`Processing file: ${fileName}`);
+      console.log(`Generated slug: ${slug}`);
+
       if (isDirectory(fileName)) {
         if (existsSync(fileNameWithSection)) {
           // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
@@ -131,7 +135,7 @@ function walkDirectories(directories, result, basePath, sectionWeight = 0, secti
           releaseNotes.push(version)
           // releaseNotes is the list of all available releaseNotes
         }
-
+        console.log(`Details for MDX file: ${JSON.stringify(details, null, 2)}`);
         addItem(details)
       }
     }
