@@ -1,5 +1,6 @@
+import React, { useMemo } from 'react';
 import moment from 'moment';
-import React from 'react';
+import { isAfter, parseISO } from 'date-fns';
 import { twMerge } from 'tailwind-merge';
 
 import type { IEvent } from '@/types/event';
@@ -29,7 +30,13 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
   const CALENDAR_URL =
     'https://calendar.google.com/calendar/embed?src=c_q9tseiglomdsj6njuhvbpts11c%40group.calendar.google.com&ctz=UTC';
   const currentDate = new Date();
-  const eventsExist = eventsData?.filter((event: IEvent) => moment(event.date).isAfter(currentDate)).length > 0;
+  const eventsExist = useMemo(
+    () =>
+      eventsData?.some((event: IEvent) =>
+        isAfter(parseISO(event.date), currentDate),
+      ),
+    [currentDate],
+  );
 
   return (
     <div
@@ -59,9 +66,9 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
           </li>
         ))}
       </ul>
-      <div className='h-full content-center'>
-        {!eventsExist && <div className='font-bold text-gray-700 lg:pb-8'>{t('calendar.noMeetingsMessage')}</div>}
-        <div className='sm:pt-0 md:pt-2 lg:pb-8 lg:pt-0' data-testid='Calendar-button'>
+      <div className='h-full content-center lg:pb-8'>
+        {!eventsExist && <div className='font-bold text-gray-700'>{t('calendar.noMeetingsMessage')}</div>}
+        <div className='sm:pt-0 md:pt-2 lg:pt-0' data-testid='Calendar-button'>
           <GoogleCalendarButton href={CALENDAR_URL} text={t('calendar.viewCalendarBtn')} />
         </div>
       </div>
