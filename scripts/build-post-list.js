@@ -1,5 +1,5 @@
 const { readdirSync, statSync, existsSync, readFileSync, writeFileSync } = require('fs')
-const { basename, join, normalize, sep } = require('path')
+const { basename, join, normalize, sep, posix } = require('path')
 const frontMatter = require('gray-matter')
 const toc = require('markdown-toc')
 const { slugify } = require('markdown-toc/lib/utils')
@@ -54,7 +54,7 @@ function walkDirectories(directories, result, basePath, sectionWeight = 0, secti
       let details
       const fileName = join(directory, file)
       const fileNameWithSection = join(fileName, '_section.mdx')
-      const slug = normalize(fileName.replace(new RegExp(`^${basePath}`), '')).replace(/\\/g, '/')
+      const slug = posix.normalize(fileName.replace(new RegExp(`^${basePath}`), ''));
       const slugElements = slug.split('/')
 
       console.log(`Processing file: ${fileName}`);
