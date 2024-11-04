@@ -97,7 +97,7 @@ function walkDirectories(directories, result, basePath, sectionWeight = 0, secti
         details.sectionTitle = sectionTitle
         details.sectionId = sectionId
         details.rootSectionId = rootSectionId
-        details.id = slug
+        details.id = fileName.replace(/\\/g, '/');
         details.isIndex = fileName.endsWith(join('index.mdx'))
         details.slug = details.isIndex ? sectionSlug : slug.replace(/\.mdx$/, '')
         if (details.slug.includes('/reference/specification/') && !details.title) {
