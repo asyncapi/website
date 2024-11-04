@@ -188,5 +188,4 @@ describe('buildPostList', () => {
     expect(error).toBeDefined();
     expect(error.message).toMatch(/Error while building post list/);
   });
-
 });
