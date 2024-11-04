@@ -1,4 +1,5 @@
-import React, { useMemo } from 'react';
+import React from 'react';
+import { useMemo } from 'react';
 import moment from 'moment';
 import { isAfter, parseISO } from 'date-fns';
 import { twMerge } from 'tailwind-merge';
@@ -33,9 +34,9 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
   const eventsExist = useMemo(
     () =>
       eventsData?.some((event: IEvent) =>
-        isAfter(parseISO(event.date), currentDate),
+        isAfter(parseISO(event.date), currentDate)
       ),
-    [currentDate],
+    [currentDate]
   );
 
   return (
