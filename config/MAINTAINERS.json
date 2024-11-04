@@ -158,7 +158,7 @@
             "html-template",
             "markdown-template",
             "nodejs-ws-template",
-            "generator-hooks",
+            "glee",
             "brand"
         ],
         "githubID": 242119
@@ -269,7 +269,6 @@
             "github-action-for-cli",
             ".github",
             "jasyncapi",
-            "generator-hooks",
             "vs-asyncapi-preview",
             "template-for-generator-templates",
             "community",
