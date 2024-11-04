@@ -15,7 +15,7 @@ featured: true
 ---
 
 October marked the third AsyncAPI Conference, this time an online edition. As someone fortunate enough to be extensively involved in organizing the conferences, I saw the challenges that came with in-person events. 
-It gave me the idea to propose bringing back the online edition as part of the AsyncAPI Conference brand. We're glad and excited that we received positive results, with over 330 views from attendees who watched and engaged with us.
+It gave me the idea to propose bringing back the online edition as part of the AsyncAPI Conference brand. We're glad and excited that we received positive results, with over **330 views** from attendees who watched and engaged with us.
 
 I want to express my gratitude to our financial sponsors, [Gravitee.io](https://www.gravitee.io/) and [Postman](https://www.postman.com/), as well as to the speakers for their engaging talks and the conference volunteers (*be sure to check out the Hall of Fame section*). [I encourage you to watch the recorded sessions if you missed the event](https://www.youtube.com/watch?v=XGn8v0yBfOI&t=1895s). A playlist of the talks and their slides will also be available on the [conference website](https://conference.asyncapi.com/).
 
@@ -30,7 +30,7 @@ I encourage everyone to participate in the open discussion and share your though
 ### AsyncAPI Conf in Paris 2024
 We are excited to announce that the final AsyncAPI Conference will be held on December 5th in Paris, thanks to the amazing team at APIdays. [The draft agenda is now available on our conference website](https://conference.asyncapi.com/venue/Paris), and the lineup of speakers looks fantastic.
 
-Additionally, we have a limited number of free community tickets available. Please visit the [AsyncAPI Conference website](https://conference.asyncapi.com/) and click the register button.
+Additionally, we have a limited number of free community tickets available. To register, please visit the [AsyncAPI Conference website](https://conference.asyncapi.com/)a.
 
 **Note**: *When getting your tickets, please choose quantity one (1) of the Regular ticket and click the blue continue button to get your free ticket.*
 
