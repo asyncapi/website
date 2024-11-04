@@ -1,7 +1,6 @@
-import React from 'react';
-import { useMemo } from 'react';
-import moment from 'moment';
 import { isAfter, parseISO } from 'date-fns';
+import moment from 'moment';
+import React, { useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import type { IEvent } from '@/types/event';
@@ -32,10 +31,7 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
     'https://calendar.google.com/calendar/embed?src=c_q9tseiglomdsj6njuhvbpts11c%40group.calendar.google.com&ctz=UTC';
   const currentDate = new Date();
   const eventsExist = useMemo(
-    () =>
-      eventsData?.some((event: IEvent) =>
-        isAfter(parseISO(event.date), currentDate)
-      ),
+    () => eventsData?.some((event: IEvent) => isAfter(parseISO(event.date), currentDate)),
     [currentDate]
   );
 
