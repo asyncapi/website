@@ -1,5 +1,5 @@
 const { readdirSync, statSync, existsSync, readFileSync, writeFileSync } = require('fs')
-const { basename } = require('path')
+const { basename, join, normalize } = require('path')
 const frontMatter = require('gray-matter')
 const toc = require('markdown-toc')
 const { slugify } = require('markdown-toc/lib/utils')
@@ -23,7 +23,6 @@ const addItem = (details) => {
     result["blog"].push(details)
   else if (details.slug.startsWith('/about'))
     result["about"].push(details)
-  else { }
 }
 
 async function buildPostList(postDirectories, basePath, writeFilePath) {
@@ -31,7 +30,8 @@ async function buildPostList(postDirectories, basePath, writeFilePath) {
     if (postDirectories.length === 0) {
       throw new Error('Error while building post list: No post directories provided');
     }
-    walkDirectories(postDirectories, result, basePath)
+    const normalizedBasePath = normalize(basePath)
+    walkDirectories(postDirectories, result, normalizedBasePath)
     const treePosts = buildNavTree(result["docs"].filter((p) => p.slug.startsWith('/docs/')))
     result["docsTree"] = treePosts
     result["docs"] = addDocButtons(result["docs"], treePosts)
@@ -48,14 +48,14 @@ function walkDirectories(directories, result, basePath, sectionWeight = 0, secti
   for (let dir of directories) {
     let directory = dir[0]
     let sectionSlug = dir[1] || ''
-    let files = readdirSync(directory);
+    let files = readdirSync(directory)
 
     for (let file of files) {
       let details
-      const fileName = [directory, file].join('/')
-      const fileNameWithSection = [fileName, '_section.mdx'].join('/')
+      const fileName = join(directory, file)
+      const fileNameWithSection = join(fileName, '_section.mdx')
       const slug = fileName.replace(new RegExp(`^${basePath}`), '')
-      const slugElements = slug.split('/');
+      const slugElements = slug.split('/')
       if (isDirectory(fileName)) {
         if (existsSync(fileNameWithSection)) {
           // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
@@ -94,7 +94,7 @@ function walkDirectories(directories, result, basePath, sectionWeight = 0, secti
         details.sectionId = sectionId
         details.rootSectionId = rootSectionId
         details.id = fileName
-        details.isIndex = fileName.endsWith('/index.mdx')
+        details.isIndex = fileName.endsWith(join('index.mdx'))
         details.slug = details.isIndex ? sectionSlug : slug.replace(/\.mdx$/, '')
         if (details.slug.includes('/reference/specification/') && !details.title) {
           const fileBaseName = basename(data.slug)  // ex. v2.0.0 | v2.1.0-next-spec.1
