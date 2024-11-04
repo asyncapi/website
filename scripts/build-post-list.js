@@ -1,5 +1,5 @@
 const { readdirSync, statSync, existsSync, readFileSync, writeFileSync } = require('fs')
-const { basename, join, normalize } = require('path')
+const { basename, join, normalize, sep } = require('path')
 const frontMatter = require('gray-matter')
 const toc = require('markdown-toc')
 const { slugify } = require('markdown-toc/lib/utils')
@@ -23,7 +23,7 @@ const addItem = (details) => {
     result["blog"].push(details)
   else if (details.slug.startsWith('/about'))
     result["about"].push(details)
-}
+};
 
 async function buildPostList(postDirectories, basePath, writeFilePath) {
   try {
@@ -54,7 +54,7 @@ function walkDirectories(directories, result, basePath, sectionWeight = 0, secti
       let details
       const fileName = join(directory, file)
       const fileNameWithSection = join(fileName, '_section.mdx')
-      const slug = fileName.replace(new RegExp(`^${basePath}`), '')
+      const slug = normalize(fileName.replace(new RegExp(`^${basePath}`), '')).replace(/\\/g, '/')
       const slugElements = slug.split('/')
       if (isDirectory(fileName)) {
         if (existsSync(fileNameWithSection)) {
@@ -80,7 +80,7 @@ function walkDirectories(directories, result, basePath, sectionWeight = 0, secti
         addItem(details)
         const rootId = details.parent || details.rootSectionId
         walkDirectories([[fileName, slug]], result, basePath, details.weight, details.title, details.sectionId, rootId)
-      } else if (file.endsWith('.mdx') && !fileName.endsWith('/_section.mdx')) {
+      } else if (file.endsWith('.mdx') && !fileName.endsWith(sep + '_section.mdx')) {
         const fileContent = readFileSync(fileName, 'utf-8')
         // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
         const { data, content } = frontMatter(fileContent, {})
