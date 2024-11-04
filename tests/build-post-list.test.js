@@ -1,5 +1,5 @@
 const { existsSync, readFileSync, writeFileSync, mkdirSync, rmSync } = require('fs');
-const { resolve, join } = require('path');
+const { resolve, join, normalize } = require('path');
 const { buildPostList, slugifyToC } = require('../scripts/build-post-list');
 
 describe('buildPostList', () => {
@@ -16,7 +16,8 @@ describe('buildPostList', () => {
       [join(tempDir, 'about'), '/about'],
     ];
 
-    mkdirSync(tempDir, { recursive: true });
+    const normalizedDir = normalize(join(tempDir, 'blog'));
+    mkdirSync(normalizedDir, { recursive: true });
 
     mkdirSync(join(tempDir, 'blog'), { recursive: true });
     writeFileSync(join(tempDir, 'blog', 'release-notes-2.1.0.mdx'), '---\ntitle: Release Notes 2.1.0\n---\nThis is a release note.');
