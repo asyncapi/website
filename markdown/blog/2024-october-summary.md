@@ -48,7 +48,7 @@ Are you attending FOSDEM and interested in speaking? AsyncAPI will participate i
 
 ## Should AsyncAPI Initiative Endorse The United Nations Global Digital Compact?
 The United Nations General Assembly has approved the Global Digital Compact, a commitment to ensure digital technologies support sustainable development and human rights. 
-AsyncAPI is one of the key standards for event-driven architectures, and our Executive Director, [Lukasz Gornicki](https://www.linkedin.com/in/lukasz-gornicki-a621914), [has called for a vote](https://github.com/asyncapi/community/issues/1577) to determine whether we, as the AsyncAPI Initiative, should endorse the Compact which aligns with our values of open-source software and collaboration. We encourage all community members to participate in the vote and share their thoughts on this important decision.
+AsyncAPI is one of the key standards for event-driven architectures, and our Executive Director, [Lukasz Gornicki](https://www.linkedin.com/in/lukasz-gornicki-a621914), [has called for a vote](https://github.com/asyncapi/community/issues/1577) to determine whether we, as the AsyncAPI Initiative, should endorse the Compact which aligns with our values of open-source software and collaboration. [We encourage all community members to participate in the vote and share their thoughts on this important decision](https://github.com/asyncapi/community/issues/1577).
 
 ## Spec x Tooling
 We're thrilled to announce that Glee has been migrated to a monorepo structure and is moving its core functionality to a new package called Gleequore, inspired by the Italian word "cuore," which means "heart." 
