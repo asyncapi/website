@@ -62,7 +62,18 @@ const mockRateLimitResponse = {
     }
 };
 
+const issues = [{
+    id: '1',
+    title: 'Test',
+    assignees: { totalCount: 1 },
+    resourcePath: '/path',
+    repository: { name: 'repo' },
+    author: { login: 'author' },
+    labels: { nodes: [{ name: 'area/docs' }] }
+}];
+
 module.exports = {
+    issues,
     mockDiscussion,
     discussionWithMoreComments,
     fullDiscussionDetails,

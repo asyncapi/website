@@ -12,7 +12,9 @@ const {
   getDiscussions,
   start
 } = require('../../scripts/dashboard/build-dashboard');
+
 const {
+  issues,
   mockDiscussion,
   discussionWithMoreComments,
   fullDiscussionDetails,
@@ -143,15 +145,6 @@ describe('GitHub Discussions Processing', () => {
   });
 
   it('should map good first issues', async () => {
-    const issues = [{
-      id: '1',
-      title: 'Test',
-      assignees: { totalCount: 1 },
-      resourcePath: '/path',
-      repository: { name: 'repo' },
-      author: { login: 'author' },
-      labels: { nodes: [{ name: 'area/docs' }] }
-    }];
 
     const result = await mapGoodFirstIssues(issues);
     expect(result[0]).toMatchObject({
