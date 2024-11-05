@@ -46,19 +46,16 @@ async function buildPostList(postDirectories, basePath, writeFilePath) {
 
 function walkDirectories(directories, result, basePath, sectionWeight = 0, sectionTitle, sectionId, rootSectionId) {
   for (let dir of directories) {
-    let directory = dir[0]
-    let sectionSlug = dir[1] || ''
-    let files = readdirSync(directory)
+    let directory = posix.normalize(dir[0]);
+    let sectionSlug = dir[1] || '';
+    let files = readdirSync(directory);
 
     for (let file of files) {
-      let details
-      const fileName = join(directory, file)
-      const fileNameWithSection = join(fileName, '_section.mdx')
-      const slug = posix.normalize(fileName.replace(new RegExp(`^${basePath}`), ''));
+      let details;
+      const fileName = posix.join(directory, file);
+      const fileNameWithSection = posix.join(fileName, '_section.mdx');
+      const slug = posix.normalize(fileName.replace(new RegExp(`^${basePath}`), '')).replace(/\\/g, '/');
       const slugElements = slug.split('/')
-
-      console.log(`Processing file: ${fileName}`);
-      console.log(`Generated slug: ${slug}`);
 
       if (isDirectory(fileName)) {
         if (existsSync(fileNameWithSection)) {
@@ -135,7 +132,7 @@ function walkDirectories(directories, result, basePath, sectionWeight = 0, secti
           releaseNotes.push(version)
           // releaseNotes is the list of all available releaseNotes
         }
-        console.log(`Details for MDX file: ${JSON.stringify(details, null, 2)}`);
+
         addItem(details)
       }
     }
