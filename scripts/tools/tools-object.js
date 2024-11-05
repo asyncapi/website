@@ -82,19 +82,14 @@ async function convertTools(data) {
             let toolObject = await createToolObject(jsonToolFileContent, repositoryUrl, repoDescription, isAsyncAPIrepo);
 
             // Tool Object is appended to each category array according to Fuse search for categories inside Tool Object
-            jsonToolFileContent.filters.categories.forEach(async (category) => {
+            await Promise.all(jsonToolFileContent.filters.categories.map(async (category) => {
               const categorySearch = await fuse.search(category);
-
-              if (categorySearch.length) {
-                let searchedCategoryName = categorySearch[0].item.name
-                if (!finalToolsObject[searchedCategoryName].toolsList.find((element => element === toolObject)))
-                  finalToolsObject[searchedCategoryName].toolsList.push(toolObject);
-              } else {
-                // if Tool object has a category, not defined in our categorylist, then this provides a `other` category to the tool.
-                if (!finalToolsObject['Others'].toolsList.find((element => element === toolObject)))
-                  finalToolsObject['Others'].toolsList.push(toolObject);
+              const targetCategory = categorySearch.length ? categorySearch[0].item.name : 'Others';
+              const toolsList = finalToolsObject[targetCategory].toolsList;
+              if (!toolsList.includes(toolObject)) {
+                toolsList.push(toolObject);
               }
-            });
+            }));
           } else {
             console.error('Script is not failing, it is just dropping errors for further investigation');
             console.error('Invalid .asyncapi-tool file.');
