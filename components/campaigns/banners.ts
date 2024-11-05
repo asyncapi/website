@@ -21,7 +21,7 @@ export const banners = [
     city: 'Paris Edition',
     dateLocation: '5th of December, 2024 | France, Paris',
     cfaText: 'Get Your Tickets',
-    eventName: 'to the AsyncAPI Conf in Paris',
+    eventName: 'the AsyncAPI Conf in Paris',
     cfpDeadline: '2024-12-01T06:00:00Z',
     link: 'https://conference.asyncapi.com/#tickets'
   }
