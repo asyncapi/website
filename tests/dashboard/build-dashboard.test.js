@@ -10,29 +10,16 @@ const {
   getDiscussionByID,
   writeToFile,
   getDiscussions,
-  processHotDiscussions,
   start
 } = require('../../scripts/dashboard/build-dashboard');
+const {
+  mockDiscussion,
+  discussionWithMoreComments,
+  fullDiscussionDetails,
+  mockRateLimitResponse
+} = require("../fixtures/dashboardData")
 
 jest.mock('@octokit/graphql');
-
-const mockDiscussion = {
-  id: 'test-id',
-  __typename: 'Issue',
-  title: 'Test',
-  author: { login: 'author' },
-  resourcePath: '/path',
-  repository: { name: 'repo' },
-  assignees: { totalCount: 0 },
-  reactions: { totalCount: 5 },
-  comments: {
-    totalCount: 2,
-    nodes: [{ reactions: { totalCount: 1 } }],
-    pageInfo: { hasNextPage: false }
-  },
-  labels: { nodes: [] },
-  timelineItems: { updatedAt: new Date().toISOString() }
-};
 
 describe('GitHub Discussions Processing', () => {
   let tempDir;
@@ -60,39 +47,6 @@ describe('GitHub Discussions Processing', () => {
   });
 
   it('should fetch additional discussion details when comments have next page', async () => {
-    const discussionWithMoreComments = {
-      id: 'paginated-discussion',
-      __typename: 'Issue',
-      title: 'Test with Pagination',
-      author: { login: 'author' },
-      resourcePath: '/path',
-      repository: { name: 'repo' },
-      assignees: { totalCount: 0 },
-      reactions: { totalCount: 5 },
-      comments: {
-        totalCount: 5,
-        nodes: [{ reactions: { totalCount: 1 } }],
-        pageInfo: { hasNextPage: true }
-      },
-      labels: { nodes: [] },
-      timelineItems: { updatedAt: new Date().toISOString() }
-    };
-
-    const fullDiscussionDetails = {
-      node: {
-        ...discussionWithMoreComments,
-        comments: {
-          totalCount: 5,
-          nodes: [
-            { reactions: { totalCount: 1 } },
-            { reactions: { totalCount: 2 } },
-            { reactions: { totalCount: 3 } }
-          ],
-          pageInfo: { hasNextPage: false }
-        }
-      }
-    };
-
     graphql.mockResolvedValueOnce(fullDiscussionDetails);
 
     const result = await getHotDiscussions([discussionWithMoreComments]);
@@ -116,20 +70,7 @@ describe('GitHub Discussions Processing', () => {
   });
 
   it('should handle rate limit warnings', async () => {
-    const mockResponse = {
-      search: {
-        nodes: [mockDiscussion],
-        pageInfo: { hasNextPage: false }
-      },
-      rateLimit: {
-        cost: 1,
-        limit: 5000,
-        remaining: 50,
-        resetAt: new Date().toISOString()
-      }
-    };
-
-    graphql.mockResolvedValueOnce(mockResponse);
+    graphql.mockResolvedValueOnce(mockRateLimitResponse);
 
     await getDiscussions('test-query', 10);
 
@@ -177,15 +118,7 @@ describe('GitHub Discussions Processing', () => {
   });
 
   it('should successfully process and write data', async () => {
-    const mockResponse = {
-      search: {
-        nodes: [mockDiscussion],
-        pageInfo: { hasNextPage: false }
-      },
-      rateLimit: { remaining: 1000 }
-    };
-
-    graphql.mockResolvedValue(mockResponse);
+    graphql.mockResolvedValue(mockRateLimitResponse);
 
     const filePath = resolve(tempDir, 'success-output.json');
     await start(filePath);
@@ -268,5 +201,4 @@ describe('GitHub Discussions Processing', () => {
     
     consoleErrorSpy.mockRestore();
   });
-
 });
