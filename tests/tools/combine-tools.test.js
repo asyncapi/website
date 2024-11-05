@@ -64,8 +64,6 @@ describe('combineTools function', () => {
   beforeAll(() => {
     manualTools = readJSON(manualToolsPath);
     automatedTools = readJSON(automatedToolsPath);
-
-    consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterAll(() => {
@@ -73,6 +71,14 @@ describe('combineTools function', () => {
     if (fs.existsSync(tagsPath)) fs.unlinkSync(tagsPath);
 
     consoleErrorMock.mockRestore();
+  });
+
+  beforeEach(() => {
+    consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => { });
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
   });
 
   it('should combine tools and create correct JSON files', async () => {
@@ -209,7 +215,7 @@ describe('combineTools function', () => {
 
   it('should throw an error when fs.writeFileSync fails', async () => {
     let error;
-    let invalidPath = "this/is/not/valid"
+    const invalidPath = "this/is/not/valid"
 
     try {
       await combineTools(automatedTools, manualTools, invalidPath, invalidPath);
@@ -256,5 +262,5 @@ describe('combineTools function', () => {
     }
     expect(error).toBeDefined();
   });
-  
+
 });

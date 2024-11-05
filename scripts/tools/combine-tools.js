@@ -114,7 +114,7 @@ const combineTools = async (automatedTools, manualTools, toolsPath, tagsPath) =>
                     finalToolsList.push(await getFinalTool(tool))
                 }
             }
-            if (manualTools[key] && manualTools[key].toolsList.length) {
+            if (manualTools[key]?.toolsList?.length) {
                 for (const tool of manualTools[key].toolsList) {
                     let isAsyncAPIrepo;
                     const isValid = await validate(tool)
