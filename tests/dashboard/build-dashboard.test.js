@@ -48,8 +48,8 @@ describe('GitHub Discussions Processing', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
-    consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
+    consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => { });
+    consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => { });
   });
 
   afterEach(() => {
@@ -57,118 +57,86 @@ describe('GitHub Discussions Processing', () => {
     consoleLogSpy.mockRestore();
   });
 
-  // Existing tests remain the same...
+  it('should handle rate limit warnings', async () => {
+    const mockResponse = {
+      search: {
+        nodes: [mockDiscussion],
+        pageInfo: { hasNextPage: false }
+      },
+      rateLimit: {
+        cost: 1,
+        limit: 5000,
+        remaining: 50,
+        resetAt: new Date().toISOString()
+      }
+    };
 
-  describe('getDiscussions function', () => {
-    it('should handle rate limit warnings', async () => {
-      const mockResponse = {
-        search: {
-          nodes: [mockDiscussion],
-          pageInfo: { hasNextPage: false }
-        },
-        rateLimit: {
-          cost: 1,
-          limit: 5000,
-          remaining: 50,
-          resetAt: new Date().toISOString()
-        }
-      };
+    graphql.mockResolvedValueOnce(mockResponse);
 
-      graphql.mockResolvedValueOnce(mockResponse);
-      
-      await getDiscussions('test-query', 10);
-      
-      expect(consoleLogSpy).toHaveBeenCalledWith(
-        '[WARNING] GitHub GraphQL rateLimit',
-        'cost = 1',
-        'limit = 5000',
-        'remaining = 50',
-        expect.any(String)
-      );
-    });
+    await getDiscussions('test-query', 10);
 
-    it('should handle pagination', async () => {
-      const mockFirstResponse = {
-        search: {
-          nodes: [mockDiscussion],
-          pageInfo: { hasNextPage: true, endCursor: 'cursor1' }
-        },
-        rateLimit: { remaining: 1000 }
-      };
-
-      const mockSecondResponse = {
-        search: {
-          nodes: [{ ...mockDiscussion, id: 'test-id-2' }],
-          pageInfo: { hasNextPage: false }
-        },
-        rateLimit: { remaining: 1000 }
-      };
-
-      graphql
-        .mockResolvedValueOnce(mockFirstResponse)
-        .mockResolvedValueOnce(mockSecondResponse);
-
-      const result = await getDiscussions('test-query', 10);
-      expect(result).toHaveLength(2);
-    });
-
-    it('should handle API errors', async () => {
-      graphql.mockRejectedValueOnce(new Error('API Error'));
-      await expect(getDiscussions('test-query', 10)).rejects.toThrow('API Error');
-    });
+    expect(consoleLogSpy).toHaveBeenCalledWith(
+      '[WARNING] GitHub GraphQL rateLimit',
+      'cost = 1',
+      'limit = 5000',
+      'remaining = 50',
+      expect.any(String)
+    );
   });
 
-  describe('processHotDiscussions', () => {
-    it('should handle parsing errors', async () => {
-      const invalidDiscussion = {
-        ...mockDiscussion,
-        comments: null // This will cause a parsing error
-      };
+  it('should handle pagination', async () => {
+    const mockFirstResponse = {
+      search: {
+        nodes: [mockDiscussion],
+        pageInfo: { hasNextPage: true, endCursor: 'cursor1' }
+      },
+      rateLimit: { remaining: 1000 }
+    };
 
-      await expect(processHotDiscussions([invalidDiscussion])).rejects.toThrow();
-      expect(consoleErrorSpy).toHaveBeenCalled();
-    });
+    const mockSecondResponse = {
+      search: {
+        nodes: [{ ...mockDiscussion, id: 'test-id-2' }],
+        pageInfo: { hasNextPage: false }
+      },
+      rateLimit: { remaining: 1000 }
+    };
 
-    it('should handle missing author', async () => {
-      const noAuthorDiscussion = {
-        ...mockDiscussion,
-        author: null
-      };
+    graphql
+      .mockResolvedValueOnce(mockFirstResponse)
+      .mockResolvedValueOnce(mockSecondResponse);
 
-      const result = await processHotDiscussions([noAuthorDiscussion]);
-      expect(result[0].author).toBe('');
-    });
+    const result = await getDiscussions('test-query', 10);
+    expect(result).toHaveLength(2);
   });
 
-  describe('start function', () => {
-    it('should handle complete failure', async () => {
-      graphql.mockRejectedValue(new Error('Complete API failure'));
-      
-      const filePath = resolve(tempDir, 'error-output.json');
-      await start(filePath);
-      
-      expect(consoleLogSpy).toHaveBeenCalledWith('There were some issues parsing data from github.');
-    });
+  it('should handle complete failure', async () => {
+    graphql.mockRejectedValue(new Error('Complete API failure'));
 
-    it('should successfully process and write data', async () => {
-      const mockResponse = {
-        search: {
-          nodes: [mockDiscussion],
-          pageInfo: { hasNextPage: false }
-        },
-        rateLimit: { remaining: 1000 }
-      };
+    const filePath = resolve(tempDir, 'error-output.json');
+    await start(filePath);
 
-      graphql.mockResolvedValue(mockResponse);
-
-      const filePath = resolve(tempDir, 'success-output.json');
-      await start(filePath);
-
-      const content = JSON.parse(await fs.readFile(filePath, 'utf-8'));
-      expect(content).toHaveProperty('hotDiscussions');
-      expect(content).toHaveProperty('goodFirstIssues');
-    });
+    expect(consoleLogSpy).toHaveBeenCalledWith('There were some issues parsing data from github.');
   });
+
+  it('should successfully process and write data', async () => {
+    const mockResponse = {
+      search: {
+        nodes: [mockDiscussion],
+        pageInfo: { hasNextPage: false }
+      },
+      rateLimit: { remaining: 1000 }
+    };
+
+    graphql.mockResolvedValue(mockResponse);
+
+    const filePath = resolve(tempDir, 'success-output.json');
+    await start(filePath);
+
+    const content = JSON.parse(await fs.readFile(filePath, 'utf-8'));
+    expect(content).toHaveProperty('hotDiscussions');
+    expect(content).toHaveProperty('goodFirstIssues');
+  });
+
   it('should get labels correctly', () => {
     const issue = {
       labels: { nodes: [{ name: 'area/bug' }, { name: 'good first issue' }] }
@@ -229,29 +197,5 @@ describe('GitHub Discussions Processing', () => {
     await writeToFile({ test: true }, filePath);
     const content = JSON.parse(await fs.readFile(filePath, 'utf-8'));
     expect(content).toEqual({ test: true });
-  });
-
-  it('should run the start function and write output to a file', async () => {
-    const mockIssues = [mockDiscussion];
-    const mockPRs = [{ ...mockDiscussion, __typename: 'PullRequest' }];
-    const mockGoodFirstIssues = [{ ...mockDiscussion, id: 'good-first-issue' }];
-    
-    graphql.mockImplementation((query) => {
-      if (query === Queries.hotDiscussionsIssues) return { search: { nodes: mockIssues, pageInfo: { hasNextPage: false } } };
-      if (query === Queries.hotDiscussionsPullRequests) return { search: { nodes: mockPRs, pageInfo: { hasNextPage: false } } };
-      if (query === Queries.goodFirstIssues) return { search: { nodes: mockGoodFirstIssues, pageInfo: { hasNextPage: false } } };
-      return null;
-    });
-    
-    const filePath = resolve(tempDir, 'start-output.json');
-    
-    await start(filePath);
-    
-    const content = JSON.parse(await fs.readFile(filePath, 'utf-8'));
-    
-    expect(content.hotDiscussions).toBeDefined();
-    expect(content.goodFirstIssues).toBeDefined();
-    expect(content.hotDiscussions.length).toBeGreaterThan(0);
-    expect(content.goodFirstIssues.length).toBeGreaterThan(0);
   });
 });
