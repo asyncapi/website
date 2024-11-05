@@ -9,7 +9,7 @@ jest.mock('node-fetch-2', () => jest.fn());
 
 describe('buildNewsroomVideos', () => {
     const testDir = join(os.tmpdir(), 'test_config');
-    const testFilePath = resolve(testDir, 'newsroom_videos.json');
+    const testFilePath = join(testDir, 'newsroom_videos.json');
 
     beforeAll(() => {
         mkdirpSync(testDir);
