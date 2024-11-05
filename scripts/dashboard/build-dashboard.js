@@ -168,6 +168,7 @@ async function start(writePath) {
   }
 }
 
+/* istanbul ignore next */
 if (require.main === module) {
   start(resolve(__dirname, '..', '..', 'dashboard.json'));
 }
