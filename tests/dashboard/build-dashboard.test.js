@@ -10,6 +10,7 @@ const {
   getDiscussionByID,
   writeToFile,
   getDiscussions,
+  processHotDiscussions,
   start
 } = require('../../scripts/dashboard/build-dashboard');
 
@@ -255,4 +256,17 @@ describe('GitHub Discussions Processing', () => {
     const content = JSON.parse(await fs.readFile(filePath, 'utf-8'));
     expect(content).toEqual({ test: true });
   });
+
+  it('should handle parsing errors in processHotDiscussions', async () => {
+    const consoleErrorSpy = jest.spyOn(console, 'error');
+  
+    await expect(getHotDiscussions([undefined])).rejects.toThrow();
+    
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      'there was some issues while parsing this item: undefined'
+    );
+    
+    consoleErrorSpy.mockRestore();
+  });
+
 });
