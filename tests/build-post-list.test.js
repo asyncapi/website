@@ -1,4 +1,4 @@
-const { existsSync, readFileSync, writeFileSync, mkdirSync, rmSync } = require('fs');
+const fs = require('fs-extra');
 const { resolve, join, normalize } = require('path');
 const { buildPostList, slugifyToC } = require('../scripts/build-post-list');
 
@@ -7,7 +7,7 @@ describe('buildPostList', () => {
   let writeFilePath;
   let postDirectories;
 
-  beforeEach(() => {
+  beforeEach(async () => {
     tempDir = resolve(__dirname, `test-config`);
     writeFilePath = resolve(tempDir, 'posts.json');
     postDirectories = [
@@ -17,33 +17,32 @@ describe('buildPostList', () => {
     ];
 
     const normalizedDir = normalize(join(tempDir, 'blog'));
-    mkdirSync(normalizedDir, { recursive: true });
+    await fs.ensureDir(normalizedDir);
 
-    mkdirSync(join(tempDir, 'blog'), { recursive: true });
-    writeFileSync(join(tempDir, 'blog', 'release-notes-2.1.0.mdx'), '---\ntitle: Release Notes 2.1.0\n---\nThis is a release note.');
+    await fs.ensureDir(join(tempDir, 'blog'));
+    await fs.writeFile(join(tempDir, 'blog', 'release-notes-2.1.0.mdx'), '---\ntitle: Release Notes 2.1.0\n---\nThis is a release note.');
 
-    mkdirSync(join(tempDir, 'docs'), { recursive: true });
-    writeFileSync(join(tempDir, 'docs', 'index.mdx'), '---\ntitle: Docs Home\n---\nThis is the documentation homepage.');
+    await fs.ensureDir(join(tempDir, 'docs'));
+    await fs.writeFile(join(tempDir, 'docs', 'index.mdx'), '---\ntitle: Docs Home\n---\nThis is the documentation homepage.');
 
-    mkdirSync(join(tempDir, 'about'), { recursive: true });
-    writeFileSync(join(tempDir, 'about', 'index.mdx'), '---\ntitle: About Us\n---\nThis is the about page.');
+    await fs.ensureDir(join(tempDir, 'about'));
+    await fs.writeFile(join(tempDir, 'about', 'index.mdx'), '---\ntitle: About Us\n---\nThis is the about page.');
 
-    mkdirSync(join(tempDir, 'docs', 'reference', 'specification'), { recursive: true });
+    await fs.ensureDir(join(tempDir, 'docs', 'reference', 'specification'));
   });
 
-  afterEach(() => {
-    rmSync(tempDir, { recursive: true, force: true });
+  afterEach(async () => {
+    await fs.remove(tempDir);
   });
 
   it('builds a post list and writes the result to a file', async () => {
-
     await buildPostList(postDirectories, tempDir, writeFilePath);
 
-    const outputExists = existsSync(writeFilePath);
+    const outputExists = await fs.pathExists(writeFilePath);
     expect(outputExists).toBe(true);
 
-    const output = JSON.parse(readFileSync(writeFilePath, 'utf-8'));
-    console.log(output)
+    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
+    console.log(output);
 
     expect(output).toHaveProperty('docs');
     expect(output).toHaveProperty('blog');
@@ -56,25 +55,25 @@ describe('buildPostList', () => {
   });
 
   it('handles a directory with only section files', async () => {
-    mkdirSync(join(tempDir, 'docs', 'section1'), { recursive: true });
-    writeFileSync(join(tempDir, 'docs', 'section1', '_section.mdx'), '---\ntitle: Section 1\n---\nThis is section 1.');
+    await fs.ensureDir(join(tempDir, 'docs', 'section1'));
+    await fs.writeFile(join(tempDir, 'docs', 'section1', '_section.mdx'), '---\ntitle: Section 1\n---\nThis is section 1.');
 
     await buildPostList(postDirectories, tempDir, writeFilePath);
 
-    const output = JSON.parse(readFileSync(writeFilePath, 'utf-8'));
-    console.log(output)
+    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
+    console.log(output);
 
     expect(output.docs.length).toBeGreaterThan(0);
     expect(output.docs.find(item => item.title === 'Section 1')).toBeDefined();
   });
 
   it('handles multiple release notes correctly', async () => {
-    writeFileSync(join(tempDir, 'blog', 'release-notes-2.1.1.mdx'), '---\ntitle: Release Notes 2.1.1\n---\nThis is a release note.');
+    await fs.writeFile(join(tempDir, 'blog', 'release-notes-2.1.1.mdx'), '---\ntitle: Release Notes 2.1.1\n---\nThis is a release note.');
 
     await buildPostList(postDirectories, tempDir, writeFilePath);
 
-    const output = JSON.parse(readFileSync(writeFilePath, 'utf-8'));
-    console.log(output)
+    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
+    console.log(output);
 
     const firstReleaseNote = output.blog.find(item => item.slug === '/blog/release-notes-2.1.0');
     const secondReleaseNote = output.blog.find(item => item.slug === '/blog/release-notes-2.1.1');
@@ -107,14 +106,11 @@ describe('buildPostList', () => {
 
   it('does not process specification files without a title', async () => {
     const specDir = join(tempDir, 'docs', 'reference', 'specification');
-    writeFileSync(
-      join(specDir, 'v2.1.0-no-title.mdx'),
-      '---\n---\nContent of specification without a title.'
-    );
+    await fs.writeFile(join(specDir, 'v2.1.0-no-title.mdx'), '---\n---\nContent of specification without a title.');
 
     await buildPostList(postDirectories, tempDir, writeFilePath);
 
-    const output = JSON.parse(readFileSync(writeFilePath, 'utf-8'));
+    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
     const noTitleEntry = output.docs.find(item => item.slug.includes('/reference/specification/v2.1.0-no-title'));
 
     expect(noTitleEntry).toBeUndefined();
@@ -122,14 +118,11 @@ describe('buildPostList', () => {
 
   it('does not process specification files with "next-spec" in the filename', async () => {
     const specDir = join(tempDir, 'docs', 'reference', 'specification');
-    writeFileSync(
-      join(specDir, 'v2.1.0-next-spec.1.mdx'),
-      '---\n---\nContent of pre-release specification v2.1.0-next-spec.1.'
-    );
+    await fs.writeFile(join(specDir, 'v2.1.0-next-spec.1.mdx'), '---\n---\nContent of pre-release specification v2.1.0-next-spec.1.');
 
     await buildPostList(postDirectories, tempDir, writeFilePath);
 
-    const output = JSON.parse(readFileSync(writeFilePath, 'utf-8'));
+    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
     const nextSpecEntry = output.docs.find(item => item.slug.includes('/reference/specification/v2.1.0-next-spec.1'));
 
     expect(nextSpecEntry).toBeUndefined();
@@ -137,14 +130,11 @@ describe('buildPostList', () => {
 
   it('does not process specification files with "explorer" in the filename', async () => {
     const specDir = join(tempDir, 'docs', 'reference', 'specification');
-    writeFileSync(
-      join(specDir, 'explorer.mdx'),
-      '---\n---\nContent of explorer specification.'
-    );
+    await fs.writeFile(join(specDir, 'explorer.mdx'), '---\n---\nContent of explorer specification.');
 
     await buildPostList(postDirectories, tempDir, writeFilePath);
 
-    const output = JSON.parse(readFileSync(writeFilePath, 'utf-8'));
+    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
     const explorerEntry = output.docs.find(item => item.slug.includes('/reference/specification/explorer'));
 
     expect(explorerEntry).toBeUndefined();
@@ -164,9 +154,8 @@ describe('buildPostList', () => {
     expect(error.message).toMatch(/Error while building post list/);
   });
 
-
   it('throws an error if the front matter cannot be parsed', async () => {
-    writeFileSync(join(tempDir, 'docs', 'invalid.mdx'), '---\ninvalid front matter\n---\nContent');
+    await fs.writeFile(join(tempDir, 'docs', 'invalid.mdx'), '---\ninvalid front matter\n---\nContent');
 
     let error;
     try {
@@ -180,7 +169,6 @@ describe('buildPostList', () => {
   });
 
   it('throws an error if no post directories are provided', async () => {
-
     let error;
 
     try {

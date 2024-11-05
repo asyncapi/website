@@ -1,4 +1,4 @@
-const { readdirSync, statSync, existsSync, readFileSync, writeFileSync } = require('fs')
+const { readdir, stat, pathExists, readFile, writeFile } = require('fs-extra')
 const { basename, join, normalize, sep, posix } = require('path')
 const frontMatter = require('gray-matter')
 const toc = require('markdown-toc')
@@ -31,24 +31,24 @@ async function buildPostList(postDirectories, basePath, writeFilePath) {
       throw new Error('Error while building post list: No post directories provided');
     }
     const normalizedBasePath = normalize(basePath)
-    walkDirectories(postDirectories, result, normalizedBasePath)
+    await walkDirectories(postDirectories, result, normalizedBasePath)
     const treePosts = buildNavTree(result["docs"].filter((p) => p.slug.startsWith('/docs/')))
     result["docsTree"] = treePosts
     result["docs"] = addDocButtons(result["docs"], treePosts)
     if (process.env.NODE_ENV === 'production') {
       // console.log(inspect(result, { depth: null, colors: true }))
     }
-    writeFileSync(writeFilePath, JSON.stringify(result, null, '  '))
+    await writeFile(writeFilePath, JSON.stringify(result, null, '  '))
   } catch (error) {
     throw new Error(`Error while building post list: ${error.message}`);
   }
 }
 
-function walkDirectories(directories, result, basePath, sectionWeight = 0, sectionTitle, sectionId, rootSectionId) {
+async function walkDirectories(directories, result, basePath, sectionWeight = 0, sectionTitle, sectionId, rootSectionId) {
   for (let dir of directories) {
     let directory = posix.normalize(dir[0]);
     let sectionSlug = dir[1] || '';
-    let files = readdirSync(directory);
+    let files = await readdir(directory)
 
     for (let file of files) {
       let details;
@@ -57,10 +57,10 @@ function walkDirectories(directories, result, basePath, sectionWeight = 0, secti
       const slug = posix.normalize(fileName.replace(new RegExp(`^${basePath}`), '')).replace(/\\/g, '/');
       const slugElements = slug.split('/')
 
-      if (isDirectory(fileName)) {
-        if (existsSync(fileNameWithSection)) {
+      if (await isDirectory(fileName)) {
+        if (await pathExists(fileNameWithSection)) {
           // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
-          details = frontMatter(readFileSync(fileNameWithSection, 'utf-8'), {}).data
+          details = frontMatter(await readFile(fileNameWithSection, 'utf-8'), {}).data
           details.title = details.title || capitalize(basename(fileName))
         } else {
           details = {
@@ -80,9 +80,9 @@ function walkDirectories(directories, result, basePath, sectionWeight = 0, secti
         details.slug = slug
         addItem(details)
         const rootId = details.parent || details.rootSectionId
-        walkDirectories([[fileName, slug]], result, basePath, details.weight, details.title, details.sectionId, rootId)
+        await walkDirectories([[fileName, slug]], result, basePath, details.weight, details.title, details.sectionId, rootId)
       } else if (file.endsWith('.mdx') && !fileName.endsWith(sep + '_section.mdx')) {
-        const fileContent = readFileSync(fileName, 'utf-8')
+        const fileContent = await readFile(fileName, 'utf-8')
         // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
         const { data, content } = frontMatter(fileContent, {})
         details = data
@@ -94,7 +94,7 @@ function walkDirectories(directories, result, basePath, sectionWeight = 0, secti
         details.sectionTitle = sectionTitle
         details.sectionId = sectionId
         details.rootSectionId = rootSectionId
-        details.id = fileName.replace(/\\/g, '/');
+        details.id = fileName.replace(/\\/g, '/')
         details.isIndex = fileName.endsWith(join('index.mdx'))
         details.slug = details.isIndex ? sectionSlug : slug.replace(/\.mdx$/, '')
         if (details.slug.includes('/reference/specification/') && !details.title) {
@@ -153,8 +153,8 @@ function slugifyToC(str) {
   return slug || slugify(str, { firsth1: true, maxdepth: 6 })
 }
 
-function isDirectory(dir) {
-  return statSync(dir).isDirectory()
+async function isDirectory(dir) {
+  return (await stat(dir)).isDirectory()
 }
 
 function capitalize(text) {
