@@ -1,5 +1,17 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/wiM20HTCerM/hqdefault.jpg",
+    "title": "Using API spec as an Executable Contract To Mock and Test Mic - Hari Krishnanroservices",
+    "description": "AsyncAPI allows us to articulate communication channels between services clearly. What if I told you that this AsyncAPI ...",
+    "videoId": "wiM20HTCerM"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/22LFOLeF9Lk/hqdefault.jpg",
+    "title": "AsyncAPI + WebSocket: The Collaborative Combo",
+    "description": "Build a real-time collaborative drawing app from scratch using WebSocket & AsyncAPI, where users can draw together and chat in ...",
+    "videoId": "22LFOLeF9Lk"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/XGn8v0yBfOI/hqdefault.jpg",
     "title": "AsyncAPI Online Conference 2024💜",
     "description": "AsyncAPI Online Conference 2024   Welcome to the AsyncAPI Online Conference 2024 Edition.",
@@ -16,17 +28,5 @@
     "title": "Marketing WG Meeting, 14:00 UTC Tuesday October 22nd 2024",
     "description": "https://github.com/asyncapi/community/issues/1553.",
     "videoId": "2WUchTKDPfs"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/FzRxTpOeIDA/hqdefault.jpg",
-    "title": "Design Meeting, 12:00 UTC Thursday October 17th 2024",
-    "description": "https://github.com/asyncapi/community/issues/1558.",
-    "videoId": "FzRxTpOeIDA"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/maMQC97q_6E/hqdefault.jpg",
-    "title": "Community Meeting, 8:00 UTC Tuesday October 15th 2024",
-    "description": "https://github.com/asyncapi/community/issues/1545.",
-    "videoId": "maMQC97q_6E"
   }
 ]
