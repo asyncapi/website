@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface IColumnProps {
   children: React.ReactNode;
 }

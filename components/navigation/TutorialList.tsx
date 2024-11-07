@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 
 import type { DocsContextType } from '@/types/context/DocsContext';
 import type { IDoc } from '@/types/post';

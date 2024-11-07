@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import { SearchButton } from '../AlgoliaSearch';
 import NavItemDropdown from '../icons/NavItemDropdown';

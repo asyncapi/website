@@ -1,6 +1,8 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
+import AsyncAPIColorIcon from './icons/AsyncAPIColorIcon';
+
 interface LoaderProps {
   // eslint-disable-next-line prettier/prettier
 
@@ -25,7 +27,7 @@ interface LoaderProps {
  */
 export default function Loader({
   loaderText = '',
-  loaderIcon = null,
+  loaderIcon = <AsyncAPIColorIcon alt='Loading...' />,
   className = '',
   dark = false,
   pulsating = false
