@@ -4,8 +4,9 @@ weight: 30
 ---
 
 ## What is a message?
-A `message` is a communication asset used to transmit or exchange information from a sender to the receiver through `channels`. A single `message` can be consumed by multiple independent receivers and can also be defined as an _event_ or _command_. The sender includes a payload of data (that has been serialized into an appropriate format, e.g., JSON, XML, binary, etc.) that needs to be processed by the receiver. It may also include metadata; information that describes the message itself. This metadata is often known as _headers_ or _properties_.
+A _message_ is a communication asset that transmits or exchanges information from a sender to the receiver through channels.
 
+One message can also be defined as an event or command and can be consumed by multiple independent receivers. The sender encodes a payload of data (serialized into a suitable format, such as JSON, XML, binary, or others) that requires processing by the receiver. Additionally, the message may include _metadata_, which is information that describes the message itself. This metadata is commonly referred to as _headers_ or _properties_.
 
 ``` mermaid
 graph LR
@@ -17,11 +18,10 @@ A{{sender application}} --> b --> C{{receiver application}}
   
 ```
 
-In the diagram above, the sender application transmits a `message` to the receiver application.
+The diagram above illustrates how a sender application transmits a message through a channel to a receiver application, demonstrating the basic flow of message-based communication.
 
 ## Messages vs Events
-A `message` carries information from one application to the other, while an `event` is a message that provides details of something that has already occurred. One important aspect to note is that depending on the type of information a `message` contains, it can fall under an _event_, _query_, or _command_. 
-*See the diagram below.*
+A **message** conveys information between applications, while an **event** is a message that provides details of something that has already occurred. A crucial aspect to note is that depending on the type of information a message carries, it can either be an event, query, or command. Check the diagram below.
 
 ``` mermaid
 graph TD
@@ -32,4 +32,4 @@ graph TD
     C --> E(Command)
 ```
 
-Overall, `events` are `messages` but not all `messages` are `events`.
+Summing up, events are messages, but not all messages are events.
