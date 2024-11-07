@@ -1,4 +1,5 @@
 import { createContext } from 'react';
-import { AppContextType } from '@/types/context/AppContext';
 
-export default createContext<AppContextType>({ path: "" });
+import type { AppContextType } from '@/types/context/AppContext';
+
+export default createContext<AppContextType>({ path: '' });

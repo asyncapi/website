@@ -5,7 +5,6 @@ type: Conference
 tags:
   - Conference
 cover: /img/posts/conference-2022.webp
-featured: true
 authors:
   - name: Azeez Elegbede
     photo: /img/avatars/ace.webp

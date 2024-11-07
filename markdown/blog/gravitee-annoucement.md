@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/atinuke-oluwabamikemi-kayode-5b838b1b7/
     byline: AsyncAPI Community Marketing Specialist
 excerpt: 'Gravitee Sponsorship Announcement'
-featured: true
 ---
 
 ## Gravitee Sponsorship Announcement

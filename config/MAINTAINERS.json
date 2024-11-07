@@ -87,6 +87,7 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
+            "studio",
             "github-action-for-cli",
             "cli"
         ],
@@ -157,7 +158,7 @@
             "html-template",
             "markdown-template",
             "nodejs-ws-template",
-            "generator-hooks",
+            "glee",
             "brand"
         ],
         "githubID": 242119
@@ -188,8 +189,6 @@
             "generator",
             "parser-js",
             "converter-js",
-            "ts-nats-template",
-            "dotnet-nats-template",
             "generator-react-sdk",
             "modelina",
             "simulator",
@@ -259,7 +258,6 @@
             "website",
             "spec-json-schemas",
             "generator",
-            "asyncapi-react",
             "extensions-catalog",
             "bindings",
             "enterprise-patterns",
@@ -271,13 +269,11 @@
             "github-action-for-cli",
             ".github",
             "jasyncapi",
-            "generator-hooks",
             "vs-asyncapi-preview",
             "template-for-generator-templates",
             "community",
             "diff",
-            "chatbot",
-            "infra"
+            "chatbot"
         ],
         "githubID": 6995927
     },
@@ -301,8 +297,6 @@
             "html-template",
             "markdown-template",
             "github-action-for-cli",
-            "ts-nats-template",
-            "dotnet-nats-template",
             "template-for-generator-templates",
             "generator-react-sdk",
             "modelina",
@@ -325,6 +319,7 @@
         "availableForHire": false,
         "isTscMember": true,
         "repos": [
+            "asyncapi-react",
             "conference-website",
             "chatbot"
         ],
@@ -447,8 +442,7 @@
             "go-watermill-template",
             "template-for-go-projects",
             "parser-api",
-            "server-api",
-            "infra"
+            "server-api"
         ],
         "githubID": 1083296
     },
@@ -720,6 +714,7 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
+            "website",
             "modelina"
         ],
         "githubID": 43639341
@@ -972,5 +967,25 @@
             "kotlin-asyncapi"
         ],
         "githubID": 39913716
+    },
+    {
+        "name": "Jonas S\u00fcskind",
+        "github": "sueskind",
+        "isTscMember": false,
+        "repos": [
+            "kotlin-asyncapi"
+        ],
+        "githubID": 52210599
+    },
+    {
+        "name": "Andrei",
+        "github": "gimlet2",
+        "twitter": "gimlet2",
+        "availableForHire": true,
+        "isTscMember": false,
+        "repos": [
+            "kotlin-asyncapi"
+        ],
+        "githubID": 758568
     }
 ]

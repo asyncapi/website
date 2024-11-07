@@ -72,25 +72,6 @@
         }
       },
       {
-        "title": "nestjs-asyncapi",
-        "description": "Utilize decorators to generate AsyncAPI document utilizing DTOs (similar to @nestjs/swagger) and a web UI.",
-        "links": {
-          "repoUrl": "https://github.com/flamewow/nestjs-asyncapi"
-        },
-        "filters": {
-          "language": "Typescript",
-          "technology": [
-            "Node.js",
-            "NestJS"
-          ],
-          "categories": [
-            "code-first"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": false
-        }
-      },
-      {
         "title": "Zod Sockets",
         "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
         "links": {
@@ -107,6 +88,25 @@
             "code-first",
             "dsl",
             "framework"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "nestjs-asyncapi",
+        "description": "Utilize decorators to generate AsyncAPI document utilizing DTOs (similar to @nestjs/swagger) and a web UI.",
+        "links": {
+          "repoUrl": "https://github.com/flamewow/nestjs-asyncapi"
+        },
+        "filters": {
+          "language": "Typescript",
+          "technology": [
+            "Node.js",
+            "NestJS"
+          ],
+          "categories": [
+            "code-first"
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
@@ -343,6 +343,23 @@
     "description": "The following is a list of API/application frameworks that make use of AsyncAPI.",
     "toolsList": [
       {
+        "title": "Glee",
+        "description": "Glee — The AsyncAPI framework that will make you smile again :)",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/glee"
+        },
+        "filters": {
+          "technology": [
+            "TypeScript"
+          ],
+          "categories": [
+            "framework"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      },
+      {
         "title": "Zod Sockets",
         "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
         "links": {
@@ -398,6 +415,23 @@
           ],
           "categories": [
             "github-action"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      },
+      {
+        "title": "GitHub Action for Generator",
+        "description": "CLI to work with your AsyncAPI files. You can validate them and in the future use a generator and even bootstrap a new file. Contributions are welcomed!",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/cli"
+        },
+        "filters": {
+          "technology": [
+            "AsyncAPI Generator"
+          ],
+          "categories": [
+            "github-actions"
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
@@ -677,24 +711,6 @@
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
-      },
-      {
-        "title": "asyncapi-preview",
-        "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
-        "links": {
-          "repoUrl": "https://github.com/Savio629/testing2"
-        },
-        "filters": {
-          "technology": [
-            "VSCode",
-            "SmartPaste"
-          ],
-          "categories": [
-            "ide-extension"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": false
-        }
       }
     ]
   },
@@ -702,48 +718,10 @@
     "description": "The following is a list of templates compatible with AsyncAPI Generator. You can use them to generate apps, clients or documentation from your AsyncAPI documents.",
     "toolsList": [
       {
-        "title": "Java Template",
-        "description": "Java template for the AsyncAPI Generator",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/java-template"
-        },
-        "filters": {
-          "language": [
-            "javascript"
-          ],
-          "technology": [
-            "Java"
-          ],
-          "categories": [
-            "generator-template"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      },
-      {
         "title": "Node.js Websockets Template",
         "description": "Node.js WebSockets template for the AsyncAPI Generator. It showcases how from a single AsyncAPI document you can generate a server and a client at the same time.",
         "links": {
           "repoUrl": "https://github.com/asyncapi/nodejs-ws-template"
-        },
-        "filters": {
-          "language": "javascript",
-          "technology": [
-            "Node.js"
-          ],
-          "categories": [
-            "generator-template"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      },
-      {
-        "title": "Node.js Multiprotocol Template",
-        "description": "This template generates a server using your AsyncAPI document. It supports multiple different protocols, like Kafka or MQTT.  It is designed in the way that generated code is a library and with it's API you can start the server, send messages or register a middleware for listening incoming messages. Runtime message validation included.",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/nodejs-template"
         },
         "filters": {
           "language": "javascript",
@@ -788,6 +766,44 @@
           "technology": [
             "Spring Cloud Streams",
             "Maven"
+          ],
+          "categories": [
+            "generator-template"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      },
+      {
+        "title": "Java Template",
+        "description": "Java template for the AsyncAPI Generator",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/java-template"
+        },
+        "filters": {
+          "language": [
+            "javascript"
+          ],
+          "technology": [
+            "Java"
+          ],
+          "categories": [
+            "generator-template"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      },
+      {
+        "title": "Node.js Multiprotocol Template",
+        "description": "This template generates a server using your AsyncAPI document. It supports multiple different protocols, like Kafka or MQTT.  It is designed in the way that generated code is a library and with it's API you can start the server, send messages or register a middleware for listening incoming messages. Runtime message validation included.",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/nodejs-template"
+        },
+        "filters": {
+          "language": "javascript",
+          "technology": [
+            "Node.js"
           ],
           "categories": [
             "generator-template"

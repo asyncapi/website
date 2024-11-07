@@ -1,3 +1,5 @@
+import React from 'react';
+
 import type { MenuItem } from './MenuBlocks';
 import MenuBlocks from './MenuBlocks';
 

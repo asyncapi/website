@@ -1,6 +1,8 @@
+import React from 'react';
+
 import type { Expenses } from '@/types/FinancialSummary/BarChartComponent';
 
-import ExpensesData from '../../config/finance/json-data/2024/Expenses.json';
+import ExpensesData from '../../config/finance/json-data/Expenses.json';
 import Card from './Card';
 
 /**

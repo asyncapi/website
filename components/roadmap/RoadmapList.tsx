@@ -1,5 +1,7 @@
 // Since a RoadmapList may contain other RoadmapItems, we need to import RoadmapItem to display them.
 /* eslint-disable import/no-cycle*/
+import React from 'react';
+
 import RoadmapItem from './RoadmapItem';
 
 interface IRoadmapListProps {
