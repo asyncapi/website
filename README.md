@@ -314,6 +314,15 @@ This repository has the following structure:
 </a>
 </p>
 
+## License
+
+This project's source code is licensed under the Apache License, Version 2.0. A copy of the
+license is available in LICENSE file.
+
+This project's documentation is licensed under the Creative Commons Attribution
+4.0 International License (CC-BY-4.0). A copy of the license is available in
+LICENSE-docs.
+
 ## AsyncAPI Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
