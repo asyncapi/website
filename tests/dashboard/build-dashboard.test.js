@@ -184,15 +184,15 @@ describe('GitHub Discussions Processing', () => {
   });
 
   it('should handle parsing errors in processHotDiscussions', async () => {
-    const consoleErrorSpy = jest.spyOn(console, 'error');
-  
+    const localConsoleErrorSpy = jest.spyOn(console, 'error');
+
     await expect(getHotDiscussions([undefined])).rejects.toThrow();
-    
+
     expect(consoleErrorSpy).toHaveBeenCalledWith(
-      'there was some issues while parsing this item: undefined'
+      'there were some issues while parsing this item: undefined'
     );
-    
-    consoleErrorSpy.mockRestore();
+
+    localConsoleErrorSpy.mockRestore();
   });
-  
+
 });

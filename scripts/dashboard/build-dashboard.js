@@ -97,7 +97,7 @@ async function processHotDiscussions(batch) {
           score: finalInteractionsCount / (monthsSince(discussion.timelineItems.updatedAt) + 2) ** 1.8
         };
       } catch (e) {
-        console.error(`there was some issues while parsing this item: ${JSON.stringify(discussion)}`);
+        console.error(`there were some issues while parsing this item: ${JSON.stringify(discussion)}`);
         throw e;
       }
     })
