@@ -52,22 +52,6 @@ export default function Footer() {
                 </ul>
               </div>
 
-              <div className='mb-5 px-14 sm:ml-10 sm:px-8 md:ml-5'>
-                <div className='py-2'>
-                  <div className='text-white'>
-                    <Heading typeStyle={HeadingTypeStyle.smSemibold}>News</Heading>
-                  </div>
-                </div>
-                <ul className='justify-center'>
-                  <li className='py-2'>
-                    <div className='text-base leading-6 text-cool-gray transition duration-300 ease-in-out hover:text-white'>
-                      <a href='mailto:press@asyncapi.io'>Email Us</a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
             <div className='mb-5 px-0 sm:ml-5 sm:px-10'>
               <div className='hidden py-2 sm:block'>
                 <div className='mr-12 text-white'>
@@ -88,6 +72,22 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
+            </div>
+
+            <div className='mb-5 px-14 sm:ml-10 sm:px-8 md:ml-5'>
+                <div className='py-2'>
+                  <div className='text-white'>
+                    <Heading typeStyle={HeadingTypeStyle.smSemibold}>News</Heading>
+                  </div>
+                </div>
+                <ul className='justify-center'>
+                  <li className='py-2'>
+                    <div className='text-base leading-6 text-cool-gray transition duration-300 ease-in-out hover:text-white'>
+                      <a href='mailto:press@asyncapi.io'>Email Us</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
           </div>
         </nav>
 
