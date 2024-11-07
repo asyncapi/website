@@ -351,3 +351,7 @@ abbr[title] {
 .explorer-menu-wrapper > div > div > div > button {
   margin-top: 0px;
 }
+
+select {
+  cursor:pointer;
+}
