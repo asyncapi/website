@@ -121,7 +121,15 @@ async function getHotDiscussions(discussions) {
 }
 
 async function writeToFile(content, writePath) {
-  await writeFile(writePath, JSON.stringify(content, null, '  '));
+  try {
+    await writeFile(writePath, JSON.stringify(content, null, '  '));
+  } catch (error) {
+    console.error('Failed to write dashboard data:', {
+      error: error.message,
+      writePath
+    });
+    throw error;
+  }
 }
 
 async function mapGoodFirstIssues(issues) {
