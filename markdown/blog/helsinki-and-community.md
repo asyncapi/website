@@ -11,7 +11,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Executive Director
 excerpt: 'Conferences are great. They bring communities together and give people a platform to share their experiences. But is that enough?'
-featured: true
 ---
 
 ## How It All Started
