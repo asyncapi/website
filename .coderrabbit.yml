@@ -14,8 +14,6 @@ tools:
     enabled: true
   biome:
     enabled: true
-  ruff:
-    enabled: true
   github-checks:
     enabled: true
     timeout_ms: 180000
