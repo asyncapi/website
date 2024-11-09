@@ -125,52 +125,21 @@ describe('buildPostList', () => {
 
   it('throws an error if the front matter cannot be parsed', async () => {
     await fs.writeFile(join(tempDir, 'docs', 'invalid.mdx'), '---\ninvalid front matter\n---\nContent');
-
-    let error;
-    try {
-      await buildPostList(postDirectories, tempDir, writeFilePath);
-    } catch (err) {
-      error = err;
-    }
-
-    expect(error).toBeDefined();
-    expect(error.message).toMatch(/Error while building post list/);
+  
+    await expect(buildPostList(postDirectories, tempDir, writeFilePath)).rejects.toThrow(/Error while building post list/);
   });
-
+  
   it('throws an error if no post directories are provided', async () => {
-    let error;
-
-    try {
-      await buildPostList([], tempDir, writeFilePath);
-    } catch (err) {
-      error = err;
-    }
-
-    expect(error).toBeDefined();
-    expect(error.message).toMatch(/Error while building post list/);
+    await expect(buildPostList([], tempDir, writeFilePath)).rejects.toThrow(/Error while building post list/);
   });
-
+  
   it('throws an error if basePath is missing', async () => {
-    let error;
-    try {
-      await buildPostList(postDirectories, undefined, writeFilePath);
-    } catch (err) {
-      error = err;
-    }
-    expect(error).toBeDefined();
-    expect(error.message).toMatch(/Error while building post list: basePath and writeFilePath are required/);
+    await expect(buildPostList(postDirectories, undefined, writeFilePath)).rejects.toThrow(/Error while building post list: basePath and writeFilePath are required/);
   });
   
   it('throws an error if writeFilePath is missing', async () => {
-    let error;
-    try {
-      await buildPostList(postDirectories, tempDir, undefined);
-    } catch (err) {
-      error = err;
-    }
-    expect(error).toBeDefined();
-    expect(error.message).toMatch(/Error while building post list: basePath and writeFilePath are required/);
-  });
+    await expect(buildPostList(postDirectories, tempDir, undefined)).rejects.toThrow(/Error while building post list: basePath and writeFilePath are required/);
+  });  
 
   describe('slugifyToC', () => {
 
