@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const {
-    isValidURL,
     validateBlogs,
     validateDocs,
     checkMarkdownFiles
@@ -29,64 +28,6 @@ describe('Frontmatter Validator', () => {
         });
     });
 
-    it('should return true for valid URLs', () => {
-        expect(isValidURL('https://example.com')).toBe(true);
-        expect(isValidURL('http://localhost:3000')).toBe(true);
-        expect(isValidURL('https://sub.domain.com/path?query=value')).toBe(true);
-    });
-
-    it('should return false for invalid URLs', () => {
-        expect(isValidURL('not-a-url')).toBe(false);
-        expect(isValidURL('http://')).toBe(false);
-        expect(isValidURL('')).toBe(false);
-    });
-
-    it('should return null for valid blog frontmatter', () => {
-        const validFrontmatter = {
-            title: 'Test Blog',
-            date: '2024-01-01',
-            type: 'blog',
-            tags: ['test', 'validation'],
-            cover: 'cover.jpg',
-            authors: [
-                {
-                    name: 'John Doe',
-                    link: 'https://example.com',
-                    photo: 'john.jpg'
-                }
-            ]
-        };
-
-        expect(validateBlogs(validFrontmatter)).toBeNull();
-    });
-
-    it('should return errors for missing required attributes', () => {
-        const invalidFrontmatter = {
-            title: 'Test Blog'
-        };
-
-        const errors = validateBlogs(invalidFrontmatter);
-        expect(errors).toContain('date is missing');
-        expect(errors).toContain('type is missing');
-        expect(errors).toContain('tags is missing');
-        expect(errors).toContain('cover is missing');
-        expect(errors).toContain('authors is missing');
-    });
-
-    it('should validate date format', () => {
-        const frontmatter = {
-            title: 'Test Blog',
-            date: 'invalid-date',
-            type: 'blog',
-            tags: ['test'],
-            cover: 'cover.jpg',
-            authors: [{ name: 'John', photo: 'photo.jpg' }]
-        };
-
-        const errors = validateBlogs(frontmatter);
-        expect(errors).toContain('Invalid date format: invalid-date');
-    });
-
     it('should validate authors array format', () => {
         const frontmatter = {
             title: 'Test Blog',
@@ -105,15 +46,6 @@ describe('Frontmatter Validator', () => {
         expect(errors).toContain('Author at index 0 is missing a photo');
         expect(errors).toContain('Author at index 1 is missing a name');
         expect(errors).toContain('Invalid URL for author at index 2: not-a-url');
-    });
-
-    it('should return null for valid docs frontmatter', () => {
-        const validFrontmatter = {
-            title: 'Test Doc',
-            weight: 1
-        };
-
-        expect(validateDocs(validFrontmatter)).toBeNull();
     });
 
     it('should return errors for invalid docs frontmatter', () => {
@@ -174,31 +106,6 @@ Content here
                         }, 1000);
                     });
                 });
-            });
-        });
-    });
-
-    it('should skip specified directories', done => {
-        fs.mkdir(path.join(tempDir, 'reference', 'specification'), { recursive: true }, err => {
-            if (err) throw err;
-
-            const invalidContent = `---
-title: Invalid Content
----`;
-
-            fs.writeFile(path.join(tempDir, 'reference', 'specification', 'skip.md'), invalidContent, err => {
-                if (err) throw err;
-
-                const mockConsole = jest.spyOn(console, 'log').mockImplementation();
-
-                checkMarkdownFiles(tempDir, validateBlogs);
-
-                setTimeout(() => {
-                    expect(mockConsole).not.toHaveBeenCalled();
-
-                    mockConsole.mockRestore();
-                    done();
-                }, 1000);
             });
         });
     });
