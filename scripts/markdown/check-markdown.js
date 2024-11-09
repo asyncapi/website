@@ -144,3 +144,5 @@ const blogsFolderPath = path.resolve(__dirname, '../../markdown/blog');
 
 checkMarkdownFiles(docsFolderPath, validateDocs);
 checkMarkdownFiles(blogsFolderPath, validateBlogs);
+
+module.exports = { isValidURL, validateBlogs, validateDocs, checkMarkdownFiles,}
