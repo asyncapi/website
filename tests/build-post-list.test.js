@@ -90,20 +90,6 @@ describe('buildPostList', () => {
     await expect(buildPostList([invalidDir], tempDir, writeFilePath)).rejects.toThrow();
   });
 
-  it('handles heading ids like {# myHeadingId}', () => {
-    const input = '## My Heading {#custom-id}';
-    expect(slugifyToC(input)).toBe('custom-id');
-  });
-
-  it('handles heading ids like {<a name="myHeadingId"/>}', () => {
-    const input = '## My Heading {<a name="custom-anchor-id"/>}';
-    expect(slugifyToC(input)).toBe('custom-anchor-id');
-  });
-
-  it('handles empty strings', () => {
-    expect(slugifyToC('')).toBe('');
-  });
-
   it('does not process specification files without a title', async () => {
     const specDir = join(tempDir, 'docs', 'reference', 'specification');
     await fs.writeFile(join(specDir, 'v2.1.0-no-title.mdx'), '---\n---\nContent of specification without a title.');
@@ -140,20 +126,6 @@ describe('buildPostList', () => {
     expect(explorerEntry).toBeUndefined();
   });
 
-  it('throws an error if the directory cannot be read', async () => {
-    const invalidDir = [join(tempDir, 'non-existent-dir'), '/invalid'];
-
-    let error;
-    try {
-      await buildPostList([invalidDir], tempDir, writeFilePath);
-    } catch (err) {
-      error = err;
-    }
-
-    expect(error).toBeDefined();
-    expect(error.message).toMatch(/Error while building post list/);
-  });
-
   it('throws an error if the front matter cannot be parsed', async () => {
     await fs.writeFile(join(tempDir, 'docs', 'invalid.mdx'), '---\ninvalid front matter\n---\nContent');
 
@@ -180,4 +152,19 @@ describe('buildPostList', () => {
     expect(error).toBeDefined();
     expect(error.message).toMatch(/Error while building post list/);
   });
+
+  it('handles heading ids like {# myHeadingId}', () => {
+    const input = '## My Heading {#custom-id}';
+    expect(slugifyToC(input)).toBe('custom-id');
+  });
+
+  it('handles heading ids like {<a name="myHeadingId"/>}', () => {
+    const input = '## My Heading {<a name="custom-anchor-id"/>}';
+    expect(slugifyToC(input)).toBe('custom-anchor-id');
+  });
+
+  it('handles empty strings', () => {
+    expect(slugifyToC('')).toBe('');
+  });
+  
 });

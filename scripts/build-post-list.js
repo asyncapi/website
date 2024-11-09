@@ -35,9 +35,6 @@ async function buildPostList(postDirectories, basePath, writeFilePath) {
     const treePosts = buildNavTree(result["docs"].filter((p) => p.slug.startsWith('/docs/')))
     result["docsTree"] = treePosts
     result["docs"] = addDocButtons(result["docs"], treePosts)
-    if (process.env.NODE_ENV === 'production') {
-      // console.log(inspect(result, { depth: null, colors: true }))
-    }
     await writeFile(writeFilePath, JSON.stringify(result, null, '  '))
   } catch (error) {
     throw new Error(`Error while building post list: ${error.message}`);
