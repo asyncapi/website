@@ -150,18 +150,22 @@ describe('buildPostList', () => {
     expect(error.message).toMatch(/Error while building post list/);
   });
 
-  it('handles heading ids like {# myHeadingId}', () => {
-    const input = '## My Heading {#custom-id}';
-    expect(slugifyToC(input)).toBe('custom-id');
-  });
+  describe('slugifyToC', () => {
 
-  it('handles heading ids like {<a name="myHeadingId"/>}', () => {
-    const input = '## My Heading {<a name="custom-anchor-id"/>}';
-    expect(slugifyToC(input)).toBe('custom-anchor-id');
-  });
+    it('handles heading ids like {# myHeadingId}', () => {
+      const input = '## My Heading {#custom-id}';
+      expect(slugifyToC(input)).toBe('custom-id');
+    });
 
-  it('handles empty strings', () => {
-    expect(slugifyToC('')).toBe('');
-  });
+    it('handles heading ids like {<a name="myHeadingId"/>}', () => {
+      const input = '## My Heading {<a name="custom-anchor-id"/>}';
+      expect(slugifyToC(input)).toBe('custom-anchor-id');
+    });
 
+    it('handles empty strings', () => {
+      expect(slugifyToC('')).toBe('');
+    });
+
+  });
+  
 });

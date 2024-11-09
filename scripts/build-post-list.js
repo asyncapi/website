@@ -1,5 +1,5 @@
 const { readdir, stat, pathExists, readFile, writeFile } = require('fs-extra')
-const { basename, join, normalize, sep, posix, relative } = require('path')
+const { basename, join, normalize, sep, posix, relative, extname } = require('path')
 const frontMatter = require('gray-matter')
 const toc = require('markdown-toc')
 const { slugify } = require('markdown-toc/lib/utils')
@@ -37,7 +37,7 @@ async function buildPostList(postDirectories, basePath, writeFilePath) {
     result["docs"] = addDocButtons(result["docs"], treePosts)
     await writeFile(writeFilePath, JSON.stringify(result, null, '  '))
   } catch (error) {
-    throw new Error(`Error while building post list: ${error.message}`);
+    throw new Error('Error while building post list', { cause: error });
   }
 }
 
@@ -122,11 +122,11 @@ async function walkDirectories(directories, result, basePath, sectionWeight = 0,
 
         // To create a list of available ReleaseNotes list, which will be used to add details.releaseNoteLink attribute.
         if (file.startsWith("release-notes") && dir[1] === "/blog") {
-          const fileName_without_extension = file.slice(0, -4)
+          const fileNameWithoutExtension = basename(file, extname(file))
           // removes the file extension. For example, release-notes-2.1.0.md -> release-notes-2.1.0
-          const version = fileName_without_extension.slice(fileName_without_extension.lastIndexOf("-") + 1)
+          const version = fileNameWithoutExtension.slice(fileNameWithoutExtension.lastIndexOf("-") + 1)
 
-          // gets the version from the name of the releaseNote .md file (from /blog). For example, version = 2.1.0 if fileName_without_extension = release-notes-2.1.0
+          // gets the version from the name of the releaseNote .md file (from /blog). For example, version = 2.1.0 if fileNameWithoutExtension = release-notes-2.1.0
           releaseNotes.push(version)
           // releaseNotes is the list of all available releaseNotes
         }
