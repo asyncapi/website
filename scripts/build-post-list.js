@@ -27,6 +27,11 @@ const addItem = (details) => {
 
 async function buildPostList(postDirectories, basePath, writeFilePath) {
   try {
+
+    if (!basePath || !writeFilePath) {
+            throw new Error('Error while building post list: basePath and writeFilePath are required');
+    }
+
     if (postDirectories.length === 0) {
       throw new Error('Error while building post list: No post directories provided');
     }
@@ -37,7 +42,7 @@ async function buildPostList(postDirectories, basePath, writeFilePath) {
     result["docs"] = addDocButtons(result["docs"], treePosts)
     await writeFile(writeFilePath, JSON.stringify(result, null, '  '))
   } catch (error) {
-    throw new Error('Error while building post list', { cause: error });
+    throw new Error(`Error while building post list: ${error.message}`, { cause: error });
   }
 }
 

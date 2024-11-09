@@ -150,6 +150,28 @@ describe('buildPostList', () => {
     expect(error.message).toMatch(/Error while building post list/);
   });
 
+  it('throws an error if basePath is missing', async () => {
+    let error;
+    try {
+      await buildPostList(postDirectories, undefined, writeFilePath);
+    } catch (err) {
+      error = err;
+    }
+    expect(error).toBeDefined();
+    expect(error.message).toMatch(/Error while building post list: basePath and writeFilePath are required/);
+  });
+  
+  it('throws an error if writeFilePath is missing', async () => {
+    let error;
+    try {
+      await buildPostList(postDirectories, tempDir, undefined);
+    } catch (err) {
+      error = err;
+    }
+    expect(error).toBeDefined();
+    expect(error.message).toMatch(/Error while building post list: basePath and writeFilePath are required/);
+  });
+
   describe('slugifyToC', () => {
 
     it('handles heading ids like {# myHeadingId}', () => {
