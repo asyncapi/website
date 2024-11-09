@@ -46,7 +46,7 @@ async function buildPostList(postDirectories, basePath, writeFilePath) {
   }
 }
 
-async function walkDirectories(directories, result, basePath, sectionWeight = 0, sectionTitle, sectionId, rootSectionId) {
+async function walkDirectories(directories, resultObj, basePath, sectionTitle, sectionId, rootSectionId, sectionWeight = 0) {
   for (let dir of directories) {
     let directory = posix.normalize(dir[0]);
     let sectionSlug = dir[1] || '';
@@ -83,7 +83,7 @@ async function walkDirectories(directories, result, basePath, sectionWeight = 0,
         details.slug = slug
         addItem(details)
         const rootId = details.parent || details.rootSectionId
-        await walkDirectories([[fileName, slug]], result, basePath, details.weight, details.title, details.sectionId, rootId)
+        await walkDirectories([[fileName, slug]], resultObj, basePath, details.title, details.sectionId, rootId, details.sectionWeight)
       } else if (file.endsWith('.mdx') && !fileName.endsWith(sep + '_section.mdx')) {
         const fileContent = await readFile(fileName, 'utf-8')
         // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
@@ -102,13 +102,13 @@ async function walkDirectories(directories, result, basePath, sectionWeight = 0,
         details.slug = details.isIndex ? sectionSlug : slug.replace(/\.mdx$/, '')
         if (details.slug.includes('/reference/specification/') && !details.title) {
           const fileBaseName = basename(data.slug)  // ex. v2.0.0 | v2.1.0-next-spec.1
-          const fileName = fileBaseName.split('-')[0] // v2.0.0 | v2.1.0
+          const versionName = fileBaseName.split('-')[0] // v2.0.0 | v2.1.0
           details.weight = specWeight--
 
-          if (fileName.startsWith('v')) {
-            details.title = capitalize(fileName.slice(1))
+          if (versionName.startsWith('v')) {
+            details.title = capitalize(versionName.slice(1))
           } else {
-            details.title = capitalize(fileName)
+            details.title = capitalize(versionName)
           }
 
           if (releaseNotes.includes(details.title)) {
