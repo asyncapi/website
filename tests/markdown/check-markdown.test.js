@@ -13,7 +13,7 @@ describe('Frontmatter Validator', () => {
 
     beforeEach(done => {
         mockConsoleError = jest.spyOn(console, 'error').mockImplementation();
-        fs.mkdtemp(path.join(os.tmpdir(), 'frontmatter-test-'), (err, directory) => {
+        fs.mkdtemp(path.join(os.tmpdir(), 'test-config'), (err, directory) => {
             if (err) throw err;
             tempDir = directory;
             done();
@@ -75,6 +75,7 @@ describe('Frontmatter Validator', () => {
             authors: { name: 'John Doe' }
         };
         const errors = validateBlogs(frontmatter);
+        console.log(errors)
 
         expect(errors.length).toBeGreaterThan(3);
     });
