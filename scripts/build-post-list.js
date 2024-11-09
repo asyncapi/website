@@ -1,5 +1,5 @@
 const { readdir, stat, pathExists, readFile, writeFile } = require('fs-extra')
-const { basename, join, normalize, sep, posix } = require('path')
+const { basename, join, normalize, sep, posix, relative } = require('path')
 const frontMatter = require('gray-matter')
 const toc = require('markdown-toc')
 const { slugify } = require('markdown-toc/lib/utils')
@@ -53,8 +53,9 @@ async function walkDirectories(directories, result, basePath, sectionWeight = 0,
     for (let file of files) {
       let details;
       const fileName = posix.join(directory, file);
-      const fileNameWithSection = posix.join(fileName, '_section.mdx');
-      const slug = posix.normalize(fileName.replace(new RegExp(`^${basePath}`), '')).replace(/\\/g, '/');
+      const fileNameWithSection = posix.join(fileName, '_section.mdx')
+      const normalizedSlug = posix.join('/', relative(basePath, fileName))
+      const slug = normalizedSlug.replace(/\\/g,'/')
       const slugElements = slug.split('/')
 
       if (await isDirectory(fileName)) {
