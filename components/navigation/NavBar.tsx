@@ -163,7 +163,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
             aria-label='Open Search'
           >
-            {<IconLoupe />}
+            <IconLoupe />
           </SearchButton>
           <button
             onClick={() => setMobileMenuOpen(true)}
