@@ -29,7 +29,7 @@ async function buildPostList(postDirectories, basePath, writeFilePath) {
   try {
 
     if (!basePath || !writeFilePath) {
-            throw new Error('Error while building post list: basePath and writeFilePath are required');
+      throw new Error('Error while building post list: basePath and writeFilePath are required');
     }
 
     if (postDirectories.length === 0) {
@@ -101,7 +101,7 @@ async function walkDirectories(directories, resultObj, basePath, sectionTitle, s
         details.isIndex = fileName.endsWith(join('index.mdx'))
         details.slug = details.isIndex ? sectionSlug : slug.replace(/\.mdx$/, '')
         if (details.slug.includes('/reference/specification/') && !details.title) {
-          const fileBaseName = basename(data.slug)  // ex. v2.0.0 | v2.1.0-next-spec.1
+          const fileBaseName = basename(data.slug || details.slug) // ex. v2.0.0 | v2.1.0-next-spec.1
           const versionName = fileBaseName.split('-')[0] // v2.0.0 | v2.1.0
           details.weight = specWeight--
 
