@@ -17,7 +17,7 @@ export function shouldShowBanner(cfpDeadline: string) {
 
 export const banners = [
   {
-    title: "AsyncAPI Conference",
+    title: 'AsyncAPI Conference',
     city: 'Paris Edition',
     dateLocation: '5th of December, 2024 | France, Paris',
     cfaText: 'Get Your Tickets',
