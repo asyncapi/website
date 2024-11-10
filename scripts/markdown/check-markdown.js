@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('fs').promises;
 const matter = require('gray-matter');
 const path = require('path');
 
@@ -98,45 +98,38 @@ function validateDocs(frontmatter) {
  * @param {Function} validateFunction - The function used to validate the frontmatter.
  * @param {string} [relativePath=''] - The relative path of the folder for logging purposes.
  */
-function checkMarkdownFiles(folderPath, validateFunction, relativePath = '') {
-    fs.readdir(folderPath, (err, files) => {
-        if (err) {
-            console.error('Error reading directory:', err);
-            return;
-        }
-
-        files.forEach(file => {
+async function checkMarkdownFiles(folderPath, validateFunction, relativePath = '') {
+    try {
+        const files = await fs.readdir(folderPath);
+        for (const file of files) {
             const filePath = path.join(folderPath, file);
             const relativeFilePath = path.join(relativePath, file);
 
             // Skip the folder 'docs/reference/specification'
             if (relativeFilePath.includes('reference/specification')) {
-                return;
+                continue;
             }
 
-            fs.stat(filePath, (err, stats) => {
-                if (err) {
-                    console.error('Error reading file stats:', err);
-                    return;
-                }
+            const stats = await fs.stat(filePath);
 
-                // Recurse if directory, otherwise validate markdown file
-                if (stats.isDirectory()) {
-                    checkMarkdownFiles(filePath, validateFunction, relativeFilePath);
-                } else if (path.extname(file) === '.md') {
-                    const fileContent = fs.readFileSync(filePath, 'utf-8');
-                    const { data: frontmatter } = matter(fileContent);
+            // Recurse if directory, otherwise validate markdown file
+            if (stats.isDirectory()) {
+                await checkMarkdownFiles(filePath, validateFunction, relativeFilePath);
+            } else if (path.extname(file) === '.md') {
+                const fileContent = await fs.readFile(filePath, 'utf-8');
+                const { data: frontmatter } = matter(fileContent);
 
-                    const errors = validateFunction(frontmatter);
-                    if (errors) {
-                        console.log(`Errors in file ${relativeFilePath}:`);
-                        errors.forEach(error => console.log(` - ${error}`));
-                        process.exitCode = 1;
-                    }
+                const errors = validateFunction(frontmatter);
+                if (errors) {
+                    console.log(`Errors in file ${relativeFilePath}:`);
+                    errors.forEach(error => console.log(` - ${error}`));
+                    process.exitCode = 1;
                 }
-            });
-        });
-    });
+            }
+        }
+    } catch (err) {
+        console.error('Error processing files:', err);
+    }
 }
 
 const docsFolderPath = path.resolve(__dirname, '../../markdown/docs');
@@ -145,4 +138,4 @@ const blogsFolderPath = path.resolve(__dirname, '../../markdown/blog');
 checkMarkdownFiles(docsFolderPath, validateDocs);
 checkMarkdownFiles(blogsFolderPath, validateBlogs);
 
-module.exports = { validateBlogs, validateDocs, checkMarkdownFiles,}
+module.exports = { validateBlogs, validateDocs, checkMarkdownFiles }

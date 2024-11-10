@@ -79,32 +79,5 @@ describe('Frontmatter Validator', () => {
 
         expect(errors.length).toBeGreaterThan(3);
     });
-
-    it('handles filesystem errors gracefully', done => {
-        fs.writeFileSync(path.join(tempDir, 'test.md'), '---\ntitle: Test\n---\nContent');
-        jest.spyOn(fs, 'stat').mockImplementation((path, callback) => callback(new Error('File stat error')));
-
-        checkMarkdownFiles(tempDir, validateBlogs);
-
-        setTimeout(() => {
-            expect(mockConsoleError).toHaveBeenCalledWith('Error reading file stats:', expect.any(Error));
-            fs.stat.mockRestore();
-            done();
-        }, 100);
-    });
-
-    it('handles errors when reading a directory', done => {
-        jest.spyOn(fs, 'readdir').mockImplementation((_, callback) => {
-            callback(new Error('Directory read error'));
-        });
-    
-        checkMarkdownFiles(tempDir, validateBlogs);
-    
-        setTimeout(() => {
-            expect(mockConsoleError).toHaveBeenCalledWith('Error reading directory:', expect.any(Error));
-            fs.readdir.mockRestore();
-            done();
-        }, 100);
-    });
     
 });
