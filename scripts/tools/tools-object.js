@@ -51,9 +51,9 @@ async function convertTools(data) {
     const dataArray = data.items;
 
     // initialising finalToolsObject with all categories inside it with proper elements in each category
-    for (var index in categoryList) {
-      finalToolsObject[categoryList[index].name] = {
-        description: categoryList[index].description,
+    for (const category of categoryList) {
+      finalToolsObject[category.name] = {
+        description: category.description,
         toolsList: []
       };
     }
