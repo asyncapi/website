@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('fs').promises;
 const path = require('path');
 const os = require('os');
 const {
@@ -11,21 +11,17 @@ describe('Frontmatter Validator', () => {
     let tempDir;
     let mockConsoleError;
 
-    beforeEach(done => {
+    beforeEach(async () => {
         mockConsoleError = jest.spyOn(console, 'error').mockImplementation();
-        fs.mkdtemp(path.join(os.tmpdir(), 'test-config'), (err, directory) => {
-            if (err) throw err;
-            tempDir = directory;
-            done();
-        });
+        tempDir = await fs.mkdtemp(path.join(os.tmpdir(), 'test-config'));
     });
 
-    afterEach(done => {
+    afterEach(async () => {
         mockConsoleError.mockRestore();
-        fs.rm(tempDir, { recursive: true, force: true }, done);
+        await fs.rm(tempDir, { recursive: true, force: true });
     });
 
-    it('validates authors array and returns specific errors', () => {
+    it('validates authors array and returns specific errors', async () => {
         const frontmatter = {
             title: 'Test Blog',
             date: '2024-01-01',
@@ -43,7 +39,7 @@ describe('Frontmatter Validator', () => {
         ]));
     });
 
-    it('validates docs frontmatter for required fields', () => {
+    it('validates docs frontmatter for required fields', async () => {
         const frontmatter = { title: 123, weight: 'not-a-number' };
         const errors = validateDocs(frontmatter);
         expect(errors).toEqual(expect.arrayContaining([
@@ -52,20 +48,17 @@ describe('Frontmatter Validator', () => {
         ]));
     });
 
-    it('checks for errors in markdown files in a directory', done => {
-        fs.writeFileSync(path.join(tempDir, 'invalid.md'), `---\ntitle: Invalid Blog\n---`);
+    it('checks for errors in markdown files in a directory', async () => {
+        await fs.writeFile(path.join(tempDir, 'invalid.md'), `---\ntitle: Invalid Blog\n---`);
         const mockConsoleLog = jest.spyOn(console, 'log').mockImplementation();
 
-        checkMarkdownFiles(tempDir, validateBlogs);
+        await checkMarkdownFiles(tempDir, validateBlogs);
 
-        setTimeout(() => {
-            expect(mockConsoleLog).toHaveBeenCalledWith(expect.stringContaining('Errors in file invalid.md:'));
-            mockConsoleLog.mockRestore();
-            done();
-        }, 100);
+        expect(mockConsoleLog).toHaveBeenCalledWith(expect.stringContaining('Errors in file invalid.md:'));
+        mockConsoleLog.mockRestore();
     });
 
-    it('returns multiple validation errors for invalid blog frontmatter', () => {
+    it('returns multiple validation errors for invalid blog frontmatter', async () => {
         const frontmatter = {
             title: 123,
             date: 'invalid-date',
@@ -75,9 +68,18 @@ describe('Frontmatter Validator', () => {
             authors: { name: 'John Doe' }
         };
         const errors = validateBlogs(frontmatter);
-        console.log(errors)
 
         expect(errors.length).toBeGreaterThan(3);
     });
+
+    it('logs error to console when an error occurs in checkMarkdownFiles', async () => {
+        const invalidFolderPath = path.join(tempDir, 'non-existent-folder');
+        const mockConsoleError = jest.spyOn(console, 'error').mockImplementation();
+    
+        await checkMarkdownFiles(invalidFolderPath, validateBlogs);
+    
+        expect(mockConsoleError.mock.calls[0][0]).toContain('Error processing files:');
+        mockConsoleError.mockRestore();
+    });    
     
 });
