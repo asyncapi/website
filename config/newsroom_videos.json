@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/K7fvKbOfqOg/hqdefault.jpg",
-    "title": "Developer Experience Working Group, 14:00 UTC Thursday May 23rd 2024",
-    "description": "Define our vision and plans https://github.com/asyncapi/community/issues/1220.",
-    "videoId": "K7fvKbOfqOg"
+    "image_url": "https://i.ytimg.com/vi/9MaHh4b-rmc/hqdefault.jpg",
+    "title": "Broadening the API Landscape: AsyncAPI and CloudEvents in the Enterprise -  Daniel Kocot",
+    "description": "",
+    "videoId": "9MaHh4b-rmc"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/94SSXX78VCU/hqdefault.jpg",
-    "title": "Essential Building Blocks Working Group, 18:00 UTC Tuesday May 14th 2024",
-    "description": "https://github.com/asyncapi/community/issues/1200.",
-    "videoId": "94SSXX78VCU"
+    "image_url": "https://i.ytimg.com/vi/Q1q6JoFG0zM/hqdefault.jpg",
+    "title": "The Many Meanings Of An AsyncAPI File - Swen-Helge Huber",
+    "description": "",
+    "videoId": "Q1q6JoFG0zM"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/RijgS6y_JAo/hqdefault.jpg",
-    "title": "Maintainers Growth Working Group, 14:00 UTC Wednesday May 8th 2024",
-    "description": "https://github.com/asyncapi/community/issues/1197.",
-    "videoId": "RijgS6y_JAo"
+    "image_url": "https://i.ytimg.com/vi/lCTdXmougTk/hqdefault.jpg",
+    "title": "AsyncAPI and DDD - A Pretty Couple - Dr. Annegret Junker",
+    "description": "",
+    "videoId": "lCTdXmougTk"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/8F3mTwf7JEs/hqdefault.jpg",
-    "title": "Essential Building Blocks Working Group, 18:00 UTC Tuesday May 14th 2024",
-    "description": "https://github.com/asyncapi/community/issues/1200.",
-    "videoId": "8F3mTwf7JEs"
+    "image_url": "https://i.ytimg.com/vi/b_BStEcLNqg/hqdefault.jpg",
+    "title": "Sustaining Open Source Beyond Code: The Importance of Marketing and Funding -  Oluwabamikemi Kayode",
+    "description": "",
+    "videoId": "b_BStEcLNqg"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/eQed8AKDlsM/hqdefault.jpg",
-    "title": "Marketing - WG setup and hiring, 14:00 UTC Wednesday May 9th 2024",
-    "description": "https://github.com/asyncapi/community/issues/1192.",
-    "videoId": "eQed8AKDlsM"
+    "image_url": "https://i.ytimg.com/vi/G6YyV1JvvSM/hqdefault.jpg",
+    "title": "Streamlining EDA: AsyncAPI-Driven Design, Documentation, and Testing - Giri Venkatesan",
+    "description": "",
+    "videoId": "G6YyV1JvvSM"
   }
 ]
