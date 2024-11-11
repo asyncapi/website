@@ -983,5 +983,18 @@
             "kotlin-asyncapi"
         ],
         "githubID": 758568
+    },
+    {
+        "name": "Ashmit Jagtap",
+        "github": "ashmit-coder",
+        "linkedin": "ashmit-jagtap",
+        "twitter": "AshmitJagtap",
+        "slack": "U06RA7GDHU1",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "conference-website"
+        ],
+        "githubID": 69006513
     }
 ]
