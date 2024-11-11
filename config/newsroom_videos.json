@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/Hy3-C6V2ir8/hqdefault.jpg",
-    "title": "AsyncAPI Conference Dry Run",
-    "description": "Setup and conference prep.",
-    "videoId": "Hy3-C6V2ir8"
+    "image_url": "https://i.ytimg.com/vi/9MaHh4b-rmc/hqdefault.jpg",
+    "title": "Broadening the API Landscape: AsyncAPI and CloudEvents in the Enterprise -  Daniel Kocot",
+    "description": "",
+    "videoId": "9MaHh4b-rmc"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/2WUchTKDPfs/hqdefault.jpg",
-    "title": "Marketing WG Meeting, 14:00 UTC Tuesday October 22nd 2024",
-    "description": "https://github.com/asyncapi/community/issues/1553.",
-    "videoId": "2WUchTKDPfs"
+    "image_url": "https://i.ytimg.com/vi/Q1q6JoFG0zM/hqdefault.jpg",
+    "title": "The Many Meanings Of An AsyncAPI File - Swen-Helge Huber",
+    "description": "",
+    "videoId": "Q1q6JoFG0zM"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/FzRxTpOeIDA/hqdefault.jpg",
-    "title": "Design Meeting, 12:00 UTC Thursday October 17th 2024",
-    "description": "https://github.com/asyncapi/community/issues/1558.",
-    "videoId": "FzRxTpOeIDA"
+    "image_url": "https://i.ytimg.com/vi/lCTdXmougTk/hqdefault.jpg",
+    "title": "AsyncAPI and DDD - A Pretty Couple - Dr. Annegret Junker",
+    "description": "",
+    "videoId": "lCTdXmougTk"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/maMQC97q_6E/hqdefault.jpg",
-    "title": "Community Meeting, 8:00 UTC Tuesday October 15th 2024",
-    "description": "https://github.com/asyncapi/community/issues/1545.",
-    "videoId": "maMQC97q_6E"
+    "image_url": "https://i.ytimg.com/vi/b_BStEcLNqg/hqdefault.jpg",
+    "title": "Sustaining Open Source Beyond Code: The Importance of Marketing and Funding -  Oluwabamikemi Kayode",
+    "description": "",
+    "videoId": "b_BStEcLNqg"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/P1ZqaVBb6XM/hqdefault.jpg",
-    "title": "AsyncAPI Mentorship Program FAQ, 11:00 UTC Thursday October 10th 2024",
-    "description": "https://github.com/asyncapi/community/issues/1550.",
-    "videoId": "P1ZqaVBb6XM"
+    "image_url": "https://i.ytimg.com/vi/G6YyV1JvvSM/hqdefault.jpg",
+    "title": "Streamlining EDA: AsyncAPI-Driven Design, Documentation, and Testing - Giri Venkatesan",
+    "description": "",
+    "videoId": "G6YyV1JvvSM"
   }
 ]

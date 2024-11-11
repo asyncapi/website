@@ -1,19 +1,5 @@
 [
   {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=am5kcG50YW9obGUzcmVucWZqMTQ4NDlsbjQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1305",
-    "banner": "https://github.com/asyncapi/community/assets/40604284/65376079-c5e8-467d-b513-21dfaba4570f",
-    "date": "2024-07-23T16:00:00.000Z"
-  },
-  {
-    "title": "Marketing WG Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=b2twOWkyZ3ExcGxnYnAxbzBobzA1MWxvcW8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1321",
-    "banner": "",
-    "date": "2024-07-30T14:00:00.000Z"
-  },
-  {
     "title": "Essential Building Blocks Working Group",
     "calLink": "https://www.google.com/calendar/event?eid=YzYyaHNiNTdqbGQ1OTNybjE1NDZlb2ppODAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1331",
@@ -89,13 +75,6 @@
     "url": "https://github.com/asyncapi/community/issues/1545",
     "banner": "https://github.com/user-attachments/assets/91fca5af-ae9a-46be-aa44-0f2ef20ce34e",
     "date": "2024-10-15T08:00:00.000Z"
-  },
-  {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=amw3ZTBwZWllOTViYmMzMGFpNDhtdW9pZDggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1546",
-    "banner": "https://github.com/user-attachments/assets/123ebfbe-6662-47ae-b36c-c2ba2e5d40f9",
-    "date": "2024-10-29T16:00:00.000Z"
   },
   {
     "title": "Let's talk about contributing Hacktoberfest Edition",
