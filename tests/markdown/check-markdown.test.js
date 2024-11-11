@@ -80,6 +80,5 @@ describe('Frontmatter Validator', () => {
     
         expect(mockConsoleError.mock.calls[0][0]).toContain('Error processing files:');
         mockConsoleError.mockRestore();
-    }); 
-       
+    });     
 });
