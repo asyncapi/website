@@ -74,11 +74,9 @@ describe('Frontmatter Validator', () => {
 
     it('logs error to console when an error occurs in checkMarkdownFiles', async () => {
         const invalidFolderPath = path.join(tempDir, 'non-existent-folder');
-        const mockConsoleError = jest.spyOn(console, 'error').mockImplementation();
     
         await checkMarkdownFiles(invalidFolderPath, validateBlogs);
     
         expect(mockConsoleError.mock.calls[0][0]).toContain('Error processing files:');
-        mockConsoleError.mockRestore();
     });     
 });
