@@ -235,9 +235,7 @@ operations:
 
 ### `components` field
 
-The [`components` field][components-object] allows for the definition of reusable structures or definitions applicable across various sections of your document. Items detailed within `components` only become part of the API when explicitly referenced by properties external to this field. Utilize it to avoid repetition and enhance the document's maintainability.
-
-The `components` field lets you define reusable structures or definitions across your document. Items in `components` only become part of the API when explicitly referenced by properties outside this field, so you can use it to avoid repetition and improve maintainability.
+The [`components` field][components-object] lets you define reusable structures or definitions across your document. Items in `components` only become part of the API when explicitly referenced by properties outside this field, so you can use it to avoid repetition and improve maintainability.
 
 The `components` field contains the following properties:
 
@@ -439,7 +437,7 @@ components:
 - [correlation-id-object]: /docs/reference/specification/latest#correlationIdObject
 - [operation-reply-object]: /docs/reference/specification/latest#operationReplyObject
 - [operation-reply-address-object]: /docs/reference/specification/latest#operationReplyAddressObject
-- [external-documentation-object]: docs/reference/specification/latest#externalDocumentationObject
+- [external-documentation-object]: /docs/reference/specification/latest#externalDocumentationObject
 - [tag-object]: /docs/reference/specification/latest#tagObject
 - [operation-trait-object]: /docs/reference/specification/latest#operationTraitObject
 - [message-trait-object]: /docs/reference/specification/latest#messageTraitObject
