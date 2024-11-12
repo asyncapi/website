@@ -1,8 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
+import CommunityEvents from '@/components/CommunityEvents';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
+import { makeStaticProps } from '@/utils/getStatic';
 
 import GoogleCalendarButton from '../../../components/buttons/GoogleCalendarButton';
 import ICSFileButton from '../../../components/buttons/ICSFileButton';
@@ -12,9 +14,7 @@ import NewsletterSubscribe from '../../../components/NewsletterSubscribe';
 import Heading from '../../../components/typography/Heading';
 import Paragraph from '../../../components/typography/Paragraph';
 import TextLink from '../../../components/typography/TextLink';
-import CommunityEvents from '@/components/CommunityEvents';
 
-import { makeStaticProps } from '@/utils/getStatic';
 const getStaticProps = makeStaticProps(['landing-page', 'footer', 'common']);
 
 export { getStaticProps };

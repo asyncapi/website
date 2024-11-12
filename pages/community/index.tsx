@@ -3,6 +3,7 @@ import React from 'react';
 
 import { CardType } from '@/types/components/community/CardPropsType';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
+import { makeStaticProps } from '@/utils/getStatic';
 
 import Card from '../../components/community/Card';
 import Header from '../../components/community/Header';
@@ -13,7 +14,6 @@ import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 import Heading from '../../components/typography/Heading';
 import eventsData from '../../config/meetings.json';
 import { getEvents } from '../../utils/staticHelpers';
-import { makeStaticProps } from '@/utils/getStatic';
 
 const getStaticProps = makeStaticProps(['common']);
 

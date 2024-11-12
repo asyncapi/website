@@ -1,6 +1,7 @@
 import { sortBy } from 'lodash';
 
 import type { Tsc } from '@/types/pages/community/Community';
+import { makeStaticProps } from '@/utils/getStatic';
 
 import IconGithub from '../../components/icons/Github';
 import IconLinkedIn from '../../components/icons/LinkedIn';
@@ -9,7 +10,6 @@ import GenericLayout from '../../components/layout/GenericLayout';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 import TextLink from '../../components/typography/TextLink';
 import TSCMembersList from '../../config/MAINTAINERS.json';
-import { makeStaticProps } from '@/utils/getStatic';
 
 const getStaticProps = makeStaticProps(['common']);
 
@@ -70,7 +70,6 @@ function addAdditionalUserInfo(user: Tsc) {
  * @returns The Twitter SVG component.
  */
 function TwitterSVG() {
-
   return (
     <div className='size-5'>
       <IconTwitter className={'hover:fill-black'} />
@@ -84,7 +83,6 @@ function TwitterSVG() {
  * @returns The GitHub SVG component.
  */
 function GitHubSVG() {
-
   return (
     <div className='size-5'>
       <IconGithub className={'hover:fill-black'} />
@@ -98,7 +96,6 @@ function GitHubSVG() {
  * @returns The LinkedIn SVG component.
  */
 function LinkedInSVG() {
-
   return (
     <div className='size-5'>
       {/* Use the imported SVG icon component */}
