@@ -13,6 +13,11 @@ import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 import Heading from '../../components/typography/Heading';
 import eventsData from '../../config/meetings.json';
 import { getEvents } from '../../utils/staticHelpers';
+import { makeStaticProps } from '@/utils/getStatic';
+
+const getStaticProps = makeStaticProps(['common']);
+
+export { getStaticProps };
 
 interface Event {
   title: string;

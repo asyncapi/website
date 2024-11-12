@@ -1,5 +1,4 @@
 import { sortBy } from 'lodash';
-import React, { useState } from 'react';
 
 import type { Tsc } from '@/types/pages/community/Community';
 
@@ -10,6 +9,11 @@ import GenericLayout from '../../components/layout/GenericLayout';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 import TextLink from '../../components/typography/TextLink';
 import TSCMembersList from '../../config/MAINTAINERS.json';
+import { makeStaticProps } from '@/utils/getStatic';
+
+const getStaticProps = makeStaticProps(['common']);
+
+export { getStaticProps };
 
 interface SocialLinkProps {
   href: string;
@@ -66,11 +70,10 @@ function addAdditionalUserInfo(user: Tsc) {
  * @returns The Twitter SVG component.
  */
 function TwitterSVG() {
-  const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className='size-5' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-      <IconTwitter className={isHovered ? 'hover:fill-black' : ''} />
+    <div className='size-5'>
+      <IconTwitter className={'hover:fill-black'} />
     </div>
   );
 }
@@ -81,11 +84,10 @@ function TwitterSVG() {
  * @returns The GitHub SVG component.
  */
 function GitHubSVG() {
-  const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className='size-5' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-      <IconGithub className={isHovered ? 'hover:fill-black' : ''} />
+    <div className='size-5'>
+      <IconGithub className={'hover:fill-black'} />
     </div>
   );
 }
@@ -96,12 +98,11 @@ function GitHubSVG() {
  * @returns The LinkedIn SVG component.
  */
 function LinkedInSVG() {
-  const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className='size-5' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+    <div className='size-5'>
       {/* Use the imported SVG icon component */}
-      <IconLinkedIn className={isHovered ? 'hover:fill-linkedin' : ''} />
+      <IconLinkedIn className={'hover:fill-linkedin'} />
     </div>
   );
 }
