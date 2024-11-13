@@ -17,12 +17,12 @@ export function shouldShowBanner(cfpDeadline: string) {
 
 export const banners = [
   {
-    title: "AsyncAPI Online Conference'24",
-    city: 'YouTube',
-    dateLocation: '30th of October, 2024 | YouTube & LinkedIn',
-    cfaText: 'Join us Live',
-    eventName: 'the AsyncAPI Online Conference',
-    cfpDeadline: '2024-10-30T06:00:00Z',
-    link: 'https://www.youtube.com/live/F9wHxd-v2f0?si=kPCqgUzqAKC0FaqJ'
+    title: 'AsyncAPI Conference',
+    city: 'Paris Edition',
+    dateLocation: '5th of December, 2024 | France, Paris',
+    cfaText: 'Get Your Tickets',
+    eventName: 'the AsyncAPI Conf in Paris',
+    cfpDeadline: '2024-12-01T06:00:00Z',
+    link: 'https://conference.asyncapi.com/#tickets'
   }
 ];
