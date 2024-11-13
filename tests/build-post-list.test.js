@@ -156,6 +156,5 @@ describe('buildPostList', () => {
     it('handles empty strings', () => {
       expect(slugifyToC('')).toBe('');
     });
-
   });
 });
