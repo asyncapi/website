@@ -78,5 +78,19 @@ describe('Frontmatter Validator', () => {
         await checkMarkdownFiles(invalidFolderPath, validateBlogs);
     
         expect(mockConsoleError.mock.calls[0][0]).toContain('Error processing files:');
-    });     
+    });
+
+    it('skips the "reference/specification" folder during validation', async () => {
+        const referenceSpecDir = path.join(tempDir, 'reference', 'specification');
+        await fs.mkdir(referenceSpecDir, { recursive: true });
+        await fs.writeFile(path.join(referenceSpecDir, 'skipped.md'), `---\ntitle: Skipped File\n---`);
+    
+        const mockConsoleLog = jest.spyOn(console, 'log').mockImplementation();
+    
+        await checkMarkdownFiles(tempDir, validateDocs);
+    
+        expect(mockConsoleLog).not.toHaveBeenCalledWith(expect.stringContaining('Errors in file reference/specification/skipped.md'));
+        mockConsoleLog.mockRestore();
+    });
+    
 });
