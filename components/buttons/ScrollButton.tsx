@@ -27,11 +27,12 @@ function ScrollButton() {
 
   return (
     <div className='fixed bottom-14 right-4 z-40 h-16 w-12'>
-      {backToTopButton && (
-        <button className='rounded-full bg-white shadow-md ' onClick={scrollUp}>
-          <img src={scrollImage} alt='scroll to top' />
-        </button>
-      )}
+      <button
+        className={`rounded-full bg-white shadow-md  ${backToTopButton ? 'visible' : 'pointer-events-none invisible'}`}
+        onClick={scrollUp}
+      >
+        <img src={scrollImage} alt='scroll to top' />
+      </button>
     </div>
   );
 }
