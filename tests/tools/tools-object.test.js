@@ -5,7 +5,7 @@ const {
   createExpectedToolObject,
   createMockData,
   createMalformedYAML
-} = require('../fixtures/toolsObjectData');
+} = require('../helper/toolsObjectData');
 
 jest.mock('axios');
 jest.mock('../../scripts/tools/categorylist', () => ({
