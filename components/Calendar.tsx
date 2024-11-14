@@ -59,9 +59,9 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
           </li>
         ))}
       </ul>
-      <div className='h-full content-center lg:pb-8'>
-        {!eventsExist && <div className='font-bold text-gray-700'>{t('calendar.noMeetingsMessage')}</div>}
-        <div className='sm:pt-0 md:pt-2 lg:pt-0' data-testid='Calendar-button'>
+      <div className='h-full content-center'>
+        {!eventsExist && <div className='font-bold text-gray-700 lg:pb-8'>{t('calendar.noMeetingsMessage')}</div>}
+        <div className='sm:pt-0 md:pt-2 lg:pb-8 lg:pt-0' data-testid='Calendar-button'>
           <GoogleCalendarButton href={CALENDAR_URL} text={t('calendar.viewCalendarBtn')} />
         </div>
       </div>
