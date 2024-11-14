@@ -92,5 +92,4 @@ describe('Frontmatter Validator', () => {
         expect(mockConsoleLog).not.toHaveBeenCalledWith(expect.stringContaining('Errors in file reference/specification/skipped.md'));
         mockConsoleLog.mockRestore();
     });
-    
 });
