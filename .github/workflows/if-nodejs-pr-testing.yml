@@ -117,7 +117,7 @@ jobs:
 
       - if: steps.packagejson.outputs.exists == 'true'
         name: Upload Coverage to Codecov
-        uses: codecov/codecov-action@e28ff129e5465c2c0dcc6f003fc735cb6ae0c673
+        uses: codecov/codecov-action@v4
         with:
           fail_ci_if_error: true
           files: ./coverage/lcov.info
