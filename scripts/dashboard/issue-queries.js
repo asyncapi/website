@@ -274,5 +274,5 @@ query($first: Int!, $after: String) {
     resetAt
   }
 }
-`,
+`
 });

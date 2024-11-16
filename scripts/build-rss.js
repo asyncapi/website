@@ -29,9 +29,7 @@ module.exports = async function rssFeed(type, title, desc, outputPath) {
     });
 
     if (missingDatePosts.length > 0) {
-      throw new Error(
-        `Missing date in posts: ${missingDatePosts.map((p) => p.title || p.slug).join(', ')}`,
-      );
+      throw new Error(`Missing date in posts: ${missingDatePosts.map((p) => p.title || p.slug).join(', ')}`);
     }
 
     const base = 'https://www.asyncapi.com';
@@ -56,17 +54,13 @@ module.exports = async function rssFeed(type, title, desc, outputPath) {
     rss.channel.generator = 'next.js';
     rss.channel.item = [];
 
-    const invalidPosts = posts.filter(
-      (post) => !post.title || !post.slug || !post.excerpt || !post.date,
-    );
+    const invalidPosts = posts.filter((post) => !post.title || !post.slug || !post.excerpt || !post.date);
 
     if (invalidPosts.length > 0) {
-      throw new Error(
-        `Missing required fields in posts: ${invalidPosts.map((p) => p.title || p.slug).join(', ')}`,
-      );
+      throw new Error(`Missing required fields in posts: ${invalidPosts.map((p) => p.title || p.slug).join(', ')}`);
     }
 
-    for (let post of posts) {
+    for (const post of posts) {
       const link = `${base}${post.slug}${tracking}`;
       const { title, excerpt, date } = post;
       const pubDate = new Date(date).toUTCString();
@@ -78,7 +72,7 @@ module.exports = async function rssFeed(type, title, desc, outputPath) {
         link,
         category: type,
         guid,
-        pubDate,
+        pubDate
       };
       if (post.cover) {
         const enclosure = {};
@@ -86,7 +80,7 @@ module.exports = async function rssFeed(type, title, desc, outputPath) {
         enclosure['@length'] = 15026; // dummy value, anything works
         enclosure['@type'] = 'image/jpeg';
         if (typeof enclosure['@url'] === 'string') {
-          let tmp = enclosure['@url'].toLowerCase();
+          const tmp = enclosure['@url'].toLowerCase();
           if (tmp.indexOf('.png') >= 0) enclosure['@type'] = 'image/png';
           if (tmp.indexOf('.svg') >= 0) enclosure['@type'] = 'image/svg+xml';
           if (tmp.indexOf('.webp') >= 0) enclosure['@type'] = 'image/webp';

@@ -1,5 +1,5 @@
 const {
-  promises: { readFile, writeFile },
+  promises: { readFile, writeFile }
 } = require('fs');
 const { convertToJson } = require('../utils');
 

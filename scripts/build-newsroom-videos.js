@@ -5,16 +5,15 @@ const fetch = require('node-fetch-2');
 async function buildNewsroomVideos(writePath) {
   try {
     const response = await fetch(
-      'https://youtube.googleapis.com/youtube/v3/search?' +
-        new URLSearchParams({
-          key: process.env.YOUTUBE_TOKEN,
-          part: 'snippet',
-          channelId: 'UCIz9zGwDLbrYQcDKVXdOstQ',
-          eventType: 'completed',
-          type: 'video',
-          order: 'Date',
-          maxResults: 5,
-        }),
+      `https://youtube.googleapis.com/youtube/v3/search?${new URLSearchParams({
+        key: process.env.YOUTUBE_TOKEN,
+        part: 'snippet',
+        channelId: 'UCIz9zGwDLbrYQcDKVXdOstQ',
+        eventType: 'completed',
+        type: 'video',
+        order: 'Date',
+        maxResults: 5
+      })}`
     );
 
     if (!response.ok) {
@@ -32,7 +31,7 @@ async function buildNewsroomVideos(writePath) {
       image_url: video.snippet.thumbnails.high.url,
       title: video.snippet.title,
       description: video.snippet.description,
-      videoId: video.id.videoId,
+      videoId: video.id.videoId
     }));
 
     const videoData = JSON.stringify(videoDataItems, null, '  ');

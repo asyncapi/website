@@ -8,15 +8,11 @@ const dedent = require('dedent');
 const moment = require('moment');
 
 const genFrontMatter = (answers) => {
-  let d = new Date();
-  const date = [
-    d.getFullYear(),
-    ('0' + (d.getMonth() + 1)).slice(-2),
-    ('0' + d.getDate()).slice(-2),
-  ].join('-');
+  const d = new Date();
+  const date = [d.getFullYear(), `0${d.getMonth() + 1}`.slice(-2), `0${d.getDate()}`.slice(-2)].join('-');
   const tagArray = answers.tags.split(',');
   tagArray.forEach((tag, index) => (tagArray[index] = tag.trim()));
-  const tags = "'" + tagArray.join("','") + "'";
+  const tags = `'${tagArray.join("','")}'`;
 
   let frontMatter = dedent`---
   title: ${answers.title ? answers.title : 'Untitled'}
@@ -92,7 +88,7 @@ const genFrontMatter = (answers) => {
 
   `;
 
-  frontMatter = frontMatter + '\n---';
+  frontMatter += '\n---';
 
   return frontMatter;
 };
@@ -102,36 +98,29 @@ inquirer
     {
       name: 'title',
       message: 'Enter post title:',
-      type: 'input',
+      type: 'input'
     },
     {
       name: 'excerpt',
       message: 'Enter post excerpt:',
-      type: 'input',
+      type: 'input'
     },
     {
       name: 'tags',
       message: 'Any Tags? Separate them with , or leave empty if no tags.',
-      type: 'input',
+      type: 'input'
     },
     {
       name: 'type',
       message: 'Enter the post type:',
       type: 'list',
-      choices: [
-        'Communication',
-        'Community',
-        'Engineering',
-        'Marketing',
-        'Strategy',
-        'Video',
-      ],
+      choices: ['Communication', 'Community', 'Engineering', 'Marketing', 'Strategy', 'Video']
     },
     {
       name: 'canonical',
       message: 'Enter the canonical URL if any:',
-      type: 'input',
-    },
+      type: 'input'
+    }
   ])
   .then((answers) => {
     // Remove special characters and replace space with -
@@ -141,7 +130,7 @@ inquirer
       .replace(/ /g, '-')
       .replace(/-+/g, '-');
     const frontMatter = genFrontMatter(answers);
-    const filePath = `pages/blog/${fileName ? fileName : 'untitled'}.md`;
+    const filePath = `pages/blog/${fileName || 'untitled'}.md`;
     fs.writeFile(filePath, frontMatter, { flag: 'wx' }, (err) => {
       if (err) {
         throw err;

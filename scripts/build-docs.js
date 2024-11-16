@@ -1,4 +1,5 @@
 const sortBy = require('lodash/sortBy');
+
 function buildNavTree(navItems) {
   try {
     const tree = {
@@ -10,42 +11,36 @@ function buildNavTree(navItems) {
           isSection: true,
           rootSectionId: 'welcome',
           sectionWeight: 0,
-          slug: '/docs',
+          slug: '/docs'
         },
-        children: {},
-      },
+        children: {}
+      }
     };
 
-    //first we make sure that list of items lists main section items and then sub sections, documents last
-    const sortedItems = sortBy(navItems, [
-      'isRootSection',
-      'weight',
-      'isSection',
-    ]);
+    // first we make sure that list of items lists main section items and then sub sections, documents last
+    const sortedItems = sortBy(navItems, ['isRootSection', 'weight', 'isSection']);
 
     sortedItems.forEach((item) => {
-      //identify main sections
+      // identify main sections
       if (item.isRootSection) {
         tree[item.rootSectionId] = { item, children: {} };
       }
 
-      //identify subsections
+      // identify subsections
       if (item.parent) {
         if (!tree[item.parent]) {
-          throw new Error(
-            `Parent section ${item.parent} not found for item ${item.title}`,
-          );
+          throw new Error(`Parent section ${item.parent} not found for item ${item.title}`);
         }
         tree[item.parent].children[item.sectionId] = { item, children: [] };
       }
 
       if (!item.isSection) {
         if (item.sectionId) {
-          let section = tree[item.rootSectionId]?.children[item.sectionId];
+          const section = tree[item.rootSectionId]?.children[item.sectionId];
           if (!section) {
             tree[item.rootSectionId].children[item.sectionId] = {
               item,
-              children: [],
+              children: []
             };
           }
           tree[item.rootSectionId].children[item.sectionId].children.push(item);
@@ -68,7 +63,7 @@ function buildNavTree(navItems) {
           return obj;
         }, {});
 
-      //handling subsections
+      // handling subsections
       if (allChildrenKeys.length > 1) {
         for (const key of allChildrenKeys) {
           if (allChildren[key].children) {
@@ -79,9 +74,7 @@ function buildNavTree(navItems) {
 
           // point in slug for specification subgroup to the latest specification version
           if (rootKey === 'reference' && key === 'specification') {
-            allChildren[key].item.href = allChildren[key].children.find(
-              (c) => c.isPrerelease === undefined,
-            ).slug;
+            allChildren[key].item.href = allChildren[key].children.find((c) => c.isPrerelease === undefined).slug;
           }
         }
       }
@@ -101,9 +94,9 @@ const convertDocPosts = (docObject) => {
     // certain entries in the DocPosts are either a parent to many posts or itself a post.
     docsArray.push(docObject?.item || docObject);
     if (docObject.children) {
-      let children = docObject.children;
+      const { children } = docObject;
       Object.keys(children).forEach((child) => {
-        let docChildArray = convertDocPosts(children[child]);
+        const docChildArray = convertDocPosts(children[child]);
         docsArray = [...docsArray, ...docChildArray];
       });
     }
@@ -115,16 +108,16 @@ const convertDocPosts = (docObject) => {
 
 function addDocButtons(docPosts, treePosts) {
   let structuredPosts = [];
-  let rootSections = [];
+  const rootSections = [];
 
   try {
     // Traversing the whole DocTree and storing each post inside them in sequential order
     Object.keys(treePosts).forEach((rootElement) => {
       structuredPosts.push(treePosts[rootElement].item);
       if (treePosts[rootElement].children) {
-        let children = treePosts[rootElement].children;
+        const { children } = treePosts[rootElement];
         Object.keys(children).forEach((child) => {
-          let docChildArray = convertDocPosts(children[child]);
+          const docChildArray = convertDocPosts(children[child]);
           structuredPosts = [...structuredPosts, ...docChildArray];
         });
       }
@@ -134,7 +127,7 @@ function addDocButtons(docPosts, treePosts) {
     structuredPosts[0] = docPosts.filter((p) => p.slug === '/docs')[0];
 
     // Traversing the structuredPosts in order to add `nextPage` and `prevPage` details for each page
-    let countDocPages = structuredPosts.length;
+    const countDocPages = structuredPosts.length;
     structuredPosts = structuredPosts.map((post, index) => {
       // post item specifying the root Section or sub-section in the docs are excluded as
       // they doesn't comprise any Doc Page or content to be shown in website.
@@ -143,26 +136,23 @@ function addDocButtons(docPosts, treePosts) {
         return post;
       }
 
-      let nextPage = {},
-        prevPage = {};
+      let nextPage = {};
+      let prevPage = {};
       let docPost = post;
 
       // checks whether the next page for the current docPost item exists or not
       if (index + 1 < countDocPages) {
         // checks whether the next item inside structuredPosts is a rootElement or a sectionElement
         // if yes, it goes again to a next to next item in structuredPosts to link the nextPage
-        if (
-          !structuredPosts[index + 1].isRootElement &&
-          !structuredPosts[index + 1].isSection
-        ) {
+        if (!structuredPosts[index + 1].isRootElement && !structuredPosts[index + 1].isSection) {
           nextPage = {
             title: structuredPosts[index + 1].title,
-            href: structuredPosts[index + 1].slug,
+            href: structuredPosts[index + 1].slug
           };
         } else {
           nextPage = {
             title: `${structuredPosts[index + 1].title} - ${structuredPosts[index + 2].title}`,
-            href: structuredPosts[index + 2].slug,
+            href: structuredPosts[index + 2].slug
           };
         }
         docPost = { ...docPost, nextPage };
@@ -172,13 +162,10 @@ function addDocButtons(docPosts, treePosts) {
       if (index > 0) {
         // checks whether the previous item inside structuredPosts is a rootElement or a sectionElement
         // if yes, it goes again to a next previous item in structuredPosts to link the prevPage
-        if (
-          !structuredPosts[index - 1]?.isRootElement &&
-          !structuredPosts[index - 1]?.isSection
-        ) {
+        if (!structuredPosts[index - 1]?.isRootElement && !structuredPosts[index - 1]?.isSection) {
           prevPage = {
             title: structuredPosts[index - 1].title,
-            href: structuredPosts[index - 1].slug,
+            href: structuredPosts[index - 1].slug
           };
           docPost = { ...docPost, prevPage };
         } else {
@@ -186,7 +173,7 @@ function addDocButtons(docPosts, treePosts) {
           if (index - 2 >= 0) {
             prevPage = {
               title: `${structuredPosts[index - 1]?.isRootSection ? rootSections[rootSections.length - 2] : rootSections[rootSections.length - 1]} - ${structuredPosts[index - 2].title}`,
-              href: structuredPosts[index - 2].slug,
+              href: structuredPosts[index - 2].slug
             };
             docPost = { ...docPost, prevPage };
           }
