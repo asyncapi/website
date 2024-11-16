@@ -152,7 +152,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
       width="24"
       height="24"
       fill="none"
-      stroke="currentColor"
+      stroke="#9CA3AF"
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
@@ -239,7 +239,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
           <div className='justify-content flex flex-row items-center'>
           
             <SearchButton
-              className="mr-2 p-3 flex items-center space-x-2 rounded-md opacity-40 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none"
+              className="mr-2 p-3 flex items-center space-x-2 rounded-md text-left  text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none"
               aria-label="Open Search"
               style={{
                 backgroundImage: `url("data:image/svg+xml;charset=utf-8,${loupeSvg}")`,
@@ -247,11 +247,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center left',
               }}
-            >
-              
-
-              <IconLoupe/>
-              
+            >     
             </SearchButton>
 
             {/* // Language Picker Component */}
