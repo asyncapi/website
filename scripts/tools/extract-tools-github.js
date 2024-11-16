@@ -1,5 +1,5 @@
 const axios = require('axios');
-require('dotenv').config()
+require('dotenv').config();
 
 const getData = async () => {
   try {
@@ -10,7 +10,7 @@ const getData = async () => {
           accept: 'application/vnd.github.text-match+json',
           authorization: `token ${process.env.GITHUB_TOKEN}`,
         },
-      }
+      },
     );
 
     return result.data;

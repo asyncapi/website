@@ -12,11 +12,11 @@ async function start() {
     'blog',
     'AsyncAPI Initiative Blog RSS Feed',
     'AsyncAPI Initiative Blog',
-    'rss.xml'
+    'rss.xml',
   );
   await buildCaseStudiesList(
     'config/casestudies',
-    resolve(__dirname, '../config', 'case-studies.json')
+    resolve(__dirname, '../config', 'case-studies.json'),
   );
   await buildAdoptersList();
   const financeDir = resolve('.', 'config', 'finance');
@@ -44,7 +44,7 @@ async function start() {
     configDir: 'config',
     financeDir: 'finance',
     year: latestYear,
-    jsonDataDir: 'json-data'
+    jsonDataDir: 'json-data',
   });
 }
 

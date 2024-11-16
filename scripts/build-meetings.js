@@ -9,11 +9,12 @@ async function buildMeetings(writePath) {
   try {
     auth = new google.auth.GoogleAuth({
       scopes: ['https://www.googleapis.com/auth/calendar'],
-      credentials: process.env.CALENDAR_SERVICE_ACCOUNT ? JSON.parse(process.env.CALENDAR_SERVICE_ACCOUNT) : undefined,
+      credentials: process.env.CALENDAR_SERVICE_ACCOUNT
+        ? JSON.parse(process.env.CALENDAR_SERVICE_ACCOUNT)
+        : undefined,
     });
 
     calendar = google.calendar({ version: 'v3', auth });
-
   } catch (err) {
     throw new Error(`Authentication failed: ${err.message}`);
   }
@@ -24,10 +25,10 @@ async function buildMeetings(writePath) {
     //cron job runs this always on midnight
     const currentTime = new Date(Date.now()).toISOString();
     const timeMin = new Date(
-      Date.parse(currentTime) - 100 * 24 * 60 * 60 * 1000
+      Date.parse(currentTime) - 100 * 24 * 60 * 60 * 1000,
     ).toISOString();
     const timeMax = new Date(
-      Date.parse(currentTime) + 30 * 24 * 60 * 60 * 1000
+      Date.parse(currentTime) + 30 * 24 * 60 * 60 * 1000,
     ).toISOString();
 
     const eventsList = await calendar.events.list({
@@ -53,7 +54,6 @@ async function buildMeetings(writePath) {
     console.log('The following events got fetched', eventsForHuman);
 
     writeFileSync(writePath, eventsForHuman);
-
   } catch (err) {
     throw new Error(`Failed to fetch or process events: ${err.message}`);
   }

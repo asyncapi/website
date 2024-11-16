@@ -20,8 +20,8 @@ async function getDiscussions(query, pageSize, endCursor = null) {
       first: pageSize,
       after: endCursor,
       headers: {
-        authorization: `token ${process.env.GITHUB_TOKEN}`
-      }
+        authorization: `token ${process.env.GITHUB_TOKEN}`,
+      },
     });
 
     if (result.rateLimit.remaining <= 100) {
@@ -30,7 +30,7 @@ async function getDiscussions(query, pageSize, endCursor = null) {
         `cost = ${result.rateLimit.cost}`,
         `limit = ${result.rateLimit.limit}`,
         `remaining = ${result.rateLimit.remaining}`,
-        `resetAt = ${result.rateLimit.resetAt}`
+        `resetAt = ${result.rateLimit.resetAt}`,
       );
     }
 
@@ -41,7 +41,9 @@ async function getDiscussions(query, pageSize, endCursor = null) {
     if (!hasNextPage) {
       return result.search.nodes;
     }
-    return result.search.nodes.concat(await getDiscussions(query, pageSize, result.search.pageInfo.endCursor));
+    return result.search.nodes.concat(
+      await getDiscussions(query, pageSize, result.search.pageInfo.endCursor),
+    );
   } catch (e) {
     console.error(e);
     return Promise.reject(e);
@@ -50,12 +52,15 @@ async function getDiscussions(query, pageSize, endCursor = null) {
 
 async function getDiscussionByID(isPR, id) {
   try {
-    const result = await graphql(isPR ? Queries.pullRequestById : Queries.issueById, {
-      id,
-      headers: {
-        authorization: `token ${process.env.GITHUB_TOKEN}`
-      }
-    });
+    const result = await graphql(
+      isPR ? Queries.pullRequestById : Queries.issueById,
+      {
+        id,
+        headers: {
+          authorization: `token ${process.env.GITHUB_TOKEN}`,
+        },
+      },
+    );
 
     return result;
   } catch (e) {
@@ -70,19 +75,28 @@ async function processHotDiscussions(batch) {
       try {
         const isPR = discussion.__typename === 'PullRequest';
         if (discussion.comments.pageInfo.hasNextPage) {
-          const fetchedDiscussion = await getDiscussionByID(isPR, discussion.id);
+          const fetchedDiscussion = await getDiscussionByID(
+            isPR,
+            discussion.id,
+          );
           discussion = fetchedDiscussion.node;
         }
 
         const interactionsCount =
           discussion.reactions.totalCount +
           discussion.comments.totalCount +
-          discussion.comments.nodes.reduce((acc, curr) => acc + curr.reactions.totalCount, 0);
+          discussion.comments.nodes.reduce(
+            (acc, curr) => acc + curr.reactions.totalCount,
+            0,
+          );
 
         const finalInteractionsCount = isPR
           ? interactionsCount +
-          discussion.reviews.totalCount +
-          discussion.reviews.nodes.reduce((acc, curr) => acc + curr.comments.totalCount, 0)
+            discussion.reviews.totalCount +
+            discussion.reviews.nodes.reduce(
+              (acc, curr) => acc + curr.comments.totalCount,
+              0,
+            )
           : interactionsCount;
 
         return {
@@ -94,13 +108,17 @@ async function processHotDiscussions(batch) {
           resourcePath: discussion.resourcePath,
           repo: `asyncapi/${discussion.repository.name}`,
           labels: discussion.labels ? discussion.labels.nodes : [],
-          score: finalInteractionsCount / (monthsSince(discussion.timelineItems.updatedAt) + 2) ** 1.8
+          score:
+            finalInteractionsCount /
+            (monthsSince(discussion.timelineItems.updatedAt) + 2) ** 1.8,
         };
       } catch (e) {
-        console.error(`there were some issues while parsing this item: ${JSON.stringify(discussion)}`);
+        console.error(
+          `there were some issues while parsing this item: ${JSON.stringify(discussion)}`,
+        );
         throw e;
       }
-    })
+    }),
   );
 }
 
@@ -116,7 +134,9 @@ async function getHotDiscussions(discussions) {
   }
 
   result.sort((ElemA, ElemB) => ElemB.score - ElemA.score);
-  const filteredResult = result.filter((issue) => issue.author !== 'asyncapi-bot');
+  const filteredResult = result.filter(
+    (issue) => issue.author !== 'asyncapi-bot',
+  );
   return filteredResult.slice(0, 12);
 }
 
@@ -126,7 +146,7 @@ async function writeToFile(content, writePath) {
   } catch (error) {
     console.error('Failed to write dashboard data:', {
       error: error.message,
-      writePath
+      writePath,
     });
     throw error;
   }
@@ -142,13 +162,17 @@ async function mapGoodFirstIssues(issues) {
     author: issue.author.login,
     area: getLabel(issue, 'area/') || 'Unknown',
     labels: issue.labels.nodes.filter(
-      (label) => !label.name.startsWith('area/') && !label.name.startsWith('good first issue')
-    )
+      (label) =>
+        !label.name.startsWith('area/') &&
+        !label.name.startsWith('good first issue'),
+    ),
   }));
 }
 
 function getLabel(issue, filter) {
-  const result = issue.labels.nodes.find((label) => label.name.startsWith(filter));
+  const result = issue.labels.nodes.find((label) =>
+    label.name.startsWith(filter),
+  );
   return result?.name.split('/')[1];
 }
 
@@ -163,11 +187,14 @@ async function start(writePath) {
   try {
     const issues = await getDiscussions(Queries.hotDiscussionsIssues, 20);
     const PRs = await getDiscussions(Queries.hotDiscussionsPullRequests, 20);
-    const rawGoodFirstIssues = await getDiscussions(Queries.goodFirstIssues, 20);
+    const rawGoodFirstIssues = await getDiscussions(
+      Queries.goodFirstIssues,
+      20,
+    );
     const discussions = issues.concat(PRs);
     const [hotDiscussions, goodFirstIssues] = await Promise.all([
       getHotDiscussions(discussions),
-      mapGoodFirstIssues(rawGoodFirstIssues)
+      mapGoodFirstIssues(rawGoodFirstIssues),
     ]);
     return await writeToFile({ hotDiscussions, goodFirstIssues }, writePath);
   } catch (e) {
@@ -181,4 +208,14 @@ if (require.main === module) {
   start(resolve(__dirname, '..', '..', 'dashboard.json'));
 }
 
-module.exports = { getLabel, monthsSince, mapGoodFirstIssues, getHotDiscussions, getDiscussionByID, getDiscussions, writeToFile, start, processHotDiscussions };
+module.exports = {
+  getLabel,
+  monthsSince,
+  mapGoodFirstIssues,
+  getHotDiscussions,
+  getDiscussionByID,
+  getDiscussions,
+  writeToFile,
+  start,
+  processHotDiscussions,
+};
