@@ -40,6 +40,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const { i18n } = useTranslation();
 
+  
   /**
    * Retrieves unique language options based on the current path and i18nPaths configuration.
    *
@@ -145,6 +146,23 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
     setOpen(null);
   }, [asPath]);
 
+  const loupeSvg = encodeURIComponent(`
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="m19 19-3.5-3.5" />
+      <circle cx="11" cy="11" r="6" />
+    </svg>
+  `);
+
   return (
     <div className={`bg-white ${className} z-50`}>
       <div className='flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-10'>
@@ -160,7 +178,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
 
         <div className='-my-2 -mr-2 flex flex-row items-center justify-center lg:hidden' data-testid='Navbar-search'>
           <SearchButton
-            className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
+            className='flex  items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
             aria-label='Open Search'
           >
             <IconLoupe />
@@ -219,11 +237,21 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
           ))}
 
           <div className='justify-content flex flex-row items-center'>
+          
             <SearchButton
-              className='mr-2 flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
-              aria-label='Open Search'
+              className="mr-2 p-3 flex items-center space-x-2 rounded-md opacity-40 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none"
+              aria-label="Open Search"
+              style={{
+                backgroundImage: `url("data:image/svg+xml;charset=utf-8,${loupeSvg}")`,
+                backgroundSize: '1.5rem',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center left',
+              }}
             >
-              <IconLoupe />
+              
+
+              <IconLoupe/>
+              
             </SearchButton>
 
             {/* // Language Picker Component */}
@@ -235,7 +263,6 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               className=''
               selected={i18n.language ? i18n.language.toUpperCase() : 'EN'}
             />
-
             <GithubButton
               text='Star on GitHub'
               href='https://github.com/asyncapi/spec'
