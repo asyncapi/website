@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 const SRC_DIR = 'markdown';
 const TARGET_DIR = 'pages';
@@ -11,7 +11,7 @@ if (!fs.existsSync(TARGET_DIR)) {
   fs.mkdirSync(TARGET_DIR, { recursive: true });
 }
 
-function capitalizeJsxTags(content) {
+export function capitalizeJsxTags(content: string) {
   return content.replace(/<\/?(\w+)/g, function (match, letter) {
     if (capitalizeTags.includes(letter.toLowerCase())) {
       return `<${match[1] === '/' ? '/' : ''}${letter[0].toUpperCase()}${letter.slice(1)}`;
@@ -20,7 +20,7 @@ function capitalizeJsxTags(content) {
   });
 }
 
-function copyAndRenameFiles(srcDir, targetDir) {
+export function copyAndRenameFiles(srcDir: string, targetDir: string) {
   // Read all files and directories from source directory
   const entries = fs.readdirSync(srcDir, { withFileTypes: true });
 
@@ -56,5 +56,3 @@ function copyAndRenameFiles(srcDir, targetDir) {
 }
 
 copyAndRenameFiles(SRC_DIR, TARGET_DIR);
-
-module.exports = { copyAndRenameFiles, capitalizeJsxTags };
