@@ -238,7 +238,7 @@
         "twitter": "ldussart",
         "availableForHire": false,
         "company": "zatsit",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "avro-schema-parser"
         ],
@@ -343,7 +343,7 @@
         "linkedin": "nektarios-fifes-372740220",
         "slack": "U01SE93Q48N",
         "availableForHire": true,
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "simulator"
         ],
