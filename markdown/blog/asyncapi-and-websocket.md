@@ -40,19 +40,19 @@ As I mentioned earlier, `WebSocket enables an event-driven connection between cl
 
 Now, let’s dive deeper into this powerful intersection! 🐬
 
-### **Clear and Concise Message Format and Event Types**
+### Clear and Concise Message Format and Event Types
 
 Defining your WebSocket API with AsyncAPI allows you to leverage AsyncAPI’s schema definitions, ensuring a structured and consistent approach to handling data exchange across WebSocket connections. This reduces misunderstandings about message formats and event types, creating a smoother, more reliable communication flow.
 
-### **Message Schema Validation**
+### Message Schema Validation
 
 AsyncAPI allows your WebSocket API to validate real-time messages against predefined schemas at runtime, helping to catch errors early in the development stage. This approach promotes better data consistency across your application.
 
-### **Improved Architectural Planning**
+### Improved Architectural Planning
 
 If, like me, you enjoy designing your API before implementation, using AsyncAPI with your WebSocket API supports an API-first approach. It enables you to thoughtfully design your API and identify message patterns early on, making it easier and faster to plan for scaling.
 
-### **Leveraging the Tooling Ecosystem**
+### Leveraging the Tooling Ecosystem
 ![AsyncAPI Ecosystem](/img/diagrams/ecosystem.webp)
 As the industry standard for defining asynchronous APIs, AsyncAPI provides a robust ecosystem of tools. This includes capabilities like generating code in multiple languages, creating deployment-ready documentation, and setting up mock servers for development with tools like Microcks.
 
@@ -66,7 +66,7 @@ For instance, if we have channels named `general` and `members`, messages can be
 
 Now let's look at what channels looks like in an AsyncAPI document. 
 
-### **Channels**
+### Channels
 
 The AsyncAPI channels allows us to establish a bi-directional communication between message senders and receivers. yea, that's it.
 
@@ -79,7 +79,7 @@ Channels in AsyncAPI are pretty much based on a simple idea, Senders send messag
 
 Now that we've seen how to describe a websocket channel in AsyncAPI, not let's see the next key concept which is messages. 
 
-### **Messages**
+### Messages
 
 I mean, really—what’s the point of it all? Don’t worry, this isn’t an existential crisis! 😄
 
@@ -99,7 +99,7 @@ And here's an example of what messages looks like in an AsyncAPI document
 
 Now let's take a look at another key concept which is called operations
 
-### **Operations**
+### Operations
 
 Operations are one of my favorite parts of the AsyncAPI specification—and for good reason! They were part of the latest additions to the spec, making it possible to re-use a channel in ways that weren’t possible before.
 
@@ -127,7 +127,7 @@ Now that we’ve seen how AsyncAPI can streamline real-time communication and si
 
 Now let's take a closer look at what a complete asyncapi document looks like for a simple chat application using some of the key concepts we've outlined above.
 
-### **Step 1 - Defining Basic Information About Our WebSocket API**
+### Step 1 - Defining Basic Information About Our WebSocket API
 
 First, we provide some essential information about our API, including the server details for client connections.
 
@@ -146,7 +146,7 @@ servers:
     protocol: ws
 ```
 
-### **Step 2 - Defining Our WebSocket Channel**
+### Step 2 - Defining Our WebSocket Channel
 
 As we mentioned earlier, AsyncAPI channels enable bi-directional communication between senders and receivers. Let’s define our channel below:
 
@@ -159,7 +159,7 @@ channels:
 
 Notice we haven’t included message details yet. To keep things organized, we’ll use **components** to define reusable messages and then reference them in our channel.
 
-### **Step 3 - Creating a component**
+### Step 3 - Creating a component
 
 Components in AsyncAPI helps holds a set of reusable objects for different aspect of the AsyncAPI specification. When you define an object in a component, it won't have any effect on your API unless the object is been explicitly referenced from another properties outside the component object. 
 
@@ -204,7 +204,7 @@ components:
 ```
 
 This message structure includes required fields like `messageId`, `senderId`, `content`, and `timestamp`. Now, let’s link it to our channel.
-### **Step 4 - Adding Messages to Our Channel and Referencing Components**
+### Step 4 - Adding Messages to Our Channel and Referencing Components
 
 To make the `chat` message available in our channel, we’ll add it to the channel's `messages` section and reference our defined component.
 
@@ -218,7 +218,7 @@ channels:
 
 With our message now tied to the channel, the final step is to specify the type of operation that can be performed within this channel. This structure allows for clear, consistent message flow and easy extensibility as your API grows!
 
-### **Step 5 - Defining our #chat channel Operation**
+### Step 5 - Defining our #chat channel Operation
 
 The Operation part is critical to our API because it specifies what kind of action can be executed in a given channel. So now we need to create a operation for our #chat channel and we do that by doing the following:
 
@@ -270,7 +270,7 @@ operations:
 
 With this implementation, we have a fully functional AsyncAPI document, but want to go a few more steps
 
-### **Step 6 - Reusing an Existing Message Component**
+### Step 6 - Reusing an Existing Message Component
 
 Let’s say we want our server to notify users whenever someone joins or leaves the chat. How would we approach this?
 
@@ -343,7 +343,7 @@ userLeave: # Newly added operation
 
 In this setup, both `userJoin` and `userLeave` operations use the same `userStatus` message structure, saving time and reducing redundancy!
 
-### **Step 7 - Adding Authentication to Our API**
+### Step 7 - Adding Authentication to Our API
 
 Securing our API is critical, and AsyncAPI supports defining security schemes to specify the authentication methods needed to connect.
 
@@ -381,7 +381,7 @@ servers:
 
 As you can see we added a security property to the development server, and one thing you can notice is i'm specifying it as an array `-$ref` and the reason is because you can pass multiple security types in the security object, and only one of this security scheme needs to be satisfied to authorize a connection. But in our case, we only needed one so yea, let's role with that. 
 
-### **Step 8 - Providing Protocol-Specific Information**
+### Step 8 - Providing Protocol-Specific Information
 
 Remember when we discussed bindings in the **Channel** section? These bindings allow us to add WebSocket-specific details to customize the connection.
 
@@ -407,7 +407,7 @@ chat:
 By adding these bindings, users can connect once to the `/` address and use the same connection to join multiple rooms by simply updating the `roomId` query parameter. This approach allows a single connection to be used across various chat rooms, making it ideal for chatting in multiple channels simultaneously.
 
 
-### **Step 9 - Bringing Everything together**
+### Step 9 - Bringing Everything together
 
 We've finally written a complete asyncapi document for our chat application and this is what it looks like...
 
@@ -558,6 +558,7 @@ Putting everything we've learnt together, we have our AsyncAPI document ready to
 Documenting your WebSocket API with AsyncAPI brings clarity and structure to designing and managing your APIs. By standardized message formats, channels, and operations, AsyncAPI simplifies the process of building scalable, consistent, and reliable APIs. 
 
 AsyncAPI's structured approach equips teams with a collaborative framework that enhances efficiency and reduces development friction, making it a cornerstone in modern API design.
+
 ### References
 
 - Feel free to check out my [livestream](https://www.youtube.com/watch?v=22LFOLeF9Lk) for a walkthrough on building a chat application from scratch using the AsyncAPI specification.
