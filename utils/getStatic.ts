@@ -1,6 +1,6 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import i18nextConfig from '../next-i18next.config.js';
+import i18nextConfig from '../next-i18next.config.cjs';
 
 /**
  * Retrieves the internationalization paths for the supported locales.
