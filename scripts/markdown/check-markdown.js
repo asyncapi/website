@@ -1,6 +1,6 @@
-const fs = require('fs');
-const matter = require('gray-matter');
-const path = require('path');
+import fs from 'fs';
+import matter from 'gray-matter';
+import path from 'path';
 
 /**
  * Checks if a given string is a valid URL.

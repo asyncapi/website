@@ -1,11 +1,11 @@
-const fs = require('fs');
-const Ajv = require('ajv');
-const addFormats = require('ajv-formats');
-const Fuse = require('fuse.js');
-const { languagesColor, technologiesColor } = require('./tags-color');
-const { categoryList } = require('./categorylist.js');
-const { createToolObject } = require('./tools-object');
-const schema = require('./tools-schema.json');
+import fs from 'fs';
+import Ajv from 'ajv';
+import addFormats from 'ajv-formats';
+import Fuse from 'fuse.js';
+import { languagesColor, technologiesColor } from './tags-color.js';
+import { categoryList } from './categorylist.js';
+import { createToolObject } from './tools-object.js';
+import schema from './tools-schema.json';
 
 const ajv = new Ajv();
 addFormats(ajv, ['uri']);
@@ -139,4 +139,4 @@ const combineTools = async (automatedTools, manualTools, toolsPath, tagsPath) =>
   fs.writeFileSync(tagsPath, JSON.stringify({ languages: languageList, technologies: technologyList }));
 };
 
-module.exports = { combineTools };
+export { combineTools };

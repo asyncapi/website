@@ -1,9 +1,7 @@
-const {
-  promises: { readFile, writeFile }
-} = require('fs');
-const { convertToJson } = require('../utils');
+import { writeFile, readFile } from 'fs/promises';
+import { convertToJson } from '../utils.js';
 
-module.exports = async function writeJSON(readPath, writePath) {
+export async function writeJSON(readPath, writePath) {
   let readContent;
   let jsonContent;
 
@@ -27,4 +25,4 @@ module.exports = async function writeJSON(readPath, writePath) {
   } catch (err) {
     throw new Error(`Error while writing file\nError: ${err}`);
   }
-};
+}

@@ -2,10 +2,10 @@
  * Script based on https://github.com/timlrx/tailwind-nextjs-starter-blog/blob/master/scripts/compose.js
  */
 
-const fs = require('fs');
-const inquirer = require('inquirer');
-const dedent = require('dedent');
-const moment = require('moment');
+import fs from 'fs';
+import inquirer from 'inquirer';
+import dedent from 'dedent';
+import moment from 'moment';
 
 const genFrontMatter = (answers) => {
   const d = new Date();

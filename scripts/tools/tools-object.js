@@ -1,14 +1,14 @@
-const axios = require('axios');
-const Ajv = require('ajv');
-const addFormats = require('ajv-formats');
-const Fuse = require('fuse.js');
-const schema = require('./tools-schema.json');
-const { categoryList } = require('./categorylist');
+import axios from 'axios';
+import Ajv from 'ajv';
+import addFormats from 'ajv-formats';
+import Fuse from 'fuse.js';
+import schema from './tools-schema.json';
+import { categoryList } from './categorylist';
+import { convertToJson } from '../utils';
 
 const ajv = new Ajv();
 addFormats(ajv, ['uri']);
 const validate = ajv.compile(schema);
-const { convertToJson } = require('../utils');
 
 // Config options set for the Fuse object
 const options = {
@@ -115,4 +115,4 @@ async function convertTools(data) {
   return finalToolsObject;
 }
 
-module.exports = { convertTools, createToolObject };
+export { convertTools, createToolObject };

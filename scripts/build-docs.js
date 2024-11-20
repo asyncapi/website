@@ -1,4 +1,6 @@
-const sortBy = require('lodash/sortBy');
+import lodash from 'lodash';
+
+const { sortBy } = lodash;
 
 function buildNavTree(navItems) {
   try {
@@ -187,4 +189,4 @@ function addDocButtons(docPosts, treePosts) {
   return structuredPosts;
 }
 
-module.exports = { buildNavTree, addDocButtons, convertDocPosts };
+export { buildNavTree, addDocButtons, convertDocPosts };

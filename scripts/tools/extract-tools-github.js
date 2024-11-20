@@ -1,4 +1,5 @@
-const axios = require('axios');
+import axios from 'axios';
+
 require('dotenv').config();
 
 const getData = async () => {
@@ -16,4 +17,4 @@ const getData = async () => {
   }
 };
 
-module.exports = { getData };
+export { getData };

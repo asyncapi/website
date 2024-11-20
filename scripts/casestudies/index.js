@@ -1,7 +1,7 @@
-const { readdir, writeFile, readFile } = require('fs').promises;
-const { convertToJson } = require('../utils');
+import { readdir, writeFile, readFile } from 'fs/promises';
+import { convertToJson } from '../utils.js';
 
-module.exports = async function buildCaseStudiesList(dirWithCaseStudy, writeFilePath) {
+export async function buildCaseStudiesList(dirWithCaseStudy, writeFilePath) {
   try {
     const files = await readdir(dirWithCaseStudy);
     const caseStudiesList = [];
@@ -16,4 +16,4 @@ module.exports = async function buildCaseStudiesList(dirWithCaseStudy, writeFile
   } catch (err) {
     throw new Error(err);
   }
-};
+}

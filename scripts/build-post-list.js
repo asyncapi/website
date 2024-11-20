@@ -1,11 +1,17 @@
-const { readdirSync, statSync, existsSync, readFileSync, writeFileSync } = require('fs');
-const { resolve, basename } = require('path');
-const frontMatter = require('gray-matter');
-const toc = require('markdown-toc');
-const { slugify } = require('markdown-toc/lib/utils');
-const readingTime = require('reading-time');
-const { markdownToTxt } = require('markdown-to-txt');
-const { buildNavTree, addDocButtons } = require('./build-docs');
+import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from 'fs';
+import { resolve, basename, dirname } from 'path';
+import frontMatter from 'gray-matter';
+import toc from 'markdown-toc';
+import markdownTocUtils from 'markdown-toc/lib/utils.js';
+import readingTime from 'reading-time';
+import { markdownToTxt } from 'markdown-to-txt';
+import { fileURLToPath } from 'url';
+import { buildNavTree, addDocButtons } from './build-docs.js';
+
+const { slugify } = markdownTocUtils;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 let specWeight = 100;
 const result = {
@@ -31,7 +37,7 @@ const addItem = (details) => {
   }
 };
 
-module.exports = async function buildPostList() {
+export async function buildPostList() {
   walkDirectories(postDirectories, result);
   const treePosts = buildNavTree(result.docs.filter((p) => p.slug.startsWith('/docs/')));
   result.docsTree = treePosts;
@@ -40,7 +46,7 @@ module.exports = async function buildPostList() {
     // console.log(inspect(result, { depth: null, colors: true }))
   }
   writeFileSync(resolve(__dirname, '..', 'config', 'posts.json'), JSON.stringify(result, null, '  '));
-};
+}
 
 function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, sectionId, rootSectionId) {
   for (const dir of directories) {

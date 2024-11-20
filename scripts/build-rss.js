@@ -1,8 +1,9 @@
-const fs = require('fs').promises;
-const json2xml = require('jgexml/json2xml');
+import fs from 'fs/promises';
+import json2xml from 'jgexml/json2xml.js';
+import posts from '../config/posts.json' assert { type: 'json' };
 
 function getAllPosts() {
-  return require('../config/posts.json');
+  return posts;
 }
 
 function clean(s) {
@@ -15,7 +16,7 @@ function clean(s) {
   return s;
 }
 
-module.exports = async function rssFeed(type, title, desc, outputPath) {
+export async function rssFeed(type, title, desc, outputPath) {
   try {
     let posts = getAllPosts()[`${type}`];
     const missingDatePosts = posts.filter((post) => !post.date);
@@ -97,4 +98,4 @@ module.exports = async function rssFeed(type, title, desc, outputPath) {
   } catch (err) {
     throw new Error(`Failed to generate RSS feed: ${err.message}`);
   }
-};
+}

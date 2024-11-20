@@ -1,4 +1,4 @@
-const yaml = require('yaml');
+import yaml from 'yaml';
 
 function convertToJson(contentYAMLorJSON) {
   // Axios handles conversion to JSON by default, if data returned from the server allows it
@@ -23,4 +23,4 @@ function convertToJson(contentYAMLorJSON) {
   }
 }
 
-module.exports = { convertToJson };
+export { convertToJson };

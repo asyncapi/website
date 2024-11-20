@@ -103,4 +103,4 @@ const categoryList = [
   }
 ];
 
-module.exports = { categoryList };
+export { categoryList };

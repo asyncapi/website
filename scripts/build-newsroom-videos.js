@@ -1,6 +1,6 @@
-const { writeFileSync } = require('fs-extra');
-const { resolve } = require('path');
-const fetch = require('node-fetch-2');
+import { writeFileSync } from 'fs';
+import { resolve } from 'path';
+import fetch from 'node-fetch';
 
 async function buildNewsroomVideos(writePath) {
   try {
@@ -50,4 +50,4 @@ if (require.main === module) {
   buildNewsroomVideos(resolve(__dirname, '../config', 'newsroom_videos.json'));
 }
 
-module.exports = { buildNewsroomVideos };
+export { buildNewsroomVideos };

@@ -1,11 +1,14 @@
-const { resolve } = require('path');
-const fs = require('fs');
-const rssFeed = require('./build-rss');
-const buildPostList = require('./build-post-list');
-const buildCaseStudiesList = require('./casestudies');
-const buildAdoptersList = require('./adopters');
-const buildFinanceInfoList = require('./finance');
+import { resolve, dirname } from 'path';
+import fs from 'fs';
+import { fileURLToPath } from 'url';
+import { rssFeed } from './build-rss.js';
+import { buildPostList } from './build-post-list.js';
+import { buildCaseStudiesList } from './casestudies/index.js';
+import { buildAdoptersList } from './adopters/index.js';
+import { buildFinanceInfoList } from './finance/index.js';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 async function start() {
   await buildPostList();
   rssFeed('blog', 'AsyncAPI Initiative Blog RSS Feed', 'AsyncAPI Initiative Blog', 'rss.xml');
@@ -40,6 +43,6 @@ async function start() {
   });
 }
 
-module.exports = start;
+export { start };
 
 start();

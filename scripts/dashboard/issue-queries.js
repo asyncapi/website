@@ -1,4 +1,4 @@
-exports.Queries = Object.freeze({
+export const Queries = Object.freeze({
   pullRequestById: ` 
 query IssueByID($id: ID!) {
   node(id: $id) {

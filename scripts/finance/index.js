@@ -1,10 +1,8 @@
-const {
-  promises: { mkdir }
-} = require('fs');
-const { resolve } = require('path');
-const writeJSON = require('../utils/readAndWriteJson.js');
+import { resolve } from 'path';
+import { mkdir } from 'fs/promises';
+import { writeJSON } from '../utils/readAndWriteJson.js';
 
-module.exports = async function buildFinanceInfoList({ currentDir, configDir, financeDir, year, jsonDataDir }) {
+export async function buildFinanceInfoList({ currentDir, configDir, financeDir, year, jsonDataDir }) {
   try {
     const expensesPath = resolve(currentDir, configDir, financeDir, year, 'Expenses.yml');
     const expensesLinkPath = resolve(currentDir, configDir, financeDir, year, 'ExpensesLink.yml');
@@ -22,4 +20,4 @@ module.exports = async function buildFinanceInfoList({ currentDir, configDir, fi
   } catch (err) {
     throw new Error(err);
   }
-};
+}

@@ -175,4 +175,4 @@ const technologiesColor = [
   }
 ];
 
-module.exports = { languagesColor, technologiesColor };
+export { languagesColor, technologiesColor };

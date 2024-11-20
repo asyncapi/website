@@ -1,6 +1,6 @@
-const { writeFileSync } = require('fs');
-const { resolve } = require('path');
-const { google } = require('googleapis');
+import { writeFileSync } from 'fs';
+import { resolve } from 'path';
+import { google } from 'googleapis';
 
 async function buildMeetings(writePath) {
   let auth;
@@ -57,4 +57,4 @@ if (require.main === module) {
   buildMeetings(resolve(__dirname, '../config', 'meetings.json'));
 }
 
-module.exports = { buildMeetings };
+export { buildMeetings };

@@ -1,8 +1,8 @@
-const fs = require('fs-extra');
-const { resolve } = require('path');
-const { getData } = require('./tools/extract-tools-github');
-const { convertTools } = require('./tools/tools-object');
-const { combineTools } = require('./tools/combine-tools');
+import fs from 'fs-extra';
+import { resolve } from 'path';
+import { getData } from './tools/extract-tools-github.js';
+import { convertTools } from './tools/tools-object.js';
+import { combineTools } from './tools/combine-tools.js';
 
 const buildTools = async (automatedToolsPath, manualToolsPath, toolsPath, tagsPath) => {
   try {
@@ -27,4 +27,4 @@ if (require.main === module) {
   buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
 }
 
-module.exports = { buildTools };
+export { buildTools };
