@@ -1,5 +1,5 @@
 import { readdir, writeFile, readFile } from 'fs/promises';
-import { convertToJson } from '../utils.js';
+import { convertToJson } from '../utils';
 
 export async function buildCaseStudiesList(dirWithCaseStudy, writeFilePath) {
   try {
