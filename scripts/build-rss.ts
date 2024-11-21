@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import json2xml from 'jgexml/json2xml.js';
-import posts from '../config/posts.json' assert { type: 'json' };
+import posts from '../config/posts.json';
 
 function getAllPosts() {
   return posts;
