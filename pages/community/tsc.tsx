@@ -65,7 +65,6 @@ function addAdditionalUserInfo(user: Tsc) {
  * @returns The Twitter SVG component.
  */
 function TwitterSVG() {
-
   return (
     <div className='size-5'>
       <IconTwitter className='hover:fill-black' />
@@ -79,10 +78,9 @@ function TwitterSVG() {
  * @returns The GitHub SVG component.
  */
 function GitHubSVG() {
-
   return (
     <div className='size-5'>
-      <IconGithub className='hover:fill-black'/>
+      <IconGithub className='hover:fill-black' />
     </div>
   );
 }
@@ -93,10 +91,9 @@ function GitHubSVG() {
  * @returns The LinkedIn SVG component.
  */
 function LinkedInSVG() {
-
   return (
     <div className='size-5'>
-      <IconLinkedIn className='hover:fill-linkedin'/>
+      <IconLinkedIn className='hover:fill-linkedin' />
     </div>
   );
 }
