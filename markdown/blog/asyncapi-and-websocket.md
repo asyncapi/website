@@ -18,7 +18,6 @@ authors:
 Recently, while building a collaborative drawing web application with WebSocket for one of my livestreams, I discovered just how efficient it is to document a WebSocket server using the AsyncAPI specification in a spec-first approach. But what exactly do I mean by “spec-first”? 🤔
 
 ## What Do I Mean by Spec-First?
-
 ![API spec first diagram](/img/diagrams/spec-first.webp)
 
 The spec-first API development approach involves designing the API using an API specification _before_ implementing it. This method offers significant advantages, such as reducing the time needed to build the actual API, improving communication with stakeholders, and producing higher-quality APIs overall. But let’s save the deep dive into spec-first for another time and get back on track! 😄
@@ -27,9 +26,9 @@ The spec-first API development approach involves designing the API using an API 
 
 ![Asyncapi-OpenAPI](/img/diagrams/asyncapi-openapi.webp)
 
-It's not that I dislike OpenAPI (just kidding! 😄). OpenAPI isn’t ideal for my use case because it’s specifically designed for REST APIs. WebSocket, on the other hand, differs significantly from traditional HTTP. It provides a two-way communication channel over a single Transmission Control Protocol (TCP) connection, which OpenAPI doesn’t support.
+OpenAPI isn’t ideal for my use case because it’s specifically designed for REST APIs. WebSocket, on the other hand, differs significantly from traditional HTTP. It provides a two-way communication channel over a single Transmission Control Protocol (TCP) connection, which OpenAPI doesn’t support.
 
-In simpler terms, unlike REST APIs, where you need to make a request to get a response (a process known as polling), WebSocket does the opposite. It keeps the connection open between server and client, allowing the server to send data to the client without waiting for a request.
+In simpler terms, unlike REST APIs, where you must send a request to receive a response, maintaining a connection similar to a WebSocket would require repeatedly pinging the server at intervals(a process known as polling). WebSocket does the opposite. It keeps the connection open between server and client, allowing the server to send data to the client without waiting for a request.
 
 So, why would I use OpenAPI for that? Now you see why AsyncAPI is the better fit. Since WebSocket enables an event-driven connection between client and server, we need an API specification that supports this kind of interaction—and that’s where AsyncAPI comes in.
 
@@ -54,7 +53,7 @@ If, like me, you enjoy designing your API before implementation, using AsyncAPI 
 
 ### Leveraging the Tooling Ecosystem
 ![AsyncAPI Ecosystem](/img/diagrams/ecosystem.webp)
-As the industry standard for defining asynchronous APIs, AsyncAPI provides a robust ecosystem of tools. This includes capabilities like generating code in multiple languages, creating deployment-ready documentation, and setting up mock servers for development with tools like Microcks.
+As the industry standard for defining asynchronous APIs, AsyncAPI enables a robust ecosystem of tools, some of which is maintained by the AsyncAPI initiative. This includes capabilities like generating code in multiple languages, creating deployment-ready documentation, and setting up mock servers for development with tools like Microcks.
 
 Now that you've seen some of the powerful things this intersection creates, let's take a look at the key concepts in AsyncAPI for our WebSocket API. 
 
@@ -72,7 +71,7 @@ The AsyncAPI channels allows us to establish a bi-directional communication betw
 
 Channels in AsyncAPI are pretty much based on a simple idea, Senders send messages with different contents to be addressed to different channels, and receivers subscribe to these channels to receive these messages. But AsyncAPI channels are more than just a message highway, they are made up of a number of different elements that works together to make communication between senders and receivers smooth. Some of these components includes,
 
-- **Address**: The “address” or unique identifier for the channel. This could be a topic name, routing key, event type, or path.
+- **Address**: An optional string that specifies the channel's address This could be a topic name, routing key, event type, or path.
 - **Title**: A friendly, descriptive title for the channel.
 - **Messages**: The list of message types that can be sent to this channel, ready to be received by any subscriber at any time.
 - **Bindings**: A set of WebSocket-specific info that customizes the connection details.
@@ -143,7 +142,7 @@ servers:
   development:
     host: localhost:8787
     description: Development Websocket broker.
-    protocol: ws
+    protocol: wss
 ```
 
 ### Step 2 - Defining Our WebSocket Channel
@@ -208,6 +207,7 @@ This message structure includes required fields like `messageId`, `senderId`, `c
 
 To make the `chat` message available in our channel, we’ll add it to the channel's `messages` section and reference our defined component.
 
+```
 channels:
   chat:
     address: /
@@ -215,10 +215,11 @@ channels:
      messages:
        chatMessage:
          $ref: '#/components/messages/chat'
+```
 
 With our message now tied to the channel, the final step is to specify the type of operation that can be performed within this channel. This structure allows for clear, consistent message flow and easy extensibility as your API grows!
 
-### Step 5 - Defining our #chat channel Operation
+### Step 5 - Defining our chat channel Operation
 
 The Operation part is critical to our API because it specifies what kind of action can be executed in a given channel. So now we need to create a operation for our #chat channel and we do that by doing the following:
 
@@ -234,11 +235,9 @@ operations:
       - $ref: '#/channels/chat/messages/chatMessage'
 ```
 
-In the definition above, we created our first operation called `sendMessage` with a `send` action, that's made available in the #chat channel.  This basically means we've just enabled connected client to `send` a message, but not any kind of message, but the `chatMessage` to the #chat channel. 
+In the definition above, we created our first operation called `sendMessage` with a `send` action, that's made available in the #chat channel.  This basically means we've just enabled connected client to `send` a message, but not any kind of message, but the `chatMessage` to the #chat channel.
 
-A good thing to keep at the back of your mind when defining an operation is the list of messages you're assigning to an operation has to be available in the linked channel messages. 
-
-An example is if in my `sendMessage` operation i did the following...
+If I attempt to parse a message that isn't included in the list of messages for the #chat channel, as shown below...
 
 ```
 operations:
@@ -254,9 +253,12 @@ operations:
 
 This will fail because in my #chat channel, i have no such message as `hello` even if i have the `hello` message defined in my message component. 
 
+A good thing to keep at the back of your mind when defining an operation is the list of messages you're assigning to an operation has to be available in the linked channel messages. 
+
 
 Now that we've created our first operation that allows us to send message, we also need to create another operation that allows us to receive a message. And we do that by doing almost same thing as sending a message except, instead of `send` in the action, we use the `receive` action, just as seen below.
 
+```
 operations:
   sendMessage:
     summary: Receive a chat message
@@ -266,7 +268,7 @@ operations:
       $ref: '#/channels/chat'
     messages:
       - $ref: '#/channels/chat/messages/chatMessage'
-
+```
 
 With this implementation, we have a fully functional AsyncAPI document, but want to go a few more steps
 
@@ -288,6 +290,11 @@ components:
          userId:
            type: string
            description: ID of the user that joined or left
+         type:
+           type: string
+           enum:
+             - join
+             - leave
          username:
            type: string
            description: Display name of the user
@@ -355,20 +362,21 @@ To secure our WebSocket server, let’s define an API key scheme in our componen
 
 ```
 components:
- messages:
- ....
- securitySchemes:
-   apiKeyHeader:
-     type: httpApiKey
-     in: header
-     name: X-API-Key
-     description: API key passed in header
+  messages:
+  ....
+  securitySchemes:
+    apiKeyHeader:
+      type: httpApiKey
+      in: header
+      name: X-API-Key
+      description: API key passed in header
   
 ```
 
 Here, `apiKeyHeader` is our security scheme, specifying that the key should be included in the header under the name `X-API-Key`.
 
 Now, let’s associate this security scheme with our WebSocket server so it requires authorization:
+
 ```
 servers:
   development:
@@ -385,7 +393,7 @@ As you can see we added a security property to the development server, and one t
 
 Remember when we discussed bindings in the **Channel** section? These bindings allow us to add WebSocket-specific details to customize the connection.
 
-For instance, if we want users to send messages to specific chat rooms, we could traditionally create a channel with a parameter like `/chat/{roomId}`, which establishes a new connection for each room a user joins. However, this can lead to multiple connections, which we want to avoid. Instead, we’ll use **channel bindings**.
+For instance, if we want users to send messages to specific chat rooms, we could traditionally create a channel with a parameter like `/{roomId}`, which establishes a new connection for each room a user joins. However, this can lead to multiple connections, which we want to avoid. Instead, we’ll use **channel bindings**.
 
 Bindings are protocol-specific, so we can provide details unique to WebSocket. Rather than using parameters, we’ll use the `#chat` channel and pass the `roomId` in the query parameters, as shown below:
 
@@ -404,7 +412,7 @@ chat:
         additionalProperties: false
 ```
 
-By adding these bindings, users can connect once to the `/` address and use the same connection to join multiple rooms by simply updating the `roomId` query parameter. This approach allows a single connection to be used across various chat rooms, making it ideal for chatting in multiple channels simultaneously.
+By adding these bindings, users can connect once to the `/` address and use the same connection to join multiple rooms by simply updating the `roomId` query parameter, which would look like this `/?roomId={roomId}`. This approach allows a single connection to be used across various chat rooms, making it ideal for chatting in multiple channels simultaneously.
 
 
 ### Step 9 - Bringing Everything together
@@ -550,6 +558,13 @@ And since we followed the spec-first approach, we can do a lot of interesting th
 - **Generate Documentation:** Using our asyncapi document above, we can automatically generate rich, interactive documentation to make understanding and using our API easy for anyone. With tools like [**AsyncAPI Studio**](https://studio.asyncapi.com/), you can visualize and interact with our API, view channel information, messages, and operations, all without leaving the browser.
 - **Code Generation:** Using the **[AsyncAPI CLI](https://www.asyncapi.com/tools/cli)** we can generate powerful code in any language, enabling us to transform our AsyncAPI document directly into production-ready code. This means we can generate client or server code and models, while speeding up the development process and reducing the risk of inconsistencies.
 - **API Contract Testing:** Using our AsyncAPI document, we can perform some contract testing that ensures that our system remains aligned with its design, preventing unexpected behavior. With tools like [**Microcks**](https://microcks.io/), we can test and mock our API based on our AsyncAPI specification, so we're sure our API behaves as expected, even before it’s fully implemented.
+
+After using the AsyncAPI CLI to generate an HTML template with the following command: `asyncapi generate fromTemplate ./asyncapi.yaml @asyncapi/html-template@3.0.0 --use-new-generator`, we get a fully functional production-ready website for our API documentation. This generated site provides a visually appealing and interactive way to explore our AsyncAPI definition, as shown in the screenshot below. 
+
+![AsyncAPI preview screenshot](/img/posts/simple-chat-api.webp)
+
+Additionally, with the help of AsyncAPI Studio, you can easily preview your AsyncAPI document in a user-friendly interface. Simply click on this [URL](https://studio.asyncapi.com/?url=https://gist.githubusercontent.com/AceTheCreator/1651bd1fa1eed947441e5828d357ac4f/raw/475484a530044d734bb847ae17048fd6b20dcad2/gistfile1.txt) to explore the document live. This makes it even more convenient to review and refine your API definition in real-time!
+
 
 Putting everything we've learnt together, we have our AsyncAPI document ready to go!
 
