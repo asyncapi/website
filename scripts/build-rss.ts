@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import json2xml from 'jgexml/json2xml.js';
-import posts from '../config/posts.json';
+
+import posts from '../config/posts.json' assert { type: 'json' };
 
 function getAllPosts() {
   return posts;
@@ -13,6 +14,7 @@ function clean(s) {
   s = s.split('&lt;').join('<');
   s = s.split('&gt;').join('>');
   s = s.split('&quot;').join('"');
+
   return s;
 }
 
@@ -20,12 +22,15 @@ export async function rssFeed(type, title, desc, outputPath) {
   try {
     let posts = getAllPosts()[`${type}`];
     const missingDatePosts = posts.filter((post) => !post.date);
+
     posts = posts.filter((post) => post.date);
     posts.sort((i1, i2) => {
       const i1Date = new Date(i1.date);
       const i2Date = new Date(i2.date);
+
       if (i1.featured && !i2.featured) return -1;
       if (!i1.featured && i2.featured) return 1;
+
       return i2Date - i1Date;
     });
 
@@ -38,6 +43,7 @@ export async function rssFeed(type, title, desc, outputPath) {
 
     const feed = {};
     const rss = {};
+
     rss['@version'] = '2.0';
     rss['@xmlns:atom'] = 'http://www.w3.org/2005/Atom';
     rss.channel = {};
@@ -75,13 +81,16 @@ export async function rssFeed(type, title, desc, outputPath) {
         guid,
         pubDate
       };
+
       if (post.cover) {
         const enclosure = {};
+
         enclosure['@url'] = base + post.cover;
         enclosure['@length'] = 15026; // dummy value, anything works
         enclosure['@type'] = 'image/jpeg';
         if (typeof enclosure['@url'] === 'string') {
           const tmp = enclosure['@url'].toLowerCase();
+
           if (tmp.indexOf('.png') >= 0) enclosure['@type'] = 'image/png';
           if (tmp.indexOf('.svg') >= 0) enclosure['@type'] = 'image/svg+xml';
           if (tmp.indexOf('.webp') >= 0) enclosure['@type'] = 'image/webp';
@@ -94,6 +103,7 @@ export async function rssFeed(type, title, desc, outputPath) {
     feed.rss = rss;
 
     const xml = json2xml.getXml(feed, '@', '', 2);
+
     await fs.writeFile(`./public/${outputPath}`, xml, 'utf8');
   } catch (err) {
     throw new Error(`Failed to generate RSS feed: ${err.message}`);
