@@ -1,12 +1,13 @@
-import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from 'fs';
-import { resolve, basename, dirname } from 'path';
+import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from 'fs';
 import frontMatter from 'gray-matter';
+import { markdownToTxt } from 'markdown-to-txt';
 import toc from 'markdown-toc';
 import markdownTocUtils from 'markdown-toc/lib/utils.js';
+import { basename, dirname, resolve } from 'path';
 import readingTime from 'reading-time';
-import { markdownToTxt } from 'markdown-to-txt';
 import { fileURLToPath } from 'url';
-import { buildNavTree, addDocButtons } from './build-docs.js';
+
+import { addDocButtons, buildNavTree } from './build-docs';
 
 const { slugify } = markdownTocUtils;
 
@@ -40,6 +41,7 @@ const addItem = (details) => {
 export async function buildPostList() {
   walkDirectories(postDirectories, result);
   const treePosts = buildNavTree(result.docs.filter((p) => p.slug.startsWith('/docs/')));
+
   result.docsTree = treePosts;
   result.docs = addDocButtons(result.docs, treePosts);
   if (process.env.NODE_ENV === 'production') {
@@ -60,6 +62,7 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
       const fileNameWithSection = [fileName, '_section.mdx'].join('/');
       const slug = fileName.replace(new RegExp(`^${basePath}`), '');
       const slugElements = slug.split('/');
+
       if (isDirectory(fileName)) {
         if (existsSync(fileNameWithSection)) {
           // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
@@ -83,11 +86,13 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
         details.slug = slug;
         addItem(details);
         const rootId = details.parent || details.rootSectionId;
+
         walkDirectories([[fileName, slug]], result, details.weight, details.title, details.sectionId, rootId);
       } else if (file.endsWith('.mdx') && !fileName.endsWith('/_section.mdx')) {
         const fileContent = readFileSync(fileName, 'utf-8');
         // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
         const { data, content } = frontMatter(fileContent, {});
+
         details = data;
         details.toc = toc(content, { slugify: slugifyToC }).json;
         details.readingTime = Math.ceil(readingTime(content).minutes);
@@ -103,6 +108,7 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
         if (details.slug.includes('/reference/specification/') && !details.title) {
           const fileBaseName = basename(data.slug); // ex. v2.0.0 | v2.1.0-next-spec.1
           const fileName = fileBaseName.split('-')[0]; // v2.0.0 | v2.1.0
+
           details.weight = specWeight--;
 
           if (fileName.startsWith('v')) {
@@ -146,13 +152,16 @@ function slugifyToC(str) {
   let slug;
   // Try to match heading ids like {# myHeadingId}
   const headingIdMatch = str.match(/[\s]?\{\#([\w\d\-_]+)\}/);
+
   if (headingIdMatch && headingIdMatch.length >= 2) {
     slug = headingIdMatch[1];
   } else {
     // Try to match heading ids like {<a name="myHeadingId"/>}
     const anchorTagMatch = str.match(/[\s]*<a[\s]+name="([\w\d\s\-_]+)"/);
+
     if (anchorTagMatch && anchorTagMatch.length >= 2) slug = anchorTagMatch[1];
   }
+
   return slug || slugify(str, { firsth1: true, maxdepth: 6 });
 }
 

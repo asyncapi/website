@@ -1,5 +1,6 @@
-import { writeFile, readFile } from 'fs/promises';
-import { convertToJson } from '../utils.js';
+import { readFile, writeFile } from 'fs/promises';
+
+import { convertToJson } from '../utils';
 
 export async function writeJSON(readPath, writePath) {
   let readContent;

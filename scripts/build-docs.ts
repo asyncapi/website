@@ -39,6 +39,7 @@ function buildNavTree(navItems) {
       if (!item.isSection) {
         if (item.sectionId) {
           const section = tree[item.rootSectionId]?.children[item.sectionId];
+
           if (!section) {
             tree[item.rootSectionId].children[item.sectionId] = {
               item,
@@ -62,6 +63,7 @@ function buildNavTree(navItems) {
         })
         .reduce((obj, key) => {
           obj[key] = allChildren[key];
+
           return obj;
         }, {});
 
@@ -93,15 +95,20 @@ function buildNavTree(navItems) {
 const convertDocPosts = (docObject) => {
   try {
     let docsArray = [];
+
     // certain entries in the DocPosts are either a parent to many posts or itself a post.
+
     docsArray.push(docObject?.item || docObject);
     if (docObject.children) {
       const { children } = docObject;
+
       Object.keys(children).forEach((child) => {
         const docChildArray = convertDocPosts(children[child]);
+
         docsArray = [...docsArray, ...docChildArray];
       });
     }
+
     return docsArray;
   } catch (err) {
     throw new Error('Error in convertDocPosts:', err);
@@ -118,8 +125,10 @@ function addDocButtons(docPosts, treePosts) {
       structuredPosts.push(treePosts[rootElement].item);
       if (treePosts[rootElement].children) {
         const { children } = treePosts[rootElement];
+
         Object.keys(children).forEach((child) => {
           const docChildArray = convertDocPosts(children[child]);
+
           structuredPosts = [...structuredPosts, ...docChildArray];
         });
       }
@@ -130,11 +139,13 @@ function addDocButtons(docPosts, treePosts) {
 
     // Traversing the structuredPosts in order to add `nextPage` and `prevPage` details for each page
     const countDocPages = structuredPosts.length;
+
     structuredPosts = structuredPosts.map((post, index) => {
       // post item specifying the root Section or sub-section in the docs are excluded as
       // they doesn't comprise any Doc Page or content to be shown in website.
       if (post?.isRootSection || post?.isSection || index == 0) {
         if (post?.isRootSection || index == 0) rootSections.push(post.title);
+
         return post;
       }
 
@@ -181,12 +192,14 @@ function addDocButtons(docPosts, treePosts) {
           }
         }
       }
+
       return docPost;
     });
   } catch (err) {
     throw new Error('An error occurred while adding doc buttons:', err);
   }
+
   return structuredPosts;
 }
 
-export { buildNavTree, addDocButtons, convertDocPosts };
+export { addDocButtons, buildNavTree, convertDocPosts };

@@ -1,17 +1,20 @@
-import fs from 'fs';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
-import Fuse from 'fuse.js';
-import { languagesColor, technologiesColor } from './tags-color.js';
-import { categoryList } from './categorylist.js';
-import { createToolObject } from './tools-object.js';
+import fs from 'fs';
+import Fuse from 'fuse';
+
+import { categoryList } from './categorylist';
+import { languagesColor, technologiesColor } from './tags-color';
+import { createToolObject } from './tools-object';
 import schema from './tools-schema.json';
 
 const ajv = new Ajv();
+
 addFormats(ajv, ['uri']);
 const validate = ajv.compile(schema);
 
 const finalTools = {};
+
 for (const category of categoryList) {
   finalTools[category.name] = {
     description: category.description,
@@ -42,8 +45,10 @@ const getFinalTool = async (toolObject) => {
   // there might be a tool without language
   if (toolObject.filters.language) {
     const languageArray = [];
+
     if (typeof toolObject.filters.language === 'string') {
       const languageSearch = await languageFuse.search(toolObject.filters.language);
+
       if (languageSearch.length) {
         languageArray.push(languageSearch[0].item);
       } else {
@@ -54,6 +59,7 @@ const getFinalTool = async (toolObject) => {
           color: 'bg-[#57f281]',
           borderColor: 'border-[#37f069]'
         };
+
         languageList.push(languageObject);
         languageArray.push(languageObject);
         languageFuse = new Fuse(languageList, options);
@@ -61,6 +67,7 @@ const getFinalTool = async (toolObject) => {
     } else {
       for (const language of toolObject?.filters?.language) {
         const languageSearch = await languageFuse.search(language);
+
         if (languageSearch.length > 0) {
           languageArray.push(languageSearch[0].item);
         } else {
@@ -71,6 +78,7 @@ const getFinalTool = async (toolObject) => {
             color: 'bg-[#57f281]',
             borderColor: 'border-[#37f069]'
           };
+
           languageList.push(languageObject);
           languageArray.push(languageObject);
           languageFuse = new Fuse(languageList, options);
@@ -80,9 +88,11 @@ const getFinalTool = async (toolObject) => {
     finalObject.filters.language = languageArray;
   }
   const technologyArray = [];
+
   if (toolObject.filters.technology) {
     for (const technology of toolObject?.filters?.technology) {
       const technologySearch = await technologyFuse.search(technology);
+
       if (technologySearch.length > 0) {
         technologyArray.push(technologySearch[0].item);
       } else {
@@ -93,6 +103,7 @@ const getFinalTool = async (toolObject) => {
           color: 'bg-[#61d0f2]',
           borderColor: 'border-[#40ccf7]'
         };
+
         technologyList.push(technologyObject);
         technologyArray.push(technologyObject);
         technologyFuse = new Fuse(technologyList, options);
@@ -100,6 +111,7 @@ const getFinalTool = async (toolObject) => {
     }
   }
   finalObject.filters.technology = technologyArray;
+
   return finalObject;
 };
 
@@ -108,6 +120,7 @@ const getFinalTool = async (toolObject) => {
 const combineTools = async (automatedTools, manualTools, toolsPath, tagsPath) => {
   for (const key in automatedTools) {
     const finalToolsList = [];
+
     if (automatedTools[key].toolsList.length) {
       for (const tool of automatedTools[key].toolsList) {
         finalToolsList.push(await getFinalTool(tool));
@@ -117,17 +130,20 @@ const combineTools = async (automatedTools, manualTools, toolsPath, tagsPath) =>
       for (const tool of manualTools[key].toolsList) {
         let isAsyncAPIrepo;
         const isValid = await validate(tool);
+
         if (isValid) {
           if (tool?.links?.repoUrl) {
             const url = new URL(tool.links.repoUrl);
+
             isAsyncAPIrepo = url.href.startsWith('https://github.com/asyncapi/');
           } else isAsyncAPIrepo = false;
           const toolObject = await createToolObject(tool, '', '', isAsyncAPIrepo);
+
           finalToolsList.push(await getFinalTool(toolObject));
         } else {
           console.error('Script is not failing, it is just dropping errors for further investigation');
           console.error(`Invalid ${tool.title} .asyncapi-tool file.`);
-          console.error(`Located in manual-tools.json file`);
+          console.error('Located in manual-tools.json file');
           console.error('Validation errors:', JSON.stringify(validate.errors, null, 2));
         }
       }

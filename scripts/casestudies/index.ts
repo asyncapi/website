@@ -1,10 +1,12 @@
-import { readdir, writeFile, readFile } from 'fs/promises';
+import { readdir, readFile, writeFile } from 'fs/promises';
+
 import { convertToJson } from '../utils';
 
 export async function buildCaseStudiesList(dirWithCaseStudy, writeFilePath) {
   try {
     const files = await readdir(dirWithCaseStudy);
     const caseStudiesList = [];
+
     for (const file of files) {
       const caseStudyFileName = [dirWithCaseStudy, file].join('/');
       const caseStudyContent = await readFile(caseStudyFileName, 'utf-8');

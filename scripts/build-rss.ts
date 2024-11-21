@@ -1,5 +1,5 @@
 import fs from 'fs/promises';
-import json2xml from 'jgexml/json2xml.js';
+import json2xml from 'jgexml/json2xml';
 
 import posts from '../config/posts.json' assert { type: 'json' };
 

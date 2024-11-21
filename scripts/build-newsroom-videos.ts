@@ -1,6 +1,6 @@
 import { writeFileSync } from 'fs';
-import { resolve } from 'path';
 import fetch from 'node-fetch';
+import { resolve } from 'path';
 
 async function buildNewsroomVideos(writePath) {
   try {
@@ -21,6 +21,7 @@ async function buildNewsroomVideos(writePath) {
     }
 
     const data = await response.json();
+
     console.log(data);
 
     if (!data.items || !Array.isArray(data.items)) {
@@ -35,6 +36,7 @@ async function buildNewsroomVideos(writePath) {
     }));
 
     const videoData = JSON.stringify(videoDataItems, null, '  ');
+
     console.log('The following are the Newsroom Youtube videos: ', videoData);
 
     writeFileSync(writePath, videoData);

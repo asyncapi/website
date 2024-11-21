@@ -1,8 +1,9 @@
 import fs from 'fs-extra';
 import { resolve } from 'path';
-import { getData } from './tools/extract-tools-github.js';
-import { convertTools } from './tools/tools-object.js';
-import { combineTools } from './tools/combine-tools.js';
+
+import { combineTools } from './tools/combine-tools';
+import { getData } from './tools/extract-tools-github';
+import { convertTools } from './tools/tools-object';
 
 const buildTools = async (automatedToolsPath, manualToolsPath, toolsPath, tagsPath) => {
   try {

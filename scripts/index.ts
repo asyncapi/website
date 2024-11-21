@@ -1,14 +1,16 @@
-import { resolve, dirname } from 'path';
 import fs from 'fs';
+import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
-import { rssFeed } from './build-rss.js';
-import { buildPostList } from './build-post-list.js';
-import { buildCaseStudiesList } from './casestudies/index.js';
-import { buildAdoptersList } from './adopters/index.js';
-import { buildFinanceInfoList } from './finance/index.js';
+
+import { buildAdoptersList } from './adopters/index';
+import { buildPostList } from './build-post-list';
+import { rssFeed } from './build-rss';
+import { buildCaseStudiesList } from './casestudies/index';
+import { buildFinanceInfoList } from './finance/index';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
 async function start() {
   await buildPostList();
   rssFeed('blog', 'AsyncAPI Initiative Blog RSS Feed', 'AsyncAPI Initiative Blog', 'rss.xml');

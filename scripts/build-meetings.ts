@@ -1,6 +1,6 @@
 import { writeFileSync } from 'fs';
-import { resolve } from 'path';
 import { google } from 'googleapis';
+import { resolve } from 'path';
 
 async function buildMeetings(writePath) {
   let auth;
@@ -44,6 +44,7 @@ async function buildMeetings(writePath) {
     });
 
     const eventsForHuman = JSON.stringify(eventsItems, null, '  ');
+
     console.log('The following events got fetched', eventsForHuman);
 
     writeFileSync(writePath, eventsForHuman);

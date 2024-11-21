@@ -1,12 +1,14 @@
-import axios from 'axios';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
+import axios from 'axios';
 import Fuse from 'fuse.js';
-import schema from './tools-schema.json';
-import { categoryList } from './categorylist';
+
 import { convertToJson } from '../utils';
+import { categoryList } from './categorylist';
+import schema from './tools-schema.json';
 
 const ajv = new Ajv();
+
 addFormats(ajv, ['uri']);
 const validate = ajv.compile(schema);
 
@@ -39,6 +41,7 @@ const createToolObject = async (toolFile, repositoryUrl = '', repoDescription = 
       isAsyncAPIOwner: isAsyncAPIrepo
     }
   };
+
   return resultantObject;
 };
 
@@ -92,8 +95,8 @@ async function convertTools(data) {
 
             if (categorySearch.length) {
               const searchedCategoryName = categorySearch[0].item.name;
-              if (!finalToolsObject[searchedCategoryName].toolsList.find((element) => element === toolObject))
-                finalToolsObject[searchedCategoryName].toolsList.push(toolObject);
+
+              if (!finalToolsObject[searchedCategoryName].toolsList.find((element) => element === toolObject)) finalToolsObject[searchedCategoryName].toolsList.push(toolObject);
             } else {
               // if Tool object has a category, not defined in our categorylist, then this provides a `other` category to the tool.
               if (!finalToolsObject.Others.toolsList.find((element) => element === toolObject))
@@ -112,6 +115,7 @@ async function convertTools(data) {
       throw err;
     }
   }
+
   return finalToolsObject;
 }
 
