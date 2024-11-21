@@ -1,5 +1,4 @@
 import { sortBy } from 'lodash';
-import React from 'react';
 
 import type { Tsc } from '@/types/pages/community/Community';
 
