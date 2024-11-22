@@ -2,20 +2,25 @@ import { readdir, readFile, writeFile } from 'fs/promises';
 
 import { convertToJson } from '../utils';
 
-export async function buildCaseStudiesList(dirWithCaseStudy, writeFilePath) {
+export async function buildCaseStudiesList(dirWithCaseStudy: string, writeFilePath: string) {
   try {
     const files = await readdir(dirWithCaseStudy);
-    const caseStudiesList = [];
 
-    for (const file of files) {
-      const caseStudyFileName = [dirWithCaseStudy, file].join('/');
-      const caseStudyContent = await readFile(caseStudyFileName, 'utf-8');
-      const jsonContent = convertToJson(caseStudyContent);
+    // Process all files in parallel using Promise.all
+    const caseStudiesList = await Promise.all(
+      files.map(async (file) => {
+        const caseStudyFileName = [dirWithCaseStudy, file].join('/');
+        const caseStudyContent = await readFile(caseStudyFileName, 'utf-8');
 
-      caseStudiesList.push(jsonContent);
-      await writeFile(writeFilePath, JSON.stringify(caseStudiesList));
-    }
+        return convertToJson(caseStudyContent);
+      })
+    );
+
+    // Write the complete list once after all files are processed
+    await writeFile(writeFilePath, JSON.stringify(caseStudiesList));
+
+    return caseStudiesList;
   } catch (err) {
-    throw new Error(err);
+    throw new Error(err instanceof Error ? err.message : String(err));
   }
 }
