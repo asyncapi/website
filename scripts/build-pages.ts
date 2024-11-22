@@ -16,6 +16,7 @@ export function capitalizeJsxTags(content: string) {
     if (capitalizeTags.includes(letter.toLowerCase())) {
       return `<${match[1] === '/' ? '/' : ''}${letter[0].toUpperCase()}${letter.slice(1)}`;
     }
+
     return match;
   });
 }
