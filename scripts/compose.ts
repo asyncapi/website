@@ -2,15 +2,16 @@
  * Script based on https://github.com/timlrx/tailwind-nextjs-starter-blog/blob/master/scripts/compose.js
  */
 
+import dedent from 'dedent';
 import fs from 'fs';
 import inquirer from 'inquirer';
-import dedent from 'dedent';
 import moment from 'moment';
 
-const genFrontMatter = (answers) => {
+const genFrontMatter = (answers:ComposePromptType) => {
   const d = new Date();
   const date = [d.getFullYear(), `0${d.getMonth() + 1}`.slice(-2), `0${d.getDate()}`.slice(-2)].join('-');
   const tagArray = answers.tags.split(',');
+
   tagArray.forEach((tag, index) => (tagArray[index] = tag.trim()));
   const tags = `'${tagArray.join("','")}'`;
 
@@ -93,6 +94,14 @@ const genFrontMatter = (answers) => {
   return frontMatter;
 };
 
+type ComposePromptType = {
+	title: string;
+	excerpt: string;
+	tags: string;
+	type: string;
+	canonical: string;
+}
+
 inquirer
   .prompt([
     {
@@ -122,7 +131,7 @@ inquirer
       type: 'input'
     }
   ])
-  .then((answers) => {
+  .then((answers:ComposePromptType) => {
     // Remove special characters and replace space with -
     const fileName = answers.title
       .toLowerCase()
@@ -131,6 +140,7 @@ inquirer
       .replace(/-+/g, '-');
     const frontMatter = genFrontMatter(answers);
     const filePath = `pages/blog/${fileName || 'untitled'}.md`;
+
     fs.writeFile(filePath, frontMatter, { flag: 'wx' }, (err) => {
       if (err) {
         throw err;
