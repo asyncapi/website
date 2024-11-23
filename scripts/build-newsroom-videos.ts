@@ -9,7 +9,6 @@ import { fileURLToPath } from 'url';
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
-console.log(process.env.YOUTUBE_TOKEN);
 const youtube = google.youtube({
   version: 'v3',
   auth: process.env.YOUTUBE_TOKEN
