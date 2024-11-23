@@ -1,12 +1,6 @@
 language: "en-US"
 reviews:
-  profile: "assertive"
-  request_changes_workflow: false
   high_level_summary: true
-  poem: true
-  review_status: true
-  auto_review:
-    enabled: true
   tools:
     markdownlint:
       enabled: true
@@ -31,8 +25,6 @@ reviews:
       enabled: true
     semgrep:
       enabled: true
-chat:
-  auto_reply: true
 knowledge_base:
   opt_out: false
   learnings:
