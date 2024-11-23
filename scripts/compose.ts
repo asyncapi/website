@@ -7,12 +7,20 @@ import fs from 'fs';
 import inquirer from 'inquirer';
 import moment from 'moment';
 
-const genFrontMatter = (answers:ComposePromptType) => {
-  const d = new Date();
-  const date = [d.getFullYear(), `0${d.getMonth() + 1}`.slice(-2), `0${d.getDate()}`.slice(-2)].join('-');
+type ComposePromptType = {
+  title: string;
+  excerpt: string;
+  tags: string;
+  type: string;
+  canonical: string;
+};
+
+const genFrontMatter = (answers: ComposePromptType) => {
   const tagArray = answers.tags.split(',');
 
-  tagArray.forEach((tag, index) => (tagArray[index] = tag.trim()));
+  tagArray.forEach((tag: string, index: number) => {
+    tagArray[index] = tag.trim();
+  });
   const tags = `'${tagArray.join("','")}'`;
 
   let frontMatter = dedent`---
@@ -94,14 +102,6 @@ const genFrontMatter = (answers:ComposePromptType) => {
   return frontMatter;
 };
 
-type ComposePromptType = {
-	title: string;
-	excerpt: string;
-	tags: string;
-	type: string;
-	canonical: string;
-}
-
 inquirer
   .prompt([
     {
@@ -131,7 +131,7 @@ inquirer
       type: 'input'
     }
   ])
-  .then((answers:ComposePromptType) => {
+  .then((answers: ComposePromptType) => {
     // Remove special characters and replace space with -
     const fileName = answers.title
       .toLowerCase()
