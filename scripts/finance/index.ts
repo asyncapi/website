@@ -1,9 +1,24 @@
+import assert from 'assert';
 import { mkdir } from 'fs/promises';
 import { resolve } from 'path';
 
 import { writeJSON } from '../utils/readAndWriteJson';
 
-export async function buildFinanceInfoList({ currentDir, configDir, financeDir, year, jsonDataDir }) {
+interface BuildFinanceInfoListProps {
+  currentDir: string;
+  configDir: string;
+  financeDir: string;
+  year: string;
+  jsonDataDir: string;
+}
+
+export async function buildFinanceInfoList({
+  currentDir,
+  configDir,
+  financeDir,
+  year,
+  jsonDataDir
+}: BuildFinanceInfoListProps) {
   try {
     const expensesPath = resolve(currentDir, configDir, financeDir, year, 'Expenses.yml');
     const expensesLinkPath = resolve(currentDir, configDir, financeDir, year, 'ExpensesLink.yml');
@@ -22,6 +37,7 @@ export async function buildFinanceInfoList({ currentDir, configDir, financeDir, 
 
     await writeJSON(expensesLinkPath, expensesLinkJsonPath);
   } catch (err) {
-    throw new Error(err);
+    assert(err instanceof Error);
+    throw new Error(err.message);
   }
 }
