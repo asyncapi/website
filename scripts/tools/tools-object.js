@@ -58,16 +58,13 @@ async function convertTools(data) {
       };
     }
 
-    for (let tool of dataArray) {
+    await Promise.all(dataArray.map(async (tool) => {
       try {
         if (tool.name.startsWith('.asyncapi-tool')) {
-          // extracting the reference id of the repository which will be used to extract the path of the .asyncapi-tool file in the Tools repository
-          // ex: for a url = "https://api.github.com/repositories/351453552/contents/.asyncapi-tool?ref=61855e7365a881e98c2fe667a658a0005753d873"
-          // the text (id) present after '=' gives us a reference id for the repo
-          let reference_id = tool.url.split("=")[1];
-          let download_url = `https://raw.githubusercontent.com/${tool.repository.full_name}/${reference_id}/${tool.path}`;
+          const referenceId = tool.url.split('=')[1];
+          const downloadUrl = `https://raw.githubusercontent.com/${tool.repository.full_name}/${referenceId}/${tool.path}`;
 
-          const { data: toolFileContent } = await axios.get(download_url);
+          const { data: toolFileContent } = await axios.get(referenceId);
 
           //some stuff can be YAML
           const jsonToolFileContent = await convertToJson(toolFileContent)
@@ -101,7 +98,7 @@ async function convertTools(data) {
         console.error(err)
         throw err;
       }
-    }
+    }))
     return finalToolsObject;
   } catch (err) {
     throw new Error(`Error processing tool: ${err.message}`)
