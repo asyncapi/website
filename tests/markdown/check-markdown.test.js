@@ -74,11 +74,17 @@ describe('Frontmatter Validator', () => {
 
     it('logs error to console when an error occurs in checkMarkdownFiles', async () => {
         const invalidFolderPath = path.join(tempDir, 'non-existent-folder');
+        const mockConsoleError = jest.spyOn(console, 'error').mockImplementation();
     
-        await checkMarkdownFiles(invalidFolderPath, validateBlogs);
+        try {
+            await checkMarkdownFiles(invalidFolderPath, validateBlogs);
+        } catch (error) {
+            expect(error.code).toBe('ENOENT');
+        }
     
-        expect(mockConsoleError.mock.calls[0][0]).toContain('Error processing files:');
-    });
+        expect(mockConsoleError.mock.calls[0][0]).toContain('Error in directory');
+        mockConsoleError.mockRestore();
+    });    
 
     it('skips the "reference/specification" folder during validation', async () => {
         const referenceSpecDir = path.join(tempDir, 'reference', 'specification');

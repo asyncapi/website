@@ -101,34 +101,42 @@ function validateDocs(frontmatter) {
 async function checkMarkdownFiles(folderPath, validateFunction, relativePath = '') {
     try {
         const files = await fs.readdir(folderPath);
-        for (const file of files) {
+        const filePromises = files.map(async (file) => {
             const filePath = path.join(folderPath, file);
             const relativeFilePath = path.join(relativePath, file);
 
             // Skip the folder 'docs/reference/specification'
             if (relativeFilePath.includes('reference/specification')) {
-                continue;
+                return;
             }
 
-            const stats = await fs.stat(filePath);
+            try {
+                const stats = await fs.stat(filePath);
 
-            // Recurse if directory, otherwise validate markdown file
-            if (stats.isDirectory()) {
-                await checkMarkdownFiles(filePath, validateFunction, relativeFilePath);
-            } else if (path.extname(file) === '.md') {
-                const fileContent = await fs.readFile(filePath, 'utf-8');
-                const { data: frontmatter } = matter(fileContent);
+                // Recurse if directory, otherwise validate markdown file
+                if (stats.isDirectory()) {
+                    await checkMarkdownFiles(filePath, validateFunction, relativeFilePath);
+                } else if (path.extname(file) === '.md') {
+                    const fileContent = await fs.readFile(filePath, 'utf-8');
+                    const { data: frontmatter } = matter(fileContent);
 
-                const errors = validateFunction(frontmatter);
-                if (errors) {
-                    console.log(`Errors in file ${relativeFilePath}:`);
-                    errors.forEach(error => console.log(` - ${error}`));
-                    process.exitCode = 1;
+                    const errors = validateFunction(frontmatter);
+                    if (errors) {
+                        console.log(`Errors in file ${relativeFilePath}:`);
+                        errors.forEach(error => console.log(` - ${error}`));
+                        process.exitCode = 1;
+                    }
                 }
+            } catch (err) {
+                console.error(`Error processing file ${relativeFilePath}:`, err);
+                throw err;
             }
-        }
+        });
+
+        await Promise.all(filePromises);
     } catch (err) {
-        console.error('Error processing files:', err);
+        console.error(`Error in directory ${folderPath}:`, err);
+        throw err;
     }
 }
 
