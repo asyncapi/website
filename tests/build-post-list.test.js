@@ -16,9 +16,6 @@ describe('buildPostList', () => {
       [join(tempDir, 'about'), '/about'],
     ];
 
-    const normalizedDir = normalize(join(tempDir, 'blog'));
-    await fs.ensureDir(normalizedDir);
-
     await fs.ensureDir(join(tempDir, 'blog'));
     await fs.writeFile(join(tempDir, 'blog', 'release-notes-2.1.0.mdx'), '---\ntitle: Release Notes 2.1.0\n---\nThis is a release note.');
 
@@ -43,10 +40,44 @@ describe('buildPostList', () => {
 
     const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
 
-    expect(output).toHaveProperty('docs');
-    expect(output).toHaveProperty('blog');
-    expect(output).toHaveProperty('about');
-    expect(output).toHaveProperty('docsTree');
+    expect(output.docs).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          title: 'Docs Home',
+          slug: '/docs',
+        }),
+        expect.objectContaining({
+          title: 'Reference',
+          slug: '/docs/reference',
+          isRootSection: true,
+        }),
+        expect.objectContaining({
+          title: 'Specification',
+          slug: '/docs/reference/specification',
+          isSection: true,
+        }),
+      ])
+    );
+
+    expect(output.blog).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          title: 'Release Notes 2.1.0',
+          slug: '/blog/release-notes-2.1.0',
+        }),
+      ])
+    );
+    
+    expect(output.about).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          title: 'About Us',
+          slug: '/about',
+        }),
+      ])
+    );
+    
+    expect(output.docsTree).toBeDefined();    
 
     const blogEntry = output.blog.find(item => item.slug === '/blog/release-notes-2.1.0');
     expect(blogEntry).toBeDefined();
@@ -61,8 +92,12 @@ describe('buildPostList', () => {
 
     const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
 
-    expect(output.docs.length).toBeGreaterThan(0);
-    expect(output.docs.find(item => item.title === 'Section 1')).toBeDefined();
+    const sectionEntry = output.docs.find(item => item.title === 'Section 1');
+    expect(sectionEntry).toMatchObject({
+      title: 'Section 1',
+      slug: expect.stringContaining('/docs/section1'),
+      isSection: true
+    });
   });
 
   it('handles multiple release notes correctly', async () => {
