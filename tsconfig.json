@@ -16,15 +16,8 @@
       "@/*": ["./*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "types/**/*.d.ts",
-    "**/*.json"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.json"],
   "exclude": ["node_modules", "netlify"],
-  "include": ["scripts/**/*"],
   "ts-node": {
     "esm": true,
     "experimentalSpecifierResolution": "node",
