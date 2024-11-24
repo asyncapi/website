@@ -1,9 +1,9 @@
 import fs from 'fs/promises';
 import json2xml from 'jgexml/json2xml';
 
-import posts from '../config/posts.json' assert { type: 'json' };
+async function getAllPosts() {
+  const posts = (await import('../config/posts.json', { assert: { type: 'json' } })).default;
 
-function getAllPosts() {
   return posts;
 }
 
@@ -20,7 +20,7 @@ function clean(s) {
 
 export async function rssFeed(type, title, desc, outputPath) {
   try {
-    let posts = getAllPosts()[`${type}`];
+    let posts = (await getAllPosts())[`${type}`];
     const missingDatePosts = posts.filter((post) => !post.date);
 
     posts = posts.filter((post) => post.date);
