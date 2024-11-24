@@ -37,6 +37,9 @@ describe('buildTools', () => {
         consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});
         fs.ensureDirSync(testDir);
         fs.outputFileSync(manualToolsPath, JSON.stringify(manualTools));
+        fs.outputFileSync(automatedToolsPath, JSON.stringify({}));
+        fs.outputFileSync(toolsPath, JSON.stringify({}));
+        fs.outputFileSync(tagsPath, JSON.stringify({}));
     });
 
     afterAll(() => {
