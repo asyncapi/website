@@ -4,15 +4,18 @@
     "next/core-web-vitals",
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:storybook/recommended",
+    "plugin:storybook/recommended"
   ],
   "env": {
     "browser": true,
     "es2021": true,
     "node": true,
-    "jest": true,
+    "jest": true
   },
-  "plugins": ["react", "jsx-a11y"],
+  "plugins": [
+    "react",
+    "jsx-a11y"
+  ],
   "rules": {
     "prettier/prettier": [
       "error",
@@ -30,43 +33,47 @@
         "insertPragma": false,
         "requirePragma": false,
         "jsxSingleQuote": true,
-        "printWidth": 120,
-      },
+        "printWidth": 120
+      }
     ],
     "max-len": [
       "error",
       {
         "code": 120,
         "ignoreUrls": true,
-        "ignorePattern": "(className=\\{[\\s\\S]*\\}|.*\\}|'.*'|className='.*')", // Ignore classnames
-      },
-    ],
+        "ignorePattern": "(className=\\{[\\s\\S]*\\}|.*\\}|'.*'|className='.*')" // Ignore classnames
+      }
+    ]
   },
   "globals": {
     "React": true,
     "expect": true,
     "jsdom": true,
-    "JSX": true,
+    "JSX": true
   },
   "overrides": [
     // Configuration for TypeScript files
     {
-      "files": ["**/*.ts", "**/*.tsx", "netlify/*.ts"],
+      "files": [
+        "**/*.ts",
+        "**/*.tsx",
+        "netlify/*.ts"
+      ],
       "plugins": [
         "@typescript-eslint",
         "tailwindcss",
         "unused-imports",
-        "simple-import-sort",
+        "simple-import-sort"
       ],
       "extends": [
         "plugin:tailwindcss/recommended",
         "airbnb-typescript",
         "next/core-web-vitals",
         "plugin:prettier/recommended",
-        "plugin:storybook/recommended",
+        "plugin:storybook/recommended"
       ],
       "parserOptions": {
-        "project": "./tsconfig.json",
+        "project": "./tsconfig.json"
       },
       "rules": {
         "react/destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
@@ -82,7 +89,7 @@
           "error",
           "ForInStatement",
           "LabeledStatement",
-          "WithStatement",
+          "WithStatement"
         ], // Overrides Airbnb configuration and enable no-restricted-syntax
         "import/prefer-default-export": "off", // Named export is easier to refactor automatically
         "tailwindcss/no-custom-classname": "off", // Disabled otherwise nightmare to allow each custom tailwind classes
@@ -94,8 +101,8 @@
         "unused-imports/no-unused-vars": [
           "error",
           {
-            "argsIgnorePattern": "^_",
-          },
+            "argsIgnorePattern": "^_"
+          }
         ],
         // Variables
         "init-declarations": "off",
@@ -119,30 +126,42 @@
           "off",
           "stroustrup",
           {
-            "allowSingleLine": true,
-          },
+            "allowSingleLine": true
+          }
         ],
         "camelcase": "off",
         "capitalized-comments": "off",
-        "comma-dangle": ["error", "never"],
+        "comma-dangle": [
+          "error",
+          "never"
+        ],
         "comma-spacing": [
           2,
           {
             "before": false,
-            "after": true,
-          },
+            "after": true
+          }
         ],
-        "comma-style": ["error", "last"],
+        "comma-style": [
+          "error",
+          "last"
+        ],
         "eol-last": "error",
         "func-call-spacing": "error",
         "func-name-matching": "error",
         "func-names": "off",
         "func-style": "off",
-        "jsx-quotes": ["error", "prefer-single"],
+        "jsx-quotes": [
+          "error",
+          "prefer-single"
+        ],
         "key-spacing": "error",
         "keyword-spacing": "error",
         "line-comment-position": "off",
-        "linebreak-style": ["error", "unix"],
+        "linebreak-style": [
+          "error",
+          "unix"
+        ],
         "lines-around-comment": [
           "error",
           {
@@ -155,22 +174,22 @@
             "allowObjectStart": true,
             "allowObjectEnd": false,
             "allowArrayStart": true,
-            "allowArrayEnd": false,
-          },
+            "allowArrayEnd": false
+          }
         ],
         "max-depth": "error",
         "max-lines": [
           "error",
           {
-            "max": 2000,
-          },
+            "max": 2000
+          }
         ],
         "max-nested-callbacks": "error",
         "max-statements-per-line": [
           "error",
           {
-            "max": 2,
-          },
+            "max": 2
+          }
         ],
         "multiline-comment-style": "off",
         "multiline-ternary": "off",
@@ -179,10 +198,13 @@
         "newline-per-chained-call": [
           "error",
           {
-            "ignoreChainWithDepth": 4,
-          },
+            "ignoreChainWithDepth": 4
+          }
         ],
-        "newline-after-var": ["error", "always"],
+        "newline-after-var": [
+          "error",
+          "always"
+        ],
         "no-array-constructor": "error",
         "no-lonely-if": "error",
         "no-mixed-operators": "off",
@@ -191,8 +213,8 @@
         "no-multiple-empty-lines": [
           "error",
           {
-            "max": 1,
-          },
+            "max": 1
+          }
         ],
         "no-negated-condition": "error",
         "no-nested-ternary": "error",
@@ -205,39 +227,63 @@
         "no-whitespace-before-property": "error",
         "nonblock-statement-body-position": "error",
         "object-curly-newline": "off",
-        "object-curly-spacing": ["error", "always"],
+        "object-curly-spacing": [
+          "error",
+          "always"
+        ],
         "object-property-newline": "off",
-        "padded-blocks": ["error", "never"],
+        "padded-blocks": [
+          "error",
+          "never"
+        ],
         "padding-line-between-statements": [
           "error",
           {
             "blankLine": "always",
             "prev": "*",
-            "next": "return",
+            "next": "return"
           },
           {
             "blankLine": "always",
-            "prev": ["const", "let", "var"],
-            "next": "*",
+            "prev": [
+              "const",
+              "let",
+              "var"
+            ],
+            "next": "*"
           },
           {
             "blankLine": "any",
-            "prev": ["const", "let", "var"],
-            "next": ["const", "let", "var"],
-          },
+            "prev": [
+              "const",
+              "let",
+              "var"
+            ],
+            "next": [
+              "const",
+              "let",
+              "var"
+            ]
+          }
         ],
-        "quote-props": ["error", "as-needed"],
+        "quote-props": [
+          "error",
+          "as-needed"
+        ],
         "quotes": [
           "error",
           "single",
           {
-            "avoidEscape": true,
-          },
+            "avoidEscape": true
+          }
         ],
-        "require-jsdoc": "off",
+        "require-jsdoc": "warn",
         "semi": "error",
         "semi-spacing": "error",
-        "semi-style": ["error", "last"],
+        "semi-style": [
+          "error",
+          "last"
+        ],
         "sort-keys": "off",
         "sort-vars": "off",
         "space-before-blocks": "error",
@@ -250,25 +296,28 @@
           "always",
           {
             "block": {
-              "exceptions": ["!"],
-            },
-          },
+              "exceptions": [
+                "!"
+              ]
+            }
+          }
         ],
-        "switch-colon-spacing": "error",
-      },
+        "switch-colon-spacing": "error"
+      }
     },
     {
-      "files": ["components/logos/*"],
+      "files": [
+        "components/logos/*"
+      ],
       "rules": {
-        "max-len": "off",
+        "max-len": "off"
       },
-    },
-    {
+			
       "files": ["scripts/**/*"],
       "rules": {
         "import/no-extraneous-dependencies": "off",
-        "no-console": "off",
-      },
-    },
-  ],
+        "no-console": "off"
+      }
+    }
+  ]
 }
