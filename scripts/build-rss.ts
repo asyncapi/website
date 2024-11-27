@@ -7,15 +7,17 @@ async function getAllPosts() {
   return posts;
 }
 
-function clean(s) {
-  s = s.split('&ltspan&gt').join('');
-  s = s.split('&amp').join('&');
-  s = s.split('&#39;').join("'");
-  s = s.split('&lt;').join('<');
-  s = s.split('&gt;').join('>');
-  s = s.split('&quot;').join('"');
+function clean(s: string) {
+  let cleanS = s;
 
-  return s;
+  cleanS = cleanS.split('&ltspan&gt').join('');
+  cleanS = cleanS.split('&amp').join('&');
+  cleanS = cleanS.split('&#39;').join("'");
+  cleanS = cleanS.split('&lt;').join('<');
+  cleanS = cleanS.split('&gt;').join('>');
+  cleanS = cleanS.split('&quot;').join('"');
+
+  return cleanS;
 }
 
 export async function rssFeed(type, title, desc, outputPath) {
