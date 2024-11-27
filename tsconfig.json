@@ -19,7 +19,6 @@
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.json"],
   "exclude": ["node_modules", "netlify"],
   "ts-node": {
-    "esm": true,
     "experimentalSpecifierResolution": "node",
     "transpileOnly": true
   }
