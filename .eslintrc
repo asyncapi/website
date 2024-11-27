@@ -313,13 +313,13 @@
         "max-len": "off"
       }
     },
-		{
-			"files": ["scripts/**/*"],
+    {
+      "files": ["scripts/**/*"],
       "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-console": "off",
-				"require-jsdoc":"off"
+        "require-jsdoc":"off"
       }
-		}
+    }
   ]
 }
