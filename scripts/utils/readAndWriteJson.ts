@@ -2,7 +2,7 @@ import { readFile, writeFile } from 'fs/promises';
 
 import { convertToJson } from '../utils';
 
-export async function writeJSON(readPath, writePath) {
+export async function writeJSON(readPath: string, writePath: string) {
   let readContent;
   let jsonContent;
 
