@@ -1,8 +1,9 @@
+import assert from 'assert';
 import { writeFileSync } from 'fs';
 import { google } from 'googleapis';
 import { resolve } from 'path';
 
-async function buildMeetings(writePath) {
+async function buildMeetings(writePath: string) {
   let auth;
   let calendar;
 
@@ -14,6 +15,7 @@ async function buildMeetings(writePath) {
 
     calendar = google.calendar({ version: 'v3', auth });
   } catch (err) {
+    assert(err instanceof Error);
     throw new Error(`Authentication failed: ${err.message}`);
   }
 
@@ -31,7 +33,16 @@ async function buildMeetings(writePath) {
       timeMin
     });
 
+    // check if the response is valid and not undefined
+    if (!eventsList.data.items || !Array.isArray(eventsList.data.items)) {
+      throw new Error('Invalid data structure received from Google Calendar API');
+    }
+
     eventsItems = eventsList.data.items.map((e) => {
+      if (!e.start || !e.start.dateTime) {
+        throw new Error('start.dateTime is missing in the event');
+      }
+
       return {
         title: e.summary,
         calLink: e.htmlLink,
@@ -49,6 +60,7 @@ async function buildMeetings(writePath) {
 
     writeFileSync(writePath, eventsForHuman);
   } catch (err) {
+    assert(err instanceof Error);
     throw new Error(`Failed to fetch or process events: ${err.message}`);
   }
 }
