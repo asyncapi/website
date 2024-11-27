@@ -5,7 +5,7 @@ import Fuse from 'fuse.js';
 
 import { convertToJson } from '../utils';
 import { categoryList } from './categorylist';
-import schema from './tools-schema.json';
+import schema from './tools-schema.json' assert { type: 'json' };
 
 const ajv = new Ajv();
 
@@ -56,8 +56,7 @@ async function convertTools(data) {
   // initialising finalToolsObject with all categories inside it with proper elements in each category
   for (const index in categoryList) {
     finalToolsObject[categoryList[index].name] = {
-      description: categoryList[index].description,
-      toolsList: []
+      description: categoryList[index].de
     };
   }
 

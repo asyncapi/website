@@ -13,6 +13,7 @@ const buildTools = async (automatedToolsPath: string, manualToolsPath: string, t
 
     await fs.writeFile(automatedToolsPath, JSON.stringify(automatedTools, null, '  '));
 
+    // eslint-disable-next-line import/no-dynamic-require, global-require
     await combineTools(automatedTools, require(manualToolsPath), toolsPath, tagsPath);
   } catch (err) {
     assert(err instanceof Error);

@@ -1,12 +1,12 @@
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import fs from 'fs';
-import Fuse from 'fuse';
+import Fuse from 'fuse.js';
 
 import { categoryList } from './categorylist';
 import { languagesColor, technologiesColor } from './tags-color';
 import { createToolObject } from './tools-object';
-import schema from './tools-schema.json';
+import schema from './tools-schema.json' assert { type: 'json' };
 
 const ajv = new Ajv();
 

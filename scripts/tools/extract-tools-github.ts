@@ -1,6 +1,7 @@
 import axios from 'axios';
+import dotenv from 'dotenv';
 
-require('dotenv').config();
+dotenv.config();
 
 const getData = async () => {
   try {
