@@ -1,22 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "I_kwDOFLhIt84-OUI3",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create educational & technical video explaining AsyncAPI's main features",
-      "author": "quetzalliwrites",
-      "resourcePath": "/asyncapi/community/issues/155",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 34.46095064991105
-    },
-    {
       "id": "I_kwDODou01c5BZZv-",
       "isPR": false,
       "isAssigned": false,
@@ -54,7 +38,18 @@
           "color": "0E8A16"
         }
       ],
-      "score": 22.112443333692923
+      "score": 27.8559351086781
+    },
+    {
+      "id": "PR_kwDOBW5R_c5-T7mG",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add tests for build post list script",
+      "author": "vishvamsinh28",
+      "resourcePath": "/asyncapi/website/pull/3284",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 25.845712987433288
     },
     {
       "id": "PR_kwDOFLhIt85bqKL8",
@@ -97,18 +92,7 @@
           "color": "ededed"
         }
       ],
-      "score": 21.538094156194408
-    },
-    {
-      "id": "PR_kwDOBW5R_c5-T7mG",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add tests for build post list script",
-      "author": "vishvamsinh28",
-      "resourcePath": "/asyncapi/website/pull/3284",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 20.38939580119737
+      "score": 21.825268744943667
     },
     {
       "id": "PR_kwDOFLhIt855u7Eb",
@@ -133,6 +117,26 @@
       "score": 18.666348268701817
     },
     {
+      "id": "I_kwDOBW5R_c5RVOOY",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Community cards implementation.",
+      "author": "Mayaleeeee",
+      "resourcePath": "/asyncapi/website/issues/930",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "area/design",
+          "color": "0d67d3"
+        },
+        {
+          "name": "area/javascript",
+          "color": "ededed"
+        }
+      ],
+      "score": 17.517649913704783
+    },
+    {
       "id": "PR_kwDOBW5R_c535wDj",
       "isPR": true,
       "isAssigned": false,
@@ -149,6 +153,22 @@
       "score": 16.65612614745701
     },
     {
+      "id": "I_kwDOFLhIt84-OUI3",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Create educational & technical video explaining AsyncAPI's main features",
+      "author": "quetzalliwrites",
+      "resourcePath": "/asyncapi/community/issues/155",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 16.60974586154023
+    },
+    {
       "id": "PR_kwDOFLhIt853IEwA",
       "isPR": true,
       "isAssigned": false,
@@ -157,7 +177,7 @@
       "resourcePath": "/asyncapi/community/pull/1333",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 15.507427792459973
+      "score": 16.08177696995849
     },
     {
       "id": "I_kwDOFLhIt85bebeO",
@@ -168,21 +188,25 @@
       "resourcePath": "/asyncapi/community/issues/568",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 15.220253203710714
-    },
-    {
-      "id": "PR_kwDOBW5R_c59wJxU",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: css alignment of calendar component on the home page",
-      "author": "dishafaujdar",
-      "resourcePath": "/asyncapi/website/pull/3276",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.07155484871368
+      "score": 15.507427792459973
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDODwv8N86f37o-",
+      "title": "Return to top arrow feature/button",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/conference-website/issues/475",
+      "repo": "asyncapi/conference-website",
+      "author": "thulieblack",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
     {
       "id": "I_kwDOFLhIt86dkhlL",
       "title": "Design for mentors for promotion",
@@ -201,7 +225,7 @@
     {
       "id": "I_kwDOFLhIt86dker5",
       "title": "Designs for the mentees selected for the mentorship program for promotion",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/community/issues/1581",
       "repo": "asyncapi/community",
       "author": "iambami",
@@ -255,25 +279,6 @@
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCHlHJM6ZrKEr",
-      "title": "[📑 Docs]: Fix the relative paths of `index.md` & `migration.md` files.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/generator/issues/1294",
-      "repo": "asyncapi/generator",
-      "author": "Gmin2",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        },
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
         }
       ]
     },
@@ -422,6 +427,21 @@
       ]
     },
     {
+      "id": "I_kwDODwv8N86Lel9M",
+      "title": "[FEATURE] Resolve the existing Next.js lint issues",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/conference-website/issues/328",
+      "repo": "asyncapi/conference-website",
+      "author": "ashmit-coder",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
       "id": "I_kwDOE8Qh386HJeIz",
       "title": "[BUG] Implement avro schema data type ",
       "isAssigned": false,
@@ -460,25 +480,6 @@
       "author": "Amzani",
       "area": "typescript",
       "labels": []
-    },
-    {
-      "id": "I_kwDOFDnrNc59gY4V",
-      "title": "Validate command output is polluted by noisy messages",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/1095",
-      "repo": "asyncapi/cli",
-      "author": "cykl",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        },
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ]
     },
     {
       "id": "I_kwDOCHlHJM58YMi8",
@@ -542,21 +543,6 @@
           "name": "enhancement",
           "color": "a2eeef"
         },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODou01c531nlO",
-      "title": "Misalignment of Code Editor Highlight Box",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/studio/issues/861",
-      "repo": "asyncapi/studio",
-      "author": "princerajpoot20",
-      "area": "typescript",
-      "labels": [
         {
           "name": "stale",
           "color": "ededed"
@@ -700,10 +686,6 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
@@ -754,6 +736,10 @@
       "author": "CynthiaPeter",
       "area": "docs",
       "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
         {
           "name": "📑 docs",
           "color": "E50E99"
