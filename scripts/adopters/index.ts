@@ -3,7 +3,6 @@ import { fileURLToPath } from 'url';
 
 import { writeJSON } from '../utils/readAndWriteJson';
 
-
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
