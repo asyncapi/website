@@ -2,6 +2,7 @@ const fs = require('fs').promises;
 const path = require('path');
 const os = require('os');
 const {
+    main,
     validateBlogs,
     validateDocs,
     checkMarkdownFiles
@@ -114,6 +115,21 @@ describe('Frontmatter Validator', () => {
         }
     
         mockReadFile.mockRestore();
+    });
+
+    it('should handle main function errors', async () => {
+        const mockExit = jest.spyOn(process, 'exit').mockImplementation(() => {});
+        jest.spyOn(fs, 'readdir').mockRejectedValue(new Error('Test error'));
+        
+        await main();
+        
+        expect(mockConsoleError).toHaveBeenCalledWith(
+            'Failed to validate markdown files:', 
+            expect.any(Error)
+        );
+        expect(mockExit).toHaveBeenCalledWith(1);
+        
+        mockExit.mockRestore();
     });
 
 });

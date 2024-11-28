@@ -157,4 +157,4 @@ async function main() {
 
 main();
 
-module.exports = { validateBlogs, validateDocs, checkMarkdownFiles }
+module.exports = { validateBlogs, validateDocs, checkMarkdownFiles, main }
