@@ -75,25 +75,22 @@ describe('Frontmatter Validator', () => {
 
     it('logs error to console when an error occurs in checkMarkdownFiles', async () => {
         const invalidFolderPath = path.join(tempDir, 'non-existent-folder');
-    
-        try {
-            await checkMarkdownFiles(invalidFolderPath, validateBlogs);
-        } catch (error) {
-            expect(error.code).toBe('ENOENT');
-        }
-    
+
+        await expect(checkMarkdownFiles(invalidFolderPath, validateBlogs))
+            .rejects.toThrow('ENOENT');
+
         expect(mockConsoleError.mock.calls[0][0]).toContain('Error in directory');
-    });    
+    });
 
     it('skips the "reference/specification" folder during validation', async () => {
         const referenceSpecDir = path.join(tempDir, 'reference', 'specification');
         await fs.mkdir(referenceSpecDir, { recursive: true });
         await fs.writeFile(path.join(referenceSpecDir, 'skipped.md'), `---\ntitle: Skipped File\n---`);
-    
+
         const mockConsoleLog = jest.spyOn(console, 'log').mockImplementation();
-    
+
         await checkMarkdownFiles(tempDir, validateDocs);
-    
+
         expect(mockConsoleLog).not.toHaveBeenCalledWith(expect.stringContaining('Errors in file reference/specification/skipped.md'));
         mockConsoleLog.mockRestore();
     });
@@ -101,9 +98,9 @@ describe('Frontmatter Validator', () => {
     it('logs and rethrows error when an exception occurs while processing a file', async () => {
         const filePath = path.join(tempDir, 'invalid.md');
         await fs.writeFile(filePath, `---\ntitle: Valid Title\n---`);
-    
+
         const mockReadFile = jest.spyOn(fs, 'readFile').mockRejectedValue(new Error('Test readFile error'));
-    
+
         try {
             await checkMarkdownFiles(tempDir, validateBlogs);
         } catch (err) {
@@ -113,22 +110,22 @@ describe('Frontmatter Validator', () => {
             );
             expect(err.message).toBe('Test readFile error');
         }
-    
+
         mockReadFile.mockRestore();
     });
 
     it('should handle main function errors', async () => {
-        const mockExit = jest.spyOn(process, 'exit').mockImplementation(() => {});
+        const mockExit = jest.spyOn(process, 'exit').mockImplementation(() => { });
         jest.spyOn(fs, 'readdir').mockRejectedValue(new Error('Test error'));
-        
+
         await main();
-        
+
         expect(mockConsoleError).toHaveBeenCalledWith(
-            'Failed to validate markdown files:', 
+            'Failed to validate markdown files:',
             expect.any(Error)
         );
         expect(mockExit).toHaveBeenCalledWith(1);
-        
+
         mockExit.mockRestore();
     });
 
