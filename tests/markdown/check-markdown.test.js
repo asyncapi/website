@@ -128,5 +128,4 @@ describe('Frontmatter Validator', () => {
 
         mockExit.mockRestore();
     });
-
 });
