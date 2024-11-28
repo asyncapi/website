@@ -134,4 +134,28 @@ describe('Tools Object', () => {
     const malformedContent = createMalformedYAML();
     await expect(convertTools(malformedContent)).rejects.toThrow();
   });
+
+  it('should use repository description when tool description is missing', async () => {
+    const toolFile = createToolFileContent({
+      title: 'No Description Tool',
+      description: '',
+    });
+  
+    const repositoryDescription = 'Fallback Repository Description';
+    const mockData = createMockData([{
+      name: '.asyncapi-tool-no-description',
+      repoName: 'no-description',
+      description: repositoryDescription
+    }]);
+  
+    axios.get.mockResolvedValue({ data: toolFile });
+  
+    const result = await convertTools(mockData);
+  
+    const toolObject = result.Category1.toolsList[0];
+  
+    expect(toolObject.description).toBe(repositoryDescription);
+    expect(toolObject.title).toBe('No Description Tool');
+  });
+
 });
