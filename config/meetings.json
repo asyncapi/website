@@ -1,24 +1,10 @@
 [
   {
-    "title": "Essential Building Blocks Working Group",
-    "calLink": "https://www.google.com/calendar/event?eid=YzYyaHNiNTdqbGQ1OTNybjE1NDZlb2ppODAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1331",
-    "banner": "",
-    "date": "2024-08-13T18:00:00.000Z"
-  },
-  {
     "title": "Community Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=cnIwc3U0c2o1a3FoaWM0M2VvZXFjNzJvZzQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1336",
     "banner": "https://github.com/user-attachments/assets/7756ebe2-f8c7-4bda-91e3-6a678c1fad99",
     "date": "2024-08-20T16:00:00.000Z"
-  },
-  {
-    "title": "Marketing WG Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=dDNtNmxyODRkNzdvOTdvaWV0NjhtZnYyMGcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1338",
-    "banner": "",
-    "date": "2024-08-13T14:00:00.000Z"
   },
   {
     "title": "Essential Building Blocks Working Group",
@@ -138,5 +124,26 @@
     "url": "https://github.com/asyncapi/community/issues/1589",
     "banner": "",
     "date": "2024-11-19T14:00:00.000Z"
+  },
+  {
+    "title": "Design Call",
+    "calLink": "https://www.google.com/calendar/event?eid=ZmFwNGNoZW5kNzkzcDBsaHM2MW4xdDBzNW8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1592",
+    "banner": "",
+    "date": "2024-11-21T12:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=NmQzNTJzbW91NTNscGo4dnJoMWNlM3J2YnMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1596",
+    "banner": "https://github.com/user-attachments/assets/ff469484-a2c5-4aa2-8652-782f017947fb",
+    "date": "2024-11-26T16:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI Mentorship Program Kick-Off",
+    "calLink": "https://www.google.com/calendar/event?eid=aGg5cGtwdGV0YmpzbnBlcmdwYjFqMjU1cTQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1599",
+    "banner": "https://github.com/user-attachments/assets/739381b2-b7de-4e08-b845-04e5a07ba7e0",
+    "date": "2024-12-03T13:00:00.000Z"
   }
 ]
