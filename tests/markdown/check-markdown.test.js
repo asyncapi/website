@@ -70,7 +70,11 @@ describe('Frontmatter Validator', () => {
         };
         const errors = validateBlogs(frontmatter);
 
-        expect(errors.length).toBeGreaterThan(3);
+        expect(errors).toEqual([
+            "Invalid date format: invalid-date",
+            "Tags should be an array",
+            "Cover must be a string",
+            "Authors should be an array"]);
     });
 
     it('logs error to console when an error occurs in checkMarkdownFiles', async () => {
@@ -127,5 +131,6 @@ describe('Frontmatter Validator', () => {
         expect(mockExit).toHaveBeenCalledWith(1);
 
         mockExit.mockRestore();
-    });
+    });  
+
 });
