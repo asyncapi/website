@@ -143,7 +143,7 @@ async function checkMarkdownFiles(folderPath, validateFunction, relativePath = '
 const docsFolderPath = path.resolve(__dirname, '../../markdown/docs');
 const blogsFolderPath = path.resolve(__dirname, '../../markdown/blog');
 
-async function main(docsFolderPath, blogsFolderPath) {
+async function main() {
     try {
         await Promise.all([
             checkMarkdownFiles(docsFolderPath, validateDocs),
@@ -155,6 +155,6 @@ async function main(docsFolderPath, blogsFolderPath) {
     }
 }
 
-main(docsFolderPath,blogsFolderPath);
+main();
 
 module.exports = { validateBlogs, validateDocs, checkMarkdownFiles, main }
