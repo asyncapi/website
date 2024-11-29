@@ -130,14 +130,10 @@ describe('Frontmatter Validator', () => {
     });
 
     it('should handle successful main function execution', async () => {
-
-        const mockConsoleLog = jest.spyOn(console, 'log').mockImplementation();
     
         await main();
     
-        expect(mockConsoleLog).not.toHaveBeenCalledWith();
-
-        mockConsoleLog.mockRestore();
+        expect(mockConsoleError).not.toHaveBeenCalledWith()
     });
     
 });
