@@ -151,6 +151,7 @@ async function main(docsFolderPath, blogsFolderPath) {
         ]);
     } catch (error) {
         console.error('Failed to validate markdown files:', error);
+        process.exit(1);
     }
 }
 

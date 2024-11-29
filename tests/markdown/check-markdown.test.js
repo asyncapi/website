@@ -11,14 +11,17 @@ const {
 describe('Frontmatter Validator', () => {
     let tempDir;
     let mockConsoleError;
+    let mockProcessExit;
 
     beforeEach(async () => {
         mockConsoleError = jest.spyOn(console, 'error').mockImplementation();
+        mockProcessExit = jest.spyOn(process, 'exit').mockImplementation();
         tempDir = await fs.mkdtemp(path.join(os.tmpdir(), 'test-config'));
     });
 
     afterEach(async () => {
         mockConsoleError.mockRestore();
+        mockProcessExit.mockRestore();
         await fs.rm(tempDir, { recursive: true, force: true });
     });
 
@@ -118,10 +121,12 @@ describe('Frontmatter Validator', () => {
         mockReadFile.mockRestore();
     });
 
-    it('should handle main function errors', async () => {
+    it('should handle main function errors and exit with status 1', async () => {
         jest.spyOn(fs, 'readdir').mockRejectedValue(new Error('Test error'));
 
         await main();
+
+        expect(mockProcessExit).toHaveBeenCalledWith(1);
 
         expect(mockConsoleError).toHaveBeenCalledWith(
             'Failed to validate markdown files:',
@@ -130,10 +135,10 @@ describe('Frontmatter Validator', () => {
     });
 
     it('should handle successful main function execution', async () => {
-    
+
         await main();
-    
+
         expect(mockConsoleError).not.toHaveBeenCalledWith()
     });
-    
+
 });
