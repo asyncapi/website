@@ -1,12 +1,5 @@
 [
   {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=cnIwc3U0c2o1a3FoaWM0M2VvZXFjNzJvZzQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1336",
-    "banner": "https://github.com/user-attachments/assets/7756ebe2-f8c7-4bda-91e3-6a678c1fad99",
-    "date": "2024-08-20T16:00:00.000Z"
-  },
-  {
     "title": "Essential Building Blocks Working Group",
     "calLink": "https://www.google.com/calendar/event?eid=c28zazMxcDk3MThpMWFpNG9lYzRrbmIzNW8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1342",
