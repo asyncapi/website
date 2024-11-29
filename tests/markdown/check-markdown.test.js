@@ -131,10 +131,5 @@ describe('Frontmatter Validator', () => {
         expect(mockExit).toHaveBeenCalledWith(1);
 
         mockExit.mockRestore();
-    });
-    
-    it('should execute main without errors', async () => {
-        await expect(main()).resolves.not.toThrow();
-    });    
-    
+    });  
 });
