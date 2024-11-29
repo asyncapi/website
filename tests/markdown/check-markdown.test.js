@@ -131,5 +131,5 @@ describe('Frontmatter Validator', () => {
         expect(mockExit).toHaveBeenCalledWith(1);
 
         mockExit.mockRestore();
-    });  
+    });
 });
