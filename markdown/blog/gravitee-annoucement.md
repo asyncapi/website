@@ -38,3 +38,4 @@ We are profoundly grateful to Gravitee for their continued support and commitmen
 We're excited to have Gravitee.io on board as a Platinum Sponsor, and we look forward to continued collaboration in advancing the AsyncAPI ecosystem!
 
 For more information about Gravitee and their API management solutions, visit [Gravitee.io](https://www.gravitee.io/). To learn more about AsyncAPI and our mission, visit [AsyncAPI](https://www.asyncapi.com/en).
+
