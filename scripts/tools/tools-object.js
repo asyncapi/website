@@ -51,13 +51,15 @@ async function convertTools(data) {
     const dataArray = data.items;
 
     // initialising finalToolsObject with all categories inside it with proper elements in each category
-    finalToolsObject = categoryList.reduce((acc, category) => ({
-      ...acc,
-      [category.name]: {
-        description: category.description,
-        toolsList: []
-      }
-    }), {});
+    finalToolsObject = Object.fromEntries(
+      categoryList.map(category => [
+        category.name,
+        {
+          description: category.description,
+          toolsList: []
+        }
+      ])
+    );
 
     await Promise.all(dataArray.map(async (tool) => {
       try {
