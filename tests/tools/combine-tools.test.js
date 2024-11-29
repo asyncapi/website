@@ -214,53 +214,25 @@ describe('combineTools function', () => {
   });
 
   it('should throw an error when fs.writeFileSync fails', async () => {
-    let error;
-    const invalidPath = "this/is/not/valid"
-
-    try {
-      await combineTools(automatedTools, manualTools, invalidPath, invalidPath);
-    } catch (err) {
-      error = err;
-      expect(err.message).toMatch(/ENOENT|EACCES/);
-    }
-    expect(error).toBeDefined();
+    const invalidPath = 'this/is/not/valid';
+    await expect(combineTools(automatedTools, manualTools, invalidPath, invalidPath))
+      .rejects.toThrow(/ENOENT|EACCES/);
   });
 
   it('should throw an error when there is an invalid category', async () => {
-    let error;
-
-    try {
-      await combineTools(invalidAutomatedToolsT10, manualTools, toolsPath, tagsPath);
-    } catch (err) {
-      error = err;
-      expect(err.message).toContain('Error combining tools');
-    }
-    expect(error).toBeDefined();
+    await expect(combineTools(invalidAutomatedToolsT10, manualTools, toolsPath, tagsPath))
+      .rejects.toThrow('Error combining tools');
   });
 
   it('should throw an error when URL parsing fails', async () => {
-    let error;
-
-    try {
-      await combineTools(automatedTools, manualToolsWithInvalidURLT11, toolsPath, tagsPath);
-    } catch (err) {
-      error = err;
-      expect(err.message).toContain('Invalid URL');
-    }
-    expect(error).toBeDefined();
+    await expect(combineTools(automatedTools, manualToolsWithInvalidURLT11, toolsPath, tagsPath))
+      .rejects.toThrow('Invalid URL');
   });
 
   it('should handle errors when processing tools with circular references', async () => {
-    let error;
     circularTool.circular = circularTool;
-
-    try {
-      await combineTools(automatedToolsT12, {}, toolsPath, tagsPath);
-    } catch (err) {
-      error = err;
-      expect(err.message).toContain('Converting circular structure to JSON');
-    }
-    expect(error).toBeDefined();
+    await expect(combineTools(automatedToolsT12, {}, toolsPath, tagsPath))
+      .rejects.toThrow('Converting circular structure to JSON');
   });
-  
+
 });
