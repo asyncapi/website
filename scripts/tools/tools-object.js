@@ -51,12 +51,13 @@ async function convertTools(data) {
     const dataArray = data.items;
 
     // initialising finalToolsObject with all categories inside it with proper elements in each category
-    for (const category of categoryList) {
-      finalToolsObject[category.name] = {
+    finalToolsObject = categoryList.reduce((acc, category) => ({
+      ...acc,
+      [category.name]: {
         description: category.description,
         toolsList: []
-      };
-    }
+      }
+    }), {});
 
     await Promise.all(dataArray.map(async (tool) => {
       try {
@@ -73,10 +74,10 @@ async function convertTools(data) {
           const isValid = await validate(jsonToolFileContent)
 
           if (isValid) {
-            let repositoryUrl = tool.repository.html_url;
-            let repoDescription = tool.repository.description;
-            let isAsyncAPIrepo = tool.repository.owner.login === "asyncapi";
-            let toolObject = await createToolObject(jsonToolFileContent, repositoryUrl, repoDescription, isAsyncAPIrepo);
+            const repositoryUrl = tool.repository.html_url;
+            const repoDescription = tool.repository.description;
+            const isAsyncAPIrepo = tool.repository.owner.login === "asyncapi";
+            const toolObject = await createToolObject(jsonToolFileContent, repositoryUrl, repoDescription, isAsyncAPIrepo);
 
             // Tool Object is appended to each category array according to Fuse search for categories inside Tool Object
             await Promise.all(jsonToolFileContent.filters.categories.map(async (category) => {
