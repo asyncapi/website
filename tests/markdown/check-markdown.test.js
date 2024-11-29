@@ -102,21 +102,17 @@ describe('Frontmatter Validator', () => {
         mockConsoleLog.mockRestore();
     });
 
-    it('logs and rethrows error when an exception occurs while processing a file', async () => {
+    it('logs and rejects when an exception occurs while processing a file', async () => {
         const filePath = path.join(tempDir, 'invalid.md');
         await fs.writeFile(filePath, `---\ntitle: Valid Title\n---`);
 
         const mockReadFile = jest.spyOn(fs, 'readFile').mockRejectedValue(new Error('Test readFile error'));
 
-        try {
-            await checkMarkdownFiles(tempDir, validateBlogs);
-        } catch (err) {
-            expect(mockConsoleError).toHaveBeenCalledWith(
-                expect.stringContaining(`Error processing file invalid.md:`),
-                expect.any(Error)
-            );
-            expect(err.message).toBe('Test readFile error');
-        }
+        await expect(checkMarkdownFiles(tempDir, validateBlogs)).rejects.toThrow('Test readFile error');
+        expect(mockConsoleError).toHaveBeenCalledWith(
+            expect.stringContaining(`Error processing file invalid.md:`),
+            expect.any(Error)
+        );
 
         mockReadFile.mockRestore();
     });
