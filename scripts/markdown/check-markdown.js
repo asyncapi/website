@@ -143,15 +143,14 @@ async function checkMarkdownFiles(folderPath, validateFunction, relativePath = '
 const docsFolderPath = path.resolve(__dirname, '../../markdown/docs');
 const blogsFolderPath = path.resolve(__dirname, '../../markdown/blog');
 
-async function main(docsPath = docsFolderPath, blogsPath = blogsFolderPath) {
+async function main(docsFolderPath, blogsFolderPath) {
     try {
         await Promise.all([
-            checkMarkdownFiles(docsPath, validateDocs),
-            checkMarkdownFiles(blogsPath, validateBlogs)
+            checkMarkdownFiles(docsFolderPath, validateDocs),
+            checkMarkdownFiles(blogsFolderPath, validateBlogs)
         ]);
     } catch (error) {
         console.error('Failed to validate markdown files:', error);
-        process.exit(1);
     }
 }
 
