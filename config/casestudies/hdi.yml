@@ -15,9 +15,8 @@ challenges: |
   For synchronous communication OpenAPI is used as a standard. For asynchronous scenarios we want to use AsyncAPI to achieve the same level of transparency and discoverability.
   We as platform team offer the Azure Service Bus with self-service capabilities. Our customers are able to manage their own topics and subscriptions by maintaining a custom
   configuration model in a GitOps fashion. 
-  In an ideal world, the configuration would be an AsyncAPI document instead of a custom configuration, yet as a first step we want to establish AsyncAPI as documentation 
-  standard in HDI's organization. Information about the available message formats and topics is already available in distributed sources like repositories and Azure apis and
-  needs to be aggregated. 
+  We want to establish AsyncAPI as documentation standard in HDI's organization. Information about the available message formats and topics is already available in distributed 
+  sources (e.g. repositories) and needs to be aggregated. 
   To achieve discoverability the creation of a comprehensive catalog of existing topics is necessary, allowing potential subscribers access to information about 
   messages from the available topics, so they can choose which ones to subscribe to.
 
@@ -202,7 +201,8 @@ asyncapi: #More specific details about AsyncAPI itself and how is it used.
     - The AsyncAPI documents are used for documentation purposes by the platform team. 
       It provides a comprehensive overview of the asynchronous communication in our system, including the available topics and the structure of the messages.
     - (Outlook) The AsyncAPI document will be used to generate Java DTOs using the AsyncAPI Java generator, ensuring type safety and clear data structure understanding.
-    - (Outlook) Replace the custom configuration model and use AsyncAPI documents to configure asynchronous communication instead.
+    - (Outlook) Having the AsyncAPI documents at hand we are currently planning to use them to configure an internal developer portal (IDP) that will aggregate async and sync APIs among other things.
+    - (Outlook) Evaluate if replacing the custom configuration model and use AsyncAPI documents in the center to configure asynchronous communication instead.
   versions:
     - '3.0.0'
   storage: |
