@@ -25,7 +25,7 @@ const fuse = new Fuse(categoryList, options)
 // AsyncAPI organization or not, to create a JSON tool object as required in the frontend 
 // side to show ToolCard.
 const createToolObject = async (toolFile, repositoryUrl = '', repoDescription = '', isAsyncAPIrepo = '') => {
-  let resultantObject = {
+  const resultantObject = {
     title: toolFile.title,
     description: toolFile?.description ? toolFile.description : repoDescription,
     links: {
@@ -52,7 +52,7 @@ async function convertTools(data) {
 
     // initialising finalToolsObject with all categories inside it with proper elements in each category
     finalToolsObject = Object.fromEntries(
-      categoryList.map(category => [
+      categoryList.map((category) => [
         category.name,
         {
           description: category.description,
@@ -67,7 +67,7 @@ async function convertTools(data) {
           const referenceId = tool.url.split('=')[1];
           const downloadUrl = `https://raw.githubusercontent.com/${tool.repository.full_name}/${referenceId}/${tool.path}`;
 
-          const { data: toolFileContent } = await axios.get(referenceId);
+          const { data: toolFileContent } = await axios.get(downloadUrl);
 
           //some stuff can be YAML
           const jsonToolFileContent = await convertToJson(toolFileContent)
@@ -78,14 +78,14 @@ async function convertTools(data) {
           if (isValid) {
             const repositoryUrl = tool.repository.html_url;
             const repoDescription = tool.repository.description;
-            const isAsyncAPIrepo = tool.repository.owner.login === "asyncapi";
+            const isAsyncAPIrepo = tool.repository.owner.login === 'asyncapi';
             const toolObject = await createToolObject(jsonToolFileContent, repositoryUrl, repoDescription, isAsyncAPIrepo);
 
             // Tool Object is appended to each category array according to Fuse search for categories inside Tool Object
             await Promise.all(jsonToolFileContent.filters.categories.map(async (category) => {
               const categorySearch = await fuse.search(category);
               const targetCategory = categorySearch.length ? categorySearch[0].item.name : 'Others';
-              const toolsList = finalToolsObject[targetCategory].toolsList;
+              const { toolsList } = finalToolsObject[targetCategory];
               if (!toolsList.includes(toolObject)) {
                 toolsList.push(toolObject);
               }

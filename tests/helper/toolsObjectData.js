@@ -41,25 +41,27 @@ const createExpectedToolObject = ({
   isAsyncAPIOwner = true,
   additionalLinks = {},
   additionalFilters = {}
-} = {}) => createToolFileContent({
-  title,
-  description,
-  repoUrl,
-  categories,
-  hasCommercial,
-  additionalLinks,
-  additionalFilters: { isAsyncAPIOwner, ...additionalFilters }
+} = {}) => 
+  createToolFileContent({
+    title,
+    description,
+    repoUrl,
+    categories,
+    hasCommercial,
+    additionalLinks,
+    additionalFilters: { isAsyncAPIOwner, ...additionalFilters }
 });
 
 const createMockData = (tools = []) => ({
-  items: tools.map(tool =>
+  items: tools.map((tool) =>
     typeof tool === 'string'
       ? createToolRepositoryData({ name: `.asyncapi-tool-${tool}`, repoName: tool })
       : createToolRepositoryData(tool)
   )
 });
 
-const createMalformedYAML = ({ title = 'Malformed Tool',
+const createMalformedYAML = ({ 
+  title = 'Malformed Tool',
   description = 'This tool has malformed YAML.',
   repoUrl = 'https://github.com/asyncapi/malformed-repo' } = {}) => `
   title: ${title}
