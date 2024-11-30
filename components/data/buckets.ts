@@ -93,7 +93,7 @@ export const buckets: Bucket[] = [
     name: 'Explorer',
     title: 'Specification Explorer',
     description: 'Simplifying our Specification JSON Schema like a pro.',
-    link: '/docs/reference/specification/v3.0.0-Explorer',
+    link: '/docs/reference/specification/v3.0.0-explorer',
     className: 'bg-teal-200',
     borderClassName: 'border-orange-200',
     icon: IconExplorer
