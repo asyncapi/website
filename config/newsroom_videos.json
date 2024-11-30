@@ -1,5 +1,17 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/XirMXiBNaBM/hqdefault.jpg",
+    "title": "Community Meeting, 16:00 UTC Tuesday November 26th 2024",
+    "description": "",
+    "videoId": "XirMXiBNaBM"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/Q2cvxsUUgzA/hqdefault.jpg",
+    "title": "AsyncAPI-Powered Event Feeds: 3 Steps to Streaming",
+    "description": "In this livestream, we'll dive into the challenges and benefits of using AsyncAPI for building event-driven architectures.",
+    "videoId": "Q2cvxsUUgzA"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/9MaHh4b-rmc/hqdefault.jpg",
     "title": "Broadening the API Landscape: AsyncAPI and CloudEvents in the Enterprise -  Daniel Kocot",
     "description": "",
@@ -16,17 +28,5 @@
     "title": "AsyncAPI and DDD - A Pretty Couple - Dr. Annegret Junker",
     "description": "",
     "videoId": "lCTdXmougTk"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/b_BStEcLNqg/hqdefault.jpg",
-    "title": "Sustaining Open Source Beyond Code: The Importance of Marketing and Funding -  Oluwabamikemi Kayode",
-    "description": "",
-    "videoId": "b_BStEcLNqg"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/G6YyV1JvvSM/hqdefault.jpg",
-    "title": "Streamlining EDA: AsyncAPI-Driven Design, Documentation, and Testing - Giri Venkatesan",
-    "description": "",
-    "videoId": "G6YyV1JvvSM"
   }
 ]
