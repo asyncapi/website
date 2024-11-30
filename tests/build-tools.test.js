@@ -2,7 +2,9 @@ const axios = require('axios');
 const { resolve } = require('path');
 const { buildTools } = require('../scripts/build-tools');
 const { tagsData, manualTools, mockConvertedData, mockExtractData } = require('../tests/fixtures/buildToolsData');
-const fs = require('fs');
+const fs = require('fs-extra');
+const os = require('os');
+const path = require('path');
 
 jest.mock('axios');
 jest.mock('../scripts/tools/categorylist', () => ({
@@ -24,19 +26,25 @@ jest.mock('../scripts/tools/tags-color', () => ({
 }));
 
 describe('buildTools', () => {
-    const testDir = resolve(__dirname, 'test_config');
+    const testDir = path.join(os.tmpdir(), 'test_config');
     const toolsPath = resolve(testDir, 'tools.json');
     const tagsPath = resolve(testDir, 'all-tags.json');
     const automatedToolsPath = resolve(testDir, 'tools-automated.json');
     const manualToolsPath = resolve(testDir, 'tools-manual.json');
+    let consoleErrorMock;
 
     beforeAll(() => {
-        fs.mkdirSync(testDir, { recursive: true });
-        fs.writeFileSync(manualToolsPath, JSON.stringify(manualTools));
+        consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});
+        fs.ensureDirSync(testDir);
+        fs.outputFileSync(manualToolsPath, JSON.stringify(manualTools));
+        fs.outputFileSync(automatedToolsPath, JSON.stringify({}));
+        fs.outputFileSync(toolsPath, JSON.stringify({}));
+        fs.outputFileSync(tagsPath, JSON.stringify({}));
     });
 
     afterAll(() => {
-        fs.rmSync(testDir, { recursive: true, force: true });
+        fs.removeSync(testDir);
+        consoleErrorMock.mockRestore();
     });
 
     beforeEach(() => {
@@ -62,7 +70,6 @@ describe('buildTools', () => {
         expect(combinedToolsContent["Category2"].description).toEqual(mockConvertedData["Category2"].description);
 
         expect(tagsContent).toEqual(tagsData);
-
     });
 
     it('should handle getData error', async () => {
@@ -78,7 +85,7 @@ describe('buildTools', () => {
     it('should handle file write errors', async () => {
         axios.get.mockResolvedValue({ data: mockExtractData });
 
-        const invalidPath = '/invalid_dir/tools.json';
+        const invalidPath = path.resolve(os.tmpdir(), 'invalid_dir', 'tools.json');
 
         try {
             await buildTools(invalidPath, manualToolsPath, toolsPath, tagsPath);
