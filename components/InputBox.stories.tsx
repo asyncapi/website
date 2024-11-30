@@ -1,5 +1,6 @@
 import { useArgs } from '@storybook/preview-api';
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
 import type { InputBoxProps } from '@/types/components/InputBoxPropsType';
 import { InputTypes } from '@/types/components/InputBoxPropsType';

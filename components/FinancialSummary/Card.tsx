@@ -1,3 +1,5 @@
+import React from 'react';
+
 import type { ExpenseItem, Expenses } from '@/types/FinancialSummary/BarChartComponent';
 
 import ExpensesLinkData from '../../config/finance/json-data/ExpensesLink.json';

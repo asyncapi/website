@@ -4,7 +4,7 @@ export const Silversponsors: SponsorType[] = [
   {
     name: 'Bump.sh',
     website: 'https://bump.sh/asyncapi?utm_source=asyncapi&utm_medium=referral&utm_campaign=sponsor',
-    altText: 'Bump',
+    altText: 'OpenAPI & AsyncAPI API docs - Bump.sh',
     imageSrc: '/img/sponsors/bumpsh.svg',
     imageClass: 'inline-block sm:h-9'
   },

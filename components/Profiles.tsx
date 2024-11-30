@@ -1,3 +1,5 @@
+import React from 'react';
+
 type Profile = {
   name: string;
   link: string;

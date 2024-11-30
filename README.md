@@ -134,6 +134,24 @@ After cloning repository to your local, perform the following steps from the roo
 
 Now you're running AsyncAPI website in a development mode. Container is mapped with your local copy of the website. Whenever you make changes to the code, the website will refresh and changes visible in localhost:3000.
 
+## Use shared Markdown fragments
+
+To minimize the duplication of content and make it easier to maintain, there are shared fragments you can use when working with Markdown files. These fragments are stored in the `/assets/docs/fragments` directory.
+
+To include a fragment in a Markdown file:
+
+1. Import the fragment at the top of the file (but below the frontmatter) using the following syntax:
+
+    ```md
+    import DesiredFragmentName from '@/assets/docs/fragments/fragmentYouWantToImport.md';
+    ```
+
+1. Add the imported fragment to the desired location in the Markdown file using the following syntax:
+
+    ```md
+    <DesiredFragmentName />
+    ```
+
 ## Lint the code
 To lint the code, run the following command:
 ```
@@ -296,6 +314,15 @@ This repository has the following structure:
 </a>
 </p>
 
+## License
+
+This project's source code is licensed under the Apache License, Version 2.0. A copy of the
+license is available in LICENSE file.
+
+This project's documentation is licensed under the Creative Commons Attribution
+4.0 International License (CC-BY-4.0). A copy of the license is available in
+LICENSE-docs.
+
 ## AsyncAPI Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -376,6 +403,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://web-yuvrxj-afk.vercel.app/"><img src="https://avatars.githubusercontent.com/u/63532070?v=4?s=100" width="100px;" alt="Yuvraj Singh Sisodiya"/><br /><sub><b>Yuvraj Singh Sisodiya</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=yuvrxj-afk" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Shiva953"><img src="https://avatars.githubusercontent.com/u/120790871?v=4?s=100" width="100px;" alt="Neutron"/><br /><sub><b>Neutron</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=Shiva953" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/sagarkori143"><img src="https://avatars.githubusercontent.com/u/129517558?v=4?s=100" width="100px;" alt="Sagar Kori"/><br /><sub><b>Sagar Kori</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=sagarkori143" title="Documentation">📖</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/raj17ce"><img src="https://avatars.githubusercontent.com/u/116947399?v=4?s=100" width="100px;" alt="Raj Patel"/><br /><sub><b>Raj Patel</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=raj17ce" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
