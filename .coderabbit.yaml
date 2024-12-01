@@ -1,0 +1,35 @@
+language: "en-US"
+reviews:
+  high_level_summary: true
+  tools:
+    markdownlint:
+      enabled: true
+    biome:
+      enabled: true
+    github-checks:
+      enabled: true
+      timeout_ms: 180000
+    languagetool:
+      enabled: true
+      enabled_only: false
+      level: default
+    hadolint:
+      enabled: true
+    yamllint:
+      enabled: true
+    gitleaks:
+      enabled: true
+    eslint:
+      enabled: true
+    actionlint:
+      enabled: true
+    semgrep:
+      enabled: true
+knowledge_base:
+  opt_out: false
+  learnings:
+    scope: "local"
+  issues:
+    scope: "local"
+  pull_requests:
+    scope: "local"

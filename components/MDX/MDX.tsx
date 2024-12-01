@@ -1,7 +1,7 @@
 import { MDXProvider as CoreMDXProvider } from '@mdx-js/react';
 import mermaid from 'mermaid';
 import Link from 'next/link';
-import { useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   TwitterDMButton,
   TwitterFollowButton,
@@ -97,7 +97,7 @@ function MermaidDiagram({ graph }: MermaidDiagramProps) {
   /**
    * @description Renders the Mermaid diagram.
    */
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!graph) {
       return;
     }

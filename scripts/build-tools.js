@@ -1,7 +1,7 @@
 const { getData } = require('./tools/extract-tools-github');
 const { convertTools } = require('./tools/tools-object');
 const { combineTools } = require('./tools/combine-tools');
-const fs = require('fs');
+const fs = require('fs-extra');
 const { resolve } = require('path');
 
 const buildTools = async (automatedToolsPath, manualToolsPath, toolsPath, tagsPath) => {
@@ -9,10 +9,7 @@ const buildTools = async (automatedToolsPath, manualToolsPath, toolsPath, tagsPa
     let githubExtractData = await getData();
     let automatedTools = await convertTools(githubExtractData);
 
-    fs.writeFileSync(
-      automatedToolsPath,
-      JSON.stringify(automatedTools, null, '  ')
-    );
+    await fs.writeFile(automatedToolsPath, JSON.stringify(automatedTools, null, '  '));
 
     await combineTools(automatedTools, require(manualToolsPath), toolsPath, tagsPath);
   } catch (err) {

@@ -7,10 +7,10 @@ tags:
   - Communication
 cover: /img/posts/2023-june-docs-report.webp
 authors:
-  - name: Alejandra Quetzalli
-    photo: /img/avatars/canela-ale.webp
-    link: https://www.linkedin.com/in/alejandra-quetzalli/
-excerpt: In June 2023, the AsyncAPI documentation had 7,827 sessions and 4,203 unique users, including 2,566 new users.
+  - name: Quetzalli Writes
+    photo: /img/avatars/canela-quetzalli.webp
+    link: https://www.linkedin.com/in/quetzalli-writes/
+    byline: In June 2023, the AsyncAPI documentation had 7,827 sessions and 4,203 unique users, including 2,566 new users.
 ---
 
 import ContributionNotes from '@/assets/docs/fragments/contribution-notes.md';
