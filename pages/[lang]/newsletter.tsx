@@ -3,14 +3,16 @@ import React from 'react';
 import Head from '@/components/Head';
 import Container from '@/components/layout/Container';
 import NewsletterSubscribe from '@/components/NewsletterSubscribe';
-import { Redirect } from '@/utils/redirect';
+import { getStaticPaths, makeStaticProps } from '@/utils/getStatic';
+
+const getStaticProps = makeStaticProps(['common']);
+
+export { getStaticPaths, getStaticProps };
 
 /**
  * @description component that is used on landing page to embed newsletter and subscription option.
  */
 export default function NewsletterIndexPage() {
-  Redirect();
-
   return (
     <div>
       <Head title='Newsletter' />
