@@ -1,5 +1,5 @@
-const { convertTools, createToolObject } = require('../../scripts/tools/tools-object');
 const axios = require('axios');
+const { convertTools, createToolObject } = require('../../scripts/tools/tools-object');
 const {
   createToolFileContent,
   createExpectedToolObject,
@@ -22,7 +22,7 @@ describe('Tools Object', () => {
   });
 
   const mockToolData = (toolContent, toolNames = ['valid-tool']) => {
-    const mockData = createMockData(toolNames.map(name => ({ name: `.asyncapi-tool-${name}`, repoName: name })));
+    const mockData = createMockData(toolNames.map((name) => ({ name: `.asyncapi-tool-${name}`, repoName: name })));
     axios.get.mockResolvedValue({ data: toolContent });
     return mockData;
   };

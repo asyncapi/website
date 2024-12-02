@@ -79,7 +79,12 @@ async function convertTools(data) {
             const repositoryUrl = tool.repository.html_url;
             const repoDescription = tool.repository.description;
             const isAsyncAPIrepo = tool.repository.owner.login === 'asyncapi';
-            const toolObject = await createToolObject(jsonToolFileContent, repositoryUrl, repoDescription, isAsyncAPIrepo);
+            const toolObject = await createToolObject(
+              jsonToolFileContent,
+              repositoryUrl,
+              repoDescription,
+              isAsyncAPIrepo
+            );
 
             // Tool Object is appended to each category array according to Fuse search for categories inside Tool Object
             await Promise.all(jsonToolFileContent.filters.categories.map(async (category) => {
