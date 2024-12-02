@@ -7,15 +7,15 @@ tags:
   - Communication
 cover: /img/posts/2024-Q1-docs-report/2024-Q1-docs-report.webp
 authors:
-  - name: Alejandra Quetzalli
-    photo: /img/avatars/canela-ale.webp
-    link: https://www.linkedin.com/in/alejandra-quetzalli/
+  - name: Quetzalli Writes
+    photo: /img/avatars/canela-quetzalli.webp
+    link: https://www.linkedin.com/in/quetzalli-writes/
     byline: During Q1 2024, AsyncAPI docs had a total of 26,923 sessions and 8,128 unique users. 
 excerpt: During Q1 2024, AsyncAPI docs had a total of 26,923 sessions and 8,128 unique users.
 ---
 
 # AsyncAPI Documentation Report - Q1 2024
-As a core maintainer of AsyncAPI Docs, I (Alejandra Quetzalli) volunteer to write periodic updates about the AsyncAPI Docs ecosystem. The goal is to keep the community informed about what's going on in docs and how docs contributors collaborate with other areas in AsyncAPI Initiative.
+As a core maintainer of AsyncAPI Docs, I (Quetzalli Writes) volunteer to write periodic updates about the AsyncAPI Docs ecosystem. The goal is to keep the community informed about what's going on in docs and how docs contributors collaborate with other areas in AsyncAPI Initiative.
 
 ## Overview
 During Q1 2024, AsyncAPI Docs had a total of **26,923 sessions** and **8,128 unique users**. Our tutorials content bucket garnered the highest visitor count, indicating strong engagement. Additionally, our newer content bucket for migrations attracted a notable influx of new users, showcasing promising growth.
