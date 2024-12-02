@@ -28,7 +28,10 @@ const createToolFileContent = ({
 } = {}) => ({
   title,
   description,
-  links: { repoUrl: repoUrl || `https://github.com/asyncapi/${title.toLowerCase().replace(/\s+/g, '-')}`, ...additionalLinks },
+  links: {
+    repoUrl: repoUrl || `https://github.com/asyncapi/${encodeURIComponent(title.toLowerCase().replace(/\s+/g, '-'))}`,
+    ...additionalLinks
+  },
   filters: { categories, hasCommercial, ...additionalFilters }
 });
 
@@ -41,7 +44,7 @@ const createExpectedToolObject = ({
   isAsyncAPIOwner = true,
   additionalLinks = {},
   additionalFilters = {}
-} = {}) => 
+} = {}) =>
   createToolFileContent({
     title,
     description,
@@ -50,7 +53,7 @@ const createExpectedToolObject = ({
     hasCommercial,
     additionalLinks,
     additionalFilters: { isAsyncAPIOwner, ...additionalFilters }
-});
+  });
 
 const createMockData = (tools = []) => ({
   items: tools.map((tool) =>
@@ -60,7 +63,7 @@ const createMockData = (tools = []) => ({
   )
 });
 
-const createMalformedYAML = ({ 
+const createMalformedYAML = ({
   title = 'Malformed Tool',
   description = 'This tool has malformed YAML.',
   repoUrl = 'https://github.com/asyncapi/malformed-repo' } = {}) => `
