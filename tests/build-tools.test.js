@@ -26,7 +26,7 @@ jest.mock('../scripts/tools/tags-color', () => ({
 }));
 
 describe('buildTools', () => {
-    const testDir = path.join(os.tmpdir(), 'test_config');
+    const testDir = path.join(String(os.tmpdir()), 'test_config');
     const toolsPath = resolve(testDir, 'tools.json');
     const tagsPath = resolve(testDir, 'all-tags.json');
     const automatedToolsPath = resolve(testDir, 'tools-automated.json');
