@@ -377,7 +377,7 @@ export function SearchButton({
   useEffect(() => {
     if (typeof children === 'function') {
       setChildren(children({ actionKey }));
-    } else {
+    }else{
       setChildren(children);
     }
   }, []);
