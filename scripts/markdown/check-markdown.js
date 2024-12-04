@@ -144,9 +144,6 @@ const docsFolderPath = path.resolve(__dirname, '../../markdown/docs');
 const blogsFolderPath = path.resolve(__dirname, '../../markdown/blog');
 
 async function main() {
-    if (!fs.access(docsFolderPath) || !fs.access(blogsFolderPath)) {
-        throw new Error('Invalid folder paths provided');
-    }
     try {
         await Promise.all([
             checkMarkdownFiles(docsFolderPath, validateDocs),
@@ -163,4 +160,4 @@ if (require.main === module) {
     main();
 }
 
-module.exports = { validateBlogs, validateDocs, checkMarkdownFiles, main }
+module.exports = { validateBlogs, validateDocs, checkMarkdownFiles, main, isValidURL }
