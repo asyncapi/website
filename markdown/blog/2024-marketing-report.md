@@ -15,7 +15,7 @@ featured: true
 ---
 
 
-Hello, everyone! I'm Bami, I’m the Community Marketing Specialist at the AsyncAPI Initiative, and I'm honored to serve as the Chair of the AsyncAPI Marketing Working Group. This role has given me a unique perspective on how we can connect and inspire our community, build awareness for AsyncAPI, and further enhance our presence in the ecosystem. I’d like to share an overview of what we’ve been doing for the past six months, the initiatives currently underway, and our plans for the future.
+Hello, everyone! I'm Bami, I’m the Community Marketing Specialist at the AsyncAPI Initiative, and I'm honored to serve as the Chair of the AsyncAPI Marketing Working Group. This role has allowed me to develop a unique perspective on how we can connect and inspire our community, build awareness for AsyncAPI, and further enhance our presence in the ecosystem. I’d like to share an overview of what we’ve been working on for the past six months, the initiatives currently underway, and our plans for the future.
 
 ## Overview of the Marketing Working Group
 
