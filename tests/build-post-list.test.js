@@ -1,5 +1,6 @@
 const fs = require('fs-extra');
-const { resolve, join, normalize } = require('path');
+const { resolve, join } = require('path');
+const { TEST_CONTENT } = require("../tests/fixtures/buildPostListData");
 const { buildPostList, slugifyToC } = require('../scripts/build-post-list');
 
 describe('buildPostList', () => {
@@ -8,7 +9,7 @@ describe('buildPostList', () => {
   let postDirectories;
 
   beforeEach(async () => {
-    tempDir = resolve(__dirname, `test-config`);
+    tempDir = resolve(__dirname, `test-config-${Date.now()}-${Math.random().toString(36).slice(2)}`);
     writeFilePath = resolve(tempDir, 'posts.json');
     postDirectories = [
       [join(tempDir, 'blog'), '/blog'],
@@ -16,16 +17,25 @@ describe('buildPostList', () => {
       [join(tempDir, 'about'), '/about'],
     ];
 
-    await fs.ensureDir(join(tempDir, 'blog'));
-    await fs.writeFile(join(tempDir, 'blog', 'release-notes-2.1.0.mdx'), '---\ntitle: Release Notes 2.1.0\n---\nThis is a release note.');
+    await fs.ensureDir(join(tempDir, TEST_CONTENT.blog.dir));
+    await fs.writeFile(
+      join(tempDir, TEST_CONTENT.blog.dir, TEST_CONTENT.blog.file),
+      TEST_CONTENT.blog.content
+    );
 
-    await fs.ensureDir(join(tempDir, 'docs'));
-    await fs.writeFile(join(tempDir, 'docs', 'index.mdx'), '---\ntitle: Docs Home\n---\nThis is the documentation homepage.');
+    await fs.ensureDir(join(tempDir, TEST_CONTENT.docs.dir));
+    await fs.writeFile(
+      join(tempDir, TEST_CONTENT.docs.dir, TEST_CONTENT.docs.file),
+      TEST_CONTENT.docs.content
+    );
 
-    await fs.ensureDir(join(tempDir, 'about'));
-    await fs.writeFile(join(tempDir, 'about', 'index.mdx'), '---\ntitle: About Us\n---\nThis is the about page.');
+    await fs.ensureDir(join(tempDir, TEST_CONTENT.docs.dir, TEST_CONTENT.docs.subDir));
 
-    await fs.ensureDir(join(tempDir, 'docs', 'reference', 'specification'));
+    await fs.ensureDir(join(tempDir, TEST_CONTENT.about.dir));
+    await fs.writeFile(
+      join(tempDir, TEST_CONTENT.about.dir, TEST_CONTENT.about.file),
+      TEST_CONTENT.about.content
+    );
   });
 
   afterEach(async () => {
@@ -67,7 +77,7 @@ describe('buildPostList', () => {
         }),
       ])
     );
-    
+
     expect(output.about).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
@@ -76,8 +86,8 @@ describe('buildPostList', () => {
         }),
       ])
     );
-    
-    expect(output.docsTree).toBeDefined();    
+
+    expect(output.docsTree).toBeDefined();
 
     const blogEntry = output.blog.find(item => item.slug === '/blog/release-notes-2.1.0');
     expect(blogEntry).toBeDefined();
@@ -117,7 +127,7 @@ describe('buildPostList', () => {
     expect(secondReleaseNote.title).toBe('Release Notes 2.1.1');
   });
 
-  it('handles errors gracefully', async () => {
+  it('throws an error when accessing non-existent directory', async () => {
     const invalidDir = [join(tempDir, 'non-existent-dir'), '/invalid'];
     await expect(buildPostList([invalidDir], tempDir, writeFilePath)).rejects.toThrow();
   });
@@ -158,23 +168,23 @@ describe('buildPostList', () => {
     expect(explorerEntry).toBeUndefined();
   });
 
-  it('throws an error if the front matter cannot be parsed', async () => {
+  it('throws "Error while building post list" when front matter is invalid', async () => {
     await fs.writeFile(join(tempDir, 'docs', 'invalid.mdx'), '---\ninvalid front matter\n---\nContent');
-  
+
     await expect(buildPostList(postDirectories, tempDir, writeFilePath)).rejects.toThrow(/Error while building post list/);
   });
-  
+
   it('throws an error if no post directories are provided', async () => {
     await expect(buildPostList([], tempDir, writeFilePath)).rejects.toThrow(/Error while building post list/);
   });
-  
-  it('throws an error if basePath is missing', async () => {
+
+  it('throws specific error message when basePath parameter is undefined', async () => {
     await expect(buildPostList(postDirectories, undefined, writeFilePath)).rejects.toThrow(/Error while building post list: basePath and writeFilePath are required/);
   });
-  
-  it('throws an error if writeFilePath is missing', async () => {
+
+  it('throws specific error message when writeFilePath parameter is undefined', async () => {
     await expect(buildPostList(postDirectories, tempDir, undefined)).rejects.toThrow(/Error while building post list: basePath and writeFilePath are required/);
-  });  
+  });
 
   describe('slugifyToC', () => {
 
