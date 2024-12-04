@@ -54,7 +54,7 @@
           "color": "0E8A16"
         }
       ],
-      "score": 27.8559351086781
+      "score": 28.430284286176615
     },
     {
       "id": "PR_kwDOBW5R_c5-T7mG",
@@ -66,6 +66,17 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 27.28158593117958
+    },
+    {
+      "id": "PR_kwDOBW5R_c59FBoR",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add tests for tool-object script",
+      "author": "vishvamsinh28",
+      "resourcePath": "/asyncapi/website/pull/3265",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 25.845712987433288
     },
     {
       "id": "PR_kwDOFLhIt85bqKL8",
@@ -106,22 +117,6 @@
         {
           "name": "area/javascript",
           "color": "ededed"
-        }
-      ],
-      "score": 21.825268744943667
-    },
-    {
-      "id": "PR_kwDOBW5R_c59FBoR",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add tests for tool-object script",
-      "author": "vishvamsinh28",
-      "resourcePath": "/asyncapi/website/pull/3265",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
         }
       ],
       "score": 21.825268744943667
@@ -492,25 +487,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh3857Kllp",
-      "title": "Add loading animation for when playground generate models ",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/modelina/issues/1725",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "website",
-          "color": "57A793"
         }
       ]
     },
