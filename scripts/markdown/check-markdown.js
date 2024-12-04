@@ -1,6 +1,7 @@
 const fs = require('fs');
 const matter = require('gray-matter');
 const path = require('path');
+const pLimit = require('p-limit');  // Import the p-limit package
 
 /**
  * Checks if a given string is a valid URL.
@@ -93,12 +94,16 @@ function validateDocs(frontmatter) {
 }
 
 /**
- * Recursively checks markdown files in a folder and validates their frontmatter.
+ * Recursively checks markdown files in a folder and validates their frontmatter with concurrency control.
  * @param {string} folderPath - The path to the folder to check.
  * @param {Function} validateFunction - The function used to validate the frontmatter.
  * @param {string} [relativePath=''] - The relative path of the folder for logging purposes.
+ * @param {number} concurrencyLimit - The maximum number of files to process concurrently.
  */
-function checkMarkdownFiles(folderPath, validateFunction, relativePath = '') {
+function checkMarkdownFiles(folderPath, validateFunction, relativePath = '', concurrencyLimit = 5) {
+    const limit = pLimit(concurrencyLimit);  // Limit the concurrency
+    const tasks = [];
+
     fs.readdir(folderPath, (err, files) => {
         if (err) {
             console.error('Error reading directory:', err);
@@ -114,33 +119,42 @@ function checkMarkdownFiles(folderPath, validateFunction, relativePath = '') {
                 return;
             }
 
-            fs.stat(filePath, (err, stats) => {
-                if (err) {
-                    console.error('Error reading file stats:', err);
-                    return;
-                }
+            const task = new Promise((resolve, reject) => {
+                fs.stat(filePath, (err, stats) => {
+                    if (err) {
+                        reject('Error reading file stats:', err);
+                    } else {
+                        // Recurse if directory, otherwise validate markdown file
+                        if (stats.isDirectory()) {
+                            checkMarkdownFiles(filePath, validateFunction, relativeFilePath, concurrencyLimit);
+                        } else if (path.extname(file) === '.md') {
+                            const fileContent = fs.readFileSync(filePath, 'utf-8');
+                            const { data: frontmatter } = matter(fileContent);
 
-                // Recurse if directory, otherwise validate markdown file
-                if (stats.isDirectory()) {
-                    checkMarkdownFiles(filePath, validateFunction, relativeFilePath);
-                } else if (path.extname(file) === '.md') {
-                    const fileContent = fs.readFileSync(filePath, 'utf-8');
-                    const { data: frontmatter } = matter(fileContent);
-
-                    const errors = validateFunction(frontmatter);
-                    if (errors) {
-                        console.log(`Errors in file ${relativeFilePath}:`);
-                        errors.forEach(error => console.log(` - ${error}`));
-                        process.exitCode = 1;
+                            const errors = validateFunction(frontmatter);
+                            if (errors) {
+                                console.log(`Errors in file ${relativeFilePath}:`);
+                                errors.forEach(error => console.log(` - ${error}`));
+                                process.exitCode = 1;
+                            }
+                        }
+                        resolve();
                     }
-                }
+                });
             });
+
+            // Add task with concurrency limit
+            tasks.push(limit(() => task));
         });
+
+        // Wait for all tasks to complete
+        Promise.all(tasks).then(() => console.log('All files processed.'));
     });
 }
 
 const docsFolderPath = path.resolve(__dirname, '../../markdown/docs');
 const blogsFolderPath = path.resolve(__dirname, '../../markdown/blog');
 
-checkMarkdownFiles(docsFolderPath, validateDocs);
-checkMarkdownFiles(blogsFolderPath, validateBlogs);
+// Call the function with concurrency control
+checkMarkdownFiles(docsFolderPath, validateDocs, '', 5);  // Limit concurrency to 5
+checkMarkdownFiles(blogsFolderPath, validateBlogs, '', 5);  // Limit concurrency to 5
