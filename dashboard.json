@@ -1,6 +1,22 @@
 {
   "hotDiscussions": [
     {
+      "id": "I_kwDOFLhIt84-OUI3",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Create educational & technical video explaining AsyncAPI's main features",
+      "author": "quetzalliwrites",
+      "resourcePath": "/asyncapi/community/issues/155",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 34.46095064991105
+    },
+    {
       "id": "I_kwDODou01c5BZZv-",
       "isPR": false,
       "isAssigned": false,
@@ -38,7 +54,7 @@
           "color": "0E8A16"
         }
       ],
-      "score": 27.8559351086781
+      "score": 28.430284286176615
     },
     {
       "id": "PR_kwDOBW5R_c5-T7mG",
@@ -47,6 +63,17 @@
       "title": "feat: add tests for build post list script",
       "author": "vishvamsinh28",
       "resourcePath": "/asyncapi/website/pull/3284",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 27.28158593117958
+    },
+    {
+      "id": "PR_kwDOBW5R_c59FBoR",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add tests for tool-object script",
+      "author": "vishvamsinh28",
+      "resourcePath": "/asyncapi/website/pull/3265",
       "repo": "asyncapi/website",
       "labels": [],
       "score": 25.845712987433288
@@ -95,6 +122,17 @@
       "score": 21.825268744943667
     },
     {
+      "id": "PR_kwDOBW5R_c6BZLuT",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add tests for check markdown script",
+      "author": "vishvamsinh28",
+      "resourcePath": "/asyncapi/website/pull/3378",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 20.67657038994663
+    },
+    {
       "id": "PR_kwDOFLhIt855u7Eb",
       "isPR": true,
       "isAssigned": false,
@@ -106,15 +144,20 @@
       "score": 20.102221212448114
     },
     {
-      "id": "PR_kwDOFLhIt85oVQqh",
+      "id": "PR_kwDOBW5R_c535wDj",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: docs automation for website",
-      "author": "AnimeshKumar923",
-      "resourcePath": "/asyncapi/community/pull/1082",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 18.666348268701817
+      "title": "feat: add test for combine tools script",
+      "author": "vishvamsinh28",
+      "resourcePath": "/asyncapi/website/pull/3136",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "gsoc",
+          "color": "F4D03F"
+        }
+      ],
+      "score": 17.804824502454043
     },
     {
       "id": "I_kwDOBW5R_c5RVOOY",
@@ -137,38 +180,6 @@
       "score": 17.517649913704783
     },
     {
-      "id": "PR_kwDOBW5R_c535wDj",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add test for combine tools script",
-      "author": "vishvamsinh28",
-      "resourcePath": "/asyncapi/website/pull/3136",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        }
-      ],
-      "score": 16.65612614745701
-    },
-    {
-      "id": "I_kwDOFLhIt84-OUI3",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create educational & technical video explaining AsyncAPI's main features",
-      "author": "quetzalliwrites",
-      "resourcePath": "/asyncapi/community/issues/155",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 16.60974586154023
-    },
-    {
       "id": "PR_kwDOFLhIt853IEwA",
       "isPR": true,
       "isAssigned": false,
@@ -178,20 +189,28 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 16.08177696995849
-    },
-    {
-      "id": "I_kwDOFLhIt85bebeO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Meeting Banners Storage",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/issues/568",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 15.507427792459973
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOFLhIt86hMsxx",
+      "title": "Create an announcement design for the new TSC member (Ashmit Jagtap)",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/community/issues/1602",
+      "repo": "asyncapi/community",
+      "author": "iambami",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": ":loudspeaker: marketing",
+          "color": "a829e2"
+        },
+        {
+          "name": "🎨 design",
+          "color": "0D67D3"
+        }
+      ]
+    },
     {
       "id": "I_kwDODwv8N86f37o-",
       "title": "Return to top arrow feature/button",
@@ -204,21 +223,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFLhIt86dkhlL",
-      "title": "Design for mentors for promotion",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/community/issues/1582",
-      "repo": "asyncapi/community",
-      "author": "iambami",
-      "area": "design",
-      "labels": [
-        {
-          "name": ":loudspeaker: marketing",
-          "color": "a829e2"
         }
       ]
     },
@@ -397,21 +401,6 @@
       "labels": []
     },
     {
-      "id": "I_kwDOBW5R_c6U79Xr",
-      "title": "[Docs Bug 🐞 report]:  Github handle link of alequetzalli is not working ",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/3176",
-      "repo": "asyncapi/website",
-      "author": "NoIdea2001",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "🐞 docs bug",
-          "color": "FFD23F"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOFLhIt86O7jFN",
       "title": "[DESIGN] Holopin Design Tracking",
       "isAssigned": true,
@@ -479,7 +468,12 @@
       "repo": "asyncapi/cli",
       "author": "Amzani",
       "area": "typescript",
-      "labels": []
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ]
     },
     {
       "id": "I_kwDOCHlHJM58YMi8",
@@ -493,25 +487,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh3857Kllp",
-      "title": "Add loading animation for when playground generate models ",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1725",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "website",
-          "color": "57A793"
         }
       ]
     },
@@ -975,6 +950,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     }
