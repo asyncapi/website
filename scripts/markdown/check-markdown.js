@@ -1,7 +1,9 @@
 const fs = require('fs');
 const matter = require('gray-matter');
 const path = require('path');
-const pLimit = require('p-limit');  // Import the p-limit package
+const pLimit = require('p-limit'); // Import p-limit for concurrency control
+
+const limit = pLimit(5); // Limit the number of concurrent tasks
 
 /**
  * Checks if a given string is a valid URL.
@@ -20,36 +22,30 @@ function isValidURL(str) {
 /**
  * Validates the frontmatter of a blog post.
  * @param {object} frontmatter - The frontmatter object to validate.
- * @param {string} filePath - The path to the file being validated.
  * @returns {string[]|null} An array of validation error messages, or null if no errors.
  */
 function validateBlogs(frontmatter) {
     const requiredAttributes = ['title', 'date', 'type', 'tags', 'cover', 'authors'];
     const errors = [];
 
-    // Check for required attributes
     requiredAttributes.forEach(attr => {
         if (!frontmatter.hasOwnProperty(attr)) {
             errors.push(`${attr} is missing`);
         }
     });
 
-    // Validate date format
     if (frontmatter.date && Number.isNaN(Date.parse(frontmatter.date))) {
         errors.push(`Invalid date format: ${frontmatter.date}`);
     }
 
-    // Validate tags format (must be an array)
     if (frontmatter.tags && !Array.isArray(frontmatter.tags)) {
         errors.push(`Tags should be an array`);
     }
 
-    // Validate cover is a string
     if (frontmatter.cover && typeof frontmatter.cover !== 'string') {
         errors.push(`Cover must be a string`);
     }
 
-    // Validate authors (must be an array with valid attributes)
     if (frontmatter.authors) {
         if (!Array.isArray(frontmatter.authors)) {
             errors.push('Authors should be an array');
@@ -74,18 +70,14 @@ function validateBlogs(frontmatter) {
 /**
  * Validates the frontmatter of a documentation file.
  * @param {object} frontmatter - The frontmatter object to validate.
- * @param {string} filePath - The path to the file being validated.
  * @returns {string[]|null} An array of validation error messages, or null if no errors.
  */
 function validateDocs(frontmatter) {
     const errors = [];
-
-    // Check if title exists and is a string
     if (!frontmatter.title || typeof frontmatter.title !== 'string') {
         errors.push('Title is missing or not a string');
     }
 
-    // Check if weight exists and is a number
     if (frontmatter.weight === undefined || typeof frontmatter.weight !== 'number') {
         errors.push('Weight is missing or not a number');
     }
@@ -94,67 +86,75 @@ function validateDocs(frontmatter) {
 }
 
 /**
- * Recursively checks markdown files in a folder and validates their frontmatter with concurrency control.
- * @param {string} folderPath - The path to the folder to check.
+ * Processes a single Markdown file for validation.
+ * @param {string} filePath - The full path to the Markdown file.
  * @param {Function} validateFunction - The function used to validate the frontmatter.
- * @param {string} [relativePath=''] - The relative path of the folder for logging purposes.
- * @param {number} concurrencyLimit - The maximum number of files to process concurrently.
+ * @param {string} relativePath - The relative path for logging purposes.
+ * @returns {Promise<void>}
  */
-function checkMarkdownFiles(folderPath, validateFunction, relativePath = '', concurrencyLimit = 5) {
-    const limit = pLimit(concurrencyLimit);  // Limit the concurrency
-    const tasks = [];
-
-    fs.readdir(folderPath, (err, files) => {
-        if (err) {
-            console.error('Error reading directory:', err);
-            return;
-        }
-
-        files.forEach(file => {
-            const filePath = path.join(folderPath, file);
-            const relativeFilePath = path.join(relativePath, file);
-
-            // Skip the folder 'docs/reference/specification'
-            if (relativeFilePath.includes('reference/specification')) {
+function processMarkdownFile(filePath, validateFunction, relativePath) {
+    return new Promise((resolve, reject) => {
+        fs.readFile(filePath, 'utf-8', (err, content) => {
+            if (err) {
+                reject(new Error(`Error reading file ${filePath}: ${err.message}`));
                 return;
             }
 
-            const task = new Promise((resolve, reject) => {
-                fs.stat(filePath, (err, stats) => {
-                    if (err) {
-                        reject('Error reading file stats:', err);
-                    } else {
-                        // Recurse if directory, otherwise validate markdown file
-                        if (stats.isDirectory()) {
-                            checkMarkdownFiles(filePath, validateFunction, relativeFilePath, concurrencyLimit);
-                        } else if (path.extname(file) === '.md') {
-                            const fileContent = fs.readFileSync(filePath, 'utf-8');
-                            const { data: frontmatter } = matter(fileContent);
+            const { data: frontmatter } = matter(content);
+            const errors = validateFunction(frontmatter);
 
-                            const errors = validateFunction(frontmatter);
-                            if (errors) {
-                                console.log(`Errors in file ${relativeFilePath}:`);
-                                errors.forEach(error => console.log(` - ${error}`));
-                                process.exitCode = 1;
-                            }
-                        }
-                        resolve();
-                    }
-                });
-            });
-
-            // Add task with concurrency limit
-            tasks.push(limit(() => task));
+            if (errors) {
+                console.log(`Errors in file ${relativePath}:`);
+                errors.forEach(error => console.log(` - ${error}`));
+                process.exitCode = 1;
+            }
+            resolve();
         });
-
-        // Wait for all tasks to complete
-        Promise.all(tasks).then(() => console.log('All files processed.'));
     });
 }
 
+/**
+ * Recursively processes Markdown files in a folder with a concurrency limit.
+ * @param {string} folderPath - The path to the folder to process.
+ * @param {Function} validateFunction - The function used to validate the frontmatter.
+ * @param {string} [relativePath=''] - The relative path for logging purposes.
+ * @returns {Promise<void>}
+ */
+async function processMarkdownFolder(folderPath, validateFunction, relativePath = '') {
+    const files = await fs.promises.readdir(folderPath);
+    const tasks = files.map(async (file) => {
+        const filePath = path.join(folderPath, file);
+        const relativeFilePath = path.join(relativePath, file);
+
+        if (relativeFilePath.includes('reference/specification')) {
+            return; // Skip the specified folder
+        }
+
+        const stats = await fs.promises.stat(filePath);
+        if (stats.isDirectory()) {
+            await processMarkdownFolder(filePath, validateFunction, relativeFilePath);
+        } else if (path.extname(file) === '.md') {
+            await limit(() => processMarkdownFile(filePath, validateFunction, relativeFilePath));
+        }
+    });
+
+    await Promise.all(tasks);
+}
+
+// Define folder paths
 const docsFolderPath = path.resolve(__dirname, '../../markdown/docs');
 const blogsFolderPath = path.resolve(__dirname, '../../markdown/blog');
 
-// Call the function with concurrency control
-checkMarkdownFiles(docsFolderPath, validateDocs, '', 5);  // Limit concurrency to 5
-checkMarkdownFiles(blogsFolderPath, validateBlogs, '', 5);  // Limit concurrency to 5
+// Process folders with concurrency
+(async () => {
+    try {
+        await Promise.all([
+            processMarkdownFolder(docsFolderPath, validateDocs),
+            processMarkdownFolder(blogsFolderPath, validateBlogs),
+        ]);
+    } catch (err) {
+        console.error(err.message);
+        process.exitCode = 1;
+    }
+})();
+
