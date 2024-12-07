@@ -310,9 +310,7 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISe
   }, [onInput, searchButtonRef]);
 
   useEffect(() => {
-    if (typeof children === 'function') {
-      setChildren(children({ actionKey }));
-    }
+    setChildren(typeof children === 'function' ? children({ actionKey }) : children);
   }, []);
 
   return (
