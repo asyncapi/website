@@ -8,6 +8,8 @@ import { useRouter } from 'next/router';
 import React, { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 
+import IconLoupe from '@/components/icons/Loupe';
+
 export const INDEX_NAME = 'asyncapi';
 export const DOCS_INDEX_NAME = 'asyncapi-docs';
 const APP_ID = 'Z621OGRI9Y';
@@ -325,7 +327,7 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISe
       {...props}
       data-testid='Search-Button'
     >
-      {Children}
+      {Children || <IconLoupe className='h-5 w-5' />}
     </button>
   );
 }
