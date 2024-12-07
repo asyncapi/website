@@ -48,18 +48,20 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   const getUniqueLangs = (): string[] => {
     let pathnameWithoutLocale = pathname;
 
-    // Check if the pathname includes "/[lang]", if so, replace it with an empty string
     if (pathname && pathname.includes('/[lang]')) {
       pathnameWithoutLocale = pathname.replace('/[lang]', '');
     }
 
-    // Filter unique languages based on i18nPaths that include the modified pathnameWithoutLocale
+    const langMap: { [key: string]: string } = {
+      en: 'English',
+      de: 'Deutsch'
+    };
+
     const uniqueLangs = Object.keys(i18nPaths)
       .filter((lang) => i18nPaths[lang].includes(pathnameWithoutLocale))
-      .map((lang) => lang.toUpperCase());
+      .map((lang) => langMap[lang] || lang);
 
-    // If no unique languages are found, default to ["EN"]
-    return uniqueLangs.length === 0 ? ['EN'] : uniqueLangs;
+    return uniqueLangs.length === 0 ? ['English'] : uniqueLangs;
   };
 
   const uniqueLangs = getUniqueLangs().map((lang) => ({
@@ -144,10 +146,19 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
     setMobileMenuOpen(false);
     setOpen(null);
   }, [asPath]);
+  const LanguageSelector = (
+    <LanguageSelect
+      options={uniqueLangs}
+      onChange={(value) => {
+        changeLanguage(value.toLowerCase(), true);
+      }}
+      selected={i18n.language ? i18n.language.toUpperCase() : 'EN'}
+    />
+  );
 
   return (
     <div className={`bg-white ${className} z-50`}>
-      <div className='flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-10'>
+      <div className='flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-2'>
         {!hideLogo && (
           <div className='lg:w-auto lg:flex-1'>
             <div className='flex'>
@@ -226,15 +237,8 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               <IconLoupe />
             </SearchButton>
 
-            {/* // Language Picker Component */}
-            <LanguageSelect
-              options={uniqueLangs}
-              onChange={(value) => {
-                changeLanguage(value.toLowerCase(), true);
-              }}
-              className=''
-              selected={i18n.language ? i18n.language.toUpperCase() : 'EN'}
-            />
+            {/* // Language Selector for normal screen */}
+            {LanguageSelector}
 
             <GithubButton
               text='Star on GitHub'
@@ -247,7 +251,13 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
       </div>
 
       {/* Mobile menu, show/hide based on mobile menu state. */}
-      {mobileMenuOpen && <MobileNavMenu onClickClose={() => setMobileMenuOpen(false)} />}
+      {mobileMenuOpen && (
+        <MobileNavMenu
+          onClickClose={() => setMobileMenuOpen(false)}
+          uniqueLangs={uniqueLangs}
+          changeLanguage={changeLanguage}
+        />
+      )}
     </div>
   );
 }
