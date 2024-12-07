@@ -1,7 +1,8 @@
-const { writeFile } = require('fs-extra');
-const { resolve } = require('path');
-const { graphql } = require('@octokit/graphql');
-const { Queries } = require('./issue-queries');
+import { graphql } from '@octokit/graphql';
+import { writeFile } from 'fs-extra';
+import { resolve } from 'path';
+
+import { Queries } from './issue-queries';
 
 /**
  * Introduces a delay in the execution flow.
@@ -26,7 +27,7 @@ async function getDiscussions(query, pageSize, endCursor = null) {
 
     if (result.rateLimit.remaining <= 100) {
       console.log(
-        `[WARNING] GitHub GraphQL rateLimit`,
+        '[WARNING] GitHub GraphQL rateLimit',
         `cost = ${result.rateLimit.cost}`,
         `limit = ${result.rateLimit.limit}`,
         `remaining = ${result.rateLimit.remaining}`,
@@ -41,9 +42,11 @@ async function getDiscussions(query, pageSize, endCursor = null) {
     if (!hasNextPage) {
       return result.search.nodes;
     }
+
     return result.search.nodes.concat(await getDiscussions(query, pageSize, result.search.pageInfo.endCursor));
   } catch (e) {
     console.error(e);
+
     return Promise.reject(e);
   }
 }
@@ -60,6 +63,7 @@ async function getDiscussionByID(isPR, id) {
     return result;
   } catch (e) {
     console.error(e);
+
     return Promise.reject(e);
   }
 }
@@ -69,8 +73,10 @@ async function processHotDiscussions(batch) {
     batch.map(async (discussion) => {
       try {
         const isPR = discussion.__typename === 'PullRequest';
+
         if (discussion.comments.pageInfo.hasNextPage) {
           const fetchedDiscussion = await getDiscussionByID(isPR, discussion.id);
+
           discussion = fetchedDiscussion.node;
         }
 
@@ -81,8 +87,8 @@ async function processHotDiscussions(batch) {
 
         const finalInteractionsCount = isPR
           ? interactionsCount +
-          discussion.reviews.totalCount +
-          discussion.reviews.nodes.reduce((acc, curr) => acc + curr.comments.totalCount, 0)
+            discussion.reviews.totalCount +
+            discussion.reviews.nodes.reduce((acc, curr) => acc + curr.comments.totalCount, 0)
           : interactionsCount;
 
         return {
@@ -111,12 +117,14 @@ async function getHotDiscussions(discussions) {
   for (let i = 0; i < discussions.length; i += batchSize) {
     const batch = discussions.slice(i, i + batchSize);
     const batchResults = await processHotDiscussions(batch);
+
     await pause(1000);
     result.push(...batchResults);
   }
 
   result.sort((ElemA, ElemB) => ElemB.score - ElemA.score);
   const filteredResult = result.filter((issue) => issue.author !== 'asyncapi-bot');
+
   return filteredResult.slice(0, 12);
 }
 
@@ -149,6 +157,7 @@ async function mapGoodFirstIssues(issues) {
 
 function getLabel(issue, filter) {
   const result = issue.labels.nodes.find((label) => label.name.startsWith(filter));
+
   return result?.name.split('/')[1];
 }
 
@@ -156,6 +165,7 @@ function monthsSince(date) {
   const seconds = Math.floor((new Date() - new Date(date)) / 1000);
   // 2592000 = number of seconds in a month = 30 * 24 * 60 * 60
   const months = seconds / 2592000;
+
   return Math.floor(months);
 }
 
@@ -169,6 +179,7 @@ async function start(writePath) {
       getHotDiscussions(discussions),
       mapGoodFirstIssues(rawGoodFirstIssues)
     ]);
+
     return await writeToFile({ hotDiscussions, goodFirstIssues }, writePath);
   } catch (e) {
     console.log('There were some issues parsing data from github.');
@@ -181,4 +192,14 @@ if (require.main === module) {
   start(resolve(__dirname, '..', '..', 'dashboard.json'));
 }
 
-module.exports = { getLabel, monthsSince, mapGoodFirstIssues, getHotDiscussions, getDiscussionByID, getDiscussions, writeToFile, start, processHotDiscussions };
+export {
+  getDiscussionByID,
+  getDiscussions,
+  getHotDiscussions,
+  getLabel,
+  mapGoodFirstIssues,
+  monthsSince,
+  processHotDiscussions,
+  start,
+  writeToFile
+};

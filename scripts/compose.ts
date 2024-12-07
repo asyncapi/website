@@ -2,25 +2,30 @@
  * Script based on https://github.com/timlrx/tailwind-nextjs-starter-blog/blob/master/scripts/compose.js
  */
 
-const fs = require('fs')
-const inquirer = require('inquirer')
-const dedent = require('dedent')
-const moment = require('moment')
+import dedent from 'dedent';
+import fs from 'fs';
+import inquirer from 'inquirer';
+import moment from 'moment';
 
-const genFrontMatter = (answers) => {
-  let d = new Date()
-  const date = [
-    d.getFullYear(),
-    ('0' + (d.getMonth() + 1)).slice(-2),
-    ('0' + d.getDate()).slice(-2),
-  ].join('-')
-  const tagArray = answers.tags.split(',')
-  tagArray.forEach((tag, index) => (tagArray[index] = tag.trim()))
-  const tags = "'" + tagArray.join("','") + "'"
+type ComposePromptType = {
+  title: string;
+  excerpt: string;
+  tags: string;
+  type: string;
+  canonical: string;
+};
+
+const genFrontMatter = (answers: ComposePromptType) => {
+  const tagArray = answers.tags.split(',');
+
+  tagArray.forEach((tag: string, index: number) => {
+    tagArray[index] = tag.trim();
+  });
+  const tags = `'${tagArray.join("','")}'`;
 
   let frontMatter = dedent`---
   title: ${answers.title ? answers.title : 'Untitled'}
-  date: ${moment().format("YYYY-MM-DDTh:mm:ssZ")}
+  date: ${moment().format('YYYY-MM-DDTh:mm:ssZ')}
   type: ${answers.type}
   canonical: ${answers.canonical ? answers.canonical : ''}
   tags: [${answers.tags ? tags : ''}]
@@ -90,64 +95,65 @@ const genFrontMatter = (answers) => {
 
   <center><iframe src="https://anchor.fm/asyncapi/embed/episodes/April-2021-at-AsyncAPI-Initiative-e111lo9" height="102px" width="400px" frameborder="0" scrolling="no"></iframe></center>
 
-  `
+  `;
 
-  frontMatter = frontMatter + '\n---'
+  frontMatter += '\n---';
 
-  return frontMatter
-}
+  return frontMatter;
+};
 
 inquirer
   .prompt([
     {
       name: 'title',
       message: 'Enter post title:',
-      type: 'input',
+      type: 'input'
     },
     {
       name: 'excerpt',
       message: 'Enter post excerpt:',
-      type: 'input',
+      type: 'input'
     },
     {
       name: 'tags',
       message: 'Any Tags? Separate them with , or leave empty if no tags.',
-      type: 'input',
+      type: 'input'
     },
     {
       name: 'type',
       message: 'Enter the post type:',
       type: 'list',
-      choices: ['Communication', 'Community', 'Engineering', 'Marketing', 'Strategy', 'Video'],
+      choices: ['Communication', 'Community', 'Engineering', 'Marketing', 'Strategy', 'Video']
     },
     {
       name: 'canonical',
       message: 'Enter the canonical URL if any:',
-      type: 'input',
-    },
+      type: 'input'
+    }
   ])
-  .then((answers) => {
+  .then((answers: ComposePromptType) => {
     // Remove special characters and replace space with -
     const fileName = answers.title
       .toLowerCase()
       .replace(/[^a-zA-Z0-9 ]/g, '')
       .replace(/ /g, '-')
-      .replace(/-+/g, '-')
-    const frontMatter = genFrontMatter(answers)
-    const filePath = `pages/blog/${fileName ? fileName : 'untitled'}.md`
+      .replace(/-+/g, '-');
+    const frontMatter = genFrontMatter(answers);
+    const filePath = `pages/blog/${fileName || 'untitled'}.md`;
+
     fs.writeFile(filePath, frontMatter, { flag: 'wx' }, (err) => {
       if (err) {
-        throw err
+        throw err;
       } else {
-        console.log(`Blog post generated successfully at ${filePath}`)
+        console.log(`Blog post generated successfully at ${filePath}`);
       }
-    })
+    });
   })
   .catch((error) => {
-    console.error(error)
+    console.error(error);
     if (error.isTtyError) {
-      console.log("Prompt couldn't be rendered in the current environment")
+      console.log("Prompt couldn't be rendered in the current environment");
     } else {
-      console.log('Something went wrong, sorry!')
+      console.log('Something went wrong, sorry!');
     }
-  })
+  });
