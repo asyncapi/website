@@ -8,6 +8,7 @@ const ajv = new Ajv()
 addFormats(ajv, ["uri"])
 const validate = ajv.compile(schema)
 const { convertToJson } = require('../utils');
+const logger = require("../../logger");
 
 
 // Config options set for the Fuse object
@@ -96,14 +97,28 @@ async function convertTools(data) {
             }
           });
         } else {
-          console.error('Script is not failing, it is just dropping errors for further investigation');
-          console.error('Invalid .asyncapi-tool file.');
-          console.error(`Located in: ${tool.html_url}`);
-          console.error('Validation errors:', JSON.stringify(validate.errors, null, 2));
+          // console.error('Script is not failing, it is just dropping errors for further investigation');
+          // console.error('Invalid .asyncapi-tool file.');
+          // console.error(`Located in: ${tool.html_url}`);
+          // console.error('Validation errors:', JSON.stringify(validate.errors, null, 2));
+          
+          //Created a logger function using Winston and tested also 
+            logger.error('Error processing tool', {
+              message: err.message,
+              stack: err.stack,
+              tool_name: tool?.name,
+              url: tool?.url
+            });          
         }
       }
     } catch (err) {
-      console.error(err)
+      // console.error(err)
+        logger.error('Error processing tool', {
+          message: err.message,
+          stack: err.stack,
+          tool_name: tool?.name,
+          url: tool?.url
+        });     
       throw err;
     }
   }
