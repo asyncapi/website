@@ -1,13 +1,23 @@
 const { resolve } = require('path');
 const fs = require('fs');
 const rssFeed = require('./build-rss');
-const buildPostList = require('./build-post-list');
+const { buildPostList } = require('./build-post-list');
 const buildCaseStudiesList = require('./casestudies');
 const buildAdoptersList = require('./adopters');
 const buildFinanceInfoList = require('./finance');
 
 async function start() {
-  await buildPostList();
+
+  const postDirectories = [
+    ['pages/blog', '/blog'],
+    ['pages/docs', '/docs'],
+    ['pages/about', '/about']
+  ];
+  const basePath = 'pages';
+  const writeFilePath = resolve(__dirname, '../config', 'posts.json');
+
+  await buildPostList(postDirectories, basePath, writeFilePath);
+
   rssFeed(
     'blog',
     'AsyncAPI Initiative Blog RSS Feed',
