@@ -110,7 +110,6 @@ async function checkMarkdownFiles(folderPath, validateFunction, relativePath = '
                 return;
             }
 
-            try {
                 const stats = await fs.stat(filePath);
 
                 // Recurse if directory, otherwise validate markdown file
@@ -127,10 +126,6 @@ async function checkMarkdownFiles(folderPath, validateFunction, relativePath = '
                         process.exitCode = 1;
                     }
                 }
-            } catch (err) {
-                console.error(`Error processing file ${relativeFilePath}:`, err);
-                throw err;
-            }
         });
 
         await Promise.all(filePromises);

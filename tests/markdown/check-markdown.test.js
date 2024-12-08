@@ -111,7 +111,7 @@ describe('Frontmatter Validator', () => {
 
         await expect(checkMarkdownFiles(tempDir, validateBlogs)).rejects.toThrow('Test readFile error');
         expect(mockConsoleError).toHaveBeenCalledWith(
-            expect.stringContaining(`Error processing file invalid.md:`),
+            expect.stringContaining(`Error in directory`),
             expect.any(Error)
         );
 
