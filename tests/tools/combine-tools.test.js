@@ -94,7 +94,6 @@ describe('combineTools function', () => {
   });
 
   it('should handle tools with missing language or technology', async () => {
-
     await combineTools({}, manualToolsWithMissingData, toolsPath, tagsPath);
 
     const combinedTools = readJSON(toolsPath);
@@ -102,7 +101,6 @@ describe('combineTools function', () => {
   });
 
   it('should sort tools alphabetically by title', async () => {
-
     await combineTools(manualToolsToSort, {}, toolsPath, tagsPath);
 
     const combinedTools = readJSON(toolsPath);
@@ -111,7 +109,6 @@ describe('combineTools function', () => {
   });
 
   it('should log validation errors to console.error', async () => {
-
     await combineTools(automatedToolsT4, manualToolsT4, toolsPath, tagsPath);
 
     const errorCalls = console.error.mock.calls;
@@ -126,7 +123,6 @@ describe('combineTools function', () => {
   });
 
   it('should handle tools with multiple languages, including new ones', async () => {
-
     await combineTools(automatedToolsT5, {}, toolsPath, tagsPath);
 
     const combinedTools = readJSON(toolsPath);
@@ -142,7 +138,6 @@ describe('combineTools function', () => {
   });
 
   it('should add a new language and technology when not found in the existing lists', async () => {
-
     await combineTools(automatedToolsT6, {}, toolsPath, tagsPath);
 
     const combinedTools = readJSON(toolsPath);
@@ -168,7 +163,6 @@ describe('combineTools function', () => {
   });
 
   it('should add a new language when it is not found in the existing languages list', async () => {
-
     await combineTools(automatedToolsT7, {}, toolsPath, tagsPath);
 
     const combinedTools = readJSON(toolsPath);
@@ -186,9 +180,7 @@ describe('combineTools function', () => {
   });
 
   it('should handle valid tool objects', async () => {
-
     await combineTools(automatedToolsT8, manualToolsT8, toolsPath, tagsPath);
-
 
     const tagsData = readJSON(tagsPath);
     expect(tagsData.languages).toContainEqual({
@@ -204,7 +196,6 @@ describe('combineTools function', () => {
   });
 
   it('should handle tool objects without repoUrl', async () => {
-
     await combineTools(automatedToolsT9, manualToolsT9, toolsPath, tagsPath);
 
     const combinedTools = readJSON(toolsPath);
