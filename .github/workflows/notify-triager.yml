@@ -71,7 +71,7 @@ jobs:
           echo "codeTriagers=$codeTriagers" >> $GITHUB_ENV
 
       - name: Add Reviewers for code files
-        if: steps.check-merge-branch.outputs.isMergeCommit == 'false' && steps.non-md-pr-changes.outputs.any_changed == 'true'
+        if: steps.non-md-pr-changes.outputs.any_changed == 'true'
         run: |
           IFS=' ' read -r -a codeTriagers <<< "${{ env.codeTriagers }}"
           reviewers=$(printf ', "%s"' "${codeTriagers[@]}")
@@ -86,7 +86,7 @@ jobs:
           }"
 
       - name: Add Reviewers for doc files
-        if: steps.check-merge-branch.outputs.isMergeCommit == 'false' && steps.md-pr-changes.outputs.any_changed == 'true'
+        if: steps.md-pr-changes.outputs.any_changed == 'true'
         run: |
           IFS=' ' read -r -a docTriagers <<< "${{ env.docTriagers }}"
           reviewers=$(printf ', "%s"' "${docTriagers[@]}")
