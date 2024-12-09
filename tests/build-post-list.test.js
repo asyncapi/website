@@ -1,6 +1,6 @@
 const fs = require('fs-extra');
 const { resolve, join } = require('path');
-const { TEST_CONTENT } = require('../tests/fixtures/buildPostListData');
+const { setupTestDirectories } = require('./helper/buildPostListSetup')
 const { buildPostList, slugifyToC } = require('../scripts/build-post-list');
 
 describe('buildPostList', () => {
@@ -20,27 +20,8 @@ describe('buildPostList', () => {
       [join(tempDir, 'about'), '/about'],
     ];
 
-    await fs.ensureDir(join(tempDir, TEST_CONTENT.blog.dir));
-    await fs.writeFile(
-      join(tempDir, TEST_CONTENT.blog.dir, TEST_CONTENT.blog.file),
-      TEST_CONTENT.blog.content,
-    );
+    await setupTestDirectories(tempDir);
 
-    await fs.ensureDir(join(tempDir, TEST_CONTENT.docs.dir));
-    await fs.writeFile(
-      join(tempDir, TEST_CONTENT.docs.dir, TEST_CONTENT.docs.file),
-      TEST_CONTENT.docs.content,
-    );
-
-    await fs.ensureDir(
-      join(tempDir, TEST_CONTENT.docs.dir, TEST_CONTENT.docs.subDir),
-    );
-
-    await fs.ensureDir(join(tempDir, TEST_CONTENT.about.dir));
-    await fs.writeFile(
-      join(tempDir, TEST_CONTENT.about.dir, TEST_CONTENT.about.file),
-      TEST_CONTENT.about.content,
-    );
   });
 
   afterEach(async () => {
