@@ -74,6 +74,7 @@ jobs:
       - name: Add Reviewers for code files
         if: steps.non-md-pr-changes.outputs.any_changed == 'true'
         run: |
+          echo "Hello1"
           IFS=' ' read -r -a codeTriagers <<< "${{ env.codeTriagers }}"
           reviewers=$(printf ', "%s"' "${codeTriagers[@]}")
           reviewers=[${reviewers:2}]
