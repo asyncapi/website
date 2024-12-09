@@ -1,4 +1,4 @@
-const { readFileSync, removeSync, mkdirpSync } = require('fs-extra');
+const { readFileSync, removeSync, mkdirpSync, outputFileSync } = require('fs-extra');
 const { resolve, join } = require('path');
 const { buildNewsroomVideos } = require('../scripts/build-newsroom-videos');
 const { mockApiResponse, expectedResult } = require('./fixtures/newsroomData');
@@ -13,6 +13,7 @@ describe('buildNewsroomVideos', () => {
 
     beforeAll(() => {
         mkdirpSync(testDir);
+        outputFileSync(testFilePath, JSON.stringify({}));
         process.env.YOUTUBE_TOKEN = 'testkey';
     });
 
