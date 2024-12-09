@@ -126,10 +126,13 @@ const combineTools = async (automatedTools, manualTools, toolsPath, tagsPath) =>
                         let toolObject = await createToolObject(tool, "", "", isAsyncAPIrepo)
                         finalToolsList.push(await getFinalTool(toolObject))
                     } else {
-                        console.error('Script is not failing, it is just dropping errors for further investigation');
-                        console.error(`Invalid ${tool.title} .asyncapi-tool file.`);
-                        console.error(`Located in manual-tools.json file`);
-                        console.error('Validation errors:', JSON.stringify(validate.errors, null, 2));
+                        console.error({
+                            message: 'Tool validation failed',
+                            tool: tool.title,
+                            source: 'manual-tools.json',
+                            errors: validate.errors,
+                            note: 'Script continues execution, error logged for investigation'
+                        });
                     }
                 }
             }

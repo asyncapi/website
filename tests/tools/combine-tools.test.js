@@ -111,12 +111,12 @@ describe('combineTools function', () => {
   it('should log validation errors to console.error', async () => {
     await combineTools(automatedToolsT4, manualToolsT4, toolsPath, tagsPath);
 
-    const errorCalls = console.error.mock.calls;
+    const { message, tool, source, note } = console.error.mock.calls[0][0];
 
-    expect(errorCalls[0][0]).toBe('Script is not failing, it is just dropping errors for further investigation');
-    expect(errorCalls[1][0]).toBe('Invalid Invalid Tool .asyncapi-tool file.');
-    expect(errorCalls[2][0]).toBe('Located in manual-tools.json file');
-    expect(errorCalls[3][0]).toEqual(expect.stringContaining('Validation errors:'));
+    expect(message).toBe('Tool validation failed');
+    expect(tool).toBe('Invalid Tool');
+    expect(source).toBe('manual-tools.json');
+    expect(note).toBe('Script continues execution, error logged for investigation');
 
     expect(fs.existsSync(toolsPath)).toBe(true);
     expect(fs.existsSync(tagsPath)).toBe(true);
