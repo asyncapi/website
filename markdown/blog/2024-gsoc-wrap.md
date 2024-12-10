@@ -97,13 +97,69 @@ While I believe that reaching for the stars is just the beginning for us as an o
 
 By following these tips, you’ll not only increase your chances of being selected but also leave a lasting positive impact on the AsyncAPI community.
 
-## Closing Remark 
+## Special Shoutouts
+
+<Profiles profiles={[
+  {
+    name: 'Pavel Bodiachevskii',
+    avatar: 'https://avatars.githubusercontent.com/Pakisan',
+    link: 'https://github.com/Amishakumari544/Pakisan'
+  },
+  {
+    name: 'Sambhav Gupta',
+    avatar: 'https://avatars.githubusercontent.com/sambhavgupta0705',
+    link: 'https://github.com/sambhavgupta0705'
+  },
+  {
+    name: 'Ansh Goyal',
+    avatar: 'https://avatars.githubusercontent.com/anshgoyalevil',
+    link: 'https://github.com/anshgoyalevil'
+  },
+  {
+    name: 'Lukasz Gornicki',
+    avatar: 'https://avatars.githubusercontent.com/derberg',
+    link: 'https://github.com/derberg'
+  },
+  {
+    name: 'Iván García Sainz-Aja',
+    avatar: 'https://avatars.githubusercontent.com/ivangsa',
+    link: 'https://github.com/ivangsa'
+  },
+  {
+    name: 'Aishat Muibudeen',
+    avatar: 'https://avatars.githubusercontent.com/Mayaleeeee',
+    link: 'https://github.com/Mayaleeeee'
+  },
+  {
+    name: 'Akshat Nema',
+    avatar: 'https://avatars.githubusercontent.com/akshatnema',
+    link: 'https://github.com/akshatnema'
+  },
+  {
+    name: 'Thulisile Sibanda',
+    avatar: 'https://avatars.githubusercontent.com/thulieblack',
+    link: 'https://github.com/thulieblack'
+  }, 
+  {
+    name: 'Sergio Moya',
+    avatar: 'https://avatars.githubusercontent.com/smoya',
+    link: 'https://github.com/smoya'
+  }, 
+  {
+    name: 'Azeez Elegbede',
+    avatar: 'https://avatars.githubusercontent.com/AceTheCreator',
+    link: 'https://github.com/AceTheCreator'
+  },
+]} />
 
 We want to take a moment to extend our gratitude to the mentors who went out of their time and way to support and pass on their knowledge and forge meaningful relationships with our mentees. This program would not be possible without their unwavering dedication. 
 
 A special shoutout goes to Postman, who has always allowed us to push some of our project ideas under their umbrella over the last few years, while it's sad to see this come to an end, we love and appreciate the opportunities, and the community as a whole will never take it for granted. 
 
 And finally, a special thanks to Google for their belief in Free and Open Source Software(FOSS), for making this program possible every year as a show of their support to the open source ecosystem, and for allowing organizations like ours to bring passionate contributors and mentors to collaborate on a project all for the love of opensource. 
+
+
+## Closing Remark 
 
 If you’re considering joining GSoC with AsyncAPI next year, we encourage you to hop into our [Slack community](https://asyncapi.com/slack-invite) and say hello in the **#mentorship** channel. We’re always excited to welcome new contributors and mentors into our growing family.
 
