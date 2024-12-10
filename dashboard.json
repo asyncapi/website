@@ -17,24 +17,15 @@
       "score": 34.46095064991105
     },
     {
-      "id": "I_kwDODou01c5BZZv-",
-      "isPR": false,
+      "id": "PR_kwDOBW5R_c5-T7mG",
+      "isPR": true,
       "isAssigned": false,
-      "title": "Open Graph link preview image according to the document to open",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/224",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "keep-open",
-          "color": "f9dd4b"
-        }
-      ],
-      "score": 31.302030173669205
+      "title": "feat: add tests for build post list script",
+      "author": "vishvamsinh28",
+      "resourcePath": "/asyncapi/website/pull/3284",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 29.866157229922912
     },
     {
       "id": "I_kwDOGQYLdM5AX1lK",
@@ -54,29 +45,18 @@
           "color": "0E8A16"
         }
       ],
-      "score": 28.430284286176615
+      "score": 28.717458874925875
     },
     {
-      "id": "PR_kwDOBW5R_c5-T7mG",
+      "id": "PR_kwDOBW5R_c6BZLuT",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: add tests for build post list script",
+      "title": "feat: add tests for check markdown script",
       "author": "vishvamsinh28",
-      "resourcePath": "/asyncapi/website/pull/3284",
+      "resourcePath": "/asyncapi/website/pull/3378",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 27.28158593117958
-    },
-    {
-      "id": "PR_kwDOBW5R_c59FBoR",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add tests for tool-object script",
-      "author": "vishvamsinh28",
-      "resourcePath": "/asyncapi/website/pull/3265",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 25.845712987433288
+      "score": 23.26114168868996
     },
     {
       "id": "PR_kwDOFLhIt85bqKL8",
@@ -122,17 +102,6 @@
       "score": 21.825268744943667
     },
     {
-      "id": "PR_kwDOBW5R_c6BZLuT",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add tests for check markdown script",
-      "author": "vishvamsinh28",
-      "resourcePath": "/asyncapi/website/pull/3378",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 20.67657038994663
-    },
-    {
       "id": "PR_kwDOFLhIt855u7Eb",
       "isPR": true,
       "isAssigned": false,
@@ -142,22 +111,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 20.102221212448114
-    },
-    {
-      "id": "PR_kwDOBW5R_c535wDj",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add test for combine tools script",
-      "author": "vishvamsinh28",
-      "resourcePath": "/asyncapi/website/pull/3136",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        }
-      ],
-      "score": 17.804824502454043
     },
     {
       "id": "I_kwDOBW5R_c5RVOOY",
@@ -189,9 +142,75 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 16.08177696995849
+    },
+    {
+      "id": "I_kwDOFLhIt85bebeO",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Meeting Banners Storage",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/issues/568",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 15.794602381209232
+    },
+    {
+      "id": "I_kwDODou01c5BZZv-",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Open Graph link preview image according to the document to open",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/224",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 15.087185824232376
+    },
+    {
+      "id": "I_kwDODou01c5ZAFWh",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Please support File References",
+      "author": "philCryoport",
+      "resourcePath": "/asyncapi/studio/issues/528",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "bounty",
+          "color": "0E8A16"
+        }
+      ],
+      "score": 14.07155484871368
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOFLhIt86ihL5I",
+      "title": "[BUG] voting summary has some errors in `isVotedInLast3Months`",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/community/issues/1614",
+      "repo": "asyncapi/community",
+      "author": "derberg",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
     {
       "id": "I_kwDOFLhIt86hMsxx",
       "title": "Create an announcement design for the new TSC member (Ashmit Jagtap)",
@@ -608,6 +627,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -661,21 +684,6 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBGu-185qGt6A",
-      "title": "Ensure consistency when using either `Application` or `API` terms",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec/issues/949",
-      "repo": "asyncapi/spec",
-      "author": "smoya",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
