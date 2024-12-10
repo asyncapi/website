@@ -143,17 +143,22 @@ async function walkDirectories(directories, resultObj, basePath, sectionTitle, s
 }
 
 function slugifyToC(str) {
-  let slug
-  // Try to match heading ids like {# myHeadingId}
-  const headingIdMatch = str.match(/[\s]?\{\#([\w\d\-_]+)\}/)
-  if (headingIdMatch && headingIdMatch.length >= 2) {
-    slug = headingIdMatch[1]
+  let slug = '';
+
+  // Match heading IDs like {# myHeadingId}
+  const headingIdMatch = str.match(/[\s]?\{\#([\w\d\-_]+)\}/);
+  if (headingIdMatch && headingIdMatch[1].trim()) {
+    slug = headingIdMatch[1];
   } else {
-    // Try to match heading ids like {<a name="myHeadingId"/>}
-    const anchorTagMatch = str.match(/[\s]*<a[\s]+name="([\w\d\s\-_]+)"/)
-    if (anchorTagMatch && anchorTagMatch.length >= 2) slug = anchorTagMatch[1]
+    // Match heading IDs like {<a name="myHeadingId"/>}
+    const anchorTagMatch = str.match(/[\s]*<a[\s]+name="([\w\d\-_]+)"/);
+    if (anchorTagMatch && anchorTagMatch[1].trim()) {
+      slug = anchorTagMatch[1];
+    }
   }
-  return slug || slugify(str, { firsth1: true, maxdepth: 6 })
+
+  // If no valid ID is found, return an empty string
+  return slug;
 }
 
 async function isDirectory(dir) {

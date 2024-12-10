@@ -235,5 +235,15 @@ describe('buildPostList', () => {
     it('handles empty strings', () => {
       expect(slugifyToC('')).toBe('');
     });
+    
+    it('returns empty string for malformed heading IDs', () => {
+      expect(slugifyToC('## Heading {#}')).toBe('');
+      expect(slugifyToC('## Heading {# }')).toBe('');
+      expect(slugifyToC('## Heading {<a name=""/>}')).toBe('');
+    });
+    
+    it('handles mixed format heading IDs', () => {
+      expect(slugifyToC('## Heading {#id} {<a name="name"/>}')).toBe('id');
+    });
   });
 });
