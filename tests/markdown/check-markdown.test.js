@@ -75,10 +75,10 @@ describe('Frontmatter Validator', () => {
         const errors = validateBlogs(frontmatter);
 
         expect(errors).toEqual([
-            "Invalid date format: invalid-date",
-            "Tags should be an array",
-            "Cover must be a string",
-            "Authors should be an array"]);
+            'Invalid date format: invalid-date',
+            'Tags should be an array',
+            'Cover must be a string',
+            'Authors should be an array']);
     });
 
     it('logs error to console when an error occurs in checkMarkdownFiles', async () => {
@@ -135,7 +135,7 @@ describe('Frontmatter Validator', () => {
 
         await main();
 
-        expect(mockConsoleError).not.toHaveBeenCalledWith()
+        expect(mockConsoleError).not.toHaveBeenCalledWith();
     });
 
     it('should return true or false for URLs', () => {

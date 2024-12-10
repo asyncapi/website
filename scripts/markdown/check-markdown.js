@@ -155,4 +155,4 @@ if (require.main === module) {
     main();
 }
 
-module.exports = { validateBlogs, validateDocs, checkMarkdownFiles, main, isValidURL }
+module.exports = { validateBlogs, validateDocs, checkMarkdownFiles, main, isValidURL };
