@@ -86,7 +86,7 @@ As of June 2024, the items in the store were 2383. The goal was to disburse all 
 
 - **Community Events and Giveaways:** 25 items for various online and offline events throughout the year.
 
-So far, $8,264.37 has been spent on maintaining the store and logistics. As part of the benefit of closing the store, merchandise will be made locally at the event location, and others will be made as per request. [Here](https://docs.google.com/spreadsheets/d/1K7xo-ihlHcVoSYRg1U6SsvQDreEF1S6z/r/edit/edit?gid=1275706868#gid=1275706868) is the link to the distribution board.
+So far, $8,264.37 has been spent on maintaining the store and logistics. As part of the benefit of closing the store, merchandise will be made locally at the event location, and others will be made as per request. [You can find all the information on the distribution board](https://docs.google.com/spreadsheets/d/1K7xo-ihlHcVoSYRg1U6SsvQDreEF1S6z/r/edit/edit?gid=1275706868#gid=1275706868).
 
 ![Monthly Spend on The Store](/img/posts/marketing-images/store-report.webp)
 
