@@ -312,6 +312,8 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISe
   useEffect(() => {
     if (typeof children === 'function') {
       setChildren(children({ actionKey }));
+    } else {
+      setChildren(children);
     }
   }, []);
 
