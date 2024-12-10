@@ -1,6 +1,12 @@
-const fs = require('fs');
+const fs = require('fs').promises;
 const matter = require('gray-matter');
 const path = require('path');
+const pLimit = require('p-limit');
+
+// Use environment variable for concurrency limit, default to 10
+const CONCURRENCY_LIMIT = process.env.CONCURRENCY_LIMIT 
+  ? parseInt(process.env.CONCURRENCY_LIMIT, 10) 
+  : 10;
 
 /**
  * Checks if a given string is a valid URL.
@@ -19,7 +25,6 @@ function isValidURL(str) {
 /**
  * Validates the frontmatter of a blog post.
  * @param {object} frontmatter - The frontmatter object to validate.
- * @param {string} filePath - The path to the file being validated.
  * @returns {string[]|null} An array of validation error messages, or null if no errors.
  */
 function validateBlogs(frontmatter) {
@@ -73,7 +78,6 @@ function validateBlogs(frontmatter) {
 /**
  * Validates the frontmatter of a documentation file.
  * @param {object} frontmatter - The frontmatter object to validate.
- * @param {string} filePath - The path to the file being validated.
  * @returns {string[]|null} An array of validation error messages, or null if no errors.
  */
 function validateDocs(frontmatter) {
@@ -98,14 +102,16 @@ function validateDocs(frontmatter) {
  * @param {Function} validateFunction - The function used to validate the frontmatter.
  * @param {string} [relativePath=''] - The relative path of the folder for logging purposes.
  */
-function checkMarkdownFiles(folderPath, validateFunction, relativePath = '') {
-    fs.readdir(folderPath, (err, files) => {
-        if (err) {
-            console.error('Error reading directory:', err);
-            return;
-        }
+async function checkMarkdownFiles(folderPath, validateFunction, relativePath = '') {
+    // Create a concurrency limit
+    const limit = pLimit(CONCURRENCY_LIMIT);
 
-        files.forEach(file => {
+    try {
+        // Read directory contents
+        const files = await fs.readdir(folderPath);
+
+        // Process files with concurrency control
+        const filePromises = files.map(file => limit(async () => {
             const filePath = path.join(folderPath, file);
             const relativeFilePath = path.join(relativePath, file);
 
@@ -114,29 +120,32 @@ function checkMarkdownFiles(folderPath, validateFunction, relativePath = '') {
                 return;
             }
 
-            fs.stat(filePath, (err, stats) => {
-                if (err) {
-                    console.error('Error reading file stats:', err);
-                    return;
-                }
+            try {
+                // Get file stats
+                const stats = await fs.stat(filePath);
 
                 // Recurse if directory, otherwise validate markdown file
                 if (stats.isDirectory()) {
-                    checkMarkdownFiles(filePath, validateFunction, relativeFilePath);
+                    await checkMarkdownFiles(filePath, validateFunction, relativeFilePath);
                 } else if (path.extname(file) === '.md') {
-                    const fileContent = fs.readFileSync(filePath, 'utf-8');
+                    const fileContent = await fs.readFile(filePath, 'utf-8');
                     const { data: frontmatter } = matter(fileContent);
 
                     const errors = validateFunction(frontmatter);
                     if (errors) {
-                        console.log(`Errors in file ${relativeFilePath}:`);
-                        errors.forEach(error => console.log(` - ${error}`));
                         process.exitCode = 1;
                     }
                 }
-            });
-        });
-    });
+            } catch (statError) {
+                throw statError;
+            }
+        }));
+
+        // Wait for all file promises to complete
+        await Promise.all(filePromises);
+    } catch (filesError) {
+        throw filesError;
+    }
 }
 
 const docsFolderPath = path.resolve(__dirname, '../../markdown/docs');
