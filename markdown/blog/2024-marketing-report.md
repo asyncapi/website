@@ -81,7 +81,8 @@ As of June 2024, the items in the store were 2383. The goal was to disburse all 
 - **TSC Members:** 40 items packed for the TSC members to acknowledge their contributions to the community.
 
 - **Mentors and Mentees:** 30 items distributed to mentors and mentees as tokens of appreciation for their participation in the mentorship program
-Ambassadors: 2 packages were sent to two new ambassadors, each containing 11 items. 
+
+- **Ambassadors:**  2 packages were sent to two new ambassadors, each containing 11 items. 
 
 - **Community Events and Giveaways:** 25 items for various online and offline events throughout the year.
 
