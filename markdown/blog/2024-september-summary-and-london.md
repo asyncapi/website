@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: AsyncAPI Community Manager
 excerpt: 'September Community Update and London Conference Highlights'
-featured: true
 ---
 
 In September, we had our second in-person AsyncAPI conference after Helsinki; read all about it in the [AsyncAPI Helsinki Conference update](https://www.asyncapi.com/blog/helsinki-and-community). 

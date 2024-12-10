@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/22LFOLeF9Lk/hqdefault.jpg",
-    "title": "AsyncAPI + WebSocket: The Collaborative Combo",
-    "description": "Build a real-time collaborative drawing app from scratch using WebSocket & AsyncAPI, where users can draw together and chat in ...",
-    "videoId": "22LFOLeF9Lk"
+    "image_url": "https://i.ytimg.com/vi/QWRcCvDmf04/hqdefault.jpg",
+    "title": "AsyncAPI Mentorship Program 2024 Cohort Kick-off",
+    "description": "Welcoming the 2024 cohort of the AsyncAPI mentorship program.",
+    "videoId": "QWRcCvDmf04"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/XGn8v0yBfOI/hqdefault.jpg",
-    "title": "AsyncAPI Online Conference 2024💜",
-    "description": "AsyncAPI Online Conference 2024   Welcome to the AsyncAPI Online Conference 2024 Edition.",
-    "videoId": "XGn8v0yBfOI"
+    "image_url": "https://i.ytimg.com/vi/XirMXiBNaBM/hqdefault.jpg",
+    "title": "Community Meeting, 16:00 UTC Tuesday November 26th 2024",
+    "description": "",
+    "videoId": "XirMXiBNaBM"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/Hy3-C6V2ir8/hqdefault.jpg",
-    "title": "AsyncAPI Conference Dry Run",
-    "description": "Setup and conference prep.",
-    "videoId": "Hy3-C6V2ir8"
+    "image_url": "https://i.ytimg.com/vi/Q2cvxsUUgzA/hqdefault.jpg",
+    "title": "AsyncAPI-Powered Event Feeds: 3 Steps to Streaming",
+    "description": "In this livestream, we'll dive into the challenges and benefits of using AsyncAPI for building event-driven architectures.",
+    "videoId": "Q2cvxsUUgzA"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/2WUchTKDPfs/hqdefault.jpg",
-    "title": "Marketing WG Meeting, 14:00 UTC Tuesday October 22nd 2024",
-    "description": "https://github.com/asyncapi/community/issues/1553.",
-    "videoId": "2WUchTKDPfs"
+    "image_url": "https://i.ytimg.com/vi/9MaHh4b-rmc/hqdefault.jpg",
+    "title": "Broadening the API Landscape: AsyncAPI and CloudEvents in the Enterprise -  Daniel Kocot",
+    "description": "",
+    "videoId": "9MaHh4b-rmc"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/FzRxTpOeIDA/hqdefault.jpg",
-    "title": "Design Meeting, 12:00 UTC Thursday October 17th 2024",
-    "description": "https://github.com/asyncapi/community/issues/1558.",
-    "videoId": "FzRxTpOeIDA"
+    "image_url": "https://i.ytimg.com/vi/Q1q6JoFG0zM/hqdefault.jpg",
+    "title": "The Many Meanings Of An AsyncAPI File - Swen-Helge Huber",
+    "description": "",
+    "videoId": "Q1q6JoFG0zM"
   }
 ]

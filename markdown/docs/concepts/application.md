@@ -5,12 +5,12 @@ weight: 23
 
 
 ## What is an application?
-An application is any computer program or a group of them. 
+An _application_ is a computer program or a group of them. 
 
-An application could also be a micro-service, IoT device (sensor), mainframe process, etc. Users may even write applications in different programming languages if they support one of the selected protocols. 
+An application can be a micro-service, IoT (Internet of things) device (for example, a sensor), mainframe process, and more. Users can create applications using various programming languages that support the chosen protocols.
 
 ## Why do we need applications?
-In Event-Driven Architecture (EDA), an application must be a `producer`, a `consumer`, or both. Applications must also use the protocols the server supports if they wish to connect and exchange messages.
+In Event-Driven Architecture (EDA), an application can either be a producer, a consumer, or both. Additionally, if an application wants to connect and exchange messages with the server, it must adhere to the protocols supported by the server.
 
 ### Applications: producers and consumers
 ```mermaid
@@ -20,4 +20,5 @@ flowchart TD
         C --> D[message] 
         D --> F[CONSUMER application]
 ```
-The above diagram describes a message communication traveling through a channel between a **PRODUCER application** and a **CONSUMER application**. 
+
+The diagram above illustrates a message transmission between a Producer application and a Consumer application through a channel.
