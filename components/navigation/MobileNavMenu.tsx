@@ -41,6 +41,23 @@ export default function MobileNavMenu({ onClickClose = () => {} }: MobileNavMenu
     setOpen(menu);
   }
 
+  const loupeSvg = encodeURIComponent(`
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      stroke="#9CA3AF"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="m19 19-3.5-3.5" />
+      <circle cx="11" cy="11" r="6" />
+    </svg>
+  `);
+
   return (
     <div className='fixed inset-x-0 top-0 z-60 max-h-full origin-top-right overflow-y-auto py-2 transition lg:hidden'>
       <div className='rounded-lg shadow-lg'>
@@ -52,10 +69,16 @@ export default function MobileNavMenu({ onClickClose = () => {} }: MobileNavMenu
               </Link>
               <div className='justify-content -mr-2 flex flex-row items-center' data-testid='MobileNav-button'>
                 <SearchButton
-                  className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
+                  className='flex items-center space-x-2 rounded-md p-4 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
                   aria-label='Open Search'
+                  style={{
+                    backgroundImage: `url("data:image/svg+xml;charset=utf-8,${loupeSvg}")`,
+                    backgroundSize: '1.5rem',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center left',
+                  }}
                 >
-                  <SearchIcon />
+                  
                 </SearchButton>
                 <button
                   onClick={onClickClose}
