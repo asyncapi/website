@@ -1,5 +1,6 @@
 ---
 title: "Migrating to v3"
+weight: 2
 ---
 
 

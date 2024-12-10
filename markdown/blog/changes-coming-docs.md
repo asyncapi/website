@@ -7,9 +7,9 @@ tags:
   - Announcement
 cover: /img/posts/changes-coming-docs/mind-map.webp
 authors:
-  - name: Alejandra Quetzalli
-    photo: /img/avatars/canela-ale.webp
-    link: https://www.linkedin.com/in/alejandra-quetzalli/
+  - name: Quetzalli Writes
+    photo: /img/avatars/canela-quetzalli.webp
+    link: https://www.linkedin.com/in/quetzalli-writes/
     byline: AsyncAPI Dev Docs are getting a makeover!
 excerpt: Did you know that you can contribute Docs to AsyncAPI as well? Code isn't the only way to contribute to OSS; Dev Docs are a huge help that benefit the entire OSS ecosystem.
 ---
@@ -17,13 +17,13 @@ excerpt: Did you know that you can contribute Docs to AsyncAPI as well? Code isn
 import ContributionNotes from '@/assets/docs/fragments/contribution-notes.md';
 import TalkToMe from '@/assets/docs/fragments/talk-to-me.md';
 
-## 🦄 Hola, soy Alejandra Quetzalli
+## 🦄 Hola, soy Quetzalli Writes
 
 ¡Hola! 😄
 
-AsyncAPI community, it's an absolute pleasure to meet you. My name is Alejandra. I was born and raised in México 🇲🇽, so my first language is Spanish.
+AsyncAPI community, it's an absolute pleasure to meet you. My name is Quetzalli. I was born and raised in México 🇲🇽, so my first language is Spanish.
 
-I’m a Senior Technical Writer 👩🏻‍💻 recently hired by [Postman](https://www.postman.com/alejandra-quetzalli) to focus solely on the Open-Source (OSS) [AsyncAPI initiative](https://www.asyncapi.com/) as primary owner for our AsyncAPI Dev Docs 📄 . 
+I’m a Senior Technical Writer 👩🏻‍💻 recently hired by Postman to focus solely on the Open-Source (OSS) [AsyncAPI initiative](https://www.asyncapi.com/) as primary owner for our AsyncAPI Dev Docs 📄 . 
 
 I also recently [joined our initiative's Technical Steering Committee (TSC)](https://www.asyncapi.com/community/tsc)! The TSC is responsible for the oversight of the AsyncAPI Initiative, helping make decisions on a higher level, or when maintainers cannot find a consensus.
 

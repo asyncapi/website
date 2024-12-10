@@ -11,7 +11,6 @@ authors:
     link: https://github.com/aeworxet
     byline: Bounty Program Coordinator
 excerpt: 'Annual update on the quarterly published set of tasks that are currently in demand among AsyncAPI Maintainers, targeted at engineers of Middle and Senior professional levels.'
-featured: true
 ---
 
 ## AsyncAPI Bounty Program
