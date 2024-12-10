@@ -94,7 +94,7 @@ Check out our spend so far [here](https://opencollective.com/asyncapi/expenses?t
 
 ## Marketing Strategy Document and Student Ambassador Program
 
-To guide our efforts, we’ve developed a comprehensive [Strategy Document](https://github.com/asyncapi/community/pull/1358) that outlines our objectives, priorities, and target initiatives. This document serves as a roadmap for our upcoming campaigns, events, and community engagement efforts.
+To guide our efforts, [we’ve developed a comprehensive Strategy Document](https://github.com/asyncapi/community/pull/1358) that outlines our objectives, priorities, and target initiatives. The document outlines our upcoming campaigns, events, and community engagement efforts.
 
 Additionally, we’re excited to introduce the [Student Ambassador Program](https://github.com/asyncapi/community/pull/1333), which aims to nurture future AsyncAPI advocates and contributors at the student level. The program will offer students guidance, resources, and community connections to help them grow within the AsyncAPI ecosystem. We believe this will strengthen our community and ensure that AsyncAPI remains a go-to resource for emerging talent.
 
