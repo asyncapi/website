@@ -56,7 +56,7 @@ Here are some of the benefits of using the Buffer subscription
 
 Please note that I currently do not have direct access to AsyncAPI’s social media accounts. Buffer provides an effective solution for posting content, monitoring performance, and maintaining the high standards of AsyncAPI's public presence without broad access.
 
-As part of the benefit of using Buffer, we have access to our social media analytics. Below are the analytics for LinkedIn and X (formally Twitter) from May 20th to November 26th 2024.
+As part of the benefit of using Buffer, we have access to our social media analytics. Below are the analytics for LinkedIn and X (formally Twitter) from May 20th to November 26th, 2024.
 
 
 ![Linkedin Analytics](/img/posts/marketing-images/buffer-linkedin-report.webp)
