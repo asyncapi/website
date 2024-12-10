@@ -1,6 +1,6 @@
 const { TEST_CONTENT } = require("../fixtures/buildPostListData");
 const fs = require('fs-extra');
-const { join } = require("path")
+const { join, resolve } = require("path")
 
 async function setupTestDirectories(tempDir) {
     const dirs = ['blog', 'docs', 'about'];
@@ -14,4 +14,11 @@ async function setupTestDirectories(tempDir) {
     await fs.ensureDir(join(tempDir, TEST_CONTENT.docs.dir, TEST_CONTENT.docs.subDir));
 }
 
-module.exports = { setupTestDirectories };
+function generateTempDirPath(baseDir) {
+    return resolve(
+        baseDir,
+        `test-config-${Date.now()}-${Math.random().toString(36).slice(2)}`
+    );
+}
+
+module.exports = { setupTestDirectories, generateTempDirPath };

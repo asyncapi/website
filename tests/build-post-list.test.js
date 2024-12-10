@@ -1,6 +1,6 @@
 const fs = require('fs-extra');
 const { resolve, join } = require('path');
-const { setupTestDirectories } = require('./helper/buildPostListSetup')
+const { setupTestDirectories, generateTempDirPath } = require('./helper/buildPostListSetup')
 const { buildPostList, slugifyToC } = require('../scripts/build-post-list');
 
 describe('buildPostList', () => {
@@ -9,10 +9,7 @@ describe('buildPostList', () => {
   let postDirectories;
 
   beforeEach(async () => {
-    tempDir = resolve(
-      __dirname,
-      `test-config-${Date.now()}-${Math.random().toString(36).slice(2)}`,
-    );
+    tempDir = generateTempDirPath(__dirname);
     writeFilePath = resolve(tempDir, 'posts.json');
     postDirectories = [
       [join(tempDir, 'blog'), '/blog'],
@@ -28,12 +25,15 @@ describe('buildPostList', () => {
     await fs.remove(tempDir);
   });
 
-  it('builds a post list and writes the result to a file', async () => {
+  it('writes the result to a file', async () => {
     await buildPostList(postDirectories, tempDir, writeFilePath);
 
     const outputExists = await fs.pathExists(writeFilePath);
     expect(outputExists).toBe(true);
+  });
 
+  it('correctly structures docs entries', async () => {
+    await buildPostList(postDirectories, tempDir, writeFilePath);
     const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
 
     expect(output.docs).toEqual(
@@ -54,6 +54,11 @@ describe('buildPostList', () => {
         }),
       ]),
     );
+  });
+
+  it('correctly structures blog entries', async () => {
+    await buildPostList(postDirectories, tempDir, writeFilePath);
+    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
 
     expect(output.blog).toEqual(
       expect.arrayContaining([
