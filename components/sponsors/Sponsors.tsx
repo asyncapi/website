@@ -1,5 +1,5 @@
+import ResponsiveImage from './ResponsiveImage';
 import React from 'react';
-
 import { sponsors } from './SponsorsList';
 
 interface SponsorsProps {
@@ -26,11 +26,11 @@ export default function Sponsors({ className = '', showSupportBanner = true }: S
               rel='noopener noreferrer'
               data-testid='Sponsors-link'
             >
-              <img
-                className={sponsor?.imageClass}
+              <ResponsiveImage
                 src={sponsor.imageSrc}
                 alt={sponsor.altText}
-                data-testid='Sponsors-img'
+                className={sponsor?.imageClass}
+                dataTestId='Sponsors-img'
               />
             </a>
           </li>
