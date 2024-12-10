@@ -49,7 +49,7 @@ To improve the efficiency and security of our social media management, we’ve i
 Here are some of the benefits of using the Buffer subscription 
 
 - **Centralized Dashboard:** Manage all social media platforms from a single interface, making it easier to track and organize content.
-- **Improved Security:** No need for multiple people to log into the actual social media accounts. This minimizes risks of unauthorized changes or breaches.
+- **Improved Security:** No need for multiple people to log into the actual social media accounts. This minimizes the risks of unauthorized changes or breaches.
 - **Better Analytics and Insights:** Access in-depth analytics to understand which posts perform and engagement metrics best and adjust strategies accordingly. 
 - **Content Approval Workflow:** Allow team members to draft posts for review, ensuring high-quality content that aligns with AsyncAPI’s voice.
 
