@@ -7,9 +7,9 @@ tags:
   - Communication
 cover: /img/posts/2023-Q4-docs-report/Q4-docs-diagram-summary.webp
 authors:
-  - name: Alejandra Quetzalli
-    photo: /img/avatars/canela-ale.webp
-    link: https://www.linkedin.com/in/alejandra-quetzalli/
+  - name: Quetzalli Writes
+    photo: /img/avatars/canela-quetzalli.webp
+    link: https://www.linkedin.com/in/quetzalli-writes/
     byline: During Q4 2023, AsyncAPI Docs had a total of 19,267 sessions and 6,447 unique users.
 excerpt: In Q4, AsyncAPI docs had primary engagement across the tutorials and reference content buckets. 
 ---
@@ -18,7 +18,7 @@ import ContributionNotes from '@/assets/docs/fragments/contribution-notes.md';
 import TalkToMe from '@/assets/docs/fragments/talk-to-me.md';
 
 # AsyncAPI Documentation Report - Q4 2023
-As a core maintainer of AsyncAPI Docs, I (Alejandra Quetzalli) volunteer to write periodic updates about the AsyncAPI Docs ecosystem. The goal is to keep the community informed about what's going on in docs and how docs contributors collaborate with other areas in AsyncAPI Initiative.
+As a core maintainer of AsyncAPI Docs, I (Quetzalli Writes) volunteer to write periodic updates about the AsyncAPI Docs ecosystem. The goal is to keep the community informed about what's going on in docs and how docs contributors collaborate with other areas in AsyncAPI Initiative.
 
 ## Overview
 During Q4 2023, AsyncAPI Docs had a total of **19,267 sessions** and **6,447 unique users**. 
