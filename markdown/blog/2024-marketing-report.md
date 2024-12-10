@@ -25,7 +25,7 @@ We aim to:
 
 - **Increase Awareness:** Develop and implement targeted campaigns to introduce AsyncAPI to a broader audience and create a clear understanding of our mission.
 
-- **Build Engagement:** Design strategies to strengthen our community’s connection, enhance involvement, and showcase the powerful contributions from our members.
+- **Build Engagement:** Design strategies to strengthen our community’s connection, enhance involvement, and showcase the powerful contributions of our members.
 
 - **Highlight Impact:** Share stories, case studies, and successes from across the community to inspire and inform potential contributors, users, and partners.
 
