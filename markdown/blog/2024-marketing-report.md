@@ -59,9 +59,9 @@ Please note that I currently do not have direct access to AsyncAPI’s social me
 As part of the benefit of using Buffer, we have access to our social media analytics. Below are the analytics for LinkedIn and X (formally Twitter) from May 20th to November 26th, 2024.
 
 
-![Linkedin Analytics](/img/posts/marketing-images/buffer-linkedin-report.webp)
+![AsyncAPI LinkedIn engagement metrics showing follower growth and post performance from Buffer analytics](/img/posts/marketing-images/buffer-linkedin-report.webp)
 
-![X Analytics](/img/posts/marketing-images/buffer-x-report.webp)
+![AsyncAPI Twitter (X) engagement metrics showing follower growth and tweet performance from Buffer analytics](/img/posts/marketing-images/buffer-x-report.webp)
 
 
 ## Closing the Online Store
@@ -70,7 +70,7 @@ One significant change is the closure of our online store. After reviewing our b
 
 As of June 2024, the items in the store were 2383. The goal was to disburse all of the items by December 2024.
 
-![Merchandise in store as at June 2024](/img/posts/marketing-images/merchandise.webp)
+![Chart showing breakdown of AsyncAPI merchandise inventory as of June 2024](/img/posts/marketing-images/merchandise.webp)
 
  Below is the breakdown of the item distribution and what we have left in the store.
 
@@ -88,7 +88,7 @@ As of June 2024, the items in the store were 2383. The goal was to disburse all 
 
 So far, $8,264.37 has been spent on maintaining the store and logistics. As part of the benefit of closing the store, merchandise will be made locally at the event location, and others will be made as per request. [You can find all the information on the distribution board](https://docs.google.com/spreadsheets/d/1K7xo-ihlHcVoSYRg1U6SsvQDreEF1S6z/r/edit/edit?gid=1275706868#gid=1275706868).
 
-![Monthly Spend on The Store](/img/posts/marketing-images/store-report.webp)
+![Graph showing monthly expenditure breakdown for the AsyncAPI merchandise store](/img/posts/marketing-images/store-report.webp)
 
 [For more details on the store expenses, please go through our Open Collective page](https://opencollective.com/asyncapi/expenses?type=INVOICE&period=2023-12-31T23%3A00%3A00.000Z%E2%86%92all&searchTerm=Pinnacle+Branding&offset=0&limit=10)
 
@@ -119,7 +119,7 @@ This report highlights the strides made by the AsyncAPI Marketing Working Group,
 
 So far, our social media analytics are looking good.
 
-![Buffer General Report](/img/posts/marketing-images/buffer-report.webp)
+![Overall social media performance metrics from Buffer showing engagement across all platforms](/img/posts/marketing-images/buffer-report.webp)
 
 Looking ahead, our focus will be on implementing the strategy document, fostering community growth, launching the Student Ambassador Program, and driving impactful promotions and partnerships. These efforts aim to strengthen the AsyncAPI ecosystem and create meaningful opportunities for collaboration and engagement.
 
