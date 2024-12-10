@@ -27,7 +27,7 @@ We aim to:
 
 - **Build Engagement:** Design strategies to strengthen our community’s connection, enhance involvement, and showcase the powerful contributions of our members.
 
-- **Highlight Impact:** Share stories, case studies, and successes from across the community to inspire and inform potential contributors, users, and partners.
+- **Highlight Impact:** Share stories, case studies, and successes from the community to inspire and inform potential contributors, users, and partners.
 
 - **Drive Growth:** Attract new users, contributors, and partners through partnerships, events, and online activities that underscore AsyncAPI’s value in the tech landscape.
 By aligning our goals with AsyncAPI’s mission, the Marketing WG seeks to empower both seasoned and new members to engage deeply with the initiative. 
