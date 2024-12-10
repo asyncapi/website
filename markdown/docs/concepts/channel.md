@@ -19,4 +19,3 @@ graph LR
 ```
 
 The diagram above illustrates the communication process between a producer and a consumer. The producer sends a message through the channel, which then queues the message for delivery to the specific consumer.
-The diagram above illustrates the communication process between a producer and multiple consumers. The producer sends a message through the channel, which then queues the message for delivery to the appropriate consumers.
