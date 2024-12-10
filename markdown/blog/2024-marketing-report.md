@@ -1,6 +1,6 @@
 ---
 title: "Marketing Report: December 2024"
-date: 2024-12-09T06:00:00+01:00
+date: 2024-12-10T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
@@ -10,7 +10,7 @@ authors:
     photo: /img/avatars/bami.webp
     link: https://www.linkedin.com/in/atinuke-oluwabamikemi-kayode-5b838b1b7/
     byline: AsyncAPI Community Marketing Specialist
-excerpt: 'Marketing plays a crucial role in the success of open source projects, bridging the gap between technical excellence and community engagement. In this Marketing Working Group report, we explore how strategic campaigns, streamlined social media efforts, and targeted programs like the Student Ambassador initiative drive awareness and foster growth in the AsyncAPI community.'
+excerpt: 'Marketing is key to open source success, connecting technical excellence with community engagement. This Marketing Working Group report highlights strategic campaigns, social media efforts, and upcoming initiatives like the Student Ambassador program driving the growth of the AsyncAPI Initiative.'
 featured: true
 ---
 
@@ -46,9 +46,9 @@ We’ve focused on laying the groundwork for long-term growth and engagement for
 
 To improve the efficiency and security of our social media management, we’ve introduced a paid version of Buffer for posting content across our platforms. This change enables us to streamline content scheduling, ensuring consistent, professional updates without compromising security. Importantly, using Buffer restricts access to the main social media accounts, adding a layer of protection and allowing us to manage permissions efficiently.
 
-Here are some of the benefits of using the Buffer subscription 
+Here are some of the benefits of using the Buffer subscription
 
-- **Centralized Dashboard:** Manage all social media platforms from a single interface, making tracking and organizing content easier.
+- **Centralized Dashboard:** Manage all social media platforms from a single interface, making tracking and organizing content easier. 
 - **Improved Security:** No need for multiple people to log into the actual social media accounts. This minimizes the risks of unauthorized changes or breaches.
 - **Better Analytics and Insights:** Access in-depth analytics to understand which posts perform and engagement metrics best and adjust strategies accordingly. 
 - **Content Approval Workflow:** Allow team members to draft posts for review, ensuring high-quality content that aligns with AsyncAPI’s voice.
@@ -61,6 +61,7 @@ As part of the benefit of using Buffer, we have access to our social media analy
 
 ![AsyncAPI LinkedIn engagement metrics showing follower growth and post performance from Buffer analytics](/img/posts/marketing-images/buffer-linkedin-report.webp)
 
+
 ![AsyncAPI Twitter (X) engagement metrics showing follower growth and tweet performance from Buffer analytics](/img/posts/marketing-images/buffer-x-report.webp)
 
 
@@ -72,6 +73,7 @@ As of June 2024, the items in the store were 2383. The goal was to disburse all 
 
 ![Chart showing breakdown of AsyncAPI merchandise inventory as of June 2024](/img/posts/marketing-images/merchandise.webp)
 
+
  Below is the breakdown of the item distribution and what we have left in the store.
 
 - **Paris Conference:** 1518 items sent to Paris as part of conference giveaways, speakers package, and the rest to be given to the ambassadors to help them promote AsyncAPI in their communities.
@@ -82,13 +84,14 @@ As of June 2024, the items in the store were 2383. The goal was to disburse all 
 
 - **Mentors and Mentees:** 30 items distributed to mentors and mentees as tokens of appreciation for their participation in the mentorship program
 
-- **Ambassadors:**  2 packages were sent to two new ambassadors, each containing 11 items. 
+- **Ambassadors:** 2 packages were sent to two new ambassadors, each containing 11 items. 
 
 - **Community Events and Giveaways:** 25 items for various online and offline events throughout the year.
 
 So far, $8,264.37 has been spent on maintaining the store and logistics. As part of the benefit of closing the store, merchandise will be made locally at the event location, and others will be made as per request. [You can find all the information on the distribution board](https://docs.google.com/spreadsheets/d/1K7xo-ihlHcVoSYRg1U6SsvQDreEF1S6z/r/edit/edit?gid=1275706868#gid=1275706868).
 
 ![Graph showing monthly expenditure breakdown for the AsyncAPI merchandise store](/img/posts/marketing-images/store-report.webp)
+
 
 [For more details on the store expenses, please go through our Open Collective page](https://opencollective.com/asyncapi/expenses?type=INVOICE&period=2023-12-31T23%3A00%3A00.000Z%E2%86%92all&searchTerm=Pinnacle+Branding&offset=0&limit=10)
 
@@ -97,7 +100,7 @@ So far, $8,264.37 has been spent on maintaining the store and logistics. As part
 
 To guide our efforts, [we’ve developed a comprehensive Strategy Document](https://github.com/asyncapi/community/pull/1358) that outlines our objectives, priorities, and target initiatives. The document outlines our upcoming campaigns, events, and community engagement efforts.
 
-Additionally, we’re excited to introduce the [Student Ambassador Program](https://github.com/asyncapi/community/pull/1333), which aims to nurture future AsyncAPI advocates and contributors at the student level. The program will offer students guidance, resources, and community connections to help them grow within the AsyncAPI ecosystem. We believe this will strengthen our community and ensure that AsyncAPI remains a go-to resource for emerging talent.
+Additionally, we are planning to introduce the [Student Ambassador Program](https://github.com/asyncapi/community/pull/1333), which aims to nurture future AsyncAPI advocates and contributors at the student level. The program will offer students guidance, resources, and community connections to help them grow within the AsyncAPI ecosystem. We believe this will strengthen our community and ensure that AsyncAPI remains a go-to resource for emerging talent.
 
 ## Community Growth and Future Focus Areas
 
@@ -113,18 +116,31 @@ Looking forward, we’ll focus on:
 - **Enhanced Engagement with the Community:** Creating more opportunities for community members to participate, share ideas, and grow their skills
 With these focus areas, we’re confident that AsyncAPI will continue to expand its influence and provide valuable support to both seasoned and new community members.
 
+## Sponsor Involvement in the Marketing Working Group
+
+The Marketing Working Group thrives on collaboration, and we’re fortunate to have active participation from representatives of our sponsors, including Chris and Georgie. Their insights, ideas, and expertise are invaluable in shaping the group’s direction and ensuring that AsyncAPI’s marketing strategies align with the broader goals of our sponsors and the community.
+
+## Who can Join the Marketing Working Group?
+
+The working group is designed to be inclusive, welcoming not just sponsor representatives but also any community members who wish to contribute. Whether it’s sharing ideas, providing feedback, or helping execute campaigns.
+
+This collaborative approach ensures that we have diverse perspectives guiding our efforts and allows the Marketing Working Group to act as a bridge between AsyncAPI’s community and its stakeholders. If you have ideas or want to contribute, we’d love to hear from you!
+
+
 ## Conclusion
 
 This report highlights the strides made by the AsyncAPI Marketing Working Group, including targeted campaigns, streamlined social media management with Buffer, impactful merchandise distribution, the introduction of a comprehensive strategy document, and the launch of the Student Ambassador Program. We've also made strategic decisions, such as closing the online store, to optimize our budget for initiatives that deliver greater value to the community.
 
 So far, our social media analytics are looking good.
 
+
 ![Overall social media performance metrics from Buffer showing engagement across all platforms](/img/posts/marketing-images/buffer-report.webp)
+
 
 Looking ahead, our focus will be on implementing the strategy document, fostering community growth, launching the Student Ambassador Program, and driving impactful promotions and partnerships. These efforts aim to strengthen the AsyncAPI ecosystem and create meaningful opportunities for collaboration and engagement.
 
 
-If you have any questions, suggestions, or ideas, please feel free to reach out to me on Slack @Bami. Here’s to another successful year of growth, collaboration, and impact. 
+If you have any questions, suggestions, or ideas, please feel free to reach out to me on Slack [@Bami](U070DE02VQX). Here’s to another successful year of growth, collaboration, and impact. 
 
 
 
