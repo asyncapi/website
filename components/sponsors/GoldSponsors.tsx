@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { goldSponsors } from './GoldSponsorsList';
+import ResponsiveImage from './ResponsiveImage';
 
 interface GoldSponsorsProps {
   className?: string;
@@ -26,11 +27,11 @@ export default function GoldSponsors({ className = '' }: GoldSponsorsProps): Rea
             rel='noopener noreferrer'
             data-testid='GoldSponsors-link'
           >
-            <img
-              className={sponsor.imageClass}
+            <ResponsiveImage
               src={sponsor.imageSrc}
               alt={sponsor.altText}
-              data-testid='GoldSponsors-img'
+              className={sponsor.imageClass}
+              dataTestId='GoldSponsors-img'
             />
           </a>
         ))}
