@@ -89,7 +89,7 @@ So far, $8,264.37 has been spent on maintaining the store and logistics. As part
 
 ![Monthly Spend on The Store](/img/posts/marketing-images/store-report.webp)
 
-Check out our spend so far [here](https://opencollective.com/asyncapi/expenses?type=INVOICE&period=2023-12-31T23%3A00%3A00.000Z%E2%86%92all&searchTerm=Pinnacle+Branding&offset=0&limit=10)
+[For more details on the store expenses, please go through our Open Collective page](https://opencollective.com/asyncapi/expenses?type=INVOICE&period=2023-12-31T23%3A00%3A00.000Z%E2%86%92all&searchTerm=Pinnacle+Branding&offset=0&limit=10)
 
 
 ## Marketing Strategy Document and Student Ambassador Program
