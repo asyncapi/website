@@ -46,7 +46,7 @@ We’ve focused on laying the groundwork for long-term growth and engagement for
 
 To improve the efficiency and security of our social media management, we’ve introduced a paid version of Buffer for posting content across our platforms. This change enables us to streamline content scheduling, ensuring consistent, professional updates without compromising security. Importantly, using Buffer restricts access to the main social media accounts, adding a layer of protection and allowing us to manage permissions efficiently.
 
-Here are some of the benefit of using the Buffer subscription 
+Here are some of the benefits of using the Buffer subscription 
 
 - **Centralized Dashboard:** Manage all social media platforms from a single interface, making it easier to track and organize content.
 - **Improved Security:** No need for multiple people to log into the actual social media accounts. This minimizes risks of unauthorized changes or breaches.
