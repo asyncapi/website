@@ -1,6 +1,6 @@
 ---
 title: "Marketing Report: December 2024"
-date: 2024-12-10T06:00:00+01:00
+date: 2024-12-12T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
@@ -10,7 +10,7 @@ authors:
     photo: /img/avatars/bami.webp
     link: https://www.linkedin.com/in/atinuke-oluwabamikemi-kayode-5b838b1b7/
     byline: AsyncAPI Community Marketing Specialist
-excerpt: 'Marketing is key to open source success, connecting technical excellence with community engagement. This Marketing Working Group report highlights strategic campaigns, social media efforts, and upcoming initiatives like the Student Ambassador program driving the growth of the AsyncAPI Initiative.'
+excerpt: 'Marketing is key to open source success, connecting technical excellence with community engagement. It highlights strategic initiatives and SM efforts'
 featured: true
 ---
 
@@ -56,13 +56,54 @@ Here are some of the benefits of using the Buffer subscription
 
 Please note that I currently do not have direct access to AsyncAPI’s social media accounts. Buffer provides an effective solution for posting content, monitoring performance, and maintaining the high standards of AsyncAPI's public presence without broad access.
 
-As part of the benefit of using Buffer, we have access to our social media analytics. Below are the analytics for LinkedIn and X (formally Twitter) from May 20th to November 26th, 2024.
+As part of the benefit of using Buffer, we have access to our social media analytics. Below are the analytics for LinkedIn and X (formally Twitter) from May 20th to December 10th, 2024.
 
 
-![AsyncAPI LinkedIn engagement metrics showing follower growth and post performance from Buffer analytics](/img/posts/marketing-images/buffer-linkedin-report.webp)
+![AsyncAPI LinkedIn engagement metrics showing follower growth and post metrics from Buffer analytics](/img/posts/marketing-images/linkedIn-metrics-insights.webp)
 
 
-![AsyncAPI Twitter (X) engagement metrics showing follower growth and tweet performance from Buffer analytics](/img/posts/marketing-images/buffer-x-report.webp)
+![AsyncAPI LinkedIn engagement metrics showing follower growth and post performance from Buffer analytics](/img/posts/marketing-images/linkedin-performance-statistics.webp)
+
+
+The images above show the LinkedIn performance is great. Here’s a breakdown of our LinkedIn metrics from Buffer’s analysis:
+
+- **Followers:** We’ve grown to 3,905 followers, marking a 19% increase in our audience size. 
+
+- **Impressions:** Our posts were seen 68,440 times, a remarkable 120% growth, indicating broader visibility. 
+
+- **New Followers:** We gained 620 new followers, reflecting a 119% increase in audience acquisition. 
+
+- **Clicks:** Our content drove 3,213 clicks, an impressive 205% growth, showcasing heightened interest and engagement.
+
+- **Posts:** We published 176 posts, up by 209%, emphasizing consistent and active content sharing. 
+
+- **Engagement Rate:** Our engagement rate reached 5.83%, improving by 31%, indicating stronger interactions with our audience. 
+
+Our LinkedIn efforts are yielding fantastic results, with significant growth in visibility, engagement, and audience acquisition. The impressive metrics reflect the value and relevance of our content. However, we're still up for improvement.
+
+![AsyncAPI Twitter (X) engagement metrics showing follower growth and tweet metrics from Buffer analytics](/img/posts/marketing-images/x-metrics-insights.webp)
+
+![AsyncAPI Twitter (X) engagement metrics showing follower growth and tweet performance from Buffer analytics](/img/posts/marketing-images/x-performance-statistics.webp)
+
+The X (Twitter) performance overview indicates our incredible performance growth:
+
+- **Tweets:** Shared an impressive 254 tweets, marking a staggering 25,300% increase. 
+- **Replies:** Engaged in 10 replies, growing by 1,000%, highlighting our community members are beginning to take interest in our X posts. 
+
+- **Retweets:** Earned 164 retweets, a remarkable 16,400% increase, amplifying our reach. 
+
+- **Clicks:** Drove 348 clicks, a phenomenal 34,800% growth, reflecting strong audience interest.
+
+- **Impressions:** Achieved 50,413 impressions, a mind-blowing 5.04M% increase, dramatically boosting visibility. 
+
+- **Likes:** Garnered 424 likes, growing by 42,400%, showing that our content resonated well. 
+
+- **Engagements:** Secured 1,147 total engagements, up by an incredible 115K%, indicating high interactivity. 
+
+- **New Followers:** Welcomed 34 new followers, a 3,400% increase, expanding our community. 
+
+
+Our efforts on X have paid off significantly, with astronomical growth across key metrics. 
 
 
 ## Closing the Online Store
@@ -118,7 +159,7 @@ With these focus areas, we’re confident that AsyncAPI will continue to expand 
 
 ## Sponsor Involvement in the Marketing Working Group
 
-The Marketing Working Group thrives on collaboration, and we’re fortunate to have active participation from representatives of our sponsors, including Chris and Georgie. Their insights, ideas, and expertise are invaluable in shaping the group’s direction and ensuring that AsyncAPI’s marketing strategies align with the broader goals of our sponsors and the community.
+The Marketing Working Group thrives on collaboration, and we’re fortunate to have active participation from representatives of our sponsors, including Christophe Dujarric from Bump.sh and Georgie Burrows from Gravitee.io. Their insights, ideas, and expertise are invaluable in shaping the group’s direction and ensuring that AsyncAPI’s marketing strategies align with the broader goals of our sponsors and the community.
 
 ## Who can Join the Marketing Working Group?
 
