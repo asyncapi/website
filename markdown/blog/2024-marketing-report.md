@@ -21,7 +21,7 @@ Hello, everyone! I'm Bami, I’m the Community Marketing Specialist at the Async
 
 The Marketing Working Group (MWG) is the driving force behind the AsyncAPI Initiative’s external engagement, community growth, and brand awareness efforts. Our mission is to encourage an active, informed, and passionate community by promoting the tools, resources, and stories that make AsyncAPI unique. 
 
-We aim to:
+Some of the things we aim to accomplish:
 
 - **Increase Awareness:** Develop and implement targeted campaigns to introduce AsyncAPI to a broader audience and create a clear understanding of our mission.
 
