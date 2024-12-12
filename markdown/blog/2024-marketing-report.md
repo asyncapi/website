@@ -30,7 +30,7 @@ Some of the things we aim to accomplish:
 - **Highlight Impact:** Share stories, case studies, and successes from the community to inspire and inform potential contributors, users, and partners.
 
 - **Drive Growth:** Attract new users, contributors, and partners through partnerships, events, and online activities that underscore AsyncAPI’s value in the tech landscape.
-By aligning our goals with AsyncAPI’s mission, the Marketing WG seeks to empower both seasoned and new members to engage deeply with the initiative. 
+By aligning our goals with AsyncAPI’s mission, the MWG seeks to empower both seasoned and new members to engage deeply with the initiative. 
 
 Below is a summary of what we’ve accomplished this year and our priorities moving forward.
 
