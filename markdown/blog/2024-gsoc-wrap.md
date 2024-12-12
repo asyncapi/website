@@ -42,10 +42,10 @@ We had a range of successful contributions that significantly advanced AsyncAPI 
 - **[Vishvamsinh Vaghela](https://github.com/vishvamsinh28)** enhanced the stability of scripts on the AsyncAPI website by ensuring all scripts functioned as expected and writing comprehensive unit tests to ensure smooth operations in the website, particularly as the number of contributors grew and more people worked on critical parts of the website.
 
 - **[Ankit Dash](https://github.com/helios2003)** added dynamic preview image generation for AsyncAPI documents shared via the AsyncAPI Studio website. Ankit also shared his GSoC journey and contributions during the online edition of the [AsyncAPI Conference](https://conference.asyncapi.com/venue/Online).
-<Youtube id="B9xI8BziM94" />
+<YouTube id="B9xI8BziM94" />
 
 - **[Mintu Gogoi](https://github.com/Gmin2)** and **[Yuan Yuan](https://github.com/lmgyuan)** focused on the AsyncAPI Generator project, resolving existing issues and bugs, triaging new ones, improving code through refactoring, and writing tests. Yuan shared their GSoC experience during the online edition of the [AsyncAPI Conference](https://conference.asyncapi.com/).
-<Youtube id="ap2ZiRN8MDs" />
+<YouTube id="ap2ZiRN8MDs" />
 
 - **[Ashmit JaiSarita Gupta](https://github.com/devilkiller-ag)** developed a UI kit for the AsyncAPI website, based on the stunning designs by **[Aishat Muibudeen](https://github.com/mayaleeeee)**. By using Storybook, Ashmit ensured brand visual consistency and created a modular, easy-to-maintain design system that streamlined further development.
 
