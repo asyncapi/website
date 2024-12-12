@@ -154,7 +154,7 @@ By following these tips, you’ll not only increase your chances of being select
   },
 ]} />
 
-We want to take a moment to extend our gratitude to the mentors who went out of their time and way to support and pass on their knowledge and forge meaningful relationships with our mentees. This program would not be possible without their unwavering dedication. 
+We want to take a moment to extend our gratitude to the mentors above, whose decication to the program made them go above and beyond to support and pass on their knowledge and forge meaningful relationships with our mentees. This program would not be possible without their unwavering support. 
 
 A special shoutout goes to Postman, who has always allowed us to push some of our project ideas under their umbrella over the last few years, while it's sad to see this come to an end, we love and appreciate the opportunities, and the community as a whole will never take it for granted. 
 
