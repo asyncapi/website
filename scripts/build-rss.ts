@@ -1,5 +1,8 @@
+import assert from 'assert';
 import fs from 'fs/promises';
 import json2xml from 'jgexml/json2xml';
+
+import type { BlogPostTypes, Enclosure, RSS, RSSItemType } from '@/types/scripts/build-rss';
 
 async function getAllPosts() {
   const posts = (await import('../config/posts.json', { assert: { type: 'json' } })).default;
@@ -20,9 +23,9 @@ function clean(s: string) {
   return cleanS;
 }
 
-export async function rssFeed(type, title, desc, outputPath) {
+export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: string, outputPath: string) {
   try {
-    let posts = (await getAllPosts())[`${type}`];
+    let posts = (await getAllPosts())[`${type}`] as any[];
     const missingDatePosts = posts.filter((post) => !post.date);
 
     posts = posts.filter((post) => post.date);
@@ -33,7 +36,7 @@ export async function rssFeed(type, title, desc, outputPath) {
       if (i1.featured && !i2.featured) return -1;
       if (!i1.featured && i2.featured) return 1;
 
-      return i2Date - i1Date;
+      return i2Date.getTime() - i1Date.getTime();
     });
 
     if (missingDatePosts.length > 0) {
@@ -43,15 +46,15 @@ export async function rssFeed(type, title, desc, outputPath) {
     const base = 'https://www.asyncapi.com';
     const tracking = '?utm_source=rss';
 
-    const feed = {};
-    const rss = {};
+    const feed = {} as { rss: RSS };
+    const rss = {} as RSS;
 
     rss['@version'] = '2.0';
     rss['@xmlns:atom'] = 'http://www.w3.org/2005/Atom';
-    rss.channel = {};
-    rss.channel.title = title;
+    rss.channel = {} as RSS['channel'];
+    rss.channel.title = rssTitle;
     rss.channel.link = `${base}/${outputPath}`;
-    rss.channel['atom:link'] = {};
+    rss.channel['atom:link'] = {} as RSS['channel']['atom:link'];
     rss.channel['atom:link']['@rel'] = 'self';
     rss.channel['atom:link']['@href'] = rss.channel.link;
     rss.channel['atom:link']['@type'] = 'application/rss+xml';
@@ -75,17 +78,17 @@ export async function rssFeed(type, title, desc, outputPath) {
       const pubDate = new Date(date).toUTCString();
       const description = clean(excerpt);
       const guid = { '@isPermaLink': true, '': link };
-      const item = {
+      const item: RSSItemType = {
         title,
         description,
         link,
         category: type,
         guid,
         pubDate
-      };
+      } as RSSItemType;
 
       if (post.cover) {
-        const enclosure = {};
+        const enclosure = {} as Enclosure;
 
         enclosure['@url'] = base + post.cover;
         enclosure['@length'] = 15026; // dummy value, anything works
@@ -93,8 +96,11 @@ export async function rssFeed(type, title, desc, outputPath) {
         if (typeof enclosure['@url'] === 'string') {
           const tmp = enclosure['@url'].toLowerCase();
 
+          // eslint-disable-next-line max-depth
           if (tmp.indexOf('.png') >= 0) enclosure['@type'] = 'image/png';
+          // eslint-disable-next-line max-depth
           if (tmp.indexOf('.svg') >= 0) enclosure['@type'] = 'image/svg+xml';
+          // eslint-disable-next-line max-depth
           if (tmp.indexOf('.webp') >= 0) enclosure['@type'] = 'image/webp';
         }
         item.enclosure = enclosure;
@@ -108,6 +114,7 @@ export async function rssFeed(type, title, desc, outputPath) {
 
     await fs.writeFile(`./public/${outputPath}`, xml, 'utf8');
   } catch (err) {
+    assert(err instanceof Error);
     throw new Error(`Failed to generate RSS feed: ${err.message}`);
   }
 }
