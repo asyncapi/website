@@ -88,7 +88,7 @@ Our LinkedIn efforts are yielding fantastic results, with significant growth in 
 The X (Twitter) performance overview indicates our incredible performance growth:
 
 - **Tweets:** Shared an impressive 254 tweets, marking a staggering 25,300% increase. 
-- **Replies:** Engaged in 10 replies, growing by 1,000%, highlighting our community members are beginning to take interest in our X posts. 
+- **Replies:** Engaged in 10 replies, growing by 1,000%, highlighting our community members are beginning to take an interest in our X posts. 
 
 - **Retweets:** Earned 164 retweets, a remarkable 16,400% increase, amplifying our reach. 
 
