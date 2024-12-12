@@ -65,7 +65,7 @@ As part of the benefit of using Buffer, we have access to our social media analy
 ![AsyncAPI LinkedIn engagement metrics showing follower growth and post performance from Buffer analytics](/img/posts/marketing-images/linkedin-performance-statistics.webp)
 
 
-The images above show the LinkedIn performance is great. Here’s a breakdown of our LinkedIn metrics from Buffer’s analysis:
+The images above show that LinkedIn's performance is great. Here’s a breakdown of our LinkedIn metrics from Buffer’s analysis:
 
 - **Followers:** We’ve grown to 3,905 followers, marking a 19% increase in our audience size. 
 
