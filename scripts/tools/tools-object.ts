@@ -5,7 +5,7 @@ import Fuse from 'fuse.js';
 
 import { convertToJson } from '../utils';
 import { categoryList } from './categorylist';
-import schema from './tools-schema.json' assert { type: 'json' };
+import schema from './tools-schema.json';
 
 const ajv = new Ajv();
 
@@ -50,72 +50,77 @@ const createToolObject = async (toolFile, repositoryUrl = '', repoDescription = 
 // and creating a JSON tool object in which all the tools are listed in defined
 // categories order, which is then updated in `automated-tools.json` file.
 async function convertTools(data) {
-  const finalToolsObject = {};
-  const dataArray = data.items;
+  try {
+    let finalToolsObject = {};
+    const dataArray = data.items;
 
-  // initialising finalToolsObject with all categories inside it with proper elements in each category
-  for (const index in categoryList) {
-    finalToolsObject[categoryList[index].name] = {
-      description: categoryList[index].de
-    };
-  }
-
-  for (const tool of dataArray) {
-    try {
-      if (tool.name.startsWith('.asyncapi-tool')) {
-        // extracting the reference id of the repository which will be used to extract the path of the .asyncapi-tool file in the Tools repository
-        // ex: for a url = "https://api.github.com/repositories/351453552/contents/.asyncapi-tool?ref=61855e7365a881e98c2fe667a658a0005753d873"
-        // the text (id) present after '=' gives us a reference id for the repo
-        const reference_id = tool.url.split('=')[1];
-        const download_url = `https://raw.githubusercontent.com/${tool.repository.full_name}/${reference_id}/${tool.path}`;
-
-        const { data: toolFileContent } = await axios.get(download_url);
-
-        // some stuff can be YAML
-        const jsonToolFileContent = await convertToJson(toolFileContent);
-
-        // validating against JSON Schema for tools file
-        const isValid = await validate(jsonToolFileContent);
-
-        if (isValid) {
-          const repositoryUrl = tool.repository.html_url;
-          const repoDescription = tool.repository.description;
-          const isAsyncAPIrepo = tool.repository.owner.login === 'asyncapi';
-          const toolObject = await createToolObject(
-            jsonToolFileContent,
-            repositoryUrl,
-            repoDescription,
-            isAsyncAPIrepo
-          );
-
-          // Tool Object is appended to each category array according to Fuse search for categories inside Tool Object
-          jsonToolFileContent.filters.categories.forEach(async (category) => {
-            const categorySearch = await fuse.search(category);
-
-            if (categorySearch.length) {
-              const searchedCategoryName = categorySearch[0].item.name;
-
-              if (!finalToolsObject[searchedCategoryName].toolsList.find((element) => element === toolObject)) finalToolsObject[searchedCategoryName].toolsList.push(toolObject);
-            } else {
-              // if Tool object has a category, not defined in our categorylist, then this provides a `other` category to the tool.
-              if (!finalToolsObject.Others.toolsList.find((element) => element === toolObject))
-                finalToolsObject.Others.toolsList.push(toolObject);
-            }
-          });
-        } else {
-          console.error('Script is not failing, it is just dropping errors for further investigation');
-          console.error('Invalid .asyncapi-tool file.');
-          console.error(`Located in: ${tool.html_url}`);
-          console.error('Validation errors:', JSON.stringify(validate.errors, null, 2));
+    // initialising finalToolsObject with all categories inside it with proper elements in each category
+    finalToolsObject = Object.fromEntries(
+      categoryList.map((category) => [
+        category.name,
+        {
+          description: category.description,
+          toolsList: []
         }
-      }
-    } catch (err) {
-      console.error(err);
-      throw err;
-    }
-  }
+      ])
+    );
 
-  return finalToolsObject;
+    await Promise.all(
+      dataArray.map(async (tool) => {
+        try {
+          if (tool.name.startsWith('.asyncapi-tool')) {
+            const referenceId = tool.url.split('=')[1];
+            const downloadUrl = `https://raw.githubusercontent.com/${tool.repository.full_name}/${referenceId}/${tool.path}`;
+
+            const { data: toolFileContent } = await axios.get(downloadUrl);
+
+            // some stuff can be YAML
+            const jsonToolFileContent = await convertToJson(toolFileContent);
+
+            // validating against JSON Schema for tools file
+            const isValid = await validate(jsonToolFileContent);
+
+            if (isValid) {
+              const repositoryUrl = tool.repository.html_url;
+              const repoDescription = tool.repository.description;
+              const isAsyncAPIrepo = tool.repository.owner.login === 'asyncapi';
+              const toolObject = await createToolObject(
+                jsonToolFileContent,
+                repositoryUrl,
+                repoDescription,
+                isAsyncAPIrepo
+              );
+
+              // Tool Object is appended to each category array according to Fuse search for categories inside Tool Object
+              await Promise.all(
+                jsonToolFileContent.filters.categories.map(async (category) => {
+                  const categorySearch = await fuse.search(category);
+                  const targetCategory = categorySearch.length ? categorySearch[0].item.name : 'Others';
+                  const { toolsList } = finalToolsObject[targetCategory];
+
+                  if (!toolsList.includes(toolObject)) {
+                    toolsList.push(toolObject);
+                  }
+                })
+              );
+            } else {
+              console.error('Script is not failing, it is just dropping errors for further investigation');
+              console.error('Invalid .asyncapi-tool file.');
+              console.error(`Located in: ${tool.html_url}`);
+              console.error('Validation errors:', JSON.stringify(validate.errors, null, 2));
+            }
+          }
+        } catch (err) {
+          console.error(err);
+          throw err;
+        }
+      })
+    );
+
+    return finalToolsObject;
+  } catch (err) {
+    throw new Error(`Error processing tool: ${err.message}`);
+  }
 }
 
 export { convertTools, createToolObject };
