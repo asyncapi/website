@@ -38,7 +38,6 @@ Below is a summary of what we’ve accomplished this year and our priorities mov
 We’ve focused on laying the groundwork for long-term growth and engagement for the last six months. Our marketing initiatives have been designed to elevate AsyncAPI’s visibility, simplify our communication strategy, and ensure we’re prepared to grow alongside our community. 
 
 Here’s a summary of what we’ve done so far:
-
 - Launched targeted campaigns for our programs and events.
 - Held successful online events that engaged and informed over 350 community members and prospective contributors
 - Implemented regular content updates on our platforms to keep followers informed and engaged
