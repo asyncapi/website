@@ -33,7 +33,7 @@ To showcase the impact of this year’s participation, let’s look at some key 
 - For the first time, we had **4 ex-GSoC participants** return to the program as mentors, marking a significant milestone in building a cycle of mentorship and growth within our community.
 - We received an impressive **77 project proposals**, the most we've ever had in our GSoC journey.
 - Over **100 new contributors** joined our community from GSoC, showcasing the growing interest and engagement with AsyncAPI.
-- AsyncAPI proudly participated as an organization at the **GSoC Summit in San Francisco**, further showcasing our presence in the open-source ecosystem.
+- AsyncAPI not just proudly participated as an organization at the **GSoC Summit in San Francisco**, but had [Lukasz Gornicki](https://github.com/derberg) one of our community member delivering a lightning talk about the concept of fostering a system that guides GSoC contributors toward becoming maintainers with the support of mentors, which further showcases our commitment in strengthening the open-source ecosystem.
 
 We had a range of successful contributions that significantly advanced AsyncAPI projects such as:
 
@@ -41,9 +41,11 @@ We had a range of successful contributions that significantly advanced AsyncAPI 
 
 - **[Vishvamsinh Vaghela](https://github.com/vishvamsinh28)** enhanced the stability of scripts on the AsyncAPI website by ensuring all scripts functioned as expected and writing comprehensive unit tests to ensure smooth operations in the website, particularly as the number of contributors grew and more people worked on critical parts of the website.
 
-- **[Ankit Dash](https://github.com/helios2003)** added dynamic preview image generation for AsyncAPI documents shared via the AsyncAPI Studio website. Ankit also shared his GSoC journey and contributions during the [AsyncAPI Conference](https://www.youtube.com/watch?v=B9xI8BziM94).
+- **[Ankit Dash](https://github.com/helios2003)** added dynamic preview image generation for AsyncAPI documents shared via the AsyncAPI Studio website. Ankit also shared his GSoC journey and contributions during the online edition of the [AsyncAPI Conference](https://conference.asyncapi.com/venue/Online).
+<Youtube id="B9xI8BziM94">
 
-- **[Mintu Gogoi](https://github.com/Gmin2)** and **[Yuan Yuan](https://github.com/lmgyuan)** focused on the AsyncAPI Generator project, resolving existing issues and bugs, triaging new ones, improving code through refactoring, and writing tests. Yuan shared their GSoC experience at the [AsyncAPI Conference](https://www.youtube.com/watch?v=ap2ZiRN8MDs).
+- **[Mintu Gogoi](https://github.com/Gmin2)** and **[Yuan Yuan](https://github.com/lmgyuan)** focused on the AsyncAPI Generator project, resolving existing issues and bugs, triaging new ones, improving code through refactoring, and writing tests. Yuan shared their GSoC experience during the online edition of the [AsyncAPI Conference](https://conference.asyncapi.com/).
+<Youtube id="ap2ZiRN8MDs">
 
 - **[Ashmit JaiSarita Gupta](https://github.com/devilkiller-ag)** developed a UI kit for the AsyncAPI website, based on the stunning designs by **[Aishat Muibudeen](https://github.com/mayaleeeee)**. By using Storybook, Ashmit ensured brand visual consistency and created a modular, easy-to-maintain design system that streamlined further development.
 
@@ -156,7 +158,9 @@ We want to take a moment to extend our gratitude to the mentors who went out of 
 
 A special shoutout goes to Postman, who has always allowed us to push some of our project ideas under their umbrella over the last few years, while it's sad to see this come to an end, we love and appreciate the opportunities, and the community as a whole will never take it for granted. 
 
-And finally, a special thanks to Google for their belief in Free and Open Source Software(FOSS), for making this program possible every year as a show of their support to the open source ecosystem, and for allowing organizations like ours to bring passionate contributors and mentors to collaborate on a project all for the love of opensource. 
+A special thanks to Google for their belief in Free and Open Source Software(FOSS), for making this program possible every year as a show of their support to the open source ecosystem, and for allowing organizations like ours to bring passionate contributors and mentors to collaborate on a project all for the love of opensource.
+
+Finally, a wonderful shout to [Stephanie Taylor](https://www.linkedin.com/in/stephaniertaylor/), the incredible program manager of Google Summer of Code, for her unwavering support during the transition of our projects after Postman’s departure. Her assistance with transferring mentor stipends to our preferred account was phenomena, and we truly appreciate her dedication and guidance!
 
 
 ## Closing Remark 
