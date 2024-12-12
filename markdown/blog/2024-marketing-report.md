@@ -155,6 +155,7 @@ Looking forward, we’ll focus on:
 - **Promotions and Partnerships:** Expanding AsyncAPI’s reach through strategic partnerships and new promotional efforts
 
 - **Enhanced Engagement with the Community:** Creating more opportunities for community members to participate, share ideas, and grow their skills
+
 With these focus areas, we’re confident that AsyncAPI will continue to expand its influence and provide valuable support to both seasoned and new community members.
 
 ## Sponsor Involvement in the Marketing Working Group
