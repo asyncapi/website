@@ -163,7 +163,7 @@ The Marketing Working Group thrives on collaboration, and we’re fortunate to h
 
 ## Who can Join the Marketing Working Group?
 
-The working group is designed to be inclusive, welcoming not just sponsor representatives but also any community members who wish to contribute. Whether it’s sharing ideas, providing feedback, or helping execute campaigns.
+The working group is designed to be inclusive and welcoming, not just sponsor representatives but also any community members who wish to contribute. Whether it’s sharing ideas, providing feedback, or helping execute campaigns.
 
 This collaborative approach ensures that we have diverse perspectives guiding our efforts and allows the Marketing Working Group to act as a bridge between AsyncAPI’s community and its stakeholders. If you have ideas or want to contribute, we’d love to hear from you!
 
