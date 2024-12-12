@@ -58,7 +58,7 @@ The AsyncAPI Conf track took place on the 3rd day of the conference, featuring a
   className="text-center"
 />
 
-Leonid shared how EDAs introduce new data models, protocols, and APIs not found in the traditional REST/CRUD application stack. And how one can abstract these elements to make them feel familiar to application developers, allowing them to create streaming applications seamlessly.
+[Leonid Lukyanov](https://www.linkedin.com/in/leonid-lukyanov/) shared how EDAs introduce new data models, protocols, and APIs not found in the traditional REST/CRUD application stack. And how one can abstract these elements to make them feel familiar to application developers, allowing them to create streaming applications seamlessly.
 
 <Figure
   src="/img/posts/paris-conf-2024/leonid.webp"
