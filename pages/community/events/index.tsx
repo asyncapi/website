@@ -1,11 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
+import CommunityEvents from '@/components/CommunityEvents';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 import { makeStaticProps } from '@/utils/getStatic';
 
-import CommunityEvents from '@/components/CommunityEvents';
 import GoogleCalendarButton from '../../../components/buttons/GoogleCalendarButton';
 import ICSFileButton from '../../../components/buttons/ICSFileButton';
 import GenericLayout from '../../../components/layout/GenericLayout';

@@ -34,7 +34,6 @@ export default function Meeting({
   youtube = '',
   bg = ''
 }: MeetingProps) {
-
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
