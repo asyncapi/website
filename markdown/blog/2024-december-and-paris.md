@@ -24,7 +24,7 @@ The 2025 community building and maintenance goals proposal is currently open for
 
 ## AsyncAPI Conf in Paris 2024
 
-The AsyncAPI Conf was back again in Paris this December, thanks to [Mehdi Medjaoui](https://www.linkedin.com/in/mehdimedjaoui/) and the amazing team at [APIdays](https://www.apidays.global/) for hosting and sponsoring the venue. We participated in the three-day event, celebrating a year of the `API Open Standards Booth` alongside friends from OpenAPI, JSON Schema, and GraphQL.
+The AsyncAPI Conf was back again in Paris this December, thanks to [Mehdi Medjaoui](https://www.linkedin.com/in/mehdimedjaoui/) and the amazing team at [APIdays](https://www.apidays.global/) for hosting and sponsoring the venue. We participated in the three-day event, celebrating a year of the `API Standards` booth alongside friends from OpenAPI, JSON Schema, and GraphQL. Special thanks to all the members of the AsyncAPI community who could join the conference and help at the booth: [Hugo Guerrero](https://www.linkedin.com/in/hugoguerrero/), [Fran Méndez](https://www.linkedin.com/in/fmvilas/), [Richard Coppen](https://www.linkedin.com/in/richard-coppen/), [Hari Krishnan](https://www.linkedin.com/in/harikrishnan83/), and [Lukasz Gornicki](https://www.linkedin.com/in/lukasz-gornicki-a621914/).
 
 The AsyncAPI Conf track took place on the 3rd day of the conference, featuring an impressive lineup of sessions that attracted a diverse audience. The event was consistently packed, with attendees engaged throughout the day.
 
@@ -34,7 +34,7 @@ The AsyncAPI Conf track took place on the 3rd day of the conference, featuring a
   className="text-center"
 />
 
-Fran and Lukasz started the track with a welcome speech and mentioned that AsyncAPI recently celebrated its 8th anniversary in November.
+[Fran Méndez](https://www.linkedin.com/in/fmvilas/) and [Lukasz Gornicki](https://www.linkedin.com/in/lukasz-gornicki-a621914/) started the track with a welcome speech and mentioned that AsyncAPI recently celebrated its 8th anniversary in November.
 
 <Figure
   src="/img/posts/paris-conf-2024/lukasz-and-fran.webp"
@@ -42,7 +42,7 @@ Fran and Lukasz started the track with a welcome speech and mentioned that Async
   className="text-center"
 />
 
-Naresh Jain and Pierre Gauthier presented their keynote on `TM Forum's AsyncAPI for a New Era of Event-Driven Architecture`. During the session, they announced AsyncAPI as the standard, with over 100 telecommunications APIs already in production. TM Forum has around 800 telco companies, and they will implement all APIs in an async manner, extensively utilizing the request-reply pattern.
+[Naresh Jain](https://www.linkedin.com/in/nareshjain/) and [Pierre Gauthier](https://www.linkedin.com/in/pierre-gauthier-46080916/) presented their keynote on `TMForum's AsyncAPI for a New Era of Event-Driven Architecture`. During the session, Pierre announced TMForum adopts AsyncAPI as a standard, with over 120 telco APIs already in production. TMForum has around 800 telco companies, and they will implement all APIs in an async manner, extensively utilizing the request-reply pattern.
 
 <Figure
   src="/img/posts/paris-conf-2024/naresh-and-pierre.webp"
@@ -50,7 +50,7 @@ Naresh Jain and Pierre Gauthier presented their keynote on `TM Forum's AsyncAPI 
   className="text-center"
 />
 
-Frank demonstrated how treating API governance as an enabler unlocks the ability to deliver compelling developer experiences for producers and consumers in event-driven architecture (EDA).
+[Frank Kilcommins](https://www.linkedin.com/in/frank-kilcommins) demonstrated how treating API governance as an enabler unlocks the ability to deliver compelling developer experiences for producers and consumers in event-driven architecture (EDA).
 
 <Figure
   src="/img/posts/paris-conf-2024/frank.webp"
@@ -66,7 +66,7 @@ Leonid shared how EDAs introduce new data models, protocols, and APIs not found 
   className="text-center"
 />
 
-Hugo then shared how the AsyncAPI Initiative is not only in charge of the specification but has created open-source projects to make it easier for developers to work with the specification documents.
+[Hugo Guerrero](https://www.linkedin.com/in/hugoguerrero/) then shared how the AsyncAPI Initiative is not only in charge of the specification but has created open-source projects to make it easier for developers to work with the specification documents.
 
 <Figure
   src="/img/posts/paris-conf-2024/hugo.webp"
@@ -74,7 +74,7 @@ Hugo then shared how the AsyncAPI Initiative is not only in charge of the specif
   className="text-center"
 />
 
-Julien and Alessandro shared how organizations can harness the full potential of event-driven integration by leveraging GoldenGate Data Streams, AsyncAPI, and Solace PubSub+ Event Mesh.
+[Julien Testut](https://www.linkedin.com/in/julientestut/) and [Alessandro Cagnetti](https://www.linkedin.com/in/cagnetti/) shared how organizations can harness the full potential of event-driven integration by leveraging GoldenGate Data Streams, AsyncAPI, and Solace PubSub+ Event Mesh. They shared a great use case for AI and how it can be trained real-time and standardized with AsyncAPI.
 
 <Figure
   src="/img/posts/paris-conf-2024/julien-and-alessandro.webp"
@@ -82,7 +82,7 @@ Julien and Alessandro shared how organizations can harness the full potential of
   className="text-center"
 />
 
-Annegret explained how to design effective asynchronous APIs by using an API-first approach. The importance of defining Kafka topics and structuring your definitions.
+[Annegret Junker](https://www.linkedin.com/in/dr-annegret-junker-141a99a4/) explained how to design effective asynchronous APIs by using an API-first approach. The importance of defining Kafka topics and structuring your definitions.
 
 <Figure
   src="/img/posts/paris-conf-2024/annegret.webp"
@@ -91,7 +91,7 @@ Annegret explained how to design effective asynchronous APIs by using an API-fir
 />
 
 
-Jonathan spoke on how leveraging AI agents with AsyncAPI can create conversational interfaces that dynamically interact with event streams and asynchronous messaging systems.
+[Jonathan Michaux](https://www.linkedin.com/in/jmcx/) spoke on how leveraging AI agents with AsyncAPI can create conversational interfaces that dynamically interact with event streams and asynchronous messaging systems.
 
 <Figure
   src="/img/posts/paris-conf-2024/jonathan.webp"
@@ -99,7 +99,7 @@ Jonathan spoke on how leveraging AI agents with AsyncAPI can create conversation
   className="text-center"
 />
 
-Hari and Joel touched on leveraging the AsyncAPI specification as an executable contract and how to isolate and test each component within an EDA.
+[Hari Krishnan](https://www.linkedin.com/in/harikrishnan83) and [Joel Rosario](https://www.linkedin.com/in/joel-c-rosario/) touched on leveraging the AsyncAPI specification as an executable contract and how to isolate and test each component within an EDA.
 
 <Figure
   src="/img/posts/paris-conf-2024/hari-and-joel.webp"
@@ -107,7 +107,7 @@ Hari and Joel touched on leveraging the AsyncAPI specification as an executable 
   className="text-center"
 />
 
-Laurent and Hugo ended the day by explaining how to use Microcks to provide a solution for mocking and contract-testing your async APIs without extensive coding and empowering you to build extensive and reliable integration tests.
+[Laurent Broudoux](https://www.linkedin.com/in/laurentbroudoux/) and [Hugo Guerrero](https://www.linkedin.com/in/hugoguerrero/) ended the day by explaining how to use Microcks to provide a solution for mocking and contract-testing your async APIs without extensive coding and empowering you to build extensive and reliable integration tests.
 
 <Figure
   src="/img/posts/paris-conf-2024/laurent-and-hugo.webp"
