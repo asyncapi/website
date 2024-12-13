@@ -143,7 +143,7 @@ So far, $8,264.37 has been spent on maintaining the store and logistics. As part
 
 ## Marketing Strategy Document and Student Ambassador Program
 
-To guide our efforts, [we’re developing a comprehensive Strategy Document](https://github.com/asyncapi/community/pull/1358) that outlines our objectives, priorities, and target initiatives. The document outlines our upcoming campaigns, events, and community engagement efforts.
+To guide our efforts, we're currently developing a comprehensive Strategy Document (PR [#1358](https://github.com/asyncapi/community/pull/1358)) that will outline our objectives, priorities, and target initiatives. Once finalized, the document will guide our upcoming campaigns, events, and community engagement efforts.
 
 Additionally, we are planning to introduce the [Student Ambassador Program](https://github.com/asyncapi/community/pull/1333), which aims to nurture future AsyncAPI advocates and contributors at the student level. The program will offer students guidance, resources, and community connections to help them grow within the AsyncAPI ecosystem. We believe this will strengthen our community and ensure that AsyncAPI remains a go-to resource for emerging talent.
 
