@@ -41,7 +41,7 @@ Here’s a summary of what we’ve done so far:
 - Launched targeted campaigns for our programs and events.
 - Held successful online event that engaged and informed over 350 community members and prospective contributors
 - Implemented regular content updates on our platforms to keep followers informed and engaged
-- Initiated the Student Ambassador Programs that will bring more attention to AsyncAPI’s mission and tools, further building our presence and strengthening community ties
+- Proposed the Student Ambassador Program initiative that aims to bring more attention to AsyncAPI's mission and tools, further building our presence and strengthening community ties
 
 ## Implementing Buffer for Social Media Management
 
