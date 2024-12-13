@@ -10,7 +10,7 @@ authors:
     photo: /img/avatars/bami.webp
     link: https://www.linkedin.com/in/atinuke-oluwabamikemi-kayode-5b838b1b7/
     byline: AsyncAPI Community Marketing Specialist
-excerpt: 'Marketing is key to open source success, connecting technical excellence with community engagement. It highlights strategic initiatives and social media efforts'
+excerpt: 'A comprehensive review of AsyncAPI Marketing Working Group achievements in 2024, including social media growth, store closure updates, and future initiatives like the Student Ambassador Program'
 featured: true
 ---
 
@@ -38,8 +38,11 @@ Below is a summary of what we’ve accomplished this year and our priorities mov
 We’ve focused on laying the groundwork for long-term growth and engagement for the last six months. Our marketing initiatives have been designed to elevate AsyncAPI’s visibility, simplify our communication strategy, and ensure we’re prepared to grow alongside our community. 
 
 Here’s a summary of what we’ve done so far:
-- Launched targeted social media campaigns for our programs and events, supported by our community of designers who create engaging media content. Such as the #AsyncAPIParis2024 campaign and #YourAsyncAPIStory to celebrate AsyncAPI at 8!
-- Held successful online event that engaged and informed over 350 community members and prospective contributors
+- Launched targeted social media campaigns that reached X impressions, supported by our community of designers:
+  - #AsyncAPIParis2024 campaign 
+  - #YourAsyncAPIStory celebrating AsyncAPI at 8 
++Held successful [online event](link-to-recording) that engaged and informed over 350 community members and prospective contributors
+- Held successful [online event](https://www.youtube.com/watch?v=XGn8v0yBfOI)that engaged and informed over 350 community members and prospective contributors
 - Implemented regular content updates on our platforms to keep followers informed and engaged
 - Proposed the Student Ambassador Program initiative that aims to bring more attention to AsyncAPI's mission and tools, further building our presence and strengthening community ties
 
@@ -180,7 +183,6 @@ This report highlights the strides made by the AsyncAPI Marketing Working Group,
 Looking ahead, our focus will be on implementing the strategy document, fostering community growth, launching the Student Ambassador Program, and driving impactful promotions and partnerships. These efforts aim to strengthen the AsyncAPI ecosystem and create meaningful opportunities for collaboration and engagement.
 
 
-If you have any questions, suggestions, or ideas, please feel free to reach out to me on Slack [Bami](https://asyncapi.slack.com/archives/D070U11CU1G). Here's to another successful year of growth, collaboration, and impact. 
-
+If you have any questions, suggestions, or ideas, please feel free to reach out to me on Slack [Atinuke (Bami) Kayode](https://asyncapi.slack.com/archives/D070U11CU1G).
 
 
