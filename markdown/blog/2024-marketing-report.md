@@ -41,9 +41,11 @@ Here’s a summary of what we’ve done so far:
 - Launched targeted social media campaigns that reached X impressions, supported by our community of designers:
   - #AsyncAPIParis2024 campaign 
   - #YourAsyncAPIStory celebrating AsyncAPI at 8 
-+Held successful [online event](link-to-recording) that engaged and informed over 350 community members and prospective contributors
+
 - Held successful [online event](https://www.youtube.com/watch?v=XGn8v0yBfOI)that engaged and informed over 350 community members and prospective contributors
+
 - Implemented regular content updates on our platforms to keep followers informed and engaged
+
 - Proposed the Student Ambassador Program initiative that aims to bring more attention to AsyncAPI's mission and tools, further building our presence and strengthening community ties
 
 ## Implementing Buffer for Social Media Management
