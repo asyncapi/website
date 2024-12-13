@@ -1,6 +1,6 @@
 ---
 title: "Marketing Report: December 2024"
-date: 2024-12-12T06:00:00+01:00
+date: 2024-12-16T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
@@ -10,7 +10,7 @@ authors:
     photo: /img/avatars/bami.webp
     link: https://www.linkedin.com/in/atinuke-oluwabamikemi-kayode-5b838b1b7/
     byline: AsyncAPI Community Marketing Specialist
-excerpt: 'Marketing is key to open source success, connecting technical excellence with community engagement. It highlights strategic initiatives and SM efforts'
+excerpt: 'Marketing is key to open source success, connecting technical excellence with community engagement. It highlights strategic initiatives and social media efforts'
 featured: true
 ---
 
@@ -38,7 +38,7 @@ Below is a summary of what we’ve accomplished this year and our priorities mov
 We’ve focused on laying the groundwork for long-term growth and engagement for the last six months. Our marketing initiatives have been designed to elevate AsyncAPI’s visibility, simplify our communication strategy, and ensure we’re prepared to grow alongside our community. 
 
 Here’s a summary of what we’ve done so far:
-- Launched targeted campaigns for our programs and events.
+- Launched targeted social media campaigns for our programs and events, supported by our community of designers who create engaging media content. Such as the #AsyncAPIParis2024 campaign and #YourAsyncAPIStory to celebrate AsyncAPI at 8!
 - Held successful online event that engaged and informed over 350 community members and prospective contributors
 - Implemented regular content updates on our platforms to keep followers informed and engaged
 - Proposed the Student Ambassador Program initiative that aims to bring more attention to AsyncAPI's mission and tools, further building our presence and strengthening community ties
@@ -56,55 +56,47 @@ Here are some of the benefits of using the Buffer subscription
 
 Please note that I currently do not have direct access to AsyncAPI’s social media accounts. Buffer provides an effective solution for posting content, monitoring performance, and maintaining the high standards of AsyncAPI's public presence without broad access.
 
-As part of the benefit of using Buffer, we have access to our social media analytics. Below are the analytics for LinkedIn and X (formally Twitter) from May 20th to December 10th, 2024.
+As part of the benefit of using Buffer, we have access to our social media analytics. Below are the analytics for LinkedIn and X (formally Twitter) from January 1st to December 12th, 2024.
 
 
-![AsyncAPI LinkedIn engagement metrics showing follower growth and post metrics from Buffer analytics](/img/posts/marketing-images/linkedIn-metrics-insights.webp)
+
+<Figure
+  src="/img/posts/marketing-images/linkedIn-metrics-insights.webp"
+  caption="AsyncAPI LinkedIn graph showing metrics insights from Buffer analytics."
+  className="text-center"
+/>
 
 
-![AsyncAPI LinkedIn engagement metrics showing follower growth and post performance from Buffer analytics](/img/posts/marketing-images/linkedin-performance-statistics.webp)
+
+<Figure
+  src="/img/posts/marketing-images/linkedin-performance-statistics.webp"
+  caption="AsyncAPI LinkedIn performance statistics from Buffer analytics."
+  className="text-center"
+/>
 
 
-The images above show that LinkedIn's performance is great. Here’s a breakdown of our LinkedIn metrics from Buffer’s analysis:
 
-- **Followers:** We’ve grown to 3,905 followers, marking a 19% increase in our audience size. 
-
-- **Impressions:** Our posts were seen 68,440 times, a remarkable 120% growth, indicating broader visibility. 
-
-- **New Followers:** We gained 620 new followers, reflecting a 119% increase in audience acquisition. 
-
-- **Clicks:** Our content drove 3,213 clicks, an impressive 205% growth, showcasing heightened interest and engagement.
-
-- **Posts:** We published 176 posts, up by 209%, emphasizing consistent and active content sharing. 
-
-- **Engagement Rate:** Our engagement rate reached 5.83%, improving by 31%, indicating stronger interactions with our audience. 
-
-Our LinkedIn efforts are yielding fantastic results, with significant growth in visibility, engagement, and audience acquisition. The impressive metrics reflect the value and relevance of our content. However, we're still up for improvement.
-
-![AsyncAPI Twitter (X) engagement metrics showing follower growth and tweet metrics from Buffer analytics](/img/posts/marketing-images/x-metrics-insights.webp)
-
-![AsyncAPI Twitter (X) engagement metrics showing follower growth and tweet performance from Buffer analytics](/img/posts/marketing-images/x-performance-statistics.webp)
-
-The X (Twitter) performance overview indicates our incredible performance growth:
-
-- **Tweets:** Shared an impressive 254 tweets, marking a staggering 25,300% increase. 
-- **Replies:** Engaged in 10 replies, growing by 1,000%, highlighting our community members are beginning to take an interest in our X posts. 
-
-- **Retweets:** Earned 164 retweets, a remarkable 16,400% increase, amplifying our reach. 
-
-- **Clicks:** Drove 348 clicks, a phenomenal 34,800% growth, reflecting strong audience interest.
-
-- **Impressions:** Achieved 50,413 impressions, a mind-blowing 5.04M% increase, dramatically boosting visibility. 
-
-- **Likes:** Garnered 424 likes, growing by 42,400%, showing that our content resonated well. 
-
-- **Engagements:** Secured 1,147 total engagements, up by an incredible 115K%, indicating high interactivity. 
-
-- **New Followers:** Welcomed 34 new followers, a 3,400% increase, expanding our community. 
+In 2024, our LinkedIn performance saw impressive growth: a 48% increase in followers (3,910 total), 104% more impressions (100,328), and 91% more new followers (911). Engagement soared with a 219% rise in clicks (4,295 total) and a 9% improved engagement rate (5.32%). We also published 44% more posts (233), highlighting consistent content efforts.
 
 
-Our efforts on X have paid off significantly, with astronomical growth across key metrics. 
 
+<Figure
+  src="/img/posts/marketing-images/linkedin-performance-statistics.webp"
+  caption="AsyncAPI Twitter (X) mereics insights from Buffer analytics."
+  className="text-center"
+/>
+
+
+
+
+<Figure
+  src="/img/posts/marketing-images/x-performance-statistics.webp"
+  caption="AsyncAPI LinkedIn performance statistics from Buffer analytics."
+  className="text-center"
+/>
+
+
+Our performance on X (Twitter) has been extraordinary, with significant growth in tweets, replies, retweets, clicks, impressions, likes, and overall engagements. These results highlight increased visibility, audience interactions, and a stronger community connection.
 
 ## Closing the Online Store
 
@@ -112,7 +104,12 @@ One significant change is the closure of our online store. After reviewing our b
 
 As of June 2024, the items in the store were 2383. The goal was to disburse all of the items by December 2024.
 
-![Chart showing breakdown of AsyncAPI merchandise inventory as of June 2024](/img/posts/marketing-images/merchandise.webp)
+
+<Figure
+  src="/img/posts/marketing-images/merchandise.webp"
+  caption="Chart showing breakdown of AsyncAPI merchandise inventory as of June 2024."
+  className="text-center"
+/>
 
 
  Below is the breakdown of the item distribution and what we have left in the store.
@@ -131,7 +128,14 @@ As of June 2024, the items in the store were 2383. The goal was to disburse all 
 
 So far, $8,264.37 has been spent on maintaining the store and logistics. As part of the benefit of closing the store, merchandise will be made locally at the event location, and others will be made as per request. [You can find all the information on the distribution board](https://docs.google.com/spreadsheets/d/1K7xo-ihlHcVoSYRg1U6SsvQDreEF1S6z/r/edit/edit?gid=1275706868#gid=1275706868).
 
-![Graph showing monthly expenditure breakdown for the AsyncAPI merchandise store](/img/posts/marketing-images/store-report.webp)
+
+
+<Figure
+  src="/img/posts/marketing-images/store-report.webp"
+  caption="Graph showing monthly expenditure breakdown for the AsyncAPI merchandise store."
+  className="text-center"
+/>
+
 
 
 [For more details on the store expenses, please go through our Open Collective page](https://opencollective.com/asyncapi/expenses?type=INVOICE&period=2023-12-31T23%3A00%3A00.000Z%E2%86%92all&searchTerm=Pinnacle+Branding&offset=0&limit=10)
@@ -139,7 +143,7 @@ So far, $8,264.37 has been spent on maintaining the store and logistics. As part
 
 ## Marketing Strategy Document and Student Ambassador Program
 
-To guide our efforts, [we’ve developed a comprehensive Strategy Document](https://github.com/asyncapi/community/pull/1358) that outlines our objectives, priorities, and target initiatives. The document outlines our upcoming campaigns, events, and community engagement efforts.
+To guide our efforts, [we’re developing a comprehensive Strategy Document](https://github.com/asyncapi/community/pull/1358) that outlines our objectives, priorities, and target initiatives. The document outlines our upcoming campaigns, events, and community engagement efforts.
 
 Additionally, we are planning to introduce the [Student Ambassador Program](https://github.com/asyncapi/community/pull/1333), which aims to nurture future AsyncAPI advocates and contributors at the student level. The program will offer students guidance, resources, and community connections to help them grow within the AsyncAPI ecosystem. We believe this will strengthen our community and ensure that AsyncAPI remains a go-to resource for emerging talent.
 
@@ -160,7 +164,7 @@ With these focus areas, we’re confident that AsyncAPI will continue to expand 
 
 ## Sponsor Involvement in the Marketing Working Group
 
-The Marketing Working Group thrives on collaboration, and we’re fortunate to have active participation from representatives of our sponsors, including Christophe Dujarric from Bump.sh and Georgie Burrows from Gravitee.io. Their insights, ideas, and expertise are invaluable in shaping the group’s direction and ensuring that AsyncAPI’s marketing strategies align with the broader goals of our sponsors and the community.
+The Marketing Working Group thrives on collaboration, and we’re fortunate to have active participation from representatives of our sponsors, including [Christophe Dujarric](https://www.linkedin.com/in/christophedujarric/) from [Bump.sh](https://bump.sh/) and [Georgie Burrows](https://www.linkedin.com/in/georgieburrows/) from [Gravitee.io](https://www.gravitee.io/). Their insights, ideas, and expertise are invaluable in shaping the group’s direction and ensuring that AsyncAPI’s marketing strategies align with the broader goals of our sponsors and the community.
 
 ## Who can Join the Marketing Working Group?
 
@@ -173,16 +177,10 @@ This collaborative approach ensures that diverse perspectives guide our efforts 
 
 This report highlights the strides made by the AsyncAPI Marketing Working Group, including targeted campaigns, streamlined social media management with Buffer, impactful merchandise distribution, the introduction of a comprehensive strategy document, and the launch of the Student Ambassador Program. We've also made strategic decisions, such as closing the online store, to optimize our budget for initiatives that deliver greater value to the community.
 
-So far, our social media analytics are looking good.
-
-
-![Overall social media performance metrics from Buffer showing engagement across all platforms](/img/posts/marketing-images/buffer-report.webp)
-
-
 Looking ahead, our focus will be on implementing the strategy document, fostering community growth, launching the Student Ambassador Program, and driving impactful promotions and partnerships. These efforts aim to strengthen the AsyncAPI ecosystem and create meaningful opportunities for collaboration and engagement.
 
 
-If you have any questions, suggestions, or ideas, please feel free to reach out to me on Slack [@Bami](U070DE02VQX). Here’s to another successful year of growth, collaboration, and impact. 
+If you have any questions, suggestions, or ideas, please feel free to reach out to me on Slack [Bami](https://asyncapi.slack.com/archives/D070U11CU1G). Here's to another successful year of growth, collaboration, and impact. 
 
 
 
