@@ -42,7 +42,7 @@ Here’s a summary of what we’ve done so far:
   - #AsyncAPIParis2024 campaign 
   - #YourAsyncAPIStory celebrating AsyncAPI at 8 
 
-- Held successful [online event](https://www.youtube.com/watch?v=XGn8v0yBfOI)that engaged and informed over 350 community members and prospective contributors
+- Held successful [online event](https://www.youtube.com/watch?v=XGn8v0yBfOI) that engaged and informed over 350 community members and prospective contributors
 
 - Implemented regular content updates on our platforms to keep followers informed and engaged
 
