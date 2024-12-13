@@ -81,7 +81,7 @@ In 2024, our LinkedIn performance saw impressive growth: a 48% increase in follo
 
 
 <Figure
-  src="/img/posts/marketing-images/linkedin-performance-statistics.webp"
+  src="/img/posts/marketing-images/x-metrics-insights.webp"
   caption="AsyncAPI Twitter (X) mereics insights from Buffer analytics."
   className="text-center"
 />
@@ -91,7 +91,7 @@ In 2024, our LinkedIn performance saw impressive growth: a 48% increase in follo
 
 <Figure
   src="/img/posts/marketing-images/x-performance-statistics.webp"
-  caption="AsyncAPI LinkedIn performance statistics from Buffer analytics."
+  caption="AsyncAPI Twitter (X) performance statistics from Buffer analytics."
   className="text-center"
 />
 
