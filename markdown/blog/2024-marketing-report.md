@@ -38,7 +38,7 @@ Below is a summary of what we’ve accomplished this year and our priorities mov
 We’ve focused on laying the groundwork for long-term growth and engagement for the last six months. Our marketing initiatives have been designed to elevate AsyncAPI’s visibility, simplify our communication strategy, and ensure we’re prepared to grow alongside our community. 
 
 Here’s a summary of what we’ve done so far:
-- Launched targeted social media campaigns that reached X impressions, supported by our community of designers:
+- Launched targeted social media campaigns that reached 5,031 impressions, supported by our community of designers:
   - #AsyncAPIParis2024 campaign 
   - #YourAsyncAPIStory celebrating AsyncAPI at 8 
 
@@ -67,6 +67,7 @@ As part of the benefit of using Buffer, we have access to our social media analy
 
 <Figure
   src="/img/posts/marketing-images/linkedIn-metrics-insights.webp"
+  alt="Graph showing AsyncAPI LinkedIn metrics including follower growth, engagement rates, and post performance over time"
   caption="AsyncAPI LinkedIn graph showing metrics insights from Buffer analytics."
   className="text-center"
 />
@@ -75,9 +76,11 @@ As part of the benefit of using Buffer, we have access to our social media analy
 
 <Figure
   src="/img/posts/marketing-images/linkedin-performance-statistics.webp"
+  alt="Graph showing AsyncAPI LinkedIn performance including follower growth, engagement rates, and post performance over time"
   caption="AsyncAPI LinkedIn performance statistics from Buffer analytics."
   className="text-center"
 />
+ 
 
 
 
@@ -87,6 +90,7 @@ In 2024, our LinkedIn performance saw impressive growth: a 48% increase in follo
 
 <Figure
   src="/img/posts/marketing-images/x-metrics-insights.webp"
+  alt="Graph showing AsyncAPI X metrics including follower growth, engagement rates, and post performance over time"
   caption="AsyncAPI Twitter (X) mereics insights from Buffer analytics."
   className="text-center"
 />
@@ -96,6 +100,7 @@ In 2024, our LinkedIn performance saw impressive growth: a 48% increase in follo
 
 <Figure
   src="/img/posts/marketing-images/x-performance-statistics.webp"
+  alt="Graph showing AsyncAPI X performance including follower growth, engagement rates, and post performance over time"
   caption="AsyncAPI Twitter (X) performance statistics from Buffer analytics."
   className="text-center"
 />
@@ -140,6 +145,7 @@ So far, $8,264.37 has been spent on maintaining the store and logistics. As part
   caption="Graph showing monthly expenditure breakdown for the AsyncAPI merchandise store."
   className="text-center"
 />
+
 
 
 
