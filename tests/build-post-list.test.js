@@ -25,11 +25,14 @@ describe('buildPostList', () => {
     await fs.remove(tempDir);
   });
 
-  it('writes the result to a file', async () => {
+  it('writes a valid JSON file with the expected structure', async () => {
     await buildPostList(postDirectories, tempDir, writeFilePath);
 
     const outputExists = await fs.pathExists(writeFilePath);
     expect(outputExists).toBe(true);
+
+     const content = await fs.readFile(writeFilePath, 'utf-8');
+     expect(() => JSON.parse(content)).not.toThrow();
   });
 
   it('correctly structures docs entries', async () => {
@@ -134,7 +137,7 @@ describe('buildPostList', () => {
     const invalidDir = [join(tempDir, 'non-existent-dir'), '/invalid'];
     await expect(
       buildPostList([invalidDir], tempDir, writeFilePath),
-    ).rejects.toThrow();
+    ).rejects.toThrow(/Error while building post list: ENOENT/);
   });
 
   it('does not process specification files without a title', async () => {
@@ -209,7 +212,7 @@ describe('buildPostList', () => {
     await expect(
       buildPostList(postDirectories, undefined, writeFilePath),
     ).rejects.toThrow(
-      /Error while building post list: basePath and writeFilePath are required/,
+      "Error while building post list: Error while building post list: basePath is required",
     );
   });
 
@@ -217,7 +220,7 @@ describe('buildPostList', () => {
     await expect(
       buildPostList(postDirectories, tempDir, undefined),
     ).rejects.toThrow(
-      /Error while building post list: basePath and writeFilePath are required/,
+      "Error while building post list: Error while building post list: writeFilePath is required",
     );
   });
 
@@ -244,6 +247,17 @@ describe('buildPostList', () => {
     
     it('handles mixed format heading IDs', () => {
       expect(slugifyToC('## Heading {#id} {<a name="name"/>}')).toBe('id');
+    });
+
+    it('handles invalid input types gracefully', () => {
+      expect(slugifyToC(null)).toBe('');
+      expect(slugifyToC(undefined)).toBe('');
+      expect(slugifyToC(123)).toBe('');
+    });
+
+    it('ignores invalid characters in heading IDs', () => {
+      expect(slugifyToC('## Heading {#invalid@id}')).toBe('');
+      expect(slugifyToC('## Heading {#invalid spaces}')).toBe('');
     });
   });
 });

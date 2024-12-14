@@ -29,7 +29,10 @@ async function buildPostList(postDirectories, basePath, writeFilePath) {
   try {
 
     if (!basePath || !writeFilePath) {
-      throw new Error('Error while building post list: basePath and writeFilePath are required');
+      const missing = [];
+      if (!basePath) missing.push('basePath');
+      if (!writeFilePath) missing.push('writeFilePath');
+      throw new Error(`Error while building post list: ${missing.join(' and ')} ${missing.length > 1 ? 'are' : 'is'} required`);
     }
 
     if (postDirectories.length === 0) {
@@ -57,7 +60,7 @@ async function walkDirectories(directories, resultObj, basePath, sectionTitle, s
       const fileName = posix.join(directory, file);
       const fileNameWithSection = posix.join(fileName, '_section.mdx')
       const normalizedSlug = posix.join('/', relative(basePath, fileName))
-      const slug = normalizedSlug.replace(/\\/g,'/')
+      const slug = normalizedSlug.replace(/\\/g, '/')
       const slugElements = slug.split('/')
 
       if (await isDirectory(fileName)) {
@@ -143,15 +146,16 @@ async function walkDirectories(directories, resultObj, basePath, sectionTitle, s
 }
 
 function slugifyToC(str) {
+  if (typeof str !== 'string') return '';
   let slug = '';
 
   // Match heading IDs like {# myHeadingId}
-  const headingIdMatch = str.match(/[\s]?\{\#([\w\d\-_]+)\}/);
+  const headingIdMatch = str.match(/[\s]*\{#([a-zA-Z0-9\-_]+)\}/);
   if (headingIdMatch && headingIdMatch[1].trim()) {
     slug = headingIdMatch[1];
   } else {
     // Match heading IDs like {<a name="myHeadingId"/>}
-    const anchorTagMatch = str.match(/[\s]*<a[\s]+name="([\w\d\-_]+)"/);
+    const anchorTagMatch = str.match(/[\s]*<a[\s]+name="([a-zA-Z0-9\-_]+)"/);
     if (anchorTagMatch && anchorTagMatch[1].trim()) {
       slug = anchorTagMatch[1];
     }
@@ -166,7 +170,7 @@ async function isDirectory(dir) {
 }
 
 function capitalize(text) {
-  return text.split(/[\s\-]/g).map(word => `${word[0].toUpperCase()}${word.substr(1)}`).join(' ')
+  return text.replace(/(?:^|\s|-)([a-z])/g, (_, char) => char.toUpperCase())
 }
 
 module.exports = { slugifyToC, buildPostList }
