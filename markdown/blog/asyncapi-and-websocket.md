@@ -295,15 +295,12 @@ components:
            enum:
              - join
              - leave
-         username:
-           type: string
-           description: Display name of the user
          timestamp:
            type: string
            format: date-time
          required:
            - userId
-           - username
+           - type
            - timestamp
      
 ```
@@ -330,7 +327,7 @@ operations:
   sendMessage:
   ...
   
-userJoin: # Newly added operation
+userJoin:
   summary: User join notification
   description: Notifies when a new user joins the chat room
   action: receive
@@ -339,7 +336,7 @@ userJoin: # Newly added operation
   messages:
     - $ref: '#/channels/chat/messages/userStatus'
 
-userLeave: # Newly added operation
+userLeave:
   summary: User leave notification
   description: Notifies when a user leaves the chat room
   action: receive
@@ -395,9 +392,9 @@ As you can see we added a security property to the development server, and one t
 
 Remember when we discussed bindings in the **Channel** section? These bindings allow us to add WebSocket-specific details to customize the connection.
 
-For instance, if we want users to send messages to specific chat rooms, we could traditionally create a channel with a parameter like `/{roomId}`, which establishes a new connection for each room a user joins. However, this can lead to multiple connections, which we want to avoid. Instead, we’ll use **channel bindings**.
+For instance, if we want to allow users to connect to multiple rooms simultaneously and send messages to any of them, we need an efficient approach than the traditional method. Typically, a channel with a parameter like /{roomId} would be created. However, this approach has a major drawback such that for every room a user is trying to join, a new connection is going to be established, which doesn't align well with our use case. Instead, we can leverage channel bindings.
 
-Bindings are protocol-specific, so we can provide details unique to WebSocket. Rather than using parameters, we’ll use the **chat** channel and pass the `roomId` in the query parameters, as shown below:
+Since bindings are protocol-specific, we can tailor the implementation to WebSocket. Instead of relying on parameters, we’ll extend our **chat** channel by including `roomIds` as a query parameter, as shown below:
 
 ```
 chat:
@@ -407,14 +404,14 @@ chat:
       query:
         type: object
         properties:
-          roomId:
+          roomIds:
             type: string
             descritpion: The unique identifier of the chat room
             pattern: ^[a-zA-Z0-9-]+$
         additionalProperties: false
 ```
 
-By adding these bindings, users can connect once to the `/` address and use the same connection to join multiple rooms by simply updating the `roomId` query parameter, which would look like this `/?roomId={roomId}`. This approach allows a single connection to be used across various chat rooms, making it ideal for chatting in multiple channels simultaneously.
+By adding these bindings, users can establish a connection once to the `/` address and use the same connection to join multiple rooms by simply including the list of rooms in the `roomIds` query parameter, which would look like this `/?roomIds=room1,room2,room3`. This approach allows a single connection to be used across various chat rooms, making it ideal for exchanging messages in multiple channels simultaneously.
 
 
 ### Step 9 - Bringing Everything together
@@ -436,11 +433,9 @@ servers:
     security:
       - $ref: '#/components/securitySchemes/apiKeyHeader'
 
-  
 channels:
   chat:
     address: /
-    
     bindings:
       ws:
         query:
@@ -448,10 +443,10 @@ channels:
           properties:
             roomId:
               type: string
-              descritpion: The unique identifier of the chat room
+              description: The unique identifier of the chat room
               pattern: ^[a-zA-Z0-9-]+$
           additionalProperties: false
-          
+    
     messages:
       chatMessage:
         $ref: '#/components/messages/chat'
@@ -475,13 +470,13 @@ operations:
     description: Allows users to send messages to the chat room
 
   receiveMessage:
-  action: receive
-  channel:
-    $ref: '#/channels/chat'
-  messages:
-    - $ref: '#/channels/chat/messages/chatMessage'
-  summary: Receive chat messages
-  description: Allows users to receive messages from the chat room
+    action: receive
+    channel:
+      $ref: '#/channels/chat'
+    messages:
+      - $ref: '#/channels/chat/messages/chatMessage'
+    summary: Receive chat messages
+    description: Allows users to receive messages from the chat room
 
   userJoin:
     action: receive
@@ -493,13 +488,13 @@ operations:
     description: Notifies when a new user joins the chat room
 
   userLeave:
-  action: receive
-  channel:
-    $ref: '#/channels/chat'
-  messages:
-  - $ref: '#/channels/chat/messages/userLeft'
-  summary: User leave notification
-  description: Notifies when a user leaves the chat room
+    action: receive
+    channel:
+      $ref: '#/channels/chat'
+    messages:
+      - $ref: '#/channels/chat/messages/userLeft'
+    summary: User leave notification
+    description: Notifies when a user leaves the chat room
 
 components:
   messages:
@@ -523,36 +518,38 @@ components:
             type: string
             format: date-time
             description: Time when the message was sent
-          required:
-            - messageId
-            - senderId
-            - content
-            - timestamp
+        required:
+          - messageId
+          - senderId
+          - content
+          - timestamp
  
-	status:
+    status:
       payload:
         type: object
         properties:
           userId:
             type: string
             description: ID of the user status[join/leave]
-          username:
+          type:
             type: string
-            description: Display name of the user
+            enum:
+              - join
+              - leave
           timestamp:
             type: string
             format: date-time
         required:
           - userId
-          - username
+          - type
           - timestamp
 
-    securitySchemes:
-      apiKeyHeader:
-        type: httpApiKey
-        in: header
-        name: X-API-Key
-        description: API key passed in header
+  securitySchemes:
+    apiKeyHeader:
+      type: httpApiKey
+      in: header
+      name: X-API-Key
+      description: API key passed in header
 ```
 
 And since we followed the spec-first approach, we can do a lot of interesting thing with this document, such as:
