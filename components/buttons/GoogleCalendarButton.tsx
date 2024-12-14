@@ -7,6 +7,10 @@ import { useTranslation } from '../../utils/i18n';
 import IconGoogleCalendar from '../icons/GoogleCalendar';
 import Button from './Button';
 
+
+// Importing text to display on button from common.json
+import { githubButton } from '../../public/locales/en/common.json';
+
 interface IGoogleCalendarButtonProps extends IButtonDefaultProps {}
 
 /**
@@ -18,7 +22,7 @@ interface IGoogleCalendarButtonProps extends IButtonDefaultProps {}
  * @param {string} props.className - The class name to be applied to the button.
  */
 export default function GoogleCalendarButton({
-  text = 'googleCalendarBtn',
+  text = githubButton,
   href,
   target = '_blank',
   iconPosition = ButtonIconPosition.LEFT,

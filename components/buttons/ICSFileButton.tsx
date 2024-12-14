@@ -7,6 +7,9 @@ import { useTranslation } from '../../utils/i18n';
 import IconCalendar from '../icons/Calendar';
 import Button from './Button';
 
+// Importing text to display on button from common.json
+import { icsFileBtn } from '../../public/locales/en/common.json';
+
 interface IICSFButtonProps extends IButtonDefaultProps {}
 
 /**
@@ -18,7 +21,7 @@ interface IICSFButtonProps extends IButtonDefaultProps {}
  * @param {string} props.className - The class name to be applied to the button.
  */
 export default function ICSFButton({
-  text = 'icsFileBtn',
+  text = icsFileBtn,
   href,
   target = '_blank',
   iconPosition = ButtonIconPosition.LEFT,
