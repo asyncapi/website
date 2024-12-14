@@ -1,6 +1,6 @@
 ---
 title: "AsyncAPI & WebSocket A Match Made from Heaven?"
-date: 2024-11-18T06:00:00+01:00
+date: 2024-12-20T06:00:00+01:00
 type: Engineering
 tags:
   - Specification
