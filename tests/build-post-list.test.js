@@ -25,14 +25,16 @@ describe('buildPostList', () => {
     await fs.remove(tempDir);
   });
 
-  it('writes a valid JSON file with the expected structure', async () => {
+  it('writes the file successfully', async () => {
     await buildPostList(postDirectories, tempDir, writeFilePath);
-
     const outputExists = await fs.pathExists(writeFilePath);
     expect(outputExists).toBe(true);
-
-     const content = await fs.readFile(writeFilePath, 'utf-8');
-     expect(() => JSON.parse(content)).not.toThrow();
+  });
+  
+  it('writes valid JSON content', async () => {
+    await buildPostList(postDirectories, tempDir, writeFilePath);
+    const content = await fs.readFile(writeFilePath, 'utf-8');
+    expect(() => JSON.parse(content)).not.toThrow();
   });
 
   it('correctly structures docs entries', async () => {
