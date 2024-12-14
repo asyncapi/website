@@ -32,7 +32,7 @@ async function buildPostList(postDirectories, basePath, writeFilePath) {
       const missing = [];
       if (!basePath) missing.push('basePath');
       if (!writeFilePath) missing.push('writeFilePath');
-      throw new Error(`Error while building post list: ${missing.join(' and ')} ${missing.length > 1 ? 'are' : 'is'} required`);
+      throw new Error(`${missing.join(' and ')} ${missing.length > 1 ? 'are' : 'is'} required`);
     }
 
     if (postDirectories.length === 0) {
@@ -57,10 +57,9 @@ async function walkDirectories(directories, resultObj, basePath, sectionTitle, s
 
     for (let file of files) {
       let details;
-      const fileName = posix.join(directory, file);
-      const fileNameWithSection = posix.join(fileName, '_section.mdx')
-      const normalizedSlug = posix.join('/', relative(basePath, fileName))
-      const slug = normalizedSlug.replace(/\\/g, '/')
+      const fileName = normalize(join(directory, file));
+      const fileNameWithSection = normalize(join(fileName, '_section.mdx'))
+      const slug = '/' + normalize(relative(basePath, fileName)).replace(/\\/g, '/')
       const slugElements = slug.split('/')
 
       if (await isDirectory(fileName)) {

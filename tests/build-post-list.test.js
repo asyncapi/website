@@ -212,7 +212,7 @@ describe('buildPostList', () => {
     await expect(
       buildPostList(postDirectories, undefined, writeFilePath),
     ).rejects.toThrow(
-      "Error while building post list: Error while building post list: basePath is required",
+      "Error while building post list: basePath is required",
     );
   });
 
@@ -220,7 +220,7 @@ describe('buildPostList', () => {
     await expect(
       buildPostList(postDirectories, tempDir, undefined),
     ).rejects.toThrow(
-      "Error while building post list: Error while building post list: writeFilePath is required",
+      "Error while building post list: writeFilePath is required",
     );
   });
 
