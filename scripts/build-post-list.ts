@@ -1,27 +1,31 @@
+/* eslint-disable max-depth */
+import type { PathLike } from 'fs';
 import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from 'fs';
 import frontMatter from 'gray-matter';
 import { markdownToTxt } from 'markdown-to-txt';
 import toc from 'markdown-toc';
-import markdownTocUtils from 'markdown-toc/lib/utils.js';
+import markdownTocUtils from 'markdown-toc/lib/utils';
 import { basename, dirname, resolve } from 'path';
 import readingTime from 'reading-time';
 import { fileURLToPath } from 'url';
+
+import type { Details, Result, TableOfContentsItem } from '@/types/scripts/build-posts-list';
 
 import { addDocButtons, buildNavTree } from './build-docs';
 
 const { slugify } = markdownTocUtils;
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const currentFilePath = fileURLToPath(import.meta.url);
+const currentDirPath = dirname(currentFilePath);
 
 let specWeight = 100;
-const result = {
+const finalResult: Result = {
   docs: [],
   blog: [],
   about: [],
   docsTree: {}
 };
-const releaseNotes = [];
+const releaseNotes: string[] = [];
 const basePath = 'pages';
 const postDirectories = [
   // order of these directories is important, as the blog should come before docs, to create a list of available release notes, which will later be used to release-note-link for spec docs
@@ -30,34 +34,57 @@ const postDirectories = [
   [`${basePath}/about`, '/about']
 ];
 
-const addItem = (details) => {
-  if (details.slug.startsWith('/docs')) result.docs.push(details);
-  else if (details.slug.startsWith('/blog')) result.blog.push(details);
-  else if (details.slug.startsWith('/about')) result.about.push(details);
-  else {
-  }
-};
+function slugifyToC(str: string) {
+  let slug;
+  // Try to match heading ids like {# myHeadingId}
+  const headingIdMatch = str.match(/[\s]?\{#([\w\d\-_]+)\}/);
 
-export async function buildPostList() {
-  walkDirectories(postDirectories, result);
-  const treePosts = buildNavTree(result.docs.filter((p) => p.slug.startsWith('/docs/')));
+  if (headingIdMatch && headingIdMatch.length >= 2) {
+    [, slug] = headingIdMatch;
+  } else {
+    // Try to match heading ids like {<a name="myHeadingId"/>}
+    const anchorTagMatch = str.match(/[\s]*<a[\s]+name="([\w\d\s\-_]+)"/);
 
-  result.docsTree = treePosts;
-  result.docs = addDocButtons(result.docs, treePosts);
-  if (process.env.NODE_ENV === 'production') {
-    // console.log(inspect(result, { depth: null, colors: true }))
+    if (anchorTagMatch && anchorTagMatch.length >= 2) [, slug] = anchorTagMatch;
   }
-  writeFileSync(resolve(__dirname, '..', 'config', 'posts.json'), JSON.stringify(result, null, '  '));
+
+  return slug || slugify(str, { firsth1: true, maxdepth: 6 });
 }
 
-function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, sectionId, rootSectionId) {
+function capitalize(text: string) {
+  return text
+    .split(/[\s-]/g)
+    .map((word) => `${word[0].toUpperCase()}${word.substr(1)}`)
+    .join(' ');
+}
+
+const addItem = (details: Details) => {
+  if (!details.slug) {
+    throw new Error('details.slug is required');
+  }
+  if (details.slug.startsWith('/docs')) finalResult.docs.push(details);
+  else if (details.slug.startsWith('/blog')) finalResult.blog.push(details);
+  else if (details.slug.startsWith('/about')) finalResult.about.push(details);
+};
+
+function isDirectory(dir: PathLike) {
+  return statSync(dir).isDirectory();
+}
+function walkDirectories(
+  directories: string[][],
+  result: Result,
+  sectionTitle?: string,
+  sectionId?: string | undefined,
+  rootSectionId?: string | undefined,
+  sectionWeight = 0
+) {
   for (const dir of directories) {
     const directory = dir[0];
     const sectionSlug = dir[1] || '';
     const files = readdirSync(directory);
 
     for (const file of files) {
-      let details;
+      let details: Details;
       const fileName = [directory, file].join('/');
       const fileNameWithSection = [fileName, '_section.mdx'].join('/');
       const slug = fileName.replace(new RegExp(`^${basePath}`), '');
@@ -66,7 +93,7 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
       if (isDirectory(fileName)) {
         if (existsSync(fileNameWithSection)) {
           // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
-          details = frontMatter(readFileSync(fileNameWithSection, 'utf-8'), {}).data;
+          details = frontMatter(readFileSync(fileNameWithSection, 'utf-8'), {}).data as Details;
           details.title = details.title || capitalize(basename(fileName));
         } else {
           details = {
@@ -87,13 +114,13 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
         addItem(details);
         const rootId = details.parent || details.rootSectionId;
 
-        walkDirectories([[fileName, slug]], result, details.weight, details.title, details.sectionId, rootId);
+        walkDirectories([[fileName, slug]], result, details.title, details.sectionId, rootId, details.weight);
       } else if (file.endsWith('.mdx') && !fileName.endsWith('/_section.mdx')) {
         const fileContent = readFileSync(fileName, 'utf-8');
         // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
         const { data, content } = frontMatter(fileContent, {});
 
-        details = data;
+        details = data as Details;
         details.toc = toc(content, { slugify: slugifyToC }).json;
         details.readingTime = Math.ceil(readingTime(content).minutes);
         details.excerpt = details.excerpt || markdownToTxt(content).substr(0, 200);
@@ -107,14 +134,14 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
         details.slug = details.isIndex ? sectionSlug : slug.replace(/\.mdx$/, '');
         if (details.slug.includes('/reference/specification/') && !details.title) {
           const fileBaseName = basename(data.slug); // ex. v2.0.0 | v2.1.0-next-spec.1
-          const fileName = fileBaseName.split('-')[0]; // v2.0.0 | v2.1.0
+          const fileNameOfBaseName = fileBaseName.split('-')[0]; // v2.0.0 | v2.1.0
 
           details.weight = specWeight--;
 
-          if (fileName.startsWith('v')) {
-            details.title = capitalize(fileName.slice(1));
+          if (fileNameOfBaseName.startsWith('v')) {
+            details.title = capitalize(fileNameOfBaseName.slice(1));
           } else {
-            details.title = capitalize(fileName);
+            details.title = capitalize(fileNameOfBaseName);
           }
 
           if (releaseNotes.includes(details.title)) {
@@ -133,9 +160,9 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
 
         // To create a list of available ReleaseNotes list, which will be used to add details.releaseNoteLink attribute.
         if (file.startsWith('release-notes') && dir[1] === '/blog') {
-          const fileName_without_extension = file.slice(0, -4);
+          const fileNameWithoutExtension = file.slice(0, -4);
           // removes the file extension. For example, release-notes-2.1.0.md -> release-notes-2.1.0
-          const version = fileName_without_extension.slice(fileName_without_extension.lastIndexOf('-') + 1);
+          const version = fileNameWithoutExtension.slice(fileNameWithoutExtension.lastIndexOf('-') + 1);
 
           // gets the version from the name of the releaseNote .md file (from /blog). For example, version = 2.1.0 if fileName_without_extension = release-notes-2.1.0
           releaseNotes.push(version);
@@ -148,30 +175,15 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
   }
 }
 
-function slugifyToC(str) {
-  let slug;
-  // Try to match heading ids like {# myHeadingId}
-  const headingIdMatch = str.match(/[\s]?\{\#([\w\d\-_]+)\}/);
+export async function buildPostList() {
+  console.log('buildPostList ...');
+  walkDirectories(postDirectories, finalResult);
+  const treePosts = buildNavTree(finalResult.docs.filter((p: TableOfContentsItem) => p.slug.startsWith('/docs/')));
 
-  if (headingIdMatch && headingIdMatch.length >= 2) {
-    slug = headingIdMatch[1];
-  } else {
-    // Try to match heading ids like {<a name="myHeadingId"/>}
-    const anchorTagMatch = str.match(/[\s]*<a[\s]+name="([\w\d\s\-_]+)"/);
-
-    if (anchorTagMatch && anchorTagMatch.length >= 2) slug = anchorTagMatch[1];
+  finalResult.docsTree = treePosts;
+  finalResult.docs = addDocButtons(finalResult.docs, treePosts);
+  if (process.env.NODE_ENV === 'production') {
+    // console.log(inspect(result, { depth: null, colors: true }))
   }
-
-  return slug || slugify(str, { firsth1: true, maxdepth: 6 });
-}
-
-function isDirectory(dir) {
-  return statSync(dir).isDirectory();
-}
-
-function capitalize(text) {
-  return text
-    .split(/[\s\-]/g)
-    .map((word) => `${word[0].toUpperCase()}${word.substr(1)}`)
-    .join(' ');
+  writeFileSync(resolve(currentDirPath, '..', 'config', 'posts.json'), JSON.stringify(finalResult, null, '  '));
 }
