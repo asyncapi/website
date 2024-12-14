@@ -170,7 +170,7 @@ Just like the rest of the key concepts i mentioned earlier, components also have
 - **SecuritySchemes:** An object that holds reusable security scheme objects
 - **Schemas:** and object to hold reusable schema object. 
 
-Now, because we want our `#chat` channel to not look overwhelming and difficult to read, we are going to create our message in the component object. 
+Now, because we want our **chat** channel to not look overwhelming and difficult to read, we are going to create our message in the component object. 
 
 ```
 components:
@@ -377,15 +377,15 @@ Here, `apiKeyHeader` is our security scheme, specifying that the key should be
 
 Now, let’s associate this security scheme with our WebSocket server so it requires authorization:
 
-```
+<CodeBlock highlightedLines={[6,7]}>
 servers:
   development:
     host: localhost:8787
     description: Development Websocket broker.
     protocol: ws
-    security: # newly added line
+    security:
       - $ref: '#/components/securitySchemes/apiKeyHeader' 
-```
+</CodeBlock>
 
 As you can see we added a security property to the development server, and one thing you can notice is i'm specifying it as an array `-$ref` and the reason is because you can pass multiple security types in the security object, and only one of this security scheme needs to be satisfied to authorize a connection. But in our case, we only needed one so yea, let's role with that. 
 
@@ -395,7 +395,7 @@ Remember when we discussed bindings in the **Channel** section? These bindings
 
 For instance, if we want users to send messages to specific chat rooms, we could traditionally create a channel with a parameter like `/{roomId}`, which establishes a new connection for each room a user joins. However, this can lead to multiple connections, which we want to avoid. Instead, we’ll use **channel bindings**.
 
-Bindings are protocol-specific, so we can provide details unique to WebSocket. Rather than using parameters, we’ll use the `#chat` channel and pass the `roomId` in the query parameters, as shown below:
+Bindings are protocol-specific, so we can provide details unique to WebSocket. Rather than using parameters, we’ll use the **chat** channel and pass the `roomId` in the query parameters, as shown below:
 
 ```
 chat:
