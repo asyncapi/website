@@ -117,8 +117,9 @@ jobs:
 
       - if: steps.packagejson.outputs.exists == 'true'
         name: Upload Coverage to Codecov
-        uses: codecov/codecov-action@7f8b4b4bde536c465e797be725718b88c5d95e0e
+        uses: codecov/codecov-action@v5
         with:
           fail_ci_if_error: true
           files: ./coverage/lcov.info
+          token: ${{ secrets.CODECOV_TOKEN }}
           verbose: true
