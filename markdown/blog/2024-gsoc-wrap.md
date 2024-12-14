@@ -33,7 +33,7 @@ To showcase the impact of this year’s participation, let’s look at some key 
 - For the first time, we had **4 ex-GSoC participants** return to the program as mentors, marking a significant milestone in building a cycle of mentorship and growth within our community.
 - We received an impressive **77 project proposals**, the most we've ever had in our GSoC journey.
 - Over **100 new contributors** joined our community from GSoC, showcasing the growing interest and engagement with AsyncAPI.
-- AsyncAPI not just proudly participated as an organization at the **GSoC Summit in San Francisco**, but had [Lukasz Gornicki](https://github.com/derberg) one of our community member delivering a lightning talk about the concept of fostering a system that guides GSoC contributors toward becoming maintainers with the support of mentors, which further showcases our commitment in strengthening the open-source ecosystem.
+- AsyncAPI proudly participated as an organization at the **GSoC Summit in San Francisco**, where [Lukasz Gornicki](https://github.com/derberg), one of our community members, delivered a lightning talk. His presentation focused on fostering a system that guides GSoC contributors toward becoming maintainers with mentor support, showcasing our commitment to strengthening the open-source ecosystem.
 
 We had a range of successful contributions that significantly advanced AsyncAPI projects such as:
 
@@ -105,7 +105,7 @@ By following these tips, you’ll not only increase your chances of being select
   {
     name: 'Pavel Bodiachevskii',
     avatar: 'https://avatars.githubusercontent.com/Pakisan',
-    link: 'https://github.com/Amishakumari544/Pakisan'
+    link: 'https://github.com/Pakisan'
   },
   {
     name: 'Sambhav Gupta',
@@ -158,7 +158,7 @@ We want to take a moment to extend our gratitude to the mentors above, whose dec
 
 A special shoutout goes to Postman, who has always allowed us to push some of our project ideas under their umbrella over the last few years, while it's sad to see this come to an end, we love and appreciate the opportunities, and the community as a whole will never take it for granted. 
 
-A special thanks to Google for their belief in Free and Open Source Software(FOSS), for making this program possible every year as a show of their support to the open source ecosystem, and for allowing organizations like ours to bring passionate contributors and mentors to collaborate on a project all for the love of opensource.
+A special thanks to Google for their belief in Free and Open Source Software (FOSS), for making this program possible every year as a show of their support to the open source ecosystem, and for allowing organizations like ours to bring passionate contributors and mentors to collaborate on a project all for the love of opensource.
 
 Finally, a wonderful shout to [Stephanie Taylor](https://www.linkedin.com/in/stephaniertaylor/), the incredible program manager of Google Summer of Code, for her unwavering support during the transition of our projects after Postman’s departure. Her assistance with transferring mentor stipends to our preferred account was phenomena, and we truly appreciate her dedication and guidance!
 
