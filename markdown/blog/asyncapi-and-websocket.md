@@ -392,7 +392,7 @@ As you can see we added a security property to the development server, and one t
 
 Remember when we discussed bindings in the **Channel** section? These bindings allow us to add WebSocket-specific details to customize the connection.
 
-For instance, if we want to allow users to connect to multiple rooms simultaneously and send messages to any of them, we need an efficient approach than the traditional method. Typically, a channel with a parameter like /{roomId} would be created. However, this approach has a major drawback such that for every room a user is trying to join, a new connection is going to be established, which doesn't align well with our use case. Instead, we can leverage channel bindings.
+For instance, if we want to allow users to connect to multiple rooms simultaneously and send messages to any of them, we need an efficient approach than the traditional method. Typically, a channel with a parameter like `/{roomId}` would be created. However, this approach has a major drawback such that for every room a user is trying to join, a new connection is going to be established, which doesn't align well with our use case. Instead, we can leverage channel bindings.
 
 Since bindings are protocol-specific, we can tailor the implementation to WebSocket. Instead of relying on parameters, we’ll extend our **chat** channel by including `roomIds` as a query parameter, as shown below:
 
@@ -441,7 +441,7 @@ channels:
         query:
           type: object
           properties:
-            roomId:
+            roomIds:
               type: string
               description: The unique identifier of the chat room
               pattern: ^[a-zA-Z0-9-]+$
