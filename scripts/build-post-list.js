@@ -25,6 +25,14 @@ const addItem = (details) => {
     result["about"].push(details)
 };
 
+/**
+ * Builds a list of posts from the specified directories and writes it to a file
+ * @param {Array<Array<string>>} postDirectories - Array of [directory, slug] tuples
+ * @param {string} basePath - Base path for resolving relative paths
+ * @param {string} writeFilePath - Path where the output JSON will be written
+ * @throws {Error} If required parameters are missing or if any operation fails
+ * @returns {Promise<void>}
+ */
 async function buildPostList(postDirectories, basePath, writeFilePath) {
   try {
 
@@ -144,6 +152,11 @@ async function walkDirectories(directories, resultObj, basePath, sectionTitle, s
   }
 }
 
+/**
+ * Extracts heading IDs from markdown headings
+ * @param {string} str - The heading text containing potential ID
+ * @returns {string} The extracted ID or empty string if no valid ID found
+ */
 function slugifyToC(str) {
   if (typeof str !== 'string') return '';
   let slug = '';
