@@ -1,6 +1,7 @@
-import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
+
+const fs = require('fs').promises;
 
 /**
  * Checks if a given string is a valid URL.
@@ -10,6 +11,7 @@ import path from 'path';
 function isValidURL(str) {
   try {
     new URL(str);
+
     return true;
   } catch (err) {
     return false;
@@ -40,12 +42,12 @@ function validateBlogs(frontmatter) {
 
   // Validate tags format (must be an array)
   if (frontmatter.tags && !Array.isArray(frontmatter.tags)) {
-    errors.push(`Tags should be an array`);
+    errors.push('Tags should be an array');
   }
 
   // Validate cover is a string
   if (frontmatter.cover && typeof frontmatter.cover !== 'string') {
-    errors.push(`Cover must be a string`);
+    errors.push('Cover must be a string');
   }
 
   // Validate authors (must be an array with valid attributes)
@@ -98,14 +100,10 @@ function validateDocs(frontmatter) {
  * @param {Function} validateFunction - The function used to validate the frontmatter.
  * @param {string} [relativePath=''] - The relative path of the folder for logging purposes.
  */
-function checkMarkdownFiles(folderPath, validateFunction, relativePath = '') {
-  fs.readdir(folderPath, (err, files) => {
-    if (err) {
-      console.error('Error reading directory:', err);
-      return;
-    }
-
-    files.forEach((file) => {
+async function checkMarkdownFiles(folderPath, validateFunction, relativePath = '') {
+  try {
+    const files = await fs.readdir(folderPath);
+    const filePromises = files.map(async (file) => {
       const filePath = path.join(folderPath, file);
       const relativeFilePath = path.join(relativePath, file);
 
@@ -114,33 +112,50 @@ function checkMarkdownFiles(folderPath, validateFunction, relativePath = '') {
         return;
       }
 
-      fs.stat(filePath, (err, stats) => {
-        if (err) {
-          console.error('Error reading file stats:', err);
-          return;
-        }
+      const stats = await fs.stat(filePath);
 
-        // Recurse if directory, otherwise validate markdown file
-        if (stats.isDirectory()) {
-          checkMarkdownFiles(filePath, validateFunction, relativeFilePath);
-        } else if (path.extname(file) === '.md') {
-          const fileContent = fs.readFileSync(filePath, 'utf-8');
-          const { data: frontmatter } = matter(fileContent);
+      // Recurse if directory, otherwise validate markdown file
+      if (stats.isDirectory()) {
+        await checkMarkdownFiles(filePath, validateFunction, relativeFilePath);
+      } else if (path.extname(file) === '.md') {
+        const fileContent = await fs.readFile(filePath, 'utf-8');
+        const { data: frontmatter } = matter(fileContent);
 
-          const errors = validateFunction(frontmatter);
-          if (errors) {
-            console.log(`Errors in file ${relativeFilePath}:`);
-            errors.forEach((error) => console.log(` - ${error}`));
-            process.exitCode = 1;
-          }
+        const errors = validateFunction(frontmatter);
+
+        if (errors) {
+          console.log(`Errors in file ${relativeFilePath}:`);
+          errors.forEach((error) => console.log(` - ${error}`));
+          process.exitCode = 1;
         }
-      });
+      }
     });
-  });
+
+    await Promise.all(filePromises);
+  } catch (err) {
+    console.error(`Error in directory ${folderPath}:`, err);
+    throw err;
+  }
 }
 
 const docsFolderPath = path.resolve(__dirname, '../../markdown/docs');
 const blogsFolderPath = path.resolve(__dirname, '../../markdown/blog');
 
-checkMarkdownFiles(docsFolderPath, validateDocs);
-checkMarkdownFiles(blogsFolderPath, validateBlogs);
+async function main() {
+  try {
+    await Promise.all([
+      checkMarkdownFiles(docsFolderPath, validateDocs),
+      checkMarkdownFiles(blogsFolderPath, validateBlogs)
+    ]);
+  } catch (error) {
+    console.error('Failed to validate markdown files:', error);
+    process.exit(1);
+  }
+}
+
+/* istanbul ignore next */
+if (require.main === module) {
+  main();
+}
+
+export { checkMarkdownFiles, isValidURL, main, validateBlogs, validateDocs };
