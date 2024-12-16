@@ -21,7 +21,7 @@ function getConcurrencyLimit() {
   // Validate the parsed limit
   if (Number.isNaN(parsedLimit)) {
     console.warn(
-      `Invalid MARKDOWN_CONCURRENCY_LIMIT: '${envLimit}'. Falling back to default of 10.`,
+      `Invalid MARKDOWN_CONCURRENCY_LIMIT: '${envLimit}'. Falling back to default of 10.`
     );
     return 10;
   }
@@ -29,7 +29,7 @@ function getConcurrencyLimit() {
   // Check for non-positive integers
   if (parsedLimit <= 0) {
     console.warn(
-      `MARKDOWN_CONCURRENCY_LIMIT must be a positive integer. Received: ${parsedLimit}. Falling back to default of 10.`,
+      `MARKDOWN_CONCURRENCY_LIMIT must be a positive integer. Received: ${parsedLimit}. Falling back to default of 10.`
     );
     return 10;
   }
@@ -44,7 +44,7 @@ function getConcurrencyLimit() {
  */
 function isValidURL(str) {
   try {
-    new URL(str);
+    URL(str);
     return true;
   } catch (err) {
     return false;
@@ -209,7 +209,7 @@ async function main() {
 
     await Promise.all([
       checkMarkdownFiles(docsFolderPath, validateDocs, '', limit),
-      checkMarkdownFiles(blogsFolderPath, validateBlogs, '', limit),
+      checkMarkdownFiles(blogsFolderPath, validateBlogs, '', limit)
     ]);
   } catch (error) {
     console.error('Failed to validate markdown files:', error);
@@ -228,5 +228,5 @@ module.exports = {
   checkMarkdownFiles,
   main,
   isValidURL,
-  getConcurrencyLimit,
+  getConcurrencyLimit
 };

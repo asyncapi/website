@@ -8,7 +8,7 @@ const {
   validateBlogs,
   validateDocs,
   checkMarkdownFiles,
-  getConcurrencyLimit,
+  getConcurrencyLimit
 } = require('../../scripts/markdown/check-markdown');
 
 describe('Frontmatter Validator', () => {
@@ -37,7 +37,7 @@ describe('Frontmatter Validator', () => {
 
   describe('Concurrency Limit Validation', () => {
     it('returns default concurrency limit when no env var is set', () => {
-      delete process.env.MARKDOWN_CONCURRENCY_LIMIT;
+      process.env.MARKDOWN_CONCURRENCY_LIMIT = undefined;
       const limit = getConcurrencyLimit();
       expect(limit).toBe(10);
     });
@@ -83,7 +83,7 @@ describe('Frontmatter Validator', () => {
         'Author at index 0 is missing a photo',
         'Author at index 1 is missing a name',
         'Invalid URL for author at index 2: not-a-url',
-      ]),
+      ])
     );
   });
 
@@ -91,10 +91,7 @@ describe('Frontmatter Validator', () => {
     const frontmatter = { title: 123, weight: 'not-a-number' };
     const errors = validateDocs(frontmatter);
     expect(errors).toEqual(
-      expect.arrayContaining([
-        'Title is missing or not a string',
-        'Weight is missing or not a number',
-      ]),
+        expect.arrayContaining(['Title is missing or not a string', 'Weight is missing or not a number'])
     );
   });
 
@@ -166,9 +163,7 @@ describe('Frontmatter Validator', () => {
     const filePath = path.join(tempDir, 'invalid.md');
     await fs.writeFile(filePath, `---\ntitle: Valid Title\n---`);
 
-    const mockReadFile = jest
-      .spyOn(fs, 'readFile')
-      .mockRejectedValue(new Error('Test readFile error'));
+    const mockReadFile = jest.spyOn(fs, 'readFile').mockRejectedValue(new Error('Test readFile error'));
 
     await expect(
       checkMarkdownFiles(tempDir, validateBlogs, '', pLimit(10)),
