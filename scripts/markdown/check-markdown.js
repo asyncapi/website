@@ -20,14 +20,14 @@ function getConcurrencyLimit() {
 
   // Validate the parsed limit
   if (Number.isNaN(parsedLimit)) {
-    console.warn(`Invalid MARKDOWN_CONCURRENCY_LIMIT: '${envLimit}'. Falling back to default of 10.`);
+    console.warn(`Invalid MARKDOWN_CONCURRENCY_LIMIT: '${envLimit}'. Value must be a number. Falling back to default of 10.`);
     return 10;
   }
 
   // Check for non-positive integers
   if (parsedLimit <= 0) {
     console.warn(
-      `MARKDOWN_CONCURRENCY_LIMIT must be a positive integer. Received: ${parsedLimit}. Falling back to default of 10.`
+      `MARKDOWN_CONCURRENCY_LIMIT must be a positive integer greater than 0. Received: ${parsedLimit}. Falling back to default of 10.`
     );
     return 10;
   }
@@ -68,7 +68,7 @@ function validateBlogs(frontmatter) {
 
   // Check for required attributes
   requiredAttributes.forEach((attr) => {
-    if (!frontmatter.hasOwnProperty(attr)) {
+    if (!Object.hasOwn(frontmatter, attr)) {
       errors.push(`${attr} is missing`);
     }
   });
@@ -170,18 +170,23 @@ async function checkMarkdownFiles(
           relativeFilePath
         );
       } else if (path.extname(file) === '.md') {
+        try{
+          await limit(async () => {
+            const fileContent = await fs.readFile(filePath, 'utf-8');
+            const { data: frontmatter } = matter(fileContent);
+  
+            const errors = validateFunction(frontmatter);
+            if (errors) {
+              console.log(`Errors in file ${relativeFilePath}:`);
+              errors.forEach((error) => console.log(` - ${error}`));
+              process.exitCode = 1;
+            }
+          });
+        }catch (error) {
+          console.error(`Error processing file ${relativeFilePath}:`, error);
+          throw error;
+        }
         // Use the concurrency limiter for file processing
-        await limit(async () => {
-          const fileContent = await fs.readFile(filePath, 'utf-8');
-          const { data: frontmatter } = matter(fileContent);
-
-          const errors = validateFunction(frontmatter);
-          if (errors) {
-            console.log(`Errors in file ${relativeFilePath}:`);
-            errors.forEach((error) => console.log(` - ${error}`));
-            process.exitCode = 1;
-          }
-        });
       }
     });
 
@@ -199,6 +204,7 @@ async function main() {
   try {
     // Get concurrency limit from environment or use default
     const concurrencyLimit = getConcurrencyLimit();
+    console.log(`Configured markdown processing with concurrency limit: ${concurrencyLimit}`);
 
     // Create a concurrency limiter
     const limit = pLimit(concurrencyLimit);

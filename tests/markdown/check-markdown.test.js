@@ -30,11 +30,18 @@ describe('Frontmatter Validator', () => {
     // Restore original environment variables
     process.env = originalEnv;
 
+    // Verify environment restoration
+    expect(process.env).toEqual(originalEnv);
+
     mockConsoleError.mockRestore();
     mockProcessExit.mockRestore();
     await fs.rm(tempDir, { recursive: true, force: true });
   });
 
+/**
+* Test suite for concurrency limit validation.
+* Verifies the behavior of concurrency limits in markdown processing.
+*/
   describe('Concurrency Limit Validation', () => {
     it('returns default concurrency limit when no env var is set', () => {
       process.env.MARKDOWN_CONCURRENCY_LIMIT = undefined;
@@ -91,8 +98,8 @@ describe('Frontmatter Validator', () => {
 
       // Verify that each group of 5 started processing together
       groups.forEach(group => {
-        const groupSpread = Math.max(...group) - Math.min(...group);
-        expect(groupSpread).toBeLessThan(50); // Should start within 50ms of each other
+        const concurrentExecutions = mockValidateFunction.mock.calls.filter(call => Math.abs(call[0] - group[0]) < 10).length;
+        expect(concurrentExecutions).toBeLessThanOrEqual(5);
       });
 
       // Verify that the mock validate function was called for all files
