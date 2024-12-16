@@ -91,7 +91,7 @@ In 2024, our LinkedIn performance saw impressive growth: a 48% increase in follo
 <Figure
   src="/img/posts/marketing-images/x-metrics-insights.webp"
   alt="Graph showing AsyncAPI X metrics including follower growth, engagement rates, and post performance over time"
-  caption="AsyncAPI Twitter (X) mereics insights from Buffer analytics."
+  caption="AsyncAPI Twitter (X) metrics insights from Buffer analytics."
   className="text-center"
 />
 
