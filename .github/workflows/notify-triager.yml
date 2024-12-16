@@ -1,7 +1,7 @@
 name: Notify Triagers
 
 on:
-  pull_request_target:
+  pull_request:
     types: [opened, reopened, synchronize, edited, ready_for_review]
 
 jobs:
@@ -11,8 +11,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4.1.1
         with:
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
 
       - name: Get commit message
         id: commit-message
@@ -34,21 +33,27 @@ jobs:
             echo "isMergeCommit=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Checkout asyncapi/website Repository
-        uses: actions/checkout@v4.1.1
+      - name: Count changed files
+        id: changed_files
+        run: |
+          # Get the list of files changed in the latest commit
+          changed_files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }})
 
-      - name: Get all changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v45
+          # Initialize counters
+          md_count=0
+          non_md_count=0
 
-      - name: Check PR Changes for .md files
-        id: md-pr-changes
-        uses: tj-actions/changed-files@v45 # version 42.1.0 https://github.com/tj-actions/changed-files/releases/tag/v42.1.0
-        with:
-          files: |
-            **.md
-            
+          # Loop through the changed files to count .md and non-.md files
+          for file in $changed_files; do
+            if [[ $file == *.md ]]; then
+              md_count=$((md_count + 1))
+            else
+              non_md_count=$((non_md_count + 1))
+            fi
+          done
 
+          echo "md_count=$md_count" >> $GITHUB_OUTPUT
+          echo "non_md_count=$non_md_count" >> $GITHUB_OUTPUT
 
       - name: Extract Doc Triage Maintainers
         id: doc-triager
@@ -69,7 +74,7 @@ jobs:
           echo "codeTriagers=$codeTriagers" >> $GITHUB_ENV
 
       - name: Add Reviewers for code files
-        if: ${{ steps.check-merge-branch.outputs.isMergeCommit == 'false' && steps.changed-files.outputs.all_changed_files_count != steps.md-pr-changes.outputs.all_changed_files_count }}
+        if: ${{ steps.check-merge-branch.outputs.isMergeCommit == 'false' && steps.changed_files.outputs.non_md_count > 0 }}
         run: |
           IFS=' ' read -r -a codeTriagers <<< "${{ env.codeTriagers }}"
           reviewers=$(printf ', "%s"' "${codeTriagers[@]}")
@@ -84,7 +89,7 @@ jobs:
           }"
 
       - name: Add Reviewers for doc files
-        if: ${{ steps.check-merge-branch.outputs.isMergeCommit == 'false' && steps.md-pr-changes.outputs.any_changed == 'true' }}
+        if: ${{ steps.check-merge-branch.outputs.isMergeCommit == 'false' && steps.changed_files.outputs.md_count > 0 }}
         run: |
           IFS=' ' read -r -a docTriagers <<< "${{ env.docTriagers }}"
           reviewers=$(printf ', "%s"' "${docTriagers[@]}")
