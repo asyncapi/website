@@ -13,7 +13,7 @@ Validating an AsyncAPI document can mean one of two things:
 - Validation against the best practices or company governance rules also known as linting.
 
 ### Validate against specification
-Validating against the specification ensures that every content of the document is written in accordance with the AsyncAPI specification. Several tool options exist for validating against the specification: _AsyncAPI Studio_, _AsyncAPI CLI_, and _Parsers_.
+Validating against the specification enures that every content of the document is written in accordance with the AsyncAPI specification. Several tool options exist for validating against the specification: _AsyncAPI Studio_, _AsyncAPI CLI_, and _Parsers_.
 
 #### AsyncAPI Studio validation 
 [AsyncAPI Studio](https://studio.asyncapi.com/) provides a visual and easy way to validate your AsyncAPI documents against the specification. (It uses the [AsyncAPI JavaScript parser](https://github.com/asyncapi/parser-js) behind the scenes to perform syntax checks and validate documents.)
