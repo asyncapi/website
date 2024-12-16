@@ -273,9 +273,9 @@ export default function CodeBlock({
               background: '#252f3f'
             }}
             lineNumberStyle={(lineNumber: number) => {
-              const isHighlighted = highlightedLines && highlightedLines.includes(lineNumber);
+              const isHighlighted = highlightedLines?.includes(lineNumber);
 
-              const styles = {
+              const styles: React.CSSProperties = {
                 display: 'inline-block',
                 marginLeft: '16px',
                 paddingRight: '16px',
@@ -287,7 +287,7 @@ export default function CodeBlock({
             }}
             wrapLines={true}
             lineProps={(lineNumber: number) => {
-              const isHighlighted = highlightedLines && highlightedLines.includes(lineNumber);
+              const isHighlighted = highlightedLines?.includes(lineNumber);
 
               const style: React.CSSProperties = {
                 paddingRight: '2rem'
