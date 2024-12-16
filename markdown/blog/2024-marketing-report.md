@@ -1,6 +1,6 @@
 ---
 title: "Marketing Report: December 2024"
-date: 2024-12-16T06:00:00+01:00
+date: 2024-12-17T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
