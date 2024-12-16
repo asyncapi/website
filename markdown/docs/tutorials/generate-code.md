@@ -95,3 +95,4 @@ Additionally, you've learned how to run your code by installing the project's d
 
 ## Next steps
 Now that you've completed this tutorial, go ahead and learn how to [validate your AsyncAPI messages (events)](https://asyncapi.com/docs/tutorials/message-validation) through the message validation techniques supported by AsyncAPI.
+
