@@ -40,7 +40,7 @@ async function buildPostList(postDirectories, basePath, writeFilePath) {
       const missing = [];
       if (!basePath) missing.push('basePath');
       if (!writeFilePath) missing.push('writeFilePath');
-      throw new Error(`${missing.join(' and ')} ${missing.length > 1 ? 'are' : 'is'} required`);
+      throw new Error(`Error while building post list: ${missing.join(' and ')} ${missing.length > 1 ? 'are' : 'is'} required`);
     }
 
     if (postDirectories.length === 0) {
@@ -57,7 +57,15 @@ async function buildPostList(postDirectories, basePath, writeFilePath) {
   }
 }
 
-async function walkDirectories(directories, resultObj, basePath, sectionTitle, sectionId, rootSectionId, sectionWeight = 0) {
+async function walkDirectories(
+  directories,
+  resultObj,
+  basePath,
+  sectionTitle,
+  sectionId,
+  rootSectionId,
+  sectionWeight = 0
+) {
   for (let dir of directories) {
     let directory = posix.normalize(dir[0]);
     let sectionSlug = dir[1] || '';
@@ -163,12 +171,12 @@ function slugifyToC(str) {
 
   // Match heading IDs like {# myHeadingId}
   const headingIdMatch = str.match(/[\s]*\{#([a-zA-Z0-9\-_]+)\}/);
-  if (headingIdMatch && headingIdMatch[1].trim()) {
+  if (headingIdMatch?.[1]?.trim()) {
     slug = headingIdMatch[1];
   } else {
     // Match heading IDs like {<a name="myHeadingId"/>}
     const anchorTagMatch = str.match(/[\s]*<a[\s]+name="([a-zA-Z0-9\-_]+)"/);
-    if (anchorTagMatch && anchorTagMatch[1].trim()) {
+    if (anchorTagMatch?.[1]?.trim()) {
       slug = anchorTagMatch[1];
     }
   }
