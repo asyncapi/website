@@ -1,24 +1,10 @@
 [
   {
-    "title": "Essential Building Blocks Working Group",
-    "calLink": "https://www.google.com/calendar/event?eid=c28zazMxcDk3MThpMWFpNG9lYzRrbmIzNW8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1342",
-    "banner": "",
-    "date": "2024-08-27T18:00:00.000Z"
-  },
-  {
     "title": "Marketing WG Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=MmpwdGxqb29wcHQyaGk3dXU1cTJ0M3E2aGMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1354",
     "banner": "",
     "date": "2024-09-10T14:00:00.000Z"
-  },
-  {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=b2lsN3YwcGNmdWZiNTltNm1lM25wYXYwc3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1355",
-    "banner": "https://github.com/user-attachments/assets/399c2eec-5123-47e9-ad41-024cd478a667",
-    "date": "2024-09-03T08:00:00.000Z"
   },
   {
     "title": "Community Meeting",
@@ -138,5 +124,12 @@
     "url": "https://github.com/asyncapi/community/issues/1599",
     "banner": "https://github.com/user-attachments/assets/739381b2-b7de-4e08-b845-04e5a07ba7e0",
     "date": "2024-12-03T13:00:00.000Z"
+  },
+  {
+    "title": "Marketing WG Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=a3FvM3ZyOTUwcjJpZm5wOWxzZWcwZ3Bja2sgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1616",
+    "banner": "",
+    "date": "2024-12-17T14:00:00.000Z"
   }
 ]
