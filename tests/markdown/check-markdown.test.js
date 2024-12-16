@@ -70,38 +70,40 @@ describe('Frontmatter Validator', () => {
     });
 
     it('respects concurrency limit during file processing', async () => {
-      const processingTimes = [];
-      const mockValidateFunction = jest.fn().mockImplementation(() => {
-        const startTime = Date.now();
-        processingTimes.push(startTime);
-        // Simulate some processing time
-        return new Promise(resolve => setTimeout(resolve, 50));
+      let activeCount = 0;
+      let maxActiveCount = 0;
+      const mockValidateFunction = jest.fn().mockImplementation(async () => {
+        activeCount++;
+        try {
+          // Track the maximum number of concurrent executions
+          if (activeCount > maxActiveCount) {
+            maxActiveCount = activeCount;
+          }
+          
+          // Simulate some processing time
+          await new Promise(resolve => setTimeout(resolve, 50));
+        } finally {
+          activeCount--;
+        }
       });
-
-      // Create multiple test files
+    
+      const writePromises = [];
       for (let i = 0; i < 20; i++) {
-        await fs.writeFile(
-          path.join(tempDir, `test${i}.md`),
-          '---\ntitle: Test\n---'
+        writePromises.push(
+            fs.writeFile(
+              path.join(tempDir, `test${i}.md`),
+              '---\ntitle: Test\n---'
+          )
         );
       }
-
+      await Promise.all(writePromises);
+    
       const limit = pLimit(5); // Set limit to 5
       await checkMarkdownFiles(tempDir, mockValidateFunction, '', limit);
-
-      // Group processing times by 5 (our limit) and verify gaps between groups
-      const sortedTimes = processingTimes.sort();
-      const groups = [];
-      for (let i = 0; i < sortedTimes.length; i += 5) {
-        groups.push(sortedTimes.slice(i, i + 5));
-      }
-
-      // Verify that each group of 5 started processing together
-      groups.forEach(group => {
-        const concurrentExecutions = mockValidateFunction.mock.calls.filter(call => Math.abs(call[0] - group[0]) < 10).length;
-        expect(concurrentExecutions).toBeLessThanOrEqual(5);
-      });
-
+    
+      // Verify that the maximum number of concurrent executions never exceeds the limit
+      expect(maxActiveCount).toBeLessThanOrEqual(5);
+    
       // Verify that the mock validate function was called for all files
       expect(mockValidateFunction).toHaveBeenCalledTimes(20);
     });
@@ -114,11 +116,7 @@ describe('Frontmatter Validator', () => {
       type: 'blog',
       tags: ['test'],
       cover: 'cover.jpg',
-      authors: [
-        { name: 'John' },
-        { photo: 'jane.jpg' },
-        { name: 'Bob', photo: 'bob.jpg', link: 'not-a-url' },
-      ],
+      authors: [{ name: 'John' }, { photo: 'jane.jpg' }, { name: 'Bob', photo: 'bob.jpg', link: 'not-a-url' }]
     };
 
     const errors = validateBlogs(frontmatter);
@@ -148,9 +146,7 @@ describe('Frontmatter Validator', () => {
 
     await checkMarkdownFiles(tempDir, validateBlogs, '', pLimit(10));
 
-    expect(mockConsoleLog).toHaveBeenCalledWith(
-      expect.stringContaining('Errors in file invalid.md:'),
-    );
+    expect(mockConsoleLog).toHaveBeenCalledWith(expect.stringContaining('Errors in file invalid.md:'));
     mockConsoleLog.mockRestore();
   });
 

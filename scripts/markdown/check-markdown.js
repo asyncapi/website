@@ -42,7 +42,7 @@ function getConcurrencyLimit() {
  */
 function isValidURL(str) {
   try {
-    URL(str);
+    new URL(str);
     return true;
   } catch (err) {
     return false;
@@ -142,12 +142,7 @@ function validateDocs(frontmatter) {
  * @param {string} [relativePath=''] - The relative path of the folder for logging purposes.
  * @param {import('p-limit').default} limit - Concurrency limiter.
  */
-async function checkMarkdownFiles(
-  folderPath,
-  validateFunction,
-  limit,
-  relativePath = ''
-) {
+async function checkMarkdownFiles(folderPath, validateFunction, limit, relativePath = '') {
   try {
     const files = await fs.readdir(folderPath);
     const filePromises = files.map(async (file) => {
@@ -163,14 +158,9 @@ async function checkMarkdownFiles(
 
       // Recurse if directory, otherwise validate markdown file
       if (stats.isDirectory()) {
-        await checkMarkdownFiles(
-          filePath,
-          validateFunction,
-          limit,
-          relativeFilePath
-        );
+        await checkMarkdownFiles(filePath, validateFunction, limit, relativeFilePath);
       } else if (path.extname(file) === '.md') {
-        try{
+        try {
           await limit(async () => {
             const fileContent = await fs.readFile(filePath, 'utf-8');
             const { data: frontmatter } = matter(fileContent);
@@ -182,7 +172,7 @@ async function checkMarkdownFiles(
               process.exitCode = 1;
             }
           });
-        }catch (error) {
+        } catch (error) {
           console.error(`Error processing file ${relativeFilePath}:`, error);
           throw error;
         }
