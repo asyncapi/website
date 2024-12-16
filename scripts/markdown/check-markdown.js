@@ -3,6 +3,8 @@ const matter = require('gray-matter');
 const path = require('path');
 const pLimit = require('p-limit');
 
+const DEFAULT_CONCURRENCY_LIMIT = 10;
+
 /**
  * Validates and retrieves the concurrency limit from environment variables.
  * @returns {number} The validated concurrency limit.
@@ -12,7 +14,7 @@ function getConcurrencyLimit() {
 
   // If no env var is set, return default
   if (envLimit === undefined) {
-    return 10;
+    return DEFAULT_CONCURRENCY_LIMIT;
   }
 
   // Attempt to parse the environment variable
@@ -21,7 +23,7 @@ function getConcurrencyLimit() {
   // Validate the parsed limit
   if (Number.isNaN(parsedLimit)) {
     console.warn(`Invalid MARKDOWN_CONCURRENCY_LIMIT: '${envLimit}'. Value must be a number. Falling back to default of 10.`);
-    return 10;
+    return DEFAULT_CONCURRENCY_LIMIT;
   }
 
   // Check for non-positive integers
@@ -29,7 +31,7 @@ function getConcurrencyLimit() {
     console.warn(
       `MARKDOWN_CONCURRENCY_LIMIT must be a positive integer greater than 0. Received: ${parsedLimit}. Falling back to default of 10.`
     );
-    return 10;
+    return DEFAULT_CONCURRENCY_LIMIT;
   }
 
   return parsedLimit;
@@ -141,6 +143,11 @@ function validateDocs(frontmatter) {
  * @param {Function} validateFunction - The function used to validate the frontmatter.
  * @param {string} [relativePath=''] - The relative path of the folder for logging purposes.
  * @param {import('p-limit').default} limit - Concurrency limiter.
+ * @throws {Error} When the concurrency limiter fails or when file operations fail
+ * @example
+ * // Process files with a concurrency limit of 5
+ * const limit = pLimit(5);
+ * await checkMarkdownFiles(folderPath, validateFn, limit);
  */
 async function checkMarkdownFiles(folderPath, validateFunction, limit, relativePath = '') {
   try {
@@ -173,7 +180,11 @@ async function checkMarkdownFiles(folderPath, validateFunction, limit, relativeP
             }
           });
         } catch (error) {
-          console.error(`Error processing file ${relativeFilePath}:`, error);
+          console.error(`Error processing markdown file ${relativeFilePath} (validation failed):`, {
+            error: error.message,
+            code: error.code,
+            stack: error.stack
+          });
           throw error;
         }
         // Use the concurrency limiter for file processing
@@ -182,7 +193,11 @@ async function checkMarkdownFiles(folderPath, validateFunction, limit, relativeP
 
     await Promise.all(filePromises);
   } catch (err) {
-    console.error(`Error in directory ${folderPath}:`, err);
+    console.error(`Failed to process markdown files in directory ${folderPath}:`, {
+      error: err.message,
+      code: err.code,
+      stack: err.stack
+    });
     throw err;
   }
 }
@@ -204,7 +219,11 @@ async function main() {
       checkMarkdownFiles(blogsFolderPath, validateBlogs, limit, '')
     ]);
   } catch (error) {
-    console.error('Failed to validate markdown files:', error);
+    console.error('Markdown validation process failed:', {
+      error: error.message,
+      code: error.code,
+      stack: error.stack
+    });
     process.exit(1);
   }
 }

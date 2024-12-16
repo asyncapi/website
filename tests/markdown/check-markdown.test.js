@@ -69,7 +69,10 @@ describe('Frontmatter Validator', () => {
       expect(limit).toBe(20);
     });
 
-    it('respects concurrency limit during file processing', async () => {
+    it('should process files concurrently while respecting the configured limit', async () => {
+      const CONCURRENCY_LIMIT = 5;
+      const TOTAL_FILES = 20;
+      const PROCESSING_TIME_MS = 50;
       let activeCount = 0;
       let maxActiveCount = 0;
       const mockValidateFunction = jest.fn().mockImplementation(async () => {
@@ -81,14 +84,14 @@ describe('Frontmatter Validator', () => {
           }
           
           // Simulate some processing time
-          await new Promise(resolve => setTimeout(resolve, 50));
+          await new Promise(resolve => setTimeout(resolve, PROCESSING_TIME_MS));
         } finally {
           activeCount--;
         }
       });
     
       const writePromises = [];
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < TOTAL_FILES; i++) {
         writePromises.push(
             fs.writeFile(
               path.join(tempDir, `test${i}.md`),
@@ -98,14 +101,13 @@ describe('Frontmatter Validator', () => {
       }
       await Promise.all(writePromises);
     
-      const limit = pLimit(5); // Set limit to 5
+      const limit = pLimit(CONCURRENCY_LIMIT);
       await checkMarkdownFiles(tempDir, mockValidateFunction, '', limit);
     
-      // Verify that the maximum number of concurrent executions never exceeds the limit
-      expect(maxActiveCount).toBeLessThanOrEqual(5);
+      // Verify concurrent execution bounds
+      expect(maxActiveCount).toBe(CONCURRENCY_LIMIT);
     
-      // Verify that the mock validate function was called for all files
-      expect(mockValidateFunction).toHaveBeenCalledTimes(20);
+      expect(mockValidateFunction).toHaveBeenCalledTimes(TOTAL_FILES);
     });
   });
 
@@ -150,23 +152,25 @@ describe('Frontmatter Validator', () => {
     mockConsoleLog.mockRestore();
   });
 
-  it('returns multiple validation errors for invalid blog frontmatter', async () => {
-    const frontmatter = {
-      title: 123,
-      date: 'invalid-date',
-      type: 'blog',
-      tags: 'not-an-array',
-      cover: ['not-a-string'],
-      authors: { name: 'John Doe' },
-    };
-    const errors = validateBlogs(frontmatter);
+  describe('Blog Frontmatter Validation', () => {
+    it('should return all validation errors when multiple fields are invalid', async () => {
+      const frontmatter = {
+        title: 123,
+        date: 'invalid-date',
+        type: 'blog',
+        tags: 'not-an-array',
+        cover: ['not-a-string'],
+        authors: { name: 'John Doe' },
+      };
+      const errors = validateBlogs(frontmatter);
 
-    expect(errors).toEqual([
-      'Invalid date format: invalid-date',
-      'Tags should be an array',
-      'Cover must be a string',
-      'Authors should be an array',
-    ]);
+      expect(errors).toEqual([
+        'Invalid date format: invalid-date',
+        'Tags should be an array',
+        'Cover must be a string',
+        'Authors should be an array',
+      ]);
+    })
   });
 
   it('logs error to console when an error occurs in checkMarkdownFiles', async () => {
