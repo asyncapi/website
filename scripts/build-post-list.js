@@ -18,11 +18,11 @@ const releaseNotes = []
 
 const addItem = (details) => {
   if (details.slug.startsWith('/docs'))
-    result["docs"].push(details)
+    result.docs.push(details)
   else if (details.slug.startsWith('/blog'))
-    result["blog"].push(details)
+    result.blog.push(details)
   else if (details.slug.startsWith('/about'))
-    result["about"].push(details)
+    result.about.push(details)
 };
 
 /**
