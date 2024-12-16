@@ -48,9 +48,9 @@ async function buildPostList(postDirectories, basePath, writeFilePath) {
     }
     const normalizedBasePath = normalize(basePath)
     await walkDirectories(postDirectories, result, normalizedBasePath)
-    const treePosts = buildNavTree(result["docs"].filter((p) => p.slug.startsWith('/docs/')))
-    result["docsTree"] = treePosts
-    result["docs"] = addDocButtons(result["docs"], treePosts)
+    const treePosts = buildNavTree(result.docs.filter((p) => p.slug.startsWith('/docs/')))
+    result.docsTree = treePosts
+    result.docs = addDocButtons(result.docs, treePosts)
     await writeFile(writeFilePath, JSON.stringify(result, null, '  '))
   } catch (error) {
     throw new Error(`Error while building post list: ${error.message}`, { cause: error });
@@ -67,9 +67,9 @@ async function walkDirectories(
   sectionWeight = 0
 ) {
   for (let dir of directories) {
-    let directory = posix.normalize(dir[0]);
-    let sectionSlug = dir[1] || '';
-    let files = await readdir(directory)
+    const directory = posix.normalize(dir[0]);
+    const sectionSlug = dir[1] || '';
+    const files = await readdir(directory)
 
     for (let file of files) {
       let details;
@@ -171,13 +171,15 @@ function slugifyToC(str) {
 
   // Match heading IDs like {# myHeadingId}
   const headingIdMatch = str.match(/[\s]*\{#([a-zA-Z0-9\-_]+)\}/);
-  if (headingIdMatch?.[1]?.trim()) {
-    slug = headingIdMatch[1];
+  const [, headingId] = headingIdMatch || [];
+  if (headingId?.trim()) {
+    slug = headingId;
   } else {
     // Match heading IDs like {<a name="myHeadingId"/>}
     const anchorTagMatch = str.match(/[\s]*<a[\s]+name="([a-zA-Z0-9\-_]+)"/);
-    if (anchorTagMatch?.[1]?.trim()) {
-      slug = anchorTagMatch[1];
+    const [, anchorId] = anchorTagMatch || [];
+    if (anchorId?.trim()) {
+      slug = anchorId;
     }
   }
 
