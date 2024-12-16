@@ -39,6 +39,7 @@ jobs:
           # Get the list of files changed in the latest commit
           changed_files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }})
 
+<<<<<<< HEAD
           # Initialize counters
           md_count=0
           non_md_count=0
@@ -51,6 +52,19 @@ jobs:
               non_md_count=$((non_md_count + 1))
             fi
           done
+=======
+      - name: Get all changed files
+        id: changed-files
+        uses: tj-actions/changed-files@aa08304bd477b800d468db44fe10f6c61f7f7b11
+
+      - name: Check PR Changes for .md files
+        id: md-pr-changes
+        uses: tj-actions/changed-files@aa08304bd477b800d468db44fe10f6c61f7f7b11 # version 42.1.0 https://github.com/tj-actions/changed-files/releases/tag/v42.1.0
+        with:
+          files: |
+            **.md
+            
+>>>>>>> b0e41ec2418d698e40ee2ef929dd7ccdc0a32227
 
           echo "md_count=$md_count" >> $GITHUB_OUTPUT
           echo "non_md_count=$non_md_count" >> $GITHUB_OUTPUT
