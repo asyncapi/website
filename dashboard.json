@@ -17,37 +17,15 @@
       "score": 34.46095064991105
     },
     {
-      "id": "PR_kwDOFLhIt855u7Eb",
+      "id": "PR_kwDOBW5R_c5-T7mG",
       "isPR": true,
       "isAssigned": false,
-      "title": "docs: added community marketing strategy doc",
-      "author": "iambami",
-      "resourcePath": "/asyncapi/community/pull/1358",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 19.527872034949596
-    },
-    {
-      "id": "PR_kwDOFLhIt85oVQqh",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: docs automation for website",
-      "author": "AnimeshKumar923",
-      "resourcePath": "/asyncapi/community/pull/1082",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 18.37917367995256
-    },
-    {
-      "id": "PR_kwDOBW5R_c52BRgf",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: added test for build-rss.js",
+      "title": "feat: add tests for build post list script",
       "author": "vishvamsinh28",
-      "resourcePath": "/asyncapi/website/pull/3101",
+      "resourcePath": "/asyncapi/website/pull/3284",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 17.517649913704783
+      "score": 29.866157229922912
     },
     {
       "id": "I_kwDOGQYLdM5AX1lK",
@@ -67,7 +45,92 @@
           "color": "0E8A16"
         }
       ],
-      "score": 15.794602381209232
+      "score": 28.717458874925875
+    },
+    {
+      "id": "PR_kwDOBW5R_c6BZLuT",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add tests for check markdown script",
+      "author": "vishvamsinh28",
+      "resourcePath": "/asyncapi/website/pull/3378",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 23.26114168868996
+    },
+    {
+      "id": "PR_kwDOFLhIt85bqKL8",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add Bounty Program Rules",
+      "author": "aeworxet",
+      "resourcePath": "/asyncapi/community/pull/897",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 22.112443333692923
+    },
+    {
+      "id": "I_kwDOBW5R_c5BIl5P",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Add new page for collecting user testing participants",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/website/issues/529",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "Epic",
+          "color": "3E4B9E"
+        },
+        {
+          "name": "keep-open",
+          "color": "ffee84"
+        },
+        {
+          "name": "area/design",
+          "color": "0d67d3"
+        },
+        {
+          "name": "area/javascript",
+          "color": "ededed"
+        }
+      ],
+      "score": 21.825268744943667
+    },
+    {
+      "id": "PR_kwDOFLhIt855u7Eb",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: added marketing strategy doc",
+      "author": "iambami",
+      "resourcePath": "/asyncapi/community/pull/1358",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 20.102221212448114
+    },
+    {
+      "id": "I_kwDOBW5R_c5RVOOY",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Community cards implementation.",
+      "author": "Mayaleeeee",
+      "resourcePath": "/asyncapi/website/issues/930",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "area/design",
+          "color": "0d67d3"
+        },
+        {
+          "name": "area/javascript",
+          "color": "ededed"
+        }
+      ],
+      "score": 17.517649913704783
     },
     {
       "id": "PR_kwDOFLhIt853IEwA",
@@ -78,7 +141,7 @@
       "resourcePath": "/asyncapi/community/pull/1333",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 15.220253203710714
+      "score": 16.08177696995849
     },
     {
       "id": "I_kwDOFLhIt85bebeO",
@@ -89,96 +152,141 @@
       "resourcePath": "/asyncapi/community/issues/568",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 14.933078614961456
+      "score": 15.794602381209232
     },
     {
-      "id": "PR_kwDOCHlHJM54CmhW",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: add the migration guide and nunjucks depreciation notes",
-      "author": "Gmin2",
-      "resourcePath": "/asyncapi/generator/pull/1253",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 13.78438025996442
-    },
-    {
-      "id": "I_kwDODou01c5o2x-Z",
+      "id": "I_kwDODou01c5BZZv-",
       "isPR": false,
       "isAssigned": false,
-      "title": "Start using a React framework",
-      "author": "fmvilas",
-      "resourcePath": "/asyncapi/studio/issues/661",
+      "title": "Open Graph link preview image according to the document to open",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/224",
       "repo": "asyncapi/studio",
-      "labels": [],
-      "score": 13.210031082465903
-    },
-    {
-      "id": "I_kwDOFLhIt85xI2wH",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Measure AsyncAPI Adoption",
-      "author": "fmvilas",
-      "resourcePath": "/asyncapi/community/issues/879",
-      "repo": "asyncapi/community",
       "labels": [
         {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 12.922856493716644
-    },
-    {
-      "id": "I_kwDOBW5R_c5Pi3rO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Epic roadmap to the new AsyncAPI community section",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/website/issues/903",
-      "repo": "asyncapi/website",
-      "labels": [
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
         {
           "name": "keep-open",
-          "color": "ffee84"
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 15.087185824232376
+    },
+    {
+      "id": "I_kwDODou01c5ZAFWh",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Please support File References",
+      "author": "philCryoport",
+      "resourcePath": "/asyncapi/studio/issues/528",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "bounty",
+          "color": "0E8A16"
+        }
+      ],
+      "score": 14.07155484871368
+    }
+  ],
+  "goodFirstIssues": [
+    {
+      "id": "I_kwDOFLhIt86ihL5I",
+      "title": "[BUG] voting summary has some errors in `isVotedInLast3Months`",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/community/issues/1614",
+      "repo": "asyncapi/community",
+      "author": "derberg",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFLhIt86hMsxx",
+      "title": "Create an announcement design for the new TSC member (Ashmit Jagtap)",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/community/issues/1602",
+      "repo": "asyncapi/community",
+      "author": "iambami",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": ":loudspeaker: marketing",
+          "color": "a829e2"
         },
         {
           "name": "🎨 design",
           "color": "0D67D3"
         }
-      ],
-      "score": 11.073163907693488
+      ]
     },
     {
-      "id": "I_kwDODwv8N86BkfYV",
-      "isPR": false,
+      "id": "I_kwDODwv8N86f37o-",
+      "title": "Return to top arrow feature/button",
       "isAssigned": false,
-      "title": "Add Gallery Section to AACoT'24 Conference Website",
-      "author": "Mayaleeeee",
-      "resourcePath": "/asyncapi/conference-website/issues/264",
+      "resourcePath": "/asyncapi/conference-website/issues/475",
       "repo": "asyncapi/conference-website",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ],
-      "score": 10.912634372471834
-    }
-  ],
-  "goodFirstIssues": [
-    {
-      "id": "I_kwDODwv8N86bdV6Z",
-      "title": "Links in the Resources Hub Should Open in a New Window",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/conference-website/issues/434",
-      "repo": "asyncapi/conference-website",
-      "author": "AceTheCreator",
+      "author": "thulieblack",
       "area": "Unknown",
       "labels": [
         {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFLhIt86dker5",
+      "title": "Designs for the mentees selected for the mentorship program for promotion",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/community/issues/1581",
+      "repo": "asyncapi/community",
+      "author": "iambami",
+      "area": "design",
+      "labels": [
+        {
+          "name": ":loudspeaker: marketing",
+          "color": "a829e2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c6ddpHW",
+      "title": "[BUG] algolia search icon not visible on website navbar",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/3371",
+      "repo": "asyncapi/website",
+      "author": "anshgoyalevil",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "ee0701"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c6crqQz",
+      "title": "Improve image type detection in build-rss.js",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/3357",
+      "repo": "asyncapi/website",
+      "author": "coderabbitai",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
         }
       ]
     },
@@ -198,63 +306,10 @@
       ]
     },
     {
-      "id": "I_kwDOBW5R_c6aKzLD",
-      "title": "[FEATURE] Add coderabbit configuration to the repo",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/3293",
-      "repo": "asyncapi/website",
-      "author": "akshatnema",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCHlHJM6ZrKEr",
-      "title": "[📑 Docs]: Fix the relative paths of `index.md` & `migration.md` files.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/generator/issues/1294",
-      "repo": "asyncapi/generator",
-      "author": "Gmin2",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        },
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOCVQpZM6YZd4E",
       "title": "A fragment with only one child is redundant.",
       "isAssigned": false,
       "resourcePath": "/asyncapi/asyncapi-react/issues/1054",
-      "repo": "asyncapi/asyncapi-react",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCVQpZM6YZc4E",
-      "title": "Remove this redundant \"undefined\"",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/asyncapi-react/issues/1053",
       "repo": "asyncapi/asyncapi-react",
       "author": "AceTheCreator",
       "area": "Unknown",
@@ -296,51 +351,6 @@
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODwv8N86Vde8t",
-      "title": "Sponsor announcement design for social media",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/conference-website/issues/380",
-      "repo": "asyncapi/conference-website",
-      "author": "thulieblack",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "design",
-          "color": "5D0F46"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODwv8N86VdePb",
-      "title": "The conference countdown banner",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/conference-website/issues/378",
-      "repo": "asyncapi/conference-website",
-      "author": "thulieblack",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "design",
-          "color": "5D0F46"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c6VIyCf",
-      "title": "[Docs Bug 🐞 report]: Broken link to Generator Github Actions",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/3190",
-      "repo": "asyncapi/website",
-      "author": "chinma-yyy",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "🐞 docs bug",
-          "color": "FFD23F"
         }
       ]
     },
@@ -410,21 +420,6 @@
       "labels": []
     },
     {
-      "id": "I_kwDOBW5R_c6U79Xr",
-      "title": "[Docs Bug 🐞 report]:  Github handle link of alequetzalli is not working ",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/3176",
-      "repo": "asyncapi/website",
-      "author": "NoIdea2001",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "🐞 docs bug",
-          "color": "FFD23F"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOFLhIt86O7jFN",
       "title": "[DESIGN] Holopin Design Tracking",
       "isAssigned": true,
@@ -436,6 +431,21 @@
         {
           "name": "🎨 design",
           "color": "0D67D3"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDODwv8N86Lel9M",
+      "title": "[FEATURE] Resolve the existing Next.js lint issues",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/conference-website/issues/328",
+      "repo": "asyncapi/conference-website",
+      "author": "ashmit-coder",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
         }
       ]
     },
@@ -462,7 +472,12 @@
       "repo": "asyncapi/cli",
       "author": "Amzani",
       "area": "typescript",
-      "labels": []
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ]
     },
     {
       "id": "I_kwDOFDnrNc6Gp8Qd",
@@ -472,24 +487,10 @@
       "repo": "asyncapi/cli",
       "author": "Amzani",
       "area": "typescript",
-      "labels": []
-    },
-    {
-      "id": "I_kwDOFDnrNc59gY4V",
-      "title": "Validate command output is polluted by noisy messages",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/1095",
-      "repo": "asyncapi/cli",
-      "author": "cykl",
-      "area": "Unknown",
       "labels": [
         {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        },
-        {
-          "name": "bug",
-          "color": "d73a4a"
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -505,25 +506,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh3857Kllp",
-      "title": "Add loading animation for when playground generate models ",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/modelina/issues/1725",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "website",
-          "color": "57A793"
         }
       ]
     },
@@ -555,21 +537,6 @@
           "name": "enhancement",
           "color": "a2eeef"
         },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODou01c531nlO",
-      "title": "Misalignment of Code Editor Highlight Box",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/studio/issues/861",
-      "repo": "asyncapi/studio",
-      "author": "princerajpoot20",
-      "area": "typescript",
-      "labels": [
         {
           "name": "stale",
           "color": "ededed"
@@ -641,6 +608,10 @@
         {
           "name": "bug",
           "color": "d73a4a"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -656,6 +627,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -709,25 +684,6 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBGu-185qGt6A",
-      "title": "Ensure consistency when using either `Application` or `API` terms",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec/issues/949",
-      "repo": "asyncapi/spec",
-      "author": "smoya",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -763,6 +719,10 @@
       "author": "CynthiaPeter",
       "area": "docs",
       "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
         {
           "name": "📑 docs",
           "color": "E50E99"
@@ -998,6 +958,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     }

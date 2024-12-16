@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 import ArrowLeft from '../icons/ArrowLeft';
 import ArrowRight from '../icons/ArrowRight';
 import Container from '../layout/Container';
 import Banner from './AnnouncementBanner';
-import { banners } from './banners';
+import { banners, shouldShowBanner } from './banners';
 
 interface IAnnouncementHeroProps {
   className?: string;
@@ -21,15 +21,15 @@ interface IAnnouncementHeroProps {
 export default function AnnouncementHero({ className = '', small = false }: IAnnouncementHeroProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const len = banners.length;
-  const numberOfVisibleBanners = banners.filter((banner) => banner.show).length;
+  const visibleBanners = useMemo(() => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)), [banners]);
+  const numberOfVisibleBanners = visibleBanners.length;
 
   const goToPrevious = () => {
-    setActiveIndex((prevIndex) => (prevIndex === 0 ? len - 1 : prevIndex - 1));
+    setActiveIndex((prevIndex) => (prevIndex === 0 ? numberOfVisibleBanners - 1 : prevIndex - 1));
   };
 
   const goToNext = () => {
-    setActiveIndex((prevIndex) => (prevIndex === len - 1 ? 0 : prevIndex + 1));
+    setActiveIndex((prevIndex) => (prevIndex === numberOfVisibleBanners - 1 ? 0 : prevIndex + 1));
   };
 
   const goToIndex = (index: number) => {
@@ -62,31 +62,28 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
         )}
         <div className='relative flex w-5/6 flex-col items-center justify-center gap-2'>
           <div className='relative flex min-h-72 w-full items-center justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
-            {banners.map(
-              (banner, index) =>
-                banner.show && (
-                  <Banner
-                    key={index}
-                    title={banner.title}
-                    dateLocation={banner.dateLocation}
-                    cfaText={banner.cfaText}
-                    eventName={banner.eventName}
-                    cfpDeadline={banner.cfpDeadline}
-                    link={banner.link}
-                    city={banner.city}
-                    activeBanner={index === activeIndex % len}
-                    className={className}
-                    small={small}
-                  />
-                )
-            )}
+            {visibleBanners.map((banner, index) => (
+              <Banner
+                key={index}
+                title={banner.title}
+                dateLocation={banner.dateLocation}
+                cfaText={banner.cfaText}
+                eventName={banner.eventName}
+                cfpDeadline={banner.cfpDeadline}
+                link={banner.link}
+                city={banner.city}
+                activeBanner={index === activeIndex % numberOfVisibleBanners}
+                className={className}
+                small={small}
+              />
+            ))}
           </div>
           <div className='m-auto flex justify-center'>
-            {banners.map((banner, index) => (
+            {visibleBanners.map((banner, index) => (
               <div
                 key={index}
                 className={`mx-1 size-2 cursor-pointer rounded-full ${
-                  activeIndex % len === index ? 'bg-primary-500' : 'bg-gray-300'
+                  activeIndex % numberOfVisibleBanners === index ? 'bg-primary-500' : 'bg-gray-300'
                 }`}
                 onClick={() => goToIndex(index)}
               />
