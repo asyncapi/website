@@ -61,6 +61,43 @@ describe('Frontmatter Validator', () => {
       const limit = getConcurrencyLimit();
       expect(limit).toBe(20);
     });
+
+    it('respects concurrency limit during file processing', async () => {
+      const processingTimes = [];
+      const mockValidateFunction = jest.fn().mockImplementation(() => {
+        const startTime = Date.now();
+        processingTimes.push(startTime);
+        // Simulate some processing time
+        return new Promise(resolve => setTimeout(resolve, 50));
+      });
+
+      // Create multiple test files
+      for (let i = 0; i < 20; i++) {
+        await fs.writeFile(
+          path.join(tempDir, `test${i}.md`),
+          '---\ntitle: Test\n---'
+        );
+      }
+
+      const limit = pLimit(5); // Set limit to 5
+      await checkMarkdownFiles(tempDir, mockValidateFunction, '', limit);
+
+      // Group processing times by 5 (our limit) and verify gaps between groups
+      const sortedTimes = processingTimes.sort();
+      const groups = [];
+      for (let i = 0; i < sortedTimes.length; i += 5) {
+        groups.push(sortedTimes.slice(i, i + 5));
+      }
+
+      // Verify that each group of 5 started processing together
+      groups.forEach(group => {
+        const groupSpread = Math.max(...group) - Math.min(...group);
+        expect(groupSpread).toBeLessThan(50); // Should start within 50ms of each other
+      });
+
+      // Verify that the mock validate function was called for all files
+      expect(mockValidateFunction).toHaveBeenCalledTimes(20);
+    });
   });
 
   it('validates authors array and returns specific errors', async () => {

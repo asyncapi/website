@@ -20,9 +20,7 @@ function getConcurrencyLimit() {
 
   // Validate the parsed limit
   if (Number.isNaN(parsedLimit)) {
-    console.warn(
-      `Invalid MARKDOWN_CONCURRENCY_LIMIT: '${envLimit}'. Falling back to default of 10.`
-    );
+    console.warn(`Invalid MARKDOWN_CONCURRENCY_LIMIT: '${envLimit}'. Falling back to default of 10.`);
     return 10;
   }
 
@@ -100,9 +98,7 @@ function validateBlogs(frontmatter) {
           errors.push(`Author at index ${index} is missing a name`);
         }
         if (author.link && !isValidURL(author.link)) {
-          errors.push(
-            `Invalid URL for author at index ${index}: ${author.link}`,
-          );
+          errors.push(`Invalid URL for author at index ${index}: ${author.link}`);
         }
         if (!author.photo) {
           errors.push(`Author at index ${index} is missing a photo`);
@@ -149,8 +145,8 @@ function validateDocs(frontmatter) {
 async function checkMarkdownFiles(
   folderPath,
   validateFunction,
-  relativePath = '',
   limit,
+  relativePath = ''
 ) {
   try {
     const files = await fs.readdir(folderPath);
@@ -170,8 +166,8 @@ async function checkMarkdownFiles(
         await checkMarkdownFiles(
           filePath,
           validateFunction,
-          relativeFilePath,
           limit,
+          relativeFilePath
         );
       } else if (path.extname(file) === '.md') {
         // Use the concurrency limiter for file processing
@@ -208,8 +204,8 @@ async function main() {
     const limit = pLimit(concurrencyLimit);
 
     await Promise.all([
-      checkMarkdownFiles(docsFolderPath, validateDocs, '', limit),
-      checkMarkdownFiles(blogsFolderPath, validateBlogs, '', limit)
+      checkMarkdownFiles(docsFolderPath, validateDocs, limit, ''),
+      checkMarkdownFiles(blogsFolderPath, validateBlogs, limit, '')
     ]);
   } catch (error) {
     console.error('Failed to validate markdown files:', error);
