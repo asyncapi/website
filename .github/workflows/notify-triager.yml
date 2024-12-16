@@ -11,7 +11,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4.1.1
         with:
-          fetch-depth: 0
+          fetch-depth: 2
 
       - name: Get commit message
         id: commit-message
@@ -43,14 +43,10 @@ jobs:
           md_count=0
           non_md_count=0
 
-          # Loop through the changed files to count .md and non-.md files
-          for file in $changed_files; do
-            if [[ $file == *.md ]]; then
-              md_count=$((md_count + 1))
-            else
-              non_md_count=$((non_md_count + 1))
-            fi
-          done
+          # Count .md files
+          md_count=$(echo "$changed_files" | grep -c '\.md$' || true)
+          # Count non-.md files
+          non_md_count=$(echo "$changed_files" | grep -vc '\.md$' || true)
 
           echo "md_count=$md_count" >> $GITHUB_OUTPUT
           echo "non_md_count=$non_md_count" >> $GITHUB_OUTPUT
