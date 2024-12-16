@@ -1,9 +1,21 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/ap2ZiRN8MDs/hqdefault.jpg",
-    "title": "My GSoC Experience with AsyncAPI - Yuan Yuan",
+    "image_url": "https://i.ytimg.com/vi/QWRcCvDmf04/hqdefault.jpg",
+    "title": "AsyncAPI Mentorship Program 2024 Cohort Kick-off",
+    "description": "Welcoming the 2024 cohort of the AsyncAPI mentorship program.",
+    "videoId": "QWRcCvDmf04"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/XirMXiBNaBM/hqdefault.jpg",
+    "title": "Community Meeting, 16:00 UTC Tuesday November 26th 2024",
     "description": "",
-    "videoId": "ap2ZiRN8MDs"
+    "videoId": "XirMXiBNaBM"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/Q2cvxsUUgzA/hqdefault.jpg",
+    "title": "AsyncAPI-Powered Event Feeds: 3 Steps to Streaming",
+    "description": "In this livestream, we'll dive into the challenges and benefits of using AsyncAPI for building event-driven architectures.",
+    "videoId": "Q2cvxsUUgzA"
   },
   {
     "image_url": "https://i.ytimg.com/vi/9MaHh4b-rmc/hqdefault.jpg",
@@ -12,21 +24,9 @@
     "videoId": "9MaHh4b-rmc"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/lCTdXmougTk/hqdefault.jpg",
-    "title": "AsyncAPI and DDD - A Pretty Couple - Dr. Annegret Junker",
-    "description": "",
-    "videoId": "lCTdXmougTk"
-  },
-  {
     "image_url": "https://i.ytimg.com/vi/Q1q6JoFG0zM/hqdefault.jpg",
     "title": "The Many Meanings Of An AsyncAPI File - Swen-Helge Huber",
     "description": "",
     "videoId": "Q1q6JoFG0zM"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/b_BStEcLNqg/hqdefault.jpg",
-    "title": "Sustaining Open Source Beyond Code: The Importance of Marketing and Funding -  Oluwabamikemi Kayode",
-    "description": "",
-    "videoId": "b_BStEcLNqg"
   }
 ]
