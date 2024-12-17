@@ -24,6 +24,17 @@ const addItem = (details) => {
     result.about.push(details)
 };
 
+function getVersionDetails(slug) {
+   const fileBaseName = basename(slug);
+   const versionName = fileBaseName.split('-')[0];
+   return {
+     title: versionName.startsWith('v') ? 
+       capitalize(versionName.slice(1)) : 
+       capitalize(versionName),
+     weight: specWeight--
+   };
+ }
+
 /**
  * Builds a list of posts from the specified directories and writes it to a file
  * @param {Array<Array<string>>} postDirectories - Array of [directory, slug] tuples
@@ -36,14 +47,14 @@ async function buildPostList(postDirectories, basePath, writeFilePath) {
   try {
 
     if (!basePath) {
-      throw new Error('Error while building post list: basePath is required');
+      throw new Error('Error while building post list: basePath is required. Please provide a valid base path for resolving relative paths.');
     }
     if (!writeFilePath) {
-      throw new Error('Error while building post list: writeFilePath is required');
+      throw new Error('Error while building post list: writeFilePath is required. Please provide a valid path where the output JSON will be written.');
     }
 
     if (postDirectories.length === 0) {
-      throw new Error('Error while building post list: No post directories provided');
+      throw new Error('Error while building post list: No post directories provided. Please provide an array of [directory, slug] tuples.');
     }
     const normalizedBasePath = normalize(basePath)
     await walkDirectories(postDirectories, result, normalizedBasePath)
@@ -121,15 +132,10 @@ async function walkDirectories(
         details.isIndex = fileName.endsWith(join('index.mdx'))
         details.slug = details.isIndex ? sectionSlug : slug.replace(/\.mdx$/, '')
         if (details.slug.includes('/reference/specification/') && !details.title) {
-          const fileBaseName = basename(details.slug)  // ex. v2.0.0 | v2.1.0-next-spec.1
-          const versionName = fileBaseName.split('-')[0] // v2.0.0 | v2.1.0
-          details.weight = specWeight--
-
-          if (versionName.startsWith('v')) {
-            details.title = capitalize(versionName.slice(1))
-          } else {
-            details.title = capitalize(versionName)
-          }
+          const fileBaseName = basename(details.slug)
+          const versionDetails = getVersionDetails(details.slug);
+          details.title = versionDetails.title;
+          details.weight = versionDetails.weight;
 
           if (releaseNotes.includes(details.title)) {
             details.releaseNoteLink = `/blog/release-notes-${details.title}`
@@ -157,6 +163,9 @@ async function walkDirectories(
   }
 }
 
+// Matches heading IDs in two formats:
+// 1. {#my-heading-id}
+// 2. <a name="my-heading-id">
 const HEADING_ID_REGEX = /[\s]*(?:\{#([a-zA-Z0-9\-_]+)\}|<a[\s]+name="([a-zA-Z0-9\-_]+)")/;
 
 /**
