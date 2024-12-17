@@ -58,14 +58,7 @@ function isValidURL(str) {
  * @returns {string[]|null} An array of validation error messages, or null if no errors.
  */
 function validateBlogs(frontmatter) {
-  const requiredAttributes = [
-    'title',
-    'date',
-    'type',
-    'tags',
-    'cover',
-    'authors',
-  ];
+  const requiredAttributes = ['title', 'date', 'type', 'tags', 'cover', 'authors'];
   const errors = [];
 
   // Check for required attributes

@@ -195,11 +195,7 @@ describe('Frontmatter Validator', () => {
 
     await checkMarkdownFiles(tempDir, validateDocs, '', pLimit(10));
 
-    expect(mockConsoleLog).not.toHaveBeenCalledWith(
-      expect.stringContaining(
-        'Errors in file reference/specification/skipped.md',
-      ),
-    );
+    expect(mockConsoleLog).not.toHaveBeenCalledWith(expect.stringContaining('Errors in file reference/specification/skipped.md'));
     mockConsoleLog.mockRestore();
   });
 
@@ -227,10 +223,7 @@ describe('Frontmatter Validator', () => {
 
     expect(mockProcessExit).toHaveBeenCalledWith(1);
 
-    expect(mockConsoleError).toHaveBeenCalledWith(
-      'Failed to validate markdown files:',
-      expect.any(Error),
-    );
+    expect(mockConsoleError).toHaveBeenCalledWith('Failed to validate markdown files:',expect.any(Error));
   });
 
   it('should handle successful main function execution', async () => {
