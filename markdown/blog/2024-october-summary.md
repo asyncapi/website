@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: AsyncAPI Community Manager
 excerpt: 'October Community Update And Online Conference Summary'
-featured: true
 ---
 
 October marked the third AsyncAPI Conference, this time an online edition. As someone fortunate enough to be extensively involved in organizing the conferences, I saw the challenges that came with in-person events. 
