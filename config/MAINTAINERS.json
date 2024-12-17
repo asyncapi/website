@@ -238,7 +238,7 @@
         "twitter": "ldussart",
         "availableForHire": false,
         "company": "zatsit",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "avro-schema-parser"
         ],
@@ -343,7 +343,7 @@
         "linkedin": "nektarios-fifes-372740220",
         "slack": "U01SE93Q48N",
         "availableForHire": true,
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "simulator"
         ],
@@ -896,28 +896,6 @@
             "modelina"
         ],
         "githubID": 743192
-    },
-    {
-        "name": "Vinit Shahdeo",
-        "github": "vinitshahdeo",
-        "twitter": "Vinit_Shahdeo",
-        "availableForHire": true,
-        "isTscMember": false,
-        "repos": [
-            "diff"
-        ],
-        "githubID": 20594326
-    },
-    {
-        "name": "Anubhav Vats",
-        "github": "onbit-uchenik",
-        "twitter": "postmanlabs",
-        "availableForHire": true,
-        "isTscMember": false,
-        "repos": [
-            "diff"
-        ],
-        "githubID": 46771418
     },
     {
         "name": "Akshaya Gurlhosur",
