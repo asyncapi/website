@@ -183,7 +183,9 @@ async function isDirectory(dir) {
 }
 
 function capitalize(text) {
-  return text.replace(/(?:^|\s|-)([a-z])/g, (_, char) => char.toUpperCase())
+  return text.split(/[\s-]/)
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
 }
 
 module.exports = { slugifyToC, buildPostList }
