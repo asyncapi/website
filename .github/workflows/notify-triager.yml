@@ -11,13 +11,17 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4.1.1
         with:
+          fetch-depth: 0
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Get commit message
         id: commit-message
         run: |
+          # Extract the commit message
           commit_message=$(git log --format=%B -n 1 ${{ github.event.pull_request.head.sha }})
+          commit_message=$(echo "$commit_message" | tr '\n' ' ')
+          commit_message=$(echo "$commit_message" | sed 's/[<>|]//g' | sed 's/[][]//g' | sed 's/(//g' | sed 's/)//g' | xargs)
           echo "commit_message=$commit_message" >> $GITHUB_OUTPUT
 
       - name: Check if last commit is a merge commit
@@ -31,23 +35,23 @@ jobs:
             echo "isMergeCommit=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Checkout asyncapi/website Repository
-        uses: actions/checkout@v4.1.1
+      - name: Count changed files
+        id: changed_files
+        run: |
+          # Get the list of files changed in the latest commit
+          changed_files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }})
 
-      - name: Check PR Changes for .md files
-        id: md-pr-changes
-        uses: tj-actions/changed-files@aa08304bd477b800d468db44fe10f6c61f7f7b11 # version 42.1.0 https://github.com/tj-actions/changed-files/releases/tag/v42.1.0
-        with:
-          files: |
-            **.md
+          # Initialize counters
+          md_count=0
+          non_md_count=0
 
-      - name: Check PR Changes for non-.md files
-        id: non-md-pr-changes
-        uses: tj-actions/changed-files@aa08304bd477b800d468db44fe10f6c61f7f7b11 # version 42.1.0 https://github.com/tj-actions/changed-files/releases/tag/v42.1.0
-        with:
-          files: |
-            !**.md
+          # Count .md files
+          md_count=$(echo "$changed_files" | grep -c '\.md$' || true)
+          # Count non-.md files
+          non_md_count=$(echo "$changed_files" | grep -vc '\.md$' || true)
 
+          echo "md_count=$md_count" >> $GITHUB_OUTPUT
+          echo "non_md_count=$non_md_count" >> $GITHUB_OUTPUT
 
       - name: Extract Doc Triage Maintainers
         id: doc-triager
@@ -68,7 +72,7 @@ jobs:
           echo "codeTriagers=$codeTriagers" >> $GITHUB_ENV
 
       - name: Add Reviewers for code files
-        if: steps.check-merge-branch.outputs.isMergeCommit == 'false' && steps.non-md-pr-changes.outputs.any_changed == 'true'
+        if: ${{ steps.check-merge-branch.outputs.isMergeCommit == 'false' && steps.changed_files.outputs.non_md_count > 0 }}
         run: |
           IFS=' ' read -r -a codeTriagers <<< "${{ env.codeTriagers }}"
           reviewers=$(printf ', "%s"' "${codeTriagers[@]}")
@@ -83,7 +87,7 @@ jobs:
           }"
 
       - name: Add Reviewers for doc files
-        if: steps.check-merge-branch.outputs.isMergeCommit == 'false' && steps.md-pr-changes.outputs.any_changed == 'true'
+        if: ${{ steps.check-merge-branch.outputs.isMergeCommit == 'false' && steps.changed_files.outputs.md_count > 0 }}
         run: |
           IFS=' ' read -r -a docTriagers <<< "${{ env.docTriagers }}"
           reviewers=$(printf ', "%s"' "${docTriagers[@]}")
@@ -96,3 +100,4 @@ jobs:
           -d "{
             \"reviewers\": $reviewers
           }"
+          
