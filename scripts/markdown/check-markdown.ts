@@ -1,15 +1,15 @@
+import fs from 'fs/promises';
 import matter from 'gray-matter';
 import path from 'path';
-
-const fs = require('fs').promises;
 
 /**
  * Checks if a given string is a valid URL.
  * @param {string} str - The string to validate as a URL.
  * @returns {boolean} True if the string is a valid URL, false otherwise.
  */
-function isValidURL(str) {
+function isValidURL(str: string) {
   try {
+    // eslint-disable-next-line no-new
     new URL(str);
 
     return true;
@@ -18,19 +18,23 @@ function isValidURL(str) {
   }
 }
 
-/**
- * Validates the frontmatter of a blog post.
- * @param {object} frontmatter - The frontmatter object to validate.
- * @param {string} filePath - The path to the file being validated.
- * @returns {string[]|null} An array of validation error messages, or null if no errors.
- */
-function validateBlogs(frontmatter) {
+interface FrontMatter {
+  title: string;
+  date: string;
+  type: string;
+  tags: string[];
+  cover: string;
+  weight?: number;
+  authors: { name: string; link: string; photo: string }[];
+}
+
+function validateBlogs(frontmatter: FrontMatter) {
   const requiredAttributes = ['title', 'date', 'type', 'tags', 'cover', 'authors'];
   const errors = [];
 
   // Check for required attributes
   requiredAttributes.forEach((attr) => {
-    if (!frontmatter.hasOwnProperty(attr)) {
+    if (!Object.prototype.hasOwnProperty.call(frontmatter, attr)) {
       errors.push(`${attr} is missing`);
     }
   });
@@ -52,9 +56,7 @@ function validateBlogs(frontmatter) {
 
   // Validate authors (must be an array with valid attributes)
   if (frontmatter.authors) {
-    if (!Array.isArray(frontmatter.authors)) {
-      errors.push('Authors should be an array');
-    } else {
+    if (Array.isArray(frontmatter.authors)) {
       frontmatter.authors.forEach((author, index) => {
         if (!author.name) {
           errors.push(`Author at index ${index} is missing a name`);
@@ -66,19 +68,15 @@ function validateBlogs(frontmatter) {
           errors.push(`Author at index ${index} is missing a photo`);
         }
       });
+    } else {
+      errors.push('Authors should be an array');
     }
   }
 
   return errors.length ? errors : null;
 }
 
-/**
- * Validates the frontmatter of a documentation file.
- * @param {object} frontmatter - The frontmatter object to validate.
- * @param {string} filePath - The path to the file being validated.
- * @returns {string[]|null} An array of validation error messages, or null if no errors.
- */
-function validateDocs(frontmatter) {
+function validateDocs(frontmatter: FrontMatter) {
   const errors = [];
 
   // Check if title exists and is a string
@@ -100,7 +98,11 @@ function validateDocs(frontmatter) {
  * @param {Function} validateFunction - The function used to validate the frontmatter.
  * @param {string} [relativePath=''] - The relative path of the folder for logging purposes.
  */
-async function checkMarkdownFiles(folderPath, validateFunction, relativePath = '') {
+async function checkMarkdownFiles(
+  folderPath: string,
+  validateFunction: (frontmatter: any) => string[] | null,
+  relativePath = ''
+) {
   try {
     const files = await fs.readdir(folderPath);
     const filePromises = files.map(async (file) => {
