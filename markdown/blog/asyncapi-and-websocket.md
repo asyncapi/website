@@ -263,7 +263,7 @@ operations:
   sendMessage:
     summary: Receive a chat message
     description: Allows users to receive messages to the chat room
-    action: receieve
+    action: receive
     channel:
       $ref: '#/channels/chat'
     messages:
@@ -374,17 +374,15 @@ Here, `apiKeyHeader` is our security scheme, specifying that the key should be
 
 Now, let’s associate this security scheme with our WebSocket server so it requires authorization:
 
-<CodeBlock highlightedLines={[6,7]}>
-{`servers:
-development:
-  host: localhost:8787
-  description: Development Websocket broker.
-  protocol: ws
-  security:
-    - $ref: '#/components/securitySchemes/apiKeyHeader' 
-  `
-}
-</CodeBlock>
+```
+servers:
+  development:
+    host: localhost:8787
+    description: Development Websocket broker.
+    protocol: ws
+    security: # newly added line
+      - $ref: '#/components/securitySchemes/apiKeyHeader' 
+```
 
 As you can see we added a security property to the development server, and one thing you can notice is i'm specifying it as an array `-$ref` and the reason is because you can pass multiple security types in the security object, and only one of this security scheme needs to be satisfied to authorize a connection. But in our case, we only needed one so yea, let's role with that. 
 
