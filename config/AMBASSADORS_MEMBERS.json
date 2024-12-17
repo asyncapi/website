@@ -542,6 +542,24 @@
           "month": "June"
         },
         "link": "https://confengine.com/conferences/selenium-conf-2024/proposal/20021/unshackling-your-system-under-test-shift-left-testing-through-dependency-isolation"
+      },
+      {
+        "type": "talk",
+        "title": "Using API spec as an Executable Contract To Mock and Test Microservices",
+        "date": {
+          "year": 2024,
+          "month": "October"
+        },
+        "link": "https://www.youtube.com/watch?v=wiM20HTCerM"
+      },
+      {
+        "type": "talk",
+        "title": "Contract-Driven Development for Event-Driven Architectures",
+        "date": {
+          "year": 2024,
+          "month": "December"
+        },
+        "link": "https://conference.asyncapi.com/venue/Paris"
       }
     ]
   },
