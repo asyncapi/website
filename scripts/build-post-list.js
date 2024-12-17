@@ -2,7 +2,6 @@ const { readdir, stat, pathExists, readFile, writeFile } = require('fs-extra')
 const { basename, join, normalize, sep, posix, relative, extname } = require('path')
 const frontMatter = require('gray-matter')
 const toc = require('markdown-toc')
-const { slugify } = require('markdown-toc/lib/utils')
 const readingTime = require('reading-time')
 const { markdownToTxt } = require('markdown-to-txt')
 const { buildNavTree, addDocButtons } = require('./build-docs')
@@ -36,12 +35,11 @@ const addItem = (details) => {
 async function buildPostList(postDirectories, basePath, writeFilePath) {
   try {
 
-    if (!basePath || !writeFilePath) {
-      const missing = [
-        !basePath && 'basePath',
-        !writeFilePath && 'writeFilePath'
-        ].filter(Boolean);
-        throw new Error(`Error while building post list: ${missing.join(' and ')} ${missing.length > 1 ? 'are' : 'is'} required`);
+    if (!basePath) {
+      throw new Error('Error while building post list: basePath is required');
+    }
+    if (!writeFilePath) {
+      throw new Error('Error while building post list: writeFilePath is required');
     }
 
     if (postDirectories.length === 0) {
@@ -73,7 +71,7 @@ async function walkDirectories(
     const files = await Promise.all([
       readdir(directory),
       pathExists(directory)
-      ]).then(([files]) => files)
+    ]).then(([files]) => files)
 
     for (let file of files) {
       let details;
@@ -148,14 +146,9 @@ async function walkDirectories(
         }
 
         // To create a list of available ReleaseNotes list, which will be used to add details.releaseNoteLink attribute.
-        if (file.startsWith("release-notes") && dir[1] === "/blog") {
-          const fileNameWithoutExtension = basename(file, extname(file))
-          // removes the file extension. For example, release-notes-2.1.0.md -> release-notes-2.1.0
-          const version = fileNameWithoutExtension.slice(fileNameWithoutExtension.lastIndexOf("-") + 1)
-
-          // gets the version from the name of the releaseNote .md file (from /blog). For example, version = 2.1.0 if fileNameWithoutExtension = release-notes-2.1.0
-          releaseNotes.push(version)
-          // releaseNotes is the list of all available releaseNotes
+        if (file.startsWith('release-notes') && dir[1] === '/blog') {
+          const version = basename(file, extname(file)).split('-').pop();
+          releaseNotes.push(version);
         }
 
         addItem(details)
@@ -164,6 +157,8 @@ async function walkDirectories(
   }
 }
 
+const HEADING_ID_REGEX = /[\s]*(?:\{#([a-zA-Z0-9\-_]+)\}|<a[\s]+name="([a-zA-Z0-9\-_]+)")/;
+
 /**
  * Extracts heading IDs from markdown headings
  * @param {string} str - The heading text containing potential ID
@@ -171,10 +166,11 @@ async function walkDirectories(
  */
 function slugifyToC(str) {
   if (typeof str !== 'string') return '';
+  if (!str.trim()) return '';
   let slug = '';
 
   // Match heading IDs like {# myHeadingId}
-  const idMatch = str.match(/[\s]*(?:\{#([a-zA-Z0-9\-_]+)\}|<a[\s]+name="([a-zA-Z0-9\-_]+)")/);
+  const idMatch = str.match(HEADING_ID_REGEX);
   const [, headingId, anchorId] = idMatch || [];
   slug = (headingId || anchorId || '').trim();
 
