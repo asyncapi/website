@@ -61,14 +61,14 @@ Here are some of the benefits of using the Buffer subscription
 
 Please note that I currently do not have direct access to AsyncAPI’s social media accounts. Buffer provides an effective solution for posting content, monitoring performance, and maintaining the high standards of AsyncAPI's public presence without broad access.
 
-As part of the benefit of using Buffer, we have access to our social media analytics. Below are the analytics for LinkedIn and X (formally Twitter) from January 1st to December 12th, 2024.
+As part of the benefit of using Buffer, we have access to our social media analytics. Below are the analytics for LinkedIn from January 1st to December 12th, 2024.
 
 
 
 <Figure
   src="/img/posts/marketing-images/linkedIn-metrics-insights.webp"
-  alt="Graph showing AsyncAPI LinkedIn metrics including follower growth, engagement rates, and post performance over time"
-  caption="AsyncAPI LinkedIn graph showing metrics insights from Buffer analytics."
+  alt="Graph showing AsyncAPI LinkedIn follower growth"
+  caption="AsyncAPI LinkedIn graph showing the followers growth from Buffer analytics."
   className="text-center"
 />
 
@@ -76,7 +76,7 @@ As part of the benefit of using Buffer, we have access to our social media analy
 
 <Figure
   src="/img/posts/marketing-images/linkedin-performance-statistics.webp"
-  alt="Graph showing AsyncAPI LinkedIn performance including follower growth, engagement rates, and post performance over time"
+  alt="Image showing AsyncAPI LinkedIn performance including follower growth, engagement rates, and post performance over time"
   caption="AsyncAPI LinkedIn performance statistics from Buffer analytics."
   className="text-center"
 />
@@ -84,29 +84,10 @@ As part of the benefit of using Buffer, we have access to our social media analy
 
 
 
-In 2024, our LinkedIn performance saw impressive growth: a 48% increase in followers (3,910 total), 104% more impressions (100,328), and 91% more new followers (911). Engagement soared with a 219% rise in clicks (4,295 total) and a 9% improved engagement rate (5.32%). We also published 44% more posts (233), highlighting consistent content efforts.
+In 2024, our LinkedIn performance saw impressive growth: a 48% increase in followers (3,910 total), 104% more impressions (100,328), and 91% more new followers (911). Engagement soared with a 219% rise in clicks (4,295 total) and a 9% improved engagement rate (5.32%). We also published 44% more posts (233), highlighting consistent content efforts. It has been difficult to track the exact numbers on X formally (Twitter). Hence, we will not be sharing any data from X at this time.
 
 
 
-<Figure
-  src="/img/posts/marketing-images/x-metrics-insights.webp"
-  alt="Graph showing AsyncAPI X metrics including follower growth, engagement rates, and post performance over time"
-  caption="AsyncAPI Twitter (X) metrics insights from Buffer analytics."
-  className="text-center"
-/>
-
-
-
-
-<Figure
-  src="/img/posts/marketing-images/x-performance-statistics.webp"
-  alt="Graph showing AsyncAPI X performance including follower growth, engagement rates, and post performance over time"
-  caption="AsyncAPI Twitter (X) performance statistics from Buffer analytics."
-  className="text-center"
-/>
-
-
-Our performance on X (Twitter) has been extraordinary, with significant growth in tweets, replies, retweets, clicks, impressions, likes, and overall engagements. These results highlight increased visibility, audience interactions, and a stronger community connection.
 
 ## Closing the Online Store
 
