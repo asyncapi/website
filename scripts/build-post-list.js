@@ -37,10 +37,11 @@ async function buildPostList(postDirectories, basePath, writeFilePath) {
   try {
 
     if (!basePath || !writeFilePath) {
-      const missing = [];
-      if (!basePath) missing.push('basePath');
-      if (!writeFilePath) missing.push('writeFilePath');
-      throw new Error(`Error while building post list: ${missing.join(' and ')} ${missing.length > 1 ? 'are' : 'is'} required`);
+      const missing = [
+        !basePath && 'basePath',
+        !writeFilePath && 'writeFilePath'
+        ].filter(Boolean);
+        throw new Error(`Error while building post list: ${missing.join(' and ')} ${missing.length > 1 ? 'are' : 'is'} required`);
     }
 
     if (postDirectories.length === 0) {
@@ -69,7 +70,10 @@ async function walkDirectories(
   for (let dir of directories) {
     const directory = posix.normalize(dir[0]);
     const sectionSlug = dir[1] || '';
-    const files = await readdir(directory)
+    const files = await Promise.all([
+      readdir(directory),
+      pathExists(directory)
+      ]).then(([files]) => files)
 
     for (let file of files) {
       let details;
@@ -170,18 +174,9 @@ function slugifyToC(str) {
   let slug = '';
 
   // Match heading IDs like {# myHeadingId}
-  const headingIdMatch = str.match(/[\s]*\{#([a-zA-Z0-9\-_]+)\}/);
-  const [, headingId] = headingIdMatch || [];
-  if (headingId?.trim()) {
-    slug = headingId;
-  } else {
-    // Match heading IDs like {<a name="myHeadingId"/>}
-    const anchorTagMatch = str.match(/[\s]*<a[\s]+name="([a-zA-Z0-9\-_]+)"/);
-    const [, anchorId] = anchorTagMatch || [];
-    if (anchorId?.trim()) {
-      slug = anchorId;
-    }
-  }
+  const idMatch = str.match(/[\s]*(?:\{#([a-zA-Z0-9\-_]+)\}|<a[\s]+name="([a-zA-Z0-9\-_]+)")/);
+  const [, headingId, anchorId] = idMatch || [];
+  slug = (headingId || anchorId || '').trim();
 
   // If no valid ID is found, return an empty string
   return slug;
