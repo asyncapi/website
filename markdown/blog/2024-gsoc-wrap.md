@@ -39,7 +39,7 @@ We had a range of successful contributions that significantly advanced AsyncAPI 
 
 - **[Ashmit Jagtap](https://github.com/ashmit-coder)** who contributed extensively to the AsyncAPI Conference website by addressing existing issues and bugs, adding testing capabilities with Cypress to improve the contributor experience, and implementing support for call for speakers registration for the online edition of the conference. Additionally, Ashmit reviewed pull requests, mentored potential contributors, and ultimately became a project maintainer.
 
-- **[Vishvamsinh Vaghela](https://github.com/vishvamsinh28)** enhanced the stability of scripts on the AsyncAPI website by ensuring all scripts functioned as expected and writing comprehensive unit tests to ensure smooth operations in the website, particularly as the number of contributors grew and more people worked on critical parts of the website.
+- **[Vishvamsinh Vaghela](https://github.com/vishvamsinh28)** enhanced the stability of scripts on the AsyncAPI website by ensuring all scripts functioned as expected and writing comprehensive unit tests to ensure smooth operations on the website, particularly as the number of contributors grew and more people worked on critical parts of the website.
 
 - **[Ankit Dash](https://github.com/helios2003)** added dynamic preview image generation for AsyncAPI documents shared via the AsyncAPI Studio website. Ankit also shared his GSoC journey and contributions during the online edition of the [AsyncAPI Conference](https://conference.asyncapi.com/venue/Online).
 <YouTube id="B9xI8BziM94" />
