@@ -1,6 +1,6 @@
 ---
 title: "2024 Google Summer Of Code Wrap Up"
-date: 2024-12-11T06:00:00+01:00
+date: 2024-12-18T06:00:00+01:00
 type: Community
 tags:
   - Mentorship
