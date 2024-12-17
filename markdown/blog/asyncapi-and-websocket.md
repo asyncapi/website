@@ -76,7 +76,7 @@ Channels in AsyncAPI are pretty much based on a simple idea, Senders send messag
 - **Messages**: The list of message types that can be sent to this channel, ready to be received by any subscriber at any time.
 - **Bindings**: A set of WebSocket-specific info that customizes the connection details.
 
-Now that we've seen how to describe a websocket channel in AsyncAPI, not let's see the next key concept which is messages. 
+Now that we've seen how to describe a websocket channel in AsyncAPI, now let's see the next key concept which is messages. 
 
 ### Messages
 
