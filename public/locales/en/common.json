@@ -23,6 +23,6 @@
     "calendar": {
         "title": "Upcoming events",
         "viewCalendarBtn": "View Calendar",
-        "noMettingsMessage": "There are no meetings scheduled for next few days."
+        "noMeetingsMessage": "There are no meetings scheduled for next few days. You can check upcoming events by clicking the button below."
     }
 }

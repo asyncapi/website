@@ -898,28 +898,6 @@
         "githubID": 743192
     },
     {
-        "name": "Vinit Shahdeo",
-        "github": "vinitshahdeo",
-        "twitter": "Vinit_Shahdeo",
-        "availableForHire": true,
-        "isTscMember": false,
-        "repos": [
-            "diff"
-        ],
-        "githubID": 20594326
-    },
-    {
-        "name": "Anubhav Vats",
-        "github": "onbit-uchenik",
-        "twitter": "postmanlabs",
-        "availableForHire": true,
-        "isTscMember": false,
-        "repos": [
-            "diff"
-        ],
-        "githubID": 46771418
-    },
-    {
         "name": "Akshaya Gurlhosur",
         "github": "AGurlhosur",
         "isTscMember": false,

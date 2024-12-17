@@ -120,10 +120,10 @@ Success with OpenForce was followed by the unexpected announcement that AsyncAPI
   }}
 />
 
-An amazing success for [Alejandra Quetzalli](https://twitter.com/QuetzalliAle) and an excellent opportunity for the AsyncAPI Initiative to improve its documentation big time!
-On May 16, we will announce the names of six interns we want to hire to work on two different projects to have better docs. Alejandra leads a super challenging task to interview as many candidates as possible (around 150!). Keep your fingers crossed.
+An amazing success for [Quetzalli Writes][quetzalliwrites-xcom] and an excellent opportunity for the AsyncAPI Initiative to improve its documentation big time!
+On May 16, we will announce the names of six interns we want to hire to work on two different projects to have better docs. Quetzalli leads a super challenging task to interview as many candidates as possible (around 150!). Keep your fingers crossed.
 
-Alejandra and I will be mentors for our GSoD interns in the following months. Stay tuned to watch the progress.
+Quetzalli and I will be mentors for our GSoD interns in the following months. Stay tuned to watch the progress.
 
 ### AsyncAPI Mentorship
 
@@ -147,7 +147,7 @@ One of our missions is to have kick-ass documentation. Easy, right?
 
 Writing docs is easy, just like writing code (at least in my opinion :stuck_out_tongue_winking_eye:). Well, we all know the devil is hidden in details. Details like gathering requirements, figuring out architecture, and making sure you have a well-motivated group of people working on it. And last but not least, make sure the community can easily share feedback on your work transparently.
 
-I wrote already about [Alejandra Quetzalli](https://twitter.com/QuetzalliAle) and the efforts to get AsyncAPI into GSoD. Getting a well-motivated group of people to work on docs, checked. :white_check_mark:
+I wrote already about [Quetzalli Writes][quetzalliwrites-xcom] and the efforts to get AsyncAPI into GSoD. Getting a well-motivated group of people to work on docs, checked. :white_check_mark:
 
 Our [new docs information architecture is almost here too](https://github.com/asyncapi/website/pull/601). I think we can say "checked" :white_check_mark: to this one too.
 
@@ -164,11 +164,14 @@ Since this week, we can also say "checked" :white_check_mark: to the idea of **g
 Each documentation page has a dedicated feedback form that one can fill in anonymously. The form injects the feedback into a [docs-related GitHub Discussion like this example](https://github.com/asyncapi/community/discussions/340).
 
 Huge applause to:
-- [Alejandra Quetzalli](https://twitter.com/QuetzalliAle) for leading the change
+- [Quetzalli Writes][quetzalliwrites-xcom] for leading the change
 - [Missy Turco](https://twitter.com/missyturco) for amazing support with design
 - [Maciej Urbanczyk](https://github.com/magicmatatjahu) for detailed review
 - [Akshat Nema](https://twitter.com/AksNema) for implementation. Akshat demonstrated a lot of patience here. As an individual contributor, he waited for the merge for quite some time. There was a long discussion, many parties involved. Many contributors lost interest in such long-running PRs. Not Akshat! :muscle:
 
-Anyway, I recommend you follow [Alejandra](https://twitter.com/QuetzalliAle) and her [regular docs-related updates](https://gist.github.com/alequetzalli).
+Anyway, I recommend you follow [Quetzalli][quetzalliwrites-xcom] and her [regular docs-related updates][quetzalliwrites-gist].
 
 > Photo by <a href="https://unsplash.com/@mitchel3uo">Mitchell Luo</a> on <a href="https://unsplash.com/photos/H3htK85wwnU">Unsplash</a>
+
+- [quetzalliwrites-xcom]: https://x.com/quetzalliwrites
+- [quetzalliwrites-gist]: https://gist.github.com/quetzalliwrites

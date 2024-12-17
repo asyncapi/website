@@ -503,6 +503,6 @@ Any piece of feedback would be much appreciated.
 
 For any questions, comments, or corrections, feel free to reach out to me at [dimitrios@dedouss.is](mailto:dimitrios@dedouss.is).
 
-_A special shout out to [derberq](https://twitter.com/derberq), [alequetzalli](https://twitter.com/QuetzalliAle), and the wider AsyncAPI community for being particularly helpful and responsive._ 🙇
+_A special shout out to [derberq](https://twitter.com/derberq), [quetzalliwrites](https://x.com/quetzalliwrites), and the wider AsyncAPI community for being particularly helpful and responsive._ 🙇
 
 > Photo by <a href="https://unsplash.com/photos/A4iL43vunlY">Matt Howard</a> on <a href="https://unsplash.com/photos/A4iL43vunlY">Unsplash</a>

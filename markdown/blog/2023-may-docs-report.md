@@ -7,9 +7,9 @@ tags:
   - Communication
 cover: /img/posts/2023-may-docs-report.webp
 authors:
-  - name: Alejandra Quetzalli
-    photo: /img/avatars/canela-ale.webp
-    link: https://www.linkedin.com/in/alejandra-quetzalli/
+  - name: Quetzalli Writes
+    photo: /img/avatars/canela-quetzalli.webp
+    link: https://www.linkedin.com/in/quetzalli-writes/
     byline: In May 2023, the AsyncAPI documentation had 9,453 sessions and 4,876 unique users, including 2,895 new users.
 ---
 

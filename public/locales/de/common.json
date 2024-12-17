@@ -23,6 +23,6 @@
     "calendar": {
         "title": "Kommende Veranstaltungen",
         "viewCalendarBtn": "Kalender ansehen",
-        "noMettingsMessage": "In den nächsten Tagen sind keine Sitzungen geplant."
+        "noMeetingsMessage": "In den nächsten Tagen sind keine Sitzungen geplant. Sie können bevorstehende Veranstaltungen überprüfen, indem Sie auf die Schaltfläche unten klicken."    
     }
 }

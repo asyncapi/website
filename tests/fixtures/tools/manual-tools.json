@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Tool A",
+    "filters": {
+      "language": "JavaScript",
+      "technology": ["Node.js"]
+    },
+    "links": {
+      "repoUrl": "https://github.com/asyncapi/tool-a"
+    }
+  }
+]
