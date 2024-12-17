@@ -76,7 +76,7 @@ Channels in AsyncAPI are pretty much based on a simple idea, Senders send messag
 - **Messages**: The list of message types that can be sent to this channel, ready to be received by any subscriber at any time.
 - **Bindings**: A set of WebSocket-specific info that customizes the connection details.
 
-Now that we've seen how to describe a websocket channel in AsyncAPI, now let's see the next key concept which is messages. 
+Now that we've seen what makes up a websocket channel in AsyncAPI, let's take a look at the next key concept which is messages. 
 
 ### Messages
 
@@ -90,11 +90,8 @@ Just like channels, websocket messages in AsyncAPI are also made up of various e
 
 - **Name:**  A friendly, descriptive name for the message.
 - **Summary:** A short summary of what the message is about.
-- **Description:** A verbose explanation of the message
-- **Payload:** The structured and verbose required properties for your message
-
-
-And here's an example of what messages looks like in an AsyncAPI document
+- **Description:** A verbose explanation of the message.
+- **Payload:** The structured and verbose required properties for your message.
 
 Now let's take a look at another key concept which is called operations
 
@@ -113,10 +110,7 @@ Operations are made up of a few important elements:
 - **Summary**: A quick summary of what the operation is all about.
 - **Description**: A more detailed explanation of the operation’s purpose.
 
-And here's an example of an operation in an AsyncAPI document. 
-
-
-With operations, you get more control and clarity over message flow within each channel—making AsyncAPI even more powerful for building real-time, event-driven systems!
+With operations, you get more control and clarity over message flow within each channel, making AsyncAPI even more powerful for building event-driven systems!
 
 These three concepts are integral when documenting our websocket server using AsyncAPI. 
 
