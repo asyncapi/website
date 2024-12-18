@@ -84,7 +84,9 @@ As part of the benefit of using Buffer, we have access to our social media analy
 
 
 
-In 2024, our LinkedIn performance saw impressive growth: a 48% increase in followers (3,910 total), 104% more impressions (100,328), and 91% more new followers (911). Engagement soared with a 219% rise in clicks (4,295 total) and a 9% improved engagement rate (5.32%). We also published 44% more posts (233), highlighting consistent content efforts. It has been difficult to track the exact numbers on X formally (Twitter). Hence, we will not be sharing any data from X at this time.
+In 2024, our LinkedIn performance saw impressive growth: a 48% increase in followers (3,910 total), 104% more impressions (100,328), and 91% more new followers (911). Engagement soared with a 219% rise in clicks (4,295 total) and a 9% improved engagement rate (5.32%). We also published 44% more posts (233), highlighting consistent content efforts. 
+
+Tracking our performance on X (formally Twitter) has not been easy. Buffer does not have access to historical data. We can see numbers that show our performance since we connected Buffer in September. We do not have data that we could share and show how our performance improved as we do not have such.
 
 
 
