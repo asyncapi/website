@@ -27,14 +27,14 @@ const addItem = (details) => {
   }
 };
 
-function getVersionDetails(slug) {
+function getVersionDetails(slug, weight) {
   const fileBaseName = basename(slug);
   const versionName = fileBaseName.split('-')[0];
   return {
-    title: versionName.startsWith('v') ?
-      capitalize(versionName.slice(1)) :
-      capitalize(versionName),
-    weight: specWeight--
+    title: versionName.startsWith('v')
+      ? capitalize(versionName.slice(1))
+      : capitalize(versionName),
+    weight
   };
 }
 
@@ -134,7 +134,7 @@ async function walkDirectories(
         details.slug = details.isIndex ? sectionSlug : slug.replace(/\.mdx$/, '')
         if (details.slug.includes('/reference/specification/') && !details.title) {
           const fileBaseName = basename(details.slug)
-          const versionDetails = getVersionDetails(details.slug);
+          const versionDetails = getVersionDetails(details.slug, specWeight--);
           details.title = versionDetails.title;
           details.weight = versionDetails.weight;
 
