@@ -1,5 +1,5 @@
 const { readdir, stat, pathExists, readFile, writeFile } = require('fs-extra')
-const { basename, join, normalize, sep, posix, relative, extname } = require('path')
+const { basename, join, normalize, sep, posix, relative, parse } = require('path')
 const frontMatter = require('gray-matter')
 const toc = require('markdown-toc')
 const readingTime = require('reading-time')
@@ -25,15 +25,15 @@ const addItem = (details) => {
 };
 
 function getVersionDetails(slug) {
-   const fileBaseName = basename(slug);
-   const versionName = fileBaseName.split('-')[0];
-   return {
-     title: versionName.startsWith('v') ? 
-       capitalize(versionName.slice(1)) : 
-       capitalize(versionName),
-     weight: specWeight--
-   };
- }
+  const fileBaseName = basename(slug);
+  const versionName = fileBaseName.split('-')[0];
+  return {
+    title: versionName.startsWith('v') ?
+      capitalize(versionName.slice(1)) :
+      capitalize(versionName),
+    weight: specWeight--
+  };
+}
 
 /**
  * Builds a list of posts from the specified directories and writes it to a file
@@ -79,10 +79,7 @@ async function walkDirectories(
   for (let dir of directories) {
     const directory = posix.normalize(dir[0]);
     const sectionSlug = dir[1] || '';
-    const files = await Promise.all([
-      readdir(directory),
-      pathExists(directory)
-    ]).then(([files]) => files)
+    const files = await readdir(directory)
 
     for (let file of files) {
       let details;
@@ -153,7 +150,8 @@ async function walkDirectories(
 
         // To create a list of available ReleaseNotes list, which will be used to add details.releaseNoteLink attribute.
         if (file.startsWith('release-notes') && dir[1] === '/blog') {
-          const version = basename(file, extname(file)).split('-').pop();
+          const { name } = parse(file);
+          const version = name.split('-').pop();
           releaseNotes.push(version);
         }
 
