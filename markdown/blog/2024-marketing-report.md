@@ -174,6 +174,6 @@ This report highlights the strides made by the AsyncAPI Marketing Working Group,
 Looking ahead, our focus will be on implementing the strategy document, fostering community growth, launching the Student Ambassador Program, and driving impactful promotions and partnerships. These efforts aim to strengthen the AsyncAPI ecosystem and create meaningful opportunities for collaboration and engagement.
 
 
-If you have any questions, suggestions, or ideas, please feel free to reach out to me on Slack [Atinuke (Bami) Kayode](https://asyncapi.slack.com/archives/D070U11CU1G).
+If you have any questions, suggestions, or ideas, please feel free to reach out to me on Slack [Atinuke (Bami) Kayode](https://asyncapi.slack.com/team/U070DE02VQX).
 
 
