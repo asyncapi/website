@@ -16,12 +16,15 @@ const result = {
 const releaseNotes = []
 
 const addItem = (details) => {
-  if (details.slug.startsWith('/docs'))
-    result.docs.push(details)
-  else if (details.slug.startsWith('/blog'))
-    result.blog.push(details)
-  else if (details.slug.startsWith('/about'))
-    result.about.push(details)
+  const sectionMap = {
+    '/docs': 'docs',
+    '/blog': 'blog',
+    '/about': 'about'
+  };
+  const section = Object.keys(sectionMap).find(key => details.slug.startsWith(key));
+  if (section) {
+    result[sectionMap[section]].push(details);
+  }
 };
 
 function getVersionDetails(slug) {
@@ -47,14 +50,15 @@ async function buildPostList(postDirectories, basePath, writeFilePath) {
   try {
 
     if (!basePath) {
-      throw new Error('Error while building post list: basePath is required. Please provide a valid base path for resolving relative paths.');
+      throw new Error('Error while building post list: basePath is required');
     }
+
     if (!writeFilePath) {
-      throw new Error('Error while building post list: writeFilePath is required. Please provide a valid path where the output JSON will be written.');
+      throw new Error('Error while building post list: writeFilePath is required');
     }
 
     if (postDirectories.length === 0) {
-      throw new Error('Error while building post list: No post directories provided. Please provide an array of [directory, slug] tuples.');
+      throw new Error('Error while building post list: postDirectories array is empty');
     }
     const normalizedBasePath = normalize(basePath)
     await walkDirectories(postDirectories, result, normalizedBasePath)
@@ -85,7 +89,7 @@ async function walkDirectories(
       let details;
       const fileName = normalize(join(directory, file));
       const fileNameWithSection = normalize(join(fileName, '_section.mdx'))
-      const slug = '/' + normalize(relative(basePath, fileName)).replace(/\\/g, '/')
+      const slug = `/${normalize(relative(basePath, fileName)).replace(/\\/g, '/')}`
       const slugElements = slug.split('/')
 
       if (await isDirectory(fileName)) {
