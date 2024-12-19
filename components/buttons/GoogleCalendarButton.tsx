@@ -27,13 +27,13 @@ export default function GoogleCalendarButton({
 }: IGoogleCalendarButtonProps) {
   const { t } = useTranslation('common');
   
-// created a variable with name 'googleCalenderBtnText' to take the value from 'common.json' file to add text on the button
+// created a variable with name 'googleCalendarBtnText' to take the value from 'common.json' file to add text on the button
 
-let googleCalenderBtnText = details.googleCalendarBtn;
+let googleCalendarBtnText = details.googleCalendarBtn;
 
   return (
     <Button
-      text={t(googleCalenderBtnText)}
+      text={t(googleCalendarBtnText)}
       icon={<IconGoogleCalendar />}
       href={href}
       iconPosition={iconPosition}
