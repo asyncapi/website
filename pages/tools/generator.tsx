@@ -63,7 +63,6 @@ export default function GeneratorPage() {
                 Start using Generator really quickly. Select one of the multiple templates we offer and start generating
                 documentation and code in a few seconds.
               </Paragraph>
-              {renderButtons()}
             </div>
 
             <GeneratorInstallation />
