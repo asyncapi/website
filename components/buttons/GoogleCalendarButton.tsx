@@ -6,6 +6,7 @@ import type { IButtonDefaultProps } from '../../types/components/buttons/types';
 import { useTranslation } from '../../utils/i18n';
 import IconGoogleCalendar from '../icons/GoogleCalendar';
 import Button from './Button';
+import details from '../../public/locales/en/common.json';
 
 interface IGoogleCalendarButtonProps extends IButtonDefaultProps {}
 
@@ -18,7 +19,6 @@ interface IGoogleCalendarButtonProps extends IButtonDefaultProps {}
  * @param {string} props.className - The class name to be applied to the button.
  */
 export default function GoogleCalendarButton({
-  text = 'googleCalendarBtn',
   href,
   target = '_blank',
   iconPosition = ButtonIconPosition.LEFT,
@@ -28,7 +28,7 @@ export default function GoogleCalendarButton({
 
   return (
     <Button
-      text={t(text)}
+      text={t(details.googleCalendarBtn)}
       icon={<IconGoogleCalendar />}
       href={href}
       iconPosition={iconPosition}
@@ -38,3 +38,4 @@ export default function GoogleCalendarButton({
     />
   );
 }
+
