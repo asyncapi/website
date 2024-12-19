@@ -1,7 +1,10 @@
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
+import assert from 'assert';
 import axios from 'axios';
 import Fuse from 'fuse.js';
+
+import type { AsyncAPITool, ToolsData, ToolsListObject } from '@/types/scripts/tools';
 
 import { convertToJson } from '../utils';
 import { categoryList } from './categorylist';
@@ -27,7 +30,12 @@ const fuse = new Fuse(categoryList, options);
 // isAsyncAPIrepo boolean variable to define whether the tool repository is under
 // AsyncAPI organization or not, to create a JSON tool object as required in the frontend
 // side to show ToolCard.
-const createToolObject = async (toolFile, repositoryUrl = '', repoDescription = '', isAsyncAPIrepo = '') => {
+const createToolObject = async (
+  toolFile: AsyncAPITool,
+  repositoryUrl = '',
+  repoDescription = '',
+  isAsyncAPIrepo: boolean | string = ''
+) => {
   const resultantObject = {
     title: toolFile.title,
     description: toolFile?.description ? toolFile.description : repoDescription,
@@ -49,9 +57,9 @@ const createToolObject = async (toolFile, repositoryUrl = '', repoDescription = 
 // using the defined JSON schema, categorising each tool inside their defined categories
 // and creating a JSON tool object in which all the tools are listed in defined
 // categories order, which is then updated in `automated-tools.json` file.
-async function convertTools(data) {
+async function convertTools(data: ToolsData) {
   try {
-    let finalToolsObject = {};
+    let finalToolsObject: ToolsListObject = {};
     const dataArray = data.items;
 
     // initialising finalToolsObject with all categories inside it with proper elements in each category
@@ -93,7 +101,7 @@ async function convertTools(data) {
 
               // Tool Object is appended to each category array according to Fuse search for categories inside Tool Object
               await Promise.all(
-                jsonToolFileContent.filters.categories.map(async (category) => {
+                jsonToolFileContent.filters.categories.map(async (category: string) => {
                   const categorySearch = await fuse.search(category);
                   const targetCategory = categorySearch.length ? categorySearch[0].item.name : 'Others';
                   const { toolsList } = finalToolsObject[targetCategory];
@@ -119,6 +127,7 @@ async function convertTools(data) {
 
     return finalToolsObject;
   } catch (err) {
+    assert(err instanceof Error);
     throw new Error(`Error processing tool: ${err.message}`);
   }
 }

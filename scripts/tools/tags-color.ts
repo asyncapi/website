@@ -1,5 +1,7 @@
+import type { LanguageColorItem } from '@/types/scripts/tools';
+
 // Language and Technology tags along with their colors in UI are defined here.
-const languagesColor = [
+const languagesColor: LanguageColorItem[] = [
   {
     name: 'Go/Golang',
     color: 'bg-[#8ECFDF]',
@@ -87,7 +89,7 @@ const languagesColor = [
   }
 ];
 
-const technologiesColor = [
+const technologiesColor: LanguageColorItem[] = [
   {
     name: 'Node.js',
     color: 'bg-[#BDFF67]',

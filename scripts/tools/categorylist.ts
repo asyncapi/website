@@ -1,5 +1,7 @@
+import type { CategoryListItem } from '@/types/scripts/tools';
+
 // Various categories to define the category in which a tool has to be listed
-const categoryList = [
+const categoryList: CategoryListItem[] = [
   {
     name: 'APIs',
     tag: 'api',

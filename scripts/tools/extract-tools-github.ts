@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const getData = async () => {
+  // eslint-disable-next-line no-useless-catch
   try {
     const result = await axios.get('https://api.github.com/search/code?q=filename:.asyncapi-tool', {
       headers: {
