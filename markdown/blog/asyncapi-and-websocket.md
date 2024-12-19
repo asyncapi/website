@@ -35,7 +35,7 @@ So, why would I use OpenAPI for that? Now you see why AsyncAPI is the better fit
 Let’s explore why combining AsyncAPI with WebSocket is such a powerful approach.
 
 ## The Intersection
-As I mentioned earlier, `WebSocket enables an event-driven connection between client and server`, meaning it operates asynchronously. AsyncAPI offers a standardized way to define these asynchronous APIs, making it a perfect match. This combination enhances real-time application development by ensuring consistent, reliable message formats and enabling instant, bi-directional data exchange between client and server.
+As I mentioned earlier, `WebSocket enables an event-driven connection between client and server`, meaning it operates asynchronously. AsyncAPI offers a standardized way to define these asynchronous APIs, making it a perfect match. This combination enhances real-time application development by ensuring consistent, reliable message formats and enabling instant, bidirectional data exchange between client and server.
 
 Now, let’s dive deeper into this powerful intersection! 🐬
 
@@ -67,9 +67,9 @@ Now let's look at what channels looks like in an AsyncAPI document.
 
 ### Channels
 
-The AsyncAPI channels allows us to establish a bi-directional communication between message senders and receivers. yea, that's it.
+The AsyncAPI channels allows us to establish a bidirectional communication between message senders and receivers. yea, that's it.
 
-Channels in AsyncAPI are pretty much based on a simple idea, Senders send messages with different contents to be addressed to different channels, and receivers subscribe to these channels to receive these messages. But AsyncAPI channels are more than just a message highway, they are made up of a number of different elements that works together to make communication between senders and receivers smooth. Some of these components includes,
+Channels in AsyncAPI are primarily based on a simple idea, Senders send messages with different contents to be addressed to different channels, and receivers subscribe to these channels to receive these messages. But AsyncAPI channels are more than just a message highway, they are made up of a number of different elements that works together to make communication between senders and receivers smooth. Some of these components includes,
 
 - **Address**: An optional string that specifies the channel's address This could be a topic name, routing key, event type, or path.
 - **Title**: A friendly, descriptive title for the channel.
@@ -141,7 +141,7 @@ servers:
 
 ### Step 2 - Defining Our WebSocket Channel
 
-As we mentioned earlier, AsyncAPI channels enable bi-directional communication between senders and receivers. Let’s define our channel below:
+As we mentioned earlier, AsyncAPI channels enable bidirectional communication between senders and receivers. Let’s define our channel below:
 
 ```
 channels:
@@ -215,7 +215,7 @@ With our message now tied to the channel, the final step is to specify the type 
 
 ### Step 5 - Defining our chat channel Operation
 
-The Operation part is critical to our API because it specifies what kind of action can be executed in a given channel. So now we need to create a operation for our #chat channel and we do that by doing the following:
+The Operation part is critical to our API because it specifies what kind of action can be executed in a given channel. So now we need to create a operation for our **chat** channel and we do that by doing the following:
 
 ```
 operations:
@@ -229,9 +229,9 @@ operations:
       - $ref: '#/channels/chat/messages/chatMessage'
 ```
 
-In the definition above, we created our first operation called `sendMessage` with a `send` action, that's made available in the #chat channel.  This basically means we've just enabled connected client to `send` a message, but not any kind of message, but the `chatMessage` to the #chat channel.
+In the definition above, we created our first operation called `sendMessage` with a `send` action, that's made available in the **chat** channel.  This basically means we've just enabled connected client to `send` a message, but not any kind of message, but the `chatMessage` to the **chat** channel.
 
-If I attempt to parse a message that isn't included in the list of messages for the #chat channel, as shown below...
+If I attempt to parse a message that isn't included in the list of messages for the **chat** channel, as shown below...
 
 ```
 operations:
@@ -245,7 +245,7 @@ operations:
       - $ref: '#/channels/chat/messages/hello'
 ```
 
-This will fail because in my #chat channel, i have no such message as `hello` even if i have the `hello` message defined in my message component. 
+This will fail because in my **chat** channel, i have no such message as `hello` even if i have the `hello` message defined in my message component. 
 
 A good thing to keep at the back of your mind when defining an operation is the list of messages you're assigning to an operation has to be available in the linked channel messages. 
 
