@@ -67,8 +67,8 @@ As part of the benefit of using Buffer, we have access to our social media analy
 
 <Figure
   src="/img/posts/marketing-images/linkedIn-metrics-insights.webp"
-  alt="Graph showing AsyncAPI LinkedIn follower growth"
-  caption="AsyncAPI LinkedIn graph showing the followers growth from Buffer analytics."
+  alt="Line graph showing AsyncAPI LinkedIn follower growth trends throughout 2024"
+  caption="AsyncAPI LinkedIn follower growth trends from January to December 2024"
   className="text-center"
 />
 
@@ -100,6 +100,7 @@ As of June 2024, the items in the store were 2383. The goal was to disburse all 
 
 <Figure
   src="/img/posts/marketing-images/merchandise.webp"
+  alt="Pie chart showing the distribution of AsyncAPI merchandise inventory across different categories including conference giveaways, TSC members, and community events"
   caption="Chart showing breakdown of AsyncAPI merchandise inventory as of June 2024."
   className="text-center"
 />
@@ -125,10 +126,10 @@ So far, $8,264.37 has been spent on maintaining the store and logistics. As part
 
 <Figure
   src="/img/posts/marketing-images/store-report.webp"
+  alt="Bar graph showing monthly expenses for the AsyncAPI merchandise store throughout 2024"
   caption="Graph showing monthly expenditure breakdown for the AsyncAPI merchandise store."
   className="text-center"
 />
-
 
 
 
@@ -169,11 +170,13 @@ This collaborative approach ensures that diverse perspectives guide our efforts 
 
 ## Conclusion
 
-This report highlights the strides made by the AsyncAPI Marketing Working Group, including targeted campaigns, streamlined social media management with Buffer, impactful merchandise distribution, the introduction of a comprehensive strategy document, and the launch of the Student Ambassador Program. We've also made strategic decisions, such as closing the online store, to optimize our budget for initiatives that deliver greater value to the community.
+This report highlights the strides made by the AsyncAPI Marketing Working Group, including targeted campaigns, streamlined social media management with Buffer, impactful merchandise distribution, the development of a comprehensive strategy document, and the proposal of a Student Ambassador Program. We've also made strategic decisions, such as closing the online store, to optimize our budget for initiatives that deliver greater value to the community.
 
 Looking ahead, our focus will be on implementing the strategy document, fostering community growth, launching the Student Ambassador Program, and driving impactful promotions and partnerships. These efforts aim to strengthen the AsyncAPI ecosystem and create meaningful opportunities for collaboration and engagement.
 
 
 If you have any questions, suggestions, or ideas, please feel free to reach out to me on Slack [Atinuke (Bami) Kayode](https://asyncapi.slack.com/team/U070DE02VQX).
+
+
 
 
