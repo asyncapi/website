@@ -29,7 +29,7 @@ export default function ICSFButton({
 
   return (
     <Button
-      text={t(details.icsFileBtn;)}
+      text={t(details.icsFileBtn)}
       icon={<IconCalendar />}
       href={href}
       iconPosition={iconPosition}
