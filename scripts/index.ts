@@ -1,23 +1,20 @@
-const { resolve } = require('path');
-const fs = require('fs');
-const rssFeed = require('./build-rss');
-const buildPostList = require('./build-post-list');
-const buildCaseStudiesList = require('./casestudies');
-const buildAdoptersList = require('./adopters');
-const buildFinanceInfoList = require('./finance');
+import fs from 'fs';
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'url';
+
+import { buildAdoptersList } from './adopters/index';
+import { buildPostList } from './build-post-list';
+import { rssFeed } from './build-rss';
+import { buildCaseStudiesList } from './casestudies/index';
+import { buildFinanceInfoList } from './finance/index';
+
+const currentFilePath = fileURLToPath(import.meta.url);
+const currentDirPath = dirname(currentFilePath);
 
 async function start() {
   await buildPostList();
-  rssFeed(
-    'blog',
-    'AsyncAPI Initiative Blog RSS Feed',
-    'AsyncAPI Initiative Blog',
-    'rss.xml'
-  );
-  await buildCaseStudiesList(
-    'config/casestudies',
-    resolve(__dirname, '../config', 'case-studies.json')
-  );
+  rssFeed('blog', 'AsyncAPI Initiative Blog RSS Feed', 'AsyncAPI Initiative Blog', 'rss.xml');
+  await buildCaseStudiesList('config/casestudies', resolve(currentDirPath, '../config', 'case-studies.json'));
   await buildAdoptersList();
   const financeDir = resolve('.', 'config', 'finance');
 
@@ -48,6 +45,6 @@ async function start() {
   });
 }
 
-module.exports = start;
+export { start };
 
 start();
