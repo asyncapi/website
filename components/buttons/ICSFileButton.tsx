@@ -19,7 +19,6 @@ interface IICSFButtonProps extends IButtonDefaultProps {}
  * @param {string} props.className - The class name to be applied to the button.
  */
 export default function ICSFButton({
-  text,
   href,
   target = '_blank',
   iconPosition = ButtonIconPosition.LEFT,
