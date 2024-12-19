@@ -19,8 +19,7 @@ Hello, everyone! I'm Bami, I’m the Community Marketing Specialist at the Async
 
 ## Overview of the Marketing Working Group
 
-The Marketing Working Group (MWG) is the driving force behind the AsyncAPI Initiative’s external engagement, community growth, and brand awareness efforts. Our mission is to encourage an active, informed, and passionate community by promoting the tools, resources, and stories that make AsyncAPI unique. 
-
+The Marketing Working Group (MWG) is the driving force behind the AsyncAPI Initiative’s external engagement, community growth, and brand awareness efforts. Our mission is to encourage an active, informed, and passionate community by promoting the tools, resources, and stories that make AsyncAPI unique.
 Some of the things we aim to accomplish:
 
 - **Increase Awareness:** Develop and implement targeted campaigns to introduce AsyncAPI to a broader audience and create a clear understanding of our mission.
@@ -67,17 +66,16 @@ As part of the benefit of using Buffer, we have access to our social media analy
 
 <Figure
   src="/img/posts/marketing-images/linkedIn-metrics-insights.webp"
-  alt="Line graph showing AsyncAPI LinkedIn follower growth trends throughout 2024"
-  caption="AsyncAPI LinkedIn follower growth trends from January to December 2024"
+   alt="Line graph showing AsyncAPI LinkedIn follower growth increasing from 2,000 to 3,910 followers throughout 2024"
+  caption="AsyncAPI LinkedIn follower growth trends showing 48% increase from January to December 2024"
   className="text-center"
 />
 
-
-
+ 
 <Figure
   src="/img/posts/marketing-images/linkedin-performance-statistics.webp"
-  alt="Image showing AsyncAPI LinkedIn performance including follower growth, engagement rates, and post performance over time"
-  caption="AsyncAPI LinkedIn performance statistics from Buffer analytics."
+  alt="Dashboard showing AsyncAPI LinkedIn metrics: 3,910 total followers, 100,328 impressions, 4,295 clicks, and 5.32% engagement rate"
+  caption="AsyncAPI LinkedIn performance dashboard showing key metrics from Buffer analytics for 2024"
   className="text-center"
 />
  
@@ -86,7 +84,8 @@ As part of the benefit of using Buffer, we have access to our social media analy
 
 In 2024, our LinkedIn performance saw impressive growth: a 48% increase in followers (3,910 total), 104% more impressions (100,328), and 91% more new followers (911). Engagement soared with a 219% rise in clicks (4,295 total) and a 9% improved engagement rate (5.32%). We also published 44% more posts (233), highlighting consistent content efforts. 
 
-Tracking our performance on X (formally Twitter) has not been easy. Buffer does not have access to historical data. We can see numbers that show our performance since we connected Buffer in September. We do not have data that we could share and show how our performance improved as we do not have such.
+
+Tracking our performance on X (formally Twitter) has not been easy. Buffer does not have access to historical data. We can see numbers that show our performance since we connected Buffer in September, but we do not have historical data to demonstrate performance improvements.
 
 
 
@@ -163,7 +162,8 @@ The Marketing Working Group thrives on collaboration, and we’re fortunate to h
 
 ## Who can Join the Marketing Working Group?
 
-The working group is designed to be inclusive and welcoming, not just sponsor representatives but also any community members who wish to contribute. Whether it’s sharing ideas, providing feedback, or helping execute campaigns.
+The working group is designed to be inclusive and welcoming, not just for sponsor representatives, but also for any community members who wish to contribute.
+
 
 This collaborative approach ensures that diverse perspectives guide our efforts and allows the Marketing Working Group to act as a bridge between AsyncAPI’s community and its stakeholders. We'd love to hear from you if you have ideas or want to contribute!
 
