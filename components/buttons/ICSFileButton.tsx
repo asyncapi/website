@@ -6,6 +6,7 @@ import type { IButtonDefaultProps } from '../../types/components/buttons/types';
 import { useTranslation } from '../../utils/i18n';
 import IconCalendar from '../icons/Calendar';
 import Button from './Button';
+import details from '../../public/locales/en/common.json';
 
 interface IICSFButtonProps extends IButtonDefaultProps {}
 
@@ -26,9 +27,13 @@ export default function ICSFButton({
 }: IICSFButtonProps) {
   const { t } = useTranslation('common');
 
+// created a variable with name 'icsFileBtnText' to take the value from 'common.json' file to add text on the button
+
+let icsFileBtnText = details.icsFileBtn;
+
   return (
     <Button
-      text={t(text)}
+      text={t(icsFileBtnText)}
       icon={<IconCalendar />}
       href={href}
       iconPosition={iconPosition}
