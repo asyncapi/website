@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/5hY8yi6DXyE/hqdefault.jpg",
+    "title": "Marketing WG Meeting, 14:00 UTC Tuesday December 17th 2024",
+    "description": "Welcoming the 2024 cohort of the AsyncAPI mentorship program.",
+    "videoId": "5hY8yi6DXyE"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/QWRcCvDmf04/hqdefault.jpg",
     "title": "AsyncAPI Mentorship Program 2024 Cohort Kick-off",
     "description": "Welcoming the 2024 cohort of the AsyncAPI mentorship program.",
@@ -22,11 +28,5 @@
     "title": "Broadening the API Landscape: AsyncAPI and CloudEvents in the Enterprise -  Daniel Kocot",
     "description": "",
     "videoId": "9MaHh4b-rmc"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/Q1q6JoFG0zM/hqdefault.jpg",
-    "title": "The Many Meanings Of An AsyncAPI File - Swen-Helge Huber",
-    "description": "",
-    "videoId": "Q1q6JoFG0zM"
   }
 ]
