@@ -219,7 +219,7 @@ export default function HomePage() {
             />
             <Testimonial
               className='md:pl-10 lg:pl-16'
-              text='We’ve been focusing on event-driven APIs since 2014 and thank the AsyncAPI contributors every day for driving the community towards common standards.'
+              text='We’ve been focusing on event-driven APIs since 2014, recognizing their growing importance in modern software architectures. Every day, we are grateful to the AsyncAPI contributors for their dedication and continuous effort in driving the community toward establishing common standards, which play a vital role in shaping the future of event-driven systems worldwide.'
               authorAvatar='/img/testimonials/eric-horesnyi.jpg'
               authorName='Eric Horesnyi'
               authorDescription='CEO at Streamdata.io'
