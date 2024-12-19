@@ -85,7 +85,7 @@
     "md5": "^2.3.0",
     "mermaid": "9.3.0",
     "moment": "^2.30.1",
-    "next": "14.2.12",
+    "next": "14.2.20",
     "next-i18next": "^15.3.0",
     "next-language-detector": "^1.1.0",
     "next-mdx-remote": "^4.4.1",
