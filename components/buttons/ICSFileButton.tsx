@@ -19,7 +19,7 @@ interface IICSFButtonProps extends IButtonDefaultProps {}
  * @param {string} props.className - The class name to be applied to the button.
  */
 export default function ICSFButton({
-  text = 'icsFileBtn',
+  text,
   href,
   target = '_blank',
   iconPosition = ButtonIconPosition.LEFT,
@@ -27,13 +27,9 @@ export default function ICSFButton({
 }: IICSFButtonProps) {
   const { t } = useTranslation('common');
 
-// created a variable with name 'icsFileBtnText' to take the value from 'common.json' file to add text on the button
-
-let icsFileBtnText = details.icsFileBtn;
-
   return (
     <Button
-      text={t(icsFileBtnText)}
+      text={t(details.icsFileBtn;)}
       icon={<IconCalendar />}
       href={href}
       iconPosition={iconPosition}
