@@ -19,11 +19,11 @@ export default function CaseStudyCard({ studies = [] }: ICaseStudyCardProps) {
   }
 
   return (
-    <div className='flex flex-wrap pt-10 lg:grid lg:grid-cols-3 lg:gap-8 lg:text-center'>
+    <div className='flex flex-wrap pt-10 justify-center items-start lg:gap-20 gap-10 lg:text-center'>
       {studies.map((study, index) => (
         <a key={index} href={`casestudies/${study.id}`}>
           <div
-            className='max-w-sm overflow-hidden rounded-md border border-gray-200 bg-white p-4'
+            className='max-w-sm overflow-hidden rounded-md border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md'
             data-testid='CaseStudyCard-main'
           >
             <span className='mr-2'>
