@@ -1,7 +1,10 @@
+/* eslint-disable max-depth */
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import fs from 'fs';
 import Fuse from 'fuse.js';
+
+import type { AsyncAPITool, LanguageColorItem, ToolsListObject } from '@/types/scripts/tools.js';
 
 import { categoryList } from './categorylist.js';
 import { languagesColor, technologiesColor } from './tags-color';
@@ -13,7 +16,7 @@ const ajv = new Ajv();
 addFormats(ajv, ['uri']);
 const validate = ajv.compile(schema);
 
-const finalTools = {};
+const finalTools: ToolsListObject = {};
 
 for (const category of categoryList) {
   finalTools[category.name] = {
@@ -39,12 +42,12 @@ let technologyFuse = new Fuse(technologyList, options);
 
 // takes individual tool object and inserts borderColor and backgroundColor of the tags of
 // languages and technologies, for Tool Card in website.
-const getFinalTool = async (toolObject) => {
+const getFinalTool = async (toolObject: AsyncAPITool) => {
   const finalObject = toolObject;
 
   // there might be a tool without language
   if (toolObject.filters.language) {
-    const languageArray = [];
+    const languageArray: LanguageColorItem[] = [];
 
     if (typeof toolObject.filters.language === 'string') {
       const languageSearch = await languageFuse.search(toolObject.filters.language);
@@ -65,7 +68,7 @@ const getFinalTool = async (toolObject) => {
         languageFuse = new Fuse(languageList, options);
       }
     } else {
-      for (const language of toolObject?.filters?.language) {
+      for (const language of toolObject.filters.language) {
         const languageSearch = await languageFuse.search(language);
 
         if (languageSearch.length > 0) {
@@ -74,7 +77,7 @@ const getFinalTool = async (toolObject) => {
           // adds a new language object in the Fuse list as well as in tool object
           // so that it isn't missed out in the UI.
           const languageObject = {
-            name: language,
+            name: language as string,
             color: 'bg-[#57f281]',
             borderColor: 'border-[#37f069]'
           };
@@ -90,7 +93,7 @@ const getFinalTool = async (toolObject) => {
   const technologyArray = [];
 
   if (toolObject.filters.technology) {
-    for (const technology of toolObject?.filters?.technology) {
+    for (const technology of toolObject.filters.technology) {
       const technologySearch = await technologyFuse.search(technology);
 
       if (technologySearch.length > 0) {
@@ -99,7 +102,7 @@ const getFinalTool = async (toolObject) => {
         // adds a new technology object in the Fuse list as well as in tool object
         // so that it isn't missed out in the UI.
         const technologyObject = {
-          name: technology,
+          name: technology as string,
           color: 'bg-[#61d0f2]',
           borderColor: 'border-[#40ccf7]'
         };
@@ -117,43 +120,46 @@ const getFinalTool = async (toolObject) => {
 
 // Combine the automated tools and manual tools list into single JSON object file, and
 // lists down all the language and technology tags in one JSON file.
-const combineTools = async (automatedTools, manualTools, toolsPath, tagsPath) => {
+const combineTools = async (automatedTools: any, manualTools: any, toolsPath: string, tagsPath: string) => {
   try {
+    // eslint-disable-next-line no-restricted-syntax
     for (const key in automatedTools) {
-      const finalToolsList = [];
+      if (Object.prototype.hasOwnProperty.call(automatedTools, key)) {
+        const finalToolsList = [];
 
-      if (automatedTools[key].toolsList.length) {
-        for (const tool of automatedTools[key].toolsList) {
-          finalToolsList.push(await getFinalTool(tool));
-        }
-      }
-      if (manualTools[key]?.toolsList?.length) {
-        for (const tool of manualTools[key].toolsList) {
-          let isAsyncAPIrepo;
-          const isValid = await validate(tool);
-
-          if (isValid) {
-            if (tool?.links?.repoUrl) {
-              const url = new URL(tool.links.repoUrl);
-
-              isAsyncAPIrepo = url.href.startsWith('https://github.com/asyncapi/');
-            } else isAsyncAPIrepo = false;
-            const toolObject = await createToolObject(tool, '', '', isAsyncAPIrepo);
-
-            finalToolsList.push(await getFinalTool(toolObject));
-          } else {
-            console.error({
-              message: 'Tool validation failed',
-              tool: tool.title,
-              source: 'manual-tools.json',
-              errors: validate.errors,
-              note: 'Script continues execution, error logged for investigation'
-            });
+        if (automatedTools[key].toolsList.length) {
+          for (const tool of automatedTools[key].toolsList) {
+            finalToolsList.push(await getFinalTool(tool));
           }
         }
+        if (manualTools[key]?.toolsList?.length) {
+          for (const tool of manualTools[key].toolsList) {
+            let isAsyncAPIrepo;
+            const isValid = await validate(tool);
+
+            if (isValid) {
+              if (tool?.links?.repoUrl) {
+                const url = new URL(tool.links.repoUrl);
+
+                isAsyncAPIrepo = url.href.startsWith('https://github.com/asyncapi/');
+              } else isAsyncAPIrepo = false;
+              const toolObject = await createToolObject(tool, '', '', isAsyncAPIrepo);
+
+              finalToolsList.push(await getFinalTool(toolObject));
+            } else {
+              console.error({
+                message: 'Tool validation failed',
+                tool: tool.title,
+                source: 'manual-tools.json',
+                errors: validate.errors,
+                note: 'Script continues execution, error logged for investigation'
+              });
+            }
+          }
+        }
+        finalToolsList.sort((tool, anotherTool) => tool.title.localeCompare(anotherTool.title));
+        finalTools[key].toolsList = finalToolsList;
       }
-      finalToolsList.sort((tool, anotherTool) => tool.title.localeCompare(anotherTool.title));
-      finalTools[key].toolsList = finalToolsList;
     }
     fs.writeFileSync(toolsPath, JSON.stringify(finalTools));
     fs.writeFileSync(tagsPath, JSON.stringify({ languages: languageList, technologies: technologyList }));
