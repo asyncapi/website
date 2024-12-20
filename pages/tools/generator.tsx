@@ -53,7 +53,7 @@ export default function GeneratorPage() {
               Docs, Code, Anything!
             </Heading>
             <Paragraph className='mt-4'>{description}</Paragraph>
-            <img src={generatorimage} alt='generator' className=' mx-auto h-auto w-1/2 object-cover' />
+            <img src={generatorimage} alt='generator diagram' className=' mx-auto h-auto w-1/2 object-cover' />
           </div>
 
           <div className='relative mt-12 lg:mt-20 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8'>
