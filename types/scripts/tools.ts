@@ -4,43 +4,6 @@ interface Links {
   repoUrl?: string; // URL to project codebase.
 }
 
-type Language =
-  | 'Go'
-  | 'Java'
-  | 'JavaScript'
-  | 'HTML'
-  | 'C/C++'
-  | 'C#'
-  | 'Python'
-  | 'TypeScript'
-  | 'Kotlin'
-  | 'Scala'
-  | 'Markdown'
-  | 'YAML'
-  | 'R'
-  | 'Ruby'
-  | 'Rust'
-  | 'Shell'
-  | 'Groovy';
-
-type Technology =
-  | 'Node js'
-  | 'Hermes'
-  | 'React JS'
-  | '.NET'
-  | 'ASP.NET'
-  | 'Springboot'
-  | 'AWS'
-  | 'Docker'
-  | 'Node-red'
-  | 'Maven'
-  | 'Saas'
-  | 'Kubernetes-native'
-  | 'Scala'
-  | 'Azure'
-  | 'Jenkins'
-  | 'Flask';
-
 type Category =
   | 'api'
   | 'code-first'
@@ -74,8 +37,8 @@ export type LanguageColorItem = {
 };
 
 interface Filters {
-  language?: Language | string | Array<Language | string>; // Language referred to is the runtime language selected by the user.
-  technology?: Array<Technology | string>; // List of different technologies used in the tool.
+  language?: Array<LanguageColorItem | string>;
+  technology?: Array<LanguageColorItem | string>;
   categories: Array<Category | string>; // Categories are used to group tools by different use cases.
   hasCommercial?: boolean; // Indicate if your tool is open source or commercial offering.
 }
