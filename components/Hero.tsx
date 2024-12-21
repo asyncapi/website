@@ -72,7 +72,7 @@ export default function Hero({ className = '' }: HeroProps) {
               </SearchButton>
             </AlgoliaSearch>
           </div>
-          <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-4' textColor='text-gray-500'>
+          <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-4' textColor='text-gray-700'>
             {t('main.slogan_text')}{' '}
             <a className='underline' href='https://www.linuxfoundation.org/'>
               {t('main.slogan_link')}
