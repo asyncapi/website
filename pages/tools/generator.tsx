@@ -42,7 +42,7 @@ function renderButtons(): JSX.Element {
 export default function GeneratorPage() {
   const description = 'Generate documentation, code, and more out of your AsyncAPI files with the Generator.';
   const image = '/img/social/generator-card.jpg';
-  const generatorimage = '/img/diagrams/generator.png';
+  const generatorimage = '/img/diagrams/generator.webp';
 
   return (
     <GenericLayout title='Generator' description={description} image={image} wide>
