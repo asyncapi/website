@@ -54,7 +54,7 @@ export default function GeneratorPage() {
             <Paragraph className='mt-4'>{description}</Paragraph>
           </div>
 
-          <div className='relative mt-12 lg:mt-20 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8'>
+          <div className='relative mt-12 lg:mt-20 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8 lg:gap-x-24'>
             <div className='relative lg:mt-8'>
               <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.mdSemibold}>
                 Installation & Usage
@@ -136,13 +136,12 @@ export default function GeneratorPage() {
               </ul>
             </div>
 
-            <div className='relative -mx-4 mt-10 lg:mt-0'>
-              <img className='relative mx-auto rounded shadow-lg' src='/img/tools/generator-1.png' alt='' />
-              <img className='relative mx-auto mt-8 rounded shadow-lg' src='/img/tools/generator-2.png' alt='' />
+            <div className='relative -mx-4 mt-10 lg:mt-0 '>
+              <img className='relative mx-auto w-4/5 rounded shadow-lg' src='/img/tools/generator-1.png' alt='' />
+              <img className='relative mx-auto w-4/5 mt-8 rounded shadow-lg' src='/img/tools/generator-2.png' alt='' />
             </div>
           </div>
         </div>
-
         <div className='mt-16 text-center'>{renderButtons()}</div>
       </div>
     </GenericLayout>
