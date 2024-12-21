@@ -18,7 +18,7 @@ interface IGoogleCalendarButtonProps extends IButtonDefaultProps {}
  * @param {string} props.className - The class name to be applied to the button.
  */
 export default function GoogleCalendarButton({
-  text = 'googleCalendarBtn',
+  text = 'Add to Google Calendar',
   href,
   target = '_blank',
   iconPosition = ButtonIconPosition.LEFT,
