@@ -1,6 +1,17 @@
 {
   "hotDiscussions": [
     {
+      "id": "PR_kwDOBW5R_c5-T7mG",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add tests for build post list script",
+      "author": "vishvamsinh28",
+      "resourcePath": "/asyncapi/website/pull/3284",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 36.471172771155864
+    },
+    {
       "id": "I_kwDOFLhIt84-OUI3",
       "isPR": false,
       "isAssigned": false,
@@ -15,17 +26,6 @@
         }
       ],
       "score": 34.46095064991105
-    },
-    {
-      "id": "PR_kwDOBW5R_c5-T7mG",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add tests for build post list script",
-      "author": "vishvamsinh28",
-      "resourcePath": "/asyncapi/website/pull/3284",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 29.866157229922912
     },
     {
       "id": "I_kwDOGQYLdM5AX1lK",
@@ -45,18 +45,18 @@
           "color": "0E8A16"
         }
       ],
-      "score": 28.717458874925875
+      "score": 29.004633463675134
     },
     {
-      "id": "PR_kwDOBW5R_c6BZLuT",
+      "id": "PR_kwDOBW5R_c6DrMsy",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: add tests for check markdown script",
-      "author": "vishvamsinh28",
-      "resourcePath": "/asyncapi/website/pull/3378",
+      "title": "chore(blog): add marketing report",
+      "author": "iambami",
+      "resourcePath": "/asyncapi/website/pull/3439",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 23.26114168868996
+      "score": 28.430284286176615
     },
     {
       "id": "PR_kwDOFLhIt85bqKL8",
@@ -197,6 +197,21 @@
   ],
   "goodFirstIssues": [
     {
+      "id": "I_kwDOFDnrNc6jnDp4",
+      "title": "Workflow `.github/workflows/test-action.yml` needs urgent update before end of January 2025",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/cli/issues/1597",
+      "repo": "asyncapi/cli",
+      "author": "derberg",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
       "id": "I_kwDOFLhIt86ihL5I",
       "title": "[BUG] voting summary has some errors in `isVotedInLast3Months`",
       "isAssigned": false,
@@ -257,21 +272,6 @@
         {
           "name": ":loudspeaker: marketing",
           "color": "a829e2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c6ddpHW",
-      "title": "[BUG] algolia search icon not visible on website navbar",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/3371",
-      "repo": "asyncapi/website",
-      "author": "anshgoyalevil",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
         }
       ]
     },
@@ -420,6 +420,21 @@
       "labels": []
     },
     {
+      "id": "I_kwDOBW5R_c6UMuUM",
+      "title": "normalize the logos of sponsors ",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/3158",
+      "repo": "asyncapi/website",
+      "author": "derberg",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ]
+    },
+    {
       "id": "I_kwDOFLhIt86O7jFN",
       "title": "[DESIGN] Holopin Design Tracking",
       "isAssigned": true,
@@ -431,21 +446,6 @@
         {
           "name": "🎨 design",
           "color": "0D67D3"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODwv8N86Lel9M",
-      "title": "[FEATURE] Resolve the existing Next.js lint issues",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/conference-website/issues/328",
-      "repo": "asyncapi/conference-website",
-      "author": "ashmit-coder",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -719,10 +719,6 @@
       "author": "CynthiaPeter",
       "area": "docs",
       "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
         {
           "name": "📑 docs",
           "color": "E50E99"
