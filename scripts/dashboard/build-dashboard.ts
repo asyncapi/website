@@ -1,23 +1,27 @@
 import { graphql } from '@octokit/graphql';
+import assert from 'assert';
 import { writeFile } from 'fs-extra';
 import { resolve } from 'path';
 
 import { Queries } from './issue-queries';
 
-/**
- * Introduces a delay in the execution flow.
- * @param {number} ms - The number of milliseconds to pause.
- * @returns {Promise<void>} A promise that resolves after the specified delay.
- */
-async function pause(ms) {
+async function pause(ms: number): Promise<void> {
   return new Promise((res) => {
     setTimeout(res, ms);
   });
 }
 
-async function getDiscussions(query, pageSize, endCursor = null) {
+function monthsSince(date: string) {
+  const seconds = Math.floor((new Date().valueOf() - new Date(date).valueOf()) / 1000);
+  // 2592000 = number of seconds in a month = 30 * 24 * 60 * 60
+  const months = seconds / 2592000;
+
+  return Math.floor(months);
+}
+
+async function getDiscussions(query: string, pageSize: number, endCursor = null): Promise<any> {
   try {
-    const result = await graphql(query, {
+    const result: any = await graphql(query, {
       first: pageSize,
       after: endCursor,
       headers: {
@@ -51,7 +55,7 @@ async function getDiscussions(query, pageSize, endCursor = null) {
   }
 }
 
-async function getDiscussionByID(isPR, id) {
+async function getDiscussionByID(isPR: boolean, id: string) {
   try {
     const result = await graphql(isPR ? Queries.pullRequestById : Queries.issueById, {
       id,
@@ -128,10 +132,11 @@ async function getHotDiscussions(discussions) {
   return filteredResult.slice(0, 12);
 }
 
-async function writeToFile(content, writePath) {
+async function writeToFile(content: string, writePath: string) {
   try {
     await writeFile(writePath, JSON.stringify(content, null, '  '));
   } catch (error) {
+    assert(error instanceof Error);
     console.error('Failed to write dashboard data:', {
       error: error.message,
       writePath
@@ -161,15 +166,7 @@ function getLabel(issue, filter) {
   return result?.name.split('/')[1];
 }
 
-function monthsSince(date) {
-  const seconds = Math.floor((new Date() - new Date(date)) / 1000);
-  // 2592000 = number of seconds in a month = 30 * 24 * 60 * 60
-  const months = seconds / 2592000;
-
-  return Math.floor(months);
-}
-
-async function start(writePath) {
+async function start(writePath: string): Promise<void> {
   try {
     const issues = await getDiscussions(Queries.hotDiscussionsIssues, 20);
     const PRs = await getDiscussions(Queries.hotDiscussionsPullRequests, 20);
@@ -180,7 +177,7 @@ async function start(writePath) {
       mapGoodFirstIssues(rawGoodFirstIssues)
     ]);
 
-    return await writeToFile({ hotDiscussions, goodFirstIssues }, writePath);
+    await writeToFile({ hotDiscussions, goodFirstIssues }, writePath);
   } catch (e) {
     console.log('There were some issues parsing data from github.');
     console.log(e);
