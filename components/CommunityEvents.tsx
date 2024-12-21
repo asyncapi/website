@@ -10,6 +10,9 @@ import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 import { getEvents } from '@/utils/staticHelpers';
 
+/**
+ * CommunityEvents component for displaying all events
+ */
 const CommunityEvents = () => {
   const [events, setEvents] = useState(getEvents(meetings));
 
