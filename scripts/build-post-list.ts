@@ -176,7 +176,6 @@ function walkDirectories(
 }
 
 export async function buildPostList() {
-  console.log('buildPostList ...');
   walkDirectories(postDirectories, finalResult);
   const treePosts = buildNavTree(finalResult.docs.filter((p: TableOfContentsItem) => p.slug.startsWith('/docs/')));
 
