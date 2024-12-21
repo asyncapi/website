@@ -898,28 +898,6 @@
         "githubID": 743192
     },
     {
-        "name": "Vinit Shahdeo",
-        "github": "vinitshahdeo",
-        "twitter": "Vinit_Shahdeo",
-        "availableForHire": true,
-        "isTscMember": false,
-        "repos": [
-            "diff"
-        ],
-        "githubID": 20594326
-    },
-    {
-        "name": "Anubhav Vats",
-        "github": "onbit-uchenik",
-        "twitter": "postmanlabs",
-        "availableForHire": true,
-        "isTscMember": false,
-        "repos": [
-            "diff"
-        ],
-        "githubID": 46771418
-    },
-    {
         "name": "Akshaya Gurlhosur",
         "github": "AGurlhosur",
         "isTscMember": false,
@@ -963,15 +941,6 @@
             "kotlin-asyncapi"
         ],
         "githubID": 39913716
-    },
-    {
-        "name": "Jonas S\u00fcskind",
-        "github": "sueskind",
-        "isTscMember": false,
-        "repos": [
-            "kotlin-asyncapi"
-        ],
-        "githubID": 52210599
     },
     {
         "name": "Andrei",
