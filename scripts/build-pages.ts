@@ -12,7 +12,7 @@ if (!fs.existsSync(TARGET_DIR)) {
 }
 
 export function capitalizeJsxTags(content: string) {
-  return content.replace(/<\/?(\w+)/g, function (match, letter) {
+  return content.replace(/<\/?(\w+)/g, function (match: string, letter: string): string {
     if (capitalizeTags.includes(letter.toLowerCase())) {
       return `<${match[1] === '/' ? '/' : ''}${letter[0].toUpperCase()}${letter.slice(1)}`;
     }
