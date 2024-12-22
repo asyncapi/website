@@ -6,8 +6,8 @@ canonical: https://solace.com/blog/streamlining-eda-design-asyncapi-code-gen-eve
 tags: 
   - Event Portal
   - EDA
-  - SCSt
-  - Event-driven API
+  - Spring Cloud Streams
+  - Event-Driven APIs
 cover: /img/posts/streamlining-eda-design/streamlining-eda-design-banner.webp
 authors:
   - name: Giri Venkatesan
