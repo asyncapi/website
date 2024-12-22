@@ -218,7 +218,7 @@ export default function HomePage() {
               authorDescription='Sr. Architect, Office of the CTO at Solace'
             />
             <Testimonial
-              className='md:pl-10 lg:pl-16'
+              className='md:pl-10 md:pb-48 lg:pl-16 lg:pb-44'
               text='We’ve been focusing on event-driven APIs since 2014 and thank the AsyncAPI contributors every day for driving the community towards common standards.'
               authorAvatar='/img/testimonials/eric-horesnyi.jpg'
               authorName='Eric Horesnyi'
