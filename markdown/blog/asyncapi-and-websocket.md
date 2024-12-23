@@ -307,7 +307,7 @@ channels:
   chat:
     address: /
     title: Users channel
-     messages:
+    messages:
        chatMessage:
          $ref: '#/components/messages/chat'
          
