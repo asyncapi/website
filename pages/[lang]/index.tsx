@@ -204,7 +204,7 @@ export default function HomePage() {
               authorDescription='Global Leader of API Strategy at MuleSoft'
             />
             <Testimonial
-              className='md:pl-10 lg:pl-16'
+              className='md:pr-10 lg:pr-16'
               text='Event-driven APIs need love too! AsyncAPI brings the many benefits of a machine/human-readable specification to these nuanced approaches.'
               authorAvatar='/img/testimonials/bill-doerrfeld.jpg'
               authorName='Bill Doerrfeld'
@@ -218,7 +218,7 @@ export default function HomePage() {
               authorDescription='Sr. Architect, Office of the CTO at Solace'
             />
             <Testimonial
-              className='md:pl-10 md:pb-48 lg:pl-16 lg:pb-44'
+              className='md:pr-10 lg:pr-16'
               text='We’ve been focusing on event-driven APIs since 2014 and thank the AsyncAPI contributors every day for driving the community towards common standards.'
               authorAvatar='/img/testimonials/eric-horesnyi.jpg'
               authorName='Eric Horesnyi'
