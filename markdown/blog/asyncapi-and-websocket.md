@@ -321,22 +321,22 @@ operations:
   sendMessage:
   ...
   
-userJoin:
-  summary: User join notification
-  description: Notifies when a new user joins the chat room
-  action: receive
-  channel:
-    $ref: '#/channels/chat'
-  messages:
-    - $ref: '#/channels/chat/messages/userStatus'
+  userJoin:
+    summary: User join notification
+    description: Notifies when a new user joins the chat room
+    action: receive
+    channel:
+      $ref: '#/channels/chat'
+    messages:
+      - $ref: '#/channels/chat/messages/userStatus'
 
-userLeave:
-  summary: User leave notification
-  description: Notifies when a user leaves the chat room
-  action: receive
-  channel: $ref: '#/channels/chat'
-  messages:
-    - $ref: '#/channels/chat/messages/userStatus'  
+  userLeave:
+    summary: User leave notification
+    description: Notifies when a user leaves the chat room
+    action: receive
+    channel: $ref: '#/channels/chat'
+    messages:
+      - $ref: '#/channels/chat/messages/userStatus'  
 ```
 
 In this setup, both `userJoin` and `userLeave` operations use the same `userStatus` message structure, saving time and reducing redundancy!
