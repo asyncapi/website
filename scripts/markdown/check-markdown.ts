@@ -2,11 +2,6 @@ import fs from 'fs/promises';
 import matter from 'gray-matter';
 import path from 'path';
 
-/**
- * Checks if a given string is a valid URL.
- * @param {string} str - The string to validate as a URL.
- * @returns {boolean} True if the string is a valid URL, false otherwise.
- */
 function isValidURL(str: string) {
   try {
     // eslint-disable-next-line no-new
