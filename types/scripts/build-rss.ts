@@ -3,7 +3,7 @@ export type Enclosure = {
   '@url': string;
   '@length': number;
   '@type': string;
-  enclosure: Enclosure;
+  enclosure?: Enclosure;
 };
 
 export type RSSItemType = {

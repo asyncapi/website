@@ -2,7 +2,7 @@ import assert from 'assert';
 import fs from 'fs/promises';
 import json2xml from 'jgexml/json2xml';
 
-import type { BlogPostTypes, Enclosure, RSS, RSSItemType } from '@/types/scripts/build-rss';
+import type { BlogPostTypes, RSS, RSSItemType } from '@/types/scripts/build-rss';
 
 async function getAllPosts() {
   const posts = (await import('../config/posts.json', { assert: { type: 'json' } })).default;
@@ -71,6 +71,19 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
     if (invalidPosts.length > 0) {
       throw new Error(`Missing required fields in posts: ${invalidPosts.map((p) => p.title || p.slug).join(', ')}`);
     }
+    const mimeTypes: {
+      [key: string]: string;
+    } = {
+      '.jpeg': 'image/jpeg',
+      '.jpg': 'image/jpeg',
+      '.png': 'image/png',
+      '.svg': 'image/svg+xml',
+      '.webp': 'image/webp',
+      '.gif': 'image/gif',
+      '.bmp': 'image/bmp',
+      '.tiff': 'image/tiff',
+      '.ico': 'image/x-icon'
+    };
 
     for (const post of posts) {
       const link = `${base}${post.slug}${tracking}`;
@@ -88,22 +101,14 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
       } as RSSItemType;
 
       if (post.cover) {
-        const enclosure = {} as Enclosure;
+        const fileExtension = post.cover.substring(post.cover.lastIndexOf('.')).toLowerCase();
+        const mimeType = mimeTypes[fileExtension] || 'image/jpeg';
 
-        enclosure['@url'] = base + post.cover;
-        enclosure['@length'] = 15026; // dummy value, anything works
-        enclosure['@type'] = 'image/jpeg';
-        if (typeof enclosure['@url'] === 'string') {
-          const tmp = enclosure['@url'].toLowerCase();
-
-          // eslint-disable-next-line max-depth
-          if (tmp.indexOf('.png') >= 0) enclosure['@type'] = 'image/png';
-          // eslint-disable-next-line max-depth
-          if (tmp.indexOf('.svg') >= 0) enclosure['@type'] = 'image/svg+xml';
-          // eslint-disable-next-line max-depth
-          if (tmp.indexOf('.webp') >= 0) enclosure['@type'] = 'image/webp';
-        }
-        item.enclosure = enclosure;
+        item.enclosure = {
+          '@url': base + post.cover,
+          '@length': 15026, // dummy value, anything works
+          '@type': mimeType
+        };
       }
       rss.channel.item.push(item);
     }
