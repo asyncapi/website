@@ -9,7 +9,7 @@ import { basename, dirname, resolve } from 'path';
 import readingTime from 'reading-time';
 import { fileURLToPath } from 'url';
 
-import type { Details, Result, TableOfContentsItem } from '@/types/scripts/build-posts-list';
+import type { Details, Result } from '@/types/scripts/build-posts-list';
 
 import { addDocButtons, buildNavTree } from './build-docs';
 
@@ -177,7 +177,9 @@ function walkDirectories(
 
 export async function buildPostList() {
   walkDirectories(postDirectories, finalResult);
-  const treePosts = buildNavTree(finalResult.docs.filter((p: TableOfContentsItem) => p.slug.startsWith('/docs/')));
+
+  const filteredResult = finalResult.docs.filter((p: Details) => p.slug!.startsWith('/docs/'));
+  const treePosts = buildNavTree(filteredResult);
 
   finalResult.docsTree = treePosts;
   finalResult.docs = addDocButtons(finalResult.docs, treePosts);

@@ -1,9 +1,14 @@
+import type { NavTree } from './build-docs';
+
 export interface TableOfContentsItem {
   content: string;
   slug: string;
   lvl: number;
 }
-
+export type NavigationPage = {
+  title: string;
+  href?: string;
+};
 export interface Details {
   title: string;
   isSection?: boolean;
@@ -23,12 +28,14 @@ export interface Details {
   weight?: number;
   releaseNoteLink?: string;
   isPrerelease?: boolean;
+  nextPage?: NavigationPage;
+  prevPage?: NavigationPage;
   [key: string]: any; // For any additional properties
 }
 
 export interface Result {
-  docs: any[];
-  blog: any[];
-  about: any[];
-  docsTree: Record<string, any>;
+  docs: Details[];
+  blog: Details[];
+  about: Details[];
+  docsTree: NavTree;
 }
