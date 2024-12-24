@@ -1,6 +1,6 @@
 ---
 title: Mastering Event-Driven Architectures - Why Solace Event Portal is Your AsyncAPI Ally
-date: 2024-12-24T18:14:40.065Z
+date: 2024-12-24T08:14:40.065Z
 type: Engineering
 canonical: https://solace.com/blog/streamlining-eda-design-asyncapi-code-gen-event-portal
 tags: 
@@ -60,25 +60,24 @@ Enter [**Event Portal**](https://solace.com/what-is-an-event-portal/) from [**So
 
 Solace Event Portal is a powerful tool designed to simplify the development and management of event-driven applications. It enables architects and developers to easily design, catalog, and collaborate on event-driven architectures using AsyncAPI specifications. By providing a centralized repository for event definitions, the Event Portal enhances the visibility, consistency, and reusability of events, making it easier to align teams and ensure scalable, reliable event-driven systems. It fosters collaboration and ensures a streamlined, efficient process for building and maintaining APIs and event-driven solutions.
 
-![What is Event Portal](/img/posts/event-portal-your-asyncapi-ally/what-is-event-portal.webp)
+<p align="center"><img src="/img/posts/event-portal-your-asyncapi-ally/what-is-event-portal.webp" alt="What is Event Portal" /></p>
 
 _**An Event Portal is like an API Portal, but with a focus on  events (vs. synchronous APIs)**_
 
-![Empower developers with self-serve access](/img/posts/event-portal-your-asyncapi-ally/event-portal-self-serve.webp)
+<p align="center"><img src="/img/posts/event-portal-your-asyncapi-ally/event-portal-self-serve.webp" alt="Empower developers with self-serve access" /></p>
 
 _**Empower developers with self-serve access to events from across your enterprise.**_ It is a platform to catalog, manage and automate the end-to-end lifecycle of events (and related assets).
 
-![Event Portal AsyncAPI document generation](/img/posts/event-portal-your-asyncapi-ally/event-portal-asyncapi-codegen.webp)
+<p align="center"><img src="/img/posts/event-portal-your-asyncapi-ally/event-portal-asyncapi-codegen.webp" alt="Event Portal AsyncAPI document generation" /></p>
+
 
 _**Developer frameworks to reduce manual coding.**_ It helps in:
-- _**Automation & Exportation**_
-  - Eliminates manual coding
-  - Microservice interface is consistent with design
-- _**Consistent Code**_
-  - Developers don’t have to be experts in client libraries
-  - Create template with open-source tools
-
-
+* _**Automation & Exportation**_
+  * Eliminates manual coding
+  * Microservice interface is consistent with design
+* _**Consistent Code**_
+  * Developers don't have to be experts in client libraries
+  * Create template with open-source tools
 
 ## How Solace Event Portal Solves These Challenges
 
@@ -109,9 +108,9 @@ With its user-friendly interface, the Event Portal enables collaboration between
 
 Before you go, here are some valuable resources to help you dive deeper into Event Portal and AsyncAPI. These references offer further insights and practical tools to enhance your understanding and development process. Be sure to check them out for more in-depth knowledge and examples!
 
-- [Event Portal Overview](https://docs.solace.com/Cloud/Event-Portal/event-portal-overview.htm)
-- [Tools - PubSub+ Event Portal](https://docs.solace.com/Cloud/Event-Portal/event-portal-lp.htm)
-- [Event Portal for Apache Kafka](https://solace.com/products/portal/kafka/)
-- [Event Portal - Like an API Portal, but for events](https://solace.com/products/portal/)
-- [Designing Your Event-Driven Architecture](https://docs.solace.com/Cloud/Event-Portal/get-started-event-portal-designer.htm)
-- [Video: PubSub+ Event Portal 2.0 - Introduction](https://solace.com/resources/pubsub-event-portalpubsub-event-portal-2-0-introduction-video)
+* [Event Portal Overview](https://docs.solace.com/Cloud/Event-Portal/event-portal-overview.htm)
+* [Event Portal Tools](https://docs.solace.com/Cloud/Event-Portal/event-portal-lp.htm)
+* [Event Portal for Apache Kafka](https://solace.com/products/portal/kafka/)
+* [Event Portal](https://solace.com/products/portal/)
+* [Designing Your Event-Driven Architecture](https://docs.solace.com/Cloud/Event-Portal/get-started-event-portal-designer.htm)
+* [Event Portal 2.0 Introduction (Video)](https://solace.com/resources/pubsub-event-portalpubsub-event-portal-2-0-introduction-video)

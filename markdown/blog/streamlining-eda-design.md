@@ -1,6 +1,6 @@
 ---
 title: Streamlining EDA Design with AsyncAPI Code Generation and PubSub+ Event Portal
-date: 2024-12-24T18:14:40.065Z
+date: 2024-12-24T08:14:40.065Z
 type: Engineering
 canonical: https://solace.com/blog/streamlining-eda-design-asyncapi-code-gen-event-portal
 tags: 
@@ -109,7 +109,7 @@ I’ll walk through the process of building these applications and demonstrate t
 
 <p align="center"><img src="/img/posts/streamlining-eda-design/event-portal-asyncapi-post_pic-03-1600x811.webp" alt="Download AsyncAPI document" /></p>
 
-```
+```bash
 asyncapi-generator
   -p binder=solace
   -p artifactId=CoffeeShop
@@ -125,7 +125,7 @@ asyncapi-generator
 <p align="center"><img src="/img/posts/streamlining-eda-design/event-portal-asyncapi-post_pic-08.webp" alt="Download AsyncAPI document" /></p>
 
 
-```
+```bash
 asyncapi-generator
   -p binder=solace
   -p artifactId=CoffeeShop
