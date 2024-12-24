@@ -1,6 +1,6 @@
 ---
 title: Mastering Event-Driven Architectures - Why Solace Event Portal is Your AsyncAPI Ally
-date: 2024-12-17T18:14:40.065Z
+date: 2024-12-24T18:14:40.065Z
 type: Engineering
 canonical: https://solace.com/blog/streamlining-eda-design-asyncapi-code-gen-event-portal
 tags: 
@@ -21,7 +21,7 @@ excerpt: Exploring tools that support a design-first approach to building event-
 
 Event-driven architectures (EDA) have become a cornerstone of modern software systems, enabling organizations to build responsive, scalable, and loosely coupled applications. At the heart of these architectures lies the need for clear, precise communication between services, often represented by AsyncAPI documents.
 
-To generate AsyncAPI documents, we have following options:
+To generate AsyncAPI documents, we have the following options:
 * _**Hand Coding**_ - Many teams still manually write AsyncAPI documents in YAML/JSON, especially smaller teams or projects with simple requirements.
 * _**Code-First Tools**_ - Tools like the AsyncAPI Generator and SDKs (e.g., Java, Node.js libraries) enable teams to generate AsyncAPI documents from existing codebases. 
 * _**Design-First Platforms**_ - Tools and Platforms that provide graphical interfaces to design events visually. These tools generate AsyncAPI documents automatically, reducing manual effort.
@@ -60,17 +60,17 @@ Enter [**Event Portal**](https://solace.com/what-is-an-event-portal/) from [**So
 
 Solace Event Portal is a powerful tool designed to simplify the development and management of event-driven applications. It enables architects and developers to easily design, catalog, and collaborate on event-driven architectures using AsyncAPI specifications. By providing a centralized repository for event definitions, the Event Portal enhances the visibility, consistency, and reusability of events, making it easier to align teams and ensure scalable, reliable event-driven systems. It fosters collaboration and ensures a streamlined, efficient process for building and maintaining APIs and event-driven solutions.
 
-![](/img/posts/event-portal-your-asyncapi-ally/what-is-event-portal.webp)
+![What is Event Portal](/img/posts/event-portal-your-asyncapi-ally/what-is-event-portal.webp)
 
-**An Event Portal is like an API Portal, but with a focus on  events (vs. synchronous APIs)**
+_**An Event Portal is like an API Portal, but with a focus on  events (vs. synchronous APIs)**_
 
-![](/img/posts/event-portal-your-asyncapi-ally/event-portal-self-serve.webp)
+![Empower developers with self-serve access](/img/posts/event-portal-your-asyncapi-ally/event-portal-self-serve.webp)
 
-**Empower developers with self-serve access to events from across your enterprise.** It is a platform to catalog, manage and automate the end-to-end lifecycle of events (and related assets).
+_**Empower developers with self-serve access to events from across your enterprise.**_ It is a platform to catalog, manage and automate the end-to-end lifecycle of events (and related assets).
 
-![](/img/posts/event-portal-your-asyncapi-ally/event-portal-asyncapi-codegen.webp)
+![Event Portal AsyncAPI document generation](/img/posts/event-portal-your-asyncapi-ally/event-portal-asyncapi-codegen.webp)
 
-**Developer frameworks to reduce manual coding.**
+_**Developer frameworks to reduce manual coding.**_ It helps in:
 - _**Automation & Exportation**_
   - Eliminates manual coding
   - Microservice interface is consistent with design

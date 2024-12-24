@@ -1,6 +1,6 @@
 ---
 title: Streamlining EDA Design with AsyncAPI Code Generation and PubSub+ Event Portal
-date: 2024-12-17T18:14:40.065Z
+date: 2024-12-24T18:14:40.065Z
 type: Engineering
 canonical: https://solace.com/blog/streamlining-eda-design-asyncapi-code-gen-event-portal
 tags: 
@@ -21,7 +21,7 @@ As developers strive for ‘<b><i>designed with precision and tested to perfecti
 
 Building event-driven systems presents several unique challenges compared to traditional request-response systems, with code generation being the first step.
 
-![](/img/posts/streamlining-eda-design/common-challenges-designing-event-driven-systems.webp)
+![Common challenges in designing Event-driven Systems](/img/posts/streamlining-eda-design/common-challenges-designing-event-driven-systems.webp)
 
 
 The first three challenges are inherent to the system’s nature and behavior. [Solace PubSub+ Event Broker](https://solace.com/products/event-broker/) provides robust capabilities to address these challenges.
@@ -53,12 +53,12 @@ Solace pioneered the event portal space with the introduction of PubSub+ Event P
 
 PubSub+ Event Portal lets you give developers [self-service](https://solace.com/products/portal/self-service-access/) access to event streams and easily configure event brokers within guardrails set by your middleware/integration teams offering faster development, strong governance and better efficiency.
 
-![](/img/posts/streamlining-eda-design/app-domain-app-event-schema-circle-diagram.webp)
+![Visualizing your Event-Driven Design](/img/posts/streamlining-eda-design/app-domain-app-event-schema-circle-diagram.webp)
 
 
 An **Application** represents a client interacting with an event broker by consuming, producing, or processing events. It encapsulates the contract details through event, schema, and topic definitions. The Application is a real-world service or task that must be converted into a runnable component for asynchronous interactions within the enterprise.
 
-![](/img/posts/streamlining-eda-design/event-portal-asyncapi-post_pic-02-1536x994.webp)
+![Designing Event Flow](/img/posts/streamlining-eda-design/event-portal-asyncapi-post_pic-02-1536x994.webp)
 
 Designing your event flows using Event Portal is the important first step on your journey, but once you have the application’s interface “contract ready,” code generation is the next step towards implementing EDA for real-world use cases.
 
@@ -69,12 +69,12 @@ With AsyncAPI specification, you have a well-structured document defining the as
 
 The first step is to obtain an AsyncAPI document that defines the application you want to develop. You can generate the AsyncAPI document from an application directly from Event Portal.
 
-![](/img/posts/streamlining-eda-design/event-portal-asyncapi-post_pic-03-1600x811.webp)
+![Generate AsyncAPI document](/img/posts/streamlining-eda-design/event-portal-asyncapi-post_pic-03-1600x811.webp)
 
 To bridge the gap between AsyncAPI specifications and practical implementation, it is essential to understand how AsyncAPI elements map to application components in PubSub+ Event Portal. Here’s how various AsyncAPI elements—such as channels, messages, and schemas—equate to counterparts in Event Portal.
 
 
-<center><img src="/img/posts/streamlining-eda-design/ep-asynapi-table.webp" /></center>
+<p align="center"><img src="/img/posts/streamlining-eda-design/ep-asyncapi-table.webp" alt="Event Portal to AsyncAPI mapping table" /></p>
 
 ## AsyncAPI Code Generation
 The AsyncAPI Generator tool is your best friend for generating code or frameworks, with rich sets of binders for all popular programming languages. You can find the full list of official generator templates in the [asyncapi/generator](https://github.com/asyncapi/generator) repository.
@@ -92,7 +92,7 @@ Java Spring Cloud Stream is well suited for EDA and a popular choice for impleme
 * **Community and Ecosystem:** Spring Cloud Stream benefits from the extensive Spring community and ecosystem, providing access to a wealth of resources, tutorials, and support.
 * **Alignment with AsyncAPI:** Spring Cloud Stream’s configuration-oriented approach aligns well with AsyncAPI’s contract-first design, allowing direct mapping of AsyncAPI specifications to ensure adherence to defined event-driven contracts.
 
-<center><img src="/img/posts/streamlining-eda-design/asyncapi-scst-table.webp" /></center>
+<p align="center"><img src="/img/posts/streamlining-eda-design/asyncapi-scst-table.webp" alt="AsyncAPI to Spring Cloud Stream mapping table" /></p>
 
 
 ## An Example: Coffee Shop
@@ -101,13 +101,13 @@ I’ll give an example of the Coffee Shop domain shown in this diagram, focusing
 * **Order Management System:** The heart of Coffee Shop domain that serves received requests with an orderId, and continuously updates the order progress as updated by other applications such as Kitchen Floor, Inventory, and others.
 * **Barista Station:** The Barista station that monitors the order progress and updates order progress status including ready for pickup status.
 
-<center><img src="/img/posts/streamlining-eda-design/event-portal-asyncapi-post_coffee-shop-example.webp" /></center>
+<p align="center"><img src="/img/posts/streamlining-eda-design/event-portal-asyncapi-post_coffee-shop-example.webp" alt="Coffee Shop Example" /></p>
 
 I’ll walk through the process of building these applications and demonstrate the design-to-code using AsyncAPI document and spring-cloud-stream binder for code generation.
 
 1. Download AsyncAPI document of the Order Management application and generate spring-cloud-stream application using asyncapi-generator utility
 
-<center><img src="/img/posts/streamlining-eda-design/event-portal-asyncapi-post_pic-08.webp" /></center>
+<p align="center"><img src="/img/posts/streamlining-eda-design/event-portal-asyncapi-post_pic-03-1600x811.webp" alt="Download AsyncAPI document" /></p>
 
 ```
 asyncapi-generator
@@ -122,7 +122,7 @@ asyncapi-generator
 
 2. Download AsyncAPI document of the Barista Station application and generate spring-cloud-stream application using asyncapi-generator utility
 
-<center><img src="/img/posts/streamlining-eda-design/event-portal-asyncapi-post_pic-08.webp" /></center>
+<p align="center"><img src="/img/posts/streamlining-eda-design/event-portal-asyncapi-post_pic-08.webp" alt="Download AsyncAPI document" /></p>
 
 
 ```
