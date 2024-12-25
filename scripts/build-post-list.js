@@ -16,6 +16,9 @@ const result = {
 const releaseNotes = []
 
 const addItem = (details) => {
+  if (!details || typeof details.slug !== 'string') {
+    throw new Error('Invalid details object provided to addItem');
+  }
   const sectionMap = {
     '/docs': 'docs',
     '/blog': 'blog',
@@ -69,6 +72,17 @@ async function buildPostList(postDirectories, basePath, writeFilePath) {
   } catch (error) {
     throw new Error(`Error while building post list: ${error.message}`, { cause: error });
   }
+}
+
+function handleSpecificationVersion(details, fileBaseName) {
+  if (fileBaseName.includes('next-spec') || fileBaseName.includes('next-major-spec')) {
+    details.isPrerelease = true;
+    details.title += " (Pre-release)";
+  }
+  if (fileBaseName.includes('explorer')) {
+    details.title += " - Explorer";
+  }
+  return details;
 }
 
 async function walkDirectories(
@@ -142,14 +156,7 @@ async function walkDirectories(
             details.releaseNoteLink = `/blog/release-notes-${details.title}`
           }
 
-          if (fileBaseName.includes('next-spec') || fileBaseName.includes('next-major-spec')) {
-            details.isPrerelease = true
-            // this need to be separate because the `-` in "Pre-release" will get removed by `capitalize()` function
-            details.title += " (Pre-release)"
-          }
-          if (fileBaseName.includes('explorer')) {
-            details.title += " - Explorer"
-          }
+          details = handleSpecificationVersion(details, fileBaseName);
         }
 
         // To create a list of available ReleaseNotes list, which will be used to add details.releaseNoteLink attribute.
@@ -199,4 +206,4 @@ function capitalize(text) {
     .join(' ');
 }
 
-module.exports = { slugifyToC, buildPostList }
+module.exports = { slugifyToC, buildPostList, addItem }

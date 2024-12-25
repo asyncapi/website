@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const { resolve, join } = require('path');
 const { setupTestDirectories, generateTempDirPath } = require('./helper/buildPostListSetup')
-const { buildPostList, slugifyToC } = require('../scripts/build-post-list');
+const { buildPostList, slugifyToC, addItem } = require('../scripts/build-post-list');
 
 describe('buildPostList', () => {
   let tempDir;
@@ -224,6 +224,13 @@ describe('buildPostList', () => {
     ).rejects.toThrow(
       "Error while building post list: writeFilePath is required",
     );
+  });
+
+  it('throws an error when details object is invalid', () => {
+    expect(() => addItem(null)).toThrow('Invalid details object provided to addItem');
+    expect(() => addItem({})).toThrow('Invalid details object provided to addItem');
+    expect(() => addItem({ slug: 123 })).toThrow('Invalid details object provided to addItem');
+    expect(() => addItem(undefined)).toThrow('Invalid details object provided to addItem');
   });
 
   describe('slugifyToC', () => {
