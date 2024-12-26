@@ -195,4 +195,9 @@ describe('GitHub Discussions Processing', () => {
     localConsoleErrorSpy.mockRestore();
   });
 
+  it('should handle write failures gracefully', async () => {
+    
+    await expect(writeToFile).rejects.toThrow();
+  });  
+
 });

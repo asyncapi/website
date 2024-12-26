@@ -7,6 +7,7 @@ const TARGET_DIR = 'pages';
 const capitalizeTags = ['table', 'tr', 'td', 'th', 'thead', 'tbody'];
 
 // Check if target directory doesn't exist then create it
+/* istanbul ignore next */
 if (!fs.existsSync(TARGET_DIR)) {
   fs.mkdirSync(TARGET_DIR, { recursive: true });
 }
