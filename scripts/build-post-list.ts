@@ -1,22 +1,18 @@
+/* eslint-disable no-await-in-loop */
 /* eslint-disable max-depth */
+import assert from 'assert';
 import type { PathLike } from 'fs';
-import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from 'fs';
+import { readdir, readFile, stat, writeFile } from 'fs/promises';
+import { pathExists } from 'fs-extra/esm';
 import frontMatter from 'gray-matter';
 import { markdownToTxt } from 'markdown-to-txt';
 import toc from 'markdown-toc';
-import markdownTocUtils from 'markdown-toc/lib/utils';
-import { basename, dirname, resolve } from 'path';
+import { basename, join, normalize, parse, posix, relative, sep } from 'path';
 import readingTime from 'reading-time';
-import { fileURLToPath } from 'url';
 
 import type { Details, Result } from '@/types/scripts/build-posts-list';
 
 import { addDocButtons, buildNavTree } from './build-docs';
-
-const { slugify } = markdownTocUtils;
-
-const currentFilePath = fileURLToPath(import.meta.url);
-const currentDirPath = dirname(currentFilePath);
 
 let specWeight = 100;
 const finalResult: Result = {
@@ -25,75 +21,102 @@ const finalResult: Result = {
   about: [],
   docsTree: {}
 };
-const releaseNotes: string[] = [];
-const basePath = 'pages';
-const postDirectories = [
-  // order of these directories is important, as the blog should come before docs, to create a list of available release notes, which will later be used to release-note-link for spec docs
-  [`${basePath}/blog`, '/blog'],
-  [`${basePath}/docs`, '/docs'],
-  [`${basePath}/about`, '/about']
-];
+const releaseNotes: (string | undefined)[] = [];
+// Matches heading IDs in two formats:
+// 1. {#my-heading-id}
+// 2. <a name="my-heading-id">
+const HEADING_ID_REGEX = /[\s]*(?:\{#([a-zA-Z0-9\-_]+)\}|<a[\s]+name="([a-zA-Z0-9\-_]+)")/;
 
 function slugifyToC(str: string) {
-  let slug;
-  // Try to match heading ids like {# myHeadingId}
-  const headingIdMatch = str.match(/[\s]?\{#([\w\d\-_]+)\}/);
+  if (typeof str !== 'string') return '';
+  if (!str.trim()) return '';
+  let slug = '';
+  // Match heading IDs like {# myHeadingId}
+  const idMatch = str.match(HEADING_ID_REGEX);
+  const [, headingId, anchorId] = idMatch || [];
 
-  if (headingIdMatch && headingIdMatch.length >= 2) {
-    [, slug] = headingIdMatch;
-  } else {
-    // Try to match heading ids like {<a name="myHeadingId"/>}
-    const anchorTagMatch = str.match(/[\s]*<a[\s]+name="([\w\d\s\-_]+)"/);
+  slug = (headingId || anchorId || '').trim();
 
-    if (anchorTagMatch && anchorTagMatch.length >= 2) [, slug] = anchorTagMatch;
-  }
-
-  return slug || slugify(str, { firsth1: true, maxdepth: 6 });
+  // If no valid ID is found, return an empty string
+  return slug;
 }
 
 function capitalize(text: string) {
   return text
-    .split(/[\s-]/g)
-    .map((word) => `${word[0].toUpperCase()}${word.substr(1)}`)
+    .split(/[\s-]/)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
 }
 
 const addItem = (details: Details) => {
-  if (!details.slug) {
-    throw new Error('details.slug is required');
+  if (!details || typeof details.slug !== 'string') {
+    throw new Error('Invalid details object provided to addItem');
   }
-  if (details.slug.startsWith('/docs')) finalResult.docs.push(details);
-  else if (details.slug.startsWith('/blog')) finalResult.blog.push(details);
-  else if (details.slug.startsWith('/about')) finalResult.about.push(details);
+  const sectionMap: {
+    [key: string]: 'docs' | 'blog' | 'about';
+  } = {
+    '/docs': 'docs',
+    '/blog': 'blog',
+    '/about': 'about'
+  };
+  const section = Object.keys(sectionMap).find((key) => details.slug!.startsWith(key));
+
+  if (section) {
+    finalResult[sectionMap[section]].push(details);
+  }
 };
 
-function isDirectory(dir: PathLike) {
-  return statSync(dir).isDirectory();
+function getVersionDetails(slug: string, weight: number) {
+  const fileBaseName = basename(slug);
+  const versionName = fileBaseName.split('-')[0];
+
+  return {
+    title: versionName.startsWith('v') ? capitalize(versionName.slice(1)) : capitalize(versionName),
+    weight
+  };
 }
-function walkDirectories(
+function handleSpecificationVersion(details: Details, fileBaseName: string) {
+  const detailsObj = details;
+
+  if (fileBaseName.includes('next-spec') || fileBaseName.includes('next-major-spec')) {
+    detailsObj.isPrerelease = true;
+    detailsObj.title += ' (Pre-release)';
+  }
+  if (fileBaseName.includes('explorer')) {
+    detailsObj.title += ' - Explorer';
+  }
+
+  return detailsObj;
+}
+async function isDirectory(dir: PathLike) {
+  return (await stat(dir)).isDirectory();
+}
+
+async function walkDirectories(
   directories: string[][],
-  result: Result,
+  resultObj: Result,
+  basePath: string,
   sectionTitle?: string,
   sectionId?: string | undefined,
   rootSectionId?: string | undefined,
   sectionWeight = 0
 ) {
   for (const dir of directories) {
-    const directory = dir[0];
+    const directory = posix.normalize(dir[0]);
     const sectionSlug = dir[1] || '';
-    const files = readdirSync(directory);
+    const files = await readdir(directory);
 
     for (const file of files) {
       let details: Details;
-      const fileName = [directory, file].join('/');
-      const fileNameWithSection = [fileName, '_section.mdx'].join('/');
-      const slug = fileName.replace(new RegExp(`^${basePath}`), '');
+      const fileName = normalize(join(directory, file));
+      const fileNameWithSection = normalize(join(fileName, '_section.mdx'));
+      const slug = `/${normalize(relative(basePath, fileName)).replace(/\\/g, '/')}`;
       const slugElements = slug.split('/');
 
-      if (isDirectory(fileName)) {
-        if (existsSync(fileNameWithSection)) {
+      if (await isDirectory(fileName)) {
+        if (await pathExists(fileNameWithSection)) {
           // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
-          details = frontMatter(readFileSync(fileNameWithSection, 'utf-8'), {}).data as Details;
+          details = frontMatter(await readFile(fileNameWithSection, 'utf-8'), {}).data as Details;
           details.title = details.title || capitalize(basename(fileName));
         } else {
           details = {
@@ -114,9 +137,17 @@ function walkDirectories(
         addItem(details);
         const rootId = details.parent || details.rootSectionId;
 
-        walkDirectories([[fileName, slug]], result, details.title, details.sectionId, rootId, details.weight);
-      } else if (file.endsWith('.mdx') && !fileName.endsWith('/_section.mdx')) {
-        const fileContent = readFileSync(fileName, 'utf-8');
+        await walkDirectories(
+          [[fileName, slug]],
+          resultObj,
+          basePath,
+          details.title,
+          details.sectionId,
+          rootId,
+          details.sectionWeight
+        );
+      } else if (file.endsWith('.mdx') && !fileName.endsWith(`${sep}_section.mdx`)) {
+        const fileContent = await readFile(fileName, 'utf-8');
         // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
         const { data, content } = frontMatter(fileContent, {});
 
@@ -129,44 +160,29 @@ function walkDirectories(
         details.sectionTitle = sectionTitle;
         details.sectionId = sectionId;
         details.rootSectionId = rootSectionId;
-        details.id = fileName;
-        details.isIndex = fileName.endsWith('/index.mdx');
+        details.id = fileName.replace(/\\/g, '/');
+        details.isIndex = fileName.endsWith(join('index.mdx'));
         details.slug = details.isIndex ? sectionSlug : slug.replace(/\.mdx$/, '');
         if (details.slug.includes('/reference/specification/') && !details.title) {
-          const fileBaseName = basename(data.slug); // ex. v2.0.0 | v2.1.0-next-spec.1
-          const fileNameOfBaseName = fileBaseName.split('-')[0]; // v2.0.0 | v2.1.0
+          const fileBaseName = basename(details.slug);
+          const versionDetails = getVersionDetails(details.slug, specWeight--);
 
-          details.weight = specWeight--;
-
-          if (fileNameOfBaseName.startsWith('v')) {
-            details.title = capitalize(fileNameOfBaseName.slice(1));
-          } else {
-            details.title = capitalize(fileNameOfBaseName);
-          }
+          details.title = versionDetails.title;
+          details.weight = versionDetails.weight;
 
           if (releaseNotes.includes(details.title)) {
             details.releaseNoteLink = `/blog/release-notes-${details.title}`;
           }
 
-          if (fileBaseName.includes('next-spec') || fileBaseName.includes('next-major-spec')) {
-            details.isPrerelease = true;
-            // this need to be separate because the `-` in "Pre-release" will get removed by `capitalize()` function
-            details.title += ' (Pre-release)';
-          }
-          if (fileBaseName.includes('explorer')) {
-            details.title += ' - Explorer';
-          }
+          details = handleSpecificationVersion(details, fileBaseName);
         }
 
         // To create a list of available ReleaseNotes list, which will be used to add details.releaseNoteLink attribute.
         if (file.startsWith('release-notes') && dir[1] === '/blog') {
-          const fileNameWithoutExtension = file.slice(0, -4);
-          // removes the file extension. For example, release-notes-2.1.0.md -> release-notes-2.1.0
-          const version = fileNameWithoutExtension.slice(fileNameWithoutExtension.lastIndexOf('-') + 1);
+          const { name } = parse(file);
+          const version = name.split('-').pop();
 
-          // gets the version from the name of the releaseNote .md file (from /blog). For example, version = 2.1.0 if fileName_without_extension = release-notes-2.1.0
           releaseNotes.push(version);
-          // releaseNotes is the list of all available releaseNotes
         }
 
         addItem(details);
@@ -174,17 +190,32 @@ function walkDirectories(
     }
   }
 }
+// Builds a list of posts from the specified directories and writes it to a file
+export async function buildPostList(
+  postDirectories: string[][],
+  basePath: string,
+  writeFilePath: string
+): Promise<void> {
+  try {
+    if (!basePath) {
+      throw new Error('Error while building post list: basePath is required');
+    }
+    if (!writeFilePath) {
+      throw new Error('Error while building post list: writeFilePath is required');
+    }
+    if (postDirectories.length === 0) {
+      throw new Error('Error while building post list: postDirectories array is empty');
+    }
+    const normalizedBasePath = normalize(basePath);
 
-export async function buildPostList() {
-  walkDirectories(postDirectories, finalResult);
+    await walkDirectories(postDirectories, finalResult, normalizedBasePath);
+    const treePosts = buildNavTree(finalResult.docs.filter((p) => p.slug!.startsWith('/docs/')));
 
-  const filteredResult = finalResult.docs.filter((p: Details) => p.slug!.startsWith('/docs/'));
-  const treePosts = buildNavTree(filteredResult);
-
-  finalResult.docsTree = treePosts;
-  finalResult.docs = addDocButtons(finalResult.docs, treePosts);
-  if (process.env.NODE_ENV === 'production') {
-    // console.log(inspect(result, { depth: null, colors: true }))
+    finalResult.docsTree = treePosts;
+    finalResult.docs = addDocButtons(finalResult.docs, treePosts);
+    await writeFile(writeFilePath, JSON.stringify(finalResult, null, '  '));
+  } catch (error) {
+    assert(error instanceof Error);
+    throw new Error(`Error while building post list: ${error.message}`, { cause: error });
   }
-  writeFileSync(resolve(currentDirPath, '..', 'config', 'posts.json'), JSON.stringify(finalResult, null, '  '));
 }

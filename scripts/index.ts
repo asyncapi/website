@@ -12,7 +12,15 @@ const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
 async function start() {
-  await buildPostList();
+  const postDirectories = [
+    ['pages/blog', '/blog'],
+    ['pages/docs', '/docs'],
+    ['pages/about', '/about']
+  ];
+  const basePath = 'pages';
+  const writeFilePath = resolve(currentDirPath, '../config', 'posts.json');
+
+  await buildPostList(postDirectories, basePath, writeFilePath);
   rssFeed('blog', 'AsyncAPI Initiative Blog RSS Feed', 'AsyncAPI Initiative Blog', 'rss.xml');
   await buildCaseStudiesList('config/casestudies', resolve(currentDirPath, '../config', 'case-studies.json'));
   await buildAdoptersList();
