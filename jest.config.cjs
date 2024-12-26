@@ -1,7 +1,7 @@
 module.exports = {
 	testEnvironment: 'node',
   transform: {
-    "^.+.tsx?$": ["ts-jest",{}],
+    "^.+.tsx?$": ["ts-jest",{useESM: true}],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   verbose: true,
@@ -14,9 +14,4 @@ module.exports = {
   testMatch: ['**/tests/**/*.test.*', '!**/netlify/**/*.test.*'],
   // Enable ES module support
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
-  globals: {
-    'ts-jest': {
-      useESM: true
-    }
-  }
 };
