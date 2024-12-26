@@ -10,5 +10,12 @@ module.exports = {
   collectCoverageFrom: ['scripts/**/*.js'],
   coveragePathIgnorePatterns: ['scripts/compose.js'],
   // To disallow netlify edge function tests from running
-  testMatch: ['**/tests/**/*.test.*', '!**/netlify/**/*.test.*']
+  testMatch: ['**/tests/**/*.test.*', '!**/netlify/**/*.test.*'],
+  // Enable ES module support
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
+  globals: {
+    'ts-jest': {
+      useESM: true
+    }
+  }
 };
