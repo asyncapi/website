@@ -197,7 +197,7 @@ describe('GitHub Discussions Processing', () => {
 
   it('should handle write failures gracefully', async () => {
     
-    await expect(writeToFile).rejects.toThrow();
+    await expect(writeToFile()).rejects.toThrow();
   });  
 
 });

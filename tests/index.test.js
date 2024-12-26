@@ -4,7 +4,7 @@ const buildCaseStudiesList = require('../scripts/casestudies');
 const buildAdoptersList = require('../scripts/adopters');
 const buildFinanceInfoList = require('../scripts/finance');
 const start = require('../scripts/index');
-const fs = require('fs')
+const fs = require('fs');
 
 jest.mock('../scripts/build-rss');
 jest.mock('../scripts/build-post-list');
