@@ -116,7 +116,6 @@
     "tailwind-merge": "^2.2.1",
     "tailwindcss": "^3.4.3",
     "tsx": "^4.19.2",
-    "typescript": "^5.3.3",
     "yaml": "^2.3.4"
   },
   "devDependencies": {
@@ -133,6 +132,7 @@
     "@storybook/test": "^8.2.4",
     "@types/fs-extra": "^11.0.4",
     "@types/inquirer": "^9.0.7",
+    "@types/jest": "^29.5.14",
     "@types/lodash": "^4.17.0",
     "@types/node": "^20",
     "@types/react": "^18.0.1",
@@ -162,6 +162,8 @@
     "remark-cli": "^12.0.1",
     "remark-lint": "^10.0.0",
     "remark-mdx": "^3.0.1",
-    "storybook": "^8.2.4"
+    "storybook": "^8.2.4",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.2"
   }
 }
