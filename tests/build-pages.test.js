@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { capitalizeJsxTags, copyAndRenameFiles } = require('../scripts/build-pages');
+const { capitalizeJsxTags, copyAndRenameFiles, ensureDirectoryExists } = require('../scripts/build-pages');
 
 describe('capitalizeJsxTags', () => {
   test('should capitalize JSX tags', () => {
@@ -45,4 +45,13 @@ describe('copyAndRenameFiles', () => {
     expect(targetFile).toBe('<Table><Tr><Td>Hello</Td></Tr></Table>');
     expect(nestedTargetFile).toBe('<Table><Tr><Td>Hello</Td></Tr></Table>');
   });
+
+  test('should create a directory if it does not exist', () => {
+    const TEST_DIR = 'testDir';
+
+    expect(fs.existsSync(TEST_DIR)).toBe(false);
+    ensureDirectoryExists(TEST_DIR);
+    expect(fs.existsSync(TEST_DIR)).toBe(true);
+  });
+
 });
