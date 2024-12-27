@@ -47,11 +47,11 @@ describe('copyAndRenameFiles', () => {
   });
 
   test('should create a directory if it does not exist', () => {
-    const TEST_DIR = 'testDir';
+    const NEW_TEST_DIR = 'testDir';
 
-    expect(fs.existsSync(TEST_DIR)).toBe(false);
-    ensureDirectoryExists(TEST_DIR);
-    expect(fs.existsSync(TEST_DIR)).toBe(true);
+    expect(fs.existsSync(NEW_TEST_DIR)).toBe(false);
+    ensureDirectoryExists(NEW_TEST_DIR);
+    expect(fs.existsSync(NEW_TEST_DIR)).toBe(true);
   });
 
 });
