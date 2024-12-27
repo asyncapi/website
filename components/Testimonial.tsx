@@ -46,7 +46,7 @@ export default function Testimonial({
           </figure>
           <div className='ml-4 text-left'>
             <p className='text-base font-bold leading-6 text-gray-900'>{authorName}</p>
-            <p className='text-sm font-medium leading-5 text-primary-500'>{authorDescription}</p>
+            <p className='text-sm font-medium leading-6 text-primary-500'>{authorDescription}</p>
           </div>
         </footer>
       </blockquote>
