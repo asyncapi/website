@@ -17,17 +17,6 @@
       "score": 34.46095064991105
     },
     {
-      "id": "PR_kwDOBW5R_c5-T7mG",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add tests for build post list script",
-      "author": "vishvamsinh28",
-      "resourcePath": "/asyncapi/website/pull/3284",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 29.866157229922912
-    },
-    {
       "id": "I_kwDOGQYLdM5AX1lK",
       "isPR": false,
       "isAssigned": true,
@@ -45,18 +34,7 @@
           "color": "0E8A16"
         }
       ],
-      "score": 28.717458874925875
-    },
-    {
-      "id": "PR_kwDOBW5R_c6BZLuT",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add tests for check markdown script",
-      "author": "vishvamsinh28",
-      "resourcePath": "/asyncapi/website/pull/3378",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 23.26114168868996
+      "score": 29.004633463675134
     },
     {
       "id": "PR_kwDOFLhIt85bqKL8",
@@ -70,38 +48,6 @@
       "score": 22.112443333692923
     },
     {
-      "id": "I_kwDOBW5R_c5BIl5P",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Add new page for collecting user testing participants",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/website/issues/529",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "Epic",
-          "color": "3E4B9E"
-        },
-        {
-          "name": "keep-open",
-          "color": "ffee84"
-        },
-        {
-          "name": "area/design",
-          "color": "0d67d3"
-        },
-        {
-          "name": "area/javascript",
-          "color": "ededed"
-        }
-      ],
-      "score": 21.825268744943667
-    },
-    {
       "id": "PR_kwDOFLhIt855u7Eb",
       "isPR": true,
       "isAssigned": false,
@@ -113,24 +59,15 @@
       "score": 20.102221212448114
     },
     {
-      "id": "I_kwDOBW5R_c5RVOOY",
-      "isPR": false,
+      "id": "PR_kwDOBW5R_c6C0Cw8",
+      "isPR": true,
       "isAssigned": false,
-      "title": "Community cards implementation.",
-      "author": "Mayaleeeee",
-      "resourcePath": "/asyncapi/website/issues/930",
+      "title": "refactor: migrate build script to typescript ",
+      "author": "JeelRajodiya",
+      "resourcePath": "/asyncapi/website/pull/3423",
       "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "area/design",
-          "color": "0d67d3"
-        },
-        {
-          "name": "area/javascript",
-          "color": "ededed"
-        }
-      ],
-      "score": 17.517649913704783
+      "labels": [],
+      "score": 18.666348268701817
     },
     {
       "id": "PR_kwDOFLhIt853IEwA",
@@ -193,9 +130,65 @@
         }
       ],
       "score": 14.07155484871368
+    },
+    {
+      "id": "PR_kwDOCHlHJM54CmhW",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: add the migration guide and nunjucks depreciation notes",
+      "author": "Gmin2",
+      "resourcePath": "/asyncapi/generator/pull/1253",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 14.07155484871368
+    },
+    {
+      "id": "PR_kwDOCVQpZM5tYFmm",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: custom extension rendering",
+      "author": "ductaily",
+      "resourcePath": "/asyncapi/asyncapi-react/pull/994",
+      "repo": "asyncapi/asyncapi-react",
+      "labels": [],
+      "score": 14.07155484871368
+    },
+    {
+      "id": "I_kwDOBW5R_c6AhurV",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Enabling i18n feature for smaller screens",
+      "author": "sambhavgupta0705",
+      "resourcePath": "/asyncapi/website/issues/2708",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "area/design",
+          "color": "0d67d3"
+        },
+        {
+          "name": "bounty",
+          "color": "0e8a16"
+        }
+      ],
+      "score": 13.210031082465903
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOBW5R_c6kMl1D",
+      "title": "Testimonial Alignment Issue on AsyncAPI Website",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/3509",
+      "repo": "asyncapi/website",
+      "author": "Pulkitxm",
+      "area": "javascript",
+      "labels": []
+    },
     {
       "id": "I_kwDOFLhIt86ihL5I",
       "title": "[BUG] voting summary has some errors in `isVotedInLast3Months`",
@@ -257,36 +250,6 @@
         {
           "name": ":loudspeaker: marketing",
           "color": "a829e2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c6ddpHW",
-      "title": "[BUG] algolia search icon not visible on website navbar",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/3371",
-      "repo": "asyncapi/website",
-      "author": "anshgoyalevil",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c6crqQz",
-      "title": "Improve image type detection in build-rss.js",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/3357",
-      "repo": "asyncapi/website",
-      "author": "coderabbitai",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
         }
       ]
     },
@@ -420,6 +383,21 @@
       "labels": []
     },
     {
+      "id": "I_kwDOBW5R_c6UMuUM",
+      "title": "normalize the logos of sponsors ",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/3158",
+      "repo": "asyncapi/website",
+      "author": "derberg",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ]
+    },
+    {
       "id": "I_kwDOFLhIt86O7jFN",
       "title": "[DESIGN] Holopin Design Tracking",
       "isAssigned": true,
@@ -431,21 +409,6 @@
         {
           "name": "🎨 design",
           "color": "0D67D3"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODwv8N86Lel9M",
-      "title": "[FEATURE] Resolve the existing Next.js lint issues",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/conference-website/issues/328",
-      "repo": "asyncapi/conference-website",
-      "author": "ashmit-coder",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -719,10 +682,6 @@
       "author": "CynthiaPeter",
       "area": "docs",
       "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
         {
           "name": "📑 docs",
           "color": "E50E99"
