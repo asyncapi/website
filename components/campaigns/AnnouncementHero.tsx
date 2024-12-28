@@ -64,9 +64,10 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
           <div className='relative flex min-h-72 w-full items-center justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
             {visibleBanners.map((banner, index) => {
               // Only render active banner and immediate neighbors
-              const isVisible =
-                Math.abs(index - (activeIndex % numberOfVisibleBanners)) <= 1;
+              const isVisible = Math.abs(index - (activeIndex % numberOfVisibleBanners)) <= 1;
+
               if (!isVisible) return null;
+
               return (
                 <Banner
                   key={index}
@@ -89,9 +90,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
               <div
                 key={index}
                 className={`mx-1 size-2 cursor-pointer rounded-full ${
-                  activeIndex % numberOfVisibleBanners === index
-                    ? 'bg-primary-500'
-                    : 'bg-gray-300'
+                  activeIndex % numberOfVisibleBanners === index ? 'bg-primary-500' : 'bg-gray-300'
                 }`}
                 onClick={() => goToIndex(index)}
               />
