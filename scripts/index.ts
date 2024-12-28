@@ -6,7 +6,7 @@ import { buildAdoptersList } from './adopters/index';
 import { buildPostList } from './build-post-list';
 import { rssFeed } from './build-rss';
 import buildCaseStudiesList from './casestudies/index';
-import { buildFinanceInfoList } from './finance/index';
+import buildFinanceInfoList from './finance/index';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
