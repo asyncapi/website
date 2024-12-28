@@ -4,12 +4,15 @@ module.exports = {
   coverageReporters: ['text', 'lcov', 'json-summary'],
   coverageDirectory: 'coverage',
   collectCoverageFrom: ['scripts/**/*.ts'],
-  coveragePathIgnorePatterns: ['scripts/compose.ts'],
+  coveragePathIgnorePatterns: ['scripts/compose.ts', 'scripts/tools/categorylist.ts', 'scripts/tools/tags-color.ts'],
   // To disallow netlify edge function tests from running
   testMatch: ['**/tests/**/*.test.*', '!**/netlify/**/*.test.*'],
   transform: {
-    "^.+\\.[tj]sx?$": ["ts-jest",{
-		"tsconfig": "tsconfig.json"
-	}],
-  },
+    '^.+\\.[tj]sx?$': [
+      'ts-jest',
+      {
+        tsconfig: 'tsconfig.json'
+      }
+    ]
+  }
 };

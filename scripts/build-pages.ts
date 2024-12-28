@@ -1,3 +1,4 @@
+import type { PathLike } from 'fs';
 import fs from 'fs';
 import path from 'path';
 
@@ -7,9 +8,12 @@ const TARGET_DIR = 'pages';
 const capitalizeTags = ['table', 'tr', 'td', 'th', 'thead', 'tbody'];
 
 // Check if target directory doesn't exist then create it
-if (!fs.existsSync(TARGET_DIR)) {
-  fs.mkdirSync(TARGET_DIR, { recursive: true });
+export function ensureDirectoryExists(directory: PathLike) {
+  if (!fs.existsSync(directory)) {
+    fs.mkdirSync(directory, { recursive: true });
+  }
 }
+ensureDirectoryExists(TARGET_DIR);
 
 export function capitalizeJsxTags(content: string) {
   return content.replace(/<\/?(\w+)/g, function (match: string, letter: string): string {
