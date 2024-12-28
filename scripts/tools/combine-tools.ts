@@ -5,9 +5,9 @@ import addFormats from 'ajv-formats';
 import fs from 'fs';
 import Fuse from 'fuse.js';
 
-import type { AsyncAPITool, LanguageColorItem, ToolsListObject } from '@/types/scripts/tools.js';
+import type { AsyncAPITool, LanguageColorItem, ToolsListObject } from '@/types/scripts/tools';
 
-import { categoryList } from './categorylist.js';
+import { categoryList } from './categorylist';
 import { languagesColor, technologiesColor } from './tags-color';
 import { createToolObject } from './tools-object';
 import schema from './tools-schema.json';
@@ -43,7 +43,7 @@ let technologyFuse = new Fuse(technologyList, options);
 
 // takes individual tool object and inserts borderColor and backgroundColor of the tags of
 // languages and technologies, for Tool Card in website.
-const getFinalTool = async (toolObject: AsyncAPITool) => {
+async function getFinalTool(toolObject: AsyncAPITool) {
   const finalObject = toolObject;
 
   // there might be a tool without language
@@ -69,7 +69,7 @@ const getFinalTool = async (toolObject: AsyncAPITool) => {
         languageFuse = new Fuse(languageList, options);
       }
     } else {
-      for (const language of toolObject.filters.language) {
+      for (const language of toolObject?.filters?.language ?? []) {
         const languageSearch = await languageFuse.search(language);
 
         if (languageSearch.length > 0) {
@@ -94,7 +94,7 @@ const getFinalTool = async (toolObject: AsyncAPITool) => {
   const technologyArray = [];
 
   if (toolObject.filters.technology) {
-    for (const technology of toolObject.filters.technology) {
+    for (const technology of toolObject?.filters?.technology ?? []) {
       const technologySearch = await technologyFuse.search(technology);
 
       if (technologySearch.length > 0) {
@@ -117,7 +117,7 @@ const getFinalTool = async (toolObject: AsyncAPITool) => {
   finalObject.filters.technology = technologyArray;
 
   return finalObject;
-};
+}
 
 // Combine the automated tools and manual tools list into single JSON object file, and
 // lists down all the language and technology tags in one JSON file.

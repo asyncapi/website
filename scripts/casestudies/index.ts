@@ -2,7 +2,7 @@ import { readdir, readFile, writeFile } from 'fs/promises';
 
 import { convertToJson } from '../utils';
 
-export async function buildCaseStudiesList(dirWithCaseStudy: string, writeFilePath: string) {
+export default async function buildCaseStudiesList(dirWithCaseStudy: string, writeFilePath: string) {
   try {
     const files = await readdir(dirWithCaseStudy);
 
