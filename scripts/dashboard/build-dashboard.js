@@ -173,7 +173,6 @@ async function start(writePath) {
   } catch (e) {
     console.log('There were some issues parsing data from github.');
     console.log(e);
-    throw e;
   }
 }
 
