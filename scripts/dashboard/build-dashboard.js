@@ -44,7 +44,7 @@ async function getDiscussions(query, pageSize, endCursor = null) {
     return result.search.nodes.concat(await getDiscussions(query, pageSize, result.search.pageInfo.endCursor));
   } catch (e) {
     console.error(e);
-    return Promise.reject(e);
+    throw e;
   }
 }
 
@@ -60,7 +60,7 @@ async function getDiscussionByID(isPR, id) {
     return result;
   } catch (e) {
     console.error(e);
-    return Promise.reject(e);
+    throw e;
   }
 }
 
@@ -173,6 +173,7 @@ async function start(writePath) {
   } catch (e) {
     console.log('There were some issues parsing data from github.');
     console.log(e);
+    throw e;
   }
 }
 
