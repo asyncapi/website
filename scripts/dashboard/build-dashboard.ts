@@ -1,7 +1,8 @@
 import { graphql } from '@octokit/graphql';
 import assert from 'assert';
-import { writeFile } from 'fs-extra';
-import { resolve } from 'path';
+import { writeFile } from 'fs/promises';
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'url';
 
 import type {
   Discussion,
@@ -15,6 +16,9 @@ import type {
 } from '@/types/scripts/dashboard';
 
 import { Queries } from './issue-queries';
+
+const currentFilePath = fileURLToPath(import.meta.url);
+const currentDirPath = dirname(currentFilePath);
 
 async function pause(ms: number): Promise<void> {
   return new Promise((res) => {
@@ -210,8 +214,8 @@ async function start(writePath: string): Promise<void> {
 }
 
 /* istanbul ignore next */
-if (require.main === module) {
-  start(resolve(__dirname, '..', '..', 'dashboard.json'));
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  start(resolve(currentDirPath, '..', '..', 'dashboard.json'));
 }
 
 export {

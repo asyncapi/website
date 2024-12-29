@@ -1,7 +1,11 @@
 import assert from 'assert';
 import { writeFileSync } from 'fs';
 import { google } from 'googleapis';
-import { resolve } from 'path';
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'url';
+
+const currentFilePath = fileURLToPath(import.meta.url);
+const currentDirPath = dirname(currentFilePath);
 
 async function buildMeetings(writePath: string) {
   let auth;
@@ -66,8 +70,8 @@ async function buildMeetings(writePath: string) {
 }
 
 /* istanbul ignore next */
-if (require.main === module) {
-  buildMeetings(resolve(__dirname, '../config', 'meetings.json'));
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  buildMeetings(resolve(currentDirPath, '../config', 'meetings.json'));
 }
 
 export { buildMeetings };
