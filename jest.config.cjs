@@ -5,18 +5,24 @@ module.exports = {
   coverageDirectory: 'coverage',
   collectCoverageFrom: ['scripts/**/*.ts'],
   coveragePathIgnorePatterns: ['scripts/compose.ts', 'scripts/tools/categorylist.ts', 'scripts/tools/tags-color.ts'],
-  // To disallow netlify edge function tests from running
   testMatch: ['**/tests/**/*.test.*', '!**/netlify/**/*.test.*'],
-  extensionsToTreatAsEsm: ['.ts', '.tsx'],
   transform: {
-    '^.+.tsx?$': [
+    '^.+\\.tsx?$': [
       'ts-jest',
       {
         useESM: true,
         tsconfig: {
-          module: 'ESNext'
+          module: 'ESNext',
+          moduleResolution: 'node',
+          resolveJsonModule: true,
+          esModuleInterop: true
         }
       }
-    ]
+    ],
+    '^.+\\.json$': ['ts-jest', { useESM: true }]
+  },
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
+  moduleNameMapper: {
+    '^(\\.{1,2}/.*)\\.js$': '$1'
   }
 };
