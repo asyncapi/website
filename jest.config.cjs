@@ -11,7 +11,10 @@ module.exports = {
     '^.+.tsx?$': [
       'ts-jest',
       {
-        useESM: true
+        useESM: true,
+        tsconfig: {
+          module: 'ESNext'
+        }
       }
     ]
   }
