@@ -41,7 +41,7 @@ export const Silversponsors: SponsorType[] = [
     website: 'https://www.hdi.global/',
     altText: 'HDI',
     imageSrc: '/img/sponsors/hdi_logo.png',
-    imageClass: 'inline-block sm:h-9'
+    imageClass: 'inline-block h-20 sm:h-9'
   },
   {
     name: 'Route4Me',
