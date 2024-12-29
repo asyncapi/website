@@ -1,6 +1,10 @@
 import fs from 'fs/promises';
 import matter from 'gray-matter';
-import path from 'path';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const currentFilePath = fileURLToPath(import.meta.url);
+const currentDirPath = dirname(currentFilePath);
 
 function isValidURL(str: string) {
   try {
@@ -135,8 +139,8 @@ async function checkMarkdownFiles(
   }
 }
 
-const docsFolderPath = path.resolve(__dirname, '../../markdown/docs');
-const blogsFolderPath = path.resolve(__dirname, '../../markdown/blog');
+const docsFolderPath = path.resolve(currentDirPath, '../../markdown/docs');
+const blogsFolderPath = path.resolve(currentDirPath, '../../markdown/blog');
 
 async function main() {
   try {
@@ -151,7 +155,7 @@ async function main() {
 }
 
 /* istanbul ignore next */
-if (require.main === module) {
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
   main();
 }
 
