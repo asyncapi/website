@@ -8,6 +8,11 @@ module.exports = {
   // To disallow netlify edge function tests from running
   testMatch: ['**/tests/**/*.test.*', '!**/netlify/**/*.test.*'],
   transform: {
-    '^.+.tsx?$': ['ts-jest', {}]
+    '^.+.tsx?$': [
+      'ts-jest',
+      {
+        useESM: true
+      }
+    ]
   }
 };
