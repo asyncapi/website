@@ -12,10 +12,11 @@ module.exports = {
       {
         useESM: true,
         tsconfig: {
-          module: 'ESNext',
+          module: 'ES2022',
           moduleResolution: 'node',
           resolveJsonModule: true,
-          esModuleInterop: true
+          esModuleInterop: true,
+          target: 'ES2024'
         }
       }
     ],
