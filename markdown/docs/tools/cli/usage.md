@@ -735,7 +735,7 @@ _See code: [src/commands/optimize.ts](https://github.com/asyncapi/cli/blob/v2.12
 
 ## `asyncapi pretty SPEC-FILE`
 
-Format AsyncAPI specification file
+Beautify the AsyncAPI spec file (indentation, styling) in place or output the formatted spec to a new file.
 
 ```
 USAGE
