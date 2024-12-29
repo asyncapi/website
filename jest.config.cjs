@@ -7,6 +7,7 @@ module.exports = {
   coveragePathIgnorePatterns: ['scripts/compose.ts', 'scripts/tools/categorylist.ts', 'scripts/tools/tags-color.ts'],
   // To disallow netlify edge function tests from running
   testMatch: ['**/tests/**/*.test.*', '!**/netlify/**/*.test.*'],
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
   transform: {
     '^.+.tsx?$': [
       'ts-jest',
