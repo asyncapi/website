@@ -47,7 +47,7 @@ async function getFinalTool(toolObject: AsyncAPITool) {
   const finalObject = toolObject;
 
   // there might be a tool without language
-  if (toolObject.filters.language) {
+  if (toolObject.filters?.language) {
     const languageArray: LanguageColorItem[] = [];
 
     if (typeof toolObject.filters.language === 'string') {
