@@ -7,7 +7,7 @@ interface RateLimit {
 
 interface PageInfo {
   hasNextPage: boolean;
-  endCursor?: string;
+  endCursor: string | null;
 }
 
 interface Reactions {
@@ -138,11 +138,9 @@ export interface HotDiscussionsPullRequestsNode {
   comments: Comments;
 }
 export interface Discussion {
-  data: {
-    search: {
-      pageInfo: PageInfo;
-      nodes: HotDiscussionsPullRequestsNode[] | HotDiscussionsIssuesNode[] | GoodFirstIssues[];
-    };
+  search: {
+    pageInfo: PageInfo;
+    nodes: HotDiscussionsPullRequestsNode[];
   };
   rateLimit: RateLimit;
 }

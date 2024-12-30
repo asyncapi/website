@@ -43,10 +43,10 @@ function getLabel(issue: GoodFirstIssues, filter: string) {
 async function getDiscussions(
   query: string,
   pageSize: number,
-  endCursor = null
-): Promise<Discussion['data']['search']['nodes']> {
+  endCursor: null | string = null
+): Promise<Discussion['search']['nodes']> {
   try {
-    const result: any = await graphql(query, {
+    const result: Discussion = await graphql(query, {
       first: pageSize,
       after: endCursor,
       headers: {
