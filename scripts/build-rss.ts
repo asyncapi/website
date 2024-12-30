@@ -5,7 +5,7 @@ import json2xml from 'jgexml/json2xml';
 import type { BlogPostTypes, RSS, RSSItemType } from '@/types/scripts/build-rss';
 
 async function getAllPosts() {
-  const posts = (await import('../config/posts.json', { assert: { type: 'json' } })).default;
+  const posts = (await import('../config/posts.json')).default;
 
   return posts;
 }
