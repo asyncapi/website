@@ -149,19 +149,18 @@ async function checkMarkdownFiles(folderPath, validateFunction, limit, relativeP
       const filePath = path.join(folderPath, file);
       const relativeFilePath = path.join(relativePath, file);
 
+      const stats = await fs.stat(filePath);
+
       // Skip the folder 'docs/reference/specification'
       if (relativeFilePath.includes('reference/specification')) {
         return;
       }
 
-      const stats = await fs.stat(filePath);
-
-      // Recurse if directory, otherwise validate markdown file
       if (stats.isDirectory()) {
         await checkMarkdownFiles(filePath, validateFunction, limit, relativeFilePath);
       } else if (path.extname(file) === '.md') {
-        try {
-          await limit(async () => {
+        return limit(async () => {
+          try {
             const fileContent = await fs.readFile(filePath, 'utf-8');
             const { data: frontmatter } = matter(fileContent);
   
@@ -171,20 +170,19 @@ async function checkMarkdownFiles(folderPath, validateFunction, limit, relativeP
               errors.forEach((error) => console.log(` - ${error}`));
               process.exitCode = 1;
             }
-          });
-        } catch (error) {
-          console.error(`Error processing markdown file ${relativeFilePath} (validation failed):`, {
-            error: error.message,
-            code: error.code,
-            stack: error.stack
-          });
-          throw error;
-        }
-        // Use the concurrency limiter for file processing
+          } catch (error) {
+            console.error(`Error processing markdown file ${relativeFilePath} (validation failed):`, {
+              error: error.message,
+              code: error.code,
+              stack: error.stack
+            });
+            throw error;
+          }
+        });
       }
     });
 
-    await Promise.all(filePromises);
+    await Promise.all(filePromises.filter(Boolean));
   } catch (err) {
     console.error(`Failed to process markdown files in directory ${folderPath}:`, {
       error: err.message,

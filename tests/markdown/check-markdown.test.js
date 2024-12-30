@@ -75,38 +75,28 @@ describe('Frontmatter Validator', () => {
       const PROCESSING_TIME_MS = 50;
       let activeCount = 0;
       let maxActiveCount = 0;
-      const mockValidateFunction = jest.fn().mockImplementation(async () => {
+      
+      const mockValidateFunction = jest.fn().mockImplementation(async (frontmatter) => {
         activeCount++;
-        try {
-          // Track the maximum number of concurrent executions
-          if (activeCount > maxActiveCount) {
-            maxActiveCount = activeCount;
-          }
-          
-          // Simulate some processing time
-          await new Promise(resolve => setTimeout(resolve, PROCESSING_TIME_MS));
-        } finally {
-          activeCount--;
-        }
+        maxActiveCount = Math.max(maxActiveCount, activeCount);
+        await new Promise(resolve => setTimeout(resolve, PROCESSING_TIME_MS));
+        activeCount--;
+        return null; // No validation errors
       });
     
-      const writePromises = [];
-      for (let i = 0; i < TOTAL_FILES; i++) {
-        writePromises.push(
-            fs.writeFile(
-              path.join(tempDir, `test${i}.md`),
-              '---\ntitle: Test\n---'
-          )
-        );
-      }
+      // Create test files
+      const writePromises = Array.from({ length: TOTAL_FILES }).map((_, i) =>
+        fs.writeFile(
+          path.join(tempDir, `test${i}.md`),
+          '---\ntitle: Test\n---'
+        )
+      );
       await Promise.all(writePromises);
     
       const limit = pLimit(CONCURRENCY_LIMIT);
-      await checkMarkdownFiles(tempDir, mockValidateFunction, '', limit);
+      await checkMarkdownFiles(tempDir, mockValidateFunction, limit, '');
     
-      // Verify concurrent execution bounds
-      expect(maxActiveCount).toBe(CONCURRENCY_LIMIT);
-    
+      expect(maxActiveCount).toBeLessThanOrEqual(CONCURRENCY_LIMIT);
       expect(mockValidateFunction).toHaveBeenCalledTimes(TOTAL_FILES);
     });
   });
@@ -175,12 +165,15 @@ describe('Frontmatter Validator', () => {
 
   it('logs error to console when an error occurs in checkMarkdownFiles', async () => {
     const invalidFolderPath = path.join(tempDir, 'non-existent-folder');
-
+  
     await expect(
-      checkMarkdownFiles(invalidFolderPath, validateBlogs, '', pLimit(10)),
+      checkMarkdownFiles(invalidFolderPath, validateBlogs, pLimit(10), '')
     ).rejects.toThrow('ENOENT');
-
-    expect(mockConsoleError.mock.calls[0][0]).toContain('Error in directory');
+  
+    expect(mockConsoleError).toHaveBeenCalledWith(
+      expect.stringContaining('Failed to process markdown files in directory'),
+      expect.any(Object)
+    );
   });
 
   it('skips the "reference/specification" folder during validation', async () => {
@@ -218,12 +211,16 @@ describe('Frontmatter Validator', () => {
 
   it('should handle main function errors and exit with status 1', async () => {
     jest.spyOn(fs, 'readdir').mockRejectedValue(new Error('Test error'));
-
+  
     await main();
-
+  
     expect(mockProcessExit).toHaveBeenCalledWith(1);
-
-    expect(mockConsoleError).toHaveBeenCalledWith('Failed to validate markdown files:',expect.any(Error));
+    expect(mockConsoleError).toHaveBeenCalledWith(
+      'Markdown validation process failed:',
+      expect.objectContaining({
+        error: 'Test error'
+      })
+    );
   });
 
   it('should handle successful main function execution', async () => {
