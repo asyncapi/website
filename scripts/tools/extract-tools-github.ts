@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const getData = async () => {
+export async function getData(): Promise<any> {
   // eslint-disable-next-line no-useless-catch
   try {
     const result = await axios.get('https://api.github.com/search/code?q=filename:.asyncapi-tool', {
@@ -17,6 +17,4 @@ const getData = async () => {
   } catch (err) {
     throw err;
   }
-};
-
-export { getData };
+}
