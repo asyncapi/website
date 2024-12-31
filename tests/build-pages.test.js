@@ -20,8 +20,16 @@ describe('copyAndRenameFiles', () => {
   const TEST_DIR = 'test';
   const SRC_DIR = path.join(TEST_DIR, 'src');
   const TARGET_DIR = path.join(TEST_DIR, 'target');
+  const NEW_TEST_DIR = 'testDir';
 
   beforeAll(() => {
+
+    [TEST_DIR, NEW_TEST_DIR].forEach(dir => {
+      if (fs.existsSync(dir)) {
+        fs.rmSync(dir, { recursive: true, force: true });
+      }
+    });
+
     fs.mkdirSync(TEST_DIR, { recursive: true });
     fs.mkdirSync(SRC_DIR, { recursive: true });
     fs.mkdirSync(TARGET_DIR, { recursive: true });
@@ -33,6 +41,13 @@ describe('copyAndRenameFiles', () => {
   });
 
   afterAll(() => {
+
+    [TEST_DIR, NEW_TEST_DIR].forEach(dir => {
+      if (fs.existsSync(dir)) {
+        fs.rmSync(dir, { recursive: true, force: true });
+      }
+    });
+    
     fs.rmSync(TEST_DIR, { recursive: true, force: true });
   });
 
@@ -47,7 +62,10 @@ describe('copyAndRenameFiles', () => {
   });
 
   test('should create a directory if it does not exist', () => {
-    const NEW_TEST_DIR = 'testDir';
+
+    if (fs.existsSync(NEW_TEST_DIR)) {
+      fs.rmSync(NEW_TEST_DIR, { recursive: true, force: true });
+    }
 
     expect(fs.existsSync(NEW_TEST_DIR)).toBe(false);
     ensureDirectoryExists(NEW_TEST_DIR);
