@@ -43,10 +43,10 @@ async function buildNewsroomVideos(writePath: string) {
       }
 
       return {
-        image_url: video.snippet.thumbnails!.high!.url,
+        image_url: video.snippet.thumbnails?.high?.url,
         title: video.snippet.title,
         description: video.snippet.description,
-        videoId: video.id!.videoId
+        videoId: video.id?.videoId
       };
     });
 
