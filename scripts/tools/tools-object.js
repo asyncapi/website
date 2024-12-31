@@ -8,7 +8,7 @@ const ajv = new Ajv()
 addFormats(ajv, ["uri"])
 const validate = ajv.compile(schema)
 const { convertToJson } = require('../utils');
-const logger = require("./logger.js");
+const logger = require("./logger");
 
 // Config options set for the Fuse object
 const options = {
