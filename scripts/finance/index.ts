@@ -18,7 +18,7 @@ export default async function buildFinanceInfoList({
   financeDir,
   year,
   jsonDataDir
-}: BuildFinanceInfoListProps) {
+}: BuildFinanceInfoListProps): Promise<void> {
   try {
     const expensesPath = resolve(currentDir, configDir, financeDir, year, 'Expenses.yml');
     const expensesLinkPath = resolve(currentDir, configDir, financeDir, year, 'ExpensesLink.yml');
