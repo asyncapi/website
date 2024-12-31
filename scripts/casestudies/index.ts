@@ -1,4 +1,5 @@
 import { readdir, readFile, writeFile } from 'fs/promises';
+import { join } from 'path';
 
 import { convertToJson } from '../utils';
 
@@ -9,7 +10,7 @@ export default async function buildCaseStudiesList(dirWithCaseStudy: string, wri
     // Process all files in parallel using Promise.all
     const caseStudiesList = await Promise.all(
       files.map(async (file) => {
-        const caseStudyFileName = [dirWithCaseStudy, file].join('/');
+        const caseStudyFileName = join(dirWithCaseStudy, file);
         const caseStudyContent = await readFile(caseStudyFileName, 'utf-8');
 
         return convertToJson(caseStudyContent);
