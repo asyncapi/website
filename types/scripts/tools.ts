@@ -24,6 +24,7 @@ type Category =
   | 'bundler'
   | 'ide-extension';
 
+// Base types
 export type CategoryListItem = {
   name: string;
   tag: string;
@@ -36,41 +37,67 @@ export type LanguageColorItem = {
   borderColor: string;
 };
 
-interface Filters {
-  language?: Array<LanguageColorItem | string>;
-  technology?: Array<LanguageColorItem | string>;
-  categories: Array<Category | string>; // Categories are used to group tools by different use cases.
-  hasCommercial?: boolean; // Indicate if your tool is open source or commercial offering.
+// Filter types
+export interface Filters {
+  language?: Array<string>;
+  technology?: Array<string>;
+  categories: Array<Category>;
+  hasCommercial?: boolean;
 }
-// Note: this definition is implemented from the schema located at scripts/tools/tools-schema.json
 
-export interface AsyncAPITool {
-  title: string; // Human-readable name of the tool.
-  description?: string; // Custom description to override repository description.
-  links?: Links; // Links to website, documentation, and repository.
-  filters: Filters; // Filter properties.
+// Instead of extending BaseFilters, create a separate interface
+export interface FinalFilters {
+  language: LanguageColorItem[];
+  technology: LanguageColorItem[];
+  categories: Array<Category>;
+  hasCommercial: boolean;
 }
+
+// Tool types
+type BaseAsyncAPITool = {
+  title: string;
+  description?: string;
+  links?: Links;
+};
+
+export interface AsyncAPITool extends BaseAsyncAPITool {
+  filters: Filters;
+}
+
+export interface FinalAsyncAPITool extends BaseAsyncAPITool {
+  description: string; // Make required in final
+  filters: FinalFilters;
+}
+
+// Repository and tools data types
+type Repository = {
+  full_name: string;
+  html_url: string;
+  owner: {
+    login: string;
+  };
+  description: string;
+};
+
+type ToolItem = {
+  name: string;
+  url: string;
+  path: string;
+  html_url: string;
+  repository: Repository;
+};
 
 export type ToolsData = {
-  items: {
-    name: string;
-    url: string;
-    path: string;
-    html_url: string;
-    repository: {
-      full_name: string;
-      html_url: string;
-      owner: {
-        login: string;
-      };
-      description: string;
-    };
-  }[];
+  items: ToolItem[];
 };
 
-export type ToolsListObject = {
+// Tools list types
+type ToolsList<T> = {
   [key: string]: {
     description: string;
-    toolsList: AsyncAPITool[];
+    toolsList: T[];
   };
 };
+
+export type ToolsListObject = ToolsList<AsyncAPITool>;
+export type FinalToolsListObject = ToolsList<FinalAsyncAPITool>;

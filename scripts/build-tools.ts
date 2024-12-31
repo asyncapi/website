@@ -17,7 +17,7 @@ const buildTools = async (automatedToolsPath: string, manualToolsPath: string, t
 
     await fs.writeFile(automatedToolsPath, JSON.stringify(automatedTools, null, '  '));
 
-    const manualTools = await import(manualToolsPath);
+    const manualTools = JSON.parse(await fs.readFile(manualToolsPath, 'utf-8'));
 
     await combineTools(automatedTools, manualTools, toolsPath, tagsPath);
   } catch (err) {

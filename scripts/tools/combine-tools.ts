@@ -5,7 +5,7 @@ import addFormats from 'ajv-formats';
 import fs from 'fs';
 import Fuse from 'fuse.js';
 
-import type { AsyncAPITool, LanguageColorItem, ToolsListObject } from '@/types/scripts/tools';
+import type { AsyncAPITool, FinalAsyncAPITool, FinalToolsListObject, LanguageColorItem } from '@/types/scripts/tools';
 
 import { categoryList } from './categorylist';
 import { languagesColor, technologiesColor } from './tags-color';
@@ -17,7 +17,7 @@ const ajv = new Ajv();
 addFormats(ajv, ['uri']);
 const validate = ajv.compile(schema);
 
-const finalTools: ToolsListObject = {};
+const finalTools: FinalToolsListObject = {};
 
 for (const category of categoryList) {
   finalTools[category.name] = {
@@ -44,7 +44,15 @@ let technologyFuse = new Fuse(technologyList, options);
 // takes individual tool object and inserts borderColor and backgroundColor of the tags of
 // languages and technologies, for Tool Card in website.
 async function getFinalTool(toolObject: AsyncAPITool) {
-  const finalObject = toolObject;
+  const finalObject: FinalAsyncAPITool = {
+    ...toolObject,
+    filters: {
+      language: [],
+      technology: [],
+      categories: toolObject.filters.categories,
+      hasCommercial: toolObject.filters.hasCommercial
+    }
+  } as FinalAsyncAPITool;
 
   // there might be a tool without language
   if (toolObject.filters?.language) {
@@ -78,7 +86,7 @@ async function getFinalTool(toolObject: AsyncAPITool) {
           // adds a new language object in the Fuse list as well as in tool object
           // so that it isn't missed out in the UI.
           const languageObject = {
-            name: language as string,
+            name: language,
             color: 'bg-[#57f281]',
             borderColor: 'border-[#37f069]'
           };
@@ -103,7 +111,7 @@ async function getFinalTool(toolObject: AsyncAPITool) {
         // adds a new technology object in the Fuse list as well as in tool object
         // so that it isn't missed out in the UI.
         const technologyObject = {
-          name: technology as string,
+          name: technology,
           color: 'bg-[#61d0f2]',
           borderColor: 'border-[#40ccf7]'
         };
