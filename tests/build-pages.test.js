@@ -24,7 +24,7 @@ describe('copyAndRenameFiles', () => {
 
   beforeAll(() => {
 
-    [TEST_DIR, NEW_TEST_DIR].forEach(dir => {
+    [TEST_DIR, NEW_TEST_DIR].forEach((dir) => {
       if (fs.existsSync(dir)) {
         fs.rmSync(dir, { recursive: true, force: true });
       }
