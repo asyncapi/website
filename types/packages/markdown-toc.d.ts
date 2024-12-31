@@ -25,6 +25,3 @@ declare module 'markdown-toc' {
 
   export = toc;
 }
-declare module 'markdown-toc/lib/utils' {
-  export function slugify(str: string, options?: Object): string;
-}
