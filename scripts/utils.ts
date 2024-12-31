@@ -1,6 +1,6 @@
 import yaml from 'yaml';
 
-function convertToJson(contentYAMLorJSON: string) {
+function convertToJson(contentYAMLorJSON: unknown): any {
   // Axios handles conversion to JSON by default, if data returned from the server allows it
   // So if returned content is not a string (not YAML), we just return JSON back
   if (typeof contentYAMLorJSON !== 'string') {
