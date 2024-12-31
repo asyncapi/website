@@ -8,11 +8,30 @@ declare module 'markdown-toc' {
     i: number;
   }
 
+  interface MarkdownToken {
+    type: string;
+    level: number;
+
+    // Optional properties for headings
+    hLevel?: number;
+
+    // Optional properties for inline content
+    content?: string;
+    lines?: [number, number][];
+
+    // Optional properties for nested tokens
+    children?: MarkdownToken[];
+
+    // Optional properties for inline tokens
+    lvl?: number;
+    i?: number;
+    seen?: number;
+  }
   interface TocResult {
     json: TocItem[];
     content: string;
     highest: number;
-    tokens: any[];
+    tokens: MarkdownToken[];
   }
 
   interface TocOptions {

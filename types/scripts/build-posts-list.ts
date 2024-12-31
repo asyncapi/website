@@ -4,6 +4,7 @@ export interface TableOfContentsItem {
   content: string;
   slug: string;
   lvl: number;
+  i: number;
 }
 export type NavigationPage = {
   title: string;
