@@ -11,7 +11,10 @@ export type RSSItemType = {
   description: string;
   link: string;
   category: BlogPostTypes;
-  guid: any;
+  guid: {
+    '@isPermaLink': boolean;
+    '': string;
+  };
   pubDate: string;
   enclosure: Enclosure;
 };
