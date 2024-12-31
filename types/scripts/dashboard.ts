@@ -53,86 +53,48 @@ interface Reviews {
   }[];
 }
 
+interface BasicIssueOrPR {
+  __typename: string;
+  id: string;
+  title: string;
+  author: Author;
+  assignees: Assignees;
+  resourcePath: string;
+  repository: Repository;
+  labels: {
+    nodes: Label[];
+  };
+}
+
 export interface PullRequestById {
   node: {
-    __typename: string;
-    assignees: Assignees;
-    timelineItems: TimelineItems;
-    author: Author;
-    id: string;
-    title: string;
-    resourcePath: string;
-    repository: Repository;
     reactions: Reactions;
     reviews: Reviews;
+    timelineItems: TimelineItems;
     comments: Comments;
-    labels: {
-      nodes: Label[];
-    };
-  };
+  } & BasicIssueOrPR;
 }
 
 export interface IssueById {
   node: {
-    __typename: string;
-    assignees: Assignees;
     timelineItems: TimelineItems;
-    author: Author;
-    id: string;
-    repository: Repository;
-    labels: {
-      nodes: Label[];
-    };
-    title: string;
-    resourcePath: string;
     reactions: Reactions;
     comments: Comments;
     reviews: Reviews;
-  };
+  } & BasicIssueOrPR;
 }
 
-export interface GoodFirstIssues {
-  __typename: string;
-  assignees: Assignees;
-  author: Author;
-  id: string;
-  title: string;
-  resourcePath: string;
-  repository: Repository;
-  labels: {
-    nodes: Label[];
-  };
-}
+export interface GoodFirstIssues extends BasicIssueOrPR {}
 
-export interface HotDiscussionsIssuesNode {
-  __typename: string;
-  assignees: Assignees;
+export interface HotDiscussionsIssuesNode extends BasicIssueOrPR {
   timelineItems: TimelineItems;
-  author: Author;
-  id: string;
-  title: string;
-  resourcePath: string;
-  repository: Repository;
-  labels: {
-    nodes: Label[];
-  };
   reactions: Reactions;
   comments: Comments;
   reviews: Reviews;
 }
 
-export interface HotDiscussionsPullRequestsNode {
-  __typename: string;
-  assignees: Assignees;
+export interface HotDiscussionsPullRequestsNode extends BasicIssueOrPR {
   timelineItems: TimelineItems;
-  author: Author;
-  id: string;
-  title: string;
-  resourcePath: string;
-  repository: Repository;
-  labels: {
-    nodes: Label[];
-  };
   reactions: Reactions;
   reviews: Reviews;
   comments: Comments;
@@ -147,10 +109,10 @@ export interface Discussion {
 
 export interface ProcessedDiscussion {
   id: string;
-  isPR: boolean;
-  isAssigned: boolean;
   title: string;
   author: string;
+  isPR: boolean;
+  isAssigned: boolean;
   resourcePath: string;
   repo: string;
   labels: Label[];
