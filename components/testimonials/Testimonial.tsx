@@ -1,7 +1,7 @@
 import React from 'react';
 
-import IconQuote from './icons/Quote';
-import Paragraph from './typography/Paragraph';
+import IconQuote from '../icons/Quote';
+import Paragraph from '../typography/Paragraph';
 
 interface TestimonialProps {
   className?: string;
