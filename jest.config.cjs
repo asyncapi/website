@@ -1,7 +1,12 @@
 const { createJsWithTsEsmPreset } = require('ts-jest');
 
+const JsWithTsEsm = createJsWithTsEsmPreset();
 module.exports = {
-  ...createJsWithTsEsmPreset(),
+  ...JsWithTsEsm,
+  transform: {
+    '^.+\\.json$': ['ts-jest', { useESM: true }],
+    ...JsWithTsEsm.transform
+  },
   verbose: true,
   collectCoverage: true,
   coverageReporters: ['text', 'lcov', 'json-summary'],
