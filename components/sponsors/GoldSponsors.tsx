@@ -21,7 +21,7 @@ export default function GoldSponsors({ className = '' }: GoldSponsorsProps): Rea
         {goldSponsors.map((sponsor, index) => (
           <a
             key={index}
-            href={sponsor.website}
+            href={sponsor.website} 
             target='_blank'
             className='relative block w-2/3 p-4 text-center sm:w-1/2 sm:p-0 md:w-1/3 lg:w-1/5'
             rel='noopener noreferrer'
