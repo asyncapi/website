@@ -1,4 +1,3 @@
-import assert from 'assert';
 import fs from 'fs/promises';
 import json2xml from 'jgexml/json2xml';
 
@@ -119,7 +118,6 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
 
     await fs.writeFile(`./public/${outputPath}`, xml, 'utf8');
   } catch (err) {
-    assert(err instanceof Error);
-    throw new Error(`Failed to generate RSS feed: ${err.message}`);
+    throw new Error(`Failed to generate RSS feed: ${(err as Error).message}`);
   }
 }

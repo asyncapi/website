@@ -3,7 +3,7 @@ import { join } from 'path';
 
 import { convertToJson } from '../utils';
 
-export default async function buildCaseStudiesList(dirWithCaseStudy: string, writeFilePath: string) {
+export async function buildCaseStudiesList(dirWithCaseStudy: string, writeFilePath: string) {
   try {
     const files = await readdir(dirWithCaseStudy);
 

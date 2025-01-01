@@ -2,7 +2,7 @@ import assert from 'assert';
 import { mkdir } from 'fs/promises';
 import { resolve } from 'path';
 
-import writeJSON from '../utils/readAndWriteJson';
+import { writeJSON } from '../utils/readAndWriteJson';
 
 interface BuildFinanceInfoListProps {
   currentDir: string;
@@ -12,7 +12,7 @@ interface BuildFinanceInfoListProps {
   jsonDataDir: string;
 }
 
-export default async function buildFinanceInfoList({
+export async function buildFinanceInfoList({
   currentDir,
   configDir,
   financeDir,
