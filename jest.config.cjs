@@ -1,6 +1,10 @@
 const { createJsWithTsEsmPreset } = require('ts-jest');
 
-const JsWithTsEsm = createJsWithTsEsmPreset();
+const JsWithTsEsm = createJsWithTsEsmPreset({
+  tsconfig: {
+    resolveJsonModule: true
+  }
+});
 module.exports = {
   ...JsWithTsEsm,
   transform: {
