@@ -178,72 +178,92 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
         </div>
 
         <nav
-          className='hidden w-full space-x-6 lg:flex lg:items-center lg:justify-end xl:space-x-10'
-          data-testid='Navbar-main'
+          className="hidden w-full lg:flex lg:items-center lg:justify-between xl:space-x-10"
+          data-testid="Navbar-main"
         >
-          <div className='relative' onMouseLeave={() => showMenu(null)} ref={learningRef}>
-            <NavItem
-              text='Docs'
-              href='/docs'
-              onClick={() => showOnClickMenu('learning')}
-              onMouseEnter={() => showMenu('learning')}
-              hasDropdown
-            />
-            {open === 'learning' && <LearningPanel />}
+          <div className="flex items-center space-x-6">
+            {/* Docs Section */}
+            <div className="relative" onMouseLeave={() => showMenu(null)} ref={learningRef}>
+              <NavItem
+                text="Docs"
+                href="/docs"
+                onClick={() => showOnClickMenu("learning")}
+                onMouseEnter={() => showMenu("learning")}
+                hasDropdown
+              />
+              {open === "learning" && <LearningPanel />}
+            </div>
+
+            {/* Tools Section */}
+            <div className="relative" onMouseLeave={() => showMenu(null)} ref={toolingRef}>
+              <NavItem
+                text="Tools"
+                href="/tools"
+                onClick={() => showOnClickMenu("tooling")}
+                onMouseEnter={() => showMenu("tooling")}
+                hasDropdown
+              />
+              {open === "tooling" && <ToolsPanel />}
+            </div>
+
+            {/* Community Section */}
+            <div className="relative" onMouseLeave={() => showMenu(null)} ref={communityRef}>
+              <NavItem
+                text="Community"
+                href="/community"
+                onClick={() => showOnClickMenu("community")}
+                onMouseEnter={() => showMenu("community")}
+                hasDropdown
+              />
+              {open === "community" && <CommunityPanel />}
+            </div>
+
+            {/* Other Links */}
+            {otherItems.map((item, index) => (
+              <NavItem
+                href={item.href}
+                key={index}
+                text={item.text}
+                target={item.target}
+                className={item.className}
+              />
+            ))}
           </div>
 
-          <div className='relative' onMouseLeave={() => showMenu(null)} ref={toolingRef}>
-            <NavItem
-              text='Tools'
-              href='/tools'
-              onClick={() => showOnClickMenu('tooling')}
-              onMouseEnter={() => showMenu('tooling')}
-              hasDropdown
-            />
-            {open === 'tooling' && <ToolsPanel />}
-          </div>
-
-          <div className='relative' onMouseLeave={() => showMenu(null)} ref={communityRef}>
-            <NavItem
-              text='Community'
-              href='/community'
-              onClick={() => showOnClickMenu('community')}
-              onMouseEnter={() => showMenu('community')}
-              hasDropdown
-            />
-            {open === 'community' && <CommunityPanel />}
-          </div>
-
-          {otherItems.map((item, index) => (
-            <NavItem href={item.href} key={index} text={item.text} target={item.target} className={item.className} />
-          ))}
-
-          <div className='justify-content flex flex-row items-center'>
+          {/* Right Side: Search, Language Select, GitHub Button */}
+          <div className="flex items-center space-x-4 pr-6">
+            {/* Search */}
             <SearchButton
-              className='mr-2 flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
-              aria-label='Open Search'
+              className="flex items-center space-x-2 rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:outline-none"
+              aria-label="Open Search"
             >
               <IconLoupe />
             </SearchButton>
 
-            {/* // Language Picker Component */}
+            {/* Language Selector */}
             <LanguageSelect
               options={uniqueLangs}
               onChange={(value) => {
                 changeLanguage(value.toLowerCase(), true);
               }}
-              className=''
-              selected={i18n.language ? i18n.language.toUpperCase() : 'EN'}
+              className="text-sm md:text-base flex-shrink-0"
+              selected={i18n.language ? i18n.language.toUpperCase() : "EN"}
             />
 
+            {/* GitHub Button */}
             <GithubButton
-              text='Star on GitHub'
-              href='https://github.com/asyncapi/spec'
-              className='ml-2 py-2'
+              text="Star on GitHub"
+              href="https://github.com/asyncapi/spec"
+              className="py-2 px-4 h-10 bg-gray-800 text-white rounded-md flex items-center justify-center whitespace-nowrap text-sm md:text-base hover:bg-gray-700 flex-shrink-0"
               inNav={true}
             />
           </div>
         </nav>
+
+
+
+
+
       </div>
 
       {/* Mobile menu, show/hide based on mobile menu state. */}
