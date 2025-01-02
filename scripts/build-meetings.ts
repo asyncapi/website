@@ -64,8 +64,7 @@ async function buildMeetings(writePath: string) {
 
     writeFileSync(writePath, eventsForHuman);
   } catch (err) {
-    assert(err instanceof Error);
-    throw new Error(`Failed to fetch or process events: ${err.message}`);
+    throw new Error(`Failed to fetch or process events: ${(err as Error).message}`);
   }
 }
 

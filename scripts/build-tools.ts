@@ -1,4 +1,3 @@
-import assert from 'assert';
 import fs from 'fs-extra';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
@@ -21,14 +20,13 @@ const buildTools = async (automatedToolsPath: string, manualToolsPath: string, t
 
     await combineTools(automatedTools, manualTools, toolsPath, tagsPath);
   } catch (err) {
-    assert(err instanceof Error);
-    throw new Error(`An error occurred while building tools: ${err.message}`);
+    throw new Error(`An error occurred while building tools: ${(err as Error).message}`);
   }
 };
 
 /* istanbul ignore next */
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  const automatedToolsPath = resolve(currentDirPath, '../config', 'tools-automated.json');
+  const automatedToolsPath = resolve(currentDirPath, '../config', 'too	ls-automated.json');
   const manualToolsPath = resolve(currentDirPath, '../config', 'tools-manual.json');
   const toolsPath = resolve(currentDirPath, '../config', 'tools.json');
   const tagsPath = resolve(currentDirPath, '../config', 'all-tags.json');
