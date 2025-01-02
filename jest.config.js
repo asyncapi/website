@@ -1,10 +1,7 @@
-// import { createJsWithTsEsmPreset } from 'ts-jest';
-
-// const JsWithTsEsm = createJsWithTsEsmPreset({
-//   tsconfig: 'tsconfig.json'
-// });
 const config = {
-  // ...JsWithTsEsm,
+  transform: {
+    '^.+\\.[t|j]sx?$': ['babel-jest', { configFile: './tests/babel.test.config.cjs' }]
+  },
   verbose: true,
   collectCoverage: true,
   coverageReporters: ['text', 'lcov', 'json-summary'],
