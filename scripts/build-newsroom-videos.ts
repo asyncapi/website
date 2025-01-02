@@ -1,7 +1,6 @@
-import assert from 'assert';
 import { writeFileSync } from 'fs';
 import type { youtube_v3 } from 'googleapis';
-import { google } from 'googleapis';
+import fetch from 'node-fetch-2';
 import { dirname, resolve } from 'path';
 import process from 'process';
 import { fileURLToPath } from 'url';
@@ -9,46 +8,36 @@ import { fileURLToPath } from 'url';
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
-const youtube = google.youtube({
-  version: 'v3',
-  auth: process.env.YOUTUBE_TOKEN
-});
-
 async function buildNewsroomVideos(writePath: string) {
   try {
-    const response = await youtube.search.list({
-      part: ['snippet'],
-      channelId: 'UCIz9zGwDLbrYQcDKVXdOstQ',
-      eventType: 'completed',
-      type: ['video'],
-      order: 'date',
-      maxResults: 5
-    } as youtube_v3.Params$Resource$Search$List);
+    const response = await fetch(
+      `https://youtube.googleapis.com/youtube/v3/search?${new URLSearchParams({
+        key: process.env.YOUTUBE_TOKEN!,
+        part: 'snippet',
+        channelId: 'UCIz9zGwDLbrYQcDKVXdOstQ',
+        eventType: 'completed',
+        type: 'video',
+        order: 'Date',
+        maxResults: '5'
+      })}`
+    );
 
-    if (response.status !== 200) {
+    if (!response.ok) {
       throw new Error(`HTTP error! with status code: ${response.status}`);
     }
 
-    const data = await response.data;
-
-    console.log(data);
+    const data = await response.json();
 
     if (!data.items || !Array.isArray(data.items)) {
       throw new Error('Invalid data structure received from YouTube API');
     }
 
-    const videoDataItems = data.items.map((video) => {
-      if (!video.snippet) {
-        throw new Error('Invalid data structure received from YouTube API');
-      }
-
-      return {
-        image_url: video.snippet.thumbnails?.high?.url,
-        title: video.snippet.title,
-        description: video.snippet.description,
-        videoId: video.id?.videoId
-      };
-    });
+    const videoDataItems = data.items.map((video: youtube_v3.Schema$SearchResult) => ({
+      image_url: video.snippet?.thumbnails?.high?.url,
+      title: video.snippet?.title,
+      description: video.snippet?.description,
+      videoId: video.id?.videoId
+    }));
 
     const videoData = JSON.stringify(videoDataItems, null, '  ');
 
@@ -58,8 +47,7 @@ async function buildNewsroomVideos(writePath: string) {
 
     return videoData;
   } catch (err) {
-    assert(err instanceof Error);
-    throw new Error(`Failed to build newsroom videos: ${err.message}`);
+    throw new Error(`Failed to build newsroom videos: ${(err as Error).message}`);
   }
 }
 
