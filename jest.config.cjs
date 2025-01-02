@@ -1,6 +1,8 @@
 const { createJsWithTsEsmPreset } = require('ts-jest');
 
-const JsWithTsEsm = createJsWithTsEsmPreset();
+const JsWithTsEsm = createJsWithTsEsmPreset({
+  tsconfig: 'tsconfig.json'
+});
 module.exports = {
   ...JsWithTsEsm,
   verbose: true,
