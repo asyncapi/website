@@ -3,7 +3,7 @@
 import assert from 'assert';
 import type { PathLike } from 'fs';
 import { readdir, readFile, stat, writeFile } from 'fs/promises';
-import { pathExists } from 'fs-extra/esm';
+import { pathExists } from 'fs-extra';
 import frontMatter from 'gray-matter';
 import { markdownToTxt } from 'markdown-to-txt';
 import toc from 'markdown-toc';
