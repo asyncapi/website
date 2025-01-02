@@ -1,5 +1,4 @@
 import { graphql } from '@octokit/graphql';
-import assert from 'assert';
 import { writeFile } from 'fs/promises';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
@@ -171,9 +170,8 @@ async function writeToFile(
   try {
     await writeFile(writePath, JSON.stringify(content, null, '  '));
   } catch (error) {
-    assert(error instanceof Error);
     console.error('Failed to write dashboard data:', {
-      error: error.message,
+      error: (error as Error).message,
       writePath
     });
     throw error;

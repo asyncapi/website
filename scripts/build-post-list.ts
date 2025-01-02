@@ -1,6 +1,5 @@
 /* eslint-disable no-await-in-loop */
 /* eslint-disable max-depth */
-import assert from 'assert';
 import type { PathLike } from 'fs';
 import { readdir, readFile, stat, writeFile } from 'fs/promises';
 import { pathExists } from 'fs-extra';
@@ -27,7 +26,7 @@ const releaseNotes: (string | undefined)[] = [];
 // 2. <a name="my-heading-id">
 const HEADING_ID_REGEX = /[\s]*(?:\{#([a-zA-Z0-9\-_]+)\}|<a[\s]+name="([a-zA-Z0-9\-_]+)")/;
 
-function slugifyToC(str: string) {
+export function slugifyToC(str: string) {
   if (typeof str !== 'string') return '';
   if (!str.trim()) return '';
   let slug = '';
@@ -48,7 +47,7 @@ function capitalize(text: string) {
     .join(' ');
 }
 
-const addItem = (details: Details) => {
+export const addItem = (details: Details) => {
   if (!details || typeof details.slug !== 'string') {
     throw new Error('Invalid details object provided to addItem');
   }
@@ -215,7 +214,6 @@ export async function buildPostList(
     finalResult.docs = addDocButtons(finalResult.docs, treePosts);
     await writeFile(writeFilePath, JSON.stringify(finalResult, null, '  '));
   } catch (error) {
-    assert(error instanceof Error);
-    throw new Error(`Error while building post list: ${error.message}`, { cause: error });
+    throw new Error(`Error while building post list: ${(error as Error).message}`, { cause: error });
   }
 }
