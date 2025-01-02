@@ -200,7 +200,7 @@ export default function CodeBlock({
   codeBlocks,
   className = '',
   highlightClassName = '',
-  highlightedLines,
+  highlightedLines = [],
   language = 'yaml',
   hasWindow = false,
   showCopy = true,
