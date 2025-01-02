@@ -1,10 +1,10 @@
 const fs = require('fs');
-const rssFeed = require('../scripts/build-rss');
+const { rssFeed } = require('../scripts/build-rss');
 const { buildPostList } = require('../scripts/build-post-list');
 const { buildCaseStudiesList } = require('../scripts/casestudies');
-const buildAdoptersList = require('../scripts/adopters');
+const { buildAdoptersList } = require('../scripts/adopters');
 const { buildFinanceInfoList } = require('../scripts/finance');
-const start = require('../scripts/index');
+const { start } = require('../scripts/index');
 
 jest.mock('../scripts/build-rss');
 jest.mock('../scripts/build-post-list');

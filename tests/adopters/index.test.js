@@ -1,6 +1,6 @@
 const { resolve } = require('path');
 const { writeJSON } = require('../../scripts/utils/readAndWriteJson');
-const buildAdoptersList = require('../../scripts/adopters/index');
+const { buildAdoptersList } = require('../../scripts/adopters/index');
 
 jest.mock('../../scripts/utils/readAndWriteJson.ts');
 
