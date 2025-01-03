@@ -26,7 +26,7 @@ const buildTools = async (automatedToolsPath: string, manualToolsPath: string, t
 
 /* istanbul ignore next */
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  const automatedToolsPath = resolve(currentDirPath, '../config', 'too	ls-automated.json');
+  const automatedToolsPath = resolve(currentDirPath, '../config', 'tools-automated.json');
   const manualToolsPath = resolve(currentDirPath, '../config', 'tools-manual.json');
   const toolsPath = resolve(currentDirPath, '../config', 'tools.json');
   const tagsPath = resolve(currentDirPath, '../config', 'all-tags.json');
