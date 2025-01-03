@@ -165,7 +165,6 @@
     "remark-lint": "^10.0.0",
     "remark-mdx": "^3.0.1",
     "storybook": "^8.2.4",
-    "ts-jest": "^29.2.5",
     "typescript": "^5.7.2"
   }
 }
