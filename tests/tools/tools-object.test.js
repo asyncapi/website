@@ -17,6 +17,7 @@ jest.mock('../../scripts/tools/categorylist', () => ({
 
 describe('Tools Object', () => {
   beforeEach(() => {
+    axios.get = jest.fn();
     axios.get.mockClear();
     console.error = jest.fn();
   });

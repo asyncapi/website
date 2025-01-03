@@ -1,22 +1,51 @@
-const { writeFile } = require('fs-extra');
-const { resolve } = require('path');
-const { graphql } = require('@octokit/graphql');
-const { Queries } = require('./issue-queries');
+import { graphql } from '@octokit/graphql';
+import { writeFile } from 'fs/promises';
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'url';
 
-/**
- * Introduces a delay in the execution flow.
- * @param {number} ms - The number of milliseconds to pause.
- * @returns {Promise<void>} A promise that resolves after the specified delay.
- */
-async function pause(ms) {
+import type {
+  Discussion,
+  GoodFirstIssues,
+  HotDiscussionsIssuesNode,
+  HotDiscussionsPullRequestsNode,
+  IssueById,
+  MappedIssue,
+  ProcessedDiscussion,
+  PullRequestById
+} from '@/types/scripts/dashboard';
+
+import { Queries } from './issue-queries';
+
+const currentFilePath = fileURLToPath(import.meta.url);
+const currentDirPath = dirname(currentFilePath);
+
+async function pause(ms: number): Promise<void> {
   return new Promise((res) => {
     setTimeout(res, ms);
   });
 }
 
-async function getDiscussions(query, pageSize, endCursor = null) {
+function monthsSince(date: string) {
+  const seconds = Math.floor((new Date().valueOf() - new Date(date).valueOf()) / 1000);
+  // 2592000 = number of seconds in a month = 30 * 24 * 60 * 60
+  const months = seconds / 2592000;
+
+  return Math.floor(months);
+}
+
+function getLabel(issue: GoodFirstIssues, filter: string) {
+  const result = issue.labels.nodes.find((label) => label.name.startsWith(filter));
+
+  return result?.name.split('/')[1];
+}
+
+async function getDiscussions(
+  query: string,
+  pageSize: number,
+  endCursor: null | string = null
+): Promise<Discussion['search']['nodes']> {
   try {
-    const result = await graphql(query, {
+    const result: Discussion = await graphql(query, {
       first: pageSize,
       after: endCursor,
       headers: {
@@ -26,7 +55,7 @@ async function getDiscussions(query, pageSize, endCursor = null) {
 
     if (result.rateLimit.remaining <= 100) {
       console.log(
-        `[WARNING] GitHub GraphQL rateLimit`,
+        '[WARNING] GitHub GraphQL rateLimit',
         `cost = ${result.rateLimit.cost}`,
         `limit = ${result.rateLimit.limit}`,
         `remaining = ${result.rateLimit.remaining}`,
@@ -41,16 +70,18 @@ async function getDiscussions(query, pageSize, endCursor = null) {
     if (!hasNextPage) {
       return result.search.nodes;
     }
+
     return result.search.nodes.concat(await getDiscussions(query, pageSize, result.search.pageInfo.endCursor));
   } catch (e) {
     console.error(e);
+
     return Promise.reject(e);
   }
 }
 
-async function getDiscussionByID(isPR, id) {
+async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequestById | IssueById> {
   try {
-    const result = await graphql(isPR ? Queries.pullRequestById : Queries.issueById, {
+    const result: PullRequestById | IssueById = await graphql(isPR ? Queries.pullRequestById : Queries.issueById, {
       id,
       headers: {
         authorization: `token ${process.env.GITHUB_TOKEN}`
@@ -60,17 +91,22 @@ async function getDiscussionByID(isPR, id) {
     return result;
   } catch (e) {
     console.error(e);
+
     return Promise.reject(e);
   }
 }
 
-async function processHotDiscussions(batch) {
+async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]) {
   return Promise.all(
     batch.map(async (discussion) => {
       try {
+        // eslint-disable-next-line no-underscore-dangle
         const isPR = discussion.__typename === 'PullRequest';
-        if (discussion.comments.pageInfo.hasNextPage) {
+
+        if (discussion.comments.pageInfo!.hasNextPage) {
           const fetchedDiscussion = await getDiscussionByID(isPR, discussion.id);
+
+          // eslint-disable-next-line no-param-reassign
           discussion = fetchedDiscussion.node;
         }
 
@@ -81,8 +117,8 @@ async function processHotDiscussions(batch) {
 
         const finalInteractionsCount = isPR
           ? interactionsCount +
-          discussion.reviews.totalCount +
-          discussion.reviews.nodes.reduce((acc, curr) => acc + curr.comments.totalCount, 0)
+            discussion.reviews.totalCount +
+            discussion.reviews.nodes!.reduce((acc, curr) => acc + curr.comments.totalCount, 0)
           : interactionsCount;
 
         return {
@@ -104,35 +140,45 @@ async function processHotDiscussions(batch) {
   );
 }
 
-async function getHotDiscussions(discussions) {
-  const result = [];
+async function getHotDiscussions(discussions: HotDiscussionsIssuesNode[]) {
+  const result: ProcessedDiscussion[] = [];
   const batchSize = 5;
 
   for (let i = 0; i < discussions.length; i += batchSize) {
     const batch = discussions.slice(i, i + batchSize);
+    // eslint-disable-next-line no-await-in-loop
     const batchResults = await processHotDiscussions(batch);
+
+    // eslint-disable-next-line no-await-in-loop
     await pause(1000);
     result.push(...batchResults);
   }
 
   result.sort((ElemA, ElemB) => ElemB.score - ElemA.score);
   const filteredResult = result.filter((issue) => issue.author !== 'asyncapi-bot');
+
   return filteredResult.slice(0, 12);
 }
 
-async function writeToFile(content, writePath) {
+async function writeToFile(
+  content: {
+    hotDiscussions: ProcessedDiscussion[];
+    goodFirstIssues: MappedIssue[];
+  },
+  writePath: string
+) {
   try {
     await writeFile(writePath, JSON.stringify(content, null, '  '));
   } catch (error) {
     console.error('Failed to write dashboard data:', {
-      error: error.message,
+      error: (error as Error).message,
       writePath
     });
     throw error;
   }
 }
 
-async function mapGoodFirstIssues(issues) {
+async function mapGoodFirstIssues(issues: GoodFirstIssues[]) {
   return issues.map((issue) => ({
     id: issue.id,
     title: issue.title,
@@ -147,29 +193,18 @@ async function mapGoodFirstIssues(issues) {
   }));
 }
 
-function getLabel(issue, filter) {
-  const result = issue.labels.nodes.find((label) => label.name.startsWith(filter));
-  return result?.name.split('/')[1];
-}
-
-function monthsSince(date) {
-  const seconds = Math.floor((new Date() - new Date(date)) / 1000);
-  // 2592000 = number of seconds in a month = 30 * 24 * 60 * 60
-  const months = seconds / 2592000;
-  return Math.floor(months);
-}
-
-async function start(writePath) {
+async function start(writePath: string): Promise<void> {
   try {
-    const issues = await getDiscussions(Queries.hotDiscussionsIssues, 20);
-    const PRs = await getDiscussions(Queries.hotDiscussionsPullRequests, 20);
-    const rawGoodFirstIssues = await getDiscussions(Queries.goodFirstIssues, 20);
+    const issues = (await getDiscussions(Queries.hotDiscussionsIssues, 20)) as HotDiscussionsIssuesNode[];
+    const PRs = (await getDiscussions(Queries.hotDiscussionsPullRequests, 20)) as HotDiscussionsPullRequestsNode[];
+    const rawGoodFirstIssues: GoodFirstIssues[] = await getDiscussions(Queries.goodFirstIssues, 20);
     const discussions = issues.concat(PRs);
     const [hotDiscussions, goodFirstIssues] = await Promise.all([
       getHotDiscussions(discussions),
       mapGoodFirstIssues(rawGoodFirstIssues)
     ]);
-    return await writeToFile({ hotDiscussions, goodFirstIssues }, writePath);
+
+    await writeToFile({ hotDiscussions, goodFirstIssues }, writePath);
   } catch (e) {
     console.log('There were some issues parsing data from github.');
     console.log(e);
@@ -177,8 +212,18 @@ async function start(writePath) {
 }
 
 /* istanbul ignore next */
-if (require.main === module) {
-  start(resolve(__dirname, '..', '..', 'dashboard.json'));
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  start(resolve(currentDirPath, '..', '..', 'dashboard.json'));
 }
 
-module.exports = { getLabel, monthsSince, mapGoodFirstIssues, getHotDiscussions, getDiscussionByID, getDiscussions, writeToFile, start, processHotDiscussions };
+export {
+  getDiscussionByID,
+  getDiscussions,
+  getHotDiscussions,
+  getLabel,
+  mapGoodFirstIssues,
+  monthsSince,
+  processHotDiscussions,
+  start,
+  writeToFile
+};
