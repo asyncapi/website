@@ -1,4 +1,3 @@
-import assert from 'assert';
 import lodash from 'lodash';
 
 import type { NavTree, NavTreeItem, RecursiveChildren } from '@/types/scripts/build-docs';
@@ -106,8 +105,11 @@ function buildNavTree(navItems: Details[]) {
 
     return tree;
   } catch (err) {
-    assert(err instanceof Error);
-    throw new Error(`Failed to build navigation tree: ${err.message}`);
+    if (err instanceof Error) {
+      throw new Error(`Failed to build navigation tree: ${err.message}`);
+    } else {
+      throw new Error(`Failed to build navigation tree: ${err}`);
+    }
   }
 }
 
@@ -132,8 +134,7 @@ const convertDocPosts = (docObject: NavTree | Details) => {
 
     return docsArray;
   } catch (err) {
-    assert(err instanceof Error);
-    throw new Error('Error in convertDocPosts:', err);
+    throw new Error('Error in convertDocPosts:', err as Error);
   }
 };
 
@@ -218,8 +219,7 @@ function addDocButtons(docPosts: Details[], treePosts: NavTree) {
       return docPost;
     });
   } catch (err) {
-    assert(err instanceof Error);
-    throw new Error('An error occurred while adding doc buttons:', err);
+    throw new Error('An error occurred while adding doc buttons:', err as Error);
   }
 
   return structuredPosts;

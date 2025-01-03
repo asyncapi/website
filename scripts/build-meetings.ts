@@ -1,4 +1,3 @@
-import assert from 'assert';
 import { writeFileSync } from 'fs';
 import { google } from 'googleapis';
 import { dirname, resolve } from 'path';
@@ -19,8 +18,11 @@ async function buildMeetings(writePath: string) {
 
     calendar = google.calendar({ version: 'v3', auth });
   } catch (err) {
-    assert(err instanceof Error);
-    throw new Error(`Authentication failed: ${err.message}`);
+    if (err instanceof Error) {
+      throw new Error(`Authentication failed: ${err.message}`);
+    } else {
+      throw new Error(`Authentication failed: ${err}`);
+    }
   }
 
   let eventsItems;

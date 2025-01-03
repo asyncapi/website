@@ -1,4 +1,3 @@
-import assert from 'assert';
 import { mkdir } from 'fs/promises';
 import { resolve } from 'path';
 
@@ -37,7 +36,10 @@ export async function buildFinanceInfoList({
 
     await writeJSON(expensesLinkPath, expensesLinkJsonPath);
   } catch (err) {
-    assert(err instanceof Error);
-    throw new Error(err.message);
+    if (err instanceof Error) {
+      throw new Error(`Error in buildFinanceInfoList: ${err.message}`);
+    } else {
+      throw new Error(`Error in buildFinanceInfoList: ${err}`);
+    }
   }
 }

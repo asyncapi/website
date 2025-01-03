@@ -1,6 +1,5 @@
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
-import assert from 'assert';
 import axios from 'axios';
 import Fuse from 'fuse.js';
 
@@ -127,8 +126,11 @@ async function convertTools(data: ToolsData) {
 
     return finalToolsObject;
   } catch (err) {
-    assert(err instanceof Error);
-    throw new Error(`Error processing tool: ${err.message}`);
+    if (err instanceof Error) {
+      throw new Error(`Error processing tool: ${err.message}`);
+    } else {
+      throw new Error(`Error processing tool: ${err}`);
+    }
   }
 }
 
