@@ -21,9 +21,9 @@ interface GeneratorFlags {
  * @description This component displays generator installation options.
  */
 export default function GeneratorInstallation() {
-  const [template, setTemplate] = useState<string>('@asyncapi/html-template');
+  const [template, setTemplate] = useState<string>('@asyncapi/html-template@3.0.0');
   // By default we will have output folder flag so its set here.
-  const [params, setParams] = useState<string>('-o example');
+  const [params, setParams] = useState<string>('-o example --use-new-generator');
   const [specPath, setSpecPath] = useState<string>('https://bit.ly/asyncapi');
 
   const generatorflags = generatorflagList as GeneratorFlags;
@@ -62,7 +62,7 @@ asyncapi generate fromTemplate ${specPath} ${template} ${params}`;
    * @returns {string} The Docker command.
    */
   function getDockerCode(): string {
-    return `docker run --rm -it --user=root -v \${PWD}/example:/app/example -v \${PWD}/output:/app/output \\
+    return `docker run --rm -it --network host --user=root -v \${PWD}/example:/app/example -v \${PWD}/output:/app/output \\
 asyncapi/cli generate fromTemplate ${specPath} ${template} ${params}`;
   }
 
