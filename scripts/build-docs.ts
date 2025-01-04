@@ -5,6 +5,13 @@ import type { Details, NavigationPage } from '@/types/scripts/build-posts-list';
 
 const { sortBy } = lodash;
 
+/**
+ * Builds a navigation tree from the given navigation items.
+ *
+ * @param {Details[]} navItems - The navigation items to build the tree from.
+ * @returns {NavTree} - The built navigation tree.
+ * @throws {Error} - Throws an error if there is an issue during the tree building process.
+ */
 function buildNavTree(navItems: Details[]) {
   try {
     const tree: NavTree = {
@@ -113,8 +120,13 @@ function buildNavTree(navItems: Details[]) {
   }
 }
 
-// A recursion function, works on the logic of Depth First Search to traverse all the root and child posts of the
-// DocTree to get sequential order of the Doc Posts
+/**
+ * Recursively converts document posts to a sequential array.
+ *
+ * @param {NavTree | Details} docObject - The document object to convert.
+ * @returns {Details[]} - The sequential array of document posts.
+ * @throws {Error} - Throws an error if there is an issue during the conversion process.
+ */
 const convertDocPosts = (docObject: NavTree | Details) => {
   try {
     let docsArray: Details[] = [];
@@ -138,6 +150,14 @@ const convertDocPosts = (docObject: NavTree | Details) => {
   }
 };
 
+/**
+ * Adds navigation buttons to the document posts.
+ *
+ * @param {Details[]} docPosts - The document posts to add buttons to.
+ * @param {NavTree} treePosts - The navigation tree of the document posts.
+ * @returns {Details[]} - The document posts with added navigation buttons.
+ * @throws {Error} - Throws an error if there is an issue during the button adding process.
+ */
 function addDocButtons(docPosts: Details[], treePosts: NavTree) {
   let structuredPosts: Details[] = [];
   const rootSections: string[] = [];

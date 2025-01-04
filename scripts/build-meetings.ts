@@ -6,6 +6,12 @@ import { fileURLToPath } from 'url';
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
+/**
+ * Fetches upcoming meetings from Google Calendar and writes the data to a specified path.
+ *
+ * @param {string} writePath - The path to write the meeting data.
+ * @throws {Error} - Throws an error if there is an issue during the fetch or write process.
+ */
 async function buildMeetings(writePath: string) {
   let auth;
   let calendar;

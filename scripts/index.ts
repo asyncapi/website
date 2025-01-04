@@ -11,6 +11,11 @@ import { buildFinanceInfoList } from './finance/index';
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
+/**
+ * Main function to start the build process for posts, RSS feed, case studies, adopters, and finance info.
+ *
+ * @throws {Error} - Throws an error if no finance data is found in the finance directory.
+ */
 async function start() {
   const postDirectories = [
     ['pages/blog', '/blog'],

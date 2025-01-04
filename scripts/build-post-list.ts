@@ -26,6 +26,12 @@ const releaseNotes: (string | undefined)[] = [];
 // 2. <a name="my-heading-id">
 const HEADING_ID_REGEX = /[\s]*(?:\{#([a-zA-Z0-9\-_]+)\}|<a[\s]+name="([a-zA-Z0-9\-_]+)")/;
 
+/**
+ * Slugifies a string for use in a table of contents.
+ *
+ * @param {string} str - The string to slugify.
+ * @returns {string} - The slugified string.
+ */
 export function slugifyToC(str: string) {
   if (typeof str !== 'string') return '';
   if (!str.trim()) return '';
@@ -40,6 +46,12 @@ export function slugifyToC(str: string) {
   return slug;
 }
 
+/**
+ * Capitalizes the first letter of each word in a string.
+ *
+ * @param {string} text - The string to capitalize.
+ * @returns {string} - The capitalized string.
+ */
 function capitalize(text: string) {
   return text
     .split(/[\s-]/)
@@ -47,6 +59,12 @@ function capitalize(text: string) {
     .join(' ');
 }
 
+/**
+ * Adds an item to the final result based on its details.
+ *
+ * @param {Details} details - The details of the item to add.
+ * @throws {Error} - Throws an error if the details object is invalid.
+ */
 export const addItem = (details: Details) => {
   if (!details || typeof details.slug !== 'string') {
     throw new Error('Invalid details object provided to addItem');
@@ -65,6 +83,13 @@ export const addItem = (details: Details) => {
   }
 };
 
+/**
+ * Gets version details based on the slug and weight.
+ *
+ * @param {string} slug - The slug of the item.
+ * @param {number} weight - The weight of the item.
+ * @returns {object} - The version details.
+ */
 function getVersionDetails(slug: string, weight: number) {
   const fileBaseName = basename(slug);
   const versionName = fileBaseName.split('-')[0];
@@ -74,6 +99,14 @@ function getVersionDetails(slug: string, weight: number) {
     weight
   };
 }
+
+/**
+ * Handles specification version details.
+ *
+ * @param {Details} details - The details of the item.
+ * @param {string} fileBaseName - The base name of the file.
+ * @returns {Details} - The updated details.
+ */
 function handleSpecificationVersion(details: Details, fileBaseName: string) {
   const detailsObj = details;
 
@@ -87,10 +120,28 @@ function handleSpecificationVersion(details: Details, fileBaseName: string) {
 
   return detailsObj;
 }
+
+/**
+ * Checks if the given path is a directory.
+ *
+ * @param {PathLike} dir - The path to check.
+ * @returns {Promise<boolean>} - A promise that resolves to true if the path is a directory, false otherwise.
+ */
 async function isDirectory(dir: PathLike) {
   return (await stat(dir)).isDirectory();
 }
 
+/**
+ * Walks through directories and processes files.
+ *
+ * @param {string[][]} directories - The directories to walk through.
+ * @param {Result} resultObj - The result object to store the processed data.
+ * @param {string} basePath - The base path for the directories.
+ * @param {string} [sectionTitle] - The title of the section.
+ * @param {string} [sectionId] - The ID of the section.
+ * @param {string} [rootSectionId] - The root ID of the section.
+ * @param {number} [sectionWeight=0] - The weight of the section.
+ */
 async function walkDirectories(
   directories: string[][],
   resultObj: Result,
@@ -190,6 +241,15 @@ async function walkDirectories(
   }
 }
 // Builds a list of posts from the specified directories and writes it to a file
+/**
+ * Builds a list of posts from the specified directories and writes it to a file.
+ *
+ * @param {string[][]} postDirectories - The directories containing the posts.
+ * @param {string} basePath - The base path for the directories.
+ * @param {string} writeFilePath - The path to write the resulting post list.
+ * @returns {Promise<void>} - A promise that resolves when the post list is built and written.
+ * @throws {Error} - Throws an error if there is an issue during the build process.
+ */
 export async function buildPostList(
   postDirectories: string[][],
   basePath: string,

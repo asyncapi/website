@@ -3,12 +3,23 @@ import json2xml from 'jgexml/json2xml';
 
 import type { BlogPostTypes, RSS, RSSItemType } from '@/types/scripts/build-rss';
 
+/**
+ * Retrieves all blog posts from the configuration file.
+ *
+ * @returns {Promise<any>} - A promise that resolves to the list of all blog posts.
+ */
 async function getAllPosts() {
   const posts = ((await import('../config/posts.json')) as any).default;
 
   return posts;
 }
 
+/**
+ * Cleans a string by replacing HTML entities with their corresponding characters.
+ *
+ * @param {string} s - The string to clean.
+ * @returns {string} - The cleaned string.
+ */
 function clean(s: string) {
   let cleanS = s;
 
@@ -22,6 +33,15 @@ function clean(s: string) {
   return cleanS;
 }
 
+/**
+ * Generates an RSS feed for the specified blog post type.
+ *
+ * @param {BlogPostTypes} type - The type of blog posts to include in the RSS feed.
+ * @param {string} rssTitle - The title of the RSS feed.
+ * @param {string} desc - The description of the RSS feed.
+ * @param {string} outputPath - The output path for the generated RSS feed file.
+ * @throws {Error} - Throws an error if there is an issue during the RSS feed generation.
+ */
 export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: string, outputPath: string) {
   try {
     let posts = (await getAllPosts())[`${type}`] as any[];

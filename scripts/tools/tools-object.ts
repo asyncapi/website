@@ -24,17 +24,26 @@ const options = {
 
 const fuse = new Fuse(categoryList, options);
 
-// using the contents of each toolFile (extracted from Github), along with Github URL
-// (repositoryUrl) of the tool, it's repository description (repoDescription) and
-// isAsyncAPIrepo boolean variable to define whether the tool repository is under
-// AsyncAPI organization or not, to create a JSON tool object as required in the frontend
-// side to show ToolCard.
-const createToolObject = async (
+/**
+ * Creates a tool object for the frontend ToolCard.
+ * Using the contents of each toolFile (extracted from Github), along with Github URL
+ * (repositoryUrl) of the tool, it's repository description (repoDescription) and
+ * isAsyncAPIrepo boolean variable to define whether the tool repository is under
+ * AsyncAPI organization or not, to create a JSON tool object as required in the frontend
+ * side to show ToolCard.
+ *
+ * @param {AsyncAPITool} toolFile - The tool file content.
+ * @param {string} [repositoryUrl=''] - The URL of the tool's repository.
+ * @param {string} [repoDescription=''] - The description of the repository.
+ * @param {boolean | string} [isAsyncAPIrepo=''] - Whether the tool repository is under the AsyncAPI organization.
+ * @returns {Promise<object>} The tool object.
+ */
+async function createToolObject(
   toolFile: AsyncAPITool,
   repositoryUrl = '',
   repoDescription = '',
   isAsyncAPIrepo: boolean | string = ''
-) => {
+) {
   const resultantObject = {
     title: toolFile.title,
     description: toolFile?.description ? toolFile.description : repoDescription,
@@ -50,12 +59,20 @@ const createToolObject = async (
   };
 
   return resultantObject;
-};
+}
 
 // Each result obtained from the Github API call will be tested and verified
 // using the defined JSON schema, categorising each tool inside their defined categories
 // and creating a JSON tool object in which all the tools are listed in defined
 // categories order, which is then updated in `automated-tools.json` file.
+
+/**
+ * Converts tools data into a categorized tools list object.
+ *
+ * @param {ToolsData} data - The tools data from the GitHub API.
+ * @returns {Promise<ToolsListObject>} The categorized tools list object.
+ * @throws {Error} If there is an error processing the tools.
+ */
 async function convertTools(data: ToolsData) {
   try {
     let finalToolsObject: ToolsListObject = {};

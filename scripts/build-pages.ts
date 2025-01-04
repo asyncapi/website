@@ -7,7 +7,11 @@ const TARGET_DIR = 'pages';
 
 const capitalizeTags = ['table', 'tr', 'td', 'th', 'thead', 'tbody'];
 
-// Check if target directory doesn't exist then create it
+/**
+ * Ensures that the specified directory exists. If it doesn't, creates it.
+ *
+ * @param {PathLike} directory - The directory path to check or create.
+ */
 export function ensureDirectoryExists(directory: PathLike) {
   if (!fs.existsSync(directory)) {
     fs.mkdirSync(directory, { recursive: true });
@@ -15,6 +19,12 @@ export function ensureDirectoryExists(directory: PathLike) {
 }
 ensureDirectoryExists(TARGET_DIR);
 
+/**
+ * Capitalizes JSX tags in the provided content string.
+ *
+ * @param {string} content - The content string to process.
+ * @returns {string} - The content string with capitalized JSX tags.
+ */
 export function capitalizeJsxTags(content: string) {
   return content.replace(/<\/?(\w+)/g, function (match: string, letter: string): string {
     if (capitalizeTags.includes(letter.toLowerCase())) {
@@ -25,6 +35,12 @@ export function capitalizeJsxTags(content: string) {
   });
 }
 
+/**
+ * Copies and renames files from the source directory to the target directory.
+ *
+ * @param {string} srcDir - The source directory.
+ * @param {string} targetDir - The target directory.
+ */
 export function copyAndRenameFiles(srcDir: string, targetDir: string) {
   // Read all files and directories from source directory
   const entries = fs.readdirSync(srcDir, { withFileTypes: true });

@@ -1,5 +1,13 @@
 import yaml from 'yaml';
 
+/**
+ * Converts a YAML or JSON string to a JSON object.
+ * If the input is already a JSON object, it is returned as is.
+ *
+ * @param {unknown} contentYAMLorJSON - The content to be converted, either as a YAML/JSON string or a JSON object.
+ * @returns {any} - The converted JSON object.
+ * @throws {Error} - Throws an error if the content is neither valid JSON nor valid YAML.
+ */
 function convertToJson(contentYAMLorJSON: unknown): any {
   // Axios handles conversion to JSON by default, if data returned from the server allows it
   // So if returned content is not a string (not YAML), we just return JSON back

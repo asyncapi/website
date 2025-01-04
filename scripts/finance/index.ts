@@ -3,6 +3,9 @@ import { resolve } from 'path';
 
 import { writeJSON } from '../utils/readAndWriteJson';
 
+/**
+ * Interface for the properties required to build the finance info list.
+ */
 interface BuildFinanceInfoListProps {
   currentDir: string;
   configDir: string;
@@ -11,6 +14,13 @@ interface BuildFinanceInfoListProps {
   jsonDataDir: string;
 }
 
+/**
+ * Builds the finance info list by reading YAML files and writing them as JSON files.
+ *
+ * @param {BuildFinanceInfoListProps} props - The properties required to build the finance info list.
+ * @returns {Promise<void>} A promise that resolves when the finance info list has been built.
+ * @throws {Error} Throws an error if there is an issue building the finance info list.
+ */
 export async function buildFinanceInfoList({
   currentDir,
   configDir,

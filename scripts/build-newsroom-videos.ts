@@ -8,6 +8,13 @@ import { fileURLToPath } from 'url';
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
+/**
+ * Fetches the latest YouTube videos from the AsyncAPI channel and writes the data to a specified path.
+ *
+ * @param {string} writePath - The path to write the video data.
+ * @returns {Promise<string>} - A promise that resolves to the video data in JSON format.
+ * @throws {Error} - Throws an error if there is an issue during the fetch or write process.
+ */
 async function buildNewsroomVideos(writePath: string) {
   try {
     const response = await fetch(

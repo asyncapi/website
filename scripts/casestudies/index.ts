@@ -3,6 +3,12 @@ import { join } from 'path';
 
 import { convertToJson } from '../utils';
 
+/**
+ * Builds a list of case studies from files in a directory and writes it to a specified file.
+ * @param {string} dirWithCaseStudy - The directory containing case study files.
+ * @param {string} writeFilePath - The path to write the case studies list to.
+ * @returns {Promise<object[]>} - The list of case studies.
+ */
 export async function buildCaseStudiesList(dirWithCaseStudy: string, writeFilePath: string) {
   try {
     const files = await readdir(dirWithCaseStudy);

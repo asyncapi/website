@@ -9,7 +9,16 @@ import { convertTools } from './tools/tools-object';
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
-const buildTools = async (automatedToolsPath: string, manualToolsPath: string, toolsPath: string, tagsPath: string) => {
+/**
+ * Builds the tools by combining automated and manual tools data, and writes the result to the specified paths.
+ *
+ * @param {string} automatedToolsPath - The path to write the automated tools data.
+ * @param {string} manualToolsPath - The path to read the manual tools data.
+ * @param {string} toolsPath - The path to write the combined tools data.
+ * @param {string} tagsPath - The path to write the tags data.
+ * @throws {Error} - Throws an error if there is an issue during the build process.
+ */
+async function buildTools(automatedToolsPath: string, manualToolsPath: string, toolsPath: string, tagsPath: string) {
   try {
     const githubExtractData = await getData();
     const automatedTools = await convertTools(githubExtractData);
@@ -22,7 +31,7 @@ const buildTools = async (automatedToolsPath: string, manualToolsPath: string, t
   } catch (err) {
     throw new Error(`An error occurred while building tools: ${(err as Error).message}`);
   }
-};
+}
 
 /* istanbul ignore next */
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

@@ -6,6 +6,11 @@ import { fileURLToPath } from 'url';
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
+/**
+ * Checks if a string is a valid URL.
+ * @param {string} str - The string to check.
+ * @returns {boolean} - True if the string is a valid URL, false otherwise.
+ */
 function isValidURL(str: string) {
   try {
     // eslint-disable-next-line no-new
@@ -17,6 +22,9 @@ function isValidURL(str: string) {
   }
 }
 
+/**
+ * Interface representing the frontmatter of a markdown file.
+ */
 interface FrontMatter {
   title: string;
   date: string;
@@ -27,6 +35,11 @@ interface FrontMatter {
   authors: { name: string; link: string; photo: string }[];
 }
 
+/**
+ * Validates the frontmatter of blog markdown files.
+ * @param {FrontMatter} frontmatter - The frontmatter to validate.
+ * @returns {string[] | null} - An array of error messages, or null if valid.
+ */
 function validateBlogs(frontmatter: FrontMatter) {
   const requiredAttributes = ['title', 'date', 'type', 'tags', 'cover', 'authors'];
   const errors = [];
@@ -75,6 +88,11 @@ function validateBlogs(frontmatter: FrontMatter) {
   return errors.length ? errors : null;
 }
 
+/**
+ * Validates the frontmatter of documentation markdown files.
+ * @param {FrontMatter} frontmatter - The frontmatter to validate.
+ * @returns {string[] | null} - An array of error messages, or null if valid.
+ */
 function validateDocs(frontmatter: FrontMatter) {
   const errors = [];
 
@@ -142,6 +160,9 @@ async function checkMarkdownFiles(
 const docsFolderPath = path.resolve(currentDirPath, '../../markdown/docs');
 const blogsFolderPath = path.resolve(currentDirPath, '../../markdown/blog');
 
+/**
+ * Main function to validate markdown files in the docs and blog folders.
+ */
 async function main() {
   try {
     await Promise.all([

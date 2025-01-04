@@ -41,9 +41,14 @@ const technologyList = [...technologiesColor];
 let languageFuse = new Fuse(languageList, options);
 let technologyFuse = new Fuse(technologyList, options);
 
-// takes individual tool object and inserts borderColor and backgroundColor of the tags of
-// languages and technologies, for Tool Card in website.
-async function getFinalTool(toolObject: AsyncAPITool) {
+/**
+ * Takes individual tool object and inserts borderColor and backgroundColor of the tags of
+ * languages and technologies, for Tool Card in website.
+ *
+ * @param {AsyncAPITool} toolObject - The tool object to process.
+ * @returns {Promise<FinalAsyncAPITool>} - The processed tool object with additional properties.
+ */
+async function getFinalTool(toolObject: AsyncAPITool): Promise<FinalAsyncAPITool> {
   const finalObject: FinalAsyncAPITool = {
     ...toolObject,
     filters: {
@@ -127,8 +132,15 @@ async function getFinalTool(toolObject: AsyncAPITool) {
   return finalObject;
 }
 
-// Combine the automated tools and manual tools list into single JSON object file, and
-// lists down all the language and technology tags in one JSON file.
+/**
+ * Combine the automated tools and manual tools list into a single JSON object file, and
+ * lists down all the language and technology tags in one JSON file.
+ *
+ * @param {any} automatedTools - The list of automated tools.
+ * @param {any} manualTools - The list of manual tools.
+ * @param {string} toolsPath - The path to save the combined tools JSON file.
+ * @param {string} tagsPath - The path to save the tags JSON file.
+ */
 const combineTools = async (automatedTools: any, manualTools: any, toolsPath: string, tagsPath: string) => {
   try {
     // eslint-disable-next-line no-restricted-syntax

@@ -7,6 +7,9 @@ import fs from 'fs';
 import inquirer from 'inquirer';
 import moment from 'moment';
 
+/**
+ * Type definition for the answers from the compose prompt.
+ */
 type ComposePromptType = {
   title: string;
   excerpt: string;
@@ -15,7 +18,13 @@ type ComposePromptType = {
   canonical: string;
 };
 
-const genFrontMatter = (answers: ComposePromptType) => {
+/**
+ * Generates the front matter for a blog post based on the provided answers.
+ *
+ * @param {ComposePromptType} answers - The answers from the compose prompt.
+ * @returns {string} - The generated front matter.
+ */
+function genFrontMatter(answers: ComposePromptType) {
   const tagArray = answers.tags.split(',');
 
   tagArray.forEach((tag: string, index: number) => {
@@ -100,7 +109,7 @@ const genFrontMatter = (answers: ComposePromptType) => {
   frontMatter += '\n---';
 
   return frontMatter;
-};
+}
 
 inquirer
   .prompt([

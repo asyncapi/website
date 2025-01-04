@@ -3,6 +3,12 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+/**
+ * Fetches tool data from the GitHub API.
+ *
+ * @returns {Promise<any>} The data from the GitHub API.
+ * @throws {Error} If there is an error fetching the data.
+ */
 export async function getData(): Promise<any> {
   // eslint-disable-next-line no-useless-catch
   try {
