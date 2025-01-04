@@ -117,7 +117,7 @@ function validateDocs(frontmatter: FrontMatter) {
  */
 async function checkMarkdownFiles(
   folderPath: string,
-  validateFunction: (frontmatter: any) => string[] | null,
+  validateFunction: (frontmatter: FrontMatter) => string[] | null,
   relativePath = ''
 ) {
   try {
@@ -140,7 +140,7 @@ async function checkMarkdownFiles(
         const fileContent = await fs.readFile(filePath, 'utf-8');
         const { data: frontmatter } = matter(fileContent);
 
-        const errors = validateFunction(frontmatter);
+        const errors = validateFunction(frontmatter as FrontMatter);
 
         if (errors) {
           console.log(`Errors in file ${relativeFilePath}:`);
