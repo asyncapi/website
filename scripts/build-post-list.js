@@ -172,10 +172,9 @@ async function walkDirectories(
   }
 }
 
-// Matches heading IDs in two formats:
-// 1. {#my-heading-id}
-// 2. <a name="my-heading-id">
-const HEADING_ID_REGEX = /[\s]*(?:\{#([a-zA-Z0-9\-_]+)\}|<a[\s]+name="([a-zA-Z0-9\-_]+)")/;
+// Matches heading IDs in one formats:
+// 1. <a name=""></a>my heading id
+const anchorTagRegex =/<a\s+name="([a-zA-Z0-9\-_]+)"/
 
 /**
  * Extracts heading IDs from markdown headings
@@ -183,17 +182,18 @@ const HEADING_ID_REGEX = /[\s]*(?:\{#([a-zA-Z0-9\-_]+)\}|<a[\s]+name="([a-zA-Z0-
  * @returns {string} The extracted ID or empty string if no valid ID found
  */
 function slugifyToC(str) {
+  const match = str.match(anchorTagRegex);
+  if (match) {
+    // Extract text after the closing anchor tag
+    str = str.split('</a>')[1]?.trim() || '';
+  }
   if (typeof str !== 'string') return '';
   if (!str.trim()) return '';
-  let slug = '';
-
-  // Match heading IDs like {# myHeadingId}
-  const idMatch = str.match(HEADING_ID_REGEX);
-  const [, headingId, anchorId] = idMatch || [];
-  slug = (headingId || anchorId || '').trim();
-
-  // If no valid ID is found, return an empty string
-  return slug;
+  return str
+    .toLowerCase() 
+    .trim() 
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .replace(/[^\w\-]+/g, ''); // Remove non-alphanumeric characters except hyphens
 }
 
 async function isDirectory(dir) {
