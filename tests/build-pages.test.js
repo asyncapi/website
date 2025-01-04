@@ -52,8 +52,8 @@ describe('copyAndRenameFiles', () => {
     expect(fs.existsSync(NEW_TEST_DIR)).toBe(false);
     ensureDirectoryExists(NEW_TEST_DIR);
     expect(fs.existsSync(NEW_TEST_DIR)).toBe(true);
-		// delete the test directory after the test
-		fs.rmSync(NEW_TEST_DIR, { recursive: true, force: true });
+    // delete the test directory after the test
+    fs.rmSync(NEW_TEST_DIR, { recursive: true, force: true });
   });
 
 });
