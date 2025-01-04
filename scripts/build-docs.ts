@@ -227,7 +227,7 @@ function addDocButtons(docPosts: Details[], treePosts: NavTree) {
           };
           docPost = { ...docPost, prevPage } as Details;
         } else if (index - 2 >= 0) {
-          // additonal check for the first page of Docs so that it doesn't give any Segementation fault
+          // additional check for the first page of Docs so that it doesn't give any Segementation fault
           prevPage = {
             title: `${structuredPosts[index - 1]?.isRootSection ? rootSections[rootSections.length - 2] : rootSections[rootSections.length - 1]} - ${structuredPosts[index - 2].title}`,
             href: structuredPosts[index - 2].slug
