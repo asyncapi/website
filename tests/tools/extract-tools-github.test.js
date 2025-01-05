@@ -8,13 +8,13 @@ describe('getData', () => {
 
     const mockData = {
       data: {
-				items:[
-					{
-						name: '.asyncapi-tool',
-						path: 'asyncapi/.asyncapi-tool',
-					}
-				],
-				total_count: 1,
+        items:[
+          {
+            name: '.asyncapi-tool',
+            path: 'asyncapi/.asyncapi-tool',
+          }
+        ],
+        total_count: 1,
       },
     };
 
