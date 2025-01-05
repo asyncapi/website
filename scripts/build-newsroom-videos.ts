@@ -17,6 +17,9 @@ const currentDirPath = dirname(currentFilePath);
  */
 async function buildNewsroomVideos(writePath: string) {
   try {
+    if (!process.env.YOUTUBE_TOKEN) {
+      throw new Error('YOUTUBE_TOKEN environment variable is required');
+    }
     const response = await fetch(
       `https://youtube.googleapis.com/youtube/v3/search?${new URLSearchParams({
         key: process.env.YOUTUBE_TOKEN!,
@@ -39,12 +42,21 @@ async function buildNewsroomVideos(writePath: string) {
       throw new Error('Invalid data structure received from YouTube API');
     }
 
-    const videoDataItems = data.items.map((video: youtube_v3.Schema$SearchResult) => ({
-      image_url: video.snippet?.thumbnails?.high?.url,
-      title: video.snippet?.title,
-      description: video.snippet?.description,
-      videoId: video.id?.videoId
-    }));
+    const videoDataItems = data.items.map((video: youtube_v3.Schema$SearchResult) => {
+      if (!video.snippet?.thumbnails?.high?.url) {
+        throw new Error(`Missing thumbnail URL for video: ${video.id?.videoId ?? 'unknown'}`);
+      }
+      if (!video.id?.videoId) {
+        throw new Error(`Missing video ID for video: ${video.snippet?.title ?? 'unknown'}`);
+      }
+
+      return {
+        image_url: video.snippet.thumbnails.high.url,
+        title: video.snippet.title,
+        description: video.snippet.description,
+        videoId: video.id.videoId
+      };
+    });
 
     const videoData = JSON.stringify(videoDataItems, null, '  ');
 
