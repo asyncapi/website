@@ -1,5 +1,5 @@
 /* eslint-disable no-await-in-loop */
-/* eslint-disable max-depth */
+
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import fs from 'fs';
