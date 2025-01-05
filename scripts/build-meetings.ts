@@ -16,6 +16,10 @@ async function buildMeetings(writePath: string) {
   let auth;
   let calendar;
 
+  if (!process.env.CALENDAR_SERVICE_ACCOUNT) {
+    throw new Error('CALENDAR_SERVICE_ACCOUNT environment variable is required');
+  }
+
   try {
     auth = new google.auth.GoogleAuth({
       scopes: ['https://www.googleapis.com/auth/calendar'],
