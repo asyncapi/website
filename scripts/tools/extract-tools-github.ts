@@ -12,9 +12,6 @@ dotenv.config();
 export async function getData(): Promise<any> {
   // eslint-disable-next-line no-useless-catch
   try {
-    if (!process.env.GITHUB_TOKEN) {
-      throw new Error('GITHUB_TOKEN environment variable is required');
-    }
     const result = await axios.get('https://api.github.com/search/code?q=filename:.asyncapi-tool', {
       headers: {
         accept: 'application/vnd.github.text-match+json',
