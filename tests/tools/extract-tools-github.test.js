@@ -8,12 +8,17 @@ describe('getData', () => {
 
     const mockData = {
       data: {
-        name: '.asyncapi-tool',
-        path: 'asyncapi/.asyncapi-tool',
+				items:[
+					{
+						name: '.asyncapi-tool',
+						path: 'asyncapi/.asyncapi-tool',
+					}
+				],
+				total_count: 1,
       },
     };
 
-    const apiBaseUrl = 'https://api.github.com/search/code?q=filename:.asyncapi-tool';
+    const apiBaseUrl = 'https://api.github.com/search/code?q=filename:.asyncapi-tool&per_page=50&page=1';
     const headers = {
       accept: 'application/vnd.github.text-match+json',
       authorization: `token ${process.env.GITHUB_TOKEN}`,
