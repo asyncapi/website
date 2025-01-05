@@ -1,4 +1,4 @@
-import { access, constants, mkdir } from 'fs/promises';
+import { mkdir } from 'fs/promises';
 import { resolve } from 'path';
 
 import { writeJSON } from '../utils/readAndWriteJson';
@@ -31,12 +31,6 @@ export async function buildFinanceInfoList({
   try {
     const expensesPath = resolve(currentDir, configDir, financeDir, year, 'Expenses.yml');
     const expensesLinkPath = resolve(currentDir, configDir, financeDir, year, 'ExpensesLink.yml');
-
-    await Promise.all([access(expensesPath, constants.F_OK), access(expensesLinkPath, constants.F_OK)]).catch(() => {
-      throw new Error(
-        'Error in buildFinanceInfoList: Could not find the Expenses.yml or ExpensesLink.yml file in the finance directory.'
-      );
-    });
 
     // Ensure the directory exists before writing the files
     const jsonDirectory = resolve(currentDir, configDir, financeDir, jsonDataDir);

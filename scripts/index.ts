@@ -60,7 +60,4 @@ async function start() {
 
 export { start };
 
-start().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+start();
