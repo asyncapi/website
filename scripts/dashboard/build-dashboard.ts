@@ -14,21 +14,11 @@ import type {
   PullRequestById
 } from '@/types/scripts/dashboard';
 
+import { pause } from '../utils';
 import { Queries } from './issue-queries';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
-
-/**
- * Pauses execution for a specified number of milliseconds.
- * @param {number} ms - The number of milliseconds to pause.
- * @returns {Promise<void>}
- */
-async function pause(ms: number): Promise<void> {
-  return new Promise((res) => {
-    setTimeout(res, ms);
-  });
-}
 
 /**
  * Calculates the number of months since a given date.

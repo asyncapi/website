@@ -33,4 +33,15 @@ function convertToJson(contentYAMLorJSON: unknown): any {
   }
 }
 
-export { convertToJson };
+/**
+ * Pauses execution for a specified number of milliseconds.
+ * @param {number} ms - The number of milliseconds to pause.
+ * @returns {Promise<void>}
+ */
+async function pause(ms: number): Promise<void> {
+  return new Promise((res) => {
+    setTimeout(res, ms);
+  });
+}
+
+export { convertToJson, pause };
