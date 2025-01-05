@@ -1,7 +1,7 @@
 [
   {
     "value": "/tools/generator",
-    "href": "https://github.com/asyncapi/generator/tree/master/docs"
+    "href": "https://github.com/asyncapi/generator/blob/master/apps/generator/docs"
   },
   {
     "value": "reference/specification/",
@@ -9,7 +9,7 @@
   },
   {
     "value": "/tools/cli",
-    "href": "https://github.com/asyncapi/cli/tree/master/docs"
+    "href": "https://github.com/asyncapi/cli/blob/master/docs"
   },
   {
     "value": "",
@@ -17,6 +17,6 @@
   },
   {
     "value": "reference/extensions/",
-    "href": "https://github.com/asyncapi/extensions-catalog/tree/master/extensions"
+    "href": "https://github.com/asyncapi/extensions-catalog/blob/master/extensions"
   }
 ]
