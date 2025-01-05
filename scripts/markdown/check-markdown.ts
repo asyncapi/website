@@ -44,6 +44,10 @@ function validateBlogs(frontmatter: FrontMatter) {
   const requiredAttributes = ['title', 'date', 'type', 'tags', 'cover', 'authors'];
   const errors = [];
 
+  if (!frontmatter) {
+    errors.push('Frontmatter is missing');
+  }
+
   // Check for required attributes
   requiredAttributes.forEach((attr) => {
     if (!Object.prototype.hasOwnProperty.call(frontmatter, attr)) {
