@@ -132,6 +132,28 @@ async function getFinalTool(toolObject: AsyncAPITool): Promise<FinalAsyncAPITool
   return finalObject;
 }
 
+const processManualTool = async (tool: any) => {
+  const isValid = await validate(tool);
+
+  if (!isValid) {
+    console.error({
+      message: 'Tool validation failed',
+      tool: tool.title,
+      source: 'manual-tools.json',
+      errors: validate.errors,
+      note: 'Script continues execution, error logged for investigation'
+    });
+
+    return null;
+  }
+  const isAsyncAPIrepo = tool?.links?.repoUrl
+    ? new URL(tool.links.repoUrl).href.startsWith('https://github.com/asyncapi/')
+    : false;
+  const toolObject = await createToolObject(tool, '', '', isAsyncAPIrepo);
+
+  return getFinalTool(toolObject);
+};
+
 /**
  * Combine the automated tools and manual tools list into a single JSON object file, and
  * lists down all the language and technology tags in one JSON file.
@@ -146,40 +168,14 @@ const combineTools = async (automatedTools: any, manualTools: any, toolsPath: st
     // eslint-disable-next-line no-restricted-syntax
     for (const key in automatedTools) {
       if (Object.prototype.hasOwnProperty.call(automatedTools, key)) {
-        const finalToolsList = [];
+        const automatedResults = await Promise.all(automatedTools[key].toolsList.map(getFinalTool));
+        const manualResults = manualTools[key]?.toolsList?.length
+          ? (await Promise.all(manualTools[key].toolsList.map(processManualTool))).filter(Boolean)
+          : [];
 
-        if (automatedTools[key].toolsList.length) {
-          for (const tool of automatedTools[key].toolsList) {
-            finalToolsList.push(await getFinalTool(tool));
-          }
-        }
-        if (manualTools[key]?.toolsList?.length) {
-          for (const tool of manualTools[key].toolsList) {
-            let isAsyncAPIrepo;
-            const isValid = await validate(tool);
-
-            if (isValid) {
-              if (tool?.links?.repoUrl) {
-                const url = new URL(tool.links.repoUrl);
-
-                isAsyncAPIrepo = url.href.startsWith('https://github.com/asyncapi/');
-              } else isAsyncAPIrepo = false;
-              const toolObject = await createToolObject(tool, '', '', isAsyncAPIrepo);
-
-              finalToolsList.push(await getFinalTool(toolObject));
-            } else {
-              console.error({
-                message: 'Tool validation failed',
-                tool: tool.title,
-                source: 'manual-tools.json',
-                errors: validate.errors,
-                note: 'Script continues execution, error logged for investigation'
-              });
-            }
-          }
-        }
-        finalToolsList.sort((tool, anotherTool) => tool.title.localeCompare(anotherTool.title));
-        finalTools[key].toolsList = finalToolsList;
+        finalTools[key].toolsList = [...automatedResults, ...manualResults].sort((tool, anotherTool) =>
+          tool.title.localeCompare(anotherTool.title)
+        );
       }
     }
     fs.writeFileSync(toolsPath, JSON.stringify(finalTools));
