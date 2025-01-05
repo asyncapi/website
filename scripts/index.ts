@@ -26,7 +26,7 @@ async function start() {
   const writeFilePath = resolve(currentDirPath, '../config', 'posts.json');
 
   await buildPostList(postDirectories, basePath, writeFilePath);
-  rssFeed('blog', 'AsyncAPI Initiative Blog RSS Feed', 'AsyncAPI Initiative Blog', 'rss.xml');
+  await rssFeed('blog', 'AsyncAPI Initiative Blog RSS Feed', 'AsyncAPI Initiative Blog', 'rss.xml');
   await buildCaseStudiesList('config/casestudies', resolve(currentDirPath, '../config', 'case-studies.json'));
   await buildAdoptersList();
   const financeDir = resolve('.', 'config', 'finance');
@@ -60,4 +60,7 @@ async function start() {
 
 export { start };
 
-start();
+start().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
