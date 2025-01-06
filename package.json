@@ -25,7 +25,8 @@
     "test:netlify": "deno test --allow-env --trace-ops netlify/**/*.test.ts",
     "test:md": "node scripts/markdown/check-markdown.js",
     "dev:storybook": "storybook dev -p 6006",
-    "build:storybook": "storybook build"
+    "build:storybook": "storybook build",
+    "chromatic": "npx chromatic --build-script-name=build:storybook"
   },
   "repository": {
     "type": "git",
@@ -38,7 +39,10 @@
     "homepage",
     "site"
   ],
-  "author": "Fran Mendez <fmvilas@gmail.com>",
+  "author": {
+    "name": "Fran Mendez",
+    "email": "fmvilas@gmail.com"
+  },
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/asyncapi/website/issues"
@@ -138,6 +142,7 @@
     "@types/react-youtube-embed": "^1.0.4",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
+    "chromatic": "^11.22.0",
     "dedent": "^1.5.1",
     "eslint": "^8",
     "eslint-config-airbnb-typescript": "^17.1.0",
