@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Button from '../buttons/Button';
 import GithubButton from '../buttons/GithubButton';
 import SlackButton from '../buttons/SlackButton';

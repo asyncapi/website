@@ -7,17 +7,19 @@ tags:
   - Announcement
 cover: /img/posts/gsod-2022/SeasonofDocs_Logo.webp
 authors:
-  - name: Alejandra Quetzalli
-    photo: /img/avatars/canela-ale.webp
-    link: https://www.linkedin.com/in/alejandra-quetzalli/
+  - name: Quetzalli Writes
+    photo: /canela-quetzalli.webp
+    link: https://www.linkedin.com/in/quetzalli-writes/
     byline: Our proposal? Update Docs Information Architecture
 excerpt: Check out the Docs project proposal we're submitting to GSoD 2022! You won't want to miss out.
 ---
 
+import ContributionNotes from '@/assets/docs/fragments/contribution-notes.md';
+
 ## ¡Hola, AsyncAPI community! 
 For today's blog post about AsyncAPI Docs 📑, I wanted to share with all technical writers about our organization’s plan for participation in `Google Season of Docs 2022 (GSoD)`. Any and all technical writers are welcome to come participate with us for GSoD 2022 season, regardless of tech background or years of experience! At AsyncAPI, we love mentoring folks who want to get involved in OSS, tech, and Docs. ❤️
 
-As some of you may remember from my [Gist Docs update for 31 Jan - 11 Feb 2022](https://gist.github.com/alequetzalli/94ca1ffb5d123b450501e40a4a3b56e2), I noted that GSoD 2022 was coming up and that AsyncAPI wanted to participate in the application process once it opened on February 23, 2022.  
+As some of you may remember from my [Gist Docs update for 31 Jan - 11 Feb 2022](https://gist.github.com/quetzalliwrites/94ca1ffb5d123b450501e40a4a3b56e2), I noted that GSoD 2022 was coming up and that AsyncAPI wanted to participate in the application process once it opened on February 23, 2022.  
 
 In anticipation of this, I also created a new AsyncAPI Slack channel named `#temp-gsod-2022` that anyone can join! First, [join our Slack workspace](https://www.asyncapi.com/slack-invite) ☎️  and please respect [our slack etiquette](https://github.com/asyncapi/community/blob/master/slack-etiquette.md).🙂 Then join the `temp-gsod-2022` channel, our temporary channel to coordinate GSoC 2022 setup. I'll publish regular updates on where we are in the application process, so stay tuned as the process continues. 😄
 
@@ -54,7 +56,7 @@ AsyncAPI has several CLI and Tools markdown README documentation in miscellaneou
 
 In addition, we want to also target improving the [Generator tool](https://github.com/asyncapi/template-for-generator-templates) docs that are only READMEs in a repo right now. The Docs for this one tool are a big enough job to merit being our 2nd proposed project for 2022 GSoD.
 
-We're also writing voluntary OSS bi-weekly updates via GitHub Gists to speak about the latest updates made in the AsyncAPI Docs Ecosystem. Due to our commitment to investing time in gaining interest in our community and getting Google excited about us, we've made sure to maintain updates about our `Google Season of Docs 2022` application too! In fact, you can take a look at the latest three where we made said mentions here in [AsyncAPI Docs update (31 Jan - 11 Feb 2022)](https://gist.github.com/alequetzalli/94ca1ffb5d123b450501e40a4a3b56e2), [AsyncAPI Docs update (14 Feb - 25 Feb 2022)](https://gist.github.com/alequetzalli/d34e3aececa49d10d0ddb2dc9938b477), and [AsyncAPI Docs update (28 Feb - 11 March 2022)](https://gist.github.com/alequetzalli/8f449f731b919193f4101098a69da14d).
+We're also writing voluntary OSS bi-weekly updates via GitHub Gists to speak about the latest updates made in the AsyncAPI Docs Ecosystem. Due to our commitment to investing time in gaining interest in our community and getting Google excited about us, we've made sure to maintain updates about our `Google Season of Docs 2022` application too! In fact, you can take a look at the latest three where we made said mentions here in [AsyncAPI Docs update (31 Jan - 11 Feb 2022)](https://gist.github.com/quetzalliwrites/94ca1ffb5d123b450501e40a4a3b56e2), [AsyncAPI Docs update (14 Feb - 25 Feb 2022)](https://gist.github.com/quetzalliwrites/d34e3aececa49d10d0ddb2dc9938b477), and [AsyncAPI Docs update (28 Feb - 11 March 2022)](https://gist.github.com/quetzalliwrites/8f449f731b919193f4101098a69da14d).
 
 ### Measuring our Docs project’s success
 We will partially measure success in the Docs project by capturing specific feedback about the IA changes via our soon-to-come new [Docs Feedback card](https://github.com/asyncapi/website/issues/453). We need this specific and granular feedback to make sure we listen and make changes according to what the community requests from Docs. In previous AsyncAPI Docs Gist updates, we've mentioned that Design contributors were teaming with Docs on `/website`issue [#453](https://github.com/asyncapi/website/issues/453) for the ideation and development of our new **feedback card** that will be added at the bottom of each Docs page. What the community decided over the last 2 weeks was that the `Submit feedback` button in the card will publish the feedback anonymously via the AsyncAPI bot and create a new **GitHub Discussion** with said feedback:
@@ -89,18 +91,6 @@ We have set aside 2 mentors for now, for our 2 projects: improving our IA and re
 ___ 
 
 ## Get started contributing to AsyncAPI Docs Today
-Last but not least, don't forget that code isn't the only way to contribute to OSS; Dev Docs are a **huge** help that benefit the entire OSS ecosystem. At AsyncAPI, we value Doc contributions as much as every other type of contribution. ❤️
+Last but not least, don't forget that <ContributionNotes />
 
-To get started as a Docs contributor:
-1. Familiarize yourself with our [project's Contribution Guide](https://github.com/asyncapi/community/blob/master/CONTRIBUTING.md) and our [Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
-2. Head over to our Docs GH Board [here](https://github.com/orgs/asyncapi/projects/8).
-3. Pick an issue you would like to contribute to and leave a comment introducing yourself. This is also the perfect place to leave any questions you may have on how to get started. 
-4. If there is no work done in that Docs issue yet, feel free to open a PR and get started!
-
-### Tag me in your AsyncAPI Doc PRs
-Do you have a documentation contributor question and you're wondering how to tag me into a GitHub discussion or PR? Never fear!
-
-Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/asyncapi/community/discussions/categories/docs) via my GitHub handle, [`alequetzalli`](https://github.com/alequetzalli) 🐙.
-
-
-_-A.Q. 👩🏻‍💻 and Canela 🐕‍🦺_
+_-Q.W. 👩🏻‍💻 and Canela 🐕‍🦺_

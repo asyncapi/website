@@ -158,7 +158,7 @@
             "html-template",
             "markdown-template",
             "nodejs-ws-template",
-            "generator-hooks",
+            "glee",
             "brand"
         ],
         "githubID": 242119
@@ -181,16 +181,14 @@
         "github": "jonaslagoni",
         "linkedin": "jonaslagoni",
         "slack": "UQ2ANBG1E",
+        "company": "EventStack",
         "availableForHire": false,
-        "company": "Postman",
         "isTscMember": true,
         "repos": [
             "spec-json-schemas",
             "generator",
             "parser-js",
             "converter-js",
-            "ts-nats-template",
-            "dotnet-nats-template",
             "generator-react-sdk",
             "modelina",
             "simulator",
@@ -240,7 +238,7 @@
         "twitter": "ldussart",
         "availableForHire": false,
         "company": "zatsit",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "avro-schema-parser"
         ],
@@ -252,15 +250,13 @@
         "linkedin": "lukasz-gornicki-a621914",
         "slack": "UD698Q5LM",
         "twitter": "derberq",
-        "availableForHire": false,
-        "company": "Postman",
+        "availableForHire": true,
         "isTscMember": true,
         "repos": [
             "spec",
             "website",
             "spec-json-schemas",
             "generator",
-            "asyncapi-react",
             "extensions-catalog",
             "bindings",
             "enterprise-patterns",
@@ -272,7 +268,6 @@
             "github-action-for-cli",
             ".github",
             "jasyncapi",
-            "generator-hooks",
             "vs-asyncapi-preview",
             "template-for-generator-templates",
             "community",
@@ -301,8 +296,6 @@
             "html-template",
             "markdown-template",
             "github-action-for-cli",
-            "ts-nats-template",
-            "dotnet-nats-template",
             "template-for-generator-templates",
             "generator-react-sdk",
             "modelina",
@@ -321,10 +314,10 @@
         "github": "AceTheCreator",
         "twitter": "_acebuild",
         "slack": "U01RWDD69PZ",
-        "company": "Postman",
         "availableForHire": false,
         "isTscMember": true,
         "repos": [
+            "asyncapi-react",
             "conference-website",
             "chatbot"
         ],
@@ -350,7 +343,7 @@
         "linkedin": "nektarios-fifes-372740220",
         "slack": "U01SE93Q48N",
         "availableForHire": true,
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "simulator"
         ],
@@ -416,8 +409,8 @@
         "slack": "U01N6AW5V5G",
         "twitter": "amzani",
         "linkedin": "amzani",
+        "company": "Apideck",
         "availableForHire": false,
-        "company": "Postman",
         "isTscMember": true,
         "repos": [
             "studio",
@@ -431,8 +424,8 @@
         "linkedin": "smoya",
         "slack": "UN22ZTLHG",
         "twitter": "smoyac",
+        "company": "Timescale",
         "availableForHire": false,
-        "company": "Postman",
         "isTscMember": true,
         "repos": [
             "spec",
@@ -457,8 +450,7 @@
         "slack": "U01SGCZMJKW",
         "twitter": "souvik_ns",
         "linkedin": "souvik-de-a2b941169",
-        "availableForHire": false,
-        "company": "Postman",
+        "availableForHire": true,
         "isTscMember": true,
         "repos": [
             "cli",
@@ -473,8 +465,7 @@
         "twitter": "QuetzalliWrites",
         "slack": "U02AKC14WAJ",
         "linkedin": "quetzalli-writes",
-        "availableForHire": false,
-        "company": "Postman",
+        "availableForHire": true,
         "isTscMember": true,
         "repos": [
             "website"
@@ -907,28 +898,6 @@
         "githubID": 743192
     },
     {
-        "name": "Vinit Shahdeo",
-        "github": "vinitshahdeo",
-        "twitter": "Vinit_Shahdeo",
-        "availableForHire": true,
-        "isTscMember": false,
-        "repos": [
-            "diff"
-        ],
-        "githubID": 20594326
-    },
-    {
-        "name": "Anubhav Vats",
-        "github": "onbit-uchenik",
-        "twitter": "postmanlabs",
-        "availableForHire": true,
-        "isTscMember": false,
-        "repos": [
-            "diff"
-        ],
-        "githubID": 46771418
-    },
-    {
         "name": "Akshaya Gurlhosur",
         "github": "AGurlhosur",
         "isTscMember": false,
@@ -974,15 +943,6 @@
         "githubID": 39913716
     },
     {
-        "name": "Jonas S\u00fcskind",
-        "github": "sueskind",
-        "isTscMember": false,
-        "repos": [
-            "kotlin-asyncapi"
-        ],
-        "githubID": 52210599
-    },
-    {
         "name": "Andrei",
         "github": "gimlet2",
         "twitter": "gimlet2",
@@ -992,5 +952,18 @@
             "kotlin-asyncapi"
         ],
         "githubID": 758568
+    },
+    {
+        "name": "Ashmit Jagtap",
+        "github": "ashmit-coder",
+        "linkedin": "ashmit-jagtap",
+        "twitter": "AshmitJagtap",
+        "slack": "U06RA7GDHU1",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "conference-website"
+        ],
+        "githubID": 69006513
     }
 ]

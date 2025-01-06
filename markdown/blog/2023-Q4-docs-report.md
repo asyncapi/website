@@ -7,15 +7,18 @@ tags:
   - Communication
 cover: /img/posts/2023-Q4-docs-report/Q4-docs-diagram-summary.webp
 authors:
-  - name: Alejandra Quetzalli
-    photo: /img/avatars/canela-ale.webp
-    link: https://www.linkedin.com/in/alejandra-quetzalli/
+  - name: Quetzalli Writes
+    photo: /img/avatars/canela-quetzalli.webp
+    link: https://www.linkedin.com/in/quetzalli-writes/
     byline: During Q4 2023, AsyncAPI Docs had a total of 19,267 sessions and 6,447 unique users.
 excerpt: In Q4, AsyncAPI docs had primary engagement across the tutorials and reference content buckets. 
 ---
 
+import ContributionNotes from '@/assets/docs/fragments/contribution-notes.md';
+import TalkToMe from '@/assets/docs/fragments/talk-to-me.md';
+
 # AsyncAPI Documentation Report - Q4 2023
-As a core maintainer of AsyncAPI Docs, I (Alejandra Quetzalli) volunteer to write periodic updates about the AsyncAPI Docs ecosystem. The goal is to keep the community informed about what's going on in docs and how docs contributors collaborate with other areas in AsyncAPI Initiative.
+As a core maintainer of AsyncAPI Docs, I (Quetzalli Writes) volunteer to write periodic updates about the AsyncAPI Docs ecosystem. The goal is to keep the community informed about what's going on in docs and how docs contributors collaborate with other areas in AsyncAPI Initiative.
 
 ## Overview
 During Q4 2023, AsyncAPI Docs had a total of **19,267 sessions** and **6,447 unique users**. 
@@ -94,19 +97,8 @@ A --> H
 ---
 
 ### How to contribute to AsyncAPI Docs
-Did you know that you can contribute Docs to AsyncAPI as well? Code isn't the only way to contribute to OSS; docs are a **huge** help that benefits the entire OSS ecosystem. At AsyncAPI, we value Doc contributions as much as every other type of contribution. ❤️
-
-To get started as a Docs contributor:
-1. Familiarize yourself with our [project's Contribution Guide](https://github.com/asyncapi/community/blob/master/CONTRIBUTING.md) and our [Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
-2. Head over to our Docs GH Board [here](https://github.com/orgs/asyncapi/projects/12).
-3. Pick an issue you would like to contribute to and leave a comment introducing yourself and questions on how to get started. 
-4. If there is no work done in that Docs issue yet, feel free to open a PR and get started!
-5. Send me a DM in Slack! 
-
-#### Tag me in your AsyncAPI Doc PRs
-Do you have a documentation contributor question, and you're wondering how to tag me into a GitHub discussion or PR? Never fear!
-
-Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/asyncapi/community/discussions/categories/docs) via my GitHub handle, [`/alequetzalli`](https://github.com/alequetzalli) 🐙.
+Did you know that you can contribute Docs to AsyncAPI as well?
+<ContributionNotes />
 
 #### Talk to me
-I want and need to listen 👂🏽 to all of your perspectives and ideas. Please don't be shy to express to me what you think needs to be documented first or what is missing. 📝 There's a lot of good work ahead, but **you** determine _our content roadmap_ because the OSS community needs should always come first.✨
+<TalkToMe />

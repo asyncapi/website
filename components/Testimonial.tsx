@@ -1,3 +1,5 @@
+import React from 'react';
+
 import IconQuote from './icons/Quote';
 import Paragraph from './typography/Paragraph';
 
@@ -27,21 +29,24 @@ export default function Testimonial({
   authorAvatar
 }: TestimonialProps) {
   return (
-    <li className={`p-4 sm:px-6 md:flex md:flex-row md:py-4 md:pr-0 ${className}`}>
-      <blockquote className='mt-8 md:flex md:grow md:flex-col'>
-        <div className='relative text-lg font-medium leading-7 text-gray-600 md:flex-1'>
+    <li className={`flex flex-col gap-6 p-6 sm:px-8 sm:py-6 md:flex-row md:items-start md:gap-8 md:p-8 ${className}`}>
+      <blockquote className='flex flex-col gap-6 text-left md:grow'>
+        <div className='relative text-lg font-medium leading-7 text-gray-600'>
           <IconQuote className='absolute left-0 top-0 size-8 -translate-y-2 text-primary-500' />
-          <Paragraph className='relative pl-10 text-left'>{text}</Paragraph>
+          <Paragraph className='relative pl-12'>{text}</Paragraph>
         </div>
-        <footer className='mt-6'>
-          <div className='flex'>
-            <figure className='inline-flex shrink-0 rounded-full border-2 border-white'>
-              <img className='size-12 rounded-full' src={authorAvatar} alt={authorName} data-testid='Testimonial-img' />
-            </figure>
-            <div className='ml-4 text-left'>
-              <p className='text-base font-bold leading-6 text-gray-900'>{authorName}</p>
-              <p className='text-base font-medium leading-6 text-primary-500'>{authorDescription}</p>
-            </div>
+        <footer className='flex items-center gap-4'>
+          <figure className='shrink-0'>
+            <img
+              className='size-12 rounded-full border-2 border-white'
+              src={authorAvatar}
+              alt={authorName}
+              data-testid='Testimonial-img'
+            />
+          </figure>
+          <div className='ml-4 text-left'>
+            <p className='text-base font-bold leading-6 text-gray-900'>{authorName}</p>
+            <p className='text-sm font-medium leading-6 text-primary-500'>{authorDescription}</p>
           </div>
         </footer>
       </blockquote>

@@ -1,4 +1,5 @@
 import { ArrowRightIcon } from '@heroicons/react/outline';
+import React, { useEffect, useState } from 'react';
 
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
@@ -33,6 +34,14 @@ export default function Meeting({
   youtube = '',
   bg = ''
 }: MeetingProps) {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return null;
+
   return (
     <a href={youtube} target='_blank' rel='noreferrer' data-testid='Meeting-link'>
       <div

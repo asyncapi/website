@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
+import React, { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 export const INDEX_NAME = 'asyncapi';
@@ -283,6 +283,7 @@ export default function AlgoliaSearch({ children }: { children: React.ReactNode 
  */
 export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISearchButtonProps) {
   const { onOpen, onInput } = useContext(SearchContext);
+  const [Children, setChildren] = useState<string | React.ReactNode>('');
   const searchButtonRef = useRef<HTMLButtonElement>(null);
   const actionKey = getActionKey();
 
@@ -308,6 +309,14 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISe
     };
   }, [onInput, searchButtonRef]);
 
+  useEffect(() => {
+    if (typeof children === 'function') {
+      setChildren(children({ actionKey }));
+    } else {
+      setChildren(children);
+    }
+  }, []);
+
   return (
     <button
       type='button'
@@ -318,7 +327,7 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISe
       {...props}
       data-testid='Search-Button'
     >
-      {typeof children === 'function' ? children({ actionKey }) : children}
+      {Children}
     </button>
   );
 }
