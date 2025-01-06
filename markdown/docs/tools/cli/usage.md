@@ -1,6 +1,6 @@
 ---
 title: 'Usage'
-weight: 40
+weight: 50
 ---
 
 <!-- 
@@ -315,7 +315,7 @@ Convert asyncapi documents older to newer versions or OpenAPI/postman-collection
 ```
 USAGE
   $ asyncapi convert [SPEC-FILE] -f openapi|asyncapi|postman-collection [-h] [-o <value>] [-t <value>] [-p
-    client|server]
+    client|server][--proxyHost][--proxyPort]
 
 ARGUMENTS
   SPEC-FILE  spec path, url, or context-name
@@ -329,6 +329,8 @@ FLAGS
                                 server). Note: This option is only applicable for OpenAPI to AsyncAPI conversions.
                                 <options: client|server>
   -t, --target-version=<value>  [default: 3.0.0] asyncapi version to convert to
+      --proxyHost                    Name of the Proxy Host.
+      --proxyPort                    The number of Port for enabling Proxy.
 
 DESCRIPTION
   Convert asyncapi documents older to newer versions or OpenAPI/postman-collection documents to AsyncAPI
@@ -699,7 +701,7 @@ optimize asyncapi specification file
 USAGE
   $ asyncapi optimize [SPEC-FILE] [-h] [-p
     remove-components|reuse-components|move-duplicates-to-components|move-all-to-components...] [-i schema...] [-o
-    terminal|new-file|overwrite] [--no-tty]
+    terminal|new-file|overwrite] [--no-tty] [--proxyHost][--proxyPort]
 
 ARGUMENTS
   SPEC-FILE  spec path, url, or context-name
@@ -715,6 +717,8 @@ FLAGS
                                   <options: remove-components|reuse-components|move-duplicates-to-components|move-all-to
                                   -components>
       --no-tty                    do not use an interactive terminal
+      --proxyHost                    Name of the Proxy Host.
+      --proxyPort                    The number of Port for enabling Proxy.
 
 DESCRIPTION
   optimize asyncapi specification file
@@ -798,7 +802,7 @@ validate asyncapi file
 ```
 USAGE
   $ asyncapi validate [SPEC-FILE] [-h] [-w] [--log-diagnostics] [--diagnostics-format
-    json|stylish|junit|html|text|teamcity|pretty] [--fail-severity error|warn|info|hint] [-o <value>] [--score]
+    json|stylish|junit|html|text|teamcity|pretty] [--fail-severity error|warn|info|hint] [-o <value>] [--score] [--proxyHost] [--proxyPort]
 
 ARGUMENTS
   SPEC-FILE  spec path, url, or context-name
@@ -815,6 +819,8 @@ FLAGS
       --[no-]log-diagnostics         log validation diagnostics or not
       --score                        Compute the score of the AsyncAPI document. Scoring is based on whether the
                                      document has description, license, server and/or channels.
+      --proxyHost                    Name of the Proxy Host.
+      --proxyPort                    The number of Port for enabling Proxy.
 
 DESCRIPTION
   validate asyncapi file
