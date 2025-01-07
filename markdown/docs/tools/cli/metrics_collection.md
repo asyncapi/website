@@ -1,6 +1,6 @@
 ---
 title: 'Metrics Collection'
-weight: 60
+weight: 70
 ---
 
 # Metrics collection guideline
