@@ -442,11 +442,11 @@ channels:
       chatMessage:
         $ref: '#/components/messages/chat'
         
-      userJoined:
+      userJoin:
         description: Event when a user joins the chat room
         $ref: '#/components/messages/status'
         
-      userLeft:
+      userLeave:
         description: Event when a user leaves the chat room
         $ref: '#/components/messages/status'
 
@@ -474,7 +474,7 @@ operations:
     channel:
       $ref: '#/channels/chat'
     messages:
-      - $ref: '#/channels/chat/messages/userJoined'
+      - $ref: '#/channels/chat/messages/userJoin'
     summary: User join notification
     description: Notifies when a new user joins the chat room
 
@@ -483,7 +483,7 @@ operations:
     channel:
       $ref: '#/channels/chat'
     messages:
-      - $ref: '#/channels/chat/messages/userLeft'
+      - $ref: '#/channels/chat/messages/userLeave'
     summary: User leave notification
     description: Notifies when a user leaves the chat room
 
