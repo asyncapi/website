@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   app:
+    container_name: asyncapi-website  # For easier container identification
     build:
       context: .
       dockerfile: Dockerfile # Path to Dockerfile
@@ -11,5 +12,11 @@ services:
       - .:/async             # Mount the current directory to /async in the container - for hot reloading
       - /async/node_modules  # Exclude node_modules from being overridden
     environment:
-      NODE_ENV: development  # it Set environment variable
+      NODE_ENV: development  # Set environment variable
     command: ["npm", "run", "dev"]
+    restart: unless-stopped  # Automatic container recovery
+    healthcheck:            # Container health monitoring
+      test: ["CMD", "wget", "--spider", "-q", "localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

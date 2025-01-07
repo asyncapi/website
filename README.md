@@ -136,14 +136,14 @@ Now you're running AsyncAPI website in a development mode. Container is mapped w
 
 ### Run locally using Docker Compose
 
-#### Prerequisites:
+#### Prerequisites
 
-- [Install Docker](https://docs.docker.com/get-docker/)
-- [Install Docker Compose](https://docs.docker.com/compose/install/)
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
 After cloning the repository to your local system, you can use Docker Compose to simplify the development setup. 
 
-#### Steps:
+#### Steps
 1. Start the development environment with Docker Compose:
     ```bash
     docker-compose up
@@ -152,7 +152,7 @@ After cloning the repository to your local system, you can use Docker Compose to
 2. Access the website:
     - Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
 
-#### Features:
+#### Features
 - The `docker-compose.yml` file automatically sets up the container and maps your local code to the container's `/async` directory.
 - Any changes you make locally will automatically be reflected in the running application due to volume mounting.
 - The `node_modules` directory inside the container is isolated to prevent conflicts with your local system.
