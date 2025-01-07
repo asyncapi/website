@@ -16,7 +16,7 @@ services:
     command: ["npm", "run", "dev"]
     restart: unless-stopped  # Automatic container recovery
     healthcheck:            # Container health monitoring
-      test: ["CMD", "wget", "--spider", "-q", "localhost:3000"]
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
       interval: 30s
       timeout: 10s
       retries: 3
