@@ -134,6 +134,34 @@ After cloning repository to your local, perform the following steps from the roo
 
 Now you're running AsyncAPI website in a development mode. Container is mapped with your local copy of the website. Whenever you make changes to the code, the website will refresh and changes visible in localhost:3000.
 
+### Run locally using Docker Compose
+
+#### Prerequisites:
+
+- [Install Docker](https://docs.docker.com/get-docker/)
+- [Install Docker Compose](https://docs.docker.com/compose/install/)
+
+After cloning the repository to your local system, you can use Docker Compose to simplify the development setup. 
+
+#### Steps:
+1. Start the development environment with Docker Compose:
+    ```bash
+    docker-compose up
+    ```
+
+2. Access the website:
+    - Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
+
+#### Features:
+- The `docker-compose.yml` file automatically sets up the container and maps your local code to the container's `/async` directory.
+- Any changes you make locally will automatically be reflected in the running application due to volume mounting.
+- The `node_modules` directory inside the container is isolated to prevent conflicts with your local system.
+
+To stop the container, press `Ctrl+C` in your terminal or run:
+```bash
+docker-compose down
+
+
 ## Use shared Markdown fragments
 
 To minimize the duplication of content and make it easier to maintain, there are shared fragments you can use when working with Markdown files. These fragments are stored in the `/assets/docs/fragments` directory.

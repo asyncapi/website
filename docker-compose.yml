@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile # Path to Dockerfile
+    ports:
+      - "3000:3000"          # Map host port 3000 to container port 3000
+    volumes:
+      - .:/async             # Mount the current directory to /async in the container - for hot reloading
+      - /async/node_modules  # Exclude node_modules from being overridden
+    environment:
+      NODE_ENV: development  # it Set environment variable
+    command: ["npm", "run", "dev"]
