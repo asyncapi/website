@@ -1,6 +1,6 @@
 ---
 title: "AsyncAPI & WebSocket A Match Made from Heaven?"
-date: 2024-12-20T06:00:00+01:00
+date: 2025-01-10T06:00:00+01:00
 type: Engineering
 tags:
   - Specification
@@ -308,19 +308,18 @@ channels:
     address: /
     title: Users channel
     messages:
-       chatMessage:
-         $ref: '#/components/messages/chat'
-         
-       userStatus: #newly added channel message
-         $ref: '#/components/messages/status'
+      chatMessage:
+        $ref: '#/components/messages/chat'
+      userStatus:  # newly added channel message
+        $ref: '#/components/messages/status'
 ```
 
 Finally, we need to define two operations within our channel: one for notifying when a user joins (`userJoin`) and another for when they leave (`userLeave`). Here’s how:
+
 ```
 operations:
   sendMessage:
-  ...
-  
+    ...
   userJoin:
     summary: User join notification
     description: Notifies when a new user joins the chat room
@@ -329,14 +328,14 @@ operations:
       $ref: '#/channels/chat'
     messages:
       - $ref: '#/channels/chat/messages/userStatus'
-
   userLeave:
     summary: User leave notification
     description: Notifies when a user leaves the chat room
     action: receive
-    channel: $ref: '#/channels/chat'
+    channel:
+      $ref: '#/channels/chat'
     messages:
-      - $ref: '#/channels/chat/messages/userStatus'  
+      - $ref: '#/channels/chat/messages/userStatus'
 ```
 
 In this setup, both `userJoin` and `userLeave` operations use the same `userStatus` message structure, saving time and reducing redundancy!
