@@ -28,7 +28,7 @@ The spec-first API development approach involves designing the API using an API 
 
 OpenAPI isn’t ideal for my use case because it’s specifically designed for REST APIs. WebSocket, on the other hand, differs significantly from traditional HTTP. It provides a two-way communication channel over a single Transmission Control Protocol (TCP) connection, which OpenAPI doesn’t support.
 
-In simpler terms, unlike REST APIs, where you must send a request to receive a response, maintaining a connection similar to a WebSocket would require repeatedly pinging the server at intervals(a process known as polling). WebSocket does the opposite. It keeps the connection open between server and client, allowing the server to send data to the client without waiting for a request.
+In simpler terms, unlike REST APIs, where you must send a request to receive a response, maintaining a connection similar to a WebSocket would require repeatedly pinging the server at intervals (a process known as polling). WebSocket does the opposite. It keeps the connection open between server and client, allowing the server to send data to the client without waiting for a request.
 
 So, why would I use OpenAPI for that? Now you see why AsyncAPI is the better fit. Since WebSocket enables an event-driven connection between client and server, we need an API specification that supports this kind of interaction—and that’s where AsyncAPI comes in.
 
@@ -67,7 +67,7 @@ Now let's look at what channels looks like in an AsyncAPI document.
 
 ### Channels
 
-The AsyncAPI channels allows us to establish a bidirectional communication between message senders and receivers. yea, that's it.
+The AsyncAPI channels allows us to establish a bidirectional communication between message senders and receivers.
 
 Channels in AsyncAPI are primarily based on a simple idea, Senders send messages with different contents to be addressed to different channels, and receivers subscribe to these channels to receive these messages. But AsyncAPI channels are more than just a message highway, they are made up of a number of different elements that works together to make communication between senders and receivers smooth. Some of these components includes,
 
@@ -377,7 +377,7 @@ servers:
       - $ref: '#/components/securitySchemes/apiKeyHeader' 
 ```
 
-As you can see we added a security property to the development server, and one thing you can notice is i'm specifying it as an array `-$ref` and the reason is because you can pass multiple security types in the security object, and only one of this security scheme needs to be satisfied to authorize a connection. But in our case, we only needed one so yea, let's role with that. 
+As you can see we added a security property to the development server, and one thing you can notice is i'm specifying it as an array because you can pass multiple security types in the security object, and only one of this security scheme needs to be satisfied to authorize a connection. But in our case, we only needed one so yea, let's role with that. 
 
 ### Step 8 - Providing Protocol-Specific Information
 
@@ -566,6 +566,6 @@ AsyncAPI's structured approach equips teams with a collaborative framework that 
 
 ### References
 
-- Feel free to check out my [livestream](https://www.youtube.com/watch?v=22LFOLeF9Lk) for a walkthrough on building a chat application from scratch using the AsyncAPI specification.
+- For a detailed walkthrough, refer to my [livestream](https://www.youtube.com/watch?v=22LFOLeF9Lk) on building a chat application from scratch using the AsyncAPI specification. 
 - Dive deeper with this [blog post](https://www.asyncapi.com/blog/websocket-part1) on using WebSocket with AsyncAPI.
 - Join the conversation and connect with the AsyncAPI community in our [Slack workspace](https://www.asyncapi.com/slack-invite/).
