@@ -1,17 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "PR_kwDOBW5R_c5-T7mG",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add tests for build post list script",
-      "author": "vishvamsinh28",
-      "resourcePath": "/asyncapi/website/pull/3284",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 36.471172771155864
-    },
-    {
       "id": "I_kwDOFLhIt84-OUI3",
       "isPR": false,
       "isAssigned": false,
@@ -48,17 +37,6 @@
       "score": 29.004633463675134
     },
     {
-      "id": "PR_kwDOBW5R_c6DrMsy",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore(blog): add marketing report",
-      "author": "iambami",
-      "resourcePath": "/asyncapi/website/pull/3439",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 28.430284286176615
-    },
-    {
       "id": "PR_kwDOFLhIt85bqKL8",
       "isPR": true,
       "isAssigned": false,
@@ -68,38 +46,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 22.112443333692923
-    },
-    {
-      "id": "I_kwDOBW5R_c5BIl5P",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Add new page for collecting user testing participants",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/website/issues/529",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "Epic",
-          "color": "3E4B9E"
-        },
-        {
-          "name": "keep-open",
-          "color": "ffee84"
-        },
-        {
-          "name": "area/design",
-          "color": "0d67d3"
-        },
-        {
-          "name": "area/javascript",
-          "color": "ededed"
-        }
-      ],
-      "score": 21.825268744943667
     },
     {
       "id": "PR_kwDOFLhIt855u7Eb",
@@ -113,24 +59,15 @@
       "score": 20.102221212448114
     },
     {
-      "id": "I_kwDOBW5R_c5RVOOY",
-      "isPR": false,
+      "id": "PR_kwDOBW5R_c6C0Cw8",
+      "isPR": true,
       "isAssigned": false,
-      "title": "Community cards implementation.",
-      "author": "Mayaleeeee",
-      "resourcePath": "/asyncapi/website/issues/930",
+      "title": "refactor: migrate build script to typescript ",
+      "author": "JeelRajodiya",
+      "resourcePath": "/asyncapi/website/pull/3423",
       "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "area/design",
-          "color": "0d67d3"
-        },
-        {
-          "name": "area/javascript",
-          "color": "ededed"
-        }
-      ],
-      "score": 17.517649913704783
+      "labels": [],
+      "score": 18.666348268701817
     },
     {
       "id": "PR_kwDOFLhIt853IEwA",
@@ -193,23 +130,64 @@
         }
       ],
       "score": 14.07155484871368
+    },
+    {
+      "id": "PR_kwDOCHlHJM54CmhW",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: add the migration guide and nunjucks depreciation notes",
+      "author": "Gmin2",
+      "resourcePath": "/asyncapi/generator/pull/1253",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 14.07155484871368
+    },
+    {
+      "id": "PR_kwDOCVQpZM5tYFmm",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: custom extension rendering",
+      "author": "ductaily",
+      "resourcePath": "/asyncapi/asyncapi-react/pull/994",
+      "repo": "asyncapi/asyncapi-react",
+      "labels": [],
+      "score": 14.07155484871368
+    },
+    {
+      "id": "I_kwDOBW5R_c6AhurV",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Enabling i18n feature for smaller screens",
+      "author": "sambhavgupta0705",
+      "resourcePath": "/asyncapi/website/issues/2708",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "area/design",
+          "color": "0d67d3"
+        },
+        {
+          "name": "bounty",
+          "color": "0e8a16"
+        }
+      ],
+      "score": 13.210031082465903
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOFDnrNc6jnDp4",
-      "title": "Workflow `.github/workflows/test-action.yml` needs urgent update before end of January 2025",
+      "id": "I_kwDOBW5R_c6kMl1D",
+      "title": "Testimonial Alignment Issue on AsyncAPI Website",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/1597",
-      "repo": "asyncapi/cli",
-      "author": "derberg",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ]
+      "resourcePath": "/asyncapi/website/issues/3509",
+      "repo": "asyncapi/website",
+      "author": "Pulkitxm",
+      "area": "javascript",
+      "labels": []
     },
     {
       "id": "I_kwDOFLhIt86ihL5I",
@@ -272,21 +250,6 @@
         {
           "name": ":loudspeaker: marketing",
           "color": "a829e2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c6crqQz",
-      "title": "Improve image type detection in build-rss.js",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/3357",
-      "repo": "asyncapi/website",
-      "author": "coderabbitai",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
         }
       ]
     },
