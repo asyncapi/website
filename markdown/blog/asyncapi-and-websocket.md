@@ -71,7 +71,7 @@ The AsyncAPI channels allows us to establish a bidirectional communication betwe
 
 Channels in AsyncAPI are primarily based on a simple idea, Senders send messages with different contents to be addressed to different channels, and receivers subscribe to these channels to receive these messages. But AsyncAPI channels are more than just a message highway, they are made up of a number of different elements that works together to make communication between senders and receivers smooth. Some of these components includes,
 
-- **Address**: An optional string that specifies the channel's address This could be a topic name, routing key, event type, or path.
+- **Address**: An optional string that specifies the channel's address. This could be a topic name, routing key, event type, or path.
 - **Title**: A friendly, descriptive title for the channel.
 - **Messages**: The list of message types that can be sent to this channel, ready to be received by any subscriber at any time.
 - **Bindings**: A set of WebSocket-specific info that customizes the connection details.
@@ -124,7 +124,7 @@ Now let's take a closer look at what a complete asyncapi document looks like for
 
 First, we provide some essential information about our API, including the server details for client connections.
 
-```
+```yaml
 asyncapi: "3.0.0"
 
 info:
@@ -143,7 +143,7 @@ servers:
 
 As we mentioned earlier, AsyncAPI channels enable bidirectional communication between senders and receivers. Let’s define our channel below:
 
-```
+```yaml
 channels:
   chat:
     address: /
@@ -154,7 +154,7 @@ Notice we haven’t included message details yet. To keep things organized, we�
 
 ### Step 3 - Creating a component
 
-Components in AsyncAPI helps holds a set of reusable objects for different aspect of the AsyncAPI specification. When you define an object in a component, it won't have any effect on your API unless the object is been explicitly referenced from another properties outside the component object. 
+Components in AsyncAPI helps holds a set of reusable objects for different aspect of the AsyncAPI specification. When you define an object in a component, it won't have any effect on your API unless the object has been explicitly referenced from another properties outside the component object. 
 
 Just like the rest of the key concepts i mentioned earlier, components also have a set of required elements that can be defined such as the following:
 
@@ -166,7 +166,7 @@ Just like the rest of the key concepts i mentioned earlier, components also have
 
 Now, because we want our **chat** channel to not look overwhelming and difficult to read, we are going to create our message in the component object. 
 
-```
+```yaml
 components:
   messages:
     chat:
@@ -201,7 +201,7 @@ This message structure includes required fields like `messageId`, `senderId`, `c
 
 To make the `chat` message available in our channel, we’ll add it to the channel's `messages` section and reference our defined component.
 
-```
+```yaml
 channels:
   chat:
     address: /
@@ -215,9 +215,9 @@ With our message now tied to the channel, the final step is to specify the type 
 
 ### Step 5 - Defining our chat channel Operation
 
-The Operation part is critical to our API because it specifies what kind of action can be executed in a given channel. So now we need to create a operation for our **chat** channel and we do that by doing the following:
+The Operation part is critical to our API because it specifies what kind of action can be executed in a given channel. So now we need to create an operation for our **chat** channel and we do that by doing the following:
 
-```
+```yaml
 operations:
   sendMessage:
     summary: Send a chat message
@@ -233,7 +233,7 @@ In the definition above, we created our first operation called `sendMessage` wit
 
 If I attempt to parse a message that isn't included in the list of messages for the **chat** channel, as shown below...
 
-```
+```yaml
 operations:
   sendMessage:
     summary: Send a chat message
@@ -245,14 +245,14 @@ operations:
       - $ref: '#/channels/chat/messages/hello'
 ```
 
-This will fail because in my **chat** channel, i have no such message as `hello` even if i have the `hello` message defined in my message component. 
+This will fail because in my **chat** channel, I have no such message as `hello` even if i have the `hello` message defined in my message component. 
 
 A good thing to keep at the back of your mind when defining an operation is the list of messages you're assigning to an operation has to be available in the linked channel messages. 
 
 
 Now that we've created our first operation that allows us to send message, we also need to create another operation that allows us to receive a message. And we do that by doing almost same thing as sending a message except, instead of `send` in the action, we use the `receive` action, just as seen below.
 
-```
+```yaml
 operations:
   sendMessage:
     summary: Receive a chat message
@@ -272,7 +272,7 @@ Let’s say we want our server to notify users whenever someone joins or leaves 
 
 First, we define the new message in our components section. This message will hold information about the user joining or leaving.
 
-```
+```yaml
 components:
   messages:
    chat:
@@ -302,7 +302,7 @@ Here, we’ve created a new `status` message to capture details about users jo
 
 Next, let’s add this message to our channel, so our server can broadcast it as needed:
 
-```
+```yaml
 channels:
   chat:
     address: /
@@ -316,7 +316,7 @@ channels:
 
 Finally, we need to define two operations within our channel: one for notifying when a user joins (`userJoin`) and another for when they leave (`userLeave`). Here’s how:
 
-```
+```yaml
 operations:
   sendMessage:
     ...
@@ -350,7 +350,7 @@ Let's see how to declare a security scheme for our websocket server using the `H
 
 To secure our WebSocket server, let’s define an API key scheme in our components:
 
-```
+```yaml
 components:
   messages:
   ....
@@ -367,7 +367,7 @@ Here, `apiKeyHeader` is our security scheme, specifying that the key should be
 
 Now, let’s associate this security scheme with our WebSocket server so it requires authorization:
 
-```
+```yaml
 servers:
   development:
     host: localhost:8787
@@ -387,7 +387,7 @@ For instance, if we want to allow users to connect to multiple rooms simultaneou
 
 Since bindings are protocol-specific, we can tailor the implementation to WebSocket. Instead of relying on parameters, we’ll extend our **chat** channel by including `roomIds` as a query parameter, as shown below:
 
-```
+```yaml
 chat:
   address: /
   bindings:
@@ -409,7 +409,7 @@ By adding these bindings, users can establish a connection once to the `/` add
 
 We've finally written a complete asyncapi document for our chat application and this is what it looks like...
 
-```
+```yaml
 asyncapi: 3.0.0
 info:
   title: Simple Chat API
@@ -460,7 +460,7 @@ operations:
     summary: Send a chat message
     description: Allows users to send messages to the chat room
 
-  receiveMessage:
+  getMessage:
     action: receive
     channel:
       $ref: '#/channels/chat'
