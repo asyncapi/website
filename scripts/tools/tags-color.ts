@@ -48,11 +48,6 @@ const languagesColor: LanguageColorItem[] = [
     borderColor: 'border-[#756BD9]'
   },
   {
-    name: 'Scala',
-    color: 'bg-[#FFA299]',
-    borderColor: 'border-[#DF301F]'
-  },
-  {
     name: 'Markdown',
     color: 'bg-[#BABEBF]',
     borderColor: 'border-[#445B64]'
