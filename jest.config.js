@@ -4,7 +4,12 @@ module.exports = {
   coverageReporters: ['text', 'lcov', 'json-summary'],
   coverageDirectory: 'coverage',
   collectCoverageFrom: ['scripts/**/*.js'],
-  coveragePathIgnorePatterns: ['scripts/compose.js', 'scripts/tools/categorylist.js', 'scripts/tools/tags-color.js'],
+  coveragePathIgnorePatterns: [
+    'scripts/compose.js',
+    'scripts/tools/categorylist.js',
+    'scripts/tools/tags-color.js',
+    'scripts/markdown/check-editlinks.js'
+  ],
   // To disallow netlify edge function tests from running
-  testMatch: ['**/tests/**/*.test.*', '!**/netlify/**/*.test.*'],
+  testMatch: ['**/tests/**/*.test.*', '!**/netlify/**/*.test.*']
 };
