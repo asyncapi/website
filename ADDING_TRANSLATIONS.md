@@ -18,12 +18,12 @@ The file `common.json` contains common translation keys such as buttons and CTAs
 
 ```
 📦locales
- ┣ 📂de
+ ┣ 📂deutsch
  ┃ ┣ 📜common.json
  ┃ ┣ 📜landing-page.json
  ┃ ┗ 📜tools.json
  ┃ ┗ 📜....json
- ┗ 📂en
+ ┗ 📂english
  ┃ ┣ 📜common.json
  ┃ ┣ 📜landing-page.json
  ┃ ┗ 📜tools.json
