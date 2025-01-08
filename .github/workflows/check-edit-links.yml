@@ -38,7 +38,7 @@ jobs:
       - name: Notify Slack
         if: ${{ steps.extract-404.outputs.errors != '' }}
         uses: rtCamp/action-slack-notify@v2
-        with:
+        env:
           SLACK_WEBHOOK: ${{ secrets.WEBSITE_SLACK_WEBHOOK }}
           SLACK_TITLE: 'Edit Links Checker Errors Report'
           SLACK_MESSAGE: |
