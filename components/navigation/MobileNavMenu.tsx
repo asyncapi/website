@@ -20,6 +20,7 @@ interface MenuItem {
 interface MobileNavMenuProps {
   onClickClose?: () => void;
   uniqueLangs: { key: string; text: string; value: string }[];
+  currentLanguage: string;
   changeLanguage: (locale: string, langPicker: boolean) => void;
 }
 
@@ -27,7 +28,12 @@ interface MobileNavMenuProps {
  * @description MobileNavMenu component for displaying a responsive navigation menu on mobile devices.
  * @param {MobileNavMenuProps} props - The props for the MobileNavMenu component.
  */
-export default function MobileNavMenu({ onClickClose = () => {}, uniqueLangs, changeLanguage }: MobileNavMenuProps) {
+export default function MobileNavMenu({
+  onClickClose = () => {},
+  uniqueLangs,
+  currentLanguage,
+  changeLanguage
+}: MobileNavMenuProps) {
   const [open, setOpen] = useState<string | null>(null);
 
   /**
@@ -157,7 +163,7 @@ export default function MobileNavMenu({ onClickClose = () => {}, uniqueLangs, ch
                     <button
                       key={lang.key}
                       onClick={() => changeLanguage(lang.value.toLowerCase(), true)}
-                      className='mb-4 ml-2 block w-full rounded-lg py-1 text-start text-sm font-medium  leading-6 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-50'
+                      className={`mb-4 ml-2 block w-full rounded-lg py-1 text-start text-sm font-medium leading-6 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-50 ${currentLanguage.toLowerCase() === lang.text.toLowerCase() ? 'text-secondary-500' : ''}`}
                       data-testid='MobileNav-language-item'
                     >
                       {lang.text}

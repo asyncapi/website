@@ -58,8 +58,8 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
       .filter((lang) => i18nPaths[lang].includes(pathnameWithoutLocale))
       .map((lang) => lang.charAt(0).toUpperCase() + lang.slice(1));
 
-    // If no unique languages are found, default to ["En"]
-    return uniqueLangs.length === 0 ? ['En'] : uniqueLangs;
+    // If no unique languages are found, default to ["English"]
+    return uniqueLangs.length === 0 ? ['English'] : uniqueLangs;
   };
 
   const uniqueLangs = getUniqueLangs().map((lang) => ({
@@ -233,7 +233,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
                 changeLanguage(value.toLowerCase(), true);
               }}
               className=''
-              selected={i18n.language ? i18n.language.toUpperCase() : 'EN'}
+              selected={i18n.language ? i18n.language.charAt(0).toUpperCase() + i18n.language.slice(1) : 'English'}
             />
 
             <GithubButton
@@ -251,6 +251,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
         <MobileNavMenu
           onClickClose={() => setMobileMenuOpen(false)}
           uniqueLangs={uniqueLangs}
+          currentLanguage={i18n.language ? i18n.language.charAt(0).toUpperCase() + i18n.language.slice(1) : 'English'}
           changeLanguage={changeLanguage}
         />
       )}
