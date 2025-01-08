@@ -2,7 +2,7 @@ name: Weekly Link Checker
 
 on:
   schedule:
-    - cron: "0 0 * * 0" # Runs every week at midnight on Sunday
+    - cron: '0 0 * * 0' # Runs every week at midnight on Sunday
   workflow_dispatch:
 
 jobs:
@@ -39,9 +39,11 @@ jobs:
         if: ${{ steps.extract-404.outputs.errors != '' }}
         uses: rtCamp/action-slack-notify@v2
         with:
-          webhook_url: ${{ secrets.WEBSITE_SLACK_WEBHOOK }}
-          message: |
+          SLACK_WEBHOOK: ${{ secrets.WEBSITE_SLACK_WEBHOOK }}
+          SLACK_TITLE: 'Edit Links Checker Errors Report'
+          SLACK_MESSAGE: |
             🚨 The following URLs returned 404 during the link check:
             ```
             ${{ steps.extract-404.outputs.errors }}
-            
+            ```
+          MSG_MINIMAL: true
