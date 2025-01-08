@@ -178,7 +178,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
         </div>
 
         <nav
-          className='hidden w-full space-x-6 lg:flex lg:items-center lg:justify-end xl:space-x-10'
+          className='hidden w-full space-x-4 lg:flex lg:items-center lg:justify-end xl:space-x-8'
           data-testid='Navbar-main'
         >
           <div className='relative' onMouseLeave={() => showMenu(null)} ref={learningRef}>
