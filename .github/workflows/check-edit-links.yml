@@ -25,7 +25,7 @@ jobs:
       - name: Run link checker
         id: linkcheck
         run: |
-          npm run test:checklinks | tee output.log
+          npm run test:editlinks | tee output.log
 
       - name: Extract 404 URLs from output
         id: extract-404
