@@ -468,7 +468,8 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
-            "website"
+            "website",
+            "community"
         ],
         "githubID": 19964402
     },
