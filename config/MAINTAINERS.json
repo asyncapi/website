@@ -468,7 +468,8 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
-            "website"
+            "website",
+            "community"
         ],
         "githubID": 19964402
     },
@@ -965,5 +966,14 @@
             "conference-website"
         ],
         "githubID": 69006513
+    },
+    {
+        "name": "Moderator ",
+        "github": "AayushSaini101",
+        "isTscMember": false,
+        "repos": [
+            "cli"
+        ],
+        "githubID": 60972989
     }
 ]
