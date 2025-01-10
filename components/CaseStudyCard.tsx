@@ -23,8 +23,8 @@ export default function CaseStudyCard({ studies = [] }: ICaseStudyCardProps) {
       {studies.map((study, index) => (
         <a key={index} href={`casestudies/${study.id}`}>
           <div 
-          className='max-w-sm h-full overflow-hidden min-h-[300px] rounded-md border border-gray-200 bg-white p-4'
-          data-testid='CaseStudyCard-main'>
+            className='max-w-sm h-full overflow-hidden min-h-[300px] rounded-md border border-gray-200 bg-white p-4'
+              data-testid='CaseStudyCard-main'>
             <span className='mr-2'>
               <img className='m-auto h-16' src={study.company.logo} alt={study.company.name} />
             </span>
