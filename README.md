@@ -46,6 +46,15 @@ Use the following tools to set up the project:
 3. Clone the forked repository by adding your own GitHub username in place of `<username>`.
    For multiple contributions it is recommended to have [proper configuration of forked repo](https://github.com/asyncapi/community/blob/master/git-workflow.md).
 
+Depending on your case , you can choose one of the following options:
+
+### **Option 1: Clone Only Latest Commit (shallow Clone)**
+
+```bash
+    git clone --depth 1 https://github.com/<username>/website/
+```
+### **Option 2: Clone the full Repository**
+
 ```bash
     git clone https://github.com/<username>/website/
 ```
