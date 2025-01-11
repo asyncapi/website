@@ -6,28 +6,28 @@ export const Silversponsors: SponsorType[] = [
     website: 'https://bump.sh/asyncapi?utm_source=asyncapi&utm_medium=referral&utm_campaign=sponsor',
     altText: 'OpenAPI & AsyncAPI API docs - Bump.sh',
     imageSrc: '/img/sponsors/bumpsh.svg',
-    imageClass: 'inline-block sm:h-9'
+    imageClass: 'inline-block h-9 sm:h-9'
   },
   {
     name: 'Svix',
     website: 'https://www.svix.com/',
     altText: 'Svix',
     imageSrc: '/img/sponsors/svix_logo.svg',
-    imageClass: 'inline-block sm:h-9'
+    imageClass: 'inline-block h-9 sm:h-9'
   },
   {
     name: 'HiveMQ',
     website: 'https://www.hivemq.com/',
     altText: 'HiveMQ',
     imageSrc: '/img/sponsors/hivemq_logo.png',
-    imageClass: 'inline-block sm:h-9'
+    imageClass: 'inline-block h-9 sm:h-9'
   },
   {
     name: 'Aklivity',
     website: 'https://www.aklivity.io/',
     altText: 'Aklivity',
     imageSrc: '/img/sponsors/aklivity_logo.png',
-    imageClass: 'inline-block sm:h-9'
+    imageClass: 'inline-block h-9 sm:h-9'
   },
   {
     name: 'SmartBear',
@@ -41,13 +41,13 @@ export const Silversponsors: SponsorType[] = [
     website: 'https://www.hdi.global/',
     altText: 'HDI',
     imageSrc: '/img/sponsors/hdi_logo.png',
-    imageClass: 'inline-block sm:h-9'
+    imageClass: 'inline-block h-9 sm:h-9'
   },
   {
     name: 'Route4Me',
     website: 'https://route4me.com',
     altText: 'Best Route Planning and Route Optimization Software',
     imageSrc: '/img/sponsors/route4me_logo.png',
-    imageClass: 'inline-block sm:h-9'
+    imageClass: 'inline-block h-9 sm:h-9'
   }
 ];
