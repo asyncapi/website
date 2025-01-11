@@ -8,6 +8,11 @@ const {
     validateDocs,
     checkMarkdownFiles
 } = require('../../scripts/markdown/check-markdown');
+const { logger } = require('../../scripts/utils/logger');
+
+jest.mock('../../scripts/utils/logger', () => ({
+    logger: { error: jest.fn() }
+}))
 
 describe('Frontmatter Validator', () => {
     let tempDir;
@@ -87,7 +92,7 @@ describe('Frontmatter Validator', () => {
         await expect(checkMarkdownFiles(invalidFolderPath, validateBlogs))
             .rejects.toThrow('ENOENT');
 
-        expect(mockConsoleError.mock.calls[0][0]).toContain('Error in directory');
+        expect(logger.error.mock.calls[0][0]).toContain('Error in directory');
     });
 
     it('skips the "reference/specification" folder during validation', async () => {
@@ -110,10 +115,11 @@ describe('Frontmatter Validator', () => {
         const mockReadFile = jest.spyOn(fs, 'readFile').mockRejectedValue(new Error('Test readFile error'));
 
         await expect(checkMarkdownFiles(tempDir, validateBlogs)).rejects.toThrow('Test readFile error');
-        expect(mockConsoleError).toHaveBeenCalledWith(
+        expect(logger.error).toHaveBeenCalledWith(
             expect.stringContaining(`Error in directory`),
             expect.any(Error)
         );
+        // expect(logger.error).toHaveBeenCalledWith('Error in directory', expect.any(Error));
 
         mockReadFile.mockRestore();
     });
@@ -125,10 +131,12 @@ describe('Frontmatter Validator', () => {
 
         expect(mockProcessExit).toHaveBeenCalledWith(1);
 
-        expect(mockConsoleError).toHaveBeenCalledWith(
-            'Failed to validate markdown files:',
-            expect.any(Error)
-        );
+        // expect(mockConsoleError).toHaveBeenCalledWith(
+        //     'Failed to validate markdown files:',
+        //     expect.any(Error)
+        // );
+
+        expect(logger.error).toHaveBeenCalledWith('Failed to validate markdown files:', expect.any(Error));
     });
 
     it('should handle successful main function execution', async () => {

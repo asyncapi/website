@@ -6,6 +6,7 @@ import Fuse from 'fuse.js';
 import type { AsyncAPITool, ToolsData, ToolsListObject } from '@/types/scripts/tools';
 
 import { convertToJson } from '../utils';
+import { logger } from '../utils/logger';
 import { categoryList } from './categorylist';
 import schema from './tools-schema.json';
 
@@ -128,14 +129,13 @@ async function convertTools(data: ToolsData) {
                 })
               );
             } else {
-              console.error('Script is not failing, it is just dropping errors for further investigation');
-              console.error('Invalid .asyncapi-tool file.');
-              console.error(`Located in: ${tool.html_url}`);
-              console.error('Validation errors:', JSON.stringify(validate.errors, null, 2));
+              logger.warn(
+                `Script is not failing, it is just dropping errors for further investigation.\nInvalid .asyncapi-tool file. \nLocated in: ${tool.html_url}. \nValidation errors: ${JSON.stringify(validate.errors, null, 2)}`
+              );
             }
           }
         } catch (err) {
-          console.error(err);
+          logger.error(err);
           throw err;
         }
       })

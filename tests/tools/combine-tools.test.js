@@ -19,6 +19,11 @@ const {
   manualToolsWithInvalidURLT11,
   circularTool
 } = require('../fixtures/combineToolsData');
+const { logger } = require('../../scripts/utils/logger');
+
+jest.mock('../../scripts/utils/logger', () => ({
+    logger: { error: jest.fn() }
+}))
 
 jest.mock('ajv', () => {
   return jest.fn().mockImplementation(() => ({
@@ -111,7 +116,9 @@ describe('combineTools function', () => {
   it('should log validation errors to console.error', async () => {
     await combineTools(automatedToolsT4, manualToolsT4, toolsPath, tagsPath);
 
-    const { message, tool, source, note } = console.error.mock.calls[0][0];
+		const { message, tool, source, note } = JSON.parse(logger.error.mock.calls[0][0]);
+		// console.log(a);
+    // const { message, tool, source, note } = console.error.mock.calls[0][0];
 
     expect(message).toBe('Tool validation failed');
     expect(tool).toBe('Invalid Tool');

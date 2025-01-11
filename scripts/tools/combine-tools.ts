@@ -7,6 +7,7 @@ import Fuse from 'fuse.js';
 
 import type { AsyncAPITool, FinalAsyncAPITool, FinalToolsListObject, LanguageColorItem } from '@/types/scripts/tools';
 
+import { logger } from '../utils/logger';
 import { categoryList } from './categorylist';
 import { languagesColor, technologiesColor } from './tags-color';
 import { createToolObject } from './tools-object';
@@ -136,13 +137,17 @@ const processManualTool = async (tool: any) => {
   const isValid = await validate(tool);
 
   if (!isValid) {
-    console.error({
-      message: 'Tool validation failed',
-      tool: tool.title,
-      source: 'manual-tools.json',
-      errors: validate.errors,
-      note: 'Script continues execution, error logged for investigation'
-    });
+    logger.error(
+      JSON.stringify({
+        message: 'Tool validation failed',
+        tool: tool.title,
+        source: 'manual-tools.json',
+        errors: validate.errors,
+        note: 'Script continues execution, error logged for investigation'
+      }),
+      null,
+      2
+    );
 
     return null;
   }

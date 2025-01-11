@@ -15,6 +15,7 @@ import type {
 } from '@/types/scripts/dashboard';
 
 import { pause } from '../utils';
+import { logger } from '../utils/logger';
 import { Queries } from './issue-queries';
 
 const currentFilePath = fileURLToPath(import.meta.url);
@@ -86,7 +87,7 @@ async function getDiscussions(
 
     return result.search.nodes.concat(await getDiscussions(query, pageSize, result.search.pageInfo.endCursor));
   } catch (e) {
-    console.error(e);
+    logger.error(e);
 
     return Promise.reject(e);
   }
@@ -109,7 +110,7 @@ async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequest
 
     return result;
   } catch (e) {
-    console.error(e);
+    logger.error(e);
 
     return Promise.reject(e);
   }
@@ -157,7 +158,7 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]) {
           score: finalInteractionsCount / (monthsSince(discussion.timelineItems.updatedAt) + 2) ** 1.8
         };
       } catch (e) {
-        console.error(`there were some issues while parsing this item: ${JSON.stringify(discussion)}`);
+        logger.error(`there were some issues while parsing this item: ${JSON.stringify(discussion)}`);
         throw e;
       }
     })
@@ -207,7 +208,7 @@ async function writeToFile(
   try {
     await writeFile(writePath, JSON.stringify(content, null, '  '));
   } catch (error) {
-    console.error('Failed to write dashboard data:', {
+    logger.error('Failed to write dashboard data:', {
       error: (error as Error).message,
       writePath
     });

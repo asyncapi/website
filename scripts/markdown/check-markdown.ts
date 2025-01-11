@@ -3,6 +3,8 @@ import matter from 'gray-matter';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
+import { logger } from '../utils/logger';
+
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
@@ -156,7 +158,7 @@ async function checkMarkdownFiles(
 
     await Promise.all(filePromises);
   } catch (err) {
-    console.error(`Error in directory ${folderPath}:`, err);
+    logger.error(`Error in directory ${folderPath}:`, err);
     throw err;
   }
 }
@@ -174,7 +176,7 @@ async function main() {
       checkMarkdownFiles(blogsFolderPath, validateBlogs)
     ]);
   } catch (error) {
-    console.error('Failed to validate markdown files:', error);
+    logger.error('Failed to validate markdown files:', error);
     process.exit(1);
   }
 }

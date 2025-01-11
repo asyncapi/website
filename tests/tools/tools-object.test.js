@@ -7,6 +7,13 @@ const {
   createMalformedYAML
 } = require('../helper/toolsObjectData');
 
+const { logger } = require('../../scripts/utils/logger');
+
+jest.mock('../../scripts/utils/logger', () => ({
+  logger: { warn: jest.fn(), error: jest.fn() }
+}))
+
+
 jest.mock('axios');
 jest.mock('../../scripts/tools/categorylist', () => ({
   categoryList: [
@@ -81,8 +88,12 @@ describe('Tools Object', () => {
 
     await convertTools(mockData);
 
-    expect(console.error).toHaveBeenCalledWith(expect.stringContaining('Script is not failing'));
-    expect(console.error).toHaveBeenCalledWith(expect.stringContaining('Invalid .asyncapi-tool file'));
+    // expect(console.error).toHaveBeenCalledWith(expect.stringContaining('Script is not failing'));
+    // expect(console.error).toHaveBeenCalledWith(expect.stringContaining('Invalid .asyncapi-tool file'));
+
+    expect(logger.warn).toHaveBeenCalledWith(expect.stringContaining(
+      "Script is not failing, it is just dropping errors for further investigation.\nInvalid .asyncapi-tool file.")
+    )
   });
 
   it('should add duplicate tool objects to the same category', async () => {
@@ -140,20 +151,20 @@ describe('Tools Object', () => {
       title: 'No Description Tool',
       description: '',
     });
-  
+
     const repositoryDescription = 'Fallback Repository Description';
     const mockData = createMockData([{
       name: '.asyncapi-tool-no-description',
       repoName: 'no-description',
       description: repositoryDescription
     }]);
-  
+
     axios.get.mockResolvedValue({ data: toolFile });
-  
+
     const result = await convertTools(mockData);
-  
+
     const toolObject = result.Category1.toolsList[0];
-  
+
     expect(toolObject.description).toBe(repositoryDescription);
     expect(toolObject.title).toBe('No Description Tool');
   });

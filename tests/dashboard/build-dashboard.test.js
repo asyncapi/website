@@ -20,6 +20,11 @@ const {
   fullDiscussionDetails,
   mockRateLimitResponse
 } = require("../fixtures/dashboardData")
+const { logger } = require('../../scripts/utils/logger');
+
+jest.mock('../../scripts/utils/logger', () => ({
+    logger: { error: jest.fn() }
+}))
 
 jest.mock('@octokit/graphql');
 
@@ -188,9 +193,13 @@ describe('GitHub Discussions Processing', () => {
 
     await expect(getHotDiscussions([undefined])).rejects.toThrow();
 
-    expect(consoleErrorSpy).toHaveBeenCalledWith(
-      'there were some issues while parsing this item: undefined'
-    );
+    // expect(consoleErrorSpy).toHaveBeenCalledWith(
+    //   'there were some issues while parsing this item: undefined'
+    // );
+
+		expect(logger.error).toHaveBeenCalledWith(
+			'there were some issues while parsing this item: undefined'
+		);
 
     localConsoleErrorSpy.mockRestore();
   });

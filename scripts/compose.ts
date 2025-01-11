@@ -7,6 +7,8 @@ import fs from 'fs';
 import inquirer from 'inquirer';
 import moment from 'moment';
 
+import { logger } from './utils/logger';
+
 /**
  * Type definition for the answers from the compose prompt.
  */
@@ -159,7 +161,7 @@ inquirer
     });
   })
   .catch((error) => {
-    console.error(error);
+    logger.error(error);
     if (error.isTtyError) {
       console.log("Prompt couldn't be rendered in the current environment");
     } else {
