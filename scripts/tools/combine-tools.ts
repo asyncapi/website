@@ -5,7 +5,13 @@ import addFormats from 'ajv-formats';
 import fs from 'fs';
 import Fuse from 'fuse.js';
 
-import type { AsyncAPITool, FinalAsyncAPITool, FinalToolsListObject, LanguageColorItem } from '@/types/scripts/tools';
+import type {
+  AsyncAPITool,
+  FinalAsyncAPITool,
+  FinalToolsListObject,
+  LanguageColorItem,
+  ToolsListObject
+} from '@/types/scripts/tools';
 
 import { logger } from '../utils/logger';
 import { categoryList } from './categorylist';
@@ -133,7 +139,7 @@ async function getFinalTool(toolObject: AsyncAPITool): Promise<FinalAsyncAPITool
   return finalObject;
 }
 
-const processManualTool = async (tool: any) => {
+const processManualTool = async (tool: AsyncAPITool) => {
   const isValid = await validate(tool);
 
   if (!isValid) {
@@ -163,12 +169,17 @@ const processManualTool = async (tool: any) => {
  * Combine the automated tools and manual tools list into a single JSON object file, and
  * lists down all the language and technology tags in one JSON file.
  *
- * @param {any} automatedTools - The list of automated tools.
- * @param {any} manualTools - The list of manual tools.
+ * @param {ToolsListObject} automatedTools - The list of automated tools.
+ * @param {ToolsListObject} manualTools - The list of manual tools.
  * @param {string} toolsPath - The path to save the combined tools JSON file.
  * @param {string} tagsPath - The path to save the tags JSON file.
  */
-const combineTools = async (automatedTools: any, manualTools: any, toolsPath: string, tagsPath: string) => {
+const combineTools = async (
+  automatedTools: ToolsListObject,
+  manualTools: ToolsListObject,
+  toolsPath: string,
+  tagsPath: string
+) => {
   try {
     // eslint-disable-next-line no-restricted-syntax
     for (const key in automatedTools) {
@@ -179,8 +190,8 @@ const combineTools = async (automatedTools: any, manualTools: any, toolsPath: st
           : [];
 
         finalTools[key].toolsList = [...automatedResults, ...manualResults].sort((tool, anotherTool) =>
-          tool.title.localeCompare(anotherTool.title)
-        );
+          tool!.title.localeCompare(anotherTool!.title)
+        ) as FinalAsyncAPITool[];
       }
     }
     fs.writeFileSync(toolsPath, JSON.stringify(finalTools));
