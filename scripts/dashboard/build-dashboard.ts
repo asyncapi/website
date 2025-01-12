@@ -68,12 +68,12 @@ async function getDiscussions(
     });
 
     if (result.rateLimit.remaining <= 100) {
-      console.log(
-        '[WARNING] GitHub GraphQL rateLimit',
-        `cost = ${result.rateLimit.cost}`,
-        `limit = ${result.rateLimit.limit}`,
-        `remaining = ${result.rateLimit.remaining}`,
-        `resetAt = ${result.rateLimit.resetAt}`
+      logger.warn(
+        'GitHub GraphQL rateLimit \n' +
+          `cost = ${result.rateLimit.cost}\n` +
+          `limit = ${result.rateLimit.limit}\n` +
+          `remaining = ${result.rateLimit.remaining}\n` +
+          `resetAt = ${result.rateLimit.resetAt}`
       );
     }
 
