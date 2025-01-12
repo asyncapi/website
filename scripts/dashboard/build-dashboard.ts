@@ -128,7 +128,7 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]) {
         // eslint-disable-next-line no-underscore-dangle
         const isPR = discussion.__typename === 'PullRequest';
 
-        if (discussion.comments.pageInfo!.hasNextPage) {
+        if (discussion.comments.pageInfo?.hasNextPage) {
           const fetchedDiscussion = await getDiscussionByID(isPR, discussion.id);
 
           // eslint-disable-next-line no-param-reassign
