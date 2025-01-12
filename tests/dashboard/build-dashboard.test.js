@@ -23,7 +23,7 @@ const {
 const { logger } = require('../../scripts/utils/logger');
 
 jest.mock('../../scripts/utils/logger', () => ({
-    logger: { error: jest.fn() }
+    logger: { error: jest.fn(), warn: jest.fn() }
 }))
 
 jest.mock('@octokit/graphql');
@@ -81,12 +81,10 @@ describe('GitHub Discussions Processing', () => {
 
     await getDiscussions('test-query', 10);
 
-    expect(consoleLogSpy).toHaveBeenCalledWith(
-      '[WARNING] GitHub GraphQL rateLimit',
-      'cost = 1',
-      'limit = 5000',
-      'remaining = 50',
-      expect.any(String)
+    expect(logger.warn).toHaveBeenCalledWith(
+			expect.stringContaining(
+      	`GitHub GraphQL rateLimit \ncost = 1\nlimit = 5000\nremaining = 50`
+			)
     );
   });
 
@@ -192,10 +190,6 @@ describe('GitHub Discussions Processing', () => {
     const localConsoleErrorSpy = jest.spyOn(console, 'error');
 
     await expect(getHotDiscussions([undefined])).rejects.toThrow();
-
-    // expect(consoleErrorSpy).toHaveBeenCalledWith(
-    //   'there were some issues while parsing this item: undefined'
-    // );
 
 		expect(logger.error).toHaveBeenCalledWith(
 			'there were some issues while parsing this item: undefined'

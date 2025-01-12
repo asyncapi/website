@@ -88,9 +88,6 @@ describe('Tools Object', () => {
 
     await convertTools(mockData);
 
-    // expect(console.error).toHaveBeenCalledWith(expect.stringContaining('Script is not failing'));
-    // expect(console.error).toHaveBeenCalledWith(expect.stringContaining('Invalid .asyncapi-tool file'));
-
     expect(logger.warn).toHaveBeenCalledWith(expect.stringContaining(
       "Script is not failing, it is just dropping errors for further investigation.\nInvalid .asyncapi-tool file.")
     )
