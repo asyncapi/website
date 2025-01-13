@@ -28,6 +28,19 @@
         "githubID": 54525741
     },
     {
+        "name": "Aayush Saini",
+        "github": "AayushSaini101",
+        "linkedin": "aayush-saini-0a25931b1",
+        "slack": "U04RN9LRV97",
+        "twitter": "Aayush__Saini_",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "cli"
+        ],
+        "githubID": 60972989
+    },
+    {
         "name": "Abir Pal",
         "linkedin": "imabp",
         "slack": "U01S8EQ9LQ2",
@@ -468,7 +481,8 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
-            "website"
+            "website",
+            "community"
         ],
         "githubID": 19964402
     },
