@@ -62,8 +62,10 @@ asyncapi generate fromTemplate ${specPath} ${template} ${params}`;
    * @returns {string} The Docker command.
    */
   function getDockerCode(): string {
-    return `docker run --rm -it --network host --user=root -v \${PWD}/example:/app/example -v \${PWD}/output:/app/output \\
-asyncapi/cli generate fromTemplate ${specPath} ${template} ${params}`;
+    return (
+      `/*\nThe '--network host' flag is used here to allow access to external URLs for the AsyncAPI document.\nThis is required only when the AsyncAPI document is specified as a URL.\nIf you are pointing to a local resource instead, the '--network host' flag is not needed.\n*/\n\n` +`docker run --rm -it --network host --user=root -v \${PWD}/example:/app/example -v \${PWD}/output:/app/output \\
+asyncapi/cli generate fromTemplate ${specPath} ${template} ${params}`
+    );
   }
 
   return (
