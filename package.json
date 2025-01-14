@@ -63,6 +63,7 @@
     "@types/react-gtm-module": "^2.0.3",
     "@types/react-scrollspy": "^3.3.9",
     "@types/react-typing-animation": "^1.6.6",
+    "@types/winston": "^2.4.4",
     "ajv": "^8.12.0",
     "ajv-formats": "^2.1.1",
     "autoprefixer": "^10.4.17",
@@ -115,6 +116,7 @@
     "tailwind-merge": "^2.2.1",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.3.3",
+    "winston": "^3.17.0",
     "yaml": "^2.3.4"
   },
   "devDependencies": {

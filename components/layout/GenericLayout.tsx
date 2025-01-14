@@ -3,6 +3,7 @@ import React from 'react';
 // import AnnouncementHero from '../campaigns/AnnoucementHero';
 import Head from '../Head';
 import Container from './Container';
+import logger from '@/scripts/log-service';
 
 interface IGenericLayoutProps {
   title: string;
@@ -32,6 +33,7 @@ export default function GenericLayout({
   hideBanner = false
 }: IGenericLayoutProps) {
   if (!title || !description || !image) {
+    logger.error('Props `title`, `description`, and `image` are required at GenericLayout component.');
     throw new Error('Props `title`, `description`, and `image` are required at GenericLayout component.');
   }
 

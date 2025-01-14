@@ -1,4 +1,5 @@
 import fs from 'fs/promises';
+import logger from '@/scripts/log-service';
 
 export const readYamlFile = async (fileName: string) => {
   try {
@@ -7,6 +8,7 @@ export const readYamlFile = async (fileName: string) => {
 
     return yamlString;
   } catch (error: any) {
+    logger.error(`Error: something went wrong while reading ${fileName} file: ${error.message}`);
     throw new Error(`Error: something went wrong while reading ${fileName} file: ${error.message}`);
   }
 };

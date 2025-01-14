@@ -20,6 +20,7 @@ import DocsMobileMenu from '../navigation/DocsMobileMenu';
 import DocsNavWrapper from '../navigation/DocsNavWrapper';
 import TOC from '../TOC';
 import Heading from '../typography/Heading';
+import logger from '@/scripts/log-service';
 
 interface IDocsLayoutProps {
   post: IPost;
@@ -79,7 +80,10 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
   const [explorerDocMenu, setExplorerDocMenu] = useState(false);
 
   if (!post) return <ErrorPage statusCode={404} />;
-  if (post.title === undefined) throw new Error('Post title is required');
+  if (post.title === undefined){
+    logger.error('Post title is required')
+    throw new Error('Post title is required');
+  }
 
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;

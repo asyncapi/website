@@ -8,6 +8,7 @@ import GenericPostContext from '../../context/GenericPostContext';
 // import AnnouncementHero from '../campaigns/AnnoucementHero';
 import Head from '../Head';
 import Container from './Container';
+import logger from '@/scripts/log-service';
 
 interface IGenericPostLayoutProps {
   // Commnon to all posts
@@ -24,7 +25,10 @@ export default function GenericPostLayout({ post, children }: IGenericPostLayout
   const router = useRouter();
 
   if (!post) return <ErrorPage statusCode={404} />;
-  if (post.title === undefined && post.slug !== '/about') throw new Error('Post title is required');
+  if (post.title === undefined && post.slug !== '/about'){
+    logger.error('Post title is required');
+    throw new Error('Post title is required');
+  }
 
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;

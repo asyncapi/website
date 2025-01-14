@@ -40,6 +40,7 @@ import Remember from '../Remember';
 import Sponsors from '../sponsors/Sponsors';
 import Warning from '../Warning';
 import { Table, TableBody, TableCell, TableHeader, TableRow, Thead } from './MDXTable';
+import logger from '@/scripts/log-service';
 
 let mermaidInitialized = false;
 
@@ -109,6 +110,7 @@ function MermaidDiagram({ graph }: MermaidDiagramProps) {
     } catch (e) {
       setSvg(null);
       // eslint-disable-next-line no-console
+      logger.error(e)
       console.error(e);
     }
   }, [graph]);
