@@ -35,7 +35,7 @@ async function processBatch(batch) {
         }
         return null;
       } catch (error) {
-        return Promise.reject(new Error(`Error checking ${editLink}:`, error.message));
+        return Promise.reject(new Error(`Error checking ${editLink}: ${error.message}`));
       }
     })
   );
@@ -130,7 +130,7 @@ async function generatePaths(folderPath, editOptions, relativePath = '', result 
 
     return result;
   } catch (err) {
-    throw new Error(`Error processing directory ${folderPath}:`, err);
+    throw new Error(`Error processing directory ${folderPath}: ${err.message}`);
   }
 }
 
@@ -151,7 +151,7 @@ async function main() {
       console.log('All URLs are valid.');
     }
   } catch (error) {
-    throw new Error('Failed to check edit links:', error);
+    throw new Error(`Failed to check edit links: ${error.message}`);
   }
 }
 
