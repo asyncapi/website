@@ -25,12 +25,20 @@ async function pause(ms) {
  * @returns {Promise<string[]>} Array of URLs that returned 404
  */
 async function processBatch(batch) {
+  const TIMEOUT_MS = 5000;
   return Promise.all(
     batch.map(async ({ filePath, urlPath, editLink }) => {
       try {
         if (!editLink || ignoreFiles.some((ignorePath) => filePath.endsWith(ignorePath))) return null;
 
-        const response = await fetch(editLink, { method: 'HEAD' });
+        const controller = new AbortController();
+        /* istanbul ignore next */
+        const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
+        const response = await fetch(editLink, {
+          method: 'HEAD',
+          signal: controller.signal
+        });
+        clearTimeout(timeout);
         if (response.status === 404) {
           return { filePath, urlPath, editLink };
         }
