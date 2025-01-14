@@ -18,12 +18,20 @@ export default function CaseStudyCard({ studies = [] }: ICaseStudyCardProps) {
     return null;
   }
 
+  let gridClass = 'lg:grid-cols-3'; // Default to 3 columns for larger screens
+
+  if (studies.length === 1) {
+    gridClass = 'lg:grid-cols-1';
+  } else if (studies.length === 2) {
+    gridClass = 'lg:grid-cols-2';
+  }
+
   return (
-    <div className='flex flex-wrap pt-10 lg:grid lg:grid-cols-3 lg:gap-8 lg:text-center'>
+    <div className={`mx-auto flex max-w-screen-lg flex-wrap gap-4 pt-10 lg:grid lg:gap-8 lg:text-center ${gridClass}`}>
       {studies.map((study, index) => (
-        <a key={index} href={`casestudies/${study.id}`}>
+        <a key={index} href={`casestudies/${study.id}`} className='w-full grow'>
           <div
-            className='max-w-sm overflow-hidden rounded-md border border-gray-200 bg-white p-4'
+            className='min-h-[300px] overflow-hidden rounded-md border border-gray-200 bg-white p-4 sm:p-6 md:p-8'
             data-testid='CaseStudyCard-main'
           >
             <span className='mr-2'>
