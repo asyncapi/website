@@ -52,16 +52,22 @@ async function checkUrls(paths) {
   const result = [];
   const batchSize = 5;
 
+  const batches = [];
   for (let i = 0; i < paths.length; i += batchSize) {
-    console.log(`Processing batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(paths.length / batchSize)}`);
     const batch = paths.slice(i, i + batchSize);
-    const batchResults = await processBatch(batch);
-    await pause(1000);
-
-    // Filter out null results and add valid URLs to results
-    result.push(...batchResults.filter((url) => url !== null));
+    batches.push(batch);
   }
 
+  console.log(`Processing ${batches.length} batches concurrently...`);
+  const batchResultsArray = await Promise.all(
+    batches.map(async (batch) => {
+      const batchResults = await processBatch(batch);
+      await pause(1000);
+      return batchResults.filter((url) => url !== null);
+    })
+  );
+
+  result.push(...batchResultsArray.flat());
   return result;
 }
 
@@ -115,10 +121,8 @@ async function generatePaths(folderPath, editOptions, relativePath = '', result 
         const stats = await fs.stat(filePath);
 
         if (stats.isDirectory()) {
-          // Process directory
           await generatePaths(filePath, editOptions, relativeFilePath, result);
         } else if (stats.isFile() && file.endsWith('.md')) {
-          // Process all markdown files (including index.md)
           const urlPath = relativeFilePath.split(path.sep).join('/').replace('.md', '');
           result.push({
             filePath,
@@ -145,21 +149,15 @@ async function main() {
     console.log('Starting URL checks...');
     const invalidUrls = await checkUrls(paths);
 
-    if (invalidUrls.length === 0) {
-      console.log('All URLs are valid.');
-      process.exit(0);
-    }
-
-    console.log('\nURLs returning 404:\n');
-    invalidUrls.forEach((url) => console.log(`- ${url.editLink} generated from ${url.filePath}\n`));
-    console.log(`\nTotal invalid URLs found: ${invalidUrls.length}`);
-
     if (invalidUrls.length > 0) {
-      process.exit(1);
+      console.log('\nURLs returning 404:\n');
+      invalidUrls.forEach((url) => console.log(`- ${url.editLink} generated from ${url.filePath}\n`));
+      console.log(`\nTotal invalid URLs found: ${invalidUrls.length}`);
+    } else {
+      console.log('All URLs are valid.');
     }
   } catch (error) {
     console.error('Failed to check edit links:', error);
-    process.exit(1);
   }
 }
 
