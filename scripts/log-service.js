@@ -1,7 +1,13 @@
+const fs = require('fs');
+const path = require('path');
 const { createLogger, format, transports } = require('winston');
 
 const env = process.env.NODE_ENV || 'development';
-const filename = 'logs/error.log';
+const errorLogPath = path.resolve(__dirname, '../logs/error.log');
+
+if (fs.existsSync(errorLogPath)) {
+  fs.unlinkSync(errorLogPath);
+}
 
 const logger = createLogger({
   level: env === 'development' ? 'debug' : 'info',
@@ -16,7 +22,7 @@ const logger = createLogger({
       level: 'info',
       format: format.combine(format.printf((info) => `${info.level}: ${info.message}`)),
     }),
-    new transports.File({ filename : filename }),
+    new transports.File({ filename: errorLogPath }),
   ],
 });
 
