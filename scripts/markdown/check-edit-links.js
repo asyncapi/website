@@ -2,22 +2,13 @@ const fs = require('fs').promises;
 const path = require('path');
 const fetch = require('node-fetch-2');
 const editUrls = require('../../config/edit-page-config.json');
+const { pause } = require('../dashboard/build-dashboard');
 
 const ignoreFiles = [
   'reference/specification/v2.x.md',
   'reference/specification/v3.0.0-explorer.md',
   'reference/specification/v3.0.0.md'
 ];
-
-/**
- * Introduces a delay in the execution flow
- * @param {number} ms - The number of milliseconds to pause
- */
-async function pause(ms) {
-  return new Promise((res) => {
-    setTimeout(res, ms);
-  });
-}
 
 /**
  * Process a batch of URLs to check for 404s

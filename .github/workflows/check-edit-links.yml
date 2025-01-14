@@ -1,4 +1,4 @@
-name: Weekly Link Checker
+name: Weekly Docs Link Checker
 
 on:
   schedule:
@@ -17,7 +17,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version-file: '.nvmrc'
 
       - name: Install dependencies
         run: npm install
@@ -40,7 +40,7 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.WEBSITE_SLACK_WEBHOOK }}
-          SLACK_TITLE: 'Edit Links Checker Errors Report'
+          SLACK_TITLE: 'Docs Edit Link Checker Errors Report'
           SLACK_MESSAGE: |
             🚨 The following URLs returned 404 during the link check:
             ```

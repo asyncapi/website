@@ -1,13 +1,13 @@
 const path = require('path');
 const fetch = require('node-fetch-2');
-const editOptions = require('../fixtures/markdown/edit-page-config.json');
+const editOptions = require('../../config/edit-page-config.json');
 const {
   generatePaths,
   processBatch,
   checkUrls,
   determineEditLink,
   main
-} = require('../../scripts/markdown/check-editlinks');
+} = require('../../scripts/markdown/check-edit-links');
 const { determineEditLinkData, processBatchData, testPaths } = require('../fixtures/markdown/check-editlinks-data');
 
 jest.mock('node-fetch-2', () => jest.fn());
