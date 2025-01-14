@@ -36,8 +36,7 @@ async function processBatch(batch) {
         }
         return null;
       } catch (error) {
-        console.error(`Error checking ${editLink}:`, error.message);
-        return editLink;
+        return Promise.reject(new Error(`Error checking ${editLink}:`, error.message));
       }
     })
   );
@@ -82,10 +81,7 @@ function determineEditLink(urlPath, filePath, editOptions) {
   // Remove leading 'docs/' if present for matching
   const pathForMatching = urlPath.startsWith('docs/') ? urlPath.slice(5) : urlPath;
 
-  const target =
-    editOptions.find((edit) => pathForMatching.includes(edit.value)) || editOptions.find((edit) => edit.value === '');
-
-  if (!target) return null;
+  const target = editOptions.find((edit) => pathForMatching.includes(edit.value));
 
   // Handle the empty value case (fallback)
   if (target.value === '') {
@@ -135,8 +131,7 @@ async function generatePaths(folderPath, editOptions, relativePath = '', result 
 
     return result;
   } catch (err) {
-    console.error(`Error processing directory ${folderPath}:`, err);
-    throw err;
+    throw new Error(`Error processing directory ${folderPath}:`, err);
   }
 }
 
@@ -157,12 +152,13 @@ async function main() {
       console.log('All URLs are valid.');
     }
   } catch (error) {
-    console.error('Failed to check edit links:', error);
+    throw new Error('Failed to check edit links:', error);
   }
 }
 
+/* istanbul ignore next */
 if (require.main === module) {
   main();
 }
 
-module.exports = { generatePaths, determineEditLink, main };
+module.exports = { generatePaths, processBatch, checkUrls, determineEditLink, main };
