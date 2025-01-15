@@ -131,11 +131,6 @@ describe('Frontmatter Validator', () => {
 
         expect(mockProcessExit).toHaveBeenCalledWith(1);
 
-        // expect(mockConsoleError).toHaveBeenCalledWith(
-        //     'Failed to validate markdown files:',
-        //     expect.any(Error)
-        // );
-
         expect(logger.error).toHaveBeenCalledWith('Failed to validate markdown files:', expect.any(Error));
     });
 
@@ -155,4 +150,10 @@ describe('Frontmatter Validator', () => {
         expect(isValidURL('www.example.com')).toBe(false);
     });
 
+		it('should throw an error if frontmatter is missing', ()=>{
+			const errors = validateBlogs(undefined)
+			expect(errors).toEqual(
+				['Frontmatter is missing']
+			);
+		})
 });

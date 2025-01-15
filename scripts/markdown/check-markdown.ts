@@ -48,6 +48,8 @@ function validateBlogs(frontmatter: FrontMatter) {
 
   if (!frontmatter) {
     errors.push('Frontmatter is missing');
+
+    return errors;
   }
 
   // Check for required attributes
