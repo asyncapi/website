@@ -26,11 +26,7 @@ async function buildMeetings(writePath: string) {
 
     calendar = google.calendar({ version: 'v3', auth });
   } catch (err) {
-    if (err instanceof Error) {
-      throw new Error(`Authentication failed: ${err.message}`);
-    } else {
-      throw new Error(`Authentication failed: ${err}`);
-    }
+    throw new Error(`Authentication failed: ${err}`);
   }
 
   let eventsItems;

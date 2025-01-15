@@ -143,11 +143,7 @@ async function convertTools(data: ToolsData) {
 
     return finalToolsObject;
   } catch (err) {
-    if (err instanceof Error) {
-      throw new Error(`Error processing tool: ${err.message}`);
-    } else {
-      throw new Error(`Error processing tool: ${err}`);
-    }
+    throw new Error(`Error processing tool: ${err}`);
   }
 }
 
