@@ -150,10 +150,10 @@ describe('Frontmatter Validator', () => {
         expect(isValidURL('www.example.com')).toBe(false);
     });
 
-		it('should throw an error if frontmatter is missing', ()=>{
-			const errors = validateBlogs(undefined)
-			expect(errors).toEqual(
-				['Frontmatter is missing']
-			);
-		})
+    it('should throw an error if frontmatter is missing', ()=>{
+      const errors = validateBlogs(undefined)
+      expect(errors).toEqual(
+        ['Frontmatter is missing']
+      );
+    })
 });
