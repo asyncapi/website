@@ -112,11 +112,7 @@ function buildNavTree(navItems: Details[]) {
 
     return tree;
   } catch (err) {
-    if (err instanceof Error) {
-      throw new Error(`Failed to build navigation tree: ${err.message}`);
-    } else {
-      throw new Error(`Failed to build navigation tree: ${err}`);
-    }
+    throw new Error(`Failed to build navigation tree: ${err}`);
   }
 }
 
