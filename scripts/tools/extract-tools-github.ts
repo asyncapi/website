@@ -52,15 +52,6 @@ export async function getData(): Promise<any> {
 
     return result.data;
   } catch (err) {
-    if (axios.isAxiosError(err)) {
-      if (err.response?.status === 403) {
-        throw new Error('GitHub API rate limit exceeded. Please try again later.');
-      }
-      if (err.response?.status === 401) {
-        throw new Error('Invalid GitHub token. Please check your GITHUB_TOKEN.');
-      }
-      throw new Error(`GitHub API error: ${err.response?.data?.message || err.message}`);
-    }
     throw err;
   }
 }
