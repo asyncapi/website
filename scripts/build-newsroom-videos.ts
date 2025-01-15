@@ -5,6 +5,8 @@ import { dirname, resolve } from 'path';
 import process from 'process';
 import { fileURLToPath } from 'url';
 
+import { logger } from './utils/logger';
+
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
@@ -60,7 +62,7 @@ async function buildNewsroomVideos(writePath: string) {
 
     const videoData = JSON.stringify(videoDataItems, null, '  ');
 
-    console.log('The following are the Newsroom Youtube videos: ', videoData);
+    logger.info(`The following are the Newsroom Youtube videos: ${videoData}`);
 
     writeFileSync(writePath, videoData);
 

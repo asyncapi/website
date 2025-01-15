@@ -254,8 +254,8 @@ async function start(writePath: string): Promise<void> {
 
     await writeToFile({ hotDiscussions, goodFirstIssues }, writePath);
   } catch (e) {
-    console.log('There were some issues parsing data from github.');
-    console.log(e);
+    logger.error('There were some issues parsing data from github.');
+    logger.error(e);
   }
 }
 

@@ -11,7 +11,7 @@ const {
 const { logger } = require('../../scripts/utils/logger');
 
 jest.mock('../../scripts/utils/logger', () => ({
-    logger: { error: jest.fn() }
+    logger: { error: jest.fn(), warn: jest.fn() }
 }))
 
 describe('Frontmatter Validator', () => {
@@ -64,7 +64,7 @@ describe('Frontmatter Validator', () => {
 
         await checkMarkdownFiles(tempDir, validateBlogs);
 
-        expect(mockConsoleLog).toHaveBeenCalledWith(expect.stringContaining('Errors in file invalid.md:'));
+        expect(logger.warn).toHaveBeenCalledWith(expect.stringContaining('Errors in file invalid.md:'));
         mockConsoleLog.mockRestore();
     });
 

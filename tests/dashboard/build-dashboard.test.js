@@ -119,7 +119,8 @@ describe('GitHub Discussions Processing', () => {
     const filePath = resolve(tempDir, 'error-output.json');
     await start(filePath);
 
-    expect(consoleLogSpy).toHaveBeenCalledWith('There were some issues parsing data from github.');
+    // expect(consoleLogSpy).toHaveBeenCalledWith('There were some issues parsing data from github.');
+	expect(logger.error).toHaveBeenCalledWith('There were some issues parsing data from github.');
   });
 
   it('should successfully process and write data', async () => {

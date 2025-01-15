@@ -3,6 +3,8 @@ import { google } from 'googleapis';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
+import { logger } from './utils/logger';
+
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
@@ -68,7 +70,7 @@ async function buildMeetings(writePath: string) {
 
     const eventsForHuman = JSON.stringify(eventsItems, null, '  ');
 
-    console.log('The following events got fetched', eventsForHuman);
+    logger.info(`The following events got fetched: ${eventsForHuman}`);
 
     writeFileSync(writePath, eventsForHuman);
   } catch (err) {

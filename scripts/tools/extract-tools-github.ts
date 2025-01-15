@@ -3,6 +3,7 @@ import axios from 'axios';
 import dotenv from 'dotenv';
 
 import { pause } from '../utils';
+import { logger } from '../utils/logger';
 
 dotenv.config();
 
@@ -34,7 +35,8 @@ export async function getData(): Promise<any> {
 
     while (allItems.length < totalResults) {
       page++;
-      console.log('Fetching page:', page);
+
+      logger.info(`Fetching page: ${page}`);
       // pause for 1 second to avoid rate limiting
       await pause(1000);
       const nextPageData = await axios.get(getReqUrl(maxPerPage, page), {

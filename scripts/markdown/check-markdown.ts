@@ -149,8 +149,8 @@ async function checkMarkdownFiles(
         const errors = validateFunction(frontmatter as FrontMatter);
 
         if (errors) {
-          console.log(`Errors in file ${relativeFilePath}:`);
-          errors.forEach((error) => console.log(` - ${error}`));
+          logger.warn(`Errors in file ${relativeFilePath}:`);
+          errors.forEach((error) => logger.warn(` - ${error}`));
           process.exitCode = 1;
         }
       }

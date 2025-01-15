@@ -156,15 +156,15 @@ inquirer
       if (err) {
         throw err;
       } else {
-        console.log(`Blog post generated successfully at ${filePath}`);
+        logger.info(`Blog post generated successfully at ${filePath}`);
       }
     });
   })
   .catch((error) => {
     logger.error(error);
     if (error.isTtyError) {
-      console.log("Prompt couldn't be rendered in the current environment");
+      logger.error("Prompt couldn't be rendered in the current environment");
     } else {
-      console.log('Something went wrong, sorry!');
+      logger.error('Something went wrong, sorry!');
     }
   });
