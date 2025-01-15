@@ -69,6 +69,7 @@ export default function BlogIndexPage() {
     } else if (pageNumber < pageRange[0] + 1) {
       const newStart = Math.max(pageRange[0] - 3, 1);
       const newEnd = newStart + 9;
+
       setPageRange([newStart, newEnd]);
     }
   };
@@ -166,28 +167,34 @@ export default function BlogIndexPage() {
           <div className='mt-8 flex justify-center'>
             <button
               onClick={handlePrevious}
-              className={`mx-1 px-3 py-1 border rounded-md ${currentPage === 1 ? 'bg-gray-300' : 'bg-white'}`}
+              className={`mx-1 rounded-md border px-3 py-1 ${currentPage === 1 ? 'bg-gray-300' : 'bg-white'}`}
               disabled={currentPage === 1}
             >
               Previous
             </button>
             {pageRange[0] > 1 && <span className='mx-1 px-3 py-1'>...</span>}
-            {Array.from({ length: Math.min(12, Math.ceil(posts.length / postsPerPage) - pageRange[0] + 1) }, (_, index) => {
-              const pageNumber = pageRange[0] + index;
-              return (
-                <button
-                  key={pageNumber}
-                  onClick={() => handlePageChange(pageNumber)}
-                  className={`mx-1 px-3 py-1 border rounded-md ${currentPage === pageNumber ? 'bg-gray-300' : 'bg-white'}`}
-                >
-                  {pageNumber}
-                </button>
-              );
-            })}
+            {Array.from(
+              {
+                length: Math.min(12, Math.ceil(posts.length / postsPerPage) - pageRange[0] + 1)
+              },
+              (_, index) => {
+                const pageNumber = pageRange[0] + index;
+
+                return (
+                  <button
+                    key={pageNumber}
+                    onClick={() => handlePageChange(pageNumber)}
+                    className={`mx-1 rounded-md border px-3 py-1 ${currentPage === pageNumber ? 'bg-gray-300' : 'bg-white'}`}
+                  >
+                    {pageNumber}
+                  </button>
+                );
+              }
+            )}
             {pageRange[1] < Math.ceil(posts.length / postsPerPage) && <span className='mx-1 px-3 py-1'>...</span>}
             <button
               onClick={handleNext}
-              className={`mx-1 px-3 py-1 border rounded-md ${currentPage === Math.ceil(posts.length / postsPerPage) ? 'bg-gray-300' : 'bg-white'}`}
+              className={`mx-1 rounded-md border px-3 py-1 ${currentPage === Math.ceil(posts.length / postsPerPage) ? 'bg-gray-300' : 'bg-white'}`}
               disabled={currentPage === Math.ceil(posts.length / postsPerPage)}
             >
               Next
