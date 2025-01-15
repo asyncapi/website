@@ -37,7 +37,7 @@ export default function BlogIndexPage() {
   const [isClient, setIsClient] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageRange, setPageRange] = useState([1, 10]);
-  const postsPerPage = 10;
+  const postsPerPage = 12;
 
   const onFilter = (data: IBlogPost[]) => setPosts(data);
   const toFilter = [
@@ -172,7 +172,7 @@ export default function BlogIndexPage() {
               Previous
             </button>
             {pageRange[0] > 1 && <span className='mx-1 px-3 py-1'>...</span>}
-            {Array.from({ length: Math.min(10, Math.ceil(posts.length / postsPerPage) - pageRange[0] + 1) }, (_, index) => {
+            {Array.from({ length: Math.min(12, Math.ceil(posts.length / postsPerPage) - pageRange[0] + 1) }, (_, index) => {
               const pageNumber = pageRange[0] + index;
               return (
                 <button
