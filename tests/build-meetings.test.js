@@ -2,7 +2,7 @@ const { google } = require('googleapis');
 const path = require("path");
 const { readFileSync, mkdirSync, rmSync } = require('fs');
 const { buildMeetings } = require('../scripts/build-meetings');
-const { mockEvents, expectedContent } = require('../tests/fixtures/meetingsData');
+const { mockEvents, expectedContent } = require("./fixtures/meetingsData");
 
 jest.mock('googleapis', () => {
     const events = {
@@ -113,5 +113,35 @@ describe('buildMeetings', () => {
             expect(err.message).toMatch(/ENOENT|EACCES/);
         }
     });
+
+    it('should throw an error if the data structure received from Google Calendar API is invalid', async () => {
+        const mockCalendar = google.calendar().events.list;
+        mockCalendar.mockResolvedValueOnce({
+            data: {
+                items: null // or {} or any non-array value to trigger the error
+            }
+        });
+
+        await expect(buildMeetings('/path/to/write')).rejects.toThrow('Invalid data structure received from Google Calendar API');
+    });
+
+    it('should throw an error if start.dateTime is missing in the event', async () => {
+        const mockCalendar = google.calendar().events.list;
+        mockCalendar.mockResolvedValueOnce({
+            data: {
+                items: [
+                    {
+                        summary: 'Test Event',
+                        htmlLink: 'http://example.com/event',
+                        // start.dateTime is intentionally missing to trigger the error
+                        start: {}
+                    }
+                ]
+            }
+        });
+
+        await expect(buildMeetings('/path/to/write')).rejects.toThrow('start.dateTime is missing in the event');
+    });
+
 
 });
