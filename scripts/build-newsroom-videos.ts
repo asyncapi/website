@@ -45,18 +45,11 @@ async function buildNewsroomVideos(writePath: string) {
     }
 
     const videoDataItems = data.items.map((video: youtube_v3.Schema$SearchResult) => {
-      if (!video.snippet?.thumbnails?.high?.url) {
-        throw new Error(`Missing thumbnail URL for video: ${video.id?.videoId ?? 'unknown'}`);
-      }
-      if (!video.id?.videoId) {
-        throw new Error(`Missing video ID for video: ${video.snippet?.title ?? 'unknown'}`);
-      }
-
       return {
-        image_url: video.snippet.thumbnails.high.url,
-        title: video.snippet.title,
-        description: video.snippet.description,
-        videoId: video.id.videoId
+        image_url: video.snippet?.thumbnails?.high?.url,
+        title: video.snippet?.title,
+        description: video.snippet?.description,
+        videoId: video.id?.videoId
       };
     });
 

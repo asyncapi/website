@@ -1,9 +1,9 @@
 const { readFileSync, removeSync, mkdirpSync, outputFileSync } = require('fs-extra');
 const { resolve, join } = require('path');
-const { buildNewsroomVideos } = require('../scripts/build-newsroom-videos');
-const { mockApiResponse, expectedResult } = require('./fixtures/newsroomData');
 const fetch = require('node-fetch-2');
 const os = require('os');
+const { buildNewsroomVideos } = require('../scripts/build-newsroom-videos');
+const { mockApiResponse, expectedResult } = require('./fixtures/newsroomData');
 
 jest.mock('node-fetch-2', () => jest.fn());
 
@@ -99,4 +99,11 @@ describe('buildNewsroomVideos', () => {
             expect(err.message).toMatch(/ENOENT|EACCES/);
         }
     });
+
+    it('should throw an error if YOUTUBE_TOKEN environment variable is not set', async () => {
+        delete process.env.YOUTUBE_TOKEN;
+        await expect(buildNewsroomVideos('/path/to/write')).rejects.toThrow('YOUTUBE_TOKEN environment variable is required');
+        process.env.YOUTUBE_TOKEN = 'testkey';
+    });
+    
 });
