@@ -586,7 +586,7 @@ DESCRIPTION
 EXAMPLES
   $ asyncapi new	 - start creation of a file in interactive mode
 
-  $ asyncapi new --file-name=my-asyncapi.yml --example=default-example.yml --no-tty	 - create a new file with a specific name, using one of the examples and without interactive mode
+  $ asyncapi new --file-name=my-asyncapi.yaml --example=default-example.yaml --no-tty	 - create a new file with a specific name, using one of the examples and without interactive mode
 ```
 
 _See code: [src/commands/new/index.ts](https://github.com/asyncapi/cli/blob/v2.14.1/src/commands/new/index.ts)_
