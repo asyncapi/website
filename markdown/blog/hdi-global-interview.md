@@ -86,5 +86,7 @@ Wrapping up, we explored Manuel’s thoughts on broader industry trends.
 Through our conversation, it’s clear that HDI Global SE is not only adopting AsyncAPI but also actively contributing to its development. Manuel has been a driving force behind this partnership, and we’re excited to continue building towards a future of open, transparent, and efficient integration practices.
 
 
+We're more than excited to have HDI Global SE not just as Silver Sponsor but also as the first end-user and we look forward to continued collaboration in advancing the AsyncAPI ecosystem!
 
+For more information about HDI Global SE, visit [HDI Global SE](https://www.hdi.global/de-de/). To learn more about AsyncAPI and our mission, visit [AsyncAPI](https://www.asyncapi.com/en).
 
