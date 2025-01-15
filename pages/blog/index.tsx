@@ -35,6 +35,9 @@ export default function BlogIndexPage() {
       : []
   );
   const [isClient, setIsClient] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageRange, setPageRange] = useState([1, 10]);
+  const postsPerPage = 10;
 
   const onFilter = (data: IBlogPost[]) => setPosts(data);
   const toFilter = [
@@ -58,6 +61,33 @@ export default function BlogIndexPage() {
 
   const description = 'Find the latest and greatest stories from our community';
   const image = '/img/social/blog.webp';
+
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+    if (pageNumber > pageRange[1] - 1) {
+      setPageRange([pageRange[0] + 3, pageRange[1] + 3]);
+    } else if (pageNumber < pageRange[0] + 1) {
+      const newStart = Math.max(pageRange[0] - 3, 1);
+      const newEnd = newStart + 9;
+      setPageRange([newStart, newEnd]);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (currentPage > 1) {
+      handlePageChange(currentPage - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentPage < Math.ceil(posts.length / postsPerPage)) {
+      handlePageChange(currentPage + 1);
+    }
+  };
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
   useEffect(() => {
     setIsClient(true);
@@ -122,7 +152,7 @@ export default function BlogIndexPage() {
             )}
             {Object.keys(posts).length > 0 && isClient && (
               <ul className='mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3'>
-                {posts.map((post, index) => (
+                {currentPosts.map((post, index) => (
                   <BlogPostItem key={index} post={post} />
                 ))}
               </ul>
@@ -132,6 +162,36 @@ export default function BlogIndexPage() {
                 <Loader loaderText='Loading Blogs' className='mx-auto my-60' pulsating />
               </div>
             )}
+          </div>
+          <div className='mt-8 flex justify-center'>
+            <button
+              onClick={handlePrevious}
+              className={`mx-1 px-3 py-1 border rounded-md ${currentPage === 1 ? 'bg-gray-300' : 'bg-white'}`}
+              disabled={currentPage === 1}
+            >
+              Previous
+            </button>
+            {pageRange[0] > 1 && <span className='mx-1 px-3 py-1'>...</span>}
+            {Array.from({ length: Math.min(10, Math.ceil(posts.length / postsPerPage) - pageRange[0] + 1) }, (_, index) => {
+              const pageNumber = pageRange[0] + index;
+              return (
+                <button
+                  key={pageNumber}
+                  onClick={() => handlePageChange(pageNumber)}
+                  className={`mx-1 px-3 py-1 border rounded-md ${currentPage === pageNumber ? 'bg-gray-300' : 'bg-white'}`}
+                >
+                  {pageNumber}
+                </button>
+              );
+            })}
+            {pageRange[1] < Math.ceil(posts.length / postsPerPage) && <span className='mx-1 px-3 py-1'>...</span>}
+            <button
+              onClick={handleNext}
+              className={`mx-1 px-3 py-1 border rounded-md ${currentPage === Math.ceil(posts.length / postsPerPage) ? 'bg-gray-300' : 'bg-white'}`}
+              disabled={currentPage === Math.ceil(posts.length / postsPerPage)}
+            >
+              Next
+            </button>
           </div>
         </div>
       </div>
