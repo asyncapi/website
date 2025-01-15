@@ -46,10 +46,6 @@ export async function buildFinanceInfoList({
 
     await writeJSON(expensesLinkPath, expensesLinkJsonPath);
   } catch (err) {
-    if (err instanceof Error) {
-      throw new Error(`Error in buildFinanceInfoList: ${err.message}`);
-    } else {
-      throw new Error(`Error in buildFinanceInfoList: ${err}`);
-    }
+    throw new Error(`Error in buildFinanceInfoList: ${err}`);
   }
 }
