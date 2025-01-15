@@ -1,6 +1,6 @@
 ---
 title: "Interview with Manuel Ottlik, Product Owner at HDI Global SE: Leveraging AsyncAPI for Integration Transparency!"
-date: 2024-06-04T06:00:00+01:00
+date: 2025-01-20T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
