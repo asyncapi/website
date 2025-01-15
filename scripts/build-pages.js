@@ -7,9 +7,13 @@ const TARGET_DIR = 'pages';
 const capitalizeTags = ['table', 'tr', 'td', 'th', 'thead', 'tbody'];
 
 // Check if target directory doesn't exist then create it
-if (!fs.existsSync(TARGET_DIR)) {
-  fs.mkdirSync(TARGET_DIR, { recursive: true });
+function ensureDirectoryExists(directory) {
+  if (!fs.existsSync(directory)) {
+    fs.mkdirSync(directory, { recursive: true });
+  }
 }
+
+ensureDirectoryExists(TARGET_DIR);
 
 function capitalizeJsxTags(content) {
   return content.replace(/<\/?(\w+)/g, function (match, letter) {
@@ -57,4 +61,4 @@ function copyAndRenameFiles(srcDir, targetDir) {
 
 copyAndRenameFiles(SRC_DIR, TARGET_DIR);
 
-module.exports = {copyAndRenameFiles,capitalizeJsxTags}
+module.exports = { copyAndRenameFiles,capitalizeJsxTags, ensureDirectoryExists }
