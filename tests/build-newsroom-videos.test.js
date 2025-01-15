@@ -105,5 +105,4 @@ describe('buildNewsroomVideos', () => {
         await expect(buildNewsroomVideos('/path/to/write')).rejects.toThrow('YOUTUBE_TOKEN environment variable is required');
         process.env.YOUTUBE_TOKEN = 'testkey';
     });
-    
 });
