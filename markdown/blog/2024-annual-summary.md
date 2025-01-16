@@ -51,7 +51,7 @@ Our weekly activity slightly dropped this year due to changes that affected some
 />
 
 ## Social Media 
-Social media platforms help us communicate community news, share updates, and make announcements.
+Our social media platforms help us communicate community news, share updates, and make announcements.
 Let's dive into the numbers:
 
 ### LinkedIn
@@ -63,7 +63,7 @@ We gained **995** followers on LinkedIn in 2024, bringing a total to **3,983** o
   className="text-center"
 />
 
-Compared to 2023, the number of visits from users and new users to [asyncapi.com](https://www.asyncapi.com), referred by LinkedIn, dropped by 40% in 2024. However, on a positive note, we received a significant increase in sessions, which kept users more engaged.
+Compared to 2023, the number of visits from users and new users to [asyncapi.com](https://www.asyncapi.com), referred by LinkedIn, decreased by 40% in 2024. However, on a positive note, we received a significant increase in sessions, which kept users more engaged.
 
 <Figure
   src="/img/posts/2024-annual-report/visits-from-linkedin.webp"
