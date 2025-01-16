@@ -51,7 +51,7 @@ Our weekly activity slightly dropped this year due to changes that affected some
 />
 
 ## Social Media 
-Social media platforms serve as a means to communicate community news, updates on what is happening, and share announcements.
+Social media platforms help us communicate community news, share updates, and make announcements.
 Let's dive into the numbers:
 
 ### LinkedIn
@@ -147,7 +147,7 @@ We still do our very best to resolve and close issues. There have been some impr
 />
 
 ### NPM
-Last but not least, the most controversial part of the review is the number of downloads from AsyncAPI's top packages, which are hosted under the Node Package Manager. The `asyncapi/specs` package continues to soar, with over **34M** downloads in the past year. 
+The most controversial part of the review is the number of downloads from AsyncAPI's top packages, which are hosted under the Node Package Manager. The `asyncapi/specs` package continues to soar, with over **34M** downloads in the past year. 
 
 <Figure
   src="/img/posts/2024-annual-report/npm-packages.webp"
