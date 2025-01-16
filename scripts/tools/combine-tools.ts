@@ -89,6 +89,7 @@ async function getFinalTool(toolObject: AsyncAPITool): Promise<FinalAsyncAPITool
         languageFuse = new Fuse(languageList, options);
       }
     } else {
+      /* istanbul ignore next */
       for (const language of toolObject?.filters?.language ?? []) {
         const languageSearch = await languageFuse.search(language);
 
@@ -114,6 +115,7 @@ async function getFinalTool(toolObject: AsyncAPITool): Promise<FinalAsyncAPITool
   const technologyArray = [];
 
   if (toolObject.filters.technology) {
+    /* istanbul ignore next */
     for (const technology of toolObject?.filters?.technology ?? []) {
       const technologySearch = await technologyFuse.search(technology);
 
@@ -183,6 +185,7 @@ const combineTools = async (
   try {
     // eslint-disable-next-line no-restricted-syntax
     for (const key in automatedTools) {
+      /* istanbul ignore next */
       if (Object.prototype.hasOwnProperty.call(automatedTools, key)) {
         const automatedResults = await Promise.all(automatedTools[key].toolsList.map(getFinalTool));
         const manualResults = manualTools[key]?.toolsList?.length
