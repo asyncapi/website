@@ -40,7 +40,7 @@ We delved deeper into the complexities of integrating various technologies.
 
 ***Manuel:** One of the key challenges is that these technologies are often introduced at different times. For example, most companies start with API management and later realize the need for asynchronous capabilities. As a result, you end up with distinct interfaces for asynchronous and synchronous communication, even though they represent the same business entities.*
 
-*The challenge is merging these technologies and their interfaces cohesively. At HDI, we manage the platform, not the interfaces, but we issue guidance on building interfaces. We aim to have a consistent view of business objects, regardless of the integration product being used. The schemas of these business objects should align, whether they’re using OpenAPI or AsyncAPI.*
+*The challenge is merging these technologies and their interfaces cohesively. At HDI, we manage the platform, not the interfaces, but we issue guidance on building interfaces. We aim to have a consistent view of business objects, regardless of the integration product being used. The schemas of these business objects should align whether they’re using OpenAPI or AsyncAPI.*
 
 ## Goals for HDI Global SE’s Integration Platform
 
