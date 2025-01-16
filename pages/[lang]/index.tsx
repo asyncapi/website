@@ -22,7 +22,7 @@ import NewsroomSection from '../../components/newsroom/NewsroomSection';
 import Slack from '../../components/slack';
 import GoldSponsors from '../../components/sponsors/GoldSponsors';
 import SilverSponsors from '../../components/sponsors/SilverSponsors';
-import Sponsors from '../../components/sponsors/Sponsors';
+import Sponsors from '../../components/sponsors/PlatinumSponsors';
 import SupportUs from '../../components/SupportUs/SupportUs';
 import Testimonial from '../../components/Testimonial';
 import Heading from '../../components/typography/Heading';
