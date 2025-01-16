@@ -75,7 +75,7 @@ We then discussed HDI’s interest in AsyncAPI.
 **Bami: How do you see AsyncAPI playing a role in HDI Global SE’s integration strategy, especially as the company continues its cloud adoption?**
 
 
-***Manuel:** It's the same reason; it's going to be the part that enables transparency over asynchronous interfaces, service bus topics and messages in them, event brokers and events that get sent over there.*
+***Manuel:** It's the same reason; it's going to be the part that enables transparency over asynchronous interfaces, service bus topics and messages in them, event brokers, and events that get sent over there.*
 
 Wrapping up, we explored Manuel’s thoughts on broader industry trends.
 
