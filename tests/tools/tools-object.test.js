@@ -58,6 +58,26 @@ describe('Tools Object', () => {
 
     expect(result).toEqual(expected);
   });
+  it('should create a tool object one parameters', async () => {
+		// We will pass only the first parameter in the createToolObject
+		const toolFile = createToolFileContent({
+			title: 'Test Tool',
+			description: 'Test Description',
+			hasCommercial: true,
+			additionalLinks: { docsUrl: 'https://docs.example.com' }
+		});
+
+		const expected = createExpectedToolObject({
+			title: 'Test Tool',
+			description: 'Test Description',
+			hasCommercial: true,
+			additionalLinks: { docsUrl: 'https://docs.example.com' }
+		});
+		expected.filters.isAsyncAPIOwner = ""
+		const result = await createToolObject(toolFile);
+		expect(result).toEqual(expected);
+	
+  });
 
   it('should convert tools data correctly', async () => {
     const toolContent = createToolFileContent({ title: 'Valid Tool', categories: ['Category1'] });
