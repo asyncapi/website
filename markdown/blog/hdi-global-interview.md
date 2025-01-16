@@ -81,7 +81,7 @@ Wrapping up, we explored Manuel’s thoughts on broader industry trends.
 
 **Bami: What emerging trends in API management and cloud integration are you most excited about?**
 
-***Manuel:** Asynchronous communication is still developing but will eventually be on par with synchronous communication in enterprise integration. I’m particularly excited about xRegistry, which will bridge the gap between synchronous and asynchronous communication by providing a standard for schema registries that can then host all business objects and their schemas as well as the interface descriptions that are built upon those schemas.*
+***Manuel:** Asynchronous communication is still developing but will eventually be on par with synchronous communication in enterprise integration. I’m particularly excited about xRegistry, which will bridge the gap between synchronous and asynchronous communication by providing a standard for schema registries that can then host all business objects and their schemas, as well as the interface descriptions that are built upon those schemas.*
 
 
 Through our conversation, it’s clear that HDI Global SE is not only adopting AsyncAPI but also actively contributing to its development. Manuel has been a driving force behind this partnership, and we’re excited to continue building towards a future of open, transparent, and efficient integration practices.
