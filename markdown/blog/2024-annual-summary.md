@@ -34,7 +34,7 @@ We welcomed **1,505** new members in 2024.
 />
 
 
-Among this year's new joiners, we have our top five members, including our community marketing specialist who leads the marketing efforts in the community.
+Among this year's new joiners, we have our top five members, including our community marketing specialist, who leads the marketing efforts in the community.
 
 <Figure
   src="/img/posts/2024-annual-report/slack-top-five.webp"
