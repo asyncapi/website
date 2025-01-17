@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { combineTools } = require('../../scripts/tools/combine-tools');
+const { combineTools, getFinalTool } = require('../../scripts/tools/combine-tools');
 const {
   expectedDataT1,
   manualToolsWithMissingData,
@@ -17,12 +17,13 @@ const {
   automatedToolsT12,
   invalidAutomatedToolsT10,
   manualToolsWithInvalidURLT11,
-  circularTool
+  circularTool,
+  finalToolWithMissingData
 } = require('../fixtures/combineToolsData');
 const { logger } = require('../../scripts/utils/logger');
 
 jest.mock('../../scripts/utils/logger', () => ({
-    logger: { error: jest.fn() }
+  logger: { error: jest.fn() }
 }))
 
 jest.mock('ajv', () => {
@@ -231,6 +232,14 @@ describe('combineTools function', () => {
     circularTool.circular = circularTool;
     await expect(combineTools(automatedToolsT12, {}, toolsPath, tagsPath))
       .rejects.toThrow('Converting circular structure to JSON');
+  });
+  it('should handle tools with missing data and filters', async () => {
+    manualToolsWithMissingData.filters = {
+      categories: [],
+      hasCommercial: false,
+    };
+    const result = await getFinalTool(manualToolsWithMissingData);
+    expect(result).toEqual(finalToolWithMissingData);
   });
 
 });

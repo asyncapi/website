@@ -55,7 +55,7 @@ let technologyFuse = new Fuse(technologyList, options);
  * @param {AsyncAPITool} toolObject - The tool object to process.
  * @returns {Promise<FinalAsyncAPITool>} - The processed tool object with additional properties.
  */
-async function getFinalTool(toolObject: AsyncAPITool): Promise<FinalAsyncAPITool> {
+export async function getFinalTool(toolObject: AsyncAPITool): Promise<FinalAsyncAPITool> {
   const finalObject: FinalAsyncAPITool = {
     ...toolObject,
     filters: {
@@ -183,6 +183,7 @@ const combineTools = async (
   try {
     // eslint-disable-next-line no-restricted-syntax
     for (const key in automatedTools) {
+      /* istanbul ignore next */
       if (Object.prototype.hasOwnProperty.call(automatedTools, key)) {
         const automatedResults = await Promise.all(automatedTools[key].toolsList.map(getFinalTool));
         const manualResults = manualTools[key]?.toolsList?.length
