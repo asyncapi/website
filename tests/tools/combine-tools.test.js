@@ -241,5 +241,4 @@ describe('combineTools function', () => {
     const result = await getFinalTool(manualToolsWithMissingData);
     expect(result).toEqual(finalToolWithMissingData);
   });
-
 });
