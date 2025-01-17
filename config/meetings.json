@@ -1,24 +1,10 @@
 [
   {
-    "title": "Marketing WG Meeting,",
-    "calLink": "https://www.google.com/calendar/event?eid=NDVmcGpjM3Y2aGFxMDhhMjMxZGgyNzlkNGsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1534",
-    "banner": "",
-    "date": "2024-10-08T14:00:00.000Z"
-  },
-  {
     "title": "Community Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=MHRvMzJtb2pxZWs5bDM4a3Jxb2RhYmVhMmMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1545",
     "banner": "https://github.com/user-attachments/assets/91fca5af-ae9a-46be-aa44-0f2ef20ce34e",
     "date": "2024-10-15T08:00:00.000Z"
-  },
-  {
-    "title": "Let's talk about contributing Hacktoberfest Edition",
-    "calLink": "https://www.google.com/calendar/event?eid=Zm9lMzRvM2F2MGljbWplZDJnNWYwczIwMzQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1549",
-    "banner": "https://github.com/user-attachments/assets/0cd48545-5e26-4240-aa8f-f39306617e94",
-    "date": "2024-10-08T12:00:00.000Z"
   },
   {
     "title": "AsyncAPI Mentorship Program FAQ",
