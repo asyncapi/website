@@ -1,7 +1,7 @@
 const fs = require('fs').promises;
 const path = require('path');
-const { buildCaseStudiesList } = require('../../scripts/casestudies/index');
-const { yaml1,yaml2,json1,json2 } = require("../fixtures/caseStudyData");
+const { buildCaseStudiesList } = require('../../scripts/casestudies/index.ts');
+const { yaml1, yaml2, json1, json2 } = require('../fixtures/caseStudyData');
 
 describe('buildCaseStudiesList', () => {
   const tempDir = path.join(__dirname, 'temp-test-dir');
@@ -21,7 +21,7 @@ describe('buildCaseStudiesList', () => {
   beforeEach(async () => {
     // Clear the config directory before each test
     const files = await fs.readdir(tempConfigDir);
-    await Promise.all(files.map(file => fs.unlink(path.join(tempConfigDir, file))));
+    await Promise.all(files.map((file) => fs.unlink(path.join(tempConfigDir, file))));
   });
 
   it('should read YAML files and create a JSON file with case studies', async () => {
@@ -41,7 +41,6 @@ describe('buildCaseStudiesList', () => {
     expect(outputJson[0]).toEqual(json1);
     expect(outputJson[1]).toEqual(json2);
   });
-
 
   it('should throw an error with incorrect parameters', async () => {
     try {
@@ -72,9 +71,7 @@ describe('buildCaseStudiesList', () => {
       await buildCaseStudiesList(tempConfigDir, tempOutputFile);
     } catch (error) {
       expect(error).toBeInstanceOf(Error);
-      expect(error.message).toContain("Invalid content format"); // Error for invalid YAML content
+      expect(error.message).toContain('Invalid content format'); // Error for invalid YAML content
     }
   });
-
-
 });

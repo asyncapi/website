@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { combineTools, getFinalTool } = require('../../scripts/tools/combine-tools');
+const { combineTools, getFinalTool } = require('../../scripts/tools/combine-tools.ts');
 const {
   expectedDataT1,
   manualToolsWithMissingData,
@@ -20,18 +20,17 @@ const {
   circularTool,
   finalToolWithMissingData
 } = require('../fixtures/combineToolsData');
-const { logger } = require('../../scripts/utils/logger');
+const { logger } = require('../../scripts/utils/logger.ts');
 
 jest.mock('../../scripts/utils/logger', () => ({
   logger: { error: jest.fn() }
-}))
+}));
 
 jest.mock('ajv', () => {
   return jest.fn().mockImplementation(() => ({
-    compile: jest.fn().mockImplementation(() => (data) => data.title !== 'Invalid Tool'),
+    compile: jest.fn().mockImplementation(() => (data) => data.title !== 'Invalid Tool')
   }));
 });
-
 
 jest.mock('ajv-formats', () => {
   return jest.fn();
@@ -80,7 +79,7 @@ describe('combineTools function', () => {
   });
 
   beforeEach(() => {
-    consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => { });
+    consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterEach(() => {
@@ -96,7 +95,7 @@ describe('combineTools function', () => {
     const tagsData = readJSON(tagsPath);
     expect(tagsData).toHaveProperty('languages');
     expect(tagsData).toHaveProperty('technologies');
-    expect(tagsData).toEqual(expectedDataT1)
+    expect(tagsData).toEqual(expectedDataT1);
   });
 
   it('should handle tools with missing language or technology', async () => {
@@ -110,16 +109,14 @@ describe('combineTools function', () => {
     await combineTools(manualToolsToSort, {}, toolsPath, tagsPath);
 
     const combinedTools = readJSON(toolsPath);
-    const toolTitles = combinedTools.category1.toolsList.map(tool => tool.title);
+    const toolTitles = combinedTools.category1.toolsList.map((tool) => tool.title);
     expect(toolTitles).toEqual(['Tool A', 'Tool Z']);
   });
 
   it('should log validation errors to console.error', async () => {
     await combineTools(automatedToolsT4, manualToolsT4, toolsPath, tagsPath);
 
-		const { message, tool, source, note } = JSON.parse(logger.error.mock.calls[0][0]);
-		// console.log(a);
-    // const { message, tool, source, note } = console.error.mock.calls[0][0];
+    const { message, tool, source, note } = JSON.parse(logger.error.mock.calls[0][0]);
 
     expect(message).toBe('Tool validation failed');
     expect(tool).toBe('Invalid Tool');
@@ -214,29 +211,31 @@ describe('combineTools function', () => {
 
   it('should throw an error when fs.writeFileSync fails', async () => {
     const invalidPath = 'this/is/not/valid';
-    await expect(combineTools(automatedTools, manualTools, invalidPath, invalidPath))
-      .rejects.toThrow(/ENOENT|EACCES/);
+    await expect(combineTools(automatedTools, manualTools, invalidPath, invalidPath)).rejects.toThrow(/ENOENT|EACCES/);
   });
 
   it('should throw an error when there is an invalid category', async () => {
-    await expect(combineTools(invalidAutomatedToolsT10, manualTools, toolsPath, tagsPath))
-      .rejects.toThrow('Error combining tools');
+    await expect(combineTools(invalidAutomatedToolsT10, manualTools, toolsPath, tagsPath)).rejects.toThrow(
+      'Error combining tools'
+    );
   });
 
   it('should throw an error when URL parsing fails', async () => {
-    await expect(combineTools(automatedTools, manualToolsWithInvalidURLT11, toolsPath, tagsPath))
-      .rejects.toThrow('Invalid URL');
+    await expect(combineTools(automatedTools, manualToolsWithInvalidURLT11, toolsPath, tagsPath)).rejects.toThrow(
+      'Invalid URL'
+    );
   });
 
   it('should handle errors when processing tools with circular references', async () => {
     circularTool.circular = circularTool;
-    await expect(combineTools(automatedToolsT12, {}, toolsPath, tagsPath))
-      .rejects.toThrow('Converting circular structure to JSON');
+    await expect(combineTools(automatedToolsT12, {}, toolsPath, tagsPath)).rejects.toThrow(
+      'Converting circular structure to JSON'
+    );
   });
   it('should handle tools with missing data and filters', async () => {
     manualToolsWithMissingData.filters = {
       categories: [],
-      hasCommercial: false,
+      hasCommercial: false
     };
     const result = await getFinalTool(manualToolsWithMissingData);
     expect(result).toEqual(finalToolWithMissingData);

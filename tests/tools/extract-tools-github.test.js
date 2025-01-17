@@ -1,32 +1,31 @@
 const axios = require('axios');
-const { getData } = require('../../scripts/tools/extract-tools-github');
-const { logger } = require('../../scripts/utils/logger');
+const { getData } = require('../../scripts/tools/extract-tools-github.ts');
+const { logger } = require('../../scripts/utils/logger.ts');
 
 jest.mock('../../scripts/utils/logger', () => ({
   logger: { info: jest.fn() }
-}))
+}));
 
 jest.mock('axios');
 
 describe('getData', () => {
   it('should return data when API call is successful', async () => {
-
     const mockData = {
       data: {
         items: [
           {
             name: '.asyncapi-tool',
-            path: 'asyncapi/.asyncapi-tool',
+            path: 'asyncapi/.asyncapi-tool'
           }
         ],
-        total_count: 1,
-      },
+        total_count: 1
+      }
     };
 
     const apiBaseUrl = 'https://api.github.com/search/code?q=filename:.asyncapi-tool&per_page=50&page=1';
     const headers = {
       accept: 'application/vnd.github.text-match+json',
-      authorization: `token ${process.env.GITHUB_TOKEN}`,
+      authorization: `token ${process.env.GITHUB_TOKEN}`
     };
 
     axios.get.mockResolvedValue(mockData);
@@ -34,9 +33,7 @@ describe('getData', () => {
     const result = await getData();
 
     expect(result).toEqual(mockData.data);
-    expect(axios.get).toHaveBeenCalledWith(
-      apiBaseUrl, { headers }
-    );
+    expect(axios.get).toHaveBeenCalledWith(apiBaseUrl, { headers });
   });
 
   it('should return data when API call is successful, when items are more then one page', async () => {
@@ -62,12 +59,10 @@ describe('getData', () => {
     const apiBaseUrl = 'https://api.github.com/search/code?q=filename:.asyncapi-tool&per_page=50&page=';
     const headers = {
       accept: 'application/vnd.github.text-match+json',
-      authorization: `token ${process.env.GITHUB_TOKEN}`,
+      authorization: `token ${process.env.GITHUB_TOKEN}`
     };
 
-    axios.get
-      .mockResolvedValueOnce(mockInitialResponse)
-      .mockResolvedValueOnce(mockNextPageResponse);
+    axios.get.mockResolvedValueOnce(mockInitialResponse).mockResolvedValueOnce(mockNextPageResponse);
 
     const result = await getData();
 
@@ -75,18 +70,11 @@ describe('getData', () => {
     expect(logger.info).toHaveBeenCalledWith('Fetching page: 2');
 
     // Check if axios.get was called with the correct URLs
-    expect(axios.get).toHaveBeenCalledWith(
-      `${apiBaseUrl}1`,
-      { headers }
-    );
-    expect(axios.get).toHaveBeenCalledWith(
-      `${apiBaseUrl}2`,
-      { headers }
-    );
+    expect(axios.get).toHaveBeenCalledWith(`${apiBaseUrl}1`, { headers });
+    expect(axios.get).toHaveBeenCalledWith(`${apiBaseUrl}2`, { headers });
 
     // Check if the result contains all the items from both pages
     expect(result.items).toHaveLength(150);
-
   });
 
   it('should throw an error when API call fails', async () => {
