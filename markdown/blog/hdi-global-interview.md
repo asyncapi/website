@@ -3,7 +3,9 @@ title: "Interview with Manuel Ottlik, Product Owner at HDI Global SE: Leveraging
 date: 2025-01-20T06:00:00+01:00
 type: Communication
 tags:
-  - Project Status
+  - Interview
+  - Case Study
+  - Community
 cover: /img/posts/marketing-images/hdi-interview.webp
 authors:
   - name: Atinuke Oluwabamikemi Kayode
