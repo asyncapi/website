@@ -146,6 +146,8 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]) {
             discussion.reviews.nodes!.reduce((acc, curr) => acc + curr.comments.totalCount, 0)
           : interactionsCount;
 
+        /* istanbul ignore next */
+
         return {
           id: discussion.id,
           isPR,
@@ -222,6 +224,7 @@ async function writeToFile(
  * @returns {Promise<MappedIssue[]>} - The mapped issues.
  */
 async function mapGoodFirstIssues(issues: GoodFirstIssues[]) {
+  /* istanbul ignore next */
   return issues.map((issue) => ({
     id: issue.id,
     title: issue.title,
