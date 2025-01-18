@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { buildFinanceInfoList } = require('../../scripts/finance/index');
+const { buildFinanceInfoList } = require('../../scripts/finance/index.ts');
 const { expensesYaml, expensesLinkYaml, expensesjson, expensesLinkjson } = require('../fixtures/financeData');
 
 describe('buildFinanceInfoList', () => {

@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { convertTools, createToolObject } = require('../../scripts/tools/tools-object');
+const { convertTools, createToolObject } = require('../../scripts/tools/tools-object.ts');
 const {
   createToolFileContent,
   createExpectedToolObject,
@@ -7,7 +7,7 @@ const {
   createMalformedYAML
 } = require('../helper/toolsObjectData');
 
-const { logger } = require('../../scripts/utils/logger');
+const { logger } = require('../../scripts/utils/logger.ts');
 
 jest.mock('../../scripts/utils/logger', () => ({
   logger: { warn: jest.fn(), error: jest.fn() }
@@ -76,7 +76,7 @@ describe('Tools Object', () => {
 		expected.filters.isAsyncAPIOwner = ""
 		const result = await createToolObject(toolFile);
 		expect(result).toEqual(expected);
-	
+
   });
 
   it('should convert tools data correctly', async () => {

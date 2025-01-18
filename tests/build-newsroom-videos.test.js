@@ -2,7 +2,7 @@ const { readFileSync, removeSync, mkdirpSync, outputFileSync } = require('fs-ext
 const { resolve, join } = require('path');
 const fetch = require('node-fetch-2');
 const os = require('os');
-const { buildNewsroomVideos } = require('../scripts/build-newsroom-videos');
+const { buildNewsroomVideos } = require('../scripts/build-newsroom-videos.ts');
 const { mockApiResponse, expectedResult } = require('./fixtures/newsroomData');
 
 jest.mock('node-fetch-2', () => jest.fn());

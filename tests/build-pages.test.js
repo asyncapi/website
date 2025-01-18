@@ -55,5 +55,4 @@ describe('copyAndRenameFiles', () => {
     // delete the test directory after the test
     fs.rmSync(NEW_TEST_DIR, { recursive: true, force: true });
   });
-
 });

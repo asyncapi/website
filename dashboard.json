@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/3423",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 50.255553031120286
+      "score": 53.12729891861287
     },
     {
       "id": "I_kwDOGQYLdM5AX1lK",
@@ -29,7 +29,7 @@
           "color": "0E8A16"
         }
       ],
-      "score": 31.014855584919946
+      "score": 31.589204762418465
     },
     {
       "id": "PR_kwDOFLhIt86HHVY9",
@@ -40,7 +40,7 @@
       "resourcePath": "/asyncapi/community/pull/1634",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 22.112443333692923
+      "score": 22.9739670999407
     },
     {
       "id": "PR_kwDOFLhIt85bqKL8",
@@ -90,6 +90,22 @@
       "score": 17.517649913704783
     },
     {
+      "id": "I_kwDOBW5R_c6VPMfE",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Website Homepage Redesign",
+      "author": "Mayaleeeee",
+      "resourcePath": "/asyncapi/website/issues/3192",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "bounty",
+          "color": "0e8a16"
+        }
+      ],
+      "score": 17.230475324955524
+    },
+    {
       "id": "I_kwDOFLhIt84-OUI3",
       "isPR": false,
       "isAssigned": false,
@@ -117,33 +133,6 @@
       "score": 16.08177696995849
     },
     {
-      "id": "I_kwDOBW5R_c6VPMfE",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Website Homepage Redesign",
-      "author": "Mayaleeeee",
-      "resourcePath": "/asyncapi/website/issues/3192",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "bounty",
-          "color": "0e8a16"
-        }
-      ],
-      "score": 15.794602381209232
-    },
-    {
-      "id": "PR_kwDOCHlHJM54CmhW",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: add the migration guide and nunjucks depreciation notes",
-      "author": "Gmin2",
-      "resourcePath": "/asyncapi/generator/pull/1253",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 14.07155484871368
-    },
-    {
       "id": "I_kwDOBW5R_c6AhurV",
       "isPR": false,
       "isAssigned": true,
@@ -166,6 +155,22 @@
         }
       ],
       "score": 13.78438025996442
+    },
+    {
+      "id": "I_kwDODwv8N86BkfYV",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Add Gallery Section to AACoT'24 Conference Website",
+      "author": "Mayaleeeee",
+      "resourcePath": "/asyncapi/conference-website/issues/264",
+      "repo": "asyncapi/conference-website",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ],
+      "score": 12.348507316218127
     },
     {
       "id": "I_kwDOCHlHJM5yxvxN",
