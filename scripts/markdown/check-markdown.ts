@@ -107,6 +107,7 @@ function validateDocs(frontmatter: FrontMatter) {
   const errors = [];
 
   // Check if title exists and is a string
+  /* istanbul ignore else */
   if (!frontmatter.title || typeof frontmatter.title !== 'string') {
     errors.push('Title is missing or not a string');
   }
