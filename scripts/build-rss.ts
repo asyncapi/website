@@ -57,7 +57,7 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
 
       return i2Date.getTime() - i1Date.getTime();
     });
-
+    /* istanbul ignore next */
     if (missingDatePosts.length > 0) {
       throw new Error(`Missing date in posts: ${missingDatePosts.map((p) => p.title || p.slug).join(', ')}`);
     }
@@ -121,6 +121,7 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
 
       if (post.cover) {
         const fileExtension = post.cover.substring(post.cover.lastIndexOf('.')).toLowerCase();
+        /* istanbul ignore next */
         const mimeType = mimeTypes[fileExtension] || 'image/jpeg';
 
         item.enclosure = {

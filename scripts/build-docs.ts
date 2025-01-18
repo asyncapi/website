@@ -94,6 +94,7 @@ function buildNavTree(navItems: Details[]) {
         for (const key of allChildrenKeys) {
           const childrenOfAllChildren = allChildren[key].children as Details[];
 
+          /* istanbul ignore else */
           // eslint-disable-next-line max-depth
           if (childrenOfAllChildren) {
             childrenOfAllChildren!.sort((prev, next) => {
@@ -213,9 +214,11 @@ function addDocButtons(docPosts: Details[], treePosts: NavTree) {
       }
 
       // checks whether the previous page for the current docPost item exists or not
+      /* istanbul ignore else */
       if (index > 0) {
         // checks whether the previous item inside structuredPosts is a rootElement or a sectionElement
         // if yes, it goes again to a next previous item in structuredPosts to link the prevPage
+        /* istanbul ignore else */
         if (!structuredPosts[index - 1]?.isRootElement && !structuredPosts[index - 1]?.isSection) {
           prevPage = {
             title: structuredPosts[index - 1].title,

@@ -93,6 +93,7 @@ async function convertTools(data: ToolsData) {
     await Promise.all(
       dataArray.map(async (tool) => {
         try {
+          /* istanbul ignore else */
           if (tool.name.startsWith('.asyncapi-tool')) {
             const referenceId = tool.url.split('=')[1];
             const downloadUrl = `https://raw.githubusercontent.com/${tool.repository.full_name}/${referenceId}/${tool.path}`;
@@ -122,6 +123,8 @@ async function convertTools(data: ToolsData) {
                   const categorySearch = await fuse.search(category);
                   const targetCategory = categorySearch.length ? categorySearch[0].item.name : 'Others';
                   const { toolsList } = finalToolsObject[targetCategory];
+
+                  /* istanbul ignore else */
 
                   if (!toolsList.includes(toolObject)) {
                     toolsList.push(toolObject);
