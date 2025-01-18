@@ -11,7 +11,7 @@ jest.mock('googleapis', () => {
   const calendar = {
     events
   };
-  const google = {
+  const mockGoogle = {
     calendar: jest.fn(() => calendar),
     auth: {
       GoogleAuth: jest.fn(() => ({
@@ -19,7 +19,7 @@ jest.mock('googleapis', () => {
       }))
     }
   };
-  return { google };
+  return { google: mockGoogle };
 });
 
 describe('buildMeetings', () => {
