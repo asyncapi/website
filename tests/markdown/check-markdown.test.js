@@ -101,15 +101,17 @@ describe('Frontmatter Validator', () => {
     await fs.mkdir(referenceSpecDir, { recursive: true });
     await fs.writeFile(path.join(referenceSpecDir, 'skipped.md'), `---\ntitle: Skipped File\n---`);
 
-        const mockLoggerWarn = jest.spyOn(logger, 'warn').mockImplementation();
+    const mockLoggerWarn = jest.spyOn(logger, 'warn').mockImplementation();
 
-        await checkMarkdownFiles(tempDir, validateDocs);
-        expect(mockLoggerWarn).not.toHaveBeenCalledWith(expect.stringContaining('Errors in file reference/specification/skipped.md'));
-        mockLoggerWarn.mockRestore();
-    });
-    it('logs and rejects when an exception occurs while processing a file', async () => {
-        const filePath = path.join(tempDir, 'invalid.md');
-        await fs.writeFile(filePath, `---\ntitle: Valid Title\n---`);
+    await checkMarkdownFiles(tempDir, validateDocs);
+    expect(mockLoggerWarn).not.toHaveBeenCalledWith(
+      expect.stringContaining('Errors in file reference/specification/skipped.md')
+    );
+    mockLoggerWarn.mockRestore();
+  });
+  it('logs and rejects when an exception occurs while processing a file', async () => {
+    const filePath = path.join(tempDir, 'invalid.md');
+    await fs.writeFile(filePath, `---\ntitle: Valid Title\n---`);
 
     const mockReadFile = jest.spyOn(fs, 'readFile').mockRejectedValue(new Error('Test readFile error'));
 
@@ -145,21 +147,19 @@ describe('Frontmatter Validator', () => {
     expect(isValidURL('www.example.com')).toBe(false);
   });
 
-    it('should return true or false for URLs', () => {
-        expect(isValidURL('http://example.com')).toBe(true);
-        expect(isValidURL('https://www.example.com')).toBe(true);
-        expect(isValidURL('ftp://ftp.example.com')).toBe(true);
-        expect(isValidURL('invalid-url')).toBe(false);
-        expect(isValidURL('/path/to/file')).toBe(false);
-        expect(isValidURL('www.example.com')).toBe(false);
-    });
+  it('should return true or false for URLs', () => {
+    expect(isValidURL('http://example.com')).toBe(true);
+    expect(isValidURL('https://www.example.com')).toBe(true);
+    expect(isValidURL('ftp://ftp.example.com')).toBe(true);
+    expect(isValidURL('invalid-url')).toBe(false);
+    expect(isValidURL('/path/to/file')).toBe(false);
+    expect(isValidURL('www.example.com')).toBe(false);
+  });
 
-    it('should throw an error if frontmatter is missing', () => {
-        const errors = validateBlogs(undefined)
-        expect(errors).toEqual(
-            ['Frontmatter is missing']
-        );
-    })
+  it('should throw an error if frontmatter is missing', () => {
+    const errors = validateBlogs(undefined);
+    expect(errors).toEqual(['Frontmatter is missing']);
+  });
   it('should throw an error if frontmatter is missing', () => {
     const errors = validateBlogs(undefined);
     expect(errors).toEqual(['Frontmatter is missing']);
