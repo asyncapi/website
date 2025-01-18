@@ -109,6 +109,7 @@ describe('Frontmatter Validator', () => {
     );
     mockLoggerWarn.mockRestore();
   });
+
   it('logs and rejects when an exception occurs while processing a file', async () => {
     const filePath = path.join(tempDir, 'invalid.md');
     await fs.writeFile(filePath, `---\ntitle: Valid Title\n---`);
@@ -117,7 +118,6 @@ describe('Frontmatter Validator', () => {
 
     await expect(checkMarkdownFiles(tempDir, validateBlogs)).rejects.toThrow('Test readFile error');
     expect(logger.error).toHaveBeenCalledWith(expect.stringContaining(`Error in directory`), expect.any(Error));
-    // expect(logger.error).toHaveBeenCalledWith('Error in directory', expect.any(Error));
 
     mockReadFile.mockRestore();
   });
