@@ -1,4 +1,4 @@
-const { buildNavTree } = require('../../scripts/build-docs');
+const { buildNavTree } = require('../../scripts/build-docs.ts');
 
 const {
   basicNavItems,

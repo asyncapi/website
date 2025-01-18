@@ -1,4 +1,4 @@
-const { addDocButtons } = require('../../scripts/build-docs');
+const { addDocButtons } = require('../../scripts/build-docs.ts');
 const { docPosts, treePosts, mockDocPosts, mockTreePosts, invalidTreePosts } = require('../fixtures/addDocButtonsData');
 
 describe('addDocButtons', () => {

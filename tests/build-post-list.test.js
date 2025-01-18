@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const { resolve, join } = require('path');
 const { setupTestDirectories, generateTempDirPath } = require('./helper/buildPostListSetup');
-const { buildPostList, slugifyToC, addItem } = require('../scripts/build-post-list');
+const { buildPostList, slugifyToC, addItem } = require('../scripts/build-post-list.ts');
 
 describe('buildPostList', () => {
   let tempDir;

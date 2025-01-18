@@ -4,7 +4,7 @@ const fs = require('fs-extra');
 const os = require('os');
 const path = require('path');
 const { tagsData, manualTools, mockConvertedData, mockExtractData } = require('./fixtures/buildToolsData');
-const { buildTools } = require('../scripts/build-tools');
+const { buildTools } = require('../scripts/build-tools.ts');
 
 jest.mock('axios');
 jest.mock('../scripts/tools/categorylist', () => ({

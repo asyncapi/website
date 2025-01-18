@@ -1,4 +1,4 @@
-const { convertDocPosts } = require('../../scripts/build-docs');
+const { convertDocPosts } = require('../../scripts/build-docs.ts');
 const {
   docObject,
   emptyDocObject,
