@@ -43,6 +43,16 @@ export default function HomePage() {
     <>
       <Head title='AsyncAPI Initiative for event-driven APIs' />
       <main id='main-content' className='scroll-mt-5'>
+        <div className="w-screen bg-blue-100 flex justify-center items-center py-2">
+          <img
+            className="h-8 w-auto mr-4"
+            src="/img/logos/LFX.svg"
+            alt="Linux Foundation"
+          />
+          <span className="font-semibold">
+            Part of the Linux Foundation
+          </span>
+        </div>
         <Container wide>
           <Hero className='mb-24' />
         </Container>
