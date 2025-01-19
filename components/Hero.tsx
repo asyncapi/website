@@ -1,18 +1,15 @@
 import React from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
-import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 import { useTranslation } from '../utils/i18n';
-import AlgoliaSearch, { SearchButton } from './AlgoliaSearch'; // Import AlgoliaSearch component
 import Button from './buttons/Button';
 import AnnouncementHero from './campaigns/AnnouncementHero';
 import DemoAnimation from './DemoAnimation';
 import Features from './features';
-import ArrowRight from './icons/ArrowRight';
-import IconLoupe from './icons/Loupe';
+import IconArrowUp from './icons/ArrowUp';
 import Heading from './typography/Heading';
-import Paragraph from './typography/Paragraph';
+import IconLoupe from './icons/Loupe';
 
 interface HeroProps {
   className?: string;
@@ -47,37 +44,20 @@ export default function Hero({ className = '' }: HeroProps) {
           <div className='flex flex-col items-center justify-center gap-2 md:flex-row'>
             <Button
               className='block w-full md:w-auto'
-              text={t('main.docs_btn')}
-              href='/docs'
-              icon={<ArrowRight className='-mb-1 size-5' />}
-              data-testid='Hero-Button'
+              text={t('main.join_btn')}
+              href='/slack-invite'
+              icon={""}
+              data-testid='Join-Button'
             />
-            {/* Wrap SearchButton with AlgoliaSearch component */}
-            <AlgoliaSearch>
-              <SearchButton className='flex w-full items-center space-x-3 rounded-md border border-secondary-500 bg-secondary-100 px-4 py-3 text-left text-secondary-500 shadow-md transition-all duration-500 ease-in-out hover:bg-secondary-500 hover:text-white md:w-auto'>
-                {({ actionKey }) => (
-                  <>
-                    <IconLoupe />
-                    <span className='flex-auto'>{t('main.search_btn')}</span>
-                    {actionKey && (
-                      <kbd className='font-sans font-semibold'>
-                        <abbr title={actionKey.key} className='no-underline'>
-                          {actionKey.shortKey}
-                        </abbr>{' '}
-                        K
-                      </kbd>
-                    )}
-                  </>
-                )}
-              </SearchButton>
-            </AlgoliaSearch>
+            <h1 className='m-2'>OR</h1>
+            <Button
+              className='block w-full md:w-auto bg-white text-blue-500 border border-blue-500 hover:bg-white'
+              text={t('main.subscribe_btn')}
+              href=''
+              icon={""}
+              data-testid='Subscribe-Button'
+            />
           </div>
-          <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-4' textColor='text-gray-500'>
-            {t('main.slogan_text')}{' '}
-            <a className='underline' href='https://www.linuxfoundation.org/'>
-              {t('main.slogan_link')}
-            </a>
-          </Paragraph>
         </div>
         <div className='mt-8 md:mt-16'>
           <DemoAnimation />
