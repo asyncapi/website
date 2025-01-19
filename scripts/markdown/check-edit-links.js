@@ -16,14 +16,13 @@ const ignoreFiles = [
  * @returns {Promise<string[]>} Array of URLs that returned 404
  */
 async function processBatch(batch) {
-  const TIMEOUT_MS = process.env.TIMEOUT_MS || 5000;
+  const TIMEOUT_MS = Number(process.env.DOCS_LINK_CHECK_TIMEOUT) || 5000;
   return Promise.all(
     batch.map(async ({ filePath, urlPath, editLink }) => {
       try {
         if (!editLink || ignoreFiles.some((ignorePath) => filePath.endsWith(ignorePath))) return null;
 
         const controller = new AbortController();
-        /* istanbul ignore next */
         const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
         const response = await fetch(editLink, {
           method: 'HEAD',
@@ -48,7 +47,7 @@ async function processBatch(batch) {
  */
 async function checkUrls(paths) {
   const result = [];
-  const batchSize = process.env.BATCH_SIZE || 5;
+  const batchSize = Number(process.env.DOCS_LINK_CHECK_BATCH_SIZE) || 5;
 
   const batches = [];
   for (let i = 0; i < paths.length; i += batchSize) {

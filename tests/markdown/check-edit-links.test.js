@@ -8,7 +8,7 @@ const {
   determineEditLink,
   main
 } = require('../../scripts/markdown/check-edit-links');
-const { determineEditLinkData, processBatchData, testPaths } = require('../fixtures/markdown/check-editlinks-data');
+const { determineEditLinkData, processBatchData, testPaths } = require('../fixtures/markdown/check-edit-links-data');
 
 jest.mock('node-fetch-2', () => jest.fn());
 
@@ -106,6 +106,16 @@ describe('URL Checker Tests', () => {
       const validResults = results.filter((r) => r !== null);
       expect(validResults.length).toBe(2);
     });
+
+    it('should handle request timeouts', async () => {
+      fetch.mockImplementation(
+        () =>
+          new Promise((resolve) => {
+            setTimeout(resolve, 10000);
+          })
+      );
+      await expect(processBatch(testBatch)).rejects.toThrow();
+    }, 20000);
   });
 
   describe('checkUrls', () => {
