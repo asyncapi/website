@@ -12,14 +12,14 @@ authors:
     photo: /img/avatars/bami.webp
     link: https://www.linkedin.com/in/atinuke-oluwabamikemi-kayode-5b838b1b7/
     byline: AsyncAPI Community Marketing Specialist
-excerpt: 'This is an interview session with Manuel, the Product Owner at HDI Global SE explaining how they use AsyncAPI to maintain their API catalog.'
+excerpt: 'Learn how HDI Global SE, our first end-user and silver sponsor, leverages AsyncAPI for integration transparency. Manuel Ottlik shares insights on merging enterprise service buses with modern API management and event-driven architectures.'
 ---
 
 
 # Interview with Manuel Ottlik, Product Owner at HDI Global SE: Leveraging AsyncAPI for Integration Transparency!
 
-HDI Global SE, a leading player in the insurance industry, has become our first end-user, a non-software vendor company that not only openly admits they use AsyncAPI and share their use case but also became our official sponsor and a valuable partner of the AsyncAPI Initiative. 
-Their commitment to open source is evident through financial support, active contributions, and adoption of AsyncAPI to enhance transparency in their integration platform. We are ecstatic to have Manuel Ottlik, Product Owner of the Global Integration Platform at HDI Global SE, as one of our dedicated AsyncAPI ambassadors. Manuel has played a key role in driving the adoption of AsyncAPI at HDI, transforming our partnership into a meaningful use case.
+HDI Global SE, a leading player in the insurance industry, has become our first end-user, a non-software vendor company that not only openly admits they use AsyncAPI and share their use case, but also became official sponsor and a valuable partner of the AsyncAPI Initiative.
+Their commitment to open source is evident through financial support, active contributions, and adoption of AsyncAPI to enhance transparency in their integration platform. We are ecstatic to have [Manuel Ottlik](https://www.linkedin.com/in/manuelottlik/), Product Owner of the Global Integration Platform at HDI Global SE, as one of our dedicated AsyncAPI ambassadors. Manuel has played a key role in driving the adoption of AsyncAPI at HDI, transforming our partnership into a meaningful use case.
 
 We recently had the opportunity to speak with Manuel, who shared insights into HDI's evolving integration strategies, the role of open source in their journey, and how AsyncAPI fits into their future plans. Here’s a glimpse of our conversation:
 
@@ -38,11 +38,11 @@ We began by exploring how HDI Global SE, with its long history in the insurance 
 
 We delved deeper into the complexities of integrating various technologies.
 
-**Bami: Q: As Product Owner of the Global Integration Platform, what key challenges have you faced in merging technologies like a service bus, API management, and an event broker into a unified platform?**
+**Bami: As Product Owner of the Global Integration Platform, what key challenges have you faced in merging technologies like a service bus, API management, and an event broker into a unified platform?**
 
 ***Manuel:** One of the key challenges is that these technologies are often introduced at different times. For example, most companies start with API management and later realize the need for asynchronous capabilities. As a result, you end up with distinct interfaces for asynchronous and synchronous communication, even though they represent the same business entities.*
 
-*The challenge is merging these technologies and their interfaces cohesively. At HDI, we manage the platform, not the interfaces, but we issue guidance on building interfaces. We aim to have a consistent view of business objects, regardless of the integration product being used. The schemas of these business objects should align whether they’re using OpenAPI or AsyncAPI.*
+*The challenge is merging these technologies and their interfaces cohesively. At HDI, we manage the platform, not the interfaces, but we issue guidance on building interfaces. We aim to have a consistent view of business objects, regardless of the integration product being used. The schemas of these business objects should align, whether they’re using OpenAPI or AsyncAPI.*
 
 ## Goals for HDI Global SE’s Integration Platform
 
@@ -77,7 +77,7 @@ We then discussed HDI’s interest in AsyncAPI.
 **Bami: How do you see AsyncAPI playing a role in HDI Global SE’s integration strategy, especially as the company continues its cloud adoption?**
 
 
-***Manuel:** It's the same reason; it's going to be the part that enables transparency over asynchronous interfaces, service bus topics and messages in them, event brokers, and events that get sent over there.*
+***Manuel:** It's the same reason; it's going to be the part that enables transparency over asynchronous interfaces, service bus topics and messages in them, event brokers and events that are transmitted through these channels.*
 
 Wrapping up, we explored Manuel’s thoughts on broader industry trends.
 
@@ -89,7 +89,9 @@ Wrapping up, we explored Manuel’s thoughts on broader industry trends.
 Through our conversation, it’s clear that HDI Global SE is not only adopting AsyncAPI but also actively contributing to its development. Manuel has been a driving force behind this partnership, and we’re excited to continue building towards a future of open, transparent, and efficient integration practices.
 
 
-We’re thrilled to welcome HDI Global SE as not only a Silver Sponsor but also our first end-user! 🎉 We’re excited about this collaboration and the shared journey to advance the AsyncAPI ecosystem together.
+We’re thrilled to welcome HDI Global SE as not only a Silver Sponsor but also our first end-user! :tada: We’re excited about this collaboration and the shared journey to advance the AsyncAPI ecosystem together.
 
-For more information about HDI Global SE, visit [HDI Global SE](https://www.hdi.global/de-de/). To learn more about AsyncAPI and our mission, visit [AsyncAPI](https://www.asyncapi.com/en).
+[Read more about the use case]( https://www.asyncapi.com/casestudies/hdiglobal)
+
+Have questions about [HDI's](https://www.hdi.global/de-de/) journey with AsyncAPI or want to share your own experience? Join our vibrant community on [Slack](https://www.asyncapi.com/slack-invite) and let's continue the conversation!
 
