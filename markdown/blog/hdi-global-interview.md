@@ -18,7 +18,7 @@ excerpt: 'Learn how HDI Global SE, our first end-user and silver sponsor, levera
 
 # Interview with Manuel Ottlik, Product Owner at HDI Global SE: Leveraging AsyncAPI for Integration Transparency!
 
-HDI Global SE, a leading player in the insurance industry, has become our first end-user, a non-software vendor company that not only openly admits they use AsyncAPI and share their use case, but also became official sponsor and a valuable partner of the AsyncAPI Initiative.
+HDI Global SE, a leading player in the insurance industry, has become our first end-user, a non-software vendor company that not only openly admits it uses AsyncAPI and shares its use case, but also became an official sponsor and a valuable partner of the AsyncAPI Initiative.
 Their commitment to open source is evident through financial support, active contributions, and adoption of AsyncAPI to enhance transparency in their integration platform. We are ecstatic to have [Manuel Ottlik](https://www.linkedin.com/in/manuelottlik/), Product Owner of the Global Integration Platform at HDI Global SE, as one of our dedicated AsyncAPI ambassadors. Manuel has played a key role in driving the adoption of AsyncAPI at HDI, transforming our partnership into a meaningful use case.
 
 We recently had the opportunity to speak with Manuel, who shared insights into HDI's evolving integration strategies, the role of open source in their journey, and how AsyncAPI fits into their future plans. Here’s a glimpse of our conversation:
