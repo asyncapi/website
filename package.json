@@ -25,6 +25,7 @@
     "generate:tools": "tsx scripts/build-tools.ts",
     "test:netlify": "deno test --allow-env --trace-ops netlify/**/*.test.ts",
     "test:md": "tsx scripts/markdown/check-markdown.ts",
+    "test:editlinks": "node scripts/markdown/check-edit-links.js",
     "dev:storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build"
   },
