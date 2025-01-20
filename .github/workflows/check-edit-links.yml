@@ -1,0 +1,49 @@
+name: Weekly Docs Link Checker
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Runs every week at midnight on Sunday
+  workflow_dispatch:
+
+jobs:
+  check-links:
+    name: Run Link Checker and Notify Slack
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run link checker
+        id: linkcheck
+        run: |
+          npm run test:editlinks | tee output.log
+
+      - name: Extract 404 URLs from output
+        id: extract-404
+        run: |
+          ERRORS=$(sed -n '/URLs returning 404:/,$p' output.log)
+          echo "errors<<EOF" >> $GITHUB_OUTPUT
+          echo "$ERRORS" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Notify Slack
+        if: ${{ steps.extract-404.outputs.errors != '' }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.WEBSITE_SLACK_WEBHOOK }}
+          SLACK_TITLE: 'Docs Edit Link Checker Errors Report'
+          SLACK_MESSAGE: |
+            🚨 The following URLs returned 404 during the link check:
+            ```
+            ${{ steps.extract-404.outputs.errors }}
+            ```
+          MSG_MINIMAL: true
