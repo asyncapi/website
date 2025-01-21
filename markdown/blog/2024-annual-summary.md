@@ -85,7 +85,7 @@ We gained **309** followers in 2024, reaching a total of **4709** followers over
 We don't consider the X/Twitter platform worth investment; it's time to consider another platform like Bluesky to expand our reach.
 
 ### YouTube
-Our YouTube channel continues to grow as we gain **269** new subscribers, having **1.72k** subscribers in total. We hosted fewer community live streams in 2024 but also brought back the AsyncAPI Online Conference, increasing the total watch time.
+Our YouTube channel continues to grow as we gain **269** new subscribers, having **1.72k** subscribers in total. We hosted fewer community live streams in 2024, but also brought back the AsyncAPI Online Conference, increasing the total watch time.
 
 <Figure
   src="/img/posts/2024-annual-report/youtube-stats.webp"
@@ -160,7 +160,7 @@ Despite the challenges, we achieved some milestones, and here are some of the hi
 
 - We had our second community hire, [Oluwabamikemi Kayode](https://www.linkedin.com/in/atinuke-oluwabamikemi-kayode-5b838b1b7/), to work full-time as the project's Community Marketing Specialist.
 - The [Ambassador Program](https://www.asyncapi.com/community/ambassadors) increased this year from having five ambassadors to ten.
-- The [AsyncAPI Bounty Program](https://www.asyncapi.com/blog/asyncapi-bounty-program-2024) turned 1.
+- The [AsyncAPI Bounty Program](https://www.asyncapi.com/blog/asyncapi-bounty-program-2024) turned 1, and we have [51 issues completed](https://github.com/orgs/asyncapi/projects/36/views/4?filterQuery=-no%3Alevel+status%3ACompleted) so far under the program.
 - [We got accepted into GSoC'24](https://www.asyncapi.com/blog/2024-gsoc-wrap) for the first time as an independent organization.
 - [Published our second case study](https://www.asyncapi.com/casestudies/hdiglobal) from HDI Global.
 - Brought back the [AsyncAPI Online Conference](https://youtube.com/playlist?list=PLbi1gRlP7pijItMBmw9SeeyWxuEa3jLR2&si=pDGcDafTo2umeUHC).
