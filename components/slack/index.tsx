@@ -51,7 +51,7 @@ export default function Slack({ className = '' }: SlackProps) {
         <SlackMessage
           avatar='/img/homepage/eve-and-chan.webp'
           name='Eve & Chan'
-          text={<span className='text-gray-500'>Joined #general.</span>}
+          text={<span className='text-gray-700'>Joined #general.</span>}
         />
         <SlackMessage
           avatar='/img/homepage/eve-and-chan.webp'
