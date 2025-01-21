@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { sponsors } from './SponsorsList';
+import { sponsors } from './PlatinumSponsorsList';
+import SponsorImage from './SponsorImage';
 
 interface SponsorsProps {
   className: string;
@@ -26,7 +27,7 @@ export default function Sponsors({ className = '', showSupportBanner = true }: S
               rel='noopener noreferrer'
               data-testid='Sponsors-link'
             >
-              <img
+              <SponsorImage
                 className={sponsor?.imageClass}
                 src={sponsor.imageSrc}
                 alt={sponsor.altText}
