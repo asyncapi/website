@@ -85,7 +85,7 @@ We gained **309** followers in 2024, reaching a total of **4709** followers over
 We don't consider the X/Twitter platform worth investment; it's time to consider another platform like Bluesky to expand our reach.
 
 ### YouTube
-Our YouTube channel continues to grow as we gain **269** new subscribers, having **1.72k** subscribers in total. We hosted fewer community live streams in 2024 but also brought back the AsyncAPI Online Conference, increasing the number of watch time.
+Our YouTube channel continues to grow as we gain **269** new subscribers, having **1.72k** subscribers in total. We hosted fewer community live streams in 2024 but also brought back the AsyncAPI Online Conference, increasing the total watch time.
 
 <Figure
   src="/img/posts/2024-annual-report/youtube-stats.webp"
