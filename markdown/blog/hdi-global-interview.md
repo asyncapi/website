@@ -27,7 +27,7 @@ We began by exploring how HDI Global SE, with its long history in the insurance 
 
 **Bami: HDI Global SE has a strong background in the insurance industry. How has the company’s approach to integration and API management evolved over the years?**
 
-***Manuel:** When we discussing the integration layer, it’s not just the insurance industry but most enterprises, particularly in financial services, that initially relied on enterprise service buses. Over time, many of them, including HDI, introduced API management to leverage REST APIs. We did the same here—implementing API management alongside our enterprise service bus. Now, we’re focusing our development efforts exclusively on API management.*
+***Manuel:** When we were discussing the integration layer, it's not just the insurance industry but most enterprises, particularly in financial services, that initially relied on enterprise service buses. Over time, many of them, including HDI, introduced API management to leverage REST APIs. We did the same here—implementing API management alongside our enterprise service bus. Now, we're focusing our development efforts exclusively on API management.*
 
 *However, we realized that to fully phase out the enterprise service bus, we’d need both synchronous and asynchronous communication capabilities. This led us to incorporate asynchronous services through an event broker, ensuring comprehensive integration support.*
 
