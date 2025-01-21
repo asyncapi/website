@@ -24,6 +24,7 @@
     "generate:tools": "node scripts/build-tools.js",
     "test:netlify": "deno test --allow-env --trace-ops netlify/**/*.test.ts",
     "test:md": "node scripts/markdown/check-markdown.js",
+    "test:editlinks": "node scripts/markdown/check-edit-links.js",
     "dev:storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build"
   },
@@ -85,7 +86,7 @@
     "md5": "^2.3.0",
     "mermaid": "9.3.0",
     "moment": "^2.30.1",
-    "next": "14.2.20",
+    "next": "14.2.22",
     "next-i18next": "^15.3.0",
     "next-language-detector": "^1.1.0",
     "next-mdx-remote": "^4.4.1",
