@@ -1,0 +1,122 @@
+import React from 'react';
+
+import PaginationItem from './PaginationItem';
+
+export interface PaginationProps {
+  // eslint-disable-next-line prettier/prettier
+
+  /** Total number of pages */
+  totalPages: number;
+
+  /** Current active page */
+  currentPage: number;
+
+  /** Function to handle page changes */
+  onPageChange: (page: number) => void;
+}
+
+/**
+ * This is the Pagination component. It displays a list of page numbers that can be clicked to navigate.
+ */
+export default function Pagination({ totalPages, currentPage, onPageChange }: PaginationProps) {
+  const handlePageChange = (page: number) => {
+    if (page < 1 || page > totalPages) return;
+    onPageChange(page);
+  };
+
+  const getPageNumbers = () => {
+    const pages = [];
+
+    if (totalPages <= 7) {
+      for (let i = 1; i <= totalPages; i++) pages.push(i);
+    } else {
+      pages.push(1);
+      if (currentPage > 3) {
+        pages.push('ellipsis1');
+      }
+
+      for (let i = Math.max(2, currentPage - 1); i <= Math.min(totalPages - 1, currentPage + 1); i++) {
+        pages.push(i);
+      }
+
+      if (currentPage < totalPages - 2) {
+        pages.push('ellipsis2');
+      }
+
+      pages.push(totalPages);
+    }
+
+    return pages;
+  };
+
+  return (
+    <div className='font-inter flex items-center justify-center gap-8'>
+      {/* Previous button */}
+      <button
+        onClick={() => handlePageChange(currentPage - 1)}
+        disabled={currentPage === 1}
+        className={`
+          font-normal flex h-[34px] items-center justify-center gap-2 rounded bg-white px-4
+          py-[7px] text-sm leading-[17px] tracking-[-0.01em]
+          ${currentPage === 1 ? 'cursor-not-allowed text-gray-300' : 'text-[#141717] hover:bg-gray-50'}
+        `}
+      >
+        <svg
+          width='20'
+          height='20'
+          viewBox='0 0 24 24'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'
+          className='stroke-current'
+        >
+          <path d='M15 18L9 12L15 6' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
+        </svg>
+        <span>Previous</span>
+      </button>
+
+      {/* Page numbers */}
+      <div className='flex gap-2'>
+        {getPageNumbers().map((page) =>
+          typeof page === 'number' ? (
+            <PaginationItem
+              key={page}
+              pageNumber={page}
+              isActive={page === currentPage}
+              onPageChange={handlePageChange}
+            />
+          ) : (
+            <span
+              key={page}
+              className='font-inter flex size-10 items-center justify-center text-sm font-semibold text-[#6B6B6B]'
+            >
+              ...
+            </span>
+          )
+        )}
+      </div>
+
+      {/* Next button */}
+      <button
+        onClick={() => handlePageChange(currentPage + 1)}
+        disabled={currentPage === totalPages}
+        className={`
+          font-normal flex h-[34px] items-center justify-center gap-2 rounded bg-white px-4
+          py-[7px] text-sm leading-[17px] tracking-[-0.01em]
+          ${currentPage === totalPages ? 'cursor-not-allowed text-gray-300' : 'text-[#141717] hover:bg-gray-50'}
+        `}
+      >
+        <span>Next</span>
+        <svg
+          width='20'
+          height='20'
+          viewBox='0 0 24 24'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'
+          className='stroke-current'
+        >
+          <path d='M9 6L15 12L9 18' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
+        </svg>
+      </button>
+    </div>
+  );
+}

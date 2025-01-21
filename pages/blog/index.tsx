@@ -2,11 +2,13 @@ import { useRouter } from 'next/router';
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 
 import type { Filter as FilterType } from '@/components/helpers/applyFilter';
+import { usePagination } from '@/components/helpers/usePagination';
 import Empty from '@/components/illustrations/Empty';
 import GenericLayout from '@/components/layout/GenericLayout';
 import Loader from '@/components/Loader';
 import BlogPostItem from '@/components/navigation/BlogPostItem';
 import Filter from '@/components/navigation/Filter';
+import Pagination from '@/components/pagination/Pagination';
 import Heading from '@/components/typography/Heading';
 import Paragraph from '@/components/typography/Paragraph';
 import TextLink from '@/components/typography/TextLink';
@@ -35,6 +37,33 @@ export default function BlogIndexPage() {
         })
       : []
   );
+
+  const postsPerPage = 9;
+  const { currentPage, setCurrentPage, currentItems, maxPage } = usePagination(posts, postsPerPage);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+
+    const currentFilters = { ...router.query, page: page.toString() };
+
+    router.push(
+      {
+        pathname: router.pathname,
+        query: currentFilters
+      },
+      undefined,
+      { shallow: true }
+    );
+  };
+
+  useEffect(() => {
+    const pageFromQuery = parseInt(router.query.page as string, 10);
+
+    if (!Number.isNaN(pageFromQuery) && pageFromQuery >= 1 && pageFromQuery !== currentPage) {
+      setCurrentPage(pageFromQuery);
+    }
+  }, [router.query.page]);
+
   const [isClient, setIsClient] = useState(false);
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -130,14 +159,19 @@ export default function BlogIndexPage() {
             )}
             {Object.keys(posts).length > 0 && isClient && (
               <ul className='mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3'>
-                {posts.map((post, index) => (
+                {currentItems.map((post, index) => (
                   <BlogPostItem key={index} post={post} />
                 ))}
               </ul>
             )}
-            {Object.keys(posts).length > 0 && !isClient && (
+            {Object.keys(currentItems).length > 0 && !isClient && (
               <div className='h-screen w-full'>
                 <Loader loaderText='Loading Blogs' className='mx-auto my-60' pulsating />
+              </div>
+            )}
+            {maxPage > 1 && (
+              <div className='mt-8 w-full'>
+                <Pagination totalPages={maxPage} currentPage={currentPage} onPageChange={handlePageChange} />
               </div>
             )}
           </div>

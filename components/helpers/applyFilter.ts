@@ -137,6 +137,9 @@ export const onFilterApply = <T extends DataObject>(
 
   if (query && Object.keys(query).length >= 1) {
     Object.keys(query).forEach((property) => {
+      if (property === 'page') {
+        return;
+      }
       const res = result.filter((e) => {
         if (!query[property] || e[property] === query[property]) {
           return e[property];
