@@ -1,5 +1,4 @@
 import React from 'react';
-import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import IconArrowRight from '../icons/ArrowRight';
 import IconArrowLeft from '../icons/ArrowLeft';
@@ -11,12 +10,10 @@ interface BlogPaginationProps {
     blogsPerPage: number;
     totalBlogs: number;
     paginate: (pageNumber: number) => void;
+    currentPage: number;
 }
 
-export default function BlogPagination({ blogsPerPage, totalBlogs, paginate }: BlogPaginationProps) {
-    const router = useRouter();
-    const { page } = router.query;
-    const currentPage: number = parseInt(page as string);
+export default function BlogPagination({ blogsPerPage, totalBlogs, paginate, currentPage }: BlogPaginationProps) {
     const totalPages: number = Math.ceil(totalBlogs / blogsPerPage);
     const pagesToShow: number = 6;
     const [pageNumbers, setPageNumbers] = useState<(number | string)[]>([]);
@@ -62,9 +59,10 @@ export default function BlogPagination({ blogsPerPage, totalBlogs, paginate }: B
     }, [currentPage, totalBlogs]);
 
     return (
-        <div className='flex justify-center items-center p-4 gap-2 mt-8'>
+        <nav aria-label="Blog pagination" className='flex justify-center items-center p-4 gap-2 mt-8'>
             <Button
-                className={`${currentPage === 1 && 'opacity-50 cursor-not-allowed'} w-[120px] h-[35px] py-2 px-4 rounded-l-md`}
+                className={`${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : ''} size-[120px] py-2 px-4 rounded-l-md`}
+                aria-label="Previous page"
                 bgClassName='bg-white'
                 textClassName='text-[#212525] font-inter text-[14px] font-normal'
                 text='Previous'
@@ -78,6 +76,8 @@ export default function BlogPagination({ blogsPerPage, totalBlogs, paginate }: B
                     <button
                         key={index}
                         className={`w-[40px] h-[40px] ${number === currentPage ? 'border rounded bg-[#6200EE] text-white' : 'text-[#6B6B6B'}`}
+                        aria-label={`${typeof number === 'number' ? `Go to page ${number}` : 'More pages'}`}
+                        aria-current={number === currentPage ? 'page' : undefined}
                         onClick={() => typeof number === 'number' && paginate(number)}
                         disabled={number === '...'}
                     >
@@ -95,7 +95,7 @@ export default function BlogPagination({ blogsPerPage, totalBlogs, paginate }: B
                 icon={<IconArrowRight className='w-4 h-4 inline-block' />}
                 iconPosition={ButtonIconPosition.RIGHT}
             />
-        </div>
+        </nav>
     );
 }
 

@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { useContext, useEffect, useState, useRef } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 
 import Empty from '@/components/illustrations/Empty';
 import GenericLayout from '@/components/layout/GenericLayout';
@@ -52,11 +52,11 @@ export default function BlogIndexPage() {
     }
   ];
   const clearFilters = () => {
-    const { page } = router.query; 
+    const { page } = router.query;
     router.push(
       {
         pathname: router.pathname,
-        query: { ...(page && { page }) }, 
+        query: { ...(page && { page }) },
       },
       undefined,
       {
@@ -70,7 +70,13 @@ export default function BlogIndexPage() {
   const image = '/img/social/blog.webp';
   const blogsPerPage = 9;
 
-  const [currentPosts, setCurrentPosts] = useState<IBlogPost[]>([]);
+  const currentPage = parseInt(router.query.page as string) || 1;
+
+  const currentPosts = useMemo(() => {
+    const indexOfLastPost = currentPage * blogsPerPage;
+    const indexOfFirstPost = indexOfLastPost - blogsPerPage;
+    return posts.slice(indexOfFirstPost, indexOfLastPost);
+  }, [currentPage, posts]);
 
   const paginate = (pageNumber: number) => {
     const { query } = router;
@@ -83,34 +89,24 @@ export default function BlogIndexPage() {
         pathname: router.pathname,
         query: newQuery
       },
-      undefined, 
+      undefined,
       {
         shallow: true
       }
     );
   };
-  useEffect(() => {
-    if(router.isReady){
-      const pageFromQuery = parseInt(router.query.page as string);
-      if(!pageFromQuery){
-        router.replace(
-          {
-            pathname: router.pathname,
-            query: { ...router.query, page: '1' },
-          },
-          undefined,
-          { shallow: true }
-        );
-      }
-      const indexOfLastPost = pageFromQuery * blogsPerPage;
-      const indexOfFirstPost = indexOfLastPost - blogsPerPage;
-      setCurrentPosts(posts.slice(indexOfFirstPost, indexOfLastPost));
-    }
-  }, [router.isReady, router.query.page, posts]);
 
   useEffect(() => {
-    setIsClient(true);
-  }, []);
+    if (router.isReady && !router.query.page) {
+      router.replace({ pathname: router.pathname, query: { page: '1' } }, undefined, { shallow: true });
+    }
+  }, [router.isReady]);
+
+  useEffect(() => {
+    if (router.isReady) {
+      setIsClient(true);
+    }
+  }, [router.isReady]);
 
   return (
     <GenericLayout title='Blog' description={description} image={image} wide>
@@ -163,7 +159,7 @@ export default function BlogIndexPage() {
             )}
           </div>
           <div>
-            {(Object.keys(posts).length === 0) && (
+            {(Object.keys(posts).length === 0 || Object.keys(currentPosts).length === 0) && (
               <div className='mt-16 flex flex-col items-center justify-center'>
                 <Empty />
                 <p className='mx-auto mt-3 max-w-2xl text-xl leading-7 text-gray-500'>No post matches your filter</p>
@@ -185,6 +181,7 @@ export default function BlogIndexPage() {
               blogsPerPage={blogsPerPage}
               totalBlogs={posts.length}
               paginate={paginate}
+              currentPage={currentPage}
             />
           </div>
         </div>
