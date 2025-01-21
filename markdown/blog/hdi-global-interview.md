@@ -16,8 +16,6 @@ excerpt: 'Learn how HDI Global SE, our first end-user and silver sponsor, levera
 ---
 
 
-# Interview with Manuel Ottlik, Product Owner at HDI Global SE: Leveraging AsyncAPI for Integration Transparency!
-
 HDI Global SE, a leading player in the insurance industry, has become our first end-user, a non-software vendor company that not only openly admits it uses AsyncAPI and shares its use case, but also became an official sponsor and a valuable partner of the AsyncAPI Initiative.
 Their commitment to open source is evident through financial support, active contributions, and adoption of AsyncAPI to enhance transparency in their integration platform. We are ecstatic to have [Manuel Ottlik](https://www.linkedin.com/in/manuelottlik/), Product Owner of the Global Integration Platform at HDI Global SE, as one of our dedicated AsyncAPI ambassadors. Manuel has played a key role in driving the adoption of AsyncAPI at HDI, transforming our partnership into a meaningful use case.
 
@@ -29,7 +27,7 @@ We began by exploring how HDI Global SE, with its long history in the insurance 
 
 **Bami: HDI Global SE has a strong background in the insurance industry. How has the company’s approach to integration and API management evolved over the years?**
 
-***Manuel:** When we talk about the integration layer, it’s not just the insurance industry but most enterprises, particularly in financial services, that initially relied on enterprise service buses. Over time, many of them, including HDI, introduced API management to leverage REST APIs. We did the same here—implementing API management alongside our enterprise service bus. Now, we’re focusing our development efforts exclusively on API management.*
+***Manuel:** When we discussing the integration layer, it’s not just the insurance industry but most enterprises, particularly in financial services, that initially relied on enterprise service buses. Over time, many of them, including HDI, introduced API management to leverage REST APIs. We did the same here—implementing API management alongside our enterprise service bus. Now, we’re focusing our development efforts exclusively on API management.*
 
 *However, we realized that to fully phase out the enterprise service bus, we’d need both synchronous and asynchronous communication capabilities. This led us to incorporate asynchronous services through an event broker, ensuring comprehensive integration support.*
 
@@ -49,7 +47,7 @@ We delved deeper into the complexities of integrating various technologies.
 **Bami: What are the main goals HDI Global SE hopes to achieve with its integration platform, especially regarding cloud adoption?**
 
 
-***Manuel:** Our primary goal isn’t tied to cloud adoption but rather to achieving transparency for the interfaces created. We want a central point of observability, ensuring that security and architecture are aligned. It’s about reducing complexity and establishing standards.*
+***Manuel:** Our primary goal isn’t tied to cloud adoption, but rather to achieving transparency for the interfaces created. We want a central point of observability, ensuring that security and architecture are aligned. It’s about reducing complexity and establishing standards.*
 
 ## Open Source at HDI Global SE
 
@@ -77,7 +75,7 @@ We then discussed HDI’s interest in AsyncAPI.
 **Bami: How do you see AsyncAPI playing a role in HDI Global SE’s integration strategy, especially as the company continues its cloud adoption?**
 
 
-***Manuel:** It's the same reason; it's going to be the part that enables transparency over asynchronous interfaces, service bus topics and messages in them, event brokers and events that are transmitted through these channels.*
+***Manuel:** It's the same reason; it will be the part that enables transparency over asynchronous interfaces, service bus topics and messages in them, event brokers and events that are transmitted through these channels.*
 
 Wrapping up, we explored Manuel’s thoughts on broader industry trends.
 
@@ -91,7 +89,7 @@ Through our conversation, it’s clear that HDI Global SE is not only adopting A
 
 We’re thrilled to welcome HDI Global SE as not only a Silver Sponsor but also our first end-user! :tada: We’re excited about this collaboration and the shared journey to advance the AsyncAPI ecosystem together.
 
-[Read more about the use case]( https://www.asyncapi.com/casestudies/hdiglobal)
+[Read more about HDI Global SE's AsyncAPI implementation case study]( https://www.asyncapi.com/casestudies/hdiglobal)
 
-Have questions about [HDI's](https://www.hdi.global/de-de/) journey with AsyncAPI or want to share your own experience? Join our vibrant community on [Slack](https://www.asyncapi.com/slack-invite) and let's continue the conversation!
+Have questions about [HDI Global SE's](https://www.hdi.global/de-de/) journey with AsyncAPI or want to share your own experience? Join our vibrant community on [Slack](https://www.asyncapi.com/slack-invite) and let's continue the conversation!
 
