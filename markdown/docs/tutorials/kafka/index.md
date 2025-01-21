@@ -182,7 +182,7 @@ components:
             description: This property describes the ID of the user
           userEmail:
             type: string
-            description: This property describes the ID of the user
+            description: This property describes the Email of the user
 ```
 
 In the above code snippet:
