@@ -4,6 +4,7 @@ const buildCaseStudiesList = require('../scripts/casestudies');
 const buildAdoptersList = require('../scripts/adopters');
 const buildFinanceInfoList = require('../scripts/finance');
 const start = require('../scripts/index');
+const fs = require('fs');
 
 jest.mock('../scripts/build-rss');
 jest.mock('../scripts/build-post-list');
@@ -31,5 +32,15 @@ describe('start function', () => {
     expect(buildCaseStudiesList).toHaveBeenCalled();
     expect(buildAdoptersList).toHaveBeenCalled();
     expect(buildFinanceInfoList).toHaveBeenCalled();
+  });
+
+  test('should throw an error if no finance data is found', async () => {
+    jest.spyOn(fs, 'readdirSync').mockReturnValue([]);
+
+    await expect(start()).rejects.toThrow('No finance data found in the finance directory.');
+
+    expect(buildFinanceInfoList).not.toHaveBeenCalled();
+
+    fs.readdirSync.mockRestore();
   });
 });

@@ -33,6 +33,10 @@ interface IDocsLayoutProps {
  */
 function generateEditLink(post: IPost) {
   let last = post.id.substring(post.id.lastIndexOf('/') + 1);
+
+  if (last.endsWith('.mdx')) {
+    last = last.replace('.mdx', '.md');
+  }
   const target = editOptions.find((edit) => {
     return post.slug.includes(edit.value);
   });
