@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 
 import Empty from '@/components/illustrations/Empty';
 import GenericLayout from '@/components/layout/GenericLayout';
@@ -13,7 +13,7 @@ import BlogContext from '@/context/BlogContext';
 import type { IBlogPost } from '@/types/post';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
-
+import BlogPagination from '@/components/navigation/BlogPagination';
 /**
  * @description The BlogIndexPage is the blog index page of the website.
  */
@@ -24,19 +24,21 @@ export default function BlogIndexPage() {
   const [posts, setPosts] = useState<IBlogPost[]>(
     navItems
       ? navItems.sort((i1: IBlogPost, i2: IBlogPost) => {
-          const i1Date = new Date(i1.date);
-          const i2Date = new Date(i2.date);
+        const i1Date = new Date(i1.date);
+        const i2Date = new Date(i2.date);
 
-          if (i1.featured && !i2.featured) return -1;
-          if (!i1.featured && i2.featured) return 1;
+        if (i1.featured && !i2.featured) return -1;
+        if (!i1.featured && i2.featured) return 1;
 
-          return i2Date.getTime() - i1Date.getTime();
-        })
+        return i2Date.getTime() - i1Date.getTime();
+      })
       : []
   );
   const [isClient, setIsClient] = useState(false);
 
-  const onFilter = (data: IBlogPost[]) => setPosts(data);
+  const onFilter = (data: IBlogPost[]) => {
+    setPosts(data);
+  };
   const toFilter = [
     {
       name: 'type'
@@ -50,14 +52,61 @@ export default function BlogIndexPage() {
     }
   ];
   const clearFilters = () => {
-    router.push(`${router.pathname}`, undefined, {
-      shallow: true
-    });
+    const { page } = router.query; 
+    router.push(
+      {
+        pathname: router.pathname,
+        query: { ...(page && { page }) }, 
+      },
+      undefined,
+      {
+        shallow: true,
+      }
+    );
   };
-  const showClearFilters = Object.keys(router.query).length > 0;
+  const showClearFilters = Object.keys(router.query).length > 1;
 
   const description = 'Find the latest and greatest stories from our community';
   const image = '/img/social/blog.webp';
+  const blogsPerPage = 9;
+
+  const [currentPosts, setCurrentPosts] = useState<IBlogPost[]>([]);
+
+  const paginate = (pageNumber: number) => {
+    const { query } = router;
+    const newQuery = {
+      ...query,
+      page: pageNumber
+    };
+    router.push(
+      {
+        pathname: router.pathname,
+        query: newQuery
+      },
+      undefined, 
+      {
+        shallow: true
+      }
+    );
+  };
+  useEffect(() => {
+    if(router.isReady){
+      const pageFromQuery = parseInt(router.query.page as string);
+      if(!pageFromQuery){
+        router.replace(
+          {
+            pathname: router.pathname,
+            query: { ...router.query, page: '1' },
+          },
+          undefined,
+          { shallow: true }
+        );
+      }
+      const indexOfLastPost = pageFromQuery * blogsPerPage;
+      const indexOfFirstPost = indexOfLastPost - blogsPerPage;
+      setCurrentPosts(posts.slice(indexOfFirstPost, indexOfLastPost));
+    }
+  }, [router.isReady, router.query.page, posts]);
 
   useEffect(() => {
     setIsClient(true);
@@ -114,7 +163,7 @@ export default function BlogIndexPage() {
             )}
           </div>
           <div>
-            {Object.keys(posts).length === 0 && (
+            {(Object.keys(posts).length === 0) && (
               <div className='mt-16 flex flex-col items-center justify-center'>
                 <Empty />
                 <p className='mx-auto mt-3 max-w-2xl text-xl leading-7 text-gray-500'>No post matches your filter</p>
@@ -122,7 +171,7 @@ export default function BlogIndexPage() {
             )}
             {Object.keys(posts).length > 0 && isClient && (
               <ul className='mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3'>
-                {posts.map((post, index) => (
+                {currentPosts.map((post, index) => (
                   <BlogPostItem key={index} post={post} />
                 ))}
               </ul>
@@ -132,6 +181,11 @@ export default function BlogIndexPage() {
                 <Loader loaderText='Loading Blogs' className='mx-auto my-60' pulsating />
               </div>
             )}
+            <BlogPagination
+              blogsPerPage={blogsPerPage}
+              totalBlogs={posts.length}
+              paginate={paginate}
+            />
           </div>
         </div>
       </div>
