@@ -59,10 +59,15 @@ export default function BlogIndexPage() {
   useEffect(() => {
     const pageFromQuery = parseInt(router.query.page as string, 10);
 
-    if (!Number.isNaN(pageFromQuery) && pageFromQuery >= 1 && pageFromQuery !== currentPage) {
-      setCurrentPage(pageFromQuery);
+    if (!Number.isNaN(pageFromQuery) && maxPage > 0) {
+      if (pageFromQuery >= 1 && pageFromQuery <= maxPage && pageFromQuery !== currentPage) {
+        setCurrentPage(pageFromQuery);
+      } else if (pageFromQuery < 1 || pageFromQuery > maxPage) {
+        // Only reset to page 1 if the page number is actually invalid
+        handlePageChange(1);
+      }
     }
-  }, [router.query.page]);
+  }, [router.query.page, maxPage, currentPage]);
 
   const [isClient, setIsClient] = useState(false);
 
