@@ -2,7 +2,7 @@ import React from 'react';
 
 /* eslint-disable max-len */
 /**
- * @description Icons for asyncapi website
+ * @description Language Icon for language selector component
  */
 export default function IconLanguage({ className = '' }) {
   return (
