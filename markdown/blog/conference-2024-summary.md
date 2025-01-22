@@ -112,7 +112,7 @@ Lastly, I am genuinely thankful for their hard work and commitment to assisting 
 ]} />
 
 
-## Where Too In 2025?
+## Where, Too, In 2025?
 For AsyncAPI Conference 2025, we are excited to announce that [APIdays](https://www.apidays.global/) will be hosting us in:
 
 -  
