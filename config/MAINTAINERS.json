@@ -280,7 +280,6 @@
             "java-spring-template",
             "github-action-for-cli",
             ".github",
-            "jasyncapi",
             "vs-asyncapi-preview",
             "template-for-generator-templates",
             "community",
@@ -979,5 +978,16 @@
             "conference-website"
         ],
         "githubID": 69006513
+    },
+    {
+        "name": "HariKrishnan",
+        "github": "harikrishnan83",
+        "twitter": "harikrishnan83",
+        "availableForHire": true,
+        "isTscMember": false,
+        "repos": [
+            "jasyncapi"
+        ],
+        "githubID": 126087
     }
 ]
