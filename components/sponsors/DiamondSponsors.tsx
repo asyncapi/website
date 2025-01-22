@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { sponsors } from './SponsorsList';
+import { sponsors } from './DiamondSponsorsList';
 
 interface SponsorsProps {
   className: string;
