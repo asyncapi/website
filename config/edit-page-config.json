@@ -1,7 +1,7 @@
 [
   {
     "value": "/tools/generator",
-    "href": "https://github.com/asyncapi/generator/tree/master/docs"
+    "href": "https://github.com/asyncapi/generator/tree/master/apps/generator/docs"
   },
   {
     "value": "reference/specification/",
