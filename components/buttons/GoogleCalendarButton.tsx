@@ -29,7 +29,6 @@ export default function GoogleCalendarButton({
   return (
     <Button
       text={t(text)}
-      icon={<IconGoogleCalendar />}
       href={href}
       iconPosition={iconPosition}
       target={target}

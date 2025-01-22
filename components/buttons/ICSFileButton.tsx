@@ -29,7 +29,6 @@ export default function ICSFButton({
   return (
     <Button
       text={t(text)}
-      icon={<IconCalendar />}
       href={href}
       iconPosition={iconPosition}
       target={target}
