@@ -7,9 +7,9 @@ import Button from './buttons/Button';
 import AnnouncementHero from './campaigns/AnnouncementHero';
 import DemoAnimation from './CodeAnimation/DemoAnimation';
 import Features from './features';
-import Heading from './typography/Heading';
 import Container from './layout/Container';
 import DiamondSponsors from './sponsors/DiamondSponsors';
+import Heading from './typography/Heading';
 
 interface HeroProps {
   className?: string;
@@ -46,21 +46,21 @@ export default function Hero({ className = '' }: HeroProps) {
               className='block w-full md:w-auto'
               text={t('main.join_btn')}
               href='/slack-invite'
-              icon={""}
+              icon={''}
               data-testid='Join-Button'
             />
             <h1 className='m-2'>OR</h1>
             <Button
-              className='block w-full md:w-auto bg-white text-blue-500 border border-blue-500 hover:bg-white'
+              className='block w-full border border-blue-500 bg-white text-blue-500 hover:bg-white md:w-auto'
               text={t('main.subscribe_btn')}
               href=''
-              icon={""}
+              icon={''}
               data-testid='Subscribe-Button'
             />
           </div>
         </div>
-        <div className='relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-blue-100 mt-16'>
-          <Container className='text-center p-6' wide>
+        <div className='relative inset-x-1/2 -mx-[50vw] mt-16 w-screen bg-blue-100'>
+          <Container className='p-6 text-center' wide>
             <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
               {t('sponsors.diamondTitle')}
             </Heading>

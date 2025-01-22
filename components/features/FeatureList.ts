@@ -17,8 +17,8 @@ export const features: Feature[] = [
     link: {
       label: 'features.read-more',
       href: 'docs/costs-control',
-      id: 'costs-control-read-more-link',
-    },
+      id: 'costs-control-read-more-link'
+    }
   },
   {
     id: 'publishing-api',
@@ -26,8 +26,8 @@ export const features: Feature[] = [
     link: {
       label: 'features.read-more',
       href: 'docs/publishing-api',
-      id: 'publishing-api-read-more-link',
-    },
+      id: 'publishing-api-read-more-link'
+    }
   },
   {
     id: 'code-generation',
@@ -35,8 +35,8 @@ export const features: Feature[] = [
     link: {
       label: 'features.read-more',
       href: 'docs/code-generation',
-      id: 'code-generation-read-more-link',
-    },
+      id: 'code-generation-read-more-link'
+    }
   },
   {
     id: 'infra-as-code',
@@ -44,8 +44,8 @@ export const features: Feature[] = [
     link: {
       label: 'features.read-more',
       href: 'docs/infra-as-code',
-      id: 'infra-as-code-read-more-link',
-    },
+      id: 'infra-as-code-read-more-link'
+    }
   },
   {
     id: 'governance-consistency',
@@ -53,8 +53,8 @@ export const features: Feature[] = [
     link: {
       label: 'features.read-more',
       href: 'docs/governance-consistency',
-      id: 'governance-consistency-read-more-link',
-    },
+      id: 'governance-consistency-read-more-link'
+    }
   },
   {
     id: 'developer-portal',
@@ -62,7 +62,7 @@ export const features: Feature[] = [
     link: {
       label: 'features.read-more',
       href: 'docs/developer-portal',
-      id: 'developer-portal-read-more-link',
-    },
+      id: 'developer-portal-read-more-link'
+    }
   }
 ];
