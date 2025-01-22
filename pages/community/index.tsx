@@ -206,7 +206,7 @@ export default function CommunityIndexPage() {
             description="Explore our transparent finance section for a detailed analysis of our project's budget. See how we track expenses and gain insights into funds allocation."
             bg="bg-white"
             link="/finance"
-            customClasses="p-8 "
+            customClasses="p-8"
           />
         </div>
         <div className="m-5">
