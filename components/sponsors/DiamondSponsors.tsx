@@ -17,8 +17,8 @@ export default function DiamondSponsors({ className = '', showSupportBanner = tr
   return (
     <div className={`text-center ${className}`}>
       <ul className='mb-4 flex flex-wrap items-center justify-center md:px-4'>
-      {sponsors.map((sponsor) => (
-        <li key={sponsor.website} className='w-2/3 sm:w-1/4 md:w-1/3 lg:w-1/5' data-testid='Sponsors-list'>
+        {sponsors.map((sponsor) => (
+          <li key={sponsor.website} className='w-2/3 sm:w-1/4 md:w-1/3 lg:w-1/5' data-testid='Sponsors-list'>
             <a
               href={sponsor.website}
               target='_blank'
