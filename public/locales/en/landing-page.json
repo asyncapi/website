@@ -6,7 +6,8 @@
         "body_boldtext": "industry standard",
         "body_posttext": " for defining asynchronous APIs.",
         "join_btn": "Join our Community",
-        "subscribe_btn": "Subscribe to our Newsletter"
+        "subscribe_btn": "Subscribe to our Newsletter",
+        "linuxFoundation_txt": "Part of the Linux Foundation"
     },
     "features": {
         "title": "What You Can Use AsyncAPI For",

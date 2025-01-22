@@ -37,7 +37,7 @@ export default function HomePage() {
             src="/img/logos/LFX.svg"
             alt="Linux Foundation"
           />
-          <span className="font-semibold">Part of the Linux Foundation</span>
+          <span className="font-semibold">{t('linuxFoundation_txt')}</span>
         </div>
         <Container wide>
           <Hero className="mb-24" />
