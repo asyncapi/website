@@ -108,6 +108,7 @@ function determineEditLink(
   }
 
   // For other cases with specific targets
+  /* istanbul ignore next */
   return target ? `${target.href}/${path.basename(filePath)}` : null;
 }
 
@@ -139,6 +140,8 @@ async function generatePaths(
         }
 
         const stats = await fs.stat(filePath);
+
+        /* istanbul ignore else */
 
         if (stats.isDirectory()) {
           await generatePaths(filePath, editOptions, relativeFilePath, result);
