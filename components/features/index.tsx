@@ -16,36 +16,46 @@ export default function Features() {
   const { t } = useTranslation('landing-page');
 
   return (
-    <section className='relative bg-white pt-16'>
-      <div className='mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8'>
-        <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className='mt-2'>
-          {t('features.title')}
-        </Heading>
-        <Paragraph className='mx-auto mt-2 max-w-prose'>{t('features.description')}</Paragraph>
-        <div className='mt-12 text-left'>
-          <ul className='grid  grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3' data-testid='Feature-ul'>
+    <section className="relative bg-white py-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className="mt-2">
+            {t('features.title')}
+          </Heading>
+          <Paragraph className="mx-auto mt-4 max-w-2xl text-gray-500">
+            {t('features.description')}
+          </Paragraph>
+        </div>
+        <div className="mt-12">
+          <ul
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+            data-testid="Feature-ul"
+          >
             {features.map((feature) => (
               <li
                 key={feature.id}
-                className='flex flex-col justify-between rounded-lg border border-gray-200 px-6 pb-8 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'
-                data-testid='Feature-li'
+                className="rounded-lg border border-gray-200 bg-white p-6 shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl"
+                data-testid="Feature-li"
               >
-                <div>
-                  <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.mdSemibold} className='mt-8'>
-                    {t(`features.${feature.id}.name`)}
-                  </Heading>
-                  {
-                    <Paragraph typeStyle={ParagraphTypeStyle.md} className='mt-5'>
-                      {t(`features.${feature.id}.description`)}
-                    </Paragraph>
-                  }
-                </div>
-                <div className='flex justify-between'>
-                  {feature.links.map((link) => (
-                    <TextLink id={link.id} href={link.href} key={link.id} className='mt-6 inline-block'>
-                      {t(`features.${feature.id}.links.${link.id}`)}
-                    </TextLink>
-                  ))}
+                <Heading
+                  level={HeadingLevel.h4}
+                  typeStyle={HeadingTypeStyle.mdSemibold}
+                  className="text-gray-900 mb-4"
+                >
+                  {t(`features.${feature.id}.name`)}
+                </Heading>
+                <Paragraph typeStyle={ParagraphTypeStyle.md} className="mt-4 text-gray-600">
+                  {t(`features.${feature.id}.description`)}
+                </Paragraph>
+                <div className="mt-6">
+                  <TextLink
+                    id={feature.link.id}
+                    href={feature.link.href}
+                    key={feature.link.id}
+                    className="text-black no-underline font-large hover:underline"
+                  >
+                    {t('features.read-more')}
+                  </TextLink>
                 </div>
               </li>
             ))}

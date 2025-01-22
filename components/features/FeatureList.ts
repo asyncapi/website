@@ -6,83 +6,63 @@ interface FeatureLink {
 
 interface Feature {
   id: string;
-  links: FeatureLink[];
+  name: string;
+  link: FeatureLink;
 }
 
 export const features: Feature[] = [
   {
-    id: 'specification',
-    links: [
-      {
-        label: 'Documentation',
-        href: 'docs/reference/specification/latest',
-        id: 'whyasyncapi-spec-documentation-link'
-      }
-    ]
+    id: 'costs-control',
+    name: 'Costs Control',
+    link: {
+      label: 'features.read-more',
+      href: 'docs/costs-control',
+      id: 'costs-control-read-more-link',
+    },
   },
   {
-    id: 'document-apis',
-    links: [
-      {
-        label: 'HTML Template',
-        href: 'https://github.com/asyncapi/html-template',
-        id: 'whyasyncapi-apis-htmltemplate-link'
-      },
-      {
-        label: 'React Component',
-        href: 'https://github.com/asyncapi/asyncapi-react/',
-        id: 'whyasyncapi-apis-reactcomponents-link'
-      }
-    ]
+    id: 'publishing-api',
+    name: 'Self-service for Publishing API',
+    link: {
+      label: 'features.read-more',
+      href: 'docs/publishing-api',
+      id: 'publishing-api-read-more-link',
+    },
   },
   {
     id: 'code-generation',
-    links: [
-      {
-        label: 'Generator',
-        href: 'tools/generator',
-        id: 'whyasyncapi-generation-generator-link'
-      },
-      {
-        label: 'Modelina',
-        href: 'tools/modelina',
-        id: 'whyasyncapi-generation-modelina-link'
-      }
-    ]
+    name: 'Code Generation',
+    link: {
+      label: 'features.read-more',
+      href: 'docs/code-generation',
+      id: 'code-generation-read-more-link',
+    },
   },
   {
-    id: 'community',
-    links: [
-      {
-        label: 'Join our Slack',
-        href: 'https://asyncapi.com/slack-invite',
-        id: 'whyasyncapi-community-slack-link'
-      }
-    ]
+    id: 'infra-as-code',
+    name: 'Infrastructure as Code',
+    link: {
+      label: 'features.read-more',
+      href: 'docs/infra-as-code',
+      id: 'infra-as-code-read-more-link',
+    },
   },
   {
-    id: 'open-governance',
-    links: [
-      {
-        label: 'Read more about Open Governance',
-        href: 'blog/governance-motivation',
-        id: 'whyasyncapi-governance-more-link'
-      },
-      {
-        label: 'TSC Members',
-        href: 'community/tsc',
-        id: 'whyasyncapi-governance-tsc-link'
-      }
-    ]
+    id: 'governance-consistency',
+    name: 'Governance & Consistency',
+    link: {
+      label: 'features.read-more',
+      href: 'docs/governance-consistency',
+      id: 'governance-consistency-read-more-link',
+    },
   },
   {
-    id: 'much-more',
-    links: [
-      {
-        label: 'View GitHub Discussions',
-        href: 'https://github.com/asyncapi/community/discussions',
-        id: 'whyasyncapi-muchmore-github-link'
-      }
-    ]
+    id: 'developer-portal',
+    name: 'Developer Portal',
+    link: {
+      label: 'features.read-more',
+      href: 'docs/developer-portal',
+      id: 'developer-portal-read-more-link',
+    },
   }
 ];
