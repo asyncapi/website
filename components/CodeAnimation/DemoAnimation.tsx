@@ -21,11 +21,11 @@ export default function DemoAnimation() {
   const renderContent = () => {
     switch (activeTab) {
       case 'Code Generation':
-        return renderCodeGeneration();
+        return renderCodeGeneration() || <p>No content available</p>;
       case 'Documentation':
-        return renderDocumentation();
+        return renderDocumentation() || <p>No content available</p>;
       default:
-        return renderAsyncAPIContent();
+        return renderAsyncAPIContent() || <p>No content available</p>;
     }
   };
 
@@ -47,13 +47,19 @@ export default function DemoAnimation() {
                 activeTab === tab ? 'bg-white text-black' : 'bg-gray-700 text-gray-300 hover:bg-gray-800'
               }`}
               onClick={() => setActiveTab(tab)}
+              aria-selected={activeTab === tab}
+              role='tab'
             >
               {tab}
             </button>
           ))}
         </div>
 
-        <div className='min-h-[400px] rounded-lg bg-[#1a1b26] p-6 transition-all duration-200'>
+        <div
+          className='min-h-[400px] rounded-lg bg-[#1a1b26] p-6 transition-all duration-200'
+          role='tabpanel'
+          aria-labelledby={`tab-${activeTab}`}
+        >
           <div className='max-w-full overflow-auto'>
             <div className='overflow-x-auto whitespace-pre-wrap'>{renderContent()}</div>
           </div>
