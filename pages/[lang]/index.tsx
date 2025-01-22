@@ -15,6 +15,7 @@ import SilverSponsors from '../../components/sponsors/SilverSponsors';
 import Sponsors from '../../components/sponsors/Sponsors';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
+import SupportUs from '../../components/SupportUs/SupportUs';
 
 const getStaticProps = makeStaticProps(['landing-page', 'footer', 'common']);
 
@@ -123,6 +124,7 @@ export default function HomePage() {
             </Heading>
             <SilverSponsors className="mt-4" showSupportBanner={false} />
           </Container>
+          <SupportUs/>
         </section>
       </main>
     </>

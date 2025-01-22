@@ -1,6 +1,9 @@
 import React from 'react';
 
 import { items } from './SupportItemsList';
+import Heading from '../typography/Heading';
+import Paragraph from '../typography/Paragraph';
+import TextLink from '../typography/TextLink';
 
 interface SupportUsProps {
   className?: string;
@@ -16,6 +19,20 @@ interface SupportUsProps {
 export default function SupportUs({ className = '' }: SupportUsProps): React.ReactNode {
   return (
     <div className={`text-center ${className}`} data-testid='SupportUs-main'>
+      <Heading>
+        Supporters
+      </Heading>
+      <Paragraph className='my-6 max-w-4xl mx-auto text-center'>
+        The following companies support us by letting us use their products for free. Interested in
+        supporting us too?
+        <TextLink
+          className='text-gray-700'
+          href='mailto:info@asyncapi.io'
+          target='_blank'
+        >
+          Email us
+        </TextLink> for more info
+      </Paragraph>
       <div
         className='flex flex-wrap items-center justify-center sm:py-2 md:mb-4 md:px-4'
         data-testid='SupportUs-section'
