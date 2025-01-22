@@ -8,7 +8,7 @@ interface SponsorsProps {
 }
 
 /**
- * This component displays Silver Sponsors.
+ * This component displays Diamond Sponsors.
  * @param {SponsorsProps} props - The props for Sponsors component.
  * @param {string} props.className - Additional CSS classes for styling.
  * @param {boolean} props.showSupportBanner - Indicates whether support banner should be displayed.

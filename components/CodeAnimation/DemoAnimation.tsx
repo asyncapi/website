@@ -4,9 +4,21 @@ import renderCodeGeneration from './CodeGeneration';
 import renderDocumentation from './Documentation';
 import Container from '../layout/Container';
 
+/**
+ * @description A React component that displays a demo animation interface with three tabs: 
+ * "AsyncAPI Document," "Code Generation," and "Documentation." The content of each tab 
+ * dynamically updates based on the active tab selected by the user.
+ * 
+ */
+
 export default function DemoAnimation() {
   const [activeTab, setActiveTab] = useState('AsyncAPI Document');
   const tabs = ['AsyncAPI Document', 'Code Generation', 'Documentation'];
+
+
+  /**
+   * @description Determines and renders the content for the currently active tab.
+   */
 
   const renderContent = () => {
     switch (activeTab) {
