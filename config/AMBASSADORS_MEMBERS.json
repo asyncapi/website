@@ -288,72 +288,6 @@
     ]
   },
   {
-    "name": "Jesse Menning",
-    "github": "jessemenning",
-    "twitter": "JesseMenning",
-    "bio": "Jesse Menning teams with companies and government agencies to design event-driven architecture and microservices at scale. To guide those discussions, I draw upon more than 15 years of integration architecture and implementation experience, particularly with IBM and Solace platforms. I've been involved with AsyncAPI since 2020, along with other open-source initiatives such as CloudEvents and OpenTelemetry.",
-    "linkedin": "jesse-menning",
-    "company": "Solace",
-    "title": "Architect, Office of the CTO at Solace",
-    "img": "https://avatars.githubusercontent.com/u/62108913?v=4",
-    "contributions": [
-      {
-        "type": "article",
-        "title": "AsyncAPI 2.3 Adds Solace Bindings to Unlock Full Power of PubSub+",
-        "date": {
-          "year": 2022,
-          "month": "January"
-        },
-        "link": "https://solace.com/blog/asyncapi-adds-solace-bindings/"
-      },
-      {
-        "type": "article",
-        "title": "Align Production Reality and Event Documentation with the AsyncAPI Discovery Tool",
-        "date": {
-          "year": 2021,
-          "month": "November"
-        },
-        "link": "https://solace.com/blog/asyncapi-discovery-tool/"
-      },
-      {
-        "type": "article",
-        "title": "AsyncAPI vs. OpenAPI: Answers to Your Burning Questions About the Two Leading API Specs",
-        "date": {
-          "year": 2021,
-          "month": "June"
-        },
-        "link": "https://solace.com/blog/asyncapi-vs-openapi/"
-      },
-      {
-        "type": "article",
-        "title": "AsyncAPI, CloudEvents, OpenTelemetry: Which Event-Driven Specs Should Your DevOps Include?",
-        "date": {
-          "year": 2021,
-          "month": "March"
-        },
-        "link": "https://solace.com/blog/asyncapi-cloudevents-opentelemetry-event-driven-specs-devops/"
-      },
-      {
-        "type": "presentation",
-        "title": "Future of AsyncAPI, Panel discussion, AsyncAPI Conference",
-        "date": {
-          "year": 2021,
-          "month": "November"
-        },
-        "link": "https://www.youtube.com/watch?v=3EeMHhbwyOQ"
-      },
-      {
-        "type": "presentation",
-        "title": "Thinking Out Loud #4 — with Jesse Menning",
-        "date": {
-          "year": 2021,
-          "month": "August"
-        },
-        "link": "https://www.youtube.com/watch?v=eJewFUR-OaM"
-      }
-    ]
-  },
-  {
     "name": "Ludovic Dussart",
     "github": "M3lkior",
     "twitter": "ldussart",
@@ -483,73 +417,6 @@
     ]
   },
   {
-    "name": "Mete Atamel",
-    "github": "meteatamel",
-    "twitter": "meteatamel",
-    "country": "🇬🇧",
-    "bio": "Mete is a Software Engineer and a Developer Advocate with 18+ years of experience. Currently, he works in the Developer Relations team at Google in London. He builds tools, demos, tutorials, and gives talks to educate and help developers to be successful on Google Cloud. As a regular speaker at tech conferences, he has spoken over 345+ events since 2016 on modern application development topics such as Kubernetes, Istio, Knative, serverless, event-driven architectures, and microservice orchestration. Prior to his current role, he was a Software Engineer/Architect/Tech Lead at Nokia, EMC, Adobe, Skype, and Microsoft building various client and server technologies, resulting in multiple patents.",
-    "linkedin": "mete-atamel",
-    "company": "Google",
-    "title": "Software Engineer and Developer Advocate at Google",
-    "img": "https://avatars.githubusercontent.com/u/1177542?v=4",
-    "contributions": [
-      {
-        "type": "article",
-        "title": "AsyncAPI Basics",
-        "date": {
-          "year": 2023,
-          "month": "May"
-        },
-        "link": "https://medium.com/google-cloud/asyncapi-basics-6e6394c9587"
-      },
-      {
-        "type": "article",
-        "title": "AsyncAPI Tools",
-        "date": {
-          "year": 2023,
-          "month": "May"
-        },
-        "link": "https://medium.com/google-cloud/asyncapi-tools-dd59f9236b20"
-      },
-      {
-        "type": "article",
-        "title": "Understanding AsyncAPI’s publish & subscribe semantics with an example",
-        "date": {
-          "year": 2023,
-          "month": "May"
-        },
-        "link": "https://medium.com/google-cloud/understanding-asyncapis-publish-subscribe-semantics-with-an-example-cfa1cc3faef5"
-      },
-      {
-        "type": "article",
-        "title": "CloudEvents + AsyncAPI",
-        "date": {
-          "year": 2023,
-          "month": "May"
-        },
-        "link": "https://medium.com/google-cloud/cloudevents-asyncapi-fa8ef63f28e0"
-      },
-      {
-        "type": "article",
-        "title": "Google Cloud Pub/Sub + AsyncAPI",
-        "date": {
-          "year": 2023,
-          "month": "May"
-        },
-        "link": "https://medium.com/google-cloud/google-cloud-pub-sub-asyncapi-6ea3c1ed3c49"
-      },
-      {
-        "type": "presentation",
-        "title": "Open standards for building event-driven applications in the cloud",
-        "date": {
-          "year": 2023,
-          "month": "June"
-        },
-        "link": "https://www.youtube.com/watch?v=6Igp4DhK_hE"
-      }
-    ]
-  },
-  {
     "name": "Raphael De Lio",
     "github": "raphaeldelio",
     "twitter": "raphaeldelio",
@@ -608,6 +475,24 @@
           "month": "June"
         },
         "link": "https://confengine.com/conferences/selenium-conf-2024/proposal/20021/unshackling-your-system-under-test-shift-left-testing-through-dependency-isolation"
+      },
+      {
+        "type": "talk",
+        "title": "Using API spec as an Executable Contract To Mock and Test Microservices",
+        "date": {
+          "year": 2024,
+          "month": "October"
+        },
+        "link": "https://www.youtube.com/watch?v=wiM20HTCerM"
+      },
+      {
+        "type": "talk",
+        "title": "Contract-Driven Development for Event-Driven Architectures",
+        "date": {
+          "year": 2024,
+          "month": "December"
+        },
+        "link": "https://conference.asyncapi.com/venue/Paris"
       }
     ]
   },
