@@ -196,19 +196,23 @@ export default function CommunityIndexPage() {
           className="bg-channelCover"
         />
       </div>
-      <div className="mt-10 flex flex-col">
-        <div className="m-5 w-full">
-          <Card
-            type={CardType.SMALL}
-            tagline="Finance"
-            icon="💰"
-            heading="Track Initiative Spending with Budget Analysis"
-            description="Explore our transparent finance section for a detailed analysis of our project's budget. See how we track expenses and gain insights into funds allocation."
-            bg="bg-white"
-            link="/finance"
-          />
+      <div className="mt-10 flex justify-center">
+        {/* Parent Card for Finance */}
+        <div className="m-5 p-8 bg-gray-100 rounded-lg shadow-md w-full max-w-6xl">
+          <div className="w-full">
+            <Card
+              type={CardType.SMALL}
+              tagline="Finance"
+              icon="💰"
+              heading="Track Initiative Spending with Budget Analysis"
+              description="Explore our transparent finance section for a detailed analysis of our project's budget. See how we track expenses and gain insights into funds allocation."
+              bg="bg-white"
+              link="/finance"
+            />
+          </div>
         </div>
       </div>
+
       <div
         className="mt-8 rounded-lg bg-dark py-12 md:mt-20"
         data-testid="CommunityCard-subscribe"
