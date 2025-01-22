@@ -5,10 +5,11 @@ import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { useTranslation } from '../utils/i18n';
 import Button from './buttons/Button';
 import AnnouncementHero from './campaigns/AnnouncementHero';
+import DemoAnimation from './CodeAnimation/DemoAnimation';
 import Features from './features';
 import Heading from './typography/Heading';
 import Container from './layout/Container';
-import Sponsors from './sponsors/Sponsors';
+import DiamondSponsors from './sponsors/DiamondSponsors';
 
 interface HeroProps {
   className?: string;
@@ -63,10 +64,13 @@ export default function Hero({ className = '' }: HeroProps) {
             <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
               {t('sponsors.diamondTitle')}
             </Heading>
-            <Sponsors className='mt-4' showSupportBanner={false} />
+            <DiamondSponsors className='mt-4' showSupportBanner={false} />
           </Container>
         </div>
         <Features />
+        <div className='mt-8 md:mt-16'>
+          <DemoAnimation />
+        </div>
       </header>
     </>
   );
