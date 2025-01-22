@@ -59,6 +59,7 @@ export default function Hero({ className = '' }: HeroProps) {
             />
           </div>
         </div>
+        {/* eslint-disable-next-line */}
         <div className='relative inset-x-1/2 -mx-[50vw] mt-16 w-screen bg-blue-100'>
           <Container className='p-6 text-center' wide>
             <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
