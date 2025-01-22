@@ -983,8 +983,10 @@
         "name": "HariKrishnan",
         "github": "harikrishnan83",
         "twitter": "harikrishnan83",
-        "availableForHire": true,
-        "isTscMember": false,
+        "linkedin": "harikrishnan83",
+        "slack": "U067JPY0UH5",
+        "availableForHire": false,
+        "isTscMember": true,
         "repos": [
             "jasyncapi"
         ],
