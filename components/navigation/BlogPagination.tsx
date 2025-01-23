@@ -6,14 +6,33 @@ import Button from '../buttons/Button';
 import IconArrowLeft from '../icons/ArrowLeft';
 import IconArrowRight from '../icons/ArrowRight';
 
+/**
+ * Props for the BlogPagination component
+ * @property {number} blogsPerPage - Number of blogs to display per page
+ * @property {number} totalBlogs - Total number of blogs
+ * @property {function} paginate - Callback function to handle page changes
+ * @property {number} currentPage - Current active page number
+ */
 interface BlogPaginationProps {
+  // eslint-disable-next-line prettier/prettier
+
   blogsPerPage: number;
   totalBlogs: number;
   paginate: (pageNumber: number) => void;
   currentPage: number;
 }
 
-export default function BlogPagination({ blogsPerPage, totalBlogs, paginate, currentPage }: BlogPaginationProps) {
+/**
+ * A pagination component for blog posts that displays page numbers and navigation buttons
+ * @param {BlogPaginationProps} props - The props for the component
+ * @returns {JSX.Element} A navigation element with pagination controls
+ */
+export default function BlogPagination({
+  blogsPerPage,
+  totalBlogs,
+  paginate,
+  currentPage,
+}: BlogPaginationProps) {
   const totalPages: number = Math.ceil(totalBlogs / blogsPerPage);
   const pagesToShow: number = 6;
   const [pageNumbers, setPageNumbers] = useState<(number | string)[]>([]);
@@ -60,19 +79,24 @@ export default function BlogPagination({ blogsPerPage, totalBlogs, paginate, cur
   }, [currentPage, totalBlogs]);
 
   return (
-    <nav aria-label='Blog pagination' className='mt-8 flex items-center justify-center gap-2 p-4'>
+    <nav
+      aria-label="Blog pagination"
+      className="mt-8 flex items-center justify-center gap-2 p-4"
+    >
+      {/* Previous button */}
       <Button
         className={`${currentPage === 1 ? 'cursor-not-allowed opacity-50' : ''} size-[120px] rounded-l-md px-4 py-2`}
-        aria-label='Previous page'
-        bgClassName='bg-white'
-        textClassName='text-[#212525] font-inter text-[14px] font-normal'
-        text='Previous'
+        aria-label="Previous page"
+        bgClassName="bg-white"
+        textClassName="text-[#212525] font-inter text-[14px] font-normal"
+        text="Previous"
         disabled={currentPage === 1}
         onClick={() => paginate(currentPage - 1)}
-        icon={<IconArrowLeft className='inline-block size-4' />}
+        icon={<IconArrowLeft className="inline-block size-4" />}
         iconPosition={ButtonIconPosition.LEFT}
       />
-      <div className='flex w-[35vw] justify-center gap-3'>
+      {/* Page numbers */}
+      <div className="flex w-[35vw] justify-center gap-3">
         {pageNumbers.map((number, index) => (
           <button
             key={index}
@@ -86,14 +110,15 @@ export default function BlogPagination({ blogsPerPage, totalBlogs, paginate, cur
           </button>
         ))}
       </div>
+      {/* Next button */}
       <Button
         className={`${currentPage === totalPages && 'cursor-not-allowed opacity-50'} h-[35px] w-[120px] rounded-l-md px-4 py-2`}
-        bgClassName='bg-white'
-        textClassName='text-[#212525] font-inter text-[14px] font-normal'
-        text='Next'
+        bgClassName="bg-white"
+        textClassName="text-[#212525] font-inter text-[14px] font-normal"
+        text="Next"
         disabled={currentPage === totalPages}
         onClick={() => paginate(currentPage + 1)}
-        icon={<IconArrowRight className='inline-block size-4' />}
+        icon={<IconArrowRight className="inline-block size-4" />}
         iconPosition={ButtonIconPosition.RIGHT}
       />
     </nav>
