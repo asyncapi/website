@@ -24,7 +24,7 @@ Here is a list of `ag` options and their equivalents in the AsyncAPI CLI:
 - **-o, --output <outputDir>**
   - **AsyncAPI CLI equivalent:** `asyncapi generate fromTemplate <ASYNCAPI> <TEMPLATE> --output <outputDir>`
 
-- **-p, --param <name&#x3D;value>**
+- **-p, --param &#x3C;name&#x3D;value&#x3E;**
   - **AsyncAPI CLI equivalent:** `asyncapi generate fromTemplate <ASYNCAPI> <TEMPLATE> --param <name=value>`
 
 - **--force-write**
