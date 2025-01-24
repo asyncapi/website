@@ -7,9 +7,13 @@ const {
   checkUrls,
   determineEditLink,
   main
-} = require('../../scripts/markdown/check-edit-links');
+} = require('../../scripts/markdown/check-edit-links.ts');
 const { determineEditLinkData, processBatchData, testPaths } = require('../fixtures/markdown/check-edit-links-data');
+const { logger } = require('../../scripts/utils/logger.ts');
 
+jest.mock('../../scripts/utils/logger', () => ({
+  logger: { info: jest.fn() }
+}));
 jest.mock('node-fetch-2', () => jest.fn());
 
 describe('URL Checker Tests', () => {
@@ -140,22 +144,18 @@ describe('URL Checker Tests', () => {
   describe('main', () => {
     it('should run successfully when all URLs are valid', async () => {
       fetch.mockImplementation(() => Promise.resolve({ status: 200 }));
-      const consoleSpy = jest.spyOn(console, 'log');
 
       await main();
 
-      expect(consoleSpy).toHaveBeenCalledWith('All URLs are valid.');
-      consoleSpy.mockRestore();
+      expect(logger.info).toHaveBeenCalledWith('All URLs are valid.');
     });
 
     it('should report invalid URLs when found', async () => {
       fetch.mockImplementation(() => Promise.resolve({ status: 404 }));
-      const consoleSpy = jest.spyOn(console, 'log');
 
       await main();
 
-      expect(consoleSpy).toHaveBeenCalledWith(expect.stringContaining('URLs returning 404:'));
-      consoleSpy.mockRestore();
+      expect(logger.info).toHaveBeenCalledWith(expect.stringContaining('URLs returning 404:'));
     });
 
     it('should handle errors gracefully', async () => {
