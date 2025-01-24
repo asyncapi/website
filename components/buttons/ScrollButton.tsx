@@ -28,7 +28,7 @@ function ScrollButton() {
   return (
     <div className='fixed bottom-14 right-4 z-40 h-16 w-12'>
       {backToTopButton && (
-        <button className='rounded-full bg-white shadow-md ' onClick={scrollUp}>
+        <button className='rounded-full bg-white shadow-md hover:bg-[#8851FB] hover:scale-110 transition-all duration-300 ease-in-out' onClick={scrollUp}>
           <img src={scrollImage} alt='scroll to top' />
         </button>
       )}
