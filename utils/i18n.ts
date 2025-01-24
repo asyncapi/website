@@ -5,19 +5,19 @@ interface I18nPaths {
 }
 
 export const i18nPaths: I18nPaths = {
-  en: [
+  english: [
     '', // Homepage Route
     '/tools/cli',
     '/newsletter'
   ],
-  de: [
+  deutsch: [
     '', // Homepage Route
     '/tools/cli',
     '/newsletter'
   ]
 };
 
-export const languages = ['en', 'de'];
-export const defaultLanguage = 'en';
+export const languages = ['english', 'deutsch'];
+export const defaultLanguage = 'english';
 
 export { useTranslation };
