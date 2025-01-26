@@ -4,7 +4,7 @@ import { ButtonIconPosition } from '@/types/components/buttons/ButtonPropsType';
 
 import Button from '../buttons/Button';
 import IconNext from '../icons/Next';
-import IconPrevios from '../icons/Previous';
+import IconPrevious from '../icons/Previous';
 import PaginationItem from './PaginationItem';
 
 export interface PaginationProps {
@@ -61,20 +61,22 @@ export default function Pagination({ totalPages, currentPage, onPageChange }: Pa
   };
 
   return (
-    <div className='font-inter flex items-center justify-center gap-8'>
+    <nav role='navigation' aria-label='Pagination' className='font-inter flex items-center justify-center gap-8'>
       {/* Previous button */}
       <Button
         onClick={() => handlePageChange(currentPage - 1)}
+        disabled={currentPage === 1}
         className={`font-normal flex h-[34px] items-center justify-center rounded bg-white px-3 py-[7px] text-sm leading-[17px] tracking-[-0.01em] ${
-          currentPage === 1 ? 'cursor-not-allowed text-gray-300' : 'text-[#141717] hover:bg-gray-50'
+          currentPage === 1 ? 'hover:bg-gray-white cursor-not-allowed text-gray-300' : 'text-[#141717] hover:bg-gray-50'
         }`}
         text='Previous'
-        icon={<IconPrevios />}
+        icon={<IconPrevious />}
         iconPosition={ButtonIconPosition.LEFT}
+        aria-label='Go to previous page'
       />
 
       {/* Page numbers */}
-      <div className='flex gap-2'>
+      <div className='flex gap-2' role='list'>
         {getPageNumbers().map((page) =>
           typeof page === 'number' ? (
             <PaginationItem
@@ -82,11 +84,14 @@ export default function Pagination({ totalPages, currentPage, onPageChange }: Pa
               pageNumber={page}
               isActive={page === currentPage}
               onPageChange={handlePageChange}
+              aria-label={`Go to page ${page}`}
+              aria-current={page === currentPage ? 'page' : undefined}
             />
           ) : (
             <span
               key={page}
               className='font-inter flex size-10 items-center justify-center text-sm font-semibold text-[#6B6B6B]'
+              aria-hidden='true'
             >
               ...
             </span>
@@ -97,12 +102,16 @@ export default function Pagination({ totalPages, currentPage, onPageChange }: Pa
       {/* Next button */}
       <Button
         onClick={() => handlePageChange(currentPage + 1)}
+        disabled={currentPage === totalPages}
         className={`font-normal flex h-[34px] items-center justify-center rounded bg-white px-3 py-[7px] text-sm leading-[17px] tracking-[-0.01em] ${
-          currentPage === totalPages ? 'cursor-not-allowed text-gray-300' : 'text-[#141717] hover:bg-gray-50'
+          currentPage === totalPages
+            ? 'cursor-not-allowedtext-gray-300 hover:bg-gray-white text-gray-300'
+            : 'text-[#141717] hover:bg-gray-50'
         }`}
         text='Next'
         icon={<IconNext />}
+        aria-label='Go to next page'
       />
-    </div>
+    </nav>
   );
 }
