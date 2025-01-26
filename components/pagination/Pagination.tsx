@@ -1,5 +1,10 @@
 import React from 'react';
 
+import { ButtonIconPosition } from '@/types/components/buttons/ButtonPropsType';
+
+import Button from '../buttons/Button';
+import IconNext from '../icons/Next';
+import IconPrevios from '../icons/Previous';
 import PaginationItem from './PaginationItem';
 
 export interface PaginationProps {
@@ -20,31 +25,37 @@ export interface PaginationProps {
  */
 export default function Pagination({ totalPages, currentPage, onPageChange }: PaginationProps) {
   const handlePageChange = (page: number) => {
-    if (page < 1 || page > totalPages) return;
-    onPageChange(page);
+    if (page >= 1 && page <= totalPages) {
+      onPageChange(page);
+    }
   };
 
-  const getPageNumbers = () => {
-    const pages = [];
-
+  /**
+   * @returns number of pages shows in Pagination.
+   */
+  const getPageNumbers = (): (number | string)[] => {
     if (totalPages <= 7) {
-      for (let i = 1; i <= totalPages; i++) pages.push(i);
-    } else {
-      pages.push(1);
-      if (currentPage > 3) {
-        pages.push('ellipsis1');
-      }
-
-      for (let i = Math.max(2, currentPage - 1); i <= Math.min(totalPages - 1, currentPage + 1); i++) {
-        pages.push(i);
-      }
-
-      if (currentPage < totalPages - 2) {
-        pages.push('ellipsis2');
-      }
-
-      pages.push(totalPages);
+      return Array.from({ length: totalPages }, (_, i) => i + 1);
     }
+
+    const pages: (number | string)[] = [1];
+
+    if (currentPage > 3) {
+      pages.push('ellipsis1');
+    }
+
+    const start = Math.max(2, currentPage - 1);
+    const end = Math.min(totalPages - 1, currentPage + 1);
+
+    for (let i = start; i <= end; i++) {
+      pages.push(i);
+    }
+
+    if (currentPage < totalPages - 2) {
+      pages.push('ellipsis2');
+    }
+
+    pages.push(totalPages);
 
     return pages;
   };
@@ -52,27 +63,15 @@ export default function Pagination({ totalPages, currentPage, onPageChange }: Pa
   return (
     <div className='font-inter flex items-center justify-center gap-8'>
       {/* Previous button */}
-      <button
+      <Button
         onClick={() => handlePageChange(currentPage - 1)}
-        disabled={currentPage === 1}
-        className={`
-          font-normal flex h-[34px] items-center justify-center gap-2 rounded bg-white px-4
-          py-[7px] text-sm leading-[17px] tracking-[-0.01em]
-          ${currentPage === 1 ? 'cursor-not-allowed text-gray-300' : 'text-[#141717] hover:bg-gray-50'}
-        `}
-      >
-        <svg
-          width='20'
-          height='20'
-          viewBox='0 0 24 24'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-          className='stroke-current'
-        >
-          <path d='M15 18L9 12L15 6' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
-        </svg>
-        <span>Previous</span>
-      </button>
+        className={`font-normal flex h-[34px] items-center justify-center rounded bg-white px-3 py-[7px] text-sm leading-[17px] tracking-[-0.01em] ${
+          currentPage === 1 ? 'cursor-not-allowed text-gray-300' : 'text-[#141717] hover:bg-gray-50'
+        }`}
+        text='Previous'
+        icon={<IconPrevios />}
+        iconPosition={ButtonIconPosition.LEFT}
+      />
 
       {/* Page numbers */}
       <div className='flex gap-2'>
@@ -96,27 +95,14 @@ export default function Pagination({ totalPages, currentPage, onPageChange }: Pa
       </div>
 
       {/* Next button */}
-      <button
+      <Button
         onClick={() => handlePageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
-        className={`
-          font-normal flex h-[34px] items-center justify-center gap-2 rounded bg-white px-4
-          py-[7px] text-sm leading-[17px] tracking-[-0.01em]
-          ${currentPage === totalPages ? 'cursor-not-allowed text-gray-300' : 'text-[#141717] hover:bg-gray-50'}
-        `}
-      >
-        <span>Next</span>
-        <svg
-          width='20'
-          height='20'
-          viewBox='0 0 24 24'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-          className='stroke-current'
-        >
-          <path d='M9 6L15 12L9 18' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
-        </svg>
-      </button>
+        className={`font-normal flex h-[34px] items-center justify-center rounded bg-white px-3 py-[7px] text-sm leading-[17px] tracking-[-0.01em] ${
+          currentPage === totalPages ? 'cursor-not-allowed text-gray-300' : 'text-[#141717] hover:bg-gray-50'
+        }`}
+        text='Next'
+        icon={<IconNext />}
+      />
     </div>
   );
 }
