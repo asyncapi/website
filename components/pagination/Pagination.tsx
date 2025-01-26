@@ -105,7 +105,7 @@ export default function Pagination({ totalPages, currentPage, onPageChange }: Pa
         disabled={currentPage === totalPages}
         className={`font-normal flex h-[34px] items-center justify-center rounded bg-white px-3 py-[7px] text-sm leading-[17px] tracking-[-0.01em] ${
           currentPage === totalPages
-            ? 'cursor-not-allowedtext-gray-300 hover:bg-gray-white text-gray-300'
+            ? 'hover:bg-gray-white cursor-not-allowed text-gray-300'
             : 'text-[#141717] hover:bg-gray-50'
         }`}
         text='Next'
