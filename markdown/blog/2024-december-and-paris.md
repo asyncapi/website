@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: Community Builder and Open Source Fanatic!
 excerpt: 'November and December Community Update And Paris Conference Summary'
-featured: true
 ---
 I can't believe we are in the final weeks of the year, and it has been an eventful one. As a community, we have experienced both proud and painful moments, celebrated our victories, and faced challenges and losses. However, in the end, we overcame those difficulties and emerged stronger and better.
  
