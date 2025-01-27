@@ -114,10 +114,10 @@ Lastly, I am genuinely thankful for their hard work and commitment to assisting 
 
 ## Where, Too, In 2025?
 For AsyncAPI Conference 2025, we are excited to announce that [APIdays](https://www.apidays.global/) will be hosting us in:
- - Singapore on **the 15th - 16th of April**.
- - Munich on **the 2nd - 3rd of July**.
- - London on **the 22nd - 24th of September**.
- - Paris on **the 9th -11th of December**.
+- Singapore on **the 15th - 16th of April**.
+- Munich on **the 2nd - 3rd of July**.
+- London on **the 22nd - 24th of September**.
+- Paris on **the 9th -11th of December**.
 
 [APIConf Lagos](https://apiconf.net/) will be hosting us in Lagos, Nigeria, on **the 18th - 19th of July**.
 
@@ -130,7 +130,7 @@ Alternatively, for more details on partnerships, please email us at [info.asynca
 
 ## Call for Speakers, Singapore
 
-T[he call for speakers for AsyncAPI Conf Singapore is now open](https://apidays.typeform.com/apidayscfp?typeform-source=www.apidays.global)! Send those proposals and share your knowledge and expertise with the community. The submission deadline is on the 23rd of February, so don't miss out.
+[The call for speakers for AsyncAPI Conf Singapore is now open](https://apidays.typeform.com/apidayscfp?typeform-source=www.apidays.global)! Send those proposals and share your knowledge and expertise with the community. The submission deadline is on the 23rd of February, so don't miss out.
 
 When submitting your proposal, please follow these simple steps to ensure you choose the correct track:
 
@@ -138,6 +138,5 @@ When submitting your proposal, please follow these simple steps to ensure you ch
 2. Choose option A, "apidays Singapore 2025," and click "OK." 
 3. In the conference track selection, choose option I, "AsyncAPI."
 4. After that, you can submit your details!
-
 
 Looking forward to receiving your submissions!
