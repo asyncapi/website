@@ -38,33 +38,35 @@ USAGE
 # Commands
 
 <!-- commands -->
-* [`asyncapi bundle`](#asyncapi-bundle)
-* [`asyncapi config`](#asyncapi-config)
-* [`asyncapi config analytics`](#asyncapi-config-analytics)
-* [`asyncapi config context`](#asyncapi-config-context)
-* [`asyncapi config context add CONTEXT-NAME SPEC-FILE-PATH`](#asyncapi-config-context-add-context-name-spec-file-path)
-* [`asyncapi config context current`](#asyncapi-config-context-current)
-* [`asyncapi config context edit CONTEXT-NAME NEW-SPEC-FILE-PATH`](#asyncapi-config-context-edit-context-name-new-spec-file-path)
-* [`asyncapi config context init [CONTEXT-FILE-PATH]`](#asyncapi-config-context-init-context-file-path)
-* [`asyncapi config context list`](#asyncapi-config-context-list)
-* [`asyncapi config context remove CONTEXT-NAME`](#asyncapi-config-context-remove-context-name)
-* [`asyncapi config context use CONTEXT-NAME`](#asyncapi-config-context-use-context-name)
-* [`asyncapi config versions`](#asyncapi-config-versions)
-* [`asyncapi convert [SPEC-FILE] [PROXYHOST] [PROXYPORT]`](#asyncapi-convert-spec-file-proxyhost-proxyport)
-* [`asyncapi diff OLD NEW`](#asyncapi-diff-old-new)
-* [`asyncapi format [SPEC-FILE]`](#asyncapi-format-spec-file)
-* [`asyncapi generate`](#asyncapi-generate)
-* [`asyncapi generate fromTemplate ASYNCAPI TEMPLATE`](#asyncapi-generate-fromtemplate-asyncapi-template)
-* [`asyncapi generate models LANGUAGE FILE`](#asyncapi-generate-models-language-file)
-* [`asyncapi new`](#asyncapi-new)
-* [`asyncapi new file`](#asyncapi-new-file)
-* [`asyncapi new glee`](#asyncapi-new-glee)
-* [`asyncapi new template`](#asyncapi-new-template)
-* [`asyncapi optimize [SPEC-FILE] [PROXYHOST] [PROXYPORT]`](#asyncapi-optimize-spec-file-proxyhost-proxyport)
-* [`asyncapi pretty SPEC-FILE`](#asyncapi-pretty-spec-file)
-* [`asyncapi start`](#asyncapi-start)
-* [`asyncapi start studio`](#asyncapi-start-studio)
-* [`asyncapi validate [SPEC-FILE] [PROXYHOST] [PROXYPORT]`](#asyncapi-validate-spec-file-proxyhost-proxyport)
+- [Usage](#usage)
+- [Commands](#commands)
+  - [`asyncapi bundle`](#asyncapi-bundle)
+  - [`asyncapi config`](#asyncapi-config)
+  - [`asyncapi config analytics`](#asyncapi-config-analytics)
+  - [`asyncapi config context`](#asyncapi-config-context)
+  - [`asyncapi config context add CONTEXT-NAME SPEC-FILE-PATH`](#asyncapi-config-context-add-context-name-spec-file-path)
+  - [`asyncapi config context current`](#asyncapi-config-context-current)
+  - [`asyncapi config context edit CONTEXT-NAME NEW-SPEC-FILE-PATH`](#asyncapi-config-context-edit-context-name-new-spec-file-path)
+  - [`asyncapi config context init [CONTEXT-FILE-PATH]`](#asyncapi-config-context-init-context-file-path)
+  - [`asyncapi config context list`](#asyncapi-config-context-list)
+  - [`asyncapi config context remove CONTEXT-NAME`](#asyncapi-config-context-remove-context-name)
+  - [`asyncapi config context use CONTEXT-NAME`](#asyncapi-config-context-use-context-name)
+  - [`asyncapi config versions`](#asyncapi-config-versions)
+  - [`asyncapi convert [SPEC-FILE] [PROXYHOST] [PROXYPORT]`](#asyncapi-convert-spec-file-proxyhost-proxyport)
+  - [`asyncapi diff OLD NEW`](#asyncapi-diff-old-new)
+  - [`asyncapi format [SPEC-FILE]`](#asyncapi-format-spec-file)
+  - [`asyncapi generate`](#asyncapi-generate)
+  - [`asyncapi generate fromTemplate ASYNCAPI TEMPLATE`](#asyncapi-generate-fromtemplate-asyncapi-template)
+  - [`asyncapi generate models LANGUAGE FILE`](#asyncapi-generate-models-language-file)
+  - [`asyncapi new`](#asyncapi-new)
+  - [`asyncapi new file`](#asyncapi-new-file)
+  - [`asyncapi new glee`](#asyncapi-new-glee)
+  - [`asyncapi new template`](#asyncapi-new-template)
+  - [`asyncapi optimize [SPEC-FILE] [PROXYHOST] [PROXYPORT]`](#asyncapi-optimize-spec-file-proxyhost-proxyport)
+  - [`asyncapi pretty SPEC-FILE`](#asyncapi-pretty-spec-file)
+  - [`asyncapi start`](#asyncapi-start)
+  - [`asyncapi start studio`](#asyncapi-start-studio)
+  - [`asyncapi validate [SPEC-FILE] [PROXYHOST] [PROXYPORT]`](#asyncapi-validate-spec-file-proxyhost-proxyport)
 
 ## `asyncapi bundle`
 
@@ -586,7 +588,7 @@ DESCRIPTION
 EXAMPLES
   $ asyncapi new	 - start creation of a file in interactive mode
 
-  $ asyncapi new --file-name=my-asyncapi.yml --example=default-example.yml --no-tty	 - create a new file with a specific name, using one of the examples and without interactive mode
+  $ asyncapi new --file-name=my-asyncapi.yaml --example=default-example.yaml --no-tty	 - create a new file with a specific name, using one of the examples and without interactive mode
 ```
 
 _See code: [src/commands/new/index.ts](https://github.com/asyncapi/cli/blob/v2.14.1/src/commands/new/index.ts)_
@@ -786,10 +788,12 @@ starts a new local instance of Studio
 
 ```
 USAGE
-  $ asyncapi start studio [-h] [-f <value>] [-p <value>]
+  $ asyncapi start studio [SPEC_FILE] [-h] [-p <value>]
+
+ARGUMENTS
+  SPEC-FILE  spec path, url, or context-name
 
 FLAGS
-  -f, --file=<value>  path to the AsyncAPI file to link with Studio
   -h, --help          Show CLI help.
   -p, --port=<value>  port in which to start Studio
 
