@@ -1,6 +1,6 @@
 ---
 title: "AsyncAPI Conference 2024 Report"
-date: 2025-01-29T06:00:00+01:00
+date: 2025-01-28T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
@@ -114,20 +114,30 @@ Lastly, I am genuinely thankful for their hard work and commitment to assisting 
 
 ## Where, Too, In 2025?
 For AsyncAPI Conference 2025, we are excited to announce that [APIdays](https://www.apidays.global/) will be hosting us in:
+ - Singapore on **the 15th - 16th of April**.
+ - Munich on **the 2nd - 3rd of July**.
+ - London on **the 22nd - 24th of September**.
+ - Paris on **the 9th -11th of December**.
 
--  
-- 
-- 
--
+[APIConf Lagos](https://apiconf.net/) will be hosting us in Lagos, Nigeria, on **the 18th - 19th of July**.
 
-[APIConf Lagos](https://apiconf.net/) will be hosting us in:
-
-And we will be having our annual AsyncAPI Online Conference in:
+We will also have our annual AsyncAPI Online Conference on **the 29th of October**.
 
 We are looking for financial sponsors, and if you know any company that will be interested, [please download and share our conference sponsorship prospectus](). 
 You can also check out our [Open Collective Page](https://opencollective.com/asyncapi/events/asyncapi-conference-e9fd5b06) to explore sponsorship tiers.
 
 Alternatively, for more details on partnerships, please email us at [info.asyncapi.io](mailto:info.asyncapi.io).
 
-// Section waiting for 
-// waiting for conference prospectus.
+## Call for Speakers, Singapore
+
+T[he call for speakers for AsyncAPI Conf Singapore is now open](https://apidays.typeform.com/apidayscfp?typeform-source=www.apidays.global)! Send those proposals and share your knowledge and expertise with the community. The submission deadline is on the 23rd of February, so don't miss out.
+
+When submitting your proposal, please follow these simple steps to ensure you choose the correct track:
+
+1. Click on the link and select "Start."
+2. Choose option A, "apidays Singapore 2025," and click "OK." 
+3. In the conference track selection, choose option I, "AsyncAPI."
+4. After that, you can submit your details!
+
+
+Looking forward to receiving your submissions!
