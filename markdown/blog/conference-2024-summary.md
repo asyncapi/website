@@ -24,7 +24,7 @@ After a successful partnership with the APIdays Paris event, they offered to spo
 Later in the year, I thought it would be a great idea to bring back the online conference to provide an opportunity for those who can't travel but still want to speak and share their expertise. This idea completed the entire experience, bringing the total number of events to four.
 
 <Figure
-  src="/img/posts/2023-summary/locations.webp"
+  src="/img/posts/2024-conference/venues.webp"
 />
 
 For a detailed summary of what happened at each event, please read the following summaries:
@@ -126,7 +126,7 @@ We will also have our annual AsyncAPI Online Conference on **the 29th of October
 We are looking for financial sponsors, and if you know any company that will be interested, [please download and share our conference sponsorship prospectus](). 
 You can also check out our [Open Collective Page](https://opencollective.com/asyncapi/events/asyncapi-conference-e9fd5b06) to explore sponsorship tiers.
 
-Alternatively, for more details on partnerships, please email us at [info.asyncapi.io](mailto:info.asyncapi.io).
+Alternatively, for more details on partnerships, please email us at [info@asyncapi.io](mailto:info@asyncapi.io).
 
 ## Call for Speakers, Singapore
 
