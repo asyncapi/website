@@ -42,7 +42,7 @@ Secondly, although we have a venue and host sponsor, we still need financial sup
 ## Attendance
 We had an incredible turnout for all our in-person events. The highlight was networking with community members, ambassadors, and friends at the APIs Standards booth. This booth became a hub for discussions with various companies and experts while maintaining vendor neutrality.
 
-Over **580** people attended our in-person conference, and we had more than **450** views during our AsyncAPI Online Conference livestream. Additionally, the recorded sessions received over **446 **views after the conference.
+Over **580** people attended our in-person conference, and we had more than **450** views during our AsyncAPI Online Conference livestream. Additionally, the recorded sessions received over **446** views after the conference.
 
 You can also catch up on the [recordings from the AsyncAPI Online Conference](https://youtube.com/playlist?list=PLbi1gRlP7pijItMBmw9SeeyWxuEa3jLR2&si=nFqLJrn50q4FNRIk).
 
@@ -112,7 +112,7 @@ Lastly, I am genuinely thankful for their hard work and commitment to assisting 
 ]} />
 
 
-## Where, Too, In 2025?
+## Where To In 2025?
 For AsyncAPI Conference 2025, we are excited to announce that [APIdays](https://www.apidays.global/) will be hosting us in:
 - Singapore on **the 15th - 16th of April**.
 - Munich on **the 2nd - 3rd of July**.
