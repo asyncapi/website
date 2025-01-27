@@ -1,12 +1,5 @@
 [
   {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=MHRvMzJtb2pxZWs5bDM4a3Jxb2RhYmVhMmMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1545",
-    "banner": "https://github.com/user-attachments/assets/91fca5af-ae9a-46be-aa44-0f2ef20ce34e",
-    "date": "2024-10-15T08:00:00.000Z"
-  },
-  {
     "title": "Marketing WG Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=NDd1NzNqdWprNWdqc3U3aGsyZnBhOWpobXMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1553",
@@ -19,20 +12,6 @@
     "url": "https://github.com/asyncapi/community/issues/1554",
     "banner": "",
     "date": "2024-11-05T14:00:00.000Z"
-  },
-  {
-    "title": "Design Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=ZWptamE1cWRzdGE5Mjlybm9vcGlqYTJkOXMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1558",
-    "banner": "",
-    "date": "2024-10-17T12:00:00.000Z"
-  },
-  {
-    "title": "AsyncAPI Online Conference 2024 Dry-Run",
-    "calLink": "https://www.google.com/calendar/event?eid=cnY0NDB2Y2dvcm1uZ2V0MmlrdDdyc3ByNTAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1559",
-    "banner": "",
-    "date": "2024-10-18T16:00:00.000Z"
   },
   {
     "title": "AsyncAPI Online Conference 2024",
