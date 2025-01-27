@@ -85,7 +85,7 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
             <a
               className={`pl-${2 ** (item.lvl - 1)} font-normal mb-1 block font-sans text-sm 
                   text-gray-900 antialiased transition duration-100 ease-in-out hover:underline`}
-              href={`#${item.slugWithATag ? item.slug : item.slugWithATag}`}
+              href={`#${item.slug ? item.slug : item.slugWithATag}`}
               key={index}
               data-testid='TOC-Link'
             >
