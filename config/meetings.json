@@ -14,20 +14,6 @@
     "date": "2024-11-05T14:00:00.000Z"
   },
   {
-    "title": "Design Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=ZWptamE1cWRzdGE5Mjlybm9vcGlqYTJkOXMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1558",
-    "banner": "",
-    "date": "2024-10-17T12:00:00.000Z"
-  },
-  {
-    "title": "AsyncAPI Online Conference 2024 Dry-Run",
-    "calLink": "https://www.google.com/calendar/event?eid=cnY0NDB2Y2dvcm1uZ2V0MmlrdDdyc3ByNTAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1559",
-    "banner": "",
-    "date": "2024-10-18T16:00:00.000Z"
-  },
-  {
     "title": "AsyncAPI Online Conference 2024",
     "calLink": "https://www.google.com/calendar/event?eid=cjZwdnVldDd2Z29zb3Jlcm9pdTBvYzJmMnMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1562",
