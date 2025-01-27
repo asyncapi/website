@@ -123,7 +123,7 @@ For AsyncAPI Conference 2025, we are excited to announce that [APIdays](https:/
 
 We will also have our annual AsyncAPI Online Conference on **the 29th of October**.
 
-We are looking for financial sponsors, and if you know any company that will be interested, [please download and share our conference sponsorship prospectus](). 
+We are looking for financial sponsors, and if you know any company that will be interested, [please download and share our conference sponsorship prospectus](https://drive.google.com/file/d/1LxTFLWkRmFQkHOyrwZBL7yqSO2_XPJNq/view?usp=sharing). 
 You can also check out our [Open Collective Page](https://opencollective.com/asyncapi/events/asyncapi-conference-e9fd5b06) to explore sponsorship tiers.
 
 Alternatively, for more details on partnerships, please email us at [info@asyncapi.io](mailto:info@asyncapi.io).
