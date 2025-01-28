@@ -13,7 +13,7 @@ authors:
 excerpt: 'AsyncAPI Conference Summary for 2024'
 featured: true
 ---
-As the saying goes, `"The second time is a charm."` AsyncAPI Conf on Tour returned in 2024 for a set of events in different locations. Not only did we run in-person conferences, but we also brought back our beloved online conference this time around, making the whole experience complete.
+As the saying goes, `"The second time is a charm."` AsyncAPI Conf on Tour returned in 2024 for a set of events across different locations. Not only did we run in-person conferences, but we also brought back our beloved online conference this time around, making the whole experience complete.
 
 In the AsyncAPI Conf on Tour 2023, I mentioned a few things I would love to improve; let's see what we changed, the challenges we faced, and what we are changing as we advance.
 
