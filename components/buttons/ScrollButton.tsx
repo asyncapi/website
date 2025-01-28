@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
 /**
@@ -26,10 +27,13 @@ function ScrollButton() {
   };
 
   return (
-    <div className='fixed bottom-14 right-4 z-40 h-16 w-12'>
+    <div className='fixed bottom-4 right-4 z-40'>
       {backToTopButton && (
-        <button className='rounded-full bg-white shadow-md ' onClick={scrollUp}>
-          <img src={scrollImage} alt='scroll to top' />
+        <button
+          className='flex size-10 items-center justify-center rounded-full bg-white shadow-md '
+          onClick={scrollUp}
+        >
+          <Image src={scrollImage} alt='scroll to top' height={30} width={30} />
         </button>
       )}
     </div>
