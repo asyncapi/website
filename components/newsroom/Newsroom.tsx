@@ -69,7 +69,7 @@ export default function Newsroom() {
         </div>
 
         <div className='w-full flex-row items-stretch justify-between md:flex md:h-120 lg:w-3/4'>
-          <div className='relative flex w-full flex-col overflow-y-auto md:w-1/2'>
+          <div className='relative flex w-full flex-col overflow-y-auto'>
             <div className='min-h-0'>
               <div className='md:t-0 md:b-0 md:l-0 md:r-0 size-full md:absolute'>
                 <NewsroomArticle />
