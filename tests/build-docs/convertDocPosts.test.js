@@ -1,10 +1,10 @@
-const { convertDocPosts } = require('../../scripts/build-docs');
-const { 
-  docObject, 
-  emptyDocObject, 
-  singlePostDocObject, 
+const { convertDocPosts } = require('../../scripts/build-docs.ts');
+const {
+  docObject,
+  emptyDocObject,
+  singlePostDocObject,
   nestedChildrenDocObject
- } = require('../fixtures/convertDocPostData');
+} = require('../fixtures/convertDocPostData');
 
 describe('convertDocPosts', () => {
   it('should convert a doc object to an array', () => {
@@ -58,5 +58,4 @@ describe('convertDocPosts', () => {
     }
     expect(error).toBeDefined();
   });
-
 });
