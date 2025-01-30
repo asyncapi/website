@@ -1,7 +1,10 @@
 name: Validate case studies structures
 
 on:
-  push: 
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
+    paths:
+      - 'config/casestudies/*.yml'
 
 jobs:
   validate:
