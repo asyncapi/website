@@ -66,6 +66,9 @@ export default function Filter({ data, onFilter, checks, className }: FilterProp
 
           if (e) {
             newQuery[check.name] = e;
+          } else {
+            // Remove a specific filter upon clicking Select Placeholder option
+            delete newQuery[check.name];
           }
           if (newQuery) {
             const queryParams = new URLSearchParams(newQuery as { [key: string]: string }).toString();

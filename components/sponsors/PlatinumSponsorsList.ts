@@ -1,6 +1,6 @@
 import type { SponsorType } from '@/types/components/sponsors/SponsorType';
 
-export const sponsors: SponsorType[] = [
+export const platinumSponsors: SponsorType[] = [
   {
     name: 'Solace',
     website: 'https://www.solace.com',
