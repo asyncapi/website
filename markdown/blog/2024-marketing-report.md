@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/atinuke-oluwabamikemi-kayode-5b838b1b7/
     byline: AsyncAPI Community Marketing Specialist
 excerpt: 'A comprehensive review of AsyncAPI Marketing Working Group achievements in 2024, including social media growth, store closure updates, and future initiatives like the Student Ambassador Program'
-featured: true
 ---
 
 
