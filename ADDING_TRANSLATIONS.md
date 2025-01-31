@@ -54,7 +54,7 @@ Example:
 `ICSFileButton.js`
 ```diff
 ...
-+ import { useTranslation } from '../../lib/i18n';
++ import { useTranslation } from '../../utils/i18n';
 
 export default function ICSFButton({
 - text = 'Download ICS File',
@@ -186,7 +186,7 @@ After adding a new internationalized page, test it to sure the page is being ser
   +   getAllLanguageSlugs,
   +   getLanguage,
   +   useTranslation
-  + } from "../../lib/i18n";
+  + } from "../../utils/i18n";
 
   export default function NewsletterIndexPage() {
 
