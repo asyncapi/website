@@ -21,8 +21,8 @@ import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 import NewsroomSection from '../../components/newsroom/NewsroomSection';
 import Slack from '../../components/slack';
 import GoldSponsors from '../../components/sponsors/GoldSponsors';
+import PlatinumSponsors from '../../components/sponsors/PlatinumSponsors';
 import SilverSponsors from '../../components/sponsors/SilverSponsors';
-import Sponsors from '../../components/sponsors/Sponsors';
 import SupportUs from '../../components/SupportUs/SupportUs';
 import Testimonial from '../../components/Testimonial';
 import Heading from '../../components/typography/Heading';
@@ -149,7 +149,7 @@ export default function HomePage() {
             <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
               {t('sponsors.platinumTitle')}
             </Heading>
-            <Sponsors className='mt-4' showSupportBanner={false} />
+            <PlatinumSponsors className='mt-4' showSupportBanner={false} />
           </Container>
 
           <Container className='pb-6 text-center' wide as='section'>
