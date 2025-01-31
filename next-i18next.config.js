@@ -6,5 +6,5 @@ module.exports = {
       defaultNamespace: 'landing-page',
       react: { useSuspense: false },// this line
     },
-  
+
   };
