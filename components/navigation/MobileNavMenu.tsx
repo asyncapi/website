@@ -30,7 +30,7 @@ interface MobileNavMenuProps {
  * @param {MobileNavMenuProps} props - The props for the MobileNavMenu component.
  */
 export default function MobileNavMenu({
-  onClickClose = () => {},
+  onClickClose = () => { },
   uniqueLangs,
   currentLanguage,
   changeLanguage
@@ -153,7 +153,7 @@ export default function MobileNavMenu({
                       className={`mb-4 ml-2 block w-full rounded-lg py-1 text-start text-sm font-medium leading-6 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-50 ${currentLanguage.toLowerCase() === lang.text.toLowerCase() ? 'text-secondary-500' : ''}`}
                       data-testid='MobileNav-language-item'
                     >
-                      {lang.text}
+                      {lang.text.toUpperCase()}
                     </button>
                   ))}
               </div>

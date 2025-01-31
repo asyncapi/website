@@ -29,7 +29,7 @@ export const getStaticPaths = () => ({
  * @returns An object containing the internationalization props.
  */
 export async function getI18nProps(ctx: any, ns = ['common']) {
-  const locale = ctx?.params?.lang ? ctx.params.lang : 'english';
+  const locale = ctx?.params?.lang ? ctx.params.lang : 'en';
   const props = {
     ...(await serverSideTranslations(locale, ns))
   };
