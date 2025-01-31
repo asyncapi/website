@@ -59,6 +59,10 @@ export default function NewsletterSubscribe({
 
   const setFormStatus = (formResponse: FormStatus) => {
     setStatus(formResponse);
+    if (formResponse === FormStatus.ERROR) {
+      setEmail('');
+      setName('');
+    }
     setTimeout(() => {
       setStatus(FormStatus.NORMAL);
     }, 10000);
