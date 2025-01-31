@@ -27,7 +27,7 @@ export default function LanguageSelect({ className = '', onChange = () => { }, o
         >
           {options.map((option, index) => (
             <option key={index} value={option.value} data-testid='Option-form'>
-              {option.text.toUpperCase()}
+              {option.text}
             </option>
           ))}
         </select>

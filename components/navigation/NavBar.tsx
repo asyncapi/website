@@ -56,7 +56,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
     // Filter unique languages based on i18nPaths that include the modified pathnameWithoutLocale
     const uniqueLangs = Object.keys(i18nPaths)
       .filter((lang) => i18nPaths[lang].includes(pathnameWithoutLocale))
-      .map((lang) => lang.charAt(0).toUpperCase() + lang.slice(1));
+      .map((lang) => lang.toUpperCase());
 
     // If no unique languages are found, default to ["EN"]
     return uniqueLangs.length === 0 ? ['EN'] : uniqueLangs;
