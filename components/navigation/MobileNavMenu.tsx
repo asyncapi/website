@@ -30,7 +30,7 @@ interface MobileNavMenuProps {
  * @param {MobileNavMenuProps} props - The props for the MobileNavMenu component.
  */
 export default function MobileNavMenu({
-  onClickClose = () => { },
+  onClickClose = () => {},
   uniqueLangs,
   currentLanguage,
   changeLanguage

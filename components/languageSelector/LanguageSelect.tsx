@@ -11,7 +11,7 @@ import IconLanguage from '../icons/Language';
  * @param {Array} [props.options=[]] - An array of options for the select dropdown.
  * @param {string} props.selected - The currently selected option value.
  */
-export default function LanguageSelect({ className = '', onChange = () => { }, options = [], selected }: SelectProps) {
+export default function LanguageSelect({ className = '', onChange = () => {}, options = [], selected }: SelectProps) {
   return (
     <div className='relative inline-block'>
       <div className='relative flex items-center gap-2'>
