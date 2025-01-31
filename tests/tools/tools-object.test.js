@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { convertTools, createToolObject } = require('../../scripts/tools/tools-object');
+const { convertTools, createToolObject } = require('../../scripts/tools/tools-object.ts');
 const {
   createToolFileContent,
   createExpectedToolObject,
@@ -7,11 +7,17 @@ const {
   createMalformedYAML
 } = require('../helper/toolsObjectData');
 
+const { logger } = require('../../scripts/utils/logger.ts');
+
+jest.mock('../../scripts/utils/logger', () => ({
+  logger: { warn: jest.fn(), error: jest.fn() }
+}));
+
 jest.mock('axios');
 jest.mock('../../scripts/tools/categorylist', () => ({
   categoryList: [
     { name: 'Category1', tag: 'Category1', description: 'Description for Category1' },
-    { name: 'Others', tag: 'Others', description: 'Other tools category' },
+    { name: 'Others', tag: 'Others', description: 'Other tools category' }
   ]
 }));
 
@@ -42,13 +48,27 @@ describe('Tools Object', () => {
       additionalLinks: { docsUrl: 'https://docs.example.com' }
     });
 
-    const result = await createToolObject(
-      toolFile,
-      expected.links.repoUrl,
-      'Repository Description',
-      true
-    );
+    const result = await createToolObject(toolFile, expected.links.repoUrl, 'Repository Description', true);
 
+    expect(result).toEqual(expected);
+  });
+  it('should create a tool object one parameters', async () => {
+    // We will pass only the first parameter in the createToolObject
+    const toolFile = createToolFileContent({
+      title: 'Test Tool',
+      description: 'Test Description',
+      hasCommercial: true,
+      additionalLinks: { docsUrl: 'https://docs.example.com' }
+    });
+
+    const expected = createExpectedToolObject({
+      title: 'Test Tool',
+      description: 'Test Description',
+      hasCommercial: true,
+      additionalLinks: { docsUrl: 'https://docs.example.com' }
+    });
+    expected.filters.isAsyncAPIOwner = '';
+    const result = await createToolObject(toolFile);
     expect(result).toEqual(expected);
   });
 
@@ -81,8 +101,11 @@ describe('Tools Object', () => {
 
     await convertTools(mockData);
 
-    expect(console.error).toHaveBeenCalledWith(expect.stringContaining('Script is not failing'));
-    expect(console.error).toHaveBeenCalledWith(expect.stringContaining('Invalid .asyncapi-tool file'));
+    expect(logger.warn).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'Script is not failing, it is just dropping errors for further investigation.\nInvalid .asyncapi-tool file.'
+      )
+    );
   });
 
   it('should add duplicate tool objects to the same category', async () => {
@@ -120,10 +143,12 @@ describe('Tools Object', () => {
   });
 
   it('should throw an error if axios.get fails', async () => {
-    const mockData = createMockData([{
-      name: '.asyncapi-tool-error',
-      repoName: 'error-tool'
-    }]);
+    const mockData = createMockData([
+      {
+        name: '.asyncapi-tool-error',
+        repoName: 'error-tool'
+      }
+    ]);
 
     axios.get.mockRejectedValue(new Error('Network Error'));
 
@@ -138,24 +163,25 @@ describe('Tools Object', () => {
   it('should use repository description when tool description is missing', async () => {
     const toolFile = createToolFileContent({
       title: 'No Description Tool',
-      description: '',
+      description: ''
     });
-  
+
     const repositoryDescription = 'Fallback Repository Description';
-    const mockData = createMockData([{
-      name: '.asyncapi-tool-no-description',
-      repoName: 'no-description',
-      description: repositoryDescription
-    }]);
-  
+    const mockData = createMockData([
+      {
+        name: '.asyncapi-tool-no-description',
+        repoName: 'no-description',
+        description: repositoryDescription
+      }
+    ]);
+
     axios.get.mockResolvedValue({ data: toolFile });
-  
+
     const result = await convertTools(mockData);
-  
+
     const toolObject = result.Category1.toolsList[0];
-  
+
     expect(toolObject.description).toBe(repositoryDescription);
     expect(toolObject.title).toBe('No Description Tool');
   });
-
 });
