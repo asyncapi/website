@@ -39,7 +39,7 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
       // a-namedefinitionsapplicationaapplication slugWithATag contains transformed heading name that is later used
       // for scroll spy identification
       slugWithATag: item.content
-        .replace(/[<>?!:`'."\\/=,]/gi, '')
+        .replace(/[<>?!:`'."\\/=@#$%^&*()\[\]{}+,;]/gi, '')
         .replace(/\s/gi, '-')
         .toLowerCase()
     }));
