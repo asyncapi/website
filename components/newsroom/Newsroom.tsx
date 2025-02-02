@@ -68,15 +68,18 @@ export default function Newsroom() {
           </div>
         </div>
 
-        <div className='w-full flex-row items-stretch justify-between md:flex md:h-120 lg:w-3/4'>
-          <div className='relative flex w-full flex-col overflow-y-auto md:w-1/2'>
-            <div className='min-h-0'>
-              <div className='md:t-0 md:b-0 md:l-0 md:r-0 size-full md:absolute'>
+        <div className="flex flex-col sm:flex-row w-full lg:w-3/4 h-auto md:h-[30rem] bg-white  shadow-lg rounded-xl overflow-hidden">
+          {/* Left Content */}
+          <div className="relative flex w-full flex-col p-4 sm:p-6 overflow-y-auto scrollbar-hide">
+            <div className="min-h-0">
+              <div className="relative sm:absolute inset-0 flex items-center justify-center">
                 <NewsroomArticle />
               </div>
             </div>
           </div>
         </div>
+
+
       </div>
 
       <hr />
