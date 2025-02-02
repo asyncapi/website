@@ -138,7 +138,7 @@ export default function BlogIndexPage() {
               <TextLink href='/rss.xml'> RSS Feed</TextLink>, too!
             </Paragraph>
           </div>
-          <div className='mx:64 mt-12 md:flex md:justify-center lg:justify-start'>
+          <div className='mx:64 mt-12 md:flex md:justify-center lg:justify-center'>
             <Filter
               data={navItems || []}
               onFilter={onFilter}
