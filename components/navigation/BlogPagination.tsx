@@ -31,7 +31,7 @@ export default function BlogPagination({
   blogsPerPage,
   totalBlogs,
   paginate,
-  currentPage,
+  currentPage
 }: BlogPaginationProps): JSX.Element {
   const totalPages: number = Math.ceil(totalBlogs / blogsPerPage);
   const pagesToShow: number = 6;
@@ -79,24 +79,21 @@ export default function BlogPagination({
   }, [currentPage, totalBlogs]);
 
   return (
-    <nav
-      aria-label="Blog pagination"
-      className="mt-8 flex items-center justify-center gap-2 p-4"
-    >
+    <nav aria-label='Blog pagination' className='mt-8 flex items-center justify-center gap-2 p-4'>
       {/* Previous button */}
       <Button
         className={`flex items-center gap-2 ${currentPage === 1 ? 'cursor-not-allowed opacity-50' : ''} size-[120px] rounded-l-md px-4 py-2`}
-        aria-label="Previous page"
-        bgClassName="bg-white"
-        textClassName="text-[#212525] font-inter text-[14px] font-normal"
-        text="Previous"
+        aria-label='Previous page'
+        bgClassName='bg-white'
+        textClassName='text-[#212525] font-inter text-[14px] font-normal'
+        text='Previous'
         disabled={currentPage === 1}
         onClick={() => paginate(currentPage - 1)}
         icon={<IconPrevious />}
         iconPosition={ButtonIconPosition.LEFT}
       />
       {/* Page numbers */}
-      <div className="flex w-[35vw] justify-center gap-3">
+      <div className='flex w-[35vw] justify-center gap-3'>
         {pageNumbers.map((number, index) => (
           <button
             key={index}
@@ -113,9 +110,9 @@ export default function BlogPagination({
       {/* Next button */}
       <Button
         className={`flex items-center gap-2 ${currentPage === totalPages && 'cursor-not-allowed opacity-50'} h-[35px] w-[120px] rounded-l-md px-4 py-2`}
-        bgClassName="bg-white"
-        textClassName="text-[#212525] font-inter text-[14px] font-normal"
-        text="Next"
+        bgClassName='bg-white'
+        textClassName='text-[#212525] font-inter text-[14px] font-normal'
+        text='Next'
         disabled={currentPage === totalPages}
         onClick={() => paginate(currentPage + 1)}
         icon={<IconNext />}

@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router';
-import React, { useContext, useEffect, useState, useMemo } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 
 import Empty from '@/components/illustrations/Empty';
 import GenericLayout from '@/components/layout/GenericLayout';
 import Loader from '@/components/Loader';
+import BlogPagination from '@/components/navigation/BlogPagination';
 import BlogPostItem from '@/components/navigation/BlogPostItem';
 import Filter from '@/components/navigation/Filter';
 import Heading from '@/components/typography/Heading';
@@ -13,7 +14,6 @@ import BlogContext from '@/context/BlogContext';
 import type { IBlogPost } from '@/types/post';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
-import BlogPagination from '@/components/navigation/BlogPagination';
 
 /**
  * @description The BlogIndexPage is the blog index page of the website.
@@ -55,12 +55,12 @@ export default function BlogIndexPage() {
     router.push(
       {
         pathname: router.pathname,
-        query: { ...(page && { page }) },
+        query: { ...(page && { page }) }
       },
       undefined,
       {
-        shallow: true,
-      },
+        shallow: true
+      }
     );
   };
   const showClearFilters = Object.keys(router.query).length > 1;
@@ -82,24 +82,29 @@ export default function BlogIndexPage() {
     const { query } = router;
     const newQuery = {
       ...query,
-      page: pageNumber,
+      page: pageNumber
     };
+
     router.push(
       {
         pathname: router.pathname,
-        query: newQuery,
+        query: newQuery
       },
       undefined,
       {
-        shallow: true,
-      },
+        shallow: true
+      }
     );
   };
 
-  useEffect(()=>{
-    const currentPageNumber = Math.max(1, Number.isNaN(parseInt(router.query.page as string, 10)) ? 1 : parseInt(router.query.page as string, 10));
-    setCurrentPage(currentPageNumber); 
-  },[router.query.page]);
+  useEffect(() => {
+    const currentPageNumber = Math.max(
+      1,
+      Number.isNaN(parseInt(router.query.page as string, 10)) ? 1 : parseInt(router.query.page as string, 10)
+    );
+
+    setCurrentPage(currentPageNumber);
+  }, [router.query.page]);
 
   useEffect(() => {
     setIsClient(true);
@@ -156,8 +161,7 @@ export default function BlogIndexPage() {
             )}
           </div>
           <div>
-            {(Object.keys(posts).length === 0 ||
-              Object.keys(currentPosts).length === 0) && (
+            {(Object.keys(posts).length === 0 || Object.keys(currentPosts).length === 0) && (
               <div className='mt-16 flex flex-col items-center justify-center'>
                 <Empty />
                 <p className='mx-auto mt-3 max-w-2xl text-xl leading-7 text-gray-500'>No post matches your filter</p>
@@ -176,12 +180,12 @@ export default function BlogIndexPage() {
               </div>
             )}
             {/* Pagination component */}
-              <BlogPagination
-                blogsPerPage={blogsPerPage}
-                totalBlogs={posts.length}
-                paginate={paginate}
-                currentPage={currentPage}
-              />
+            <BlogPagination
+              blogsPerPage={blogsPerPage}
+              totalBlogs={posts.length}
+              paginate={paginate}
+              currentPage={currentPage}
+            />
           </div>
         </div>
       </div>
