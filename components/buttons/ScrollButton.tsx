@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Image from "next/image";
 
 /**
  * @returns {JSX.Element} The ScrollButton component
@@ -26,13 +27,13 @@ function ScrollButton() {
   };
 
   return (
-    <div className='fixed bottom-14 right-4 z-40 h-16 w-12'>
+    <div className='fixed bottom-6 right-6 m-0 flex z-40 w-12'>
       {backToTopButton && (
         <button
-          className='rounded-full bg-white shadow-md transition-all duration-300 ease-in-out hover:scale-110 hover:bg-[#8851FB]'
+          className='rounded-full bg-white shadow-darkGunMetal border border-black/25'
           onClick={scrollUp}
         >
-          <img src={scrollImage} alt='scroll to top' />
+         <Image src={scrollImage}  alt='scroll to top' width={120} height={120} />
         </button>
       )}
     </div>
