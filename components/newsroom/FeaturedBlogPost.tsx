@@ -9,6 +9,7 @@ import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 import AuthorAvatars from '../AuthorAvatars';
+import Button from '../buttons/Button';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 
@@ -106,6 +107,18 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
                     <span data-testid='FeaturedBlogPost-RT'>{post.readingTime} min read</span>
                   </Paragraph>
                 </div>
+              </div>
+              <div className='mt-4 flex items-center justify-between'>
+                <Paragraph typeStyle={ParagraphTypeStyle.sm} className='text-gray-600'>
+                  {post.readingTime} min read
+                </Paragraph>
+                <span className='mx-1 text-gray-300'>•</span>
+                <Button
+                  href={post.slug}
+                  text='Read More →'
+                  className='inline-flex items-center rounded-full bg-primary-500 px-4 py-1.5 text-sm font-medium text-white transition-all duration-200 hover:bg-primary-600'
+                  data-testid='FeaturedBlogPost-ReadMore'
+                />
               </div>
             </div>
           </span>
