@@ -18,11 +18,11 @@ export function shouldShowBanner(cfpDeadline: string) {
 export const banners = [
   {
     title: 'AsyncAPI Conference',
-    city: 'Paris Edition',
-    dateLocation: '5th of December, 2024 | France, Paris',
-    cfaText: 'Get Your Free Ticket',
-    eventName: 'the AsyncAPI Conf in Paris',
-    cfpDeadline: '2024-12-01T06:00:00Z',
-    link: 'https://conference.asyncapi.com/#tickets'
+    city: 'Singapore Edition',
+    dateLocation: '15th - 16th of April, 2025 | Marina Bay, Singapore',
+    cfaText: 'Apply To Speak',
+    eventName: 'the end of Call for Speakers',
+    cfpDeadline: '2025-02-24T06:00:00Z',
+    link: 'https://apidays.typeform.com/apidayscfp?typeform-source=www.apidays.global'
   }
 ];
