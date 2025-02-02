@@ -22,23 +22,15 @@ function ScrollButton() {
   const scrollUp = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: 'smooth'
     });
   };
 
   return (
-    <div className="fixed z-40 flex w-12 bottom-6 right-6 m-0">
+    <div className='fixed bottom-6 right-6 z-40 m-0 flex w-12'>
       {backToTopButton && (
-        <button
-          className="rounded-full border border-black/25 bg-white shadow-darkGunMetal"
-          onClick={scrollUp}
-        >
-          <Image
-            src={scrollImage}
-            alt="scroll to top"
-            width={120}
-            height={120}
-          />
+        <button className='rounded-full border border-black/25 bg-white shadow-darkGunMetal' onClick={scrollUp}>
+          <Image src={scrollImage} alt='scroll to top' width={120} height={120} />
         </button>
       )}
     </div>
