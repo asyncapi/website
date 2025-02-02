@@ -181,7 +181,7 @@ export default function CommunityIndexPage() {
         />
       </div>
       <div className='mt-10 flex justify-center'>
-        <div className='m-5 p-8 bg-gray-100 rounded-lg shadow-md w-full max-w-6xl'>
+        <div className='m-5 w-full max-w-6xl rounded-lg bg-gray-100 p-8 shadow-md'>
           <div className='w-full'>
             <Card
               type={CardType.SMALL}
