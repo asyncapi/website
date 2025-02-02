@@ -27,7 +27,7 @@ function ScrollButton() {
   };
 
   return (
-    <div className='fixed bottom-6 right-6 z-40 m-0 flex w-12'>
+    <div className='fixed flex  z-40 bottom-6 right-6  m-0  w-12'>
       {backToTopButton && (
         <button className='rounded-full border border-black/25 bg-white shadow-darkGunMetal' onClick={scrollUp}>
           <Image src={scrollImage} alt='scroll to top' width={120} height={120} />
