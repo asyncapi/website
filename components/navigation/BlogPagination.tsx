@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { ButtonIconPosition } from '@/types/components/buttons/ButtonPropsType';
 
 import Button from '../buttons/Button';
-import IconArrowLeft from '../icons/ArrowLeft';
-import IconArrowRight from '../icons/ArrowRight';
+import IconNext from '../icons/Next';
+import IconPrevious from '../icons/Previous';
 
 /**
  * Props for the BlogPagination component
@@ -85,14 +85,14 @@ export default function BlogPagination({
     >
       {/* Previous button */}
       <Button
-        className={`${currentPage === 1 ? 'cursor-not-allowed opacity-50' : ''} size-[120px] rounded-l-md px-4 py-2`}
+        className={`flex items-center gap-2 ${currentPage === 1 ? 'cursor-not-allowed opacity-50' : ''} size-[120px] rounded-l-md px-4 py-2`}
         aria-label="Previous page"
         bgClassName="bg-white"
         textClassName="text-[#212525] font-inter text-[14px] font-normal"
         text="Previous"
         disabled={currentPage === 1}
         onClick={() => paginate(currentPage - 1)}
-        icon={<IconArrowLeft className="inline-block size-4" />}
+        icon={<IconPrevious />}
         iconPosition={ButtonIconPosition.LEFT}
       />
       {/* Page numbers */}
@@ -112,13 +112,13 @@ export default function BlogPagination({
       </div>
       {/* Next button */}
       <Button
-        className={`${currentPage === totalPages && 'cursor-not-allowed opacity-50'} h-[35px] w-[120px] rounded-l-md px-4 py-2`}
+        className={`flex items-center gap-2 ${currentPage === totalPages && 'cursor-not-allowed opacity-50'} h-[35px] w-[120px] rounded-l-md px-4 py-2`}
         bgClassName="bg-white"
         textClassName="text-[#212525] font-inter text-[14px] font-normal"
         text="Next"
         disabled={currentPage === totalPages}
         onClick={() => paginate(currentPage + 1)}
-        icon={<IconArrowRight className="inline-block size-4" />}
+        icon={<IconNext />}
         iconPosition={ButtonIconPosition.RIGHT}
       />
     </nav>

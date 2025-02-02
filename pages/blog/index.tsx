@@ -170,18 +170,18 @@ export default function BlogIndexPage() {
                 ))}
               </ul>
             )}
-            {Object.keys(posts).length > 0 && !isClient && (
+            {Object.keys(currentPosts).length > 0 && !isClient && (
               <div className='h-screen w-full'>
                 <Loader loaderText='Loading Blogs' className='mx-auto my-60' pulsating />
               </div>
             )}
             {/* Pagination component */}
-            <BlogPagination
-              blogsPerPage={blogsPerPage}
-              totalBlogs={posts.length}
-              paginate={paginate}
-              currentPage={currentPage}
-            />
+              <BlogPagination
+                blogsPerPage={blogsPerPage}
+                totalBlogs={posts.length}
+                paginate={paginate}
+                currentPage={currentPage}
+              />
           </div>
         </div>
       </div>
