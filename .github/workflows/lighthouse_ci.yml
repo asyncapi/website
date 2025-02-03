@@ -45,19 +45,18 @@ jobs:
           site_name: asyncapi-website
           max_timeout: 600
 
-       - if: steps.should_run.outputs.shouldrun == 'true'
-          name: Lighthouse Audit
-          id: lighthouse_audit
-          uses: treosh/lighthouse-ci-action@v10.1.0
-          with:
-           urls: |
-           https://deploy-preview-$PR_NUMBER--asyncapi-website.netlify.app/
+      - if: steps.should_run.outputs.shouldrun == 'true'
+        name: Lighthouse Audit
+        id: lighthouse_audit
+        uses: treosh/lighthouse-ci-action@03becbfc543944dd6e7534f7ff768abb8a296826 #version 10.1 https://github.com/treosh/lighthouse-ci-action/releases/tag/10.1.0
+        with:
+          urls: |
+            https://deploy-preview-$PR_NUMBER--asyncapi-website.netlify.app/
           configPath: ./.github/workflows/lighthouserc.json
           uploadArtifacts: true
-          artifactName: lhci-results-${{ github.run_id }}  
           temporaryPublicStorage: true
-          env:
-           PR_NUMBER: ${{ github.event.pull_request.number}}
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number}}
 
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Lighthouse Score Report
@@ -94,4 +93,3 @@ jobs:
           number: ${{ github.event.pull_request.number }}
           header: lighthouse
           message: ${{ steps.lighthouse_score_report.outputs.comment }}
-  
