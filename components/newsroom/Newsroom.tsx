@@ -68,10 +68,10 @@ export default function Newsroom() {
           </div>
         </div>
 
-        <div className='flex flex-col sm:flex-row w-full lg:w-3/4 h-auto md:h-120 bg-white shadow-lg rounded-xl overflow-hidden'>
-          <div className='relative flex w-full flex-col p-4 sm:p-6 overflow-y-auto scrollbar-hide'>
+        <div className='flex h-auto w-full flex-col overflow-hidden rounded-xl bg-white shadow-lg sm:flex-row md:h-120 lg:w-3/4'>
+          <div className='scrollbar-hide relative flex w-full flex-col overflow-y-auto p-4 sm:p-6'>
             <div className='min-h-0'>
-              <div className='relative sm:absolute inset-0 flex items-center justify-center'>
+              <div className='relative inset-0 flex items-center justify-center sm:absolute'>
                 <NewsroomArticle />
               </div>
             </div>
