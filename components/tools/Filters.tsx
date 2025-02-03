@@ -139,16 +139,15 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
               )}
               onClick={() => (checkPaid === 'free' ? setCheckPaid('all') : setCheckPaid('free'))}
             >
-              <div className='text-sm'>Open Source</div>
-              <img src='/img/illustrations/icons/FreeIcon.svg' alt='Free' />
+              <div className='text-sm mt-2.5 '>Open Source</div>
+              <img className='lg:size-7 mt-3 size-7' src='/img/illustrations/icons/FreeIcon.svg' alt='Free' />
             </div>
-            <div
-              className={`flex cursor-pointer gap-1 rounded-md border bg-gray-200 px-4 py-2 hover:border-secondary-500 hover:bg-secondary-100 ${checkPaid === 'paid' ? 'border-secondary-500 bg-secondary-100' : ''}`}
+            <div className={`flex cursor-pointer gap-1 rounded-md border bg-gray-200 px-4 py-2 hover:border-secondary-500 hover:bg-secondary-100 ${checkPaid === 'paid' ? 'border-secondary-500 bg-secondary-100' : ''}`}
               onClick={() => (checkPaid === 'paid' ? setCheckPaid('all') : setCheckPaid('paid'))}
             >
-              <div className='text-sm'>Commercial</div>
-              <img src='/img/illustrations/icons/PaidIcon.svg' alt='Paid' />
-            </div>
+              <div className='text-sm mt-4'>Commercial</div>
+            <img className='pr-6 md:pr-5 lg:pr-8 mt-2 ml-1 mb-1' src='/img/illustrations/icons/PaidIcon.svg' alt='Paid' />
+              </div>
           </div>
         </div>
         <hr className='my-4' />
