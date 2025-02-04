@@ -116,13 +116,15 @@ function AlgoliaModal({ onClose, initialQuery, indexName }: AlgoliaModalProps) {
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 10); // Small delay for smooth entry
-    return () => clearTimeout(timer);  // Cleanup function
+
+    return () => clearTimeout(timer); // Cleanup function
   }, []);
-  
+
   const handleClose = () => {
     setIsVisible(false);
     const timer = setTimeout(onClose, 300); // Delay closing to allow animation to finish
-    return () => clearTimeout(timer);  // Cleanup function
+
+    return () => clearTimeout(timer); // Cleanup function
   };
 
   return createPortal(
