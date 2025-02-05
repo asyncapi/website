@@ -120,3 +120,25 @@ October:
     Amount: '2000.00'
   - Category: JSON Schema Sponsorship
     Amount: '250.00'
+November:
+  - Category: Swag Store
+    Amount: '472.36'
+  - Category: Community Manager
+    Amount: '2000.00'
+  - Category: Community Marketing Specialist
+    Amount: '2000.00'
+  - Category: JSON Schema Sponsorship
+    Amount: '250.00'
+December:
+  - Category: Bounty Program
+    Amount: '1400.00'
+  - Category: Swag Store
+    Amount: '917.99'
+  - Category: Community Manager
+    Amount: '2000.00'
+  - Category: Community Marketing Specialist
+    Amount: '2000.00'
+  - Category: JSON Schema Sponsorship
+    Amount: '250.00'
+  - Category: AsyncAPI Conf on Tour 2024
+    Amount: '2767.99'
