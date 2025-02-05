@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/uxvj_yadrKw/hqdefault.jpg",
+    "title": "Marketing WG Meeting, 14:00 UTC Tuesday February 4th 2025",
+    "description": "https://github.com/asyncapi/community/issues/1657.",
+    "videoId": "uxvj_yadrKw"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/5hY8yi6DXyE/hqdefault.jpg",
     "title": "Marketing WG Meeting, 14:00 UTC Tuesday December 17th 2024",
     "description": "Welcoming the 2024 cohort of the AsyncAPI mentorship program.",
@@ -22,11 +28,5 @@
     "title": "AsyncAPI-Powered Event Feeds: 3 Steps to Streaming",
     "description": "In this livestream, we'll dive into the challenges and benefits of using AsyncAPI for building event-driven architectures.",
     "videoId": "Q2cvxsUUgzA"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/9MaHh4b-rmc/hqdefault.jpg",
-    "title": "Broadening the API Landscape: AsyncAPI and CloudEvents in the Enterprise -  Daniel Kocot",
-    "description": "",
-    "videoId": "9MaHh4b-rmc"
   }
 ]
