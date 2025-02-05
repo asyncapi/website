@@ -51,17 +51,17 @@ export default function Pagination({ totalPages, currentPage, onPageChange }: Pa
       pages.push(i);
     }
 
-    if (currentPage < totalPages - 2) {
-      pages.push('ellipsis2');
-    }
-
     pages.push(totalPages);
 
     return pages;
   };
 
   return (
-    <nav role='navigation' aria-label='Pagination' className='font-inter flex items-center justify-center gap-8'>
+    <nav
+      role='navigation'
+      aria-label='Pagination'
+      className='font-inter flex min-w-[326px] items-center justify-center md:gap-8'
+    >
       {/* Previous button */}
       <Button
         onClick={() => handlePageChange(currentPage - 1)}
@@ -69,7 +69,7 @@ export default function Pagination({ totalPages, currentPage, onPageChange }: Pa
         className={`font-normal flex h-[34px] items-center justify-center rounded bg-white px-3 py-[7px] text-sm leading-[17px] tracking-[-0.01em] ${
           currentPage === 1 ? 'hover:bg-gray-white cursor-not-allowed text-gray-300' : 'text-[#141717] hover:bg-gray-50'
         }`}
-        text='Previous'
+        text={<span className='hidden md:inline'>Previous</span>}
         icon={<IconPrevious />}
         iconPosition={ButtonIconPosition.LEFT}
         aria-label='Go to previous page'
@@ -108,7 +108,7 @@ export default function Pagination({ totalPages, currentPage, onPageChange }: Pa
             ? 'hover:bg-gray-white cursor-not-allowed text-gray-300'
             : 'text-[#141717] hover:bg-gray-50'
         }`}
-        text='Next'
+        text={<span className='hidden md:inline'>Next</span>}
         icon={<IconNext />}
         aria-label='Go to next page'
       />

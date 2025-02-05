@@ -8,7 +8,7 @@ type IButtonProps = {
   // eslint-disable-next-line prettier/prettier
 
   /** The text to be displayed on the button. */
-  text: string;
+  text: string | React.ReactNode;
 
   /** The type of the button. Defaults to 'button'. */
   type?: ButtonType;
