@@ -2,6 +2,8 @@
 import axios from 'axios';
 import dotenv from 'dotenv';
 
+import type { ToolsData } from '@/types/scripts/tools';
+
 import { pause } from '../utils';
 import { logger } from '../utils/logger';
 
@@ -10,10 +12,10 @@ dotenv.config();
 /**
  * Fetches tool data from the GitHub API.
  *
- * @returns {Promise<any>} The data from the GitHub API.
+ * @returns {Promise<ToolsData>} The data from the GitHub API.
  * @throws {Error} If there is an error fetching the data.
  */
-export async function getData(): Promise<any> {
+export async function getData(): Promise<ToolsData> {
   if (!process.env.GITHUB_TOKEN) {
     throw new Error('GITHUB_TOKEN environment variable is required');
   }
