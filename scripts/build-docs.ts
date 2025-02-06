@@ -130,8 +130,11 @@ const convertDocPosts = (docObject: NavTree | Details) => {
 
     // certain entries in the DocPosts are either a parent to many posts or itself a post.
 
-    docsArray.push(docObject?.item || docObject);
-    if (docObject.children) {
+    if (!docObject) {
+      throw new Error('Document object is undefined');
+    }
+    docsArray.push(docObject.item || docObject);
+    if (docObject?.children) {
       const { children } = docObject;
 
       Object.keys(children).forEach((child) => {
