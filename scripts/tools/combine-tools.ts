@@ -1,5 +1,3 @@
-/* eslint-disable no-await-in-loop */
-
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import fs from 'fs';
@@ -90,6 +88,7 @@ export async function getFinalTool(toolObject: AsyncAPITool): Promise<FinalAsync
       }
     } else {
       for (const language of toolObject.filters.language) {
+        // eslint-disable-next-line no-await-in-loop
         const languageSearch = await languageFuse.search(language);
 
         if (languageSearch.length > 0) {
@@ -115,6 +114,7 @@ export async function getFinalTool(toolObject: AsyncAPITool): Promise<FinalAsync
 
   if (toolObject.filters.technology) {
     for (const technology of toolObject.filters.technology) {
+      // eslint-disable-next-line no-await-in-loop
       const technologySearch = await technologyFuse.search(technology);
 
       if (technologySearch.length > 0) {
@@ -185,9 +185,11 @@ const combineTools = async (
     for (const key in automatedTools) {
       /* istanbul ignore next */
       if (Object.prototype.hasOwnProperty.call(automatedTools, key)) {
+        // eslint-disable-next-line no-await-in-loop
         const automatedResults = await Promise.all(automatedTools[key].toolsList.map(getFinalTool));
         const manualResults = manualTools[key]?.toolsList?.length
-          ? (await Promise.all(manualTools[key].toolsList.map(processManualTool))).filter(Boolean)
+          ? // eslint-disable-next-line no-await-in-loop
+            (await Promise.all(manualTools[key].toolsList.map(processManualTool))).filter(Boolean)
           : [];
 
         finalTools[key].toolsList = [...automatedResults, ...manualResults].sort((tool, anotherTool) =>
