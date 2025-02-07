@@ -1,0 +1,28 @@
+{
+    "newsletterCTA": {
+        "title": "Subscribe to our newsletter to receive news about AsyncAPI.",
+        "subtitle": "We respect your inbox. No spam, promise ✌️",
+        "nameInput": "Your name",
+        "emailInput": "Your email",
+        "subscribeBtn": "Subscribe",
+        "successTitle": "Thank you for subscribing!",
+        "errorTitle": "Something went wrong",
+        "errorSubtitle": "Subscription failed, please let us know about it by submitting a bug",
+        "errorLinkText": "here"
+    },
+    "newsroomSection": {
+        "title": "Latest news and blogs",
+        "description": "Welcome to our Newsroom section. Here, you'll get latest information about our blogs, articles, announcements and Youtube live-streams. Let's get upto date with the recent activities in the organization.",
+        "newsroomBtn": "Visit the Newsroom",
+        "newsroomFeaturedPost": "FEATURED BLOG POST"
+    },
+    "googleCalendarBtn": "Add to Google Calendar",
+    "subscribeBtn": "Subscribe",
+    "icsFileBtn": "Download ICS File",
+    "githubButton": "View on Github",
+    "calendar": {
+        "title": "Upcoming events",
+        "viewCalendarBtn": "View Calendar",
+        "noMeetingsMessage": "There are no meetings scheduled for next few days. You can check upcoming events by clicking the button below."
+    }
+}

@@ -46,10 +46,10 @@ Here's an example of an AsyncAPI document with two servers referenced from the `
 ```yaml
 servers:
   kafka-test:
-    $ref: '#/components/servers/kafka-test
+    $ref: '#/components/servers/kafka-test'
   mqtt-test:
-    $ref: '#/components/servers/mqtt-test
-components
+    $ref: '#/components/servers/mqtt-test'
+components:
   servers:
     kafka-test:
       host: my.kafka.pl

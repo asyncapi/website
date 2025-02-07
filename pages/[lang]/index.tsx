@@ -1,6 +1,8 @@
+import { useTranslation } from 'next-i18next';
 import React from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
+import { getStaticPaths, makeStaticProps } from '@/utils/getStatic';
 
 import Button from '../../components/buttons/Button';
 import GoogleCalendarButton from '../../components/buttons/GoogleCalendarButton';
@@ -19,14 +21,17 @@ import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 import NewsroomSection from '../../components/newsroom/NewsroomSection';
 import Slack from '../../components/slack';
 import GoldSponsors from '../../components/sponsors/GoldSponsors';
+import PlatinumSponsors from '../../components/sponsors/PlatinumSponsors';
 import SilverSponsors from '../../components/sponsors/SilverSponsors';
-import Sponsors from '../../components/sponsors/Sponsors';
 import SupportUs from '../../components/SupportUs/SupportUs';
 import Testimonial from '../../components/Testimonial';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
 import TextLink from '../../components/typography/TextLink';
-import { getAllLanguageSlugs, getLanguage, useTranslation } from '../../utils/i18n';
+
+const getStaticProps = makeStaticProps(['landing-page', 'footer', 'common']);
+
+export { getStaticPaths, getStaticProps };
 
 /**
  * @description The HomePage is the landing page of the website.
@@ -103,7 +108,7 @@ export default function HomePage() {
 
               <div className='mt-12 lg:flex lg:flex-row-reverse'>
                 <section className='mt-10 lg:mt-0 lg:flex-1'>
-                  <Calendar size={2} className='float-left' />
+                  <Calendar size={2} />
                 </section>
                 <section className='lg:mr-12 lg:max-w-xl lg:text-left'>
                   <div className='mt-5 lg:mr-12'>
@@ -144,7 +149,7 @@ export default function HomePage() {
             <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
               {t('sponsors.platinumTitle')}
             </Heading>
-            <Sponsors className='mt-4' showSupportBanner={false} />
+            <PlatinumSponsors className='mt-4' showSupportBanner={false} />
           </Container>
 
           <Container className='pb-6 text-center' wide as='section'>
@@ -230,26 +235,3 @@ export default function HomePage() {
  * @description This function generates all language slugs for the landing page.
  * @returns {object} The paths object containing all language slugs.
  */
-export async function getStaticPaths() {
-  const paths = getAllLanguageSlugs();
-
-  return {
-    paths,
-    fallback: false
-  };
-}
-
-/**
- * @description This function fetches the language content for the landing page.
- * @param {object} params The language parameter.
- * @returns {object} The language content for the landing page.
- */
-export async function getStaticProps({ params }: any) {
-  const language = getLanguage(params.lang);
-
-  return {
-    props: {
-      language
-    }
-  };
-}

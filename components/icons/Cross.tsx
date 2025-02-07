@@ -1,5 +1,5 @@
+import React from 'react';
 /* eslint-disable max-len */
-
 import { twMerge } from 'tailwind-merge';
 
 /**

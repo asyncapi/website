@@ -41,6 +41,7 @@ export interface ToolsListData {
   [category: string]: {
     description: string;
     toolsList: ToolData[];
+    elementRef?: React.RefObject<any>;
   };
 }
 

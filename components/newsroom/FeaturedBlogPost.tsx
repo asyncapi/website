@@ -1,5 +1,6 @@
 import moment from 'moment';
 import Link from 'next/link';
+import React from 'react';
 import TextTruncate from 'react-text-truncate';
 
 import { BlogPostType } from '@/types/components/navigation/BlogPostType';
@@ -66,7 +67,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
                     {post.type}
                   </span>
                 </Paragraph>
-                <Link href={post.slug}>
+                <div>
                   <span className='block' data-testid='FeaturedBlog-title'>
                     <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.smSemibold} className='mt-2'>
                       {post.title}
@@ -75,7 +76,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
                       <TextTruncate element='span' line={2} text={post.excerpt} />
                     </Paragraph>
                   </span>
-                </Link>
+                </div>
               </div>
               <div className='mt-6 flex items-center'>
                 <div className='relative shrink-0' data-testid='FeaturedBlog-Authorimg'>
@@ -87,18 +88,9 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
                       {post.authors
                         .map((author, index) =>
                           author.link ? (
-                            <a
-                              key={index}
-                              data-alt={author.name}
-                              href={author.link}
-                              onClick={(e) => {
-                                e.stopPropagation();
-                              }}
-                              target='_blank'
-                              rel='noreferrer'
-                            >
+                            <span key={index} data-alt={author.name} rel='noreferrer'>
                               {author.name}
-                            </a>
+                            </span>
                           ) : (
                             author.name
                           )

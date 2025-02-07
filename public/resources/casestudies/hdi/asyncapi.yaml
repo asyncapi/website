@@ -1,0 +1,268 @@
+asyncapi: 3.0.0
+info:
+  title: customer-example
+  version: 1.0.0
+  description: |
+    This is an AsyncAPI document for customer-example.
+    It contains every Topic owned by the customer in form of channel. 
+    Dowload the coresponding schema files from the following link:
+servers:
+  box-apac:
+    host: namespace.servicebus.windows.net
+    protocol: amqp
+    description: Azure Service Bus namespace endpoint for box.
+  box-emea:
+    host: namespace.servicebus.windows.net
+    protocol: amqp
+    description: Azure Service Bus namespace endpoint for box.
+channels:
+  claimStatus-emea:
+    servers:
+      - $ref: '#/servers/box-emea'
+    address: https://namespace.servicebus.windows.net/topic/example/claimStatus
+    messages:
+      claimStatus:
+        name: claimStatus-Message
+        contentType: application/json
+        payload:
+          $ref: '#/components/schemas/claimStatus-example.json'
+  claimDetails-emea:
+    servers:
+      - $ref: '#/servers/box-emea'
+    address: https://namespace.servicebus.windows.net/topic/example/claimDetails
+    messages:
+      claimDetails:
+        name: claimDetails-Message
+        contentType: application/json
+        payload:
+          $ref: '#/components/schemas/claimDetails-example.json'
+operations:
+  claimStatus-emea:
+    action: send
+    channel:
+      $ref: '#/channels/claimStatus-emea'
+    messages:
+      - $ref: '#/channels/claimStatus-emea/messages/claimStatus'
+  claimDetails-emea:
+    action: send
+    channel:
+      $ref: '#/channels/claimDetails-emea'
+    messages:
+      - $ref: '#/channels/claimDetails-emea/messages/claimDetails'
+components:
+  schemas:
+      claimDetails-example.json: {
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "properties": {
+    "policyNumber": {
+      "type": "string"
+    },
+    "claimNumber": {
+      "type": "string"
+    },
+    "notificationDate": {
+      "type": "string"
+    },
+    "occurrenceDate": {
+      "type": "string"
+    },
+    "claimAmount": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "string"
+    },
+    "editor": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "movements": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "amount": {
+              "type": "integer"
+            },
+            "movementType": {
+              "type": "string"
+            },
+            "benefitType": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "amount",
+            "movementType",
+            "benefitType"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "amount": {
+              "type": "integer"
+            },
+            "movementType": {
+              "type": "string"
+            },
+            "benefitType": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "amount",
+            "movementType",
+            "benefitType"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "amount": {
+              "type": "integer"
+            },
+            "movementType": {
+              "type": "string"
+            },
+            "benefitType": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "amount",
+            "movementType",
+            "benefitType"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "policyNumber",
+    "claimNumber"
+  ]
+}
+      claimStatus-example.json: {
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "header": {
+          "type": "object",
+          "properties": {
+            "messageId": {
+              "type": "string"
+            },
+            "entityType": {
+              "type": "string"
+            },
+            "eventType": {
+              "type": "object",
+              "enum": [
+                "create",
+                "update"
+              ]
+            }
+          },
+          "required": [
+            "messageId",
+            "entityType",
+            "eventType"
+          ]
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "par": {
+              "type": "object",
+              "properties": {
+                "tenantNumber": {
+                  "type": "string"
+                },
+                "policyNumber": {
+                  "type": "number"
+                },
+                "contractNumber": {
+                  "type": "number"
+                },
+                "sourceSystem": {
+                  "type": "string"
+                },
+                "claimStatus": {
+                  "type": "string"
+                },
+                "currencyCode": {
+                  "type": "string"
+                },
+                "registrYear": {
+                  "type": "number"
+                },
+                "broker": {
+                  "type": "string"
+                },
+                "insured": {
+                  "type": "string"
+                },
+                "lineOfBusiness": {
+                  "type": "number"
+                },
+                "claimCountry": {
+                  "type": "string"
+                },
+                "isNewClaim": {
+                  "type": "boolean"
+                },
+                "dateOfLoss": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "creationDate": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "notificationDate": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "businessDate": {
+                  "type": "string",
+                  "format": "date"
+                }
+              },
+              "required": [
+                "tenantNumber"
+              ]
+            }
+          },
+          "required": [
+            "par"
+          ]
+        }
+      },
+      "required": [
+        "version",
+        "header",
+        "data"
+      ]
+    }
+  },
+  "required": [
+    "message"
+  ]
+}

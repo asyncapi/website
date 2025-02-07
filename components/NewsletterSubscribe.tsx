@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
+import IconCircularLoader from '@/components/icons/CircularLoader';
 import { ButtonType } from '@/types/components/buttons/ButtonPropsType';
+import { InputTypes } from '@/types/components/InputBoxPropsType';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
 import { useTranslation } from '../utils/i18n';
 import Button from './buttons/Button';
+import InputBox from './InputBox';
 import Loader from './Loader';
 import Heading from './typography/Heading';
 import Paragraph from './typography/Paragraph';
@@ -23,6 +26,7 @@ interface NewsletterSubscribeProps {
   title?: string;
   subtitle?: string;
   type?: string;
+  errorSubtitle?: string;
 }
 
 /**
@@ -34,19 +38,21 @@ interface NewsletterSubscribeProps {
  * @param {string} props.title - The title of the Subscribe card.
  * @param {string} props.subtitle - The subtitle of the Subscribe card.
  * @param {string} props.type - The type of subscription.
+ * @param {string} props.errorSubtitle - The error subtitle to be displayed.
  */
 export default function NewsletterSubscribe({
   className = 'p-8 text-center text-black',
   dark = false,
   title = 'Subscribe to our newsletter to receive news about AsyncAPI.',
   subtitle = 'We respect your inbox. No spam, promise ✌️',
-  type = 'Newsletter'
+  type = 'Newsletter',
+  errorSubtitle = 'Subscription failed, please let us know about it by submitting a bug'
 }: NewsletterSubscribeProps) {
   const [email, setEmail] = useState<string>('');
   const [name, setName] = useState<string>('');
   const [status, setStatus] = useState<FormStatus>(FormStatus.NORMAL);
 
-  const { t } = useTranslation('common');
+  const { t, ready } = useTranslation('common', { keyPrefix: 'newsletterCTA' });
 
   const headTextColor = dark ? 'text-white' : '';
   const paragraphTextColor = dark ? 'text-gray-300' : '';
@@ -91,10 +97,10 @@ export default function NewsletterSubscribe({
     return (
       <div className={className} data-testid='NewsletterSubscribe-main'>
         <Heading level={HeadingLevel.h3} textColor={headTextColor} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
-          {t('newsletterCTA.successTitle')}
+          {ready ? t('successTitle') : 'Thank you for subscribing!'}
         </Heading>
         <Paragraph className='mb-8' textColor={paragraphTextColor}>
-          {t('newsletterCTA.subtitle')}
+          {ready ? t('subtitle') : subtitle}
         </Paragraph>
       </div>
     );
@@ -104,12 +110,12 @@ export default function NewsletterSubscribe({
     return (
       <div className={className} data-testid='NewsletterSubscribe-main'>
         <Heading level={HeadingLevel.h3} textColor={headTextColor} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
-          {t('newsletterCTA.errorTitle')}
+          {ready ? t('errorTitle') : 'Something went wrong'}
         </Heading>
         <Paragraph className='mb-8' textColor={paragraphTextColor}>
-          {t('newsletterCTA.errorSubtitle')}{' '}
+          {ready ? t('errorSubtitle') : errorSubtitle}{' '}
           <TextLink href='https://github.com/asyncapi/website/issues/new?template=bug.md' target='_blank'>
-            {t('newsletterCTA.errorLinkText')}
+            {ready ? t('errorLinkText') : 'here'}
           </TextLink>
         </Paragraph>
       </div>
@@ -119,38 +125,32 @@ export default function NewsletterSubscribe({
   return (
     <div className={className} data-testid='NewsletterSubscribe-main'>
       <Heading level={HeadingLevel.h3} textColor={headTextColor} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
-        {title}
+        {ready ? t('title') : title}
       </Heading>
       <Paragraph className='mb-8' textColor={paragraphTextColor}>
-        {subtitle}
+        {ready ? t('subtitle') : subtitle}
       </Paragraph>
       {status === 'loading' ? (
-        <Loader dark={dark} />
+        <Loader loaderText={'Waiting for response...'} loaderIcon={<IconCircularLoader dark />} dark={dark} />
       ) : (
         <form className='flex flex-col gap-4 md:flex-row' onSubmit={handleSubmit}>
-          <input
-            type='text'
-            name='name'
-            placeholder={t('newsletterCTA.nameInput')}
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className='form-input block w-full rounded-md sm:text-sm sm:leading-5 md:mt-0 md:flex-1'
-            required
-            data-testid='NewsletterSubscribe-text-input'
+          <InputBox
+            inputType={InputTypes.TEXT}
+            inputName='name'
+            placeholder={ready ? t('nameInput') : 'Your name'}
+            inputValue={name}
+            setInput={setName}
           />
-          <input
-            type='email'
-            name='email'
-            placeholder={t('newsletterCTA.emailInput')}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className='form-input mt-2 block w-full rounded-md sm:text-sm sm:leading-5 md:mt-0 md:flex-1'
-            required
-            data-testid='NewsletterSubscribe-email-input'
+          <InputBox
+            inputType={InputTypes.EMAIL}
+            inputName='email'
+            placeholder={ready ? t('emailInput') : 'Your email'}
+            inputValue={email}
+            setInput={setEmail}
           />
           <Button
             type={ButtonType.SUBMIT}
-            text={t('newsletterCTA.subscribeBtn')}
+            text={ready ? t('subscribeBtn') : 'Subscribe'}
             className='mt-2 w-full md:mr-2 md:mt-0 md:flex-1'
             href=''
           />

@@ -1,7 +1,7 @@
 [
   {
     "value": "/tools/generator",
-    "href": "https://github.com/asyncapi/generator/tree/master/docs"
+    "href": "https://github.com/asyncapi/generator/tree/master/apps/generator/docs"
   },
   {
     "value": "reference/specification/",
@@ -13,10 +13,14 @@
   },
   {
     "value": "",
-    "href": "https://github.com/asyncapi/website/blob/master/pages"
+    "href": "https://github.com/asyncapi/website/blob/master/markdown"
   },
   {
     "value": "reference/extensions/",
     "href": "https://github.com/asyncapi/extensions-catalog/tree/master/extensions"
+  },
+  {
+    "value": "community/onboarding-guide",
+    "href": "https://github.com/asyncapi/community/tree/master/docs/onboarding-guide"
   }
 ]

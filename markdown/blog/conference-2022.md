@@ -5,7 +5,6 @@ type: Conference
 tags:
   - Conference
 cover: /img/posts/conference-2022.webp
-featured: true
 authors:
   - name: Azeez Elegbede
     photo: /img/avatars/ace.webp
@@ -94,11 +93,6 @@ Special thanks to Restream for supporting us with their amazing product for medi
     name: 'Aishat Muibudeen',
     avatar: 'https://avatars.githubusercontent.com/Mayaleeeee',
     link: 'https://github.com/Mayaleeeee'
-  }, 
-  {
-    name: 'Alejandra Quetzalli',
-    avatar: 'https://avatars.githubusercontent.com/alequetzalli',
-    link: 'https://github.com/alequetzalli'
   },
   {
     name: 'Azeez Elegbede',
@@ -154,6 +148,11 @@ Special thanks to Restream for supporting us with their amazing product for medi
     name: 'Missy Turco',
     avatar: 'https://avatars.githubusercontent.com/mcturco',
     link: 'https://github.com/mcturco'
+  },
+  {
+    name: 'Quetzalli Writes',
+    avatar: 'https://avatars.githubusercontent.com/quetzalliwrites',
+    link: 'https://github.com/quetzalliwrites'
   },
   {
     name: 'Sergio Moya',

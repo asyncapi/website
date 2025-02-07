@@ -36,11 +36,12 @@ export interface Tsc {
   name: string;
   avatarUrl?: string;
   isTscMember: boolean;
-  availableForHire: boolean;
+  availableForHire?: boolean;
   github: string;
   linkedin?: string;
-  slack: string;
+  slack?: string;
   twitter?: string;
   company?: string;
   repos: any;
+  githubID: number
 };

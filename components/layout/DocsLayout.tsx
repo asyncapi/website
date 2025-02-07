@@ -1,7 +1,7 @@
 import ErrorPage from 'next/error';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import type { NavigationItems } from '@/types/context/DocsContext';
 import type { IPost } from '@/types/post';
@@ -33,6 +33,10 @@ interface IDocsLayoutProps {
  */
 function generateEditLink(post: IPost) {
   let last = post.id.substring(post.id.lastIndexOf('/') + 1);
+
+  if (last.endsWith('.mdx')) {
+    last = last.replace('.mdx', '.md');
+  }
   const target = editOptions.find((edit) => {
     return post.slug.includes(edit.value);
   });

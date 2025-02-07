@@ -7,11 +7,14 @@ tags:
   - Communication
 cover: /img/posts/2023-april-docs-report.webp
 authors:
-  - name: Alejandra Quetzalli
-    photo: /img/avatars/canela-ale.webp
-    link: https://www.linkedin.com/in/alejandra-quetzalli/
+  - name: Quetzalli Writes
+    photo: /img/avatars/canela-quetzalli.webp
+    link: https://www.linkedin.com/in/quetzalli-writes/
     byline: In April 2023, the AsyncAPI documentation experienced significant growth with 8,889 sessions and 4,575 unique users, including 2,895 new users.
 ---
+
+import ContributionNotes from '@/assets/docs/fragments/contribution-notes.md';
+import TalkToMe from '@/assets/docs/fragments/talk-to-me.md';
 
 # AsyncAPI Docs Report - April 2023
 In April 2023, the AsyncAPI documentation experienced significant growth with **8,889 sessions** and **4,575 unique users**, including **2,895 new users**. April was a strong month for our expanding docs community.
@@ -20,21 +23,21 @@ In April 2023, the AsyncAPI documentation experienced significant growth with **
 We are thrilled to introduce this year's selected technical writing candidates for the 2023 Google Season of Docs (GSoD) at AsyncAPI!
 
 ### 2023 GSoD Accepted Technical Writer Candidates
-Alejandra Quetzalli has chosen four outstanding candidates to collaborate with us for GSoD this year: [Mahfuza](https://github.com/mhmohona), [Bhaswati](https://github.com/BhaswatiRoy), [Rohit](https://github.com/TRohit20), and [Hridyesh](https://github.com/kakabisht).
+Quetzalli Writes has chosen four outstanding candidates to collaborate with us for GSoD this year: [Mahfuza](https://github.com/mhmohona), [Bhaswati](https://github.com/BhaswatiRoy), [Rohit](https://github.com/TRohit20), and [Hridyesh](https://github.com/kakabisht).
 
 ### Overview of the LIVE Writing/Editing Interviews
-During the LIVE interview session, Alejandra divided the exercises into two parts: writing and editing. Candidates were given a document and asked to identify issues and potential solutions, then rewrite or edit the document as needed. Some candidates faced challenges with staying focused on writing, while others struggled to generate ideas due to nerves or the live format of the exercise. A few candidates had difficulty spotting errors and completing the editing task. 
+During the LIVE interview session, Quetzalli divided the exercises into two parts: writing and editing. Candidates were given a document and asked to identify issues and potential solutions, then rewrite or edit the document as needed. Some candidates faced challenges with staying focused on writing, while others struggled to generate ideas due to nerves or the live format of the exercise. A few candidates had difficulty spotting errors and completing the editing task. 
 
-However, Alejandra did not disqualify candidates who experienced nerves, writer's block, or had limited editing skills. Instead, she guided them with questions and suggestions, encouraging them to search for answers online during the call. The main objective was to evaluate the candidates' problem-solving skills, ability to accept feedback, and integrate suggestions for improvement. The following sections outline the writing and editing exercises and the selection criteria for the candidates.
+However, Quetzalli did not disqualify candidates who experienced nerves, writer's block, or had limited editing skills. Instead, she guided them with questions and suggestions, encouraging them to search for answers online during the call. The main objective was to evaluate the candidates' problem-solving skills, ability to accept feedback, and integrate suggestions for improvement. The following sections outline the writing and editing exercises and the selection criteria for the candidates.
 
 #### The Writing Part
-For the writing exercise, Alejandra utilized [an old commit from the 2022 GSoD project](https://github.com/asyncapi/website/pull/1025/commits/1f1fe7dc643434d8ab24a877ee4e2af38a0f330b), which contained numerous errors for candidates to identify and fix. Some examples of these errors include:
+For the writing exercise, Quetzalli utilized [an old commit from the 2022 GSoD project](https://github.com/asyncapi/website/pull/1025/commits/1f1fe7dc643434d8ab24a877ee4e2af38a0f330b), which contained numerous errors for candidates to identify and fix. Some examples of these errors include:
 - Multiple preview deployment links instead of live links to actual documentation.
 - Content more appropriate for the `Background context` section crammed into the `Introduction`.
 - Inadequate tutorial steps that lacked sufficient technical background context for first-time users.
 
 #### The Editing Part
-For the editing exercise, Alejandra used the same [old commit from the 2022 GSoD project](https://github.com/asyncapi/website/pull/1025/commits/1f1fe7dc643434d8ab24a877ee4e2af38a0f330b) for some candidates. For those who progressed further during the writing exercise, she provided a second block of content to edit that was unformatted and contained repeated mistakes. The purpose of this unformatted text was to assess the candidates' ability to:
+For the editing exercise, Quetzalli used the same [old commit from the 2022 GSoD project](https://github.com/asyncapi/website/pull/1025/commits/1f1fe7dc643434d8ab24a877ee4e2af38a0f330b) for some candidates. For those who progressed further during the writing exercise, she provided a second block of content to edit that was unformatted and contained repeated mistakes. The purpose of this unformatted text was to assess the candidates' ability to:
 - Research terms like CLI, Node.js, macOS, etc., instead of assuming they know the correct spelling.
 - Use the `replace all` keyboard shortcut to fix repeated mistakes.
 - Think to check and confirm the correct spelling of AsyncAPI during an AsyncAPI interview.
@@ -52,7 +55,7 @@ The following factors were considered when assessing candidates:
 ## Spec 3.0 Release
 AsyncAPI community members, including Jonas Lagoni and Sergio Moya, have started the process of identifying Spec 3.0 Subject Matter Experts (SMEs) who can provide the necessary background context for our technical writers to begin updating our documentation.
 
-While Alejandra and Sergio are currently the only ones sharing the Spec 3.0 **writing work**, we're actively seeking more contributors to join their writing efforts.
+While Quetzalli and Sergio are currently the only ones sharing the Spec 3.0 **writing work**, we're actively seeking more contributors to join their writing efforts.
 
 The following Spec 3.0 release changes require documentation updates:
 - [Request/reply](https://github.com/asyncapi/spec/pull/847)
@@ -109,18 +112,8 @@ style DC fill:#E1FEC1,stroke:#000000,stroke-width:2px;
 ---
 
 ## How to contribute to AsyncAPI Docs
-Did you know that you can contribute Docs to AsyncAPI as well? Code isn't the only way to contribute to OSS; docs are a **huge** help that benefit the entire OSS ecosystem. At AsyncAPI, we value Doc contributions as much as every other type of contribution. ❤️
-
-To get started as a Docs contributor:
-1. Familiarize yourself with our [project's Contribution Guide](https://github.com/asyncapi/community/blob/master/CONTRIBUTING.md) and our [Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
-2. Head over to our Docs GH Board [here](https://github.com/orgs/asyncapi/projects/12).
-3. Pick an issue you would like to contribute to and leave a comment introducing yourself. This is also the perfect place to leave any questions you may have on how to get started. 
-4. If there is no work done in that Docs issue yet, feel free to open a PR and get started!
-
-### Tag me in your AsyncAPI Doc PRs
-Do you have a documentation contributor question and you're wondering how to tag me into a GitHub discussion or PR? Never fear!
-
-Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/asyncapi/community/discussions/categories/docs) via my GitHub handle, [`/alequetzalli`](https://github.com/alequetzalli) 🐙.
+Did you know that you can contribute Docs to AsyncAPI as well?
+<ContributionNotes />
 
 ### Talk to me
-I want and need to listen 👂🏽 to all of your perspectives and ideas. Please don't be shy to express to me what you think needs to be documented first or what is missing. 📝 There's a lot of good work ahead, but **you** determine _our content roadmap_ because the OSS community needs should always come first.✨
+<TalkToMe />

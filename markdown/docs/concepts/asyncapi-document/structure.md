@@ -351,7 +351,7 @@ operations:
 
 The `components` field allows for the definition of reusable structures or definitions applicable across various sections of your document. Items detailed within `components` only become part of the API when explicitly referenced by properties external to this field. Utilize it to avoid repetition and enhance the document's maintainability.
 
-Key components of the `channels` field include:
+Key components of the `components` field include:
 
 - `schemas`: An object to hold the reusable [Schema Object](/docs/reference/specification/latest#schemaObject). 
 - `servers`: An object to hold the reusable [Server Objects](/docs/reference/specification/latest#serverObject).

@@ -1,4 +1,4 @@
-import Expenses from '../config/finance/json-data/2024/Expenses.json';
+import Expenses from '../config/finance/json-data/Expenses.json';
 
 /**
  * Retrieves unique expense categories from the Expenses data.

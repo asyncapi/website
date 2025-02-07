@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import { SearchButton } from '../AlgoliaSearch';
-import AsyncAPILogo from '../AsyncAPILogo';
 import NavItemDropdown from '../icons/NavItemDropdown';
 import SearchIcon from '../icons/SearchIcon';
+import AsyncAPILogo from '../logos/AsyncAPILogo';
 import communityItems from './communityItems';
 import learningItems from './learningItems';
 import MenuBlocks from './MenuBlocks';

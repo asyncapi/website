@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: AsyncAPI Community Manager
 excerpt: 'June Community Update'
-featured: true
 ---
 
 We have some fantastic news to share: we are pleased to welcome [IBM](https://www.ibm.com/us-en) as our new Gold Sponsor for this year. We are proud of IBM's ongoing support for the initiative. A huge thank you goes to [Salma Saeed](https://www.ibm.com/us-en) for her efforts in making this happen.

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Highlight from 'react-syntax-highlighter';
 
 import Caption from '../Caption';
@@ -273,22 +273,34 @@ export default function CodeBlock({
               background: '#252f3f'
             }}
             lineNumberStyle={(lineNumber: number) => {
-              const isHighlighted = highlightedLines && highlightedLines.includes(lineNumber);
+              const isHighlighted = highlightedLines?.includes(lineNumber);
 
-              return {
+              const styles: React.CSSProperties = {
                 display: 'inline-block',
                 marginLeft: '16px',
                 paddingRight: '16px',
-                background: isHighlighted ? '#252f3f' : 'inherit',
+                backgroundColor: isHighlighted ? '#3e4d64' : '#252f3f',
                 color: isHighlighted ? '#A3ACAD' : '#8B9394'
               };
+
+              return styles;
             }}
             wrapLines={true}
             lineProps={(lineNumber: number) => {
-              const isHighlighted = highlightedLines && highlightedLines.includes(lineNumber);
+              const isHighlighted = highlightedLines?.includes(lineNumber);
+
+              const style: React.CSSProperties = {
+                paddingRight: '2rem'
+              };
+
+              if (isHighlighted) {
+                style.display = 'block';
+                style.width = '100%';
+                style.backgroundColor = '#3e4d64';
+              }
 
               return {
-                className: `${isHighlighted ? 'bg-code-editor-dark-highlight block ml-10 w-full' : ''} pr-8`
+                style
               };
             }}
             codeTagProps={{

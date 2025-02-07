@@ -1,3 +1,5 @@
+import React from 'react';
+
 import communityItems from './communityItems';
 import FlyoutMenu from './FlyoutMenu';
 

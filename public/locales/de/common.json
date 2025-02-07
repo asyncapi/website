@@ -1,0 +1,28 @@
+{
+    "newsletterCTA": {
+        "title": "Abonnieren Sie unseren Newsletter, um Neuigkeiten über AsyncAPI zu erhalten.",
+        "subtitle": "Wir respektieren Ihren Posteingang. Kein Spam, versprochen ✌️",
+        "nameInput": "Ihr Name",
+        "emailInput": "Deine E-Mail",
+        "subscribeBtn": "Abonnieren",
+        "successTitle": "Vielen Dank für Ihr Abonnement!",
+        "errorTitle": "Etwas ist schief gelaufen",
+        "errorSubtitle": "Das Abonnement ist fehlgeschlagen, bitte informieren Sie uns darüber, indem Sie einen Fehler melden",
+        "errorLinkText": "hier"
+    },
+    "newsroomSection": {
+        "title": "Aktuelle Nachrichten und Blogs",
+        "description": "Willkommen in unserem Newsroom-Bereich. Hier finden Sie die neuesten Informationen über unsere Blogs, Artikel, Ankündigungen und Youtube-Livestreams. Informieren Sie sich über die jüngsten Aktivitäten der Organisation.",
+        "newsroomBtn": "Besuchen Sie den Newsroom",
+        "newsroomFeaturedPost": "VORGESTELLTER BLOGEINTRAG"
+    },
+    "googleCalendarBtn": "Zu Google Kalender hinzufügen",
+    "subscribeBtn": "Abonnieren",
+    "icsFileBtn": "ICS-Datei herunterladen",
+    "githubButton": "Ansicht auf Github",
+    "calendar": {
+        "title": "Kommende Veranstaltungen",
+        "viewCalendarBtn": "Kalender ansehen",
+        "noMeetingsMessage": "In den nächsten Tagen sind keine Sitzungen geplant. Sie können bevorstehende Veranstaltungen überprüfen, indem Sie auf die Schaltfläche unten klicken."    
+    }
+}

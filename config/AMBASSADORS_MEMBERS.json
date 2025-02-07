@@ -288,72 +288,6 @@
     ]
   },
   {
-    "name": "Jesse Menning",
-    "github": "jessemenning",
-    "twitter": "JesseMenning",
-    "bio": "Jesse Menning teams with companies and government agencies to design event-driven architecture and microservices at scale. To guide those discussions, I draw upon more than 15 years of integration architecture and implementation experience, particularly with IBM and Solace platforms. I've been involved with AsyncAPI since 2020, along with other open-source initiatives such as CloudEvents and OpenTelemetry.",
-    "linkedin": "jesse-menning",
-    "company": "Solace",
-    "title": "Architect, Office of the CTO at Solace",
-    "img": "https://avatars.githubusercontent.com/u/62108913?v=4",
-    "contributions": [
-      {
-        "type": "article",
-        "title": "AsyncAPI 2.3 Adds Solace Bindings to Unlock Full Power of PubSub+",
-        "date": {
-          "year": 2022,
-          "month": "January"
-        },
-        "link": "https://solace.com/blog/asyncapi-adds-solace-bindings/"
-      },
-      {
-        "type": "article",
-        "title": "Align Production Reality and Event Documentation with the AsyncAPI Discovery Tool",
-        "date": {
-          "year": 2021,
-          "month": "November"
-        },
-        "link": "https://solace.com/blog/asyncapi-discovery-tool/"
-      },
-      {
-        "type": "article",
-        "title": "AsyncAPI vs. OpenAPI: Answers to Your Burning Questions About the Two Leading API Specs",
-        "date": {
-          "year": 2021,
-          "month": "June"
-        },
-        "link": "https://solace.com/blog/asyncapi-vs-openapi/"
-      },
-      {
-        "type": "article",
-        "title": "AsyncAPI, CloudEvents, OpenTelemetry: Which Event-Driven Specs Should Your DevOps Include?",
-        "date": {
-          "year": 2021,
-          "month": "March"
-        },
-        "link": "https://solace.com/blog/asyncapi-cloudevents-opentelemetry-event-driven-specs-devops/"
-      },
-      {
-        "type": "presentation",
-        "title": "Future of AsyncAPI, Panel discussion, AsyncAPI Conference",
-        "date": {
-          "year": 2021,
-          "month": "November"
-        },
-        "link": "https://www.youtube.com/watch?v=3EeMHhbwyOQ"
-      },
-      {
-        "type": "presentation",
-        "title": "Thinking Out Loud #4 — with Jesse Menning",
-        "date": {
-          "year": 2021,
-          "month": "August"
-        },
-        "link": "https://www.youtube.com/watch?v=eJewFUR-OaM"
-      }
-    ]
-  },
-  {
     "name": "Ludovic Dussart",
     "github": "M3lkior",
     "twitter": "ldussart",
@@ -483,104 +417,6 @@
     ]
   },
   {
-    "name": "Mete Atamel",
-    "github": "meteatamel",
-    "twitter": "meteatamel",
-    "country": "🇬🇧",
-    "bio": "Mete is a Software Engineer and a Developer Advocate with 18+ years of experience. Currently, he works in the Developer Relations team at Google in London. He builds tools, demos, tutorials, and gives talks to educate and help developers to be successful on Google Cloud. As a regular speaker at tech conferences, he has spoken over 345+ events since 2016 on modern application development topics such as Kubernetes, Istio, Knative, serverless, event-driven architectures, and microservice orchestration. Prior to his current role, he was a Software Engineer/Architect/Tech Lead at Nokia, EMC, Adobe, Skype, and Microsoft building various client and server technologies, resulting in multiple patents.",
-    "linkedin": "mete-atamel",
-    "company": "Google",
-    "title": "Software Engineer and Developer Advocate at Google",
-    "img": "https://avatars.githubusercontent.com/u/1177542?v=4",
-    "contributions": [
-      {
-        "type": "article",
-        "title": "AsyncAPI Basics",
-        "date": {
-          "year": 2023,
-          "month": "May"
-        },
-        "link": "https://medium.com/google-cloud/asyncapi-basics-6e6394c9587"
-      },
-      {
-        "type": "article",
-        "title": "AsyncAPI Tools",
-        "date": {
-          "year": 2023,
-          "month": "May"
-        },
-        "link": "https://medium.com/google-cloud/asyncapi-tools-dd59f9236b20"
-      },
-      {
-        "type": "article",
-        "title": "Understanding AsyncAPI’s publish & subscribe semantics with an example",
-        "date": {
-          "year": 2023,
-          "month": "May"
-        },
-        "link": "https://medium.com/google-cloud/understanding-asyncapis-publish-subscribe-semantics-with-an-example-cfa1cc3faef5"
-      },
-      {
-        "type": "article",
-        "title": "CloudEvents + AsyncAPI",
-        "date": {
-          "year": 2023,
-          "month": "May"
-        },
-        "link": "https://medium.com/google-cloud/cloudevents-asyncapi-fa8ef63f28e0"
-      },
-      {
-        "type": "article",
-        "title": "Google Cloud Pub/Sub + AsyncAPI",
-        "date": {
-          "year": 2023,
-          "month": "May"
-        },
-        "link": "https://medium.com/google-cloud/google-cloud-pub-sub-asyncapi-6ea3c1ed3c49"
-      },
-      {
-        "type": "presentation",
-        "title": "Open standards for building event-driven applications in the cloud",
-        "date": {
-          "year": 2023,
-          "month": "June"
-        },
-        "link": "https://www.youtube.com/watch?v=6Igp4DhK_hE"
-      }
-    ]
-  },
-  {
-    "name": "Raphael De Lio",
-    "github": "raphaeldelio",
-    "twitter": "raphaeldelio",
-    "linkedin": "raphaeldelio",
-    "country": "🇧🇷",
-    "bio": "Raphael De Lio is a passionate software engineer who loves to think about solutions and ways to improve anything he touches. He was born in Brazil, lived in Portugal for five years, and now works as a consultant in the Netherlands. In his quest for knowledge, Raphael has always valued learning and sharing insights with others. This pursuit not only led him to Xebia, a place where he found a community of engineers who share his enthusiasm for technology and continuous improvement but also to becoming the co-organizer of the Amsterdam Kotlin MeetUp, where he has been able to enable other speakers to share their knowledge as well.",
-    "company": "Xebia",
-    "title": "Software Consultant at Xebia",
-    "img": "https://avatars.githubusercontent.com/u/25641721?v=4",
-    "contributions": [
-      {
-        "type": "article",
-        "title": "AsyncAPI — A standard specification for documenting Event-Driven Applications",
-        "date": {
-          "year": 2024,
-          "month": "February"
-        },
-        "link": "https://medium.com/@raphaeldelio/asyncapi-a-standard-for-documenting-event-driven-applications-8ff657119036"
-      },
-      {
-        "type": "presentation",
-        "title": "AsyncAPI & Springwolf - Automated documentation (and more)",
-        "date": {
-          "year": 2024,
-          "month": "May"
-        },
-        "link": "https://www.youtube.com/watch?v=DylvTW_ia4Y"
-      }
-    ]
-  },
-  {
     "name": "Hari Krishnan",
     "github": "harikrishnan83",
     "twitter": "harikrishnan83",
@@ -608,6 +444,140 @@
           "month": "June"
         },
         "link": "https://confengine.com/conferences/selenium-conf-2024/proposal/20021/unshackling-your-system-under-test-shift-left-testing-through-dependency-isolation"
+      },
+      {
+        "type": "talk",
+        "title": "Using API spec as an Executable Contract To Mock and Test Microservices",
+        "date": {
+          "year": 2024,
+          "month": "October"
+        },
+        "link": "https://www.youtube.com/watch?v=wiM20HTCerM"
+      },
+      {
+        "type": "talk",
+        "title": "Contract-Driven Development for Event-Driven Architectures",
+        "date": {
+          "year": 2024,
+          "month": "December"
+        },
+        "link": "https://conference.asyncapi.com/venue/Paris"
+      }
+    ]
+  },
+  {
+    "name": "Manuel Ottlik",
+    "github": "manuelottlik",
+    "twitter": "",
+    "linkedin": "manuelottlik",
+    "country": "🇩🇪",
+    "bio": "Manuel is the Product Owner of the Global Integration Platform at HDI Global SE. He sold his first software at the age of thirteen and has been developing software ever since. After graduating, he joined the financial industry in API management and eventually moved to HDI Global SE to merge a service bus, API management and an event broker into an integration platform for the cloud division. In addition to his work at HDI Global SE, he is co-founder of a small company in the education software sector and freelance writer for heise.de and its magazines.",
+    "company": "HDI Global SE",
+    "title": "Product Owner Integration Platform & PBAC Platform",
+    "img": "https://avatars.githubusercontent.com/u/28919003?v=4",
+    "contributions": [
+      {
+        "type": "talk",
+        "title": "Event-Driven Architecture und REST-APIs: Es gibt keine Konkurrenz!",
+        "date": {
+          "year": 2023,
+          "month": "April"
+        },
+        "link": ""
+      },
+      {
+        "type": "talk",
+        "title": "Event-driven Architecture and REST-APIs: It's not a competition",
+        "date": {
+          "year": 2023,
+          "month": "May"
+        },
+        "link": ""
+      },
+      {
+        "type": "talk",
+        "title": "Event-driven Architecture and REST-APIs: It's not a competition",
+        "date": {
+          "year": 2023,
+          "month": "September"
+        },
+        "link": ""
+      },
+      {
+        "type": "talk",
+        "title": "Event-Driven Architecture und REST-APIs: Es gibt keine Konkurrenz!",
+        "date": {
+          "year": 2023,
+          "month": "October"
+        },
+        "link": ""
+      },
+      {
+        "type": "talk",
+        "title": "Event-driven Architecture and REST-APIs: It's not a competition",
+        "date": {
+          "year": 2023,
+          "month": "December"
+        },
+        "link": "https://drive.google.com/file/d/1KN-iuw0P4nOYNhnT15RQvgq5YqGy4ECC/view?usp=sharing"
+      },
+      {
+        "type": "talk",
+        "title": "Eine Registry, sie alle zu knechten: Schemata von Entitäten mit xRegistry für alle Integrationsprodukte zentralisieren",
+        "date": {
+          "year": 2024,
+          "month": "April"
+        },
+        "link": ""
+      },
+      {
+        "type": "article",
+        "title": "AsyncAPI - HDI Global SE Case Study",
+        "date": {
+          "year": 2024,
+          "month": "July"
+        },
+        "link": "https://www.asyncapi.com/casestudies/hdiglobal"
+      }
+    ]
+  },
+  {
+    "name": "Lorna Mitchell",
+    "bio": "Lorna is based in Yorkshire, UK; she is a technology leader and expert in developer experience, passionate about enhancing APIs and developer tools. In her day job as VP of Developer Experience at Redocly, she works on API and documentation tools for technical teams. Lorna is a published author and a regular speaker at conferences, sharing her insights on a variety of tech-related topics. Lorna serves on the OpenUK board, is on the Technical Steering Committee for OpenAPI specification, and maintains open source projects. To learn more about Lorna's activities, visit her website at https://lornajane.net.",
+    "title": "APIs and Open Source",
+    "img": "https://lornajane.net/wp-content/uploads/2011/08/IMG_9410-smaller.jpg",
+    "github": "lornajane",
+    "twitter": "lornajane",
+    "linkedin": "lornajane",
+    "company": "Redocly",
+    "country": "UK",
+    "contributions": [
+      {
+        "type": "presentation",
+        "title": "API Governance for AsyncAPI",
+        "date": {
+          "year": 2023,
+          "month": "September"
+        },
+        "link": "https://noti.st/lornajane/aOuXwe/api-governance-for-asyncapi"
+      },
+      {
+        "type": "presentation",
+        "title": "AsyncAPI for Apache Kafka",
+        "date": {
+          "year": 2021,
+          "month": "May"
+        },
+        "link": "https://videos.confluent.io/watch/hzjXP8QmLtYRNPukNFUu2D?"
+      },
+      {
+        "type": "article",
+        "title": "Lint AsyncAPI with Redocly CLI",
+        "date": {
+          "year": 2023,
+          "month": "August"
+        },
+        "link": "https://redocly.com/docs/cli/guides/lint-asyncapi"
       }
     ]
   }

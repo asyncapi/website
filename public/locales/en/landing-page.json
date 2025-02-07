@@ -1,0 +1,74 @@
+{
+    "main": {
+        "header": "Building the future of",
+        "subHeader": "Event-Driven Architectures (EDA)",
+        "body_pretext": "Open-Source tools to easily build and maintain your event-driven architecture. All powered by the AsyncAPI specification, the ",
+        "body_boldtext": "industry standard",
+        "body_posttext": " for defining asynchronous APIs.",
+        "docs_btn": "Read the docs",
+        "search_btn": "Quick search...",
+        "slogan_text": "Proud to be part of the",
+        "slogan_link": "Linux Foundation"
+    },
+    "features": {
+        "title": "Why AsyncAPI?",
+        "description": "Improving the current state of Event-Driven Architectures (EDA)",
+
+        "specification.name": "Specification",
+        "specification.description": "Allows you to define the interfaces of asynchronous APIs and is protocol agnostic.",
+        "specification.links.whyasyncapi-spec-documentation-link": "Documentation",
+
+        "document-apis.name": "Document APIs",
+        "document-apis.description": "Use our tools to generate documentation at the build level, on a server, and on a client.",
+        "document-apis.links.whyasyncapi-apis-htmltemplate-link": "HTML Template",
+        "document-apis.links.whyasyncapi-apis-reactcomponents-link": "React Component",
+
+        "code-generation.name": "Code Generation",
+        "code-generation.description": "Generate documentation, Code (TypeScript, Java, C#, etc), and more out of your AsyncAPI files.",
+        "code-generation.links.whyasyncapi-generation-generator-link": "Generator",
+        "code-generation.links.whyasyncapi-generation-modelina-link": "Modelina",
+
+        "community.name": "Community",
+        "community.description": "We're a community of great people who are passionate about AsyncAPI and event-driven architectures.",
+        "community.links.whyasyncapi-community-slack-link": "Join our Slack",
+
+        "open-governance.name": "Open Governance",
+        "open-governance.description": "Our Open-Source project is part of Linux Foundation and works under an Open Governance model.",
+        "open-governance.links.whyasyncapi-governance-more-link": "Read more about Open Governance",
+        "open-governance.links.whyasyncapi-governance-tsc-link": "TSC Members",
+
+        "much-more.name": "And much more...",
+        "much-more.description": "We have many different tools and welcome you to explore our ideas and propose new ideas to AsyncAPI.",
+        "much-more.links.whyasyncapi-muchmore-github-link": "View GitHub Discussions"
+    },
+    "adopters": {
+        "title": "Adopted by the world leading brands",
+        "description": "These brands are already using AsyncAPI in production. Is your company using AsyncAPI and wants to be included in this list?",
+        "linkText": "Let us know here!"
+    },
+    "community": {
+        "title": "Join our great community!",
+        "subtitle": "We're a community of great people who are passionate about AsyncAPI and event-driven architectures.",
+        "slackCTATitle": "Join our Slack workspace",
+        "slackCTADesc": "We welcome everyone to join our Slack workspace. If you have a question on how to use AsyncAPI, want to contribute, or simply want to say hello 👋, you're welcome to join us. We're nice people 🙂",
+        "slackCTABtn": "Join us!",
+        "meetingTitle": "Join our public meetings",
+        "meetingDesc": "AsyncAPI hosts different meetings every week. They are focused on different topics, sometimes purely technical and sometimes about community building. Pick one and join us!",
+        "meetingLink": "Learn more about our meetings."
+    },
+    "sponsors": {
+        "platinumTitle": "Platinum Sponsors",
+        "goldTitle": "Gold Sponsors",
+        "silverTitle": "Silver Sponsors",
+        "sponsorCTATitle": "Want to Sponsor Us?",
+        "sponsorCTADesc": "These great organizations are already supporting AsyncAPI. Want to become a sponsor?",
+        "sponsorCTALink": "Support us!",
+        "supportedByTitle": "Supported by",
+        "supportedByPretext": "The following companies support us by letting us use their products for free. Interested in supporting us too?",
+        "supportedByLink": "Email us",
+        "supportedByPosttext": " for more info."
+    },
+    "testimonials": {
+        "title": "What the experts are saying"
+    }
+}

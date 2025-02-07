@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { items } from './SupportItemsList';
 
 interface SupportUsProps {

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 import { otherFormsData } from '../data/otherFormsData';

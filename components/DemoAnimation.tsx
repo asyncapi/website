@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Typing from 'react-typist-component';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';

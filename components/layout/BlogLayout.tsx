@@ -2,6 +2,7 @@ import moment from 'moment';
 import ErrorPage from 'next/error';
 import HtmlHead from 'next/head';
 import { useRouter } from 'next/router';
+import React from 'react';
 
 import type { IPosts } from '@/types/post';
 

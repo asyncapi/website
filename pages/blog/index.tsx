@@ -1,8 +1,9 @@
 import { useRouter } from 'next/router';
-import { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import Empty from '@/components/illustrations/Empty';
 import GenericLayout from '@/components/layout/GenericLayout';
+import Loader from '@/components/Loader';
 import BlogPostItem from '@/components/navigation/BlogPostItem';
 import Filter from '@/components/navigation/Filter';
 import Heading from '@/components/typography/Heading';
@@ -33,6 +34,7 @@ export default function BlogIndexPage() {
         })
       : []
   );
+  const [isClient, setIsClient] = useState(false);
 
   const onFilter = (data: IBlogPost[]) => setPosts(data);
   const toFilter = [
@@ -56,6 +58,10 @@ export default function BlogIndexPage() {
 
   const description = 'Find the latest and greatest stories from our community';
   const image = '/img/social/blog.webp';
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
     <GenericLayout title='Blog' description={description} image={image} wide>
@@ -90,7 +96,7 @@ export default function BlogIndexPage() {
               <TextLink href='/rss.xml'> RSS Feed</TextLink>, too!
             </Paragraph>
           </div>
-          <div className='mx:64 mt-12 md:flex md:justify-center lg:justify-start'>
+          <div className='mx:64 mt-12 md:flex md:justify-center lg:justify-center'>
             <Filter
               data={navItems || []}
               onFilter={onFilter}
@@ -108,15 +114,23 @@ export default function BlogIndexPage() {
             )}
           </div>
           <div>
-            {Object.keys(posts).length === 0 ? (
+            {Object.keys(posts).length === 0 && (
               <div className='mt-16 flex flex-col items-center justify-center'>
                 <Empty />
                 <p className='mx-auto mt-3 max-w-2xl text-xl leading-7 text-gray-500'>No post matches your filter</p>
               </div>
-            ) : (
+            )}
+            {Object.keys(posts).length > 0 && isClient && (
               <ul className='mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3'>
-                {router.isReady && posts.map((post, index) => <BlogPostItem key={index} post={post} />)}
+                {posts.map((post, index) => (
+                  <BlogPostItem key={index} post={post} />
+                ))}
               </ul>
+            )}
+            {Object.keys(posts).length > 0 && !isClient && (
+              <div className='h-screen w-full'>
+                <Loader loaderText='Loading Blogs' className='mx-auto my-60' pulsating />
+              </div>
             )}
           </div>
         </div>

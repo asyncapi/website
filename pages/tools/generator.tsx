@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
@@ -16,7 +18,7 @@ import Paragraph from '../../components/typography/Paragraph';
  */
 function renderButtons(): JSX.Element {
   return (
-    <div className='mt-8'>
+    <div className='mt-8 flex flex-wrap gap-4'>
       {/* <Button
         text="Learn more"
         href="/docs/tools/generator"
@@ -24,12 +26,12 @@ function renderButtons(): JSX.Element {
         icon={<IconRocket className="inline-block w-6 h-6 -mt-1" />}
         className="w-full mb-2 sm:w-auto sm:mb-0 sm:mr-2"
       /> */}
-      <GithubButton className='w-full sm:w-auto' href='https://www.github.com/asyncapi/generator' />
-      <Button
-        text='View Docs'
-        href='/docs/tools/generator'
-        className='ml-2 mt-2 block w-full sm:w-auto md:mt-0 md:inline-block'
+      <GithubButton
+        text='View on Github'
+        className='w-full text-center sm:w-fit sm:text-left'
+        href='https://www.github.com/asyncapi/generator'
       />
+      <Button text='View Docs' href='/docs/tools/generator' className='w-full text-center sm:w-fit sm:text-left' />
     </div>
   );
 }

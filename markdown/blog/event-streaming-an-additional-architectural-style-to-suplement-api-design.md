@@ -21,9 +21,9 @@ The growth and adoption of web-based APIs is key to the transformational technol
 To illustrate, assume we have a project management API with the following interactions:
 
 1. Create a project (e.g. POST /projects)
-1. Create a new task (e.g. POST /projects/{projectId}/tasks)
-1. Assign the task to someone on our team (e.g. POST /tasks/{taskId}/assignees)
-1. The assignee marks the task as complete (e.g. PUT /tasks/{taskId})
+1. Create a new task (e.g. POST /projects/\{projectId\}/tasks)
+1. Assign the task to someone on our team (e.g. POST /tasks/\{taskId\}/assignees)
+1. The assignee marks the task as complete (e.g. PUT /tasks/\{taskId\})
 
 An API following this design works if design of the user interface closely mirrors those endpoints. But suppose an additional application requirement is to ‘automatically’ update a task’s status when marked complete by another user. With a request/response web-API, an option is to incessantly poll a status API on the chance a status might have changed. This is both cumbersome and error-prone.
 Instead of polling, we can introduce an __event-driven architecture__.
@@ -74,4 +74,3 @@ As API designers, we must strive to use all available tools to offer a better de
 1. How will my API consumers benefit from the addition of these events and how do they take advantage of them?
 
 Let’s shift our approach from strictly request-response to thinking in terms of how our APIs can not only offer endpoints for requests, but events that enable the API to push to other services. The result will be increased innovation and more transformative APIs both within and across our LOBs.
-

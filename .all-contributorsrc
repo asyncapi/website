@@ -61,10 +61,10 @@
       ]
     },
     {
-      "login": "alequetzalli",
-      "name": "Alejandra Quetzalli ",
+      "login": "quetzalliwrites",
+      "name": "Quetzalli Writes",
       "avatar_url": "https://avatars.githubusercontent.com/u/19964402?v=4",
-      "profile": "https://github.com/alequetzalli",
+      "profile": "https://github.com/quetzalliwrites",
       "contributions": [
         "doc",
         "review",
@@ -554,6 +554,15 @@
       "profile": "https://github.com/sagarkori143",
       "contributions": [
         "doc"
+      ]
+    },
+    {
+      "login": "raj17ce",
+      "name": "Raj Patel",
+      "avatar_url": "https://avatars.githubusercontent.com/u/116947399?v=4",
+      "profile": "https://github.com/raj17ce",
+      "contributions": [
+        "code"
       ]
     }
   ],
