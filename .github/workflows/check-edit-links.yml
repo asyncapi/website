@@ -1,7 +1,9 @@
 name: Weekly Docs Link Checker
 
 on:
-  push:
+  schedule:
+    - cron: '0 0 * * 0' # Runs every week at midnight on Sunday
+  workflow_dispatch:
 
 jobs:
   check-links:
