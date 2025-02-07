@@ -16,9 +16,6 @@ dotenv.config();
  * @throws {Error} If there is an error fetching the data.
  */
 export async function getData(): Promise<ToolsData> {
-  if (!process.env.GITHUB_TOKEN) {
-    throw new Error('GITHUB_TOKEN environment variable is required');
-  }
   // eslint-disable-next-line no-useless-catch
   try {
     const allItems = [];
