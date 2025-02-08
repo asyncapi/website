@@ -34,13 +34,10 @@ export default function BarChartComponent() {
   const categories: string[] = getUniqueCategories();
   const years: string[] = ['2023', '2024']; // Add more years as needed
 
-  // Effect hook to handle mounting state
+  // Effect hook to update windowWidth state on resize
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
     setMounted(true);
-  }, []);
-
-  // Effect hook to update windowWidth state on resize
-  useEffect(() => {
     if (typeof window !== 'undefined') {
       const handleResize = () => {
         setWindowWidth(window.innerWidth);

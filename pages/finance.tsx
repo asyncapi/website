@@ -10,7 +10,6 @@ import SponsorshipTiers from '../components/FinancialSummary/SponsorshipTiers';
 import SuccessStories from '../components/FinancialSummary/SuccessStories';
 import Container from '../components/layout/Container';
 
-// Dynamically import BarChartComponent with SSR disabled
 const BarChartComponent = dynamic(() => import('../components/FinancialSummary/BarChartComponent'), { ssr: false });
 
 /**
@@ -20,8 +19,9 @@ const BarChartComponent = dynamic(() => import('../components/FinancialSummary/B
  */
 export default function FinancialSummary() {
   const [mounted, setMounted] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(0);
+  const [windowWidth, setWindowWidth] = useState<number>(0);
 
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
     setMounted(true);
     if (typeof window !== 'undefined') {
