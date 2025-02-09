@@ -4,9 +4,9 @@ import type { ExpenseItem, Expenses, ExpensesLink } from '@/types/FinancialSumma
 
 /**
  * @description Card component displays expense details for a specific month.
- * @param {Object} props - Props for Card component.
- * @param {string} props.month - Month for which expenses are displayed.
- * @param {ExpenseItem[]} props.data - Expense data for the month.
+ * @param {string} month - Month for which expenses are displayed.
+ * @param {ExpenseItem[]} data - Expense data for the month.
+ * @param {ExpensesLink} expensesLinkData - Expense link data for the month.
  */
 export default function Card({
   month,

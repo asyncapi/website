@@ -7,6 +7,7 @@ import Card from './Card';
 
 /**
  * @description ExpensesCard component displays all expenses for each month.
+ * @param {string} year - The year for which expenses are to be displayed.
  */
 export default function ExpensesCard({ year }: { year: string }) {
   const { expensesData, expensesLinkData } = loadYearData(year);

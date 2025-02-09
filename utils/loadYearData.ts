@@ -26,6 +26,12 @@ const YEAR_DATA_MAP: { [key: string]: YearData } = {
   }
 };
 
+/**
+ * Loads the expense data for the given year.
+ * @param year - The year for which to load the data.
+ * @returns The expense data for the given year.
+ */
+
 export const loadYearData = (year: string): { expensesData: { [key: string]: ExpenseItem[] }, expensesLinkData: ExpensesLinkItem[] } => {
   try {
     const yearData = YEAR_DATA_MAP[year];
