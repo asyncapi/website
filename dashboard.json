@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/3423",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 58.29644151609953
+      "score": 60.019489048595084
     },
     {
       "id": "I_kwDOGQYLdM5AX1lK",
@@ -40,7 +40,7 @@
       "resourcePath": "/asyncapi/community/pull/1634",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 27.56876051992884
+      "score": 27.8559351086781
     },
     {
       "id": "PR_kwDOFLhIt85bqKL8",
@@ -114,30 +114,6 @@
       "score": 16.08177696995849
     },
     {
-      "id": "I_kwDOBW5R_c6AhurV",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Enabling i18n feature for smaller screens",
-      "author": "sambhavgupta0705",
-      "resourcePath": "/asyncapi/website/issues/2708",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "area/design",
-          "color": "0d67d3"
-        },
-        {
-          "name": "bounty",
-          "color": "0e8a16"
-        }
-      ],
-      "score": 13.78438025996442
-    },
-    {
       "id": "PR_kwDODou01c503Pr-",
       "isPR": true,
       "isAssigned": false,
@@ -147,6 +123,17 @@
       "repo": "asyncapi/studio",
       "labels": [],
       "score": 13.210031082465903
+    },
+    {
+      "id": "I_kwDOFLhIt85xI2wH",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Measure AsyncAPI Adoption",
+      "author": "fmvilas",
+      "resourcePath": "/asyncapi/community/issues/879",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 12.922856493716644
     },
     {
       "id": "I_kwDODwv8N86BkfYV",
@@ -501,25 +488,6 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOB5hCo854UrcU",
-      "title": "We probably need `stableSchemas` in npm package",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec-json-schemas/issues/459",
-      "repo": "asyncapi/spec-json-schemas",
-      "author": "derberg",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
