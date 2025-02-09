@@ -2,13 +2,13 @@ import React from 'react';
 
 import type { Expenses } from '@/types/FinancialSummary/BarChartComponent';
 import { loadYearData } from '@/utils/loadYearData';
+
 import Card from './Card';
 
 /**
  * @description ExpensesCard component displays all expenses for each month.
  */
-export default function ExpensesCard({year}: {year: string}) {
-
+export default function ExpensesCard({ year }: { year: string }) {
   const { expensesData, expensesLinkData } = loadYearData(year);
 
   return (

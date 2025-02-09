@@ -7,7 +7,7 @@ import type { ExpenseItem, ExpensesLinkItem } from '@/types/FinancialSummary/Bar
 import { loadYearData } from '@/utils/loadYearData';
 
 import ExpensesData from '../../config/finance/json-data/2024/Expenses.json';
-import ExpensesLinkData from '../../config/finance/json-data//2024/ExpensesLink.json';
+import ExpensesLinkData from '../../config/finance/json-data/2024/ExpensesLink.json';
 import { getUniqueCategories } from '../../utils/getUniqueCategories';
 import CustomTooltip from './CustomTooltip';
 import ExpensesCard from './ExpensesCard';
@@ -55,9 +55,7 @@ export default function BarChartComponent() {
   // Effect to load year-specific data when year changes
   useEffect(() => {
     // Load data for the selected year (or All_years)
-    const { expensesData, expensesLinkData } = loadYearData(
-      selectedYear === 'All Years' ? 'All Years' : selectedYear
-    );
+    const { expensesData, expensesLinkData } = loadYearData(selectedYear === 'All Years' ? 'All Years' : selectedYear);
 
     if (Object.keys(expensesData).length === 0) {
       // If no data found, fallback to default data

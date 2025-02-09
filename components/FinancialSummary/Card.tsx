@@ -8,7 +8,15 @@ import type { ExpenseItem, Expenses, ExpensesLink } from '@/types/FinancialSumma
  * @param {string} props.month - Month for which expenses are displayed.
  * @param {ExpenseItem[]} props.data - Expense data for the month.
  */
-export default function Card({ month, data, expensesLinkData }: { month: keyof Expenses; data: ExpenseItem[]; expensesLinkData: ExpensesLink}) {
+export default function Card({
+  month,
+  data,
+  expensesLinkData
+}: {
+  month: keyof Expenses;
+  data: ExpenseItem[];
+  expensesLinkData: ExpensesLink;
+}) {
   /**
    * Handles the click event on an expense category.
    * Opens a new window with the corresponding link if available.
