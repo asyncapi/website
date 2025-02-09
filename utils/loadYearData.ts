@@ -1,8 +1,10 @@
 import type { ExpenseItem, ExpensesLinkItem } from '@/types/FinancialSummary/BarChartComponent';
-import expenses2023 from '../config/finance/2023/Expenses.json';
-import expensesLink2023 from '../config/finance/2023/ExpensesLink.json';
-import expenses2024 from '../config/finance/2024/Expenses.json';
-import expensesLink2024 from '../config/finance/2024/ExpensesLink.json';
+import expenses2023 from '../config/finance/json-data/2023/Expenses.json';
+import expensesLink2023 from '../config/finance/json-data/2023/ExpensesLink.json';
+import expenses2024 from '../config/finance/json-data/2024/Expenses.json';
+import expensesLink2024 from '../config/finance/json-data/2024/ExpensesLink.json';
+import expensesAll from '../config/finance/json-data/All_years/Expenses.json';
+import expensesLinkAll from '../config/finance/json-data/All_years/ExpensesLink.json';
 
 interface YearData {
   expenses: { [key: string]: ExpenseItem[] };
@@ -10,6 +12,10 @@ interface YearData {
 }
 
 const YEAR_DATA_MAP: { [key: string]: YearData } = {
+  'All Years': {
+    expenses: expensesAll,
+    links: expensesLinkAll
+  },
   '2023': {
     expenses: expenses2023,
     links: expensesLink2023

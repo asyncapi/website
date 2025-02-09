@@ -6,8 +6,8 @@ import { Bar, BarChart, CartesianGrid, Legend, Tooltip, YAxis } from 'recharts';
 import type { ExpenseItem, ExpensesLinkItem } from '@/types/FinancialSummary/BarChartComponent';
 import { loadYearData } from '@/utils/loadYearData';
 
-import ExpensesData from '../../config/finance/json-data/Expenses.json';
-import ExpensesLinkData from '../../config/finance/json-data/ExpensesLink.json';
+import ExpensesData from '../../config/finance/json-data/2024/Expenses.json';
+import ExpensesLinkData from '../../config/finance/json-data//2024/ExpensesLink.json';
 import { getUniqueCategories } from '../../utils/getUniqueCategories';
 import CustomTooltip from './CustomTooltip';
 import ExpensesCard from './ExpensesCard';
@@ -30,8 +30,8 @@ export default function BarChartComponent() {
     expensesLinkData: ExpensesLinkData
   });
 
-  // Extracting unique categories and months from the data
-  const categories: string[] = getUniqueCategories();
+  // Extracting unique categories from the data
+  const categories: string[] = getUniqueCategories({ selectedYear });
   const years: string[] = ['2023', '2024']; // Add more years as needed
 
   // Effect hook to update windowWidth state on resize
@@ -54,54 +54,19 @@ export default function BarChartComponent() {
 
   // Effect to load year-specific data when year changes
   useEffect(() => {
-    if (selectedYear === 'All Years') {
-      const allYearsData: { [key: string]: ExpenseItem[] } = {};
-      const allLinksData: ExpensesLinkItem[] = [...ExpensesLinkData];
+    // Load data for the selected year (or All_years)
+    const { expensesData, expensesLinkData } = loadYearData(
+      selectedYear === 'All Years' ? 'All Years' : selectedYear
+    );
 
-      // Start with the default JSON data
-      Object.keys(ExpensesData).forEach((month) => {
-        allYearsData[month] = [...ExpensesData[month as keyof typeof ExpensesData]];
-      });
-
-      // Add data from each year
-      years.forEach((year) => {
-        const { expensesData, expensesLinkData } = loadYearData(year);
-
-        if (Object.keys(expensesData).length > 0) {
-          // Combine expenses for each month
-          Object.keys(expensesData).forEach((month) => {
-            if (!allYearsData[month]) {
-              allYearsData[month] = [];
-            }
-            allYearsData[month].push(...expensesData[month]);
-          });
-
-          // Merge unique links
-          expensesLinkData.forEach((link: ExpensesLinkItem) => {
-            if (!allLinksData.some((l) => l.category === link.category)) {
-              allLinksData.push(link);
-            }
-          });
-        }
-      });
-
+    if (Object.keys(expensesData).length === 0) {
+      // If no data found, fallback to default data
       setCurrentData({
-        expensesData: allYearsData,
-        expensesLinkData: allLinksData
+        expensesData: ExpensesData,
+        expensesLinkData: ExpensesLinkData
       });
     } else {
-      // Otherwise load year-specific data
-      const { expensesData, expensesLinkData } = loadYearData(selectedYear);
-
-      if (Object.keys(expensesData).length === 0) {
-        // If no year-specific data found, fallback to JSON data
-        setCurrentData({
-          expensesData: ExpensesData,
-          expensesLinkData: ExpensesLinkData
-        });
-      } else {
-        setCurrentData({ expensesData, expensesLinkData });
-      }
+      setCurrentData({ expensesData, expensesLinkData });
     }
   }, [selectedYear]);
 
@@ -222,7 +187,7 @@ export default function BarChartComponent() {
             />
           </BarChart>
         </div>
-        {windowWidth && windowWidth < 900 ? <ExpensesCard /> : null}
+        {windowWidth && windowWidth < 900 ? <ExpensesCard year={selectedYear} /> : null}
       </div>
     </div>
   );

@@ -47,15 +47,82 @@ async function start() {
     throw new Error('No finance data found in the finance directory.');
   }
 
-  const latestYear = yearsList[0];
+  // Initialize combined data objects before the year loop
+  const allExpenses = {};
+  const allExpensesLinks = [];
 
-  await buildFinanceInfoList({
-    currentDir: '.',
-    configDir: 'config',
-    financeDir: 'finance',
-    year: latestYear,
-    jsonDataDir: 'json-data'
-  });
+  // Loop through all years and build finance info list for each year
+  for (const year of yearsList) {
+    // Build individual year data
+    await buildFinanceInfoList({
+      currentDir: '.',
+      configDir: 'config',
+      financeDir: 'finance',
+      year: year,
+      jsonDataDir: `json-data/${year}`
+    });
+
+    // Add data to combined collections
+    const expensesPath = resolve(financeDir, `json-data/${year}/Expenses.json`);
+    const linksPath = resolve(financeDir, `json-data/${year}/ExpensesLink.json`);
+
+    if (fs.existsSync(expensesPath)) {
+      const yearExpenses = JSON.parse(fs.readFileSync(expensesPath, 'utf8'));
+      Object.entries(yearExpenses).forEach(([month, expenses]) => {
+        if (!allExpenses[month]) {
+          allExpenses[month] = [];
+        }
+
+        // Create a temporary object to hold category sums for this month
+        const monthCategorySums = {};
+        
+        // Process existing amounts in allExpenses for this month
+        allExpenses[month].forEach((existing) => {
+          monthCategorySums[existing.Category] = parseFloat(existing.Amount);
+        });
+
+        // Add or sum new expenses from current year
+        expenses.forEach((expense) => {
+          const amount = parseFloat(expense.Amount);
+          if (monthCategorySums[expense.Category]) {
+            monthCategorySums[expense.Category] += amount;
+          } else {
+            monthCategorySums[expense.Category] = amount;
+          }
+        });
+
+        // Convert back to array format with summed amounts
+        allExpenses[month] = Object.entries(monthCategorySums).map(([Category, Amount]) => ({
+          Category,
+          Amount: Amount.toFixed(2)
+        }));
+      });
+    }
+
+    if (fs.existsSync(linksPath)) {
+      const yearLinks = JSON.parse(fs.readFileSync(linksPath, 'utf8'));
+      yearLinks.forEach(link => {
+        if (!allExpensesLinks.some(existing => existing.category === link.category)) {
+          allExpensesLinks.push(link);
+        }
+      });
+    }
+  }
+
+  // Create All_years directory and save combined data
+  const allYearsDir = resolve(financeDir, 'json-data/All_years');
+  if (!fs.existsSync(allYearsDir)) {
+    fs.mkdirSync(allYearsDir, { recursive: true });
+  }
+
+  fs.writeFileSync(
+    resolve(allYearsDir, 'Expenses.json'),
+    JSON.stringify(allExpenses)
+  );
+  fs.writeFileSync(
+    resolve(allYearsDir, 'ExpensesLink.json'),
+    JSON.stringify(allExpensesLinks)
+  );
 }
 
 module.exports = start;
