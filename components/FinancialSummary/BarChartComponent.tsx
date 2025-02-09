@@ -31,7 +31,7 @@ export default function BarChartComponent() {
   });
 
   // Extracting unique categories from the data
-  const categories: string[] = getUniqueCategories({ selectedYear });
+  const categories: string[] = getUniqueCategories({ selectedYear, selectedMonth });
   const years: string[] = ['2023', '2024']; // Add more years as needed
 
   // Effect hook to update windowWidth state on resize
