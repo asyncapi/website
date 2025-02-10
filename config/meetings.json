@@ -1,38 +1,10 @@
 [
   {
     "title": "Marketing WG Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=NDd1NzNqdWprNWdqc3U3aGsyZnBhOWpobXMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1553",
-    "banner": "",
-    "date": "2024-10-22T14:00:00.000Z"
-  },
-  {
-    "title": "Marketing WG Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=MG9qY2RycjY2cm0xMW1ibTVpZGh2MXZuNjQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1554",
     "banner": "",
     "date": "2024-11-05T14:00:00.000Z"
-  },
-  {
-    "title": "AsyncAPI Online Conference 2024",
-    "calLink": "https://www.google.com/calendar/event?eid=cjZwdnVldDd2Z29zb3Jlcm9pdTBvYzJmMnMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1562",
-    "banner": "",
-    "date": "2024-10-30T10:00:00.000Z"
-  },
-  {
-    "title": "Conference Dry Run",
-    "calLink": "https://www.google.com/calendar/event?eid=ZmR1c25lZG1wc2swOWloNDd2c2VudWc5OTggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1566",
-    "banner": "",
-    "date": "2024-10-28T16:00:00.000Z"
-  },
-  {
-    "title": "AsyncAPI + WebSocket: The Collaborative Combo ",
-    "calLink": "https://www.google.com/calendar/event?eid=bGo4aXNjNzg3Ym5tbWRtb2wxZ2ZuMmtxN2sgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1569",
-    "banner": "https://github.com/user-attachments/assets/0cdfc741-e61d-4710-bb0a-af9f7485ff9a",
-    "date": "2024-11-01T13:00:00.000Z"
   },
   {
     "title": "Marketing WG Meeting",
