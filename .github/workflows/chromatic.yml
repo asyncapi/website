@@ -2,7 +2,10 @@
 name: 'Chromatic Publish'
 
 # Event for the workflow
-on: push
+on: 
+  push:
+    branches:
+      - master
 
 # List of jobs
 jobs:
@@ -16,7 +19,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version-file: '.nvmrc'
           cache: 'npm'
       - run: npm ci
       #👇 Adds Chromatic as a step in the workflow
