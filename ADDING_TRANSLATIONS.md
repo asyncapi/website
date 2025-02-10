@@ -259,7 +259,7 @@ If you want to add a new locale like `fr` to serve pages in the French locale on
 After adding a new internationalized page, ensure it is being served on the website when someone visits.
   - Make sure to add the same `href` to the `utils/i18n.ts` in the respective locales supporting that `href`.
 
-If you have added the 'french' locale and translated the 'tools/cli' page, clicking 'Tools -> CLI' in the navigation menu will redirect the user to 'asyncapi.com/french/tools/cli'.
+If you have added the 'fr' locale and translated the 'tools/cli' page, clicking 'Tools -> CLI' in the navigation menu will redirect the user to 'asyncapi.com/fr/tools/cli'.
 
 `locales` folder structure
 ```diff
@@ -286,7 +286,7 @@ module.exports = {
     i18n: {
 -       languages: ["en", "de"],
 +       languages: ["en", "de", "fr"],
-        defaultLanguage: "english",
+        defaultLanguage: "en",
         namespaces: ["landing-page", "common", "tools"],
         defaultNamespace: "landing-page",
     },
