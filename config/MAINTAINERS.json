@@ -462,7 +462,8 @@
         "slack": "U01SGCZMJKW",
         "twitter": "souvik_ns",
         "linkedin": "souvik-de-a2b941169",
-        "availableForHire": true,
+        "availableForHire": false,
+        "company": "Codemate",
         "isTscMember": true,
         "repos": [
             "cli",
