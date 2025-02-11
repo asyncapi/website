@@ -1,6 +1,8 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
+import i18nextConfig from '@/next-i18next.config';
+
 import type { SelectProps } from '../form/Select';
 import IconLanguage from '../icons/Language';
 
@@ -12,10 +14,7 @@ import IconLanguage from '../icons/Language';
  * @param {string} props.selected - The currently selected option value.
  */
 export default function LanguageSelect({ className = '', onChange = () => {}, options = [], selected }: SelectProps) {
-  const langMap: { [key: string]: string } = {
-    en: 'English',
-    de: 'Deutsch'
-  };
+  const { langMap } = i18nextConfig;
 
   return (
     <div className='relative inline-block'>
@@ -32,7 +31,7 @@ export default function LanguageSelect({ className = '', onChange = () => {}, op
         >
           {options.map((option, index) => (
             <option key={index} value={option.value} data-testid='Option-form'>
-              {langMap[option.text.toLowerCase()] || option.text}
+              {langMap[option.text.toLowerCase() as keyof typeof langMap] || option.text}
             </option>
           ))}
         </select>
