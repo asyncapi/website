@@ -290,6 +290,11 @@ module.exports = {
         namespaces: ["landing-page", "common", "tools"],
         defaultNamespace: "landing-page",
     },
+    langMap: {
+    en: 'English',
+    de: 'Deutsch',
++   fr: 'French',
+  },
 };
 ```
  - Add new locale routing.

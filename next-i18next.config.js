@@ -8,6 +8,6 @@ module.exports = {
   },
   langMap: {
     en: 'English',
-    de: 'Deutsch'
+    de: 'Deutsch',
   },
 };
