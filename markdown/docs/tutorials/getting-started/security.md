@@ -70,7 +70,7 @@ components:
       format: datetime`}
 </CodeBlock>
 
-The example above shows how to specify that your server (a Kafka broker) requires a user and a password to establish a connection. Let's break this down.
+The example above shows how to specify that your server (a RabbitMQ broker) requires a user and a password to establish a connection. Let's break this down.
 
 There's a property in the server object called `security`. It's an array and can contain multiple security mechanisms. You chose to specify only one mechanism which is `userPassword`.
 
