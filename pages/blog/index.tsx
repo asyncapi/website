@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 
 import Empty from '@/components/illustrations/Empty';
 import GenericLayout from '@/components/layout/GenericLayout';
 import Loader from '@/components/Loader';
+import BlogPagination from '@/components/navigation/BlogPagination';
 import BlogPostItem from '@/components/navigation/BlogPostItem';
 import Filter from '@/components/navigation/Filter';
 import Heading from '@/components/typography/Heading';
@@ -35,7 +36,6 @@ export default function BlogIndexPage() {
       : []
   );
   const [isClient, setIsClient] = useState(false);
-
   const onFilter = (data: IBlogPost[]) => setPosts(data);
   const toFilter = [
     {
@@ -50,14 +50,61 @@ export default function BlogIndexPage() {
     }
   ];
   const clearFilters = () => {
-    router.push(`${router.pathname}`, undefined, {
-      shallow: true
-    });
+    const { page } = router.query;
+
+    router.push(
+      {
+        pathname: router.pathname,
+        query: { ...(page && { page }) }
+      },
+      undefined,
+      {
+        shallow: true
+      }
+    );
   };
-  const showClearFilters = Object.keys(router.query).length > 0;
+  const showClearFilters = Object.keys(router.query).length > 1;
 
   const description = 'Find the latest and greatest stories from our community';
   const image = '/img/social/blog.webp';
+  const blogsPerPage = 9;
+
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const currentPosts = useMemo(() => {
+    const indexOfLastPost = currentPage * blogsPerPage;
+    const indexOfFirstPost = indexOfLastPost - blogsPerPage;
+
+    return posts.slice(indexOfFirstPost, indexOfLastPost);
+  }, [currentPage, posts]);
+
+  const paginate = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+    const { query } = router;
+    const newQuery = {
+      ...query,
+      page: pageNumber
+    };
+
+    router.push(
+      {
+        pathname: router.pathname,
+        query: newQuery
+      },
+      undefined,
+      {
+        shallow: true
+      }
+    );
+  };
+
+  useEffect(() => {
+    const currentPageNumber = Math.max(
+      1,
+      Number.isNaN(parseInt(router.query.page as string, 10)) ? 1 : parseInt(router.query.page as string, 10)
+    );
+
+    setCurrentPage(currentPageNumber);
+  }, [router.query.page]);
 
   useEffect(() => {
     setIsClient(true);
@@ -114,7 +161,7 @@ export default function BlogIndexPage() {
             )}
           </div>
           <div>
-            {Object.keys(posts).length === 0 && (
+            {(Object.keys(posts).length === 0 || Object.keys(currentPosts).length === 0) && (
               <div className='mt-16 flex flex-col items-center justify-center'>
                 <Empty />
                 <p className='mx-auto mt-3 max-w-2xl text-xl leading-7 text-gray-500'>No post matches your filter</p>
@@ -122,16 +169,23 @@ export default function BlogIndexPage() {
             )}
             {Object.keys(posts).length > 0 && isClient && (
               <ul className='mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3'>
-                {posts.map((post, index) => (
+                {currentPosts.map((post, index) => (
                   <BlogPostItem key={index} post={post} />
                 ))}
               </ul>
             )}
-            {Object.keys(posts).length > 0 && !isClient && (
+            {Object.keys(currentPosts).length > 0 && !isClient && (
               <div className='h-screen w-full'>
                 <Loader loaderText='Loading Blogs' className='mx-auto my-60' pulsating />
               </div>
             )}
+            {/* Pagination component */}
+            <BlogPagination
+              blogsPerPage={blogsPerPage}
+              totalBlogs={posts.length}
+              paginate={paginate}
+              currentPage={currentPage}
+            />
           </div>
         </div>
       </div>
