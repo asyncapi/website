@@ -26,8 +26,8 @@ The AsyncAPI CLI makes it easier to work with AsyncAPI documents.
 $ npm install -g @asyncapi/cli
 $ asyncapi COMMAND
 running command...
-$ asyncapi (--version)
-@asyncapi/cli/2.14.1 linux-x64 node-v18.20.5
+$ asyncapi (--version | --v)
+@asyncapi/cli/2.16.1 linux-x64 node-v18.20.5
 $ asyncapi --help [COMMAND]
 USAGE
   $ asyncapi COMMAND
