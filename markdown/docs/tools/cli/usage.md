@@ -537,58 +537,15 @@ _See code: [src/commands/generate/models.ts](https://github.com/asyncapi/cli/blo
 
 ## `asyncapi new`
 
-Creates a new asyncapi file
+Create a new AsyncAPI project, specification files, or templates for clients and applications.
 
 ```
 USAGE
-  $ asyncapi new [-h] [-n <value>] [-e <value>] [-s] [-p <value>] [--no-tty]
-
-FLAGS
-  -e, --example=<value>
-      name of the example to use. Available examples are:
-      - simple-asyncapi.yml
-      - adeo-kafka-request-reply-asyncapi.yml
-      - anyof-asyncapi.yml
-      - application-headers-asyncapi.yml
-      - correlation-id-asyncapi.yml
-      - websocket-gemini-asyncapi.yml
-      - gitter-streaming-asyncapi.yml
-      - kraken-websocket-request-reply-message-filter-in-reply-asyncapi.yml
-      - kraken-websocket-request-reply-multiple-channels-asyncapi.yml
-      - mercure-asyncapi.yml
-      - not-asyncapi.yml
-      - operation-security-asyncapi.yml
-      - oneof-asyncapi.yml
-      - rpc-client-asyncapi.yml
-      - rpc-server-asyncapi.yml
-      - slack-rtm-asyncapi.yml
-      - tutorial.yml
-      - streetlights-kafka-asyncapi.yml
-      - streetlights-operation-security-asyncapi.yml
-      - streetlights-mqtt-asyncapi.yml
-
-  -h, --help
-      Show CLI help.
-
-  -n, --file-name=<value>
-      name of the file
-
-  -p, --port=<value>
-      port in which to start Studio
-
-  -s, --studio
-      open in Studio
-
-  --no-tty
-      do not use an interactive terminal
+  $ asyncapi new
 
 DESCRIPTION
-  Creates a new asyncapi file
+  Create a new AsyncAPI project, specification files, or templates for clients and applications.
 
-EXAMPLES
-  $ asyncapi new	 - start creation of a file in interactive mode
-
-  $ asyncapi new --file-name=my-asyncapi.yaml --example=default-example.yaml --no-tty	 - create a new file with a specific name, using one of the examples and without interactive mode
 ```
 
 _See code: [src/commands/new/index.ts](https://github.com/asyncapi/cli/blob/v2.14.1/src/commands/new/index.ts)_
