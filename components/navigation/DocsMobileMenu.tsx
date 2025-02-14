@@ -50,8 +50,20 @@ export default function DocsMobileMenu({ post, navigation, onClickClose = () => 
                 className='flex w-full items-center space-x-3 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-left text-sm text-gray-700 shadow-sm transition-all duration-500 ease-in-out hover:border-secondary-500 hover:bg-secondary-100 hover:text-secondary-500'
                 indexName={DOCS_INDEX_NAME}
               >
-                <IconLoupe />
-                <span className='flex-auto'>Search docs...</span>
+                {({ actionKey }) => (
+                  <>
+                    <IconLoupe />
+                    <span className='flex-auto'>Search docs...</span>
+                    {actionKey && (
+                      <kbd className='font-sans font-semibold'>
+                        <abbr title={actionKey.key} className='no-underline'>
+                          {actionKey.shortKey}
+                        </abbr>{' '}
+                        K
+                      </kbd>
+                    )}
+                  </>
+                )}
               </SearchButton>
             </div>
             <nav className='mb-4 mt-5 px-2'>

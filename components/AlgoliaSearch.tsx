@@ -18,6 +18,8 @@ interface ISearchContext {
   onOpen: (indexName?: string) => void;
   onClose: () => void;
   onInput?: (e: React.KeyboardEvent) => void;
+  searchHistory: string[];
+  setSearchHistory: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
 const SearchContext = createContext<ISearchContext>({} as ISearchContext);
@@ -37,6 +39,8 @@ interface AlgoliaModalProps {
   onClose: (event?: React.MouseEvent) => void;
   initialQuery: string;
   indexName: string;
+  searchHistory: string[];
+  setSearchHistory: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
 interface IUseDocSearchKeyboardEvents {
@@ -110,7 +114,7 @@ function Hit({ hit, children }: IHitProps) {
  * @description The Algolia modal used for searching the website
  * @param {IAlgoliaModalProps} props - The props of the Algolia modal
  */
-function AlgoliaModal({ onClose, initialQuery, indexName }: AlgoliaModalProps) {
+function AlgoliaModal({ onClose, initialQuery, indexName, searchHistory, setSearchHistory }: AlgoliaModalProps) {
   const router = useRouter();
 
   return createPortal(
@@ -132,7 +136,11 @@ function AlgoliaModal({ onClose, initialQuery, indexName }: AlgoliaModalProps) {
         }
       }}
       hitComponent={Hit}
-      transformItems={transformItems}
+      transformItems={(items) => {
+        const transformedItems = transformItems(items);
+        setSearchHistory((prevHistory) => [...new Set([...prevHistory, ...transformedItems.map((item) => item.query)])]);
+        return transformedItems;
+      }}
       getMissingResultsUrl={({ query }) => {
         return `https://github.com/asyncapi/website/issues/new?title=Cannot%20search%20given%20query:%20${query}`;
       }}
@@ -235,6 +243,7 @@ export default function AlgoliaSearch({ children }: { children: React.ReactNode 
   const [isOpen, setIsOpen] = useState(false);
   const [indexName, setIndexName] = useState<string>(INDEX_NAME);
   const [initialQuery, setInitialQuery] = useState<string>();
+  const [searchHistory, setSearchHistory] = useState<string[]>([]);
 
   const onOpen = useCallback(
     (_indexName?: string) => {
@@ -270,8 +279,18 @@ export default function AlgoliaSearch({ children }: { children: React.ReactNode 
       <Head>
         <link rel='preconnect' href={`https://${APP_ID}-dsn.algolia.net`} crossOrigin='anonymous' />
       </Head>
-      <SearchContext.Provider value={{ isOpen, onOpen, onClose, onInput }}>{children}</SearchContext.Provider>
-      {isOpen && <AlgoliaModal initialQuery={initialQuery ?? ''} onClose={onClose} indexName={indexName} />}
+      <SearchContext.Provider value={{ isOpen, onOpen, onClose, onInput, searchHistory, setSearchHistory }}>
+        {children}
+      </SearchContext.Provider>
+      {isOpen && (
+        <AlgoliaModal
+          initialQuery={initialQuery ?? ''}
+          onClose={onClose}
+          indexName={indexName}
+          searchHistory={searchHistory}
+          setSearchHistory={setSearchHistory}
+        />
+      )}
     </>
   );
 }
@@ -282,7 +301,7 @@ export default function AlgoliaSearch({ children }: { children: React.ReactNode 
  * @param {ISearchButtonProps} props - The props of the search button
  */
 export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISearchButtonProps) {
-  const { onOpen, onInput } = useContext(SearchContext);
+  const { onOpen, onInput, searchHistory, setSearchHistory } = useContext(SearchContext);
   const [Children, setChildren] = useState<string | React.ReactNode>('');
   const searchButtonRef = useRef<HTMLButtonElement>(null);
   const actionKey = getActionKey();

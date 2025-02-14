@@ -4,7 +4,7 @@ import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 import { useTranslation } from '../utils/i18n';
-import AlgoliaSearch, { SearchButton } from './AlgoliaSearch'; // Import AlgoliaSearch component
+import { SearchButton } from './AlgoliaSearch'; // Import SearchButton component
 import Button from './buttons/Button';
 import AnnouncementHero from './campaigns/AnnouncementHero';
 import DemoAnimation from './DemoAnimation';
@@ -52,25 +52,22 @@ export default function Hero({ className = '' }: HeroProps) {
               icon={<ArrowRight className='-mb-1 size-5' />}
               data-testid='Hero-Button'
             />
-            {/* Wrap SearchButton with AlgoliaSearch component */}
-            <AlgoliaSearch>
-              <SearchButton className='flex w-full items-center space-x-3 rounded-md border border-secondary-500 bg-secondary-100 px-4 py-3 text-left text-secondary-500 shadow-md transition-all duration-500 ease-in-out hover:bg-secondary-500 hover:text-white md:w-auto'>
-                {({ actionKey }) => (
-                  <>
-                    <IconLoupe />
-                    <span className='flex-auto'>{t('main.search_btn')}</span>
-                    {actionKey && (
-                      <kbd className='font-sans font-semibold'>
-                        <abbr title={actionKey.key} className='no-underline'>
-                          {actionKey.shortKey}
-                        </abbr>{' '}
-                        K
-                      </kbd>
-                    )}
-                  </>
-                )}
-              </SearchButton>
-            </AlgoliaSearch>
+            <SearchButton className='flex w-full items-center space-x-3 rounded-md border border-secondary-500 bg-secondary-100 px-4 py-3 text-left text-secondary-500 shadow-md transition-all duration-500 ease-in-out hover:bg-secondary-500 hover:text-white md:w-auto'>
+              {({ actionKey }) => (
+                <>
+                  <IconLoupe />
+                  <span className='flex-auto'>{t('main.search_btn')}</span>
+                  {actionKey && (
+                    <kbd className='font-sans font-semibold'>
+                      <abbr title={actionKey.key} className='no-underline'>
+                        {actionKey.shortKey}
+                      </abbr>{' '}
+                      K
+                    </kbd>
+                  )}
+                </>
+              )}
+            </SearchButton>
           </div>
           <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-4' textColor='text-gray-500'>
             {t('main.slogan_text')}{' '}
