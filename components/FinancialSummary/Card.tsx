@@ -1,16 +1,22 @@
 import React from 'react';
 
-import type { ExpenseItem, Expenses } from '@/types/FinancialSummary/BarChartComponent';
-
-import ExpensesLinkData from '../../config/finance/json-data/ExpensesLink.json';
+import type { ExpenseItem, Expenses, ExpensesLink } from '@/types/FinancialSummary/BarChartComponent';
 
 /**
  * @description Card component displays expense details for a specific month.
- * @param {Object} props - Props for Card component.
- * @param {string} props.month - Month for which expenses are displayed.
- * @param {ExpenseItem[]} props.data - Expense data for the month.
+ * @param {string} month - Month for which expenses are displayed.
+ * @param {ExpenseItem[]} data - Expense data for the month.
+ * @param {ExpensesLink} expensesLinkData - Expense link data for the month.
  */
-export default function Card({ month, data }: { month: keyof Expenses; data: ExpenseItem[] }) {
+export default function Card({
+  month,
+  data,
+  expensesLinkData
+}: {
+  month: keyof Expenses;
+  data: ExpenseItem[];
+  expensesLinkData: ExpensesLink;
+}) {
   /**
    * Handles the click event on an expense category.
    * Opens a new window with the corresponding link if available.
@@ -18,7 +24,7 @@ export default function Card({ month, data }: { month: keyof Expenses; data: Exp
    * {void}
    */
   function handleExpenseClick(category: string) {
-    const matchedLinkObject = ExpensesLinkData.find((obj) => obj.category === category);
+    const matchedLinkObject = expensesLinkData.find((obj) => obj.category === category);
 
     if (matchedLinkObject) {
       window.open(matchedLinkObject.link, '_blank');
