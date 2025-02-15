@@ -428,7 +428,7 @@ Generates whatever you want using templates compatible with AsyncAPI Generator.
 USAGE
   $ asyncapi generate fromTemplate ASYNCAPI TEMPLATE [-h] [-d <value>...] [--no-interactive] [-i] [--debug] [-n <value>...]
     [-o <value>] [--force-write] [-w] [-p <value>...] [--map-base-url <value>] [--registry-url <value>] [--registry-auth
-    <value>] [--registry-token <value>] [--use-new-generator]
+    <value>] [--registry-token <value>] [--proxyHost <value>] [--proxyPort <value>] [--use-new-generator]
 
 ARGUMENTS
   ASYNCAPI  - Local path, url or context-name pointing to AsyncAPI file
@@ -454,6 +454,8 @@ FLAGS
                                  username and password
       --registry-url=<value>     [default: https://registry.npmjs.org] Specifies the URL of the private registry for
                                  fetching templates and dependencies
+      --proxyHost=<value>        Name of the ProxyHost
+      --proxyPort=<value>        Port number number for the proxyHost.
       --use-new-generator        Use v2 generator, for generating from newer templates
 
 DESCRIPTION
@@ -477,7 +479,7 @@ USAGE
     [--csharpAutoImplement] [--csharpNewtonsoft] [--csharpArrayType Array|List] [--csharpHashcode] [--csharpEqual]
     [--csharpSystemJson] [--javaIncludeComments] [--javaJackson] [--javaConstraints] [--javaArrayType Array|List]
     [--pyDantic] [--no-interactive] [--log-diagnostics] [--diagnostics-format
-    json|stylish|junit|html|text|teamcity|pretty] [--fail-severity error|warn|info|hint]
+    json|stylish|junit|html|text|teamcity|pretty] [--proxyHost <value>] [--proxyPort <value>] [--fail-severity error|warn|info|hint]
 
 ARGUMENTS
   LANGUAGE  (typescript|csharp|golang|java|javascript|dart|python|rust|kotlin|php|cplusplus|scala) The language you want
@@ -528,6 +530,8 @@ FLAGS
       --tsModuleSystem=<option>      [default: ESM] TypeScript specific, define the module system to be used.
                                      <options: ESM|CJS>
       --tsRawPropertyNames           Typescript specific, generate the models using raw property names.
+      --proxyHost=<value>            Name of the ProxyHost
+      --proxyPort=<value>            Port number number for the proxyHost.
 
 DESCRIPTION
   Generates typed models
