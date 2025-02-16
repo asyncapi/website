@@ -9,5 +9,9 @@ module.exports = {
     namespaces: ['landing-page', 'common', 'tools'],
     defaultNamespace: 'landing-page',
     react: { useSuspense: false } // this line
+  },
+  langMap: {
+    en: 'English',
+    de: 'Deutsch'
   }
 };

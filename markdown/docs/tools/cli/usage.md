@@ -26,8 +26,8 @@ The AsyncAPI CLI makes it easier to work with AsyncAPI documents.
 $ npm install -g @asyncapi/cli
 $ asyncapi COMMAND
 running command...
-$ asyncapi (--version)
-@asyncapi/cli/2.14.1 linux-x64 node-v18.20.5
+$ asyncapi (--version | --v)
+@asyncapi/cli/2.16.1 linux-x64 node-v18.20.5
 $ asyncapi --help [COMMAND]
 USAGE
   $ asyncapi COMMAND
@@ -52,7 +52,7 @@ USAGE
   - [`asyncapi config context remove CONTEXT-NAME`](#asyncapi-config-context-remove-context-name)
   - [`asyncapi config context use CONTEXT-NAME`](#asyncapi-config-context-use-context-name)
   - [`asyncapi config versions`](#asyncapi-config-versions)
-  - [`asyncapi convert [SPEC-FILE] [PROXYHOST] [PROXYPORT]`](#asyncapi-convert-spec-file-proxyhost-proxyport)
+  - [`asyncapi convert [SPEC-FILE]`](#asyncapi-convert-spec-file)
   - [`asyncapi diff OLD NEW`](#asyncapi-diff-old-new)
   - [`asyncapi format [SPEC-FILE]`](#asyncapi-format-spec-file)
   - [`asyncapi generate`](#asyncapi-generate)
@@ -62,11 +62,11 @@ USAGE
   - [`asyncapi new file`](#asyncapi-new-file)
   - [`asyncapi new glee`](#asyncapi-new-glee)
   - [`asyncapi new template`](#asyncapi-new-template)
-  - [`asyncapi optimize [SPEC-FILE] [PROXYHOST] [PROXYPORT]`](#asyncapi-optimize-spec-file-proxyhost-proxyport)
+  - [`asyncapi optimize [SPEC-FILE]`](#asyncapi-optimize-spec-file)
   - [`asyncapi pretty SPEC-FILE`](#asyncapi-pretty-spec-file)
   - [`asyncapi start`](#asyncapi-start)
   - [`asyncapi start studio`](#asyncapi-start-studio)
-  - [`asyncapi validate [SPEC-FILE] [PROXYHOST] [PROXYPORT]`](#asyncapi-validate-spec-file-proxyhost-proxyport)
+  - [`asyncapi validate [SPEC-FILE]`](#asyncapi-validate-spec-file)
 
 ## `asyncapi bundle`
 
@@ -310,19 +310,17 @@ DESCRIPTION
 
 _See code: [src/commands/config/versions.ts](https://github.com/asyncapi/cli/blob/v2.14.1/src/commands/config/versions.ts)_
 
-## `asyncapi convert [SPEC-FILE] [PROXYHOST] [PROXYPORT]`
+## `asyncapi convert [SPEC-FILE]`
 
 Convert asyncapi documents older to newer versions or OpenAPI/postman-collection documents to AsyncAPI
 
 ```
 USAGE
-  $ asyncapi convert [SPEC-FILE] [PROXYHOST] [PROXYPORT] -f openapi|asyncapi|postman-collection [-h] [-o
+  $ asyncapi convert [SPEC-FILE] -f openapi|asyncapi|postman-collection [-h] [-o
     <value>] [-t <value>] [-p client|server] [--proxyHost <value>] [--proxyPort <value>]
 
 ARGUMENTS
   SPEC-FILE  spec path, url, or context-name
-  PROXYHOST  Name of the Proxy Host
-  PROXYPORT  Name of the Port of the ProxyHost
 
 FLAGS
   -f, --format=<option>         (required) [default: asyncapi] Specify the format to convert from (openapi or asyncapi)
@@ -428,7 +426,7 @@ Generates whatever you want using templates compatible with AsyncAPI Generator.
 USAGE
   $ asyncapi generate fromTemplate ASYNCAPI TEMPLATE [-h] [-d <value>...] [--no-interactive] [-i] [--debug] [-n <value>...]
     [-o <value>] [--force-write] [-w] [-p <value>...] [--map-base-url <value>] [--registry-url <value>] [--registry-auth
-    <value>] [--registry-token <value>] [--use-new-generator]
+    <value>] [--registry-token <value>] [--proxyHost <value>] [--proxyPort <value>] [--use-new-generator]
 
 ARGUMENTS
   ASYNCAPI  - Local path, url or context-name pointing to AsyncAPI file
@@ -454,6 +452,8 @@ FLAGS
                                  username and password
       --registry-url=<value>     [default: https://registry.npmjs.org] Specifies the URL of the private registry for
                                  fetching templates and dependencies
+      --proxyHost=<value>        Name of the ProxyHost
+      --proxyPort=<value>        Port number number for the proxyHost.
       --use-new-generator        Use v2 generator, for generating from newer templates
 
 DESCRIPTION
@@ -477,7 +477,7 @@ USAGE
     [--csharpAutoImplement] [--csharpNewtonsoft] [--csharpArrayType Array|List] [--csharpHashcode] [--csharpEqual]
     [--csharpSystemJson] [--javaIncludeComments] [--javaJackson] [--javaConstraints] [--javaArrayType Array|List]
     [--pyDantic] [--no-interactive] [--log-diagnostics] [--diagnostics-format
-    json|stylish|junit|html|text|teamcity|pretty] [--fail-severity error|warn|info|hint]
+    json|stylish|junit|html|text|teamcity|pretty] [--proxyHost <value>] [--proxyPort <value>] [--fail-severity error|warn|info|hint]
 
 ARGUMENTS
   LANGUAGE  (typescript|csharp|golang|java|javascript|dart|python|rust|kotlin|php|cplusplus|scala) The language you want
@@ -528,6 +528,8 @@ FLAGS
       --tsModuleSystem=<option>      [default: ESM] TypeScript specific, define the module system to be used.
                                      <options: ESM|CJS>
       --tsRawPropertyNames           Typescript specific, generate the models using raw property names.
+      --proxyHost=<value>            Name of the ProxyHost
+      --proxyPort=<value>            Port number number for the proxyHost.
 
 DESCRIPTION
   Generates typed models
@@ -537,58 +539,15 @@ _See code: [src/commands/generate/models.ts](https://github.com/asyncapi/cli/blo
 
 ## `asyncapi new`
 
-Creates a new asyncapi file
+Create a new AsyncAPI project, specification files, or templates for clients and applications.
 
 ```
 USAGE
-  $ asyncapi new [-h] [-n <value>] [-e <value>] [-s] [-p <value>] [--no-tty]
-
-FLAGS
-  -e, --example=<value>
-      name of the example to use. Available examples are:
-      - simple-asyncapi.yml
-      - adeo-kafka-request-reply-asyncapi.yml
-      - anyof-asyncapi.yml
-      - application-headers-asyncapi.yml
-      - correlation-id-asyncapi.yml
-      - websocket-gemini-asyncapi.yml
-      - gitter-streaming-asyncapi.yml
-      - kraken-websocket-request-reply-message-filter-in-reply-asyncapi.yml
-      - kraken-websocket-request-reply-multiple-channels-asyncapi.yml
-      - mercure-asyncapi.yml
-      - not-asyncapi.yml
-      - operation-security-asyncapi.yml
-      - oneof-asyncapi.yml
-      - rpc-client-asyncapi.yml
-      - rpc-server-asyncapi.yml
-      - slack-rtm-asyncapi.yml
-      - tutorial.yml
-      - streetlights-kafka-asyncapi.yml
-      - streetlights-operation-security-asyncapi.yml
-      - streetlights-mqtt-asyncapi.yml
-
-  -h, --help
-      Show CLI help.
-
-  -n, --file-name=<value>
-      name of the file
-
-  -p, --port=<value>
-      port in which to start Studio
-
-  -s, --studio
-      open in Studio
-
-  --no-tty
-      do not use an interactive terminal
+  $ asyncapi new
 
 DESCRIPTION
-  Creates a new asyncapi file
+  Create a new AsyncAPI project, specification files, or templates for clients and applications.
 
-EXAMPLES
-  $ asyncapi new	 - start creation of a file in interactive mode
-
-  $ asyncapi new --file-name=my-asyncapi.yaml --example=default-example.yaml --no-tty	 - create a new file with a specific name, using one of the examples and without interactive mode
 ```
 
 _See code: [src/commands/new/index.ts](https://github.com/asyncapi/cli/blob/v2.14.1/src/commands/new/index.ts)_
@@ -697,20 +656,18 @@ DESCRIPTION
 
 _See code: [src/commands/new/template.ts](https://github.com/asyncapi/cli/blob/v2.14.1/src/commands/new/template.ts)_
 
-## `asyncapi optimize [SPEC-FILE] [PROXYHOST] [PROXYPORT]`
+## `asyncapi optimize [SPEC-FILE]`
 
 optimize asyncapi specification file
 
 ```
 USAGE
-  $ asyncapi optimize [SPEC-FILE] [PROXYHOST] [PROXYPORT] [-h] [-p
+  $ asyncapi optimize [SPEC-FILE] [-h] [-p
     remove-components|reuse-components|move-duplicates-to-components|move-all-to-components...] [-i schema...] [-o
     terminal|new-file|overwrite] [--no-tty] [--proxyHost <value>] [--proxyPort <value>]
 
 ARGUMENTS
   SPEC-FILE  spec path, url, or context-name
-  PROXYHOST  Name of the Proxy Host
-  PROXYPORT  Name of the Port of the ProxyHost
 
 FLAGS
   -h, --help                      Show CLI help.
@@ -803,20 +760,18 @@ DESCRIPTION
 
 _See code: [src/commands/start/studio.ts](https://github.com/asyncapi/cli/blob/v2.14.1/src/commands/start/studio.ts)_
 
-## `asyncapi validate [SPEC-FILE] [PROXYHOST] [PROXYPORT]`
+## `asyncapi validate [SPEC-FILE]`
 
 validate asyncapi file
 
 ```
 USAGE
-  $ asyncapi validate [SPEC-FILE] [PROXYHOST] [PROXYPORT] [-h] [-w] [--log-diagnostics] [--diagnostics-format
+  $ asyncapi validate [SPEC-FILE] [-h] [-w] [--log-diagnostics] [--diagnostics-format
     json|stylish|junit|html|text|teamcity|pretty] [--fail-severity error|warn|info|hint] [-o <value>] [--score]
     [--proxyHost <value>] [--proxyPort <value>]
 
 ARGUMENTS
   SPEC-FILE  spec path, url, or context-name
-  PROXYHOST  Name of the Proxy Host
-  PROXYPORT  Name of the Port of the ProxyHost
 
 FLAGS
   -h, --help                         Show CLI help.

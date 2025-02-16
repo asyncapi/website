@@ -43,7 +43,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   /**
    * Retrieves unique language options based on the current path and i18nPaths configuration.
    *
-   * @returns {string[]} - An array of unique language options in uppercase.
+   * @returns {string[]} - An array of unique language options with first letter in uppercase.
    */
   const getUniqueLangs = (): string[] => {
     let pathnameWithoutLocale = pathname;
@@ -54,12 +54,10 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
     }
 
     // Filter unique languages based on i18nPaths that include the modified pathnameWithoutLocale
-    const uniqueLangs = Object.keys(i18nPaths)
-      .filter((lang) => i18nPaths[lang].includes(pathnameWithoutLocale))
-      .map((lang) => lang.toUpperCase());
+    const uniqueLangs = Object.keys(i18nPaths).filter((lang) => i18nPaths[lang].includes(pathnameWithoutLocale));
 
-    // If no unique languages are found, default to ["EN"]
-    return uniqueLangs.length === 0 ? ['EN'] : uniqueLangs;
+    // If no unique languages are found, default to ['en']
+    return uniqueLangs.length === 0 ? ['en'] : uniqueLangs;
   };
 
   const uniqueLangs = getUniqueLangs().map((lang) => ({
@@ -147,7 +145,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
 
   return (
     <div className={`bg-white ${className} z-50`}>
-      <div className='flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-10'>
+      <div className='flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-2'>
         {!hideLogo && (
           <div className='lg:w-auto lg:flex-1'>
             <div className='flex'>
@@ -178,7 +176,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
         </div>
 
         <nav
-          className='hidden w-full space-x-6 lg:flex lg:items-center lg:justify-end xl:space-x-10'
+          className='hidden w-full space-x-4 lg:flex lg:items-center lg:justify-end xl:space-x-8'
           data-testid='Navbar-main'
         >
           <div className='relative' onMouseLeave={() => showMenu(null)} ref={learningRef}>
@@ -233,7 +231,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
                 changeLanguage(value.toLowerCase(), true);
               }}
               className=''
-              selected={i18n.language ? i18n.language.toUpperCase() : 'EN'}
+              selected={i18n.language ? i18n.language : 'en'}
             />
 
             <GithubButton
@@ -247,7 +245,14 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
       </div>
 
       {/* Mobile menu, show/hide based on mobile menu state. */}
-      {mobileMenuOpen && <MobileNavMenu onClickClose={() => setMobileMenuOpen(false)} />}
+      {mobileMenuOpen && (
+        <MobileNavMenu
+          onClickClose={() => setMobileMenuOpen(false)}
+          uniqueLangs={uniqueLangs}
+          currentLanguage={i18n.language ? i18n.language : 'en'}
+          changeLanguage={changeLanguage}
+        />
+      )}
     </div>
   );
 }
