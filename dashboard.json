@@ -12,24 +12,24 @@
       "score": 60.019489048595084
     },
     {
-      "id": "I_kwDOGQYLdM5AX1lK",
+      "id": "I_kwDOFLhIt84-OUI3",
       "isPR": false,
-      "isAssigned": true,
-      "title": "Brand Refresh: Mascot",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/brand/issues/12",
-      "repo": "asyncapi/brand",
+      "isAssigned": false,
+      "title": "Create educational & technical video explaining AsyncAPI's main features",
+      "author": "quetzalliwrites",
+      "resourcePath": "/asyncapi/community/issues/155",
+      "repo": "asyncapi/community",
       "labels": [
         {
-          "name": ":art: design",
-          "color": "0D67D3"
+          "name": "enhancement",
+          "color": "a2eeef"
         },
         {
-          "name": "bounty",
-          "color": "0E8A16"
+          "name": "stale",
+          "color": "ededed"
         }
       ],
-      "score": 37.907045714902154
+      "score": 34.74812523866031
     },
     {
       "id": "PR_kwDOFLhIt86HHVY9",
@@ -40,7 +40,7 @@
       "resourcePath": "/asyncapi/community/pull/1634",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 27.8559351086781
+      "score": 28.717458874925875
     },
     {
       "id": "PR_kwDOFLhIt85bqKL8",
@@ -81,17 +81,6 @@
       "score": 20.102221212448114
     },
     {
-      "id": "PR_kwDODwv8N86Ixy8l",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: emptied config files",
-      "author": "anmolyadav-dev",
-      "resourcePath": "/asyncapi/conference-website/pull/539",
-      "repo": "asyncapi/conference-website",
-      "labels": [],
-      "score": 19.240697446200336
-    },
-    {
       "id": "PR_kwDOCVQpZM5tYFmm",
       "isPR": true,
       "isAssigned": false,
@@ -112,6 +101,17 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 16.08177696995849
+    },
+    {
+      "id": "PR_kwDOBW5R_c6KgWbR",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: enabled viewing historical finance data",
+      "author": "SahilDahekar",
+      "resourcePath": "/asyncapi/website/pull/3658",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 15.507427792459973
     },
     {
       "id": "PR_kwDODou01c503Pr-",
@@ -244,21 +244,6 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc6lqP7B",
-      "title": "[ Feature ] Add proxy support for the generate from template command",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/cli/issues/1621",
-      "repo": "asyncapi/cli",
-      "author": "AayushSaini101",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
