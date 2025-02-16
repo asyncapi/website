@@ -603,7 +603,7 @@ DESCRIPTION
   Creates a new asyncapi file
 
 EXAMPLES
-  $ asyncapi new	 - start creation of a file in interactive mode
+  $ asyncapi new file	 - start creation of a file in interactive mode
 
   $ asyncapi new --file-name=my-asyncapi.yml --example=default-example.yml --no-tty	 - create a new file with a specific name, using one of the examples and without interactive mode
 ```
