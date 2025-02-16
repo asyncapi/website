@@ -55,6 +55,7 @@ jobs:
           configPath: ./.github/workflows/lighthouserc.json
           uploadArtifacts: true
           temporaryPublicStorage: true
+          artifactName: lighthouse-ci-results # Valid artifact name here
         env:
           PR_NUMBER: ${{ github.event.pull_request.number}}
 
