@@ -52,7 +52,7 @@ USAGE
   - [`asyncapi config context remove CONTEXT-NAME`](#asyncapi-config-context-remove-context-name)
   - [`asyncapi config context use CONTEXT-NAME`](#asyncapi-config-context-use-context-name)
   - [`asyncapi config versions`](#asyncapi-config-versions)
-  - [`asyncapi convert [SPEC-FILE] [PROXYHOST] [PROXYPORT]`](#asyncapi-convert-spec-file-proxyhost-proxyport)
+  - [`asyncapi convert [SPEC-FILE]`](#asyncapi-convert-spec-file)
   - [`asyncapi diff OLD NEW`](#asyncapi-diff-old-new)
   - [`asyncapi format [SPEC-FILE]`](#asyncapi-format-spec-file)
   - [`asyncapi generate`](#asyncapi-generate)
@@ -62,11 +62,11 @@ USAGE
   - [`asyncapi new file`](#asyncapi-new-file)
   - [`asyncapi new glee`](#asyncapi-new-glee)
   - [`asyncapi new template`](#asyncapi-new-template)
-  - [`asyncapi optimize [SPEC-FILE] [PROXYHOST] [PROXYPORT]`](#asyncapi-optimize-spec-file-proxyhost-proxyport)
+  - [`asyncapi optimize [SPEC-FILE]`](#asyncapi-optimize-spec-file)
   - [`asyncapi pretty SPEC-FILE`](#asyncapi-pretty-spec-file)
   - [`asyncapi start`](#asyncapi-start)
   - [`asyncapi start studio`](#asyncapi-start-studio)
-  - [`asyncapi validate [SPEC-FILE] [PROXYHOST] [PROXYPORT]`](#asyncapi-validate-spec-file-proxyhost-proxyport)
+  - [`asyncapi validate [SPEC-FILE]`](#asyncapi-validate-spec-file)
 
 ## `asyncapi bundle`
 
@@ -310,19 +310,17 @@ DESCRIPTION
 
 _See code: [src/commands/config/versions.ts](https://github.com/asyncapi/cli/blob/v2.14.1/src/commands/config/versions.ts)_
 
-## `asyncapi convert [SPEC-FILE] [PROXYHOST] [PROXYPORT]`
+## `asyncapi convert [SPEC-FILE]`
 
 Convert asyncapi documents older to newer versions or OpenAPI/postman-collection documents to AsyncAPI
 
 ```
 USAGE
-  $ asyncapi convert [SPEC-FILE] [PROXYHOST] [PROXYPORT] -f openapi|asyncapi|postman-collection [-h] [-o
+  $ asyncapi convert [SPEC-FILE] -f openapi|asyncapi|postman-collection [-h] [-o
     <value>] [-t <value>] [-p client|server] [--proxyHost <value>] [--proxyPort <value>]
 
 ARGUMENTS
   SPEC-FILE  spec path, url, or context-name
-  PROXYHOST  Name of the Proxy Host
-  PROXYPORT  Name of the Port of the ProxyHost
 
 FLAGS
   -f, --format=<option>         (required) [default: asyncapi] Specify the format to convert from (openapi or asyncapi)
@@ -658,20 +656,18 @@ DESCRIPTION
 
 _See code: [src/commands/new/template.ts](https://github.com/asyncapi/cli/blob/v2.14.1/src/commands/new/template.ts)_
 
-## `asyncapi optimize [SPEC-FILE] [PROXYHOST] [PROXYPORT]`
+## `asyncapi optimize [SPEC-FILE]`
 
 optimize asyncapi specification file
 
 ```
 USAGE
-  $ asyncapi optimize [SPEC-FILE] [PROXYHOST] [PROXYPORT] [-h] [-p
+  $ asyncapi optimize [SPEC-FILE] [-h] [-p
     remove-components|reuse-components|move-duplicates-to-components|move-all-to-components...] [-i schema...] [-o
     terminal|new-file|overwrite] [--no-tty] [--proxyHost <value>] [--proxyPort <value>]
 
 ARGUMENTS
   SPEC-FILE  spec path, url, or context-name
-  PROXYHOST  Name of the Proxy Host
-  PROXYPORT  Name of the Port of the ProxyHost
 
 FLAGS
   -h, --help                      Show CLI help.
@@ -764,20 +760,18 @@ DESCRIPTION
 
 _See code: [src/commands/start/studio.ts](https://github.com/asyncapi/cli/blob/v2.14.1/src/commands/start/studio.ts)_
 
-## `asyncapi validate [SPEC-FILE] [PROXYHOST] [PROXYPORT]`
+## `asyncapi validate [SPEC-FILE]`
 
 validate asyncapi file
 
 ```
 USAGE
-  $ asyncapi validate [SPEC-FILE] [PROXYHOST] [PROXYPORT] [-h] [-w] [--log-diagnostics] [--diagnostics-format
+  $ asyncapi validate [SPEC-FILE] [-h] [-w] [--log-diagnostics] [--diagnostics-format
     json|stylish|junit|html|text|teamcity|pretty] [--fail-severity error|warn|info|hint] [-o <value>] [--score]
     [--proxyHost <value>] [--proxyPort <value>]
 
 ARGUMENTS
   SPEC-FILE  spec path, url, or context-name
-  PROXYHOST  Name of the Proxy Host
-  PROXYPORT  Name of the Port of the ProxyHost
 
 FLAGS
   -h, --help                         Show CLI help.
