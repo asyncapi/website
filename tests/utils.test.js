@@ -1,5 +1,5 @@
-const { convertToJson } = require("../scripts/utils");
-const { jsonString, yamlString, jsonObject, invalidString } = require("./fixtures/utilsData")
+const { convertToJson } = require('../scripts/utils.ts');
+const { jsonString, yamlString, jsonObject, invalidString } = require('./fixtures/utilsData');
 
 describe('convertToJson', () => {
   test('should return JSON object if input is valid JSON string', () => {
@@ -19,7 +19,7 @@ describe('convertToJson', () => {
       convertToJson(invalidString);
       expect(convertToJson(invalidString)).toBeUndefined();
     } catch (error) {
-      expect(error.message.includes("Invalid content format")).toBeTruthy();
+      expect(error.message.includes('Invalid content format')).toBeTruthy();
     }
   });
 });
