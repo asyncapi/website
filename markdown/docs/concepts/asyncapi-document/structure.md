@@ -459,7 +459,7 @@ components:
       description: This channel is used to exchange messages about user events.
       messages:
         userSignedUp:
-          $ref: '#/components/messages/userSignUp'
+          $ref: '#/channels/user/messages/userSignUp'
       parameters:
         userId:
           $ref: '#/components/parameters/userId'
