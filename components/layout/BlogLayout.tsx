@@ -12,6 +12,8 @@ import AuthorAvatars from '../AuthorAvatars';
 import Head from '../Head';
 import TOC from '../TOC';
 import Container from './Container';
+import IconTwitter from '../icons/Twitter';
+import IconLinkedIn from '../icons/LinkedIn';
 
 interface IBlogLayoutProps {
   post: IPosts['blog'][number];
@@ -38,6 +40,9 @@ export default function BlogLayout({
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
+  const shareUrl = encodeURIComponent(`https://www.asyncapi.com${router.asPath}`);
+  const shareText = encodeURIComponent(post.title);
 
   return (
     <BlogContext.Provider value={{ post }}>
@@ -83,6 +88,24 @@ export default function BlogLayout({
                 </div>
               </div>
             </div>
+            <div className='mt-4 flex space-x-4'>
+              <a
+                href={`https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}&hashtags=AsyncAPI`}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-blue-500 hover:text-blue-700'
+              >
+                <IconTwitter className='h-6 w-6' />
+              </a>
+              <a
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-blue-700 hover:text-blue-900'
+              >
+                <IconLinkedIn className='h-6 w-6' />
+              </a>
+            </div>
           </header>
           <article className='mb-32'>
             <Head title={post.title} description={post.excerpt} image={post.cover} />
@@ -113,6 +136,24 @@ export default function BlogLayout({
             </HtmlHead>
             <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className='my-6 w-full' />
             {children}
+            <div className='mt-8 flex space-x-4'>
+              <a
+                href={`https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}&hashtags=AsyncAPI`}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-blue-500 hover:text-blue-700'
+              >
+                <IconTwitter className='h-6 w-6' />
+              </a>
+              <a
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-blue-700 hover:text-blue-900'
+              >
+                <IconLinkedIn className='h-6 w-6' />
+              </a>
+            </div>
           </article>
         </main>
       </Container>

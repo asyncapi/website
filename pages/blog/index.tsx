@@ -13,6 +13,8 @@ import BlogContext from '@/context/BlogContext';
 import type { IBlogPost } from '@/types/post';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
+import IconTwitter from '@/components/icons/Twitter';
+import IconLinkedIn from '@/components/icons/LinkedIn';
 
 /**
  * @description The BlogIndexPage is the blog index page of the website.
@@ -132,6 +134,24 @@ export default function BlogIndexPage() {
                 <Loader loaderText='Loading Blogs' className='mx-auto my-60' pulsating />
               </div>
             )}
+          </div>
+          <div className='mt-8 flex space-x-4 justify-center'>
+            <a
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent('Check out this blog!')}&url=${encodeURIComponent('https://www.asyncapi.com/blog/2024-annual-summary#social-media')}`}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='text-blue-500 hover:text-blue-700'
+            >
+              <IconTwitter className='h-6 w-6' />
+            </a>
+            <a
+              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://www.asyncapi.com/blog/2024-annual-summary#social-media')}`}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='text-blue-700 hover:text-blue-900'
+            >
+              <IconLinkedIn className='h-6 w-6' />
+            </a>
           </div>
         </div>
       </div>
