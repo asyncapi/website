@@ -7,9 +7,9 @@ In an AsyncAPI document, adding [messages](/docs/reference/specification/v3.0.0#
 
 ## Add messages
 
-In an AsyncAPI document, you define message definitions under channels. However, the best practice is to first define these messages under the 'components' section as reusable definitions. That way, you can reference them easily from a channel.
+In an AsyncAPI document, you define message definitions under channels. However, the best practice is to first define these messages under the 'Components' section as reusable definitions. That way, you can reference them easily from a channel.
 
-Here is a diagram showing some channel fields and the relation between channel messages and components messages:
+Here is a diagram showing some channel fields and the relation between channel messages and Components messages:
 
 ```mermaid
 graph LR

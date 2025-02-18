@@ -1,5 +1,5 @@
 ---
-title: Reusability with traits
+title: Reusability with Traits
 weight: 200
 ---
 
