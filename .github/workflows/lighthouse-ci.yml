@@ -93,3 +93,12 @@ jobs:
           number: ${{ github.event.pull_request.number }}
           header: lighthouse
           message: ${{ steps.lighthouse_score_report.outputs.comment }}
+
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: lighthouse-report
+          path: ./path/to/lighthouse/report
+          retention-days: 5
+          continue-on-error: true
