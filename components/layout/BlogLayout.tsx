@@ -8,6 +8,8 @@ import type { IPosts } from '@/types/post';
 
 import BlogContext from '../../context/BlogContext';
 import AuthorAvatars from '../AuthorAvatars';
+import IconTwitter from '../icons/Twitter';
+import IconLinkedIn from '../icons/LinkedIn';
 // import AnnouncementHero from '../campaigns/AnnoucementHero';
 import Head from '../Head';
 import TOC from '../TOC';
@@ -38,6 +40,9 @@ export default function BlogLayout({
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
+  const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://www.asyncapi.com${post.slug}`)}`;
+  const linkedInShareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(`https://www.asyncapi.com${post.slug}`)}&title=${encodeURIComponent(post.title)}`;
 
   return (
     <BlogContext.Provider value={{ post }}>
@@ -82,6 +87,14 @@ export default function BlogLayout({
                   <span>{post.readingTime} min read</span>
                 </div>
               </div>
+            </div>
+            <div className='mt-4 flex space-x-4'>
+              <a href={twitterShareUrl} target='_blank' rel='noopener noreferrer' aria-label='Share on Twitter'>
+                <IconTwitter className='h-6 w-6 text-blue-500 hover:text-blue-700' />
+              </a>
+              <a href={linkedInShareUrl} target='_blank' rel='noopener noreferrer' aria-label='Share on LinkedIn'>
+                <IconLinkedIn className='h-6 w-6 text-blue-500 hover:text-blue-700' />
+              </a>
             </div>
           </header>
           <article className='mb-32'>

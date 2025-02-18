@@ -13,6 +13,8 @@ import BlogContext from '@/context/BlogContext';
 import type { IBlogPost } from '@/types/post';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
+import IconTwitter from '@/components/icons/Twitter';
+import IconLinkedIn from '@/components/icons/LinkedIn';
 
 /**
  * @description The BlogIndexPage is the blog index page of the website.
