@@ -2,7 +2,7 @@ import React from 'react';
 
 import type { IDoc } from '@/types/post';
 
-import { DOCS_INDEX_NAME, SearchButton } from '../AlgoliaSearch';
+import { INDEX_NAME, SearchButton } from '../AlgoliaSearch';
 import ClickableLogo from '../ClickableLogo';
 import IconLoupe from '../icons/Loupe';
 import DocsNav from './DocsNav';
@@ -48,7 +48,7 @@ export default function DocsMobileMenu({ post, navigation, onClickClose = () => 
             <div className='mb-4 mt-10 w-full px-2'>
               <SearchButton
                 className='flex w-full items-center space-x-3 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-left text-sm text-gray-700 shadow-sm transition-all duration-500 ease-in-out hover:border-secondary-500 hover:bg-secondary-100 hover:text-secondary-500'
-                indexName={DOCS_INDEX_NAME}
+                indexName={INDEX_NAME}
               >
                 <IconLoupe />
                 <span className='flex-auto'>Search docs...</span>

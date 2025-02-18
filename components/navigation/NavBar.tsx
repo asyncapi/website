@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 
 import { defaultLanguage, i18nPaths, languages } from '@/utils/i18n';
 
-import { SearchButton } from '../AlgoliaSearch';
+import { SearchButton, INDEX_NAME } from '../AlgoliaSearch';
 import GithubButton from '../buttons/GithubButton';
 import { isMobileDevice } from '../helpers/is-mobile';
 import { useOutsideClick } from '../helpers/use-outside-click';
@@ -160,6 +160,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
           <SearchButton
             className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
             aria-label='Open Search'
+            indexName={INDEX_NAME}
           >
             <IconLoupe />
           </SearchButton>
@@ -220,6 +221,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             <SearchButton
               className='mr-2 flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
               aria-label='Open Search'
+              indexName={INDEX_NAME}
             >
               <IconLoupe />
             </SearchButton>

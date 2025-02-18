@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import i18nextConfig from '@/next-i18next.config';
 
-import { SearchButton } from '../AlgoliaSearch';
+import { SearchButton, INDEX_NAME } from '../AlgoliaSearch';
 import IconLanguage from '../icons/Language';
 import NavItemDropdown from '../icons/NavItemDropdown';
 import SearchIcon from '../icons/SearchIcon';
@@ -67,6 +67,7 @@ export default function MobileNavMenu({
                 <SearchButton
                   className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
                   aria-label='Open Search'
+                  indexName={INDEX_NAME}
                 >
                   <SearchIcon />
                 </SearchButton>
