@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/gfKAcJthEGk/hqdefault.jpg",
+    "title": "AsyncAPI Marketing Working Group Meeting",
+    "description": "https://github.com/asyncapi/community/issues/1705.",
+    "videoId": "gfKAcJthEGk"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/sWrD820od7s/hqdefault.jpg",
     "title": "AsyncAPI Community Working Group Meeting",
     "description": "https://github.com/asyncapi/community/issues/1668.",
@@ -22,11 +28,5 @@
     "title": "AsyncAPI Mentorship Program 2024 Cohort Kick-off",
     "description": "Welcoming the 2024 cohort of the AsyncAPI mentorship program.",
     "videoId": "QWRcCvDmf04"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/XirMXiBNaBM/hqdefault.jpg",
-    "title": "Community Meeting, 16:00 UTC Tuesday November 26th 2024",
-    "description": "",
-    "videoId": "XirMXiBNaBM"
   }
 ]
