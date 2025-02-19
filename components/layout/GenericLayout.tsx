@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import AnnouncementHero from '../campaigns/AnnoucementHero';
+import AnnouncementHero from '../campaigns/AnnouncementHero';
 import Head from '../Head';
 import Container from './Container';
 
@@ -41,10 +41,7 @@ export default function GenericLayout({
       <Container wide={wide}>
         <div data-testid='GenericLayout-banner'>
           {/* @TODO Will uncomment the component once it is in use */}
-          {/* <AnnouncementHero
-            className={`m-4 text-center ${hideBanner && 'hidden'}`}
-            small={true}
-          /> */}
+          <AnnouncementHero className={`m-4 text-center ${hideBanner && 'hidden'}`} small={true} />
         </div>
         <div id='main-content' data-testid='Generic-main'>
           {children}
