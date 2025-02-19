@@ -14,7 +14,6 @@ export default function ErrorPage() {
     <div className='text-center'>
       <div className='mt-20 flex-col items-center justify-center md:flex-row'>
         <div>
-          {/* @TODO Will uncomment the component once it is in use */}
           <AnnouncementHero className='my-4' />
           <header className='mt-12 px-2 '>
             <div className='text-center'>

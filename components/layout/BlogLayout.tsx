@@ -41,7 +41,6 @@ export default function BlogLayout({
 
   return (
     <BlogContext.Provider value={{ post }}>
-      {/* @TODO Will uncomment the component once it is in use */}
       <AnnouncementHero className='mx-8 my-4' />
       <Container cssBreakingPoint='lg' flex flexReverse>
         <TOC
