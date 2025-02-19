@@ -29,7 +29,7 @@ style I fill:#47BCEE,stroke:#47BCEE;
 
 ## Server bindings
 
-Server bindings provide protocol-specific information related to the server configuration. For example, if you use Pulsar as your message broker, you can specify the tenant name in the server bindings. 
+Server bindings provide _protocol-specific_ information related to the server configuration. For example, if you use Pulsar as your message broker, you can specify the tenant name in the server bindings. 
 
 Here is a diagram explaining server bindings:
 
@@ -43,7 +43,7 @@ style C fill:#47BCEE,stroke:#47BCEE;
 
 This diagram shows where server bindings fit into the AsyncAPI document structure.
 
-The next example showcases how to use server bindings to detail protocol-specific configurations for the server:
+The next example showcases how to use server bindings to detail _protocol-specific_ configurations for the server:
 
 ```yml
 servers:
@@ -58,7 +58,7 @@ The previous document shows how to set up server bindings for a server that is a
 
 ## Channel bindings
 
-Channel bindings are used to specify protocol-specific information for a specific channel. For example, in Kafka, you can specify number of partitions for a given topic.
+Channel bindings are used to specify _protocol-specific_ information for a specific channel. For example, in Kafka, you can specify number of partitions for a given topic.
 
 Here is a diagram explaining where channel bindings fit into the AsyncAPI document structure:
 
@@ -71,7 +71,7 @@ style G fill:#47BCEE,stroke:#47BCEE;
 ```
 
 
-Here is an example of using channel bindings to specify protocol-specific information for a specific channel:
+Here is an example of using channel bindings to specify _protocol-specific_ information for a specific channel:
 
 ```yml
 channels:
@@ -94,7 +94,7 @@ The previous document shows how to configure channel bindings for a Kafka topic-
 
 ## Message bindings
 
-Message bindings provide protocol-specific information for a specific message. For example, for the AMQP protocol, you can specify the message type in a protocol-specific notation. 
+Message bindings provide _protocol-specific_ information for a specific message. For example, for the AMQP protocol, you can specify the message type in a _protocol-specific_ notation. 
 
 Here is a diagram explaining where message bindings fit into the AsyncAPI document structure:
 
@@ -107,7 +107,7 @@ style G fill:#47BCEE,stroke:#47BCEE;
 ```
 
 
-Here is an example of using message bindings to provide protocol-specific information for a specific message:
+Here is an example of using message bindings to provide _protocol-specific_ information for a specific message:
 
 ```yml
 channels:
@@ -126,7 +126,7 @@ The previous document shows how to set up message bindings for a message transpo
 
 ## Operation bindings
 
-Operation bindings allow you to specify protocol-specific information for a specific operation. For example, for MQTT, you can specify the quality of the service for a given operation.
+Operation bindings allow you to specify _protocol-specific_ information for a specific operation. For example, for MQTT, you can specify the quality of the service for a given operation.
 
 Here is a diagram explaining where operation bindings fit into the AsyncAPI document structure:
 
@@ -140,7 +140,7 @@ style H fill:#47BCEE,stroke:#47BCEE;
 ```
 
 
-Here is an example of using operation bindings to specify protocol-specific information for a specific operation:
+Here is an example of using operation bindings to specify _protocol-specific_ information for a specific operation:
 
 ```yml
 channels:
@@ -157,4 +157,4 @@ operations:
 
 The previous document shows how to set up operation bindings for an operation that describes how an application that uses MQTT as transport, receives the message.
 
-Using bindings helps you enhance the AsyncAPI documentation with protocol-specific details, making it easier to understand and implement the API.
+Using bindings helps you enhance the AsyncAPI documentation with _protocol-specific_ details, making it easier to understand and implement the API.
