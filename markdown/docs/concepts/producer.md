@@ -34,3 +34,5 @@ flowchart LR
 ```
 
 In the diagram above, there is a producer publishing messages to a specific channel and a consumer subscribing to messages from that channel. Also, there is a second producer publishing to one channel and subscribing to messages from another channel.
+
+For more details on how operations link to the high-level concepts of Consumers and Producers, refer to the [Adding operations](/docs/concepts/asyncapi-document/adding-operations) page.

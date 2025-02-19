@@ -41,7 +41,7 @@ onUserSignUp:
   title: User sign up
   summary: React and process information about new user sign up.
   description: Process information about user sign up and update the information in the table that counts numbers of currently signed up users.
-  action: receive
+  action: receive (Consumer)
   channel:
     $ref: '#/channels/userSignup'
 ```
@@ -52,3 +52,11 @@ Some fields are missing from this example:
 - No `messages` field means that this operation processes any message coming from the `userSignup` channel.
 - No `security` field means that there are no special security measures related to this operation and that the security should be applied the same as for other operations. Essentially, the security from the server level should be respected.
 - No `reply` field means that after reacting to the user sign up, this application will not send any reply as a reaction.
+
+## Relationship between Operations, Consumers, and Producers
+
+Operations in AsyncAPI are closely related to the high-level concepts of Consumers and Producers. A Producer is an application that sends messages, while a Consumer is an application that receives messages. In the context of AsyncAPI operations:
+- An operation with the `action` set to `send` corresponds to a Producer.
+- An operation with the `action` set to `receive` corresponds to a Consumer.
+
+Understanding this relationship helps in designing and documenting the interactions between different components in an event-driven architecture. For more details on Consumers and Producers, refer to the [Consumer](/docs/concepts/consumer) and [Producer](/docs/concepts/producer) pages.
