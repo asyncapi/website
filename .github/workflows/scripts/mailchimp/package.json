@@ -4,6 +4,7 @@
   "license": "Apache 2.0",
   "dependencies": {
     "@actions/core": "1.6.0",
-    "@mailchimp/mailchimp_marketing": "3.0.74"
+    "@mailchimp/mailchimp_marketing": "3.0.74",
+    "schedule-email": "file:"
   }
 }
