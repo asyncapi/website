@@ -31,3 +31,5 @@ The diagram above illustrates a sample flow of events from the `producer` to the
 <Remember>
 <b>Subscribers</b> can also be <a href="https://www.asyncapi.com/docs/concepts/producer">producers</a>.
 </Remember>
+
+For more details on how operations link to the high-level concepts of Consumers and Producers, refer to the [Adding operations](/docs/concepts/asyncapi-document/adding-operations) page.
