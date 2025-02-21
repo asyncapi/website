@@ -751,10 +751,13 @@
         "githubID": 16149591
     },
     {
-        "name": "Rohit",
+        "name": "Rohit T",
         "github": "TRohit20",
+        "linkedin": "rohit-t-0124a4242",
+        "slack": "U05174ZKGQ6",
         "twitter": "TRRohit20",
-        "isTscMember": false,
+        "availableForHire": true,
+        "isTscMember": true,
         "repos": [
             "website"
         ],
