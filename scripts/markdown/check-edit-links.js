@@ -98,35 +98,42 @@ function determineEditLink(urlPath, filePath, editOptions) {
  * @param {object[]} [result=[]] - Accumulator for results
  * @returns {Promise<object[]>} Array of objects containing file paths and edit links
  */
-async function generatePaths(folderPath, editOptions, relativePath = '', result = []) {
+
+async function* walkDirectory(dir) {
+
   try {
-    const files = await fs.readdir(folderPath);
+    const files = await fs.readdir(dir);
+    for (const file of files) {
+      if (file === '_section.md') continue;
+      
+      const filePath = path.join(dir, file);
+      const stats = await fs.stat(filePath);
+      
+      if (stats.isDirectory()) {
+        yield* walkDirectory(filePath);
+      } else if (stats.isFile() && file.endsWith('.md')) {
+        yield filePath;
+      }
+    }
+  } catch (err) {
+    throw new Error(`Error processing directory ${dir}: ${err.message}`);
+  }
+}
 
-    await Promise.all(
-      files.map(async (file) => {
-        const filePath = path.join(folderPath, file);
-        const relativeFilePath = path.join(relativePath, file);
-
-        // Skip _section.md files
-        if (file === '_section.md') {
-          return;
-        }
-
-        const stats = await fs.stat(filePath);
-
-        if (stats.isDirectory()) {
-          await generatePaths(filePath, editOptions, relativeFilePath, result);
-        } else if (stats.isFile() && file.endsWith('.md')) {
-          const urlPath = relativeFilePath.split(path.sep).join('/').replace('.md', '');
-          result.push({
-            filePath,
-            urlPath,
-            editLink: determineEditLink(urlPath, filePath, editOptions)
-          });
-        }
-      })
-    );
-
+async function generatePaths(folderPath, editOptions) {
+  
+  const result = [];
+  try {
+    for await (const filePath of walkDirectory(folderPath)) {
+      const relativePath = path.relative(folderPath, filePath);
+      const urlPath = relativePath.split(path.sep).join('/').replace('.md', '');
+      
+      result.push({
+        filePath,
+        urlPath,
+        editLink: determineEditLink(urlPath, filePath, editOptions)
+      });
+    }
     return result;
   } catch (err) {
     throw new Error(`Error processing directory ${folderPath}: ${err.message}`);
