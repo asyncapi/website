@@ -151,5 +151,3 @@ The process is more complex for Protobuf schemas, as their Protocol Buffers are 
                 optional string label = 3;
             }
 ```
-
-

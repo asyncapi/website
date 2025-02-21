@@ -5,7 +5,7 @@ weight: 240
 
 Extending the AsyncAPI specification allows you to include specific information for your domain or use case that's not currently supported by the original specification or the protocol bindings. Extension capability allows for customization, making it possible to integrate unique aspects into APIs that the standard AsyncAPI specification doesn't normally accommodate.
 
-## Specification extensions
+## Specification Extensions
 
 The AsyncAPI Specification allows the addition of custom properties through patterned fields prefixed with an `x-`. That way, you can create unique things without causing problems in future updates.
 
