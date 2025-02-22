@@ -8,11 +8,11 @@ import AsyncAPILogoLight from '../logos/AsyncAPILogoLight';
 import Heading from '../typography/Heading';
 import type { InitiativeLink, SocialMediaLink } from './FooterList';
 import { initiativeLinks, socialMediaLinks } from './FooterList';
-/**
- * Footer component for displaying the footer section.
- * @param {Object} props - Component properties.
- * @param {string} props.currentLanguage - The current language.
- */
+
+interface FooterProps {
+  currentLanguage: string | undefined;
+}
+
 export default function Footer({ currentLanguage }: FooterProps) {
   const { t } = useTranslation('footer');
 
