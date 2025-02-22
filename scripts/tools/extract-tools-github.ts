@@ -18,6 +18,9 @@ dotenv.config();
 export async function getData(): Promise<ToolsData> {
   // eslint-disable-next-line no-useless-catch
   try {
+    if (!process.env.GITHUB_TOKEN) {
+      throw new Error('GITHUB_TOKEN environment variable is required');
+    }
     const allItems = [];
     let page = 1;
 

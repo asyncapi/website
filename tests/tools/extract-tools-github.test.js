@@ -9,6 +9,9 @@ jest.mock('../../scripts/utils/logger', () => ({
 jest.mock('axios');
 
 describe('getData', () => {
+  beforeAll(() => {
+    process.env.GITHUB_TOKEN = 'mockToken';
+  });
   it('should return data when API call is successful', async () => {
     const mockData = {
       data: {

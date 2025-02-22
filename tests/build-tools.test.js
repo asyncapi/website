@@ -40,6 +40,8 @@ describe('buildTools', () => {
     fs.outputFileSync(automatedToolsPath, JSON.stringify({}));
     fs.outputFileSync(toolsPath, JSON.stringify({}));
     fs.outputFileSync(tagsPath, JSON.stringify({}));
+
+    process.env.GITHUB_TOKEN = 'mockToken';
   });
 
   afterAll(() => {
