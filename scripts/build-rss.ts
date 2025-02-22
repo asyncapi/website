@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import json2xml from 'jgexml/json2xml';
 
+import type { Details, Result } from '@/types/scripts/build-posts-list';
 import type { BlogPostTypes, RSS, RSSItemType } from '@/types/scripts/build-rss';
 
 /**
@@ -9,7 +10,7 @@ import type { BlogPostTypes, RSS, RSSItemType } from '@/types/scripts/build-rss'
  * @returns {Promise<any>} - A promise that resolves to the list of all blog posts.
  */
 async function getAllPosts() {
-  const posts = ((await import('../config/posts.json')) as any).default;
+  const posts = (await import('../config/posts.json')).default as Result;
 
   return posts;
 }
@@ -44,7 +45,7 @@ function clean(s: string) {
  */
 export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: string, outputPath: string) {
   try {
-    let posts = (await getAllPosts())[`${type}`] as any[];
+    let posts = (await getAllPosts())[`${type}`] as Details[];
     const missingDatePosts = posts.filter((post) => !post.date);
 
     posts = posts.filter((post) => post.date);
@@ -108,7 +109,7 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
       const link = `${base}${post.slug}${tracking}`;
       const { title, excerpt, date } = post;
       const pubDate = new Date(date).toUTCString();
-      const description = clean(excerpt);
+      const description = clean(excerpt!);
       const guid = { '@isPermaLink': true, '': link };
       const item: RSSItemType = {
         title,
