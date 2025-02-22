@@ -86,4 +86,11 @@ describe('getData', () => {
 
     await expect(getData()).rejects.toThrow('Error');
   });
+  it('should throw an error when GitHub token is not set', async () => {
+    delete process.env.GITHUB_TOKEN;
+
+    await expect(getData()).rejects.toThrow('GITHUB_TOKEN environment variable is required');
+
+    process.env.GITHUB_TOKEN = 'mockToken';
+  });
 });

@@ -24,7 +24,7 @@ async function buildNewsroomVideos(writePath: string) {
     }
     const response = await fetch(
       `https://youtube.googleapis.com/youtube/v3/search?${new URLSearchParams({
-        key: process.env.YOUTUBE_TOKEN!,
+        key: process.env.YOUTUBE_TOKEN,
         part: 'snippet',
         channelId: 'UCIz9zGwDLbrYQcDKVXdOstQ',
         eventType: 'completed',
