@@ -153,96 +153,100 @@ async function walkDirectories(
   rootSectionId?: string | undefined,
   sectionWeight = 0
 ) {
-  for (const dir of directories) {
-    const directory = posix.normalize(dir[0]);
-    /* istanbul ignore next */
-    const sectionSlug = dir[1] || '';
-    const files = await readdir(directory);
+  try {
+    for (const dir of directories) {
+      const directory = posix.normalize(dir[0]);
+      /* istanbul ignore next */
+      const sectionSlug = dir[1] || '';
+      const files = await readdir(directory);
 
-    for (const file of files) {
-      let details: Details;
-      const fileName = normalize(join(directory, file));
-      const fileNameWithSection = normalize(join(fileName, '_section.mdx'));
-      const slug = `/${normalize(relative(basePath, fileName)).replace(/\\/g, '/')}`;
-      const slugElements = slug.split('/');
+      for (const file of files) {
+        let details: Details;
+        const fileName = normalize(join(directory, file));
+        const fileNameWithSection = normalize(join(fileName, '_section.mdx'));
+        const slug = `/${normalize(relative(basePath, fileName)).replace(/\\/g, '/')}`;
+        const slugElements = slug.split('/');
 
-      if (await isDirectory(fileName)) {
-        if (await pathExists(fileNameWithSection)) {
+        if (await isDirectory(fileName)) {
+          if (await pathExists(fileNameWithSection)) {
+            // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
+            details = frontMatter(await readFile(fileNameWithSection, 'utf-8'), {}).data as Details;
+            /* istanbul ignore next */
+            details.title = details.title || capitalize(basename(fileName));
+          } else {
+            details = {
+              title: capitalize(basename(fileName))
+            };
+          }
+          details.isSection = true;
+          if (slugElements.length > 3) {
+            details.parent = slugElements[slugElements.length - 2];
+            details.sectionId = slugElements[slugElements.length - 1];
+          }
+          if (!details.parent) {
+            details.isRootSection = true;
+            details.rootSectionId = slugElements[slugElements.length - 1];
+          }
+          details.sectionWeight = sectionWeight;
+          details.slug = slug;
+          addItem(details);
+          const rootId = details.parent || details.rootSectionId;
+
+          await walkDirectories(
+            [[fileName, slug]],
+            resultObj,
+            basePath,
+            details.title,
+            details.sectionId,
+            rootId,
+            details.sectionWeight
+          );
+        } else if (file.endsWith('.mdx') && !fileName.endsWith(`${sep}_section.mdx`)) {
+          const fileContent = await readFile(fileName, 'utf-8');
           // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
-          details = frontMatter(await readFile(fileNameWithSection, 'utf-8'), {}).data as Details;
+          const { data, content } = frontMatter(fileContent, {});
+
+          details = data as Details;
+          details.toc = toc(content, { slugify: slugifyToC }).json;
+          details.readingTime = Math.ceil(readingTime(content).minutes);
+          details.excerpt = details.excerpt || markdownToTxt(content).substr(0, 200);
           /* istanbul ignore next */
-          details.title = details.title || capitalize(basename(fileName));
-        } else {
-          details = {
-            title: capitalize(basename(fileName))
-          };
-        }
-        details.isSection = true;
-        if (slugElements.length > 3) {
-          details.parent = slugElements[slugElements.length - 2];
-          details.sectionId = slugElements[slugElements.length - 1];
-        }
-        if (!details.parent) {
-          details.isRootSection = true;
-          details.rootSectionId = slugElements[slugElements.length - 1];
-        }
-        details.sectionWeight = sectionWeight;
-        details.slug = slug;
-        addItem(details);
-        const rootId = details.parent || details.rootSectionId;
+          details.sectionSlug = sectionSlug || slug.replace(/\.mdx$/, '');
+          details.sectionWeight = sectionWeight;
+          details.sectionTitle = sectionTitle;
+          details.sectionId = sectionId;
+          details.rootSectionId = rootSectionId;
+          details.id = fileName.replace(/\\/g, '/');
+          details.isIndex = fileName.endsWith(join('index.mdx'));
+          details.slug = details.isIndex ? sectionSlug : slug.replace(/\.mdx$/, '');
+          if (details.slug.includes('/reference/specification/') && !details.title) {
+            const fileBaseName = basename(details.slug);
+            const versionDetails = getVersionDetails(details.slug, specWeight--);
 
-        await walkDirectories(
-          [[fileName, slug]],
-          resultObj,
-          basePath,
-          details.title,
-          details.sectionId,
-          rootId,
-          details.sectionWeight
-        );
-      } else if (file.endsWith('.mdx') && !fileName.endsWith(`${sep}_section.mdx`)) {
-        const fileContent = await readFile(fileName, 'utf-8');
-        // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
-        const { data, content } = frontMatter(fileContent, {});
+            details.title = versionDetails.title;
+            details.weight = versionDetails.weight;
 
-        details = data as Details;
-        details.toc = toc(content, { slugify: slugifyToC }).json;
-        details.readingTime = Math.ceil(readingTime(content).minutes);
-        details.excerpt = details.excerpt || markdownToTxt(content).substr(0, 200);
-        /* istanbul ignore next */
-        details.sectionSlug = sectionSlug || slug.replace(/\.mdx$/, '');
-        details.sectionWeight = sectionWeight;
-        details.sectionTitle = sectionTitle;
-        details.sectionId = sectionId;
-        details.rootSectionId = rootSectionId;
-        details.id = fileName.replace(/\\/g, '/');
-        details.isIndex = fileName.endsWith(join('index.mdx'));
-        details.slug = details.isIndex ? sectionSlug : slug.replace(/\.mdx$/, '');
-        if (details.slug.includes('/reference/specification/') && !details.title) {
-          const fileBaseName = basename(details.slug);
-          const versionDetails = getVersionDetails(details.slug, specWeight--);
+            if (releaseNotes.includes(details.title)) {
+              details.releaseNoteLink = `/blog/release-notes-${details.title}`;
+            }
 
-          details.title = versionDetails.title;
-          details.weight = versionDetails.weight;
-
-          if (releaseNotes.includes(details.title)) {
-            details.releaseNoteLink = `/blog/release-notes-${details.title}`;
+            details = handleSpecificationVersion(details, fileBaseName);
           }
 
-          details = handleSpecificationVersion(details, fileBaseName);
+          // To create a list of available ReleaseNotes list, which will be used to add details.releaseNoteLink attribute.
+          if (file.startsWith('release-notes') && dir[1] === '/blog') {
+            const { name } = parse(file);
+            const version = name.split('-').pop();
+
+            releaseNotes.push(version);
+          }
+
+          addItem(details);
         }
-
-        // To create a list of available ReleaseNotes list, which will be used to add details.releaseNoteLink attribute.
-        if (file.startsWith('release-notes') && dir[1] === '/blog') {
-          const { name } = parse(file);
-          const version = name.split('-').pop();
-
-          releaseNotes.push(version);
-        }
-
-        addItem(details);
       }
     }
+  } catch (error) {
+    throw new Error(`Error while walking directories: ${(error as Error).message}`);
   }
 }
 // Builds a list of posts from the specified directories and writes it to a file

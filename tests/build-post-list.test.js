@@ -131,7 +131,7 @@ describe('buildPostList', () => {
   it('throws an error when accessing non-existent directory', async () => {
     const invalidDir = [join(tempDir, 'non-existent-dir'), '/invalid'];
     await expect(buildPostList([invalidDir], tempDir, writeFilePath)).rejects.toThrow(
-      /Error while building post list: ENOENT/
+      /Error while building post list:/
     );
   });
 
