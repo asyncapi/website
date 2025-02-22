@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { HeadingTypeStyle } from '@/types/typography/Heading';
 
@@ -7,11 +8,11 @@ import AsyncAPILogoLight from '../logos/AsyncAPILogoLight';
 import Heading from '../typography/Heading';
 import type { InitiativeLink, SocialMediaLink } from './FooterList';
 import { initiativeLinks, socialMediaLinks } from './FooterList';
-
-interface FooterProps {
-  currentLanguage: string | undefined;
-}
-
+/**
+ * Footer component for displaying the footer section.
+ * @param {Object} props - Component properties.
+ * @param {string} props.currentLanguage - The current language.
+ */
 export default function Footer({ currentLanguage }: FooterProps) {
   const { t } = useTranslation('footer');
 
@@ -91,9 +92,16 @@ export default function Footer({ currentLanguage }: FooterProps) {
             <p>{t('copyright')}</p>
           </div>
           <div className='mt-6 sm:mt-0'>
-            <a href='https://netlify.com' target='_blank' rel='noopener noreferrer'>
-              <img src='https://www.netlify.com/img/global/badges/netlify-color-bg.svg' className='h-6' alt='Deploys by Netlify' />
-            </a>
+            <a 
+            href='https://netlify.com' 
+            target='_blank'
+             rel='noopener noreferrer'>
+            <img
+             src='https://www.netlify.com/img/global/badges/netlify-color-bg.svg'
+              className='h-6'
+               alt='Deploys by Netlify'
+                />          
+                  </a>
           </div>
         </div>
       </div>
