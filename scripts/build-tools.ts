@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 import { combineTools } from './tools/combine-tools';
 import { getData } from './tools/extract-tools-github';
 import { convertTools } from './tools/tools-object';
+import { logger } from './utils/logger';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
@@ -35,12 +36,17 @@ async function buildTools(automatedToolsPath: string, manualToolsPath: string, t
 
 /* istanbul ignore next */
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  const automatedToolsPath = resolve(currentDirPath, '../config', 'tools-automated.json');
-  const manualToolsPath = resolve(currentDirPath, '../config', 'tools-manual.json');
-  const toolsPath = resolve(currentDirPath, '../config', 'tools.json');
-  const tagsPath = resolve(currentDirPath, '../config', 'all-tags.json');
+  try {
+    const automatedToolsPath = resolve(currentDirPath, '../config', 'tools-automated.json');
+    const manualToolsPath = resolve(currentDirPath, '../config', 'tools-manual.json');
+    const toolsPath = resolve(currentDirPath, '../config', 'tools.json');
+    const tagsPath = resolve(currentDirPath, '../config', 'all-tags.json');
 
-  buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
+    buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
+  } catch (err) {
+    logger.error(err);
+    process.exit(1);
+  }
 }
 
 export { buildTools };
