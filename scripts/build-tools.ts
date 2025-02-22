@@ -36,17 +36,15 @@ async function buildTools(automatedToolsPath: string, manualToolsPath: string, t
 
 /* istanbul ignore next */
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  try {
-    const automatedToolsPath = resolve(currentDirPath, '../config', 'tools-automated.json');
-    const manualToolsPath = resolve(currentDirPath, '../config', 'tools-manual.json');
-    const toolsPath = resolve(currentDirPath, '../config', 'tools.json');
-    const tagsPath = resolve(currentDirPath, '../config', 'all-tags.json');
+  const automatedToolsPath = resolve(currentDirPath, '../config', 'tools-automated.json');
+  const manualToolsPath = resolve(currentDirPath, '../config', 'tools-manual.json');
+  const toolsPath = resolve(currentDirPath, '../config', 'tools.json');
+  const tagsPath = resolve(currentDirPath, '../config', 'all-tags.json');
 
-    buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
-  } catch (err) {
-    logger.error(err);
+  buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath).catch((err) => {
+    logger.error('Failed to build tools:', err);
     process.exit(1);
-  }
+  });
 }
 
 export { buildTools };
