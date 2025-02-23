@@ -9,7 +9,6 @@ const capitalizeTags = ['table', 'tr', 'td', 'th', 'thead', 'tbody'];
 
 /**
  * Ensures that the specified directory exists. If it doesn't, creates it.
- *
  * @param {PathLike} directory - The directory path to check or create.
  */
 export function ensureDirectoryExists(directory: PathLike) {
