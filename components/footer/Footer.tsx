@@ -7,7 +7,11 @@ import { HeadingTypeStyle } from '@/types/typography/Heading';
 import AsyncAPILogoLight from '../logos/AsyncAPILogoLight';
 import Heading from '../typography/Heading';
 import type { InitiativeLink, SocialMediaLink } from './FooterList';
+interface FooterProps {
+  currentLanguage: string;
+}
 import { initiativeLinks, socialMediaLinks } from './FooterList';
+
 
 
 
