@@ -164,7 +164,7 @@ export default function CliPage() {
                       codeBlocks={[
                         {
                           language: 'npm',
-                          code: 'asyncapi new'
+                          code: 'asyncapi new file'
                         }
                       ]}
                     />
