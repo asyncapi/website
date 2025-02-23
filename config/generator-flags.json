@@ -1,6 +1,6 @@
 {
     "@asyncapi/html-template": {
-        "flag": "-o example",
+        "flag": "-o example --use-new-generator",
         "specPath" : "https://bit.ly/asyncapi"
     },
     "@asyncapi/markdown-template": {
