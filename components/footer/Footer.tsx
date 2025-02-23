@@ -9,9 +9,7 @@ import Heading from '../typography/Heading';
 import type { InitiativeLink, SocialMediaLink } from './FooterList';
 import { initiativeLinks, socialMediaLinks } from './FooterList';
 
-interface FooterProps {
-  currentLanguage: string | undefined;
-}
+
 
 export default function Footer({ currentLanguage }: FooterProps) {
   const { t } = useTranslation('footer');
