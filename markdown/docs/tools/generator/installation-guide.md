@@ -9,8 +9,8 @@ You can use the generator library to generate whatever you want in your event-dr
   
 ## Prerequisites
 Before you install and use the AsyncAPI CLI and the generator library, ensure you meet the prerequisites below, then [install the CLI](#installation).
-1. Node.js v18.12.0 and higher
-2. Npm v8.19.0 and higher
+1. Node.js v18.12.0 or higher
+2. Npm v8.19.0 or higher
    
 To verify the versions of Node and Npm you have, run the following command on your terminal:
 ```
@@ -73,7 +73,7 @@ To uninstall the generator, use the following command:
 npm uninstall @asyncapi/cli -g
 ``` 
 
-> :memo: **Note:**  To use the generator in your CI/CD pipeline to automate whatever you generate for your event-driven architecture apps, install the AsyncAPI CLI in your pipeline. If you are using GitHub Actions, use [Github Actions for Generator](https://github.com/marketplace/actions/generator-validator-converter-and-others-all-in-one-for-your-asyncapi-docs).
+> :memo: **Note:**  To use the generator in your CI/CD pipeline to automate whatever you generate for your event-driven architecture apps, install the AsyncAPI CLI in your pipeline. If you are using GitHub Actions, use [Github Actions for Generator](https://github.com/marketplace/actions/generator-for-asyncapi-documents).
 
 ## Generator library in Node.js apps
 Use the generator library in your Node.js projects by installing it via the following command: `npm install @asyncapi/generator`.
