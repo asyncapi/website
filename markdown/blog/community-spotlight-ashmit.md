@@ -1,6 +1,6 @@
 ---
 title: "From Mentee to Maintainer: The Ashmit GSoC Story!"
-date: 2025-01-20T06:00:00+01:00
+date: 2025-02-25T06:00:00+01:00
 type: Communication
 tags:
   - Interview
@@ -22,9 +22,9 @@ Open-source contributions have long been a gateway for developers to refine thei
 
 Ashmit’s open-source journey began with his participation in GSoC, an esteemed program that connects aspiring developers with organizations working on impactful projects. His decision to contribute to the AsyncAPI Initiative was fueled by his interest in API documentation and event-driven architectures. As a mentee, he worked on refining the AsyncAPI Conference website and was mentored by experienced contributors who provided guidance, code reviews, and architectural insights.
 
-Reflecting on his GSoC experience, Ashmit emphasizes the steep learning curve and the importance of proactive engagement. He recalls, “Initially, I was overwhelmed by the scale of the project, but the community was incredibly supportive. I learned how to navigate large codebases, improve my problem-solving skills, and contribute in a structured manner.” This phase allowed him to grasp not only the technical aspects of the project but also the collaborative spirit of open-source communities.
+Reflecting on his GSoC experience, Ashmit emphasizes the steep learning curve and the importance of proactive engagement. He recalls, “Initially, I was overwhelmed by the scale of the project, but the community was incredibly supportive. I learned how to navigate large codebases, enhance my problem-solving skills, and contribute in a structured manner.” This phase allowed him to grasp not only the technical aspects of the project but also the collaborative spirit of open-source communities.
 
-We further went ahead to ask Ashmit some questions about his GSoC experience with the AsyncAPI Initiative. Below is the outline of our conversation.
+We then asked Ashmit some questions about his GSoC experience with the AsyncAPI Initiative. Below is an outline of our conversation.
 
 ## Getting Started with Google Summer of Code and AsyncAPI
 
@@ -38,7 +38,7 @@ We further went ahead to ask Ashmit some questions about his GSoC experience wit
 
 ## The Project: Revamping the AsyncAPI Conference Website
 
-**Bami: Can you tell us about your project, the problem it solved, and why it was important?**
+**Bami: Can you tell us about your project, the problem it solved, and why was it important?**
 
 ***Ashmit:** The primary goal of my project was to make maintaining the conference website easier. Previously, every year, the website had to be rebuilt or heavily refactored due to a lack of a consistent theme or streamlined process. This created a significant workload for maintainers. My project aimed to standardize the codebase, making it easier to update and maintain. Additionally, I introduced automated testing to simplify reviewing contributions, ensuring that new changes wouldn’t break existing functionality.*
 
@@ -46,11 +46,11 @@ We further went ahead to ask Ashmit some questions about his GSoC experience wit
 
 **Bami: What was the most challenging part of your project, and how did you overcome it?**
 
-***Ashmit:** The most unexpected challenge occurred towards the end of the program when my project wouldn’t build just before the final submission deadline. After deliberation, we decided to merge the pull request and troubleshoot the issue later. Unfortunately, this caused the website to crash temporarily. My mentors and I worked intensively for a few hours to restore functionality. It was a stressful moment, but it reinforced the importance of testing and careful deployment.*
+***Ashmit:** The most unexpected challenge occurred towards the end of the program when my project wouldn’t build successfully just before the final submission deadline. After deliberation, we decided to merge the pull request and troubleshoot the issue later. Unfortunately, this action caused the website to crash temporarily. My mentors and I worked intensively for a few hours to restore website functionality. It was a stressful moment, but it reinforced the importance of testing and careful deployment.*
 
 **Bami: What technologies and skills did you use for your project? Did you have to learn anything new?**
 
-***Ashmit:** My project primarily used JavaScript, with a focus on Next.js for the frontend. For testing, I used Cypress for end-to-end testing. While I didn’t learn a completely new programming language during GSoC, I did have to learn TypeScript during the proposal phase and improve my understanding of testing methodologies.*
+***Ashmit:** My project primarily used JavaScript, with a focus on Next.js for the frontend. For testing, I used Cypress for end-to-end testing. While I didn’t learn a entirely new programming language during GSoC, I did have to learn TypeScript during the proposal phase and improve my understanding of testing methodologies.*
 
 ## Community Experience and Mentorship
 
@@ -60,7 +60,7 @@ We further went ahead to ask Ashmit some questions about his GSoC experience wit
 
 **Bami: Did you face any unexpected challenges or surprises during the program?**
 
-***Ashmit:** Apart from the final submission issue, everything went smoothly. However, the most unexpected challenge was adapting to remote collaboration. Before GSoC, I wasn’t very experienced with remote work. The program helped me develop skills in asynchronous communication and project management, which are crucial in open source and professional environments.*
+***Ashmit:** Apart from the final submission issue, everything went smoothly. However, the most unexpected challenge was adapting to remote collaboration. Before GSoC, I wasn’t very experienced with remote work. The program helped me develop skills in asynchronous communication and project management, which are crucial in open-source and professional environments alike.*
 
 ## Key Takeaways and Advice for Future GSoC Mentees
 
@@ -70,7 +70,7 @@ We further went ahead to ask Ashmit some questions about his GSoC experience wit
 
 **Bami: Has this experience changed your perception of open source? Was this your first time contributing?**
 
-***Ashmit:** No, this wasn’t my first open-source experience. I previously participated in Hacktoberfest 2021 when they still gave out T-shirts! However, being a GSoC mentee and later a maintainer was a completely different experience. As a mentee, you focus on individual contributions, whereas a maintainer oversees multiple contributions and ensures the stability of the project. It gave me a deeper appreciation of the responsibilities maintainers handle.*
+***Ashmit:** No, this wasn’t my first open-source experience. I previously participated in Hacktoberfest 2021 when they still gave out T-shirts! However, being a GSoC mentee and later a maintainer was a completely different experience. As a mentee, you focus on individual contributions, whereas as a maintainer, you oversee multiple contributions and ensure the stability of the project. It gave me a deeper appreciation of the responsibilities maintainers handle.*
 
 **Bami: Any advice for future GSoC mentees or newcomers to AsyncAPI?**
 
@@ -113,7 +113,7 @@ To add a bit of fun to our spotlight interview, we played a **"This or That"* ga
 
 **Bami: Window or Linux**
 
-***Ashmit:** Linux. Not hardcore Linux like fedora though.* 
+***Ashmit:** Linux. Not hardcore Linux, like fedora though.* 
 
 **Bami: Apple or Samsung.**
 
@@ -121,11 +121,11 @@ To add a bit of fun to our spotlight interview, we played a **"This or That"* ga
 
 **Bami: How do you like to spend your time outside coding? Do you have any hobby or interest?**
 
-***Ashmit:** For hobbies, I might say cooking is one of them. Yeah I do like to cook sometimes because if I have some free time that's where I go towards the kitchen.* 
+***Ashmit:** For hobbies, I might say cooking is one of them. Yeah I do like to cook sometimes because when I have some free time that's where I go, towards the kitchen.* 
 
-**Bami: Is there anyone or a lot of people you would like to thank or give shout out to from the community or the GSoC program, either your other mentees, your mentors or other community members.**
+**Bami: Is there anyone or many people you would like to thank or give shout out to from the community or the GSoC program, either your other mentees, your mentors or other community members.**
 
-***Ashmit:** My mentors are the ones who I would like to give shout out to like is [Maya](https://www.linkedin.com/in/aishatmuibudeen/), [Thule](https://www.linkedin.com/in/v-thulisile-sibanda/), and [Ace](https://www.linkedin.com/in/acebuild/). And on top of that, I would like to thank [Lukasz](https://www.linkedin.com/in/lukasz-gornicki-a621914/) as well because he has been quite helpful. There were some issues in my project that required his Assistance throughout and he was there for it. Honestly, that's quite very nice of him because he doesn't have to do it.*
+***Ashmit:** My mentors are the ones who I would like to give shout out to like is [Maya](https://www.linkedin.com/in/aishatmuibudeen/), [Thule](https://www.linkedin.com/in/v-thulisile-sibanda/), and [Ace](https://www.linkedin.com/in/acebuild/). Additionaly, I would like to thank [Lukasz](https://www.linkedin.com/in/lukasz-gornicki-a621914/) as well because he has been quite helpful. There were some issues in my project that required his Assistance throughout and he was there for it. Honestly, that's quite very nice of him because he doesn't have to do it.*
 
 For those considering GSoC or open-source contributions, Ashmit advises, *“Start with issues labeled ‘good first issue,’ ask questions, and don’t be afraid to make mistakes. Open-source communities thrive on collaboration and learning together.”*
 
