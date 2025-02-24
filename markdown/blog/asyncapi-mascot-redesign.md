@@ -19,9 +19,9 @@ excerpt: 'The story behind Eve and Chan—how they started, why they changed, an
 # AsyncAPI Mascot Redesign: The Biography of Eve and Chan
 
 - [The Birth of Eve and Chan](#the-birth-of-eve-and-chan)
-- [Why the Redesign?](#why-the-redesign?)
+- [Why the Redesign?](#why-the-redesign)
 - [Meet Eve and Chan](#meet-eve-and-chan)
-- [What’s Next for Eve and Chan?](#whats-next-for-eve-and-chan?)
+- [What’s Next for Eve and Chan?](#whats-next-for-eve-and-chan)
 
 AsyncAPI’s mascots, Eve and Chan, have had a brand refresh, and I’m proud to say that I had a hand in their redesign. Now, seeing the community use them in different ways just warms my heart. Any designer will tell you that nothing beats the feeling of seeing your work come to life beyond the Figma canvas, and that’s exactly how I feel about the new mascots.
 
