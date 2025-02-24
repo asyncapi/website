@@ -7,6 +7,7 @@ import IconPaper from '../icons/Paper';
 import IconPlant from '../icons/Plant';
 import IconRocket from '../icons/Rocket';
 import IconUsers from '../icons/Users';
+import IconExplorer from '../icons/Explorer';
 
 interface LearningItem {
   href: string;
@@ -56,7 +57,7 @@ const learningItems: LearningItem[] = [
     href: '/docs/migration',
     icon: IconMigration,
     className: 'bg-blue-400',
-    title: 'Migrations',
+    title: 'Migration',
     description: 'Our migration guides on how to upgrade to newer AsyncAPI versions.'
   },
   {
@@ -65,6 +66,13 @@ const learningItems: LearningItem[] = [
     className: 'bg-red-200',
     title: 'Community',
     description: 'Our Community section documents the community guidelines and resources.'
+  },
+  {
+    href: '/docs/reference/specification/v3.0.0-explorer',
+    icon: IconExplorer,
+    className: 'bg-teal-200',
+    title: 'Specification Explorer',
+    description: 'Simplifying our Specification JSON Schema like a pro.',
   }
 ];
 
