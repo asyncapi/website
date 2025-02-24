@@ -12,9 +12,6 @@ interface FooterProps {
 }
 import { initiativeLinks, socialMediaLinks } from './FooterList';
 
-
-
-
 export default function Footer({ currentLanguage }: FooterProps) {
   const { t } = useTranslation('footer');
 
