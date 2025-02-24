@@ -1,11 +1,11 @@
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
 @import url(https://cdn.jsdelivr.net/npm/@docsearch/css@3);
 
-@import 'swiper/css';
-@import 'swiper/css/a11y';
-@import 'swiper/css/navigation';
-@import 'swiper/css/pagination';
-@import 'swiper/css/scrollbar';
+@import "swiper/css";
+@import "swiper/css/a11y";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import "swiper/css/scrollbar";
 
 @tailwind base;
 @tailwind components;
@@ -19,7 +19,7 @@ body {
   scroll-behavior: smooth;
 }
 
-li > p {
+li>p {
   display: inline;
 }
 
@@ -51,11 +51,11 @@ abbr[title] {
 
 @keyframes GradientAnimation {
   0% {
-    background-position: 0% 50%;
+    background-position: 0% 50%
   }
 
   100% {
-    background-position: 200% 50%;
+    background-position: 200% 50%
   }
 }
 
@@ -110,8 +110,7 @@ abbr[title] {
   padding: 0;
 }
 
-.DocSearch-Help > a:focus,
-.DocSearch-Help > a:hover {
+.DocSearch-Help > a:focus, .DocSearch-Help > a:hover {
   outline: none;
   text-decoration: underline;
 }
@@ -131,8 +130,8 @@ abbr[title] {
   }
 }
 
-@media (max-width: 767px) {
-  .orbits {
+@media (max-width: 767px){
+  .orbits{
     display: none;
   }
 }
@@ -339,11 +338,11 @@ abbr[title] {
   color: white;
 }
 
-.meeting-card:hover > div:nth-child(2) > p {
+.meeting-card:hover > div:nth-child(2) > p  {
   color: white;
 }
 
-.explorer-menu-wrapper > div > div {
+.explorer-menu-wrapper > div > div{
   border: 1px solid rgb(228, 228, 228);
   border-radius: 10px;
   padding: 10px;
@@ -354,27 +353,5 @@ abbr[title] {
 }
 
 select {
-  cursor: pointer;
-}
-
-/* border animation for THIS PAGE CONTAINS */
-@keyframes borderAnimation {
-  0% {
-    outline-color: #649af0;
-  }
-  50% {
-    outline-color: #b27bee;
-  }
-  100% {
-    outline-color: #649af0;
-  }
-}
-
-.animate-border {
-  border-radius: 20px; /* Makes the border rounded */
-  border: 2px solid transparent; /* Transparent border to maintain space */
-  outline: 2px solid #3b82f6; /* Apply outline instead */
-  animation: borderAnimation 3s infinite linear; /* Animate the outline */
-  padding: 4px; /* Add padding so content does not touch the border */
-  background: white; /* Ensure content background is white */
+  cursor:pointer;
 }
