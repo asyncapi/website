@@ -61,10 +61,6 @@ export const initiativeLinks: InitiativeLink[] = [
     url: '/blog'
   },
   {
-    label: 'Shop',
-    url: 'https://www.store.asyncapi.com/'
-  },
-  {
     label: 'Brand',
     url: 'https://github.com/asyncapi/brand/blob/master/brand-guidelines/README.md'
   },

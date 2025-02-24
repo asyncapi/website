@@ -181,4 +181,4 @@ if (require.main === module) {
   start(resolve(__dirname, '..', '..', 'dashboard.json'));
 }
 
-module.exports = { getLabel, monthsSince, mapGoodFirstIssues, getHotDiscussions, getDiscussionByID, getDiscussions, writeToFile, start, processHotDiscussions };
+module.exports = { getLabel, monthsSince, mapGoodFirstIssues, getHotDiscussions, getDiscussionByID, getDiscussions, writeToFile, start, processHotDiscussions, pause };

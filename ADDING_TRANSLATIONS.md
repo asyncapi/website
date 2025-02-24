@@ -3,10 +3,10 @@
 We appreciate your valuable contributions to the AsyncAPI website, whether it's adding or improving existing translations.
 
 ## Table of contents <!-- omit in toc -->
-- [Improving existing translations:](#improving-existing-translations)
-- [Adding translations to a partially localized page:](#adding-translations-to-a-partially-localized-page)
-- [Adding translations to a new page:](#adding-translations-to-a-new-page)
-- [Adding a new locale:](#adding-a-new-locale)
+- [Improving existing translations](#improving-existing-translations)
+- [Adding translations to a partially localized page](#adding-translations-to-a-partially-localized-page)
+- [Adding translations to a new page](#adding-translations-to-a-new-page)
+- [Adding a new locale](#adding-a-new-locale)
 
 ## Improving existing translations
 
@@ -45,7 +45,7 @@ Use the translation hook with the key specified in the `locales` folder.
 
 Suppose the Landing Page has a button that is still in English when the language is set to German:
 - Navigate to the file where the component is defined.
-- Import the `useTranslation` hook from `lib/i18n`.
+- Import the `useTranslation` hook from `utils/i18n`.
 - Extract the translation function from the hook `const { t } = useTranslation();`.
 - Use it to pass the key of the required translation value. Make sure to add the required key to the `locales` folder according to the page's scope. In this example, we are adding translation for a button, since all translation keys related to buttons need to be specified in `common.json`.
 
@@ -54,7 +54,7 @@ Example:
 `ICSFileButton.js`
 ```diff
 ...
-+ import { useTranslation } from '../../lib/i18n';
++ import { useTranslation } from '../../utils/i18n';
 
 export default function ICSFButton({
 - text = 'Download ICS File',
@@ -131,10 +131,10 @@ The process for adding translations to a page that is not yet available in any e
 
 **4. Configure i18n routing**
 After adding a new internationalized page, test it to sure the page is being served on the website when someone visits it.
-  - Replace the `next/link` component with the `LinkComponent` from `components/link.js` in the files where the page's `href` is being referenced.
-  - Make sure to add the exact same `href` to the `lib/i18nPaths.js` in the respective locales which support that `href`.
+  - Replace the `next/link` component with the `LinkComponent` from `components/link.tsx` in the files where the page's `href` is being referenced.
+  - Make sure to add the exact same `href` to the `utils/i18n.ts` in the respective locales which support that `href`.
 
-  For example, if you want to translate the `pages/newsletter/index.js` page, so that if someone visits `asyncapi.com/de/newsletter`, it shows the page in the `German` locale.
+  For example, if you want to translate the `pages/newsletter.tsx` page, so that if someone visits `asyncapi.com/de/newsletter`, it shows the page in the `German` locale.
 
   - Add new `JSON` files to the `locales/en` and `locales/de` folder.
 
@@ -167,7 +167,7 @@ After adding a new internationalized page, test it to sure the page is being ser
   };
   ```
 
-  - Copy and add static site functions to the `newsletter/index.js` page.
+  - Copy and add static site functions to the `newsletter.tsx` page.
 
   `pages` folder directory structure
   ```diff
@@ -179,14 +179,14 @@ After adding a new internationalized page, test it to sure the page is being ser
      ┗ index.js
   ```
 
-  `newsletter/index.js`
+  `newsletter.tsx`
   ```diff
   ...
   + import {
   +   getAllLanguageSlugs,
   +   getLanguage,
   +   useTranslation
-  + } from "../../lib/i18n";
+  + } from "../../utils/i18n";
 
   export default function NewsletterIndexPage() {
 
@@ -217,7 +217,7 @@ After adding a new internationalized page, test it to sure the page is being ser
 
   - Add custom route `LinkComponent` wherever the `next/link` is used for routing to the `/newsletter` href.
 
-  `lib/i18nPaths.js`
+  `utils/i18n.ts`
   ```diff
   const i18nPaths = {
       en: [
@@ -252,12 +252,12 @@ If you want to add a new locale like `fr` to serve pages in the French locale on
   - Copy the existing `JSON` files present in the `en` folder. Change the values of those translation keys according to the new localization.
 
 **2. Modify i18n configuration**
-  - Navigate to the `next-i18next-static-site.config.js` file in the root of the project folder.
+  - Navigate to the `next-i18next.config.js` file in the root of the project folder.
   - Add the name of the newly added `locale` to the `languages` array.
 
 **3. Configure i18n routing**
 After adding a new internationalized page, ensure it is being served on the website when someone visits.
-  - Make sure to add the same `href` to the `lib/i18nPaths.js` in the respective locales supporting that `href`.
+  - Make sure to add the same `href` to the `utils/i18n.ts` in the respective locales supporting that `href`.
 
 If you have added the 'fr' locale and translated the 'tools/cli' page, clicking 'Tools -> CLI' in the navigation menu will redirect the user to 'asyncapi.com/fr/tools/cli'.
 
@@ -278,9 +278,9 @@ If you have added the 'fr' locale and translated the 'tools/cli' page, clicking 
 +  ┃ ┗ tools.json
 ```
 
-- Change the `next-i18next-static-site.config.js` config.
+- Change the `next-i18next.config.js` config.
 
-`next-i18next-static-site.config.js`
+`next-i18next.config.js`
 ```diff
 module.exports = {
     i18n: {
@@ -290,11 +290,16 @@ module.exports = {
         namespaces: ["landing-page", "common", "tools"],
         defaultNamespace: "landing-page",
     },
+    langMap: {
+    en: 'English',
+    de: 'Deutsch',
++   fr: 'French',
+  },
 };
 ```
  - Add new locale routing.
 
-`lib/i18nPaths.js`
+`utils/i18n.ts`
 ```diff
 const i18nPaths = {
     en: [
