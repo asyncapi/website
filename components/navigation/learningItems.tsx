@@ -1,5 +1,6 @@
 import type React from 'react';
 
+import IconExplorer from '../icons/Explorer';
 import IconGradCap from '../icons/GradCap';
 import IconGuide from '../icons/Guide';
 import IconMigration from '../icons/Migration';
@@ -7,7 +8,6 @@ import IconPaper from '../icons/Paper';
 import IconPlant from '../icons/Plant';
 import IconRocket from '../icons/Rocket';
 import IconUsers from '../icons/Users';
-import IconExplorer from '../icons/Explorer';
 
 interface LearningItem {
   href: string;
@@ -72,7 +72,7 @@ const learningItems: LearningItem[] = [
     icon: IconExplorer,
     className: 'bg-teal-200',
     title: 'Specification Explorer',
-    description: 'Simplifying our Specification JSON Schema like a pro.',
+    description: 'Simplifying our Specification JSON Schema like a pro.'
   }
 ];
 
