@@ -25,6 +25,15 @@ The redesign of Eve and Chan, the official mascots of AsyncAPI, is now complete,
 
 Many have been wondering who Eve and Chan are. Stay tuned for an upcoming blog post explaining the concept behind the mascots. [Be sure to subscribe to our newsletter to read all about it](https://www.asyncapi.com/en/newsletter)!
 
+## AsyncAPI Budget 2025
+The 2025 budget voting for the initiative was approved. We also improved TSC voting by sending message reminders to members who haven't voted yet to increase participation. Thanks to [Ashish Padhy](https://www.linkedin.com/in/ashish-padhy3023) for working on the implementation.
+
+<Figure
+  src="/img/posts/2025-blog-banner/voting-example.webp"
+  caption="Message reminder sent to TSC for voting"
+  className="text-center"
+/>
+
 ## AsyncAPI Bounty Program
 AsyncAPI maintainers, please start preparing to submit issues for the AsyncAPI Bounty Program for Q2 **from March 3rd to March 16th**. The program is designed for you, so submit any issues requiring attention [under the Bounty Program 2025 issue submission discussion](https://github.com/orgs/asyncapi/discussions/1607).
 
