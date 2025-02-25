@@ -1,8 +1,7 @@
-const { graphql } = require('@octokit/graphql');
-const { promises: fs, mkdirSync, rmSync } = require('fs-extra');
-const { resolve } = require('path');
-const os = require('os');
-const {
+import { graphql } from '@octokit/graphql';
+import { promises as fs } from 'fs-extra';
+import { resolve } from 'path';
+import {
   getLabel,
   monthsSince,
   mapGoodFirstIssues,
@@ -10,8 +9,10 @@ const {
   getDiscussionByID,
   writeToFile,
   getDiscussions,
-  start
-} = require('../../scripts/dashboard/build-dashboard');
+  start,
+  processHotDiscussions,
+  pause
+} from './build-dashboard.js'; // Adjust the import path as necessary
 
 const {
   issues,
@@ -29,12 +30,12 @@ describe('GitHub Discussions Processing', () => {
   let consoleLogSpy;
 
   beforeAll(() => {
-    tempDir = resolve(os.tmpdir(), 'test-config');
-    mkdirSync(tempDir);
+    tempDir = resolve(process.cwd(), 'test-config'); // Adjust tempDir as needed
+    fs.mkdir(tempDir, { recursive: true });
   });
 
   afterAll(() => {
-    rmSync(tempDir, { recursive: true, force: true });
+    fs.rm(tempDir, { recursive: true, force: true });
   });
 
   beforeEach(() => {
@@ -76,7 +77,7 @@ describe('GitHub Discussions Processing', () => {
 
     await getDiscussions('test-query', 10);
 
-    expect(consoleLogSpy).toHaveBeenCalledWith(
+    expect(console.log).toHaveBeenCalledWith(
       '[WARNING] GitHub GraphQL rateLimit',
       'cost = 1',
       'limit = 5000',
