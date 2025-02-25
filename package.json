@@ -56,7 +56,6 @@
     "@next/mdx": "^14.1.0",
     "@octokit/graphql": "^8.2.1",
     "@octokit/request": "^9.2.2",
-    "@octokit/types": "^13.8.0",
     "@slack/web-api": "^7.0.2",
     "@storybook/preview-api": "^8.2.2",
     "@tailwindcss/aspect-ratio": "^0.4.2",
@@ -118,8 +117,7 @@
     "tailwind-merge": "^2.2.1",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.3.3",
-    "yaml": "^2.3.4",
-    "fast-content-type-parse": "^2.0.1"
+    "yaml": "^2.3.4"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
@@ -163,9 +161,5 @@
     "remark-lint": "^10.0.0",
     "remark-mdx": "^3.0.1",
     "storybook": "^8.2.4"
-  },
-  "engines": {
-    "node": ">=16",
-    "npm": "^8.0.0"
   }
 }
