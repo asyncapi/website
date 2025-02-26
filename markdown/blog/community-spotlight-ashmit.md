@@ -34,7 +34,7 @@ We then asked Ashmit about his GSoC experience with the AsyncAPI Initiative. Bel
 
 **Bami: How did you first learn about AsyncAPI, and what motivated you to contribute to the community?**
 
-***Ashmit:** I discovered AsyncAPI while exploring Postman’s GSoC issues. The event-driven architecture and the mission of promoting open-source software intrigued me. My first significant interaction was with the VS Code extension for AsyncAPI, which allows users to preview YAML files. Later, I explored AsyncAPI React and the CLI tool. However, my primary project ended up being the conference website, which was the most active repository at the time due to an upcoming event.*
+***Ashmit:** I discovered AsyncAPI while exploring Postman’s GSoC issues. The event-driven architecture and the mission of promoting open-source software intrigued me. My first significant interaction was with the VS Code extension for AsyncAPI, which allows users to preview YAML files. Later, I explored AsyncAPI React and the CLI tool. However, my primary project was the conference website, the most active repository due to an upcoming event.*
 
 ## The Project: Revamping the AsyncAPI Conference Website
 
