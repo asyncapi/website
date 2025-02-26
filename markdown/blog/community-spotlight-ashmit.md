@@ -131,6 +131,6 @@ For those considering GSoC or open-source contributions, Ashmit advises, *“Sta
 
 Ashmit Jagtap’s story is a testament to the power of open-source in shaping careers and fostering innovation. His transition from a GSoC mentee to an AsyncAPI maintainer underscores the importance of dedication, community engagement, and continuous learning. Whether you are a beginner exploring open-source or an experienced developer looking to give back, Ashmit’s journey serves as an inspiration to take that first step, contribute meaningfully, and grow within the community.
 
-At AsyncAPI, we welcome new contributors and encourage them to embark on their own open-source journey. Who knows? Your story might be the next one we celebrate!
+At AsyncAPI, we welcome new contributors and encourage them to embark on their open-source journeys. Who knows—your story might be the next one we celebrate!
 
 
