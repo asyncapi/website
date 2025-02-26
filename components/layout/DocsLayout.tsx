@@ -133,8 +133,8 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                     className='flex px-4 text-gray-500 hover:text-gray-900 focus:outline-none sm:px-6 md:px-8'
                     aria-label='Open sidebar'
                   >
-                    <span>{post.title}</span>
-                    <ArrowRight className='size-5 pl-1' />
+                    <span>{post.sectionTitle}</span>
+                    <ArrowRight className='size-5 rotate-90 pl-1' />
                   </button>
                 </div>
               )}
