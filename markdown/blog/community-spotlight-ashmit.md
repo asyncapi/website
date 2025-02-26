@@ -16,7 +16,7 @@ excerpt: 'Being patient is important as a maintainer because sometimes the contr
 ---
 
 
-Open-source contributions have long been a gateway for developers to refine their skills, build meaningful projects, and connect with a global community. For many, the journey starts with small contributions, but for some, it evolves into a leadership role that impacts the project’s future. One such inspiring story is that of [Ashmit Jagtap](https://www.linkedin.com/in/ashmit-jagtap/), whose path from a Google Summer of Code (GSoC) mentee to a maintainer within AsyncAPI showcases dedication, learning, and a deep commitment to open-source development. In this blog post, we explore his journey, the challenges he faced, and the lessons he learned along the way.
+Open Source contributions have long been a gateway for developers to refine their skills, build meaningful projects, and connect with a global community. For many, the journey starts with small contributions, but for some, it evolves into a leadership role that impacts the project’s future. One such inspiring story is that of [Ashmit Jagtap](https://www.linkedin.com/in/ashmit-jagtap/), whose path from a Google Summer of Code (GSoC) mentee to a maintainer within AsyncAPI showcases dedication, learning, and a deep commitment to open-source development. In this blog post, we explore his journey, challenges, and the lessons he learned.
 
 ## The GSoC Experience: A Transformative Phase
 
