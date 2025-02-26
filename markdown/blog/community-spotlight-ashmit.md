@@ -24,7 +24,7 @@ Ashmit’s open-source journey began with his participation in GSoC, an esteemed
 
 Reflecting on his GSoC experience, Ashmit emphasizes the steep learning curve and the importance of proactive engagement. He recalls, “Initially, I was overwhelmed by the scale of the project, but the community was incredibly supportive. I learned how to navigate large codebases, improve my problem-solving skills, and contribute in a structured manner.” This phase allowed him to grasp not only the technical aspects of the project but also the collaborative spirit of open-source communities.
 
-We then asked Ashmit some questions about his GSoC experience with the AsyncAPI Initiative. Below is an outline of our conversation.
+We then asked Ashmit about his GSoC experience with the AsyncAPI Initiative. Below, I've included an outline of our conversation.
 
 ## Getting Started with Google Summer of Code and AsyncAPI
 
