@@ -84,7 +84,7 @@ We then asked Ashmit some questions about his GSoC experience with the AsyncAPI 
 
 **Bami: Are there any new features or improvements you’d like to see in AsyncAPI?**
 
-***Ashmit:** Specifically for the conference website, I have some ideas for future improvements. However, in general, AsyncAPI is constantly evolving, and I look forward to contributing to its growth and helping the community in any way I can.*
+***Ashmit:** Specifically for the conference website, I have some ideas for future improvements. However, AsyncAPI is constantly evolving, and I look forward to contributing to its growth and helping the community in any way I can.*
 
 
 To add a bit of fun to our spotlight interview, we played a **"This or That"* game with Ashmit. 
