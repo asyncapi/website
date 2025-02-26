@@ -30,7 +30,7 @@ We then asked Ashmit about his GSoC experience with the AsyncAPI Initiative. Bel
 
 **Bami: What inspired you to apply for Google Summer of Code with AsyncAPI?**
 
-***Ashmit:** Google Summer of Code had been a goal of mine since my first year of college when I first learned about it. However, I knew it was a competitive program, so I focused on building my skills. By my second year, I was ready to start contributing and began working towards it in January. Initially, I aimed to contribute to Postman, which serves as the umbrella organization for AsyncAPI and JSON Schema. My contributions to both projects led to my selection in AsyncAPI.*
+***Ashmit:** Google Summer of Code had been a goal of mine since my first year of college when I first learned about it. However, I knew it was a competitive program, so I focused on building my skills. I was ready to contribute by my second year and began working towards it in January. Initially, I aimed to contribute to Postman, but my contributions to both projects led to my selection for AsyncAPI.*
 
 **Bami: How did you first learn about AsyncAPI, and what motivated you to contribute to the community?**
 
