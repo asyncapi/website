@@ -125,7 +125,7 @@ To add a bit of fun to our spotlight interview, we played a **"This or That"* ga
 
 **Bami: Is there anyone or a lot of people you would like to thank or give shout out to from the community or the GSoC program, either your other mentees, your mentors or other community members.**
 
-***Ashmit:** My mentors are the ones who I would like to give shout out to like is [Maya](https://www.linkedin.com/in/aishatmuibudeen/), [Thule](https://www.linkedin.com/in/v-thulisile-sibanda/), and [Ace](https://www.linkedin.com/in/acebuild/). And on top of that, I would like to thank [Lukasz](https://www.linkedin.com/in/lukasz-gornicki-a621914/) as well because he has been quite helpful. There were some issues in my project that required his Assistance throughout and he was there for it. Honestly, that's quite very nice of him because he doesn't have to do it.*
+***Ashmit:** My mentors are the ones who I would like to shout out to like is [Maya](https://www.linkedin.com/in/aishatmuibudeen/), [Thule](https://www.linkedin.com/in/v-thulisile-sibanda/), and [Ace](https://www.linkedin.com/in/acebuild/). And on top of that, I would like to thank [Lukasz](https://www.linkedin.com/in/lukasz-gornicki-a621914/) for being quite helpful. Some issues in my project required his assistance, and he was there for them. That's nice of him because he didn't have to do it.*
 
 For those considering GSoC or open-source contributions, Ashmit advises, *“Start with issues labeled ‘good first issue,’ ask questions, and don’t be afraid to make mistakes. Open-source communities thrive on collaboration and learning together.”*
 
