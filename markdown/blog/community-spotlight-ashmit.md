@@ -12,7 +12,7 @@ authors:
     photo: /img/avatars/bami.webp
     link: https://www.linkedin.com/in/atinuke-oluwabamikemi-kayode-5b838b1b7/
     byline: AsyncAPI Community Marketing Specialist
-excerpt: 'Being patient is important as a maintainer because sometimes the contributors don't have it, so you have to keep yours. Says, Ashmit. A third-year Bachelor of Technology student in Computer Science from India.'
+excerpt: "Being patient is important as a maintainer because sometimes the contributors don't have it, so you have to keep yours. Says, Ashmit. A third-year Bachelor of Technology student in Computer Science from India."
 ---
 
 
