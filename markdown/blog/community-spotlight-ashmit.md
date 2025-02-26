@@ -40,7 +40,7 @@ We then asked Ashmit about his GSoC experience with the AsyncAPI Initiative. Bel
 
 **Bami: Can you tell us about your project, the problem it solved, and why was it important?**
 
-***Ashmit:** The primary goal of my project was to make maintaining the conference website easier. Previously, every year, the website had to be rebuilt or heavily refactored due to a lack of a consistent theme or streamlined process. This created a significant workload for maintainers. My project aimed to standardize the codebase, making it easier to update and maintain. Additionally, I introduced automated testing to simplify reviewing contributions, ensuring that new changes wouldn’t break existing functionality.*
+***Ashmit:** The primary goal of my project was to make maintaining the conference website easier. Previously, the website had to be rebuilt or heavily refactored yearly due to a lack of a consistent theme or streamlined process, creating a significant workload for maintainers. My project aimed to standardize the codebase, making it easier to update and maintain. Additionally, I introduced automated testing to simplify reviewing contributions, ensuring that new changes wouldn’t break existing functionality.*
 
 ## Challenges and Learning Experiences
 
