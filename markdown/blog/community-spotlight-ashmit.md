@@ -20,7 +20,7 @@ Open Source contributions have long been a gateway for developers to refine thei
 
 ## The GSoC Experience: A Transformative Phase
 
-Ashmit’s open-source journey began with his participation in GSoC, an esteemed program that connects aspiring developers with organizations working on impactful projects. His decision to contribute to the AsyncAPI Initiative was fueled by his interest in API documentation and event-driven architectures. As a mentee, he worked on refining the AsyncAPI Conference website and was mentored by experienced contributors who provided guidance, code reviews, and architectural insights.
+Ashmit’s open-source journey began with his participation in GSoC, an esteemed program that connects aspiring developers with organizations working on impactful projects. His interest in API documentation and event-driven architectures fueled his decision to contribute to the AsyncAPI Initiative. As a mentee, he worked on refining the AsyncAPI Conference website, and he was mentored by experienced contributors who provided guidance, code reviews, and architectural insights.
 
 Reflecting on his GSoC experience, Ashmit emphasizes the steep learning curve and the importance of proactive engagement. He recalls, “Initially, I was overwhelmed by the scale of the project, but the community was incredibly supportive. I learned how to navigate large codebases, improve my problem-solving skills, and contribute in a structured manner.” This phase allowed him to grasp not only the technical aspects of the project but also the collaborative spirit of open-source communities.
 
