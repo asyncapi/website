@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { AnimatedTestimonials } from '@/components/ui/animated-testimonials';
 
 export function AnimatedTestimonialsDemo() {
@@ -9,7 +10,7 @@ export function AnimatedTestimonialsDemo() {
 
       designation: 'Global Leader of API Strategy at MuleSoft',
 
-      src: '/img/testimonials/matt-mclarty.jpg',
+      src: '/img/testimonials/matt-mclarty.jpg'
     },
     {
       quote:
@@ -19,17 +20,17 @@ export function AnimatedTestimonialsDemo() {
 
       designation: 'Editor in Chief at Nordic APIs',
 
-      src: '/img/testimonials/bill-doerrfeld.jpg',
+      src: '/img/testimonials/bill-doerrfeld.jpg'
     },
     {
       quote:
-        "Developers need to be able to quickly and consistently create event-driven applications that provide business value and react to customer needs in realtime. I can't count how many times I've heard developers ask for OpenAPI/Swagger style tools for the asynchronous and event-driven world, and that is exactly what the AsyncAPI initiative is making a reality.",
+        'Developers need to be able to quickly and consistently create event-driven applications that provide business value and react to customer needs in realtime. I can't count how many times I've heard developers ask for OpenAPI/Swagger style tools for the asynchronous and event-driven world, and that is exactly what the AsyncAPI initiative is making a reality.',
 
       name: 'Jonathan Schabowsky',
 
       designation: 'Sr. Architect, Office of the CTO at Solace',
 
-      src: '/img/testimonials/jonathan-schabowsky.jpg',
+      src: '/img/testimonials/jonathan-schabowsky.jpg'
     },
     {
       quote:
@@ -39,12 +40,12 @@ export function AnimatedTestimonialsDemo() {
 
       designation: 'CEO at Streamdata.io',
 
-      src: '/img/testimonials/eric-horesnyi.jpg',
+      src: '/img/testimonials/eric-horesnyi.jpg'
     },
   ];
   return (
-    <div className="text-center mt-8">
-      <h2 className="text-4xl font-bold text-black mb-6">
+    <div className='text-center mt-8'>
+      <h2 className='text-4xl font-bold text-black mb-6'>
         What the experts are saying
       </h2>
       <AnimatedTestimonials testimonials={testimonials} />
