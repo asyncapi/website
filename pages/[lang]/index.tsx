@@ -4,6 +4,7 @@ import React from 'react';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { getStaticPaths, makeStaticProps } from '@/utils/getStatic';
 
+import { AnimatedTestimonialsDemo } from '../../components/AnimatedTestimonialsDemo';
 import Button from '../../components/buttons/Button';
 import GoogleCalendarButton from '../../components/buttons/GoogleCalendarButton';
 import ICSFileButton from '../../components/buttons/ICSFileButton';
@@ -24,7 +25,6 @@ import GoldSponsors from '../../components/sponsors/GoldSponsors';
 import PlatinumSponsors from '../../components/sponsors/PlatinumSponsors';
 import SilverSponsors from '../../components/sponsors/SilverSponsors';
 import SupportUs from '../../components/SupportUs/SupportUs';
-import { AnimatedTestimonialsDemo } from '../../components/AnimatedTestimonialsDemo';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
 import TextLink from '../../components/typography/TextLink';
