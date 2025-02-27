@@ -13,25 +13,36 @@ import withMDX from '@next/mdx';
 const nextConfig = {
   pageExtensions: ['tsx', 'ts', 'md', 'mdx'],
   eslint: {
-    ignoreDuringBuilds: true
+    ignoreDuringBuilds: true,
   },
   output: 'export',
+  images: {
+    unoptimized: true, // 🔹 Disable image optimization for static export
+  },
   webpack(config, { isServer }) {
     if (!isServer) {
       config.resolve.fallback.fs = false;
     }
 
     return config;
-  }
+  },
 };
 
 const mdxConfig = withMDX({
   extension: /\.mdx?$/,
-  providerImportSource: "@mdx-js/react",
+  providerImportSource: '@mdx-js/react',
   options: {
-    remarkPlugins: [frontmatter, gemoji, headingId, slug, images, a11yEmoji, remarkGfm],
-    rehypePlugins: []
-  }
+    remarkPlugins: [
+      frontmatter,
+      gemoji,
+      headingId,
+      slug,
+      images,
+      a11yEmoji,
+      remarkGfm,
+    ],
+    rehypePlugins: [],
+  },
 });
 
 export default mdxConfig(nextConfig);
