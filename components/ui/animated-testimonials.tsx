@@ -1,8 +1,9 @@
 'use client';
-import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
+
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
+import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react';
 
 type Testimonial = {
   quote: string;
@@ -13,7 +14,7 @@ type Testimonial = {
 
 export const AnimatedTestimonials = ({
   testimonials,
-  autoplay = false,
+  autoplay = true,
 }: {
   testimonials: Testimonial[];
   autoplay?: boolean;
@@ -86,14 +87,15 @@ export const AnimatedTestimonials = ({
                     width={500}
                     height={500}
                     draggable={false}
-                    className="h-full w-full rounded-3xl object-cover object-center"
+                    className="size-full rounded-3xl object-cover object-center"
+                    priority={isActive(index)}
                   />
                 </motion.div>
               ))}
             </AnimatePresence>
           </div>
         </div>
-        <div className="flex justify-between flex-col py-4">
+        <div className="flex flex-col justify-between py-4">
           <motion.div
             key={active}
             initial={{

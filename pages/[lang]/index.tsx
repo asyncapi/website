@@ -24,11 +24,7 @@ import GoldSponsors from '../../components/sponsors/GoldSponsors';
 import PlatinumSponsors from '../../components/sponsors/PlatinumSponsors';
 import SilverSponsors from '../../components/sponsors/SilverSponsors';
 import SupportUs from '../../components/SupportUs/SupportUs';
-// import Testimonial from '../../components/Testimonial';
-import {
-  AnimatedTestimonials,
-  AnimatedTestimonialsDemo,
-} from '../../components/AnimatedTestimonialsDemo';
+import { AnimatedTestimonialsDemo } from '../../components/AnimatedTestimonialsDemo';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
 import TextLink from '../../components/typography/TextLink';

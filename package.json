@@ -72,6 +72,7 @@
     "clsx": "^2.1.1",
     "cssnano": "^6.0.3",
     "dotenv": "^16.4.4",
+    "framer-motion": "^12.4.7",
     "fs-extra": "^11.2.0",
     "fuse.js": "^7.0.0",
     "googleapis": "^133.0.0",
