@@ -312,12 +312,6 @@
       "rules": {
         "max-len": "off"
       }
-    },
-    {
-      "files": ["scripts/**/*"],
-      "rules": {
-        "import/no-extraneous-dependencies": "off"
-      }
     }
   ]
 }
