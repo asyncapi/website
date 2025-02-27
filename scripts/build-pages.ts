@@ -24,7 +24,7 @@ ensureDirectoryExists(TARGET_DIR);
  * @param {string} content - The content string to process.
  * @returns {string} - The content string with capitalized JSX tags.
  */
-export function capitalizeJsxTags(content: string) {
+export function capitalizeJsxTags(content: string): string {
   return content.replace(/<\/?(\w+)/g, function (match: string, letter: string): string {
     if (capitalizeTags.includes(letter.toLowerCase())) {
       return `<${match[1] === '/' ? '/' : ''}${letter[0].toUpperCase()}${letter.slice(1)}`;

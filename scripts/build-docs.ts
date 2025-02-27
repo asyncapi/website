@@ -12,7 +12,7 @@ const { sortBy } = lodash;
  * @returns {NavTree} - The built navigation tree.
  * @throws {Error} - Throws an error if there is an issue during the tree building process.
  */
-function buildNavTree(navItems: Details[]) {
+function buildNavTree(navItems: Details[]): NavTree {
   try {
     const tree: NavTree = {
       welcome: {
@@ -124,7 +124,7 @@ function buildNavTree(navItems: Details[]) {
  * @returns {Details[]} - The sequential array of document posts.
  * @throws {Error} - Throws an error if there is an issue during the conversion process.
  */
-const convertDocPosts = (docObject: NavTree | Details) => {
+const convertDocPosts = (docObject: NavTree | Details): Details[] => {
   try {
     let docsArray: Details[] = [];
 
@@ -158,7 +158,7 @@ const convertDocPosts = (docObject: NavTree | Details) => {
  * @returns {Details[]} - The document posts with added navigation buttons.
  * @throws {Error} - Throws an error if there is an issue during the button adding process.
  */
-function addDocButtons(docPosts: Details[], treePosts: NavTree) {
+function addDocButtons(docPosts: Details[], treePosts: NavTree): Details[] {
   let structuredPosts: Details[] = [];
   const rootSections: string[] = [];
 

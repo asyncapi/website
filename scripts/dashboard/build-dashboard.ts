@@ -26,7 +26,7 @@ const currentDirPath = dirname(currentFilePath);
  * @param {string} date - The date to calculate from.
  * @returns {number} - The number of months since the date.
  */
-function monthsSince(date: string) {
+function monthsSince(date: string): number {
   const seconds = Math.floor((new Date().valueOf() - new Date(date).valueOf()) / 1000);
   // 2592000 = number of seconds in a month = 30 * 24 * 60 * 60
   const months = seconds / 2592000;
@@ -40,7 +40,7 @@ function monthsSince(date: string) {
  * @param {string} filter - The filter to apply to the label.
  * @returns {string | undefined} - The label if found, otherwise undefined.
  */
-function getLabel(issue: GoodFirstIssues, filter: string) {
+function getLabel(issue: GoodFirstIssues, filter: string): string | undefined {
   const result = issue.labels.nodes.find((label) => label.name.startsWith(filter));
 
   return result?.name.split('/')[1];
@@ -121,7 +121,7 @@ async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequest
  * @param {HotDiscussionsIssuesNode[]} batch - The batch of discussions to process.
  * @returns {Promise<ProcessedDiscussion[]>} - The processed discussions.
  */
-async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]) {
+async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise<ProcessedDiscussion[]> {
   return Promise.all(
     batch.map(async (discussion) => {
       try {
@@ -172,7 +172,7 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]) {
  * @param {HotDiscussionsIssuesNode[]} discussions - The discussions to process.
  * @returns {Promise<ProcessedDiscussion[]>} - The processed hot discussions.
  */
-async function getHotDiscussions(discussions: HotDiscussionsIssuesNode[]) {
+async function getHotDiscussions(discussions: HotDiscussionsIssuesNode[]): Promise<ProcessedDiscussion[]> {
   const result: ProcessedDiscussion[] = [];
   const batchSize = 5;
 
@@ -206,7 +206,7 @@ async function writeToFile(
     goodFirstIssues: MappedIssue[];
   },
   writePath: string
-) {
+): Promise<void> {
   try {
     await writeFile(writePath, JSON.stringify(content, null, '  '));
   } catch (error) {
@@ -223,7 +223,7 @@ async function writeToFile(
  * @param {GoodFirstIssues[]} issues - The issues to map.
  * @returns {Promise<MappedIssue[]>} - The mapped issues.
  */
-async function mapGoodFirstIssues(issues: GoodFirstIssues[]) {
+async function mapGoodFirstIssues(issues: GoodFirstIssues[]): Promise<MappedIssue[]> {
   /* istanbul ignore next */
   return issues.map((issue) => ({
     id: issue.id,

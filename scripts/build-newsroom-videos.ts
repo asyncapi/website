@@ -17,7 +17,7 @@ const currentDirPath = dirname(currentFilePath);
  * @returns {Promise<string>} - A promise that resolves to the video data in JSON format.
  * @throws {Error} - Throws an error if there is an issue during the fetch or write process.
  */
-async function buildNewsroomVideos(writePath: string) {
+async function buildNewsroomVideos(writePath: string): Promise<string> {
   try {
     if (!process.env.YOUTUBE_TOKEN) {
       throw new Error('YOUTUBE_TOKEN environment variable is required');

@@ -9,7 +9,7 @@ import { convertToJson } from '../utils';
  * @param {string} writeFilePath - The path to write the case studies list to.
  * @returns {Promise<object[]>} - The list of case studies.
  */
-export async function buildCaseStudiesList(dirWithCaseStudy: string, writeFilePath: string) {
+export async function buildCaseStudiesList(dirWithCaseStudy: string, writeFilePath: string): Promise<object[]> {
   try {
     const files = await readdir(dirWithCaseStudy);
 

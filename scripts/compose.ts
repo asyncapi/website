@@ -26,7 +26,7 @@ type ComposePromptType = {
  * @param {ComposePromptType} answers - The answers from the compose prompt.
  * @returns {string} - The generated front matter.
  */
-function genFrontMatter(answers: ComposePromptType) {
+function genFrontMatter(answers: ComposePromptType): string {
   const tagArray = answers.tags.split(',');
 
   tagArray.forEach((tag: string, index: number) => {

@@ -131,7 +131,7 @@ function validateDocs(frontmatter: FrontMatter) {
 async function checkMarkdownFiles(
   folderPath: string,
   validateFunction: (frontmatter: FrontMatter) => string[] | null,
-  relativePath = ''
+  relativePath: string = ''
 ) {
   try {
     const files = await fs.readdir(folderPath);
