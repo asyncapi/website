@@ -33,6 +33,7 @@ const getStaticProps = makeStaticProps(['landing-page', 'footer', 'common']);
 
 export { getStaticPaths, getStaticProps };
 
+/* eslint-disable prettier/prettier, jsx-quotes */
 /**
  * @description The HomePage is the landing page of the website.
  */
