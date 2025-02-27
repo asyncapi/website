@@ -63,10 +63,21 @@ export default function NewsletterSubscribe({
       setStatus(FormStatus.NORMAL);
     }, 10000);
   };
-
+  
+  // email  validation Regex
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    setStatus(FormStatus.LOADING);
+    
     event.preventDefault();
+
+    if(!emailRegex.test(email)){
+      setStatus(FormStatus.ERROR);
+      return;
+    }
+
+    setStatus(FormStatus.LOADING)
+
     const data = {
       name,
       email,
@@ -110,10 +121,14 @@ export default function NewsletterSubscribe({
     return (
       <div className={className} data-testid='NewsletterSubscribe-main'>
         <Heading level={HeadingLevel.h3} textColor={headTextColor} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
-          {ready ? t('errorTitle') : 'Something went wrong'}
+          {email && !emailRegex.test(email)
+          ? 'Invalid Email Address'
+          : ready ? t('errorTitle') : 'Something went wrong'}
         </Heading>
         <Paragraph className='mb-8' textColor={paragraphTextColor}>
-          {ready ? t('errorSubtitle') : errorSubtitle}{' '}
+          {email && !emailRegex.test(email)
+          ? 'Subscription failed, please let us know about it by submitting a bug'
+          : ready ? t('errorSubtitle'):errorSubtitle}
           <TextLink href='https://github.com/asyncapi/website/issues/new?template=bug.md' target='_blank'>
             {ready ? t('errorLinkText') : 'here'}
           </TextLink>
