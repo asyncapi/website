@@ -10,6 +10,10 @@ jobs:
   lighthouse-ci:
     name: Lighthouse CI
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      actions: write  # This allows uploading artifacts
 
     steps:
       - if: >
