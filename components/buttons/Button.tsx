@@ -99,7 +99,7 @@ export default function Button({
       data-testid='Button-link'
     >
       {icon && iconPosition === ButtonIconPosition.LEFT && <span className='mr-2 inline-block'>{icon}</span>}
-      <span className='inline-block'>{text}</span>
+      <span className='inline-block'>Hello</span>
       {icon && iconPosition === ButtonIconPosition.RIGHT && <span className='ml-2 inline-block'>{icon}</span>}
     </Link>
   );
