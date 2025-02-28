@@ -18,6 +18,8 @@ import AppContext from '@/context/AppContext';
  * @description The MyApp component is the root component for the application.
  */
 function MyApp({ Component, pageProps, router }: AppProps) {
+  const { locale } = router;
+
   return (
     <AppContext.Provider value={{ path: router.asPath }}>
       {/* <MDXProvider components={mdxComponents}> */}
@@ -35,7 +37,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             <ScrollButton />
           </Layout>
           <div className='mt-auto'>
-            <Footer />
+            <Footer currentLanguage={locale} />
           </div>
         </div>
       </AlgoliaSearch>

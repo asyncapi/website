@@ -6,6 +6,7 @@ import IconSlack from '../icons/Slack';
 import IconTwitch from '../icons/Twitch';
 import IconTwitter from '../icons/Twitter';
 import IconYoutubeGray from '../icons/YouTubeGray';
+import { useTranslation } from 'next-i18next';
 
 export interface SocialMediaLink {
   url: string;
@@ -73,3 +74,12 @@ export const initiativeLinks: InitiativeLink[] = [
     url: '/about#faqs'
   }
 ];
+
+export function TranslatedInitiativeLinks() {
+  const { t } = useTranslation('footer');
+
+  return initiativeLinks.map((link) => ({
+    ...link,
+    label: t(link.label)
+  }));
+}
