@@ -98,6 +98,16 @@ async function walkDirectories(
     const directory = posix.normalize(dir[0]);
     const sectionSlug = dir[1] || '';
     const files = await readdir(directory)
+    
+    // Check if there's a _section.mdx in the current directory
+    const sectionFilePath = normalize(join(directory, '_section.mdx'));
+    let currentSectionTitle = sectionTitle;
+    
+    // If _section.mdx exists in this directory, read its title
+    if (await pathExists(sectionFilePath)) {
+      const sectionData = frontMatter(await readFile(sectionFilePath, 'utf-8'), {}).data;
+      currentSectionTitle = sectionData.title || capitalize(basename(directory));
+    }
 
     for (let file of files) {
       let details;
@@ -140,7 +150,7 @@ async function walkDirectories(
         details.excerpt = details.excerpt || markdownToTxt(content).substr(0, 200)
         details.sectionSlug = sectionSlug || slug.replace(/\.mdx$/, '')
         details.sectionWeight = sectionWeight
-        details.sectionTitle = sectionTitle
+        details.sectionTitle = currentSectionTitle // Use the section title we determined earlier
         details.sectionId = sectionId
         details.rootSectionId = rootSectionId
         details.id = fileName.replace(/\\/g, '/')

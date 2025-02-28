@@ -1,4 +1,4 @@
 ---
-title: Home
+title: Welcome
 weight: 0
 ---
