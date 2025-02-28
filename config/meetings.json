@@ -1,12 +1,5 @@
 [
   {
-    "title": "Marketing WG Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=dHVrZHMyYm9kMzcydmJpYW5qMmdpcWU5MW8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1589",
-    "banner": "",
-    "date": "2024-11-19T14:00:00.000Z"
-  },
-  {
     "title": "Design Call",
     "calLink": "https://www.google.com/calendar/event?eid=ZmFwNGNoZW5kNzkzcDBsaHM2MW4xdDBzNW8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1592",
