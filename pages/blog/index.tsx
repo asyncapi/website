@@ -21,47 +21,51 @@ export default function BlogIndexPage() {
   const router = useRouter();
   const { navItems } = useContext(BlogContext);
 
-  const [posts, setPosts] = useState<IBlogPost[]>(
-    navItems
-      ? navItems.sort((i1: IBlogPost, i2: IBlogPost) => {
-          const i1Date = new Date(i1.date);
-          const i2Date = new Date(i2.date);
-
-          if (i1.featured && !i2.featured) return -1;
-          if (!i1.featured && i2.featured) return 1;
-
-          return i2Date.getTime() - i1Date.getTime();
-        })
-      : []
-  );
+  const [posts, setPosts] = useState<IBlogPost[]>([]);
   const [isClient, setIsClient] = useState(false);
+  const [visiblePosts, setVisiblePosts] = useState(9); // Number of posts initially visible
 
-  const onFilter = (data: IBlogPost[]) => setPosts(data);
-  const toFilter = [
-    {
-      name: 'type'
-    },
-    {
-      name: 'authors',
-      unique: 'name'
-    },
-    {
-      name: 'tags'
+  useEffect(() => {
+    if (navItems) {
+      const sortedPosts = navItems.sort((i1: IBlogPost, i2: IBlogPost) => {
+        const i1Date = new Date(i1.date);
+        const i2Date = new Date(i2.date);
+
+        if (i1.featured && !i2.featured) return -1;
+        if (!i1.featured && i2.featured) return 1;
+
+        return i2Date.getTime() - i1Date.getTime();
+      });
+
+      setPosts(sortedPosts);
     }
-  ];
+  }, [navItems]);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const loadMore = () => {
+    setVisiblePosts((prev) => prev + 9); // Load additional 9 posts
+  };
+
+  const onFilter = (data: IBlogPost[]) => {
+    setPosts(data);
+    setVisiblePosts(9); // Reset visible posts on filter change
+  };
+
+  const toFilter = [{ name: 'type' }, { name: 'authors', unique: 'name' }, { name: 'tags' }];
+
   const clearFilters = () => {
     router.push(`${router.pathname}`, undefined, {
       shallow: true
     });
   };
+
   const showClearFilters = Object.keys(router.query).length > 0;
 
   const description = 'Find the latest and greatest stories from our community';
   const image = '/img/social/blog.webp';
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   return (
     <GenericLayout title='Blog' description={description} image={image} wide>
@@ -122,7 +126,7 @@ export default function BlogIndexPage() {
             )}
             {Object.keys(posts).length > 0 && isClient && (
               <ul className='mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3'>
-                {posts.map((post, index) => (
+                {posts.slice(0, visiblePosts).map((post, index) => (
                   <BlogPostItem key={index} post={post} />
                 ))}
               </ul>
@@ -130,6 +134,17 @@ export default function BlogIndexPage() {
             {Object.keys(posts).length > 0 && !isClient && (
               <div className='h-screen w-full'>
                 <Loader loaderText='Loading Blogs' className='mx-auto my-60' pulsating />
+              </div>
+            )}
+            {visiblePosts < posts.length && isClient && (
+              <div className='mt-8 flex justify-center'>
+                <button
+                  type='button'
+                  className='rounded-md bg-primary-500 px-6 py-3 text-white shadow-md transition duration-300 hover:bg-primary-600'
+                  onClick={loadMore}
+                >
+                  Load More
+                </button>
               </div>
             )}
           </div>
