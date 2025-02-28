@@ -1,7 +1,7 @@
-const { writeFile } = require('fs-extra');
-const { resolve } = require('path');
-const { graphql } = require('@octokit/graphql');
-const { Queries } = require('./issue-queries');
+import { writeFile } from 'fs-extra';
+import { resolve } from 'path';
+import { graphql } from '@octokit/graphql';
+import { Queries } from './issue-queries.js';
 
 /**
  * Introduces a delay in the execution flow.
@@ -181,4 +181,4 @@ if (require.main === module) {
   start(resolve(__dirname, '..', '..', 'dashboard.json'));
 }
 
-module.exports = { getLabel, monthsSince, mapGoodFirstIssues, getHotDiscussions, getDiscussionByID, getDiscussions, writeToFile, start, processHotDiscussions, pause };
+export { getLabel, monthsSince, mapGoodFirstIssues, getHotDiscussions, getDiscussionByID, getDiscussions, writeToFile, start, processHotDiscussions, pause };
