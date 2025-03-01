@@ -1,7 +1,7 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 import React from 'react';
 
-import i18nextConfig from '../next-i18next.config';
+import i18nextConfig from '../next-i18next.config.cjs';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: any) {
