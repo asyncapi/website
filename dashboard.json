@@ -1,37 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "PR_kwDOBW5R_c6C0Cw8",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "refactor: migrate build script to typescript ",
-      "author": "JeelRajodiya",
-      "resourcePath": "/asyncapi/website/pull/3423",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 62.31688575858915
-    },
-    {
-      "id": "I_kwDOFLhIt84-OUI3",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create educational & technical video explaining AsyncAPI's main features",
-      "author": "quetzalliwrites",
-      "resourcePath": "/asyncapi/community/issues/155",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 34.74812523866031
-    },
-    {
       "id": "PR_kwDOFLhIt86HHVY9",
       "isPR": true,
       "isAssigned": false,
@@ -54,55 +23,6 @@
       "score": 22.112443333692923
     },
     {
-      "id": "I_kwDOBW5R_c6VPMfE",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Website Homepage Redesign",
-      "author": "Mayaleeeee",
-      "resourcePath": "/asyncapi/website/issues/3192",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "bounty",
-          "color": "0e8a16"
-        }
-      ],
-      "score": 20.38939580119737
-    },
-    {
-      "id": "PR_kwDOFLhIt855u7Eb",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: added marketing strategy doc",
-      "author": "iambami",
-      "resourcePath": "/asyncapi/community/pull/1358",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 20.102221212448114
-    },
-    {
-      "id": "PR_kwDOCVQpZM5tYFmm",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: custom extension rendering",
-      "author": "ductaily",
-      "resourcePath": "/asyncapi/asyncapi-react/pull/994",
-      "repo": "asyncapi/asyncapi-react",
-      "labels": [],
-      "score": 16.36895155870775
-    },
-    {
-      "id": "I_kwDOFLhIt85bebeO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Meeting Banners Storage",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/issues/568",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 16.08177696995849
-    },
-    {
       "id": "PR_kwDOBW5R_c6KgWbR",
       "isPR": true,
       "isAssigned": false,
@@ -111,35 +31,27 @@
       "resourcePath": "/asyncapi/website/pull/3658",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 15.507427792459973
+      "score": 16.65612614745701
     },
     {
-      "id": "I_kwDOFLhIt86o-qNj",
+      "id": "I_kwDODou01c5ZAFWh",
       "isPR": false,
-      "isAssigned": false,
-      "title": "Budget 2025",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/community/issues/1681",
-      "repo": "asyncapi/community",
+      "isAssigned": true,
+      "title": "Please support File References",
+      "author": "philCryoport",
+      "resourcePath": "/asyncapi/studio/issues/528",
+      "repo": "asyncapi/studio",
       "labels": [
         {
           "name": "enhancement",
           "color": "a2eeef"
         },
         {
-          "name": "vote",
-          "color": "EF813F"
-        },
-        {
-          "name": "gitvote",
-          "color": "ededed"
-        },
-        {
-          "name": "vote open",
-          "color": "ededed"
+          "name": "bounty",
+          "color": "0E8A16"
         }
       ],
-      "score": 14.358729437462937
+      "score": 14.07155484871368
     },
     {
       "id": "PR_kwDODou01c503Pr-",
@@ -162,9 +74,117 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 12.922856493716644
+    },
+    {
+      "id": "I_kwDOBGu-186XjdU2",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Proposal to add a 'version' value into the message object to support a more granular versioning",
+      "author": "IsmaelMartinez",
+      "resourcePath": "/asyncapi/spec/issues/1068",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 12.348507316218127
+    },
+    {
+      "id": "PR_kwDOBW5R_c6MO2j-",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: Add ashmit spotlight story",
+      "author": "iambami",
+      "resourcePath": "/asyncapi/website/pull/3726",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 12.348507316218127
+    },
+    {
+      "id": "PR_kwDOFLhIt86HWO6h",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add onboarding maintainers guide",
+      "author": "Aahil13",
+      "resourcePath": "/asyncapi/community/pull/1638",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 12.061332727468868
+    },
+    {
+      "id": "I_kwDOFLhIt86O7jFN",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "[DESIGN] Holopin Design Tracking",
+      "author": "Mayaleeeee",
+      "resourcePath": "/asyncapi/community/issues/1306",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "good first issue",
+          "color": "7057ff"
+        },
+        {
+          "name": "🎨 design",
+          "color": "0D67D3"
+        },
+        {
+          "name": "area/design",
+          "color": "0d67d3"
+        }
+      ],
+      "score": 11.774158138719608
+    },
+    {
+      "id": "PR_kwDOBW5R_c6GWsFI",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: simplified error handling in build-dashboard.js",
+      "author": "sahitya-chandra",
+      "resourcePath": "/asyncapi/website/pull/3521",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 10.338285194973315
+    },
+    {
+      "id": "I_kwDOFLhIt86m3c8R",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[BUG] Slack groups are not updated",
+      "author": "fmvilas",
+      "resourcePath": "/asyncapi/community/issues/1658",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        },
+        {
+          "name": "good first issue",
+          "color": "7057ff"
+        }
+      ],
+      "score": 10.051110606224057
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOBW5R_c6rGtwQ",
+      "title": "[Docs Bug 🐞 report]: Few outdated info on /tools/generator and /tools/cli",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/3721",
+      "repo": "asyncapi/website",
+      "author": "Adi-204",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "🐞 docs bug",
+          "color": "FFD23F"
+        }
+      ]
+    },
     {
       "id": "I_kwDOBW5R_c6qPG7g",
       "title": "fix: Update code to support @octokit/request v9 and @octokit/graphql v8",
@@ -208,21 +228,6 @@
       "repo": "asyncapi/website",
       "author": "auraticabhi",
       "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c6nxCMV",
-      "title": "[FEATURE] Improving scroll to top button elegent and clean design",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/3614",
-      "repo": "asyncapi/website",
-      "author": "Hashir-Akbar",
-      "area": "typescript",
       "labels": [
         {
           "name": "enhancement",
@@ -351,21 +356,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFLhIt86dker5",
-      "title": "Designs for the mentees selected for the mentorship program for promotion",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/community/issues/1581",
-      "repo": "asyncapi/community",
-      "author": "iambami",
-      "area": "design",
-      "labels": [
-        {
-          "name": ":loudspeaker: marketing",
-          "color": "a829e2"
         }
       ]
     },
@@ -560,7 +550,7 @@
     {
       "id": "I_kwDOFDnrNc5xaTa3",
       "title": "Parallel execution command asyncapi generate got error",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/cli/issues/814",
       "repo": "asyncapi/cli",
       "author": "Zacama",
@@ -569,21 +559,6 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc5wmQBl",
-      "title": "Need to Consider the Case Senstive feature in CLI while creating new file.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/790",
-      "repo": "asyncapi/cli",
-      "author": "AayushSaini101",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
