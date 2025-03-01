@@ -51,7 +51,7 @@ export default function NewsletterSubscribe({
   const [email, setEmail] = useState<string>('');
   const [name, setName] = useState<string>('');
   const [status, setStatus] = useState<FormStatus>(FormStatus.NORMAL);
-
+  const [emailError, setEmailError] = useState<string>('');
   const { t, ready } = useTranslation('common', { keyPrefix: 'newsletterCTA' });
 
   const headTextColor = dark ? 'text-white' : '';
@@ -75,8 +75,6 @@ export default function NewsletterSubscribe({
       return;
     }
     setEmailError(''); // Clear error if valid
-
-    setStatus(FormStatus.LOADING);
     //end
     const data = {
       name,
