@@ -47,11 +47,15 @@ let languageFuse = new Fuse(languageList, options);
 let technologyFuse = new Fuse(technologyList, options);
 
 /**
- * Takes individual tool object and inserts borderColor and backgroundColor of the tags of
- * languages and technologies, for Tool Card in website.
+ * Enriches a tool object by processing its language and technology filters for display on the website.
  *
- * @param {AsyncAPITool} toolObject - The tool object to process.
- * @returns {Promise<FinalAsyncAPITool>} - The processed tool object with additional properties.
+ * This function uses fuzzy matching to search for existing language and technology tags. If a tag is not found,
+ * it creates a new tag object with preset background and border colors, appends it to the global tag list, and updates
+ * the Fuse index accordingly. The updated tool object includes enriched filters along with its original category and
+ * commercial properties.
+ *
+ * @param toolObject - The original tool object containing filter tags.
+ * @returns A promise that resolves to the updated tool object with enriched language and technology filters.
  */
 export async function getFinalTool(toolObject: AsyncAPITool): Promise<FinalAsyncAPITool> {
   const finalObject: FinalAsyncAPITool = {

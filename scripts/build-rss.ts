@@ -5,9 +5,9 @@ import type { Details, Result } from '@/types/scripts/build-posts-list';
 import type { BlogPostTypes, RSS, RSSItemType } from '@/types/scripts/build-rss';
 
 /**
- * Retrieves all blog posts from the configuration file.
+ * Asynchronously retrieves all blog posts from the posts configuration file.
  *
- * @returns {Promise<any>} - A promise that resolves to the list of all blog posts.
+ * @returns A promise that resolves to the list of blog posts.
  */
 async function getAllPosts() {
   const posts = (await import('../config/posts.json')).default as Result;
@@ -16,10 +16,13 @@ async function getAllPosts() {
 }
 
 /**
- * Cleans a string by replacing HTML entities with their corresponding characters.
+ * Cleans a string by replacing common HTML entities with their corresponding literal characters.
  *
- * @param {string} s - The string to clean.
- * @returns {string} - The cleaned string.
+ * This function converts HTML entities such as "&amp;", "&#39;", "&lt;", "&gt;", and "&quot;" into
+ * their respective characters and removes any occurrences of "&ltspan&gt".
+ *
+ * @param s - The string containing HTML entities to clean.
+ * @returns The string with HTML entities replaced by their literal characters.
  */
 function clean(s: string) {
   let cleanS = s;
@@ -35,13 +38,20 @@ function clean(s: string) {
 }
 
 /**
- * Generates an RSS feed for the specified blog post type.
+ * Generates and writes an RSS feed file for a specified blog post type.
  *
- * @param {BlogPostTypes} type - The type of blog posts to include in the RSS feed.
- * @param {string} rssTitle - The title of the RSS feed.
- * @param {string} desc - The description of the RSS feed.
- * @param {string} outputPath - The output path for the generated RSS feed file.
- * @throws {Error} - Throws an error if there is an issue during the RSS feed generation.
+ * Retrieves all blog posts, filters out those without a publication date, and validates that each post
+ * contains the required fields (title, slug, excerpt, date). The posts are then sorted by featured status
+ * and publication date before being converted into an RSS feed structure. The resulting XML feed is written
+ * to the specified output file path.
+ *
+ * @param type - The blog post type to include in the feed.
+ * @param rssTitle - The title of the RSS feed.
+ * @param desc - A description of the RSS feed.
+ * @param outputPath - The file path where the generated RSS feed should be saved.
+ *
+ * @throws {Error} If any blog post is missing required fields or if an error occurs during the RSS feed generation
+ * or file writing process.
  */
 export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: string, outputPath: string) {
   try {
