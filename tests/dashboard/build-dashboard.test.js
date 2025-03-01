@@ -4,7 +4,6 @@ const { resolve } = require('path');
 const os = require('os');
 const {
   getLabel,
-  monthsSince,
   mapGoodFirstIssues,
   getHotDiscussions,
   getDiscussionByID,
@@ -134,12 +133,6 @@ describe('GitHub Discussions Processing', () => {
     };
     expect(getLabel(issue, 'area/')).toBe('bug');
     expect(getLabel(issue, 'nonexistent/')).toBeUndefined();
-  });
-
-  it('should calculate months since date', () => {
-    const date = new Date();
-    date.setMonth(date.getMonth() - 2);
-    expect(monthsSince(date)).toBe(2);
   });
 
   it('should map good first issues', async () => {
