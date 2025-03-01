@@ -21,10 +21,15 @@ type ComposePromptType = {
 };
 
 /**
- * Generates the front matter for a blog post based on the provided answers.
+ * Generates a complete Markdown front matter block for a blog post.
  *
- * @param {ComposePromptType} answers - The answers from the compose prompt.
- * @returns {string} - The generated front matter.
+ * Constructs a YAML front matter section using the blog post details provided by the user,
+ * including title, current date, type, canonical URL, and comma-separated tags. The front matter
+ * also embeds fixed cover image and author metadata along with a Markdown template containing guidelines
+ * for composing the blog content.
+ *
+ * @param answers - User inputs for the blog post, including title, excerpt, comma-separated tags, type, and canonical URL.
+ * @returns The generated Markdown front matter and blog post content template.
  */
 function genFrontMatter(answers: ComposePromptType): string {
   const tagArray = answers.tags.split(',');
