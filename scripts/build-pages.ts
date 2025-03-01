@@ -1,36 +1,54 @@
-const fs = require('fs');
-const path = require('path');
+import type { PathLike } from 'fs';
+import fs from 'fs';
+import path from 'path';
 
 const SRC_DIR = 'markdown';
 const TARGET_DIR = 'pages';
 
 const capitalizeTags = ['table', 'tr', 'td', 'th', 'thead', 'tbody'];
 
-// Check if target directory doesn't exist then create it
-function ensureDirectoryExists(directory) {
+/**
+ * Ensures that the specified directory exists. If it doesn't, creates it.
+ * @param {PathLike} directory - The directory path to check or create.
+ */
+export function ensureDirectoryExists(directory: PathLike) {
   if (!fs.existsSync(directory)) {
     fs.mkdirSync(directory, { recursive: true });
   }
 }
-
 ensureDirectoryExists(TARGET_DIR);
 
-function capitalizeJsxTags(content) {
-  return content.replace(/<\/?(\w+)/g, function (match, letter) {
+/**
+ * Capitalizes JSX tags in the provided content string.
+ *
+ * @param {string} content - The content string to process.
+ * @returns {string} - The content string with capitalized JSX tags.
+ */
+export function capitalizeJsxTags(content: string): string {
+  return content.replace(/<\/?(\w+)/g, function (match: string, letter: string): string {
     if (capitalizeTags.includes(letter.toLowerCase())) {
       return `<${match[1] === '/' ? '/' : ''}${letter[0].toUpperCase()}${letter.slice(1)}`;
     }
+
     return match;
   });
 }
 
-function copyAndRenameFiles(srcDir, targetDir) {
+/**
+ * Copies and renames files from the source directory to the target directory.
+ *
+ * @param {string} srcDir - The source directory.
+ * @param {string} targetDir - The target directory.
+ */
+export function copyAndRenameFiles(srcDir: string, targetDir: string) {
   // Read all files and directories from source directory
   const entries = fs.readdirSync(srcDir, { withFileTypes: true });
 
   entries.forEach((entry) => {
     const srcPath = path.join(srcDir, entry.name);
     const targetPath = path.join(targetDir, entry.name);
+
+    /* istanbul ignore else */
 
     if (entry.isDirectory()) {
       // If entry is a directory, create it in target directory and recurse
@@ -60,5 +78,3 @@ function copyAndRenameFiles(srcDir, targetDir) {
 }
 
 copyAndRenameFiles(SRC_DIR, TARGET_DIR);
-
-module.exports = { copyAndRenameFiles,capitalizeJsxTags, ensureDirectoryExists }

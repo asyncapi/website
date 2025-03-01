@@ -4,14 +4,13 @@ const { resolve } = require('path');
 const os = require('os');
 const {
   getLabel,
-  monthsSince,
   mapGoodFirstIssues,
   getHotDiscussions,
   getDiscussionByID,
   writeToFile,
   getDiscussions,
   start
-} = require('../../scripts/dashboard/build-dashboard');
+} = require('../../scripts/dashboard/build-dashboard.ts');
 
 const {
   issues,
@@ -19,7 +18,12 @@ const {
   discussionWithMoreComments,
   fullDiscussionDetails,
   mockRateLimitResponse
-} = require("../fixtures/dashboardData")
+} = require('../fixtures/dashboardData');
+const { logger } = require('../../scripts/utils/logger.ts');
+
+jest.mock('../../scripts/utils/logger', () => ({
+  logger: { error: jest.fn(), warn: jest.fn() }
+}));
 
 jest.mock('@octokit/graphql');
 
@@ -39,8 +43,8 @@ describe('GitHub Discussions Processing', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => { });
-    consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => { });
+    consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
   });
 
   afterEach(() => {
@@ -76,12 +80,8 @@ describe('GitHub Discussions Processing', () => {
 
     await getDiscussions('test-query', 10);
 
-    expect(consoleLogSpy).toHaveBeenCalledWith(
-      '[WARNING] GitHub GraphQL rateLimit',
-      'cost = 1',
-      'limit = 5000',
-      'remaining = 50',
-      expect.any(String)
+    expect(logger.warn).toHaveBeenCalledWith(
+      expect.stringContaining(`GitHub GraphQL rateLimit \ncost = 1\nlimit = 5000\nremaining = 50`)
     );
   });
 
@@ -102,9 +102,7 @@ describe('GitHub Discussions Processing', () => {
       rateLimit: { remaining: 1000 }
     };
 
-    graphql
-      .mockResolvedValueOnce(mockFirstResponse)
-      .mockResolvedValueOnce(mockSecondResponse);
+    graphql.mockResolvedValueOnce(mockFirstResponse).mockResolvedValueOnce(mockSecondResponse);
 
     const result = await getDiscussions('test-query', 10);
     expect(result).toHaveLength(2);
@@ -115,8 +113,7 @@ describe('GitHub Discussions Processing', () => {
 
     const filePath = resolve(tempDir, 'error-output.json');
     await start(filePath);
-
-    expect(consoleLogSpy).toHaveBeenCalledWith('There were some issues parsing data from github.');
+    expect(logger.error).toHaveBeenCalledWith('There were some issues parsing data from github.');
   });
 
   it('should successfully process and write data', async () => {
@@ -138,14 +135,7 @@ describe('GitHub Discussions Processing', () => {
     expect(getLabel(issue, 'nonexistent/')).toBeUndefined();
   });
 
-  it('should calculate months since date', () => {
-    const date = new Date();
-    date.setMonth(date.getMonth() - 2);
-    expect(monthsSince(date)).toBe(2);
-  });
-
   it('should map good first issues', async () => {
-
     const result = await mapGoodFirstIssues(issues);
     expect(result[0]).toMatchObject({
       id: '1',
@@ -188,16 +178,12 @@ describe('GitHub Discussions Processing', () => {
 
     await expect(getHotDiscussions([undefined])).rejects.toThrow();
 
-    expect(consoleErrorSpy).toHaveBeenCalledWith(
-      'there were some issues while parsing this item: undefined'
-    );
+    expect(logger.error).toHaveBeenCalledWith('there were some issues while parsing this item: undefined');
 
     localConsoleErrorSpy.mockRestore();
   });
 
   it('should handle write failures gracefully', async () => {
-    
     await expect(writeToFile()).rejects.toThrow();
-  });  
-
+  });
 });

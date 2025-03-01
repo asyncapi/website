@@ -169,8 +169,8 @@ export const generateCaseStudyContent = (data: any) => {
       ]
     },
     {
-      title: "Production-use AsyncAPI document",
-      content: fullExample,
+      title: 'Production-use AsyncAPI document',
+      content: fullExample
     }
   ];
 };
