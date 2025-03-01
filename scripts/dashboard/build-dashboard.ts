@@ -273,7 +273,6 @@ export {
   getHotDiscussions,
   getLabel,
   mapGoodFirstIssues,
-  monthsSince,
   processHotDiscussions,
   start,
   writeToFile
