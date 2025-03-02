@@ -137,7 +137,7 @@ export default function BlogIndexPage() {
             )}
 
             {posts.length > 0 && isClient && (
-              <ul className="grid gap-6 mx-auto mt-10 max-w-6xl sm:grid-cols-2 lg:grid-cols-3">
+              <ul className="grid gap-8 mx-auto mt-10 max-w-6xl sm:grid-cols-2 lg:grid-cols-3">
                 {posts.slice(0, visiblePosts).map((post, index) => (
                   <BlogPostItem key={index} post={post} />
                 ))}
