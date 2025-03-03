@@ -286,7 +286,7 @@ export default function TSC() {
             <h3 className="mb-2 font-semibold lg:text-2xl lg:text-center text-primary-800">
               What is a TSC?
             </h3>
-            <p className="my-4 text-base text-gray-500 lg:text-center">
+            <p className="my-4 text-base text-gray-500 lg:text-left">
               The Technical Steering Committee (TSC) is responsible for the
               oversight of the AsyncAPI Initiative. Maintainers (aka committers)
               make decisions at the given repository/project level. The TSC
@@ -298,7 +298,7 @@ export default function TSC() {
             <h3 className="mb-2 font-semibold lg:text-2xl lg:text-center text-primary-800">
               How can I become a TSC member?
             </h3>
-            <p className="my-4 text-base text-gray-500 lg:text-center">
+            <p className="my-4 text-base text-gray-500 lg:text-left">
               Anybody can become a member of the TSC. All you have to do is
               become a maintainer of one of the AsyncAPI projects! To become a
               maintainer, you just need to regularly contribute to one of the
@@ -320,7 +320,7 @@ export default function TSC() {
             <h3 className="mb-2 font-semibold lg:text-2xl lg:text-center text-primary-800">
               Our governance model
             </h3>
-            <p className="my-4 text-base text-gray-500 lg:text-center">
+            <p className="my-4 text-base text-gray-500 lg:text-left">
               AsyncAPI Initiative runs under an{' '}
               <a
                 data-testid="TSC-Governance-Link"
