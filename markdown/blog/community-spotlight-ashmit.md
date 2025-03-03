@@ -68,13 +68,13 @@ We then asked Ashmit some questions about his GSoC experience with the AsyncAPI 
 
 ***Ashmit:** One of my biggest takeaways was that anything is achievable with hard work and patience. Initially, I doubted my chances of being selected, but I put in the effort and succeeded. Another key lesson was the importance of structured workflows in open-source projects, which significantly improves maintainability.*
 
-**Bami: Has this experience changed your perception of open source? Was this your first time contributing?**
+**Bami: Has this experience changed your perception of open-source? Was this your first time contributing?**
 
 ***Ashmit:** No, this wasn’t my first open-source experience. I previously participated in Hacktoberfest 2021 when they still gave out T-shirts! However, being a GSoC mentee and later a maintainer was a completely different experience. As a mentee, you focus on individual contributions, whereas as a maintainer, you oversee multiple contributions and ensure the stability of the project. It gave me a deeper appreciation of the responsibilities maintainers handle.*
 
 **Bami: Any advice for future GSoC mentees or newcomers to AsyncAPI?**
 
-***Ashmit:** I have two main pieces of advice: be patient and work hard. Open source is community-driven, and maintainers often have full-time jobs, so responses to contributions can take time. Patience is essential. Hard work is equally important—keep learning, refining your skills, and making meaningful contributions.*
+***Ashmit:** I have two main pieces of advice: be patient and work hard. Open-source is community-driven, and maintainers often have full-time jobs, so responses to contributions can take time. Patience is essential. Hard work is equally important—keep learning, refining your skills, and making meaningful contributions.*
 
 ## Looking Ahead: What’s Next for Ashmit?
 
@@ -132,5 +132,3 @@ For those considering GSoC or open-source contributions, Ashmit advises, *“Sta
 Ashmit Jagtap’s story is a testament to the power of open-source in shaping careers and fostering innovation. His transition from a GSoC mentee to an AsyncAPI maintainer underscores the importance of dedication, community engagement, and continuous learning. Whether you are a beginner exploring open-source or an experienced developer looking to give back, Ashmit’s journey serves as an inspiration to take that first step, contribute meaningfully, and grow within the community.
 
 At AsyncAPI, we welcome new contributors and encourage them to embark on their own open-source journey. Who knows? Your story might be the next one we celebrate!
-
-
