@@ -6,8 +6,6 @@ WORKDIR /async
 # Install development dependencies
 COPY package.json package-lock.json ./
 RUN npm install
-# Install dependencies
-RUN npm ci
 
 # Copy the rest of the application files
 COPY . .
