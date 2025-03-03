@@ -14,6 +14,10 @@ import type { IBlogPost } from '@/types/post';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
+/**
+ * Blog index page component.
+ * @returns {JSX.Element} The rendered blog index page.
+ */
 export default function BlogIndexPage() {
   const router = useRouter();
   const { navItems } = useContext(BlogContext);
@@ -49,11 +53,7 @@ export default function BlogIndexPage() {
     setVisiblePosts(9);
   };
 
-  const toFilter = [
-    { name: 'type' },
-    { name: 'authors', unique: 'name' },
-    { name: 'tags' },
-  ];
+  const toFilter = [{ name: 'type' }, { name: 'authors', unique: 'name' }, { name: 'tags' }];
 
   const clearFilters = () => {
     router.push(router.pathname, undefined, { shallow: true });
@@ -65,59 +65,42 @@ export default function BlogIndexPage() {
   const image = '/img/social/blog.webp';
 
   return (
-    <GenericLayout title="Blog" description={description} image={image} wide>
-      <div
-        className="relative px-6 pt-8 pb-16 sm:px-8 lg:px-12 lg:pt-12 lg:pb-24"
-        id="main-content"
-      >
-        <div className="relative mx-auto max-w-7xl">
-          <div className="text-center">
+    <GenericLayout title='Blog' description={description} image={image} wide>
+      <div className='relative px-6 pb-16 pt-8 sm:px-8 lg:px-12 lg:pb-24 lg:pt-12' id='main-content'>
+        <div className='relative mx-auto max-w-7xl'>
+          <div className='text-center'>
             <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.xl}>
               Welcome to our blog!
             </Heading>
-            <Paragraph className="mx-auto mt-3 max-w-2xl text-lg sm:mt-4">
+            <Paragraph className='mx-auto mt-3 max-w-2xl text-lg sm:mt-4'>
               Find the latest and greatest stories from our community.
             </Paragraph>
-            <Paragraph
-              typeStyle={ParagraphTypeStyle.md}
-              className="mx-auto mt-4 max-w-2xl"
-            >
+            <Paragraph typeStyle={ParagraphTypeStyle.md} className='mx-auto mt-4 max-w-2xl'>
               Want to publish a blog post? We love community stories.{' '}
-              <TextLink
-                href="https://github.com/asyncapi/website/issues/new?template=blog.md"
-                target="_blank"
-              >
+              <TextLink href='https://github.com/asyncapi/website/issues/new?template=blog.md' target='_blank'>
                 Submit yours!
               </TextLink>
             </Paragraph>
-            <Paragraph
-              typeStyle={ParagraphTypeStyle.md}
-              className="mx-auto mt-1 max-w-2xl"
-            >
+            <Paragraph typeStyle={ParagraphTypeStyle.md} className='mx-auto mt-1 max-w-2xl'>
               We have an{' '}
               <img
-                className="inline ml-1 text-primary-500 hover:text-primary-300"
-                src="/img/logos/rss.svg"
-                alt="RSS feed"
-                height="18px"
-                width="18px"
+                className='ml-1 inline text-primary-500 hover:text-primary-300'
+                src='/img/logos/rss.svg'
+                alt='RSS feed'
+                height='18px'
+                width='18px'
               />{' '}
-              <TextLink href="/rss.xml">RSS Feed</TextLink>, too!
+              <TextLink href='/rss.xml'>RSS Feed</TextLink>, too!
             </Paragraph>
           </div>
 
           {/* Filter Section */}
-          <div className="flex flex-wrap gap-4 justify-center mt-12">
-            <Filter
-              data={navItems || []}
-              onFilter={onFilter}
-              className="w-full text-sm md:w-1/5"
-              checks={toFilter}
-            />
+          <div className='mt-12 flex flex-wrap justify-center gap-4'>
+            <Filter data={navItems || []} onFilter={onFilter} className='w-full text-sm md:w-1/5' checks={toFilter} />
             {showClearFilters && (
               <button
-                type="button"
-                className="py-2 px-4 font-semibold text-gray-800 bg-none rounded-md border border-gray-200 shadow-none transition-all hover:text-gray-700"
+                type='button'
+                className='bg-none rounded-md border border-gray-200 px-4 py-2 font-semibold text-gray-800 shadow-none transition-all hover:text-gray-700'
                 onClick={clearFilters}
               >
                 Clear filters
@@ -128,16 +111,14 @@ export default function BlogIndexPage() {
           {/* Blog Posts Section */}
           <div>
             {posts.length === 0 && (
-              <div className="flex flex-col justify-center items-center mt-16">
+              <div className='mt-16 flex flex-col items-center justify-center'>
                 <Empty />
-                <p className="mx-auto mt-3 max-w-2xl text-xl leading-7 text-gray-500">
-                  No post matches your filter
-                </p>
+                <p className='mx-auto mt-3 max-w-2xl text-xl leading-7 text-gray-500'>No post matches your filter</p>
               </div>
             )}
 
             {posts.length > 0 && isClient && (
-              <ul className="grid gap-8 mx-auto mt-10 max-w-6xl sm:grid-cols-2 lg:grid-cols-3">
+              <ul className='mx-auto mt-10 grid max-w-6xl gap-8 sm:grid-cols-2 lg:grid-cols-3'>
                 {posts.slice(0, visiblePosts).map((post, index) => (
                   <BlogPostItem key={index} post={post} />
                 ))}
@@ -145,20 +126,16 @@ export default function BlogIndexPage() {
             )}
 
             {posts.length > 0 && !isClient && (
-              <div className="w-full h-screen">
-                <Loader
-                  loaderText="Loading Blogs"
-                  className="my-60 mx-auto"
-                  pulsating
-                />
+              <div className='h-screen w-full'>
+                <Loader loaderText='Loading Blogs' className='mx-auto my-60' pulsating />
               </div>
             )}
 
             {visiblePosts < posts.length && isClient && (
-              <div className="flex justify-center mt-8">
+              <div className='mt-8 flex justify-center'>
                 <button
-                  type="button"
-                  className="py-3 px-6 text-white rounded-md shadow-md transition duration-300 bg-primary-500 hover:bg-primary-600"
+                  type='button'
+                  className='rounded-md bg-primary-500 px-6 py-3 text-white shadow-md transition duration-300 hover:bg-primary-600'
                   onClick={loadMore}
                 >
                   Load More
