@@ -269,7 +269,7 @@ export default function TSC() {
       image={image}
       wide
     >
-      <div className="mb-8 text-center text-white">
+      <div className="py-4 mb-8 text-center text-white">
         <h3 className="mb-4 text-2xl font-bold">Welcome to Community.</h3>
       </div>
 
@@ -343,13 +343,6 @@ export default function TSC() {
             </p>
           </div>
         </div>
-        <div className="mt-8">
-          <NewsletterSubscribe
-            type="TSC Voting"
-            title="Get notified when TSC is voting"
-            subtitle="You'll receive an email whenever someone requests the TSC to vote."
-          />
-        </div>
         <div className="mt-10">
           <div className="mb-5 text-center text-primary-800">
             <h3 className="text-2xl font-semibold">Current TSC members</h3>
@@ -365,6 +358,13 @@ export default function TSC() {
             ))}
             <QuestionCard />
           </ul>
+        </div>
+        <div className="mt-8">
+          <NewsletterSubscribe
+            type="TSC Voting"
+            title="Get notified when TSC is voting"
+            subtitle="You'll receive an email whenever someone requests the TSC to vote."
+          />
         </div>
       </div>
     </GenericLayout>

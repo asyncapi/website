@@ -56,7 +56,7 @@ export default function NewsletterSubscribe({
   const { t, ready } = useTranslation('common', { keyPrefix: 'newsletterCTA' });
 
   const headTextColor = dark ? 'text-white' : '';
-  const paragraphTextColor = dark ? 'text-gray-300' : '';
+  const paragraphTextColor = 'text-gray-500';
 
   const setFormStatus = (formResponse: FormStatus) => {
     setStatus(formResponse);
