@@ -261,7 +261,6 @@ export default function TSC() {
     TSCMembersList.map((user) => addAdditionalUserInfo(user)),
     ['name'],
   ).filter((user) => user.isTscMember);
-
   return (
     <GenericLayout
       title="Technical Steering Committee"
