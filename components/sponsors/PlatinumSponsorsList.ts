@@ -3,7 +3,7 @@ import type { SponsorType } from '@/types/components/sponsors/SponsorType';
 export const platinumSponsors: SponsorType[] = [
   {
     name: 'Solace',
-    website: 'https://www.solace.com',
+    website: 'https://solace.com/?utm_source=asyncapi&utm_medium=onlinereferral&utm_campaign=asyncapi_sponsorship',
     imageSrc: '/img/sponsors/solace.png',
     altText: 'Solace',
     imageClass: 'inline-block px-4 sm:h-12'
