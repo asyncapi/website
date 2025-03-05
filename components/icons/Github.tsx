@@ -1,13 +1,13 @@
 import React from 'react';
 
-/* eslint-disable max-len */
-/**
- * @description Icons for asyncapi website
- */
 export default function IconGithub({ className = '' }) {
   return (
-    
-    <Image
-      src="/images/icons/github.svg"  ></Image>
+    <img
+      src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+      alt="GitHub Logo"
+      className={className}
+      width={40} // Adjust size as needed
+      height={40}
+    />
   );
 }
