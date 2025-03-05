@@ -406,6 +406,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/raj17ce"><img src="https://avatars.githubusercontent.com/u/116947399?v=4?s=100" width="100px;" alt="Raj Patel"/><br /><sub><b>Raj Patel</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=raj17ce" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/nalindalal"><img src="https://avatars.githubusercontent.com/u/116961144?v=4&size=64" width="100px;" alt="Nalin Dalal"/><br /><sub><b>Nalin Dalal</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=nalindalal" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>

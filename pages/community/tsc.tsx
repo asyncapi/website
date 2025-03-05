@@ -256,24 +256,32 @@ export default function TSC() {
 
   return (
     <GenericLayout title='Technical Steering Committee' description={description} image={image} wide>
+      <div className='mb-8 py-4 text-center text-white'>
+        <h3 className='mb-4 text-2xl font-bold'>Welcome to Community.</h3>
+      </div>
+
+      <div className='text-primary-800 mb-8 text-center'>
+        <p>Here is a list of all current members of the AsyncAPI Initiative.</p>
+      </div>
+
       <div className='relative mx-auto px-4 py-12 sm:px-6 lg:px-8'>
         <div
           className='mx-auto my-0 grid max-w-xl lg:max-w-screen-xl lg:grid-cols-3 lg:gap-8'
           data-testid='TSC-content'
         >
           <div>
-            <h3 className='text-primary-800  mb-2 font-semibold lg:text-center lg:text-2xl'>What is a TSC?</h3>
-            <p className='my-4 text-base text-gray-500 lg:text-center'>
+            <h3 className='text-primary-800 mb-2 font-semibold lg:text-center lg:text-2xl'>What is a TSC?</h3>
+            <p className='my-4 text-base text-gray-500 lg:text-left'>
               The Technical Steering Committee (TSC) is responsible for the oversight of the AsyncAPI Initiative.
               Maintainers (aka committers) make decisions at the given repository/project level. The TSC helps to make
               decisions on a higher level, or when maintainers cannot find a consensus.
             </p>
           </div>
           <div>
-            <h3 className='text-primary-800  mb-2 font-semibold lg:text-center lg:text-2xl'>
+            <h3 className='text-primary-800 mb-2 font-semibold lg:text-center lg:text-2xl'>
               How can I become a TSC member?
             </h3>
-            <p className='my-4 text-base text-gray-500 lg:text-center'>
+            <p className='my-4 text-base text-gray-500 lg:text-left'>
               Anybody can become a member of the TSC. All you have to do is become a maintainer of one of the AsyncAPI
               projects! To become a maintainer, you just need to regularly contribute to one of the projects and then
               other maintainers will invite you to join. You can also build a great AsyncAPI-based project that we
@@ -290,8 +298,8 @@ export default function TSC() {
             </p>
           </div>
           <div>
-            <h3 className='text-primary-800  mb-2 font-semibold lg:text-center lg:text-2xl'>Our governance model</h3>
-            <p className='my-4 text-base text-gray-500 lg:text-center'>
+            <h3 className='text-primary-800 mb-2 font-semibold lg:text-center lg:text-2xl'>Our governance model</h3>
+            <p className='my-4 text-base text-gray-500 lg:text-left'>
               AsyncAPI Initiative runs under an{' '}
               <a
                 data-testid='TSC-Governance-Link'
@@ -313,13 +321,6 @@ export default function TSC() {
             </p>
           </div>
         </div>
-        <div className='mt-8'>
-          <NewsletterSubscribe
-            type='TSC Voting'
-            title='Get notified when TSC is voting'
-            subtitle="You'll receive an email whenever someone requests the TSC to vote."
-          />
-        </div>
         <div className='mt-10'>
           <div className='text-primary-800 mb-5 text-center'>
             <h3 className='text-2xl font-semibold'>Current TSC members</h3>
@@ -332,6 +333,13 @@ export default function TSC() {
             ))}
             <QuestionCard />
           </ul>
+        </div>
+        <div className='mt-8'>
+          <NewsletterSubscribe
+            type='TSC Voting'
+            title='Get notified when TSC is voting'
+            subtitle="You'll receive an email whenever someone requests the TSC to vote."
+          />
         </div>
       </div>
     </GenericLayout>
