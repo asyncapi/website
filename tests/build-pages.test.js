@@ -49,9 +49,17 @@ describe('copyAndRenameFiles', () => {
   test('should create a directory if it does not exist', () => {
     const NEW_TEST_DIR = 'testDir';
 
+    // Clean up directory if it exists before test
+    if (fs.existsSync(NEW_TEST_DIR)) {
+      fs.rmdirSync(NEW_TEST_DIR);
+    }
+
     expect(fs.existsSync(NEW_TEST_DIR)).toBe(false);
     ensureDirectoryExists(NEW_TEST_DIR);
     expect(fs.existsSync(NEW_TEST_DIR)).toBe(true);
+
+    // Clean up after test
+    fs.rmdirSync(NEW_TEST_DIR);
   });
 
 });

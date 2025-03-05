@@ -153,10 +153,14 @@ function getLabel(issue, filter) {
 }
 
 function monthsSince(date) {
-  const seconds = Math.floor((new Date() - new Date(date)) / 1000);
-  // 2592000 = number of seconds in a month = 30 * 24 * 60 * 60
-  const months = seconds / 2592000;
-  return Math.floor(months);
+  const now = new Date();
+  const then = new Date(date);
+  const months = (now.getFullYear() - then.getFullYear()) * 12 + (now.getMonth() - then.getMonth());
+  // If the date hasn't reached the same day of the month, subtract one month
+  if (now.getDate() < then.getDate()) {
+    return months - 1;
+  }
+  return months;
 }
 
 async function start(writePath) {
