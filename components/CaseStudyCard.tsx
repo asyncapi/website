@@ -19,7 +19,7 @@ export default function CaseStudyCard({ studies = [] }: ICaseStudyCardProps) {
   }
 
   return (
-    <div className="flex flex-wrap gap-3 justify-center pt-10 lg:flex lg:justify-center lg:gap-8 lg:text-center">
+    <div className='flex flex-wrap gap-3 justify-center pt-10 lg:flex lg:justify-center lg:gap-8 lg:text-center'>
       {studies.map((study, index) => (
         <a key={index} href={`casestudies/${study.id}`}>
           <div
