@@ -57,6 +57,7 @@
     "@next/mdx": "^14.1.0",
     "@octokit/graphql": "^7.0.2",
     "@slack/web-api": "^7.0.2",
+    "@storybook/addons": "^7.6.17",
     "@storybook/preview-api": "^8.2.2",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.7",
