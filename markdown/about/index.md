@@ -64,15 +64,15 @@ The total number of companies and projects using AsyncAPI as well as their ident
 - [**Adidas**](https://www.adidas.com/us): Company dedicated to manufacturing sports equipment and fashion products. It is the largest sportswear manufacturer in Europe, and the second largest in the world. This company has more than 150.000 sales outlets around the world.
 - [**Salesforce**](https://login.salesforce.com/?locale=es): Business consultancy company. It provides (CRM) services and more. It manages from small businesses to FORTUNE 500 companies, and it has more than 150,000 customers.
 - [**IBM**](https://www.ibm.com): Company that manufactures and markets hardware and software. It has operations in over 170 countries and provides hosting and consulting services in many areas.
-- [**SAP**](https://www.sap.com/index.html): Company dedicated to the design of computer products for business management. Develops business software to manage operations and business-to-customer relationships. It’s a large company with 100,330 employees.
+- [**SAP**](https://www.sap.com/index.html): Company dedicated to the design of computer products for business management. Develops business software to manage operations and business-to-customer relationships. It's a large company with 100,330 employees.
 - [**IQVIA**](https://www.iqvia.com/): Company providing services for the combined health information technology and clinical research industries. It employs more than 58.000 people in over 100 countries.
 
 ## Values of AsyncAPI
 
 - **Innovative**. There is no other specification that covers the messaging needs in event-driven architecture that AsyncAPI is covering. What it tries to do is to integrate with the existing tools and remove walls for communication.
-- **Free**. It’s a free software project: it seeks the user's liberty by offering a tool that can be used and enhanced without restrictions.
+- **Free**. It's a free software project: it seeks the user's liberty by offering a tool that can be used and enhanced without restrictions.
 - **Open**. As it's an open-source project, not a company or a product. It works in a change of paradigm because it does not sell anything; it moves away from fierce competition and bets for cooperation.
-- **Multicultural and inclusive**. It’s an initiative with an international and multicultural vision. It’s organic, always in constant mutation and change. It also actively demands compliance with human rights, respect for racial, sexual, and cultural diversity equality. And, of course, the equality between women and men.
+- **Multicultural and inclusive**. It's an initiative with an international and multicultural vision. It's organic, always in constant mutation and change. It also actively demands compliance with human rights, respect for racial, sexual, and cultural diversity equality. And, of course, the equality between women and men.
 - **Transparent**. The initiative is built on transparency, being one of the main values of AsyncAPI, internally and externally, including its financing. All the relevant data of the project is public. All tasks are public, with participation and communication handled through Slack and GitHub.
 - **Horizontal and participative**. Its structure is based on horizontality; most of the decisions are defined as a group, including the Community. Anyone can submit improvements, lines of action, or elements to be taken into account to strengthen AsyncAPI.
 - **User-friendly**. AsyncAPI bets for a seamless API development experience. Users should be able to create their first API even without prior knowledge of AsyncAPI. It has to be natural, simple, and intuitive.
@@ -92,9 +92,9 @@ All the information about the project's economy, the amount of the donations, th
 - [**Twitter**](https://twitter.com/asyncapispec?lang=es): It's used for disseminating all news and information regarding the project, resolving user queries, and sharing the latest updates within AsyncAPI.
 - [**Slack workspace**](https://www.asyncapi.com/slack-invite): The main place of encounter for the whole community of AsyncAPI.
 - [**Newsletter**](https://www.asyncapi.com/newsletter): To learn about the status of the project, news, actualizations, recorded events, and meetings.
-- [**Blog**](https://www.asyncapi.com/blog): It’s used to disseminate information related to the project. It's also open to collaborations.
-- [**LinkedIn**](https://es.linkedin.com/company/asyncapi): It's used to publish news related to the project or its environment. It’s also used as a source of information.
-- [**YouTube Channel**](https://www.youtube.com/playlist?list=PLbi1gRlP7pijUwZJErzyYf_Rc-PWu4lXS"): Where you can find conferences, AsyncAPI Open Meetings, and much more.
+- [**Blog**](https://www.asyncapi.com/blog): It's used to disseminate information related to the project. It's also open to collaborations.
+- [**LinkedIn**](https://es.linkedin.com/company/asyncapi): It's used to publish news related to the project or its environment. It's also used as a source of information.
+- [**YouTube Channel**](https://www.youtube.com/playlist?list=PLbi1gRlP7pijUwZJErzyYf_Rc-PWu4lXS): Where you can find conferences, AsyncAPI Open Meetings, and much more.
 - [**GitHub**](https://github.com/asyncapi): Issues (bugs, feature requests, etc.) and pull requests (PRs) for fixes or new features already discussed, as per the contributing guidelines.
 - [**AsyncAPI Open Meetings**](https://github.com/asyncapi): AsyncAPI hosts different meetings every week. They are focused on different topics, sometimes purely technical and sometimes about community building. Pick one and join us! [Learn more about our meetings](/community/meetings)
 

@@ -1,0 +1,18 @@
+name: Notify Slack on Master Branch Workflows
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send notification to Slack
+        uses: rtCamp/action-slack-notify@v2.1.0
+        env:
+          SLACK_WEBHOOK: ${{ secrets.WEBSITE_SLACK_WEBHOOK }}
+          SLACK_USERNAME: 'GitHub Actions'
+          SLACK_ICON_EMOJI: ':rocket:'
+          SLACK_MESSAGE: 'A workflow has been triggered on the master branch.' 

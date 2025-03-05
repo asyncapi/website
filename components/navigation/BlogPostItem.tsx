@@ -35,6 +35,9 @@ export default forwardRef(function BlogPostItem(
 ) {
   let typeColors: [string, string] = ['bg-indigo-100', 'text-indigo-800'];
 
+  const isFeatured = post.featured;
+
+
   switch (post.type.toLowerCase()) {
     case BlogPostType.Video:
       typeColors = ['bg-pink-100', 'text-pink-800'];
@@ -52,7 +55,7 @@ export default forwardRef(function BlogPostItem(
   }
 
   return (
-    <li className={`list-none rounded-lg ${className}`} ref={ref} id={id}>
+    <li className={`list-none rounded-lg ${className} relative`} ref={ref} id={id}>
       <article className='h-full rounded-lg'>
         <Link href={post.slug}>
           <span
@@ -61,6 +64,11 @@ export default forwardRef(function BlogPostItem(
             }
             data-testid='BlogPostItem-Link'
           >
+            {post.featured && (
+              <span className="featured-label bg-yellow-100 text-yellow-800 font-bold px-2 py-1 rounded-md absolute top-2 left-2 z-10">
+                Featured
+              </span>
+            )}
             <img
               className='h-48 w-full object-cover'
               src={post.cover}
