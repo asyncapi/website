@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'; // Import useRouter
 import '../styles/globals.css';
 
 import type { AppProps } from 'next/app';
@@ -14,13 +15,12 @@ import NavBar from '@/components/navigation/NavBar';
 import StickyNavbar from '@/components/navigation/StickyNavbar';
 import AppContext from '@/context/AppContext';
 
-/**
- * @description The MyApp component is the root component for the application.
- */
-function MyApp({ Component, pageProps, router }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter(); // Use useRouter hook
+  const { locale } = router; // Get the current language
+
   return (
     <AppContext.Provider value={{ path: router.asPath }}>
-      {/* <MDXProvider components={mdxComponents}> */}
       <Head>
         <script async defer src='https://buttons.github.io/buttons.js'></script>
       </Head>
@@ -35,11 +35,10 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             <ScrollButton />
           </Layout>
           <div className='mt-auto'>
-            <Footer />
+            <Footer currentLanguage={locale || 'en'} /> {/* Ensure a default value */}
           </div>
         </div>
       </AlgoliaSearch>
-      {/* </MDXProvider> */}
     </AppContext.Provider>
   );
 }
