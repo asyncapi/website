@@ -1,6 +1,13 @@
 import React from 'react';
 import { FaLinkedin } from 'react-icons/fa';
 
-export default function IconLinkedIn({ className = '', size = 24 }) {
-  return <FaLinkedin className={className} size={size} />;
+interface IconLinkedInProps {
+  className?: string;
+  size?: number;
 }
+
+const IconLinkedIn: React.FC<IconLinkedInProps> = ({ className = '', size = 24 }) => {
+  return <FaLinkedin className={className} size={size} />;
+};
+
+export default IconLinkedIn;
