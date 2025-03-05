@@ -1,11 +1,6 @@
-import frontmatter from 'remark-frontmatter';
-import images from 'remark-images';
-import gemoji from 'remark-gemoji-to-emoji';
-import a11yEmoji from '@fec/remark-a11y-emoji';
-import slug from 'remark-slug';
-import headingId from 'remark-heading-id';
-import remarkGfm from 'remark-gfm';
-import withMDX from '@next/mdx';
+import mdx from '@next/mdx';
+
+const withMDX = mdx();
 
 /**
  * @type {import('next').NextConfig}
@@ -18,20 +13,24 @@ const nextConfig = {
   output: 'export',
   webpack(config, { isServer }) {
     if (!isServer) {
-      config.resolve.fallback.fs = false;
+      config.resolve.fallback = { fs: false };
     }
-
     return config;
   }
 };
 
-const mdxConfig = withMDX({
+export default withMDX({
   extension: /\.mdx?$/,
-  providerImportSource: "@mdx-js/react",
   options: {
-    remarkPlugins: [frontmatter, gemoji, headingId, slug, images, a11yEmoji, remarkGfm],
+    remarkPlugins: [
+      require('remark-frontmatter'),
+      require('remark-gemoji-to-emoji'),
+      require('remark-heading-id'),
+      require('remark-slug'),
+      require('remark-images'),
+      require('@fec/remark-a11y-emoji'),
+      require('remark-gfm')
+    ],
     rehypePlugins: []
   }
-});
-
-export default mdxConfig(nextConfig);
+})(nextConfig);
