@@ -6,7 +6,7 @@ import type { IButtonDefaultProps } from '../../types/components/buttons/types';
 import IconSlack from '../icons/Slack';
 import Button from './Button';
 
-interface ISlackButtonProps extends IButtonDefaultProps {}
+interface ISlackButtonProps extends IButtonDefaultProps { }
 
 /**
  * @description The SlackButton component is a button that links to the AsyncAPI Slack channel.
