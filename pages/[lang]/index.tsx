@@ -101,7 +101,7 @@ export default function HomePage() {
                     <Paragraph className='mt-2'>{t('community.slackCTADesc')}</Paragraph>
                   </div>
                   <div className='mt-5 flex justify-center lg:justify-start'>
-                    <Button className='w-full md:w-auto' text={t('community.slackCTABtn')} href='/slack-invite' />
+                    <Button className='w-full md:w-auto' text={t('community.slackCTABtn')} href='https://www.asyncapi.com/slack-invite' />
                   </div>
                 </section>
               </div>
@@ -118,14 +118,14 @@ export default function HomePage() {
                     <Paragraph className='mt-2'>
                       {t('community.meetingDesc')}
 
-                      <TextLink href='/community/meetings'>{t('community.meetingLink')}</TextLink>
+                      <TextLink href='https://www.asyncapi.com/community/meetings'>{t('community.meetingLink')}</TextLink>
                     </Paragraph>
                     <ul className='mt-5 justify-center md:flex'>
                       <li>
                         <GoogleCalendarButton href='https://calendar.google.com/calendar/u/3?cid=Y19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t' />
                       </li>
                       <li>
-                        <SubscribeButton href='/community/meetings' className='mt-2 md:ml-2 md:mt-0' />
+                        <SubscribeButton href='https://www.asyncapi.com/community/meetings' className='mt-2 md:ml-2 md:mt-0' />
                       </li>
                       <li>
                         <ICSFileButton
