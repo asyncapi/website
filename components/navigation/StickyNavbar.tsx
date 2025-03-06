@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react';
 import React from 'react';
+import ThemeToggle from './ThemeToggle';
+
 
 interface StickyNavbarProps {
   children: ReactNode;
@@ -14,8 +16,13 @@ interface StickyNavbarProps {
  */
 export default function StickyNavbar({ children, className = '' }: StickyNavbarProps) {
   return (
-    <div className={`sticky top-0 z-50 w-full border-b border-gray-300 bg-white ${className}`} data-testid='Sticky-div'>
-      {children}
+    <div className={`sticky top-0 z-50 w-full border-b  border-gray-300 bg-white dark:bg-black ${className}`} data-testid='Sticky-div'>
+      <div className="container mx-auto px-4 flex justify-between  items-center">
+        {children}
+        <div className=" absolute right-20 ">
+          <ThemeToggle />
+        </div>
+      </div>
     </div>
   );
 }

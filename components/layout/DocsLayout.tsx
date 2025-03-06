@@ -99,7 +99,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
       <div>
         <div className='absolute left-2 top-24 z-10'>
           <Button
-            className='inline-flex h-full justify-center rounded-md border border-gray-300 bg-white py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:border-gray-500 focus:outline-none focus:ring-0 focus:ring-black'
+            className='inline-flex h-full justify-center rounded-md border border-gray-300 dark:bg-black dark:text-white bg-white py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:border-gray-500 focus:outline-none focus:ring-0 focus:ring-black'
             text='Menu'
             icon={<IconMenuCenter className='size-6 fill-gray-700' />}
             onClick={() => {

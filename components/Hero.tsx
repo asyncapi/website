@@ -64,7 +64,7 @@ export default function Hero({ className = '' }: HeroProps) {
                         <abbr title={actionKey.key} className='no-underline'>
                           {actionKey.shortKey}
                         </abbr>{' '}
-                        K
+                        
                       </kbd>
                     )}
                   </>

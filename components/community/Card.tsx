@@ -54,7 +54,7 @@ export default function Card({
           className={`w-full cursor-pointer rounded border border-[#ad20e2] p-3 shadow-xl ${bg}`}
           data-testid='Card-small-bg'
         >
-          <div className='flex w-min justify-between rounded-xl bg-gray-100 p-2 text-center text-xs'>
+          <div className='flex w-min justify-between rounded-xl bg-gray-100 dark:bg-black p-2 text-center text-xs'>
             <span>{icon}</span> <span className='ml-[5px]'>{tagline}</span>
           </div>
           <div className='mt-3' data-testid='Card-heading'>

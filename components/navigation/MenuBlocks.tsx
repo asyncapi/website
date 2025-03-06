@@ -52,11 +52,11 @@ export default function MenuBlocks({ items = [] }: MenuBlocksProps) {
                 } text-gray-900 sm:size-12 ${item.comingSoon && 'opacity-50'}`}
                 data-testid='MenuBlock-icon'
               >
-                <item.icon className='size-6' />
+                <item.icon className='size-6 ' />
               </div>
-              <div className='space-y-1 whitespace-pre-line'>
+              <div className='space-y-1 whitespace-pre-line  '>
                 <Paragraph typeStyle={ParagraphTypeStyle.md} textColor='text-gray-900' fontWeight='font-semibold'>
-                  <span className={item.comingSoon ? 'opacity-50' : ''}>{item.title}</span>{' '}
+                  <span className={` dark:text-purple-400 item.comingSoon ? 'opacity-50 ' : ''` }>{item.title}</span>{' '}
                   {item.comingSoon && <Label text='Coming soon' />} {item.beta && <Label text='Beta' />}
                 </Paragraph>
                 <Paragraph typeStyle={ParagraphTypeStyle.sm} className={item.comingSoon ? 'opacity-50' : ''}>

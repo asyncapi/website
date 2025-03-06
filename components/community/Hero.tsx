@@ -15,7 +15,7 @@ interface HeroProps {
 export default function Hero({ className = '' }: HeroProps) {
   return (
     <>
-      <div className={`orbits overflow-hidden ${className}`}>
+      <div className={`orbits overflow-hidden dark:bg-black dark:text-white ${className}`}>
         <div className='orbit-container' data-testid='orbit-div'>
           <div id='first-orbit' className='orbit' data-testid='Hero-first'>
             {orbitData[0].map((orbit) => (

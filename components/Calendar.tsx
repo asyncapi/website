@@ -34,7 +34,7 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
   return (
     <div
       className={twMerge(
-        'overflow-hidden rounded-md border border-gray-200 bg-white p-4 h-full flex flex-col gap-2',
+        'overflow-hidden rounded-md border border-gray-200 bg-white  p-4 h-full flex flex-col gap-2',
         className
       )}
     >

@@ -18,7 +18,7 @@ export default function Accordion({ accordionItems = [] }: AccordionProps) {
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
 
   return (
-    <div>
+    <div className='dark:text-white'>
       {accordionItems.map(({ title, content }, index) => (
         <AccordionItem
           key={index}

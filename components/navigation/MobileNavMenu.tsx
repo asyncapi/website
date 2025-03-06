@@ -57,7 +57,7 @@ export default function MobileNavMenu({
   return (
     <div className='fixed inset-x-0 top-0 z-60 max-h-full origin-top-right overflow-y-auto py-2 transition lg:hidden'>
       <div className='rounded-lg shadow-lg'>
-        <div className='shadow-xs divide-y-2 divide-gray-50 rounded-lg bg-white'>
+        <div className='shadow-xs divide-y-2 divide-gray-50 rounded-lg bg-white dark:bg-gray-800 '>
           <div className='space-y-6 px-4 pb-6 pt-4'>
             <div className='flex items-center justify-between'>
               <Link href='/' className='cursor-pointer' data-testid='MobileNav-Logo'>

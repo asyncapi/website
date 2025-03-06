@@ -54,10 +54,10 @@ const renderContent = (
 
   return content.map((item) => {
     return (
-      <div className='mt-10' key={item.title}>
+      <div className='mt-10 ' key={item.title}>
         <Heading
           typeStyle={typeStyle}
-          className='mt-8'
+          className='mt-8 dark:bg-black'
           id={item.title
             .replace(/<|>|"|\\|\/|=/gi, '')
             .replace(/\s/gi, '-')
@@ -76,7 +76,7 @@ const renderContent = (
               {item.items.map((subItem: string) => (
                 <span
                   key={subItem}
-                  className='rounded-md border border-green-600 bg-green-100 p-1 text-center text-xs text-green-600 '
+                  className='rounded-md border border-green-600 bg-green-100  p-1 text-center text-xs text-green-600 '
                 >
                   {subItem}
                 </span>

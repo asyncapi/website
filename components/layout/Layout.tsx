@@ -27,7 +27,7 @@ export default function Layout({ children }: ILayoutProps): JSX.Element {
     const post = getDocBySlug(posts.docs as IPost[], pathname) as IPost;
 
     return (
-      <div data-testid='Docs-main-container'>
+      <div data-testid='Docs-main-container dark:bg-black dark:text-white'>
         <DocsLayout post={post} navItems={allDocPosts}>
           {children}
         </DocsLayout>
@@ -38,7 +38,7 @@ export default function Layout({ children }: ILayoutProps): JSX.Element {
     const post = getPostBySlug(pathname, 'blog');
 
     return (
-      <div data-testid='Blogs-main-container'>
+      <div data-testid='Blogs-main-container dark:bg-black dark:text-white'>
         <BlogLayout post={post as unknown as IPosts['blog'][number]} navItems={posts.blog}>
           {children}
         </BlogLayout>
