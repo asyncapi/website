@@ -141,7 +141,7 @@ export default function Index() {
               </div>
               <div>
                 <div className='p-2 text-sm'>{ambassador.bio}</div>
-                  <div className='flex border-t p-2' data-testid='Ambassadors-members-socials'>
+                       <div className='flex border-t p-2' data-testid='Ambassadors-members-socials'>
   {ambassador.twitterUrl && (
     <a href={ambassador.twitterUrl} target='_blank' rel='noreferrer' className='underline flex items-center gap-1'>
       <Twitter size={16} className='text-blue-400' />
