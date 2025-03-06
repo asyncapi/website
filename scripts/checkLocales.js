@@ -32,10 +32,12 @@ const checkLocale = (primaryFolder, folder) => {
   const primaryFiles = fs.readdirSync(primaryFolderPath).filter(file => file.endsWith('.json'));
   const localeFiles = fs.readdirSync(folderPath).filter(file => file.endsWith('.json'));
 
+  let hasErrors = false;
   primaryFiles.forEach(file => {
     if (!localeFiles.includes(file)) {
-        process.stdout.write(`Missing file in ${folder}: ${file}`);
-        process.exit(1);
+        console.error(`Missing file in ${folder}: ${file}`);
+        hasErrors = true;
+        return;
     }
 
     const primaryFilePath = path.join(primaryFolderPath, file);
@@ -47,11 +49,13 @@ const checkLocale = (primaryFolder, folder) => {
     const missingKeys = Object.keys(primaryData).filter(key => !(key in localeData));
 
     if (missingKeys.length > 0) {
-        process.stdout.write(`Missing keys in ${folder}/${file}: ${JSON.stringify(missingKeys, null, 2)}`);
-        process.exit(1);
+        console.error(`Missing keys in ${folder}/${file}: ${JSON.stringify(missingKeys, null, 2)}`);
+        hasErrors = true;
     } else {
-        process.stdout.write(`${folder}/${file} is consistent.`);
+        console.log(`${folder}/${file} is consistent.`);
     }
+  });
+  return !hasErrors;
   });
 };
 
