@@ -168,7 +168,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
           </div>
         )}
       </div>
-      {(toolData?.links?.repoUrl || toolData?.links?.websiteUrl || toolData?.links?.docsUrl) && (
+      {(toolData?.links?.repoUrl || toolData?.links?.docsUrl) && (
         <>
           <hr className='' />
           <div className='flex'>
@@ -200,20 +200,6 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
                   </a>
                 )}
               </>
-            )}
-            {toolData.links.websiteUrl && (
-              <a
-                className='w-full cursor-pointer border-x border-gray-200 px-1 py-6 text-center hover:bg-gray-200'
-                href={toolData.links.websiteUrl}
-                target='_blank'
-                rel='noreferrer'
-                data-testid='ToolsCard-websiteUrl'
-              >
-                <div className='m-auto flex w-fit gap-2'>
-                  <img src='/img/illustrations/icons/share.svg' alt='Share' className='w-5' />
-                  <div className='text-sm text-gray-700'>Visit Website</div>
-                </div>
-              </a>
             )}
             {toolData.links.docsUrl && (
               <a
