@@ -20,13 +20,13 @@ const checkLocale = (primaryFolder, folder) => {
   const folderPath = path.join(LOCALES_DIR, folder);
 
   if (!fs.existsSync(primaryFolderPath)) {
-    process.stdout.write(`Primary locale folder missing: ${primaryFolderPath}`);
-    process.exit(1);
+    console.error(`Primary locale folder missing: ${primaryFolderPath}`);
+    return false;
   }
 
   if (!fs.existsSync(folderPath)) {
-    process.stdout.write(`Folder missing: ${folderPath}`);
-    process.exit(1);
+    console.error(`Folder missing: ${folderPath}`);
+    return false;
   }
 
   const primaryFiles = fs.readdirSync(primaryFolderPath).filter(file => file.endsWith('.json'));
