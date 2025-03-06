@@ -1,6 +1,7 @@
 import { sortBy } from 'lodash';
 import Link from 'next/link';
 import React from 'react';
+import { Github, Linkedin, Twitter } from 'lucide-react';
 
 import type { Ambassador } from '@/types/pages/community/Community';
 import { HeadingTypeStyle } from '@/types/typography/Heading';
@@ -140,23 +141,28 @@ export default function Index() {
               </div>
               <div>
                 <div className='p-2 text-sm'>{ambassador.bio}</div>
-                <div className='flex border-t p-2' data-testid='Ambassadors-members-socials'>
-                  <a
-                    href={ambassador.twitterUrl}
-                    target='_blank'
-                    rel='noreferrer'
-                    className='underline'
-                    data-testid='Ambassadors-members-twitter'
-                  >
-                    Twitter ↗
-                  </a>
-                  <a href={ambassador.githubUrl} target='_blank' rel='noreferrer' className='ml-3 underline'>
-                    Github ↗
-                  </a>
-                  <a href={ambassador.linkedinUrl} target='_blank' rel='noreferrer' className='ml-3 underline'>
-                    Linkedin ↗
-                  </a>
-                </div>
+               <div className='flex border-t p-2' data-testid='Ambassadors-members-socials'>
+  {ambassador.twitterUrl && (
+    <a href={ambassador.twitterUrl} target='_blank' rel='noreferrer' className='underline flex items-center gap-1'>
+      <Twitter size={16} className='text-blue-400' />
+      Twitter
+    </a>
+  )}
+  {ambassador.githubUrl && (
+    <a href={ambassador.githubUrl} target='_blank' rel='noreferrer' className='ml-3 underline flex items-center gap-1'>
+      <Github size={16} className='text-gray-700' />
+      Github
+    </a>
+  )}
+  {ambassador.linkedinUrl && (
+    <a href={ambassador.linkedinUrl} target='_blank' rel='noreferrer' className='ml-3 underline flex items-center gap-1'>
+      <Linkedin size={16} className='text-blue-600' />
+      Linkedin
+    </a>
+  )}
+</div>
+
+
               </div>
             </div>
           ))}
