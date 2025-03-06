@@ -86,9 +86,21 @@ export default function Index({ contributor }: IndexProps) {
               className='underline'
             >
               <div className='w-[40px] rounded-full bg-pink-500 p-2'>
-                <IconTwitter className='fill-white' />
+                <IconTwitter className='fill-white' /> 
+                
+                                  <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+                      <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+                        <IconLinkedIn size={40} color="#0077B5" />
+                      </a>
+                      <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">
+                        <IconGithub/>
+                      </a>
+
+                    </div> 
+                 
               </div>
             </a>
+            
             <a
               href={`https://www.github.com/${contributor.github}`}
               target='_blank'
@@ -96,7 +108,7 @@ export default function Index({ contributor }: IndexProps) {
               className='underline'
             >
               <div className='ml-4 w-[40px] rounded-full bg-pink-500 p-2'>
-                <IconGithub className='fill-white' />
+                <IconGithub/>
               </div>
             </a>
             <a
