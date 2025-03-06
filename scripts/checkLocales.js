@@ -10,7 +10,7 @@ const readJson = (filePath) => {
   try {
     return JSON.parse(fs.readFileSync(filePath, 'utf8'));
   } catch (err) {
-    process.stdout.write(`Error reading file: ${filePath}`, err);
+    console.error(`Error reading file: ${filePath}`, err);
     return {};
   }
 };
