@@ -1,5 +1,23 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/IM2znJZsp1E/hqdefault.jpg",
+    "title": "AsyncAPI Community Working Group Meeting, February 25th 2025",
+    "description": "https://github.com/asyncapi/community/issues/1713.",
+    "videoId": "IM2znJZsp1E"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/Y_bSIy0xdvM/hqdefault.jpg",
+    "title": "AsyncAPI Design Meeting",
+    "description": "https://github.com/asyncapi/community/issues/1705.",
+    "videoId": "Y_bSIy0xdvM"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/gfKAcJthEGk/hqdefault.jpg",
+    "title": "AsyncAPI Marketing Working Group Meeting",
+    "description": "https://github.com/asyncapi/community/issues/1705.",
+    "videoId": "gfKAcJthEGk"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/sWrD820od7s/hqdefault.jpg",
     "title": "AsyncAPI Community Working Group Meeting",
     "description": "https://github.com/asyncapi/community/issues/1668.",
@@ -10,23 +28,5 @@
     "title": "Marketing WG Meeting, 14:00 UTC Tuesday February 4th 2025",
     "description": "https://github.com/asyncapi/community/issues/1657.",
     "videoId": "uxvj_yadrKw"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/5hY8yi6DXyE/hqdefault.jpg",
-    "title": "Marketing WG Meeting, 14:00 UTC Tuesday December 17th 2024",
-    "description": "Welcoming the 2024 cohort of the AsyncAPI mentorship program.",
-    "videoId": "5hY8yi6DXyE"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/QWRcCvDmf04/hqdefault.jpg",
-    "title": "AsyncAPI Mentorship Program 2024 Cohort Kick-off",
-    "description": "Welcoming the 2024 cohort of the AsyncAPI mentorship program.",
-    "videoId": "QWRcCvDmf04"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/XirMXiBNaBM/hqdefault.jpg",
-    "title": "Community Meeting, 16:00 UTC Tuesday November 26th 2024",
-    "description": "",
-    "videoId": "XirMXiBNaBM"
   }
 ]
