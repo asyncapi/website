@@ -1,6 +1,5 @@
 import { sortBy } from 'lodash';
-import Link from 'next/link';
-import React from 'react';
+import Link from 'next/link'; 
 import { Github, Linkedin, Twitter } from 'lucide-react';
 
 import type { Ambassador } from '@/types/pages/community/Community';
