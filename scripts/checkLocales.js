@@ -63,9 +63,19 @@ const localeFolders = fs.readdirSync(LOCALES_DIR).filter(folder =>
     fs.statSync(path.join(LOCALES_DIR, folder)).isDirectory()
 );
 
+let hasErrors = false;
 localeFolders.forEach(folder => {
   if (folder !== PRIMARY_LOCALE) {
-    checkLocale(PRIMARY_LOCALE, folder);
+    if (!checkLocale(PRIMARY_LOCALE, folder)) {
+      hasErrors = true;
+    }
   }
-}); 
+});
+
+if (hasErrors) {
+  console.error('\nLocale check failed! Please fix the issues reported above.');
+  process.exit(1);
+} else {
+  console.log('\nAll locale files are consistent!');
+}
 
