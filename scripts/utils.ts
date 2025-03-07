@@ -9,6 +9,11 @@ import yaml from 'yaml';
  * @throws {Error} - Throws an error if the content is neither valid JSON nor valid YAML.
  */
 function convertToJson(contentYAMLorJSON: unknown): any {
+  
+  if (typeof contentYAMLorJSON !== 'string' && typeof contentYAMLorJSON !== 'object') {
+    throw new Error('Invalid content format: Input must be a string or an object');
+  }
+  
   // Axios handles conversion to JSON by default, if data returned from the server allows it
   // So if returned content is not a string (not YAML), we just return JSON back
   if (typeof contentYAMLorJSON !== 'string') {
