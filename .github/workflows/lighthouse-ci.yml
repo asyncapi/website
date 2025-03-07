@@ -54,7 +54,6 @@ jobs:
             https://deploy-preview-$PR_NUMBER--asyncapi-website.netlify.app/
           configPath: ./.github/workflows/lighthouserc.json
           uploadArtifacts: true
-          artifactName: "lighthouse_results"
           temporaryPublicStorage: true
         env:
           PR_NUMBER: ${{ github.event.pull_request.number}}
