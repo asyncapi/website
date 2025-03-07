@@ -40,7 +40,7 @@ We then asked Ashmit about his GSoC experience with the AsyncAPI Initiative. Bel
 
 **Bami: Can you tell us about your project, the problem it solved, and why was it important?**
 
-***Ashmit:** My project primarily used JavaScript, focusing on Next.js for the front end. For testing, I used Cypress for end-to-end testing. While I didn’t learn a completely new programming language during GSoC, I did have to learn TypeScript during the proposal phase and improve my understanding of testing methodologies.*
+***Ashmit:** The primary goal of my project was to make maintaining the conference website easier. Previously, the website had to be rebuilt or heavily refactored yearly due to a lack of a consistent theme or streamlined process, creating a significant workload for maintainers. My project aimed to standardize the codebase, making it easier to update and maintain. Additionally, I introduced automated testing to simplify reviewing contributions, ensuring that new changes wouldn’t break existing functionality.*
 
 ## Challenges and Learning Experiences
 
@@ -50,7 +50,7 @@ We then asked Ashmit about his GSoC experience with the AsyncAPI Initiative. Bel
 
 **Bami: What technologies and skills did you use for your project? Did you have to learn anything new?**
 
-***Ashmit:** My project primarily used JavaScript, with a focus on Next.js for the frontend. For testing, I used Cypress for end-to-end testing. While I didn’t learn a entirely new programming language during GSoC, I did have to learn TypeScript during the proposal phase and improve my understanding of testing methodologies.*
+***Ashmit:** My project primarily used JavaScript, focusing on Next.js for the front end. For testing, I used Cypress for end-to-end testing. While I didn’t learn a completely new programming language during GSoC, I did have to learn TypeScript during the proposal phase and improve my understanding of testing methodologies.*
 
 ## Community Experience and Mentorship
 
@@ -70,7 +70,7 @@ We then asked Ashmit about his GSoC experience with the AsyncAPI Initiative. Bel
 
 **Bami: Has this experience changed your perception of open-source? Was this your first time contributing?**
 
-***Ashmit:** No, this wasn’t my first open-source experience. I previously participated in Hacktoberfest 2021, when they still gave out T-shirts! However, being a GSoC mentee and later a maintainer was a completely different experience. As a mentee, you focus on individual contributions, whereas as a maintainer, you oversee multiple contributions and ensure the stability of the project. It gave me a deeper appreciation of the responsibilities maintainers handle.*
+***Ashmit:** No, this wasn’t my first open-source experience. I previously participated in Hacktoberfest 2021 when they still gave out T-shirts! However, being a GSoC mentee and later a maintainer was a different experience. As a mentee, you focus on individual contributions, whereas as a maintainer, you oversee multiple contributions and ensure the stability of the project. It gave me a deeper appreciation of the responsibilities maintainers handle.*
 
 **Bami: Any advice for future GSoC mentees or newcomers to AsyncAPI?**
 
@@ -86,31 +86,31 @@ We then asked Ashmit about his GSoC experience with the AsyncAPI Initiative. Bel
 
 ***Ashmit:** Specifically for the conference website, I have some ideas for future improvements. However, AsyncAPI is constantly evolving, and I look forward to contributing to its growth and helping the community in any way I can.*
 
-To add a bit of fun to our spotlight interview, we played a *This or That* game with Ashmit.
+To add a bit of fun to our spotlight interview, we played a ***This or That*** game with Ashmit.
 
-**Bami: Okay, so I have a fun activity to do with you. It is called this for that. So Github or Gitlab.**
+**Bami: Okay, so I have a fun activity to do with you. It is called this for that. So GitHub or GitLab.**
 
-***Ashmit:** Github*
+***Ashmit:** GitHub*
 
-**Bami: Slack or discord.**
+**Bami: Slack or Discord.**
 
 ***Ashmit:** Discord*
 
 **Bami: LinkedIn or Twitter?**
 
-***Ashmit:** Neither. I deleted both of them just this week. Yeah, both are toxic in their own ways to be honest.*
+***Ashmit:** Neither. I deleted both of them just this week. Yeah, both are toxic in their own ways, to be honest.*
 
 **Bami: Google Docs or Microsoft Word.**
 
 ***Ashmit:** Google Docs.*
 
-**Bami VS code or X code**
+**Bami VS Code or Xcode**
 
-***Ashmit:** Vs code*
+***Ashmit:** Vs Code*
 
 **Bami: Window or Linux**
 
-***Ashmit:** Linux. Not hardcore Linux, like fedora though.*
+***Ashmit:** Linux. Not hardcore Linux, like Fedora though.*
 
 **Bami: Apple or Samsung.**
 
@@ -118,11 +118,11 @@ To add a bit of fun to our spotlight interview, we played a *This or That* game 
 
 **Bami: How do you like to spend your time outside coding? Do you have any hobby or interest?**
 
-***Ashmit:** For hobbies, I might say cooking is one of them. Yeah I do like to cook sometimes because when I have some free time that's where I go, towards the kitchen.*
+***Ashmit:** For hobbies, I might say cooking is one of them. Yeah I do enjoy cooking sometimes because when I have some spare time that's where I go, towards the kitchen.*
 
 **Bami: Is there anyone or a lot of people you would like to thank or give a shout-out to from the community or the GSoC program, either your other mentees, your mentors, or other community members.**
 
-***Ashmit:** My mentors are the ones who I would like to shout out to like is [Aishat Muibudeen](https://www.linkedin.com/in/aishatmuibudeen/), [Thulisile Sibanda](https://www.linkedin.com/in/v-thulisile-sibanda/), and [Elegbede Azeez](https://www.linkedin.com/in/acebuild/). And on top of that, I would like to thank [Lukasz Gornicki](https://www.linkedin.com/in/lukasz-gornicki-a621914/) for being quite helpful. Some issues in my project required his assistance, and he was there for them. That's nice of him because he didn't have to do it.*
+***Ashmit:** the mentors I would like to shout out—namely [Aishat Muibudeen](https://www.linkedin.com/in/aishatmuibudeen/), [Thulisile Sibanda](https://www.linkedin.com/in/v-thulisile-sibanda/), and [Elegbede Azeez](https://www.linkedin.com/in/acebuild/). And on top of that, I would like to thank [Lukasz Gornicki](https://www.linkedin.com/in/lukasz-gornicki-a621914/) for being quite helpful. Some issues in my project required his assistance, and he was there for them. That's nice of him because he didn't have to do it.*
 
 For those considering GSoC or open-source contributions, Ashmit advises, *“Start with issues labeled ‘good first issue,’ ask questions, and don’t be afraid to make mistakes. Open-source communities thrive on collaboration and learning together.”*
 
