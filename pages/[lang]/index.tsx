@@ -124,9 +124,7 @@ export default function HomePage() {
                     <Paragraph className='mt-2'>
                       {t('community.meetingDesc')}
 
-                      <TextLink href={`${BASE_URL}/community/meetings`}>
-                        {t('community.meetingLink')}
-                      </TextLink>
+                      <TextLink href={`${BASE_URL}/community/meetings`}>{t('community.meetingLink')}</TextLink>
                     </Paragraph>
                     <ul className='mt-5 justify-center md:flex'>
                       <li>
