@@ -33,6 +33,8 @@ const getStaticProps = makeStaticProps(['landing-page', 'footer', 'common']);
 
 export { getStaticPaths, getStaticProps };
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.asyncapi.com';
+
 /**
  * @description The HomePage is the landing page of the website.
  */
@@ -104,7 +106,7 @@ export default function HomePage() {
                     <Button
                       className='w-full md:w-auto'
                       text={t('community.slackCTABtn')}
-                      href='https://www.asyncapi.com/slack-invite'
+                      href={`${BASE_URL}/slack-invite`}
                     />
                   </div>
                 </section>
@@ -122,7 +124,7 @@ export default function HomePage() {
                     <Paragraph className='mt-2'>
                       {t('community.meetingDesc')}
 
-                      <TextLink href='https://www.asyncapi.com/community/meetings'>
+                      <TextLink href={`${BASE_URL}/community/meetings`}>
                         {t('community.meetingLink')}
                       </TextLink>
                     </Paragraph>
