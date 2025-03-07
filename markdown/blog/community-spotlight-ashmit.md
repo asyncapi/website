@@ -1,6 +1,6 @@
 ---
 title: "From Mentee to Maintainer: The Ashmit GSoC Story!"
-date: 2025-03-05T06:00:00+01:00
+date: 2025-03-10T06:00:00+01:00
 type: Communication
 tags:
   - Interview
@@ -46,7 +46,7 @@ We then asked Ashmit about his GSoC experience with the AsyncAPI Initiative. Bel
 
 **Bami: What was the most challenging part of your project, and how did you overcome it?**
 
-***Ashmit:** The most unexpected challenge occurred towards the end of the program when my project wouldn’t build successfully just before the final submission deadline. After deliberation, we merged the pull request and troubleshoot the issue later. Unfortunately, this action caused the website to crash temporarily. My mentors and I worked intensively for a few hours to restore website functionality. It was stressful, but it reinforced the importance of testing and careful deployment.*
+***Ashmit:** The most unexpected challenge occurred towards the end of the program when my project wouldn’t build successfully just before the final submission deadline. After deliberation, we merged the pull request and troubleshot the issue later. Unfortunately, this action caused the website to crash temporarily. My mentors and I worked intensively for a few hours to restore website functionality. It was stressful, but it reinforced the importance of testing and careful deployment.*
 
 **Bami: What technologies and skills did you use for your project? Did you have to learn anything new?**
 
