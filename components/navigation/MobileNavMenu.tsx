@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 
-import i18nextConfig from '@/next-i18next.config';
+import i18nextConfig from '@/next-i18next.config.cjs';
 
 import { SearchButton } from '../AlgoliaSearch';
 import IconLanguage from '../icons/Language';
