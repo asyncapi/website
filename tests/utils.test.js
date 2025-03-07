@@ -23,12 +23,12 @@ describe('convertToJson', () => {
     }
   });
 
-  test('should throw an error if input is not of type valid JSON or YAML  string or already an JSON object',()=>{
+  test('should throw an error if input is not of type valid JSON or YAML  string or already an JSON object',() => {
     try {
       convertToJson(invalidNumberDataType);
-      expect(convertToJson(number)).toBeUndefined();
+      expect(convertToJson(invalidNumberDataType)).toBeUndefined();
     } catch (error) {
       expect(error.message.includes('Invalid content format')).toBeTruthy();
     }
-  })
+  });
 });
