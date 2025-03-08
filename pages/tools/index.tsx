@@ -2,12 +2,17 @@ import React from 'react';
 
 import ToolsDashboard from '@/components/tools/ToolsDashboard';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
+import { makeStaticProps } from '@/utils/getStatic';
 
 import GenericLayout from '../../components/layout/GenericLayout';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
 import TextLink from '../../components/typography/TextLink';
 import ToolFilter from '../../context/ToolFilterContext';
+
+const getStaticProps = makeStaticProps(['landing-page', 'footer', 'common', 'component']);
+
+export { getStaticProps };
 
 /**
  * @description The Tools Index page component.

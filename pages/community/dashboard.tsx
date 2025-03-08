@@ -1,10 +1,16 @@
 import React from 'react';
 
+import { makeStaticProps } from '@/utils/getStatic';
+
 import GoodFirstIssues from '../../components/dashboard/GoodFirstIssues';
 import Header from '../../components/dashboard/Header';
 import Table from '../../components/dashboard/table/Table';
 import GenericLayout from '../../components/layout/GenericLayout';
 import data from '../../dashboard.json';
+
+const getStaticProps = makeStaticProps(['landing-page', 'footer', 'common', 'component']);
+
+export { getStaticProps };
 
 /**
  * @description Community Dashboard page.

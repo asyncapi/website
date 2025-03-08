@@ -2,6 +2,7 @@ import React from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
+import { makeStaticProps } from '@/utils/getStatic';
 
 import Button from '../../components/buttons/Button';
 import GithubButton from '../../components/buttons/GithubButton';
@@ -12,6 +13,10 @@ import IconPowerPlug from '../../components/icons/PowerPlug';
 import GenericLayout from '../../components/layout/GenericLayout';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
+
+const getStaticProps = makeStaticProps(['landing-page', 'footer', 'common', 'component']);
+
+export { getStaticProps };
 
 /**
  * @description Render the buttons for the Generator page.

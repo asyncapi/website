@@ -1,8 +1,8 @@
-import { useTranslation } from 'next-i18next';
 import React from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { getStaticPaths, makeStaticProps } from '@/utils/getStatic';
+import { useTranslation } from '@/utils/i18n';
 
 import Button from '../../components/buttons/Button';
 import GoogleCalendarButton from '../../components/buttons/GoogleCalendarButton';
@@ -29,7 +29,7 @@ import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
 import TextLink from '../../components/typography/TextLink';
 
-const getStaticProps = makeStaticProps(['landing-page', 'footer', 'common']);
+const getStaticProps = makeStaticProps(['landing-page', 'footer', 'common', 'component']);
 
 export { getStaticPaths, getStaticProps };
 

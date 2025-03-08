@@ -1,6 +1,7 @@
 import { sortBy } from 'lodash';
 
 import type { Tsc } from '@/types/pages/community/Community';
+import { makeStaticProps } from '@/utils/getStatic';
 
 import IconGithub from '../../components/icons/Github';
 import IconLinkedIn from '../../components/icons/LinkedIn';
@@ -9,6 +10,10 @@ import GenericLayout from '../../components/layout/GenericLayout';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 import TextLink from '../../components/typography/TextLink';
 import TSCMembersList from '../../config/MAINTAINERS.json';
+
+const getStaticProps = makeStaticProps(['landing-page', 'footer', 'common', 'component']);
+
+export { getStaticProps };
 
 interface SocialLinkProps {
   href: string;

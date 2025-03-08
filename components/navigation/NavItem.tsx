@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 
+import { useTranslation } from '../../utils/i18n';
 import NavItemDropdown from '../icons/NavItemDropdown';
 
 interface NavItemProps {
@@ -34,6 +35,7 @@ export default function NavItem({
   className = ''
 }: NavItemProps) {
   const router = useRouter();
+  const { t } = useTranslation('component');
 
   if (href && !hasDropdown) {
     return (
@@ -45,7 +47,7 @@ export default function NavItem({
           router.pathname.startsWith(href) ? 'text-black' : 'text-gray-700'
         }`}
       >
-        {text}
+        {t(`navbar.${text}`)}
       </Link>
     );
   }
@@ -67,7 +69,7 @@ export default function NavItem({
         target={target}
         data-testid='NavItem-Link'
       >
-        <span>{text}</span>
+        <span>{t(`navbar.${text}`)}</span>
         {hasDropdown && <NavItemDropdown />}
       </Link>
     );
@@ -75,7 +77,7 @@ export default function NavItem({
 
   return (
     <button type='button' {...attrs} className={`${attrs.className} text-gray-700`}>
-      <span>{text}</span>
+      <span>{t(`navbar.${text}`)}</span>
       {hasDropdown && <NavItemDropdown />}
     </button>
   );

@@ -3,6 +3,7 @@ import React from 'react';
 
 import { HeadingTypeStyle } from '@/types/typography/Heading';
 
+import { useTranslation } from '../../utils/i18n';
 import AsyncAPILogoLight from '../logos/AsyncAPILogoLight';
 import Heading from '../typography/Heading';
 import type { InitiativeLink, SocialMediaLink } from './FooterList';
@@ -12,6 +13,8 @@ import { initiativeLinks, socialMediaLinks } from './FooterList';
  * @description The Footer component is the footer for the application.
  */
 export default function Footer() {
+  const { t } = useTranslation('component');
+
   return (
     <footer className='margin: 0 auto mt-12 bg-dark'>
       <div className='mx-auto max-w-screen-xl divide-y divide-cool-gray overflow-hidden px-3 py-4 sm:p-6 md:py-12 lg:px-8 xl:py-16'>
@@ -25,18 +28,18 @@ export default function Footer() {
               </Link>
             </div>
             <div className=''>
-              <Heading className='mb-14 mt-12 text-white' typeStyle={HeadingTypeStyle.smSemibold}>
-                Building the future of <br /> Event-Driven Architectures.
+              <Heading className='mb-14 mt-12 w-[57%] text-white' typeStyle={HeadingTypeStyle.smSemibold}>
+                {t('footer.main.tagline')}
               </Heading>
             </div>
           </div>
 
           <div className='flex flex-col sm:flex-row'>
             <div className='flex'>
-              <div className='mb-5 px-0 lg:ml-5 lg:px-10'>
+              <div className='mb-5 px-0 lg:ml-5 lg:px-5'>
                 <div className='py-2'>
                   <div className='text-white'>
-                    <Heading typeStyle={HeadingTypeStyle.smSemibold}>The Initiative</Heading>
+                    <Heading typeStyle={HeadingTypeStyle.smSemibold}>{t('footer.main.Initiative_section')}</Heading>
                   </div>
                 </div>
                 <ul className='justify-center'>
@@ -44,7 +47,7 @@ export default function Footer() {
                     <li className='py-2' key={index} data-testid='Footer-initiative-links'>
                       <Link href={link.url}>
                         <span className='text-base leading-6 text-cool-gray transition duration-300 ease-in-out hover:text-white'>
-                          {link.label}
+                          {t(`footer.initiative.${link.label}`)}
                         </span>
                       </Link>
                     </li>
@@ -52,26 +55,26 @@ export default function Footer() {
                 </ul>
               </div>
 
-              <div className='mb-5 px-14 sm:ml-10 sm:px-8 md:ml-5'>
+              <div className='mb-5 px-14 sm:ml-10 sm:px-5 md:ml-5'>
                 <div className='py-2'>
                   <div className='text-white'>
-                    <Heading typeStyle={HeadingTypeStyle.smSemibold}>News</Heading>
+                    <Heading typeStyle={HeadingTypeStyle.smSemibold}>{t('footer.main.News_section')}</Heading>
                   </div>
                 </div>
                 <ul className='justify-center'>
                   <li className='py-2'>
                     <div className='text-base leading-6 text-cool-gray transition duration-300 ease-in-out hover:text-white'>
-                      <a href='mailto:press@asyncapi.io'>Email Us</a>
+                      <a href='mailto:press@asyncapi.io'>{t('footer.contact_us.email')}</a>
                     </div>
                   </li>
                 </ul>
               </div>
             </div>
 
-            <div className='mb-5 px-0 sm:ml-5 sm:px-10'>
+            <div className='mb-5 px-0 sm:ml-5 sm:px-10 md:px-0 lg:px-0'>
               <div className='hidden py-2 sm:block'>
                 <div className='mr-12 text-white'>
-                  <Heading typeStyle={HeadingTypeStyle.smSemibold}>Social</Heading>
+                  <Heading typeStyle={HeadingTypeStyle.smSemibold}>{t('footer.main.social_section')}</Heading>
                 </div>
               </div>
               <ul className='flex justify-start sm:flex-col' aria-label='AsyncAPI social media links'>

@@ -1,0 +1,40 @@
+{
+    "footer": {
+        "main": {
+            "tagline": "Building the future of Event-Driven Architectures.",
+            "tagline2": "",
+            "Initiative_section": "The Initiative",
+            "News_section": "News",
+            "social_section": "Social"
+        },
+        "initiative": {
+            "About": "About",
+            "Blog": "Blog",
+            "Brand": "Brand",
+            "Finance": "Finance",
+            "FAQs": "FAQs"
+        },
+        "contact_us": {
+            "email": "Email Us"
+        },
+        "social": {
+            "twitter": "Twitter",
+            "github": "GitHub",
+            "youtube": "Youtube",
+            "slack": "Slack",
+            "twitch": "Twitch"
+        },
+        "projectinfo": {
+            "creator": "Made with :love: by the AsyncAPI Initiative",
+            "legal": "Copyright © AsyncAPI Project a Series of LF Projects, LLC. For web site terms of use, trademark policy and general project policies please see"
+        }
+    },
+    "navbar": {
+        "Docs": "Docs",
+        "Tools": "Tools",
+        "Community": "Community",
+        "Case Studies": "Case Studies",
+        "Blog": "Blog",
+        "Roadmap": "Roadmap"
+    }
+}

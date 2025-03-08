@@ -3,6 +3,7 @@ import React from 'react';
 
 import { CardType } from '@/types/components/community/CardPropsType';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
+import { makeStaticProps } from '@/utils/getStatic';
 
 import Card from '../../components/community/Card';
 import Header from '../../components/community/Header';
@@ -19,6 +20,10 @@ interface Event {
   date: moment.Moment;
   url: string;
 }
+
+const getStaticProps = makeStaticProps(['landing-page', 'footer', 'common', 'component']);
+
+export { getStaticProps };
 
 /**
  * @description This component displays the Community Index Page.
