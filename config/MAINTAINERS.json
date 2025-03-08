@@ -85,7 +85,7 @@
         "linkedin": "anand-sunderraman-a6b7a131",
         "slack": "U0231F9KXNK",
         "availableForHire": false,
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "go-watermill-template"
         ],
