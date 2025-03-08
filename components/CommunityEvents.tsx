@@ -28,7 +28,7 @@ const CommunityEvents = () => {
       </div>
       <div className='mt-10'>
         {!events || events.length === 0 ? (
-          <div className='flex content-center justify-center'>
+          <div className='flex place-content-center'>
             <Paragraph typeStyle={ParagraphTypeStyle.md} className='mx-auto mt-5 max-w-2xl'>
               No Events. Check back later!
             </Paragraph>
