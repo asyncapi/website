@@ -137,7 +137,7 @@
     "@types/inquirer": "^9.0.7",
     "@types/jest": "^29.5.14",
     "@types/lodash": "^4.17.0",
-    "@types/node": "^20",
+    "@types/node": "^20.17.24",
     "@types/react": "^18.0.1",
     "@types/react-dom": "^18",
     "@types/react-syntax-highlighter": "^15.5.11",
