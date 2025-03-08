@@ -1,5 +1,5 @@
 # Development Docker file
-FROM node:18-alpine
+FROM node:18-alpine AS builder
 
 WORKDIR /async
 
@@ -12,7 +12,7 @@ COPY . .
 
 
 # Run linting during build to catch errors early
-RUN npm run lint || exit 1
+RUN npm run lint
 
 # Use a separate production stage to keep the image lightweight
 FROM node:18-alpine AS development
