@@ -70,7 +70,7 @@ jobs:
         name: LightHouse Statistic Comment
         uses: marocchino/sticky-pull-request-comment@v2.8.0
         with:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           number: ${{ github.event.pull_request.number }}
           header: lighthouse
           message: ${{ steps.lighthouse_score_report.outputs.comment }}
