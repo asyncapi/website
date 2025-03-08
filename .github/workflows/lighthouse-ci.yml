@@ -43,6 +43,16 @@ jobs:
           temporaryPublicStorage: true
 
       - if: env.shouldrun == 'true'
+        name: Upload Lighthouse Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: lighthouse-results
+          path: ./lighthouse-results
+        continue-on-error: true
+        retry: 3
+        timeout-minutes: 10
+
+      - if: env.shouldrun == 'true'
         name: Lighthouse Score Report
         id: lighthouse_score_report
         uses: actions/github-script@v6
