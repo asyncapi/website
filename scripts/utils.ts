@@ -8,26 +8,29 @@ import yaml from 'yaml';
  * @returns {any} - The converted JSON object.
  * @throws {Error} - Throws an error if the content is neither valid JSON nor valid YAML.
  */
-function convertToJson(contentYAMLorJSON: unknown): any {
-  // Axios handles conversion to JSON by default, if data returned from the server allows it
-  // So if returned content is not a string (not YAML), we just return JSON back
-  if (typeof contentYAMLorJSON !== 'string') {
-    return contentYAMLorJSON;
+function convertToJson(data: any) {
+  // Type validation check with explicit array rejection
+  if (typeof data !== 'string' &&  // Reject non-strings
+      (typeof data !== 'object' || // Allow objects but...
+       data === null ||            // Exclude null (typeof null === 'object')
+       Array.isArray(data))) {     // Explicitly reject arrays (which are objects)
+    throw new Error('Invalid content format: Input must be a string or an object');
   }
 
-  // Check if the content is valid JSON before attempting to parse as YAML
+  // Axios handles conversion to JSON by default, if data returned from the server allows it
+  // So if returned content is not a string (not YAML), we just return JSON back
+  if (typeof data !== 'string') {
+    return data;
+  }
+
+  // Fix parsing order: JSON should be tried first
   try {
-    const jsonContent = JSON.parse(contentYAMLorJSON);
-
-    return jsonContent;
+    return JSON.parse(data); // Try JSON first
   } catch (jsonError) {
-    // If it's not valid JSON, try parsing it as YAML
     try {
-      const yamlContent = yaml.parse(contentYAMLorJSON);
-
-      return yamlContent;
+      return yaml.parse(data); // Then try YAML
     } catch (yamlError) {
-      // If parsing as YAML also fails, throw an error
+      // Maintain detailed error message
       throw new Error(`Invalid content format:\nJSON Parse Error: ${jsonError}\nYAML Parse Error: ${yamlError}`);
     }
   }
