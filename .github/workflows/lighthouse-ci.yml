@@ -39,7 +39,7 @@ jobs:
           urls: |
             https://deploy-preview-${{ github.event.pull_request.number }}--asyncapi-website.netlify.app/
           configPath: ./.github/workflows/lighthouserc.json
-          uploadArtifacts: true
+          uploadArtifacts: false
           temporaryPublicStorage: true
 
       - if: env.shouldrun == 'true'
