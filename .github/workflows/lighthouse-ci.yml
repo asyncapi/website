@@ -21,7 +21,7 @@ jobs:
         run: echo "shouldrun=true" >> $GITHUB_ENV
         
       - if: env.shouldrun == 'true'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - if: env.shouldrun == 'true'
         name: Await Netlify Preview
