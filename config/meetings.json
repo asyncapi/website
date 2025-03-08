@@ -1,12 +1,5 @@
 [
   {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=NmQzNTJzbW91NTNscGo4dnJoMWNlM3J2YnMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1596",
-    "banner": "https://github.com/user-attachments/assets/ff469484-a2c5-4aa2-8652-782f017947fb",
-    "date": "2024-11-26T16:00:00.000Z"
-  },
-  {
     "title": "AsyncAPI Mentorship Program Kick-Off",
     "calLink": "https://www.google.com/calendar/event?eid=aGg5cGtwdGV0YmpzbnBlcmdwYjFqMjU1cTQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1599",
@@ -68,5 +61,12 @@
     "url": "https://github.com/asyncapi/community/issues/1763",
     "banner": "https://github.com/user-attachments/assets/f91f9fb9-1a9a-421b-9e3d-fc7df80b265b",
     "date": "2025-03-14T12:00:00.000Z"
+  },
+  {
+    "title": "Marketing WG Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=Zzczb2FibXI5ZnMxcWYwY2oycWQyMGtxZmMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1773",
+    "banner": "",
+    "date": "2025-03-18T14:00:00.000Z"
   }
 ]
