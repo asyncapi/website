@@ -129,7 +129,7 @@ Familiarize with below before you look at the AsyncAPI document:
 - Current AsyncAPI limitation is that you cannot specify that once the user sends (publish) message **ping**, the **pong** message is a reply. Look at this [thread](https://github.com/asyncapi/spec/issues/94) to participate in an ongoing discussion about request/reply pattern support in AsyncAPI. In the below document, you will notice that for such a use case, I use AsyncAPI specification extensions (**x-response**).
 
 > **Message to Kraken API developers and technical writers** <br/>
-In case you want to continue the work I started on the AsyncAPI document for Kraken API, feel free to do that. I'm happy to help, just let me know. Reach me out in our [AsyncAPI Slack workspace](https://www.asyncapi.com/slack-invite/).
+In case you want to continue the work I started on the AsyncAPI document for Kraken API, feel free to do that. I'm happy to help, just let me know. Reach me out in our [AsyncAPI Slack workspace](https://asyncapi.slack.com//).
 
 ```yml
 asyncapi: 2.0.0

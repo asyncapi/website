@@ -40,7 +40,7 @@ You can see the list of maintainers who also form part of the [AsyncAPI TSC here
 
 We do our best to recognize every contribution to the project. We do it individually in every repository from [AsyncAPI GitHub organization](https://github.com/asyncapi/). There should always be a **Contributors** section in the readme, like [this one](https://github.com/asyncapi/asyncapi/blob/master/README.md#contributors). We use [All Contributors](https://allcontributors.org/docs/en/specification) specification to handle recognitions. 
 
-We apologize in advance if we failed to recognize your work. Feel free to contact us on [Slack](https://www.asyncapi.com/slack-invite/), and we will fix it immediately, or just talk to our [All Contributors bot](https://allcontributors.org).
+We apologize in advance if we failed to recognize your work. Feel free to contact us on [Slack](https://asyncapi.slack.com//), and we will fix it immediately, or just talk to our [All Contributors bot](https://allcontributors.org).
 
 ## AsyncAPI, in numbers
 Interested to know more about our growth? Feel free to check our annual summary report: 
@@ -56,7 +56,7 @@ This is the list of companies that either provide a significant financial suppor
 
 Would you like to get on the list and support us financially? Check out all [AsyncAPI sponsoring options](https://opencollective.com/asyncapi).
 
-Would you like to help us with the maintenance? Contact us on [AsyncAPI Slack](https://www.asyncapi.com/slack-invite/).
+Would you like to help us with the maintenance? Contact us on [AsyncAPI Slack](https://asyncapi.slack.com//).
 
 ## Brands and companies using AsyncAPI
 The total number of companies and projects using AsyncAPI as well as their identity is impossible to know. So far, we are aware that the following ones operate with it.
@@ -90,7 +90,7 @@ All the information about the project's economy, the amount of the donations, th
 - Press & communications info:
 [**press@asyncapi.io**](mailto:press@asyncapi.io).
 - [**Twitter**](https://twitter.com/asyncapispec?lang=es): It's used for disseminating all news and information regarding the project, resolving user queries, and sharing the latest updates within AsyncAPI.
-- [**Slack workspace**](https://www.asyncapi.com/slack-invite): The main place of encounter for the whole community of AsyncAPI.
+- [**Slack workspace**](https://asyncapi.slack.com/): The main place of encounter for the whole community of AsyncAPI.
 - [**Newsletter**](https://www.asyncapi.com/newsletter): To learn about the status of the project, news, actualizations, recorded events, and meetings.
 - [**Blog**](https://www.asyncapi.com/blog): It’s used to disseminate information related to the project. It's also open to collaborations.
 - [**LinkedIn**](https://es.linkedin.com/company/asyncapi): It's used to publish news related to the project or its environment. It’s also used as a source of information.

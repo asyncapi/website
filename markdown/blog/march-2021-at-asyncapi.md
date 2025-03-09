@@ -24,7 +24,7 @@ excerpt: 'AsyncAPI Initiative joined the Linux Foundation in March, but except o
 Q1 2021 came to an end. Let me summarise our targets, revenue, and forecasts :smiley:
 
 This month:
-- [Slack](https://www.asyncapi.com/slack-invite/) members up by around 100 (reached 1.1k)
+- [Slack](https://asyncapi.slack.com//) members up by around 100 (reached 1.1k)
 - [Twitter](https://twitter.com/AsyncAPISpec) followers up by around 100 (reached 1.7k)
 - [LinkedIn](https://www.linkedin.com/company/asyncapi) followers up by around 100 (reached 1k)
 - New [OpenCollective](https://opencollective.com/asyncapi) contributor, [Apideck](https://www.apideck.com/) + additional 100 USD every month
@@ -74,7 +74,7 @@ Except for regular contributions, we need help setting up tooling for our open g
 - Figure out tooling for the website
 - Setup CODEOWNERS and VOTING files in all the repositories
 
-Everyone with a different set of skills is welcome. [Just contact me](https://www.asyncapi.com/slack-invite/).
+Everyone with a different set of skills is welcome. [Just contact me](https://asyncapi.slack.com//).
 
 ### What is next
 
@@ -90,7 +90,7 @@ AsyncAPI creator, [Fran Mendez](https://twitter.com/fmvilas), published AsyncAPI
 
 Go to the [roadmap](/roadmap) view to check out what it means and what needs to be done to get there.
 
-We need a lot of help to complete this roadmap. Without engagement and support of the community, all of this is just wishful thinking. All hands aboard, we're waiting [here](https://www.asyncapi.com/slack-invite/).
+We need a lot of help to complete this roadmap. Without engagement and support of the community, all of this is just wishful thinking. All hands aboard, we're waiting [here](https://asyncapi.slack.com//).
 
 ## Google Summer of Code
 
