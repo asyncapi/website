@@ -599,4 +599,4 @@ Don't give up, though. Technical challenges are not a good excuse for avoiding t
 
 In my opinion, specification limitations and gaps in tooling support should not block you from choosing an API-first direction. The benefits are too big to resign that easily. Just join us and let us find solutions together. We want to help solve all those issues, but we just need some help from you too.
 
-That would be it. Thanks for staying with me until the end. Don't forget to read my previous articles on AsyncAPI spec and WebSocket protocol. Share your feedback and connect with the AsyncAPI community in our [Slack workspace](https://www.asyncapi.com/slack-invite/).
+That would be it. Thanks for staying with me until the end. Don't forget to read my previous articles on AsyncAPI spec and WebSocket protocol. Share your feedback and connect with the AsyncAPI community in our [Slack workspace](https://asyncapi.slack.com//).

@@ -94,7 +94,7 @@ By sponsoring us, we can use your sponsorship funds to provide more slots in fut
 
 ## How To Connect With Us
 
-- Join [our Slack workspace](https://www.asyncapi.com/slack-invite). Just make sure to follow our [Slack etiquette](https://github.com/asyncapi/.github/blob/master/slack-etiquette.md) and [the code of conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
+- Join [our Slack workspace](https://asyncapi.slack.com/). Just make sure to follow our [Slack etiquette](https://github.com/asyncapi/.github/blob/master/slack-etiquette.md) and [the code of conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
 - Join the dedicated Mentorship channel `#mentorships` that we use for all mentorships discussion. All mentees and mentors are there.
 
 > Photo by <a href="https://unsplash.com/@noguidebook?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Rachel</a> on <a href="https://unsplash.com/photos/U4zpPfvogJ4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
