@@ -87,9 +87,7 @@ type ToolItem = {
   repository: Repository;
 };
 
-export type ToolsData = {
-  items: ToolItem[];
-};
+export type ToolsData = Array<ToolItem>;
 
 // Tools list types
 type ToolsList<T> = {

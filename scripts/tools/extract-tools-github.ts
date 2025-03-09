@@ -53,9 +53,7 @@ export async function getData(): Promise<ToolsData> {
       allItems.push(...data.items);
     }
 
-    result.data.items.push(...allItems);
-
-    return result.data;
+    return allItems;
   } catch (err) {
     throw err;
   }
