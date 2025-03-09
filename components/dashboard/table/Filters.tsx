@@ -55,7 +55,6 @@ function useOutsideAlerter(ref: RefObject<any>, setOpen: (open: boolean) => void
  * @param {(area: string) => void} props.setSelectedArea - The function to set the selected area.
  */
 export default function Filters({
-  className,
   allIssues,
   selectedRepo,
   selectedArea,
@@ -63,7 +62,7 @@ export default function Filters({
   setSelectedArea
 }: FilterProps) {
   const [open, setOpen] = useState(false);
-  const { x, y, reference, floating, strategy } = useFloating({
+  const { x, y, floating, strategy } = useFloating({
     placement: 'left-start',
     open
   });
@@ -85,14 +84,9 @@ export default function Filters({
 
   return (
     <>
-      <img
-        onClick={() => setOpen(!open)}
-        ref={reference}
-        alt='filter menu'
-        src='/img/illustrations/icons/filters-icon.svg'
-        className={`cursor-pointer ${className}`}
-        data-testid='Filters-img-container'
-      />
+      <svg width='20' height='20' viewBox='0 0 200 250' xlmns='http://www.w3.org/2000/svg'>
+        <polygon points='10, 10 190,10 120,150 120, 220 80,220 80,150' fill='gray' stroke='black' stroke-width='2' />
+      </svg>
 
       <div ref={wrapperRef}>
         {open && (
@@ -118,7 +112,7 @@ export default function Filters({
                 <Select
                   options={uniqueRepos}
                   onChange={setSelectedRepo}
-                  className='mb-4 w-full '
+                  className='mb-4 w-full'
                   selected={selectedRepo}
                 />
                 <h5 className='text-base'>BY AREA</h5>

@@ -23,7 +23,7 @@ export default function CaseStudyCard({ studies = [] }: ICaseStudyCardProps) {
       {studies.map((study, index) => (
         <a key={index} href={`casestudies/${study.id}`}>
           <div
-            className='h-full min-h-[300px] max-w-sm overflow-hidden rounded-md border border-gray-200 bg-white p-4'
+            className='h-full min-h-[300px] max-w-sm overflow-hidden rounded-md border border-gray-200 bg-white p-4 transition-transform hover:scale-105 hover:shadow-lg'
             data-testid='CaseStudyCard-main'
           >
             <span className='mr-2'>
