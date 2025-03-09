@@ -138,9 +138,9 @@ export default function Index() {
                   </div>
                 </Link>
               </div>
-              <div className='flex h-full flex-col'>
+              <div className='flex h-full flex-col justify-between'>
                 <div className='p-2 text-sm'>{ambassador.bio}</div>
-                <div className='mt-auto flex border-t p-2' data-testid='Ambassadors-members-socials'>
+                <div className='flex border-t p-2' data-testid='Ambassadors-members-socials'>
                   <a
                     href={ambassador.twitterUrl}
                     target='_blank'
