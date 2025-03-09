@@ -1,17 +1,12 @@
 ---
-title: 'Crypto Websockets - Interactive (Alpha)'
-description: Interactive version of the original Crypto Websockets tutorial.
-weight: 180
+title: Contribute to docs
+weight: 70
 ---
 
->tl;dr
-Please try out [this](https://killercoda.com/asyncapi-glee/scenario/crypto-websockets) interactive tutorial and let us know what you think, as we plan to have all the docs written this way.<!--more-->
+## Contribute to docs
 
-We created an interactive tutorial using [KillerCoda](https://killercoda.com). It is an interactive version of the [Crypto Websockets](https://github.com/asyncapi/glee/tree/master/examples/crypto-websockets) tutorial that will always work for you no matter what operating system you have.
-Please become our alpha testers of the tutorial:
+There are several ways to request your first AsyncAPI docs task:
 
-1. Go through the tutorial [here](https://killercoda.com/asyncapi-glee/scenario/crypto-websockets)
-2. Let us know what you think using the channel that works for you the best:
-   - [Slack](https://www.asyncapi.com/slack-invite/)
-   - [Twitter](https://twitter.com/AsyncAPISpec)
-   - [GitHub Issue](https://github.com/asyncapi/glee/issues/)
+1. **Connect with a docs maintainer:** Ask for a `good-first-issue` in the `#13_docs` channel of the [AsyncAPI Slack](https://asyncapi.slack.com/) workspace. 
+2. **Update current docs:** Surf the existing documentation, look for `typos`, `grammar`, `errors`, create an issue, and submit a Pull Request. 
+3. **Propose new docs:** If you have any ideas or suggestions for necessary documentation, [create a new docs issue](https://github.com/asyncapi/website/issues/new?labels=%F0%9F%93%91+docs&projects=&template=docs.yml&title=%5B%F0%9F%93%91+Docs%5D%3A+) and propose yourself as the assignee. 

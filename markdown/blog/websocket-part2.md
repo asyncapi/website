@@ -46,7 +46,7 @@ I'm going to guide you through the process of creating an AsyncAPI document. I'l
 The challenge I had here was that I'm trying to document an API basing on public docs with no access to a subject matter expert. I also have zero understanding of the cryptocurrency industry and still do not fully understand the vocabulary. 
 
 > **Message to Kraken API developers and technical writers** <br/>
-In case you want to continue the work I started on the AsyncAPI document for Kraken API, feel free to do that. I'm happy to help, just let me know. Reach me out in our [AsyncAPI Slack workspace](https://www.asyncapi.com/slack-invite/).
+In case you want to continue the work I started on the AsyncAPI document for Kraken API, feel free to do that. I'm happy to help, just let me know. Reach me out in our [AsyncAPI Slack workspace](https://asyncapi.slack.com//).
 
 More interesting here are the technical challenges though, caused by the fact that Kraken's API:
 - has two production servers for non-secure and secure message exchange
@@ -811,4 +811,4 @@ components:
         pattern: '[A-Z\s]+\/[A-Z\s]+'
 ~~~
 
-Stay tuned for more articles around WebSocket and AsyncAPI. Share your feedback and connect with the AsyncAPI community in our [Slack workspace](https://www.asyncapi.com/slack-invite/).
+Stay tuned for more articles around WebSocket and AsyncAPI. Share your feedback and connect with the AsyncAPI community in our [Slack workspace](https://asyncapi.slack.com//).

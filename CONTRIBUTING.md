@@ -49,7 +49,7 @@ Issues and pull requests without activity from the triager or committer within 1
 
 ### Issues
 
-[Open an issue](https://github.com/asyncapi/asyncapi/issues/new) **only** if you want to report a bug or a feature. Don't open issues for questions or support; join our [AsyncAPI Slack workspace](https://www.asyncapi.com/slack-invite) and post your queries on the relevant channels. Don't forget to follow our [Slack Etiquette](https://github.com/asyncapi/community/blob/master/slack-etiquette.md) while interacting with community members! It's more likely you'll get help, and much faster!
+[Open an issue](https://github.com/asyncapi/asyncapi/issues/new) **only** if you want to report a bug or a feature. Don't open issues for questions or support; join our [AsyncAPI Slack workspace](https://asyncapi.slack.com/) and post your queries on the relevant channels. Don't forget to follow our [Slack Etiquette](https://github.com/asyncapi/community/blob/master/slack-etiquette.md) while interacting with community members! It's more likely you'll get help, and much faster!
 
 ### Bug Reports and Feature Requests
 
@@ -80,7 +80,7 @@ Happy contributing! :heart:
 
 ## License
 
-When you submit changes, your submissions are understood to be under the same [Apache 2.0 License](https://github.com/asyncapi/asyncapi/blob/master/LICENSE) that covers the project. Feel free to [contact the maintainers](https://www.asyncapi.com/slack-invite) if that's a concern.
+When you submit changes, your submissions are understood to be under the same [Apache 2.0 License](https://github.com/asyncapi/asyncapi/blob/master/LICENSE) that covers the project. Feel free to [contact the maintainers](https://asyncapi.slack.com/) if that's a concern.
 
 ## Contribution recognition
 
