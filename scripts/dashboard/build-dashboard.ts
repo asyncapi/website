@@ -58,6 +58,11 @@ async function getDiscussions(
   pageSize: number,
   endCursor: null | string = null
 ): Promise<Discussion['search']['nodes']> {
+  const token = process.env.GITHUB_TOKEN;
+
+  if (!token) {
+    throw new Error('GitHub token is not set in environment variables');
+  }
   try {
     const result: Discussion = await graphql(query, {
       first: pageSize,
@@ -100,11 +105,17 @@ async function getDiscussions(
  * @returns {Promise<PullRequestById | IssueById>} - The fetched discussion.
  */
 async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequestById | IssueById> {
+  const token = process.env.GITHUB_TOKEN;
+
+  if (!token) {
+    throw new Error('GitHub token is not set in environment variables');
+  }
+
   try {
     const result: PullRequestById | IssueById = await graphql(isPR ? Queries.pullRequestById : Queries.issueById, {
       id,
       headers: {
-        authorization: `token ${process.env.GITHUB_TOKEN}`
+        authorization: `token ${token}`
       }
     });
 

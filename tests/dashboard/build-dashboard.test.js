@@ -35,6 +35,7 @@ describe('GitHub Discussions Processing', () => {
   beforeAll(() => {
     tempDir = resolve(os.tmpdir(), 'test-config');
     mkdirSync(tempDir);
+    process.env.GITHUB_TOKEN = 'test-token';
   });
 
   afterAll(() => {
@@ -185,5 +186,16 @@ describe('GitHub Discussions Processing', () => {
 
   it('should handle write failures gracefully', async () => {
     await expect(writeToFile()).rejects.toThrow();
+  });
+
+  it('should throw error when GITHUB_TOKEN is not set', async () => {
+    delete process.env.GITHUB_TOKEN;
+
+    // getDiscussionsById and getDiscussions
+
+    await expect(getDiscussionByID()).rejects.toThrow('GitHub token is not set in environment variables');
+    await expect(getDiscussions()).rejects.toThrow('GitHub token is not set in environment variables');
+
+    process.env.GITHUB_TOKEN = 'test-token';
   });
 });
