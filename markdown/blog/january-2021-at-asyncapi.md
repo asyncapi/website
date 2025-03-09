@@ -57,7 +57,7 @@ We kicked off this year with a new bronze sponsor. Thanks a lot to Bump.sh and t
 ## Community continues to grow
 
 My [last post](/blog/2020-summary) that summarizes the year 2020 was pretty clear that the community's size grew a lot. Well, it is January, and we see that not much has changed. We keep growing:
-- we went over 1k users on Slack. [Join now](https://www.asyncapi.com/slack-invite/)
+- we went over 1k users on Slack. [Join now](https://asyncapi.slack.com//)
 - we went over 1.5k followers on Twitter. [Follow us](https://twitter.com/AsyncAPISpec/) to be up to date with the latest news in the project
 - we went over 1.4k stars on GitHub. If you like the project, [express it](https://github.com/asyncapi/asyncapi/stargazers)
 - we had several issues solved by the community members from different companies, including few new features. For more details, read [Feature releases and community-driven changes](#feature-releases-and-community-driven-changes) section

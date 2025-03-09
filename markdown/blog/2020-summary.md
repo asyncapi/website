@@ -37,7 +37,7 @@ All those moments lead us to the most important one: the [partnership with Postm
 
 ## Slack
 
-tl;dr AsyncAPI community activity on [our Slack workspace](https://www.asyncapi.com/slack-invite/) doubled!
+tl;dr AsyncAPI community activity on [our Slack workspace](https://asyncapi.slack.com//) doubled!
 
 <Figure
   src="/img/posts/2020-summary/active-members.webp"

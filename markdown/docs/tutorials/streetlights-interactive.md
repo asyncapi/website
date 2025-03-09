@@ -8,6 +8,6 @@ weight: 180
 
 1. Go through the [Streetlights interactive tutorial](https://killercoda.com/asyncapi/scenario/streetlight-tut-v3).
 2. Share your opinion via your preferred channel:
-   - [Slack](https://www.asyncapi.com/slack-invite/)
+   - [Slack](https://asyncapi.slack.com//)
    - [Twitter](https://twitter.com/AsyncAPISpec)
    - [GitHub Issue](https://github.com/asyncapi/website/issues/)

@@ -12,6 +12,6 @@ Please become our alpha testers of the tutorial:
 
 1. Go through the tutorial [here](https://killercoda.com/asyncapi-glee/scenario/crypto-websockets)
 2. Let us know what you think using the channel that works for you the best:
-   - [Slack](https://www.asyncapi.com/slack-invite/)
+   - [Slack](https://asyncapi.slack.com//)
    - [Twitter](https://twitter.com/AsyncAPISpec)
    - [GitHub Issue](https://github.com/asyncapi/glee/issues/)

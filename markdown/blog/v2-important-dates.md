@@ -23,7 +23,7 @@ After some time, many people have reviewed the specification and they've identif
 
 Right after we're clear on what's going to be the final version 2.0.0, we'll start working on improving all the tooling and make sure they support version 2.0.0 well. Tools are going to be open source as always so feel free to test them with your own use cases and let us know how it works! Either it sucks or it's amazing :)
 
-I'll personally track some of these tests to make sure everything is smooth. If you want to participate in the Beta testing program, feel free to reach out to me on our [Slack channel](https://www.asyncapi.com/slack-invite) or send me an email to [fmvilas@gmail.com](mailto://fmvilas@gmail.com).
+I'll personally track some of these tests to make sure everything is smooth. If you want to participate in the Beta testing program, feel free to reach out to me on our [Slack channel](https://asyncapi.slack.com/) or send me an email to [fmvilas@gmail.com](mailto://fmvilas@gmail.com).
 
 ## Official announcement (Late September-Early October)
 

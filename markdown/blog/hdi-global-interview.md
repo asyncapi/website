@@ -91,5 +91,5 @@ We’re thrilled to welcome HDI Global SE as not only a Silver Sponsor but also 
 
 [Read more about HDI Global SE's AsyncAPI implementation case study]( https://www.asyncapi.com/casestudies/hdiglobal)
 
-Have questions about [HDI Global SE's](https://www.hdi.global/de-de/) journey with AsyncAPI or want to share your own experience? Join our vibrant community on [Slack](https://www.asyncapi.com/slack-invite) and let's continue the conversation!
+Have questions about [HDI Global SE's](https://www.hdi.global/de-de/) journey with AsyncAPI or want to share your own experience? Join our vibrant community on [Slack](https://asyncapi.slack.com/) and let's continue the conversation!
 

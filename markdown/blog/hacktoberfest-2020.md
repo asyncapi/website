@@ -96,7 +96,7 @@ We stream to our official media accounts:
 - [https://www.youtube.com/asyncapi](https://www.youtube.com/asyncapi)
 - [https://twitter.com/AsyncAPISpec](https://twitter.com/AsyncAPISpec)
 
-You can also join us in a more asynchronous discussion on [Slack](https://www.asyncapi.com/slack-invite/). For updates and latest news, the best is to follow our [Twitter account](https://twitter.com/AsyncAPISpec).
+You can also join us in a more asynchronous discussion on [Slack](https://asyncapi.slack.com//). For updates and latest news, the best is to follow our [Twitter account](https://twitter.com/AsyncAPISpec).
 
 ## Blooper Reel
 

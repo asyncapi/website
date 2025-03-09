@@ -115,7 +115,7 @@ Hopefully, these companies will take shortcuts here that will open up new job op
 
 That was not our initial goal, though. We just figured that this might happen, and we look forward to it. 
 
-I hope this rough explanation makes it easier to digest the charter. Please share what you think. Use [Twitter](https://twitter.com/AsyncAPISpec), [Slack](https://www.asyncapi.com/slack-invite/), email. Write publicly or privately. We just care about the feedback and not how you pass it on. 
+I hope this rough explanation makes it easier to digest the charter. Please share what you think. Use [Twitter](https://twitter.com/AsyncAPISpec), [Slack](https://asyncapi.slack.com//), email. Write publicly or privately. We just care about the feedback and not how you pass it on. 
 
 You can also comment on [this](https://github.com/asyncapi/.github/pull/37) pull request with the charter. You can leave generic comments that we could reuse in official communication after we join the foundation.
 

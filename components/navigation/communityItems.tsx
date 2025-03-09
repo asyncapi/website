@@ -28,7 +28,7 @@ const communityItems: CommunityItem[] = [
   {
     icon: IconSlack,
     title: 'Slack Workspace',
-    href: 'https://asyncapi.com/slack-invite',
+    href: 'https://asyncapi.slack.com/',
     target: '_blank',
     description: "Need help? Want to share something? Join our Slack workspace. We're nice people :)"
   },

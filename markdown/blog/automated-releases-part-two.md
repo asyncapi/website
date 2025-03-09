@@ -229,6 +229,6 @@ I don't think I can ever understand this "hate" towards JavaScript. I think, tho
 
 ![pr info about release](/img/posts/pr-indicator.webp)
 
-In case you want to have more explanation on the release automation subject, I recommend reading [the first part of the automation story](/blog/automated-releases/). You can also [join our Slack](https://www.asyncapi.com/slack-invite/) for further discussion.
+In case you want to have more explanation on the release automation subject, I recommend reading [the first part of the automation story](/blog/automated-releases/). You can also [join our Slack](https://asyncapi.slack.com//) for further discussion.
 
 _* Cover photo by [Rock'n Roll Monkey](https://unsplash.com/@rocknrollmonkey) on Unsplash_

@@ -78,4 +78,4 @@ As the spec matures, the tooling will hopefully be close behind.
 
 In the meantime, the AsyncAPI Discovery Tool can be a huge help to enterprises that are new to AsyncAPI but experienced with event-driven architecture and messaging. The AsyncAPI Discovery Tool can start you down the road from a tangled event mess to a well-organized, fully documented, tightly governed architecture.
 
-If you have more questions or want to share your experience with these standards, you can let us know in the [AsyncAPI Slack](https://www.asyncapi.com/slack-invite) or the [Solace Community Forum](http://solace.community/).
+If you have more questions or want to share your experience with these standards, you can let us know in the [AsyncAPI Slack](https://asyncapi.slack.com/) or the [Solace Community Forum](http://solace.community/).

@@ -65,7 +65,7 @@ Here are the top 15 queries:
 ## 2024 Google Season of Docs: Application
 Our documentation lacks a persona-driven journey for diverse roles, such as documentation contributors, code contributors, ambassadors, maintainers, etc. Consequently, the AsyncAPI onboarding experience is not as efficient as it could be for new contributors, often resulting in onboarding calls being perceived as bottlenecks. To address this issue, [AsyncAPI has submitted an application for 2024 Google Season of Docs](https://github.com/orgs/asyncapi/discussions/1136) that proposes two projects: `Onboarding Contributor Guides` and `Expand Community Docs`. 
 
-We have also created a new [AsyncAPI Slack channel named `#temp-gsod-2024`](https://www.asyncapi.com/slack-invite) that anyone can join for:
+We have also created a new [AsyncAPI Slack channel named `#temp-gsod-2024`](https://asyncapi.slack.com/) that anyone can join for:
 - Mentees identification
 - Mentors identification
 - Ideas identification

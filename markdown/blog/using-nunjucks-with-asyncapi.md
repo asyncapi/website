@@ -205,6 +205,6 @@ You call macros like you typically call functions:
 
 Don't build tools from scratch if there are others already available, and they are open for contributions. Trying something from scratch, as I did with the templating CodeSandbox for AsyncAPI, makes sense only for learning purposes.
 
-Keep in mind that [AsyncAPI](https://www.asyncapi.com/) is an open community. We do not work on the specification only, but tools too. Join us on [Slack](https://www.asyncapi.com/slack-invite/) and help us build awesome tools or [donate](https://opencollective.com/asyncapi).
+Keep in mind that [AsyncAPI](https://www.asyncapi.com/) is an open community. We do not work on the specification only, but tools too. Join us on [Slack](https://asyncapi.slack.com//) and help us build awesome tools or [donate](https://opencollective.com/asyncapi).
 
 Take time to look into the [parser-js](https://github.com/asyncapi/parser-js/). I used it in my CodeSandbox to parse the AsyncAPI document to pass it to templates as a context.
