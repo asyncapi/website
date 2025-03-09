@@ -235,7 +235,6 @@ async function writeToFile(
  * @returns {Promise<MappedIssue[]>} - The mapped issues.
  */
 async function mapGoodFirstIssues(issues: GoodFirstIssues[]): Promise<MappedIssue[]> {
-  /* istanbul ignore next */
   return issues.map((issue) => ({
     id: issue.id,
     title: issue.title,
