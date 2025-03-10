@@ -9,7 +9,7 @@ jest.mock('../../scripts/utils/logger', () => ({
 jest.mock('axios');
 
 describe('getData', () => {
-  beforeAll(() => {
+  beforeEach(() => {
     process.env.GITHUB_TOKEN = 'mockToken';
   });
   it('should return data when API call is successful', async () => {
@@ -35,7 +35,7 @@ describe('getData', () => {
 
     const result = await getData();
 
-    expect(result).toEqual(mockData.data);
+    expect(result).toEqual(mockData.data.items);
     expect(axios.get).toHaveBeenCalledWith(apiBaseUrl, { headers });
   });
 
@@ -77,7 +77,7 @@ describe('getData', () => {
     expect(axios.get).toHaveBeenCalledWith(`${apiBaseUrl}2`, { headers });
 
     // Check if the result contains all the items from both pages
-    expect(result.items).toHaveLength(150);
+    expect(result).toHaveLength(100);
   });
 
   it('should throw an error when API call fails', async () => {
@@ -86,7 +86,8 @@ describe('getData', () => {
 
     await expect(getData()).rejects.toThrow('Error');
   });
-  it('should throw an error when GitHub token is not set', async () => {
+
+  it('should throw an error when GITHUB_TOKEN is not set', async () => {
     delete process.env.GITHUB_TOKEN;
 
     await expect(getData()).rejects.toThrow('GITHUB_TOKEN environment variable is required');

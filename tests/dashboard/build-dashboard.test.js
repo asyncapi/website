@@ -35,6 +35,7 @@ describe('GitHub Discussions Processing', () => {
   beforeAll(() => {
     tempDir = resolve(os.tmpdir(), 'test-config');
     mkdirSync(tempDir);
+    process.env.GITHUB_TOKEN = 'test-token';
   });
 
   afterAll(() => {
@@ -143,6 +144,34 @@ describe('GitHub Discussions Processing', () => {
     });
   });
 
+  it('should map good first issues with complete data validation', async () => {
+    const mockIssue = {
+      id: 'test-123',
+      title: 'Test Issue',
+      assignees: { totalCount: 2 },
+      resourcePath: '/asyncapi/test-repo/issues/123',
+      repository: { name: 'test-repo' },
+      author: { login: 'testuser' },
+      labels: {
+        nodes: [{ name: 'area/documentation' }, { name: 'good first issue' }, { name: 'bug' }]
+      }
+    };
+
+    const result = await mapGoodFirstIssues([mockIssue]);
+
+    expect(result).toHaveLength(1);
+    expect(result[0]).toEqual({
+      id: 'test-123',
+      title: 'Test Issue',
+      isAssigned: true,
+      resourcePath: '/asyncapi/test-repo/issues/123',
+      repo: 'asyncapi/test-repo',
+      author: 'testuser',
+      area: 'documentation',
+      labels: [{ name: 'bug' }]
+    });
+  });
+
   it('should handle discussion retrieval', async () => {
     graphql.mockResolvedValueOnce({ node: mockDiscussion });
     const result = await getDiscussionByID(false, 'test-id');
@@ -185,5 +214,16 @@ describe('GitHub Discussions Processing', () => {
 
   it('should handle write failures gracefully', async () => {
     await expect(writeToFile()).rejects.toThrow();
+  });
+
+  it('should throw error when GITHUB_TOKEN is not set', async () => {
+    delete process.env.GITHUB_TOKEN;
+
+    // getDiscussionsById and getDiscussions
+
+    await expect(getDiscussionByID()).rejects.toThrow('GitHub token is not set in environment variables');
+    await expect(getDiscussions()).rejects.toThrow('GitHub token is not set in environment variables');
+
+    process.env.GITHUB_TOKEN = 'test-token';
   });
 });
