@@ -1,4 +1,4 @@
-import { mkdir } from 'fs/promises';
+import { access, constants, mkdir } from 'fs/promises';
 import { resolve } from 'path';
 
 import { writeJSON } from '../utils/readAndWriteJson';
@@ -31,6 +31,10 @@ export async function buildFinanceInfoList({
   try {
     const expensesPath = resolve(currentDir, configDir, financeDir, year, 'Expenses.yml');
     const expensesLinkPath = resolve(currentDir, configDir, financeDir, year, 'ExpensesLink.yml');
+
+    // Check if the files exist
+
+    await Promise.all([access(expensesPath, constants.F_OK), access(expensesLinkPath, constants.F_OK)]);
 
     // Ensure the directory exists before writing the files
     const jsonDirectory = resolve(currentDir, configDir, financeDir, jsonDataDir);
