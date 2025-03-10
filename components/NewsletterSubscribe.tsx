@@ -51,11 +51,12 @@ export default function NewsletterSubscribe({
   const [email, setEmail] = useState<string>('');
   const [name, setName] = useState<string>('');
   const [status, setStatus] = useState<FormStatus>(FormStatus.NORMAL);
+  const [setEmailError] = useState<(error: string) => void>();
 
   const { t, ready } = useTranslation('common', { keyPrefix: 'newsletterCTA' });
 
   const headTextColor = dark ? 'text-white' : '';
-  const paragraphTextColor = dark ? 'text-gray-300' : '';
+  const paragraphTextColor = 'text-gray-500';
 
   const setFormStatus = (formResponse: FormStatus) => {
     setStatus(formResponse);
@@ -67,6 +68,19 @@ export default function NewsletterSubscribe({
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     setStatus(FormStatus.LOADING);
     event.preventDefault();
+
+    // validate email
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(email)) {
+      setEmailError('Invalid email address');
+      setFormStatus(FormStatus.ERROR);
+
+      return;
+    }
+    setEmailError(''); // Clear error if valid
+    setStatus(FormStatus.LOADING);
+    // end
     const data = {
       name,
       email,

@@ -57,7 +57,10 @@ export default function Casestudies() {
           </div>
         </div>
         <div data-testid='CaseStudy-card'>
-          <CaseStudyCard studies={CaseStudiesList as ICaseStudies} />
+          <CaseStudyCard
+            studies={CaseStudiesList as ICaseStudies}
+            className='rounded-lg border border-gray-200 bg-white p-4 shadow-md transition-transform hover:scale-105 hover:shadow-lg'
+          />
         </div>
 
         <div className='adopters'>
