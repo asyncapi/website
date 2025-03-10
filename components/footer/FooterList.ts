@@ -17,59 +17,64 @@ export const socialMediaLinks: SocialMediaLink[] = [
   {
     url: 'https://twitter.com/AsyncAPISpec',
     label: 'Twitter',
-    icon: IconTwitter({ className: 'h-8 w-5 sm:h-4 sm:w-6' })
+    icon: IconTwitter({ className: 'h-8 w-5 sm:h-4 sm:w-6' }),
   },
   {
     url: 'https://github.com/asyncapi',
     label: 'GitHub',
-    icon: IconGithub({ className: 'h-8 w-8 sm:h-6 sm:w-6' })
+    icon: IconGithub({ className: 'h-8 w-8 sm:h-6 sm:w-6' }),
   },
   {
     url: 'https://linkedin.com/company/asyncapi',
     label: 'LinkedIn',
-    icon: IconLinkedIn({ className: 'h-8 w-8 sm:h-5 sm:w-5 ml-1' })
+    icon: IconLinkedIn({ className: 'h-8 w-8 sm:h-5 sm:w-5 ml-1' }),
   },
   {
     url: 'https://youtube.com/asyncapi',
     label: 'YouTube',
-    icon: IconYoutubeGray({ className: 'h-8 w-8 sm:h-6 sm:w-6' })
+    icon: IconYoutubeGray({ className: 'h-8 w-8 sm:h-6 sm:w-6' }),
   },
   {
     url: 'https://asyncapi.com/slack-invite',
     label: 'Slack',
-    icon: IconSlack({ className: 'h-8 w-8 sm:h-6 sm:w-6' })
+    icon: IconSlack({ className: 'h-8 w-8 sm:h-6 sm:w-6' }),
   },
   {
     url: 'https://www.twitch.tv/asyncapi',
     label: 'Twitch',
-    icon: IconTwitch({ className: 'h-8 w-8 sm:h-6 sm:w-6' })
-  }
+    icon: IconTwitch({ className: 'h-8 w-8 sm:h-6 sm:w-6' }),
+  },
 ];
 
 export interface InitiativeLink {
   label: string;
   url: string;
 }
+export const faqLinks = [
+  { label: 'General Questions', url: '/faq#general' },
+  { label: 'Getting Started', url: '/faq#getting-started' },
+  { label: 'Technical Support', url: '/faq#technical-support' },
+];
 
 export const initiativeLinks: InitiativeLink[] = [
   {
     label: 'About',
-    url: '/about'
+    url: '/about',
   },
   {
     label: 'Blog',
-    url: '/blog'
+    url: '/blog',
   },
   {
     label: 'Brand',
-    url: 'https://github.com/asyncapi/brand/blob/master/brand-guidelines/README.md'
+    url: 'https://github.com/asyncapi/brand/blob/master/brand-guidelines/README.md',
   },
   {
     label: 'Finance',
-    url: '/finance'
+    url: '/finance',
   },
   {
     label: 'FAQs',
-    url: '/about#faqs'
-  }
+    url: '/about#faqs',
+  },
 ];
