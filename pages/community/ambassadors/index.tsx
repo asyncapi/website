@@ -138,7 +138,7 @@ export default function Index() {
                   </div>
                 </Link>
               </div>
-              <div className='flex h-full flex-col justify-between'>
+              {/* <div className='flex h-full flex-col justify-between'>
                 <div className='p-2 text-sm'>{ambassador.bio}</div>
                 <div className='flex border-t p-2' data-testid='Ambassadors-members-socials'>
                   <a
@@ -157,7 +157,25 @@ export default function Index() {
                     Linkedin ↗
                   </a>
                 </div>
-              </div>
+              </div> */}
+               {/* Added conditional rendering to prevent displaying undefined social links */}
+                              <div className='flex border-t p-2' data-testid='Ambassadors-members-socials'>
+                                {ambassador.twitterUrl && (
+                                  <a href={ambassador.twitterUrl} target='_blank' rel='noreferrer' className='underline'>
+                                    Twitter ↗
+                                  </a>
+                                )}
+                                {ambassador.githubUrl && (
+                                  <a href={ambassador.githubUrl} target='_blank' rel='noreferrer' className='ml-3 underline'>
+                                    Github ↗
+                                  </a>
+                                )}
+                                {ambassador.linkedinUrl && (
+                                  <a href={ambassador.linkedinUrl} target='_blank' rel='noreferrer' className='ml-3 underline'>
+                                    Linkedin ↗
+                                  </a>
+                                )}
+                              </div>
             </div>
           ))}
         </div>
