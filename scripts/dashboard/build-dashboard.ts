@@ -154,9 +154,8 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise
         const finalInteractionsCount = isPR
           ? interactionsCount +
             discussion.reviews.totalCount +
-            discussion.reviews.nodes!.reduce((acc, curr) => acc + curr.comments.totalCount, 0)
+            (discussion.reviews.nodes?.reduce((acc, curr) => acc + curr.comments.totalCount, 0) ?? 0)
           : interactionsCount;
-
         /* istanbul ignore next */
 
         return {

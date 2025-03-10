@@ -195,6 +195,20 @@ describe('GitHub Discussions Processing', () => {
     expect(result.length).toBeLessThanOrEqual(12);
   });
 
+  it('should handle undefined reviews.nodes gracefully', async () => {
+    const prDiscussion = {
+      ...mockDiscussion,
+      __typename: 'PullRequest',
+      reviews: {
+        totalCount: 1,
+        nodes: undefined // This will trigger the ?? 0 part
+      }
+    };
+
+    const result = await getHotDiscussions([prDiscussion]);
+    expect(result[0].score).toBeGreaterThan(0);
+  });
+
   it('should write to file', async () => {
     const filePath = resolve(tempDir, 'test.json');
     await writeToFile({ test: true }, filePath);
