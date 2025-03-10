@@ -8,7 +8,7 @@ module.exports = {
     defaultLocale: 'en',
     namespaces: ['landing-page', 'common', 'tools'],
     defaultNamespace: 'landing-page',
-    react: { useSuspense: false } // this line
+    react: { useSuspense: false }
   },
   langMap: {
     en: 'English',
