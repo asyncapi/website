@@ -29,7 +29,7 @@ export function addAdditionalUserInfo(user: Ambassador) {
     userData.linkedinUrl = `https://www.linkedin.com/in/${userData.linkedin}`;
   }
   if (userData.twitter) {
-    userData.twitterUrl = `https://www.twitter.com/${userData.twitter}`;
+    userData.twitterUrl = userData.twitter ? `https://www.twitter.com/${userData.twitter}` : null;
   }
 
   // add img url
@@ -141,15 +141,17 @@ export default function Index() {
               <div className='flex h-full flex-col justify-between'>
                 <div className='p-2 text-sm'>{ambassador.bio}</div>
                 <div className='flex border-t p-2' data-testid='Ambassadors-members-socials'>
-                  <a
-                    href={ambassador.twitterUrl}
-                    target='_blank'
-                    rel='noreferrer'
-                    className='underline'
-                    data-testid='Ambassadors-members-twitter'
-                  >
-                    Twitter ↗
-                  </a>
+                  {ambassador.twitterUrl && (
+                    <a
+                      href={ambassador.twitterUrl}
+                      target='_blank'
+                      rel='noreferrer'
+                      className='underline'
+                      data-testid='Ambassadors-members-twitter'
+                    >
+                      Twitter ↗
+                    </a>
+                  )}
                   <a href={ambassador.githubUrl} target='_blank' rel='noreferrer' className='ml-3 underline'>
                     Github ↗
                   </a>
