@@ -34,35 +34,56 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
   return (
     <div
       className={twMerge(
-        'overflow-hidden rounded-md border border-gray-200 bg-white p-4 h-full flex flex-col gap-2',
-        className
+        'overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md p-2 sm:p-3 h-full flex flex-col gap-1',
+        className,
       )}
     >
-      <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.mdSemibold}>
+      <Heading
+        level={HeadingLevel.h2}
+        typeStyle={HeadingTypeStyle.mdSemibold}
+        className="pl-1 sm:pl-3 border-b border-gray-100 text-left"
+      >
         {t('calendar.title')}
       </Heading>
-      <ul>
+      <ul className="space-y-2 mt-2">
         {getEvents(eventsData, size).map((event: IEvent, index: number) => (
-          <li key={index} data-testid='Calendar-list-item'>
-            <a href={event.url} className='mb-1 mt-2 flex grow flex-col items-start sm:flex-row sm:items-center'>
-              <div className='inline-flex h-12 min-w-12 flex-row rounded-full bg-pink-500 font-bold text-white'>
-                <span className='flex-1 self-center text-center'>{moment(event.date).format('D')}</span>
-              </div>
-              <div className='grow text-left sm:mt-0 sm:pl-6'>
-                <h2 className='title-font font-medium text-gray-900 hover:text-gray-500'>{event.title}</h2>
-                <p className='text-gray-600'>
-                  {moment(event.date).local().format('LLLL')} UTC
-                  {moment(event.date).local().format('Z')}
-                </p>
+          <li key={index} data-testid="Calendar-list-item">
+            <a
+              href={event.url}
+              className="group block rounded-lg p-2 sm:p-3 transition-all hover:bg-gray-50"
+            >
+              <div className="flex flex-row items-center space-x-3 sm:space-x-4">
+                <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 flex-shrink-0 rounded-lg bg-[#4284f3] font-bold text-white">
+                  <span className="flex-1 self-center text-center text-xs sm:text-base">
+                    {moment(event.date).format('D')}
+                  </span>
+                </div>
+                <div className="flex-1 text-left">
+                  <h2 className="text-sm sm:text-lg font-semibold text-gray-900 group-hover:text-[#4284f3] transition-colors">
+                    {event.title}
+                  </h2>
+                  <p className="text-xs sm:text-sm text-gray-600 break-words">
+                    {moment(event.date).local().format('LLLL')} UTC
+                    {moment(event.date).local().format('Z')}
+                  </p>
+                </div>
               </div>
             </a>
           </li>
         ))}
       </ul>
-      <div className='h-full content-center'>
-        {!eventsExist && <div className='font-bold text-gray-700 lg:pb-8'>{t('calendar.noMeetingsMessage')}</div>}
-        <div className='sm:pt-0 md:pt-2 lg:pb-8 lg:pt-0' data-testid='Calendar-button'>
-          <GoogleCalendarButton href={CALENDAR_URL} text={t('calendar.viewCalendarBtn')} />
+      <div className="mt-auto pt-2 sm:pt-3 border-t border-gray-100">
+        {!eventsExist && (
+          <div className="text-center sm:text-left text-gray-600 italic mb-2 sm:mb-4 px-2">
+            {t('calendar.noMeetingsMessage')}
+          </div>
+        )}
+        <div data-testid="Calendar-button">
+          <GoogleCalendarButton
+            href={CALENDAR_URL}
+            text={t('calendar.viewCalendarBtn')}
+            className="w-full justify-center"
+          />
         </div>
       </div>
     </div>
