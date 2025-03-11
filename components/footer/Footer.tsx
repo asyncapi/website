@@ -55,7 +55,7 @@ export default function Footer() {
               <div className='mb-5 px-14 sm:ml-10 sm:px-8 md:ml-5'>
                 <div className='py-2'>
                   <div className='text-white'>
-                    <Heading typeStyle={HeadingTypeStyle.smSemibold}>News</Heading>
+                    <Heading typeStyle={HeadingTypeStyle.smSemibold}>Contact Us</Heading>
                   </div>
                 </div>
                 <ul className='justify-center'>
