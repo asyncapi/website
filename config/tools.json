@@ -12,7 +12,13 @@
                     
                 },
                 "filters": {
-                    "language": [],
+                    "language": [
+                        {
+                            "name": "JavaScript",
+                            "color": "bg-[#F2F1C7]",
+                            "borderColor": "border-[#BFBE86]"
+                        }
+                    ],
                     "technology": [
                         {
                             "name": "Node.js",
