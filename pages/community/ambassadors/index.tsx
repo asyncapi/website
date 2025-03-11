@@ -141,17 +141,15 @@ export default function Index() {
               <div className='flex h-full flex-col justify-between'>
                 <div className='p-2 text-sm'>{ambassador.bio}</div>
                 <div className='flex border-t p-2' data-testid='Ambassadors-members-socials'>
-                  {ambassador.twitterUrl && (
-                    <a
-                      href={ambassador.twitterUrl}
-                      target='_blank'
-                      rel='noreferrer'
-                      className='underline'
-                      data-testid='Ambassadors-members-twitter'
-                    >
-                      Twitter ↗
-                    </a>
-                  )}
+                  <a
+                    href={ambassador.twitterUrl}
+                    target='_blank'
+                    rel='noreferrer'
+                    className='underline'
+                    data-testid='Ambassadors-members-twitter'
+                  >
+                    Twitter ↗
+                  </a>
                   <a href={ambassador.githubUrl} target='_blank' rel='noreferrer' className='ml-3 underline'>
                     Github ↗
                   </a>
