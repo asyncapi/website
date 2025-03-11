@@ -29,7 +29,7 @@ export function addAdditionalUserInfo(user: Ambassador) {
     userData.linkedinUrl = `https://www.linkedin.com/in/${userData.linkedin}`;
   }
   if (userData.twitter) {
-    userData.twitterUrl = userData.twitter ? `https://www.twitter.com/${userData.twitter}` : null;
+    userData.twitterUrl = `https://www.twitter.com/${userData.twitter}`;
   }
 
   // add img url
