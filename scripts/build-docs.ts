@@ -206,13 +206,12 @@ function addDocButtons(docPosts: Details[], treePosts: NavTree): Details[] {
             title: structuredPosts[index + 1].title,
             href: structuredPosts[index + 1].slug
           };
-        } else {
+        } else if (index + 2 < countDocPages) {
           nextPage = {
             title: `${structuredPosts[index + 1].title} - ${structuredPosts[index + 2].title}`,
             href: structuredPosts[index + 2].slug
           };
         }
-
         docPost = { ...docPost, nextPage };
       }
 
