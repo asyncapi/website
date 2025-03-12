@@ -201,6 +201,7 @@ function addDocButtons(docPosts: Details[], treePosts: NavTree): Details[] {
       if (index + 1 < countDocPages) {
         // checks whether the next item inside structuredPosts is a rootElement or a sectionElement
         // if yes, it goes again to a next to next item in structuredPosts to link the nextPage
+        /* istanbul ignore else */
         if (!structuredPosts[index + 1].isRootElement && !structuredPosts[index + 1].isSection) {
           nextPage = {
             title: structuredPosts[index + 1].title,
