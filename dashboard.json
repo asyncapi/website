@@ -85,7 +85,7 @@
       "resourcePath": "/asyncapi/website/pull/3726",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 14.358729437462937
+      "score": 14.645904026212197
     },
     {
       "id": "I_kwDODou01c5ZAFWh",
@@ -119,22 +119,6 @@
       "score": 12.922856493716644
     },
     {
-      "id": "I_kwDOBGu-186XjdU2",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Proposal to add a 'version' value into the message object to support a more granular versioning",
-      "author": "IsmaelMartinez",
-      "resourcePath": "/asyncapi/spec/issues/1068",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 12.348507316218127
-    },
-    {
       "id": "I_kwDOFLhIt86O7jFN",
       "isPR": false,
       "isAssigned": true,
@@ -156,32 +140,81 @@
           "color": "0d67d3"
         }
       ],
+      "score": 12.635681904967385
+    },
+    {
+      "id": "I_kwDOBW5R_c6pn_G2",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Redesign the AsyncAPI Website and Implement Dark Theme",
+      "author": "devilkiller-ag",
+      "resourcePath": "/asyncapi/website/issues/3669",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "gsoc",
+          "color": "F4D03F"
+        }
+      ],
       "score": 12.348507316218127
     },
     {
-      "id": "PR_kwDOBW5R_c6GWsFI",
-      "isPR": true,
+      "id": "I_kwDOBGu-186XjdU2",
+      "isPR": false,
       "isAssigned": false,
-      "title": "fix: simplified error handling in build-dashboard.js",
-      "author": "sahitya-chandra",
-      "resourcePath": "/asyncapi/website/pull/3521",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 10.338285194973315
+      "title": "Proposal to add a 'version' value into the message object to support a more granular versioning",
+      "author": "IsmaelMartinez",
+      "resourcePath": "/asyncapi/spec/issues/1068",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 12.348507316218127
     },
     {
-      "id": "PR_kwDOFLhIt86DqUGM",
-      "isPR": true,
+      "id": "I_kwDOFLhIt86sh4Es",
+      "isPR": false,
       "isAssigned": false,
-      "title": "docs: add Nikita Pastukhov to Ambassadors list",
-      "author": "Lancetnik",
-      "resourcePath": "/asyncapi/community/pull/1608",
+      "title": "Donation of `Neuroglia.AsyncAPI`",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/community/issues/1764",
       "repo": "asyncapi/community",
-      "labels": [],
-      "score": 10.338285194973315
+      "labels": [
+        {
+          "name": "vote",
+          "color": "EF813F"
+        },
+        {
+          "name": "gitvote",
+          "color": "ededed"
+        },
+        {
+          "name": "vote open",
+          "color": "ededed"
+        }
+      ],
+      "score": 10.625459783722574
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOFDnrNc6tb2y1",
+      "title": "[BUG] A YAML file is being generated instead of a JSON file when using the asyncapi new file command for generating JSON file",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/cli/issues/1710",
+      "repo": "asyncapi/cli",
+      "author": "Sumitwarrior7",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
     {
       "id": "I_kwDOFDnrNc6tHvh5",
       "title": "[BUG] AsyncAPI/generator needs to upgrade",
@@ -420,25 +453,6 @@
       "author": "AceTheCreator",
       "area": "Unknown",
       "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODwv8N86YYYFf",
-      "title": "Fix the way the ticket section is being rendered",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/conference-website/issues/395",
-      "repo": "asyncapi/conference-website",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
