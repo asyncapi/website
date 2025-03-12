@@ -151,8 +151,4 @@ describe('Frontmatter Validator', () => {
     const errors = validateBlogs(undefined);
     expect(errors).toEqual(['Frontmatter is missing']);
   });
-  it('should throw an error if frontmatter is missing', () => {
-    const errors = validateBlogs(undefined);
-    expect(errors).toEqual(['Frontmatter is missing']);
-  });
 });
