@@ -147,15 +147,6 @@ describe('Frontmatter Validator', () => {
     expect(isValidURL('www.example.com')).toBe(false);
   });
 
-  it('should return true or false for URLs', () => {
-    expect(isValidURL('http://example.com')).toBe(true);
-    expect(isValidURL('https://www.example.com')).toBe(true);
-    expect(isValidURL('ftp://ftp.example.com')).toBe(true);
-    expect(isValidURL('invalid-url')).toBe(false);
-    expect(isValidURL('/path/to/file')).toBe(false);
-    expect(isValidURL('www.example.com')).toBe(false);
-  });
-
   it('should throw an error if frontmatter is missing', () => {
     const errors = validateBlogs(undefined);
     expect(errors).toEqual(['Frontmatter is missing']);
