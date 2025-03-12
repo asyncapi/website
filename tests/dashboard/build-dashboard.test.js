@@ -1,8 +1,8 @@
-const { graphql } = require('@octokit/graphql');
-const { promises: fs, mkdirSync, rmSync } = require('fs-extra');
-const { resolve } = require('path');
-const os = require('os');
-const {
+import { graphql } from '@octokit/graphql';
+import { promises as fs, mkdirSync, rmSync } from 'fs-extra';
+import { resolve } from 'path';
+import os from 'os';
+import {
   getLabel,
   mapGoodFirstIssues,
   getHotDiscussions,
@@ -10,16 +10,16 @@ const {
   writeToFile,
   getDiscussions,
   start
-} = require('../../scripts/dashboard/build-dashboard.ts');
+} from '../../scripts/dashboard/build-dashboard.ts';
 
-const {
+import {
   issues,
   mockDiscussion,
   discussionWithMoreComments,
   fullDiscussionDetails,
   mockRateLimitResponse
-} = require('../fixtures/dashboardData');
-const { logger } = require('../../scripts/utils/logger.ts');
+} from '../fixtures/dashboardData';
+import { logger } from '../../scripts/utils/logger.ts';
 
 jest.mock('../../scripts/utils/logger', () => ({
   logger: { error: jest.fn(), warn: jest.fn() }

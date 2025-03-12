@@ -1,9 +1,9 @@
-const { readFileSync, removeSync, mkdirpSync, outputFileSync } = require('fs-extra');
-const { resolve, join } = require('path');
-const fetch = require('node-fetch-2');
-const os = require('os');
-const { buildNewsroomVideos } = require('../scripts/build-newsroom-videos.ts');
-const { mockApiResponse, expectedResult } = require('./fixtures/newsroomData');
+import { readFileSync, removeSync, mkdirpSync, outputFileSync } from 'fs-extra';
+import { resolve, join } from 'path';
+import fetch from 'node-fetch-2';
+import os from 'os';
+import { buildNewsroomVideos } from '../scripts/build-newsroom-videos.ts';
+import { mockApiResponse, expectedResult } from './fixtures/newsroomData';
 
 jest.mock('node-fetch-2', () => jest.fn());
 

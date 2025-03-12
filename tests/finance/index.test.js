@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const { buildFinanceInfoList } = require('../../scripts/finance/index.ts');
-const { expensesYaml, expensesLinkYaml, expensesjson, expensesLinkjson } = require('../fixtures/financeData');
+import fs from 'fs';
+import path from 'path';
+import { buildFinanceInfoList } from '../../scripts/finance/index.ts';
+import { expensesYaml, expensesLinkYaml, expensesjson, expensesLinkjson } from '../fixtures/financeData';
 
 describe('buildFinanceInfoList', () => {
   const testDir = path.resolve(__dirname, 'test-finance-info');

@@ -1,11 +1,11 @@
-const axios = require('axios');
-const { convertTools, createToolObject } = require('../../scripts/tools/tools-object.ts');
-const {
+import axios from 'axios';
+import { convertTools, createToolObject } from '../../scripts/tools/tools-object.ts';
+import {
   createToolFileContent,
   createExpectedToolObject,
   createMockData,
   createMalformedYAML
-} = require('../helper/toolsObjectData');
+} from '../helper/toolsObjectData';
 
 const { logger } = require('../../scripts/utils/logger.ts');
 

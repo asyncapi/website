@@ -82,4 +82,4 @@ const testPaths = [
   }
 ];
 
-module.exports = { determineEditLinkData, processBatchData, testPaths };
+export { determineEditLinkData, processBatchData, testPaths };

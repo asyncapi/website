@@ -76,4 +76,4 @@ const createMalformedYAML = ({
       - Category1
 `;
 
-module.exports = { createToolFileContent, createExpectedToolObject, createMockData, createMalformedYAML };
+export { createToolFileContent, createExpectedToolObject, createMockData, createMalformedYAML };

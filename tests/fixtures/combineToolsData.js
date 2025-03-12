@@ -206,7 +206,7 @@ const finalToolWithMissingData = {
   }
 };
 
-module.exports = {
+export {
   expectedDataT1,
   manualToolsWithMissingData,
   manualToolsToSort,

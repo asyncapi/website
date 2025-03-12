@@ -1,10 +1,9 @@
-const axios = require('axios');
-const { resolve } = require('path');
-const fs = require('fs-extra');
-const os = require('os');
-const path = require('path');
-const { tagsData, manualTools, mockConvertedData, mockExtractData } = require('./fixtures/buildToolsData');
-const { buildTools } = require('../scripts/build-tools.ts');
+import axios from 'axios';
+import path, { resolve } from 'path';
+import fs from 'fs-extra';
+import os from 'os';
+import { tagsData, manualTools, mockConvertedData, mockExtractData } from './fixtures/buildToolsData';
+import { buildTools } from '../scripts/build-tools.ts';
 
 jest.mock('axios');
 jest.mock('../scripts/tools/categorylist', () => ({

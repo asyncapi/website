@@ -1,14 +1,14 @@
-const fs = require('fs').promises;
-const path = require('path');
-const os = require('os');
-const {
+import { promises as fs } from 'fs';
+import path from 'path';
+import os from 'os';
+import {
   isValidURL,
   main,
   validateBlogs,
   validateDocs,
   checkMarkdownFiles
-} = require('../../scripts/markdown/check-markdown.ts');
-const { logger } = require('../../scripts/utils/logger.ts');
+} from '../../scripts/markdown/check-markdown.ts';
+import { logger } from '../../scripts/utils/logger.ts';
 
 jest.mock('../../scripts/utils/logger', () => ({
   logger: { error: jest.fn(), warn: jest.fn() }

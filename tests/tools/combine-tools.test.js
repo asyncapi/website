@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const { combineTools, getFinalTool } = require('../../scripts/tools/combine-tools.ts');
-const {
+import fs from 'fs';
+import path from 'path';
+import { combineTools, getFinalTool } from '../../scripts/tools/combine-tools.ts';
+import {
   expectedDataT1,
   manualToolsWithMissingData,
   manualToolsToSort,
@@ -19,8 +19,8 @@ const {
   manualToolsWithInvalidURLT11,
   circularTool,
   finalToolWithMissingData
-} = require('../fixtures/combineToolsData');
-const { logger } = require('../../scripts/utils/logger.ts');
+} from '../fixtures/combineToolsData';
+import { logger } from '../../scripts/utils/logger.ts';
 
 jest.mock('../../scripts/utils/logger', () => ({
   logger: { error: jest.fn() }
