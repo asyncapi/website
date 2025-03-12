@@ -12,7 +12,7 @@ authors:
     photo: /img/avatars/bami.webp
     link: https://www.linkedin.com/in/atinuke-oluwabamikemi-kayode-5b838b1b7/
     byline: AsyncAPI Community Marketing Specialist
-excerpt: "Being patient is important as a maintainer because sometimes the contributors don't have it, so you have to keep yours. Says, Ashmit. A third-year Bachelor of Technology student in Computer Science from India."
+excerpt: "Being patient is important as a maintainer because sometimes the contributors don't have it, so you have to keep yours. Says Ashmit. A third-year Bachelor of Technology student in Computer Science from India."
 ---
 
 
@@ -46,7 +46,7 @@ We then asked Ashmit about his GSoC experience with the AsyncAPI Initiative. Bel
 
 **Bami: What was the most challenging part of your project, and how did you overcome it?**
 
-***Ashmit:** The most unexpected challenge occurred towards the end of the program when my project wouldn’t build successfully just before the final submission deadline. After deliberation, we merged the pull request and troubleshot the issue later. Unfortunately, this action caused the website to crash temporarily. My mentors and I worked intensively for a few hours to restore website functionality. It was stressful, but it reinforced the importance of testing and careful deployment.*
+***Ashmit:** The most unexpected challenge occurred towards the end of the program when my project wouldn’t build successfully just before the final submission deadline. After deliberation, we merged the pull request and troubleshot the issue later. Unfortunately, this action caused the website to crash temporarily. My mentors and I worked intensively for a few hours to restore the website's functionality. It was stressful, but it reinforced the importance of testing and careful deployment.*
 
 **Bami: What technologies and skills did you use for your project? Did you have to learn anything new?**
 
@@ -116,13 +116,13 @@ To add a bit of fun to our spotlight interview, we played a ***This or That*** g
 
 ***Ashmit:** Samsung*
 
-**Bami: How do you like to spend your time outside coding? Do you have any hobby or interest?**
+**Bami: How do you like to spend your time outside coding? Do you have any hobbies or interests?**
 
-***Ashmit:** For hobbies, I might say cooking is one of them. Yeah I do enjoy cooking sometimes because when I have some spare time that's where I go, towards the kitchen.*
+***Ashmit:** I might say cooking is one of them for hobbies. Yeah, I do enjoy cooking sometimes because when I have some spare time, that's where I go, towards the kitchen.*
 
 **Bami: Is there anyone or a lot of people you would like to thank or give a shout-out to from the community or the GSoC program, either your other mentees, your mentors, or other community members.**
 
-***Ashmit:** the mentors I would like to shout out—namely [Aishat Muibudeen](https://www.linkedin.com/in/aishatmuibudeen/), [Thulisile Sibanda](https://www.linkedin.com/in/v-thulisile-sibanda/), and [Elegbede Azeez](https://www.linkedin.com/in/acebuild/). And on top of that, I would like to thank [Lukasz Gornicki](https://www.linkedin.com/in/lukasz-gornicki-a621914/) for being quite helpful. Some issues in my project required his assistance, and he was there for them. That's nice of him because he didn't have to do it.*
+***Ashmit:** The mentors I would like to shout out are [Aishat Muibudeen](https://www.linkedin.com/in/aishatmuibudeen/), [Thulisile Sibanda](https://www.linkedin.com/in/v-thulisile-sibanda/), and [Elegbede Azeez](https://www.linkedin.com/in/acebuild/). And on top of that, I would like to thank [Lukasz Gornicki](https://www.linkedin.com/in/lukasz-gornicki-a621914/) for being quite helpful. Some issues in my project required his assistance, and he was there for them. That's nice of him because he didn't have to do it.*
 
 For those considering GSoC or open-source contributions, Ashmit advises, *“Start with issues labeled ‘good first issue,’ ask questions, and don’t be afraid to make mistakes. Open-source communities thrive on collaboration and learning together.”*
 
