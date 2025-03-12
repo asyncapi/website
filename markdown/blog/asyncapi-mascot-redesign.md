@@ -45,7 +45,7 @@ Fran took to his socials and asked the community for suggestions. Someone came u
 ![Poll for mascot name suggestions][poll]
 
 
-If you’re wondering, like I did, why there are two mascots instead of just one, it’s because they were designed to tell a story. Eve is the skilled, knowledgeable one who always does things the right way, while Chan is a bit clumsy, representing the mistakes people often make in event-driven architectures.
+If you’re wondering, like I was, why there are two mascots instead of just one, it’s because they were designed to tell a story. Eve is the skilled, knowledgeable one who always does things correctly, while Chan is slightly clumsy and represents the mistakes people often make in event-driven architecture.
 
 
 ## Why the Redesign?
