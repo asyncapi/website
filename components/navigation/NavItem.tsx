@@ -63,7 +63,7 @@ export default function NavItem({
       <Link
         href={href}
         {...attrs}
-        className={`${attrs.className} ${router.pathname.startsWith(href) ? 'text-black' : 'text-gray-700'}`}
+        className={`${attrs.className} ${router.pathname.startsWith(href) ? 'text-black' : 'text-gray-700'} dark:text-white`}
         target={target}
         data-testid='NavItem-Link'
       >

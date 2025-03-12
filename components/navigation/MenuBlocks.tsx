@@ -42,7 +42,7 @@ export default function MenuBlocks({ items = [] }: MenuBlocksProps) {
           >
             <span
               data-testid='MenuBlocks-Link'
-              className={`-mx-3 mt-1 flex items-start space-x-4 rounded-lg p-3 transition duration-150 ease-in-out ${
+              className={`-mx-3 mt-1 flex items-start space-x-4 rounded-lg p-3 transition duration-150 ease-in-out dark:hover:bg-white/20 ${
                 router.asPath === item.href ? 'bg-secondary-100 shadow-sm' : 'hover:bg-gray-50'
               }`}
             >
@@ -56,10 +56,10 @@ export default function MenuBlocks({ items = [] }: MenuBlocksProps) {
               </div>
               <div className='space-y-1 whitespace-pre-line'>
                 <Paragraph typeStyle={ParagraphTypeStyle.md} textColor='text-gray-900' fontWeight='font-semibold'>
-                  <span className={item.comingSoon ? 'opacity-50' : ''}>{item.title}</span>{' '}
+                  <span className={`${item.comingSoon ? 'opacity-50' : ''} dark:text-white`}>{item.title}</span>{' '}
                   {item.comingSoon && <Label text='Coming soon' />} {item.beta && <Label text='Beta' />}
                 </Paragraph>
-                <Paragraph typeStyle={ParagraphTypeStyle.sm} className={item.comingSoon ? 'opacity-50' : ''}>
+                <Paragraph typeStyle={ParagraphTypeStyle.sm} className={`${item.comingSoon ? 'opacity-50' : ''} dark:text-white`}>
                   {item.description}
                 </Paragraph>
               </div>

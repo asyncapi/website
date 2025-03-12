@@ -119,7 +119,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
 
   return (
     <DocsContext.Provider value={{ post, navItems }}>
-      <div className='w-full bg-white px-4 sm:px-6 lg:px-8 xl:mx-auto xl:max-w-7xl'>
+      <div className='w-full bg-white dark:bg-black dark:text-white px-4 sm:px-6 lg:px-8 xl:mx-auto xl:max-w-7xl'>
         {showMenu && <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />}
         <div className='flex flex-row' id='main-content'>
           {/* <!-- Static sidebar for desktop --> */}
@@ -145,14 +145,14 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                 <TOC
                   toc={post.toc}
                   depth={3}
-                  className='sticky top-20 mt-4 max-h-screen overflow-y-auto bg-blue-100 p-4 xl:mt-0 xl:w-72 xl:bg-transparent xl:pb-8'
+                  className='sticky top-20 mt-4 max-h-screen overflow-y-auto bg-blue-100 p-4 xl:mt-0 xl:w-72 xl:bg-transparent xl:pb-8 '
                 />
                 <div className='px-4 sm:px-6 xl:max-w-184 xl:flex-1 xl:px-8'>
                   <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg}>
                     {post.title}
                   </Heading>
                   <div>
-                    <p className='font-normal font-sans text-sm text-gray-600 antialiased'>
+                    <p className='font-normal font-sans text-sm text-gray-600  antialiased'>
                       Found an error? Have a suggestion?
                       {generateEditLink(post)}
                     </p>

@@ -50,7 +50,7 @@ export default function Card({ title, description, link, className, Icon }: Card
               <span className='ml-4'>{title}</span>
             </div>
           </Heading>
-          <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-5' fontWeight='light'>
+          <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-5 dark:text-white' fontWeight='light'>
             {description}
           </Paragraph>
         </div>
