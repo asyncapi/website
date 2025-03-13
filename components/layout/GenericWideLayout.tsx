@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import AnnouncementHero from '../campaigns/AnnoucementHero';
+import AnnouncementHero from '../campaigns/AnnouncementHero';
 import Head from '../Head';
 import Row from './Row';
 
@@ -35,8 +35,7 @@ export default function GenericWideLayout({
     <>
       <Head title={title} description={description} image={image} />
       <Row>
-        {/* @TODO Will uncomment the component once it is in use */}
-        {/* <AnnouncementHero className='m-4 text-center' small={true} /> */}
+        <AnnouncementHero className='m-4 text-center' small={true} />
         {children}
       </Row>
     </>
