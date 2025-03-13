@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/community/pull/1634",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 28.717458874925875
+      "score": 31.302030173669205
     },
     {
       "id": "I_kwDOBW5R_c5BIl5P",
@@ -85,7 +85,7 @@
       "resourcePath": "/asyncapi/website/pull/3726",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 14.645904026212197
+      "score": 15.220253203710714
     },
     {
       "id": "I_kwDODou01c5ZAFWh",
@@ -106,17 +106,6 @@
         }
       ],
       "score": 14.07155484871368
-    },
-    {
-      "id": "I_kwDOFLhIt85xI2wH",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Measure AsyncAPI Adoption",
-      "author": "fmvilas",
-      "resourcePath": "/asyncapi/community/issues/879",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 12.922856493716644
     },
     {
       "id": "I_kwDOFLhIt86O7jFN",
@@ -140,7 +129,42 @@
           "color": "0d67d3"
         }
       ],
-      "score": 12.635681904967385
+      "score": 13.210031082465903
+    },
+    {
+      "id": "I_kwDOFLhIt85xI2wH",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Measure AsyncAPI Adoption",
+      "author": "fmvilas",
+      "resourcePath": "/asyncapi/community/issues/879",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 12.922856493716644
+    },
+    {
+      "id": "I_kwDOFLhIt86sh4Es",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Donation of `Neuroglia.AsyncAPI`",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/community/issues/1764",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "vote",
+          "color": "EF813F"
+        },
+        {
+          "name": "gitvote",
+          "color": "ededed"
+        },
+        {
+          "name": "vote open",
+          "color": "ededed"
+        }
+      ],
+      "score": 12.348507316218127
     },
     {
       "id": "I_kwDOBW5R_c6pn_G2",
@@ -173,47 +197,18 @@
         }
       ],
       "score": 12.348507316218127
-    },
-    {
-      "id": "I_kwDOFLhIt86sh4Es",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Donation of `Neuroglia.AsyncAPI`",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/community/issues/1764",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "vote",
-          "color": "EF813F"
-        },
-        {
-          "name": "gitvote",
-          "color": "ededed"
-        },
-        {
-          "name": "vote open",
-          "color": "ededed"
-        }
-      ],
-      "score": 10.625459783722574
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOFDnrNc6tb2y1",
-      "title": "[BUG] A YAML file is being generated instead of a JSON file when using the asyncapi new file command for generating JSON file",
+      "id": "I_kwDODwv8N86tpo_O",
+      "title": "Remove \"All rights reserved and the Copyright symbol\"",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/1710",
-      "repo": "asyncapi/cli",
-      "author": "Sumitwarrior7",
+      "resourcePath": "/asyncapi/conference-website/issues/620",
+      "repo": "asyncapi/conference-website",
+      "author": "thulieblack",
       "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ]
+      "labels": []
     },
     {
       "id": "I_kwDOFDnrNc6tHvh5",
@@ -382,21 +377,6 @@
       "repo": "asyncapi/cli",
       "author": "derberg",
       "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFLhIt86ihL5I",
-      "title": "[BUG] voting summary has some errors in `isVotedInLast3Months`",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/community/issues/1614",
-      "repo": "asyncapi/community",
-      "author": "derberg",
-      "area": "javascript",
       "labels": [
         {
           "name": "bug",
