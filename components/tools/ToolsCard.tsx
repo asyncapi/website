@@ -50,6 +50,8 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
     tech: false,
     desc: false
   });
+  const hasLanguageData = toolData.filters?.language && toolData.filters.language.length > 0; // Check if we have valid language data to display
+  const hasTechnologyData = toolData.filters?.technology && toolData.filters.technology.length > 0 // Check if we have valid Technology data to display
 
   return (
     <div className='flex h-auto flex-col rounded-lg border shadow-md'>
@@ -116,9 +118,9 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
       </div>
       <hr className='mx-6' />
       <div className='grow'>
-        {toolData.filters?.language || toolData?.filters?.technology?.length ? (
+        {(hasLanguageData || hasTechnologyData) ?  (
           <div className='my-6'>
-            {toolData.filters.language && (
+            {hasLanguageData && (
               <div className='mx-6 flex flex-col gap-2'>
                 <CardData
                   className='text-sm'
@@ -138,7 +140,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
                 </div>
               </div>
             )}
-            {toolData.filters.technology?.length !== 0 && (
+            {hasTechnologyData && (
               <div className='mx-6 my-4 flex flex-col gap-2'>
                 <CardData
                   className='text-sm'
