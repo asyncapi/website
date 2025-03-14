@@ -285,7 +285,7 @@ If you have added the 'fr' locale and translated the 'tools/cli' page, clicking 
 module.exports = {
     i18n: {
 -       languages: ["en", "de"],
-+       languages: ["en", "de", "fr"],
++       languages: ["en", "de", "fr,ge"],
         defaultLanguage: "en",
         namespaces: ["landing-page", "common", "tools"],
         defaultNamespace: "landing-page",
@@ -294,6 +294,7 @@ module.exports = {
     en: 'English',
     de: 'Deutsch',
 +   fr: 'French',
+    ge:'Germany'
   },
 };
 ```
