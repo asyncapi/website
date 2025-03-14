@@ -6,6 +6,7 @@ import { loadYearData } from './loadYearData';
  * @param {string} selectedMonth - The month for which to retrieve the data.
  * @returns {string[]} An array of unique expense categories.
  */
+
 export const getUniqueCategories = ({selectedYear, selectedMonth} : {selectedYear: string; selectedMonth: string}): string[] => {
     const { expensesData } = loadYearData(selectedYear);
     const allCategories: string[] = [];
