@@ -6,6 +6,7 @@ import IconSlack from '../icons/Slack';
 import IconTwitch from '../icons/Twitch';
 import IconTwitter from '../icons/Twitter';
 import IconYoutubeGray from '../icons/YouTubeGray';
+import IconEmail from '../icons/Email';
 
 export interface SocialMediaLink {
   url: string;
@@ -43,6 +44,12 @@ export const socialMediaLinks: SocialMediaLink[] = [
     url: 'https://www.twitch.tv/asyncapi',
     label: 'Twitch',
     icon: IconTwitch({ className: 'h-8 w-8 sm:h-6 sm:w-6' })
+  },
+  // added Email Us Logo 
+  {
+    url: 'mailto:press@asyncapi.io',
+    label: 'Email Us',
+    icon: IconEmail({ className: 'h-8 w-8 sm:h-6 sm:w-6' })
   }
 ];
 
