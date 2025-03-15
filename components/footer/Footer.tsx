@@ -55,13 +55,13 @@ export default function Footer() {
               <div className='mb-5 px-14 sm:ml-10 sm:px-8 md:ml-5'>
                 <div className='py-2'>
                   <div className='text-white'>
-                    <Heading typeStyle={HeadingTypeStyle.smSemibold}>News</Heading>
+                    <Heading typeStyle={HeadingTypeStyle.smSemibold}>Contact Us</Heading>
                   </div>
                 </div>
                 <ul className='justify-center'>
                   <li className='py-2'>
                     <div className='text-base leading-6 text-cool-gray transition duration-300 ease-in-out hover:text-white'>
-                      <a href='mailto:press@asyncapi.io'>Email Us</a>
+                      <a href='mailto:press@asyncapi.io'>Email </a>
                     </div>
                   </li>
                 </ul>
