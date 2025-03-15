@@ -7,6 +7,7 @@ import AsyncAPILogoLight from '../logos/AsyncAPILogoLight';
 import Heading from '../typography/Heading';
 import type { InitiativeLink, SocialMediaLink } from './FooterList';
 import { initiativeLinks, socialMediaLinks } from './FooterList';
+import IconEmail from '../icons/Email'; // ✅ Import the Email Icon
 
 /**
  * @description The Footer component is the footer for the application.
@@ -52,6 +53,7 @@ export default function Footer() {
                 </ul>
               </div>
 
+              {/* ✅ Contact Us Section with Email Us */}
               <div className='mb-5 px-14 sm:ml-10 sm:px-8 md:ml-5'>
                 <div className='py-2'>
                   <div className='text-white'>
@@ -60,9 +62,10 @@ export default function Footer() {
                 </div>
                 <ul className='justify-center'>
                   <li className='py-2'>
-                    <div className='text-base leading-6 text-cool-gray transition duration-300 ease-in-out hover:text-white'>
-                      <a href='mailto:press@asyncapi.io'>Email Us</a>
-                    </div>
+                    <a href='mailto:press@asyncapi.io' className='flex items-center text-base leading-6 text-cool-gray transition duration-300 ease-in-out hover:text-white'>
+                      <IconEmail className="w-5 h-5 mr-2" />  {/* ✅ Email Icon Added */}
+                      <span>Email Us</span>
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -97,8 +100,8 @@ export default function Footer() {
               Made with <span className='font-mono text-secondary-500'>:love:</span> by the AsyncAPI Initiative.
             </p>
             <p className='w-full text-left text-sm leading-6 text-cool-gray sm:w-2/3' data-testid='Footer-copyright'>
-              Copyright &copy; AsyncAPI Project a Series of LF Projects, LLC. For web site terms of use, trademark
-              policy and general project policies please see{' '}
+              Copyright &copy; AsyncAPI Project a Series of LF Projects, LLC. For website terms of use, trademark
+              policy, and general project policies please see{' '}
               <a
                 href='https://lfprojects.org'
                 className='text-secondary-500 underline transition duration-300 ease-in-out hover:text-white'
