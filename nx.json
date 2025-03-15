@@ -1,0 +1,45 @@
+{
+  "extends": "@nrwl/workspace/presets/npm.json",
+  "npmScope": "asyncapi-website",
+  "affected": {
+    "defaultBase": "main"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "test",
+          "lint",
+          "build:pages",
+          "build:posts",
+          "lint:mdx"
+        ],
+        "parallel": 1,
+        "maxMemory": 4096,
+        "runtimeCacheInputs": [
+          "node -v"
+        ]
+      }
+    }
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"]
+    },
+    "build:pages": {
+      "maxRetries": 2
+    },
+    "lint:mdx": {
+      "maxRetries": 2
+    },
+    "build:posts": {
+      "maxRetries": 2
+    }
+  },
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "libs"
+  }
+} 

@@ -1,0 +1,65 @@
+{
+  "name": "asyncapi-website",
+  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": ".",
+  "projectType": "application",
+  "targets": {
+    "build:pages": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/pages"],
+      "options": {
+        "commands": [
+          "node node_modules/.bin/tsx scripts/build-pages.ts"
+        ]
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
+    "lint:mdx": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "commands": [
+          "node node_modules/.bin/remark \"**/*.mdx\""
+        ]
+      },
+      "dependsOn": ["build:pages"]
+    },
+    "build:posts": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/posts"],
+      "options": {
+        "commands": [
+          "node node_modules/.bin/tsx scripts/build-post-list.ts"
+        ]
+      },
+      "dependsOn": ["build:pages", "lint:mdx"]
+    },
+    "build-scripts": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run asyncapi-website:build:pages",
+          "nx run asyncapi-website:lint:mdx",
+          "nx run asyncapi-website:build:posts"
+        ],
+        "parallel": false
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run asyncapi-website:build-scripts",
+          "next build"
+        ],
+        "parallel": false
+      }
+    }
+  },
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*"],
+    "production": ["!{projectRoot}/**/*.test.*"]
+  }
+}
