@@ -1,10 +1,10 @@
-const { convertDocPosts } = require('../../scripts/build-docs.ts');
-const {
+import { convertDocPosts } from '../../scripts/build-docs.ts';
+import {
   docObject,
   emptyDocObject,
   singlePostDocObject,
   nestedChildrenDocObject
-} = require('../fixtures/convertDocPostData');
+} from '../fixtures/convertDocPostData';
 
 describe('convertDocPosts', () => {
   it('should convert a doc object to an array', () => {

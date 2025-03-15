@@ -1,4 +1,5 @@
 import fs from 'fs/promises';
+import he from 'he'; // Updated import
 import json2xml from 'jgexml/json2xml';
 
 import type { Details, Result } from '@/types/scripts/build-posts-list';
@@ -13,25 +14,6 @@ async function getAllPosts() {
   const posts = (await import('../config/posts.json')).default as Result;
 
   return posts;
-}
-
-/**
- * Cleans a string by replacing HTML entities with their corresponding characters.
- *
- * @param {string} s - The string to clean.
- * @returns {string} - The cleaned string.
- */
-function clean(s: string) {
-  let cleanS = s;
-
-  cleanS = cleanS.split('&ltspan&gt').join('');
-  cleanS = cleanS.split('&amp').join('&');
-  cleanS = cleanS.split('&#39;').join("'");
-  cleanS = cleanS.split('&lt;').join('<');
-  cleanS = cleanS.split('&gt;').join('>');
-  cleanS = cleanS.split('&quot;').join('"');
-
-  return cleanS;
 }
 
 /**
@@ -109,7 +91,7 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
       const link = `${base}${post.slug}${tracking}`;
       const { title, excerpt, date } = post;
       const pubDate = new Date(date).toUTCString();
-      const description = clean(excerpt!);
+      const description = he.decode(excerpt!);
       const guid = { '@isPermaLink': true, '': link };
       const item: RSSItemType = {
         title,

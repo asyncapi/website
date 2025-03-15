@@ -192,13 +192,40 @@ const combineTools = async (
             (await Promise.all(manualTools[key].toolsList.map(processManualTool))).filter(Boolean)
           : [];
 
-        finalTools[key].toolsList = [...automatedResults, ...manualResults].sort((tool, anotherTool) =>
-          tool!.title.localeCompare(anotherTool!.title)
-        ) as FinalAsyncAPITool[];
+        finalTools[key].toolsList = [...automatedResults, ...manualResults].sort((tool, anotherTool) => {
+          if (!tool?.title || !anotherTool?.title) {
+            logger.error(
+              `source: combine-tools.ts, tool title is missing. Tool: ${tool} \n AnotherTool: ${anotherTool}`
+            );
+
+            return 0;
+          }
+
+          return tool.title.localeCompare(anotherTool.title);
+        }) as FinalAsyncAPITool[];
       }
     }
-    fs.writeFileSync(toolsPath, JSON.stringify(finalTools));
-    fs.writeFileSync(tagsPath, JSON.stringify({ languages: languageList, technologies: technologyList }));
+    try {
+      fs.writeFileSync(toolsPath, JSON.stringify(finalTools, null, 2));
+      fs.writeFileSync(
+        tagsPath,
+        JSON.stringify(
+          {
+            languages: languageList,
+            technologies: technologyList
+          },
+          null,
+          2
+        )
+      );
+    } catch (error) {
+      throw new Error(
+        'Failed to write output files:\n' +
+          `Tools path: ${toolsPath}\n` +
+          `Tags path: ${tagsPath}\n` +
+          `Error: ${(error as Error).message}`
+      );
+    }
   } catch (err) {
     throw new Error(`Error combining tools: ${err}`);
   }

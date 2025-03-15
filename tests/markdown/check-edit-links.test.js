@@ -1,15 +1,15 @@
-const path = require('path');
-const fetch = require('node-fetch-2');
-const editOptions = require('../../config/edit-page-config.json');
-const {
+import path from 'path';
+import fetch from 'node-fetch-2';
+import editOptions from '../../config/edit-page-config.json';
+import {
   generatePaths,
   processBatch,
   checkUrls,
   determineEditLink,
   main
-} = require('../../scripts/markdown/check-edit-links.ts');
-const { determineEditLinkData, processBatchData, testPaths } = require('../fixtures/markdown/check-edit-links-data');
-const { logger } = require('../../scripts/utils/logger.ts');
+} from '../../scripts/markdown/check-edit-links.ts';
+import { determineEditLinkData, processBatchData, testPaths } from '../fixtures/markdown/check-edit-links-data';
+import { logger } from '../../scripts/utils/logger.ts';
 
 jest.mock('../../scripts/utils/logger', () => ({
   logger: { info: jest.fn() }

@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const { capitalizeJsxTags, copyAndRenameFiles, ensureDirectoryExists } = require('../scripts/build-pages.ts');
+import fs from 'fs';
+import path from 'path';
+import { capitalizeJsxTags, copyAndRenameFiles, ensureDirectoryExists } from '../scripts/build-pages.ts';
 
 describe('capitalizeJsxTags', () => {
   test('should capitalize JSX tags', () => {

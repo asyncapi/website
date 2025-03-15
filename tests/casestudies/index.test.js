@@ -1,7 +1,7 @@
-const fs = require('fs').promises;
-const path = require('path');
-const { buildCaseStudiesList } = require('../../scripts/casestudies/index.ts');
-const { yaml1, yaml2, json1, json2 } = require('../fixtures/caseStudyData');
+import fs from 'fs/promises';
+import path from 'path';
+import { buildCaseStudiesList } from '../../scripts/casestudies/index.ts';
+import { yaml1, yaml2, json1, json2 } from '../fixtures/caseStudyData';
 
 describe('buildCaseStudiesList', () => {
   const tempDir = path.join(__dirname, 'temp-test-dir');

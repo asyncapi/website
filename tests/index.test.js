@@ -1,10 +1,10 @@
-const fs = require('fs');
-const { rssFeed } = require('../scripts/build-rss.ts');
-const { buildPostList } = require('../scripts/build-post-list.ts');
-const { buildCaseStudiesList } = require('../scripts/casestudies/index.ts');
-const { buildAdoptersList } = require('../scripts/adopters/index.ts');
-const { buildFinanceInfoList } = require('../scripts/finance/index.ts');
-const { start } = require('../scripts/index.ts');
+import fs from 'fs';
+import { rssFeed } from '../scripts/build-rss.ts';
+import { buildPostList } from '../scripts/build-post-list.ts';
+import { buildCaseStudiesList } from '../scripts/casestudies/index.ts';
+import { buildAdoptersList } from '../scripts/adopters/index.ts';
+import { buildFinanceInfoList } from '../scripts/finance/index.ts';
+import { start } from '../scripts/index.ts';
 
 jest.mock('../scripts/build-rss');
 jest.mock('../scripts/build-post-list');
