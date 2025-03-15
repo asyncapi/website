@@ -22,3 +22,4 @@ cypress/videos
 /storybook-static/
 coverage
 deno.lock
+.nx
