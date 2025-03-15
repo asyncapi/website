@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Button from '../buttons/Button';
 import GithubButton from '../buttons/GithubButton';
 import SlackButton from '../buttons/SlackButton';
 
@@ -24,11 +23,6 @@ export default function Header() {
         </div>
       </div>
       <div className='mt-3 flex flex-col gap-x-2 gap-y-1 self-end text-center xs:flex-row'>
-        <Button
-          text='Contribution Guide'
-          href='https://github.com/asyncapi?type=source#-contribute-to-asyncapi'
-          target='_blank'
-        />
         <GithubButton text='View on Github' className='lg:mt-0' />
         <SlackButton className='lg:mt-0' />
       </div>

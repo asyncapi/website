@@ -11,6 +11,14 @@ import { initiativeLinks, socialMediaLinks } from './FooterList';
 /**
  * @description The Footer component is the footer for the application.
  */
+
+// FAQ Links
+const faqLinks = [
+  { label: 'General Questions', url: '/faq#general' },
+  { label: 'Getting Started', url: '/faq#getting-started' },
+  { label: 'Technical Support', url: '/faq#technical-support' }
+];
+
 export default function Footer() {
   return (
     <footer className='margin: 0 auto mt-12 bg-dark'>
@@ -43,7 +51,7 @@ export default function Footer() {
                   {initiativeLinks.map((link: InitiativeLink, index: number) => (
                     <li className='py-2' key={index} data-testid='Footer-initiative-links'>
                       <Link href={link.url}>
-                        <span className='text-base leading-6 text-cool-gray transition duration-300 ease-in-out hover:text-white'>
+                        <span className='hover:text-primary text-base leading-6 text-cool-gray transition duration-300 ease-in-out'>
                           {link.label}
                         </span>
                       </Link>
@@ -60,12 +68,32 @@ export default function Footer() {
                 </div>
                 <ul className='justify-center'>
                   <li className='py-2'>
-                    <div className='text-base leading-6 text-cool-gray transition duration-300 ease-in-out hover:text-white'>
+                    <div className='hover:text-primary text-base leading-6 text-cool-gray transition duration-300 ease-in-out'>
                       <a href='mailto:press@asyncapi.io'>Email Us</a>
                     </div>
                   </li>
                 </ul>
               </div>
+            </div>
+
+            {/* FAQ Section */}
+            <div className='mb-5 px-0 sm:ml-5 sm:px-10'>
+              <div className='py-2'>
+                <div className='text-white'>
+                  <Heading typeStyle={HeadingTypeStyle.smSemibold}>FAQs</Heading>
+                </div>
+              </div>
+              <ul className='justify-center'>
+                {faqLinks.map((link, index) => (
+                  <li className='py-2' key={index}>
+                    <Link href={link.url}>
+                      <span className='hover:text-primary text-base leading-6 text-cool-gray transition duration-300 ease-in-out'>
+                        {link.label}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             <div className='mb-5 px-0 sm:ml-5 sm:px-10'>
@@ -78,7 +106,7 @@ export default function Footer() {
                 {socialMediaLinks.map((link: SocialMediaLink, index: number) => (
                   <li className='mr-3 py-2 sm:mr-0' key={index} data-testid='Footer-social-media-links'>
                     <a href={link.url} target='_blank' rel='noopener noreferrer'>
-                      <div className='flex items-center text-cool-gray transition duration-300 ease-in-out hover:text-white'>
+                      <div className='hover:text-primary flex items-center text-cool-gray transition duration-300 ease-in-out'>
                         <span className='sr-only'>{`Follow AsyncAPI on ${link.label}`}</span>
                         {link.icon}
                         <span className='absolute hidden pl-8 pr-5 sm:block'>{link.label}</span>
@@ -101,7 +129,7 @@ export default function Footer() {
               policy and general project policies please see{' '}
               <a
                 href='https://lfprojects.org'
-                className='text-secondary-500 underline transition duration-300 ease-in-out hover:text-white'
+                className='hover:text-primary text-secondary-500 underline transition duration-300 ease-in-out'
                 target='_blank'
                 rel='noopener noreferrer'
               >

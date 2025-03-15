@@ -129,7 +129,7 @@ After cloning repository to your local, perform the following steps from the roo
     ```
 2. Start the container:
     ```bash
-    docker run --rm -it -v "$PWD":/async -p 3000:3000 asyncapi-website
+    docker run --rm -it -p 3000:3000 asyncapi-website
     ```
 
 Now you're running AsyncAPI website in a development mode. Container is mapped with your local copy of the website. Whenever you make changes to the code, the website will refresh and changes visible in localhost:3000.
@@ -406,6 +406,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/raj17ce"><img src="https://avatars.githubusercontent.com/u/116947399?v=4?s=100" width="100px;" alt="Raj Patel"/><br /><sub><b>Raj Patel</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=raj17ce" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/nalindalal"><img src="https://avatars.githubusercontent.com/u/116961144?v=4&size=64" width="100px;" alt="Nalin Dalal"/><br /><sub><b>Nalin Dalal</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=nalindalal" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>

@@ -6,7 +6,7 @@ import IconDashboard from '../icons/Dashboard';
 import IconGithubOrganization from '../icons/GithubOrganization';
 import IconMeetings from '../icons/Meetings';
 import IconNewsroom from '../icons/Newsroom';
-import IconSlack from '../icons/Slack';
+//import IconSlack from '../icons/Slack';
 import IconTSC from '../icons/TSC';
 
 interface CommunityItem {

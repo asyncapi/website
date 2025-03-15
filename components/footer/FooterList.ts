@@ -50,6 +50,11 @@ export interface InitiativeLink {
   label: string;
   url: string;
 }
+export const faqLinks = [
+  { label: 'General Questions', url: '/faq#general' },
+  { label: 'Getting Started', url: '/faq#getting-started' },
+  { label: 'Technical Support', url: '/faq#technical-support' }
+];
 
 export const initiativeLinks: InitiativeLink[] = [
   {
