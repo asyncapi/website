@@ -13,6 +13,11 @@ import BlogContext from '@/context/BlogContext';
 import type { IBlogPost } from '@/types/post';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
+import { makeStaticProps } from '@/utils/getStatic';
+
+const getStaticProps = makeStaticProps(['landing-page', 'footer', 'common', 'component']);
+
+export { getStaticProps };
 
 /**
  * @description The BlogIndexPage is the blog index page of the website.

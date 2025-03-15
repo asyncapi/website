@@ -1,0 +1,39 @@
+{
+    "footer": {
+        "main": {
+            "tagline": "Die Zukunft ereignisgesteuerter Architekturen gestalten.",
+            "Initiative_section": "Die Initiative",
+            "News_section": "Nachricht",
+            "social_section": "Sozial"
+        },
+        "initiative": {
+            "About": "Um",
+            "Blog": "Blog",
+            "Brand": "Marke",
+            "Finance": "Finanzen",
+            "FAQs": "FAQs"
+        },
+        "contact_us": {
+            "email": "Schicken Sie uns eine E-Mail"
+        },
+        "social": {
+            "twitter": "Twitter",
+            "github": "GitHub",
+            "youtube": "Youtube",
+            "slack": "Slack",
+            "twitch": "Twitch"
+        },
+        "projectinfo": {
+            "creator": "Hergestellt mit :love: von der AsyncAPI-Initiative",
+            "legal": "Copyright © AsyncAPI Project, eine Reihe von LF Projects, LLC. Die Nutzungsbedingungen der Website, die Markenrichtlinien und die allgemeinen Projektrichtlinien finden Sie unter"
+        }
+    },
+    "navbar": {
+        "Docs": "Dokumente",
+        "Tools": "Werkzeuge",
+        "Community": "Gemeinschaft",
+        "Case Studies": "Fallstudien",
+        "Blog": "Blog",
+        "Roadmap": "Roadmap"
+    }
+}
