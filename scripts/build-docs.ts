@@ -240,8 +240,12 @@ function addDocButtons(docPosts: Details[], treePosts: NavTree): Details[] {
 
       return docPost;
     });
-  } catch (err) {
-    throw new Error('An error occurred while adding doc buttons:', err as Error);
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      throw new Error(`An error occurred while adding doc buttons: ${err.message}`);
+    } else {
+      throw new Error('An unknown error occurred while adding doc buttons.');
+    }
   }
 
   return structuredPosts;
