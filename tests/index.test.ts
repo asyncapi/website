@@ -36,12 +36,12 @@ describe('start function', () => {
   });
 
   test('should throw an error if no finance data is found', async () => {
-    jest.spyOn(fs, 'readdirSync').mockReturnValue([]);
+    const readdirSyncSpy = jest.spyOn(fs, 'readdirSync').mockReturnValue([]);
 
     await expect(start()).rejects.toThrow('No finance data found in the finance directory.');
 
     expect(buildFinanceInfoList).not.toHaveBeenCalled();
 
-    fs.readdirSync.mockRestore();
+    readdirSyncSpy.mockRestore();
   });
 });
