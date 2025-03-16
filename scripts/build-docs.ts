@@ -145,8 +145,12 @@ const convertDocPosts = (docObject: NavTree | Details): Details[] => {
     }
 
     return docsArray;
-  } catch (err) {
-    throw new Error('Error in convertDocPosts:', err as Error);
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      throw new Error(`Error in convertDocPosts: ${err.message}`);
+    } else {
+      throw new Error('An unknown error occurred in convertDocPosts.');
+    }
   }
 };
 
