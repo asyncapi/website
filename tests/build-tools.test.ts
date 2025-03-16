@@ -80,11 +80,7 @@ describe('buildTools', () => {
   it('should handle getData error', async () => {
     mockedAxios.get.mockRejectedValue(new Error('Extract error'));
 
-    try {
-      await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
-    } catch (err) {
-      expect(err.message).toContain('Extract error');
-    }
+    await expect(buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath)).rejects.toThrow('Extract error');
   });
 
   it('should handle file write errors', async () => {
@@ -92,10 +88,6 @@ describe('buildTools', () => {
 
     const invalidPath = path.resolve(os.tmpdir(), 'invalid_dir', 'tools.json');
 
-    try {
-      await buildTools(invalidPath, manualToolsPath, toolsPath, tagsPath);
-    } catch (err) {
-      expect(err.message).toMatch(/ENOENT|EACCES/);
-    }
+    await expect(buildTools(invalidPath, manualToolsPath, toolsPath, tagsPath)).rejects.toThrow(/ENOENT|EACCES/);
   });
 });
