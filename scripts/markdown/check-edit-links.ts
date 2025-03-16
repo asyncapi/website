@@ -141,8 +141,6 @@ async function generatePaths(
 
         const stats = await fs.stat(filePath);
 
-        /* istanbul ignore else */
-
         if (stats.isDirectory()) {
           await generatePaths(filePath, editOptions, relativeFilePath, result);
         } else if (stats.isFile() && file.endsWith('.md')) {

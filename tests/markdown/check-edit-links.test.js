@@ -1,5 +1,6 @@
 import path from 'path';
 import fetch from 'node-fetch-2';
+import fs from 'fs/promises';
 import editOptions from '../../config/edit-page-config.json';
 import {
   generatePaths,
@@ -66,6 +67,25 @@ describe('URL Checker Tests', () => {
       const paths = await generatePaths(testDir, editOptions);
       const sectionFiles = paths.filter((p) => p.filePath.endsWith('_section.md'));
       expect(sectionFiles.length).toBe(0);
+    });
+
+    it('should skip non-markdown files', async () => {
+      // Create a mock implementation to test the else branch
+      const mockReaddir = jest.spyOn(fs, 'readdir');
+      const mockStat = jest.spyOn(fs, 'stat');
+
+      mockReaddir.mockImplementationOnce(() => Promise.resolve(['test.js', 'test.md']));
+      mockStat.mockImplementationOnce(() => Promise.resolve({ isDirectory: () => false, isFile: () => true }));
+      mockStat.mockImplementationOnce(() => Promise.resolve({ isDirectory: () => false, isFile: () => true }));
+
+      const result = await generatePaths(testDir, editOptions);
+
+      // Only the markdown file should be included, not the js file
+      expect(result.length).toBe(1);
+      expect(result[0].filePath.endsWith('.md')).toBe(true);
+
+      mockReaddir.mockRestore();
+      mockStat.mockRestore();
     });
 
     it('should handle errors gracefully', async () => {
