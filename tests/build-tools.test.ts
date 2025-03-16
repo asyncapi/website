@@ -7,6 +7,9 @@ import { buildTools } from '../scripts/build-tools';
 import { manualTools, mockConvertedData, mockExtractData, tagsData } from './fixtures/buildToolsData';
 
 jest.mock('axios');
+// Add this line to properly type the mocked axios
+const mockedAxios = axios as jest.Mocked<typeof axios>;
+
 jest.mock('../scripts/tools/categorylist', () => ({
   categoryList: [
     { name: 'Category1', description: 'Description for Category1' },
@@ -31,7 +34,7 @@ describe('buildTools', () => {
   const tagsPath = resolve(testDir, 'all-tags.json');
   const automatedToolsPath = resolve(testDir, 'tools-automated.json');
   const manualToolsPath = resolve(testDir, 'tools-manual.json');
-  let consoleErrorMock;
+  let consoleErrorMock: jest.SpyInstance;
 
   beforeAll(() => {
     consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});
@@ -54,7 +57,7 @@ describe('buildTools', () => {
   });
 
   it('should extract, convert, combine tools, and write to file', async () => {
-    axios.get.mockResolvedValue({ data: mockExtractData });
+    mockedAxios.get.mockResolvedValue({ data: mockExtractData });
 
     await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
 
@@ -75,7 +78,7 @@ describe('buildTools', () => {
   });
 
   it('should handle getData error', async () => {
-    axios.get.mockRejectedValue(new Error('Extract error'));
+    mockedAxios.get.mockRejectedValue(new Error('Extract error'));
 
     try {
       await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
@@ -85,7 +88,7 @@ describe('buildTools', () => {
   });
 
   it('should handle file write errors', async () => {
-    axios.get.mockResolvedValue({ data: mockExtractData });
+    mockedAxios.get.mockResolvedValue({ data: mockExtractData });
 
     const invalidPath = path.resolve(os.tmpdir(), 'invalid_dir', 'tools.json');
 

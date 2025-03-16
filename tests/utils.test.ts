@@ -18,8 +18,12 @@ describe('convertToJson', () => {
     try {
       convertToJson(invalidString);
       expect(convertToJson(invalidString)).toBeUndefined();
-    } catch (error) {
-      expect(error.message.includes('Invalid content format')).toBeTruthy();
+    } catch (err) {
+      if (err instanceof Error) {
+        expect(err.message.includes('Invalid content format')).toBeTruthy();
+      } else {
+        throw new Error('Unexpected error type');
+      }
     }
   });
 });
