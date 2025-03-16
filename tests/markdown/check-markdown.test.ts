@@ -1,14 +1,15 @@
 import { promises as fs } from 'fs';
-import path from 'path';
 import os from 'os';
+import path from 'path';
+
 import {
+  checkMarkdownFiles,
   isValidURL,
   main,
   validateBlogs,
-  validateDocs,
-  checkMarkdownFiles
-} from '../../scripts/markdown/check-markdown.ts';
-import { logger } from '../../scripts/utils/logger.ts';
+  validateDocs
+} from '../../scripts/markdown/check-markdown';
+import { logger } from '../../scripts/utils/logger';
 
 jest.mock('../../scripts/utils/logger', () => ({
   logger: { error: jest.fn(), warn: jest.fn() }
@@ -42,6 +43,7 @@ describe('Frontmatter Validator', () => {
     };
 
     const errors = validateBlogs(frontmatter);
+
     expect(errors).toEqual(
       expect.arrayContaining([
         'Author at index 0 is missing a photo',
@@ -54,13 +56,14 @@ describe('Frontmatter Validator', () => {
   it('validates docs frontmatter for required fields', async () => {
     const frontmatter = { title: 123, weight: 'not-a-number' };
     const errors = validateDocs(frontmatter);
+
     expect(errors).toEqual(
       expect.arrayContaining(['Title is missing or not a string', 'Weight is missing or not a number'])
     );
   });
 
   it('checks for errors in markdown files in a directory', async () => {
-    await fs.writeFile(path.join(tempDir, 'invalid.md'), `---\ntitle: Invalid Blog\n---`);
+    await fs.writeFile(path.join(tempDir, 'invalid.md'), '---\ntitle: Invalid Blog\n---');
     const mockConsoleLog = jest.spyOn(console, 'log').mockImplementation();
 
     await checkMarkdownFiles(tempDir, validateBlogs);
@@ -98,8 +101,9 @@ describe('Frontmatter Validator', () => {
 
   it('skips the "reference/specification" folder during validation', async () => {
     const referenceSpecDir = path.join(tempDir, 'reference', 'specification');
+
     await fs.mkdir(referenceSpecDir, { recursive: true });
-    await fs.writeFile(path.join(referenceSpecDir, 'skipped.md'), `---\ntitle: Skipped File\n---`);
+    await fs.writeFile(path.join(referenceSpecDir, 'skipped.md'), '---\ntitle: Skipped File\n---');
 
     const mockLoggerWarn = jest.spyOn(logger, 'warn').mockImplementation();
 
@@ -112,12 +116,13 @@ describe('Frontmatter Validator', () => {
 
   it('logs and rejects when an exception occurs while processing a file', async () => {
     const filePath = path.join(tempDir, 'invalid.md');
-    await fs.writeFile(filePath, `---\ntitle: Valid Title\n---`);
+
+    await fs.writeFile(filePath, '---\ntitle: Valid Title\n---');
 
     const mockReadFile = jest.spyOn(fs, 'readFile').mockRejectedValue(new Error('Test readFile error'));
 
     await expect(checkMarkdownFiles(tempDir, validateBlogs)).rejects.toThrow('Test readFile error');
-    expect(logger.error).toHaveBeenCalledWith(expect.stringContaining(`Error in directory`), expect.any(Error));
+    expect(logger.error).toHaveBeenCalledWith(expect.stringContaining('Error in directory'), expect.any(Error));
 
     mockReadFile.mockRestore();
   });
@@ -149,6 +154,7 @@ describe('Frontmatter Validator', () => {
 
   it('should throw an error if frontmatter is missing', () => {
     const errors = validateBlogs(undefined);
+
     expect(errors).toEqual(['Frontmatter is missing']);
   });
 });

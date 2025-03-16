@@ -76,4 +76,4 @@ const mockExtractData = {
   ]
 };
 
-export { tagsData, manualTools, mockConvertedData, mockExtractData };
+export { manualTools, mockConvertedData, mockExtractData, tagsData };

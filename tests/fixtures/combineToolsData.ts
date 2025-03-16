@@ -207,21 +207,21 @@ const finalToolWithMissingData = {
 };
 
 export {
-  expectedDataT1,
-  manualToolsWithMissingData,
-  manualToolsToSort,
-  automatedToolsT5,
   automatedToolsT4,
-  manualToolsT4,
+  automatedToolsT5,
   automatedToolsT6,
   automatedToolsT7,
   automatedToolsT8,
-  manualToolsT8,
   automatedToolsT9,
-  manualToolsT9,
-  circularTool,
   automatedToolsT12,
+  circularTool,
+  expectedDataT1,
+  finalToolWithMissingData,
   invalidAutomatedToolsT10,
+  manualToolsT4,
+  manualToolsT8,
+  manualToolsT9,
+  manualToolsToSort,
   manualToolsWithInvalidURLT11,
-  finalToolWithMissingData
+  manualToolsWithMissingData
 };

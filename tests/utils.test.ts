@@ -1,5 +1,5 @@
-import { convertToJson } from '../scripts/utils.ts';
-import { jsonString, yamlString, jsonObject, invalidString } from './fixtures/utilsData';
+import { convertToJson } from '../scripts/utils';
+import { invalidString, jsonObject, jsonString, yamlString } from './fixtures/utilsData';
 
 describe('convertToJson', () => {
   test('should return JSON object if input is valid JSON string', () => {

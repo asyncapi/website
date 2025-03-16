@@ -23,4 +23,4 @@ const nestedChildrenDocObject = {
   }
 };
 
-export { docObject, emptyDocObject, singlePostDocObject, nestedChildrenDocObject };
+export { docObject, emptyDocObject, nestedChildrenDocObject, singlePostDocObject };

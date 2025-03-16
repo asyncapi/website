@@ -1,7 +1,8 @@
+import { XMLParser } from 'fast-xml-parser';
 import fs from 'fs';
 import path from 'path';
-import { XMLParser } from 'fast-xml-parser';
-import { rssFeed } from '../scripts/build-rss.ts';
+
+import { rssFeed } from '../scripts/build-rss';
 
 const parser = new XMLParser({ ignoreAttributes: false });
 const { mockRssData, title, type, desc, missingDateMockData, incompletePostMockData } = require('./fixtures/rssData');
@@ -21,6 +22,7 @@ describe('rssFeed', () => {
   afterAll(async () => {
     try {
       const files = await fs.promises.readdir(testOutputDir);
+
       await Promise.all(files.map((file) => fs.promises.unlink(path.join(testOutputDir, file))));
       await fs.promises.rmdir(testOutputDir);
     } catch (err) {
@@ -38,8 +40,10 @@ describe('rssFeed', () => {
     await expect(rssFeed(type, title, desc, outputPath)).resolves.toBeUndefined();
 
     const filePath = path.join(__dirname, '..', 'public', outputPath);
+
     expect(fs.existsSync(filePath)).toBe(true);
     const fileContent = fs.readFileSync(filePath, 'utf8');
+
     expect(fileContent).toContain('<rss version="2.0"');
   });
 
@@ -120,12 +124,14 @@ describe('rssFeed', () => {
 
   it('should handle empty posts array', async () => {
     const emptyMockData = { blog: [] };
+
     jest.doMock('../config/posts.json', () => emptyMockData, { virtual: true });
 
     await expect(rssFeed(type, title, desc, outputPath)).resolves.toBeUndefined();
 
     const filePath = path.join(__dirname, '..', 'public', outputPath);
     const fileContent = fs.readFileSync(filePath, 'utf8');
+
     expect(fileContent).toContain('<rss version="2.0"');
     expect(fileContent).not.toContain('<item>');
   });

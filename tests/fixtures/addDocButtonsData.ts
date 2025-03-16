@@ -36,4 +36,4 @@ const mockTreePosts = {
 
 const invalidTreePosts = ['tree1', 'tree2', 'tree3', 'tree4'];
 
-export { docPosts, treePosts, mockDocPosts, mockTreePosts, invalidTreePosts };
+export { docPosts, invalidTreePosts, mockDocPosts, mockTreePosts, treePosts };

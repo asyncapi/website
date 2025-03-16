@@ -1,26 +1,27 @@
 import fs from 'fs';
 import path from 'path';
-import { combineTools, getFinalTool } from '../../scripts/tools/combine-tools.ts';
+
+import { combineTools, getFinalTool } from '../../scripts/tools/combine-tools';
+import { logger } from '../../scripts/utils/logger';
 import {
-  expectedDataT1,
-  manualToolsWithMissingData,
-  manualToolsToSort,
-  automatedToolsT5,
   automatedToolsT4,
-  manualToolsT4,
+  automatedToolsT5,
   automatedToolsT6,
   automatedToolsT7,
   automatedToolsT8,
-  manualToolsT8,
   automatedToolsT9,
-  manualToolsT9,
   automatedToolsT12,
-  invalidAutomatedToolsT10,
-  manualToolsWithInvalidURLT11,
   circularTool,
-  finalToolWithMissingData
+  expectedDataT1,
+  finalToolWithMissingData,
+  invalidAutomatedToolsT10,
+  manualToolsT4,
+  manualToolsT8,
+  manualToolsT9,
+  manualToolsToSort,
+  manualToolsWithInvalidURLT11,
+  manualToolsWithMissingData
 } from '../fixtures/combineToolsData';
-import { logger } from '../../scripts/utils/logger.ts';
 
 jest.mock('../../scripts/utils/logger', () => ({
   logger: { error: jest.fn() }
@@ -90,9 +91,11 @@ describe('combineTools function', () => {
     await combineTools(automatedTools, manualTools, toolsPath, tagsPath);
 
     const combinedTools = readJSON(toolsPath);
+
     expect(combinedTools).toHaveProperty('category1');
 
     const tagsData = readJSON(tagsPath);
+
     expect(tagsData).toHaveProperty('languages');
     expect(tagsData).toHaveProperty('technologies');
     expect(tagsData).toEqual(expectedDataT1);
@@ -102,6 +105,7 @@ describe('combineTools function', () => {
     await combineTools({}, manualToolsWithMissingData, toolsPath, tagsPath);
 
     const combinedTools = readJSON(toolsPath);
+
     expect(combinedTools).toHaveProperty('category1');
   });
 
@@ -110,6 +114,7 @@ describe('combineTools function', () => {
 
     const combinedTools = readJSON(toolsPath);
     const toolTitles = combinedTools.category1.toolsList.map((tool) => tool.title);
+
     expect(toolTitles).toEqual(['Tool A', 'Tool Z']);
   });
 
@@ -139,6 +144,7 @@ describe('combineTools function', () => {
     expect(tool.filters.language).toContainEqual(expect.objectContaining({ name: 'NewLanguage' }));
 
     const tagsData = readJSON(tagsPath);
+
     expect(tagsData.languages).toContainEqual(expect.objectContaining({ name: 'NewLanguage' }));
   });
 
@@ -155,6 +161,7 @@ describe('combineTools function', () => {
     expect(tool.filters.technology).toContainEqual(expect.objectContaining({ name: 'NewTechnology' }));
 
     const tagsData = readJSON(tagsPath);
+
     expect(tagsData.languages).toContainEqual({
       name: 'NewLanguage',
       color: 'bg-[#57f281]',
@@ -177,6 +184,7 @@ describe('combineTools function', () => {
     expect(tool.filters.language).toContainEqual(expect.objectContaining({ name: 'Go' }));
 
     const tagsData = readJSON(tagsPath);
+
     expect(tagsData.languages).toContainEqual({
       name: 'Go',
       color: 'bg-[#57f281]',
@@ -188,6 +196,7 @@ describe('combineTools function', () => {
     await combineTools(automatedToolsT8, manualToolsT8, toolsPath, tagsPath);
 
     const tagsData = readJSON(tagsPath);
+
     expect(tagsData.languages).toContainEqual({
       name: 'JavaScript',
       color: 'bg-[#57f281]',
@@ -211,6 +220,7 @@ describe('combineTools function', () => {
 
   it('should throw an error when fs.writeFileSync fails', async () => {
     const invalidPath = 'this/is/not/valid';
+
     await expect(combineTools(automatedTools, manualTools, invalidPath, invalidPath)).rejects.toThrow(/ENOENT|EACCES/);
   });
 
@@ -238,6 +248,7 @@ describe('combineTools function', () => {
       hasCommercial: false
     };
     const result = await getFinalTool(manualToolsWithMissingData);
+
     expect(result).toEqual(finalToolWithMissingData);
   });
 });

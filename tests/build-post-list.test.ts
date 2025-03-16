@@ -1,7 +1,8 @@
 import fs from 'fs-extra';
-import { resolve, join } from 'path';
-import { setupTestDirectories, generateTempDirPath } from './helper/buildPostListSetup';
-import { buildPostList, slugifyToC, addItem } from '../scripts/build-post-list.ts';
+import { join, resolve } from 'path';
+
+import { addItem, buildPostList, slugifyToC } from '../scripts/build-post-list';
+import { generateTempDirPath, setupTestDirectories } from './helper/buildPostListSetup';
 
 describe('buildPostList', () => {
   let tempDir;
@@ -27,12 +28,14 @@ describe('buildPostList', () => {
   it('writes the file successfully', async () => {
     await buildPostList(postDirectories, tempDir, writeFilePath);
     const outputExists = await fs.pathExists(writeFilePath);
+
     expect(outputExists).toBe(true);
   });
 
   it('writes valid JSON content', async () => {
     await buildPostList(postDirectories, tempDir, writeFilePath);
     const content = await fs.readFile(writeFilePath, 'utf-8');
+
     expect(() => JSON.parse(content)).not.toThrow();
   });
 
@@ -85,6 +88,7 @@ describe('buildPostList', () => {
     expect(output.docsTree).toBeDefined();
 
     const blogEntry = output.blog.find((item) => item.slug === '/blog/release-notes-2.1.0');
+
     expect(blogEntry).toBeDefined();
     expect(blogEntry.title).toBe('Release Notes 2.1.0');
   });
@@ -101,6 +105,7 @@ describe('buildPostList', () => {
     const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
 
     const sectionEntry = output.docs.find((item) => item.title === 'Section 1');
+
     expect(sectionEntry).toMatchObject({
       title: 'Section 1',
       slug: expect.stringContaining('/docs/section1'),
@@ -130,6 +135,7 @@ describe('buildPostList', () => {
 
   it('throws an error when accessing non-existent directory', async () => {
     const invalidDir = [join(tempDir, 'non-existent-dir'), '/invalid'];
+
     await expect(buildPostList([invalidDir], tempDir, writeFilePath)).rejects.toThrow(
       /Error while building post list:/
     );
@@ -137,6 +143,7 @@ describe('buildPostList', () => {
 
   it('does not process specification files without a title', async () => {
     const specDir = join(tempDir, 'docs', 'reference', 'specification');
+
     await fs.writeFile(join(specDir, 'v2.1.0-no-title.mdx'), '---\n---\nContent of specification without a title.');
 
     await buildPostList(postDirectories, tempDir, writeFilePath);
@@ -149,6 +156,7 @@ describe('buildPostList', () => {
 
   it('does not process specification files with "next-spec" in the filename', async () => {
     const specDir = join(tempDir, 'docs', 'reference', 'specification');
+
     await fs.writeFile(
       join(specDir, 'v2.1.0-next-spec.1.mdx'),
       '---\n---\nContent of pre-release specification v2.1.0-next-spec.1.'
@@ -164,6 +172,7 @@ describe('buildPostList', () => {
 
   it('does not process specification files with "explorer" in the filename', async () => {
     const specDir = join(tempDir, 'docs', 'reference', 'specification');
+
     await fs.writeFile(join(specDir, 'explorer.mdx'), '---\n---\nContent of explorer specification.');
 
     await buildPostList(postDirectories, tempDir, writeFilePath);
@@ -208,11 +217,13 @@ describe('buildPostList', () => {
   describe('slugifyToC', () => {
     it('handles heading ids like {# myHeadingId}', () => {
       const input = '## My Heading {#custom-id}';
+
       expect(slugifyToC(input)).toBe('custom-id');
     });
 
     it('handles heading ids like {<a name="myHeadingId"/>}', () => {
       const input = '## My Heading {<a name="custom-anchor-id"/>}';
+
       expect(slugifyToC(input)).toBe('custom-anchor-id');
     });
 

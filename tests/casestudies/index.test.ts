@@ -1,7 +1,8 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { buildCaseStudiesList } from '../../scripts/casestudies/index.ts';
-import { yaml1, yaml2, json1, json2 } from '../fixtures/caseStudyData';
+
+import { buildCaseStudiesList } from '../../scripts/casestudies/index';
+import { json1, json2, yaml1, yaml2 } from '../fixtures/caseStudyData';
 
 describe('buildCaseStudiesList', () => {
   const tempDir = path.join(__dirname, 'temp-test-dir');
@@ -21,6 +22,7 @@ describe('buildCaseStudiesList', () => {
   beforeEach(async () => {
     // Clear the config directory before each test
     const files = await fs.readdir(tempConfigDir);
+
     await Promise.all(files.map((file) => fs.unlink(path.join(tempConfigDir, file))));
   });
 
@@ -65,6 +67,7 @@ describe('buildCaseStudiesList', () => {
     const invalidYaml = `
     invalid: yaml: content
     `;
+
     await fs.writeFile(path.join(tempConfigDir, 'invalid.yml'), invalidYaml);
 
     try {

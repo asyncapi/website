@@ -90,4 +90,4 @@ const title = 'Test Blog RSS';
 const desc = 'Test blog RSS feed';
 const outputPath = 'test-output/blog.xml';
 
-export { mockRssData, title, type, desc, outputPath, missingDateMockData, incompletePostMockData };
+export { desc, incompletePostMockData, missingDateMockData, mockRssData, outputPath, title, type };

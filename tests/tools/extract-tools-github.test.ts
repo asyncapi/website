@@ -1,6 +1,7 @@
 import axios from 'axios';
-import { getData } from '../../scripts/tools/extract-tools-github.ts';
-import { logger } from '../../scripts/utils/logger.ts';
+
+import { getData } from '../../scripts/tools/extract-tools-github';
+import { logger } from '../../scripts/utils/logger';
 
 jest.mock('../../scripts/utils/logger', () => ({
   logger: { info: jest.fn() }
@@ -82,6 +83,7 @@ describe('getData', () => {
 
   it('should throw an error when API call fails', async () => {
     const mockError = new Error('Error');
+
     axios.get.mockRejectedValue(mockError);
 
     await expect(getData()).rejects.toThrow('Error');

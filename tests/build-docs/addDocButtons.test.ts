@@ -1,5 +1,5 @@
-import { addDocButtons } from '../../scripts/build-docs.ts';
-import { docPosts, treePosts, mockDocPosts, mockTreePosts, invalidTreePosts } from '../fixtures/addDocButtonsData';
+import { addDocButtons } from '../../scripts/build-docs';
+import { docPosts, invalidTreePosts, mockDocPosts, mockTreePosts, treePosts } from '../fixtures/addDocButtonsData';
 
 describe('addDocButtons', () => {
   it('should add next and previous page information', () => {

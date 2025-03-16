@@ -1,9 +1,10 @@
 import axios from 'axios';
-import path, { resolve } from 'path';
 import fs from 'fs-extra';
 import os from 'os';
-import { tagsData, manualTools, mockConvertedData, mockExtractData } from './fixtures/buildToolsData';
-import { buildTools } from '../scripts/build-tools.ts';
+import path, { resolve } from 'path';
+
+import { buildTools } from '../scripts/build-tools';
+import { manualTools, mockConvertedData, mockExtractData, tagsData } from './fixtures/buildToolsData';
 
 jest.mock('axios');
 jest.mock('../scripts/tools/categorylist', () => ({

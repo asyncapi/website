@@ -70,4 +70,4 @@ const issues = [
   }
 ];
 
-export { issues, mockDiscussion, discussionWithMoreComments, fullDiscussionDetails, mockRateLimitResponse };
+export { discussionWithMoreComments, fullDiscussionDetails, issues, mockDiscussion, mockRateLimitResponse };

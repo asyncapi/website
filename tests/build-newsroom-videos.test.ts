@@ -1,9 +1,10 @@
-import { readFileSync, removeSync, mkdirpSync, outputFileSync } from 'fs-extra';
-import { resolve, join } from 'path';
+import { mkdirpSync, outputFileSync, readFileSync, removeSync } from 'fs-extra';
 import fetch from 'node-fetch-2';
 import os from 'os';
-import { buildNewsroomVideos } from '../scripts/build-newsroom-videos.ts';
-import { mockApiResponse, expectedResult } from './fixtures/newsroomData';
+import { join, resolve } from 'path';
+
+import { buildNewsroomVideos } from '../scripts/build-newsroom-videos';
+import { expectedResult, mockApiResponse } from './fixtures/newsroomData';
 
 jest.mock('node-fetch-2', () => jest.fn());
 
@@ -34,6 +35,7 @@ describe('buildNewsroomVideos', () => {
     const result = await buildNewsroomVideos(testFilePath);
 
     const expectedUrl = new URL('https://youtube.googleapis.com/youtube/v3/search');
+
     expectedUrl.searchParams.set('key', 'testkey');
     expectedUrl.searchParams.set('part', 'snippet');
     expectedUrl.searchParams.set('channelId', 'UCIz9zGwDLbrYQcDKVXdOstQ');
@@ -44,6 +46,7 @@ describe('buildNewsroomVideos', () => {
 
     expect(fetch).toHaveBeenCalledWith(expectedUrl.toString());
     const response = readFileSync(testFilePath, 'utf8');
+
     expect(response).toEqual(expectedResult);
     expect(result).toEqual(expectedResult);
   });

@@ -1,6 +1,7 @@
 import { resolve } from 'path';
-import { writeJSON } from '../../scripts/utils/readAndWriteJson.ts';
-import { buildAdoptersList } from '../../scripts/adopters/index.ts';
+
+import { buildAdoptersList } from '../../scripts/adopters/index';
+import { writeJSON } from '../../scripts/utils/readAndWriteJson';
 
 jest.mock('../../scripts/utils/readAndWriteJson.ts');
 

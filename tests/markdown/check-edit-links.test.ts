@@ -1,15 +1,16 @@
-import path from 'path';
 import fetch from 'node-fetch-2';
+import path from 'path';
+
 import editOptions from '../../config/edit-page-config.json';
 import {
-  generatePaths,
-  processBatch,
   checkUrls,
   determineEditLink,
-  main
-} from '../../scripts/markdown/check-edit-links.ts';
+  generatePaths,
+  main,
+  processBatch
+} from '../../scripts/markdown/check-edit-links';
+import { logger } from '../../scripts/utils/logger';
 import { determineEditLinkData, processBatchData, testPaths } from '../fixtures/markdown/check-edit-links-data';
-import { logger } from '../../scripts/utils/logger.ts';
 
 jest.mock('../../scripts/utils/logger', () => ({
   logger: { info: jest.fn() }
@@ -28,6 +29,7 @@ describe('URL Checker Tests', () => {
         determineEditLinkData[0].filePath,
         editOptions
       );
+
       expect(result).toBe(determineEditLinkData[0].editLink);
     });
 
@@ -37,6 +39,7 @@ describe('URL Checker Tests', () => {
         determineEditLinkData[1].filePath,
         editOptions
       );
+
       expect(result).toBe(determineEditLinkData[1].editLink);
     });
     it('should generate correct edit link for docs with a config', () => {
@@ -45,6 +48,7 @@ describe('URL Checker Tests', () => {
         determineEditLinkData[2].filePath,
         editOptions
       );
+
       expect(result).toBe(determineEditLinkData[2].editLink);
     });
   });
@@ -54,6 +58,7 @@ describe('URL Checker Tests', () => {
 
     it('should generate correct paths for markdown files', async () => {
       const paths = await generatePaths(testDir, editOptions);
+
       expect(Array.isArray(paths)).toBe(true);
       paths.forEach((pathObj) => {
         expect(pathObj).toHaveProperty('filePath');
@@ -65,11 +70,13 @@ describe('URL Checker Tests', () => {
     it('should skip _section.md files', async () => {
       const paths = await generatePaths(testDir, editOptions);
       const sectionFiles = paths.filter((p) => p.filePath.endsWith('_section.md'));
+
       expect(sectionFiles.length).toBe(0);
     });
 
     it('should handle errors gracefully', async () => {
       const invalidDir = path.join(__dirname, 'nonexistent');
+
       await expect(generatePaths(invalidDir, editOptions)).rejects.toThrow();
     });
   });
@@ -80,6 +87,7 @@ describe('URL Checker Tests', () => {
     it('should process valid URLs correctly', async () => {
       fetch.mockImplementation(() => Promise.resolve({ status: 200 }));
       const results = await processBatch(testBatch);
+
       expect(results.filter((r) => r !== null).length).toBe(0);
     });
 
@@ -87,6 +95,7 @@ describe('URL Checker Tests', () => {
       fetch.mockImplementation(() => Promise.resolve({ status: 404 }));
       const results = await processBatch(testBatch);
       const validResults = results.filter((r) => r !== null);
+
       expect(validResults.length).toBe(2);
       expect(validResults[0].editLink).toBe(testBatch[0].editLink);
     });
@@ -105,9 +114,11 @@ describe('URL Checker Tests', () => {
           editLink: 'https://github.com/org/repo/edit/main/v2.x.md'
         }
       ];
+
       fetch.mockImplementation(() => Promise.resolve({ status: 404 }));
       const results = await processBatch(batchWithIgnored);
       const validResults = results.filter((r) => r !== null);
+
       expect(validResults.length).toBe(2);
     });
 
@@ -126,6 +137,7 @@ describe('URL Checker Tests', () => {
     it('should process all URLs in batches', async () => {
       fetch.mockImplementation(() => Promise.resolve({ status: 200 }));
       const results = await checkUrls(testPaths);
+
       expect(results.length).toBe(0);
       expect(fetch).toHaveBeenCalledTimes(10);
     });
@@ -137,6 +149,7 @@ describe('URL Checker Tests', () => {
         });
       });
       const results = await checkUrls(testPaths);
+
       expect(results.length).toBe(2);
     });
   });

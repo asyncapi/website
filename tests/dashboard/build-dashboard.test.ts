@@ -1,25 +1,25 @@
 import { graphql } from '@octokit/graphql';
-import { promises as fs, mkdirSync, rmSync } from 'fs-extra';
-import { resolve } from 'path';
+import { mkdirSync, promises as fs, rmSync } from 'fs-extra';
 import os from 'os';
-import {
-  getLabel,
-  mapGoodFirstIssues,
-  getHotDiscussions,
-  getDiscussionByID,
-  writeToFile,
-  getDiscussions,
-  start
-} from '../../scripts/dashboard/build-dashboard.ts';
+import { resolve } from 'path';
 
 import {
-  issues,
-  mockDiscussion,
+  getDiscussionByID,
+  getDiscussions,
+  getHotDiscussions,
+  getLabel,
+  mapGoodFirstIssues,
+  start,
+  writeToFile
+} from '../../scripts/dashboard/build-dashboard';
+import { logger } from '../../scripts/utils/logger';
+import {
   discussionWithMoreComments,
   fullDiscussionDetails,
+  issues,
+  mockDiscussion,
   mockRateLimitResponse
 } from '../fixtures/dashboardData';
-import { logger } from '../../scripts/utils/logger.ts';
 
 jest.mock('../../scripts/utils/logger', () => ({
   logger: { error: jest.fn(), warn: jest.fn() }
@@ -73,6 +73,7 @@ describe('GitHub Discussions Processing', () => {
     });
 
     const firstResult = result[0];
+
     expect(firstResult.score).toBeGreaterThan(0);
   });
 
@@ -82,7 +83,7 @@ describe('GitHub Discussions Processing', () => {
     await getDiscussions('test-query', 10);
 
     expect(logger.warn).toHaveBeenCalledWith(
-      expect.stringContaining(`GitHub GraphQL rateLimit \ncost = 1\nlimit = 5000\nremaining = 50`)
+      expect.stringContaining('GitHub GraphQL rateLimit \ncost = 1\nlimit = 5000\nremaining = 50')
     );
   });
 
@@ -106,6 +107,7 @@ describe('GitHub Discussions Processing', () => {
     graphql.mockResolvedValueOnce(mockFirstResponse).mockResolvedValueOnce(mockSecondResponse);
 
     const result = await getDiscussions('test-query', 10);
+
     expect(result).toHaveLength(2);
   });
 
@@ -113,6 +115,7 @@ describe('GitHub Discussions Processing', () => {
     graphql.mockRejectedValue(new Error('Complete API failure'));
 
     const filePath = resolve(tempDir, 'error-output.json');
+
     await start(filePath);
     expect(logger.error).toHaveBeenCalledWith('There were some issues parsing data from github.');
   });
@@ -121,9 +124,11 @@ describe('GitHub Discussions Processing', () => {
     graphql.mockResolvedValue(mockRateLimitResponse);
 
     const filePath = resolve(tempDir, 'success-output.json');
+
     await start(filePath);
 
     const content = JSON.parse(await fs.readFile(filePath, 'utf-8'));
+
     expect(content).toHaveProperty('hotDiscussions');
     expect(content).toHaveProperty('goodFirstIssues');
   });
@@ -132,12 +137,14 @@ describe('GitHub Discussions Processing', () => {
     const issue = {
       labels: { nodes: [{ name: 'area/bug' }, { name: 'good first issue' }] }
     };
+
     expect(getLabel(issue, 'area/')).toBe('bug');
     expect(getLabel(issue, 'nonexistent/')).toBeUndefined();
   });
 
   it('should map good first issues', async () => {
     const result = await mapGoodFirstIssues(issues);
+
     expect(result[0]).toMatchObject({
       id: '1',
       area: 'docs'
@@ -175,6 +182,7 @@ describe('GitHub Discussions Processing', () => {
   it('should handle discussion retrieval', async () => {
     graphql.mockResolvedValueOnce({ node: mockDiscussion });
     const result = await getDiscussionByID(false, 'test-id');
+
     expect(result.node).toBeDefined();
 
     graphql.mockRejectedValueOnce(new Error('API error'));
@@ -192,6 +200,7 @@ describe('GitHub Discussions Processing', () => {
     };
 
     const result = await getHotDiscussions([mockDiscussion, prDiscussion]);
+
     expect(result.length).toBeLessThanOrEqual(12);
   });
 
@@ -206,13 +215,16 @@ describe('GitHub Discussions Processing', () => {
     };
 
     const result = await getHotDiscussions([prDiscussion]);
+
     expect(result[0].score).toBeGreaterThan(0);
   });
 
   it('should write to file', async () => {
     const filePath = resolve(tempDir, 'test.json');
+
     await writeToFile({ test: true }, filePath);
     const content = JSON.parse(await fs.readFile(filePath, 'utf-8'));
+
     expect(content).toEqual({ test: true });
   });
 

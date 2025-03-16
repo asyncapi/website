@@ -1,10 +1,11 @@
 import fs from 'fs';
-import { rssFeed } from '../scripts/build-rss.ts';
-import { buildPostList } from '../scripts/build-post-list.ts';
-import { buildCaseStudiesList } from '../scripts/casestudies/index.ts';
-import { buildAdoptersList } from '../scripts/adopters/index.ts';
-import { buildFinanceInfoList } from '../scripts/finance/index.ts';
-import { start } from '../scripts/index.ts';
+
+import { buildAdoptersList } from '../scripts/adopters/index';
+import { buildPostList } from '../scripts/build-post-list';
+import { rssFeed } from '../scripts/build-rss';
+import { buildCaseStudiesList } from '../scripts/casestudies/index';
+import { buildFinanceInfoList } from '../scripts/finance/index';
+import { start } from '../scripts/index';
 
 jest.mock('../scripts/build-rss');
 jest.mock('../scripts/build-post-list');

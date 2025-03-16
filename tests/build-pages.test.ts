@@ -1,17 +1,20 @@
 import fs from 'fs';
 import path from 'path';
-import { capitalizeJsxTags, copyAndRenameFiles, ensureDirectoryExists } from '../scripts/build-pages.ts';
+
+import { capitalizeJsxTags, copyAndRenameFiles, ensureDirectoryExists } from '../scripts/build-pages';
 
 describe('capitalizeJsxTags', () => {
   test('should capitalize JSX tags', () => {
     const input = '<table><tr><td>Hello</td></tr></table>';
     const output = '<Table><Tr><Td>Hello</Td></Tr></Table>';
+
     expect(capitalizeJsxTags(input)).toBe(output);
   });
 
   test('should not capitalize non-JSX tags', () => {
     const input = '<div>Hello</div>';
     const output = '<div>Hello</div>';
+
     expect(capitalizeJsxTags(input)).toBe(output);
   });
 });
@@ -27,6 +30,7 @@ describe('copyAndRenameFiles', () => {
     fs.mkdirSync(TARGET_DIR, { recursive: true });
 
     const fileContent = '<table><tr><td>Hello</td></tr></table>';
+
     fs.writeFileSync(path.join(SRC_DIR, 'test.md'), fileContent, 'utf8');
     fs.mkdirSync(path.join(SRC_DIR, 'nested'), { recursive: true });
     fs.writeFileSync(path.join(SRC_DIR, 'nested', 'nested.md'), fileContent, 'utf8');

@@ -1,7 +1,8 @@
 import fs from 'fs';
 import path from 'path';
-import { buildFinanceInfoList } from '../../scripts/finance/index.ts';
-import { expensesYaml, expensesLinkYaml, expensesjson, expensesLinkjson } from '../fixtures/financeData';
+
+import { buildFinanceInfoList } from '../../scripts/finance/index';
+import { expensesjson, expensesLinkjson, expensesLinkYaml, expensesYaml } from '../fixtures/financeData';
 
 describe('buildFinanceInfoList', () => {
   const testDir = path.resolve(__dirname, 'test-finance-info');
@@ -87,6 +88,7 @@ describe('buildFinanceInfoList', () => {
     const invalidYaml = `
       invalid yaml content
     `;
+
     fs.writeFileSync(path.resolve(testDir, configDir, financeDir, year, 'InvalidExpenses.yml'), invalidYaml);
 
     try {

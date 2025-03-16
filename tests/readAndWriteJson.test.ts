@@ -1,7 +1,8 @@
 import fs from 'fs/promises';
-import { convertToJson } from '../scripts/utils.ts';
-import { writeJSON } from '../scripts/utils/readAndWriteJson.ts';
-import { yamlString, jsonObject } from './fixtures/utilsData';
+
+import { convertToJson } from '../scripts/utils';
+import { writeJSON } from '../scripts/utils/readAndWriteJson';
+import { jsonObject, yamlString } from './fixtures/utilsData';
 
 jest.mock('fs/promises', () => ({
   readFile: jest.fn(),

@@ -22,4 +22,4 @@ const expectedContent = [
   }
 ];
 
-export { mockEvents, expectedContent };
+export { expectedContent, mockEvents };

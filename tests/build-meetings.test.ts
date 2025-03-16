@@ -1,8 +1,9 @@
+import { mkdirSync, readFileSync, rmSync } from 'fs';
 import { google } from 'googleapis';
 import path from 'path';
-import { readFileSync, mkdirSync, rmSync } from 'fs';
-import { buildMeetings } from '../scripts/build-meetings.ts';
-import { mockEvents, expectedContent } from './fixtures/meetingsData';
+
+import { buildMeetings } from '../scripts/build-meetings';
+import { expectedContent, mockEvents } from './fixtures/meetingsData';
 
 jest.mock('googleapis', () => {
   const events = {
@@ -19,6 +20,7 @@ jest.mock('googleapis', () => {
       }))
     }
   };
+
   return { google: mockGoogle };
 });
 
@@ -83,6 +85,7 @@ describe('buildMeetings', () => {
     });
 
     const fileContent = readFileSync(outputFilePath, 'utf8');
+
     expect(fileContent).toBe('[]');
   });
 
@@ -116,6 +119,7 @@ describe('buildMeetings', () => {
 
   it('should throw an error if the data structure received from Google Calendar API is invalid', async () => {
     const mockCalendar = google.calendar().events.list;
+
     mockCalendar.mockResolvedValueOnce({
       data: {
         items: null // or {} or any non-array value to trigger the error
@@ -129,6 +133,7 @@ describe('buildMeetings', () => {
 
   it('should throw an error if start.dateTime is missing in the event', async () => {
     const mockCalendar = google.calendar().events.list;
+
     mockCalendar.mockResolvedValueOnce({
       data: {
         items: [

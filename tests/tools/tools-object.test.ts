@@ -1,13 +1,14 @@
 import axios from 'axios';
-import { convertTools, createToolObject } from '../../scripts/tools/tools-object.ts';
+
+import { convertTools, createToolObject } from '../../scripts/tools/tools-object';
 import {
-  createToolFileContent,
   createExpectedToolObject,
+  createMalformedYAML,
   createMockData,
-  createMalformedYAML
+  createToolFileContent
 } from '../helper/toolsObjectData';
 
-const { logger } = require('../../scripts/utils/logger.ts');
+const { logger } = require('../../scripts/utils/logger');
 
 jest.mock('../../scripts/utils/logger', () => ({
   logger: { warn: jest.fn(), error: jest.fn() }
@@ -29,7 +30,9 @@ describe('Tools Object', () => {
 
   const mockToolData = (toolContent, toolNames = ['valid-tool']) => {
     const mockData = createMockData(toolNames.map((name) => ({ name: `.asyncapi-tool-${name}`, repoName: name })));
+
     axios.get.mockResolvedValue({ data: toolContent });
+
     return mockData;
   };
 
@@ -67,8 +70,10 @@ describe('Tools Object', () => {
       hasCommercial: true,
       additionalLinks: { docsUrl: 'https://docs.example.com' }
     });
+
     expected.filters.isAsyncAPIOwner = '';
     const result = await createToolObject(toolFile);
+
     expect(result).toEqual(expected);
   });
 
@@ -157,6 +162,7 @@ describe('Tools Object', () => {
 
   it('should handle malformed JSON in tool file', async () => {
     const malformedContent = createMalformedYAML();
+
     await expect(convertTools(malformedContent)).rejects.toThrow();
   });
 

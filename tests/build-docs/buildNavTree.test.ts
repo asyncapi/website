@@ -1,5 +1,4 @@
-import { buildNavTree } from '../../scripts/build-docs.ts';
-
+import { buildNavTree } from '../../scripts/build-docs';
 import navData from '../fixtures/buildNavTreeData';
 
 const {
@@ -113,11 +112,13 @@ describe('buildNavTree', () => {
     const result = buildNavTree(multipleSubsectionsNavItems);
 
     const apiChildren = result.reference.children.api.children;
+
     expect(apiChildren[0].title).toBe('Authentication');
     expect(apiChildren[1].title).toBe('Endpoints');
     expect(apiChildren[2].title).toBe('Rate Limiting');
 
     const specChildren = result.reference.children.specification.children;
+
     expect(specChildren[0].title).toBe('v1.0');
     expect(specChildren[1].title).toBe('v2.0');
     expect(specChildren[2].title).toBe('v3.0');
