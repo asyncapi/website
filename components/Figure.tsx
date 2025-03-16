@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Float } from '@/types/components/FigurePropsType';
 
 import Caption from './Caption';
@@ -39,7 +38,13 @@ export default function Figure({ src, caption, widthClass, className, float, alt
   return (
     <figure className={`${className} ${floatClassNames} ${widthClass || 'w-full'}`} data-testid='Figure-div'>
       <div className='flex flex-col'>
-        <img className={`${imageClass}`} src={src} alt={alt} data-testid='Figure-img' />
+        <img 
+          className={`${imageClass}`} 
+          src={src} 
+          alt={alt} 
+          data-testid='Figure-img'
+          loading="lazy"
+        />
         {caption && <Caption>{caption}</Caption>}
       </div>
     </figure>

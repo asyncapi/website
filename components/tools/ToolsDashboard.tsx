@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { createRef, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { createRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
 import type { ToolsListData } from '@/types/components/tools/ToolDataType';
 
@@ -29,108 +29,97 @@ export default function ToolsDashboard() {
   const [searchName, setSearchName] = useState<string>(''); // state variable used to get the search name
   const [checkToolsList, setCheckToolsList] = useState<boolean>(true); // state variable used to check whether any tool is available according to the needs of the user.
 
-  // useEffect function to enable the close Modal feature when clicked outside of the modal
+  const handleClickOutsideFilter = useCallback((event: MouseEvent) => {
+    if (openFilter && filterRef.current && !filterRef.current.contains(event.target as Node)) {
+      setOpenFilter(false);
+    }
+  }, [openFilter]);
+
+  const handleClickOutsideCategory = useCallback((event: MouseEvent) => {
+    if (openCategory && categoryRef.current && !categoryRef.current.contains(event.target as Node)) {
+      setopenCategory(false);
+    }
+  }, [openCategory]);
+
   useEffect(() => {
-    const checkIfClickOutside = (event: MouseEvent) => {
-      if (openFilter && filterRef.current && !filterRef.current.contains(event.target as Node)) {
-        setOpenFilter(false);
-      }
-    };
-
-    document.addEventListener('mousedown', checkIfClickOutside);
-
+    document.addEventListener('mousedown', handleClickOutsideFilter);
     return () => {
-      document.removeEventListener('mousedown', checkIfClickOutside);
+      document.removeEventListener('mousedown', handleClickOutsideFilter);
     };
-  });
+  }, [handleClickOutsideFilter]);
 
-  // useEffect function to enable the close Category dropdown Modal feature when clicked outside of the modal
   useEffect(() => {
-    const checkIfClickOutside = (event: MouseEvent) => {
-      if (openCategory && categoryRef.current && !categoryRef.current.contains(event.target as Node)) {
-        setopenCategory(false);
-      }
-    };
-
-    document.addEventListener('mousedown', checkIfClickOutside);
-
+    document.addEventListener('mousedown', handleClickOutsideCategory);
     return () => {
-      document.removeEventListener('mousedown', checkIfClickOutside);
+      document.removeEventListener('mousedown', handleClickOutsideCategory);
     };
-  });
+  }, [handleClickOutsideCategory]);
 
-  // useMemo function to filter the tools according to the filters applied by the user
-  const toolsList = useMemo(() => {
-    let tempToolsList: ToolsListData = {};
-
-    // Tools data list is first filtered according to the category filter if applied by the user.
-    // Hence if any category is selected, then only respective tools will be selected for further check on filters
-    if (categories.length > 0) {
-      for (const category of categories) {
-        // eslint-disable-next-line @typescript-eslint/no-loop-func
+  const filterToolsByCategory = useCallback((tempToolsList: ToolsListData, selectedCategories: string[]) => {
+    if (selectedCategories.length > 0) {
+      const filteredTools: ToolsListData = {};
+      for (const category of selectedCategories) {
         Object.keys(ToolsData).forEach((key) => {
           if (key === category) {
-            tempToolsList[key] = JSON.parse(JSON.stringify(ToolsData[key]));
+            filteredTools[key] = JSON.parse(JSON.stringify(ToolsData[key]));
           }
         });
       }
-    } else {
-      // if no category is selected, then all tools are selected for further check on filters
-      tempToolsList = JSON.parse(JSON.stringify(ToolsData));
+      return filteredTools;
+    }
+    return JSON.parse(JSON.stringify(ToolsData));
+  }, []);
+
+  const checkToolFilters = useCallback((tool: any) => {
+    let isLanguageTool = true;
+    let isTechnologyTool = true;
+    let isSearchTool = true;
+    let isAsyncAPITool = true;
+    let isPaidTool = true;
+
+    if (languages.length) {
+      isLanguageTool = false;
+      for (const language of languages) {
+        if (tool?.filters?.language && tool.filters.language.find((item: any) => item.name === language)) {
+          isLanguageTool = true;
+        }
+      }
     }
 
-    // checkToolsList is initially made false to check whether any tools are present according to the filters.
+    if (technologies.length) {
+      isTechnologyTool = false;
+      for (const technology of technologies) {
+        if (tool?.filters?.technology && tool.filters.technology.find((item: any) => item.name === technology)) {
+          isTechnologyTool = true;
+        }
+      }
+    }
+
+    if (searchName) {
+      isSearchTool = tool.title.toLowerCase().includes(searchName.toLowerCase());
+    }
+
+    if (isAsyncAPIOwner) {
+      isAsyncAPITool = tool.filters.isAsyncAPIOwner === isAsyncAPIOwner;
+    }
+
+    if (isPaid !== 'all') {
+      if (isPaid === 'free') {
+        isPaidTool = tool.filters.hasCommercial === false;
+      } else {
+        isPaidTool = tool.filters.hasCommercial === true;
+      }
+    }
+
+    return isLanguageTool && isTechnologyTool && isSearchTool && isAsyncAPITool && isPaidTool;
+  }, [languages, technologies, searchName, isAsyncAPIOwner, isPaid]);
+
+  const toolsList = useMemo(() => {
+    let tempToolsList = filterToolsByCategory({}, categories);
     setCheckToolsList(false);
 
-    // Each tool selected is then traversed to check against each filter variable (only if the filter is applied),
-    // whether they match with the filter applied or not.
     Object.keys(tempToolsList).forEach((category) => {
-      tempToolsList[category].toolsList = tempToolsList[category].toolsList.filter((tool) => {
-        // These are filter check variables for respective filters, which are initially made true.
-        // If the particular filter is applied by the user, the respective check variable is made false first,
-        // and then tool parameters are checked against the filter variable value to decide if it matches the filter criteria or not.
-        let isLanguageTool = true;
-        let isTechnologyTool = true;
-        let isSearchTool = true;
-        let isAsyncAPITool = true;
-        let isPaidTool = true;
-
-        if (languages.length) {
-          isLanguageTool = false;
-          for (const language of languages) {
-            if (tool?.filters?.language && tool.filters.language.find((item) => item.name === language)) {
-              isLanguageTool = true;
-            }
-          }
-        }
-
-        if (technologies.length) {
-          isTechnologyTool = false;
-          for (const technology of technologies) {
-            if (tool?.filters?.technology && tool.filters.technology.find((item) => item.name === technology)) {
-              isTechnologyTool = true;
-            }
-          }
-        }
-
-        if (searchName) {
-          isSearchTool = tool.title.toLowerCase().includes(searchName.toLowerCase());
-        }
-
-        if (isAsyncAPIOwner) {
-          isAsyncAPITool = tool.filters.isAsyncAPIOwner === isAsyncAPIOwner;
-        }
-
-        if (isPaid !== 'all') {
-          if (isPaid === 'free') {
-            isPaidTool = tool.filters.hasCommercial === false;
-          } else {
-            isPaidTool = tool.filters.hasCommercial === true;
-          }
-        }
-
-        return isLanguageTool && isTechnologyTool && isSearchTool && isAsyncAPITool && isPaidTool;
-      });
+      tempToolsList[category].toolsList = tempToolsList[category].toolsList.filter(checkToolFilters);
 
       if (tempToolsList[category].toolsList.length) {
         setCheckToolsList(true);
@@ -144,7 +133,7 @@ export default function ToolsDashboard() {
     });
 
     return tempToolsList;
-  }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, searchName]);
+  }, [categories, checkToolFilters, filterToolsByCategory]);
 
   // useEffect to scroll to the opened category when url has category as element id
   useEffect(() => {
