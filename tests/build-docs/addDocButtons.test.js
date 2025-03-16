@@ -88,4 +88,26 @@ describe('addDocButtons', () => {
     }
     expect(error).toBeDefined();
   });
+
+  it('should handle non-Error object thrown in the function', () => {
+    // Create a mock treePosts object that will cause a non-Error to be thrown
+    const malformedTreePosts = { section1: {} };
+
+    // Make section1 throw a non-Error when accessed
+    Object.defineProperty(malformedTreePosts, 'section1', {
+      get() {
+        // eslint-disable-next-line no-throw-literal
+        throw 'String exception';
+      }
+    });
+
+    let error;
+    try {
+      addDocButtons(docPosts, malformedTreePosts);
+    } catch (err) {
+      error = err;
+      expect(err.message).toBe('An unknown error occurred while adding doc buttons.');
+    }
+    expect(error).toBeDefined();
+  });
 });

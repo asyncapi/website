@@ -184,4 +184,21 @@ describe('Tools Object', () => {
     expect(toolObject.description).toBe(repositoryDescription);
     expect(toolObject.title).toBe('No Description Tool');
   });
+
+  it('should throw a generic error when the error object is not an Error instance', async () => {
+    const mockData = createMockData([
+      {
+        name: '.asyncapi-tool-error',
+        repoName: 'error-tool'
+      }
+    ]);
+
+    // Mock axios.get to throw a non-Error object
+    axios.get.mockImplementation(() => {
+      // eslint-disable-next-line no-throw-literal
+      throw 'This is a string error, not an Error object';
+    });
+
+    await expect(convertTools(mockData)).rejects.toThrow('An unexpected error occurred');
+  });
 });

@@ -144,8 +144,12 @@ async function convertTools(data: ToolsData) {
     );
 
     return finalToolsObject;
-  } catch (err) {
-    throw new Error(`Error processing tool: ${err}`);
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      throw new Error(`Error processing tool: ${err.message}`);
+    } else {
+      throw new Error('An unexpected error occurred');
+    }
   }
 }
 

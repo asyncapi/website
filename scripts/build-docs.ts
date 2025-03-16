@@ -149,7 +149,7 @@ const convertDocPosts = (docObject: NavTree | Details): Details[] => {
     if (err instanceof Error) {
       throw new Error(`Error in convertDocPosts: ${err.message}`);
     } else {
-      throw new Error('An unknown error occurred in convertDocPosts.');
+      throw new Error(`Error in convertDocPosts: Unknown error - ${String(err)}`);
     }
   }
 };
