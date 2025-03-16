@@ -202,7 +202,8 @@ const config: Config = {
         'body-lg': ['18px', '1.625']
       },
       screens: {
-        xs: '475px'
+        xs: '475px',
+        'custom-lg': '1128px',
       }
     }
   },

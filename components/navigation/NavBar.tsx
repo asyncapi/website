@@ -156,7 +156,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
           </div>
         )}
 
-        <div className='-my-2 -mr-2 flex flex-row items-center justify-center lg:hidden' data-testid='Navbar-search'>
+        <div className='-my-2 -mr-2 flex flex-row items-center justify-center custom-lg:hidden' data-testid='Navbar-search'>
           <SearchButton
             className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
             aria-label='Open Search'
@@ -176,7 +176,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
         </div>
 
         <nav
-          className='hidden w-full space-x-4 lg:flex lg:items-center lg:justify-end xl:space-x-8'
+          className='hidden w-full space-x-4 custom-lg:flex lg:items-center lg:justify-end xl:space-x-8'
           data-testid='Navbar-main'
         >
           <div className='relative' onMouseLeave={() => showMenu(null)} ref={learningRef}>
