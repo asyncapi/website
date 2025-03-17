@@ -78,6 +78,11 @@ abbr[title] {
   height: auto !important;
 }
 
+/* adjusting margin to avoid jerk on DocsSearch modal*/
+.DocSearch--active{
+  margin-right: 16px;
+}
+
 /* adjust DocsSearch input styles */
 .DocSearch-Input {
   border-width: 0;
