@@ -46,6 +46,33 @@ describe('copyAndRenameFiles', () => {
     expect(nestedTargetFile).toBe('<Table><Tr><Td>Hello</Td></Tr></Table>');
   });
 
+  test('should not rename files with extensions other than .md', () => {
+    const fileContent = '<div>Hello</div>';
+    const testFile = path.join(SRC_DIR, 'test.txt');
+    const targetFile = path.join(TARGET_DIR, 'test.txt');
+    fs.writeFileSync(testFile, fileContent, 'utf8');
+
+    copyAndRenameFiles(SRC_DIR, TARGET_DIR);
+
+    expect(fs.existsSync(targetFile)).toBe(true);
+    expect(fs.readFileSync(targetFile, 'utf8')).toBe('<div>Hello</div>');
+    fs.unlinkSync(targetFile);
+  });
+
+  test('should handle non-directory and non-file entries', () => {
+    const nonDirectoryNonFile = {
+      name: 'test',
+      isDirectory: () => false,
+      isFile: () => false
+    };
+    const { readdirSync } = fs;
+    fs.readdirSync = () => [nonDirectoryNonFile];
+
+    copyAndRenameFiles(SRC_DIR, TARGET_DIR);
+
+    fs.readdirSync = readdirSync;
+  });
+
   test('should create a directory if it does not exist', () => {
     const NEW_TEST_DIR = 'testDir';
 
