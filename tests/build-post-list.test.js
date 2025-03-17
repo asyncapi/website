@@ -205,6 +205,24 @@ describe('buildPostList', () => {
     expect(() => addItem(undefined)).toThrow('Invalid details object provided to addItem');
   });
 
+  it('does not add item when slug does not match any section', () => {
+    // Define finalResult
+    const finalResult = { blog: [], docs: [], about: [] };
+
+    // Get the initial state of finalResult
+    const initialBlogs = JSON.parse(JSON.stringify(finalResult.blog));
+    const initialDocs = JSON.parse(JSON.stringify(finalResult.docs));
+    const initialAbout = JSON.parse(JSON.stringify(finalResult.about));
+
+    // Add an item with a slug that doesn't match any section
+    addItem({ slug: '/unknown/path', title: 'Unknown Item' });
+
+    // Verify no changes were made to any section arrays
+    expect(finalResult.blog).toEqual(initialBlogs);
+    expect(finalResult.docs).toEqual(initialDocs);
+    expect(finalResult.about).toEqual(initialAbout);
+  });
+
   describe('slugifyToC', () => {
     it('handles heading ids like {# myHeadingId}', () => {
       const input = '## My Heading {#custom-id}';
