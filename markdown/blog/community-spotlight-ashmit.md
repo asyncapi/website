@@ -1,6 +1,6 @@
 ---
 title: "From Mentee to Maintainer: The Ashmit GSoC Story!"
-date: 2025-03-10T06:00:00+01:00
+date: 2025-03-17T06:00:00+01:00
 type: Communication
 tags:
   - Interview
