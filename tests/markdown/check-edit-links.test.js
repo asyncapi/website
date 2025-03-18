@@ -48,6 +48,15 @@ describe('URL Checker Tests', () => {
       );
       expect(result).toBe(determineEditLinkData[2].editLink);
     });
+
+    it('should return null when no matching target is found', () => {
+      const result = determineEditLink(
+        'some/nonexistent/path',
+        'some/nonexistent/file.md',
+        [] // Empty edit options to ensure no match
+      );
+      expect(result).toBe(null);
+    });
   });
 
   describe('generatePaths', () => {

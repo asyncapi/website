@@ -108,7 +108,6 @@ function determineEditLink(
   }
 
   // For other cases with specific targets
-  /* istanbul ignore next */
   return target ? `${target.href}/${path.basename(filePath)}` : null;
 }
 
