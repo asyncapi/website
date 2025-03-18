@@ -10,7 +10,7 @@ authors:
     photo: /img/avatars/bami.webp
     link: https://www.linkedin.com/in/atinuke-oluwabamikemi-kayode-5b838b1b7/
     byline: AsyncAPI Community Marketing Specialist
-excerpt: 'AsyncAPI's marketing efforts saw steady growth, increased engagement, and a stronger community presence. Looking ahead, we aim to amplify impact and expand outreach.'
+excerpt: "AsyncAPI's marketing efforts saw steady growth, increased engagement, and a stronger community presence. Looking ahead, we aim to amplify impact and expand outreach."
 ---
 
 AsyncAPI’s marketing efforts over the past three months have focused on expanding community reach, driving awareness for key initiatives, and solidifying our position in the API and open-source ecosystem.
