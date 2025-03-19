@@ -63,7 +63,7 @@ async function getDiscussions(
       first: pageSize,
       after: endCursor,
       headers: {
-        authorization: `token ${process.env.GITHUB_TOKEN}`
+        authorization: `Bearer ${process.env.GITHUB_TOKEN}`
       }
     });
 
@@ -104,7 +104,7 @@ async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequest
     const result: PullRequestById | IssueById = await graphql(isPR ? Queries.pullRequestById : Queries.issueById, {
       id,
       headers: {
-        authorization: `token ${process.env.GITHUB_TOKEN}`
+        authorization: `Bearer ${process.env.GITHUB_TOKEN}`
       }
     });
 
