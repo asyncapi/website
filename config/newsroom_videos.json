@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/vO6Gy6_0O6A/hqdefault.jpg",
+    "title": "AsyncAPI Marketing Working Group Meeting, March 18th 2025",
+    "description": "https://github.com/asyncapi/community/issues/1754.",
+    "videoId": "vO6Gy6_0O6A"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/R7pl1F2dYLo/hqdefault.jpg",
     "title": "Google Summer Of Code 2025 Experience",
     "description": "Thinking about joining us for GSoC 2025 but not sure where to start? In this stream, I'll break down everything—from finding the ...",
@@ -22,11 +28,5 @@
     "title": "AsyncAPI Community Working Group Meeting, February 25th 2025",
     "description": "https://github.com/asyncapi/community/issues/1713.",
     "videoId": "IM2znJZsp1E"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/Y_bSIy0xdvM/hqdefault.jpg",
-    "title": "AsyncAPI Design Meeting",
-    "description": "https://github.com/asyncapi/community/issues/1705.",
-    "videoId": "Y_bSIy0xdvM"
   }
 ]
