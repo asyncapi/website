@@ -8,10 +8,8 @@ import {
   getDiscussionByID,
   writeToFile,
   getDiscussions,
-  start,
-  processHotDiscussions,
-  pause
-} from './build-dashboard.js'; // Adjust the import path as necessary
+  start
+} from './build-dashboard';// Adjust the import path as necessary
 
 const {
   issues,

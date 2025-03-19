@@ -35,7 +35,7 @@ const handler: Handler = async function (event: HandlerEvent) {
            }
         }`,
         headers: {
-          authorization: `token ${process.env.GITHUB_TOKEN_CREATE_DISCUSSION}`
+          authorization: `Bearer ${process.env.GITHUB_TOKEN_CREATE_DISCUSSION}`
         }
       });
       const { url } = createDiscussion.createDiscussion.discussion;
