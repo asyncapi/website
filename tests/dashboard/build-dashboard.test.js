@@ -81,17 +81,12 @@ describe('GitHub Discussions Processing', () => {
 
     await getDiscussions('test-query', 10);
 
-<<<<<<< HEAD
     expect(console.log).toHaveBeenCalledWith(
       '[WARNING] GitHub GraphQL rateLimit',
       'cost = 1',
       'limit = 5000',
       'remaining = 50',
       expect.any(String)
-=======
-    expect(logger.warn).toHaveBeenCalledWith(
-      expect.stringContaining(`GitHub GraphQL rateLimit \ncost = 1\nlimit = 5000\nremaining = 50`)
->>>>>>> master
     );
   });
 
