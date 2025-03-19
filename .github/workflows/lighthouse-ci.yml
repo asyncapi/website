@@ -65,24 +65,23 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const result = ${{ steps.lighthouse_audit.outputs.manifest }}[0].summary
-            const links = ${{ steps.lighthouse_audit.outputs.links }}
-            const formatResult = (res) => Math.round((res * 100))
-            Object.keys(result).forEach(key => result[key] = formatResult(result[key]))
-            const score = res => res >= 90 ? '🟢' : res >= 50 ? '🟠' : '🔴'
+            const result = JSON.parse(steps.lighthouse_audit.outputs.manifest).categories;
+            const links = JSON.parse(steps.lighthouse_audit.outputs.links);
+            const formatResult = (res) => Math.round(res * 100);
+            const score = (res) => res >= 90 ? '🟢' : res >= 50 ? '🟠' : '🔴';
             const comment = [
-                `⚡️ [Lighthouse report](${Object.values(links)[0]}) for the changes in this PR:`,
+                `⚡️ [Lighthouse report](${links[0]}) for the changes in this PR:`,
                 '| Category | Score |',
                 '| --- | --- |',
-                `| ${score(result.performance)} Performance | ${result.performance} |`,
-                `| ${score(result.accessibility)} Accessibility | ${result.accessibility} |`,
-                `| ${score(result['best-practices'])} Best practices | ${result['best-practices']} |`,
-                `| ${score(result.seo)} SEO | ${result.seo} |`,
-                `| ${score(result.pwa)} PWA | ${result.pwa} |`,
+                `| ${score(result.performance.score)} Performance | ${formatResult(result.performance.score)} |`,
+                `| ${score(result.accessibility.score)} Accessibility | ${formatResult(result.accessibility.score)} |`,
+                `| ${score(result['best-practices'].score)} Best practices | ${formatResult(result['best-practices'].score)} |`,
+                `| ${score(result.seo.score)} SEO | ${formatResult(result.seo.score)} |`,
+                `| ${score(result.pwa.score)} PWA | ${formatResult(result.pwa.score)} |`,
                 ' ',
-                `*Lighthouse ran on [${Object.keys(links)[0]}](${Object.keys(links)[0]})*`
-            ].join('\n')
-             core.setOutput("comment", comment);
+                `*Lighthouse ran on [${links[0]}](${links[0]})*`
+            ].join('\n');
+            core.setOutput("comment", comment);
 
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: LightHouse Statistic Comment
