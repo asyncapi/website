@@ -54,9 +54,10 @@ jobs:
             https://deploy-preview-$PR_NUMBER--asyncapi-website.netlify.app/
           configPath: ./.github/workflows/lighthouserc.json
           uploadArtifacts: true
+          artifactName: lighthouse_results # Updated artifact name to a valid format
           temporaryPublicStorage: true
         env:
-          PR_NUMBER: ${{ github.event.pull_request.number}}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
 
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Lighthouse Score Report
