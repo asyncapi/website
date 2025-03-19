@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "AsyncAPI website",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "npm run build-scripts && next dev",
     "build": "npm run build-scripts && next build",
