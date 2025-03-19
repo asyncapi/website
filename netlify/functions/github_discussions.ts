@@ -26,21 +26,18 @@ const handler: Handler = async function (event: HandlerEvent) {
 
     try {
       // eslint-disable-next-line function-paren-newline
-      const createDiscussion: GraphQlQueryResponseData = await graphql(
-        `mutation {
+      const createDiscussion = await graphql({
+        query: `mutation {
             createDiscussion(input:{repositoryId:"${repositoryID}", categoryId:"${categoryID}", title:"${title}", body:"${feedback}"}){
              discussion{
                url
              }
            }
         }`,
-        {
-          owner: 'asyncapi',
-          repo: 'community',
-          headers: {
-            authorization: `token ${process.env.GITHUB_TOKEN_CREATE_DISCUSSION}`
-          }
-        });
+        headers: {
+          authorization: `token ${process.env.GITHUB_TOKEN_CREATE_DISCUSSION}`
+        }
+      });
       const { url } = createDiscussion.createDiscussion.discussion;
 
       return {
