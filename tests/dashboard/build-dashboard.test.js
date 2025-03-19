@@ -1,7 +1,8 @@
-import { graphql } from '@octokit/graphql';
-import { promises as fs } from 'fs-extra';
-import { resolve } from 'path';
-import {
+const { graphql } = require('@octokit/graphql');
+const fs = require('fs-extra').promises;
+const { resolve } = require('path');
+
+const {
   getLabel,
   mapGoodFirstIssues,
   getHotDiscussions,
@@ -9,7 +10,7 @@ import {
   writeToFile,
   getDiscussions,
   start
-} from './build-dashboard';// Adjust the import path as necessary
+} = require('./build-dashboard');// Adjust the import path as necessary
 
 const {
   issues,
