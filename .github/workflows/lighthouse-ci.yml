@@ -48,7 +48,7 @@ jobs:
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Lighthouse Audit
         id: lighthouse_audit
-        uses: treosh/lighthouse-ci-action@03becbfc543944dd6e7534f7ff768abb8a296826 #version 10.1 https://github.com/treosh/lighthouse-ci-action/releases/tag/10.1.0
+        uses: treosh/lighthouse-ci-action@v12
         with:
           urls: |
             https://deploy-preview-$PR_NUMBER--asyncapi-website.netlify.app/
@@ -61,7 +61,7 @@ jobs:
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Lighthouse Score Report
         id: lighthouse_score_report
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -87,7 +87,7 @@ jobs:
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: LightHouse Statistic Comment
         id: lighthouse_statistic_comment
-        uses: marocchino/sticky-pull-request-comment@efaaab3fd41a9c3de579aba759d2552635e590fd # version 2.8 https://github.com/marocchino/sticky-pull-request-comment/releases/tag/v2.8.0
+        uses: marocchino/sticky-pull-request-comment@v3.0
         with:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           number: ${{ github.event.pull_request.number }}

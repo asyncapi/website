@@ -4,7 +4,8 @@
         "assertions": {
           "categories:accessibility": ["error", {"minScore": 0.98}],
           "categories:best-practices": ["error", {"minScore": 0.92}],
-          "categories:seo": ["error", {"minScore": 1.00}]
+          "categories:seo": ["error", {"minScore": 1.00}],
+          "categories:performance": ["error", {"minScore": 0.90}]
         }
       },
       "collect": {
@@ -15,7 +16,8 @@
             "tap-targets",
             "is-crawlable",
             "works-offline",
-            "offline-start-url"
+            "offline-start-url",
+            "uses-http2"
           ]
         }
       }
