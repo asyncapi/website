@@ -1,11 +1,25 @@
-import { graphql } from '@octokit/graphql';
-import { promises as fs } from 'fs-extra';
-import { resolve } from 'path';
+const { graphql } = require('@octokit/graphql');
+const fs = require('fs-extra').promises;
+const { resolve } = require('path');
+const { 
+  getLabel,
+  mapGoodFirstIssues,
+  getHotDiscussions,
+  getDiscussionByID,
+  writeToFile,
+  getDiscussions,
+  start
+} = require('./build-dashboard');
 
-import { getLabel, mapGoodFirstIssues, getHotDiscussions, getDiscussionByID, writeToFile, getDiscussions, start } from './build-dashboard';// Adjust the import path as necessary
 
-import { issues, mockDiscussion, discussionWithMoreComments, fullDiscussionDetails, mockRateLimitResponse } from '../fixtures/dashboardData';
-import { logger } from '../../scripts/utils/logger.ts';
+const { 
+  issues, 
+  mockDiscussion, 
+  discussionWithMoreComments, 
+  fullDiscussionDetails, 
+  mockRateLimitResponse 
+} = require('../fixtures/dashboardData');
+const { logger } = require('../../scripts/utils/logger.ts');
 
 jest.mock('../../scripts/utils/logger', () => ({
   logger: { error: jest.fn(), warn: jest.fn() }
@@ -18,13 +32,13 @@ describe('GitHub Discussions Processing', () => {
   let consoleErrorSpy;
   let consoleLogSpy;
 
-  beforeAll(() => {
+  beforeAll(async () => {
     tempDir = resolve(process.cwd(), 'test-config'); // Adjust tempDir as needed
-    fs.mkdir(tempDir, { recursive: true });
+   await fs.mkdir(tempDir, { recursive: true });
   });
 
-  afterAll(() => {
-    fs.rm(tempDir, { recursive: true, force: true });
+  afterAll(async() => {
+   await fs.rm(tempDir, { recursive: true, force: true });
   });
 
   beforeEach(() => {
