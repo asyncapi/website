@@ -2,8 +2,8 @@ import { useRouter } from 'next/router';
 import React, { createRef, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
 import type { ToolsListData } from '@/types/components/tools/ToolDataType';
-
 import { processToolsData } from '@/utils/processToolsData';
+
 import ToolFilter, { ToolFilterContext } from '../../context/ToolFilterContext';
 import ArrowDown from '../icons/ArrowDown';
 import Cross from '../icons/Cross';
