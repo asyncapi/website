@@ -20,8 +20,8 @@ const SharePopup = ({closeSharePop,posttitle}:SharePopupProps) => {
 
   }
   return (
-    <div className=' fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 z-50 flex items-center justify-center' >
-    <div className=" p-2 absolute top-1/2 left-1/2 -translate-x-1/2 bottom-4 bg-white w-[300px] rounded-lg shadow-lg">
+    <div className=' fixed top-0 left-0 w-full h-full bg-gray-800/80 z-50 flex items-center justify-center' >
+    <div className=" md:scale-125 p-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:-translate-y-[20%] bg-white w-[300px] rounded-lg shadow-lg">
       <section className='flex justify-between  p-2 items-center border-b border-gray-200'>
         <h3 className='text-2xl font-bold'>Share</h3>
         <button className='text-3xl' onClick={()=>closeSharePop()}>&#215;</button>
