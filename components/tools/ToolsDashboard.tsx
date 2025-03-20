@@ -3,7 +3,7 @@ import React, { createRef, useContext, useEffect, useMemo, useRef, useState } fr
 
 import type { ToolsListData } from '@/types/components/tools/ToolDataType';
 
-import ToolsDataList from '../../config/tools.json';
+import { processToolsData } from '@/utils/processToolsData';
 import ToolFilter, { ToolFilterContext } from '../../context/ToolFilterContext';
 import ArrowDown from '../icons/ArrowDown';
 import Cross from '../icons/Cross';
@@ -13,7 +13,7 @@ import CategoryDropdown from './CategoryDropdown';
 import Filters from './Filters';
 import ToolsList from './ToolsList';
 
-const ToolsData = ToolsDataList as ToolsListData;
+const ToolsData = processToolsData();
 
 /**
  * @description This component displays Tools Dashboard.
