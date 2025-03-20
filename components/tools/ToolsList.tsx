@@ -35,6 +35,7 @@ export default function ToolsList({ toolsListData }: ToolsListProp) {
                   if (toolIndex === 0 || tool.title !== toolsListData[categoryName].toolsList[toolIndex-1]?.title) {
                     return <ToolsCard key={toolIndex} toolData={tool} />;
                   }
+                  return null;
                 })}
               </div>
             </div>
