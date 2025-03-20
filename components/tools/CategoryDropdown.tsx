@@ -2,13 +2,13 @@ import React from 'react';
 
 import type { ToolsListData } from '@/types/components/tools/ToolDataType';
 
-import ToolsDataList from '../../config/tools.json';
+import { processToolsData } from '@/utils/processToolsData';
 
 interface CategoryDropdownProps {
   setopenCategory: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ToolsData = ToolsDataList as ToolsListData;
+const ToolsData = processToolsData();
 
 /**
  * @description This component displays Category Dropdown.
