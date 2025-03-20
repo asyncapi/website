@@ -10,7 +10,7 @@
                  "repoUrl": "https://github.com/apideck-io"
              },
              "filters": {
-                 "language": ["JavaScript", "TypeScript"],
+                 "language": ["TypeScript"],
                  "technology": ["Node.js"],
                  "categories": ["api", "directory"]
              }
@@ -273,7 +273,7 @@
                   "repoUrl": "https://github.com/apideck-io"
               },
               "filters": {
-                  "language": ["JavaScript", "TypeScript"],
+                  "language": ["TypeScript"],
                   "technology": ["Node.js"],
                   "categories": ["api", "directory"]
               }
