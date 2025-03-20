@@ -7,7 +7,7 @@
         "docsButton": "View Docs",
         "installingTitle": "Installing",
         "exampleTitle": "Example",
-        "exampleDescription": "Create a new AsyncAPI file",
+        "exampleDescription": "Create a new AsyncAPI project, specification files, or templates for clients and applications",
         "featuresTitle": "Features",
         "featuresDescription": "Use the AsyncAPI CLI tool to help you create, develop, and maintain your AsyncAPI files.",
         "features": {

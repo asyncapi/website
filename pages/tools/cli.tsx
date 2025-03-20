@@ -155,8 +155,7 @@ export default function CliPage() {
                 <div className='space-y-5'>
                   <div>
                     <Paragraph typeStyle={ParagraphTypeStyle.md} className='mb-4'>
-                      Create a new AsyncAPI file
-                    </Paragraph>
+                      Create a new AsyncAPI project, specification files, or templates for clients and applications.                    </Paragraph>
                     <CodeBlock
                       language='generator-cli'
                       textSizeClassName='text-sm'
