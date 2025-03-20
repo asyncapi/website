@@ -21,15 +21,11 @@ interface GeneratorFlags {
  * @description This component displays generator installation options.
  */
 export default function GeneratorInstallation() {
-  const [template, setTemplate] = useState<string>(
-    '@asyncapi/html-template@3.0.0',
-  );
-  // By default we will have output folder flag so its set here.
-  const [params, setParams] = useState<string>(
-    '-o example --use-new-generator',
-  );
+  const [template, setTemplate] = useState<string>('@asyncapi/html-template@3.0.0');
+  // By default, we will have output folder flag set here.
+  const [params, setParams] = useState<string>('-o example --use-new-generator');
   const [specPath, setSpecPath] = useState<string>(
-    'https://raw.githubusercontent.com/asyncapi/spec/refs/heads/master/examples/streetlights-kafka-asyncapi.yml',
+    'https://raw.githubusercontent.com/asyncapi/spec/refs/heads/master/examples/streetlights-kafka-asyncapi.yml'
   );
 
   const generatorflags = generatorflagList as GeneratorFlags;
@@ -43,9 +39,9 @@ export default function GeneratorInstallation() {
     if (templateName && generatorflags[templateName]) {
       const templateBasedJSON = generatorflags[templateName];
 
-      // options are generated from generator-templates.json
+      // Options are generated from generator-templates.json
       // and flags are fetched from generator-flags.json,
-      // so it is mandatory to have check in case if any misses the option in future
+      // so it is mandatory to check in case any misses the option in the future.
 
       if (templateBasedJSON) {
         setParams(templateBasedJSON.flag);
@@ -72,31 +68,31 @@ asyncapi generate fromTemplate ${specPath} ${template} ${params}`;
   }
 
   return (
-    <div className="relative mx-auto mt-8 max-w-full">
-      <div className="mb-4">
-        <Paragraph typeStyle={ParagraphTypeStyle.md} className="mr-4 inline">
+    <div className='relative mx-auto mt-8 max-w-full'>
+      <div className='mb-4'>
+        <Paragraph typeStyle={ParagraphTypeStyle.md} className='mr-4 inline'>
           Select a Generator template:
         </Paragraph>
         <Select
           options={generatorTemplates}
           selected={template}
           onChange={onChangeTemplate}
-          className="shadow-outline-blue"
+          className='shadow-outline-blue'
         />
       </div>
       <CodeBlock
-        language="generator-cli"
-        textSizeClassName="text-sm"
-        className="shadow-lg"
+        language='generator-cli'
+        textSizeClassName='text-sm'
+        className='shadow-lg'
         codeBlocks={[
           {
             language: 'npm',
-            code: getNpmCode(),
+            code: getNpmCode()
           },
           {
             language: 'Docker',
-            code: getDockerCode(),
-          },
+            code: getDockerCode()
+          }
         ]}
       />
     </div>
