@@ -1,10 +1,24 @@
+import allTags from '../config/all-tags.json';
 import automatedTools from '../config/tools-automated.json';
 import manualTools from '../config/tools-manual.json';
-import allTags from '../config/all-tags.json';
-import { ToolsListData, ToolData } from '../types/components/tools/ToolDataType';
+import type { ToolData, ToolsListData } from '../types/components/tools/ToolDataType';
 
 // Caching the processed results to avoid unnecessary reprocessing of the data
 let cachedToolsData: ToolsListData | null = null;
+
+//Interface for tool object data
+interface RawToolData {
+  title: string;
+  description: string | null;
+  links: any;
+  filters: {
+    categories?: string[];
+    hasCommercial: boolean;
+    isAsyncAPIOwner: boolean;
+    language?: string;
+    technology?: string[];
+  };
+}
 
 export const processToolsData = (): ToolsListData => {
   // Returning the cached data if available in the memory
@@ -42,7 +56,7 @@ export const processToolsData = (): ToolsListData => {
   const result: ToolsListData = {};
 
   // Helper function to process a tool object and return the processed tool object
-  const processTool = (tool: any): ToolData => {
+  const processTool = (tool: RawToolData): ToolData => {
     // Processing technology tags with color information if available in the tool data and convert null descriptions to undefined
     const processedTechnology = Array.isArray(tool.filters?.technology)
       ? tool.filters.technology.map((tech: string) => ({
@@ -54,11 +68,13 @@ export const processToolsData = (): ToolsListData => {
 
     // Processing language tags with color information if available in the tool data and convert null descriptions to undefined
     const processedLanguage = tool.filters?.language
-      ? [{
+      ? [
+        {
           name: tool.filters.language,
           color: tagColorMap[tool.filters.language]?.color || '#cccccc',
           borderColor: tagColorMap[tool.filters.language]?.borderColor || '#999999'
-        }]
+        }
+      ]
       : undefined;
 
     // Returning the processed tool object with null descriptions converted to undefined values
@@ -96,5 +112,6 @@ export const processToolsData = (): ToolsListData => {
 
   // Caching and return the result data from the result object
   cachedToolsData = result;
+
   return result;
 };
