@@ -32,9 +32,10 @@ export default function ToolsList({ toolsListData }: ToolsListProp) {
               <hr className='my-8' />
               <div className='flex grid-cols-3 flex-col gap-8 lg:grid'>
                 {toolsListData[categoryName].toolsList.map((tool, toolIndex) => {
-                  if (toolIndex === 0 || tool.title !== toolsListData[categoryName].toolsList[toolIndex-1]?.title) {
+                  if (toolIndex === 0 || tool.title !== toolsListData[categoryName].toolsList[toolIndex - 1]?.title) {
                     return <ToolsCard key={toolIndex} toolData={tool} />;
                   }
+
                   return null;
                 })}
               </div>
