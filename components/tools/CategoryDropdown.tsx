@@ -8,7 +8,7 @@ interface CategoryDropdownProps {
   setopenCategory: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ToolsData = processToolsData();
+const ToolsData = processToolsData() as ToolsListData;
 
 /**
  * @description This component displays Category Dropdown.

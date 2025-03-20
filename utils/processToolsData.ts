@@ -3,17 +3,17 @@ import manualTools from '../config/tools-manual.json';
 import allTags from '../config/all-tags.json';
 import { ToolsListData, ToolData } from '../types/components/tools/ToolDataType';
 
-// Cache processed results to avoid unnecessary reprocessing
+// Caching the processed results to avoid unnecessary reprocessing of the data
 let cachedToolsData: ToolsListData | null = null;
 
 export const processToolsData = (): ToolsListData => {
-  // Return cached data if available
+  // Returning the cached data if available in the memory
   if (cachedToolsData) return cachedToolsData;
 
-  // Create a tag color lookup map
+  // Creating a tag color lookup mapping from the allTags data
   const tagColorMap: Record<string, { color: string; borderColor: string }> = {};
 
-  // Process allTags to build the color map
+  // Processing allTags to build the color map from the allTags data
   if (Array.isArray(allTags)) {
     allTags.forEach((tag: any) => {
       tagColorMap[tag.name] = {
@@ -22,7 +22,7 @@ export const processToolsData = (): ToolsListData => {
       };
     });
   } else if (allTags.languages && allTags.technologies) {
-    // Handle structure with separate languages and technologies arrays
+    // Handling the structure with separate languages and technologies arrays for each language and technology array separately in allTags
     allTags.languages.forEach((tag: any) => {
       tagColorMap[tag.name] = {
         color: tag.color,
@@ -38,12 +38,12 @@ export const processToolsData = (): ToolsListData => {
     });
   }
 
-  // Initialize the result object
+  // Initializing the result object to store the processed tools data in the required format
   const result: ToolsListData = {};
 
-  // Helper function to process a tool
+  // Helper function to process a tool object and return the processed tool object
   const processTool = (tool: any): ToolData => {
-    // Process technology tags with color information
+    // Processing technology tags with color information if available in the tool data and convert null descriptions to undefined
     const processedTechnology = Array.isArray(tool.filters?.technology)
       ? tool.filters.technology.map((tech: string) => ({
           name: tech,
@@ -52,7 +52,7 @@ export const processToolsData = (): ToolsListData => {
         }))
       : [];
 
-    // Process language with color information
+    // Processing language tags with color information if available in the tool data and convert null descriptions to undefined
     const processedLanguage = tool.filters?.language
       ? [{
           name: tool.filters.language,
@@ -61,7 +61,7 @@ export const processToolsData = (): ToolsListData => {
         }]
       : undefined;
 
-    // Return processed tool object with null descriptions converted to undefined
+    // Returning the processed tool object with null descriptions converted to undefined values
     return {
       title: tool.title,
       description: tool.description === null ? undefined : tool.description,
@@ -76,7 +76,7 @@ export const processToolsData = (): ToolsListData => {
     };
   };
 
-  // Process tools from both sources
+  // Processing tools from both sources and adding them to the result object
   [automatedTools, manualTools].forEach((source: any) => {
     Object.entries(source).forEach(([category, data]: [string, any]) => {
       if (!result[category]) {
@@ -94,7 +94,7 @@ export const processToolsData = (): ToolsListData => {
     });
   });
 
-  // Cache and return the result
+  // Caching and return the result data from the result object
   cachedToolsData = result;
   return result;
 };
