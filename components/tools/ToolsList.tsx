@@ -31,9 +31,11 @@ export default function ToolsList({ toolsListData }: ToolsListProp) {
               <Paragraph typeStyle={ParagraphTypeStyle.md}>{toolsListData[categoryName].description}</Paragraph>
               <hr className='my-8' />
               <div className='flex grid-cols-3 flex-col gap-8 lg:grid'>
-                {toolsListData[categoryName].toolsList.map((tool, toolIndex) => (
-                  <ToolsCard key={toolIndex} toolData={tool} />
-                ))}
+                {toolsListData[categoryName].toolsList.map((tool, toolIndex) => {
+                  if (toolIndex === 0 || tool.title !== toolsListData[categoryName].toolsList[toolIndex-1]?.title) {
+                    return <ToolsCard key={toolIndex} toolData={tool} />;
+                  }
+                })}
               </div>
             </div>
           );
