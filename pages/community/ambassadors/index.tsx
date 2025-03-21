@@ -145,15 +145,26 @@ export default function Index() {
                     href={ambassador.twitterUrl}
                     target='_blank'
                     rel='noreferrer'
-                    className='underline'
+                    className='underline transition duration-300 ease-in-out hover:text-primary-500 hover:underline-offset-2'
                     data-testid='Ambassadors-members-twitter'
                   >
                     Twitter ↗
                   </a>
-                  <a href={ambassador.githubUrl} target='_blank' rel='noreferrer' className='ml-3 underline'>
+                  <a
+                    href={ambassador.githubUrl}
+                    target='_blank'
+                    rel='noreferrer'
+                    className='ml-3 underline
+                    transition duration-300 ease-in-out hover:text-primary-500 hover:underline-offset-2'
+                  >
                     Github ↗
                   </a>
-                  <a href={ambassador.linkedinUrl} target='_blank' rel='noreferrer' className='ml-3 underline'>
+                  <a
+                    href={ambassador.linkedinUrl}
+                    target='_blank'
+                    rel='noreferrer'
+                    className='ml-3 underline transition duration-300 ease-in-out hover:text-primary-500 hover:underline-offset-2'
+                  >
                     Linkedin ↗
                   </a>
                 </div>
