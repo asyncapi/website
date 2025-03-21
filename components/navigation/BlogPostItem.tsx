@@ -91,7 +91,7 @@ export default forwardRef(function BlogPostItem(
                   >
                     {post.type}
                   </span>
-                  <div className='ml-2 flex space-x-2'>
+                  <div className='ml-2 flex space-x-2' onClick={(e) => e.stopPropagation()}>
                     <TwitterShareButton url={shareUrl} title={shareText} hashtags={hashTags}>
                       <TwitterIcon size={32} round />
                     </TwitterShareButton>
