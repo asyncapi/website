@@ -2,6 +2,14 @@ import moment from 'moment';
 import Link from 'next/link';
 import type { Ref } from 'react';
 import React, { forwardRef } from 'react';
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  LinkedinIcon,
+  LinkedinShareButton,
+  TwitterIcon,
+  TwitterShareButton
+} from 'react-share';
 import TextTruncate from 'react-text-truncate';
 
 import { BlogPostType } from '@/types/components/navigation/BlogPostType';
@@ -12,8 +20,6 @@ import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 import AuthorAvatars from '../AuthorAvatars';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
-
-import { FacebookIcon, FacebookShareButton, LinkedinIcon, LinkedinShareButton, TwitterIcon, TwitterShareButton } from 'react-share';
 
 interface BlogPostItemProps {
   // eslint-disable-next-line prettier/prettier
@@ -75,7 +81,11 @@ export default forwardRef(function BlogPostItem(
             />
             <div className='flex flex-1 flex-col justify-between bg-white p-6'>
               <div className='flex-1'>
-                <Paragraph typeStyle={ParagraphTypeStyle.sm} textColor='text-indigo-500' className='flex items-center justify-around'>
+                <Paragraph
+                  typeStyle={ParagraphTypeStyle.sm}
+                  textColor='text-indigo-500'
+                  className='flex items-center justify-around'
+                >
                   <span
                     className={`inline-flex items-center rounded-full px-3 py-0.5 ${typeColors[0]} ${typeColors[1]}`}
                   >
