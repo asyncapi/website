@@ -154,8 +154,7 @@ export default function Index() {
                     href={ambassador.githubUrl}
                     target='_blank'
                     rel='noreferrer'
-                    className='ml-3 underline
-                    transition duration-300 ease-in-out hover:text-primary-500 hover:underline-offset-2'
+                    className='ml-3 underline transition duration-300 ease-in-out hover:text-primary-500 hover:underline-offset-2'
                   >
                     Github ↗
                   </a>
