@@ -1,3 +1,4 @@
+import { ShareIcon } from '@heroicons/react/outline';
 import moment from 'moment';
 import ErrorPage from 'next/error';
 import HtmlHead from 'next/head';
@@ -11,9 +12,8 @@ import AuthorAvatars from '../AuthorAvatars';
 import AnnouncementHero from '../campaigns/AnnouncementHero';
 import Head from '../Head';
 import TOC from '../TOC';
-import Container from './Container';
-import { ShareIcon } from '@heroicons/react/outline';
 import SharePopup from '../tools/SharePopup';
+import Container from './Container';
 
 interface IBlogLayoutProps {
   post: IPosts['blog'][number];
@@ -32,7 +32,7 @@ export default function BlogLayout({
   // eslint-disable-next-line unused-imports/no-unused-vars, no-unused-vars
   navItems
 }: IBlogLayoutProps) {
-  const[showShare, setShowShare] = React.useState(false);
+  const [showShare, setShowShare] = React.useState(false);
   const router = useRouter();
 
   if (!post) return <ErrorPage statusCode={404} />;
@@ -84,11 +84,12 @@ export default function BlogLayout({
                   <span>{post.readingTime} min read</span>
                 </div>
               </div>
-              <ShareIcon className='w-6 h-6 ml-auto text-gray-500 cursor-pointer hover:text-gray-800' onClick={()=>setShowShare(true)}/>
+              <ShareIcon
+                className='ml-auto size-6 cursor-pointer text-gray-500 hover:text-gray-800'
+                onClick={() => setShowShare(true)}
+              />
             </div>
-            {showShare && (
-             <SharePopup closeSharePop={()=>setShowShare(false)} posttitle={post.title}/>
-            )}
+            {showShare && <SharePopup closeSharePop={() => setShowShare(false)} posttitle={post.title} />}
           </header>
           <article className='mb-32'>
             <Head title={post.title} description={post.excerpt} image={post.cover} />
