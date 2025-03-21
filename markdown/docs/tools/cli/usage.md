@@ -635,24 +635,22 @@ _See code: [src/commands/new/glee.ts](https://github.com/asyncapi/cli/blob/v2.16
 
 ## `asyncapi new template`
 
-Creates a new template
+Creates a new template using React render engine
 
 ```
 USAGE
-  $ asyncapi new template [-h] [-n <value>] [-t <value>] [-f <value>] [--force-write] [-r <value>]
+  $ asyncapi new template [-h] [-n <value>] [-t <value>] [-f <value>] [--force-write]
 
 FLAGS
   -f, --file=<value>      The path to the AsyncAPI file for generating a template.
   -h, --help              Show CLI help.
   -n, --name=<value>      [default: project] Name of the Project
-  -r, --renderer=<value>  [default: react] Creating a template for particular engine, Its value can be either react or
-                          nunjucks.
   -t, --template=<value>  [default: default] Name of the Template
       --force-write       Force writing of the generated files to given directory even if it is a git repo with unstaged
                           files or not empty dir (defaults to false)
 
 DESCRIPTION
-  Creates a new template
+  Creates a new template using React render engine
 ```
 
 _See code: [src/commands/new/template.ts](https://github.com/asyncapi/cli/blob/v2.16.4/src/commands/new/template.ts)_
