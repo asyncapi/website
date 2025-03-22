@@ -6,6 +6,12 @@ services:
     pull_policy: build
     ports:
       - 3000:3000
-    volumes:
-      - ./:/async
+    develop:
+      watch:
+        - path: .
+          target: /async
+          action: sync
+        - path: package.json
+          action: rebuild
+
 
