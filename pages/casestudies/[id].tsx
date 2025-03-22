@@ -42,7 +42,7 @@ const renderContent = (
   allComponents: Record<string, React.ComponentType<any>>,
   level: number
 ): JSX.Element[] => {
-  let typeStyle;
+  let typeStyle: HeadingTypeStyle;
 
   if (level === 0) {
     typeStyle = HeadingTypeStyle.lg;
