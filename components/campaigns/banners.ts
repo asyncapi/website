@@ -18,11 +18,11 @@ export function shouldShowBanner(cfpDeadline: string) {
 export const banners = [
   {
     title: 'AsyncAPI Conference',
-    city: 'Singapore Edition',
-    dateLocation: '15th - 16th of April, 2025 | Marina Bay, Singapore',
+    city: 'Munich Edition',
+    dateLocation: '2nd - 3rd of July, 2025 | München, Germany',
     cfaText: 'Apply To Speak',
     eventName: 'the end of Call for Speakers',
-    cfpDeadline: '2025-02-24T06:00:00Z',
+    cfpDeadline: '2025-05-11T06:00:00Z',
     link: 'https://apidays.typeform.com/apidayscfp?typeform-source=www.apidays.global'
   }
 ];
