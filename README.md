@@ -129,7 +129,7 @@ After cloning repository to your local, perform the following steps from the roo
     ```
 2. Start the container:
     ```bash
-    docker run --rm -it -v "$PWD":/async -p 3000:3000 asyncapi-website
+    docker run --rm -it -v "$(pwd):/async" -v asyncapi_node_modules:/async/node_modules -p 3000:3000 asyncapi-website
     ```
 
 Now you're running AsyncAPI website in a development mode. Container is mapped with your local copy of the website. Whenever you make changes to the code, the website will refresh and changes visible in localhost:3000.
