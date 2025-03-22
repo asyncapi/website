@@ -89,8 +89,6 @@ export default function NewsletterSubscribe({
 
         return res.json();
       })
-      // eslint-disable-next-line @typescript-eslint/no-shadow, no-console
-      .then((data) => console.log(data));
   };
 
   if (status === FormStatus.SUCCESS) {
