@@ -4,7 +4,7 @@ import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 import editUrls from '../../config/edit-page-config.json';
-import { pause } from '../utils';
+import { pause } from '../utils/convertToJson';
 import { logger } from '../utils/logger';
 
 const ignoreFiles = [

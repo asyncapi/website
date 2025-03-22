@@ -14,7 +14,7 @@ import type {
   PullRequestById
 } from '@/types/scripts/dashboard';
 
-import { pause } from '../utils';
+import { pause } from '../utils/convertToJson';
 import { logger } from '../utils/logger';
 import { Queries } from './issue-queries';
 
