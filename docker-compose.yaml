@@ -1,0 +1,11 @@
+services:
+  website:
+    container_name: asyncapi-website
+    image: asyncapi-website
+    build: .
+    pull_policy: build
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/async
+
