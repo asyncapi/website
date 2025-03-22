@@ -1,10 +1,9 @@
 import Link from 'next/link';
 import type { NextRouter } from 'next/router';
 import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
 import React, { useEffect, useState } from 'react';
 
-import { defaultLanguage, i18nPaths, languages } from '@/utils/i18n';
+import { defaultLanguage, i18nPaths, languages, useTranslation } from '@/utils/i18n';
 
 import { SearchButton } from '../AlgoliaSearch';
 import GithubButton from '../buttons/GithubButton';
