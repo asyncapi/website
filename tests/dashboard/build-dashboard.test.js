@@ -1,8 +1,8 @@
-const { graphql } = require('@octokit/graphql');
-const { promises: fs, mkdirSync, rmSync } = require('fs-extra');
-const { resolve } = require('path');
-const os = require('os');
-const {
+import { graphql } from '@octokit/graphql';
+import { promises as fs, mkdirSync, rmSync } from 'fs-extra';
+import { resolve } from 'path';
+import os from 'os';
+import {
   getLabel,
   mapGoodFirstIssues,
   getHotDiscussions,
@@ -10,16 +10,16 @@ const {
   writeToFile,
   getDiscussions,
   start
-} = require('../../scripts/dashboard/build-dashboard.ts');
+} from '../../scripts/dashboard/build-dashboard.ts';
 
-const {
+import {
   issues,
   mockDiscussion,
   discussionWithMoreComments,
   fullDiscussionDetails,
   mockRateLimitResponse
-} = require('../fixtures/dashboardData');
-const { logger } = require('../../scripts/utils/logger.ts');
+} from '../fixtures/dashboardData';
+import { logger } from '../../scripts/utils/logger.ts';
 
 jest.mock('../../scripts/utils/logger', () => ({
   logger: { error: jest.fn(), warn: jest.fn() }
@@ -35,6 +35,7 @@ describe('GitHub Discussions Processing', () => {
   beforeAll(() => {
     tempDir = resolve(os.tmpdir(), 'test-config');
     mkdirSync(tempDir);
+    process.env.GITHUB_TOKEN = 'test-token';
   });
 
   afterAll(() => {
@@ -143,6 +144,34 @@ describe('GitHub Discussions Processing', () => {
     });
   });
 
+  it('should map good first issues with complete data validation', async () => {
+    const mockIssue = {
+      id: 'test-123',
+      title: 'Test Issue',
+      assignees: { totalCount: 2 },
+      resourcePath: '/asyncapi/test-repo/issues/123',
+      repository: { name: 'test-repo' },
+      author: { login: 'testuser' },
+      labels: {
+        nodes: [{ name: 'area/documentation' }, { name: 'good first issue' }, { name: 'bug' }]
+      }
+    };
+
+    const result = await mapGoodFirstIssues([mockIssue]);
+
+    expect(result).toHaveLength(1);
+    expect(result[0]).toEqual({
+      id: 'test-123',
+      title: 'Test Issue',
+      isAssigned: true,
+      resourcePath: '/asyncapi/test-repo/issues/123',
+      repo: 'asyncapi/test-repo',
+      author: 'testuser',
+      area: 'documentation',
+      labels: [{ name: 'bug' }]
+    });
+  });
+
   it('should handle discussion retrieval', async () => {
     graphql.mockResolvedValueOnce({ node: mockDiscussion });
     const result = await getDiscussionByID(false, 'test-id');
@@ -166,6 +195,20 @@ describe('GitHub Discussions Processing', () => {
     expect(result.length).toBeLessThanOrEqual(12);
   });
 
+  it('should handle undefined reviews.nodes gracefully', async () => {
+    const prDiscussion = {
+      ...mockDiscussion,
+      __typename: 'PullRequest',
+      reviews: {
+        totalCount: 1,
+        nodes: undefined // This will trigger the ?? 0 part
+      }
+    };
+
+    const result = await getHotDiscussions([prDiscussion]);
+    expect(result[0].score).toBeGreaterThan(0);
+  });
+
   it('should write to file', async () => {
     const filePath = resolve(tempDir, 'test.json');
     await writeToFile({ test: true }, filePath);
@@ -185,5 +228,57 @@ describe('GitHub Discussions Processing', () => {
 
   it('should handle write failures gracefully', async () => {
     await expect(writeToFile()).rejects.toThrow();
+  });
+
+  it('should throw error when GITHUB_TOKEN is not set', async () => {
+    delete process.env.GITHUB_TOKEN;
+
+    // getDiscussionsById and getDiscussions
+
+    await expect(getDiscussionByID()).rejects.toThrow('GitHub token is not set in environment variables');
+    await expect(getDiscussions()).rejects.toThrow('GitHub token is not set in environment variables');
+
+    process.env.GITHUB_TOKEN = 'test-token';
+  });
+
+  it('should handle missing author in discussions', async () => {
+    const discussionWithoutAuthor = {
+      ...mockDiscussion,
+      author: null,
+      timelineItems: { updatedAt: new Date().toISOString() },
+      assignees: { totalCount: 0 },
+      labels: null
+    };
+
+    const result = await getHotDiscussions([discussionWithoutAuthor]);
+
+    expect(result[0]).toMatchObject({
+      author: '',
+      isAssigned: false,
+      labels: []
+    });
+    expect(result[0].score).toBeGreaterThan(0);
+  });
+
+  it('should correctly calculate score based on months since update', async () => {
+    // Create two identical discussions but with different update timestamps
+    const recentDiscussion = {
+      ...mockDiscussion,
+      timelineItems: { updatedAt: new Date().toISOString() }
+    };
+
+    const olderDiscussion = {
+      ...mockDiscussion,
+      id: 'older-discussion',
+      timelineItems: { updatedAt: new Date(Date.now() - 6 * 30 * 24 * 60 * 60 * 1000).toISOString() } // 6 months ago
+    };
+
+    const result = await getHotDiscussions([recentDiscussion, olderDiscussion]);
+
+    // The recent discussion should have a higher score than the older one
+    const recentScore = result.find((d) => d.id === mockDiscussion.id).score;
+    const olderScore = result.find((d) => d.id === 'older-discussion').score;
+
+    expect(recentScore).toBeGreaterThan(olderScore);
   });
 });

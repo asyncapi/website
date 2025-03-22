@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const { XMLParser } = require('fast-xml-parser');
-const { rssFeed } = require('../scripts/build-rss.ts');
+import fs from 'fs';
+import path from 'path';
+import { XMLParser } from 'fast-xml-parser';
+import { rssFeed } from '../scripts/build-rss.ts';
 
 const parser = new XMLParser({ ignoreAttributes: false });
 const { mockRssData, title, type, desc, missingDateMockData, incompletePostMockData } = require('./fixtures/rssData');

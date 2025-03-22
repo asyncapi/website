@@ -78,8 +78,6 @@ export const addItem = (details: Details) => {
   };
   const section = Object.keys(sectionMap).find((key) => details.slug!.startsWith(key));
 
-  /* istanbul ignore else */
-
   if (section) {
     finalResult[sectionMap[section]].push(details);
   }

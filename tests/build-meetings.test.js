@@ -1,8 +1,8 @@
-const { google } = require('googleapis');
-const path = require('path');
-const { readFileSync, mkdirSync, rmSync } = require('fs');
-const { buildMeetings } = require('../scripts/build-meetings.ts');
-const { mockEvents, expectedContent } = require('./fixtures/meetingsData');
+import { google } from 'googleapis';
+import path from 'path';
+import { readFileSync, mkdirSync, rmSync } from 'fs';
+import { buildMeetings } from '../scripts/build-meetings.ts';
+import { mockEvents, expectedContent } from './fixtures/meetingsData';
 
 jest.mock('googleapis', () => {
   const events = {

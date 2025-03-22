@@ -77,7 +77,6 @@ async function createToolObject(
 async function convertTools(data: ToolsData) {
   try {
     let finalToolsObject: ToolsListObject = {};
-    const dataArray = data.items;
 
     // initialising finalToolsObject with all categories inside it with proper elements in each category
     finalToolsObject = Object.fromEntries(
@@ -91,9 +90,8 @@ async function convertTools(data: ToolsData) {
     );
 
     await Promise.all(
-      dataArray.map(async (tool) => {
+      data.map(async (tool) => {
         try {
-          /* istanbul ignore else */
           if (tool.name.startsWith('.asyncapi-tool')) {
             const referenceId = tool.url.split('=')[1];
             const downloadUrl = `https://raw.githubusercontent.com/${tool.repository.full_name}/${referenceId}/${tool.path}`;
@@ -124,8 +122,6 @@ async function convertTools(data: ToolsData) {
                   const targetCategory = categorySearch.length ? categorySearch[0].item.name : 'Others';
                   const { toolsList } = finalToolsObject[targetCategory];
 
-                  /* istanbul ignore else */
-
                   if (!toolsList.includes(toolObject)) {
                     toolsList.push(toolObject);
                   }
@@ -145,8 +141,12 @@ async function convertTools(data: ToolsData) {
     );
 
     return finalToolsObject;
-  } catch (err) {
-    throw new Error(`Error processing tool: ${err}`);
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      throw new Error(`Error processing tool: ${err.message}`);
+    } else {
+      throw new Error('An unexpected error occurred');
+    }
   }
 }
 

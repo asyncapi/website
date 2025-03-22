@@ -1,21 +1,19 @@
-module.exports = {
-  yaml1: `
+export const yaml1 = `
 title: case study 1
 description: random data
-    `,
+`;
 
-  yaml2:`
+export const yaml2 = `
 title: case study 2
 description: again random data
-    `,
+`;
 
-  json1: {
-    title: 'case study 1',
-    description: 'random data'
-  },
+export const json1 = {
+  title: 'case study 1',
+  description: 'random data'
+};
 
-  json2: {
-    title: 'case study 2',
-    description: 'again random data'
-  }
-}
+export const json2 = {
+  title: 'case study 2',
+  description: 'again random data'
+};

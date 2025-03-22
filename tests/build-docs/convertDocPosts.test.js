@@ -1,10 +1,10 @@
-const { convertDocPosts } = require('../../scripts/build-docs.ts');
-const {
+import { convertDocPosts } from '../../scripts/build-docs.ts';
+import {
   docObject,
   emptyDocObject,
   singlePostDocObject,
   nestedChildrenDocObject
-} = require('../fixtures/convertDocPostData');
+} from '../fixtures/convertDocPostData';
 
 describe('convertDocPosts', () => {
   it('should convert a doc object to an array', () => {
@@ -57,5 +57,28 @@ describe('convertDocPosts', () => {
       expect(err.message).toContain('Error in convertDocPosts:');
     }
     expect(error).toBeDefined();
+  });
+
+  it('should handle non-Error object thrown in the function', () => {
+    // Mock implementation that throws a non-Error object
+    const originalChildren = Object.getOwnPropertyDescriptor(docObject, 'children');
+    Object.defineProperty(docObject, 'children', {
+      get() {
+        // eslint-disable-next-line no-throw-literal
+        throw 'String exception';
+      }
+    });
+
+    let error;
+    try {
+      convertDocPosts(docObject);
+    } catch (err) {
+      error = err;
+      expect(err.message).toContain('Error in convertDocPosts: Unknown error - String exception');
+    }
+    expect(error).toBeDefined();
+
+    // Restore original property
+    Object.defineProperty(docObject, 'children', originalChildren);
   });
 });

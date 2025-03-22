@@ -1,4 +1,6 @@
-const { buildNavTree } = require('../../scripts/build-docs.ts');
+import { buildNavTree } from '../../scripts/build-docs.ts';
+
+import navData from '../fixtures/buildNavTreeData';
 
 const {
   basicNavItems,
@@ -7,7 +9,7 @@ const {
   missingFieldsNavItems,
   invalidParentNavItems,
   multipleSubsectionsNavItems
-} = require('../fixtures/buildNavTreeData');
+} = navData;
 
 describe('buildNavTree', () => {
   beforeEach(() => {

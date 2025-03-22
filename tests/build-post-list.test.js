@@ -1,7 +1,7 @@
-const fs = require('fs-extra');
-const { resolve, join } = require('path');
-const { setupTestDirectories, generateTempDirPath } = require('./helper/buildPostListSetup');
-const { buildPostList, slugifyToC, addItem } = require('../scripts/build-post-list.ts');
+import fs from 'fs-extra';
+import { resolve, join } from 'path';
+import { setupTestDirectories, generateTempDirPath } from './helper/buildPostListSetup';
+import { buildPostList, slugifyToC, addItem } from '../scripts/build-post-list.ts';
 
 describe('buildPostList', () => {
   let tempDir;
@@ -203,6 +203,24 @@ describe('buildPostList', () => {
     expect(() => addItem({})).toThrow('Invalid details object provided to addItem');
     expect(() => addItem({ slug: 123 })).toThrow('Invalid details object provided to addItem');
     expect(() => addItem(undefined)).toThrow('Invalid details object provided to addItem');
+  });
+
+  it('does not add item when slug does not match any section', () => {
+    // Define finalResult
+    const finalResult = { blog: [], docs: [], about: [] };
+
+    // Get the initial state of finalResult
+    const initialBlogs = JSON.parse(JSON.stringify(finalResult.blog));
+    const initialDocs = JSON.parse(JSON.stringify(finalResult.docs));
+    const initialAbout = JSON.parse(JSON.stringify(finalResult.about));
+
+    // Add an item with a slug that doesn't match any section
+    addItem({ slug: '/unknown/path', title: 'Unknown Item' });
+
+    // Verify no changes were made to any section arrays
+    expect(finalResult.blog).toEqual(initialBlogs);
+    expect(finalResult.docs).toEqual(initialDocs);
+    expect(finalResult.about).toEqual(initialAbout);
   });
 
   describe('slugifyToC', () => {
