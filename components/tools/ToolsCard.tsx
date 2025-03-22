@@ -131,7 +131,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
                   setRead={setReadMore}
                 />
                 <div className='flex gap-2'>
-                  {toolData.filters?.language &&
+                  {Array.isArray(toolData.filters?.language) &&
                     toolData.filters?.language.map((item, index) => (
                       <Tag key={index} name={item.name} bgColor={item.color} borderColor={item.borderColor} />
                     ))}
