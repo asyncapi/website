@@ -18,7 +18,7 @@ export function toTitleCase(title: string): string {
 export async function fetchGraphql(query: string): Promise<any> {
   const parameters = {
     headers: {
-      authorization: `token ${process.env.GITHUB_TOKEN}`,
+      authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
     },
   };
   return await graphql(query, parameters);
