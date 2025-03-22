@@ -42,7 +42,7 @@ export default function Modal({ title, children, onModalClose = () => {} }: IMod
     <div
       ref={modalRef}
       tabIndex={-1}
-      className='fixed inset-0 z-30 my-auto mt-2 flex min-h-full items-end justify-center bg-black/30 p-4 text-center backdrop-blur sm:items-center sm:p-0'
+      className='fixed inset-0 z-30 my-auto mt-10 flex min-h-full items-end justify-center bg-black/30 p-4 text-center backdrop-blur sm:items-center sm:p-0'
       onClick={backdropClickHandler}
       onKeyUp={onKeyUpHandler}
     >
