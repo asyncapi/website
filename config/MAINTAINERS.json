@@ -982,5 +982,34 @@
             "website"
         ],
         "githubID": 63567230
+    },
+    {
+        "name": "Charles d'Avernas",
+        "github": "cdavernas",
+        "isTscMember": false,
+        "repos": [
+            "net-sdk"
+        ],
+        "githubID": 16137162
+    },
+    {
+        "name": "Jean-Baptiste Bianchi",
+        "github": "jbbianchi",
+        "twitter": "JBBianchi",
+        "isTscMember": false,
+        "repos": [
+            "net-sdk"
+        ],
+        "githubID": 72747835
+    },
+    {
+        "name": "Vishvamsinh Vaghela",
+        "github": "vishvamsinh28",
+        "twitter": "Vishvamsinh28",
+        "isTscMember": false,
+        "repos": [
+            "website"
+        ],
+        "githubID": 90895835
     }
 ]
