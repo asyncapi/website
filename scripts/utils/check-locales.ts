@@ -60,17 +60,13 @@ function readJSONFilesInDir(dir: string): Record<string, any> {
             const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
             return [file, content];
           } catch (error) {
-            if (error instanceof Error) {
-              logger.error(`Error reading ${filePath}:`, error.message);
-            }
+            logger.error(`Error reading ${filePath}`);
             return [file, {}];
           }
         }),
     );
   } catch (error) {
-    if (error instanceof Error) {
-      logger.error(`Error reading directory ${dir}:`, error.message);
-    }
+    logger.error(`Error reading directory ${dir}`);
     return {};
   }
 }
@@ -160,9 +156,7 @@ function validateLocales(): void {
       process.exit(1);
     }
   } catch (error) {
-    if (error instanceof Error) {
-      logger.error('Error validating locales:', error);
-    }
+    logger.error('Error validating locales:');
     process.exit(1);
   }
 }
