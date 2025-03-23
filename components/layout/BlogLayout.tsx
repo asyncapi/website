@@ -3,6 +3,14 @@ import ErrorPage from 'next/error';
 import HtmlHead from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  LinkedinIcon,
+  LinkedinShareButton,
+  TwitterShareButton,
+  XIcon
+} from 'react-share';
 
 import type { IPosts } from '@/types/post';
 
@@ -38,6 +46,9 @@ export default function BlogLayout({
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+  const shareUrl = `https://www.asyncapi.com${post.slug}`;
+  const shareText = `Check out this blog: ${post.title}`;
+  const hashTags = ['AsyncAPI', 'TechBlog', 'DevCommunity', 'TechTrends'];
 
   return (
     <BlogContext.Provider value={{ post }}>
@@ -79,6 +90,26 @@ export default function BlogLayout({
                   <time dateTime={post.date}>{moment(post.date).format('MMMM D, YYYY')}</time>
                   <span className='mx-1'>&middot;</span>
                   <span>{post.readingTime} min read</span>
+                </div>
+                <div className='mt-3 flex space-x-3'>
+                  <TwitterShareButton
+                    url={shareUrl}
+                    title={shareText}
+                    hashtags={hashTags}>
+                    <XIcon size={32} round />
+                  </TwitterShareButton>
+                  <LinkedinShareButton
+                    url={shareUrl}
+                    title={shareText}
+                    source='AsyncAPI Blog'>
+                    <LinkedinIcon size={32} round />
+                  </LinkedinShareButton>
+                  <FacebookShareButton
+                    url={shareUrl}
+                    title={shareText}
+                    hashtag='#AsyncAPI'>
+                    <FacebookIcon size={32} round />
+                  </FacebookShareButton>
                 </div>
               </div>
             </div>

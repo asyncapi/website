@@ -2,14 +2,6 @@ import moment from 'moment';
 import Link from 'next/link';
 import type { Ref } from 'react';
 import React, { forwardRef } from 'react';
-import {
-  FacebookIcon,
-  FacebookShareButton,
-  LinkedinIcon,
-  LinkedinShareButton,
-  XIcon,
-  TwitterShareButton
-} from 'react-share';
 import TextTruncate from 'react-text-truncate';
 
 import { BlogPostType } from '@/types/components/navigation/BlogPostType';
@@ -58,9 +50,6 @@ export default forwardRef(function BlogPostItem(
       break;
     default:
   }
-  const shareUrl = `https://www.asyncapi.com${post.slug}`;
-  const shareText = `Check out this blog: ${post.title}`;
-  const hashTags = ['AsyncAPI', 'TechBlog', 'DevCommunity', 'TechTrends'];
 
   return (
     <li className={`list-none rounded-lg ${className}`} ref={ref} id={id}>
@@ -81,36 +70,12 @@ export default forwardRef(function BlogPostItem(
             />
             <div className='flex flex-1 flex-col justify-between bg-white p-6'>
               <div className='flex-1'>
-                <Paragraph
-                  typeStyle={ParagraphTypeStyle.sm}
-                  textColor='text-indigo-500'
-                  className='flex items-center justify-around'
-                >
+                <Paragraph typeStyle={ParagraphTypeStyle.sm} textColor='text-indigo-500'>
                   <span
                     className={`inline-flex items-center rounded-full px-3 py-0.5 ${typeColors[0]} ${typeColors[1]}`}
                   >
                     {post.type}
                   </span>
-                  <div className='ml-2 flex space-x-2' onClick={(e) => e.stopPropagation()}>
-                    <TwitterShareButton
-                      url={shareUrl}
-                      title={shareText}
-                      hashtags={hashTags}>
-                      <XIcon size={32} round />
-                    </TwitterShareButton>
-                    <LinkedinShareButton
-                      url={shareUrl}
-                      title={shareText}
-                      source='AsyncAPI Blog'>
-                      <LinkedinIcon size={32} round />
-                    </LinkedinShareButton>
-                    <FacebookShareButton
-                      url={shareUrl}
-                      title={shareText}
-                      hashtag='#AsyncAPI'>
-                      <FacebookIcon size={32} round />
-                    </FacebookShareButton>
-                  </div>
                 </Paragraph>
                 <span className='block'>
                   <Heading level={HeadingLevel.h5} typeStyle={HeadingTypeStyle.smSemibold} className='mt-2'>
