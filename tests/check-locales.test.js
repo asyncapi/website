@@ -156,7 +156,7 @@ describe('check-locales', () => {
     
     mockFs.readdirSync.mockReturnValue(files);
     mockFs.readFileSync.mockImplementation(() => {
-      throw testError;
+      throw new Error(testError);
     });
     
     const result = readJSONFilesInDir(dir);
@@ -187,7 +187,7 @@ describe('check-locales', () => {
   
   it('should handle non-Error exceptions during validation', () => {
     mockFs.readdirSync.mockImplementationOnce(() => {
-      throw 'String error';
+      throw new Error('String error');
     });
     
     validateLocales();
@@ -204,7 +204,7 @@ describe('check-locales', () => {
     
     const originalJsonParse = JSON.parse;
     global.JSON.parse = jest.fn().mockImplementation(() => {
-      throw 'Invalid JSON format';
+      throw new Error('Invalid JSON format');
     });
     
     try {
