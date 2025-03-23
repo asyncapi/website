@@ -7,7 +7,7 @@ import {
   FacebookShareButton,
   LinkedinIcon,
   LinkedinShareButton,
-  TwitterIcon,
+  XIcon,
   TwitterShareButton
 } from 'react-share';
 import TextTruncate from 'react-text-truncate';
@@ -92,13 +92,22 @@ export default forwardRef(function BlogPostItem(
                     {post.type}
                   </span>
                   <div className='ml-2 flex space-x-2' onClick={(e) => e.stopPropagation()}>
-                    <TwitterShareButton url={shareUrl} title={shareText} hashtags={hashTags}>
-                      <TwitterIcon size={32} round />
+                    <TwitterShareButton
+                      url={shareUrl}
+                      title={shareText}
+                      hashtags={hashTags}>
+                      <XIcon size={32} round />
                     </TwitterShareButton>
-                    <LinkedinShareButton url={shareUrl} title={shareText} source='AsyncAPI Blog'>
+                    <LinkedinShareButton
+                      url={shareUrl}
+                      title={shareText}
+                      source='AsyncAPI Blog'>
                       <LinkedinIcon size={32} round />
                     </LinkedinShareButton>
-                    <FacebookShareButton url={shareUrl} title={shareText} hashtag='#AsyncAPI'>
+                    <FacebookShareButton
+                      url={shareUrl}
+                      title={shareText}
+                      hashtag='#AsyncAPI'>
                       <FacebookIcon size={32} round />
                     </FacebookShareButton>
                   </div>
