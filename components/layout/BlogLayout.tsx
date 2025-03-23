@@ -92,22 +92,13 @@ export default function BlogLayout({
                   <span>{post.readingTime} min read</span>
                 </div>
                 <div className='mt-3 flex space-x-3'>
-                  <TwitterShareButton
-                    url={shareUrl}
-                    title={shareText}
-                    hashtags={hashTags}>
+                  <TwitterShareButton url={shareUrl} title={shareText} hashtags={hashTags}>
                     <XIcon size={32} round />
                   </TwitterShareButton>
-                  <LinkedinShareButton
-                    url={shareUrl}
-                    title={shareText}
-                    source='AsyncAPI Blog'>
+                  <LinkedinShareButton url={shareUrl} title={shareText} source='AsyncAPI Blog'>
                     <LinkedinIcon size={32} round />
                   </LinkedinShareButton>
-                  <FacebookShareButton
-                    url={shareUrl}
-                    title={shareText}
-                    hashtag='#AsyncAPI'>
+                  <FacebookShareButton url={shareUrl} title={shareText} hashtag='#AsyncAPI'>
                     <FacebookIcon size={32} round />
                   </FacebookShareButton>
                 </div>
@@ -117,28 +108,7 @@ export default function BlogLayout({
           <article className='mb-32'>
             <Head title={post.title} description={post.excerpt} image={post.cover} />
             <HtmlHead>
-              <script
-                type='text/javascript'
-                src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cb852c7b57ed596'
-                async
-              />
-              <style>{`
-                /* AddThis hack */
 
-                #at4-share {
-                    left: 50%;
-                    margin-left: -500px !important;
-                    position: absolute;
-
-                    &amp;.addthis-animated {
-                      animation-duration: 0s !important;
-                    }
-                }
-
-                #at4-scc {
-                    display: none !important;
-                }
-              `}</style>
               {post.canonical && <link rel='canonical' href={post.canonical} />}
             </HtmlHead>
             <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className='my-6 w-full' />
