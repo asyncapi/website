@@ -1,9 +1,8 @@
 import fs from 'fs';
-import path from 'path';
+import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import lodash from 'lodash';
 import { logger } from '../utils/logger';
-import { dirname } from 'path';
 
 const { flatten, fromPairs, uniq } = lodash;
 
