@@ -235,7 +235,7 @@
         "slack": "U018NLDV5E1",
         "availableForHire": false,
         "company": "Postman",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "spec-json-schemas",
             "bindings"
