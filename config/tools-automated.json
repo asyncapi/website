@@ -103,6 +103,151 @@
           "repoUrl": "https://github.com/LEGO/AsyncAPI.NET"
         },
         "filters": {
+          "language": "TypeScript",
+          "language": "C#",
+          "technology": [
+            ".NET",
+            "ASP.NET"
+          ],
+          "categories": [
+            "converters",
+            "code-first",
+            "validator"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "AsyncAPI.Net",
+        "description": "The AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common serializers to extract raw OpenAPI JSON and YAML documents from the model.",
+        "links": {
+          "repoUrl": "https://github.com/LEGO/AsyncAPI.NET"
+        },
+        "filters": {
+          "language": "TypeScript",
+          "language": "C#",
+          "technology": [
+            ".NET",
+            "ASP.NET"
+          ],
+          "categories": [
+            "converters",
+            "code-first",
+            "validator"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      },
+      {
+        "title": "SIO-AsyncAPI",
+        "description": "This is code-first approach to generate AsyncAPI specification from Socket.IO server.",
+        "links": {
+          "websiteUrl": "https://github.com/daler-rahimov/sio-asyncapi",
+          "docsUrl": "https://github.com/daler-rahimov/sio-asyncapi",
+          "repoUrl": "https://github.com/daler-rahimov/sio-asyncapi"
+        },
+        "filters": {
+          "language": "Python",
+          "language": "TypeScript",
+          "technology": [
+            "Socket.IO",
+            "Flask"
+            "Node.js",
+            "Nest JS"
+          ],
+          "categories": [
+            "code-first",
+            "api"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "SIO-AsyncAPI",
+        "description": "This is code-first approach to generate AsyncAPI specification from Socket.IO server.",
+        "links": {
+          "websiteUrl": "https://github.com/daler-rahimov/sio-asyncapi",
+          "docsUrl": "https://github.com/daler-rahimov/sio-asyncapi",
+          "repoUrl": "https://github.com/daler-rahimov/sio-asyncapi"
+        },
+        "filters": {
+          "language": "Python",
+          "language": "TypeScript",
+          "technology": [
+            "Socket.IO",
+            "Flask"
+            "Node.js",
+            "Nest JS"
+          ],
+          "categories": [
+            "code-first",
+            "api"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      }
+    ]
+  },
+  "Code-first tools": {
+    "description": "The following is a list of tools that generate AsyncAPI documents from your code.",
+    "toolsList": [
+      },
+      {
+        "title": "SIO-AsyncAPI",
+        "description": "This is code-first approach to generate AsyncAPI specification from Socket.IO server.",
+        "links": {
+          "websiteUrl": "https://github.com/daler-rahimov/sio-asyncapi",
+          "docsUrl": "https://github.com/daler-rahimov/sio-asyncapi",
+          "repoUrl": "https://github.com/daler-rahimov/sio-asyncapi"
+        },
+        "filters": {
+          "language": "Python",
+          "technology": [
+            "Socket.IO",
+            "Flask"
+          ],
+          "categories": [
+            "code-first",
+            "api"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "SIO-AsyncAPI",
+        "description": "This is code-first approach to generate AsyncAPI specification from Socket.IO server.",
+        "links": {
+          "websiteUrl": "https://github.com/daler-rahimov/sio-asyncapi",
+          "docsUrl": "https://github.com/daler-rahimov/sio-asyncapi",
+          "repoUrl": "https://github.com/daler-rahimov/sio-asyncapi"
+        },
+        "filters": {
+          "language": "Python",
+          "technology": [
+            "Socket.IO",
+            "Flask"
+          ],
+          "categories": [
+            "code-first",
+            "api"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "AsyncAPI.Net",
+        "description": "The AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common serializers to extract raw OpenAPI JSON and YAML documents from the model.",
+        "links": {
+          "repoUrl": "https://github.com/LEGO/AsyncAPI.NET"
+        },
+        "filters": {
           "language": "C#",
           "technology": [
             ".NET",
@@ -137,84 +282,120 @@
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
-      },
+      }
+    ]
+  },
+  "Code Generators": {
+    "description": "The following is a list of tools that generate code from an AsyncAPI document; not the other way around.",
+    "toolsList": [
       {
         "title": "nestjs-asyncapi",
         "description": "Utilize decorators to generate AsyncAPI document utilizing DTOs (similar to @nestjs/swagger) and a web UI.",
+        "title": "AsyncAPI Modelina",
+        "description": "Generate payload models into Java, TypeScript, Go, etc, you name it, from AsyncAPI documents. This tool gives you full control over the models through high customization",
         "links": {
           "repoUrl": "https://github.com/flamewow/nestjs-asyncapi"
+          "websiteUrl": "https://modelina.org",
+          "docsUrl": "https://github.com/asyncapi/modelina/tree/master/docs",
+          "repoUrl": "https://github.com/asyncapi/modelina"
         },
         "filters": {
+          "language": "TypeScript",
           "language": "TypeScript",
           "technology": [
             "Node.js",
             "Nest JS"
+            "React JS",
+            "Docker"
           ],
           "categories": [
             "code-first"
+            "code-generator"
           ],
           "hasCommercial": false,
-          "isAsyncAPIOwner": false
+          "isAsyncAPIOwner": true
         }
       },
       {
         "title": "nestjs-asyncapi",
         "description": "Utilize decorators to generate AsyncAPI document utilizing DTOs (similar to @nestjs/swagger) and a web UI.",
+        "title": "AsyncAPI Modelina",
+        "description": "Generate payload models into Java, TypeScript, Go, etc, you name it, from AsyncAPI documents. This tool gives you full control over the models through high customization",
         "links": {
           "repoUrl": "https://github.com/flamewow/nestjs-asyncapi"
+          "websiteUrl": "https://modelina.org",
+          "docsUrl": "https://github.com/asyncapi/modelina/tree/master/docs",
+          "repoUrl": "https://github.com/asyncapi/modelina"
         },
         "filters": {
+          "language": "TypeScript",
           "language": "TypeScript",
           "technology": [
             "Node.js",
             "Nest JS"
+            "React JS",
+            "Docker"
           ],
           "categories": [
             "code-first"
+            "code-generator"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      },
+      {
+        "title": "asyncapi-python",
+        "description": "Easily generate type-safe and async Python applications from AsyncAPI 3 specifications.",
+        "links": {
+          "repoUrl": "https://github.com/G-USI/asyncapi-python/",
+          "websiteUrl": "https://pypi.org/project/asyncapi-python/"
+        },
+        "filters": {
+          "language": "Python",
+          "technology": [
+            "amqp"
+          ],
+          "categories": [
+            "code-generator"
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
       },
       {
-        "title": "SIO-AsyncAPI",
-        "description": "This is code-first approach to generate AsyncAPI specification from Socket.IO server.",
+        "title": "asyncapi-python",
+        "description": "Easily generate type-safe and async Python applications from AsyncAPI 3 specifications.",
         "links": {
-          "websiteUrl": "https://github.com/daler-rahimov/sio-asyncapi",
-          "docsUrl": "https://github.com/daler-rahimov/sio-asyncapi",
-          "repoUrl": "https://github.com/daler-rahimov/sio-asyncapi"
+          "repoUrl": "https://github.com/G-USI/asyncapi-python/",
+          "websiteUrl": "https://pypi.org/project/asyncapi-python/"
         },
         "filters": {
           "language": "Python",
           "technology": [
-            "Socket.IO",
-            "Flask"
+            "amqp"
           ],
           "categories": [
-            "code-first",
-            "api"
+            "code-generator"
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
       },
+      },
       {
-        "title": "SIO-AsyncAPI",
-        "description": "This is code-first approach to generate AsyncAPI specification from Socket.IO server.",
+        "title": "Golang AsyncAPI Code Generator",
+        "description": "Generate Go user and application boilerplate from AsyncAPI specifications. Can be called from `go generate` without requirements.\n",
         "links": {
-          "websiteUrl": "https://github.com/daler-rahimov/sio-asyncapi",
-          "docsUrl": "https://github.com/daler-rahimov/sio-asyncapi",
-          "repoUrl": "https://github.com/daler-rahimov/sio-asyncapi"
+          "repoUrl": "https://github.com/lerenn/asyncapi-codegen"
         },
         "filters": {
-          "language": "Python",
+          "language": "Go/Golang",
           "technology": [
-            "Socket.IO",
-            "Flask"
+            "Go/Golang"
           ],
           "categories": [
-            "code-first",
-            "api"
+            "code-generator"
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
@@ -232,6 +413,10 @@
           "technology": [
             "Node.js",
             "TypeScript"
+          ],
+          "language": "Go/Golang",
+          "technology": [
+            "Go/Golang"
           ],
           "categories": [
             "code-first",
@@ -254,6 +439,9 @@
           "technology": [
             "Node.js",
             "TypeScript"
+            "Maven",
+            "Spring Cloud Streams",
+            "JHipster JDL"
           ],
           "categories": [
             "code-first",
@@ -282,6 +470,9 @@
           "technology": [
             "React JS",
             "Docker"
+            "Maven",
+            "Spring Cloud Streams",
+            "JHipster JDL"
           ],
           "categories": [
             "code-generator"
@@ -504,7 +695,9 @@
         },
         "filters": {
           "language": "TypeScript",
+          "language": "TypeScript",
           "technology": [
+            "React JS"
             "React JS"
           ],
           "categories": [
@@ -523,7 +716,9 @@
         },
         "filters": {
           "language": "TypeScript",
+          "language": "TypeScript",
           "technology": [
+            "React JS"
             "React JS"
           ],
           "categories": [
@@ -544,10 +739,13 @@
         "links": {
           "repoUrl": "https://github.com/asyncapi/asyncapi-react",
           "websiteUrl": "https://asyncapi.github.io/asyncapi-react/"
+          "repoUrl": "https://github.com/asyncapi/asyncapi-react",
+          "websiteUrl": "https://asyncapi.github.io/asyncapi-react/"
         },
         "filters": {
           "language": "TypeScript",
           "technology": [
+            "React JS",
             "React JS",
             "WebComponents"
           ],
@@ -564,10 +762,13 @@
         "links": {
           "repoUrl": "https://github.com/asyncapi/asyncapi-react",
           "websiteUrl": "https://asyncapi.github.io/asyncapi-react/"
+          "repoUrl": "https://github.com/asyncapi/asyncapi-react",
+          "websiteUrl": "https://asyncapi.github.io/asyncapi-react/"
         },
         "filters": {
           "language": "TypeScript",
           "technology": [
+            "React JS",
             "React JS",
             "WebComponents"
           ],
@@ -586,6 +787,43 @@
       {
         "title": "ZenWave SDK",
         "description": "DDD and API-First for Event-Driven Microservices",
+        "title": "ZenWave SDK",
+        "description": "DDD and API-First for Event-Driven Microservices",
+        "links": {
+          "websiteUrl": "https://zenwave360.github.io/",
+          "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
+          "repoUrl": "https://github.com/zenwave360/zenwave-sdk"
+          "websiteUrl": "https://zenwave360.github.io/",
+          "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
+          "repoUrl": "https://github.com/zenwave360/zenwave-sdk"
+        },
+        "filters": {
+          "language": "Java",
+          "language": "Java",
+          "technology": [
+            "Maven",
+            "Spring Cloud Streams",
+            "JHipster JDL"
+            "Maven",
+            "Spring Cloud Streams",
+            "JHipster JDL"
+          ],
+          "categories": [
+            "code-generator",
+            "code-generator",
+            "dsl",
+            "mocking-and-testing",
+            "cli"
+            "mocking-and-testing",
+            "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "ZenWave SDK",
+        "description": "DDD and API-First for Event-Driven Microservices",
         "links": {
           "websiteUrl": "https://zenwave360.github.io/",
           "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
@@ -634,43 +872,61 @@
         }
       },
       {
-        "title": "Zod Sockets",
-        "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
+        "title": "ZenWave SDK",
+        "description": "DDD and API-First for Event-Driven Microservices",
         "links": {
-          "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
-          "repoUrl": "https://github.com/RobinTail/zod-sockets"
+          "websiteUrl": "https://zenwave360.github.io/",
+          "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
+          "repoUrl": "https://github.com/zenwave360/zenwave-sdk"
         },
         "filters": {
-          "language": "TypeScript",
+          "language": "Java",
           "technology": [
-            "Node.js",
-            "TypeScript"
+            "Maven",
+            "Spring Cloud Streams",
+            "JHipster JDL"
           ],
           "categories": [
-            "code-first",
+            "code-generator",
             "dsl",
-            "framework"
+            "mocking-and-testing",
+            "cli"
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
-      },
+      }
+
+    ]
+  },
+  "Frameworks": {
+    "description": "The following is a list of API/application frameworks that make use of AsyncAPI.",
+    "toolsList": [
       {
+        "title": "Zod Sockets",
+        "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
         "title": "Zod Sockets",
         "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
         "links": {
           "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
           "repoUrl": "https://github.com/RobinTail/zod-sockets"
+          "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
+          "repoUrl": "https://github.com/RobinTail/zod-sockets"
         },
         "filters": {
           "language": "TypeScript",
+          "language": "TypeScript",
           "technology": [
+            "Node.js",
+            "TypeScript"
             "Node.js",
             "TypeScript"
           ],
           "categories": [
             "code-first",
+            "code-first",
             "dsl",
+            "framework"
             "framework"
           ],
           "hasCommercial": false,
@@ -686,24 +942,40 @@
       {
         "title": "Zod Sockets",
         "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
+        "title": "Zod Sockets",
+        "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
         "links": {
+          "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
+          "repoUrl": "https://github.com/RobinTail/zod-sockets"
           "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
           "repoUrl": "https://github.com/RobinTail/zod-sockets"
         },
         "filters": {
           "language": "TypeScript",
+          "language": "TypeScript",
           "technology": [
+            "Node.js",
+            "TypeScript"
             "Node.js",
             "TypeScript"
           ],
           "categories": [
             "code-first",
+            "code-first",
             "dsl",
+            "framework"
             "framework"
           ],
           "hasCommercial": false,
-          "isAsyncAPIOwner": false
+          "isAsyncAPIOwner": true
         }
+      }
+
+    ]
+  },
+  "Frameworks": {
+    "description": "The following is a list of API/application frameworks that make use of AsyncAPI.",
+    "toolsList": [
       },
       {
         "title": "Glee",
@@ -729,50 +1001,6 @@
     "description": "The following is a list of API/application frameworks that make use of AsyncAPI.",
     "toolsList": [
       {
-        "title": "Zod Sockets",
-        "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
-        "links": {
-          "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
-          "repoUrl": "https://github.com/RobinTail/zod-sockets"
-        },
-        "filters": {
-          "language": "TypeScript",
-          "technology": [
-            "Node.js",
-            "TypeScript"
-          ],
-          "categories": [
-            "code-first",
-            "dsl",
-            "framework"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": false
-        }
-      },
-      {
-        "title": "Zod Sockets",
-        "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
-        "links": {
-          "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
-          "repoUrl": "https://github.com/RobinTail/zod-sockets"
-        },
-        "filters": {
-          "language": "TypeScript",
-          "technology": [
-            "Node.js",
-            "TypeScript"
-          ],
-          "categories": [
-            "code-first",
-            "dsl",
-            "framework"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": false
-        }
-      },
-      {
         "title": "Glee",
         "description": "Glee — The AsyncAPI framework that will make you smile again :)",
         "links": {
@@ -787,6 +1015,50 @@
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
+        }
+      },
+      {
+        "title": "Zod Sockets",
+        "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
+        "links": {
+          "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
+          "repoUrl": "https://github.com/RobinTail/zod-sockets"
+        },
+        "filters": {
+          "language": "TypeScript",
+          "technology": [
+            "Node.js",
+            "TypeScript"
+          ],
+          "categories": [
+            "code-first",
+            "dsl",
+            "framework"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "Zod Sockets",
+        "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
+        "links": {
+          "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
+          "repoUrl": "https://github.com/RobinTail/zod-sockets"
+        },
+        "filters": {
+          "language": "TypeScript",
+          "technology": [
+            "Node.js",
+            "TypeScript"
+          ],
+          "categories": [
+            "code-first",
+            "dsl",
+            "framework"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -899,7 +1171,9 @@
         },
         "filters": {
           "language": "Kotlin",
+          "language": "Kotlin",
           "technology": [
+            "Maven"
             "Maven"
           ],
           "categories": [
@@ -919,7 +1193,9 @@
         },
         "filters": {
           "language": "Kotlin",
+          "language": "Kotlin",
           "technology": [
+            "Maven"
             "Maven"
           ],
           "categories": [
@@ -987,12 +1263,17 @@
       {
         "title": "AsyncAPI Validation",
         "description": "Message validation package for YAML and JSON AsyncAPI documents.",
+        "title": "AsyncAPI Validation",
+        "description": "Message validation package for YAML and JSON AsyncAPI documents.",
         "links": {
+          "repoUrl": "https://github.com/Elhebert/asyncapi-validation"
           "repoUrl": "https://github.com/Elhebert/asyncapi-validation"
         },
         "filters": {
           "language": "TypeScript",
+          "language": "TypeScript",
           "technology": [
+            "Node.js"
             "Node.js"
           ],
           "categories": [
@@ -1005,12 +1286,17 @@
       {
         "title": "AsyncAPI Validation",
         "description": "Message validation package for YAML and JSON AsyncAPI documents.",
+        "title": "AsyncAPI Validation",
+        "description": "Message validation package for YAML and JSON AsyncAPI documents.",
         "links": {
+          "repoUrl": "https://github.com/Elhebert/asyncapi-validation"
           "repoUrl": "https://github.com/Elhebert/asyncapi-validation"
         },
         "filters": {
           "language": "TypeScript",
+          "language": "TypeScript",
           "technology": [
+            "Node.js"
             "Node.js"
           ],
           "categories": [
@@ -1023,16 +1309,24 @@
       {
         "title": "AsyncAPI.Net",
         "description": "The AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common serializers to extract raw OpenAPI JSON and YAML documents from the model.",
+        "title": "AsyncAPI.Net",
+        "description": "The AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common serializers to extract raw OpenAPI JSON and YAML documents from the model.",
         "links": {
+          "repoUrl": "https://github.com/LEGO/AsyncAPI.NET"
           "repoUrl": "https://github.com/LEGO/AsyncAPI.NET"
         },
         "filters": {
           "language": "C#",
+          "language": "C#",
           "technology": [
+            ".NET",
+            "ASP.NET"
             ".NET",
             "ASP.NET"
           ],
           "categories": [
+            "converters",
+            "code-first",
             "converters",
             "code-first",
             "validator"
@@ -1044,16 +1338,24 @@
       {
         "title": "AsyncAPI.Net",
         "description": "The AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common serializers to extract raw OpenAPI JSON and YAML documents from the model.",
+        "title": "AsyncAPI.Net",
+        "description": "The AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common serializers to extract raw OpenAPI JSON and YAML documents from the model.",
         "links": {
+          "repoUrl": "https://github.com/LEGO/AsyncAPI.NET"
           "repoUrl": "https://github.com/LEGO/AsyncAPI.NET"
         },
         "filters": {
           "language": "C#",
+          "language": "C#",
           "technology": [
+            ".NET",
+            "ASP.NET"
             ".NET",
             "ASP.NET"
           ],
           "categories": [
+            "converters",
+            "code-first",
             "converters",
             "code-first",
             "validator"
@@ -1151,19 +1453,52 @@
       {
         "title": "AsyncAPI CLI",
         "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
+        "title": "AsyncAPI CLI",
+        "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
         "links": {
+          "websiteUrl": "https://www.asyncapi.com/tools/cli",
+          "repoUrl": "https://github.com/asyncapi/cli"
           "websiteUrl": "https://www.asyncapi.com/tools/cli",
           "repoUrl": "https://github.com/asyncapi/cli"
         },
         "filters": {
           "technology": [
             "TypeScript"
+            "TypeScript"
           ],
           "categories": [
+            "others",
             "others",
             "cli"
           ],
           "hasCommercial": false,
+          "isAsyncAPIOwner": true
+          "isAsyncAPIOwner": true
+        }
+      },
+      {
+        "title": "AsyncAPI CLI",
+        "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
+        "title": "AsyncAPI CLI",
+        "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
+        "links": {
+          "websiteUrl": "https://www.asyncapi.com/tools/cli",
+          "repoUrl": "https://github.com/asyncapi/cli"
+          "websiteUrl": "https://www.asyncapi.com/tools/cli",
+          "repoUrl": "https://github.com/asyncapi/cli"
+        },
+        "filters": {
+          "technology": [
+            "TypeScript"
+            "TypeScript"
+          ],
+          "categories": [
+            "others",
+            "others",
+            "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
           "isAsyncAPIOwner": true
         }
       },
@@ -1172,25 +1507,7 @@
         "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
         "links": {
           "websiteUrl": "https://www.asyncapi.com/tools/cli",
-          "repoUrl": "https://github.com/asyncapi/cli"
-        },
-        "filters": {
-          "technology": [
-            "TypeScript"
-          ],
-          "categories": [
-            "others",
-            "cli"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      },
-      {
-        "title": "AsyncAPI CLI",
-        "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
-        "links": {
-          "websiteUrl": "https://www.asyncapi.com/tools/cli",
+          "repoUrl": "https://github.com/hkirat/asyncapi-fork"
           "repoUrl": "https://github.com/hkirat/asyncapi-fork"
         },
         "filters": {
@@ -1203,6 +1520,7 @@
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -1210,6 +1528,7 @@
         "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
         "links": {
           "websiteUrl": "https://www.asyncapi.com/tools/cli",
+          "repoUrl": "https://github.com/hkirat/asyncapi-fork"
           "repoUrl": "https://github.com/hkirat/asyncapi-fork"
         },
         "filters": {
@@ -1246,25 +1565,37 @@
             "cli"
           ],
           "hasCommercial": false,
-          "isAsyncAPIOwner": true
+          "isAsyncAPIOwner": false
         }
       },
       {
+        "title": "ZenWave SDK",
+        "description": "DDD and API-First for Event-Driven Microservices",
         "title": "ZenWave SDK",
         "description": "DDD and API-First for Event-Driven Microservices",
         "links": {
           "websiteUrl": "https://zenwave360.github.io/",
           "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
           "repoUrl": "https://github.com/zenwave360/zenwave-sdk"
+          "websiteUrl": "https://zenwave360.github.io/",
+          "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
+          "repoUrl": "https://github.com/zenwave360/zenwave-sdk"
         },
         "filters": {
+          "language": "Java",
           "language": "Java",
           "technology": [
             "Maven",
             "Spring Cloud Streams",
             "JHipster JDL"
+            "Maven",
+            "Spring Cloud Streams",
+            "JHipster JDL"
           ],
           "categories": [
+            "code-generator",
+            "dsl",
+            "mocking-and-testing",
             "code-generator",
             "dsl",
             "mocking-and-testing",
@@ -1277,19 +1608,31 @@
       {
         "title": "ZenWave SDK",
         "description": "DDD and API-First for Event-Driven Microservices",
+        "title": "ZenWave SDK",
+        "description": "DDD and API-First for Event-Driven Microservices",
         "links": {
+          "websiteUrl": "https://zenwave360.github.io/",
+          "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
+          "repoUrl": "https://github.com/zenwave360/zenwave-sdk"
           "websiteUrl": "https://zenwave360.github.io/",
           "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
           "repoUrl": "https://github.com/zenwave360/zenwave-sdk"
         },
         "filters": {
           "language": "Java",
+          "language": "Java",
           "technology": [
+            "Maven",
+            "Spring Cloud Streams",
+            "JHipster JDL"
             "Maven",
             "Spring Cloud Streams",
             "JHipster JDL"
           ],
           "categories": [
+            "code-generator",
+            "dsl",
+            "mocking-and-testing",
             "code-generator",
             "dsl",
             "mocking-and-testing",
@@ -1299,6 +1642,8 @@
           "isAsyncAPIOwner": false
         }
       }
+
+
 
 
     ]
@@ -1348,50 +1693,6 @@
     "description": "The following is a list of extensions for different IDEs like VSCode, IntelliJ IDEA and others",
     "toolsList": [
       {
-        "title": "jAsyncAPI - IDEA plugin",
-        "description": "Idea plugin for the java-asyncapi - Helps to edit and validate AsyncAPI schemas.",
-        "links": {
-          "websiteUrl": "https://plugins.jetbrains.com/plugin/15673-asyncapi",
-          "docsUrl": "https://github.com/asyncapi/jasyncapi-idea-plugin#usage",
-          "repoUrl": "https://github.com/asyncapi/jasyncapi-idea-plugin"
-        },
-        "filters": {
-          "language": "Kotlin",
-          "technology": [
-            "JetBrains",
-            "IntelliJ IDEA"
-          ],
-          "categories": [
-            "ide-extension"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      },
-      {
-        "title": "jAsyncAPI - IDEA plugin",
-        "description": "Idea plugin for the java-asyncapi - Helps to edit and validate AsyncAPI schemas.",
-        "links": {
-          "websiteUrl": "https://plugins.jetbrains.com/plugin/15673-asyncapi",
-          "docsUrl": "https://github.com/asyncapi/jasyncapi-idea-plugin#usage",
-          "repoUrl": "https://github.com/asyncapi/jasyncapi-idea-plugin"
-        },
-        "filters": {
-          "language": "Kotlin",
-          "technology": [
-            "JetBrains",
-            "IntelliJ IDEA"
-          ],
-          "categories": [
-            "ide-extension"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      },
-      {
-        "title": "asyncapi-preview",
-        "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
         "title": "asyncapi-preview",
         "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
         "links": {
@@ -1399,8 +1700,6 @@
         },
         "filters": {
           "technology": [
-            "VSCode",
-            "SmartPaste"
             "VSCode",
             "SmartPaste"
           ],
@@ -1414,15 +1713,11 @@
       {
         "title": "asyncapi-preview",
         "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
-        "title": "asyncapi-preview",
-        "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
         "links": {
           "repoUrl": "https://github.com/Savio629/testing2"
         },
         "filters": {
           "technology": [
-            "VSCode",
-            "SmartPaste"
             "VSCode",
             "SmartPaste"
           ],
@@ -1436,6 +1731,10 @@
       {
         "title": "jAsyncAPI - IDEA plugin",
         "description": "Idea plugin for the java-asyncapi - Helps to edit and validate AsyncAPI schemas.",
+        "title": "asyncapi-preview",
+        "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
+        "title": "asyncapi-preview",
+        "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
         "links": {
           "websiteUrl": "https://plugins.jetbrains.com/plugin/15673-asyncapi",
           "docsUrl": "https://github.com/asyncapi/jasyncapi-idea-plugin#usage",
@@ -1446,6 +1745,10 @@
           "technology": [
             "JetBrains",
             "IntelliJ IDEA"
+            "VSCode",
+            "SmartPaste"
+            "VSCode",
+            "SmartPaste"
           ],
           "categories": [
             "ide-extension"
@@ -1457,6 +1760,10 @@
       {
         "title": "jAsyncAPI - IDEA plugin",
         "description": "Idea plugin for the java-asyncapi - Helps to edit and validate AsyncAPI schemas.",
+        "title": "asyncapi-preview",
+        "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
+        "title": "asyncapi-preview",
+        "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
         "links": {
           "websiteUrl": "https://plugins.jetbrains.com/plugin/15673-asyncapi",
           "docsUrl": "https://github.com/asyncapi/jasyncapi-idea-plugin#usage",
@@ -1465,6 +1772,62 @@
         "filters": {
           "language": "Kotlin",
           "technology": [
+            "JetBrains",
+            "IntelliJ IDEA"
+            "VSCode",
+            "SmartPaste"
+            "VSCode",
+            "SmartPaste"
+          ],
+          "categories": [
+            "ide-extension"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      },
+      {
+        "title": "HTML Template",
+        "description": "HTML template for AsyncAPI Generator. Use it to generate a static docs. It is using AsyncAPI React component under the hood.",
+        "title": "jAsyncAPI - IDEA plugin",
+        "description": "Idea plugin for the java-asyncapi - Helps to edit and validate AsyncAPI schemas.",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/html-template"
+          "websiteUrl": "https://plugins.jetbrains.com/plugin/15673-asyncapi",
+          "docsUrl": "https://github.com/asyncapi/jasyncapi-idea-plugin#usage",
+          "repoUrl": "https://github.com/asyncapi/jasyncapi-idea-plugin"
+        },
+        "filters": {
+          "language": "JavaScript",
+          "language": "Kotlin",
+          "technology": [
+            "HTML"
+            "JetBrains",
+            "IntelliJ IDEA"
+          ],
+          "categories": [
+            "ide-extension"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      },
+      {
+        "title": "HTML Template",
+        "description": "HTML template for AsyncAPI Generator. Use it to generate a static docs. It is using AsyncAPI React component under the hood.",
+        "title": "jAsyncAPI - IDEA plugin",
+        "description": "Idea plugin for the java-asyncapi - Helps to edit and validate AsyncAPI schemas.",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/html-template"
+          "websiteUrl": "https://plugins.jetbrains.com/plugin/15673-asyncapi",
+          "docsUrl": "https://github.com/asyncapi/jasyncapi-idea-plugin#usage",
+          "repoUrl": "https://github.com/asyncapi/jasyncapi-idea-plugin"
+        },
+        "filters": {
+          "language": "JavaScript",
+          "language": "Kotlin",
+          "technology": [
+            "HTML"
             "JetBrains",
             "IntelliJ IDEA"
           ],
@@ -1481,14 +1844,22 @@
     "description": "The following is a list of templates compatible with AsyncAPI Generator. You can use them to generate apps, clients or documentation from your AsyncAPI documents.",
     "toolsList": [
       {
+        "title": "Java Spring Cloud Stream Template",
+        "description": "Java Spring Cloud Stream template for the AsyncAPI Generator",
         "title": "HTML Template",
         "description": "HTML template for AsyncAPI Generator. Use it to generate a static docs. It is using AsyncAPI React component under the hood.",
         "links": {
+          "repoUrl": "https://github.com/asyncapi/java-spring-cloud-stream-template"
           "repoUrl": "https://github.com/asyncapi/html-template"
         },
         "filters": {
+          "language": [
+            "JavaScript"
+          ],
           "language": "JavaScript",
           "technology": [
+            "Spring Cloud Streams",
+            "Maven"
             "HTML"
           ],
           "categories": [
@@ -1499,14 +1870,22 @@
         }
       },
       {
+        "title": "Java Spring Cloud Stream Template",
+        "description": "Java Spring Cloud Stream template for the AsyncAPI Generator",
         "title": "HTML Template",
         "description": "HTML template for AsyncAPI Generator. Use it to generate a static docs. It is using AsyncAPI React component under the hood.",
         "links": {
+          "repoUrl": "https://github.com/asyncapi/java-spring-cloud-stream-template"
           "repoUrl": "https://github.com/asyncapi/html-template"
         },
         "filters": {
+          "language": [
+            "JavaScript"
+          ],
           "language": "JavaScript",
           "technology": [
+            "Spring Cloud Streams",
+            "Maven"
             "HTML"
           ],
           "categories": [
@@ -1525,26 +1904,6 @@
         "filters": {
           "language": [
             "JavaScript"
-          ],
-          "technology": [
-            "Spring Cloud Streams",
-            "Maven"
-          ],
-          "categories": [
-            "generator-template"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      },
-      {
-        "title": "Java Spring Cloud Stream Template",
-        "description": "Java Spring Cloud Stream template for the AsyncAPI Generator",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/java-spring-cloud-stream-template"
-        },
-        "filters": {
-          "language": [
             "JavaScript"
           ],
           "technology": [
@@ -1559,16 +1918,53 @@
         }
       },
       {
+        "title": "Java Spring Template",
+        "description": "Java Spring template for the AsyncAPI Generator",
+        "title": "Java Spring Cloud Stream Template",
+        "description": "Java Spring Cloud Stream template for the AsyncAPI Generator",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/java-spring-template"
+          "repoUrl": "https://github.com/asyncapi/java-spring-cloud-stream-template"
+        },
+        "filters": {
+          "language": [
+            "JavaScript"
+          ],
+          "language": [
+            "JavaScript"
+          ],
+          "technology": [
+            "Springboot",
+            "Maven",
+            "Gradle"
+            "Spring Cloud Streams",
+            "Maven"
+          ],
+          "categories": [
+            "generator-template"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      },
+      {
+        "title": "Java Template",
+        "description": "Java template for the AsyncAPI Generator",
         "title": "Node.js Websockets Template",
         "description": "Node.js WebSockets template for the AsyncAPI Generator. It showcases how from a single AsyncAPI document you can generate a server and a client at the same time.",
         "links": {
+          "repoUrl": "https://github.com/asyncapi/java-template"
           "repoUrl": "https://github.com/asyncapi/nodejs-ws-template"
         },
         "filters": {
           "language": [
             "JavaScript"
           ],
+          "language": [
+            "JavaScript"
+          ],
           "technology": [
+            "Java"
             "Node.js"
           ],
           "categories": [
@@ -1587,6 +1983,7 @@
         "filters": {
           "language": [
             "JavaScript"
+            "JavaScript"
           ],
           "technology": [
             "Springboot",
@@ -1601,38 +1998,18 @@
         }
       },
       {
-        "title": "Java Template",
-        "description": "Java template for the AsyncAPI Generator",
+        "title": "Node.js Multiprotocol Template",
+        "description": "This template generates a server using your AsyncAPI document. It supports multiple different protocols, like Kafka or MQTT.  It is designed in the way that generated code is a library and with it's API you can start the server, send messages or register a middleware for listening incoming messages. Runtime message validation included.",
         "links": {
-          "repoUrl": "https://github.com/asyncapi/java-template"
+          "repoUrl": "https://github.com/asyncapi/nodejs-template"
         },
         "filters": {
+          "language": "JavaScript",
           "language": [
             "JavaScript"
           ],
           "technology": [
-            "Java"
-          ],
-          "categories": [
-            "generator-template"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      },
-      {
-        "title": "Java Spring Cloud Stream Template",
-        "description": "Java Spring Cloud Stream template for the AsyncAPI Generator",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/java-spring-cloud-stream-template"
-        },
-        "filters": {
-          "language": [
-            "JavaScript"
-          ],
-          "technology": [
-            "Spring Cloud Streams",
-            "Maven"
+            "Node.js"
           ],
           "categories": [
             "generator-template"
@@ -1648,6 +2025,31 @@
           "repoUrl": "https://github.com/asyncapi/nodejs-template"
         },
         "filters": {
+          "language": "JavaScript",
+          "language": [
+            "JavaScript"
+          ],
+          "technology": [
+            "Node.js"
+          ],
+          "categories": [
+            "generator-template"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      },
+      {
+        "title": "Node.js Websockets Template",
+        "description": "Node.js WebSockets template for the AsyncAPI Generator. It showcases how from a single AsyncAPI document you can generate a server and a client at the same time.",
+        "title": "Node.js Multiprotocol Template",
+        "description": "This template generates a server using your AsyncAPI document. It supports multiple different protocols, like Kafka or MQTT.  It is designed in the way that generated code is a library and with it's API you can start the server, send messages or register a middleware for listening incoming messages. Runtime message validation included.",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/nodejs-ws-template"
+          "repoUrl": "https://github.com/asyncapi/nodejs-template"
+        },
+        "filters": {
+          "language": "JavaScript",
           "language": "JavaScript",
           "technology": [
             "Node.js"
@@ -1666,6 +2068,29 @@
           "repoUrl": "https://github.com/asyncapi/nodejs-template"
         },
         "filters": {
+          "language": "JavaScript",
+          "technology": [
+            "Node.js"
+            "Node.js"
+          ],
+          "categories": [
+            "generator-template"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      },
+      {
+        "title": "Node.js Websockets Template",
+        "description": "Node.js WebSockets template for the AsyncAPI Generator. It showcases how from a single AsyncAPI document you can generate a server and a client at the same time.",
+        "title": "Node.js Websockets Template",
+        "description": "Node.js WebSockets template for the AsyncAPI Generator. It showcases how from a single AsyncAPI document you can generate a server and a client at the same time.",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/nodejs-ws-template"
+          "repoUrl": "https://github.com/asyncapi/nodejs-ws-template"
+        },
+        "filters": {
+          "language": "JavaScript",
           "language": "JavaScript",
           "technology": [
             "Node.js"
@@ -1687,23 +2112,6 @@
           "language": "JavaScript",
           "technology": [
             "Node.js"
-          ],
-          "categories": [
-            "generator-template"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      },
-      {
-        "title": "Node.js Websockets Template",
-        "description": "Node.js WebSockets template for the AsyncAPI Generator. It showcases how from a single AsyncAPI document you can generate a server and a client at the same time.",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/nodejs-ws-template"
-        },
-        "filters": {
-          "language": "JavaScript",
-          "technology": [
             "Node.js"
           ],
           "categories": [
@@ -1797,3 +2205,4 @@
     ]
   }
 }
+
