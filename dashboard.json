@@ -52,7 +52,34 @@
       "resourcePath": "/asyncapi/community/pull/897",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 22.112443333692923
+      "score": 22.68679251119144
+    },
+    {
+      "id": "PR_kwDODCuNRs6NwyqP",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: initial ROS2 AsyncAPI contribution by SIEMENS AG",
+      "author": "gramss",
+      "resourcePath": "/asyncapi/bindings/pull/270",
+      "repo": "asyncapi/bindings",
+      "labels": [],
+      "score": 20.38939580119737
+    },
+    {
+      "id": "I_kwDOBW5R_c6pn_G2",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Redesign the AsyncAPI Website and Implement Dark Theme",
+      "author": "devilkiller-ag",
+      "resourcePath": "/asyncapi/website/issues/3669",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "gsoc",
+          "color": "F4D03F"
+        }
+      ],
+      "score": 16.943300736206268
     },
     {
       "id": "PR_kwDOBW5R_c6KgWbR",
@@ -63,7 +90,7 @@
       "resourcePath": "/asyncapi/website/pull/3658",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 16.65612614745701
+      "score": 16.943300736206268
     },
     {
       "id": "I_kwDOFLhIt85bebeO",
@@ -77,35 +104,15 @@
       "score": 16.36895155870775
     },
     {
-      "id": "PR_kwDOBW5R_c6MO2j-",
+      "id": "PR_kwDOFLhIt853IEwA",
       "isPR": true,
       "isAssigned": false,
-      "title": "chore(blog): add ashmit spotlight story",
+      "title": "docs: added asyncapi student ambassador md file",
       "author": "iambami",
-      "resourcePath": "/asyncapi/website/pull/3726",
-      "repo": "asyncapi/website",
+      "resourcePath": "/asyncapi/community/pull/1333",
+      "repo": "asyncapi/community",
       "labels": [],
-      "score": 15.220253203710714
-    },
-    {
-      "id": "I_kwDODou01c5ZAFWh",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Please support File References",
-      "author": "philCryoport",
-      "resourcePath": "/asyncapi/studio/issues/528",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "bounty",
-          "color": "0E8A16"
-        }
-      ],
-      "score": 14.07155484871368
+      "score": 16.36895155870775
     },
     {
       "id": "I_kwDOFLhIt86O7jFN",
@@ -129,58 +136,51 @@
           "color": "0d67d3"
         }
       ],
-      "score": 13.210031082465903
+      "score": 15.794602381209232
     },
     {
-      "id": "I_kwDOFLhIt85xI2wH",
+      "id": "I_kwDODou01c5ZAFWh",
       "isPR": false,
-      "isAssigned": false,
-      "title": "Measure AsyncAPI Adoption",
-      "author": "fmvilas",
-      "resourcePath": "/asyncapi/community/issues/879",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 12.922856493716644
-    },
-    {
-      "id": "I_kwDOFLhIt86sh4Es",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Donation of `Neuroglia.AsyncAPI`",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/community/issues/1764",
-      "repo": "asyncapi/community",
+      "isAssigned": true,
+      "title": "Please support File References",
+      "author": "philCryoport",
+      "resourcePath": "/asyncapi/studio/issues/528",
+      "repo": "asyncapi/studio",
       "labels": [
         {
-          "name": "vote",
-          "color": "EF813F"
+          "name": "enhancement",
+          "color": "a2eeef"
         },
         {
-          "name": "gitvote",
-          "color": "ededed"
-        },
-        {
-          "name": "vote open",
-          "color": "ededed"
+          "name": "bounty",
+          "color": "0E8A16"
         }
       ],
-      "score": 12.348507316218127
+      "score": 14.07155484871368
     },
     {
-      "id": "I_kwDOBW5R_c6pn_G2",
+      "id": "I_kwDODyzcIc5gD3jB",
       "isPR": false,
       "isAssigned": false,
-      "title": "Redesign the AsyncAPI Website and Implement Dark Theme",
-      "author": "devilkiller-ag",
-      "resourcePath": "/asyncapi/website/issues/3669",
-      "repo": "asyncapi/website",
+      "title": "Automate `paper work` around project governance",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/.github/issues/210",
+      "repo": "asyncapi/.github",
       "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
         {
           "name": "gsoc",
           "color": "F4D03F"
         }
       ],
-      "score": 12.348507316218127
+      "score": 13.497205671215161
     },
     {
       "id": "I_kwDOBGu-186XjdU2",
@@ -201,12 +201,37 @@
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDODwv8N86tpo_O",
-      "title": "Remove \"All rights reserved and the Copyright symbol\"",
+      "id": "I_kwDOBW5R_c6vPqVh",
+      "title": "Misaligned cards in ambassadorList",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/conference-website/issues/620",
-      "repo": "asyncapi/conference-website",
-      "author": "thulieblack",
+      "resourcePath": "/asyncapi/website/issues/3937",
+      "repo": "asyncapi/website",
+      "author": "tutankhAman",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "ee0701"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFDnrNc6uQo6r",
+      "title": "[Improvement]: Improve the error message while generating project fromgenerate command",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/cli/issues/1728",
+      "repo": "asyncapi/cli",
+      "author": "AayushSaini101",
+      "area": "Unknown",
+      "labels": []
+    },
+    {
+      "id": "I_kwDOFDnrNc6uQjwZ",
+      "title": "[Improvement]: Make the steps of Asyncapi start studio command interactive",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/cli/issues/1727",
+      "repo": "asyncapi/cli",
+      "author": "AayushSaini101",
       "area": "Unknown",
       "labels": []
     },
@@ -270,16 +295,6 @@
       "labels": []
     },
     {
-      "id": "I_kwDOBW5R_c6qAXn5",
-      "title": "[Bug]: The Search History from Search Bar and Search Icon is not consistent",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/3676",
-      "repo": "asyncapi/website",
-      "author": "krishi-agrawal",
-      "area": "typescript",
-      "labels": []
-    },
-    {
       "id": "I_kwDOBW5R_c6ovh9-",
       "title": "[FEATURE] <Social Sharing Buttons on Blogs>",
       "isAssigned": false,
@@ -287,21 +302,6 @@
       "repo": "asyncapi/website",
       "author": "cbum-dev",
       "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c6oqLim",
-      "title": "[FEATURE] Add smooth transition to the search modal opening",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/3646",
-      "repo": "asyncapi/website",
-      "author": "auraticabhi",
-      "area": "Unknown",
       "labels": [
         {
           "name": "enhancement",
@@ -440,61 +440,6 @@
       ]
     },
     {
-      "id": "I_kwDOGQYLdM6VGsJA",
-      "title": "Design a Graphic for the Member Spotlight Post",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/brand/issues/108",
-      "repo": "asyncapi/brand",
-      "author": "Mayaleeeee",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": ":art: design",
-          "color": "0D67D3"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOGQYLdM6VAt9d",
-      "title": "Create \"Did You Know?\" Social Media Posts (3-4 Graphics)",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/brand/issues/107",
-      "repo": "asyncapi/brand",
-      "author": "Mayaleeeee",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOGQYLdM6VAsmz",
-      "title": "Create a Graphic for \"Ask Me Anything\" (AMA) Session Announcement",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/brand/issues/106",
-      "repo": "asyncapi/brand",
-      "author": "Mayaleeeee",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOGQYLdM6VArWv",
-      "title": "Design a Graphic for Mentorship Program Announcement",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/brand/issues/105",
-      "repo": "asyncapi/brand",
-      "author": "Mayaleeeee",
-      "area": "design",
-      "labels": []
-    },
-    {
       "id": "I_kwDOGQYLdM6VApSN",
       "title": "Design a Graphic for Newsletter Promo",
       "isAssigned": false,
@@ -502,7 +447,12 @@
       "repo": "asyncapi/brand",
       "author": "Mayaleeeee",
       "area": "design",
-      "labels": []
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ]
     },
     {
       "id": "I_kwDOFLhIt86O7jFN",
@@ -709,10 +659,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
@@ -728,10 +674,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
