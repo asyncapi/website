@@ -66,17 +66,6 @@
       "score": 20.38939580119737
     },
     {
-      "id": "PR_kwDOBW5R_c6MO2j-",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore(blog): add ashmit spotlight story",
-      "author": "iambami",
-      "resourcePath": "/asyncapi/website/pull/3726",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 18.953522857451077
-    },
-    {
       "id": "I_kwDOBW5R_c6pn_G2",
       "isPR": false,
       "isAssigned": false,
@@ -192,9 +181,40 @@
         }
       ],
       "score": 13.497205671215161
+    },
+    {
+      "id": "I_kwDOBGu-186XjdU2",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Proposal to add a 'version' value into the message object to support a more granular versioning",
+      "author": "IsmaelMartinez",
+      "resourcePath": "/asyncapi/spec/issues/1068",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 12.348507316218127
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOBW5R_c6vPqVh",
+      "title": "Misaligned cards in ambassadorList",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/3937",
+      "repo": "asyncapi/website",
+      "author": "tutankhAman",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "ee0701"
+        }
+      ]
+    },
     {
       "id": "I_kwDOFDnrNc6uQo6r",
       "title": "[Improvement]: Improve the error message while generating project fromgenerate command",
@@ -282,21 +302,6 @@
       "repo": "asyncapi/website",
       "author": "cbum-dev",
       "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c6oqLim",
-      "title": "[FEATURE] Add smooth transition to the search modal opening",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/3646",
-      "repo": "asyncapi/website",
-      "author": "auraticabhi",
-      "area": "Unknown",
       "labels": [
         {
           "name": "enhancement",
