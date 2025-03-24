@@ -1,6 +1,6 @@
 ---
 title: AsyncAPI Mascot Redesign: The Biography of Eve and Chan
-date: 2025-02-25T06:00:00+01:00
+date: 2025-03-24T06:00:00+01:00
 type: Community
 tags:
   - Mascot
