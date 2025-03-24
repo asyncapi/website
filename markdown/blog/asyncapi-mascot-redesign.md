@@ -69,6 +69,6 @@ Designing Eve and Chan was both a challenge and an honor, and I can’t wait to 
 
 So, if you’ve ever wondered about the story behind these little characters, now you know, and if you’re part of the AsyncAPI community, get ready. You’ll be seeing a lot more of them.
 
-[poll]: /public/img/posts/mascot-poll.webp "Poll for mascot name suggestions"
+[poll]: /img/posts/mascot-poll.webp "Poll for mascot name suggestions"
 
-[mascots]: /public/img/posts/mascots.webp "AsyncAPI Mascots"
+[mascots]: /img/posts/mascots.webp "AsyncAPI Mascots"
