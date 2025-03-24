@@ -54,7 +54,7 @@
     "bio": "Daniel has been part of the codecentric team since October 2016. Since the beginning of 2022 he works as Senior Solution Architect at the Dortmund branch. Starting as a consultant with a focus on application lifecycle management, his focus shifted more and more towards APIs. In addition to numerous customer projects and his involvement in the open source world around APIs, our Head of API Experience & Operations is also a frequent speaker at conferences.",
     "title": "Senior Solution Architect / Head of API Experience and Operations",
     "github": "danielkocot",
-    "twitter": "dk_1977",
+    "twitter": "dankocot",
     "linkedin": "danielkocot",
     "company": "Codecentric AG",
     "country": "🇩🇪",
@@ -68,7 +68,7 @@
         },
         "link": "https://blog.codecentric.de/en/2021/09/asyncapi-documentation-event-message-driven-architectures/?hmsr=joyk.com&utm_source=joyk.com&utm_medium=referral"
       },
-      {	
+      {
        	"type": "article",
         "title": "AsyncAPI specification updates",
         "date": {
@@ -153,7 +153,7 @@
     "github": "hguerrero",
     "twitter": "hguerreroo",
     "title": "Chief Software Architect @Red Hat",
-    "linkedin": "hugo-guerrero",
+    "linkedin": "hugoguerrero",
     "company": "Red Hat",
     "contributions": [
       {
@@ -210,7 +210,7 @@
     "bio": "Java Architect with a deep understanding of Java, Spring-Boot, Spring-Cloud technologies, specializing in Domain-Driven Design (DDD) and Event-Driven Architectures creating Software Easy to Understand. Building ZenWave 360º. ZenWave 360º is a set of tools built on the foundations of Domain Driven Design and API-First principles for Event-Driven Architectures, to help you create software easy to understand. https://www.zenwave360.io/",
     "linkedin": "ivangarciasainzaja",
     "company": "IZERTIS",
-    "title": "Java Architect. Speaker. Building ZenWave 360°.",  
+    "title": "Java Architect. Speaker. Building ZenWave 360°.",
     "img": "https://avatars.githubusercontent.com/u/1246876?v=4",
     "contributions": [
       {
