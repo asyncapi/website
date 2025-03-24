@@ -55,7 +55,7 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
         ${cssBreakingPoint === 'xl' ? 'xl:cursor-auto' : 'lg:cursor-auto'} xl:mt-2`}
       >
         <h5
-          className={twMerge(`${open && 'mb-4'} flex-1 text-primary-500 font-medium uppercase tracking-wide 
+          className={twMerge(`${open && 'mb-4'} flex-1 text-primary-500 dark:text-white font-medium uppercase tracking-wide 
           text-sm font-sans antialiased ${
             cssBreakingPoint === 'xl'
               ? `xl:mb-4 xl:text-xs xl:text-gray-900 
@@ -66,10 +66,10 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
         >
           On this page
         </h5>
-        <div className={`text-underline p4 text-center ${cssBreakingPoint === 'xl' ? 'xl:hidden' : 'lg:hidden'}`}>
+        <div className={`text-underline  p4 text-center ${cssBreakingPoint === 'xl' ? 'xl:hidden' : 'lg:hidden'}`}>
           <ArrowRight
             className={`${open ? '-rotate-90' : 'rotate-90'} -mt-0.5 h-6 
-            text-primary-500 transition duration-200 ease-in-out`}
+            text-primary-500  transition duration-200 ease-in-out`}
           />
         </div>
       </div>
@@ -84,7 +84,7 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
           {tocItems.map((item, index) => (
             <a
               className={`pl-${2 ** (item.lvl - 1)} font-normal mb-1 block font-sans text-sm 
-                  text-gray-900 antialiased transition duration-100 ease-in-out hover:underline`}
+                  text-gray-500  antialiased transition duration-100 ease-in-out hover:underline`}
               href={`#${item.slug ? item.slug : item.slugWithATag}`}
               key={index}
               data-testid='TOC-Link'

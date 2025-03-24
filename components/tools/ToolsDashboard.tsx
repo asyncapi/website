@@ -178,7 +178,7 @@ export default function ToolsDashboard() {
           <div className='flex h-auto w-[47%] gap-5 lg:w-1/5'>
             <div className='relative h-auto w-full' ref={filterRef as React.LegacyRef<HTMLDivElement>}>
               <div
-                className='flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-1 text-sm text-gray-700 shadow hover:border-gray-600 hover:shadow-md'
+                className='flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-1 text-sm text-gray-700 shadow dark:text-white hover:border-gray-600 hover:shadow-md'
                 onClick={() => setOpenFilter(!openFilter)}
                 data-testid='ToolsDashboard-Filters-Click'
               >
@@ -195,12 +195,12 @@ export default function ToolsDashboard() {
           <div className='flex h-auto w-[47%] gap-5 lg:w-1/5'>
             <div className='relative h-auto w-full' ref={categoryRef as React.LegacyRef<HTMLDivElement>}>
               <div
-                className='flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-1 text-sm text-gray-700 shadow hover:border-gray-600 hover:shadow-md'
+                className='flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-1 text-sm dark:text-white text-gray-700 shadow hover:border-gray-600 hover:shadow-md'
                 onClick={() => setopenCategory(!openCategory)}
                 data-testid='ToolsDashboard-category'
               >
                 <div>Jump to Category</div>
-                <ArrowDown className={`my-auto ${openCategory ? 'rotate-180' : ''}`} />
+                <ArrowDown className={`my-auto  ${openCategory ? 'rotate-180' : ''}`} />
               </div>
               {openCategory && (
                 <div className='absolute right-52 top-16 z-20'>
@@ -209,10 +209,10 @@ export default function ToolsDashboard() {
               )}
             </div>
           </div>
-          <div className='flex h-14 w-full rounded-lg border border-gray-300 px-4 py-1 text-sm text-gray-700 shadow hover:border-gray-600 focus:border-gray-600 lg:w-4/5'>
-            <SearchIcon className='my-auto opacity-70' />
+          <div className='flex h-14 w-full rounded-lg border border-gray-300 px-4 py-1 dark:text-white text-sm text-gray-700 shadow hover:border-gray-600 focus:border-gray-600 lg:w-4/5'>
+            <SearchIcon className='my-auto opacity-70 dark:bg-white dark:rounded-md'/>
             <input
-              className='w-11/12 flex-1 border-none outline-none focus:ring-0'
+              className='w-11/12 flex-1 border-none outline-none focus:ring-0 dark:bg-black/30 dark:text-white'
               placeholder='Search by name'
               type='text'
               value={searchName}

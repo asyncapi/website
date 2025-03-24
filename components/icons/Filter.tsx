@@ -12,7 +12,7 @@ export default function IconFilter({ className = '' }) {
       viewBox='0 0 17 16'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
-      className={className}
+      className={` dark:fill-white ${className}`}
     >
       <g clipPath='url(#clip0_894_656)'>
         <path

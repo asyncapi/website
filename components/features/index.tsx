@@ -17,7 +17,7 @@ export default function Features() {
 
   return (
     <section className='relative bg-white pt-16'>
-      <div className='mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8'>
+      <div className='mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8 dark:bg-black'>
         <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className='mt-2'>
           {t('features.title')}
         </Heading>
@@ -31,7 +31,7 @@ export default function Features() {
                 data-testid='Feature-li'
               >
                 <div>
-                  <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.mdSemibold} className='mt-8'>
+                  <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.mdSemibold} className='mt-8 dark:text-white'>
                     {t(`features.${feature.id}.name`)}
                   </Heading>
                   {
@@ -42,7 +42,7 @@ export default function Features() {
                 </div>
                 <div className='flex justify-between'>
                   {feature.links.map((link) => (
-                    <TextLink id={link.id} href={link.href} key={link.id} className='mt-6 inline-block'>
+                    <TextLink id={link.id} href={link.href} key={link.id} className='mt-6 inline-block  dark:hover:text-white/80'>
                       {t(`features.${feature.id}.links.${link.id}`)}
                     </TextLink>
                   ))}

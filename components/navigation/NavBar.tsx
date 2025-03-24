@@ -144,13 +144,13 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   }, [asPath]);
 
   return (
-    <div className={`bg-white ${className}   w-[100vw] dark:bg-black/90 z-50`}>
-      <div className='flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-2 '>
+    <div className={`bg-white ${className}  dark:bg-black dark:text-white z-50`}>
+      <div className='flex w-full items-center justify-between py-6 lg:justify-start  lg:space-x-3'>
         {!hideLogo && (
           <div className='lg:w-auto lg:flex-1'>
-            <div className='flex'>
-              <Link href='/' className='cursor-pointer' aria-label='AsyncAPI' data-testid='Navbar-logo'>
-                <AsyncAPILogo className='w-auto' />
+            <div className='flex '>
+              <Link href='/' className='cursor-pointer ' aria-label='AsyncAPI' data-testid='Navbar-logo'>
+                <AsyncAPILogo className='w-auto dark:' />
               </Link>
             </div>
           </div>
@@ -218,7 +218,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
 
           <div className='justify-content flex flex-row items-center'>
             <SearchButton
-              className='mr-2 flex items-center space-x-2 rounded-md p-2 text-left dark:bg-[#8851fb] dark:text-white text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
+              className='mr-2 flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
               aria-label='Open Search'
             >
               <IconLoupe />

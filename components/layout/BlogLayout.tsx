@@ -40,13 +40,13 @@ export default function BlogLayout({
   }
 
   return (
-    <BlogContext.Provider value={{ post }}>
+    <BlogContext.Provider  value={{ post }}>
       <AnnouncementHero className='mx-8 my-4' />
       <Container cssBreakingPoint='lg' flex flexReverse>
         <TOC
           toc={post.toc}
           cssBreakingPoint='lg'
-          className={`sticky top-20 mt-4 max-h-screen overflow-y-auto bg-blue-100 p-4 lg:top-24
+          className={`sticky top-20 mt-4 max-h-screen overflow-y-auto bg-blue-100  p-4 lg:top-24
             lg:-mr-20 lg:mt-2 lg:max-h-(screen-16) lg:min-w-40 lg:max-w-64 lg:border-l lg:border-gray-200
             lg:bg-transparent lg:pb-8 lg:pt-0 xl:-mr-36 xl:min-w-72`}
         />

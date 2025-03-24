@@ -79,7 +79,7 @@ export default function Hero({ className = '' }: HeroProps) {
             </a>
           </Paragraph>
         </div>
-        <div className='mt-8 md:mt-16'>
+        <div className='mt-8 md:mt-16 dark:bg-black'>
           <DemoAnimation />
         </div>
         <Features />

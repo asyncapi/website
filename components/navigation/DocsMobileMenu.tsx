@@ -27,9 +27,9 @@ export default function DocsMobileMenu({ post, navigation, onClickClose = () => 
     <div className='z-60 lg:hidden'>
       <div className='fixed inset-0 z-40 flex'>
         <div className='fixed inset-0'>
-          <div className='absolute inset-0 bg-gray-600 opacity-75' onClick={onClickClose}></div>
+          <div className='absolute inset-0 bg-gray-600 opacity-75 dark:bg-black/80' onClick={onClickClose}></div>
         </div>
-        <div className='relative flex w-full max-w-xs flex-1 flex-col bg-white'>
+        <div className='relative flex w-full max-w-xs flex-1 flex-col bg-white dark:bg-gray-800 '>
           <div className='absolute right-0 top-0 -mr-14 p-1'>
             <button
               onClick={onClickClose}

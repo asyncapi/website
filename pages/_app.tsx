@@ -4,7 +4,6 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next';
 import React from 'react';
-
 import AlgoliaSearch from '@/components/AlgoliaSearch';
 import ScrollButton from '@/components/buttons/ScrollButton';
 import Banner from '@/components/campaigns/Banner';

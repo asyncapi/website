@@ -51,10 +51,10 @@ export default function Card({
     return (
       <Link href={link} target={link.includes('http') ? '_blank' : undefined}>
         <div
-          className={`w-full cursor-pointer rounded border border-[#ad20e2] p-3 shadow-xl ${bg}`}
+          className={`w-full cursor-pointer rounded border border-[#ad20e2] dark:border-white p-3 shadow-xl ${bg} dark:bg-black dark:text-white`}
           data-testid='Card-small-bg'
         >
-          <div className='flex w-min justify-between rounded-xl bg-gray-100 p-2 text-center text-xs'>
+          <div className='flex w-min justify-between rounded-xl bg-gray-100 dark:text-black p-2 text-center text-xs'>
             <span>{icon}</span> <span className='ml-[5px]'>{tagline}</span>
           </div>
           <div className='mt-3' data-testid='Card-heading'>
@@ -68,7 +68,7 @@ export default function Card({
             </Paragraph>
           </div>
           <div className='flex w-full justify-end text-right' data-testid='Card-icon'>
-            <IconArrowUp className='w-[20px]' />
+            <IconArrowUp className='w-[20px] dark:bg-white'/>
           </div>
         </div>
       </Link>

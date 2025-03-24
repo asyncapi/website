@@ -14,7 +14,7 @@ export default function SearchIcon({ className = '' }) {
       strokeWidth='2'
       strokeLinecap='round'
       strokeLinejoin='round'
-      className={`flex-none text-slate-300 dark:text-slate-400 ${className}`}
+      className={`flex-none text-slate-300 ${className}`}
       aria-hidden='true'
     >
       <path d='m19 19-3.5-3.5' />

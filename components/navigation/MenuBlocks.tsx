@@ -44,7 +44,7 @@ export default function MenuBlocks({ items = [] }: MenuBlocksProps) {
               data-testid='MenuBlocks-Link'
               className={`-mx-3 mt-1 flex items-start space-x-4 rounded-lg p-3 transition duration-150 ease-in-out dark:hover:bg-white/20 ${
                 router.asPath === item.href ? 'bg-secondary-100 shadow-sm' : 'hover:bg-gray-50'
-              }`}
+              } dark:hover:bg-white/20`}
             >
               <div
                 className={`flex size-10 shrink-0 items-center justify-center rounded-lg ${
