@@ -8,7 +8,7 @@ import yaml from 'yaml';
  * @returns {any} - The converted JSON object.
  * @throws {Error} - Throws an error if the content is neither valid JSON nor valid YAML.
  */
-function convertToJson(contentYAMLorJSON: unknown): any {
+export function convertToJson(contentYAMLorJSON: unknown): any {
   // Axios handles conversion to JSON by default, if data returned from the server allows it
   // So if returned content is not a string (not YAML), we just return JSON back
   if (typeof contentYAMLorJSON !== 'string') {
@@ -18,13 +18,11 @@ function convertToJson(contentYAMLorJSON: unknown): any {
   // Check if the content is valid JSON before attempting to parse as YAML
   try {
     const jsonContent = JSON.parse(contentYAMLorJSON);
-
     return jsonContent;
   } catch (jsonError) {
     // If it's not valid JSON, try parsing it as YAML
     try {
       const yamlContent = yaml.parse(contentYAMLorJSON);
-
       return yamlContent;
     } catch (yamlError) {
       // If parsing as YAML also fails, throw an error
@@ -38,10 +36,6 @@ function convertToJson(contentYAMLorJSON: unknown): any {
  * @param {number} ms - The number of milliseconds to pause.
  * @returns {Promise<void>}
  */
-async function pause(ms: number): Promise<void> {
-  return new Promise((res) => {
-    setTimeout(res, ms);
-  });
+export function pause(ms: number): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
-
-export { convertToJson, pause };
