@@ -580,5 +580,70 @@
         "link": "https://redocly.com/docs/cli/guides/lint-asyncapi"
       }
     ]
+  },
+  {
+    "name": "Laurent Broudoux",
+    "github": "lbroudoux",
+    "twitter": "lbroudoux",
+    "country": "🇫🇷",
+    "bio": "Laurent is a Cloud-Native Architecture expert and Enterprise Integration problem lover. He is the founder and lead developer of the Microcks.io open source project: a cloud-native tool for API mocking and testing. For this, he is using his 10+ years experience as an architect in Financial Services where he defined API transformation strategies, including governance and delivery process.",
+    "linkedin": "laurentbroudoux",
+    "company": "Postman",
+    "title": "Solutions Architect / DevRel",
+    "img": "https://avatars.githubusercontent.com/u/1538635?s=400&v=4",
+    "contributions": [
+      {
+        "type": "talk",
+        "title": "AsyncAPI unit testing - from nightmares to sweet dreams",
+        "date": {
+          "year": 2024,
+          "month": "December"
+        }
+      },
+      {
+        "type": "talk",
+        "title": "Using Testcontainers for AsyncAPI unit testing",
+        "date": {
+          "year": 2024,
+          "month": "September"
+        }
+      },
+      {
+        "type": "presentation",
+        "title": "Quoi de neuf dans AsyncAPI v3 ? Découvrez le en live avec la migration du use-case Adeo",
+        "date": {
+          "year": 2023,
+          "month": "December"
+        },
+        "link": "https://www.youtube.com/watch?v=WCK9_ZDv6K4"
+      },
+      {
+        "type": "talk",
+        "title": "Elevating Event-Driven Architecture: Boost your delivery with AsyncAPI and Microcks",
+        "date": {
+          "year": 2023,
+          "month": "December"
+        },
+        "link": "https://www.youtube.com/watch?v=PYEW3F91wbI"
+      },
+      {
+        "type": "presentation",
+        "title": "AsyncAPI Recipes for EDA Gourmet",
+        "date": {
+          "year": 2022,
+          "month": "November"
+        },
+        "link": "https://www.youtube.com/watch?v=m6vWzTF7LGI"
+      },
+      {
+        "type": "presentation",
+        "title": "AsyncAPI or CloudEvents? Both My Captain!",
+        "date": {
+          "year": 2021,
+          "month": "November"
+        },
+        "link": "https://www.youtube.com/watch?v=_p9RyClgYhE"
+      }
+    ]
   }
 ]
