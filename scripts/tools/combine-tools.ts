@@ -183,7 +183,6 @@ const combineTools = async (
   try {
     // eslint-disable-next-line no-restricted-syntax
     for (const key in automatedTools) {
-      /* istanbul ignore next */
       if (Object.prototype.hasOwnProperty.call(automatedTools, key)) {
         // eslint-disable-next-line no-await-in-loop
         const automatedResults = await Promise.all(automatedTools[key].toolsList.map(getFinalTool));
