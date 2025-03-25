@@ -986,7 +986,10 @@
     {
         "name": "Charles d'Avernas",
         "github": "cdavernas",
-        "isTscMember": false,
+        "linkedin": "charles-d-avernas-40836a13",
+        "slack": "U02MRF09BL1",
+        "availableForHire": false,
+        "isTscMember": true,
         "repos": [
             "net-sdk"
         ],
@@ -1006,7 +1009,10 @@
         "name": "Vishvamsinh Vaghela",
         "github": "vishvamsinh28",
         "twitter": "Vishvamsinh28",
-        "isTscMember": false,
+        "linkedin": "vishvamsinh-vaghela-591695217",
+        "slack": "U05FM7WRKU4",
+        "availableForHire": true,
+        "isTscMember": true,
         "repos": [
             "website"
         ],
