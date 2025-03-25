@@ -55,17 +55,17 @@ export default function MobileNavMenu({
   const { langMap } = i18nextConfig;
 
   return (
-    <div className='fixed inset-x-0 top-0 z-60 max-h-full origin-top-right overflow-y-auto py-2 transition lg:hidden'>
+    <div className='fixed inset-x-0 top-0 z-60 max-h-full  origin-top-right  py-2 transition lg:hidden'>
       <div className='rounded-lg shadow-lg'>
-        <div className='shadow-xs divide-y-2 divide-gray-50 rounded-lg bg-white dark:bg-gray-800 '>
+        <div className='shadow-xs divide-y-2 divide-gray-50 rounded-lg bg-white dark:bg-black '>
           <div className='space-y-6 px-4 pb-6 pt-4'>
             <div className='flex items-center justify-between'>
               <Link href='/' className='cursor-pointer' data-testid='MobileNav-Logo'>
                 <AsyncAPILogo className='h-10 w-auto' />
               </Link>
-              <div className='justify-content -mr-2 flex flex-row items-center' data-testid='MobileNav-button'>
+              <div className='justify-content -mr-2  flex flex-row items-center' data-testid='MobileNav-button'>
                 <SearchButton
-                  className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
+                  className='flex items-center space-x-2 rounded-md  p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
                   aria-label='Open Search'
                 >
                   <SearchIcon />
@@ -85,7 +85,7 @@ export default function MobileNavMenu({
           <div className='space-y-2 px-5 py-2' onClick={() => showMenu('learning')} data-testid='MobileNav-docs'>
             <h4 className='flex justify-between font-medium text-gray-800'>
               {' '}
-              <a className='cursor-pointer'>
+              <a className='cursor-pointer dark:text-white'>
                 <Link href='/docs' className='flex'>
                   Docs
                 </Link>
@@ -97,7 +97,7 @@ export default function MobileNavMenu({
           <div className='space-y-2 px-5 py-2' onClick={() => showMenu('tooling')} data-testid='MobileNav-tools'>
             <h4 className='flex justify-between font-medium text-gray-800'>
               {' '}
-              <a className='cursor-pointer'>
+              <a className='cursor-pointer dark:text-white'>
                 <Link href='/tools' className='flex'>
                   Tools
                 </Link>
@@ -108,7 +108,7 @@ export default function MobileNavMenu({
           </div>
           <div className='space-y-2 px-5 py-2' onClick={() => showMenu('community')} data-testid='MobileNav-community'>
             <h4 className='flex justify-between font-medium text-gray-800'>
-              <a className='cursor-pointer'>
+              <a className='cursor-pointer dark:text-white'>
                 <Link href='/community' className='flex'>
                   Community
                 </Link>

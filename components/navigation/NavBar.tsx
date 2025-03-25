@@ -144,13 +144,13 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   }, [asPath]);
 
   return (
-    <div className={`bg-white ${className}  dark:bg-black dark:text-white z-50`}>
+    <div className={`bg-white ${className} w-[100vw] dark:bg-black dark:text-white  z-50`}>
       <div className='flex w-full items-center justify-between py-6 lg:justify-start  lg:space-x-3'>
         {!hideLogo && (
           <div className='lg:w-auto lg:flex-1'>
             <div className='flex '>
               <Link href='/' className='cursor-pointer ' aria-label='AsyncAPI' data-testid='Navbar-logo'>
-                <AsyncAPILogo className='w-auto dark:' />
+                <AsyncAPILogo className='w-auto' />
               </Link>
             </div>
           </div>
@@ -241,6 +241,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               inNav={true}
             />
           </div>
+          
         </nav>
       </div>
 

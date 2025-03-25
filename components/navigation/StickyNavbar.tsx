@@ -16,9 +16,9 @@ interface StickyNavbarProps {
 export default function StickyNavbar({ children, className = '' }: StickyNavbarProps) {
   return (
     <div className={`sticky top-0 z-50 w-full border-b  border-gray-300 bg-white dark:bg-black ${className}`} data-testid='Sticky-div'>
-      <div className="container mx-auto px-4 flex justify-between  items-center">
+      <div className="container mx-auto px-4 flex justify-between relative items-center">
         {children}
-        <div className=" absolute right-20 ">
+        <div className=" absolute right-0 ml-4  z-50">
           <ThemeToggle />
         </div>
       </div>
