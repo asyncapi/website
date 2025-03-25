@@ -1,0 +1,45 @@
+name : Check Sensitve Files
+on :
+    pull_request_target:
+        types: [opened, synchronize, reopened, ready_for_review]
+jobs:
+    check_sensitive_files:
+        name: Check for Sensitive Files
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Get Changed Files
+              id: get_changed_files
+              uses: tj-actions/changed-files@v45
+
+            - name: Check for Unauthorized Changes
+              run: |
+                RESTRICTED_FILES=(
+                    ".github/workflows/"
+                    "package.json"
+                    "package-lock.json"
+                    "Dockerfile"
+                    "docker-compose.yml"
+                    ".env.example"
+                )
+
+                UNAUTHORIZED_CHANGES=""
+
+                for file in ${{ steps.get_changed_files.outputs.all_changed_files }}; do
+                    for restricted in "${RESTRICTED_FILES[@]}"; do
+                    if [[ "$file" == "$restricted"* ]]; then
+                        echo "❌ Unauthorized change detected: $file"
+                        UNAUTHORIZED_CHANGES="$UNAUTHORIZED_CHANGES\n$file"
+                    fi
+                    done
+                done
+
+                if [[ ! -z "$UNAUTHORIZED_CHANGES" ]]; then
+                    echo -e "⛔ Unauthorized changes detected in:\n$UNAUTHORIZED_CHANGES"
+                    exit 1
+                else
+                    echo "✅ No unauthorized changes detected. Proceeding..."
+                fi
+              shell: bash
