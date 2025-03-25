@@ -223,6 +223,22 @@ describe('buildPostList', () => {
     expect(finalResult.about).toEqual(initialAbout);
   });
 
+  it('sets sectionSlug to empty string if not provided', async () => {
+    const singleElementDir = [[join(tempDir, 'docs')]]; // No second array element
+    await buildPostList(singleElementDir, tempDir, writeFilePath);
+    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
+    expect(Array.isArray(output.docs)).toBe(true);
+  });
+
+  it('uses directory name as fallback title when front matter title is missing', async () => {
+    await fs.ensureDir(join(tempDir, 'docs', 'section2'));
+    await fs.writeFile(join(tempDir, 'docs', 'section2', '_section.mdx'), '---\n---\n\nNo title in front matter');
+    await buildPostList(postDirectories, tempDir, writeFilePath);
+    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
+    const entry = output.docs.find((item) => item.slug.includes('/section2'));
+    expect(entry.title).toBe('Section2');
+  });
+
   describe('slugifyToC', () => {
     it('handles heading ids like {# myHeadingId}', () => {
       const input = '## My Heading {#custom-id}';
