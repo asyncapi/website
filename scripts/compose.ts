@@ -2,10 +2,8 @@
  * Script based on https://github.com/timlrx/tailwind-nextjs-starter-blog/blob/master/scripts/compose.js
  */
 
-// eslint-disable-next-line import/no-extraneous-dependencies
 import dedent from 'dedent';
 import fs from 'fs';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import inquirer from 'inquirer';
 import moment from 'moment';
 
