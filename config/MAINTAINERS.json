@@ -999,7 +999,10 @@
         "name": "Jean-Baptiste Bianchi",
         "github": "jbbianchi",
         "twitter": "JBBianchi",
-        "isTscMember": false,
+        "linkedin": "jean-baptiste-bianchi-aa42b914",
+        "slack": "D08K91H3DBM",
+        "isTscMember": true,
+        "availableForHire": false,
         "repos": [
             "net-sdk"
         ],
