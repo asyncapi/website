@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: Community Builder and Open Source Fanatic!
 excerpt: 'AsyncAPI community status and project updates for March 2025'
-featured: true
 ---
 
 We started the month with exciting news as [AsyncAPI got accepted to the Google Summer of Code](https://summerofcode.withgoogle.com/programs/2025/organizations/asyncapi) (GSoC'25). In the last weeks, the community has seen many enthusiasts join the workspace in anticipation of being accepted to the program. 
@@ -50,10 +49,42 @@ We are excited to welcome a new project, [Neuroglia.AsyncAPI](https://github.com
 ## AsyncAPI Bounty Program
 [The AsyncAPI Bounty Program Q2 is underway](https://github.com/orgs/asyncapi/projects/36/views/4?sliceBy%5Bvalue%5D=bounty%2F2025-Q2), and we have 17 issues filled into capacity and assigned. It's exciting to see the program grow and the maintainers fully participating.
 
+## TSC x Ambassadors
+We are thrilled to welcome three new [Technical Steering Committee](https://www.asyncapi.com/community/tsc) (TSC) members.
+
+<Profiles profiles={[
+{
+    name: 'Charles d'Avernas',
+    avatar: 'https://avatars.githubusercontent.com/u/16137162?v=4',
+    link: 'https://github.com/cdavernas'
+  }, 
+  {
+    name: 'Vishvamsinh Vaghela',
+    avatar: 'https://avatars.githubusercontent.com/u/90895835?v=4',
+    link: 'https://github.com/vishvamsinh28'
+  },
+  {
+    name: 'Jean-Baptiste Bianchi',
+    avatar: 'https://avatars.githubusercontent.com/u/72747835?v=4',
+    link: 'https://github.com/jbbianchi'
+  }
+]} />
+
+And finally, one of our long-time community member.
+
+
+<Profiles profiles={[
+{
+    name: 'Laurent Broudoux',
+    avatar: 'https://avatars.githubusercontent.com/u/1538635?v=40972989?v=4',
+    link: 'https://github.com/lbroudoux'
+  }
+]} />
+
 ## Community Discussions
 We have an interesting discussion about conducting usability research on some of our tools in AsyncAPI. [Aishat Muibudeen](https://www.linkedin.com/in/aishatmuibudeen/) (Maya) is currently leading the efforts, and community-wide input is needed. [Please review the Usability Research for the AsyncAPI Tools discussion](https://github.com/asyncapi/website/issues/3874) and share your thoughts and insights.
 
 ## Coming in March
 
 - **AsyncAPI Community Updates Newsletter** - The April Edition will arrive in your inbox on the 3rd. [Please subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/newsletter); don't miss the updates.
-- **AsyncAPI Conference in Singapore** - We will be heading to Singapore for our first conference of the year. If you are in and around the city, [please join us as we have amazing speakers sharing knowledge](https://conference.asyncapi.com/venue/Singapore).
+- **AsyncAPI Conference in Singapore** - We will be heading to Singapore for our first conference of the year. If you are in and around the city, [please join us as we have outstanding speakers sharing knowledge](https://conference.asyncapi.com/venue/Singapore).
