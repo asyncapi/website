@@ -21,47 +21,77 @@ export default function BlogIndexPage() {
   const router = useRouter();
   const { navItems } = useContext(BlogContext);
 
-  const [posts, setPosts] = useState<IBlogPost[]>(
-    navItems
-      ? navItems.sort((i1: IBlogPost, i2: IBlogPost) => {
-          const i1Date = new Date(i1.date);
-          const i2Date = new Date(i2.date);
-
-          if (i1.featured && !i2.featured) return -1;
-          if (!i1.featured && i2.featured) return 1;
-
-          return i2Date.getTime() - i1Date.getTime();
-        })
-      : []
-  );
+  const [allPosts, setAllPosts] = useState<IBlogPost[]>([]);
+  const [posts, setPosts] = useState<IBlogPost[]>([]);
   const [isClient, setIsClient] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 9; // Adjust as needed
 
-  const onFilter = (data: IBlogPost[]) => setPosts(data);
-  const toFilter = [
-    {
-      name: 'type'
-    },
-    {
-      name: 'authors',
-      unique: 'name'
-    },
-    {
-      name: 'tags'
+  useEffect(() => {
+    if (navItems) {
+      const sortedPosts = navItems.sort((i1: IBlogPost, i2: IBlogPost) => {
+        const i1Date = new Date(i1.date);
+        const i2Date = new Date(i2.date);
+
+        if (i1.featured && !i2.featured) return -1;
+        if (!i1.featured && i2.featured) return 1;
+
+        return i2Date.getTime() - i1Date.getTime();
+      });
+
+      setAllPosts(sortedPosts);
+    } else {
+      setAllPosts([]);
     }
-  ];
-  const clearFilters = () => {
-    router.push(`${router.pathname}`, undefined, {
-      shallow: true
-    });
+    setCurrentPage(1); // Reset page on data change.
+  }, [navItems]);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+
+    setPosts(allPosts.slice(indexOfFirstPost, indexOfLastPost));
+  }, [allPosts, currentPage, postsPerPage]);
+
+  const onFilter = (data: IBlogPost[]) => {
+    setAllPosts(data);
+    setCurrentPage(1); // Reset page on filter
   };
+
+  const toFilter = [{ name: 'type' }, { name: 'authors', unique: 'name' }, { name: 'tags' }];
+
+  const clearFilters = () => {
+    router.push(`${router.pathname}`, undefined, { shallow: true });
+    setAllPosts(
+      navItems
+        ? navItems.sort((i1: IBlogPost, i2: IBlogPost) => {
+            const i1Date = new Date(i1.date);
+            const i2Date = new Date(i2.date);
+
+            if (i1.featured && !i2.featured) return -1;
+            if (!i1.featured && i2.featured) return 1;
+
+            return i2Date.getTime() - i1Date.getTime();
+          })
+        : []
+    );
+    setCurrentPage(1);
+  };
+
   const showClearFilters = Object.keys(router.query).length > 0;
 
   const description = 'Find the latest and greatest stories from our community';
   const image = '/img/social/blog.webp';
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  const totalPages = Math.ceil(allPosts.length / postsPerPage);
+
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+  };
 
   return (
     <GenericLayout title='Blog' description={description} image={image} wide>
@@ -114,20 +144,70 @@ export default function BlogIndexPage() {
             )}
           </div>
           <div>
-            {Object.keys(posts).length === 0 && (
+            {allPosts.length === 0 && (
               <div className='mt-16 flex flex-col items-center justify-center'>
                 <Empty />
                 <p className='mx-auto mt-3 max-w-2xl text-xl leading-7 text-gray-500'>No post matches your filter</p>
               </div>
             )}
-            {Object.keys(posts).length > 0 && isClient && (
-              <ul className='mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3'>
-                {posts.map((post, index) => (
-                  <BlogPostItem key={index} post={post} />
-                ))}
-              </ul>
+            {allPosts.length > 0 && isClient && (
+              <>
+                <ul className='mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3'>
+                  {posts.map((post, index) => (
+                    <BlogPostItem key={index} post={post} />
+                  ))}
+                </ul>
+                {totalPages > 1 && (
+                  <div className='mt-8 flex justify-center'>
+                    {currentPage > 2 && (
+                      <>
+                        <button
+                          onClick={() => handlePageChange(1)}
+                          className={'mx-1 rounded-md border border-gray-300 px-3 py-1 text-gray-500'}
+                        >
+                          {1}
+                        </button>
+                        <span>.....</span>
+                      </>
+                    )}
+                    {currentPage > 1 && (
+                      <button
+                        onClick={() => handlePageChange(currentPage - 1)}
+                        className={'mx-1 rounded-md border border-gray-300 px-3 py-1'}
+                      >
+                        {currentPage - 1}
+                      </button>
+                    )}
+                    <button
+                      onClick={() => handlePageChange(currentPage)}
+                      className={'mx-1 rounded-md bg-primary-500 px-3 py-1 text-white'}
+                    >
+                      {currentPage}
+                    </button>
+                    {currentPage < totalPages && (
+                      <button
+                        onClick={() => handlePageChange(currentPage + 1)}
+                        className={'mx-1 rounded-md border border-gray-300 px-3 py-1'}
+                      >
+                        {currentPage + 1}
+                      </button>
+                    )}
+                    {currentPage < totalPages - 1 && (
+                      <>
+                        <span>.....</span>
+                        <button
+                          onClick={() => handlePageChange(totalPages)}
+                          className={'mx-1 rounded-md border border-gray-300 px-3 py-1 text-gray-500'}
+                        >
+                          {totalPages}
+                        </button>
+                      </>
+                    )}
+                  </div>
+                )}
+              </>
             )}
-            {Object.keys(posts).length > 0 && !isClient && (
+            {allPosts.length > 0 && !isClient && (
               <div className='h-screen w-full'>
                 <Loader loaderText='Loading Blogs' className='mx-auto my-60' pulsating />
               </div>
