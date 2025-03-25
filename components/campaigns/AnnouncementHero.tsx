@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 
 import ArrowLeft from '../icons/ArrowLeft';
 import ArrowRight from '../icons/ArrowRight';
+import Cross from '../icons/Cross';
 import Container from '../layout/Container';
 import Banner from './AnnouncementBanner';
 import { banners, shouldShowBanner } from './banners';
@@ -20,6 +21,7 @@ interface IAnnouncementHeroProps {
  */
 export default function AnnouncementHero({ className = '', small = false }: IAnnouncementHeroProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [hide, setHide] = useState(false);
 
   const visibleBanners = useMemo(() => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)), [banners]);
   const numberOfVisibleBanners = visibleBanners.length;
@@ -47,10 +49,16 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
   if (numberOfVisibleBanners === 0) {
     return null;
   }
+  if (hide) {
+    return null;
+  }
 
   return (
     <Container as='section' padding='' className='text-center'>
       <div className='relative flex flex-row items-center justify-center overflow-x-hidden md:gap-4'>
+        <div className='absolute right-[6%] top-0 z-10 lg:right-[14%]' onClick={() => setHide(true)}>
+          <Cross />
+        </div>
         {numberOfVisibleBanners > 1 && (
           <div
             className={`absolute left-0 top-1/2 z-10 mb-2 flex size-8 -translate-y-1/2 cursor-pointer
