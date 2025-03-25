@@ -986,7 +986,10 @@
     {
         "name": "Charles d'Avernas",
         "github": "cdavernas",
-        "isTscMember": false,
+        "linkedin": "charles-d-avernas-40836a13",
+        "slack": "U02MRF09BL1",
+        "availableForHire": false,
+        "isTscMember": true,
         "repos": [
             "net-sdk"
         ],
