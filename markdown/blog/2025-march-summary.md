@@ -76,7 +76,7 @@ And finally, one of our long-time community member.
 <Profiles profiles={[
 {
     name: 'Laurent Broudoux',
-    avatar: 'https://avatars.githubusercontent.com/u/1538635?v=40972989?v=4',
+    avatar: 'https://avatars.githubusercontent.com/u/1538635?v=4',
     link: 'https://github.com/lbroudoux'
   }
 ]} />
