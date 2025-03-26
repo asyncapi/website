@@ -75,5 +75,19 @@
     "url": "https://github.com/asyncapi/community/issues/1797",
     "banner": "",
     "date": "2025-03-20T16:00:00.000Z"
+  },
+  {
+    "title": "Preventing API Drift: Ensuring Your APIs Stay True to Their Spec",
+    "calLink": "https://www.google.com/calendar/event?eid=c3ZnZmZhOXRwNjVlbWhzcWQxOG05Mmk3ZzAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1820",
+    "banner": "https://github.com/user-attachments/assets/d80ddc94-7f0e-445c-8e8a-7c5e4ce764bd",
+    "date": "2025-04-10T18:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI Community Working Group Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=YzduaG84aWY3ZTNqbjNudWc5OTY1dXUxMzQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1824",
+    "banner": "https://github.com/user-attachments/assets/e0c22c5a-94a8-488c-970c-14aa1697283c",
+    "date": "2025-04-08T15:00:00.000Z"
   }
 ]
