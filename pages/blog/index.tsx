@@ -35,6 +35,8 @@ export default function BlogIndexPage() {
       : []
   );
   const [isClient, setIsClient] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 9;
 
   const onFilter = (data: IBlogPost[]) => setPosts(data);
   const toFilter = [
@@ -62,6 +64,12 @@ export default function BlogIndexPage() {
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   return (
     <GenericLayout title='Blog' description={description} image={image} wide>
@@ -121,11 +129,39 @@ export default function BlogIndexPage() {
               </div>
             )}
             {Object.keys(posts).length > 0 && isClient && (
-              <ul className='mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3'>
-                {posts.map((post, index) => (
-                  <BlogPostItem key={index} post={post} />
-                ))}
-              </ul>
+              <>
+                <ul className='mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3'>
+                  {currentPosts.map((post, index) => (
+                    <BlogPostItem key={index} post={post} />
+                  ))}
+                </ul>
+                <div className='mt-8 flex justify-center'>
+  {Array.from({ length: Math.ceil(posts.length / postsPerPage) }, (_, i) => i + 1)
+    .filter((page) => {
+      // Show the first 2 pages, the last 2 pages, and 2 pages around the current page
+      if (page <= 2 || page > Math.ceil(posts.length / postsPerPage) - 2) return true;
+      if (page >= currentPage - 1 && page <= currentPage + 1) return true;
+      return false;
+    })
+    .map((page, index, filteredPages) => (
+      <React.Fragment key={page}>
+        {index > 0 && page !== filteredPages[index - 1] + 1 && (
+          <span className='mx-1 text-gray-500'>...</span>
+        )}
+        <button
+          onClick={() => paginate(page)}
+          className={`mx-1 px-3 py-1 border rounded ${
+            currentPage === page
+              ? 'bg-primary-500 text-white' // Active page styling
+              : 'bg-white text-gray-800 hover:bg-gray-100'
+          }`}
+        >
+          {page}
+        </button>
+      </React.Fragment>
+    ))}
+</div>
+              </>
             )}
             {Object.keys(posts).length > 0 && !isClient && (
               <div className='h-screen w-full'>
