@@ -18,7 +18,7 @@ However, this excitement brought some challenges as well. Slack and GitHub becam
 
 We are committed to maintaining a welcoming environment for everyone, which is why we have a Code of Conduct and a committee in place to enforce it. But sometimes, too much enthusiasm can become overbearing, resulting in a few members needing to be temporarily banned to ensure a safe space.
 
-That said, we view this as a valuable lesson for improvement, and a big thank you goes out to our Code of Conduct Committee for stepping up and upholding the rules.
+That said, we view this as a valuable lesson, and a big thank you goes out to our Code of Conduct Committee for stepping up and upholding the rules.
 
 [The application phase is officially open](https://summerofcode.withgoogle.com/), and we look forward to welcoming new contributors to the community and potential new triages and maintainers!
 
@@ -39,9 +39,20 @@ Please make sure to select the "**AsyncAPI**" option for the track to ensure you
 
 > **Note:** If your talk does not make it to the in-person events, you can secure a guaranteed spot at the [AsyncAPI online conference](https://conference.asyncapi.com/venue/Online). Don't miss this opportunity to share your insights with the wider community!
 
+
+### AsyncAPI Meetup Section
+We plan to introduce a meetups section under the AsyncAPI Conference umbrella, a platform enabling community members to connect, share knowledge, and discuss topics related to AsyncAPI outside of the main conference events. The goal is to foster collaboration and knowledge-sharing within the AsyncAPI ecosystem.
+
+As part of preparing the section, we will have an open discussion on the guidelines and rules. Additionally, we have an open issue with the design for implementing the page for the conference website. I encourage everyone to share their thoughts and [review the AsyncAPI Meetups Section discussion](https://github.com/asyncapi/conference-website/discussions/604) and [the AsyncAPI Meetups Page issue](https://github.com/asyncapi/conference-website/issues/644).
+
 ## Spec x Tooling
 
 We are excited to welcome a new project, [Neuroglia.AsyncAPI](https://github.com/asyncapi/net-sdk), a .NET SDK for visualizing and interacting with AsyncAPI documents donated by [Charles d'Avernas](https://www.linkedin.com/in/charles-d-avernas-40836a13/). The project also supports a code-first documentation generator, fluent builders for intuitive and expressive API definitions, and fluent validators to ensure compliance and correctness. All the components also support the AsyncAPI v3. [Be sure to try out Neuroglia.AsyncAPI for your documents](https://github.com/asyncapi/net-sdk), especially if you are a .NET developer!
+
+### RAML Schema Parser
+
+We are looking to archive the RAML schema parser, a standard for RAML data types unless a community member is interested in maintaining the project. If you have any thoughts on this issue, [please share them in the open discussion about the RAML Parser](https://github.com/asyncapi/raml-dt-schema-parser/issues/255).
+
 
 ## AsyncAPI Governance Board 
  We are still discussing the new AsyncAPI Governance Board, which will take effect later this year. Part of the changes this will bring will be to replace the single Executive Director position and have the option of Ambassadors becoming TSC members. You still have a chance to share your thoughts and views; please do so [under the introduction of the governance board discussion](https://github.com/asyncapi/community/pull/1634).
