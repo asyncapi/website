@@ -51,7 +51,7 @@ We are excited to welcome a new project, [Neuroglia.AsyncAPI](https://github.com
 
 ### RAML Schema Parser
 
-We are looking to archive the RAML schema parser, a standard for RAML data types, unless a community member is interested in maintaining the project. If you have any thoughts on this issue, [please share them in the open discussion about the RAML Parser](https://github.com/asyncapi/raml-dt-schema-parser/issues/255).
+Currently, we do not have active maintainers for the RAML schema parser, a standard for RAML data types. If any community member depends on this parser and is interested in maintaining the project or has any thoughts on this issue, [please reach out or share them in the open discussion about the RAML Parser](https://github.com/asyncapi/raml-dt-schema-parser/issues/255).
 
 
 ## AsyncAPI Governance Board 
