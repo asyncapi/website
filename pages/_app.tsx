@@ -3,7 +3,6 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { ThemeProvider } from 'next-themes';
 import React from 'react';
 
@@ -30,7 +29,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           <div className='flex min-h-screen flex-col'>
             <Banner />
             <StickyNavbar>
-              <NavBar className='mx-auto block max-w-screen-xl px-4 sm:px-6 lg:px-8 ' />
+              <NavBar className='mx-auto block max-w-screen-xl px-4 lg:px-2 ' />
             </StickyNavbar>
             <Layout>
               <Component {...pageProps} />

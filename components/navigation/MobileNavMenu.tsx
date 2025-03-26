@@ -70,6 +70,7 @@ export default function MobileNavMenu({
                 >
                   <SearchIcon />
                 </SearchButton>
+
                 <button
                   onClick={onClickClose}
                   type='button'
