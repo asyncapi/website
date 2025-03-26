@@ -123,7 +123,8 @@ export default function NewsletterSubscribe({
   }
 
   return (
-    <div className={`${className} dark:bg-black dark:text-white dark:rounded-lg`} data-testid='NewsletterSubscribe-main'>
+    <div className={`${className} dark:bg-black dark:text-white dark:rounded-lg`}
+     data-testid='NewsletterSubscribe-main'>
       <Heading level={HeadingLevel.h3} textColor={headTextColor} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
         {ready ? t('title') : title}
       </Heading>

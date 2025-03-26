@@ -59,7 +59,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
             />
 
           
-            <div className='flex flex-1 flex-col justify-between border-none bg-white  p-6 text-left'>
+            <div className='flex flex-1 flex-col justify-between border-none bg-white dark:bg-gray-600 p-6 text-left'>
 
               <div className='flex-1'>
                 <Paragraph typeStyle={ParagraphTypeStyle.sm} textColor='text-indigo-500'>

@@ -68,7 +68,9 @@ export default function DocsNavItem({
   return (
     <div>
       <div className={classes}>
-        <Link href={href || slug} className='inline-block w-full dark:text-white dark:hover:text-secondary-500' onClick={onClick}>
+        <Link href={href || slug}
+         className='inline-block w-full dark:text-white dark:hover:text-secondary-500'
+          onClick={onClick}>
           {bucket && (
             <div
               className={`${(slug === '/docs' ? slug === activeSlug : activeSlug.startsWith(slug)) ? bucket.className : ''} inline-block rounded`}

@@ -68,7 +68,7 @@ export default function Card({
             </Paragraph>
           </div>
           <div className='flex w-full justify-end text-right' data-testid='Card-icon'>
-            <IconArrowUp className='w-[20px] dark:bg-white'/>
+            <IconArrowUp className='w-[20px] dark:bg-white' />
           </div>
         </div>
       </Link>

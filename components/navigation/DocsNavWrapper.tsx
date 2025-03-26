@@ -21,10 +21,10 @@ interface IDocsNavWrapperProps {
 export default function DocsNavWrapper({ setShowMenu, navigation, post }: IDocsNavWrapperProps) {
   return (
     <div className='hidden lg:flex lg:shrink-0' data-testid='DocsLayout-main'>
-      <div className='flex w-72 flex-col border-r border-gray-200 bg-white dark:bg-black  py-2'>
+      <div className='flex w-72 flex-col border-r border-gray-200 bg-white py-2 dark:bg-black'>
         <div className='flex flex-1 flex-col md:sticky md:top-20 md:max-h-(screen-14) md:overflow-y-auto'>
           <SearchButton
-            className='mb-4 mr-2 mt-8 flex items-center space-x-3 rounded-md border  border-gray-300 bg-white dark:bg-black dark:text-white px-3 py-1.5 text-left text-sm text-gray-700 shadow-sm transition-all duration-500 ease-in-out hover:border-secondary-500 hover:bg-secondary-100 hover:text-secondary-500'
+            className='mb-4 mr-2 mt-8 flex items-center space-x-3 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-left text-sm text-gray-700 shadow-sm transition-all duration-500 ease-in-out hover:border-secondary-500 hover:bg-secondary-100 hover:text-secondary-500 dark:bg-black dark:text-white'
             indexName={DOCS_INDEX_NAME}
           >
             {({ actionKey }) => (

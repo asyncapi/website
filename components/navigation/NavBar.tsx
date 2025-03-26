@@ -213,7 +213,11 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
           </div>
 
           {otherItems.map((item, index) => (
-            <NavItem href={item.href} key={index} text={item.text} target={item.target} className={`${item.className} dark:text-white`} />
+            <NavItem href={item.href}
+             key={index}
+              text={item.text}
+               target={item.target} 
+               className={`${item.className} dark:text-white`} />
           ))}
 
           <div className='justify-content flex flex-row items-center'>
