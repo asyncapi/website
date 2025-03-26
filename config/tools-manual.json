@@ -521,7 +521,7 @@
               },
               "filters": {
                   "language": "Java",
-                  "technology": ["TypeScript", "Kubernetes-Native", "Saas"],
+                  "technology": ["TypeScript", "Kubernetes-native", "Saas"],
                   "categories": ["mocking-and-testing"]
               }
           },
@@ -545,7 +545,7 @@
                   "repoUrl": "https://github.com/virtualansoftware"
               },
               "filters": {
-                  "technology": ["Kubernetes-Native"],
+                  "technology": ["Kubernetes-native"],
                   "categories": ["mocking-and-testing"]
               }
           }
