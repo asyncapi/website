@@ -21,16 +21,9 @@ export default function Newsroom() {
         <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg}>
           Latest Updates
         </Heading>
-        <Paragraph
-          typeStyle={ParagraphTypeStyle.md}
-          className='mx-auto mt-5 max-w-2xl'
-        >
-          Get a glimpse of latest news, events, and blog posts. Want to publish
-          a blog post? We love community stories.&nbsp;
-          <TextLink
-            href='https://github.com/asyncapi/website/issues/new?template=blog.md'
-            target='_blank'
-          >
+        <Paragraph typeStyle={ParagraphTypeStyle.md} className='mx-auto mt-5 max-w-2xl'>
+          Get a glimpse of latest news, events, and blog posts. Want to publish a blog post? We love community stories.&nbsp;
+          <TextLink href='https://github.com/asyncapi/website/issues/new?template=blog.md' target='_blank'>
             Submit yours!
           </TextLink>
         </Paragraph>
@@ -38,10 +31,7 @@ export default function Newsroom() {
 
       <div className='my-20 -mr-2 flex-row lg:flex' data-testid='Newsroom-sub-div'>
         <div className='pt-4 text-center lg:w-1/4 lg:text-left'>
-          <Heading
-            level={HeadingLevel.h4}
-            typeStyle={HeadingTypeStyle.mdSemibold}
-          >
+          <Heading level={HeadingLevel.h4} typeStyle={HeadingTypeStyle.mdSemibold}>
             From the blog
           </Heading>
           <Paragraph typeStyle={ParagraphTypeStyle.md} className='mt-5'>
@@ -63,21 +53,14 @@ export default function Newsroom() {
 
       <div className='my-20 flex flex-col lg:flex-row'>
         <div className='pt-4 text-center lg:w-1/4 lg:text-left'>
-          <Heading
-            level={HeadingLevel.h4}
-            typeStyle={HeadingTypeStyle.mdSemibold}
-          >
+          <Heading level={HeadingLevel.h4} typeStyle={HeadingTypeStyle.mdSemibold}>
             Latest News
           </Heading>
           <Paragraph typeStyle={ParagraphTypeStyle.md} className='mt-5'>
             Read about what people are <br /> saying about AsyncAPI
           </Paragraph>
           <div className='my-5' data-testid='Newsroom-Twitter-Link'>
-            <TextLink
-              href='https://twitter.com/AsyncAPISpec'
-              className='mt-4 inline-flex items-center'
-              target='_blank'
-            >
+            <TextLink href='https://twitter.com/AsyncAPISpec' className='mt-4 inline-flex items-center' target='_blank'>
               Follow us on Twitter
               <ArrowRight className='ml-2 w-6' />
             </TextLink>
@@ -99,22 +82,14 @@ export default function Newsroom() {
 
       <div className='my-20 -mr-2 flex-row lg:flex'>
         <div className='pt-4 text-center lg:w-1/4 lg:text-left'>
-          <Heading
-            level={HeadingLevel.h4}
-            typeStyle={HeadingTypeStyle.mdSemibold}
-          >
+          <Heading level={HeadingLevel.h4} typeStyle={HeadingTypeStyle.mdSemibold}>
             Video & Live Streams
           </Heading>
           <Paragraph typeStyle={ParagraphTypeStyle.md} className='mt-5'>
-            Watch our latest videos and live streams on the AsyncAPI YouTube
-            channel
+            Watch our latest videos and live streams on the AsyncAPI YouTube channel
           </Paragraph>
           <div className='my-5' data-testid='Newsroom-Youtube'>
-            <TextLink
-              href='https://www.youtube.com/c/AsyncAPI'
-              className='mt-4'
-              target='_blank'
-            >
+            <TextLink href='https://www.youtube.com/c/AsyncAPI' className='mt-4' target='_blank'>
               Visit our YouTube channel
               <ArrowRight className='inline w-6' />
             </TextLink>
