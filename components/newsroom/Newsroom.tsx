@@ -52,32 +52,37 @@ export default function Newsroom() {
 
       <hr />
 
-      <div className='my-20 flex flex-col lg:flex-row'>
-        <div className='pt-4 text-center lg:w-1/4 lg:text-left'>
-          <Heading level={HeadingLevel.h4} typeStyle={HeadingTypeStyle.mdSemibold}>
-            Latest News
-          </Heading>
-          <Paragraph typeStyle={ParagraphTypeStyle.md} className='mt-5'>
-            Read about what people are <br /> saying about AsyncAPI
-          </Paragraph>
-          <div className='my-5' data-testid='Newsroom-Twitter-Link'>
-            <TextLink href='https://twitter.com/AsyncAPISpec' className='mt-4' target='_blank'>
-              Follow us on Twitter
-              <ArrowRight className='inline w-6' />
-            </TextLink>
-          </div>
-        </div>
-
-        <div className='w-full flex-row items-stretch justify-between md:flex md:h-120 lg:w-3/4'>
-          <div className='relative flex w-full flex-col overflow-y-auto md:w-1/2'>
-            <div className='min-h-0'>
-              <div className='md:t-0 md:b-0 md:l-0 md:r-0 size-full md:absolute'>
-                <NewsroomArticle />
-              </div>
-            </div>
-          </div>
+      <div className="my-20 flex flex-col lg:flex-row">
+      <div className="pt-4 text-center lg:w-1/4 lg:text-left">
+        <Heading level={HeadingLevel.h4} typeStyle={HeadingTypeStyle.mdSemibold}>
+      Latest News
+        </Heading>
+        <Paragraph typeStyle={ParagraphTypeStyle.md} className="mt-5">
+      Read about what people are <br /> saying about AsyncAPI
+        </Paragraph>
+        <div className="my-5" data-testid="Newsroom-Twitter-Link">
+      <TextLink
+        href="https://twitter.com/AsyncAPISpec"
+        className="mt-4 inline-flex items-center"
+        target="_blank"
+      >
+        Follow us on Twitter
+        <ArrowRight className="ml-2 w-6" />
+      </TextLink>
         </div>
       </div>
+
+      <div className="w-full flex-row items-stretch justify-between md:flex lg:w-3/4">
+        <div className="relative flex w-full flex-col overflow-y-auto max-h-96">
+      <div className="min-h-0">
+        <div className="size-full">
+          <NewsroomArticle />
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+
 
       <hr />
 
