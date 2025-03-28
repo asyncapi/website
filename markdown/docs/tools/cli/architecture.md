@@ -12,9 +12,9 @@ The AsyncAPI CLI uses oclif (Open CLI Framework) as its core framework, which en
 
 ---
 
-### **Detailed Explanation of Key Directories in the CLI**
+### Detailed Explanation of Key Directories in the CLI
 
-#### **`src/commands/`**
+#### `src/commands/`
 - **Purpose:** Implements the CLI commands available to the user.
 - **Subdirectories:**
   - `config/`: Stores configuration-related files for commands.
@@ -22,7 +22,7 @@ The AsyncAPI CLI uses oclif (Open CLI Framework) as its core framework, which en
     - **Files:**
       - `fromTemplate.ts`: Contains logic for generating files using templates.
       - `models.ts`: Defines the models used during generation.
-  - `new/`: Creates a new AsyncAPI file.
+  - `new/`: Create a new AsyncAPI project, specification files, or templates for clients and applications.
     - **Files:**
       - `file.ts`: Handles file creation logic.
       - `glee.ts`: Related to Glee, a tool for event-driven microservices.
@@ -42,7 +42,7 @@ The AsyncAPI CLI uses oclif (Open CLI Framework) as its core framework, which en
 
 ---
 
-#### **`src/core/`**
+#### `src/core/`
 - **Purpose:** Provides foundational components and utilities for the CLI.
 - **Subdirectories:**
   - `errors/`: Centralized error definitions.
@@ -59,7 +59,7 @@ The AsyncAPI CLI uses oclif (Open CLI Framework) as its core framework, which en
 
 ---
 
-#### **`test/`**
+#### `test/`
 - **Purpose:** Implements the test suite for the CLI.
 - **Subdirectories:**
   - `fixtures/`: Contains mock data or files for testing.
@@ -70,7 +70,7 @@ The AsyncAPI CLI uses oclif (Open CLI Framework) as its core framework, which en
 
 ---
 
-### **Use Cases**
+### Use Cases
 
 1. **Generate AsyncAPI Artifacts:**
    - Use the `generate` command to create client/server code, documentation, or other artifacts based on AsyncAPI templates.
