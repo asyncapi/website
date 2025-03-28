@@ -19,6 +19,8 @@ jest.mock('../../scripts/utils/logger', () => ({
 jest.mock('node-fetch-2', () => jest.fn());
 
 describe('URL Checker Tests', () => {
+  const mockFetch = fetch as jest.Mock;
+
   beforeEach(() => {
     jest.clearAllMocks();
   });
@@ -87,8 +89,8 @@ describe('URL Checker Tests', () => {
 
     it('should skip non-markdown files', async () => {
       // Create a mock implementation to test the else branch
-      const mockReaddir = jest.spyOn(fs, 'readdir');
-      const mockStat = jest.spyOn(fs, 'stat');
+      const mockReaddir = jest.spyOn(fs, 'readdir') as jest.Mock;
+      const mockStat = jest.spyOn(fs, 'stat') as jest.Mock;
 
       mockReaddir.mockImplementationOnce(() => Promise.resolve(['test.js', 'test.md']));
       mockStat.mockImplementationOnce(() => Promise.resolve({ isDirectory: () => false, isFile: () => true }));
@@ -115,14 +117,14 @@ describe('URL Checker Tests', () => {
     const testBatch = processBatchData;
 
     it('should process valid URLs correctly', async () => {
-      fetch.mockImplementation(() => Promise.resolve({ status: 200 }));
+      mockFetch.mockImplementation(() => Promise.resolve({ status: 200 }));
       const results = await processBatch(testBatch);
 
       expect(results.filter((r) => r !== null).length).toBe(0);
     });
 
     it('should detect 404 URLs', async () => {
-      fetch.mockImplementation(() => Promise.resolve({ status: 404 }));
+      mockFetch.mockImplementation(() => Promise.resolve({ status: 404 }));
       const results = await processBatch(testBatch);
       const validResults = results.filter((r) => r !== null);
 
@@ -131,7 +133,7 @@ describe('URL Checker Tests', () => {
     });
 
     it('should handle network errors', async () => {
-      fetch.mockImplementation(() => Promise.reject(new Error('Network error')));
+      mockFetch.mockImplementation(() => Promise.reject(new Error('Network error')));
       await expect(processBatch(testBatch)).rejects.toThrow();
     });
 
@@ -145,7 +147,7 @@ describe('URL Checker Tests', () => {
         }
       ];
 
-      fetch.mockImplementation(() => Promise.resolve({ status: 404 }));
+      mockFetch.mockImplementation(() => Promise.resolve({ status: 404 }));
       const results = await processBatch(batchWithIgnored);
       const validResults = results.filter((r) => r !== null);
 
@@ -153,7 +155,7 @@ describe('URL Checker Tests', () => {
     });
 
     it('should handle request timeouts', async () => {
-      fetch.mockImplementation(
+      mockFetch.mockImplementation(
         () =>
           new Promise((resolve) => {
             setTimeout(resolve, 10000);
@@ -165,15 +167,15 @@ describe('URL Checker Tests', () => {
 
   describe('checkUrls', () => {
     it('should process all URLs in batches', async () => {
-      fetch.mockImplementation(() => Promise.resolve({ status: 200 }));
+      mockFetch.mockImplementation(() => Promise.resolve({ status: 200 }));
       const results = await checkUrls(testPaths);
 
       expect(results.length).toBe(0);
-      expect(fetch).toHaveBeenCalledTimes(10);
+      expect(mockFetch).toHaveBeenCalledTimes(10);
     });
 
     it('should handle mixed responses correctly', async () => {
-      fetch.mockImplementation((url) => {
+      mockFetch.mockImplementation((url) => {
         return Promise.resolve({
           status: url.includes('migration') ? 404 : 200
         });
@@ -186,7 +188,7 @@ describe('URL Checker Tests', () => {
 
   describe('main', () => {
     it('should run successfully when all URLs are valid', async () => {
-      fetch.mockImplementation(() => Promise.resolve({ status: 200 }));
+      mockFetch.mockImplementation(() => Promise.resolve({ status: 200 }));
 
       await main();
 
@@ -194,7 +196,7 @@ describe('URL Checker Tests', () => {
     });
 
     it('should report invalid URLs when found', async () => {
-      fetch.mockImplementation(() => Promise.resolve({ status: 404 }));
+      mockFetch.mockImplementation(() => Promise.resolve({ status: 404 }));
 
       await main();
 
@@ -202,7 +204,7 @@ describe('URL Checker Tests', () => {
     });
 
     it('should handle errors gracefully', async () => {
-      fetch.mockImplementation(() => Promise.reject(new Error('Network error')));
+      mockFetch.mockImplementation(() => Promise.reject(new Error('Network error')));
 
       await expect(main()).rejects.toThrow();
     });

@@ -54,6 +54,7 @@ describe('copyAndRenameFiles', () => {
     const fileContent = '<div>Hello</div>';
     const testFile = path.join(SRC_DIR, 'test.txt');
     const targetFile = path.join(TARGET_DIR, 'test.txt');
+
     fs.writeFileSync(testFile, fileContent, 'utf8');
 
     copyAndRenameFiles(SRC_DIR, TARGET_DIR);
@@ -64,17 +65,25 @@ describe('copyAndRenameFiles', () => {
   });
 
   test('should handle non-directory and non-file entries', () => {
-    const nonDirectoryNonFile = {
+    const nonDirectoryNonFile: fs.Dirent = {
       name: 'test',
       isDirectory: () => false,
-      isFile: () => false
+      isFile: () => false,
+      isBlockDevice: () => false,
+      isCharacterDevice: () => false,
+      isFIFO: () => false,
+      isSocket: () => false,
+      isSymbolicLink: () => false,
+      parentPath: '',
+      path: ''
     };
-    const { readdirSync } = fs;
-    fs.readdirSync = () => [nonDirectoryNonFile];
+    const readdirSyncSpy = jest
+      .spyOn(fs, 'readdirSync')
+      .mockReturnValue([nonDirectoryNonFile] as unknown as fs.Dirent[]);
 
     copyAndRenameFiles(SRC_DIR, TARGET_DIR);
 
-    fs.readdirSync = readdirSync;
+    readdirSyncSpy.mockRestore();
   });
 
   test('should create a directory if it does not exist', () => {

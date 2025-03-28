@@ -10,6 +10,8 @@ jest.mock('../../scripts/utils/logger', () => ({
 jest.mock('axios');
 
 describe('getData', () => {
+  const mockedAxios = axios as jest.Mocked<typeof axios>;
+
   beforeEach(() => {
     process.env.GITHUB_TOKEN = 'mockToken';
   });
@@ -32,7 +34,7 @@ describe('getData', () => {
       authorization: `token ${process.env.GITHUB_TOKEN}`
     };
 
-    axios.get.mockResolvedValue(mockData);
+    mockedAxios.get.mockResolvedValue(mockData);
 
     const result = await getData();
 
@@ -66,7 +68,7 @@ describe('getData', () => {
       authorization: `token ${process.env.GITHUB_TOKEN}`
     };
 
-    axios.get.mockResolvedValueOnce(mockInitialResponse).mockResolvedValueOnce(mockNextPageResponse);
+    mockedAxios.get.mockResolvedValueOnce(mockInitialResponse).mockResolvedValueOnce(mockNextPageResponse);
 
     const result = await getData();
 
@@ -84,7 +86,7 @@ describe('getData', () => {
   it('should throw an error when API call fails', async () => {
     const mockError = new Error('Error');
 
-    axios.get.mockRejectedValue(mockError);
+    mockedAxios.get.mockRejectedValue(mockError);
 
     await expect(getData()).rejects.toThrow('Error');
   });

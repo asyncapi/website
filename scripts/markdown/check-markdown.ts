@@ -27,14 +27,14 @@ function isValidURL(str: string) {
 /**
  * Interface representing the frontmatter of a markdown file.
  */
-interface FrontMatter {
+export interface FrontMatter {
   title: string;
-  date: string;
-  type: string;
-  tags: string[];
-  cover: string;
-  weight?: number;
-  authors: { name: string; link: string; photo: string }[];
+  date?: string;
+  type?: string;
+  tags?: string[];
+  cover?: string;
+  weight: number;
+  authors?: { name: string; link: string; photo: string }[];
 }
 
 /**

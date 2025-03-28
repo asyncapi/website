@@ -1,3 +1,5 @@
+import type { GoodFirstIssues } from '@/types/scripts/dashboard';
+
 const mockDiscussion = {
   id: 'test-id',
   __typename: 'Issue',
@@ -13,7 +15,11 @@ const mockDiscussion = {
     pageInfo: { hasNextPage: false }
   },
   labels: { nodes: [] },
-  timelineItems: { updatedAt: new Date().toISOString() }
+  timelineItems: { updatedAt: new Date().toISOString() },
+  reviews: {
+    totalCount: 0,
+    nodes: []
+  }
 };
 
 const discussionWithMoreComments = {
@@ -31,7 +37,11 @@ const discussionWithMoreComments = {
     pageInfo: { hasNextPage: true }
   },
   labels: { nodes: [] },
-  timelineItems: { updatedAt: new Date().toISOString() }
+  timelineItems: { updatedAt: new Date().toISOString() },
+  reviews: {
+    totalCount: 0,
+    nodes: []
+  }
 };
 
 const fullDiscussionDetails = {
@@ -68,6 +78,6 @@ const issues = [
     author: { login: 'author' },
     labels: { nodes: [{ name: 'area/docs' }] }
   }
-];
+] as GoodFirstIssues[];
 
 export { discussionWithMoreComments, fullDiscussionDetails, issues, mockDiscussion, mockRateLimitResponse };

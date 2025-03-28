@@ -50,4 +50,4 @@ const expectedResult = JSON.stringify(
   '  '
 );
 
-module.exports = { mockApiResponse, expectedResult };
+export { expectedResult, mockApiResponse };

@@ -41,7 +41,7 @@ function monthsSince(date: string): number {
  * @returns {string | undefined} - The label if found, otherwise undefined.
  */
 function getLabel(issue: GoodFirstIssues, filter: string): string | undefined {
-  const result = issue.labels.nodes.find((label) => label.name.startsWith(filter));
+  const result = issue.labels!.nodes.find((label) => label.name.startsWith(filter));
 
   return result?.name.split('/')[1];
 }
@@ -239,9 +239,9 @@ async function mapGoodFirstIssues(issues: GoodFirstIssues[]): Promise<MappedIssu
     isAssigned: !!issue.assignees.totalCount,
     resourcePath: issue.resourcePath,
     repo: `asyncapi/${issue.repository.name}`,
-    author: issue.author.login,
+    author: issue.author!.login,
     area: getLabel(issue, 'area/') || 'Unknown',
-    labels: issue.labels.nodes.filter(
+    labels: issue.labels!.nodes.filter(
       (label) => !label.name.startsWith('area/') && !label.name.startsWith('good first issue')
     )
   }));

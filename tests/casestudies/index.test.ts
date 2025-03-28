@@ -49,7 +49,7 @@ describe('buildCaseStudiesList', () => {
       await buildCaseStudiesList('invalid-dir', tempOutputFile);
     } catch (error) {
       expect(error).toBeInstanceOf(Error);
-      expect(error.message).toMatch(/ENOENT/); // Error for directory not found
+      expect((error as Error).message).toMatch(/ENOENT/); // Error for directory not found
     }
   });
 
@@ -74,7 +74,7 @@ describe('buildCaseStudiesList', () => {
       await buildCaseStudiesList(tempConfigDir, tempOutputFile);
     } catch (error) {
       expect(error).toBeInstanceOf(Error);
-      expect(error.message).toContain('Invalid content format'); // Error for invalid YAML content
+      expect((error as Error).message).toContain('Invalid content format'); // Error for invalid YAML content
     }
   });
 });

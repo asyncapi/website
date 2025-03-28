@@ -124,7 +124,7 @@ function buildNavTree(navItems: Details[]): NavTree {
  * @returns {Details[]} - The sequential array of document posts.
  * @throws {Error} - Throws an error if there is an issue during the conversion process.
  */
-const convertDocPosts = (docObject: NavTree | Details): Details[] => {
+const convertDocPosts = (docObject: NavTree | Details | NavTreeItem): Details[] => {
   try {
     let docsArray: Details[] = [];
 

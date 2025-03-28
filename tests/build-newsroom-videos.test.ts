@@ -1,12 +1,17 @@
 import { mkdirpSync, outputFileSync, readFileSync, removeSync } from 'fs-extra';
-import fetch from 'node-fetch-2';
 import os from 'os';
 import { join, resolve } from 'path';
 
 import { buildNewsroomVideos } from '../scripts/build-newsroom-videos';
 import { expectedResult, mockApiResponse } from './fixtures/newsroomData';
 
-jest.mock('node-fetch-2', () => jest.fn());
+// Place jest.mock at the top before any variable declarations
+jest.mock('node-fetch-2', () => {
+  return jest.fn();
+});
+
+// Get reference to the mocked fetch function
+const mockFetch = jest.mocked(require('node-fetch-2'));
 
 describe('buildNewsroomVideos', () => {
   const testDir = join(os.tmpdir(), 'test_config');
@@ -23,11 +28,11 @@ describe('buildNewsroomVideos', () => {
   });
 
   beforeEach(() => {
-    fetch.mockClear();
+    mockFetch.mockClear();
   });
 
-  it('should fetch video data and write to file', async () => {
-    fetch.mockResolvedValue({
+  it('should mockFetch video data and write to file', async () => {
+    mockFetch.mockResolvedValue({
       ok: true,
       json: jest.fn().mockResolvedValue(mockApiResponse)
     });
@@ -44,25 +49,29 @@ describe('buildNewsroomVideos', () => {
     expectedUrl.searchParams.set('order', 'Date');
     expectedUrl.searchParams.set('maxResults', '5');
 
-    expect(fetch).toHaveBeenCalledWith(expectedUrl.toString());
+    expect(mockFetch).toHaveBeenCalledWith(expectedUrl.toString());
     const response = readFileSync(testFilePath, 'utf8');
 
     expect(response).toEqual(expectedResult);
     expect(result).toEqual(expectedResult);
   });
 
-  it('should handle fetch errors', async () => {
-    fetch.mockRejectedValue(new Error('Fetch error'));
+  it('should handle mockFetch errors', async () => {
+    mockFetch.mockRejectedValue(new Error('mockFetch error'));
 
     try {
       await buildNewsroomVideos(testFilePath);
     } catch (err) {
-      expect(err.message).toContain('Fetch error');
+      if (err instanceof Error) {
+        expect(err.message).toContain('mockFetch error');
+      } else {
+        throw new Error('Unexpected error type');
+      }
     }
   });
 
   it('should handle invalid API response', async () => {
-    fetch.mockResolvedValue({
+    mockFetch.mockResolvedValue({
       ok: true,
       json: jest.fn().mockResolvedValue({})
     });
@@ -70,12 +79,16 @@ describe('buildNewsroomVideos', () => {
     try {
       await buildNewsroomVideos(testFilePath);
     } catch (err) {
-      expect(err.message).toContain('Invalid data structure received from YouTube API');
+      if (err instanceof Error) {
+        expect(err.message).toContain('Invalid data structure received from YouTube API');
+      } else {
+        throw new Error('Unexpected error type');
+      }
     }
   });
 
   it('should handle HTTP status code', async () => {
-    fetch.mockResolvedValue({
+    mockFetch.mockResolvedValue({
       ok: false,
       status: 404,
       json: jest.fn().mockResolvedValue({})
@@ -84,12 +97,16 @@ describe('buildNewsroomVideos', () => {
     try {
       await buildNewsroomVideos(testFilePath);
     } catch (err) {
-      expect(err.message).toContain('HTTP error! with status code: 404');
+      if (err instanceof Error) {
+        expect(err.message).toContain('HTTP error! with status code: 404');
+      } else {
+        throw new Error('Unexpected error type');
+      }
     }
   });
 
   it('should handle file write errors', async () => {
-    fetch.mockResolvedValue({
+    mockFetch.mockResolvedValue({
       ok: true,
       json: jest.fn().mockResolvedValue(mockApiResponse)
     });
@@ -99,7 +116,11 @@ describe('buildNewsroomVideos', () => {
     try {
       await buildNewsroomVideos(invalidPath);
     } catch (err) {
-      expect(err.message).toMatch(/ENOENT|EACCES/);
+      if (err instanceof Error) {
+        expect(err.message).toMatch(/ENOENT|EACCES/);
+      } else {
+        throw new Error('Unexpected error type');
+      }
     }
   });
 

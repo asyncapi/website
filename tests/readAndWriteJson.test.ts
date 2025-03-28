@@ -61,4 +61,36 @@ describe('writeJSON', () => {
 
     expect(fs.writeFile).toHaveBeenCalledWith(writePath, JSON.stringify(jsonObject));
   });
+
+  test('should throw an error with unknown error message if reading the file fails with non-Error type', async () => {
+    const nonErrorType = 'String error message';
+
+    (fs.readFile as jest.MockedFunction<typeof fs.readFile>).mockRejectedValue(nonErrorType);
+
+    await expect(writeJSON(readPath, writePath)).rejects.toThrow('Error while reading file\nError: Unknown error');
+
+    expect(fs.readFile).toHaveBeenCalledWith(readPath, 'utf-8');
+  });
+
+  test('should throw an error with unknown error message if converting the file content fails with non-Error type', async () => {
+    (fs.readFile as jest.MockedFunction<typeof fs.readFile>).mockResolvedValue(yamlString);
+    (convertToJson as jest.MockedFunction<typeof convertToJson>).mockImplementation(() => {
+      // eslint-disable-next-line @typescript-eslint/no-throw-literal
+      throw 'Non-Error type exception';
+    });
+
+    await expect(writeJSON(readPath, writePath)).rejects.toThrow('Error while conversion\nError: Unknown error');
+
+    expect(convertToJson).toHaveBeenCalledWith(yamlString);
+  });
+
+  test('should throw an error with unknown error message if writing the file fails with non-Error type', async () => {
+    (fs.readFile as jest.MockedFunction<typeof fs.readFile>).mockResolvedValue(yamlString);
+    (convertToJson as jest.MockedFunction<typeof convertToJson>).mockReturnValue(jsonObject);
+    (fs.writeFile as jest.MockedFunction<typeof fs.writeFile>).mockRejectedValue('Non-Error write exception');
+
+    await expect(writeJSON(readPath, writePath)).rejects.toThrow('Error while writing file\nError: Unknown error');
+
+    expect(fs.writeFile).toHaveBeenCalledWith(writePath, JSON.stringify(jsonObject));
+  });
 });

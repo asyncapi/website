@@ -64,7 +64,7 @@ describe('buildFinanceInfoList', () => {
       });
     } catch (error) {
       expect(error).toBeInstanceOf(Error);
-      expect(error.message).toMatch(/ENOENT/); // Expecting a "no such file or directory" error
+      expect((error as Error).message).toMatch(/ENOENT/); // Expecting a "no such file or directory" error
     }
   });
 
@@ -79,7 +79,7 @@ describe('buildFinanceInfoList', () => {
       });
     } catch (error) {
       expect(error).toBeInstanceOf(Error);
-      expect(error.message).toMatch(/ENOENT/); // Expecting a "no such file or directory" error
+      expect((error as Error).message).toMatch(/ENOENT/); // Expecting a "no such file or directory" error
     }
   });
 
@@ -101,7 +101,7 @@ describe('buildFinanceInfoList', () => {
       });
     } catch (error) {
       expect(error).toBeInstanceOf(Error);
-      expect(error.message).toMatch(/YAMLException/); // Expecting a YAML parsing error
+      expect((error as Error).message).toMatch(/YAMLException/); // Expecting a YAML parsing error
     }
   });
 });

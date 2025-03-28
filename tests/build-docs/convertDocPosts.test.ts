@@ -43,10 +43,10 @@ describe('convertDocPosts', () => {
     let error;
 
     try {
-      convertDocPosts(undefined);
+      convertDocPosts(undefined as any);
     } catch (err) {
       error = err;
-      expect(err.message).toContain('Error in convertDocPosts:');
+      expect((err as Error).message).toContain('Error in convertDocPosts:');
     }
     expect(error).toBeDefined();
   });
@@ -55,10 +55,10 @@ describe('convertDocPosts', () => {
     let error;
 
     try {
-      convertDocPosts(null);
+      convertDocPosts(null as any);
     } catch (err) {
       error = err;
-      expect(err.message).toContain('Error in convertDocPosts:');
+      expect((err as Error).message).toContain('Error in convertDocPosts:');
     }
     expect(error).toBeDefined();
   });
@@ -66,23 +66,25 @@ describe('convertDocPosts', () => {
   it('should handle non-Error object thrown in the function', () => {
     // Mock implementation that throws a non-Error object
     const originalChildren = Object.getOwnPropertyDescriptor(docObject, 'children');
+
     Object.defineProperty(docObject, 'children', {
       get() {
-        // eslint-disable-next-line no-throw-literal
+        // eslint-disable-next-line no-throw-literal, @typescript-eslint/no-throw-literal
         throw 'String exception';
       }
     });
 
     let error;
+
     try {
       convertDocPosts(docObject);
     } catch (err) {
       error = err;
-      expect(err.message).toContain('Error in convertDocPosts: Unknown error - String exception');
+      expect((err as Error).message).toContain('Error in convertDocPosts: Unknown error - String exception');
     }
     expect(error).toBeDefined();
 
     // Restore original property
-    Object.defineProperty(docObject, 'children', originalChildren);
+    Object.defineProperty(docObject, 'children', originalChildren!);
   });
 });

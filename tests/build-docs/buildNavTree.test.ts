@@ -79,7 +79,9 @@ describe('buildNavTree', () => {
       buildNavTree(orphanNavItems);
     } catch (err) {
       error = err;
-      expect(err.message).toContain('Parent section non-existent-parent not found for item Orphaned Subsection');
+      expect((err as Error).message).toContain(
+        'Parent section non-existent-parent not found for item Orphaned Subsection'
+      );
     }
     expect(error).toBeDefined();
   });
@@ -91,7 +93,7 @@ describe('buildNavTree', () => {
       buildNavTree(missingFieldsNavItems);
     } catch (err) {
       error = err;
-      expect(err.message).toContain('Failed to build navigation tree');
+      expect((err as Error).message).toContain('Failed to build navigation tree');
     }
     expect(error).toBeDefined();
   });
@@ -103,7 +105,9 @@ describe('buildNavTree', () => {
       buildNavTree(invalidParentNavItems);
     } catch (err) {
       error = err;
-      expect(err.message).toContain('Parent section non-existent-parent not found for item Child with invalid parent');
+      expect((err as Error).message).toContain(
+        'Parent section non-existent-parent not found for item Child with invalid parent'
+      );
     }
     expect(error).toBeDefined();
   });

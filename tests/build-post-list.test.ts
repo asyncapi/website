@@ -1,13 +1,15 @@
 import fs from 'fs-extra';
 import { join, resolve } from 'path';
 
+import type { Details, Result } from '@/types/scripts/build-posts-list';
+
 import { addItem, buildPostList, slugifyToC } from '../scripts/build-post-list';
 import { generateTempDirPath, setupTestDirectories } from './helper/buildPostListSetup';
 
 describe('buildPostList', () => {
-  let tempDir;
-  let writeFilePath;
-  let postDirectories;
+  let tempDir: string;
+  let writeFilePath: string;
+  let postDirectories: Array<[string, string]>;
 
   beforeEach(async () => {
     tempDir = generateTempDirPath(__dirname);
@@ -87,7 +89,7 @@ describe('buildPostList', () => {
 
     expect(output.docsTree).toBeDefined();
 
-    const blogEntry = output.blog.find((item) => item.slug === '/blog/release-notes-2.1.0');
+    const blogEntry = output.blog.find((item: Details) => item.slug === '/blog/release-notes-2.1.0');
 
     expect(blogEntry).toBeDefined();
     expect(blogEntry.title).toBe('Release Notes 2.1.0');
@@ -102,9 +104,9 @@ describe('buildPostList', () => {
 
     await buildPostList(postDirectories, tempDir, writeFilePath);
 
-    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
+    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8')) as Result;
 
-    const sectionEntry = output.docs.find((item) => item.title === 'Section 1');
+    const sectionEntry = output.docs.find((item: Details) => item.title === 'Section 1');
 
     expect(sectionEntry).toMatchObject({
       title: 'Section 1',
@@ -121,16 +123,16 @@ describe('buildPostList', () => {
 
     await buildPostList(postDirectories, tempDir, writeFilePath);
 
-    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
+    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8')) as Result;
 
     const firstReleaseNote = output.blog.find((item) => item.slug === '/blog/release-notes-2.1.0');
     const secondReleaseNote = output.blog.find((item) => item.slug === '/blog/release-notes-2.1.1');
 
     expect(firstReleaseNote).toBeDefined();
-    expect(firstReleaseNote.title).toBe('Release Notes 2.1.0');
+    expect(firstReleaseNote!.title).toBe('Release Notes 2.1.0');
 
     expect(secondReleaseNote).toBeDefined();
-    expect(secondReleaseNote.title).toBe('Release Notes 2.1.1');
+    expect(secondReleaseNote!.title).toBe('Release Notes 2.1.1');
   });
 
   it('throws an error when accessing non-existent directory', async () => {
@@ -148,8 +150,8 @@ describe('buildPostList', () => {
 
     await buildPostList(postDirectories, tempDir, writeFilePath);
 
-    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
-    const noTitleEntry = output.docs.find((item) => item.slug.includes('/reference/specification/v2.1.0-no-title'));
+    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8')) as Result;
+    const noTitleEntry = output.docs.find((item) => item.slug!.includes('/reference/specification/v2.1.0-no-title'));
 
     expect(noTitleEntry).toBeUndefined();
   });
@@ -164,8 +166,10 @@ describe('buildPostList', () => {
 
     await buildPostList(postDirectories, tempDir, writeFilePath);
 
-    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
-    const nextSpecEntry = output.docs.find((item) => item.slug.includes('/reference/specification/v2.1.0-next-spec.1'));
+    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8')) as Result;
+    const nextSpecEntry = output.docs.find((item) =>
+      item.slug!.includes('/reference/specification/v2.1.0-next-spec.1')
+    );
 
     expect(nextSpecEntry).toBeUndefined();
   });
@@ -177,8 +181,8 @@ describe('buildPostList', () => {
 
     await buildPostList(postDirectories, tempDir, writeFilePath);
 
-    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
-    const explorerEntry = output.docs.find((item) => item.slug.includes('/reference/specification/explorer'));
+    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8')) as Result;
+    const explorerEntry = output.docs.find((item) => item.slug!.includes('/reference/specification/explorer'));
 
     expect(explorerEntry).toBeUndefined();
   });
@@ -196,21 +200,27 @@ describe('buildPostList', () => {
   });
 
   it('throws specific error message when basePath parameter is undefined', async () => {
+    // @ts-ignore, ignore the type error for this test
     await expect(buildPostList(postDirectories, undefined, writeFilePath)).rejects.toThrow(
       'Error while building post list: basePath is required'
     );
   });
 
   it('throws specific error message when writeFilePath parameter is undefined', async () => {
+    // @ts-ignore, ignore the type error for this test
     await expect(buildPostList(postDirectories, tempDir, undefined)).rejects.toThrow(
       'Error while building post list: writeFilePath is required'
     );
   });
 
   it('throws an error when details object is invalid', () => {
+    // @ts-ignore
     expect(() => addItem(null)).toThrow('Invalid details object provided to addItem');
+    // @ts-ignore
     expect(() => addItem({})).toThrow('Invalid details object provided to addItem');
+    // @ts-ignore
     expect(() => addItem({ slug: 123 })).toThrow('Invalid details object provided to addItem');
+    // @ts-ignore
     expect(() => addItem(undefined)).toThrow('Invalid details object provided to addItem');
   });
 
@@ -234,8 +244,10 @@ describe('buildPostList', () => {
 
   it('sets sectionSlug to empty string if not provided', async () => {
     const singleElementDir = [[join(tempDir, 'docs')]]; // No second array element
+
     await buildPostList(singleElementDir, tempDir, writeFilePath);
     const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
+
     expect(Array.isArray(output.docs)).toBe(true);
   });
 
@@ -243,9 +255,10 @@ describe('buildPostList', () => {
     await fs.ensureDir(join(tempDir, 'docs', 'section2'));
     await fs.writeFile(join(tempDir, 'docs', 'section2', '_section.mdx'), '---\n---\n\nNo title in front matter');
     await buildPostList(postDirectories, tempDir, writeFilePath);
-    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
-    const entry = output.docs.find((item) => item.slug.includes('/section2'));
-    expect(entry.title).toBe('Section2');
+    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8')) as Result;
+    const entry = output.docs.find((item) => item.slug!.includes('/section2'));
+
+    expect(entry!.title).toBe('Section2');
   });
 
   describe('slugifyToC', () => {
@@ -276,8 +289,11 @@ describe('buildPostList', () => {
     });
 
     it('handles invalid input types gracefully', () => {
+      // @ts-ignore
       expect(slugifyToC(null)).toBe('');
+      // @ts-ignore
       expect(slugifyToC(undefined)).toBe('');
+      // @ts-ignore
       expect(slugifyToC(123)).toBe('');
     });
 

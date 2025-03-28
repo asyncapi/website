@@ -2,6 +2,7 @@ import { promises as fs } from 'fs';
 import os from 'os';
 import path from 'path';
 
+import type { FrontMatter } from '../../scripts/markdown/check-markdown';
 import {
   checkMarkdownFiles,
   isValidURL,
@@ -12,13 +13,13 @@ import {
 import { logger } from '../../scripts/utils/logger';
 
 jest.mock('../../scripts/utils/logger', () => ({
-  logger: { error: jest.fn(), warn: jest.fn() }
+  logger: { error: jest.fn(() => jest.fn()), warn: jest.fn(() => jest.fn()) }
 }));
 
 describe('Frontmatter Validator', () => {
-  let tempDir;
-  let mockConsoleError;
-  let mockProcessExit;
+  let tempDir: string;
+  let mockConsoleError: jest.SpyInstance;
+  let mockProcessExit: jest.SpyInstance;
 
   beforeEach(async () => {
     mockConsoleError = jest.spyOn(console, 'error').mockImplementation();
@@ -40,7 +41,7 @@ describe('Frontmatter Validator', () => {
       tags: ['test'],
       cover: 'cover.jpg',
       authors: [{ name: 'John' }, { photo: 'jane.jpg' }, { name: 'Bob', photo: 'bob.jpg', link: 'not-a-url' }]
-    };
+    } as FrontMatter;
 
     const errors = validateBlogs(frontmatter);
 
@@ -55,6 +56,7 @@ describe('Frontmatter Validator', () => {
 
   it('validates docs frontmatter for required fields', async () => {
     const frontmatter = { title: 123, weight: 'not-a-number' };
+    // @ts-ignore, to simulate invalid frontmatter
     const errors = validateDocs(frontmatter);
 
     expect(errors).toEqual(
@@ -81,6 +83,7 @@ describe('Frontmatter Validator', () => {
       cover: ['not-a-string'],
       authors: { name: 'John Doe' }
     };
+    // @ts-ignore, to simulate invalid frontmatter
     const errors = validateBlogs(frontmatter);
 
     expect(errors).toEqual([
@@ -96,7 +99,7 @@ describe('Frontmatter Validator', () => {
 
     await expect(checkMarkdownFiles(invalidFolderPath, validateBlogs)).rejects.toThrow('ENOENT');
 
-    expect(logger.error.mock.calls[0][0]).toContain('Error in directory');
+    expect((logger.error as jest.Mock).mock.calls[0][0]).toContain('Error in directory');
   });
 
   it('skips the "reference/specification" folder during validation', async () => {
@@ -116,8 +119,9 @@ describe('Frontmatter Validator', () => {
 
   it('processes files outside the "reference/specification" folder', async () => {
     const validDir = path.join(tempDir, 'valid');
+
     await fs.mkdir(validDir, { recursive: true });
-    await fs.writeFile(path.join(validDir, 'valid.md'), `---\ntitle: Valid File\n---`);
+    await fs.writeFile(path.join(validDir, 'valid.md'), '---\ntitle: Valid File\n---');
 
     const mockLoggerWarn = jest.spyOn(logger, 'warn').mockImplementation();
 
@@ -169,18 +173,22 @@ describe('Frontmatter Validator', () => {
   });
 
   it('should throw an error if frontmatter is missing', () => {
+    // @ts-ignore, to simulate missing frontmatter
     const errors = validateBlogs(undefined);
 
     expect(errors).toEqual(['Frontmatter is missing']);
   });
   it('does not push errors if docs frontmatter is valid', () => {
     const frontmatter = { title: 'Valid Title', weight: 10 };
+
     const errors = validateDocs(frontmatter);
+
     expect(errors).toBeNull();
   });
 
   it('skips non-directory, non-md files without errors', async () => {
     const testFile = path.join(tempDir, 'sample.txt');
+
     await fs.writeFile(testFile, 'This is just a text file');
     await checkMarkdownFiles(tempDir, validateBlogs);
     expect(logger.warn).not.toHaveBeenCalledWith(expect.stringContaining('Errors in file sample.txt'));
@@ -188,10 +196,12 @@ describe('Frontmatter Validator', () => {
 
   it('processes markdown files in directories other than reference/specification', async () => {
     const otherDir = path.join(tempDir, 'otherDir');
+
     await fs.mkdir(otherDir, { recursive: true });
-    await fs.writeFile(path.join(otherDir, 'test.md'), `---\ntitle: No Weight\n---`);
+    await fs.writeFile(path.join(otherDir, 'test.md'), '---\ntitle: No Weight\n---');
 
     const mockLoggerWarn = jest.spyOn(logger, 'warn').mockImplementation();
+
     await checkMarkdownFiles(tempDir, validateDocs);
 
     // Expect a warning about missing weight
