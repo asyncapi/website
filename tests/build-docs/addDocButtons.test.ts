@@ -48,65 +48,69 @@ describe('addDocButtons', () => {
   it('should set nextPage correctly when next item is a root element', () => {
     const result = addDocButtons(mockDocPosts, mockTreePosts);
 
-    expect(result[1].nextPage).toBeDefined();
-    expect(result[1].nextPage.title).toBe('Root 2 - Child 2');
-    expect(result[1].nextPage.href).toBe('/docs/root2/child2');
+    expect(result[1]?.nextPage).toBeDefined();
+    expect(result[1]?.nextPage?.title).toBe('Root 2 - Child 2');
+    expect(result[1]?.nextPage?.href).toBe('/docs/root2/child2');
   });
 
   it('should throw an error if treePosts is missing', () => {
-    let error;
+    let error: Error | undefined;
 
     try {
-      addDocButtons(docPosts, undefined);
+      addDocButtons(docPosts, undefined as any);
     } catch (err) {
-      error = err;
-      expect(err.message).toContain('An error occurred while adding doc buttons:');
+      error = err as Error;
+      expect((err as Error).message).toContain('An error occurred while adding doc buttons:');
     }
     expect(error).toBeDefined();
   });
 
   it('should throw an error if docPosts is missing', () => {
-    let error;
+    let error: Error | undefined;
 
     try {
-      addDocButtons(undefined, treePosts);
+      addDocButtons(undefined as any, treePosts);
     } catch (err) {
-      error = err;
-      expect(err.message).toContain('An error occurred while adding doc buttons:');
+      error = err as Error;
+      expect((err as Error).message).toContain('An error occurred while adding doc buttons:');
     }
     expect(error).toBeDefined();
   });
 
   it('should handle invalid data structure in treePosts', () => {
-    let error;
+    let error: Error | undefined;
 
     try {
+      // @ts-ignore
       addDocButtons(docPosts, invalidTreePosts);
     } catch (err) {
-      error = err;
-      expect(err.message).toContain('An error occurred while adding doc buttons:');
+      error = err as Error;
+      expect((err as Error).message).toContain('An error occurred while adding doc buttons:');
     }
     expect(error).toBeDefined();
   });
 
   it('should handle non-Error object thrown in the function', () => {
-    // Create a mock treePosts object that will cause a non-Error to be thrown
-    const malformedTreePosts = { section1: {} };
+    const malformedTreePosts: Record<string, any> = { section1: {} };
 
-    // Make section1 throw a non-Error when accessed
     Object.defineProperty(malformedTreePosts, 'section1', {
       get() {
-        // eslint-disable-next-line no-throw-literal
+        // eslint-disable-next-line no-throw-literal, @typescript-eslint/no-throw-literal
         throw 'String exception';
       }
     });
 
-    let error;
+    let error: Error | undefined;
+
     try {
       addDocButtons(docPosts, malformedTreePosts);
     } catch (err) {
-      error = err;
-      expect(err.message).toBe('An unknown error occurred while adding doc buttons.');
+      if (err instanceof Error) {
+        error = err;
+        expect(err.message).toBe('An unknown error occurred while adding doc buttons.');
+      } else {
+        error = new Error('An unknown error occurred while adding doc buttons.');
+      }
     }
     expect(error).toBeDefined();
   });
