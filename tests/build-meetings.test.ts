@@ -149,4 +149,34 @@ describe('buildMeetings', () => {
 
     await expect(buildMeetings('/path/to/write')).rejects.toThrow('start.dateTime is missing in the event');
   });
+
+  it('should throw an error if CALENDAR_SERVICE_ACCOUNT is not set', async () => {
+    // Temporarily remove the environment variable
+    const originalServiceAccount = process.env.CALENDAR_SERVICE_ACCOUNT;
+
+    delete process.env.CALENDAR_SERVICE_ACCOUNT;
+
+    try {
+      await expect(buildMeetings(outputFilePath)).rejects.toThrow(
+        'CALENDAR_SERVICE_ACCOUNT environment variable is not set'
+      );
+    } finally {
+      // Restore the environment variable for other tests
+      process.env.CALENDAR_SERVICE_ACCOUNT = originalServiceAccount;
+    }
+  });
+
+  it('should throw an error if CALENDAR_ID is not set', async () => {
+    // Temporarily remove the environment variable
+    const originalCalendarId = process.env.CALENDAR_ID;
+
+    delete process.env.CALENDAR_ID;
+
+    try {
+      await expect(buildMeetings(outputFilePath)).rejects.toThrow('CALENDAR_ID environment variable is not set');
+    } finally {
+      // Restore the environment variable for other tests
+      process.env.CALENDAR_ID = originalCalendarId;
+    }
+  });
 });

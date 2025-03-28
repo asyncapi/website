@@ -156,7 +156,6 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise
             discussion.reviews.totalCount +
             (discussion.reviews.nodes?.reduce((acc, curr) => acc + curr.comments.totalCount, 0) ?? 0)
           : interactionsCount;
-        /* istanbul ignore next */
 
         return {
           id: discussion.id,

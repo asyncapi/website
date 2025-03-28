@@ -78,8 +78,6 @@ export const addItem = (details: Details) => {
   };
   const section = Object.keys(sectionMap).find((key) => details.slug!.startsWith(key));
 
-  /* istanbul ignore else */
-
   if (section) {
     finalResult[sectionMap[section]].push(details);
   }
@@ -156,7 +154,6 @@ async function walkDirectories(
   try {
     for (const dir of directories) {
       const directory = posix.normalize(dir[0]);
-      /* istanbul ignore next */
       const sectionSlug = dir[1] || '';
       const files = await readdir(directory);
 
@@ -171,7 +168,6 @@ async function walkDirectories(
           if (await pathExists(fileNameWithSection)) {
             // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
             details = frontMatter(await readFile(fileNameWithSection, 'utf-8'), {}).data as Details;
-            /* istanbul ignore next */
             details.title = details.title || capitalize(basename(fileName));
           } else {
             details = {
@@ -210,7 +206,6 @@ async function walkDirectories(
           details.toc = toc(content, { slugify: slugifyToC }).json;
           details.readingTime = Math.ceil(readingTime(content).minutes);
           details.excerpt = details.excerpt || markdownToTxt(content).substr(0, 200);
-          /* istanbul ignore next */
           details.sectionSlug = sectionSlug || slug.replace(/\.mdx$/, '');
           details.sectionWeight = sectionWeight;
           details.sectionTitle = sectionTitle;

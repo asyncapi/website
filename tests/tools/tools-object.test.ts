@@ -190,4 +190,48 @@ describe('Tools Object', () => {
     expect(toolObject.description).toBe(repositoryDescription);
     expect(toolObject.title).toBe('No Description Tool');
   });
+
+  it('should throw a generic error when the error object is not an Error instance', async () => {
+    const mockData = createMockData([
+      {
+        name: '.asyncapi-tool-error',
+        repoName: 'error-tool'
+      }
+    ]);
+
+    // Mock axios.get to throw a non-Error object
+    axios.get.mockImplementation(() => {
+      // eslint-disable-next-line no-throw-literal
+      throw 'This is a string error, not an Error object';
+    });
+
+    await expect(convertTools(mockData)).rejects.toThrow('An unexpected error occurred');
+  });
+
+  it('should skip files that do not start with .asyncapi-tool', async () => {
+    const mockData = createMockData([{ name: 'not-asyncapi-tool', repoName: 'non-tool-repo' }]);
+
+    const result = await convertTools(mockData);
+
+    // Check that no tools were added to any category
+    expect(result.Category1.toolsList).toHaveLength(0);
+    expect(result.Others.toolsList).toHaveLength(0);
+  });
+
+  it('should not add the same tool object to the same category twice when a tool lists the same category multiple times', async () => {
+    // Create a tool with duplicate categories
+    const toolContent = createToolFileContent({
+      title: 'Duplicate Category Tool',
+      categories: ['Category1', 'Category1'] // Same category listed twice
+    });
+
+    const mockData = mockToolData(toolContent);
+
+    const result = await convertTools(mockData);
+
+    // Even though Category1 is listed twice in the tool's categories,
+    // the tool should only be added once to that category
+    expect(result.Category1.toolsList).toHaveLength(1);
+    expect(result.Category1.toolsList[0].title).toBe('Duplicate Category Tool');
+  });
 });

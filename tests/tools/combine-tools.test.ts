@@ -251,4 +251,47 @@ describe('combineTools function', () => {
 
     expect(result).toEqual(finalToolWithMissingData);
   });
+  it('should log an error when tool or anotherTool has no title', async () => {
+    const noTitleTools = {
+      category1: {
+        toolsList: [
+          {
+            filters: { language: [], technology: [] }
+          },
+          {
+            title: 'Valid Tool',
+            filters: { language: [], technology: [] }
+          }
+        ]
+      }
+    };
+    await combineTools(noTitleTools, {}, toolsPath, tagsPath);
+    expect(logger.error).toHaveBeenCalledWith(
+      expect.stringContaining('source: combine-tools.ts, tool title is missing.')
+    );
+  });
+
+  it('should skip inherited prototype properties in automatedTools', async () => {
+    const proto = {
+      extraCategory: {
+        toolsList: [
+          {
+            title: 'Inherited Tool',
+            filters: { language: [], technology: [] }
+          }
+        ]
+      }
+    };
+    const inheritedTools = Object.create(proto);
+    inheritedTools.category1 = {
+      toolsList: [
+        {
+          title: 'Local Tool',
+          filters: { language: [], technology: [] }
+        }
+      ]
+    };
+
+    await combineTools(inheritedTools, {}, toolsPath, tagsPath);
+  });
 });

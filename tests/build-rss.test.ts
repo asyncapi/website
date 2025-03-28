@@ -5,7 +5,7 @@ import path from 'path';
 import { rssFeed } from '../scripts/build-rss';
 
 const parser = new XMLParser({ ignoreAttributes: false });
-const { mockRssData, title, type, desc, missingDateMockData, incompletePostMockData } = require('./fixtures/rssData');
+const { mockRssData, title, type, desc, incompletePostMockData } = require('./fixtures/rssData');
 
 describe('rssFeed', () => {
   const testOutputDir = path.join(__dirname, '..', 'public', 'test-output');
@@ -142,11 +142,49 @@ describe('rssFeed', () => {
     await expect(rssFeed(type, title, desc, outputPath)).rejects.toThrow('Missing required fields');
   });
 
-  it('should throw an error when a post is missing a date field during sorting', async () => {
-    jest.doMock('../config/posts.json', () => missingDateMockData, { virtual: true });
+  it('should properly identify posts missing dates and include them in error message', async () => {
+    // Create mock data with multiple posts missing dates to test the mapping function
+    const multiMissingDatesMockData = {
+      blog: [
+        { title: 'Post 1 without Date', slug: '/blog/post1-no-date', excerpt: 'Test excerpt' },
+        { title: 'Post 2 without Date', slug: '/blog/post2-no-date', excerpt: 'Test excerpt' },
+        { title: null, slug: '/blog/post3-no-date-no-title', excerpt: 'Test excerpt' }, // Test post with no title to ensure slug is used
+        { title: 'Post with Date', slug: '/blog/post-with-date', excerpt: 'Test excerpt', date: '2023-01-01' }
+      ]
+    };
 
+    jest.doMock('../config/posts.json', () => multiMissingDatesMockData, { virtual: true });
+
+    // This should specifically test the error thrown by the missingDatePosts check
     await expect(rssFeed(type, title, desc, outputPath)).rejects.toThrow(
-      'Failed to generate RSS feed: Missing date in posts: Post without Date'
+      'Missing date in posts: Post 1 without Date, Post 2 without Date, /blog/post3-no-date-no-title'
     );
+  });
+
+  it('should use default mime type when encountering an unsupported image extension', async () => {
+    // Create mock data with an unsupported extension
+    const mockDataWithUnknownExt = {
+      ...mockRssData,
+      blog: [
+        ...mockRssData.blog,
+        {
+          title: 'Post with unknown image extension',
+          slug: '/blog/unknown-ext',
+          excerpt: 'This is a test post with an unknown image extension',
+          date: '2023-01-01',
+          cover: '/img/test-cover.unknown'
+        }
+      ]
+    };
+
+    jest.doMock('../config/posts.json', () => mockDataWithUnknownExt, { virtual: true });
+
+    await expect(rssFeed(type, title, desc, outputPath)).resolves.toBeUndefined();
+
+    const filePath = path.join(__dirname, '..', 'public', outputPath);
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+
+    expect(fileContent).toContain('<enclosure url="https://www.asyncapi.com/img/test-cover.unknown"');
+    expect(fileContent).toContain('type="image/jpeg"'); // Should use default mime type
   });
 });

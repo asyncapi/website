@@ -145,8 +145,12 @@ const convertDocPosts = (docObject: NavTree | Details): Details[] => {
     }
 
     return docsArray;
-  } catch (err) {
-    throw new Error('Error in convertDocPosts:', err as Error);
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      throw new Error(`Error in convertDocPosts: ${err.message}`);
+    } else {
+      throw new Error(`Error in convertDocPosts: Unknown error - ${String(err)}`);
+    }
   }
 };
 
@@ -240,8 +244,12 @@ function addDocButtons(docPosts: Details[], treePosts: NavTree): Details[] {
 
       return docPost;
     });
-  } catch (err) {
-    throw new Error('An error occurred while adding doc buttons:', err as Error);
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      throw new Error(`An error occurred while adding doc buttons: ${err.message}`);
+    } else {
+      throw new Error('An unknown error occurred while adding doc buttons.');
+    }
   }
 
   return structuredPosts;

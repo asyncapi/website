@@ -16,45 +16,40 @@ dotenv.config();
  * @throws {Error} If there is an error fetching the data.
  */
 export async function getData(): Promise<ToolsData> {
-  // eslint-disable-next-line no-useless-catch
-  try {
-    if (!process.env.GITHUB_TOKEN) {
-      throw new Error('GITHUB_TOKEN environment variable is required');
-    }
-    const allItems = [];
-    let page = 1;
+  if (!process.env.GITHUB_TOKEN) {
+    throw new Error('GITHUB_TOKEN environment variable is required');
+  }
+  const allItems = [];
+  let page = 1;
 
-    const maxPerPage = 50;
-    const getReqUrl = (PerPage: number, pageNo: number) =>
-      `https://api.github.com/search/code?q=filename:.asyncapi-tool&per_page=${PerPage}&page=${pageNo}`;
-    const headers = {
-      accept: 'application/vnd.github.text-match+json',
-      authorization: `token ${process.env.GITHUB_TOKEN}`
-    };
-    const result = await axios.get(getReqUrl(maxPerPage, page), {
+  const maxPerPage = 50;
+  const getReqUrl = (PerPage: number, pageNo: number) =>
+    `https://api.github.com/search/code?q=filename:.asyncapi-tool&per_page=${PerPage}&page=${pageNo}`;
+  const headers = {
+    accept: 'application/vnd.github.text-match+json',
+    authorization: `token ${process.env.GITHUB_TOKEN}`
+  };
+  const result = await axios.get(getReqUrl(maxPerPage, page), {
+    headers
+  });
+  const totalResults = result.data.total_count;
+
+  allItems.push(...result.data.items);
+
+  while (allItems.length < totalResults) {
+    page++;
+
+    logger.info(`Fetching page: ${page}`);
+    // pause for 1 second to avoid rate limiting
+    await pause(1000);
+    const nextPageData = await axios.get(getReqUrl(maxPerPage, page), {
       headers
     });
-    const totalResults = result.data.total_count;
 
-    allItems.push(...result.data.items);
+    const { data } = nextPageData;
 
-    while (allItems.length < totalResults) {
-      page++;
-
-      logger.info(`Fetching page: ${page}`);
-      // pause for 1 second to avoid rate limiting
-      await pause(1000);
-      const nextPageData = await axios.get(getReqUrl(maxPerPage, page), {
-        headers
-      });
-
-      const { data } = nextPageData;
-
-      allItems.push(...data.items);
-    }
-
-    return allItems;
-  } catch (err) {
-    throw err;
+    allItems.push(...data.items);
   }
+
+  return allItems;
 }

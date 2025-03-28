@@ -252,4 +252,45 @@ describe('GitHub Discussions Processing', () => {
 
     process.env.GITHUB_TOKEN = 'test-token';
   });
+
+  it('should handle missing author in discussions', async () => {
+    const discussionWithoutAuthor = {
+      ...mockDiscussion,
+      author: null,
+      timelineItems: { updatedAt: new Date().toISOString() },
+      assignees: { totalCount: 0 },
+      labels: null
+    };
+
+    const result = await getHotDiscussions([discussionWithoutAuthor]);
+
+    expect(result[0]).toMatchObject({
+      author: '',
+      isAssigned: false,
+      labels: []
+    });
+    expect(result[0].score).toBeGreaterThan(0);
+  });
+
+  it('should correctly calculate score based on months since update', async () => {
+    // Create two identical discussions but with different update timestamps
+    const recentDiscussion = {
+      ...mockDiscussion,
+      timelineItems: { updatedAt: new Date().toISOString() }
+    };
+
+    const olderDiscussion = {
+      ...mockDiscussion,
+      id: 'older-discussion',
+      timelineItems: { updatedAt: new Date(Date.now() - 6 * 30 * 24 * 60 * 60 * 1000).toISOString() } // 6 months ago
+    };
+
+    const result = await getHotDiscussions([recentDiscussion, olderDiscussion]);
+
+    // The recent discussion should have a higher score than the older one
+    const recentScore = result.find((d) => d.id === mockDiscussion.id).score;
+    const olderScore = result.find((d) => d.id === 'older-discussion').score;
+
+    expect(recentScore).toBeGreaterThan(olderScore);
+  });
 });

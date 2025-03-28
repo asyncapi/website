@@ -214,6 +214,40 @@ describe('buildPostList', () => {
     expect(() => addItem(undefined)).toThrow('Invalid details object provided to addItem');
   });
 
+  it('does not add item when slug does not match any section', () => {
+    // Define finalResult
+    const finalResult = { blog: [], docs: [], about: [] };
+
+    // Get the initial state of finalResult
+    const initialBlogs = JSON.parse(JSON.stringify(finalResult.blog));
+    const initialDocs = JSON.parse(JSON.stringify(finalResult.docs));
+    const initialAbout = JSON.parse(JSON.stringify(finalResult.about));
+
+    // Add an item with a slug that doesn't match any section
+    addItem({ slug: '/unknown/path', title: 'Unknown Item' });
+
+    // Verify no changes were made to any section arrays
+    expect(finalResult.blog).toEqual(initialBlogs);
+    expect(finalResult.docs).toEqual(initialDocs);
+    expect(finalResult.about).toEqual(initialAbout);
+  });
+
+  it('sets sectionSlug to empty string if not provided', async () => {
+    const singleElementDir = [[join(tempDir, 'docs')]]; // No second array element
+    await buildPostList(singleElementDir, tempDir, writeFilePath);
+    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
+    expect(Array.isArray(output.docs)).toBe(true);
+  });
+
+  it('uses directory name as fallback title when front matter title is missing', async () => {
+    await fs.ensureDir(join(tempDir, 'docs', 'section2'));
+    await fs.writeFile(join(tempDir, 'docs', 'section2', '_section.mdx'), '---\n---\n\nNo title in front matter');
+    await buildPostList(postDirectories, tempDir, writeFilePath);
+    const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
+    const entry = output.docs.find((item) => item.slug.includes('/section2'));
+    expect(entry.title).toBe('Section2');
+  });
+
   describe('slugifyToC', () => {
     it('handles heading ids like {# myHeadingId}', () => {
       const input = '## My Heading {#custom-id}';
