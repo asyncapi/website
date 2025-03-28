@@ -41,7 +41,9 @@ export default function BlogLayout({
 
   return (
     <BlogContext.Provider value={{ post }}>
-      <AnnouncementHero className='mx-8 my-4' />
+      <div className='mt-4'>
+        <AnnouncementHero />
+      </div>
       <Container cssBreakingPoint='lg' flex flexReverse>
         <TOC
           toc={post.toc}
