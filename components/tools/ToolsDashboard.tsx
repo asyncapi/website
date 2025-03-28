@@ -2,8 +2,8 @@ import { useRouter } from 'next/router';
 import React, { createRef, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
 import type { ToolsListData } from '@/types/components/tools/ToolDataType';
+import { processToolsData } from '@/utils/processToolsData';
 
-import ToolsDataList from '../../config/tools.json';
 import ToolFilter, { ToolFilterContext } from '../../context/ToolFilterContext';
 import ArrowDown from '../icons/ArrowDown';
 import Cross from '../icons/Cross';
@@ -13,12 +13,17 @@ import CategoryDropdown from './CategoryDropdown';
 import Filters from './Filters';
 import ToolsList from './ToolsList';
 
-const ToolsData = ToolsDataList as ToolsListData;
+const ToolsData = processToolsData() as ToolsListData;
 
 /**
  * @description This component displays Tools Dashboard.
  */
+/**
+ * This component handles the tools dashboard.
+ * @returns {JSX.Element} The rendered component.
+ */
 export default function ToolsDashboard() {
+  // eslint-disable-next-line require-jsdoc
   const router = useRouter();
   const filterRef = useRef<HTMLDivElement>(); // used to provide ref to the Filter menu and outside click close feature
   const categoryRef = useRef<HTMLDivElement>(); // used to provide ref to the Category menu and outside click close feature
@@ -60,7 +65,7 @@ export default function ToolsDashboard() {
   });
 
   // useMemo function to filter the tools according to the filters applied by the user
-  const toolsList = useMemo(() => {
+  const toolsList = useMemo<ToolsListData>(() => {
     let tempToolsList: ToolsListData = {};
 
     // Tools data list is first filtered according to the category filter if applied by the user.
