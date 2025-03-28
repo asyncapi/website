@@ -120,17 +120,11 @@ Generated files of the storybook go to the `storybook-static` folder.
 - [install Docker](https://docs.docker.com/get-docker/)
 
 
-After cloning repository to your local, perform the following steps from the root of the repository.
+After cloning repository to your local, run the docker compose in watch mode from the root of the repository.
 
-#### Steps:
-1. Build the Docker image:
-    ```bash 
-    docker build -t asyncapi-website .
-    ```
-2. Start the container:
-    ```bash
-    docker run --rm -it -v "$PWD":/async -p 3000:3000 asyncapi-website
-    ```
+```bash 
+docker compose up --watch
+```
 
 Now you're running AsyncAPI website in a development mode. Container is mapped with your local copy of the website. Whenever you make changes to the code, the website will refresh and changes visible in localhost:3000.
 
