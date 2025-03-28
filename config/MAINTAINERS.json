@@ -85,7 +85,7 @@
         "linkedin": "anand-sunderraman-a6b7a131",
         "slack": "U0231F9KXNK",
         "availableForHire": false,
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "go-watermill-template"
         ],
@@ -101,7 +101,6 @@
         "isTscMember": true,
         "repos": [
             "studio",
-            "github-action-for-cli",
             "cli"
         ],
         "githubID": 100484401
@@ -236,7 +235,7 @@
         "slack": "U018NLDV5E1",
         "availableForHire": false,
         "company": "Postman",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "spec-json-schemas",
             "bindings"
@@ -278,7 +277,6 @@
             "nodejs-template",
             "nodejs-ws-template",
             "java-spring-template",
-            "github-action-for-cli",
             ".github",
             "vs-asyncapi-preview",
             "template-for-generator-templates",
@@ -297,7 +295,6 @@
         "company": "Travelping GmbH",
         "isTscMember": true,
         "repos": [
-            "website",
             "generator",
             "asyncapi-react",
             "parser-go",
@@ -307,7 +304,6 @@
             "studio",
             "html-template",
             "markdown-template",
-            "github-action-for-cli",
             "template-for-generator-templates",
             "generator-react-sdk",
             "modelina",
@@ -462,7 +458,8 @@
         "slack": "U01SGCZMJKW",
         "twitter": "souvik_ns",
         "linkedin": "souvik-de-a2b941169",
-        "availableForHire": true,
+        "availableForHire": false,
+        "company": "Codemate",
         "isTscMember": true,
         "repos": [
             "cli",
@@ -754,24 +751,17 @@
         "githubID": 16149591
     },
     {
-        "name": "Rohit",
+        "name": "Rohit T",
         "github": "TRohit20",
+        "linkedin": "rohit-t-0124a4242",
+        "slack": "U05174ZKGQ6",
         "twitter": "TRRohit20",
-        "isTscMember": false,
+        "availableForHire": true,
+        "isTscMember": true,
         "repos": [
             "website"
         ],
         "githubID": 108233235
-    },
-    {
-        "name": "Bhaswati Roy ",
-        "github": "BhaswatiRoy",
-        "twitter": "swiftiebhaswati",
-        "isTscMember": false,
-        "repos": [
-            "website"
-        ],
-        "githubID": 78029145
     },
     {
         "name": "Vaishnavi ",
@@ -781,16 +771,6 @@
             "website"
         ],
         "githubID": 41518119
-    },
-    {
-        "name": "Joy Almeida",
-        "github": "J0SAL",
-        "twitter": "_j0sal",
-        "isTscMember": false,
-        "repos": [
-            "website"
-        ],
-        "githubID": 52382282
     },
     {
         "name": "Mihael Bosnjak",
@@ -991,5 +971,54 @@
             "jasyncapi"
         ],
         "githubID": 126087
+    },
+    {
+        "name": "Prince Onyeanuna",
+        "github": "Aahil13",
+        "twitter": "OnyeanunaE",
+        "availableForHire": true,
+        "isTscMember": false,
+        "repos": [
+            "website"
+        ],
+        "githubID": 63567230
+    },
+    {
+        "name": "Charles d'Avernas",
+        "github": "cdavernas",
+        "linkedin": "charles-d-avernas-40836a13",
+        "slack": "U02MRF09BL1",
+        "availableForHire": false,
+        "isTscMember": true,
+        "repos": [
+            "net-sdk"
+        ],
+        "githubID": 16137162
+    },
+    {
+        "name": "Jean-Baptiste Bianchi",
+        "github": "jbbianchi",
+        "twitter": "JBBianchi",
+        "linkedin": "jean-baptiste-bianchi-aa42b914",
+        "slack": "D08K91H3DBM",
+        "isTscMember": true,
+        "availableForHire": false,
+        "repos": [
+            "net-sdk"
+        ],
+        "githubID": 72747835
+    },
+    {
+        "name": "Vishvamsinh Vaghela",
+        "github": "vishvamsinh28",
+        "twitter": "Vishvamsinh28",
+        "linkedin": "vishvamsinh-vaghela-591695217",
+        "slack": "U05FM7WRKU4",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "website"
+        ],
+        "githubID": 90895835
     }
 ]

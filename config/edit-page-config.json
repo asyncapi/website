@@ -18,5 +18,13 @@
   {
     "value": "reference/extensions/",
     "href": "https://github.com/asyncapi/extensions-catalog/tree/master/extensions"
+  },
+  {
+    "value": "community/onboarding-guide",
+    "href": "https://github.com/asyncapi/community/tree/master/docs/onboarding-guide"
+  },
+  {
+    "value": "community/styleguide",
+    "href": "https://github.com/asyncapi/community/tree/master/docs/styleguide"
   }
 ]
