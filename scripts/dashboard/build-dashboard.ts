@@ -41,7 +41,7 @@ function monthsSince(date: string): number {
  * @returns {string | undefined} - The label if found, otherwise undefined.
  */
 function getLabel(issue: GoodFirstIssues, filter: string): string | undefined {
-  const result = issue.labels.nodes.find((label) => label.name.startsWith(filter));
+  const result = issue.labels!.nodes.find((label) => label.name.startsWith(filter));
 
   return result?.name.split('/')[1];
 }
@@ -58,6 +58,11 @@ async function getDiscussions(
   pageSize: number,
   endCursor: null | string = null
 ): Promise<Discussion['search']['nodes']> {
+  const token = process.env.GITHUB_TOKEN;
+
+  if (!token) {
+    throw new Error('GitHub token is not set in environment variables');
+  }
   try {
     const result: Discussion = await graphql(query, {
       first: pageSize,
@@ -100,11 +105,17 @@ async function getDiscussions(
  * @returns {Promise<PullRequestById | IssueById>} - The fetched discussion.
  */
 async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequestById | IssueById> {
+  const token = process.env.GITHUB_TOKEN;
+
+  if (!token) {
+    throw new Error('GitHub token is not set in environment variables');
+  }
+
   try {
     const result: PullRequestById | IssueById = await graphql(isPR ? Queries.pullRequestById : Queries.issueById, {
       id,
       headers: {
-        authorization: `token ${process.env.GITHUB_TOKEN}`
+        authorization: `token ${token}`
       }
     });
 
@@ -143,10 +154,8 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise
         const finalInteractionsCount = isPR
           ? interactionsCount +
             discussion.reviews.totalCount +
-            discussion.reviews.nodes!.reduce((acc, curr) => acc + curr.comments.totalCount, 0)
+            (discussion.reviews.nodes?.reduce((acc, curr) => acc + curr.comments.totalCount, 0) ?? 0)
           : interactionsCount;
-
-        /* istanbul ignore next */
 
         return {
           id: discussion.id,
@@ -224,16 +233,15 @@ async function writeToFile(
  * @returns {Promise<MappedIssue[]>} - The mapped issues.
  */
 async function mapGoodFirstIssues(issues: GoodFirstIssues[]): Promise<MappedIssue[]> {
-  /* istanbul ignore next */
   return issues.map((issue) => ({
     id: issue.id,
     title: issue.title,
     isAssigned: !!issue.assignees.totalCount,
     resourcePath: issue.resourcePath,
     repo: `asyncapi/${issue.repository.name}`,
-    author: issue.author.login,
+    author: issue.author!.login,
     area: getLabel(issue, 'area/') || 'Unknown',
-    labels: issue.labels.nodes.filter(
+    labels: issue.labels!.nodes.filter(
       (label) => !label.name.startsWith('area/') && !label.name.startsWith('good first issue')
     )
   }));

@@ -82,14 +82,14 @@ const config: Config = {
       black: '900'
     },
     backgroundImage: {
-      ambassador: 'url(\'/img/homepage/ambassador.webp\')',
-      eventCover: 'url(\'/img/homepage/event-cover.webp\')',
-      channelCover: 'url(\'/img/homepage/slack-cover.webp\')',
-      usecases: 'url(\'/img/homepage/usecases.webp\')',
-      roadmapCover: 'url(\'/img/homepage/roadmap.webp\')',
-      confBg: 'url(\'/img/homepage/confBlurBg.webp\')',
-      ambassadorCover: 'url(\'/img/homepage/gathering.webp\')',
-      mapCover: 'url(\'/img/homepage/mapbase.webp\')'
+      ambassador: "url('/img/homepage/ambassador.webp')",
+      eventCover: "url('/img/homepage/event-cover.webp')",
+      channelCover: "url('/img/homepage/slack-cover.webp')",
+      usecases: "url('/img/homepage/usecases.webp')",
+      roadmapCover: "url('/img/homepage/roadmap.webp')",
+      confBg: "url('/img/homepage/confBlurBg.webp')",
+      ambassadorCover: "url('/img/homepage/gathering.webp')",
+      mapCover: "url('/img/homepage/mapbase.webp')"
     },
     fontFamily: {
       sans: ['Inter', ...defaultTheme.fontFamily.sans],

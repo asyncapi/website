@@ -27,14 +27,14 @@ function isValidURL(str: string) {
 /**
  * Interface representing the frontmatter of a markdown file.
  */
-interface FrontMatter {
+export interface FrontMatter {
   title: string;
-  date: string;
-  type: string;
-  tags: string[];
-  cover: string;
-  weight?: number;
-  authors: { name: string; link: string; photo: string }[];
+  date?: string;
+  type?: string;
+  tags?: string[];
+  cover?: string;
+  weight: number;
+  authors?: { name: string; link: string; photo: string }[];
 }
 
 /**
@@ -94,7 +94,6 @@ function validateBlogs(frontmatter: FrontMatter) {
     }
   }
 
-  /* istanbul ignore next */
   return errors.length ? errors : null;
 }
 
@@ -107,18 +106,15 @@ function validateDocs(frontmatter: FrontMatter) {
   const errors = [];
 
   // Check if title exists and is a string
-  /* istanbul ignore else */
   if (!frontmatter.title || typeof frontmatter.title !== 'string') {
     errors.push('Title is missing or not a string');
   }
 
   // Check if weight exists and is a number
-  /* istanbul ignore else */
   if (frontmatter.weight === undefined || typeof frontmatter.weight !== 'number') {
     errors.push('Weight is missing or not a number');
   }
 
-  /* istanbul ignore next */
   return errors.length ? errors : null;
 }
 
@@ -140,16 +136,13 @@ async function checkMarkdownFiles(
       const relativeFilePath = path.join(relativePath, file);
 
       // Skip the folder 'docs/reference/specification'
-
-      /* istanbul ignore next */
-      if (relativeFilePath.includes('reference/specification')) {
+      if (path.normalize(relativeFilePath).includes(path.join('reference', 'specification'))) {
         return;
       }
 
       const stats = await fs.stat(filePath);
 
       // Recurse if directory, otherwise validate markdown file
-      /* istanbul ignore else */
       if (stats.isDirectory()) {
         await checkMarkdownFiles(filePath, validateFunction, relativeFilePath);
       } else if (path.extname(file) === '.md') {

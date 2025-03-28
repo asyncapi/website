@@ -17,20 +17,30 @@ export async function writeJSON(readPath: string, writePath: string) {
   try {
     readContent = await readFile(readPath, 'utf-8');
   } catch (err) {
-    throw new Error(`Error while reading file\nError: ${err}`);
+    if (err instanceof Error) {
+      throw new Error(`Error while reading file\nError: ${err.message}`);
+    }
+    throw new Error('Error while reading file\nError: Unknown error');
   }
 
   // Attempt to convert content to JSON
   try {
     jsonContent = convertToJson(readContent);
   } catch (err) {
-    throw new Error(`Error while conversion\nError: ${err}`);
+    if (err instanceof Error) {
+      throw new Error(`Error while conversion\nError: ${err.message}`);
+    }
+    throw new Error('Error while conversion\nError: Unknown error');
   }
 
   // Attempt to write the JSON content to file
   try {
     await writeFile(writePath, JSON.stringify(jsonContent));
   } catch (err) {
-    throw new Error(`Error while writing file\nError: ${err}`);
+    if (err instanceof Error) {
+      throw new Error(`Error while writing file\nError: ${err.message}`);
+    }
+
+    throw new Error('Error while writing file\nError: Unknown error');
   }
 }
