@@ -13,6 +13,7 @@ import { useOutsideClick } from '../helpers/use-outside-click';
 import IconLoupe from '../icons/Loupe';
 import LanguageSelect from '../languageSelector/LanguageSelect';
 import AsyncAPILogo from '../logos/AsyncAPILogo';
+import ToggleTheme from '../tools/ToggleTheme';
 import CommunityPanel from './CommunityPanel';
 import LearningPanel from './LearningPanel';
 import MobileNavMenu from './MobileNavMenu';
@@ -163,6 +164,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
           >
             <IconLoupe />
           </SearchButton>
+          <ToggleTheme />
           <button
             onClick={() => setMobileMenuOpen(true)}
             type='button'
@@ -241,6 +243,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               inNav={true}
             />
           </div>
+          <ToggleTheme />
         </nav>
       </div>
 

@@ -20,7 +20,6 @@ export default function HomePage() {
           loaderText='Loading...'
           loaderIcon={<AsyncAPIColorIcon alt='Loading...' />}
           className='my-60'
-          dark={false}
           pulsating
         />
       </div>

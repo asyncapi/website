@@ -15,7 +15,7 @@ class MyDocument extends Document {
     const currentLocale = this.props.__NEXT_DATA__.query.locale || i18nextConfig.i18n.defaultLocale;
 
     return (
-      <Html lang={currentLocale as string}>
+      <Html lang={currentLocale as string} className='dark:bg-darkMode-background'>
         <Head>
           {/* Load Work Sans font */}
           <link rel='preconnect' href='https://fonts.googleapis.com' />

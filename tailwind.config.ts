@@ -15,6 +15,15 @@ const colorPrimary: Record<string, string> = {
   600: '#461E96'
 };
 
+const colorPrimaryDark: Record<string, string> = {
+  100: '#D2B3F7',
+  200: '#9E7BFF',
+  300: '#7A49FF',
+  400: '#5327F2',
+  500: '#3E18D1',
+  600: '#2A0F9D'
+};
+
 const colorSecondary: Record<string, string> = {
   100: '#EDFAFF',
   200: '#CCF0FF',
@@ -22,6 +31,15 @@ const colorSecondary: Record<string, string> = {
   400: '#80D9FF',
   500: '#47BCEE',
   600: '#1AA9C9'
+};
+
+const colorSecondaryDark: Record<string, string> = {
+  100: '#D2F7FF',
+  200: '#A6F0FF',
+  300: '#7DE8FF',
+  400: '#3FD9FF',
+  500: '#00C7FF',
+  600: '#00A3CC'
 };
 
 const colorPink: Record<string, string> = {
@@ -64,6 +82,7 @@ const colorGray: Record<string, string> = {
 };
 
 const config: Config = {
+  darkMode: 'class', // or 'media' based on your preference
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -82,14 +101,14 @@ const config: Config = {
       black: '900'
     },
     backgroundImage: {
-      ambassador: 'url(\'/img/homepage/ambassador.webp\')',
-      eventCover: 'url(\'/img/homepage/event-cover.webp\')',
-      channelCover: 'url(\'/img/homepage/slack-cover.webp\')',
-      usecases: 'url(\'/img/homepage/usecases.webp\')',
-      roadmapCover: 'url(\'/img/homepage/roadmap.webp\')',
-      confBg: 'url(\'/img/homepage/confBlurBg.webp\')',
-      ambassadorCover: 'url(\'/img/homepage/gathering.webp\')',
-      mapCover: 'url(\'/img/homepage/mapbase.webp\')'
+      ambassador: "url('/img/homepage/ambassador.webp')",
+      eventCover: "url('/img/homepage/event-cover.webp')",
+      channelCover: "url('/img/homepage/slack-cover.webp')",
+      usecases: "url('/img/homepage/usecases.webp')",
+      roadmapCover: "url('/img/homepage/roadmap.webp')",
+      confBg: "url('/img/homepage/confBlurBg.webp')",
+      ambassadorCover: "url('/img/homepage/gathering.webp')",
+      mapCover: "url('/img/homepage/mapbase.webp')"
     },
     fontFamily: {
       sans: ['Inter', ...defaultTheme.fontFamily.sans],
@@ -105,8 +124,14 @@ const config: Config = {
     extend: {
       colors: {
         gray: colorGray,
-        primary: colorPrimary,
-        secondary: colorSecondary,
+        primary: {
+          light: colorPrimary,
+          dark: colorPrimaryDark
+        },
+        secondary: {
+          light: colorSecondary,
+          dark: colorSecondaryDark
+        },
         pink: colorPink,
         yellow: colorYellow,
         'code-editor': {

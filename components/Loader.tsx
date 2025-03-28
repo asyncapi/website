@@ -16,8 +16,6 @@ interface LoaderProps {
   className?: string;
 
   /** Whether the loader should be in dark mode. */
-  dark?: boolean;
-
   /** Whether the loader should be pulsating. */
   pulsating?: boolean;
 }
@@ -29,13 +27,12 @@ export default function Loader({
   loaderText = '',
   loaderIcon = <AsyncAPIColorIcon alt='Loading...' />,
   className = '',
-  dark = false,
   pulsating = false
 }: LoaderProps) {
   return (
     <div className={twMerge(`w-fit flex gap-4 m-auto items-center ${pulsating ? 'animate-pulse ' : ''} ${className}`)}>
       {loaderIcon}
-      <div className={`my-2 ${dark ? 'text-white' : 'text-black'}`}>{loaderText}</div>
+      <div className={'my-2 text-black dark:text-white'}>{loaderText}</div>
     </div>
   );
 }
