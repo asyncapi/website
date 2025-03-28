@@ -15,7 +15,10 @@ describe('rssFeed', () => {
     try {
       await fs.promises.mkdir(testOutputDir, { recursive: true });
     } catch (err) {
-      throw new Error(`Error while creating temp dir: ${err.message}`);
+      if (err instanceof Error) {
+        throw new Error(`Error while creating temp dir: ${err.message}`);
+      }
+      throw new Error('Error while creating temp dir: Unknown error');
     }
   });
 
@@ -26,7 +29,10 @@ describe('rssFeed', () => {
       await Promise.all(files.map((file) => fs.promises.unlink(path.join(testOutputDir, file))));
       await fs.promises.rmdir(testOutputDir);
     } catch (err) {
-      throw new Error(`Error while deleting temp dir: ${err.message}`);
+      if (err instanceof Error) {
+        throw new Error(`Error while deleting temp dir: ${err.message}`);
+      }
+      throw new Error('Error while deleting temp dir: Unknown error');
     }
   });
 
@@ -56,7 +62,7 @@ describe('rssFeed', () => {
     const fileContent = fs.readFileSync(filePath, 'utf8');
 
     const parsedContent = parser.parse(fileContent);
-    const itemTitles = parsedContent.rss.channel.item.map((item) => item.title);
+    const itemTitles = parsedContent.rss.channel.item.map((item: { title: any }) => item.title);
 
     expect(itemTitles[0]).toBe('Test Post 1');
     expect(itemTitles[1]).toBe('Another Featured Post');
@@ -76,7 +82,7 @@ describe('rssFeed', () => {
     const fileContent = fs.readFileSync(filePath, 'utf8');
 
     const parsedContent = parser.parse(fileContent);
-    const itemTitles = parsedContent.rss.channel.item.map((item) => item.title);
+    const itemTitles = parsedContent.rss.channel.item.map((item: { title: any }) => item.title);
 
     expect(itemTitles[0]).toBe('Test Post 1');
     expect(itemTitles[1]).toBe('Another Featured Post');
