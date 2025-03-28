@@ -142,7 +142,7 @@
           "repoUrl": "https://github.com/flamewow/nestjs-asyncapi"
         },
         "filters": {
-          "language": "Typescript",
+          "language": "TypeScript",
           "technology": [
             "Node.js",
             "NestJS"
@@ -161,7 +161,7 @@
           "repoUrl": "https://github.com/flamewow/nestjs-asyncapi"
         },
         "filters": {
-          "language": "Typescript",
+          "language": "TypeScript",
           "technology": [
             "Node.js",
             "NestJS"
@@ -273,7 +273,7 @@
           "repoUrl": "https://github.com/lerenn/asyncapi-codegen"
         },
         "filters": {
-          "language": "golang",
+          "language": "Go/Golang",
           "categories": [
             "code-generator"
           ],
@@ -288,7 +288,7 @@
           "repoUrl": "https://github.com/lerenn/asyncapi-codegen"
         },
         "filters": {
-          "language": "golang",
+          "language": "Go/Golang",
           "categories": [
             "code-generator"
           ],
@@ -304,7 +304,7 @@
           "websiteUrl": "https://pypi.org/project/asyncapi-python/"
         },
         "filters": {
-          "language": "python",
+          "language": "Python",
           "technology": [
             "amqp"
           ],
@@ -323,7 +323,7 @@
           "websiteUrl": "https://pypi.org/project/asyncapi-python/"
         },
         "filters": {
-          "language": "python",
+          "language": "Python",
           "technology": [
             "amqp"
           ],
@@ -542,7 +542,7 @@
         "filters": {
           "language": "TypeScript",
           "technology": [
-            "React js",
+            "React JS",
             "WebComponents"
           ],
           "categories": [
@@ -561,7 +561,7 @@
         "filters": {
           "language": "TypeScript",
           "technology": [
-            "React js",
+            "React JS",
             "WebComponents"
           ],
           "categories": [
@@ -842,9 +842,9 @@
           "repoUrl": "https://github.com/znsio/specmatic"
         },
         "filters": {
-          "language": "kotlin",
+          "language": "Kotlin",
           "technology": [
-            "maven"
+            "Maven"
           ],
           "categories": [
             "mocking-and-testing"
@@ -862,9 +862,9 @@
           "repoUrl": "https://github.com/znsio/specmatic"
         },
         "filters": {
-          "language": "kotlin",
+          "language": "Kotlin",
           "technology": [
-            "maven"
+            "Maven"
           ],
           "categories": [
             "mocking-and-testing"
@@ -1396,7 +1396,7 @@
           "repoUrl": "https://github.com/asyncapi/nodejs-template"
         },
         "filters": {
-          "language": "javascript",
+          "language": "JavaScript",
           "technology": [
             "Node.js"
           ],
@@ -1415,7 +1415,7 @@
         },
         "filters": {
           "language": [
-            "javascript"
+            "JavaScript"
           ],
           "technology": [
             "Springboot",
@@ -1436,7 +1436,7 @@
           "repoUrl": "https://github.com/asyncapi/nodejs-template"
         },
         "filters": {
-          "language": "javascript",
+          "language": "JavaScript",
           "technology": [
             "Node.js"
           ],
@@ -1455,7 +1455,7 @@
         },
         "filters": {
           "language": [
-            "javascript"
+            "JavaScript"
           ],
           "technology": [
             "Springboot",
@@ -1476,7 +1476,7 @@
           "repoUrl": "https://github.com/asyncapi/nodejs-ws-template"
         },
         "filters": {
-          "language": "javascript",
+          "language": "JavaScript",
           "technology": [
             "Node.js"
           ],
@@ -1494,7 +1494,7 @@
           "repoUrl": "https://github.com/asyncapi/nodejs-ws-template"
         },
         "filters": {
-          "language": "javascript",
+          "language": "JavaScript",
           "technology": [
             "Node.js"
           ],
@@ -1513,7 +1513,7 @@
         },
         "filters": {
           "language": [
-            "javascript"
+            "JavaScript"
           ],
           "technology": [
             "Spring Cloud Streams",
@@ -1534,7 +1534,7 @@
         },
         "filters": {
           "language": [
-            "javascript"
+            "JavaScript"
           ],
           "technology": [
             "Spring Cloud Streams",
@@ -1555,7 +1555,7 @@
         },
         "filters": {
           "language": [
-            "javascript"
+            "JavaScript"
           ],
           "technology": [
             "Java"
@@ -1575,7 +1575,7 @@
         },
         "filters": {
           "language": [
-            "javascript"
+            "JavaScript"
           ],
           "technology": [
             "Java"
@@ -1594,7 +1594,7 @@
           "repoUrl": "https://github.com/asyncapi/html-template"
         },
         "filters": {
-          "language": "javascript",
+          "language": "JavaScript",
           "technology": [
             "HTML"
           ],
@@ -1612,7 +1612,7 @@
           "repoUrl": "https://github.com/asyncapi/html-template"
         },
         "filters": {
-          "language": "javascript",
+          "language": "JavaScript",
           "technology": [
             "HTML"
           ],
