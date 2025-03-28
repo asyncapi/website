@@ -286,7 +286,7 @@ export default function DemoAnimation({ className = '' }: IDemoAnimationProps) {
       >
         <div className='z-20 mb-2 md:mb-0 md:mr-1 md:flex-1'>
           <MacWindow
-            className='h-full border border-gray-800 bg-code-editor-dark shadow-lg transition-all duration-500 ease-in-out'
+            className='h-full border border-gray-800 bg-code-editor-dark dark:text-white shadow-lg transition-all duration-500 ease-in-out'
             contentClassName='text-left text-white text-sm font-mono font-medium transition-all duration-500 ease-in-out break-words md:min-h-108'
             title='asyncapi.yaml'
           >
@@ -304,7 +304,7 @@ export default function DemoAnimation({ className = '' }: IDemoAnimationProps) {
             <Heading typeStyle={HeadingTypeStyle.md} level={HeadingLevel.h2} className='mb-4'>
               Play with it!
             </Heading>
-            <p className='font-normal tracking mx-auto mb-6 max-w-3xl text-lg text-gray-700'>
+            <p className='font-normal tracking mx-auto mb-6 max-w-3xl text-lg text-gray-700 dark:text-white'>
               Open this example on AsyncAPI Studio to get a better taste of the specification. No signup is required!
             </p>
             <OpenInStudioButton />
@@ -326,14 +326,14 @@ export default function DemoAnimation({ className = '' }: IDemoAnimationProps) {
 
             <div className={transitionClassNames(showUntilMessagePayload)}>
               <div className='mb-2 mt-4 text-gray-400'>Accepts the following message:</div>
-              <div className='rounded bg-gray-200 p-4 text-gray-600'>
+              <div className='rounded bg-gray-200 p-4  text-gray-600'>
                 Payload{' '}
                 <ArrowRight
-                  className={`inline-block size-4 transition-all duration-500 ease-in-out ${showDisplayName ? 'rotate-90' : ''}`}
+                  className={`inline-block size-4  transition-all duration-500 ease-in-out ${showDisplayName ? 'rotate-90' : ''}`}
                 />{' '}
                 <span className='ml-24 font-bold text-green-500'>Object</span>
                 <div>
-                  <div className='mt-2 rounded bg-gray-100 p-4'>
+                  <div className='mt-2 rounded bg-gray-100  p-4'>
                     <div className={`mb-4 grid grid-cols-2 ${transitionClassNames(showDisplayName)}`}>
                       <div>displayName</div>
                       <div>

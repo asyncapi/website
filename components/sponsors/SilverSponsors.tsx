@@ -30,7 +30,7 @@ export default function SilverSponsors({ className = '' }: SilverSponsorsProps):
             <SponsorImage
               src={sponsor.imageSrc}
               alt={sponsor.altText}
-              className={sponsor.imageClass}
+              className={`${sponsor.imageClass} dark:bg-white/90 rounded-lg`}
               data-testid='SilverSponsors-img'
             />
           </a>

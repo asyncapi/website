@@ -78,7 +78,7 @@ export default function Heading({
   }
 
   return (
-    <Tag id={id} className={`${textColor} ${classNames}`}>
+    <Tag id={id} className={`${textColor} ${classNames} dark:text-white`}>
       {children}
     </Tag>
   );

@@ -99,7 +99,8 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
       <div>
         <div className='absolute left-2 top-24 z-10'>
           <Button
-            className='inline-flex h-full justify-center rounded-md border border-gray-300 bg-white py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:border-gray-500 focus:outline-none focus:ring-0 focus:ring-black'
+            className='inline-flex h-full justify-center rounded-md border border-gray-300 bg-white py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:border-gray-500 focus:outline-none focus:ring-0 focus:ring-black dark:bg-black dark:text-white'
+
             text='Menu'
             icon={<IconMenuCenter className='size-6 fill-gray-700' />}
             onClick={() => {
@@ -119,7 +120,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
 
   return (
     <DocsContext.Provider value={{ post, navItems }}>
-      <div className='w-full bg-white px-4 sm:px-6 lg:px-8 xl:mx-auto xl:max-w-7xl'>
+      <div className='w-full bg-white px-4 sm:px-6 lg:px-8 xl:mx-auto xl:max-w-7xl dark:bg-black dark:text-white'>
         {showMenu && <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />}
         <div className='flex flex-row' id='main-content'>
           {/* <!-- Static sidebar for desktop --> */}
@@ -145,14 +146,14 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                 <TOC
                   toc={post.toc}
                   depth={3}
-                  className='sticky top-20 mt-4 max-h-screen overflow-y-auto bg-blue-100 p-4 xl:mt-0 xl:w-72 xl:bg-transparent xl:pb-8'
+                  className='sticky top-20 mt-4 max-h-screen overflow-y-auto bg-blue-100 p-4 xl:mt-0 xl:w-72 xl:bg-transparent xl:pb-8 '
                 />
                 <div className='px-4 sm:px-6 xl:max-w-184 xl:flex-1 xl:px-8'>
                   <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg}>
                     {post.title}
                   </Heading>
                   <div>
-                    <p className='font-normal font-sans text-sm text-gray-600 antialiased'>
+                    <p className='font-normal font-sans text-sm text-gray-600 antialiased dark:text-white'>
                       Found an error? Have a suggestion?
                       {generateEditLink(post)}
                     </p>

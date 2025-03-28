@@ -18,7 +18,7 @@ const ToolsData = ToolsDataList as ToolsListData;
 export default function CategoryDropdown({ setopenCategory }: CategoryDropdownProps) {
   return (
     <div
-      className='absolute z-10 h-60 w-52 origin-top-right overflow-y-auto rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none lg:w-56'
+      className='absolute z-10 h-60 w-52 origin-top-right overflow-y-auto rounded-md bg-white dark:bg-black dark:text-white shadow-lg ring-1 ring-black/5 focus:outline-none lg:w-56'
       role='menu'
       aria-orientation='vertical'
       aria-labelledby='menu-button'
@@ -33,7 +33,7 @@ export default function CategoryDropdown({ setopenCategory }: CategoryDropdownPr
                 <a
                   href={`#${categoryName}`}
                   key={index}
-                  className='block px-4 py-2 hover:bg-gray-100'
+                  className='block px-4 py-2 hover:bg-gray-100 dark:hover:bg-white/20'
                   data-testid='CategoryDropdown-link'
                 >
                   {categoryName}

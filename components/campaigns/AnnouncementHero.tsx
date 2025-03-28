@@ -100,7 +100,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
         {numberOfVisibleBanners > 1 && (
           <div
             className={`absolute right-0 top-1/2 z-10 mb-2 size-8 -translate-y-1/2 cursor-pointer
-                      rounded-full bg-primary-500 opacity-50 hover:bg-primary-600 md:opacity-100`}
+                      rounded-full bg-primary-500 opacity-50  hover:bg-primary-600 md:opacity-100`}
             onClick={goToNext}
           >
             <ArrowRight className='text-white' />
