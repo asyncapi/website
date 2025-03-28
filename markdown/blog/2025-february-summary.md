@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: Community Builder and Open Source Fanatic!
 excerpt: 'AsyncAPI community status and project updates for February 2025'
-featured: true
 ---
 
 It's been a busy few weeks in the community, and we are establishing an organizational structure as we continue to grow. 

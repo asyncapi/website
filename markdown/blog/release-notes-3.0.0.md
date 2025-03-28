@@ -11,7 +11,6 @@ authors:
     photo: /img/avatars/jonaslagoni.webp
     link: https://github.com/jonaslagoni
 excerpt: 'The release of AsyncAPI v3 is packed with changes such as request/reply, reusable channels, and more!'
-featured: true
 ---
 
 The new version of the AsyncAPI specification - 3.0.0 - is now available and is packed with goodies! Some clear up confusion, some add features, and others improve maintainability.
