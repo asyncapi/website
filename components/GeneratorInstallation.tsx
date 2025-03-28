@@ -22,9 +22,11 @@ interface GeneratorFlags {
  */
 export default function GeneratorInstallation() {
   const [template, setTemplate] = useState<string>('@asyncapi/html-template@3.0.0');
-  // By default we will have output folder flag so its set here.
+  // By default, we will have output folder flag set here.
   const [params, setParams] = useState<string>('-o example --use-new-generator');
-  const [specPath, setSpecPath] = useState<string>('https://bit.ly/asyncapi');
+  const [specPath, setSpecPath] = useState<string>(
+    'https://raw.githubusercontent.com/asyncapi/spec/refs/heads/master/examples/streetlights-kafka-asyncapi.yml'
+  );
 
   const generatorflags = generatorflagList as GeneratorFlags;
 
@@ -37,9 +39,9 @@ export default function GeneratorInstallation() {
     if (templateName && generatorflags[templateName]) {
       const templateBasedJSON = generatorflags[templateName];
 
-      // options are generated from generator-templates.json
+      // Options are generated from generator-templates.json
       // and flags are fetched from generator-flags.json,
-      // so it is mandatory to have check in case if any misses the option in future
+      // so it is mandatory to check in case any misses the option in the future.
 
       if (templateBasedJSON) {
         setParams(templateBasedJSON.flag);
