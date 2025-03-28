@@ -2,7 +2,8 @@ import moment from 'moment';
 import ErrorPage from 'next/error';
 import HtmlHead from 'next/head';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Share2 } from 'lucide-react';
 
 import type { IPosts } from '@/types/post';
 
@@ -19,18 +20,25 @@ interface IBlogLayoutProps {
   navItems?: IPosts['blog'];
 }
 
-/**
- * @description The blog layout with the post and its content
- * @param {IPosts['blog'][number]} props.post - The post
- * @param {React.ReactNode} props.children - The children
- */
 export default function BlogLayout({
   post,
   children,
-  // eslint-disable-next-line unused-imports/no-unused-vars, no-unused-vars
   navItems
 }: IBlogLayoutProps) {
   const router = useRouter();
+  const [showShareOptions, setShowShareOptions] = useState(false);
+  const shareRef = useRef<HTMLDivElement>(null);
+
+  // Close share options on click outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (shareRef.current && !shareRef.current.contains(event.target as Node)) {
+        setShowShareOptions(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   if (!post) return <ErrorPage statusCode={404} />;
   if (post.title === undefined) throw new Error('Post title is required');
@@ -83,6 +91,59 @@ export default function BlogLayout({
               </div>
             </div>
           </header>
+          {/* Share Button and Options */}
+          <div ref={shareRef} className='relative mt-4 '>
+                  <button
+                    onClick={() => setShowShareOptions(!showShareOptions)}
+                    className='flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 '
+                  >
+                  <Share2 size={18} /> Share
+                  </button>
+                  {showShareOptions && (
+                    <div className='absolute mt-2 w-48 bg-white border border-gray-300 rounded shadow p-2 z-10'>
+                      <button
+                        onClick={() => {
+                        navigator.clipboard.writeText(window.location.href);
+                        alert('Link copied to clipboard!');
+                        setShowShareOptions(false);
+                        }}
+                        className='w-full text-left px-3 py-2 hover:bg-gray-100 rounded'
+                      >
+                    Copy Link
+                  </button>
+                  <a
+                    href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
+                      post.title
+                    )} - ${encodeURIComponent(window.location.href)}`}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='block px-3 py-2 hover:bg-gray-100 rounded'
+                  >
+                    Share on WhatsApp
+                  </a>
+                  <a
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+                      window.location.href
+                    )}`}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='block px-3 py-2 hover:bg-gray-100 rounded'
+                  >
+                    Share on LinkedIn
+                  </a>
+                  <a
+                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
+                      window.location.href
+                    )}&text=${encodeURIComponent(post.title)}`}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='block px-3 py-2 hover:bg-gray-100 rounded'
+                  >
+                    Share on Twitter
+                  </a>
+                </div>
+              )}
+            </div>
           <article className='mb-32'>
             <Head title={post.title} description={post.excerpt} image={post.cover} />
             <HtmlHead>
@@ -92,18 +153,11 @@ export default function BlogLayout({
                 async
               />
               <style>{`
-                /* AddThis hack */
-
                 #at4-share {
                     left: 50%;
                     margin-left: -500px !important;
                     position: absolute;
-
-                    &amp;.addthis-animated {
-                      animation-duration: 0s !important;
-                    }
                 }
-
                 #at4-scc {
                     display: none !important;
                 }

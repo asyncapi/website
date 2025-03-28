@@ -14,6 +14,9 @@ import type { IBlogPost } from '@/types/post';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
+
+
+
 /**
  * @description The BlogIndexPage is the blog index page of the website.
  */
@@ -132,6 +135,8 @@ export default function BlogIndexPage() {
                 <Loader loaderText='Loading Blogs' className='mx-auto my-60' pulsating />
               </div>
             )}
+           
+            
           </div>
         </div>
       </div>
