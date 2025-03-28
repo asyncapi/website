@@ -15,7 +15,7 @@ import Heading from '../../../components/typography/Heading';
 import Paragraph from '../../../components/typography/Paragraph';
 import TextLink from '../../../components/typography/TextLink';
 
-const getStaticProps = makeStaticProps(['landing-page', 'footer', 'common']);
+const getStaticProps = makeStaticProps(['landing-page', 'footer', 'common', 'component']);
 
 export { getStaticProps };
 

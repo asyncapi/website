@@ -3,6 +3,7 @@ import React from 'react';
 import type { ICaseStudies } from '@/types/post';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
+import { makeStaticProps } from '@/utils/getStatic';
 
 import CaseStudyCard from '../../components/CaseStudyCard';
 import GenericLayout from '../../components/layout/GenericLayout';
@@ -22,6 +23,10 @@ interface Adopter {
   useCase: string;
   resources: Resource[];
 }
+
+const getStaticProps = makeStaticProps(['landing-page', 'footer', 'common', 'component']);
+
+export { getStaticProps };
 
 /**
  * @description Renders the Case Studies page.
