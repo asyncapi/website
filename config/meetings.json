@@ -1,13 +1,6 @@
 [
   {
     "title": "Marketing WG Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=a3FvM3ZyOTUwcjJpZm5wOWxzZWcwZ3Bja2sgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1616",
-    "banner": "",
-    "date": "2024-12-17T14:00:00.000Z"
-  },
-  {
-    "title": "Marketing WG Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=Z2xxNjVrcWNvNjJvanQ4dHE3NW5zcmVoZm8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1657",
     "banner": "",
@@ -89,5 +82,12 @@
     "url": "https://github.com/asyncapi/community/issues/1824",
     "banner": "https://github.com/user-attachments/assets/e0c22c5a-94a8-488c-970c-14aa1697283c",
     "date": "2025-04-08T15:00:00.000Z"
+  },
+  {
+    "title": "Marketing WG Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=MnRwMTZpMXZiMWUzdGo1c2Jhc284bGpxY2MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1829",
+    "banner": "",
+    "date": "2025-04-01T14:00:00.000Z"
   }
 ]
