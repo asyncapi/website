@@ -31,6 +31,7 @@ export interface Filter {
 }
 
 export interface ToolData {
+  id: number;
   title: string;
   description?: string;
   links?: Link;
