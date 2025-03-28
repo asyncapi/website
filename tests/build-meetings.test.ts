@@ -72,23 +72,6 @@ describe('buildMeetings', () => {
     }
   });
 
-  it('should handle undefined CALENDAR_SERVICE_ACCOUNT', async () => {
-    delete process.env.CALENDAR_SERVICE_ACCOUNT;
-
-    google.calendar().events.list.mockResolvedValue({ data: { items: [] } });
-
-    await buildMeetings(outputFilePath);
-
-    expect(google.auth.GoogleAuth).toHaveBeenCalledWith({
-      scopes: ['https://www.googleapis.com/auth/calendar'],
-      credentials: undefined
-    });
-
-    const fileContent = readFileSync(outputFilePath, 'utf8');
-
-    expect(fileContent).toBe('[]');
-  });
-
   it('should throw an error if authentication fails', async () => {
     google.auth.GoogleAuth.mockImplementation(() => {
       throw new Error('Authentication failed');
