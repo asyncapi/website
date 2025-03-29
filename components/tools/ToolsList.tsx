@@ -13,7 +13,7 @@ interface ToolsListProp {
 }
 
 /**
- * @description This component displays list of tools.
+ * @description This component displays a list of tools.
  *
  * @param {ToolsListProp} props - Props for the ToolsList component.
  * @param {ToolsListData} props.toolsListData - List of Tools.
@@ -22,18 +22,29 @@ export default function ToolsList({ toolsListData }: ToolsListProp) {
   return (
     <div className='' data-testid='ToolsList-main'>
       {Object.keys(toolsListData).map((categoryName, index) => {
-        if (toolsListData[categoryName].toolsList.length > 0) {
+        const { toolsList, description, elementRef } = toolsListData[categoryName];
+
+        // Use a Set to track unique tool titles and avoid duplicates
+        const uniqueTools = new Set();
+
+        if (toolsList.length > 0) {
           return (
-            <div className='my-8' key={index} id={categoryName} ref={toolsListData[categoryName].elementRef}>
+            <div className='my-8' key={index} id={categoryName} ref={elementRef}>
               <Heading typeStyle={HeadingTypeStyle.mdSemibold} className='my-2'>
                 {categoryName}
               </Heading>
-              <Paragraph typeStyle={ParagraphTypeStyle.md}>{toolsListData[categoryName].description}</Paragraph>
+              <Paragraph typeStyle={ParagraphTypeStyle.md}>{description}</Paragraph>
               <hr className='my-8' />
               <div className='flex grid-cols-3 flex-col gap-8 lg:grid'>
-                {toolsListData[categoryName].toolsList.map((tool, toolIndex) => (
-                  <ToolsCard key={toolIndex} toolData={tool} />
-                ))}
+                {toolsList.map((tool, toolIndex) => {
+                  if (!uniqueTools.has(tool.title)) {
+                    uniqueTools.add(tool.title);
+
+                    return <ToolsCard key={tool.id || toolIndex} toolData={tool} />;
+                  }
+
+                  return null;
+                })}
               </div>
             </div>
           );
