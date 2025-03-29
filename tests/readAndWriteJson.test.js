@@ -1,6 +1,6 @@
 const fs = require('fs/promises');
-const { convertToJson } = require('../scripts/utils.ts');
-const { writeJSON } = require('../scripts/utils/readAndWriteJson.ts');
+import { convertToJson } from '../scripts/utils.ts';
+import { writeJSON } from '../scripts/utils.ts';
 const { yamlString, jsonObject } = require('./fixtures/utilsData');
 
 jest.mock('fs/promises', () => ({

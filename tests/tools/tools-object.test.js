@@ -7,7 +7,7 @@ const {
   createMalformedYAML
 } = require('../helper/toolsObjectData');
 
-const { logger } = require('../../scripts/utils/logger.ts');
+import { logger } from '../../scripts/utils.ts';
 
 jest.mock('../../scripts/utils/logger', () => ({
   logger: { warn: jest.fn(), error: jest.fn() }

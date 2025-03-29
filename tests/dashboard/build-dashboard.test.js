@@ -19,7 +19,7 @@ const {
   fullDiscussionDetails,
   mockRateLimitResponse
 } = require('../fixtures/dashboardData');
-const { logger } = require('../../scripts/utils/logger.ts');
+import { logger } from '../../scripts/utils.ts';
 
 jest.mock('../../scripts/utils/logger', () => ({
   logger: { error: jest.fn(), warn: jest.fn() }

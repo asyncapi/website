@@ -1,4 +1,4 @@
-const { convertToJson } = require('../scripts/utils.ts');
+import { convertToJson } from '../scripts/utils';
 const { jsonString, yamlString, jsonObject, invalidString } = require('./fixtures/utilsData');
 
 describe('convertToJson', () => {

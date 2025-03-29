@@ -9,7 +9,7 @@ const {
   main
 } = require('../../scripts/markdown/check-edit-links.ts');
 const { determineEditLinkData, processBatchData, testPaths } = require('../fixtures/markdown/check-edit-links-data');
-const { logger } = require('../../scripts/utils/logger.ts');
+import { logger } from '../../scripts/utils.ts';
 
 jest.mock('../../scripts/utils/logger', () => ({
   logger: { info: jest.fn() }
