@@ -36,7 +36,7 @@ export async function getData(): Promise<ToolsData> {
       headers
     });
 
-    incompleteResult = result.data.incomplete_results;
+    incompleteResult = result.data.incomplete_results || false;
 
     result.data.items.forEach((item: any) => {
       allItems.add(item);
@@ -58,7 +58,7 @@ export async function getData(): Promise<ToolsData> {
         allItems.add(item);
       });
 
-      incompleteResult = data.incomplete_results;
+      incompleteResult = data.incomplete_results || false;
     }
 
     result.data.items = [...allItems];
