@@ -23,27 +23,23 @@ describe('Utils Tests', () => {
   });
 
   describe('convertToJson', () => {
-    it('should return object directly if input is not a string', () => {
-      const input = { key: 'value' };
-      const result = convertToJson(input);
-      expect(result).toBe(input);
-    });
-
     it('should parse JSON string correctly', () => {
-      const input = '{"key": "value"}';
-      const result = convertToJson(input);
-      expect(result).toEqual({ key: 'value' });
+      const result = convertToJson(jsonString);
+      expect(result).toEqual(jsonObject);
     });
 
     it('should parse YAML string correctly', () => {
-      const input = 'key: value';
-      const result = convertToJson(input);
-      expect(result).toEqual({ key: 'value' });
+      const result = convertToJson(yamlString);
+      expect(result).toEqual(jsonObject);
+    });
+
+    it('should return object directly if input is not a string', () => {
+      const result = convertToJson(jsonObject);
+      expect(result).toBe(jsonObject);
     });
 
     it('should throw error for invalid input', () => {
-      const input = 'invalid: : json : yaml';
-      expect(() => convertToJson(input)).toThrow('Invalid content format');
+      expect(() => convertToJson(invalidString)).toThrow('Invalid content format');
     });
   });
 
