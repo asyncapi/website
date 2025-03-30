@@ -22,7 +22,7 @@ const {
 } = require('../fixtures/combineToolsData');
 import { logger } from '../../scripts/utils.ts';
 
-jest.mock('../../scripts/utils/logger', () => ({
+jest.mock('../../scripts/utils', () => ({
   logger: { error: jest.fn() }
 }));
 

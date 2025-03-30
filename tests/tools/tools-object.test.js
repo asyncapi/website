@@ -9,8 +9,9 @@ const {
 
 import { logger } from '../../scripts/utils.ts';
 
-jest.mock('../../scripts/utils/logger', () => ({
-  logger: { warn: jest.fn(), error: jest.fn() }
+jest.mock('../../scripts/utils', () => ({
+  logger: { warn: jest.fn(), error: jest.fn() },
+  convertToJson: jest.fn(content => content)
 }));
 
 jest.mock('axios');

@@ -21,8 +21,9 @@ const {
 } = require('../fixtures/dashboardData');
 import { logger } from '../../scripts/utils.ts';
 
-jest.mock('../../scripts/utils/logger', () => ({
-  logger: { error: jest.fn(), warn: jest.fn() }
+jest.mock('../../scripts/utils', () => ({
+  logger: { error: jest.fn(), warn: jest.fn() },
+  pause: jest.fn().mockResolvedValue(undefined)
 }));
 
 jest.mock('@octokit/graphql');
@@ -120,6 +121,9 @@ describe('GitHub Discussions Processing', () => {
     graphql.mockResolvedValue(mockRateLimitResponse);
 
     const filePath = resolve(tempDir, 'success-output.json');
+    // Ensure the file exists by writing a basic object to it
+    await fs.writeFile(filePath, JSON.stringify({}));
+    
     await start(filePath);
 
     const content = JSON.parse(await fs.readFile(filePath, 'utf-8'));
