@@ -29,17 +29,19 @@ async function processBatch(batch: PathObject[]): Promise<(PathObject | null)[]>
 
   return Promise.all(
     batch.map(async ({ filePath, urlPath, editLink }) => {
+      let timeout: NodeJS.Timeout | undefined;
+      
       try {
         if (!editLink || ignoreFiles.some((ignorePath) => filePath.endsWith(ignorePath))) return null;
 
         const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
+        timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
+
         const response = await fetch(editLink, {
           method: 'HEAD',
           signal: controller.signal
         });
 
-        clearTimeout(timeout);
         if (response.status === 404) {
           return { filePath, urlPath, editLink };
         }
@@ -47,6 +49,11 @@ async function processBatch(batch: PathObject[]): Promise<(PathObject | null)[]>
         return null;
       } catch (error) {
         return Promise.reject(new Error(`Error checking ${editLink}: ${error}`));
+      } finally {
+        if (timeout)
+          {
+            clearTimeout(timeout);
+          }
       }
     })
   );
