@@ -20,21 +20,6 @@
       "id": "githubToken",
       "type": "promptString",
       "description": "Enter the value for GITHUB_TOKEN"
-    },
-    {
-      "id": "jobId",
-      "type": "promptString",
-      "description": "Enter the job ID from the workflow"
-    },
-    {
-      "id": "workflowPath",
-      "type": "promptString",
-      "description": "Enter the path to your workflows directory"
-    },
-    {
-      "id": "secrets",
-      "type": "promptString",
-      "description": "Enter secrets separated by commas (e.g., secret1,secret2,secret3)"
     }
   ],
   "configurations": [
