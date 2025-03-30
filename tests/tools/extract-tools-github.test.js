@@ -39,7 +39,7 @@ describe('getData', () => {
     expect(axios.get).toHaveBeenCalledWith(apiBaseUrl, { headers });
   });
 
-  it.only('should return data when API call is successful, when items are more then one page', async () => {
+  it('should return data when API call is successful, when items are more then one page', async () => {
     const mockInitialResponse = {
       data: {
         total_count: 100,
