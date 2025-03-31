@@ -65,7 +65,7 @@ We are thrilled to welcome three new [Technical Steering Committee](https://www.
 
 <Profiles profiles={[
 {
-    name: 'Charles d'Avernas',
+    name: "Charles d'Avernas",
     avatar: 'https://avatars.githubusercontent.com/u/16137162?v=4',
     link: 'https://github.com/cdavernas'
   }, 
