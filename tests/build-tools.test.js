@@ -35,11 +35,25 @@ describe('buildTools', () => {
 
   beforeAll(() => {
     consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});
-    fs.ensureDirSync(testDir);
-    fs.outputFileSync(manualToolsPath, JSON.stringify(manualTools));
-    fs.outputFileSync(automatedToolsPath, JSON.stringify({}));
-    fs.outputFileSync(toolsPath, JSON.stringify({}));
-    fs.outputFileSync(tagsPath, JSON.stringify({}));
+    
+    // Create the test directory if it doesn't exist
+    if (!fs.existsSync(testDir)) {
+      fs.mkdirSync(testDir, { recursive: true });
+    }
+    
+    // Create the required files if they don't exist
+    if (!fs.existsSync(manualToolsPath)) {
+      fs.writeFileSync(manualToolsPath, JSON.stringify(manualTools));
+    }
+    if (!fs.existsSync(automatedToolsPath)) {
+      fs.writeFileSync(automatedToolsPath, JSON.stringify({}));
+    }
+    if (!fs.existsSync(toolsPath)) {
+      fs.writeFileSync(toolsPath, JSON.stringify({}));
+    }
+    if (!fs.existsSync(tagsPath)) {
+      fs.writeFileSync(tagsPath, JSON.stringify({}));
+    }
 
     process.env.GITHUB_TOKEN = 'mockToken';
   });
