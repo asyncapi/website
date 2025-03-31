@@ -18,7 +18,7 @@ However, this excitement brought some challenges as well. Slack and GitHub becam
 
 We are committed to maintaining a welcoming environment for everyone, which is why we have a Code of Conduct and a committee in place to enforce it. But sometimes, too much enthusiasm can become overbearing, resulting in a few members needing to be temporarily banned to ensure a safe space.
 
-That said, we view this as a valuable lesson, and a big thank you goes out to our Code of Conduct Committee for stepping up and upholding the rules.
+With that being said, we view this as a valuable lesson. A big thank you to our Code of Conduct Committee for stepping up and upholding the rules.
 
 [The application phase is officially open](https://summerofcode.withgoogle.com/), and we look forward to welcoming new contributors to the community and potential new triages and maintainers!
 
@@ -81,7 +81,7 @@ We are thrilled to welcome three new [Technical Steering Committee](https://www.
   }
 ]} />
 
-And finally, one of our long-time community member.
+And finally, one of our long-time community member:
 
 
 <Profiles profiles={[
