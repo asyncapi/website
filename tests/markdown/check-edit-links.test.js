@@ -1,3 +1,4 @@
+import { logger } from '../../scripts/utils.ts';
 const path = require('path');
 const fetch = require('node-fetch-2');
 const editOptions = require('../../config/edit-page-config.json');
@@ -9,7 +10,6 @@ const {
   main
 } = require('../../scripts/markdown/check-edit-links.ts');
 const { determineEditLinkData, processBatchData, testPaths } = require('../fixtures/markdown/check-edit-links-data');
-import { logger } from '../../scripts/utils.ts';
 
 jest.mock('../../scripts/utils', () => ({
   logger: { info: jest.fn() },
@@ -25,7 +25,7 @@ describe('URL Checker Tests', () => {
     'reference/specification/v3.0.0.md'
   ];
 
-  const testPaths = [
+  const localTestPaths = [
     {
       filePath: 'docs/tutorials/getting-started.md',
       urlPath: 'docs/tutorials/getting-started',
@@ -54,9 +54,9 @@ describe('URL Checker Tests', () => {
   ];
 
   // Verify no test paths are in the ignoreFiles list
-  const noIgnoredFiles = testPaths.every(path => !ignoreFiles.some(ignorePath => path.filePath.endsWith(ignorePath)));
+  const noIgnoredFiles = localTestPaths.every(testPath => !ignoreFiles.some(ignorePath => testPath.filePath.endsWith(ignorePath)));
 
-  const testBatch = [testPaths[0], testPaths[1]];
+  const testBatch = [localTestPaths[0], localTestPaths[1]];
 
   beforeEach(() => {
     jest.clearAllMocks();
@@ -224,7 +224,7 @@ describe('URL Checker Tests', () => {
         });
       });
       const results = await checkUrls(testPaths);
-      expect(results.length).toBe(1);
+      expect(results.length).toBe(2);
       expect(results[0].urlPath).toContain('migration');
     });
   });

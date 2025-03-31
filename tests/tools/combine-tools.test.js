@@ -1,3 +1,4 @@
+import { logger } from '../../scripts/utils.ts';
 const fs = require('fs');
 const path = require('path');
 const { combineTools, getFinalTool } = require('../../scripts/tools/combine-tools.ts');
@@ -20,7 +21,6 @@ const {
   circularTool,
   finalToolWithMissingData
 } = require('../fixtures/combineToolsData');
-import { logger } from '../../scripts/utils.ts';
 
 jest.mock('../../scripts/utils', () => ({
   logger: { error: jest.fn() }
