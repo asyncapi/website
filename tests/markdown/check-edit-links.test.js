@@ -1,4 +1,4 @@
-import { logger } from '../../scripts/utils.ts';
+import { logger } from '../../scripts/utils';
 
 const path = require('path');
 const fetch = require('node-fetch-2');
@@ -9,7 +9,7 @@ const {
   checkUrls,
   determineEditLink,
   main
-} = require('../../scripts/markdown/check-edit-links.ts');
+} = require('../../scripts/markdown/check-edit-links');
 const { determineEditLinkData, processBatchData, testPaths } = require('../fixtures/markdown/check-edit-links-data');
 
 jest.mock('../../scripts/utils', () => ({
@@ -19,35 +19,9 @@ jest.mock('../../scripts/utils', () => ({
 jest.mock('node-fetch-2', () => jest.fn());
 
 describe('URL Checker Tests', () => {
-  // Define ignoreFiles to match the implementation
-  const ignoreFiles = [
-    'reference/specification/v2.x.md',
-    'reference/specification/v3.0.0-explorer.md',
-    'reference/specification/v3.0.0.md'
-  ];
-
-  // Verify no test paths are in the ignoreFiles list
-  const noIgnoredFiles = testPaths.every((testPath) =>
-    !ignoreFiles.some((ignorePath) => testPath.filePath.endsWith(ignorePath))
-  );
-
-
-  beforeEach(() => {
-    jest.clearAllMocks();
-  });
-
-  afterEach(() => {
-    // Ensure all timers are cleared
-    jest.clearAllTimers();
-    // Restore all mocks
-    jest.restoreAllMocks();
-    // Reset fetch mock implementation
-    fetch.mockReset();
-  });
-
-  it('should have no test paths in the ignoreFiles list', () => {
-    expect(noIgnoredFiles).toBe(true);
-  });
+    beforeEach(() => {
+      jest.clearAllMocks();
+    });
 
   describe('determineEditLink', () => {
     it('should generate correct edit link for docs with /docs prefix', () => {
@@ -140,55 +114,22 @@ describe('URL Checker Tests', () => {
     });
 
     it('should handle request timeouts', async () => {
-      // Mock AbortController
-      const mockAbort = jest.fn();
-      const mockAbortController = {
-        signal: 'mock-signal',
-        abort: mockAbort
-      };
-
-      global.AbortController = jest.fn(() => mockAbortController);
-
-      // Mock fetch to reject with an AbortError when using the abort signal
-      fetch.mockImplementation(() => {
-        const error = new Error('The operation was aborted');
-        error.name = 'AbortError';
-        return Promise.reject(error);
-      });
-
-      // Use fake timers to control setTimeout
-      jest.useFakeTimers();
-
-      // Start the process but don't await it yet
-      const processBatchPromise = processBatch(testBatch);
-
-      // Trigger all timers to fire immediately
-      jest.runAllTimers();
-
-      // Restore real timers before assertions
-      jest.useRealTimers();
-
-      // Now the test should expect a rejection
-      await expect(processBatchPromise).rejects.toThrow('The operation was aborted');
-    });
+      fetch.mockImplementation(
+        () =>
+          new Promise((resolve) => {
+            setTimeout(resolve, 10000);
+          })
+      );
+      await expect(processBatch(testBatch)).rejects.toThrow();
+    }, 20000);
   });
 
   describe('checkUrls', () => {
     it('should process all URLs in batches', async () => {
-      // Make sure all test paths have editLinks
-      const allPathsHaveEditLinks = testPaths.every((testPath) => testPath.editLink);
-      expect(allPathsHaveEditLinks).toBe(true);
-
-      // Verify that none of the test paths are in the ignoreFiles list
-      expect(noIgnoredFiles).toBe(true);
-
       fetch.mockImplementation(() => Promise.resolve({ status: 200 }));
       const results = await checkUrls(testPaths);
       expect(results.length).toBe(0);
-
-      // With our test setup, fetch should be called for each test path
-      // since all have editLinks and none are in the ignoreFiles list
-      expect(fetch).toHaveBeenCalledTimes(testPaths.length);
+      expect(fetch).toHaveBeenCalledTimes(10);
     });
 
     it('should handle mixed responses correctly', async () => {

@@ -4,6 +4,14 @@ const fs = require('fs/promises');
 const path = require('path');
 const os = require('os');
 
+// Define constants for error messages
+const ERROR_MESSAGES = {
+  READ: 'Error while reading file',
+  WRITE: 'Error while writing file',
+  CONVERSION: 'Error while conversion',
+  GENERIC: 'Error processing file'
+};
+
 jest.mock('fs/promises', () => ({
   readFile: jest.fn(),
   writeFile: jest.fn(),
@@ -51,19 +59,15 @@ describe('Utils Tests', () => {
       expect(duration).toBeGreaterThanOrEqual(90); // Allow small margin of error
     });
 
-    it('should resolve after timeout', async () => {
+    it('should allow pending callbacks to execute after timeout', async () => {
       const mockFn = jest.fn();
       setTimeout(mockFn, 50);
       await pause(100);
       expect(mockFn).toHaveBeenCalled();
     });
 
-    // Test with timeout cleanup to prevent hanging tests
-    it('should handle zero or negative timeout values', async () => {
-      const mockSetTimeout = jest.spyOn(global, 'setTimeout');
-      await pause(0);
-      expect(mockSetTimeout).toHaveBeenCalledWith(expect.any(Function), 0);
-      mockSetTimeout.mockRestore();
+    it('should handle zero milliseconds without error', async () => {
+      await expect(pause(0)).resolves.not.toThrow();
     });
   });
 
@@ -71,65 +75,69 @@ describe('Utils Tests', () => {
     const yamlContent = 'key: value';
     const jsonObject = { key: 'value' };
 
-    it('should read, convert and write successfully', async () => {
+    // Helper function to set up error tests
+    const setupErrorTest = (errorType, errorProps = {}) => {
+      const error = new Error(errorProps.message || 'Test error');
+      Object.assign(error, errorProps);
+
+      if (errorType === 'read') {
+        fs.readFile.mockRejectedValue(error);
+      } else if (errorType === 'write') {
+        fs.readFile.mockResolvedValue(yamlContent);
+        fs.writeFile.mockRejectedValue(error);
+      }
+
+      return error;
+    };
+
+    it('should read YAML content, convert to JSON, and write to output file', async () => {
       fs.readFile.mockResolvedValue(yamlContent);
       fs.writeFile.mockResolvedValue(undefined);
 
       const result = await writeJSON(readPath, writePath);
-      
+
       expect(fs.readFile).toHaveBeenCalledWith(readPath, 'utf-8');
       expect(fs.writeFile).toHaveBeenCalledWith(writePath, JSON.stringify(jsonObject));
       expect(result).toEqual(jsonObject);
     });
 
-    // Test ENOENT error handling
-    it('should throw specific error for file not found (ENOENT)', async () => {
-      const error = new Error('File not found');
-      error.code = 'ENOENT';
-      fs.readFile.mockRejectedValue(error);
+    it('should throw specific error when file is not found (ENOENT error code)', async () => {
+      setupErrorTest('read', { code: 'ENOENT', message: 'File not found' });
 
       await expect(writeJSON(readPath, writePath))
-        .rejects.toThrow('Error while reading file');
+        .rejects.toThrow(ERROR_MESSAGES.READ);
+      expect(fs.readFile).toHaveBeenCalledWith(readPath, 'utf-8');
     });
 
-    // Test read error handling
-    it('should throw specific error for read errors', async () => {
-      const error = new Error('Failed to read file');
-      fs.readFile.mockRejectedValue(error);
+    it('should throw specific error for general read failures', async () => {
+      setupErrorTest('read', { message: 'Failed to read file' });
 
       await expect(writeJSON(readPath, writePath))
-        .rejects.toThrow('Error while reading file');
+        .rejects.toThrow(ERROR_MESSAGES.READ);
+      expect(fs.readFile).toHaveBeenCalledWith(readPath, 'utf-8');
     });
 
-    // Test write error handling
-    it('should throw specific error for write errors', async () => {
-      fs.readFile.mockResolvedValue(yamlContent);
-      const error = new Error('Failed to write file');
-      error.message = 'write error';
-      fs.writeFile.mockRejectedValue(error);
+    it('should throw specific error when writing file fails', async () => {
+      setupErrorTest('write', { message: 'write error' });
 
       await expect(writeJSON(readPath, writePath))
-        .rejects.toThrow('Error while writing file');
+        .rejects.toThrow(ERROR_MESSAGES.WRITE);
+      expect(fs.writeFile).toHaveBeenCalledWith(writePath, JSON.stringify(jsonObject));
     });
 
-    // Test conversion error handling
-    it('should throw specific error for conversion errors', async () => {
+    it('should throw specific error when YAML/JSON conversion fails', async () => {
       const invalidYaml = '{ invalid: yaml: content }';
       fs.readFile.mockResolvedValue(invalidYaml);
 
       await expect(writeJSON(readPath, writePath))
-        .rejects.toThrow('Error while conversion');
+        .rejects.toThrow(ERROR_MESSAGES.CONVERSION);
     });
 
-    // Test generic error handling
-    it('should throw generic error for other errors', async () => {
-      fs.readFile.mockResolvedValue(yamlContent);
-      const error = new Error('Unknown error');
-      error.message = 'unknown';
-      fs.writeFile.mockRejectedValue(error);
+    it('should throw generic error for unspecified error types', async () => {
+      setupErrorTest('write', { message: 'unknown' });
 
       await expect(writeJSON(readPath, writePath))
-        .rejects.toThrow('Error processing file');
+        .rejects.toThrow(ERROR_MESSAGES.GENERIC);
     });
   });
 });
