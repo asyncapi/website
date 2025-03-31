@@ -1,4 +1,5 @@
 import { logger } from '../../scripts/utils.ts';
+
 const path = require('path');
 const fetch = require('node-fetch-2');
 const editOptions = require('../../config/edit-page-config.json');
@@ -54,9 +55,10 @@ describe('URL Checker Tests', () => {
   ];
 
   // Verify no test paths are in the ignoreFiles list
-  const noIgnoredFiles = localTestPaths.every(testPath => !ignoreFiles.some(ignorePath => testPath.filePath.endsWith(ignorePath)));
+  const noIgnoredFiles = localTestPaths.every((testPath) => 
+    !ignoreFiles.some((ignorePath) => testPath.filePath.endsWith(ignorePath))
+  );
 
-  const testBatch = [localTestPaths[0], localTestPaths[1]];
 
   beforeEach(() => {
     jest.clearAllMocks();
@@ -202,7 +204,7 @@ describe('URL Checker Tests', () => {
   describe('checkUrls', () => {
     it('should process all URLs in batches', async () => {
       // Make sure all test paths have editLinks
-      const allPathsHaveEditLinks = testPaths.every(path => path.editLink);
+      const allPathsHaveEditLinks = testPaths.every((testPath) => testPath.editLink);
       expect(allPathsHaveEditLinks).toBe(true);
       
       // Verify that none of the test paths are in the ignoreFiles list
