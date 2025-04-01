@@ -1,4 +1,4 @@
-import { CaseStudyYaml, CaseStudyJson } from '../../types/tests/fixtures/caseStudyTypes';
+import type { CaseStudyYaml, CaseStudyJson } from '../../types/tests/fixtures/caseStudyTypes';
 
 export const yaml1: CaseStudyYaml = `title: case study 1\ndescription: random data\n`;
 export const yaml2: CaseStudyYaml = `title: case study 2\ndescription: again random data\n`;

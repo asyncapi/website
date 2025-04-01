@@ -1,4 +1,4 @@
-import { NavItem } from '../../types/tests/fixtures/NavItem';
+import type { NavItem } from '../../types/tests/fixtures/NavItem';
 
 export const basicNavItems = [
   { title: 'Welcome', weight: 0, isRootSection: true, isSection: true, rootSectionId: 'welcome', sectionWeight: 0, slug: '/docs' },

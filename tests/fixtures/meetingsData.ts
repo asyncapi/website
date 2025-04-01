@@ -1,4 +1,4 @@
-import { MockEvent, ExpectedContent } from "../../types/tests/fixtures/meetings-data";
+import type { MockEvent, ExpectedContent } from "../../types/tests/fixtures/meetings-data";
 
 const mockEvents: MockEvent[] = [
     {
@@ -24,4 +24,4 @@ const expectedContent: ExpectedContent[] = [
     },
 ];
 
-module.exports = { mockEvents, expectedContent };
+export { mockEvents, expectedContent };

@@ -1,4 +1,4 @@
-import { DocNode } from '../../types/tests/fixtures/convertDocPostDataTypes';
+import type { DocNode } from '../../types/tests/fixtures/convertDocPostDataTypes';
 
 const docObject: DocNode = {
   item: { title: 'Root', slug: '/root' },
