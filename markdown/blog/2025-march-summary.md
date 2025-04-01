@@ -81,7 +81,7 @@ We are thrilled to welcome three new [Technical Steering Committee](https://www.
   }
 ]} />
 
-And finally, one of our long-time community member:
+And finally, one of our long-time community member and AsyncAPI Ambassador:
 
 
 <Profiles profiles={[
