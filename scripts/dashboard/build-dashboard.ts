@@ -239,7 +239,7 @@ async function mapGoodFirstIssues(issues: GoodFirstIssues[]): Promise<MappedIssu
     isAssigned: !!issue.assignees.totalCount,
     resourcePath: issue.resourcePath,
     repo: `asyncapi/${issue.repository.name}`,
-    author: issue.author!.login,
+    author: issue.author.login,
     area: getLabel(issue, 'area/') || 'Unknown',
     labels: issue.labels!.nodes.filter(
       (label) => !label.name.startsWith('area/') && !label.name.startsWith('good first issue')
