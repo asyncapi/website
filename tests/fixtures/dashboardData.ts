@@ -3,7 +3,7 @@ import {
   FullDiscussionDetails,
   MockRateLimitResponse,
   Issue
-} from '../../types/tests/fixtures/fixtures/tools/dashboardDataTypes';
+} from '../../types/tests/fixtures/dashboardDataTypes';
 
 const mockDiscussion: Discussion = {
   id: 'test-id',

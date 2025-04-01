@@ -1,4 +1,4 @@
-import { DocPost, TreePost, MockDocPost, MockTreePost } from '../../types/tests/fixtures/fixtures/tools/addDocButtonsDataTypes';
+import { DocPost, TreePost, MockDocPost, MockTreePost } from '../../types/tests/fixtures/addDocButtonsDataTypes';
 
 const docPosts: DocPost[] = [
     { title: 'Welcome', slug: '/docs', content: 'Welcome content' },

@@ -1,4 +1,4 @@
-import { TestContent } from '../../types/tests/fixtures/fixtures/tools/BuildPostListDataTypes';
+import { TestContent } from '../../types/tests/fixtures/BuildPostListDataTypes';
 
 const TEST_CONTENT: TestContent = {
     blog: {

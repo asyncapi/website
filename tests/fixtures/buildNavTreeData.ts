@@ -1,4 +1,4 @@
-import { NavItem } from '../../types/tests/fixtures/fixtures/tools/NavItem';
+import { NavItem } from '../../types/tests/fixtures/NavItem';
 
 export const buildNavTreeData = {
   basicNavItems: [

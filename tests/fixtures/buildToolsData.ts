@@ -1,4 +1,4 @@
-import { TagsData, ManualTool, ConvertedData, ExtractData } from '../../types/tests/fixtures/fixtures/tools/buildToolsData';
+import { TagsData, ManualTool, ConvertedData, ExtractData } from '../../types/tests/fixtures/buildToolsData';
 
 const tagsData: TagsData = {
     languages: [

@@ -2,7 +2,7 @@ import {
   Tool,
   ToolsData,
   ExpectedData
-} from '../../types/tests/fixtures/fixtures/tools/combineToolsDataTypes';
+} from '../../types/tests/fixtures/combineToolsDataTypes';
 
 const expectedDataT1: ExpectedData = {
   languages: [

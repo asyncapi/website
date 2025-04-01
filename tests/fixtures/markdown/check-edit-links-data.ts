@@ -1,4 +1,4 @@
-import { EditLinkData } from '../../../types/tests/fixtures/fixtures/markdown/EditLinkData';
+import { EditLinkData } from '../../../types/tests/fixtures/markdown/EditLinkData';
 
 const determineEditLinkData: EditLinkData[] = [
   {

@@ -1,4 +1,4 @@
-import { RssMockData } from '../../types/tests/fixtures/fixtures/tools/rss-data';
+import { RssMockData } from '../../types/tests/fixtures/rss-data';
 
 const mockRssData: RssMockData = {
   blog: [

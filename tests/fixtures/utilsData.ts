@@ -1,4 +1,4 @@
-import { UtilsData } from '../../types/tests/fixtures/fixtures/tools/utilsData';
+import { UtilsData } from '../../types/tests/fixtures/utilsData';
 
 export const utilsData: UtilsData = {
     jsonString: '{"name": "AsyncAPI", "age": 5}',

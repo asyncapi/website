@@ -1,4 +1,4 @@
-import { MockEvent, ExpectedContent } from "../../types/tests/fixtures/fixtures/tools/meetings-data";
+import { MockEvent, ExpectedContent } from "../../types/tests/fixtures/meetings-data";
 
 const mockEvents: MockEvent[] = [
     {

@@ -1,4 +1,4 @@
-import { MockApiResponse, ExpectedResult } from '../../types/tests/fixtures/fixtures/tools/newsroom-data';
+import { MockApiResponse, ExpectedResult } from '../../types/tests/fixtures/newsroom-data';
 
 const mockApiResponse: MockApiResponse = {
     items: [
