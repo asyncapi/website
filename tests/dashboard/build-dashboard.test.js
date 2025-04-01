@@ -1,3 +1,5 @@
+import { logger } from '../../scripts/utils.ts';
+
 const { graphql } = require('@octokit/graphql');
 const { promises: fs, mkdirSync, rmSync } = require('fs-extra');
 const { resolve } = require('path');
@@ -19,7 +21,6 @@ const {
   fullDiscussionDetails,
   mockRateLimitResponse
 } = require('../fixtures/dashboardData');
-import { logger } from '../../scripts/utils.ts';
 
 jest.mock('../../scripts/utils', () => ({
   logger: { error: jest.fn(), warn: jest.fn() },
@@ -123,7 +124,7 @@ describe('GitHub Discussions Processing', () => {
     const filePath = resolve(tempDir, 'success-output.json');
     // Ensure the file exists by writing a basic object to it
     await fs.writeFile(filePath, JSON.stringify({}));
-    
+
     await start(filePath);
 
     const content = JSON.parse(await fs.readFile(filePath, 'utf-8'));
