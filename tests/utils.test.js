@@ -28,6 +28,19 @@ describe('Utils Tests', () => {
     tempDir = path.join(os.tmpdir(), 'asyncapi-test-');
     readPath = path.join(tempDir, 'test-input.yaml');
     writePath = path.join(tempDir, 'test-output.json');
+    
+    // Ensure directory exists
+    fs.mkdir.mockResolvedValue(undefined);
+    
+    // Ensure files exist with initial content
+    fs.readFile.mockImplementation((path) => {
+      if (path === readPath) {
+        return Promise.resolve(yamlString);
+      }
+      return Promise.reject(new Error('File not found'));
+    });
+    
+    fs.writeFile.mockResolvedValue(undefined);
   });
 
   describe('convertToJson', () => {
