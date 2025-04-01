@@ -33,7 +33,6 @@ export async function buildFinanceInfoList({
     const expensesLinkPath = resolve(currentDir, configDir, financeDir, year, 'ExpensesLink.yml');
 
     // Check if the files exist
-
     await Promise.all([access(expensesPath, constants.F_OK), access(expensesLinkPath, constants.F_OK)]);
 
     // Ensure the directory exists before writing the files
