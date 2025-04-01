@@ -1,4 +1,10 @@
-const expectedDataT1 = {
+import {
+  Tool,
+  ToolsData,
+  ExpectedData
+} from '../../types/tests/fixtures/fixtures/tools/combineToolsDataTypes';
+
+const expectedDataT1: ExpectedData = {
   languages: [
     {
       name: 'JavaScript',
@@ -25,7 +31,7 @@ const expectedDataT1 = {
   ]
 };
 
-const manualToolsWithMissingData = [
+const manualToolsWithMissingData: Tool[] = [
   {
     title: 'Tool C',
     filters: {},
@@ -33,7 +39,7 @@ const manualToolsWithMissingData = [
   }
 ];
 
-const manualToolsToSort = {
+const manualToolsToSort: ToolsData = {
   category1: {
     description: 'Sample Category',
     toolsList: [
@@ -51,7 +57,7 @@ const manualToolsToSort = {
   }
 };
 
-const toolWithMultipleLanguages = {
+const toolWithMultipleLanguages: Tool = {
   title: 'Multi-Language Tool',
   filters: {
     language: ['JavaScript', 'Python', 'NewLanguage'],
@@ -60,28 +66,29 @@ const toolWithMultipleLanguages = {
   links: { repoUrl: 'https://github.com/example/multi-language-tool' }
 };
 
-const automatedToolsT5 = {
+const automatedToolsT5: ToolsData = {
   category1: {
     description: 'Category 1 Description',
     toolsList: [toolWithMultipleLanguages]
   }
 };
 
-const invalidToolT4 = { title: 'Invalid Tool' };
+const invalidToolT4: Tool = { title: 'Invalid Tool', filters: {}, links: {} };
 
-const automatedToolsT4 = {
+const automatedToolsT4: ToolsData = {
   category1: {
     description: 'Category 1 Description',
     toolsList: []
   }
 };
-const manualToolsT4 = {
+
+const manualToolsT4: ToolsData = {
   category1: {
     toolsList: [invalidToolT4]
   }
 };
 
-const toolWithNewTagsT6 = {
+const toolWithNewTagsT6: Tool = {
   title: 'New Tags Tool',
   filters: {
     language: 'NewLanguage',
@@ -90,14 +97,14 @@ const toolWithNewTagsT6 = {
   links: { repoUrl: 'https://github.com/example/new-tags-tool' }
 };
 
-const automatedToolsT6 = {
+const automatedToolsT6: ToolsData = {
   category1: {
     description: 'Category 1 Description',
     toolsList: [toolWithNewTagsT6]
   }
 };
 
-const toolWithNewLanguageT7 = {
+const toolWithNewLanguageT7: Tool = {
   title: 'New Language Tool',
   filters: {
     language: 'Go',
@@ -106,14 +113,14 @@ const toolWithNewLanguageT7 = {
   links: { repoUrl: 'https://github.com/example/new-language-tool' }
 };
 
-const automatedToolsT7 = {
+const automatedToolsT7: ToolsData = {
   category1: {
     description: 'Category 1 Description',
     toolsList: [toolWithNewLanguageT7]
   }
 };
 
-const validToolT8 = {
+const validToolT8: Tool = {
   title: 'Valid Tool',
   filters: {
     language: 'JavaScript',
@@ -122,20 +129,20 @@ const validToolT8 = {
   links: { repoUrl: 'https://github.com/asyncapi/valid-tool' }
 };
 
-const automatedToolsT8 = {
+const automatedToolsT8: ToolsData = {
   category1: {
     description: 'Category 1 Description',
     toolsList: []
   }
 };
 
-const manualToolsT8 = {
+const manualToolsT8: ToolsData = {
   category1: {
     toolsList: [validToolT8]
   }
 };
 
-const toolWithoutRepoUrlT9 = {
+const toolWithoutRepoUrlT9: Tool = {
   title: 'Tool Without Repo',
   filters: {
     language: 'Python',
@@ -144,27 +151,27 @@ const toolWithoutRepoUrlT9 = {
   links: {}
 };
 
-const automatedToolsT9 = {
+const automatedToolsT9: ToolsData = {
   category1: {
     description: 'Category 1 Description',
     toolsList: []
   }
 };
 
-const manualToolsT9 = {
+const manualToolsT9: ToolsData = {
   category1: {
     toolsList: [toolWithoutRepoUrlT9]
   }
 };
 
-const invalidAutomatedToolsT10 = {
+const invalidAutomatedToolsT10: ToolsData = {
   invalidCategory: {
     description: 'Invalid Category Description',
     toolsList: []
   }
 };
 
-const manualToolsWithInvalidURLT11 = {
+const manualToolsWithInvalidURLT11: ToolsData = {
   category1: {
     toolsList: [
       {
@@ -176,7 +183,7 @@ const manualToolsWithInvalidURLT11 = {
   }
 };
 
-const circularTool = {
+const circularTool: Tool = {
   title: 'Circular Tool',
   filters: {
     language: 'JavaScript',
@@ -185,14 +192,14 @@ const circularTool = {
   links: { repoUrl: 'https://github.com/asyncapi/circular-tool' }
 };
 
-const automatedToolsT12 = {
+const automatedToolsT12: ToolsData = {
   category1: {
     description: 'Category 1',
     toolsList: [circularTool]
   }
 };
 
-const finalToolWithMissingData = {
+const finalToolWithMissingData: any = {
   0: {
     title: 'Tool C',
     filters: {},

@@ -1,4 +1,6 @@
-const determineEditLinkData = [
+import { EditLinkData } from '../../../types/tests/fixtures/fixtures/markdown/EditLinkData';
+
+const determineEditLinkData: EditLinkData[] = [
   {
     urlPath: 'docs/concepts/application',
     filePath: 'markdown/docs/concepts/application.md',
@@ -16,7 +18,7 @@ const determineEditLinkData = [
   }
 ];
 
-const processBatchData = [
+const processBatchData: EditLinkData[] = [
   {
     filePath: '/markdown/docs/tutorials/generate-code.md',
     urlPath: 'tutorials/generate-code',
@@ -29,7 +31,7 @@ const processBatchData = [
   }
 ];
 
-const testPaths = [
+const testPaths: EditLinkData[] = [
   {
     filePath: '/markdown/docs/guides/index.md',
     urlPath: 'guides/index',
@@ -82,4 +84,4 @@ const testPaths = [
   }
 ];
 
-module.exports = { determineEditLinkData, processBatchData, testPaths };
+export { determineEditLinkData, processBatchData, testPaths };

@@ -1,4 +1,6 @@
-const TEST_CONTENT = {
+import { TestContent } from '../../types/tests/fixtures/fixtures/tools/BuildPostListDataTypes';
+
+const TEST_CONTENT: TestContent = {
     blog: {
         dir: 'blog',
         file: 'release-notes-2.1.0.mdx',
@@ -26,4 +28,4 @@ This is the about page.`,
     },
 };
 
-module.exports = { TEST_CONTENT };
+export { TEST_CONTENT };

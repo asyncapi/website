@@ -1,4 +1,6 @@
-const mockEvents = [
+import { MockEvent, ExpectedContent } from "../../types/tests/fixtures/fixtures/tools/meetings-data";
+
+const mockEvents: MockEvent[] = [
     {
         summary: 'Community Meeting',
         htmlLink: 'https://www.google.com/calendar/event?eid=example',
@@ -12,7 +14,7 @@ const mockEvents = [
     },
 ];
 
-const expectedContent = [
+const expectedContent: ExpectedContent[] = [
     {
         banner: "https://example.com/banner.jpg",
         calLink: "https://www.google.com/calendar/event?eid=example",
@@ -22,4 +24,4 @@ const expectedContent = [
     },
 ];
 
-module.exports = { mockEvents, expectedContent }
+module.exports = { mockEvents, expectedContent };

@@ -1,8 +1,10 @@
-const docPosts = [
+import { DocPost, TreePost, MockDocPost, MockTreePost } from '../../types/tests/fixtures/fixtures/tools/addDocButtonsDataTypes';
+
+const docPosts: DocPost[] = [
     { title: 'Welcome', slug: '/docs', content: 'Welcome content' },
 ];
 
-const treePosts = {
+const treePosts: TreePost = {
     welcome: {
         item: { title: 'Welcome', isRootSection: true, slug: '/docs' },
         children: {},
@@ -16,12 +18,12 @@ const treePosts = {
     },
 };
 
-const mockDocPosts = [
+const mockDocPosts: MockDocPost[] = [
     { slug: '/docs', title: 'Welcome to Docs' },
     { slug: '/docs/page1', title: 'Page 1' },
 ];
 
-const mockTreePosts = {
+const mockTreePosts: MockTreePost = {
     root1: {
         item: { title: 'Root 1', isRootSection: true },
         children: {
@@ -36,6 +38,6 @@ const mockTreePosts = {
     },
 };
 
-const invalidTreePosts = ['tree1','tree2','tree3','tree4'];
+const invalidTreePosts: string[] = ['tree1', 'tree2', 'tree3', 'tree4'];
 
-module.exports = { docPosts, treePosts, mockDocPosts, mockTreePosts, invalidTreePosts };
+export { docPosts, treePosts, mockDocPosts, mockTreePosts, invalidTreePosts };

@@ -1,4 +1,11 @@
-const mockDiscussion = {
+import {
+  Discussion,
+  FullDiscussionDetails,
+  MockRateLimitResponse,
+  Issue
+} from '../../types/tests/fixtures/fixtures/tools/dashboardDataTypes';
+
+const mockDiscussion: Discussion = {
   id: 'test-id',
   __typename: 'Issue',
   title: 'Test',
@@ -16,7 +23,7 @@ const mockDiscussion = {
   timelineItems: { updatedAt: new Date().toISOString() }
 };
 
-const discussionWithMoreComments = {
+const discussionWithMoreComments: Discussion = {
   id: 'paginated-discussion',
   __typename: 'Issue',
   title: 'Test with Pagination',
@@ -34,7 +41,7 @@ const discussionWithMoreComments = {
   timelineItems: { updatedAt: new Date().toISOString() }
 };
 
-const fullDiscussionDetails = {
+const fullDiscussionDetails: FullDiscussionDetails = {
   node: {
     ...discussionWithMoreComments,
     comments: {
@@ -45,7 +52,7 @@ const fullDiscussionDetails = {
   }
 };
 
-const mockRateLimitResponse = {
+const mockRateLimitResponse: MockRateLimitResponse = {
   search: {
     nodes: [mockDiscussion],
     pageInfo: { hasNextPage: false }
@@ -58,7 +65,7 @@ const mockRateLimitResponse = {
   }
 };
 
-const issues = [
+const issues: Issue[] = [
   {
     id: '1',
     title: 'Test',
@@ -70,7 +77,7 @@ const issues = [
   }
 ];
 
-module.exports = {
+export {
   issues,
   mockDiscussion,
   discussionWithMoreComments,

@@ -1,4 +1,6 @@
-const mockRssData = {
+import { RssMockData } from '../../types/tests/fixtures/fixtures/tools/rss-data';
+
+const mockRssData: RssMockData = {
   blog: [
     {
       title: 'Non-Featured Post 1',
@@ -56,7 +58,7 @@ const mockRssData = {
   ],
 };
 
-const missingDateMockData = {
+const missingDateMockData: RssMockData = {
   blog: [
     {
       title: 'Post without Date',
@@ -74,7 +76,7 @@ const missingDateMockData = {
   ],
 };
 
-const incompletePostMockData = {
+const incompletePostMockData: RssMockData = {
   blog: [
     {
       slug: '/blog/incomplete-post',
@@ -90,4 +92,4 @@ const title = 'Test Blog RSS';
 const desc = 'Test blog RSS feed';
 const outputPath = 'test-output/blog.xml';
 
-module.exports = { mockRssData, title, type, desc, outputPath, missingDateMockData, incompletePostMockData };
+export { mockRssData, title, type, desc, outputPath, missingDateMockData, incompletePostMockData };

@@ -1,4 +1,6 @@
-const mockApiResponse = {
+import { MockApiResponse, ExpectedResult } from '../../types/tests/fixtures/fixtures/tools/newsroom-data';
+
+const mockApiResponse: MockApiResponse = {
     items: [
         {
             snippet: {
@@ -31,7 +33,7 @@ const mockApiResponse = {
     ],
 };
 
-const expectedResult = JSON.stringify([
+const expectedResult: ExpectedResult = JSON.stringify([
     {
         "image_url": "https://i.ytimg.com/vi/K7fvKbOfqOg/hqdefault.jpg",
         "title": "Developer Experience Working Group, 14:00 UTC Thursday May 23rd 2024",
@@ -46,4 +48,4 @@ const expectedResult = JSON.stringify([
     },
 ], null, '  ');
 
-module.exports = { mockApiResponse, expectedResult }
+export { mockApiResponse, expectedResult };

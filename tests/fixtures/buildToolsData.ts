@@ -1,4 +1,6 @@
-const tagsData = {
+import { TagsData, ManualTool, ConvertedData, ExtractData } from '../../types/tests/fixtures/fixtures/tools/buildToolsData';
+
+const tagsData: TagsData = {
     languages: [
         { name: 'JavaScript', color: 'bg-[#f1e05a]', borderColor: 'border-[#f1e05a]' },
         { name: 'Python', color: 'bg-[#3572A5]', borderColor: 'border-[#3572A5]' },
@@ -9,7 +11,7 @@ const tagsData = {
     ],
 };
 
-const manualTools = [
+const manualTools: ManualTool[] = [
     {
         title: "Manual Tool 1",
         description: "Description for manual tool 1",
@@ -24,7 +26,7 @@ const manualTools = [
     },
 ];
 
-const mockConvertedData = {
+const mockConvertedData: ConvertedData = {
     "Category1": {
         description: "Description for Category1",
         toolsList: [
@@ -49,7 +51,7 @@ const mockConvertedData = {
     }
 };
 
-const mockExtractData = {
+const mockExtractData: ExtractData = {
     items: [
         {
             name: '.asyncapi-tool',
@@ -76,7 +78,7 @@ const mockExtractData = {
     ]
 };
 
-module.exports = {
+export {
     tagsData,
     manualTools,
     mockConvertedData,
