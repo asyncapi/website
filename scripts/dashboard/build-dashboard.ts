@@ -41,7 +41,7 @@ function monthsSince(date: string): number {
  * @returns {string | undefined} - The label if found, otherwise undefined.
  */
 function getLabel(issue: GoodFirstIssues, filter: string): string | undefined {
-  const result = issue.labels!.nodes.find((label) => label.name.startsWith(filter));
+  const result = issue.labels?.nodes.find((label) => label.name.startsWith(filter));
 
   return result?.name.split('/')[1];
 }
