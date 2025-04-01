@@ -10,8 +10,6 @@ const {
   validateDocs,
   checkMarkdownFiles
 } = require('../../scripts/markdown/check-markdown.ts');
-
-
 jest.mock('../../scripts/utils', () => ({
   logger: { error: jest.fn(), warn: jest.fn() }
 }));

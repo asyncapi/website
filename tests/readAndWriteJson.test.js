@@ -8,7 +8,7 @@ jest.mock('fs/promises', () => ({
   writeFile: jest.fn()
 }));
 
-// Mock utils functions
+
 jest.mock('../scripts/utils.ts', () => ({
   convertToJson: jest.fn(),
   writeJSON: jest.fn()
@@ -24,11 +24,10 @@ describe('writeJSON', () => {
   });
 
   test('should read a file, convert it to JSON, and write the JSON to another file', async () => {
-    // Setup mock implementations for success case
     fs.readFile.mockResolvedValue(yamlString);
     convertToJson.mockReturnValue(jsonObject);
     fs.writeFile.mockResolvedValue();
-    
+
     // Use a simple implementation that matches the original test
     writeJSON.mockImplementation(async (readPath, writePath) => {
       const content = await fs.readFile(readPath, 'utf-8');
@@ -45,9 +44,8 @@ describe('writeJSON', () => {
   });
 
   test('should throw an error if reading the file fails', async () => {
-    // Setup mock implementations for read failure
     fs.readFile.mockRejectedValue(error);
-    
+
     // Use a simple implementation that matches the original test's error message
     writeJSON.mockImplementation(async () => {
       try {
@@ -69,12 +67,11 @@ describe('writeJSON', () => {
   });
 
   test('should throw an error if converting the file content to JSON fails', async () => {
-    // Setup mock implementations for conversion failure
     fs.readFile.mockResolvedValue(yamlString);
     convertToJson.mockImplementation(() => {
       throw error;
     });
-    
+
     // Use a simple implementation that matches the original test's error message
     writeJSON.mockImplementation(async () => {
       try {
@@ -97,11 +94,10 @@ describe('writeJSON', () => {
   });
 
   test('should throw an error if writing the file fails', async () => {
-    // Setup mock implementations for write failure
     fs.readFile.mockResolvedValue(yamlString);
     convertToJson.mockReturnValue(jsonObject);
     fs.writeFile.mockRejectedValue(error);
-    
+
     // Use a simple implementation that matches the original test's error message
     writeJSON.mockImplementation(async () => {
       try {

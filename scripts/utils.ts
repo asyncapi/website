@@ -19,7 +19,7 @@ export function convertToJson(contentYAMLorJSON: unknown): any {
     return contentYAMLorJSON;
   }
 
-   // Check if the content is valid JSON before attempting to parse as YAML
+  // Check if the content is valid JSON before attempting to parse as YAML
   try {
     const jsonContent = JSON.parse(contentYAMLorJSON);
 

@@ -9,7 +9,7 @@ const {
   checkUrls,
   determineEditLink,
   main
-} = require('../../scripts/markdown/check-edit-links');
+} = require('../../scripts/markdown/check-edit-links.ts');
 const { determineEditLinkData, processBatchData, testPaths } = require('../fixtures/markdown/check-edit-links-data');
 
 jest.mock('../../scripts/utils', () => ({
@@ -19,9 +19,9 @@ jest.mock('../../scripts/utils', () => ({
 jest.mock('node-fetch-2', () => jest.fn());
 
 describe('URL Checker Tests', () => {
-    beforeEach(() => {
-      jest.clearAllMocks();
-    });
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
 
   describe('determineEditLink', () => {
     it('should generate correct edit link for docs with /docs prefix', () => {
