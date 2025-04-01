@@ -29,10 +29,6 @@ export interface ConvertedData {
     };
 }
 
-export interface ExtractData {
-    items: ExtractItem[];
-}
-
 export interface ExtractItem {
     name: string;
     url: string;
@@ -46,3 +42,7 @@ export interface ExtractItem {
     };
     path: string;
 }
+export interface ExtractData {
+    items: ExtractItem[];
+}
+
