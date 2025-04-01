@@ -1,5 +1,7 @@
-const { convertToJson } = require('../scripts/utils.ts');
-const { jsonString, yamlString, jsonObject, invalidString } = require('./fixtures/utilsData');
+import { convertToJson } from '../scripts/utils.ts';
+import utilsData from './fixtures/utilsData';
+
+const { jsonString, yamlString, jsonObject, invalidString } = utilsData;
 
 describe('convertToJson', () => {
   test('should return JSON object if input is valid JSON string', () => {
