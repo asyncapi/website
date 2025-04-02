@@ -4,7 +4,7 @@
  * @description Check if the current date is after the deadline
  */
 export function shouldShowBanner(cfpDeadline: string) {
-  const currentDate = new Date(); // G et the current date
+  const currentDate = new Date(); // Get the current date
   const deadline = new Date(cfpDeadline); // Convert the cfpDeadline string to a Date object
 
   // Check if the current date is after the deadline
