@@ -9,7 +9,18 @@
       "resourcePath": "/asyncapi/community/pull/1634",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 31.302030173669205
+      "score": 32.7379031174155
+    },
+    {
+      "id": "PR_kwDODCuNRs6NwyqP",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: initial ROS2 AsyncAPI contribution by SIEMENS AG",
+      "author": "gramss",
+      "resourcePath": "/asyncapi/bindings/pull/270",
+      "repo": "asyncapi/bindings",
+      "labels": [],
+      "score": 24.697014632436254
     },
     {
       "id": "I_kwDOBW5R_c5BIl5P",
@@ -44,77 +55,6 @@
       "score": 22.9739670999407
     },
     {
-      "id": "PR_kwDOFLhIt85bqKL8",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: add Bounty Program Rules",
-      "author": "aeworxet",
-      "resourcePath": "/asyncapi/community/pull/897",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 22.68679251119144
-    },
-    {
-      "id": "PR_kwDODCuNRs6NwyqP",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: initial ROS2 AsyncAPI contribution by SIEMENS AG",
-      "author": "gramss",
-      "resourcePath": "/asyncapi/bindings/pull/270",
-      "repo": "asyncapi/bindings",
-      "labels": [],
-      "score": 20.38939580119737
-    },
-    {
-      "id": "I_kwDOBW5R_c6pn_G2",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Redesign the AsyncAPI Website and Implement Dark Theme",
-      "author": "devilkiller-ag",
-      "resourcePath": "/asyncapi/website/issues/3669",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        }
-      ],
-      "score": 16.943300736206268
-    },
-    {
-      "id": "PR_kwDOBW5R_c6KgWbR",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: enabled viewing historical finance data",
-      "author": "SahilDahekar",
-      "resourcePath": "/asyncapi/website/pull/3658",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 16.943300736206268
-    },
-    {
-      "id": "I_kwDOFLhIt85bebeO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Meeting Banners Storage",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/issues/568",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 16.36895155870775
-    },
-    {
-      "id": "PR_kwDOFLhIt853IEwA",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: added asyncapi student ambassador md file",
-      "author": "iambami",
-      "resourcePath": "/asyncapi/community/pull/1333",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 16.36895155870775
-    },
-    {
       "id": "I_kwDOFLhIt86O7jFN",
       "isPR": false,
       "isAssigned": true,
@@ -136,7 +76,72 @@
           "color": "0d67d3"
         }
       ],
-      "score": 15.794602381209232
+      "score": 20.102221212448114
+    },
+    {
+      "id": "I_kwDOBW5R_c6pn_G2",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Redesign the AsyncAPI Website and Implement Dark Theme",
+      "author": "devilkiller-ag",
+      "resourcePath": "/asyncapi/website/issues/3669",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "gsoc",
+          "color": "F4D03F"
+        }
+      ],
+      "score": 18.091999091203302
+    },
+    {
+      "id": "MDU6SXNzdWU5OTE0Mzc3MjY=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "remove puppeteer from dependencies",
+      "author": "flamewow",
+      "resourcePath": "/asyncapi/html-template/issues/256",
+      "repo": "asyncapi/html-template",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 18.091999091203302
+    },
+    {
+      "id": "PR_kwDOBW5R_c6KgWbR",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: enabled viewing historical finance data",
+      "author": "SahilDahekar",
+      "resourcePath": "/asyncapi/website/pull/3658",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 16.943300736206268
+    },
+    {
+      "id": "I_kwDOFLhIt85bebeO",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Meeting Banners Storage",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/issues/568",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 16.65612614745701
+    },
+    {
+      "id": "PR_kwDOFLhIt853IEwA",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: added asyncapi student ambassador md file",
+      "author": "iambami",
+      "resourcePath": "/asyncapi/community/pull/1333",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 16.65612614745701
     },
     {
       "id": "I_kwDODou01c5ZAFWh",
@@ -152,11 +157,22 @@
           "color": "a2eeef"
         },
         {
-          "name": "bounty",
-          "color": "0E8A16"
+          "name": "keep-open",
+          "color": "f9dd4b"
         }
       ],
-      "score": 14.07155484871368
+      "score": 15.220253203710714
+    },
+    {
+      "id": "PR_kwDOFLhIt86Lqu0L",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: expand community docs - Following Conventional Commits",
+      "author": "Aahil13",
+      "resourcePath": "/asyncapi/community/pull/1733",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 14.358729437462937
     },
     {
       "id": "I_kwDODyzcIc5gD3jB",
@@ -181,40 +197,9 @@
         }
       ],
       "score": 13.497205671215161
-    },
-    {
-      "id": "I_kwDOBGu-186XjdU2",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Proposal to add a 'version' value into the message object to support a more granular versioning",
-      "author": "IsmaelMartinez",
-      "resourcePath": "/asyncapi/spec/issues/1068",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 12.348507316218127
     }
   ],
   "goodFirstIssues": [
-    {
-      "id": "I_kwDOBW5R_c6vPqVh",
-      "title": "Misaligned cards in ambassadorList",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/3937",
-      "repo": "asyncapi/website",
-      "author": "tutankhAman",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
-        }
-      ]
-    },
     {
       "id": "I_kwDOFDnrNc6uQo6r",
       "title": "[Improvement]: Improve the error message while generating project fromgenerate command",
@@ -436,21 +421,6 @@
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOGQYLdM6VApSN",
-      "title": "Design a Graphic for Newsletter Promo",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/brand/issues/104",
-      "repo": "asyncapi/brand",
-      "author": "Mayaleeeee",
-      "area": "design",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
