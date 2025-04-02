@@ -19,7 +19,7 @@ export const banners = [
   {
     title: 'AsyncAPI Conference',
     city: 'Singapore Edition',
-    dateLocation: '15th - 16th of April, 2025 | Singapore, Singapre',
+    dateLocation: '15th - 16th of April, 2025 | Singapore, Singapore',
     cfaText: 'Get Free Tickets',
     eventName: 'you get a Free Ticket',
     cfpDeadline: '2025-04-13T06:00:00Z',
