@@ -1,5 +1,5 @@
 [
-  { "value": "@asyncapi/html-template", "text": "HTML" },
+  { "value": "@asyncapi/html-template@3.0.0", "text": "HTML" },
   { "value": "@asyncapi/markdown-template", "text": "Markdown" },
   { "value": "@asyncapi/nodejs-template", "text": "Node.js" },
   { "value": "@asyncapi/nodejs-ws-template", "text": "Node.js WebSockets" },
