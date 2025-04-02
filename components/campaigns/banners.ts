@@ -21,7 +21,7 @@ export const banners = [
     city: 'Singapore Edition',
     dateLocation: '15th - 16th of April, 2025 | Singapore, Singapre',
     cfaText: 'Get Free Tickets',
-    eventName: 'you get a Free Tickets',
+    eventName: 'you get a Free Ticket',
     cfpDeadline: '2025-04-13T06:00:00Z',
     link: 'https://ticket.apidays.global/event/apidays-singapore-2025/4c745e62-0e52-4c4a-9221-29f47bc57128/cart?coupon=ASYNCAPICOMMUNITY'
   },
