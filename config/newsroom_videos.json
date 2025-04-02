@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/GVL846mrWUA/hqdefault.jpg",
+    "title": "AsyncAPI Community Working Group Meeting, March 25th 2025",
+    "description": "AsyncAPI Community Working Group Meeting Agenda: Welcome and agenda alignment (3:00 PM - 3:05 PM) ➢ Facilitator: Thulie ...",
+    "videoId": "GVL846mrWUA"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/KYSsSRkUPqM/hqdefault.jpg",
     "title": "AsyncAPI Community Working Group Meeting, March 25th 2025",
     "description": "AsyncAPI Community Working Group Meeting Agenda: Welcome and agenda alignment (3:00 PM - 3:05 PM) ➢ Facilitator: Thulie ...",
@@ -22,11 +28,5 @@
     "title": "Event-Driven and OpenTelemetry with Eduardo",
     "description": "Implementing distributed tracing between producers and consumers.",
     "videoId": "awfB_mwUp1c"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/e_uo7_QMDd4/hqdefault.jpg",
-    "title": "AsyncAPI Community Working Group Meeting, March 11th 2025",
-    "description": "https://github.com/asyncapi/community/issues/1754.",
-    "videoId": "e_uo7_QMDd4"
   }
 ]
