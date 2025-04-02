@@ -37,7 +37,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
   };
 
   useEffect(() => {
-    const interval = setInterval(() => setActiveIndex((index) => (index + 1) % numberOfVisibleBanners), 5000);
+    const interval = setInterval(() => setActiveIndex((index) => (index + 1) % numberOfVisibleBanners), 10000);
 
     return () => {
       clearInterval(interval);

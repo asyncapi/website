@@ -18,6 +18,15 @@ export function shouldShowBanner(cfpDeadline: string) {
 export const banners = [
   {
     title: 'AsyncAPI Conference',
+    city: 'Singapore Edition',
+    dateLocation: '15th - 16th of April, 2025 | Singapore, Singapre',
+    cfaText: 'Get Free Tickets',
+    eventName: 'you get a Free Tickets',
+    cfpDeadline: '2025-04-13T06:00:00Z',
+    link: 'https://ticket.apidays.global/event/apidays-singapore-2025/4c745e62-0e52-4c4a-9221-29f47bc57128/cart?coupon=ASYNCAPICOMMUNITY'
+  },
+  {
+    title: 'AsyncAPI Conference',
     city: 'Munich Edition',
     dateLocation: '2nd - 3rd of July, 2025 | München, Germany',
     cfaText: 'Apply To Speak',
@@ -60,5 +69,14 @@ export const banners = [
     eventName: 'the end of Call for Speakers',
     cfpDeadline: '2025-08-05T06:00:00Z',
     link: 'https://conference.asyncapi.com/venue/Paris'
+  },
+  {
+    title: 'AsyncAPI Conference',
+    city: 'Online Edition',
+    dateLocation: '29th of October, 2025 | AsyncAPI YouTube',
+    cfaText: 'Apply To Speak',
+    eventName: 'the end of Call for Speakers',
+    cfpDeadline: '2025-09-07T06:00:00Z',
+    link: 'https://conference.asyncapi.com/venue/Online'
   }
 ];
