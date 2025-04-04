@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/community/pull/1634",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 32.7379031174155
+      "score": 33.02507770616476
     },
     {
       "id": "PR_kwDODCuNRs6NwyqP",
@@ -20,7 +20,7 @@
       "resourcePath": "/asyncapi/bindings/pull/270",
       "repo": "asyncapi/bindings",
       "labels": [],
-      "score": 24.697014632436254
+      "score": 32.16355393991698
     },
     {
       "id": "I_kwDOBW5R_c5BIl5P",
@@ -76,7 +76,7 @@
           "color": "0d67d3"
         }
       ],
-      "score": 20.102221212448114
+      "score": 22.68679251119144
     },
     {
       "id": "I_kwDOBW5R_c6pn_G2",
@@ -92,7 +92,7 @@
           "color": "F4D03F"
         }
       ],
-      "score": 18.091999091203302
+      "score": 18.953522857451077
     },
     {
       "id": "MDU6SXNzdWU5OTE0Mzc3MjY=",
@@ -111,6 +111,17 @@
       "score": 18.091999091203302
     },
     {
+      "id": "I_kwDOFLhIt85bebeO",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Meeting Banners Storage",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/issues/568",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 16.943300736206268
+    },
+    {
       "id": "PR_kwDOBW5R_c6KgWbR",
       "isPR": true,
       "isAssigned": false,
@@ -120,17 +131,6 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 16.943300736206268
-    },
-    {
-      "id": "I_kwDOFLhIt85bebeO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Meeting Banners Storage",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/issues/568",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 16.65612614745701
     },
     {
       "id": "PR_kwDOFLhIt853IEwA",
@@ -418,6 +418,10 @@
       "author": "AceTheCreator",
       "area": "Unknown",
       "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
