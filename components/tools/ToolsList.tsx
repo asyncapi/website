@@ -22,7 +22,13 @@ export default function ToolsList({ toolsListData }: ToolsListProp) {
   return (
     <div className='' data-testid='ToolsList-main'>
       {Object.keys(toolsListData).map((categoryName, index) => {
-        if (toolsListData[categoryName].toolsList.length > 0) {
+        // Remove duplicate tools based on title (assuming title is unique)
+        const uniqueTools = Array.from(
+          new Map(
+            toolsListData[categoryName].toolsList.map(tool => [tool.title, tool])
+          ).values()
+        );
+        if (uniqueTools.length > 0) {
           return (
             <div className='my-8' key={index} id={categoryName} ref={toolsListData[categoryName].elementRef}>
               <Heading typeStyle={HeadingTypeStyle.mdSemibold} className='my-2'>
@@ -31,14 +37,13 @@ export default function ToolsList({ toolsListData }: ToolsListProp) {
               <Paragraph typeStyle={ParagraphTypeStyle.md}>{toolsListData[categoryName].description}</Paragraph>
               <hr className='my-8' />
               <div className='flex grid-cols-3 flex-col gap-8 lg:grid'>
-                {toolsListData[categoryName].toolsList.map((tool, toolIndex) => (
+                {uniqueTools.map((tool, toolIndex) => (
                   <ToolsCard key={toolIndex} toolData={tool} />
                 ))}
               </div>
             </div>
           );
         }
-
         return null;
       })}
     </div>
