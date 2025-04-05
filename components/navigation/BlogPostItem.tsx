@@ -14,8 +14,6 @@ import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 
 interface BlogPostItemProps {
-  // eslint-disable-next-line prettier/prettier
-
   /** The blog post data. */
   post: IBlogPost;
 
@@ -83,7 +81,7 @@ export default forwardRef(function BlogPostItem(
                   </Heading>
                   <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-3'>
                     <TextTruncate element='span' line={4} text={post.excerpt} />
-                  </Paragraph>
+                  </Paragraph>  
                 </span>
               </div>
               <div className='mt-6 flex items-center'>
@@ -102,8 +100,6 @@ export default forwardRef(function BlogPostItem(
                               className='cursor-pointer border-none bg-inherit p-0 hover:underline'
                               onClick={(e) => {
                                 e.preventDefault();
-
-                                // Handle the click event, e.g., navigate to author.link
                                 window.open(author.link, '_blank');
                               }}
                             >
@@ -125,7 +121,7 @@ export default forwardRef(function BlogPostItem(
                     <span className='mx-1'>&middot;</span>
                     <span>{post.readingTime} min read</span>
                   </Paragraph>
-                </div>
+                </div>  
               </div>
             </div>
           </span>
