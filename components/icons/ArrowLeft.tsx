@@ -6,7 +6,7 @@ import React from 'react';
  */
 export default function ArrowLeft({ className = '' }) {
   return (
-    <svg className={className || 'inline-block'} viewBox='0 0 16 20' fill='currentColor'>
+    <svg className={className || 'inline-block'} viewBox='0 0 16 16' fill='currentColor'>
       <path
         fillRule='evenodd'
         clipRule='evenodd'
