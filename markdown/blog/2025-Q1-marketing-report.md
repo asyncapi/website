@@ -28,14 +28,14 @@ This report provides an overview of our marketing activities, including social m
 
 ### Social Media Performance
 
-| **LinkedIn Metric**         | **Value**         |**% Change** |
-|--------------------|-----------------------------|----------------|
-|  Followers       | 4,204           |    +6%         |
-| New Followers        | 215         |    +18%            |
-| Posts       | 32           | +8%         |
-|Impressions       |         16,385 |       +7% |
-|Clicks      |               931|               +1% |
-|Engagement Rate      |      6.66%     |    +13%    |
+| **LinkedIn Metric**         | **Value**         |**last Quarter Value**|**% Change** |
+|--------------------|-----------------------------|---------------|----------------|
+|  Followers       | 4,255           |  3,949 | +8%         |
+| New Followers        | 313         | 263  | +20%            |
+| Posts       | 48        | 93 | -48%         |
+|Impressions       |        23,715 | 29,366     | -18% |
+|Clicks      |     1,495| 1398       |       +8% |
+|Engagement Rate      |      7.52%     | 6.23% |  +21%    |
 
 ### Key Insights
 
@@ -44,23 +44,53 @@ This report provides an overview of our marketing activities, including social m
 - Click-through rates need improvement, signaling a need for stronger CTAs and content hooks.
 
 
-| **X (Formerly Twitter)Metric**         | **Value**         |**% Change** |
-|--------------------|-----------------------------|----------------|
-|  Tweets      | 62          |   +16%        |
-| Retweets        | 16        |    +7%          |
-| Posts       | 32           | +8%         |
-|Impressions       |         10,461|       +14%|
-|Engagements     |              202|              +6% |
-|Replies     |      2  |    +50%   |
-| Clicks              |    79         |    +9%            |
-|Likes          |       70   |         +10%       |
-|New Followers|         2      |
+| **X (Formerly Twitter)Metric**         | **Value**         |**% last Quarter** |**% Change** |
+|--------------------|-----------------------------|----------------|-----------------|
+|  Tweets      | 89         |      162   |-44%  |
+| Retweets        | 24       |       54     |  -53% |
+|Impressions       |         14,621|    27,823  |  -46% |
+|Engagements     |       278  |   543      |  -48% |
+|Replies     |      3  |  2     | +75% |
+| Clicks       |    101       |     199      |  -48% |
+|Likes          |       93   |        188      |  -49% |
+|New Followers|         36     | -27| +239%|
 
 ### Key Insights
 
-Tweet output increased by 16%, leading to a 14% boost in impressions.
-Replies saw a 50% increase, but overall reply numbers remain low.
-New followers count is stagnant, indicating a need for more engagement and visibility strategies.
+Tweet output dipped by 44%, leading to a -46% dip in impressions as well.
+Replies saw a 75% increase, but overall reply numbers remain low.
+New followers count rose by +239%, given the dip and lose of followers in the previous quarter. 
+
+Overall, the decline in some metrics can be attributed to the higher number of events in the previous quarter, which naturally led to more content and activity compared to this quieter quarter.
+
+### Website Performance 
+
+<Figure
+  src="/img/posts/marketing-images/goggle-analysis-page-view.webp"
+   alt="A table showing AsyncAPI  Google Analytics Homepage performance from January to March"
+  caption="AsyncAPI Google Analytics Homepage performance from January to March"
+  className="text-center"
+/>
+
+
+**User Engagement Insights (Google Analytics)**
+**Homepage Performance**
+
+The main landing page, "AsyncAPI Initiative for event-driven APIs," received the highest traffic (17.3% of total views) but saw relatively low average time on page (17s), suggesting users may be skimming or using it as a jumping-off point.
+
+**Strong Interest in Version 3.0.0**
+
+The "3.0.0" documentation page held 16.6% of the total views with a solid 41s average time, showing deep interest in the newest spec release.
+
+**High Engagement Pages**
+
+"AsyncAPI document structure" and "Payload schema" had fewer visits but strong time-on-page (44s and 36s respectively), indicating users are spending time understanding these technical sections.
+
+Similarly, "Understanding AsyncAPIs with a Practical Example" drew good engagement (28s avg.) and "Coming from OpenAPI" shows decent dwell time (30s), making them great learning pathway pages.
+
+**Notable Drops**
+
+"Generator" and "Tools" saw good traffic but experienced drops in average time spent (-13.4% and +1.9%, respectively). This might mean users don’t find these pages as intuitive or relevant and could benefit from clearer CTAs or improved content structure.
 
 ## Event & Community Engagement
 
@@ -89,29 +119,58 @@ The first spotlight is the Ashmit story. We look forward to having more stories 
 
 ### Top 3 Best-Performing Posts
 
-/img/posts/marketing-images/best-performance-post.webp
+These posts were selected based on their impressions and number of clicks.
 
-- [We’re welcoming three new members to the AsyncAPI Technical Steering Committee (TSC)](https://www.linkedin.com/feed/update/urn:li:ugcPost:7287771093354893312/)
+<Figure
+  src="/img/posts/marketing-images/best-performance-post.webp"
+  alt="Line graph showing AsyncAPI LinkedIn follower growth increasing from 2,000 to 3,910 followers throughout 2024"
+  caption="A LinkedIn announcement showing the performance details of AsyncAPI Technical Steering Committee (TSC) post"
+  className="text-center"
+/>
 
-- Engagement Rate: 17.50%
-- Impressions: 2,320
-- Key Takeaway: Why it performed well-community-driven and thought leadership
+1. [We’re welcoming three new members to the AsyncAPI Technical Steering Committee (TSC)](https://www.linkedin.com/feed/update/urn:li:ugcPost:7287771093354893312/)
 
-/img/posts/marketing-images/second-best-performance-post.webp
+- Impressions: 2,470 Impressions
+- Likes: 67
+- Comments: 12
+- Clicks: 361
+- Engagement Rate: 18.18%
+- Key Takeaway: Why it performed well is because it's a community-driven and thought leadership post.
 
-- [Join us in welcoming Rohit T to the AsyncAPI Technical Steering Committee (TSC)! 🚀](https://www.linkedin.com/feed/update/urn:li:share:7297873118683914240/)
+<Figure
+  src="/img/posts/marketing-images/second-best-performance-post.webp"
+  alt="Ankit Kumar, Head of Developer & Customer Success at @Aklivity, as a speaker at AsyncAPI Conference Singapore 2025"
+  caption="A LinkedIn announcement showing the performance details of Ankit Kumar speaker post"
+  className="text-center"
+/>
 
-- Engagement Rate: 9.21%
-- Impressions: 890
-- Key Takeaway: What worked well, thought leadership, community
+2. [Join us in welcoming Ankit Kumar, Head of Developer & Customer Success at @Aklivity, as a speaker at AsyncAPI Conference Singapore 2025! 🚀](https://www.linkedin.com/feed/update/urn:li:share:7308442490213126145/)
 
-/img/posts/marketing-images/third-best-performance-post.webp
+- Impressions: 1,332
+- Likes: 54
+- Comments: 1
+- Clicks; 215
+- Engagement Rate: 20.42%
+- Key Takeaway: What worked well, thought leadership, community-driven 
 
-- [Event-Driven and OpenTelemetry Webinar](https://www.linkedin.com/feed/update/urn:li:share:7298401421090021376/)
 
-- Engagement Rate: 8.55%
-- Impressions: 725
-- Key Takeaway: Why it resonated— community-driven, high-value content, visual appeal
+<Figure
+  src="/img/posts/marketing-images/third-best-performance-post.webp"
+  alt="Announcement that Laurent Broudoux is stepping into a new role as an AsyncAPI Ambassador!"
+  caption="A LinkedIn announcement showing the performance details of Laurent Broudoux post"
+  className="text-center"
+/>
+
+3. [We’re thrilled to announce that Laurent Broudoux is stepping into a new role as an AsyncAPI Ambassador! 🚀](https://www.linkedin.com/feed/update/urn:li:share:7310201401454829568/)
+
+
+- Impressions: 998
+- Likes: 70
+- Comments: 5
+- Clicks: 49
+- Engagement Rate: 12.73%
+- Key Takeaway: It's community-driven, high-value content, visual appeal
+
 
 ## Future Marketing Strategy & Action Plan
 
