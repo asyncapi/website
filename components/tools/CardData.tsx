@@ -80,7 +80,7 @@ export const CardData = ({
   }, []);
 
   return (
-    <div className={twMerge('text-left text-sm text-gray-500', className)}>
+    <div className={twMerge('text-left text-sm text-gray-500 dark:text-white', className)}>
       {heading}
       <span className='group relative'>
         {outsideClick && visible[type] && (

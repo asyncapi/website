@@ -4,7 +4,6 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next';
 import React from 'react';
-
 import AlgoliaSearch from '@/components/AlgoliaSearch';
 import ScrollButton from '@/components/buttons/ScrollButton';
 import Banner from '@/components/campaigns/Banner';
@@ -25,10 +24,10 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         <script async defer src='https://buttons.github.io/buttons.js'></script>
       </Head>
       <AlgoliaSearch>
-        <div className='flex min-h-screen flex-col'>
+        <div className='flex min-h-screen flex-col dark:bg-black dark:text-white'>
           <Banner />
-          <StickyNavbar>
-            <NavBar className='mx-auto block max-w-screen-xl px-4 sm:px-6 lg:px-8' />
+          <StickyNavbar className='dark:bg-black/70 backdrop-blur-xl'>
+            <NavBar className='mx-auto block max-w-screen-xl px-4 sm:px-6 lg:px-8  backdrop-blur-xl' />
           </StickyNavbar>
           <Layout>
             <Component {...pageProps} />

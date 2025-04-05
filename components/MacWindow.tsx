@@ -16,7 +16,7 @@ interface IMacWindowProps {
  */
 export default function MacWindow({ className = '', contentClassName = '', title, children }: IMacWindowProps) {
   return (
-    <div className={`${className} rounded`} data-testid='MacWindow-main'>
+    <div className={`${className} rounded dark:bg-black`} data-testid='MacWindow-main'>
       <div className='flex px-4 py-2 text-left' data-testid='MacWindow-div'>
         <div>
           <span className='mr-2 inline-block size-2.5 rounded-full bg-mac-window-close'></span>

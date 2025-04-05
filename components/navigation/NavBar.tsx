@@ -144,12 +144,12 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   }, [asPath]);
 
   return (
-    <div className={`bg-white ${className} z-50`}>
-      <div className='flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-2'>
+    <div className={`bg-white ${className} w-[100vw] dark:bg-black dark:text-white  z-50`}>
+      <div className='flex w-full items-center justify-between py-6 lg:justify-start  lg:space-x-3'>
         {!hideLogo && (
           <div className='lg:w-auto lg:flex-1'>
-            <div className='flex'>
-              <Link href='/' className='cursor-pointer' aria-label='AsyncAPI' data-testid='Navbar-logo'>
+            <div className='flex '>
+              <Link href='/' className='cursor-pointer ' aria-label='AsyncAPI' data-testid='Navbar-logo'>
                 <AsyncAPILogo className='w-auto' />
               </Link>
             </div>
@@ -213,7 +213,11 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
           </div>
 
           {otherItems.map((item, index) => (
-            <NavItem href={item.href} key={index} text={item.text} target={item.target} className={item.className} />
+            <NavItem href={item.href}
+             key={index}
+              text={item.text}
+               target={item.target} 
+               className={`${item.className} dark:text-white`} />
           ))}
 
           <div className='justify-content flex flex-row items-center'>
@@ -241,6 +245,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               inNav={true}
             />
           </div>
+          
         </nav>
       </div>
 

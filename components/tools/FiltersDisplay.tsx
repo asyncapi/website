@@ -38,12 +38,12 @@ export default function FiltersDisplay({ checkedOptions = [], setCheckedOptions 
               <div
                 key={index}
                 className={twMerge(
-                  'hover:border-black border border-gray-600 text-gray-600 hover:text-black p-1 pb-0 rounded-2xl flex gap-1 items-start'
+                  'hover:border-black border border-gray-600 text-gray-600 dark:bg-white dark:text-black  hover:text-black p-1 pb-0 rounded-2xl px-1 flex gap-1 items-start'
                 )}
               >
-                <div className='m-auto h-fit text-xs'>{items}</div>
+                <div className='m-auto  mb-[1px] h-fit text-xs'>{items}</div>
                 <button
-                  className='mt-[-2px] rounded-full p-1 hover:bg-gray-100'
+                  className='mt-[-2px] rounded-full p-1 dark:hover:bg-gray-600 hover:bg-gray-100'
                   onClick={(event) => handleClickOption(event, items, checkedOptions, setCheckedOptions)}
                   data-testid='Filters-Display-Button'
                 >

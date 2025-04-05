@@ -68,7 +68,7 @@ export default forwardRef(function BlogPostItem(
               loading='lazy'
               data-testid='BlogPostItem-Img'
             />
-            <div className='flex flex-1 flex-col justify-between bg-white p-6'>
+            <div className='flex flex-1 flex-col justify-between bg-white dark:bg-black dark:text-white  p-6'>
               <div className='flex-1'>
                 <Paragraph typeStyle={ParagraphTypeStyle.sm} textColor='text-indigo-500'>
                   <span
@@ -81,7 +81,7 @@ export default forwardRef(function BlogPostItem(
                   <Heading level={HeadingLevel.h5} typeStyle={HeadingTypeStyle.smSemibold} className='mt-2'>
                     {post.title}
                   </Heading>
-                  <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-3'>
+                  <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-3 dark:text-white'>
                     <TextTruncate element='span' line={4} text={post.excerpt} />
                   </Paragraph>
                 </span>
@@ -99,7 +99,7 @@ export default forwardRef(function BlogPostItem(
                             <button
                               key={index}
                               data-alt={author.name}
-                              className='cursor-pointer border-none bg-inherit p-0 hover:underline'
+                              className='cursor-pointer border-none bg-inherit p-0 hover:underline dark:text-white'
                               onClick={(e) => {
                                 e.preventDefault();
 
@@ -120,7 +120,7 @@ export default forwardRef(function BlogPostItem(
                         ))}
                     </span>
                   </Heading>
-                  <Paragraph typeStyle={ParagraphTypeStyle.sm} className='flex'>
+                  <Paragraph typeStyle={ParagraphTypeStyle.sm} className='flex dark:text-white'>
                     <time dateTime={post.date}>{moment(post.date).format('MMMM D, YYYY')}</time>
                     <span className='mx-1'>&middot;</span>
                     <span>{post.readingTime} min read</span>
