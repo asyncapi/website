@@ -20,7 +20,7 @@
       "resourcePath": "/asyncapi/bindings/pull/270",
       "repo": "asyncapi/bindings",
       "labels": [],
-      "score": 32.16355393991698
+      "score": 32.45072852866624
     },
     {
       "id": "I_kwDOBW5R_c5BIl5P",
@@ -92,7 +92,7 @@
           "color": "F4D03F"
         }
       ],
-      "score": 18.953522857451077
+      "score": 19.240697446200336
     },
     {
       "id": "MDU6SXNzdWU5OTE0Mzc3MjY=",
@@ -175,28 +175,15 @@
       "score": 14.358729437462937
     },
     {
-      "id": "I_kwDODyzcIc5gD3jB",
+      "id": "I_kwDODwv8N86un74M",
       "isPR": false,
-      "isAssigned": false,
-      "title": "Automate `paper work` around project governance",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/.github/issues/210",
-      "repo": "asyncapi/.github",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        }
-      ],
-      "score": 13.497205671215161
+      "isAssigned": true,
+      "title": "Add AsyncAPI Meetups Page to Conference Website",
+      "author": "Shriya-Chauhan",
+      "resourcePath": "/asyncapi/conference-website/issues/644",
+      "repo": "asyncapi/conference-website",
+      "labels": [],
+      "score": 13.78438025996442
     }
   ],
   "goodFirstIssues": [
