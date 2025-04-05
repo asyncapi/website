@@ -1,7 +1,7 @@
 import { mkdir } from 'fs/promises';
 import { resolve } from 'path';
 
-import { writeJSON } from '../utils/readAndWriteJson';
+import { writeJSON } from '../utils';
 
 /**
  * Interface for the properties required to build the finance info list.

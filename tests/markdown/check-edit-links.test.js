@@ -1,3 +1,5 @@
+import { logger } from '../../scripts/utils';
+
 const path = require('path');
 const fetch = require('node-fetch-2');
 const editOptions = require('../../config/edit-page-config.json');
@@ -9,10 +11,10 @@ const {
   main
 } = require('../../scripts/markdown/check-edit-links.ts');
 const { determineEditLinkData, processBatchData, testPaths } = require('../fixtures/markdown/check-edit-links-data');
-const { logger } = require('../../scripts/utils/logger.ts');
 
-jest.mock('../../scripts/utils/logger', () => ({
-  logger: { info: jest.fn() }
+jest.mock('../../scripts/utils', () => ({
+  logger: { info: jest.fn() },
+  pause: jest.fn().mockResolvedValue(undefined)
 }));
 jest.mock('node-fetch-2', () => jest.fn());
 
@@ -138,6 +140,7 @@ describe('URL Checker Tests', () => {
       });
       const results = await checkUrls(testPaths);
       expect(results.length).toBe(2);
+      expect(results[0].urlPath).toContain('migration');
     });
   });
 

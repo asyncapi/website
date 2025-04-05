@@ -1,8 +1,12 @@
-const { resolve } = require('path');
-const { writeJSON } = require('../../scripts/utils/readAndWriteJson.ts');
-const { buildAdoptersList } = require('../../scripts/adopters/index.ts');
+import { writeJSON } from '../../scripts/utils.ts';
+import { buildAdoptersList } from '../../scripts/adopters/index.ts';
 
-jest.mock('../../scripts/utils/readAndWriteJson.ts');
+const { resolve } = require('path');
+
+
+jest.mock('../../scripts/utils.ts', () => ({
+  writeJSON: jest.fn()
+}));
 
 describe('buildAdoptersList', () => {
   test('should call writeJSON with correct arguments', async () => {
