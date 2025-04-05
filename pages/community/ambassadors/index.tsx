@@ -4,6 +4,7 @@ import React from 'react';
 
 import type { Ambassador } from '@/types/pages/community/Community';
 import { HeadingTypeStyle } from '@/types/typography/Heading';
+import { makeStaticProps } from '@/utils/getStatic';
 
 import Button from '../../../components/buttons/Button';
 import GenericLayout from '../../../components/layout/GenericLayout';
@@ -11,6 +12,10 @@ import NewsletterSubscribe from '../../../components/NewsletterSubscribe';
 import Heading from '../../../components/typography/Heading';
 import ambassadorList from '../../../config/ambassador_lists.json';
 import ambassadors from '../../../config/AMBASSADORS_MEMBERS.json';
+
+const getStaticProps = makeStaticProps(['landing-page', 'footer', 'common', 'component']);
+
+export { getStaticProps };
 
 /**
  * @description Add additional user information to the user object having ambassador data

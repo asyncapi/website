@@ -4,6 +4,7 @@ import YouTubeEmbed from 'react-youtube-embed';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
+import { makeStaticProps } from '@/utils/getStatic';
 
 import InlineHelp from '../components/InlineHelp';
 import GenericLayout from '../components/layout/GenericLayout';
@@ -12,6 +13,10 @@ import Heading from '../components/typography/Heading';
 import Paragraph from '../components/typography/Paragraph';
 import TextLink from '../components/typography/TextLink';
 import Warning from '../components/Warning';
+
+const getStaticProps = makeStaticProps(['landing-page', 'footer', 'common', 'component']);
+
+export { getStaticProps };
 
 interface RoadmapData {
   outcomes: {

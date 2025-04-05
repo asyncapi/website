@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
+import { makeStaticProps } from '@/utils/getStatic';
 
 import Button from '../../components/buttons/Button';
 import GithubButton from '../../components/buttons/GithubButton';
@@ -9,6 +10,10 @@ import IconRocket from '../../components/icons/Rocket';
 import GenericLayout from '../../components/layout/GenericLayout';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
+
+const getStaticProps = makeStaticProps(['landing-page', 'footer', 'common', 'component']);
+
+export { getStaticProps };
 
 const exampleModelinaCode = `import { JavaGenerator, JAVA_COMMON_PRESET } from '@asyncapi/modelina'
   
