@@ -3,6 +3,14 @@ import ErrorPage from 'next/error';
 import HtmlHead from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  LinkedinIcon,
+  LinkedinShareButton,
+  TwitterShareButton,
+  XIcon
+} from 'react-share';
 
 import type { IPosts } from '@/types/post';
 
@@ -38,6 +46,9 @@ export default function BlogLayout({
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+  const shareUrl = `https://www.asyncapi.com${post.slug}`;
+  const shareText = `Check out this blog: ${post.title}`;
+  const hashTags = ['AsyncAPI', 'TechBlog', 'DevCommunity', 'TechTrends'];
 
   return (
     <BlogContext.Provider value={{ post }}>
@@ -80,34 +91,24 @@ export default function BlogLayout({
                   <span className='mx-1'>&middot;</span>
                   <span>{post.readingTime} min read</span>
                 </div>
+                <div className='mt-3 flex space-x-3'>
+                  <TwitterShareButton url={shareUrl} title={shareText} hashtags={hashTags}>
+                    <XIcon size={32} round />
+                  </TwitterShareButton>
+                  <LinkedinShareButton url={shareUrl} title={shareText} source='AsyncAPI Blog'>
+                    <LinkedinIcon size={32} round />
+                  </LinkedinShareButton>
+                  <FacebookShareButton url={shareUrl} title={shareText} hashtag='#AsyncAPI'>
+                    <FacebookIcon size={32} round />
+                  </FacebookShareButton>
+                </div>
               </div>
             </div>
           </header>
           <article className='mb-32'>
             <Head title={post.title} description={post.excerpt} image={post.cover} />
             <HtmlHead>
-              <script
-                type='text/javascript'
-                src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cb852c7b57ed596'
-                async
-              />
-              <style>{`
-                /* AddThis hack */
 
-                #at4-share {
-                    left: 50%;
-                    margin-left: -500px !important;
-                    position: absolute;
-
-                    &amp;.addthis-animated {
-                      animation-duration: 0s !important;
-                    }
-                }
-
-                #at4-scc {
-                    display: none !important;
-                }
-              `}</style>
               {post.canonical && <link rel='canonical' href={post.canonical} />}
             </HtmlHead>
             <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className='my-6 w-full' />
