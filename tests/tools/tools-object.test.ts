@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import type { AsyncAPITool } from '@/types/scripts/tools';
+
 import { convertTools, createToolObject } from '../../scripts/tools/tools-object';
 import {
   createExpectedToolObject,
@@ -23,15 +25,17 @@ jest.mock('../../scripts/tools/categorylist', () => ({
 }));
 
 describe('Tools Object', () => {
+  const axiosMock = axios as jest.Mocked<typeof axios>;
+
   beforeEach(() => {
-    axios.get.mockClear();
+    axiosMock.get.mockClear();
     console.error = jest.fn();
   });
 
-  const mockToolData = (toolContent, toolNames = ['valid-tool']) => {
+  const mockToolData = (toolContent: AsyncAPITool, toolNames = ['valid-tool']) => {
     const mockData = createMockData(toolNames.map((name) => ({ name: `.asyncapi-tool-${name}`, repoName: name })));
 
-    axios.get.mockResolvedValue({ data: toolContent });
+    axiosMock.get.mockResolvedValue({ data: toolContent });
 
     return mockData;
   };
@@ -42,7 +46,7 @@ describe('Tools Object', () => {
       description: 'Test Description',
       hasCommercial: true,
       additionalLinks: { docsUrl: 'https://docs.example.com' }
-    });
+    }) as AsyncAPITool;
 
     const expected = createExpectedToolObject({
       title: 'Test Tool',
@@ -51,7 +55,7 @@ describe('Tools Object', () => {
       additionalLinks: { docsUrl: 'https://docs.example.com' }
     });
 
-    const result = await createToolObject(toolFile, expected.links.repoUrl, 'Repository Description', true);
+    const result = await createToolObject(toolFile, expected.links!.repoUrl, 'Repository Description', true);
 
     expect(result).toEqual(expected);
   });
@@ -71,6 +75,8 @@ describe('Tools Object', () => {
       additionalLinks: { docsUrl: 'https://docs.example.com' }
     });
 
+    // @ts-ignore, ignore the error for missing properties
+
     expected.filters.isAsyncAPIOwner = '';
     const result = await createToolObject(toolFile);
 
@@ -78,7 +84,7 @@ describe('Tools Object', () => {
   });
 
   it('should convert tools data correctly', async () => {
-    const toolContent = createToolFileContent({ title: 'Valid Tool', categories: ['Category1'] });
+    const toolContent = createToolFileContent({ title: 'Valid Tool', categories: ['bundler'] });
     const mockData = mockToolData(toolContent);
 
     const result = await convertTools(mockData);
@@ -88,6 +94,7 @@ describe('Tools Object', () => {
   });
 
   it('should assign tool to Others category if no matching category is found', async () => {
+    // @ts-ignore, ignore the error for unknown category
     const toolContent = createToolFileContent({ title: 'Unknown Category Tool', categories: ['UnknownCategory'] });
     const mockData = mockToolData(toolContent);
 
@@ -116,7 +123,7 @@ describe('Tools Object', () => {
   it('should add duplicate tool objects to the same category', async () => {
     const toolContent = createToolFileContent({
       title: 'Duplicate Tool',
-      categories: ['Category1']
+      categories: ['bundler']
     });
 
     const mockData = createMockData([
@@ -124,7 +131,7 @@ describe('Tools Object', () => {
       { name: '.asyncapi-tool-dup2', repoName: 'dup2' }
     ]);
 
-    axios.get.mockResolvedValue({ data: toolContent });
+    axiosMock.get.mockResolvedValue({ data: toolContent });
 
     const result = await convertTools(mockData);
 
@@ -136,6 +143,7 @@ describe('Tools Object', () => {
   it('should add tool to Others category only once', async () => {
     const toolContent = createToolFileContent({
       title: 'Duplicate Tool in Others',
+      // @ts-ignore, ignore the error for unknown category
       categories: ['UnknownCategory']
     });
 
@@ -155,13 +163,15 @@ describe('Tools Object', () => {
       }
     ]);
 
-    axios.get.mockRejectedValue(new Error('Network Error'));
+    axiosMock.get.mockRejectedValue(new Error('Network Error'));
 
     await expect(convertTools(mockData)).rejects.toThrow('Network Error');
   });
 
   it('should handle malformed JSON in tool file', async () => {
     const malformedContent = createMalformedYAML();
+
+    // @ts-ignore, ignore the error for wrong data type
 
     await expect(convertTools(malformedContent)).rejects.toThrow();
   });
@@ -181,7 +191,7 @@ describe('Tools Object', () => {
       }
     ]);
 
-    axios.get.mockResolvedValue({ data: toolFile });
+    axiosMock.get.mockResolvedValue({ data: toolFile });
 
     const result = await convertTools(mockData);
 
@@ -200,8 +210,8 @@ describe('Tools Object', () => {
     ]);
 
     // Mock axios.get to throw a non-Error object
-    axios.get.mockImplementation(() => {
-      // eslint-disable-next-line no-throw-literal
+    axiosMock.get.mockImplementation(() => {
+      // eslint-disable-next-line no-throw-literal, @typescript-eslint/no-throw-literal
       throw 'This is a string error, not an Error object';
     });
 
@@ -222,7 +232,7 @@ describe('Tools Object', () => {
     // Create a tool with duplicate categories
     const toolContent = createToolFileContent({
       title: 'Duplicate Category Tool',
-      categories: ['Category1', 'Category1'] // Same category listed twice
+      categories: ['api', 'api'] // Same category listed twice
     });
 
     const mockData = mockToolData(toolContent);

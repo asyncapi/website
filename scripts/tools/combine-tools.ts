@@ -193,9 +193,11 @@ const combineTools = async (
 
         finalTools[key].toolsList = [...automatedResults, ...manualResults].sort((tool, anotherTool) => {
           if (!tool?.title || !anotherTool?.title) {
-            logger.error(
-              `source: combine-tools.ts, tool title is missing. Tool: ${tool} \n AnotherTool: ${anotherTool}`
-            );
+            logger.error({
+              message: 'Tool title is missing during sort',
+              detail: { tool, anotherTool },
+              source: 'combine-tools.ts'
+            });
 
             return 0;
           }

@@ -29,12 +29,12 @@ function isValidURL(str: string) {
  */
 export interface FrontMatter {
   title: string;
-  date?: string;
-  type?: string;
-  tags?: string[];
-  cover?: string;
+  date: string;
+  type: string;
+  tags: string[];
+  cover: string;
   weight: number;
-  authors?: { name: string; link: string; photo: string }[];
+  authors: { name: string; link: string; photo: string }[];
 }
 
 /**

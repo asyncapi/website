@@ -27,6 +27,8 @@ jest.mock('googleapis', () => {
 describe('buildMeetings', () => {
   const testDir = path.join(__dirname, 'testCache');
   const outputFilePath = path.join(testDir, 'meetings.json');
+  const mockCalendar = google.calendar('v3').events.list as jest.Mock;
+  const mockGoogleAuth = google.auth.GoogleAuth as unknown as jest.Mock;
 
   beforeEach(() => {
     jest.clearAllMocks();
@@ -41,7 +43,7 @@ describe('buildMeetings', () => {
   });
 
   it('should fetch events, process them, and write to a file', async () => {
-    google.calendar().events.list.mockResolvedValue({ data: { items: mockEvents } });
+    mockCalendar.mockResolvedValue({ data: { items: mockEvents } });
 
     await buildMeetings(outputFilePath);
 
@@ -50,7 +52,7 @@ describe('buildMeetings', () => {
       credentials: { key: 'test_key' }
     });
     expect(google.calendar).toHaveBeenCalled();
-    expect(google.calendar().events.list).toHaveBeenCalledWith({
+    expect(google.calendar('v3').events.list).toHaveBeenCalledWith({
       calendarId: 'test_calendar_id',
       timeMax: expect.any(String),
       timeMin: expect.any(String)
@@ -63,46 +65,54 @@ describe('buildMeetings', () => {
   });
 
   it('should throw an error if the Google API call fails', async () => {
-    google.calendar().events.list.mockRejectedValue(new Error('Google API error'));
+    mockCalendar.mockRejectedValue(new Error('Google API error'));
 
     try {
       await buildMeetings(outputFilePath);
     } catch (err) {
-      expect(err.message).toContain('Google API error');
+      if (err instanceof Error) {
+        expect(err.message).toContain('Google API error');
+      } else {
+        throw new Error('Unexpected error type');
+      }
     }
   });
 
   it('should throw an error if authentication fails', async () => {
-    google.auth.GoogleAuth.mockImplementation(() => {
+    mockGoogleAuth.mockImplementation(() => {
       throw new Error('Authentication failed');
     });
 
     try {
       await buildMeetings(outputFilePath);
     } catch (err) {
-      expect(err.message).toContain('Authentication failed');
+      if (err instanceof Error) {
+        expect(err.message).toContain('Authentication failed');
+      }
     }
   });
 
   it('should handle file write errors', async () => {
-    google.auth.GoogleAuth.mockImplementation(() => ({
+    mockGoogleAuth.mockImplementation(() => ({
       getClient: jest.fn()
     }));
 
-    google.calendar().events.list.mockResolvedValue({ data: { items: mockEvents } });
+    mockCalendar.mockResolvedValue({ data: { items: mockEvents } });
 
     const invalidPath = '/root/invalid_dir/meetings.json';
 
     try {
       await buildMeetings(invalidPath);
     } catch (err) {
-      expect(err.message).toMatch(/ENOENT|EACCES/);
+      if (err instanceof Error) {
+        expect(err.message).toMatch(/ENOENT|EACCES/);
+      } else {
+        throw new Error('Unexpected error type');
+      }
     }
   });
 
   it('should throw an error if the data structure received from Google Calendar API is invalid', async () => {
-    const mockCalendar = google.calendar().events.list;
-
     mockCalendar.mockResolvedValueOnce({
       data: {
         items: null // or {} or any non-array value to trigger the error
@@ -115,8 +125,6 @@ describe('buildMeetings', () => {
   });
 
   it('should throw an error if start.dateTime is missing in the event', async () => {
-    const mockCalendar = google.calendar().events.list;
-
     mockCalendar.mockResolvedValueOnce({
       data: {
         items: [

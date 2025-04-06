@@ -13,7 +13,7 @@ import {
 import { logger } from '../../scripts/utils/logger';
 
 jest.mock('../../scripts/utils/logger', () => ({
-  logger: { error: jest.fn(() => jest.fn()), warn: jest.fn(() => jest.fn()) }
+  logger: { error: jest.fn(), warn: jest.fn() }
 }));
 
 describe('Frontmatter Validator', () => {
@@ -181,6 +181,7 @@ describe('Frontmatter Validator', () => {
   it('does not push errors if docs frontmatter is valid', () => {
     const frontmatter = { title: 'Valid Title', weight: 10 };
 
+    // @ts-ignore, to simulate valid frontmatter
     const errors = validateDocs(frontmatter);
 
     expect(errors).toBeNull();
