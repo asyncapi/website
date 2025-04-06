@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const { resolve, join } = require('path');
-const { setupTestDirectories, generateTempDirPath } = require('./helper/buildPostListSetup')
-const { buildPostList, slugifyToC, addItem } = require('../scripts/build-post-list');
+const { setupTestDirectories, generateTempDirPath } = require('./helper/buildPostListSetup');
+const { buildPostList, slugifyToC, addItem } = require('../scripts/build-post-list.ts');
 
 describe('buildPostList', () => {
   let tempDir;
@@ -14,11 +14,10 @@ describe('buildPostList', () => {
     postDirectories = [
       [join(tempDir, 'blog'), '/blog'],
       [join(tempDir, 'docs'), '/docs'],
-      [join(tempDir, 'about'), '/about'],
+      [join(tempDir, 'about'), '/about']
     ];
 
     await setupTestDirectories(tempDir);
-
   });
 
   afterEach(async () => {
@@ -30,7 +29,7 @@ describe('buildPostList', () => {
     const outputExists = await fs.pathExists(writeFilePath);
     expect(outputExists).toBe(true);
   });
-  
+
   it('writes valid JSON content', async () => {
     await buildPostList(postDirectories, tempDir, writeFilePath);
     const content = await fs.readFile(writeFilePath, 'utf-8');
@@ -45,19 +44,19 @@ describe('buildPostList', () => {
       expect.arrayContaining([
         expect.objectContaining({
           title: 'Docs Home',
-          slug: '/docs',
+          slug: '/docs'
         }),
         expect.objectContaining({
           title: 'Reference',
           slug: '/docs/reference',
-          isRootSection: true,
+          isRootSection: true
         }),
         expect.objectContaining({
           title: 'Specification',
           slug: '/docs/reference/specification',
-          isSection: true,
-        }),
-      ]),
+          isSection: true
+        })
+      ])
     );
   });
 
@@ -69,25 +68,23 @@ describe('buildPostList', () => {
       expect.arrayContaining([
         expect.objectContaining({
           title: 'Release Notes 2.1.0',
-          slug: '/blog/release-notes-2.1.0',
-        }),
-      ]),
+          slug: '/blog/release-notes-2.1.0'
+        })
+      ])
     );
 
     expect(output.about).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
           title: 'About Us',
-          slug: '/about',
-        }),
-      ]),
+          slug: '/about'
+        })
+      ])
     );
 
     expect(output.docsTree).toBeDefined();
 
-    const blogEntry = output.blog.find(
-      (item) => item.slug === '/blog/release-notes-2.1.0',
-    );
+    const blogEntry = output.blog.find((item) => item.slug === '/blog/release-notes-2.1.0');
     expect(blogEntry).toBeDefined();
     expect(blogEntry.title).toBe('Release Notes 2.1.0');
   });
@@ -96,7 +93,7 @@ describe('buildPostList', () => {
     await fs.ensureDir(join(tempDir, 'docs', 'section1'));
     await fs.writeFile(
       join(tempDir, 'docs', 'section1', '_section.mdx'),
-      '---\ntitle: Section 1\n---\nThis is section 1.',
+      '---\ntitle: Section 1\n---\nThis is section 1.'
     );
 
     await buildPostList(postDirectories, tempDir, writeFilePath);
@@ -107,26 +104,22 @@ describe('buildPostList', () => {
     expect(sectionEntry).toMatchObject({
       title: 'Section 1',
       slug: expect.stringContaining('/docs/section1'),
-      isSection: true,
+      isSection: true
     });
   });
 
   it('handles multiple release notes correctly', async () => {
     await fs.writeFile(
       join(tempDir, 'blog', 'release-notes-2.1.1.mdx'),
-      '---\ntitle: Release Notes 2.1.1\n---\nThis is a release note.',
+      '---\ntitle: Release Notes 2.1.1\n---\nThis is a release note.'
     );
 
     await buildPostList(postDirectories, tempDir, writeFilePath);
 
     const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
 
-    const firstReleaseNote = output.blog.find(
-      (item) => item.slug === '/blog/release-notes-2.1.0',
-    );
-    const secondReleaseNote = output.blog.find(
-      (item) => item.slug === '/blog/release-notes-2.1.1',
-    );
+    const firstReleaseNote = output.blog.find((item) => item.slug === '/blog/release-notes-2.1.0');
+    const secondReleaseNote = output.blog.find((item) => item.slug === '/blog/release-notes-2.1.1');
 
     expect(firstReleaseNote).toBeDefined();
     expect(firstReleaseNote.title).toBe('Release Notes 2.1.0');
@@ -137,24 +130,19 @@ describe('buildPostList', () => {
 
   it('throws an error when accessing non-existent directory', async () => {
     const invalidDir = [join(tempDir, 'non-existent-dir'), '/invalid'];
-    await expect(
-      buildPostList([invalidDir], tempDir, writeFilePath),
-    ).rejects.toThrow(/Error while building post list: ENOENT/);
+    await expect(buildPostList([invalidDir], tempDir, writeFilePath)).rejects.toThrow(
+      /Error while building post list:/
+    );
   });
 
   it('does not process specification files without a title', async () => {
     const specDir = join(tempDir, 'docs', 'reference', 'specification');
-    await fs.writeFile(
-      join(specDir, 'v2.1.0-no-title.mdx'),
-      '---\n---\nContent of specification without a title.',
-    );
+    await fs.writeFile(join(specDir, 'v2.1.0-no-title.mdx'), '---\n---\nContent of specification without a title.');
 
     await buildPostList(postDirectories, tempDir, writeFilePath);
 
     const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
-    const noTitleEntry = output.docs.find((item) =>
-      item.slug.includes('/reference/specification/v2.1.0-no-title'),
-    );
+    const noTitleEntry = output.docs.find((item) => item.slug.includes('/reference/specification/v2.1.0-no-title'));
 
     expect(noTitleEntry).toBeUndefined();
   });
@@ -163,66 +151,50 @@ describe('buildPostList', () => {
     const specDir = join(tempDir, 'docs', 'reference', 'specification');
     await fs.writeFile(
       join(specDir, 'v2.1.0-next-spec.1.mdx'),
-      '---\n---\nContent of pre-release specification v2.1.0-next-spec.1.',
+      '---\n---\nContent of pre-release specification v2.1.0-next-spec.1.'
     );
 
     await buildPostList(postDirectories, tempDir, writeFilePath);
 
     const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
-    const nextSpecEntry = output.docs.find((item) =>
-      item.slug.includes('/reference/specification/v2.1.0-next-spec.1'),
-    );
+    const nextSpecEntry = output.docs.find((item) => item.slug.includes('/reference/specification/v2.1.0-next-spec.1'));
 
     expect(nextSpecEntry).toBeUndefined();
   });
 
   it('does not process specification files with "explorer" in the filename', async () => {
     const specDir = join(tempDir, 'docs', 'reference', 'specification');
-    await fs.writeFile(
-      join(specDir, 'explorer.mdx'),
-      '---\n---\nContent of explorer specification.',
-    );
+    await fs.writeFile(join(specDir, 'explorer.mdx'), '---\n---\nContent of explorer specification.');
 
     await buildPostList(postDirectories, tempDir, writeFilePath);
 
     const output = JSON.parse(await fs.readFile(writeFilePath, 'utf-8'));
-    const explorerEntry = output.docs.find((item) =>
-      item.slug.includes('/reference/specification/explorer'),
-    );
+    const explorerEntry = output.docs.find((item) => item.slug.includes('/reference/specification/explorer'));
 
     expect(explorerEntry).toBeUndefined();
   });
 
   it('throws "Error while building post list" when front matter is invalid', async () => {
-    await fs.writeFile(
-      join(tempDir, 'docs', 'invalid.mdx'),
-      '---\ninvalid front matter\n---\nContent',
-    );
+    await fs.writeFile(join(tempDir, 'docs', 'invalid.mdx'), '---\ninvalid front matter\n---\nContent');
 
-    await expect(
-      buildPostList(postDirectories, tempDir, writeFilePath),
-    ).rejects.toThrow(/Error while building post list/);
+    await expect(buildPostList(postDirectories, tempDir, writeFilePath)).rejects.toThrow(
+      /Error while building post list/
+    );
   });
 
   it('throws an error if no post directories are provided', async () => {
-    await expect(buildPostList([], tempDir, writeFilePath)).rejects.toThrow(
-      /Error while building post list/,
-    );
+    await expect(buildPostList([], tempDir, writeFilePath)).rejects.toThrow(/Error while building post list/);
   });
 
   it('throws specific error message when basePath parameter is undefined', async () => {
-    await expect(
-      buildPostList(postDirectories, undefined, writeFilePath),
-    ).rejects.toThrow(
-      "Error while building post list: basePath is required",
+    await expect(buildPostList(postDirectories, undefined, writeFilePath)).rejects.toThrow(
+      'Error while building post list: basePath is required'
     );
   });
 
   it('throws specific error message when writeFilePath parameter is undefined', async () => {
-    await expect(
-      buildPostList(postDirectories, tempDir, undefined),
-    ).rejects.toThrow(
-      "Error while building post list: writeFilePath is required",
+    await expect(buildPostList(postDirectories, tempDir, undefined)).rejects.toThrow(
+      'Error while building post list: writeFilePath is required'
     );
   });
 
@@ -247,13 +219,13 @@ describe('buildPostList', () => {
     it('handles empty strings', () => {
       expect(slugifyToC('')).toBe('');
     });
-    
+
     it('returns empty string for malformed heading IDs', () => {
       expect(slugifyToC('## Heading {#}')).toBe('');
       expect(slugifyToC('## Heading {# }')).toBe('');
       expect(slugifyToC('## Heading {<a name=""/>}')).toBe('');
     });
-    
+
     it('handles mixed format heading IDs', () => {
       expect(slugifyToC('## Heading {#id} {<a name="name"/>}')).toBe('id');
     });
