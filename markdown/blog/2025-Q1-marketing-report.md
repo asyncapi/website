@@ -13,7 +13,7 @@ authors:
 excerpt: "AsyncAPI's marketing efforts saw steady growth, increased engagement, and a stronger community presence. Looking ahead, we aim to amplify impact and expand outreach."
 ---
 
-AsyncAPI’s marketing efforts over the past three months have focused on expanding community reach, driving awareness for key initiatives, and solidifying our position in the API and open-source ecosystem.
+AsyncAPI’s marketing efforts over the past three months have been focused on expanding community reach, driving awareness for key initiatives, and solidifying our position in the API and open-source ecosystem.
 
 This report provides an overview of our marketing activities, including social media performance, content marketing, events, and future strategies to optimize our impact.
 
@@ -21,7 +21,7 @@ This report provides an overview of our marketing activities, including social m
 
 - Enhance brand awareness and positioning within the API and open-source space.
 - Increase engagement across social media and community platforms.
-- Promote AsyncAPI-led events and initiatives, including Google Summer of Code (GSoC) and the AsyncAPI Confrences and Webinar.
+- Promote AsyncAPI-led events and initiatives, including Google Summer of Code (GSoC), the AsyncAPI Conferences and Webinars.
 - Expand content marketing efforts to provide valuable industry insights and drive audience engagement.
 
 ## Marketing Performance Overview
@@ -97,7 +97,7 @@ Similarly, "Understanding AsyncAPIs with a Practical Example" drew good engageme
 ### Google Summer of Code (GSoC) Mentorship Program
 
 - AsyncAPI has successfully joined Google Summer of Code 2025, providing mentorship opportunities to aspiring open-source contributors.
-- [A dedicated informational webinar was held on March 14](https://www.youtube.com/watch?v=R7pl1F2dYLo), led by GSoC the Program Coordinator Elegbede (Ace) Azeez, to guide potential mentees.
+- [A dedicated informational webinar was held on March 14](https://www.youtube.com/watch?v=R7pl1F2dYLo), led by our GSoC Program Coordinator Elegbede (Ace) Azeez, to guide potential mentees.
 - Outcome: Increased awareness and participation in the AsyncAPI open-source ecosystem.
 
 ### Community Spotlight Initiative
