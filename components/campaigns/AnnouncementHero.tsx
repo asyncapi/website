@@ -57,11 +57,11 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
           items-center justify-center rounded-full bg-primary-500 opacity-50 hover:bg-primary-600 md:opacity-100`}
             onClick={goToPrevious}
           >
-            <ArrowLeft className='w-4 text-white' />
+            <ArrowLeft className='text-white' />
           </div>
         )}
         <div className='relative flex w-5/6 flex-col items-center justify-center gap-2'>
-          <div className='relative flex min-h-72 w-full items-center justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
+          <div className='relative flex min-h-72 w-full justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
             {visibleBanners.map((banner, index) => {
               // Only render the active banner
               const isVisible = index === activeIndex;
