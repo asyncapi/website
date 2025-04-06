@@ -64,7 +64,7 @@ export default function Index({ contributor }: IndexProps) {
       title='AsyncAPI Ambassador Program'
       description='The home for developer communities'
       image={image}
-      hideBanner={true}
+      // hideBanner={true}
       wide
     >
       <div className='mt-10 flex flex-col items-center justify-between md:mt-20 md:flex-row'>
