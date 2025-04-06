@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/5hY8yi6DXyE/hqdefault.jpg",
-    "title": "Marketing WG Meeting, 14:00 UTC Tuesday December 17th 2024",
-    "description": "Welcoming the 2024 cohort of the AsyncAPI mentorship program.",
-    "videoId": "5hY8yi6DXyE"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/QWRcCvDmf04/hqdefault.jpg",
-    "title": "AsyncAPI Mentorship Program 2024 Cohort Kick-off",
-    "description": "Welcoming the 2024 cohort of the AsyncAPI mentorship program.",
-    "videoId": "QWRcCvDmf04"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/XirMXiBNaBM/hqdefault.jpg",
-    "title": "Community Meeting, 16:00 UTC Tuesday November 26th 2024",
+    "image_url": "https://i.ytimg.com/vi/Umb596VfDow/hqdefault.jpg",
+    "title": "Design WG Meeting",
     "description": "",
-    "videoId": "XirMXiBNaBM"
+    "videoId": "Umb596VfDow"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/Q2cvxsUUgzA/hqdefault.jpg",
-    "title": "AsyncAPI-Powered Event Feeds: 3 Steps to Streaming",
-    "description": "In this livestream, we'll dive into the challenges and benefits of using AsyncAPI for building event-driven architectures.",
-    "videoId": "Q2cvxsUUgzA"
+    "image_url": "https://i.ytimg.com/vi/GVL846mrWUA/hqdefault.jpg",
+    "title": "AsyncAPI Community Working Group Meeting, March 25th 2025",
+    "description": "AsyncAPI Community Working Group Meeting Agenda: Welcome and agenda alignment (3:00 PM - 3:05 PM) ➢ Facilitator: Thulie ...",
+    "videoId": "GVL846mrWUA"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/9MaHh4b-rmc/hqdefault.jpg",
-    "title": "Broadening the API Landscape: AsyncAPI and CloudEvents in the Enterprise -  Daniel Kocot",
-    "description": "",
-    "videoId": "9MaHh4b-rmc"
+    "image_url": "https://i.ytimg.com/vi/KYSsSRkUPqM/hqdefault.jpg",
+    "title": "AsyncAPI Community Working Group Meeting, March 25th 2025",
+    "description": "AsyncAPI Community Working Group Meeting Agenda: Welcome and agenda alignment (3:00 PM - 3:05 PM) ➢ Facilitator: Thulie ...",
+    "videoId": "KYSsSRkUPqM"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/vO6Gy6_0O6A/hqdefault.jpg",
+    "title": "AsyncAPI Marketing Working Group Meeting, March 18th 2025",
+    "description": "https://github.com/asyncapi/community/issues/1754.",
+    "videoId": "vO6Gy6_0O6A"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/R7pl1F2dYLo/hqdefault.jpg",
+    "title": "Google Summer Of Code 2025 Experience",
+    "description": "Thinking about joining us for GSoC 2025 but not sure where to start? In this stream, I'll break down everything—from finding the ...",
+    "videoId": "R7pl1F2dYLo"
   }
 ]

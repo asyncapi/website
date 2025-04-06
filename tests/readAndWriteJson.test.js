@@ -1,17 +1,15 @@
-const { promises: fs } = require('fs');
-const { convertToJson } = require('../scripts/utils');
-const writeJSON = require("../scripts/utils/readAndWriteJson");
-const { yamlString, jsonObject } = require("./fixtures/utilsData");
+const fs = require('fs/promises');
+const { convertToJson } = require('../scripts/utils.ts');
+const { writeJSON } = require('../scripts/utils/readAndWriteJson.ts');
+const { yamlString, jsonObject } = require('./fixtures/utilsData');
 
-jest.mock('fs', () => ({
-  promises: {
-    readFile: jest.fn(),
-    writeFile: jest.fn(),
-  },
+jest.mock('fs/promises', () => ({
+  readFile: jest.fn(),
+  writeFile: jest.fn()
 }));
 
 jest.mock('../scripts/utils', () => ({
-  convertToJson: jest.fn(),
+  convertToJson: jest.fn()
 }));
 
 describe('writeJSON', () => {
@@ -74,5 +72,4 @@ describe('writeJSON', () => {
 
     expect(fs.writeFile).toHaveBeenCalledWith(writePath, JSON.stringify(jsonObject));
   });
-
 });

@@ -39,7 +39,7 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
       // a-namedefinitionsapplicationaapplication slugWithATag contains transformed heading name that is later used
       // for scroll spy identification
       slugWithATag: item.content
-        .replace(/[<>?!:`'."\\/=]/gi, '')
+        .replace(/[<>?!:`'."\\/=@#$%^&*()[\]{}+,;]/gi, '')
         .replace(/\s/gi, '-')
         .toLowerCase()
     }));
@@ -75,7 +75,7 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
       </div>
       <div className={`${!open && 'hidden'} ${cssBreakingPoint === 'xl' ? 'xl:block' : 'lg:block'}`}>
         <Scrollspy
-          items={tocItems.map((item) => item.slug)}
+          items={tocItems.map((item) => (item.slug ? item.slug : item.slugWithATag))}
           currentClassName='text-primary-500 font-bold'
           componentTag='div'
           rootEl={contentSelector}
@@ -85,7 +85,7 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
             <a
               className={`pl-${2 ** (item.lvl - 1)} font-normal mb-1 block font-sans text-sm 
                   text-gray-900 antialiased transition duration-100 ease-in-out hover:underline`}
-              href={`#${item.slug}`}
+              href={`#${item.slug ? item.slug : item.slugWithATag}`}
               key={index}
               data-testid='TOC-Link'
             >

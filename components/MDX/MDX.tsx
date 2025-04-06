@@ -37,7 +37,7 @@ import Row from '../layout/Row';
 import NewsletterSubscribe from '../NewsletterSubscribe';
 import Profiles from '../Profiles';
 import Remember from '../Remember';
-import Sponsors from '../sponsors/Sponsors';
+import Sponsors from '../sponsors/PlatinumSponsors';
 import Warning from '../Warning';
 import { Table, TableBody, TableCell, TableHeader, TableRow, Thead } from './MDXTable';
 
