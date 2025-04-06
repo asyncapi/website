@@ -84,7 +84,7 @@ describe('Tools Object', () => {
   });
 
   it('should convert tools data correctly', async () => {
-    const toolContent = createToolFileContent({ title: 'Valid Tool', categories: ['bundler'] });
+    const toolContent = createToolFileContent({ title: 'Valid Tool', categories: ['Category1'] });
     const mockData = mockToolData(toolContent);
 
     const result = await convertTools(mockData);
@@ -123,7 +123,7 @@ describe('Tools Object', () => {
   it('should add duplicate tool objects to the same category', async () => {
     const toolContent = createToolFileContent({
       title: 'Duplicate Tool',
-      categories: ['bundler']
+      categories: ['Category1']
     });
 
     const mockData = createMockData([
@@ -232,7 +232,7 @@ describe('Tools Object', () => {
     // Create a tool with duplicate categories
     const toolContent = createToolFileContent({
       title: 'Duplicate Category Tool',
-      categories: ['api', 'api'] // Same category listed twice
+      categories: ['Category1', 'Category1'] // Same category listed twice
     });
 
     const mockData = mockToolData(toolContent);

@@ -55,7 +55,7 @@ jest.mock('../../scripts/tools/categorylist', () => ({
   ]
 }));
 
-const readJSON = (filePath) => JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+const readJSON = (filePath: string) => JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
 describe('combineTools function', () => {
   const toolsPath = path.join(__dirname, '../', 'fixtures', 'tools', 'tools.json');
@@ -63,9 +63,9 @@ describe('combineTools function', () => {
   const manualToolsPath = path.join(__dirname, '../', 'fixtures', 'tools', 'manual-tools.json');
   const automatedToolsPath = path.join(__dirname, '../', 'fixtures', 'tools', 'automated-tools.json');
 
-  let manualTools;
-  let automatedTools;
-  let consoleErrorMock;
+  let manualTools: Record<string, any>;
+  let automatedTools: Record<string, any>;
+  let consoleErrorMock: jest.SpyInstance;
 
   beforeAll(() => {
     manualTools = readJSON(manualToolsPath);
@@ -102,6 +102,7 @@ describe('combineTools function', () => {
   });
 
   it('should handle tools with missing language or technology', async () => {
+    // @ts-ignore, ignore the error for missing properties
     await combineTools({}, manualToolsWithMissingData, toolsPath, tagsPath);
 
     const combinedTools = readJSON(toolsPath);
@@ -265,9 +266,13 @@ describe('combineTools function', () => {
         ]
       }
     };
+
     await combineTools(noTitleTools, {}, toolsPath, tagsPath);
     expect(logger.error).toHaveBeenCalledWith(
-      expect.stringContaining('source: combine-tools.ts, tool title is missing.')
+      expect.objectContaining({
+        message: 'Tool title is missing during sort',
+        source: 'combine-tools.ts'
+      })
     );
   });
 
@@ -283,6 +288,7 @@ describe('combineTools function', () => {
       }
     };
     const inheritedTools = Object.create(proto);
+
     inheritedTools.category1 = {
       toolsList: [
         {
