@@ -832,16 +832,6 @@
         "githubID": 109030262
     },
     {
-        "name": "Jonathan Stoikovitch",
-        "github": "jstoiko",
-        "twitter": "jstoiko",
-        "isTscMember": false,
-        "repos": [
-            "raml-dt-schema-parser"
-        ],
-        "githubID": 9660342
-    },
-    {
         "name": "Rishi",
         "github": "kaushik-rishi",
         "twitter": "KaushikRishi07",
