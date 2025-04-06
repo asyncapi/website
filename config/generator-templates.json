@@ -1,9 +1,12 @@
 [
-  { "value": "@asyncapi/html-template", "text": "HTML" },
+  { "value": "@asyncapi/html-template@3.0.0", "text": "HTML" },
   { "value": "@asyncapi/markdown-template", "text": "Markdown" },
   { "value": "@asyncapi/nodejs-template", "text": "Node.js" },
   { "value": "@asyncapi/nodejs-ws-template", "text": "Node.js WebSockets" },
   { "value": "@asyncapi/java-spring-cloud-stream-template", "text": "Java Spring Cloud Stream" },
   { "value": "@asyncapi/java-spring-template", "text": "Java Spring Boot" },
-  { "value": "@asyncapi/python-paho-template", "text": "Python Paho" }
+  { "value": "@asyncapi/python-paho-template", "text": "Python Paho" },
+  { "value": "@asyncapi/go-watermill-template", "text": "Go Watermill" },
+  { "value": "@asyncapi/dotnet-rabbitmq-template", "text": ".NET RabbitMQ" },
+  { "value": "@asyncapi/ts-nats-template", "text": "TypeScript NATS" }
 ]
