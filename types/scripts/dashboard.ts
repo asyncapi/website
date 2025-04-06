@@ -57,7 +57,7 @@ interface BasicIssueOrPR {
   __typename: string;
   id: string;
   title: string;
-  author: Author | null;
+  author: Author;
   assignees: Assignees;
   resourcePath: string;
   repository: Repository;
