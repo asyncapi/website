@@ -33,7 +33,7 @@ Essentially, you serve as a person who binds the project together and guarantees
 
 Before you can become a **maintainer**, you need to start as a **contributor**. The journey from contributor to maintainer is a rewarding one, and it involves the following steps:
 
-### 1. **Pick an Issue**
+### 1. Pick an Issue
 
 - **Join existing PR reviews**: If you're not sure where to start, begin by reviewing open [PR](https://github.com/pulls?q=is%3Aopen+org%3Aasyncapi+sort%3Aupdated-desc+archived%3Afalse+) within the organization. This will give you a high-level understanding of the projects and where your contributions might fit in.
 
@@ -44,7 +44,7 @@ Before you can become a **maintainer**, you need to start as a **contributor**. 
 > [!NOTE]
 > Make sure whatever issue you pick isn't marked "Do-not-merge," or else your PR won't be merged.
 
-### 2. **Open a PR**
+### 2. Open a PR
 
 For a comprehensive guide on how to create a fork and start contributing, refer to the [AsyncAPI Git Workflow Guide](https://github.com/asyncapi/community/blob/master/git-workflow.md).
 
@@ -56,7 +56,7 @@ For a comprehensive guide on how to create a fork and start contributing, refer 
 
 - **Participate in discussions**: Engage with maintainers and other contributors in the PR comments section. This will help you understand the project better and improve your contributions.
 
-### 3. **Get your PR merged**
+### 3. Get your PR merged
 
 - **PR review process**: After submitting a PR, maintainers need to review it.
 
@@ -64,7 +64,7 @@ For a comprehensive guide on how to create a fork and start contributing, refer 
 
 - **Ensure smooth merge**: Ensure all checks (tests, style checks, etc.) pass before merging your PR.
 
-### 4. **Receive an invitation to become a Maintainer 🎉**
+### 4. Receive an invitation to become a Maintainer 🎉
 
 - **Recognition**: After contributing consistently and demonstrating leadership — whether through code, reviews, mentorship, or strategic input — the maintainers will invite you to join the team. This invitation is a recognition of your ownership and dedication to AsyncAPI’s success.
 
