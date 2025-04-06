@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { capitalizeJsxTags, copyAndRenameFiles, ensureDirectoryExists } = require('../scripts/build-pages');
+const { capitalizeJsxTags, copyAndRenameFiles, ensureDirectoryExists } = require('../scripts/build-pages.ts');
 
 describe('capitalizeJsxTags', () => {
   test('should capitalize JSX tags', () => {
@@ -52,6 +52,7 @@ describe('copyAndRenameFiles', () => {
     expect(fs.existsSync(NEW_TEST_DIR)).toBe(false);
     ensureDirectoryExists(NEW_TEST_DIR);
     expect(fs.existsSync(NEW_TEST_DIR)).toBe(true);
+    // delete the test directory after the test
+    fs.rmSync(NEW_TEST_DIR, { recursive: true, force: true });
   });
-
 });
