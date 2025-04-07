@@ -1007,7 +1007,8 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
-            "website"
+            "website",
+            "conference-website"
         ],
         "githubID": 90895835
     }
