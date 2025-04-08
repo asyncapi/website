@@ -13,7 +13,7 @@ authors:
 excerpt: "AsyncAPI's marketing efforts saw steady growth, increased engagement, and a stronger community presence. Looking ahead, we aim to amplify impact and expand outreach."
 ---
 
-AsyncAPI’s marketing efforts over the past three months have been focused on expanding community reach, driving awareness for key initiatives, and solidifying our position in the API and open-source ecosystem.
+Over the past three months, AsyncAPI’s marketing efforts have focused on expanding community reach, driving awareness for key initiatives, and solidifying our position in the API and open-source ecosystem.
 
 This report provides an overview of our marketing activities, including social media performance, content marketing, events, and future strategies to optimize our impact.
 
