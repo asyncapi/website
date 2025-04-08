@@ -57,7 +57,7 @@ This report provides an overview of our marketing activities, including social m
 
 ### Key Insights
 
-Tweet output dipped by 44%, leading to a -46% dip in impressions as well.
+Tweet output dipped by 44%, leading to a -46% impression dip.
 Replies saw a 75% increase, but overall reply numbers remain low.
 The number of new followers rose by +239%, given the dip and loss of followers in the previous quarter. 
 
