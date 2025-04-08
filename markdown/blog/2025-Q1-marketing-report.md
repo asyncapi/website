@@ -176,7 +176,7 @@ These posts were selected based on their impressions and number of clicks.
 
 ### Key Focus Areas (Next 3 Months)
 
-- Expand LinkedIn, Manstadon, and Twitter audience growth with targeted engagement strategies.
+- Expand LinkedIn, Mastodon, and Twitter audience growth with targeted engagement strategies.
 - Increase participation in live sessions.
 - Strengthen the Community Spotlight Initiative by featuring more contributors and increasing visibility.
 - Leverage event marketing to drive awareness and contribution to AsyncAPI initiatives.
