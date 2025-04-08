@@ -84,7 +84,7 @@ The "3.0.0" documentation page held 16.6% of the total views with a solid 41s av
 
 **High Engagement Pages**
 
-"AsyncAPI document structure" and "Payload schema" had fewer visits but strong time-on-page (44s and 36s respectively), indicating users are spending time understanding these technical sections.
+"AsyncAPI document structure" and "Payload schema" had fewer visits but strong time-on-page (44s and 36s, respectively), indicating users are spending time understanding these technical sections.
 
 Similarly, "Understanding AsyncAPIs with a Practical Example" drew good engagement (28s avg.) and "Coming from OpenAPI" shows decent dwell time (30s), making them great learning pathway pages.
 
