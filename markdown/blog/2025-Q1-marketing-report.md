@@ -41,7 +41,7 @@ This report provides an overview of our marketing activities, including social m
 
 - The 18% rise in new followers suggests growing interest in AsyncAPI’s content.
 - Engagement rate increased by 13%, indicating that our content resonates well with our audience.
-- Click-through rates need improvement, signaling a need for stronger CTAs and content hooks.
+- Click-through rates need improvement, signaling stronger CTAs and content hooks.
 
 
 | **X (Formerly Twitter)Metric**         | **Value**         |**% last Quarter** |**% Change** |
