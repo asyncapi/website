@@ -97,7 +97,7 @@ Similarly, "Understanding AsyncAPIs with a Practical Example" drew good engageme
 ### Google Summer of Code (GSoC) Mentorship Program
 
 - AsyncAPI has successfully joined Google Summer of Code 2025, providing mentorship opportunities to aspiring open-source contributors.
-- [A dedicated informational webinar was held on March 14](https://www.youtube.com/watch?v=R7pl1F2dYLo), led by our GSoC Program Coordinator Elegbede (Ace) Azeez, to guide potential mentees.
+- [A dedicated informational webinar was held on March 14](https://www.youtube.com/watch?v=R7pl1F2dYLo), led by our GSoC Program Coordinator, Elegbede (Ace) Azeez, to guide potential mentees.
 - Outcome: Increased awareness and participation in the AsyncAPI open-source ecosystem.
 
 ### Community Spotlight Initiative
