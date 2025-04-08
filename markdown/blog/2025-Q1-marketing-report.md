@@ -61,7 +61,7 @@ Tweet output dipped by 44%, leading to a -46% dip in impressions as well.
 Replies saw a 75% increase, but overall reply numbers remain low.
 The number of new followers rose by +239%, given the dip and loss of followers in the previous quarter. 
 
-Overall, the decline in some metrics can be attributed to the higher number of events in the previous quarter, which naturally led to more content and activity compared to this quieter quarter.
+Overall, the decline in some metrics can be attributed to the higher number of events in the previous quarter, which naturally led to more content and activity than this quieter quarter.
 
 ### Website Performance 
 
