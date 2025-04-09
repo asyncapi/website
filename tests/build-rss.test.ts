@@ -3,9 +3,9 @@ import fs from 'fs';
 import path from 'path';
 
 import { rssFeed } from '../scripts/build-rss';
+import { desc, incompletePostMockData, mockRssData, title, type } from './fixtures/rssData';
 
 const parser = new XMLParser({ ignoreAttributes: false });
-const { mockRssData, title, type, desc, incompletePostMockData } = require('./fixtures/rssData');
 
 describe('rssFeed', () => {
   const testOutputDir = path.join(__dirname, '..', 'public', 'test-output');
