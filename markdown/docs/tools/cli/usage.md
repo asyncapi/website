@@ -745,15 +745,16 @@ starts a new local instance of Studio
 
 ```
 USAGE
-  $ asyncapi start studio [SPEC-FILE] [-h] [-f <value>] [-p <value>]
+  $ asyncapi start studio [SPEC-FILE] [-h] [-f <value>] [-p <value>]  [--no-interactive]
 
 ARGUMENTS
   SPEC-FILE  spec path, url, or context-name
 
 FLAGS
-  -f, --file=<value>  path to the AsyncAPI file to link with Studio
-  -h, --help          Show CLI help.
-  -p, --port=<value>  port in which to start Studio
+  -f, --file=<value>   path to the AsyncAPI file to link with Studio
+  -h, --help           Show CLI help.
+  -p, --port=<value>   port in which to start Studio
+      --no-interactive disable prompts for this command which asks for file path if not passed via the arguments.
 
 DESCRIPTION
   starts a new local instance of Studio
