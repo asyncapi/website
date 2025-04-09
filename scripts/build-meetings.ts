@@ -18,10 +18,20 @@ async function buildMeetings(writePath: string) {
   let auth;
   let calendar;
 
+  // Check if the CALENDAR_SERVICE_ACCOUNT is present in the environment variables
+  // Check if required environment variables are present
+  if (!process.env.CALENDAR_SERVICE_ACCOUNT) {
+    throw new Error('CALENDAR_SERVICE_ACCOUNT environment variable is not set');
+  }
+
+  if (!process.env.CALENDAR_ID) {
+    throw new Error('CALENDAR_ID environment variable is not set');
+  }
+
   try {
     auth = new google.auth.GoogleAuth({
       scopes: ['https://www.googleapis.com/auth/calendar'],
-      credentials: process.env.CALENDAR_SERVICE_ACCOUNT ? JSON.parse(process.env.CALENDAR_SERVICE_ACCOUNT) : undefined
+      credentials: JSON.parse(process.env.CALENDAR_SERVICE_ACCOUNT)
     });
 
     calendar = google.calendar({ version: 'v3', auth });

@@ -4,7 +4,7 @@ interface Links {
   repoUrl?: string; // URL to project codebase.
 }
 
-type Category =
+export type Category =
   | 'api'
   | 'code-first'
   | 'code-generator'
@@ -43,6 +43,7 @@ export interface Filters {
   technology?: Array<string>;
   categories: Array<Category>;
   hasCommercial?: boolean;
+  isAsyncAPIOwner?: boolean | string;
 }
 
 // Instead of extending BaseFilters, create a separate interface
@@ -83,13 +84,11 @@ type ToolItem = {
   name: string;
   url: string;
   path: string;
-  html_url: string;
+  html_url?: string;
   repository: Repository;
 };
 
-export type ToolsData = {
-  items: ToolItem[];
-};
+export type ToolsData = Array<ToolItem>;
 
 // Tools list types
 type ToolsList<T> = {
