@@ -1,6 +1,6 @@
 ---
 title: "AsyncAPI Q1 Marketing WG Report"
-date: 2025-04-01T06:00:00+01:00
+date: 2025-04-14T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
@@ -24,7 +24,7 @@ This report provides an overview of our marketing activities, including social m
 - Promote AsyncAPI-led events and initiatives, including Google Summer of Code (GSoC) and the AsyncAPI Confrences and Webinar.
 - Expand content marketing efforts to provide valuable industry insights and drive audience engagement.
 
-## Marketing Performance Overview
+## Marketing Working Group Performance Overview
 
 ### Social Media Performance
 
@@ -66,7 +66,7 @@ Overall, the decline in some metrics can be attributed to the higher number of e
 ### Website Performance 
 
 <Figure
-  src="/img/posts/marketing-images/goggle-analysis-page-view.webp"
+  src="/img/posts/marketing-images/google-analysis-page-view.webp"
    alt="A table showing AsyncAPI  Google Analytics Homepage performance from January to March"
   caption="AsyncAPI Google Analytics Homepage performance from January to March"
   className="text-center"
@@ -92,6 +92,14 @@ Similarly, "Understanding AsyncAPIs with a Practical Example" drew good engageme
 
 "Generator" and "Tools" saw good traffic but experienced drops in average time spent (-13.4% and +1.9%, respectively). This might mean users don’t find these pages as intuitive or relevant and could benefit from clearer CTAs or improved content structure.
 
+## Overview of the Marketing Strategy
+
+ As highlighted in the [2024 Marketing Report](https://www.asyncapi.com/blog/2024-marketing-report), the AsyncAPI Marketing Strategy was created to guide the community's marketing efforts in a focused and impactful way. On April 1st, 2025, the updated strategy document was officially merged and is now set for implementation.
+
+Over the next few months, we will begin rolling out initiatives aligned with the strategy, and our progress will be tracked through clearly defined KPIs. and consistent quarterly reports will be shared to ensure transparency and accountability.
+
+[Read the 2025 AsyncAPI Marketing Strategy](https://github.com/asyncapi/community/blob/master/annual-goals/2025_marketing_strategy.md)
+
 ## Event & Community Engagement
 
 ### Google Summer of Code (GSoC) Mentorship Program
@@ -104,7 +112,7 @@ Similarly, "Understanding AsyncAPIs with a Practical Example" drew good engageme
 
 This quarter, AsyncAPI launched the Community Spotlight Initiative to recognize outstanding contributors.
 The initiative highlights individuals making significant contributions to AsyncAPI, whether through code, documentation, advocacy, or community building.
-The first spotlight is the Ashmit story. We look forward to having more stories in as we go.
+We published the first blog [Ashmit story](https://www.asyncapi.com/blog/community-spotlight-ashmit). This would be a monthly blog. [Find the community spotlight discussion on GitHub](https://github.com/asyncapi/community/issues/1732)
 
 ### AsyncAPI Conference 2025
 
@@ -112,10 +120,27 @@ The first spotlight is the Ashmit story. We look forward to having more stories 
 - Promotional efforts included LinkedIn and Twitter posts, and community newsletters.
 - Munich Call for Speaker is also out.
 
+
 ### Impact & Next Steps
 
-- Increased community participation and AsyncAPI visibility.
-- Plan to host more live sessions, and developer Q&As to sustain momentum.
+- Increased community participation and AsyncAPI visibility have been clear indicators of the positive impact of our recent efforts.
+
+- Our first live session, featuring Eduardo Maldonado Fonseca Silva, marked the beginning of our "Monthly Webinar series: Learn With AsyncAPI" — an initiative designed to create accessible, developer-focused conversations around AsyncAPI concepts, tools, and real-world applications. Eduardo shared deep insights into event-driven architectures and how AsyncAPI boosts interoperability in modern systems. The session covered best practices, practical use cases, and how to get started with AsyncAPI. It concluded with an engaging Q&A where the community posed thoughtful, implementation-focused questions.
+
+[Watch on YouTube](https://www.youtube.com/watch?v=awfB_mwUp1c&t=268s)
+
+- To sustain and scale this initiative, we plan to:
+
+  - Host monthly live sessions and developer Q&As featuring maintainers, contributors, and experts in the ecosystem.
+
+  - Introduce community-driven topic nominations to ensure the sessions address current challenges and interests.
+
+  - Repurpose session content into bite-sized clips, blog posts, and social media highlights for ongoing engagement.
+
+  - Build a resource hub where past sessions and learning materials can be accessed anytime.
+
+  - Collaborate with community ambassadors and contributors to co-host sessions, fostering ownership and inclusiveness.
+
 
 ### Top 3 Best-Performing Posts
 
@@ -179,6 +204,7 @@ These posts were selected based on their impressions and number of clicks.
 - Expand LinkedIn, Manstadon, and Twitter audience growth with targeted engagement strategies.
 - Increase participation in live sessions.
 - Strengthen the Community Spotlight Initiative by featuring more contributors and increasing visibility.
+- Resume the AsyncAPI Student Ambassador Initiative documentation.
 - Leverage event marketing to drive awareness and contribution to AsyncAPI initiatives.
 
 AsyncAPI’s marketing efforts over the past three months have led to steady growth in brand awareness, engagement, and community participation.
