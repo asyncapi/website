@@ -37,12 +37,12 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
   };
 
   useEffect(() => {
-    const interval = setInterval(() => setActiveIndex((index) => index + 1), 5000);
+    const interval = setInterval(() => setActiveIndex((index) => (index + 1) % numberOfVisibleBanners), 10000);
 
     return () => {
       clearInterval(interval);
     };
-  }, [activeIndex]);
+  }, [numberOfVisibleBanners]);
 
   if (numberOfVisibleBanners === 0) {
     return null;
@@ -57,14 +57,14 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
           items-center justify-center rounded-full bg-primary-500 opacity-50 hover:bg-primary-600 md:opacity-100`}
             onClick={goToPrevious}
           >
-            <ArrowLeft className='w-4 text-white' />
+            <ArrowLeft className='text-white' />
           </div>
         )}
         <div className='relative flex w-5/6 flex-col items-center justify-center gap-2'>
-          <div className='relative flex min-h-72 w-full items-center justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
+          <div className='relative flex min-h-72 w-full justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
             {visibleBanners.map((banner, index) => {
-              // Only render active banner and immediate neighbors
-              const isVisible = Math.abs(index - (activeIndex % numberOfVisibleBanners)) <= 1;
+              // Only render the active banner
+              const isVisible = index === activeIndex;
 
               if (!isVisible) return null;
 
@@ -78,7 +78,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
                   cfpDeadline={banner.cfpDeadline}
                   link={banner.link}
                   city={banner.city}
-                  activeBanner={index === activeIndex % numberOfVisibleBanners}
+                  activeBanner={isVisible}
                   className={className}
                   small={small}
                 />
@@ -90,7 +90,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
               <div
                 key={index}
                 className={`mx-1 size-2 cursor-pointer rounded-full ${
-                  activeIndex % numberOfVisibleBanners === index ? 'bg-primary-500' : 'bg-gray-300'
+                  activeIndex === index ? 'bg-primary-500' : 'bg-gray-300'
                 }`}
                 onClick={() => goToIndex(index)}
               />

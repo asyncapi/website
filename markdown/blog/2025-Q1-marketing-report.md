@@ -13,7 +13,7 @@ authors:
 excerpt: "AsyncAPI's marketing efforts saw steady growth, increased engagement, and a stronger community presence. Looking ahead, we aim to amplify impact and expand outreach."
 ---
 
-AsyncAPI’s marketing efforts over the past three months have focused on expanding community reach, driving awareness for key initiatives, and solidifying our position in the API and open-source ecosystem.
+Over the past three months, AsyncAPI’s marketing efforts have focused on expanding community reach, driving awareness for key initiatives, and solidifying our position in the API and open-source ecosystem.
 
 This report provides an overview of our marketing activities, including social media performance, content marketing, events, and future strategies to optimize our impact.
 
@@ -21,7 +21,7 @@ This report provides an overview of our marketing activities, including social m
 
 - Enhance brand awareness and positioning within the API and open-source space.
 - Increase engagement across social media and community platforms.
-- Promote AsyncAPI-led events and initiatives, including Google Summer of Code (GSoC) and the AsyncAPI Confrences and Webinar.
+- Promote AsyncAPI-led events and initiatives, including Google Summer of Code (GSoC), the AsyncAPI Conferences and Webinars.
 - Expand content marketing efforts to provide valuable industry insights and drive audience engagement.
 
 ## Marketing Working Group Performance Overview
@@ -41,7 +41,7 @@ This report provides an overview of our marketing activities, including social m
 
 - The 18% rise in new followers suggests growing interest in AsyncAPI’s content.
 - Engagement rate increased by 13%, indicating that our content resonates well with our audience.
-- Click-through rates need improvement, signaling a need for stronger CTAs and content hooks.
+- Click-through rates need improvement, signaling stronger CTAs and content hooks.
 
 
 | **X (Formerly Twitter)Metric**         | **Value**         |**% last Quarter** |**% Change** |
@@ -57,11 +57,11 @@ This report provides an overview of our marketing activities, including social m
 
 ### Key Insights
 
-Tweet output dipped by 44%, leading to a -46% dip in impressions as well.
+Tweet output dipped by 44%, leading to a -46% impression dip.
 Replies saw a 75% increase, but overall reply numbers remain low.
-New followers count rose by +239%, given the dip and lose of followers in the previous quarter. 
+The number of new followers rose by +239%, given the dip and loss of followers in the previous quarter. 
 
-Overall, the decline in some metrics can be attributed to the higher number of events in the previous quarter, which naturally led to more content and activity compared to this quieter quarter.
+Overall, the decline in some metrics can be attributed to the higher number of events in the previous quarter, which naturally led to more content and activity than this quieter quarter.
 
 ### Website Performance 
 
@@ -84,7 +84,7 @@ The "3.0.0" documentation page held 16.6% of the total views with a solid 41s av
 
 **High Engagement Pages**
 
-"AsyncAPI document structure" and "Payload schema" had fewer visits but strong time-on-page (44s and 36s respectively), indicating users are spending time understanding these technical sections.
+"AsyncAPI document structure" and "Payload schema" had fewer visits but strong time-on-page (44s and 36s, respectively), indicating users are spending time understanding these technical sections.
 
 Similarly, "Understanding AsyncAPIs with a Practical Example" drew good engagement (28s avg.) and "Coming from OpenAPI" shows decent dwell time (30s), making them great learning pathway pages.
 
@@ -105,7 +105,7 @@ Over the next few months, we will begin rolling out initiatives aligned with the
 ### Google Summer of Code (GSoC) Mentorship Program
 
 - AsyncAPI has successfully joined Google Summer of Code 2025, providing mentorship opportunities to aspiring open-source contributors.
-- [A dedicated informational webinar was held on March 14](https://www.youtube.com/watch?v=R7pl1F2dYLo), led by GSoC the Program Coordinator Elegbede (Ace) Azeez, to guide potential mentees.
+- [A dedicated informational webinar was held on March 14](https://www.youtube.com/watch?v=R7pl1F2dYLo), led by our GSoC Program Coordinator, Elegbede (Ace) Azeez, to guide potential mentees.
 - Outcome: Increased awareness and participation in the AsyncAPI open-source ecosystem.
 
 ### Community Spotlight Initiative
@@ -201,7 +201,7 @@ These posts were selected based on their impressions and number of clicks.
 
 ### Key Focus Areas (Next 3 Months)
 
-- Expand LinkedIn, Manstadon, and Twitter audience growth with targeted engagement strategies.
+- Expand LinkedIn, Mastodon, and Twitter audience growth with targeted engagement strategies.
 - Increase participation in live sessions.
 - Strengthen the Community Spotlight Initiative by featuring more contributors and increasing visibility.
 - Resume the AsyncAPI Student Ambassador Initiative documentation.
