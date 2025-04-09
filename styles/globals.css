@@ -1,7 +1,6 @@
-/* Removed unused imports */
+/* Optimized imports */
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
 @import url(https://cdn.jsdelivr.net/npm/@docsearch/css@3);
-
 @import "swiper/css";
 @import "swiper/css/a11y";
 @import "swiper/css/navigation";
@@ -12,8 +11,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Removed @tailwind variants as it's not required in Tailwind CSS v3+ */
-
+/* Base styles */
 html,
 body {
   -webkit-font-smoothing: antialiased;
@@ -34,6 +32,7 @@ abbr[title] {
   text-decoration: none;
 }
 
+/* Countdown gradient animation */
 .countdown-text-gradient {
   background: linear-gradient(
     230deg,
@@ -58,6 +57,7 @@ abbr[title] {
   }
 }
 
+/* Scroll margin adjustments */
 :target {
   scroll-margin-top: 120px;
 }
@@ -68,7 +68,7 @@ abbr[title] {
   }
 }
 
-/* Adjusted Swiper library styles */
+/* Swiper styles */
 .swiper-wrapper {
   align-items: stretch;
 }
@@ -77,7 +77,7 @@ abbr[title] {
   height: auto !important;
 }
 
-/* Adjusted DocsSearch input styles */
+/* DocsSearch input styles */
 .DocSearch-Input {
   border-width: 0;
   background-color: transparent;
@@ -109,6 +109,7 @@ abbr[title] {
   text-decoration: underline;
 }
 
+/* Two-line ellipsis */
 .two-liner {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -117,7 +118,7 @@ abbr[title] {
   text-overflow: ellipsis;
 }
 
-/* Adjusted DocsSearch mobile styles */
+/* Mobile styles */
 @media (max-width: 750px) {
   .DocSearch-Container {
     position: fixed !important;
@@ -130,6 +131,7 @@ abbr[title] {
   }
 }
 
+/* Orbit container styles */
 .orbit-container {
   position: relative;
   margin: 0 auto;
@@ -153,13 +155,13 @@ abbr[title] {
   border-radius: 100%;
 }
 
+/* Title styles */
 .title {
   line-height: 0.9;
   font-size: 60px;
 }
 
-/* Removed redundant orbit animations and unused styles */
-
+/* Select element styles */
 select {
   cursor: pointer;
 }

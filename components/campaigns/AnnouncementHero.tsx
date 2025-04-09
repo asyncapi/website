@@ -18,21 +18,26 @@ interface IAnnouncementHeroProps {
  * @param {Boolean} props.hideVideo - Whether the video should be hidden
  * @description The announcement hero
  */
-export default function AnnouncementHero({ className = '', small = false }: IAnnouncementHeroProps) {
+export default function AnnouncementHero({
+  className = '',
+  small = false,
+}: IAnnouncementHeroProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const visibleBanners = useMemo(
-    () => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)),
-    []
-  );
+  const visibleBanners = useMemo(() => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)), []);
+
   const numberOfVisibleBanners = visibleBanners.length;
 
   const goToPrevious = () => {
-    setActiveIndex((prevIndex) => (prevIndex === 0 ? numberOfVisibleBanners - 1 : prevIndex - 1));
+    setActiveIndex((prevIndex) =>
+      prevIndex === 0 ? numberOfVisibleBanners - 1 : prevIndex - 1,
+    );
   };
 
   const goToNext = () => {
-    setActiveIndex((prevIndex) => (prevIndex === numberOfVisibleBanners - 1 ? 0 : prevIndex + 1));
+    setActiveIndex((prevIndex) =>
+      prevIndex === numberOfVisibleBanners - 1 ? 0 : prevIndex + 1,
+    );
   };
 
   const goToIndex = (index: number) => {
