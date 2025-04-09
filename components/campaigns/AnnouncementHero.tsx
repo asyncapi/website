@@ -18,26 +18,18 @@ interface IAnnouncementHeroProps {
  * @param {Boolean} props.hideVideo - Whether the video should be hidden
  * @description The announcement hero
  */
-export default function AnnouncementHero({
-  className = '',
-  small = false,
-}: IAnnouncementHeroProps) {
+export default function AnnouncementHero({ className = '', small = false }: IAnnouncementHeroProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const visibleBanners = useMemo(() => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)), []);
-
+  const visibleBanners = useMemo(() => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)), [banners]);
   const numberOfVisibleBanners = visibleBanners.length;
 
   const goToPrevious = () => {
-    setActiveIndex((prevIndex) =>
-      prevIndex === 0 ? numberOfVisibleBanners - 1 : prevIndex - 1,
-    );
+    setActiveIndex((prevIndex) => (prevIndex === 0 ? numberOfVisibleBanners - 1 : prevIndex - 1));
   };
 
   const goToNext = () => {
-    setActiveIndex((prevIndex) =>
-      prevIndex === numberOfVisibleBanners - 1 ? 0 : prevIndex + 1,
-    );
+    setActiveIndex((prevIndex) => (prevIndex === numberOfVisibleBanners - 1 ? 0 : prevIndex + 1));
   };
 
   const goToIndex = (index: number) => {
@@ -65,7 +57,7 @@ export default function AnnouncementHero({
       <div className="relative flex flex-row items-center justify-center gap-2 overflow-visible sm:gap-4">
         {numberOfVisibleBanners > 1 && (
           <div
-            className="absolute -left-6 top-1/2 z-30 flex size-8 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-primary-500 opacity-75 hover:bg-primary-600 sm:-left-8 lg:-left-10"
+            className={"absolute -left-6 top-1/2 z-30 flex size-8 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-primary-500 opacity-75 hover:bg-primary-600 sm:-left-8 lg:-left-10"}
             onClick={goToPrevious}
           >
             <ArrowLeft className="text-white" />
@@ -109,7 +101,7 @@ export default function AnnouncementHero({
         </div>
         {numberOfVisibleBanners > 1 && (
           <div
-            className="absolute -right-6 top-1/2 z-30 flex size-8 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-primary-500 opacity-75 hover:bg-primary-600 sm:-right-8 lg:-right-10"
+            className={"absolute -right-6 top-1/2 z-30 flex size-8 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-primary-500 opacity-75 hover:bg-primary-600 sm:-right-8 lg:-right-10"}
             onClick={goToNext}
           >
             <ArrowRight className="text-white" />
