@@ -1,8 +1,7 @@
 const { graphql } = require('@octokit/graphql');
-const { promises: fs, mkdirSync, rmSync } = require('fs-extra');
+const fs = require('fs-extra').promises;
 const { resolve } = require('path');
-const os = require('os');
-const {
+const { 
   getLabel,
   mapGoodFirstIssues,
   getHotDiscussions,
@@ -10,14 +9,15 @@ const {
   writeToFile,
   getDiscussions,
   start
-} = require('../../scripts/dashboard/build-dashboard.ts');
+} = require('./build-dashboard');
 
-const {
-  issues,
-  mockDiscussion,
-  discussionWithMoreComments,
-  fullDiscussionDetails,
-  mockRateLimitResponse
+
+const { 
+  issues, 
+  mockDiscussion, 
+  discussionWithMoreComments, 
+  fullDiscussionDetails, 
+  mockRateLimitResponse 
 } = require('../fixtures/dashboardData');
 const { logger } = require('../../scripts/utils/logger.ts');
 
@@ -32,13 +32,13 @@ describe('GitHub Discussions Processing', () => {
   let consoleErrorSpy;
   let consoleLogSpy;
 
-  beforeAll(() => {
-    tempDir = resolve(os.tmpdir(), 'test-config');
-    mkdirSync(tempDir);
+  beforeAll(async () => {
+    tempDir = resolve(process.cwd(), 'test-config'); // Adjust tempDir as needed
+   await fs.mkdir(tempDir, { recursive: true });
   });
 
-  afterAll(() => {
-    rmSync(tempDir, { recursive: true, force: true });
+  afterAll(async() => {
+   await fs.rm(tempDir, { recursive: true, force: true });
   });
 
   beforeEach(() => {
@@ -80,8 +80,12 @@ describe('GitHub Discussions Processing', () => {
 
     await getDiscussions('test-query', 10);
 
-    expect(logger.warn).toHaveBeenCalledWith(
-      expect.stringContaining(`GitHub GraphQL rateLimit \ncost = 1\nlimit = 5000\nremaining = 50`)
+    expect(console.log).toHaveBeenCalledWith(
+      '[WARNING] GitHub GraphQL rateLimit',
+      'cost = 1',
+      'limit = 5000',
+      'remaining = 50',
+      expect.any(String)
     );
   });
 
