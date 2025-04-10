@@ -18,28 +18,18 @@ interface IAnnouncementHeroProps {
  * @param {Boolean} props.hideVideo - Whether the video should be hidden
  * @description The announcement hero
  */
-export default function AnnouncementHero({
-  className = '',
-  small = false
-}: IAnnouncementHeroProps) {
+export default function AnnouncementHero({ className = '', small = false }: IAnnouncementHeroProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const visibleBanners = useMemo(
-    () => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)),
-    [banners]
-  );
+  const visibleBanners = useMemo(() => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)), [banners]);
   const numberOfVisibleBanners = visibleBanners.length;
 
   const goToPrevious = () => {
-    setActiveIndex((prevIndex) =>
-      (prevIndex === 0 ? numberOfVisibleBanners - 1 : prevIndex - 1)
-    );
+    setActiveIndex((prevIndex) => (prevIndex === 0 ? numberOfVisibleBanners - 1 : prevIndex - 1));
   };
 
   const goToNext = () => {
-    setActiveIndex((prevIndex) =>
-      (prevIndex === numberOfVisibleBanners - 1 ? 0 : prevIndex + 1)
-    );
+    setActiveIndex((prevIndex) => (prevIndex === numberOfVisibleBanners - 1 ? 0 : prevIndex + 1));
   };
 
   const goToIndex = (index: number) => {
@@ -56,6 +46,7 @@ export default function AnnouncementHero({
         clearInterval(interval);
       };
     }
+
     return undefined; // Explicit return to satisfy the linter
   }, [numberOfVisibleBanners]);
 
@@ -65,7 +56,7 @@ export default function AnnouncementHero({
 
   return (
     <Container as='section' padding='' className='text-center'>
-      <div className='relative flex flex-row items-center justify-center overflow-visible gap-2 sm:gap-4'>
+      <div className='relative flex flex-row items-center justify-center gap-2 overflow-visible sm:gap-4'>
         {numberOfVisibleBanners > 1 && (
           <div
             className={
@@ -77,7 +68,7 @@ export default function AnnouncementHero({
           </div>
         )}
         <div className='relative flex w-full flex-col items-center justify-center gap-4 px-4 xs:w-11/12 sm:w-4/5 md:w-5/6 lg:w-3/4'>
-         <div className='relative flex min-h-72 w-full justify-center overflow-hidden sm:min-h-56 lg:h-80 lg:min-h-64 lg:w-[42rem]'>
+          <div className='relative flex min-h-72 w-full justify-center overflow-hidden sm:min-h-56 lg:h-80 lg:min-h-64 lg:w-[42rem]'>
             {visibleBanners.map((banner, index) => {
               const isVisible = index === activeIndex;
 
