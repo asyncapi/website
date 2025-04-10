@@ -37,11 +37,17 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
   };
 
   useEffect(() => {
-    const interval = setInterval(() => setActiveIndex((index) => (index + 1) % numberOfVisibleBanners), 10000);
+    if (numberOfVisibleBanners > 1) {
+      const interval = setInterval(() => {
+        setActiveIndex((index) => (index + 1) % numberOfVisibleBanners);
+      }, 10000);
 
-    return () => {
-      clearInterval(interval);
-    };
+      return () => {
+        clearInterval(interval);
+      };
+    }
+
+    return undefined; // Explicit return to satisfy the linter
   }, [numberOfVisibleBanners]);
 
   if (numberOfVisibleBanners === 0) {
@@ -50,20 +56,20 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
 
   return (
     <Container as='section' padding='' className='text-center'>
-      <div className='relative flex flex-row items-center justify-center overflow-x-hidden md:gap-4'>
+      <div className='relative flex flex-row items-center justify-center gap-2 overflow-visible sm:gap-4'>
         {numberOfVisibleBanners > 1 && (
           <div
-            className={`absolute left-0 top-1/2 z-10 mb-2 flex size-8 -translate-y-1/2 cursor-pointer
-          items-center justify-center rounded-full bg-primary-500 opacity-50 hover:bg-primary-600 md:opacity-100`}
+            className={
+              'absolute -left-6 top-1/2 z-30 flex size-8 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-primary-500 opacity-75 hover:bg-primary-600 sm:-left-8 lg:-left-10'
+            }
             onClick={goToPrevious}
           >
             <ArrowLeft className='text-white' />
           </div>
         )}
-        <div className='relative flex w-5/6 flex-col items-center justify-center gap-2'>
-          <div className='relative flex min-h-72 w-full justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
+        <div className='relative flex w-full flex-col items-center justify-center gap-4 px-4 xs:w-11/12 sm:w-4/5 md:w-5/6 lg:w-3/4'>
+          <div className='relative flex min-h-72 w-full justify-center overflow-hidden sm:min-h-56 lg:h-80 lg:min-h-64 lg:w-[42rem]'>
             {visibleBanners.map((banner, index) => {
-              // Only render the active banner
               const isVisible = index === activeIndex;
 
               if (!isVisible) return null;
@@ -86,7 +92,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
             })}
           </div>
           <div className='m-auto flex justify-center'>
-            {visibleBanners.map((banner, index) => (
+            {visibleBanners.map((_, index) => (
               <div
                 key={index}
                 className={`mx-1 size-2 cursor-pointer rounded-full ${
@@ -99,8 +105,9 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
         </div>
         {numberOfVisibleBanners > 1 && (
           <div
-            className={`absolute right-0 top-1/2 z-10 mb-2 size-8 -translate-y-1/2 cursor-pointer
-                      rounded-full bg-primary-500 opacity-50 hover:bg-primary-600 md:opacity-100`}
+            className={
+              'absolute -right-6 top-1/2 z-30 flex size-8 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-primary-500 opacity-75 hover:bg-primary-600 sm:-right-8 lg:-right-10'
+            }
             onClick={goToNext}
           >
             <ArrowRight className='text-white' />
