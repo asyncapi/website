@@ -88,7 +88,7 @@ export default function NewsletterSubscribe({
         }
 
         return res.json();
-      })
+      });
   };
 
   if (status === FormStatus.SUCCESS) {
