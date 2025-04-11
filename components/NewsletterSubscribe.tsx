@@ -79,16 +79,14 @@ export default function NewsletterSubscribe({
       headers: {
         'Content-Type': 'application/json'
       }
-    })
-      .then((res) => {
-        if (res.status === 200) {
-          setFormStatus(FormStatus.SUCCESS);
-        } else {
-          setFormStatus(FormStatus.ERROR);
-        }
-
-        return res.json();
-      });
+    }).then((res) => {
+      if (res.status === 200) {
+        setFormStatus(FormStatus.SUCCESS);
+      } else {
+        setFormStatus(FormStatus.ERROR);
+      }
+      return res.json();
+    });
   };
 
   if (status === FormStatus.SUCCESS) {
