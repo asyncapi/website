@@ -85,7 +85,7 @@ export default function NewsletterSubscribe({
       } else {
         setFormStatus(FormStatus.ERROR);
       }
-      
+
       return res.json();
     });
   };
