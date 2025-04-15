@@ -119,6 +119,14 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
     setCheckOwner(isAsyncAPIOwner);
   };
 
+  const toggleDropdown = (dropdownType: OpenedFiltersDropdownType) => {
+    setOpenedFiltersDropown(
+      openedFiltersDropown === dropdownType
+        ? OpenedFiltersDropdownType.NONE
+        : dropdownType
+    );
+  };
+
   return (
     <ToolFilter>
       <div className='z-20 rounded-lg border border-gray-300 bg-white py-4 shadow-md' data-testid='Filters-div'>
@@ -191,13 +199,7 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
               className={twMerge(
                 `px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openedFiltersDropown === OpenedFiltersDropdownType.LANGUAGE ? 'rounded-b-none' : ''}`
               )}
-              onClick={() => {
-                if (openedFiltersDropown === OpenedFiltersDropdownType.LANGUAGE) {
-                  setOpenedFiltersDropown(OpenedFiltersDropdownType.NONE);
-                } else {
-                  setOpenedFiltersDropown(OpenedFiltersDropdownType.LANGUAGE);
-                }
-              }}
+              onClick={() => toggleDropdown(OpenedFiltersDropdownType.LANGUAGE)}
             >
               <div className='flex items-center text-dark'>
                 {/* eslint-disable-next-line no-nested-ternary */}
@@ -239,13 +241,7 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
               className={twMerge(
                 `px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openedFiltersDropown === OpenedFiltersDropdownType.TECHNOLOGY ? 'rounded-b-none' : ''}`
               )}
-              onClick={() => {
-                if (openedFiltersDropown === OpenedFiltersDropdownType.TECHNOLOGY) {
-                  setOpenedFiltersDropown(OpenedFiltersDropdownType.NONE);
-                } else {
-                  setOpenedFiltersDropown(OpenedFiltersDropdownType.TECHNOLOGY);
-                }
-              }}
+              onClick={() => toggleDropdown(OpenedFiltersDropdownType.TECHNOLOGY)}
             >
               <div className='flex items-center text-dark'>
                 {/* eslint-disable-next-line no-nested-ternary */}
@@ -287,13 +283,7 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
               className={twMerge(
                 `px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openedFiltersDropown === OpenedFiltersDropdownType.CATEGORY ? 'rounded-b-none' : ''}`
               )}
-              onClick={() => {
-                if (openedFiltersDropown === OpenedFiltersDropdownType.CATEGORY) {
-                  setOpenedFiltersDropown(OpenedFiltersDropdownType.NONE);
-                } else {
-                  setOpenedFiltersDropown(OpenedFiltersDropdownType.CATEGORY);
-                }
-              }}
+              onClick={() => toggleDropdown(OpenedFiltersDropdownType.CATEGORY)}
             >
               <div className='flex items-center text-dark'>
                 {/* eslint-disable-next-line no-nested-ternary */}
