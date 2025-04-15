@@ -38,33 +38,36 @@ USAGE
 # Commands
 
 <!-- commands -->
-* [`asyncapi bundle`](#asyncapi-bundle)
-* [`asyncapi config`](#asyncapi-config)
-* [`asyncapi config analytics`](#asyncapi-config-analytics)
-* [`asyncapi config context`](#asyncapi-config-context)
-* [`asyncapi config context add CONTEXT-NAME SPEC-FILE-PATH`](#asyncapi-config-context-add-context-name-spec-file-path)
-* [`asyncapi config context current`](#asyncapi-config-context-current)
-* [`asyncapi config context edit CONTEXT-NAME NEW-SPEC-FILE-PATH`](#asyncapi-config-context-edit-context-name-new-spec-file-path)
-* [`asyncapi config context init [CONTEXT-FILE-PATH]`](#asyncapi-config-context-init-context-file-path)
-* [`asyncapi config context list`](#asyncapi-config-context-list)
-* [`asyncapi config context remove CONTEXT-NAME`](#asyncapi-config-context-remove-context-name)
-* [`asyncapi config context use CONTEXT-NAME`](#asyncapi-config-context-use-context-name)
-* [`asyncapi config versions`](#asyncapi-config-versions)
-* [`asyncapi convert [SPEC-FILE]`](#asyncapi-convert-spec-file)
-* [`asyncapi diff OLD NEW`](#asyncapi-diff-old-new)
-* [`asyncapi format [SPEC-FILE]`](#asyncapi-format-spec-file)
-* [`asyncapi generate`](#asyncapi-generate)
-* [`asyncapi generate fromTemplate ASYNCAPI TEMPLATE`](#asyncapi-generate-fromtemplate-asyncapi-template)
-* [`asyncapi generate models LANGUAGE FILE`](#asyncapi-generate-models-language-file)
-* [`asyncapi new`](#asyncapi-new)
-* [`asyncapi new file`](#asyncapi-new-file)
-* [`asyncapi new glee`](#asyncapi-new-glee)
-* [`asyncapi new template`](#asyncapi-new-template)
-* [`asyncapi optimize [SPEC-FILE]`](#asyncapi-optimize-spec-file)
-* [`asyncapi pretty SPEC-FILE`](#asyncapi-pretty-spec-file)
-* [`asyncapi start`](#asyncapi-start)
-* [`asyncapi start studio [SPEC-FILE]`](#asyncapi-start-studio-spec-file)
-* [`asyncapi validate [SPEC-FILE]`](#asyncapi-validate-spec-file)
+- [Usage](#usage)
+- [Commands](#commands)
+  - [`asyncapi bundle`](#asyncapi-bundle)
+  - [`asyncapi config`](#asyncapi-config)
+  - [`asyncapi config analytics`](#asyncapi-config-analytics)
+  - [`asyncapi config context`](#asyncapi-config-context)
+  - [`asyncapi config context add CONTEXT-NAME SPEC-FILE-PATH`](#asyncapi-config-context-add-context-name-spec-file-path)
+  - [`asyncapi config context current`](#asyncapi-config-context-current)
+  - [`asyncapi config context edit CONTEXT-NAME NEW-SPEC-FILE-PATH`](#asyncapi-config-context-edit-context-name-new-spec-file-path)
+  - [`asyncapi config context init [CONTEXT-FILE-PATH]`](#asyncapi-config-context-init-context-file-path)
+  - [`asyncapi config context list`](#asyncapi-config-context-list)
+  - [`asyncapi config context remove CONTEXT-NAME`](#asyncapi-config-context-remove-context-name)
+  - [`asyncapi config context use CONTEXT-NAME`](#asyncapi-config-context-use-context-name)
+  - [`asyncapi config versions`](#asyncapi-config-versions)
+  - [`asyncapi convert [SPEC-FILE]`](#asyncapi-convert-spec-file)
+  - [`asyncapi diff OLD NEW`](#asyncapi-diff-old-new)
+  - [`asyncapi format [SPEC-FILE]`](#asyncapi-format-spec-file)
+  - [`asyncapi generate`](#asyncapi-generate)
+  - [`asyncapi generate fromTemplate ASYNCAPI TEMPLATE`](#asyncapi-generate-fromtemplate-asyncapi-template)
+  - [`asyncapi generate models LANGUAGE FILE`](#asyncapi-generate-models-language-file)
+  - [`asyncapi new`](#asyncapi-new)
+  - [`asyncapi new file`](#asyncapi-new-file)
+  - [`asyncapi new glee`](#asyncapi-new-glee)
+  - [`asyncapi new template`](#asyncapi-new-template)
+  - [`asyncapi optimize [SPEC-FILE]`](#asyncapi-optimize-spec-file)
+  - [`asyncapi pretty SPEC-FILE`](#asyncapi-pretty-spec-file)
+  - [`asyncapi start`](#asyncapi-start)
+  - [`asyncapi start studio [SPEC-FILE]`](#asyncapi-start-studio-spec-file)
+  - [`asyncapi start preview [SPEC-FILE]`](#asyncapi-start-preview-spec-file)
+  - [`asyncapi validate [SPEC-FILE]`](#asyncapi-validate-spec-file)
 
 ## `asyncapi bundle`
 
@@ -458,7 +461,8 @@ DESCRIPTION
   Generates whatever you want using templates compatible with AsyncAPI Generator.
 
 EXAMPLES
-  $ asyncapi generate fromTemplate asyncapi.yaml @asyncapi/html-template --param version=1.0.0 singleFile=true --output ./docs --force-write
+  $ asyncapi generate fromTemplate - start creation of a template in interactive mode
+  $ asyncapi generate fromTemplate asyncapi.yaml @asyncapi/html-template@3.0.0 --use-new-generator
 ```
 
 _See code: [src/commands/generate/fromTemplate.ts](https://github.com/asyncapi/cli/blob/v2.16.4/src/commands/generate/fromTemplate.ts)_
@@ -632,24 +636,22 @@ _See code: [src/commands/new/glee.ts](https://github.com/asyncapi/cli/blob/v2.16
 
 ## `asyncapi new template`
 
-Creates a new template
+Creates a new template using React render engine
 
 ```
 USAGE
-  $ asyncapi new template [-h] [-n <value>] [-t <value>] [-f <value>] [--force-write] [-r <value>]
+  $ asyncapi new template [-h] [-n <value>] [-t <value>] [-f <value>] [--force-write]
 
 FLAGS
   -f, --file=<value>      The path to the AsyncAPI file for generating a template.
   -h, --help              Show CLI help.
   -n, --name=<value>      [default: project] Name of the Project
-  -r, --renderer=<value>  [default: react] Creating a template for particular engine, Its value can be either react or
-                          nunjucks.
   -t, --template=<value>  [default: default] Name of the Template
       --force-write       Force writing of the generated files to given directory even if it is a git repo with unstaged
                           files or not empty dir (defaults to false)
 
 DESCRIPTION
-  Creates a new template
+  Creates a new template using React render engine
 ```
 
 _See code: [src/commands/new/template.ts](https://github.com/asyncapi/cli/blob/v2.16.4/src/commands/new/template.ts)_
@@ -743,21 +745,48 @@ starts a new local instance of Studio
 
 ```
 USAGE
-  $ asyncapi start studio [SPEC-FILE] [-h] [-f <value>] [-p <value>]
+  $ asyncapi start studio [SPEC-FILE] [-h] [-f <value>] [-p <value>]  [--no-interactive]
 
 ARGUMENTS
   SPEC-FILE  spec path, url, or context-name
 
 FLAGS
-  -f, --file=<value>  path to the AsyncAPI file to link with Studio
-  -h, --help          Show CLI help.
-  -p, --port=<value>  port in which to start Studio
+  -f, --file=<value>   path to the AsyncAPI file to link with Studio
+  -h, --help           Show CLI help.
+  -p, --port=<value>   port in which to start Studio
+      --no-interactive disable prompts for this command which asks for file path if not passed via the arguments.
 
 DESCRIPTION
   starts a new local instance of Studio
 ```
 
 _See code: [src/commands/start/studio.ts](https://github.com/asyncapi/cli/blob/v2.16.4/src/commands/start/studio.ts)_
+
+## `asyncapi start preview [SPEC-FILE]`
+
+starts a new local instance of Studio in the minimal state bundling all the refs of the schema file and with no editing allowed.
+
+```
+USAGE
+  $ asyncapi start preview SPEC-FILE [-h] [-p <value>] [-b <value>] [-d <value>] [-x] [-l]
+
+ARGUMENTS
+   SPEC-FILE  the path to the file to be opened with studio or context name and is required.
+
+FLAGS
+  -b, --base=<value>    Path to the file which will act as a base. This is required when some properties need to be overwritten while bundling the file.
+  -d, --baseDir=<value> One relative/absolute path to directory relative to which paths to AsyncAPI Documents that should be bundled will be resolved.
+  -h, --help            Show ClI help.
+  -l, --suppressLogs    Pass this to suppress the detiled error logs.
+  -p, --port=<value>    port in which to start Studio in the preview mode.
+  -x, --xOrigin         Pass this switch to generate properties "x-origin" that will contain historical values of dereferenced "$ref"s.
+
+DESCRIPTION
+  starts a new local instance of Studio in minimal state bundling all the refs of the schema file and with no editing allowed. 
+```
+
+_See code: [src/commands/start/preview.ts](https://github.com/asyncapi/cli/blob/v2.16.4/src/commands/start/preview.ts)_
+
 
 ## `asyncapi validate [SPEC-FILE]`
 
