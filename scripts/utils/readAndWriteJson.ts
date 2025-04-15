@@ -18,9 +18,10 @@ export async function writeJSON(readPath: string, writePath: string) {
     readContent = await readFile(readPath, 'utf-8');
   } catch (err) {
     if (err instanceof Error) {
-      throw new Error(`Error while reading file\nError: ${err.message}`);
+      return Promise.reject(new Error(`Error while reading file\nError: ${err.message}`));
     }
-    throw new Error('Error while reading file\nError: Unknown error');
+
+    return Promise.reject(new Error('Error while reading file\nError: Unknown error'));
   }
 
   // Attempt to convert content to JSON
@@ -28,9 +29,10 @@ export async function writeJSON(readPath: string, writePath: string) {
     jsonContent = convertToJson(readContent);
   } catch (err) {
     if (err instanceof Error) {
-      throw new Error(`Error while conversion\nError: ${err.message}`);
+      return Promise.reject(new Error(`Error while conversion\nError: ${err.message}`));
     }
-    throw new Error('Error while conversion\nError: Unknown error');
+
+    return Promise.reject(new Error('Error while conversion\nError: Unknown error'));
   }
 
   // Attempt to write the JSON content to file
@@ -38,9 +40,9 @@ export async function writeJSON(readPath: string, writePath: string) {
     await writeFile(writePath, JSON.stringify(jsonContent));
   } catch (err) {
     if (err instanceof Error) {
-      throw new Error(`Error while writing file\nError: ${err.message}`);
+      return Promise.reject(new Error(`Error while writing file\nError: ${err.message}`));
     }
 
-    throw new Error('Error while writing file\nError: Unknown error');
+    return Promise.reject(new Error('Error while writing file\nError: Unknown error'));
   }
 }
