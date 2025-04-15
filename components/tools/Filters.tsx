@@ -120,11 +120,7 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
   };
 
   const toggleDropdown = (dropdownType: OpenedFiltersDropdownType) => {
-    setOpenedFiltersDropown(
-      openedFiltersDropown === dropdownType
-        ? OpenedFiltersDropdownType.NONE
-        : dropdownType
-    );
+    setOpenedFiltersDropown(openedFiltersDropown === dropdownType ? OpenedFiltersDropdownType.NONE : dropdownType);
   };
 
   return (
