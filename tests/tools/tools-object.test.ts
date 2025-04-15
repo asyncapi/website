@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import type { AsyncAPITool } from '@/types/scripts/tools';
+import type { AsyncAPITool, Category } from '@/types/scripts/tools';
 
 import { convertTools, createToolObject } from '../../scripts/tools/tools-object';
 import { logger } from '../../scripts/utils/logger';
@@ -28,7 +28,6 @@ describe('Tools Object', () => {
 
   beforeEach(() => {
     axiosMock.get.mockClear();
-    console.error = jest.fn();
   });
 
   const mockToolData = (toolContent: AsyncAPITool, toolNames = ['valid-tool']) => {
@@ -83,7 +82,10 @@ describe('Tools Object', () => {
   });
 
   it('should convert tools data correctly', async () => {
-    const toolContent = createToolFileContent({ title: 'Valid Tool', categories: ['Category1'] });
+    const toolContent = createToolFileContent({
+      title: 'Valid Tool',
+      categories: ['Category1' as unknown as Category]
+    });
     const mockData = mockToolData(toolContent);
 
     const result = await convertTools(mockData);
@@ -122,13 +124,13 @@ describe('Tools Object', () => {
   it('should add duplicate tool objects to the same category', async () => {
     const toolContent = createToolFileContent({
       title: 'Duplicate Tool',
-      categories: ['Category1']
+      categories: ['Category1' as unknown as Category]
     });
 
     const mockData = createMockData([
       { name: '.asyncapi-tool-dup1', repoName: 'dup1' },
       { name: '.asyncapi-tool-dup2', repoName: 'dup2' }
-    ]);
+    ] as Array<{ name: string; repoName: string }>);
 
     axiosMock.get.mockResolvedValue({ data: toolContent });
 
@@ -214,7 +216,7 @@ describe('Tools Object', () => {
     // Create a tool with duplicate categories
     const toolContent = createToolFileContent({
       title: 'Duplicate Category Tool',
-      categories: ['Category1', 'Category1'] // Same category listed twice
+      categories: ['Category1', 'Category1'] as unknown as Category[] // Same category listed twice
     });
 
     const mockData = mockToolData(toolContent);

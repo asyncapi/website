@@ -1,3 +1,5 @@
+import type { Category } from '@/types/scripts/tools';
+
 const createToolRepositoryData = ({
   name = '.asyncapi-tool',
   refId = '61855e7365a881e98c2fe667a658a0005753d873',
@@ -21,7 +23,7 @@ const createToolFileContent = ({
   title = 'Example Tool',
   description = 'This is an example tool.',
   repoUrl = null,
-  categories = ['Category1'],
+  categories = ['Category1' as unknown as Category],
   hasCommercial = false,
   additionalLinks = {},
   additionalFilters = {}
@@ -39,7 +41,7 @@ const createExpectedToolObject = ({
   title = 'Example Tool',
   description = 'This is an example tool.',
   repoUrl = null,
-  categories = ['Category1'],
+  categories = ['Category1' as unknown as Category],
   hasCommercial = false,
   isAsyncAPIOwner = true,
   additionalLinks = {},
@@ -55,7 +57,16 @@ const createExpectedToolObject = ({
     additionalFilters: { isAsyncAPIOwner, ...additionalFilters }
   });
 
-const createMockData = (tools = []) =>
+type ToolRepositoryDataParams = {
+  name?: string;
+  refId?: string;
+  owner?: string;
+  repoName?: string;
+  description?: string;
+  path?: string;
+};
+
+const createMockData = (tools: (string | ToolRepositoryDataParams)[] = []) =>
   tools.map((tool) =>
     typeof tool === 'string'
       ? createToolRepositoryData({ name: `.asyncapi-tool-${tool}`, repoName: tool })
