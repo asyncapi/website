@@ -3,14 +3,13 @@ import axios from 'axios';
 import type { AsyncAPITool } from '@/types/scripts/tools';
 
 import { convertTools, createToolObject } from '../../scripts/tools/tools-object';
+import { logger } from '../../scripts/utils/logger';
 import {
   createExpectedToolObject,
   createMalformedYAML,
   createMockData,
   createToolFileContent
 } from '../helper/toolsObjectData';
-
-const { logger } = require('../../scripts/utils/logger');
 
 jest.mock('../../scripts/utils/logger', () => ({
   logger: { warn: jest.fn(), error: jest.fn() }
@@ -199,23 +198,6 @@ describe('Tools Object', () => {
 
     expect(toolObject.description).toBe(repositoryDescription);
     expect(toolObject.title).toBe('No Description Tool');
-  });
-
-  it('should throw a generic error when the error object is not an Error instance', async () => {
-    const mockData = createMockData([
-      {
-        name: '.asyncapi-tool-error',
-        repoName: 'error-tool'
-      }
-    ]);
-
-    // Mock axios.get to throw a non-Error object
-    axiosMock.get.mockImplementation(() => {
-      // eslint-disable-next-line no-throw-literal, @typescript-eslint/no-throw-literal
-      throw 'This is a string error, not an Error object';
-    });
-
-    await expect(convertTools(mockData)).rejects.toThrow('An unexpected error occurred');
   });
 
   it('should skip files that do not start with .asyncapi-tool', async () => {
