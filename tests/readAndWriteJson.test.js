@@ -109,6 +109,7 @@ describe('writeJSON', () => {
       }
     });
 
+    
     try {
       await writeJSON(readPath, writePath);
       // If we get here, the test should fail
