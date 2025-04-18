@@ -44,7 +44,7 @@
           "color": "0d67d3"
         }
       ],
-      "score": 25.845712987433288
+      "score": 26.420062164931807
     },
     {
       "id": "I_kwDOBW5R_c6pn_G2",
@@ -60,7 +60,7 @@
           "color": "F4D03F"
         }
       ],
-      "score": 20.38939580119737
+      "score": 19.815046623698855
     },
     {
       "id": "MDU6SXNzdWU5OTE0Mzc3MjY=",
@@ -140,7 +140,7 @@
       "resourcePath": "/asyncapi/community/pull/1733",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 14.358729437462937
+      "score": 15.220253203710714
     },
     {
       "id": "PR_kwDOBW5R_c6O_Ql9",
@@ -151,21 +151,31 @@
       "resourcePath": "/asyncapi/website/pull/3911",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 14.07155484871368
+      "score": 14.645904026212197
     },
     {
-      "id": "I_kwDODwv8N86un74M",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Add AsyncAPI Meetups Page to Conference Website",
-      "author": "Shriya-Chauhan",
-      "resourcePath": "/asyncapi/conference-website/issues/644",
-      "repo": "asyncapi/conference-website",
+      "id": "PR_kwDOFLhIt86LeC8N",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: expand community docs: contributor - simple contribution flow a…",
+      "author": "ezinneanne",
+      "resourcePath": "/asyncapi/community/pull/1730",
+      "repo": "asyncapi/community",
       "labels": [],
-      "score": 13.78438025996442
+      "score": 14.358729437462937
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDODwv8N86y8NIb",
+      "title": "Venue cards date misalignment",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/conference-website/issues/715",
+      "repo": "asyncapi/conference-website",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": []
+    },
     {
       "id": "I_kwDOBW5R_c6xUO9N",
       "title": "Announcement banner not showing or misaligned on some pages",
@@ -527,6 +537,10 @@
         {
           "name": "bug",
           "color": "d73a4a"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
