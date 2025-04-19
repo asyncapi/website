@@ -8,7 +8,7 @@ jest.mock('fs/promises', () => ({
   writeFile: jest.fn()
 }));
 
-jest.mock('../scripts/helper/utils.js', () => ({
+jest.mock('../scripts/helper/utils.ts', () => ({
   convertToJson: jest.fn()
 }));
 
