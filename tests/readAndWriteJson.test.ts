@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 
-import { convertToJson } from '../scripts/utils';
+import { convertToJson } from '../scripts/utils/functions';
 import { writeJSON } from '../scripts/utils/readAndWriteJson';
 import { jsonObject, yamlString } from './fixtures/utilsData';
 
@@ -9,7 +9,7 @@ jest.mock('fs/promises', () => ({
   writeFile: jest.fn()
 }));
 
-jest.mock('../scripts/utils', () => ({
+jest.mock('../scripts/utils/functions', () => ({
   convertToJson: jest.fn()
 }));
 

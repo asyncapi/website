@@ -1,4 +1,4 @@
-import { convertToJson } from '../scripts/utils';
+import { convertToJson } from '../scripts/utils/functions';
 import { invalidString, jsonObject, jsonString, yamlString } from './fixtures/utilsData';
 
 describe('convertToJson', () => {
