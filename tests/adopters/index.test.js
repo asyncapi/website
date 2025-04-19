@@ -1,8 +1,8 @@
 const { resolve } = require('path');
-const { writeJSON } = require('../../scripts/utils/readAndWriteJson.ts');
+const { writeJSON } = require('../../scripts/helper/readAndWriteJson.ts');
 const { buildAdoptersList } = require('../../scripts/adopters/index.ts');
 
-jest.mock('../../scripts/utils/readAndWriteJson.ts');
+jest.mock('../../scripts/helper/readAndWriteJson.ts');
 
 describe('buildAdoptersList', () => {
   test('should call writeJSON with correct arguments', async () => {

@@ -14,8 +14,8 @@ import type {
   PullRequestById
 } from '@/types/scripts/dashboard';
 
-import { pause } from '../utils';
-import { logger } from '../utils/logger';
+import { logger } from '../helper/logger';
+import { pause } from '../helper/utils';
 import { Queries } from './issue-queries';
 
 const currentFilePath = fileURLToPath(import.meta.url);
