@@ -1,4 +1,6 @@
 import { mkdirpSync, outputFileSync, readFileSync, removeSync } from 'fs-extra';
+// Get reference to the mocked fetch function
+import fetch from 'node-fetch-2';
 import os from 'os';
 import { join, resolve } from 'path';
 
@@ -9,9 +11,7 @@ import { expectedResult, mockApiResponse } from './fixtures/newsroomData';
 jest.mock('node-fetch-2', () => {
   return jest.fn();
 });
-
-// Get reference to the mocked fetch function
-const mockFetch = jest.mocked(require('node-fetch-2'));
+const mockFetch = fetch as jest.Mock;
 
 describe('buildNewsroomVideos', () => {
   const testDir = join(os.tmpdir(), 'test_config');

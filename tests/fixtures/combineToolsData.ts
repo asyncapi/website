@@ -1,3 +1,5 @@
+import type { Category } from '../../types/scripts/tools';
+
 const expectedDataT1 = {
   languages: [
     {
@@ -25,13 +27,20 @@ const expectedDataT1 = {
   ]
 };
 
-const manualToolsWithMissingData = [
-  {
-    title: 'Tool C',
-    filters: {},
-    links: { repoUrl: 'https://github.com/asyncapi/tool-c' }
+const manualToolsWithMissingData = {
+  myCategory: {
+    description: 'this is a test category',
+    toolsList: [
+      {
+        title: 'Tool C',
+        filters: {
+          categories: [] as Category[]
+        },
+        links: { repoUrl: 'https://github.com/asyncapi/tool-c' }
+      }
+    ]
   }
-];
+};
 
 const manualToolsToSort = {
   category1: {
@@ -39,12 +48,20 @@ const manualToolsToSort = {
     toolsList: [
       {
         title: 'Tool Z',
-        filters: { language: 'JavaScript' },
+        filters: {
+          language: ['JavaScript'],
+          technology: [],
+          categories: ['code-generator' as Category]
+        },
         links: { repoUrl: 'https://github.com/asyncapi/tool-z' }
       },
       {
         title: 'Tool A',
-        filters: { language: 'Python' },
+        filters: {
+          language: ['Python'],
+          technology: [],
+          categories: ['code-generator' as Category]
+        },
         links: { repoUrl: 'https://github.com/asyncapi/tool-a' }
       }
     ]
@@ -55,7 +72,8 @@ const toolWithMultipleLanguages = {
   title: 'Multi-Language Tool',
   filters: {
     language: ['JavaScript', 'Python', 'NewLanguage'],
-    technology: ['Node.js']
+    technology: ['Node.js'],
+    categories: ['code-generator' as Category]
   },
   links: { repoUrl: 'https://github.com/example/multi-language-tool' }
 };
@@ -67,7 +85,12 @@ const automatedToolsT5 = {
   }
 };
 
-const invalidToolT4 = { title: 'Invalid Tool' };
+const invalidToolT4 = {
+  title: 'Invalid Tool',
+  filters: {
+    categories: [] as Category[]
+  }
+};
 
 const automatedToolsT4 = {
   category1: {
@@ -77,6 +100,7 @@ const automatedToolsT4 = {
 };
 const manualToolsT4 = {
   category1: {
+    description: 'Category 1 Description',
     toolsList: [invalidToolT4]
   }
 };
@@ -84,8 +108,9 @@ const manualToolsT4 = {
 const toolWithNewTagsT6 = {
   title: 'New Tags Tool',
   filters: {
-    language: 'NewLanguage',
-    technology: ['NewTechnology']
+    language: ['NewLanguage'],
+    technology: ['NewTechnology'],
+    categories: ['api' as Category]
   },
   links: { repoUrl: 'https://github.com/example/new-tags-tool' }
 };
@@ -100,8 +125,9 @@ const automatedToolsT6 = {
 const toolWithNewLanguageT7 = {
   title: 'New Language Tool',
   filters: {
-    language: 'Go',
-    technology: ['Node.js']
+    language: ['Go'],
+    technology: ['Node.js'],
+    categories: ['api' as Category]
   },
   links: { repoUrl: 'https://github.com/example/new-language-tool' }
 };
@@ -116,8 +142,9 @@ const automatedToolsT7 = {
 const validToolT8 = {
   title: 'Valid Tool',
   filters: {
-    language: 'JavaScript',
-    technology: ['Node.js']
+    language: ['JavaScript'],
+    technology: ['Node.js'],
+    categories: ['api' as Category]
   },
   links: { repoUrl: 'https://github.com/asyncapi/valid-tool' }
 };
@@ -131,6 +158,7 @@ const automatedToolsT8 = {
 
 const manualToolsT8 = {
   category1: {
+    description: 'Category 1 Description',
     toolsList: [validToolT8]
   }
 };
@@ -138,8 +166,9 @@ const manualToolsT8 = {
 const toolWithoutRepoUrlT9 = {
   title: 'Tool Without Repo',
   filters: {
-    language: 'Python',
-    technology: ['Flask']
+    language: ['Python'],
+    technology: ['Flask'],
+    categories: ['documentation-generator' as Category]
   },
   links: {}
 };
@@ -153,6 +182,7 @@ const automatedToolsT9 = {
 
 const manualToolsT9 = {
   category1: {
+    description: 'Category 1 Description',
     toolsList: [toolWithoutRepoUrlT9]
   }
 };
@@ -166,10 +196,15 @@ const invalidAutomatedToolsT10 = {
 
 const manualToolsWithInvalidURLT11 = {
   category1: {
+    description: 'Category 1 Description',
     toolsList: [
       {
         title: 'Tool with Invalid URL',
-        filters: { language: 'JavaScript' },
+        filters: {
+          language: ['JavaScript'],
+          technology: [],
+          categories: ['api' as Category]
+        },
         links: { repoUrl: 'invalid-url' }
       }
     ]
@@ -179,8 +214,9 @@ const manualToolsWithInvalidURLT11 = {
 const circularTool = {
   title: 'Circular Tool',
   filters: {
-    language: 'JavaScript',
-    technology: ['Node.js']
+    language: ['JavaScript'],
+    technology: ['Node.js'],
+    categories: ['api' as Category]
   },
   links: { repoUrl: 'https://github.com/asyncapi/circular-tool' }
 };
@@ -193,15 +229,13 @@ const automatedToolsT12 = {
 };
 
 const finalToolWithMissingData = {
-  0: {
-    title: 'Tool C',
-    filters: {},
-    links: { repoUrl: 'https://github.com/asyncapi/tool-c' }
-  },
+  title: 'Tool C',
+
+  links: { repoUrl: 'https://github.com/asyncapi/tool-c' },
   filters: {
     language: [],
     technology: [],
-    categories: [],
+    categories: [] as Category[],
     hasCommercial: false
   }
 };

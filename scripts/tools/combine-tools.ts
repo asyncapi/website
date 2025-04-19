@@ -179,7 +179,7 @@ const combineTools = async (
   manualTools: ToolsListObject,
   toolsPath: string,
   tagsPath: string
-) => {
+): Promise<void> => {
   try {
     // eslint-disable-next-line no-restricted-syntax
     for (const key in automatedTools) {

@@ -1,6 +1,10 @@
+import type { JSONSchemaType } from 'ajv';
 import fs from 'fs';
 import path from 'path';
 
+import type { AsyncAPITool } from '@/types/scripts/tools';
+
+//
 import { combineTools, getFinalTool } from '../../scripts/tools/combine-tools';
 import { logger } from '../../scripts/utils/logger';
 import {
@@ -29,7 +33,7 @@ jest.mock('../../scripts/utils/logger', () => ({
 
 jest.mock('ajv', () => {
   return jest.fn().mockImplementation(() => ({
-    compile: jest.fn().mockImplementation(() => (data) => data.title !== 'Invalid Tool')
+    compile: jest.fn().mockImplementation(() => (data: JSONSchemaType<any>) => data.title !== 'Invalid Tool')
   }));
 });
 
@@ -66,6 +70,7 @@ describe('combineTools function', () => {
   let manualTools: Record<string, any>;
   let automatedTools: Record<string, any>;
   let consoleErrorMock: jest.SpyInstance;
+  const loggerErrorMock: jest.SpyInstance = jest.spyOn(logger, 'error');
 
   beforeAll(() => {
     manualTools = readJSON(manualToolsPath);
@@ -102,7 +107,6 @@ describe('combineTools function', () => {
   });
 
   it('should handle tools with missing language or technology', async () => {
-    // @ts-ignore, ignore the error for missing properties
     await combineTools({}, manualToolsWithMissingData, toolsPath, tagsPath);
 
     const combinedTools = readJSON(toolsPath);
@@ -110,11 +114,28 @@ describe('combineTools function', () => {
     expect(combinedTools).toHaveProperty('category1');
   });
 
+  it('should throw an error when tools are passed as an array instead of object', async () => {
+    const toolsArray = [
+      {
+        title: 'Array Tool',
+        filters: {
+          categories: [{ name: 'category1', description: 'Sample Category 1' }],
+          language: [],
+          technology: []
+        },
+        links: { repoUrl: 'https://example.com' }
+      }
+    ];
+
+    // @ts-expect-error - Intentionally passing wrong type to test error handling
+    await expect(combineTools(toolsArray, {}, toolsPath, tagsPath)).rejects.toThrow('Error combining tools');
+  });
+
   it('should sort tools alphabetically by title', async () => {
     await combineTools(manualToolsToSort, {}, toolsPath, tagsPath);
 
     const combinedTools = readJSON(toolsPath);
-    const toolTitles = combinedTools.category1.toolsList.map((tool) => tool.title);
+    const toolTitles = combinedTools.category1.toolsList.map((tool: AsyncAPITool) => tool.title);
 
     expect(toolTitles).toEqual(['Tool A', 'Tool Z']);
   });
@@ -122,7 +143,7 @@ describe('combineTools function', () => {
   it('should log validation errors to console.error', async () => {
     await combineTools(automatedToolsT4, manualToolsT4, toolsPath, tagsPath);
 
-    const { message, tool, source, note } = JSON.parse(logger.error.mock.calls[0][0]);
+    const { message, tool, source, note } = JSON.parse(loggerErrorMock.mock.calls[0][0]);
 
     expect(message).toBe('Tool validation failed');
     expect(tool).toBe('Invalid Tool');
@@ -238,17 +259,17 @@ describe('combineTools function', () => {
   });
 
   it('should handle errors when processing tools with circular references', async () => {
-    circularTool.circular = circularTool;
+    (circularTool as any).circular = circularTool;
     await expect(combineTools(automatedToolsT12, {}, toolsPath, tagsPath)).rejects.toThrow(
       'Converting circular structure to JSON'
     );
   });
   it('should handle tools with missing data and filters', async () => {
-    manualToolsWithMissingData.filters = {
+    manualToolsWithMissingData.myCategory.toolsList[0].filters = {
       categories: [],
       hasCommercial: false
-    };
-    const result = await getFinalTool(manualToolsWithMissingData);
+    } as any;
+    const result = await getFinalTool(manualToolsWithMissingData.myCategory.toolsList[0]);
 
     expect(result).toEqual(finalToolWithMissingData);
   });
@@ -266,6 +287,8 @@ describe('combineTools function', () => {
         ]
       }
     };
+
+    // @ts-ignore, ignore the error for missing properties
 
     await combineTools(noTitleTools, {}, toolsPath, tagsPath);
     expect(logger.error).toHaveBeenCalledWith(
