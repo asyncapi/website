@@ -1,6 +1,17 @@
 {
   "hotDiscussions": [
     {
+      "id": "PR_kwDODCuNRs6NwyqP",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: initial ROS2 AsyncAPI contribution by SIEMENS AG",
+      "author": "gramss",
+      "resourcePath": "/asyncapi/bindings/pull/270",
+      "repo": "asyncapi/bindings",
+      "labels": [],
+      "score": 33.02507770616476
+    },
+    {
       "id": "PR_kwDOFLhIt86HHVY9",
       "isPR": true,
       "isAssigned": false,
@@ -9,130 +20,7 @@
       "resourcePath": "/asyncapi/community/pull/1634",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 28.717458874925875
-    },
-    {
-      "id": "I_kwDOBW5R_c5BIl5P",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Add new page for collecting user testing participants",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/website/issues/529",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "Epic",
-          "color": "3E4B9E"
-        },
-        {
-          "name": "keep-open",
-          "color": "ffee84"
-        },
-        {
-          "name": "area/design",
-          "color": "0d67d3"
-        },
-        {
-          "name": "area/javascript",
-          "color": "ededed"
-        }
-      ],
-      "score": 22.9739670999407
-    },
-    {
-      "id": "PR_kwDOFLhIt85bqKL8",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: add Bounty Program Rules",
-      "author": "aeworxet",
-      "resourcePath": "/asyncapi/community/pull/897",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 22.112443333692923
-    },
-    {
-      "id": "PR_kwDOBW5R_c6KgWbR",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: enabled viewing historical finance data",
-      "author": "SahilDahekar",
-      "resourcePath": "/asyncapi/website/pull/3658",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 16.65612614745701
-    },
-    {
-      "id": "I_kwDOFLhIt85bebeO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Meeting Banners Storage",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/issues/568",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 16.36895155870775
-    },
-    {
-      "id": "PR_kwDOBW5R_c6MO2j-",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore(blog): add ashmit spotlight story",
-      "author": "iambami",
-      "resourcePath": "/asyncapi/website/pull/3726",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.358729437462937
-    },
-    {
-      "id": "I_kwDODou01c5ZAFWh",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Please support File References",
-      "author": "philCryoport",
-      "resourcePath": "/asyncapi/studio/issues/528",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "bounty",
-          "color": "0E8A16"
-        }
-      ],
-      "score": 14.07155484871368
-    },
-    {
-      "id": "I_kwDOFLhIt85xI2wH",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Measure AsyncAPI Adoption",
-      "author": "fmvilas",
-      "resourcePath": "/asyncapi/community/issues/879",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 12.922856493716644
-    },
-    {
-      "id": "I_kwDOBGu-186XjdU2",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Proposal to add a 'version' value into the message object to support a more granular versioning",
-      "author": "IsmaelMartinez",
-      "resourcePath": "/asyncapi/spec/issues/1068",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 12.348507316218127
+      "score": 33.02507770616476
     },
     {
       "id": "I_kwDOFLhIt86O7jFN",
@@ -156,32 +44,158 @@
           "color": "0d67d3"
         }
       ],
-      "score": 12.348507316218127
+      "score": 26.420062164931807
     },
     {
-      "id": "PR_kwDOBW5R_c6GWsFI",
+      "id": "I_kwDOBW5R_c6pn_G2",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Redesign the AsyncAPI Website and Implement Dark Theme",
+      "author": "devilkiller-ag",
+      "resourcePath": "/asyncapi/website/issues/3669",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "gsoc",
+          "color": "F4D03F"
+        }
+      ],
+      "score": 19.815046623698855
+    },
+    {
+      "id": "MDU6SXNzdWU5OTE0Mzc3MjY=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "remove puppeteer from dependencies",
+      "author": "flamewow",
+      "resourcePath": "/asyncapi/html-template/issues/256",
+      "repo": "asyncapi/html-template",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 18.091999091203302
+    },
+    {
+      "id": "PR_kwDOBW5R_c6KgWbR",
       "isPR": true,
       "isAssigned": false,
-      "title": "fix: simplified error handling in build-dashboard.js",
-      "author": "sahitya-chandra",
-      "resourcePath": "/asyncapi/website/pull/3521",
+      "title": "feat: enabled viewing historical finance data",
+      "author": "SahilDahekar",
+      "resourcePath": "/asyncapi/website/pull/3658",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 10.338285194973315
+      "score": 17.230475324955524
     },
     {
-      "id": "PR_kwDOFLhIt86DqUGM",
-      "isPR": true,
+      "id": "I_kwDOFLhIt85bebeO",
+      "isPR": false,
       "isAssigned": false,
-      "title": "docs: add Nikita Pastukhov to Ambassadors list",
-      "author": "Lancetnik",
-      "resourcePath": "/asyncapi/community/pull/1608",
+      "title": "Meeting Banners Storage",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/issues/568",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 10.338285194973315
+      "score": 16.943300736206268
+    },
+    {
+      "id": "PR_kwDOFLhIt853IEwA",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: added asyncapi student ambassador md file",
+      "author": "iambami",
+      "resourcePath": "/asyncapi/community/pull/1333",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 16.65612614745701
+    },
+    {
+      "id": "I_kwDODou01c5ZAFWh",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Please support File References",
+      "author": "philCryoport",
+      "resourcePath": "/asyncapi/studio/issues/528",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 15.220253203710714
+    },
+    {
+      "id": "PR_kwDOFLhIt86Lqu0L",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: expand community docs - Following Conventional Commits",
+      "author": "Aahil13",
+      "resourcePath": "/asyncapi/community/pull/1733",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 15.220253203710714
+    },
+    {
+      "id": "PR_kwDOBW5R_c6O_Ql9",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore(blog): add marketing q1 report",
+      "author": "iambami",
+      "resourcePath": "/asyncapi/website/pull/3911",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 14.645904026212197
+    },
+    {
+      "id": "PR_kwDOFLhIt86LeC8N",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: expand community docs: contributor - simple contribution flow a…",
+      "author": "ezinneanne",
+      "resourcePath": "/asyncapi/community/pull/1730",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 14.358729437462937
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDODwv8N86y8NIb",
+      "title": "Venue cards date misalignment",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/conference-website/issues/715",
+      "repo": "asyncapi/conference-website",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": []
+    },
+    {
+      "id": "I_kwDOBW5R_c6xUO9N",
+      "title": "Announcement banner not showing or misaligned on some pages",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/4021",
+      "repo": "asyncapi/website",
+      "author": "vishvamsinh28",
+      "area": "Unknown",
+      "labels": []
+    },
+    {
+      "id": "I_kwDOFDnrNc6uQo6r",
+      "title": "[Improvement]: Improve the error message while generating project fromgenerate command",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/cli/issues/1728",
+      "repo": "asyncapi/cli",
+      "author": "AayushSaini101",
+      "area": "Unknown",
+      "labels": []
+    },
     {
       "id": "I_kwDOFDnrNc6tHvh5",
       "title": "[BUG] AsyncAPI/generator needs to upgrade",
@@ -242,16 +256,6 @@
       "labels": []
     },
     {
-      "id": "I_kwDOBW5R_c6qAXn5",
-      "title": "[Bug]: The Search History from Search Bar and Search Icon is not consistent",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/3676",
-      "repo": "asyncapi/website",
-      "author": "krishi-agrawal",
-      "area": "typescript",
-      "labels": []
-    },
-    {
       "id": "I_kwDOBW5R_c6ovh9-",
       "title": "[FEATURE] <Social Sharing Buttons on Blogs>",
       "isAssigned": false,
@@ -259,21 +263,6 @@
       "repo": "asyncapi/website",
       "author": "cbum-dev",
       "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c6oqLim",
-      "title": "[FEATURE] Add smooth transition to the search modal opening",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/3646",
-      "repo": "asyncapi/website",
-      "author": "auraticabhi",
-      "area": "Unknown",
       "labels": [
         {
           "name": "enhancement",
@@ -357,21 +346,6 @@
       ]
     },
     {
-      "id": "I_kwDOFLhIt86ihL5I",
-      "title": "[BUG] voting summary has some errors in `isVotedInLast3Months`",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/community/issues/1614",
-      "repo": "asyncapi/community",
-      "author": "derberg",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ]
-    },
-    {
       "id": "I_kwDODwv8N86f37o-",
       "title": "Return to top arrow feature/button",
       "isAssigned": false,
@@ -421,94 +395,14 @@
       "area": "Unknown",
       "labels": [
         {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODwv8N86YYYFf",
-      "title": "Fix the way the ticket section is being rendered",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/conference-website/issues/395",
-      "repo": "asyncapi/conference-website",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
+          "name": "stale",
+          "color": "ededed"
         },
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
         }
       ]
-    },
-    {
-      "id": "I_kwDOGQYLdM6VGsJA",
-      "title": "Design a Graphic for the Member Spotlight Post",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/brand/issues/108",
-      "repo": "asyncapi/brand",
-      "author": "Mayaleeeee",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": ":art: design",
-          "color": "0D67D3"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOGQYLdM6VAt9d",
-      "title": "Create \"Did You Know?\" Social Media Posts (3-4 Graphics)",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/brand/issues/107",
-      "repo": "asyncapi/brand",
-      "author": "Mayaleeeee",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOGQYLdM6VAsmz",
-      "title": "Create a Graphic for \"Ask Me Anything\" (AMA) Session Announcement",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/brand/issues/106",
-      "repo": "asyncapi/brand",
-      "author": "Mayaleeeee",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOGQYLdM6VArWv",
-      "title": "Design a Graphic for Mentorship Program Announcement",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/brand/issues/105",
-      "repo": "asyncapi/brand",
-      "author": "Mayaleeeee",
-      "area": "design",
-      "labels": []
-    },
-    {
-      "id": "I_kwDOGQYLdM6VApSN",
-      "title": "Design a Graphic for Newsletter Promo",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/brand/issues/104",
-      "repo": "asyncapi/brand",
-      "author": "Mayaleeeee",
-      "area": "design",
-      "labels": []
     },
     {
       "id": "I_kwDOFLhIt86O7jFN",
@@ -643,6 +537,10 @@
         {
           "name": "bug",
           "color": "d73a4a"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -715,10 +613,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
@@ -734,29 +628,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c48lGJg",
-      "title": "Add visual on the \"generator\" and maybe others....",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/403",
-      "repo": "asyncapi/website",
-      "author": "boyney123",
-      "area": "design",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
         }
       ]
     }
