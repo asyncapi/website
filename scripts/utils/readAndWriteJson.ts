@@ -17,7 +17,7 @@ export async function writeJSON(readPath: string, writePath: string) {
     readContent = await readFile(readPath, 'utf-8');
   } catch (err) {
     if (err instanceof Error) {
-      return Promise.reject(new Error(`Error while reading file\nError: ${err.message}`));
+      return Promise.reject(err);
     }
 
     return Promise.reject(new Error('Error while reading file\nError: Unknown error'));
@@ -39,7 +39,7 @@ export async function writeJSON(readPath: string, writePath: string) {
     await writeFile(writePath, JSON.stringify(jsonContent));
   } catch (err) {
     if (err instanceof Error) {
-      return Promise.reject(new Error(`Error while writing file\nError: ${err.message}`));
+      return Promise.reject(err);
     }
 
     return Promise.reject(new Error('Error while writing file\nError: Unknown error'));

@@ -73,9 +73,9 @@ describe('Tools Object', () => {
       additionalLinks: { docsUrl: 'https://docs.example.com' }
     });
 
-    // @ts-ignore, ignore the error for missing properties
+    // @ts-ignore, ignore the error for wrong data type
 
-    expected.filters.isAsyncAPIOwner = '';
+    expected.filters.isAsyncAPIOwner = false;
     const result = await createToolObject(toolFile);
 
     expect(result).toEqual(expected);

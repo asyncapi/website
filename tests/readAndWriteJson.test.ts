@@ -36,7 +36,7 @@ describe('writeJSON', () => {
   test('should throw an error if reading the file fails', async () => {
     (fs.readFile as jest.MockedFunction<typeof fs.readFile>).mockRejectedValue(error);
 
-    await expect(writeJSON(readPath, writePath)).rejects.toThrow(`Error while reading file\nError: ${error.message}`);
+    await expect(writeJSON(readPath, writePath)).rejects.toThrow(error);
 
     expect(fs.readFile).toHaveBeenCalledWith(readPath, 'utf-8');
   });
@@ -47,7 +47,7 @@ describe('writeJSON', () => {
       throw error;
     });
 
-    await expect(writeJSON(readPath, writePath)).rejects.toThrow(`Error while conversion\nError: ${error.message}`);
+    await expect(writeJSON(readPath, writePath)).rejects.toThrow(error);
 
     expect(convertToJson).toHaveBeenCalledWith(yamlString);
   });
@@ -57,7 +57,7 @@ describe('writeJSON', () => {
     (convertToJson as jest.MockedFunction<typeof convertToJson>).mockReturnValue(jsonObject);
     (fs.writeFile as jest.MockedFunction<typeof fs.writeFile>).mockRejectedValue(error);
 
-    await expect(writeJSON(readPath, writePath)).rejects.toThrow(`Error while writing file\nError: ${error.message}`);
+    await expect(writeJSON(readPath, writePath)).rejects.toThrow(error);
 
     expect(fs.writeFile).toHaveBeenCalledWith(writePath, JSON.stringify(jsonObject));
   });
