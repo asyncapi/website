@@ -1,3 +1,5 @@
+import { logger } from '../../scripts/utils.ts';
+
 const axios = require('axios');
 const { convertTools, createToolObject } = require('../../scripts/tools/tools-object.ts');
 const {
@@ -7,10 +9,10 @@ const {
   createMalformedYAML
 } = require('../helper/toolsObjectData');
 
-const { logger } = require('../../scripts/utils/logger.ts');
 
-jest.mock('../../scripts/utils/logger', () => ({
-  logger: { warn: jest.fn(), error: jest.fn() }
+jest.mock('../../scripts/utils', () => ({
+  logger: { warn: jest.fn(), error: jest.fn() },
+  convertToJson: jest.fn(content => content)
 }));
 
 jest.mock('axios');

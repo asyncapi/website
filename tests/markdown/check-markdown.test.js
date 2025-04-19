@@ -1,3 +1,5 @@
+import { logger } from '../../scripts/utils.ts';
+
 const fs = require('fs').promises;
 const path = require('path');
 const os = require('os');
@@ -8,9 +10,7 @@ const {
   validateDocs,
   checkMarkdownFiles
 } = require('../../scripts/markdown/check-markdown.ts');
-const { logger } = require('../../scripts/utils/logger.ts');
-
-jest.mock('../../scripts/utils/logger', () => ({
+jest.mock('../../scripts/utils', () => ({
   logger: { error: jest.fn(), warn: jest.fn() }
 }));
 

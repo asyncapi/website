@@ -15,7 +15,7 @@ import type {
 } from '@/types/scripts/dashboard';
 
 import { pause } from '../utils';
-import { logger } from '../utils/logger';
+import { logger } from '../utils';
 import { Queries } from './issue-queries';
 
 const currentFilePath = fileURLToPath(import.meta.url);
