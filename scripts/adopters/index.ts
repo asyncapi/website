@@ -1,7 +1,7 @@
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
-import { writeJSON } from '../utils/readAndWriteJson';
+import { writeJSON } from '../helper/readAndWriteJson';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
