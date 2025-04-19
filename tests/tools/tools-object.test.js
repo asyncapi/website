@@ -9,7 +9,7 @@ const {
 
 const { logger } = require('../../scripts/helper/logger.ts');
 
-jest.mock('../../scripts/helper/logger', () => ({
+jest.mock('../../scripts/helper/logger.ts', () => ({
   logger: { warn: jest.fn(), error: jest.fn() }
 }));
 

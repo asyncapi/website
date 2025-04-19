@@ -11,7 +11,7 @@ const {
 const { determineEditLinkData, processBatchData, testPaths } = require('../fixtures/markdown/check-edit-links-data');
 const { logger } = require('../../scripts/helper/logger.ts');
 
-jest.mock('../../scripts/helper/logger', () => ({
+jest.mock('../../scripts/helper/logger.ts', () => ({
   logger: { info: jest.fn() }
 }));
 jest.mock('node-fetch-2', () => jest.fn());
