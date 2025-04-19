@@ -28,7 +28,7 @@ export async function writeJSON(readPath: string, writePath: string) {
     jsonContent = convertToJson(readContent);
   } catch (err) {
     if (err instanceof Error) {
-      return Promise.reject(new Error(`Error while conversion\nError: ${err.message}`));
+      return Promise.reject(err);
     }
 
     return Promise.reject(new Error('Error while conversion\nError: Unknown error'));
