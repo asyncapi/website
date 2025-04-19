@@ -39,7 +39,7 @@ export type LanguageColorItem = {
 
 // Filter types
 export interface Filters {
-  language?: Array<string>;
+  language?: Array<string> | string;
   technology?: Array<string>;
   categories: Array<Category>;
   hasCommercial?: boolean;

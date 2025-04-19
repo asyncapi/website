@@ -125,7 +125,7 @@ const automatedToolsT6 = {
 const toolWithNewLanguageT7 = {
   title: 'New Language Tool',
   filters: {
-    language: ['Go'],
+    language: 'Go',
     technology: ['Node.js'],
     categories: ['api' as Category]
   },
