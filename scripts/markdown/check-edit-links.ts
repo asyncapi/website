@@ -4,7 +4,7 @@ import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 import editUrls from '../../config/edit-page-config.json';
-import { pause } from '../utils';
+import { pause } from '../utils/functions';
 import { logger } from '../utils/logger';
 
 const ignoreFiles = [
@@ -108,7 +108,6 @@ function determineEditLink(
   }
 
   // For other cases with specific targets
-  /* istanbul ignore next */
   return target ? `${target.href}/${path.basename(filePath)}` : null;
 }
 
@@ -140,8 +139,6 @@ async function generatePaths(
         }
 
         const stats = await fs.stat(filePath);
-
-        /* istanbul ignore else */
 
         if (stats.isDirectory()) {
           await generatePaths(filePath, editOptions, relativeFilePath, result);

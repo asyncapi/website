@@ -1,6 +1,6 @@
 const config = {
   transform: {
-    '^.+\\.[t|j]sx?$': ['babel-jest', { configFile: './tests/babel.test.config.cjs' }]
+    '^.+\\.[t|j]sx?$': ['babel-jest', { configFile: './tests/babel.test.config.cts' }]
   },
   verbose: true,
   collectCoverage: true,
