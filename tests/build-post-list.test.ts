@@ -214,19 +214,21 @@ describe('buildPostList', () => {
   });
 
   it('throws an error when details object is invalid', () => {
+    const finalResult: Result = { blog: [], docs: [], about: [], docsTree: {} };
+
     // @ts-ignore
-    expect(() => addItem(null)).toThrow('Invalid details object provided to addItem');
+    expect(() => addItem(null, finalResult)).toThrow('Invalid details object provided to addItem');
     // @ts-ignore
-    expect(() => addItem({})).toThrow('Invalid details object provided to addItem');
+    expect(() => addItem({}, finalResult)).toThrow('Invalid details object provided to addItem');
     // @ts-ignore
-    expect(() => addItem({ slug: 123 })).toThrow('Invalid details object provided to addItem');
+    expect(() => addItem({ slug: 123 }, finalResult)).toThrow('Invalid details object provided to addItem');
     // @ts-ignore
-    expect(() => addItem(undefined)).toThrow('Invalid details object provided to addItem');
+    expect(() => addItem(undefined, finalResult)).toThrow('Invalid details object provided to addItem');
   });
 
   it('does not add item when slug does not match any section', () => {
     // Define finalResult
-    const finalResult = { blog: [], docs: [], about: [] };
+    const finalResult: Result = { blog: [], docs: [], about: [], docsTree: {} };
 
     // Get the initial state of finalResult
     const initialBlogs = JSON.parse(JSON.stringify(finalResult.blog));
@@ -234,7 +236,7 @@ describe('buildPostList', () => {
     const initialAbout = JSON.parse(JSON.stringify(finalResult.about));
 
     // Add an item with a slug that doesn't match any section
-    addItem({ slug: '/unknown/path', title: 'Unknown Item' });
+    addItem({ slug: '/unknown/path', title: 'Unknown Item' }, finalResult);
 
     // Verify no changes were made to any section arrays
     expect(finalResult.blog).toEqual(initialBlogs);
