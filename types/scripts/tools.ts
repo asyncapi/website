@@ -43,7 +43,7 @@ export interface Filters {
   technology?: Array<string>;
   categories: Array<Category>;
   hasCommercial?: boolean;
-  isAsyncAPIOwner?: boolean | string;
+  isAsyncAPIOwner?: boolean;
 }
 
 // Instead of extending BaseFilters, create a separate interface

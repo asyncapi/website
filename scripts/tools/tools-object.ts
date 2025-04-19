@@ -43,7 +43,7 @@ async function createToolObject(
   toolFile: AsyncAPITool,
   repositoryUrl = '',
   repoDescription = '',
-  isAsyncAPIrepo: boolean | string = ''
+  isAsyncAPIrepo: boolean = false
 ) {
   const resultantObject = {
     title: toolFile.title,
