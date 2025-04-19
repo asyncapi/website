@@ -111,7 +111,7 @@
         "slack": "U01DVKKAV5K",
         "availableForHire": false,
         "company": "Solace",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "spec-json-schemas",
             "bindings",
@@ -1007,7 +1007,8 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
-            "website"
+            "website",
+            "conference-website"
         ],
         "githubID": 90895835
     }
