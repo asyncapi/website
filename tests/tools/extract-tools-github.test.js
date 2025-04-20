@@ -44,6 +44,7 @@ describe('getData', () => {
     const mockInitialResponse = {
       data: {
         total_count: 100,
+        incomplete_results: true,
         items: Array.from({ length: 50 }, (_, index) => ({
           name: `.asyncapi-tool-${index + 1}`,
           path: `asyncapi/.asyncapi-tool-${index + 1}`
@@ -53,6 +54,7 @@ describe('getData', () => {
 
     const mockNextPageResponse = {
       data: {
+        incomplete_results: false,
         items: Array.from({ length: 50 }, (_, index) => ({
           name: `.asyncapi-tool-${index + 51}`,
           path: `asyncapi/.asyncapi-tool-${index + 51}`
@@ -78,7 +80,7 @@ describe('getData', () => {
     expect(axios.get).toHaveBeenCalledWith(`${apiBaseUrl}2`, { headers });
 
     // Check if the result contains all the items from both pages
-    expect(result.items).toHaveLength(150);
+    expect(result.items).toHaveLength(100);
   });
 
   it('should throw an error when API call fails', async () => {
