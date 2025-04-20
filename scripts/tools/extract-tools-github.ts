@@ -25,8 +25,8 @@ export async function getData(): Promise<ToolsData> {
     let incompleteResult = false;
 
     const maxPerPage = 50;
-    const getReqUrl = (PerPage: number, pageNo: number) =>
-      `https://api.github.com/search/code?q=filename:.asyncapi-tool&per_page=${PerPage}&page=${pageNo}`;
+    const getReqUrl = (perPage: number, pageNo: number) =>
+      `https://api.github.com/search/code?q=filename:.asyncapi-tool&per_page=${perPage}&page=${pageNo}`;
     const headers = {
       accept: 'application/vnd.github.text-match+json',
       authorization: `token ${process.env.GITHUB_TOKEN}`
