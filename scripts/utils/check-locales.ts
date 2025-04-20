@@ -26,19 +26,22 @@ const localesDir = path.resolve(
  */
 function extractKeys(obj: Record<string, any>): string[] {
   const extractNestedKeys = (
-    obj: Record<string, any>,
-    prefix: string = '',
+    nestedObj: Record<string, any>,
+    prefix = '',
   ): string[] => {
     return flatten(
-      Object.entries(obj).map(([key, value]) => {
+      Object.entries(nestedObj).map(([key, value]) => {
         const currentKey = prefix ? `${prefix}.${key}` : key;
+
         if (value !== null && typeof value === 'object') {
           return extractNestedKeys(value, currentKey);
         }
+
         return currentKey;
       }),
     );
   };
+
   return extractNestedKeys(obj);
 }
 
@@ -51,22 +54,27 @@ function extractKeys(obj: Record<string, any>): string[] {
 function readJSONFilesInDir(dir: string): Record<string, any> {
   try {
     const files = fs.readdirSync(dir);
+
     return fromPairs(
       files
         .filter((file) => path.extname(file) === '.json')
         .map((file) => {
           const filePath = path.join(dir, file);
+
           try {
             const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+
             return [file, content];
           } catch (error) {
             logger.error(`Error reading ${filePath}`, error);
+
             return [file, {}];
           }
         }),
     );
   } catch (error) {
     logger.error(`Error reading directory ${dir}`, error);
+
     return {};
   }
 }
@@ -74,7 +82,7 @@ function readJSONFilesInDir(dir: string): Record<string, any> {
 /**
  * Validates that all locale files have the same keys across different languages
  *
- * @returns {Promise<void>}
+ * @returns {void}
  * @throws {Error} If validation fails or encounters an error
  */
 function validateLocales(): void {
@@ -84,7 +92,9 @@ function validateLocales(): void {
       .filter((file) => fs.statSync(path.join(localesDir, file)).isDirectory());
 
     if (languages.length === 0) {
-      throw new Error(`No language directories found in ${localesDir}`);
+      const error = new Error(`No language directories found in ${localesDir}`);
+      logger.error('No language directories found:', error);
+      throw error;
     }
 
     logger.info(`Found ${languages.length} languages: ${languages.join(', ')}`);
@@ -113,7 +123,10 @@ function validateLocales(): void {
       const langsWithFile = languages.filter(
         (lang) => languageFiles[lang][file],
       );
-      if (langsWithFile.length <= 1) continue;
+
+      if (langsWithFile.length <= 1) {
+        continue;
+      }
 
       const allKeysAcrossLanguages = uniq(
         flatten(langsWithFile.map((lang) => fileKeys[lang][file])),
@@ -125,12 +138,13 @@ function validateLocales(): void {
           const missingKeys = allKeysAcrossLanguages.filter(
             (key) => !langKeysSet.has(key),
           );
+
           return [lang, missingKeys];
         }),
       );
 
       const langsWithMissingKeys = Object.entries(missingKeysByLang).filter(
-        ([_, missing]) => missing.length > 0,
+        ([, missing]) => missing.length > 0,
       );
 
       if (langsWithMissingKeys.length > 0) {
@@ -144,15 +158,15 @@ function validateLocales(): void {
       }
     }
 
-    if (!hasErrors) {
-      logger.info(
-        '✅ All locale files have the same keys across all languages!',
-      );
-    } else {
-      throw new Error(
+    if (hasErrors) {
+      const error = new Error(
         '\n❌ Some translation keys are missing. Please fix the issues above.',
       );
+      logger.error('Translation validation failed:', error);
+      throw error;
     }
+
+    logger.info('✅ All locale files have the same keys across all languages!');
   } catch (error) {
     logger.error('Error validating locales:', error);
     throw error;
@@ -163,8 +177,9 @@ export { validateLocales, extractKeys, readJSONFilesInDir };
 
 /* istanbul ignore next */
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  validateLocales().catch((error) => {
-    console.error(error);
-    process.exit(1);
-  });
+  try {
+    validateLocales();
+  } catch (error) {
+    throw error;
+  }
 }
