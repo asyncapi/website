@@ -152,13 +152,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           message: |
             ### Locale Check Results
-            
             We found issues with locale keys:
-            
             ```
             ${{ steps.locale_check.outputs.locale_output }}
             ```
-            
             Please make sure all locale files have the same translation keys.
 
       # Delete the comment if there are no issues

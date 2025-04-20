@@ -1,7 +1,8 @@
 import fs from 'fs';
+import lodash from 'lodash';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import lodash from 'lodash';
+
 import { logger } from '../utils/logger';
 
 const { flatten, fromPairs, uniq } = lodash;
@@ -9,7 +10,13 @@ const { flatten, fromPairs, uniq } = lodash;
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
-const localesDir = path.resolve(currentDirPath, '..', '..', 'public', 'locales');
+const localesDir = path.resolve(
+  currentDirPath,
+  '..',
+  '..',
+  'public',
+  'locales',
+);
 
 /**
  * Extracts all keys from a JSON object, including nested keys using lodash
@@ -53,13 +60,13 @@ function readJSONFilesInDir(dir: string): Record<string, any> {
             const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
             return [file, content];
           } catch (error) {
-            logger.error(`Error reading ${filePath}`);
+            logger.error(`Error reading ${filePath}`, error);
             return [file, {}];
           }
         }),
     );
   } catch (error) {
-    logger.error(`Error reading directory ${dir}`);
+    logger.error(`Error reading directory ${dir}`, error);
     return {};
   }
 }
@@ -67,8 +74,8 @@ function readJSONFilesInDir(dir: string): Record<string, any> {
 /**
  * Validates that all locale files have the same keys across different languages
  *
- * @returns {void}
- * @throws Will exit process with code 1 if validation errors are found
+ * @returns {Promise<void>}
+ * @throws {Error} If validation fails or encounters an error
  */
 function validateLocales(): void {
   try {
@@ -77,8 +84,7 @@ function validateLocales(): void {
       .filter((file) => fs.statSync(path.join(localesDir, file)).isDirectory());
 
     if (languages.length === 0) {
-      logger.error('No language directories found in', localesDir);
-      return;
+      throw new Error(`No language directories found in ${localesDir}`);
     }
 
     logger.info(`Found ${languages.length} languages: ${languages.join(', ')}`);
@@ -143,14 +149,13 @@ function validateLocales(): void {
         '✅ All locale files have the same keys across all languages!',
       );
     } else {
-      logger.error(
+      throw new Error(
         '\n❌ Some translation keys are missing. Please fix the issues above.',
       );
-      process.exit(1);
     }
   } catch (error) {
-    logger.error('Error validating locales:');
-    process.exit(1);
+    logger.error('Error validating locales:', error);
+    throw error;
   }
 }
 
@@ -158,5 +163,8 @@ export { validateLocales, extractKeys, readJSONFilesInDir };
 
 /* istanbul ignore next */
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  validateLocales();
+  validateLocales().catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
 }

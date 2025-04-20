@@ -4,7 +4,8 @@ const mockFs = {
   readFileSync: jest.fn()
 };
 
-jest.mock('fs', () => mockFs);
+const { validateLocales, extractKeys, readJSONFilesInDir } = require('../scripts/utils/check-locales.ts');
+const { logger } = require('../scripts/utils/logger.ts');
 
 jest.mock('../scripts/utils/logger', () => ({
   logger: {
@@ -14,8 +15,7 @@ jest.mock('../scripts/utils/logger', () => ({
   }
 }));
 
-const { validateLocales, extractKeys, readJSONFilesInDir } = require('../scripts/utils/check-locales.ts');
-const { logger } = require('../scripts/utils/logger.ts');
+jest.mock('fs', () => mockFs);
 
 jest.mock('path', () => {
   const originalPath = jest.requireActual('path');
@@ -69,7 +69,6 @@ describe('check-locales', () => {
     }));
 
     mockFs.readdirSync.mockImplementationOnce(() => ['common.json']);
-    mockFs.readdirSync.mockImplementationOnce(() => ['common.json']);
 
     mockFs.readFileSync.mockReturnValue('{"key1":"value1","key2":"value2"}');
 
@@ -84,14 +83,10 @@ describe('check-locales', () => {
 
     jest.clearAllMocks();
 
-    mockFs.readdirSync.mockImplementationOnce(() => languages);
-
-    mockFs.statSync.mockImplementation(() => ({
-      isDirectory: () => true
-    }));
-
-    mockFs.readdirSync.mockImplementationOnce(() => ['common.json']);
-    mockFs.readdirSync.mockImplementationOnce(() => ['common.json']);
+    mockFs.readdirSync
+      .mockImplementationOnce(() => languages)
+      .mockImplementationOnce(() => ['common.json'])
+      .mockImplementationOnce(() => ['common.json']);
 
     mockFs.readFileSync.mockImplementation((filePath) => {
       if (filePath.includes('en')) {
@@ -100,34 +95,21 @@ describe('check-locales', () => {
       return '{"key1":"value1"}';
     });
 
-    validateLocales();
-
-    expect(logger.error).toHaveBeenCalledWith(
-      "❌ Language 'de' is missing these keys: key2"
-    );
-    expect(mockExit).toHaveBeenCalledWith(1);
+    expect(() => validateLocales()).toThrow('Some translation keys are missing');
   });
 
   it('should handle errors during validation', () => {
-    mockFs.readdirSync.mockImplementationOnce(() => { });
+    mockFs.readdirSync.mockImplementationOnce(() => {
+      throw new Error('Error validating locales');
+    });
 
-    validateLocales();
-
-    expect(logger.error).toHaveBeenCalledWith(
-      'Error validating locales:'
-    );
-    expect(mockExit).toHaveBeenCalledWith(1);
+    expect(() => validateLocales()).toThrow('Error validating locales');
   });
 
   it('should log an error if no language directories are found', () => {
     mockFs.readdirSync.mockReturnValueOnce([]);
 
-    validateLocales();
-
-    expect(logger.error).toHaveBeenCalledWith(
-      'No language directories found in',
-      '/mock/path/locales'
-    );
+    expect(() => validateLocales()).toThrow('No language directories found in');
   });
 
   it('should log an error if JSON file reading fails', () => {
@@ -140,10 +122,12 @@ describe('check-locales', () => {
     const result = readJSONFilesInDir(dir);
 
     expect(logger.error).toHaveBeenCalledWith(
-      expect.stringContaining(`Error reading`)
+      expect.stringContaining('Error reading /mock/dir/file1.json'),
+      expect.any(Error)
     );
     expect(result).toEqual({ 'file1.json': {} });
   });
+
   it('should handle directory reading errors', () => {
     const dir = '/mock/dir';
 
@@ -152,7 +136,8 @@ describe('check-locales', () => {
     const result = readJSONFilesInDir(dir);
 
     expect(logger.error).toHaveBeenCalledWith(
-      'Error reading directory /mock/dir'
+      'Error reading directory /mock/dir',
+      expect.any(Error)
     );
 
     expect(result).toEqual({});
@@ -163,9 +148,7 @@ describe('check-locales', () => {
       throw new Error('String error');
     });
 
-    validateLocales();
-
-    expect(mockExit).toHaveBeenCalledWith(1);
+    expect(() => validateLocales()).toThrow('String error');
   });
 
   it('should handle JSON parsing errors with non-Error objects', () => {
@@ -191,14 +174,14 @@ describe('check-locales', () => {
   it('should handle the case when a language has no file', () => {
     const languages = ['en', 'de'];
 
-    mockFs.readdirSync.mockImplementationOnce(() => languages);
+    mockFs.readdirSync
+      .mockImplementationOnce(() => languages)
+      .mockImplementationOnce(() => ['unique.json'])
+      .mockImplementationOnce(() => []);
 
     mockFs.statSync.mockImplementation(() => ({
       isDirectory: () => true
     }));
-
-    mockFs.readdirSync.mockImplementationOnce(() => ['unique.json']);
-    mockFs.readdirSync.mockImplementationOnce(() => []);
 
     mockFs.readFileSync.mockReturnValue('{"key1":"value1"}');
 
