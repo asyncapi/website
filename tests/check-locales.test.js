@@ -189,4 +189,24 @@ describe('check-locales', () => {
 
     expect(logger.info).toHaveBeenCalledWith('✅ All locale files have the same keys across all languages!');
   });
+
+  it('should handle files with no missing keys', () => {
+    const languages = ['en', 'de'];
+
+    mockFs.readdirSync
+      .mockImplementationOnce(() => languages)
+      .mockImplementationOnce(() => ['common.json'])
+      .mockImplementationOnce(() => ['common.json']);
+
+    mockFs.statSync.mockImplementation(() => ({
+      isDirectory: () => true
+    }));
+
+    // Both languages have the same keys
+    mockFs.readFileSync.mockReturnValue('{"key1":"value1","key2":"value2"}');
+
+    validateLocales();
+
+    expect(logger.info).toHaveBeenCalledWith('✅ All locale files have the same keys across all languages!');
+  });
 });
