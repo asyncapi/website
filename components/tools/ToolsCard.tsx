@@ -38,11 +38,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
   if (toolData?.links?.repoUrl) {
     const url = new URL(toolData.links.repoUrl);
 
-    if (url.host === 'github.com') {
-      onGit = true;
-    } else {
-      onGit = false;
-    }
+    onGit = url.host === 'github.com';
   }
 
   const [visible, setVisible] = useState<VisibleDataListType>({
@@ -118,7 +114,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
       <div className='grow'>
         {toolData.filters?.language || toolData?.filters?.technology?.length ? (
           <div className='my-6'>
-            {toolData.filters.language && (
+            {toolData?.filters?.language?.length !== 0 && (
               <div className='mx-6 flex flex-col gap-2'>
                 <CardData
                   className='text-sm'
