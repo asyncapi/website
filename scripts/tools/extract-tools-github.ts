@@ -21,8 +21,9 @@ export async function getData(): Promise<ToolsData> {
     if (!process.env.GITHUB_TOKEN) {
       throw new Error('GITHUB_TOKEN environment variable is required');
     }
-    const allItems = [];
+    const allItems = new Set();
     let page = 1;
+    let incompleteResult = false;
 
     const maxPerPage = 50;
     const getReqUrl = (PerPage: number, pageNo: number) =>
@@ -34,11 +35,14 @@ export async function getData(): Promise<ToolsData> {
     const result = await axios.get(getReqUrl(maxPerPage, page), {
       headers
     });
-    const totalResults = result.data.total_count;
 
-    allItems.push(...result.data.items);
+    incompleteResult = result.data.incomplete_results || false;
 
-    while (allItems.length < totalResults) {
+    result.data.items.forEach((item: any) => {
+      allItems.add(item);
+    });
+
+    while (incompleteResult) {
       page++;
 
       logger.info(`Fetching page: ${page}`);
@@ -50,10 +54,14 @@ export async function getData(): Promise<ToolsData> {
 
       const { data } = nextPageData;
 
-      allItems.push(...data.items);
+      data.items.forEach((item: any) => {
+        allItems.add(item);
+      });
+
+      incompleteResult = data.incomplete_results || false;
     }
 
-    result.data.items.push(...allItems);
+    result.data.items = [...allItems];
 
     return result.data;
   } catch (err) {
