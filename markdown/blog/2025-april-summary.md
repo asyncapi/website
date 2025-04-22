@@ -60,9 +60,11 @@ As part of our community goals for this year, we aim to improve and streamline t
 Our gratitude goes to [Barbaño González](https://www.linkedin.com/in/barbano-gonzalez-moreno) and [Siham Tahi](https://www.linkedin.com/in/siham-tahi) for their work on the training scripts and storyboards, and to [Azeez Elegbede](https://www.linkedin.com/in/acebuild)for recording the videos.
 
 ## Holopin Badges
-It has been a year since we received the community Holopin badge license, and we have been working on designing our own custom AsyncAPI badges. I'm excited to announce that the badges are finally complete, thanks to the amazing work done by [Oloso Surur Olumide](https://github.com/Oloso-surur) under the mentorship of [Aishat Muibudeen](https://github.com/Mayaleeeee). 
+It has been a year since we received the community Holopin badge license, and we have been working on designing our own custom AsyncAPI badges. [I'm excited to announce that the badges are finally complete](), thanks to the amazing work done by [Oloso Surur Olumide](https://github.com/Oloso-surur) under the mentorship of [Aishat Muibudeen](https://github.com/Mayaleeeee). 
 
 The next step is to upload the badges to the [AsyncAPI Holopin page](https://www.holopin.io/@asyncapi) and wait for platform approval before distributing them.
+
+[You can find the details of the AsyncAPI Holopin Badges concept in the ReadMe](https://github.com/asyncapi/community/tree/master/design/Holopin-Badges).
 
 ## Google Summer of Code'25
 GSoC'25 applications closed a few weeks ago, and we received 204 proposal applications this year compared to 77 from last year. 
