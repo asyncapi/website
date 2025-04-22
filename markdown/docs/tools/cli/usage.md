@@ -66,6 +66,7 @@ USAGE
   - [`asyncapi pretty SPEC-FILE`](#asyncapi-pretty-spec-file)
   - [`asyncapi start`](#asyncapi-start)
   - [`asyncapi start studio [SPEC-FILE]`](#asyncapi-start-studio-spec-file)
+  - [`asyncapi start preview [SPEC-FILE]`](#asyncapi-start-preview-spec-file)
   - [`asyncapi validate [SPEC-FILE]`](#asyncapi-validate-spec-file)
 
 ## `asyncapi bundle`
@@ -744,21 +745,48 @@ starts a new local instance of Studio
 
 ```
 USAGE
-  $ asyncapi start studio [SPEC-FILE] [-h] [-f <value>] [-p <value>]
+  $ asyncapi start studio [SPEC-FILE] [-h] [-f <value>] [-p <value>]  [--no-interactive]
 
 ARGUMENTS
   SPEC-FILE  spec path, url, or context-name
 
 FLAGS
-  -f, --file=<value>  path to the AsyncAPI file to link with Studio
-  -h, --help          Show CLI help.
-  -p, --port=<value>  port in which to start Studio
+  -f, --file=<value>   path to the AsyncAPI file to link with Studio
+  -h, --help           Show CLI help.
+  -p, --port=<value>   port in which to start Studio
+      --no-interactive disable prompts for this command which asks for file path if not passed via the arguments.
 
 DESCRIPTION
   starts a new local instance of Studio
 ```
 
 _See code: [src/commands/start/studio.ts](https://github.com/asyncapi/cli/blob/v2.16.4/src/commands/start/studio.ts)_
+
+## `asyncapi start preview [SPEC-FILE]`
+
+starts a new local instance of Studio in the minimal state bundling all the refs of the schema file and with no editing allowed.
+
+```
+USAGE
+  $ asyncapi start preview SPEC-FILE [-h] [-p <value>] [-b <value>] [-d <value>] [-x] [-l]
+
+ARGUMENTS
+   SPEC-FILE  the path to the file to be opened with studio or context name and is required.
+
+FLAGS
+  -b, --base=<value>    Path to the file which will act as a base. This is required when some properties need to be overwritten while bundling the file.
+  -d, --baseDir=<value> One relative/absolute path to directory relative to which paths to AsyncAPI Documents that should be bundled will be resolved.
+  -h, --help            Show ClI help.
+  -l, --suppressLogs    Pass this to suppress the detiled error logs.
+  -p, --port=<value>    port in which to start Studio in the preview mode.
+  -x, --xOrigin         Pass this switch to generate properties "x-origin" that will contain historical values of dereferenced "$ref"s.
+
+DESCRIPTION
+  starts a new local instance of Studio in minimal state bundling all the refs of the schema file and with no editing allowed. 
+```
+
+_See code: [src/commands/start/preview.ts](https://github.com/asyncapi/cli/blob/v2.16.4/src/commands/start/preview.ts)_
+
 
 ## `asyncapi validate [SPEC-FILE]`
 

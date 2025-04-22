@@ -1,17 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "PR_kwDOFLhIt86HHVY9",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore: introduce governance board",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/community/pull/1634",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 32.7379031174155
-    },
-    {
       "id": "PR_kwDODCuNRs6NwyqP",
       "isPR": true,
       "isAssigned": false,
@@ -20,39 +9,18 @@
       "resourcePath": "/asyncapi/bindings/pull/270",
       "repo": "asyncapi/bindings",
       "labels": [],
-      "score": 24.697014632436254
+      "score": 33.02507770616476
     },
     {
-      "id": "I_kwDOBW5R_c5BIl5P",
-      "isPR": false,
+      "id": "PR_kwDOFLhIt86HHVY9",
+      "isPR": true,
       "isAssigned": false,
-      "title": "Add new page for collecting user testing participants",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/website/issues/529",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "Epic",
-          "color": "3E4B9E"
-        },
-        {
-          "name": "keep-open",
-          "color": "ffee84"
-        },
-        {
-          "name": "area/design",
-          "color": "0d67d3"
-        },
-        {
-          "name": "area/javascript",
-          "color": "ededed"
-        }
-      ],
-      "score": 22.9739670999407
+      "title": "chore: introduce governance board",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/community/pull/1634",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 33.02507770616476
     },
     {
       "id": "I_kwDOFLhIt86O7jFN",
@@ -76,7 +44,7 @@
           "color": "0d67d3"
         }
       ],
-      "score": 20.102221212448114
+      "score": 26.420062164931807
     },
     {
       "id": "I_kwDOBW5R_c6pn_G2",
@@ -92,7 +60,7 @@
           "color": "F4D03F"
         }
       ],
-      "score": 18.091999091203302
+      "score": 19.815046623698855
     },
     {
       "id": "MDU6SXNzdWU5OTE0Mzc3MjY=",
@@ -119,7 +87,7 @@
       "resourcePath": "/asyncapi/website/pull/3658",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 16.943300736206268
+      "score": 17.230475324955524
     },
     {
       "id": "I_kwDOFLhIt85bebeO",
@@ -130,7 +98,7 @@
       "resourcePath": "/asyncapi/community/issues/568",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 16.65612614745701
+      "score": 16.943300736206268
     },
     {
       "id": "PR_kwDOFLhIt853IEwA",
@@ -172,49 +140,57 @@
       "resourcePath": "/asyncapi/community/pull/1733",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 14.358729437462937
+      "score": 15.220253203710714
     },
     {
-      "id": "I_kwDODyzcIc5gD3jB",
-      "isPR": false,
+      "id": "PR_kwDOBW5R_c6O_Ql9",
+      "isPR": true,
       "isAssigned": false,
-      "title": "Automate `paper work` around project governance",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/.github/issues/210",
-      "repo": "asyncapi/.github",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        }
-      ],
-      "score": 13.497205671215161
+      "title": "chore(blog): add marketing q1 report",
+      "author": "iambami",
+      "resourcePath": "/asyncapi/website/pull/3911",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 14.645904026212197
+    },
+    {
+      "id": "PR_kwDOFLhIt86LeC8N",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: expand community docs: contributor - simple contribution flow a…",
+      "author": "ezinneanne",
+      "resourcePath": "/asyncapi/community/pull/1730",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 14.358729437462937
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDODwv8N86y8NIb",
+      "title": "Venue cards date misalignment",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/conference-website/issues/715",
+      "repo": "asyncapi/conference-website",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": []
+    },
+    {
+      "id": "I_kwDOBW5R_c6xUO9N",
+      "title": "Announcement banner not showing or misaligned on some pages",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/4021",
+      "repo": "asyncapi/website",
+      "author": "vishvamsinh28",
+      "area": "Unknown",
+      "labels": []
+    },
     {
       "id": "I_kwDOFDnrNc6uQo6r",
       "title": "[Improvement]: Improve the error message while generating project fromgenerate command",
       "isAssigned": true,
       "resourcePath": "/asyncapi/cli/issues/1728",
-      "repo": "asyncapi/cli",
-      "author": "AayushSaini101",
-      "area": "Unknown",
-      "labels": []
-    },
-    {
-      "id": "I_kwDOFDnrNc6uQjwZ",
-      "title": "[Improvement]: Make the steps of Asyncapi start studio command interactive",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/cli/issues/1727",
       "repo": "asyncapi/cli",
       "author": "AayushSaini101",
       "area": "Unknown",
@@ -419,6 +395,10 @@
       "area": "Unknown",
       "labels": [
         {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
         }
@@ -557,6 +537,10 @@
         {
           "name": "bug",
           "color": "d73a4a"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -644,25 +628,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c48lGJg",
-      "title": "Add visual on the \"generator\" and maybe others....",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/403",
-      "repo": "asyncapi/website",
-      "author": "boyney123",
-      "area": "design",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
         }
       ]
     }
