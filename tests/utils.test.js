@@ -1,6 +1,5 @@
 import { convertToJson, pause, writeJSON } from '../scripts/utils.ts';
 
-
 const { jsonString, yamlString, jsonObject, invalidString } = require('./fixtures/utilsData');
 const fs = require('fs/promises');
 const path = require('path');
