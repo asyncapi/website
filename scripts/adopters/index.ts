@@ -11,5 +11,4 @@ const currentDirPath = dirname(currentFilePath);
  */
 export async function buildAdoptersList() {
   writeJSON('config/adopters.yml', resolve(currentDirPath, '../../config', 'adopters.json'));
-  
 }
