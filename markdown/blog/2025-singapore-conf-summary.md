@@ -30,7 +30,7 @@ Over the years, we’ve shown up: at conferences, in GitHub issues and Slack thr
 />
 
 ## Our First Time in Southeast Asia—And It Mattered
-There’s something special about firsts. The first version of a spec. The first contributor. The first working group. The first time you explain what “event-driven” means to someone and see the lightbulb go off. This maked us estatic to kick-off the AsyncAPI conference with Singapore.
+There’s something special about firsts. The first version of a spec. The first contributor. The first working group. The first time you explain what “event-driven” means to someone and see the lightbulb go off. This made us ecstatic to kick off the AsyncAPI conference with Singapore.
 
 On April 15–16, 2025, the AsyncAPI Initiative proudly marked its first appearance at [APIDays Singapore](https://www.apidays.global/singapore/). The event, themed "Where APIs Meet AI: Building Tomorrow's Intelligent Ecosystems," provided an excellent platform to introduce AsyncAPI to the vibrant Asia-Pacific developer community.​
 
@@ -58,7 +58,7 @@ Tamimi showcased AsyncAPI Studio’s newest capabilities—making async design m
 
 <Figure
   src="/img/posts/marketing-images/singapore-conf/tamimi.webp"
-  caption="Tamimi presenting he Untapped Potentials of AsyncAPI Studio."
+  caption="Tamimi presenting the Untapped Potentials of AsyncAPI Studio."
   className="text-center"
 />
 
@@ -108,10 +108,9 @@ We heard curiosity, but also readiness—this wasn’t just a learning moment; f
 
 By the end of the conference, we had:
 
-- Welcomed over 20 new faces to our Slack and GitHub communities. Although we also noticed the hesistation to join the slack community
+- Welcomed over 20 new faces to our Slack and GitHub communities, though we also noticed some hesitation to join the Slack community.
 
 - Sparked contributor interest in tooling, docs, and protocol support
-
 
 ## 💚 A Community-First Future
 
@@ -147,7 +146,7 @@ We would love to have you attend any of these events close to you, but more than
   caption="See You at Our Next Event."
   className="text-center"
 />
-public
+
 ## Huge Thanks to Our Host: [APIDays](https://www.linkedin.com/company/apidays-conferences/)
 
 We couldn’t have asked for a better stage to kick off our 2025 conference journey.
