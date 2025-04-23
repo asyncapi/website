@@ -36,11 +36,14 @@ At the beginning of this year, [GitHub ](http://github.com/) sent us over $500 a
 On another note, [RedHat](https://www.redhat.com) has terminated their sponsorship. They have changed their marketing strategy, resulting in a $100 decrease in our monthly budget for the Initiative. 
 If anyone knows someone at RedHat who uses AsyncAPI and has a budget for support, please send me a message to [Lukasz Gornicki](https://asyncapi.slack.com/team/UD698Q5LM) or send an email to info@asyncapi.io. 
 
+## AsyncAPI Governance Board 
+The vote for the new AsyncAPI Governance Board is now open. Part of the change will be to replace the single Executive Director position and have the option of Ambassadors becoming TSC members. 
+
+If you're part of the TSC, [please cast your vote on introducing the governance board discussion](https://github.com/asyncapi/community/pull/1634#issuecomment-2822193087).
 
 ## AsyncAPI Conference
 
 We had our first AsyncAPI Conference of the year in Singapore, and it was a great success. Thanks to our speakers for taking the time to come and share their knowledge. For a detailed summary, [please read the AsyncAPI Singapore Conference summary]().
-
 
 ### Call for Speakers
 We are a few weeks away before we close the Call for Proposals for [AsyncAPI Conference in Munich](https://conference.asyncapi.com/venue/Munich) on the **11th of May** and [AsyncAPI Conference in Lagos](https://conference.asyncapi.com/venue/Lagos) on the **17th of May**. Please don't forget to submit those talks before the deadline ends; we look forward to you sharing your knowledge with the rest of the community!
