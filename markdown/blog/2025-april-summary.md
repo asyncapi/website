@@ -14,13 +14,7 @@ excerpt: 'AsyncAPI community status and project updates for April 2025'
 featured: true
 ---
 
-We had a busy month, from having our first conference of the year, receiving 204 applications for Google Summer of Code (GSoC'25),  to some sponsorship updates. Let's dive into the April update!
-
-## Sponsorship Updates
-At the beginning of this year, [GitHub](http://github.com/) sent us over $500 as part of their regular annual payment for the use of open-source projects. It is also confirmation that AsyncAPI is contributing to GitHub's development.
-
-On another note, [RedHat](https://www.redhat.com) has terminated their sponsorship. They have changed their marketing strategy, resulting in a $100 decrease in our monthly budget for the Initiative. 
-If anyone knows someone at RedHat who uses AsyncAPI and has a budget for support, please send me a message to [Lukasz Gornicki](https://asyncapi.slack.com/team/UD698Q5LM) or send an email to [info@asyncapi.io](mailto:info@asyncapi.io). 
+We had a busy month, from having our first conference of the year to receiving 204 applications for Google Summer of Code (GSoC'25). Let's dive into the April update!
 
 ## AsyncAPI Governance Board 
 The vote for the new AsyncAPI Governance Board is now open. Part of the change will be to replace the single Executive Director position and have the option of Ambassadors becoming TSC members. 
@@ -29,7 +23,7 @@ If you're part of the TSC, [please cast your vote on introducing the governance 
 
 ## AsyncAPI Conference
 
-We had our first AsyncAPI Conference of the year in Singapore, and it was a great success. Thanks to our speakers for taking the time to come and share their knowledge. For a detailed summary, [please read the AsyncAPI Singapore Conference summary]().
+We had our first AsyncAPI Conference of the year in Singapore, and it was a great success. Thanks to our speakers for taking the time to come and share their knowledge. Be sure to read the Singapore summary once it is published.
 
 ### Call for Speakers
 We are a few weeks away before we close the Call for Proposals for [AsyncAPI Conference in Munich](https://conference.asyncapi.com/venue/Munich) on the **11th of May** and [AsyncAPI Conference in Lagos](https://conference.asyncapi.com/venue/Lagos) on the **17th of May**. Please don't forget to submit those talks before the deadline ends; we look forward to you sharing your knowledge with the rest of the community!
