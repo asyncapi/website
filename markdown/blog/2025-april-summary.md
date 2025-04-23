@@ -31,10 +31,10 @@ Additionally, [APIDeck](https://www.apideck.com/) has upgraded sponsorship to Br
 </a>
 
 ## Sponsorship Updates
-At the beginning of this year, [GitHub ](http://github.com/) sent us over $500 as part of their regular annual payment for the use of open-source projects. It is also confirmation that AsyncAPI is contributing to GitHub's development.
+At the beginning of this year, [GitHub](http://github.com/) sent us over $500 as part of their regular annual payment for the use of open-source projects. It is also confirmation that AsyncAPI is contributing to GitHub's development.
 
 On another note, [RedHat](https://www.redhat.com) has terminated their sponsorship. They have changed their marketing strategy, resulting in a $100 decrease in our monthly budget for the Initiative. 
-If anyone knows someone at RedHat who uses AsyncAPI and has a budget for support, please send me a message to [Lukasz Gornicki](https://asyncapi.slack.com/team/UD698Q5LM) or send an email to info@asyncapi.io. 
+If anyone knows someone at RedHat who uses AsyncAPI and has a budget for support, please send me a message to [Lukasz Gornicki](https://asyncapi.slack.com/team/UD698Q5LM) or send an email to [info@asyncapi.io](mailto:info@asyncapi.io). 
 
 ## AsyncAPI Governance Board 
 The vote for the new AsyncAPI Governance Board is now open. Part of the change will be to replace the single Executive Director position and have the option of Ambassadors becoming TSC members. 
