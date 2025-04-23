@@ -134,12 +134,12 @@ A conference designed to bring together developers, architects, technical writer
 
 We would love to have you attend any of these events close to you, but more than that, we would see you submit your proposal to speak. Whether you’re looking to share your story, demo your tools, or connect with the global async ecosystem, this is your chance. Our Call for Papers (CFP) is now open for most events—we’d love to hear from you!
 
-- [Munich 🇩🇪 :July 2–3, 2025.](https://conference.asyncapi.com/venue/Munich)
-- [Lagos 🇳🇬  :July 18–19, 2025](https://conference.asyncapi.com/venue/Lagos)
-- [London 🇬🇧 :September 22–24, 2025](https://conference.asyncapi.com/venue/London)
-- [Bengaluru 🇮🇳 :October 8-9](https://conference.asyncapi.com/venue/Bangalore)
-- [Online 🌐 :October 29, 2025](https://conference.asyncapi.com/venue/Online)
-- [Paris 🇫🇷 :December 9–11, 2025](https://conference.asyncapi.com/venue/Paris)
+- [Munich 🇩🇪: July 2–3, 2025](https://conference.asyncapi.com/venue/Munich)
+- [Lagos 🇳🇬: July 18–19, 2025](https://conference.asyncapi.com/venue/Lagos)
+- [London 🇬🇧: September 22–24, 2025](https://conference.asyncapi.com/venue/London)
+- [Bengaluru 🇮🇳: October 8-9, 2025](https://conference.asyncapi.com/venue/Bangalore)
+- [Online 🌐: October 29, 2025](https://conference.asyncapi.com/venue/Online)
+- [Paris 🇫🇷: December 9–11, 2025](https://conference.asyncapi.com/venue/Paris)
 
 <Figure
   src="/img/posts/marketing-images/singapore-conf/asyncapi-folks.webp"
