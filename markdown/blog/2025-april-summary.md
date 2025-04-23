@@ -1,6 +1,6 @@
 ---
 title: "Monthly Community Update: April 2025"
-date: 2025-04-31T06:00:00+01:00
+date: 2025-04-30T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
