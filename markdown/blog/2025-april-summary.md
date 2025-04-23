@@ -16,8 +16,8 @@ featured: true
 
 We had a busy month, from having our first conference of the year to receiving 204 applications for Google Summer of Code (GSoC'25). Let's dive into the April update!
 
-## AsyncAPI Governance Board 
-The vote for the new AsyncAPI Governance Board is now open. Part of the change will be to replace the single Executive Director position and have the option of Ambassadors becoming TSC members. 
+## AsyncAPI Governance Board
+The vote to introduce the AsyncAPI Governance Board is now open. Part of the change will be replacing the Executive Director position. Additionally, Ambassadors will have the right to be part of the TSC. 
 
 If you're part of the TSC, [please cast your vote on introducing the governance board discussion](https://github.com/asyncapi/community/pull/1634#issuecomment-2822193087).
 
@@ -26,14 +26,14 @@ If you're part of the TSC, [please cast your vote on introducing the governance 
 We had our first AsyncAPI Conference of the year in Singapore, and it was a great success. Thanks to our speakers for taking the time to come and share their knowledge. Be sure to read the Singapore summary once it is published.
 
 ### Call for Speakers
-We are a few weeks away before we close the Call for Proposals for [AsyncAPI Conference in Munich](https://conference.asyncapi.com/venue/Munich) on the **11th of May** and [AsyncAPI Conference in Lagos](https://conference.asyncapi.com/venue/Lagos) on the **17th of May**. Please don't forget to submit those talks before the deadline ends; we look forward to you sharing your knowledge with the rest of the community!
+We are a few weeks away from closing the Call for Proposals for [AsyncAPI Conference in Munich](https://conference.asyncapi.com/venue/Munich) on the **11th of May** and [AsyncAPI Conference in Lagos](https://conference.asyncapi.com/venue/Lagos) on the **17th of May**. Please don't forget to submit those talks before the deadline ends; we look forward to you sharing your knowledge with the rest of the community!
 
 While submitting your proposals, please select the "**AsyncAPI**" option for the track to ensure your submission goes to the correct category.
 
 ### Call for Sponsors
-We are still open to financial sponsors for the AsyncAPI Conf 2025. [Please help us by sharing the conference prospectus within your networks](https://drive.google.com/file/d/1LxTFLWkRmFQkHOyrwZBL7yqSO2_XPJNq/view?usp=sharing).
+We are still open to financial sponsors for the AsyncAPI Conference 2025. [Please help us by sharing the conference prospectus within your networks](https://drive.google.com/file/d/1LxTFLWkRmFQkHOyrwZBL7yqSO2_XPJNq/view?usp=sharing).
 
-## Spec x Tooling 
+## Spec x Tooling
 [Godwin Alexander](https://github.com/oviecodes) recently opened a discussion about the future of [Glee](https://github.com/asyncapi/glee), noting that it is no longer being actively maintained. He is seeking input from the community on whether we should continue to invest in Glee. [Please share your thoughts in the Future of Glee discussion](https://github.com/orgs/asyncapi/discussions/1861).
 
 ## Onboarding/Training Videos
@@ -45,7 +45,7 @@ As part of our community goals for this year, we aim to improve and streamline t
 Our gratitude goes to [Barbaño González](https://www.linkedin.com/in/barbano-gonzalez-moreno) and [Siham Tahi](https://www.linkedin.com/in/siham-tahi) for their work on the training scripts and storyboards, and to [Azeez Elegbede](https://www.linkedin.com/in/acebuild) for recording the videos.
 
 ## Holopin Badges
-It has been a year since we received the community Holopin badge license, and we have been working on designing our own custom AsyncAPI badges. I'm excited to announce that the badges are finally complete, thanks to the amazing work done by [Oloso Surur Olumide](https://github.com/Oloso-surur) under the mentorship of [Aishat Muibudeen](https://github.com/Mayaleeeee). 
+It has been a year since we received the community Holopin badge license, and we have been working on designing our own custom AsyncAPI badges. I'm excited to announce that the badges are finally complete, thanks to the amazing work done by [Oloso Surur Olumide](https://github.com/Oloso-surur) under the mentorship of [Aishat Muibudeen](https://github.com/Mayaleeeee).
 
 The next step is to upload the badges to the [AsyncAPI Holopin page](https://www.holopin.io/@asyncapi) and wait for platform approval before distributing them.
 
