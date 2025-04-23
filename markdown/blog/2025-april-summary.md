@@ -16,20 +16,6 @@ featured: true
 
 We had a busy month, from having our first conference of the year, receiving 204 applications for Google Summer of Code (GSoC'25),  to some sponsorship updates. Let's dive into the April update!
 
-## New Sponsors
-
-We are excited to share that [Mercedes-Benz](https://opensource.mercedes-benz.com/manifesto/) is supporting the initiative as our Bronze sponsor and, most importantly, that they have officially confirmed they use AsyncAPI.
-
-<a href='https://opensource.mercedes-benz.com/' target='_blank'>
-<img src='https://github.com/asyncapi/spec/blob/master/assets/mercedes-benz.png?raw=true' alt='Mercedes-Benz' width='500px' />
-</a>
-
-Additionally, [APIDeck](https://www.apideck.com/) has upgraded sponsorship to Bronze; a huge thank you to [Samir Amzani](https://www.linkedin.com/in/amzani) for the support and effort.
-
-<a href='https://www.apideck.com/' target='_blank'>
-<img src='https://github.com/asyncapi/spec/blob/master/assets/apideck.png?raw=true' alt='APIDeck' width='500px' />
-</a>
-
 ## Sponsorship Updates
 At the beginning of this year, [GitHub](http://github.com/) sent us over $500 as part of their regular annual payment for the use of open-source projects. It is also confirmation that AsyncAPI is contributing to GitHub's development.
 
@@ -57,7 +43,9 @@ We are still open to financial sponsors for the AsyncAPI Conf 2025. [Please help
 [Godwin Alexander](https://github.com/oviecodes) recently opened a discussion about the future of [Glee](https://github.com/asyncapi/glee), noting that it is no longer being actively maintained. He is seeking input from the community on whether we should continue to invest in Glee. [Please share your thoughts in the Future of Glee discussion](https://github.com/orgs/asyncapi/discussions/1861).
 
 ## Onboarding/Training Videos
-As part of our community goals for this year, we aim to improve and streamline the onboarding process for new contributors. The collective effort is to ensure a smooth onboarding experience for AsyncAPI. We are excited that the first training video script is complete now under the AsyncAPI Bounty Program; [please watch it on YouTube and give a like or a comment](https://www.youtube.com/watch?v=NcGhTALozzI).
+As part of our community goals for this year, we aim to improve and streamline the onboarding process for new contributors. The collective effort is to ensure a smooth onboarding experience for AsyncAPI. We are excited that the first training video script is complete now under the AsyncAPI Bounty Program; you can watch the video on YouTube and give a like or a comment.
+
+<YouTube id="NcGhTALozzI" />
 
 
 Our gratitude goes to [Barbaño González](https://www.linkedin.com/in/barbano-gonzalez-moreno) and [Siham Tahi](https://www.linkedin.com/in/siham-tahi) for their work on the training scripts and storyboards, and to [Azeez Elegbede](https://www.linkedin.com/in/acebuild)for recording the videos.
