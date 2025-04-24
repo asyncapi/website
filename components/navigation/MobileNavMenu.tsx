@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 
+import i18nextConfig from '@/next-i18next.config.cjs';
+
 import { SearchButton } from '../AlgoliaSearch';
+import IconLanguage from '../icons/Language';
 import NavItemDropdown from '../icons/NavItemDropdown';
 import SearchIcon from '../icons/SearchIcon';
 import AsyncAPILogo from '../logos/AsyncAPILogo';
@@ -19,13 +22,21 @@ interface MenuItem {
 
 interface MobileNavMenuProps {
   onClickClose?: () => void;
+  uniqueLangs: { key: string; text: string; value: string }[];
+  currentLanguage: string;
+  changeLanguage: (locale: string, langPicker: boolean) => void;
 }
 
 /**
  * @description MobileNavMenu component for displaying a responsive navigation menu on mobile devices.
  * @param {MobileNavMenuProps} props - The props for the MobileNavMenu component.
  */
-export default function MobileNavMenu({ onClickClose = () => {} }: MobileNavMenuProps) {
+export default function MobileNavMenu({
+  onClickClose = () => {},
+  uniqueLangs,
+  currentLanguage,
+  changeLanguage
+}: MobileNavMenuProps) {
   const [open, setOpen] = useState<string | null>(null);
 
   /**
@@ -40,6 +51,8 @@ export default function MobileNavMenu({ onClickClose = () => {} }: MobileNavMenu
     }
     setOpen(menu);
   }
+
+  const { langMap } = i18nextConfig;
 
   return (
     <div className='fixed inset-x-0 top-0 z-60 max-h-full origin-top-right overflow-y-auto py-2 transition lg:hidden'>
@@ -72,11 +85,9 @@ export default function MobileNavMenu({ onClickClose = () => {} }: MobileNavMenu
           <div className='space-y-2 px-5 py-2' onClick={() => showMenu('learning')} data-testid='MobileNav-docs'>
             <h4 className='flex justify-between font-medium text-gray-800'>
               {' '}
-              <a className='cursor-pointer'>
-                <Link href='/docs' className='flex'>
-                  Docs
-                </Link>
-              </a>
+              <Link href='/docs' className='cursor-pointer flex'>
+                Docs
+              </Link>
               <NavItemDropdown />
             </h4>
             {open === 'learning' && <MenuBlocks items={learningItems} />}
@@ -84,27 +95,23 @@ export default function MobileNavMenu({ onClickClose = () => {} }: MobileNavMenu
           <div className='space-y-2 px-5 py-2' onClick={() => showMenu('tooling')} data-testid='MobileNav-tools'>
             <h4 className='flex justify-between font-medium text-gray-800'>
               {' '}
-              <a className='cursor-pointer'>
-                <Link href='/tools' className='flex'>
-                  Tools
-                </Link>
-              </a>
+              <Link href='/tools' className='cursor-pointer flex'>
+                Tools
+              </Link>
               <NavItemDropdown />
             </h4>
             {open === 'tooling' && <MenuBlocks items={toolingItems} />}
           </div>
           <div className='space-y-2 px-5 py-2' onClick={() => showMenu('community')} data-testid='MobileNav-community'>
             <h4 className='flex justify-between font-medium text-gray-800'>
-              <a className='cursor-pointer'>
-                <Link href='/community' className='flex'>
-                  Community
-                </Link>
-              </a>
+              <Link href='/community' className='cursor-pointer flex'>
+                Community
+              </Link>
               <NavItemDropdown />
             </h4>
             {open === 'community' && <MenuBlocks items={communityItems} />}
           </div>
-          <div className='space-y-2 px-5 py-2' onClick={() => showMenu('others')} data-testid='MobileNav-others'>
+          <div className='space-y-2 px-5 pt-2' onClick={() => showMenu('others')} data-testid='MobileNav-others'>
             <div className='grid gap-4'>
               <div>
                 <h4 className='mb-4 flex justify-between font-medium text-gray-800'>
@@ -123,6 +130,29 @@ export default function MobileNavMenu({ onClickClose = () => {} }: MobileNavMenu
                     >
                       {item.text}
                     </Link>
+                  ))}
+              </div>
+            </div>
+          </div>
+          <div className='space-y-2 px-5 py-2' onClick={() => showMenu('language')}>
+            <div className='grid gap-4'>
+              <div>
+                <h4 className='mb-4 flex justify-between font-medium text-gray-800'>
+                  <a className='flex cursor-pointer items-center gap-x-2'>
+                    Language <IconLanguage />
+                  </a>
+                  <NavItemDropdown />
+                </h4>
+                {open === 'language' &&
+                  uniqueLangs.map((lang) => (
+                    <button
+                      key={lang.key}
+                      onClick={() => changeLanguage(lang.value.toLowerCase(), true)}
+                      className={`mb-4 ml-2 block w-full rounded-lg py-1 text-start text-sm font-medium leading-6 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-50 ${currentLanguage.toLowerCase() === lang.text.toLowerCase() ? 'text-secondary-500' : ''}`}
+                      data-testid='MobileNav-language-item'
+                    >
+                      {langMap[lang.text.toLowerCase() as keyof typeof langMap] || lang.text}
+                    </button>
                   ))}
               </div>
             </div>

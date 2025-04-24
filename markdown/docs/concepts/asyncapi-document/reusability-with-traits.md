@@ -96,5 +96,5 @@ headers:
 
 ## Trait merging mechanism
 
-In the AsyncAPI document, traits are merged into the operation or message object in the order they are defined, without overriding any properties. For detailed information on how this merging works, refer to [the specification's section on the traits merge mechanism](/docs/reference/specification/#traitsMergeMechanism).
+In the AsyncAPI document, traits are merged into the operation or message object in the order they are defined, without overriding any properties. For detailed information on how this merging works, refer to [the specification's section on the traits merge mechanism](/docs/reference/specification/v3.0.0#traitsMergeMechanism).
 

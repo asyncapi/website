@@ -1,6 +1,6 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import i18nextConfig from '../next-i18next.config';
+import i18nextConfig from '../next-i18next.config.cjs';
 
 /**
  * Retrieves the internationalization paths for the supported locales.
@@ -29,7 +29,7 @@ export const getStaticPaths = () => ({
  * @returns An object containing the internationalization props.
  */
 export async function getI18nProps(ctx: any, ns = ['common']) {
-  const locale = ctx?.params?.lang;
+  const locale = ctx?.params?.lang ? ctx.params.lang : 'en';
   const props = {
     ...(await serverSideTranslations(locale, ns))
   };

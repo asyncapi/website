@@ -12,6 +12,7 @@ import DocsContext from '../../context/DocsContext';
 import { getAllPosts } from '../../utils/api';
 import Button from '../buttons/Button';
 import DocsButton from '../buttons/DocsButton';
+import AnnouncementHero from '../campaigns/AnnouncementHero';
 import Feedback from '../Feedback';
 import Head from '../Head';
 import ArrowRight from '../icons/ArrowRight';
@@ -33,6 +34,10 @@ interface IDocsLayoutProps {
  */
 function generateEditLink(post: IPost) {
   let last = post.id.substring(post.id.lastIndexOf('/') + 1);
+
+  if (last.endsWith('.mdx')) {
+    last = last.replace('.mdx', '.md');
+  }
   const target = editOptions.find((edit) => {
     return post.slug.includes(edit.value);
   });
@@ -128,14 +133,13 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                     className='flex px-4 text-gray-500 hover:text-gray-900 focus:outline-none sm:px-6 md:px-8'
                     aria-label='Open sidebar'
                   >
-                    <span>{post.sectionTitle}</span>
+                    <span>{post.title}</span>
                     <ArrowRight className='size-5 rotate-90 pl-1' />
                   </button>
                 </div>
               )}
 
-              {/* @TODO Will uncomment the component once it is in use */}
-              {/* <AnnouncementHero className='ml-6' hideVideo={true} /> */}
+              <AnnouncementHero className='ml-6' hideVideo={true} />
 
               <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
                 <TOC
