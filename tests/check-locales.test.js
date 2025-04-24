@@ -209,4 +209,23 @@ describe('check-locales', () => {
 
     expect(logger.info).toHaveBeenCalledWith('✅ All locale files have the same keys across all languages!');
   });
+
+  it('should log when skipping files found in only one language', () => {
+    const languages = ['en', 'de'];
+
+    mockFs.readdirSync
+      .mockImplementationOnce(() => languages)
+      .mockImplementationOnce(() => ['common.json', 'unique.json'])
+      .mockImplementationOnce(() => ['common.json']);
+
+    mockFs.statSync.mockImplementation(() => ({
+      isDirectory: () => true
+    }));
+
+    mockFs.readFileSync.mockReturnValue('{"key1":"value1"}');
+
+    validateLocales();
+
+    expect(logger.info).toHaveBeenCalledWith("Skipping 'unique.json' (only found in 1 language)");
+  });
 });

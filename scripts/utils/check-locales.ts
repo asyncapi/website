@@ -10,7 +10,13 @@ const { flatten, fromPairs, uniq } = lodash;
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
-const localesDir = path.resolve(currentDirPath, '..', '..', 'public', 'locales');
+const localesDir = path.resolve(
+  currentDirPath,
+  '..',
+  '..',
+  'public',
+  'locales',
+);
 
 /**
  * Extracts all keys from a JSON object, including nested keys using lodash
@@ -22,18 +28,19 @@ function extractKeys(obj: Record<string, any>): string[] {
   const extractNestedKeys = (
     nestedObj: Record<string, any>,
     prefix = '',
+    result: string[] = [],
   ): string[] => {
-    return flatten(
-      Object.entries(nestedObj).map(([key, value]) => {
-        const currentKey = prefix ? `${prefix}.${key}` : key;
+    for (const [key, value] of Object.entries(nestedObj)) {
+      const currentKey = prefix ? `${prefix}.${key}` : key;
 
-        if (value !== null && typeof value === 'object') {
-          return extractNestedKeys(value, currentKey);
-        }
+      if (value !== null && typeof value === 'object') {
+        extractNestedKeys(value, currentKey, result);
+      } else {
+        result.push(currentKey);
+      }
+    }
 
-        return currentKey;
-      }),
-    );
+    return result;
   };
 
   return extractNestedKeys(obj);
@@ -119,6 +126,9 @@ function validateLocales(): void {
       );
 
       if (langsWithFile.length <= 1) {
+        logger.info(
+          `Skipping '${file}' (only found in ${langsWithFile.length} language)`,
+        );
         continue;
       }
 
