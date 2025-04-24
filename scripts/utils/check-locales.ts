@@ -10,13 +10,7 @@ const { flatten, fromPairs, uniq } = lodash;
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
-const localesDir = path.resolve(
-  currentDirPath,
-  '..',
-  '..',
-  'public',
-  'locales',
-);
+const localesDir = path.resolve(currentDirPath, '..', '..', 'public', 'locales');
 
 /**
  * Extracts all keys from a JSON object, including nested keys using lodash
