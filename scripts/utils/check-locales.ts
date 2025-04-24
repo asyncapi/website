@@ -171,9 +171,5 @@ export { validateLocales, extractKeys, readJSONFilesInDir };
 
 /* istanbul ignore next */
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  try {
-    validateLocales();
-  } catch (error) {
-    throw error;
-  }
+  validateLocales();
 }
