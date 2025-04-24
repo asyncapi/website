@@ -3,7 +3,7 @@ import lodash from 'lodash';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
-import { logger } from '../utils/logger';
+import { logger } from './logger';
 
 const { flatten, fromPairs, uniq } = lodash;
 
