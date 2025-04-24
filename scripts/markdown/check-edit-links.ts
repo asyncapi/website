@@ -50,7 +50,7 @@ async function processBatch(batch: PathObject[]): Promise<(PathObject | null)[]>
       } finally {
         if (timeout) {
             clearTimeout(timeout);
-          }
+         }
       }
     })
   );
