@@ -19,7 +19,7 @@ excerpt: "AsyncAPI kicked off its 2025 conference with a packed track at APIDays
 In the early days of AsyncAPI, it all began with a question:
 **“What if developers could build event-driven systems as seamlessly as they build RESTful APIs?”**
 
-WWhat started as a side project has become an industry standard, backed by a global community of engineers, architects, documentarians, and educators from every corner of the world.
+What started as a side project has become an industry standard, backed by a global community of engineers, architects, documentarians, and educators from every corner of the world.
 
 Over the years, we’ve shown up: at conferences, in GitHub issues and Slack threads—building not just tools, but a community. And in April 2025, we showed up somewhere new: **Singapore.**
 
@@ -162,6 +162,6 @@ Here’s how to stay in the loop:
 
 - Contribute via [GitHub](https://github.com/asyncapi)
 
-And if you're in Asia and thinking, "We’d love to run a workshop or AsyncAPI session in our community,”please reach out. We’d love to support you.
+And if you're in Asia and thinking, "We’d love to run a workshop or AsyncAPI session in our community,” please reach out. We’d love to support you.
 
 Until next time, see you Asia-Pacific!
