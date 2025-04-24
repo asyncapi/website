@@ -1,11 +1,5 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/_s5y5r3dirI/hqdefault.jpg",
-    "title": "AsyncAPI Community Working Group Meeting, April 22nd 2025",
-    "description": "https://github.com/asyncapi/community/issues/1852.",
-    "videoId": "_s5y5r3dirI"
-  },
-  {
     "image_url": "https://i.ytimg.com/vi/O6UjbQ0qVMQ/hqdefault.jpg",
     "title": "AsyncAPI Community Working Group Meeting, April 8th 2025",
     "description": "https://github.com/asyncapi/community/issues/1824.",
@@ -28,5 +22,11 @@
     "title": "AsyncAPI Community Working Group Meeting, March 25th 2025",
     "description": "AsyncAPI Community Working Group Meeting Agenda: Welcome and agenda alignment (3:00 PM - 3:05 PM) ➢ Facilitator: Thulie ...",
     "videoId": "KYSsSRkUPqM"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/vO6Gy6_0O6A/hqdefault.jpg",
+    "title": "AsyncAPI Marketing Working Group Meeting, March 18th 2025",
+    "description": "https://github.com/asyncapi/community/issues/1754.",
+    "videoId": "vO6Gy6_0O6A"
   }
 ]
