@@ -14,7 +14,17 @@ excerpt: 'AsyncAPI community status and project updates for April 2025'
 featured: true
 ---
 
-We had a busy month, from having our first conference of the year to receiving 204 applications for Google Summer of Code (GSoC'25). Let's dive into the April update!
+We had a busy month, from having our first conference of the year, a new Platinum sponsor, to receiving 204 applications for Google Summer of Code (GSoC'25). Let's dive into the April update!
+
+## New Sponsor
+We are excited to welcome [Kong](https://konghq.com/) as our Platinum Sponsor!
+
+<a href='https://konghq.com/' target='_blank'>
+<img src='/img/sponsors/kong.png' alt='Kong' width='500px' />
+</a>
+
+We cannot thank our sponsors enough for their unwavering support. If you would like to get involved or support the project, [please check our sponsorship page on Open Collective](https://opencollective.com/asyncapi) or email [info@asyncapi.io](mailto:info@asyncapi.io)
+
 
 ## AsyncAPI Governance Board
 The vote to introduce the AsyncAPI Governance Board is now open. Part of the change will be replacing the Executive Director position. Additionally, Ambassadors will have the right to be part of the TSC. 
