@@ -18,8 +18,6 @@ Every software has a design system, regardless of whether it is free or not. Sup
 
 <Figure 
   src="/img/posts/oss_image.webp"
-  classname="text-center"
-  caption=""
 />
 
 Open Source Software (OSS) refers to software shared with its source code, allowing users to access, modify, and distribute. OSS allows everyone to contribute to the source code, make changes, or suggest new features. You can use the code for your purpose or contribute to improving the entire project’s features.
