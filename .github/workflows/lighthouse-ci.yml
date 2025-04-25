@@ -35,7 +35,7 @@ jobs:
         run: echo "shouldrun=true" >> $GITHUB_OUTPUT
         
       - if: steps.should_run.outputs.shouldrun == 'true'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Await Netlify Preview
@@ -48,7 +48,7 @@ jobs:
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Lighthouse Audit
         id: lighthouse_audit
-        uses: treosh/lighthouse-ci-action@03becbfc543944dd6e7534f7ff768abb8a296826 #version 10.1 https://github.com/treosh/lighthouse-ci-action/releases/tag/10.1.0
+        uses: treosh/lighthouse-ci-action@2f8dda6cf4de7d73b29853c3f29e73a01e297bd8 #version 10.1 https://github.com/treosh/lighthouse-ci-action/releases/tag/10.1.0
         with:
           urls: |
             https://deploy-preview-$PR_NUMBER--asyncapi-website.netlify.app/
