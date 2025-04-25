@@ -4,10 +4,10 @@ const mockFs = {
   readFileSync: jest.fn()
 };
 
-const { validateLocales, extractKeys, readJSONFilesInDir } = require('../scripts/utils/check-locales.ts');
-const { logger } = require('../scripts/utils/logger.ts');
+const { validateLocales, extractKeys, readJSONFilesInDir } = require('../scripts/check-locales.ts');
+const { logger } = require('../scripts/utils.ts');
 
-jest.mock('../scripts/utils/logger', () => ({
+jest.mock('../scripts/utils', () => ({
   logger: {
     error: jest.fn(),
     warn: jest.fn(),

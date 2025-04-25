@@ -88,4 +88,3 @@ export async function writeJSON(readPath: string, writePath: string) {
     }
   }
 }
-
