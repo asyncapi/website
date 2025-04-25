@@ -133,7 +133,7 @@ jobs:
             LANGUAGES=$(echo "$LOCALE_OUTPUT" | grep "Found" | sed 's/.*Found \(.*\) languages.*/Found \1 languages:/')
             
             # Extract the missing keys information without timestamps
-            MISSING_KEYS=$(echo "$LOCALE_OUTPUT" | grep -A 100 "Missing keys in" | grep -v "\[.*PM\] \|^\s*$")
+            MISSING_KEYS=$(echo "$LOCALE_OUTPUT" | grep -A 100 "Missing keys in" | grep -v "\[.*[AP]M\] \|^\s*$")
             
             # Combine the cleaned output
             CLEANED_OUTPUT="$LANGUAGES\n\n$MISSING_KEYS"

@@ -71,7 +71,9 @@ export async function writeJSON(readPath: string, writePath: string) {
   try {
     const readContent = await readFile(readPath, 'utf-8');
     const jsonContent = convertToJson(readContent);
+
     await writeFile(writePath, JSON.stringify(jsonContent));
+    
     return jsonContent;
   } catch (err: any) {
     // Better detection of error types
@@ -79,9 +81,11 @@ export async function writeJSON(readPath: string, writePath: string) {
       throw new Error(`Error while reading file\nError: ${err}`);
     } else if (err.message.includes('write')) {
       throw new Error(`Error while writing file\nError: ${err}`);
-    } else if (err.message.includes('Invalid content') ||
-               err.message.includes('JSON') ||
-               err.message.includes('YAML')) {
+    } else if (
+      err.message.includes('Invalid content') ||
+      err.message.includes('JSON') ||
+      err.message.includes('YAML')
+    ) {
       throw new Error(`Error while conversion\nError: ${err}`);
     } else {
       throw new Error(`Error processing file: ${err}`);
