@@ -1,4 +1,4 @@
-# Tools Build Script Documentation
+## Tools Build Script Documentation
 
 ### Overview
 

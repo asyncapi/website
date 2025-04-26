@@ -90,5 +90,3 @@ This script appears to be part of a documentation website generation pipeline. I
 2. Create a organized navigation structure
 3. Add user-friendly navigation controls
 4. Support hierarchical documentation with sections and subsections
-
-
