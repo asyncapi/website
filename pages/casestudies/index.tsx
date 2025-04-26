@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React from 'react';
 
 import type { ICaseStudies } from '@/types/post';
@@ -82,38 +83,47 @@ export default function Casestudies() {
           </div>
         </div>
 
-        <center>
-          <div className='overflow-x-auto'>
-            <table className='my-8 w-full max-w-full border-collapse border'>
-              <thead>
-                <tr>
-                  <th className='border p-2 font-bold'>Company name</th>
-                  <th className='border-2 p-2 font-bold'>Use Case</th>
-                  <th className='border-2 p-2 font-bold'>Resources</th>
+        {/* Responsive table → cards on mobile */}
+        <div className='overflow-x-auto'>
+          <table className='min-w-full table-auto'>
+            {/* hide header on mobile, show from sm: up */}
+            <thead className='hidden bg-gray-50 sm:table-header-group'>
+              <tr>
+                <th className='px-4 py-2 text-left text-sm font-semibold'>Company name</th>
+                <th className='px-4 py-2 text-left text-sm font-semibold'>Use Case</th>
+                <th className='px-4 py-2 text-left text-sm font-semibold'>Resources</th>
+              </tr>
+            </thead>
+            <tbody className='block sm:table-row-group'>
+              {AdoptersList.map((entry: Adopter, index: number) => (
+                <tr
+                  key={index}
+                  data-testid='Adopters'
+                  className='mb-4 block rounded-lg border border-gray-200 sm:mb-0 sm:table-row sm:rounded-none sm:border-none'
+                >
+                  <td className='block px-4 py-2 font-bold sm:table-cell'>{entry.companyName}</td>
+                  <td className='block px-4 py-2 sm:table-cell'>{entry.useCase}</td>
+                  <td className='block px-4 py-2 sm:table-cell'>
+                    <ul className='list-disc space-y-1 pl-5'>
+                      {entry.resources.map((resource: Resource, resourceIndex: number) => (
+                        <li key={resourceIndex}>
+                          <a
+                            className='text-cyan-500 underline'
+                            href={resource.link}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                          >
+                            {resource.title}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                {AdoptersList.map((entry: Adopter, index: number) => (
-                  <tr key={index} data-testid='Adopters'>
-                    <td className='border-2 p-2'>{entry.companyName}</td>
-                    <td className='border-2 p-2'>{entry.useCase}</td>
-                    <td className='border-2 p-2'>
-                      <ul>
-                        {entry.resources.map((resource: Resource, resourceIndex: number) => (
-                          <li className='p-2' key={resourceIndex}>
-                            <a className='text-cyan-500 underline' href={resource.link}>
-                              {resource.title}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </center>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </GenericLayout>
   );
