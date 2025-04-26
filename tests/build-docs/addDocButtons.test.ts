@@ -89,29 +89,4 @@ describe('addDocButtons', () => {
     }
     expect(error).toBeDefined();
   });
-
-  it('should handle non-Error object thrown in the function', () => {
-    const malformedTreePosts: Record<string, any> = { section1: {} };
-
-    Object.defineProperty(malformedTreePosts, 'section1', {
-      get() {
-        // eslint-disable-next-line no-throw-literal, @typescript-eslint/no-throw-literal
-        throw 'String exception';
-      }
-    });
-
-    let error: Error | undefined;
-
-    try {
-      addDocButtons(docPosts, malformedTreePosts);
-    } catch (err) {
-      if (err instanceof Error) {
-        error = err;
-        expect(err.message).toBe('An unknown error occurred while adding doc buttons.');
-      } else {
-        error = new Error('An unknown error occurred while adding doc buttons.');
-      }
-    }
-    expect(error).toBeDefined();
-  });
 });

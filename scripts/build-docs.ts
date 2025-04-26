@@ -124,7 +124,7 @@ function buildNavTree(navItems: Details[]): NavTree {
  * @returns {Details[]} - The sequential array of document posts.
  * @throws {Error} - Throws an error if there is an issue during the conversion process.
  */
-const convertDocPosts = (docObject: NavTree | Details | NavTreeItem): Details[] => {
+function convertDocPosts(docObject: NavTree | Details | NavTreeItem): Details[] {
   try {
     let docsArray: Details[] = [];
 
@@ -146,13 +146,9 @@ const convertDocPosts = (docObject: NavTree | Details | NavTreeItem): Details[] 
 
     return docsArray;
   } catch (err: unknown) {
-    if (err instanceof Error) {
-      throw new Error(`Error in convertDocPosts: ${err.message}`);
-    } else {
-      throw new Error(`Error in convertDocPosts: Unknown error - ${String(err)}`);
-    }
+    throw new Error(`Error in convertDocPosts: ${(err as Error).message}`);
   }
-};
+}
 
 /**
  * Adds navigation buttons to the document posts.
@@ -244,12 +240,8 @@ function addDocButtons(docPosts: Details[], treePosts: NavTree): Details[] {
 
       return docPost;
     });
-  } catch (err: unknown) {
-    if (err instanceof Error) {
-      throw new Error(`An error occurred while adding doc buttons: ${err.message}`);
-    } else {
-      throw new Error('An unknown error occurred while adding doc buttons.');
-    }
+  } catch (err) {
+    throw new Error(`An error occurred while adding doc buttons: ${(err as Error).message}`);
   }
 
   return structuredPosts;

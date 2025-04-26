@@ -62,29 +62,4 @@ describe('convertDocPosts', () => {
     }
     expect(error).toBeDefined();
   });
-
-  it('should handle non-Error object thrown in the function', () => {
-    // Mock implementation that throws a non-Error object
-    const originalChildren = Object.getOwnPropertyDescriptor(docObject, 'children');
-
-    Object.defineProperty(docObject, 'children', {
-      get() {
-        // eslint-disable-next-line no-throw-literal, @typescript-eslint/no-throw-literal
-        throw 'String exception';
-      }
-    });
-
-    let error;
-
-    try {
-      convertDocPosts(docObject);
-    } catch (err) {
-      error = err;
-      expect((err as Error).message).toContain('Error in convertDocPosts: Unknown error - String exception');
-    }
-    expect(error).toBeDefined();
-
-    // Restore original property
-    Object.defineProperty(docObject, 'children', originalChildren!);
-  });
 });
