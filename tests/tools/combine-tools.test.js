@@ -20,9 +20,9 @@ const {
   circularTool,
   finalToolWithMissingData
 } = require('../fixtures/combineToolsData');
-const { logger } = require('../../scripts/helper/logger.ts');
+const { logger } = require('../../scripts/helpers/logger.ts');
 
-jest.mock('../../scripts/helper/logger', () => ({
+jest.mock('../../scripts/helpers/logger', () => ({
   logger: { error: jest.fn() }
 }));
 

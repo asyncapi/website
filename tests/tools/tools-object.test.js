@@ -7,9 +7,9 @@ const {
   createMalformedYAML
 } = require('../helper/toolsObjectData');
 
-const { logger } = require('../../scripts/helper/logger.ts');
+const { logger } = require('../../scripts/helpers/logger.ts');
 
-jest.mock('../../scripts/helper/logger.ts', () => ({
+jest.mock('../../scripts/helpers/logger.ts', () => ({
   logger: { warn: jest.fn(), error: jest.fn() }
 }));
 

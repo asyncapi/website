@@ -1,8 +1,8 @@
 const axios = require('axios');
 const { getData } = require('../../scripts/tools/extract-tools-github.ts');
-const { logger } = require('../../scripts/helper/logger.ts');
+const { logger } = require('../../scripts/helpers/logger.ts');
 
-jest.mock('../../scripts/helper/logger', () => ({
+jest.mock('../../scripts/helpers/logger', () => ({
   logger: { info: jest.fn() }
 }));
 

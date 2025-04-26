@@ -8,9 +8,9 @@ const {
   validateDocs,
   checkMarkdownFiles
 } = require('../../scripts/markdown/check-markdown.ts');
-const { logger } = require('../../scripts/helper/logger.ts');
+const { logger } = require('../../scripts/helpers/logger.ts');
 
-jest.mock('../../scripts/helper/logger', () => ({
+jest.mock('../../scripts/helpers/logger', () => ({
   logger: { error: jest.fn(), warn: jest.fn() }
 }));
 
