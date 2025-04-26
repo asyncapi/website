@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import React from 'react';
 
 import type { ICaseStudies } from '@/types/post';
