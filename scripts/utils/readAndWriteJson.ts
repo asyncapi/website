@@ -3,10 +3,13 @@ import { readFile, writeFile } from 'fs/promises';
 import { convertToJson } from './functions';
 
 /**
- * Reads a file, converts its content to JSON, and writes the JSON to another file.
- * @param {string} readPath - The path to the file to read.
- * @param {string} writePath - The path to the file where JSON will be written.
- * @returns {Promise<void>} A promise that resolves when the operation is complete.
+ * Reads the content of a file, converts it to JSON, and writes the JSON output to another file.
+ *
+ * This asynchronous function processes a file by reading its content, converting the content to JSON using a conversion utility, and writing the resulting JSON to the specified destination path. Each operation is wrapped in error handling, with an error thrown if any step fails.
+ *
+ * @param readPath - The file path from which to read the content.
+ * @param writePath - The file path where the JSON output will be written.
+ * @throws {Error} If reading the file, converting its content to JSON, or writing the JSON output fails.
  */
 export async function writeJSON(readPath: string, writePath: string) {
   let readContent;
