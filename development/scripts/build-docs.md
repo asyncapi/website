@@ -18,7 +18,7 @@ The `build-docs.ts` script is responsible for generating and managing the docume
 
 ## Workflow
 
-1. Build hierarchical navigation tree from flat items using `buildNavTree()`
+1. Build a hierarchical navigation tree from flat items using `buildNavTree()`
     - Sort items by section type and weight
     - Create root sections, subsections, and document pages
     - Handle special cases like specification references
@@ -60,20 +60,31 @@ Simple structure containing navigation link information:
 - `href`: URL link
 
 ## Special Features
-- Special handling for the welcome page at /docs
+- Special handling for the welcome page at `/docs`
 - Reference/specification section with automatic linking to latest specification version
 - Weight-based sorting for proper ordering of sections and documents
 - Root sections and subsections are marked differently than content pages
 - Handles navigation between document sections with smart previous/next links
 - Error handling with detailed error messages
 
-## Command
-
-To run the script manually, execute:
-
-```bash
-tsx scripts/build-docs.ts
-```
+## Development Setup
+1. **Prerequisites**:
+   - Node.js and npm installed
+   - TypeScript installed globally or as a dev dependency
+    - Access to the project repository
+2. **Installing Dependencies**:
+    ```bash
+    npm install
+    ```
+3. **Running the Script**:
+    - Ensure the environment variables are set.
+    - Execute the script using:
+      ```bash
+      tsx scripts/build-docs.ts
+      ```
+4. **Output**:
+    - The output will be a JSON file containing the hierarchical navigation structure and an array of document pages with their respective navigation controls.
+    - The file will be saved in the specified path (e.g., `../config/posts.json`).
 
 ## Output
 The output will be a JSON file containing the hierarchical navigation structure and an array of document pages with their respective navigation controls. The file will be saved in the specified path (e.g., `../config/posts.json`).
@@ -84,9 +95,9 @@ No environment variables are required for this script.
 
 ## Usage Context
 
-This script appears to be part of a documentation website generation pipeline. It's designed to:
+This script is part of a documentation website generation pipeline. It's designed to:
 
 1. Parse raw documentation items
-2. Create a organized navigation structure
+2. Create an organized navigation structure
 3. Add user-friendly navigation controls
 4. Support hierarchical documentation with sections and subsections

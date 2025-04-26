@@ -51,7 +51,7 @@ This TypeScript script transforms markdown files into MDX files suitable for a R
 
 #### `ensureDirectoryExists(directory: PathLike)`
 - Checks if a directory exists and creates it if it doesn't
-- Used to ensure the target directory exists before processing
+- Ensures that the target directory exists before processing
 
 #### `capitalizeJsxTags(content: string): string`
 - Transforms HTML tags to capitalized JSX component tags

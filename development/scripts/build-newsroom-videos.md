@@ -79,7 +79,7 @@ This script is a Node.js module that interacts with the YouTube Data API to fetc
 
 - **Execution**:
   - When run directly, the script writes to `../config/newsroom_videos.json`.
-  - Can be imported and used as a module with a custom write path.
+  - It can be imported and used as a module with a custom write path.
 
 ### Example Command
 

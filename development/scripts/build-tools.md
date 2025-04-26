@@ -1,4 +1,4 @@
-## Tools Build Script Documentation
+## Build Tools Script Documentation
 
 ### Overview
 
@@ -59,7 +59,7 @@ The script generates the following files in the `config` directory:
 
 4. **Environment Configuration**
   - Create a `.env` file in the project root with the following variables:
-    ```
+    ```bash
     GITHUB_TOKEN='{your-github-token}'
     ```
   - Alternatively, set these variables in your shell environment.

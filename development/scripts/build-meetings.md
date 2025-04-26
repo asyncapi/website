@@ -56,7 +56,7 @@ This script is a Node.js module that interacts with the Google Calendar API to f
 
 4. **Installing Dependencies**:
   ```bash
-   npm install
+  npm install
   ```
 
 5. **Running the Script**:
