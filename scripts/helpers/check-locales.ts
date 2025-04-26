@@ -131,11 +131,10 @@ function validateLocales(): void {
 
       if (langsWithMissingKeys.length > 0) {
         logger.info(`\nMissing keys in '${file}':`);
-        hasErrors = langsWithMissingKeys.reduce((hasError, [lang, missing]) => {
+        langsWithMissingKeys.forEach(([lang, missing]) => {
           logger.error(`❌ Language '${lang}' is missing these keys: ${missing.join(', ')}`);
-
-          return true;
-        }, hasErrors);
+        });
+        hasErrors = langsWithMissingKeys.length > 0 ? true : hasErrors;
       }
     }
 
