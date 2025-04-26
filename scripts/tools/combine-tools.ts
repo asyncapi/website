@@ -206,27 +206,18 @@ const combineTools = async (
         }) as FinalAsyncAPITool[];
       }
     }
-    try {
-      fs.writeFileSync(toolsPath, JSON.stringify(finalTools, null, 2));
-      fs.writeFileSync(
-        tagsPath,
-        JSON.stringify(
-          {
-            languages: languageList,
-            technologies: technologyList
-          },
-          null,
-          2
-        )
-      );
-    } catch (error) {
-      throw new Error(
-        'Failed to write output files:\n' +
-          `Tools path: ${toolsPath}\n` +
-          `Tags path: ${tagsPath}\n` +
-          `Error: ${(error as Error).message}`
-      );
-    }
+    fs.writeFileSync(toolsPath, JSON.stringify(finalTools, null, 2));
+    fs.writeFileSync(
+      tagsPath,
+      JSON.stringify(
+        {
+          languages: languageList,
+          technologies: technologyList
+        },
+        null,
+        2
+      )
+    );
   } catch (err) {
     throw new Error(`Error combining tools: ${err}`);
   }
