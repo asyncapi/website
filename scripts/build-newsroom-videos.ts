@@ -5,7 +5,7 @@ import { dirname, resolve } from 'path';
 import process from 'process';
 import { fileURLToPath } from 'url';
 
-import { logger } from './helper/logger';
+import { logger } from './helpers/logger';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);

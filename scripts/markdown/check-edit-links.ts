@@ -4,8 +4,8 @@ import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 import editUrls from '../../config/edit-page-config.json';
-import { logger } from '../helper/logger';
-import { pause } from '../helper/utils';
+import { logger } from '../helpers/logger';
+import { pause } from '../helpers/utils';
 
 const ignoreFiles = [
   'reference/specification/v2.x.md',

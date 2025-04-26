@@ -11,7 +11,7 @@ import type {
   ToolsListObject
 } from '@/types/scripts/tools';
 
-import { logger } from '../helper/logger';
+import { logger } from '../helpers/logger';
 import { categoryList } from './categorylist';
 import { languagesColor, technologiesColor } from './tags-color';
 import { createToolObject } from './tools-object';
