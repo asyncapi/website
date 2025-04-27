@@ -77,14 +77,11 @@ Simple structure containing navigation link information:
     npm install
     ```
 3. **Running the Script**:
-    - Ensure the environment variables are set.
+    - No environment variables are required for this script.
     - Execute the script using:
       ```bash
       tsx scripts/build-docs.ts
       ```
-4. **Output**:
-    - The output will be a JSON file containing the hierarchical navigation structure and an array of document pages with their respective navigation controls.
-    - The file will be saved in the specified path (e.g., `../config/posts.json`).
 
 ## Output
 The output will be a JSON file containing the hierarchical navigation structure and an array of document pages with their respective navigation controls. The file will be saved in the specified path (e.g., `../config/posts.json`).

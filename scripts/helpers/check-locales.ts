@@ -134,7 +134,8 @@ function validateLocales(): void {
         langsWithMissingKeys.forEach(([lang, missing]) => {
           logger.error(`❌ Language '${lang}' is missing these keys: ${missing.join(', ')}`);
         });
-        hasErrors = langsWithMissingKeys.length > 0 ? true : hasErrors;
+
+        hasErrors = true;
       }
     }
 

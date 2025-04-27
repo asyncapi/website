@@ -19,13 +19,9 @@ This TypeScript script transforms markdown files into MDX files suitable for a R
 
 2. **Content Transformations**:
   - Converts HTML comments (`<!-- -->`) to JSX comments (`{/* */}`)
-  - Capitalizes specific HTML tags to match JSX component conventions
+  - Capitalizes table-related HTML tags (`table`, `tr`, `td`, etc.) to React components
   - Preserves curly braces for JSX expressions
   - Renames `.md` files to `.mdx` extension
-
-3. **HTML Tag Capitalization**:
-  - Capitalizes specific HTML tags that need to be components in React
-  - Currently configured for table-related tags: 'table', 'tr', 'td', 'th', 'thead', 'tbody'
 
 ### Dependencies
 - `fs` for file system operations
@@ -51,7 +47,6 @@ This TypeScript script transforms markdown files into MDX files suitable for a R
 
 #### `ensureDirectoryExists(directory: PathLike)`
 - Checks if a directory exists and creates it if it doesn't
-- Ensures that the target directory exists before processing
 
 #### `capitalizeJsxTags(content: string): string`
 - Transforms HTML tags to capitalized JSX component tags
