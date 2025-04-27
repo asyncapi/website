@@ -11,7 +11,7 @@ authors:
     photo: /img/avatars/maya_picture.webp
     link: https://www.linkedin.com/in/aishatmuibudeen/
     byline: Product Designer and UX Researcher
-excerpt: 'Design BlogPost'
+excerpt: "Somehow, we're here. And we saved you a spot at OpenNest Africa!"
 ---
 > *Somehow, we're here. And we saved you a spot at OpenNest Africa!*
 
@@ -138,10 +138,10 @@ Let's build a future where everyone has a seat at the table.
 >
 > *You just have to be willing, and we'll meet you where you are.*
 
-<br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**. . .**
 
 Thank you for reading my story.
 
 Connect with me on [LinkedIn](https://www.linkedin.com/in/aishatmuibudeen/).
 
-❤ *Maya Pen* ❤
+:black_heart: *Maya Pen* :black_heart:
