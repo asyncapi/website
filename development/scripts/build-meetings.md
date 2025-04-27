@@ -2,7 +2,8 @@
 
 ### Summary
 
-This script is a Node.js module that interacts with the Google Calendar API to fetch upcoming meetings and writes the data to a specified file path. It uses the Google APIs client library to authenticate and access calendar events. The script is designed to be run as a cron job, fetching events within a specified time range and logging the results. It handles authentication, data fetching, and error management, ensuring that the data structure received from the API is valid before processing.
+The 'Build meetings' script is a Node.js module that interacts with the Google Calendar API to fetch upcoming meetings and writes the data to a specified file path. It uses the Google APIs client library to authenticate and access calendar events.
+The script is designed to be run as a cron job, fetching events within a specified time range and logging the results. The script handles authentication, data fetching, and error management, ensuring that the data structure received from the API is valid before processing.
 
 ### Overview
 

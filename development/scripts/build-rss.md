@@ -1,10 +1,10 @@
 ## Build RSS Script
 
-#### Summary
+### Summary
 
-This script is a TypeScript module that generates RSS feeds for different types of blog posts on a website. It reads blog post data from a configuration file, processes it according to the RSS 2.0 specification, and writes the resulting XML feed to the public directory. The script handles sorting posts by date, validating required fields, sanitizing HTML content, and including media attachments with appropriate MIME types.
+The `Build RSS` script is a TypeScript module that generates RSS feeds for different types of blog posts on a website. The script reads blog post data from a configuration file, processes it according to the RSS 2.0 specification, and writes the resulting XML feed to the public directory. The script handles sorting posts by date, validating required fields, sanitizing HTML content, and including media attachments with appropriate MIME types.
 
-#### Overview
+### Overview
 
 - **Purpose**: Generate RSS feed XML files for blog posts and other content types
 - **Language**: TypeScript
@@ -13,7 +13,7 @@ This script is a TypeScript module that generates RSS feeds for different types 
   - `jgexml/json2xml` for converting JSON to XML format
   - Custom type definitions for blog posts and RSS feed structures
 
-#### Key Components
+### Key Components
 
 1. **Data Retrieval**:
    - Imports post data from the configuration file using `getAllPosts()` function
@@ -37,7 +37,7 @@ This script is a TypeScript module that generates RSS feeds for different types 
    - Validates post data and throws descriptive errors for missing fields
    - Wraps operations in try/catch blocks to handle exceptions
 
-#### Development Setup
+### Development Setup
 
 1. **Prerequisites**:
    - Node.js and npm installed
@@ -63,7 +63,7 @@ This script is a TypeScript module that generates RSS feeds for different types 
      tsx scripts/build-rss.ts
      ```
 
-#### Usage
+### Usage
 
 - **Function Parameters**:
   - `type`: The category of blog posts to include (e.g., 'blog', 'news')
@@ -92,21 +92,6 @@ This script is a TypeScript module that generates RSS feeds for different types 
   }
 
   generateFeeds();
-  ```
-
-#### Command
-
-To run the script manually, execute:
-
-```bash
-tsx scripts/build-rss.ts
-```
-
-#### Output
-
-The output will be one or more XML files in the `public` directory containing the RSS feeds for different types of blog posts. Each feed follows the RSS 2.0 specification with added Atom namespace support.
-
-#### Notes
 
 - The base URL is currently hardcoded as `https://www.asyncapi.com` and should be updated if deployed to a different domain
 - RSS items include tracking parameters (`?utm_source=rss`) for analytics purposes

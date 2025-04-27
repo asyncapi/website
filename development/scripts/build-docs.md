@@ -1,11 +1,11 @@
-# Documentation Navigation Build Script
+## Documentation Navigation Build Script
 
-## Overview
+### Overview
 
 The `build-docs.ts` script is responsible for generating and managing the documentation navigation system. It creates a hierarchical tree structure from flat navigation items and adds navigation controls (previous/next buttons) to documentation pages for seamless user navigation.
 
-## Key Functions
-
+### Key Functions
+Following are the key functions of the `build-docs.tx` file:
 1. **`buildNavTree()`**: Transforms flat navigation items into a hierarchical tree structure with:
     - Root sections
     - Subsections
@@ -16,8 +16,8 @@ The `build-docs.ts` script is responsible for generating and managing the docume
 
 3. **`addDocButtons()`**: Adds navigation controls (previous/next page) to each document page based on their position in the navigation sequence.
 
-## Workflow
-
+### Workflow
+Following is the sequence of workflow of the `build-docs.tx` file:
 1. Build a hierarchical navigation tree from flat items using `buildNavTree()`
     - Sort items by section type and weight
     - Create root sections, subsections, and document pages
@@ -31,19 +31,19 @@ The `build-docs.ts` script is responsible for generating and managing the docume
     - Add previous/next page links to each document
     - Handle special cases for root sections and section dividers
 
-## Data Structures
+### Data Structures
 
 The script works with several key data structures:
 
-### `NavTree` 
+**`NavTree`:** 
 Represents a hierarchical navigation structure where:
 - Keys are section identifiers
 - Values are `NavTreeItem` objects containing items and their children
 
-### `NavTreeItem`
+**`NavTreeItem`:**
 Contains a document item and its children (which can be either a recursive children object or an array of details).
 
-### `Details`
+**`Details`:**
 Represents document metadata, including:
 - `title`: Document title
 - `weight`: Used for sorting
@@ -54,12 +54,12 @@ Represents document metadata, including:
 - `slug`: URL path to the document
 - `parent`: Identifier for parent section
 
-### `NavigationPage`
+**`NavigationPage`:**
 Simple structure containing navigation link information:
 - `title`: Page title
 - `href`: URL link
 
-## Special Features
+### Special Features
 - Special handling for the welcome page at `/docs`
 - Reference/specification section with automatic linking to latest specification version
 - Weight-based sorting for proper ordering of sections and documents
@@ -67,7 +67,7 @@ Simple structure containing navigation link information:
 - Handles navigation between document sections with smart previous/next links
 - Error handling with detailed error messages
 
-## Development Setup
+### Development Setup
 1. **Prerequisites**:
    - Node.js and npm installed
    - TypeScript installed globally or as a dev dependency
@@ -83,14 +83,14 @@ Simple structure containing navigation link information:
       tsx scripts/build-docs.ts
       ```
 
-## Output
+### Output
 The output will be a JSON file containing the hierarchical navigation structure and an array of document pages with their respective navigation controls. The file will be saved in the specified path (e.g., `../config/posts.json`).
 
-## Environment Variables
+### Environment Variables
 
 No environment variables are required for this script.
 
-## Usage Context
+### Usage Context
 
 This script is part of a documentation website generation pipeline. It's designed to:
 

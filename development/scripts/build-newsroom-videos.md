@@ -2,7 +2,8 @@
 
 ### Summary
 
-This script is a Node.js module that interacts with the YouTube Data API to fetch the latest videos from the AsyncAPI YouTube channel and writes them to a specified JSON file. It uses the YouTube API v3 to search for completed videos from the AsyncAPI channel, sorting them by date and limiting the results to the 5 most recent videos. The script is designed to be run as a standalone process or included as a module in other scripts.
+The `Build newsroom videos` script is a Node.js module that interacts with the YouTube Data API to fetch the latest videos from the AsyncAPI YouTube channel and writes them to a specified JSON file. The script uses the YouTube API v3 to search for completed videos from the AsyncAPI channel, sorting them by date and limiting the results to the 5 most recent videos. 
+The script is designed to be run as a standalone process or included as a module in other scripts.
 
 ### Overview
 

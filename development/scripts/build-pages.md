@@ -2,7 +2,7 @@
 
 ### Summary
 
-This TypeScript script transforms markdown files into MDX files suitable for a React application. It recursively processes files from a source directory, applies several transformations to make the content compatible with JSX, and outputs the modified files to a target directory.
+The `Build pages` TypeScript script transforms markdown files into MDX files suitable for a React application. It recursively processes files from a source directory, applies several transformations to make the content compatible with JSX, and outputs the modified files to a target directory.
 
 ### Overview
 
