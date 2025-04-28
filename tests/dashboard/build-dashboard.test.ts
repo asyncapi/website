@@ -145,6 +145,14 @@ describe('GitHub Discussions Processing', () => {
     expect(getLabel(issue, 'nonexistent/')).toBeUndefined();
   });
 
+  it('should handle empty labels gracefully', () => {
+    const issue = {
+      labels: {}
+    } as GoodFirstIssues;
+
+    expect(getLabel(issue, 'area/')).toBeUndefined();
+  });
+
   it('should map good first issues', async () => {
     const result = await mapGoodFirstIssues(issues);
 
