@@ -39,22 +39,6 @@
       "score": 20.38939580119737
     },
     {
-      "id": "MDU6SXNzdWU5OTE0Mzc3MjY=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "remove puppeteer from dependencies",
-      "author": "flamewow",
-      "resourcePath": "/asyncapi/html-template/issues/256",
-      "repo": "asyncapi/html-template",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 18.091999091203302
-    },
-    {
       "id": "PR_kwDOBW5R_c6N50TQ",
       "isPR": true,
       "isAssigned": false,
@@ -63,7 +47,7 @@
       "resourcePath": "/asyncapi/website/pull/3851",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 18.091999091203302
+      "score": 20.102221212448114
     },
     {
       "id": "PR_kwDOBW5R_c6TnGCE",
@@ -99,6 +83,17 @@
       "score": 16.943300736206268
     },
     {
+      "id": "PR_kwDOCHlHJM6G3FcZ",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "refactor: improve npm installation by using pacote for package resolu…",
+      "author": "achaljhawar",
+      "resourcePath": "/asyncapi/generator/pull/1329",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 16.943300736206268
+    },
+    {
       "id": "PR_kwDOFLhIt853IEwA",
       "isPR": true,
       "isAssigned": false,
@@ -121,17 +116,6 @@
       "score": 16.36895155870775
     },
     {
-      "id": "PR_kwDOCHlHJM6G3FcZ",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "refactor: improve npm installation by using pacote for package resolu…",
-      "author": "achaljhawar",
-      "resourcePath": "/asyncapi/generator/pull/1329",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 16.36895155870775
-    },
-    {
       "id": "I_kwDODwv8N86un74M",
       "isPR": false,
       "isAssigned": true,
@@ -141,6 +125,26 @@
       "repo": "asyncapi/conference-website",
       "labels": [],
       "score": 15.794602381209232
+    },
+    {
+      "id": "I_kwDODou01c5ZAFWh",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Please support File References",
+      "author": "philCryoport",
+      "resourcePath": "/asyncapi/studio/issues/528",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 15.220253203710714
     }
   ],
   "goodFirstIssues": [
