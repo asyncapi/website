@@ -9,9 +9,9 @@ const {
   main
 } = require('../../scripts/markdown/check-edit-links.ts');
 const { determineEditLinkData, processBatchData, testPaths } = require('../fixtures/markdown/check-edit-links-data');
-const { logger } = require('../../scripts/utils/logger.ts');
+const { logger } = require('../../scripts/helpers/logger.ts');
 
-jest.mock('../../scripts/utils/logger', () => ({
+jest.mock('../../scripts/helpers/logger.ts', () => ({
   logger: { info: jest.fn() }
 }));
 jest.mock('node-fetch-2', () => jest.fn());
