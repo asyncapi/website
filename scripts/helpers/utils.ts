@@ -1,12 +1,15 @@
 import yaml from 'yaml';
 
 /**
- * Converts a YAML or JSON string to a JSON object.
- * If the input is already a JSON object, it is returned as is.
+ * Converts YAML or JSON input into a JSON object.
  *
- * @param {unknown} contentYAMLorJSON - The content to be converted, either as a YAML/JSON string or a JSON object.
- * @returns {any} - The converted JSON object.
- * @throws {Error} - Throws an error if the content is neither valid JSON nor valid YAML.
+ * If the input is not a string, it is assumed to be a JSON object and returned unchanged.
+ * For string inputs, the function first attempts to parse it as JSON; if that fails, it then
+ * attempts to parse the string as YAML.
+ *
+ * @param contentYAMLorJSON - The input content, which can be a YAML/JSON string or a JSON object.
+ * @returns The resulting JSON object.
+ * @throws {Error} If the input string cannot be parsed as either valid JSON or valid YAML.
  */
 function convertToJson(contentYAMLorJSON: unknown): any {
   // Axios handles conversion to JSON by default, if data returned from the server allows it
@@ -17,15 +20,11 @@ function convertToJson(contentYAMLorJSON: unknown): any {
 
   // Check if the content is valid JSON before attempting to parse as YAML
   try {
-    const jsonContent = JSON.parse(contentYAMLorJSON);
-
-    return jsonContent;
+    return JSON.parse(contentYAMLorJSON);
   } catch (jsonError) {
     // If it's not valid JSON, try parsing it as YAML
     try {
-      const yamlContent = yaml.parse(contentYAMLorJSON);
-
-      return yamlContent;
+      return yaml.parse(contentYAMLorJSON);
     } catch (yamlError) {
       // If parsing as YAML also fails, throw an error
       throw new Error(`Invalid content format:\nJSON Parse Error: ${jsonError}\nYAML Parse Error: ${yamlError}`);
