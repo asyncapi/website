@@ -1,7 +1,7 @@
 import { readdir, readFile, writeFile } from 'fs/promises';
 import { join } from 'path';
 
-import { convertToJson } from '../utils';
+import { convertToJson } from '../helpers/utils';
 
 /**
  * Compiles a list of case study objects from files in a specified directory and writes the list to a file.

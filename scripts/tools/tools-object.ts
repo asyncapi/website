@@ -5,8 +5,8 @@ import Fuse from 'fuse.js';
 
 import type { AsyncAPITool, ToolsData, ToolsListObject } from '@/types/scripts/tools';
 
-import { convertToJson } from '../utils';
-import { logger } from '../utils/logger';
+import { convertToJson } from '../helpers/utils';
+import { logger } from '../helpers/logger';
 import { categoryList } from './categorylist';
 import schema from './tools-schema.json';
 
