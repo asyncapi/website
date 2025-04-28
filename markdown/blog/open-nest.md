@@ -1,6 +1,6 @@
 ---
 title: To the Ones Who Felt Left Out of Open Source , We Built This With You in Mind
-date: 2025-04-27T4:51:35+05:30
+date: 2025-04-24T10:00:00Z
 type: Community
 tags: 
   - Open Source
