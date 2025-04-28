@@ -4,9 +4,8 @@ import path from 'path';
 
 import type { AsyncAPITool } from '@/types/scripts/tools';
 
-//
+import { logger } from '../../scripts/helpers/logger';
 import { combineTools, getFinalTool } from '../../scripts/tools/combine-tools';
-import { logger } from '../../scripts/utils/logger';
 import {
   automatedToolsT4,
   automatedToolsT5,
@@ -27,7 +26,7 @@ import {
   manualToolsWithMissingData
 } from '../fixtures/combineToolsData';
 
-jest.mock('../../scripts/utils/logger', () => ({
+jest.mock('../../scripts/helpers/logger', () => ({
   logger: { error: jest.fn() }
 }));
 

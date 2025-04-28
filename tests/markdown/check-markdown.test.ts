@@ -2,6 +2,7 @@ import { promises as fs } from 'fs';
 import os from 'os';
 import path from 'path';
 
+import { logger } from '../../scripts/helpers/logger';
 import type { FrontMatter } from '../../scripts/markdown/check-markdown';
 import {
   checkMarkdownFiles,
@@ -10,9 +11,8 @@ import {
   validateBlogs,
   validateDocs
 } from '../../scripts/markdown/check-markdown';
-import { logger } from '../../scripts/utils/logger';
 
-jest.mock('../../scripts/utils/logger', () => ({
+jest.mock('../../scripts/helpers/logger', () => ({
   logger: { error: jest.fn(), warn: jest.fn() }
 }));
 

@@ -3,6 +3,7 @@ import fetch from 'node-fetch-2';
 import path from 'path';
 
 import editOptions from '../../config/edit-page-config.json';
+import { logger } from '../../scripts/helpers/logger';
 import {
   checkUrls,
   determineEditLink,
@@ -10,10 +11,9 @@ import {
   main,
   processBatch
 } from '../../scripts/markdown/check-edit-links';
-import { logger } from '../../scripts/utils/logger';
 import { determineEditLinkData, processBatchData, testPaths } from '../fixtures/markdown/check-edit-links-data';
 
-jest.mock('../../scripts/utils/logger', () => ({
+jest.mock('../../scripts/helpers/logger.ts', () => ({
   logger: { info: jest.fn() }
 }));
 jest.mock('node-fetch-2', () => jest.fn());

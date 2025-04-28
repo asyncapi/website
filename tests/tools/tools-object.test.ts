@@ -2,8 +2,8 @@ import axios from 'axios';
 
 import type { AsyncAPITool, Category } from '@/types/scripts/tools';
 
+import { logger } from '../../scripts/helpers/logger';
 import { convertTools, createToolObject } from '../../scripts/tools/tools-object';
-import { logger } from '../../scripts/utils/logger';
 import {
   createExpectedToolObject,
   createMalformedYAML,
@@ -11,7 +11,7 @@ import {
   createToolFileContent
 } from '../helper/toolsObjectData';
 
-jest.mock('../../scripts/utils/logger', () => ({
+jest.mock('../../scripts/helpers/logger.ts', () => ({
   logger: { warn: jest.fn(), error: jest.fn() }
 }));
 

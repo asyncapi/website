@@ -17,7 +17,6 @@ async function getAllPosts() {
 }
 
 /**
-
  * Generates and writes an RSS feed file for a specified blog post type.
  *
  * Retrieves all blog posts, filters out those without a publication date, and validates that each post

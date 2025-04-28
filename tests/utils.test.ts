@@ -1,5 +1,5 @@
-import { convertToJson } from '../scripts/utils/functions';
-import { invalidString, jsonObject, jsonString, yamlString } from './fixtures/utilsData';
+const { convertToJson } = require('../scripts/helpers/utils');
+const { jsonString, yamlString, jsonObject, invalidString } = require('./fixtures/utilsData');
 
 describe('convertToJson', () => {
   test('should return JSON object if input is valid JSON string', () => {

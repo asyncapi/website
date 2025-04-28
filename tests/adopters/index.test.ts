@@ -1,9 +1,9 @@
 import { resolve } from 'path';
 
 import { buildAdoptersList } from '../../scripts/adopters/index';
-import { writeJSON } from '../../scripts/utils/readAndWriteJson';
+import { writeJSON } from '../../scripts/helpers/readAndWriteJson';
 
-jest.mock('../../scripts/utils/readAndWriteJson.ts');
+jest.mock('../../scripts/helpers/readAndWriteJson.ts');
 
 describe('buildAdoptersList', () => {
   test('should call writeJSON with correct arguments', async () => {

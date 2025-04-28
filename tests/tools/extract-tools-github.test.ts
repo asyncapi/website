@@ -1,9 +1,9 @@
 import axios from 'axios';
 
+import { logger } from '../../scripts/helpers/logger';
 import { getData } from '../../scripts/tools/extract-tools-github';
-import { logger } from '../../scripts/utils/logger';
 
-jest.mock('../../scripts/utils/logger', () => ({
+jest.mock('../../scripts/helpers/logger', () => ({
   logger: { info: jest.fn() }
 }));
 

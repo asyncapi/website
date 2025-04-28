@@ -14,7 +14,7 @@ import {
   start,
   writeToFile
 } from '../../scripts/dashboard/build-dashboard';
-import { logger } from '../../scripts/utils/logger';
+import { logger } from '../../scripts/helpers/logger';
 import {
   discussionWithMoreComments,
   fullDiscussionDetails,
@@ -23,7 +23,7 @@ import {
   mockRateLimitResponse
 } from '../fixtures/dashboardData';
 
-jest.mock('../../scripts/utils/logger', () => ({
+jest.mock('../../scripts/helpers/logger', () => ({
   logger: { error: jest.fn(), warn: jest.fn() }
 }));
 
@@ -261,25 +261,6 @@ describe('GitHub Discussions Processing', () => {
     await expect(getDiscussions()).rejects.toThrow('GitHub token is not set in environment variables');
 
     process.env.GITHUB_TOKEN = 'test-token';
-  });
-
-  it('should handle missing author in discussions', async () => {
-    const discussionWithoutAuthor = {
-      ...mockDiscussion,
-      author: null,
-      timelineItems: { updatedAt: new Date().toISOString() },
-      assignees: { totalCount: 0 },
-      labels: null
-    };
-
-    const result = await getHotDiscussions([discussionWithoutAuthor]);
-
-    expect(result[0]).toMatchObject({
-      author: '',
-      isAssigned: false,
-      labels: []
-    });
-    expect(result[0].score).toBeGreaterThan(0);
   });
 
   it('should correctly calculate score based on months since update', async () => {

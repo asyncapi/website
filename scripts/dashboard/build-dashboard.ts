@@ -14,8 +14,8 @@ import type {
   PullRequestById
 } from '@/types/scripts/dashboard';
 
-import { pause } from '../utils/functions';
-import { logger } from '../utils/logger';
+import { logger } from '../helpers/logger';
+import { pause } from '../helpers/utils';
 import { Queries } from './issue-queries';
 
 const currentFilePath = fileURLToPath(import.meta.url);
@@ -187,7 +187,7 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise
           isPR,
           isAssigned: !!discussion.assignees.totalCount,
           title: discussion.title,
-          author: discussion.author ? discussion.author.login : '',
+          author: discussion.author.login,
           resourcePath: discussion.resourcePath,
           repo: `asyncapi/${discussion.repository.name}`,
           labels: discussion.labels ? discussion.labels.nodes : [],
