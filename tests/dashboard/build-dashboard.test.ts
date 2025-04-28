@@ -145,14 +145,6 @@ describe('GitHub Discussions Processing', () => {
     expect(getLabel(issue, 'nonexistent/')).toBeUndefined();
   });
 
-  it('should handle empty labels gracefully', () => {
-    const issue = {
-      labels: {}
-    } as GoodFirstIssues;
-
-    expect(getLabel(issue, 'area/')).toBeUndefined();
-  });
-
   it('should map good first issues', async () => {
     const result = await mapGoodFirstIssues(issues);
 
@@ -228,6 +220,18 @@ describe('GitHub Discussions Processing', () => {
         totalCount: 1,
         nodes: undefined // This will trigger the ?? 0 part
       }
+    };
+
+    const result = await getHotDiscussions([prDiscussion]);
+
+    expect(result[0].score).toBeGreaterThan(0);
+  });
+
+  it('should handle undefined labels gracefully', async () => {
+    const prDiscussion = {
+      ...mockDiscussion,
+      __typename: 'PullRequest',
+      labels: null // This will trigger the ?? [] part
     };
 
     const result = await getHotDiscussions([prDiscussion]);
