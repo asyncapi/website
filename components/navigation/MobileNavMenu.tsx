@@ -85,7 +85,7 @@ export default function MobileNavMenu({
           <div className='space-y-2 px-5 py-2' onClick={() => showMenu('learning')} data-testid='MobileNav-docs'>
             <h4 className='flex justify-between font-medium text-gray-800'>
               {' '}
-              <Link href='/docs' className='cursor-pointer flex'>
+              <Link href='/docs' className='flex cursor-pointer'>
                 Docs
               </Link>
               <NavItemDropdown />
@@ -95,7 +95,7 @@ export default function MobileNavMenu({
           <div className='space-y-2 px-5 py-2' onClick={() => showMenu('tooling')} data-testid='MobileNav-tools'>
             <h4 className='flex justify-between font-medium text-gray-800'>
               {' '}
-              <Link href='/tools' className='cursor-pointer flex'>
+              <Link href='/tools' className='flex cursor-pointer'>
                 Tools
               </Link>
               <NavItemDropdown />
@@ -104,7 +104,7 @@ export default function MobileNavMenu({
           </div>
           <div className='space-y-2 px-5 py-2' onClick={() => showMenu('community')} data-testid='MobileNav-community'>
             <h4 className='flex justify-between font-medium text-gray-800'>
-              <Link href='/community' className='cursor-pointer flex'>
+              <Link href='/community' className='flex cursor-pointer'>
                 Community
               </Link>
               <NavItemDropdown />
