@@ -1,6 +1,6 @@
 import { readFile, writeFile } from 'fs/promises';
 
-import { convertToJson } from '../utils';
+import { convertToJson } from './utils';
 
 /**
  * Reads the content of a file, converts it to JSON, and writes the JSON output to another file.

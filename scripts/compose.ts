@@ -7,7 +7,7 @@ import fs from 'fs';
 import inquirer from 'inquirer';
 import moment from 'moment';
 
-import { logger } from './utils/logger';
+import { logger } from './helpers/logger';
 
 /**
  * Type definition for the answers from the compose prompt.

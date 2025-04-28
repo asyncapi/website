@@ -4,10 +4,10 @@ const mockFs = {
   readFileSync: jest.fn()
 };
 
-const { validateLocales, extractKeys, readJSONFilesInDir } = require('../scripts/utils/check-locales.ts');
-const { logger } = require('../scripts/utils/logger.ts');
+const { validateLocales, extractKeys, readJSONFilesInDir } = require('../scripts/helpers/check-locales.ts');
+const { logger } = require('../scripts/helpers/logger.ts');
 
-jest.mock('../scripts/utils/logger', () => ({
+jest.mock('../scripts/helpers/logger', () => ({
   logger: {
     error: jest.fn(),
     warn: jest.fn(),
@@ -28,7 +28,7 @@ jest.mock('path', () => {
 });
 
 describe('check-locales', () => {
-  const mockExit = jest.spyOn(process, 'exit').mockImplementation(() => { });
+  const mockExit = jest.spyOn(process, 'exit').mockImplementation(() => {});
 
   beforeEach(() => {
     jest.clearAllMocks();
@@ -55,7 +55,7 @@ describe('check-locales', () => {
 
     expect(result).toEqual({
       'file1.json': { key1: 'value1' },
-      'file2.json': { key2: 'value2' },
+      'file2.json': { key2: 'value2' }
     });
   });
 
@@ -117,7 +117,7 @@ describe('check-locales', () => {
     const files = ['file1.json'];
 
     mockFs.readdirSync.mockReturnValue(files);
-    mockFs.readFileSync.mockImplementation(() => { });
+    mockFs.readFileSync.mockImplementation(() => {});
 
     const result = readJSONFilesInDir(dir);
 
@@ -131,14 +131,11 @@ describe('check-locales', () => {
   it('should handle directory reading errors', () => {
     const dir = '/mock/dir';
 
-    mockFs.readdirSync.mockImplementationOnce(() => { });
+    mockFs.readdirSync.mockImplementationOnce(() => {});
 
     const result = readJSONFilesInDir(dir);
 
-    expect(logger.error).toHaveBeenCalledWith(
-      'Error reading directory /mock/dir',
-      expect.any(Error)
-    );
+    expect(logger.error).toHaveBeenCalledWith('Error reading directory /mock/dir', expect.any(Error));
 
     expect(result).toEqual({});
   });

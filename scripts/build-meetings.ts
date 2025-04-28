@@ -3,7 +3,7 @@ import { google } from 'googleapis';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
-import { logger } from './utils/logger';
+import { logger } from './helpers/logger';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
