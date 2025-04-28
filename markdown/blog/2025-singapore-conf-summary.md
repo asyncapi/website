@@ -21,7 +21,12 @@ In the early days of AsyncAPI, it all began with a question:
 
 What started as a side project has become an industry standard, backed by a global community of engineers, architects, documentarians, and educators from every corner of the world.
 
-Over the years, we’ve shown up: at conferences, in GitHub issues and Slack threads—building not just tools, but a community. And in April 2025, we showed up somewhere new: **Singapore.**
+Over the years, we’ve shown up: at conferences, in GitHub issues and Slack threads, building not just tools, but a community. And in April 2025, we showed up somewhere new: **Singapore.**
+
+Thanks to our sponsor and host, [APIDays](https://www.linkedin.com/company/apidays-conferences/)We couldn’t have asked for a better stage to kick off our 2025 conference journey.
+A massive thank you to the [APIDays Singapore team](https://www.apidays.global/singapore/) for partnering with us and offering the AsyncAPI community its very own track.
+
+APIDays continues to be a driving force for API innovation across the globe—and we’re honored to be part of that story.
 
 <Figure
   src="/img/posts/marketing-images/singapore-conf/community-marketing-specialist.webp"
@@ -31,8 +36,8 @@ Over the years, we’ve shown up: at conferences, in GitHub issues and Slack thr
 
 ## First Time in Southeast Asia
 
-There’s something special about firsts. The first version of a spec. The first contributor. The first working group. The first time you explain what “event-driven” means to someone and see the lightbulb go off. This made us ecstatic to kick off the AsyncAPI conference in Singapore.
-On April 15–16, the AsyncAPI Conference was part of the [APIDays Singapore](https://www.apidays.global/singapore/) track. The event, themed "Where APIs Meet AI: Building Tomorrow's Intelligent Ecosystems," providing an excellent platform to introduce AsyncAPI to the vibrant Asia-Pacific developer community.​
+There’s something special about firsts: the first version of a spec, the first contributor, the first working group, the first time you explain what “event-driven” means to someone and see the lightbulb go off. This made us ecstatic to kick off the AsyncAPI Conference in Singapore.
+On April 15–16, the AsyncAPI Conference was part of the [APIDays Singapore](https://www.apidays.global/singapore/) track. The event, themed "Where APIs Meet AI: Building Tomorrow's Intelligent Ecosystems," providing an excellent platform to introduce AsyncAPI to the vibrant Asia-Pacific community.​
 
 <Figure
   src="/img/posts/marketing-images/singapore-conf/asyncapi-x-community.webp"
@@ -40,11 +45,11 @@ On April 15–16, the AsyncAPI Conference was part of the [APIDays Singapore](ht
   className="text-center"
 />
 
-Our dedicated AsyncAPI track was met with overwhelming interest. Sessions were filled to capacity, with attendees eager to explore the nuances of asynchronous APIs and event-driven architectures. The enthusiasm underscored the growing relevance of AsyncAPI in modern API development. And that mattered to us—not just because it showed interest, but because it proved that the problems we’re solving resonate globally.
+The AsyncAPI track had an overwhelming interest. Sessions were filled with attendees eager to explore the nuances of asynchronous APIs and event-driven architectures. The enthusiasm underscored the growing relevance of AsyncAPI in modern API development. And that mattered to us because it showed interest and proved that the problems we’re solving resonate globally.
 
-## What We Shared, And What We Learned
+## What We Shared And What We Learned
 
-We opened our track with a talk titled “Multi-Protocol Async APIs: Designing a Unified Interface for EDA” by [Naresh Jain](https://www.linkedin.com/in/nareshjain/) Founder & CEO at [Specmatic](https://www.linkedin.com/company/specmatic/). Naresh opened the track by exploring the complexities of event-driven systems built on multiple protocols. He shared a design-first approach to unify these interfaces, allowing teams to tame the chaos and design with confidence early in the project.
+We opened our track with a talk titled “Multi-Protocol Async APIs: Designing a Unified Interface for EDA” by [Naresh Jain](https://www.linkedin.com/in/nareshjain/), Founder & CEO at [Specmatic](https://www.linkedin.com/company/specmatic/). Naresh opened the track by exploring the complexities of event-driven systems built on multiple protocols. He shared a design-first approach to unify these interfaces, allowing teams to tame the chaos and design with confidence early in the project.
 
 <Figure
   src="/img/posts/marketing-images/singapore-conf/naresh.webp"
@@ -62,9 +67,9 @@ Tamimi showcased AsyncAPI Studio’s newest capabilities—making async design m
   className="text-center"
 />
 
-It was followed by [Hugo Guerrero](https://www.linkedin.com/in/hugoguerrero/), Head of Technical Marketing at [Kong](https://www.linkedin.com/company/konghq/) speaking on "Enhancing Kafka Security and Control with Event Gateways"
+[Hugo Guerrero](https://www.linkedin.com/in/hugoguerrero/), Head of Technical Marketing at [Kong](https://www.linkedin.com/company/konghq/), spoke on "Enhancing Kafka Security and Control with Event Gateways."
 
-Hugo brought his deep expertise in Kafka to the table, explaining how event gateways provide much-needed visibility, governance, and access control in Kafka-based environments. Security in EDA isn’t optional—and this talk proved why.
+Hugo brought his deep expertise in Kafka to the table, explaining how event gateways provide much-needed visibility, governance, and access control in Kafka-based environments. Security in EDA isn’t optional, and this talk proved why.
 
 <Figure
   src="/img/posts/marketing-images/singapore-conf/hugo.webp"
@@ -72,7 +77,7 @@ Hugo brought his deep expertise in Kafka to the table, explaining how event gate
   className="text-center"
 />
 
-We wrapped up the track with [Ankit Kumar](https://www.linkedin.com/in/ankit28/), Head of Developer & Customer Success at [Aklivity](https://www.linkedin.com/company/aklivity/) speaking on "Streamlining Event-Driven API Design"
+We wrapped up the track with [Ankit Kumar](https://www.linkedin.com/in/ankit28/), Head of Developer & Customer Success at [Aklivity](https://www.linkedin.com/company/aklivity/), speaking on "Streamlining Event-Driven API Design."
 
 Ankit gave us an exciting dive into AsyncAPI v3, our next major milestone. He shared what’s changing, why it matters, and how v3 brings clarity and flexibility to designing and managing complex event-driven APIs.
 
@@ -85,9 +90,7 @@ Ankit gave us an exciting dive into AsyncAPI v3, our next major milestone. He sh
 We had:
 
 - Real-world examples of AsyncAPI in action
-
 - Live demos using AsyncAPI Studio and the CLI
-
 - The tooling and ecosystem that surrounds the spec
 
 But more than the slides and demos, it was the questions that told the story:
@@ -98,18 +101,17 @@ But more than the slides and demos, it was the questions that told the story:
 - “How do we contribute to the spec or tooling?”
 - "How do other AsyncAPI adopters use AsyncAPI?"
 
-We heard curiosity, but also readiness, this wasn’t just a learning moment; for many, it was a turning point.
+We sensed not just curiosity, but a real readiness to act, this wasn’t just a learning moment; for many, it was a turning point.
 
 <Figure
   src="/img/posts/marketing-images/singapore-conf/singapore-conference.webp"
-  caption="AsyncAPI Track in motion."
+  caption="AsyncAPI track in motion."
   className="text-center"
 />
 
 By the end of the conference, we had:
 
 - Welcomed over 20 new faces to our Slack and GitHub communities, though we also noticed some hesitation to join the Slack community.
-
 - Sparked contributor interest in tooling, docs, and protocol support
 
 <Figure
@@ -118,19 +120,11 @@ By the end of the conference, we had:
   className="text-center"
 />
 
-## Huge Thanks to Our Host: [APIDays](https://www.linkedin.com/company/apidays-conferences/)
-
-We couldn’t have asked for a better stage to kick off our 2025 conference journey.
-
-A massive thank you to the [APIDays Singapore team](https://www.apidays.global/singapore/) for partnering with us and offering the AsyncAPI community its very own track.
-
-APIDays continues to be a driving force for API innovation across the globe—and we’re honored to be part of that story.
-
 ## What This Means for Us And What’s Next?
 
-This event was a reminder: AsyncAPI is no longer just an open source project, it’s a global movement. Being in Singapore meant expanding our reach, connecting with passionate developers in new markets, and hearing firsthand how our tools and standards can solve real world challenges.
+This event was a reminder: AsyncAPI is no longer just an open source project; it’s a global movement. Being in Singapore meant expanding our reach, connecting with new markets, and hearing firsthand how our tools and standards can solve real-world challenges.
 
-It also sets the tone for the rest of 2025. With conferences coming up in Munich, Lagos, London, Bengaluru, online, and Paris, this was our first step in a year of global community building.
+It also sets the tone for the rest of 2025. With conferences scheduled for Munich, Lagos, London, Bengaluru, online, and Paris, this marked our first step in a year of global community building.
 
 A conference designed to bring together developers, architects, technical writers, DevRel folks, and API enthusiasts who are passionate about the future of event-driven APIs.
 
