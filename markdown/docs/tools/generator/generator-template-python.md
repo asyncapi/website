@@ -1,6 +1,6 @@
 ---
 title: "Creating a template - Python"
-weight: 170
+weight: 190
 ---
 
 This tutorial teaches you how to create a simple generator template using a Python MQTT client. You'll use the AsyncAPI document and the template you develop to generate Python code. Additionally, you'll create template code with a reusable component to reuse the custom functionality you create and test your code using an MQTT client.
