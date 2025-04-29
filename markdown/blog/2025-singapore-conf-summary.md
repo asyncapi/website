@@ -23,10 +23,9 @@ What started as a side project has become an industry standard, backed by a glob
 
 Over the years, we’ve shown up: at conferences, in GitHub issues and Slack threads, building not just tools, but a community. And in April 2025, we showed up somewhere new: **Singapore.**
 
-Thanks to our sponsor and host, [APIDays](https://www.linkedin.com/company/apidays-conferences/)We couldn’t have asked for a better stage to kick off our 2025 conference journey.
-A massive thank you to the [APIDays Singapore team](https://www.apidays.global/singapore/) for partnering with us and offering the AsyncAPI community its very own track.
+Thanks to our sponsor and host, [APIDays Singapore team](https://www.apidays.global/singapore/). We couldn’t have asked for a better stage to kick off our 2025 conference journey.
 
-APIDays continues to be a driving force for API innovation across the globe—and we’re honored to be part of that story.
+[APIDays](https://www.linkedin.com/company/apidays-conferences/) remains a driving force for API innovation worldwide, and we are honored to be part of this story.
 
 <Figure
   src="/img/posts/marketing-images/singapore-conf/community-marketing-specialist.webp"
