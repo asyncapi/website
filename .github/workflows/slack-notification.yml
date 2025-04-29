@@ -1,0 +1,66 @@
+name: Slack Notifications
+
+on:
+  workflow_run:
+    workflows: ['*']
+    types: [completed]
+    branches: [master]
+
+jobs:
+  slack-notifications:
+    runs-on: ubuntu-latest
+    # Add permission for reading GitHub token
+    permissions:
+      actions: read
+    steps:
+      - name: Send Slack notification
+        uses: slackapi/slack-github-action@v1.25.0
+        with:
+          slack-webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          payload: |
+            {
+              "text": "GitHub Action Workflow Status",
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "Workflow Status Update ",
+                    "emoji": true
+                  }
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Workflow:*\n${{ github.event.workflow_run.name }}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Status:*\n${{ github.event.workflow_run.conclusion }}"
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Branch:*\n${{ github.event.workflow_run.head_branch }}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Triggered by:*\n${{ github.event.workflow_run.actor.login }}"
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "<${{ github.event.workflow_run.html_url }}|View Workflow Run>"
+                  }
+                }
+              ]
+            }
