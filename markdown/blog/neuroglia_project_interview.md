@@ -21,14 +21,14 @@ In our conversation, Charles explained that Neuroglia's focus is mainly on orche
 
 ## The Origin of Neuroglia’s Journey with AsyncAPI
 
-Years ago, while working with orchestration tools, Neuroglia discovered Serverless Workflow, a CNCF project. They found it while searching for orchestration tools that could standardize the creation and running of workflows for one of their clients. As Charles became deeply involved, he became the lead maintainer of the Serverless Workflow specification repository. Together with his associate, they also developed various SDKs, including Rust, .NET, and TypeScript.
+Years ago, while working with orchestration tools, Neuroglia discovered Serverless Workflow, a CNCF project. They found the project while searching for orchestration tools that could standardize the creation and running of workflows for one of their clients. As Charles became deeply involved, he became the lead maintainer of the Serverless Workflow specification repository. Together with his associate, they also developed various SDKs, including Rust, .NET, and TypeScript.
 As their work on the Serverless Workflow project progressed, Charles encountered AsyncAPI. Recognizing its potential, he actively pushed for its support within the Serverless Workflow specification.
 At that time, the available .NET tooling options were limited and did not fulfill all their requirements, prompting Neuroglia to pursue a more vendor-neutral and flexible solution.
 
 ## Building an AsyncAPI SDK from Scratch
 
 To solve their challenges, Neuroglia developed their own AsyncAPI SDK. They started with building domain models and then advanced to Fluent Builders, which allowed developers to create AsyncAPI documents using a Fluent code approach. This approach was followed by validation features implemented using Fluent Validation.
-The UI they developed initially resembled Swagger’s approach but later evolved to closely align with AsyncAPI’s official UI.. Their solution has grown to include various modules, and now they are working towards integrating official HTML components for rendering documents.
+The UI they developed initially resembled Swagger’s approach but later evolved to closely align with AsyncAPI’s official UI. Their solution has grown to include various modules, and now they are working towards integrating official HTML components for rendering documents.
 
 ## Key Differentiators of Neuroglia’s Solution
 
@@ -69,7 +69,7 @@ Validators, on the other hand, ensure the correctness of AsyncAPI documents. By 
 
 ## Code-First Approach and Attribute-Based Document Generation
 
-Charles emphasized the significance of the code-first approach and attribute-based document generation. With this approach, developers can annotate their classes with attributes, allowing the application to generate AsyncAPI documents automatically during runtime. This eliminates the need for manual document creation, saving time and reducing discrepancies between services and their documentation.
+Charles emphasized the significance of their code-first approach and attribute-based document generation. With this approach, developers can annotate their classes with attributes, allowing the application to generate AsyncAPI documents automatically during runtime, eliminating the need for manual document creation, saving time and reducing discrepancies between services and their documentation.
 
 ## Enhancing AsyncAPI Document Formatting and Parsing
 
