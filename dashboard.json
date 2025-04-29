@@ -1,6 +1,17 @@
 {
   "hotDiscussions": [
     {
+      "id": "PR_kwDOFLhIt86HHVY9",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore: introduce governance board",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/community/pull/1634",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 35.609649004908086
+    },
+    {
       "id": "PR_kwDODCuNRs6NwyqP",
       "isPR": true,
       "isAssigned": false,
@@ -10,41 +21,6 @@
       "repo": "asyncapi/bindings",
       "labels": [],
       "score": 33.02507770616476
-    },
-    {
-      "id": "PR_kwDOFLhIt86HHVY9",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore: introduce governance board",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/community/pull/1634",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 33.02507770616476
-    },
-    {
-      "id": "I_kwDOFLhIt86O7jFN",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "[DESIGN] Holopin Design Tracking",
-      "author": "Mayaleeeee",
-      "resourcePath": "/asyncapi/community/issues/1306",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "good first issue",
-          "color": "7057ff"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        },
-        {
-          "name": "area/design",
-          "color": "0d67d3"
-        }
-      ],
-      "score": 25.845712987433288
     },
     {
       "id": "I_kwDOBW5R_c6pn_G2",
@@ -63,20 +39,26 @@
       "score": 20.38939580119737
     },
     {
-      "id": "MDU6SXNzdWU5OTE0Mzc3MjY=",
-      "isPR": false,
+      "id": "PR_kwDOBW5R_c6N50TQ",
+      "isPR": true,
       "isAssigned": false,
-      "title": "remove puppeteer from dependencies",
-      "author": "flamewow",
-      "resourcePath": "/asyncapi/html-template/issues/256",
-      "repo": "asyncapi/html-template",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 18.091999091203302
+      "title": "refactor: scripts code for better code quality ",
+      "author": "JeelRajodiya",
+      "resourcePath": "/asyncapi/website/pull/3851",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 20.102221212448114
+    },
+    {
+      "id": "PR_kwDOBW5R_c6TnGCE",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore(blog): add singapore summary",
+      "author": "iambami",
+      "resourcePath": "/asyncapi/website/pull/4056",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 17.230475324955524
     },
     {
       "id": "PR_kwDOBW5R_c6KgWbR",
@@ -101,6 +83,17 @@
       "score": 16.943300736206268
     },
     {
+      "id": "PR_kwDOCHlHJM6G3FcZ",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "refactor: improve npm installation by using pacote for package resolu…",
+      "author": "achaljhawar",
+      "resourcePath": "/asyncapi/generator/pull/1329",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 16.943300736206268
+    },
+    {
       "id": "PR_kwDOFLhIt853IEwA",
       "isPR": true,
       "isAssigned": false,
@@ -110,6 +103,28 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 16.65612614745701
+    },
+    {
+      "id": "PR_kwDOFLhIt86LeC8N",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: expand community docs: contributor - simple contribution flow a…",
+      "author": "ezinneanne",
+      "resourcePath": "/asyncapi/community/pull/1730",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 16.36895155870775
+    },
+    {
+      "id": "I_kwDODwv8N86un74M",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Add AsyncAPI Meetups Page to Conference Website",
+      "author": "Shriya-Chauhan",
+      "resourcePath": "/asyncapi/conference-website/issues/644",
+      "repo": "asyncapi/conference-website",
+      "labels": [],
+      "score": 15.794602381209232
     },
     {
       "id": "I_kwDODou01c5ZAFWh",
@@ -130,42 +145,19 @@
         }
       ],
       "score": 15.220253203710714
-    },
-    {
-      "id": "PR_kwDOFLhIt86Lqu0L",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: expand community docs - Following Conventional Commits",
-      "author": "Aahil13",
-      "resourcePath": "/asyncapi/community/pull/1733",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 14.358729437462937
-    },
-    {
-      "id": "PR_kwDOBW5R_c6O_Ql9",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore(blog): add marketing q1 report",
-      "author": "iambami",
-      "resourcePath": "/asyncapi/website/pull/3911",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.07155484871368
-    },
-    {
-      "id": "I_kwDODwv8N86un74M",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Add AsyncAPI Meetups Page to Conference Website",
-      "author": "Shriya-Chauhan",
-      "resourcePath": "/asyncapi/conference-website/issues/644",
-      "repo": "asyncapi/conference-website",
-      "labels": [],
-      "score": 13.78438025996442
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDODwv8N86y8NIb",
+      "title": "Venue cards date misalignment",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/conference-website/issues/715",
+      "repo": "asyncapi/conference-website",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": []
+    },
     {
       "id": "I_kwDOBW5R_c6xUO9N",
       "title": "Announcement banner not showing or misaligned on some pages",
@@ -395,21 +387,6 @@
       ]
     },
     {
-      "id": "I_kwDOFLhIt86O7jFN",
-      "title": "[DESIGN] Holopin Design Tracking",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/community/issues/1306",
-      "repo": "asyncapi/community",
-      "author": "Mayaleeeee",
-      "area": "design",
-      "labels": [
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOE8Qh386HJeIz",
       "title": "[BUG] Implement avro schema data type ",
       "isAssigned": false,
@@ -527,6 +504,10 @@
         {
           "name": "bug",
           "color": "d73a4a"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
