@@ -38,39 +38,39 @@ function monthsSince(date: string): number {
 }
 
 /**
- * Extracts a processed label from an issue based on a given prefix.
+ * Returns the portion of a label name following "/" for the first label on the issue whose name starts with the given prefix.
  *
- * The function searches the labels attached to the issue for one whose name begins with the specified filter.
- * If a matching label is found, it splits the label name by "/" and returns the segment after the first delimiter.
- * If no matching label exists or the expected delimiter is missing, the function returns undefined.
- *
- * @param issue - The issue object containing label nodes.
- * @param filter - The prefix to match the label name against.
- * @returns The substring following "/" in the label name if a match is found; otherwise, undefined.
+ * @param filter - The prefix to match against label names.
+ * @returns The substring after "/" in the matching label name, or undefined if no such label exists or the delimiter is missing.
  */
 function getLabel(issue: GoodFirstIssues, filter: string): string | undefined {
-  const result = issue.labels.nodes.find((label) => label.name.startsWith(filter));
+  const result = issue.labels?.nodes?.find((label) => label.name.startsWith(filter));
 
   return result?.name.split('/')[1];
 }
 
 /**
- * Recursively fetches discussion nodes from the GitHub GraphQL API.
+ * Retrieves all discussion nodes from the GitHub GraphQL API using pagination.
  *
- * This function executes a provided GraphQL query to retrieve discussion nodes in paginated batches.
- * It automatically retrieves subsequent pages if available by recursively updating the pagination cursor.
- * A short pause between requests is included to help manage API rate limits, and a warning is logged when the remaining limit is low.
+ * Executes the provided GraphQL query to fetch discussion nodes in batches, automatically handling pagination until all results are retrieved. Includes a delay between requests to help manage API rate limits and logs a warning if the remaining limit is low.
  *
  * @param query - The GraphQL query to execute.
- * @param pageSize - The number of discussion nodes to retrieve per page.
- * @param endCursor - (Optional) The pagination cursor; set to null to start from the first page.
- * @returns A promise that resolves with an array of discussion nodes.
+ * @param pageSize - Number of discussion nodes to retrieve per page.
+ * @param endCursor - Pagination cursor to continue from a specific point; use null to start from the beginning.
+ * @returns A promise that resolves to an array of all retrieved discussion nodes.
+ *
+ * @throws {Error} If the GitHub token is not set in environment variables.
  */
 async function getDiscussions(
   query: string,
   pageSize: number,
   endCursor: null | string = null
 ): Promise<Discussion['search']['nodes']> {
+  const token = process.env.GITHUB_TOKEN;
+
+  if (!token) {
+    throw new Error('GitHub token is not set in environment variables');
+  }
   try {
     const result: Discussion = await graphql(query, {
       first: pageSize,
@@ -107,22 +107,26 @@ async function getDiscussions(
 }
 
 /**
- * Retrieves a discussion from GitHub by its unique ID.
+ * Fetches a GitHub discussion by its unique ID, selecting either a pull request or an issue based on the provided flag.
  *
- * Uses the appropriate GraphQL query to fetch either a pull request (if `isPR` is true) or an issue.
- *
- * @param isPR - Indicates whether to fetch a pull request (true) or an issue (false).
+ * @param isPR - Set to true to fetch a pull request, or false to fetch an issue.
  * @param id - The unique identifier of the discussion.
- * @returns A promise that resolves with the discussion details.
+ * @returns A promise resolving to the discussion details.
  *
- * @throws {Error} If the GraphQL request fails.
+ * @throws {Error} If the GitHub token is missing or the GraphQL request fails.
  */
 async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequestById | IssueById> {
+  const token = process.env.GITHUB_TOKEN;
+
+  if (!token) {
+    throw new Error('GitHub token is not set in environment variables');
+  }
+
   try {
     const result: PullRequestById | IssueById = await graphql(isPR ? Queries.pullRequestById : Queries.issueById, {
       id,
       headers: {
-        authorization: `token ${process.env.GITHUB_TOKEN}`
+        authorization: `token ${token}`
       }
     });
 
@@ -135,16 +139,14 @@ async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequest
 }
 
 /**
- * Processes a batch of hot discussions by updating discussion details when more comment pages are available,
- * calculating an interaction-based score, and formatting each discussion for further processing.
+ * Processes a batch of hot discussions, updating details if more comment pages exist, calculating an interaction-based score, and formatting each discussion for further use.
  *
- * For pull requests, review counts are added to the overall interaction tally. The score is normalized using
- * the number of months since the discussion's last update.
+ * For pull requests, review and review comment counts are included in the interaction score. The score is normalized by the number of months since the last update.
  *
- * @param batch - A batch of hot discussions to process.
- * @returns A promise that resolves to an array of processed discussions with computed scores.
+ * @param batch - The hot discussions to process.
+ * @returns A promise resolving to processed discussions with computed scores.
  *
- * @throws {Error} When processing a discussion fails.
+ * @throws {Error} If processing any discussion fails.
  */
 async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise<ProcessedDiscussion[]> {
   return Promise.all(
@@ -168,17 +170,15 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise
         const finalInteractionsCount = isPR
           ? interactionsCount +
             discussion.reviews.totalCount +
-            discussion.reviews.nodes!.reduce((acc, curr) => acc + curr.comments.totalCount, 0)
+            (discussion.reviews.nodes?.reduce((acc, curr) => acc + curr.comments.totalCount, 0) ?? 0)
           : interactionsCount;
-
-        /* istanbul ignore next */
 
         return {
           id: discussion.id,
           isPR,
           isAssigned: !!discussion.assignees.totalCount,
           title: discussion.title,
-          author: discussion.author ? discussion.author.login : '',
+          author: discussion.author.login,
           resourcePath: discussion.resourcePath,
           repo: `asyncapi/${discussion.repository.name}`,
           labels: discussion.labels ? discussion.labels.nodes : [],
@@ -251,17 +251,13 @@ async function writeToFile(
 }
 
 /**
- * Transforms an array of good first issues into a simplified format for further processing.
+ * Maps an array of good first issues to a simplified structure for dashboard use.
  *
- * Each issue is mapped to an object containing its unique identifier, title, assignment status, resource path,
- * repository name (prefixed with "asyncapi/"), author's login, a primary area label (extracted using a filter and defaulting to "Unknown"),
- * and a list of labels cleaned to exclude area identifiers and the "good first issue" tag.
+ * Each mapped issue includes its ID, title, assignment status, resource path, repository name, author login, a primary area label (or "Unknown" if not found), and a filtered list of labels excluding area and "good first issue" tags.
  *
- * @param issues - The list of good first issues to transform.
- * @returns A promise that resolves to an array of simplified issue objects.
+ * @returns A promise resolving to an array of mapped issue objects.
  */
 async function mapGoodFirstIssues(issues: GoodFirstIssues[]): Promise<MappedIssue[]> {
-  /* istanbul ignore next */
   return issues.map((issue) => ({
     id: issue.id,
     title: issue.title,
@@ -270,7 +266,7 @@ async function mapGoodFirstIssues(issues: GoodFirstIssues[]): Promise<MappedIssu
     repo: `asyncapi/${issue.repository.name}`,
     author: issue.author.login,
     area: getLabel(issue, 'area/') || 'Unknown',
-    labels: issue.labels.nodes.filter(
+    labels: issue.labels!.nodes.filter(
       (label) => !label.name.startsWith('area/') && !label.name.startsWith('good first issue')
     )
   }));

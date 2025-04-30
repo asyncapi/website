@@ -38,12 +38,12 @@ export function capitalizeJsxTags(content: string): string {
 }
 
 /**
- * Recursively copies files and directories from the source to the target directory with content transformations.
+ * Recursively copies files and directories from a source directory to a target directory, transforming file contents for JSX compatibility.
  *
- * The function processes each entry found in the source directory. For files, it transforms the content by converting HTML comments into JSX comments and capitalizing specific JSX tags. After transformation, the content is written to the target directory. Files with a '.md' extension are renamed to use the '.mdx' extension. For directories, a corresponding directory is created in the target if it doesn't exist, and the function is called recursively.
+ * For each file, converts HTML comments to JSX comments and capitalizes specific JSX tags before writing to the target directory. Markdown files (`.md`) are renamed to `.mdx` after transformation. Subdirectories are processed recursively.
  *
- * @param srcDir - The path to the source directory containing files and subdirectories.
- * @param targetDir - The path to the target directory where transformed files and directories are written.
+ * @param srcDir - Path to the source directory.
+ * @param targetDir - Path to the target directory.
  */
 export function copyAndRenameFiles(srcDir: string, targetDir: string) {
   // Read all files and directories from source directory
@@ -52,8 +52,6 @@ export function copyAndRenameFiles(srcDir: string, targetDir: string) {
   entries.forEach((entry) => {
     const srcPath = path.join(srcDir, entry.name);
     const targetPath = path.join(targetDir, entry.name);
-
-    /* istanbul ignore else */
 
     if (entry.isDirectory()) {
       // If entry is a directory, create it in target directory and recurse

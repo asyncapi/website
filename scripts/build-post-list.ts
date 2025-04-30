@@ -71,7 +71,7 @@ function capitalize(text: string) {
  * @param {Details} details - The details of the item to add.
  * @throws {Error} - Throws an error if the details object is invalid.
  */
-export const addItem = (details: Details) => {
+export const addItem = (details: Details, resultObj: Result) => {
   if (!details || typeof details.slug !== 'string') {
     throw new Error('Invalid details object provided to addItem');
   }
@@ -84,10 +84,8 @@ export const addItem = (details: Details) => {
   };
   const section = Object.keys(sectionMap).find((key) => details.slug!.startsWith(key));
 
-  /* istanbul ignore else */
-
   if (section) {
-    finalResult[sectionMap[section]].push(details);
+    resultObj[sectionMap[section]].push(details);
   }
 };
 
@@ -150,24 +148,19 @@ async function isDirectory(dir: PathLike) {
 }
 
 /**
- * Recursively traverses an array of directory tuples to process markdown files and subdirectories,
- * extracting metadata and building a hierarchical result structure.
+ * Recursively scans directories to process markdown documentation, blog, and about pages, extracting metadata and building a structured result object.
  *
- * For each directory tuple, where the first element is the directory path and the second an optional
- * section slug, the function reads contained files. Subdirectories with a '_section.mdx' file have their
- * metadata extracted to form section details, while markdown files (ending in .mdx but not with '_section.mdx')
- * are parsed for front matter, table of contents, reading time, and excerpt information. Special processing
- * applies for specification and release note files.
+ * For each directory tuple, processes subdirectories and markdown files, extracting front matter, table of contents, reading time, and excerpt information. Handles special cases for section metadata, specification versions, and release notes.
  *
- * @param directories - An array of directory tuples, each containing a directory path and an optional section slug.
- * @param resultObj - The object to accumulate processed documentation, blog posts, and section details.
- * @param basePath - The base path for resolving relative file paths in the project.
- * @param sectionTitle - The title of the current section, used to annotate content files.
- * @param sectionId - The identifier for the current section in a nested hierarchy.
- * @param rootSectionId - The identifier for the root section in the hierarchy.
- * @param sectionWeight - A numeric weight for ordering the section; defaults to 0.
+ * @param directories - Array of directory tuples, each containing a directory path and optional section slug.
+ * @param resultObj - The object that accumulates processed content and metadata.
+ * @param basePath - The base path for resolving relative file paths.
+ * @param sectionTitle - Optional title for the current section.
+ * @param sectionId - Optional identifier for the current section.
+ * @param rootSectionId - Optional identifier for the root section.
+ * @param sectionWeight - Numeric weight for ordering sections; defaults to 0.
  *
- * @throws {Error} When a file system operation or directory traversal fails.
+ * @throws {Error} If a file system operation or directory traversal fails.
  */
 async function walkDirectories(
   directories: string[][],
@@ -181,7 +174,6 @@ async function walkDirectories(
   try {
     for (const dir of directories) {
       const directory = posix.normalize(dir[0]);
-      /* istanbul ignore next */
       const sectionSlug = dir[1] || '';
       const files = await readdir(directory);
 
@@ -196,7 +188,6 @@ async function walkDirectories(
           if (await pathExists(fileNameWithSection)) {
             // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
             details = frontMatter(await readFile(fileNameWithSection, 'utf-8'), {}).data as Details;
-            /* istanbul ignore next */
             details.title = details.title || capitalize(basename(fileName));
           } else {
             details = {
@@ -214,7 +205,7 @@ async function walkDirectories(
           }
           details.sectionWeight = sectionWeight;
           details.slug = slug;
-          addItem(details);
+          addItem(details, finalResult);
           const rootId = details.parent || details.rootSectionId;
 
           await walkDirectories(
@@ -235,7 +226,6 @@ async function walkDirectories(
           details.toc = toc(content, { slugify: slugifyToC }).json;
           details.readingTime = Math.ceil(readingTime(content).minutes);
           details.excerpt = details.excerpt || markdownToTxt(content).substr(0, 200);
-          /* istanbul ignore next */
           details.sectionSlug = sectionSlug || slug.replace(/\.mdx$/, '');
           details.sectionWeight = sectionWeight;
           details.sectionTitle = sectionTitle;
@@ -266,7 +256,7 @@ async function walkDirectories(
             releaseNotes.push(version);
           }
 
-          addItem(details);
+          addItem(details, finalResult);
         }
       }
     }

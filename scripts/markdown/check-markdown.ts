@@ -28,27 +28,23 @@ function isValidURL(str: string) {
 /**
  * Interface representing the frontmatter of a markdown file.
  */
-interface FrontMatter {
+export interface FrontMatter {
   title: string;
   date: string;
   type: string;
   tags: string[];
   cover: string;
-  weight?: number;
+  weight: number;
   authors: { name: string; link: string; photo: string }[];
 }
 
 /**
- * Validates the frontmatter of a blog markdown file.
+ * Validates the frontmatter of a blog markdown file for required fields and correct formats.
  *
- * This function ensures that the provided frontmatter object includes the necessary fields—`title`, `date`, `type`, `tags`, `cover`, and `authors`—and that these fields conform to expected formats. Specifically, it checks that:
- * - The `date` field represents a valid date.
- * - The `tags` field is an array.
- * - The `cover` field is a string.
- * - The `authors` field is an array where each author has a `name` and a `photo`, and if a `link` is provided, it is a valid URL.
+ * Checks that the frontmatter includes `title`, `date`, `type`, `tags`, `cover`, and `authors`, and validates their formats. Ensures the date is valid, tags is an array, cover is a string, and each author has a name, a photo, and a valid URL if a link is provided.
  *
  * @param frontmatter - The frontmatter object to validate.
- * @returns An array of error messages if any validations fail, or null if the frontmatter is valid.
+ * @returns An array of error messages if validation fails, or null if the frontmatter is valid.
  */
 function validateBlogs(frontmatter: FrontMatter) {
   const requiredAttributes = ['title', 'date', 'type', 'tags', 'cover', 'authors'];
@@ -102,44 +98,43 @@ function validateBlogs(frontmatter: FrontMatter) {
     }
   }
 
-  /* istanbul ignore next */
   return errors.length ? errors : null;
 }
 
 /**
- * Validates the frontmatter of documentation markdown files.
- * @param {FrontMatter} frontmatter - The frontmatter to validate.
- * @returns {string[] | null} - An array of error messages, or null if valid.
+ * Validates documentation frontmatter for required fields and types.
+ *
+ * Checks that the frontmatter includes a string `title` and a numeric `weight`.
+ *
+ * @param frontmatter - The frontmatter object to validate.
+ * @returns An array of error messages if validation fails, or `null` if valid.
  */
 function validateDocs(frontmatter: FrontMatter) {
   const errors = [];
 
   // Check if title exists and is a string
-  /* istanbul ignore else */
   if (!frontmatter.title || typeof frontmatter.title !== 'string') {
     errors.push('Title is missing or not a string');
   }
 
   // Check if weight exists and is a number
-  /* istanbul ignore else */
   if (frontmatter.weight === undefined || typeof frontmatter.weight !== 'number') {
     errors.push('Weight is missing or not a number');
   }
 
-  /* istanbul ignore next */
   return errors.length ? errors : null;
 }
 
 /**
- * Recursively traverses a directory to validate the frontmatter of markdown files.
+ * Recursively validates the frontmatter of all markdown files in a directory and its subdirectories.
  *
- * The function scans the specified folder and its subdirectories for files with a '.md' extension, skipping any paths that include "reference/specification". For each markdown file found, it extracts the frontmatter using gray-matter and applies the provided validation function. If validation errors are returned, they are logged and the process exit code is set to 1. Any errors encountered during directory reading or file processing are logged and re-thrown.
+ * For each `.md` file found (excluding those under any `reference/specification` path), extracts frontmatter and applies the provided validation function. Logs warnings for validation errors and sets the process exit code to 1 if any are found. Errors during file system operations are logged and re-thrown.
  *
- * @param folderPath - The root folder path to scan for markdown files.
- * @param validateFunction - A function that validates frontmatter and returns an array of error messages if validation fails or null if the frontmatter is valid.
- * @param relativePath - A relative path used for logging file locations; defaults to an empty string.
+ * @param folderPath - Root directory to search for markdown files.
+ * @param validateFunction - Function to validate extracted frontmatter, returning error messages or null.
+ * @param relativePath - Internal path used for logging file locations; defaults to an empty string.
  *
- * @throws {Error} If an error occurs during directory or file operations.
+ * @throws {Error} If a file system error occurs during directory traversal or file reading.
  */
 async function checkMarkdownFiles(
   folderPath: string,
@@ -153,16 +148,13 @@ async function checkMarkdownFiles(
       const relativeFilePath = path.join(relativePath, file);
 
       // Skip the folder 'docs/reference/specification'
-
-      /* istanbul ignore next */
-      if (relativeFilePath.includes('reference/specification')) {
+      if (path.normalize(relativeFilePath).includes(path.join('reference', 'specification'))) {
         return;
       }
 
       const stats = await fs.stat(filePath);
 
       // Recurse if directory, otherwise validate markdown file
-      /* istanbul ignore else */
       if (stats.isDirectory()) {
         await checkMarkdownFiles(filePath, validateFunction, relativeFilePath);
       } else if (path.extname(file) === '.md') {

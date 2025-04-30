@@ -97,17 +97,14 @@ async function checkUrls(paths: PathObject[]): Promise<PathObject[]> {
 }
 
 /**
- * Generates an edit link for a markdown file based on its URL and file path.
+ * Constructs an edit link for a markdown file based on its URL path and file system location.
  *
- * The function removes a leading "docs/" segment from the URL if present, then checks the provided
- * edit options for a matching entry. If a matching option is found with an empty value, it applies a fallback
- * pattern to generate the edit link using the URL path; otherwise, it constructs the link using the file's basename.
- * Returns null if no appropriate edit option is found.
+ * Removes a leading "docs/" segment from {@link urlPath} for matching purposes. Searches {@link editOptions} for an entry whose value is included in the adjusted URL path. If a matching option with an empty value is found, generates the edit link using the pattern `/docs/{urlPath}.md`; otherwise, uses the file's basename. Returns `null` if no matching option exists.
  *
- * @param urlPath - The URL path associated with the markdown file.
+ * @param urlPath - The URL path of the markdown file.
  * @param filePath - The file system path of the markdown file.
- * @param editOptions - An array of configuration objects each containing a `value` identifier and a `href` base URL.
- * @returns The generated edit link, or null if no matching configuration is found.
+ * @param editOptions - Array of objects specifying matching values and base edit URLs.
+ * @returns The constructed edit link, or `null` if no suitable edit option is found.
  */
 function determineEditLink(
   urlPath: string,
@@ -125,23 +122,21 @@ function determineEditLink(
   }
 
   // For other cases with specific targets
-  /* istanbul ignore next */
   return target ? `${target.href}/${path.basename(filePath)}` : null;
 }
 
 /**
- * Recursively processes markdown files in a directory to generate path objects with corresponding edit links.
+ * Recursively collects markdown file paths from a directory and generates corresponding edit links.
  *
- * This function reads the contents of the specified folder, skipping files named "_section.md", and recursively traverses subdirectories.
- * For each markdown file encountered, it constructs a URL path by replacing system path separators with '/' and removing the file extension,
- * then generates an edit link based on the provided edit options. The results are accumulated in an array and returned.
+ * Traverses the specified folder and its subdirectories, skipping files named "_section.md". For each markdown file found, constructs a URL path and determines its edit link using the provided edit options. Accumulates and returns an array of objects containing the file path, URL path, and edit link.
  *
- * @param folderPath - The folder to process.
- * @param editOptions - An array of edit link option objects with `value` and `href` properties.
- * @param relativePath - Optional relative path for URL generation (default: '').
- * @param result - Optional accumulator for results (default: an empty array).
- * @returns A promise that resolves with an array of objects, each containing a file path, URL path, and edit link.
- * @throws {Error} If an error occurs while reading or processing the directory.
+ * @param folderPath - The root directory to search for markdown files.
+ * @param editOptions - Edit link configuration options used to generate edit links for each file.
+ * @param relativePath - Internal parameter for tracking the relative path during recursion.
+ * @param result - Internal accumulator for collecting results during recursion.
+ * @returns A promise that resolves to an array of objects with file path, URL path, and edit link.
+ *
+ * @throws {Error} If reading or processing the directory fails.
  */
 async function generatePaths(
   folderPath: string,
@@ -163,8 +158,6 @@ async function generatePaths(
         }
 
         const stats = await fs.stat(filePath);
-
-        /* istanbul ignore else */
 
         if (stats.isDirectory()) {
           await generatePaths(filePath, editOptions, relativeFilePath, result);

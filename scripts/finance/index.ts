@@ -1,4 +1,4 @@
-import { mkdir } from 'fs/promises';
+import { access, constants, mkdir } from 'fs/promises';
 import { resolve } from 'path';
 
 import { writeJSON } from '../helpers/readAndWriteJson';
@@ -15,15 +15,13 @@ interface BuildFinanceInfoListProps {
 }
 
 /**
- * Builds the finance information list by converting YAML configuration files to JSON format.
+ * Converts finance-related YAML configuration files to JSON format for a given year.
  *
- * The function reads 'Expenses.yml' and 'ExpensesLink.yml' from a specified directory structure,
- * ensures the target directory exists, and writes the parsed content as JSON to 'Expenses.json'
- * and 'ExpensesLink.json'. If an error occurs during processing, it throws a new error with a descriptive message.
+ * Reads 'Expenses.yml' and 'ExpensesLink.yml' from the specified directory structure, verifies their existence, and writes their contents as JSON files to the target output directory.
  *
- * @param props - An object containing configuration paths and the year used for locating the YAML files and determining the output directory.
- * @returns A promise that resolves when the finance information list has been successfully built.
- * @throws {Error} If an error occurs during the conversion or file writing process.
+ * @param props - Contains directory paths and the year used to locate the YAML files and determine the output location.
+ *
+ * @throws {Error} If either YAML file does not exist or if an error occurs during directory creation or file conversion.
  */
 export async function buildFinanceInfoList({
   currentDir,
@@ -35,6 +33,9 @@ export async function buildFinanceInfoList({
   try {
     const expensesPath = resolve(currentDir, configDir, financeDir, year, 'Expenses.yml');
     const expensesLinkPath = resolve(currentDir, configDir, financeDir, year, 'ExpensesLink.yml');
+
+    // Check if the files exist
+    await Promise.all([access(expensesPath, constants.F_OK), access(expensesLinkPath, constants.F_OK)]);
 
     // Ensure the directory exists before writing the files
     const jsonDirectory = resolve(currentDir, configDir, financeDir, jsonDataDir);

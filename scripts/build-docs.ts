@@ -127,13 +127,16 @@ function buildNavTree(navItems: Details[]): NavTree {
 }
 
 /**
- * Recursively converts document posts to a sequential array.
+ * Flattens a nested document navigation structure into a sequential array of document posts.
  *
- * @param {NavTree | Details} docObject - The document object to convert.
- * @returns {Details[]} - The sequential array of document posts.
- * @throws {Error} - Throws an error if there is an issue during the conversion process.
+ * Recursively traverses the input navigation tree, detail, or tree item, collecting each post and its descendants into a flat array.
+ *
+ * @param docObject - The navigation tree, detail, or tree item to convert.
+ * @returns An array of document posts in sequential order.
+ *
+ * @throws {Error} If the input document object is undefined or if an error occurs during conversion.
  */
-const convertDocPosts = (docObject: NavTree | Details): Details[] => {
+function convertDocPosts(docObject: NavTree | Details | NavTreeItem): Details[] {
   try {
     let docsArray: Details[] = [];
 
@@ -154,23 +157,21 @@ const convertDocPosts = (docObject: NavTree | Details): Details[] => {
     }
 
     return docsArray;
-  } catch (err) {
-    throw new Error('Error in convertDocPosts:', err as Error);
+  } catch (err: unknown) {
+    throw new Error(`Error in convertDocPosts: ${(err as Error).message}`);
   }
-};
+}
 
 /**
- * Enhances document posts by appending next and previous navigation data based on the navigation tree.
+ * Adds next and previous navigation links to each document post based on the navigation tree structure.
  *
- * This function traverses the navigation tree to create a sequential list of document posts and then adds
- * navigation properties (`nextPage` and `prevPage`) to each page entry where applicable. It ensures that the
- * welcome page (identified by the '/docs' slug) is included as the first post while excluding non-content
- * section markers from navigation linking.
+ * Traverses the navigation tree to produce a sequential list of document posts, then augments each content page with `nextPage` and `prevPage` properties for navigation. Section markers and root sections are excluded from navigation links, and the welcome page (with slug `/docs`) is always set as the first post.
  *
- * @param docPosts - The document posts to be augmented.
- * @param treePosts - The hierarchical navigation tree that organizes the document posts.
- * @returns The document posts enriched with navigation buttons for adjacent pages.
- * @throws {Error} Throws an error if an issue occurs while adding navigation buttons.
+ * @param docPosts - The list of document posts to enhance with navigation links.
+ * @param treePosts - The hierarchical navigation tree organizing the document posts.
+ * @returns The document posts array with navigation properties for adjacent pages.
+ *
+ * @throws {Error} If an error occurs while adding navigation buttons.
  */
 function addDocButtons(docPosts: Details[], treePosts: NavTree): Details[] {
   let structuredPosts: Details[] = [];
@@ -215,18 +216,18 @@ function addDocButtons(docPosts: Details[], treePosts: NavTree): Details[] {
       if (index + 1 < countDocPages) {
         // checks whether the next item inside structuredPosts is a rootElement or a sectionElement
         // if yes, it goes again to a next to next item in structuredPosts to link the nextPage
+        /* istanbul ignore else */
         if (!structuredPosts[index + 1].isRootElement && !structuredPosts[index + 1].isSection) {
           nextPage = {
             title: structuredPosts[index + 1].title,
             href: structuredPosts[index + 1].slug
           };
-        } else {
+        } else if (index + 2 < countDocPages) {
           nextPage = {
             title: `${structuredPosts[index + 1].title} - ${structuredPosts[index + 2].title}`,
             href: structuredPosts[index + 2].slug
           };
         }
-
         docPost = { ...docPost, nextPage };
       }
 
@@ -255,7 +256,7 @@ function addDocButtons(docPosts: Details[], treePosts: NavTree): Details[] {
       return docPost;
     });
   } catch (err) {
-    throw new Error('An error occurred while adding doc buttons:', err as Error);
+    throw new Error(`An error occurred while adding doc buttons: ${(err as Error).message}`);
   }
 
   return structuredPosts;

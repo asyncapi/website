@@ -1,13 +1,14 @@
 import fs from 'fs/promises';
+import he from 'he'; // Updated import
 import json2xml from 'jgexml/json2xml';
 
 import type { Details, Result } from '@/types/scripts/build-posts-list';
 import type { BlogPostTypes, RSS, RSSItemType } from '@/types/scripts/build-rss';
 
 /**
- * Asynchronously retrieves all blog posts from the posts configuration file.
+ * Loads and returns all blog posts from the configuration file.
  *
- * @returns A promise that resolves to the list of blog posts.
+ * @returns A promise that resolves to the list of blog posts defined in the posts configuration.
  */
 async function getAllPosts() {
   const posts = (await import('../config/posts.json')).default as Result;
@@ -16,42 +17,16 @@ async function getAllPosts() {
 }
 
 /**
- * Cleans a string by replacing common HTML entities with their corresponding literal characters.
+ * Generates and writes an RSS feed XML file for a specific blog post type.
  *
- * This function converts HTML entities such as "&amp;", "&#39;", "&lt;", "&gt;", and "&quot;" into
- * their respective characters and removes any occurrences of "&ltspan&gt".
+ * Retrieves all posts of the given type, validates required fields, sorts them by featured status and publication date, and constructs an RSS 2.0 feed with Atom namespace. Each post is included as an RSS item, with cover images added as enclosures when present. The resulting XML is saved to the specified output path.
  *
- * @param s - The string containing HTML entities to clean.
- * @returns The string with HTML entities replaced by their literal characters.
- */
-function clean(s: string) {
-  let cleanS = s;
-
-  cleanS = cleanS.split('&ltspan&gt').join('');
-  cleanS = cleanS.split('&amp').join('&');
-  cleanS = cleanS.split('&#39;').join("'");
-  cleanS = cleanS.split('&lt;').join('<');
-  cleanS = cleanS.split('&gt;').join('>');
-  cleanS = cleanS.split('&quot;').join('"');
-
-  return cleanS;
-}
-
-/**
- * Generates and writes an RSS feed file for a specified blog post type.
- *
- * Retrieves all blog posts, filters out those without a publication date, and validates that each post
- * contains the required fields (title, slug, excerpt, date). The posts are then sorted by featured status
- * and publication date before being converted into an RSS feed structure. The resulting XML feed is written
- * to the specified output file path.
- *
- * @param type - The blog post type to include in the feed.
+ * @param type - The blog post type to include in the RSS feed.
  * @param rssTitle - The title of the RSS feed.
- * @param desc - A description of the RSS feed.
- * @param outputPath - The file path where the generated RSS feed should be saved.
+ * @param desc - The description of the RSS feed.
+ * @param outputPath - The file path (relative to the public directory) where the RSS feed will be saved.
  *
- * @throws {Error} If any blog post is missing required fields or if an error occurs during the RSS feed generation
- * or file writing process.
+ * @throws {Error} If any post is missing required fields, lacks a publication date, or if an error occurs during feed generation or file writing.
  */
 export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: string, outputPath: string) {
   try {
@@ -68,7 +43,6 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
 
       return i2Date.getTime() - i1Date.getTime();
     });
-    /* istanbul ignore next */
     if (missingDatePosts.length > 0) {
       throw new Error(`Missing date in posts: ${missingDatePosts.map((p) => p.title || p.slug).join(', ')}`);
     }
@@ -119,7 +93,7 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
       const link = `${base}${post.slug}${tracking}`;
       const { title, excerpt, date } = post;
       const pubDate = new Date(date).toUTCString();
-      const description = clean(excerpt!);
+      const description = he.decode(excerpt!);
       const guid = { '@isPermaLink': true, '': link };
       const item: RSSItemType = {
         title,
@@ -132,7 +106,6 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
 
       if (post.cover) {
         const fileExtension = post.cover.substring(post.cover.lastIndexOf('.')).toLowerCase();
-        /* istanbul ignore next */
         const mimeType = mimeTypes[fileExtension] || 'image/jpeg';
 
         item.enclosure = {
