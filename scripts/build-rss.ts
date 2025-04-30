@@ -1,4 +1,5 @@
 import fs from 'fs/promises';
+import he from 'he'; // Updated import
 import json2xml from 'jgexml/json2xml';
 
 import type { Details, Result } from '@/types/scripts/build-posts-list';
@@ -13,28 +14,6 @@ async function getAllPosts() {
   const posts = (await import('../config/posts.json')).default as Result;
 
   return posts;
-}
-
-/**
- * Cleans a string by replacing common HTML entities with their corresponding literal characters.
- *
- * This function converts HTML entities such as "&amp;", "&#39;", "&lt;", "&gt;", and "&quot;" into
- * their respective characters and removes any occurrences of "&ltspan&gt".
- *
- * @param s - The string containing HTML entities to clean.
- * @returns The string with HTML entities replaced by their literal characters.
- */
-function clean(s: string) {
-  let cleanS = s;
-
-  cleanS = cleanS.split('&ltspan&gt').join('');
-  cleanS = cleanS.split('&amp').join('&');
-  cleanS = cleanS.split('&#39;').join("'");
-  cleanS = cleanS.split('&lt;').join('<');
-  cleanS = cleanS.split('&gt;').join('>');
-  cleanS = cleanS.split('&quot;').join('"');
-
-  return cleanS;
 }
 
 /**
@@ -68,7 +47,6 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
 
       return i2Date.getTime() - i1Date.getTime();
     });
-    /* istanbul ignore next */
     if (missingDatePosts.length > 0) {
       throw new Error(`Missing date in posts: ${missingDatePosts.map((p) => p.title || p.slug).join(', ')}`);
     }
@@ -119,7 +97,7 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
       const link = `${base}${post.slug}${tracking}`;
       const { title, excerpt, date } = post;
       const pubDate = new Date(date).toUTCString();
-      const description = clean(excerpt!);
+      const description = he.decode(excerpt!);
       const guid = { '@isPermaLink': true, '': link };
       const item: RSSItemType = {
         title,
@@ -132,7 +110,6 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
 
       if (post.cover) {
         const fileExtension = post.cover.substring(post.cover.lastIndexOf('.')).toLowerCase();
-        /* istanbul ignore next */
         const mimeType = mimeTypes[fileExtension] || 'image/jpeg';
 
         item.enclosure = {
