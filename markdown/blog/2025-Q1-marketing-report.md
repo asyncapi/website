@@ -72,7 +72,6 @@ Overall, the decline in some metrics can be attributed to the higher number of e
   className="text-center"
 />
 
-
 **User Engagement Insights (Google Analytics)**
 **Homepage Performance**
 
@@ -127,7 +126,7 @@ We published the first blog [Ashmit story](https://www.asyncapi.com/blog/communi
 
 - Our first live session, featuring Eduardo Maldonado Fonseca Silva, marked the beginning of our "Monthly Webinar series: Learn With AsyncAPI" — an initiative designed to create accessible, developer-focused conversations around AsyncAPI concepts, tools, and real-world applications. Eduardo shared deep insights into event-driven architectures and how AsyncAPI boosts interoperability in modern systems. The session covered best practices, practical use cases, and how to get started with AsyncAPI. It concluded with an engaging Q&A where the community posed thoughtful, implementation-focused questions.
 
-[Watch on YouTube](https://www.youtube.com/watch?v=awfB_mwUp1c&t=268s)
+    <YouTube id="https://www.youtube.com/embed/awfB_mwUp1c" />
 
 - To sustain and scale this initiative, we plan to:
 
@@ -141,7 +140,6 @@ We published the first blog [Ashmit story](https://www.asyncapi.com/blog/communi
 
   - Collaborate with community ambassadors and contributors to co-host sessions, fostering ownership and inclusiveness.
 
-
 ### Top 3 Best-Performing Posts
 
 These posts were selected based on their impressions and number of clicks.
@@ -154,48 +152,42 @@ These posts were selected based on their impressions and number of clicks.
 />
 
 1. [We’re welcoming three new members to the AsyncAPI Technical Steering Committee (TSC)](https://www.linkedin.com/feed/update/urn:li:ugcPost:7287771093354893312/)
+    - Impressions: 2,470 Impressions
+    - Likes: 67
+    - Comments: 12
+    - Clicks: 361
+    - Engagement Rate: 18.18%
+    - Key Takeaway: Why it performed well is because it's a community-driven and thought leadership post.
 
-- Impressions: 2,470 Impressions
-- Likes: 67
-- Comments: 12
-- Clicks: 361
-- Engagement Rate: 18.18%
-- Key Takeaway: Why it performed well is because it's a community-driven and thought leadership post.
-
-<Figure
-  src="/img/posts/marketing-images/second-best-performance-post.webp"
-  alt="Ankit Kumar, Head of Developer & Customer Success at @Aklivity, as a speaker at AsyncAPI Conference Singapore 2025"
-  caption="A LinkedIn announcement showing the performance details of Ankit Kumar speaker post"
-  className="text-center"
-/>
+    <Figure
+     src="/img/posts/marketing-images/second-best-performance-post.webp"
+     alt="Ankit Kumar, Head of Developer & Customer Success at @Aklivity, as a speaker at AsyncAPI Conference Singapore 2025"
+     caption="A LinkedIn announcement showing the performance details of Ankit Kumar speaker post"
+     className="text-center"
+    />
 
 2. [Join us in welcoming Ankit Kumar, Head of Developer & Customer Success at @Aklivity, as a speaker at AsyncAPI Conference Singapore 2025! 🚀](https://www.linkedin.com/feed/update/urn:li:share:7308442490213126145/)
+    - Impressions: 1,332
+    - Likes: 54
+    - Comments: 1
+    - Clicks; 215
+    - Engagement Rate: 20.42%
+    - Key Takeaway: What worked well, thought leadership, community-driven
 
-- Impressions: 1,332
-- Likes: 54
-- Comments: 1
-- Clicks; 215
-- Engagement Rate: 20.42%
-- Key Takeaway: What worked well, thought leadership, community-driven 
-
-
-<Figure
-  src="/img/posts/marketing-images/third-best-performance-post.webp"
-  alt="Announcement that Laurent Broudoux is stepping into a new role as an AsyncAPI Ambassador!"
-  caption="A LinkedIn announcement showing the performance details of Laurent Broudoux post"
-  className="text-center"
-/>
+    <Figure
+     src="/img/posts/marketing-images/third-best-performance-post.webp"
+     alt="Announcement that Laurent Broudoux is stepping into a new role as an AsyncAPI Ambassador!"
+     caption="A LinkedIn announcement showing the performance details of Laurent Broudoux post"
+     className="text-center"
+    />
 
 3. [We’re thrilled to announce that Laurent Broudoux is stepping into a new role as an AsyncAPI Ambassador! 🚀](https://www.linkedin.com/feed/update/urn:li:share:7310201401454829568/)
-
-
-- Impressions: 998
-- Likes: 70
-- Comments: 5
-- Clicks: 49
-- Engagement Rate: 12.73%
-- Key Takeaway: It's community-driven, high-value content, visual appeal
-
+    - Impressions: 998
+    - Likes: 70
+    - Comments: 5
+    - Clicks: 49
+    - Engagement Rate: 12.73%
+    - Key Takeaway: It's community-driven, high-value content, visual appeal
 
 ## Future Marketing Strategy & Action Plan
 
