@@ -1,5 +1,5 @@
 ---
-title: "Transition from Executive Directory to Governance Board and Elections Kick Off"
+title: "Transition from Executive Director to Governance Board and Elections Kick-Off"
 date: 2025-05-06T06:00:00+01:00
 type: Communication
 tags:
@@ -10,7 +10,7 @@ authors:
     photo: /img/avatars/lpgornicki.webp
     link: https://www.linkedin.com/in/lukasz-gornicki-a621914/
     byline: Open Source Fanatic!
-excerpt: 'End of startup period for AsyncAPI Initiative. We no longer need an Executive Director as with such a strong community we can setup more resilient Governance Board'
+excerpt: 'End of startup period for AsyncAPI Initiative. We no longer need an Executive Director as with such a strong community we can set up a more resilient Governance Board'
 featured: true
 ---
 
@@ -36,8 +36,8 @@ For details, see the updated [Charter](https://github.com/asyncapi/community/blo
 
 ## Election Timeline
 
-- **Nomination Deadline:** June 5 2025, 10:00 AM UTC  
-  Email your name or nominee’s name to **info@asyncapi.io**. Please confirm your nominee’s willingness to serve before submitting. Please also check below submission guideliness.
+- **Nomination Deadline:** June 5, 2025, 10:00 AM UTC  
+  Email your name or nominee’s name to **info@asyncapi.io**. Please confirm your nominee’s willingness to serve before submitting. Please also review the submission guidelines below.
 
 - **Candidate Announcement:** After June 5 2025  
   We’ll publish the list of candidates and outline next steps.
