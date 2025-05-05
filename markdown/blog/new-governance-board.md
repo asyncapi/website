@@ -26,7 +26,7 @@ The TSC’s structure and decision-making process remain unchanged. It continues
 
 ## Ambassadors Now Eligible for TSC Membership
 
-Our Ambassadors has delivered high-quality educational content, promotional articles, and speaker engagements—without writing code or docs as typically maintainers do. Ambassadors also provide invaluable support at AsyncAPI Conferences. Ambassadors are as important as maintainers. Effective immediately, Ambassadors may now join the TSC.
+Our Ambassadors have delivered high-quality educational content, promotional articles, and speaker engagements—without writing code or docs as maintainers typically do.
 
 ## Governance Board Replaces Executive Director
 
