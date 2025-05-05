@@ -16,7 +16,7 @@ featured: true
 
 May 2025 marks the end of the AsyncAPI Initiative’s startup phase. With a mature, engaged community, we are transitioning from a single Executive Director model to a resilient multi-member Governance Board.
 
-**tl;dr:** Want to join the AsyncAPI Governance Board? Send your name—or nominate someone—to **info@asyncapi.io**. Although, I suggest you read further and learn about recommended way of submitting candidate's name.
+**tl;dr:** Want to join the AsyncAPI Governance Board? Send your name—or nominate someone—to **info@asyncapi.io**. However, I suggest you read further and learn about the recommended way of submitting a candidate’s name.
 
 ---
 
@@ -39,10 +39,10 @@ For details, see the updated [Charter](https://github.com/asyncapi/community/blo
 - **Nomination Deadline:** June 5, 2025, 10:00 AM UTC  
   Email your name or nominee’s name to **info@asyncapi.io**. Please confirm your nominee’s willingness to serve before submitting. Please also review the submission guidelines below.
 
-- **Candidate Announcement:** After June 5 2025  
+- **Candidate Announcement:** After June 5, 2025  
   We’ll publish the list of candidates and outline next steps.
 
-- **Voting Period:** June 6 – July 6 2025
+- **Voting Period:** June 6 – July 6, 2025
 
 ## Candidate Submission Guidelines
 
@@ -57,7 +57,7 @@ To help the TSC evaluate nominees and vote, please include:
 - **Motivation Statement** (≤ 150 words): why you’re running  
 - **Contact Information** for questions
 
-These are guidelines. Feel free to provide any additional details you believe are relevant.
+These guidelines are optional. Please include any additional details you find relevant.
 
 > Photo by <a href="https://unsplash.com/@amravazzi?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">André Ravazzi</a> on <a href="https://unsplash.com/photos/rectangular-brown-wooden-table-with-chairs-SkH2iOtV6II?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
