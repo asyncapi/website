@@ -10,7 +10,7 @@ authors:
     photo: /img/avatars/lpgornicki.webp
     link: https://www.linkedin.com/in/lukasz-gornicki-a621914/
     byline: Open Source Fanatic!
-excerpt: 'End of startup period for AsyncAPI Initiative. We no longer need an Executive Director as with such a strong community we can set up a more resilient Governance Board'
+excerpt: 'End of startup period for AsyncAPI Initiative. We no longer need an Executive Director, as with such a strong community, we can set up a more resilient Governance Board'
 featured: true
 ---
 
