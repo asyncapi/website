@@ -30,7 +30,7 @@ Our Ambassadors have delivered high-quality educational content, promotional art
 
 ## Governance Board Replaces Executive Director
 
-We will replace the single Executive Director with a three-person Governance Board this year. We expand to five members in 2026. This change significantly improves our resilience against the [bus factor](https://en.wikipedia.org/wiki/Bus_factor).
+We will replace the single Executive Director with a three-person Governance Board this year. We will expand to five members in 2026. This change significantly improves our resilience against the [bus factor](https://en.wikipedia.org/wiki/Bus_factor).
 
 For details, see the updated [Charter](https://github.com/asyncapi/community/blob/master/CHARTER.md) and [Governance Guide](https://github.com/asyncapi/community/blob/master/GOVERNANCE.md).
 
