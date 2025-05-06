@@ -133,7 +133,7 @@ function buildNavTree(navItems: Details[]): NavTree {
  * @returns {Details[]} - The sequential array of document posts.
  * @throws {Error} - Throws an error if there is an issue during the conversion process.
  */
-const convertDocPosts = (docObject: NavTree | Details): Details[] => {
+function convertDocPosts(docObject: NavTree | Details | NavTreeItem): Details[] {
   try {
     let docsArray: Details[] = [];
 
@@ -154,10 +154,10 @@ const convertDocPosts = (docObject: NavTree | Details): Details[] => {
     }
 
     return docsArray;
-  } catch (err) {
-    throw new Error('Error in convertDocPosts:', err as Error);
+  } catch (err: unknown) {
+    throw new Error(`Error in convertDocPosts: ${(err as Error).message}`);
   }
-};
+}
 
 /**
  * Enhances document posts by appending next and previous navigation data based on the navigation tree.
@@ -215,18 +215,18 @@ function addDocButtons(docPosts: Details[], treePosts: NavTree): Details[] {
       if (index + 1 < countDocPages) {
         // checks whether the next item inside structuredPosts is a rootElement or a sectionElement
         // if yes, it goes again to a next to next item in structuredPosts to link the nextPage
+        /* istanbul ignore else */
         if (!structuredPosts[index + 1].isRootElement && !structuredPosts[index + 1].isSection) {
           nextPage = {
             title: structuredPosts[index + 1].title,
             href: structuredPosts[index + 1].slug
           };
-        } else {
+        } else if (index + 2 < countDocPages) {
           nextPage = {
             title: `${structuredPosts[index + 1].title} - ${structuredPosts[index + 2].title}`,
             href: structuredPosts[index + 2].slug
           };
         }
-
         docPost = { ...docPost, nextPage };
       }
 
@@ -255,7 +255,7 @@ function addDocButtons(docPosts: Details[], treePosts: NavTree): Details[] {
       return docPost;
     });
   } catch (err) {
-    throw new Error('An error occurred while adding doc buttons:', err as Error);
+    throw new Error(`An error occurred while adding doc buttons: ${(err as Error).message}`);
   }
 
   return structuredPosts;
