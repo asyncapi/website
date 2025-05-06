@@ -37,7 +37,7 @@ For details, see the updated [Charter](https://github.com/asyncapi/community/blo
 ## Election Timeline
 
 - **Nomination Deadline:** June 5, 2025, 10:00 AM UTC  
-  Email your name or nominee’s name to **info@asyncapi.io**. Please confirm your nominee’s willingness to serve before submitting. Please also review the submission guidelines below.
+  Email your name or your nominee’s name to **info@asyncapi.io**. Please confirm your nominee’s willingness to serve before submitting. Please also review the submission guidelines below.
 
 - **Candidate Announcement:** After June 5, 2025  
   We’ll publish the list of candidates and outline the next steps.
