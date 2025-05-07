@@ -36,7 +36,7 @@ Thanks to our sponsor and host, [APIDays Singapore team](https://www.apidays.glo
 ## First Time in Southeast Asia
 
 There’s something special about firsts: the first version of a spec, the first contributor, the first working group, the first time you explain what “event-driven” means to someone and see the lightbulb go off. This made us ecstatic to kick off the AsyncAPI Conference in Singapore.
-On April 15–16, the AsyncAPI Conference was part of the [APIDays Singapore](https://www.apidays.global/singapore/) track. The event, themed "Where APIs Meet AI: Building Tomorrow's Intelligent Ecosystems," providing an excellent platform to introduce AsyncAPI to the vibrant Asia-Pacific community.​
+On April 15–16, the AsyncAPI Conference was part of the [APIDays Singapore](https://www.apidays.global/singapore/) track. The event, themed "Where APIs Meet AI: Building Tomorrow's Intelligent Ecosystems", providing an excellent platform to introduce AsyncAPI to the vibrant Asia-Pacific community.​
 
 <Figure
   src="/img/posts/marketing-images/singapore-conf/asyncapi-x-community.webp"
