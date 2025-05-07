@@ -93,3 +93,9 @@
   resources:
     - title: "Slides: Deploying WebSockets with AsyncAPI and Architecture as Code"
       link: https://drive.google.com/file/d/1YzLwQZsMUXGwj_Lsqv-ZnvV2knuowWrS/view?usp=drive_link
+
+- companyName: NATS Messaging
+  useCase: NATS Server defined JSON Schemas to standardize and validate all outward-facing JSON messages for third-party integration.
+  resources:
+    - title: "NATS Typed Messages. ADR. Implemented."
+      link: https://github.com/nats-io/nats-architecture-and-design/blob/main/adr/ADR-2.md
