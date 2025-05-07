@@ -1,21 +1,21 @@
 ---
 title: "AsyncAPI Made Simple: Neuroglia’s Innovative Tools for Developers"
-date: 2025-04-28T06:00:00+01:00
+date: 2025-05-10T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
   - Interview
-  - Communinty
-cover: 
+  - Community
+cover: /img/posts/marketing-images/neuroglia-blog.webp
 authors:
   - name: Atinuke Oluwabamikemi Kayode
     photo: /img/avatars/bami.webp
     link: https://www.linkedin.com/in/atinuke-oluwabamikemi-kayode-5b838b1b7/
     byline: AsyncAPI Community Marketing Specialist
-excerpt: 'A comprehensive review of AsyncAPI Marketing Working Group achievements in 2024, including social media growth, store closure updates, and future initiatives like the Student Ambassador Program'
+excerpt: 'An interview with Neuroglia co-founder Charles d’Avernas on building innovative AsyncAPI SDKs featuring Fluent Builders, IO services, Fluent Validators, and code-first document generation.'
 ---
 
-We recently had the pleasure of interviewing Charles d'Avernas, who co-founded Neuroglia SRL alongside Jean-Baptiste Bianchi, a company known for providing elegant and straightforward solutions to complex IT challenges. Charles and his team work with prominent players in the IT community, such as Cisco, to create sophisticated event-driven solutions that address core business issues.
+We recently had the pleasure of interviewing [Charles d'Avernas](https://www.linkedin.com/in/charles-d-avernas-40836a13/), who co-founded [Neuroglia SRL](https://www.linkedin.com/company/neuroglia-srl/) alongside [Jean-Baptiste Bianchi](https://www.linkedin.com/in/jean-baptiste-bianchi-aa42b914/), a company known for providing elegant and straightforward solutions to complex IT challenges. Charles and his team work with prominent players in the IT community, such as Cisco, to create sophisticated event-driven solutions that address core business issues.
 
 In our conversation, Charles explained that Neuroglia's focus is mainly on orchestration. Unlike other players in their sector, Neuroglia doesn't take a "refactor or start-from-scratch" approach. Instead, they aim to integrate existing legacy systems into modern solutions, following an orchestration or event-driven approach.
 
@@ -28,39 +28,33 @@ At that time, the available .NET tooling options were limited and did not fulfil
 ## Building an AsyncAPI SDK from Scratch
 
 To solve their challenges, Neuroglia developed their own AsyncAPI SDK. They started with building domain models and then advanced to Fluent Builders, which allowed developers to create AsyncAPI documents using a Fluent code approach. This approach was followed by validation features implemented using Fluent Validation.
-The UI they developed initially resembled Swagger’s approach but later evolved to closely align with AsyncAPI’s official UI. Their solution has grown to include various modules, and now they are working towards integrating official HTML components for rendering documents.
+The UI they developed initially resembled Swagger’s approach, but later evolved to closely align with AsyncAPI’s official UI. Their solution has grown to include various modules, and now they are working towards integrating official HTML components for rendering documents.
 
 ## Key Differentiators of Neuroglia’s Solution
 
-According to Charles, one of the key differentiators of Neuroglia’s AsyncAPI solution is their agnostic, out-of-the-box client, which supports most  of AsyncAPI specification bindings. This plug-and-play client allows developers to register services, specify the AsyncAPI document they want to connect to, and publish or subscribe to operations effortlessly.
+According to Charles, one of the key differentiators of Neuroglia’s AsyncAPI solution is their agnostic, out-of-the-box client, which supports most of the AsyncAPI specification bindings. This plug-and-play client allows developers to register services, specify the AsyncAPI document they want to connect to, and publish or subscribe to operations effortlessly.
 Another unique feature is Neuroglia’s support for concurrent AsyncAPI versions. Users can work with older documents and newer documents simultaneously without conflicts, enhancing the flexibility of their solution.
 
 ## Problems Solved for AsyncAPI Users
 
 Neuroglia’s solution addresses several challenges for AsyncAPI users:
 
-- Version Compatibility: Hosting different versions of the AsyncAPI specification concurrently.
-- Document Generation: Providing multiple methods to generate AsyncAPI documents, including code-first using Fluent Builders, automatic builders through reflection, and manual creation.
-- Efficient Client Connectivity: The ability to connect to AsyncAPI services using Neuroglia’s plug-and-play client.
-- Expanded UI Options: Offering a UI that provides an alternative experience to other AsyncAPI UIs available.
+- **Version Compatibility:** Hosting different versions of the AsyncAPI specification concurrently.
+- **Document Generation:** Providing multiple methods to generate AsyncAPI documents, including code-first using Fluent Builders, automatic builders through reflection, and manual creation.
+- **Efficient Client Connectivity:** The ability to connect to AsyncAPI services using Neuroglia’s plug-and-play client.
+- **Expanded UI Options:** Offering a UI that provides an alternative experience to other AsyncAPI UIs available.
 
 ## Key Features & Benefits
 
 It is essential to highlight the project's core features that distinguish it from existing solutions. Neuroglia’s AsyncAPI SDK offers:
 
-- Fluent Builders: Simplifies the creation of AsyncAPI documents using a code-centric approach.
-
-- IO Services: Facilitates parsing YAML or JSON files into new AsyncAPI documents.
-
-- Formatting Services: Allows AsyncAPI documents to be formatted into YAML or JSON.
-
-- Fluent Validators: Provides validation mechanisms ensuring document accuracy and adherence to standards.
-
-- Code-First, Attribute-Based Document Generation: Automatic document generation through annotations.
-
-- UI to View Documents: A user-friendly interface for viewing AsyncAPI documents.
-
-A Generic Client: Supports publishing and subscribing to AsyncAPI operations, compatible with most bindings.
+- **Fluent Builders:** Simplifies the creation of AsyncAPI documents using a code-centric approach.
+- **IO Services:** Facilitates parsing YAML or JSON files into new AsyncAPI documents.
+- **Formatting Services:** Allows AsyncAPI documents to be formatted into YAML or JSON.
+- **Fluent Validators:** Provides validation mechanisms ensuring document accuracy and adherence to standards.
+- **Code-First, Attribute-Based Document Generation:** Automatic document generation through annotations.
+- **UI to View Documents:** A user-friendly interface for viewing AsyncAPI documents.
+- **A Generic Client:** Supports publishing and subscribing to AsyncAPI operations, compatible with most bindings.
 
 ## The Importance of Fluent Builders and Validators
 
@@ -79,4 +73,4 @@ Neuroglia’s approach to AsyncAPI document generation also improves formatting 
 
 Looking ahead, Charles mentioned plans to migrate their UI to use official HTML components for rendering documents. Additionally, they are exploring further ways to enhance their AsyncAPI SDK, making it even more accessible and user-friendly for developers.
 
-Our conversation with Charles d'Avernas provided valuable insights into Neuroglia’s innovative approach to working with AsyncAPI. Their focus on orchestration, compatibility, and developer-friendly tools showcases their dedication to improving the AsyncAPI ecosystem. Neuroglia’s contributions continue to enhance the accessibility and usability of AsyncAPI for developers worldwide.
+Our conversation with Charles d'Avernas provided valuable insights into Neuroglia’s innovative approach to working with AsyncAPI. Their focus on orchestration, compatibility, and developer-friendly tools showcases their dedication to improving the AsyncAPI ecosystem. Neuroglia’s contributions continue to enhance the accessibility and usability of AsyncAPI for developers worldwide. [Read more about the project donation on GitHub](https://github.com/orgs/asyncapi/discussions/1716).
