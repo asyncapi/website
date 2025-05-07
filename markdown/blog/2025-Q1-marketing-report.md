@@ -1,6 +1,6 @@
 ---
 title: "AsyncAPI Q1 Marketing WG Report"
-date: 2025-04-14T06:00:00+01:00
+date: 2025-05-08T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
@@ -44,7 +44,7 @@ This report provides an overview of our marketing activities, including social m
 - Click-through rates need improvement, signaling stronger CTAs and content hooks.
 
 
-| **X (Formerly Twitter)Metric**         | **Value**         |**% last Quarter** |**% Change** |
+| **X (Formerly Twitter) Metric**         | **Value**         |**% last Quarter** |**% Change** |
 |--------------------|-----------------------------|----------------|-----------------|
 |  Tweets      | 89         |      162   |-44%  |
 | Retweets        | 24       |       54     |  -53% |
@@ -95,7 +95,7 @@ Similarly, "Understanding AsyncAPIs with a Practical Example" drew good engageme
 
  As highlighted in the [2024 Marketing Report](https://www.asyncapi.com/blog/2024-marketing-report), the AsyncAPI Marketing Strategy was created to guide the community's marketing efforts in a focused and impactful way. On April 1st, 2025, the updated strategy document was officially merged and is now set for implementation.
 
-Over the next few months, we will begin rolling out initiatives aligned with the strategy, and our progress will be tracked through clearly defined KPIs. and consistent quarterly reports will be shared to ensure transparency and accountability.
+Over the next few months, we will begin rolling out initiatives aligned with the strategy, and our progress will be tracked through clearly defined KPIs, and consistent quarterly reports will be shared to ensure transparency and accountability.
 
 [Read the 2025 AsyncAPI Marketing Strategy](https://github.com/asyncapi/community/blob/master/annual-goals/2025_marketing_strategy.md)
 
@@ -170,7 +170,7 @@ These posts were selected based on their impressions and number of clicks.
     - Impressions: 1,332
     - Likes: 54
     - Comments: 1
-    - Clicks; 215
+    - Clicks: 215
     - Engagement Rate: 20.42%
     - Key Takeaway: What worked well, thought leadership, community-driven
 
