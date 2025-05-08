@@ -29,11 +29,11 @@ Create a new directory called **java-mqtt-client-template** at the root of your 
 
 Once that is done, you should create some new sub-directories to begin building your Java client.
   1. Create a new subdirectory called `src`
-  2. Change into `src` and create two new subdirectories: `fixtures` and `main/java/template`.
+  2. Change into `src` and create two new subdirectories: `fixtures` and `main/java`.
   3. Create a file named `asyncapi.yml` in your fixtures directory and paste the `asyncapi.yml` document mentioned [here](https://www.asyncapi.com/docs/tools/generator/generator-template#background-context) into it.
   4. Create a new file named **package.json** in your **java-mqtt-client-template** directory. This file is used to define the **dependencies** for your template.
   5. Create a new file called **build.gradle** in your **java-mqtt-client-template** directory. This file is used to build your generated java code for your template.
-  6.  Create a new file named **index.js** in your **template** directory. This file is used to define the **logic** for your template.
+  6. Create a new file named **index.js** in a `template` folder from root directory. This file is used to define the **logic** for your template.
 
 Now your directory should look like this:
 
@@ -240,9 +240,9 @@ import { File } from '@asyncapi/generator-react-sdk'
 export default function ({ asyncapi }) {
 //3
   return <File name="Client.java">
-  {
-    `import org.eclipse.paho.client.mqttv3.*;
+  {`
 
+import org.eclipse.paho.client.mqttv3.*;
 public class Client {
     private static final String BROKER_URL = "tcp://test.mosquitto.org:1883";
     private static final String TOPIC = "temperature/changed";
