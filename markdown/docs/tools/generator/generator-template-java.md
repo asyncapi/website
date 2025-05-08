@@ -100,7 +100,7 @@ Check out your shiny new generated files at test/project.
 
 ### 2. Create the Java client
 
-  #### a. Setting up Gradle
+  #### 2a. Setting up Gradle
 The first step in creating the Java client to send messages using the MQTT protocol is to ensure that your `build.gradle` file includes the correct dependencies. Add the code snippet below into your `build.gradle` file.
 
 ```groovy
@@ -133,7 +133,7 @@ Here's what is contained in the code snippet above:
 
 Navigate to the `java-mqtt-client-template` directory. Run the command `gradle build` in your terminal to build your Java application. **Note**: Every time you update the `build.gradle` file, you must recompile it to get the new changes. 
 
-  #### b. Beefing up Client.java
+  #### 2b. Beefing up Client.java
 
 Here is the sample code to pasted into the `Client.java` file you generated above running the `asyncapi generate fromTemplate src/fixtures/asyncapi.yml ./ --output src/main/java` command. 
 
@@ -231,7 +231,7 @@ New temperature detected 36947728 sent to temperature/changed
 New temperature detected 72955029 sent to temperature/changed
 ```
 ### 4. Output Java template code.
-Open [**index.js**](#java - indexjs-file), copy the content of [**client.py**](#1-create-the-client) and replace `{asyncapi.info().title()}` with it so it looks like the code snippet below now:
+Open **index.js** and copy the content below so your file looks like the code snippet below:
 
 ```js
 //1
@@ -278,7 +278,7 @@ public class Client {
   }</File>
 }
 ```
-#### b. Write the script to run the test code
+#### 4a. Write the script to run the test code
 In **package.json** define a script property that you invoke by calling `npm run <your_script>`. After adding these scripts in **package.json**, it will look like the following code snippet:
 
 ``` json
@@ -315,7 +315,7 @@ In **package.json** define a script property that you invoke by calling `npm run
 Run `npm test` to see if everything is working.
 ### 5. Create more channels
 
-#### a. Creating more reusable components
+#### 5a. Creating more reusable components
 
 Similar to the previous `TopicFunction` function we will create a function to make reusable components regardless of the number of channels in the asyncAPI document. 
 
@@ -446,7 +446,7 @@ java-mqtt-client-template
 └── build.gradle
 ```
 
-#### b. Update AsyncAPI document with more channels
+#### 5b. Update AsyncAPI document with more channels
 
 Add the following AsyncAPI document to have more channels:
 
@@ -500,7 +500,7 @@ components:
           type: string
 
 ```
-#### c. Update TestClient.java
+#### 5c. Update TestClient.java
 We must now update the **TestClient.java** file to test the different channels in the AsyncAPI document above. The tests will be similar to the previous ones you performed earlier. Paste the following code snippet into your **TestClient.java** file:
 
 ```java
