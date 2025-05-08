@@ -14,9 +14,9 @@ excerpt: 'End of startup period for AsyncAPI Initiative. We no longer need an Ex
 featured: true
 ---
 
-May 2025 marks the end of the AsyncAPI Initiative’s startup phase. With a mature, engaged community, we are transitioning from a single Executive Director model to a resilient multi-member Governance Board. A quorum of two-thirds was needed to amend the charter. Seventy-eight percent (78%) of the Technical Steering Committee (32 out of 41) approved the new governance setup. Eight members did not vote, and one member abstained. You can learn more about the vote from [the pull request where we worked on the new governance setup for months](https://github.com/asyncapi/community/pull/1634#issuecomment-2851246866).
+May 2025 marks the end of the AsyncAPI Initiative’s startup phase. With a mature, engaged community, we are transitioning from a single Executive Director model to a resilient multi-member Governance Board. A quorum of two-thirds was needed to amend the charter. Seventy-eight percent (78%) of the Technical Steering Committee (TSC) (32 out of 41) approved the new governance setup. Eight members did not vote, and one member abstained. You can learn more about the vote from [the pull request where we worked on the new governance setup for months](https://github.com/asyncapi/community/pull/1634#issuecomment-2851246866).
 
-**tl;dr:** Want to join the AsyncAPI Governance Board? Send your name—or nominate someone—to **info@asyncapi.io**. However, I suggest you read further and learn about the recommended way of submitting a candidate’s name.
+**tl;dr:** Are you the TSC member? Want to join the AsyncAPI Governance Board? Send your name—or nominate someone—to **info@asyncapi.io**. However, I suggest you read further and learn about the recommended way of submitting a candidate’s name.
 
 ---
 
@@ -45,6 +45,8 @@ For details, see the updated [Charter](https://github.com/asyncapi/community/blo
 - **Voting Period:** June 6 – July 6, 2025
 
 ## Candidate Submission Guidelines
+
+> Only AsyncAPI TSC members are community representatives who can become candidates for the board.
 
 To help the TSC evaluate nominees and vote, please include:
 
