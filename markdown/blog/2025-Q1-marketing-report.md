@@ -28,7 +28,7 @@ This report provides an overview of our marketing activities, including social m
 
 ### Social Media Performance
 
-| **LinkedIn Metric**         | **Value**         |**last Quarter Value**|**% Change** |
+| **LinkedIn Metric** | **Value** | **Last Quarter Value** | **% Change** |
 |--------------------|-----------------------------|---------------|----------------|
 |  Followers       | 4,255           |  3,949 | +8%         |
 | New Followers        | 313         | 263  | +20%            |
