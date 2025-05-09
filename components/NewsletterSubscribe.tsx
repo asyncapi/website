@@ -79,18 +79,15 @@ export default function NewsletterSubscribe({
       headers: {
         'Content-Type': 'application/json'
       }
-    })
-      .then((res) => {
-        if (res.status === 200) {
-          setFormStatus(FormStatus.SUCCESS);
-        } else {
-          setFormStatus(FormStatus.ERROR);
-        }
+    }).then((res) => {
+      if (res.status === 200) {
+        setFormStatus(FormStatus.SUCCESS);
+      } else {
+        setFormStatus(FormStatus.ERROR);
+      }
 
-        return res.json();
-      })
-      // eslint-disable-next-line @typescript-eslint/no-shadow, no-console
-      .then((data) => console.log(data));
+      return res.json();
+    });
   };
 
   if (status === FormStatus.SUCCESS) {
