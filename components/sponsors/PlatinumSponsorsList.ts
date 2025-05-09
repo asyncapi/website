@@ -21,5 +21,12 @@ export const platinumSponsors: SponsorType[] = [
     imageSrc: '/img/sponsors/postman.png',
     altText: 'Postman',
     imageClass: 'inline-block px-4 sm:h-18'
+  },
+  {
+    name: 'Kong',
+    website: 'https://konghq.com/',
+    imageSrc: '/img/sponsors/kong.png',
+    altText: 'Kong',
+    imageClass: 'inline-block px-4 sm:h-18'
   }
 ];
