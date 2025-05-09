@@ -170,9 +170,7 @@ sequenceDiagram
 AsyncAPI Studio supports multiple deployment models:
 
 ### Hosted Version
-The hosted version at [studio.asyncapi.com](https://
-studio.asyncapi.com) is deployed as a static site on 
-cloud infrastructure:
+The hosted version at [studio.asyncapi.com](https://studio.asyncapi.com) is deployed as a static site on cloud infrastructure:
 ```mermaid
 graph LR
     classDef user fill:#e1f5fe,stroke:#01579b,stroke-width:2px
