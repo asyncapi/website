@@ -3,8 +3,6 @@ title: 'Introduction'
 weight: 20
 ---
 
-## AsyncAPI Studio: A Complete Development Environment for AsyncAPI
-
 AsyncAPI Studio is a web-based tool designed specifically for working with AsyncAPI specifications. It provides an integrated environment for developing, validating, converting, and visualizing AsyncAPI documents, making it easier to create and manage your asynchronous API definitions.
 
 ## Key Features
