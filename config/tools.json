@@ -125,8 +125,8 @@
         "title": "AsyncAPI.Net",
         "description": "The AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common serializers to extract raw OpenAPI JSON and YAML documents from the model.",
         "links": {
-          "websiteUrl": "https://github.com/LEGO/AsyncAPI.NET/",
-          "repoUrl": "https://github.com/LEGO/AsyncAPI.NET"
+          "websiteUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET/",
+          "repoUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET"
         },
         "filters": {
           "language": [
@@ -160,8 +160,8 @@
         "title": "AsyncAPI.Net",
         "description": "The AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common serializers to extract raw OpenAPI JSON and YAML documents from the model.",
         "links": {
-          "websiteUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET/",
-          "repoUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET"
+          "websiteUrl": "https://github.com/LEGO/AsyncAPI.NET/",
+          "repoUrl": "https://github.com/LEGO/AsyncAPI.NET"
         },
         "filters": {
           "language": [
@@ -857,8 +857,8 @@
         "title": "AsyncAPI.Net",
         "description": "The AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common serializers to extract raw OpenAPI JSON and YAML documents from the model.",
         "links": {
-          "websiteUrl": "https://github.com/LEGO/AsyncAPI.NET/",
-          "repoUrl": "https://github.com/LEGO/AsyncAPI.NET"
+          "websiteUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET/",
+          "repoUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET"
         },
         "filters": {
           "language": [
@@ -892,8 +892,8 @@
         "title": "AsyncAPI.Net",
         "description": "The AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common serializers to extract raw OpenAPI JSON and YAML documents from the model.",
         "links": {
-          "websiteUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET/",
-          "repoUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET"
+          "websiteUrl": "https://github.com/LEGO/AsyncAPI.NET/",
+          "repoUrl": "https://github.com/LEGO/AsyncAPI.NET"
         },
         "filters": {
           "language": [
@@ -1684,27 +1684,6 @@
       },
       {
         "title": "GitHub Action for Generator",
-        "description": "CLI to work with your AsyncAPI files. You can validate them and in the future use a generator and even bootstrap a new file. Contributions are welcomed!",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/cli"
-        },
-        "filters": {
-          "language": [],
-          "technology": [
-            {
-              "name": "AsyncAPI Generator",
-              "color": "bg-[#61d0f2]",
-              "borderColor": "border-[#40ccf7]"
-            }
-          ],
-          "categories": [
-            "github-actions"
-          ],
-          "hasCommercial": false
-        }
-      },
-      {
-        "title": "GitHub Action for Generator",
         "description": null,
         "links": {
           "repoUrl": "https://github.com/actions-marketplace-validations/asyncapi_github-action-for-generator"
@@ -1720,6 +1699,27 @@
           ],
           "categories": [
             "github-action"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "GitHub Action for Generator",
+        "description": "CLI to work with your AsyncAPI files. You can validate them and in the future use a generator and even bootstrap a new file. Contributions are welcomed!",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/cli"
+        },
+        "filters": {
+          "language": [],
+          "technology": [
+            {
+              "name": "AsyncAPI Generator",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "github-actions"
           ],
           "hasCommercial": false
         }
@@ -2075,8 +2075,8 @@
         "title": "AsyncAPI.Net",
         "description": "The AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common serializers to extract raw OpenAPI JSON and YAML documents from the model.",
         "links": {
-          "websiteUrl": "https://github.com/LEGO/AsyncAPI.NET/",
-          "repoUrl": "https://github.com/LEGO/AsyncAPI.NET"
+          "websiteUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET/",
+          "repoUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET"
         },
         "filters": {
           "language": [
@@ -2110,8 +2110,8 @@
         "title": "AsyncAPI.Net",
         "description": "The AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common serializers to extract raw OpenAPI JSON and YAML documents from the model.",
         "links": {
-          "websiteUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET/",
-          "repoUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET"
+          "websiteUrl": "https://github.com/LEGO/AsyncAPI.NET/",
+          "repoUrl": "https://github.com/LEGO/AsyncAPI.NET"
         },
         "filters": {
           "language": [
@@ -2288,7 +2288,7 @@
         "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
         "links": {
           "websiteUrl": "https://www.asyncapi.com/tools/cli",
-          "repoUrl": "https://github.com/hkirat/asyncapi-fork"
+          "repoUrl": "https://github.com/asyncapi/cli"
         },
         "filters": {
           "language": [],
@@ -2311,7 +2311,7 @@
         "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
         "links": {
           "websiteUrl": "https://www.asyncapi.com/tools/cli",
-          "repoUrl": "https://github.com/asyncapi/cli"
+          "repoUrl": "https://github.com/hkirat/asyncapi-fork"
         },
         "filters": {
           "language": [],
@@ -2902,7 +2902,7 @@
         "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
         "links": {
           "websiteUrl": "https://www.asyncapi.com/tools/cli",
-          "repoUrl": "https://github.com/hkirat/asyncapi-fork"
+          "repoUrl": "https://github.com/asyncapi/cli"
         },
         "filters": {
           "language": [],
@@ -2925,7 +2925,7 @@
         "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
         "links": {
           "websiteUrl": "https://www.asyncapi.com/tools/cli",
-          "repoUrl": "https://github.com/asyncapi/cli"
+          "repoUrl": "https://github.com/hkirat/asyncapi-fork"
         },
         "filters": {
           "language": [],
