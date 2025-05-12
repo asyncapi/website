@@ -1,6 +1,6 @@
 ---
 title: "Bringing Asynchronous APIs to the Forefront at APIDays Singapore"
-date: 2025-04-28T06:00:00+01:00
+date: 2025-05-12T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
