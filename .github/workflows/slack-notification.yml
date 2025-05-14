@@ -14,9 +14,9 @@ jobs:
       actions: read
     steps:
       - name: Send Slack notification
-        uses: slackapi/slack-github-action@v1.25.0
+        uses: slackapi/slack-github-action@v2.1.0
         with:
-          slack-webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
           payload: |
             {
               "text": "GitHub Action Workflow Status",
