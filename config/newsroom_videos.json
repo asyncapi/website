@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/e7mF4TABz44/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting, Tuesday May 6th 2025",
+    "description": "https://github.com/asyncapi/community/issues/1867.",
+    "videoId": "e7mF4TABz44"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/LHXBIrUdIq4/hqdefault.jpg",
     "title": "AsyncAPI Marketing Working Group Meeting, April 29th 2025",
     "description": "Turn your videos into live streams with https://restream.io https://github.com/asyncapi/community/issues/1830.",
@@ -22,11 +28,5 @@
     "title": "Design WG Meeting",
     "description": "",
     "videoId": "Umb596VfDow"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/GVL846mrWUA/hqdefault.jpg",
-    "title": "AsyncAPI Marketing Working Group Meeting, April 1 2025",
-    "description": "",
-    "videoId": "GVL846mrWUA"
   }
 ]
