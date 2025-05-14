@@ -53,8 +53,6 @@ export function copyAndRenameFiles(srcDir: string, targetDir: string) {
     const srcPath = path.join(srcDir, entry.name);
     const targetPath = path.join(targetDir, entry.name);
 
-    /* istanbul ignore else */
-
     if (entry.isDirectory()) {
       // If entry is a directory, create it in target directory and recurse
       if (!fs.existsSync(targetPath)) {
