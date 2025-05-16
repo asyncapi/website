@@ -92,7 +92,7 @@ export default function Index() {
         </div>
         <ul className='mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4'>
           {ambassadorList.contents.map((link) => (
-            <li key={link.title} className='flex flex-col items-center justify-center' data-testid='Ambassadors-list'>
+            <li key={link.title} className='flex flex-col items-center justify-start' data-testid='Ambassadors-list'>
               <img src={link.icon} alt={link.title} className='mt-20 w-[200px]' />
               <Heading typeStyle={HeadingTypeStyle.xs} className='mt-5'>
                 {link.title}
