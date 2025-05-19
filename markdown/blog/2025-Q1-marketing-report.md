@@ -1,16 +1,17 @@
 ---
 title: "AsyncAPI Q1 Marketing WG Report"
-date: 2025-04-01T06:00:00+01:00
+date: 2025-05-21T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
+  - Marketing
 cover: /img/posts/marketing-images/marketing-q1-report.webp
 authors:
   - name: Atinuke Oluwabamikemi Kayode
     photo: /img/avatars/bami.webp
     link: https://www.linkedin.com/in/atinuke-oluwabamikemi-kayode-5b838b1b7/
     byline: AsyncAPI Community Marketing Specialist
-excerpt: 'AsyncAPI's marketing efforts saw steady growth, increased engagement, and a stronger community presence. Looking ahead, we aim to amplify impact and expand outreach.'
+excerpt: 'AsyncAPIs marketing efforts saw steady growth, increased engagement, and a stronger community presence. Looking ahead, we aim to amplify impact and expand outreach.'
 ---
 
 AsyncAPI’s marketing efforts over the past three months have focused on expanding community reach, driving awareness for key initiatives, and solidifying our position in the API and open-source ecosystem.
@@ -37,7 +38,7 @@ This report provides an overview of our marketing activities, including social m
 |Clicks      |               931|               +1% |
 |Engagement Rate      |      6.66%     |    +13%    |
 
-### Key Insights
+### LinkedIn Key Insights
 
 - The 18% rise in new followers suggests growing interest in AsyncAPI’s content.
 - Engagement rate increased by 13%, indicating that our content resonates well with our audience.
@@ -56,7 +57,7 @@ This report provides an overview of our marketing activities, including social m
 |Likes          |       70   |         +10%       |
 |New Followers|         2      |
 
-### Key Insights
+### X Key Insights
 
 Tweet output increased by 16%, leading to a 14% boost in impressions.
 Replies saw a 50% increase, but overall reply numbers remain low.
