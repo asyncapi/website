@@ -436,12 +436,9 @@
         "availableForHire": false,
         "isTscMember": false,
         "repos": [
-            "spec",
-            "spec-json-schemas",
             "parser-go",
             "parser-js",
             "converter-go",
-            "bindings",
             "raml-dt-schema-parser",
             "openapi-schema-parser",
             "avro-schema-parser",
