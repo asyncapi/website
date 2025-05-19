@@ -5,6 +5,7 @@ type: Communication
 tags:
   - Project Status
   - Community Spotlight
+  - Marketing
 cover: 
 authors:
   - name: Atinuke Bami Kayode
