@@ -434,7 +434,7 @@
         "twitter": "smoyac",
         "company": "Timescale",
         "availableForHire": false,
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "spec",
             "spec-json-schemas",
