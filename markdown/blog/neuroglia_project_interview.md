@@ -1,11 +1,11 @@
 ---
 title: "AsyncAPI Made Simple: Neuroglia’s Innovative Tools for Developers"
-date: 2025-05-10T06:00:00+01:00
+date: 2025-05-20T06:00:00+01:00
 type: Communication
 tags:
-  - Project Status
   - Interview
   - Community
+  - Marketing
 cover: /img/posts/marketing-images/neuroglia-blog.webp
 authors:
   - name: Atinuke Oluwabamikemi Kayode
@@ -27,7 +27,7 @@ At that time, the available .NET tooling options were limited and did not fulfil
 
 ## Building an AsyncAPI SDK from Scratch
 
-To solve their challenges, Neuroglia developed their own AsyncAPI SDK. They started with building domain models and then advanced to Fluent Builders, which allowed developers to create AsyncAPI documents using a Fluent code approach. This approach was followed by validation features implemented using Fluent Validation.
+To solve their challenges, Neuroglia developed their own AsyncAPI SDK. They began by building domain models and then advanced to Fluent Builders, which enabled developers to create AsyncAPI documents using a Fluent code approach. This approach was followed by validation features implemented using Fluent Validation.
 The UI they developed initially resembled Swagger’s approach, but later evolved to closely align with AsyncAPI’s official UI. Their solution has grown to include various modules, and now they are working towards integrating official HTML components for rendering documents.
 
 ## Key Differentiators of Neuroglia’s Solution
