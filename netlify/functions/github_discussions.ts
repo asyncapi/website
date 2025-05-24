@@ -26,7 +26,7 @@ const handler: Handler = async function (event: HandlerEvent) {
 
     try {
       // eslint-disable-next-line function-paren-newline
-      const createDiscussion = await graphql({
+      const createDiscussion : GraphQlQueryResponseData = await graphql({
         query: `mutation {
             createDiscussion(input:{repositoryId:"${repositoryID}", categoryId:"${categoryID}", title:"${title}", body:"${feedback}"}){
              discussion{
