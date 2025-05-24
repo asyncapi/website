@@ -80,9 +80,7 @@ async function getDiscussions(
     const result: Discussion = await graphql(query, {
       first: pageSize,
       after: endCursor,
-      headers: {
-        authorization: `Bearer ${process.env.GITHUB_TOKEN}`
-      }
+      auth: process.env.GITHUB_TOKEN
     });
 
     if (result.rateLimit.remaining <= 100) {
@@ -132,9 +130,7 @@ async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequest
   try {
     const result: PullRequestById | IssueById = await graphql(isPR ? Queries.pullRequestById : Queries.issueById, {
       id,
-      headers: {
-        authorization: `Bearer ${process.env.GITHUB_TOKEN}`
-      }
+      auth: token
     });
 
     return result;
