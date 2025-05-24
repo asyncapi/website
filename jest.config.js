@@ -9,7 +9,10 @@ const config = {
   collectCoverageFrom: ['scripts/**/*.ts'],
   coveragePathIgnorePatterns: ['scripts/compose.ts', 'scripts/tools/categorylist.ts', 'scripts/tools/tags-color.ts'],
   testMatch: ['**/tests/**/*.test.*', '!**/netlify/**/*.test.*'],
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json']
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
+  transformIgnorePatterns: [
+    "/node_modules/(?!@octokit)"
+  ]
 };
 
 export default config;
