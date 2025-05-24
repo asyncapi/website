@@ -3,25 +3,38 @@ import { google } from 'googleapis';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
-import { logger } from './utils/logger';
+import { logger } from './helpers/logger';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
 /**
- * Fetches upcoming meetings from Google Calendar and writes the data to a specified path.
+ * Fetches meeting events from Google Calendar within a predefined time window and writes the formatted data to a file.
  *
- * @param {string} writePath - The path to write the meeting data.
- * @throws {Error} - Throws an error if there is an issue during the fetch or write process.
+ * This function authenticates using service account credentials from environment variables and retrieves events from a calendar identified by an environment variable. It computes a time span ranging from 100 days before the current time to 30 days after, then processes each event to extract key details such as the title, calendar link, optional URL and banner, and the event date. If the API response is invalid or an event lacks a start date-time, an error is thrown. The formatted, pretty-printed JSON data is logged and written to the specified file path.
+ *
+ * @param writePath - The file system path where the output JSON data should be saved.
+ *
+ * @throws {Error} When authentication fails, the calendar API returns an invalid structure, or required event details are missing.
  */
 async function buildMeetings(writePath: string) {
   let auth;
   let calendar;
 
+  // Check if the CALENDAR_SERVICE_ACCOUNT is present in the environment variables
+  // Check if required environment variables are present
+  if (!process.env.CALENDAR_SERVICE_ACCOUNT) {
+    throw new Error('CALENDAR_SERVICE_ACCOUNT environment variable is not set');
+  }
+
+  if (!process.env.CALENDAR_ID) {
+    throw new Error('CALENDAR_ID environment variable is not set');
+  }
+
   try {
     auth = new google.auth.GoogleAuth({
       scopes: ['https://www.googleapis.com/auth/calendar'],
-      credentials: process.env.CALENDAR_SERVICE_ACCOUNT ? JSON.parse(process.env.CALENDAR_SERVICE_ACCOUNT) : undefined
+      credentials: JSON.parse(process.env.CALENDAR_SERVICE_ACCOUNT)
     });
 
     calendar = google.calendar({ version: 'v3', auth });
