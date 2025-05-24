@@ -1,6 +1,6 @@
 ---
 title: "Bringing Asynchronous APIs to the Forefront at APIDays Singapore"
-date: 2025-05-12T06:00:00+01:00
+date: 2025-05-26T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
@@ -123,14 +123,14 @@ By the end of the conference, we had:
 
 This event was a reminder: AsyncAPI is no longer just an open source project; it’s a global movement. Being in Singapore meant expanding our reach, connecting with new markets, and hearing firsthand how our tools and standards can solve real-world challenges.
 
-It also sets the tone for the rest of 2025. With conferences scheduled for Munich, Lagos, London, Bengaluru, online, and Paris, this marked our first step in a year of global community building. Conference designed to bring together developers, architects, technical writers, DevRel folks, and API enthusiasts who are passionate about the future of event-driven APIs.
+It also sets the tone for the rest of 2025. With conferences scheduled for Munich, Lagos, London, Bangalore, online, and Paris, this marked our first step in a year of global community building. Conference designed to bring together developers, architects, technical writers, DevRel folks, and API enthusiasts who are passionate about the future of event-driven APIs.
 
 We would love to have you attend any of these events close to you, but more than that, we would see you submit your proposal to speak. Whether you’re looking to share your story, demo your tools, or connect with the global async ecosystem, this is your chance. Our Call for Papers (CFP) is now open for most events, we’d love to hear from you!
 
 - [Munich 🇩🇪: July 2–3, 2025](https://conference.asyncapi.com/venue/Munich)
 - [Lagos 🇳🇬: July 18–19, 2025](https://conference.asyncapi.com/venue/Lagos)
 - [London 🇬🇧: September 22–24, 2025](https://conference.asyncapi.com/venue/London)
-- [Bengaluru 🇮🇳: October 8-9, 2025](https://conference.asyncapi.com/venue/Bangalore)
+- [Bangalore 🇮🇳: October 8-9, 2025](https://conference.asyncapi.com/venue/Bangalore)
 - [Online 🌐: October 29, 2025](https://conference.asyncapi.com/venue/Online)
 - [Paris 🇫🇷: December 9–11, 2025](https://conference.asyncapi.com/venue/Paris)
 
