@@ -1,6 +1,9 @@
 const config = {
   transform: {
-    '^.+\\.[t|j]sx?$': ['babel-jest', { configFile: './tests/babel.test.config.cts' }]
+    '^.+\\.[tj]sx?$': ['babel-jest', { configFile: './tests/babel.test.config.cts' }],
+    '^.+\\.(ts|js)$': ['ts-jest', {
+      isolatedModules: true,
+    }],
   },
   verbose: true,
   collectCoverage: true,
@@ -9,10 +12,7 @@ const config = {
   collectCoverageFrom: ['scripts/**/*.ts'],
   coveragePathIgnorePatterns: ['scripts/compose.ts', 'scripts/tools/categorylist.ts', 'scripts/tools/tags-color.ts'],
   testMatch: ['**/tests/**/*.test.*', '!**/netlify/**/*.test.*'],
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
-  transformIgnorePatterns: [
-    "/node_modules/(?!@octokit)"
-  ]
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json']
 };
 
 export default config;
