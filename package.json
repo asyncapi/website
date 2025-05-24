@@ -75,6 +75,7 @@
     "fuse.js": "^7.0.0",
     "googleapis": "^133.0.0",
     "gray-matter": "^4.0.3",
+    "he": "^1.2.0",
     "i18next": "^23.12.2",
     "jgexml": "^0.4.4",
     "js-cookie": "^3.0.5",
@@ -117,7 +118,9 @@
     "tailwindcss": "^3.4.3",
     "tsx": "^4.19.3",
     "winston": "^3.17.0",
-    "yaml": "^2.3.4"
+    "yaml": "^2.3.4",
+    "inquirer": "^9.2.14",
+    "dedent": "^1.5.1"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.26.0",
@@ -133,6 +136,7 @@
     "@storybook/react": "^8.2.4",
     "@storybook/test": "^8.2.4",
     "@types/fs-extra": "^11.0.4",
+    "@types/he": "^1.2.3",
     "@types/inquirer": "^9.0.7",
     "@types/jest": "^29.5.14",
     "@types/lodash": "^4.17.0",
@@ -145,7 +149,6 @@
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "babel-plugin-transform-import-meta": "^2.2.1",
-    "dedent": "^1.5.1",
     "eslint": "^8",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-next": "14.1.0",
@@ -159,7 +162,6 @@
     "eslint-plugin-tailwindcss": "^3.14.2",
     "eslint-plugin-unused-imports": "^3.1.0",
     "fast-xml-parser": "^4.5.0",
-    "inquirer": "^9.2.14",
     "jest": "^29.7.0",
     "postcss-import": "^16.0.1",
     "remark-cli": "^12.0.1",

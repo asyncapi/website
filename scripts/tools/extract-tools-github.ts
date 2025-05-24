@@ -4,8 +4,8 @@ import dotenv from 'dotenv';
 
 import type { ToolsData } from '@/types/scripts/tools';
 
-import { pause } from '../helpers/utils';
 import { logger } from '../helpers/logger';
+import { pause } from '../helpers/utils';
 
 dotenv.config();
 
@@ -66,7 +66,7 @@ export async function getData(): Promise<ToolsData> {
 
     result.data.items = [...allItems];
 
-    return result.data;
+    return result.data.items;
   } catch (err) {
     throw err;
   }
