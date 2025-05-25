@@ -41,7 +41,7 @@ const renderContent = (
   content: any[],
   allComponents: Record<string, React.ComponentType<any>>,
   level: number
-): JSX.Element[] => {
+): React.JSX.Element[] => {
   let typeStyle;
 
   if (level === 0) {
