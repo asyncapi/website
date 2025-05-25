@@ -10,7 +10,7 @@ import { pause } from '../helpers/utils';
 const ignoreFiles = [
   'reference/specification/v2.x.md',
   'reference/specification/v3.0.0-explorer.md',
-  'reference/specification/v3.0.0.md'
+  'reference/specification/v3.0.0.md',
 ];
 
 interface PathObject {
@@ -32,22 +32,81 @@ interface PathObject {
  *
  * @throws {Error} If an error occurs during the HTTP HEAD request for any edit link.
  */
-async function processBatch(batch: PathObject[]): Promise<(PathObject | null)[]> {
+
+// ✅ NEW: Async generator for efficient directory traversal
+async function* walkDirectory(
+  dir: string,
+  relativePath = '',
+): AsyncGenerator<{ filePath: string; relativeFilePath: string }> {
+  const entries = await fs.readdir(dir, { withFileTypes: true });
+
+  for (const entry of entries) {
+    const absPath = path.join(dir, entry.name);
+    const relPath = path.join(relativePath, entry.name);
+
+    if (entry.isDirectory()) {
+      yield* walkDirectory(absPath, relPath);
+    } else if (
+      entry.isFile() &&
+      entry.name.endsWith('.md') &&
+      entry.name !== '_section.md'
+    ) {
+      yield { filePath: absPath, relativeFilePath: relPath };
+    }
+  }
+}
+
+// ✅ UPDATED: Uses walkDirectory instead of recursive Promise.all
+async function generatePaths(
+  folderPath: string,
+  editOptions: { value: string; href: string }[],
+): Promise<PathObject[]> {
+  const result: PathObject[] = [];
+
+  try {
+    for await (const { filePath, relativeFilePath } of walkDirectory(
+      folderPath,
+    )) {
+      const urlPath = relativeFilePath
+        .split(path.sep)
+        .join('/')
+        .replace(/\.md$/, '');
+
+      result.push({
+        filePath,
+        urlPath,
+        editLink: determineEditLink(urlPath, filePath, editOptions),
+      });
+    }
+
+    return result;
+  } catch (err) {
+    throw new Error(`Error walking directory ${folderPath}: ${err}`);
+  }
+}
+
+async function processBatch(
+  batch: PathObject[],
+): Promise<(PathObject | null)[]> {
   const TIMEOUT_MS = Number(process.env.DOCS_LINK_CHECK_TIMEOUT) || 5000;
 
   return Promise.all(
     batch.map(async ({ filePath, urlPath, editLink }) => {
       let timeout: NodeJS.Timeout | undefined;
-      
+
       try {
-        if (!editLink || ignoreFiles.some((ignorePath) => filePath.endsWith(ignorePath))) return null;
+        if (
+          !editLink ||
+          ignoreFiles.some((ignorePath) => filePath.endsWith(ignorePath))
+        )
+          return null;
 
         const controller = new AbortController();
         timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
-        
+
         const response = await fetch(editLink, {
           method: 'HEAD',
-          signal: controller.signal
+          signal: controller.signal,
         });
 
         if (response.status === 404) {
@@ -56,13 +115,15 @@ async function processBatch(batch: PathObject[]): Promise<(PathObject | null)[]>
 
         return null;
       } catch (error) {
-        return Promise.reject(new Error(`Error checking ${editLink}: ${error}`));
+        return Promise.reject(
+          new Error(`Error checking ${editLink}: ${error}`),
+        );
       } finally {
         if (timeout) {
-            clearTimeout(timeout);
+          clearTimeout(timeout);
         }
       }
-    })
+    }),
   );
 }
 
@@ -94,7 +155,7 @@ async function checkUrls(paths: PathObject[]): Promise<PathObject[]> {
       await pause(1000);
 
       return batchResults.filter((url) => url !== null) as PathObject[];
-    })
+    }),
   );
 
   result.push(...batchResultsArray.flat());
@@ -118,12 +179,16 @@ async function checkUrls(paths: PathObject[]): Promise<PathObject[]> {
 function determineEditLink(
   urlPath: string,
   filePath: string,
-  editOptions: { value: string; href: string }[]
+  editOptions: { value: string; href: string }[],
 ): string | null {
   // Remove leading 'docs/' if present for matching
-  const pathForMatching = urlPath.startsWith('docs/') ? urlPath.slice(5) : urlPath;
+  const pathForMatching = urlPath.startsWith('docs/')
+    ? urlPath.slice(5)
+    : urlPath;
 
-  const target = editOptions.find((edit) => pathForMatching.includes(edit.value));
+  const target = editOptions.find((edit) =>
+    pathForMatching.includes(edit.value),
+  );
 
   // Handle the empty value case (fallback)
   if (target?.value === '') {
@@ -132,61 +197,6 @@ function determineEditLink(
 
   // For other cases with specific targets
   return target ? `${target.href}/${path.basename(filePath)}` : null;
-}
-
-/**
- * Recursively processes markdown files in a directory to generate path objects with corresponding edit links.
- *
- * This function reads the contents of the specified folder, skipping files named "_section.md", and recursively traverses subdirectories.
- * For each markdown file encountered, it constructs a URL path by replacing system path separators with '/' and removing the file extension,
- * then generates an edit link based on the provided edit options. The results are accumulated in an array and returned.
- *
- * @param folderPath - The folder to process.
- * @param editOptions - An array of edit link option objects with `value` and `href` properties.
- * @param relativePath - Optional relative path for URL generation (default: '').
- * @param result - Optional accumulator for results (default: an empty array).
- * @returns A promise that resolves with an array of objects, each containing a file path, URL path, and edit link.
- * @throws {Error} If an error occurs while reading or processing the directory.
- */
-async function generatePaths(
-  folderPath: string,
-  editOptions: { value: string; href: string }[],
-  relativePath = '',
-  result: PathObject[] = []
-): Promise<PathObject[]> {
-  try {
-    const files = await fs.readdir(folderPath);
-
-    await Promise.all(
-      files.map(async (file) => {
-        const filePath = path.join(folderPath, file);
-        const relativeFilePath = path.join(relativePath, file);
-
-        // Skip _section.md files
-        if (file === '_section.md') {
-          return;
-        }
-
-        const stats = await fs.stat(filePath);
-
-        if (stats.isDirectory()) {
-          await generatePaths(filePath, editOptions, relativeFilePath, result);
-        } else if (stats.isFile() && file.endsWith('.md')) {
-          const urlPath = relativeFilePath.split(path.sep).join('/').replace('.md', '');
-
-          result.push({
-            filePath,
-            urlPath,
-            editLink: determineEditLink(urlPath, filePath, editOptions)
-          });
-        }
-      })
-    );
-
-    return result;
-  } catch (err) {
-    throw new Error(`Error processing directory ${folderPath}: ${err}`);
-  }
 }
 
 /**
@@ -212,7 +222,9 @@ async function main() {
 
     if (invalidUrls.length > 0) {
       logger.info('\nURLs returning 404:\n');
-      invalidUrls.forEach((url) => logger.info(`- ${url.editLink} generated from ${url.filePath}\n`));
+      invalidUrls.forEach((url) =>
+        logger.info(`- ${url.editLink} generated from ${url.filePath}\n`),
+      );
       logger.info(`\nTotal invalid URLs found: ${invalidUrls.length}`);
     } else {
       logger.info('All URLs are valid.');
