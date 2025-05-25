@@ -11,7 +11,7 @@ const config = {
   testMatch: ['**/tests/**/*.test.*', '!**/netlify/**/*.test.*'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   transformIgnorePatterns: [
-    "/node_modules/(?!(@octokit|universal-user-agent|before-after-hook|@github|is-plain-object|@sindresorhus|deprecation)/)"
+    '/node_modules/(?!((@[^/]+/[^/]+)|universal-user-agent|is-plain-object)/)',
   ]
 };
 
