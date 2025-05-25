@@ -1,12 +1,5 @@
 [
   {
-    "title": "AsyncAPI Community Working Group Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=N2k4dGR0Nml1OG4wbDdjMWQ2ZDliNDZmcGMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1668",
-    "banner": "https://github.com/user-attachments/assets/e0c22c5a-94a8-488c-970c-14aa1697283c",
-    "date": "2025-02-11T15:00:00.000Z"
-  },
-  {
     "title": "Marketing WG Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=Y29uZzNvNWxrcWs0Z2NqaWI4NjBmYnVwOWcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1705",
@@ -159,5 +152,12 @@
     "url": "https://github.com/asyncapi/community/issues/1919",
     "banner": "https://github.com/user-attachments/assets/e0c22c5a-94a8-488c-970c-14aa1697283c",
     "date": "2025-06-03T15:00:00.000Z"
+  },
+  {
+    "title": "GSoC Welcome Contributors Call",
+    "calLink": "https://www.google.com/calendar/event?eid=NGVwZ283cmRjcW1tZ2R1aG1maWR0Yzd1cWcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1922",
+    "banner": "",
+    "date": "2025-05-29T10:00:00.000Z"
   }
 ]

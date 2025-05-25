@@ -436,6 +436,7 @@
         "availableForHire": false,
         "isTscMember": false,
         "repos": [
+            "spec-json-schemas",
             "parser-go",
             "parser-js",
             "converter-go",
