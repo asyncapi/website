@@ -78,6 +78,7 @@ This year, AsyncAPI received a record-breaking **204 GSoC applications** across 
 However, with only **7 project slots** officially allocated to us (out of 9 submitted ideas), we had to make thoughtful, strategic decisions during the selection process.
 
 To keep things fair and efficient, we divided our review process into two main phases:
+
 ### Admin Review Phase
 
 Given the large number of applications, we knew some wouldn’t meet the basic criteria. To avoid overwhelming mentors with low-quality or off-topic proposals, our organization admins conducted an initial screening of all applications.
