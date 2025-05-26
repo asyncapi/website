@@ -107,6 +107,29 @@ Mentors evaluated applications based on the following criteria:
 
 After reviewing, mentors shortlisted top candidates for each project and collaborated with the org admins to finalize the contributors we would accept for GSoC 2025.
 
+#### Rejection Turns Disruptive
+
+Even with a fair selection process by the mentors, the announcement of selected contributors didn’t go entirely as planned. After the results were published, a few applicants who didn’t make it into the program responded poorly and questioned the process in unprofessional and disruptive ways. Some of the issues we faced included:
+
+- **Hostility Toward Mentors:**
+  Some rejected applicants accused mentors of favoritism, simply because they couldn’t handle the outcome maturely. Mentors evaluated every proposal based not only on its quality but also on the contributor’s prior engagement and meaningful contributions to the project. These baseless accusations were both unfair and disheartening for mentors who volunteered their time to support the community.
+
+- **Impersonation and Harassment:**
+A few individuals went so far as to create fake accounts to discredit accepted contributors, attempting to diminish their hard work and efforts. This behavior was both appalling and harmful, and it caused some accepted contributors to doubt themselves and cast a negative light on the spirit of open source collaboration.
+
+##### How We Responded
+
+Thankfully, members of the **Code of Conduct Committee** stepped in quickly and handled the situation with care and professionalism. They investigated the incidents, identified some of those responsible, and gave them the opportunity to issue a public apology for their actions, recognizing the immaturity and harm caused or face appropriate consequences.
+
+Members of the Code of Conduct Committee personally reached out to the affected contributors and mentors to offer heartfelt apologies and provide reassurance, ensuring they felt supported and valued in the aftermath of the incident.
+
+At AsyncAPI, the Code of Conduct is central to our community values. Everyone is expected to respect and uphold it, and we do not tolerate actions that threaten the well-being of others. A follow-up article will be published by the CoC team to provide more context from this incident.
+
+Rejection is tough, we understand that. But it should never be a reason to attack others or question their worthiness.
+
+At AsyncAPI, we value growth, openness, and community support, not finger-pointing or toxicity. 
+
+
 ## Wrapping Up
 
 Selecting contributors is never easy, especially when the applicant pool is packed with passionate contributors eager to make an impact. However, by combining a streamlined review process with community values, we were able to make informed decisions that we're confident will lead to successful project outcomes and long-term contributor growth. 
