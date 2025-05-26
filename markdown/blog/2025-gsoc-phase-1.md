@@ -28,19 +28,19 @@ One of the most challenging aspects of participating in Google Summer of Code is
 Here’s how we laid the groundwork for a successful GSoC 2025 first phase:
 
 - **Kicking Off with Community Discussion**:
-     We initiated an open [GitHub Discussion](https://github.com/orgs/asyncapi/discussions/1633) to serve as the central hub for all things GSoC-related. This thread became our base for collaboration, and coordination throughout the application process. It helped us engage the community early, keep everything transparent, and get involvements from contributors and mentors.
+We initiated an open [GitHub Discussion](https://github.com/orgs/asyncapi/discussions/1633) to serve as the central hub for all things GSoC-related. This thread became our base for collaboration, and coordination throughout the application process. It helped us engage the community early, keep everything transparent, and get involvements from contributors and mentors.
 
 - **Collecting Project Ideas**:
-     Identifying meaningful and impactful projects is a key part of the GSoC application. Through the GitHub Discussion, we invited community members to propose project ideas they were excited about. This resulted into 15 incredible suggestions, including 9 solid proposals that had potential to evolve into full-fledged GSoC projects.
+Identifying meaningful and impactful projects is a key part of the GSoC application. Through the GitHub Discussion, we invited community members to propose project ideas they were excited about. This resulted into 15 incredible suggestions, including 9 solid proposals that had potential to evolve into full-fledged GSoC projects.
 
 - **Calling for Mentors:**
-    Mentors are the heart of a successful GSoC experience. Rather than manage a separate process, we used the same discussion thread to invite experienced contributors and maintainers to step forward as potential mentors. This approach helped us keep all conversations in one place and encouraged mentors to engage with idea proposals, provide feedback, and shape the project scope collaboratively.
+Mentors are the heart of a successful GSoC experience. Rather than manage a separate process, we used the same discussion thread to invite experienced contributors and maintainers to step forward as potential mentors. This approach helped us keep all conversations in one place and encouraged mentors to engage with idea proposals, provide feedback, and shape the project scope collaboratively.
 
 - **Curating and Centralizing Ideas:**
-     From the 15 suggestions we received, we curated 9 project ideas that best aligned with AsyncAPI’s community goals and roadmap. These were published in our community repository under the mentorship directory, as seen [here](https://github.com/asyncapi/community/blob/master/mentorship/summerofcode/2025/asyncapi-gsoc-ideas-page.md). This centralized format made our GSoC application seamless because we simply shared the link with program organizers, making it easy for them to review our proposals.
+From the 15 suggestions we received, we curated 9 project ideas that best aligned with AsyncAPI’s community goals and roadmap. These were published in our community repository under the mentorship directory, as seen [here](https://github.com/asyncapi/community/blob/master/mentorship/summerofcode/2025/asyncapi-gsoc-ideas-page.md). This centralized format made our GSoC application seamless because we simply shared the link with program organizers, making it easy for them to review our proposals.
 
 - **Hosting a GSoC Livestream:**
-     After being officially accepted as a mentoring organization, we hosted an [introductory livestream](https://www.youtube.com/watch?v=R7pl1F2dYLo) for potential GSoC contributors. In this session, we walked students/contributors through everything they needed to know, from selecting the right project and understanding the application timeline, to crafting strong proposals and making meaningful contributions to AsyncAPI.
+After being officially accepted as a mentoring organization, we hosted an [introductory livestream](https://www.youtube.com/watch?v=R7pl1F2dYLo) for potential GSoC contributors. In this session, we walked students/contributors through everything they needed to know, from selecting the right project and understanding the application timeline, to crafting strong proposals and making meaningful contributions to AsyncAPI.
 
 ## What We Failed To Prepare For
 
