@@ -28,7 +28,7 @@ One of the most challenging aspects of participating in Google Summer of Code is
 Here’s how we laid the groundwork for a successful GSoC 2025 first phase:
 
 - **Kicking Off with Community Discussion**:
-We initiated an open [GitHub Discussion](https://github.com/orgs/asyncapi/discussions/1633) to serve as the central hub for all things GSoC-related. This thread became our base for collaboration, and coordination throughout the application process. It helped us engage the community early, keep everything transparent, and get involvements from contributors and mentors.
+We initiated an open [GitHub Discussion](https://github.com/orgs/asyncapi/discussions/1633) to serve as the central hub for all things GSoC-related. This thread became our base for collaboration and coordination throughout the application process. It helped us engage the community early, keep everything transparent, and foster involvement from contributors and mentors.
 
 - **Collecting Project Ideas**:
 Identifying meaningful and impactful projects is a key part of the GSoC application. Through the GitHub Discussion, we invited community members to propose project ideas they were excited about. This resulted into 15 incredible suggestions, including 9 solid proposals that had potential to evolve into full-fledged GSoC projects.
@@ -40,7 +40,7 @@ Mentors are the heart of a successful GSoC experience. Rather than manage a sepa
 From the 15 suggestions we received, we curated 9 project ideas that best aligned with AsyncAPI’s community goals and roadmap. These were published in our community repository under the mentorship directory, as seen [here](https://github.com/asyncapi/community/blob/master/mentorship/summerofcode/2025/asyncapi-gsoc-ideas-page.md). This centralized format made our GSoC application seamless because we simply shared the link with program organizers, making it easy for them to review our proposals.
 
 - **Hosting a GSoC Livestream:**
-After being officially accepted as a mentoring organization, we hosted an [introductory livestream](https://www.youtube.com/watch?v=R7pl1F2dYLo) for potential GSoC contributors. In this session, we walked students/contributors through everything they needed to know, from selecting the right project and understanding the application timeline, to crafting strong proposals and making meaningful contributions to AsyncAPI.
+After being formally accepted as a mentoring organization, we hosted an [introductory livestream](https://www.youtube.com/watch?v=R7pl1F2dYLo) for potential GSoC contributors. In this session, we walked students/contributors through everything they needed to know, from selecting the right project and understanding the application timeline, to crafting strong proposals and making meaningful contributions to AsyncAPI.
 
 ## What We Failed To Prepare For
 
@@ -93,14 +93,14 @@ Only proposals that passed this initial filter were passed on to mentors for det
 
 ### Mentor Review Phase
 
-Once the initial screening was completed, the remaining proposals, now refined and ready for review were left remaining on the proposals dashboard for mentors in-depth review. 
+Once the initial screening was completed, proposals now refined and ready for review were left on the proposals dashboard for mentors' in-depth review.
 
-Each mentor reviewed applications related to their specific project ideas, looking for contributors who not only understood the project goals but also demonstrated a genuine interest in solving the problem. This phase was all about finding the right contributors who were capable of collaboration, committed and passionated about opensource. 
+Each mentor reviewed applications related to their project ideas, looking for contributors who understood the goals and demonstrated genuine interest in solving the problem. This phase was all about finding the right contributors who were capable of collaboration, committed and passionated about opensource. 
 
 Mentors evaluated applications based on the following criteria:
 
-- **Clarity and completeness of the proposal:** Strong applications clearly outlined deliverables, milestones, timelines, and showed evidence of understanding the projects problem statement.
-- **Quality of contributions:** Contributors who had already submitted meaningful pull requests, engaged in issue discussions stood out.
+- **Clarity and completeness of the proposal:** Strong applications clearly outlined deliverables, milestones, timelines, and showed evidence of understanding the project's problem statement.
+- **Quality of contributions:** Contributors who had already submitted meaningful pull requests, engaged in issue discussions, stood out.
 - **Community engagement:** Applicants who were active on Slack, asked insightful questions, or contributed positively to the community made a strong impression.
 - **Alignment with project vision:** Ultimately, mentors looked for contributors whose goals aligned with the purpose and direction of the project, contributors we could see being long-term community members beyond GSoC.
 
@@ -112,7 +112,7 @@ Selecting contributors is never easy, especially when the applicant pool is pack
 
 We're incredibly excited to work with this year's cohort and can't wait to see what we achieve together as a community. 
 
-Big congratulations to everyone selected, we’re thrilled to have you on board and excited for what lies ahead.
+Big congratulations to everyone selected, we’re thrilled to have you on board and excited about what lies ahead.
 
 ### Meet the 2025 AsyncAPI Contributors
 
