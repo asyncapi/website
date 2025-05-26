@@ -31,13 +31,13 @@ Here’s how we laid the groundwork for a successful GSoC 2025 first phase:
      We initiated an open [GitHub Discussion](https://github.com/orgs/asyncapi/discussions/1633) to serve as the central hub for all things GSoC-related. This thread became our base for collaboration, and coordination throughout the application process. It helped us engage the community early, keep everything transparent, and get involvements from contributors and mentors.
 
 - **Collecting Project Ideas**:
-     Identifying meaningful and impactful projects is a key part of the GSoC application. Through the GitHub Discussion, we invited community members to propose project ideas they were excited about. This results into 15 incredible suggestions, including 9 solid proposals that had potential to evolve into full-fledged GSoC projects.
+     Identifying meaningful and impactful projects is a key part of the GSoC application. Through the GitHub Discussion, we invited community members to propose project ideas they were excited about. This resulted into 15 incredible suggestions, including 9 solid proposals that had potential to evolve into full-fledged GSoC projects.
 
 - **Calling for Mentors:**
     Mentors are the heart of a successful GSoC experience. Rather than manage a separate process, we used the same discussion thread to invite experienced contributors and maintainers to step forward as potential mentors. This approach helped us keep all conversations in one place and encouraged mentors to engage with idea proposals, provide feedback, and shape the project scope collaboratively.
 
 - **Curating and Centralizing Ideas:**
-     From the 15 suggestions we received, we curated 9 project ideas that best aligned with AsyncAPI’s community goals and roadmap. These were published in our community repository under the mentorship directory, as seen [here](https://github.com/asyncapi/community/blob/master/mentorship/summerofcode/2025/asyncapi-gsoc-ideas-page.md). This centralized format made our GSoC application seamless, because we simply shared the link with program organizers, making it easy for them to review our proposals.
+     From the 15 suggestions we received, we curated 9 project ideas that best aligned with AsyncAPI’s community goals and roadmap. These were published in our community repository under the mentorship directory, as seen [here](https://github.com/asyncapi/community/blob/master/mentorship/summerofcode/2025/asyncapi-gsoc-ideas-page.md). This centralized format made our GSoC application seamless because we simply shared the link with program organizers, making it easy for them to review our proposals.
 
 - **Hosting a GSoC Livestream:**
      After being officially accepted as a mentoring organization, we hosted an [introductory livestream](https://www.youtube.com/watch?v=R7pl1F2dYLo) for potential GSoC contributors. In this session, we walked students/contributors through everything they needed to know, from selecting the right project and understanding the application timeline, to crafting strong proposals and making meaningful contributions to AsyncAPI.
@@ -69,7 +69,7 @@ Thankfully, our **Code of Conduct Committee** stepped in quickly and took action
 
 While this was the first time we experienced something like this at scale, it served as a valuable learning opportunity. We now understand the importance of having proactive communication, stronger onboarding for newcomers, and safeguards in place ahead of time, especially during high-visibility programs like GSoC.
 
-As we look ahead, we’re already working on ways to better manage contributor influx in the future, and not by discouraging enthusiasm, but by channeling it in a productive way.
+As we look ahead, we’re already working on ways to better manage contributor influx in the future, and not by discouraging enthusiasm, but by channeling it productively.
 
 ## Our Selection Process
 
@@ -108,11 +108,11 @@ After reviewing, mentors shortlisted top candidates for each project and collabo
 
 ## Wrapping Up
 
-Selecting contributors is never easy, especially when the applicant pool is packed with passionate contributors eager to make an impact. However, by combining a streamlined review process with community values, we were able to make informed decisions that we're confident will lead to successful project outcomes and long term contributor growth. 
+Selecting contributors is never easy, especially when the applicant pool is packed with passionate contributors eager to make an impact. However, by combining a streamlined review process with community values, we were able to make informed decisions that we're confident will lead to successful project outcomes and long-term contributor growth. 
 
 We're incredibly excited to work with this year's cohort and can't wait to see what we achieve together as a community. 
 
-A big congratulations to everyone selected, we’re thrilled to have you on board and excited for what lies ahead.
+Big congratulations to everyone selected, we’re thrilled to have you on board and excited for what lies ahead.
 
 ### Meet the 2025 AsyncAPI Contributors
 
