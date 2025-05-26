@@ -31,7 +31,7 @@ Here’s how we laid the groundwork for a successful GSoC 2025 first phase:
 We initiated an open [GitHub Discussion](https://github.com/orgs/asyncapi/discussions/1633) to serve as the central hub for all things GSoC-related. This thread became our base for collaboration and coordination throughout the application process. It helped us engage the community early, keep everything transparent, and foster involvement from contributors and mentors.
 
 - **Collecting Project Ideas**:
-Identifying meaningful and impactful projects is a key part of the GSoC application. Through the GitHub Discussion, we invited community members to propose project ideas they were excited about. This resulted into 15 incredible suggestions, including 9 solid proposals that had potential to evolve into full-fledged GSoC projects.
+Identifying meaningful and impactful projects is a key part of the GSoC application. Through the GitHub Discussion, we invited community members to propose project ideas they were excited about. This resulted in 15 incredible suggestions, including 9 solid proposals that had potential to evolve into full-fledged GSoC projects.
 
 - **Calling for Mentors:**
 Mentors are the heart of a successful GSoC experience. Rather than manage a separate process, we used the same discussion thread to invite experienced contributors and maintainers to step forward as potential mentors. This approach helped us keep all conversations in one place and encouraged mentors to engage with idea proposals, provide feedback, and shape the project scope collaboratively.
