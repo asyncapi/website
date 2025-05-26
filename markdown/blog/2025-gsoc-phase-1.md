@@ -1,5 +1,5 @@
 ---
-title: "2025 Google Summer Of Code - Phase 1"
+title: "2025 Google Summer of Code: Phase 1"
 date: 2025-05-27T06:00:00+01:00
 type: Community
 tags:
@@ -31,7 +31,7 @@ Here’s how we laid the groundwork for a successful GSoC 2025 first phase:
   We initiated an open [GitHub Discussion](https://github.com/orgs/asyncapi/discussions/1633) to serve as the central hub for all things GSoC-related. This thread became our base for collaboration and coordination throughout the application process. It helped us engage the community early, keep everything transparent, and foster involvement from contributors and mentors.
 
 - **Collecting Project Ideas**:
-  Identifying meaningful and impactful projects is a key part of the GSoC application. Through the GitHub Discussion, we invited community members to propose project ideas they were excited about. This resulted in 15 incredible suggestions, including 9 solid proposals that had potential to evolve into full-fledged GSoC projects.
+  Identifying meaningful and impactful projects is a key part of the GSoC application. Through the GitHub Discussion, we invited community members to propose project ideas they were excited about. This resulted in 15 incredible suggestions, including 9 solid proposals that had the potential to evolve into full-fledged GSoC projects.
 
 - **Calling for Mentors:**
   Mentors are the heart of a successful GSoC experience. Rather than manage a separate process, we used the same discussion thread to invite experienced contributors and maintainers to step forward as potential mentors. This approach helped us keep all conversations in one place and encouraged mentors to engage with idea proposals, provide feedback, and shape the project scope collaboratively.
@@ -56,7 +56,7 @@ At first, this sounds like a good problem to have, and in many ways, it is. Howe
 - Spamming our Slack channels with repetitive and irrelevant messages 
 - Flooding mentors’ and maintainers’ direct messages with irrelevant or insistent requests
 
-This sudden surge, and the behavior that accompanied it was unexpected, and it created confusion, noise, and stress for mentors, maintainers, and contributors alike
+This sudden surge, and the behavior that accompanied it was unexpected, and it created confusion, noise, and stress for mentors, maintainers, and contributors alike. 
 
 ### How We Responded
 
@@ -117,7 +117,7 @@ Even with a fair selection process by the mentors, the announcement of selected 
 - **Impersonation and Harassment:**
 A few individuals went so far as to create fake accounts to discredit accepted contributors, attempting to diminish their hard work and efforts. This behavior was both appalling and harmful, and it caused some accepted contributors to doubt themselves and cast a negative light on the spirit of open source collaboration.
 
-##### How We Responded
+##### Responding to Harassment Incidents
 
 Thankfully, members of the **Code of Conduct Committee** stepped in quickly and handled the situation with care and professionalism. They investigated the incidents, identified some of those responsible, and gave them the opportunity to issue a public apology for their actions, recognizing the immaturity and harm caused or face appropriate consequences.
 
