@@ -1,6 +1,6 @@
 ---
 title: "AsyncAPI Q1 Marketing WG Report"
-date: 2025-05-21T06:00:00+01:00
+date: 2025-05-27T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
