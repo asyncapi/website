@@ -258,7 +258,7 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "VSCode",
+      "name": "JavaScript",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
@@ -268,12 +268,17 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "JetBrains",
+      "name": "VSCode",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
     {
       "name": "SmartPaste",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "JetBrains",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
@@ -293,7 +298,7 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "Java",
+      "name": "HTML",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
