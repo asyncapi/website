@@ -27,10 +27,10 @@ One of the most challenging aspects of participating in Google Summer of Code is
 
 Here’s how we laid the groundwork for a successful GSoC 2025 first phase:
 
-- **Kicking Off with Community Discussion**:
+- **Kicking Off with Community Discussion:**
   We initiated an open [GitHub Discussion](https://github.com/orgs/asyncapi/discussions/1633) to serve as the central hub for all things GSoC-related. This thread became our base for collaboration and coordination throughout the application process. It helped us engage the community early, keep everything transparent, and foster involvement from contributors and mentors.
 
-- **Collecting Project Ideas**:
+- **Collecting Project Ideas:**
   Identifying meaningful and impactful projects is a key part of the GSoC application. Through the GitHub Discussion, we invited community members to propose project ideas they were excited about. This resulted in 15 incredible suggestions, including 9 solid proposals that had the potential to evolve into full-fledged GSoC projects.
 
 - **Calling for Mentors:**
