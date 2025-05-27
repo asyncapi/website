@@ -41,7 +41,7 @@ Our second onboarding video, done by [Azeez Elegbede](https://www.linkedin.com/i
 We recently welcomed seven new mentees who will be working on our projects under GSoC'25 in the coming months. The selection process was quite extensive, and a huge thank you to our maintainers who have taken the time to mentor the next generation of maintainers.
 
 ## TSC x Ambassadors
-We are excited to welcome [Naresh Jain](https://www.linkedin.com/in/http://linkedin.com/in/nareshjain/) as our new ambassador and [Daniel Kocot](https://www.linkedin.com/in/danielkocot) and Naresh as our first ambassadors to become TSC members.
+We are excited to welcome [Naresh Jain](https://www.linkedin.com/in/nareshjain) as our new ambassador and [Daniel Kocot](https://www.linkedin.com/in/danielkocot) and Naresh as our first ambassadors to become TSC members.
 
 <Profiles profiles={[
   {
@@ -56,5 +56,5 @@ We are excited to welcome [Naresh Jain](https://www.linkedin.com/in/http://linke
   }
 ]} />
 
-## Coming in March
+## Coming in June
 - **AsyncAPI Community Updates Newsletter** - The June Edition will arrive in your inbox on the 5th. [Please subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/newsletter); don't miss the updates.
