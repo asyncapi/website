@@ -69,7 +69,7 @@ Thankfully, our **Code of Conduct Committee** stepped in quickly and took action
 
 While this was the first time we experienced something like this at scale, it served as a valuable learning opportunity. We now understand the importance of having proactive communication, stronger onboarding for newcomers, and safeguards in place ahead of time, especially during high-visibility programs like GSoC.
 
-As we look ahead, we’re already working on ways to better manage contributor influx in the future, and not by discouraging enthusiasm, but by channeling it productively.
+As we look ahead, we’re already working on ways to better manage the influx of contributors in the future, not by discouraging enthusiasm, but by channeling it productively.
 
 ## Our Selection Process
 
