@@ -123,7 +123,7 @@ Thankfully, members of the **Code of Conduct Committee** stepped in quickly and 
 
 Members of the Code of Conduct Committee personally reached out to the affected contributors and mentors to offer heartfelt apologies and provide reassurance, ensuring they felt supported and valued in the aftermath of the incident.
 
-At AsyncAPI, the Code of Conduct is central to our community values. Everyone is expected to respect and uphold it, and we do not tolerate actions that threaten the well-being of others. A follow-up article will be published by the CoC team to provide more context from this incident.
+At AsyncAPI, the Code of Conduct is at the heart of our community values. Everyone is expected to respect and uphold it, and we do not tolerate actions that threaten the well-being of others. The CoC team will publish a follow-up article to provide more context from this incident.
 
 Rejection is tough, we understand that. But it should never be a reason to attack others or question their worthiness.
 
