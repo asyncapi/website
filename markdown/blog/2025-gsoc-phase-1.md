@@ -23,7 +23,7 @@ Participating in Google Summer of Code is an opportunity to invest in mentorship
 
 ## How We Prepared
 
-One of the most challenging aspects of participating in Google Summer of Code is getting accepted as a mentoring organization. At AsyncAPI, we knew that increasing our chances of being selected would require early and deliberate planning, so we started preparing well before Google even announced the official program dates.
+One of the most challenging aspects of participating in Google Summer of Code is getting accepted as a mentoring organization. At AsyncAPI, we recognized that increasing our chances of being selected would require early and deliberate planning, so we began preparing well before Google announced the official program dates.
 
 Here’s how we laid the groundwork for a successful GSoC 2025 first phase:
 
