@@ -96,7 +96,7 @@ Only proposals that passed this initial filter were passed on to mentors for det
 
 Once the initial screening was completed, proposals that had been refined and were now ready for review were left on the proposals dashboard for mentors' in-depth review.
 
-Each mentor reviewed applications related to their project ideas, looking for contributors who understood the goals and demonstrated genuine interest in solving the problem. This phase was all about finding the right contributors who were capable of collaboration, committed and passionate about opensource. 
+Each mentor reviewed applications related to their project ideas, looking for contributors who understood the goals and demonstrated genuine interest in solving the problem. This phase was all about finding the right contributors who were capable of collaboration, committed, and passionate about open source. 
 
 Mentors evaluated applications based on the following criteria:
 
