@@ -1,6 +1,6 @@
 ---
 title: "2025 Google Summer of Code: Phase 1"
-date: 2025-05-27T06:00:00+01:00
+date: 2025-05-28T06:00:00+01:00
 type: Community
 tags:
   - Mentorship
@@ -107,7 +107,7 @@ Mentors evaluated applications based on the following criteria:
 
 After reviewing, mentors shortlisted top candidates for each project and collaborated with the org admins to finalize the contributors we would accept for GSoC 2025.
 
-#### Rejection Turns Disruptive
+### Rejection Turns Disruptive
 
 Even with a fair selection process by the mentors, the announcement of selected contributors didn’t go entirely as planned. After the results were published, a few applicants who didn’t make it into the program responded poorly and questioned the process in unprofessional and disruptive ways. Some of the issues we faced included:
 
@@ -117,7 +117,7 @@ Even with a fair selection process by the mentors, the announcement of selected 
 - **Impersonation and Harassment:**
 A few individuals went so far as to create fake accounts to discredit accepted contributors, attempting to diminish their hard work and efforts. This behavior was both appalling and harmful, and it caused some accepted contributors to doubt themselves and cast a negative light on the spirit of open source collaboration.
 
-##### Responding to Harassment Incidents
+### Responding to Harassment Incidents
 
 Thankfully, members of the **Code of Conduct Committee** stepped in quickly and handled the situation with care and professionalism. They investigated the incidents, identified some of those responsible, and gave them the opportunity to issue a public apology for their actions, recognizing the immaturity and harm caused or face appropriate consequences.
 
@@ -138,7 +138,7 @@ We're incredibly excited to work with this year's cohort and can't wait to see w
 
 Big congratulations to everyone selected, we’re thrilled to have you on board and excited about what lies ahead.
 
-### Meet the 2025 AsyncAPI Contributors
+## Meet the 2025 AsyncAPI Contributors
 
 <Profiles profiles={[
   {
