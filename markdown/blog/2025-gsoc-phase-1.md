@@ -34,7 +34,7 @@ Here’s how we laid the groundwork for a successful GSoC 2025 first phase:
   Identifying meaningful and impactful projects is a key part of the GSoC application. Through the GitHub Discussion, we invited community members to propose project ideas they were excited about. This resulted in 15 incredible suggestions, including 9 solid proposals that had the potential to evolve into full-fledged GSoC projects.
 
 - **Calling for Mentors:**
-  Mentors are the heart of a successful GSoC experience. Rather than manage a separate process, we used the same discussion thread to invite experienced contributors and maintainers to step forward as potential mentors. This approach helped us keep all conversations in one place and encouraged mentors to engage with idea proposals, provide feedback, and shape the project scope collaboratively.
+  Mentors are the heart of a successful GSoC experience. Rather than manage a separate process, we used the same discussion thread to invite experienced contributors and maintainers to step forward as potential mentors. This approach helped us keep all conversations in one place and encouraged mentors to engage with idea proposals, provide feedback, and collaboratively shape the project scope.
 
 - **Curating and Centralizing Ideas:**
   From the 15 suggestions we received, we curated 9 project ideas that best aligned with AsyncAPI’s community goals and roadmap. These were published in our community repository under the mentorship directory, as seen [here](https://github.com/asyncapi/community/blob/master/mentorship/summerofcode/2025/asyncapi-gsoc-ideas-page.md). This centralized format made our GSoC application seamless because we simply shared the link with program organizers, making it easy for them to review our proposals.
