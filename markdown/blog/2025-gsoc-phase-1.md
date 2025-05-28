@@ -103,7 +103,7 @@ Mentors evaluated applications based on the following criteria:
 - **Clarity and completeness of the proposal:** Strong applications clearly outlined deliverables, milestones, timelines, and showed evidence of understanding the project's problem statement.
 - **Quality of contributions:** Contributors who had already submitted meaningful pull requests, engaged in issue discussions, stood out.
 - **Community engagement:** Applicants who were active on Slack, asked insightful questions, or contributed positively to the community made a strong impression.
-- **Alignment with project vision:** Ultimately, mentors looked for contributors whose goals aligned with the purpose and direction of the project, contributors we could see being long-term community members beyond GSoC.
+- **Alignment with project vision:** Ultimately, mentors looked for contributors whose goals aligned with the purpose and direction of the project, contributors who could be seen as long-term community members beyond GSoC.
 
 After reviewing, mentors shortlisted top candidates for each project and collaborated with the org admins to finalize the contributors we would accept for GSoC 2025.
 
