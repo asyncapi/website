@@ -19,7 +19,7 @@ As May ushers in the warmth of spring, while some of us in the southern hemisphe
 **Happy Maintainers Month to all the AsyncAPI maintainers**! Your hard work and commitment significantly impact the community, ensuring that collaboration and progress thrive. Thank you for everything you do!
 
 ## Governance Board Nomination
-A new chapter is unfolding for the initiative; the nomination process for the governance board is currently underway. If you are a TSC member and want to nominate yourself or someone else, please submit the application by **June 5th at 10:00 AM UTC**.
+A new chapter is unfolding for the initiative; the nomination process for the governance board is currently underway. We currently have three nominations submitted; if you are a TSC member and want to nominate yourself or someone else, please submit the application by **June 5th at 10:00 AM UTC**.
 
 To understand the requirements and the reasons behind this transition, [please read the Executive Director to Governance Board article](https://www.asyncapi.com/blog/new-governance-board).
 
