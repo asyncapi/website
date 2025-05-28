@@ -56,7 +56,7 @@ At first, this sounds like a good problem to have, and in many ways, it is. Howe
 - Spamming our Slack channels with repetitive and irrelevant messages 
 - Flooding mentors’ and maintainers’ direct messages with irrelevant or insistent requests
 
-This sudden surge, and the behavior that accompanied it was unexpected, and it created confusion, noise, and stress for mentors, maintainers, and contributors alike. 
+This sudden surge, along with the behavior that accompanied it, was unexpected, creating confusion, noise, and stress for mentors, maintainers, and contributors alike. 
 
 ### How We Responded
 
