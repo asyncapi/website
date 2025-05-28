@@ -46,7 +46,7 @@ Here’s how we laid the groundwork for a successful GSoC 2025 first phase:
 
 After participating in Google Summer of Code for over three years, we thought we’d seen it all, but 2025 brought a new kind of challenge we weren’t fully prepared for.
 
-You might think: _“What could possibly catch a seasoned community like AsyncAPI off guard?”_ Well, the moment the official list of mentoring organizations was published, we experienced an overwhelming influx of enthusiastic contributors eager to join the program.
+You might think: “What could possibly catch a seasoned community like AsyncAPI off guard?”- Well, the moment the official list of mentoring organizations was published, we experienced an overwhelming influx of enthusiastic contributors eager to participate in the program through our organisation.
 
 At first, this sounds like a good problem to have, and in many ways, it is. However, the intensity and desperation from some contributors to secure a spot in GSoC led to a wave of behavior that disrupted the community’s usual flow. Some examples included:
 
@@ -58,7 +58,7 @@ At first, this sounds like a good problem to have, and in many ways, it is. Howe
 
 This sudden surge, along with the behavior that accompanied it, was unexpected, creating confusion, noise, and stress for mentors, maintainers, and contributors alike. 
 
-### How We Responded
+## How We Responded
 
 Thankfully, our **Code of Conduct Committee** stepped in quickly and took action to ensure the community remained a respectful and engaging space for everyone. Here’s how we handled the situation:
 
@@ -79,7 +79,7 @@ However, with only **7 project slots** officially allocated to us (out of 9 subm
 
 To keep things fair and efficient, we divided our review process into two main phases:
 
-### Admin Review Phase
+## Admin Review Phase
 
 Given the large number of applications, we knew some wouldn’t meet the basic criteria. To avoid overwhelming mentors with low-quality or off-topic proposals, our organization admins conducted an initial screening of all applications.
 
@@ -92,7 +92,7 @@ This phase helped streamline the process by filtering out proposals that clearly
 
 Only proposals that passed this initial filter were passed on to mentors for detailed contextual and technical review.
 
-### Mentor Review Phase
+## Mentor Review Phase
 
 Once the initial screening was completed, proposals that had been refined and were now ready for review were left on the proposals dashboard for mentors' in-depth review.
 
