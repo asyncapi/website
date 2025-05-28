@@ -17,7 +17,7 @@ authors:
 
 **At AsyncAPI, Summer means one thing: Google Summer of Code**
 
-Every year, we eagerly anticipate this season, not just because of the program itself, but because of what it represents for our community. GSoC isn't just about the stipend contributors receive for their participation. For us, it's about the doors it opens, the chance to welcome new developers, foster fresh perspectives, and nurture contributors who often go on to become long-term contributors of the project. 
+Every year, we eagerly anticipate this season, not just because of the program itself, but because of what it represents for our community. GSoC isn't just about the stipend contributors receive for their participation. For us, it's about the doors it opens, the chance to welcome new developers, foster fresh perspectives, and nurture contributors who often go on to become long-term contributors to the project. 
 
 Participating in Google Summer of Code is an opportunity to invest in mentorship, give back to the AsyncAPI community, and continue building the future of event-driven APIs, one contributor at a time. 
 
