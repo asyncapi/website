@@ -25,7 +25,7 @@ To understand the requirements and the reasons behind this transition, [please r
 
 ## AsyncAPI Conference 2025
 
-We are excited to have our speakers for [AsyncAPI Conf Munich and Lagos on the website](https://conference.asyncapi.com/). The agenda, scheduling, and tickets will be announced in the next few weeks.
+We are excited to have announced our speakers for [AsyncAPI Conf Munich and Lagos on the website](https://conference.asyncapi.com/). The agenda, scheduling, and tickets will be announced in the next few weeks.
 
 The call for Speakers for [AsyncAPI Conf Bangalore is still open](https://conference.asyncapi.com/venue/Bangalore), so please help us share the CFP link with your networks and submit your proposals before **the 27th of June**.
 
@@ -33,7 +33,7 @@ The call for Speakers for [AsyncAPI Conf Bangalore is still open](https://confer
 We have an open discussion [on how to best distribute the conference's travel funding](https://github.com/asyncapi/community/issues/1918). Please share your thoughts on the issue discussion. 
 
 ## Onboarding/Training Videos
-Our second onboarding video, done by [Azeez Elegbede](https://www.linkedin.com/in/acebuild) on API architecture, is now on YouTube. Please watch, share, and subscribe to our channel for more content like this will be published occasionally.
+Our second onboarding video, done by [Azeez Elegbede](https://www.linkedin.com/in/acebuild) on API architecture, is now available on YouTube. Please watch, share, and subscribe to our channel for more content like this, which are planned to be published occasionally.
 
 <YouTube id="5Gaz2Q-CKqE" />
 
