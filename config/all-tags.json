@@ -258,6 +258,11 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
+      "name": "JavaScript",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
       "name": "VSCode",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
@@ -284,11 +289,6 @@
     },
     {
       "name": "IntelliJ IDEA",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "Java",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
