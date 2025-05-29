@@ -20,8 +20,8 @@ export { getStaticPaths, getStaticProps };
 
 interface Feature {
   name: string;
-  description: () => string | JSX.Element;
-  icon: (props: React.ComponentProps<'svg'>) => JSX.Element;
+  description: () => string | React.JSX.Element;
+  icon: (props: React.ComponentProps<'svg'>) => React.JSX.Element;
 }
 
 const features: Feature[] = [
@@ -79,7 +79,7 @@ export default function CliPage() {
 
   /**
    * @description Render the buttons on the CLI page.
-   * @returns { JSX.Element } The buttons to render on the CLI page.
+   * @returns { React.JSX.Element } The buttons to render on the CLI page.
    */
   function renderButtons() {
     return (
