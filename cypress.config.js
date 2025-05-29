@@ -2,7 +2,11 @@ import { defineConfig } from 'cypress';
 
 export default defineConfig({
   defaultCommandTimeout: 8000,
+  video: true,
+  screenshotOnRunFailure: true,
   e2e: {
+    screenshotsFolder: 'cypress/screenshots',
+    videosFolder: 'cypress/videos',
     viewportWidth: 1280,
     viewportHeight: 720,
     setupNodeEvents(on, config) {
