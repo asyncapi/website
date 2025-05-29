@@ -53,79 +53,78 @@ export default forwardRef(function BlogPostItem(
 
   return (
     <li className={`list-none rounded-lg ${className}`} ref={ref} id={id}>
-      <article className='h-full rounded-lg'>
+      <article className="h-full rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg">
         <Link href={post.slug}>
-          <span
-            className={
-              'flex h-full cursor-pointer flex-col divide-y divide-gray-200 overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'
-            }
-            data-testid='BlogPostItem-Link'
-          >
+          <span className="flex h-full cursor-pointer flex-col overflow-hidden rounded-lg">
             <img
-              className='h-48 w-full object-cover'
+              className="h-48 w-full object-cover"
               src={post.cover}
-              alt=''
-              loading='lazy'
-              data-testid='BlogPostItem-Img'
+              alt={post.title}
+              loading="lazy"
             />
-            <div className='flex flex-1 flex-col justify-between bg-white p-6'>
-              <div className='flex-1'>
-                <Paragraph typeStyle={ParagraphTypeStyle.sm} textColor='text-indigo-500'>
-                  <span
-                    className={`inline-flex items-center rounded-full px-3 py-0.5 ${typeColors[0]} ${typeColors[1]}`}
-                  >
+            <div className="flex items-center px-6 py-4 bg-gray-50">
+              <div className="relative shrink-0">
+                <AuthorAvatars authors={post.authors} />
+              </div>
+              <div className="ml-3">
+                <Heading
+                  level={HeadingLevel.h3}
+                  typeStyle={HeadingTypeStyle.xsSemibold}
+                  textColor="text-gray-900"
+                >
+                  <span>
+                    {post.authors
+                      .map((author, index) =>
+                        author.link ? (
+                          <button
+                            key={index}
+                            data-alt={author.name}
+                            className="cursor-pointer border-none bg-inherit p-0 hover:underline"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              window.open(author.link, "_blank");
+                            }}
+                          >
+                            {author.name}
+                          </button>
+                        ) : (
+                          author.name
+                        )
+                      )
+                      .reduce((prev, curr, index) => (
+                        <React.Fragment key={`author-${index}`}>
+                          {prev} & {curr}
+                        </React.Fragment>
+                      ))}
+                  </span>
+                </Heading>
+                <Paragraph typeStyle={ParagraphTypeStyle.sm} className="text-gray-600">
+                  <time dateTime={post.date}>{moment(post.date).format("MMMM D, YYYY")}</time>
+                  <span className="mx-1">&middot;</span>
+                  <span>{post.readingTime} min read</span>
+                </Paragraph>
+              </div>
+            </div>
+            <div className="flex flex-1 flex-col justify-between bg-white p-6">
+              <div className="flex-1">
+                <Paragraph typeStyle={ParagraphTypeStyle.sm} textColor="text-indigo-500">
+                  <span className={`inline-flex items-center rounded-full px-3 py-0.5 ${typeColors[0]} ${typeColors[1]}`}>
                     {post.type}
                   </span>
                 </Paragraph>
-                <span className='block'>
-                  <Heading level={HeadingLevel.h5} typeStyle={HeadingTypeStyle.smSemibold} className='mt-2'>
-                    {post.title}
-                  </Heading>
-                  <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-3'>
-                    <TextTruncate element='span' line={4} text={post.excerpt} />
-                  </Paragraph>
-                </span>
+                <Heading level={HeadingLevel.h5} typeStyle={HeadingTypeStyle.smSemibold} className="mt-2">
+                  {post.title}
+                </Heading>
+                <Paragraph typeStyle={ParagraphTypeStyle.sm} className="mt-3 text-gray-700">
+                  <TextTruncate element="span" line={4} text={post.excerpt} />
+                </Paragraph>
               </div>
-              <div className='mt-6 flex items-center'>
-                <div className='relative shrink-0'>
-                  <AuthorAvatars authors={post.authors} />
-                </div>
-                <div className='ml-3'>
-                  <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.xsSemibold} textColor='text-gray-900'>
-                    <span>
-                      {post.authors
-                        .map((author, index) =>
-                          author.link ? (
-                            <button
-                              key={index}
-                              data-alt={author.name}
-                              className='cursor-pointer border-none bg-inherit p-0 hover:underline'
-                              onClick={(e) => {
-                                e.preventDefault();
-
-                                // Handle the click event, e.g., navigate to author.link
-                                window.open(author.link, '_blank');
-                              }}
-                            >
-                              {author.name}
-                            </button>
-                          ) : (
-                            author.name
-                          )
-                        )
-                        .reduce((prev, curr, index) => (
-                          <React.Fragment key={`author-${index}`}>
-                            {prev} & {curr}
-                          </React.Fragment>
-                        ))}
-                    </span>
-                  </Heading>
-                  <Paragraph typeStyle={ParagraphTypeStyle.sm} className='flex'>
-                    <time dateTime={post.date}>{moment(post.date).format('MMMM D, YYYY')}</time>
-                    <span className='mx-1'>&middot;</span>
-                    <span>{post.readingTime} min read</span>
-                  </Paragraph>
-                </div>
+              <div className="mt-4">
+                <Link href={post.slug}>
+                  <button className="w-full rounded-md bg-indigo-600 px-4 py-2 text-white transition-all duration-300 hover:bg-indigo-700">
+                    Read More
+                  </button>
+                </Link>
               </div>
             </div>
           </span>
