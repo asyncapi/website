@@ -14,13 +14,10 @@ yarn.lock
 meetings.json
 .netlify
 .env
-cypress/screenshots
-cypress/videos
 /config/finance/json-data/*
 /pages/**/*.mdx
 *storybook.log
 /storybook-static/
 coverage
 deno.lock
-cypress/videos
-cypress/screenshots
+
