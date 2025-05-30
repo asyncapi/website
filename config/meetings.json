@@ -1,12 +1,5 @@
 [
   {
-    "title": "Marketing WG Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=Y29uZzNvNWxrcWs0Z2NqaWI4NjBmYnVwOWcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1705",
-    "banner": "",
-    "date": "2025-02-18T14:00:00.000Z"
-  },
-  {
     "title": "Design Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=bTg3aTM2cjFlYm1ucmluM203aWp0M2FubzggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1711",
@@ -159,5 +152,12 @@
     "url": "https://github.com/asyncapi/community/issues/1922",
     "banner": "",
     "date": "2025-05-29T10:00:00.000Z"
+  },
+  {
+    "title": "Marketing WG Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=am9saTZzYThlNjRobXN2M3NzZTN1YTFxbGsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1927",
+    "banner": "",
+    "date": "2025-06-10T14:00:00.000Z"
   }
 ]
