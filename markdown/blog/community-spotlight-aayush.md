@@ -1,12 +1,12 @@
 ---
 title: "Inside the Open Source Climb: Aayush’s Path to AsyncAPI Leadership"
-date: 2025-04-28T06:00:00+01:00
+date: 2025-06-07T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
   - Community Spotlight
   - Marketing
-cover: 
+cover: /img/posts/marketing-images/aayush-spotlight.webp
 authors:
   - name: Atinuke Bami Kayode
     photo: /img/avatars/bami.webp
@@ -16,19 +16,19 @@ excerpt: "When Aayush made his first contribution to AsyncAPI, he didn’t expec
 ---
 
 Open-source communities don’t just grow with code, they grow with people. Every successful project is powered by individuals whose passion, persistence, and commitment light the way for others.
-In this month’s **Community Spotlight,** we’re thrilled to feature [Aayush](https://www.linkedin.com/in/aayush-saini-0a25931b1/), a shining example of how consistent contributions and a willingness to learn can evolve into leadership. From making his first pull request to mentoring others through Google Summer of Code, Aayush’s story is a powerful reminder of what’s possible when a supportive community and personal drive meet.
+In this month’s **Community Spotlight,** we’re thrilled to feature [Aayush Saini](https://www.linkedin.com/in/aayush-saini-0a25931b1/), a shining example of how consistent contributions and a willingness to learn can evolve into leadership. From making his first pull request to mentoring others through Google Summer of Code, Aayush’s story is a powerful reminder of what’s possible when a supportive community and personal drive meet.
 In this interview, Aayush shares his journey, challenges, growth, and advice for new contributors stepping into the AsyncAPI world.
 
 ## The Interview
 
-**Bami: Nice to meet you, Aayush! I saw the map of your journey, it’s super interesting. Your name was even nominated by [Thulie](https://www.linkedin.com/in/v-thulisile-sibanda/]) initially. Thanks for making it easy to reach out. Shall we get started?**
+**Bami: Nice to meet you, Aayush! I saw the map of your journey, it’s super interesting. Your name was even nominated by [V. Thulisile Sibanda](https://www.linkedin.com/in/v-thulisile-sibanda/) initially. Thanks for making it easy to reach out. Shall we get started?**
 **You didn’t start with Google Summer of Code, right? You started as a regular contributor?**
 
-***Aayush:** Yeah, I started as a normal contributor. After contributing to the CLI project, I applied for the SNKP mentorship program. After completing that mentorship, I became a maintainer and then a TSC member. Currently, I'm mentoring two projects in Google Summer of Code.*
+***Aayush:** Yeah, I started as a normal contributor. After contributing to the CLI project, I applied for the AsyncAPI mentorship program. After completing that mentorship, I became a maintainer and then a TSC member. Currently, I'm mentoring two projects in Google Summer of Code.*
 
 **Bami: That's amazing! Could you give us a quick background about yourself, where you're from, your interests, and your journey so far?**
 
-***Aayush:** Sure! My name is Aayush. I'm currently working as a Software Engineer at Reddit. I’ve been contributing to open source for the past three years across organizations like Textile and Jenkins. I got into AsyncAPI because I wanted to learn about event-driven architecture and TypeScript. When I first started, the ecosystem was huge and a bit overwhelming. I decided to begin with the CLI project, setting it up locally and gradually picking up small issues. I kept solving problems, creating pull requests, and helping others with conflicts. Eventually, I built my confidence and expanded my contributions, including winning bounties and developing workflows that are still in use today.*
+***Aayush:** Sure! My name is Aayush. I'm currently working as a Software Engineer at [Red Hat](https://www.linkedin.com/company/red-hat/). I’ve been contributing to open source for the past three years across organizations like [Checkstyle](https://checkstyle.org/) and [Jenkins](https://www.jenkins.io/). I got into AsyncAPI because I wanted to learn about event-driven architecture and TypeScript. When I first started, the ecosystem was huge and a bit overwhelming. I decided to begin with the CLI project, setting it up locally and gradually picking up small issues. I kept solving problems, creating pull requests, and helping others with conflicts. Eventually, I built my confidence and expanded my contributions, including winning bounties and developing workflows that are still in use today.*
 
 > *The ecosystem felt overwhelming at first, but taking small steps helped me build confidence over time.*
 — Aayush
@@ -91,7 +91,7 @@ In this interview, Aayush shares his journey, challenges, growth, and advice for
 
 **Bami: 400 commits? Wow, that’s impressive! That could be a blog post on its own. Okay, now let’s move into the fun part, a quick “Have You Ever” game.**
 
-**Have You Ever - AsyncAPI Bingo**
+## Have You Ever - AsyncAPI Bingo
 
 **Bami: Have you ever spent an entire night fixing a bug?**
 ***Aayush:** No, not the whole night, maybe 5-6 hours but not overnight.*
@@ -112,7 +112,7 @@ In this interview, Aayush shares his journey, challenges, growth, and advice for
 ***Aayush:** Haha, yes!*
 
 **Bami: Have you ever been surprised by how fast someone reviewed your PR?**
-***Aayush:** Yes, [Lukasz](https://www.linkedin.com/in/lukasz-gornicki-a621914/) once reviewed my PR very quickly and I was amazed.*
+***Aayush:** Yes, [Lukasz Gornicki](https://www.linkedin.com/in/lukasz-gornicki-a621914/) once reviewed my PR very quickly and I was amazed.*
 
 **Bami: Have you ever learned something new from a fellow AsyncAPI contributor?**
 ***Aayush:** Yes, I learned a lot from Ashish, Souvik, and others.*
@@ -134,4 +134,4 @@ As a TSC member, mentor, maintainer, and active community contributor, Aayush ha
 Bami: Awesome, you’ve been an amazing guest. Thank you so much for sharing your story with the rest of the community, Aayush!
 
 It was such a pleasure speaking with Aayush and hearing his journey, full of perseverance, community spirit, and continuous growth.
-If you're looking to start your journey in open source, his story is a great reminder: **take your time, be patient, stay curious, and support others along the way.**
+Aayush's story is a great reminder to: **take your time, be patient, stay curious, and support others along the way.** If you're looking to start your own journey in open source, join our Slack community and check out our repository! We look forward to seeing your contributions.
