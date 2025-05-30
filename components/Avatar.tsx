@@ -44,6 +44,6 @@ export default function Avatar({ name, photo, link, className }: AvatarProps) {
       {avatar}
     </button>
   ) : (
-    <React.Fragment>{avatar}</React.Fragment>
+    avatar
   );
 }
