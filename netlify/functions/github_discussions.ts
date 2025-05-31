@@ -37,10 +37,9 @@ const handler: Handler = async function (event: HandlerEvent) {
         {
           owner: 'asyncapi',
           repo: 'community',
-          headers: {
-            authorization: `token ${process.env.GITHUB_TOKEN_CREATE_DISCUSSION}`
-          }
-        });
+          auth: process.env.GITHUB_TOKEN_CREATE_DISCUSSION
+        }
+      );
       const { url } = createDiscussion.createDiscussion.discussion;
 
       return {
