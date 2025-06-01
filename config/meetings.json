@@ -1,12 +1,5 @@
 [
   {
-    "title": "Design Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=bTg3aTM2cjFlYm1ucmluM203aWp0M2FubzggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1711",
-    "banner": "",
-    "date": "2025-02-20T16:00:00.000Z"
-  },
-  {
     "title": "AsyncAPI Community Working Group Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=N2p1OWlza2xsY29zNTc1bXZzYm00aW80YTQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1713",
