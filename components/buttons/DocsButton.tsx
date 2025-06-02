@@ -13,7 +13,7 @@ export interface IDocsButtonProps {
  * @param {Object} props - The props of the component
  * @param {IPost} props.post - The post object
  * @param {string} props.className - The class name of the component
- * @returns {JSX.Element} The DocsButton component
+ * @returns {React.JSX.Element} The DocsButton component
  */
 export default function DocsButton({ post, className = '' }: IDocsButtonProps) {
   return (

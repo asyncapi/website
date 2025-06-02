@@ -258,7 +258,7 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "VSCode",
+      "name": "JavaScript",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
@@ -268,7 +268,7 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "SmartPaste",
+      "name": "VSCode",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
@@ -283,12 +283,12 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "IntelliJ IDEA",
+      "name": "SmartPaste",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "Java",
+      "name": "IntelliJ IDEA",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
