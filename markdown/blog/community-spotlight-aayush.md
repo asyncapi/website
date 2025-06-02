@@ -47,7 +47,7 @@ In this interview, Aayush shares his journey, challenges, growth, and advice for
 
 **Bami: You’ve moved from learning to teaching, that's real growth! What advice would you give to someone just starting out and feeling intimidated by open-source projects?**
 
-***Aayush:** Start small. Even reading documentation, testing features, or fixing typos are contributions. Don't wait to be an expert. Learn as you go. And most importantly, ask questions, a supportive community will always help you.*
+***Aayush:** Start small. Even reading documentation, testing features, or fixing typos are contributions. Don't wait to be an expert. Learn as you go. And most importantly, ask questions; a supportive community will always help you.*
 
 **Bami: That’s great. Now, how would you say the mentorship program impacted your growth within the AsyncAPI community?**
 
@@ -63,11 +63,11 @@ In this interview, Aayush shares his journey, challenges, growth, and advice for
 
 **Bami: Amazing. Okay, next one: What advice would you give to a new contributor looking to follow a similar path?**
 
-***Aayush:** Okay, the main suggestion I would give is: start slow and be patient. Open source is a different kind of environment, if you don't have patience, it can cause issues. Sometimes we see people who create an issue and then keep pinging maintainers constantly to review it. But you have to understand: everyone has their own timelines, and most contributors are also working full-time jobs. So first, understand the organization and the project properly. Start with the README, set up the codebase successfully, and debug it. Once you can do that, you’ll find multiple issues yourself. Begin with solving the existing "Good First Issues." After that, don't just focus on solving your own issues. Start helping other contributors too,open new issues, suggest enhancements, fix bugs. Your goal should be to contribute to the organization as a whole, not just your own tasks. Keep contributing whenever you have time. That’s what I did. Over time, opportunities will naturally come — like I got the chance to be an SNKP mentee, then a mentor. So yeah, that's the path I suggest for anyone wanting to contribute seriously to SNKP.*
+***Aayush:** Okay, the main suggestion I would give is: start slow and be patient. Open source is a different kind of environment; if you don't have patience, it can cause issues. Sometimes we see people who create an issue and then constantly ping maintainers to review it. However, you must understand that everyone has their timeline, and most contributors are also working full-time jobs. First, understand the organization and the project thoroughly. Start with the README, set up the codebase successfully, and debug it. Once you can do that, you’ll find multiple issues yourself. Begin by solving the existing "Good First Issues." After that, don't just focus on solving your issues. Start helping other contributors too, open new issues, suggest enhancements, and fix bugs. Your goal should be to contribute to the organization as a whole, rather than focusing solely on your tasks. Keep contributing whenever you have time. That’s what I did. Over time, opportunities will naturally arise — as I had the chance to be an AsyncAPI mentee, then a mentor. So, yeah, that's the path I suggest for anyone who wants to contribute seriously to AsyncAPI.*
 
 **Bami: Great advice. Now, generally, not just during mentorship or maintainership — what are some challenges you faced on your journey, and how did you overcome them?**
 
-***Aayush:** In the beginning, it was really hard for me to understand the codebase. I was in a rush, raising PRs without fully understanding the requirements. That's a big mistake. You should always understand what you're doing, what the issue is, and what the expected outcome is. Another challenge was missing or outdated documentation. Sometimes I had to reach out directly to maintainers to understand the workflows. Over time, I contributed to updating documentation myself. That really helped.*
+***Aayush:** In the beginning, it was really hard for me to understand the codebase. I was in a rush, raising PRs without fully understanding the requirements. That's a big mistake. You should always understand what you're doing, what the issue is, and what the expected outcome is. Another challenge was missing or outdated documentation. Sometimes I had to reach out directly to maintainers to understand the workflows. Over time, I contributed to updating the documentation myself. That really helped.*
 
 **Bami: Got it. So now to a lighter question: What’s one memorable moment or achievement in your journey?**
 
@@ -87,14 +87,14 @@ In this interview, Aayush shares his journey, challenges, growth, and advice for
 
 **Bami: Nice! Speaking of the TSC voting automation, that was a bounty project, right? How was your experience working on it?**
 
-***Aayush:** Yes, it was a bounty. It was very interesting because it revolved around creating a GitHub workflow automation. At the time, I wasn't very familiar with GitHub Actions, so there was a learning curve. Testing was a big challenge because you can’t directly test GitHub Actions just by pushing a PR, I had to test everything from my private repo. In total, I made about 400 commits just to test and ensure everything worked properly before pushing to production!*
+***Aayush:** Yes, it was a bounty. It was very interesting because it revolved around creating a GitHub workflow automation. At the time, I wasn't very familiar with GitHub Actions, so there was a learning curve. Testing was a big challenge because you can’t directly test GitHub Actions just by pushing a PR I had to test everything from my private repo. In total, I made about 400 commits just to test and ensure everything worked properly before pushing to production!*
 
 **Bami: 400 commits? Wow, that’s impressive! That could be a blog post on its own. Okay, now let’s move into the fun part, a quick “Have You Ever” game.**
 
 ## Have You Ever - AsyncAPI Bingo
 
 **Bami: Have you ever spent an entire night fixing a bug?**
-***Aayush:** No, not the whole night, maybe 5-6 hours but not overnight.*
+***Aayush:** No, not the whole night, maybe 5-6 hours, but not overnight.*
 
 **Bami: Have you ever created a PR you were super proud of?**
 ***Aayush:** Yes, definitely.*
@@ -112,7 +112,7 @@ In this interview, Aayush shares his journey, challenges, growth, and advice for
 ***Aayush:** Haha, yes!*
 
 **Bami: Have you ever been surprised by how fast someone reviewed your PR?**
-***Aayush:** Yes, [Lukasz Gornicki](https://www.linkedin.com/in/lukasz-gornicki-a621914/) once reviewed my PR very quickly and I was amazed.*
+***Aayush:** Yes, [Lukasz Gornicki](https://www.linkedin.com/in/lukasz-gornicki-a621914/) once reviewed my PR very quickly, and I was amazed.*
 
 **Bami: Have you ever learned something new from a fellow AsyncAPI contributor?**
 ***Aayush:** Yes, I learned a lot from Ashish, Souvik, and others.*
@@ -134,4 +134,4 @@ As a TSC member, mentor, maintainer, and active community contributor, Aayush ha
 Bami: Awesome, you’ve been an amazing guest. Thank you so much for sharing your story with the rest of the community, Aayush!
 
 It was such a pleasure speaking with Aayush and hearing his journey, full of perseverance, community spirit, and continuous growth.
-Aayush's story is a great reminder to: **take your time, be patient, stay curious, and support others along the way.** If you're looking to start your own journey in open source, join our Slack community and check out our repository! We look forward to seeing your contributions.
+Aayush's story is a great reminder to **take your time, be patient, stay curious, and support others along the way.** If you're looking to start your own journey in open source, join our Slack community and check out our repository! We look forward to seeing your contributions.
