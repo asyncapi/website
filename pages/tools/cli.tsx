@@ -47,7 +47,7 @@ const features = [
 /**
  * @description Render the buttons for the CLI page.
  */
-function renderButtons(): JSX.Element {
+function renderButtons(): React.JSX.Element {
   return (
     <div className='mt-8'>
       <GithubButton
