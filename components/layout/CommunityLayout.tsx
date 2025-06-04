@@ -1,4 +1,5 @@
 import { sortBy } from 'lodash';
+import React from 'react';
 
 import type { Ambassador, Tsc } from '@/types/pages/community/Community';
 
@@ -101,7 +102,7 @@ function LinkedInSVG() {
   );
 }
 
-const socials: { [key: string]: JSX.Element } = {
+const socials: { [key: string]: React.JSX.Element } = {
   GitHub: <GitHubSVG />,
   Twitter: <TwitterSVG />,
   Linkedin: <LinkedInSVG />
@@ -265,7 +266,7 @@ export default function CommunityLayout({ children, membership }: ICommunityLayo
   const image = `/img/social/community-${membership.toLowerCase()}.webp`;
 
   const isTSCMembership = membership === Membership.TSC;
-  const relevantMembersList: Tsc[] | Ambassador[] = (isTSCMembership ? TSCMembersList : TSCBoardList) || [];
+  const relevantMembersList: (Tsc | Ambassador)[] = isTSCMembership ? TSCMembersList : TSCBoardList;
 
   const relevantMembers = sortBy(
     relevantMembersList.map((user) => addAdditionalUserInfo(user)),
