@@ -214,7 +214,7 @@ asyncapi: 2.6.0
 ...
 channels:
   user/signedup:
-    publish
+    publish:
       ...
       message: 
         messageId: UserMessage
