@@ -127,6 +127,7 @@
     "@chromatic-com/storybook": "^1.6.1",
     "@netlify/functions": "^2.6.0",
     "@netlify/plugin-nextjs": "^4.41.3",
+    "@octokit/graphql": "^8.2.2",
     "@storybook/addon-essentials": "^8.2.4",
     "@storybook/addon-interactions": "^8.2.4",
     "@storybook/addon-links": "^8.2.4",
