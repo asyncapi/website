@@ -56,7 +56,25 @@ async function* walkDirectory(
   }
 }
 
-// ✅ UPDATED: Uses walkDirectory instead of recursive Promise.all
+/**
+ * Recursively traverses a folder and collects all Markdown file paths,
+ * excluding `_section.md` files. For each Markdown file found, it constructs
+ * the corresponding URL path and determines the appropriate edit link.
+ *
+ * This function uses an async generator (`walkDirectory`) to stream file paths
+ * instead of loading all of them into memory at once, improving performance
+ * and memory efficiency in large documentation repositories.
+ *
+ * @param folderPath - The absolute path to the root folder to traverse.
+ * @param editOptions - An array of objects used to determine the correct edit link
+ *   for each markdown file. Each object should have a `value` and `href`.
+ * @returns A promise that resolves to an array of `PathObject`, each containing:
+ *   - `filePath`: Absolute path to the markdown file.
+ *   - `urlPath`: Relative URL path derived from the file's location.
+ *   - `editLink`: Link to edit the file, based on `editOptions`.
+ *
+ * @throws Will throw an error if the directory traversal fails.
+ */
 async function generatePaths(
   folderPath: string,
   editOptions: { value: string; href: string }[],
