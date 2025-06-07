@@ -1,10 +1,10 @@
 import { sortBy } from 'lodash';
+import Link from 'next/link';
 import React from 'react';
 
 import type { Ambassador, Tsc } from '@/types/pages/community/Community';
 
-import TSCMembersList from '../../config/MAINTAINERS.json';
-import TSCBoardList from '../../config/TSC_BOARD_MEMBERS.json';
+import tscBoardList from '../../config/TSC_BOARD_MEMBERS.json';
 import IconGithub from '../icons/Github';
 import IconLinkedIn from '../icons/LinkedIn';
 import IconTwitter from '../icons/Twitter';
@@ -202,7 +202,7 @@ function UserInfo({ user }: TSCUser) {
           </ul>
         </div>
       </div>
-      {'repos' in user && (
+      {'repos' in user ? (
         <div className='flex flex-wrap items-center gap-1'>
           Maintainer of:
           {user.repos.map((repo: { name: string; url: string }) => (
@@ -216,6 +216,11 @@ function UserInfo({ user }: TSCUser) {
             </a>
           ))}
         </div>
+      ) : (
+        // fallback to ambassador page
+        <Link className='flex' href='/community/ambassadors'>
+          AsyncAPI Ambassador
+        </Link>
       )}
     </li>
   );
@@ -260,16 +265,15 @@ interface ICommunityLayout {
 
 /**
  * @description This function returns the TSC or Board component.
+ * @param {Membership} props.membership - determines the community members belong to board or TSC (ambassadors & maintainers).
  */
 export default function CommunityLayout({ children, membership }: ICommunityLayout) {
   const description = `Meet the current AsyncAPI ${membership} members and learn how you can become one.`;
   const image = `/img/social/community-${membership.toLowerCase()}.webp`;
 
   const isTSCMembership = membership === Membership.TSC;
-  const relevantMembersList: (Tsc | Ambassador)[] = isTSCMembership ? TSCMembersList : TSCBoardList;
-
-  const relevantMembers = sortBy(
-    relevantMembersList.map((user) => addAdditionalUserInfo(user)),
+  const tscBoardMembers = sortBy(
+    tscBoardList.map((user) => addAdditionalUserInfo(user)),
     ['name']
   ).filter((user) => (isTSCMembership ? user.isTscMember : user.isBoardMember || user.isBoardChair));
 
@@ -298,7 +302,7 @@ export default function CommunityLayout({ children, membership }: ICommunityLayo
           </div>
 
           <ul role='list' className='space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8'>
-            {relevantMembers.map((user) => (
+            {tscBoardMembers.map((user) => (
               <UserInfo key={user.github} user={user} />
             ))}
             <QuestionCard />
