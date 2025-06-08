@@ -571,8 +571,7 @@
         "isTscMember": true,
         "repos": [
             "spec-json-schemas",
-            "bindings",
-            "saunter"
+            "bindings"
         ],
         "githubID": 5294032
     },
