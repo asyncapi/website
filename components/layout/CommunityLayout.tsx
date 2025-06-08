@@ -177,6 +177,8 @@ function UserWorkStatus({ user }: TSCUser) {
  * @param {Tsc} props.user - The user object having Board (TSC or Ambassador) data.
  */
 function UserInfo({ user }: TSCUser) {
+  const githubUsername = user.github.split('/').pop();
+
   return (
     <li
       data-testid='UserInfo-list'
@@ -218,7 +220,7 @@ function UserInfo({ user }: TSCUser) {
         </div>
       ) : (
         // fallback to ambassador page
-        <Link className='flex' href='/community/ambassadors'>
+        <Link className='flex' href={`/community/ambassadors/${githubUsername}`}>
           AsyncAPI Ambassador
         </Link>
       )}
