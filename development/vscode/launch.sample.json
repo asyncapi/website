@@ -1,0 +1,211 @@
+{
+  "version": "0.2.0",
+  "inputs": [
+    {
+      "id": "youtubeToken",
+      "type": "promptString",
+      "description": "Enter the value for YOUTUBE_TOKEN"
+    },
+    {
+      "id": "calendarServiceAccount",
+      "type": "promptString",
+      "description": "Enter the value for CALENDAR_SERVICE_ACCOUNT"
+    },
+    {
+      "id": "calendarId",
+      "type": "promptString",
+      "description": "Enter the value for CALENDAR_ID"
+    },
+    {
+      "id": "githubToken",
+      "type": "promptString",
+      "description": "Enter the value for GITHUB_TOKEN"
+    }
+  ],
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Run Dev Website",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Build Website",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "build"],
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Test",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "test"],
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Build Pages",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "build:pages"],
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Build Posts",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "build:posts"],
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Write Blog",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "write:blog"],
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Start Prod website",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start"],
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Lint Check",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "lint"],
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Lint Fix",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "lint:fix"],
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Format MDX files",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "format:mdx"],
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Generate Meetings",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "generate:meetings"],
+      "console": "integratedTerminal",
+      "env": {
+        "CALENDAR_SERVICE_ACCOUNT": "${input:calendarServiceAccount}",
+        "CALENDAR_ID": "${input:calendarId}"
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Generate Dashboard",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "generate:dashboard"],
+      "console": "integratedTerminal",
+      "env": {
+        "GITHUB_TOKEN": "${input:githubToken}"
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Generate Videos",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "generate:videos"],
+      "console": "integratedTerminal",
+      "env": {
+        "YOUTUBE_TOKEN": "${input:youtubeToken}"
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Generate Tools",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "generate:tools"],
+      "console": "integratedTerminal",
+      "env": {
+        "GITHUB_TOKEN": "${input:githubToken}"
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Test Netlify functions",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "test:netlify"],
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Test MD Files",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "test:md"],
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Test Edit Links",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "test:editlinks"],
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Dev Storybook",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev:storybook"],
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Build Storybook",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "build:storybook"],
+      "console": "integratedTerminal"
+    }
+  ]
+}

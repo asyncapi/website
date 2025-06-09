@@ -5,17 +5,24 @@ import { dirname, resolve } from 'path';
 import process from 'process';
 import { fileURLToPath } from 'url';
 
-import { logger } from './utils/logger';
+import { logger } from './helpers/logger';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
 /**
- * Fetches the latest YouTube videos from the AsyncAPI channel and writes the data to a specified path.
+ * Retrieves the latest videos from the AsyncAPI YouTube channel and writes them
+ * as a formatted JSON string to the specified file.
  *
- * @param {string} writePath - The path to write the video data.
- * @returns {Promise<string>} - A promise that resolves to the video data in JSON format.
- * @throws {Error} - Throws an error if there is an issue during the fetch or write process.
+ * This function fetches video data from the YouTube API using the YOUTUBE_TOKEN environment variable.
+ * It extracts key details—including the thumbnail URL, title, description, and video ID—from the API response,
+ * writes the JSON-formatted data to the provided file path, and returns the JSON string.
+ *
+ * @param writePath - The file path where the video data will be saved.
+ * @returns A promise that resolves to a JSON string containing the video data.
+ *
+ * @throws Error if the YOUTUBE_TOKEN environment variable is not set, if the API request fails, or
+ * if the response has an unexpected structure.
  */
 async function buildNewsroomVideos(writePath: string): Promise<string> {
   try {

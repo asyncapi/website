@@ -434,14 +434,11 @@
         "twitter": "smoyac",
         "company": "Timescale",
         "availableForHire": false,
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
-            "spec",
-            "spec-json-schemas",
             "parser-go",
             "parser-js",
             "converter-go",
-            "bindings",
             "raml-dt-schema-parser",
             "openapi-schema-parser",
             "avro-schema-parser",
@@ -458,8 +455,7 @@
         "slack": "U01SGCZMJKW",
         "twitter": "souvik_ns",
         "linkedin": "souvik-de-a2b941169",
-        "availableForHire": false,
-        "company": "Codemate",
+        "availableForHire": true,
         "isTscMember": true,
         "repos": [
             "cli",
@@ -638,8 +634,7 @@
         "isTscMember": true,
         "repos": [
             "spec-json-schemas",
-            "bindings",
-            "saunter"
+            "bindings"
         ],
         "githubID": 5294032
     },
@@ -990,7 +985,7 @@
         "github": "jbbianchi",
         "twitter": "JBBianchi",
         "linkedin": "jean-baptiste-bianchi-aa42b914",
-        "slack": "D08K91H3DBM",
+        "slack": "U08K91GKK8T",
         "isTscMember": true,
         "availableForHire": false,
         "repos": [
