@@ -1,4 +1,5 @@
 import { sortBy } from 'lodash';
+import React from 'react';
 
 import type { Tsc } from '@/types/pages/community/Community';
 
@@ -98,7 +99,7 @@ function LinkedInSVG() {
   );
 }
 
-const socials: { [key: string]: JSX.Element } = {
+const socials: { [key: string]: React.JSX.Element } = {
   GitHub: <GitHubSVG />,
   Twitter: <TwitterSVG />,
   Linkedin: <LinkedInSVG />
