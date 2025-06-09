@@ -80,18 +80,6 @@
         "githubID": 94157520
     },
     {
-        "name": "Anand Sunderraman",
-        "github": "anandsunderraman",
-        "linkedin": "anand-sunderraman-a6b7a131",
-        "slack": "U0231F9KXNK",
-        "availableForHire": false,
-        "isTscMember": false,
-        "repos": [
-            "go-watermill-template"
-        ],
-        "githubID": 4500774
-    },
-    {
         "name": "Ashish Padhy",
         "github": "Shurtu-gal",
         "linkedin": "ashish-padhy3023",
@@ -104,21 +92,6 @@
             "cli"
         ],
         "githubID": 100484401
-    },
-    {
-        "name": "Cameron Rushton",
-        "github": "CameronRushton",
-        "slack": "U01DVKKAV5K",
-        "availableForHire": false,
-        "company": "Solace",
-        "isTscMember": false,
-        "repos": [
-            "spec-json-schemas",
-            "bindings",
-            "java-spring-cloud-stream-template",
-            "python-paho-template"
-        ],
-        "githubID": 32455969
     },
     {
         "name": "Dale Lane",
@@ -137,18 +110,6 @@
             "java-template"
         ],
         "githubID": 1444788
-    },
-    {
-        "name": "Emiliano Zublena",
-        "github": "emilianozublena",
-        "linkedin": "emilianozublena",
-        "slack": "U01LYC8PW0M",
-        "availableForHire": false,
-        "isTscMember": false,
-        "repos": [
-            "php-template"
-        ],
-        "githubID": 466639
     },
     {
         "name": "Fran M\u00e9ndez",
@@ -174,19 +135,6 @@
             "brand"
         ],
         "githubID": 242119
-    },
-    {
-        "name": "Gerald Loeffler",
-        "github": "GeraldLoeffler",
-        "linkedin": "geraldloeffler",
-        "slack": "U01P5QDLP0X",
-        "availableForHire": false,
-        "isTscMember": false,
-        "repos": [
-            "spec-json-schemas",
-            "bindings"
-        ],
-        "githubID": 1985716
     },
     {
         "name": "Jonas Lagoni",
@@ -226,35 +174,6 @@
             "glee"
         ],
         "githubID": 32505158
-    },
-    {
-        "name": "Laurent Broudoux",
-        "github": "lbroudoux",
-        "twitter": "lbroudoux",
-        "linkedin": "laurentbroudoux",
-        "slack": "U018NLDV5E1",
-        "availableForHire": false,
-        "company": "Postman",
-        "isTscMember": false,
-        "repos": [
-            "spec-json-schemas",
-            "bindings"
-        ],
-        "githubID": 1538635
-    },
-    {
-        "name": "Ludovic Dussart",
-        "github": "M3lkior",
-        "linkedin": "ludovic-dussart-846a8063",
-        "slack": "U01BM49KL3Z",
-        "twitter": "ldussart",
-        "availableForHire": false,
-        "company": "zatsit",
-        "isTscMember": false,
-        "repos": [
-            "avro-schema-parser"
-        ],
-        "githubID": 5501911
     },
     {
         "name": "Lukasz Gornicki",
@@ -332,32 +251,6 @@
         "githubID": 40604284
     },
     {
-        "name": "Michael Davis",
-        "github": "damaru-inc",
-        "availableForHire": false,
-        "slack": "UH3B166TD",
-        "isTscMember": false,
-        "repos": [
-            "spec-json-schemas",
-            "bindings",
-            "java-spring-cloud-stream-template",
-            "python-paho-template"
-        ],
-        "githubID": 3926925
-    },
-    {
-        "name": "Nektarios Fifes",
-        "github": "NektariosFifes",
-        "linkedin": "nektarios-fifes-372740220",
-        "slack": "U01SE93Q48N",
-        "availableForHire": true,
-        "isTscMember": false,
-        "repos": [
-            "simulator"
-        ],
-        "githubID": 61620751
-    },
-    {
         "name": "Pavel Bodiachevskii",
         "github": "Pakisan",
         "slack": "U0132LQU8C9",
@@ -427,29 +320,6 @@
         "githubID": 554438
     },
     {
-        "name": "Sergio Moya",
-        "github": "smoya",
-        "linkedin": "smoya",
-        "slack": "UN22ZTLHG",
-        "twitter": "smoyac",
-        "company": "Timescale",
-        "availableForHire": false,
-        "isTscMember": false,
-        "repos": [
-            "parser-go",
-            "parser-js",
-            "converter-go",
-            "raml-dt-schema-parser",
-            "openapi-schema-parser",
-            "avro-schema-parser",
-            "go-watermill-template",
-            "template-for-go-projects",
-            "parser-api",
-            "server-api"
-        ],
-        "githubID": 1083296
-    },
-    {
         "name": "Souvik De",
         "github": "Souvikns",
         "slack": "U01SGCZMJKW",
@@ -476,7 +346,50 @@
             "website",
             "community"
         ],
-        "githubID": 19964402
+        "githubID": 19964402,
+        "img": "https://avatars.githubusercontent.com/u/19964402?v=4",
+        "bio": "Quetzalli Writes is an author of the book titled 'Docs-as-Ecosystem', which was published by the Apress Publishing Company. Quetzalli has been in tech for 9 years, working with SEO, Paid Search, Full-Stack development, UX, Developer Relations, and Technical Writing (Engineering Documentation). She's currently a core OSS contributor for Docs, DevRel, and Community Building at AsyncAPI Initiative. She's also a member of the AsyncAPI Technical Steering Committee (TSC).",
+        "title": "DevRel & DevDocs @AsyncAPI",
+        "company": "Postman",
+        "country": "\ud83c\uddf2\ud83c\uddfd",
+        "contributions": [
+            {
+                "type": "presentation",
+                "title": "How to contribute to AsyncAPI Dev Docs, AsyncAPI Conference",
+                "date": {
+                    "year": 2021,
+                    "month": "November"
+                },
+                "link": "https://www.youtube.com/watch?v=xAzbDDEbQ18"
+            },
+            {
+                "type": "workshop",
+                "title": "Workshop on contributing to AsyncAPI, CCOSS",
+                "date": {
+                    "year": 2021,
+                    "month": "October"
+                },
+                "link": "https://ccoss.org/sessions/2021/taller-contribucion-asyncapi/"
+            },
+            {
+                "type": "article",
+                "title": "Change is coming to our AsyncAPI Developer Documentation",
+                "date": {
+                    "year": 2021,
+                    "month": "December"
+                },
+                "link": "https://www.asyncapi.com/blog/changes-coming-docs"
+            },
+            {
+                "type": "initiative_driver",
+                "title": "Driver and promoter of Google Season of Docs at AsyncAPI",
+                "date": {
+                    "year": 2022,
+                    "month": "December"
+                },
+                "link": "https://www.asyncapi.com/blog/google-season-of-docs-2022"
+            }
+        ]
     },
     {
         "name": "David Pereira",
@@ -503,44 +416,6 @@
             "java-template"
         ],
         "githubID": 1384852
-    },
-    {
-        "name": "Kieran Murphy",
-        "github": "KieranM1999",
-        "linkedin": "kieran-murphy-175b0412b",
-        "availableForHire": false,
-        "slack": "U02FT2TKM37",
-        "company": "IBM",
-        "isTscMember": false,
-        "repos": [
-            "java-template"
-        ],
-        "githubID": 45017928
-    },
-    {
-        "name": "Tom Jefferson",
-        "github": "JEFFLUFC",
-        "linkedin": "t-jefferson",
-        "slack": "U02FPPCEH6H",
-        "availableForHire": false,
-        "company": "IBM",
-        "isTscMember": false,
-        "repos": [
-            "java-template"
-        ],
-        "githubID": 54025356
-    },
-    {
-        "name": "Lewis Relph",
-        "github": "lewis-relph",
-        "availableForHire": false,
-        "slack": "U02G8MDDEF3",
-        "company": "IBM",
-        "isTscMember": false,
-        "repos": [
-            "java-template"
-        ],
-        "githubID": 91530893
     },
     {
         "name": "Semen Tenishchev",
@@ -573,12 +448,90 @@
         "linkedin": "ivangarciasainzaja",
         "slack": "UTCN3ET4M",
         "availableForHire": false,
-        "company": "SNGULAR",
+        "company": "IZERTIS",
         "isTscMember": true,
         "repos": [
             "vs-asyncapi-preview"
         ],
-        "githubID": 1246876
+        "githubID": 1246876,
+        "twitter": "ivangsa",
+        "bio": "Java Architect with a deep understanding of Java, Spring-Boot, Spring-Cloud technologies, specializing in Domain-Driven Design (DDD) and Event-Driven Architectures creating Software Easy to Understand. Building ZenWave 360\u00ba. ZenWave 360\u00ba is a set of tools built on the foundations of Domain Driven Design and API-First principles for Event-Driven Architectures, to help you create software easy to understand. https://www.zenwave360.io/",
+        "title": "Java Architect. Speaker. Building ZenWave 360\u00b0.",
+        "img": "https://avatars.githubusercontent.com/u/1246876?v=4",
+        "contributions": [
+            {
+                "type": "initiative_driver",
+                "title": "AsyncAPI Conference On Tour 2023 - Madrid",
+                "date": {
+                    "year": 2023,
+                    "month": "October"
+                },
+                "link": "https://www.youtube.com/playlist?list=PLbi1gRlP7pihD-7XYb6c9wcTdkavDzF3_"
+            },
+            {
+                "type": "initiative_driver",
+                "title": "ZenWave SDK - Code Generator for AsyncAPI with Spring Cloud Streams",
+                "date": {
+                    "year": 2024,
+                    "month": "2022"
+                },
+                "link": "https://www.zenwave360.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/"
+            },
+            {
+                "type": "article",
+                "title": "API-First with AsyncAPI",
+                "date": {
+                    "year": 2023,
+                    "month": "March"
+                },
+                "link": "https://www.zenwave360.io/posts/API-First-with-AsyncAPI-And-ZenWave-SDK/"
+            },
+            {
+                "type": "article",
+                "title": "ZenWave AsyncAPI Code Generator",
+                "date": {
+                    "year": 2023,
+                    "month": "March"
+                },
+                "link": "https://www.zenwave360.io/posts/ZenWave-AsyncAPI-Code-Generator/"
+            },
+            {
+                "type": "article",
+                "title": "Generating AsyncAPI definition files from JDL with ZenWaveSDK",
+                "date": {
+                    "year": 2023,
+                    "month": "April"
+                },
+                "link": "https://www.zenwave360.io/posts/JHipster-As-IDL-for-AsyncAPIv2/"
+            },
+            {
+                "type": "presentation",
+                "title": "KIT - API-First with AsyncAPI for Event Driven Architectures",
+                "date": {
+                    "year": 2023,
+                    "month": "May"
+                },
+                "link": "https://www.youtube.com/watch?v=EoWFZfmspFM"
+            },
+            {
+                "type": "presentation",
+                "title": "Practical Event Storming with AsyncAPI v3 and ZenWave SDK",
+                "date": {
+                    "year": 2023,
+                    "month": "October"
+                },
+                "link": "https://www.youtube.com/watch?v=-uHONzz-a6U"
+            },
+            {
+                "type": "presentation",
+                "title": "Code Generation For Enterprise Integration Patterns w/ AsyncAPI & ZenWave SDK",
+                "date": {
+                    "year": 2023,
+                    "month": "October"
+                },
+                "link": "https://www.youtube.com/watch?v=gUsoD8RaCuw"
+            }
+        ]
     },
     {
         "name": "Florence Njeri",
@@ -607,22 +560,6 @@
             "bindings"
         ],
         "githubID": 98899
-    },
-    {
-        "name": "Vladim\u00edr Gorej",
-        "github": "char0n",
-        "linkedin": "vladimirgorej",
-        "slack": "U03NV5L4S49",
-        "twitter": "vladimirgorej",
-        "availableForHire": false,
-        "company": "SmartBear",
-        "isTscMember": false,
-        "repos": [
-            "spec",
-            "spec-json-schemas",
-            "bindings"
-        ],
-        "githubID": 193286
     },
     {
         "name": "Alexander Wichmann",
@@ -665,30 +602,6 @@
             "protobuf-schema-parser"
         ],
         "githubID": 512850
-    },
-    {
-        "name": "connil",
-        "github": "connil",
-        "slack": "U03A51H8",
-        "availableForHire": false,
-        "company": "GmbH",
-        "isTscMember": false,
-        "repos": [
-            "dotnet-rabbitmq-template"
-        ],
-        "githubID": 6583798
-    },
-    {
-        "name": "mr-nuno",
-        "github": "mr-nuno",
-        "slack": "U03A5145",
-        "availableForHire": false,
-        "company": "GmbH",
-        "isTscMember": false,
-        "repos": [
-            "dotnet-rabbitmq-template"
-        ],
-        "githubID": 1067841
     },
     {
         "name": "Thulisile Sibanda",
@@ -734,18 +647,6 @@
         "githubID": 81870866
     },
     {
-        "name": "Viacheslav Turovskyi",
-        "github": "aeworxet",
-        "slack": "U01G3U01SVC",
-        "availableForHire": false,
-        "isTscMember": false,
-        "repos": [
-            "optimizer",
-            "bundler"
-        ],
-        "githubID": 16149591
-    },
-    {
         "name": "Rohit T",
         "github": "TRohit20",
         "linkedin": "rohit-t-0124a4242",
@@ -757,179 +658,6 @@
             "website"
         ],
         "githubID": 108233235
-    },
-    {
-        "name": "Vaishnavi ",
-        "github": "VaishnaviNandakumar",
-        "isTscMember": false,
-        "repos": [
-            "website"
-        ],
-        "githubID": 41518119
-    },
-    {
-        "name": "Mihael Bosnjak",
-        "github": "mboss37",
-        "isTscMember": false,
-        "repos": [
-            "spec-json-schemas",
-            "bindings"
-        ],
-        "githubID": 29606687
-    },
-    {
-        "name": "Steve Head",
-        "github": "SrfHead",
-        "isTscMember": false,
-        "repos": [
-            "spec-json-schemas",
-            "bindings"
-        ],
-        "githubID": 13767299
-    },
-    {
-        "name": "Dec Kolakowski",
-        "github": "dpwdec",
-        "isTscMember": false,
-        "repos": [
-            "spec-json-schemas",
-            "bindings"
-        ],
-        "githubID": 51292634
-    },
-    {
-        "name": "Ian Cooper",
-        "github": "iancooper",
-        "twitter": "ICooper",
-        "isTscMember": false,
-        "repos": [
-            "spec-json-schemas",
-            "bindings"
-        ],
-        "githubID": 45537
-    },
-    {
-        "name": "Michael Wildman",
-        "github": "m-wild",
-        "isTscMember": false,
-        "repos": [
-            "saunter"
-        ],
-        "githubID": 3260812
-    },
-    {
-        "name": "yurvon-screamo",
-        "github": "yurvon-screamo",
-        "isTscMember": false,
-        "repos": [
-            "saunter"
-        ],
-        "githubID": 109030262
-    },
-    {
-        "name": "Rishi",
-        "github": "kaushik-rishi",
-        "twitter": "KaushikRishi07",
-        "isTscMember": false,
-        "repos": [
-            "nodejs-template"
-        ],
-        "githubID": 52498617
-    },
-    {
-        "name": "Akshit Gupta",
-        "github": "akkshitgupta",
-        "twitter": "akkshitgupta",
-        "availableForHire": true,
-        "isTscMember": false,
-        "repos": [
-            "modelina"
-        ],
-        "githubID": 96991785
-    },
-    {
-        "name": "Leigh Johnson",
-        "github": "leigh-johnson",
-        "twitter": "grepLeigh",
-        "isTscMember": false,
-        "repos": [
-            "modelina"
-        ],
-        "githubID": 2601819
-    },
-    {
-        "name": "Zbigniew Malcherczyk",
-        "github": "ferror",
-        "isTscMember": false,
-        "repos": [
-            "modelina"
-        ],
-        "githubID": 17534504
-    },
-    {
-        "name": "artur-ciocanu",
-        "github": "artur-ciocanu",
-        "isTscMember": false,
-        "repos": [
-            "modelina"
-        ],
-        "githubID": 743192
-    },
-    {
-        "name": "Akshaya Gurlhosur",
-        "github": "AGurlhosur",
-        "isTscMember": false,
-        "repos": [
-            "java-template"
-        ],
-        "githubID": 91530186
-    },
-    {
-        "name": "Philip Schlesinger @ Cryoport",
-        "github": "philCryoport",
-        "isTscMember": false,
-        "repos": [
-            "jasyncapi-idea-plugin"
-        ],
-        "githubID": 28901899
-    },
-    {
-        "name": "nathanaelweber",
-        "github": "nathanaelweber",
-        "isTscMember": false,
-        "repos": [
-            "protobuf-schema-parser"
-        ],
-        "githubID": 40006685
-    },
-    {
-        "name": "Barbanio Gonz\u00e1lez",
-        "github": "Barbanio",
-        "isTscMember": false,
-        "repos": [
-            "learning-paths"
-        ],
-        "githubID": 77982319
-    },
-    {
-        "name": "Lorenz Simon",
-        "github": "lorenzsimon",
-        "isTscMember": false,
-        "repos": [
-            "kotlin-asyncapi"
-        ],
-        "githubID": 39913716
-    },
-    {
-        "name": "Andrei",
-        "github": "gimlet2",
-        "twitter": "gimlet2",
-        "availableForHire": true,
-        "isTscMember": false,
-        "repos": [
-            "kotlin-asyncapi"
-        ],
-        "githubID": 758568
     },
     {
         "name": "Ashmit Jagtap",
@@ -945,7 +673,7 @@
         "githubID": 69006513
     },
     {
-        "name": "HariKrishnan",
+        "name": "Hari Krishnan",
         "github": "harikrishnan83",
         "twitter": "harikrishnan83",
         "linkedin": "harikrishnan83",
@@ -955,18 +683,50 @@
         "repos": [
             "jasyncapi"
         ],
-        "githubID": 126087
-    },
-    {
-        "name": "Prince Onyeanuna",
-        "github": "Aahil13",
-        "twitter": "OnyeanunaE",
-        "availableForHire": true,
-        "isTscMember": false,
-        "repos": [
-            "website"
-        ],
-        "githubID": 63567230
+        "githubID": 126087,
+        "country": "\ud83c\uddee\ud83c\uddf3",
+        "bio": "Co-creator of Specmatic and Perfiz. I also advise organizations, both large and small, on their transformation journey. Apart from bringing ideas to life as working software products, I coach developers, project managers, product owners, and engineering leaders. I have spoken at several conferences, including AACoT 2023, API Specification Conference (#ASC2022), API World, SeleniumConf, Agile2021, Agile India, TestingUY 2021, SREConf, PyCon Singapore, RubyConf India. My areas of interest include distributed systems, concurrency, high-performance application architecture, coaching, and training.",
+        "company": "Specmatic and Polarizer Technologies",
+        "title": "Co-founder and CTO at Specmatic, Founder, and CEO at Polarizer Technologies",
+        "img": "https://raw.githubusercontent.com/harikrishnan83/harikrishnan83/master/HariKrishnan-profile.jpg",
+        "contributions": [
+            {
+                "type": "talk",
+                "title": "Kafka and JMS Mocking with AsyncAPI",
+                "date": {
+                    "year": 2023,
+                    "month": "November"
+                },
+                "link": "https://www.youtube.com/watch?v=9yRf75p_kTU"
+            },
+            {
+                "type": "talk",
+                "title": "Unshackling Your System Under Test: Shift-Left Testing Through Dependency Isolation (Kafka Mocks with AsyncAPI specification)",
+                "date": {
+                    "year": 2024,
+                    "month": "June"
+                },
+                "link": "https://confengine.com/conferences/selenium-conf-2024/proposal/20021/unshackling-your-system-under-test-shift-left-testing-through-dependency-isolation"
+            },
+            {
+                "type": "talk",
+                "title": "Using API spec as an Executable Contract To Mock and Test Microservices",
+                "date": {
+                    "year": 2024,
+                    "month": "October"
+                },
+                "link": "https://www.youtube.com/watch?v=wiM20HTCerM"
+            },
+            {
+                "type": "talk",
+                "title": "Contract-Driven Development for Event-Driven Architectures",
+                "date": {
+                    "year": 2024,
+                    "month": "December"
+                },
+                "link": "https://conference.asyncapi.com/venue/Paris"
+            }
+        ]
     },
     {
         "name": "Charles d'Avernas",
@@ -1006,5 +766,109 @@
             "conference-website"
         ],
         "githubID": 90895835
+    },
+    {
+        "name": "Daniel Kocot",
+        "img": "https://avatars.githubusercontent.com/u/466609?v=4",
+        "bio": "Daniel has been part of the codecentric team since October 2016. Since the beginning of 2022 he works as Senior Solution Architect at the Dortmund branch. Starting as a consultant with a focus on application lifecycle management, his focus shifted more and more towards APIs. In addition to numerous customer projects and his involvement in the open source world around APIs, our Head of API Experience & Operations is also a frequent speaker at conferences.",
+        "title": "Senior Solution Architect / Head of API Experience and Operations",
+        "github": "danielkocot",
+        "githubID": 466609,
+        "slack": "U029F3XUYM8",
+        "twitter": "dk_1977",
+        "linkedin": "danielkocot",
+        "company": "codecentric AG",
+        "country": "\ud83c\udde9\ud83c\uddea",
+        "isTscMember": true,
+        "contributions": [
+            {
+                "type": "article",
+                "title": "AsyncAPI - Documentation of event and message-driven architectures",
+                "date": {
+                    "year": 2021,
+                    "month": "September"
+                },
+                "link": "https://blog.codecentric.de/en/2021/09/asyncapi-documentation-event-message-driven-architectures/?hmsr=joyk.com&utm_source=joyk.com&utm_medium=referral"
+            },
+            {
+                "type": "article",
+                "title": "AsyncAPI specification updates",
+                "date": {
+                    "year": 2022,
+                    "month": "February"
+                },
+                "link": "https://blog.codecentric.de/en/2022/02/asyncapi-version-2-3-0-specification-updates/"
+            },
+            {
+                "type": "presentation",
+                "title": "AsyncAPI 101",
+                "date": {
+                    "year": 2022,
+                    "month": "May"
+                },
+                "link": "https://www.buildingiot.de/veranstaltung-13856-0-asyncapi-101.html"
+            },
+            {
+                "type": "presentation",
+                "title": "Adopting AsyncAPI in Enterprisey Contexts, AsyncAPI Conference",
+                "date": {
+                    "year": 2022,
+                    "month": "November"
+                },
+                "link": "https://www.youtube.com/watch?v=_wTcV63jrnU"
+            }
+        ]
+    },
+    {
+        "name": "Naresh Jain",
+        "github": "nashjain",
+        "githubID": 38799,
+        "slack": "U07QPEBAC9Y",
+        "twitter": "nashjain",
+        "linkedin": "http://linkedin.com/in/nareshjain/",
+        "country": "\ud83c\uddee\ud83c\uddf3",
+        "isTscMember": true,
+        "bio": "Naresh is an internationally recognised Technology & Product Development Expert. Over the last 25 years, he has played a key role in streamlining the product engineering culture at many unicorns and fortune 500 companies. Naresh is the Founder, CEO of several companies - Xnsio, ConfEngine and Specmatic. Naresh is also the local organiser of API Days India. In 2004, Naresh started the Agile movement in India. More details: https://nareshjain.com",
+        "company": "Specmatic, Xnsio, ConfEngine",
+        "title": "Founder, CEO at Specmatic, Xnsio and ConfEngine",
+        "img": "https://avatars.githubusercontent.com/u/38799?v=4",
+        "contributions": [
+            {
+                "type": "talk",
+                "title": "Multi-Protocol APIs: Designing a Unified Interface for EDA",
+                "date": {
+                    "year": 2025,
+                    "month": "April"
+                },
+                "link": "https://www.youtube.com/watch?v=mQVo498NtOI"
+            },
+            {
+                "type": "talk",
+                "title": "TMForum's AsyncAPIs For a New Era of Event-Driven Architecture",
+                "date": {
+                    "year": 2024,
+                    "month": "December"
+                },
+                "link": "https://www.youtube.com/watch?v=L2W1058nPyU"
+            },
+            {
+                "type": "talk",
+                "title": "Project API Forge: Streamlining Dev-First API Lifecycle Management",
+                "date": {
+                    "year": 2024,
+                    "month": "December"
+                },
+                "link": "https://www.youtube.com/watch?v=AfopdGddnLc"
+            },
+            {
+                "type": "talk",
+                "title": "10x DevEx: Shift-Left API Governance = CycleTime/2",
+                "date": {
+                    "year": 2024,
+                    "month": "October"
+                },
+                "link": "https://www.youtube.com/watch?v=I5eplxVQrhI"
+            }
+        ]
     }
 ]
