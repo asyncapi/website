@@ -33,7 +33,7 @@ jobs:
         id: should_run
         name: Should Run
         run: echo "shouldrun=true" >> $GITHUB_OUTPUT
-        
+
       - if: steps.should_run.outputs.shouldrun == 'true'
         uses: actions/checkout@v4
 
@@ -53,9 +53,15 @@ jobs:
           urls: |
             https://deploy-preview-${{ github.event.pull_request.number }}--asyncapi-website.netlify.app/
           configPath: ./.github/workflows/lighthouserc.json
-          uploadArtifacts: true
-          artifactName: lighthouse_results  # Use only valid characters
+          uploadArtifacts: false   # disable built-in upload
           temporaryPublicStorage: false
+
+      - if: steps.should_run.outputs.shouldrun == 'true'
+        name: Upload Lighthouse Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse_results
+          path: .lighthouseci
 
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Lighthouse Score Report
@@ -86,7 +92,7 @@ jobs:
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: LightHouse Statistic Comment
         id: lighthouse_statistic_comment
-        uses: marocchino/sticky-pull-request-comment@efaaab3fd41a9c3de579aba759d2552635e590fd # version 2.8 https://github.com/marocchino/sticky-pull-request-comment/releases/tag/v2.8.0
+        uses: marocchino/sticky-pull-request-comment@efaaab3fd41a9c3de579aba759d2552635e590fd
         with:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           number: ${{ github.event.pull_request.number }}
