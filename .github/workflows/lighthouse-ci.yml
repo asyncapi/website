@@ -48,6 +48,14 @@ jobs:
           uploadArtifacts: false   # disable built-in upload
           temporaryPublicStorage: false
 
+
+      - if: steps.should_run.outputs.shouldrun == 'true'
+        name: Debug Output Paths
+        run: |
+          echo "Current Directory: $(pwd)"
+          echo "List of Files:"
+          ls -R
+
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Upload Lighthouse Artifacts
         uses: actions/upload-artifact@v4
