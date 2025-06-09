@@ -3,7 +3,7 @@ name: Lighthouse CI
 on:
   pull_request_target:
     branches:
-      - master
+      - test_lighthouse
     types: [opened, reopened, synchronize, ready_for_review]
 
 jobs:
