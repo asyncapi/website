@@ -35,7 +35,7 @@ jobs:
         run: echo "shouldrun=true" >> $GITHUB_OUTPUT
         
       - if: steps.should_run.outputs.shouldrun == 'true'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Await Netlify Preview
