@@ -145,7 +145,8 @@ export default function EventIndex() {
             <Meeting
               name='Ad Hoc Meeting'
               bg='bg-gray-100'
-              purpose="Do you want to discuss something with the community and our other meeting formats don't apply? Use this meeting to schedule ad hoc topics with the community."
+              purpose="Do you want to discuss something with the community and our other meeting formats don't apply?
+              Use this meeting to schedule ad hoc topics with the community."
               host='Any of the hosts'
               youtube='https://www.youtube.com/asyncapi'
             />

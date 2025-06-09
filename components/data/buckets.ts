@@ -1,3 +1,5 @@
+import type React from 'react';
+
 import IconExplorer from '../icons/Explorer';
 import IconGettingStarted from '../icons/GettingStarted';
 import IconGuide from '../icons/Guide';
@@ -15,7 +17,7 @@ export interface Bucket {
   className: string;
   borderClassName: string;
   href: string;
-  icon: React.ComponentType<any>;
+  icon: React.ComponentType<{ className?: string }>;
 }
 
 export const buckets: Bucket[] = [

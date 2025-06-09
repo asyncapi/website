@@ -4,16 +4,19 @@ import dotenv from 'dotenv';
 
 import type { ToolsData } from '@/types/scripts/tools';
 
-import { pause } from '../utils';
-import { logger } from '../utils/logger';
+import { logger } from '../helpers/logger';
+import { pause } from '../helpers/utils';
 
 dotenv.config();
 
 /**
- * Fetches tool data from the GitHub API.
+ * Retrieves tool data by searching for files named ".asyncapi-tool" using the GitHub Code Search API.
  *
- * @returns {Promise<ToolsData>} The data from the GitHub API.
- * @throws {Error} If there is an error fetching the data.
+ * This function requires the GITHUB_TOKEN environment variable for authorization. It retrieves data in pages (up to 50 items per page)
+ * and pauses 1 second between requests to respect GitHub's rate limits. All pages are aggregated into a single result before being returned.
+ *
+ * @returns A promise that resolves to the aggregated ToolsData from GitHub.
+ * @throws {Error} When the GITHUB_TOKEN environment variable is missing or an error occurs during the fetching process.
  */
 export async function getData(): Promise<ToolsData> {
   // eslint-disable-next-line no-useless-catch
@@ -63,7 +66,7 @@ export async function getData(): Promise<ToolsData> {
 
     result.data.items = [...allItems];
 
-    return result.data;
+    return result.data.items;
   } catch (err) {
     throw err;
   }
