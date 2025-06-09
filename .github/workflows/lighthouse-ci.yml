@@ -61,7 +61,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: lighthouse_results
-          path: .lighthouseci
+          path: asyncapi_website/.lighthouseci
 
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Lighthouse Score Report
