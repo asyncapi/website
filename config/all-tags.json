@@ -178,12 +178,12 @@
       "borderColor": "border-[#B9012b]"
     },
     {
-      "name": "TypeScript",
+      "name": "Socket.IO",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "Socket.IO",
+      "name": "TypeScript",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
@@ -258,27 +258,32 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
+      "name": "JavaScript",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
       "name": "VSCode",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
     {
       "name": "VSCode",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "SmartPaste",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "SmartPaste",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
     {
       "name": "JetBrains",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "SmartPaste",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "SmartPaste",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
@@ -293,7 +298,7 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "Java",
+      "name": "HTML",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },

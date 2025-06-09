@@ -16,7 +16,7 @@ import Paragraph from '../../components/typography/Paragraph';
 /**
  * @description Render the buttons for the Generator page.
  */
-function renderButtons(): JSX.Element {
+function renderButtons(): React.JSX.Element {
   return (
     <div className='mt-8 flex flex-wrap gap-4'>
       {/* <Button
