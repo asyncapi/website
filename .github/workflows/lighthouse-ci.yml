@@ -33,36 +33,24 @@ jobs:
         id: should_run
         name: Should Run
         run: echo "shouldrun=true" >> $GITHUB_OUTPUT
-
+        
       - if: steps.should_run.outputs.shouldrun == 'true'
         uses: actions/checkout@v4
+
+
 
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Run Lighthouse Audit
         id: lighthouse_audit
-        uses: treosh/lighthouse-ci-action@2f8dda6cf4de7d73b29853c3f29e73a01e297bd8
+        uses: treosh/lighthouse-ci-action@03becbfc543944dd6e7534f7ff768abb8a296826 #version 10.1 https://github.com/treosh/lighthouse-ci-action/releases/tag/10.1.0
         with:
           urls: |
             https://deploy-preview-4126--asyncapi-website.netlify.app/
           configPath: ./.github/workflows/lighthouserc.json
-          uploadArtifacts: false   # disable built-in upload
-          temporaryPublicStorage: false
-
-
-      - if: steps.should_run.outputs.shouldrun == 'true'
-        name: Debug Output Paths
-        run: |
-          echo "Current Directory: $(pwd)"
-          echo "List of Files:"
-          ls -R
-
-      - if: steps.should_run.outputs.shouldrun == 'true'
-        name: Upload Lighthouse Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: lighthouse_results
-          path: '**/.lighthouseci'
-
+          uploadArtifacts: false
+          temporaryPublicStorage: true
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number}}
 
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Lighthouse Score Report
@@ -71,38 +59,31 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const fs = require('fs');
-            const path = '.lighthouseci/lhr-0.report.json';
-            if (!fs.existsSync(path)) {
-              return core.setOutput("comment", "❌ Lighthouse report not found.");
-            }
+            const result = ${{ steps.lighthouse_audit.outputs.manifest }}[0].summary
+            const links = ${{ steps.lighthouse_audit.outputs.links }}
+            const formatResult = (res) => Math.round((res * 100))
+            Object.keys(result).forEach(key => result[key] = formatResult(result[key]))
+            const score = res => res >= 90 ? '🟢' : res >= 50 ? '🟠' : '🔴'
+            const comment = [
+                `⚡️ [Lighthouse report](${Object.values(links)[0]}) for the changes in this PR:`,
+                '| Category | Score |',
+                '| --- | --- |',
+                `| ${score(result.performance)} Performance | ${result.performance} |`,
+                `| ${score(result.accessibility)} Accessibility | ${result.accessibility} |`,
+                `| ${score(result['best-practices'])} Best practices | ${result['best-practices']} |`,
+                `| ${score(result.seo)} SEO | ${result.seo} |`,
+                `| ${score(result.pwa)} PWA | ${result.pwa} |`,
+                ' ',
+                `*Lighthouse ran on [${Object.keys(links)[0]}](${Object.keys(links)[0]})*`
+            ].join('\n')
+             core.setOutput("comment", comment);
 
-            const report = JSON.parse(fs.readFileSync(path, 'utf8'));
-            const categories = report.categories;
-
-            function score(val) {
-              return val >= 0.9 ? '🟢' : val >= 0.5 ? '🟠' : '🔴';
-            }
-
-            function format(val) {
-              return Math.round(val * 100);
-            }
-
-            const lines = [
-              `⚡️ **Lighthouse report** for the changes in this PR:`,
-              '| Category | Score |',
-              '| --- | --- |',
-              `| ${score(categories.performance.score)} Performance | ${format(categories.performance.score)} |`,
-              `| ${score(categories.accessibility.score)} Accessibility | ${format(categories.accessibility.score)} |`,
-              `| ${score(categories["best-practices"].score)} Best Practices | ${format(categories["best-practices"].score)} |`,
-              `| ${score(categories.seo.score)} SEO | ${format(categories.seo.score)} |`
-            ];
-
-            if (categories.pwa) {
-              lines.push(`| ${score(categories.pwa.score)} PWA | ${format(categories.pwa.score)} |`);
-            }
-
-            lines.push('', '*Generated from Lighthouse JSON audit*');
-
-            const comment = lines.join('\n');
-            core.setOutput("comment", comment);
+      - if: steps.should_run.outputs.shouldrun == 'true'
+        name: LightHouse Statistic Comment
+        id: lighthouse_statistic_comment
+        uses: marocchino/sticky-pull-request-comment@efaaab3fd41a9c3de579aba759d2552635e590fd # version 2.8 https://github.com/marocchino/sticky-pull-request-comment/releases/tag/v2.8.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          number: ${{ github.event.pull_request.number }}
+          header: lighthouse
+          message: ${{ steps.lighthouse_score_report.outputs.comment }}
