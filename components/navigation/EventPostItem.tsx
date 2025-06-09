@@ -24,7 +24,7 @@ interface EventPostItemProps {
  * @param {string} [props.className] - The optional CSS class name.
  *
  */
-function EventPostItem({ post, className = '', id }: EventPostItemProps): JSX.Element {
+function EventPostItem({ post, className = '', id }: EventPostItemProps): React.JSX.Element {
   const localTime = moment().format('YYYY-MM-DD'); // store localTime
   const currentDate = `${localTime}T00:00:00.000Z`;
   const title = post.title || '';
