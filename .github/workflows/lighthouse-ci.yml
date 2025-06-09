@@ -39,10 +39,10 @@ jobs:
 
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Await Netlify Preview
-        uses: jakepartusch/wait-for-netlify-action@f1e137043864b9ab9034ae3a5adc1c108e3f1a48 #version 1.4 https://github.com/JakePartusch/wait-for-netlify-action/releases/tag/v1.4
+        uses: jakepartusch/wait-for-netlify-action@v1.4
         id: netlify
         with:
-          site_name: asyncapi-website
+          site_name: "deploy-preview-${{ github.event.pull_request.number }}--asyncapi-website"
           max_timeout: 600
 
       - if: steps.should_run.outputs.shouldrun == 'true'
