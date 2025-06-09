@@ -42,7 +42,7 @@ jobs:
         uses: jakepartusch/wait-for-netlify-action@v1.4
         id: netlify
         with:
-          site_name: "deploy-preview-${{ github.event.pull_request.number }}--asyncapi-website"
+          site_name: "asyncapi-website"
           max_timeout: 600
 
       - if: steps.should_run.outputs.shouldrun == 'true'
@@ -92,3 +92,4 @@ jobs:
           number: ${{ github.event.pull_request.number }}
           header: lighthouse
           message: ${{ steps.lighthouse_score_report.outputs.comment }}
+          
