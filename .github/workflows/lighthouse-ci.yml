@@ -55,7 +55,7 @@ jobs:
           configPath: ./.github/workflows/lighthouserc.json
           uploadArtifacts: true
           artifactName: lighthouse_results  # Use only valid characters
-          temporaryPublicStorage: true
+          temporaryPublicStorage: false
 
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Lighthouse Score Report
