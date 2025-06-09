@@ -38,20 +38,12 @@ jobs:
         uses: actions/checkout@v4
 
       - if: steps.should_run.outputs.shouldrun == 'true'
-        name: Await Netlify Preview
-        uses: jakepartusch/wait-for-netlify-action@v1.4
-        id: netlify
-        with:
-          site_name: "deploy-preview-${{ github.event.pull_request.number }}--asyncapi-website"
-          max_timeout: 600
-
-      - if: steps.should_run.outputs.shouldrun == 'true'
         name: Run Lighthouse Audit
         id: lighthouse_audit
         uses: treosh/lighthouse-ci-action@2f8dda6cf4de7d73b29853c3f29e73a01e297bd8
         with:
           urls: |
-            https://deploy-preview-${{ github.event.pull_request.number }}--asyncapi-website.netlify.app/
+            https://deploy-preview-4126--asyncapi-website.netlify.app/
           configPath: ./.github/workflows/lighthouserc.json
           uploadArtifacts: false   # disable built-in upload
           temporaryPublicStorage: false
