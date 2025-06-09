@@ -33,30 +33,35 @@ jobs:
         id: should_run
         name: Should Run
         run: echo "shouldrun=true" >> $GITHUB_OUTPUT
-        
+
       - if: steps.should_run.outputs.shouldrun == 'true'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Await Netlify Preview
-        uses: jakepartusch/wait-for-netlify-action@f1e137043864b9ab9034ae3a5adc1c108e3f1a48 #version 1.4 https://github.com/JakePartusch/wait-for-netlify-action/releases/tag/v1.4
+        uses: jakepartusch/wait-for-netlify-action@v1.4
         id: netlify
         with:
-          site_name: asyncapi-website
+          site_name: "deploy-preview-${{ github.event.pull_request.number }}--asyncapi-website"
           max_timeout: 600
 
       - if: steps.should_run.outputs.shouldrun == 'true'
-        name: Lighthouse Audit
+        name: Run Lighthouse Audit
         id: lighthouse_audit
-        uses: treosh/lighthouse-ci-action@03becbfc543944dd6e7534f7ff768abb8a296826 #version 10.1 https://github.com/treosh/lighthouse-ci-action/releases/tag/10.1.0
+        uses: treosh/lighthouse-ci-action@2f8dda6cf4de7d73b29853c3f29e73a01e297bd8
         with:
           urls: |
-            https://deploy-preview-$PR_NUMBER--asyncapi-website.netlify.app/
+            https://deploy-preview-${{ github.event.pull_request.number }}--asyncapi-website.netlify.app/
           configPath: ./.github/workflows/lighthouserc.json
-          uploadArtifacts: true
-          temporaryPublicStorage: true
-        env:
-          PR_NUMBER: ${{ github.event.pull_request.number}}
+          uploadArtifacts: false   # disable built-in upload
+          temporaryPublicStorage: false
+
+      - if: steps.should_run.outputs.shouldrun == 'true'
+        name: Upload Lighthouse Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse_results
+          path: .lighthouseci
 
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Lighthouse Score Report
@@ -87,7 +92,7 @@ jobs:
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: LightHouse Statistic Comment
         id: lighthouse_statistic_comment
-        uses: marocchino/sticky-pull-request-comment@efaaab3fd41a9c3de579aba759d2552635e590fd # version 2.8 https://github.com/marocchino/sticky-pull-request-comment/releases/tag/v2.8.0
+        uses: marocchino/sticky-pull-request-comment@efaaab3fd41a9c3de579aba759d2552635e590fd
         with:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           number: ${{ github.event.pull_request.number }}
