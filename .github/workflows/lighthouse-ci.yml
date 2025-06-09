@@ -48,7 +48,7 @@ jobs:
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Run Lighthouse Audit
         id: lighthouse
-        uses: foo-software/lighthouse-check-action@master
+        uses: foo-software/lighthouse-check-action@a80267da2e0244b8a2e457a8575fc47590615852
         with:
           outputDirectory: ./lighthouse-results
           urls: |
