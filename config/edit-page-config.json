@@ -26,5 +26,41 @@
   {
     "value": "community/styleguide",
     "href": "https://github.com/asyncapi/community/tree/master/docs/styleguide"
+  },
+  {
+    "value": "community/000-onboarding",
+    "href": "https://github.com/asyncapi/community/tree/master/docs/000-onboarding"
+  },
+  {
+    "value": "community/010-contribution-guidelines",
+    "href": "https://github.com/asyncapi/community/tree/master/docs/010-contribution-guidelines"
+  },
+  {
+    "value": "community/011-styleguide",
+    "href": "https://github.com/asyncapi/community/tree/master/docs/011-styleguide"
+  },
+  {
+    "value": "community/020-governance-and-policies",
+    "href": "https://github.com/asyncapi/community/tree/master/docs/020-governance-and-policies"
+  },
+  {
+    "value": "community/030-project-vision-strategy-goals",
+    "href": "https://github.com/asyncapi/community/tree/master/docs/030-project-vision-strategy-goals"
+  },
+  {
+    "value": "community/040-guides",
+    "href": "https://github.com/asyncapi/community/tree/master/docs/040-guides"
+  },
+  {
+    "value": "community/050-mentorship-program",
+    "href": "https://github.com/asyncapi/community/tree/master/docs/050-mentorship-program"
+  },
+  {
+    "value": "community/060-meetings-and-communication",
+    "href": "https://github.com/asyncapi/community/tree/master/docs/060-meetings-and-communication"
+  },
+  {
+    "value": "community/070-marketing",
+    "href": "https://github.com/asyncapi/community/tree/master/docs/070-marketing"
   }
 ]
