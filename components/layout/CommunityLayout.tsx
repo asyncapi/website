@@ -1,5 +1,4 @@
 import { sortBy } from 'lodash';
-import Link from 'next/link';
 import React from 'react';
 
 import type { Ambassador, Tsc } from '@/types/pages/community/Community';
@@ -220,9 +219,12 @@ function UserInfo({ user }: TSCUser) {
         </div>
       ) : (
         // fallback to ambassador page
-        <Link className='flex' href={`/community/ambassadors/${githubUsername}`}>
+        <TextLink
+          href={`/community/ambassadors/${githubUsername}`}
+          className='flex font-normal text-base text-blue-500 no-underline hover:text-sky-400'
+        >
           AsyncAPI Ambassador
-        </Link>
+        </TextLink>
       )}
     </li>
   );
