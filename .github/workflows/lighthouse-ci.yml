@@ -59,6 +59,13 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number}}
 
       - if: steps.should_run.outputs.shouldrun == 'true'
+        name: Upload Lighthouse Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: .lighthouseci
+
+      - if: steps.should_run.outputs.shouldrun == 'true'
         name: Lighthouse Score Report
         id: lighthouse_score_report
         uses: actions/github-script@v6
