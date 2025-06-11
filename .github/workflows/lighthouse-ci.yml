@@ -64,6 +64,7 @@ jobs:
         with:
           name: lighthouse-report
           path: .lighthouseci
+          include-hidden-files: true
 
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Lighthouse Score Report
