@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/JLNMJ5A8sns/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting, Tuesday June 3rd 2025",
+    "description": "https://github.com/asyncapi/community/issues/1919.",
+    "videoId": "JLNMJ5A8sns"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/mhYxES2b13U/hqdefault.jpg",
     "title": "AsyncAPI Community WG Meeting, Tuesday June 3rd 2025",
     "description": "https://github.com/asyncapi/community/issues/1919.",
@@ -22,11 +28,5 @@
     "title": "AsyncAPI Community WG Meeting, May 20th 2025",
     "description": "https://github.com/asyncapi/community/issues/1897.",
     "videoId": "QqWUcSodtYI"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/LyTyenDcIi4/hqdefault.jpg",
-    "title": "AsyncAPI Design  WG Meeting, Thursday May 15th 2025",
-    "description": "https://github.com/asyncapi/community/issues/1905.",
-    "videoId": "LyTyenDcIi4"
   }
 ]
