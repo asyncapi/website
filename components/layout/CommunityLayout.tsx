@@ -1,3 +1,4 @@
+import { UserGroupIcon } from '@heroicons/react/outline';
 import { sortBy } from 'lodash';
 import React from 'react';
 
@@ -16,8 +17,14 @@ interface SocialLinkProps {
   social: string;
 }
 
+export enum Membership {
+  TSC = 'TSC',
+  BOARD = 'Board'
+}
+
 interface TSCUser {
   user: Tsc | Ambassador;
+  membership?: Membership;
 }
 
 /**
@@ -174,8 +181,9 @@ function UserWorkStatus({ user }: TSCUser) {
  *
  * @param {TSCUser} props - The props for the user info component.
  * @param {Tsc} props.user - The user object having Board (TSC or Ambassador) data.
+ * @param {Membership} props.membership - determines the community members belong to board or TSC (ambassadors & maintainers).
  */
-function UserInfo({ user }: TSCUser) {
+function UserInfo({ user, membership }: TSCUser) {
   const githubUsername = user.github.split('/').pop();
 
   return (
@@ -226,6 +234,17 @@ function UserInfo({ user }: TSCUser) {
           AsyncAPI Ambassador
         </TextLink>
       )}
+      <div className='flex justify-end mt-4'>
+        {membership === Membership.BOARD && user.isBoardChair && (
+          <a
+            data-testid='Chairperson'
+            className='inline-flex items-center rounded-full bg-amber-600 px-3 py-0.5 text-xs font-medium leading-5 text-amber-100'
+          >
+            <UserGroupIcon className='w-[20px] pr-1' />
+            Chairperson
+          </a>
+        )}
+      </div>
     </li>
   );
 }
@@ -255,11 +274,6 @@ function QuestionCard() {
       </div>
     </li>
   );
-}
-
-export enum Membership {
-  TSC = 'TSC',
-  BOARD = 'Board'
 }
 
 interface ICommunityLayout {
@@ -307,7 +321,7 @@ export default function CommunityLayout({ children, membership }: ICommunityLayo
 
           <ul role='list' className='space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8'>
             {tscBoardMembers.map((user) => (
-              <UserInfo key={user.github} user={user} />
+              <UserInfo key={user.github} user={user} membership={membership} />
             ))}
             <QuestionCard />
           </ul>
