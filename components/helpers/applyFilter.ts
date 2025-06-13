@@ -123,7 +123,7 @@ export const applyFilterList = (
 };
 
 /**
- * @description Apply filters to data and trigger the filter action.
+ * @description Apply filters to data and trigger the filter action with support for multiple values.
  * @param {DataObject[]} inputData - Array of data objects to filter.
  * @param {(result: DataObject[], query: Filter) => void} onFilter - Function to apply the filter action.
  * @param {Filter} query - Filter criteria.
@@ -137,19 +137,27 @@ export const onFilterApply = (
 
   if (query && Object.keys(query).length >= 1) {
     Object.keys(query).forEach((property) => {
-      const res = result.filter((e) => {
-        if (!query[property] || e[property] === query[property]) {
-          return e[property];
-        }
-        if (Array.isArray(e[property])) {
-          return (
-            e[property].some((data: any) => data.name === query[property]) ||
-            e[property].includes(query[property]) ||
-            false
-          );
-        }
+      // Split comma-separated values to handle multiple selections
+      const filterValues = query[property] ? query[property].split(',').filter(Boolean) : [];
 
-        return false; // Fixing missing return value issue
+      if (filterValues.length === 0) return;
+
+      const res = result.filter((e) => {
+        // Check if any of the selected filter values match the item
+        return filterValues.some((filterValue) => {
+          if (e[property] === filterValue) {
+            return true;
+          }
+
+          if (Array.isArray(e[property])) {
+            return (
+              e[property].some((data: any) => data.name === filterValue) ||
+              e[property].includes(filterValue)
+            );
+          }
+
+          return false;
+        });
       });
 
       result = res;
