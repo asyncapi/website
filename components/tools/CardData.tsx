@@ -51,7 +51,8 @@ export const CardData = ({
   };
   const domNode = useRef<HTMLSpanElement>(null);
 
-  // Decide whether to show full description or not in the card based on the number of lines occupied by the description.
+  // Decide whether to show full description or not in the card based on the
+  // number of lines occupied by the description.
   useEffect(() => {
     const divHeight = domNode.current?.offsetHeight || 0;
     const numberOfLines = divHeight / 20;
