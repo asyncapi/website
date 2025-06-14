@@ -54,7 +54,7 @@ The candidates with the most votes win.
 
 <Profiles profiles={[
 {
-    name: "Entitled to candidacy as a maintainer]",
+    name: "Entitled to candidacy as a maintainer",
     avatar: '/img/posts/first-governance-elections/fran.webp',
     link: 'https://github.com/asyncapi/community/blob/master/TSC_BOARD_MEMBERS.yaml#L90'
 }
@@ -136,13 +136,13 @@ AsyncAPI Impact: Joined in day zero and have stayed since then.
   https://thulieblack.github.io
   ```
 
-## Votes Counting and Timeline
+## Vote Counting and Timeline
 
 The first elections will be managed by the Executive Director (ED).
 
 * Emails containing votes will be labeled `gbvotes2025`. This is so new GB members can easily access and verify the vote counts later.
 * TSC members who did not vote will be mentioned in the voting announcement. This will make it easy to verify later that no votes were removed by the ED.
-* Only the winners and their vote counts will be announced publicly.
+* Only the winners and their votes will be announced publicly.
 * Candidates who were not elected will receive information about their individual vote count.
 * Every TSC member who votes will receive an email confirming that their vote was received.
 * The deadline to send your vote is **July 6th at 2 PM UTC**.
