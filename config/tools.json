@@ -10,8 +10,23 @@
           "repoUrl": ""
         },
         "filters": {
-          "language": [],
-          "technology": [],
+          "language": [{
+            "name": "JavaScript",
+            "color": "bg-[#F2F1C7]",
+            "borderColor": "border-[#BFBE86]"
+          }],
+          "technology": [
+            {
+              "name": "Node.js",
+              "color": "bg-[#BDFF67]",
+              "borderColor": "border-[#84CE24]"
+            },
+            {
+              "name": "TypeScript",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
           "categories": [
             "api",
             "directory"
@@ -984,8 +999,25 @@
           "repoUrl": ""
         },
         "filters": {
-          "language": [],
-          "technology": [],
+          "language": [
+            {
+              "name": "JavaScript",
+              "color": "bg-[#F2F1C7]",
+              "borderColor": "border-[#BFBE86]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "Node.js",
+              "color": "bg-[#BDFF67]",
+              "borderColor": "border-[#84CE24]"
+            },
+            {
+              "name": "TypeScript",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
           "categories": [
             "api",
             "directory"
