@@ -9,8 +9,9 @@ on:
 jobs:
   slack-notifications:
     if: >
+      github.repository == 'asyncapi/website' &&
       github.event.workflow_run.conclusion == 'failure' &&
-      github.repository == 'asyncapi/website'
+      github.event.workflow_run.name != 'Slack Notifications'
     runs-on: ubuntu-latest
     steps:
       - name: Send Slack notification
