@@ -7,7 +7,7 @@
         "description": "Explore APIs and companies with public AsyncAPI specifications.",
         "links": {
           "websiteUrl": "https://apitracker.io/specifications/asyncapi",
-          "repoUrl": ""
+          "repoUrl": "https://github.com/apideck-io"
         },
         "filters": {
           "language": [{
@@ -996,7 +996,7 @@
         "description": "Explore APIs and companies with public AsyncAPI specifications.",
         "links": {
           "websiteUrl": "https://apitracker.io/specifications/asyncapi",
-          "repoUrl": ""
+          "repoUrl": "https://github.com/apideck-io"
         },
         "filters": {
           "language": [
