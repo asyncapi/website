@@ -369,7 +369,7 @@
         },
         "protocolVersion": {
           "type": "string",
-          "description": "An optional string describing the server. CommonMark syntax MAY be used for rich text representation."
+          "description": "The version of the underlying messaging protocol used (e.g., MQTT 5.0, AMQP 0-9-1, Kafka 2.8). This is not the version of your API or service — for that, use the info.version field."
         },
         "variables": {
           "$ref": "#/definitions/serverVariables"
