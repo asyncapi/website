@@ -35,7 +35,7 @@ As described in the [Governance document](https://github.com/asyncapi/community/
 * Your vote should be a list of the candidates' names you wish to appoint as GB members.
 * Since we are initially selecting three GB members, you should send **three names** of candidates.
 
-Here's an example of a ballot (it's a bulleted list, and the order does not matter):
+Here's an example of a ballot (it should be a bulleted list, and the order does not matter):
 
 ```md
 I vote for:
