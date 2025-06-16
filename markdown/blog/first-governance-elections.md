@@ -140,7 +140,7 @@ AsyncAPI Impact: Joined in day zero and have stayed since then.
 
 The first elections will be managed by the Executive Director (ED).
 
-* Emails containing votes will be labeled `gbvotes2025`. This is so new GB members can easily access and verify the vote counts later.
+* Emails containing votes will be labeled `gbvotes2025`, so that the new GB members can easily access and verify the vote counts later.
 * TSC members who did not vote will be mentioned in the voting announcement. This will make it easy to verify later that no votes were removed by the ED.
 * Only the winners and their votes will be announced publicly.
 * Candidates who were not elected will receive information about their individual vote count.
