@@ -436,7 +436,6 @@
         "availableForHire": false,
         "isTscMember": false,
         "repos": [
-            "spec-json-schemas",
             "parser-go",
             "parser-js",
             "converter-go",
@@ -635,8 +634,7 @@
         "isTscMember": true,
         "repos": [
             "spec-json-schemas",
-            "bindings",
-            "saunter"
+            "bindings"
         ],
         "githubID": 5294032
     },
