@@ -64,7 +64,7 @@ export default function Index() {
             <Button
               className='mt-10 block text-center focus:outline-none md:inline-block'
               text='Become an AsyncAPI Ambassador'
-              href='https://github.com/asyncapi/community/blob/master/AMBASSADOR_ORGANIZATION.md#are-you-interested-in-becoming-an-official-asyncapi-ambassador'
+              href='https://github.com/asyncapi/community/blob/master/docs/050-mentorship-program/ambassador-program/AMBASSADOR_PROGRAM.md'
               target='_blank'
             />
           </div>
@@ -138,7 +138,7 @@ export default function Index() {
                   </div>
                 </Link>
               </div>
-              <div>
+              <div className='flex h-full flex-col justify-between'>
                 <div className='p-2 text-sm'>{ambassador.bio}</div>
                 <div className='flex border-t p-2' data-testid='Ambassadors-members-socials'>
                   <a

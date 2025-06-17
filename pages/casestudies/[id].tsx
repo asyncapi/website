@@ -41,7 +41,7 @@ const renderContent = (
   content: any[],
   allComponents: Record<string, React.ComponentType<any>>,
   level: number
-): JSX.Element[] => {
+): React.JSX.Element[] => {
   let typeStyle;
 
   if (level === 0) {
@@ -159,7 +159,7 @@ const Index: React.FC<IndexProps> = ({
   fullExample,
   additionalResources
 }) => {
-  const image = '/img/social/website-card.png';
+  const image = '/img/social/website-card.jpg';
   const allComponents = mdxComponents;
   const contacts = casestudy.company.contact;
 
@@ -190,7 +190,7 @@ const Index: React.FC<IndexProps> = ({
       title='AsyncAPI Case Studies'
       description='The home for all case studies related to AsyncAPI.'
       image={image}
-      hideBanner={true}
+      hideBanner={false}
       wide
     >
       <div className='max-w-screen lg:flex lg:flex-row-reverse lg:justify-between'>

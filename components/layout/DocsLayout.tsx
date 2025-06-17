@@ -12,6 +12,7 @@ import DocsContext from '../../context/DocsContext';
 import { getAllPosts } from '../../utils/api';
 import Button from '../buttons/Button';
 import DocsButton from '../buttons/DocsButton';
+import AnnouncementHero from '../campaigns/AnnouncementHero';
 import Feedback from '../Feedback';
 import Head from '../Head';
 import ArrowRight from '../icons/ArrowRight';
@@ -132,14 +133,13 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                     className='flex px-4 text-gray-500 hover:text-gray-900 focus:outline-none sm:px-6 md:px-8'
                     aria-label='Open sidebar'
                   >
-                    <span>{post.sectionTitle}</span>
+                    <span>{post.title}</span>
                     <ArrowRight className='size-5 rotate-90 pl-1' />
                   </button>
                 </div>
               )}
 
-              {/* @TODO Will uncomment the component once it is in use */}
-              {/* <AnnouncementHero className='ml-6' hideVideo={true} /> */}
+              <AnnouncementHero className='ml-6' hideVideo={true} />
 
               <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
                 <TOC
@@ -158,8 +158,9 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                     </p>
                   </div>
                   {post.releaseNoteLink && (
-                    // show only when it is related to specification (/docs/reference/specification) AND is not a pre-release
-                    // for example, if the post's title is "3.0.0 (Pre-release)", which will not have RN, so do not render this section.
+                    // show only when it is related to specification (/docs/reference/specification)
+                    // AND is not a pre-release. For example, if the post's title is "3.0.0 (Pre-release)",
+                    // which will not have RN, so do not render this section.
                     <div className='mt-5 w-full rounded-lg bg-secondary-100 px-2 py-3 text-center'>
                       <div>
                         <span className='font-sans text-sm text-gray-800 antialiased'>
