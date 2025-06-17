@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 import { combineTools } from './tools/combine-tools';
 import { getData } from './tools/extract-tools-github';
 import { convertTools } from './tools/tools-object';
-import { logger } from './utils/logger';
+import { logger } from './helpers/logger';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
