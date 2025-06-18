@@ -2,7 +2,7 @@ import { buildTools } from "../scripts/build-tools";
 
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
-import { logger } from "../scripts/helpers/logger";
+import { logger } from "../scripts/utils/logger";
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);

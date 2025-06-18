@@ -1,14 +1,8 @@
 import fs from 'fs-extra';
-import { dirname, resolve } from 'path';
-import { fileURLToPath } from 'url';
 
 import { combineTools } from './tools/combine-tools';
 import { getData } from './tools/extract-tools-github';
 import { convertTools } from './tools/tools-object';
-import { logger } from './helpers/logger';
-
-const currentFilePath = fileURLToPath(import.meta.url);
-const currentDirPath = dirname(currentFilePath);
 
 /**
  * Builds the tools by combining automated and manual tools data, and writes the result to the specified paths.

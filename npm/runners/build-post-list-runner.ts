@@ -6,7 +6,6 @@ const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 const projectRoot = resolve(currentDirPath, '../../');
 
-
 export async function runBuildPostList() {
     const postDirectories = [
         [resolve(projectRoot, 'pages', 'blog'), '/blog'],

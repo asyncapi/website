@@ -1,14 +1,8 @@
 import { writeFileSync } from 'fs';
 import type { youtube_v3 } from 'googleapis';
 import fetch from 'node-fetch-2';
-import { dirname, resolve } from 'path';
 import process from 'process';
-import { fileURLToPath } from 'url';
-
-import { logger } from './helpers/logger';
-
-const currentFilePath = fileURLToPath(import.meta.url);
-const currentDirPath = dirname(currentFilePath);
+import { logger } from './utils/logger';
 
 // To load the environment variables from the .env file
 import dotenv from 'dotenv';

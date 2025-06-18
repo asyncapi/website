@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 
 import type { ToolsData } from '@/types/scripts/tools';
 
-import { logger } from '../helpers/logger';
+import { logger } from '../utils/logger';
 import { pause } from '../helpers/utils';
 
 dotenv.config();

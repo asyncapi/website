@@ -14,7 +14,7 @@ import type {
   PullRequestById
 } from '@/types/scripts/dashboard';
 
-import { logger } from '../helpers/logger';
+import { logger } from '../utils/logger';
 import { pause } from '../helpers/utils';
 import { Queries } from './issue-queries';
 
