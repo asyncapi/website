@@ -31,6 +31,8 @@ async function main() {
       if (result.status === 'rejected') {
         errorFaced = true;
         logger.error(`Error building ${buildTasks[index].name}:`, result.reason);
+      } else {
+        logger.info(`Successfully executed ${buildTasks[index].name}`);
       }
     });
 
@@ -42,7 +44,7 @@ async function main() {
     }
   } catch (error) {
     logger.error('Error executing build scripts:', error);
-    throw error;
+    throw new Error('Error executing build scripts', { cause: error });
   }
 }
 

@@ -10,6 +10,6 @@ export async function runBuildNewsroomVideos() {
         await buildNewsroomVideos(resolve(currentDirPath, '../../config', 'newsroom_videos.json'));
     }
     catch (error) {
-        throw new Error('Error building dashboard: ', error as Error);
+        throw new Error('Error building newsroom videos', { cause: error });
     }
 }

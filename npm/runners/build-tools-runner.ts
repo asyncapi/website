@@ -14,12 +14,10 @@ export async function runBuildTools() {
         const toolsPath = resolve(currentDirPath, '../../config', 'tools.json');
         const tagsPath = resolve(currentDirPath, '../../config', 'all-tags.json');
 
-        await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath).catch((err) => {
-            logger.error('Failed to build tools:', err);
-            process.exit(1);
-        });
+        await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
     } catch (error) {
-        throw new Error('Error building tools: ', error as Error);
+        logger.error('Failed to build tools:', error);
+        throw new Error('Error building tools', { cause: error });
     }
 }
 

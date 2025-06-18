@@ -4,22 +4,18 @@ import { fileURLToPath } from 'url';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
-const projectRoot = resolve(currentDirPath, '../../');
 
 export async function runBuildPostList() {
-    const postDirectories = [
-        [resolve(projectRoot, 'pages', 'blog'), '/blog'],
-        [resolve(projectRoot, 'pages', 'docs'), '/docs'],
-        [resolve(projectRoot, 'pages', 'about'), '/about']
-    ];
-
-    const basePath = resolve(projectRoot, 'pages');
-    const writeFilePath = resolve(projectRoot, 'config', 'posts.json');
-
     try {
+        const postDirectories = [
+            ['../../pages/blog', '/blog'],
+            ['../../pages/docs', '/docs'],
+            ['../../pages/about', '/about']
+        ];
+        const basePath = '../../pages';
+        const writeFilePath = resolve(currentDirPath, '../../config', 'posts.json');
         await buildPostList(postDirectories, basePath, writeFilePath);
     } catch (err) {
-        throw new Error('Error building post list: ', err as Error);
+        throw new Error('Error building post list', { cause: err });
     }
-
 }

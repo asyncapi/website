@@ -7,8 +7,8 @@ const currentDirPath = dirname(currentFilePath);
 
 export async function runBuildMeetings(){
     try{
-        buildMeetings(resolve(currentDirPath, '../config', 'meetings.json'));
+        await buildMeetings(resolve(currentDirPath, '../../config', 'meetings.json'));
     }catch(error){
-        throw new Error('Error building meetings: ', error as Error);
+        throw new Error('Error building meetings', { cause: error });
     }
 }

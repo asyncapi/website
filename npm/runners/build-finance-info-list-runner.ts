@@ -24,7 +24,7 @@ export async function runBuildFinanceInfoList() {
     }
     const latestYear = yearsList[0];
     try {
-        buildFinanceInfoList({
+        await buildFinanceInfoList({
             currentDir: '.',
             configDir: 'config',
             financeDir: 'finance',
@@ -32,6 +32,6 @@ export async function runBuildFinanceInfoList() {
             jsonDataDir: 'json-data'
         });
     } catch (error) {
-        throw new Error('Error building finance info list: ', error as Error);
+        throw new Error('Error building finance info list', { cause: error });
     }
 }

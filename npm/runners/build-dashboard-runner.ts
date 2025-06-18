@@ -11,6 +11,6 @@ export async function runBuildDashboard() {
         await start(resolve(currentDirPath, '..', '..', 'dashboard.json'));
     }
     catch (error) {
-        throw new Error('Error building dashboard: ', error as Error);
+        throw new Error('Error building dashboard', { cause: error });
     }
 }
