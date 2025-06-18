@@ -4,55 +4,38 @@ import { runBuildTools } from './runners/build-tools-runner';
 import { runCaseStudies } from './runners/case-studies-runner';
 import { runBuildNewsroomVideos } from './runners/build-newsroom-videos-runner';
 import { logger } from '../scripts/helpers/logger';
+
 async function main() {
+  let errorFaced: boolean = false;
 
-  let errorFaced: Boolean = false;
+  const buildTasks = [
+    { name: 'posts', task: runBuildPostList },
+    { name: 'dashboard', task: runBuildDashboard },
+    { name: 'tools', task: runBuildTools },
+    { name: 'caseStudies', task: runCaseStudies },
+    { name: 'newsroomVideos', task: runBuildNewsroomVideos }
+  ];
+
   try {
+    const results = await Promise.allSettled(
+      buildTasks.map(({ task }) => task())
+    );
 
-    try {
-      await runBuildPostList();
-    } catch (err) {
-      errorFaced = true;
-      logger.error('Error building posts: ', err as Error);
-    }
-
-    try {
-      await runBuildDashboard();
-    } catch (err) {
-      errorFaced = true;
-      logger.error('Error building dashboard: ', err as Error);
-    }
-
-    try {
-      await runBuildTools();
-    } catch (err) {
-      errorFaced = true;
-      logger.error('Error building tools: ', err as Error);
-    }
-
-    try {
-      await runCaseStudies();
-    } catch (err) {
-      errorFaced = true;
-      logger.error('Error building cases studies: ', err as Error);
-    }
-
-    try {
-      await runBuildNewsroomVideos();
-    } catch (err) {
-      errorFaced = true;
-      logger.error('Error building newsroom videos: ', err as Error);
-    }
+    results.forEach((result, index) => {
+      if (result.status === 'rejected') {
+        errorFaced = true;
+        logger.error(`Error building ${buildTasks[index].name}:`, result.reason);
+      }
+    });
 
     if (errorFaced) {
-      console.log("Some scripts faced error while running please check the console for more details")
-    }
-    else {
-      console.log('Successfully executed all build scripts');
+      logger.info('Some scripts faced error while running, please check the console for more details');
+    } else {
+      logger.info('Successfully executed all build scripts');
     }
   } catch (error) {
-    console.error('Error executing build scripts:', error);
-    throw new Error('Error executing build scripts: ', error as Error);
+    logger.error('Error executing build scripts:', error);
+    throw new Error('Error executing build scripts: ' + (error instanceof Error ? error.message : String(error)));
   }
 }
 

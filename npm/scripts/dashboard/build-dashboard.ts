@@ -314,10 +314,8 @@ export async function start(writePath: string): Promise<void> {
     ]);
 
     await writeToFile({ hotDiscussions, goodFirstIssues }, writePath);
-    console.log("build dashboard main script has been done successfully")
   } catch (e) {
     logger.error('There were some issues parsing data from github.');
-    logger.error(e);
     throw new Error('Error building dashboard: ',e as Error);
   }
 }
@@ -327,7 +325,6 @@ export async function start(writePath: string): Promise<void> {
 //   start(resolve(currentDirPath, '..', '..', 'dashboard.json'));
 // }
 
-// i will check if these exports are needed
 export {
   getDiscussionByID,
   getDiscussions,

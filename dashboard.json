@@ -1,17 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "PR_kwDOFLhIt86HHVY9",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore: introduce governance board",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/community/pull/1634",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 35.609649004908086
-    },
-    {
       "id": "PR_kwDODCuNRs6NwyqP",
       "isPR": true,
       "isAssigned": false,
@@ -20,7 +9,45 @@
       "resourcePath": "/asyncapi/bindings/pull/270",
       "repo": "asyncapi/bindings",
       "labels": [],
-      "score": 33.02507770616476
+      "score": 38.19422030365141
+    },
+    {
+      "id": "PR_kwDOFLhIt86VKWb7",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: initial start of the maintainership docs under the bounty program",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/pull/1894",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 34.46095064991105
+    },
+    {
+      "id": "PR_kwDOCHlHJM6VSWcm",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: update generator-template.md for AsyncAPI v3 parser usage",
+      "author": "Aditya08Vashisht",
+      "resourcePath": "/asyncapi/generator/pull/1551",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 23.548316277439216
+    },
+    {
+      "id": "I_kwDOBW5R_c6VPMfE",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Website Homepage Redesign",
+      "author": "Mayaleeeee",
+      "resourcePath": "/asyncapi/website/issues/3192",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "bounty",
+          "color": "0e8a16"
+        }
+      ],
+      "score": 21.25091956744515
     },
     {
       "id": "I_kwDOBW5R_c6pn_G2",
@@ -36,95 +63,18 @@
           "color": "F4D03F"
         }
       ],
-      "score": 20.38939580119737
+      "score": 20.67657038994663
     },
     {
-      "id": "PR_kwDOBW5R_c6N50TQ",
+      "id": "PR_kwDOFLhIt86PyFXg",
       "isPR": true,
       "isAssigned": false,
-      "title": "refactor: scripts code for better code quality ",
-      "author": "JeelRajodiya",
-      "resourcePath": "/asyncapi/website/pull/3851",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 20.102221212448114
-    },
-    {
-      "id": "PR_kwDOBW5R_c6TnGCE",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore(blog): add singapore summary",
-      "author": "iambami",
-      "resourcePath": "/asyncapi/website/pull/4056",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 17.230475324955524
-    },
-    {
-      "id": "PR_kwDOBW5R_c6KgWbR",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: enabled viewing historical finance data",
-      "author": "SahilDahekar",
-      "resourcePath": "/asyncapi/website/pull/3658",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 17.230475324955524
-    },
-    {
-      "id": "I_kwDOFLhIt85bebeO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Meeting Banners Storage",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/issues/568",
+      "title": "docs: add onboarding guide for identifying good first issues",
+      "author": "SaxenaAnushka102",
+      "resourcePath": "/asyncapi/community/pull/1815",
       "repo": "asyncapi/community",
       "labels": [],
       "score": 16.943300736206268
-    },
-    {
-      "id": "PR_kwDOCHlHJM6G3FcZ",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "refactor: improve npm installation by using pacote for package resolu…",
-      "author": "achaljhawar",
-      "resourcePath": "/asyncapi/generator/pull/1329",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 16.943300736206268
-    },
-    {
-      "id": "PR_kwDOFLhIt853IEwA",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: added asyncapi student ambassador md file",
-      "author": "iambami",
-      "resourcePath": "/asyncapi/community/pull/1333",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 16.65612614745701
-    },
-    {
-      "id": "PR_kwDOFLhIt86LeC8N",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: expand community docs: contributor - simple contribution flow a…",
-      "author": "ezinneanne",
-      "resourcePath": "/asyncapi/community/pull/1730",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 16.36895155870775
-    },
-    {
-      "id": "I_kwDODwv8N86un74M",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Add AsyncAPI Meetups Page to Conference Website",
-      "author": "Shriya-Chauhan",
-      "resourcePath": "/asyncapi/conference-website/issues/644",
-      "repo": "asyncapi/conference-website",
-      "labels": [],
-      "score": 15.794602381209232
     },
     {
       "id": "I_kwDODou01c5ZAFWh",
@@ -145,28 +95,150 @@
         }
       ],
       "score": 15.220253203710714
+    },
+    {
+      "id": "PR_kwDOBW5R_c6a8u_0",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "refactor: created npm folder and modularized scripts",
+      "author": "sagarkori143",
+      "resourcePath": "/asyncapi/website/pull/4192",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 14.933078614961456
+    },
+    {
+      "id": "PR_kwDOCHlHJM6XD94t",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "refactor: simplify prop passing to ClientClass by using asyncapi object",
+      "author": "Aditya08Vashisht",
+      "resourcePath": "/asyncapi/generator/pull/1571",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 14.933078614961456
+    },
+    {
+      "id": "I_kwDODou01c6sRwXp",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "[Docs] Onboarding documentation for the Studio",
+      "author": "AayushSaini101",
+      "resourcePath": "/asyncapi/studio/issues/1169",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        },
+        {
+          "name": "area/docs",
+          "color": "e50e99"
+        },
+        {
+          "name": "bounty",
+          "color": "0E8A16"
+        }
+      ],
+      "score": 14.645904026212197
+    },
+    {
+      "id": "PR_kwDOBW5R_c6Xi8Sh",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: community layout & board page",
+      "author": "aminoxix",
+      "resourcePath": "/asyncapi/website/pull/4127",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 14.07155484871368
+    },
+    {
+      "id": "I_kwDOCHlHJM5yxvxN",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "How about a monorepo 😄 ",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/generator/issues/1044",
+      "repo": "asyncapi/generator",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "bounty",
+          "color": "0e8a16"
+        }
+      ],
+      "score": 13.78438025996442
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDODwv8N86y8NIb",
-      "title": "Venue cards date misalignment",
+      "id": "I_kwDODwv8N862JwMq",
+      "title": "Remove CFP Page once Deadline has passed",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/conference-website/issues/715",
+      "resourcePath": "/asyncapi/conference-website/issues/730",
       "repo": "asyncapi/conference-website",
-      "author": "AceTheCreator",
+      "author": "thulieblack",
       "area": "Unknown",
       "labels": []
     },
     {
-      "id": "I_kwDOBW5R_c6xUO9N",
-      "title": "Announcement banner not showing or misaligned on some pages",
+      "id": "I_kwDOCHlHJM61YyyD",
+      "title": "add snapshot test for python `Requires.js`",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/4021",
-      "repo": "asyncapi/website",
-      "author": "vishvamsinh28",
-      "area": "Unknown",
+      "resourcePath": "/asyncapi/generator/issues/1546",
+      "repo": "asyncapi/generator",
+      "author": "derberg",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOCHlHJM61YyC9",
+      "title": "add snapshot test for python `QueryParamsVariables.js`",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/generator/issues/1545",
+      "repo": "asyncapi/generator",
+      "author": "derberg",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOCHlHJM6v9axC",
+      "title": "[Test]: Add `FileHeaderInfo.test.js` for python websocket client",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/generator/issues/1447",
+      "repo": "asyncapi/generator",
+      "author": "Adi-204",
+      "area": "javascript",
       "labels": []
+    },
+    {
+      "id": "I_kwDOFDnrNc6vHs8d",
+      "title": "[📑 Docs]: Improvement for the usage of `--use-new-generator` flag.",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/cli/issues/1741",
+      "repo": "asyncapi/cli",
+      "author": "neoandmatrix",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
     },
     {
       "id": "I_kwDOFDnrNc6uQo6r",
@@ -194,36 +266,6 @@
         {
           "name": "gsoc",
           "color": "F4D03F"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFLhIt86sgqy5",
-      "title": "[📑 Docs]: update Community Readme.md",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/community/issues/1762",
-      "repo": "asyncapi/community",
-      "author": "thulieblack",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c6rGtwQ",
-      "title": "[Docs Bug 🐞 report]: Few outdated info on /tools/generator and /tools/cli",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/3721",
-      "repo": "asyncapi/website",
-      "author": "Adi-204",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "🐞 docs bug",
-          "color": "FFD23F"
         }
       ]
     },
@@ -264,6 +306,10 @@
         {
           "name": "bug",
           "color": "d73a4a"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -279,6 +325,10 @@
         {
           "name": "bug",
           "color": "d73a4a"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -294,36 +344,10 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c6mv2HD",
-      "title": "[BUG] : Comminutiy newsroom latest news section is not ui friendly.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/3587",
-      "repo": "asyncapi/website",
-      "author": "jayraj175coder",
-      "area": "Unknown",
-      "labels": [
+        },
         {
-          "name": "bug",
-          "color": "ee0701"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc6mGxDI",
-      "title": "[BUG] Inaccurate error in `asyncapi optimize`",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/1626",
-      "repo": "asyncapi/cli",
-      "author": "derberg",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -343,16 +367,6 @@
       ]
     },
     {
-      "id": "I_kwDOBW5R_c6csZFy",
-      "title": "Create Custom LogService Using Winston for Error Logging",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/3358",
-      "repo": "asyncapi/website",
-      "author": "coderabbitai",
-      "area": "typescript",
-      "labels": []
-    },
-    {
       "id": "I_kwDOCVQpZM6YZd4E",
       "title": "A fragment with only one child is redundant.",
       "isAssigned": false,
@@ -361,6 +375,10 @@
       "author": "AceTheCreator",
       "area": "Unknown",
       "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
@@ -387,6 +405,16 @@
       ]
     },
     {
+      "id": "I_kwDOBW5R_c6KnUnk",
+      "title": "support short urls ",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/3005",
+      "repo": "asyncapi/website",
+      "author": "derberg",
+      "area": "typescript",
+      "labels": []
+    },
+    {
       "id": "I_kwDOE8Qh386HJeIz",
       "title": "[BUG] Implement avro schema data type ",
       "isAssigned": false,
@@ -398,21 +426,6 @@
         {
           "name": "avro",
           "color": "EC3D91"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCHlHJM58YMi8",
-      "title": "Improve arborist (npm installation) to have no hacks",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/generator/issues/1102",
-      "repo": "asyncapi/generator",
-      "author": "derberg",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -432,29 +445,6 @@
         {
           "name": "keep-open",
           "color": "fce14b"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc5xaTa3",
-      "title": "Parallel execution command asyncapi generate got error",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/cli/issues/814",
-      "repo": "asyncapi/cli",
-      "author": "Zacama",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "bounty",
-          "color": "0e8a16"
-        },
-        {
-          "name": "level/advanced",
-          "color": "0e8a16"
         }
       ]
     },
@@ -538,33 +528,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385WoDaU",
-      "title": "Add attrs and/or dataclasses presets to Python generator",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/999",
-      "repo": "asyncapi/modelina",
-      "author": "tokarenko",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "Python generator",
-          "color": "5319e7"
         }
       ]
     },
