@@ -9,7 +9,7 @@ const projectRoot = resolve(currentDirPath, '../../');
 
 export async function runCaseStudies() {
     try {
-        const caseStudyDirectory = resolve(projectRoot, 'config', 'casestudies');
+        const caseStudyDirectory = resolve(projectRoot, 'config', 'case-studies');
         if (!fs.existsSync(caseStudyDirectory)) {
             console.error(`Directory does not exist: ${caseStudyDirectory}`);
             return;
