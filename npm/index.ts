@@ -4,6 +4,9 @@ import { runBuildTools } from './runners/build-tools-runner';
 import { runCaseStudies } from './runners/case-studies-runner';
 import { runBuildNewsroomVideos } from './runners/build-newsroom-videos-runner';
 import { logger } from '../scripts/helpers/logger';
+import { runBuildMeetings } from './runners/build-meetings-runner';
+import { runBuildFinanceInfoList } from './runners/build-finance-info-list-runner';
+import { runBuildAdoptersList } from './runners/build-adopters-list-runner';
 
 async function main() {
   let errorFaced: boolean = false;
@@ -13,7 +16,10 @@ async function main() {
     { name: 'dashboard', task: runBuildDashboard },
     { name: 'tools', task: runBuildTools },
     { name: 'caseStudies', task: runCaseStudies },
-    { name: 'newsroomVideos', task: runBuildNewsroomVideos }
+    { name: 'newsroomVideos', task: runBuildNewsroomVideos },
+    { name: 'meetings', task: runBuildMeetings },
+    { name: 'finance', task: runBuildFinanceInfoList },
+    { name: 'adopters', task: runBuildAdoptersList }
   ];
 
   try {
@@ -30,12 +36,13 @@ async function main() {
 
     if (errorFaced) {
       logger.info('Some scripts faced error while running, please check the console for more details');
+      process.exitCode = 1; // surface the failure to CI so that it can be tracked
     } else {
       logger.info('Successfully executed all build scripts');
     }
   } catch (error) {
     logger.error('Error executing build scripts:', error);
-    throw new Error('Error executing build scripts: ' + (error instanceof Error ? error.message : String(error)));
+    throw error;
   }
 }
 

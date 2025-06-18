@@ -1,12 +1,7 @@
 import { writeFileSync } from 'fs';
 import { google } from 'googleapis';
-import { dirname, resolve } from 'path';
-import { fileURLToPath } from 'url';
-
 import { logger } from './utils/logger';
 
-const currentFilePath = fileURLToPath(import.meta.url);
-const currentDirPath = dirname(currentFilePath);
 
 /**
  * Fetches upcoming meetings from Google Calendar and writes the data to a specified path.
@@ -74,9 +69,5 @@ async function buildMeetings(writePath: string) {
   }
 }
 
-/* istanbul ignore next */
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  buildMeetings(resolve(currentDirPath, '../config', 'meetings.json'));
-}
 
 export { buildMeetings };
