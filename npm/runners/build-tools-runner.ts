@@ -16,8 +16,7 @@ export async function runBuildTools() {
 
         await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
     } catch (error) {
-        logger.error('Failed to build tools:', error);
-        throw new Error('Error building tools', { cause: error });
+        throw error;
     }
 }
 

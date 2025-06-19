@@ -17,6 +17,6 @@ export async function runCaseStudies() {
         const writeFilePath = resolve(projectRoot, 'config', 'case-studies.json');
         await buildCaseStudiesList(caseStudyDirectory, writeFilePath);
     } catch (error) {
-        throw new Error('Error building case studies', { cause: error });
+        throw error;
     }
 }

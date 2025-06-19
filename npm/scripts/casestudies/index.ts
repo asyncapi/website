@@ -28,6 +28,6 @@ export async function buildCaseStudiesList(dirWithCaseStudy: string, writeFilePa
 
     return caseStudiesList;
   } catch (err) {
-    throw new Error(err instanceof Error ? err.message : String(err));
+    throw err;
   }
 }

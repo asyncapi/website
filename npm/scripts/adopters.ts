@@ -14,7 +14,11 @@ import { writeJSON } from '../../scripts/helpers/readAndWriteJson';
  * @returns {Promise<void>} Resolves when the adopters list has been built and written to JSON.
  */
 export async function buildAdoptersList(): Promise<void> {
-  const currentFilePath = fileURLToPath(import.meta.url);
-  const currentDirPath = dirname(currentFilePath);
-  await writeJSON('config/adopters.yml', resolve(currentDirPath, '../../config', 'adopters.json'));
+  try {
+    const currentFilePath = fileURLToPath(import.meta.url);
+    const currentDirPath = dirname(currentFilePath);
+    await writeJSON('config/adopters.yml', resolve(currentDirPath, '../../config', 'adopters.json'));
+  } catch (error) {
+    throw error;
+  }
 } 

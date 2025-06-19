@@ -24,6 +24,6 @@ export async function buildTools(automatedToolsPath: string, manualToolsPath: st
 
     await combineTools(automatedTools, manualTools, toolsPath, tagsPath);
   } catch (err) {
-    throw new Error(`An error occurred while building tools: ${(err as Error).message}`);
+    throw err;
   }
 }

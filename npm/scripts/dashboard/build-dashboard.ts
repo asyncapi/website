@@ -316,14 +316,9 @@ export async function start(writePath: string): Promise<void> {
     await writeToFile({ hotDiscussions, goodFirstIssues }, writePath);
   } catch (e) {
     logger.error('There were some issues parsing data from github.');
-    throw new Error('Error building dashboard', { cause: e });
+    throw e;
   }
 }
-
-/* istanbul ignore next */
-// if (process.argv[1] === fileURLToPath(import.meta.url)) {
-//   start(resolve(currentDirPath, '..', '..', 'dashboard.json'));
-// }
 
 export {
   getDiscussionByID,
