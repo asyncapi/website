@@ -1,6 +1,6 @@
 import Header from './pages/Header';
 
-describe('Footer Links Validation', () => {
+describe('Header Links Validation', () => {
   const header = new Header();
 
   beforeEach(() => {

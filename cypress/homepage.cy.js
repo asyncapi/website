@@ -30,7 +30,7 @@ describe('Home Page Tests', () => {
   
   it('User verifies important links', () => {
     homePage.verifyHomepageCardLinks();
-  })
+  });
 });
 
 

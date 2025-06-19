@@ -58,10 +58,7 @@ class HomePage {
   }
 
   verifyReadTheDocsButton() {
-    cy.get('[data-testid="Button-link"]')
-      .eq(2)
-      .should('be.visible')
-      .and('have.attr', 'href', '/docs');
+    cy.get('[data-testid="Button-link"][href="/docs"]').should('be.visible');
   }
 
   verifyHomepageCards() {
@@ -107,13 +104,13 @@ class HomePage {
   }
 
   verifyLetUsKnowLink() {
-    const selector = 'a:contains("Let us know here!")';
-    this.verifyElementIsVisible(selector);
-    this.verifyElementHasAttribute(
-      selector,
-      'href',
-      'https://github.com/asyncapi/website/issues/new',
-    );
+    cy.contains('a', 'Let us know here!')
+      .should('be.visible')
+      .and(
+        'have.attr',
+        'href',
+        'https://github.com/asyncapi/website/issues/new',
+      );
   }
 
   goToBlogPage() {
