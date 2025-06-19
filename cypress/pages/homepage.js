@@ -46,7 +46,7 @@ class HomePage {
       'Building the future of Event-Driven Architectures (EDA)',
     );
   }
-  
+
   verifyGithubStarButton() {
     const selector = '[data-testid="Navbar-main"] [data-testid="Button-link"]';
     this.verifyElementIsVisible(selector);
@@ -55,6 +55,13 @@ class HomePage {
       'href',
       'https://github.com/asyncapi/spec',
     );
+  }
+
+  verifyReadTheDocsButton() {
+    cy.get('[data-testid="Button-link"]')
+      .eq(2)
+      .should('be.visible')
+      .and('have.attr', 'href', '/docs');
   }
 
   verifyHomepageCards() {

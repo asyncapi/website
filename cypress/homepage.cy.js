@@ -16,6 +16,10 @@ describe('Home Page Tests', () => {
     homePage.verifyGithubStarButton();
   });
 
+  it('User clicks on the Read the Docs button', () => {
+    homePage.verifyReadTheDocsButton();
+  });
+
   it('User clicks on the "Let us know here" link', () => {
     homePage.verifyLetUsKnowLink();
   });
