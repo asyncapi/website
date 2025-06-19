@@ -27,7 +27,8 @@
     "test:locales": "tsx scripts/helpers/check-locales.ts",
     "dev:storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build",
-    "build:all": "tsx npm/index.ts"
+    "build:all": "tsx npm/index.ts",
+    "test:integration": "jest --passWithNoTests --config=jest.integration.config.js"
   },
   "repository": {
     "type": "git",
