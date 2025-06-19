@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/6PmASob_Cu8/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting, Tuesday June 17th 2025",
+    "description": "https://github.com/asyncapi/community/issues/1935.",
+    "videoId": "6PmASob_Cu8"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/JLNMJ5A8sns/hqdefault.jpg",
     "title": "AsyncAPI Community WG Meeting, Tuesday June 3rd 2025",
     "description": "https://github.com/asyncapi/community/issues/1919.",
@@ -22,11 +28,5 @@
     "title": "GSoC Welcome Contributors Call | May 29th 2025",
     "description": "https://github.com/asyncapi/community/issues/1922.",
     "videoId": "7O85r0YNdvA"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/QqWUcSodtYI/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting, May 20th 2025",
-    "description": "https://github.com/asyncapi/community/issues/1897.",
-    "videoId": "QqWUcSodtYI"
   }
 ]
