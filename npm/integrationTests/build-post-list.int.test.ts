@@ -3,26 +3,53 @@ import path from 'path';
 import os from 'os';
 import { buildPostList } from '../../scripts/build-post-list';
 
+// Define interfaces for the expected output structure
+interface TocItem {
+  content: string;
+  slug: string;
+  lvl: number;
+  i: number;
+  seen: number;
+}
+
+interface PostItem {
+  title: string;
+  slug: string;
+  toc?: TocItem[];
+}
+
+interface Output {
+  docs: PostItem[];
+  blog: PostItem[];
+  about: PostItem[];
+  docsTree: Record<string, any>;
+}
+
 describe('Integration: buildPostList with real content', () => {
     let tempDir: string;
     let outputPath: string;
-    let output: any;
+    let output: Output;
     const realPagesDir = path.resolve(__dirname, '../../pages');
 
     beforeAll(async () => {
-        tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'build-post-list-real-'));
-        outputPath = path.join(tempDir, 'posts.json');
-
-        const postDirectories = [
-            [path.join(realPagesDir, 'blog'), '/blog'],
-            [path.join(realPagesDir, 'docs'), '/docs'],
-            [path.join(realPagesDir, 'about'), '/about']
-        ];
-        const basePath = realPagesDir;
-
-        await buildPostList(postDirectories, basePath, outputPath);
-
-        output = JSON.parse(await fs.readFile(outputPath, 'utf-8'));
+        try {
+            tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'build-post-list-real-'));
+            outputPath = path.join(tempDir, 'posts.json');
+    
+            const postDirectories = [
+                [path.join(realPagesDir, 'blog'), '/blog'],
+                [path.join(realPagesDir, 'docs'), '/docs'],
+                [path.join(realPagesDir, 'about'), '/about']
+            ];
+            const basePath = realPagesDir;
+    
+            await buildPostList(postDirectories, basePath, outputPath);
+    
+            output = JSON.parse(await fs.readFile(outputPath, 'utf-8')) as Output;
+        } catch (error) {
+            console.error('Error in beforeAll:', error);
+            throw error;
+        }
     });
 
     afterAll(() => {
@@ -47,8 +74,8 @@ describe('Integration: buildPostList with real content', () => {
 
     it('each section has expected keys', () => {
         ['docs', 'blog', 'about'].forEach(section => {
-            expect(Array.isArray(output[section])).toBe(true);
-            output[section].forEach((item: any) => {
+            expect(Array.isArray(output[section as keyof Output])).toBe(true);
+            (output[section as keyof Output] as PostItem[]).forEach((item: PostItem) => {
                 expect(item).toHaveProperty('title');
                 expect(item).toHaveProperty('slug');
             });
@@ -84,9 +111,9 @@ describe('Integration: buildPostList with real content', () => {
     });
 
     it('toc entries in docs have expected fields', () => {
-        output.docs.forEach((item: any) => {
+        output.docs.forEach((item: PostItem) => {
             if (Array.isArray(item.toc)) {
-                item.toc.forEach((tocItem: any) => {
+                item.toc.forEach((tocItem: TocItem) => {
                     expect(tocItem).toHaveProperty('content');
                     expect(typeof tocItem.content).toBe('string');
                     expect(tocItem).toHaveProperty('slug');
@@ -103,13 +130,13 @@ describe('Integration: buildPostList with real content', () => {
     });
 
     it('all slugs start with their section', () => {
-        output.docs.forEach((item: any) => {
+        output.docs.forEach((item: PostItem) => {
             expect(item.slug.startsWith('/docs')).toBe(true);
         });
-        output.about.forEach((item: any) => {
+        output.about.forEach((item: PostItem) => {
             expect(item.slug.startsWith('/about')).toBe(true);
         });
-        output.blog.forEach((item: any) => {
+        output.blog.forEach((item: PostItem) => {
             expect(item.slug.startsWith('/blog')).toBe(true);
         });
     });
