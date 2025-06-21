@@ -61,7 +61,11 @@ async function buildNewsroomVideos(writePath: string): Promise<string> {
 
     return videoData;
   } catch (err) {
-    throw err;
+    if (err instanceof Error) {
+      throw new Error(`Build newsroom videos script failed: ${err.message}`, { cause: err });
+    } else {
+      throw new Error(`Build newsroom videos script failed: ${String(err)}`, { cause: err });
+    }
   }
 }
 

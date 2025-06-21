@@ -10,6 +10,10 @@ export async function runBuildNewsroomVideos() {
         await buildNewsroomVideos(resolve(currentDirPath, '../../config', 'newsroom_videos.json'));
     }
     catch (error) {
-        throw error;
+        if (error instanceof Error) {
+            throw new Error(`Newsroom videos runner failed: ${error.message}`, { cause: error });
+        } else {
+            throw new Error(`Newsroom videos runner failed: ${String(error)}`, { cause: error });
+        }
     }
 }
