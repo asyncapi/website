@@ -30,6 +30,10 @@ export interface Ambassador {
   githubUrl?: string;
   linkedinUrl?: string;
   twitterUrl?: string;
+  avatarUrl?: string;
+  isTscMember?: boolean;
+  isBoardMember?: boolean;
+  isBoardChair?: boolean;
 };
 
 export interface Tsc {
@@ -44,4 +48,6 @@ export interface Tsc {
   company?: string;
   repos: any;
   githubID: number
+  isBoardMember?: boolean;
+  isBoardChair?: boolean;
 };
