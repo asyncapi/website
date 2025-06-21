@@ -1,0 +1,274 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AsyncAPI Case Study Schema",
+  "type": "object",
+  "required": [
+    "id",
+    "company",
+    "challenges",
+    "solution",
+    "technical",
+    "schemas",
+    "asyncapi",
+    "additionalResources"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "examples": ["adeogroup"],
+      "pattern": "^[a-z]+$"
+    },
+    "company": {
+      "type": "object",
+      "required": ["name", "logo", "contact"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "examples": ["Adeo Group"]
+        },
+        "description": {
+          "type": "string",
+          "examples": [
+            "Adeo owns different brands in retail industry focused on home improvement and DIY markets, like Leroy Merlin."
+          ]
+        },
+        "customers": {
+          "type": "string",
+          "examples": ["500M"]
+        },
+        "industry": {
+          "type": "string",
+          "examples": ["Retail"]
+        },
+        "revenue": {
+          "type": "string",
+          "examples": ["25.6B EURO turnover, including 768M EURO online."]
+        },
+        "website": {
+          "type": "string",
+          "examples": ["https://www.adeo.com/"]
+        },
+        "logo": {
+          "type": "string",
+          "examples": ["/img/casestudies/adeo/logo.svg"]
+        },
+        "contact": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "link"],
+            "properties": {
+              "name": {
+                "type": "string",
+                "examples": ["Ludovic Dussart"]
+              },
+              "link": {
+                "type": "string",
+                "format": "uri",
+                "examples": ["https://twitter.com/ldussart"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "challenges": {
+      "type": "string",
+      "examples": [
+        "Cost Component Repository product, part of the ADEO tech products, is used to calculate and publish transfer prices between different internal locations on the globe. Different business units use different information systems. It is hard to learn how each business unit share information about their systems, their API and accuracy."
+      ]
+    },
+    "solution": {
+      "type": "string",
+      "examples": [
+        "The API is now described with AsyncAPI. AsyncAPI file, stored together with the source code, is used to generate HTML documentation in the same release pipeline for the product. Documentation is exposed as part of the product internally for other company units depending on the API."
+      ]
+    },
+    "technical": {
+      "type": "object",
+      "required": [
+        "languages",
+        "frameworks",
+        "protocols",
+        "brokers",
+        "testing",
+        "architecture",
+        "codegen"
+      ],
+      "properties": {
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "examples": ["Java"]
+          }
+        },
+        "frameworks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "examples": ["Spring"]
+          }
+        },
+        "protocols": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "examples": ["Kafka"]
+          }
+        },
+        "brokers": {
+          "type": "string",
+          "examples": [
+            "Kafka with Kafka Connect component. There are 15 production brokers with 47 topics."
+          ]
+        },
+        "testing": {
+          "type": "string",
+          "examples": [
+            "For Kafka e2e tests are done with [Zerocode](https://github.com/authorjapps/zerocode). Load tests are handled with [JMeter](https://jmeter.apache.org/) with [kloadgen](https://github.com/corunet/kloadgen) plugin that supports Kafka and Avro."
+          ]
+        },
+        "architecture": {
+          "type": "string",
+          "examples": [
+            "The following [enterprise integration patterns](https://www.enterpriseintegrationpatterns.com/patterns/messaging) are applied."
+          ]
+        },
+        "codegen": {
+          "type": "string",
+          "examples": ["Java models generation. Avro schemas used as a source."]
+        }
+      }
+    },
+    "schemas": {
+      "type": "object",
+      "required": [
+        "description",
+        "storage",
+        "registry",
+        "versioning",
+        "validation"
+      ],
+      "properties": {
+        "description": {
+          "type": "string",
+          "examples": ["Avro 1.9"]
+        },
+        "storage": {
+          "type": "string",
+          "examples": [
+            "Git repository where source code is. During release they are published to Confluent Schema Registry."
+          ]
+        },
+        "registry": {
+          "type": "string",
+          "examples": ["Confluent Schema Registry."]
+        },
+        "versioning": {
+          "type": "string",
+          "examples": [
+            "Versioning is based on git tags. Schema version pushed to Confluent Schema Registry match the git tag version of the product. Every schema has a `version` information, that match with product tag version."
+          ]
+        },
+        "validation": {
+          "type": "string",
+          "examples": ["Based on validation using Confluent Schema Registry."]
+        }
+      }
+    },
+    "asyncapi": {
+      "type": "object",
+      "required": [
+        "usecase",
+        "versions",
+        "storage",
+        "editing",
+        "maintainers",
+        "audience",
+        "extensions",
+        "documentation",
+        "bindings",
+        "tools",
+        "fullExample"
+      ],
+      "properties": {
+        "usecase": {
+          "type": "string",
+          "examples": [
+            "Document the API of the product so its users know how it works and how to use it. AsyncAPI was selected as the standard that allows you to generate documentation from machine-readable document that describes the API."
+          ]
+        },
+        "versions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "examples": ["2.4.0"]
+          }
+        },
+        "storage": {
+          "type": "string",
+          "examples": ["Git repository where source code is."]
+        },
+        "editing": {
+          "type": "string",
+          "examples": [
+            "IntelliJ without any special plugins. Sometimes people use AsyncAPI Studio, but not regularly because of lack of support for references to local drive."
+          ]
+        },
+        "maintainers": {
+          "type": "string",
+          "examples": ["Developers"]
+        },
+        "audience": {
+          "type": "object",
+          "required": ["internal", "external"],
+          "properties": {
+            "internal": {
+              "type": "boolean",
+              "examples": [false]
+            },
+            "external": {
+              "type": "boolean",
+              "examples": [false]
+            }
+          }
+        },
+        "extensions": {
+          "type": "string",
+          "examples": [
+            "Extensions are used to describe details about custom security."
+          ]
+        },
+        "documentation": {
+          "type": "string",
+          "examples": [
+            "Documentation generated from AsyncAPI is hosted as part of the product on dedicated endpoint using Spring controller."
+          ]
+        },
+        "bindings": {
+          "type": "string",
+          "examples": [
+            "All Kafka bindings are used. Server, channel, operation and message bindings."
+          ]
+        },
+        "tools": {
+          "type": "string",
+          "examples": [
+            "[AsyncAPI Generator](https://github.com/asyncapi/generator) and [HTML Template](https://github.com/asyncapi/html-template) with parameters like `sidebarOrganization=byTags` and `version`."
+          ]
+        },
+        "fullExample": {
+          "type": "string",
+          "examples": ["resources/casestudies/adeo/asyncapi.yaml"]
+        }
+      }
+    },
+    "additionalResources": {
+      "type": "string",
+      "examples": [
+        "Watch [this video presentation about AsyncAPI case study](https://www.youtube.com/watch?v=WwhRbvrf6Rs) from Ludovic Dussart, Ineat & Antoine Delequeuche, Adeo. - better for data interchange"
+      ]
+    }
+  }
+}
