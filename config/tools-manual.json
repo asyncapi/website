@@ -281,6 +281,21 @@
                     "technology": ["Groovy", "Maven"],
                     "categories": ["code-generator"]
                 }
+            },
+            {
+                "title": "The Codegen Project",
+                "description": "Stop wasting time on manual code. Generate Payloads, parameters, headers, types, channel wrappers, and more from your AsyncAPI document! Works with Kafka, NATS, MQTT, event-source, AMQP, HTTP Client!",
+                "links": {
+                    "websiteUrl": "https://the-codegen-project.org/",
+                    "docsUrl": "https://the-codegen-project.org//docs",
+                    "repoUrl": "https://github.com/the-codegen-project/cli/"
+                },
+                "filters": {
+                    "language": "TypeScript",
+                    "technology": ["TypeScript"],
+                    "categories": ["code-generator", "cli"],
+                    "hasCommercial": false
+                }
             }
         ]
     },
