@@ -2,6 +2,9 @@ import type { PathLike } from 'fs';
 import fs from 'fs';
 import path from 'path';
 
+const SRC_DIR = 'markdown';
+const TARGET_DIR = 'pages';
+
 const capitalizeTags = ['table', 'tr', 'td', 'th', 'thead', 'tbody'];
 
 /**
@@ -13,6 +16,7 @@ export function ensureDirectoryExists(directory: PathLike) {
     fs.mkdirSync(directory, { recursive: true });
   }
 }
+ensureDirectoryExists(TARGET_DIR);
 
 /**
  * Capitalizes the first letter of JSX tag names in the provided content if they are in a predefined list.
@@ -75,3 +79,5 @@ export function copyAndRenameFiles(srcDir: string, targetDir: string) {
     }
   });
 }
+
+copyAndRenameFiles(SRC_DIR, TARGET_DIR);
