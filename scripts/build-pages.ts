@@ -79,3 +79,5 @@ export function copyAndRenameFiles(srcDir: string, targetDir: string) {
     }
   });
 }
+// temporarily keeping it here so that the build pages command can run it, later we will use the runner to invoke it
+copyAndRenameFiles(SRC_DIR, TARGET_DIR);
