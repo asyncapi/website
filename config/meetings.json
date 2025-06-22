@@ -1,12 +1,5 @@
 [
   {
-    "title": "AsyncAPI Community Working Group Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=djhpMWg0c2pzbjVscGE4bDdwMjI0YWUwY3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1754",
-    "banner": "https://github.com/user-attachments/assets/e0c22c5a-94a8-488c-970c-14aa1697283c",
-    "date": "2025-03-11T15:00:00.000Z"
-  },
-  {
     "title": "Let's talk about contributing Google Summer Of Code 2025 Experience",
     "calLink": "https://www.google.com/calendar/event?eid=dG5wZGlxcm9uN29vNWMzajNxNzd2aWhoazQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1763",
@@ -147,17 +140,24 @@
     "date": "2025-06-10T14:00:00.000Z"
   },
   {
-    "title": "AsyncAPI Community WG Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=anI1OG0yZHI5Y3JhOWx1YjdqZGlqOG5zbW8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1935",
-    "banner": "https://github.com/user-attachments/assets/e0c22c5a-94a8-488c-970c-14aa1697283c",
-    "date": "2025-06-17T15:00:00.000Z"
-  },
-  {
     "title": "AsyncAPI Design WG Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=cmE2ZWY2ZGh2cWoxdmt1bGI4b2QxNGNvMDQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1955",
     "banner": "",
     "date": "2025-06-19T16:00:00.000Z"
+  },
+  {
+    "title": "Marketing WG Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=djgzbHJjbm1oNmp2dDU2dTBsMmZrdWI0dGsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1957",
+    "banner": "",
+    "date": "2025-06-24T14:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI Community WG Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=anI1OG0yZHI5Y3JhOWx1YjdqZGlqOG5zbW8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1935",
+    "banner": "https://github.com/user-attachments/assets/e0c22c5a-94a8-488c-970c-14aa1697283c",
+    "date": "2025-06-17T15:00:00.000Z"
   }
 ]
