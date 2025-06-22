@@ -1,14 +1,11 @@
 import { writeFileSync } from 'fs';
 import type { youtube_v3 } from 'googleapis';
 import fetch from 'node-fetch-2';
-import { dirname, resolve } from 'path';
 import process from 'process';
-import { fileURLToPath } from 'url';
 
 import { logger } from './helpers/logger';
-
-const currentFilePath = fileURLToPath(import.meta.url);
-const currentDirPath = dirname(currentFilePath);
+import dotenv from 'dotenv';
+dotenv.config();
 
 /**
  * Retrieves the latest videos from the AsyncAPI YouTube channel and writes them
@@ -24,7 +21,7 @@ const currentDirPath = dirname(currentFilePath);
  * @throws Error if the YOUTUBE_TOKEN environment variable is not set, if the API request fails, or
  * if the response has an unexpected structure.
  */
-async function buildNewsroomVideos(writePath: string): Promise<string> {
+export async function buildNewsroomVideos(writePath: string): Promise<string> {
   try {
     if (!process.env.YOUTUBE_TOKEN) {
       throw new Error('YOUTUBE_TOKEN environment variable is required');
@@ -71,10 +68,3 @@ async function buildNewsroomVideos(writePath: string): Promise<string> {
     throw new Error(`Failed to build newsroom videos: ${(err as Error).message}`);
   }
 }
-
-/* istanbul ignore next */
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  buildNewsroomVideos(resolve(currentDirPath, '../config', 'newsroom_videos.json'));
-}
-
-export { buildNewsroomVideos };

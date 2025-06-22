@@ -4,9 +4,15 @@ const config = {
       '^.+\\.[t|j]sx?$': ['babel-jest', { configFile: './tests/babel.test.config.cts' }]
     },
     verbose: true,
-    collectCoverage: false, // usually not needed for integration tests
-    testMatch: ['**/npm/integrationTests/**/*.test.*'],
-    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json']
+    collectCoverage: true,
+    coverageDirectory: 'coverage/integration',
+    coverageReporters: ['text', 'lcov', 'json-summary'],
+    collectCoverageFrom: ['scripts/**/*.ts'],
+    testMatch: ['**/npm/integrationTests/**/*.test.*', '**/tests/integrationTests/**/*.test.*'],
+    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
+    moduleNameMapper: {
+      '^@/(.*)$': '<rootDir>/$1'
+    }
   };
   
   export default config;

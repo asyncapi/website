@@ -1,7 +1,7 @@
 import { resolve } from "path";
 import fs from "fs";
 
-import { buildFinanceInfoList } from "../scripts/finance/index";
+import { buildFinanceInfoList } from "@/scripts/finance/index";
 
 
 export async function runBuildFinanceInfoList() {

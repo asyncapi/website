@@ -12,7 +12,7 @@ import { logger } from './helpers/logger';
 /**
  * Type definition for the answers from the compose prompt.
  */
-type ComposePromptType = {
+export type ComposePromptType = {
   title: string;
   excerpt: string;
   tags: string;
@@ -118,58 +118,31 @@ function genFrontMatter(answers: ComposePromptType): string {
   return frontMatter;
 }
 
-inquirer
-  .prompt([
-    {
-      name: 'title',
-      message: 'Enter post title:',
-      type: 'input'
-    },
-    {
-      name: 'excerpt',
-      message: 'Enter post excerpt:',
-      type: 'input'
-    },
-    {
-      name: 'tags',
-      message: 'Any Tags? Separate them with , or leave empty if no tags.',
-      type: 'input'
-    },
-    {
-      name: 'type',
-      message: 'Enter the post type:',
-      type: 'list',
-      choices: ['Communication', 'Community', 'Engineering', 'Marketing', 'Strategy', 'Video']
-    },
-    {
-      name: 'canonical',
-      message: 'Enter the canonical URL if any:',
-      type: 'input'
-    }
-  ])
-  .then((answers: ComposePromptType) => {
-    // Remove special characters and replace space with -
-    const fileName = answers.title
-      .toLowerCase()
-      .replace(/[^a-zA-Z0-9 ]/g, '')
-      .replace(/ /g, '-')
-      .replace(/-+/g, '-');
-    const frontMatter = genFrontMatter(answers);
-    const filePath = `pages/blog/${fileName || 'untitled'}.md`;
+/**
+ * Programmatically creates a blog post markdown file with front matter and template content.
+ *
+ * @param answers - Blog post details (title, excerpt, tags, type, canonical)
+ * @returns Promise that resolves to the file path if successful
+ */
+export async function ComposeBlog(answers: ComposePromptType): Promise<string> {
+  // Remove special characters and replace space with -
+  const fileName = answers.title
+    .toLowerCase()
+    .replace(/[^a-zA-Z0-9 ]/g, '')
+    .replace(/ /g, '-')
+    .replace(/-+/g, '-');
+  const frontMatter = genFrontMatter(answers);
+  const filePath = `pages/blog/${fileName || 'untitled'}.md`;
 
+  return new Promise((resolve, reject) => {
     fs.writeFile(filePath, frontMatter, { flag: 'wx' }, (err) => {
       if (err) {
-        throw err;
+        logger.error(err);
+        reject(err);
       } else {
         logger.info(`Blog post generated successfully at ${filePath}`);
+        resolve(filePath);
       }
     });
-  })
-  .catch((error) => {
-    logger.error(error);
-    if (error.isTtyError) {
-      logger.error("Prompt couldn't be rendered in the current environment");
-    } else {
-      logger.error('Something went wrong, sorry!');
-    }
   });
+} 

@@ -1,4 +1,4 @@
-import { start } from "../scripts/dashboard/build-dashboard";
+import { start } from "@/scripts/dashboard/build-dashboard";
 
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';

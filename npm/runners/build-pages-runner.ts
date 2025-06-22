@@ -1,4 +1,4 @@
-import { ensureDirectoryExists, copyAndRenameFiles } from "../scripts/build-pages";
+import { ensureDirectoryExists, copyAndRenameFiles } from "@/scripts/build-pages";
 
 const SRC_DIR = 'markdown';
 const TARGET_DIR = 'pages';

@@ -1,4 +1,4 @@
-import { buildNewsroomVideos } from "../scripts/build-newsroom-videos";
+import { buildNewsroomVideos } from "@/scripts/build-newsroom-videos";
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 

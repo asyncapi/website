@@ -1,6 +1,6 @@
 import inquirer from 'inquirer';
-import { ComposeBlog, ComposePromptType } from '../scripts/compose';
-import { logger } from '../../scripts/helpers/logger';
+import { ComposeBlog, ComposePromptType } from '@/scripts/compose';
+import { logger } from '@/scripts/helpers/logger';
 
 export async function runComposeBlog(): Promise<string> {
   const answers: ComposePromptType = await inquirer.prompt([

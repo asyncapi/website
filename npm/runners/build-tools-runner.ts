@@ -1,4 +1,4 @@
-import { buildTools } from "../scripts/build-tools";
+import { buildTools } from "@/scripts/build-tools";
 
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';

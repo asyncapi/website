@@ -1,4 +1,4 @@
-import { rssFeed } from '../scripts/build-rss';
+import { rssFeed } from '@/scripts/build-rss';
 
 export async function runBuildRss() {
   try {

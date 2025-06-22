@@ -1,4 +1,4 @@
-import { buildPostList } from '../scripts/build-post-list';
+import { buildPostList } from '@/scripts/build-post-list';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
