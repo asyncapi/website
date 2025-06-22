@@ -1,4 +1,4 @@
-import Footer from './pages/footer';
+import Footer from './pages/Footer';
 
 describe('Footer Links Validation', () => {
   const footer = new Footer();
