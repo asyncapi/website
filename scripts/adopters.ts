@@ -1,6 +1,6 @@
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
-import { writeJSON } from '../helpers/readAndWriteJson';
+import { writeJSON } from './utils/readAndWriteJson';
 
 /**
  * Converts the YAML adopters configuration to a JSON file.

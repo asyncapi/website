@@ -79,5 +79,3 @@ export function copyAndRenameFiles(srcDir: string, targetDir: string) {
     }
   });
 }
-
-copyAndRenameFiles(SRC_DIR, TARGET_DIR);
