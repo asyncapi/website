@@ -11,8 +11,7 @@ export async function runCaseStudies() {
     try {
         const caseStudyDirectory = resolve(projectRoot, 'config', 'casestudies');
         if (!fs.existsSync(caseStudyDirectory)) {
-            console.error(`Directory does not exist: ${caseStudyDirectory}`);
-            return;
+            throw new Error(`Case-study directory missing: ${caseStudyDirectory}`);
         }
         const writeFilePath = resolve(projectRoot, 'config', 'case-studies.json');
         await buildCaseStudiesList(caseStudyDirectory, writeFilePath);
