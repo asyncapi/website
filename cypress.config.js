@@ -4,6 +4,7 @@ export default defineConfig({
   defaultCommandTimeout: 8000,
   screenshotOnRunFailure: true,
   e2e: {
+    experimentalStudio: true,
     screenshotsFolder: 'cypress/screenshots',
     viewportWidth: 1280,
     viewportHeight: 720,

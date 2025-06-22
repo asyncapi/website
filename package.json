@@ -5,6 +5,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "start-server-and-test":" 'npm run dev' http://localhost:3000 'npx cypress run'",
     "dev": "npm run build-scripts && next dev",
     "build": "npm run build-scripts && next build",
     "test:e2e": "npx cypress run",
@@ -170,6 +171,7 @@
     "remark-mdx": "^3.0.1",
     "storybook": "^8.6.12",
     "tsx": "^4.19.4",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "start-server-and-test": "^2.0.12"
   }
 }
