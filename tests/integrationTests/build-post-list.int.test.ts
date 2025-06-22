@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path';
 import os from 'os';
-import { buildPostList } from '@/scripts/build-post-list';
+import { buildPostList } from '../../scripts/build-post-list';
 import { TableOfContentsItem, Result, Details } from '@/types/scripts/build-posts-list';
 
 interface PostItem {
