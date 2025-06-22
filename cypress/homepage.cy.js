@@ -1,7 +1,7 @@
-import HomePage from './pages/Homepage';
+import Homepage from './pages/Homepage';
 
 describe('Home Page Tests', () => {
-  const homePage = new HomePage();
+  const homePage = new Homepage();
 
   beforeEach(() => {
     homePage.visit();
