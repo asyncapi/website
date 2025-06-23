@@ -15,7 +15,8 @@ interface ICaseStudyCardProps {
  */
 export default function CaseStudyCard({ studies = [] }: ICaseStudyCardProps) {
   if (studies.length === 0) {
-	@@ -20,7 +20,7 @@ export default function CaseStudyCard({ studies = [] }: ICaseStudyCardProps) {
+    return null;
+  }
 
   return (
     <div className='flex flex-wrap gap-3 pt-10 justify-center lg:gap-8 lg:text-center'>
