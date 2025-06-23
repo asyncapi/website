@@ -8,11 +8,11 @@ const currentDirPath = dirname(currentFilePath);
 export async function runBuildPostList() {
     try {
         const postDirectories = [
-            ['./pages/blog', '/blog'],
-            ['./pages/docs', '/docs'],
-            ['./pages/about', '/about']
+            [resolve(currentDirPath, '../../pages/blog'), '/blog'],
+            [resolve(currentDirPath, '../../pages/docs'), '/docs'],
+            [resolve(currentDirPath, '../../pages/about'), '/about']
         ];
-        const basePath = '../../pages';
+        const basePath = resolve(currentDirPath, '../../pages');
         const writeFilePath = resolve(currentDirPath, '../../config', 'posts.json');
         await buildPostList(postDirectories, basePath, writeFilePath);
     } catch (err) {
