@@ -34,20 +34,6 @@ async function main() {
     results.forEach((result, index) => {
       if (result.status === 'rejected') {
         errorFaced = true;
-        const error = result.reason;
-        
-        if (error instanceof Error) {
-          const errorDetails = {
-            message: error.message,
-            cause: error.cause,
-            stack: error.stack
-          };
-          logger.error(`Error building ${buildTasks[index].name}:`, errorDetails);
-        } else {
-          logger.error(`Error building ${buildTasks[index].name}:`, error);
-        }
-      } else {
-        logger.info(`Successfully executed ${buildTasks[index].name}`);
       }
     });
 
