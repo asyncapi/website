@@ -3,7 +3,6 @@ import path from 'path';
 import os from 'os';
 import { buildPostList } from '../../scripts/build-post-list';
 import { TableOfContentsItem, Result, Details } from '@/types/scripts/build-posts-list';
-import { runBuildPages } from '@/npm/runners/build-pages-runner';
 
 interface PostItem {
   title: string;
@@ -20,7 +19,6 @@ describe('Integration: buildPostList with real content', () => {
 
     beforeAll(async () => {
         try {
-            runBuildPages(); // Just to make sure that the below mentioned directories are available and tests pass
             tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'build-post-list-real-'));
             outputPath = path.join(tempDir, 'posts.json');
     
