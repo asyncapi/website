@@ -1,17 +1,17 @@
 import React from 'react';
 
-import type { ICaseStudies } from '@/types/post';
+import type { ICaseStudy } from '@/types/post';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 import Paragraph from './typography/Paragraph';
 
 interface ICaseStudyCardProps {
-  studies?: ICaseStudies;
+  studies?: ICaseStudy[];
 }
 
 /**
  * @description A component that displays a list of case studies in a card format
- * @param {ICaseStudies} props.studies - The list of case studies to display
+ * @param {ICaseStudy[]} props.studies - The list of case studies to display
  */
 export default function CaseStudyCard({ studies = [] }: ICaseStudyCardProps) {
   if (studies.length === 0) {
@@ -20,7 +20,7 @@ export default function CaseStudyCard({ studies = [] }: ICaseStudyCardProps) {
 
   return (
     <div className='flex flex-wrap gap-3 pt-10 justify-center lg:gap-8 lg:text-center'>
-      {studies.map((study, index) => (
+      {studies.map((study: ICaseStudy, index: number) => (
         <a key={index} className='lg:w-[30%]' href={`casestudies/${study.id}`}>
           <div
             className='h-full min-h-[300px] max-w-sm overflow-hidden rounded-md border border-gray-200 bg-white p-4'
