@@ -39,7 +39,7 @@ export async function runComposeBlog(): Promise<string> {
     if (error.isTtyError) {
       logger.error("Prompt couldn't be rendered in the current environment");
     } else {
-      logger.error('Something went wrong, sorry!');
+      logger.error('Something went wrong with the prompt, sorry!', error);
     }
     throw error;
   }
