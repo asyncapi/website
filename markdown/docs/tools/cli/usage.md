@@ -792,33 +792,42 @@ _See code: [src/commands/start/preview.ts](https://github.com/asyncapi/cli/blob/
 
 validate asyncapi file
 
-```
 USAGE
   $ asyncapi validate [SPEC-FILE] [-h] [-w] [--log-diagnostics] [--diagnostics-format
     json|stylish|junit|html|text|teamcity|pretty] [--fail-severity error|warn|info|hint] [-o <value>] [--score]
-    [--proxyHost <value>] [--proxyPort <value>]
+    [--proxyHost <value>] [--proxyPort <value>] [--suppressWarnings <value>...] [--suppressAllWarnings]
 
 ARGUMENTS
   SPEC-FILE  spec path, url, or context-name
 
 FLAGS
   -h, --help                         Show CLI help.
-  -o, --output=<value>               The output file name. Omitting this flag the result will be printed in the console.
-  -w, --watch                        Enable watch mode
-      --diagnostics-format=<option>  [default: stylish] format to use for validation diagnostics
+  -o, --output=<value>               The output file name. Omitting this flag will print the result to the console.
+  -w, --watch                        Enable watch mode.
+      --diagnostics-format=<option>  [default: stylish] Format to use for validation diagnostics.
                                      <options: json|stylish|junit|html|text|teamcity|pretty>
-      --fail-severity=<option>       [default: error] diagnostics of this level or above will trigger a failure exit
-                                     code
+      --fail-severity=<option>       [default: error] Diagnostics of this level or above will trigger a failure exit
+                                     code.
                                      <options: error|warn|info|hint>
-      --[no-]log-diagnostics         log validation diagnostics or not
-      --proxyHost=<value>            Name of the ProxyHost
-      --proxyPort=<value>            Port number number for the proxyHost.
+      --[no-]log-diagnostics         Log validation diagnostics or not.
+      --proxyHost=<value>            Name of the proxy host.
+      --proxyPort=<value>            Port number for the proxy host.
       --score                        Compute the score of the AsyncAPI document. Scoring is based on whether the
-                                     document has description, license, server and/or channels.
+                                     document has description, license, server, and/or channels.
+      --suppressWarnings=<value>     One or more warning codes to suppress from the diagnostics output. Can be passed
+                                     multiple times.
+      --suppressAllWarnings          Suppress all warnings from the diagnostics output, regardless of their code.
 
 DESCRIPTION
-  validate asyncapi file
-```
+  Validate an AsyncAPI file.
 
-_See code: [src/commands/validate.ts](https://github.com/asyncapi/cli/blob/v2.16.4/src/commands/validate.ts)_
+EXAMPLES
+  $ asyncapi validate ./asyncapi.yml
+  $ asyncapi validate ./asyncapi.yml --suppressWarnings asyncapi-id asyncapi-info-contact
+     You need to pass the ID(s) of the warning(s) that you want to suppress during validation.
+  $ asyncapi validate ./asyncapi.yml --suppressAllWarnings
+     Use this flag to completely suppress all warnings from the validation output.
+
+
+See code: [src/commands/validate.ts](https://github.com/asyncapi/cli/blob/v2.16.4/src/commands/validate.ts)_
 <!-- commandsstop -->
