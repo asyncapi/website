@@ -9,6 +9,8 @@
     "build": "npm run build-scripts && next build",
     "test:e2e": "npx cypress run",
     "test": "jest --passWithNoTests",
+    "test:unit": "jest --passWithNoTests --testMatch=\"**/tests/**/*.test.*\" --testPathIgnorePatterns=\"integrationTests|netlify\"",
+    "test:integration": "jest --passWithNoTests --testMatch=\"**/integrationTests/**/*.test.*\"",
     "build:pages": "tsx npm/runners/build-pages-runner.ts && npm run format:mdx",
     "build:posts": "tsx scripts/index.ts",
     "build-scripts": "npm run build:pages && npm run lint:mdx && npm run build:posts",
@@ -28,8 +30,7 @@
     "test:locales": "tsx scripts/helpers/check-locales.ts",
     "dev:storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build",
-    "build:all": "tsx npm/index.ts",
-    "test:integration": "jest --passWithNoTests --config=jest.integration.config.js"
+    "build:all": "tsx npm/index.ts"
   },
   "repository": {
     "type": "git",
