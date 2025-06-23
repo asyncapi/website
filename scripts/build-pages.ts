@@ -16,7 +16,6 @@ export function ensureDirectoryExists(directory: PathLike) {
     fs.mkdirSync(directory, { recursive: true });
   }
 }
-ensureDirectoryExists(TARGET_DIR);
 
 /**
  * Capitalizes the first letter of JSX tag names in the provided content if they are in a predefined list.
@@ -79,5 +78,3 @@ export function copyAndRenameFiles(srcDir: string, targetDir: string) {
     }
   });
 }
-
-copyAndRenameFiles(SRC_DIR, TARGET_DIR);

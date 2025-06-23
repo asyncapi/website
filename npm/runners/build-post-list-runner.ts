@@ -19,3 +19,10 @@ export async function runBuildPostList() {
         throw err;
     }
 }
+
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+    runBuildPostList().catch((error) => {
+        console.error('Error running build post list:', error);
+        process.exit(1);
+    });
+}

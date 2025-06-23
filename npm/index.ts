@@ -7,13 +7,14 @@ import { logger } from '../scripts/helpers/logger';
 import { runBuildMeetings } from './runners/build-meetings-runner';
 import { runBuildFinanceInfoList } from './runners/build-finance-info-list-runner';
 import { runBuildAdoptersList } from './runners/build-adopters-list-runner';
-// import { runBuildPages } from './runners/build-pages-runner';
+import { runBuildPages } from './runners/build-pages-runner';
 import { runBuildRss } from './runners/build-rss-runner';
 
 async function main() {
   let errorFaced: boolean = false;
 
   const buildTasks = [
+    { name: 'pages', task: runBuildPages },
     { name: 'posts', task: runBuildPostList },
     { name: 'dashboard', task: runBuildDashboard },
     { name: 'tools', task: runBuildTools },
@@ -22,7 +23,6 @@ async function main() {
     { name: 'meetings', task: runBuildMeetings },
     { name: 'finance', task: runBuildFinanceInfoList },
     { name: 'adopters', task: runBuildAdoptersList },
-    // { name: 'pages', task: runBuildPages },
     { name: 'rss', task: runBuildRss }
   ];
 
