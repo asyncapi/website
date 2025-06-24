@@ -26,15 +26,12 @@ describe('Home Page Tests', () => {
   });
 
   it('User clicks on the Read the Docs button', () => {
-    cy.get(`[data-testid="Button-link"][href="${data.readDocsLink}"]`).should(
-      'be.visible',
-    );
+    const selector = `[data-testid="Button-link"][href="${data.readDocsLink}"]`;
+    homePage.verifyElementIsVisible(selector);
   });
 
   it('User clicks on the "Let us know here" link', () => {
-    cy.contains('a', 'Let us know here!')
-      .should('be.visible')
-      .and('have.attr', 'href', data.letUsKnowLink);
+    homePage.verifyLinkExists('Let us know here!', data.letUsKnowLink);
   });
 
   it('User verifies homepage cards', () => {
