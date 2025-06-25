@@ -5,7 +5,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-  "start-server-and-test": "start-server-and-test 'npm run dev' http://localhost:3000 'npx cypress run'",
     "dev": "npm run build-scripts && next dev",
     "build": "npm run build-scripts && next build",
     "test:e2e": "npx cypress run",
