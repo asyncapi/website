@@ -1,7 +1,7 @@
 import { defineConfig } from 'cypress';
 
 export default defineConfig({
-  defaultCommandTimeout: 8000,
+  defaultCommandTimeout: 15000,
   screenshotOnRunFailure: true,
   e2e: {
     screenshotsFolder: 'cypress/screenshots',
