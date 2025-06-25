@@ -280,14 +280,9 @@
   },
   "Editors": {
     "WebsiteLinks": [
-      { "href": "https://studio.asyncapi.com", "heading": "AsyncAPI Studio" },
       { "href": "https://studio.asyncapi.com", "heading": "AsyncAPI Studio" }
     ],
     "GithubLinks": [
-      {
-        "href": "https://github.com/Shurtu-gal/action-test-bed",
-        "heading": "AsyncAPI Studio"
-      },
       {
         "href": "https://github.com/Shurtu-gal/action-test-bed",
         "heading": "AsyncAPI Studio"
@@ -341,7 +336,7 @@
   "Frameworks": {
     "WebsiteLinks": [
       { "href": "https://pypi.org/project/asynction/", "heading": "Asynction" },
-      { "href": "https://mokapi.io", "heading": "FastStream" },
+      { "href": "https://mokapi.io", "heading": "Mokapi" },
       {
         "href": "https://www.npmjs.com/package/zod-sockets",
         "heading": "Zod Sockets"
@@ -499,10 +494,6 @@
       {
         "href": "https://siom79.github.io/jasyncapicmp/",
         "heading": "jasyncapicmp"
-      },
-      {
-        "href": "https://siom79.github.io/jasyncapicmp/",
-        "heading": "jasyncapicmp"
       }
     ],
     "GithubLinks": [
@@ -513,10 +504,6 @@
       {
         "href": "https://github.com/asyncapi/diff",
         "heading": "AsyncAPI Diff"
-      },
-      {
-        "href": "https://github.com/siom79/jasyncapicmp",
-        "heading": "jasyncapicmp"
       },
       {
         "href": "https://github.com/siom79/jasyncapicmp",
