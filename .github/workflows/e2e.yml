@@ -1,0 +1,29 @@
+name: Run Cypress E2E Tests
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name:  Checkout repository
+        uses: actions/checkout@v4
+
+      - name:  Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name:  Install dependencies
+        run: npm install
+
+      - name:  Run E2E Cypress tests
+        run: npm run start-server-and-test
+
