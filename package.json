@@ -14,7 +14,6 @@
     "build-scripts": "npm run build:pages && npm run lint:mdx && npm run build:posts",
     "write:blog": "tsx ./scripts/compose.ts",
     "start": "npx serve@latest out",
-    "start-server-and-test":"start-server-and-test 'npm run dev' http://localhost:3000 'npx cypress run --browser chrome'",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "format:mdx": "prettier --write \"**/*.mdx\"",
