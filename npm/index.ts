@@ -34,6 +34,20 @@ async function main() {
     results.forEach((result, index) => {
       if (result.status === 'rejected') {
         errorFaced = true;
+        const taskName = buildTasks[index].name;
+        const error = result.reason;
+        const context = (error as any)?.context || {};
+        
+        logger.error(`Build task '${taskName}' failed`, { 
+          error, 
+          script: 'index.ts',
+          task: taskName,
+          totalTasks: buildTasks.length,
+          failedTaskIndex: index,
+          timestamp: new Date().toISOString(),
+          ...context,
+          ...(context.originalError?.context || {})
+        });
       }
     });
 
@@ -44,8 +58,12 @@ async function main() {
       logger.info('Successfully executed all build scripts');
     }
   } catch (error) {
-    logger.error('Error executing build scripts:', error);
-    throw new Error('Error executing build scripts', { cause: error });
+    logger.error('Error executing build scripts', { 
+      error, 
+      script: 'index.ts',
+      timestamp: new Date().toISOString()
+    });
+    process.exit(1);
   }
 }
 

@@ -6,17 +6,38 @@ const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
 export async function runBuildPostList() {
+    const postDirectories = [
+        [resolve(currentDirPath, '../../pages/blog'), '/blog'],
+        [resolve(currentDirPath, '../../pages/docs'), '/docs'],
+        [resolve(currentDirPath, '../../pages/about'), '/about']
+    ];
+    const basePath = resolve(currentDirPath, '../../pages');
+    const outputPath = resolve(currentDirPath, '../../config', 'posts.json');
+    
     try {
-        const postDirectories = [
-            [resolve(currentDirPath, '../../pages/blog'), '/blog'],
-            [resolve(currentDirPath, '../../pages/docs'), '/docs'],
-            [resolve(currentDirPath, '../../pages/about'), '/about']
-        ];
-        const basePath = resolve(currentDirPath, '../../pages');
-        const writeFilePath = resolve(currentDirPath, '../../config', 'posts.json');
-        await buildPostList(postDirectories, basePath, writeFilePath);
-    } catch (err) {
-        throw err;
+        await buildPostList(postDirectories, basePath, outputPath);
+    }
+    catch (error) {
+        // If it's already our structured error, add runner context and rethrow
+        if ((error as any).context) {
+            (error as any).context = {
+                ...(error as any).context,
+                errorType: 'script_level_error'
+            };
+            throw error;
+        }
+        // Otherwise, this is likely a runner-level issue or unexpected error
+        const wrappedError = new Error(`Post list runner failed: ${(error as Error).message}`);
+        (wrappedError as any).context = {
+            operation: 'runBuildPostList',
+            runner: 'build-post-list-runner',
+            outputPath,
+            timestamp: new Date().toISOString(),
+            originalError: error,
+            errorType: 'runner_level_error',
+            note: 'This error occurred at the runner level, not in the low-level script'
+        };
+        throw wrappedError;
     }
 }
 

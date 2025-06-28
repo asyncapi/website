@@ -24,7 +24,12 @@ dotenv.config();
 export async function buildNewsroomVideos(writePath: string): Promise<string> {
   try {
     if (!process.env.YOUTUBE_TOKEN) {
-      throw new Error('YOUTUBE_TOKEN environment variable is required');
+      const error = new Error('YOUTUBE_TOKEN environment variable is required');
+      (error as any).context = {
+        operation: 'buildNewsroomVideos',
+        stage: 'environment_check',
+      };
+      throw error;
     }
     const response = await fetch(
       `https://youtube.googleapis.com/youtube/v3/search?${new URLSearchParams({
@@ -39,13 +44,27 @@ export async function buildNewsroomVideos(writePath: string): Promise<string> {
     );
 
     if (!response.ok) {
-      throw new Error(`HTTP error! with status code: ${response.status}`);
+      const error = new Error(`HTTP error! with status code: ${response.status}`);
+      (error as any).context = {
+        operation: 'buildNewsroomVideos',
+        stage: 'api_request',
+        statusCode: response.status,
+        statusText: response.statusText
+      };
+      throw error;
     }
 
     const data = await response.json();
 
     if (!data.items || !Array.isArray(data.items)) {
-      throw new Error('Invalid data structure received from YouTube API');
+      const error = new Error('Invalid data structure received from YouTube API');
+      (error as any).context = {
+        operation: 'buildNewsroomVideos',
+        stage: 'recieved_data_validation',
+        receivedData: data,
+        expectedStructure: 'data.items should be an array'
+      };
+      throw error;
     }
 
     const videoDataItems = data.items.map((video: youtube_v3.Schema$SearchResult) => {
@@ -65,6 +84,15 @@ export async function buildNewsroomVideos(writePath: string): Promise<string> {
 
     return videoData;
   } catch (err) {
-    throw new Error(`Failed to build newsroom videos: ${(err as Error).message}`);
+    const error = new Error(`Failed to build newsroom videos: ${(err as Error).message}`);
+    (error as any).context = {
+      operation: (err as any)?.context?.operation || 'buildNewsroomVideos',
+      stage: (err as any)?.context?.stage || 'main_execution',
+      writePath,
+      errorMessage: (err as Error).message,
+      errorStack: (err as Error).stack?.split('\n').slice(0, 3).join('\n'),
+      nestedContext: (err as any)?.context || null
+    };
+    throw error;
   }
 }

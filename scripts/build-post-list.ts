@@ -266,7 +266,21 @@ async function walkDirectories(
       }
     }
   } catch (error) {
-    throw new Error(`Error while walking directories: ${(error as Error).message}`);
+    const refinedError = new Error(`Error while walking directories: ${(error as Error).message}`);
+    (refinedError as any).context = {
+      operation: 'walkDirectories',
+      stage: 'directory_traversal',
+      directories: directories.map(dir => dir[1] || dir[0]),
+      basePath: basePath,
+      sectionTitle: sectionTitle,
+      sectionId: sectionId,
+      rootSectionId: rootSectionId,
+      sectionWeight: sectionWeight,
+      originalErrorMessage: (error as Error).message,
+      originalErrorStack: (error as Error).stack?.split('\n').slice(0, 3).join('\n'),
+      nestedContext: (error as any)?.context || null
+    };
+    throw refinedError;
   }
 }
 // Builds a list of posts from the specified directories and writes it to a file
@@ -292,13 +306,34 @@ export async function buildPostList(
 ): Promise<void> {
   try {
     if (!basePath) {
-      throw new Error('Error while building post list: basePath is required');
+      const error = new Error('basePath is required');
+      (error as any).context = {
+        function: 'buildPostList',
+        postDirectories: postDirectories.map(dir => dir[1] || dir[0]),
+        basePath,
+        writeFilePath
+      };
+      throw error;
     }
     if (!writeFilePath) {
-      throw new Error('Error while building post list: writeFilePath is required');
+      const error = new Error('writeFilePath is required');
+      (error as any).context = {
+        function: 'buildPostList',
+        postDirectories: postDirectories.map(dir => dir[1] || dir[0]),
+        basePath,
+        writeFilePath
+      };
+      throw error;
     }
     if (postDirectories.length === 0) {
-      throw new Error('Error while building post list: postDirectories array is empty');
+      const error = new Error('postDirectories array is empty');
+      (error as any).context = {
+        function: 'buildPostList',
+        postDirectories: [],
+        basePath,
+        writeFilePath
+      };
+      throw error;
     }
     const normalizedBasePath = normalize(basePath);
 
@@ -309,6 +344,18 @@ export async function buildPostList(
     finalResult.docs = addDocButtons(finalResult.docs, treePosts);
     await writeFile(writeFilePath, JSON.stringify(finalResult, null, '  '));
   } catch (error) {
-    throw new Error(`Error while building post list: ${(error as Error).message}`, { cause: error });
+    const contextError = new Error(`Error while building post list: ${(error as Error).message}`);
+    (contextError as any).context = {
+      operation: (error as any)?.context?.operation || 'buildPostList',
+      stage: (error as any)?.context?.stage || 'main_execution',
+      postDirectories: postDirectories.map(dir => dir[1] || dir[0]),
+      basePath,
+      writeFilePath,
+      normalizedBasePath: basePath ? normalize(basePath) : undefined,
+      errorMessage: (error as Error).message,
+      errorStack: (error as Error).stack?.split('\n').slice(0, 3).join('\n'),
+      nestedContext: (error as any)?.context || null
+    };
+    throw contextError;
   }
 }
