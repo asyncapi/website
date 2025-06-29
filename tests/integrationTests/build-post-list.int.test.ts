@@ -1,8 +1,9 @@
 import fs from 'fs-extra';
 import path from 'path';
 import os from 'os';
-import { buildPostList } from '../../scripts/build-post-list';
+import { runBuildPostList } from '../../npm/runners/build-post-list-runner';
 import { TableOfContentsItem, Result, Details } from '@/types/scripts/build-posts-list';
+import { runBuildPages } from '@/npm/runners/build-pages-runner';
 
 interface PostItem {
   title: string;
@@ -19,17 +20,11 @@ describe('Integration: buildPostList with real content', () => {
 
     beforeAll(async () => {
         try {
+            await runBuildPages();
             tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'build-post-list-real-'));
             outputPath = path.join(tempDir, 'posts.json');
     
-            const postDirectories = [
-                [path.join(realPagesDir, 'blog'), '/blog'],
-                [path.join(realPagesDir, 'docs'), '/docs'],
-                [path.join(realPagesDir, 'about'), '/about']
-            ];
-            const basePath = realPagesDir;
-    
-            await buildPostList(postDirectories, basePath, outputPath);
+            await runBuildPostList({ outputPath });
     
             output = JSON.parse(await fs.readFile(outputPath, 'utf-8')) as Result;
         } catch (error) {
@@ -39,7 +34,6 @@ describe('Integration: buildPostList with real content', () => {
     });
 
     afterAll(() => {
-        fs.removeSync(tempDir);
     });
 
     it('writes the file successfully', () => {

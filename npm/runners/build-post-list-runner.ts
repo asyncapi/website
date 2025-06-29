@@ -5,14 +5,21 @@ import { fileURLToPath } from 'url';
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
-export async function runBuildPostList() {
-    const postDirectories = [
+interface BuildPostListOptions {
+    postDirectories?: string[][];
+    basePath?: string;
+    outputPath?: string;
+  }
+
+export async function runBuildPostList(options: BuildPostListOptions = {}) {
+    // Use provided options or fall back to default production paths
+    const postDirectories = options.postDirectories || [
         [resolve(currentDirPath, '../../pages/blog'), '/blog'],
         [resolve(currentDirPath, '../../pages/docs'), '/docs'],
         [resolve(currentDirPath, '../../pages/about'), '/about']
     ];
-    const basePath = resolve(currentDirPath, '../../pages');
-    const outputPath = resolve(currentDirPath, '../../config', 'posts.json');
+    const basePath = options.basePath || resolve(currentDirPath, '../../pages');
+    const outputPath = options.outputPath || resolve(currentDirPath, '../../config', 'posts.json');
     
     try {
         await buildPostList(postDirectories, basePath, outputPath);
