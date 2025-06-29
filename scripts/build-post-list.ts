@@ -270,7 +270,7 @@ async function walkDirectories(
     (refinedError as any).context = {
       operation: 'walkDirectories',
       stage: 'directory_traversal',
-      directories: directories.map(dir => dir[1] || dir[0]),
+      directories: directories,
       basePath: basePath,
       sectionTitle: sectionTitle,
       sectionId: sectionId,
@@ -309,7 +309,7 @@ export async function buildPostList(
       const error = new Error('basePath is required');
       (error as any).context = {
         function: 'buildPostList',
-        postDirectories: postDirectories.map(dir => dir[1] || dir[0]),
+        postDirectories: postDirectories,
         basePath,
         writeFilePath
       };
@@ -319,7 +319,7 @@ export async function buildPostList(
       const error = new Error('writeFilePath is required');
       (error as any).context = {
         function: 'buildPostList',
-        postDirectories: postDirectories.map(dir => dir[1] || dir[0]),
+        postDirectories: postDirectories,
         basePath,
         writeFilePath
       };
@@ -348,13 +348,12 @@ export async function buildPostList(
     (contextError as any).context = {
       operation: (error as any)?.context?.operation || 'buildPostList',
       stage: (error as any)?.context?.stage || 'main_execution',
-      postDirectories: postDirectories.map(dir => dir[1] || dir[0]),
+      postDirectories: postDirectories,
       basePath,
       writeFilePath,
       normalizedBasePath: basePath ? normalize(basePath) : undefined,
       errorMessage: (error as Error).message,
       errorStack: (error as Error).stack?.split('\n').slice(0, 3).join('\n'),
-      nestedContext: (error as any)?.context || null
     };
     throw contextError;
   }
