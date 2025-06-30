@@ -1,14 +1,8 @@
 import fs from 'fs-extra';
-import { dirname, resolve } from 'path';
-import { fileURLToPath } from 'url';
-
-import { logger } from './helpers/logger';
 import { combineTools } from './tools/combine-tools';
 import { getData } from './tools/extract-tools-github';
 import { convertTools } from './tools/tools-object';
 
-const currentFilePath = fileURLToPath(import.meta.url);
-const currentDirPath = dirname(currentFilePath);
 
 /**
  * Combines automated and manual tools data and writes the results to the specified file paths.
@@ -24,7 +18,7 @@ const currentDirPath = dirname(currentFilePath);
  * @param tagsPath - The file path where the tags data will be written.
  * @throws {Error} If an error occurs during the build process.
  */
-async function buildTools(automatedToolsPath: string, manualToolsPath: string, toolsPath: string, tagsPath: string) {
+export async function buildTools(automatedToolsPath: string, manualToolsPath: string, toolsPath: string, tagsPath: string) {
   try {
     const githubExtractData = await getData();
     const automatedTools = await convertTools(githubExtractData);
@@ -35,21 +29,6 @@ async function buildTools(automatedToolsPath: string, manualToolsPath: string, t
 
     await combineTools(automatedTools, manualTools, toolsPath, tagsPath);
   } catch (err) {
-    throw new Error(`An error occurred while building tools: ${(err as Error).message}`);
+    throw err;
   }
 }
-
-/* istanbul ignore next */
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  const automatedToolsPath = resolve(currentDirPath, '../config', 'tools-automated.json');
-  const manualToolsPath = resolve(currentDirPath, '../config', 'tools-manual.json');
-  const toolsPath = resolve(currentDirPath, '../config', 'tools.json');
-  const tagsPath = resolve(currentDirPath, '../config', 'all-tags.json');
-
-  buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath).catch((err) => {
-    logger.error('Failed to build tools:', err);
-    process.exit(1);
-  });
-}
-
-export { buildTools };
