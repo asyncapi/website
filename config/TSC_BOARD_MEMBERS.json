@@ -571,8 +571,7 @@
         "isTscMember": true,
         "repos": [
             "spec-json-schemas",
-            "bindings",
-            "saunter"
+            "bindings"
         ],
         "githubID": 5294032
     },
@@ -817,6 +816,67 @@
                     "month": "November"
                 },
                 "link": "https://www.youtube.com/watch?v=_wTcV63jrnU"
+            }
+        ]
+    },
+    {
+        "name": "Hugo Guerrero",
+        "img": "https://avatars.githubusercontent.com/u/1001939?v=4",
+        "bio": "Hugo Guerrero is a developer advocate with over 20 years of hands-on experience in software development. He\u2019s worked across the stack as a developer, consultant, architect, and software factory manager. Hugo is a strong advocate for event-driven systems and actively contributes to open source communities, including AsyncAPI. He maintains the Microcks Docker Desktop Extension and regularly shares practical insights on APIs, distributed systems, and developer tooling.",
+        "github": "hguerrero",
+        "githubID": 1001939,
+        "slack": "U01H9D8J4H1",
+        "twitter": "hguerreroo",
+        "title": "Head of Technical Marketing",
+        "linkedin": "hugoguerrero",
+        "company": "Kong",
+        "country": "\ud83c\uddf2\ud83c\uddfd",
+        "isTscMember": true,
+        "contributions": [
+            {
+                "type": "presentation",
+                "title": "Speed-Up Kafka Delivery with AsyncAPI & Microcks",
+                "date": {
+                    "year": 2021,
+                    "month": "July"
+                },
+                "link": "https://www.confluent.io/events/kafka-summit-apac-2021/speed-up-kafka-delivery-with-asyncapi-and-microcks/"
+            },
+            {
+                "type": "presentation",
+                "title": "Automated Apache Kafka Mocking and Testing with AsyncAPI",
+                "date": {
+                    "year": 2021,
+                    "month": "September"
+                },
+                "link": "https://www.confluent.io/events/kafka-summit-americas-2021/automated-apache-kafka-mocking-and-testing-with-asyncapi/"
+            },
+            {
+                "type": "presentation",
+                "title": "Event-driven APIs & Schema governance for Apache Kafka, Apidays LIVE Hong Kong",
+                "date": {
+                    "year": 2021,
+                    "month": "August"
+                },
+                "link": "https://www.youtube.com/watch?v=rwlHJkgaRdw"
+            },
+            {
+                "type": "presentation",
+                "title": "Event-driven APIs & Schema governance for Apache Kafka, API Specification Conference",
+                "date": {
+                    "year": 2021,
+                    "month": "August"
+                },
+                "link": "https://www.youtube.com/watch?v=QZ4cJyTw-U0"
+            },
+            {
+                "type": "presentation",
+                "title": "Getting started with Event-Driven APIs, Apidays LIVE Paris",
+                "date": {
+                    "year": 2021,
+                    "month": "December"
+                },
+                "link": "https://www.youtube.com/watch?v=_kIE-qtpwTA&t=9s"
             }
         ]
     },
