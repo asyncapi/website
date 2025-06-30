@@ -14,6 +14,7 @@
     "build-scripts": "npm run build:pages && npm run lint:mdx && npm run build:posts",
     "write:blog": "tsx ./scripts/compose.ts",
     "start": "npx serve@latest out",
+    "start-server-and-test": "start-server-and-test 'npm run dev' http://localhost:3000 'npx cypress run --browser chrome'",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "format:mdx": "prettier --write \"**/*.mdx\"",
@@ -168,6 +169,7 @@
     "remark-cli": "^12.0.1",
     "remark-lint": "^10.0.0",
     "remark-mdx": "^3.0.1",
+    "start-server-and-test": "^2.0.12",
     "storybook": "^8.6.12",
     "tsx": "^4.19.4",
     "typescript": "^5.3.3"
