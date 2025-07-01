@@ -24,12 +24,7 @@ interface IBlogLayoutProps {
  * @param {IPosts['blog'][number]} props.post - The post
  * @param {React.ReactNode} props.children - The children
  */
-export default function BlogLayout({
-  post,
-  children,
-  // eslint-disable-next-line unused-imports/no-unused-vars, no-unused-vars
-  navItems
-}: IBlogLayoutProps) {
+export default function BlogLayout({ post, children }: IBlogLayoutProps) {
   const router = useRouter();
 
   if (!post) return <ErrorPage statusCode={404} />;

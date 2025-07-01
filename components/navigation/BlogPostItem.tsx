@@ -28,11 +28,14 @@ interface BlogPostItemProps {
 
 /**
  * Functional component representing a single blog post item.
+ *
+ * @param {BlogPostItemProps} props - The props for the BlogPostItem component.
+ * @param {IBlogPost} props.post - The blog post data.
+ * @param {string} [props.className] - The additional CSS classes for styling.
+ * @param {string} [props.id] - The HTML id attribute for the component.
+ * @param {Ref<HTMLLIElement>} ref - The reference object for the component.
  */
-export default forwardRef(function BlogPostItem(
-  { post, className = '', id = '' }: BlogPostItemProps,
-  ref: Ref<HTMLLIElement> /** Reference object for the component. */
-) {
+const BlogPostItem = ({ post, className = '', id = '' }: BlogPostItemProps, ref: Ref<HTMLLIElement>) => {
   let typeColors: [string, string] = ['bg-indigo-100', 'text-indigo-800'];
 
   switch (post.type.toLowerCase()) {
@@ -102,8 +105,6 @@ export default forwardRef(function BlogPostItem(
                               className='cursor-pointer border-none bg-inherit p-0 hover:underline'
                               onClick={(e) => {
                                 e.preventDefault();
-
-                                // Handle the click event, e.g., navigate to author.link
                                 window.open(author.link, '_blank');
                               }}
                             >
@@ -133,4 +134,6 @@ export default forwardRef(function BlogPostItem(
       </article>
     </li>
   );
-});
+};
+
+export default forwardRef(BlogPostItem);
