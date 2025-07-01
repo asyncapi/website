@@ -1,4 +1,6 @@
-class HomePage {
+import CaseStudiesPage from "./CaseStudiesPage";
+import RoadmapPage from "./roadmap";
+class HomePage{
   visit() {
     cy.visit('/');
   }
@@ -18,6 +20,16 @@ class HomePage {
     this.verifyHeadingExists(
       'Building the future of Event-Driven Architectures (EDA)',
     );
+  }
+
+   goToCaseStudiesPage() {
+    cy.contains('a', 'Case Studies').click();
+    return new CaseStudiesPage();
+  }
+
+  goToRoadmapPage() {
+    cy.contains('a', 'Roadmap').click();
+    return new RoadmapPage();
   }
 }
 
