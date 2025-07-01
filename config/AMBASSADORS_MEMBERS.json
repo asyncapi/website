@@ -156,7 +156,7 @@
     {
         "name": "Hugo Guerrero",
         "img": "https://avatars.githubusercontent.com/u/1001939?v=4",
-        "bio": "Hugo Guerrero is a developer advocate for APIs and Event-driven Architecture. He assists organizations in this role by creating, editing, and curating product content shared with the community through webinars, conferences, and other activities. He works on open source software with major private and federal public sector clients looking to connect and extend their system architecture. He has over 20 years of experience as a developer, consultant, architect, and software development manager.",
+        "bio": "Hugo Guerrero is a developer advocate with over 20 years of hands-on experience in software development. He\u2019s worked across the stack as a developer, consultant, architect, and software factory manager. Hugo is a strong advocate for event-driven systems and actively contributes to open source communities, including AsyncAPI. He maintains the Microcks Docker Desktop Extension and regularly shares practical insights on APIs, distributed systems, and developer tooling.",
         "github": "hguerrero",
         "githubID": 1001939,
         "slack": "U01H9D8J4H1",
@@ -164,6 +164,8 @@
         "title": "Head of Technical Marketing",
         "linkedin": "hugoguerrero",
         "company": "Kong",
+        "country": "\ud83c\uddf2\ud83c\uddfd",
+        "isTscMember": true,
         "contributions": [
             {
                 "type": "presentation",
