@@ -11,7 +11,7 @@ weight: 180
 
 When adding a new term to the glossary, updating the definition of an existing term, or adding a new concept to the glossary, consider doing the following:
 
-- ✅ **Propose new terms by [raising an issue on the website's repository on GitHub](https://github.com/asyncapi/website/issues): This would help maintainers ensure that they fit AsyncAPI's documentation.
+- ✅ **Propose new terms by [raising an issue on the website's repository on GitHub](https://github.com/asyncapi/website/issues)**: This would help maintainers ensure that they fit AsyncAPI's documentation.
 - ✅ **Provide clear yet specific definitions and descriptions**: This helps ensure that the glossary is easy to understand and use.
 - ✅ **Keep it plain and simple**: Avoid using jargon or technical terms in the descriptions. This ensures that the glossary is accessible to a wide audience that may not be familiar with everyone.
 - ✅ **Use sentence case for definitions**: This makes the glossary easier to read and navigate.
@@ -27,15 +27,17 @@ When referencing terms and concepts in tutorials and other forms of content or a
 - ✅ Italicize the names of concepts and bold the terms to make them distinctive from each other.
 
 ### Examples
+
 Here are some examples of terms being used in tutorials & written as headings:
+
 1. Term:
-```md
-### Channel
-```
-2. Concept being used in a sentence
-```md
-In the context of designing and setting up an event-driven application, servers are responsible for delivering asynchronous messages from the producer to the consumers through the use of {'{'}`**[channel]**(https://www.asyncapi.com/docs/concepts/channel)`{'}'}. 
-```
+
+`### Channel`
+
+1. Concept being used in a sentence
+
+`In the context of designing and setting up an event-driven application, servers are responsible for delivering asynchronous messages from the producer to the consumers through the use of {'{'}**[channel](https://www.asyncapi.com/docs/concepts/channel)**{'}'}.`
+
 ## Additional Resources
 
 For more tips on contributing to the glossary, consider consulting the following sources:
@@ -43,4 +45,3 @@ For more tips on contributing to the glossary, consider consulting the following
 - [Create a glossary for software documentation](https://indoc.pro/documentation-types/glossary/)
 - [API Glossary](https://idratherbewriting.com/learnapidoc/docapis_glossary_section.html)
 - [Glossaries aid clarity](https://www.techscribe.co.uk/techw/glossaries.htm)
-

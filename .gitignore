@@ -22,3 +22,5 @@ cypress/videos
 /storybook-static/
 coverage
 deno.lock
+cypress/videos
+cypress/screenshots
