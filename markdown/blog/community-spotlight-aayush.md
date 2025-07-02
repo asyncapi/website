@@ -71,11 +71,11 @@ In this interview, Aayush shares his journey, challenges, growth, and advice for
 
 **Bami: Got it. So now to a lighter question: What’s one memorable moment or achievement in your journey?**
 
-***Aayush:** One of my best moments was completing an advanced bounty issue for the AsyncAPI Generator project. It was a really tough task, but with help from Lucas, I managed to complete it on time. That felt amazing.*
+***Aayush:** One of my best moments was completing an advanced bounty issue for the AsyncAPI Generator project. It was a really tough task, but with help from Lukasz, I managed to complete it on time. That felt amazing.*
 
 **Bami: Nice! If you were to give shout-outs, who would you mention?**
 
-***Aayush:** Honestly, I would shout out the whole AsyncAPI community. Everyone is doing great work. But if I have to mention names, then definitely Sovik, who was my first mentor, and also Ashish, Sameer, Lucas Fran, and many others, including you.*
+***Aayush:** Honestly, I would shout out the whole AsyncAPI community. Everyone is doing great work. But if I have to mention names, then definitely Sovik, who was my first mentor, and also Ashish, Sameer, [Lukasz Gornicki](https://www.linkedin.com/in/lukasz-gornicki-a621914/), [Fran Mendez](https://www.linkedin.com/in/fmvilas/), and many others, including [you](https://www.linkedin.com/in/atinuke-oluwabamikemi-kayode-5b838b1b7/).*
 
 **Bami: That's sweet. How do you envision the AsyncAPI community evolving in the future, based on your experience?**
 
