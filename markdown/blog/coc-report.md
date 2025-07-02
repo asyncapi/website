@@ -1,15 +1,16 @@
----
+![Aishat_Muibudeen](https://github.com/user-attachments/assets/d72bac7e-8903-4158-8026-bcd3577c4e6f)---
 title: "Code of Conduct Incident Report"
 date: 2025-06-20T06:00:00+01:00
 type: Communication
 tags:
   - Community
-cover: 
+cover: ![Coc](https://github.com/user-attachments/assets/aed37a88-03f3-466e-9ce4-1c6dbcd8508f)
+
 authors:
-  - name: Thulisile Sibanda
-    photo: /img/avatars/thulieblack.webp
-    link: https://www.linkedin.com/in/v-thulisile-sibanda/
-    byline: AsyncAPI Community Manager
+  - name: Aishat Muibudeen (Maya)
+    photo: /img/avatars/aishatmuibudeen.webp
+    link: https://www.linkedin.com/in/aishatmuibudeen/
+    byline: AsyncAPI Design Lead & Code of Conduct Committee Member
 excerpt: 'AsyncAPI Code of Conduct Committee Report Incident Summary – May 2025'
 ---
 
@@ -22,7 +23,7 @@ These accounts were used to:
 
 - Harass selected mentees and accused them of unfair selection.
 - Manipulate the discussion
-- Sow distrust and confusion within the community.
+- Create confusion and break trust within the community.
 
 ## Investigation & Findings
 The Code of Conduct Committee, composed of Maya, Ace, Thulie, and Łukasz, convened multiple times to review messages, examine account metadata, and speak with both mentors and mentees affected by the incident.
@@ -38,12 +39,12 @@ The Code of Conduct Committee, composed of Maya, Ace, Thulie, and Łukasz, conve
 ## Action Taken
 
 1. Account Bans
-The fake accounts have been permanently removed from the Slack workspace. Individuals found to be behind in impersonation are being contacted. If they do not come forward by the stated deadline, they will be permanently banned from AsyncAPI platforms and recommended for removal from associated programs (e.g., GSoC, Linux Foundation).
+The fake accounts were permanently removed from the Slack workspace. One individual, after being identified, issued an apology and remains in the community. The other did not respond to outreach and has been banned from the platform. We have also recommended their removal from the GSoC program.
 
 2. Mentor Accountability
 The CoC team has formally warned the mentor involved in the off-platform communications. While they intended to support and onboard contributors, their actions unintentionally contributed to confusion within the community. The CoC emphasized that future concerns regarding mentorship and selection processes should be directed to the official mentorship lead, Ace, to ensure transparency and consistency. Given the circumstances and the mentor’s good intentions, the committee has decided to handle this matter with leniency while providing clear guidance moving forward.
 
-3. Support for Affected Individuals
+4. Support for Affected Individuals
 All mentees and mentors affected were contacted directly by the CoC team to ensure they felt safe, supported, and heard.
 
 ## What We Learned
@@ -52,13 +53,12 @@ This incident highlighted the importance of better CoC visibility and process cl
 ## Next Steps
 We are taking the following measures:
 
-- By establishing regular monthly/bi-weekly meetings in the community
+- The CoC committee plans to establish monthly sync meetings to address community needs and improve coordination proactively.
 - Assigning platform-specific CoC leads (Slack, GitHub, Events, and Socials).
-- Introducing onboarding and awareness sessions for mentors and contributors.
-- Publishing quarterly community updates to maintain transparency.
+- Introducing onboarding and awareness sessions for mentors and Mentees.
 
 ## Postponed CoC Committee Nominations
-Due to the ongoing resolution of this matter, CoC Committee nominations are postponed. When resumed, nominations will be limited to TSC members to ensure that selected candidates have an established and verifiable presence within the community.
+CoC Committee nominations were temporarily postponed while the incident was being resolved. We now recommend that future nominations be limited to TSC members to ensure all candidates have a verified and trusted presence within the community.
 
 We are committed to upholding the values of openness, inclusion, and integrity. While this incident was difficult, we view it as an opportunity for growth, to strengthen our systems, enhance our culture, and protect what we’re building together.
 
