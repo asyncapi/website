@@ -8,26 +8,22 @@ on:
     branches:
       - master
 
-  workflow_dispatch: {} 
-  
-
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
 
     steps:
-      - name:  Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@c189bda4ba7716c920a17a3f7f5c4df4f5b7cfa8
 
-      - name:  Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@0c37e174b4a8289f256fc5c6d37e49e59a3f56df
         with:
           node-version: 20
           cache: npm
 
-      - name:  Install dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name:  Run E2E Cypress tests
+      - name: Run E2E Cypress tests
         run: npm run start-server-and-test
-
