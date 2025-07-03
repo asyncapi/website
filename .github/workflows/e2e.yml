@@ -8,9 +8,6 @@ on:
     branches:
       - master
 
-  workflow_dispatch: {} 
-  
-
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -25,9 +22,8 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name:  Install dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name:  Run E2E Cypress tests
+      - name: Run E2E Cypress tests
         run: npm run start-server-and-test
-
