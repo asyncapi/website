@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/lukasz-gornicki-a621914/
     byline: Open Source Fanatic!
 excerpt: 'End of startup period for AsyncAPI Initiative. We no longer need an Executive Director, as with such a strong community, we can set up a more resilient Governance Board'
-featured: true
 ---
 
 May 2025 marks the end of the AsyncAPI Initiative’s startup phase. With a mature, engaged community, we are transitioning from a single Executive Director model to a resilient multi-member Governance Board. A quorum of two-thirds was needed to amend the charter. Seventy-eight percent (78%) of the Technical Steering Committee (TSC) (32 out of 41) approved the new governance setup. Eight members did not vote, and one member abstained. You can learn more about the vote from [the pull request where we worked on the new governance setup for months](https://github.com/asyncapi/community/pull/1634#issuecomment-2851246866).
