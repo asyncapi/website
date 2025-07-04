@@ -1,4 +1,4 @@
-import HomePage from './pages/homepage';
+import HomePage from './pages/HomePage';
 
 describe('Home Page Tests', () => {
   const homePage = new HomePage();

@@ -1,0 +1,74 @@
+[
+  {
+    "href": "https://www.youtube.com/watch?v=_MwzLZMwFN8",
+    "label": "Video: From an AsyncAPI Definition to a Deployed Pulsar Topology Via GitOps"
+  },
+  {
+    "href": "https://www.youtube.com/watch?v=m8I0fYjx6Cc",
+    "label": "Video: Documentation as Configuration for Management of Apache Pulsar"
+  },
+  {
+    "href": "https://www.youtube.com/watch?v=qjarcJQVLOg",
+    "label": "Video: Cross-Domain Events with AsyncAPI and AWS"
+  },
+  {
+    "href": "https://www.confluent.io/events/kafka-summit-apac-2021/self-service-events-and-decentralised-governance-with-asyncapi-a-real-world/",
+    "label": "Video: Self-service Events & Decentralised Governance with AsyncAPI: A Real World Example"
+  },
+  {
+    "href": "https://www.youtube.com/watch?v=yjHgT0n2BtA",
+    "label": "Video: Building and managing an extensive API for Robotics and IoT"
+  },
+  {
+    "href": "https://docs.zorabots.be/dev-mqtt-docs/latest/index.html",
+    "label": "Docs: Building and managing an extensive API for Robotics and IoT"
+  },
+  {
+    "href": "https://www.youtube.com/watch?v=SxTpGRaNIPo",
+    "label": "Video: Time For AsyncAPI Specification"
+  },
+  {
+    "href": "https://www.youtube.com/watch?v=SxTpGRaNIPo",
+    "label": "Video: AsyncAPI 2.0: Enabling the Event-Driven World"
+  },
+  {
+    "href": "https://innovation.ebayinc.com/tech/engineering/asyncapi-2-0-enabling-the-event-driven-world/",
+    "label": "Article: AsyncAPI 2.0: Enabling the Event-Driven World"
+  },
+  {
+    "href": "https://developer.ebay.com/api-docs/commerce/notification/overview.html",
+    "label": "Docs: Overview of Notification API with public AsyncAPI documents"
+  },
+  {
+    "href": "https://www.youtube.com/watch?v=0_7QZyKLPoE",
+    "label": "Video: Turbocharging your Developer Ecosystem with Events Powered by SNS/SQS, Serverless, and AsyncAPI"
+  },
+  {
+    "href": "https://drive.google.com/file/d/1AVCG9_fFtuOtrvZVZWENmU2aDT7C51Jr/view?usp=sharing",
+    "label": "Slides: AsyncAPI and Modelina"
+  },
+  {
+    "href": "https://www.youtube.com/watch?v=m4KS6FSeTT4",
+    "label": "Video: Leveraging AsyncAPI To Detect Anomalies in Smart Ports Platforms"
+  },
+  {
+    "href": "https://www.youtube.com/watch?v=CGLlxYy66LY",
+    "label": "Video: Productizing AsyncAPI for Data Replication"
+  },
+  {
+    "href": "https://drive.google.com/file/d/1t7tYMr8FMRInaZV0lWod1QfDuhhSjwBJ/view?usp=sharing",
+    "label": "Slides: How TransferGo Uses AsyncAPI To Improve Developer Experience"
+  },
+  {
+    "href": "https://drive.google.com/file/d/1y67PI8NaITPPwZAiDF2Zs7ISfcIpqMV8/view?usp=sharing",
+    "label": "Slides: AsyncAPI For Platform Self-Service: A GitOps Tale"
+  },
+  {
+    "href": "https://adidas.gitbook.io/api-guidelines/asynchronous-api-guidelines/kafka-asynchronous-guidelines/a_introduction/why-asyncapi",
+    "label": "Docs: AsyncAPI and Kafka Guidelines"
+  },
+  {
+    "href": "https://drive.google.com/file/d/1YzLwQZsMUXGwj_Lsqv-ZnvV2knuowWrS/view?usp=drive_link",
+    "label": "Slides: Deploying WebSockets with AsyncAPI and Architecture as Code"
+  }
+]
