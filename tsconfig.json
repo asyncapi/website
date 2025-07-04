@@ -28,7 +28,7 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.json"
-  ],
+, "cypress/support/e2e.js", "cypress/support/commands.js", "cypress.config.js"  ],
   "exclude": [
     "node_modules",
     "netlify"
