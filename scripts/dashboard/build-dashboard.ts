@@ -1,7 +1,5 @@
 import { graphql } from '@octokit/graphql';
 import { writeFile } from 'fs/promises';
-import { dirname, resolve } from 'path';
-import { fileURLToPath } from 'url';
 
 import type {
   Discussion,
@@ -17,9 +15,8 @@ import type {
 import { logger } from '../helpers/logger';
 import { pause } from '../helpers/utils';
 import { Queries } from './issue-queries';
-
-const currentFilePath = fileURLToPath(import.meta.url);
-const currentDirPath = dirname(currentFilePath);
+import dotenv from 'dotenv';
+dotenv.config();
 
 /**
  * Calculates the number of full months elapsed since the provided date.
@@ -295,7 +292,7 @@ async function mapGoodFirstIssues(issues: GoodFirstIssues[]): Promise<MappedIssu
  * @param writePath - The file path where the dashboard data will be saved.
  * @returns A promise that resolves once the data has been successfully written.
  */
-async function start(writePath: string): Promise<void> {
+export async function start(writePath: string): Promise<void> {
   try {
     const issues = (await getDiscussions(Queries.hotDiscussionsIssues, 20)) as HotDiscussionsIssuesNode[];
     const PRs = (await getDiscussions(Queries.hotDiscussionsPullRequests, 20)) as HotDiscussionsPullRequestsNode[];
@@ -313,10 +310,6 @@ async function start(writePath: string): Promise<void> {
   }
 }
 
-/* istanbul ignore next */
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  start(resolve(currentDirPath, '..', '..', 'dashboard.json'));
-}
 
 export {
   getDiscussionByID,
@@ -325,6 +318,5 @@ export {
   getLabel,
   mapGoodFirstIssues,
   processHotDiscussions,
-  start,
   writeToFile
 };

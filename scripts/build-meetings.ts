@@ -1,13 +1,9 @@
 import { writeFileSync } from 'fs';
 import { google } from 'googleapis';
-import { dirname, resolve } from 'path';
-import { fileURLToPath } from 'url';
 
 import { logger } from './helpers/logger';
-
-const currentFilePath = fileURLToPath(import.meta.url);
-const currentDirPath = dirname(currentFilePath);
-
+import dotenv from 'dotenv';
+dotenv.config();
 /**
  * Fetches meeting events from Google Calendar within a predefined time window and writes the formatted data to a file.
  *
@@ -17,7 +13,7 @@ const currentDirPath = dirname(currentFilePath);
  *
  * @throws {Error} When authentication fails, the calendar API returns an invalid structure, or required event details are missing.
  */
-async function buildMeetings(writePath: string) {
+export async function buildMeetings(writePath: string) {
   let auth;
   let calendar;
 
@@ -86,10 +82,3 @@ async function buildMeetings(writePath: string) {
     throw new Error(`Failed to fetch or process events: ${(err as Error).message}`);
   }
 }
-
-/* istanbul ignore next */
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  buildMeetings(resolve(currentDirPath, '../config', 'meetings.json'));
-}
-
-export { buildMeetings };

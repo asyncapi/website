@@ -1,10 +1,6 @@
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
-
 import { writeJSON } from '../helpers/readAndWriteJson';
-
-const currentFilePath = fileURLToPath(import.meta.url);
-const currentDirPath = dirname(currentFilePath);
 
 /**
  * Converts the YAML adopters configuration to a JSON file.
@@ -16,5 +12,7 @@ const currentDirPath = dirname(currentFilePath);
  * performed using the writeJSON utility.
  */
 export async function buildAdoptersList() {
-  writeJSON('config/adopters.yml', resolve(currentDirPath, '../../config', 'adopters.json'));
+  const currentFilePath = fileURLToPath(import.meta.url);
+  const currentDirPath = dirname(currentFilePath);
+  await writeJSON('config/adopters.yml', resolve(currentDirPath, '../../config', 'adopters.json'));
 }
