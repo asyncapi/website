@@ -1,4 +1,4 @@
-asyncapi: 2.4.0
+asyncapi: 3.0.0
 info:
   title: Adeo AsyncAPI Case Study
   version: "%REPLACED_BY_MAVEN%"
@@ -6,49 +6,50 @@ info:
     This Adeo specification illustrates how ADEO uses AsyncAPI to document some of their exchanges.
   contact:
     name: AsyncAPI Community
-    email: case-study@asyncapi.com
+    email: info@asyncapi.io
+  tags:
+    - name: costing
+      description: "Costing channels, used by Costing clients."
 servers:
   production:
-    url: "prod.url:9092"
-    protocol: kafka
+    host: "prod.url:9092"
+    protocol: kafka-secure
     description: Kafka PRODUCTION cluster
     security:
-      - sasl-ssl: []
+      - $ref: '#/components/securitySchemes/sasl-ssl'
     bindings:
       kafka:
-        schema.registry.url: >-
+        schemaRegistryUrl: >-
           https://schema-registry.prod.url/
   staging:
-    url: "staging.url:9092"
-    protocol: kafka
+    host: "staging.url:9092"
+    protocol: kafka-secure
     description: Kafka STAGING cluster for `uat` and `preprod` environments
     security:
-      - sasl-ssl: []
+      - $ref: '#/components/securitySchemes/sasl-ssl'
     bindings:
       kafka:
-        schema.registry.url: >-
+        schemaRegistryUrl: >-
           https://schema-registry.staging.url/
   dev:
-    url: "dev.url:9092"
-    protocol: kafka
+    host: "dev.url:9092"
+    protocol: kafka-secure
     description: Kafka DEV cluster for `dev` and `sit` environments
     security:
-      - sasl-ssl: []
+      - $ref: '#/components/securitySchemes/sasl-ssl'
     bindings:
       kafka:
-        schema.registry.url: >-
+        schemaRegistryUrl: >-
           https://schema-registry.dev.url/
-tags:
-  - name: costing
-    description: "Costing channels, used by Costing clients."
 channels:
-  "adeo-{env}-case-study-COSTING-REQUEST-{version}":
+  costingRequest:
+    address: "adeo-{env}-case-study-COSTING-REQUEST-{version}"
     description: >
       Use this topic to do a Costing Request to Costing product.
       We use the
       [**RecordNameStrategy**](https://docs.confluent.io/platform/current/schema-registry/serdes-develop/index.html#subject-name-strategy)
       to infer the messages schema.
-      You have to define `value.subject.name.strategy` to
+      You have to define `x-value.subject.name.strategy` to
       `io.confluent.kafka.serializers.subject.RecordNameStrategy` in your
       producer to use the schema we manage.
       The schema below illustrates how Costing Request messages are
@@ -63,36 +64,14 @@ channels:
       kafka:
         replicas: 3
         partitions: 3
-        cleanup.policy: delete
-        retention.ms: 7 days
-    publish:
-      operationId: requestCosting
-      summary: |
-        [COSTING] Request one or more Costing calculation for any product
-      description: >
-        You can try a costing request using our [Conduktor producer
-        template](https://conduktor.url)
-      tags:
-        - name: costing
-      message:
-        oneOf:
-          - $ref: "#/components/messages/costingRequestV1"
-      bindings:
-        kafka:
-          groupId:
-            type: string
-            description: >
-              The groupId must be prefixed by your `svc` account, deliver by the
-              Adeo Kafka team.
-              This `svc` must have the write access to the topic.
-          value.subject.name.strategy:
-            type: string
-            description: >
-              We use the RecordNameStrategy to infer the messages schema.
-              Use
-              `value.subject.name.strategy=io.confluent.kafka.serializers.subject.RecordNameStrategy`
-              in your producer configuration.
-  "adeo-{env}-case-study-COSTING-RESPONSE-{version}":
+        topicConfiguration:
+          cleanup.policy: [ "delete" ]
+          retention.ms: 604800000
+    messages:
+      costingRequest:
+        $ref: "#/components/messages/costingRequestV1"
+  costingResponse:
+    address: "adeo-{env}-case-study-COSTING-RESPONSE-{version}"
     description: >
       This topic is used to REPLY Costing Requests and is targeted by the
       `REPLY_TOPIC` header.
@@ -101,7 +80,7 @@ channels:
       [**RecordNameStrategy**](https://docs.confluent.io/platform/current/schema-registry/serdes-develop/index.html#subject-name-strategy)
       to infer the messages schema.
       You have to define `key.subject.name.strategy` and
-      `value.subject.name.strategy` to
+      `x-value.subject.name.strategy` to
       `io.confluent.kafka.serializers.subject.RecordNameStrategy` in your
       consumer.
       The schema below illustrates how Costing Response messages are
@@ -114,35 +93,73 @@ channels:
         $ref: "#/components/parameters/Version"
     bindings:
       kafka:
-        groupId:
-          type: string
-          description: >
-            The groupId must be prefixed by your `svc` account, deliver by the
-            Adeo Kafka team.
-            This `svc` must have the read access to the topic.
-        key.subject.name.strategy:
+        x-key.subject.name.strategy:
           type: string
           description: >
             We use the RecordNameStrategy to infer the messages schema.
             Use
-            `key.subject.name.strategy=io.confluent.kafka.serializers.subject.RecordNameStrategy`
+            `x-key.subject.name.strategy=io.confluent.kafka.serializers.subject.RecordNameStrategy`
             in your consumer configuration.
-        value.subject.name.strategy:
+        x-value.subject.name.strategy:
           type: string
           description: >
             We use the RecordNameStrategy to infer the messages schema.
             Use
-            `value.subject.name.strategy=io.confluent.kafka.serializers.subject.RecordNameStrategy`
+            `x-value.subject.name.strategy=io.confluent.kafka.serializers.subject.RecordNameStrategy`
             in your consumer configuration.
-    subscribe:
-      operationId: getCostingResponse
+    messages:
+      costingResponse:
+        $ref: "#/components/messages/costingResponse"
+operations:
+    requestCosting:
+      action: receive
+      channel: 
+        $ref: '#/channels/costingRequest'
+      reply:
+        channel: 
+          $ref: '#/channels/costingResponse'
+        address:
+          location: '$message.header#/REPLY_TOPIC'
+      summary: |
+        [COSTING] Request one or more Costing calculation for any product
+      description: >
+        You can try a costing request using our [Conduktor producer
+        template](https://conduktor.url)
+      tags:
+        - name: costing
+      bindings:
+        kafka:
+          groupId:
+            type: string
+            description: >
+              The groupId must be prefixed by your `svc` account, deliver by the
+              Adeo Kafka team.
+              This `svc` must have the write access to the topic.
+          x-value.subject.name.strategy:
+            type: string
+            description: >
+              We use the RecordNameStrategy to infer the messages schema.
+              Use
+              `x-value.subject.name.strategy=io.confluent.kafka.serializers.subject.RecordNameStrategy`
+              in your producer configuration.
+    getCostingResponse:
+      action: send
+      channel: 
+        $ref: '#/channels/costingResponse'
       summary: >
         [COSTING] Get the costing responses matching an initial Costing
         Request.
+      bindings:
+        kafka:
+          groupId:
+            type: string
+            description: >
+              The groupId must be prefixed by your `svc` account, deliver by the
+              Adeo Kafka team.
+              This `svc` must have the read access to the topic.
       tags:
         - name: costing
-      message:
-        $ref: "#/components/messages/costingResponse"
+
 components:
   correlationIds:
     costingCorrelationId:
@@ -159,7 +176,6 @@ components:
       summary: Costing Request V1 inputs.
       tags:
         - name: costing
-      schemaFormat: application/vnd.apache.avro;version=1.9.0
       correlationId:
         $ref: "#/components/correlationIds/costingCorrelationId"
       headers:
@@ -179,7 +195,9 @@ components:
           REQUESTER_CODE:
             $ref: "#/components/schemas/RequesterCode"
       payload:
-        $ref: "https://asyncapi.com/resources/casestudies/adeo/CostingRequestPayload.avsc"
+        schemaFormat: application/vnd.apache.avro;version=1.9.0
+        schema:
+          $ref: "https://www.asyncapi.com/resources/casestudies/adeo/CostingRequestPayload.avsc"
     costingResponse:
       name: CostingResponse
       title: Costing Response
@@ -190,7 +208,6 @@ components:
         Please refer to the `CostingResponseKey.avsc` schema, available on [our
         github
         project](https://github.url/).
-      schemaFormat: application/vnd.apache.avro;version=1.9.0
       correlationId:
         $ref: "#/components/correlationIds/costingCorrelationId"
       headers:
@@ -208,12 +225,14 @@ components:
             type: string
             format: date-time
             description: Technical timestamp for the costing calculation
-      bindings:
-        kafka:
-          key:
-            $ref: "https://asyncapi.com/resources/casestudies/adeo/CostingResponseKey.avsc"
+      #bindings:
+      #  kafka:
+      #    key:
+      #      $ref: "https://deploy-preview-921--asyncapi-website.netlify.app/resources/casestudies/adeo/CostingResponseKey.avsc"
       payload:
-        $ref: "https://asyncapi.com/resources/casestudies/adeo/CostingResponsePayload.avsc"
+        schemaFormat: application/vnd.apache.avro;version=1.9.0
+        schema: 
+          $ref: "https://deploy-preview-921--asyncapi-website.netlify.app/resources/casestudies/adeo/CostingResponsePayload.avsc"
   schemas:
     RequesterId:
       type: string
@@ -274,20 +293,20 @@ components:
   parameters:
     Env:
       description: Adeo Kafka Environement for messages publications.
-      schema:
-        type: string
-        enum:
+      enum:
           - dev
           - sit
           - uat1
           - preprod
           - prod
     Version:
+      # no more sschema
+      # V2 - https://v2.asyncapi.com/docs/reference/specification/v2.6.0#parameterObject
+      # V3 - https://www.asyncapi.com/docs/reference/specification/v3.0.0#parameterObject
       description: the topic version you want to use
-      schema:
-        type: string
-        example: V1
-        default: V1
+      examples: 
+        - V1
+      default: V1
   securitySchemes:
     sasl-ssl:
       type: plain
