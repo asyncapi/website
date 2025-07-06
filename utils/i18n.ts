@@ -8,13 +8,13 @@ export const i18nPaths: I18nPaths = {
   en: [
     '', // Homepage Route
     '/tools/cli',
-    '/newsletter'
+    '/newsletter',
   ],
   de: [
     '', // Homepage Route
     '/tools/cli',
-    '/newsletter'
-  ]
+    '/newsletter',
+  ],
 };
 
 export const languages = ['en', 'de'];

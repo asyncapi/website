@@ -21,7 +21,7 @@ excerpt: 'We have JSON Schemas for bindings and some great community tools, one 
 
 AsyncAPI is protocol agnostic. It doesn't mean that you cannot specify some protocol-specific information in the AsyncAPI document. It is possible through a **bindings** feature. In different parts of the AsyncAPI document, you can provide specific details for Kafka, MQTT, and other protocols. Definitions of bindings are maintained separately from the main AsyncAPI specification in the [bindings repository](https://github.com/asyncapi/bindings).
 
-The current challenge with bindings is that they are hard to validate because they are written in Markdown, human-readable form only. Support in tooling is also pretty limited because of this. We had to start maintaining the JSON Schema, as we do with the main AsyncAPI specification. 
+The current challenge with bindings is that they are hard to validate because they are written in Markdown, human-readable form only. Support in tooling is also pretty limited because of this. We had to start maintaining the JSON Schema, as we do with the main AsyncAPI specification.
 
 Thanks to a monumental effort from [Khuda Dad Nomani](https://github.com/KhudaDad414) I'm proud to say that all 15 bindings now have their JSON Schemas. So for example [Kafka binding](https://github.com/asyncapi/bindings/tree/master/kafka) has its [JSON Schemas](https://github.com/asyncapi/bindings/tree/master/kafka/json_schemas). The next step is to figure how to link these JSON Schemas with the main AsyncAPI specification JSON Schema and support it in parsers.
 
@@ -34,8 +34,8 @@ For more details, have a look at [this issue](https://github.com/asyncapi/spec/i
 I don't think I need to write more than you can spot in this tweet :smiley:. 2021 is very generous for AsyncAPI.
 
 <TwitterTweetEmbed
-  tweetId='1391701921312948227'
-  options={{
+tweetId='1391701921312948227'
+options={{
     width: 500,
     align: 'center'
   }}
@@ -56,10 +56,11 @@ Any help will be highly appreciated, so please check out [the repository](https:
 ## New AsyncAPI-related tools
 
 We have new tools on [our list](https://www.asyncapi.com/docs/community/tooling) of tools created by the AsyncAPI Community:
+
 - [EventBridge Atlas](https://github.com/boyney123/eventbridge-atlas) from [David Boyne](https://github.com/boyney123)
-> It parses AWS EventBridge schemas into documentation solutions, shows rules matched to your events, adds metadata to each event property, support slate, AsyncAPI, and docuowl output, and more...
+  > It parses AWS EventBridge schemas into documentation solutions, shows rules matched to your events, adds metadata to each event property, support slate, AsyncAPI, and docuowl output, and more...
 - [Asynction](https://github.com/dedoussis/asynction) from [ Dimitrios Dedoussis](https://github.com/dedoussis)
-> The purpose of Asynction is to empower a specification first approach when developing SocketIO APIs in Python
+  > The purpose of Asynction is to empower a specification first approach when developing SocketIO APIs in Python
 
 ## Tests coverage tracking in tooling
 

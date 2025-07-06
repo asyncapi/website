@@ -8,9 +8,9 @@ weight: 80
 
 In this tutorial, you'll learn how to create an AsyncAPI document based on a sample real-world use case. Additionally, you will learn about event-driven architecture, message brokers, pub/sub pattern.
 
-Let's pretend you have a company called Smarty Lighting, and you install smart-city streetlight lighting systems. Such a smart lighting system is an Internet of Things (IoT) use case. You will create a Smarty Lighting Streetlights application using Node.js and Mosquitto (MQTT) as the message broker. Your application will allow you to manage city lights remotely. 
+Let's pretend you have a company called Smarty Lighting, and you install smart-city streetlight lighting systems. Such a smart lighting system is an Internet of Things (IoT) use case. You will create a Smarty Lighting Streetlights application using Node.js and Mosquitto (MQTT) as the message broker. Your application will allow you to manage city lights remotely.
 
-You want to build a system that can turn streetlights on and off based on their environmental conditions: 
+You want to build a system that can turn streetlights on and off based on their environmental conditions:
 
 - You will implement an event-driven architecture (EDA) with a message broker in its "center."
 
@@ -20,14 +20,13 @@ You want to build a system that can turn streetlights on and off based on their 
 
 - The Streetlights application is unaware of how many streetlights devices send measurement events to the broker; it just connects to the broker and receives all events.
 
-
 ## Background context
 
 Event-driven architecture (EDA) is a design pattern built around the production, detection, and reaction to events that take place in time. In this pattern, a message broker, event publishers, and subscribers are its main components for event exchange within microservices.
 
-[Message brokers](/docs/tutorials/getting-started/event-driven-architectures#message-broker) enables asynchronous communications between services so that the sending service need not wait for the receiving service’s reply. That allows interdependent services to “talk” with one another directly, even if they were written in different languages or implemented on different platforms. 
+[Message brokers](/docs/tutorials/getting-started/event-driven-architectures#message-broker) enables asynchronous communications between services so that the sending service need not wait for the receiving service’s reply. That allows interdependent services to “talk” with one another directly, even if they were written in different languages or implemented on different platforms.
 
-Furthermore, the [Pub/sub](/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) is appealing for IoT use cases due to two key features: support for flexible coupling between publishers/subscribers and inherent support for point-to-multipoint transmission.  
+Furthermore, the [Pub/sub](/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) is appealing for IoT use cases due to two key features: support for flexible coupling between publishers/subscribers and inherent support for point-to-multipoint transmission.
 
 [MQTT](https://mqtt.org/), is a well-known protocol that is widely used in IoT applications because it was created particularly to address machine-to-machine (M2M) communication.
 
@@ -39,7 +38,7 @@ To create one, you can either use the [AsyncAPI Studio](https://studio.asyncapi.
 
 <Remember>
 
-You can create a new `asyncapi.yaml` document by running: 
+You can create a new `asyncapi.yaml` document by running:
 `asyncapi new --example=tutorial.yml --no-tty`.
 
 </Remember>
@@ -115,7 +114,7 @@ Moving on, let's talk about the `servers` section:
   mosquitto:
     host: test.mosquitto.org
     protocol: mqtt`}
-</CodeBlock> 
+</CodeBlock>
 
 In this section, you point to the Eclipse Mosquitto message broker. The `url` points to a real broker instance [hosted by the Mosquitto community](https://test.mosquitto.org/), and the `protocol` is MQTT. If you do not want to use the test instance, you can spin up your own broker locally with `docker run -it -p 1883:1883 eclipse-mosquitto:1.5`. Remember to change the `url` to `mqtt://localhost`.
 
@@ -156,9 +155,9 @@ Next is the payload property. It is used to understand how the event should look
 
 The `payload` property defines the event's content using AsyncAPI schemas. It means that your event payload should contain an `id` and a `lumens` property —which are integers bigger than zero—and a `sentAt` property which should be a string containing a date and time.
 
->  JSON Schema Draft 07 is 100% compatible with AsyncAPI schemas. You can also use other standards to describe payload schema, such as [Avro](https://github.com/asyncapi/avro-schema-parser#usage).
+> JSON Schema Draft 07 is 100% compatible with AsyncAPI schemas. You can also use other standards to describe payload schema, such as [Avro](https://github.com/asyncapi/avro-schema-parser#usage).
 
-The last section is `operations`, where you describe what the application described in the AsyncAPI document is doing. 
+The last section is `operations`, where you describe what the application described in the AsyncAPI document is doing.
 
 <CodeBlock>
 {`operations:
@@ -180,4 +179,5 @@ In this tutorial, you learned how to create an AsyncAPI specification document v
 Your finished document is just a starting point; you must add your business logic. Take some time to play with it. There are still lots of things to be covered, but the intent of this tutorial is to make it simple for you to get an idea of the potential.
 
 ## Next steps
+
 Now that you've completed this tutorial, you can proceed to learn how to [validate your AsyncAPI document with AsyncAPI Studio](https://www.asyncapi.com/docs/tutorials/studio-document-validation).

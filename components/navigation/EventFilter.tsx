@@ -8,7 +8,7 @@ import { getEvents } from '../../utils/staticHelpers';
 enum ActiveState {
   All = 'All',
   Upcoming = 'Upcoming',
-  Recorded = 'Recorded'
+  Recorded = 'Recorded',
 }
 
 interface EventFilterProps {
@@ -37,14 +37,14 @@ export default function EventFilter({ data, setData }: EventFilterProps) {
         setData(
           getEvents(data).filter((event: IEvent) => {
             return moment(event.date).format() > currentDate;
-          })
+          }),
         );
         break;
       case ActiveState.Recorded:
         setData(
           getEvents(data).filter((event: IEvent) => {
             return moment(event.date).format() < currentDate;
-          })
+          }),
         );
         break;
       default:
@@ -55,15 +55,17 @@ export default function EventFilter({ data, setData }: EventFilterProps) {
 
   return (
     <div
-      className='flex w-full justify-between rounded-md bg-secondary-200 p-2 text-secondary-600 sm:w-[400px]'
-      data-testid='EventFilters-main'
+      className="flex w-full justify-between rounded-md bg-secondary-200 p-2 text-secondary-600 sm:w-[400px]"
+      data-testid="EventFilters-main"
     >
       {filterList.map((list) => (
         <div
-          data-testid='EventFilter-click'
+          data-testid="EventFilter-click"
           key={list}
           className={`w-[100px] cursor-pointer p-3 text-center ${
-            active === list ? 'rounded-md bg-secondary-600 text-white' : 'hover:text-black'
+            active === list
+              ? 'rounded-md bg-secondary-600 text-white'
+              : 'hover:text-black'
           }`}
           onClick={() => setActive(list)}
         >

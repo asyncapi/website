@@ -14,7 +14,7 @@ const Checkbox = ({
   borderColor = 'border-secondary-600',
   checkedStateBgColor = 'bg-secondary-600',
   checkedStateTextColor = 'text-white',
-  handleClickOption
+  handleClickOption,
 }: CheckboxProps) => {
   const handleClick = (event: React.MouseEvent) => {
     event.stopPropagation(); // Prevents the event from propagating to parent elements
@@ -24,16 +24,16 @@ const Checkbox = ({
   return (
     <div
       className={twMerge(
-        `border ${borderColor} ${bgColor} ${textColor} p-1 pb-0 rounded-2xl flex gap-1 cursor-pointer items-start ${checked ? `${checkedStateBgColor} ${checkedStateTextColor}` : ''}`
+        `border ${borderColor} ${bgColor} ${textColor} p-1 pb-0 rounded-2xl flex gap-1 cursor-pointer items-start ${checked ? `${checkedStateBgColor} ${checkedStateTextColor}` : ''}`,
       )}
       onClick={handleClick}
     >
       {checked ? (
-        <img src='/img/illustrations/icons/CheckedIcon.svg' alt='checked' />
+        <img src="/img/illustrations/icons/CheckedIcon.svg" alt="checked" />
       ) : (
-        <img src='/img/illustrations/icons/UncheckedIcon.svg' alt='unchecked' />
+        <img src="/img/illustrations/icons/UncheckedIcon.svg" alt="unchecked" />
       )}
-      <div className='-mt-px mb-px text-xs'>{name}</div>
+      <div className="-mt-px mb-px text-xs">{name}</div>
     </div>
   );
 };

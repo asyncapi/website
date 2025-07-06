@@ -13,23 +13,23 @@ authors:
 excerpt: WebSocket is a protocol, an industry standard for building client applications that users love to use. What does AsyncAPI have to do with it?
 ---
 
-This is a pretty subjective post. I'm sharing my perspective, taking into account years of experience building backend and frontend with user experience in mind. 
+This is a pretty subjective post. I'm sharing my perspective, taking into account years of experience building backend and frontend with user experience in mind.
 
 If you do not want to read this article, then watch the recording of the live stream about the same:
 <YouTube id="8tFBcf31e_c" />
 
->  Everything we hear is an opinion, not a fact. Everything we see is a perspective, not the truth.
-― [Marcus Aurelius](https://www.politifact.com/factchecks/2019/sep/26/viral-image/no-marcus-aurelius-didnt-say-about-opinions-and-fa/)
+> Everything we hear is an opinion, not a fact. Everything we see is a perspective, not the truth.
+> ― [Marcus Aurelius](https://www.politifact.com/factchecks/2019/sep/26/viral-image/no-marcus-aurelius-didnt-say-about-opinions-and-fa/)
 
 This blog post is the first of a series of blog posts about WebSocket I'm working on.
 
 ## What is WebSocket
 
-It is a pretty old protocol used for duplex communication over TCP connection. It was standardized in 2011. Yes, ten years ago means it is old, super old. 
+It is a pretty old protocol used for duplex communication over TCP connection. It was standardized in 2011. Yes, ten years ago means it is old, super old.
 
-So why do I even mention it in 2021? 
+So why do I even mention it in 2021?
 
-It is very widely adopted and will not go away anytime soon because tooling support is excellent and serves its purpose well. Just remind yourself when HTTP/2 showed up and how many years it took everyone to migrate. It would not happen without the strong support and push from all the big players. 
+It is very widely adopted and will not go away anytime soon because tooling support is excellent and serves its purpose well. Just remind yourself when HTTP/2 showed up and how many years it took everyone to migrate. It would not happen without the strong support and push from all the big players.
 
 Sure, there is [HTTP/2 multiplexing](https://developers.google.com/web/fundamentals/performance/http2/#request_and_response_multiplexing) and protocols like [Mercure](https://mercure.rocks/docs/mercure) or [GraphQL Subscription](https://spec.graphql.org/June2018/#sec-Subscription). There is also [RFC8441](https://www.rfc-editor.org/rfc/rfc8441) for WebSocket and HTTP/2 and some tools already adopted it, like [Envoy](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/http/upgrades) or [Jetty](https://github.com/eclipse/jetty.project/issues/3537). Nevertheless, WebSocket is here to stay.
 
@@ -37,7 +37,7 @@ Anyway, the future of WebSocket has nothing to do with this post. This post is f
 
 ## Websocket use case
 
-- Do you like to see in Slack that someone is typing a response? 
+- Do you like to see in Slack that someone is typing a response?
 - Do you like it when a user interface updates without page refresh?
 - Do you like it when your client app knows there are updates available for display?
 
@@ -61,7 +61,8 @@ Don't go that path. Do not perform unnecessary connections to your servers and c
 ## Why AsyncAPI
 
 When building a WebSocket API on a server, you might have some additional needs:
-- Want to document the API for the team that writes a client app, Web UI, Desktop app, or Mobile app. 
+
+- Want to document the API for the team that writes a client app, Web UI, Desktop app, or Mobile app.
 - Want to have a way to specify the format of the messages that the server supports to validate them in the runtime.
 - Want to generate a server or/and a client? If not for final production use, then for sure for prototyping and testing.
 
@@ -70,6 +71,7 @@ These are just a few common needs. For WebSocket, you only establish a connectio
 ## WebSocket described with AsyncAPI
 
 When I google for some public WebSocket API to play with, I find mostly currency trading products:
+
 - [Kraken WebSocket API](https://docs.kraken.com/websockets/)
 - [Gemini WebSocket API](https://docs.gemini.com/websocket-api/)
 - [CEXIO Websocket API](https://cex.io/websocket-api)
@@ -85,30 +87,41 @@ I will write an AsyncAPI document for Kraken API after playing with the API and 
 The best way to play with a WebSocket API is through a CLI. Who didn't hear about **curl** in the REST API world? For WebSocket, I would recommend **websocat**. Kraken's API is partially public without authorization which is just great because to play with it, you do not have to set up an account to get an authorization token.
 
 1. Install **websocat**. For other installation options, check out [this](https://github.com/vi/websocat#installation) list.
-  ```sh
-  brew install websocat
-  ```
+
+```sh
+brew install websocat
+```
+
 1. Establish connection with the API:
-  ```sh
-  websocat wss://ws.kraken.com
-    ```
+
+````sh
+websocat wss://ws.kraken.com
+  ```
 1. Ping the API to see if it responds. Just type the below message and hit Enter:
-  ```json
-  {"event": "ping"}
-  ```
+```json
+{"event": "ping"}
+````
+
 1. Now subscribe to the event **ticker** stream that sends messages with currency price. Just type the below message and hit Enter:
-  ```json
-  {  "event": "subscribe",  "pair": [    "XBT/USD",    "XBT/EUR"  ],  "subscription": {    "name": "ticker"  }}
-  ```
+
+```json
+{
+  "event": "subscribe",
+  "pair": ["XBT/USD", "XBT/EUR"],
+  "subscription": { "name": "ticker" }
+}
+```
+
 1. You should now see a constant stream of data sent by the server. You do not have to ask the API every second for an update, as the update is pushed to you.
-  ```json
-  {"event":"heartbeat"}
-  [340,{"a":["45520.10000",6,"6.78103490"],"b":["45520.00000",0,"0.00185230"],"c":["45520.10000","0.01643250"],"v":["1397.95434819","5589.12101024"],"p":["44883.49461","44062.07654"],"t":[14350,66782],"l":["43607.60000","42770.80000"],"h":["45811.10000","45811.10000"],"o":["43659.30000","44709.10000"]},"ticker","XBT/EUR"]
-  [340,{"a":["45520.10000",5,"5.84803490"],"b":["45492.50000",0,"0.09374582"],"c":["45492.50000","0.00625418"],"v":["1398.10526819","5589.26685876"],"p":["44883.56109","44062.11477"],"t":[14359,66790],"l":["43607.60000","42770.80000"],"h":["45811.10000","45811.10000"],"o":["43659.30000","44709.10000"]},"ticker","XBT/EUR"]
-  {"event":"heartbeat"}
-  [340,{"a":["45503.80000",1,"1.00000000"],"b":["45496.20000",0,"0.01426600"],"c":["45496.20000","0.00109400"],"v":["1398.10636219","5589.26295766"],"p":["44883.56157","44062.11447"],"t":[14360,66788],"l":["43607.60000","42770.80000"],"h":["45811.10000","45811.10000"],"o":["43659.30000","44709.90000"]},"ticker","XBT/EUR"]
-  {"event":"heartbeat"}
-  ```
+
+```json
+{"event":"heartbeat"}
+[340,{"a":["45520.10000",6,"6.78103490"],"b":["45520.00000",0,"0.00185230"],"c":["45520.10000","0.01643250"],"v":["1397.95434819","5589.12101024"],"p":["44883.49461","44062.07654"],"t":[14350,66782],"l":["43607.60000","42770.80000"],"h":["45811.10000","45811.10000"],"o":["43659.30000","44709.10000"]},"ticker","XBT/EUR"]
+[340,{"a":["45520.10000",5,"5.84803490"],"b":["45492.50000",0,"0.09374582"],"c":["45492.50000","0.00625418"],"v":["1398.10526819","5589.26685876"],"p":["44883.56109","44062.11477"],"t":[14359,66790],"l":["43607.60000","42770.80000"],"h":["45811.10000","45811.10000"],"o":["43659.30000","44709.10000"]},"ticker","XBT/EUR"]
+{"event":"heartbeat"}
+[340,{"a":["45503.80000",1,"1.00000000"],"b":["45496.20000",0,"0.01426600"],"c":["45496.20000","0.00109400"],"v":["1398.10636219","5589.26295766"],"p":["44883.56157","44062.11447"],"t":[14360,66788],"l":["43607.60000","42770.80000"],"h":["45811.10000","45811.10000"],"o":["43659.30000","44709.90000"]},"ticker","XBT/EUR"]
+{"event":"heartbeat"}
+```
 
 Boy, it is always such fun to do it. Like seriously, I always have fun playing with APIs, any APIs. Just making this API "conversation". I hope nothing is wrong with me :sweat_smile:
 
@@ -116,11 +129,12 @@ Now you know how to interact with the Kraken API. Now let's try to describe it u
 
 ### Describing API using AsyncAPI
 
-I'll explain, in detail, how to describe Websocket API with AsyncAPI in another blog post that will be part of the series. Why? I don't want to make this post super lengthy and discourage others from reading it. Let us learn step by step. 
+I'll explain, in detail, how to describe Websocket API with AsyncAPI in another blog post that will be part of the series. Why? I don't want to make this post super lengthy and discourage others from reading it. Let us learn step by step.
 
 For now, I will throw here a full AsyncAPI document I created for the Kraken API. You can also open it up in the [AsyncAPI Studio](https://studio.asyncapi.com/?url=https://gist.githubusercontent.com/derberg/4e419d6ff5870c7c3f5f443e8bd30535/raw/5e9b733b80a0209ba5520e5f41ab18c2a112e0a9/asyncapi-websocket-kraken.yml) and compare with their [current documentation](https://docs.kraken.com/websockets/)
 
 Familiarize with below before you look at the AsyncAPI document:
+
 - AsyncAPI describes the API interface between the client and the server. In other words, the AsyncAPI document is for the user of the API. It does not describe what the server does but what the user can do with the API.
 - Kraken API is quite complex. It has some beta servers, some private messages, and messages closely related to vocabulary specific for currency trading. I dropped all of those from my research not to overcomplicate things. In other words, the AsyncAPI file that you can see below is not a complete document.
 - Websocket protocol is very flexible, and therefore you can implement the server in many different ways. There is no standard way of doing things, like there is no common way of doing things with AsyncAPI. We can only make some generic assumptions looking at existing implementations:
@@ -129,9 +143,9 @@ Familiarize with below before you look at the AsyncAPI document:
 - Current AsyncAPI limitation is that you cannot specify that once the user sends (publish) message **ping**, the **pong** message is a reply. Look at this [thread](https://github.com/asyncapi/spec/issues/94) to participate in an ongoing discussion about request/reply pattern support in AsyncAPI. In the below document, you will notice that for such a use case, I use AsyncAPI specification extensions (**x-response**).
 
 > **Message to Kraken API developers and technical writers** <br/>
-In case you want to continue the work I started on the AsyncAPI document for Kraken API, feel free to do that. I'm happy to help, just let me know. Reach me out in our [AsyncAPI Slack workspace](https://www.asyncapi.com/slack-invite/).
+> In case you want to continue the work I started on the AsyncAPI document for Kraken API, feel free to do that. I'm happy to help, just let me know. Reach me out in our [AsyncAPI Slack workspace](https://www.asyncapi.com/slack-invite/).
 
-```yml
+````yml
 asyncapi: 2.0.0
 
 info:
@@ -419,7 +433,7 @@ components:
     subscriptionStatusCommon:
       type: object
       required:
-         - event
+        - event
       properties:
         event:
           type: string
@@ -504,10 +518,10 @@ components:
         type: string
         description: Format of each pair is "A/B", where A and B are ISO 4217-A3 for standardized assets and popular unique symbol if not standardized.
         pattern: '[A-Z\s]+\/[A-Z\s]+'
-```
+````
 
 > **Personal note** <br/>
-If you can, if you are in a planning phase, new project, etc., then start designing your architecture with AsyncAPI. Don't do the mistake of coding first and then trying to figure out how to describe it with AsyncAPI :sweat_smile:
+> If you can, if you are in a planning phase, new project, etc., then start designing your architecture with AsyncAPI. Don't do the mistake of coding first and then trying to figure out how to describe it with AsyncAPI :sweat_smile:
 
 Stay tuned for the next blog post that guides you step by step through the above document :peace_symbol:
 

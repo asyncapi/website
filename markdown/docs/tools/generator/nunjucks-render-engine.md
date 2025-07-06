@@ -1,5 +1,5 @@
 ---
-title: "Nunjucks render engine"
+title: 'Nunjucks render engine'
 weight: 120
 ---
 
@@ -14,7 +14,7 @@ weight: 120
 1. Templates may contain multiple files. Unless stated otherwise, all files will be rendered.
 1. The default variables you have access to in any the template file are the following:
    - `asyncapi` that is a parsed spec file object. Read the [API](https://github.com/asyncapi/parser-api/blob/master/docs/api.md#asyncapidocument) of the Parser to understand what structure you have access to in this parameter.
-   - `originalAsyncAPI` that is an original spec file before it is parsed. 
+   - `originalAsyncAPI` that is an original spec file before it is parsed.
    - `params` that contain the parameters provided when generating.
 
 ### Partials
@@ -22,18 +22,18 @@ weight: 120
 Files from the `.partials` directory do not end up with other generated files in the target directory. In this directory you should keep reusable templates chunks that you can [include](https://mozilla.github.io/nunjucks/templating.html#include) in your templates. You can also put there [macros](https://mozilla.github.io/nunjucks/templating.html#macro) to use them in templates, like in below example:
 
 ```html
-{# tags.html #}
-{% macro tags(tagList) %}
+{# tags.html #} {% macro tags(tagList) %}
 <div class="mt-4">
   {% for tag in tagList %}
-    <span class="bg-grey-dark font-normal text-sm no-underline text-white rounded lowercase mr-2 px-2 py-1" title="{{tag.description()}}">{{tag.name()}}</span>
+  <span
+    class="bg-grey-dark font-normal text-sm no-underline text-white rounded lowercase mr-2 px-2 py-1"
+    title="{{tag.description()}}"
+    >{{tag.name()}}</span
+  >
   {% endfor %}
 </div>
-{% endmacro %}
-
-{# operations.html #}
-{% from "./tags.html" import tags %}
-{{ tags(operation.tags()) }}
+{% endmacro %} {# operations.html #} {% from "./tags.html" import tags %} {{
+tags(operation.tags()) }}
 ```
 
 ### Filters
@@ -54,7 +54,7 @@ const filter = module.exports;
 async function asyncCamelCase(str, callback) {
   try {
     const result = // logic for camel casing str
-    callback(null, result);
+      callback(null, result);
   } catch (error) {
     callback(error);
   }
@@ -62,7 +62,11 @@ async function asyncCamelCase(str, callback) {
 filter.renderAsyncContent = renderAsyncContent;
 
 // using in template
-{{ channelName | asyncCamelCase }}
+{
+  {
+    channelName | asyncCamelCase;
+  }
+}
 ```
 
 Unfortunately, if you need to use Promise, filter still must be annotated with the `async` keyword:
@@ -77,7 +81,6 @@ async function asyncCamelCase(str, callback) {
 
 In case you have more than one template and want to reuse filters, you can put them in a single library. You can configure such a library in the template configuration under `filters` property. To learn how to add such filters to configuration, [read more about the configuration file](configuration-file).
 
-
 You can also use the official AsyncAPI [nunjucks-filters](https://github.com/asyncapi/generator/tree/master/apps/nunjucks-filters) which is included by default in the generator library.
 
-> **Note:**  The nunjucks-filters is deprecated, and you should migrate to react-renderer instead. For more details, read notes from release [@asyncapi/generator@2.6.0](https://github.com/asyncapi/generator/releases/tag/%40asyncapi%2Fgenerator%402.6.0).
+> **Note:** The nunjucks-filters is deprecated, and you should migrate to react-renderer instead. For more details, read notes from release [@asyncapi/generator@2.6.0](https://github.com/asyncapi/generator/releases/tag/%40asyncapi%2Fgenerator%402.6.0).

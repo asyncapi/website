@@ -1,9 +1,7 @@
 ---
-title: "Migrating to v3"
+title: 'Migrating to v3'
 weight: 2
 ---
-
-
 
 Migration to a new major version is always difficult, and AsyncAPI is no exception. To provide as smooth a transition as possible, this document shows the breaking changes between AsyncAPI v2 and v3 in an interactive manner.
 
@@ -17,14 +15,13 @@ For a detailed read-through about all the changes (non-breaking as well), read a
 
 ## Moved metadata
 
-In v2, two properties of `tags` and `externalDocs` were placed outside of the [Info Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#infoObject). For consistency, `info` has been moved in v3. 
+In v2, two properties of `tags` and `externalDocs` were placed outside of the [Info Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#infoObject). For consistency, `info` has been moved in v3.
 
 <Asyncapi3MetaComparison className="my-8" />
 
 ```yml
 asyncapi: 2.6.0
-info: 
-  ...
+info: ...
 externalDocs:
   description: Find more info here
   url: https://www.asyncapi.com
@@ -43,6 +40,7 @@ info:
 ```
 
 ## Server URL splitting up
+
 There was occasional confusion regarding what the URL of a [Server Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#serverObject) should include.
 
 <Asyncapi3ServerComparison className="my-8" />
@@ -55,8 +53,8 @@ In v3, the `url` property has been divided into `host`, `pathname`, and `protoco
 asyncapi: 2.6.0
 servers:
   production:
-    url: "amqp://rabbitmq.in.mycompany.com:5672/production"
-    protocol: "amqp"
+    url: 'amqp://rabbitmq.in.mycompany.com:5672/production'
+    protocol: 'amqp'
 ```
 
 ```yml
@@ -84,8 +82,8 @@ Channels are now reusable across multiple AsyncAPI documents, each facilitating 
 
 ```yml
 asyncapi: 2.6.0
-...
-channels: 
+---
+channels:
   user/signedup:
     publish:
       message:
@@ -99,12 +97,12 @@ channels:
 
 ```yml
 asyncapi: 3.0.0
-...
+---
 channels:
   UserSignup:
-    address: "user/signedup"
-    messages: 
-      UserMessage: 
+    address: 'user/signedup'
+    messages:
+      UserMessage:
         payload:
           type: object
           properties:
@@ -114,8 +112,8 @@ channels:
 operations:
   ConsumeUserSignups:
     action: receive
-    channel: 
-      $ref: "#/channels/UserSignup"
+    channel:
+      $ref: '#/channels/UserSignup'
 ```
 
 Read more about the confusion between publishing and subscribing in the [Operation keywords](#operation-keywords) section.
@@ -128,26 +126,25 @@ Another breaking change is that the channel key no longer represents the channel
 
 In v2, the channel's `address/topic/path` doubled as its ID, hindering reusability and preventing the definition of scenarios where the same address was used in different contexts.
 
-In v3, the `address/topic/path` has been shifted to an `address` property, allowing the channel ID to be distinct and arbitrary. 
+In v3, the `address/topic/path` has been shifted to an `address` property, allowing the channel ID to be distinct and arbitrary.
 
 ```yml
 asyncapi: 2.6.0
-...
-channels: 
-  test/path:
-    ...
+---
+channels:
+  test/path: ...
 ```
 
 ```yml
 asyncapi: 3.0.0
 channels:
   testPathChannel:
-    address: "test/path"
+    address: 'test/path'
 ```
 
 ## Operation keywords
 
-Another significant change is the shift away from defining operations using `publish` and `subscribe`, which had inverse meanings for your application. Now, you directly specify your application's behavior using `send` and `receive` via the `action` property in the [Operation Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#operationObject). 
+Another significant change is the shift away from defining operations using `publish` and `subscribe`, which had inverse meanings for your application. Now, you directly specify your application's behavior using `send` and `receive` via the `action` property in the [Operation Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#operationObject).
 
 <Asyncapi3OperationComparison className="my-8" />
 
@@ -158,6 +155,7 @@ When you specified `publish`, it implied that others could `publish` to this cha
 In v3, these operations have been entirely replaced with an `action` property that clearly indicates what your application does. That eliminates ambiguities related to other parties or differing perspectives.
 
 Read more information about the confusion between publishing and subscribing:
+
 - Fran Méndez's [Proposal to solve publish/subscribe confusion](https://github.com/asyncapi/spec/issues/618)
 - Nic Townsend's blog post [Demystifying the Semantics of Publish and Subscribe](https://www.asyncapi.com/blog/publish-subscribe-semantics)
 
@@ -165,13 +163,11 @@ Here is an example where the application both consumes and produces messages to 
 
 ```yml
 asyncapi: 2.6.0
-...
-channels: 
+---
+channels:
   test/path:
-    subscribe:
-      ...
-    publish:
-      ...
+    subscribe: ...
+    publish: ...
 ```
 
 ```yml
@@ -180,18 +176,19 @@ channels:
   testPathChannel:
     address: "test/path"
     ...
-operations: 
+operations:
   publishToTestPath:
     action: send
-    channel: 
+    channel:
       $ref: "#/channels/testPathChannel"
   consumeFromTestPath:
     action: receive
-    channel: 
+    channel:
       $ref: "#/channels/testPathChannel"
 ```
 
 ## Messages instead of message
+
 In v2, channels were defined with one or more messages through the operation using the `oneOf` property.
 
 In v3, messages are defined using the [Messages Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#messagesObject). For a channel with multiple messages, you specify multiple key-value pairs. For a channel with just one message, you use a single key-value pair.
@@ -203,7 +200,7 @@ channels:
   user/signedup:
     publish:
       ...
-      message: 
+      message:
         oneOf:
           - messageId: UserMessage
             ...
@@ -216,31 +213,28 @@ channels:
   user/signedup:
     publish:
       ...
-      message: 
+      message:
         messageId: UserMessage
         ...
 ```
 
 ```yml
 asyncapi: 3.0.0
-...
+---
 channels:
   UserSignup:
     address: user/signedup
-    messages: 
-      UserMessage: 
-        ...
-      UserMessage2:
-        ...
+    messages:
+      UserMessage: ...
+      UserMessage2: ...
 
 asyncapi: 3.0.0
-...
+---
 channels:
   UserSignup:
     address: user/signedup
-    messages: 
-      UserMessage: 
-        ...
+    messages:
+      UserMessage: ...
 ```
 
 We have updated the structure of the Message Object by eliminating the `messageId` property. We now use the ID of the Message Object itself as the key in the key/value pairing, rendering a separate `messageId` property redundant.
@@ -249,7 +243,7 @@ We have updated the structure of the Message Object by eliminating the `messageI
 
 In v2, implicit references were allowed in certain instances. For instance, the server security configuration was identified by name, linking to a [Security Schema Object](https://www.asyncapi.com/docs/reference/specification/v2.6.0#securitySchemeObject) within the components. Similarly, a channel could reference global servers by name.
 
-In v3, all such references MUST be explicit. As a result, we made a minor modification to the [Server Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#serverObject) `security` property, transforming it from an object to an array. The details regarding required scopes for OAuth and OpenID Connect were then relocated to the [Security Scheme Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#securitySchemeObject). 
+In v3, all such references MUST be explicit. As a result, we made a minor modification to the [Server Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#serverObject) `security` property, transforming it from an object to an array. The details regarding required scopes for OAuth and OpenID Connect were then relocated to the [Security Scheme Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#securitySchemeObject).
 
 ```yml
 asyncapi: 2.6.0
@@ -259,13 +253,13 @@ servers:
     security:
       oauth_test: ["write:pets"]
 ...
-channels: 
+channels:
   test/path:
     servers:
       - production
 components:
   securitySchemes:
-    oauth_test: 
+    oauth_test:
       type: oauth2
       flows:
         implicit:
@@ -285,7 +279,7 @@ servers:
     security:
       - $ref: "#/components/securitySchemes/oauth_test"
 ...
-channels: 
+channels:
   test/path:
     servers:
       - $ref: "#/servers/production"
@@ -304,11 +298,13 @@ components:
 ```
 
 ## New trait behavior
+
 In v2, traits invariably overwrote any duplicate properties specified both in the traits and the corresponding object. For instance, if both message traits and the message object defined headers, only the headers from the message traits would be recognized, effectively overriding those in the Message Object.
 
 In v3, this behavior has been revised. The primary objects now take precedence over any definitions in the traits. Such an adjustment is consistent for traits in both operation and message objects.
 
 Here is a message object and associated traits:
+
 ```yml
 messageId: userSignup
 description: A longer description.
@@ -328,6 +324,7 @@ description: Description from trait.
 payload:
   $ref: '#/components/schemas/userSignupPayload'
 ```
+
 That is the default behavior of the [JSON Merge Patch](https://tools.ietf.org/html/rfc7386) algorithm we use.
 
 In v3, we've instituted a guideline stating, `A property on a trait MUST NOT override the same property on the target object`. Consequently, after applying the traits in v3, the complete message object appears as follows:
@@ -339,6 +336,7 @@ description: A longer description. # it's still description from "main" object
 payload:
   $ref: '#/components/schemas/userSignupPayload'
 ```
+
 Notice how the `description` is no longer overwritten.
 
 ## Schema format and schemas
@@ -349,15 +347,15 @@ One limitation with schemas has always been the inability to reuse them across d
 
 In v2, the details about which schema format the payload uses are found within the message object, rather than being directly linked to the schema itself. Such separation hampers reusability, as the two data points aren't directly correlated.
 
-To address this in v3, we've introduced [a multi-format schema object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#multiFormatSchemaObject) that consolidates this information. Consequently, whenever you utilize `schemaFormat`, you'll need to modify the schema as follows: 
+To address this in v3, we've introduced [a multi-format schema object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#multiFormatSchemaObject) that consolidates this information. Consequently, whenever you utilize `schemaFormat`, you'll need to modify the schema as follows:
 
 ```yml
 asyncapi: 2.6.0
-...
+---
 channels:
   user/signedup:
     publish:
-      message: 
+      message:
         schemaFormat: 'application/vnd.apache.avro;version=1.9.0'
         payload:
           type: record
@@ -371,12 +369,12 @@ channels:
 
 ```yml
 asyncapi: 3.0.0
-...
+---
 channels:
   UserSignup:
     address: user/signedup
-    messages: 
-      userSignup: 
+    messages:
+      userSignup:
         payload:
           schemaFormat: 'application/vnd.apache.avro;version=1.9.0'
           schema:
@@ -390,17 +388,17 @@ channels:
 ```
 
 ## Optional channels
+
 In v3, defining channels has become entirely optional, eliminating the need to specify channels as an empty object (required in v2).
 
 ```yml
 asyncapi: 2.6.0
-...
+---
 channels: {}
 ```
 
 ```yml
 asyncapi: 3.0.0
-...
 ```
 
 ## Restricted parameters object
@@ -409,14 +407,14 @@ Parameters have often prioritized convenience over accurately reflecting real-wo
 
 <Asyncapi3ParameterComparison className="my-8" />
 
-In v2, we significantly streamlined the Schema Object. While the previous version offered full capability with numerous, often underutilized options, it posed challenges in serializing objects or booleans in the channel path. 
+In v2, we significantly streamlined the Schema Object. While the previous version offered full capability with numerous, often underutilized options, it posed challenges in serializing objects or booleans in the channel path.
 
 The new v3 simplifies this by consistently using the string type and limiting available properties. Now, you can only access `enum`, `default`, `description`, `examples`, and `location`, ensuring a more focused and practical approach.
 
 ```yml
 asyncapi: 2.6.0
 ...
-channels: 
+channels:
   user/{user_id}/signedup:
     parameters:
       location: "$message.payload"
@@ -431,15 +429,15 @@ channels:
 
 ```yml
 asyncapi: 3.0.0
-...
-channels: 
+---
+channels:
   userSignedUp:
     address: user/{user_id}/signedup
     parameters:
-      user_id: 
-        enum: ["test"]
-        default: "test"
+      user_id:
+        enum: ['test']
+        default: 'test'
         description: Just a test description
-        examples: ["test"]
-        location: "$message.payload"
+        examples: ['test']
+        location: '$message.payload'
 ```

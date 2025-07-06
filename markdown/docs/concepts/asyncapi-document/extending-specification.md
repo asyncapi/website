@@ -20,7 +20,7 @@ asyncapi: 3.0.0
 info:
   title: Cool Example
   version: 0.1.0
-  x-linkedin: '/company/asyncapi'  
+  x-linkedin: '/company/asyncapi'
 ```
 
 The above document shows an `info` object extended with custom information about a company's LinkedIn account that owns the application. Custom information is represented via a custom property called `x-linkedin`.

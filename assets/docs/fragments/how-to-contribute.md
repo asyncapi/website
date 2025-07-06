@@ -7,4 +7,5 @@ Did you know that you can contribute Docs to AsyncAPI as well?
 <ContributionNotes />
 
 ### Talk to me
+
 <TalkToMe />

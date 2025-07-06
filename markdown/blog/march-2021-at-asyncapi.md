@@ -24,6 +24,7 @@ excerpt: 'AsyncAPI Initiative joined the Linux Foundation in March, but except o
 Q1 2021 came to an end. Let me summarise our targets, revenue, and forecasts :smiley:
 
 This month:
+
 - [Slack](https://www.asyncapi.com/slack-invite/) members up by around 100 (reached 1.1k)
 - [Twitter](https://twitter.com/AsyncAPISpec) followers up by around 100 (reached 1.7k)
 - [LinkedIn](https://www.linkedin.com/company/asyncapi) followers up by around 100 (reached 1k)
@@ -43,6 +44,7 @@ Let's scale this party up!
 We did it. AsyncAPI initiative joined Linux Foundation (LF). No more excuses for you not to join us. You're all welcome.
 
 I don't want to write about this too much as everything was described in different articles about us joining LF:
+
 - [AsyncAPI joins Linux Foundation](https://www.asyncapi.com/blog/asyncapi-joins-linux-foundation)
 - [Linux Foundation Will Host AsyncAPI to Support Growth and Collaboration for Industry's Fastest-Growing API Spec](https://www.linuxfoundation.org/press/press-release/linux-foundation-will-host-asyncapi-to-support-growth-and-collaboration-for-industrys-fastest-growing-api-spec)
 - [The Linux Foundation Announces Hosting of AsyncAPI](https://www.infoq.com/news/2021/03/linux-foundation-hosts-asyncapi/)
@@ -69,6 +71,7 @@ Glad you asked. We joined the foundation with an open governance model that favo
 #### How can we help
 
 Except for regular contributions, we need help setting up tooling for our open governance model. We need to:
+
 - Automate a process of collecting information about TSC members
 - Put information about current TSC members on the AsyncAPI website
 - Figure out tooling for the website
@@ -79,6 +82,7 @@ Everyone with a different set of skills is welcome. [Just contact me](https://ww
 ### What is next
 
 We are almost ready for the next releases of the specification. We already have a new, GraphQL-inspired contribution guide that explains how to introduce changes in the specification. What is left is a decision on how actually to decide that release will happen and when. Help us by:
+
 - Familiarize with [instruction](https://github.com/asyncapi/spec/blob/master/CONTRIBUTING.md) on how to introduce changes in the spec, pick [the idea](https://github.com/asyncapi/spec/issues) that you want to champion, and let us start improving the spec
 - Have a look at the [proposal on release cadence](https://github.com/asyncapi/spec/issues/513) and share your opinion, as comments or emojis
 
@@ -102,7 +106,7 @@ We got rejected.
 
 It is not easy to reject us, though :smiley:
 
-[Postman](https://www.postman.com/) that we partner with was accepted for GSoC and offered us to submit the list with [our ideas](https://docs.google.com/document/d/1F2RWY7wmexsv5KOPsH7T_XiITt8gDK1PPPoaCFf5Ua8/edit#)(ideas 7-13) as part of Postman application. We received many proposals and were contaced by many very motivated students (but not only students) who would like to join the AsyncAPI initiative and build great tools. 
+[Postman](https://www.postman.com/) that we partner with was accepted for GSoC and offered us to submit the list with [our ideas](https://docs.google.com/document/d/1F2RWY7wmexsv5KOPsH7T_XiITt8gDK1PPPoaCFf5Ua8/edit#)(ideas 7-13) as part of Postman application. We received many proposals and were contaced by many very motivated students (but not only students) who would like to join the AsyncAPI initiative and build great tools.
 
 Have a look at the list of ideas. We received proposals for all of them. It looks like soon, our tooling ecosystem will get many new useful tools. Stay tuned. Feel free to join us, share your use cases for the ideas and also help build those tools. A Majority of discussions happen [here](https://github.com/asyncapi/community/issues).
 
@@ -115,8 +119,8 @@ Thanks to work done by [Swen Helge](https://github.com/195858) from [Solace](htt
 Thanks to work done by [Khuda Dad Nomani](https://twitter.com/KhudaDadNomani), the NodeJS template that you can generate using the AsyncAPI Generator includes a message validator that enables real-time validation of all incoming and outgoing messages. Check out [this](https://github.com/asyncapi/nodejs-template#cli) short instructions to see it in action or watch the below recording.
 
 <TwitterTweetEmbed
-  tweetId='1376804212466712578'
-  options={{
+tweetId='1376804212466712578'
+options={{
     cards: 'hidden',
     width: 500,
     align: 'center'
@@ -126,12 +130,12 @@ Thanks to work done by [Khuda Dad Nomani](https://twitter.com/KhudaDadNomani), t
 ## About AsyncAPI in different languages
 
 Are you tired of reading about AsyncAPI only in English? Some articles in French and Spanish were released recently, have a look:
+
 - [Spanish](https://lignux.com/asyncapi-se-fusiona-con-la-fundacion-linux/)
 - [French](http://blog.ippon.fr/2021/04/09/asyncapi-comment-standardiser-les-api-asynchrones/)
 
-If you want to see more content in different languages, let us know.  
+If you want to see more content in different languages, let us know.
 
 Also, provide feedback to [Barbaño González](https://www.linkedin.com/in/barba%C3%B1o-gonz%C3%A1lez-moreno-02a724179/) that works on content for Spanish-speaking audience. Some help needed [here](https://docs.google.com/document/d/1Si6tGwmQ57Nd4jn-NnOgDHlli5fGVjz8/).
 
 > Photo by <a href="https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/s/photos/grow?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  

@@ -20,20 +20,22 @@ If your use case is that you work with multiple repositories, you might want to 
 ## How to add context to a project
 
 ### Manually
-  - Create file `.asyncapi-cli` containing [minimal empty context file](#minimalEmptyContextFile) in:
-    - current directory
-    - root of current repository
-    - user's home directory
+
+- Create file `.asyncapi-cli` containing [minimal empty context file](#minimalEmptyContextFile) in:
+  - current directory
+  - root of current repository
+  - user's home directory
 
 ### Using CLI's `init` command
 
 `asyncapi config context init [CONTEXT-FILE-PATH]`
 
 Where `[CONTEXT-FILE-PATH]` instructs CLI what directory should the file `.asyncapi-cli` containing [minimal empty context file](#minimalEmptyContextFile) be created in:
-  - current directory: `asyncapi config context init .` (default)
-  - root of current repository: `asyncapi config context init ./`
-  - user's home directory: `asyncapi config context init ~`
-  
+
+- current directory: `asyncapi config context init .` (default)
+- root of current repository: `asyncapi config context init ./`
+- user's home directory: `asyncapi config context init ~`
+
 (if `[CONTEXT-FILE-PATH]` is omitted, empty context file is created in current directory)
 
 Make use of newly created `.asyncapi-cli` by executing command:
@@ -95,7 +97,7 @@ notifier/asyncapi.yaml
  18:13      warning  asyncapi2-operation-operationId  Operation should have an "operationId" field defined.                                         channels.flight/update.publish
 ✖ 6 problems (0 errors, 5 warnings, 1 info, 0 hints)
 
-# Switch default context 
+# Switch default context
 (main)$ asyncapi config context use notifier
 notifier is set as current
 
@@ -110,10 +112,10 @@ subscriber: subscriber/asyncapi.yaml
 
 ### Fixed Fields
 
-Field Name | Type | Description
----|:---:|---
-current | `string` | An optional string value representing one of context names, which is used as default in CLI. Default means you can run CLI commands without providing context name, like `asyncapi validate`, and it will run against the default - `current` - context.
-store | [Store Object](#storeObject) | **REQUIRED**. Map of filesystem paths to target AsyncAPI documents.
+| Field Name |             Type             | Description                                                                                                                                                                                                                                              |
+| ---------- | :--------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| current    |           `string`           | An optional string value representing one of context names, which is used as default in CLI. Default means you can run CLI commands without providing context name, like `asyncapi validate`, and it will run against the default - `current` - context. |
+| store      | [Store Object](#storeObject) | **REQUIRED**. Map of filesystem paths to target AsyncAPI documents.                                                                                                                                                                                      |
 
 ### <a name="storeObject"></a>Store Object
 
@@ -121,18 +123,22 @@ Map of filesystem paths to target AsyncAPI documents.
 
 **Patterned Fields**
 
-Field Pattern | Type | Description
----|:---:|---
-\{contextName\} | `string` | An optional string value representing filesystem path to the target AsyncAPI document.
+| Field Pattern   |   Type   | Description                                                                            |
+| --------------- | :------: | -------------------------------------------------------------------------------------- |
+| \{contextName\} | `string` | An optional string value representing filesystem path to the target AsyncAPI document. |
 
 ### <a name="minimalEmptyContextFile"></a>Minimal Empty Context File
+
 Raw JSON:
+
 ```
 {
   "store": {}
 }
 ```
+
 Stringified JSON:
+
 ```
 {"store":{}}
 ```
@@ -140,6 +146,7 @@ Stringified JSON:
 ### Context File Example
 
 Example of a context file for [Event Driven Flight status notification service](https://github.com/amadeus4dev-examples/amadeus-async-flight-status/tree/ff433b6d320a3a6a2499976cbf0782353bc57c16) of the [Amadeus Airline Platform](https://amadeus.com/en/industries/airlines/airline-platform), with multiple microservices and their AsyncAPI documents:
+
 ```
 {
   "current": "monitor",

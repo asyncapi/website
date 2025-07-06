@@ -28,9 +28,12 @@ export default function HeadComponent({
                 All powered by the AsyncAPI specification, the industry standard for defining asynchronous APIs.`,
   image = '/img/social/website-card.jpg',
   rssTitle = 'RSS Feed for AsyncAPI Initiative Blog',
-  rssLink = '/rss.xml'
+  rssLink = '/rss.xml',
 }: IHeadProps) {
-  const url = process.env.NEXT_PUBLIC_DEPLOY_PRIME_URL || process.env.NEXT_PUBLIC_DEPLOY_URL || 'http://localhost:3000';
+  const url =
+    process.env.NEXT_PUBLIC_DEPLOY_PRIME_URL ||
+    process.env.NEXT_PUBLIC_DEPLOY_URL ||
+    'http://localhost:3000';
   const appContext = useContext(AppContext);
   const { path = '' } = appContext || {};
   let currImage = image;
@@ -51,7 +54,10 @@ export default function HeadComponent({
   const currTitle = title ? `${title} | ${permTitle}` : permTitle;
 
   // enable google analytics
-  if (typeof window !== 'undefined' && window.location.hostname.includes('asyncapi.com')) {
+  if (
+    typeof window !== 'undefined' &&
+    window.location.hostname.includes('asyncapi.com')
+  ) {
     TagManager.initialize({ gtmId: 'GTM-T58BTVQ' });
     ReactGA.initialize('UA-109278936-1');
     ReactGA.pageview(window.location.pathname + window.location.search);
@@ -59,29 +65,37 @@ export default function HeadComponent({
 
   return (
     <Head>
-      <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
-      <meta httpEquiv='x-ua-compatible' content='ie=edge' />
-      <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
-      <meta name='description' content={description} />
-      <link rel='alternate' type='application/rss+xml' title={rssTitle} href={rssLink} />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
+      <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+      <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="description" content={description} />
+      <link
+        rel="alternate"
+        type="application/rss+xml"
+        title={rssTitle}
+        href={rssLink}
+      />
 
       {/* Google / Search Engine Tags */}
-      <meta itemProp='name' content={title} />
-      <meta itemProp='description' content={description} />
-      <meta itemProp='image' content={currImage} />
+      <meta itemProp="name" content={title} />
+      <meta itemProp="description" content={description} />
+      <meta itemProp="image" content={currImage} />
 
       {/* Twitter Card data */}
-      <meta name='twitter:card' content='summary_large_image' />
-      <meta name='twitter:title' content={title} />
-      <meta name='twitter:description' content={description} />
-      <meta name='twitter:image' content={currImage} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={currImage} />
 
       {/* Open Graph data */}
-      <meta property='og:title' content={title} />
-      <meta property='og:type' content={type} />
-      <meta property='og:url' content={permalink} />
-      <meta property='og:image' content={currImage} />
-      <meta property='og:description' content={description} />
+      <meta property="og:title" content={title} />
+      <meta property="og:type" content={type} />
+      <meta property="og:url" content={permalink} />
+      <meta property="og:image" content={currImage} />
+      <meta property="og:description" content={description} />
 
       <title>{currTitle}</title>
     </Head>

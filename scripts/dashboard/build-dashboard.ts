@@ -11,7 +11,7 @@ import type {
   IssueById,
   MappedIssue,
   ProcessedDiscussion,
-  PullRequestById
+  PullRequestById,
 } from '@/types/scripts/dashboard';
 
 import { logger } from '../helpers/logger';
@@ -30,7 +30,9 @@ const currentDirPath = dirname(currentFilePath);
  * @returns The number of full months that have elapsed since the specified date.
  */
 function monthsSince(date: string): number {
-  const seconds = Math.floor((new Date().valueOf() - new Date(date).valueOf()) / 1000);
+  const seconds = Math.floor(
+    (new Date().valueOf() - new Date(date).valueOf()) / 1000,
+  );
   // 2592000 = number of seconds in a month = 30 * 24 * 60 * 60
   const months = seconds / 2592000;
 
@@ -49,7 +51,9 @@ function monthsSince(date: string): number {
  * @returns The substring following "/" in the label name if a match is found; otherwise, undefined.
  */
 function getLabel(issue: GoodFirstIssues, filter: string): string | undefined {
-  const result = issue.labels?.nodes?.find((label) => label.name.startsWith(filter));
+  const result = issue.labels?.nodes?.find((label) =>
+    label.name.startsWith(filter),
+  );
 
   return result?.name.split('/')[1];
 }
@@ -69,7 +73,7 @@ function getLabel(issue: GoodFirstIssues, filter: string): string | undefined {
 async function getDiscussions(
   query: string,
   pageSize: number,
-  endCursor: null | string = null
+  endCursor: null | string = null,
 ): Promise<Discussion['search']['nodes']> {
   const token = process.env.GITHUB_TOKEN;
 
@@ -81,8 +85,8 @@ async function getDiscussions(
       first: pageSize,
       after: endCursor,
       headers: {
-        authorization: `token ${process.env.GITHUB_TOKEN}`
-      }
+        authorization: `token ${process.env.GITHUB_TOKEN}`,
+      },
     });
 
     if (result.rateLimit.remaining <= 100) {
@@ -91,7 +95,7 @@ async function getDiscussions(
           `cost = ${result.rateLimit.cost}\n` +
           `limit = ${result.rateLimit.limit}\n` +
           `remaining = ${result.rateLimit.remaining}\n` +
-          `resetAt = ${result.rateLimit.resetAt}`
+          `resetAt = ${result.rateLimit.resetAt}`,
       );
     }
 
@@ -103,7 +107,9 @@ async function getDiscussions(
       return result.search.nodes;
     }
 
-    return result.search.nodes.concat(await getDiscussions(query, pageSize, result.search.pageInfo.endCursor));
+    return result.search.nodes.concat(
+      await getDiscussions(query, pageSize, result.search.pageInfo.endCursor),
+    );
   } catch (e) {
     logger.error(e);
 
@@ -122,7 +128,10 @@ async function getDiscussions(
  *
  * @throws {Error} If the GraphQL request fails.
  */
-async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequestById | IssueById> {
+async function getDiscussionByID(
+  isPR: boolean,
+  id: string,
+): Promise<PullRequestById | IssueById> {
   const token = process.env.GITHUB_TOKEN;
 
   if (!token) {
@@ -130,12 +139,15 @@ async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequest
   }
 
   try {
-    const result: PullRequestById | IssueById = await graphql(isPR ? Queries.pullRequestById : Queries.issueById, {
-      id,
-      headers: {
-        authorization: `token ${token}`
-      }
-    });
+    const result: PullRequestById | IssueById = await graphql(
+      isPR ? Queries.pullRequestById : Queries.issueById,
+      {
+        id,
+        headers: {
+          authorization: `token ${token}`,
+        },
+      },
+    );
 
     return result;
   } catch (e) {
@@ -157,7 +169,9 @@ async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequest
  *
  * @throws {Error} When processing a discussion fails.
  */
-async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise<ProcessedDiscussion[]> {
+async function processHotDiscussions(
+  batch: HotDiscussionsIssuesNode[],
+): Promise<ProcessedDiscussion[]> {
   return Promise.all(
     batch.map(async (discussion) => {
       try {
@@ -165,7 +179,10 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise
         const isPR = discussion.__typename === 'PullRequest';
 
         if (discussion.comments.pageInfo?.hasNextPage) {
-          const fetchedDiscussion = await getDiscussionByID(isPR, discussion.id);
+          const fetchedDiscussion = await getDiscussionByID(
+            isPR,
+            discussion.id,
+          );
 
           // eslint-disable-next-line no-param-reassign
           discussion = fetchedDiscussion.node;
@@ -174,12 +191,18 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise
         const interactionsCount =
           discussion.reactions.totalCount +
           discussion.comments.totalCount +
-          discussion.comments.nodes.reduce((acc, curr) => acc + curr.reactions.totalCount, 0);
+          discussion.comments.nodes.reduce(
+            (acc, curr) => acc + curr.reactions.totalCount,
+            0,
+          );
 
         const finalInteractionsCount = isPR
           ? interactionsCount +
             discussion.reviews.totalCount +
-            (discussion.reviews.nodes?.reduce((acc, curr) => acc + curr.comments.totalCount, 0) ?? 0)
+            (discussion.reviews.nodes?.reduce(
+              (acc, curr) => acc + curr.comments.totalCount,
+              0,
+            ) ?? 0)
           : interactionsCount;
 
         return {
@@ -191,13 +214,17 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise
           resourcePath: discussion.resourcePath,
           repo: `asyncapi/${discussion.repository.name}`,
           labels: discussion.labels ? discussion.labels.nodes : [],
-          score: finalInteractionsCount / (monthsSince(discussion.timelineItems.updatedAt) + 2) ** 1.8
+          score:
+            finalInteractionsCount /
+            (monthsSince(discussion.timelineItems.updatedAt) + 2) ** 1.8,
         };
       } catch (e) {
-        logger.error(`there were some issues while parsing this item: ${JSON.stringify(discussion)}`);
+        logger.error(
+          `there were some issues while parsing this item: ${JSON.stringify(discussion)}`,
+        );
         throw e;
       }
-    })
+    }),
   );
 }
 
@@ -211,7 +238,9 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise
  * @param discussions - The array of discussion nodes to process.
  * @returns A promise that resolves to an array of up to 12 processed hot discussions.
  */
-async function getHotDiscussions(discussions: HotDiscussionsIssuesNode[]): Promise<ProcessedDiscussion[]> {
+async function getHotDiscussions(
+  discussions: HotDiscussionsIssuesNode[],
+): Promise<ProcessedDiscussion[]> {
   const result: ProcessedDiscussion[] = [];
   const batchSize = 5;
 
@@ -226,7 +255,9 @@ async function getHotDiscussions(discussions: HotDiscussionsIssuesNode[]): Promi
   }
 
   result.sort((ElemA, ElemB) => ElemB.score - ElemA.score);
-  const filteredResult = result.filter((issue) => issue.author !== 'asyncapi-bot');
+  const filteredResult = result.filter(
+    (issue) => issue.author !== 'asyncapi-bot',
+  );
 
   return filteredResult.slice(0, 12);
 }
@@ -246,14 +277,14 @@ async function writeToFile(
     hotDiscussions: ProcessedDiscussion[];
     goodFirstIssues: MappedIssue[];
   },
-  writePath: string
+  writePath: string,
 ): Promise<void> {
   try {
     await writeFile(writePath, JSON.stringify(content, null, '  '));
   } catch (error) {
     logger.error('Failed to write dashboard data:', {
       error: (error as Error).message,
-      writePath
+      writePath,
     });
     throw error;
   }
@@ -269,7 +300,9 @@ async function writeToFile(
  * @param issues - The list of good first issues to transform.
  * @returns A promise that resolves to an array of simplified issue objects.
  */
-async function mapGoodFirstIssues(issues: GoodFirstIssues[]): Promise<MappedIssue[]> {
+async function mapGoodFirstIssues(
+  issues: GoodFirstIssues[],
+): Promise<MappedIssue[]> {
   return issues.map((issue) => ({
     id: issue.id,
     title: issue.title,
@@ -279,8 +312,10 @@ async function mapGoodFirstIssues(issues: GoodFirstIssues[]): Promise<MappedIssu
     author: issue.author.login,
     area: getLabel(issue, 'area/') || 'Unknown',
     labels: issue.labels!.nodes.filter(
-      (label) => !label.name.startsWith('area/') && !label.name.startsWith('good first issue')
-    )
+      (label) =>
+        !label.name.startsWith('area/') &&
+        !label.name.startsWith('good first issue'),
+    ),
   }));
 }
 
@@ -297,13 +332,22 @@ async function mapGoodFirstIssues(issues: GoodFirstIssues[]): Promise<MappedIssu
  */
 async function start(writePath: string): Promise<void> {
   try {
-    const issues = (await getDiscussions(Queries.hotDiscussionsIssues, 20)) as HotDiscussionsIssuesNode[];
-    const PRs = (await getDiscussions(Queries.hotDiscussionsPullRequests, 20)) as HotDiscussionsPullRequestsNode[];
-    const rawGoodFirstIssues: GoodFirstIssues[] = await getDiscussions(Queries.goodFirstIssues, 20);
+    const issues = (await getDiscussions(
+      Queries.hotDiscussionsIssues,
+      20,
+    )) as HotDiscussionsIssuesNode[];
+    const PRs = (await getDiscussions(
+      Queries.hotDiscussionsPullRequests,
+      20,
+    )) as HotDiscussionsPullRequestsNode[];
+    const rawGoodFirstIssues: GoodFirstIssues[] = await getDiscussions(
+      Queries.goodFirstIssues,
+      20,
+    );
     const discussions = issues.concat(PRs);
     const [hotDiscussions, goodFirstIssues] = await Promise.all([
       getHotDiscussions(discussions),
-      mapGoodFirstIssues(rawGoodFirstIssues)
+      mapGoodFirstIssues(rawGoodFirstIssues),
     ]);
 
     await writeToFile({ hotDiscussions, goodFirstIssues }, writePath);
@@ -326,5 +370,5 @@ export {
   mapGoodFirstIssues,
   processHotDiscussions,
   start,
-  writeToFile
+  writeToFile,
 };

@@ -2,7 +2,12 @@ import fs from 'fs';
 import path from 'path';
 
 import { buildFinanceInfoList } from '../../scripts/finance/index';
-import { expensesjson, expensesLinkjson, expensesLinkYaml, expensesYaml } from '../fixtures/financeData';
+import {
+  expensesjson,
+  expensesLinkjson,
+  expensesLinkYaml,
+  expensesYaml,
+} from '../fixtures/financeData';
 
 describe('buildFinanceInfoList', () => {
   const testDir = path.resolve(__dirname, 'test-finance-info');
@@ -13,10 +18,18 @@ describe('buildFinanceInfoList', () => {
 
   beforeAll(() => {
     // Create test directory structure
-    fs.mkdirSync(path.resolve(testDir, configDir, financeDir, year), { recursive: true });
+    fs.mkdirSync(path.resolve(testDir, configDir, financeDir, year), {
+      recursive: true,
+    });
 
-    fs.writeFileSync(path.resolve(testDir, configDir, financeDir, year, 'Expenses.yml'), expensesYaml);
-    fs.writeFileSync(path.resolve(testDir, configDir, financeDir, year, 'ExpensesLink.yml'), expensesLinkYaml);
+    fs.writeFileSync(
+      path.resolve(testDir, configDir, financeDir, year, 'Expenses.yml'),
+      expensesYaml,
+    );
+    fs.writeFileSync(
+      path.resolve(testDir, configDir, financeDir, year, 'ExpensesLink.yml'),
+      expensesLinkYaml,
+    );
   });
 
   afterAll(() => {
@@ -30,7 +43,7 @@ describe('buildFinanceInfoList', () => {
       configDir,
       financeDir,
       year,
-      jsonDataDir
+      jsonDataDir,
     });
 
     const jsonDir = path.resolve(testDir, configDir, financeDir, jsonDataDir);
@@ -47,7 +60,9 @@ describe('buildFinanceInfoList', () => {
 
     // Check contents of JSON files
     const expensesJson = JSON.parse(fs.readFileSync(expensesJsonPath, 'utf8'));
-    const expensesLinkJson = JSON.parse(fs.readFileSync(expensesLinkJsonPath, 'utf8'));
+    const expensesLinkJson = JSON.parse(
+      fs.readFileSync(expensesLinkJsonPath, 'utf8'),
+    );
 
     expect(expensesJson).toEqual(expensesjson);
     expect(expensesLinkJson).toEqual(expensesLinkjson);
@@ -60,7 +75,7 @@ describe('buildFinanceInfoList', () => {
         configDir,
         financeDir,
         year: '2023', // Non-existent year
-        jsonDataDir
+        jsonDataDir,
       });
     } catch (error) {
       expect(error).toBeInstanceOf(Error);
@@ -75,7 +90,7 @@ describe('buildFinanceInfoList', () => {
         configDir,
         financeDir,
         year,
-        jsonDataDir: 'nonexistent-dir' // Invalid JSON data directory path
+        jsonDataDir: 'nonexistent-dir', // Invalid JSON data directory path
       });
     } catch (error) {
       expect(error).toBeInstanceOf(Error);
@@ -89,7 +104,10 @@ describe('buildFinanceInfoList', () => {
       invalid yaml content
     `;
 
-    fs.writeFileSync(path.resolve(testDir, configDir, financeDir, year, 'InvalidExpenses.yml'), invalidYaml);
+    fs.writeFileSync(
+      path.resolve(testDir, configDir, financeDir, year, 'InvalidExpenses.yml'),
+      invalidYaml,
+    );
 
     try {
       await buildFinanceInfoList({
@@ -97,7 +115,7 @@ describe('buildFinanceInfoList', () => {
         configDir,
         financeDir,
         year,
-        jsonDataDir
+        jsonDataDir,
       });
     } catch (error) {
       expect(error).toBeInstanceOf(Error);

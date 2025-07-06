@@ -1,5 +1,5 @@
 ---
-title: "An API Strategist Explores Event-Driven APIs"
+title: 'An API Strategist Explores Event-Driven APIs'
 date: 2019-05-14T16:56:52+01:00
 type: Strategy
 tags:
@@ -21,13 +21,13 @@ If you’re like me and have experience with web services and the paradigm of RE
 
 I virtually sat down with these experts:
 
-* [Fran Mendez](https://twitter.com/fmvilas), Founder of [AsyncAPI](https://twitter.com/AsyncAPISpec)
+- [Fran Mendez](https://twitter.com/fmvilas), Founder of [AsyncAPI](https://twitter.com/AsyncAPISpec)
 
-* [Jonathan Schabowsky](https://twitter.com/JSchabowsky), Chief Architect, [Solace](https://twitter.com/solacedotcom)
+- [Jonathan Schabowsky](https://twitter.com/JSchabowsky), Chief Architect, [Solace](https://twitter.com/solacedotcom)
 
-* [David McKenna](https://www.linkedin.com/in/david-mckenna-05726b1), SVP, Research & Development, [Axway](https://twitter.com/Axway)
+- [David McKenna](https://www.linkedin.com/in/david-mckenna-05726b1), SVP, Research & Development, [Axway](https://twitter.com/Axway)
 
-* [Eric Horesnyi](https://twitter.com/EricHoresnyi), General Manager, APIs & Integration, Axway (CEO of [Streamdata.io acquired by Axway](https://twitter.com/StreamdataIO))
+- [Eric Horesnyi](https://twitter.com/EricHoresnyi), General Manager, APIs & Integration, Axway (CEO of [Streamdata.io acquired by Axway](https://twitter.com/StreamdataIO))
 
 Question 1: **What do you think is the most important value proposition of event-driven architecture and event-driven/messaging APIs?**
 
@@ -43,7 +43,8 @@ My frame of reference with REST APIs: I can inspect HTTP calls in a browser and 
 
 Question 4: **How do you measure event-driven APIs?**
 
-I was thinking about how you measure the *effects* of event-driven APIs. For example, how can various types of calls live within dashboards for the sake of analytics and measurement? Future Trend: Is there a way to get wholistic data from webhooks, RESTful/JSON, SOAP/WSDL/WADL/XML, GraphQL, gRPC, etc.?
+I was thinking about how you measure the _effects_ of event-driven APIs. For example, how can various types of calls live within dashboards for the sake of analytics and measurement? Future Trend: Is there a way to get wholistic data from webhooks, RESTful/JSON, SOAP/WSDL/WADL/XML, GraphQL, gRPC, etc.?
+
 > POV: The future of APIs is the unified catalog having a matching data-driven view. [lifewingmate](https://twitter.com/lifewingmate)
 
 ## For the greater API Community
@@ -59,45 +60,45 @@ Here we go!
 
 Fran: I’d say most interesting for me are:
 
-* loose coupling between services (if a downstream service breaks the others just work fine),
+- loose coupling between services (if a downstream service breaks the others just work fine),
 
-* they’re fault-tolerant since events are queued or stored somewhere, and processed once the service is up and running again, and
+- they’re fault-tolerant since events are queued or stored somewhere, and processed once the service is up and running again, and
 
-* they allow you to build real-time products easily.
+- they allow you to build real-time products easily.
 
 Jonathan: 1) **Loose Coupling**— As Fran states, apps do not have to know how many different apps they are consuming data from. Rather they just care about what data they are consuming. This [scenario] is extremely powerful.
 
 Also, data today is RARELY consumed only once, rather, it goes into big data and analytics platforms. The loose coupling described allows you to have this for free.
 
-2) **Reactive to Change** — Instead of polling, consumers can register their their interest (subscribe) and react to changes in real-time. The producer just sends events, and does not care if anyone is interested… fire and forget… Meanwhile clients that are subscribed get the data in realtime and can react. This is useful where you want to service customers in real-time.
+2. **Reactive to Change** — Instead of polling, consumers can register their their interest (subscribe) and react to changes in real-time. The producer just sends events, and does not care if anyone is interested… fire and forget… Meanwhile clients that are subscribed get the data in realtime and can react. This is useful where you want to service customers in real-time.
 
-3) **Scale**— Want to be able to consume events, in order, across millions of devices? How about do 500k messages per second guaranteed of capital market trades?
+3. **Scale**— Want to be able to consume events, in order, across millions of devices? How about do 500k messages per second guaranteed of capital market trades?
 
 > Asynchronous interactions enable enterprises to do things which are nearly impossible to do synchronously.
 > — [JSchabowsky](https://twitter.com/JSchabowsky)
 
 David, Eric: Event-driven architecture brings comfort to end users and efficiency to the web at individual component level and at system level:
 
-* UX in Frontends
+- UX in Frontends
 
-* Network
+- Network
 
-* APIs
+- APIs
 
-* Backends
+- Backends
 
-* Behind the API: Application languages, data plane, and DevOps
+- Behind the API: Application languages, data plane, and DevOps
 
-* Entire System
+- Entire System
 
 **UX in Frontends** The [most popular](https://hackr.io/blog/10-best-javascript-frameworks-2019) reactive frameworks (AngularJS, ReactJS, VueJS) react to streams of events presented to their [observables](https://streamdata.io/blog/realtime-event-driven-app-with-riot-xignite-and-streamdata-io/), a data plane presenting events to the UI.
 
 Why is that? Because, we -mobile and desktop human users- want to be presented data in real-time:
 
-* Where is my cab? 
-What is the price of my favorite share, now?
+- Where is my cab?
+  What is the price of my favorite share, now?
 
-* At what time will my train arrive at destination ?
+- At what time will my train arrive at destination ?
 
 Yes, our life is real-time: we do not want to waste any time and we do not want to miss anything that happens in the world ([FOMO](https://en.wikipedia.org/wiki/Fear_of_missing_out) — Fear Of Missing Out).
 
@@ -111,7 +112,7 @@ This [situation] leads to the API server pushing streams of events to the API cl
 
 **Backends** In some industries, backends have been using evented architecture for a while.
 
-**Behind the API: Application Languages, data plane, and DevOps** 
+**Behind the API: Application Languages, data plane, and DevOps**
 Backend architectures have relied on events for a while, before REST was created. In my Flashboy days in [High Frequency Trading](https://www.infoq.com/podcasts/eric-horesnyi-ai-hft), we were pushing events from exchanges to hedge funds to allow them to stay in front of the market (making big money at low risk, I’m repentant), using IP-based tweaks (IP multicast and their famous storms), and proprietary middleware.
 
 Since then, message buses have evolved to open standards adopted outside finance (thanks Linkedin for **Kafka**), and -as already noted- the web has made it possible to transport events over HTTP. Additionally, and almost at the same time, people -like [myself](https://streamdata.io/blog/network-based-architecture-fielding-fowler-and-haussmann/)- having advocated microservices for years without seeing convergence of best practices are now contented: **Kubernetes** is here, and has instantly been adopted by all architects and DevOps to prepare their ideal microservices architecture.
@@ -136,13 +137,13 @@ Jonathan: Today, the consumption experience generally sucks! This is a gap in th
 
 David, Eric: There are many different technologies for providing event driven APIs
 
-* Server-Sent Events (SSE) for pushing data to the client to provide reactive user experience
+- Server-Sent Events (SSE) for pushing data to the client to provide reactive user experience
 
-* Webhooks for making HTTP callbacks on state change
+- Webhooks for making HTTP callbacks on state change
 
-* HTML5 Websockets providing full-duplex communication channels over a single TCP connection between client and server.
+- HTML5 Websockets providing full-duplex communication channels over a single TCP connection between client and server.
 
-* MQTT and AMQP for IoT use cases
+- MQTT and AMQP for IoT use cases
 
 ## Question 3: Today, how can I test drive event-driven APIs out in the wild?
 
@@ -150,11 +151,11 @@ Fran: You can’t or is not easy. Part of the reason for the existence of AsyncA
 
 Jonathan: Check out [cloud.solace.com](https://cloud.solace.com) … Sign up for an account (free) and play around. Create an event broker (think of that like an API gateway) and look at our runnable code pen examples. This is all more infrastructure based…. Now imagine AsyncAPI and you layer that on top, it becomes more like API management. Also, check out this blog [https://solace.com/blog/api-management-event-management/](https://solace.com/blog/api-management-event-management/)
 
-*(Emmelyn) I can inspect HTTP calls in a browser and mock up the API and run it in Postman and get an InVision conceptual app to consume the API, for example.*
- 
+_(Emmelyn) I can inspect HTTP calls in a browser and mock up the API and run it in Postman and get an InVision conceptual app to consume the API, for example._
+
 You can kind of do this at [cloud.solace.com](https://cloud.solace.com)… Again its more how do you send/receive messages… with no app context, but its a start and the most useful I have ever found.
 
-*(Emmelyn) I can use Stoplight to lint or APIMatic to create starter SDKs to “try it”*
+_(Emmelyn) I can use Stoplight to lint or APIMatic to create starter SDKs to “try it”_
 
 See previous comment and try it out and give me feedback!
 
@@ -176,25 +177,25 @@ Traditional monitoring tools are optimized for request-response scenario, asynch
 
 Fran’s take
 
-* Real-time experiences are built with event-driven architectures. You can’t build something real-time with REST APIs or any of the aforementioned styles.
+- Real-time experiences are built with event-driven architectures. You can’t build something real-time with REST APIs or any of the aforementioned styles.
 
-* Solace has an interesting concept called “event mesh” and [Jonathan](http://twitter.com/Jonathan) Schabowsky can explain better and point to existing documentation.
+- Solace has an interesting concept called “event mesh” and [Jonathan](http://twitter.com/Jonathan) Schabowsky can explain better and point to existing documentation.
 
-* And then you have the cool thing about event-driven microservices, which allows you to build products faster. It allows you to spend less time worrying about the systems and more about your business logic.
+- And then you have the cool thing about event-driven microservices, which allows you to build products faster. It allows you to spend less time worrying about the systems and more about your business logic.
 
 Eric’s take
 
 As a CEO myself, I do not invest in any feature of any technology until I can see proven track records and numbers. Well, EDA actually brings sizeable benefits in terms of topline, customer satisfaction, cost base, competitive differentiation and even HR attractiveness and retention:
 
-* Topline
+- Topline
 
-* Customer Satisfaction
+- Customer Satisfaction
 
-* Outsmart your Competitors with Machine Learning ML
+- Outsmart your Competitors with Machine Learning ML
 
-* IT Cost Base Reduction
+- IT Cost Base Reduction
 
-* HR
+- HR
 
 **Topline** The main benefits of the EDA mindset is to optimize the time it takes between the occurrence of an event in the universe, and the reaction by the company to that event. Each industry has its own metrics for assessing such benefit. In capital markets, 1 millisecond is worth **[$8m](https://research.tabbgroup.com/report/v06-007-value-millisecond-finding-optimal-speed-trading-infrastructure)** (!)
 
@@ -216,7 +217,7 @@ And the closer you are from data sources (acting as senses for the ML brain), th
 
 ## Question: How and when should companies actively choose event-driven architecture?
 
-*For example, how is discovery performed? Which APIM catalogs can showcase event-driven APIs so that companies can decide to consume rather than build it themselves? What kind of guidance and best practices can we provide?*
+_For example, how is discovery performed? Which APIM catalogs can showcase event-driven APIs so that companies can decide to consume rather than build it themselves? What kind of guidance and best practices can we provide?_
 
 David and Eric advise
 
@@ -229,7 +230,9 @@ A vast variety of low-price devices (sensors, thermostats, robots, etc.) with in
 **Cloud** — Adaption of cloud-based services in Enterprise adds more integration patterns (Cloud-to-cloud, Cloud-to-ground, Ground-to-Cloud, ..) thus more complexity. The different systems needs to exchange data to keep a coherent state across the applications. Using a point-to-point integration strategy can quickly become a trap because of the exponential complexity and tight coupling between the different systems.
 
 EDA enables a loose coupling between the components/apps in order regain agility, increases innovation pace and reduces time-to-market for new features/services.
+
 > # In general, I’m studying API Design Patterns and how various kinds of APIs expedite R&D adoption. What business results are accelerated from these kinds of patterns?
+>
 > Thanks for suggesting topics and connecting with feedback. You can also reach me via Twitter @lifewingmate DM or via the AsyncAPI community via our [GitHub](https://github.com/asyncapi) or [Slack channel](http://asyncapi.slack.com).
 
 Disclaimer: The professional opinions of those interviewed do not necessarily reflect the organizations they represent. These interviewees volunteered their time and contributions to support the AsyncAPI initiative and community.

@@ -16,7 +16,7 @@ export namespace Slack {
   export async function openSaveDialog(
     state: string,
     discussionCategories: DiscussionCategory[],
-    triggerId: string
+    triggerId: string,
   ) {
     await slackClient.dialog
       .open({
@@ -66,7 +66,7 @@ export namespace Slack {
 
   export async function getSlackDiscussion(
     channelId: string,
-    threadTS: string
+    threadTS: string,
   ): Promise<Discussion | undefined> {
     const { messages } = await slackClient.conversations.replies({
       channel: channelId,
@@ -74,7 +74,7 @@ export namespace Slack {
     });
     if (!messages) {
       console.error(
-        `Message with thread_ts: ${threadTS} doesn't exist in ${channelId} channel.`
+        `Message with thread_ts: ${threadTS} doesn't exist in ${channelId} channel.`,
       );
       return;
     }
@@ -104,7 +104,7 @@ export namespace Slack {
     if (message.reactions) {
       return (
         message.reactions.filter(
-          (reaction) => reaction.name === CHECK_MARK_REACTION
+          (reaction) => reaction.name === CHECK_MARK_REACTION,
         ).length > 0
       );
     }
@@ -120,7 +120,7 @@ export namespace Slack {
   export async function postReplyInThread(
     message: string,
     channelId: string,
-    threadTS: string
+    threadTS: string,
   ) {
     try {
       await slackClient.chat.postMessage({
@@ -132,7 +132,7 @@ export namespace Slack {
       });
     } catch (err) {
       console.error(
-        'Something went wrong while trying to post a reply to the discussion'
+        'Something went wrong while trying to post a reply to the discussion',
       );
       console.error(err);
     }

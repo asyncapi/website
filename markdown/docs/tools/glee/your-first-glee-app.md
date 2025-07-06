@@ -1,8 +1,6 @@
 ---
-
 title: Building Your First Glee Application
 weight: 20
-
 ---
 
 #### Crafting Your API Specification
@@ -41,13 +39,13 @@ operations:
     channel:
       $ref: '#/channels/greet'
     messages:
-      - $ref: "#/channels/greet/messages/time"
+      - $ref: '#/channels/greet/messages/time'
   sendGreet:
     action: send
     channel:
       $ref: '#/channels/greet'
     messages:
-      - $ref: "#/channels/greet/messages/greet"
+      - $ref: '#/channels/greet/messages/greet'
 ```
 
 Store this in a file named `asyncapi.yml`.
@@ -118,7 +116,7 @@ Run your Glee application using:
 
 ```
 npm run dev
-# or 
+# or
 npm run start
 ```
 

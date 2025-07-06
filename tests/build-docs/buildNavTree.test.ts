@@ -7,7 +7,7 @@ const {
   orphanNavItems,
   missingFieldsNavItems,
   invalidParentNavItems,
-  multipleSubsectionsNavItems
+  multipleSubsectionsNavItems,
 } = navData;
 
 describe('buildNavTree', () => {
@@ -21,15 +21,15 @@ describe('buildNavTree', () => {
     expect(result.welcome.item).toEqual(
       expect.objectContaining({
         title: 'Welcome',
-        slug: '/docs'
-      })
+        slug: '/docs',
+      }),
     );
 
     expect(result['getting-started'].item).toEqual(
       expect.objectContaining({
         title: 'Getting Started',
-        slug: '/docs/getting-started'
-      })
+        slug: '/docs/getting-started',
+      }),
     );
 
     expect(result['getting-started'].children).toHaveProperty('installation');
@@ -38,19 +38,23 @@ describe('buildNavTree', () => {
     expect(result.reference.item).toEqual(
       expect.objectContaining({
         title: 'Reference',
-        slug: '/docs/reference'
-      })
+        slug: '/docs/reference',
+      }),
     );
 
     expect(result.reference.children.api.item).toEqual(
       expect.objectContaining({
         title: 'API',
-        slug: '/docs/reference/api'
-      })
+        slug: '/docs/reference/api',
+      }),
     );
 
-    expect(result.reference.children.specification.item.slug).toBe('/docs/reference/specification');
-    expect(result.reference.children.specification.children[0].slug).toBe('/docs/reference/specification/v3.0');
+    expect(result.reference.children.specification.item.slug).toBe(
+      '/docs/reference/specification',
+    );
+    expect(result.reference.children.specification.children[0].slug).toBe(
+      '/docs/reference/specification/v3.0',
+    );
   });
 
   it('should handle items without sectionId', () => {
@@ -59,16 +63,16 @@ describe('buildNavTree', () => {
     expect(result.root.item).toEqual(
       expect.objectContaining({
         title: 'Root',
-        slug: '/docs'
-      })
+        slug: '/docs',
+      }),
     );
 
     expect(result.root.children).toHaveProperty('Item without sectionId');
     expect(result.root.children['Item without sectionId'].item).toEqual(
       expect.objectContaining({
         title: 'Item without sectionId',
-        slug: '/docs/item'
-      })
+        slug: '/docs/item',
+      }),
     );
   });
 
@@ -80,7 +84,7 @@ describe('buildNavTree', () => {
     } catch (err) {
       error = err;
       expect((err as Error).message).toContain(
-        'Parent section non-existent-parent not found for item Orphaned Subsection'
+        'Parent section non-existent-parent not found for item Orphaned Subsection',
       );
     }
     expect(error).toBeDefined();
@@ -93,7 +97,9 @@ describe('buildNavTree', () => {
       buildNavTree(missingFieldsNavItems);
     } catch (err) {
       error = err;
-      expect((err as Error).message).toContain('Failed to build navigation tree');
+      expect((err as Error).message).toContain(
+        'Failed to build navigation tree',
+      );
     }
     expect(error).toBeDefined();
   });
@@ -106,7 +112,7 @@ describe('buildNavTree', () => {
     } catch (err) {
       error = err;
       expect((err as Error).message).toContain(
-        'Parent section non-existent-parent not found for item Child with invalid parent'
+        'Parent section non-existent-parent not found for item Child with invalid parent',
       );
     }
     expect(error).toBeDefined();

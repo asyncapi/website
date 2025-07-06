@@ -16,9 +16,9 @@ export const features: Feature[] = [
       {
         label: 'Documentation',
         href: 'docs/reference/specification/latest',
-        id: 'whyasyncapi-spec-documentation-link'
-      }
-    ]
+        id: 'whyasyncapi-spec-documentation-link',
+      },
+    ],
   },
   {
     id: 'document-apis',
@@ -26,14 +26,14 @@ export const features: Feature[] = [
       {
         label: 'HTML Template',
         href: 'https://github.com/asyncapi/html-template',
-        id: 'whyasyncapi-apis-htmltemplate-link'
+        id: 'whyasyncapi-apis-htmltemplate-link',
       },
       {
         label: 'React Component',
         href: 'https://github.com/asyncapi/asyncapi-react/',
-        id: 'whyasyncapi-apis-reactcomponents-link'
-      }
-    ]
+        id: 'whyasyncapi-apis-reactcomponents-link',
+      },
+    ],
   },
   {
     id: 'code-generation',
@@ -41,14 +41,14 @@ export const features: Feature[] = [
       {
         label: 'Generator',
         href: 'tools/generator',
-        id: 'whyasyncapi-generation-generator-link'
+        id: 'whyasyncapi-generation-generator-link',
       },
       {
         label: 'Modelina',
         href: 'tools/modelina',
-        id: 'whyasyncapi-generation-modelina-link'
-      }
-    ]
+        id: 'whyasyncapi-generation-modelina-link',
+      },
+    ],
   },
   {
     id: 'community',
@@ -56,9 +56,9 @@ export const features: Feature[] = [
       {
         label: 'Join our Slack',
         href: 'https://asyncapi.com/slack-invite',
-        id: 'whyasyncapi-community-slack-link'
-      }
-    ]
+        id: 'whyasyncapi-community-slack-link',
+      },
+    ],
   },
   {
     id: 'open-governance',
@@ -66,14 +66,14 @@ export const features: Feature[] = [
       {
         label: 'Read more about Open Governance',
         href: 'blog/governance-motivation',
-        id: 'whyasyncapi-governance-more-link'
+        id: 'whyasyncapi-governance-more-link',
       },
       {
         label: 'TSC Members',
         href: 'community/tsc',
-        id: 'whyasyncapi-governance-tsc-link'
-      }
-    ]
+        id: 'whyasyncapi-governance-tsc-link',
+      },
+    ],
   },
   {
     id: 'much-more',
@@ -81,8 +81,8 @@ export const features: Feature[] = [
       {
         label: 'View GitHub Discussions',
         href: 'https://github.com/asyncapi/community/discussions',
-        id: 'whyasyncapi-muchmore-github-link'
-      }
-    ]
-  }
+        id: 'whyasyncapi-muchmore-github-link',
+      },
+    ],
+  },
 ];

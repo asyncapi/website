@@ -1,18 +1,22 @@
 const mockFs = {
   readdirSync: jest.fn(),
   statSync: jest.fn(),
-  readFileSync: jest.fn()
+  readFileSync: jest.fn(),
 };
 
-const { validateLocales, extractKeys, readJSONFilesInDir } = require('../scripts/helpers/check-locales.ts');
+const {
+  validateLocales,
+  extractKeys,
+  readJSONFilesInDir,
+} = require('../scripts/helpers/check-locales.ts');
 const { logger } = require('../scripts/helpers/logger.ts');
 
 jest.mock('../scripts/helpers/logger', () => ({
   logger: {
     error: jest.fn(),
     warn: jest.fn(),
-    info: jest.fn()
-  }
+    info: jest.fn(),
+  },
 }));
 
 jest.mock('fs', () => mockFs);
@@ -23,7 +27,7 @@ jest.mock('path', () => {
     ...originalPath,
     dirname: jest.fn().mockReturnValue('/mock/dir'),
     resolve: jest.fn().mockReturnValue('/mock/path/locales'),
-    join: jest.fn().mockImplementation((...args) => args.join('/'))
+    join: jest.fn().mockImplementation((...args) => args.join('/')),
   };
 });
 
@@ -55,7 +59,7 @@ describe('check-locales', () => {
 
     expect(result).toEqual({
       'file1.json': { key1: 'value1' },
-      'file2.json': { key2: 'value2' }
+      'file2.json': { key2: 'value2' },
     });
   });
 
@@ -65,7 +69,7 @@ describe('check-locales', () => {
     mockFs.readdirSync.mockImplementationOnce(() => languages);
 
     mockFs.statSync.mockImplementation(() => ({
-      isDirectory: () => true
+      isDirectory: () => true,
     }));
 
     mockFs.readdirSync.mockImplementationOnce(() => ['common.json']);
@@ -74,7 +78,9 @@ describe('check-locales', () => {
 
     validateLocales();
 
-    expect(logger.info).toHaveBeenCalledWith('✅ All locale files have the same keys across all languages!');
+    expect(logger.info).toHaveBeenCalledWith(
+      '✅ All locale files have the same keys across all languages!',
+    );
     expect(mockExit).not.toHaveBeenCalled();
   });
 
@@ -95,7 +101,9 @@ describe('check-locales', () => {
       return '{"key1":"value1"}';
     });
 
-    expect(() => validateLocales()).toThrow('Some translation keys are missing');
+    expect(() => validateLocales()).toThrow(
+      'Some translation keys are missing',
+    );
   });
 
   it('should handle errors during validation', () => {
@@ -123,7 +131,7 @@ describe('check-locales', () => {
 
     expect(logger.error).toHaveBeenCalledWith(
       expect.stringContaining('Error reading /mock/dir/file1.json'),
-      expect.any(Error)
+      expect.any(Error),
     );
     expect(result).toEqual({ 'file1.json': {} });
   });
@@ -135,7 +143,10 @@ describe('check-locales', () => {
 
     const result = readJSONFilesInDir(dir);
 
-    expect(logger.error).toHaveBeenCalledWith('Error reading directory /mock/dir', expect.any(Error));
+    expect(logger.error).toHaveBeenCalledWith(
+      'Error reading directory /mock/dir',
+      expect.any(Error),
+    );
 
     expect(result).toEqual({});
   });
@@ -177,14 +188,16 @@ describe('check-locales', () => {
       .mockImplementationOnce(() => []);
 
     mockFs.statSync.mockImplementation(() => ({
-      isDirectory: () => true
+      isDirectory: () => true,
     }));
 
     mockFs.readFileSync.mockReturnValue('{"key1":"value1"}');
 
     validateLocales();
 
-    expect(logger.info).toHaveBeenCalledWith('✅ All locale files have the same keys across all languages!');
+    expect(logger.info).toHaveBeenCalledWith(
+      '✅ All locale files have the same keys across all languages!',
+    );
   });
 
   it('should handle files with no missing keys', () => {
@@ -196,7 +209,7 @@ describe('check-locales', () => {
       .mockImplementationOnce(() => ['common.json']);
 
     mockFs.statSync.mockImplementation(() => ({
-      isDirectory: () => true
+      isDirectory: () => true,
     }));
 
     // Both languages have the same keys
@@ -204,7 +217,9 @@ describe('check-locales', () => {
 
     validateLocales();
 
-    expect(logger.info).toHaveBeenCalledWith('✅ All locale files have the same keys across all languages!');
+    expect(logger.info).toHaveBeenCalledWith(
+      '✅ All locale files have the same keys across all languages!',
+    );
   });
 
   it('should log when skipping files found in only one language', () => {
@@ -216,13 +231,15 @@ describe('check-locales', () => {
       .mockImplementationOnce(() => ['common.json']);
 
     mockFs.statSync.mockImplementation(() => ({
-      isDirectory: () => true
+      isDirectory: () => true,
     }));
 
     mockFs.readFileSync.mockReturnValue('{"key1":"value1"}');
 
     validateLocales();
 
-    expect(logger.info).toHaveBeenCalledWith("Skipping 'unique.json' (only found in 1 language)");
+    expect(logger.info).toHaveBeenCalledWith(
+      "Skipping 'unique.json' (only found in 1 language)",
+    );
   });
 });

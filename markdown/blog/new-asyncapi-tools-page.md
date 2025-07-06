@@ -11,7 +11,7 @@ authors:
     photo: /img/avatars/akshatnema.webp
     link: https://twitter.com/AksNema
     byline: AsyncAPI Maintainer and Dev Akshat Nema
-excerpt: "Announcing our newly released AsyncAPI tools dashboard!"
+excerpt: 'Announcing our newly released AsyncAPI tools dashboard!'
 ---
 
 We already know that the present list of tools used inside AsyncAPI is presented on [AsyncAPI Tools Overview](/docs/tools) and it is manually maintained inside the GitHub repository. All the tools are sorted according to the different categories in which they are used and maintained by the contributors. But we don't have a way to filter the tools according to our interest 🤔, like languages, technologies used in it, open-source tools, etc. Also, what if you want to add your tool to the list, what you will do 🤔? Do you have to create a PR?
@@ -20,7 +20,7 @@ What if I say, you don't need to make a mess of PR now 😉. Yep, we're introduc
 
 # AsyncAPI Tool File
 
-We have introduced a new concept of the `.asyncapi-tool` file which describes the type and details of a tool related to AsyncAPI. You create such a file with a set of different information that describes your tool and then within a week such information is added to the AsyncAPI website. But the question is, where you should place such a file? Inside AsyncAPI repositories? Definitely not! Here comes the twist, this file will be created and maintained in your Tool's repository, and it won't ask for our approval. This file will follow a certain schema that you have to follow to successfully and appropriately add your tool to our brand new [AsyncAPI Tools Dashboard](/tools). The [proper schema of the file is described here](https://github.com/asyncapi/website/blob/master/scripts/tools/tools-schema.json). You can use the tools like the [Online JSON Validator](https://www.liquid-technologies.com/online-json-schema-validator) to validate your JSON data for Tools against the schema given above. For a more detailed explanation, you can refer to our [official `.asyncapi-tool` file documentation](https://github.com/asyncapi/community/blob/master/new-tool-documentation.md). 
+We have introduced a new concept of the `.asyncapi-tool` file which describes the type and details of a tool related to AsyncAPI. You create such a file with a set of different information that describes your tool and then within a week such information is added to the AsyncAPI website. But the question is, where you should place such a file? Inside AsyncAPI repositories? Definitely not! Here comes the twist, this file will be created and maintained in your Tool's repository, and it won't ask for our approval. This file will follow a certain schema that you have to follow to successfully and appropriately add your tool to our brand new [AsyncAPI Tools Dashboard](/tools). The [proper schema of the file is described here](https://github.com/asyncapi/website/blob/master/scripts/tools/tools-schema.json). You can use the tools like the [Online JSON Validator](https://www.liquid-technologies.com/online-json-schema-validator) to validate your JSON data for Tools against the schema given above. For a more detailed explanation, you can refer to our [official `.asyncapi-tool` file documentation](https://github.com/asyncapi/community/blob/master/new-tool-documentation.md).
 
 ## Tool File Structure
 
@@ -124,7 +124,7 @@ The Search Bar will allow you to search the tools on the basis of their names.
 
 ## Summary
 
-I completed this project during the 2022 AsyncAPI Mentorship program, mentored by [Lukasz Gornicki](https://github.com/derberg) and [Maciej Urbańczyk](https://github.com/magicmatatjahu). It was an amazing experience to work on this project and create an automation for AsyncAPI tools. Quite a good learning experience as I researched GitHub APIs, JSON Schema, GitHub Actions, and a lot more stuff. Moreover, I became a maintainer of the AsyncAPI website repository and started contributing to the organization in lot many ways. My work in the project consists of the following Pull Requests: 
+I completed this project during the 2022 AsyncAPI Mentorship program, mentored by [Lukasz Gornicki](https://github.com/derberg) and [Maciej Urbańczyk](https://github.com/magicmatatjahu). It was an amazing experience to work on this project and create an automation for AsyncAPI tools. Quite a good learning experience as I researched GitHub APIs, JSON Schema, GitHub Actions, and a lot more stuff. Moreover, I became a maintainer of the AsyncAPI website repository and started contributing to the organization in lot many ways. My work in the project consists of the following Pull Requests:
 
 - [feat: tools backend implementation](https://github.com/asyncapi/website/pull/939)
 - [feat: added new /tools page](https://github.com/asyncapi/website/pull/940)

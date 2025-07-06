@@ -57,11 +57,11 @@ components:
 
 ```
 
-**The Client asyncapi.yaml file does not need to implement all the security requirements in the server, it only needs to implement the ones that it uses like *userPassword* here.**
+**The Client asyncapi.yaml file does not need to implement all the security requirements in the server, it only needs to implement the ones that it uses like _userPassword_ here.**
 
 ### Client Side
 
-Following the client `asyncapi.yaml` file above, create a file named `trendingAnime.ts` in the `auth` directory, since that is the server that has the security Property. 
+Following the client `asyncapi.yaml` file above, create a file named `trendingAnime.ts` in the `auth` directory, since that is the server that has the security Property.
 
 ```bash
 touch auth/trendingAnime.ts
@@ -82,10 +82,9 @@ export async clientAuth({ parsedAsyncAPI, serverName }) {
 
 `userPass` should be the name of the security requirement as specified in your `asyncapi.yaml` file, then pass `user` and `password` as it's properties
 
-
 ### Server side
 
-From the server `asyncapi.yaml` file above, create a file named `trendingAnimeServer.ts` in the `auth` directory, since that is the server that has the security Property. 
+From the server `asyncapi.yaml` file above, create a file named `trendingAnimeServer.ts` in the `auth` directory, since that is the server that has the security Property.
 
 ```bash
 touch auth/trendingAnimeServer.ts
@@ -97,7 +96,7 @@ On the server side, you can retrieve the values as follows
 
 export async serverAuth({ authProps, done }) {
   authProps.getUserPass()
-  
+
   done(true)
 }
 

@@ -19,7 +19,9 @@ const handler = async (event: HandlerEvent) => {
   }
 
   // Slack encodes the body in application/x-www-form-urlencoded
-  const payload = JSON.parse(querystring.parse(event.body || '{}')?.payload as string);
+  const payload = JSON.parse(
+    querystring.parse(event.body || '{}')?.payload as string,
+  );
 
   // When the `Save Discussion` option selected in slack.
   if (payload.type === REQUEST_TYPE.MESSAGE_ACTION) {
@@ -43,8 +45,10 @@ async function handleMessageAction(payload: any) {
     return;
   }
 
-  const discussionCategories = await Repository.getDiscussionCategories(REPO_OWNER!,
-    REPO_NAME!);
+  const discussionCategories = await Repository.getDiscussionCategories(
+    REPO_OWNER!,
+    REPO_NAME!,
+  );
   const state = `${channelId} ${threadTS}`;
 
   await Slack.openSaveDialog(state, discussionCategories, payload.trigger_id);
@@ -62,17 +66,23 @@ async function handleDialogSubmission(payload: any) {
 
     if (!discussion) return;
     discussion.title = payload.submission.title;
-    const repositoryId = await Repository.getRepositoryId(process.env.DISCUSSION_TARGET_REPO_OWNER!,
-      process.env.DISCUSSION_TARGET_REPO_NAME!);
-    const { discussionId, discussionURL } = await Repository.createDiscussion(discussion,
+    const repositoryId = await Repository.getRepositoryId(
+      process.env.DISCUSSION_TARGET_REPO_OWNER!,
+      process.env.DISCUSSION_TARGET_REPO_NAME!,
+    );
+    const { discussionId, discussionURL } = await Repository.createDiscussion(
+      discussion,
       repositoryId,
       categoryId,
-      discussion.slackURL || '');
+      discussion.slackURL || '',
+    );
 
     if (discussion.replies) {
       for (const reply of discussion.replies) {
-        const replyId = await Repository.createDicussionReply(discussionId,
-          reply);
+        const replyId = await Repository.createDicussionReply(
+          discussionId,
+          reply,
+        );
 
         if (reply.isAnswer) {
           await Repository.markAnswer(replyId);
@@ -93,11 +103,11 @@ async function handleDialogSubmission(payload: any) {
         break;
       case 'channel_not_found':
         errorMessage =
-          'Can\'t find the channel, are you sure that this is a public channel?';
+          "Can't find the channel, are you sure that this is a public channel?";
         break;
       case 'not_in_channel':
         errorMessage =
-          'Can\'t access this channel. Are you sure that I am a member of this channel? please add `BotTheSavior` in integration settings of this channel. :)';
+          "Can't access this channel. Are you sure that I am a member of this channel? please add `BotTheSavior` in integration settings of this channel. :)";
         break;
     }
 

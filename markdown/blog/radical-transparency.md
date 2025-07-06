@@ -39,9 +39,9 @@ Believe it or not, it's relieving. Most people â€”including myself in the pastâ€
 
 I often get a lot of pressure from different companies to do something for them. Here are some examples:
 
-* Invite someone to the TSC in exchange for a [Platinum Sponsorship](https://opencollective.com/asyncapi/contribute/platinum-sponsors-8119).
-* Exchange logos on our websites. Oh my! It just happened as I'm writing these lines :joy:
-* Donate some money only if they get "something" in return. These people don't get open-source, do they? :smile:
+- Invite someone to the TSC in exchange for a [Platinum Sponsorship](https://opencollective.com/asyncapi/contribute/platinum-sponsors-8119).
+- Exchange logos on our websites. Oh my! It just happened as I'm writing these lines :joy:
+- Donate some money only if they get "something" in return. These people don't get open-source, do they? :smile:
 
 So Radical Transparency is actually making things easier for me. I just have to say something like this:
 
@@ -55,7 +55,7 @@ Of course, I'm still happy to take private calls and emails when they make sense
 
 ## What does it mean for the community?
 
-Whether you are a user, a contributor, or a code owner, everyone must make decisions in public. For code, we use pull requests. Use issues or discussions on the related repo when it's something else. And, if there's no related repo, use [the community one](https://www.github.com/asyncapi/community).  
+Whether you are a user, a contributor, or a code owner, everyone must make decisions in public. For code, we use pull requests. Use issues or discussions on the related repo when it's something else. And, if there's no related repo, use [the community one](https://www.github.com/asyncapi/community).
 
 Whatever we do, needs to have its associated public record. That doesn't mean we don't do video calls to discuss complex topics. We actually encourage them when the writing form is not enough or too difficult. We never take decisions on meetings because that would be leaving many people out. E.g., those in other time zones, having other meetings at the same time, those on holidays or sick, etc. In any case, whatever is discussed in the meetings should be reflected in its correspondent issue or discussion on GitHub.
 

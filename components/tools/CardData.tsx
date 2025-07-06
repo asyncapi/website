@@ -38,7 +38,7 @@ export const CardData = ({
   setRead,
   setVisible,
   type,
-  className = ''
+  className = '',
 }: CardDataProps) => {
   const [outsideClick, setOutsideClick] = useState<boolean>(true);
   const [description, setShowDescription] = useState<boolean>(false);
@@ -47,7 +47,7 @@ export const CardData = ({
     tech: false,
     category: false,
     pricing: false,
-    ownership: false
+    ownership: false,
   };
   const domNode = useRef<HTMLSpanElement>(null);
 
@@ -83,24 +83,24 @@ export const CardData = ({
   return (
     <div className={twMerge('text-left text-sm text-gray-500', className)}>
       {heading}
-      <span className='group relative'>
+      <span className="group relative">
         {outsideClick && visible[type] && (
           <span
             ref={domNode}
-            data-testid='Carddata-description'
-            className='absolute -left-2/3 -top-4 z-10 w-48 translate-x-1/3 rounded border border-gray-200
-              bg-white px-2 py-1 text-xs shadow-md'
+            data-testid="Carddata-description"
+            className="absolute -left-2/3 -top-4 z-10 w-48 translate-x-1/3 rounded border border-gray-200
+              bg-white px-2 py-1 text-xs shadow-md"
           >
             {read ? (
               data
             ) : (
               <div>
-                <TextTruncate element='span' line={4} text={data} />
+                <TextTruncate element="span" line={4} text={data} />
               </div>
             )}
             {description && (
               <button
-                className='cursor-pointer text-cyan-600'
+                className="cursor-pointer text-cyan-600"
                 onClick={() => {
                   setOutsideClick(true);
                   setRead(!read);
@@ -116,8 +116,8 @@ export const CardData = ({
             setRead(false);
             setVisible({ ...initial, [type]: !visible[type] });
           }}
-          className='mx-1'
-          data-testid='Carddata-button'
+          className="mx-1"
+          data-testid="Carddata-button"
         >
           <InfoIcon />
         </button>

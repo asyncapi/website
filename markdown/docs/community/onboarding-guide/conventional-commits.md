@@ -10,7 +10,7 @@ In this guide, you'll explore how to write effective commit messages that follow
 
 ## TL;DR
 
-- **Why**: *Explain* the impact of the change and *how* it benefits users or the project.
+- **Why**: _Explain_ the impact of the change and _how_ it benefits users or the project.
 - **Types**: Prefix with `feat`, `fix`, etc. (PR titles too).
 - **How**: Use imperative, clear text. Keep it short, standalone, and in plain English. Use the body for additional details if needed.
 
@@ -22,7 +22,7 @@ Since this is a message that others will read, it is important to provide enough
 
 For example:
 
-> **Bad:** `fixed bug`  
+> **Bad:** `fixed bug`
 
 > **Good:** `fix: resolve timeout issue on login by renewing session tokens`
 
@@ -40,18 +40,18 @@ The following are some of the most commonly used commit types:
 - **test:** If your change adds or modifies tests, use the `test` type.
 - **chore:** The `chore` type is for changes that don't affect the codebase. If you update build scripts, make tooling changes, or perform other maintenance tasks, use this type.
 
-To maintain a clear and structured commit history, all PR titles must follow the Conventional Commits format. This ensures that commit messages and PRs are semantically meaningful and easy to understand.  
+To maintain a clear and structured commit history, all PR titles must follow the Conventional Commits format. This ensures that commit messages and PRs are semantically meaningful and easy to understand.
 
-A PR title that does not follow this format will be rejected by our [Linting bot](https://github.com/asyncapi/community/blob/master/.github/workflows/lint-pr-title.yml), preventing the PR from being merged.  
+A PR title that does not follow this format will be rejected by our [Linting bot](https://github.com/asyncapi/community/blob/master/.github/workflows/lint-pr-title.yml), preventing the PR from being merged.
 
 Therefore, you can use the following examples to guide you:
 
-| Bad | Good |
-| --- | --- |
-| `Add user avatar upload feature` | `feat: add user avatar upload feature` |
-| `Fix login issue` | `fix: resolve timeout issue on login by renewing session tokens` |
+| Bad                              | Good                                                             |
+| -------------------------------- | ---------------------------------------------------------------- |
+| `Add user avatar upload feature` | `feat: add user avatar upload feature`                           |
+| `Fix login issue`                | `fix: resolve timeout issue on login by renewing session tokens` |
 
-If you're not sure which type to use, ask yourself what the main *purpose* of your change is. That should help you pick the right type.
+If you're not sure which type to use, ask yourself what the main _purpose_ of your change is. That should help you pick the right type.
 
 ### Use the commit body for additional context
 
@@ -63,7 +63,7 @@ To add the commit body, add one blank line after the commit message and then spe
 
 > feat: add user avatar upload feature to improve user experience on profile pages
 > (blank line)
-> Adds a form field, validation checks, and an API endpoint for avatar uploads. Enhances profile customization. 
+> Adds a form field, validation checks, and an API endpoint for avatar uploads. Enhances profile customization.
 
 Some additional tips to keep in mind when writing commit messages include:
 

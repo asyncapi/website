@@ -23,14 +23,16 @@ const communityItems: CommunityItem[] = [
     title: 'GitHub Organization',
     href: 'https://github.com/asyncapi',
     target: '_blank',
-    description: 'Want to sneak in the code? Everything we do is open-sourced in our GitHub organization.'
+    description:
+      'Want to sneak in the code? Everything we do is open-sourced in our GitHub organization.',
   },
   {
     icon: IconSlack,
     title: 'Slack Workspace',
     href: 'https://asyncapi.com/slack-invite',
     target: '_blank',
-    description: "Need help? Want to share something? Join our Slack workspace. We're nice people :)"
+    description:
+      "Need help? Want to share something? Join our Slack workspace. We're nice people :)",
   },
   {
     icon: IconContributing,
@@ -38,39 +40,42 @@ const communityItems: CommunityItem[] = [
     href: 'https://github.com/asyncapi?type=source#-contribute-to-asyncapi',
     target: '_blank',
     description:
-      'We are always welcoming and looking for contributions. If you are interested check out our contribution guide.'
+      'We are always welcoming and looking for contributions. If you are interested check out our contribution guide.',
   },
   {
     icon: IconTSC,
     title: 'Technical Steering Committee',
     href: '/community/tsc',
-    description: 'Get to know what is a TSC member, how you can become one, and meet our current TSC members.'
+    description:
+      'Get to know what is a TSC member, how you can become one, and meet our current TSC members.',
   },
   {
     icon: IconAmbassador,
     title: 'Ambassadors',
     href: '/community/ambassadors',
-    description: 'Passionate about APIs? Become an AsyncAPI Ambassador and help shape the future of APIs.'
+    description:
+      'Passionate about APIs? Become an AsyncAPI Ambassador and help shape the future of APIs.',
   },
   {
     icon: IconDashboard,
     title: 'Dashboard',
     href: '/community/dashboard',
     description:
-      'Just need a good first issue to start your contribution journey? or want to see what topics are hot in discussion?'
+      'Just need a good first issue to start your contribution journey? or want to see what topics are hot in discussion?',
   },
   {
     icon: IconMeetings,
     title: 'Events',
     href: '/community/events',
-    description: 'See what events and meetings are organized under AsyncAPI umbrella and join one of them.'
+    description:
+      'See what events and meetings are organized under AsyncAPI umbrella and join one of them.',
   },
   {
     icon: IconNewsroom,
     title: 'Newsroom',
     href: '/community/newsroom',
-    description: 'Get upto date with the recent activity in the initiative.'
-  }
+    description: 'Get upto date with the recent activity in the initiative.',
+  },
 ];
 
 export default communityItems;

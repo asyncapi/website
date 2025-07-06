@@ -6,9 +6,11 @@ weight: 130
 ---
 
 ## Introduction
+
 In this tutorial, you'll learn how to validate messages (events) that are sent to your AsyncAPI application.
 
 ## Background context
+
 Message validation can be performed at both the **producer** and **consumer** levels. Message validation requires the participation of the producer, consumer, and broker. We will learn how to validate messages at the consumer level by discarding invalid messages based on the parameters provided.
 
 You will be using the [Eclipse Mosquitto](https://mosquitto.org/) broker. The MQTT protocol provides a lightweight method of messaging using a publish/subscribe model. You will also use an MQTT client that runs an MQTT library and connects to an MQTT broker over a network. Here producers and consumers are MQTT clients. The producer and consumer labels refer to whether the client is sending or receiving messages.
@@ -17,7 +19,7 @@ In the [previous tutorial, you generated an application](https://asyncapi.com/do
 
 <Remember>
 
-If you did not follow the previous tutorial and do not have an application generated, then follow these instructions: 
+If you did not follow the previous tutorial and do not have an application generated, then follow these instructions:
 
     asyncapi new glee --name=tutorial --template tutorial`.
     cd tutorial && npm install
@@ -25,6 +27,7 @@ If you did not follow the previous tutorial and do not have an application gener
 </Remember>
 
 ## Validate messages
+
 In this step, you will send a message to your application using an MQTT broker and check the errors logged when you accidentally send an invalid message.
 
 1. Start your generated application:
@@ -103,8 +106,9 @@ Streetlight with id "1" updated its lighting information to 3 lumens at 2017-06-
 Such a terminal message indicates that your message is valid and the application received it correctly.
 
 ## Summary
-In this tutorial, you learned how to connect your generated application to an MQTT broker, send messages through it, identify when an invalid message is sent to your application, and how to correct an invalid message. 
+
+In this tutorial, you learned how to connect your generated application to an MQTT broker, send messages through it, identify when an invalid message is sent to your application, and how to correct an invalid message.
 
 ## Next steps
-Now that you've completed this tutorial, enjoy our [AsyncAPI message validation guide](https://www.asyncapi.com/docs/guides/message-validation).
 
+Now that you've completed this tutorial, enjoy our [AsyncAPI message validation guide](https://www.asyncapi.com/docs/guides/message-validation).

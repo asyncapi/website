@@ -33,10 +33,12 @@ export default function Container({
   flexReverse = false,
   cssBreakingPoint = 'md',
   className = '',
-  as
+  as,
 }: IContainerProps) {
   const commonClassNames = `${flex ? `${cssBreakingPoint === 'lg' ? 'lg:flex' : 'md:flex'}` : 'block'} ${
-    flexReverse ? `${cssBreakingPoint === 'lg' ? 'lg:flex-row-reverse' : 'md:flex-row-reverse'}` : ''
+    flexReverse
+      ? `${cssBreakingPoint === 'lg' ? 'lg:flex-row-reverse' : 'md:flex-row-reverse'}`
+      : ''
   } ${className} ${padding}`;
   const wideClassNames = `max-w-screen-xl ${commonClassNames}`;
   const regularClassNames = `max-w-4xl ${commonClassNames}`;
@@ -46,7 +48,10 @@ export default function Container({
   const Tag = as || 'div';
 
   return (
-    <Tag className={fluid ? fluidClassNames : normalClassNames} data-testid='Container-main'>
+    <Tag
+      className={fluid ? fluidClassNames : normalClassNames}
+      data-testid="Container-main"
+    >
       {children}
     </Tag>
   );

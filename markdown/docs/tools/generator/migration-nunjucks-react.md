@@ -1,5 +1,5 @@
 ---
-title: "Migrating from Nunjucks to React render engine"
+title: 'Migrating from Nunjucks to React render engine'
 weight: 250
 ---
 
@@ -13,9 +13,9 @@ Change your template configuration in `package.json`:
 
 ```json
 {
-"generator": {
-"renderer": "react"
-}
+  "generator": {
+    "renderer": "react"
+  }
 }
 ```
 
@@ -33,7 +33,7 @@ npm install @asyncapi/generator-react-sdk
 
 In Nunjucks, the template's filename directly corresponds to the output file. For example, a template named **index.html** will generate an **index.html** file.
 
-In React, the filename of the generated file is not controlled by the file itself, but rather by the `File` component. The React component itself can be named anything with a `.js` extension because the output filename is controlled by the `name` attribute of the `File` component used inside the template file. Below you can see some examples of filenames: 
+In React, the filename of the generated file is not controlled by the file itself, but rather by the `File` component. The React component itself can be named anything with a `.js` extension because the output filename is controlled by the `name` attribute of the `File` component used inside the template file. Below you can see some examples of filenames:
 
 Nunjucks: `index.html`
 React: `index.js` or `index.html.js` or `anything-you-want.js`
@@ -41,16 +41,18 @@ React: `index.js` or `index.html.js` or `anything-you-want.js`
 ### 4. Basic template structure
 
 Nunjucks:
+
 ```js
 <h1>{{ asyncapi.info().title() }}</h1>
 <p>{{ asyncapi.info().description() }}</p>
 ```
 
 React:
+
 ```js
 import { File } from '@asyncapi/generator-react-sdk';
 
-export default function({ asyncapi }) {
+export default function ({ asyncapi }) {
   return (
     <File name="index.html">
       <h1>{asyncapi.info().title()}</h1>
@@ -65,6 +67,7 @@ export default function({ asyncapi }) {
 Replace macros with React components:
 
 Nunjucks:
+
 ```js
 {% macro renderChannel(channel) %}
   <div class="channel">
@@ -77,6 +80,7 @@ Nunjucks:
 ```
 
 React:
+
 ```js
 // components/Channel.js
 import { Text } from '@asyncapi/generator-react-sdk';
@@ -96,13 +100,13 @@ export function Channel({ channel }) {
 import { File, Text } from '@asyncapi/generator-react-sdk';
 import { Channel } from './components/Channel';
 
-export default function({ asyncapi }) {
+export default function ({ asyncapi }) {
   return (
     <File name="channels.html">
       <Text>
         <h2>Channels</h2>
       </Text>
-      {asyncapi.channels().map(channel => (
+      {asyncapi.channels().map((channel) => (
         <Channel channel={channel} />
       ))}
     </File>
@@ -110,7 +114,7 @@ export default function({ asyncapi }) {
 }
 ```
 
-### 6. File template 
+### 6. File template
 
 Check the [detailed guide on file templates](file-templates) to learn what is the difference between templating multiple file outputs in Nunjucks and React.
 
@@ -121,12 +125,15 @@ If you have a template written with Nunjucks, it is almost certain that you have
 ## Additional Resources and Information
 
 ### Template Examples
+
 For a complete example of React features in use, please refer to the [AsyncAPI Template for Generator Templates](https://github.com/asyncapi/template-for-generator-templates). The `master` branch demonstrates all React features, while the `nunjucks` branch shows the old Nunjucks implementation. This comparison can be particularly helpful in understanding the differences and migration process.
 
 ### Filters to Helpers
+
 If you've been using Nunjucks filters placed in the `filters` directory, you can still use this functionality in React. However, they should be treated as normal functions that you import into your components. We recommend renaming the `filters` directory to `helpers` to better reflect their new usage in React.
 
 ### Hooks Remain Unchanged
+
 It's important to note that hooks remain unchanged in this migration process. Hooks are not related to the render engine functionality, so you can continue to use them as you have been.
 
 ### Testing your migration

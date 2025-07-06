@@ -37,8 +37,8 @@ async function buildNewsroomVideos(writePath: string): Promise<string> {
         eventType: 'completed',
         type: 'video',
         order: 'Date',
-        maxResults: '5'
-      })}`
+        maxResults: '5',
+      })}`,
     );
 
     if (!response.ok) {
@@ -51,14 +51,16 @@ async function buildNewsroomVideos(writePath: string): Promise<string> {
       throw new Error('Invalid data structure received from YouTube API');
     }
 
-    const videoDataItems = data.items.map((video: youtube_v3.Schema$SearchResult) => {
-      return {
-        image_url: video.snippet?.thumbnails?.high?.url,
-        title: video.snippet?.title,
-        description: video.snippet?.description,
-        videoId: video.id?.videoId
-      };
-    });
+    const videoDataItems = data.items.map(
+      (video: youtube_v3.Schema$SearchResult) => {
+        return {
+          image_url: video.snippet?.thumbnails?.high?.url,
+          title: video.snippet?.title,
+          description: video.snippet?.description,
+          videoId: video.id?.videoId,
+        };
+      },
+    );
 
     const videoData = JSON.stringify(videoDataItems, null, '  ');
 
@@ -68,13 +70,17 @@ async function buildNewsroomVideos(writePath: string): Promise<string> {
 
     return videoData;
   } catch (err) {
-    throw new Error(`Failed to build newsroom videos: ${(err as Error).message}`);
+    throw new Error(
+      `Failed to build newsroom videos: ${(err as Error).message}`,
+    );
   }
 }
 
 /* istanbul ignore next */
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  buildNewsroomVideos(resolve(currentDirPath, '../config', 'newsroom_videos.json'));
+  buildNewsroomVideos(
+    resolve(currentDirPath, '../config', 'newsroom_videos.json'),
+  );
 }
 
 export { buildNewsroomVideos };

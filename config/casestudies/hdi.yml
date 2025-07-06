@@ -2,7 +2,7 @@ id: hdiglobal
 company:
   name: HDI Global SE
   description: The HDI brand operates in Germany and internationally, offering life and property/casualty insurance services. They cater to both private individuals and corporate clients, and have been providing industrial insurance since 2016.
-  customers: "5000"
+  customers: '5000'
   industry: Insurance
   revenue: 9.1B EUR
   website: https://www.hdi.global/
@@ -20,7 +20,6 @@ challenges: |
   To achieve discoverability the creation of a comprehensive catalog of existing topics is necessary, allowing potential subscribers access to information about 
   messages from the available topics, so they can choose which ones to subscribe to.
 
-
 solution: |
   The solution is to create AsyncAPI documents where each topic owned by the customer is represented as a channel. 
   As we are using the GitOps setup it is straightforward to run pipeline whenever there is a change (commit) in the topic configuration. 
@@ -32,7 +31,7 @@ solution: |
 technical: #We need some more technical information related to case study.
   languages:
     - java, .net, bash
-  frameworks: 
+  frameworks:
     - Spring Boot
   protocols:
     - AMQP
@@ -190,11 +189,13 @@ technical: #We need some more technical information related to case study.
     However, our customers are free to use any tool they prefer to generate DTOs from the AsyncAPI document.
 schemas: #It is useful and interesting to learn how teams handle messages schemas.
   description: JSON Schema
-  storage: A Git repository functions as a self-service portal where customers can manage their own configurations for the Azure Service Bus. 
+  storage:
+    A Git repository functions as a self-service portal where customers can manage their own configurations for the Azure Service Bus.
     This includes defining their own message schemas for any topics they own.
   registry: none
   versioning: The customer has the freedom to choose the versioning for their own message-schema files.
-  validation: Validation using [Ajv](https://ajv.js.org/) is used solely for the purpose of ensuring that the JSON data adheres to the expected schema. This validation is performed for each customer by the Pull Request pipeline we provide. 
+  validation:
+    Validation using [Ajv](https://ajv.js.org/) is used solely for the purpose of ensuring that the JSON data adheres to the expected schema. This validation is performed for each customer by the Pull Request pipeline we provide.
     It does not perform any other form of validation or processing on the data.
 asyncapi: #More specific details about AsyncAPI itself and how is it used.
   usecase: |
@@ -214,7 +215,7 @@ asyncapi: #More specific details about AsyncAPI itself and how is it used.
     It then generates a new AsyncAPI document reflecting these changes.
 
     The AsyncAPI document is validated using the AsyncAPI CLI to confirm that the document is correctly formatted and adheres to the AsyncAPI specification right after creation and before being commited to the documentation repository.
-  maintainers: | 
+  maintainers: |
     Customers maintain this document automatically by maintaining their own topic configurations.
   audience: #Specify if AsyncAPI audience is internal or external or both.
     internal: true

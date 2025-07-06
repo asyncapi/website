@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI Initiative Status Update (week 33, 2020)"
+title: 'AsyncAPI Initiative Status Update (week 33, 2020)'
 date: 2020-08-12T06:00:00+01:00
 type: Communication
 tags:
@@ -15,10 +15,9 @@ authors:
 
 ## Parser First Release Candidate is Alive
 
-Since the last update, we jumped from release 0.28.0 to 0.33.1. In the last two weeks we fixed a few bugs, in the parser and in the [AsyncAPI JSON Schema](https://github.com/asyncapi/spec-json-schemas/blob/master/schemas/2.0.0.json) that the parser is using for most of the validations. In case you have a Node.js application, you can also easily access the schema through [a dedicated dependency](https://github.com/asyncapi/asyncapi-node). It was important not only to fix all those bugs but also to stop relying on our fork of the [json-schema-ref-parser](https://github.com/APIDevTools/json-schema-ref-parser). Now we use the latest version of the upstream so it will be easier to bump into the latest versions. 
+Since the last update, we jumped from release 0.28.0 to 0.33.1. In the last two weeks we fixed a few bugs, in the parser and in the [AsyncAPI JSON Schema](https://github.com/asyncapi/spec-json-schemas/blob/master/schemas/2.0.0.json) that the parser is using for most of the validations. In case you have a Node.js application, you can also easily access the schema through [a dedicated dependency](https://github.com/asyncapi/asyncapi-node). It was important not only to fix all those bugs but also to stop relying on our fork of the [json-schema-ref-parser](https://github.com/APIDevTools/json-schema-ref-parser). Now we use the latest version of the upstream so it will be easier to bump into the latest versions.
 
 Because of all those recent fixes, now was the moment to release our first release candidate for the parser. Give it a try and let us know what is missing!
-
 
 ## Generator release candidate
 
@@ -39,7 +38,7 @@ This component also uses the latest parser release candidate. Try it out with [t
 
 At the moment, AsyncAPI organization has two components for rendering HTML out of the AsyncAPI document:
 
-- [HTML Template](https://github.com/asyncapi/html-template) is based on the [Generator](https://github.com/asyncapi/generator) and therefore, can be used only on a server.  You can use it through its CLI in your CI/CD pipelines or host them as a Node.js application,
+- [HTML Template](https://github.com/asyncapi/html-template) is based on the [Generator](https://github.com/asyncapi/generator) and therefore, can be used only on a server. You can use it through its CLI in your CI/CD pipelines or host them as a Node.js application,
 - [AsyncAPI React](https://github.com/asyncapi/asyncapi-react/) is a component that can be used in a client-side application without an application server. Its limitation at the moment is that it can be used only with React.js as a dependency.
 
 None of the above solutions is perfect, yet we still have to maintain both to support as many use cases as possible. That is why we want to make a change here and stay DRY. Join the discussion in [this](https://github.com/asyncapi/html-template/issues/51) issue. We would like to replace current HTML template logic entirely and reuse the React component. There are two possible solutions we see:
@@ -51,9 +50,9 @@ None of the above solutions is perfect, yet we still have to maintain both to su
 
 The last meeting was canceled. It felt like the center of the holiday season.
 
-The next meeting is scheduled for next [Tuesday, 18th of August, 4PM UTC](https://everytimezone.com/s/48cdc0da). 
+The next meeting is scheduled for next [Tuesday, 18th of August, 4PM UTC](https://everytimezone.com/s/48cdc0da).
 
-We work on the agenda for the next meeting [here](https://github.com/asyncapi/asyncapi/issues/425). At the moment, there is nothing in the agenda so you can sneak in your topic easily. 
+We work on the agenda for the next meeting [here](https://github.com/asyncapi/asyncapi/issues/425). At the moment, there is nothing in the agenda so you can sneak in your topic easily.
 
 We host the meeting on [Zoom](https://zoom.us/j/83140549308). Do not forget about future meetings and always have up to date invitations in your calendar by adding your email to [this](https://groups.google.com/forum/#!forum/asyncapi-users) mailing list.
 

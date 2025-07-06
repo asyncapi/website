@@ -25,8 +25,8 @@ export default function Avatar({ name, photo, link, className }: AvatarProps) {
       title={name}
       className={`size-10 rounded-full border-2 border-white object-cover hover:z-50 ${className}`}
       src={photo}
-      loading='lazy'
-      data-testid='Avatars-img'
+      loading="lazy"
+      data-testid="Avatars-img"
       alt={name}
     />
   );
@@ -38,8 +38,8 @@ export default function Avatar({ name, photo, link, className }: AvatarProps) {
 
         window.open(link, '_blank');
       }}
-      data-testid='Avatars-link'
-      className='cursor-pointer border-none bg-inherit p-0'
+      data-testid="Avatars-link"
+      className="cursor-pointer border-none bg-inherit p-0"
     >
       {avatar}
     </button>

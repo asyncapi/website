@@ -11,7 +11,7 @@ import type { IEvent } from '@/types/event';
 export function getEvents(events: IEvent[], size?: number) {
   let meetingsWithDates: any = events.map((event) => ({
     ...event,
-    date: moment(event.date)
+    date: moment(event.date),
   }));
 
   meetingsWithDates.sort((a: any, b: any) => a.date - b.date);
@@ -65,7 +65,7 @@ export const generateCaseStudyContent = (data: any) => {
     asyncapiTools,
     additionalResources,
     fullExample,
-    casestudy
+    casestudy,
   } = data;
   const { languages } = casestudy.technical;
   const { frameworks } = casestudy.technical;
@@ -75,35 +75,35 @@ export const generateCaseStudyContent = (data: any) => {
   return [
     {
       title: 'Challenges',
-      content: challenges
+      content: challenges,
     },
     {
       title: 'Solution',
-      content: solution
+      content: solution,
     },
     {
       title: 'Use Case',
-      content: usecase
+      content: usecase,
     },
     {
       title: 'More Details',
       items: [
         `Languages: ${languages.join(', ')}`,
         `Frameworks: ${frameworks.join(', ')}`,
-        `Protocols: ${protocols.join(', ')}`
+        `Protocols: ${protocols.join(', ')}`,
       ],
       children: [
         {
           title: 'Testing strategy',
-          content: testing
+          content: testing,
         },
         {
           title: 'Approach to code generation',
-          content: codegen
+          content: codegen,
         },
         {
           title: 'Architecture',
-          content: architecture
+          content: architecture,
         },
         {
           title: 'More Details about AsyncAPI',
@@ -111,34 +111,34 @@ export const generateCaseStudyContent = (data: any) => {
             `Version: ${versions.join(', ')}`,
             `Who maintains documents: ${casestudy.asyncapi.maintainers}`,
             `Internal users: ${casestudy.asyncapi.audience.internal.toString()}`,
-            `External users: ${casestudy.asyncapi.audience.external.toString()}`
+            `External users: ${casestudy.asyncapi.audience.external.toString()}`,
           ],
           children: [
             {
               title: 'How AsyncAPI documents are stored',
-              content: asyncapiStorage
+              content: asyncapiStorage,
             },
             {
               title: 'Where maintainers edit AsyncAPI documents',
-              content: asyncapiEditing
+              content: asyncapiEditing,
             },
             {
               title: 'What extensions are used',
-              content: asyncapiExtensions
+              content: asyncapiExtensions,
             },
             {
               title: 'How documentation is generated',
-              content: asyncapiDocumentation
+              content: asyncapiDocumentation,
             },
             {
               title: 'What bindings are used',
-              content: asyncapiBindings
+              content: asyncapiBindings,
             },
             {
               title: 'What tools are used',
-              content: asyncapiTools
-            }
-          ]
+              content: asyncapiTools,
+            },
+          ],
         },
         {
           title: 'Schemas',
@@ -146,31 +146,31 @@ export const generateCaseStudyContent = (data: any) => {
           children: [
             {
               title: 'Storage strategy',
-              content: schemaStorage
+              content: schemaStorage,
             },
             {
               title: 'Schema Registry',
-              content: registry
+              content: registry,
             },
             {
               title: 'Versioning of schemas',
-              content: versioning
+              content: versioning,
             },
             {
               title: 'Validation of message schemas',
-              content: validation
+              content: validation,
             },
             {
               title: 'Additional Resources',
-              content: additionalResources
-            }
-          ]
-        }
-      ]
+              content: additionalResources,
+            },
+          ],
+        },
+      ],
     },
     {
       title: 'Production-use AsyncAPI document',
-      content: fullExample
-    }
+      content: fullExample,
+    },
   ];
 };

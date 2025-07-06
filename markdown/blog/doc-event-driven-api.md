@@ -1,5 +1,5 @@
 ---
-title: "API documentation in event-driven applications"
+title: 'API documentation in event-driven applications'
 date: 2020-05-18T10:00:10+01:00
 type: Engineering
 tags:
@@ -21,11 +21,11 @@ Both protocols are essentially synchronous: you make a request against the API a
 
 ---
 
-Let's imagine you work on a book shopping website called _SuperFunnyBooks_. Your team is responsible for the `Catalog Service`. Book publishers can register new books to the platform through your service. 
+Let's imagine you work on a book shopping website called _SuperFunnyBooks_. Your team is responsible for the `Catalog Service`. Book publishers can register new books to the platform through your service.
 
-_SuperFunnyBooks_ product team needs a new feature to be added: when a new book is registered on the platform, it has to be recommended to users interested in that genre. To do this, a brand new service, `Recommendation Service`, is created and a new team is assigned to. 
+_SuperFunnyBooks_ product team needs a new feature to be added: when a new book is registered on the platform, it has to be recommended to users interested in that genre. To do this, a brand new service, `Recommendation Service`, is created and a new team is assigned to.
 
-The new service needs to know when a new book is registered in the platform, so `Catalog Service` will publish a `BookRegistered` event to a message queue every time this happens. This event will contain information about the new book. But, where is the message queue located? and what does exactly "information about the new book" mean? It sounds a little bit abstract and vague. `Recommendation Service` team needs to know every single field that will be included in the event's payload, as well as how to connect to the message queue to start listening for new events. In other words, they need the API documentation. 
+The new service needs to know when a new book is registered in the platform, so `Catalog Service` will publish a `BookRegistered` event to a message queue every time this happens. This event will contain information about the new book. But, where is the message queue located? and what does exactly "information about the new book" mean? It sounds a little bit abstract and vague. `Recommendation Service` team needs to know every single field that will be included in the event's payload, as well as how to connect to the message queue to start listening for new events. In other words, they need the API documentation.
 
 This is how this event-oriented API would look like with AsyncAPI:
 
@@ -39,7 +39,7 @@ servers:
   production:
     url: catalog.superfunnybooks.com:9092
     protocol: kafka
-    description: Production Kafka 
+    description: Production Kafka
 
 channels:
   book/registered:
@@ -67,7 +67,7 @@ channels:
               format: datetime
 ```
 
-The first part contains API metadata information. Then, `servers` information is declared; in this case, there is a Kafka server running on `catalog.superfunnybooks.com` at port `9092`. `channels` object groups all the operations that the API supports. This one allows consumers to subscribe to `book/registered` channel to be notified when a new book is registered. Also, the concrete event's payload schema is defined. 
+The first part contains API metadata information. Then, `servers` information is declared; in this case, there is a Kafka server running on `catalog.superfunnybooks.com` at port `9092`. `channels` object groups all the operations that the API supports. This one allows consumers to subscribe to `book/registered` channel to be notified when a new book is registered. Also, the concrete event's payload schema is defined.
 
 With this document, API is properly defined and it provides a contract between `Catalog Service` and its consumers. Now, `Recommendation Service` knows where the message queue is located in the network and how exactly an event's payload looks like.
 

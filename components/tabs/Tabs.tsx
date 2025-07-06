@@ -15,7 +15,10 @@ export interface TabsProps {
  * @param {Tab[]} [tabs=[]] - An array of tab objects.
  * @param {string} [className=''] - Additional CSS classes to apply to the Tabs component.
  */
-export default function Tabs({ tabs = [], className = '' }: TabsProps): React.ReactElement {
+export default function Tabs({
+  tabs = [],
+  className = '',
+}: TabsProps): React.ReactElement {
   const filteredTabs = tabs.filter(Boolean);
   const [showTab, setShowTab] = useState(filteredTabs[0]?.id);
 
@@ -26,18 +29,20 @@ export default function Tabs({ tabs = [], className = '' }: TabsProps): React.Re
 
   return (
     <div className={`flex flex-col ${className}`}>
-      <ul className='flex flex-none rounded-t bg-code-editor-dark pl-1 text-xs'>
+      <ul className="flex flex-none rounded-t bg-code-editor-dark pl-1 text-xs">
         {filteredTabs.map(({ id }) => (
           <li
             key={id}
             onClick={() => setShowTab(id)}
-            className={id === showTab ? tabItemsActiveClassNames : tabItemsClassNames}
+            className={
+              id === showTab ? tabItemsActiveClassNames : tabItemsClassNames
+            }
           >
             {id}
           </li>
         ))}
       </ul>
-      <div className='grow'>
+      <div className="grow">
         {filteredTabs.map(({ content, id }) => (
           <div key={id} className={`h-full ${id === showTab ? '' : 'hidden'}`}>
             {content}

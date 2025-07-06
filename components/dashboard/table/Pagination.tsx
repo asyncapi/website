@@ -18,9 +18,17 @@ interface PaginationProps {
  * @param {number} props.totalIssues - The total number of issues.
  * @param {(pageNumber: number) => void} props.paginate - The function to paginate.
  */
-export default function Pagination({ issuesPerPage, currentPage, totalIssues, paginate }: PaginationProps) {
+export default function Pagination({
+  issuesPerPage,
+  currentPage,
+  totalIssues,
+  paginate,
+}: PaginationProps) {
   const pageNumbers = [];
-  const lowerBound = Math.min(currentPage * issuesPerPage - issuesPerPage + 1, totalIssues);
+  const lowerBound = Math.min(
+    currentPage * issuesPerPage - issuesPerPage + 1,
+    totalIssues,
+  );
   const upperBound = Math.min(currentPage * issuesPerPage, totalIssues);
 
   for (let i = 1; i <= Math.ceil(totalIssues / issuesPerPage); i++) {
@@ -28,15 +36,15 @@ export default function Pagination({ issuesPerPage, currentPage, totalIssues, pa
   }
 
   return (
-    <div className='flex flex-col items-center border-t bg-white p-5 xs:flex-row xs:justify-between'>
-      <span className='text-xs text-gray-900 xs:text-sm'>
+    <div className="flex flex-col items-center border-t bg-white p-5 xs:flex-row xs:justify-between">
+      <span className="text-xs text-gray-900 xs:text-sm">
         Showing {lowerBound} to {upperBound} {''}
         of {totalIssues} Issues
       </span>
-      <div className='mt-2 inline-flex xs:mt-0'>
+      <div className="mt-2 inline-flex xs:mt-0">
         <Button
-          text='Prev'
-          data-testid='Pagination-prev-button'
+          text="Prev"
+          data-testid="Pagination-prev-button"
           onClick={(event) => {
             event.preventDefault();
             if (currentPage - 1) paginate(currentPage - 1);
@@ -54,8 +62,8 @@ export default function Pagination({ issuesPerPage, currentPage, totalIssues, pa
           />
         ))}
         <Button
-          text='Next'
-          data-testid='Pagination-next-button'
+          text="Next"
+          data-testid="Pagination-next-button"
           onClick={(event) => {
             event.preventDefault();
             if (currentPage < totalIssues / issuesPerPage) {

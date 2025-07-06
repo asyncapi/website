@@ -1,5 +1,5 @@
 ---
-title: "Parser"
+title: 'Parser'
 weight: 60
 ---
 
@@ -24,10 +24,10 @@ If the document is valid, the Parser returns an `AsyncAPIDocument instance` with
 The following AsyncAPI document example has two channels: `channelOne` and `channelTwo`. Each channel has one operation and a single message:
 
 ```yaml
-asyncapi: "2.5.0"
+asyncapi: '2.5.0'
 info:
   title: Demo API
-  version: "1.0.0"
+  version: '1.0.0'
 channels:
   channelOne:
     publish:

@@ -3,6 +3,7 @@ title: Glossary
 description: The style guide gives advice on how to effectively use terms and concepts when creating tutorials and other forms of content for AsyncAPI.
 weight: 180
 ---
+
 ## What is the purpose of the glossary?
 
 **AsyncAPI's** glossary is a collection of terms and concepts that are commonly used throughout the documentation. It helps technical writers, developers, and other contributors consistently use these terms and concepts when writing tutorials and other forms of content.

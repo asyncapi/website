@@ -1,5 +1,5 @@
 ---
-title: "November and December Community Update And AsyncAPI Conf in Paris 2024"
+title: 'November and December Community Update And AsyncAPI Conf in Paris 2024'
 date: 2024-12-16T06:00:00+01:00
 type: Communication
 tags:
@@ -12,8 +12,9 @@ authors:
     byline: Community Builder and Open Source Fanatic!
 excerpt: 'November and December Community Update And Paris Conference Summary'
 ---
+
 I can't believe we are in the final weeks of the year, and it has been an eventful one. As a community, we have experienced both proud and painful moments, celebrated our victories, and faced challenges and losses. However, in the end, we overcame those difficulties and emerged stronger and better.
- 
+
 Although this summary is a bit later than usual, I am excited to share the details of what happened in November and December and the highlights from the last conference of the year, which took place in Paris.
 
 ## AsyncAPI Community Building and Maintenance Goals Proposal 2025
@@ -89,7 +90,6 @@ The AsyncAPI Conf track took place on the 3rd day of the conference, featuring a
   className="text-center"
 />
 
-
 [Jonathan Michaux](https://www.linkedin.com/in/jmcx/) spoke on how leveraging AI agents with AsyncAPI can create conversational interfaces that dynamically interact with event streams and asynchronous messaging systems.
 
 <Figure
@@ -119,19 +119,19 @@ The AsyncAPI Conf track took place on the 3rd day of the conference, featuring a
 Part of doing mentorships is witnessing the growth within the community, and we are excited to welcome [Ashmit Jagtap](https://www.linkedin.com/in/ashmit-jagtap) as our newest addition to the maintainers list and TSC member. We are proud of the work you have done so far.
 
 <Profiles profiles={[
-  {
-    name: 'Ashmit Jagtap',
-    avatar: 'https://avatars.githubusercontent.com/u/69006513?v=4',
-    link: 'https://www.github.com/ashmit-coder'
-  }
+{
+name: 'Ashmit Jagtap',
+avatar: 'https://avatars.githubusercontent.com/u/69006513?v=4',
+link: 'https://www.github.com/ashmit-coder'
+}
 ]} />
 
 ## Final Remarks
 
 It's been a privilege to write the AsyncAPI monthly summary blog consistently. As this is the final blog for the year, I am genuinely grateful for the opportunity to serve and continue supporting the community.
 
-As we approach the holidays, I wish everyone happy holidays and a fantastic 2025. 
+As we approach the holidays, I wish everyone happy holidays and a fantastic 2025.
 
-I'll be back next year with an overall review summary of 2024. 
+I'll be back next year with an overall review summary of 2024.
 
-**Until then, stay safe, and happy holidays!** 
+**Until then, stay safe, and happy holidays!**

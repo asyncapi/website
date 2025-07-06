@@ -3,16 +3,18 @@ title: Producer
 weight: 3
 ---
 
-## What is a Producer? 
+## What is a Producer?
+
 A _producer_ is an application that detects state changes (_events_) and publishes these events as messages. An event signifies a state change or update triggered by a user’s or device’s action.
 
 The following are sample events:
-* Adding an item to a shopping cart on an e-commerce website.
-* Clicking the subscribe button on a YouTube channel.
-* Detecting a temperature change using a sensor.
 
+- Adding an item to a shopping cart on an e-commerce website.
+- Clicking the subscribe button on a YouTube channel.
+- Detecting a temperature change using a sensor.
 
-## Why do we need Producers? 
+## Why do we need Producers?
+
 The publish/subscribe communication model is one of the core concepts of event-driven architecture. In this model, producers are publishers, acting as the first logical layer responsible for distributing messages to the broker, enabling others to subscribe and receive these messages.
 
 ```mermaid

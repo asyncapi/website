@@ -1,5 +1,5 @@
 ---
-title: "Bringing Asynchronous APIs to the Forefront at APIDays Singapore"
+title: 'Bringing Asynchronous APIs to the Forefront at APIDays Singapore'
 date: 2025-05-26T06:00:00+01:00
 type: Communication
 tags:
@@ -11,7 +11,7 @@ authors:
     photo: /img/avatars/bami.webp
     link: https://www.linkedin.com/in/atinuke-oluwabamikemi-kayode-5b838b1b7/
     byline: AsyncAPI Community Marketing Specialist
-excerpt: "AsyncAPI kicked off its 2025 conference with a packed track at APIDays Singapore—the first ever AsyncAPI presence at an APIDays event in Asia."
+excerpt: 'AsyncAPI kicked off its 2025 conference with a packed track at APIDays Singapore—the first ever AsyncAPI presence at an APIDays event in Asia.'
 ---
 
 ## Hello, Asia-Pacific

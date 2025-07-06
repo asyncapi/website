@@ -1,5 +1,5 @@
 ---
-title: "State of AsyncAPI Initiative 2022 in Numbers"
+title: 'State of AsyncAPI Initiative 2022 in Numbers'
 date: 2023-02-28T06:00:00+01:00
 type: Communication
 tags:
@@ -23,7 +23,7 @@ If you are interested in previous project updates [check other `Project Status` 
 
 ## Slack
 
-At the end of 2022, we had **3114** members in the AsyncAPI workspace. But what does that really mean? Don't get me wrong; I like when the numbers are high, especially if I see them in my bank account. 
+At the end of 2022, we had **3114** members in the AsyncAPI workspace. But what does that really mean? Don't get me wrong; I like when the numbers are high, especially if I see them in my bank account.
 
 The thing is that some accounts might belong to people that joined three years ago but don't even remember that they had an account in the AsyncAPI workspace. It would be good to check how this number relates to people's activity.
 
@@ -32,6 +32,7 @@ Another important item to understand is how come we have **3114** members. Did a
 ### Workspace size
 
 Below you can see how many members have joined AsyncAPI Slack in past years. The numbers are pretty neat! People join AsyncAPI Slack because they know:
+
 - someone will answer their call for help
 - it is a welcoming place for first-time contributors
 - we participate in many mentorship programs
@@ -61,7 +62,7 @@ Anyway, I definitely predict that data for 2023 will show an increase in activit
 
 Below you can see all-time data that show the number of messages posted on each channel in Slack.
 
-The `General` channel is the oldest, and yeah, it is generally for general stuff... what a joker. Anyway, the most important is the discussion size in the `Tooling` channel. Specifications are boring, and people are interested more in how it works. On the other hand, tooling is most attractive to tech folks; coding and talking about it is more fun.   
+The `General` channel is the oldest, and yeah, it is generally for general stuff... what a joker. Anyway, the most important is the discussion size in the `Tooling` channel. Specifications are boring, and people are interested more in how it works. On the other hand, tooling is most attractive to tech folks; coding and talking about it is more fun.
 
 <Figure
   src="/img/posts/2022-summary/slack-channel-usage.webp"
@@ -143,7 +144,7 @@ The "quality" of the user visiting the website is much better. In 2022, we had n
   src="/img/posts/2022-summary/ga-views.webp"
 />
 
-There is a much larger increase in the amount of **Pageviews** and **Sessions** but no significant increase in **User visits**. My theory: In 2022, we didn't have a single super viral blog post like in previous years that would bring a few thousand people in just a few days (like September 9, 2021 - over 5k readers), people that are interested in an article, and not AsyncAPI in general. 
+There is a much larger increase in the amount of **Pageviews** and **Sessions** but no significant increase in **User visits**. My theory: In 2022, we didn't have a single super viral blog post like in previous years that would bring a few thousand people in just a few days (like September 9, 2021 - over 5k readers), people that are interested in an article, and not AsyncAPI in general.
 
 I think we can say that it is the first time we have had a regular increase in users and that this increase is valuable as these users generate a lot of sessions and navigate through the website a lot. In other words, the bigger difference between **User visits** and **Pageviews**, the better.
 
@@ -187,7 +188,7 @@ From 301 to 1,520 contributors for things like commits, pull requests authoring 
   src="/img/posts/2022-summary/github-contrib.webp"
 />
 
-This huge difference also has a negative aspect. More contributions mean more maintenance work. 
+This huge difference also has a negative aspect. More contributions mean more maintenance work.
 
 ### Negative aspect of growth
 
@@ -214,18 +215,19 @@ Our most essential packages are [the project that provides AsyncAPI JSON Schema 
 You do not believe in this data? Lemme repeat what I wrote last year:
 
 > The increase in numbers is insanely huge. People automatically say that it is because of build systems, local development, or that some single corporation started using it at scale. In other words, the increase could result from just one project that uses these tools as a dependency.
-<br/>Let me challenge you:<br/>
+> <br/>Let me challenge you:<br/>
+
 - Corporations always use mirrored versions in npm. When you work on a project in a corporate network, you will always hit the internal proxy. Not included in downloads.<br/>
 - Most build systems cache packages downloaded are ready to improve performance. Not included in downloads.<br/>
 - When you work with npm locally, you also have a local cache that is used if you want to install something that you already installed. Not included in downloads.
 
 An interesting observation is that in 2021 AsyncAPI Parser was the only user of the AsyncAPI spec JSON schemas project (`@asyncapi/specs`), as the number of downloads was almost the same. In 2022, the AsyncAPI spec JSON schemas project was downloaded five million times, three times more than the parser. This means many more tools are dependent on the project.
 
-In 2021 we could see that the AsyncAPI Parser is not only a Generator dependency; today we see the AsyncAPI spec JSON schemas project is not only a Parser dependency. This means that the increase in traffic in different channels and the growing user base also reflect the number of tools built on top of AsyncAPI tools. One of the big users of `@asyncapi/specs` is now Spectral. Also, GitHub tells us that `@asyncapi/specs` is used in 1,329 public repositories 
+In 2021 we could see that the AsyncAPI Parser is not only a Generator dependency; today we see the AsyncAPI spec JSON schemas project is not only a Parser dependency. This means that the increase in traffic in different channels and the growing user base also reflect the number of tools built on top of AsyncAPI tools. One of the big users of `@asyncapi/specs` is now Spectral. Also, GitHub tells us that `@asyncapi/specs` is used in 1,329 public repositories
 
 ## YouTube
 
-The [AsyncAPI YouTube channel](https://www.youtube.com/asyncapi) had a massive increase in traffic. 
+The [AsyncAPI YouTube channel](https://www.youtube.com/asyncapi) had a massive increase in traffic.
 
 ### Watch time
 

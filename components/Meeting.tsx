@@ -32,7 +32,7 @@ export default function Meeting({
   host = '',
   hostProfile = '',
   youtube = '',
-  bg = ''
+  bg = '',
 }: MeetingProps) {
   const [isClient, setIsClient] = useState(false);
 
@@ -43,25 +43,38 @@ export default function Meeting({
   if (!isClient) return null;
 
   return (
-    <a href={youtube} target='_blank' rel='noreferrer' data-testid='Meeting-link'>
+    <a
+      href={youtube}
+      target="_blank"
+      rel="noreferrer"
+      data-testid="Meeting-link"
+    >
       <div
         className={`meeting-card bg-overflow-hidden flex h-[300px] w-full cursor-pointer flex-col justify-between p-4 hover:bg-dark hover:text-white lg:w-[300px] ${bg}`}
       >
         <div>
-          <h3 className='text-xl' data-testid='Meeting-heading'>
+          <h3 className="text-xl" data-testid="Meeting-heading">
             {name}
           </h3>
-          <div data-testid='Meeting-paragraph'>
-            <Paragraph typeStyle={ParagraphTypeStyle.sm} className='my-4' textColor='white'>
+          <div data-testid="Meeting-paragraph">
+            <Paragraph
+              typeStyle={ParagraphTypeStyle.sm}
+              className="my-4"
+              textColor="white"
+            >
               {purpose}
             </Paragraph>
           </div>
         </div>
-        <div className='flex items-center justify-between'>
-          <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4'>
-            <strong data-testid='Meeting-host'>Host:&nbsp;</strong>
+        <div className="flex items-center justify-between">
+          <Paragraph typeStyle={ParagraphTypeStyle.md} className="my-4">
+            <strong data-testid="Meeting-host">Host:&nbsp;</strong>
             {hostProfile ? (
-              <TextLink href={hostProfile} target='_blank' className='hover:text-primary-500'>
+              <TextLink
+                href={hostProfile}
+                target="_blank"
+                className="hover:text-primary-500"
+              >
                 {host}
               </TextLink>
             ) : (
@@ -69,7 +82,7 @@ export default function Meeting({
             )}
           </Paragraph>
           <div>
-            <ArrowRightIcon className='ml-3 w-[20px] text-slate-400' />
+            <ArrowRightIcon className="ml-3 w-[20px] text-slate-400" />
           </div>
         </div>
       </div>

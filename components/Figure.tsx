@@ -25,7 +25,15 @@ interface FigureProps {
  * @param {string} props.altOnly - The alternative text for the image if caption is not provided
  * @param {string} props.imageClass - Additional classes for the image
  */
-export default function Figure({ src, caption, widthClass, className, float, altOnly, imageClass = '' }: FigureProps) {
+export default function Figure({
+  src,
+  caption,
+  widthClass,
+  className,
+  float,
+  altOnly,
+  imageClass = '',
+}: FigureProps) {
   const alt = altOnly || caption;
 
   let floatClassNames = '';
@@ -37,9 +45,17 @@ export default function Figure({ src, caption, widthClass, className, float, alt
   }
 
   return (
-    <figure className={`${className} ${floatClassNames} ${widthClass || 'w-full'}`} data-testid='Figure-div'>
-      <div className='flex flex-col'>
-        <img className={`${imageClass}`} src={src} alt={alt} data-testid='Figure-img' />
+    <figure
+      className={`${className} ${floatClassNames} ${widthClass || 'w-full'}`}
+      data-testid="Figure-div"
+    >
+      <div className="flex flex-col">
+        <img
+          className={`${imageClass}`}
+          src={src}
+          alt={alt}
+          data-testid="Figure-img"
+        />
         {caption && <Caption>{caption}</Caption>}
       </div>
     </figure>

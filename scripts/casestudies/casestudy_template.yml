@@ -8,22 +8,22 @@ company: #We need basic information about a company so people know the case stud
   website: #Link to main website.
   logo: #Link to logo of the company in SVG format.
   contact:
-  #Let us know who we can contact you, some generic email or just a name and link to some social media. We need this to be able to:
-  #- validate long term if case study is still valid
-  #- ping you when we know we plan to change some parts of AsyncAPI that you are already using
-  - name: #Full name of the contact person.
-    link: #Specify where people can find contact person.
+    #Let us know who we can contact you, some generic email or just a name and link to some social media. We need this to be able to:
+    #- validate long term if case study is still valid
+    #- ping you when we know we plan to change some parts of AsyncAPI that you are already using
+    - name: #Full name of the contact person.
+      link: #Specify where people can find contact person.
 challenges: |
-    #Describe want challanges company have, that faced them towards AsyncAPI. There is no limit here. Use [CommonMark](https://commonmark.org/).
+  #Describe want challanges company have, that faced them towards AsyncAPI. There is no limit here. Use [CommonMark](https://commonmark.org/).
 solution: |
-    #Describe the solution for the challange and what role AsyncAPI played in it. There is no limit here. Use [CommonMark](https://commonmark.org/)
+  #Describe the solution for the challange and what role AsyncAPI played in it. There is no limit here. Use [CommonMark](https://commonmark.org/)
 technical: #We need some more technical information related to case study.
   languages:
-    - #Provide a list of programming lanugages people using AsyncAPI work with.
+    -  #Provide a list of programming lanugages people using AsyncAPI work with.
   frameworks:
-    - #Specify what frameworks they use, maybe Spring in Java or Nest.js in JavaScript.
+    -  #Specify what frameworks they use, maybe Spring in Java or Nest.js in JavaScript.
   protocols:
-    - #What protocols are used by the company in relation to AsyncAPI.
+    -  #What protocols are used by the company in relation to AsyncAPI.
   brokers: |
     #Provide some details about the broker that is used at the company and what is the setup, size, example cluster size, and a number of topics (in the case of Kafka for example).
   testing: |
@@ -42,12 +42,12 @@ asyncapi: #More specific details about AsyncAPI itself and how is it used.
   usecase: |
     #Even though this section might be a kind of replication of what was explained in challenges/solution, please describe in short what specific use case you found for AsyncAPI and how you implement it.
   versions:
-    - #Specify a list of versions of AsyncAPI that you use. It can be a list, some teams might use different versions.
+    -  #Specify a list of versions of AsyncAPI that you use. It can be a list, some teams might use different versions.
   storage: |
     #Describe where you store AsyncAPI files and who maintains them on daily basis.
   editing: |
     #Specify how you edit AsyncAPI files and where you edit them. Be very specific on IDEs and plugin names if used.
-  maintainers: | 
+  maintainers: |
     #Share information; who is the primary maintainer of AsyncAPI documents? Developers? Tech writers? Product owners?
   audience: #Specify if AsyncAPI audience is internal or external or both.
     internal: true

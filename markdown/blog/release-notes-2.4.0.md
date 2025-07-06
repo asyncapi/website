@@ -57,13 +57,13 @@ servers:
 components:
   servers:
     myserver:
-      url: "{stage}.my-server.com:{port}"
+      url: '{stage}.my-server.com:{port}'
       protocol: ws
       variables:
         stage:
-          $ref: "#/components/serverVariables/stage"
+          $ref: '#/components/serverVariables/stage'
         port:
-          $ref: "#/components/serverVariables/port"
+          $ref: '#/components/serverVariables/port'
   serverVariables:
     stage:
       default: dev
@@ -87,24 +87,24 @@ For example:
 asyncapi: 2.4.0
 servers:
   production:
-    url: "mykafkacluster.org:8092"
+    url: 'mykafkacluster.org:8092'
     protocol: kafka-secure
     security:
       - service_auth:
-         - auth:write
-         - auth:read
+          - auth:write
+          - auth:read
 channels:
   some/events:
     servers:
       - production
     subscribe:
       # This operation level security implies the ability to subscribe to messages from
-      # `some/events` channel with Authorization headers 
-      # that have `auth:read` scope. Note that an operation level security must still satisfy 
+      # `some/events` channel with Authorization headers
+      # that have `auth:read` scope. Note that an operation level security must still satisfy
       # security requirements specified at the server level.
       security:
         - service_auth:
-          - auth:read  
+            - auth:read
 ```
 
 Thanks to [Sekharbans](https://github.com/sekharbans-ebay), is now possible to increase security granularity by defining a set of security requirements at Operation level. For more detail, see [Sekharban's `/spec #584` pull request](https://github.com/asyncapi/spec/pull/584) and the [GitHub issue where Sekharban's suggested feature was discussed](https://github.com/asyncapi/spec/issues/584).
@@ -119,6 +119,7 @@ For more detail, see [Vladimir's `/spec #706`pull request](https://github.com/as
 ## Tooling support
 
 The following official AsyncAPI tools are already updated to support 2.4.0 version of the specification:
+
 - JSON Schema that supports validation of AsyncAPI documents is updated in [this](https://github.com/asyncapi/spec-json-schemas) repository. Also **@asyncapi/specs** package has been updated on NPM to version `2.14.0`, and it contains the 2.4.0 JSON Schema.
 - [JavaScript Parser](https://github.com/asyncapi/parser-js/) uses latest **@asyncapi/specs** package and can be used to parse and validate 2.4.0 documents. Upgrade to `1.15.0` version.
 - [HTML template](https://github.com/asyncapi/html-template) uses the latest **@asyncapi/react-component** package. Upgrade to `0.24.9` version.

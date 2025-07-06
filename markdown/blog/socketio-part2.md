@@ -1,18 +1,18 @@
 ---
 type: Engineering
-title: "The journey of documenting a Socket.IO API (Pt 2)"
+title: 'The journey of documenting a Socket.IO API (Pt 2)'
 date: 2021-11-04T10:00:00+01:00
 cover: /img/posts/socketio-part2/cover.webp
 tags:
-   - Specification
-   - Socket.IO
-   - Protocol
-   - Asynction
+  - Specification
+  - Socket.IO
+  - Protocol
+  - Asynction
 authors:
-   - name: Dimitrios Dedoussis
-     photo: /img/avatars/dedoussis.webp
-     link: https://twitter.com/dedoussis
-     byline: Senior Software Engineer at Babylon & Maintainer of Asynction
+  - name: Dimitrios Dedoussis
+    photo: /img/avatars/dedoussis.webp
+    link: https://twitter.com/dedoussis
+    byline: Senior Software Engineer at Babylon & Maintainer of Asynction
 ---
 
 > This post originally appeared on [https://dedouss.is](https://dedouss.is/posts/2021-07-14-documenting-socketio-part-2.html)
@@ -135,8 +135,8 @@ channels:
     publish:
       message:
         oneOf:
-          - $ref: "#/components/messages/MessageOne"
-          - $ref: "#/components/messages/MessageTwo"
+          - $ref: '#/components/messages/MessageOne'
+          - $ref: '#/components/messages/MessageTwo'
 ```
 
 Now, let’s move on to the acknowledgement semantics of the protocol: The basic unit of information in the Socket.IO protocol is the packet. There are 7 distinct [packet types](https://github.com/socketio/socket.io-protocol#packet-types). The payloads of the publish and subscribe Message Objects described above correspond to the `EVENT` and `BINARY_EVENT` packet types. These are essentially the packets that are transmitted when the Socket.IO sender invokes the **emit** API function of the Socket.IO library (regardless of implementation). In turn, the Socket.IO event receiver handles the received event using the **on** API function of the Socket.IO library. As part of the **on** handler, the receiver may choose to return an acknowledgement of the received message. This acknowledgement is conveyed back to the sender via the `ACK` and `BINARY_ACK` packet types. The ack data is passed as input to the callback that the message sender has provided through the **emit** invocation.
@@ -169,18 +169,18 @@ The [Servers Object](https://www.asyncapi.com/docs/specifications/v2.2.0#servers
 
 We made it to the end of the modelling exercise the outcome of which is the following table, relating Socket.IO semantics to AsyncAPI structures.
 
-| Socket.IO                                                                                                                                                                   | AsyncAPI                                                                                                                                                                                                                                                                                                                                                                                 |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Namespace](https://socket.io/docs/v4/namespaces/index.html)                                                                                                                | [Channel](https://www.asyncapi.com/docs/specifications/v2.2.0#definitionsChannel) (described through the [Channel Item Object](https://www.asyncapi.com/docs/specifications/v2.2.0#channelItemObject))                                                                                                                                                                                   |
-| [IO options](https://www.google.com/url?q=https://socket.io/docs/v4/client-api/%23io-url-options&sa=D&source=editors&ust=1626260158636000&usg=AOvVaw3Jm-RtRjuNphtaCN-54p4L) | [WebSockets Channel Binding](https://github.com/asyncapi/bindings/blob/master/websockets/README.md#channel-binding-object)                                                                                                                                                                                                                                                               |
+| Socket.IO                                                                                                                                                                   | AsyncAPI                                                                                                                                                                                                                                                                                                                                                                                             |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Namespace](https://socket.io/docs/v4/namespaces/index.html)                                                                                                                | [Channel](https://www.asyncapi.com/docs/specifications/v2.2.0#definitionsChannel) (described through the [Channel Item Object](https://www.asyncapi.com/docs/specifications/v2.2.0#channelItemObject))                                                                                                                                                                                               |
+| [IO options](https://www.google.com/url?q=https://socket.io/docs/v4/client-api/%23io-url-options&sa=D&source=editors&ust=1626260158636000&usg=AOvVaw3Jm-RtRjuNphtaCN-54p4L) | [WebSockets Channel Binding](https://github.com/asyncapi/bindings/blob/master/websockets/README.md#channel-binding-object)                                                                                                                                                                                                                                                                           |
 | `namespaceSocket.emit(eventName[, …args][, ack])`                                                                                                                           | [Operation Object](https://www.asyncapi.com/docs/specifications/v2.2.0#operationObject) defined under the **publish** field of a [Channel Item Object](https://www.asyncapi.com/docs/specifications/v2.2.0#channelItemObject). The available **eventName** & **args** pairs for this **emit** invocation are listed under the **message** field, through the **oneOf** array structure.              |
 | `namespaceSocket.on(eventName, callback)`                                                                                                                                   | [Operation Object](https://www.asyncapi.com/docs/specifications/v2.2.0#operationObject) defined under the **subscribe** field of a [Channel Item Object](https://www.asyncapi.com/docs/specifications/v2.2.0#channelItemObject). The available **eventName** & **callback** argument pairs for this **on** invocation are listed under the **message** field, through the **oneOf** array structure. |
-| Event                                                                                                                                                                       | [Message](https://www.asyncapi.com/docs/specifications/v2.2.0#definitionsMessage) (described through the [Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject))                                                                                                                                                                                            |
-| **eventName**                                                                                                                                                                 | The **name** field of the [Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject))                                                                                                                                                                                                                                                                             |
-| Event **args**                                                                                                                                                                | The **payload** field of the [Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject)                                                                                                                                                                                                                                                                           |
-| **ack**                                                                                                                                                                       | The `x-ack` field of the [Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject). Requires an [extension of the specification](https://www.asyncapi.com/docs/specifications/v2.2.0#specificationExtensions). The field may be populated for both **publish** and **subscribe** messages.                                                                         |
-| Custom path (**path** option)                                                                                                                                                 | The **url** field of the [Server Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serverObject)                                                                                                                                                                                                                                                                                 |
-| Use of TLS (regardless of transport mechanism)                                                                                                                              | The **protocol** field of the [Server Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serverObject)                                                                                                                                                                                                                                                                            |
+| Event                                                                                                                                                                       | [Message](https://www.asyncapi.com/docs/specifications/v2.2.0#definitionsMessage) (described through the [Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject))                                                                                                                                                                                                        |
+| **eventName**                                                                                                                                                               | The **name** field of the [Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject))                                                                                                                                                                                                                                                                                       |
+| Event **args**                                                                                                                                                              | The **payload** field of the [Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject)                                                                                                                                                                                                                                                                                     |
+| **ack**                                                                                                                                                                     | The `x-ack` field of the [Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject). Requires an [extension of the specification](https://www.asyncapi.com/docs/specifications/v2.2.0#specificationExtensions). The field may be populated for both **publish** and **subscribe** messages.                                                                                 |
+| Custom path (**path** option)                                                                                                                                               | The **url** field of the [Server Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serverObject)                                                                                                                                                                                                                                                                                           |
+| Use of TLS (regardless of transport mechanism)                                                                                                                              | The **protocol** field of the [Server Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serverObject)                                                                                                                                                                                                                                                                                      |
 
 ## In practice
 
@@ -190,36 +190,36 @@ Below is the source of our Socket.IO server:
 
 ```javascript
 // Setup basic express server
-const express = require("express");
+const express = require('express');
 const app = express();
-const path = require("path");
-const server = require("http").createServer(app);
-const io = require("socket.io")(server);
+const path = require('path');
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
 const port = process.env.PORT || 3000;
 
 server.listen(port, () => {
-  console.log("Server listening at port %d", port);
+  console.log('Server listening at port %d', port);
 });
 
 // Chatroom
 let numUsers = 0;
 
-io.on("connection", (socket) => {
+io.on('connection', (socket) => {
   let addedUser = false;
 
   // when the client emits 'new message', this listens and executes
-  socket.on("new message", (data) => {
+  socket.on('new message', (data) => {
     // we tell the client to execute 'new message'
-    socket.broadcast.emit("new message", {
+    socket.broadcast.emit('new message', {
       username: socket.username,
       message: data,
     });
   });
 
   // when the client emits 'add user', this listens and executes
-  socket.on("add user", (username, cb) => {
+  socket.on('add user', (username, cb) => {
     if (addedUser) {
-      cb({ error: "User is already added" });
+      cb({ error: 'User is already added' });
       return;
     }
 
@@ -227,11 +227,11 @@ io.on("connection", (socket) => {
     socket.username = username;
     ++numUsers;
     addedUser = true;
-    socket.emit("login", {
+    socket.emit('login', {
       numUsers: numUsers,
     });
     // echo globally (all clients) that a person has connected
-    socket.broadcast.emit("user joined", {
+    socket.broadcast.emit('user joined', {
       username: socket.username,
       numUsers: numUsers,
     });
@@ -239,26 +239,26 @@ io.on("connection", (socket) => {
   });
 
   // when the client emits 'typing', we broadcast it to others
-  socket.on("typing", () => {
-    socket.broadcast.emit("typing", {
+  socket.on('typing', () => {
+    socket.broadcast.emit('typing', {
       username: socket.username,
     });
   });
 
   // when the client emits 'stop typing', we broadcast it to others
-  socket.on("stop typing", () => {
-    socket.broadcast.emit("stop typing", {
+  socket.on('stop typing', () => {
+    socket.broadcast.emit('stop typing', {
       username: socket.username,
     });
   });
 
   // when the user disconnects.. perform this
-  socket.on("disconnect", () => {
+  socket.on('disconnect', () => {
     if (addedUser) {
       --numUsers;
 
       // echo globally that this client has left
-      socket.broadcast.emit("user left", {
+      socket.broadcast.emit('user left', {
         username: socket.username,
         numUsers: numUsers,
       });
@@ -268,13 +268,13 @@ io.on("connection", (socket) => {
 
 // Admin
 
-io.of("/admin").on("connection", (socket) => {
+io.of('/admin').on('connection', (socket) => {
   let token = socket.handshake.query.token;
-  if (token !== "admin") socket.disconnect();
+  if (token !== 'admin') socket.disconnect();
 
-  socket.emit("server metric", {
-    name: "CPU_COUNT",
-    value: require("os").cpus().length,
+  socket.emit('server metric', {
+    name: 'CPU_COUNT',
+    value: require('os').cpus().length,
   });
 });
 ```
@@ -318,23 +318,23 @@ channels:
     publish:
       message:
         oneOf:
-          - $ref: "#/components/messages/NewMessage"
-          - $ref: "#/components/messages/Typing"
-          - $ref: "#/components/messages/StopTyping"
-          - $ref: "#/components/messages/AddUser"
+          - $ref: '#/components/messages/NewMessage'
+          - $ref: '#/components/messages/Typing'
+          - $ref: '#/components/messages/StopTyping'
+          - $ref: '#/components/messages/AddUser'
     subscribe:
       message:
         oneOf:
-          - $ref: "#/components/messages/NewMessageReceived"
-          - $ref: "#/components/messages/UserTyping"
-          - $ref: "#/components/messages/UserStopTyping"
-          - $ref: "#/components/messages/UserJoined"
-          - $ref: "#/components/messages/UserLeft"
-          - $ref: "#/components/messages/LogIn"
+          - $ref: '#/components/messages/NewMessageReceived'
+          - $ref: '#/components/messages/UserTyping'
+          - $ref: '#/components/messages/UserStopTyping'
+          - $ref: '#/components/messages/UserJoined'
+          - $ref: '#/components/messages/UserLeft'
+          - $ref: '#/components/messages/LogIn'
   /admin:
     subscribe:
       message: # No need to use `oneOf` since there is only a single event
-        $ref: "#/components/messages/ServerMetric"
+        $ref: '#/components/messages/ServerMetric'
 ```
 
 From the server code, we can also see that the connection handler of the admin namespace applies some very sophisticated authorization based on the `token` query parameter. The spec should hence document that the API requires the presence of a valid token query param upon the handshake:
@@ -350,7 +350,7 @@ channels:
     subscribe:
       # ...
     bindings:
-      $ref: "#/components/channelBindings/AuthenticatedWsBindings"
+      $ref: '#/components/channelBindings/AuthenticatedWsBindings'
 ```
 
 Putting everything together into a single document:
@@ -374,25 +374,25 @@ channels:
     publish:
       message:
         oneOf:
-          - $ref: "#/components/messages/NewMessage"
-          - $ref: "#/components/messages/Typing"
-          - $ref: "#/components/messages/StopTyping"
-          - $ref: "#/components/messages/AddUser"
+          - $ref: '#/components/messages/NewMessage'
+          - $ref: '#/components/messages/Typing'
+          - $ref: '#/components/messages/StopTyping'
+          - $ref: '#/components/messages/AddUser'
     subscribe:
       message:
         oneOf:
-          - $ref: "#/components/messages/NewMessageReceived"
-          - $ref: "#/components/messages/UserTyping"
-          - $ref: "#/components/messages/UserStopTyping"
-          - $ref: "#/components/messages/UserJoined"
-          - $ref: "#/components/messages/UserLeft"
-          - $ref: "#/components/messages/LogIn"
+          - $ref: '#/components/messages/NewMessageReceived'
+          - $ref: '#/components/messages/UserTyping'
+          - $ref: '#/components/messages/UserStopTyping'
+          - $ref: '#/components/messages/UserJoined'
+          - $ref: '#/components/messages/UserLeft'
+          - $ref: '#/components/messages/LogIn'
   /admin:
     subscribe:
       message: # No need to use `oneOf` since there is only a single event
-        $ref: "#/components/messages/ServerMetric"
+        $ref: '#/components/messages/ServerMetric'
     bindings:
-      $ref: "#/components/channelBindings/AuthenticatedWsBindings"
+      $ref: '#/components/channelBindings/AuthenticatedWsBindings'
 
 components:
   messages:
@@ -413,7 +413,7 @@ components:
           type: object
           properties:
             error:
-              type: [string, "null"]
+              type: [string, 'null']
     NewMessageReceived:
       name: new message
       payload:

@@ -41,7 +41,7 @@ export default function FinancialSummary() {
     <>
       <Head>
         <title>{title}</title>
-        <meta name='description' content={description} />
+        <meta name="description" content={description} />
       </Head>
       <AsyncAPISummary />
       <SponsorshipTiers />
@@ -55,5 +55,13 @@ export default function FinancialSummary() {
 
   const shouldUseContainer = windowWidth > 1700;
 
-  return <div>{shouldUseContainer ? <Container wide>{renderComponents()}</Container> : renderComponents()}</div>;
+  return (
+    <div>
+      {shouldUseContainer ? (
+        <Container wide>{renderComponents()}</Container>
+      ) : (
+        renderComponents()
+      )}
+    </div>
+  );
 }

@@ -21,7 +21,7 @@ export function useHeadingsObserver() {
 
     // The heading in from top 20% of the viewport to top 30% of the viewport will be considered as active
     observer.current = new IntersectionObserver(callback, {
-      rootMargin: '-20% 0px -70% 0px'
+      rootMargin: '-20% 0px -70% 0px',
     });
 
     headingsRef.current = document.querySelectorAll('h2, h3');

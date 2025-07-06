@@ -1,7 +1,7 @@
 asyncapi: 2.4.0
 info:
   title: Adeo AsyncAPI Case Study
-  version: "%REPLACED_BY_MAVEN%"
+  version: '%REPLACED_BY_MAVEN%'
   description: >
     This Adeo specification illustrates how ADEO uses AsyncAPI to document some of their exchanges.
   contact:
@@ -9,7 +9,7 @@ info:
     email: case-study@asyncapi.com
 servers:
   production:
-    url: "prod.url:9092"
+    url: 'prod.url:9092'
     protocol: kafka
     description: Kafka PRODUCTION cluster
     security:
@@ -19,7 +19,7 @@ servers:
         schema.registry.url: >-
           https://schema-registry.prod.url/
   staging:
-    url: "staging.url:9092"
+    url: 'staging.url:9092'
     protocol: kafka
     description: Kafka STAGING cluster for `uat` and `preprod` environments
     security:
@@ -29,7 +29,7 @@ servers:
         schema.registry.url: >-
           https://schema-registry.staging.url/
   dev:
-    url: "dev.url:9092"
+    url: 'dev.url:9092'
     protocol: kafka
     description: Kafka DEV cluster for `dev` and `sit` environments
     security:
@@ -40,9 +40,9 @@ servers:
           https://schema-registry.dev.url/
 tags:
   - name: costing
-    description: "Costing channels, used by Costing clients."
+    description: 'Costing channels, used by Costing clients.'
 channels:
-  "adeo-{env}-case-study-COSTING-REQUEST-{version}":
+  'adeo-{env}-case-study-COSTING-REQUEST-{version}':
     description: >
       Use this topic to do a Costing Request to Costing product.
       We use the
@@ -56,9 +56,9 @@ channels:
       ![](https://user-images.githubusercontent.com/5501911/188920831-689cec5f-8dc3-460b-8794-0b54ec8b0ac8.png)
     parameters:
       env:
-        $ref: "#/components/parameters/Env"
+        $ref: '#/components/parameters/Env'
       version:
-        $ref: "#/components/parameters/Version"
+        $ref: '#/components/parameters/Version'
     bindings:
       kafka:
         replicas: 3
@@ -76,7 +76,7 @@ channels:
         - name: costing
       message:
         oneOf:
-          - $ref: "#/components/messages/costingRequestV1"
+          - $ref: '#/components/messages/costingRequestV1'
       bindings:
         kafka:
           groupId:
@@ -92,7 +92,7 @@ channels:
               Use
               `value.subject.name.strategy=io.confluent.kafka.serializers.subject.RecordNameStrategy`
               in your producer configuration.
-  "adeo-{env}-case-study-COSTING-RESPONSE-{version}":
+  'adeo-{env}-case-study-COSTING-RESPONSE-{version}':
     description: >
       This topic is used to REPLY Costing Requests and is targeted by the
       `REPLY_TOPIC` header.
@@ -109,9 +109,9 @@ channels:
            ![](https://user-images.githubusercontent.com/5501911/188920831-689cec5f-8dc3-460b-8794-0b54ec8b0ac8.png)
     parameters:
       env:
-        $ref: "#/components/parameters/Env"
+        $ref: '#/components/parameters/Env'
       version:
-        $ref: "#/components/parameters/Version"
+        $ref: '#/components/parameters/Version'
     bindings:
       kafka:
         groupId:
@@ -142,7 +142,7 @@ channels:
       tags:
         - name: costing
       message:
-        $ref: "#/components/messages/costingResponse"
+        $ref: '#/components/messages/costingResponse'
 components:
   correlationIds:
     costingCorrelationId:
@@ -161,7 +161,7 @@ components:
         - name: costing
       schemaFormat: application/vnd.apache.avro;version=1.9.0
       correlationId:
-        $ref: "#/components/correlationIds/costingCorrelationId"
+        $ref: '#/components/correlationIds/costingCorrelationId'
       headers:
         type: object
         required:
@@ -171,15 +171,15 @@ components:
           - REPLY_TOPIC
         properties:
           REQUEST_ID:
-            $ref: "#/components/schemas/RequestId"
+            $ref: '#/components/schemas/RequestId'
           REPLY_TOPIC:
-            $ref: "#/components/schemas/ReplyTopic"
+            $ref: '#/components/schemas/ReplyTopic'
           REQUESTER_ID:
-            $ref: "#/components/schemas/RequesterId"
+            $ref: '#/components/schemas/RequesterId'
           REQUESTER_CODE:
-            $ref: "#/components/schemas/RequesterCode"
+            $ref: '#/components/schemas/RequesterCode'
       payload:
-        $ref: "https://asyncapi.com/resources/casestudies/adeo/CostingRequestPayload.avsc"
+        $ref: 'https://asyncapi.com/resources/casestudies/adeo/CostingRequestPayload.avsc'
     costingResponse:
       name: CostingResponse
       title: Costing Response
@@ -192,14 +192,14 @@ components:
         project](https://github.url/).
       schemaFormat: application/vnd.apache.avro;version=1.9.0
       correlationId:
-        $ref: "#/components/correlationIds/costingCorrelationId"
+        $ref: '#/components/correlationIds/costingCorrelationId'
       headers:
         type: object
         properties:
           CALCULATION_ID:
-            $ref: "#/components/schemas/MessageId"
+            $ref: '#/components/schemas/MessageId'
           CORRELATION_ID:
-            $ref: "#/components/schemas/CorrelationId"
+            $ref: '#/components/schemas/CorrelationId'
           REQUEST_TIMESTAMP:
             type: string
             format: date-time
@@ -211,9 +211,9 @@ components:
       bindings:
         kafka:
           key:
-            $ref: "https://asyncapi.com/resources/casestudies/adeo/CostingResponseKey.avsc"
+            $ref: 'https://asyncapi.com/resources/casestudies/adeo/CostingResponseKey.avsc'
       payload:
-        $ref: "https://asyncapi.com/resources/casestudies/adeo/CostingResponsePayload.avsc"
+        $ref: 'https://asyncapi.com/resources/casestudies/adeo/CostingResponsePayload.avsc'
   schemas:
     RequesterId:
       type: string

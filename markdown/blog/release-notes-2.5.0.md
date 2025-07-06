@@ -11,14 +11,14 @@ authors:
     photo: /img/avatars/char0n.webp
     link: https://twitter.com/vladimirgorej
     byline: Open Source Software Engineer, OSS contributor, author and content creator.
-excerpt: "The release of AsyncAPI 2.5 brings helpful additions, such as extended Server Variables reusability and many clarifications."
+excerpt: 'The release of AsyncAPI 2.5 brings helpful additions, such as extended Server Variables reusability and many clarifications.'
 ---
 
 The new version of the AsyncAPI specification - 2.5.0 - is now available.
 
 > This is a minor release, and it doesn't bring any breaking changes. You can switch to it by modifying the following value in your AsyncAPI file `asyncapi: '2.4.0'` into `asyncapi: '2.5.0'`
 
-## Server Variables can be now referenced from inside the Server Object 
+## Server Variables can be now referenced from inside the Server Object
 
 Previous AsyncAPI 2.4.0 release came with the support of [defining Server Variable Objects as reusable components](https://www.asyncapi.com/blog/release-notes-2.4.0#server-variables-can-be-now-referenced-from-components).
 Unfortunately, AsyncAPI 2.4.0 doesn't allow referencing reusable _server variable objects_ from within the `Server Object`.
@@ -37,13 +37,13 @@ servers:
 components:
   servers:
     myserver:
-      url: "{stage}.my-server.com:{port}"
+      url: '{stage}.my-server.com:{port}'
       protocol: ws
       variables:
         stage:
-          $ref: "#/components/serverVariables/stage"
+          $ref: '#/components/serverVariables/stage'
         port:
-          $ref: "#/components/serverVariables/port"
+          $ref: '#/components/serverVariables/port'
   serverVariables:
     stage:
       default: dev
@@ -73,12 +73,12 @@ servers:
     security:
       - saslScram: []
     tags:
-      - name: "env:test-scram"
-        description: "This environment is for running internal tests through scramSha256"
-      - name: "kind:remote"
-        description: "This server is a remote server. Not exposed by the application"
-      - name: "visibility:private"
-        description: "This resource is private and only available to certain users"  
+      - name: 'env:test-scram'
+        description: 'This environment is for running internal tests through scramSha256'
+      - name: 'kind:remote'
+        description: 'This server is a remote server. Not exposed by the application'
+      - name: 'visibility:private'
+        description: 'This resource is private and only available to certain users'
   mtls-connections:
     url: test.mykafkacluster.org:28092
     protocol: kafka-secure
@@ -86,12 +86,12 @@ servers:
     security:
       - certs: []
     tags:
-      - name: "env:test-mtls"
-        description: "This environment is for running internal tests through mTLS"
-      - name: "kind:remote"
-        description: "This server is a remote server. Not exposed by the application"
-      - name: "visibility:private"
-        description: "This resource is private and only available to certain users"
+      - name: 'env:test-mtls'
+        description: 'This environment is for running internal tests through mTLS'
+      - name: 'kind:remote'
+        description: 'This server is a remote server. Not exposed by the application'
+      - name: 'visibility:private'
+        description: 'This resource is private and only available to certain users'
 channels: {}
 ```
 
@@ -99,7 +99,7 @@ This new feature was contributed by [Sergio Moya](https://github.com/smoya). For
 
 ## Added missing IBM MQ Operation Binding
 
-We noticed that we overlooked and did not define the Operation Bindings Object in the case of IBM MQ. 
+We noticed that we overlooked and did not define the Operation Bindings Object in the case of IBM MQ.
 In AsyncAPI 2.5.0, the definition is empty, but its name is reserved for future use to be consistent with the rest of the bindings.
 
 This change was contributed by [Maciej Urbańczyk](https://github.com/magicmatatjahu). For more detail, see [Maciej's `/spec #840` pull request](https://github.com/asyncapi/spec/pull/840).
@@ -126,6 +126,7 @@ The resolution rules around `ChannelItem.$ref` field were not clearly defined. A
 ## Tooling support
 
 The following official AsyncAPI tools are already updated to support the 2.5.0 specification version:
+
 - JSON Schema that supports validation of AsyncAPI documents is updated in our [specification JSON schema repository](https://github.com/asyncapi/spec-json-schemas). We updated the **@asyncapi/specs** package on NPM to version `3.2`, containing the JSON Schema document for AsyncAPI Spec 2.5.0.
 - [JavaScript Parser](https://github.com/asyncapi/parser-js/) can be used to parse and validate 2.5.0 documents. Upgraded to `the 1.17.0` version.
 - [AsyncAPI React Component](https://github.com/asyncapi/asyncapi-react) allows you to render and validate the documentation of your asynchronous API provided in the AsyncAPI specification format. Upgraded to the `v1.0.0-next.43` version.

@@ -11,13 +11,13 @@ When using abbreviations and acronyms, write the full term followed by the acron
 > An application can be a microservice, IoT (Internet of Things) device (for example, a sensor), mainframe process, and more.
 > That aspect is particularly beneficial in setups like IoT, where topics are often assigned per device or device segment.
 
- By using acronyms and abbreviations effectively, users can easily understand their context and meaning within the tutorial or guide.
+By using acronyms and abbreviations effectively, users can easily understand their context and meaning within the tutorial or guide.
 
 ## Active Voice
 
- When writing documentation and other forms of content for AsyncAPI, use active voice whenever possible. Here's an example:
+When writing documentation and other forms of content for AsyncAPI, use active voice whenever possible. Here's an example:
 
-✅ **DO:** "In the context of channel addresses within AsyncAPI documents, parameters play a crucial role in defining the dynamic components of an address."  
+✅ **DO:** "In the context of channel addresses within AsyncAPI documents, parameters play a crucial role in defining the dynamic components of an address."
 
 ❌ **DON'T:** "In the context of channel addresses within AsyncAPI documents, the dynamic components of an address were defined by parameters."
 
@@ -42,7 +42,7 @@ When capitalizing titles, headings, and certain words and terms, use the followi
   - Spelled-out acronyms unless they are proper nouns (API, HTTP, URL)
   - Articles (a, an, the)
   - Conjunctions (and, but, or, nor, for, so, yet) unless they are part of a title or heading ("Parameters in channel address")
-  
+
 ## Spelling
 
 Here are some preferred spellings of certain words:
@@ -62,7 +62,7 @@ When writing documentation and other forms of content for AsyncAPI, use the pres
 
 ## Personal Pronouns
 
- Use personal pronouns sparingly when writing tutorials and other forms of content for AsyncAPI to make them more human and approachable to users. Here's an example:
+Use personal pronouns sparingly when writing tutorials and other forms of content for AsyncAPI to make them more human and approachable to users. Here's an example:
 
 ✅ **DO:** "You can add parameters to the `channel.address` by adding a parameter between curly braces like {'{'}`braces`{'}'}. Next, use `channel.parameters` to define your parameters. Finally, leverage the `components.parameters` to enable reusable parameters' definitions across multiple channels."
 
@@ -70,7 +70,7 @@ When writing documentation and other forms of content for AsyncAPI, use the pres
 
 ## Additional Resources
 
-  If you're looking for more information on grammar and style, consider checking out the following guides:
+If you're looking for more information on grammar and style, consider checking out the following guides:
 
 - [Google Style Guide](https://developers.google.com/style)
 - [Microsoft Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/)

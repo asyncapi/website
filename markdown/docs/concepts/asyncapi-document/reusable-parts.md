@@ -43,7 +43,7 @@ UserSignup:
   payload: null
 ```
 
-In the code below, you use another local document, `message-schema.yaml`, through a reference inside the AsyncAPI document. 
+In the code below, you use another local document, `message-schema.yaml`, through a reference inside the AsyncAPI document.
 
 ```yaml
 channels:

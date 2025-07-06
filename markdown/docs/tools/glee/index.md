@@ -30,13 +30,13 @@ Glee expects your project to have some files and folders with special names. Whe
 ├─ package.json       (required)
 ```
 
-|File/Directory|Description|
-|---|---|
-|functions|**Required.** This directory contains all the functions that Glee must execute when it receives a message from the server. Each file must export a default async function.
-|lifecycle|This directory contains application lifecycle functions. These functions will be executed when certain events happen in the application. E.g., `onConnect`, `onServerReady`, `onDisconnect`, etc.
-|.env|The environment variables of your application. **DO NOT PUT SECRETS HERE**.
-|asyncapi.(yaml or json or yml)|**Required.** The [AsyncAPI](https://www.asyncapi.com/docs/specifications/latest) file defines your API. Make sure all the `receive` operations have a name that matches a file name (excluding the extension) in the `functions` directory.
-|glee.config.js| The Glee [configuration file](./env-vars-config.md).
-|package.json|**Required.** The Node.js package definition file. Make sure you include `@asyncapi/glee` as a dependency and add two scripts: `dev` and `start`. They should be running `glee dev` and `glee start` respectively.
+| File/Directory                 | Description                                                                                                                                                                                                                                  |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| functions                      | **Required.** This directory contains all the functions that Glee must execute when it receives a message from the server. Each file must export a default async function.                                                                   |
+| lifecycle                      | This directory contains application lifecycle functions. These functions will be executed when certain events happen in the application. E.g., `onConnect`, `onServerReady`, `onDisconnect`, etc.                                            |
+| .env                           | The environment variables of your application. **DO NOT PUT SECRETS HERE**.                                                                                                                                                                  |
+| asyncapi.(yaml or json or yml) | **Required.** The [AsyncAPI](https://www.asyncapi.com/docs/specifications/latest) file defines your API. Make sure all the `receive` operations have a name that matches a file name (excluding the extension) in the `functions` directory. |
+| glee.config.js                 | The Glee [configuration file](./env-vars-config.md).                                                                                                                                                                                         |
+| package.json                   | **Required.** The Node.js package definition file. Make sure you include `@asyncapi/glee` as a dependency and add two scripts: `dev` and `start`. They should be running `glee dev` and `glee start` respectively.                           |
 
-To understand the structure in a broader way, please refer to the associated page's links. 
+To understand the structure in a broader way, please refer to the associated page's links.

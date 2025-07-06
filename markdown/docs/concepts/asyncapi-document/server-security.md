@@ -1,5 +1,5 @@
 ---
-title: Server security 
+title: Server security
 weight: 200
 ---
 
@@ -7,9 +7,10 @@ Server security refers to the measures and practices implemented to protect serv
 
 In the context of AsyncAPI, securing servers ensures secure exchange of messages between clients and servers. While also protecting sensitive data, preventing unauthorized access, and maintaining the overall security of the API or server.
 
-You can describe how your server is secured with the `security` property where you define which security schemes can be used with the server in context. Each `server` in the AsyncAPI document can have one or more security schemes declared. A security scheme defines a security requirement that must be satisfied to authorize an operation, such as an API key or a username and password. 
+You can describe how your server is secured with the `security` property where you define which security schemes can be used with the server in context. Each `server` in the AsyncAPI document can have one or more security schemes declared. A security scheme defines a security requirement that must be satisfied to authorize an operation, such as an API key or a username and password.
 
 Here is an example of adding security to your server, demonstrating that different servers can employ various security mechanisms:
+
 ```yml
 asyncapi: 3.0.0
 info:
@@ -38,7 +39,8 @@ components:
       description: Download the certificate files from service provider
 ```
 
-Here is an illustration of securing servers: 
+Here is an illustration of securing servers:
+
 ```mermaid
 graph LR
   C[servers]
@@ -53,34 +55,41 @@ graph LR
 ```
 
 Here are some of the security schemes that AsyncAPI supports:
+
 - User/Password
+
   ```yml
   type: userPassword
   ```
 
 - API key (either as a user or as a password)
+
   ```yml
   type: apiKey
   in: user
   ```
 
 - X.509 certificate
+
   ```yml
   type: X509
   ```
 
 - End-to-end encryption (either symmetric or asymmetric)
+
   ```yml
   type: symmetricEncryption
   ```
 
 - HTTP authentication
+
   ```yml
   type: http
   scheme: basic
   ```
 
 - HTTP API key
+
   ```yml
   type: httpApiKey
   name: api_key
@@ -88,6 +97,7 @@ Here are some of the security schemes that AsyncAPI supports:
   ```
 
 - JWT Bearer
+
   ```yml
   type: http
   scheme: bearer
@@ -95,6 +105,7 @@ Here are some of the security schemes that AsyncAPI supports:
   ```
 
 - Implicit oauth2
+
   ```yml
   type: oauth2
   flows:

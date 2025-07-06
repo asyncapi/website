@@ -1,17 +1,18 @@
 ---
-title: "Adding security"
+title: 'Adding security'
 weight: 150
 ---
 
-In production environments, your API may have to access a message broker that's protected by some auth mechanisms. 
+In production environments, your API may have to access a message broker that's protected by some auth mechanisms.
 
 Auth mechanism examples:
-* User & password
-* Certificates
-* API keys
-* OAuth 2
 
-If you're using AsyncAPI to define an API that connects to a message broker, you'll probably use user/password or certificates. Traditionally, message brokers are infrastructure pieces that serve an internal purpose, and they're not exposed to the public. That's why their security mechanisms are also simpler than what we're used to with REST APIs. However, AsyncAPI also helps you define your HTTP streaming APIs, and therefore, it supports more sophisticated mechanisms like OAuth2 or OpenID. 
+- User & password
+- Certificates
+- API keys
+- OAuth 2
+
+If you're using AsyncAPI to define an API that connects to a message broker, you'll probably use user/password or certificates. Traditionally, message brokers are infrastructure pieces that serve an internal purpose, and they're not exposed to the public. That's why their security mechanisms are also simpler than what we're used to with REST APIs. However, AsyncAPI also helps you define your HTTP streaming APIs, and therefore, it supports more sophisticated mechanisms like OAuth2 or OpenID.
 
 Continuing with the `hello world` application example, let's learn how to define a simple security scheme (mechanism) for it.
 

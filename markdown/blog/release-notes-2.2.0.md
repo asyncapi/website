@@ -31,7 +31,7 @@ servers:
   - rabbitmqBrokerInStaging
 subscribe:
   message:
-    $ref: "#/components/messages/WebUICommand"
+    $ref: '#/components/messages/WebUICommand'
 bindings:
   amqp:
     is: queue
@@ -46,6 +46,7 @@ We heard some community members asking for this feature. It was [Gerald Loeffler
 ## New protocol bindings
 
 The specification is now extended to support the following custom protocols through the bindings feature:
+
 - **Anypoint MQ**, thanks to [Gerald Loeffler](https://www.linkedin.com/in/geraldloeffler/). For more details check out [this pull request](https://github.com/asyncapi/spec/pull/545) and [binding definition](https://github.com/asyncapi/bindings/tree/master/anypointmq).
 
 ## Become a contributor

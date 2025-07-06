@@ -16,7 +16,10 @@ export function registerClickAway(callback: (event: MouseEvent) => void) {
       const src = iframe.attributes.getNamedItem('src');
 
       if (src && src.value.startsWith('/') && !src.value.startsWith('//')) {
-        iframe.contentWindow?.document.removeEventListener('click', unregisterClickAway);
+        iframe.contentWindow?.document.removeEventListener(
+          'click',
+          unregisterClickAway,
+        );
       }
     });
 
@@ -30,8 +33,14 @@ export function registerClickAway(callback: (event: MouseEvent) => void) {
     const src = iframe.attributes.getNamedItem('src');
 
     if (src && src.value.startsWith('/') && !src.value.startsWith('//')) {
-      iframe.contentWindow?.document.removeEventListener('click', unregisterClickAway);
-      iframe.contentWindow?.document.addEventListener('click', unregisterClickAway);
+      iframe.contentWindow?.document.removeEventListener(
+        'click',
+        unregisterClickAway,
+      );
+      iframe.contentWindow?.document.addEventListener(
+        'click',
+        unregisterClickAway,
+      );
     }
   });
 }

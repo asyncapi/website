@@ -19,11 +19,12 @@ I enjoy monthly status over weekly one. It is not that I'm just happy I have mor
 
 ## Open governance model aka charter ready for the review
 
-Is an "open governance model" the same as a "charter"? No. Charter is a boring legal document that describes many rules that need to be followed when being under a foundation. One of the things the charter tackles is the general rules on how the project will operate and be governed. 
+Is an "open governance model" the same as a "charter"? No. Charter is a boring legal document that describes many rules that need to be followed when being under a foundation. One of the things the charter tackles is the general rules on how the project will operate and be governed.
 
 I think the most important thing to write here is that the AsyncAPI charter is a reality. It finally arrived and is ready for review. In the special blog post, we also explained what governance model we envision for the AsyncAPI Initiative in more human-friendly words. This content was released and communicated on Tuesday, 9th of March, and we will wait for your feedback until the 23rd of March. It looks like we will kick off April under the umbrella of the foundation :crossed_fingers:
 
 Please take your time to:
+
 - Read [Finding a Good Open Governance Model for AsyncAPI](/blog/governance-motivation) to understand our motivation
 - Check out [this](https://github.com/asyncapi/.github/pull/37) pull request with the charter
 
@@ -46,6 +47,7 @@ We merged the initial pull request to the [Go template](https://github.com/async
 ```bash
 ag https://bit.ly/asyncapi https://github.com/asyncapi/go-template -o output
 ```
+
 Let us know what you think in the GitHub issues section. Thank you, [Jacob Poston](https://github.com/jposton96a) for your initial hard work on the template!
 
 ### TypeScript and NATS
@@ -124,8 +126,8 @@ export interface Address {
 In February we reached 1600 followers on Twitter.
 
 <TwitterTweetEmbed
-  tweetId='1362016089207635968'
-  options={{
+tweetId='1362016089207635968'
+options={{
     cards: 'hidden',
     width: 500,
     align: 'center'
@@ -159,6 +161,7 @@ We are very noisy :sweat_smile:
   # 4. Check out the output
   cat output/asyncapi.md
   ```
+
 - [Maciej Urbanczyk](https://www.linkedin.com/in/maciej-urba%C5%84czyk-909547164/) and [I](https://twitter.com/derberq) (I mean me :smiley:) pushed some features to the AsyncAPI Generator:
   - It supports the latest Node.js 15 and npm 7
   - You can now install generator templates globally. For more details, read [this](https://github.com/asyncapi/generator/#global-templates-installed-with-yarn-or-npm) new section in the readme.
@@ -172,6 +175,6 @@ Check out all the [releases](https://github.com/asyncapi/generator/releases)
 - Read this important [10 FAQs About Event-Driven APIs](https://duckster.medium.com/10-faqs-about-event-driven-apis-50ee9c94bbb8) from [Dakshitha Ratnayake](https://twitter.com/techieducky)
 - Great summary from Nordic APIs and [Vyom Srivastava](https://www.linkedin.com/in/vyomsrivastava/) on [8+ AsyncAPI Documentation Generators](https://nordicapis.com/8-asyncapi-documentation-generators/)
 - Fran Mendez was a part of Postman's live stream. Learn how to get from zero to AsyncAPI in just about 1h 30min. I hope it can be done faster, and Fran was just having too much small talk with Kevin and Kin :sweat_smile:
-<YouTube id="g2pqCIhXQ3k" />
+  <YouTube id="g2pqCIhXQ3k" />
 
 > Photo by <a href="https://unsplash.com/@dnevozhai?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Denys Nevozhai</a> on <a href="https://unsplash.com/">Unsplash</a>

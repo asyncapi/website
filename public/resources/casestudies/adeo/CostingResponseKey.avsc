@@ -4,8 +4,22 @@
   "name": "CostingResponseKey",
   "version": 1,
   "fields": [
-    {"name": "RequesterCode", "type": { "type": "string",  "avro.java.string": "String" }, "doc": "Requester code"},
-    {"name": "ClientCode", "type": { "type": "string",  "avro.java.string": "String" }, "doc": "The client (Business Unit) code the response is for.", "example": "1"},
-    {"name": "ProductId", "type": { "type": "string",  "avro.java.string": "String" }, "doc": "Product Id.", "example": "12345678"}
+    {
+      "name": "RequesterCode",
+      "type": { "type": "string", "avro.java.string": "String" },
+      "doc": "Requester code"
+    },
+    {
+      "name": "ClientCode",
+      "type": { "type": "string", "avro.java.string": "String" },
+      "doc": "The client (Business Unit) code the response is for.",
+      "example": "1"
+    },
+    {
+      "name": "ProductId",
+      "type": { "type": "string", "avro.java.string": "String" },
+      "doc": "Product Id.",
+      "example": "12345678"
+    }
   ]
 }

@@ -33,10 +33,10 @@ export async function getData(): Promise<ToolsData> {
       `https://api.github.com/search/code?q=filename:.asyncapi-tool&per_page=${PerPage}&page=${pageNo}`;
     const headers = {
       accept: 'application/vnd.github.text-match+json',
-      authorization: `token ${process.env.GITHUB_TOKEN}`
+      authorization: `token ${process.env.GITHUB_TOKEN}`,
     };
     const result = await axios.get(getReqUrl(maxPerPage, page), {
-      headers
+      headers,
     });
 
     incompleteResult = result.data.incomplete_results || false;
@@ -52,7 +52,7 @@ export async function getData(): Promise<ToolsData> {
       // pause for 1 second to avoid rate limiting
       await pause(1000);
       const nextPageData = await axios.get(getReqUrl(maxPerPage, page), {
-        headers
+        headers,
       });
 
       const { data } = nextPageData;

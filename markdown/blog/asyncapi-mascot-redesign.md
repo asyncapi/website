@@ -29,7 +29,6 @@ Throughout the redesign process, I kept asking myself questions to ensure the ne
 
 As it turns out, I’m not the only one with these questions. Within and outside the AsyncAPI community, folks have often wondered about the origins of these characters. So, I recently sat down with Fran Mendez, the founder of AsyncAPI, to get their backstory. This is the story of Eve and Chan—their biography.
 
-
 ## The Birth of Eve and Chan
 
 [Fran Méndez’s](https://www.linkedin.com/in/fmvilas) idea was to have a mascot that people could easily associate with the AsyncAPI brand. Most open-source projects and companies use mascots to reinforce their brand identity, so why not AsyncAPI? Since Linux has Tux, the Penguin, and GitHub has Octocat, Fran wanted something like that for AsyncAPI.
@@ -41,12 +40,9 @@ An illustrator from a studio in Colombia designed the first version of the masco
 
 Fran took to his socials and asked the community for suggestions. Someone came up with Eve and Chan—Eve for "events" and Chan for "channels." Not only were they catchy, but they also tied back to what AsyncAPI does. Real names with real meaning. It was brilliant.
 
-
 ![Poll for mascot name suggestions][poll]
 
-
 If you’re wondering, like I was, why there are two mascots instead of just one, it’s because they were designed to tell a story. Eve is the skilled, knowledgeable one who always does things correctly, while Chan is slightly clumsy and represents the mistakes people often make in event-driven architecture.
-
 
 ## Why the Redesign?
 
@@ -54,14 +50,11 @@ About two years after their debut in 2019, the mascots were due for a visual ref
 
 In 2021, a GitHub issue was created to kick off discussions and track progress on the redesign. However, for a couple of years, not much was done. Then, in September last year, I expressed interest in working on the project and was assigned the task. And the rest, as they say, is history. For more details about the redesign, you can check out the [mascot documentation here](https://github.com/asyncapi/brand/blob/e17f6bb7f877d9ae28bb9014a0f9763544f73350/illustrations/mascots/README.md).
 
-
 ## Meet Eve and Chan
 
 After four months of multiple design iterations, community voting, plenty of back-and-forth, and a few unavoidable breaks, I’m excited to introduce the redesigned AsyncAPI mascots.
 
-
 ![AsyncAPI Mascots][mascots]
-
 
 ## What's Next for Eve and Chan?
 
@@ -69,6 +62,5 @@ Designing Eve and Chan was both a challenge and an honor, and I can’t wait to 
 
 So, if you’ve ever wondered about the story behind these little characters, now you know, and if you’re part of the AsyncAPI community, get ready. You’ll be seeing a lot more of them.
 
-[poll]: /img/posts/mascot-poll.webp "Poll for mascot name suggestions"
-
-[mascots]: /img/posts/mascots.webp "AsyncAPI Mascots"
+[poll]: /img/posts/mascot-poll.webp 'Poll for mascot name suggestions'
+[mascots]: /img/posts/mascots.webp 'AsyncAPI Mascots'

@@ -42,7 +42,7 @@ export function sortFilter(arr: { value: string }[]): { value: string }[] {
 export const applyFilterList = (
   checks: FilterCriteria[],
   data: DataObject[],
-  setFilters: (lists: { [key: string]: FilterOption[] }) => void
+  setFilters: (lists: { [key: string]: FilterOption[] }) => void,
 ): void => {
   if (Object.keys(checks).length) {
     const lists: { [key: string]: FilterOption[] } = {};
@@ -64,7 +64,7 @@ export const applyFilterList = (
                   if (!lists[key].some((e) => e.value === a.name)) {
                     const newData = {
                       value: a.name,
-                      text: a.name
+                      text: a.name,
                     };
 
                     lists[key].push(newData);
@@ -73,7 +73,7 @@ export const applyFilterList = (
                 } else if (!lists[key].some((e) => e.value === a)) {
                   const newData = {
                     value: a,
-                    text: a
+                    text: a,
                   };
 
                   lists[key].push(newData);
@@ -83,7 +83,7 @@ export const applyFilterList = (
             } else if (!lists[key].some((e) => e.value === result)) {
               const newData = {
                 value: result,
-                text: result
+                text: result,
               };
 
               lists[key].push(newData);
@@ -94,14 +94,14 @@ export const applyFilterList = (
               if (e.name) {
                 const newData = {
                   value: e.name,
-                  text: e.name
+                  text: e.name,
                 };
 
                 lists[key].push(newData);
               } else {
                 const newData = {
                   value: e,
-                  text: e
+                  text: e,
                 };
 
                 lists[key].push(newData);
@@ -110,7 +110,7 @@ export const applyFilterList = (
           } else {
             const newData = {
               value: result,
-              text: result
+              text: result,
             };
 
             lists[key].push(newData);
@@ -131,7 +131,7 @@ export const applyFilterList = (
 export const onFilterApply = (
   inputData: DataObject[],
   onFilter: (result: DataObject[], query: Filter) => void,
-  query: Filter
+  query: Filter,
 ): void => {
   let result = inputData;
 

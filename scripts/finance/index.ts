@@ -30,17 +30,37 @@ export async function buildFinanceInfoList({
   configDir,
   financeDir,
   year,
-  jsonDataDir
+  jsonDataDir,
 }: BuildFinanceInfoListProps): Promise<void> {
   try {
-    const expensesPath = resolve(currentDir, configDir, financeDir, year, 'Expenses.yml');
-    const expensesLinkPath = resolve(currentDir, configDir, financeDir, year, 'ExpensesLink.yml');
+    const expensesPath = resolve(
+      currentDir,
+      configDir,
+      financeDir,
+      year,
+      'Expenses.yml',
+    );
+    const expensesLinkPath = resolve(
+      currentDir,
+      configDir,
+      financeDir,
+      year,
+      'ExpensesLink.yml',
+    );
 
     // Check if the files exist
-    await Promise.all([access(expensesPath, constants.F_OK), access(expensesLinkPath, constants.F_OK)]);
+    await Promise.all([
+      access(expensesPath, constants.F_OK),
+      access(expensesLinkPath, constants.F_OK),
+    ]);
 
     // Ensure the directory exists before writing the files
-    const jsonDirectory = resolve(currentDir, configDir, financeDir, jsonDataDir);
+    const jsonDirectory = resolve(
+      currentDir,
+      configDir,
+      financeDir,
+      jsonDataDir,
+    );
 
     await mkdir(jsonDirectory, { recursive: true });
 

@@ -1,6 +1,6 @@
 ---
-title: "Mistake Odyssey"
-Subtitle: "Git, GitHub, VS Code and Markdown for non-programmers"
+title: 'Mistake Odyssey'
+Subtitle: 'Git, GitHub, VS Code and Markdown for non-programmers'
 date: 2021-07-15T06:00:00+01:00
 type: Communication
 tags:
@@ -14,6 +14,7 @@ authors:
     byline: AsyncAPI Press
 excerpt: Experience with Git, GitHub, VS Code and Markdown for non-developers within AsyncAPI.
 ---
+
 The human being for many centuries delegated the responsibility of preserving a great part of their culture, of the most precious information, in the capacity of keeping in their memory the data, the names, the places, the details...
 
 In the Ancient Greece, Homer was the first to leave written traces of what until then were only remembered words, poems heard and recited from generation to generation. All this with the invaluable help of the muses. What a relief! He must have thought. What enormous risk and stress must have been in the atmosphere of those times. What would happen if amnesia came, the sudden loss of information. To forget is human. To err is human.
@@ -38,7 +39,7 @@ Sometimes opportunities appear when you least expect them. Thus AsyncAPI appeare
 
 ## Learning from mistakes
 
-AsyncAPI is an open, free and collaborative project so the community needs to work with tools that allow working from transparency and horizontality creating an agile system. We are talking about Git, GitHub and VS Code, three free and open source software tools. 
+AsyncAPI is an open, free and collaborative project so the community needs to work with tools that allow working from transparency and horizontality creating an agile system. We are talking about Git, GitHub and VS Code, three free and open source software tools.
 
 When it comes to writing, the project relies on plain text, specifically the use of Markdown. It is considered a language that has the purpose of allowing the creation of content in a simple way of writing, and that at all times maintains a readable design. VS Code is the text editor in which we will work with Markdown. And then Git and GitHub conform the system that allows to store the information and easily retrieve it in case of loss, failure or error, as well as to consult the changes and revert them at any time.
 
@@ -46,9 +47,9 @@ Evidently my immersion in these programs was for weeks an odyssey through the va
 
 Fortunately AsyncAPI has a community that works as a great team, in it I found people who help me to dispel my doubts and solve my mistakes. I take this opportunity to thank you from these lines, especially [@anbreaker](https://github.com/anbreaker/) for your patience 😅.
 
-## The end of a nightmare 
+## The end of a nightmare
 
-Multidisciplinarity is increasingly on the rise. It has been amply demonstrated that the convergence of different disciplines in the same project achieves a more successful and impactful result. This peculiarity makes us get closer and closer to disciplines that work with different tools than the ones we are used to. 
+Multidisciplinarity is increasingly on the rise. It has been amply demonstrated that the convergence of different disciplines in the same project achieves a more successful and impactful result. This peculiarity makes us get closer and closer to disciplines that work with different tools than the ones we are used to.
 
 Beyond the mistrust or distrust derived from leaving our comfort zones, all this can be approached as an opportunity for learning. Ultimately, we discover new tools that make our work easier and more productive. A treasure hunt. An unexpected return to Ithaca. The odyssey comes to an end.
 

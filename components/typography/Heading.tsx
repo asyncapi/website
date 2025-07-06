@@ -33,7 +33,7 @@ export default function Heading({
   textColor = 'text-primary-800',
   className = '',
   children,
-  id
+  id,
 }: HeadingProps) {
   const Tag = level ?? HeadingLevel.h2;
 

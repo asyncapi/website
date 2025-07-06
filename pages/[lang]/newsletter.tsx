@@ -15,8 +15,8 @@ export { getStaticPaths, getStaticProps };
 export default function NewsletterIndexPage() {
   return (
     <div>
-      <Head title='Newsletter' />
-      <div className='mt-12 py-12'>
+      <Head title="Newsletter" />
+      <div className="mt-12 py-12">
         <Container wide>
           <NewsletterSubscribe />
         </Container>

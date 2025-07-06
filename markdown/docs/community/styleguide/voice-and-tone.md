@@ -1,14 +1,15 @@
 ---
-title: "Voice and Tone"
+title: 'Voice and Tone'
 description: Guidelines for voice and tone in the documentation.
 weight: 70
 ---
 
 ## Introduction
+
 Voice and tone are essential parts of writing effective documentation for AsyncAPI. How we write significantly impacts how our readers perceive and interact with our documentation. We communicate in a clear, instructive voice and a friendly tone to help readers understand complex technical concepts and feel confident in using the AsyncAPI specification.
 
-
 ## Our Voice
+
 At AsyncAPI, we consider our voice to be:
 
 - Clear and concise throughout the documentation. This way, readers can get helpful information quickly, even at a glance.
@@ -29,8 +30,8 @@ From the above example sentences, the active voice is easier to understand than 
 
 - A voice that is accessible to both technical and non-technical audiences.
 
-
 ## Our Tone
+
 <Remember>
 
 While your voice remains constant, your tone may vary based on the audience's needs in certain contexts.
@@ -46,8 +47,8 @@ At AsyncAPI, we consider our tone to be:
 
 - A consistent tone throughout the documentation to maintain coherence.
 
-
 ## Style Tips
+
 Here are a few key elements of writing AsyncAPI's voice:
 
 - Use "you" to address the reader directly, e.g., "You will be using the Eclipse Mosquitto broker."

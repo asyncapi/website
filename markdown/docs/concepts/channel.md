@@ -4,9 +4,11 @@ weight: 20
 ---
 
 # What is a channel?
+
 A _channel_ is a mechanism created by the server that facilitates the organization and transmission of messages. Depending on the used protocol, users can define channels as a _topic_, _queue_, _routing key_, _path_, or _subject_.
 
 # Why do we need channels?
+
 Channels are pivotal for establishing communication between producers and consumers. They enable producers to send messages, while consumers receive messages from specific channels. The primary function of a channel is to ensure that the intended messages reach the appropriate consumers.
 
 ```mermaid

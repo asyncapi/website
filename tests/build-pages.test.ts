@@ -1,7 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 
-import { capitalizeJsxTags, copyAndRenameFiles, ensureDirectoryExists } from '../scripts/build-pages';
+import {
+  capitalizeJsxTags,
+  copyAndRenameFiles,
+  ensureDirectoryExists,
+} from '../scripts/build-pages';
 
 describe('capitalizeJsxTags', () => {
   test('should capitalize JSX tags', () => {
@@ -33,7 +37,11 @@ describe('copyAndRenameFiles', () => {
 
     fs.writeFileSync(path.join(SRC_DIR, 'test.md'), fileContent, 'utf8');
     fs.mkdirSync(path.join(SRC_DIR, 'nested'), { recursive: true });
-    fs.writeFileSync(path.join(SRC_DIR, 'nested', 'nested.md'), fileContent, 'utf8');
+    fs.writeFileSync(
+      path.join(SRC_DIR, 'nested', 'nested.md'),
+      fileContent,
+      'utf8',
+    );
   });
 
   afterAll(() => {
@@ -43,8 +51,14 @@ describe('copyAndRenameFiles', () => {
   test('should copy and rename files correctly', () => {
     copyAndRenameFiles(SRC_DIR, TARGET_DIR);
 
-    const targetFile = fs.readFileSync(path.join(TARGET_DIR, 'test.mdx'), 'utf8');
-    const nestedTargetFile = fs.readFileSync(path.join(TARGET_DIR, 'nested', 'nested.mdx'), 'utf8');
+    const targetFile = fs.readFileSync(
+      path.join(TARGET_DIR, 'test.mdx'),
+      'utf8',
+    );
+    const nestedTargetFile = fs.readFileSync(
+      path.join(TARGET_DIR, 'nested', 'nested.mdx'),
+      'utf8',
+    );
 
     expect(targetFile).toBe('<Table><Tr><Td>Hello</Td></Tr></Table>');
     expect(nestedTargetFile).toBe('<Table><Tr><Td>Hello</Td></Tr></Table>');
@@ -75,7 +89,7 @@ describe('copyAndRenameFiles', () => {
       isSocket: () => false,
       isSymbolicLink: () => false,
       parentPath: '',
-      path: ''
+      path: '',
     };
     const readdirSyncSpy = jest
       .spyOn(fs, 'readdirSync')

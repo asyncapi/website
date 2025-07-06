@@ -1,5 +1,5 @@
 ---
-title: "Event-Streaming: An Additional Architectural Style to Supplement API Design"
+title: 'Event-Streaming: An Additional Architectural Style to Supplement API Design'
 date: 2020-07-07T09:00:00+01:00
 type: Engineering
 tags:
@@ -26,7 +26,7 @@ To illustrate, assume we have a project management API with the following intera
 1. The assignee marks the task as complete (e.g. PUT /tasks/\{taskId\})
 
 An API following this design works if design of the user interface closely mirrors those endpoints. But suppose an additional application requirement is to ‘automatically’ update a task’s status when marked complete by another user. With a request/response web-API, an option is to incessantly poll a status API on the chance a status might have changed. This is both cumbersome and error-prone.
-Instead of polling, we can introduce an __event-driven architecture__.
+Instead of polling, we can introduce an **event-driven architecture**.
 
 ## Introduction to Event-Driven Architecture
 
@@ -53,13 +53,13 @@ Let’s revisit our previous example. We needed to solve two separate requiremen
 
 If we introduce a message-driven architecture to our solution, we can develop an API that delivers project and task resources that offer the necessary capabilities (create, read, update, delete, and mark as complete). Our API doesn’t need to know about how the task completion event notification will be used, including that an email will be sent. All it needs to do is publish event messages when those events occur and allow other services to take action as appropriate. Events this API may publish include:
 
-![Example of API events](/img/posts/event-streaming-an-additional-architectural-style-to-suplement-api-design/event-examples.webp "Example of API events")
+![Example of API events](/img/posts/event-streaming-an-additional-architectural-style-to-suplement-api-design/event-examples.webp 'Example of API events')
 
 Interested parties can then subscribe to the event(s) they are interested in and safely ignore the rest. In our example, we may end up with three components:
 
-1. __Projects API__ — Manages the Projects and Project Tasks resources via a REST-based API. The API may be comprised of one or more microservices that implement the capabilities offered by the REST API. When any event, from the list in the table above, occurs then the API publishes an event into the appropriate message stream for consumption by event subscribers
-1. __Task Completed Email Microservice__ — Subscribes to the Task.Completed event, notifying project manager(s) via email when any task has been marked as completed
-1. __Task Modified Email Microservice__ — Subscribes to the Task.Updated event, notifying all team members via email when any task has been edited
+1. **Projects API** — Manages the Projects and Project Tasks resources via a REST-based API. The API may be comprised of one or more microservices that implement the capabilities offered by the REST API. When any event, from the list in the table above, occurs then the API publishes an event into the appropriate message stream for consumption by event subscribers
+1. **Task Completed Email Microservice** — Subscribes to the Task.Completed event, notifying project manager(s) via email when any task has been marked as completed
+1. **Task Modified Email Microservice** — Subscribes to the Task.Updated event, notifying all team members via email when any task has been edited
 
 The API has no awareness of the two microservices subscribed to the specific events; it just publishes the events to the appropriate message stream. The solution is considered loosely coupled and therefore capable of evolving over time as new requirements emerge, perhaps with new types of notifications (e.g. SMS, web dashboard alerts) or integrations (e.g. synching to JIRA).
 

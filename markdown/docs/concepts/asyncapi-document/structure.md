@@ -10,7 +10,7 @@ The structure of an AsyncAPI document is defined in a specific format and must f
 Root elements of an AsyncAPI document provide an overview of the API's characteristics and behavior. These root elements collectively define the metadata, channels, components, and more of an AsyncAPI document. They provide a comprehensive overview of the API's characteristics and behavior.
 
 ```mermaid
-graph 
+graph
 A[asyncapi]
 B[info]
 C[servers]
@@ -38,9 +38,10 @@ The `info` field encompasses various fields such as:
 - `contact`: Contact information of the API's owner or maintainer (name, email, and URL).
 - `license`: API's license information, including name and URL.
 - `tags`: Tags for categorizing and organizing API documentation. Also used for grouping applications logically.
-- `externalDocs`:  Links to additional, external documentation related to the API.
+- `externalDocs`: Links to additional, external documentation related to the API.
 
 Here's a visual representation of the `info` field and its properties:
+
 ```mermaid
 graph LR
   B(info)
@@ -64,6 +65,7 @@ graph LR
 ```
 
 Below is an example of the `info` field:
+
 ```yaml
 info:
   title: My Event-Driven API
@@ -82,7 +84,7 @@ info:
     - name: Authentication
       description: APIs for authentication and authorization
   externalDocs:
-    description: Additional documentation 
+    description: Additional documentation
     url: https://example.com/docs
 ```
 
@@ -92,19 +94,20 @@ The `servers` field allows you to detail a range of servers, outlining the netwo
 
 Some of the fields of individual `servers` field are:
 
-- `host`: The server host name. It may include the port. 
+- `host`: The server host name. It may include the port.
 - `protocol`: The protocol or messaging protocol used by the server (e.g., AMQP, MQTT, WebSocket).
 - `protocolVersion`: The version of the protocol used for the connection.
 - `pathname`: The path to a resource in the host.
 - `description`: An optional string describing the server.
 - `title`: A human-friendly title for the server.
 - `summary`: A summary of the server.
-- `security`: A declaration of which security schemes can be used with this server. 
+- `security`: A declaration of which security schemes can be used with this server.
 - `tags`: A list of tags for logical grouping and categorization of servers.
 - `externalDocs`: Additional external documentation for this server.
 - `bindings`: A map where the keys describe the name of the protocol and the values describe protocol-specific definitions for the server.
 
 Here's a visual representation of the `server` object and its properties:
+
 ```mermaid
 graph LR
   A[server]
@@ -136,13 +139,14 @@ graph LR
 ```
 
 Below is an example of the `servers` field with multiple servers:
+
 ```yaml
 servers:
   production:
     host: rabbitmq.in.mycompany.com:5672
     pathname: /v1
     protocol: amqp
-    protocolVersion: "1.0"
+    protocolVersion: '1.0'
     description: Production RabbitMQ broker (uses the `production` vhost).
     title: Production Server
     summary: Production environment server
@@ -163,7 +167,7 @@ servers:
     host: rabbitmq.in.mycompany.com:5672
     pathname: /v1
     protocol: amqp
-    protocolVersion: "1.0"
+    protocolVersion: '1.0'
     description: Staging RabbitMQ broker (uses the `staging` vhost).
     title: Staging Server
     summary: Staging environment server
@@ -194,13 +198,14 @@ Key components within the `channels` field include:
 - `title`: A human-readable title for the channel.
 - `summary`: A short yet brief summary of the channel.
 - `description`: A description of the channel, providing additional context and details of the message.
-- `servers`: An array of `$ref` pointers to the definition of the servers in which this channel is available. If servers are absent or empty, this channel must be available on all the servers defined in the `servers` field. 
+- `servers`: An array of `$ref` pointers to the definition of the servers in which this channel is available. If servers are absent or empty, this channel must be available on all the servers defined in the `servers` field.
 - `parameters`: A map of the parameters included in the channel address.
 - `tags`: A list of tags for logical grouping of channels.
 - `externalDocs`: Additional external documentation for this channel.
 - `bindings`: A map where the keys describe the name of the protocol and the values describe protocol-specific definitions for the channel.
 
 Here's a visual representation of the `channels` field and its properties:
+
 ```mermaid
 graph LR
   A[channel]
@@ -226,6 +231,7 @@ graph LR
 ```
 
 Below is an example of of the `channels` field with one channel:
+
 ```yaml
 channels:
   user:
@@ -262,19 +268,20 @@ The `operations` field is used to comprehensively outline the various operations
 Key components within the `operations` field include:
 
 - `action`: Use `send` type when it's expected that the application will send a message to the given channel, and `receive` type when the application should expect to receive messages from the given channel.
-- `channel`: A `$ref` pointer to the definition of the channel in which this operation is performed. 
-- `title`:	A human-friendly title for the operation.
+- `channel`: A `$ref` pointer to the definition of the channel in which this operation is performed.
+- `title`: A human-friendly title for the operation.
 - `summary`: A short summary of what the operation is about.
-- `description`: A verbose explanation of the operation. 
-- `security`:	A declaration of which security schemes are associated with this operation.
-- `tags`:	A list of tags for logical grouping and categorization of operations.
-- `externalDocs`:	Additional external documentation for this operation.
-- `bindings`	A map where the keys describe the name of the protocol and the values describe protocol-specific definitions for the operation.
-- `traits`:	A list of traits to apply to the operation object. 
-- `messages`:	A list of $ref pointers pointing to the supported Message Objects that can be processed by this operation.
-- `reply`:	The definition of the reply in a reply/request operation.
+- `description`: A verbose explanation of the operation.
+- `security`: A declaration of which security schemes are associated with this operation.
+- `tags`: A list of tags for logical grouping and categorization of operations.
+- `externalDocs`: Additional external documentation for this operation.
+- `bindings` A map where the keys describe the name of the protocol and the values describe protocol-specific definitions for the operation.
+- `traits`: A list of traits to apply to the operation object.
+- `messages`: A list of $ref pointers pointing to the supported Message Objects that can be processed by this operation.
+- `reply`: The definition of the reply in a reply/request operation.
 
 Here's a visual representation of the `operations` field and its properties:
+
 ```mermaid
 graph LR
   A[operation]
@@ -291,7 +298,7 @@ graph LR
   L(reply)
   M(address)
   N(channel)
-  
+
   A --> B
   A --> C
   A --> D
@@ -308,6 +315,7 @@ graph LR
 ```
 
 Below is an example of of the `operations` field with one operation:
+
 ```yaml
 operations:
   sendUserSignUp:
@@ -335,7 +343,7 @@ operations:
       amqp:
         ack: false
     traits:
-      - $ref: "#/components/operationTraits/kafka"
+      - $ref: '#/components/operationTraits/kafka'
     messages:
       - $ref: '#/components/messages/userSignedUp'
     reply:
@@ -353,7 +361,7 @@ The `components` field allows for the definition of reusable structures or defin
 
 Key components of the `components` field include:
 
-- `schemas`: An object to hold the reusable [Schema Object](/docs/reference/specification/latest#schemaObject). 
+- `schemas`: An object to hold the reusable [Schema Object](/docs/reference/specification/latest#schemaObject).
 - `servers`: An object to hold the reusable [Server Objects](/docs/reference/specification/latest#serverObject).
 - `channels`: An object to hold the reusable [Channel Objects](/docs/reference/specification/latest#channelObject).
 - `operations`: An object to hold the reusable [Operation Item Objects](/docs/reference/specification/latest#operationObject).
@@ -374,6 +382,7 @@ Key components of the `components` field include:
 - `messageBindings`: An object to hold the reusable [Message Bindings Objects](/docs/reference/specification/latest#messageBindingsObject).
 
 Here's a visual representation of the `components` field and its properties:
+
 ```mermaid
 graph LR
   A[components]
@@ -419,9 +428,9 @@ graph LR
 ```
 
 Here's a code example of the components object in an AsyncAPI document:
+
 ```yaml
 components:
-
   schemas:
     Category:
       type: object
@@ -480,7 +489,7 @@ components:
       payload:
         $ref: '#/components/schemas/Category'
       correlationId:
-          $ref: '#/components/correlationIds/default'
+        $ref: '#/components/correlationIds/default'
       bindings:
         $ref: '#/components/messageBindings/user'
 
@@ -514,7 +523,6 @@ components:
   replyAddresses:
     signupReply:
       location: '$message.header#/replyTo'
-
 
   securitySchemes:
     oauth:

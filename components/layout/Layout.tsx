@@ -21,13 +21,15 @@ interface ILayoutProps {
 export default function Layout({ children }: ILayoutProps): React.JSX.Element {
   const { pathname } = useRouter();
   const posts = getAllPosts();
-  const allDocPosts = posts.docs.filter((p) => p.slug.startsWith('/docs/')) as unknown as NavigationItems;
+  const allDocPosts = posts.docs.filter((p) =>
+    p.slug.startsWith('/docs/'),
+  ) as unknown as NavigationItems;
 
   if (pathname.startsWith('/docs')) {
     const post = getDocBySlug(posts.docs as IPost[], pathname) as IPost;
 
     return (
-      <div data-testid='Docs-main-container'>
+      <div data-testid="Docs-main-container">
         <DocsLayout post={post} navItems={allDocPosts}>
           {children}
         </DocsLayout>
@@ -38,8 +40,11 @@ export default function Layout({ children }: ILayoutProps): React.JSX.Element {
     const post = getPostBySlug(pathname, 'blog');
 
     return (
-      <div data-testid='Blogs-main-container'>
-        <BlogLayout post={post as unknown as IPosts['blog'][number]} navItems={posts.blog}>
+      <div data-testid="Blogs-main-container">
+        <BlogLayout
+          post={post as unknown as IPosts['blog'][number]}
+          navItems={posts.blog}
+        >
           {children}
         </BlogLayout>
       </div>
@@ -47,15 +52,21 @@ export default function Layout({ children }: ILayoutProps): React.JSX.Element {
   }
   if (pathname === '/blog') {
     return (
-      <div data-testid='Blogs-sub-container'>
-        <BlogContext.Provider value={{ navItems: posts.blog }}>{children}</BlogContext.Provider>
+      <div data-testid="Blogs-sub-container">
+        <BlogContext.Provider value={{ navItems: posts.blog }}>
+          {children}
+        </BlogContext.Provider>
       </div>
     );
   }
   const post = getPostBySlug(pathname);
 
   if (post) {
-    return <GenericPostLayout post={post as unknown as IPosts['blog'][number]}>{children}</GenericPostLayout>;
+    return (
+      <GenericPostLayout post={post as unknown as IPosts['blog'][number]}>
+        {children}
+      </GenericPostLayout>
+    );
   }
 
   return children as React.JSX.Element;

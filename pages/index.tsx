@@ -14,12 +14,12 @@ export default function HomePage() {
 
   return (
     <>
-      <Head title='AsyncAPI Initiative for event-driven APIs' />
-      <div className='h-screen'>
+      <Head title="AsyncAPI Initiative for event-driven APIs" />
+      <div className="h-screen">
         <Loader
-          loaderText='Loading...'
-          loaderIcon={<AsyncAPIColorIcon alt='Loading...' />}
-          className='my-60'
+          loaderText="Loading..."
+          loaderIcon={<AsyncAPIColorIcon alt="Loading..." />}
+          className="my-60"
           dark={false}
           pulsating
         />

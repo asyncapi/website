@@ -7,15 +7,15 @@ const meta: Meta<typeof SelectTags> = {
   component: SelectTags,
   argTypes: {
     name: {
-      control: { type: 'text' }
+      control: { type: 'text' },
     },
     bgColor: {
-      control: { type: 'text' }
+      control: { type: 'text' },
     },
     borderColor: {
-      control: { type: 'text' }
-    }
-  }
+      control: { type: 'text' },
+    },
+  },
 };
 
 export default meta;
@@ -26,6 +26,6 @@ export const DefaultTag: Story = {
   args: {
     name: 'Default',
     bgColor: 'bg-gray-200',
-    borderColor: 'border-gray-200'
-  }
+    borderColor: 'border-gray-200',
+  },
 };

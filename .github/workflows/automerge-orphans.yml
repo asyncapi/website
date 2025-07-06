@@ -5,7 +5,7 @@ name: 'Notify on failing automerge'
 
 on:
   schedule:
-  - cron: "0 0 * * *"
+    - cron: '0 0 * * *'
 
 jobs:
   identify-orphans:
@@ -55,7 +55,7 @@ jobs:
         uses: asyncapi/.github/.github/actions/slackify-markdown@master
         id: issuemarkdown
         with:
-          markdown: "-> [${{steps.orphans.outputs.title}}](${{steps.orphans.outputs.url}})"
+          markdown: '-> [${{steps.orphans.outputs.title}}](${{steps.orphans.outputs.url}})'
       - if: steps.orphans.outputs.found == 'true'
         name: Send info about orphan to slack
         uses: rtCamp/action-slack-notify@c33737706dea87cd7784c687dadc9adf1be59990 # Using v2.3.2

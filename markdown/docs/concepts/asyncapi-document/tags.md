@@ -19,7 +19,8 @@ The `tags` object is a list of tags and individual `tag` objects, each containin
 
 In an AsyncAPI document, the function of tags within the `tags` object differs depending on context. For example, the `tags` object can be employed for consistent usage of tags across the document and logical grouping of components. Alternatively, tags can be applied to individual components such as `servers` or `channels`, serving more specific purposes within those contexts.
 
-The `tags` object fields include: 
+The `tags` object fields include:
+
 - `name`: The name of the tag.
 - `description`: A short description for the tag.
 - `externalDocs`: Additional external documentation for the tag.
@@ -29,6 +30,7 @@ The `tags` object fields include:
 When specified in the `tags` property of the info object, tags offer a comprehensive categorization for the entire AsyncAPI document. These globally defined tags under the `info` object impart an overarching context, representing key themes or functional areas within the event-driven system. They effectively group elements like channels or servers by their broader relevance, providing a holistic understanding of the application's structure.
 
 Here's a visual representation of the `tags` object inside an `info` object in an AsyncAPI document:
+
 ```mermaid
 graph LR
   B[info]
@@ -48,6 +50,7 @@ graph LR
 ```
 
 Below is an example of the `tags` object inside the `info` object in an AsyncAPI document:
+
 ```yaml
 asyncapi: 3.0.0
 info:
@@ -58,7 +61,7 @@ info:
     of the event-driven system.
   tags:
     - name: Applications
-      description: All applications related topics. 
+      description: All applications related topics.
       externalDocs:
         description: More info about applications
         url: https://applications.example.com/docs
@@ -70,9 +73,11 @@ info:
 ```
 
 ### `tags` in `servers` object
+
 When tags are utilized within the `servers` object's `tags` property, they specifically pertain to server configurations and characteristics. These tags enable server categorization by various criteria, including geographical location, environment type (i.e., production or development), or unique server features. Using `tags` in the `servers` object allows for the categorization and organization of servers based on specific tags or labels. Using the `tags` object under the `servers` object is optional.
 
 Here's a visual representation of the `tags` object inside a `servers` object in an AsyncAPI document:
+
 ```mermaid
 graph LR
   B[servers]
@@ -90,6 +95,7 @@ graph LR
 ```
 
 Below is an example of the `tags` object inside the `servers` object in an AsyncAPI document:
+
 ```yaml
 asyncapi: 3.0.0
 
@@ -104,24 +110,24 @@ servers:
     protocol: amqp
     protocolVersion: 0-9-1
     tags:
-      - name: "env:development"
-        description: "This environment is meant for developers to run their tests."
+      - name: 'env:development'
+        description: 'This environment is meant for developers to run their tests.'
   production:
     host: rabbitmq.in.mycompany.com:5672
     description: RabbitMQ broker for the production environment.
     protocol: amqp
     protocolVersion: 0-9-1
     tags:
-      - name: "env:production"
-        description: "This environment is the live environment available for final users."
+      - name: 'env:production'
+        description: 'This environment is the live environment available for final users.'
 ```
 
 ### `tags` in `channels` object
 
 Tags linked with individual channels enable logical grouping and categorization based on specific functionalities or business domains. When the `tags` object is used within a `channels` object in an AsyncAPI document, its context is either confined to the `channels` object, impacting only that section, or it can be employed for consistent tagging across the document for cohesive grouping. Using the `tags` object under the `channels` object is optional.
 
-
 Here's a visual representation of the `tags` object inside a `channels` object in an AsyncAPI document:
+
 ```mermaid
 graph LR
   A[channel]
@@ -136,8 +142,8 @@ graph LR
   A --> E
   A --> P
   P --> F
-  P --> G 
-  P --> I 
+  P --> G
+  P --> I
   style A fill:#47BCEE,stroke:#000;
   style P fill:#47BCEE,stroke:#000;
   style F fill:#47BCEE,stroke:#000;
@@ -146,6 +152,7 @@ graph LR
 ```
 
 Below is an example of the `tags` object inside the `channels` object in an AsyncAPI document:
+
 ```yaml
 asyncapi: 3.0.0
 
@@ -170,6 +177,7 @@ channels:
 Within an AsyncAPI document, the `tags` object in the `operations` object facilitates logical grouping and categorization of `operation` objects by operation type, functionality, and more. When used in an `operations` object, the `tags` can either serve a specific purpose within that object or be employed for consistent, logical grouping of components across the document. Using the `tags` object in the `operations` object is optional.
 
 Here's a visual representation of the `tags` object inside a `operations` object in an AsyncAPI document:
+
 ```mermaid
 graph LR
   A[operation]
@@ -194,6 +202,7 @@ graph LR
 ```
 
 Below is an example of the `tags` object inside the `operations` object in an AsyncAPI document:
+
 ```yaml
 operations:
   onUserSignUp:
@@ -222,6 +231,7 @@ operations:
 Tags linked to individual message objects in an AsyncAPI document enable logical grouping and categorization of messages based on specific criteria, requirements, channels, and operations. When implemented within a `message` object, the context of the `tags` object can be confined to that specific message or integrated as the strategy for consistent tagging and logical organization across the entire document.
 
 Here's a visual representation of a `tags` object inside a `message` object in an AsyncAPI document:
+
 ```mermaid
 graph LR
   A[message] --> B[summary]
@@ -239,10 +249,11 @@ graph LR
 ```
 
 Below is an example of the `tags` object inside the `message` object in an AsyncAPI document:
+
 ```yaml
  name: SimpleSignup
 summary: A simple UserSignup example message
-tags: 
+tags:
     - name: userSignUp
       description: some message related to user signup
 headers:
@@ -254,7 +265,6 @@ payload:
   signup:
     someSignupKey: someSignupValue
 ```
-
 
 Here's an example illustrating all the tags being defined in the `components` object and then referenced in other components such as `servers`, `channels`, and more:
 
@@ -269,7 +279,7 @@ components:
     video:
       name: Video
       description: All video related topics.
-      
+
 info:
   title: AsyncAPI Documentation
   version: 1.0.0
@@ -292,29 +302,29 @@ servers:
     description: RabbitMQ broker for video information.
     protocol: amqp
     tags:
-       - $ref: '#/components/tags/video'
+      - $ref: '#/components/tags/video'
 
 channels:
   getSpeech:
-      address: 'application/speech/get'
-      servers: 
-        - $ref: '#/servers/speech'
-      messages:
-        voice:
-          name: Voice
-          summary: Add info about the voice stream data.
-          tags:
-            - $ref: '#/components/tags/speech'
+    address: 'application/speech/get'
+    servers:
+      - $ref: '#/servers/speech'
+    messages:
+      voice:
+        name: Voice
+        summary: Add info about the voice stream data.
+        tags:
+          - $ref: '#/components/tags/speech'
   getVideo:
-      address: 'application/video/get'
-      servers: 
-        - $ref: '#/servers/video'
-      messages:
-        voice:
-          name: Video
-          summary: Add info about the video data live bitrate and others.
-          tags: 
-            - $ref: '#/components/tags/video'
+    address: 'application/video/get'
+    servers:
+      - $ref: '#/servers/video'
+    messages:
+      voice:
+        name: Video
+        summary: Add info about the video data live bitrate and others.
+        tags:
+          - $ref: '#/components/tags/video'
 
 operations:
   onVoiceStreamed:

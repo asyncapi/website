@@ -32,32 +32,38 @@ export default function NewsroomSection() {
     .slice(0, 1);
 
   return (
-    <div className='mt-12 justify-between lg:flex'>
-      <section className='relative mx-auto mt-10 w-fit lg:mt-4 lg:w-1/2' data-testid='NewsroomSection-Featured'>
-        <div className='absolute z-10 -mt-6'>
+    <div className="mt-12 justify-between lg:flex">
+      <section
+        className="relative mx-auto mt-10 w-fit lg:mt-4 lg:w-1/2"
+        data-testid="NewsroomSection-Featured"
+      >
+        <div className="absolute z-10 -mt-6">
           <Button
-            className='block border border-secondary-500 p-2 text-center text-secondary-500 shadow-md md:inline-block'
+            className="block border border-secondary-500 p-2 text-center text-secondary-500 shadow-md md:inline-block"
             text={t('newsroomSection.newsroomFeaturedPost')}
-            bgClassName='bg-secondary-100'
+            bgClassName="bg-secondary-100"
           />
         </div>
         <FeaturedBlogPost post={posts[0]} />
       </section>
       <section
-        className='mt-5 lg:my-auto lg:ml-12 lg:w-1/2 lg:max-w-xl lg:text-left'
-        data-testid='NewsroomSection-main'
+        className="mt-5 lg:my-auto lg:ml-12 lg:w-1/2 lg:max-w-xl lg:text-left"
+        data-testid="NewsroomSection-main"
       >
-        <Heading typeStyle={HeadingTypeStyle.mdSemibold} level={HeadingLevel.h3}>
+        <Heading
+          typeStyle={HeadingTypeStyle.mdSemibold}
+          level={HeadingLevel.h3}
+        >
           {t('newsroomSection.title')}
         </Heading>
-        <Paragraph typeStyle={ParagraphTypeStyle.lg} className='mt-5'>
+        <Paragraph typeStyle={ParagraphTypeStyle.lg} className="mt-5">
           {t('newsroomSection.description')}
         </Paragraph>
-        <div className='mt-7'>
+        <div className="mt-7">
           <Button
             text={t('newsroomSection.newsroomBtn')}
-            href='/community/newsroom'
-            data-testid='NewsroomSection-Link'
+            href="/community/newsroom"
+            data-testid="NewsroomSection-Link"
           />
         </div>
       </section>

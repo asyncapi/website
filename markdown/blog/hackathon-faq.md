@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI Hackathon FAQ"
+title: 'AsyncAPI Hackathon FAQ'
 date: 2021-09-19T06:00:00+01:00
 type: Communication
 tags:
@@ -20,7 +20,7 @@ Last year was the first time we hosted the AsyncAPI Conference. This year, we're
 
 1st - 31st of October, 2021.
 
-We wanted you to have an entire month to complete your idea. This way, you don't have to stress and overwork yourself over the weekend. Instead, enjoy a relaxed month and remember it's about having fun! 🤩 
+We wanted you to have an entire month to complete your idea. This way, you don't have to stress and overwork yourself over the weekend. Instead, enjoy a relaxed month and remember it's about having fun! 🤩
 
 ### What is the main theme for the Hackathon?
 
@@ -44,7 +44,7 @@ You can work solo or form a team if you want! Just keep in mind that if you win 
 
 ### I want to participate, but I don't have a good idea
 
-No worries, look at the ideas that [community members are sharing in our public community discussion thread](https://github.com/asyncapi/community/discussions/categories/asyncapi-hack-2021-ideas-brainstorming); you can pick one of them and/or get some inspiration. 
+No worries, look at the ideas that [community members are sharing in our public community discussion thread](https://github.com/asyncapi/community/discussions/categories/asyncapi-hack-2021-ideas-brainstorming); you can pick one of them and/or get some inspiration.
 
 ### Can there be multiple submissions with the same idea?
 
@@ -62,6 +62,7 @@ We do not set any limits here. The same idea can be done by multiple teams. Just
 ### How do I submit my task?
 
 Create a new discussion item [here](https://github.com/asyncapi/community/discussions/categories/asyncapi-hack-2021-submissions). Make sure there is:
+
 - Overview of what the solution is about.
 - Screenshots/Video/Diagrams/Code snippets (`anyOf` :wink:) that helps judges to quickly understand the solution and encourage them for further review.
 - Link to the repository where the full solution can be found.
@@ -70,7 +71,7 @@ If you win, you get to present your idea at our upcoming 2021 [AsyncAPI Conferen
 
 ### How will solutions be scored?
 
-A selected group that will represent the community will review all solutions. They will be obligated to only provide YES comments for ideas they liked the most and explain why. Each judge has 3 votes. 
+A selected group that will represent the community will review all solutions. They will be obligated to only provide YES comments for ideas they liked the most and explain why. Each judge has 3 votes.
 
 Submissions and scores are public, and we reserve the right for judges to not make public NO comments, for the respect of all involved parties.
 
@@ -78,7 +79,7 @@ The solution with the highest score wins! 😀
 
 ### How do I get help? Who can help with further understanding of AsyncAPI and the entire tooling landscape?
 
-- Join one of `Contributor First` meetings. These will be streamed throughout the entire month of October, 2021. Add this calendar with [Google Calendar format](https://calendar.google.com/calendar/u/0/embed?src=c_q9tseiglomdsj6njuhvbpts11c@group.calendar.google.com) or [iCal format](https://calendar.google.com/calendar/ical/c_q9tseiglomdsj6njuhvbpts11c@group.calendar.google.com/public/basic.ics).  The `Contributor First` meetings will take place every Wednesday, twice a day, at 8AM UTC and 4PM UTC.
+- Join one of `Contributor First` meetings. These will be streamed throughout the entire month of October, 2021. Add this calendar with [Google Calendar format](https://calendar.google.com/calendar/u/0/embed?src=c_q9tseiglomdsj6njuhvbpts11c@group.calendar.google.com) or [iCal format](https://calendar.google.com/calendar/ical/c_q9tseiglomdsj6njuhvbpts11c@group.calendar.google.com/public/basic.ics). The `Contributor First` meetings will take place every Wednesday, twice a day, at 8AM UTC and 4PM UTC.
 - Join our [Slack](https://www.asyncapi.com/slack-invite). We are a very friendly and responsive community.
 - Create an issue in [one of the repositories](https://github.com/asyncapi/) and explain what help you need.
 

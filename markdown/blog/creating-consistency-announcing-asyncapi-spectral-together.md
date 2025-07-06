@@ -1,17 +1,17 @@
 ---
-title: "Governance for Asynchronous APIs: Announcing AsyncAPI & Spectral – Together!"
+title: 'Governance for Asynchronous APIs: Announcing AsyncAPI & Spectral – Together!'
 date: 2022-05-25T16:00:00+02:00
 type: Community
-tags: 
-  - API Governance 
+tags:
+  - API Governance
 cover: /img/posts/creating-consistency-announcing-asyncapi-spectral-together/cover.webp
 authors:
   - name: Jakub Rozek
     photo: /img/avatars/jrozek.webp
     link: https://rozek.tech/
     byline: Senior Software Engineer at Stoplight
-excerpt: | 
- The collaboration between Stoplight’s open-source linting tool, Spectral, and AsyncAPI will be a game-changer for creating more consistency in your API program. Check out what comes with the release of the AsyncAPI ruleset!
+excerpt: |
+  The collaboration between Stoplight’s open-source linting tool, Spectral, and AsyncAPI will be a game-changer for creating more consistency in your API program. Check out what comes with the release of the AsyncAPI ruleset!
 ---
 
 The collaboration between Stoplight’s open-source linting tool, Spectral, and AsyncAPI is going to be a game changer for creating more consistency in your API program. Check out what comes with the release of the AsyncAPI ruleset!
@@ -77,7 +77,7 @@ you get started.
 
 To get started, you need to [install Spectral first](https://meta.stoplight.io/docs/spectral/docs/getting-started/2-installation.md). Note that you need to have [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) or
 [Yarn](https://yarnpkg.com/getting-started/install) installed, running `npm install -g @stoplight/spectral-cli` or `yarn global add @stoplight/spectral-cli` is sufficient
-to get Spectral. 
+to get Spectral.
 
 The CLI package bundles [@stoplight/spectral-rulesets](https://www.npmjs.com/package/@stoplight/spectral-rulesets) which
 contains the actual ruleset we’ll use.
@@ -91,12 +91,12 @@ create a file called `.spectral.json`. The following template can be used as a d
 
 ```json
 {
-  // This makes sure our rules apply only to AsyncAPI documents. 
+  // This makes sure our rules apply only to AsyncAPI documents.
   // It might be handy in case you have other specs in the directory you intend to lint.
   "formats": ["asyncapi2"],
   // this includes the ruleset linked below
   // https://meta.stoplight.io/docs/spectral/ZG9jOjUzNDg-async-api-rules
-  // Note that by default, only recommended rules are enabled. 
+  // Note that by default, only recommended rules are enabled.
   // Some rules listed in the article above may not be a fit for you,
   // therefore we don’t enable them by default.
   "extends": "spectral:asyncapi",
@@ -115,7 +115,7 @@ available here](https://meta.stoplight.io/docs/spectral/ZG9jOjI1MTg5-custom-rule
 ```json
 {
   "message": "Version must match 1.x.x",
-  // one can also define description property here, 
+  // one can also define description property here,
   // which is supposed to be a markdown string
   // containing a more detailed explanation about the rule
   "severity": "error", // or warn, or info, or hint
@@ -144,9 +144,7 @@ Now that we have a basic rule, we can insert it into the ruleset we previously c
 
 ```json
 {
-  "formats": [
-    "asyncapi2"
-  ],
+  "formats": ["asyncapi2"],
   "extends": "spectral:asyncapi",
   "rules": {
     "valid-document-version": {

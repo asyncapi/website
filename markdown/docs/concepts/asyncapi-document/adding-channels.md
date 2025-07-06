@@ -21,7 +21,7 @@ The previous AsyncAPI document sets up an interface for a `userSignedUp` channel
 
 When you add a channel to the AsyncAPI document, by default it is expected to be available on any server described in the document. In other words, if you have two servers, `production-kafka-secure` and `development-kafka`, the channel described in the AsyncAPI document must be present on both servers.
 
-It's possible to encounter a scenario where an AsyncAPI document describes an application communicating in a production environment through multiple servers, each utilizing distinct protocols. For example, the application might receive messages from a channel on an MQTT server while concurrently sending messages to a different channel on a Kafka server. In such cases, it's imperative to distinctly specify the exclusive availability of one channel on the MQTT server and another channel solely on the Kafka server. 
+It's possible to encounter a scenario where an AsyncAPI document describes an application communicating in a production environment through multiple servers, each utilizing distinct protocols. For example, the application might receive messages from a channel on an MQTT server while concurrently sending messages to a different channel on a Kafka server. In such cases, it's imperative to distinctly specify the exclusive availability of one channel on the MQTT server and another channel solely on the Kafka server.
 
 ```mermaid
 graph LR

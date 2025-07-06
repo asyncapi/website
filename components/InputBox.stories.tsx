@@ -9,7 +9,7 @@ import InputBox from './InputBox';
 
 const meta: Meta<typeof InputBox> = {
   title: 'Components/InputBox',
-  component: InputBox
+  component: InputBox,
 };
 
 export default meta;
@@ -18,7 +18,7 @@ type Story = StoryObj<typeof InputBox>;
 
 const Input: Story = {
   args: {
-    inputValue: ''
+    inputValue: '',
   },
 
   render: (args: InputBoxProps) => {
@@ -29,7 +29,7 @@ const Input: Story = {
     };
 
     return <InputBox {...args} inputValue={inputValue} setInput={setValue} />;
-  }
+  },
 };
 
 export const TextInput: Story = {
@@ -38,8 +38,8 @@ export const TextInput: Story = {
   args: {
     inputType: InputTypes.TEXT,
     inputName: 'Name',
-    placeholder: 'AsyncAPI Initiative'
-  }
+    placeholder: 'AsyncAPI Initiative',
+  },
 };
 
 export const EmailInput: Story = {
@@ -48,6 +48,6 @@ export const EmailInput: Story = {
   args: {
     inputType: InputTypes.EMAIL,
     inputName: 'Email',
-    placeholder: 'press@asyncapi.io'
-  }
+    placeholder: 'press@asyncapi.io',
+  },
 };

@@ -1,4 +1,5 @@
 ### CLI Installation
+
 Follow the [AsyncAPI CLI installation](https://github.com/asyncapi/cli#installation) instructions below, based on your computer’s operating system.
 
 <details>
@@ -26,7 +27,7 @@ sudo installer -pkg asyncapi.pkg -target /
 
 You can install in Linux via `dpkg`, a debian package manager:
 
-1. `curl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi.deb` 
+1. `curl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi.deb`
 2. `sudo dpkg -i asyncapi.deb`
 
 </details>
@@ -38,16 +39,17 @@ For Windows, install the appropriate installer and follow the default installati
 
 Download [asyncapi.x64.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x64.exe) for 64-bit Windows and [asyncapi.x86.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x86.exe) for 32-bit Windows.
 
-
 </details>
 
 <details>
 <summary>Other OS</summary>
 
 [Read further AsyncAPI CLI installation instructions for different operating systems](https://github.com/asyncapi/cli#installation).
+
 </details>
 
 #### Using NPM and Node.js
+
 Alternitavely, you can install the [AsyncAPI CLI](https://github.com/asyncapi/cli#installation) with Node.js `>=v10` and [NPM](https://nodejs.org/en/download/package-manager/).
 
 <details>
@@ -58,6 +60,7 @@ Install AsyncAPI CLI _globally_ with the following command:
 ```
 npm install -g @asyncapi/cli
 ```
+
 </details>
 
 <details>

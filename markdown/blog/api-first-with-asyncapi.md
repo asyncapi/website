@@ -43,7 +43,7 @@ If you are familiar with OpenAPI and OpenAPI Generator API-First workflow:
 
 When doing API-First with AsyncAPI, the process is similar. After you generate some interfaces and DTOs from your API definition, you use the generated interfaces to produce messages, send them to the broker, and implement them to consume messages from the broker.
 
-There is still a fundamental difference between OpenAPI and AsyncAPI: OpenAPI is used to document Request-Response / Client-Server APIs, while AsyncAPI is used to document Event-Driven APIs which, except for WebSockets, are Broker-based. 
+There is still a fundamental difference between OpenAPI and AsyncAPI: OpenAPI is used to document Request-Response / Client-Server APIs, while AsyncAPI is used to document Event-Driven APIs which, except for WebSockets, are Broker-based.
 
 And broker-based APIs, unlike Client-Server, are inherently **symmetric**.
 
@@ -53,7 +53,7 @@ And broker-based APIs, unlike Client-Server, are inherently **symmetric**.
 
 Because APIs mediated by a broker are inherent **symmetric**, it's difficult to establish the roles of the client/server: what represents a `publish` operation from one side will be a `subscribe` operation seen from the other side. Also, a given service can act as a publisher and subscriber on the same API.
 
-For these reasons, to avoid defining the same API operations multiple times from each perspective, we propose to define the API only once from the perspective of the provider of the functionality, which may be a producer, a consumer, or both. 
+For these reasons, to avoid defining the same API operations multiple times from each perspective, we propose to define the API only once from the perspective of the provider of the functionality, which may be a producer, a consumer, or both.
 
 Some definitions:
 
@@ -68,7 +68,7 @@ Some definitions:
 Use the table to understand which section of AsyncAPI (publish or subscribe) to use for each topic and which role (provider or client) to use on the plugin configuration.
 
 |                              | Events                | Commands                |
-|------------------------------|-----------------------|-------------------------|
+| ---------------------------- | --------------------- | ----------------------- |
 | Provider                     | Produces (publish)    | Consumes (subscribe)    |
 | Client                       | Consumes (subscribe)  | Produces (publish)      |
 | OperationId Suggested Prefix | **on**&lt;Event Name> | **do**&lt;Command Name> |
@@ -111,7 +111,7 @@ Each channel represents one single broker topic, channel, or queue... where you 
 
 Use the table above to understand which section, publish or subscribe, you may want to use.
 
-In a nutshell: 
+In a nutshell:
 
 > Providers publish events and subscribe to commands/queries/requests.
 
@@ -119,7 +119,7 @@ If you still find it confusing which is a provider and a client, use this rule: 
 
 ### Messages
 
-Use Messages to describe **Headers**, **Payload Schema**, and **Content-Type**. You can also include examples, descriptions, and protocol-specific binding documentation... 
+Use Messages to describe **Headers**, **Payload Schema**, and **Content-Type**. You can also include examples, descriptions, and protocol-specific binding documentation...
 
 ```yml
 components:
@@ -134,8 +134,7 @@ components:
           my-app-header:
             type: string
       payload:
-        $ref: "#/components/schemas/turnOnOffPayload"
-
+        $ref: '#/components/schemas/turnOnOffPayload'
 ```
 
 ### Message Payloads / Schemas
@@ -150,23 +149,23 @@ components:
   messages:
     MessageWithAsyncAPISchema:
       payload:
-        $ref: "#/components/schemas/turnOnOffPayload" ## asyncapi/inline schema
+        $ref: '#/components/schemas/turnOnOffPayload' ## asyncapi/inline schema
     MessageWithExternalJsonSchema:
       schemaFormat: 'application/schema+json;version=draft-07'
       payload:
-        $ref: "some/external/file.schema" ## a json-schema file
+        $ref: 'some/external/file.schema' ## a json-schema file
     MessageWithAvroSchema:
       schemaFormat: application/vnd.apache.avro+json;version=1.9.0
       payload:
-        $ref: "v1/imports/file.avsc" ## and avro schema file
+        $ref: 'v1/imports/file.avsc' ## and avro schema file
 ```
-
 
 ### Reusing Configurations: Operation Traits, Message Traits...
 
 Operation Traits, Message Traits are an excellent way to reuse chunks of configuration between different operations or messages.
 
 For instance, if various messages share some common headers, you can configure them as Message Traits:
+
 ```yml
 components:
   messages:
@@ -176,7 +175,7 @@ components:
       summary: Async Event for a Customer
       schemaFormat: application/vnd.aai.asyncapi;version=2.4.0
       traits:
-      - $ref: '#/components/messageTraits/CommonHeaders' # 'CommonHeaders' contents will replace 'traits' property
+        - $ref: '#/components/messageTraits/CommonHeaders' # 'CommonHeaders' contents will replace 'traits' property
       payload:
       $ref: '#/components/schemas/CustomerEventPayload'
 
@@ -192,7 +191,6 @@ components:
 ```
 
 And the same concept applies to Operation Traits.
-
 
 ## Different Styles of Event Messages
 
@@ -245,7 +243,6 @@ On the other hand, a State Transfer message **contains the entire state of the a
 }
 ```
 
-
 ### Domain Event Messages
 
 Domain Event Messages **contains information about the event and interesting portions of the underlying aggregate**, but not the entire state of the aggregate. This style of events is typically used for Event Sourcing integration patterns.
@@ -274,7 +271,6 @@ Domain Event Messages **contains information about the event and interesting por
 }
 ```
 
- 
 ## Next: Java Code Generator for AsyncAPI
 
 [Next: Java Code Generator for AsyncAPI](zenwave-asyncapi-code-generator.md)

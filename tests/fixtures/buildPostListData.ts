@@ -5,7 +5,7 @@ const TEST_CONTENT = {
     content: `---
 title: Release Notes 2.1.0
 ---
-This is a release note.`
+This is a release note.`,
   },
   docs: {
     dir: 'docs',
@@ -14,7 +14,7 @@ This is a release note.`
 title: Docs Home
 ---
 This is the documentation homepage.`,
-    subDir: 'reference/specification'
+    subDir: 'reference/specification',
   },
   about: {
     dir: 'about',
@@ -22,8 +22,8 @@ This is the documentation homepage.`,
     content: `---
 title: About Us
 ---
-This is the about page.`
-  }
+This is the about page.`,
+  },
 };
 
 export default TEST_CONTENT;

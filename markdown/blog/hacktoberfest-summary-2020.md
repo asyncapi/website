@@ -1,5 +1,5 @@
 ---
-title: "Is Hacktoberfest Good For Maintainers?"
+title: 'Is Hacktoberfest Good For Maintainers?'
 date: 2020-11-05T06:00:00+01:00
 type: Community
 tags:
@@ -39,12 +39,13 @@ The definition of spam heavily depends on maintainers. For example, [this](https
 ## Why We Participated in Hacktoberfest
 
 Our intentions were pretty clear from the very beginning. As I wrote in the [previous post](/blog/hacktoberfest-2020), we wanted to:
- - Promote [AsyncAPI Initiative](https://www.asyncapi.com/) as a place where we work not only on the AsyncAPI specification, but also lots of tools
- - Help members of the broader open-source community make their first contributions in a friendly environment
+
+- Promote [AsyncAPI Initiative](https://www.asyncapi.com/) as a place where we work not only on the AsyncAPI specification, but also lots of tools
+- Help members of the broader open-source community make their first contributions in a friendly environment
 
 My impression is that sometimes the open-source is perceived as a kind of elite gathering. **This is quite often blocking people from joining because they feel they cannot help but rather waste others' time.** I was there in the past, I thought the same. It's just another variation of the damn [impostor syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome). You can always help, no matter what your experience is.
 
-Start small. Don't start with tasks that can be overwhelming. Don't throw yourself into the deep end. 
+Start small. Don't start with tasks that can be overwhelming. Don't throw yourself into the deep end.
 
 We wanted to help others make first baby steps in a secure and inclusive environment, with lots of patience and support.
 
@@ -52,17 +53,18 @@ We wanted to help others make first baby steps in a secure and inclusive environ
 
 It is not enough to label 70 issues with the **hacktoberfest** label, sorry :smiley:
 
-First of all, you need to be passionate about open source and dedicated to what you do. It can't just be a task that somebody assigned to you. It would help if you were prepared to treat Hacktoberfest participants as a priority. I would compare it to the onboarding process of new hires. 
+First of all, you need to be passionate about open source and dedicated to what you do. It can't just be a task that somebody assigned to you. It would help if you were prepared to treat Hacktoberfest participants as a priority. I would compare it to the onboarding process of new hires.
 
-Of course, not all participants join to stay longer, usually they just follow the  "one pull request, and I'm out of here" approach.
+Of course, not all participants join to stay longer, usually they just follow the "one pull request, and I'm out of here" approach.
 
-It doesn't matter. 
+It doesn't matter.
 
 Please don't make assumptions; assumptions are evil. Be opened, treat every contribution equally, and remember that the onboarding process is a crucial element. If you fail with the onboarding process, you fail big time at the very beginning.
 
 ### What We Prepared
 
 We prepared the following materials for potential participants:
+
 - [Blog post](https://www.asyncapi.com/blog/hacktoberfest-2020) about our participation
 - [Onboarding videos](https://www.youtube.com/playlist?list=PLbi1gRlP7pigFSE_6G88x0t12HFLU4A4b) that explain how to start
 - 78 issues from more than 30 repositories and put them all in one [list](https://docs.google.com/spreadsheets/d/1vX4J395apexutfQ0OSqPNltFKDacmemHZwCmOXwHNLo/) with additional information about the difficulty level or the technical area,

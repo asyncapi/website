@@ -81,83 +81,104 @@ export default function ModelinaPlaygroundPage() {
 
   const tabs = (
     <CodeBlock
-      language='javascript'
-      textSizeClassName='text-sm'
-      className='w-full shadow-lg'
-      highlightClassName='h-120'
+      language="javascript"
+      textSizeClassName="text-sm"
+      className="w-full shadow-lg"
+      highlightClassName="h-120"
       codeBlocks={[
         {
           language: 'javascript',
           title: 'Generator code',
-          code: exampleModelinaCode
+          code: exampleModelinaCode,
         },
         {
           language: 'javascript',
           title: 'Output model',
-          code: exampleOutputModel
-        }
+          code: exampleOutputModel,
+        },
       ]}
     />
   );
 
   return (
-    <GenericLayout title='Modelina' description={description} image={image} wide>
-      <div className='overflow-hidden py-16 lg:py-24'>
-        <div className='relative text-center'>
+    <GenericLayout
+      title="Modelina"
+      description={description}
+      image={image}
+      wide
+    >
+      <div className="overflow-hidden py-16 lg:py-24">
+        <div className="relative text-center">
           <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg}>
             Modelina
           </Heading>
-          <Paragraph className='mx-auto mt-4 max-w-3xl'>{description}</Paragraph>
+          <Paragraph className="mx-auto mt-4 max-w-3xl">
+            {description}
+          </Paragraph>
         </div>
 
-        <div className='relative mt-12 lg:mt-20 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8'>
-          <div className='relative mb-8 lg:mt-8'>
-            <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.mdSemibold}>
+        <div className="relative mt-12 lg:mt-20 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
+          <div className="relative mb-8 lg:mt-8">
+            <Heading
+              level={HeadingLevel.h2}
+              typeStyle={HeadingTypeStyle.mdSemibold}
+            >
               Installation & Usage
             </Heading>
-            <Paragraph className='mt-3 lg:pr-4'>
-              Start using Modelina really quickly. Select one of the available languages we offer and start generating
-              models from your AsyncAPI document in a few seconds.
+            <Paragraph className="mt-3 lg:pr-4">
+              Start using Modelina really quickly. Select one of the available
+              languages we offer and start generating models from your AsyncAPI
+              document in a few seconds.
             </Paragraph>
-            <div className='mt-8'>
-              <CodeBlock language='bash' showLineNumbers={false} className='mt-8' textSizeClassName='text-sm'>
+            <div className="mt-8">
+              <CodeBlock
+                language="bash"
+                showLineNumbers={false}
+                className="mt-8"
+                textSizeClassName="text-sm"
+              >
                 npm install @asyncapi/modelina
               </CodeBlock>
-              <div className='flex justify-center gap-x-2 lg:justify-start'>
+              <div className="flex justify-center gap-x-2 lg:justify-start">
                 <GithubButton
-                  text='View on Github'
-                  className='mt-2 block md:mt-0 md:inline-block'
-                  href='https://www.github.com/asyncapi/modelina'
+                  text="View on Github"
+                  className="mt-2 block md:mt-0 md:inline-block"
+                  href="https://www.github.com/asyncapi/modelina"
                 />
                 <Button
-                  className='mt-2 block text-center md:mt-0 md:inline-block '
-                  text='Try it now'
-                  icon={<IconRocket className='-mt-1 inline-block size-6' />}
-                  href='https://modelina.org/playground'
-                  target='blank'
+                  className="mt-2 block text-center md:mt-0 md:inline-block "
+                  text="Try it now"
+                  icon={<IconRocket className="-mt-1 inline-block size-6" />}
+                  href="https://modelina.org/playground"
+                  target="blank"
                 />
               </div>
             </div>
           </div>
-          <div className='relative lg:mt-8'>{tabs}</div>
+          <div className="relative lg:mt-8">{tabs}</div>
         </div>
 
         {error && (
-          <div className='relative rounded border border-red-400 bg-red-100 px-4 py-2 text-red-700' role='alert'>
-            <strong className='mr-4 font-bold'>Error!</strong>
-            <span className='block sm:inline'>{typeof error.toString === 'function' ? error.toString() : error}</span>
-            <span className='absolute inset-y-0 right-0 px-4 py-2'>
+          <div
+            className="relative rounded border border-red-400 bg-red-100 px-4 py-2 text-red-700"
+            role="alert"
+          >
+            <strong className="mr-4 font-bold">Error!</strong>
+            <span className="block sm:inline">
+              {typeof error.toString === 'function' ? error.toString() : error}
+            </span>
+            <span className="absolute inset-y-0 right-0 px-4 py-2">
               <svg
-                className='size-6 fill-current text-red-500'
-                role='button'
-                xmlns='http://www.w3.org/2000/svg'
-                viewBox='0 0 20 20'
+                className="size-6 fill-current text-red-500"
+                role="button"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
                 onClick={() => {
                   setError(undefined);
                 }}
               >
                 <title>Close</title>
-                <path d='M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z' />
+                <path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
               </svg>
             </span>
           </div>

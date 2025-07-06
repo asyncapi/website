@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI Ambasador Program"
+title: 'AsyncAPI Ambasador Program'
 date: 2023-03-10T06:00:00+01:00
 type: Communication
 tags:
@@ -12,11 +12,11 @@ authors:
 excerpt: Information about AsyncAPI Ambassador Program.
 ---
 
-AsyncAPI and its community have grown exponentially during the last few months. As a feedback exercise, both the project and the community are getting stronger with one another. The community is the driving force that leads the initiative and the bigger it gets, the greater the consistency and potential it has. It’s amazing to see a vast number of people who invest their time in disseminating and promoting the initiative through talks, articles, workshops, and program direction... 
+AsyncAPI and its community have grown exponentially during the last few months. As a feedback exercise, both the project and the community are getting stronger with one another. The community is the driving force that leads the initiative and the bigger it gets, the greater the consistency and potential it has. It’s amazing to see a vast number of people who invest their time in disseminating and promoting the initiative through talks, articles, workshops, and program direction...
 
-To follow that line, the AsyncAPI Ambassador Program is one of the latest additions to the initiative to keep the community going. 
+To follow that line, the AsyncAPI Ambassador Program is one of the latest additions to the initiative to keep the community going.
 
-The program is, after all, a reaction to the natural impulse of the community. Thus, in this case, the ambassadors came before the Ambassadors Program itself. This proposal was born based on the recognition of the work of community members who invest their time in bringing AsyncAPI to the community and new potential users. 
+The program is, after all, a reaction to the natural impulse of the community. Thus, in this case, the ambassadors came before the Ambassadors Program itself. This proposal was born based on the recognition of the work of community members who invest their time in bringing AsyncAPI to the community and new potential users.
 
 AsyncAPI Ambassadors are passionate about open source. They are committed to making AsyncAPI an inclusive place for everyone and participate in leading and mentoring the community.
 
@@ -48,7 +48,7 @@ The Ambassador Program is a transparent system, just like any other management i
   <img src="https://media.giphy.com/media/eEh1lwAYtnmwDWSirZ/giphy.gif" alt="heart&brain" />
 </p>
 
-The process of recruiting ambassadors is completely open. If anyone meets the requirements, they only need to add themselves to this [document](https://github.com/asyncapi/community/blob/master/AMBASSADORS_MEMBERS.json), attaching their personal information along with their contributions. The TSC members will then approve the proposal. 
+The process of recruiting ambassadors is completely open. If anyone meets the requirements, they only need to add themselves to this [document](https://github.com/asyncapi/community/blob/master/AMBASSADORS_MEMBERS.json), attaching their personal information along with their contributions. The TSC members will then approve the proposal.
 
 Subsequently, all ambassador information will be displayed on the AsyncAPI website once the PR has been merged. The process tries to be simple, collaborative, and transparent as possible.
 
@@ -56,7 +56,7 @@ Subsequently, all ambassador information will be displayed on the AsyncAPI websi
 
 The minimum enrollment period for ambassadors is one year with the option to renew annually. At the end of each period, the number of participants will be assessed and confirmed on a yearly basis. To qualify as an ambassador, individuals must make at least four contributions per year, which may include articles, talks, videos, podcasts, presentations, or driving initiatives, etc.
 
-Ambassadors are entrusted with some amount of responsibilities. As a token of appreciation for their work, we try to compensate them with certain perks, including exclusive swags and  conference passes.
+Ambassadors are entrusted with some amount of responsibilities. As a token of appreciation for their work, we try to compensate them with certain perks, including exclusive swags and conference passes.
 
 Learn more about the [Ambassador Program here](https://github.com/asyncapi/community/blob/6c066e0eab6c778d1a37d1beebb1418a4bc700f6/AMBASSADOR_ORGANIZATION.md).
 

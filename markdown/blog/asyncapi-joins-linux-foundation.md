@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI joins Linux Foundation"
+title: 'AsyncAPI joins Linux Foundation'
 date: 2021-03-30T16:00:00+01:00
 type: Communication
 tags:

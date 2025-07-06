@@ -2,15 +2,16 @@ import { fetchGraphql } from './helpers';
 import type { Discussion, DiscussionCategory, Reply } from './index.d';
 
 export namespace Repository {
-
   /**
    * Parse the discussion categories that a repository has.
    * @param {string} repoName - The name of the repository.
    * @param {string} repoOwner - Organization/User that owns the repo.
    * @return {Promise<DiscussionCategory[]>} An array containing all of the discussion categories that the repo has.
    */
-  export async function getDiscussionCategories(repoOwner: string,
-    repoName: string): Promise<DiscussionCategory[]> {
+  export async function getDiscussionCategories(
+    repoOwner: string,
+    repoName: string,
+  ): Promise<DiscussionCategory[]> {
     const query = `query {
       repository(owner: "${repoOwner}", name: "${repoName}"){
         id
@@ -27,8 +28,10 @@ export namespace Repository {
     return repository.discussionCategories.nodes;
   }
 
-  export async function getRepositoryId(owner: string,
-    name: string): Promise<string> {
+  export async function getRepositoryId(
+    owner: string,
+    name: string,
+  ): Promise<string> {
     const query = `query {
       repository(owner: "${owner}", name: "${name}"){
         id
@@ -53,10 +56,12 @@ export namespace Repository {
    * @param {string} categoryId - Discussion category Id.
    *
    */
-  export async function createDiscussion(discussion: Discussion,
+  export async function createDiscussion(
+    discussion: Discussion,
     repositoryId: string,
     categoryId: string,
-    slackURL: string) {
+    slackURL: string,
+  ) {
     const body = `${discussion.body}
 
 ---
@@ -86,8 +91,10 @@ _This discussion has been created from a [slack discussion](${slackURL}). Please
     return { discussionId, discussionURL };
   }
 
-  export async function createDicussionReply(gitHubDiscussionId: string,
-    reply: Reply): Promise<string> {
+  export async function createDicussionReply(
+    gitHubDiscussionId: string,
+    reply: Reply,
+  ): Promise<string> {
     const query = `
       mutation {
         addDiscussionComment(

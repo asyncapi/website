@@ -12,6 +12,7 @@ Welcome to AsyncAPI **Concepts**! This section defines AsyncAPI features and cap
 <Remember>
 
 ## Contribute to AsyncAPI Concepts
+
 <ContributionNotes />
 
 </Remember>

@@ -1,5 +1,5 @@
 ---
-title: "Hello world"
+title: 'Hello world'
 weight: 30
 ---
 
@@ -117,4 +117,4 @@ operations:
 
 The `operations` section is where you describe what the application is doing. Each operation has a unique identifier for example, `receiveHello`.
 
-In the above example, you see that the `Hello world application` is a consumer listening to the `sayHelloMessage` message from the `hello` channel. In other words, you can say that the `Hello world application` subscribes to the `hello` topic to `receive` the `sayHelloMessage` message. That AsyncAPI document describes what the `Hello world application` is doing, not what others can do with it. 
+In the above example, you see that the `Hello world application` is a consumer listening to the `sayHelloMessage` message from the `hello` channel. In other words, you can say that the `Hello world application` subscribes to the `hello` topic to `receive` the `sayHelloMessage` message. That AsyncAPI document describes what the `Hello world application` is doing, not what others can do with it.

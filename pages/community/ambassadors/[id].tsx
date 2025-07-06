@@ -21,7 +21,7 @@ interface IndexProps {
  * @returns {Promise<{ props: { contributor: Ambassador } }>} An object containing the props of the page.
  */
 export async function getStaticProps({
-  params
+  params,
 }: {
   params: { id: string };
 }): Promise<{ props: { contributor: Ambassador } }> {
@@ -29,8 +29,8 @@ export async function getStaticProps({
 
   return {
     props: {
-      contributor: data[0]
-    }
+      contributor: data[0],
+    },
   };
 }
 
@@ -39,14 +39,17 @@ export async function getStaticProps({
  *
  * @returns {Promise<{ paths: { params: { id: string } }[], fallback: boolean }>} An object containing an array of paths and a fallback boolean.
  */
-export async function getStaticPaths(): Promise<{ paths: { params: { id: string } }[]; fallback: boolean }> {
+export async function getStaticPaths(): Promise<{
+  paths: { params: { id: string } }[];
+  fallback: boolean;
+}> {
   const paths = ambassadors.map((user) => ({
-    params: { id: user.github }
+    params: { id: user.github },
   }));
 
   return {
     paths,
-    fallback: false
+    fallback: false,
   };
 }
 
@@ -61,75 +64,91 @@ export default function Index({ contributor }: IndexProps) {
 
   return (
     <GenericLayout
-      title='AsyncAPI Ambassador Program'
-      description='The home for developer communities'
+      title="AsyncAPI Ambassador Program"
+      description="The home for developer communities"
       image={image}
       hideBanner={true}
       wide
     >
-      <div className='mt-10 flex flex-col items-center justify-between md:mt-20 md:flex-row'>
-        <div className='w-full md:w-[65%]'>
-          <Heading typeStyle={HeadingTypeStyle.xl} className='countdown-text-gradient'>
+      <div className="mt-10 flex flex-col items-center justify-between md:mt-20 md:flex-row">
+        <div className="w-full md:w-[65%]">
+          <Heading
+            typeStyle={HeadingTypeStyle.xl}
+            className="countdown-text-gradient"
+          >
             {contributor.name}
           </Heading>
-          <div className='mt-4 flex items-center'>
-            <span className='ml-2 font-bold'>{contributor.country}</span>
+          <div className="mt-4 flex items-center">
+            <span className="ml-2 font-bold">{contributor.country}</span>
           </div>
-          <div className='mt-10'>
-            <Heading typeStyle={HeadingTypeStyle.bodyLg}>{contributor.bio}</Heading>
+          <div className="mt-10">
+            <Heading typeStyle={HeadingTypeStyle.bodyLg}>
+              {contributor.bio}
+            </Heading>
           </div>
-          <div className='mt-10 flex items-center'>
+          <div className="mt-10 flex items-center">
             <a
               href={`https://www.twitter.com/${contributor.twitter}`}
-              target='_blank'
-              rel='noreferrer'
-              className='underline'
+              target="_blank"
+              rel="noreferrer"
+              className="underline"
             >
-              <div className='w-[40px] rounded-full bg-pink-500 p-2'>
-                <IconTwitter className='fill-white' />
+              <div className="w-[40px] rounded-full bg-pink-500 p-2">
+                <IconTwitter className="fill-white" />
               </div>
             </a>
             <a
               href={`https://www.github.com/${contributor.github}`}
-              target='_blank'
-              rel='noreferrer'
-              className='underline'
+              target="_blank"
+              rel="noreferrer"
+              className="underline"
             >
-              <div className='ml-4 w-[40px] rounded-full bg-pink-500 p-2'>
-                <IconGithub className='fill-white' />
+              <div className="ml-4 w-[40px] rounded-full bg-pink-500 p-2">
+                <IconGithub className="fill-white" />
               </div>
             </a>
             <a
               href={`https://www.linkedin.com/in/${contributor.linkedin}`}
-              target='_blank'
-              rel='noreferrer'
-              className='underline'
+              target="_blank"
+              rel="noreferrer"
+              className="underline"
             >
-              <div className='ml-4 w-[40px] rounded-full bg-pink-500 p-2'>
-                <IconLinkedIn className='fill-white' />
+              <div className="ml-4 w-[40px] rounded-full bg-pink-500 p-2">
+                <IconLinkedIn className="fill-white" />
               </div>
             </a>
           </div>
         </div>
-        <div className='mt-10 md:mt-0'>
-          <img src={contributor.img} alt={contributor.name} className='w-[350px] rounded-lg' />
+        <div className="mt-10 md:mt-0">
+          <img
+            src={contributor.img}
+            alt={contributor.name}
+            className="w-[350px] rounded-lg"
+          />
         </div>
       </div>
-      <div className='c-contributor-line mt-20 h-px' />
-      <Heading typeStyle={HeadingTypeStyle.lg} className='mt-8'>
+      <div className="c-contributor-line mt-20 h-px" />
+      <Heading typeStyle={HeadingTypeStyle.lg} className="mt-8">
         Contributions
       </Heading>
-      <div className='mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3'>
+      <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3">
         {contributor.contributions.map((contribution) => {
           return (
             <div
               key={contribution.title}
-              className='mt-5 rounded-lg border p-5 text-gray-600 hover:border-primary-600 hover:text-pink-600'
+              className="mt-5 rounded-lg border p-5 text-gray-600 hover:border-primary-600 hover:text-pink-600"
             >
-              <a key={contribution.title} href={contribution.link} target='_blank' rel='noreferrer'>
-                <div className='flex h-full flex-col justify-between'>
-                  <Heading typeStyle={HeadingTypeStyle.bodyLg}>{contribution.title}</Heading>
-                  <div className='mt-4 flex justify-between'>
+              <a
+                key={contribution.title}
+                href={contribution.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div className="flex h-full flex-col justify-between">
+                  <Heading typeStyle={HeadingTypeStyle.bodyLg}>
+                    {contribution.title}
+                  </Heading>
+                  <div className="mt-4 flex justify-between">
                     <div> {contribution.type}</div>{' '}
                     <div>
                       {contribution.date.month}-{contribution.date.year}

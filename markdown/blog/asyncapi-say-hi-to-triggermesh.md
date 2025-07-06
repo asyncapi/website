@@ -2,7 +2,7 @@
 title: Automatically pipe events from AsyncAPI channels with TriggerMesh
 date: 2023-03-20T5:28:08+01:00
 type: Engineering
-tags: ['Serverless','CloudEvents']
+tags: ['Serverless', 'CloudEvents']
 cover: /img/posts/asyncapi-say-hi-to-triggermesh/blog-graphic-asyncapi-triggermesh.webp
 authors:
   - name: Jonathan Michaux
@@ -16,7 +16,7 @@ This tutorial demonstrates how to use AsyncAPI with TriggerMesh. It shows how th
 
 If you want access to the source files for this tutorial, head to the [dedicated GitHub TriggerMesh repo](https://github.com/triggermesh/tutorials/tree/main/asyncAPI).
 
-The scenario is based on the perspective of a DevOps engineer that has been provided with an AsyncAPI definition that describes an application (or set of applications) that produce `order` events over various channels, including a **Kafka topic**, a **Google pub/sub topic**, and an **HTTP service**.  The engineer's task is to ingest `orders` from these channels and route them to a single downstream **Kafka topic** called `unified-orders.`
+The scenario is based on the perspective of a DevOps engineer that has been provided with an AsyncAPI definition that describes an application (or set of applications) that produce `order` events over various channels, including a **Kafka topic**, a **Google pub/sub topic**, and an **HTTP service**. The engineer's task is to ingest `orders` from these channels and route them to a single downstream **Kafka topic** called `unified-orders.`
 
 The tutorial leverages the TriggerMesh open-source command-line interface called `tmctl` to create the TriggerMesh **sources**, **brokers**, **triggers**, and **targets** that make up the event flow. `tmctl` lets you run these components locally on any laptop that has Docker.
 
@@ -177,6 +177,7 @@ We can now execute these `tmctl` commands to create the TriggerMesh components. 
 ```sh
 sh tmctl.sh
 ```
+
 Or you can pipe the output of the parser into the shell:
 
 ```sh
@@ -217,7 +218,7 @@ Go to the orders topic and publish this:
     "brand": "Patagonia",
     "category": "Kids",
     "name": "Tribbles Hoody"
-	}
+  }
 }
 ```
 
@@ -259,7 +260,7 @@ Although we generally recommend being more specific when creating triggers by ad
 tmctl create trigger --target unified-orders-target --eventTypes io.triggermesh.httppoller.event
 ```
 
-Now take a look at the RedPanda console and you should see all orders arriving on the `unified-orders topic`. You can send more orders into GCP Pub/Sub and AWS SQS and see them get routed to the Kafka topic. 
+Now take a look at the RedPanda console and you should see all orders arriving on the `unified-orders topic`. You can send more orders into GCP Pub/Sub and AWS SQS and see them get routed to the Kafka topic.
 
 ## Wrap-up
 
@@ -270,6 +271,5 @@ If you wanted to take this example further, you could implement some [JSON trans
 Oh and one more thing, try the `tmctl dump` command. It will produce Kubernetes manifests that you can deploy onto a Kubernetes cluster [with TriggerMesh installed](https://docs.triggermesh.io/installation/kubernetes-yaml/) and run these event flows as a Kubernetes-native application.
 
 Head to [AsyncAPI.com](https://www.asyncapi.com/) to learn more about AsyncAPI, and the [TriggerMesh quickstart](https://docs.triggermesh.io/get-started/quickstart/) if you want to try out `tmctl` for yourself. You can also reach the [TriggerMesh community on Slack](https://join.slack.com/t/triggermesh-community/shared_invite/zt-1kngevosm-MY7kqn9h6bT08hWh8PeltA), we'd love to hear from you!
-
 
 > _All graphics by [Jonathan Michaux](https://github.com/jmcx)._

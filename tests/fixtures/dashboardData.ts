@@ -12,14 +12,14 @@ const mockDiscussion = {
   comments: {
     totalCount: 2,
     nodes: [{ reactions: { totalCount: 1 } }],
-    pageInfo: { hasNextPage: false }
+    pageInfo: { hasNextPage: false },
   },
   labels: { nodes: [] },
   timelineItems: { updatedAt: new Date().toISOString() },
   reviews: {
     totalCount: 0,
-    nodes: []
-  }
+    nodes: [],
+  },
 };
 
 const discussionWithMoreComments = {
@@ -34,14 +34,14 @@ const discussionWithMoreComments = {
   comments: {
     totalCount: 5,
     nodes: [{ reactions: { totalCount: 1 } }],
-    pageInfo: { hasNextPage: true }
+    pageInfo: { hasNextPage: true },
   },
   labels: { nodes: [] },
   timelineItems: { updatedAt: new Date().toISOString() },
   reviews: {
     totalCount: 0,
-    nodes: []
-  }
+    nodes: [],
+  },
 };
 
 const fullDiscussionDetails = {
@@ -49,23 +49,27 @@ const fullDiscussionDetails = {
     ...discussionWithMoreComments,
     comments: {
       totalCount: 5,
-      nodes: [{ reactions: { totalCount: 1 } }, { reactions: { totalCount: 2 } }, { reactions: { totalCount: 3 } }],
-      pageInfo: { hasNextPage: false }
-    }
-  }
+      nodes: [
+        { reactions: { totalCount: 1 } },
+        { reactions: { totalCount: 2 } },
+        { reactions: { totalCount: 3 } },
+      ],
+      pageInfo: { hasNextPage: false },
+    },
+  },
 };
 
 const mockRateLimitResponse = {
   search: {
     nodes: [mockDiscussion],
-    pageInfo: { hasNextPage: false }
+    pageInfo: { hasNextPage: false },
   },
   rateLimit: {
     cost: 1,
     limit: 5000,
     remaining: 50,
-    resetAt: new Date().toISOString()
-  }
+    resetAt: new Date().toISOString(),
+  },
 };
 
 const issues = [
@@ -76,8 +80,14 @@ const issues = [
     resourcePath: '/path',
     repository: { name: 'repo' },
     author: { login: 'author' },
-    labels: { nodes: [{ name: 'area/docs' }] }
-  }
+    labels: { nodes: [{ name: 'area/docs' }] },
+  },
 ] as GoodFirstIssues[];
 
-export { discussionWithMoreComments, fullDiscussionDetails, issues, mockDiscussion, mockRateLimitResponse };
+export {
+  discussionWithMoreComments,
+  fullDiscussionDetails,
+  issues,
+  mockDiscussion,
+  mockRateLimitResponse,
+};

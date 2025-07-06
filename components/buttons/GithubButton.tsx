@@ -1,6 +1,9 @@
 import React from 'react';
 
-import { ButtonIconPosition, ButtonSize } from '@/types/components/buttons/ButtonPropsType';
+import {
+  ButtonIconPosition,
+  ButtonSize,
+} from '@/types/components/buttons/ButtonPropsType';
 
 import type { IButtonDefaultProps } from '../../types/components/buttons/types';
 import { useTranslation } from '../../utils/i18n';
@@ -25,20 +28,20 @@ export default function GithubButton({
   target = '_blank',
   iconPosition = ButtonIconPosition.LEFT,
   className = '',
-  inNav
+  inNav,
 }: IGithubButtonProps) {
   const { t } = useTranslation('common');
 
   return (
     <Button
       text={t(text)}
-      icon={<IconGithub className='-mt-1 inline-block size-6' />}
+      icon={<IconGithub className="-mt-1 inline-block size-6" />}
       href={href}
       iconPosition={iconPosition}
       target={target}
       className={className}
-      data-testid='Github-button'
-      bgClassName='bg-gray-800 hover:bg-gray-700'
+      data-testid="Github-button"
+      bgClassName="bg-gray-800 hover:bg-gray-700"
       buttonSize={inNav ? ButtonSize.SMALL : ButtonSize.DEFAULT}
     />
   );

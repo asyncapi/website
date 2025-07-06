@@ -1,5 +1,5 @@
 ---
-title: "How Microcks Can Speed-Up Your AsyncAPI Adoption - Part 2"
+title: 'How Microcks Can Speed-Up Your AsyncAPI Adoption - Part 2'
 date: 2021-01-07T00:07:00+01:00
 type: Engineering
 tags:
@@ -19,7 +19,7 @@ On our [first AsyncAPI blog post](/blog/microcks-asyncapi-part1) we have introdu
 
 In case you missed it, we have already released [version 1.1.0](https://microcks.io/blog/microcks-1.1.0-release/) in the meantime. This release includes some nice enhancements related to the topic of the day: **Microcks + AsyncAPI use cases using Apache Kafka**. This post will show you how Microcks is leveraging the AsyncAPI specification on Kafka in a very pragmatic and powerful approach: way beyond documentation or code generation! We will also go through the different business use-cases implemented by users integrating Microcks in their asynchronous API toolchain.
 
-When we are talking about Kafka we mean all Kafka distributions translated into *the choice is yours*: from vanilla Apache upstream distribution, to enterprise products and also cloud providers’ managed distributions!
+When we are talking about Kafka we mean all Kafka distributions translated into _the choice is yours_: from vanilla Apache upstream distribution, to enterprise products and also cloud providers’ managed distributions!
 
 ![microcks-kafka-distribs](/img/posts/microcks-asyncapi-part2/microcks-kafka-distribs.webp)
 
@@ -31,7 +31,7 @@ Before diving into AsyncAPI on Apache Kafka, let first see why simulating produc
 
 As good developers, we are lazy - in a very good way :wink: - and hate to restart from scratch our beautiful code implementations due to misunderstanding with Product Owners. However, nowadays Product Owners adopted and love the [Fail-Fast Principle](https://www.forbes.com/sites/danpontefract/2018/09/15/the-foolishness-of-fail-fast-fail-often/). We can't rely on functional implementations to start beta testing with consumers, we should fail fast and make them change requirements before we start implementation.
 
-Apart from generating frustrations, this above situation is also very inefficient from a cost and time to market point of view for the organization. 
+Apart from generating frustrations, this above situation is also very inefficient from a cost and time to market point of view for the organization.
 
 The contract-first approach is a wonderful way to create strong and efficient agreements between functional / business / product owners and developers! But it represents only a partial answer to the above situation
 
@@ -39,14 +39,15 @@ The contract-first approach is a wonderful way to create strong and efficient ag
 
 To avoid unnecessary work from developers and speed-up feedback gathering from consumers, simulation is the second part of the answer. That is why Microck's first use case and the killer feature is mocking!
 
-These are some of the reasons why the way to do mocking with Microcks is highly scalable: 
-* We rely 100% on Product Owners contracts 
-* We rely 100% on standards and specifications to describe contracts
-* We automatically generate all APIs mocks from contracts: no code!
-* We publish APIs mocks like real implementations using specifications examples 
-* We centralize all contracts and are the single point of trust
-* We are always in sync with your repositories: no drift anymore!
-* We provide sandbox at scale. You can heavily stress tests your business rules. Remember, we are Kubernetes-native!
+These are some of the reasons why the way to do mocking with Microcks is highly scalable:
+
+- We rely 100% on Product Owners contracts
+- We rely 100% on standards and specifications to describe contracts
+- We automatically generate all APIs mocks from contracts: no code!
+- We publish APIs mocks like real implementations using specifications examples
+- We centralize all contracts and are the single point of trust
+- We are always in sync with your repositories: no drift anymore!
+- We provide sandbox at scale. You can heavily stress tests your business rules. Remember, we are Kubernetes-native!
 
 This is why Microcks is the ultimate way to test, iterate and speed-up your APIs validations before asking developers to code the real implementation! And this certainly applies to asynchronous API on Kafka too: thanks to [AsyncAPI specification](https://www.asyncapi.com/docs/specifications/2.0.0).
 
@@ -82,11 +83,11 @@ What are the business use-cases of AsyncAPI? Where can you use Microcks as an es
 
 As said before, event-driven and asynchronous APIs are becoming mainstream because we truly understand the decoupling level - and thus power and agility - it brings within our products. We see the need for asynchronous APIs and Apache Kafka's presence as the de facto standard for message brokering - everywhere.
 
-* In every business vertical: to decouple a recording action (registration, purchase, like) to a marketing reaction (CRM update, behavioral analysis, marketing notification, renewal process management, etc...)
-* In Governmental organizations: to synchronize complex and partitioned repositories using master data management and staging pipelines techniques
-* In Financial Services: to streamline the sharing of information between core platforms and distribution ecosystems of partners,
-* In Industry: to enable Industry 4.0 to use IoT and become more agile to respond to market unpredictability and improve quality,
-* Soon in every Citizen's life: to power tomorrow Smart Cities with IoT and enable smart real-time insights and decision making.
+- In every business vertical: to decouple a recording action (registration, purchase, like) to a marketing reaction (CRM update, behavioral analysis, marketing notification, renewal process management, etc...)
+- In Governmental organizations: to synchronize complex and partitioned repositories using master data management and staging pipelines techniques
+- In Financial Services: to streamline the sharing of information between core platforms and distribution ecosystems of partners,
+- In Industry: to enable Industry 4.0 to use IoT and become more agile to respond to market unpredictability and improve quality,
+- Soon in every Citizen's life: to power tomorrow Smart Cities with IoT and enable smart real-time insights and decision making.
 
 These use cases come from companies using Microcks for simulating and testing their API implementation, and we are thankful to our users and community.
 
@@ -96,10 +97,10 @@ We are convinced that cutting edge developers understand the purpose, usages, an
 
 We hope these two Microcks features - mocking and testing - and application use-cases are clear and you now better understand our value proposition. Microcks proposes a very pragmatic and powerful usage of AsyncAPI specification: way beyond documentation or code generation! It allows you to speed-up and makes your delivery of Kafka event-driven architectures reliable.
 
-The roadmap ahead is also full of exciting new features we are looking forward to: 
+The roadmap ahead is also full of exciting new features we are looking forward to:
 
-* Continuing to make AsyncAPI full potential bloom through implementing multiple schema format supports - like Apache Avro - and [adding examples in the spec](https://github.com/asyncapi/asyncapi/issues/329),
-* Taking advantage of multiple protocol binding capabilities, releasing very soon a [MQTT implementation](https://github.com/microcks/microcks/issues/293) to support our users and prospects on the IoT landscape,
-* Solidifying an initiative we started a long time ago about a shared repository of simulation and test suites for standards or products APIs...
+- Continuing to make AsyncAPI full potential bloom through implementing multiple schema format supports - like Apache Avro - and [adding examples in the spec](https://github.com/asyncapi/asyncapi/issues/329),
+- Taking advantage of multiple protocol binding capabilities, releasing very soon a [MQTT implementation](https://github.com/microcks/microcks/issues/293) to support our users and prospects on the IoT landscape,
+- Solidifying an initiative we started a long time ago about a shared repository of simulation and test suites for standards or products APIs...
 
 We are open and you can help make Microcks an even greater tool! Please spread the word, send us some love through [GitHub stars](https://github.com/microcks/microcks), follow us on [Twitter](https://twitter.com/microcksio) or join our chat room on [Zulip](https://microcksio.zulipchat.com/login/).

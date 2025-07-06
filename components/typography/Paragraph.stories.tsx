@@ -10,21 +10,21 @@ const meta: Meta<typeof Paragraph> = {
   argTypes: {
     typeStyle: {
       options: Object.values(ParagraphTypeStyle),
-      control: { type: 'select' }
+      control: { type: 'select' },
     },
     textColor: {
-      control: { type: 'text' }
+      control: { type: 'text' },
     },
     fontWeight: {
-      control: { type: 'text' }
+      control: { type: 'text' },
     },
     children: {
-      control: { type: 'text' }
+      control: { type: 'text' },
     },
     className: {
-      control: { type: 'text' }
-    }
-  }
+      control: { type: 'text' },
+    },
+  },
 };
 
 export default meta;
@@ -36,6 +36,6 @@ export const Paragraphs: Story = {
     typeStyle: ParagraphTypeStyle.lg,
     textColor: 'text-gray-700',
     fontWeight: '',
-    children: 'Quick brown fox jumps over the lazy dog'
-  }
+    children: 'Quick brown fox jumps over the lazy dog',
+  },
 };

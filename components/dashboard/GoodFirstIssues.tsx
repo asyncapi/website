@@ -52,21 +52,25 @@ export default function GoodFirstIssues({ issues }: GoodFirstIssuesProps) {
   const allIssues = issues;
 
   if (selectedRepo !== 'All') {
-    filteredIssues = filteredIssues.filter((issue) => issue.repo === selectedRepo);
+    filteredIssues = filteredIssues.filter(
+      (issue) => issue.repo === selectedRepo,
+    );
   }
   if (selectedArea !== 'All') {
-    filteredIssues = filteredIssues.filter((issue) => issue.area === selectedArea);
+    filteredIssues = filteredIssues.filter(
+      (issue) => issue.area === selectedArea,
+    );
   }
 
   return (
     <Table
       title={
-        <div className='flex gap-3' data-testid='GoodFirstIssues-main-div'>
+        <div className="flex gap-3" data-testid="GoodFirstIssues-main-div">
           <span>Good First Issues</span>
           <GoodFirstIssuesTip />
           <Filters
-            className='ml-auto'
-            data-testid='GoodFirstIssues-filter-component'
+            className="ml-auto"
+            data-testid="GoodFirstIssues-filter-component"
             issues={filteredIssues}
             allIssues={allIssues}
             setSelectedRepo={setSelectedRepo}
@@ -77,8 +81,8 @@ export default function GoodFirstIssues({ issues }: GoodFirstIssuesProps) {
         </div>
       }
       data={filteredIssues.slice(0, 24)}
-      className='grow'
-      listClassName='lg:grid-cols-2'
+      className="grow"
+      listClassName="lg:grid-cols-2"
     />
   );
 }

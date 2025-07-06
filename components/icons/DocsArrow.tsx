@@ -17,7 +17,12 @@ interface DocsArrowProps {
  * @param {function} props.onClick - The onClick attribute for the div tag.
  * @param {string} props.className - The className attribute for the div tag.
  */
-export default function DocsArrow({ isDropDown, activeDropDownItem, onClick, className }: DocsArrowProps) {
+export default function DocsArrow({
+  isDropDown,
+  activeDropDownItem,
+  onClick,
+  className,
+}: DocsArrowProps) {
   return (
     <div
       className={`my-auto w-6 cursor-pointer rounded-md p-2 ${isDropDown && 'hover:bg-gray-100'}`}
@@ -25,8 +30,8 @@ export default function DocsArrow({ isDropDown, activeDropDownItem, onClick, cla
     >
       {isDropDown && (
         <img
-          alt='docs arrow'
-          src='/img/illustrations/icons/arrow.svg'
+          alt="docs arrow"
+          src="/img/illustrations/icons/arrow.svg"
           className={`m-auto w-fit transition-transform duration-200${className} ${activeDropDownItem ? 'rotate-90' : ''}`}
         />
       )}

@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI Conference Helsinki and the API Specs and Standards Concept"
+title: 'AsyncAPI Conference Helsinki and the API Specs and Standards Concept'
 date: 2024-09-13T06:00:00+01:00
 type: Communication
 tags:
@@ -19,7 +19,7 @@ After three years of hosting online conferences (2020-2022), the AsyncAPI commun
 
 In 2023, we organized multiple events under the brand `AsyncAPI Conf on Tour`. One of them took place at [APIDays Paris](https://www.apidays.global/paris2023/), made possible by the amazing folks behind [APIDays](https://www.apidays.global/), who share our belief in the future of strong API specifications and standards.
 
-It was a fantastic opportunity, but we had one major concern—how do we find our community members in an event with thousands of attendees? How do we have meaningful conversations? And how do we engage with people who don’t know about AsyncAPI yet? 
+It was a fantastic opportunity, but we had one major concern—how do we find our community members in an event with thousands of attendees? How do we have meaningful conversations? And how do we engage with people who don’t know about AsyncAPI yet?
 As you probably know, conference talks end, and people scatter. It’s easy to lose them in the crowd.
 
 One of the best places to meet people at conferences is at the sponsor booths. But as an open-source, community-driven project, we don’t have the budget for that kind of setup.

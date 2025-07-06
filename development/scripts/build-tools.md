@@ -16,8 +16,9 @@ The script fetches, processes, and merges these data sources into a unified tool
 3. Save the automated tools data to a JSON file
 4. Load the manual tools configuration from a predefined JSON file
 5. Combine both data sources using `combineTools()`, generating:
-  - A complete tools dataset
-  - A list of all available tags
+
+- A complete tools dataset
+- A list of all available tags
 
 ### File Structure
 
@@ -29,41 +30,48 @@ The script generates the following files in the `config` directory:
 - `all-tags.json` - All unique tags from the tools data
 
 ### Key Functions
+
 - `getData()`: Fetches tool data from GitHub repositories
 - `convertTools()`: Converts raw GitHub data into a standardized format
 - `combineTools()`: Merges automated and manual tools data into a single dataset
 - `writeFile()`: Writes the final tools data to JSON files
 
 ### Dependencies
+
 - `fs` for file system operations
 - `path` for path manipulations
 - `dotenv` for environment variable management
 - `axios` for HTTP requests
 
 ### Development Setup
+
 1. **Prerequisites**:
+
    - Node.js and npm installed
    - TypeScript installed globally or as a dev dependency
    - Access to the project repository
    - GitHub API token for authentication
 
 2. **Installing Dependencies**:
+
    ```bash
    npm install
    ```
 
 3. **Create Credentials**:
-  - Create a GitHub personal access token with the necessary scopes to access the repositories.
-  - You can follow the instructions in the [GitHub documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) to create a token.
-  - Ensure the token has access to the repositories you want to fetch data from.
+
+- Create a GitHub personal access token with the necessary scopes to access the repositories.
+- You can follow the instructions in the [GitHub documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) to create a token.
+- Ensure the token has access to the repositories you want to fetch data from.
 
 4. **Environment Configuration**
-  - Create a `.env` file in the project root with the following variables:
-    ```bash
-    GITHUB_TOKEN='{your-github-token}'
-    ```
-  - Alternatively, set these variables in your shell environment.
-  
+
+- Create a `.env` file in the project root with the following variables:
+  ```bash
+  GITHUB_TOKEN='{your-github-token}'
+  ```
+- Alternatively, set these variables in your shell environment.
+
 5. **Running the Script**:
    - Ensure the environment variables are set.
    - Execute the script using:
@@ -72,9 +80,11 @@ The script generates the following files in the `config` directory:
      ```
 
 ### Environment Variables
+
 - `GITHUB_TOKEN`: GitHub API token for authentication
 
 ### Usage
+
 - The script is designed to be run directly:
   ```bash
   tsx scripts/build-tools.ts
@@ -84,12 +94,15 @@ The script generates the following files in the `config` directory:
 - Ensure that the necessary environment variables are set for GitHub API access.
 
 ### Example Output
+
 The output will be JSON files in the `config` directory, containing the combined tools data and all unique tags. The structure of the output files will be as follows:
- - `tools.json`: An array of tool objects, each containing details such as name, description, tags, and source.
- - `all-tags.json`: An array of unique tags extracted from the tools data.
- - `tools-automated.json`: An array of tool objects with details fetched from GitHub.
+
+- `tools.json`: An array of tool objects, each containing details such as name, description, tags, and source.
+- `all-tags.json`: An array of unique tags extracted from the tools data.
+- `tools-automated.json`: An array of tool objects with details fetched from GitHub.
 
 ### Notes
+
 - Ensure that the GitHub API token has the necessary permissions to access the repositories.
 - The script is designed to be run in a Node.js environment with TypeScript support.
 - The script may take some time to run, depending on the number of repositories and the amount of data being processed.

@@ -13,8 +13,17 @@ interface AsyncAPIColorLogoProps {
 /**
  * The AsyncAPIColorIcon component is the logo for AsyncAPI in color mode.
  */
-export default function AsyncAPIColorIcon({ alt = 'AsyncAPI Icon', className = '' }: AsyncAPIColorLogoProps) {
+export default function AsyncAPIColorIcon({
+  alt = 'AsyncAPI Icon',
+  className = '',
+}: AsyncAPIColorLogoProps) {
   const loaderIconPath: string = 'img/loaders/loader.png';
 
-  return <img alt={alt} src={loaderIconPath} className={className || 'mx-auto w-16'} />;
+  return (
+    <img
+      alt={alt}
+      src={loaderIconPath}
+      className={className || 'mx-auto w-16'}
+    />
+  );
 }

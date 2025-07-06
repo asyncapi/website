@@ -9,12 +9,16 @@ import {
   determineEditLink,
   generatePaths,
   main,
-  processBatch
+  processBatch,
 } from '../../scripts/markdown/check-edit-links';
-import { determineEditLinkData, processBatchData, testPaths } from '../fixtures/markdown/check-edit-links-data';
+import {
+  determineEditLinkData,
+  processBatchData,
+  testPaths,
+} from '../fixtures/markdown/check-edit-links-data';
 
 jest.mock('../../scripts/helpers/logger.ts', () => ({
-  logger: { info: jest.fn() }
+  logger: { info: jest.fn() },
 }));
 jest.mock('node-fetch-2', () => jest.fn());
 
@@ -30,7 +34,7 @@ describe('URL Checker Tests', () => {
       const result = determineEditLink(
         determineEditLinkData[0].urlPath,
         determineEditLinkData[0].filePath,
-        editOptions
+        editOptions,
       );
 
       expect(result).toBe(determineEditLinkData[0].editLink);
@@ -40,7 +44,7 @@ describe('URL Checker Tests', () => {
       const result = determineEditLink(
         determineEditLinkData[1].urlPath,
         determineEditLinkData[1].filePath,
-        editOptions
+        editOptions,
       );
 
       expect(result).toBe(determineEditLinkData[1].editLink);
@@ -49,7 +53,7 @@ describe('URL Checker Tests', () => {
       const result = determineEditLink(
         determineEditLinkData[2].urlPath,
         determineEditLinkData[2].filePath,
-        editOptions
+        editOptions,
       );
 
       expect(result).toBe(determineEditLinkData[2].editLink);
@@ -59,7 +63,7 @@ describe('URL Checker Tests', () => {
       const result = determineEditLink(
         'some/nonexistent/path',
         'some/nonexistent/file.md',
-        [] // Empty edit options to ensure no match
+        [], // Empty edit options to ensure no match
       );
 
       expect(result).toBe(null);
@@ -82,7 +86,9 @@ describe('URL Checker Tests', () => {
 
     it('should skip _section.md files', async () => {
       const paths = await generatePaths(testDir, editOptions);
-      const sectionFiles = paths.filter((p) => p.filePath.endsWith('_section.md'));
+      const sectionFiles = paths.filter((p) =>
+        p.filePath.endsWith('_section.md'),
+      );
 
       expect(sectionFiles.length).toBe(0);
     });
@@ -92,9 +98,15 @@ describe('URL Checker Tests', () => {
       const mockReaddir = jest.spyOn(fs, 'readdir') as jest.Mock;
       const mockStat = jest.spyOn(fs, 'stat') as jest.Mock;
 
-      mockReaddir.mockImplementationOnce(() => Promise.resolve(['test.js', 'test.md']));
-      mockStat.mockImplementationOnce(() => Promise.resolve({ isDirectory: () => false, isFile: () => true }));
-      mockStat.mockImplementationOnce(() => Promise.resolve({ isDirectory: () => false, isFile: () => true }));
+      mockReaddir.mockImplementationOnce(() =>
+        Promise.resolve(['test.js', 'test.md']),
+      );
+      mockStat.mockImplementationOnce(() =>
+        Promise.resolve({ isDirectory: () => false, isFile: () => true }),
+      );
+      mockStat.mockImplementationOnce(() =>
+        Promise.resolve({ isDirectory: () => false, isFile: () => true }),
+      );
 
       const result = await generatePaths(testDir, editOptions);
 
@@ -133,7 +145,9 @@ describe('URL Checker Tests', () => {
     });
 
     it('should handle network errors', async () => {
-      mockFetch.mockImplementation(() => Promise.reject(new Error('Network error')));
+      mockFetch.mockImplementation(() =>
+        Promise.reject(new Error('Network error')),
+      );
       await expect(processBatch(testBatch)).rejects.toThrow();
     });
 
@@ -143,8 +157,8 @@ describe('URL Checker Tests', () => {
         {
           filePath: 'reference/specification/v2.x.md',
           urlPath: 'docs/reference/specification/v2.x',
-          editLink: 'https://github.com/org/repo/edit/main/v2.x.md'
-        }
+          editLink: 'https://github.com/org/repo/edit/main/v2.x.md',
+        },
       ];
 
       mockFetch.mockImplementation(() => Promise.resolve({ status: 404 }));
@@ -159,7 +173,7 @@ describe('URL Checker Tests', () => {
         () =>
           new Promise((resolve) => {
             setTimeout(resolve, 10000);
-          })
+          }),
       );
       await expect(processBatch(testBatch)).rejects.toThrow();
     }, 20000);
@@ -177,7 +191,7 @@ describe('URL Checker Tests', () => {
     it('should handle mixed responses correctly', async () => {
       mockFetch.mockImplementation((url) => {
         return Promise.resolve({
-          status: url.includes('migration') ? 404 : 200
+          status: url.includes('migration') ? 404 : 200,
         });
       });
       const results = await checkUrls(testPaths);
@@ -200,11 +214,15 @@ describe('URL Checker Tests', () => {
 
       await main();
 
-      expect(logger.info).toHaveBeenCalledWith(expect.stringContaining('URLs returning 404:'));
+      expect(logger.info).toHaveBeenCalledWith(
+        expect.stringContaining('URLs returning 404:'),
+      );
     });
 
     it('should handle errors gracefully', async () => {
-      mockFetch.mockImplementation(() => Promise.reject(new Error('Network error')));
+      mockFetch.mockImplementation(() =>
+        Promise.reject(new Error('Network error')),
+      );
 
       await expect(main()).rejects.toThrow();
     });

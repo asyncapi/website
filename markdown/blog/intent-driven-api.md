@@ -10,10 +10,10 @@ authors:
     photo: /img/avatars/smoya.webp
     link: https://twitter.com/smoyac
     byline: Pilot at AsyncAPI Airlines
-excerpt: Afraid because of breaking changes? Learn how do we plan to reduce breaking changes in our tooling APIs by introducing a new design approach called Intent-driven. 
+excerpt: Afraid because of breaking changes? Learn how do we plan to reduce breaking changes in our tooling APIs by introducing a new design approach called Intent-driven.
 ---
 
-The **Free and Open-Source Software** (FOSS) model, since its inception, has brought a flurry of libraries and applications available to everyone. 
+The **Free and Open-Source Software** (FOSS) model, since its inception, has brought a flurry of libraries and applications available to everyone.
 
 Thanks to the growth of the open-source community, we can now enjoy free software and, in most cases, generate profit from it.
 
@@ -21,13 +21,13 @@ I believe there is no tech company that doesn't use open source in one way or an
 
 FOSS has changed the way most developers operate: from coding all features from scratch to become consumers of libraries that implement most of the basic operation of an application. Sometimes even the core logic of the application is baked with free software.
 
-So much so that I, as a developer, can't imagine having to implement a complex application from scratch. 
+So much so that I, as a developer, can't imagine having to implement a complex application from scratch.
 
 If we go a step further, we won't talk only about libraries but also about APIs as services. For example, the fast adoption of the [Jamstack](https://jamstack.org) architecture, where the backend consists of different API services (primarily third-party), is pushing SaaS companies to make their private APIs public.
 
 In short, applications worldwide depend on free libraries maintained by the community, which constantly deliver updates at a frenetic rate: new functionalities, fixes, or in many other cases, drastic changes that allow us to continue growing and maintaining those libraries or APIs.
 
-The latter is, precisely, a problem for many developers. The feared 👻  **breaking changes** 👻.
+The latter is, precisely, a problem for many developers. The feared 👻 **breaking changes** 👻.
 
 > Disclaimer: This post provides examples from the point of view of a software library API maintainer. However, the same principles apply to any other API, such as command-line tools, REST, Kernel modules, or peripheral drivers.
 
@@ -41,7 +41,7 @@ Breaking changes are non-backward compatible changes in the public interface of 
 
 Users of such software are forced to alter their code if they want to use the latest version; otherwise, their code will be unusable.
 
-I propose a metaphor to better understand what a **breaking change** is. By the way, based on something that happened to me a few days ago. 
+I propose a metaphor to better understand what a **breaking change** is. By the way, based on something that happened to me a few days ago.
 Imagine that your preferred supermarket, the one you have been going to for several years, decides to restructure its interior completely. Where you could find the fruit, now you only find water and other drinks. At this point, I have three options:
 
 1. You adapt yourself to the new layout and changes made to the surface. It will take a few days or maybe weeks to know where each product is, but in return, you can continue shopping at your favorite supermarket.
@@ -54,22 +54,22 @@ In the software world, the first option would mean to update your code, so you a
 
 Therefore, the second option would be to look for another library or an API designed to avoid, as far as possible, these breaking changes. Building an API that meets this requirement is the primary purpose of this post.
 
-Finally, the third option would be to make zero use of FOSS. 
+Finally, the third option would be to make zero use of FOSS.
 
 How can we mitigate the impact on users when releasing a new [major](https://semver.org/#summary) version of our library or service API?
 
 # Designing APIs that are resilient to breaking changes
 
-APIs solve user needs. 
+APIs solve user needs.
 
 However, I believe we do not listen to the final users that much. Instead, we tend to expose functionalities based on our own experience, biased by our position or the knowledge we own of the platform behind. Sometimes guided by preliminary research (Product-oriented) or lead with a not-so-clear goal in mind. At least I used to do it in that way.
 
 Not an easy journey, but I can promise you it is worth it.
-As *Mark Dalgleish* once tweeted:
+As _Mark Dalgleish_ once tweeted:
 
 <TwitterTweetEmbed
-  tweetId='1384127726861258756'
-  options={{
+tweetId='1384127726861258756'
+options={{
     cards: 'hidden',
     width: 500,
     align: 'center'
@@ -84,15 +84,15 @@ An Intent represents a user intention of performing an action that solves a clea
 
 Continuing with the metaphor presented in the previous paragraph, notice that my only intention was to **buy groceries for dinner**. In particular, I needed some avocados, tomatoes and a baguette.
 
-The supermarket should provide a mechanism that lets me buy those items. How to get those, it's just the implementation detail and can be up to each supermarket to decide how to do it. 
+The supermarket should provide a mechanism that lets me buy those items. How to get those, it's just the implementation detail and can be up to each supermarket to decide how to do it.
 
-For example, my supermarket had shelves where customers can pick up fruits from, offers bags, a balance to know the weight of those, and a checkout place. However, after the last changes, fruits are weighted at checkout, and baguettes are no longer on the shelf. So you need to ask the baker. 
+For example, my supermarket had shelves where customers can pick up fruits from, offers bags, a balance to know the weight of those, and a checkout place. However, after the last changes, fruits are weighted at checkout, and baguettes are no longer on the shelf. So you need to ask the baker.
 
 As you can see, the interface didn't change: I still can buy the groceries. However, the implementation completely changed.
 
 Building APIs based on the implementation detail will nothing less than lead your users to suffer the (not-so-good) design choices made in the past. Furthermore, each change you make will penalize the user experience and force them to upgrade their code.
 
-Let's pick up another example, this time a more practical one. 
+Let's pick up another example, this time a more practical one.
 
 Here is a modified version of the [Streetlights tutorial](https://www.asyncapi.com/docs/tutorials/streetlights) document made for demo purposes:
 
@@ -105,13 +105,13 @@ servers:
   mosquitto:
     url: mqtt://test.mosquitto.org
     protocol: mqtt
-channels:    
+channels:
   light/measured/changed:
     subscribe:
       summary: Receive an update every time a lighting condition changed.
       operationId: onLightMeasureChanged
-      message: 
-        $ref: "#/components/messages/lightMessage"
+      message:
+        $ref: '#/components/messages/lightMessage'
 components:
   messages:
     lightMessage:
@@ -128,18 +128,22 @@ components:
             description: Light intensity measured in lumens.
 ```
 
-By the time of this post, there is only one implementation of the parser, which is written in JavaScript. 
+By the time of this post, there is only one implementation of the parser, which is written in JavaScript.
 [Parser-js][parser-js] parses AsyncAPI spec documents and provides functions to work with them and access the different objects and their values.
 
-In the hypothetical case a user wants to parse this document and *get all the messages a consumer of the application can consume*, this is needed: 
+In the hypothetical case a user wants to parse this document and _get all the messages a consumer of the application can consume_, this is needed:
 
 ```jsx
-doc.channels().filter(c => c.hasSubscribe()).map(c => c.subscribe().messages()).flat();
+doc
+  .channels()
+  .filter((c) => c.hasSubscribe())
+  .map((c) => c.subscribe().messages())
+  .flat();
 ```
 
 We can observe that the [Parser-js][parser-js] API (`v1.x`) is completely coupled with the structure of the AsyncAPI spec (by the date of this post, `v2.0.0`) document. The API is just a layer on top of the JSON Schema parsed document with some helpers and extras, meaning you should know the document's structure to access any information.
 
-Let's emulate a possible breaking change. 
+Let's emulate a possible breaking change.
 
 Imagine **messages** are now independent of channels and **Operations** get moved from where they used to be (under the channel) to the root of the document. For instance:
 
@@ -150,10 +154,10 @@ operations:
   onLightMeasureChanged:
     operationType: subscribe
     summary: Receive an update every time a lighting condition changed.
-    message: 
-      $ref: "#/messages/lightMessage"
+    message:
+      $ref: '#/messages/lightMessage'
     channel:
-      $ref: "#/channels/light/measured"
+      $ref: '#/channels/light/measured'
 channels:
   light/measured:
     description: Channel for updates on lightning conditions.
@@ -162,10 +166,14 @@ messages:
     # ...
 ```
 
-Now the users of the [Parser-js][parser-js] that wanted to *get all the messages a consumer of the application can consume* will need to change their code so their app keeps working after the **breaking change** got introduced. For instance:
+Now the users of the [Parser-js][parser-js] that wanted to _get all the messages a consumer of the application can consume_ will need to change their code so their app keeps working after the **breaking change** got introduced. For instance:
 
 ```jsx
-doc.operations().filter(o => o.isSubscribe()).map(o => o.message()).flat();
+doc
+  .operations()
+  .filter((o) => o.isSubscribe())
+  .map((o) => o.message())
+  .flat();
 ```
 
 ## Intent-driven design to the rescue
@@ -185,7 +193,7 @@ Some naming clarification:
 
 It looks simple, right? We have just written down our first intent! 🎉
 
-From now on, users won't need to know in detail how the spec document is structured. The parser will reflect any change on the underlying document inside each function instead. Therefore, `doc.clientPublishableMessages();` will **always** be available as a method: it makes complete sense from a business model point of view for the AsyncAPI project. 
+From now on, users won't need to know in detail how the spec document is structured. The parser will reflect any change on the underlying document inside each function instead. Therefore, `doc.clientPublishableMessages();` will **always** be available as a method: it makes complete sense from a business model point of view for the AsyncAPI project.
 
 New versions of the library will be out, but those will mostly be minor or patch versions, adding new features, or fixing bugs. Meaning the users will follow a fearless and simple upgrade process.
 
@@ -201,11 +209,11 @@ Here is a summary of the steps we followed:
 
 ## 1. Identify how users use the library
 
-We first focused on identifying the intents behind our [generator templates][templates]. By doing some code analysis, we came out with [a list][issue-2] of *potential* intents that became the foundation of our API.
+We first focused on identifying the intents behind our [generator templates][templates]. By doing some code analysis, we came out with [a list][issue-2] of _potential_ intents that became the foundation of our API.
 
-Furthermore, we tried to think about potential users of the parsers. For example, [Slack](https://github.com/slackapi/slack-api-specs/blob/master/events-api/slack_events_api_async_v1.json) developers could use the parser for adding documentation to their UI, validating messages, among others. 
+Furthermore, we tried to think about potential users of the parsers. For example, [Slack](https://github.com/slackapi/slack-api-specs/blob/master/events-api/slack_events_api_async_v1.json) developers could use the parser for adding documentation to their UI, validating messages, among others.
 
-That gave us another list of *potential* intents, most of them already covered by the list we got from the templates.
+That gave us another list of _potential_ intents, most of them already covered by the list we got from the templates.
 
 ## 2. Transform potential intents to actual intents
 
@@ -222,11 +230,11 @@ We then wrote down a draft of our first list of intents.
 
 ## 3. Build a mock API
 
-After getting a list of intents to implement, we built a simple mock API in JavaScript with that list. 
+After getting a list of intents to implement, we built a simple mock API in JavaScript with that list.
 
 Methods were returning hardcoded data but were enough for getting an idea of how difficult it would be to create such API from the point of view of a maintainer.
 
-At this point, we faced up some API design decisions, such as: 
+At this point, we faced up some API design decisions, such as:
 
 - Shall we add getters for all properties?
 - Are we going to use singular or plural methods?
@@ -243,11 +251,11 @@ However, we found some inconsistencies, such as missing intents and helpers requ
 
 ## 5. Wrap up documentation
 
-This step included writing down all our documentation around the new API in a new repository, where developers of AsyncAPI parsers will refer and follow the specification of the API. 
+This step included writing down all our documentation around the new API in a new repository, where developers of AsyncAPI parsers will refer and follow the specification of the API.
 
 Even though each parser will now maintain an individual release cycle, changes to this API will force the individual parsers to update.
 
-It follows [Semver](https://semver.org/) (as we do for all projects), so each parser will therefore maintain its compatibility matrix, making visible what version of the API specification they support. 
+It follows [Semver](https://semver.org/) (as we do for all projects), so each parser will therefore maintain its compatibility matrix, making visible what version of the API specification they support.
 
 You can find the new repository holding the new Parsers API specification [here][api], which at the moment of writing this post, it's still `v1.0.0-alpha`, as we are waiting for more feedback from the community.
 
@@ -260,8 +268,8 @@ Our next steps are going to be:
 
 1. To release a new version (alpha) of the [Parser-js][parser-js] that implements the new API specification.
 2. To use that new [Parser-js][parser-js] version in some of the [generator templates][templates]. That will help us to:
-    1. Validate that the [Parser-js][parser-js] behaves as expected.
-    2. Set an example of what kind of changes users will need to do on their codes to adopt the new API (We expect code will require no significant changes).
+   1. Validate that the [Parser-js][parser-js] behaves as expected.
+   2. Set an example of what kind of changes users will need to do on their codes to adopt the new API (We expect code will require no significant changes).
 3. To ask for feedback from the community, especially to maintainers and users of the [Parser-js][parser-js]. Reviewing the new API now becomes easier as there will be the specification, a new version of the [Parser-js][parser-js] and also examples to follow.
 4. Review feedback, apply suggestions, and do release a release-candidate or final version.
 
@@ -293,9 +301,9 @@ It is not an easy path in the short term; however, the benefits can be visible e
 
 I firmly believe making a great user experience should always be a top priority, especially for publicly available projects. If we don't care about users then, who is going to use our software?
 
-I want to take this opportunity to express my gratitude to [Jonas Lagoni](https://github.com/jonaslagoni), who has been my partner along this journey. 
+I want to take this opportunity to express my gratitude to [Jonas Lagoni](https://github.com/jonaslagoni), who has been my partner along this journey.
 Hours of figuring out small details, long backs and forths, and discussions around user experience were easy-going, thanks to this one.
 
-I hope you enjoyed reading this post as much as I did writing it 😃 
+I hope you enjoyed reading this post as much as I did writing it 😃
 
 > Cover photo by <a href="https://kaboompics.com/photo/20669/sharpened-colorful-pencils">Karolina Grabowska</a> on <a href="https://kaboompics.com">Kaboompics</a>

@@ -27,7 +27,7 @@ describe('start function', () => {
       'blog',
       'AsyncAPI Initiative Blog RSS Feed',
       'AsyncAPI Initiative Blog',
-      'rss.xml'
+      'rss.xml',
     );
 
     expect(buildCaseStudiesList).toHaveBeenCalled();
@@ -38,7 +38,9 @@ describe('start function', () => {
   test('should throw an error if no finance data is found', async () => {
     const readdirSyncSpy = jest.spyOn(fs, 'readdirSync').mockReturnValue([]);
 
-    await expect(start()).rejects.toThrow('No finance data found in the finance directory.');
+    await expect(start()).rejects.toThrow(
+      'No finance data found in the finance directory.',
+    );
     expect(readdirSyncSpy).toHaveBeenCalledTimes(1);
     expect(buildFinanceInfoList).not.toHaveBeenCalled();
 

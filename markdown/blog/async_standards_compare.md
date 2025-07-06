@@ -1,19 +1,19 @@
 ---
 type: Engineering
 cover: /img/posts/async_standards_compare/devops-specs_pic-01.webp
-title: "AsyncAPI, CloudEvents, OpenTelemetry: Which Event-Driven Specs Should Your DevOps Include?"
+title: 'AsyncAPI, CloudEvents, OpenTelemetry: Which Event-Driven Specs Should Your DevOps Include?'
 date: 2021-05-25T06:00:00+01:00
 canonical: https://solace.com/blog/asyncapi-cloudevents-opentelemetry-event-driven-specs-devops/
 tags:
-   - OpenTelemetry
-   - Specification
-   - EDA
-   - CloudEvents
+  - OpenTelemetry
+  - Specification
+  - EDA
+  - CloudEvents
 authors:
-   - name: Jesse Menning
-     photo: /img/avatars/jmenning.webp
-     link: https://www.linkedin.com/in/jmenning
-     byline: CTO Architect at Solace
+  - name: Jesse Menning
+    photo: /img/avatars/jmenning.webp
+    link: https://www.linkedin.com/in/jmenning
+    byline: CTO Architect at Solace
 ---
 
 A decade ago, event-driven architecture was the wild west. Documentation? It’s in a spreadsheet somewhere. Where did the event go? Here’s a list of ten logs to search through. How do we make sure events from System A can be understood by System B? Slap some headers on the message and hope that they make it across the event broker.
@@ -48,10 +48,10 @@ However, defining an interface requires having a standard way of describing it t
 
 In addition to the Plan phase, AsyncAPI also has emerging capabilities for other phases (shown in grey above):
 
-* **Code:** A [code-generator for Spring Cloud Stream](https://github.com/asyncapi/java-spring-cloud-stream-template) takes an AsyncAPI definition and creates skeleton code, reducing the need to laboriously create boilerplate code. More code generators are planned. And vice-versa, there are [code-first tools](https://www.asyncapi.com/docs/community/tooling#code-first-tools) at that will generate an AsyncAPI spec out of numerous popular languages.
-* **Test:** The [partnership between AsyncAPI and Postman](https://www.asyncapi.com/blog/asyncapi-partners-with-postman) highlights the increased ability to test async flows once they are well defined.
-* **Deploy:** Technology-specific [bindings](https://github.com/asyncapi/bindings/) defined within the spec can be used to establish connections and subscriptions to event brokers upon deployment.
-* **Operate:** Once messages are flowing at runtime, an AsyncAPI document can be used to ensure schema compliance with tools like [Node.js AsyncAPI Validator](https://github.com/WaleedAshraf/asyncapi-validator)
+- **Code:** A [code-generator for Spring Cloud Stream](https://github.com/asyncapi/java-spring-cloud-stream-template) takes an AsyncAPI definition and creates skeleton code, reducing the need to laboriously create boilerplate code. More code generators are planned. And vice-versa, there are [code-first tools](https://www.asyncapi.com/docs/community/tooling#code-first-tools) at that will generate an AsyncAPI spec out of numerous popular languages.
+- **Test:** The [partnership between AsyncAPI and Postman](https://www.asyncapi.com/blog/asyncapi-partners-with-postman) highlights the increased ability to test async flows once they are well defined.
+- **Deploy:** Technology-specific [bindings](https://github.com/asyncapi/bindings/) defined within the spec can be used to establish connections and subscriptions to event brokers upon deployment.
+- **Operate:** Once messages are flowing at runtime, an AsyncAPI document can be used to ensure schema compliance with tools like [Node.js AsyncAPI Validator](https://github.com/WaleedAshraf/asyncapi-validator)
 
 # CloudEvents
 
@@ -63,7 +63,7 @@ Contextual information about the event is crucial for all the consumers, but eve
 
 To resolve these challenges, enterprises have traditionally created their own custom envelope: standards about what meta information is included in messages and in what format. But many applications don’t comply, either because they are outside the organization, it’s a legacy app that’s too pricey to retrofit, or because they use a protocol that hasn’t been included in the standard.
 
-The workaround is typically tedious and error-prone – manual mapping of metadata. This additional step can mean using data transformation software to enrich messages.  And in cases where information is missing, you either have messy data generation or make do without it.
+The workaround is typically tedious and error-prone – manual mapping of metadata. This additional step can mean using data transformation software to enrich messages. And in cases where information is missing, you either have messy data generation or make do without it.
 
 ![Figure 5- CloudEvents focuses on event meta data interoperability.](/img/posts/async_standards_compare/devops-specs_pic-05.webp)
 
@@ -75,8 +75,8 @@ There is an overlap between CloudEvents and AsyncAPI, as noted by AsyncAPI’s f
 
 And as an evolving standard being used by major SaaS and cloud providers, CloudEvents is gaining both momentum and functionality. In addition to the Operate phase, now that the core specification has been released, the group’s focus has turned to several extensions that address other stages and address other event-driven challenges:
 
-* **Plan:** Discovery capability allows new and existing applications to query a catalog of services for available events using a standardized API.
-* **Deploy:** Subscription manager capability allows applications to subscribe to events using a standardized API.
+- **Plan:** Discovery capability allows new and existing applications to query a catalog of services for available events using a standardized API.
+- **Deploy:** Subscription manager capability allows applications to subscribe to events using a standardized API.
 
 ### OpenTelemetry
 
@@ -94,4 +94,4 @@ Once completed, OpenTelemetry helps to answer the classic event-driven question 
 
 It’s a great time for event-driven architecture. Challenges that used to be overcome in different ways in every implementation are now being addressed by standard, open-source solutions. While OpenTelemetry, AsyncAPI and CloudEvents do have overlapping capabilities, they are distinct enough to all warrant a place in your DevOps processes.
 
-If you have more questions or want to share your experience with these standards, you can let us know in the [AsyncAPI Slack](https://www.asyncapi.com/slack-invite) or the [Solace Community Forum](http://solace.community/). 
+If you have more questions or want to share your experience with these standards, you can let us know in the [AsyncAPI Slack](https://www.asyncapi.com/slack-invite) or the [Solace Community Forum](http://solace.community/).

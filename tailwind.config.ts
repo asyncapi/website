@@ -12,7 +12,7 @@ const colorPrimary: Record<string, string> = {
   300: '#CAB0FC',
   400: '#A87EFC',
   500: '#8851FB',
-  600: '#461E96'
+  600: '#461E96',
 };
 
 const colorSecondary: Record<string, string> = {
@@ -21,7 +21,7 @@ const colorSecondary: Record<string, string> = {
   300: '#B2E8FF',
   400: '#80D9FF',
   500: '#47BCEE',
-  600: '#1AA9C9'
+  600: '#1AA9C9',
 };
 
 const colorPink: Record<string, string> = {
@@ -34,7 +34,7 @@ const colorPink: Record<string, string> = {
   600: '#B70B7A',
   700: '#89085C',
   800: '#5C063D',
-  900: '#2E031F'
+  900: '#2E031F',
 };
 
 const colorYellow: Record<string, string> = {
@@ -47,7 +47,7 @@ const colorYellow: Record<string, string> = {
   600: '#CCA832',
   700: '#997E26',
   800: '#665419',
-  900: '#332A0D'
+  900: '#332A0D',
 };
 
 const colorGray: Record<string, string> = {
@@ -60,7 +60,7 @@ const colorGray: Record<string, string> = {
   600: '#8B9394',
   700: '#556061',
   800: '#364042',
-  900: '#242929'
+  900: '#242929',
 };
 
 const config: Config = {
@@ -68,7 +68,7 @@ const config: Config = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './config/**/*.json'
+    './config/**/*.json',
   ],
   theme: {
     fontWeight: {
@@ -79,7 +79,7 @@ const config: Config = {
       semibold: '600',
       bold: '700',
       extrabold: '800',
-      black: '900'
+      black: '900',
     },
     backgroundImage: {
       ambassador: "url('/img/homepage/ambassador.webp')",
@@ -89,18 +89,18 @@ const config: Config = {
       roadmapCover: "url('/img/homepage/roadmap.webp')",
       confBg: "url('/img/homepage/confBlurBg.webp')",
       ambassadorCover: "url('/img/homepage/gathering.webp')",
-      mapCover: "url('/img/homepage/mapbase.webp')"
+      mapCover: "url('/img/homepage/mapbase.webp')",
     },
     fontFamily: {
       sans: ['Inter', ...defaultTheme.fontFamily.sans],
       heading: ['Work Sans', ...defaultTheme.fontFamily.sans],
       body: ['Inter', ...defaultTheme.fontFamily.sans],
-      mono: ['Fira Code VF', 'Fira Code', ...defaultTheme.fontFamily.mono]
+      mono: ['Fira Code VF', 'Fira Code', ...defaultTheme.fontFamily.mono],
     },
     minWidth: {
       72: '18rem',
       40: '10rem',
-      12: '3rem'
+      12: '3rem',
     },
     extend: {
       colors: {
@@ -111,7 +111,7 @@ const config: Config = {
         yellow: colorYellow,
         'code-editor': {
           dark: '#252f3f',
-          'dark-highlight': '#3e4d64'
+          'dark-highlight': '#3e4d64',
         },
         dark: '#1B1130',
         'cool-gray': '#9C96A8',
@@ -120,14 +120,14 @@ const config: Config = {
         'mac-window': {
           close: '#ff5f56',
           minimize: '#ffbd2e',
-          maximize: '#28c93f'
+          maximize: '#28c93f',
         },
         violet: '#8054F2',
         darkGunMetal: '#212526',
-        linkedin: '#0077b5'
+        linkedin: '#0077b5',
       },
       scale: {
-        25: '.25'
+        25: '.25',
       },
       padding: {
         '2ch': '2ch',
@@ -136,11 +136,11 @@ const config: Config = {
         '8ch': '8ch',
         '10ch': '10ch',
         '12ch': '12ch',
-        '14ch': '14ch'
+        '14ch': '14ch',
       },
       width: {
         fit: 'fit-content',
-        beforeHalf: '49%'
+        beforeHalf: '49%',
       },
       height: {
         72: '18rem',
@@ -155,7 +155,7 @@ const config: Config = {
         130: '40rem',
         'half-screen': '50vh',
         'full-screen': '100vh',
-        beforeHalf: '49%'
+        beforeHalf: '49%',
       },
       maxWidth: {
         '(screen-16)': 'calc(100vw - 16rem)',
@@ -163,32 +163,32 @@ const config: Config = {
         64: '16rem',
         164: '41rem',
         172: '43rem',
-        184: '46rem'
+        184: '46rem',
       },
       minHeight: {
-        108: '27rem'
+        108: '27rem',
       },
       maxHeight: {
         '(screen-16)': 'calc(100vh - 4rem)',
         108: '27rem',
         '(screen-14)': 'calc(100vh - 81px)',
-        120: '37rem'
+        120: '37rem',
       },
       margin: {
-        36: '9rem'
+        36: '9rem',
       },
       borderRadius: {
-        xl: '1rem'
+        xl: '1rem',
       },
       letterSpacing: {
         heading: '-0.03em',
-        body: '-0.01em'
+        body: '-0.01em',
       },
       zIndex: {
-        60: '60'
+        60: '60',
       },
       rotate: {
-        '-15': '-7deg'
+        '-15': '-7deg',
       },
       fontSize: {
         xxs: ['0.6rem', '0.6rem'],
@@ -199,12 +199,12 @@ const config: Config = {
         'heading-xl': ['64px', '1.375'],
         'body-sm': ['14px', '1.625'],
         'body-md': ['16px', '1.625'],
-        'body-lg': ['18px', '1.625']
+        'body-lg': ['18px', '1.625'],
       },
       screens: {
-        xs: '475px'
-      }
-    }
+        xs: '475px',
+      },
+    },
   },
   plugins: [
     formsPlugin,
@@ -213,30 +213,30 @@ const config: Config = {
     plugin(({ addUtilities }) => {
       const utilities = {
         '.hljs-asyncapi-file': {
-          color: colors.yellow[200]
+          color: colors.yellow[200],
         },
         '.hljs-generator-template': {
-          color: colors.teal[400]
+          color: colors.teal[400],
         },
         '.hljs-generator-param': {
-          color: colors.pink[400]
+          color: colors.pink[400],
         },
         '.font-ligatures-contextual': {
-          'font-variant-ligatures': 'contextual'
+          'font-variant-ligatures': 'contextual',
         },
         '.scroll-none': {
           'scrollbar-width': 'none',
-          '-ms-overflow-style': 'none'
+          '-ms-overflow-style': 'none',
         },
         '.scroll-none::-webkit-scrollbar': {
           display: 'none',
-          'scroll-behavior': 'smooth'
-        }
+          'scroll-behavior': 'smooth',
+        },
       };
 
       addUtilities(utilities);
-    })
-  ]
+    }),
+  ],
 };
 
 export default config;

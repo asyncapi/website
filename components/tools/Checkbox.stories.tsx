@@ -8,7 +8,7 @@ import Checkbox from './Checkbox';
 
 const meta: Meta<typeof Checkbox> = {
   title: 'Components/Checkbox',
-  component: Checkbox
+  component: Checkbox,
 };
 
 export default meta;
@@ -18,7 +18,7 @@ type Story = StoryObj<typeof Checkbox>;
 export const DefaultCheckbox: Story = {
   args: {
     name: 'Check me!',
-    checked: true
+    checked: true,
   },
 
   render: (args: CheckboxProps) => {
@@ -28,8 +28,14 @@ export const DefaultCheckbox: Story = {
       updateArgs({ checked: !checked });
     };
 
-    return <Checkbox {...args} checked={checked} handleClickOption={handleClickOption} />;
-  }
+    return (
+      <Checkbox
+        {...args}
+        checked={checked}
+        handleClickOption={handleClickOption}
+      />
+    );
+  },
 };
 
 export const ColorfulCheckbox: Story = {
@@ -41,6 +47,6 @@ export const ColorfulCheckbox: Story = {
     textColor: 'text-primary-500',
     borderColor: 'border-primary-500',
     checkedStateBgColor: 'bg-primary-500',
-    checkedStateTextColor: 'text-white'
-  }
+    checkedStateTextColor: 'text-white',
+  },
 };

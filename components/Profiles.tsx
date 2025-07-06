@@ -22,20 +22,22 @@ export default function Profiles({ profiles = [] }: ProfileProps) {
 
   return (
     <div
-      className='mt-4 grid grid-cols-2 gap-5 rounded border border-slate-100 p-4 drop-shadow-md sm:grid-cols-4'
-      data-testid='Profiles-main'
+      className="mt-4 grid grid-cols-2 gap-5 rounded border border-slate-100 p-4 drop-shadow-md sm:grid-cols-4"
+      data-testid="Profiles-main"
     >
       {profiles.map((profile) => (
         <a
-          data-testid='Profiles-link'
+          data-testid="Profiles-link"
           href={profile.link}
           key={profile.name}
-          target='_blank'
-          className='flex flex-col items-center'
-          rel='noreferrer'
+          target="_blank"
+          className="flex flex-col items-center"
+          rel="noreferrer"
         >
-          <img src={profile.avatar} alt={profile.name} className='rounded' />
-          <span className='mt-2 text-sm underline decoration-secondary-300'>{profile.name}</span>
+          <img src={profile.avatar} alt={profile.name} className="rounded" />
+          <span className="mt-2 text-sm underline decoration-secondary-300">
+            {profile.name}
+          </span>
         </a>
       ))}
     </div>

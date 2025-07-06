@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI partners with Postman to boost development of Asynchronous APIs"
+title: 'AsyncAPI partners with Postman to boost development of Asynchronous APIs'
 date: 2020-12-08T17:00:00+01:00
 type: Communication
 tags:

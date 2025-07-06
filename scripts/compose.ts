@@ -123,29 +123,36 @@ inquirer
     {
       name: 'title',
       message: 'Enter post title:',
-      type: 'input'
+      type: 'input',
     },
     {
       name: 'excerpt',
       message: 'Enter post excerpt:',
-      type: 'input'
+      type: 'input',
     },
     {
       name: 'tags',
       message: 'Any Tags? Separate them with , or leave empty if no tags.',
-      type: 'input'
+      type: 'input',
     },
     {
       name: 'type',
       message: 'Enter the post type:',
       type: 'list',
-      choices: ['Communication', 'Community', 'Engineering', 'Marketing', 'Strategy', 'Video']
+      choices: [
+        'Communication',
+        'Community',
+        'Engineering',
+        'Marketing',
+        'Strategy',
+        'Video',
+      ],
     },
     {
       name: 'canonical',
       message: 'Enter the canonical URL if any:',
-      type: 'input'
-    }
+      type: 'input',
+    },
   ])
   .then((answers: ComposePromptType) => {
     // Remove special characters and replace space with -

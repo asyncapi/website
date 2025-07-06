@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI and Apicurio for Asynchronous APIs"
+title: 'AsyncAPI and Apicurio for Asynchronous APIs'
 date: 2022-01-26T06:00:00+01:00
 type: Engineering
 tags:
@@ -7,8 +7,8 @@ tags:
   - Schema-Registry
   - Kafka
   - Avro
-  - Apicurio 
-cover: /img/posts/asyncapi-and-apicurio-for-asynchronous-apis/apicurio_registry.webp 
+  - Apicurio
+cover: /img/posts/asyncapi-and-apicurio-for-asynchronous-apis/apicurio_registry.webp
 authors:
   - name: Nadja Hagen
     photo: /img/avatars/nadjahagen.webp
@@ -26,8 +26,7 @@ As another aspect, large projects usually include multiple teams working and dev
 
 Since AsyncAPI is developing quite fast, we want to have a look at what the specification and corresponding tools currently cover. Additionally, we will shortly examine how Apicurio and AsyncAPI can work together at the moment. Nevertheless, there are many new tools and features for AsyncAPI on the roadmap. For this reason, this article can only be a snapshot. So stay tuned until the end of this post to get an outlook on what is next to come.
 
-Elements of an AsyncAPI Document
-================================
+# Elements of an AsyncAPI Document
 
 Coming to the basics of AsyncAPI: How does an AsyncAPI definition look? AsyncAPI allows using YAML or JSON for document definition. A document consists of the following elements:
 
@@ -105,7 +104,7 @@ In practice, the definition can become quite long. Consider the below example fr
           schema:
             type: string
 
-If you want to look at it in a more readable way, you can copy and paste the definition to the [AsyncAPI Studio](https://studio.asyncapi.com/) or the [AsyncAPI playground](https://playground.asyncapi.io)(*Remark*: AsyncAPI Playground will soon be archived and replaced by AsyncAPI Studio). More examples are available on [GitHub](https://github.com/asyncapi/spec/tree/master/examples).
+If you want to look at it in a more readable way, you can copy and paste the definition to the [AsyncAPI Studio](https://studio.asyncapi.com/) or the [AsyncAPI playground](https://playground.asyncapi.io)(_Remark_: AsyncAPI Playground will soon be archived and replaced by AsyncAPI Studio). More examples are available on [GitHub](https://github.com/asyncapi/spec/tree/master/examples).
 
 I do not want to dive too deep into the exact details of the specification because the [documentation](https://www.asyncapi.com/docs/specifications/v2.2.0) is already helpful enough for this. But I want to highlight some parts of the specification that could be the icing on the cake when considering it.
 
@@ -152,8 +151,7 @@ As another use case, let’s assume there are already event-driven applications 
 
 AsyncAPI also offers an [Avro schema parser](https://github.com/asyncapi/avro-schema-parser) which collects local Avro references or remote files from Confluent Schema Registry and inserts them into the definition.
 
-Kafka, AMQP, MQTT or HTTP: Protocol-Specific Properties
-=======================================================
+# Kafka, AMQP, MQTT or HTTP: Protocol-Specific Properties
 
 As already mentioned at the beginning of this post, asynchronous communication can involve different types of protocols. As this is a fundamental aspect of your API definitions, AsyncAPI supports adding protocol-specific properties.  
 These protocol-specific properties can be necessary on different levels: server level, channel level, operation level, and message level. For these levels, AsyncAPI allows defining protocol-specific objects, so-called bindings. This [repository](https://github.com/asyncapi/bindings) provides a complete list of all bindings and their specification details.  
@@ -182,8 +180,7 @@ For example, it is possible to add a key for Kafka messages:
 Unfortunately, for many protocols, there are a lot of binding objects which are not specified yet. E.g., for Kafka, there are no specifications for the Server and Channel Binding objects. In the case of Kafka, relevant but missing properties could be the number of partitions or the delivery guarantee. These properties would be a good use case for [specification extensions](https://www.asyncapi.com/docs/specifications/v2.2.0#specificationExtensions) that [currently cannot be used in binding objects](https://github.com/asyncapi/bindings/issues/83#issuecomment-925965378).  
 In addition, some [conventions](https://github.com/asyncapi/bindings/pull/75) for the specification of bindings are on the roadmap. As protocol-specific bindings are still in the alpha version, this feature will become mature with continuous development.
 
-AsyncAPI and Apicurio: A Match?
-===============================
+# AsyncAPI and Apicurio: A Match?
 
 In contrast to the [Confluent Schema Registry](https://docs.confluent.io/platform/current/schema-registry/index.html), Apicurio is not limited to [message schemas but also supports API specifications](https://www.apicur.io/registry/docs/apicurio-registry/2.1.x/getting-started/assembly-intro-to-the-registry.html). Apicurio could therefore also replace the Confluent Schema Registry.  
 However, this is probably only true if the architecture does not mainly base on a Confluent ecosystem. But depending on the use case, Apicurio can be a helpful addition to the Schema Registry due to the additionally supported formats.
@@ -207,8 +204,7 @@ As an alternative, it is also possible to build your own AsyncAPI catalog to sup
 
 If you want to test how Apicurio works, check out this small [quick start guide](https://github.com/NovatecConsulting/tc-apicurio-quickstart). It starts an Apicurio container and deploys some AsyncAPI example files.
 
-The Roadmap: What is Next to Come
-=================================
+# The Roadmap: What is Next to Come
 
 If you take a closer look at the [GitHub repositories](https://github.com/asyncapi) of AsyncAPI, you will quickly notice that a lot is happening here right now. There are many exciting and promising ideas, and the community seems to grow steadily. For example, an [event gateway](https://github.com/asyncapi/event-gateway) is currently being developed that will make it possible to validate and modify messages even before they arrive at the broker. Another idea is the [Glee framework](https://github.com/asyncapi/glee), which ensures that AsyncAPI definition and code match. At first glance, an unexpected project is the [AsyncAPI Chatbot](https://github.com/asyncapi/chatbot). It helps to create an AsyncAPI document without having to know the specification yourself.
 

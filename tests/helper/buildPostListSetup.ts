@@ -18,11 +18,13 @@ async function setupTestDirectories(tempDir: string): Promise<void> {
       await fs.ensureDir(join(tempDir, TEST_CONTENT[dirKey].dir));
       await fs.writeFile(
         join(tempDir, TEST_CONTENT[dirKey].dir, TEST_CONTENT[dirKey].file),
-        TEST_CONTENT[dirKey].content
+        TEST_CONTENT[dirKey].content,
       );
-    })
+    }),
   );
-  await fs.ensureDir(join(tempDir, TEST_CONTENT.docs.dir, TEST_CONTENT.docs.subDir));
+  await fs.ensureDir(
+    join(tempDir, TEST_CONTENT.docs.dir, TEST_CONTENT.docs.subDir),
+  );
 }
 
 /**
@@ -31,7 +33,10 @@ async function setupTestDirectories(tempDir: string): Promise<void> {
  * @returns {string} - The generated temporary directory path.
  */
 function generateTempDirPath(baseDir: string) {
-  return resolve(baseDir, `test-config-${Date.now()}-${Math.random().toString(36).slice(2)}`);
+  return resolve(
+    baseDir,
+    `test-config-${Date.now()}-${Math.random().toString(36).slice(2)}`,
+  );
 }
 
 export { generateTempDirPath, setupTestDirectories };

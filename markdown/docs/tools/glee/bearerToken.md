@@ -61,11 +61,11 @@ components:
 
 ```
 
-The Client `asyncapi.yaml` file **doesn't need to implement all the security requirements of the server; it only needs to implement the ones it uses, like *http (bearer token)* here.**
+The Client `asyncapi.yaml` file **doesn't need to implement all the security requirements of the server; it only needs to implement the ones it uses, like _http (bearer token)_ here.**
 
 ### Client Side
 
-Following the client `asyncapi.yaml` file above, create a file named `trendingAnime.ts` in the `auth` directory, since that is the server that has the security property. 
+Following the client `asyncapi.yaml` file above, create a file named `trendingAnime.ts` in the `auth` directory, since that is the server that has the security property.
 
 ```bash
 touch auth/trendingAnime.ts
@@ -76,8 +76,8 @@ When using the `bearer` security scheme, pass the parameters as follows:
 ```js
 export async function clientAuth({ parsedAsyncAPI, serverName }) {
   return {
-    token: process.env.TOKEN
-  }
+    token: process.env.TOKEN,
+  };
 }
 ```
 
@@ -85,7 +85,7 @@ Glee will utilize the `token` for server authentication, employing it in the hea
 
 ### Server Side
 
-From the server `asyncapi.yaml` file above, create a file named `trendingAnimeServer.ts` in the `auth` directory, since that is the server that has the security property. 
+From the server `asyncapi.yaml` file above, create a file named `trendingAnimeServer.ts` in the `auth` directory, since that is the server that has the security property.
 
 ```bash
 touch auth/trendingAnimeServer.ts
@@ -94,13 +94,11 @@ touch auth/trendingAnimeServer.ts
 On the server side, you can retrieve the values as follows:
 
 ```js
-
 export async function serverAuth({ authProps, done }) {
-  authProps.getToken()
+  authProps.getToken();
   // Your authentication logic here...
-  done(true || false)
+  done(true || false);
 }
-
 ```
 
 So, `getToken()` returns a string containing the token sent from the client.

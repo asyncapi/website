@@ -1,5 +1,5 @@
 ---
-title: "Event-Driven Architectures"
+title: 'Event-Driven Architectures'
 date: 2019-04-01T10:56:52+01:00
 menu:
   docs:
@@ -9,18 +9,19 @@ weight: 11
 
 Many developers, architects, and product managers have used REST APIs and are familiar with the synchronous communication paradigm. You make a request and wait for the response. This is exactly how the world wide web works. You enter a URL (e.g., www.google.com) in the browser's address bar and it sends a request to the server. The server then sends the response with the website content. **The web is the greatest implementation of a REST API.**
 
-However, there are certain situations where you don't need a response from the server. In most cases, it's only important to have some confirmation that the request was received. This is also called _"fire and forget"_, and it's very useful when you just want to communicate or inform that "something happened." You're not requesting or asking for anything, thus you don't need a response.  
+However, there are certain situations where you don't need a response from the server. In most cases, it's only important to have some confirmation that the request was received. This is also called _"fire and forget"_, and it's very useful when you just want to communicate or inform that "something happened." You're not requesting or asking for anything, thus you don't need a response.
 
 Some examples of this can be:
-* A user just signed up.
-* You have a new follower.
-* Your fridge is almost empty.
+
+- A user just signed up.
+- You have a new follower.
+- Your fridge is almost empty.
 
 Along with the event, you may also want to send _extra information_. For instance:
 
-* A user just signed up: here's the user information (e.g., name, email, age, etc.)
-* You have a new follower: here are the follower details (e.g., username, name, picture, etc.)
-* Your fridge is almost empty: here's the percentage of "emptiness" or available volume (e.g. 23%)
+- A user just signed up: here's the user information (e.g., name, email, age, etc.)
+- You have a new follower: here are the follower details (e.g., username, name, picture, etc.)
+- Your fridge is almost empty: here's the percentage of "emptiness" or available volume (e.g. 23%)
 
 This extra information is often referred to as the _event payload_ or _message payload_.
 

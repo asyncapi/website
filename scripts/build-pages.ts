@@ -28,13 +28,16 @@ ensureDirectoryExists(TARGET_DIR);
  * @returns The updated content with designated JSX tag names capitalized.
  */
 export function capitalizeJsxTags(content: string): string {
-  return content.replace(/<\/?(\w+)/g, function (match: string, letter: string): string {
-    if (capitalizeTags.includes(letter.toLowerCase())) {
-      return `<${match[1] === '/' ? '/' : ''}${letter[0].toUpperCase()}${letter.slice(1)}`;
-    }
+  return content.replace(
+    /<\/?(\w+)/g,
+    (match: string, letter: string): string => {
+      if (capitalizeTags.includes(letter.toLowerCase())) {
+        return `<${match[1] === '/' ? '/' : ''}${letter[0].toUpperCase()}${letter.slice(1)}`;
+      }
 
-    return match;
-  });
+      return match;
+    },
+  );
 }
 
 /**

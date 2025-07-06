@@ -1,4 +1,4 @@
-language: "en-US"
+language: 'en-US'
 reviews:
   high_level_summary: true
   tools:
@@ -28,8 +28,8 @@ reviews:
 knowledge_base:
   opt_out: false
   learnings:
-    scope: "local"
+    scope: 'local'
   issues:
-    scope: "local"
+    scope: 'local'
   pull_requests:
-    scope: "local"
+    scope: 'local'

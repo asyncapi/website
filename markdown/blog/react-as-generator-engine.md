@@ -1,5 +1,5 @@
 ---
-title: "Simplify code generation with React"
+title: 'Simplify code generation with React'
 date: 2021-01-26T00:07:00+01:00
 type: Engineering
 tags:
@@ -23,7 +23,7 @@ React permanently changed the way how developers write web-apps. Personally, we 
 
 ## Getting started
 
-Your React template requires [@asyncapi/generator-react-sdk](https://github.com/asyncapi/generator-react-sdk) as a dependency. You need it to access the **File** component required as a root component responsible for rendering a file. Furthermore, it provides some common components to make your development easier, like **Text** or **Indent**.	
+Your React template requires [@asyncapi/generator-react-sdk](https://github.com/asyncapi/generator-react-sdk) as a dependency. You need it to access the **File** component required as a root component responsible for rendering a file. Furthermore, it provides some common components to make your development easier, like **Text** or **Indent**.
 
 Let's consider a basic React template file as the one below called **MyTemplate.js**:
 
@@ -40,7 +40,7 @@ export default function({ asyncapi, params, originalAsyncAPI }) {
 
 The exported default function returns the **File** component as a root component that the [Generator](https://github.com/asyncapi/generator) uses to figure out what file it should generate. In the example above, we overwrite the default functionality of saving the file as **MyTemplate.js**, and we set **asyncapi.md** as the filename. Using the **Text** component, we specify what content should be rendered inside the file. The content of the resulting file is: `Some text that should render as is\n`. Notice the **\n** character at the end. It is automatically added after the **Text** component.
 
-> For further information about components and their props, see the [Generator React SDK](https://github.com/asyncapi/generator-react-sdk).	 
+> For further information about components and their props, see the [Generator React SDK](https://github.com/asyncapi/generator-react-sdk).
 
 The [Generator](https://github.com/asyncapi/generator) doesn't use React renderer by default. You need to specify in the template configuration that your template is based on React. For that, change the **renderer** field of **generator** object inside the template's **package.json** file:
 
@@ -54,21 +54,26 @@ The [Generator](https://github.com/asyncapi/generator) doesn't use React rendere
 }
 ```
 
-You can find more information about the Generator configuration [here](https://github.com/asyncapi/generator/blob/master/docs/configuration-file.md).	 
+You can find more information about the Generator configuration [here](https://github.com/asyncapi/generator/blob/master/docs/configuration-file.md).
 
 ## How it works
 
-The process of creating content from React components consists of two steps: transpile and render.	 
+The process of creating content from React components consists of two steps: transpile and render.
 
 The SDK has a custom transpiler which ensures that any directory in template's **template** folder are transpiled using [Rollup](https://www.npmjs.com/package/rollup). Rollup helps bundling all dependencies and transpile them into CommonJS modules. This is required because this library will be used through NodeJS (by AsyncAPI Generator) which does not understand these new modules natively and we do not want to limit the developer in which syntax they prefer nor how they want to separate code.
 
 Also, SDK has its own reconciler. It traverses through each element in the template structure and transforms it into a pure string. Prop `children` is always converted to a regular string and stored in the `childrenContent` prop in each component. Check the below example, to see how it works. In addition, you can also see how to apply the composition to templates using components:
 
 ```js
-import { Text, Indent, IndentationTypes, render } from '@asyncapi/generator-react-sdk';
+import {
+  Text,
+  Indent,
+  IndentationTypes,
+  render,
+} from '@asyncapi/generator-react-sdk';
 
 class ClassComponent extends React.Component {
-  constructor(props) { 
+  constructor(props) {
     super(props);
   }
 
@@ -84,9 +89,7 @@ function FunctionComponent() {
     <Indent size={3} type={IndentationTypes.TABS}>
       indented text
       <ClassComponent>
-        <Text newLines={2}>
-          text wrapped by custom component
-        </Text>
+        <Text newLines={2}>text wrapped by custom component</Text>
       </ClassComponent>
     </Indent>
   );
@@ -104,7 +107,7 @@ There are some restrictions:
 
 ## Comparison with Nunjucks
 
-The AsyncAPI generator still uses [Nunjucks](https://mozilla.github.io/nunjucks/) as a default render engine. It's a templating language, heavily focused on string literals, filters (similar to bash pipes), and partials called macros.	
+The AsyncAPI generator still uses [Nunjucks](https://mozilla.github.io/nunjucks/) as a default render engine. It's a templating language, heavily focused on string literals, filters (similar to bash pipes), and partials called macros.
 
 The next sections compare how you can accomplish certain things in Nunjucks and React. For more complex examples, see the [template-for-generator-templates](https://github.com/asyncapi/template-for-generator-templates) repository with examples based on React and compare those with [nunjucks](https://github.com/asyncapi/template-for-generator-templates/tree/nunjucks) branch.
 
@@ -130,15 +133,13 @@ Using Nunjucks you can write the code below:
 Using React you can write the code below:
 
 ```js
-function List({ list = [], type = "-" }) {
-  return list.map(item => `${type} ${item}\n`);
+function List({ list = [], type = '-' }) {
+  return list.map((item) => `${type} ${item}\n`);
 }
 
 // use `List` component in another component
 export function SimpleList() {
-  return (
-    <List list={["one", "two", "three"]} />
-  );
+  return <List list={['one', 'two', 'three']} />;
 }
 ```
 
@@ -166,7 +167,7 @@ The main problem with this solution is that it creates an unnecessary boilerplat
 In opposite, in React you can use `Underscore.string` directly in your template:
 
 ```js
-import cleanDiacritics from 'underscore.string/cleanDiacritics';  
+import cleanDiacritics from 'underscore.string/cleanDiacritics';
 
 function MyComponent() {
   return cleanDiacritics('Urbańczyk'); // will be Urbanczyk
@@ -184,9 +185,9 @@ Like any solution, React has its advantages as well as disadvantages.
 - Using React, you use JS directly. You don't need to learn custom Nunjuck's syntax, only how React works under the hood.
 - It provides better debugging functionality that is not possible with Nunjucks.
 - It provides better error stack traces.
-- Better tools support development. You write templates in JavaScript, you use a reference to functions/variables, and therefore your IDE can tell you what you can use in a given scope.	
+- Better tools support development. You write templates in JavaScript, you use a reference to functions/variables, and therefore your IDE can tell you what you can use in a given scope.
 - Provides better support for separating code into more manageable chunks/components. You don't need to create **partials** folder. You can create React component wherever you want, also next to the template's source code.
- - You can easily test your components. It is difficult with Nunjucks. You can split template file into separate chunks and test them in separate test cases.
+- You can easily test your components. It is difficult with Nunjucks. You can split template file into separate chunks and test them in separate test cases.
 
 ### Disadvantages
 

@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI Initiative Status Update (week 29, 2020)"
+title: 'AsyncAPI Initiative Status Update (week 29, 2020)'
 date: 2020-07-14T06:00:00+01:00
 type: Communication
 tags:
@@ -23,7 +23,7 @@ We enabled [SonarCloud](https://sonarcloud.io) for the most critical AsyncAPI to
 - Parser
 - Custom schema parsers for OpenAPI schema and RAML data types
 
-The quality of those projects is visible [here](https://sonarcloud.io/organizations/asyncapi/projects). We additionally validate code with [ESLint plugin from SonarCloud](https://github.com/SonarSource/eslint-plugin-sonarjs). 
+The quality of those projects is visible [here](https://sonarcloud.io/organizations/asyncapi/projects). We additionally validate code with [ESLint plugin from SonarCloud](https://github.com/SonarSource/eslint-plugin-sonarjs).
 
 With the Parser we went even one step further, and we now statically check the security of the code also with the [ESLint security plugin](https://github.com/nodesecurity/eslint-plugin-security).
 
@@ -47,13 +47,13 @@ There are some interesting discussions/topics where it would be great to hear yo
 
 ### Add view property in the specification
 
-This proposal addresses the confusion around the semantics of Publish and Subscribe channel operations. At the moment, the specification should be used to describe how users can interact with an application. In other words, if the AsyncAPI document of the application says that it **has a publish channel**, it means that this application is **subscribed to this channel**, and application users can publish an event to this application by publishing an event to this channel. Community proposal behind the `view` property is to enable you to decide if you want the specification to tell you how you can interact with an application, or how the application behaves. You could say that publish means that the application published events to the channel and not the other way around. 
+This proposal addresses the confusion around the semantics of Publish and Subscribe channel operations. At the moment, the specification should be used to describe how users can interact with an application. In other words, if the AsyncAPI document of the application says that it **has a publish channel**, it means that this application is **subscribed to this channel**, and application users can publish an event to this application by publishing an event to this channel. Community proposal behind the `view` property is to enable you to decide if you want the specification to tell you how you can interact with an application, or how the application behaves. You could say that publish means that the application published events to the channel and not the other way around.
 
 Please have a look at [the corresponding issue](https://github.com/asyncapi/asyncapi/issues/390) and share your opinion.
 
 ### Allow $schema property in the specification
 
-With `$schema` property you can specify a location of the JSON Schema file and most of the IDEs will make your life much easier by adding auto-completion and other super useful functionalities. In the issue we discuss how we could allow maybe not only `$schema` but any property starting with `$`, and also we talk about the opportunity to measure the adoption of the specification. 
+With `$schema` property you can specify a location of the JSON Schema file and most of the IDEs will make your life much easier by adding auto-completion and other super useful functionalities. In the issue we discuss how we could allow maybe not only `$schema` but any property starting with `$`, and also we talk about the opportunity to measure the adoption of the specification.
 
 Please have a look at [the corresponding issue](https://github.com/asyncapi/asyncapi/issues/377) and share your opinion.
 
@@ -61,9 +61,9 @@ Please have a look at [the corresponding issue](https://github.com/asyncapi/asyn
 
 The last meeting took place on Tuesday, 7th of July, 8AM UTC. Meeting notes and recording are available [here](https://github.com/asyncapi/asyncapi/issues/401).
 
-The next meeting is scheduled for next Tuesday, 21st of July, 4PM UTC. 
+The next meeting is scheduled for next Tuesday, 21st of July, 4PM UTC.
 
-We work on the agenda for the next meeting [here](https://github.com/asyncapi/asyncapi/issues/404). At the moment, there is nothing in the agenda so you can sneak in your topic easily. 
+We work on the agenda for the next meeting [here](https://github.com/asyncapi/asyncapi/issues/404). At the moment, there is nothing in the agenda so you can sneak in your topic easily.
 
 We host the meeting on [Zoom](https://zoom.us/j/83140549308). Do not forget about future meetings and always have up to date invitations in your calendar by adding your email to [this](https://groups.google.com/forum/#!forum/asyncapi-users) mailing list.
 

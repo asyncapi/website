@@ -30,7 +30,12 @@ export interface IRoadmapItemProps {
  * @param {boolean} props.showConnector - Whether to show the connector.
  * @param {boolean} props.collapsed - Whether the list is collapsed.
  */
-export default function RoadmapItem({ item, colorClass, showConnector = true, collapsed = true }: IRoadmapItemProps) {
+export default function RoadmapItem({
+  item,
+  colorClass,
+  showConnector = true,
+  collapsed = true,
+}: IRoadmapItemProps) {
   const [isCollapsed, setIsCollapsed] = useState(collapsed);
   const isCollapsible = item.solutions !== undefined;
 
@@ -38,11 +43,11 @@ export default function RoadmapItem({ item, colorClass, showConnector = true, co
   const classNames = `pt-2 ${showConnector && connectorClasses}`;
 
   return (
-    <li className={classNames} data-testid='RoadmapItem-list'>
-      <div className='flex'>
+    <li className={classNames} data-testid="RoadmapItem-list">
+      <div className="flex">
         {showConnector && (
-          <div className='flex flex-col justify-center'>
-            <div className='my-2 ml-0 mr-2 h-1 w-5 border-b-2 border-dashed border-gray-300'></div>
+          <div className="flex flex-col justify-center">
+            <div className="my-2 ml-0 mr-2 h-1 w-5 border-b-2 border-dashed border-gray-300"></div>
           </div>
         )}
         <Pill
@@ -55,11 +60,21 @@ export default function RoadmapItem({ item, colorClass, showConnector = true, co
       </div>
 
       {!isCollapsed && item?.solutions?.length && (
-        <RoadmapList className='ml-2 pt-3' colorClass='bg-blue-400' items={item.solutions} collapsed={false} />
+        <RoadmapList
+          className="ml-2 pt-3"
+          colorClass="bg-blue-400"
+          items={item.solutions}
+          collapsed={false}
+        />
       )}
 
       {!isCollapsed && item?.implementations?.length && (
-        <RoadmapList className='ml-9 pt-3' colorClass='bg-black' items={item.implementations} collapsed={false} />
+        <RoadmapList
+          className="ml-9 pt-3"
+          colorClass="bg-black"
+          items={item.implementations}
+          collapsed={false}
+        />
       )}
     </li>
   );

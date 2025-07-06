@@ -1,15 +1,18 @@
 ---
-title: 'x' 
+title: 'x'
 weight: 12
 ---
 
 # Twitter/X Extension
+
 This document defines how to use `x` extension in AsyncAPI documents.
 
-## Overview 
+## Overview
+
 This extension allows you to provide the Twitter/X username of the account representing the team/company of the API.
 
 ## Version
+
 Current version is `0.1.0`.
 
 ## Extension Definition
@@ -18,9 +21,10 @@ Current version is `0.1.0`.
 
 Name of the Twitter/X username.
 
-## Extension Location 
+## Extension Location
 
 This extension can be used in the following locations:
+
 - [Info Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#infoObject)
 
 ## Example

@@ -88,12 +88,12 @@ If a security requirement is specified in the `asyncapi.yaml` file, and Glee act
 
 The `serverAuth` function takes an argument that can be destructured as follows:
 
-| Attribute  | Description                                                     |
-| ---------- | --------------------------------------------------------------- |
-| done       | The function that signals the server to proceed.                |
-| authProps  | The authentication parameters received from the client.         |
-| serverName | The name of the server/broker emitting the event.               |
-| doc        | The parsed AsyncAPI schema.                                     |
+| Attribute  | Description                                             |
+| ---------- | ------------------------------------------------------- |
+| done       | The function that signals the server to proceed.        |
+| authProps  | The authentication parameters received from the client. |
+| serverName | The name of the server/broker emitting the event.       |
+| doc        | The parsed AsyncAPI schema.                             |
 
 #### done() Function
 
@@ -126,12 +126,12 @@ The `authProps` parameter includes methods for the server to retrieve authentica
 ```js
 export async function serverAuth({ authProps, done }) {
   // Some network request
-  authProps.getOauthToken()
-  authProps.getHttpAPIKeys('api_key')
-  authProps.getToken()
-  authProps.getUserPass()
+  authProps.getOauthToken();
+  authProps.getHttpAPIKeys('api_key');
+  authProps.getToken();
+  authProps.getUserPass();
 
-  done(false)
+  done(false);
 }
 ```
 
@@ -146,10 +146,10 @@ export async function serverAuth({ authProps, done }) {
 
 The `clientAuth` function also takes an argument that can be destructured as follows:
 
-| Attribute      | Description                                                                           |
-| -------------- | ------------------------------------------------------------------------------------- |
-| parsedAsyncAPI | The parsed AsyncAPI schema.                                                           |
-| serverName     | The server/broker's name from which the authentication parameters are being sent.     |
+| Attribute      | Description                                                                       |
+| -------------- | --------------------------------------------------------------------------------- |
+| parsedAsyncAPI | The parsed AsyncAPI schema.                                                       |
+| serverName     | The server/broker's name from which the authentication parameters are being sent. |
 
 ### Possible Authentication Parameters
 
@@ -165,15 +165,15 @@ export async function clientAuth({ serverName }) {
       user: process.env.USER,
       password: process.env.PASSWORD,
     },
-  }
+  };
 }
 ```
 
 The names of the authentication parameters should match **the names specified in the `asyncapi.yaml` file**.
 
-| Auth Type                             | Values                                                                 |
-| ------------------------------------- | ---------------------------------------------------------------------- |
-| HTTP bearer (JWT)                     | Value should be a JWT string.                                          |
-| OAuth2                                | Value should be a string.                                              |
-| httpApiKey in headers or query params | Value should be a string.                                              |
-| userPass                              | Value should be an object with the user and password as properties.    |
+| Auth Type                             | Values                                                              |
+| ------------------------------------- | ------------------------------------------------------------------- |
+| HTTP bearer (JWT)                     | Value should be a JWT string.                                       |
+| OAuth2                                | Value should be a string.                                           |
+| httpApiKey in headers or query params | Value should be a string.                                           |
+| userPass                              | Value should be an object with the user and password as properties. |

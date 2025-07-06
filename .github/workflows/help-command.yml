@@ -3,10 +3,10 @@
 
 name: Create help comment
 
-on: 
-    issue_comment:
-        types: 
-            - created
+on:
+  issue_comment:
+    types:
+      - created
 
 jobs:
   create_help_comment_pr:
@@ -28,9 +28,9 @@ jobs:
               body: `Hello, @${{ github.actor }}! 👋🏼 
 
                     I'm 🧞🧞🧞 Genie 🧞🧞🧞 from the magic lamp. Looks like somebody needs a hand!
-        
+
                     At the moment the following comments are supported in pull requests:
-        
+
                     - \`/please-take-a-look\` or \`/ptal\` - This comment will add a comment to the PR asking for attention from the reviewrs who have not reviewed the PR yet.
                     - \`/ready-to-merge\` or \`/rtm\` - This comment will trigger automerge of PR in case all required checks are green, approvals in place and do-not-merge label is not added
                     - \`/do-not-merge\` or \`/dnm\` - This comment will block automerging even if all conditions are met and ready-to-merge label is added
@@ -54,9 +54,9 @@ jobs:
               body: `Hello, @${{ github.actor }}! 👋🏼 
 
               I'm 🧞🧞🧞 Genie 🧞🧞🧞 from the magic lamp. Looks like somebody needs a hand!
-  
+
               At the moment the following comments are supported in issues:
-  
+
               - \`/good-first-issue {js | ts | java | go | docs | design | ci-cd}\` or \`/gfi {js | ts | java | go | docs | design | ci-cd}\` - label an issue as a \`good first issue\`.
               example: \`/gfi js\` or \`/good-first-issue ci-cd\`
               - \`/transfer-issue {repo-name}\` or \`/ti {repo-name}\` - transfer issue from the source repository to the other repository passed by the user. example: \`/ti cli\` or \`/transfer-issue cli\`.`

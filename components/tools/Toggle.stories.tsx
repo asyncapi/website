@@ -8,7 +8,7 @@ import Toggle from './Toggle';
 
 const meta: Meta<typeof Toggle> = {
   title: 'Components/Toggle',
-  component: Toggle
+  component: Toggle,
 };
 
 export default meta;
@@ -18,7 +18,7 @@ type Story = StoryObj<typeof Toggle>;
 export const DefaultToggle: Story = {
   args: {
     checked: true,
-    label: 'Toggle me!'
+    label: 'Toggle me!',
   },
 
   render: (args: ToggleProps) => {
@@ -29,7 +29,7 @@ export const DefaultToggle: Story = {
     };
 
     return <Toggle {...args} checked={checked} setChecked={setChecked} />;
-  }
+  },
 };
 
 export const ColorfulToggle: Story = {
@@ -38,6 +38,6 @@ export const ColorfulToggle: Story = {
   args: {
     ...DefaultToggle.args,
     bgColor: 'bg-gray-200',
-    checkedStateBgColor: 'bg-primary-500'
-  }
+    checkedStateBgColor: 'bg-primary-500',
+  },
 };

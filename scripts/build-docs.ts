@@ -1,6 +1,10 @@
 import lodash from 'lodash';
 
-import type { NavTree, NavTreeItem, RecursiveChildren } from '@/types/scripts/build-docs';
+import type {
+  NavTree,
+  NavTreeItem,
+  RecursiveChildren,
+} from '@/types/scripts/build-docs';
 import type { Details, NavigationPage } from '@/types/scripts/build-posts-list';
 
 const { sortBy } = lodash;
@@ -32,14 +36,18 @@ function buildNavTree(navItems: Details[]): NavTree {
           isSection: true,
           rootSectionId: 'welcome',
           sectionWeight: 0,
-          slug: '/docs'
+          slug: '/docs',
         },
-        children: {} as RecursiveChildren
-      }
+        children: {} as RecursiveChildren,
+      },
     };
 
     // first we make sure that list of items lists main section items and then sub sections, documents last
-    const sortedItems = sortBy(navItems, ['isRootSection', 'weight', 'isSection']);
+    const sortedItems = sortBy(navItems, [
+      'isRootSection',
+      'weight',
+      'isSection',
+    ]);
 
     sortedItems.forEach((item) => {
       // identify main sections
@@ -50,14 +58,20 @@ function buildNavTree(navItems: Details[]): NavTree {
       // identify subsections
       if (item.parent) {
         if (!tree[item.parent]) {
-          throw new Error(`Parent section ${item.parent} not found for item ${item.title}`);
+          throw new Error(
+            `Parent section ${item.parent} not found for item ${item.title}`,
+          );
         }
 
-        (tree[item.parent].children as RecursiveChildren)[item.sectionId!] = { item, children: [] as Details[] };
+        (tree[item.parent].children as RecursiveChildren)[item.sectionId!] = {
+          item,
+          children: [] as Details[],
+        };
       }
 
       if (!item.isSection) {
-        const rootSectionChildren = tree[item.rootSectionId!].children as RecursiveChildren;
+        const rootSectionChildren = tree[item.rootSectionId!]
+          .children as RecursiveChildren;
 
         if (item.sectionId) {
           const section = rootSectionChildren[item.sectionId];
@@ -65,10 +79,12 @@ function buildNavTree(navItems: Details[]): NavTree {
           if (!section) {
             rootSectionChildren[item.sectionId] = {
               item,
-              children: [] as Details[]
+              children: [] as Details[],
             };
           }
-          (rootSectionChildren[item.sectionId].children! as Details[]).push(item);
+          (rootSectionChildren[item.sectionId].children! as Details[]).push(
+            item,
+          );
         } else {
           rootSectionChildren[item.title] = { item };
         }
@@ -81,21 +97,23 @@ function buildNavTree(navItems: Details[]): NavTree {
 
       rootValue.children = allChildrenKeys
         .sort((prev, next) => {
-          return allChildren[prev]!.item.weight! - allChildren[next]!.item.weight!;
+          return (
+            allChildren[prev]!.item.weight! - allChildren[next]!.item.weight!
+          );
         })
         .reduce(
           (
             obj: {
               [key: string]: NavTreeItem;
             },
-            key
+            key,
           ) => {
             // eslint-disable-next-line no-param-reassign
             obj[key] = allChildren[key];
 
             return obj;
           },
-          {}
+          {},
         );
 
       // handling subsections
@@ -114,7 +132,9 @@ function buildNavTree(navItems: Details[]): NavTree {
           // point in slug for specification subgroup to the latest specification version
           // eslint-disable-next-line max-depth
           if (rootKey === 'reference' && key === 'specification') {
-            allChildren[key].item.href = childrenOfAllChildren.find((c) => c.isPrerelease === undefined)!.slug;
+            allChildren[key].item.href = childrenOfAllChildren.find(
+              (c) => c.isPrerelease === undefined,
+            )!.slug;
           }
         }
       }
@@ -133,7 +153,9 @@ function buildNavTree(navItems: Details[]): NavTree {
  * @returns {Details[]} - The sequential array of document posts.
  * @throws {Error} - Throws an error if there is an issue during the conversion process.
  */
-function convertDocPosts(docObject: NavTree | Details | NavTreeItem): Details[] {
+function convertDocPosts(
+  docObject: NavTree | Details | NavTreeItem,
+): Details[] {
   try {
     let docsArray: Details[] = [];
 
@@ -216,15 +238,18 @@ function addDocButtons(docPosts: Details[], treePosts: NavTree): Details[] {
         // checks whether the next item inside structuredPosts is a rootElement or a sectionElement
         // if yes, it goes again to a next to next item in structuredPosts to link the nextPage
         /* istanbul ignore else */
-        if (!structuredPosts[index + 1].isRootElement && !structuredPosts[index + 1].isSection) {
+        if (
+          !structuredPosts[index + 1].isRootElement &&
+          !structuredPosts[index + 1].isSection
+        ) {
           nextPage = {
             title: structuredPosts[index + 1].title,
-            href: structuredPosts[index + 1].slug
+            href: structuredPosts[index + 1].slug,
           };
         } else if (index + 2 < countDocPages) {
           nextPage = {
             title: `${structuredPosts[index + 1].title} - ${structuredPosts[index + 2].title}`,
-            href: structuredPosts[index + 2].slug
+            href: structuredPosts[index + 2].slug,
           };
         }
         docPost = { ...docPost, nextPage };
@@ -236,17 +261,20 @@ function addDocButtons(docPosts: Details[], treePosts: NavTree): Details[] {
         // checks whether the previous item inside structuredPosts is a rootElement or a sectionElement
         // if yes, it goes again to a next previous item in structuredPosts to link the prevPage
         /* istanbul ignore else */
-        if (!structuredPosts[index - 1]?.isRootElement && !structuredPosts[index - 1]?.isSection) {
+        if (
+          !structuredPosts[index - 1]?.isRootElement &&
+          !structuredPosts[index - 1]?.isSection
+        ) {
           prevPage = {
             title: structuredPosts[index - 1].title,
-            href: structuredPosts[index - 1].slug
+            href: structuredPosts[index - 1].slug,
           };
           docPost = { ...docPost, prevPage } as Details;
         } else if (index - 2 >= 0) {
           // additional check for the first page of Docs so that it doesn't give any Segementation fault
           prevPage = {
             title: `${structuredPosts[index - 1]?.isRootSection ? rootSections[rootSections.length - 2] : rootSections[rootSections.length - 1]} - ${structuredPosts[index - 2].title}`,
-            href: structuredPosts[index - 2].slug
+            href: structuredPosts[index - 2].slug,
           };
           docPost = { ...docPost, prevPage } as Details;
         }
@@ -255,7 +283,9 @@ function addDocButtons(docPosts: Details[], treePosts: NavTree): Details[] {
       return docPost;
     });
   } catch (err) {
-    throw new Error(`An error occurred while adding doc buttons: ${(err as Error).message}`);
+    throw new Error(
+      `An error occurred while adding doc buttons: ${(err as Error).message}`,
+    );
   }
 
   return structuredPosts;

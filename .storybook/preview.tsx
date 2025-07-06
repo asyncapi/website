@@ -1,6 +1,6 @@
-import React from "react";
-import "../styles/globals.css";
-import type { Preview } from "@storybook/react";
+import React from 'react';
+import '../styles/globals.css';
+import type { Preview } from '@storybook/react';
 import { themes } from '@storybook/theming';
 import {
   Title,
@@ -34,9 +34,9 @@ const preview: Preview = {
           <Controls />
           <Stories />
         </>
-      )
-    }
-  }
+      ),
+    },
+  },
 };
 
 export default preview;

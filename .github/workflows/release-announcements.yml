@@ -3,13 +3,12 @@
 
 name: 'Announce releases in different channels'
 
-on: 
+on:
   release:
-    types: 
+    types:
       - published
 
 jobs:
-
   slack-announce:
     name: Slack - notify on every release
     runs-on: ubuntu-latest
@@ -24,10 +23,10 @@ jobs:
       - name: Send info about release to Slack
         uses: rtCamp/action-slack-notify@c33737706dea87cd7784c687dadc9adf1be59990 # Using v2.3.2
         env:
-            SLACK_WEBHOOK: ${{ secrets.SLACK_RELEASES }}
-            SLACK_TITLE: Release ${{github.event.release.tag_name}} for ${{github.repository}} is out in the wild 😱💪🍾🎂
-            SLACK_MESSAGE: ${{steps.markdown.outputs.text}}
-            MSG_MINIMAL: true
+          SLACK_WEBHOOK: ${{ secrets.SLACK_RELEASES }}
+          SLACK_TITLE: Release ${{github.event.release.tag_name}} for ${{github.repository}} is out in the wild 😱💪🍾🎂
+          SLACK_MESSAGE: ${{steps.markdown.outputs.text}}
+          MSG_MINIMAL: true
 
   twitter-announce:
     name: Twitter - notify on minor and major releases
@@ -70,10 +69,10 @@ jobs:
         # tweet goes out even if the type is not major or minor but "You need provide version number to compare."
         # it is ok, it just means we did not identify previous version as we are tweeting out information about the release for the first time
         if: steps.releasetype.outputs.type != 'null' && steps.releasetype.outputs.type != 'patch' # null means that versions are the same
-        uses: m1ner79/Github-Twittction@d1e508b6c2170145127138f93c49b7c46c6ff3a7   # using 2.0.0 https://github.com/m1ner79/Github-Twittction/releases/tag/v2.0.0
+        uses: m1ner79/Github-Twittction@d1e508b6c2170145127138f93c49b7c46c6ff3a7 # using 2.0.0 https://github.com/m1ner79/Github-Twittction/releases/tag/v2.0.0
         with:
           twitter_status: "Release ${{github.event.release.tag_name}} for ${{github.repository}} is out in the wild 😱💪🍾🎂\n\nThank you for the contribution ${{ steps.author.outputs.name }} ${{github.event.release.html_url}}"
-          twitter_consumer_key: ${{ secrets.TWITTER_CONSUMER_KEY }} 
-          twitter_consumer_secret: ${{ secrets.TWITTER_CONSUMER_SECRET }} 
-          twitter_access_token_key: ${{ secrets.TWITTER_ACCESS_TOKEN_KEY }} 
+          twitter_consumer_key: ${{ secrets.TWITTER_CONSUMER_KEY }}
+          twitter_consumer_secret: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+          twitter_access_token_key: ${{ secrets.TWITTER_ACCESS_TOKEN_KEY }}
           twitter_access_token_secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}

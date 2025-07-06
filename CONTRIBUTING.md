@@ -1,6 +1,6 @@
 # Welcome to AsyncAPI
 
-Welcome to our open-source project! We're excited to have you join our community and contribute to making our project better. Please follow this guide to ensure a smooth contribution process and maintain the quality of our codebase and documentation. 
+Welcome to our open-source project! We're excited to have you join our community and contribute to making our project better. Please follow this guide to ensure a smooth contribution process and maintain the quality of our codebase and documentation.
 
 We encourage all contributors to familiarize themselves with these guidelines and actively participate in the project's growth. If you have any questions or need assistance, don't hesitate to contact the project maintainers or community members.
 
@@ -99,9 +99,9 @@ We recognize that because of the project's size and complexity, areas of respons
 Triagers are responsible for labeling, commenting, and managing issues and pull requests.
 
 - Triagers assess newly-opened issues and pull requests.
-Responsibilities include labeling issues and pull requests, commenting, closing, and reopening items as needed, as well as assisting users and novice contributors.
+  Responsibilities include labeling issues and pull requests, commenting, closing, and reopening items as needed, as well as assisting users and novice contributors.
 - Triagers are crucial in enforcing the contributor guide and maintaining a clean backlog.
-If a triager plans to become a committer, they should consult existing committers to gradually gain more rights. It's crucial to earn the trust of existing committers so they feel confident in your ability to merge PRs. A triager should consistently demonstrate dedication by regularly fulfilling their duties and actively reviewing PRs, providing code/docs suggestions and recommendations. This shows the committers that the triager is knowledgeable about the docs/codebase and committed to maintaining its quality.
+  If a triager plans to become a committer, they should consult existing committers to gradually gain more rights. It's crucial to earn the trust of existing committers so they feel confident in your ability to merge PRs. A triager should consistently demonstrate dedication by regularly fulfilling their duties and actively reviewing PRs, providing code/docs suggestions and recommendations. This shows the committers that the triager is knowledgeable about the docs/codebase and committed to maintaining its quality.
 
 ### Committer
 

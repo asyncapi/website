@@ -62,7 +62,6 @@ Maintainers are trusted stewards of the project. Their responsibilities include:
 8. **Recognizing and celebrating contributions**  
    _Example: Publicly thank contributors in Slack or GitHub, highlight notable contributions in community meetings, or nominate someone for GitHub Stars._
 
-
 Being a maintainer is more than just fulfilling tasks; it's about **ownership and leadership**.
 
 You're not just reviewing PRs; you're shaping the future of the project. Whether it's unblocking a stuck contributor, advocating for improvements in the roadmap, or leading releases, maintainers play a crucial role in keeping the project active and healthy.

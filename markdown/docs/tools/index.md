@@ -12,11 +12,12 @@ Welcome to AsyncAPI **Tools**! Our Tools section documents the AsyncAPI tools ec
 <Remember>
 
 ## Contribute to AsyncAPI Tools
+
 <ContributionNotes />
 
 </Remember>
 
-___
+---
 
 ## AsyncAPI Tools List
 

@@ -2016,12 +2016,9 @@
           {
             "$ref": "#/definitions/Reference"
           },
-{
-  "$ref": "#/definitions/channel"
-}
-
-
-
+          {
+            "$ref": "#/definitions/channel"
+          }
         ]
       },
       "examples": [
@@ -2611,12 +2608,9 @@
                     {
                       "$ref": "#/definitions/Reference"
                     },
-{
-  "$ref": "#/definitions/avroSchema_v1"
-}
-
-
-
+                    {
+                      "$ref": "#/definitions/avroSchema_v1"
+                    }
                   ]
                 }
               }
@@ -4228,20 +4222,19 @@
                 "$ref": "#/definitions/bindings-amqp-0.3.0-channel"
               }
             },
-{
-  "if": {
-    "required": ["bindingVersion"],
-    "properties": {
-      "bindingVersion": {
-        "const": "0.3.0"
-      }
-    }
-  },
-  "then": {
-    "$ref": "#/definitions/bindings-amqp-0.3.0-channel"
-  }
-}
-
+            {
+              "if": {
+                "required": ["bindingVersion"],
+                "properties": {
+                  "bindingVersion": {
+                    "const": "0.3.0"
+                  }
+                }
+              },
+              "then": {
+                "$ref": "#/definitions/bindings-amqp-0.3.0-channel"
+              }
+            }
           ]
         },
         "amqp1": {},

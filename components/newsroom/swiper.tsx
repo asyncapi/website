@@ -5,7 +5,10 @@ import { useEffect, useRef, useState } from 'react';
  * Custom hook to manage swiper reference.
  * @description This hook returns a tuple containing the wrapper element and a ref object.
  */
-export function useSwiperRef(): [HTMLButtonElement | null, React.RefObject<HTMLButtonElement>] {
+export function useSwiperRef(): [
+  HTMLButtonElement | null,
+  React.RefObject<HTMLButtonElement>,
+] {
   const [wrapper, setWrapper] = useState<HTMLButtonElement | null>(null);
   const ref = useRef<HTMLButtonElement>(null);
 

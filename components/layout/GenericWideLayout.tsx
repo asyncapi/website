@@ -24,18 +24,20 @@ export default function GenericWideLayout({
   title,
   description,
   image,
-  children
+  children,
   // wide = true
 }: IGenericWideLayoutProps) {
   if (!title || !description || !image) {
-    throw new Error('Props `title`, `description`, and `image` are required at GenericLayout component.');
+    throw new Error(
+      'Props `title`, `description`, and `image` are required at GenericLayout component.',
+    );
   }
 
   return (
     <>
       <Head title={title} description={description} image={image} />
       <Row>
-        <AnnouncementHero className='m-4 text-center' small={true} />
+        <AnnouncementHero className="m-4 text-center" small={true} />
         {children}
       </Row>
     </>

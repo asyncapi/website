@@ -1,5 +1,5 @@
 ---
-title: "Choosing Between Web APIs and Message Streaming"
+title: 'Choosing Between Web APIs and Message Streaming'
 date: 2020-06-23T07:00:00+01:00
 type: Engineering
 tags:
@@ -31,7 +31,7 @@ Accept: application/json
 
 200 OK
 Content-Type: application/json
- 
+
  [
   { "projectId":"...", "name":"..." },
   { "projectId":"...", "name":"..." },
@@ -50,7 +50,7 @@ Content-Type: application/json
 
 201 Created
 Content-Type: application/json
- 
+
  { "projectId":"...", "name":"...", ... }
 
 ```
@@ -67,35 +67,35 @@ Accept: application/json
 
 200 OK
 Content-Type: application/json
- 
- { 
+
+ {
  "name":"...", ...,
  "_links": {
-   { "self" :"/projects/1234" }, 
+   { "self" :"/projects/1234" },
    { "related_projects": [
-     { "4567" :"/projects/4567" }, 
-     { "8901" :"/projects/8901" }, 
-     { "9012" :"/projects/9012" } 
-   ]}, 
+     { "4567" :"/projects/4567" },
+     { "8901" :"/projects/8901" },
+     { "9012" :"/projects/9012" }
+   ]},
    { "members": [
-     { "1" :"/users/1" }, 
-     { "2" :"/users/2" }, 
-     { "3" :"/users/3" }, 
-     { "4" :"/users/4" }, 
-     { "5" :"/users/5" } 
+     { "1" :"/users/1" },
+     { "2" :"/users/2" },
+     { "3" :"/users/3" },
+     { "4" :"/users/4" },
+     { "5" :"/users/5" }
    ]}
  }
 ```
 
 REST-based APIs have a specific set of characteristics that are summarized below:
 
-* __Request/response model__ — API consumers send requests to an API server and receive a response.
-* __Pull-based interaction__ — API consumers send an API request when data or functionality is required (e.g. user interface, at a pre-scheduled time).
-* __Synchronous__ — API consumers receive the response after a request is sent.
-* __Multiple content types__ — since REST APIs are built upon HTTP, responses may be JSON, XML, or other content types as necessary to support consumer needs (e.g. CSV, PDF).
-* __Flexible interactions__ — Building upon the available HTTP verbs, consumers may interact with REST-based APIs through resources in a variety of ways: queries/search, creating new resources, modifying existing resources, and deleting resources. We can also build complex workflows by combining these interactions into higher-level processes.
-* __Caching and concurrency protocol support__ — HTTP has caching semantics built-in, allow for caching servers to be placed between the consumer and API server, as well as cache control of responses and eTags for concurrency control to prevent overwriting content.
-* __Internal and external access__ — REST APIs may be restricted for internal use or for external use by partners or public developers.
+- **Request/response model** — API consumers send requests to an API server and receive a response.
+- **Pull-based interaction** — API consumers send an API request when data or functionality is required (e.g. user interface, at a pre-scheduled time).
+- **Synchronous** — API consumers receive the response after a request is sent.
+- **Multiple content types** — since REST APIs are built upon HTTP, responses may be JSON, XML, or other content types as necessary to support consumer needs (e.g. CSV, PDF).
+- **Flexible interactions** — Building upon the available HTTP verbs, consumers may interact with REST-based APIs through resources in a variety of ways: queries/search, creating new resources, modifying existing resources, and deleting resources. We can also build complex workflows by combining these interactions into higher-level processes.
+- **Caching and concurrency protocol support** — HTTP has caching semantics built-in, allow for caching servers to be placed between the consumer and API server, as well as cache control of responses and eTags for concurrency control to prevent overwriting content.
+- **Internal and external access** — REST APIs may be restricted for internal use or for external use by partners or public developers.
 
 For most solutions, offering a REST-based API is a great starting point, allowing any application or automation script to interact with your API over HTTP.
 
@@ -113,7 +113,7 @@ Content-Type: application/json
 
 201 Created
 Content-Type: application/json
- 
+
 ```
 
 Now that the client is subscribed to a topic, it will receive notifications when new messages are available. This may be the result of a REST API processing incoming requests from a web or mobile app, then adding messages into the message stream topic to notify anyone that is interested:
@@ -149,13 +149,13 @@ Note — we can’t filter messages or perform other aggregate queries when requ
 
 As you are discovering, message streaming is a different style of interaction than REST-based APIs. Additional characteristics of message streaming are summarized below:
 
-* __Publish/subscribe model__ — Apps or APIs publish messages to a topic which may have zero, one, or many subscribers rather than a request/response model.
-* __Subscriber notification interaction__ — Apps receive notification when a new message is available, such as when data is modified or new data is available.
-* __Asynchronous__ — Unlike REST APIs, apps cannot use message streams to submit a request and receive a response back without complex coordination between parties.
-* __Single content-type__ — At Capital One, our message streaming is built upon Avro, a compact binary format useful for data serialization. Unlike HTTP, Avro doesn’t support other content types (e.g. CSV, PDF).
-* __Replayability__ — At Capital One, our message streaming is built on Kafka, subscribers may revisit and replay previous messages sequentially.
-* __No caching or concurrency protocol support__ — Message streaming doesn’t offer caching semantics, cache-control, or concurrency control between publisher and subscriber.
-* __Internal access only__ — Subscribers must be internal to the organization, unlike HTTP which may be externalized to partner or public consumers.
+- **Publish/subscribe model** — Apps or APIs publish messages to a topic which may have zero, one, or many subscribers rather than a request/response model.
+- **Subscriber notification interaction** — Apps receive notification when a new message is available, such as when data is modified or new data is available.
+- **Asynchronous** — Unlike REST APIs, apps cannot use message streams to submit a request and receive a response back without complex coordination between parties.
+- **Single content-type** — At Capital One, our message streaming is built upon Avro, a compact binary format useful for data serialization. Unlike HTTP, Avro doesn’t support other content types (e.g. CSV, PDF).
+- **Replayability** — At Capital One, our message streaming is built on Kafka, subscribers may revisit and replay previous messages sequentially.
+- **No caching or concurrency protocol support** — Message streaming doesn’t offer caching semantics, cache-control, or concurrency control between publisher and subscriber.
+- **Internal access only** — Subscribers must be internal to the organization, unlike HTTP which may be externalized to partner or public consumers.
 
 Message streaming offers some additional communication options that REST-based APIs do not — push-based notifications when new data or state changes occur, and the option of revisiting past messages in the stream to perform new calculations or re-execute logic that failed previously. When combined together, REST-APIs enable consuming apps to integrate easily with an HTTP API, while message streaming allow consumers to be notified of changes without needing to check with the REST API first. This can be a powerful combination that can satisfy use cases that exist today, while allowing emerging use cases to be handled in the future — all without modifying existing systems to accommodate new solutions.
 

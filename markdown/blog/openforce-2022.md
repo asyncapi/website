@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI at OpenForce"
+title: 'AsyncAPI at OpenForce'
 date: 2022-03-01T06:00:00+01:00
 type: Communication
 tags:
@@ -13,9 +13,9 @@ authors:
     byline: AsyncAPI Maintainer and Community Guardian
 ---
 
-Two years ago, the AsyncAPI Initiative participated in Hacktoberfest to help folks start their journey in open source. Hacktoberfest was a very successful event. We got feedback that the level of commitment that we presented makes us perfect candidates for Google Summer of Code. 
+Two years ago, the AsyncAPI Initiative participated in Hacktoberfest to help folks start their journey in open source. Hacktoberfest was a very successful event. We got feedback that the level of commitment that we presented makes us perfect candidates for Google Summer of Code.
 
-Last year, we participated in Google Summer of Code and again in Hacktoberfest. It went great! We onboarded many new, super enthusiastic contributors that stayed with us longer. 
+Last year, we participated in Google Summer of Code and again in Hacktoberfest. It went great! We onboarded many new, super enthusiastic contributors that stayed with us longer.
 
 This year won't be different. We want to do it again and yet again, on a larger scale. Thus, active participation in initiatives focused on introducing new folks into open source became [one of our main goals for 2022](https://github.com/asyncapi/community/discussions/193).
 
@@ -62,7 +62,7 @@ We will also have [Abir Pal](https://twitter.com/imabptweets) present in the Ope
 - [Enable validation of an example payload](https://github.com/asyncapi/studio/issues/200)
 - [Show how to integrate Modelina in an AsyncAPI generator template](https://github.com/asyncapi/modelina/issues/641)
 - [Show how to integrate Modelina in a website](https://github.com/asyncapi/modelina/issues/642)
-- [Add support for WebSocket clients](https://github.com/asyncapi/glee/issues/259) 
+- [Add support for WebSocket clients](https://github.com/asyncapi/glee/issues/259)
 
 ### JavaScript
 
@@ -78,6 +78,5 @@ We will also have [Abir Pal](https://twitter.com/imabptweets) present in the Ope
 
 - [Define a better API that can be used by other applications](https://github.com/asyncapi/event-gateway/issues/47)
 - [Idea: Using EventGateway Websocket with Grafana](https://github.com/asyncapi/event-gateway/issues/60)
-
 
 > Photo by <a href="https://www.openforce.tech/">OpenForce</a>

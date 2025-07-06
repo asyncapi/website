@@ -11,7 +11,6 @@ export default create({
   fontBase: '"Work Sans", sans-serif',
   fontCode: 'monospace',
 
-
   // Themes
   base: 'dark',
 

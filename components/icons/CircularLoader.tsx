@@ -10,11 +10,13 @@ interface CircularLoaderProps {
 /**
  * CircularLoader Icon
  */
-export default function IconCircularLoader({ dark = false }: CircularLoaderProps) {
+export default function IconCircularLoader({
+  dark = false,
+}: CircularLoaderProps) {
   return (
     <svg
       className={`mx-auto animate-spin border-4 border-t-transparent ${dark ? 'border-white' : 'border-black'} size-10 rounded-full`}
-      viewBox='0 0 24 24'
+      viewBox="0 0 24 24"
     />
   );
 }

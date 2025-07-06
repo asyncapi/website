@@ -24,32 +24,35 @@ export const buckets: Bucket[] = [
   {
     name: 'concepts',
     title: 'Concepts',
-    description: 'Our Concepts section defines the concepts of AsyncAPI features and capabilities.',
+    description:
+      'Our Concepts section defines the concepts of AsyncAPI features and capabilities.',
     link: '/docs/concepts',
     className: 'bg-secondary-200',
     borderClassName: 'border-secondary-200',
     href: '/docs/concepts',
-    icon: IconGettingStarted
+    icon: IconGettingStarted,
   },
   {
     name: 'tutorials',
     title: 'Tutorials',
-    description: 'Our Tutorials section teaches beginner processes with AsyncAPI, guiding you from Point A to Point B.',
+    description:
+      'Our Tutorials section teaches beginner processes with AsyncAPI, guiding you from Point A to Point B.',
     link: '/docs/tutorials',
     className: 'bg-pink-100',
     borderClassName: 'border-pink-100',
     href: '/docs/tutorials',
-    icon: IconTutorials
+    icon: IconTutorials,
   },
   {
     name: 'guides',
     title: 'Guides',
-    description: "Our Guides section teaches AsyncAPI's capabilities at a high level.",
+    description:
+      "Our Guides section teaches AsyncAPI's capabilities at a high level.",
     link: '/docs/guides',
     className: 'bg-primary-200',
     borderClassName: 'border-primary-200',
     href: '/docs/guides',
-    icon: IconGuide
+    icon: IconGuide,
   },
   {
     name: 'tools',
@@ -59,7 +62,7 @@ export const buckets: Bucket[] = [
     className: 'bg-green-200',
     borderClassName: 'border-green-200',
     href: '/docs/tools',
-    icon: IconUseCases
+    icon: IconUseCases,
   },
   {
     name: 'reference',
@@ -69,27 +72,29 @@ export const buckets: Bucket[] = [
     className: 'bg-yellow-200',
     borderClassName: 'border-yellow-200',
     href: '/docs/reference',
-    icon: IconSpec
+    icon: IconSpec,
   },
   {
     name: 'migration',
     title: 'Migration',
-    description: 'Our migration guides on how to upgrade to newer AsyncAPI versions.',
+    description:
+      'Our migration guides on how to upgrade to newer AsyncAPI versions.',
     link: '/docs/migration',
     className: 'bg-blue-400',
     borderClassName: 'border-blue-400',
     href: '/docs/migration',
-    icon: IconMigration
+    icon: IconMigration,
   },
   {
     name: 'community',
     title: 'Community',
-    description: 'Our Community section documents the community guidelines and resources.',
+    description:
+      'Our Community section documents the community guidelines and resources.',
     link: '/docs/community',
     className: 'bg-orange-200',
     borderClassName: 'border-orange-200',
     href: '/docs/community',
-    icon: IconUsers
+    icon: IconUsers,
   },
   {
     name: 'Explorer',
@@ -98,12 +103,12 @@ export const buckets: Bucket[] = [
     link: '/docs/reference/specification/v3.0.0-explorer',
     className: 'bg-teal-200',
     borderClassName: 'border-orange-200',
-    icon: IconExplorer
-  }
+    icon: IconExplorer,
+  },
 ].map((bucket) => {
   return {
     ...bucket,
     href: bucket.link,
-    icon: bucket.icon
+    icon: bucket.icon,
   };
 });

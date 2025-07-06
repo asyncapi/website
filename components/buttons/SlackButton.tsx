@@ -21,18 +21,18 @@ export default function SlackButton({
   href = '/slack-invite',
   target = '_blank',
   iconPosition = ButtonIconPosition.LEFT,
-  className = ''
+  className = '',
 }: ISlackButtonProps) {
   return (
     <Button
       text={text}
-      icon={<IconSlack className='-mt-1 inline-block size-6 p-0.5' />}
+      icon={<IconSlack className="-mt-1 inline-block size-6 p-0.5" />}
       href={href}
       iconPosition={iconPosition}
       target={target}
       className={className}
-      data-testid='Slack-button'
-      bgClassName='bg-slack  hover:bg-slack-light'
+      data-testid="Slack-button"
+      bgClassName="bg-slack  hover:bg-slack-light"
     />
   );
 }

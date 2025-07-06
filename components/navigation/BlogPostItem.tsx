@@ -35,7 +35,10 @@ interface BlogPostItemProps {
  * @param {string} [props.id] - The HTML id attribute for the component.
  * @param {Ref<HTMLLIElement>} ref - The reference object for the component.
  */
-const BlogPostItem = ({ post, className = '', id = '' }: BlogPostItemProps, ref: Ref<HTMLLIElement>) => {
+const BlogPostItem = (
+  { post, className = '', id = '' }: BlogPostItemProps,
+  ref: Ref<HTMLLIElement>,
+) => {
   let typeColors: [string, string] = ['bg-indigo-100', 'text-indigo-800'];
 
   switch (post.type.toLowerCase()) {
@@ -56,52 +59,63 @@ const BlogPostItem = ({ post, className = '', id = '' }: BlogPostItemProps, ref:
 
   return (
     <li className={`list-none rounded-lg ${className}`} ref={ref} id={id}>
-      <article className='h-full rounded-lg'>
+      <article className="h-full rounded-lg">
         <Link href={post.slug}>
           <span
             className={
               'relative flex h-full cursor-pointer flex-col divide-y divide-gray-200 overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'
             }
-            data-testid='BlogPostItem-Link'
+            data-testid="BlogPostItem-Link"
           >
             {post.featured && (
-              <div className='absolute right-0 top-0 z-10 m-4'>
-                <span className='inline-flex items-center rounded-full bg-purple-100 px-3 py-0.5 text-sm font-medium text-purple-800'>
+              <div className="absolute right-0 top-0 z-10 m-4">
+                <span className="inline-flex items-center rounded-full bg-purple-100 px-3 py-0.5 text-sm font-medium text-purple-800">
                   Featured
                 </span>
               </div>
             )}
             <img
-              className='h-48 w-full object-cover'
+              className="h-48 w-full object-cover"
               src={post.cover}
-              alt=''
-              loading='lazy'
-              data-testid='BlogPostItem-Img'
+              alt=""
+              loading="lazy"
+              data-testid="BlogPostItem-Img"
             />
-            <div className='flex flex-1 flex-col justify-between bg-white p-6'>
-              <div className='flex-1'>
-                <Paragraph typeStyle={ParagraphTypeStyle.sm} textColor='text-indigo-500'>
+            <div className="flex flex-1 flex-col justify-between bg-white p-6">
+              <div className="flex-1">
+                <Paragraph
+                  typeStyle={ParagraphTypeStyle.sm}
+                  textColor="text-indigo-500"
+                >
                   <span
                     className={`inline-flex items-center rounded-full px-3 py-0.5 ${typeColors[0]} ${typeColors[1]}`}
                   >
                     {post.type}
                   </span>
                 </Paragraph>
-                <span className='block'>
-                  <Heading level={HeadingLevel.h5} typeStyle={HeadingTypeStyle.smSemibold} className='mt-2'>
+                <span className="block">
+                  <Heading
+                    level={HeadingLevel.h5}
+                    typeStyle={HeadingTypeStyle.smSemibold}
+                    className="mt-2"
+                  >
                     {post.title}
                   </Heading>
-                  <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-3'>
-                    <TextTruncate element='span' line={4} text={post.excerpt} />
+                  <Paragraph typeStyle={ParagraphTypeStyle.sm} className="mt-3">
+                    <TextTruncate element="span" line={4} text={post.excerpt} />
                   </Paragraph>
                 </span>
               </div>
-              <div className='mt-6 flex items-center'>
-                <div className='relative shrink-0'>
+              <div className="mt-6 flex items-center">
+                <div className="relative shrink-0">
                   <AuthorAvatars authors={post.authors} />
                 </div>
-                <div className='ml-3'>
-                  <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.xsSemibold} textColor='text-gray-900'>
+                <div className="ml-3">
+                  <Heading
+                    level={HeadingLevel.h3}
+                    typeStyle={HeadingTypeStyle.xsSemibold}
+                    textColor="text-gray-900"
+                  >
                     <span>
                       {post.authors
                         .map((author, index) =>
@@ -109,7 +123,7 @@ const BlogPostItem = ({ post, className = '', id = '' }: BlogPostItemProps, ref:
                             <button
                               key={index}
                               data-alt={author.name}
-                              className='cursor-pointer border-none bg-inherit p-0 hover:underline'
+                              className="cursor-pointer border-none bg-inherit p-0 hover:underline"
                               onClick={(e) => {
                                 e.preventDefault();
                                 window.open(author.link, '_blank');
@@ -119,7 +133,7 @@ const BlogPostItem = ({ post, className = '', id = '' }: BlogPostItemProps, ref:
                             </button>
                           ) : (
                             author.name
-                          )
+                          ),
                         )
                         .reduce((prev, curr, index) => (
                           <React.Fragment key={`author-${index}`}>
@@ -128,9 +142,11 @@ const BlogPostItem = ({ post, className = '', id = '' }: BlogPostItemProps, ref:
                         ))}
                     </span>
                   </Heading>
-                  <Paragraph typeStyle={ParagraphTypeStyle.sm} className='flex'>
-                    <time dateTime={post.date}>{moment(post.date).format('MMMM D, YYYY')}</time>
-                    <span className='mx-1'>&middot;</span>
+                  <Paragraph typeStyle={ParagraphTypeStyle.sm} className="flex">
+                    <time dateTime={post.date}>
+                      {moment(post.date).format('MMMM D, YYYY')}
+                    </time>
+                    <span className="mx-1">&middot;</span>
                     <span>{post.readingTime} min read</span>
                   </Paragraph>
                 </div>

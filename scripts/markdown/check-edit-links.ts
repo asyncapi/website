@@ -10,7 +10,7 @@ import { pause } from '../helpers/utils';
 const ignoreFiles = [
   'reference/specification/v2.x.md',
   'reference/specification/v3.0.0-explorer.md',
-  'reference/specification/v3.0.0.md'
+  'reference/specification/v3.0.0.md',
 ];
 
 interface PathObject {
@@ -32,22 +32,29 @@ interface PathObject {
  *
  * @throws {Error} If an error occurs during the HTTP HEAD request for any edit link.
  */
-async function processBatch(batch: PathObject[]): Promise<(PathObject | null)[]> {
+async function processBatch(
+  batch: PathObject[],
+): Promise<(PathObject | null)[]> {
   const TIMEOUT_MS = Number(process.env.DOCS_LINK_CHECK_TIMEOUT) || 5000;
 
   return Promise.all(
     batch.map(async ({ filePath, urlPath, editLink }) => {
       let timeout: NodeJS.Timeout | undefined;
-      
+
       try {
-        if (!editLink || ignoreFiles.some((ignorePath) => filePath.endsWith(ignorePath))) return null;
+        if (
+          !editLink ||
+          ignoreFiles.some((ignorePath) => filePath.endsWith(ignorePath))
+        )
+          return null;
 
         const controller = new AbortController();
+
         timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
-        
+
         const response = await fetch(editLink, {
           method: 'HEAD',
-          signal: controller.signal
+          signal: controller.signal,
         });
 
         if (response.status === 404) {
@@ -56,13 +63,15 @@ async function processBatch(batch: PathObject[]): Promise<(PathObject | null)[]>
 
         return null;
       } catch (error) {
-        return Promise.reject(new Error(`Error checking ${editLink}: ${error}`));
+        return await Promise.reject(
+          new Error(`Error checking ${editLink}: ${error}`),
+        );
       } finally {
         if (timeout) {
-            clearTimeout(timeout);
+          clearTimeout(timeout);
         }
       }
-    })
+    }),
   );
 }
 
@@ -94,7 +103,7 @@ async function checkUrls(paths: PathObject[]): Promise<PathObject[]> {
       await pause(1000);
 
       return batchResults.filter((url) => url !== null) as PathObject[];
-    })
+    }),
   );
 
   result.push(...batchResultsArray.flat());
@@ -118,12 +127,16 @@ async function checkUrls(paths: PathObject[]): Promise<PathObject[]> {
 function determineEditLink(
   urlPath: string,
   filePath: string,
-  editOptions: { value: string; href: string }[]
+  editOptions: { value: string; href: string }[],
 ): string | null {
   // Remove leading 'docs/' if present for matching
-  const pathForMatching = urlPath.startsWith('docs/') ? urlPath.slice(5) : urlPath;
+  const pathForMatching = urlPath.startsWith('docs/')
+    ? urlPath.slice(5)
+    : urlPath;
 
-  const target = editOptions.find((edit) => pathForMatching.includes(edit.value));
+  const target = editOptions.find((edit) =>
+    pathForMatching.includes(edit.value),
+  );
 
   // Handle the empty value case (fallback)
   if (target?.value === '') {
@@ -152,7 +165,7 @@ async function generatePaths(
   folderPath: string,
   editOptions: { value: string; href: string }[],
   relativePath = '',
-  result: PathObject[] = []
+  result: PathObject[] = [],
 ): Promise<PathObject[]> {
   try {
     const files = await fs.readdir(folderPath);
@@ -172,15 +185,18 @@ async function generatePaths(
         if (stats.isDirectory()) {
           await generatePaths(filePath, editOptions, relativeFilePath, result);
         } else if (stats.isFile() && file.endsWith('.md')) {
-          const urlPath = relativeFilePath.split(path.sep).join('/').replace('.md', '');
+          const urlPath = relativeFilePath
+            .split(path.sep)
+            .join('/')
+            .replace('.md', '');
 
           result.push({
             filePath,
             urlPath,
-            editLink: determineEditLink(urlPath, filePath, editOptions)
+            editLink: determineEditLink(urlPath, filePath, editOptions),
           });
         }
-      })
+      }),
     );
 
     return result;
@@ -212,7 +228,9 @@ async function main() {
 
     if (invalidUrls.length > 0) {
       logger.info('\nURLs returning 404:\n');
-      invalidUrls.forEach((url) => logger.info(`- ${url.editLink} generated from ${url.filePath}\n`));
+      invalidUrls.forEach((url) =>
+        logger.info(`- ${url.editLink} generated from ${url.filePath}\n`),
+      );
       logger.info(`\nTotal invalid URLs found: ${invalidUrls.length}`);
     } else {
       logger.info('All URLs are valid.');

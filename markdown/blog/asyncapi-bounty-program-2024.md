@@ -26,10 +26,11 @@ During one year of existence of the [AsyncAPI Bounty Program](https://github.com
 - [8000+ USD](https://opencollective.com/asyncapi/expenses?limit=30&tag=bounty&period=2023-09-30T21%3A00%3A00.000Z%E2%86%92all&collectiveSlug=asyncapi&status=PAID) were paid out as rewards.
 
 ### Benefits for FOSS Community
+
 - At least [one issue](https://github.com/springwolf/springwolf-core/issues/820#issuecomment-2257879523) was closed in a third-party project due to a fixed bug in AsyncAPI's software.
 
-
 ### Benefits for AsyncAPI GitHub Organization
+
 Thanks to the Bounty Program Participants, AsyncAPI got:
 
 - [Automation in Technical Steering Committee voting process](https://github.com/orgs/asyncapi/projects/36/views/4?sliceBy%5BcolumnId%5D=78904519&sliceBy%5Bvalue%5D=community%231093&filterQuery=) ([Aayush Saini](https://github.com/AayushSaini101)): New automation and the [process around voting](https://github.com/asyncapi/community/blob/master/voting.md) have been introduced, as well as [transparent summaries](https://github.com/asyncapi/community/blob/master/TSC_VOTING_OVERVIEW.md) of each voting activity.
@@ -44,13 +45,11 @@ Thanks to the Bounty Program Participants, AsyncAPI got:
 
 ![](/img/posts/bounty-program/362263381-acc75432-0f58-4c96-a65f-f172d34ee4ec.jpg)
 
-
 ### Benefits for AsyncAPI Maintainers
 
 The Bounty Program gives AsyncAPI Maintainers the possibility:
 
 - To announce a financial reward for GitHub issues that are currently in demand by the maintained project or the AsyncAPI Initiative as a whole, on which AsyncAPI Maintainers can either work and get rewarded themselves or delegate those issues to regular contributors who have more time and/or the necessary expertise.
-
 
 ### Benefits for Bounty Program Participants
 
@@ -61,7 +60,6 @@ Typical benefits of the Bounty Program for its Participants who are in the early
 - First/differing working experience (fully asynchronous distributed teams are still rare, unlike partially asynchronous distributed ones.)
 
 - Development of the possibility to showcase to the potential employer real-world work not obscured by an NDA.
-
 
 With all that said, join a finally sure way to directly sponsor (and get rewarded for) FOSS development.
 

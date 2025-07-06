@@ -1,5 +1,5 @@
 ---
-title: "Contributing to Open Source as a Product Design and UX Researcher"
+title: 'Contributing to Open Source as a Product Design and UX Researcher'
 date: 2023-11-09T06:00:00+01:00
 type: Communication
 tags:
@@ -12,6 +12,7 @@ authors:
     byline: Product Designer and UX Researcher
 excerpt: 'Design BlogPost'
 ---
+
 Every software has a design system, regardless of whether it is free or not. Suppose you are a UX researcher or designer intending to be part of an Open Source community. In that case, you can begin contributing to the research or design program by collaborating with others. This article clarifies what Open Source is and provides tips on how you can start contributing as a UX researcher or designer. In addition, I’ll share some Open Source communities that you can contribute to as a beginner.
 
 ### What is Open Source?
@@ -58,7 +59,3 @@ Finally, open source is time-consuming and can become overwhelming if you do not
 ### Are you ready to start contributing?
 
 Check if the applications you frequently use are Open Source and consider joining their communities. You can ask questions, solve issues, and offer assistance to others. Many communities offer issues that are suitable for beginners who are new to open source.
-
-
-
-

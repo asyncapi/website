@@ -7,7 +7,7 @@ const navData = {
       isSection: true,
       rootSectionId: 'welcome',
       sectionWeight: 0,
-      slug: '/docs'
+      slug: '/docs',
     },
     {
       title: 'Getting Started',
@@ -16,7 +16,7 @@ const navData = {
       isSection: true,
       rootSectionId: 'getting-started',
       sectionWeight: 1,
-      slug: '/docs/getting-started'
+      slug: '/docs/getting-started',
     },
     {
       title: 'Installation',
@@ -24,7 +24,7 @@ const navData = {
       isSection: false,
       rootSectionId: 'getting-started',
       sectionId: 'installation',
-      slug: '/docs/getting-started/installation'
+      slug: '/docs/getting-started/installation',
     },
     {
       title: 'Configuration',
@@ -32,7 +32,7 @@ const navData = {
       isSection: false,
       rootSectionId: 'getting-started',
       sectionId: 'configuration',
-      slug: '/docs/getting-started/configuration'
+      slug: '/docs/getting-started/configuration',
     },
     {
       title: 'Reference',
@@ -41,7 +41,7 @@ const navData = {
       isSection: true,
       rootSectionId: 'reference',
       sectionWeight: 2,
-      slug: '/docs/reference'
+      slug: '/docs/reference',
     },
     {
       title: 'API',
@@ -50,7 +50,7 @@ const navData = {
       rootSectionId: 'reference',
       sectionId: 'api',
       parent: 'reference',
-      slug: '/docs/reference/api'
+      slug: '/docs/reference/api',
     },
     {
       title: 'Endpoints',
@@ -58,7 +58,7 @@ const navData = {
       isSection: false,
       rootSectionId: 'reference',
       sectionId: 'api',
-      slug: '/docs/reference/api/endpoints'
+      slug: '/docs/reference/api/endpoints',
     },
     {
       title: 'Specification',
@@ -67,7 +67,7 @@ const navData = {
       rootSectionId: 'reference',
       sectionId: 'specification',
       parent: 'reference',
-      slug: '/docs/reference/specification'
+      slug: '/docs/reference/specification',
     },
     {
       title: 'v1.0',
@@ -76,7 +76,7 @@ const navData = {
       rootSectionId: 'reference',
       sectionId: 'specification',
       slug: '/docs/reference/specification/v1.0',
-      isPrerelease: false
+      isPrerelease: false,
     },
     {
       title: 'v2.0',
@@ -85,7 +85,7 @@ const navData = {
       rootSectionId: 'reference',
       sectionId: 'specification',
       slug: '/docs/reference/specification/v2.0',
-      isPrerelease: true
+      isPrerelease: true,
     },
     {
       title: 'v3.0',
@@ -93,8 +93,8 @@ const navData = {
       isSection: false,
       rootSectionId: 'reference',
       sectionId: 'specification',
-      slug: '/docs/reference/specification/v3.0'
-    }
+      slug: '/docs/reference/specification/v3.0',
+    },
   ],
 
   sectionNavItems: [
@@ -105,9 +105,15 @@ const navData = {
       isSection: true,
       rootSectionId: 'root',
       sectionWeight: 0,
-      slug: '/docs'
+      slug: '/docs',
     },
-    { title: 'Item without sectionId', weight: 1, isSection: false, rootSectionId: 'root', slug: '/docs/item' }
+    {
+      title: 'Item without sectionId',
+      weight: 1,
+      isSection: false,
+      rootSectionId: 'root',
+      slug: '/docs/item',
+    },
   ],
 
   orphanNavItems: [
@@ -118,12 +124,18 @@ const navData = {
       rootSectionId: 'root',
       sectionId: 'orphan',
       parent: 'non-existent-parent',
-      slug: '/docs/orphaned'
-    }
+      slug: '/docs/orphaned',
+    },
   ],
 
   missingFieldsNavItems: [
-    { title: 'Incomplete Item', weight: 0, isSection: false, rootSectionId: 'incomplete', slug: '/docs/incomplete' }
+    {
+      title: 'Incomplete Item',
+      weight: 0,
+      isSection: false,
+      rootSectionId: 'incomplete',
+      slug: '/docs/incomplete',
+    },
   ],
 
   invalidParentNavItems: [
@@ -134,7 +146,7 @@ const navData = {
       isSection: true,
       rootSectionId: 'valid-root',
       sectionWeight: 0,
-      slug: '/docs/valid-root'
+      slug: '/docs/valid-root',
     },
     {
       title: 'Child with invalid parent',
@@ -143,8 +155,8 @@ const navData = {
       rootSectionId: 'valid-root',
       sectionId: 'child-invalid',
       parent: 'non-existent-parent',
-      slug: '/docs/valid-root/child-invalid'
-    }
+      slug: '/docs/valid-root/child-invalid',
+    },
   ],
 
   multipleSubsectionsNavItems: [
@@ -155,7 +167,7 @@ const navData = {
       isSection: true,
       rootSectionId: 'reference',
       sectionWeight: 0,
-      slug: '/docs/reference'
+      slug: '/docs/reference',
     },
     {
       title: 'API',
@@ -164,7 +176,7 @@ const navData = {
       rootSectionId: 'reference',
       sectionId: 'api',
       parent: 'reference',
-      slug: '/docs/reference/api'
+      slug: '/docs/reference/api',
     },
     {
       title: 'Endpoints',
@@ -172,7 +184,7 @@ const navData = {
       isSection: false,
       rootSectionId: 'reference',
       sectionId: 'api',
-      slug: '/docs/reference/api/endpoints'
+      slug: '/docs/reference/api/endpoints',
     },
     {
       title: 'Authentication',
@@ -180,7 +192,7 @@ const navData = {
       isSection: false,
       rootSectionId: 'reference',
       sectionId: 'api',
-      slug: '/docs/reference/api/authentication'
+      slug: '/docs/reference/api/authentication',
     },
     {
       title: 'Rate Limiting',
@@ -188,7 +200,7 @@ const navData = {
       isSection: false,
       rootSectionId: 'reference',
       sectionId: 'api',
-      slug: '/docs/reference/api/rate-limiting'
+      slug: '/docs/reference/api/rate-limiting',
     },
     {
       title: 'Specification',
@@ -197,7 +209,7 @@ const navData = {
       rootSectionId: 'reference',
       sectionId: 'specification',
       parent: 'reference',
-      slug: '/docs/reference/specification'
+      slug: '/docs/reference/specification',
     },
     {
       title: 'v1.0',
@@ -205,7 +217,7 @@ const navData = {
       isSection: false,
       rootSectionId: 'reference',
       sectionId: 'specification',
-      slug: '/docs/reference/specification/v1.0'
+      slug: '/docs/reference/specification/v1.0',
     },
     {
       title: 'v2.0',
@@ -213,7 +225,7 @@ const navData = {
       isSection: false,
       rootSectionId: 'reference',
       sectionId: 'specification',
-      slug: '/docs/reference/specification/v2.0'
+      slug: '/docs/reference/specification/v2.0',
     },
     {
       title: 'v3.0',
@@ -221,9 +233,9 @@ const navData = {
       isSection: false,
       rootSectionId: 'reference',
       sectionId: 'specification',
-      slug: '/docs/reference/specification/v3.0'
-    }
-  ]
+      slug: '/docs/reference/specification/v3.0',
+    },
+  ],
 };
 
 export default navData;

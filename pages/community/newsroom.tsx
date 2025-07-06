@@ -12,7 +12,12 @@ export default function Newsroom() {
   const image = '/img/social/community-newsroom.webp';
 
   return (
-    <GenericLayout title='AsyncAPI Newsroom' description={description} image={image} wide>
+    <GenericLayout
+      title="AsyncAPI Newsroom"
+      description={description}
+      image={image}
+      wide
+    >
       <Container wide>
         <NewsroomSection />
       </Container>

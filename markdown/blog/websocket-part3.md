@@ -14,7 +14,7 @@ authors:
 excerpt: Learn how to go from API design to code generation. Create a WebSocket API for ChatBot. All supported by AsyncAPI
 ---
 
->  This is the last article of WebSocket series. I recommend you read [WebSocket, Shrek, and AsyncAPI - An Opinionated Intro](/blog/websocket-part1) and [Creating AsyncAPI for WebSocket API - Step by Step](/blog/websocket-part2) first.
+> This is the last article of WebSocket series. I recommend you read [WebSocket, Shrek, and AsyncAPI - An Opinionated Intro](/blog/websocket-part1) and [Creating AsyncAPI for WebSocket API - Step by Step](/blog/websocket-part2) first.
 
 In my previous articles from the WebSocket series, I introduced you to WebSocket topic and explained how you would describe your WebSocket API using AsyncAPI specification.
 
@@ -40,7 +40,7 @@ No, but specification makes the design process and feedback loop easier to handl
 
 What is wrong with generating AsyncAPI from code?
 
-Even though I'm an author of many memes like those in this article, I'm actually far from judging. It all depends on your project, architecture, and even the work environment. 
+Even though I'm an author of many memes like those in this article, I'm actually far from judging. It all depends on your project, architecture, and even the work environment.
 
 <Figure
   src="/img/posts/websocket-part3/meme-blame.webp"
@@ -48,13 +48,14 @@ Even though I'm an author of many memes like those in this article, I'm actually
   className="text-center"
 />
 
-In the end, I think there is a wrong assumption that if you generate spec from code, it means you did not think about API design and your users. 
+In the end, I think there is a wrong assumption that if you generate spec from code, it means you did not think about API design and your users.
 
-Even AsyncAPI [tooling list](https://www.asyncapi.com/docs/community/tooling) stigmatize tools that allow you to generate spec from the code as code-first tools. Who said you couldn't do both things in parallel. 
+Even AsyncAPI [tooling list](https://www.asyncapi.com/docs/community/tooling) stigmatize tools that allow you to generate spec from the code as code-first tools. Who said you couldn't do both things in parallel.
 
-I just realized this topic could continue and evolve into a dedicated article, so let me do a full stop here. 
+I just realized this topic could continue and evolve into a dedicated article, so let me do a full stop here.
 
 My goal is to educate you on:
+
 - Designing a WebSocket API with multichannel, with one message each. In other words, I want to show you something opposite to my previous articles where you could see a WebSocket API that has one channel but with multiple different messages.
 - Performing code generation that enables you to focus on business logic only.
 
@@ -69,6 +70,7 @@ I know that in [this article](/blog/websocket-part1), I wrote that I would not t
 > You can see entire AsyncAPI document [here](https://github.com/derberg/shrekapp-asyncapi-designed/blob/main/asyncapi.yaml)
 
 There are several questions you need to ask yourself when designing an API:
+
 - What is the name of the API?
 - What is the purpose of the API?
 - What is the version of the API?
@@ -111,13 +113,14 @@ servers:
 ### Channels
 
 There are two separate entry points for the user to interact with the API:
+
 - `chat` where bi-directional communication is possible to enable real-time conversation with the bot
 - `travel/status` where user can subscribe for a stream of updates on different travels, like for example:
-    ```yml
-      destination: Far far away
-      distance: Beyond the seven mountains and seven forests
-      arrival: Pretty soon
-    ```
+  ```yml
+  destination: Far far away
+  distance: Beyond the seven mountains and seven forests
+  arrival: Pretty soon
+  ```
 
 Except for basic information like the purpose of messages, pub/sub operations, and messages schema, it is good to specify **operationId** that is unique across the entire AsyncAPI document and helps to generate human-readable functions' names.
 
@@ -199,37 +202,46 @@ We have many templates on our [list](https://github.com/asyncapi/generator#list-
 This article focuses on WebSocket therefore, I use our [Node.js WebSocket template](https://github.com/asyncapi/nodejs-ws-template) that is capable of generating server for WebSocket API and also a client that is aware of available channels.
 
 1. Create a new directory where you will work on the project:
-    ```bash
-    mkdir shrekapp && cd shrekapp
-    ```
+   ```bash
+   mkdir shrekapp && cd shrekapp
+   ```
 1. Trigger generation using the template:
-  ```bash
-  ag https://raw.githubusercontent.com/derberg/shrekapp-asyncapi-designed/main/asyncapi.yaml @asyncapi/nodejs-ws-template -o myapp -p server=swamp
-  ```
+
+```bash
+ag https://raw.githubusercontent.com/derberg/shrekapp-asyncapi-designed/main/asyncapi.yaml @asyncapi/nodejs-ws-template -o myapp -p server=swamp
+```
+
 1. Access generated folder and list all files from the directory. Notice that Node.js application is generated:
-  ```bash
-  cd myapp && ls
-  ```
+
+```bash
+cd myapp && ls
+```
+
 1. Install application dependencies
-  ```bash
-  npm i
-  ```
+
+```bash
+npm i
+```
+
 1. Start the application
-  ```bash
-  npm start
-  ```
+
+```bash
+npm start
+```
 
 That is it. The basics are done. The application is ready, and all the basic logic is there. You can already interact with the application on **localhost** on port **80**. Now you need a client able to communicate with WebSocket protocol. For now, we will not explore the generated client.
 
 1. Get **websocat** (curl-like tool for WebSocket) by following [these instructions](https://github.com/vi/websocat#installation)
 1. Connect to one of the channels and notice that the server sent you a message to respond to established connection.
-  ```bash
-  websocat ws://localhost/travel/status
 
-  Message from the server: Implement here your business logic that sends messages to a client after it connects.
-  ```
+```bash
+websocat ws://localhost/travel/status
+
+Message from the server: Implement here your business logic that sends messages to a client after it connects.
+```
 
 Logs in the running server should also indicate a new connection with the server:
+
 ```bash
 Listening on port 80
 /travel/status client connected.
@@ -238,6 +250,7 @@ Listening on port 80
 ## Code Walkthrough
 
 Before writing some code, let's first go through the generated code:
+
 - For the generated server, we need to look into `src/api/routes.js` and `src/api/services`
 - For generated client, everything is in the `index.html`
 
@@ -283,12 +296,12 @@ router.ws('/travel/status', async (ws, req) => {
 Once the client establishes connection with the server, generated code invokes a function called **subTravelInfo**. Now look again at the AsyncAPI document:
 
 ```yml
-  /travel/status:
-    subscribe:
-      summary: Client can receive travel info status.
-      operationId: subTravelInfo
-      message:
-        $ref: '#/components/messages/travelInfo'
+/travel/status:
+  subscribe:
+    summary: Client can receive travel info status.
+    operationId: subTravelInfo
+    message:
+      $ref: '#/components/messages/travelInfo'
 ```
 
 The name of the function maps to the **operationId**. The **/travel/status** channel supports only **subscribe** operation which means that client can only connect to the channel to listen for the messages, no messages are accepted. This is why the generated router doesn't react to any message sent to the channel. As oposite to the **/chat** channel:
@@ -309,17 +322,17 @@ router.ws('/chat', async (ws, req) => {
 The **subChatMessage** function is invoked when client connects with the server. There is also a message listener generated that invokes **pubChatMessage** function whenever a message is sent from the client. Now look again at the AsyncAPI document:
 
 ```yml
-  /chat:
-    subscribe:
-      summary: Client can receive chat messages.
-      operationId: subChatMessage
-      message:
-        $ref: '#/components/messages/chatMessage'
-    publish:
-      summary: Client can send chat messages.
-      operationId: pubChatMessage
-      message:
-        $ref: '#/components/messages/chatMessage'
+/chat:
+  subscribe:
+    summary: Client can receive chat messages.
+    operationId: subChatMessage
+    message:
+      $ref: '#/components/messages/chatMessage'
+  publish:
+    summary: Client can send chat messages.
+    operationId: pubChatMessage
+    message:
+      $ref: '#/components/messages/chatMessage'
 ```
 
 The client can not only listen to the messages incoming from `/chat` channel but, in this case, can also send messages. This way, there can be bi-directional communication established between the client and the chatbot.
@@ -329,20 +342,25 @@ The client can not only listen to the messages incoming from `/chat` channel but
 Functions like, for example, **pubChatMessage** are generated in the **services** directory. All functions for single channel go into individual file. Have a look at **src/api/services/travel-status.js** file:
 
 ```js
-const service = module.exports = {};
+const service = (module.exports = {});
 
 /**
  * Client can receive travel info status.
  * @param {object} ws WebSocket connection.
  */
 service.subTravelInfo = async (ws) => {
-  ws.send('Message from the server: Implement here your business logic that sends messages to a client after it connects.');
+  ws.send(
+    'Message from the server: Implement here your business logic that sends messages to a client after it connects.',
+  );
 };
 ```
 
 As you can see, you are ready to provide your business logic by replacing the generated one:
+
 ```js
-ws.send('Message from the server: Implement here your business logic that sends messages to a client after it connects.');
+ws.send(
+  'Message from the server: Implement here your business logic that sends messages to a client after it connects.',
+);
 ```
 
 ### Client Code
@@ -364,35 +382,41 @@ The Business logic goes only to generated services.
 I don't have here any real travel status updates. I add some dummy data that are sent to the client every 1s, 100 times.
 
 1. Add **dummy-json** that makes it easier to provide mock data. I add it only to make sure the code is not overcomplicated
-  ```bash
-  npm i --save dummy-json
-  ```
-1. Imported the package in the **src/api/services/travel-status.js** file:
-  ```js
-  const dummyjson = require('dummy-json');
-  ```
-1. Modify **subTravelInfo** from the same file to send mock data to the client with **ws.send()** function:
-  ```js
-  service.subTravelInfo = async (ws) => {
-    (function myLoop (i) {
-      setTimeout(() => {
-        ws.send(generateResponse());
-        if (--i) myLoop(i);
-      }, 1000);
-    }(100));  
 
-    function generateResponse() {
-      const template = `{
-        "destination": "{{city}}",
-        "arrival": "{{int 2 6}}h",
-        "distance": "{{int 18 65}}km"
-      }`;
-      return dummyjson.parse(template);
-    }
-  };
-  ```
+```bash
+npm i --save dummy-json
+```
+
+1. Imported the package in the **src/api/services/travel-status.js** file:
+
+```js
+const dummyjson = require('dummy-json');
+```
+
+1. Modify **subTravelInfo** from the same file to send mock data to the client with **ws.send()** function:
+
+```js
+service.subTravelInfo = async (ws) => {
+  (function myLoop(i) {
+    setTimeout(() => {
+      ws.send(generateResponse());
+      if (--i) myLoop(i);
+    }, 1000);
+  })(100);
+
+  function generateResponse() {
+    const template = `{
+      "destination": "{{city}}",
+      "arrival": "{{int 2 6}}h",
+      "distance": "{{int 18 65}}km"
+    }`;
+    return dummyjson.parse(template);
+  }
+};
+```
 
 This is it. Now restart the server and check with previously installed **websocat** if after connecting to **travel/status** channel you are now regularly receiving a stream of messages:
+
 ```bash
 websocat ws://localhost/travel/status
 
@@ -409,66 +433,76 @@ websocat ws://localhost/travel/status
 ### Add ChatBot Communication
 
 I chose Wit.ai as a platform that:
+
 - Makes is super easy to train the bot
 - Gives me access to API that enables integration with custom services, like the one that we just generated
 
-I encourage you to [give it a try](https://wit.ai/docs/quickstart) as it is pretty easy to use if it is your first time with ChatBots. It was my first time. 
+I encourage you to [give it a try](https://wit.ai/docs/quickstart) as it is pretty easy to use if it is your first time with ChatBots. It was my first time.
 
 1. To make it easier to talk to Wit.ai API I use **node-fetch** package:
-  ```bash
-  npm i --save node-fetch
-  ```
+
+```bash
+npm i --save node-fetch
+```
+
 1. Imported the package in the **src/api/services/chat.js** file:
-  ```js
-  const fetch = require('node-fetch');
-  ```
+
+```js
+const fetch = require('node-fetch');
+```
+
 1. Modify **subChatMessage** from the same file to send to the client message that connection is working:
-  ```js
-  service.subChatMessage = async (ws) => {
-    ws.send('Connection with Shrek established');
-  };
-  ```
+
+```js
+service.subChatMessage = async (ws) => {
+  ws.send('Connection with Shrek established');
+};
+```
+
 1. Modify **pubChatMessage** that is invoked when message from the client gets to the **/chat** channel:
-  ```js
-  service.pubChatMessage = async (ws, { message, path, query }) => {
-    const messageToShrek = message ? encodeURIComponent(message) : '';
-    const defaultAnswer = 'Shrek is out sorry. He\'s busy rescuing the princess.';
-    let shrekAnswer = defaultAnswer;
-    let botAnswer;
 
-    try {
-        botAnswer = await fetch(`https://api.wit.ai/message?q=${messageToShrek}`, {
-            headers: { 'Authorization': `Bearer ${process.env.CHATBOT_TOKEN}` }
-        });
-    } catch (e) {
-        throw new Error(`Having issues communicating with the bot: ${e}`);
+```js
+service.pubChatMessage = async (ws, { message, path, query }) => {
+  const messageToShrek = message ? encodeURIComponent(message) : '';
+  const defaultAnswer = "Shrek is out sorry. He's busy rescuing the princess.";
+  let shrekAnswer = defaultAnswer;
+  let botAnswer;
+
+  try {
+    botAnswer = await fetch(`https://api.wit.ai/message?q=${messageToShrek}`, {
+      headers: { Authorization: `Bearer ${process.env.CHATBOT_TOKEN}` },
+    });
+  } catch (e) {
+    throw new Error(`Having issues communicating with the bot: ${e}`);
+  }
+
+  if (botAnswer) {
+    const wrongQuestionAnswer = 'Is it you Donkey!? Ask a better question!';
+    const answerObject = await botAnswer.json();
+    let firstTraitValue;
+
+    for (const [, v] of Object.entries(answerObject.traits)) {
+      firstTraitValue = v[0].value;
+      break;
     }
 
-    if (botAnswer) {
-        const wrongQuestionAnswer = 'Is it you Donkey!? Ask a better question!';
-        const answerObject = await botAnswer.json();
-        let firstTraitValue;
-        
-        for (const [, v] of Object.entries(answerObject.traits)) {
-          firstTraitValue = v[0].value;
-          break;
-        }
-
-        shrekAnswer = firstTraitValue ? firstTraitValue : wrongQuestionAnswer;
-    }
-    console.log(`Answered with: ${shrekAnswer}`)
-    ws.send(shrekAnswer);
-  };
-  ```
+    shrekAnswer = firstTraitValue ? firstTraitValue : wrongQuestionAnswer;
+  }
+  console.log(`Answered with: ${shrekAnswer}`);
+  ws.send(shrekAnswer);
+};
+```
 
 The most important part of this code is when the communication with the Wit.ai platform happens to send a message and get a response:
+
 ```js
-      botAnswer = await fetch(`https://api.wit.ai/message?q=${messageToShrek}`, {
-          headers: { 'Authorization': `Bearer ${process.env.CHATBOT_TOKEN}` }
-      });
+botAnswer = await fetch(`https://api.wit.ai/message?q=${messageToShrek}`, {
+  headers: { Authorization: `Bearer ${process.env.CHATBOT_TOKEN}` },
+});
 ```
 
 This is it. Now restart the server and check with previously installed **websocat** if after connecting to **chat** channel you can send messages to chatbot and receive answers. You need to start the server with **CHATBOT_TOKEN** environment variable with the token: `CHATBOT_TOKEN=your-token npm start`. I cannot give you my token, sorry, you have to get yours from [Wit.ai](https://www.wit.ai) and train your chatbot:
+
 ```bash
 websocat ws://localhost/chat
 
@@ -485,6 +519,7 @@ Shrek: good
 ```
 
 You can also see logs on the server-side:
+
 ```bash
 Listening on port 80
 /chat client connected.
@@ -533,23 +568,23 @@ Confusion between **subscribe** and **publish** is not the only problem. Once yo
 The real problem is with code generation. You describe the application from a user perspective, so client code generation is easy. What about generating code for your server? Have a look again at the **/travel/status** channel from ShrekApp:
 
 ```yml
-  /travel/status:
-    subscribe:
-      summary: Client can receive travel info status.
-      operationId: subTravelInfo
-      message:
-        $ref: '#/components/messages/travelInfo'
+/travel/status:
+  subscribe:
+    summary: Client can receive travel info status.
+    operationId: subTravelInfo
+    message:
+      $ref: '#/components/messages/travelInfo'
 ```
 
 I had to try hard to make sure the **summary** and **operationId** are as neutral as possible. My first version looked like this:
 
 ```yml
-  /travel/status:
-    subscribe:
-      summary: You can listen to travel info status.
-      operationId: onTravelInfo #client code perspective, generated client reacts "onTravelInfo" incomming message 
-      message:
-        $ref: '#/components/messages/travelInfo'
+/travel/status:
+  subscribe:
+    summary: You can listen to travel info status.
+    operationId: onTravelInfo #client code perspective, generated client reacts "onTravelInfo" incomming message
+    message:
+      $ref: '#/components/messages/travelInfo'
 ```
 
 Then in **src/api/services/travel-status.js** file, I would have **onTravelInfo** instead of **subTravelInfo** with the following jsdoc:
@@ -579,15 +614,15 @@ You did your work, you did API-first.
 
 What happens later? I mean later during further development of the application.
 
-Let's say you add a new channel to the server or modify the name of the old channel. 
+Let's say you add a new channel to the server or modify the name of the old channel.
 
 Where do you do it? AsyncAPI document or the code? You need to do it manually in both. You need to add a channel to the AsyncAPI document and add implementation for the channel in the code. You enter the land where your AsyncAPI document describes something different from your code at some point in time. You cannot regenerate the project with the template you used in the beginning, as your custom logic will be lost.
 
-The AsyncAPI Generator provides support for Git. If you have a Git repository and unstaged files, the Generator warns you that your changes may be lost. Git support is definitely helpful. You can try code regeneration, but you need to review changes and manually ignore overrides after that. 
+The AsyncAPI Generator provides support for Git. If you have a Git repository and unstaged files, the Generator warns you that your changes may be lost. Git support is definitely helpful. You can try code regeneration, but you need to review changes and manually ignore overrides after that.
 
 It can be a cumbersome process, but you maintain sync between the AsyncAPI document and the code. There is no place for automation, though.
 
-There must be a way to solve these challenges. Maybe some kind of markers.  One could use them in code to indicate that the generator must ignore a given part of the code. Another helpful solution could be a way to specify what template files should be ignored during generation. For example, regenerate only models built from messages' schemas. We need to figure it out.
+There must be a way to solve these challenges. Maybe some kind of markers. One could use them in code to indicate that the generator must ignore a given part of the code. Another helpful solution could be a way to specify what template files should be ignored during generation. For example, regenerate only models built from messages' schemas. We need to figure it out.
 
 Don't give up, though. Technical challenges are not a good excuse for avoiding the API-first approach.
 

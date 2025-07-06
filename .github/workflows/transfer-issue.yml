@@ -10,7 +10,7 @@ on:
 
 permissions:
   issues: write
-  
+
 jobs:
   transfer:
     if: ${{(!github.event.issue.pull_request && github.event.issue.state != 'closed' && github.actor != 'asyncapi-bot') && (startsWith(github.event.comment.body, '/transfer-issue') || startsWith(github.event.comment.body, '/ti'))}}
@@ -21,7 +21,7 @@ jobs:
       - name: Extract Input
         id: extract_step
         env:
-          COMMENT: "${{ github.event.comment.body }}"
+          COMMENT: '${{ github.event.comment.body }}'
         run: |
           REPO=$(echo $COMMENT | awk '{print $2}')
           echo repo=$REPO >> $GITHUB_OUTPUT
@@ -58,4 +58,3 @@ jobs:
           gh issue transfer ${{github.event.issue.number}} asyncapi/${{steps.extract_step.outputs.repo}}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          

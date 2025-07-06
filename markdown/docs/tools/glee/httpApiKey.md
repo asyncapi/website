@@ -63,11 +63,11 @@ components:
 
 The `httpApiKey` can be located in either the header or query parameter.
 
-The client `asyncapi.yaml` file **does not need to implement all the security requirements of the server; it only needs to implement the ones it uses, like *httpApiKey* here.**
+The client `asyncapi.yaml` file **does not need to implement all the security requirements of the server; it only needs to implement the ones it uses, like _httpApiKey_ here.**
 
 ### Client Side
 
-Following the client `asyncapi.yaml` file above, create a file named `trendingAnime.ts` in the `auth` directory, as this is the server that has the security property. 
+Following the client `asyncapi.yaml` file above, create a file named `trendingAnime.ts` in the `auth` directory, as this is the server that has the security property.
 
 ```bash
 touch auth/trendingAnime.ts
@@ -78,8 +78,8 @@ When using the `HttpApiKey` security scheme, it is important to pass the paramet
 ```js
 export async function clientAuth({ parsedAsyncAPI, serverName }) {
   return {
-    apiKey: process.env.APIKEY
-  }
+    apiKey: process.env.APIKEY,
+  };
 }
 ```
 
@@ -87,7 +87,7 @@ export async function clientAuth({ parsedAsyncAPI, serverName }) {
 
 ### Server Side
 
-From the server `asyncapi.yaml` file above, create a file named `trendingAnimeServer.ts` in the `auth` directory, as this is the server that has the security property. 
+From the server `asyncapi.yaml` file above, create a file named `trendingAnimeServer.ts` in the `auth` directory, as this is the server that has the security property.
 
 ```bash
 touch auth/trendingAnimeServer.ts
@@ -96,13 +96,11 @@ touch auth/trendingAnimeServer.ts
 On the server side, you can retrieve the values as follows:
 
 ```js
-
 export async function serverAuth({ authProps, done }) {
-  authProps.getHttpAPIKeys('api_key')
-  
-  done(true)
-}
+  authProps.getHttpAPIKeys('api_key');
 
+  done(true);
+}
 ```
 
 So, `getHttpAPIKeys(name)` takes a name parameter to specify the name of the httpApiKey that is desired. Then it returns an object containing the `httpApiKey` value that is sent from the client.

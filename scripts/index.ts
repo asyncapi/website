@@ -25,14 +25,22 @@ async function start() {
   const postDirectories = [
     ['pages/blog', '/blog'],
     ['pages/docs', '/docs'],
-    ['pages/about', '/about']
+    ['pages/about', '/about'],
   ];
   const basePath = 'pages';
   const writeFilePath = resolve(currentDirPath, '../config', 'posts.json');
 
   await buildPostList(postDirectories, basePath, writeFilePath);
-  await rssFeed('blog', 'AsyncAPI Initiative Blog RSS Feed', 'AsyncAPI Initiative Blog', 'rss.xml');
-  await buildCaseStudiesList('config/casestudies', resolve(currentDirPath, '../config', 'case-studies.json'));
+  await rssFeed(
+    'blog',
+    'AsyncAPI Initiative Blog RSS Feed',
+    'AsyncAPI Initiative Blog',
+    'rss.xml',
+  );
+  await buildCaseStudiesList(
+    'config/casestudies',
+    resolve(currentDirPath, '../config', 'case-studies.json'),
+  );
   await buildAdoptersList();
   const financeDir = resolve('.', 'config', 'finance');
 
@@ -59,7 +67,7 @@ async function start() {
     configDir: 'config',
     financeDir: 'finance',
     year: latestYear,
-    jsonDataDir: 'json-data'
+    jsonDataDir: 'json-data',
   });
 }
 

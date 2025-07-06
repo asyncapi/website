@@ -29,10 +29,10 @@ channels:
             age:
               type: integer
               minimum: 18
-operations: 
+operations:
   userSignedUp:
     action: send
-    channel: 
+    channel:
       $ref: '#/channels/userSignedUp'
 ```
 

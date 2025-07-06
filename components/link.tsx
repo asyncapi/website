@@ -34,7 +34,12 @@ export default function LinkComponent({
   // If there is no router available (e.g., during server-side rendering & cypress tests), render a standard Link
   if (!router) {
     return (
-      <Link href={props.href || ''} legacyBehavior={legacyBehavior} target={target} rel={rel}>
+      <Link
+        href={props.href || ''}
+        legacyBehavior={legacyBehavior}
+        target={target}
+        rel={rel}
+      >
         {children}
       </Link>
     );
@@ -45,7 +50,10 @@ export default function LinkComponent({
   // Detect current language based on the path or query parameter
   const slug = asPath.split('/')[1];
   const langSlug = languages.includes(slug) && slug;
-  const language: string = query.lang && typeof query.lang === 'string' ? query.lang : langSlug || defaultLanguage; // Ensure language is always a string
+  const language: string =
+    query.lang && typeof query.lang === 'string'
+      ? query.lang
+      : langSlug || defaultLanguage; // Ensure language is always a string
 
   let href = props.href || pathname;
 
@@ -53,9 +61,20 @@ export default function LinkComponent({
     If explicit href is provided, and the language-specific paths for the current language do not include the href,
     or if the href starts with "http", render a standard Link
   */
-  if ((props.href && i18nPaths[language] && !i18nPaths[language].includes(href)) || href.includes('http', 0)) {
+  if (
+    (props.href &&
+      i18nPaths[language] &&
+      !i18nPaths[language].includes(href)) ||
+    href.includes('http', 0)
+  ) {
     return (
-      <Link href={href} legacyBehavior={legacyBehavior} passHref target={target} rel={rel}>
+      <Link
+        href={href}
+        legacyBehavior={legacyBehavior}
+        passHref
+        target={target}
+        rel={rel}
+      >
         {children}
       </Link>
     );
@@ -67,7 +86,9 @@ export default function LinkComponent({
     } else {
       // If the current path starts with "/404", update href to be the root path with the locale
       // Otherwise, replace "[lang]" placeholder with the locale
-      href = pathname.startsWith('/404') ? `/${locale}` : pathname.replace('[lang]', locale);
+      href = pathname.startsWith('/404')
+        ? `/${locale}`
+        : pathname.replace('[lang]', locale);
     }
   } else {
     // If no locale is provided, update the href with the current language or keep it as is
@@ -78,7 +99,13 @@ export default function LinkComponent({
   href = href.replace(/([^:/]|^)\/{2,}/g, '$1/');
 
   return (
-    <Link href={href} legacyBehavior={legacyBehavior} target={target} rel={rel} passHref>
+    <Link
+      href={href}
+      legacyBehavior={legacyBehavior}
+      target={target}
+      rel={rel}
+      passHref
+    >
       {children}
     </Link>
   );
@@ -89,10 +116,15 @@ export const LinkText = ({
   children,
   legacyBehavior = false,
   target = '_self',
-  rel = ''
+  rel = '',
 }: LinkComponentProps) => {
   return (
-    <Link href={href || ''} target={target} rel={rel} legacyBehavior={legacyBehavior}>
+    <Link
+      href={href || ''}
+      target={target}
+      rel={rel}
+      legacyBehavior={legacyBehavior}
+    >
       {children}
     </Link>
   );

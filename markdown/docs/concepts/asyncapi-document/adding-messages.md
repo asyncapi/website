@@ -24,7 +24,7 @@ graph LR
   C --> D
   D --> |$ref| B
   A --> B
-  
+
   style C fill:#47BCEE,stroke:#000;
   style D fill:#47BCEE,stroke:#000;
 ```
@@ -41,13 +41,13 @@ channels:
       commentLiked:
         description: Message that is being sent when a comment has been liked by someone.
         payload:
-           type: object
-           title: commentLikedPayload
-           additionalProperties: false
-           properties:
-               commentId: 
-                 type: string
-                 description: Id of the comment that was liked
+          type: object
+          title: commentLikedPayload
+          additionalProperties: false
+          properties:
+            commentId:
+              type: string
+              description: Id of the comment that was liked
     description: Notification channel for all the services that need to know comment is liked.
 ```
 
@@ -61,26 +61,27 @@ In your AsyncAPI document, create a `components.messages` section to define each
 components:
   messages:
     commentLiked:
-        description: Message that is being sent when a comment has been liked by someone.
-        payload:
-           type: object
-           title: commentLikedPayload
-           additionalProperties: false
-           properties:
-               commentId: 
-                 type: string
-                 description: Id of the comment that was liked
+      description: Message that is being sent when a comment has been liked by someone.
+      payload:
+        type: object
+        title: commentLikedPayload
+        additionalProperties: false
+        properties:
+          commentId:
+            type: string
+            description: Id of the comment that was liked
 ```
 
 You can reuse messages using the [Reference Object](/docs/reference/specification/v3.0.0#referenceObject). For example:
 
 ```yml
-    messages:
-      commentLiked:
-        $ref: '#/components/messages/commentLiked'
+messages:
+  commentLiked:
+    $ref: '#/components/messages/commentLiked'
 ```
 
 Here's the complete AsyncAPI document with channels reusing the same message:
+
 ```yml
 asyncapi: 3.0.0
 info:
@@ -102,15 +103,15 @@ channels:
 components:
   messages:
     commentLikedUnliked:
-        description: Message that is being sent when a comment has been liked or unliked by someone.
-        payload:
-           type: object
-           title: commentInfoPayload
-           additionalProperties: false
-           properties:
-               commentId: 
-                 type: string
-                 description: Id of the comment that was liked or unliked
+      description: Message that is being sent when a comment has been liked or unliked by someone.
+      payload:
+        type: object
+        title: commentInfoPayload
+        additionalProperties: false
+        properties:
+          commentId:
+            type: string
+            description: Id of the comment that was liked or unliked
 ```
 
 ### Identifier of the message
@@ -131,7 +132,7 @@ The above example shows a `commentLiked` message under the `allCommentsLiked` ch
 
 ### Messages under operations
 
-Operations specify which channels they interact with. If a channel has several messages, but your operation only involves one, indicate which specific message the operation uses. 
+Operations specify which channels they interact with. If a channel has several messages, but your operation only involves one, indicate which specific message the operation uses.
 
 ```yaml
 channels:

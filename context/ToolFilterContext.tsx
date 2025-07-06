@@ -14,7 +14,7 @@ export const ToolFilterContext = createContext<ToolFilterContextProps>({
   isAsyncAPIOwner: false,
   languages: [],
   technologies: [],
-  categories: []
+  categories: [],
 });
 
 /**
@@ -33,7 +33,13 @@ function ToolFilter({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (!router || !router.isReady) return;
 
-    const { pricing, owned, langs, techs, categories: Categories } = router.query;
+    const {
+      pricing,
+      owned,
+      langs,
+      techs,
+      categories: Categories,
+    } = router.query;
 
     setIsPaid((pricing as string) || 'all');
     setIsAsyncAPIOwner(owned === 'true');
@@ -43,7 +49,9 @@ function ToolFilter({ children }: { children: React.ReactNode }) {
   }, [router?.query]);
 
   return (
-    <ToolFilterContext.Provider value={{ isPaid, isAsyncAPIOwner, languages, technologies, categories }}>
+    <ToolFilterContext.Provider
+      value={{ isPaid, isAsyncAPIOwner, languages, technologies, categories }}
+    >
       {children}
     </ToolFilterContext.Provider>
   );

@@ -37,142 +37,142 @@ const theme: Theme = {
   hljs: {
     display: 'inline-block',
     background: '#252f3f',
-    color: '#c0e2a3'
+    color: '#c0e2a3',
   },
   'hljs-subst': {
-    color: '#d6deeb'
+    color: '#d6deeb',
   },
   'hljs-selector-tag': {
-    color: '#ff6363'
+    color: '#ff6363',
   },
   'hljs-selector-id': {
     color: '#fad430',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   'hljs-selector-class': {
-    color: '#7edcda'
+    color: '#7edcda',
   },
   'hljs-selector-attr': {
-    color: '#7edcda'
+    color: '#7edcda',
   },
   'hljs-selector-pseudo': {
-    color: '#74e287'
+    color: '#74e287',
   },
   'hljs-addition': {
-    backgroundColor: 'rgba(163, 190, 140, 0.5)'
+    backgroundColor: 'rgba(163, 190, 140, 0.5)',
   },
   'hljs-deletion': {
-    backgroundColor: 'rgba(191, 97, 106, 0.5)'
+    backgroundColor: 'rgba(191, 97, 106, 0.5)',
   },
   'hljs-built_in': {
-    color: '#7edcda'
+    color: '#7edcda',
   },
   'hljs-type': {
-    color: '#7edcda'
+    color: '#7edcda',
   },
   'hljs-class': {
-    color: '#7edcda'
+    color: '#7edcda',
   },
   'hljs-function': {
-    color: '#74e287'
+    color: '#74e287',
   },
   'hljs-function > .hljs-title': {
-    color: '#74e287'
+    color: '#74e287',
   },
   'hljs-keyword': {
-    color: '#64a0dc'
+    color: '#64a0dc',
   },
   'hljs-literal': {
-    color: '#64a0dc'
+    color: '#64a0dc',
   },
   'hljs-symbol': {
-    color: '#64a0dc'
+    color: '#64a0dc',
   },
   'hljs-number': {
-    color: '#d8da68'
+    color: '#d8da68',
   },
   'hljs-regexp': {
-    color: '#EBCB8B'
+    color: '#EBCB8B',
   },
   'hljs-string': {
     color: '#c0e2a3',
-    fontWeight: '500'
+    fontWeight: '500',
   },
   'hljs-title': {
-    color: '#7edcda'
+    color: '#7edcda',
   },
   'hljs-params': {
-    color: '#d6deeb'
+    color: '#d6deeb',
   },
   'hljs-bullet': {
-    color: '#64a0dc'
+    color: '#64a0dc',
   },
   'hljs-code': {
-    color: '#7edcda'
+    color: '#7edcda',
   },
   'hljs-emphasis': {
-    fontStyle: 'italic'
+    fontStyle: 'italic',
   },
   'hljs-formula': {
-    color: '#7edcda'
+    color: '#7edcda',
   },
   'hljs-strong': {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   'hljs-link:hover': {
-    textDecoration: 'underline'
+    textDecoration: 'underline',
   },
   'hljs-quote': {
-    color: '#797f8c'
+    color: '#797f8c',
   },
   'hljs-comment': {
-    color: '#797f8c'
+    color: '#797f8c',
   },
   'hljs-doctag': {
-    color: '#7edcda'
+    color: '#7edcda',
   },
   'hljs-$ref': {
-    color: 'yellow'
+    color: 'yellow',
   },
   'hljs-meta': {
-    color: '#5E81AC'
+    color: '#5E81AC',
   },
   'hljs-meta-keyword': {
-    color: '#5E81AC'
+    color: '#5E81AC',
   },
   'hljs-meta-string': {
-    color: '#c0e2a3'
+    color: '#c0e2a3',
   },
   'hljs-attr': {
-    color: '#7edcda'
+    color: '#7edcda',
   },
   'hljs-attribute': {
-    color: '#d6deeb'
+    color: '#d6deeb',
   },
   'hljs-builtin-name': {
-    color: '#64a0dc'
+    color: '#64a0dc',
   },
   'hljs-name': {
-    color: '#64a0dc'
+    color: '#64a0dc',
   },
   'hljs-section': {
-    color: '#74e287'
+    color: '#74e287',
   },
   'hljs-tag': {
-    color: '#64a0dc'
+    color: '#64a0dc',
   },
   'hljs-variable': {
-    color: '#d6deeb'
+    color: '#d6deeb',
   },
   'hljs-template-variable': {
-    color: '#d6deeb'
+    color: '#d6deeb',
   },
   'hljs-template-tag': {
-    color: '#5E81AC'
+    color: '#5E81AC',
   },
   'yaml .hljs-meta': {
-    color: '#D08770'
-  }
+    color: '#D08770',
+  },
 };
 
 /**
@@ -208,13 +208,16 @@ export default function CodeBlock({
   caption = '',
   showLineNumbers = true,
   startingLineNumber = 1,
-  textSizeClassName = 'text-xs'
+  textSizeClassName = 'text-xs',
 }: CodeBlockProps): React.ReactNode {
   const [activeBlock, setActiveBlock] = useState<number>(0);
   const [showIsCopied, setShowIsCopied] = useState<boolean>(false);
 
   // eslint-disable-next-line no-param-reassign
-  codeBlocks = codeBlocks && codeBlocks.length ? codeBlocks : [{ code: children.replace(/\n$/, '') }];
+  codeBlocks =
+    codeBlocks && codeBlocks.length
+      ? codeBlocks
+      : [{ code: children.replace(/\n$/, '') }];
 
   const tabItemsCommonClassNames =
     'inline-block border-teal-300 py-1 px-2 mx-px cursor-pointer hover:text-teal-300 font-bold';
@@ -226,7 +229,12 @@ export default function CodeBlock({
    */
   function onClickCopy() {
     // check if navigator with clipboard exists (fallback for older browsers)
-    if (navigator && navigator.clipboard && codeBlocks && codeBlocks[activeBlock]) {
+    if (
+      navigator &&
+      navigator.clipboard &&
+      codeBlocks &&
+      codeBlocks[activeBlock]
+    ) {
       navigator.clipboard.writeText(codeBlocks[activeBlock].code).then(() => {
         setShowIsCopied(true);
         setTimeout(() => {
@@ -241,15 +249,19 @@ export default function CodeBlock({
    */
   function renderHighlight() {
     return (
-      <div className='h-full max-h-screen'>
+      <div className="h-full max-h-screen">
         {codeBlocks && codeBlocks.length > 1 && (
-          <div className='pb-3 pl-1 pt-0 text-xs'>
+          <div className="pb-3 pl-1 pt-0 text-xs">
             <nav>
               <ul>
                 {codeBlocks?.map((block, index) => (
                   <li
                     key={index}
-                    className={activeBlock === index ? tabItemsActiveClassNames : tabItemsClassNames}
+                    className={
+                      activeBlock === index
+                        ? tabItemsActiveClassNames
+                        : tabItemsClassNames
+                    }
                     onClick={() => setActiveBlock(index)}
                   >
                     {block.title || block.language}
@@ -264,13 +276,17 @@ export default function CodeBlock({
           <Highlight
             className={`pb-2 pt-px text-sm font-medium font-ligatures-contextual
               ${showLineNumbers ? 'ml-0' : 'ml-3'} ${textSizeClassName}`}
-            language={codeBlocks && codeBlocks[activeBlock].language ? codeBlocks[activeBlock].language : language}
+            language={
+              codeBlocks && codeBlocks[activeBlock].language
+                ? codeBlocks[activeBlock].language
+                : language
+            }
             style={theme}
             showLineNumbers={showLineNumbers}
             startingLineNumber={startingLineNumber}
             lineNumberContainerStyle={{
               paddingLeft: '0.5em',
-              background: '#252f3f'
+              background: '#252f3f',
             }}
             lineNumberStyle={(lineNumber: number) => {
               const isHighlighted = highlightedLines?.includes(lineNumber);
@@ -280,7 +296,7 @@ export default function CodeBlock({
                 marginLeft: '16px',
                 paddingRight: '16px',
                 backgroundColor: isHighlighted ? '#3e4d64' : '#252f3f',
-                color: isHighlighted ? '#A3ACAD' : '#8B9394'
+                color: isHighlighted ? '#A3ACAD' : '#8B9394',
               };
 
               return styles;
@@ -290,7 +306,7 @@ export default function CodeBlock({
               const isHighlighted = highlightedLines?.includes(lineNumber);
 
               const style: React.CSSProperties = {
-                paddingRight: '2rem'
+                paddingRight: '2rem',
               };
 
               if (isHighlighted) {
@@ -300,11 +316,11 @@ export default function CodeBlock({
               }
 
               return {
-                style
+                style,
               };
             }}
             codeTagProps={{
-              className: 'mr-8'
+              className: 'mr-8',
             }}
           >
             {codeBlocks ? [codeBlocks[activeBlock].code] : ''}
@@ -316,30 +332,35 @@ export default function CodeBlock({
 
   return (
     <>
-      <div className={`relative z-10 my-8 max-w-full overflow-auto rounded bg-code-editor-dark pt-2 ${className}`}>
+      <div
+        className={`relative z-10 my-8 max-w-full overflow-auto rounded bg-code-editor-dark pt-2 ${className}`}
+      >
         {hasWindow && (
-          <div className='pb-2 pl-4'>
-            <span className='mr-2 inline-block size-2.5 rounded-full bg-mac-window-close'></span>
-            <span className='mr-2 inline-block size-2.5 rounded-full bg-mac-window-minimize'></span>
-            <span className='mr-2 inline-block size-2.5 rounded-full bg-mac-window-maximize'></span>
+          <div className="pb-2 pl-4">
+            <span className="mr-2 inline-block size-2.5 rounded-full bg-mac-window-close"></span>
+            <span className="mr-2 inline-block size-2.5 rounded-full bg-mac-window-minimize"></span>
+            <span className="mr-2 inline-block size-2.5 rounded-full bg-mac-window-maximize"></span>
           </div>
         )}
         {showCopy && (
-          <div className='z-10'>
+          <div className="z-10">
             <button
               onClick={onClickCopy}
-              className='absolute right-2 top-1 z-50 cursor-pointer bg-code-editor-dark text-xs
-                text-gray-500 hover:text-gray-300 focus:outline-none'
-              title='Copy to clipboard'
-              data-test='copy-button'
+              className="absolute right-2 top-1 z-50 cursor-pointer bg-code-editor-dark text-xs
+                text-gray-500 hover:text-gray-300 focus:outline-none"
+              title="Copy to clipboard"
+              data-test="copy-button"
             >
               {showIsCopied && (
-                <span className='mr-2 inline-block pl-2 pt-1' data-testid='clicked-text'>
+                <span
+                  className="mr-2 inline-block pl-2 pt-1"
+                  data-testid="clicked-text"
+                >
                   Copied!
                 </span>
               )}
-              <span className='inline-block pt-1'>
-                <IconClipboard className='-mt-0.5 inline-block size-4' />
+              <span className="inline-block pt-1">
+                <IconClipboard className="-mt-0.5 inline-block size-4" />
               </span>
             </button>
           </div>

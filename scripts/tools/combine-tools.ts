@@ -8,7 +8,7 @@ import type {
   FinalAsyncAPITool,
   FinalToolsListObject,
   LanguageColorItem,
-  ToolsListObject
+  ToolsListObject,
 } from '@/types/scripts/tools';
 
 import { logger } from '../helpers/logger';
@@ -27,7 +27,7 @@ const finalTools: FinalToolsListObject = {};
 for (const category of categoryList) {
   finalTools[category.name] = {
     description: category.description,
-    toolsList: []
+    toolsList: [],
   };
 }
 
@@ -36,7 +36,7 @@ const options = {
   includeScore: true,
   shouldSort: true,
   threshold: 0.39,
-  keys: ['name', 'color', 'borderColor']
+  keys: ['name', 'color', 'borderColor'],
 };
 
 // Two seperate lists and Fuse objects initialised to search languages and technologies tags
@@ -57,15 +57,17 @@ let technologyFuse = new Fuse(technologyList, options);
  * @param toolObject - The original tool object containing filter tags.
  * @returns A promise that resolves to the updated tool object with enriched language and technology filters.
  */
-export async function getFinalTool(toolObject: AsyncAPITool): Promise<FinalAsyncAPITool> {
+export async function getFinalTool(
+  toolObject: AsyncAPITool,
+): Promise<FinalAsyncAPITool> {
   const finalObject: FinalAsyncAPITool = {
     ...toolObject,
     filters: {
       language: [],
       technology: [],
       categories: toolObject.filters.categories,
-      hasCommercial: toolObject.filters.hasCommercial
-    }
+      hasCommercial: toolObject.filters.hasCommercial,
+    },
   } as FinalAsyncAPITool;
 
   // there might be a tool without language
@@ -73,7 +75,9 @@ export async function getFinalTool(toolObject: AsyncAPITool): Promise<FinalAsync
     const languageArray: LanguageColorItem[] = [];
 
     if (typeof toolObject.filters.language === 'string') {
-      const languageSearch = await languageFuse.search(toolObject.filters.language);
+      const languageSearch = await languageFuse.search(
+        toolObject.filters.language,
+      );
 
       if (languageSearch.length) {
         languageArray.push(languageSearch[0].item);
@@ -83,7 +87,7 @@ export async function getFinalTool(toolObject: AsyncAPITool): Promise<FinalAsync
         const languageObject = {
           name: toolObject.filters.language,
           color: 'bg-[#57f281]',
-          borderColor: 'border-[#37f069]'
+          borderColor: 'border-[#37f069]',
         };
 
         languageList.push(languageObject);
@@ -103,7 +107,7 @@ export async function getFinalTool(toolObject: AsyncAPITool): Promise<FinalAsync
           const languageObject = {
             name: language,
             color: 'bg-[#57f281]',
-            borderColor: 'border-[#37f069]'
+            borderColor: 'border-[#37f069]',
           };
 
           languageList.push(languageObject);
@@ -129,7 +133,7 @@ export async function getFinalTool(toolObject: AsyncAPITool): Promise<FinalAsync
         const technologyObject = {
           name: technology,
           color: 'bg-[#61d0f2]',
-          borderColor: 'border-[#40ccf7]'
+          borderColor: 'border-[#40ccf7]',
         };
 
         technologyList.push(technologyObject);
@@ -153,16 +157,18 @@ const processManualTool = async (tool: AsyncAPITool) => {
         tool: tool.title,
         source: 'manual-tools.json',
         errors: validate.errors,
-        note: 'Script continues execution, error logged for investigation'
+        note: 'Script continues execution, error logged for investigation',
       }),
       null,
-      2
+      2,
     );
 
     return null;
   }
   const isAsyncAPIrepo = tool?.links?.repoUrl
-    ? new URL(tool.links.repoUrl).href.startsWith('https://github.com/asyncapi/')
+    ? new URL(tool.links.repoUrl).href.startsWith(
+        'https://github.com/asyncapi/',
+      )
     : false;
   const toolObject = await createToolObject(tool, '', '', isAsyncAPIrepo);
 
@@ -182,25 +188,34 @@ const combineTools = async (
   automatedTools: ToolsListObject,
   manualTools: ToolsListObject,
   toolsPath: string,
-  tagsPath: string
+  tagsPath: string,
 ): Promise<void> => {
   try {
     // eslint-disable-next-line no-restricted-syntax
     for (const key in automatedTools) {
       if (Object.prototype.hasOwnProperty.call(automatedTools, key)) {
         // eslint-disable-next-line no-await-in-loop
-        const automatedResults = await Promise.all(automatedTools[key].toolsList.map(getFinalTool));
+        const automatedResults = await Promise.all(
+          automatedTools[key].toolsList.map(getFinalTool),
+        );
         const manualResults = manualTools[key]?.toolsList?.length
           ? // eslint-disable-next-line no-await-in-loop
-            (await Promise.all(manualTools[key].toolsList.map(processManualTool))).filter(Boolean)
+            (
+              await Promise.all(
+                manualTools[key].toolsList.map(processManualTool),
+              )
+            ).filter(Boolean)
           : [];
 
-        finalTools[key].toolsList = [...automatedResults, ...manualResults].sort((tool, anotherTool) => {
+        finalTools[key].toolsList = [
+          ...automatedResults,
+          ...manualResults,
+        ].sort((tool, anotherTool) => {
           if (!tool?.title || !anotherTool?.title) {
             logger.error({
               message: 'Tool title is missing during sort',
               detail: { tool, anotherTool },
-              source: 'combine-tools.ts'
+              source: 'combine-tools.ts',
             });
 
             return 0;
@@ -216,11 +231,11 @@ const combineTools = async (
       JSON.stringify(
         {
           languages: languageList,
-          technologies: technologyList
+          technologies: technologyList,
         },
         null,
-        2
-      )
+        2,
+      ),
     );
   } catch (err) {
     throw new Error(`Error combining tools: ${err}`);

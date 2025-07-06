@@ -23,7 +23,7 @@ export const banners = [
     cfaText: 'Get Free Tickets',
     eventName: 'you get a Free Ticket',
     cfpDeadline: '2025-04-13T06:00:00Z',
-    link: 'https://ticket.apidays.global/event/apidays-singapore-2025/4c745e62-0e52-4c4a-9221-29f47bc57128/cart?coupon=ASYNCAPICOMMUNITY'
+    link: 'https://ticket.apidays.global/event/apidays-singapore-2025/4c745e62-0e52-4c4a-9221-29f47bc57128/cart?coupon=ASYNCAPICOMMUNITY',
   },
   {
     title: 'AsyncAPI Conference',
@@ -32,7 +32,7 @@ export const banners = [
     cfaText: 'Apply To Speak',
     eventName: 'the end of Call for Speakers',
     cfpDeadline: '2025-05-11T06:00:00Z',
-    link: 'https://apidays.typeform.com/apidayscfp?typeform-source=www.apidays.global'
+    link: 'https://apidays.typeform.com/apidayscfp?typeform-source=www.apidays.global',
   },
   {
     title: 'AsyncAPI Conference',
@@ -41,7 +41,7 @@ export const banners = [
     cfaText: 'Apply To Speak',
     eventName: 'the end of Call for Speakers',
     cfpDeadline: '2025-05-17T06:00:00Z',
-    link: 'https://conference.asyncapi.com/venue/Lagos'
+    link: 'https://conference.asyncapi.com/venue/Lagos',
   },
   {
     title: 'AsyncAPI Conference',
@@ -50,7 +50,7 @@ export const banners = [
     cfaText: 'Apply To Speak',
     eventName: 'the end of Call for Speakers',
     cfpDeadline: '2025-07-13T06:00:00Z',
-    link: 'https://conference.asyncapi.com/venue/London'
+    link: 'https://conference.asyncapi.com/venue/London',
   },
   {
     title: 'AsyncAPI Conference',
@@ -59,7 +59,7 @@ export const banners = [
     cfaText: 'Apply To Speak',
     eventName: 'the end of Call for Speakers',
     cfpDeadline: '2025-06-29T06:00:00Z',
-    link: 'https://conference.asyncapi.com/venue/Bangalore'
+    link: 'https://conference.asyncapi.com/venue/Bangalore',
   },
   {
     title: 'AsyncAPI Conference',
@@ -68,7 +68,7 @@ export const banners = [
     cfaText: 'Apply To Speak',
     eventName: 'the end of Call for Speakers',
     cfpDeadline: '2025-09-07T06:00:00Z',
-    link: 'https://conference.asyncapi.com/venue/Online'
+    link: 'https://conference.asyncapi.com/venue/Online',
   },
   {
     title: 'AsyncAPI Conference',
@@ -77,6 +77,6 @@ export const banners = [
     cfaText: 'Apply To Speak',
     eventName: 'the end of Call for Speakers',
     cfpDeadline: '2025-08-05T06:00:00Z',
-    link: 'https://conference.asyncapi.com/venue/Paris'
-  }
+    link: 'https://conference.asyncapi.com/venue/Paris',
+  },
 ];

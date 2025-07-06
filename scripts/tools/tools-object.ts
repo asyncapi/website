@@ -3,7 +3,11 @@ import addFormats from 'ajv-formats';
 import axios from 'axios';
 import Fuse from 'fuse.js';
 
-import type { AsyncAPITool, ToolsData, ToolsListObject } from '@/types/scripts/tools';
+import type {
+  AsyncAPITool,
+  ToolsData,
+  ToolsListObject,
+} from '@/types/scripts/tools';
 
 import { logger } from '../helpers/logger';
 import { convertToJson } from '../helpers/utils';
@@ -20,7 +24,7 @@ const options = {
   includeScore: true,
   shouldSort: true,
   threshold: 0.4,
-  keys: ['tag']
+  keys: ['tag'],
 };
 
 const fuse = new Fuse(categoryList, options);
@@ -43,20 +47,24 @@ async function createToolObject(
   toolFile: AsyncAPITool,
   repositoryUrl = '',
   repoDescription = '',
-  isAsyncAPIrepo: boolean = false
+  isAsyncAPIrepo: boolean = false,
 ) {
   const resultantObject = {
     title: toolFile.title,
     description: toolFile?.description ? toolFile.description : repoDescription,
     links: {
       ...toolFile.links,
-      repoUrl: toolFile?.links?.repoUrl ? toolFile.links.repoUrl : repositoryUrl
+      repoUrl: toolFile?.links?.repoUrl
+        ? toolFile.links.repoUrl
+        : repositoryUrl,
     },
     filters: {
       ...toolFile.filters,
-      hasCommercial: toolFile?.filters?.hasCommercial ? toolFile.filters.hasCommercial : false,
-      isAsyncAPIOwner: isAsyncAPIrepo
-    }
+      hasCommercial: toolFile?.filters?.hasCommercial
+        ? toolFile.filters.hasCommercial
+        : false,
+      isAsyncAPIOwner: isAsyncAPIrepo,
+    },
   };
 
   return resultantObject;
@@ -89,9 +97,9 @@ async function convertTools(data: ToolsData) {
         category.name,
         {
           description: category.description,
-          toolsList: []
-        }
-      ])
+          toolsList: [],
+        },
+      ]),
     );
 
     await Promise.all(
@@ -117,24 +125,28 @@ async function convertTools(data: ToolsData) {
                 jsonToolFileContent,
                 repositoryUrl,
                 repoDescription,
-                isAsyncAPIrepo
+                isAsyncAPIrepo,
               );
 
               // Tool Object is appended to each category array according to Fuse search for categories inside Tool Object
               await Promise.all(
-                jsonToolFileContent.filters.categories.map(async (category: string) => {
-                  const categorySearch = await fuse.search(category);
-                  const targetCategory = categorySearch.length ? categorySearch[0].item.name : 'Others';
-                  const { toolsList } = finalToolsObject[targetCategory];
+                jsonToolFileContent.filters.categories.map(
+                  async (category: string) => {
+                    const categorySearch = await fuse.search(category);
+                    const targetCategory = categorySearch.length
+                      ? categorySearch[0].item.name
+                      : 'Others';
+                    const { toolsList } = finalToolsObject[targetCategory];
 
-                  if (!toolsList.includes(toolObject)) {
-                    toolsList.push(toolObject);
-                  }
-                })
+                    if (!toolsList.includes(toolObject)) {
+                      toolsList.push(toolObject);
+                    }
+                  },
+                ),
               );
             } else {
               logger.warn(
-                `Script is not failing, it is just dropping errors for further investigation.\nInvalid .asyncapi-tool file. \nLocated in: ${tool.html_url}. \nValidation errors: ${JSON.stringify(validate.errors, null, 2)}`
+                `Script is not failing, it is just dropping errors for further investigation.\nInvalid .asyncapi-tool file. \nLocated in: ${tool.html_url}. \nValidation errors: ${JSON.stringify(validate.errors, null, 2)}`,
               );
             }
           }
@@ -142,7 +154,7 @@ async function convertTools(data: ToolsData) {
           logger.error(err);
           throw err;
         }
-      })
+      }),
     );
 
     return finalToolsObject;

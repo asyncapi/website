@@ -24,7 +24,12 @@ interface FilterProps {
  * @param {Object[]} props.checks - The list of filter options.
  * @param {string} [props.className] - Additional CSS classes for styling.
  */
-export default function Filter({ data, onFilter, checks, className }: FilterProps) {
+export default function Filter({
+  data,
+  onFilter,
+  checks,
+  className,
+}: FilterProps) {
   const route = useRouter();
   const [filters, setFilters] = useState<Record<string, any>>({});
   const [routeQuery, setQuery] = useState<Record<string, any>>({});
@@ -49,9 +54,9 @@ export default function Filter({ data, onFilter, checks, className }: FilterProp
     const selectOptions = [
       {
         value: '',
-        text: `Filter by ${check.name}...`
+        text: `Filter by ${check.name}...`,
       },
-      ...(filters[check.name] || [])
+      ...(filters[check.name] || []),
     ];
 
     return (
@@ -61,7 +66,7 @@ export default function Filter({ data, onFilter, checks, className }: FilterProp
         onChange={(e) => {
           const { query } = route;
           const newQuery = {
-            ...query
+            ...query,
           };
 
           if (e) {
@@ -71,10 +76,12 @@ export default function Filter({ data, onFilter, checks, className }: FilterProp
             delete newQuery[check.name];
           }
           if (newQuery) {
-            const queryParams = new URLSearchParams(newQuery as { [key: string]: string }).toString();
+            const queryParams = new URLSearchParams(
+              newQuery as { [key: string]: string },
+            ).toString();
 
             route.push(`${route.pathname}?${queryParams}`, undefined, {
-              shallow: true
+              shallow: true,
             });
           }
         }}

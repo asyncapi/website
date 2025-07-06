@@ -9,7 +9,7 @@ The script is designed to be run as a cron job, fetching events within a specifi
 
 - **Purpose**: Fetch upcoming meetings from Google Calendar and save them to a JSON file.
 - **Language**: TypeScript
-- **Dependencies**: 
+- **Dependencies**:
   - `fs` for file operations
   - `googleapis` for interacting with Google Calendar
   - `path` and `url` for file path manipulations
@@ -18,18 +18,22 @@ The script is designed to be run as a cron job, fetching events within a specifi
 ### Key Components
 
 1. **Authentication**:
+
    - Uses `google.auth.GoogleAuth` for OAuth2 authentication.
    - Requires `CALENDAR_SERVICE_ACCOUNT` environment variable for credentials.
 
 2. **Fetching Events**:
+
    - Fetches events from the Google Calendar API using `calendar.events.list`.
    - Time range is set from 100 days before to 30 days after the current date.
 
 3. **Data Processing**:
+
    - Validates the structure of the API response.
    - Extracts relevant event details such as title, calendar link, GitHub issue URL, banner, and date.
 
 4. **Error Handling**:
+
    - Throws errors for authentication failures, invalid data structures, and missing event details.
 
 5. **Output**:
@@ -39,15 +43,18 @@ The script is designed to be run as a cron job, fetching events within a specifi
 ### Development Setup
 
 1. **Prerequisites**:
+
    - Node.js and npm installed
    - TypeScript installed globally or as a dev dependency
    - Access to a Google Calendar API project
 
 2. **Create Credentials**:
+
    - Create a service account in the Google Cloud Console.
    - You can use this blog post for reference: [Integration with Google Calendar API using Service Account](https://medium.com/iceapple-tech-talks/integration-with-google-calendar-api-using-service-account-1471e6e102c8).
 
 3. **Environment Configuration**:
+
    - Create a `.env` file in the project root with the following variables:
      ```
      CALENDAR_SERVICE_ACCOUNT='{your-service-account-key}'
@@ -56,9 +63,10 @@ The script is designed to be run as a cron job, fetching events within a specifi
    - Alternatively, set these variables in your shell environment.
 
 4. **Installing Dependencies**:
-  ```bash
-  npm install
-  ```
+
+```bash
+npm install
+```
 
 5. **Running the Script**:
    - Ensure the environment variables are set.
@@ -70,6 +78,7 @@ The script is designed to be run as a cron job, fetching events within a specifi
 ### Usage
 
 - **Environment Variables**:
+
   - `CALENDAR_SERVICE_ACCOUNT`: JSON string of service account credentials.
   - `CALENDAR_ID`: ID of the Google Calendar to fetch events from.
 
@@ -86,8 +95,10 @@ tsx scripts/build-meetings.ts
 ```
 
 ### Output
+
 The output will be a JSON file containing an array of upcoming meetings with details such as title, calendar link, GitHub issue URL, banner, and date. The file will be saved in the specified path (e.g., `../config/meetings.json`).
 
 ### Notes
+
 - Ensure that the Google Calendar API is enabled for the project associated with the service account.
 - The script is designed to be run in a Node.js environment with TypeScript support.

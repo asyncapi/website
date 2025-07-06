@@ -1,5 +1,5 @@
 ---
-title: "Avro Schema Parser and others in AsyncAPI Initiative Status Update (week 31, 2020)"
+title: 'Avro Schema Parser and others in AsyncAPI Initiative Status Update (week 31, 2020)'
 date: 2020-07-30T06:00:00+01:00
 type: Communication
 tags:
@@ -17,7 +17,7 @@ authors:
 
 ### Short Intro to Schema Types in AsyncAPI
 
-There are many different schema formats that one might use to describe the message payload. Not everyone uses JSON Schema. There are multiple formats out there, like RAML 1.0 Data Types, Avro, or even OpenAPI 3.0. When you write your AsyncAPI file, you should not manually convert schemas that you already store somewhere in a format different from AsyncAPI Schema. The best practice is to reuse existing schemas by referring to them in your AsyncAPI file and making sure that the Message object has information about the schema format within the schemaFormat parameter. 
+There are many different schema formats that one might use to describe the message payload. Not everyone uses JSON Schema. There are multiple formats out there, like RAML 1.0 Data Types, Avro, or even OpenAPI 3.0. When you write your AsyncAPI file, you should not manually convert schemas that you already store somewhere in a format different from AsyncAPI Schema. The best practice is to reuse existing schemas by referring to them in your AsyncAPI file and making sure that the Message object has information about the schema format within the schemaFormat parameter.
 
 AsyncAPI [lists schema types](https://www.asyncapi.com/docs/specifications/2.0.0/#messageObjectSchemaFormatTable) that are a MUST but is not limited to this list only. RAML Data Types is not a MUST HAVE, yet we already have a custom parser for it.
 
@@ -48,7 +48,7 @@ We just released another release candidate that contains a lot of improvements t
 
 ### Publish vs Subscribe Discussion Continues
 
-We noticed that people that interact with AsyncAPI for the first time are confused about the meaning of those two words, publish and subscribe. Without going much into detail and oversimplifying things, we can say that this is the part of the community that considers using AsyncAPI to describe their internal broker-centric architecture. In such cases, you want to describe the application's behavior and not what others can do with it. You want to use the Publish verb to specify that your application publishes to a given channel. What if your application is exposed to the outside world where others can interact with it? You want Publish to mean something different, like it is now, that it means your application is subscribed to a given channel, so that you can publish to it, and the application will receive a message. 
+We noticed that people that interact with AsyncAPI for the first time are confused about the meaning of those two words, publish and subscribe. Without going much into detail and oversimplifying things, we can say that this is the part of the community that considers using AsyncAPI to describe their internal broker-centric architecture. In such cases, you want to describe the application's behavior and not what others can do with it. You want to use the Publish verb to specify that your application publishes to a given channel. What if your application is exposed to the outside world where others can interact with it? You want Publish to mean something different, like it is now, that it means your application is subscribed to a given channel, so that you can publish to it, and the application will receive a message.
 
 Event-driven architectures are complex beasts with many patterns, and we should try to make AsyncAPI a single home for all of them. Please engage in this discussion, share your thoughts, and help us out to find the best solution:
 
@@ -57,11 +57,11 @@ Event-driven architectures are complex beasts with many patterns, and we should 
 
 ## AsyncAPI Special Interest Group (SIG) open meeting
 
-The last meeting took place on Tuesday, 21st of July, 4PM UTC. Meeting notes and recording are available [here](https://github.com/asyncapi/asyncapi/issues/404). 
+The last meeting took place on Tuesday, 21st of July, 4PM UTC. Meeting notes and recording are available [here](https://github.com/asyncapi/asyncapi/issues/404).
 
-The next meeting is scheduled for next [Tuesday, 4th of August, 8AM UTC](https://everytimezone.com/s/6df9fcca). 
+The next meeting is scheduled for next [Tuesday, 4th of August, 8AM UTC](https://everytimezone.com/s/6df9fcca).
 
-We work on the agenda for the next meeting [here](https://github.com/asyncapi/asyncapi/issues/417). At the moment, there is nothing in the agenda so you can sneak in your topic easily. 
+We work on the agenda for the next meeting [here](https://github.com/asyncapi/asyncapi/issues/417). At the moment, there is nothing in the agenda so you can sneak in your topic easily.
 
 We host the meeting on [Zoom](https://zoom.us/j/83140549308). Do not forget about future meetings and always have up to date invitations in your calendar by adding your email to [this](https://groups.google.com/forum/#!forum/asyncapi-users) mailing list.
 

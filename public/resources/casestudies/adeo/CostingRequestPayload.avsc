@@ -109,12 +109,7 @@
                   "namespace": "com.adeo.casestudy.model",
                   "name": "ContainerTypeItems",
                   "doc": "Container selected for transportation. Required to determinate parameter values that rely on transportation. **Will be deleted (because deduced) in future versions**",
-                  "symbols": [
-                    "FT20",
-                    "FT40",
-                    "FT40HC",
-                    "TRUCK"
-                  ]
+                  "symbols": ["FT20", "FT40", "FT40HC", "TRUCK"]
                 }
               ]
             }

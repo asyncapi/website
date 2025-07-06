@@ -1,5 +1,5 @@
 ---
-title: "2024 Google Summer Of Code Wrap Up"
+title: '2024 Google Summer Of Code Wrap Up'
 date: 2024-12-18T06:00:00+01:00
 type: Community
 tags:
@@ -12,10 +12,10 @@ authors:
   - name: Azeez Elegbede
     photo: /img/avatars/ace.webp
     link: https://twitter.com/_acebuild
-    byline: AsyncAPI Preacher 
+    byline: AsyncAPI Preacher
 ---
 
-For the first time in our history with Google Summer of Code (GSoC), AsyncAPI proudly participated as an independent organization. In previous years, we had joined the program under Postman’s umbrella due to the challenges of being selected as a participating organization. With Postman’s higher chances of acceptance, they graciously allowed us to include some of our projects under their organization. This year, however, marked a significant milestone as AsyncAPI stepped into the spotlight on its own. 
+For the first time in our history with Google Summer of Code (GSoC), AsyncAPI proudly participated as an independent organization. In previous years, we had joined the program under Postman’s umbrella due to the challenges of being selected as a participating organization. With Postman’s higher chances of acceptance, they graciously allowed us to include some of our projects under their organization. This year, however, marked a significant milestone as AsyncAPI stepped into the spotlight on its own.
 
 The goal of this post is to share our GSoC journey and offer valuable insights for future organizations and contributors. By reflecting on what went well, the challenges we encountered, and the lessons learned, we hope to help others make the most of this incredible program.
 
@@ -42,10 +42,10 @@ We had a range of successful contributions that significantly advanced AsyncAPI 
 - **[Vishvamsinh Vaghela](https://github.com/vishvamsinh28)** enhanced the stability of scripts on the AsyncAPI website by ensuring all scripts functioned as expected and writing comprehensive unit tests to ensure smooth operations on the website, particularly as the number of contributors grew and more people worked on critical parts of the website.
 
 - **[Ankit Dash](https://github.com/helios2003)** added dynamic preview image generation for AsyncAPI documents shared via the AsyncAPI Studio website. Ankit also shared his GSoC journey and contributions during the online edition of the [AsyncAPI Conference](https://conference.asyncapi.com/venue/Online).
-<YouTube id="B9xI8BziM94" />
+  <YouTube id="B9xI8BziM94" />
 
 - **[Mintu Gogoi](https://github.com/Gmin2)** and **[Yuan Yuan](https://github.com/lmgyuan)** focused on the AsyncAPI Generator project, resolving existing issues and bugs, triaging new ones, improving code through refactoring, and writing tests. Yuan shared their GSoC experience during the online edition of the [AsyncAPI Conference](https://conference.asyncapi.com/).
-<YouTube id="ap2ZiRN8MDs" />
+  <YouTube id="ap2ZiRN8MDs" />
 
 - **[Ashmit JaiSarita Gupta](https://github.com/devilkiller-ag)** developed a UI kit for the AsyncAPI website, based on the stunning designs by **[Aishat Muibudeen](https://github.com/mayaleeeee)**. By using Storybook, Ashmit ensured brand visual consistency and created a modular, easy-to-maintain design system that streamlined further development.
 
@@ -79,7 +79,7 @@ This turn of events means that moving forward, our participation in GSoC rests e
 
 This sudden change has made us face unexpected challenges as individuals, but we’re stronger, more determined, and deeply committed to our mission of fostering growth in the AsyncAPI community.
 
-## Tips for further participants 
+## Tips for further participants
 
 While I believe that reaching for the stars is just the beginning for us as an open-source community, and with even more exciting project ideas lined up for future GSoC programs at AsyncAPI, here are some valuable tips for contributors aspiring to participate in GSoC with us:
 
@@ -102,68 +102,67 @@ By following these tips, you’ll not only increase your chances of being select
 ## Special Shoutouts
 
 <Profiles profiles={[
-  {
-    name: 'Pavel Bodiachevskii',
-    avatar: 'https://avatars.githubusercontent.com/Pakisan',
-    link: 'https://github.com/Pakisan'
-  },
-  {
-    name: 'Sambhav Gupta',
-    avatar: 'https://avatars.githubusercontent.com/sambhavgupta0705',
-    link: 'https://github.com/sambhavgupta0705'
-  },
-  {
-    name: 'Ansh Goyal',
-    avatar: 'https://avatars.githubusercontent.com/anshgoyalevil',
-    link: 'https://github.com/anshgoyalevil'
-  },
-  {
-    name: 'Lukasz Gornicki',
-    avatar: 'https://avatars.githubusercontent.com/derberg',
-    link: 'https://github.com/derberg'
-  },
-  {
-    name: 'Iván García Sainz-Aja',
-    avatar: 'https://avatars.githubusercontent.com/ivangsa',
-    link: 'https://github.com/ivangsa'
-  },
-  {
-    name: 'Aishat Muibudeen',
-    avatar: 'https://avatars.githubusercontent.com/Mayaleeeee',
-    link: 'https://github.com/Mayaleeeee'
-  },
-  {
-    name: 'Akshat Nema',
-    avatar: 'https://avatars.githubusercontent.com/akshatnema',
-    link: 'https://github.com/akshatnema'
-  },
-  {
-    name: 'Thulisile Sibanda',
-    avatar: 'https://avatars.githubusercontent.com/thulieblack',
-    link: 'https://github.com/thulieblack'
-  }, 
-  {
-    name: 'Sergio Moya',
-    avatar: 'https://avatars.githubusercontent.com/smoya',
-    link: 'https://github.com/smoya'
-  }, 
-  {
-    name: 'Azeez Elegbede',
-    avatar: 'https://avatars.githubusercontent.com/AceTheCreator',
-    link: 'https://github.com/AceTheCreator'
-  },
+{
+name: 'Pavel Bodiachevskii',
+avatar: 'https://avatars.githubusercontent.com/Pakisan',
+link: 'https://github.com/Pakisan'
+},
+{
+name: 'Sambhav Gupta',
+avatar: 'https://avatars.githubusercontent.com/sambhavgupta0705',
+link: 'https://github.com/sambhavgupta0705'
+},
+{
+name: 'Ansh Goyal',
+avatar: 'https://avatars.githubusercontent.com/anshgoyalevil',
+link: 'https://github.com/anshgoyalevil'
+},
+{
+name: 'Lukasz Gornicki',
+avatar: 'https://avatars.githubusercontent.com/derberg',
+link: 'https://github.com/derberg'
+},
+{
+name: 'Iván García Sainz-Aja',
+avatar: 'https://avatars.githubusercontent.com/ivangsa',
+link: 'https://github.com/ivangsa'
+},
+{
+name: 'Aishat Muibudeen',
+avatar: 'https://avatars.githubusercontent.com/Mayaleeeee',
+link: 'https://github.com/Mayaleeeee'
+},
+{
+name: 'Akshat Nema',
+avatar: 'https://avatars.githubusercontent.com/akshatnema',
+link: 'https://github.com/akshatnema'
+},
+{
+name: 'Thulisile Sibanda',
+avatar: 'https://avatars.githubusercontent.com/thulieblack',
+link: 'https://github.com/thulieblack'
+},
+{
+name: 'Sergio Moya',
+avatar: 'https://avatars.githubusercontent.com/smoya',
+link: 'https://github.com/smoya'
+},
+{
+name: 'Azeez Elegbede',
+avatar: 'https://avatars.githubusercontent.com/AceTheCreator',
+link: 'https://github.com/AceTheCreator'
+},
 ]} />
 
-We want to take a moment to extend our gratitude to the mentors above, whose dedication to the program made them go above and beyond to support and pass on their knowledge and forge meaningful relationships with our mentees. This program would not be possible without their unwavering support. 
+We want to take a moment to extend our gratitude to the mentors above, whose dedication to the program made them go above and beyond to support and pass on their knowledge and forge meaningful relationships with our mentees. This program would not be possible without their unwavering support.
 
-A special shoutout goes to Postman, who has always allowed us to push some of our project ideas under their umbrella over the last few years, while it's sad to see this come to an end, we love and appreciate the opportunities, and the community as a whole will never take it for granted. 
+A special shoutout goes to Postman, who has always allowed us to push some of our project ideas under their umbrella over the last few years, while it's sad to see this come to an end, we love and appreciate the opportunities, and the community as a whole will never take it for granted.
 
 A special thanks to Google for their belief in Free and Open Source Software (FOSS), for making this program possible every year as a show of their support to the open source ecosystem, and for allowing organizations like ours to bring passionate contributors and mentors to collaborate on a project all for the love of opensource.
 
 Finally, a wonderful shout to [Stephanie Taylor](https://www.linkedin.com/in/stephaniertaylor/), the incredible program manager of Google Summer of Code, for her unwavering support during the transition of our projects after Postman’s departure. Her assistance with transferring mentor stipends to our preferred account was phenomena, and we truly appreciate her dedication and guidance!
 
-
-## Closing Remark 
+## Closing Remark
 
 If you’re considering joining GSoC with AsyncAPI next year, we encourage you to hop into our [Slack community](https://asyncapi.com/slack-invite) and say hello in the **#mentorship** channel. We’re always excited to welcome new contributors and mentors into our growing family.
 

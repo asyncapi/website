@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI and CloudEvents"
+title: 'AsyncAPI and CloudEvents'
 date: 2019-05-11T16:56:52+01:00
 type: Engineering
 tags:
@@ -33,17 +33,17 @@ If you are doing serverless or FaaS (Function as a Service), then CloudEvents is
 
 ```json
 {
-    "specversion" : "0.2",
-    "type" : "com.github.pull.create",
-    "source" : "https://github.com/cloudevents/spec/pull/123",
-    "id" : "A234-1234-1234",
-    "time" : "2018-04-05T17:31:00Z",
-    "comexampleextension1" : "value",
-    "comexampleextension2" : {
-        "othervalue": 5
-    },
-    "contenttype" : "text/xml",
-    "data" : "<much wow=\"xml\"/>"
+  "specversion": "0.2",
+  "type": "com.github.pull.create",
+  "source": "https://github.com/cloudevents/spec/pull/123",
+  "id": "A234-1234-1234",
+  "time": "2018-04-05T17:31:00Z",
+  "comexampleextension1": "value",
+  "comexampleextension2": {
+    "othervalue": 5
+  },
+  "contenttype": "text/xml",
+  "data": "<much wow=\"xml\"/>"
 }
 ```
 

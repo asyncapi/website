@@ -4,9 +4,11 @@ weight: 4
 ---
 
 ## What is a consumer?
+
 A _consumer_ is an application that subscribes to a specific event from a broker and responds accordingly.
 
 ## Why do we need consumers?
+
 Unlike traditional REST APIs, in Event-Driven Architecture (EDA), event consumers are asynchronous, which means they are not required to respond immediately on the same connection. In this architecture, consumers are unaware of the producers or other consumers. All they know is that when a broker sends them an event, it is because they have subscribed to it.
 
 When you want your application to process events asynchronously, the consumer plays a crucial role in completing the event data flow through the event channel.

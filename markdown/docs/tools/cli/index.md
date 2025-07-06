@@ -3,27 +3,25 @@ title: 'Introduction'
 weight: 20
 ---
 
-
 The AsyncAPI CLI is a command-line tool that provides a set of commands for working with AsyncAPI documents. AsyncAPI is a specification for describing asynchronous APIs, which allows developers to define the structure of messages exchanged between different parts of their applications. The AsyncAPI CLI simplifies creating, validating, bundling, and manipulating AsyncAPI documents, making it easier to work with asynchronous APIs.
 
 ## Features
 
 The AsyncAPI CLI offers the following key features:
 
-* Creation: New AsyncAPI documents can be created from scratch using the CLI, which is useful when starting a new project or creating a new version of an existing API.
+- Creation: New AsyncAPI documents can be created from scratch using the CLI, which is useful when starting a new project or creating a new version of an existing API.
 
-* Validation: AsyncAPI documents can be quickly and easily validated using the [AsyncAPI Parser](https://github.com/asyncapi/parser-js), which ensures that the documents conform to the AsyncAPI specification and catches errors early in the development process.
+- Validation: AsyncAPI documents can be quickly and easily validated using the [AsyncAPI Parser](https://github.com/asyncapi/parser-js), which ensures that the documents conform to the AsyncAPI specification and catches errors early in the development process.
 
-* Conversion: The AsyncAPI CLI can convert AsyncAPI documents from one version to another, which is helpful for migrating APIs to a newer version of the AsyncAPI specification.
+- Conversion: The AsyncAPI CLI can convert AsyncAPI documents from one version to another, which is helpful for migrating APIs to a newer version of the AsyncAPI specification.
 
-* Difference: The AsyncAPI CLI can be used to find the differences between two AsyncAPI documents, which helps compare different versions of an API or identify changes made to an API.
-  
-* Generation: The AsyncAPI CLI leverages AsyncAPI libraries like [Generator](https://github.com/asyncapi/generator) and [Modelina](https://github.com/asyncapi/modelina), which allow you to generate various types of documentation, applications, and models in different programming languages. This feature can save significant time and effort when creating new APIs.
+- Difference: The AsyncAPI CLI can be used to find the differences between two AsyncAPI documents, which helps compare different versions of an API or identify changes made to an API.
+- Generation: The AsyncAPI CLI leverages AsyncAPI libraries like [Generator](https://github.com/asyncapi/generator) and [Modelina](https://github.com/asyncapi/modelina), which allow you to generate various types of documentation, applications, and models in different programming languages. This feature can save significant time and effort when creating new APIs.
 
-* Optimize: Using [Optimizer](https://github.com/asyncapi/optimizer/), the AsyncAPI CLI can be used to optimize an AsyncAPI specification file which can optimize the structure of the AsyncAPI document to make it smaller and without repetition.
+- Optimize: Using [Optimizer](https://github.com/asyncapi/optimizer/), the AsyncAPI CLI can be used to optimize an AsyncAPI specification file which can optimize the structure of the AsyncAPI document to make it smaller and without repetition.
 
-* Start: The AsyncAPI CLI can be used to start [AsyncAPI Studio](https://studio.asyncapi.com/) locally, which the user can use to view, edit, and test AsyncAPI documents.
-  
+- Start: The AsyncAPI CLI can be used to start [AsyncAPI Studio](https://studio.asyncapi.com/) locally, which the user can use to view, edit, and test AsyncAPI documents.
+
 To summarize, the AsyncAPI CLI offers the following features and process flow, as shown in the diagram below:
 
 ```mermaid

@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI 2.0.0 important dates"
+title: 'AsyncAPI 2.0.0 important dates'
 date: 2019-06-12T10:56:52+01:00
 type: Communication
 tags:

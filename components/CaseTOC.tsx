@@ -32,7 +32,11 @@ interface CaseTOCProps {
  * @returns {boolean} - True if the item is active, otherwise false.
  */
 const checkIfActive = (item: TocItem, currSelected: string): boolean => {
-  return item.slug === currSelected || item.children?.some((child) => checkIfActive(child, currSelected)) || false;
+  return (
+    item.slug === currSelected ||
+    item.children?.some((child) => checkIfActive(child, currSelected)) ||
+    false
+  );
 };
 
 /**
@@ -42,7 +46,10 @@ const checkIfActive = (item: TocItem, currSelected: string): boolean => {
  * @param {number} level - The level of the TOC item.
  * @returns {TocItem[]} - The array of TOC items.
  */
-const convertContentToTocItems = (content: any[], level: number = 1): TocItem[] => {
+const convertContentToTocItems = (
+  content: any[],
+  level: number = 1,
+): TocItem[] => {
   const tocItems = [];
 
   for (const section of content) {
@@ -52,7 +59,7 @@ const convertContentToTocItems = (content: any[], level: number = 1): TocItem[] 
       slug: section.title
         .replace(/<|>|"|\\|\/|=/gi, '')
         .replace(/\s/gi, '-')
-        .toLowerCase()
+        .toLowerCase(),
     };
 
     if (section.children && section.children.length > 0) {
@@ -78,7 +85,10 @@ const convertContentToTocItems = (content: any[], level: number = 1): TocItem[] 
  */
 function TOCItem({ item, index, currSelected, closeMenu }: TOCItemProps) {
   const [open, setOpen] = useState(false);
-  const active = useMemo(() => checkIfActive(item, currSelected), [item, currSelected]);
+  const active = useMemo(
+    () => checkIfActive(item, currSelected),
+    [item, currSelected],
+  );
 
   const handleClick = () => {
     closeMenu();
@@ -87,11 +97,11 @@ function TOCItem({ item, index, currSelected, closeMenu }: TOCItemProps) {
 
   return (
     <>
-      <nav className='relative block max-w-max'>
+      <nav className="relative block max-w-max">
         <a
           className={twMerge(
             'font-normal mb-1 flex items-center font-sans text-sm text-gray-900 antialiased transition duration-100 ease-in-out hover:underline',
-            active && 'font-bold text-primary-500'
+            active && 'font-bold text-primary-500',
           )}
           href={`#${item.slug}`}
           key={index}
@@ -101,7 +111,10 @@ function TOCItem({ item, index, currSelected, closeMenu }: TOCItemProps) {
           {item.content}
         </a>
         {item.children && item.children.length > 0 && (
-          <span onClick={() => setOpen(!open)} className='absolute -right-6 top-0 cursor-pointer '>
+          <span
+            onClick={() => setOpen(!open)}
+            className="absolute -right-6 top-0 cursor-pointer "
+          >
             <ArrowRight
               className={`${open ? 'rotate-90' : '0'} h-5 text-gray-500 transition duration-200 ease-in-out`}
             />
@@ -137,7 +150,11 @@ function TOCItem({ item, index, currSelected, closeMenu }: TOCItemProps) {
  * @param {("xl"|"lg")} [props.cssBreakingPoint="xl"] - The CSS breaking point for responsiveness.
  * @param {any[]} props.toc - The table of contents data.
  */
-export default function CaseTOC({ className, cssBreakingPoint = 'xl', toc }: CaseTOCProps) {
+export default function CaseTOC({
+  className,
+  cssBreakingPoint = 'xl',
+  toc,
+}: CaseTOCProps) {
   const { currActive: selected } = useHeadingsObserver();
   const [open, setOpen] = useState(false);
   const tocItems = useMemo(() => convertContentToTocItems(toc), [toc]);
@@ -149,7 +166,7 @@ export default function CaseTOC({ className, cssBreakingPoint = 'xl', toc }: Cas
       className={twMerge(
         `${className} ${tocItems.length ? '' : 'hidden'} ${
           cssBreakingPoint === 'xl' ? 'xl:block' : 'lg:block'
-        } md:top-24 md:max-h-(screen-14) z-20`
+        } md:top-24 md:max-h-(screen-14) z-20`,
       )}
     >
       <div
@@ -165,7 +182,7 @@ export default function CaseTOC({ className, cssBreakingPoint = 'xl', toc }: Cas
               cssBreakingPoint === 'xl'
                 ? 'xl:mb-4 xl:text-xs xl:text-gray-900 xl:font-bold'
                 : 'lg:mb-4 lg:text-xs lg:text-gray-900 lg:font-bold'
-            }`
+            }`,
           )}
         >
           On this page
@@ -181,8 +198,10 @@ export default function CaseTOC({ className, cssBreakingPoint = 'xl', toc }: Cas
           />
         </div>
       </div>
-      <div className={`${!open && 'hidden'} ${cssBreakingPoint === 'xl' ? 'xl:block' : 'lg:block'}`}>
-        <ul className='mt-2'>
+      <div
+        className={`${!open && 'hidden'} ${cssBreakingPoint === 'xl' ? 'xl:block' : 'lg:block'}`}
+      >
+        <ul className="mt-2">
           {tocItems.map((item, index) => (
             <TOCItem
               item={item}

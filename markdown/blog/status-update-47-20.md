@@ -1,5 +1,5 @@
 ---
-title: "Happy Birthday AsyncAPI (week 47, 2020)"
+title: 'Happy Birthday AsyncAPI (week 47, 2020)'
 date: 2020-11-18T06:00:00+01:00
 type: Communication
 tags:
@@ -30,7 +30,7 @@ Join us during these strange pandemic times in asynchronous remote celebration, 
 
 ## Generator 1.0 And Other Goodies
 
-Following the recent [1.0 release of the AsyncAPI Parser](https://www.asyncapi.com/blog/status-update-43-20) we came to the point we could release the first major release of [the AsyncAPI Generator](https://github.com/asyncapi/generator/) too. 
+Following the recent [1.0 release of the AsyncAPI Parser](https://www.asyncapi.com/blog/status-update-43-20) we came to the point we could release the first major release of [the AsyncAPI Generator](https://github.com/asyncapi/generator/) too.
 
 Feel free to congratulate us by giving a :star: to [the project](https://github.com/asyncapi/generator/stargazers). This is the moment to join us and think with us about the 2.0 release and all the goodies we can add to it.
 
@@ -39,19 +39,19 @@ Try out the project by following :point_down: instructions:
 
 ### Generator GitHub Action 1.0
 
-Yes, our official [GitHub Action for Generator](https://github.com/marketplace/actions/generator-validator-converter-and-others-all-in-one-for-your-asyncapi-docs) already uses the latest Generator and is released under v1. 
+Yes, our official [GitHub Action for Generator](https://github.com/marketplace/actions/generator-validator-converter-and-others-all-in-one-for-your-asyncapi-docs) already uses the latest Generator and is released under v1.
 
 ```yaml
 - name: Generating HTML from my AsyncAPI document
   uses: asyncapi/github-action-for-generator@v1
   with:
-    template: '@asyncapi/html-template@0.15.4'  #In case of template from npm, because of @ it must be in quotes
+    template: '@asyncapi/html-template@0.15.4' #In case of template from npm, because of @ it must be in quotes
     filepath: docs/api/my-asyncapi.yml
     parameters: baseHref=/test-experiment/ sidebarOrganization=byTags #space separated list of key/values
     output: generated-html
 ```
 
-[The AsyncAPI Playground](https://playground.asyncapi.io/) is up to date with the latest generator. 
+[The AsyncAPI Playground](https://playground.asyncapi.io/) is up to date with the latest generator.
 
 ### Writing Own Generator Template Ain't Easy
 
@@ -62,10 +62,12 @@ Writing a template compatible with the AsyncAPI Generator is not an easy task th
 - How can I add optional features to the template?
 
 There is a lot of it. We wanted to make it easy for you. We created a [GitHub Template](https://github.com/asyncapi/template-for-generator-templates) that showcases all features available in the Generator. It contains:
+
 - A template that generates class diagram showing relations between schemas
 - Detailed readme which explains all the features and where are they used in the template
 
 To try out the template, run :point_down: commands:
+
 ```
 # Install the AsyncAPI Generator if you do not have it yet
 npm install -g @asyncapi/generator
@@ -97,30 +99,32 @@ Since the 0.17.5 release, we are now automatically publishing also the @asyncapi
 Now it should be easier for you to use this component in non-React projects. That is, for example, how you would use it in a plain HTML:
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>AsyncAPI Web Component Demo</title>
-    <script src="https://unpkg.com/@asyncapi/web-component@0.17.5/lib/asyncapi-web-component.js" defer></script>
+    <script
+      src="https://unpkg.com/@asyncapi/web-component@0.17.5/lib/asyncapi-web-component.js"
+      defer
+    ></script>
     <script>
-        var schema = {
-            url: "https://raw.githubusercontent.com/asyncapi/asyncapi/master/examples/simple-asyncapi.yml"
-        };
+      var schema = {
+        url: 'https://raw.githubusercontent.com/asyncapi/asyncapi/master/examples/simple-asyncapi.yml',
+      };
 
-        window.onload = function() {
-            document.getElementById("asyncapi").schema = schema;
-        }
+      window.onload = function () {
+        document.getElementById('asyncapi').schema = schema;
+      };
     </script>
-</head>
+  </head>
 
-<body>
-
-    <asyncapi-component id="asyncapi" cssImportPath="https://unpkg.com/@asyncapi/react-component@0.17.5/lib/styles/fiori.css"></asyncapi-component>
-
-</body>
-
+  <body>
+    <asyncapi-component
+      id="asyncapi"
+      cssImportPath="https://unpkg.com/@asyncapi/react-component@0.17.5/lib/styles/fiori.css"
+    ></asyncapi-component>
+  </body>
 </html>
 ```
 
@@ -143,9 +147,9 @@ Since the 0.16.0 release, the component supports examples provided in the AsyncA
 
 The last meeting took place on Tuesday, 10th of November, 4PM UTC. Meeting notes and recording are available [here](https://github.com/asyncapi/asyncapi/issues/459).
 
-The next meeting is scheduled for next [Tuesday, 24th of November, 8AM UTC](https://everytimezone.com/s/2088528d). 
+The next meeting is scheduled for next [Tuesday, 24th of November, 8AM UTC](https://everytimezone.com/s/2088528d).
 
-We work on the agenda for the next meeting [here](https://github.com/asyncapi/asyncapi/issues/462). At the moment, there is nothing on the agenda, so you can easily sneak your topic in. 
+We work on the agenda for the next meeting [here](https://github.com/asyncapi/asyncapi/issues/462). At the moment, there is nothing on the agenda, so you can easily sneak your topic in.
 
 We host the meeting on [Zoom](https://zoom.us/j/83140549308). Do not forget about future meetings and always have up to date invitations in your calendar by adding your email to [this](https://groups.google.com/forum/#!forum/asyncapi-users) mailing list.
 

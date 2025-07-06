@@ -27,8 +27,14 @@ export interface SubCategoryDocsNavProps {
  * @param {string} props.activeItem - The slug of the currently active item.
  * @param {Function} props.onClick - The onClick event handler.
  */
-export default function SubCategoryDocsNav({ subCategory, activeItem, onClick }: SubCategoryDocsNavProps) {
-  const [openSubCategoryChildren, setOpenSubCategoryChildren] = useState(activeItem.startsWith(subCategory.item.slug));
+export default function SubCategoryDocsNav({
+  subCategory,
+  activeItem,
+  onClick,
+}: SubCategoryDocsNavProps) {
+  const [openSubCategoryChildren, setOpenSubCategoryChildren] = useState(
+    activeItem.startsWith(subCategory.item.slug),
+  );
 
   const onClickHandler = () => {
     setOpenSubCategoryChildren(!openSubCategoryChildren);
@@ -40,8 +46,8 @@ export default function SubCategoryDocsNav({ subCategory, activeItem, onClick }:
   }, [activeItem, subCategory.item.slug]);
 
   return (
-    <li key={subCategory.item.title} data-testid='DocsNav-subitem'>
-      <div className='flex gap-2'>
+    <li key={subCategory.item.title} data-testid="DocsNav-subitem">
+      <div className="flex gap-2">
         <DocsArrow
           isDropDown={!!subCategory.children}
           activeDropDownItem={openSubCategoryChildren}
@@ -51,24 +57,28 @@ export default function SubCategoryDocsNav({ subCategory, activeItem, onClick }:
           {...subCategory.item}
           activeSlug={activeItem}
           defaultClassName={`font-body text-sm text-black leading-8 ${
-            subCategory.children ? 'hover:font-semibold' : 'hover:text-secondary-600'
+            subCategory.children
+              ? 'hover:font-semibold'
+              : 'hover:text-secondary-600'
           }`}
-          inactiveClassName='font-regular'
-          activeClassName={subCategory.children ? 'font-semibold' : 'text-secondary-600'}
+          inactiveClassName="font-regular"
+          activeClassName={
+            subCategory.children ? 'font-semibold' : 'text-secondary-600'
+          }
           onClick={onClickHandler}
         />
       </div>
       {openSubCategoryChildren && (
-        <ul className='ml-8 border-l border-gray-200 pl-4'>
+        <ul className="ml-8 border-l border-gray-200 pl-4">
           {subCategory.children &&
             subCategory.children.map((subItem) => (
               <li key={subItem.title}>
                 <DocsNavItem
                   {...subItem}
                   activeSlug={activeItem}
-                  defaultClassName='font-body text-sm text-gray-700 leading-7 hover:text-secondary-600'
-                  inactiveClassName='font-regular'
-                  activeClassName='text-secondary-600'
+                  defaultClassName="font-body text-sm text-gray-700 leading-7 hover:text-secondary-600"
+                  inactiveClassName="font-regular"
+                  activeClassName="text-secondary-600"
                   onClick={onClick}
                 />
               </li>

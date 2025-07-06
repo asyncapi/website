@@ -18,19 +18,20 @@ export default function ToolsIndex() {
 
   return (
     <div>
-      <GenericLayout title='Tools' description={description} image={image}>
+      <GenericLayout title="Tools" description={description} image={image}>
         <div>
-          <div className='mt-12 text-center'>
+          <div className="mt-12 text-center">
             <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg}>
               AsyncAPI Tools Dashboard
             </Heading>
-            <Paragraph className='mx-auto my-3 max-w-2xl sm:mt-4'>
-              Discover various AsyncAPI tools to optimize your journey! These tools are made by the community, for the
-              community. Have an AsyncAPI tool you want to be featured on this list? Then follow the procedure given in
-              the
+            <Paragraph className="mx-auto my-3 max-w-2xl sm:mt-4">
+              Discover various AsyncAPI tools to optimize your journey! These
+              tools are made by the community, for the community. Have an
+              AsyncAPI tool you want to be featured on this list? Then follow
+              the procedure given in the
               <TextLink
-                href='https://github.com/asyncapi/community/blob/master/new-tool-documentation.md'
-                target='_blank'
+                href="https://github.com/asyncapi/community/blob/master/new-tool-documentation.md"
+                target="_blank"
               >
                 Tool Documentation
               </TextLink>{' '}

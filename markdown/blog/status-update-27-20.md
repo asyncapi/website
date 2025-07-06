@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI Initiative Status Update (week 27, 2020)"
+title: 'AsyncAPI Initiative Status Update (week 27, 2020)'
 date: 2020-06-30T06:00:00+01:00
 type: Communication
 tags:
@@ -26,7 +26,7 @@ We are going in the right direction with the first major releases for [the Gener
 
 > Then why are you not promoting the last release candidate to 1.0.0?
 
-Good question, I’m glad you asked :) 
+Good question, I’m glad you asked :)
 
 Generator depends a lot on the Parser. Parser did not reach a major release yet. As you may have guessed, I'm now focused on the Parser 1.0.0 release, and the issues we want to complete before the release are listed in [this milestone](https://github.com/asyncapi/parser-js/milestone/3). The good news is that most of the issues are either in progress, and some have pull requests already opened.
 
@@ -76,9 +76,9 @@ The last meeting took place on Tuesday, 23rd of June, 4PM UTC. Meeting notes are
 
 <YouTube id="LDanOihP9i4" />
 
-The next meeting is scheduled for next Tuesday, 7th of July, 8AM UTC. 
+The next meeting is scheduled for next Tuesday, 7th of July, 8AM UTC.
 
-The agenda for the meeting is built [here](https://github.com/asyncapi/asyncapi/issues/401). There is nothing on the agenda, so you can easily sneak your topic in. 
+The agenda for the meeting is built [here](https://github.com/asyncapi/asyncapi/issues/401). There is nothing on the agenda, so you can easily sneak your topic in.
 
 The meeting is hosted on [Zoom](https://zoom.us/j/165106914). Do not forget about future meetings, and always have up to date invitations in your calendar. Add your email to [this](https://groups.google.com/forum/#!forum/asyncapi-users) mailing list.
 

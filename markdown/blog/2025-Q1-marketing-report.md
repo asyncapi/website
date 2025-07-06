@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI Q1 Marketing WG Report"
+title: 'AsyncAPI Q1 Marketing WG Report'
 date: 2025-05-27T06:00:00+01:00
 type: Communication
 tags:
@@ -30,13 +30,13 @@ This report provides an overview of our marketing activities, including social m
 ### Social Media Performance
 
 | **LinkedIn Metric** | **Value** | **Last Quarter Value** | **% Change** |
-|--------------------|-----------------------------|---------------|----------------|
-|  Followers       | 4,255           |  3,949 | +8%         |
-| New Followers        | 313         | 263  | +20%            |
-| Posts       | 48        | 93 | -48%         |
-|Impressions       |        23,715 | 29,366     | -18% |
-|Clicks      |     1,495| 1398       |       +8% |
-|Engagement Rate      |      7.52%     | 6.23% |  +21%    |
+| ------------------- | --------- | ---------------------- | ------------ |
+| Followers           | 4,255     | 3,949                  | +8%          |
+| New Followers       | 313       | 263                    | +20%         |
+| Posts               | 48        | 93                     | -48%         |
+| Impressions         | 23,715    | 29,366                 | -18%         |
+| Clicks              | 1,495     | 1398                   | +8%          |
+| Engagement Rate     | 7.52%     | 6.23%                  | +21%         |
 
 ### LinkedIn Key Insights
 
@@ -44,27 +44,26 @@ This report provides an overview of our marketing activities, including social m
 - Engagement rate increased by 13%, indicating that our content resonates well with our audience.
 - Click-through rates need improvement, signaling stronger CTAs and content hooks.
 
-
-| **X (Formerly Twitter) Metric**         | **Value**         |**% last Quarter** |**% Change** |
-|--------------------|-----------------------------|----------------|-----------------|
-|  Tweets      | 89         |      162   |-44%  |
-| Retweets        | 24       |       54     |  -53% |
-|Impressions       |         14,621|    27,823  |  -46% |
-|Engagements     |       278  |   543      |  -48% |
-|Replies     |      3  |  2     | +75% |
-| Clicks       |    101       |     199      |  -48% |
-|Likes          |       93   |        188      |  -49% |
-|New Followers|         36     | -27| +239%|
+| **X (Formerly Twitter) Metric** | **Value** | **% last Quarter** | **% Change** |
+| ------------------------------- | --------- | ------------------ | ------------ |
+| Tweets                          | 89        | 162                | -44%         |
+| Retweets                        | 24        | 54                 | -53%         |
+| Impressions                     | 14,621    | 27,823             | -46%         |
+| Engagements                     | 278       | 543                | -48%         |
+| Replies                         | 3         | 2                  | +75%         |
+| Clicks                          | 101       | 199                | -48%         |
+| Likes                           | 93        | 188                | -49%         |
+| New Followers                   | 36        | -27                | +239%        |
 
 ### X Key Insights
 
 Tweet output dipped by 44%, leading to a -46% impression dip.
 Replies saw a 75% increase, but overall reply numbers remain low.
-The number of new followers rose by +239%, given the dip and loss of followers in the previous quarter. 
+The number of new followers rose by +239%, given the dip and loss of followers in the previous quarter.
 
 Overall, the decline in some metrics can be attributed to the higher number of events in the previous quarter, which naturally led to more content and activity than this quieter quarter.
 
-### Website Performance 
+### Website Performance
 
 <Figure
   src="/img/posts/marketing-images/google-analysis-page-view.webp"
@@ -94,7 +93,7 @@ Similarly, "Understanding AsyncAPIs with a Practical Example" drew good engageme
 
 ## Overview of the Marketing Strategy
 
- As highlighted in the [2024 Marketing Report](https://www.asyncapi.com/blog/2024-marketing-report), the AsyncAPI Marketing Strategy was created to guide the community's marketing efforts in a focused and impactful way. On April 1st, 2025, the updated strategy document was officially merged and is now set for implementation.
+As highlighted in the [2024 Marketing Report](https://www.asyncapi.com/blog/2024-marketing-report), the AsyncAPI Marketing Strategy was created to guide the community's marketing efforts in a focused and impactful way. On April 1st, 2025, the updated strategy document was officially merged and is now set for implementation.
 
 Over the next few months, we will begin rolling out initiatives aligned with the strategy, and our progress will be tracked through clearly defined KPIs, and consistent quarterly reports will be shared to ensure transparency and accountability.
 
@@ -119,7 +118,6 @@ We published the first blog [Ashmit story](https://www.asyncapi.com/blog/communi
 - Speaker announcements for AsyncAPI Conference Singapore have generated positive engagement and anticipation.
 - Promotional efforts included LinkedIn and Twitter posts, and community newsletters.
 - Munich Call for Speaker is also out.
-
 
 ### Impact & Next Steps
 
@@ -153,42 +151,44 @@ These posts were selected based on their impressions and number of clicks.
 />
 
 1. [We’re welcoming three new members to the AsyncAPI Technical Steering Committee (TSC)](https://www.linkedin.com/feed/update/urn:li:ugcPost:7287771093354893312/)
-    - Impressions: 2,470 Impressions
-    - Likes: 67
-    - Comments: 12
-    - Clicks: 361
-    - Engagement Rate: 18.18%
-    - Key Takeaway: Why it performed well is because it's a community-driven and thought leadership post.
 
-    <Figure
-     src="/img/posts/marketing-images/second-best-performance-post.webp"
-     alt="Ankit Kumar, Head of Developer & Customer Success at @Aklivity, as a speaker at AsyncAPI Conference Singapore 2025"
-     caption="A LinkedIn announcement showing the performance details of Ankit Kumar speaker post"
-     className="text-center"
-    />
+   - Impressions: 2,470 Impressions
+   - Likes: 67
+   - Comments: 12
+   - Clicks: 361
+   - Engagement Rate: 18.18%
+   - Key Takeaway: Why it performed well is because it's a community-driven and thought leadership post.
+
+   <Figure
+    src="/img/posts/marketing-images/second-best-performance-post.webp"
+    alt="Ankit Kumar, Head of Developer & Customer Success at @Aklivity, as a speaker at AsyncAPI Conference Singapore 2025"
+    caption="A LinkedIn announcement showing the performance details of Ankit Kumar speaker post"
+    className="text-center"
+   />
 
 2. [Join us in welcoming Ankit Kumar, Head of Developer & Customer Success at @Aklivity, as a speaker at AsyncAPI Conference Singapore 2025! 🚀](https://www.linkedin.com/feed/update/urn:li:share:7308442490213126145/)
-    - Impressions: 1,332
-    - Likes: 54
-    - Comments: 1
-    - Clicks: 215
-    - Engagement Rate: 20.42%
-    - Key Takeaway: What worked well, thought leadership, community-driven
 
-    <Figure
-     src="/img/posts/marketing-images/third-best-performance-post.webp"
-     alt="Announcement that Laurent Broudoux is stepping into a new role as an AsyncAPI Ambassador!"
-     caption="A LinkedIn announcement showing the performance details of Laurent Broudoux post"
-     className="text-center"
-    />
+   - Impressions: 1,332
+   - Likes: 54
+   - Comments: 1
+   - Clicks: 215
+   - Engagement Rate: 20.42%
+   - Key Takeaway: What worked well, thought leadership, community-driven
+
+   <Figure
+    src="/img/posts/marketing-images/third-best-performance-post.webp"
+    alt="Announcement that Laurent Broudoux is stepping into a new role as an AsyncAPI Ambassador!"
+    caption="A LinkedIn announcement showing the performance details of Laurent Broudoux post"
+    className="text-center"
+   />
 
 3. [We’re thrilled to announce that Laurent Broudoux is stepping into a new role as an AsyncAPI Ambassador! 🚀](https://www.linkedin.com/feed/update/urn:li:share:7310201401454829568/)
-    - Impressions: 998
-    - Likes: 70
-    - Comments: 5
-    - Clicks: 49
-    - Engagement Rate: 12.73%
-    - Key Takeaway: It's community-driven, high-value content, visual appeal
+   - Impressions: 998
+   - Likes: 70
+   - Comments: 5
+   - Clicks: 49
+   - Engagement Rate: 12.73%
+   - Key Takeaway: It's community-driven, high-value content, visual appeal
 
 ## Future Marketing Strategy & Action Plan
 

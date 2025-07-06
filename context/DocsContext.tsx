@@ -13,7 +13,7 @@ export default createContext<DocsContextType>({
     sectionWeight: 0,
     id: '',
     isIndex: true,
-    slug: ''
+    slug: '',
   },
-  navItems: {}
+  navItems: {},
 });

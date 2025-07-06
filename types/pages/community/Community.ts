@@ -14,7 +14,7 @@ export interface Contribution {
     month?: string;
     year: number;
   };
-};
+}
 
 export interface Ambassador {
   name: string;
@@ -30,7 +30,7 @@ export interface Ambassador {
   githubUrl?: string;
   linkedinUrl?: string;
   twitterUrl?: string;
-};
+}
 
 export interface Tsc {
   name: string;
@@ -43,5 +43,5 @@ export interface Tsc {
   twitter?: string;
   company?: string;
   repos: any;
-  githubID: number
-};
+  githubID: number;
+}

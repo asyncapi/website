@@ -35,12 +35,12 @@ export default function RoadmapList({
   items = [],
   showConnector = true,
   collapsed = false,
-  childrenCollapsed = true
+  childrenCollapsed = true,
 }: IRoadmapListProps) {
   return (
     items &&
     items.length && (
-      <ul className={className} data-testid='RoadmapList-list'>
+      <ul className={className} data-testid="RoadmapList-list">
         {!collapsed &&
           items.map((item, index) => (
             <RoadmapItem

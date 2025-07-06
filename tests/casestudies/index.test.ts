@@ -23,7 +23,9 @@ describe('buildCaseStudiesList', () => {
     // Clear the config directory before each test
     const files = await fs.readdir(tempConfigDir);
 
-    await Promise.all(files.map((file) => fs.unlink(path.join(tempConfigDir, file))));
+    await Promise.all(
+      files.map((file) => fs.unlink(path.join(tempConfigDir, file))),
+    );
   });
 
   it('should read YAML files and create a JSON file with case studies', async () => {
@@ -56,7 +58,10 @@ describe('buildCaseStudiesList', () => {
   it('should throw an error when the output file path is invalid', async () => {
     try {
       // Call the function with an invalid output file path
-      await buildCaseStudiesList(tempConfigDir, '/invalid-path/case-studies.json');
+      await buildCaseStudiesList(
+        tempConfigDir,
+        '/invalid-path/case-studies.json',
+      );
     } catch (error) {
       expect(error).toBeInstanceOf(Error);
     }

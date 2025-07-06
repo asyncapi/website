@@ -230,7 +230,7 @@ jobs:
           node-version: 13
       - name: Install dependencies
         run: npm ci
-        
+
       - name: Get version from package.json before release step
         id: initversion
         run: npm run get-version --silent

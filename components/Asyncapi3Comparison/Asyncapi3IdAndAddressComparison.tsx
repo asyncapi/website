@@ -13,10 +13,12 @@ export interface AsyncAPI3IdAndAddressComparisonProps {
  * @description Component for comparing AsyncAPI versions based on ID and address.
  * @param {string} [props.className=''] - Additional CSS classes for styling.
  */
-export default function Asyncapi3IdAndAddressComparison({ className = '' }: AsyncAPI3IdAndAddressComparisonProps) {
+export default function Asyncapi3IdAndAddressComparison({
+  className = '',
+}: AsyncAPI3IdAndAddressComparisonProps) {
   const [hoverState, setHoverState] = useState<HoverState>({
     Paths: false,
-    PathItem: false
+    PathItem: false,
   });
 
   const handleMouseEnter = (key: keyof HoverState) => {
@@ -28,9 +30,13 @@ export default function Asyncapi3IdAndAddressComparison({ className = '' }: Asyn
   };
 
   return (
-    <div className={`${className} flex flex-col flex-wrap gap-1 text-center md:flex-row`}>
-      <div className='ml-1 flex-1 border border-black p-2'>
-        <h3 className='mb-4 ml-2 font-sans text-lg font-medium'>AsyncAPI 2.x</h3>
+    <div
+      className={`${className} flex flex-col flex-wrap gap-1 text-center md:flex-row`}
+    >
+      <div className="ml-1 flex-1 border border-black p-2">
+        <h3 className="mb-4 ml-2 font-sans text-lg font-medium">
+          AsyncAPI 2.x
+        </h3>
         <div>
           <div
             className={`${hoverState.Paths ? 'bg-yellow-100' : ' '} m-2 border border-yellow-300 p-2`}
@@ -48,8 +54,10 @@ export default function Asyncapi3IdAndAddressComparison({ className = '' }: Asyn
           </div>
         </div>
       </div>
-      <div className='ml-1 flex-1 border border-black p-2'>
-        <h3 className='mb-4 ml-2 font-sans text-lg font-medium'>AsyncAPI 3.0</h3>
+      <div className="ml-1 flex-1 border border-black p-2">
+        <h3 className="mb-4 ml-2 font-sans text-lg font-medium">
+          AsyncAPI 3.0
+        </h3>
         <div>
           <div
             className={`${hoverState.Paths ? 'bg-yellow-100' : ' '} m-2 border border-yellow-300 p-2`}
@@ -63,8 +71,10 @@ export default function Asyncapi3IdAndAddressComparison({ className = '' }: Asyn
               onMouseLeave={() => handleMouseLeave('PathItem')}
             >
               Channel
-              <div className='flex flex-1 flex-col flex-wrap'>
-                <div className='m-2 border border-blue-500 bg-white p-2 hover:bg-blue-200'>address</div>
+              <div className="flex flex-1 flex-col flex-wrap">
+                <div className="m-2 border border-blue-500 bg-white p-2 hover:bg-blue-200">
+                  address
+                </div>
               </div>
             </div>
           </div>

@@ -23,14 +23,20 @@ export interface DocsNavItemProps {
  * @param {string} activeSlug - The active slug.
  * @param {string | undefined} sectionSlug - The slug of the section.
  */
-function isActiveSlug(slug: string, activeSlug: string, sectionSlug?: string): boolean {
+function isActiveSlug(
+  slug: string,
+  activeSlug: string,
+  sectionSlug?: string,
+): boolean {
   if (slug === '/docs' || (sectionSlug !== undefined && slug === sectionSlug)) {
     return slug === activeSlug;
   }
 
   const partialSlug = slug.split('/');
   const partialActiveSlug = activeSlug.split('/');
-  const activeParts = partialActiveSlug.filter((a, idx) => a === partialSlug[idx]);
+  const activeParts = partialActiveSlug.filter(
+    (a, idx) => a === partialSlug[idx],
+  );
 
   return activeParts.length === partialSlug.length;
 }
@@ -60,7 +66,7 @@ export default function DocsNavItem({
   defaultClassName = '',
   inactiveClassName = '',
   activeClassName = '',
-  bucket
+  bucket,
 }: DocsNavItemProps) {
   const isActive = isActiveSlug(slug, activeSlug, sectionSlug);
   const classes = `${isActive ? activeClassName : inactiveClassName} ${defaultClassName} inline-block w-full`;
@@ -68,13 +74,21 @@ export default function DocsNavItem({
   return (
     <div>
       <div className={classes}>
-        <Link href={href || slug} className='inline-block w-full' onClick={onClick}>
+        <Link
+          href={href || slug}
+          className="inline-block w-full"
+          onClick={onClick}
+        >
           {bucket && (
             <div
               className={`${(slug === '/docs' ? slug === activeSlug : activeSlug.startsWith(slug)) ? bucket.className : ''} inline-block rounded`}
-              style={{ marginRight: '5px', marginBottom: '-6px', padding: '2px' }}
+              style={{
+                marginRight: '5px',
+                marginBottom: '-6px',
+                padding: '2px',
+              }}
             >
-              <bucket.icon className='size-5' />
+              <bucket.icon className="size-5" />
             </div>
           )}
           <span>{title}</span>

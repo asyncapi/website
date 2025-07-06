@@ -1,5 +1,5 @@
 ---
-title: "Servers"
+title: 'Servers'
 date: 2019-04-03T10:56:52+01:00
 menu:
   docs:
@@ -42,9 +42,9 @@ You might have noticed that our example mentions `amqp`, a very common protocol 
 
 <Remember>
 
-The `servers` section defines where your application should connect to start sending and receiving messages. 
+The `servers` section defines where your application should connect to start sending and receiving messages.
 
-1. If you are using a broker-centric architecture such as Kafka or RabbitMQ, specify the broker URL. 
+1. If you are using a broker-centric architecture such as Kafka or RabbitMQ, specify the broker URL.
 2. If you have the classic client-server model such as for REST APIs, then your `server` should be the URL of the server.
 
 </Remember>

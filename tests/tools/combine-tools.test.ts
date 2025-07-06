@@ -23,16 +23,20 @@ import {
   manualToolsT9,
   manualToolsToSort,
   manualToolsWithInvalidURLT11,
-  manualToolsWithMissingData
+  manualToolsWithMissingData,
 } from '../fixtures/combineToolsData';
 
 jest.mock('../../scripts/helpers/logger', () => ({
-  logger: { error: jest.fn() }
+  logger: { error: jest.fn() },
 }));
 
 jest.mock('ajv', () => {
   return jest.fn().mockImplementation(() => ({
-    compile: jest.fn().mockImplementation(() => (data: JSONSchemaType<any>) => data.title !== 'Invalid Tool')
+    compile: jest
+      .fn()
+      .mockImplementation(
+        () => (data: JSONSchemaType<any>) => data.title !== 'Invalid Tool',
+      ),
   }));
 });
 
@@ -42,29 +46,58 @@ jest.mock('ajv-formats', () => {
 
 jest.mock('../../scripts/tools/tags-color', () => ({
   languagesColor: [
-    { name: 'JavaScript', color: 'bg-[#57f281]', borderColor: 'border-[#37f069]' },
-    { name: 'Python', color: 'bg-[#3572A5]', borderColor: 'border-[#3572A5]' }
+    {
+      name: 'JavaScript',
+      color: 'bg-[#57f281]',
+      borderColor: 'border-[#37f069]',
+    },
+    { name: 'Python', color: 'bg-[#3572A5]', borderColor: 'border-[#3572A5]' },
   ],
   technologiesColor: [
     { name: 'Node.js', color: 'bg-[#61d0f2]', borderColor: 'border-[#40ccf7]' },
-    { name: 'Flask', color: 'bg-[#000000]', borderColor: 'border-[#FFFFFF]' }
-  ]
+    { name: 'Flask', color: 'bg-[#000000]', borderColor: 'border-[#FFFFFF]' },
+  ],
 }));
 
 jest.mock('../../scripts/tools/categorylist', () => ({
   categoryList: [
     { name: 'category1', description: 'Sample Category 1' },
-    { name: 'category2', description: 'Sample Category 2' }
-  ]
+    { name: 'category2', description: 'Sample Category 2' },
+  ],
 }));
 
-const readJSON = (filePath: string) => JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+const readJSON = (filePath: string) =>
+  JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
 describe('combineTools function', () => {
-  const toolsPath = path.join(__dirname, '../', 'fixtures', 'tools', 'tools.json');
-  const tagsPath = path.join(__dirname, '../', 'fixtures', 'tools', 'tags.json');
-  const manualToolsPath = path.join(__dirname, '../', 'fixtures', 'tools', 'manual-tools.json');
-  const automatedToolsPath = path.join(__dirname, '../', 'fixtures', 'tools', 'automated-tools.json');
+  const toolsPath = path.join(
+    __dirname,
+    '../',
+    'fixtures',
+    'tools',
+    'tools.json',
+  );
+  const tagsPath = path.join(
+    __dirname,
+    '../',
+    'fixtures',
+    'tools',
+    'tags.json',
+  );
+  const manualToolsPath = path.join(
+    __dirname,
+    '../',
+    'fixtures',
+    'tools',
+    'manual-tools.json',
+  );
+  const automatedToolsPath = path.join(
+    __dirname,
+    '../',
+    'fixtures',
+    'tools',
+    'automated-tools.json',
+  );
 
   let manualTools: Record<string, any>;
   let automatedTools: Record<string, any>;
@@ -84,7 +117,9 @@ describe('combineTools function', () => {
   });
 
   beforeEach(() => {
-    consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});
+    consoleErrorMock = jest
+      .spyOn(console, 'error')
+      .mockImplementation(() => {});
   });
 
   afterEach(() => {
@@ -120,21 +155,25 @@ describe('combineTools function', () => {
         filters: {
           categories: [{ name: 'category1', description: 'Sample Category 1' }],
           language: [],
-          technology: []
+          technology: [],
         },
-        links: { repoUrl: 'https://example.com' }
-      }
+        links: { repoUrl: 'https://example.com' },
+      },
     ];
 
     // @ts-expect-error - Intentionally passing wrong type to test error handling
-    await expect(combineTools(toolsArray, {}, toolsPath, tagsPath)).rejects.toThrow('Error combining tools');
+    await expect(
+      combineTools(toolsArray, {}, toolsPath, tagsPath),
+    ).rejects.toThrow('Error combining tools');
   });
 
   it('should sort tools alphabetically by title', async () => {
     await combineTools(manualToolsToSort, {}, toolsPath, tagsPath);
 
     const combinedTools = readJSON(toolsPath);
-    const toolTitles = combinedTools.category1.toolsList.map((tool: AsyncAPITool) => tool.title);
+    const toolTitles = combinedTools.category1.toolsList.map(
+      (tool: AsyncAPITool) => tool.title,
+    );
 
     expect(toolTitles).toEqual(['Tool A', 'Tool Z']);
   });
@@ -142,12 +181,16 @@ describe('combineTools function', () => {
   it('should log validation errors to console.error', async () => {
     await combineTools(automatedToolsT4, manualToolsT4, toolsPath, tagsPath);
 
-    const { message, tool, source, note } = JSON.parse(loggerErrorMock.mock.calls[0][0]);
+    const { message, tool, source, note } = JSON.parse(
+      loggerErrorMock.mock.calls[0][0],
+    );
 
     expect(message).toBe('Tool validation failed');
     expect(tool).toBe('Invalid Tool');
     expect(source).toBe('manual-tools.json');
-    expect(note).toBe('Script continues execution, error logged for investigation');
+    expect(note).toBe(
+      'Script continues execution, error logged for investigation',
+    );
 
     expect(fs.existsSync(toolsPath)).toBe(true);
     expect(fs.existsSync(tagsPath)).toBe(true);
@@ -160,13 +203,21 @@ describe('combineTools function', () => {
     const tool = combinedTools.category1.toolsList[0];
 
     expect(tool.filters.language).toHaveLength(3);
-    expect(tool.filters.language).toContainEqual(expect.objectContaining({ name: 'JavaScript' }));
-    expect(tool.filters.language).toContainEqual(expect.objectContaining({ name: 'Python' }));
-    expect(tool.filters.language).toContainEqual(expect.objectContaining({ name: 'NewLanguage' }));
+    expect(tool.filters.language).toContainEqual(
+      expect.objectContaining({ name: 'JavaScript' }),
+    );
+    expect(tool.filters.language).toContainEqual(
+      expect.objectContaining({ name: 'Python' }),
+    );
+    expect(tool.filters.language).toContainEqual(
+      expect.objectContaining({ name: 'NewLanguage' }),
+    );
 
     const tagsData = readJSON(tagsPath);
 
-    expect(tagsData.languages).toContainEqual(expect.objectContaining({ name: 'NewLanguage' }));
+    expect(tagsData.languages).toContainEqual(
+      expect.objectContaining({ name: 'NewLanguage' }),
+    );
   });
 
   it('should add a new language and technology when not found in the existing lists', async () => {
@@ -176,22 +227,26 @@ describe('combineTools function', () => {
     const tool = combinedTools.category1.toolsList[0];
 
     expect(tool.filters.language).toHaveLength(1);
-    expect(tool.filters.language).toContainEqual(expect.objectContaining({ name: 'NewLanguage' }));
+    expect(tool.filters.language).toContainEqual(
+      expect.objectContaining({ name: 'NewLanguage' }),
+    );
 
     expect(tool.filters.technology).toHaveLength(1);
-    expect(tool.filters.technology).toContainEqual(expect.objectContaining({ name: 'NewTechnology' }));
+    expect(tool.filters.technology).toContainEqual(
+      expect.objectContaining({ name: 'NewTechnology' }),
+    );
 
     const tagsData = readJSON(tagsPath);
 
     expect(tagsData.languages).toContainEqual({
       name: 'NewLanguage',
       color: 'bg-[#57f281]',
-      borderColor: 'border-[#37f069]'
+      borderColor: 'border-[#37f069]',
     });
     expect(tagsData.technologies).toContainEqual({
       name: 'NewTechnology',
       color: 'bg-[#61d0f2]',
-      borderColor: 'border-[#40ccf7]'
+      borderColor: 'border-[#40ccf7]',
     });
   });
 
@@ -202,14 +257,16 @@ describe('combineTools function', () => {
     const tool = combinedTools.category1.toolsList[0];
 
     expect(tool.filters.language).toHaveLength(1);
-    expect(tool.filters.language).toContainEqual(expect.objectContaining({ name: 'Go' }));
+    expect(tool.filters.language).toContainEqual(
+      expect.objectContaining({ name: 'Go' }),
+    );
 
     const tagsData = readJSON(tagsPath);
 
     expect(tagsData.languages).toContainEqual({
       name: 'Go',
       color: 'bg-[#57f281]',
-      borderColor: 'border-[#37f069]'
+      borderColor: 'border-[#37f069]',
     });
   });
 
@@ -221,12 +278,12 @@ describe('combineTools function', () => {
     expect(tagsData.languages).toContainEqual({
       name: 'JavaScript',
       color: 'bg-[#57f281]',
-      borderColor: 'border-[#37f069]'
+      borderColor: 'border-[#37f069]',
     });
     expect(tagsData.technologies).toContainEqual({
       name: 'Node.js',
       color: 'bg-[#61d0f2]',
-      borderColor: 'border-[#40ccf7]'
+      borderColor: 'border-[#40ccf7]',
     });
   });
 
@@ -242,33 +299,42 @@ describe('combineTools function', () => {
   it('should throw an error when fs.writeFileSync fails', async () => {
     const invalidPath = 'this/is/not/valid';
 
-    await expect(combineTools(automatedTools, manualTools, invalidPath, invalidPath)).rejects.toThrow(/ENOENT|EACCES/);
+    await expect(
+      combineTools(automatedTools, manualTools, invalidPath, invalidPath),
+    ).rejects.toThrow(/ENOENT|EACCES/);
   });
 
   it('should throw an error when there is an invalid category', async () => {
-    await expect(combineTools(invalidAutomatedToolsT10, manualTools, toolsPath, tagsPath)).rejects.toThrow(
-      'Error combining tools'
-    );
+    await expect(
+      combineTools(invalidAutomatedToolsT10, manualTools, toolsPath, tagsPath),
+    ).rejects.toThrow('Error combining tools');
   });
 
   it('should throw an error when URL parsing fails', async () => {
-    await expect(combineTools(automatedTools, manualToolsWithInvalidURLT11, toolsPath, tagsPath)).rejects.toThrow(
-      'Invalid URL'
-    );
+    await expect(
+      combineTools(
+        automatedTools,
+        manualToolsWithInvalidURLT11,
+        toolsPath,
+        tagsPath,
+      ),
+    ).rejects.toThrow('Invalid URL');
   });
 
   it('should handle errors when processing tools with circular references', async () => {
     (circularTool as any).circular = circularTool;
-    await expect(combineTools(automatedToolsT12, {}, toolsPath, tagsPath)).rejects.toThrow(
-      'Converting circular structure to JSON'
-    );
+    await expect(
+      combineTools(automatedToolsT12, {}, toolsPath, tagsPath),
+    ).rejects.toThrow('Converting circular structure to JSON');
   });
   it('should handle tools with missing data and filters', async () => {
     manualToolsWithMissingData.myCategory.toolsList[0].filters = {
       categories: [],
-      hasCommercial: false
+      hasCommercial: false,
     } as any;
-    const result = await getFinalTool(manualToolsWithMissingData.myCategory.toolsList[0]);
+    const result = await getFinalTool(
+      manualToolsWithMissingData.myCategory.toolsList[0],
+    );
 
     expect(result).toEqual(finalToolWithMissingData);
   });
@@ -277,14 +343,14 @@ describe('combineTools function', () => {
       category1: {
         toolsList: [
           {
-            filters: { language: [], technology: [] }
+            filters: { language: [], technology: [] },
           },
           {
             title: 'Valid Tool',
-            filters: { language: [], technology: [] }
-          }
-        ]
-      }
+            filters: { language: [], technology: [] },
+          },
+        ],
+      },
     };
 
     // @ts-ignore, ignore the error for missing properties
@@ -293,8 +359,8 @@ describe('combineTools function', () => {
     expect(logger.error).toHaveBeenCalledWith(
       expect.objectContaining({
         message: 'Tool title is missing during sort',
-        source: 'combine-tools.ts'
-      })
+        source: 'combine-tools.ts',
+      }),
     );
   });
 
@@ -304,10 +370,10 @@ describe('combineTools function', () => {
         toolsList: [
           {
             title: 'Inherited Tool',
-            filters: { language: [], technology: [] }
-          }
-        ]
-      }
+            filters: { language: [], technology: [] },
+          },
+        ],
+      },
     };
     const inheritedTools = Object.create(proto);
 
@@ -315,9 +381,9 @@ describe('combineTools function', () => {
       toolsList: [
         {
           title: 'Local Tool',
-          filters: { language: [], technology: [] }
-        }
-      ]
+          filters: { language: [], technology: [] },
+        },
+      ],
     };
 
     await combineTools(inheritedTools, {}, toolsPath, tagsPath);

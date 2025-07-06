@@ -39,13 +39,13 @@ In June, we started at GSoC with five different project!
 
 ### Diff
 
-[Aayush Kumar Sahu](https://github.com/aayushmau5) started working on [the AsyncAPI Diff library](https://github.com/asyncapi/diff). It will show differences between two different AsyncAPI files as a list of breaking and non-breaking changes. 
+[Aayush Kumar Sahu](https://github.com/aayushmau5) started working on [the AsyncAPI Diff library](https://github.com/asyncapi/diff). It will show differences between two different AsyncAPI files as a list of breaking and non-breaking changes.
 
 Later it will be used in AsyncAPI CLI and Studio. It will be a standalone library, browser compatible, so the community can also integrate it in other use cases.
 
 ### Optimizer
 
-[Khuda Dad Nomani](https://github.com/KhudaDad414) started working on [the AsyncAPI Optimizer library](https://github.com/asyncapi/optimizer/). It is meant to optimize your AsyncAPI documents, such as finding duplications that can be changed into references or removing unused components. Very useful, especially for use cases where the AsyncAPI document is generated from code. 
+[Khuda Dad Nomani](https://github.com/KhudaDad414) started working on [the AsyncAPI Optimizer library](https://github.com/asyncapi/optimizer/). It is meant to optimize your AsyncAPI documents, such as finding duplications that can be changed into references or removing unused components. Very useful, especially for use cases where the AsyncAPI document is generated from code.
 
 Later it will be used in AsyncAPI CLI and Studio. It will be a standalone library, browser compatible, so the community can also integrate it in other use cases.
 
@@ -97,29 +97,35 @@ The next features are on their way. Feel free to join and work on it together wi
 Our model generation library is under heavy development. I want to explicitly mention one change among all the recent changes in [Modelina](https://github.com/asyncapi/modelina/releases). [Sergio Moya](https://github.com/smoya) enabled support for model generation for Go :muscle: It is a 4th language that is supported by the library.
 
 ```js
-const { GoGenerator} = require("@asyncapi/modelina")
+const { GoGenerator } = require('@asyncapi/modelina');
 
 const generator = new GoGenerator();
 
 const doc = {
-  $id: "Address",
-  type: "object",
+  $id: 'Address',
+  type: 'object',
   properties: {
-    street_name:    { type: "string" },
-    city:           { type: "string", description: "City description" },
-    house_number:   { type: "number" },
-    marriage:       { type: "boolean", description: "Status if marriage live in given house" },
-    pet_names:      { type: "array", items: { type: "string" } },
-    state:          { type: "string", enum: ["Texas", "Alabama", "California", "other"] },
+    street_name: { type: 'string' },
+    city: { type: 'string', description: 'City description' },
+    house_number: { type: 'number' },
+    marriage: {
+      type: 'boolean',
+      description: 'Status if marriage live in given house',
+    },
+    pet_names: { type: 'array', items: { type: 'string' } },
+    state: {
+      type: 'string',
+      enum: ['Texas', 'Alabama', 'California', 'other'],
+    },
   },
-  required: ["street_name", "city", "state", "house_number", "state"],
+  required: ['street_name', 'city', 'state', 'house_number', 'state'],
 };
 
 async function generate() {
   const models = await generator.generate(doc);
   models.forEach(function (model) {
     console.log(model.result);
-  }); 
+  });
 }
 
 generate();
@@ -154,6 +160,7 @@ npm install --save @asyncapi/react-component@v1.0.0-next.11
 In June, a couple of release candidates were released. Most important to notice is a new standalone bundle that makes it super easy to reuse React component in [Angular](https://github.com/asyncapi/asyncapi-react/blob/next/docs/usage/angular.md) and [Vue](https://github.com/asyncapi/asyncapi-react/blob/next/docs/usage/vue.md) projects. In addition, we now provide not only **cjs** but also **esm** and **umd** modules. As a result, it is much easier to use React component with [Next.js](https://github.com/asyncapi/asyncapi-react/blob/next/docs/usage/nextjs.md) projects. In addition, the component supports the whole specification, except **discriminator**.
 
 Few more items left for the official 1.0.0 release:
+
 - Custom theming that is [right behind the corner](https://github.com/asyncapi/asyncapi-react/pull/374)
 - Components extensibility
 - New playground aka editor that will be available as a standalone package and used by use in a new AsyncAPI Studio (new AsyncAPI Playground)

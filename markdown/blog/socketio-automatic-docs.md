@@ -2,7 +2,7 @@
 title: Flask-SocketIO Automated Documentation and Validation
 date: 2023-03-02T06:00:00+01:00
 type: Engineering
-tags: ['Python','SocketIO','Flask-SocketIO']
+tags: ['Python', 'SocketIO', 'Flask-SocketIO']
 cover: /img/posts/socketio-automatic-docs/cover.webp
 authors:
   - name: Daler Rahimov
@@ -12,12 +12,15 @@ authors:
 ---
 
 ## What is Flask-SocketIO, SocketIO?
+
 If you are reading this blog, you are probably already familiar with SocketIO [python-socketio](https://github.com/miguelgrinberg/python-socketio) and [Flask-SocketIO](https://flask-socketio.readthedocs.io/en/latest/). If you want to learn more about them, please check the following resources:
- - https://socket.io/docs/v4/
- - https://www.asyncapi.com/blog/socketio-part1
- - https://www.asyncapi.com/blog/socketio-part2
+
+- https://socket.io/docs/v4/
+- https://www.asyncapi.com/blog/socketio-part1
+- https://www.asyncapi.com/blog/socketio-part2
 
 ## The problem
+
 Imagine that you are working on a large project that uses a Flask-SocketIO server to handle real-time communication between the client and the server. The server was originally well-documented, but over time the documentation has become out of date as the server has evolved and new features have been added.
 
 I found myself in the same situation. I needed to maintain and constantly add more documentation to a Flask-SocketIO server. To make this process more efficient, I sought a solution to automate documentation generation from the existing codebase. This would eliminate the need for team members to manually edit the AsyncAPI specification file every time there was a change, a challenging task for those unfamiliar with AsyncAPI. By automating this process, we could save time and reduce the workload for the team.
@@ -25,14 +28,16 @@ I found myself in the same situation. I needed to maintain and constantly add mo
 To address this issue, I decided to implement SIO-AsyncAPI. This tool allows you to generate an AsyncAPI specification from your SocketIO server and validate incoming and outgoing messages against it. This functionality is similar to how FastAPI, Flask-RESTful, and other frameworks have long provided it for RESTful servers. Now, with [SIO-AsyncAPI](https://github.com/daler-rahimov/sio-asyncapi), it is possible to apply this approach to SocketIO servers as well.
 
 ## How to use SIO-AsyncAPI
+
 Instead of giving you a detailed, step-by-step guide, we'll use a more exciting approach. We'll take the existing Flask-SocketIO server and add SIO-AsyncAPI. To make things even more interesting, we'll ask [ChatGPT](https://chat.openai.com/chat) to generate a server for us and use it as a real-world Flask-SocketIO server.
 
 ### Generate a Flask-SocketIO server
+
 I had to ask ChatGPT for multiple alterations to get the desired result. Here are my queries to ChatGPT:
 
->- create python flask-socket server that provides tic tac toe game api
->- change previous code and add type hints
->- for previous example use pydantic models instead of dictionaries
+> - create python flask-socket server that provides tic tac toe game api
+> - change previous code and add type hints
+> - for previous example use pydantic models instead of dictionaries
 
 And here is the final code that ChatGPT generated for us:
 
@@ -112,9 +117,10 @@ if __name__ == '__main__':
 It's not quite correct (e.g. data in `make_move` will be passed as a dictionary, not a Pydantic model), but it's good enough for our purposes.
 
 ### Generate Mermaid diagram
+
 Now let's ask ChatGPT to generate a Mermaid diagram for us as well, so we can get a better illustration of our server:
 
->- create mermaid diagram for previous example
+> - create mermaid diagram for previous example
 
 I had to alter the given diagram a bit, but here is the final result:
 
@@ -140,18 +146,20 @@ sequenceDiagram
     end
 ```
 
-
 ### Add SIO-AsyncAPI to the server
 
 Now let's imagine that this is our old server written in Flask-SocketIO and we want to add SIO-AsyncAPI. Here is how we would do it:
 
 1. Install SIO-AsyncAPI via `pip install sio-asyncapi`
 2. Change import statements
+
 ```python
 # instead of `from flask_socketio import SocketIO`
 from sio_asyncapi import AsyncAPISocketIO as SocketIO
 ```
+
 3. Add an additional argument to the `AsyncAPISocketIO` constructor
+
 ```python
 socketio = SocketIO(
     app,
@@ -164,14 +172,18 @@ socketio = SocketIO(
     server_name="TIC_TAC_TOE_BACKEND",
 )
 ```
+
 5. Tell the `@socketio.on` decorator to get models from the type hint.
-> Note: you can also pass `request_model` and `response_model` arguments to the `@socketio.on` decorator instead of using type hints.
+   > Note: you can also pass `request_model` and `response_model` arguments to the `@socketio.on` decorator instead of using type hints.
+
 ```python
 @socketio.on('make_move', get_from_typehint=True)
 ```
+
 Now type annotations will be used to generate the AsyncAPI specification and validate incoming/outgoing messages. Note that the return value from a function is not data sent by the `emit` function but rather the `acknowledge` value that the client receives.
 
 6. Add an `on_emit` decorator to register/document a SocketIO emit event. Since we are not defining `emit` function ourselves but only calling it, we need to tell SIO-AsyncAPI what to expect when `emit` is called. E.g
+
 ```python
 class GameCreatedData(BaseModel):
     game_id: int
@@ -184,14 +196,17 @@ def create_game():
 ```
 
 ### Get AsyncAPI specification
+
 Now we can get the AsyncAPI specification by calling the `socketio.asyncapi_doc.get_yaml()` function. Here is what the rendered specification looks like:
 
 ![Figure 1:](/img/posts/socketio-automatic-docs/sio-asycnapi-pic1.webp)
 
 ### Validation and Error handling
+
 SIO-AsyncAPI will automatically validate incoming and outgoing messages. If a message is invalid, it will raise one of these 3 exceptions: `EmitValidationError`, `RequestValidationError`, or `ResponseValidationError`.
 
 Flask-SocketIO has the `@socketio.on_error_default` decorator for default error handling that we can use. E.g.:
+
 ```python
 @socketio.on_error_default
 def default_error_handler(e: Exception):
@@ -212,6 +227,7 @@ def default_error_handler(e: Exception):
         logger.critical(f"Unknown error: {e}")
         raise e
 ```
+
 Instead of re-raising exceptions, we can return some error interpreted as an `acknowledge` value sent to the client. That's what we do in the example above when there is a `RequestValidationError`.
 
 This is how it looks like in FireCamp if we do not provide `game_id` in the `make_move` request:
@@ -219,6 +235,7 @@ This is how it looks like in FireCamp if we do not provide `game_id` in the `mak
 ![Figure 2:](/img/posts/socketio-automatic-docs/sio-asycnapi-pic2.webp)
 
 Because the `make_move` request may return an error in the acknowledged value now, we should add a new `MakeMoveAckData` model and annotate the `make_move` function accordingly. This will automatically update the documentation in our AsyncAPI specification.
+
 ```python
 class MakeMoveAckData(BaseModel):
     error: Optional[str] = Field(None, description='The error message', example='Invalid move')
@@ -230,7 +247,9 @@ def make_move(data: MakeMoveData) -> MakeMoveAckData:
 ```
 
 ### Final Code and Specification
+
 Here is the final code of the server. I also added examples to Pydantic models to make the specification more readable.
+
 ```python
 import pathlib
 from typing import List, Union, Optional
@@ -376,6 +395,7 @@ if __name__ == '__main__':
 ```
 
 And here is the auto generated specification:
+
 ```yaml
 asyncapi: 2.5.0
 channels:
@@ -383,15 +403,15 @@ channels:
     publish:
       message:
         oneOf:
-        - $ref: '#/components/messages/Create_Game'
-        - $ref: '#/components/messages/Make_Move'
+          - $ref: '#/components/messages/Create_Game'
+          - $ref: '#/components/messages/Make_Move'
     subscribe:
       message:
         oneOf:
-        - $ref: '#/components/messages/game_created'
-        - $ref: '#/components/messages/move_made'
-        - $ref: '#/components/messages/game_drawn'
-        - $ref: '#/components/messages/game_won'
+          - $ref: '#/components/messages/game_created'
+          - $ref: '#/components/messages/move_made'
+          - $ref: '#/components/messages/game_drawn'
+          - $ref: '#/components/messages/game_won'
     x-handlers:
       disconnect: disconnect
 components:
@@ -447,7 +467,7 @@ components:
           title: Game Id
           type: integer
       required:
-      - game_id
+        - game_id
       title: GameCreatedData
       type: object
     GameDrawnData:
@@ -462,7 +482,7 @@ components:
           title: Winner
           type: string
       required:
-      - winner
+        - winner
       title: GameWonData
       type: object
     MakeMoveAckData:
@@ -492,9 +512,9 @@ components:
           title: Y
           type: integer
       required:
-      - game_id
-      - x
-      - y
+        - game_id
+        - x
+        - y
       title: MakeMoveData
       type: object
     MoveMadeData:
@@ -502,15 +522,15 @@ components:
         board:
           description: The game board
           example:
-          - - X
-            - O
-            - ''
-          - - ''
-            - X
-            - ''
-          - - ''
-            - ''
-            - O
+            - - X
+              - O
+              - ''
+            - - ''
+              - X
+              - ''
+            - - ''
+              - ''
+              - O
           items:
             items:
               type: string
@@ -523,8 +543,8 @@ components:
           title: Turn
           type: string
       required:
-      - board
-      - turn
+        - board
+        - turn
       title: MoveMadeData
       type: object
     NoSpec:
@@ -549,6 +569,5 @@ servers:
     protocol: socketio
     url: http://localhost:5000
 ```
-
 
 > Cover image by <a href="https://images.pexels.com/photos/3608056/pexels-photo-3608056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">Windmills During Dawn</a> from <a href="https://www.pexels.com/photo">Unsplash</a>

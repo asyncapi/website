@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI Initiative Status Update (week 43, 2020)"
+title: 'AsyncAPI Initiative Status Update (week 43, 2020)'
 date: 2020-10-21T06:00:00+01:00
 type: Communication
 tags:
@@ -36,7 +36,7 @@ The template supports now an additional parameter called **pdf**. You use it to 
 
 ### Change Default Name of HTML File
 
-The template now supports an additional parameter called **outFilename**. You use it to change the default index.html file to something different, like for example, asyncapi.html. In the CLI, pass `-p outFilename=asyncapi.html` to get it. Thank you [Mitchell Sawatzky](https://github.com/bufutda). 
+The template now supports an additional parameter called **outFilename**. You use it to change the default index.html file to something different, like for example, asyncapi.html. In the CLI, pass `-p outFilename=asyncapi.html` to get it. Thank you [Mitchell Sawatzky](https://github.com/bufutda).
 
 ### Display of Schema UID
 
@@ -48,11 +48,12 @@ Notice how it is displayed in the below example, next to the first two **mixedTy
 
 ## Java Spring Template Improvements
 
-Our great contributor [Semen Tenischev](https://github.com/Tenischev) came back and kicked off the work on the Java template. Most important is a new feature to support _anyOf_ and _oneOf_. There are also bug fixes for enums generation and how schemas without UID are handled. The current version is 0.20.1. 
+Our great contributor [Semen Tenischev](https://github.com/Tenischev) came back and kicked off the work on the Java template. Most important is a new feature to support _anyOf_ and _oneOf_. There are also bug fixes for enums generation and how schemas without UID are handled. The current version is 0.20.1.
 
 ## Hacktoberfest Status
 
 For us, the Hacktoberfest celebration has been a great success so far. The first day of the event started with two spam pull requests, but then...well, see for yourself:
+
 - We had 24 contributors
 - We merged 58 pull requests!
 
@@ -66,9 +67,9 @@ We released [another](https://github.com/asyncapi/generator/releases/tag/v1.0.0-
 
 The last meeting took place on Tuesday, 13th of October, 4PM UTC. Meeting notes and recording are available [here](https://github.com/asyncapi/asyncapi/issues/451).
 
-The next meeting is scheduled for next [Tuesday, 27th of October 8AM UTC](https://everytimezone.com/s/577ca99f). 
+The next meeting is scheduled for next [Tuesday, 27th of October 8AM UTC](https://everytimezone.com/s/577ca99f).
 
-We work on the agenda for the next meeting [here](https://github.com/asyncapi/asyncapi/issues/455). At the moment, there is nothing on the agenda so you can easily sneak your topic in. 
+We work on the agenda for the next meeting [here](https://github.com/asyncapi/asyncapi/issues/455). At the moment, there is nothing on the agenda so you can easily sneak your topic in.
 
 We host the meeting on [Zoom](https://zoom.us/j/83140549308). Do not forget about future meetings and always have up to date invitations in your calendar by adding your email to [this](https://groups.google.com/forum/#!forum/asyncapi-users) mailing list.
 

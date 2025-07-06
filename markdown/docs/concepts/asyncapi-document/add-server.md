@@ -7,9 +7,9 @@ A server often acts as a message broker, managing communication between producer
 
 Adding and defining servers is important because it specifies how and where connections are made, enabling the sending and receiving of messages.
 
-Unique keys identify the server and contain information about the server's connection details, such as the host, protocol, and authentication. 
+Unique keys identify the server and contain information about the server's connection details, such as the host, protocol, and authentication.
 
-Here is a diagram of server information with selected fields: 
+Here is a diagram of server information with selected fields:
 
 ```mermaid
 graph LR
@@ -43,6 +43,7 @@ The previous example shows a server setup using the MQTT protocol, where message
 Add server definitions in a single location, such as `components.servers`, and then refer to them using the `$ref` keyword for easy reuse.
 
 Here's an example of an AsyncAPI document with two servers referenced from the `components` section:
+
 ```yaml
 servers:
   kafka-test:
@@ -82,7 +83,7 @@ servers:
 channels:
   myChannel:
     servers:
-      $ref: "#/servers/mqtt-test"
+      $ref: '#/servers/mqtt-test'
     message:
       $ref: '#/components/messages/myMessage'
 ```

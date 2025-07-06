@@ -4,7 +4,7 @@ import { logger } from '../../scripts/helpers/logger';
 import { getData } from '../../scripts/tools/extract-tools-github';
 
 jest.mock('../../scripts/helpers/logger', () => ({
-  logger: { info: jest.fn() }
+  logger: { info: jest.fn() },
 }));
 
 jest.mock('axios');
@@ -21,17 +21,18 @@ describe('getData', () => {
         items: [
           {
             name: '.asyncapi-tool',
-            path: 'asyncapi/.asyncapi-tool'
-          }
+            path: 'asyncapi/.asyncapi-tool',
+          },
         ],
-        total_count: 1
-      }
+        total_count: 1,
+      },
     };
 
-    const apiBaseUrl = 'https://api.github.com/search/code?q=filename:.asyncapi-tool&per_page=50&page=1';
+    const apiBaseUrl =
+      'https://api.github.com/search/code?q=filename:.asyncapi-tool&per_page=50&page=1';
     const headers = {
       accept: 'application/vnd.github.text-match+json',
-      authorization: `token ${process.env.GITHUB_TOKEN}`
+      authorization: `token ${process.env.GITHUB_TOKEN}`,
     };
 
     mockedAxios.get.mockResolvedValue(mockData);
@@ -49,9 +50,9 @@ describe('getData', () => {
         incomplete_results: true,
         items: Array.from({ length: 50 }, (_, index) => ({
           name: `.asyncapi-tool-${index + 1}`,
-          path: `asyncapi/.asyncapi-tool-${index + 1}`
-        }))
-      }
+          path: `asyncapi/.asyncapi-tool-${index + 1}`,
+        })),
+      },
     };
 
     const mockNextPageResponse = {
@@ -59,18 +60,21 @@ describe('getData', () => {
         incomplete_results: false,
         items: Array.from({ length: 50 }, (_, index) => ({
           name: `.asyncapi-tool-${index + 51}`,
-          path: `asyncapi/.asyncapi-tool-${index + 51}`
-        }))
-      }
+          path: `asyncapi/.asyncapi-tool-${index + 51}`,
+        })),
+      },
     };
 
-    const apiBaseUrl = 'https://api.github.com/search/code?q=filename:.asyncapi-tool&per_page=50&page=';
+    const apiBaseUrl =
+      'https://api.github.com/search/code?q=filename:.asyncapi-tool&per_page=50&page=';
     const headers = {
       accept: 'application/vnd.github.text-match+json',
-      authorization: `token ${process.env.GITHUB_TOKEN}`
+      authorization: `token ${process.env.GITHUB_TOKEN}`,
     };
 
-    mockedAxios.get.mockResolvedValueOnce(mockInitialResponse).mockResolvedValueOnce(mockNextPageResponse);
+    mockedAxios.get
+      .mockResolvedValueOnce(mockInitialResponse)
+      .mockResolvedValueOnce(mockNextPageResponse);
 
     const result = await getData();
 
@@ -96,7 +100,9 @@ describe('getData', () => {
   it('should throw an error when GITHUB_TOKEN is not set', async () => {
     delete process.env.GITHUB_TOKEN;
 
-    await expect(getData()).rejects.toThrow('GITHUB_TOKEN environment variable is required');
+    await expect(getData()).rejects.toThrow(
+      'GITHUB_TOKEN environment variable is required',
+    );
 
     process.env.GITHUB_TOKEN = 'mockToken';
   });

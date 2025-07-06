@@ -15,7 +15,7 @@ function Visualizer() {
   return (
     <div>
       <Schyma
-        title='AsyncAPI Specification'
+        title="AsyncAPI Specification"
         description="The AsyncAPI Specification defines a set of fields that can be used in an
         AsyncAPI document to describe an application's API. The document may reference other files for
         additional details or shared fields, but it is typically a single,

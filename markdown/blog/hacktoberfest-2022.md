@@ -1,5 +1,5 @@
 ---
-title: "Hacktoberfest was a blast!"
+title: 'Hacktoberfest was a blast!'
 date: 2022-12-13T10:00:00+01:00
 type: Community
 tags:
@@ -20,11 +20,11 @@ Hacktoberfest is an annual event that encourages people to contribute to open so
 
 ## Planting the seed
 
-For us, contributions come in all shapes and sizes. From typo fixes and bug reporting to more significant improvements. But that's not all! AsyncAPI also creates time to help onboard contributors who find it difficult to start contributing to the project or provide help to contributors who get stuck while contributing. 
+For us, contributions come in all shapes and sizes. From typo fixes and bug reporting to more significant improvements. But that's not all! AsyncAPI also creates time to help onboard contributors who find it difficult to start contributing to the project or provide help to contributors who get stuck while contributing.
 
 ## How we prepared
 
-Not gonna lie, this year's Hacktoberfest snuck up on us like Batman in Gotham City, and as soon as we realized this, we immediately started planning. We kicked off by defining our goals for Hacktoberfest as we've always done. 
+Not gonna lie, this year's Hacktoberfest snuck up on us like Batman in Gotham City, and as soon as we realized this, we immediately started planning. We kicked off by defining our goals for Hacktoberfest as we've always done.
 
 - Promote [AsyncAPI Initiative](https://www.asyncapi.com/) as a place where we work not only on the AsyncAPI specification but also lots of tools
 - Help members of the broader open-source community make their first contributions in a friendly environment
@@ -44,66 +44,66 @@ This is a huge amount of work, and we are really proud that so many wonderful pe
 We want to thank everyone personally who submitted improvements to our repositories. Here are the names of our heroes:
 
 <Profiles profiles={[
-  {
-    name: 'Amishakumari544 -  1 PR',
-    avatar: 'https://avatars.githubusercontent.com/Amishakumari544',
-    link: 'https://github.com/Amishakumari544'
-  },
-  {
-    name: 'toukirkhan -  2 PRs',
-    avatar: 'https://avatars.githubusercontent.com/toukirkhan',
-    link: 'https://github.com/toukirkhan'
-  },
-  {
-    name: 'aeworxet - 2 PRs',
-    avatar: 'https://avatars.githubusercontent.com/aeworxet',
-    link: 'https://github.com/aeworxet'
-  },
-  {
-    name: 'manavdesai27 - 1 PR',
-    avatar: 'https://avatars.githubusercontent.com/manavdesai27',
-    link: 'https://github.com/manavdesai27'
-  },
-  {
-    name: 'Ankitchaudharyy -  3 PRs',
-    avatar: 'https://avatars.githubusercontent.com/Ankitchaudharyy',
-    link: 'https://github.com/Ankitchaudharyy'
-  },
-  {
-    name: 'nawed2611 -  1 PR',
-    avatar: 'https://avatars.githubusercontent.com/nawed2611',
-    link: 'https://github.com/nawed2611'
-  },
-  {
-    name: 'dhfherna - 1 PR',
-    avatar: 'https://avatars.githubusercontent.com/dhfherna',
-    link: 'https://github.com/dhfherna'
-  },
-  {
-    name: 'amit-ksh - 1 PR',
-    avatar: 'https://avatars.githubusercontent.com/amit-ksh',
-    link: 'https://github.com/amit-ksh'
-  }, 
-  {
-    name: 'mastdev -  2 PRs',
-    avatar: 'https://avatars.githubusercontent.com/mastdev',
-    link: 'https://github.com/mastdev'
-  }, 
-  {
-    name: 'codingtenshi -  4 PRs',
-    avatar: 'https://avatars.githubusercontent.com/codingtenshi',
-    link: 'https://github.com/codingtenshi'
-  },
-  {
-    name: 'akshatnema - 1 PR',
-    avatar: 'https://avatars.githubusercontent.com/akshatnema',
-    link: 'https://github.com/akshatnema'
-  }, 
-  {
-    name: 'Mayaleeeee - 4 PRs',
-    avatar: 'https://avatars.githubusercontent.com/Mayaleeeee',
-    link: 'https://github.com/Mayaleeeee'
-  }, 
+{
+name: 'Amishakumari544 - 1 PR',
+avatar: 'https://avatars.githubusercontent.com/Amishakumari544',
+link: 'https://github.com/Amishakumari544'
+},
+{
+name: 'toukirkhan - 2 PRs',
+avatar: 'https://avatars.githubusercontent.com/toukirkhan',
+link: 'https://github.com/toukirkhan'
+},
+{
+name: 'aeworxet - 2 PRs',
+avatar: 'https://avatars.githubusercontent.com/aeworxet',
+link: 'https://github.com/aeworxet'
+},
+{
+name: 'manavdesai27 - 1 PR',
+avatar: 'https://avatars.githubusercontent.com/manavdesai27',
+link: 'https://github.com/manavdesai27'
+},
+{
+name: 'Ankitchaudharyy - 3 PRs',
+avatar: 'https://avatars.githubusercontent.com/Ankitchaudharyy',
+link: 'https://github.com/Ankitchaudharyy'
+},
+{
+name: 'nawed2611 - 1 PR',
+avatar: 'https://avatars.githubusercontent.com/nawed2611',
+link: 'https://github.com/nawed2611'
+},
+{
+name: 'dhfherna - 1 PR',
+avatar: 'https://avatars.githubusercontent.com/dhfherna',
+link: 'https://github.com/dhfherna'
+},
+{
+name: 'amit-ksh - 1 PR',
+avatar: 'https://avatars.githubusercontent.com/amit-ksh',
+link: 'https://github.com/amit-ksh'
+},
+{
+name: 'mastdev - 2 PRs',
+avatar: 'https://avatars.githubusercontent.com/mastdev',
+link: 'https://github.com/mastdev'
+},
+{
+name: 'codingtenshi - 4 PRs',
+avatar: 'https://avatars.githubusercontent.com/codingtenshi',
+link: 'https://github.com/codingtenshi'
+},
+{
+name: 'akshatnema - 1 PR',
+avatar: 'https://avatars.githubusercontent.com/akshatnema',
+link: 'https://github.com/akshatnema'
+},
+{
+name: 'Mayaleeeee - 4 PRs',
+avatar: 'https://avatars.githubusercontent.com/Mayaleeeee',
+link: 'https://github.com/Mayaleeeee'
+},
 ]} />
 
 ## Late to the party?

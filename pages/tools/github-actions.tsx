@@ -13,7 +13,7 @@ import Paragraph from '../../components/typography/Paragraph';
  */
 function renderButtons(): React.JSX.Element {
   return (
-    <div className='mt-8'>
+    <div className="mt-8">
       {/* <Button
         text="Learn more"
         href="/docs/tools/github-actions"
@@ -22,9 +22,9 @@ function renderButtons(): React.JSX.Element {
         className="w-full mb-2 sm:w-auto sm:mb-0 sm:mr-2"
       /> */}
       <GithubButton
-        text='View on Github'
-        className='w-full sm:w-auto'
-        href='https://www.github.com/asyncapi/github-action-for-generator'
+        text="View on Github"
+        className="w-full sm:w-auto"
+        href="https://www.github.com/asyncapi/github-action-for-generator"
       />
     </div>
   );
@@ -66,29 +66,44 @@ export default function GithubActionsPage() {
   const image = '/img/social/githubactions-card.jpg';
 
   return (
-    <GenericLayout title='GitHub Actions' description={description} image={image} wide>
-      <div className='overflow-hidden py-12'>
-        <div className='relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-screen-xl lg:px-8'>
-          <div className='relative'>
-            <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg} className='text-center'>
+    <GenericLayout
+      title="GitHub Actions"
+      description={description}
+      image={image}
+      wide
+    >
+      <div className="overflow-hidden py-12">
+        <div className="relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-screen-xl lg:px-8">
+          <div className="relative">
+            <Heading
+              level={HeadingLevel.h1}
+              typeStyle={HeadingTypeStyle.lg}
+              className="text-center"
+            >
               Automate using GitHub Actions
             </Heading>
-            <Paragraph className='mx-auto mt-4 max-w-3xl text-center'>{description}</Paragraph>
+            <Paragraph className="mx-auto mt-4 max-w-3xl text-center">
+              {description}
+            </Paragraph>
           </div>
 
-          <div className='relative mt-12 lg:mt-20 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8'>
-            <div className='relative mb-8 lg:mt-8'>
-              <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.mdSemibold}>
+          <div className="relative mt-12 lg:mt-20 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
+            <div className="relative mb-8 lg:mt-8">
+              <Heading
+                level={HeadingLevel.h2}
+                typeStyle={HeadingTypeStyle.mdSemibold}
+              >
                 Generate docs
               </Heading>
-              <Paragraph className='mt-3 lg:pr-4'>
-                Seamlessly integrate the docs generation process with your GitHub pipeline. Make sure your documentation
-                is always up to date. It will be a gift to your team and your future self.
+              <Paragraph className="mt-3 lg:pr-4">
+                Seamlessly integrate the docs generation process with your
+                GitHub pipeline. Make sure your documentation is always up to
+                date. It will be a gift to your team and your future self.
               </Paragraph>
               {renderButtons()}
             </div>
 
-            <CodeBlock hasWindow textSizeClassName='text-sm'>
+            <CodeBlock hasWindow textSizeClassName="text-sm">
               {getCode()}
             </CodeBlock>
           </div>

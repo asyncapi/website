@@ -1,5 +1,5 @@
 ---
-title: "Summary of things that happened at AsyncAPI Initiative from January to April, 2022"
+title: 'Summary of things that happened at AsyncAPI Initiative from January to April, 2022'
 date: 2022-04-29T06:00:00+01:00
 type: Communication
 tags:
@@ -26,8 +26,8 @@ This one is pretty easy to spot, especially if you have been with AsyncAPI Initi
 On March 10, we announced a change to the AsyncAPI brand. Change that was needed. A refresh of this faded green that I personally never liked. :joy:
 
 <TwitterTweetEmbed
-  tweetId='1501977719915098120'
-  options={{
+tweetId='1501977719915098120'
+options={{
     cards: 'hidden',
     width: 200,
     maxWidth: 400
@@ -37,7 +37,8 @@ On March 10, we announced a change to the AsyncAPI brand. Change that was needed
 It was a massive effort led by [Missy Turco](https://twitter.com/missyturco). Months of work, research, and discussions with the community.
 
 It is not all. More work in the area is needed:
-- Design System :muscle: - Get involved in the [related design system repository](https://github.com/asyncapi/design-system) if you are interested in helping out. 
+
+- Design System :muscle: - Get involved in the [related design system repository](https://github.com/asyncapi/design-system) if you are interested in helping out.
 - AsyncAPI Mascots refresh - We need to refresh our existing Eve and Chan mascots to match the new brand. Any help would be appreciated.
 
 For more regular news and updates on topics around brand and design in AsyncAPI Initiative, I definitely recommend you follow [Missy Turco](https://twitter.com/missyturco) and read her [regular design updates](https://missyturco.notion.site/03556522990e4067ae877fd236c37268?v=d60154483de849cd8125f8333cfe1d36).
@@ -46,7 +47,7 @@ For more regular news and updates on topics around brand and design in AsyncAPI 
 
 We want to organize our first hybrid conference, one you can watch online and participate in person. May is right behind the corner, so not much time is left. We need to start working actively on the event now.
 
-We discuss all aspects of our upcoming conference in our [Community Discussion for 2022 Conference Organization](https://github.com/asyncapi/community/discussions/categories/asyncapi-conf-2022-organization) openly. Please join and actively support the effort. We need lots of volunteers to make this happen. 
+We discuss all aspects of our upcoming conference in our [Community Discussion for 2022 Conference Organization](https://github.com/asyncapi/community/discussions/categories/asyncapi-conf-2022-organization) openly. Please join and actively support the effort. We need lots of volunteers to make this happen.
 
 We need to have a special task force that will focus on the subject. Please join the [discussion on hosting a conference-dedicated weekly meeting](https://github.com/asyncapi/community/discussions/322).
 
@@ -62,7 +63,7 @@ Huge thanks to [Krishna Kumar](https://github.com/Krishks369) and [Shreyansh Jai
 
 If you want to learn more about becoming a meeting host, or something else related to meetings, get familiar with our [dedicated meetings FAQ](https://github.com/asyncapi/community/blob/master/MEETINGS_ORGANIZATION.md).
 
-Oh, and I almost forgot, look at this. :point_down: :star: 
+Oh, and I almost forgot, look at this. :point_down: :star:
 All [info about AsyncAPI-related meetings](https://www.asyncapi.com/community/meetings) is in one beautiful place! :heart:
 
 <Figure
@@ -91,13 +92,14 @@ One of the [goals for our 2022 community-building efforts](https://github.com/as
 
 ### Google Summer of Code
 
-We did not start well. We were not accepted for [Google Summer of Code](https://summerofcode.withgoogle.com). Don't ask me why. I really do not know. I wish I could have a clear answer from them about what failed on my end, where I made mistakes in our application. :cry: 
+We did not start well. We were not accepted for [Google Summer of Code](https://summerofcode.withgoogle.com). Don't ask me why. I really do not know. I wish I could have a clear answer from them about what failed on my end, where I made mistakes in our application. :cry:
 
 We never give up here at AsyncAPI, though. :smiley:
 
 ### OpenForce
 
-March was a month where we joined [OpenForce](https://www.asyncapi.com/blog/openforce-2022) thanks to amazing support from [Hargun Kaur](https://www.linkedin.com/in/hkaur008/). As a result, we managed to onboard a few new folks and gained important contributions in exchange. There are  a few PRs still open, but here are some of the completed PRs:
+March was a month where we joined [OpenForce](https://www.asyncapi.com/blog/openforce-2022) thanks to amazing support from [Hargun Kaur](https://www.linkedin.com/in/hkaur008/). As a result, we managed to onboard a few new folks and gained important contributions in exchange. There are a few PRs still open, but here are some of the completed PRs:
+
 - [Namya LG](https://github.com/Namyalg) introduced a great improvement to our CI by creating dedicated [CI workflows that search for broken links](https://github.com/asyncapi/.github/issues/92) in our documentation across all repositories.
 - [Harsh Mishra](https://www.linkedin.com/in/harshcasper/) introduced a [CI workflow that validates docker images](https://github.com/asyncapi/server-api/issues/50) in projects where we publish them.
 - [Abhijeet Jejurkar](https://github.com/abhijeetjejurkar) [improved the Kubernetes deployment for our `server-api` service](https://github.com/asyncapi/server-api/issues/57).
@@ -112,8 +114,8 @@ It is also super important to mention [Abir Pal](https://twitter.com/imabptweets
 Success with OpenForce was followed by the unexpected announcement that AsyncAPI was accepted as an organization for Google Season of Docs (GSoD) 2022, with a $10k budget. :muscle:
 
 <TwitterTweetEmbed
-  tweetId='1514670329246801926'
-  options={{
+tweetId='1514670329246801926'
+options={{
     cards: 'hidden',
     width: 200,
     maxWidth: 400
@@ -127,7 +129,7 @@ Quetzalli and I will be mentors for our GSoD interns in the following months. St
 
 ### AsyncAPI Mentorship
 
-We did not want to give up even though the Google Summer of Code (GSoC) 2022 application was declined. We knew many community members joined and started contributing because they counted on AsyncAPI being part of GSoC. 
+We did not want to give up even though the Google Summer of Code (GSoC) 2022 application was declined. We knew many community members joined and started contributing because they counted on AsyncAPI being part of GSoC.
 
 Well tl;dr, our TSC just accepted an idea to start our own [AsyncAPI Mentorship](https://github.com/asyncapi/community/discussions/284) program! :rocket:
 
@@ -143,7 +145,7 @@ I recommend you [follow Barbaño's monthly updates](https://gist.github.com/Barb
 
 ## Docs Feedback Form
 
-One of our missions is to have kick-ass documentation. Easy, right? 
+One of our missions is to have kick-ass documentation. Easy, right?
 
 Writing docs is easy, just like writing code (at least in my opinion :stuck_out_tongue_winking_eye:). Well, we all know the devil is hidden in details. Details like gathering requirements, figuring out architecture, and making sure you have a well-motivated group of people working on it. And last but not least, make sure the community can easily share feedback on your work transparently.
 
@@ -154,8 +156,8 @@ Our [new docs information architecture is almost here too](https://github.com/as
 Since this week, we can also say "checked" :white_check_mark: to the idea of **getting docs feedback** from the community.
 
 <TwitterTweetEmbed
-  tweetId='1518596333749391363'
-  options={{
+tweetId='1518596333749391363'
+options={{
     width: 200,
     maxWidth: 400
   }}
@@ -164,6 +166,7 @@ Since this week, we can also say "checked" :white_check_mark: to the idea of **g
 Each documentation page has a dedicated feedback form that one can fill in anonymously. The form injects the feedback into a [docs-related GitHub Discussion like this example](https://github.com/asyncapi/community/discussions/340).
 
 Huge applause to:
+
 - [Quetzalli Writes][quetzalliwrites-xcom] for leading the change
 - [Missy Turco](https://twitter.com/missyturco) for amazing support with design
 - [Maciej Urbanczyk](https://github.com/magicmatatjahu) for detailed review

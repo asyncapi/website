@@ -51,7 +51,14 @@ export interface FrontMatter {
  * @returns An array of error messages if any validations fail, or null if the frontmatter is valid.
  */
 function validateBlogs(frontmatter: FrontMatter) {
-  const requiredAttributes = ['title', 'date', 'type', 'tags', 'cover', 'authors'];
+  const requiredAttributes = [
+    'title',
+    'date',
+    'type',
+    'tags',
+    'cover',
+    'authors',
+  ];
   const errors = [];
 
   if (!frontmatter) {
@@ -91,7 +98,9 @@ function validateBlogs(frontmatter: FrontMatter) {
           errors.push(`Author at index ${index} is missing a name`);
         }
         if (author.link && !isValidURL(author.link)) {
-          errors.push(`Invalid URL for author at index ${index}: ${author.link}`);
+          errors.push(
+            `Invalid URL for author at index ${index}: ${author.link}`,
+          );
         }
         if (!author.photo) {
           errors.push(`Author at index ${index} is missing a photo`);
@@ -119,7 +128,10 @@ function validateDocs(frontmatter: FrontMatter) {
   }
 
   // Check if weight exists and is a number
-  if (frontmatter.weight === undefined || typeof frontmatter.weight !== 'number') {
+  if (
+    frontmatter.weight === undefined ||
+    typeof frontmatter.weight !== 'number'
+  ) {
     errors.push('Weight is missing or not a number');
   }
 
@@ -140,7 +152,7 @@ function validateDocs(frontmatter: FrontMatter) {
 async function checkMarkdownFiles(
   folderPath: string,
   validateFunction: (frontmatter: FrontMatter) => string[] | null,
-  relativePath: string = ''
+  relativePath: string = '',
 ) {
   try {
     const files = await fs.readdir(folderPath);
@@ -149,7 +161,11 @@ async function checkMarkdownFiles(
       const relativeFilePath = path.join(relativePath, file);
 
       // Skip the folder 'docs/reference/specification'
-      if (path.normalize(relativeFilePath).includes(path.join('reference', 'specification'))) {
+      if (
+        path
+          .normalize(relativeFilePath)
+          .includes(path.join('reference', 'specification'))
+      ) {
         return;
       }
 
@@ -193,7 +209,7 @@ async function main() {
   try {
     await Promise.all([
       checkMarkdownFiles(docsFolderPath, validateDocs),
-      checkMarkdownFiles(blogsFolderPath, validateBlogs)
+      checkMarkdownFiles(blogsFolderPath, validateBlogs),
     ]);
   } catch (error) {
     logger.error('Failed to validate markdown files:', error);

@@ -26,10 +26,9 @@ style H fill:#47BCEE,stroke:#47BCEE;
 style I fill:#47BCEE,stroke:#47BCEE;
 ```
 
-
 ## Server bindings
 
-Server bindings provide protocol-specific information related to the server configuration. For example, if you use Pulsar as your message broker, you can specify the tenant name in the server bindings. 
+Server bindings provide protocol-specific information related to the server configuration. For example, if you use Pulsar as your message broker, you can specify the tenant name in the server bindings.
 
 Here is a diagram explaining server bindings:
 
@@ -70,7 +69,6 @@ D --> G{Channel Bindings}
 style G fill:#47BCEE,stroke:#47BCEE;
 ```
 
-
 Here is an example of using channel bindings to specify protocol-specific information for a specific channel:
 
 ```yml
@@ -82,7 +80,7 @@ channels:
         partitions: 20
         replicas: 3
         topicConfiguration:
-          cleanup.policy: ["delete", "compact"]
+          cleanup.policy: ['delete', 'compact']
           retention.ms: 604800000
           retention.bytes: 1000000000
           delete.retention.ms: 86400000
@@ -94,7 +92,7 @@ The previous document shows how to configure channel bindings for a Kafka topic-
 
 ## Message bindings
 
-Message bindings provide protocol-specific information for a specific message. For example, for the AMQP protocol, you can specify the message type in a protocol-specific notation. 
+Message bindings provide protocol-specific information for a specific message. For example, for the AMQP protocol, you can specify the message type in a protocol-specific notation.
 
 Here is a diagram explaining where message bindings fit into the AsyncAPI document structure:
 
@@ -105,7 +103,6 @@ F --> G{Message Bindings}
 
 style G fill:#47BCEE,stroke:#47BCEE;
 ```
-
 
 Here is an example of using message bindings to provide protocol-specific information for a specific message:
 
@@ -138,7 +135,6 @@ E --> H{Operation Bindings}
 
 style H fill:#47BCEE,stroke:#47BCEE;
 ```
-
 
 Here is an example of using operation bindings to specify protocol-specific information for a specific operation:
 

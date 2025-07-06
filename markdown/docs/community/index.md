@@ -12,6 +12,7 @@ Welcome to AsyncAPI **Community**! Our Community section documents the community
 <Remember>
 
 ## Contribute to the AsyncAPI Community section
+
 <ContributionNotes />
 
 </Remember>

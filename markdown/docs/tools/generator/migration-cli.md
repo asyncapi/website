@@ -1,36 +1,44 @@
 ---
-title: "Migrating from `ag` CLI to AsyncAPI CLI"
+title: 'Migrating from `ag` CLI to AsyncAPI CLI'
 weight: 260
 ---
 
-This guide provides detailed instructions on how to transition from the old `ag` Generator CLI  to the new AsyncAPI CLI.
+This guide provides detailed instructions on how to transition from the old `ag` Generator CLI to the new AsyncAPI CLI.
 
 ## Options Overview
 
 Here is a list of `ag` options and their equivalents in the AsyncAPI CLI:
 
 - **-d, --disable-hook [hooks...]**
+
   - **AsyncAPI CLI equivalent:** `asyncapi generate fromTemplate <ASYNCAPI> <TEMPLATE> --disable-hook <hookType>=<hookName>`
 
 - **--debug**
+
   - **AsyncAPI CLI equivalent:** `asyncapi generate fromTemplate <ASYNCAPI> <TEMPLATE> --debug`
 
 - **-i, --install**
+
   - **AsyncAPI CLI equivalent:** `asyncapi generate fromTemplate <ASYNCAPI> <TEMPLATE> --install`
 
 - **-n, --no-overwrite &#x3C;glob&#x3E;**
+
   - **AsyncAPI CLI equivalent:** `asyncapi generate fromTemplate <ASYNCAPI> <TEMPLATE> --no-overwrite <glob>`
 
 - **-o, --output &#x3C;outputDir&#x3E;**
+
   - **AsyncAPI CLI equivalent:** `asyncapi generate fromTemplate <ASYNCAPI> <TEMPLATE> --output <outputDir>`
 
 - **-p, --param &#x3C;name&#x3D;value&#x3E;**
+
   - **AsyncAPI CLI equivalent:** `asyncapi generate fromTemplate <ASYNCAPI> <TEMPLATE> --param <name=value>`
 
 - **--force-write**
+
   - **AsyncAPI CLI equivalent:** `asyncapi generate fromTemplate <ASYNCAPI> <TEMPLATE> --force-write`
 
 - **--watch-template**
+
   - **AsyncAPI CLI equivalent:** `asyncapi generate fromTemplate <ASYNCAPI> <TEMPLATE> --watch`
 
 - **--map-base-url &#x3C;url:folder&#x3E;**
@@ -47,11 +55,13 @@ There are multiple different artifacts that AsyncAPI CLI is provided as. Get fam
 Replace the deprecated `ag` commands with the AsyncAPI CLI equivalents. Below are examples of how to update your commands:
 
 **Using `ag`**:
+
 ```
 ag ./asyncapi.yaml ./template -o ./output -p param1=value1 --debug --install --disable-hook hookType=hookName
 ```
 
 **Using AsyncAPI CLI**:
+
 ```
 asyncapi generate fromTemplate ./asyncapi.yaml ./template -o ./output -p param1=value1 --debug --install --disable-hook hookType=hookName
 ```

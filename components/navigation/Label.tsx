@@ -2,7 +2,7 @@ import React from 'react';
 
 enum LabelColor {
   Gray = 'gray',
-  Green = 'green'
+  Green = 'green',
 }
 
 interface LabelProps {
@@ -30,7 +30,9 @@ export default function Label({ text, color = LabelColor.Gray }: LabelProps) {
   }
 
   return (
-    <span className={`ml-2 inline-block -translate-y-0.5 rounded px-1 py-0 text-xs uppercase${colorClasses}`}>
+    <span
+      className={`ml-2 inline-block -translate-y-0.5 rounded px-1 py-0 text-xs uppercase${colorClasses}`}
+    >
       {text}
     </span>
   );

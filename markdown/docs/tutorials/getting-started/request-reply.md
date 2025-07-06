@@ -9,9 +9,9 @@ Before we begin, it would be beneficial for you to have a basic understanding of
 
 [Request/reply](https://www.enterpriseintegrationpatterns.com/patterns/messaging/RequestReply.html) is a messaging pattern involving two key components: the **requester**, which sends a request message, and the **replier**, responsible for receiving this request and responding with a reply. This pattern fundamentally revolves around these two roles, requester and replier.
 
-## Static reply address 
+## Static reply address
 
-Here's how you can implement the request/reply pattern when the response address is known at the compile or design time. 
+Here's how you can implement the request/reply pattern when the response address is known at the compile or design time.
 
 A requester can be configured with the `send` operation, where it dispatches a message to the `ping` channel and anticipates receiving a response through the `pong` channel.
 
@@ -60,7 +60,7 @@ components:
             const: pong`}
 </CodeBlock>
 
-## Dynamic reply address 
+## Dynamic reply address
 
 Occasionally, the destination for a reply cannot be predetermined during the design or compile phase. In such cases, the address for the reply is dynamically determined at runtime, allowing for more flexible and adaptive communication.
 

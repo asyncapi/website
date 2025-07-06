@@ -1,5 +1,5 @@
 ---
-title: "Understanding AsyncAPIs with a Practical Example"
+title: 'Understanding AsyncAPIs with a Practical Example'
 date: 2021-03-18T06:00:00+01:00
 type: Engineering
 tags:
@@ -22,22 +22,24 @@ The information exchanged between them must be documented and maintained consist
 This post explains how to map a simple event-driven application architecture into corresponding AsyncAPI specifications by walking you through an example.
 
 # The event-driven use case
+
 Imagine you are designing a solution to the following use case.
 
-Two event-driven microservices are communicating through a message broker in a publish/subscribe manner. The first service, the Account service, publishes the ***UserSignedUp*** event when a new user account is created. The second service, the Email service, subscribed to receive those events to send the new user a welcome email.
+Two event-driven microservices are communicating through a message broker in a publish/subscribe manner. The first service, the Account service, publishes the **_UserSignedUp_** event when a new user account is created. The second service, the Email service, subscribed to receive those events to send the new user a welcome email.
 
 We can come up with a simple solution architecture as follows.
 
 ![solution](/img/posts/understanding-asyncapis/solution.webp)
 
 # The problem
+
 Now we have a solution architecture in place. Should we go ahead and start building?
 
 No! Not so fast. There are strong reasons behind not doing so.
 
 Account and Email services are loosely coupled distributed services, potentially built, operated, and maintained by separated teams. Two services will have their own context boundaries defined. All teams must explicitly define any information exchanged across these boundaries. For example, all teams must maintain broker configurations, topics, and event formats in a central place. Otherwise, maintaining the solution will become a nightmare in the long run.
 
-In our solution, the format of the ***UserSignedUp*** event must be consistent across two services. If one team makes a change, it has to be visible across the board.
+In our solution, the format of the **_UserSignedUp_** event must be consistent across two services. If one team makes a change, it has to be visible across the board.
 
 Therefore, a proper process must be in place to describe different components of an event-driven system and their interactions.
 AsyncAPI specification comes into play at this point.
@@ -68,7 +70,7 @@ As per the specification:
 
 > An application is any kind of computer program or a group of them. It MUST be a [producer](https://www.asyncapi.com/docs/specifications/2.0.0#definitionsProducer), a [consumer](https://www.asyncapi.com/docs/specifications/2.0.0#definitionsConsumer) or both. An application MAY be a microservice, IoT device (sensor), mainframe process, etc. An application MAY be written in any number of different programming languages as long as they support the selected [protocol](https://www.asyncapi.com/docs/specifications/2.0.0#definitionsProtocol). An application MUST also use a protocol supported by the server in order to connect and exchange [messages](https://www.asyncapi.com/docs/specifications/2.0.0#definitionsMessage).
 
-In our solution, both Account service and Email service can be considered as applications as they produce and consume ***UserSignedUp*** events, respectively. Hence, both services will get their own AsyncAPI specification file.
+In our solution, both Account service and Email service can be considered as applications as they produce and consume **_UserSignedUp_** events, respectively. Hence, both services will get their own AsyncAPI specification file.
 
 Let’s start with the Account service first.
 
@@ -98,11 +100,7 @@ Our solution has been designed around a message broker. Therefore, both Account 
 
 We can use the `servers` object to define that information for the Account service. In AsyncAPI terms, a server object defines a message broker, a server, or any other kind of computer program capable of sending or receiving data.
 
-
-
 ![servers](/img/posts/understanding-asyncapis/servers.webp)
-
-
 
 Add the following content to the same file. Here, we are using the test MQTT broker available at mosquitto.org. Apart from MQTT, AsyncAPI supports other protocols like AMQP and Kafka.
 
@@ -126,8 +124,6 @@ There can be many channel instances in a server, allowing messages with differen
 
 This relationship is illustrated in the following figure.
 
-
-
 ![channels](/img/posts/understanding-asyncapis/channels.webp)
 
 In our solution, both services publish and consume events on the same channel.
@@ -140,29 +136,29 @@ channels:
     subscribe:
       operationId: emitUserSignUpEvent
       message:
-        $ref : '#/components/messages/UserSignedUp'
+        $ref: '#/components/messages/UserSignedUp'
 ```
 
-The Account service publishes ***UserSignedUp*** events to the broker. Hence, it is a publish operation. The **operationId** specifies the name of the method or function that emits the ***UserSignedUp*** event in the generated code.
+The Account service publishes **_UserSignedUp_** events to the broker. Hence, it is a publish operation. The **operationId** specifies the name of the method or function that emits the **_UserSignedUp_** event in the generated code.
 
 The above operation uses a reference to specify the format of the message that publishes. We’ll get to the schema definitions shortly.
 
 ## Defining messages and payload schema
 
-In our solution, both services produce and consume the ***UserSignedUp*** event, which has the following format.
+In our solution, both services produce and consume the **_UserSignedUp_** event, which has the following format.
 
 ```json
 {
-  "firstName" : "John",
-  "lastName" : "Doe",
-  "email" : "aa@bb.cc",
-  "createdAt" : "2021-02-12 09:34:123"
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "aa@bb.cc",
+  "createdAt": "2021-02-12 09:34:123"
 }
 ```
 
-The publish operation of the ***user/signedup*** channel had a reference to the event payload’s schema. Now we need to define it properly. The schema definitions are done with AsyncAPI schema, which is 100% compatible with JSON Schema Draft 07. Refer to [this](https://www.asyncapi.com/docs/specifications/2.0.0#schemaObject) if you need to explore more on the AsynAPI schemas.
+The publish operation of the **_user/signedup_** channel had a reference to the event payload’s schema. Now we need to define it properly. The schema definitions are done with AsyncAPI schema, which is 100% compatible with JSON Schema Draft 07. Refer to [this](https://www.asyncapi.com/docs/specifications/2.0.0#schemaObject) if you need to explore more on the AsynAPI schemas.
 
-Message schemas, security schemes, and bindings are housed by ***Components*** object. All objects defined within the components object must be referenced from properties outside the components object.
+Message schemas, security schemes, and bindings are housed by **_Components_** object. All objects defined within the components object must be referenced from properties outside the components object.
 
 After adding the schemas, the final AsyncAPI definition for the Account service file should look like the following.
 
@@ -188,7 +184,7 @@ channels:
     subscribe:
       operationId: emitUserSignUpEvent
       message:
-        $ref : '#/components/messages/UserSignedUp'
+        $ref: '#/components/messages/UserSignedUp'
 
 components:
   messages:
@@ -206,20 +202,18 @@ components:
       properties:
         firstName:
           type: string
-          description: "foo"
+          description: 'foo'
         lastName:
           type: string
-          description: "bar"
+          description: 'bar'
         email:
           type: string
           format: email
-          description: "baz"
+          description: 'baz'
         createdAt:
           type: string
-          format: date-time  
+          format: date-time
 ```
-
-
 
 # Documenting the Email service
 
@@ -247,7 +241,7 @@ channels:
     publish:
       operationId: onUserSignUp
       message:
-        $ref : '#/components/messages/UserSignedUp'
+        $ref: '#/components/messages/UserSignedUp'
 
 components:
   messages:
@@ -265,21 +259,21 @@ components:
       properties:
         firstName:
           type: string
-          description: "foo"
+          description: 'foo'
         lastName:
           type: string
-          description: "bar"
+          description: 'bar'
         email:
           type: string
           format: email
-          description: "baz"
+          description: 'baz'
         createdAt:
           type: string
           format: date-time
-          description: "foo"
+          description: 'foo'
 ```
 
-Notice that the servers, channels, and payloads are the same. The only difference is in the **publish** operation, bound to the ***user/signedup*** channel. It says that messages published to this channel will be received by this service.
+Notice that the servers, channels, and payloads are the same. The only difference is in the **publish** operation, bound to the **_user/signedup_** channel. It says that messages published to this channel will be received by this service.
 
 # What’s next?
 

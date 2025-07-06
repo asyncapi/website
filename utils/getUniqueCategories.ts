@@ -10,11 +10,13 @@ export const getUniqueCategories = (): string[] => {
   const allCategories: string[] = [];
 
   Object.keys(Expenses).forEach((month) => {
-    Expenses[month as keyof typeof Expenses].forEach((entry: { Category: string }) => {
-      if (!allCategories.includes(entry.Category)) {
-        allCategories.push(entry.Category);
-      }
-    });
+    Expenses[month as keyof typeof Expenses].forEach(
+      (entry: { Category: string }) => {
+        if (!allCategories.includes(entry.Category)) {
+          allCategories.push(entry.Category);
+        }
+      },
+    );
   });
 
   return allCategories;

@@ -14,7 +14,10 @@ interface IChapterSuggestionsProps {
  * @param {Array} props.suggestions - The suggestions of the chapter
  * @param {string} props.className - The class name of the component
  */
-export default function ChapterSuggestions({ suggestions = [], className = '' }: IChapterSuggestionsProps) {
+export default function ChapterSuggestions({
+  suggestions = [],
+  className = '',
+}: IChapterSuggestionsProps) {
   return (
     <div className={`${className} grid grid-cols-1 gap-4 sm:grid-cols-2`}>
       {suggestions.map((suggestion, index) => (

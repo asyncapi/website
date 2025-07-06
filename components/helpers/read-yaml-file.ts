@@ -7,6 +7,8 @@ export const readYamlFile = async (fileName: string) => {
 
     return yamlString;
   } catch (error: any) {
-    throw new Error(`Error: something went wrong while reading ${fileName} file: ${error.message}`);
+    throw new Error(
+      `Error: something went wrong while reading ${fileName} file: ${error.message}`,
+    );
   }
 };

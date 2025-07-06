@@ -3,7 +3,7 @@ import {
   docObject,
   emptyDocObject,
   nestedChildrenDocObject,
-  singlePostDocObject
+  singlePostDocObject,
 } from '../fixtures/convertDocPostData';
 
 describe('convertDocPosts', () => {

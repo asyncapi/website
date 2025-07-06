@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI Hackathon and Conference - Get Yourself Ready"
+title: 'AsyncAPI Hackathon and Conference - Get Yourself Ready'
 date: 2021-08-30T06:00:00+01:00
 type: Communication
 tags:
@@ -19,9 +19,9 @@ AsyncAPI Community organizes two important events in the second half of 2021:
 - Hackathon in October
 - Online conference on November 16-18
 
-We do not have the website ready yet. 
+We do not have the website ready yet.
 
-We do not have the call for proposals opened yet. 
+We do not have the call for proposals opened yet.
 
 Don't worry though, all logistics are in progress.
 
@@ -45,7 +45,7 @@ We do know these events will take place for sure!
 - Start talking to your employer. **We need some cash from sponsors** to give it away to the community and spend some on event marketing.
 - Start working on a proposal for a conference talk. The call for proposals is not yet officially opened, but you can already draft the initial proposal.
 - Start brainstorming on your hackathon project as it's only one month left for the event:
-  - You want to be part of it? Feel free to [discuss your idea with others](https://github.com/asyncapi/community/discussions/categories/asyncapi-hack-2021-ideas-brainstorming) if you are not sure it makes sense, 
+  - You want to be part of it? Feel free to [discuss your idea with others](https://github.com/asyncapi/community/discussions/categories/asyncapi-hack-2021-ideas-brainstorming) if you are not sure it makes sense,
   - You don't have time? That is fine, at least [drop your ideas](https://github.com/asyncapi/community/discussions/categories/asyncapi-hack-2021-ideas-brainstorming), maybe others will pick them up
 
 That's all for now folks. Stay tuned!

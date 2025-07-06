@@ -7,18 +7,18 @@ import { expectedContent, mockEvents } from './fixtures/meetingsData';
 
 jest.mock('googleapis', () => {
   const events = {
-    list: jest.fn()
+    list: jest.fn(),
   };
   const calendar = {
-    events
+    events,
   };
   const mockGoogle = {
     calendar: jest.fn(() => calendar),
     auth: {
       GoogleAuth: jest.fn(() => ({
-        getClient: jest.fn()
-      }))
-    }
+        getClient: jest.fn(),
+      })),
+    },
   };
 
   return { google: mockGoogle };
@@ -49,13 +49,13 @@ describe('buildMeetings', () => {
 
     expect(google.auth.GoogleAuth).toHaveBeenCalledWith({
       scopes: ['https://www.googleapis.com/auth/calendar'],
-      credentials: { key: 'test_key' }
+      credentials: { key: 'test_key' },
     });
     expect(google.calendar).toHaveBeenCalled();
     expect(google.calendar('v3').events.list).toHaveBeenCalledWith({
       calendarId: 'test_calendar_id',
       timeMax: expect.any(String),
-      timeMin: expect.any(String)
+      timeMin: expect.any(String),
     });
 
     const fileContent = readFileSync(outputFilePath, 'utf8');
@@ -94,7 +94,7 @@ describe('buildMeetings', () => {
 
   it('should handle file write errors', async () => {
     mockGoogleAuth.mockImplementation(() => ({
-      getClient: jest.fn()
+      getClient: jest.fn(),
     }));
 
     mockCalendar.mockResolvedValue({ data: { items: mockEvents } });
@@ -115,12 +115,12 @@ describe('buildMeetings', () => {
   it('should throw an error if the data structure received from Google Calendar API is invalid', async () => {
     mockCalendar.mockResolvedValueOnce({
       data: {
-        items: null // or {} or any non-array value to trigger the error
-      }
+        items: null, // or {} or any non-array value to trigger the error
+      },
     });
 
     await expect(buildMeetings('/path/to/write')).rejects.toThrow(
-      'Invalid data structure received from Google Calendar API'
+      'Invalid data structure received from Google Calendar API',
     );
   });
 
@@ -132,13 +132,15 @@ describe('buildMeetings', () => {
             summary: 'Test Event',
             htmlLink: 'http://example.com/event',
             // start.dateTime is intentionally missing to trigger the error
-            start: {}
-          }
-        ]
-      }
+            start: {},
+          },
+        ],
+      },
     });
 
-    await expect(buildMeetings('/path/to/write')).rejects.toThrow('start.dateTime is missing in the event');
+    await expect(buildMeetings('/path/to/write')).rejects.toThrow(
+      'start.dateTime is missing in the event',
+    );
   });
 
   it('should throw an error if CALENDAR_SERVICE_ACCOUNT is not set', async () => {
@@ -149,7 +151,7 @@ describe('buildMeetings', () => {
 
     try {
       await expect(buildMeetings(outputFilePath)).rejects.toThrow(
-        'CALENDAR_SERVICE_ACCOUNT environment variable is not set'
+        'CALENDAR_SERVICE_ACCOUNT environment variable is not set',
       );
     } finally {
       // Restore the environment variable for other tests
@@ -164,7 +166,9 @@ describe('buildMeetings', () => {
     delete process.env.CALENDAR_ID;
 
     try {
-      await expect(buildMeetings(outputFilePath)).rejects.toThrow('CALENDAR_ID environment variable is not set');
+      await expect(buildMeetings(outputFilePath)).rejects.toThrow(
+        'CALENDAR_ID environment variable is not set',
+      );
     } finally {
       // Restore the environment variable for other tests
       process.env.CALENDAR_ID = originalCalendarId;

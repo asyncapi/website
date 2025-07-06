@@ -1,5 +1,5 @@
 ---
-title: "Status update (week 17, 2019)"
+title: 'Status update (week 17, 2019)'
 date: 2019-04-25T13:56:52+01:00
 type: Communication
 tags:
@@ -26,9 +26,11 @@ Alas güenas tardis! This week we've made significant progress on the documentat
 2. [New blog](https://www.asyncapi.com/blog/): Enough with Medium. There's no point on hosting the blog on a service that puts very low limits on how much you can read for free. We'll keep posting there as a distribution channel but the full articles will live in our self-hosted blog, powered by [Hugo](https://gohugo.io).
 
 ## Talks
+
 Join us tomorrow for [API days Madrid](http://apidaysmad.apiaddicts.org/schedule/#session-2) if you're in the city. I'll be talking all things AsyncAPI, past, present, and future. And also having some beers and tapas 🍻. Let's connect!
 
 ## Donate
+
 And last but not least, we’re running a sponsorship campaign. We’ve got different tiers so that everybody can show their love! ❤️
 
 ![](/img/posts/donation.webp)

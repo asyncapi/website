@@ -1,5 +1,5 @@
 ---
-title: "Transition from Executive Director to Governance Board and Elections Kick-Off"
+title: 'Transition from Executive Director to Governance Board and Elections Kick-Off'
 date: 2025-05-06T06:00:00+01:00
 type: Communication
 tags:
@@ -49,16 +49,15 @@ For details, see the updated [Charter](https://github.com/asyncapi/community/blo
 
 To help the TSC evaluate nominees and vote, please include:
 
-- **Full Name**  
-- **Photo** (optional but recommended)  
-- **Location / Time Zone**  
-- **GitHub & LinkedIn Profiles**  
-- **Personal Introduction** (≤ 150 words)  
-- **AsyncAPI Impact** (≤ 150 words): role, impact, when joined 
-- **Motivation Statement** (≤ 150 words): why you’re running  
+- **Full Name**
+- **Photo** (optional but recommended)
+- **Location / Time Zone**
+- **GitHub & LinkedIn Profiles**
+- **Personal Introduction** (≤ 150 words)
+- **AsyncAPI Impact** (≤ 150 words): role, impact, when joined
+- **Motivation Statement** (≤ 150 words): why you’re running
 - **Contact Information** for questions
 
 These guidelines are optional. Please include any additional details you find relevant.
 
 > Photo by <a href="https://unsplash.com/@amravazzi?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">André Ravazzi</a> on <a href="https://unsplash.com/photos/rectangular-brown-wooden-table-with-chairs-SkH2iOtV6II?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-

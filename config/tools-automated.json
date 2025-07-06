@@ -11,13 +11,8 @@
           "repoUrl": "https://github.com/asyncapi/server-api"
         },
         "filters": {
-          "technology": [
-            "Node.js",
-            "TypeScript"
-          ],
-          "categories": [
-            "api"
-          ],
+          "technology": ["Node.js", "TypeScript"],
+          "categories": ["api"],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
@@ -32,14 +27,8 @@
         },
         "filters": {
           "language": "Python",
-          "technology": [
-            "Socket.IO",
-            "Flask"
-          ],
-          "categories": [
-            "code-first",
-            "api"
-          ],
+          "technology": ["Socket.IO", "Flask"],
+          "categories": ["code-first", "api"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -57,13 +46,8 @@
         },
         "filters": {
           "language": "Typescript",
-          "technology": [
-            "Node.js",
-            "NestJS"
-          ],
-          "categories": [
-            "code-first"
-          ],
+          "technology": ["Node.js", "NestJS"],
+          "categories": ["code-first"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -78,14 +62,8 @@
         },
         "filters": {
           "language": "Python",
-          "technology": [
-            "Socket.IO",
-            "Flask"
-          ],
-          "categories": [
-            "code-first",
-            "api"
-          ],
+          "technology": ["Socket.IO", "Flask"],
+          "categories": ["code-first", "api"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -99,15 +77,8 @@
         },
         "filters": {
           "language": "C#",
-          "technology": [
-            ".NET",
-            "ASP.NET"
-          ],
-          "categories": [
-            "converters",
-            "code-first",
-            "validator"
-          ],
+          "technology": [".NET", "ASP.NET"],
+          "categories": ["converters", "code-first", "validator"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -121,15 +92,8 @@
         },
         "filters": {
           "language": "C#",
-          "technology": [
-            ".NET",
-            "ASP.NET"
-          ],
-          "categories": [
-            "converters",
-            "code-first",
-            "validator"
-          ],
+          "technology": [".NET", "ASP.NET"],
+          "categories": ["converters", "code-first", "validator"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -143,15 +107,8 @@
         },
         "filters": {
           "language": "TypeScript",
-          "technology": [
-            "Node.js",
-            "TypeScript"
-          ],
-          "categories": [
-            "code-first",
-            "dsl",
-            "framework"
-          ],
+          "technology": ["Node.js", "TypeScript"],
+          "categories": ["code-first", "dsl", "framework"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -169,9 +126,7 @@
         },
         "filters": {
           "language": "golang",
-          "categories": [
-            "code-generator"
-          ],
+          "categories": ["code-generator"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -186,13 +141,8 @@
         },
         "filters": {
           "language": "TypeScript",
-          "technology": [
-            "React JS",
-            "Docker"
-          ],
-          "categories": [
-            "code-generator"
-          ],
+          "technology": ["React JS", "Docker"],
+          "categories": ["code-generator"],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
@@ -206,12 +156,8 @@
         },
         "filters": {
           "language": "python",
-          "technology": [
-            "amqp"
-          ],
-          "categories": [
-            "code-generator"
-          ],
+          "technology": ["amqp"],
+          "categories": ["code-generator"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -232,12 +178,7 @@
             "Spring Cloud Streams",
             "JHipster JDL"
           ],
-          "categories": [
-            "code-generator",
-            "dsl",
-            "mocking-and-testing",
-            "cli"
-          ],
+          "categories": ["code-generator", "dsl", "mocking-and-testing", "cli"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -256,15 +197,8 @@
         },
         "filters": {
           "language": "C#",
-          "technology": [
-            ".NET",
-            "ASP.NET"
-          ],
-          "categories": [
-            "converters",
-            "code-first",
-            "validator"
-          ],
+          "technology": [".NET", "ASP.NET"],
+          "categories": ["converters", "code-first", "validator"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -278,15 +212,8 @@
         },
         "filters": {
           "language": "C#",
-          "technology": [
-            ".NET",
-            "ASP.NET"
-          ],
-          "categories": [
-            "converters",
-            "code-first",
-            "validator"
-          ],
+          "technology": [".NET", "ASP.NET"],
+          "categories": ["converters", "code-first", "validator"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -312,13 +239,8 @@
           "repoUrl": "https://github.com/asyncapi/studio"
         },
         "filters": {
-          "technology": [
-            "React JS",
-            "TypeScript"
-          ],
-          "categories": [
-            "editor"
-          ],
+          "technology": ["React JS", "TypeScript"],
+          "categories": ["editor"],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
@@ -331,13 +253,8 @@
           "repoUrl": "https://github.com/Shurtu-gal/action-test-bed"
         },
         "filters": {
-          "technology": [
-            "React JS",
-            "TypeScript"
-          ],
-          "categories": [
-            "editor"
-          ],
+          "technology": ["React JS", "TypeScript"],
+          "categories": ["editor"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -355,13 +272,8 @@
         },
         "filters": {
           "language": "TypeScript",
-          "technology": [
-            "React js",
-            "WebComponents"
-          ],
-          "categories": [
-            "ui-component"
-          ],
+          "technology": ["React js", "WebComponents"],
+          "categories": ["ui-component"],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
@@ -380,15 +292,8 @@
         },
         "filters": {
           "language": "TypeScript",
-          "technology": [
-            "Node.js",
-            "TypeScript"
-          ],
-          "categories": [
-            "code-first",
-            "dsl",
-            "framework"
-          ],
+          "technology": ["Node.js", "TypeScript"],
+          "categories": ["code-first", "dsl", "framework"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -409,12 +314,7 @@
             "Spring Cloud Streams",
             "JHipster JDL"
           ],
-          "categories": [
-            "code-generator",
-            "dsl",
-            "mocking-and-testing",
-            "cli"
-          ],
+          "categories": ["code-generator", "dsl", "mocking-and-testing", "cli"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -431,12 +331,8 @@
           "repoUrl": "https://github.com/asyncapi/glee"
         },
         "filters": {
-          "technology": [
-            "TypeScript"
-          ],
-          "categories": [
-            "framework"
-          ],
+          "technology": ["TypeScript"],
+          "categories": ["framework"],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
@@ -450,15 +346,8 @@
         },
         "filters": {
           "language": "TypeScript",
-          "technology": [
-            "Node.js",
-            "TypeScript"
-          ],
-          "categories": [
-            "code-first",
-            "dsl",
-            "framework"
-          ],
+          "technology": ["Node.js", "TypeScript"],
+          "categories": ["code-first", "dsl", "framework"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -475,12 +364,8 @@
           "repoUrl": "https://github.com/actions-marketplace-validations/asyncapi_github-action-for-generator"
         },
         "filters": {
-          "technology": [
-            "AsyncAPI Generator"
-          ],
-          "categories": [
-            "github-action"
-          ],
+          "technology": ["AsyncAPI Generator"],
+          "categories": ["github-action"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -492,12 +377,8 @@
           "repoUrl": "https://github.com/asyncapi/cli"
         },
         "filters": {
-          "technology": [
-            "AsyncAPI Generator"
-          ],
-          "categories": [
-            "github-actions"
-          ],
+          "technology": ["AsyncAPI Generator"],
+          "categories": ["github-actions"],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
@@ -517,12 +398,8 @@
         },
         "filters": {
           "language": "kotlin",
-          "technology": [
-            "maven"
-          ],
-          "categories": [
-            "mocking-and-testing"
-          ],
+          "technology": ["maven"],
+          "categories": ["mocking-and-testing"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -537,15 +414,8 @@
         },
         "filters": {
           "language": "Go/Golang",
-          "technology": [
-            "JavaScript",
-            "TypeScript",
-            "Docker"
-          ],
-          "categories": [
-            "mocking-and-testing",
-            "cli"
-          ],
+          "technology": ["JavaScript", "TypeScript", "Docker"],
+          "categories": ["mocking-and-testing", "cli"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -566,12 +436,7 @@
             "Spring Cloud Streams",
             "JHipster JDL"
           ],
-          "categories": [
-            "code-generator",
-            "dsl",
-            "mocking-and-testing",
-            "cli"
-          ],
+          "categories": ["code-generator", "dsl", "mocking-and-testing", "cli"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -590,15 +455,8 @@
         },
         "filters": {
           "language": "C#",
-          "technology": [
-            ".NET",
-            "ASP.NET"
-          ],
-          "categories": [
-            "converters",
-            "code-first",
-            "validator"
-          ],
+          "technology": [".NET", "ASP.NET"],
+          "categories": ["converters", "code-first", "validator"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -612,15 +470,8 @@
         },
         "filters": {
           "language": "C#",
-          "technology": [
-            ".NET",
-            "ASP.NET"
-          ],
-          "categories": [
-            "converters",
-            "code-first",
-            "validator"
-          ],
+          "technology": [".NET", "ASP.NET"],
+          "categories": ["converters", "code-first", "validator"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -633,12 +484,8 @@
         },
         "filters": {
           "language": "TypeScript",
-          "technology": [
-            "Node.js"
-          ],
-          "categories": [
-            "validator"
-          ],
+          "technology": ["Node.js"],
+          "categories": ["validator"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -658,12 +505,8 @@
         },
         "filters": {
           "language": "Java",
-          "technology": [
-            "Maven"
-          ],
-          "categories": [
-            "compare-tool"
-          ],
+          "technology": ["Maven"],
+          "categories": ["compare-tool"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -676,12 +519,8 @@
         },
         "filters": {
           "language": "TypeScript",
-          "technology": [
-            "TypeScript"
-          ],
-          "categories": [
-            "compare-tool"
-          ],
+          "technology": ["TypeScript"],
+          "categories": ["compare-tool"],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
@@ -699,13 +538,8 @@
           "repoUrl": "https://github.com/asyncapi/cli"
         },
         "filters": {
-          "technology": [
-            "TypeScript"
-          ],
-          "categories": [
-            "others",
-            "cli"
-          ],
+          "technology": ["TypeScript"],
+          "categories": ["others", "cli"],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
@@ -718,13 +552,8 @@
           "repoUrl": "https://github.com/hkirat/asyncapi-fork"
         },
         "filters": {
-          "technology": [
-            "TypeScript"
-          ],
-          "categories": [
-            "others",
-            "cli"
-          ],
+          "technology": ["TypeScript"],
+          "categories": ["others", "cli"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -739,15 +568,8 @@
         },
         "filters": {
           "language": "Go/Golang",
-          "technology": [
-            "JavaScript",
-            "TypeScript",
-            "Docker"
-          ],
-          "categories": [
-            "mocking-and-testing",
-            "cli"
-          ],
+          "technology": ["JavaScript", "TypeScript", "Docker"],
+          "categories": ["mocking-and-testing", "cli"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -768,12 +590,7 @@
             "Spring Cloud Streams",
             "JHipster JDL"
           ],
-          "categories": [
-            "code-generator",
-            "dsl",
-            "mocking-and-testing",
-            "cli"
-          ],
+          "categories": ["code-generator", "dsl", "mocking-and-testing", "cli"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -791,12 +608,8 @@
         },
         "filters": {
           "language": "TypeScript",
-          "technology": [
-            "TypeScript"
-          ],
-          "categories": [
-            "bundler"
-          ],
+          "technology": ["TypeScript"],
+          "categories": ["bundler"],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
@@ -813,13 +626,8 @@
           "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
         },
         "filters": {
-          "technology": [
-            "VSCode",
-            "SmartPaste"
-          ],
-          "categories": [
-            "ide-extension"
-          ],
+          "technology": ["VSCode", "SmartPaste"],
+          "categories": ["ide-extension"],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
@@ -831,13 +639,8 @@
           "repoUrl": "https://github.com/Savio629/testing2"
         },
         "filters": {
-          "technology": [
-            "VSCode",
-            "SmartPaste"
-          ],
-          "categories": [
-            "ide-extension"
-          ],
+          "technology": ["VSCode", "SmartPaste"],
+          "categories": ["ide-extension"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -852,13 +655,8 @@
         },
         "filters": {
           "language": "Kotlin",
-          "technology": [
-            "JetBrains",
-            "IntelliJ IDEA"
-          ],
-          "categories": [
-            "ide-extension"
-          ],
+          "technology": ["JetBrains", "IntelliJ IDEA"],
+          "categories": ["ide-extension"],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
@@ -876,12 +674,8 @@
         },
         "filters": {
           "language": "javascript",
-          "technology": [
-            "Node.js"
-          ],
-          "categories": [
-            "generator-template"
-          ],
+          "technology": ["Node.js"],
+          "categories": ["generator-template"],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
@@ -893,17 +687,9 @@
           "repoUrl": "https://github.com/asyncapi/java-spring-template"
         },
         "filters": {
-          "language": [
-            "javascript"
-          ],
-          "technology": [
-            "Springboot",
-            "Maven",
-            "Gradle"
-          ],
-          "categories": [
-            "generator-template"
-          ],
+          "language": ["javascript"],
+          "technology": ["Springboot", "Maven", "Gradle"],
+          "categories": ["generator-template"],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
@@ -915,15 +701,9 @@
           "repoUrl": "https://github.com/asyncapi/java-template"
         },
         "filters": {
-          "language": [
-            "javascript"
-          ],
-          "technology": [
-            "Java"
-          ],
-          "categories": [
-            "generator-template"
-          ],
+          "language": ["javascript"],
+          "technology": ["Java"],
+          "categories": ["generator-template"],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
@@ -935,16 +715,9 @@
           "repoUrl": "https://github.com/asyncapi/java-spring-cloud-stream-template"
         },
         "filters": {
-          "language": [
-            "javascript"
-          ],
-          "technology": [
-            "Spring Cloud Streams",
-            "Maven"
-          ],
-          "categories": [
-            "generator-template"
-          ],
+          "language": ["javascript"],
+          "technology": ["Spring Cloud Streams", "Maven"],
+          "categories": ["generator-template"],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
@@ -957,12 +730,8 @@
         },
         "filters": {
           "language": "javascript",
-          "technology": [
-            "HTML"
-          ],
-          "categories": [
-            "generator-template"
-          ],
+          "technology": ["HTML"],
+          "categories": ["generator-template"],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
@@ -975,12 +744,8 @@
         },
         "filters": {
           "language": "javascript",
-          "technology": [
-            "Node.js"
-          ],
-          "categories": [
-            "generator-template"
-          ],
+          "technology": ["Node.js"],
+          "categories": ["generator-template"],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
@@ -993,12 +758,8 @@
         },
         "filters": {
           "language": "javascript",
-          "technology": [
-            "HTML"
-          ],
-          "categories": [
-            "generator-template"
-          ],
+          "technology": ["HTML"],
+          "categories": ["generator-template"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
@@ -1016,13 +777,8 @@
           "repoUrl": "https://github.com/asyncapi/cli"
         },
         "filters": {
-          "technology": [
-            "TypeScript"
-          ],
-          "categories": [
-            "others",
-            "cli"
-          ],
+          "technology": ["TypeScript"],
+          "categories": ["others", "cli"],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
@@ -1035,13 +791,8 @@
           "repoUrl": "https://github.com/hkirat/asyncapi-fork"
         },
         "filters": {
-          "technology": [
-            "TypeScript"
-          ],
-          "categories": [
-            "others",
-            "cli"
-          ],
+          "technology": ["TypeScript"],
+          "categories": ["others", "cli"],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }

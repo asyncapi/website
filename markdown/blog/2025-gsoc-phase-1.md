@@ -1,5 +1,5 @@
 ---
-title: "2025 Google Summer of Code: Phase 1"
+title: '2025 Google Summer of Code: Phase 1'
 date: 2025-05-28T06:00:00+01:00
 type: Community
 tags:
@@ -12,14 +12,14 @@ authors:
   - name: Azeez Elegbede
     photo: /img/avatars/ace.webp
     link: https://www.linkedin.com/in/aelegbede/
-    byline: AsyncAPI Preacher 
+    byline: AsyncAPI Preacher
 ---
 
 **At AsyncAPI, Summer means one thing: Google Summer of Code**
 
-Every year, we eagerly anticipate this season, not just because of the program itself, but because of what it represents for our community. GSoC isn't just about the stipend contributors receive for their participation. For us, it's about the doors it opens, the chance to welcome new developers, foster fresh perspectives, and nurture contributors who often go on to become long-term contributors to the project. 
+Every year, we eagerly anticipate this season, not just because of the program itself, but because of what it represents for our community. GSoC isn't just about the stipend contributors receive for their participation. For us, it's about the doors it opens, the chance to welcome new developers, foster fresh perspectives, and nurture contributors who often go on to become long-term contributors to the project.
 
-Participating in Google Summer of Code is an opportunity to invest in mentorship, give back to the AsyncAPI community, and continue building the future of event-driven APIs, one contributor at a time. 
+Participating in Google Summer of Code is an opportunity to invest in mentorship, give back to the AsyncAPI community, and continue building the future of event-driven APIs, one contributor at a time.
 
 ## How We Prepared
 
@@ -53,10 +53,10 @@ At first, this sounds like a good problem to have, and in many ways, it is. Howe
 - Submitting multiple pull requests in a short time without meaningful contributions
 - Relying on AI tools to generate code without understanding the problem
 - Mass-creating low-quality issues across various AsyncAPI repositories
-- Spamming our Slack channels with repetitive and irrelevant messages 
+- Spamming our Slack channels with repetitive and irrelevant messages
 - Flooding mentors’ and maintainers’ direct messages with irrelevant or insistent requests
 
-This sudden surge, along with the behavior that accompanied it, was unexpected, creating confusion, noise, and stress for mentors, maintainers, and contributors alike. 
+This sudden surge, along with the behavior that accompanied it, was unexpected, creating confusion, noise, and stress for mentors, maintainers, and contributors alike.
 
 ## How We Responded
 
@@ -96,7 +96,7 @@ Only proposals that passed this initial filter were passed on to mentors for det
 
 Once the initial screening was completed, proposals that had been refined and were now ready for review were left on the proposals dashboard for mentors' in-depth review.
 
-Each mentor reviewed applications related to their project ideas, looking for contributors who understood the goals and demonstrated genuine interest in solving the problem. This phase was all about finding the right contributors who were capable of collaboration, committed, and passionate about open source. 
+Each mentor reviewed applications related to their project ideas, looking for contributors who understood the goals and demonstrated genuine interest in solving the problem. This phase was all about finding the right contributors who were capable of collaboration, committed, and passionate about open source.
 
 Mentors evaluated applications based on the following criteria:
 
@@ -115,7 +115,7 @@ Even with a fair selection process by the mentors, the announcement of selected 
   Some rejected applicants accused mentors of favoritism, simply because they couldn’t handle the outcome maturely. Mentors evaluated every proposal based not only on its quality but also on the contributor’s prior engagement and meaningful contributions to the project. These baseless accusations were both unfair and disheartening for mentors who volunteered their time to support the community.
 
 - **Impersonation and Harassment:**
-A few individuals went so far as to create fake accounts to discredit accepted contributors, attempting to diminish their hard work and efforts. This behavior was both appalling and harmful, and it caused some accepted contributors to doubt themselves and cast a negative light on the spirit of open source collaboration.
+  A few individuals went so far as to create fake accounts to discredit accepted contributors, attempting to diminish their hard work and efforts. This behavior was both appalling and harmful, and it caused some accepted contributors to doubt themselves and cast a negative light on the spirit of open source collaboration.
 
 ### Responding to Harassment Incidents
 
@@ -127,53 +127,52 @@ At AsyncAPI, the Code of Conduct is at the heart of our community values. Everyo
 
 Rejection is tough, we understand that. But it should never be a reason to attack others or question their worthiness.
 
-At AsyncAPI, we value growth, openness, and community support, not finger-pointing or toxicity. 
-
+At AsyncAPI, we value growth, openness, and community support, not finger-pointing or toxicity.
 
 ## Wrapping Up
 
-Selecting contributors is never easy, especially when the applicant pool is packed with passionate contributors eager to make an impact. However, by combining a streamlined review process with community values, we were able to make informed decisions that we're confident will lead to successful project outcomes and long-term contributor growth. 
+Selecting contributors is never easy, especially when the applicant pool is packed with passionate contributors eager to make an impact. However, by combining a streamlined review process with community values, we were able to make informed decisions that we're confident will lead to successful project outcomes and long-term contributor growth.
 
-We're incredibly excited to work with this year's cohort and can't wait to see what we achieve together as a community. 
+We're incredibly excited to work with this year's cohort and can't wait to see what we achieve together as a community.
 
 Big congratulations to everyone selected, we’re thrilled to have you on board and excited about what lies ahead.
 
 ## Meet the 2025 AsyncAPI Contributors
 
 <Profiles profiles={[
-  {
-    name: 'Ruchi Pakhle',
-    avatar: 'https://avatars.githubusercontent.com/Ruchip16',
-    link: 'https://github.com/Ruchip16'
-  },
-  {
-    name: 'Shriya Chauhan',
-    avatar: 'https://avatars.githubusercontent.com/Shriya-Chauhan',
-    link: 'https://github.com/Shriya-Chauhan'
-  },
-  {
-    name: 'Adi Boghawala',
-    avatar: 'https://avatars.githubusercontent.com/Adi-204',
-    link: 'https://github.com/Adi-204'
-  },
-  {
-    name: 'Sagar Kori',
-    avatar: 'https://avatars.githubusercontent.com/sagarkori143',
-    link: 'https://github.com/sagarkori143'
-  },
-  {
-    name: 'Tenzin Delek',
-    avatar: 'https://avatars.githubusercontent.com/TenzDelek',
-    link: 'https://github.com/TenzDelek'
-  },
-  {
-    name: 'Shuaib Salad',
-    avatar: 'https://avatars.githubusercontent.com/ssala034',
-    link: 'https://github.com/ssala034'
-  },
-  {
-    name: 'Anushka Sharan',
-    avatar: 'https://avatars.githubusercontent.com/anushkaaaaaaaa',
-    link: 'https://github.com/anushkaaaaaaaa'
-  },
+{
+name: 'Ruchi Pakhle',
+avatar: 'https://avatars.githubusercontent.com/Ruchip16',
+link: 'https://github.com/Ruchip16'
+},
+{
+name: 'Shriya Chauhan',
+avatar: 'https://avatars.githubusercontent.com/Shriya-Chauhan',
+link: 'https://github.com/Shriya-Chauhan'
+},
+{
+name: 'Adi Boghawala',
+avatar: 'https://avatars.githubusercontent.com/Adi-204',
+link: 'https://github.com/Adi-204'
+},
+{
+name: 'Sagar Kori',
+avatar: 'https://avatars.githubusercontent.com/sagarkori143',
+link: 'https://github.com/sagarkori143'
+},
+{
+name: 'Tenzin Delek',
+avatar: 'https://avatars.githubusercontent.com/TenzDelek',
+link: 'https://github.com/TenzDelek'
+},
+{
+name: 'Shuaib Salad',
+avatar: 'https://avatars.githubusercontent.com/ssala034',
+link: 'https://github.com/ssala034'
+},
+{
+name: 'Anushka Sharan',
+avatar: 'https://avatars.githubusercontent.com/anushkaaaaaaaa',
+link: 'https://github.com/anushkaaaaaaaa'
+},
 ]} />

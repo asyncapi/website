@@ -1,17 +1,23 @@
 import { addDocButtons } from '../../scripts/build-docs';
-import { docPosts, invalidTreePosts, mockDocPosts, mockTreePosts, treePosts } from '../fixtures/addDocButtonsData';
+import {
+  docPosts,
+  invalidTreePosts,
+  mockDocPosts,
+  mockTreePosts,
+  treePosts,
+} from '../fixtures/addDocButtonsData';
 
 describe('addDocButtons', () => {
   it('should add next and previous page information', () => {
     const expectedFirstItem = {
       title: 'Welcome',
       slug: '/docs',
-      content: 'Welcome content'
+      content: 'Welcome content',
     };
 
     const expectedSecondItem = {
       isRootSection: true,
-      title: 'Section 1'
+      title: 'Section 1',
     };
 
     const expectedThirdItem = {
@@ -19,12 +25,12 @@ describe('addDocButtons', () => {
       slug: '/docs/section1/page1',
       nextPage: {
         title: 'Page 2',
-        href: '/docs/section1/page2'
+        href: '/docs/section1/page2',
       },
       prevPage: {
         title: 'Section 1',
-        href: undefined
-      }
+        href: undefined,
+      },
     };
 
     const expectedFourthItem = {
@@ -32,8 +38,8 @@ describe('addDocButtons', () => {
       slug: '/docs/section1/page2',
       prevPage: {
         title: 'Page 1',
-        href: '/docs/section1/page1'
-      }
+        href: '/docs/section1/page1',
+      },
     };
 
     const result = addDocButtons(docPosts, treePosts);
@@ -60,7 +66,9 @@ describe('addDocButtons', () => {
       addDocButtons(docPosts, undefined as any);
     } catch (err) {
       error = err as Error;
-      expect((err as Error).message).toContain('An error occurred while adding doc buttons:');
+      expect((err as Error).message).toContain(
+        'An error occurred while adding doc buttons:',
+      );
     }
     expect(error).toBeDefined();
   });
@@ -72,7 +80,9 @@ describe('addDocButtons', () => {
       addDocButtons(undefined as any, treePosts);
     } catch (err) {
       error = err as Error;
-      expect((err as Error).message).toContain('An error occurred while adding doc buttons:');
+      expect((err as Error).message).toContain(
+        'An error occurred while adding doc buttons:',
+      );
     }
     expect(error).toBeDefined();
   });
@@ -85,7 +95,9 @@ describe('addDocButtons', () => {
       addDocButtons(docPosts, invalidTreePosts);
     } catch (err) {
       error = err as Error;
-      expect((err as Error).message).toContain('An error occurred while adding doc buttons:');
+      expect((err as Error).message).toContain(
+        'An error occurred while adding doc buttons:',
+      );
     }
     expect(error).toBeDefined();
   });

@@ -15,7 +15,11 @@ interface IClickableLogoProps {
  * @param {string} props.className - The class name for the component
  * @param {string} props.logoClassName - The class name for the logo
  */
-export default function ClickableLogo({ href = '/', className = 'flex', logoClassName }: IClickableLogoProps) {
+export default function ClickableLogo({
+  href = '/',
+  className = 'flex',
+  logoClassName,
+}: IClickableLogoProps) {
   return (
     <Link href={href} className={className}>
       <AsyncAPILogo className={logoClassName} />

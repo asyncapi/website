@@ -6,8 +6,8 @@ weight: 220
 
 ## Introduction
 
-In this tutorial, you will create a schema document for Kafka Messages using AsyncAPI. You will also learn about Event-Driven Architecture, the pub/sub model, and brokers concerning Kafka. 
-  
+In this tutorial, you will create a schema document for Kafka Messages using AsyncAPI. You will also learn about Event-Driven Architecture, the pub/sub model, and brokers concerning Kafka.
+
 Suppose you have a service publishing data to a Kafka topic whenever a new user signs up on your application.
 
 You want to build a system that tracks users who have signed up for your application. As such, your application will have the following flow:
@@ -22,20 +22,19 @@ sequenceDiagram
     User-->> Service (Producer): Signs Up
     Service (Producer)->> Kafka: Publishes Events
     Kafka->> Your Application (Consumer): Sends "user_signup" message
-```    
-
+```
 
 ## Background context
 
-[Event-Driven Architecture (EDA)](/docs/tutorials/getting-started/event-driven-architectures) is a design pattern that revolves around the production, detection, and reaction to events over time. It consists of three main components: a message broker, event publishers, and subscribers, which together serve as the backbone for event exchange within different services. 
+[Event-Driven Architecture (EDA)](/docs/tutorials/getting-started/event-driven-architectures) is a design pattern that revolves around the production, detection, and reaction to events over time. It consists of three main components: a message broker, event publishers, and subscribers, which together serve as the backbone for event exchange within different services.
 
-[Message brokers](/docs/tutorials/getting-started/event-driven-architectures#message-broker) facilitate asynchronous communications between services, meaning the sending service doesn't have to wait for the receiving service's response. Multiple services can talk to each other directly, even if they are written in different languages. 
+[Message brokers](/docs/tutorials/getting-started/event-driven-architectures#message-broker) facilitate asynchronous communications between services, meaning the sending service doesn't have to wait for the receiving service's response. Multiple services can talk to each other directly, even if they are written in different languages.
 
 A great example of such a message broker is Apache Kafka. [Apache Kafka](https://kafka.apache.org/) is a distributed event streaming platform thousands of companies use for their event-driven system. Here, a distributed event streaming platform is a system that operates on multiple nodes, providing high availability and fault tolerance.
 
 [Publisher/Subscriber (Pub/Sub)](/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) is a typical model in EDAs, providing flexible coupling between publishers and subscribers. In this model, those who `send` event notifications act as publishers, while those who `receive` the notifications act as the corresponding subscribers.
 
-## Create AsyncAPI document for Kafka messages  
+## Create AsyncAPI document for Kafka messages
 
 In this section, you’ll create an AsyncAPI document to describe the `UserSignUp` API. The same document can be later used to generate code and documentation as per requirement.
 
@@ -120,9 +119,7 @@ servers:
 In the above snippet:
 
 - The `asyncapi` field indicates that you use AsyncAPI version 3.0.0.
-  
 - The `info` field provides information about the API. Here the the APIs `title`, `version`, and `description` are being defined.
-  
 - The `server` field specifies the details of the server, including the `host`, `description`, and the `protocol` that is being used (i.e., Kafka). This section allows you to define multiple clusters or servers, as shown in the provided code block.
 
 <Remember>
@@ -131,7 +128,7 @@ If an application has multiple servers hidden from the user behind a load balanc
 
 ### Define channels
 
-Next, let's move on to the `channels` section. The channel addresses are the topics in Kafka; they are the routes to which your API will send/receive messages. 
+Next, let's move on to the `channels` section. The channel addresses are the topics in Kafka; they are the routes to which your API will send/receive messages.
 
 ```
 channels:
@@ -144,8 +141,8 @@ channels:
 ```
 
 In the above code snippet:
-  
-- The `userSignedUp` object inside `channels` describes the Kafka topic where the application will receive the information and the associated message definition. 
+
+- The `userSignedUp` object inside `channels` describes the Kafka topic where the application will receive the information and the associated message definition.
 - The `address` field represents the actual name of the Kafka topic and the `messages` field describes the expected messages in that topic.
 
 ### Define operations
@@ -162,7 +159,7 @@ operations:
 
 In the above code snippet:
 
-- The `onUserSignedUp` object specifies the operation's nature, which occurs when the user signs up. 
+- The `onUserSignedUp` object specifies the operation's nature, which occurs when the user signs up.
 - The `action` property indicates that the application will receive the information.
 - The `channel` property points to the channel where the operation occurs.
 
@@ -188,7 +185,6 @@ components:
 In the above code snippet:
 
 - The `userSignedUp` message is defined which describes the payload (content) of the message.
-  
 - The `payload` property defines the message content. Your message payload should contain a `userId`, an integer, a `userEmail` property, and a string property.
 
 ## Summary
@@ -197,4 +193,4 @@ The ability to generate an AsyncAPI document for Kafka is now in your toolkit. Y
 
 ## Next steps
 
-Now that you know how to write an AsyncAPI document for Kafka messages using the default schema, let's learn how to create an [AsyncAPI document using Avro Schema instead](/docs/tutorials/kafka/configure-kafka-avro). 
+Now that you know how to write an AsyncAPI document for Kafka messages using the default schema, let's learn how to create an [AsyncAPI document using Avro Schema instead](/docs/tutorials/kafka/configure-kafka-avro).

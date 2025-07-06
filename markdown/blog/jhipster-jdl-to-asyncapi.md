@@ -50,7 +50,6 @@ relationship OneToOne {
 }
 ```
 
-
 ## Generating AsyncAPI definition files from JDL with ZenWaveSDK
 
 > See [JDL To AsyncAPI Generator](https://zenwave360.github.io/zenwave-sdk/plugins/jdl-to-asyncapi/) for a complete list of options and [GitHub repository](https://github.com/zenwave360/zenwave-sdk) for install instructions.
@@ -71,7 +70,7 @@ jbang zw -p io.zenwave360.sdk.plugins.JDLToAsyncAPIPlugin \
     targetFile=src/main/resources/model/asyncapi.yml
 ```
 
-You can choose to generate only Events or Commands using `includeEvents`  (default: true) and `includeCommands` (default: false) to filter which channels you want to include in your AsyncAPI definition file.
+You can choose to generate only Events or Commands using `includeEvents` (default: true) and `includeCommands` (default: false) to filter which channels you want to include in your AsyncAPI definition file.
 
 You can also filter which entities you want to include Messages for in your AsyncAPI definition file using: `entities`, `skipEntities`, `annotations`, and `skipForAnnotations`.
 
@@ -103,4 +102,5 @@ You can generate AsyncAPI definition files with the following options:
 By using JDL to define your domain model and ZenWave SDK to convert it into an AsyncAPI definition file, you can simplify the process of designing and documenting your APIs. This can improve your APIs' overall quality and consistency while reducing errors and inconsistencies.
 
 ---
+
 Originally published at [https://zenwave360.github.io](https://zenwave360.github.io/Domain-Driven-Design/JDL-Domain-Language/JHipster-As-IDL-for-AsyncAPIv2).

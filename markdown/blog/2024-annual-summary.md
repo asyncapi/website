@@ -1,5 +1,5 @@
 ---
-title: "Annual Review: State of AsyncAPI Initiative 2024"
+title: 'Annual Review: State of AsyncAPI Initiative 2024'
 date: 2025-01-27T06:00:00+01:00
 type: Communication
 tags:
@@ -19,7 +19,6 @@ What better way to start the year than by reflecting on the community's growth o
 
 If you are curious about our past achievements, [please read the previous Project Status updates](https://www.asyncapi.com/blog?tags=Project+Status).
 
-
 ## Slack
 
 We currently have a total of **6,124** members in the AsyncAPI workspace. Slack is our primary communication channel for sharing updates, assisting contributors and adopters who want to understand and use the AsyncAPI specification and toolings.
@@ -32,7 +31,6 @@ We welcomed **1,505** new members in 2024.
   className="text-center"
 />
 
-
 Among this year's new joiners, we have our top five members, including our community marketing specialist, who leads the marketing efforts in the community.
 
 <Figure
@@ -41,7 +39,7 @@ Among this year's new joiners, we have our top five members, including our commu
   className="text-center"
 />
 
-Our weekly activity slightly dropped this year due to changes that affected some of our core maintainers after the layoffs. 
+Our weekly activity slightly dropped this year due to changes that affected some of our core maintainers after the layoffs.
 
 <Figure
   src="/img/posts/2024-annual-report/weekly-slack-activity.webp"
@@ -49,11 +47,13 @@ Our weekly activity slightly dropped this year due to changes that affected some
   className="text-center"
 />
 
-## Social Media 
+## Social Media
+
 Our social media platforms help us communicate community news, share updates, and make announcements.
 Let's dive into the numbers:
 
 ### LinkedIn
+
 We gained **995** followers on LinkedIn in 2024, bringing a total to **3,983** overall followers.
 
 <Figure
@@ -73,6 +73,7 @@ Compared to 2023, the number of visits from users and new users to [asyncapi.com
 We don't use any premium or paid marketing services!
 
 ### X/Twitter
+
 We gained **309** followers in 2024, reaching a total of **4709** followers overall. Website referrals declined 42% compared to the previous years, but sessions on the website increased significantly.
 
 <Figure
@@ -84,6 +85,7 @@ We gained **309** followers in 2024, reaching a total of **4709** followers over
 We don't consider the X/Twitter platform worth investment; it's time to consider another platform like Bluesky to expand our reach.
 
 ### YouTube
+
 Our YouTube channel continues to grow as we gain **269** new subscribers, having **1.72k** subscribers in total. We hosted fewer community live streams in 2024, but also brought back the AsyncAPI Online Conference, increasing the total watch time.
 
 <Figure
@@ -93,6 +95,7 @@ Our YouTube channel continues to grow as we gain **269** new subscribers, having
 />
 
 ### Newsletter
+
 It's been a year since we sent out our first newsletter, and I'm pleased with the growth and impact it has achieved. Many community members often don't have the time to read through the entire article, so having a simple summary delivered straight to your inbox is a convenient way to stay updated on community happenings. The April edition was one of the most popular.
 
 <Figure
@@ -110,7 +113,8 @@ Additionally, we've seen some growth in newsletter website referrals, with an in
 />
 
 ## Google Analytics
-Docs continue to be our main metrics contributor, and blogs have performed quite well this past year. 
+
+Docs continue to be our main metrics contributor, and blogs have performed quite well this past year.
 The AsyncAPI website received over 1.1 million page views, while users and sessions have remained consistent.
 
 <Figure
@@ -120,6 +124,7 @@ The AsyncAPI website received over 1.1 million page views, while users and sessi
 />
 
 ## Google Search Console
+
 Compared to 2023, there has been a slight 15% decrease in website impressions and clicks recorded on Google Search Console.
 
 <Figure
@@ -129,6 +134,7 @@ Compared to 2023, there has been a slight 15% decrease in website impressions an
 />
 
 ## GitHub
+
 We continue to see an increase in the number of active contributors who perform tasks such as commits, issues, or pull requests. In 2024, we had over **2,780** contributors overall.
 
 <Figure
@@ -146,7 +152,8 @@ We still do our very best to resolve and close issues. There have been some impr
 />
 
 ### NPM
-The most controversial part of the review is the number of downloads from AsyncAPI's top packages, which are hosted under the Node Package Manager. The `asyncapi/specs` package continues to soar, with over **34M** downloads in the past year. 
+
+The most controversial part of the review is the number of downloads from AsyncAPI's top packages, which are hosted under the Node Package Manager. The `asyncapi/specs` package continues to soar, with over **34M** downloads in the past year.
 
 <Figure
   src="/img/posts/2024-annual-report/npm-packages.webp"
@@ -155,6 +162,7 @@ The most controversial part of the review is the number of downloads from AsyncA
 />
 
 ## Community Achievements
+
 Despite the challenges, we achieved some milestones, and here are some of the highlights from the AsyncAPI community in 2024!
 
 - We had our second community hire, [Oluwabamikemi Kayode](https://www.linkedin.com/in/atinuke-oluwabamikemi-kayode-5b838b1b7/), to work full-time as the project's Community Marketing Specialist.
@@ -170,6 +178,5 @@ These are some of the few highlights for 2024, and we have more planned for 2025
 We are starting the year with [an open discussion on establishing our first AsyncAPI Governance Board](https://github.com/asyncapi/community/pull/1634), so please join the conversation.
 
 You can also check out the [2025 AsyncAPI Community Building Goals](https://github.com/asyncapi/community/blob/master/annual-goals/2025_Community_Goals.md) to see what's in store for this year.
-
 
 > Image by Canva

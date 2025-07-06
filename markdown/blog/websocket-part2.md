@@ -10,10 +10,10 @@ authors:
     photo: /img/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
-excerpt: Learn how to create a complex AsyncAPI document using WebSocket API as an example. 
+excerpt: Learn how to create a complex AsyncAPI document using WebSocket API as an example.
 ---
 
->  This step-by-step guide is a continuation of a series of articles about WebSockets. I recommend reading [WebSocket, Shrek, and AsyncAPI - An Opinionated Intro](/blog/websocket-part1) first.
+> This step-by-step guide is a continuation of a series of articles about WebSockets. I recommend reading [WebSocket, Shrek, and AsyncAPI - An Opinionated Intro](/blog/websocket-part1) first.
 
 If you do not want to read this article, then watch the recording of the live stream about the same:
 <YouTube id="8tFBcf31e_c" />
@@ -21,6 +21,7 @@ If you do not want to read this article, then watch the recording of the live st
 All roads lead to Rome, but all those roads are different. First, you need to identify where you are and what is the purpose of your journey. What is your goal? What do you want to use AsyncAPI for?
 
 You may invest in using the specification for many different reasons, like for example:
+
 - documentation
 - testing
 - mocking
@@ -43,12 +44,13 @@ Road **automation**: You need AsyncAPI for docs and code generation, which means
 
 I'm going to guide you through the process of creating an AsyncAPI document. I'll use the example of Kraken API mentioned in my [previous article](/blog/websocket-part1).
 
-The challenge I had here was that I'm trying to document an API basing on public docs with no access to a subject matter expert. I also have zero understanding of the cryptocurrency industry and still do not fully understand the vocabulary. 
+The challenge I had here was that I'm trying to document an API basing on public docs with no access to a subject matter expert. I also have zero understanding of the cryptocurrency industry and still do not fully understand the vocabulary.
 
 > **Message to Kraken API developers and technical writers** <br/>
-In case you want to continue the work I started on the AsyncAPI document for Kraken API, feel free to do that. I'm happy to help, just let me know. Reach me out in our [AsyncAPI Slack workspace](https://www.asyncapi.com/slack-invite/).
+> In case you want to continue the work I started on the AsyncAPI document for Kraken API, feel free to do that. I'm happy to help, just let me know. Reach me out in our [AsyncAPI Slack workspace](https://www.asyncapi.com/slack-invite/).
 
 More interesting here are the technical challenges though, caused by the fact that Kraken's API:
+
 - has two production servers for non-secure and secure message exchange
 - some messages are supported only by the public and some only by a private server
 - has just one entry point for communication. You do not get specific messages from one of many endpoints. You get specific messages after first sending a subscription message. Meaning you have a request message and you get a reply message, so something that is not yet possible to describe with AsyncAPI in a machine-readable way
@@ -60,13 +62,13 @@ Because of all these different challenges, I took the **docs-only** road describ
 ### Basic information about the API
 
 First, provide some basic information that every good AsyncAPI file should have:
+
 - What AsyncAPI version do you use?
 - What is the name of your API?
 - What version of the API you describe?
 - Do not underestimate the description. Optional != not needed. AsyncAPI supports markdown in descriptions. Provide long generic documentation for your API. Benefit from markdown features to structure it, so it is easier to read
 
 > In case you think using just one property to add overarching documentation for your API is very limiting, I agree with you :smiley: Join discussion [here](https://github.com/asyncapi/extensions-catalog/issues/11). I believe spec should have better support for docs, and we should first explore it with specification extensions. To be honest, I always thought documentation deserves its specification, but I don't want to bother you with my wicked visions now.
-
 
 ```yaml
 asyncapi: 2.0.0
@@ -91,6 +93,7 @@ info:
 ### Provide server information
 
 Describe how to connect to the API:
+
 - What is the URL of the server?
 - Is there any authorization in place?
 - What is the protocol requirement, is SSL connection required?
@@ -117,14 +120,30 @@ servers:
       Once the socket is open you can subscribe to private-data channels by sending an authenticated subscribe request message.
 ```
 
-You can verify if above is true by connecting to **ws.kraken.com** and trying to subscribe to one of the event streams that require a token: 
+You can verify if above is true by connecting to **ws.kraken.com** and trying to subscribe to one of the event streams that require a token:
+
 ```json
-{ "event": "subscribe",  "subscription": { "name": "ownTrades", "token": "WW91ciBhdXRoZW50aWNhdGlvbiB0b2tlbiBnb2VzIGhlcmUu" } }
+{
+  "event": "subscribe",
+  "subscription": {
+    "name": "ownTrades",
+    "token": "WW91ciBhdXRoZW50aWNhdGlvbiB0b2tlbiBnb2VzIGhlcmUu"
+  }
+}
 ```
 
 In response you get an error:
+
 ```json
-{"errorMessage":"Private data and trading are unavailable on this endpoint. Try ws-auth.kraken.com","event":"subscriptionStatus","status":"error","subscription":{"name":"ownTrades","token":"WW91ciBhdXRoZW50aWNhdGlvbiB0b2tlbiBnb2VzIGhlcmUu"}}
+{
+  "errorMessage": "Private data and trading are unavailable on this endpoint. Try ws-auth.kraken.com",
+  "event": "subscriptionStatus",
+  "status": "error",
+  "subscription": {
+    "name": "ownTrades",
+    "token": "WW91ciBhdXRoZW50aWNhdGlvbiB0b2tlbiBnb2VzIGhlcmUu"
+  }
+}
 ```
 
 > In the documentation, they also indicate beta servers like `beta-ws.kraken.com`. It is hard to understand their purpose, so I did not put them in the AsyncAPI document. For me, beta means something new, some upgrades, and I would consider writing a separate AsyncAPI document.
@@ -145,9 +164,9 @@ Create two AsyncAPI documents. Treat those two servers as separate services that
 
 #### Server security
 
-You can use AsyncAPI also to describe the security of your API. You can describe in a machine-readable way the security mechanism that protects the server. Several [security schemes](https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md#securitySchemeObject) are supported. In Kraken's case, I could not figure out what kind of security scheme they use from their docs.  They seem to have a non-standard set up for getting the authorization token, which is why the only option was to put a human-readable-only description there.
+You can use AsyncAPI also to describe the security of your API. You can describe in a machine-readable way the security mechanism that protects the server. Several [security schemes](https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md#securitySchemeObject) are supported. In Kraken's case, I could not figure out what kind of security scheme they use from their docs. They seem to have a non-standard set up for getting the authorization token, which is why the only option was to put a human-readable-only description there.
 
-~~~yaml
+````yaml
 servers:
   public:
     url: ws.kraken.com
@@ -175,7 +194,7 @@ servers:
         }
       }
       ```
-~~~
+````
 
 ### Endpoints aka Channels
 
@@ -212,22 +231,22 @@ channels:
           - $ref: '#/components/messages/subscriptionStatus'
 ```
 
-Hold on! Where did these **publish** and **subscribe** keywords came from. 
+Hold on! Where did these **publish** and **subscribe** keywords came from.
 
 When we talk about WebSocket, we usually do not use words like subscribe and publish, as we do not think about producers and consumers. Just check out [the protocol RfC](https://www.rfc-editor.org/rfc/rfc6455). We are used to **sending** and **receiving** messages.
 
 Let me present to you an unofficial AsyncAPI vocabulary translator for WebSocket users :smiley:
 
-WebSocket term | AsyncAPI term | Meaning from API server perspective | Meaning from API user perspective
----|---|---|---
-Send | Publish | The API server receives the given message. | The API user can send a given message to the API server.
-Receive | Subscribe | The API server sends a given message. | The API user can receive a given message from the API server.
+| WebSocket term | AsyncAPI term | Meaning from API server perspective        | Meaning from API user perspective                             |
+| -------------- | ------------- | ------------------------------------------ | ------------------------------------------------------------- |
+| Send           | Publish       | The API server receives the given message. | The API user can send a given message to the API server.      |
+| Receive        | Subscribe     | The API server sends a given message.      | The API user can receive a given message from the API server. |
 
 ### Messages definition
 
-In event-driven architectures (EDA) it's all about the event, right? The message passed in the system. You need to specify many details about the message, like its payload structure, headers, purpose, and many others. 
+In event-driven architectures (EDA) it's all about the event, right? The message passed in the system. You need to specify many details about the message, like its payload structure, headers, purpose, and many others.
 
-Above all, always remember to have good examples. Please don't count on the autogenerated ones, as in most cases, they're useless. 
+Above all, always remember to have good examples. Please don't count on the autogenerated ones, as in most cases, they're useless.
 
 ```yml
 messages:
@@ -245,7 +264,7 @@ messages:
 
 ### Describe responses - specification extensions
 
-Describe responses? What responses? 
+Describe responses? What responses?
 
 It is EDA. Who cares about responses, right? Fire and forget rules!
 
@@ -276,7 +295,7 @@ Even though the reference to another object is provided inside the extension tha
 
 ### Schemas vs JSON Schema
 
-Because the message itself is most important in the entire EDA, you need to describe the message payload properly. 
+Because the message itself is most important in the entire EDA, you need to describe the message payload properly.
 
 AsyncAPI allows you to provide payload information in different schema formats. The default format is AsyncAPI Schema that is a superset of JSON Schema. You can use others too, like Avro, for example.
 
@@ -312,56 +331,56 @@ Splitting schemas into reusable chunks with **$ref** usage is not something comp
 Kraken API has a **subscriptionStatus** message where payload depends on the success of the subscription. In case of successful subscription, you get a message with **channelID** and **channelName** properties, but in case of failure, the message doesn't contain these properties but in exchange has **errorMessage**. In other words, some properties are mutually exclusive.
 
 ```yml
-    subscriptionStatus:
+subscriptionStatus:
+  type: object
+  oneOf:
+    - required:
+        - errorMessage
+      not:
+        required:
+          - channelID
+          - channelName
+    - required:
+        - channelID
+        - channelName
+      not:
+        required:
+          - errorMessage
+  properties:
+    channelID:
+      type: integer
+      description: ChannelID on successful subscription, applicable to public messages only.
+    channelName:
+      type: string
+      description: Channel Name on successful subscription. For payloads 'ohlc' and 'book', respective interval or depth will be added as suffix.
+    errorMessage:
+      type: string
+    event:
+      type: string
+      const: subscriptionStatus
+    reqid:
+      $ref: '#/components/schemas/reqid'
+    pair:
+      $ref: '#/components/schemas/pair'
+    status:
+      $ref: '#/components/schemas/status'
+    subscription:
       type: object
-      oneOf:
-        - required:
-            - errorMessage
-          not:
-            required:
-                - channelID
-                - channelName
-        - required:
-            - channelID
-            - channelName
-          not:
-            required:
-                - errorMessage
       properties:
-        channelID:
-          type: integer
-          description: ChannelID on successful subscription, applicable to public messages only.
-        channelName:
-          type: string
-          description: Channel Name on successful subscription. For payloads 'ohlc' and 'book', respective interval or depth will be added as suffix.
-        errorMessage:
-          type: string
-        event:
-          type: string
-          const: subscriptionStatus
-        reqid:
-          $ref: '#/components/schemas/reqid'
-        pair:
-          $ref: '#/components/schemas/pair'
-        status:
-          $ref: '#/components/schemas/status'
-        subscription:
-          type: object
-          properties:
-            depth:
-              $ref: '#/components/schemas/depth'
-            interval:
-              $ref: '#/components/schemas/interval'
-            maxratecount:
-              $ref: '#/components/schemas/maxratecount'
-            name:
-              $ref: '#/components/schemas/name'
-            token:
-              $ref: '#/components/schemas/token'
-          required:
-            - name
+        depth:
+          $ref: '#/components/schemas/depth'
+        interval:
+          $ref: '#/components/schemas/interval'
+        maxratecount:
+          $ref: '#/components/schemas/maxratecount'
+        name:
+          $ref: '#/components/schemas/name'
+        token:
+          $ref: '#/components/schemas/token'
       required:
-        - event
+        - name
+  required:
+    - event
 ```
 
 It is what I call a complex schema, where good JSON Schema knowledge is needed. The problem with complex schemas is that not many tools support these kinds of schemas. By the time I write this article, our AsyncAPI tools for documentation rendering will fail to render the above schema correctly.
@@ -369,74 +388,74 @@ It is what I call a complex schema, where good JSON Schema knowledge is needed. 
 It is why you sometimes need compromises and adjusts schemas, so they get proper tooling support. Below you can see the same schema but structured in a more straightforward way supported by most tools.
 
 ```yml
-    subscriptionStatus:
-      type: object
-      oneOf:
-        - $ref: '#/components/schemas/subscriptionStatusError'
-        - $ref: '#/components/schemas/subscriptionStatusSuccess'
-    subscriptionStatusError:
-      allOf:
-        - properties:
-            errorMessage:
-              type: string
-          required:
-            - errorMessage
-        - $ref: '#/components/schemas/subscriptionStatusCommon'
-    subscriptionStatusSuccess:
-      allOf:
-        - properties:
-            channelID:
-              type: integer
-              description: ChannelID on successful subscription, applicable to public messages only.
-            channelName:
-              type: string
-              description: Channel Name on successful subscription. For payloads 'ohlc' and 'book', respective interval or depth will be added as suffix.
-          required:
-            - channelID
-            - channelName
-        - $ref: '#/components/schemas/subscriptionStatusCommon'
-    subscriptionStatusCommon:
-      type: object
-      required:
-         - event
-      properties:
-        event:
+subscriptionStatus:
+  type: object
+  oneOf:
+    - $ref: '#/components/schemas/subscriptionStatusError'
+    - $ref: '#/components/schemas/subscriptionStatusSuccess'
+subscriptionStatusError:
+  allOf:
+    - properties:
+        errorMessage:
           type: string
-          const: subscriptionStatus
-        reqid:
-          $ref: '#/components/schemas/reqid'
-        pair:
-          $ref: '#/components/schemas/pair'
-        status:
-          $ref: '#/components/schemas/status'
-        subscription:
-          required:
-            - name
-          type: object
-          properties:
-            depth:
-              $ref: '#/components/schemas/depth'
-            interval:
-              $ref: '#/components/schemas/interval'
-            maxratecount:
-              $ref: '#/components/schemas/maxratecount'
-            name:
-              $ref: '#/components/schemas/name'
-            token:
-              $ref: '#/components/schemas/token'
+      required:
+        - errorMessage
+    - $ref: '#/components/schemas/subscriptionStatusCommon'
+subscriptionStatusSuccess:
+  allOf:
+    - properties:
+        channelID:
+          type: integer
+          description: ChannelID on successful subscription, applicable to public messages only.
+        channelName:
+          type: string
+          description: Channel Name on successful subscription. For payloads 'ohlc' and 'book', respective interval or depth will be added as suffix.
+      required:
+        - channelID
+        - channelName
+    - $ref: '#/components/schemas/subscriptionStatusCommon'
+subscriptionStatusCommon:
+  type: object
+  required:
+    - event
+  properties:
+    event:
+      type: string
+      const: subscriptionStatus
+    reqid:
+      $ref: '#/components/schemas/reqid'
+    pair:
+      $ref: '#/components/schemas/pair'
+    status:
+      $ref: '#/components/schemas/status'
+    subscription:
+      required:
+        - name
+      type: object
+      properties:
+        depth:
+          $ref: '#/components/schemas/depth'
+        interval:
+          $ref: '#/components/schemas/interval'
+        maxratecount:
+          $ref: '#/components/schemas/maxratecount'
+        name:
+          $ref: '#/components/schemas/name'
+        token:
+          $ref: '#/components/schemas/token'
 ```
 
 I managed to get a structure that will be nicely rendered in the UI. Even code generation will work well. It is a bit more complex than initial structure, although this is rather subjective personal-taste-like opinion.
 
 ### Let's have a look at the final document
 
-Websocket protocol is very flexible, and therefore you can implement the server in many different ways. The path that Kraken API took is complex but not impossible to describe with the AsyncAPI document. Look at the document's final structure and keep in mind that it is not a complete document for Kraken API and the road that I chose to get to Rome was to focus on documentation rendering only. 
+Websocket protocol is very flexible, and therefore you can implement the server in many different ways. The path that Kraken API took is complex but not impossible to describe with the AsyncAPI document. Look at the document's final structure and keep in mind that it is not a complete document for Kraken API and the road that I chose to get to Rome was to focus on documentation rendering only.
 
 For **automation** road described in section [Choosing the right road to Rome](#choosing-the-right-road-to-rome), the document should be split into two documents: one for private and one for public servers. Common parts, like common messages and schemas, should be stored in separate files and referred from these two AsyncAPI documents using **$ref**. Another solution would be to use specification extensions to describe relations between messages and servers.
 
 > You can open this document directly in AsyncAPI Studio by clicking [this](https://studio.asyncapi.com?url=https://gist.githubusercontent.com/derberg/4e419d6ff5870c7c3f5f443e8bd30535/raw/5e9b733b80a0209ba5520e5f41ab18c2a112e0a9/asyncapi-websocket-kraken.yml) link. Compare it also with the [original documentation](https://docs.kraken.com/websockets/).
 
-~~~yaml
+````yaml
 asyncapi: 2.0.0
 
 info:
@@ -724,7 +743,7 @@ components:
     subscriptionStatusCommon:
       type: object
       required:
-         - event
+        - event
       properties:
         event:
           type: string
@@ -809,6 +828,6 @@ components:
         type: string
         description: Format of each pair is "A/B", where A and B are ISO 4217-A3 for standardized assets and popular unique symbol if not standardized.
         pattern: '[A-Z\s]+\/[A-Z\s]+'
-~~~
+````
 
 Stay tuned for more articles around WebSocket and AsyncAPI. Share your feedback and connect with the AsyncAPI community in our [Slack workspace](https://www.asyncapi.com/slack-invite/).

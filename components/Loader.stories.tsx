@@ -8,7 +8,7 @@ import Loader from './Loader';
 
 const meta: Meta<typeof Loader> = {
   title: 'Components/Loader',
-  component: Loader
+  component: Loader,
 };
 
 export default meta;
@@ -23,23 +23,23 @@ const DarkBackgroundDecorator = (Story: any) => (
 
 export const TextLoader: Story = {
   args: {
-    loaderText: 'Loading...'
-  }
+    loaderText: 'Loading...',
+  },
 };
 
 export const TextLoaderInDark: Story = {
   decorators: [DarkBackgroundDecorator],
   args: {
     loaderText: 'Loading...',
-    dark: true
-  }
+    dark: true,
+  },
 };
 
 export const PulsatingTextLoader: Story = {
   args: {
     loaderText: 'Loading...',
-    pulsating: true
-  }
+    pulsating: true,
+  },
 };
 
 export const PulsatingTextLoaderInDark: Story = {
@@ -47,45 +47,45 @@ export const PulsatingTextLoaderInDark: Story = {
   args: {
     loaderText: 'Loading...',
     dark: true,
-    pulsating: true
-  }
+    pulsating: true,
+  },
 };
 
 export const CircularAnimationLoader: Story = {
   args: {
-    loaderIcon: <IconCircularLoader />
-  }
+    loaderIcon: <IconCircularLoader />,
+  },
 };
 
 export const CircularAnimationLoaderInDark: Story = {
   decorators: [DarkBackgroundDecorator],
   args: {
     loaderIcon: <IconCircularLoader dark={true} />,
-    dark: true
-  }
+    dark: true,
+  },
 };
 
 export const PulsatingIconLoader: Story = {
   args: {
-    loaderIcon: <AsyncAPIColorIcon alt='Loading...' />,
-    pulsating: true
-  }
+    loaderIcon: <AsyncAPIColorIcon alt="Loading..." />,
+    pulsating: true,
+  },
 };
 
 export const PulsatingIconLoaderInDark: Story = {
   decorators: [DarkBackgroundDecorator],
   args: {
-    loaderIcon: <AsyncAPIColorIcon alt='Loading...' />,
+    loaderIcon: <AsyncAPIColorIcon alt="Loading..." />,
     dark: true,
-    pulsating: true
-  }
+    pulsating: true,
+  },
 };
 
 export const CircularAnimationTextLoader: Story = {
   args: {
     loaderIcon: <IconCircularLoader />,
-    loaderText: 'Loading...'
-  }
+    loaderText: 'Loading...',
+  },
 };
 
 export const CircularAnimationTextLoaderInDark: Story = {
@@ -93,24 +93,24 @@ export const CircularAnimationTextLoaderInDark: Story = {
   args: {
     loaderIcon: <IconCircularLoader dark={true} />,
     loaderText: 'Loading...',
-    dark: true
-  }
+    dark: true,
+  },
 };
 
 export const PulsatingIconTextLoader: Story = {
   args: {
-    loaderIcon: <AsyncAPIColorIcon alt='Loading...' />,
+    loaderIcon: <AsyncAPIColorIcon alt="Loading..." />,
     loaderText: 'Loading...',
-    pulsating: true
-  }
+    pulsating: true,
+  },
 };
 
 export const PulsatingIconTextLoaderInDark: Story = {
   decorators: [DarkBackgroundDecorator],
   args: {
-    loaderIcon: <AsyncAPIColorIcon alt='Loading...' />,
+    loaderIcon: <AsyncAPIColorIcon alt="Loading..." />,
     loaderText: 'Loading...',
     dark: true,
-    pulsating: true
-  }
+    pulsating: true,
+  },
 };

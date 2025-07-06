@@ -56,7 +56,7 @@ Use the following tools to set up the project:
     cd website
 ```
 
-5. Install all website dependencies. 
+5. Install all website dependencies.
 
 ```bash
     npm install
@@ -77,7 +77,6 @@ Use the following tools to set up the project:
 ```
 
 9. Access the live storybook development server at [localhost:6006](http://localhost:6006).
-
 
 ## Compose new blog post
 
@@ -119,18 +118,18 @@ Generated files of the storybook go to the `storybook-static` folder.
 
 - [install Docker](https://docs.docker.com/get-docker/)
 
-
 After cloning repository to your local, perform the following steps from the root of the repository.
 
 #### Steps:
+
 1. Build the Docker image:
-    ```bash 
-    docker build -t asyncapi-website .
-    ```
+   ```bash
+   docker build -t asyncapi-website .
+   ```
 2. Start the container:
-    ```bash
-    docker run --rm -it -v "$PWD":/async -p 3000:3000 asyncapi-website
-    ```
+   ```bash
+   docker run --rm -it -v "$PWD":/async -p 3000:3000 asyncapi-website
+   ```
 
 Now you're running AsyncAPI website in a development mode. Container is mapped with your local copy of the website. Whenever you make changes to the code, the website will refresh and changes visible in localhost:3000.
 
@@ -142,45 +141,56 @@ To include a fragment in a Markdown file:
 
 1. Import the fragment at the top of the file (but below the frontmatter) using the following syntax:
 
-    ```md
-    import DesiredFragmentName from '@/assets/docs/fragments/fragmentYouWantToImport.md';
-    ```
+   ```md
+   import DesiredFragmentName from '@/assets/docs/fragments/fragmentYouWantToImport.md';
+   ```
 
 1. Add the imported fragment to the desired location in the Markdown file using the following syntax:
 
-    ```md
-    <DesiredFragmentName />
-    ```
+   ```md
+   <DesiredFragmentName />
+   ```
 
 ## Lint the code
+
 To lint the code, run the following command:
+
 ```
 npm run lint
 ```
 
 To fix the linting issues, run the following command:
+
 ```
 npm run lint:fix
 ```
 
 To lint the mdx files, run the following command:
+
 ```
 npm run lint:mdx
 ```
 
 ## Start the production server
+
 To build and run a production-ready website, run the following command:
+
 ```
 npm run build && npm run start
 ```
+
 Generated files of the website go in the `.next` folder.
 
 ## Start the netlify production server
+
 Start a local development server for the build tool using the configuration and environment variables set for local development with the Netlify CLI:
+
 ```
 netlify dev
 ```
+
 To start the server using the configuration and environment variables set for `dev` or `all` deploy contexts, run the following command:
+
 ```
 netlify dev --context production
 ```
@@ -231,31 +241,31 @@ This is possible thanks to the following:
 
 1. A [Netlify Rewrite rule](https://docs.netlify.com/routing/redirects/rewrites-proxies/) located in the [netlify.toml](netlify.toml) file, which acts as proxy for all requests to the `/definitions/<file>` path, serving the content from GH without having an HTTP redirect.
 2. A [Netlify Edge Function](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/) that modifies the `Content-Type` header of the rewrite response to become `application/schema+json`. This lets tooling, such as [Hyperjump](https://json-schema.hyperjump.io), to fetch the schemas directly from their URL.  
-  Please find a flowchart explaining the flow this edge function should accomplish:
-  ```mermaid
-  flowchart TD
-    Request(Request) -->schema-related{Is it requesting Schemas?}
-    schema-related -->|No| req_no_schemas[Let the original request go through]
-    req_no_schemas --> Response(Response)
-    schema-related -->|Yes| req_schemas[Fetch from GitHub]
-    req_schemas-->req_json{Was requesting a .json file?}
-    
-    req_json -->|No| Response(Response)
-    req_json -->|Yes| response_status{Response Status?}
-    
-    response_status -->|2xx| response_ok[OK]
-    response_status -->|304| response_cached[Not Modified]
-    response_status -->|Any other| response_ko
+   Please find a flowchart explaining the flow this edge function should accomplish:
 
-    response_ok --> set_headers[Set Response Content-Type header to application/schema+json]
-    set_headers --> send_metric_success[Send success metric]
-    response_cached -- cached:true --> send_metric_success
-    response_ko --> send_metric_error[Send error metric]
+```mermaid
+flowchart TD
+  Request(Request) -->schema-related{Is it requesting Schemas?}
+  schema-related -->|No| req_no_schemas[Let the original request go through]
+  req_no_schemas --> Response(Response)
+  schema-related -->|Yes| req_schemas[Fetch from GitHub]
+  req_schemas-->req_json{Was requesting a .json file?}
 
-    send_metric_success -- file served from raw GH --> Response(Response)
-    send_metric_error --the errored response --> Response(Response)
-  ```
-   
+  req_json -->|No| Response(Response)
+  req_json -->|Yes| response_status{Response Status?}
+
+  response_status -->|2xx| response_ok[OK]
+  response_status -->|304| response_cached[Not Modified]
+  response_status -->|Any other| response_ko
+
+  response_ok --> set_headers[Set Response Content-Type header to application/schema+json]
+  set_headers --> send_metric_success[Send success metric]
+  response_cached -- cached:true --> send_metric_success
+  response_ko --> send_metric_error[Send error metric]
+
+  send_metric_success -- file served from raw GH --> Response(Response)
+  send_metric_error --the errored response --> Response(Response)
+```
 
 ## Project structure
 

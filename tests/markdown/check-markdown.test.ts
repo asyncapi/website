@@ -9,11 +9,11 @@ import {
   isValidURL,
   main,
   validateBlogs,
-  validateDocs
+  validateDocs,
 } from '../../scripts/markdown/check-markdown';
 
 jest.mock('../../scripts/helpers/logger', () => ({
-  logger: { error: jest.fn(), warn: jest.fn() }
+  logger: { error: jest.fn(), warn: jest.fn() },
 }));
 
 describe('Frontmatter Validator', () => {
@@ -40,7 +40,11 @@ describe('Frontmatter Validator', () => {
       type: 'blog',
       tags: ['test'],
       cover: 'cover.jpg',
-      authors: [{ name: 'John' }, { photo: 'jane.jpg' }, { name: 'Bob', photo: 'bob.jpg', link: 'not-a-url' }]
+      authors: [
+        { name: 'John' },
+        { photo: 'jane.jpg' },
+        { name: 'Bob', photo: 'bob.jpg', link: 'not-a-url' },
+      ],
     } as FrontMatter;
 
     const errors = validateBlogs(frontmatter);
@@ -49,8 +53,8 @@ describe('Frontmatter Validator', () => {
       expect.arrayContaining([
         'Author at index 0 is missing a photo',
         'Author at index 1 is missing a name',
-        'Invalid URL for author at index 2: not-a-url'
-      ])
+        'Invalid URL for author at index 2: not-a-url',
+      ]),
     );
   });
 
@@ -60,17 +64,25 @@ describe('Frontmatter Validator', () => {
     const errors = validateDocs(frontmatter);
 
     expect(errors).toEqual(
-      expect.arrayContaining(['Title is missing or not a string', 'Weight is missing or not a number'])
+      expect.arrayContaining([
+        'Title is missing or not a string',
+        'Weight is missing or not a number',
+      ]),
     );
   });
 
   it('checks for errors in markdown files in a directory', async () => {
-    await fs.writeFile(path.join(tempDir, 'invalid.md'), '---\ntitle: Invalid Blog\n---');
+    await fs.writeFile(
+      path.join(tempDir, 'invalid.md'),
+      '---\ntitle: Invalid Blog\n---',
+    );
     const mockConsoleLog = jest.spyOn(console, 'log').mockImplementation();
 
     await checkMarkdownFiles(tempDir, validateBlogs);
 
-    expect(logger.warn).toHaveBeenCalledWith(expect.stringContaining('Errors in file invalid.md:'));
+    expect(logger.warn).toHaveBeenCalledWith(
+      expect.stringContaining('Errors in file invalid.md:'),
+    );
     mockConsoleLog.mockRestore();
   });
 
@@ -81,7 +93,7 @@ describe('Frontmatter Validator', () => {
       type: 'blog',
       tags: 'not-an-array',
       cover: ['not-a-string'],
-      authors: { name: 'John Doe' }
+      authors: { name: 'John Doe' },
     };
     // @ts-ignore, to simulate invalid frontmatter
     const errors = validateBlogs(frontmatter);
@@ -90,7 +102,7 @@ describe('Frontmatter Validator', () => {
       'Invalid date format: invalid-date',
       'Tags should be an array',
       'Cover must be a string',
-      'Authors should be an array'
+      'Authors should be an array',
     ]);
   });
 
@@ -98,7 +110,9 @@ describe('Frontmatter Validator', () => {
     const invalidFolderPath = path.join(tempDir, 'non-existent-folder');
     const mockLoggerError = jest.spyOn(logger, 'error').mockImplementation();
 
-    await expect(checkMarkdownFiles(invalidFolderPath, validateBlogs)).rejects.toThrow('ENOENT');
+    await expect(
+      checkMarkdownFiles(invalidFolderPath, validateBlogs),
+    ).rejects.toThrow('ENOENT');
 
     expect(mockLoggerError.mock.calls[0][0]).toContain('Error in directory');
   });
@@ -107,13 +121,18 @@ describe('Frontmatter Validator', () => {
     const referenceSpecDir = path.join(tempDir, 'reference', 'specification');
 
     await fs.mkdir(referenceSpecDir, { recursive: true });
-    await fs.writeFile(path.join(referenceSpecDir, 'skipped.md'), '---\ntitle: Skipped File\n---');
+    await fs.writeFile(
+      path.join(referenceSpecDir, 'skipped.md'),
+      '---\ntitle: Skipped File\n---',
+    );
 
     const mockLoggerWarn = jest.spyOn(logger, 'warn').mockImplementation();
 
     await checkMarkdownFiles(tempDir, validateDocs);
     expect(mockLoggerWarn).not.toHaveBeenCalledWith(
-      expect.stringContaining('Errors in file reference/specification/skipped.md')
+      expect.stringContaining(
+        'Errors in file reference/specification/skipped.md',
+      ),
     );
     mockLoggerWarn.mockRestore();
   });
@@ -122,15 +141,22 @@ describe('Frontmatter Validator', () => {
     const validDir = path.join(tempDir, 'valid');
 
     await fs.mkdir(validDir, { recursive: true });
-    await fs.writeFile(path.join(validDir, 'valid.md'), '---\ntitle: Valid File\n---');
+    await fs.writeFile(
+      path.join(validDir, 'valid.md'),
+      '---\ntitle: Valid File\n---',
+    );
 
     const mockLoggerWarn = jest.spyOn(logger, 'warn').mockImplementation();
 
     await checkMarkdownFiles(tempDir, validateDocs);
 
     // Instead of trying to match the exact path format, check that the filename is present in the warning
-    expect(mockLoggerWarn).toHaveBeenCalledWith(expect.stringContaining('valid.md:'));
-    expect(mockLoggerWarn).toHaveBeenCalledWith(expect.stringContaining('Weight is missing or not a number'));
+    expect(mockLoggerWarn).toHaveBeenCalledWith(
+      expect.stringContaining('valid.md:'),
+    );
+    expect(mockLoggerWarn).toHaveBeenCalledWith(
+      expect.stringContaining('Weight is missing or not a number'),
+    );
     mockLoggerWarn.mockRestore();
   });
 
@@ -139,21 +165,33 @@ describe('Frontmatter Validator', () => {
 
     await fs.writeFile(filePath, '---\ntitle: Valid Title\n---');
 
-    const mockReadFile = jest.spyOn(fs, 'readFile').mockRejectedValue(new Error('Test readFile error'));
+    const mockReadFile = jest
+      .spyOn(fs, 'readFile')
+      .mockRejectedValue(new Error('Test readFile error'));
 
-    await expect(checkMarkdownFiles(tempDir, validateBlogs)).rejects.toThrow('Test readFile error');
-    expect(logger.error).toHaveBeenCalledWith(expect.stringContaining('Error in directory'), expect.any(Error));
+    await expect(checkMarkdownFiles(tempDir, validateBlogs)).rejects.toThrow(
+      'Test readFile error',
+    );
+    expect(logger.error).toHaveBeenCalledWith(
+      expect.stringContaining('Error in directory'),
+      expect.any(Error),
+    );
 
     mockReadFile.mockRestore();
   });
 
   it('should handle main function errors and exit with status 1', async () => {
-    const mockReaddir = jest.spyOn(fs, 'readdir').mockRejectedValue(new Error('Test error'));
+    const mockReaddir = jest
+      .spyOn(fs, 'readdir')
+      .mockRejectedValue(new Error('Test error'));
 
     await main();
 
     expect(mockProcessExit).toHaveBeenCalledWith(1);
-    expect(logger.error).toHaveBeenCalledWith('Failed to validate markdown files:', expect.any(Error));
+    expect(logger.error).toHaveBeenCalledWith(
+      'Failed to validate markdown files:',
+      expect.any(Error),
+    );
 
     mockReaddir.mockRestore(); // Restore the mock to prevent affecting other tests
   });
@@ -193,14 +231,19 @@ describe('Frontmatter Validator', () => {
 
     await fs.writeFile(testFile, 'This is just a text file');
     await checkMarkdownFiles(tempDir, validateBlogs);
-    expect(logger.warn).not.toHaveBeenCalledWith(expect.stringContaining('Errors in file sample.txt'));
+    expect(logger.warn).not.toHaveBeenCalledWith(
+      expect.stringContaining('Errors in file sample.txt'),
+    );
   });
 
   it('processes markdown files in directories other than reference/specification', async () => {
     const otherDir = path.join(tempDir, 'otherDir');
 
     await fs.mkdir(otherDir, { recursive: true });
-    await fs.writeFile(path.join(otherDir, 'test.md'), '---\ntitle: No Weight\n---');
+    await fs.writeFile(
+      path.join(otherDir, 'test.md'),
+      '---\ntitle: No Weight\n---',
+    );
 
     const mockLoggerWarn = jest.spyOn(logger, 'warn').mockImplementation();
 
@@ -208,7 +251,9 @@ describe('Frontmatter Validator', () => {
 
     // Expect a warning about missing weight
     expect(mockLoggerWarn).toHaveBeenCalledWith(
-      expect.stringContaining(`Errors in file ${path.join('otherDir', 'test.md')}:`)
+      expect.stringContaining(
+        `Errors in file ${path.join('otherDir', 'test.md')}:`,
+      ),
     );
     mockLoggerWarn.mockRestore();
   });

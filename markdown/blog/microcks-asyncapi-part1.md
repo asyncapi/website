@@ -1,5 +1,5 @@
 ---
-title: "How Microcks Can Speed-Up Your AsyncAPI Adoption - Part 1"
+title: 'How Microcks Can Speed-Up Your AsyncAPI Adoption - Part 1'
 date: 2020-11-11T19:00:00+01:00
 type: Engineering
 tags:
@@ -18,14 +18,14 @@ For those who don't know [Microcks](https://microcks.io) yet: it is the ultimate
 
 We are following the [AsyncAPI](https://www.asyncapi.com/) specification initiative since day one and I clearly remember how the [first announcement back in 2017](https://blog.hitchhq.com/introducing-the-asyncapi-specification-7feb57b460ae) resonated within our team ! We shared the same principles: Open source and community driven... and last but not least, 100% aligned with our vision that open specifications standards like [OpenAPI](https://www.openapis.org/) is the ultimate way to move forward and perpetuate our mantra: unlock developers potential in an unpredictable and strongly innovative environment!
 
-Since then, we have been in touch with our mutual communities and strategic users to see if we all embrace the idea of adding AsyncAPI testing and mocking support within Microcks. 
+Since then, we have been in touch with our mutual communities and strategic users to see if we all embrace the idea of adding AsyncAPI testing and mocking support within Microcks.
 Microcks community was very enthusiastic by the idea and problem this integration can solve. We have helped some users on their AsyncAPI use cases to grab valuable feedback on how to manage Microcks event-driven API integration. We learned a lot from different vertical industries, including tricky IoT & Edge computing or fintech implementations.
 
 Our communities clearly validate that it makes sense to have the same tool managing all their API whatever the type, open contract definition or design tool used. This is why, today Microcks supports open standards for contract definitions and mainstream open collaborative tools:
 
 ![microcks-supported-standards](/img/posts/microcks-asyncapi-part1/microcks-supported-standards.webp)
 
-It took us a year to make, which explains why Microcks 1.0.0 release is already GA and the first tool on [this topic](https://www.asyncapi.com/docs/tools#mocking) :wink: 
+It took us a year to make, which explains why Microcks 1.0.0 release is already GA and the first tool on [this topic](https://www.asyncapi.com/docs/tools#mocking) :wink:
 
 ![asyncapi-tool-tweet](/img/posts/microcks-asyncapi-part1/asyncapi-tool-tweet.webp)
 
@@ -39,6 +39,6 @@ To demonstrate our commitment/vision and to [improve AsyncAPI specifications](ht
 
 Please have a look at [this proposal #329](https://github.com/asyncapi/asyncapi/issues/329) and share your opinion. At the moment, it is a part of [AsyncAPI 2.1 milestone](https://github.com/asyncapi/asyncapi/milestone/17).
 
- ** In the next article, we will focus on Microcks + AsyncAPI use cases. Stay tuned.**
+** In the next article, we will focus on Microcks + AsyncAPI use cases. Stay tuned.**
 
 > And if you can't wait for text explanataions, do not hesitate having a look at the [AsyncAPI SIG Meeting #34 recording](https://www.youtube.com/watch?v=pmRA4M-TWuE) for full illustrations of the capabilities. :wink:

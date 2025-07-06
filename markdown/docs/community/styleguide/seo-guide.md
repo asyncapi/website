@@ -12,7 +12,7 @@ Search Engine Optimization (SEO) encompasses various techniques and strategies t
 
 Integrating SEO practices into technical documentation makes it easier for users and contributors to discover valuable resources and ultimately fosters community engagement and collaboration, enhancing the overall knowledge base.
 
-## SEO best practices  
+## SEO best practices
 
 ### Headings?
 
@@ -27,8 +27,11 @@ Headings are HTML tags that create a structured hierarchy in content, making it 
 
 ```md
 # Server
+
 ## What is a Server?
+
 ## What is the purpose of servers?
+
 ### Client and Server
 ```
 
@@ -40,7 +43,7 @@ URLs serve as the addresses for web pages and other online resources. An SEO-fri
 
 - **Keep It Short:** Short URLs are simpler for users to remember and share.
 - **Include Keywords:** Effective keyword incorporation helps search engines index the URL successfully.
-- **Avoid Special Characters and Spaces:** Use hyphens (-) instead of underscores (_) to separate words, as search engines interpret hyphens as spaces.
+- **Avoid Special Characters and Spaces:** Use hyphens (-) instead of underscores (\_) to separate words, as search engines interpret hyphens as spaces.
 
 Here are some examples of SEO-friendly URLs from AsyncAPI's documentation:
 
@@ -82,13 +85,13 @@ Internal linking involves creating hyperlinks within a document that connect to 
 
 - "In this case, in your AsyncAPI file, you describe the `server`, and therefore, the [Server Object](https://www.asyncapi.com/docs/reference/specification/latest#serverObject) holds information about the actual server, including its physical location."
 - "JSON Schema Draft 07 is 100% compatible with AsyncAPI schemas. You can also use other standards to describe payload schema, such as [Avro](https://github.com/asyncapi/avro-schema-parser#usage)."
-- "Furthermore, the [Pub/sub](/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) is appealing for IoT use cases due to two key features: support for flexible coupling between publishers/subscribers and inherent support for point-to-multipoint transmission."  
+- "Furthermore, the [Pub/sub](/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) is appealing for IoT use cases due to two key features: support for flexible coupling between publishers/subscribers and inherent support for point-to-multipoint transmission."
 
 ### What are meta descriptions?
 
 Meta descriptions are short snippets of HTML that briefly summarize a web page's content. They appear below the page title in search results and can influence click-through rates.
 
->[!NOTE]
+> [!NOTE]
 > Meta descriptions are often written in YAML format for AsyncAPI's documentation.
 
 #### Strategies for making SEO-friendly meta descriptions

@@ -14,7 +14,7 @@ authors:
 
 > **Edit 14.04.2021**
 
-In this post, I explain how you can use Nunjucks to template information extracted from an AsyncAPI file. I also write how you can make it even easier using Nunjucks inside the AsyncAPI Generator. Now, we also have a [React-based](https://github.com/asyncapi/generator/blob/master/docs/react-render-engine.md) render engine inside the generator, and it is far more developer-friendly. I encourage you to try it out. 
+In this post, I explain how you can use Nunjucks to template information extracted from an AsyncAPI file. I also write how you can make it even easier using Nunjucks inside the AsyncAPI Generator. Now, we also have a [React-based](https://github.com/asyncapi/generator/blob/master/docs/react-render-engine.md) render engine inside the generator, and it is far more developer-friendly. I encourage you to try it out.
 
 Specifications exist for a reason. Among other things, they help to bring quality, consistency, and standardize a given area. They are a great use case for templating engines. You can prepare a template that generates something from any document that follows a particular specification. You can generate whatever you want, docs, code, and diagrams. The sky is the limit.
 
@@ -102,7 +102,7 @@ In my example, instead of a URL like `test.mosquitto.org:{port}`, I wanted to ge
 function replaceVariablesWithValues(url, serverVariables) {
   const urlVariables = getVariablesNamesFromUrl(url);
   const declaredVariables = urlVariables.filter((el) =>
-    serverVariables.hasOwnProperty(el[1])
+    serverVariables.hasOwnProperty(el[1]),
   );
 
   if (urlVariables.length !== 0 && declaredVariables.length !== 0) {

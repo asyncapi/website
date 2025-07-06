@@ -13,7 +13,7 @@ import withMDX from '@next/mdx';
 const nextConfig = {
   pageExtensions: ['tsx', 'ts', 'md', 'mdx'],
   eslint: {
-    ignoreDuringBuilds: true
+    ignoreDuringBuilds: true,
   },
   output: 'export',
   webpack(config, { isServer }) {
@@ -22,16 +22,24 @@ const nextConfig = {
     }
 
     return config;
-  }
+  },
 };
 
 const mdxConfig = withMDX({
   extension: /\.mdx?$/,
-  providerImportSource: "@mdx-js/react",
+  providerImportSource: '@mdx-js/react',
   options: {
-    remarkPlugins: [frontmatter, gemoji, headingId, slug, images, a11yEmoji, remarkGfm],
-    rehypePlugins: []
-  }
+    remarkPlugins: [
+      frontmatter,
+      gemoji,
+      headingId,
+      slug,
+      images,
+      a11yEmoji,
+      remarkGfm,
+    ],
+    rehypePlugins: [],
+  },
 });
 
 export default mdxConfig(nextConfig);

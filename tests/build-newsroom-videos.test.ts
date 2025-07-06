@@ -34,12 +34,14 @@ describe('buildNewsroomVideos', () => {
   it('should mockFetch video data and write to file', async () => {
     mockFetch.mockResolvedValue({
       ok: true,
-      json: jest.fn().mockResolvedValue(mockApiResponse)
+      json: jest.fn().mockResolvedValue(mockApiResponse),
     });
 
     const result = await buildNewsroomVideos(testFilePath);
 
-    const expectedUrl = new URL('https://youtube.googleapis.com/youtube/v3/search');
+    const expectedUrl = new URL(
+      'https://youtube.googleapis.com/youtube/v3/search',
+    );
 
     expectedUrl.searchParams.set('key', 'testkey');
     expectedUrl.searchParams.set('part', 'snippet');
@@ -73,14 +75,16 @@ describe('buildNewsroomVideos', () => {
   it('should handle invalid API response', async () => {
     mockFetch.mockResolvedValue({
       ok: true,
-      json: jest.fn().mockResolvedValue({})
+      json: jest.fn().mockResolvedValue({}),
     });
 
     try {
       await buildNewsroomVideos(testFilePath);
     } catch (err) {
       if (err instanceof Error) {
-        expect(err.message).toContain('Invalid data structure received from YouTube API');
+        expect(err.message).toContain(
+          'Invalid data structure received from YouTube API',
+        );
       } else {
         throw new Error('Unexpected error type');
       }
@@ -91,7 +95,7 @@ describe('buildNewsroomVideos', () => {
     mockFetch.mockResolvedValue({
       ok: false,
       status: 404,
-      json: jest.fn().mockResolvedValue({})
+      json: jest.fn().mockResolvedValue({}),
     });
 
     try {
@@ -108,10 +112,14 @@ describe('buildNewsroomVideos', () => {
   it('should handle file write errors', async () => {
     mockFetch.mockResolvedValue({
       ok: true,
-      json: jest.fn().mockResolvedValue(mockApiResponse)
+      json: jest.fn().mockResolvedValue(mockApiResponse),
     });
 
-    const invalidPath = resolve(os.tmpdir(), 'invalid_dir', 'newsroom_videos.json');
+    const invalidPath = resolve(
+      os.tmpdir(),
+      'invalid_dir',
+      'newsroom_videos.json',
+    );
 
     try {
       await buildNewsroomVideos(invalidPath);
@@ -127,7 +135,7 @@ describe('buildNewsroomVideos', () => {
   it('should throw an error if YOUTUBE_TOKEN environment variable is not set', async () => {
     delete process.env.YOUTUBE_TOKEN;
     await expect(buildNewsroomVideos('/path/to/write')).rejects.toThrow(
-      'YOUTUBE_TOKEN environment variable is required'
+      'YOUTUBE_TOKEN environment variable is required',
     );
     process.env.YOUTUBE_TOKEN = 'testkey';
   });

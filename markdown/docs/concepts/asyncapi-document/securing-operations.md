@@ -24,7 +24,7 @@ graph LR
   C --> D
   D --> |$ref| B
   A --> B
-  
+
   style C fill:#47BCEE,stroke:#000;
   style D fill:#47BCEE,stroke:#000;
 ```

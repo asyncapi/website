@@ -11,5 +11,4 @@ describe('Home Page Tests', () => {
     homePage.verifyHeader();
     homePage.verifyNavbarLogo();
   });
-
 });

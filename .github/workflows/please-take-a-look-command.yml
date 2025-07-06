@@ -1,8 +1,8 @@
 # This action is centrally managed in https://github.com/asyncapi/.github/
 # Don't make changes to this file in this repo as they will be overwritten with changes made to the same file in above mentioned repo
 
-# It uses Github actions to listen for comments on issues and pull requests and 
-# if the comment contains /please-take-a-look or /ptal it will add a comment pinging 
+# It uses Github actions to listen for comments on issues and pull requests and
+# if the comment contains /please-take-a-look or /ptal it will add a comment pinging
 # the code-owners who are reviewers for PR
 
 name: Please take a Look

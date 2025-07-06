@@ -12,6 +12,7 @@ Welcome to AsyncAPI **Guides**! Our Guides section teaches AsyncAPI's capabiliti
 <Remember>
 
 ## Contribute to AsyncAPI Guides
+
 <ContributionNotes />
 
 </Remember>

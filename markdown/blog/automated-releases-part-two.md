@@ -1,5 +1,5 @@
 ---
-title: "(Part 2) Full automation of release with GitHub Actions and Conventional Commits for non-JS projects"
+title: '(Part 2) Full automation of release with GitHub Actions and Conventional Commits for non-JS projects'
 date: 2020-04-14T06:00:00+01:00
 type: Engineering
 tags:
@@ -15,11 +15,11 @@ excerpt: This post and the previous one come from our experience we gained when 
 ---
 
 > tl;dr
-[Here](/blog/automated-releases/) you can find the first blog post about automated releasing. The purpose of this blog post is to show how you can do the same automation in non-JavaScript projects. Even if JavaScript community created tooling, you can still use it in other projects and don't freak out.
+> [Here](/blog/automated-releases/) you can find the first blog post about automated releasing. The purpose of this blog post is to show how you can do the same automation in non-JavaScript projects. Even if JavaScript community created tooling, you can still use it in other projects and don't freak out.
 
 This post and the [previous one](/blog/automated-releases/) come from our experience we gained when working on full automation for all tools maintained by [AsyncaPI Initiative](https://github.com/asyncapi/asyncapi/).
 
-> [AsyncAPI](https://github.com/asyncapi/asyncapi/) is a specification that you use to create machine-readable definitions of your event-driven APIs. 
+> [AsyncAPI](https://github.com/asyncapi/asyncapi/) is a specification that you use to create machine-readable definitions of your event-driven APIs.
 
 The previous post focused on JavaScript as the first library that we automated was our [generator](https://github.com/asyncapi/generator/). It covered publishing to NPM and usage of the JavaScript community ecosystem. Now we have automation rolled out to all our libraries, Go-written too.
 
@@ -60,23 +60,24 @@ The Semantic Release package supports configuration files in different formats a
 ```yaml
 ---
 branches:
-- master
+  - master
 plugins:
-- - "@semantic-release/commit-analyzer"
-  - preset: conventionalcommits
-- - "@semantic-release/release-notes-generator"
-  - preset: conventionalcommits
-- - "@semantic-release/github"
-  - assets:
-    - path: asyncapi-parser.darwin.amd64
-      label: Binary - Darwin AMD64
-    - path: asyncapi-parser.linux.amd64
-      label: Binary - Linux AMD64
-    - path: asyncapi-parser.windows.amd64.exe
-      label: Binary - Windows AMD64
+  - - '@semantic-release/commit-analyzer'
+    - preset: conventionalcommits
+  - - '@semantic-release/release-notes-generator'
+    - preset: conventionalcommits
+  - - '@semantic-release/github'
+    - assets:
+        - path: asyncapi-parser.darwin.amd64
+          label: Binary - Darwin AMD64
+        - path: asyncapi-parser.linux.amd64
+          label: Binary - Linux AMD64
+        - path: asyncapi-parser.windows.amd64.exe
+          label: Binary - Windows AMD64
 ```
 
 Our configuration uses plugins to:
+
 - Analyze Git commits with Conventional Commits specification.
 - Create a Git tag and generate changelog for release notes.
 - Publish a release with additional assets. We compile our parser as binaries that are compatible with many platforms and we want to have them easily accessible with each release.
@@ -95,10 +96,10 @@ test:
   runs-on: ubuntu-latest
   strategy:
     matrix:
-      go: 
+      go:
         - '1.14'
         - '1.13'
-        - '1.12' 
+        - '1.12'
   steps:
     - name: Checkout repo
       uses: actions/checkout@v2
@@ -147,13 +148,14 @@ So far, it is all Go-related operations. How about the release? For the release,
 ```
 
 You only have to install `conventional-changelog-conventionalcommits` explicitly if you want to use `conventionalcommits` preset when analyzing Git commits and generating the changelog:
+
 ```
 plugins:
 - - "@semantic-release/commit-analyzer"
   - preset: conventionalcommits
 - - "@semantic-release/release-notes-generator"
   - preset: conventionalcommits
-``` 
+```
 
 Take a look at full release workflow for reference:
 
@@ -171,10 +173,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        go: 
+        go:
           - '1.14'
           - '1.13'
-          - '1.12' 
+          - '1.12'
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -184,11 +186,11 @@ jobs:
           go-version: '${{ matrix.go }}'
       - name: Invoking go test
         run: go test ./...
-  
+
   release:
     name: 'Release to GitHub'
     runs-on: ubuntu-latest
-    needs: 
+    needs:
       - test
     steps:
       - name: Checkout repo
@@ -231,4 +233,4 @@ I don't think I can ever understand this "hate" towards JavaScript. I think, tho
 
 In case you want to have more explanation on the release automation subject, I recommend reading [the first part of the automation story](/blog/automated-releases/). You can also [join our Slack](https://www.asyncapi.com/slack-invite/) for further discussion.
 
-_* Cover photo by [Rock'n Roll Monkey](https://unsplash.com/@rocknrollmonkey) on Unsplash_
+_\* Cover photo by [Rock'n Roll Monkey](https://unsplash.com/@rocknrollmonkey) on Unsplash_

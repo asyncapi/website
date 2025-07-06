@@ -23,7 +23,7 @@ jobs:
       github.event.pull_request.draft == false && 
       (github.event.pull_request.user.login != 'asyncapi-bot' || 
       github.event.pull_request.user.login != 'dependabot[bot]' || 
-      github.event.pull_request.user.login != 'dependabot-preview[bot]') 
+      github.event.pull_request.user.login != 'dependabot-preview[bot]')
     runs-on: ubuntu-latest
     steps:
       - name: Get PR authors
@@ -90,11 +90,11 @@ jobs:
       - name: Automerge PR
         uses: pascalgn/automerge-action@22948e0bc22f0aa673800da838595a3e7347e584 #v0.15.6 https://github.com/pascalgn/automerge-action/releases/tag/v0.15.6
         env:
-          GITHUB_TOKEN: "${{ secrets.GH_TOKEN }}"
-          MERGE_LABELS: "!do-not-merge,ready-to-merge"
-          MERGE_METHOD: "squash"
+          GITHUB_TOKEN: '${{ secrets.GH_TOKEN }}'
+          MERGE_LABELS: '!do-not-merge,ready-to-merge'
+          MERGE_METHOD: 'squash'
           # Using the output of the previous step (`Co-authored-by: ...` lines) as commit description.
           # Important to keep 2 empty lines as https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors#creating-co-authored-commits-on-the-command-line mentions
           MERGE_COMMIT_MESSAGE: "{pullRequest.title} (#{pullRequest.number})\n\n\n${{ fromJSON(steps.create-commit-message.outputs.result) }}"
-          MERGE_RETRIES: "20"
-          MERGE_RETRY_SLEEP: "30000"
+          MERGE_RETRIES: '20'
+          MERGE_RETRY_SLEEP: '30000'

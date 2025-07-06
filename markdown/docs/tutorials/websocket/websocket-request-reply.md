@@ -5,12 +5,12 @@ weight: 220
 ---
 
 ## Introduction
-In the [Create an AsyncAPI Document for a Slackbot with WebSockets](https://www.asyncapi.com/docs/tutorials/websocket) tutorial, you learned how to write an AsyncAPI document for a Slackbot `Heart-Counter`  that actively monitored reactions associated with a message. In this lesson, let's go a step further. After receiving a reaction, `Heart-Counter` responds via a message back to the Slack server through WebSocket to confirm the event reception. 
 
-The interaction where the Slackbot acknowledges the event and replies with a specific response sets the stage for the Request/Reply messaging pattern discussed in this context. 
+In the [Create an AsyncAPI Document for a Slackbot with WebSockets](https://www.asyncapi.com/docs/tutorials/websocket) tutorial, you learned how to write an AsyncAPI document for a Slackbot `Heart-Counter` that actively monitored reactions associated with a message. In this lesson, let's go a step further. After receiving a reaction, `Heart-Counter` responds via a message back to the Slack server through WebSocket to confirm the event reception.
 
-> Refer to the [Request/Reply pattern tutorial](https://www.asyncapi.com/docs/tutorials/getting-started/request-reply) for an introduction to its implementation. 
+The interaction where the Slackbot acknowledges the event and replies with a specific response sets the stage for the Request/Reply messaging pattern discussed in this context.
 
+> Refer to the [Request/Reply pattern tutorial](https://www.asyncapi.com/docs/tutorials/getting-started/request-reply) for an introduction to its implementation.
 
 ```mermaid
 sequenceDiagram
@@ -25,13 +25,12 @@ User-->>Slack Server (Socket Mode): Adds emoji to a message.
 Slack Server (Socket Mode)->>Heart-Counter: Sending "reaction_added" payload
 Note left of Heart-Counter: Event received
 Heart-Counter->>Slack Server (Socket Mode): Sending acknowledgement
-``` 
-
+```
 
 ## Background context
 
-The [Request-Reply Messaging Pattern](https://www.asyncapi.com/docs/concepts/asyncapi-document/reply-info) in AsyncAPI is an exciting and highly anticipated feature.  The messaging pattern mirrors a traditional conversation, where one "requester" entity initiates a query or request, and the "responder" entity provides a specific and expected response.
-The messaging pattern can work in both synchronous and asynchronous environments and is very beneficial to decouple components by allowing them to operate independently in a distributed system. 
+The [Request-Reply Messaging Pattern](https://www.asyncapi.com/docs/concepts/asyncapi-document/reply-info) in AsyncAPI is an exciting and highly anticipated feature. The messaging pattern mirrors a traditional conversation, where one "requester" entity initiates a query or request, and the "responder" entity provides a specific and expected response.
+The messaging pattern can work in both synchronous and asynchronous environments and is very beneficial to decouple components by allowing them to operate independently in a distributed system.
 
 ```mermaid
 sequenceDiagram
@@ -45,7 +44,6 @@ sequenceDiagram
   Server->>Server: Process Request
   Server-->>Client: Reply
 ```
-
 
 ## Define messages
 
@@ -165,6 +163,7 @@ Additionally, you will also be adding the `acknowledge` schema that makes use of
 </CodeBlock>
 
 ## Define acknowledge message to channel
+
 Extend the channel the `Heart-Counter` used to include the `acknowledge` message.
 
 <CodeBlock language="yaml" highlightedLines={[9,10]}>
@@ -182,13 +181,12 @@ Extend the channel the `Heart-Counter` used to include the `acknowledge` message
 
 ## Define operations
 
-Now you've reached the most important part of the tutorial; it's time to represent the Request/Reply pattern. 
+Now you've reached the most important part of the tutorial; it's time to represent the Request/Reply pattern.
 
-Both `helloListener` and `reactionListener` operations are set to `receive` events. However, in the case of `reactionListener`, you also want to represent the message sent back to the server. This is where the `reply` attribute comes into play. 
+Both `helloListener` and `reactionListener` operations are set to `receive` events. However, in the case of `reactionListener`, you also want to represent the message sent back to the server. This is where the `reply` attribute comes into play.
 
-Since both the request and reply function happens over the same WebSocket URL, both `channel` values stay the same. However, you can differentiate each operation's message by specifying the messages sent or received. 
+Since both the request and reply function happens over the same WebSocket URL, both `channel` values stay the same. However, you can differentiate each operation's message by specifying the messages sent or received.
 Thus, you can say that for a `reaction` message received over the `root` channel, the `reactionListener` operation will reply with the `acknowledge` message over the same channel.
-
 
 <CodeBlock language="yaml" highlightedLines={[14,15,16,17,18]}>
 {`operations:
@@ -367,4 +365,5 @@ components:
 </CodeBlock>
 
 ## Summary
-Great job getting to the end! In this tutorial, you learned how to create an AsyncAPI document for a use case that implemented the Request-Reply messaging pattern. Now, you can explore this pattern with sub-patterns to see how it works with real-life use cases. 
+
+Great job getting to the end! In this tutorial, you learned how to create an AsyncAPI document for a use case that implemented the Request-Reply messaging pattern. Now, you can explore this pattern with sub-patterns to see how it works with real-life use cases.

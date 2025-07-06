@@ -3,17 +3,19 @@ title: Protocol
 weight: 25
 ---
 
-
 ## What is a protocol?
+
 A _protocol_ is a set of rules that governs the exchange of information between applications and/or servers.
 
 Protocol examples:
-* [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket)
-* [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
-* [Kafka](https://kafka.apache.org/)
-* [MQTT](https://mqtt.org/)
+
+- [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket)
+- [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+- [Kafka](https://kafka.apache.org/)
+- [MQTT](https://mqtt.org/)
 
 ## Why do we need protocols?
+
 Protocols play a crucial role in message transmission. Whenever a producer detects a state change (events) and publishes those events as messages, a protocol carries those messages to the channel and then to the consumer.
 
 ```mermaid

@@ -10,10 +10,12 @@ import Card from './Card';
  */
 export default function ExpensesCard() {
   return (
-    <div className='overflow-x-auto'>
-      <div className='grid auto-cols-max grid-flow-col gap-4 p-4'>
+    <div className="overflow-x-auto">
+      <div className="grid auto-cols-max grid-flow-col gap-4 p-4">
         {Object.entries(ExpensesData).map(([month, data], index) => {
-          return <Card key={index} month={month as keyof Expenses} data={data} />;
+          return (
+            <Card key={index} month={month as keyof Expenses} data={data} />
+          );
         })}
       </div>
     </div>

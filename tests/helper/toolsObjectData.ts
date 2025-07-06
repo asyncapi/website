@@ -6,7 +6,7 @@ const createToolRepositoryData = ({
   owner = 'asyncapi',
   repoName = 'example-repo',
   description = 'Example repository',
-  path = '.asyncapi-tool'
+  path = '.asyncapi-tool',
 } = {}) => ({
   name,
   url: `https://api.github.com/repositories/351453552/contents/${path}?ref=${refId}`,
@@ -14,9 +14,9 @@ const createToolRepositoryData = ({
     full_name: `${owner}/${repoName}`,
     html_url: `https://github.com/${owner}/${repoName}`,
     description,
-    owner: { login: owner }
+    owner: { login: owner },
   },
-  path
+  path,
 });
 
 const createToolFileContent = ({
@@ -26,15 +26,17 @@ const createToolFileContent = ({
   categories = ['Category1' as unknown as Category],
   hasCommercial = false,
   additionalLinks = {},
-  additionalFilters = {}
+  additionalFilters = {},
 } = {}) => ({
   title,
   description,
   links: {
-    repoUrl: repoUrl || `https://github.com/asyncapi/${encodeURIComponent(title.toLowerCase().replace(/\s+/g, '-'))}`,
-    ...additionalLinks
+    repoUrl:
+      repoUrl ||
+      `https://github.com/asyncapi/${encodeURIComponent(title.toLowerCase().replace(/\s+/g, '-'))}`,
+    ...additionalLinks,
   },
-  filters: { categories, hasCommercial, ...additionalFilters }
+  filters: { categories, hasCommercial, ...additionalFilters },
 });
 
 const createExpectedToolObject = ({
@@ -45,7 +47,7 @@ const createExpectedToolObject = ({
   hasCommercial = false,
   isAsyncAPIOwner = true,
   additionalLinks = {},
-  additionalFilters = {}
+  additionalFilters = {},
 } = {}) =>
   createToolFileContent({
     title,
@@ -54,7 +56,7 @@ const createExpectedToolObject = ({
     categories,
     hasCommercial,
     additionalLinks,
-    additionalFilters: { isAsyncAPIOwner, ...additionalFilters }
+    additionalFilters: { isAsyncAPIOwner, ...additionalFilters },
   });
 
 type ToolRepositoryDataParams = {
@@ -69,14 +71,17 @@ type ToolRepositoryDataParams = {
 const createMockData = (tools: (string | ToolRepositoryDataParams)[] = []) =>
   tools.map((tool) =>
     typeof tool === 'string'
-      ? createToolRepositoryData({ name: `.asyncapi-tool-${tool}`, repoName: tool })
-      : createToolRepositoryData(tool)
+      ? createToolRepositoryData({
+          name: `.asyncapi-tool-${tool}`,
+          repoName: tool,
+        })
+      : createToolRepositoryData(tool),
   );
 
 const createMalformedYAML = ({
   title = 'Malformed Tool',
   description = 'This tool has malformed YAML.',
-  repoUrl = 'https://github.com/asyncapi/malformed-repo'
+  repoUrl = 'https://github.com/asyncapi/malformed-repo',
 } = {}) => `
   title: ${title}
   description: ${description}
@@ -87,4 +92,9 @@ const createMalformedYAML = ({
       - Category1
 `;
 
-export { createExpectedToolObject, createMalformedYAML, createMockData, createToolFileContent };
+export {
+  createExpectedToolObject,
+  createMalformedYAML,
+  createMockData,
+  createToolFileContent,
+};

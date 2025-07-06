@@ -126,7 +126,7 @@ jobs:
           LOCALE_OUTPUT=$(npm run test:locales 2>&1)
           EXIT_CODE=$?
           set -e
-          
+
           # If the command failed, extract and format the error message
           if [ $EXIT_CODE -ne 0 ]; then
             # Extract the found languages

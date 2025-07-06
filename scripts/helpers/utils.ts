@@ -27,7 +27,9 @@ function convertToJson(contentYAMLorJSON: unknown): any {
       return yaml.parse(contentYAMLorJSON);
     } catch (yamlError) {
       // If parsing as YAML also fails, throw an error
-      throw new Error(`Invalid content format:\nJSON Parse Error: ${jsonError}\nYAML Parse Error: ${yamlError}`);
+      throw new Error(
+        `Invalid content format:\nJSON Parse Error: ${jsonError}\nYAML Parse Error: ${yamlError}`,
+      );
     }
   }
 }

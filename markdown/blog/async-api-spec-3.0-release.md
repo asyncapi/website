@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI Spec 3.0 is coming!"
+title: 'AsyncAPI Spec 3.0 is coming!'
 date: 2022-03-10T06:00:00+01:00
 type: Communication
 tags:
@@ -20,22 +20,22 @@ AsyncAPI is a specification for describing your event-driven architecture. Our s
 
 Many new features for AsyncAPI Spec 3.0 are being planned, written, and discussed. Among them are:
 
--   [Introduce Schema Versioning](https://github.com/asyncapi/spec/issues/697)
--   [Introducing Data Format bindings](https://github.com/asyncapi/spec/issues/694)
--   [Making servers aware of their service name](https://github.com/asyncapi/spec/issues/654)
--   [Solving publish/subscribe confusion](https://github.com/asyncapi/spec/issues/618) 
--   [What does an AsyncAPI file mean](https://github.com/asyncapi/spec/issues/628)
--   [Fixing schema inconsistencies](https://github.com/asyncapi/spec/issues/583)
--   [Defining a schema format other than the default one](https://github.com/asyncapi/spec/issues/622)
--   [Remove `$ref` field from `Channel Item Object`](https://github.com/asyncapi/spec/issues/699) 
--   [Application of message traits (intentionally) replacing existing attributes](https://github.com/asyncapi/spec/issues/505)
--   [Address perspective and channel reuse issues through introducing 'endpoint' concept](https://github.com/asyncapi/spec/issues/599)
+- [Introduce Schema Versioning](https://github.com/asyncapi/spec/issues/697)
+- [Introducing Data Format bindings](https://github.com/asyncapi/spec/issues/694)
+- [Making servers aware of their service name](https://github.com/asyncapi/spec/issues/654)
+- [Solving publish/subscribe confusion](https://github.com/asyncapi/spec/issues/618)
+- [What does an AsyncAPI file mean](https://github.com/asyncapi/spec/issues/628)
+- [Fixing schema inconsistencies](https://github.com/asyncapi/spec/issues/583)
+- [Defining a schema format other than the default one](https://github.com/asyncapi/spec/issues/622)
+- [Remove `$ref` field from `Channel Item Object`](https://github.com/asyncapi/spec/issues/699)
+- [Application of message traits (intentionally) replacing existing attributes](https://github.com/asyncapi/spec/issues/505)
+- [Address perspective and channel reuse issues through introducing 'endpoint' concept](https://github.com/asyncapi/spec/issues/599)
 
 The tooling issues and pull requests which are tied up with the Spec 3.0 release are:
 
--   [Implement intent-driven Parser API](https://github.com/asyncapi/parser-js/issues/401)
--   [Splitting out definitions into separate files](https://github.com/asyncapi/spec-json-schemas/issues/127)
--   [Move binding JSON schema files to main JSON schema repository](https://github.com/asyncapi/bindings/issues/113)
+- [Implement intent-driven Parser API](https://github.com/asyncapi/parser-js/issues/401)
+- [Splitting out definitions into separate files](https://github.com/asyncapi/spec-json-schemas/issues/127)
+- [Move binding JSON schema files to main JSON schema repository](https://github.com/asyncapi/bindings/issues/113)
 
 We are using [this GitHub milestone](https://github.com/asyncapi/spec/milestone/18) to track down all the issues related to Spec 3.0 release. If you are willing to take up an issue, filter the issues with `needs champion` label and drive the initiative forward. We also have a [release journal](https://github.com/asyncapi/community/issues/163) for the upcoming Spec 3.0 release to keep note of all the references, build the right documentation, and track the progress for the upcoming release.
 

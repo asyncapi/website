@@ -18,13 +18,14 @@ const finalResult: Result = {
   docs: [],
   blog: [],
   about: [],
-  docsTree: {}
+  docsTree: {},
 };
 const releaseNotes: (string | undefined)[] = [];
 // Matches heading IDs in two formats:
 // 1. {#my-heading-id}
 // 2. <a name="my-heading-id">
-const HEADING_ID_REGEX = /[\s]*(?:\{#([a-zA-Z0-9\-_]+)\}|<a[\s]+name="([a-zA-Z0-9\-_]+)")/;
+const HEADING_ID_REGEX =
+  /[\s]*(?:\{#([a-zA-Z0-9\-_]+)\}|<a[\s]+name="([a-zA-Z0-9\-_]+)")/;
 
 /**
  * Extracts a slug from a markdown heading string for table of contents usage.
@@ -80,9 +81,11 @@ export const addItem = (details: Details, resultObj: Result) => {
   } = {
     '/docs': 'docs',
     '/blog': 'blog',
-    '/about': 'about'
+    '/about': 'about',
   };
-  const section = Object.keys(sectionMap).find((key) => details.slug!.startsWith(key));
+  const section = Object.keys(sectionMap).find((key) =>
+    details.slug!.startsWith(key),
+  );
 
   if (section) {
     resultObj[sectionMap[section]].push(details);
@@ -107,8 +110,10 @@ function getVersionDetails(slug: string, weight: number) {
   const versionName = fileBaseName.split('-')[0];
 
   return {
-    title: versionName.startsWith('v') ? capitalize(versionName.slice(1)) : capitalize(versionName),
-    weight
+    title: versionName.startsWith('v')
+      ? capitalize(versionName.slice(1))
+      : capitalize(versionName),
+    weight,
   };
 }
 
@@ -126,7 +131,10 @@ function getVersionDetails(slug: string, weight: number) {
 function handleSpecificationVersion(details: Details, fileBaseName: string) {
   const detailsObj = details;
 
-  if (fileBaseName.includes('next-spec') || fileBaseName.includes('next-major-spec')) {
+  if (
+    fileBaseName.includes('next-spec') ||
+    fileBaseName.includes('next-major-spec')
+  ) {
     detailsObj.isPrerelease = true;
     detailsObj.title += ' (Pre-release)';
   }
@@ -174,7 +182,7 @@ async function walkDirectories(
   sectionTitle?: string,
   sectionId?: string | undefined,
   rootSectionId?: string | undefined,
-  sectionWeight = 0
+  sectionWeight = 0,
 ) {
   try {
     for (const dir of directories) {
@@ -192,11 +200,14 @@ async function walkDirectories(
         if (await isDirectory(fileName)) {
           if (await pathExists(fileNameWithSection)) {
             // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
-            details = frontMatter(await readFile(fileNameWithSection, 'utf-8'), {}).data as Details;
+            details = frontMatter(
+              await readFile(fileNameWithSection, 'utf-8'),
+              {},
+            ).data as Details;
             details.title = details.title || capitalize(basename(fileName));
           } else {
             details = {
-              title: capitalize(basename(fileName))
+              title: capitalize(basename(fileName)),
             };
           }
           details.isSection = true;
@@ -220,9 +231,12 @@ async function walkDirectories(
             details.title,
             details.sectionId,
             rootId,
-            details.sectionWeight
+            details.sectionWeight,
           );
-        } else if (file.endsWith('.mdx') && !fileName.endsWith(`${sep}_section.mdx`)) {
+        } else if (
+          file.endsWith('.mdx') &&
+          !fileName.endsWith(`${sep}_section.mdx`)
+        ) {
           const fileContent = await readFile(fileName, 'utf-8');
           // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
           const { data, content } = frontMatter(fileContent, {});
@@ -230,7 +244,8 @@ async function walkDirectories(
           details = data as Details;
           details.toc = toc(content, { slugify: slugifyToC }).json;
           details.readingTime = Math.ceil(readingTime(content).minutes);
-          details.excerpt = details.excerpt || markdownToTxt(content).substr(0, 200);
+          details.excerpt =
+            details.excerpt || markdownToTxt(content).substr(0, 200);
           details.sectionSlug = sectionSlug || slug.replace(/\.mdx$/, '');
           details.sectionWeight = sectionWeight;
           details.sectionTitle = sectionTitle;
@@ -238,10 +253,18 @@ async function walkDirectories(
           details.rootSectionId = rootSectionId;
           details.id = fileName.replace(/\\/g, '/');
           details.isIndex = fileName.endsWith(join('index.mdx'));
-          details.slug = details.isIndex ? sectionSlug : slug.replace(/\.mdx$/, '');
-          if (details.slug.includes('/reference/specification/') && !details.title) {
+          details.slug = details.isIndex
+            ? sectionSlug
+            : slug.replace(/\.mdx$/, '');
+          if (
+            details.slug.includes('/reference/specification/') &&
+            !details.title
+          ) {
             const fileBaseName = basename(details.slug);
-            const versionDetails = getVersionDetails(details.slug, specWeight--);
+            const versionDetails = getVersionDetails(
+              details.slug,
+              specWeight--,
+            );
 
             details.title = versionDetails.title;
             details.weight = versionDetails.weight;
@@ -266,7 +289,9 @@ async function walkDirectories(
       }
     }
   } catch (error) {
-    throw new Error(`Error while walking directories: ${(error as Error).message}`);
+    throw new Error(
+      `Error while walking directories: ${(error as Error).message}`,
+    );
   }
 }
 // Builds a list of posts from the specified directories and writes it to a file
@@ -288,27 +313,36 @@ async function walkDirectories(
 export async function buildPostList(
   postDirectories: string[][],
   basePath: string,
-  writeFilePath: string
+  writeFilePath: string,
 ): Promise<void> {
   try {
     if (!basePath) {
       throw new Error('Error while building post list: basePath is required');
     }
     if (!writeFilePath) {
-      throw new Error('Error while building post list: writeFilePath is required');
+      throw new Error(
+        'Error while building post list: writeFilePath is required',
+      );
     }
     if (postDirectories.length === 0) {
-      throw new Error('Error while building post list: postDirectories array is empty');
+      throw new Error(
+        'Error while building post list: postDirectories array is empty',
+      );
     }
     const normalizedBasePath = normalize(basePath);
 
     await walkDirectories(postDirectories, finalResult, normalizedBasePath);
-    const treePosts = buildNavTree(finalResult.docs.filter((p) => p.slug!.startsWith('/docs/')));
+    const treePosts = buildNavTree(
+      finalResult.docs.filter((p) => p.slug!.startsWith('/docs/')),
+    );
 
     finalResult.docsTree = treePosts;
     finalResult.docs = addDocButtons(finalResult.docs, treePosts);
     await writeFile(writeFilePath, JSON.stringify(finalResult, null, '  '));
   } catch (error) {
-    throw new Error(`Error while building post list: ${(error as Error).message}`, { cause: error });
+    throw new Error(
+      `Error while building post list: ${(error as Error).message}`,
+      { cause: error },
+    );
   }
 }

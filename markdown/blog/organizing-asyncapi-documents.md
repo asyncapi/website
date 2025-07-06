@@ -1,5 +1,5 @@
 ---
-title: "Organizing your AsyncAPI documents"
+title: 'Organizing your AsyncAPI documents'
 date: 2019-03-01T13:56:52+01:00
 type: Engineering
 tags:
@@ -17,6 +17,7 @@ A recurring question that I get very often is: “how do I organize my AsyncAPI 
 Let’s break down some best practices and tips to avoid ending up in a hell of unmanageable documents.
 
 ## Organizing Microservices
+
 > I’m using the term microservices here because it’s the most common type of distributed architecture that you can find nowadays.
 
 The best practice for organizing AsyncAPI files in your microservices architecture is to have a file per microservice. This way, you end up with multiple independent files that define your application.
@@ -52,11 +53,13 @@ Since microservices tend to be small in scope, most probably their AsyncAPI docu
 **An AsyncAPI file is meant to define the behavior of a single application**. You can obviously break the rules and use it to define the whole architecture but expect all sorts of problems to appear because you’re using a hammer to saw a piece of wood. The same way you don’t use a single OpenAPI (Swagger) file to define many of your REST APIs, you shouldn’t use a single AsyncAPI document to define many of your message-driven APIs.
 
 ## Organizing Client-Server
+
 Say, for instance, you have a WebSockets API and front-end application using it. The paradigm is very similar to the one we’re used to with HTTP APIs, with the subtle difference that the communication is [full duplex](https://en.wikipedia.org/wiki/Duplex_%28telecommunications%29#Full_duplex), i.e., the client can send and receive messages over the same channel, at any time.
 
 This case is not very different from the microservices one. If you think about it, we can look at it as a small distributed architecture, where you only have two services: the client and the server. So the recommended best practice is to follow the same approach and have one document for each of the applications — one for the server and another for the client or front-end.
 
 ## Summary
+
 I want to reinforce the point that an AsyncAPI file is meant to define **the behavior of a single application**. Keep this always in mind, and everything will make sense to you.
 
 Happy coding! ✌️

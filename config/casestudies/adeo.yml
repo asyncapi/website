@@ -11,17 +11,17 @@ company:
     - name: Ludovic Dussart
       link: https://twitter.com/ldussart
 challenges: |
-    Cost Component Repository product, part of the ADEO tech products, is used to calculate and publish transfer prices between different internal locations globally. Different business units use different information systems. It is hard to learn how each business unit shares information about its systems, API and accuracy.
+  Cost Component Repository product, part of the ADEO tech products, is used to calculate and publish transfer prices between different internal locations globally. Different business units use different information systems. It is hard to learn how each business unit shares information about its systems, API and accuracy.
 
-    The initial solution was a developer portal with a list of all applications and reference to dedicated documentation. Some legacy systems had docs written in MS Excel.
+  The initial solution was a developer portal with a list of all applications and reference to dedicated documentation. Some legacy systems had docs written in MS Excel.
 
-    There was a need for a standart way of describing event-driven architecture.
+  There was a need for a standart way of describing event-driven architecture.
 solution: |
-    The API is now described with AsyncAPI. The AsyncAPI file, stored with the source code, generates HTML documentation in the same release pipeline for the product. Documentation is exposed internally as part of the product for other company units depending on the API.
+  The API is now described with AsyncAPI. The AsyncAPI file, stored with the source code, generates HTML documentation in the same release pipeline for the product. Documentation is exposed internally as part of the product for other company units depending on the API.
 
-    Payloads are described with Avro schema. These schemas generate models and are referenced directly in AsyncAPI files thanks to the `schemaFormat` feature and `$ref`. This way, they make sure the code is aligned with the docs.
+  Payloads are described with Avro schema. These schemas generate models and are referenced directly in AsyncAPI files thanks to the `schemaFormat` feature and `$ref`. This way, they make sure the code is aligned with the docs.
 
-    Shift to using AsyncAPI also enables the team to implement more use cases using AsyncAPI files.
+  Shift to using AsyncAPI also enables the team to implement more use cases using AsyncAPI files.
 technical:
   languages:
     - Java
@@ -30,7 +30,7 @@ technical:
   protocols:
     - Kafka
   brokers: |
-    Kafka with Kafka Connect component. There are 15 production brokers with 47 topics. 
+    Kafka with Kafka Connect component. There are 15 production brokers with 47 topics.
   testing: |
     For Kafka, e2e tests are done with [Zerocode](https://github.com/authorjapps/zerocode). Load tests are handled with [JMeter](https://jmeter.apache.org/) with the [kloadgen](https://github.com/corunet/kloadgen) plugin that supports Kafka and Avro.
   architecture: |
@@ -224,52 +224,52 @@ asyncapi:
     - examples and validation information. In this case converted from Avro to JSON Schema to show it in documentation and have examples generated
     - `Tags` for tagging operations to categorize them to make it easier to navigate in documentation UI
   bindings: |
-      All Kafka bindings are used. Server, channel, operation and message bindings.
-      
-      Example of server bindings:
-      ```
-      bindings:
-        kafka:
-          schema.registry.url: >-
-            https://schema-registry.prod.url/
-      ```
-      
-      Example of channel bindings:
-      ```
-      bindings:
-        kafka:
-          replicas: 3
-          partitions: 3
-          cleanup.policy: delete
-          retention.ms: 7 days
-      ```
+    All Kafka bindings are used. Server, channel, operation and message bindings.
 
-      Example of operation bindings:
-      ```
-      bindings:
-        kafka:
-          groupId:
-            type: string
-            description: >
-              The groupId must be prefixed by your `svc` account, deliver by the
-              Adeo Kafka team.
-              This `svc` must have the write access to the topic.
-          value.subject.name.strategy:
-            type: string
-            description: >
-              We use the RecordNameStrategy to infer the messages schema.
-              Use
-              `value.subject.name.strategy=io.confluent.kafka.serializers.subject.RecordNameStrategy`
-              in your producer configuration.
-      ```
+    Example of server bindings:
+    ```
+    bindings:
+      kafka:
+        schema.registry.url: >-
+          https://schema-registry.prod.url/
+    ```
 
-      Example of message bindings:
-      ```
-      bindings:
-        kafka:
-          key:
-            $ref: "https://asyncapi.com/resources/casestudies/adeo/CostingResponseKey.avsc"
-      ```
+    Example of channel bindings:
+    ```
+    bindings:
+      kafka:
+        replicas: 3
+        partitions: 3
+        cleanup.policy: delete
+        retention.ms: 7 days
+    ```
+
+    Example of operation bindings:
+    ```
+    bindings:
+      kafka:
+        groupId:
+          type: string
+          description: >
+            The groupId must be prefixed by your `svc` account, deliver by the
+            Adeo Kafka team.
+            This `svc` must have the write access to the topic.
+        value.subject.name.strategy:
+          type: string
+          description: >
+            We use the RecordNameStrategy to infer the messages schema.
+            Use
+            `value.subject.name.strategy=io.confluent.kafka.serializers.subject.RecordNameStrategy`
+            in your producer configuration.
+    ```
+
+    Example of message bindings:
+    ```
+    bindings:
+      kafka:
+        key:
+          $ref: "https://asyncapi.com/resources/casestudies/adeo/CostingResponseKey.avsc"
+    ```
 
   tools: |
     * [AsyncAPI Generator](https://github.com/asyncapi/generator):

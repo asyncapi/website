@@ -65,6 +65,7 @@ For more details, check out [this pull request](https://github.com/asyncapi/spec
 ## New protocol bindings
 
 The specification is now extended to support the following custom protocols through the bindings feature:
+
 - **Mercure**, thanks to [Kévin Dunglas](https://github.com/dunglas). At the moment, no specific bindings are necessary for this protocol. For more details, check out [this pull request](https://github.com/asyncapi/spec/pull/278) and [binding definition](https://github.com/asyncapi/bindings/tree/master/mercure).
 - **IBM MQ**, thanks to [Dale Lane](https://github.com/dalelane) and [Richard Coppen](https://github.com/rcoppen). For more details check out [this pull request](https://github.com/asyncapi/spec/pull/537) and [binding definition](https://github.com/asyncapi/bindings/tree/master/ibmmq).
 
@@ -83,6 +84,7 @@ We used and supported **defaultContentType** property to specify the default con
 ## Tooling support
 
 The following official AsyncAPI tools are already updated to support 2.1.0 version of the specification:
+
 - JSON Schema that supports validation of AsyncAPI documents is updated in [this](https://github.com/asyncapi/asyncapi-node) repository. Also **@asyncapi/specs** package has been updated on NPM to version 2.8.0, and it contains the 2.1.0 JSON Schema.
 - [JavaScript Parser](https://github.com/asyncapi/parser-js/) uses latest **@asyncapi/specs** package and can be used to parse and validate 2.1.0 documents. Upgrade to 1.7.0 version.
 - [AsyncAPI Generator](https://github.com/asyncapi/generator/) uses the latest **@asyncapi/parser** package, so while generating output, it can validate 2.1.0 documents. Upgrade to 1.8.0 version
@@ -92,7 +94,6 @@ The following official AsyncAPI tools are already updated to support 2.1.0 versi
 - [HTML template](https://github.com/asyncapi/html-template) uses the latest **@asyncapi/react-component** package. Upgrade to 0.23.0 version.
 - [JavaScript Converter](https://github.com/asyncapi/converter-js/) enables conversion from any AsyncAPI version into the 2.1.0 version of the spec. Upgrade to 0.5.0 version.
 - [Modelina](https://github.com/asyncapi/modelina) now also accepts AsyncAPI documents valid against the 2.1.0 version of the spec. Upgrade to 0.16.0 version.
-
 
 Last but not least is the AsyncAPI Playground. Check new playground that uses latest HTML template and Markdown template with [this example](https://playground.asyncapi.io/?url=https://raw.githubusercontent.com/asyncapi/spec/v2.1.0/examples/websocket-gemini.yml).
 

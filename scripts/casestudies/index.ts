@@ -15,7 +15,10 @@ import { convertToJson } from '../helpers/utils';
  *
  * @throws {Error} If an error occurs during file reading, JSON conversion, or writing operations.
  */
-export async function buildCaseStudiesList(dirWithCaseStudy: string, writeFilePath: string): Promise<object[]> {
+export async function buildCaseStudiesList(
+  dirWithCaseStudy: string,
+  writeFilePath: string,
+): Promise<object[]> {
   try {
     const files = await readdir(dirWithCaseStudy);
 
@@ -26,7 +29,7 @@ export async function buildCaseStudiesList(dirWithCaseStudy: string, writeFilePa
         const caseStudyContent = await readFile(caseStudyFileName, 'utf-8');
 
         return convertToJson(caseStudyContent);
-      })
+      }),
     );
 
     // Write the complete list once after all files are processed

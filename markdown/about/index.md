@@ -1,34 +1,32 @@
 ---
 title: About
-
 ---
+
 ## AsyncAPI
 
-AsyncAPI is an Apache License 2.0 library under the Linux Foundation that seeks to improve the current state of event-driven architecture (EDA). The AsyncAPI Initiative is a specification and growing set of open-source tools to help developers define, build, and maintain asynchronous APIs and EDAs. 
+AsyncAPI is an Apache License 2.0 library under the Linux Foundation that seeks to improve the current state of event-driven architecture (EDA). The AsyncAPI Initiative is a specification and growing set of open-source tools to help developers define, build, and maintain asynchronous APIs and EDAs.
 
-Developers familiar with OpenAPI (aka Swagger) for RESTful APIs will see strong similarities when using AsyncAPI. One common use case is generating asynchronous API documentation (HTML or Markdown). The specification is both platform and language agnostic. The current tooling includes support for common message brokers such as Apache Kafka and RabbitMQ and languages including Python, Java, and Nodejs. 
+Developers familiar with OpenAPI (aka Swagger) for RESTful APIs will see strong similarities when using AsyncAPI. One common use case is generating asynchronous API documentation (HTML or Markdown). The specification is both platform and language agnostic. The current tooling includes support for common message brokers such as Apache Kafka and RabbitMQ and languages including Python, Java, and Nodejs.
 
 Our long-term goal is to make working with EDAs as easy as working with REST APIs. That goes from documentation to code generation, discovery to event management, and beyond. Our 150+ Open-Source (OSS) contributors are EDA enthusiasts from all around the world.
 
-
 The AsyncAPI project started at Hitch (a.k.a. API Changelog). Hitch needed a machine-readable format to describe internal message-driven microservices architecture. The goal was to benefit from it in the same way they had used OpenAPI for their HTTP APIs. Inspired by OpenAPI, [Fran Méndez](https://twitter.com/fmvilas), who worked at Hitch at the time, created the AsyncAPI specification. After publishing the first version, he noticed that he solved not only his problems but the problems of the wider community. Eventually, the AsyncAPI specification and community evolved into the AsyncAPI Initiative, a project now under the umbrella of the Linux Foundation.
-
 
 ## Open governance model
 
-Free software allows users to apply, modify, and continue in the chain by distributing copies to help others and, in this case, disseminating modified versions of the specification. 
+Free software allows users to apply, modify, and continue in the chain by distributing copies to help others and, in this case, disseminating modified versions of the specification.
 
-Transferring AsyncAPI to the Linux Foundation and forming [an open governance model](https://github.com/asyncapi/community/blob/master/CHARTER.md) assures the community that a single company does not control AsyncAPI Initiative. This move takes the project to a higher level of transparency. 
+Transferring AsyncAPI to the Linux Foundation and forming [an open governance model](https://github.com/asyncapi/community/blob/master/CHARTER.md) assures the community that a single company does not control AsyncAPI Initiative. This move takes the project to a higher level of transparency.
 
 In doing so, we achieve:
 
 - Ensuring an open governance model where no single company dominates the specification and its tools.
 - Making the project as democratic as possible.
-- Relying on an asynchronous decision-making process that empowers the people who "work," not the companies who "pay." 
+- Relying on an asynchronous decision-making process that empowers the people who "work," not the companies who "pay."
 
 In other words, it [gives equal power to individual and corporate contributors](https://www.asyncapi.com/blog/governance-motivation).
 
-## Maintainers 
+## Maintainers
 
 **Committers** (also known as **Maintainers**) are the decision-makers at the repository/project level. They regularly contribute to the project and are invited by other maintainers to manage the repository, have more privileges, and approve pull requests.
 
@@ -38,16 +36,18 @@ You can see the list of maintainers who also form part of the [AsyncAPI TSC here
 
 ## Contributors
 
-We do our best to recognize every contribution to the project. We do it individually in every repository from [AsyncAPI GitHub organization](https://github.com/asyncapi/). There should always be a **Contributors** section in the readme, like [this one](https://github.com/asyncapi/asyncapi/blob/master/README.md#contributors). We use [All Contributors](https://allcontributors.org/docs/en/specification) specification to handle recognitions. 
+We do our best to recognize every contribution to the project. We do it individually in every repository from [AsyncAPI GitHub organization](https://github.com/asyncapi/). There should always be a **Contributors** section in the readme, like [this one](https://github.com/asyncapi/asyncapi/blob/master/README.md#contributors). We use [All Contributors](https://allcontributors.org/docs/en/specification) specification to handle recognitions.
 
 We apologize in advance if we failed to recognize your work. Feel free to contact us on [Slack](https://www.asyncapi.com/slack-invite/), and we will fix it immediately, or just talk to our [All Contributors bot](https://allcontributors.org).
 
 ## AsyncAPI, in numbers
-Interested to know more about our growth? Feel free to check our annual summary report: 
+
+Interested to know more about our growth? Feel free to check our annual summary report:
+
 - [Summary report 2022](https://www.asyncapi.com/blog/2022-summary)
 - [Summary report 2021](https://www.asyncapi.com/blog/2021-summary)
 - [Summary report 2020](https://www.asyncapi.com/blog/2020-summary)
-          
+
 ## Companies support
 
 This is the list of companies that either provide a significant financial support or delegate their employees to support AsyncAPI with maintainance:
@@ -59,7 +59,9 @@ Would you like to get on the list and support us financially? Check out all [Asy
 Would you like to help us with the maintenance? Contact us on [AsyncAPI Slack](https://www.asyncapi.com/slack-invite/).
 
 ## Brands and companies using AsyncAPI
+
 The total number of companies and projects using AsyncAPI as well as their identity is impossible to know. So far, we are aware that the following ones operate with it.
+
 - [**Slack**](https://slack.com/signin#/signin): Business Communication Platform that permits to operate with multiple channels (public and private). It currently has more than 10 million daily active users worldwide. It was recently acquired by Salesforce.
 - [**Adidas**](https://www.adidas.com/us): Company dedicated to manufacturing sports equipment and fashion products. It is the largest sportswear manufacturer in Europe, and the second largest in the world. This company has more than 150.000 sales outlets around the world.
 - [**Salesforce**](https://login.salesforce.com/?locale=es): Business consultancy company. It provides (CRM) services and more. It manages from small businesses to FORTUNE 500 companies, and it has more than 150,000 customers.
@@ -88,7 +90,7 @@ All the information about the project's economy, the amount of the donations, th
 ## Contact details
 
 - Press & communications info:
-[**press@asyncapi.io**](mailto:press@asyncapi.io).
+  [**press@asyncapi.io**](mailto:press@asyncapi.io).
 - [**Twitter**](https://twitter.com/asyncapispec?lang=es): It's used for disseminating all news and information regarding the project, resolving user queries, and sharing the latest updates within AsyncAPI.
 - [**Slack workspace**](https://www.asyncapi.com/slack-invite): The main place of encounter for the whole community of AsyncAPI.
 - [**Newsletter**](https://www.asyncapi.com/newsletter): To learn about the status of the project, news, actualizations, recorded events, and meetings.
@@ -99,4 +101,5 @@ All the information about the project's economy, the amount of the donations, th
 - [**AsyncAPI Open Meetings**](https://github.com/asyncapi): AsyncAPI hosts different meetings every week. They are focused on different topics, sometimes purely technical and sometimes about community building. Pick one and join us! [Learn more about our meetings](/community/meetings)
 
 ## FAQs
+
 <FAQ />

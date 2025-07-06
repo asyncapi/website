@@ -1,18 +1,18 @@
 ---
 type: Engineering
-title: "The journey of documenting a Socket.IO API (Pt 1)"
+title: 'The journey of documenting a Socket.IO API (Pt 1)'
 date: 2021-09-23T10:00:00+01:00
 cover: /img/posts/socketio-part1/cover.webp
 tags:
-   - Specification
-   - Socket.IO
-   - Protocol
-   - Asynction
+  - Specification
+  - Socket.IO
+  - Protocol
+  - Asynction
 authors:
-   - name: Dimitrios Dedoussis
-     photo: /img/avatars/dedoussis.webp
-     link: https://twitter.com/dedoussis
-     byline: Senior Software Engineer at Babylon & Maintainer of Asynction
+  - name: Dimitrios Dedoussis
+    photo: /img/avatars/dedoussis.webp
+    link: https://twitter.com/dedoussis
+    byline: Senior Software Engineer at Babylon & Maintainer of Asynction
 ---
 
 > This post originally appeared on [https://dedouss.is](https://dedouss.is/posts/2021-06-24-documenting-socketio-part-1.html)

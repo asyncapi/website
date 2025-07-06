@@ -1,5 +1,5 @@
 ---
-title: "January 2021 at AsyncAPI"
+title: 'January 2021 at AsyncAPI'
 date: 2021-02-11T06:00:00+01:00
 type: Communication
 tags:
@@ -16,8 +16,8 @@ excerpt: 'I always thought January is a month of a slow start of a new year. I c
 A new year always comes with New Year's resolution, right? Folks from [Bump.sh](https://bump.sh/) came up with the best idea you could get this year. Don't you dare to fail this time :smiley:
 
 <TwitterTweetEmbed
-  tweetId='1346374069877428225'
-  options={{
+tweetId='1346374069877428225'
+options={{
     cards: 'hidden',
     width: 500,
     align: 'center'
@@ -28,13 +28,14 @@ A new year always comes with New Year's resolution, right? Folks from [Bump.sh](
 
 As part of recently [announced](/blog/asyncapi-partners-with-postman) partnership with Postman, most core AsyncAPI maintainers joined Postman as employees. This change made it clear that now it is even more important what we planned in the past.
 
-AsyncAPI must go into a "neutral ground" aka independent foundation that, among other things, will take over the AsyncAPI intellectual property. 
+AsyncAPI must go into a "neutral ground" aka independent foundation that, among other things, will take over the AsyncAPI intellectual property.
 
-Joining a foundation also means setting up an open governance model to ensure a single company's lack of dominance over the specification and its tools. 
+Joining a foundation also means setting up an open governance model to ensure a single company's lack of dominance over the specification and its tools.
 
 As communicated during our public meetings on [2nd of February](https://www.youtube.com/watch?v=vAcTtr__CwU) or [19th of January](https://www.youtube.com/watch?v=14I-l-TCgI4), or our official [Twitter account](https://twitter.com/AsyncAPISpec/status/1351895870636220418), Fran and I treat this topic as priority number 1.
 
 At the moment, we are trying to figure out a governance model that:
+
 - is as democratic as possible
 - supports asynchronous decision-making process
 - gives power to people that "work", not companies that "pay". In other words, it gives equal power to both, individual and corporate contributors
@@ -46,8 +47,8 @@ Now we spend a lot of time reading and reaching out to similar communities that 
 We kicked off this year with a new bronze sponsor. Thanks a lot to Bump.sh and their trust in the AsyncAPI Initiative, and being among the first ones adopting the AsyncAPI specification in their product.
 
 <TwitterTweetEmbed
-  tweetId='1357262834200117250'
-  options={{
+tweetId='1357262834200117250'
+options={{
     cards: 'hidden',
     width: 500,
     align: 'center'
@@ -57,6 +58,7 @@ We kicked off this year with a new bronze sponsor. Thanks a lot to Bump.sh and t
 ## Community continues to grow
 
 My [last post](/blog/2020-summary) that summarizes the year 2020 was pretty clear that the community's size grew a lot. Well, it is January, and we see that not much has changed. We keep growing:
+
 - we went over 1k users on Slack. [Join now](https://www.asyncapi.com/slack-invite/)
 - we went over 1.5k followers on Twitter. [Follow us](https://twitter.com/AsyncAPISpec/) to be up to date with the latest news in the project
 - we went over 1.4k stars on GitHub. If you like the project, [express it](https://github.com/asyncapi/asyncapi/stargazers)
@@ -65,8 +67,8 @@ My [last post](/blog/2020-summary) that summarizes the year 2020 was pretty clea
 Last but not least, we beat the record of people joining our public meetings :rocket:
 
 <TwitterTweetEmbed
-  tweetId='1356949862449893376'
-  options={{
+tweetId='1356949862449893376'
+options={{
     width: 500,
     align: 'center'
   }}
@@ -104,6 +106,7 @@ Feel free to share your thoughts in [this](https://github.com/asyncapi/shape-up-
 GitHub Actions is what powers our CI/CD. It is a great tool that you configure through a file stored in a repository. Things are just getting more complex when you want to use them in an organization with around 40 repositories (and growing). This is not a post about our internal organizational challenges and GitHub Actions limitations, so I will not bother you with details. The most important is to share that we are managing our GitHub workflows like a pro and if you are interested in more details, contact us.
 
 So what changed that is meaningful for our community:
+
 - We have two new channels in Slack workspace:
   - #github-releases where you get information about all the releases from all the repositories
   - #github-new-issues-prs where you get information about all new issues and PRs
@@ -115,17 +118,18 @@ So what changed that is meaningful for our community:
 ## The future of API specifications
 
 Working with specifications is not easy because there are many of them. How do you know when to use which one? Just look at the concept of microservices architecture. Did you think that monitoring, scaling, and tracing is a challenge? What about specifications:
+
 - you need a different spec for your backend that exposes GraphQL API to your frontend
 - you need another spec to describe how a user can interact with your service using asynchronous communication
 - you need a different spec to define how a user can interact with your service with REST
 
-What about specs for describing your data model? What about if you use RPC and Protobuf? What if you use Avro? or maybe you only use JSON Schema. 
+What about specs for describing your data model? What about if you use RPC and Protobuf? What if you use Avro? or maybe you only use JSON Schema.
 
 Why do you have to define the same things over and over using different specs...
 
 ![](https://media.giphy.com/media/lQCV6K36nJfJYNxXbC/giphy.gif)
 
-Something went wrong down the road, and we need to do something to save the chicken. 
+Something went wrong down the road, and we need to do something to save the chicken.
 
 Watch Fran's presentation on the future of API specification. And don't stop there. We don't want only to admit we know about the problem and expect someone solves it. We want to fix it. Join us!
 
@@ -134,6 +138,7 @@ Watch Fran's presentation on the future of API specification. And don't stop the
 ## Public meetings
 
 For notes and links to recordings, look into the below references:
+
 - [Jan 5 2021](https://github.com/asyncapi/asyncapi/issues/472)
 - [Jan 19 2021](https://github.com/asyncapi/asyncapi/issues/474)
 
@@ -143,7 +148,7 @@ Next meeting is scheduled for [Feb 16 2021](https://github.com/asyncapi/asyncapi
 
 ## Google Summer of Code
 
-This month we want to apply for [Google Summer of Code](https://summerofcode.withgoogle.com/). We found two volunteers that agreed to mentor participants to work on some good stuff for the AsyncAPI tooling space. January was when we collected all the possible ideas that we would work on together with students. The [list of ideas](https://docs.google.com/document/d/11g0ezAvrZGRYhe5NEV4fOq4zAnLQPmOow0egxgSokUs/edit?usp=sharing) is completed. There are many good proposals there, and most of them won't make it to the event, so feel free to let us know if you want to work on them under the AsyncAPI umbrella. 
+This month we want to apply for [Google Summer of Code](https://summerofcode.withgoogle.com/). We found two volunteers that agreed to mentor participants to work on some good stuff for the AsyncAPI tooling space. January was when we collected all the possible ideas that we would work on together with students. The [list of ideas](https://docs.google.com/document/d/11g0ezAvrZGRYhe5NEV4fOq4zAnLQPmOow0egxgSokUs/edit?usp=sharing) is completed. There are many good proposals there, and most of them won't make it to the event, so feel free to let us know if you want to work on them under the AsyncAPI umbrella.
 
 ## Good read
 

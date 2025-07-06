@@ -1,8 +1,6 @@
 ---
-
 title: 'Glee Installation Guide'
 weight: 30
-
 ---
 
 ### Preparing for Installation
@@ -14,11 +12,13 @@ Before starting with Glee, ensure that NPM, Node.js, and the [AsyncAPI CLI](http
 ### Starting with Glee
 
 Creating a new Glee application can be approached in three distinct ways:
-  * [Begin with an existing AsyncAPI document](#initialize-with-an-asyncapi-document).
-  * [Use a predefined template](#start-with-a-template).
-  * [Opt for Manual Installation](#manual-installation) (recommended for advanced users keen on understanding Glee's inner workings).
+
+- [Begin with an existing AsyncAPI document](#initialize-with-an-asyncapi-document).
+- [Use a predefined template](#start-with-a-template).
+- [Opt for Manual Installation](#manual-installation) (recommended for advanced users keen on understanding Glee's inner workings).
 
 ### Initialize with an AsyncAPI Document
+
 If you already have an AsyncAPI specification file, you can jumpstart your project by using the `-f` or `--file` flag to specify the file path. The CLI will leverage this to set up your project.
 
 ```sh
@@ -33,8 +33,8 @@ For those without a custom AsyncAPI file and looking to experiment, starting wit
 
 Use the `-t` or `--template` flag to specify the template name. Currently, two templates are available:
 
-1) **default**: Responds with a string upon receiving a string.
-2) **tutorial**: Designed for [this tutorial](https://www.asyncapi.com/docs/tutorials/generate-code).
+1. **default**: Responds with a string upon receiving a string.
+2. **tutorial**: Designed for [this tutorial](https://www.asyncapi.com/docs/tutorials/generate-code).
 
 To initiate a project with the default template:
 
@@ -125,8 +125,8 @@ operations:
       $ref: '#/channels/hello'
   SendHello:
     action: send
-    channel: 
-      $ref: "#/channels/hello"
+    channel:
+      $ref: '#/channels/hello'
 components:
   messages:
     hello:
@@ -137,14 +137,16 @@ components:
 Create a function `onHello.js` in `myapp/functions`:
 
 ```js
-export default async function (event) {  
+export default async function (event) {
   return {
-    send: [{
-      server: "websockets",
-      channel: "hello",
-      payload: `Hello from Glee! You said: "${event.payload}".`
-    }]
-  }
+    send: [
+      {
+        server: 'websockets',
+        channel: 'hello',
+        payload: `Hello from Glee! You said: "${event.payload}".`,
+      },
+    ],
+  };
 }
 ```
 

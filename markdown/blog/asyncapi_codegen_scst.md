@@ -1,22 +1,22 @@
 ---
 type: Engineering
 cover: /img/posts/asyncapi-codegen_pic-00.webp
-title: "AsyncAPI Code Generation: Microservices Using Spring Cloud Stream"
+title: 'AsyncAPI Code Generation: Microservices Using Spring Cloud Stream'
 date: 2020-06-02T06:00:00+01:00
 canonical: https://solace.com/blog/asyncapi-codegen-microservices-using-spring-cloud-stream/
 tags:
-   - Solace
-   - Java
-   - Spring
-   - EDA
+  - Solace
+  - Java
+  - Spring
+  - EDA
 authors:
-   - name: Marc DiPasquale
-     photo: /img/avatars/mdipasquale.webp
-     link: https://twitter.com/mrc0113
-     byline: Developer Advocate at Solace
+  - name: Marc DiPasquale
+    photo: /img/avatars/mdipasquale.webp
+    link: https://twitter.com/mrc0113
+    byline: Developer Advocate at Solace
 ---
 
-Code generation is no simple feat. There are a lot of complexities when it comes to generating useful application code. In this post, I am going to walk you through generating your own microservices using Spring Cloud Stream and the AsyncAPI Code Generator. These tools should help to simplify things when defining and implementing your asynchronous applications. I explained the same idea in a video you can [watch here](https://www.youtube.com/watch?v=QEDL6AqsaJc), and all of the artifacts are [available in GitHub](https://github.com/Mrc0113/asyncapi-codegen-scst). 
+Code generation is no simple feat. There are a lot of complexities when it comes to generating useful application code. In this post, I am going to walk you through generating your own microservices using Spring Cloud Stream and the AsyncAPI Code Generator. These tools should help to simplify things when defining and implementing your asynchronous applications. I explained the same idea in a video you can [watch here](https://www.youtube.com/watch?v=QEDL6AqsaJc), and all of the artifacts are [available in GitHub](https://github.com/Mrc0113/asyncapi-codegen-scst).
 
 > This post [AsyncAPI Code Generation: Microservices Using Spring Cloud Stream](https://solace.com/blog/asyncapi-codegen-microservices-using-spring-cloud-stream/) appeared first on [Solace](https://solace.com).
 
@@ -26,7 +26,7 @@ Before we dive into code generation let’s start with the basics – what is As
 
 I’m not going to go into great detail about the specification, but for context you should know that it defines metadata about your asynchronous API, the channels available for sending/receiving messages, and components – such as schemas – that define the messages that are being exchanged. For more information about the specification you can read about it [here](https://www.asyncapi.com/docs/specifications/2.0.0/).
 
-# Defining the Application That You Want to Develop: The  AsyncAPI Document
+# Defining the Application That You Want to Develop: The AsyncAPI Document
 
 The first step in doing code generation with AsyncAPI is obtaining an AsyncAPI document that defines the application that you want to develop. Per the specification, this document is represented as JSON objects and must conform to the JSON standards. YAML, being a superset of JSON, can also be used. There are two main ways of going about obtaining this document: manually create the document or use an event portal.
 
@@ -111,26 +111,26 @@ You might say: “Marc, that’s great, but how the heck is that function actual
 The generated `application.yml` file defines several things as specified in the AsyncAPI document or from the parameters passed into the generator. First, it defines the list of functions it wants Spring Cloud Stream aware of under `spring.cloud.stream.function.definition`. Second, it tells Spring Cloud Stream which channels to bind those functions to under `spring.cloud.streams.bindings`. Lastly, it contains connection information to the messaging system. The connection info is specified by different parameters depending on the binder you choose but, in this case, it’s defined under `solace.java`.
 
 ```yaml
-spring: 
-  cloud: 
-    stream: 
-      function: 
-        definition: acmeRideshareBillingReceiptCreated001Consumer 
-    bindings: 
+spring:
+  cloud:
+    stream:
+      function:
+        definition: acmeRideshareBillingReceiptCreated001Consumer
+    bindings:
       acmeRideshareBillingReceiptCreated001Consumer-in-0:
         destination: acme/rideshare/billing/receipt/created/0.0.1
 
-solace: 
-  java: 
-    host: 'localhost:55555' 
-    msgVpn: default 
-    clientUsername: default 
+solace:
+  java:
+    host: 'localhost:55555'
+    msgVpn: default
+    clientUsername: default
     clientPassword: default
 
-logging: 
-  level: 
-    root: info 
-    org: 
+logging:
+  level:
+    root: info
+    org:
       springframework: info
 ```
 
@@ -143,7 +143,7 @@ As I mentioned, there are a lot of complexities when it comes to generating usef
 There are a bunch of different parameters and specification extensions that you should consider when generating your code. All of them can be found [here](https://github.com/asyncapi/java-spring-cloud-stream-template#configuration-options), but I’ll go over a few of the parameters that I use quite often:
 
 - The `binder` parameter allows you to specify the Spring Cloud Stream binder that you’d like to use. Currently the generator supports `kafka`, `rabbit` and `solace`.
-- The `info.x-view` specification extension can be set at the info level in your AsyncAPI document. This extension allows for you to define how the document should be viewed from an application perspective. By default an AsyncAPI specification takes a `client` view where operations (publish/subscribe) defined in a document represent what an application accepts (or how you would communicate with that application). However, for code generation you may want to  generate what an application actually does. This is where setting the `view` parameter comes in. If you set `view` to a value of `provider`  the operations defined in the document will be treated as what an application actually does. Note that this extension can also be set using the `view` parameter on some generator templates, such as the Java Spring Cloud Stream one. 
+- The `info.x-view` specification extension can be set at the info level in your AsyncAPI document. This extension allows for you to define how the document should be viewed from an application perspective. By default an AsyncAPI specification takes a `client` view where operations (publish/subscribe) defined in a document represent what an application accepts (or how you would communicate with that application). However, for code generation you may want to generate what an application actually does. This is where setting the `view` parameter comes in. If you set `view` to a value of `provider` the operations defined in the document will be treated as what an application actually does. Note that this extension can also be set using the `view` parameter on some generator templates, such as the Java Spring Cloud Stream one.
 - The `operation.x-scs-function-name` specification extension can be set on your `publish` or `subscribe` operations in the AsyncAPI document, allowing you not only to name the generated function, but also tie two operations together to form a function that subscribes to one channel and publishes to another when the same name is used. For example, if your AsyncAPI document looked like the image below a `java.util.function.Function` bean called “calculatePercentage” would be generated which subscribes to the input channel and publishes to the output channel.
 
 ```yaml

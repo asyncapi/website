@@ -24,32 +24,52 @@ const currentDirPath = dirname(currentFilePath);
  * @param tagsPath - The file path where the tags data will be written.
  * @throws {Error} If an error occurs during the build process.
  */
-async function buildTools(automatedToolsPath: string, manualToolsPath: string, toolsPath: string, tagsPath: string) {
+async function buildTools(
+  automatedToolsPath: string,
+  manualToolsPath: string,
+  toolsPath: string,
+  tagsPath: string,
+) {
   try {
     const githubExtractData = await getData();
     const automatedTools = await convertTools(githubExtractData);
 
-    await fs.writeFile(automatedToolsPath, JSON.stringify(automatedTools, null, '  '));
+    await fs.writeFile(
+      automatedToolsPath,
+      JSON.stringify(automatedTools, null, '  '),
+    );
 
     const manualTools = JSON.parse(await fs.readFile(manualToolsPath, 'utf-8'));
 
     await combineTools(automatedTools, manualTools, toolsPath, tagsPath);
   } catch (err) {
-    throw new Error(`An error occurred while building tools: ${(err as Error).message}`);
+    throw new Error(
+      `An error occurred while building tools: ${(err as Error).message}`,
+    );
   }
 }
 
 /* istanbul ignore next */
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  const automatedToolsPath = resolve(currentDirPath, '../config', 'tools-automated.json');
-  const manualToolsPath = resolve(currentDirPath, '../config', 'tools-manual.json');
+  const automatedToolsPath = resolve(
+    currentDirPath,
+    '../config',
+    'tools-automated.json',
+  );
+  const manualToolsPath = resolve(
+    currentDirPath,
+    '../config',
+    'tools-manual.json',
+  );
   const toolsPath = resolve(currentDirPath, '../config', 'tools.json');
   const tagsPath = resolve(currentDirPath, '../config', 'all-tags.json');
 
-  buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath).catch((err) => {
-    logger.error('Failed to build tools:', err);
-    process.exit(1);
-  });
+  buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath).catch(
+    (err) => {
+      logger.error('Failed to build tools:', err);
+      process.exit(1);
+    },
+  );
 }
 
 export { buildTools };

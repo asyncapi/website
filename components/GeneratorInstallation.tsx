@@ -21,9 +21,13 @@ interface GeneratorFlags {
  * @description This component displays generator installation options.
  */
 export default function GeneratorInstallation() {
-  const [template, setTemplate] = useState<string>('@asyncapi/html-template@3.0.0');
+  const [template, setTemplate] = useState<string>(
+    '@asyncapi/html-template@3.0.0',
+  );
   // By default we will have output folder flag so its set here.
-  const [params, setParams] = useState<string>('-o example --use-new-generator');
+  const [params, setParams] = useState<string>(
+    '-o example --use-new-generator',
+  );
   const [specPath, setSpecPath] = useState<string>('https://bit.ly/asyncapi');
 
   const generatorflags = generatorflagList as GeneratorFlags;
@@ -66,31 +70,31 @@ asyncapi generate fromTemplate ${specPath} ${template} ${params}`;
   }
 
   return (
-    <div className='relative mx-auto mt-8 max-w-full'>
-      <div className='mb-4'>
-        <Paragraph typeStyle={ParagraphTypeStyle.md} className='mr-4 inline'>
+    <div className="relative mx-auto mt-8 max-w-full">
+      <div className="mb-4">
+        <Paragraph typeStyle={ParagraphTypeStyle.md} className="mr-4 inline">
           Select a Generator template:
         </Paragraph>
         <Select
           options={generatorTemplates}
           selected={template}
           onChange={onChangeTemplate}
-          className='shadow-outline-blue'
+          className="shadow-outline-blue"
         />
       </div>
       <CodeBlock
-        language='generator-cli'
-        textSizeClassName='text-sm'
-        className='shadow-lg'
+        language="generator-cli"
+        textSizeClassName="text-sm"
+        className="shadow-lg"
         codeBlocks={[
           {
             language: 'npm',
-            code: getNpmCode()
+            code: getNpmCode(),
           },
           {
             language: 'Docker',
-            code: getDockerCode()
-          }
+            code: getDockerCode(),
+          },
         ]}
       />
     </div>

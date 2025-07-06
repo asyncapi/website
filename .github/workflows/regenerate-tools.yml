@@ -1,55 +1,55 @@
 name: List of all the tools used in AsyncAPI
 
-on: 
+on:
   workflow_dispatch:
   schedule:
-  #every day at midnight
-  - cron: "15 0 * * 1"
+    #every day at midnight
+    - cron: '15 0 * * 1'
 
 jobs:
   regenerateTools:
-      if: github.repository == 'asyncapi/website'
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      name: Regenerate tools.json
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout repository
-          uses: actions/checkout@v3
+    if: github.repository == 'asyncapi/website'
+    env:
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+    name: Regenerate tools.json
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-        - name: Check package-lock version
-          uses: asyncapi/.github/.github/actions/get-node-version-from-package-lock@master
-          id: lockversion
-  
-        - name: Use Node.js
-          uses: actions/setup-node@v3
-          with:
-            node-version: "${{ steps.lockversion.outputs.version }}"
-            cache: 'npm'
-            cache-dependency-path: '**/package-lock.json'
+      - name: Check package-lock version
+        uses: asyncapi/.github/.github/actions/get-node-version-from-package-lock@master
+        id: lockversion
 
-        - name: Install dependencies
-          run: npm install
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '${{ steps.lockversion.outputs.version }}'
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
 
-        - name: Regenerate
-          run: npm run generate:tools
+      - name: Install dependencies
+        run: npm install
 
-        - name: Create Pull Request with new tools.json version
-          uses: peter-evans/create-pull-request@38e0b6e68b4c852a5500a94740f0e535e0d7ba54 # use 4.2.4 https://github.com/peter-evans/create-pull-request/releases/tag/v4.2.4
-          with:
-            token: ${{ secrets.GH_TOKEN }}
-            commit-message: 'chore: update tools.json'
-            committer: asyncapi-bot <info@asyncapi.io>
-            author: asyncapi-bot <info@asyncapi.io>
-            title: 'chore: update tools.json'
-            branch: update-tools/${{ github.job }}
-            
-        - if: failure() # Only, on failure, send a message on the 94_bot-failing-ci slack channel
-          name: Report workflow run status to Slack
-          uses: 8398a7/action-slack@fbd6aa58ba854a740e11a35d0df80cb5d12101d8 #using https://github.com/8398a7/action-slack/releases/tag/v3.15.1
-          with:
-            status: ${{ job.status }}
-            fields: repo,action,workflow
-            text: 'AsyncAPI Tools workflow failed'
-          env:
-            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_CI_FAIL_NOTIFY }}
+      - name: Regenerate
+        run: npm run generate:tools
+
+      - name: Create Pull Request with new tools.json version
+        uses: peter-evans/create-pull-request@38e0b6e68b4c852a5500a94740f0e535e0d7ba54 # use 4.2.4 https://github.com/peter-evans/create-pull-request/releases/tag/v4.2.4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          commit-message: 'chore: update tools.json'
+          committer: asyncapi-bot <info@asyncapi.io>
+          author: asyncapi-bot <info@asyncapi.io>
+          title: 'chore: update tools.json'
+          branch: update-tools/${{ github.job }}
+
+      - if: failure() # Only, on failure, send a message on the 94_bot-failing-ci slack channel
+        name: Report workflow run status to Slack
+        uses: 8398a7/action-slack@fbd6aa58ba854a740e11a35d0df80cb5d12101d8 #using https://github.com/8398a7/action-slack/releases/tag/v3.15.1
+        with:
+          status: ${{ job.status }}
+          fields: repo,action,workflow
+          text: 'AsyncAPI Tools workflow failed'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_CI_FAIL_NOTIFY }}
