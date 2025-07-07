@@ -17,7 +17,7 @@ export default function Board() {
             and financial oversight of the AsyncAPI Initiative. While the TSC oversees technical direction, the GB
             focuses on governance, community safety, sustainability, and stewardship in alignment with the{' '}
             <a
-              href='https://github.com/asyncapi/community/blob/master/CHARTER.md'
+              href='https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/CHARTER.md'
               className='text-blue-500 hover:text-blue-400'
               target='_blank'
               rel='noopener noreferrer'
@@ -48,21 +48,21 @@ export default function Board() {
         </div>
         <div>
           <h3 className='text-primary-800 mb-2 font-semibold lg:text-center lg:text-2xl'>
-            Board Member Responsibilities
+            What are the responsibilities of a board member?
           </h3>
           <p className='my-4 text-base text-gray-500 lg:text-center'>
             GB members guide AsyncAPI’s financial strategy, sponsorships, hiring, and service access management. They
             also help sustain an inclusive and safe environment. All major proposals require TSC approval, ensuring a
             balanced and collaborative governance model. See the{' '}
             <a
-              href='https://github.com/asyncapi/community/blob/master/CHARTER.md'
+              href='https://github.com/asyncapi/community/blob/master/GOVERNANCE.md#duties-and-responsibilities'
               className='text-blue-500 hover:text-blue-400'
               target='_blank'
               rel='noopener noreferrer'
             >
-              full charter
+              governance document
             </a>{' '}
-            for more.
+            for more details.
           </p>
         </div>
       </div>
