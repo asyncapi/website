@@ -108,7 +108,7 @@ asyncapi:
     Document the API of the product, so its users know how it works and how to use it. AsyncAPI was selected as the standard that allows you to generate documentation from a machine-readable document that describes the API.
     The goal was to document API in a standardized way, so other internal products could follow to unify how APIs are documented across the company.
   versions:
-    - 2.4.0
+    - 3.0.0
   storage: Git repository where source code is.
   editing: IntelliJ without any special plugins. Sometimes people use AsyncAPI Studio, but not regularly because of lack of support for references to local drive.
   maintainers: Developers
