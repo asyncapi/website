@@ -28,7 +28,7 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.json"
- ],
+  ],
   "exclude": [
     "node_modules",
     "netlify"
