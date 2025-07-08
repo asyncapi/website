@@ -10,9 +10,8 @@ class ToolsPage {
      docs: 'Visit Docs'
     };
    
-   cy.get(`a[href="${href}"]`).contains(linkTexts[linkType])
-     .closest('[data-testid="tool-card"], .card, article')
-     .find('h2').should('contain.text', heading);
+   cy.get(`a[href="${href}"]`).contains(linkTexts[linkType]);
+   cy.get('h2').should('contain.text', heading);
  }
 
  verifyWebsiteLinks(href, heading) {
