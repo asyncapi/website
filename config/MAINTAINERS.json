@@ -157,6 +157,7 @@
         "availableForHire": false,
         "linkedin": "fmvilas",
         "isTscMember": true,
+        "isBoardMember": true,
         "repos": [
             "spec",
             "spec-json-schemas",
@@ -700,6 +701,7 @@
         "availableForHire": false,
         "company": "AsyncAPI Initiative",
         "isTscMember": true,
+        "isBoardMember": true,
         "repos": [
             "website",
             "conference-website",
