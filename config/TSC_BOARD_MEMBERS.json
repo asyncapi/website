@@ -345,8 +345,7 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
-            "website",
-            "community"
+            "website"
         ],
         "githubID": 19964402,
         "img": "https://avatars.githubusercontent.com/u/19964402?v=4",
