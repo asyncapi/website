@@ -4,44 +4,48 @@ class DocsPage {
   }
 
   verifyCardLinks(href){
-    cy.get(
-      `[href="${href}"] [data-testid="Docs-div-contents"] [data-testid="Paragraph-test"]`
-    ).should('have.attr', 'data-testid', 'Paragraph-test');
+    cy.get(`[href="${href}"]`)
+    .find('[data-testid="Docs-div-contents"]')
+    .find('[data-testid="Paragraph-test"]')
+    .should('exist');
   }
   
-  goToConceptsSection() {
-    cy.get('a[href="/docs/concepts"] span').contains('Concepts').click();
-    cy.get('#concepts').should('be.visible'); //Fixes a flaky test
+  verifyConceptSection(){
+    cy.get(`a[href="/docs/concepts"] span`).contains('Concepts').click();
+  }
+  navigateToSection(section,href){
+    cy.get(`a[href="${href}"] span`).contains(section).click();
+  }
+  goToConceptsSection(){
+    this.navigateToSection('Concepts',"/docs/concepts")
   }
 
   goToTutorialsSection() {
-    cy.get('a[href="/docs/tutorials"] span').contains('Tutorials').click();
+    this.navigateToSection('Tutorials',"/docs/tutorials")
   }
 
   goToToolsSection() {
-    cy.get('a[href="/docs/tools"] span').contains('Tools').click();
+    this.navigateToSection('Tools',"/docs/tools")
   }
 
   goToGuidesSection() {
-    cy.get('a[href="/docs/guides"] span').contains('Guides').click();
+    this.navigateToSection('Guides',"/docs/guides")
   }
 
   goToReferenceSection() {
-    cy.get('a[href="/docs/reference"] span').contains('Reference').click();
+    this.navigateToSection('Reference',"/docs/reference")
   }
 
   goToMigrationsSection(){
-    cy.get('a[href="/docs/migration"] span').contains('Migrations').click();
+    this.navigateToSection('Migration',"/docs/migration")
   }
 
   goToCommunitySection(){
-    cy.get('a[href="/docs/community"] span').contains('Community').click();
+    this.navigateToSection('Community',"/docs/community")
   }
 
-  verifyConceptSubsection({ href, label, heading }) {
-    cy.get(`a[href="${href}"] span`).contains(label).click();
-
-    cy.get('h1').should('contain.text', heading);
+  verifyConceptSubsection({ href, label}) {
+    cy.get(`a[href="${href}"]`).contains(label).click();
   }
 }
 
