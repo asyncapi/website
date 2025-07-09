@@ -1,4 +1,5 @@
 import HomePage from './pages/HomePage';
+import CaseStudiesPage from './pages/CaseStudiesPage';
 
 let homepage;
 let casestudiespage;

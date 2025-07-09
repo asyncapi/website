@@ -21,6 +21,7 @@ class CaseStudiesPage {
     .should('be.visible');
   }
 
+
   verifyLinkExists(linkName, linkUrl, index = 0) {
     cy.get('[data-testid="CaseStudyCard-main"]')
       .eq(index)
@@ -32,9 +33,14 @@ class CaseStudiesPage {
   }
 
   verifyLinksWork(href,label){
-    cy.get(`a[href="${href}"]`).contains(label);
-   
-  }
+  cy.get(`a[href="${href}"]`)
+      .should('contain.text', label)
+      .should('have.attr', 'href', href)
+      .then(($link) => {
+        // Verify the link is not broken
+        cy.request('HEAD', href).its('status').should('eq', 200);
+      });
+    }
 
   verifyFaqLink() {
     cy.contains('a', 'FAQ')
@@ -55,9 +61,9 @@ class CaseStudiesPage {
     );
   }
 
-  verifyCardsLink() {
-    this.verifyLinkExists('Adeo Group', 'casestudies/adeogroup', 0); 
-    this.verifyLinkExists('HDI Global SE', 'casestudies/hdiglobal', 1); 
+   verifyCardsLink() {
+    this.verifyLinkExists('Adeo Group', 'casestudies/adeogroup', 0); // Selects the first card
+    this.verifyLinkExists('HDI Global SE', 'casestudies/hdiglobal', 1); // Selects the second card
   }
 
   verifyHeader() {
