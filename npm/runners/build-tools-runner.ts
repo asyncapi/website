@@ -47,6 +47,7 @@ async function runBuildTools() {
       task: 'tools',
       timestamp: new Date().toISOString()
     });
+    throw error;
   }
 }
 

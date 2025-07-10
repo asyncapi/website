@@ -31,6 +31,7 @@ async function runBuildAdoptersList() {
       task: 'adopters',
       timestamp: new Date().toISOString(),
     });
+    throw error;
   }
 }
 

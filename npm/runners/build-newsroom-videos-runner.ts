@@ -38,6 +38,7 @@ async function runBuildNewsroomVideos() {
       task: 'newsroomVideos',
       timestamp: new Date().toISOString(),
     });
+    throw error;
   }
 }
 

@@ -37,6 +37,7 @@ async function runBuildMeetings() {
       task: 'meetings',
       timestamp: new Date().toISOString(),
     });
+    throw error;
   }
 }
 

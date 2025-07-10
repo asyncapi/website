@@ -1,6 +1,7 @@
 import { logger } from '@/scripts/helpers/logger';
 
 import { copyAndRenameFiles, ensureDirectoryExists } from '../../scripts/build-pages';
+import { error } from 'console';
 
 const SRC_DIR = 'markdown';
 const TARGET_DIR = 'pages';
@@ -40,6 +41,7 @@ async function runBuildPages() {
       task: 'pages',
       timestamp: new Date().toISOString(),
     });
+    throw err;
   }
 }
 

@@ -57,6 +57,7 @@ async function runBuildPostList(options: BuildPostListOptions = {}) {
       task: 'posts',
       timestamp: new Date().toISOString(),
     });
+    throw error;
   }
 }
 

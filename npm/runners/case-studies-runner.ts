@@ -47,6 +47,7 @@ async function runCaseStudies() {
       task: 'caseStudies',
       timestamp: new Date().toISOString(),
     });
+    throw error;
   }
 }
 

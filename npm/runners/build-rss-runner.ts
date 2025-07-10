@@ -34,6 +34,7 @@ async function runBuildRss() {
       task: 'rss',
       timestamp: new Date().toISOString()
     });
+    throw error;
   }
 }
 

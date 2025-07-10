@@ -34,6 +34,7 @@ async function runBuildDashboard() {
       task: 'dashboard',
       timestamp: new Date().toISOString(),
     });
+    throw error;
   }
 }
 

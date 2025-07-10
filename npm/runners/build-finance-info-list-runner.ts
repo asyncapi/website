@@ -65,6 +65,7 @@ async function runBuildFinanceInfoList() {
       task: 'finance',
       timestamp: new Date().toISOString(),
     });
+    throw error;
   }
 }
 
