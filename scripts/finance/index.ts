@@ -53,6 +53,21 @@ export async function buildFinanceInfoList({
 
     await writeJSON(expensesLinkPath, expensesLinkJsonPath);
   } catch (err) {
-    throw new Error(`Error in buildFinanceInfoList: ${err}`);
+    const error = new Error(`Failed to build finance info list: ${(err as Error).message}`);
+
+    (error as any).context = {
+      operation: 'buildFinanceInfoList',
+      stage: 'main_execution',
+      currentDir,
+      configDir,
+      financeDir,
+      year,
+      jsonDataDir,
+      errorMessage: (err as Error).message,
+      errorStack: ((err as Error).stack || '').split('\n').slice(0, 3).join('\n'),
+      nestedContext: (err as any)?.context || null,
+      errorType: 'script_level_error',
+    };
+    throw error;
   }
 }
