@@ -2,15 +2,14 @@ import fs from 'fs';
 import { resolve } from 'path';
 
 import { buildFinanceInfoList } from '@/scripts/finance/index';
+import { logger } from '@/scripts/helpers/logger';
 
 /**
  * Runs the build finance info list process.
  *
  * This function locates the latest year in the finance directory,
  * then invokes the buildFinanceInfoList script for that year.
- * It handles errors, wrapping them with additional runner-level context if necessary.
- *
- * @throws {Error} If the build process fails or an error occurs in the runner.
+ * It handles errors, logging them with context and letting the top-level .catch handle process exit.
  */
 async function runBuildFinanceInfoList() {
   const financeDir = resolve('.', 'config', 'finance');
@@ -28,7 +27,12 @@ async function runBuildFinanceInfoList() {
     });
 
   if (yearsList.length === 0) {
-    throw new Error('No finance data found in the finance directory.');
+    logger.error('No finance data found in the finance directory.', {
+      script: 'build-finance-info-list-runner.ts',
+      task: 'finance',
+      timestamp: new Date().toISOString(),
+    });
+    process.exit(1);
   }
   const latestYear = yearsList[0];
 
@@ -46,19 +50,24 @@ async function runBuildFinanceInfoList() {
         ...(error as any).context,
         errorType: 'script_level_error',
       };
-      throw error;
+    } else {
+      (error as any).context = {
+        operation: 'runBuildFinanceInfoList',
+        runner: 'build-finance-info-list-runner',
+        originalError: error,
+        errorType: 'runner_level_error',
+        note: 'This error occurred at the runner level, not in the low-level script',
+      };
     }
-    const wrappedError = new Error(`Build finance info list runner failed: ${(error as Error).message}`);
-
-    (wrappedError as any).context = {
-      operation: 'runBuildFinanceInfoList',
-      runner: 'build-finance-info-list-runner',
-      originalError: error,
-      errorType: 'runner_level_error',
-      note: 'This error occurred at the runner level, not in the low-level script',
-    };
-    throw wrappedError;
+    logger.error('Build finance info list runner failed', {
+      error,
+      script: 'build-finance-info-list-runner.ts',
+      task: 'finance',
+      timestamp: new Date().toISOString(),
+    });
   }
 }
 
-runBuildFinanceInfoList();
+runBuildFinanceInfoList().catch(() => {
+  process.exit(1);
+});

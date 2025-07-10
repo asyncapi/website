@@ -48,7 +48,18 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
       return i2Date.getTime() - i1Date.getTime();
     });
     if (missingDatePosts.length > 0) {
-      throw new Error(`Missing date in posts: ${missingDatePosts.map((p) => p.title || p.slug).join(', ')}`);
+      const error = new Error(`Missing date in posts: ${missingDatePosts.map((p) => p.title || p.slug).join(', ')}`);
+
+      (error as any).context = {
+        operation: 'rssFeed',
+        stage: 'missing_date_check',
+        type,
+        rssTitle,
+        desc,
+        outputPath,
+        missingPosts: missingDatePosts.map((p) => p.title || p.slug),
+      };
+      throw error;
     }
 
     const base = 'https://www.asyncapi.com';
@@ -77,7 +88,18 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
     const invalidPosts = posts.filter((post) => !post.title || !post.slug || !post.excerpt || !post.date);
 
     if (invalidPosts.length > 0) {
-      throw new Error(`Missing required fields in posts: ${invalidPosts.map((p) => p.title || p.slug).join(', ')}`);
+      const error = new Error('Missing required fields');
+
+      (error as any).context = {
+        operation: 'rssFeed',
+        stage: 'invalid_fields_check',
+        type,
+        rssTitle,
+        desc,
+        outputPath,
+        invalidPosts: invalidPosts.map((p) => p.title || p.slug),
+      };
+      throw error;
     }
     const mimeTypes: {
       [key: string]: string;
@@ -127,6 +149,29 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
 
     await fs.writeFile(`./public/${outputPath}`, xml, 'utf8');
   } catch (err) {
-    throw new Error(`Failed to generate RSS feed: ${(err as Error).message}`);
+    let error;
+
+    if ((err as any).message && (err as any).message.startsWith('Missing date in posts:')) {
+      error = err;
+    } else if ((err as any).message && (err as any).message === 'Missing required fields') {
+      error = err;
+    } else if ((err as any).code && ((err as any).code === 'ENOENT' || (err as any).code === 'EACCES')) {
+      error = err;
+    } else {
+      error = new Error('Failed to generate RSS feed');
+    }
+    (error as any).context = {
+      operation: 'rssFeed',
+      script: 'build-rss.ts',
+      type,
+      rssTitle,
+      desc,
+      outputPath,
+      errorType: 'script_level_error',
+      errorMessage: (err as Error).message,
+      errorStack: ((err as Error).stack || '').split('\n').slice(0, 3).join('\n'),
+      nestedContext: (err as any)?.context || null,
+    };
+    throw error;
   }
 }

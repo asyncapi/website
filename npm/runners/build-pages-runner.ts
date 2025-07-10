@@ -1,3 +1,5 @@
+import { logger } from '@/scripts/helpers/logger';
+
 import { copyAndRenameFiles, ensureDirectoryExists } from '../../scripts/build-pages';
 
 const SRC_DIR = 'markdown';
@@ -13,7 +15,7 @@ const TARGET_DIR = 'pages';
  * @returns {Promise<void>} A promise that resolves when the operation is complete.
  * @throws Will throw an error if directory creation or file copying fails.
  */
-export async function runBuildPages() {
+async function runBuildPages() {
   try {
     ensureDirectoryExists(TARGET_DIR);
     copyAndRenameFiles(SRC_DIR, TARGET_DIR);
@@ -23,19 +25,24 @@ export async function runBuildPages() {
         ...(err as any).context,
         errorType: 'script_level_error',
       };
-      throw err;
+    } else {
+      (err as any).context = {
+        operation: 'runBuildPages',
+        runner: 'build-pages-runner',
+        originalError: err,
+        errorType: 'runner_level_error',
+        note: 'This error occurred at the runner level, not in the low-level script',
+      };
     }
-    const wrappedError = new Error(`Build pages runner failed: ${(err as Error).message}`);
-
-    (wrappedError as any).context = {
-      operation: 'runBuildPages',
-      runner: 'build-pages-runner',
-      originalError: err,
-      errorType: 'runner_level_error',
-      note: 'This error occurred at the runner level, not in the low-level script',
-    };
-    throw wrappedError;
+    logger.error('Build pages runner failed', {
+      error: err,
+      script: 'build-pages-runner.ts',
+      task: 'pages',
+      timestamp: new Date().toISOString(),
+    });
   }
 }
 
-runBuildPages();
+runBuildPages().catch(() => {
+  process.exit(1);
+});

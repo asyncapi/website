@@ -1,7 +1,7 @@
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
-
 import { buildNewsroomVideos } from '@/scripts/build-newsroom-videos';
+import { logger } from '@/scripts/helpers/logger';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
@@ -10,10 +10,7 @@ const currentDirPath = dirname(currentFilePath);
  * Runs the build newsroom videos process.
  *
  * This function resolves the path to the newsroom_videos.json configuration file,
- * then invokes the buildNewsroomVideos script. It handles errors, wrapping them
- * with additional runner-level context if necessary.
- *
- * @throws {Error} If the build process fails or an error occurs in the runner.
+ * then invokes the buildNewsroomVideos script. It handles errors, logging them with context and letting the top-level .catch handle process exit.
  */
 async function runBuildNewsroomVideos() {
   const outputPath = resolve(currentDirPath, '../../config', 'newsroom_videos.json');
@@ -21,25 +18,29 @@ async function runBuildNewsroomVideos() {
   try {
     await buildNewsroomVideos(outputPath);
   } catch (error) {
-    // If the context is already set, the error is from low level functions
     if ((error as any).context) {
       (error as any).context = {
         ...(error as any).context,
-        errorType: 'script_level_error'
+        errorType: 'script_level_error',
       };
-      throw error;
+    } else {
+      (error as any).context = {
+        operation: 'runBuildNewsroomVideos',
+        runner: 'build-newsroom-videos-runner',
+        originalError: error,
+        errorType: 'runner_level_error',
+        note: 'This error occurred at the runner level, not in the low-level script',
+      };
     }
-    // Otherwise, this is likely a runner-level issue or unexpected error
-    const wrappedError = new Error(`Newsroom videos runner failed: ${(error as Error).message}`);
-
-    (wrappedError as any).context = {
-      operation: 'runBuildNewsroomVideos',
-      runner: 'build-newsroom-videos-runner',
-      originalError: error,
-      errorType: 'runner_level_error',
-      note: 'This error occurred at the runner level, not in the low-level script'
-    };
-    throw wrappedError;
+    logger.error('Build newsroom videos runner failed', {
+      error,
+      script: 'build-newsroom-videos-runner.ts',
+      task: 'newsroomVideos',
+      timestamp: new Date().toISOString(),
+    });
   }
 }
-runBuildNewsroomVideos();
+
+runBuildNewsroomVideos().catch(() => {
+  process.exit(1);
+});

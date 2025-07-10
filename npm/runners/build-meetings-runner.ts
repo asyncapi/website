@@ -2,6 +2,7 @@ import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
 import { buildMeetings } from '@/scripts/build-meetings';
+import { logger } from '@/scripts/helpers/logger';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
@@ -10,10 +11,7 @@ const currentDirPath = dirname(currentFilePath);
  * Runs the build meetings process.
  *
  * This function resolves the path to the meetings.json configuration file,
- * then invokes the buildMeetings script. It handles errors, wrapping them
- * with additional runner-level context if necessary.
- *
- * @throws {Error} If the build process fails or an error occurs in the runner.
+ * then invokes the buildMeetings script. It handles errors, logging them with context and letting the top-level .catch handle process exit.
  */
 async function runBuildMeetings() {
   try {
@@ -22,21 +20,26 @@ async function runBuildMeetings() {
     if ((error as any).context) {
       (error as any).context = {
         ...(error as any).context,
-        errorType: 'script_level_error'
+        errorType: 'script_level_error',
       };
-      throw error;
+    } else {
+      (error as any).context = {
+        operation: 'runBuildMeetings',
+        runner: 'build-meetings-runner',
+        originalError: error,
+        errorType: 'runner_level_error',
+        note: 'This error occurred at the runner level, not in the low-level script',
+      };
     }
-    const wrappedError = new Error(`Build meetings runner failed: ${(error as Error).message}`);
-
-    (wrappedError as any).context = {
-      operation: 'runBuildMeetings',
-      runner: 'build-meetings-runner',
-      originalError: error,
-      errorType: 'runner_level_error',
-      note: 'This error occurred at the runner level, not in the low-level script'
-    };
-    throw wrappedError;
+    logger.error('Build meetings runner failed', {
+      error,
+      script: 'build-meetings-runner.ts',
+      task: 'meetings',
+      timestamp: new Date().toISOString(),
+    });
   }
 }
 
-runBuildMeetings();
+runBuildMeetings().catch(() => {
+  process.exit(1);
+});

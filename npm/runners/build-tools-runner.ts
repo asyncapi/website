@@ -2,6 +2,7 @@ import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
 import { buildTools } from '@/scripts/build-tools';
+import { logger } from '@/scripts/helpers/logger';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
@@ -28,21 +29,27 @@ async function runBuildTools() {
     if ((error as any).context) {
       (error as any).context = {
         ...(error as any).context,
-        errorType: 'script_level_error',
+        errorType: 'script_level_error'
       };
-      throw error;
+    } else {
+      (error as any).context = {
+        operation: 'runBuildTools',
+        runner: 'build-tools-runner',
+        originalError: error,
+        errorType: 'runner_level_error',
+        note: 'This error occurred at the runner level, not in the low-level script'
+      };
     }
-    const wrappedError = new Error(`Build tools runner failed: ${(error as Error).message}`);
 
-    (wrappedError as any).context = {
-      operation: 'runBuildTools',
-      runner: 'build-tools-runner',
-      originalError: error,
-      errorType: 'runner_level_error',
-      note: 'This error occurred at the runner level, not in the low-level script',
-    };
-    throw wrappedError;
+    logger.error('Build tools runner failed', {
+      error,
+      script: 'build-tools-runner.ts',
+      task: 'tools',
+      timestamp: new Date().toISOString()
+    });
   }
 }
 
-runBuildTools();
+runBuildTools().catch(() => {
+  process.exit(1);
+});

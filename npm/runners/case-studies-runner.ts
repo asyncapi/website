@@ -3,6 +3,7 @@ import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
 import { buildCaseStudiesList } from '@/scripts/casestudies';
+import { logger } from '@/scripts/helpers/logger';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
@@ -13,9 +14,7 @@ const projectRoot = resolve(currentDirPath, '../../');
  *
  * This function resolves the project root, checks for the existence of the case studies directory,
  * and invokes the buildCaseStudiesList function to generate the case studies JSON file.
- * If an error occurs, it wraps the error with additional context and rethrows it.
- *
- * @throws {Error} If the case studies directory is missing or if the build process fails.
+ * If an error occurs, it logs the error with context and lets the top-level .catch handle process exit.
  */
 async function runCaseStudies() {
   try {
@@ -33,19 +32,24 @@ async function runCaseStudies() {
         ...(error as any).context,
         errorType: 'script_level_error',
       };
-      throw error;
+    } else {
+      (error as any).context = {
+        operation: 'runCaseStudies',
+        runner: 'case-studies-runner',
+        originalError: error,
+        errorType: 'runner_level_error',
+        note: 'This error occurred at the runner level, not in the low-level script',
+      };
     }
-    const wrappedError = new Error(`Case studies runner failed: ${(error as Error).message}`);
-
-    (wrappedError as any).context = {
-      operation: 'runCaseStudies',
-      runner: 'case-studies-runner',
-      originalError: error,
-      errorType: 'runner_level_error',
-      note: 'This error occurred at the runner level, not in the low-level script',
-    };
-    throw wrappedError;
+    logger.error('Case studies runner failed', {
+      error,
+      script: 'case-studies-runner.ts',
+      task: 'caseStudies',
+      timestamp: new Date().toISOString(),
+    });
   }
 }
 
-runCaseStudies();
+runCaseStudies().catch(() => {
+  process.exit(1);
+});
