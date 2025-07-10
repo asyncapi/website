@@ -34,6 +34,18 @@ export async function buildCaseStudiesList(dirWithCaseStudy: string, writeFilePa
 
     return caseStudiesList;
   } catch (err) {
-    throw new Error(err instanceof Error ? err.message : String(err));
+    const error = new Error(`Failed to build case studies list: ${(err as Error).message}`);
+
+    (error as any).context = {
+      operation: (err as any)?.context?.operation || 'buildCaseStudiesList',
+      stage: (err as any)?.context?.stage || 'main_execution',
+      dirWithCaseStudy,
+      writeFilePath,
+      errorMessage: (err as Error).message,
+      errorStack: ((err as Error).stack || '').split('\n').slice(0, 3).join('\n'),
+      nestedContext: (err as any)?.context || null,
+      errorType: 'script_level_error',
+    };
+    throw error;
   }
 }

@@ -30,7 +30,8 @@
     "test:locales": "tsx scripts/helpers/check-locales.ts",
     "dev:storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build",
-    "build:all": "tsx npm/index.ts"
+    "dashboard-runner": "tsx npm/runners/build-dashboard-runner.ts",
+    "case-studies-runner": "tsx npm/runners/case-studies-runner.ts"
   },
   "repository": {
     "type": "git",

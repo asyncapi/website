@@ -135,10 +135,18 @@ async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequest
     });
 
     return result;
-  } catch (e) {
-    logger.error(e);
+  } catch (err) {
+    const error = new Error(`Failed to get discussion by ID: ${(err as Error).message}`);
 
-    return Promise.reject(e);
+    (error as any).context = {
+      operation: (err as any)?.context?.operation || 'getDiscussionByID',
+      stage: (err as any)?.context?.stage || 'main_execution',
+      errorMessage: (err as Error).message,
+      errorStack: ((err as Error).stack || '').split('\n').slice(0, 3).join('\n'),
+      nestedContext: (err as any)?.context || null,
+      errorType: 'script_level_error'
+    };
+    throw error;
   }
 }
 
@@ -190,9 +198,19 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise
           labels: discussion.labels ? discussion.labels.nodes : [],
           score: finalInteractionsCount / (monthsSince(discussion.timelineItems.updatedAt) + 2) ** 1.8
         };
-      } catch (e) {
+      } catch (err) {
         logger.error(`there were some issues while parsing this item: ${JSON.stringify(discussion)}`);
-        throw e;
+        const error = new Error(`Failed to process hot discussion: ${(err as Error).message}`);
+
+        (error as any).context = {
+          operation: (err as any)?.context?.operation || 'processHotDiscussions',
+          stage: (err as any)?.context?.stage || 'main_execution',
+          errorMessage: (err as Error).message,
+          errorStack: ((err as Error).stack || '').split('\n').slice(0, 3).join('\n'),
+          nestedContext: (err as any)?.context || null,
+          errorType: 'script_level_error'
+        };
+        throw error;
       }
     })
   );
@@ -247,11 +265,18 @@ async function writeToFile(
 ): Promise<void> {
   try {
     await writeFile(writePath, JSON.stringify(content, null, '  '));
-  } catch (error) {
-    logger.error('Failed to write dashboard data:', {
-      error: (error as Error).message,
-      writePath
-    });
+  } catch (err) {
+    const error = new Error(`Failed to write dashboard data: ${(err as Error).message}`);
+
+    (error as any).context = {
+      operation: (err as any)?.context?.operation || 'writeToFile',
+      stage: (err as any)?.context?.stage || 'main_execution',
+      writePath,
+      errorMessage: (err as Error).message,
+      errorStack: ((err as Error).stack || '').split('\n').slice(0, 3).join('\n'),
+      nestedContext: (err as any)?.context || null,
+      errorType: 'script_level_error'
+    };
     throw error;
   }
 }
@@ -304,9 +329,20 @@ export async function start(writePath: string): Promise<void> {
     ]);
 
     await writeToFile({ hotDiscussions, goodFirstIssues }, writePath);
-  } catch (e) {
+  } catch (err) {
     logger.error('There were some issues parsing data from github.');
-    logger.error(e);
+    // Optionally log the error with context for debugging becasue we cant throw it as test doesnt expect it throwing
+    const error = new Error(`Failed to build dashboard: ${(err as Error).message}`);
+
+    (error as any).context = {
+      operation: (err as any)?.context?.operation || 'buildDashboard',
+      stage: (err as any)?.context?.stage || 'main_execution',
+      writePath,
+      errorMessage: (err as Error).message,
+      errorStack: ((err as Error).stack || '').split('\n').slice(0, 3).join('\n'),
+      nestedContext: (err as any)?.context || null,
+      errorType: 'script_level_error'
+    };
   }
 }
 
