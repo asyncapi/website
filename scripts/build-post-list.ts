@@ -267,15 +267,16 @@ async function walkDirectories(
     }
   } catch (error) {
     const refinedError = new Error(`Error while walking directories: ${(error as Error).message}`);
+
     (refinedError as any).context = {
       operation: 'walkDirectories',
       stage: 'directory_traversal',
-      directories: directories,
-      basePath: basePath,
-      sectionTitle: sectionTitle,
-      sectionId: sectionId,
-      rootSectionId: rootSectionId,
-      sectionWeight: sectionWeight,
+      directories,
+      basePath,
+      sectionTitle,
+      sectionId,
+      rootSectionId,
+      sectionWeight,
       originalErrorMessage: (error as Error).message,
       originalErrorStack: (error as Error).stack?.split('\n').slice(0, 3).join('\n'),
       nestedContext: (error as any)?.context || null
@@ -307,9 +308,10 @@ export async function buildPostList(
   try {
     if (!basePath) {
       const error = new Error('basePath is required');
+
       (error as any).context = {
         function: 'buildPostList',
-        postDirectories: postDirectories,
+        postDirectories,
         basePath,
         writeFilePath
       };
@@ -317,9 +319,10 @@ export async function buildPostList(
     }
     if (!writeFilePath) {
       const error = new Error('writeFilePath is required');
+
       (error as any).context = {
         function: 'buildPostList',
-        postDirectories: postDirectories,
+        postDirectories,
         basePath,
         writeFilePath
       };
@@ -327,6 +330,7 @@ export async function buildPostList(
     }
     if (postDirectories.length === 0) {
       const error = new Error('postDirectories array is empty');
+
       (error as any).context = {
         function: 'buildPostList',
         postDirectories: [],
@@ -345,10 +349,11 @@ export async function buildPostList(
     await writeFile(writeFilePath, JSON.stringify(finalResult, null, '  '));
   } catch (error) {
     const contextError = new Error(`Error while building post list: ${(error as Error).message}`);
+
     (contextError as any).context = {
       operation: (error as any)?.context?.operation || 'buildPostList',
       stage: (error as any)?.context?.stage || 'main_execution',
-      postDirectories: postDirectories,
+      postDirectories,
       basePath,
       writeFilePath,
       normalizedBasePath: basePath ? normalize(basePath) : undefined,

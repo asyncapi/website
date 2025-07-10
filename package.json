@@ -31,7 +31,8 @@
     "dev:storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build",
     "dashboard-runner": "tsx npm/runners/build-dashboard-runner.ts",
-    "case-studies-runner": "tsx npm/runners/case-studies-runner.ts"
+    "case-studies-runner": "tsx npm/runners/case-studies-runner.ts",
+    "post-list-runner": "tsx npm/runners/build-post-list-runner.ts"
   },
   "repository": {
     "type": "git",
