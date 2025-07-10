@@ -32,6 +32,10 @@ class HomePage {
     cy.get('[data-testid="Navbar-main"]').contains('Docs').click();
     return new DocsPage();
   }
+
+  goToTSCPage(){
+    cy.visit('/community/tsc')
+  }
 }
 
 export default HomePage;
