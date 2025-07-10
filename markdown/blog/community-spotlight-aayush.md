@@ -1,6 +1,6 @@
 ---
 title: "Inside the Open Source Climb: Aayush’s Path to AsyncAPI Leadership"
-date: 2025-06-07T06:00:00+01:00
+date: 2025-07-11T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
@@ -75,7 +75,7 @@ In this interview, Aayush shares his journey, challenges, growth, and advice for
 
 **Bami: Nice! If you were to give shout-outs, who would you mention?**
 
-***Aayush:** Honestly, I would shout out the whole AsyncAPI community. Everyone is doing great work. But if I have to mention names, then definitely Sovik, who was my first mentor, and also Ashish, Sameer, [Lukasz Gornicki](https://www.linkedin.com/in/lukasz-gornicki-a621914/), [Fran Mendez](https://www.linkedin.com/in/fmvilas/), and many others, including [you](https://www.linkedin.com/in/atinuke-oluwabamikemi-kayode-5b838b1b7/).*
+***Aayush:** Honestly, I would shout out the whole AsyncAPI community. Everyone is doing great work. But if I have to mention names, then definitely [Souvik De](https://www.linkedin.com/in/souvik-de-a2b941169/), who was my first mentor, and also [Ashish Padhy](https://www.linkedin.com/in/ashish-padhy3023/), [Samir Amzani](https://www.linkedin.com/in/amzani/), [Lukasz Gornicki](https://www.linkedin.com/in/lukasz-gornicki-a621914/), [Fran Mendez](https://www.linkedin.com/in/fmvilas/), and many others, including [you](https://www.linkedin.com/in/atinuke-oluwabamikemi-kayode-5b838b1b7/).*
 
 **Bami: That's sweet. How do you envision the AsyncAPI community evolving in the future, based on your experience?**
 
