@@ -27,10 +27,14 @@ const releaseNotes: (string | undefined)[] = [];
 const HEADING_ID_REGEX = /[\s]*(?:\{#([a-zA-Z0-9\-_]+)\}|<a[\s]+name="([a-zA-Z0-9\-_]+)")/;
 
 /**
- * Slugifies a string for use in a table of contents.
+ * Extracts a slug from a markdown heading string for table of contents usage.
  *
- * @param {string} str - The string to slugify.
- * @returns {string} - The slugified string.
+ * This function searches for a valid heading ID in the form `{#someId}` within the input string
+ * and returns the trimmed ID as the slug. If the input is not a string, is empty, or does not
+ * contain a valid heading ID, an empty string is returned.
+ *
+ * @param str - The input markdown string that may contain a heading ID.
+ * @returns The extracted slug used for table of contents, or an empty string if no valid ID is found.
  */
 export function slugifyToC(str: string) {
   if (typeof str !== 'string') return '';
@@ -47,10 +51,12 @@ export function slugifyToC(str: string) {
 }
 
 /**
- * Capitalizes the first letter of each word in a string.
+ * Capitalizes the first letter of each word in the provided string.
  *
- * @param {string} text - The string to capitalize.
- * @returns {string} - The capitalized string.
+ * This function splits the text on whitespace and hyphen characters, capitalizes the first letter of each segment, and then joins them with a space.
+ *
+ * @param text - The string to transform.
+ * @returns The transformed string with each word's initial letter capitalized.
  */
 function capitalize(text: string) {
   return text
@@ -65,7 +71,7 @@ function capitalize(text: string) {
  * @param {Details} details - The details of the item to add.
  * @throws {Error} - Throws an error if the details object is invalid.
  */
-export const addItem = (details: Details) => {
+export const addItem = (details: Details, resultObj: Result) => {
   if (!details || typeof details.slug !== 'string') {
     throw new Error('Invalid details object provided to addItem');
   }
@@ -78,19 +84,23 @@ export const addItem = (details: Details) => {
   };
   const section = Object.keys(sectionMap).find((key) => details.slug!.startsWith(key));
 
-  /* istanbul ignore else */
-
   if (section) {
-    finalResult[sectionMap[section]].push(details);
+    resultObj[sectionMap[section]].push(details);
   }
 };
 
 /**
- * Gets version details based on the slug and weight.
+ * Extracts version information from a slug and associates it with a weight.
  *
- * @param {string} slug - The slug of the item.
- * @param {number} weight - The weight of the item.
- * @returns {object} - The version details.
+ * This function parses the provided slug to obtain its basename and extracts the first segment (delimited by a hyphen) as the version identifier.
+ * If the identifier begins with a "v", that prefix is removed prior to capitalization.
+ * The resulting version title, along with the original weight, is returned in an object.
+ *
+ * @param slug - A string representing the slug from which the version is derived.
+ * @param weight - A numerical value representing the version's weight.
+ * @returns An object containing:
+ *   - title: The formatted version title.
+ *   - weight: The provided weight.
  */
 function getVersionDetails(slug: string, weight: number) {
   const fileBaseName = basename(slug);
@@ -103,11 +113,15 @@ function getVersionDetails(slug: string, weight: number) {
 }
 
 /**
- * Handles specification version details.
+ * Updates a details object by appending version indicators to its title and marking it as a pre-release when applicable.
  *
- * @param {Details} details - The details of the item.
- * @param {string} fileBaseName - The base name of the file.
- * @returns {Details} - The updated details.
+ * Specifically, if the file base name contains "next-spec" or "next-major-spec", the function sets the pre-release flag
+ * and appends " (Pre-release)" to the title. Additionally, if the file base name includes "explorer", it appends " - Explorer"
+ * to the title.
+ *
+ * @param details - The documentation item's details object.
+ * @param fileBaseName - The base name of the file, used to determine version markers.
+ * @returns The updated details object with modified title and version flags.
  */
 function handleSpecificationVersion(details: Details, fileBaseName: string) {
   const detailsObj = details;
@@ -124,25 +138,34 @@ function handleSpecificationVersion(details: Details, fileBaseName: string) {
 }
 
 /**
- * Checks if the given path is a directory.
+ * Determines whether the provided path refers to a directory.
  *
- * @param {PathLike} dir - The path to check.
- * @returns {Promise<boolean>} - A promise that resolves to true if the path is a directory, false otherwise.
+ * @param dir - The file system path to check.
+ * @returns A promise that resolves to true if the path is a directory, or false otherwise.
  */
 async function isDirectory(dir: PathLike) {
   return (await stat(dir)).isDirectory();
 }
 
 /**
- * Walks through directories and processes files.
+ * Recursively traverses an array of directory tuples to process markdown files and subdirectories,
+ * extracting metadata and building a hierarchical result structure.
  *
- * @param {string[][]} directories - The directories to walk through.
- * @param {Result} resultObj - The result object to store the processed data.
- * @param {string} basePath - The base path for the directories.
- * @param {string} [sectionTitle] - The title of the section.
- * @param {string} [sectionId] - The ID of the section.
- * @param {string} [rootSectionId] - The root ID of the section.
- * @param {number} [sectionWeight=0] - The weight of the section.
+ * For each directory tuple, where the first element is the directory path and the second an optional
+ * section slug, the function reads contained files. Subdirectories with a '_section.mdx' file have their
+ * metadata extracted to form section details, while markdown files (ending in .mdx but not with '_section.mdx')
+ * are parsed for front matter, table of contents, reading time, and excerpt information. Special processing
+ * applies for specification and release note files.
+ *
+ * @param directories - An array of directory tuples, each containing a directory path and an optional section slug.
+ * @param resultObj - The object to accumulate processed documentation, blog posts, and section details.
+ * @param basePath - The base path for resolving relative file paths in the project.
+ * @param sectionTitle - The title of the current section, used to annotate content files.
+ * @param sectionId - The identifier for the current section in a nested hierarchy.
+ * @param rootSectionId - The identifier for the root section in the hierarchy.
+ * @param sectionWeight - A numeric weight for ordering the section; defaults to 0.
+ *
+ * @throws {Error} When a file system operation or directory traversal fails.
  */
 async function walkDirectories(
   directories: string[][],
@@ -156,7 +179,6 @@ async function walkDirectories(
   try {
     for (const dir of directories) {
       const directory = posix.normalize(dir[0]);
-      /* istanbul ignore next */
       const sectionSlug = dir[1] || '';
       const files = await readdir(directory);
 
@@ -171,7 +193,6 @@ async function walkDirectories(
           if (await pathExists(fileNameWithSection)) {
             // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
             details = frontMatter(await readFile(fileNameWithSection, 'utf-8'), {}).data as Details;
-            /* istanbul ignore next */
             details.title = details.title || capitalize(basename(fileName));
           } else {
             details = {
@@ -189,7 +210,7 @@ async function walkDirectories(
           }
           details.sectionWeight = sectionWeight;
           details.slug = slug;
-          addItem(details);
+          addItem(details, finalResult);
           const rootId = details.parent || details.rootSectionId;
 
           await walkDirectories(
@@ -210,7 +231,6 @@ async function walkDirectories(
           details.toc = toc(content, { slugify: slugifyToC }).json;
           details.readingTime = Math.ceil(readingTime(content).minutes);
           details.excerpt = details.excerpt || markdownToTxt(content).substr(0, 200);
-          /* istanbul ignore next */
           details.sectionSlug = sectionSlug || slug.replace(/\.mdx$/, '');
           details.sectionWeight = sectionWeight;
           details.sectionTitle = sectionTitle;
@@ -241,7 +261,7 @@ async function walkDirectories(
             releaseNotes.push(version);
           }
 
-          addItem(details);
+          addItem(details, finalResult);
         }
       }
     }
@@ -251,13 +271,19 @@ async function walkDirectories(
 }
 // Builds a list of posts from the specified directories and writes it to a file
 /**
- * Builds a list of posts from the specified directories and writes it to a file.
+ * Asynchronously builds a structured post list from nested directories and writes the resulting JSON to a file.
  *
- * @param {string[][]} postDirectories - The directories containing the posts.
- * @param {string} basePath - The base path for the directories.
- * @param {string} writeFilePath - The path to write the resulting post list.
- * @returns {Promise<void>} - A promise that resolves when the post list is built and written.
- * @throws {Error} - Throws an error if there is an issue during the build process.
+ * The function validates that the base directory, write file path, and post directories are provided. It then
+ * normalizes the base path, recursively processes the provided directories to extract Markdown metadata, constructs
+ * a navigation tree from documentation posts, augments these posts with additional controls, and finally writes the
+ * complete result as a formatted JSON string to the specified file.
+ *
+ * @param postDirectories - A nested array of directories to search for posts.
+ * @param basePath - The base directory path used to resolve file locations.
+ * @param writeFilePath - The file path where the final JSON output will be written.
+ * @returns A promise that resolves when the post list has been successfully built and written.
+ *
+ * @throws {Error} When required inputs are missing or an error occurs during directory traversal or file writing.
  */
 export async function buildPostList(
   postDirectories: string[][],

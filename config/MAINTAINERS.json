@@ -111,7 +111,7 @@
         "slack": "U01DVKKAV5K",
         "availableForHire": false,
         "company": "Solace",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "spec-json-schemas",
             "bindings",
@@ -157,6 +157,7 @@
         "availableForHire": false,
         "linkedin": "fmvilas",
         "isTscMember": true,
+        "isBoardMember": true,
         "repos": [
             "spec",
             "spec-json-schemas",
@@ -434,14 +435,11 @@
         "twitter": "smoyac",
         "company": "Timescale",
         "availableForHire": false,
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
-            "spec",
-            "spec-json-schemas",
             "parser-go",
             "parser-js",
             "converter-go",
-            "bindings",
             "raml-dt-schema-parser",
             "openapi-schema-parser",
             "avro-schema-parser",
@@ -458,8 +456,8 @@
         "slack": "U01SGCZMJKW",
         "twitter": "souvik_ns",
         "linkedin": "souvik-de-a2b941169",
+        "company": "xane.ai",
         "availableForHire": false,
-        "company": "Codemate",
         "isTscMember": true,
         "repos": [
             "cli",
@@ -477,8 +475,7 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
-            "website",
-            "community"
+            "website"
         ],
         "githubID": 19964402
     },
@@ -638,8 +635,7 @@
         "isTscMember": true,
         "repos": [
             "spec-json-schemas",
-            "bindings",
-            "saunter"
+            "bindings"
         ],
         "githubID": 5294032
     },
@@ -704,6 +700,7 @@
         "availableForHire": false,
         "company": "AsyncAPI Initiative",
         "isTscMember": true,
+        "isBoardMember": true,
         "repos": [
             "website",
             "conference-website",
@@ -990,7 +987,7 @@
         "github": "jbbianchi",
         "twitter": "JBBianchi",
         "linkedin": "jean-baptiste-bianchi-aa42b914",
-        "slack": "D08K91H3DBM",
+        "slack": "U08K91GKK8T",
         "isTscMember": true,
         "availableForHire": false,
         "repos": [
@@ -1011,5 +1008,25 @@
             "conference-website"
         ],
         "githubID": 90895835
+    },
+    {
+        "name": "Antonio",
+        "github": "bandantonio",
+        "isTscMember": false,
+        "repos": [
+            "community"
+        ],
+        "githubID": 16765690
+    },
+    {
+        "name": "Christine Belzie",
+        "github": "CBID2",
+        "twitter": "CodesChrissy",
+        "availableForHire": true,
+        "isTscMember": false,
+        "repos": [
+            "community"
+        ],
+        "githubID": 105683440
     }
 ]
