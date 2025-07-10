@@ -11,7 +11,7 @@
     "test": "jest --passWithNoTests",
     "test:unit": "jest --passWithNoTests --testMatch=\"**/tests/**/*.test.*\" --testPathIgnorePatterns=\"integrationTests|netlify\"",
     "test:integration": "jest --passWithNoTests --testMatch=\"**/integrationTests/**/*.test.*\"",
-    "build:pages": "tsx npm/runners/build-pages-runner.ts && npm run format:mdx",
+    "build:pages": "tsx scripts/build-pages.ts && npm run format:mdx",
     "build:posts": "tsx scripts/index.ts",
     "build-scripts": "npm run build:pages && npm run lint:mdx && npm run build:posts",
     "write:blog": "tsx ./scripts/compose.ts",
