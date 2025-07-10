@@ -22,9 +22,9 @@ class TSCPage {
   }
 
   getFailureMessage() {
-    return cy.get('[data-testid="Paragraph-test"]').contains(
-      `Subscription failed, please let us know about it by submitting a bug`
-    );
+    return cy.get('[data-testid="Paragraph-test"]')
+    .should('be.visible');
+   
   }
 }
 

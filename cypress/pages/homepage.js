@@ -1,5 +1,6 @@
 import ToolsPage from './ToolsPage';
 import DocsPage from './DocsPage';
+import TSCPage from './tscpage';
 
 class HomePage {
   visit() {
@@ -33,8 +34,9 @@ class HomePage {
     return new DocsPage();
   }
 
-  goToTSCPage(){
-    cy.visit('/community/tsc')
+  goToTSCPage() {
+  cy.visit('/community/tsc');
+  return new TSCPage();
   }
 }
 

@@ -23,13 +23,13 @@ describe('TSC Newsletter Subscription', () => {
 
   it('should show correct failure message', () => {
 
-    tscpage.fillNewsletterForm('anushka', 'valid@example.com');
+    tscpage.fillNewsletterForm('anushka', 'invalid-email');
     tscpage.submitNewsletter();
     tscpage.getFailureMessage().should('be.visible');
   });
 
   
-    it('verifies key links on the TSC page', () => {
+  it('verifies key links on the TSC page', () => {
 
     const linksToVerify = [
     {href: 'https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md',label:'Link'},
@@ -38,11 +38,12 @@ describe('TSC Newsletter Subscription', () => {
     ];
 
     linksToVerify.forEach(({ href,label }) => {
-    cy.get(`a[href="${href}"]`).contains(label);
+    cy.get(`a[href="${href}"]`).should('contain.text',label);
 
    
     })
-    });
   });
+});
+
 
 

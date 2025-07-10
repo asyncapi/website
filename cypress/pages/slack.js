@@ -29,9 +29,8 @@ class SlackPage {
     cy.get('[href="/help/requests/new"]')
       .should('have.attr', 'href', '/help/requests/new');
   }
-  verifyChangeRegion(){
+  verifyChangeRegion(label){
     cy.get('a[href="#"]').contains('Change region');
-
   }
 }
 
