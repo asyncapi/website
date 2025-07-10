@@ -1,8 +1,8 @@
 import fs from 'fs-extra';
+
 import { combineTools } from './tools/combine-tools';
 import { getData } from './tools/extract-tools-github';
 import { convertTools } from './tools/tools-object';
-
 
 /**
  * Combines automated and manual tools data and writes the results to the specified file paths.
@@ -18,7 +18,12 @@ import { convertTools } from './tools/tools-object';
  * @param tagsPath - The file path where the tags data will be written.
  * @throws {Error} If an error occurs during the build process.
  */
-export async function buildTools(automatedToolsPath: string, manualToolsPath: string, toolsPath: string, tagsPath: string) {
+export async function buildTools(
+  automatedToolsPath: string,
+  manualToolsPath: string,
+  toolsPath: string,
+  tagsPath: string
+) {
   try {
     const githubExtractData = await getData();
     const automatedTools = await convertTools(githubExtractData);
@@ -29,6 +34,20 @@ export async function buildTools(automatedToolsPath: string, manualToolsPath: st
 
     await combineTools(automatedTools, manualTools, toolsPath, tagsPath);
   } catch (err) {
-    throw err;
+    const error = new Error(`Failed to build tools: ${(err as Error).message}`);
+
+    (error as any).context = {
+      operation: 'buildTools',
+      stage: 'main_execution',
+      automatedToolsPath,
+      manualToolsPath,
+      toolsPath,
+      tagsPath,
+      errorMessage: (err as Error).message,
+      errorStack: ((err as Error).stack || '').split('\n').slice(0, 3).join('\n'),
+      nestedContext: (err as any)?.context || null,
+      errorType: 'script_level_error'
+    };
+    throw error;
   }
 }
