@@ -1,8 +1,8 @@
+import dotenv from 'dotenv';
 import { writeFileSync } from 'fs';
 import { google } from 'googleapis';
 
 import { logger } from './helpers/logger';
-import dotenv from 'dotenv';
 dotenv.config();
 /**
  * Fetches meeting events from Google Calendar within a predefined time window and writes the formatted data to a file.
@@ -20,11 +20,27 @@ export async function buildMeetings(writePath: string) {
   // Check if the CALENDAR_SERVICE_ACCOUNT is present in the environment variables
   // Check if required environment variables are present
   if (!process.env.CALENDAR_SERVICE_ACCOUNT) {
-    throw new Error('CALENDAR_SERVICE_ACCOUNT environment variable is not set');
+    const error = new Error('CALENDAR_SERVICE_ACCOUNT environment variable is not set');
+
+    (error as any).context = {
+      operation: 'buildMeetings',
+      stage: 'env_check',
+      writePath,
+      errorType: 'script_level_error',
+    };
+    throw error;
   }
 
   if (!process.env.CALENDAR_ID) {
-    throw new Error('CALENDAR_ID environment variable is not set');
+    const error = new Error('CALENDAR_ID environment variable is not set');
+
+    (error as any).context = {
+      operation: 'buildMeetings',
+      stage: 'env_check',
+      writePath,
+      errorType: 'script_level_error',
+    };
+    throw error;
   }
 
   try {
@@ -35,7 +51,18 @@ export async function buildMeetings(writePath: string) {
 
     calendar = google.calendar({ version: 'v3', auth });
   } catch (err) {
-    throw new Error(`Authentication failed: ${err}`);
+    const error = new Error(`Authentication failed: ${(err as Error).message}`);
+
+    (error as any).context = {
+      operation: 'buildMeetings',
+      stage: 'auth',
+      writePath,
+      errorMessage: (err as Error).message,
+      errorStack: ((err as Error).stack || '').split('\n').slice(0, 3).join('\n'),
+      nestedContext: (err as any)?.context || null,
+      errorType: 'script_level_error',
+    };
+    throw error;
   }
 
   let eventsItems;
@@ -54,12 +81,28 @@ export async function buildMeetings(writePath: string) {
 
     // check if the response is valid and not undefined
     if (!eventsList.data.items || !Array.isArray(eventsList.data.items)) {
-      throw new Error('Invalid data structure received from Google Calendar API');
+      const error = new Error('Invalid data structure received from Google Calendar API');
+
+      (error as any).context = {
+        operation: 'buildMeetings',
+        stage: 'fetch_events',
+        writePath,
+        errorType: 'script_level_error',
+      };
+      throw error;
     }
 
     eventsItems = eventsList.data.items.map((e) => {
       if (!e.start || !e.start.dateTime) {
-        throw new Error('start.dateTime is missing in the event');
+        const error = new Error('start.dateTime is missing in the event');
+
+        (error as any).context = {
+          operation: 'buildMeetings',
+          stage: 'event_mapping',
+          writePath,
+          errorType: 'script_level_error',
+        };
+        throw error;
       }
 
       return {
@@ -79,6 +122,17 @@ export async function buildMeetings(writePath: string) {
 
     writeFileSync(writePath, eventsForHuman);
   } catch (err) {
-    throw new Error(`Failed to fetch or process events: ${(err as Error).message}`);
+    const error = new Error(`Failed to fetch or process events: ${(err as Error).message}`);
+
+    (error as any).context = {
+      operation: 'buildMeetings',
+      stage: 'fetch_or_process_events',
+      writePath,
+      errorMessage: (err as Error).message,
+      errorStack: ((err as Error).stack || '').split('\n').slice(0, 3).join('\n'),
+      nestedContext: (err as any)?.context || null,
+      errorType: 'script_level_error',
+    };
+    throw error;
   }
 }
