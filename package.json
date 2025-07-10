@@ -35,7 +35,8 @@
     "post-list-runner": "tsx npm/runners/build-post-list-runner.ts",
     "adopters-list-runner": "tsx npm/runners/build-adopters-list-runner.ts",
     "finance-info-list-runner": "tsx npm/runners/build-finance-info-list-runner.ts",
-    "meetings-runner": "tsx npm/runners/build-meetings-runner.ts"
+    "meetings-runner": "tsx npm/runners/build-meetings-runner.ts",
+    "newsroom-videos-runner": "tsx npm/runners/build-newsroom-videos-runner.ts"
   },
   "repository": {
     "type": "git",

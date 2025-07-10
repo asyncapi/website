@@ -1,10 +1,11 @@
+import dotenv from 'dotenv';
 import { writeFileSync } from 'fs';
 import type { youtube_v3 } from 'googleapis';
 import fetch from 'node-fetch-2';
 import process from 'process';
 
 import { logger } from './helpers/logger';
-import dotenv from 'dotenv';
+
 dotenv.config();
 
 /**
@@ -25,6 +26,7 @@ export async function buildNewsroomVideos(writePath: string): Promise<string> {
   try {
     if (!process.env.YOUTUBE_TOKEN) {
       const error = new Error('YOUTUBE_TOKEN environment variable is required');
+
       (error as any).context = {
         operation: 'buildNewsroomVideos',
         stage: 'environment_check',
@@ -45,6 +47,7 @@ export async function buildNewsroomVideos(writePath: string): Promise<string> {
 
     if (!response.ok) {
       const error = new Error(`HTTP error! with status code: ${response.status}`);
+
       (error as any).context = {
         operation: 'buildNewsroomVideos',
         stage: 'api_request',
@@ -58,6 +61,7 @@ export async function buildNewsroomVideos(writePath: string): Promise<string> {
 
     if (!data.items || !Array.isArray(data.items)) {
       const error = new Error('Invalid data structure received from YouTube API');
+
       (error as any).context = {
         operation: 'buildNewsroomVideos',
         stage: 'recieved_data_validation',
@@ -85,6 +89,7 @@ export async function buildNewsroomVideos(writePath: string): Promise<string> {
     return videoData;
   } catch (err) {
     const error = new Error(`Failed to build newsroom videos: ${(err as Error).message}`);
+
     (error as any).context = {
       operation: (err as any)?.context?.operation || 'buildNewsroomVideos',
       stage: (err as any)?.context?.stage || 'main_execution',
