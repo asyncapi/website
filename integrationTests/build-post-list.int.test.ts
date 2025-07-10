@@ -17,7 +17,6 @@ describe('Integration: buildPostList with real content', () => {
   let tempDir: string;
   let outputPath: string;
   let output: Result;
-  const realPagesDir = path.resolve(__dirname, '../../pages');
 
   beforeAll(async () => {
     try {
@@ -33,8 +32,11 @@ describe('Integration: buildPostList with real content', () => {
       throw error;
     }
   });
-
-  afterAll(() => {});
+  afterAll(() => {
+    if (tempDir && fs.existsSync(tempDir)) {
+      fs.removeSync(tempDir);
+    }
+  });
 
   it('writes the file successfully', () => {
     expect(fs.existsSync(outputPath)).toBe(true);

@@ -12,8 +12,23 @@ const capitalizeTags = ['table', 'tr', 'td', 'th', 'thead', 'tbody'];
  * @param {PathLike} directory - The directory path to check or create.
  */
 export function ensureDirectoryExists(directory: PathLike) {
-  if (!fs.existsSync(directory)) {
-    fs.mkdirSync(directory, { recursive: true });
+  try {
+    if (!fs.existsSync(directory)) {
+      fs.mkdirSync(directory, { recursive: true });
+    }
+  } catch (err) {
+    const error = new Error(`Failed to ensure directory exists: ${(err as Error).message}`);
+
+    (error as any).context = {
+      operation: 'ensureDirectoryExists',
+      stage: 'main_execution',
+      directory,
+      errorMessage: (err as Error).message,
+      errorStack: ((err as Error).stack || '').split('\n').slice(0, 3).join('\n'),
+      nestedContext: (err as any)?.context || null,
+      errorType: 'script_level_error',
+    };
+    throw error;
   }
 }
 
@@ -46,35 +61,51 @@ export function capitalizeJsxTags(content: string): string {
  */
 export function copyAndRenameFiles(srcDir: string, targetDir: string) {
   // Read all files and directories from source directory
-  const entries = fs.readdirSync(srcDir, { withFileTypes: true });
+  try {
+    const entries = fs.readdirSync(srcDir, { withFileTypes: true });
 
-  entries.forEach((entry) => {
-    const srcPath = path.join(srcDir, entry.name);
-    const targetPath = path.join(targetDir, entry.name);
+    entries.forEach((entry) => {
+      const srcPath = path.join(srcDir, entry.name);
+      const targetPath = path.join(targetDir, entry.name);
 
-    if (entry.isDirectory()) {
+      if (entry.isDirectory()) {
       // If entry is a directory, create it in target directory and recurse
-      if (!fs.existsSync(targetPath)) {
-        fs.mkdirSync(targetPath);
-      }
-      copyAndRenameFiles(srcPath, targetPath);
-    } else if (entry.isFile()) {
+        if (!fs.existsSync(targetPath)) {
+          fs.mkdirSync(targetPath);
+        }
+        copyAndRenameFiles(srcPath, targetPath);
+      } else if (entry.isFile()) {
       // Read file content
-      let content = fs.readFileSync(srcPath, 'utf8');
+        let content = fs.readFileSync(srcPath, 'utf8');
 
-      content = content.replace(/{/g, '{');
+        content = content.replace(/{/g, '{');
 
-      content = content.replace(/<!--([\s\S]*?)-->/g, '{/*$1*/}');
+        content = content.replace(/<!--([\s\S]*?)-->/g, '{/*$1*/}');
 
-      content = capitalizeJsxTags(content);
+        content = capitalizeJsxTags(content);
 
       // Write content to target directory
-      fs.writeFileSync(targetPath, content, 'utf8');
+        fs.writeFileSync(targetPath, content, 'utf8');
 
       // If file has .md extension, rename it to .mdx
-      if (path.extname(targetPath) === '.md') {
-        fs.renameSync(targetPath, `${targetPath.slice(0, -3)}.mdx`);
+        if (path.extname(targetPath) === '.md') {
+          fs.renameSync(targetPath, `${targetPath.slice(0, -3)}.mdx`);
+        }
       }
-    }
-  });
+    });
+  } catch (err) {
+    const error = new Error(`Failed to copy and rename files: ${(err as Error).message}`);
+
+    (error as any).context = {
+      operation: 'copyAndRenameFiles',
+      stage: 'main_execution',
+      srcDir,
+      targetDir,
+      errorMessage: (err as Error).message,
+      errorStack: ((err as Error).stack || '').split('\n').slice(0, 3).join('\n'),
+      nestedContext: (err as any)?.context || null,
+      errorType: 'script_level_error'
+    };
+    throw error;
+  }
 }
