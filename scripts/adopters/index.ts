@@ -3,9 +3,6 @@ import { fileURLToPath } from 'url';
 
 import { writeJSON } from '../helpers/readAndWriteJson';
 
-const currentFilePath = fileURLToPath(import.meta.url);
-const currentDirPath = dirname(currentFilePath);
-
 /**
  * Converts the YAML adopters configuration to a JSON file.
  *
@@ -16,5 +13,24 @@ const currentDirPath = dirname(currentFilePath);
  * performed using the writeJSON utility.
  */
 export async function buildAdoptersList() {
-  writeJSON('config/adopters.yml', resolve(currentDirPath, '../../config', 'adopters.json'));
+  const currentFilePath = fileURLToPath(import.meta.url);
+  const currentDirPath = dirname(currentFilePath);
+
+  try {
+    await writeJSON('config/adopters.yml', resolve(currentDirPath, '../../config', 'adopters.json'));
+  } catch (err) {
+    const error = new Error(`Failed to build adopters list: ${(err as Error).message}`);
+
+    (error as any).context = {
+      operation: 'buildAdoptersList',
+      stage: 'main_execution',
+      inputFile: 'config/adopters.yml',
+      outputFile: resolve(currentDirPath, '../../config', 'adopters.json'),
+      errorMessage: (err as Error).message,
+      errorStack: ((err as Error).stack || '').split('\n').slice(0, 3).join('\n'),
+      nestedContext: (err as any)?.context || null,
+      errorType: 'script_level_error',
+    };
+    throw error;
+  }
 }
