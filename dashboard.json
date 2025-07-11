@@ -9,50 +9,7 @@
       "resourcePath": "/asyncapi/community/pull/1634",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 31.302030173669205
-    },
-    {
-      "id": "I_kwDOBW5R_c5BIl5P",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Add new page for collecting user testing participants",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/website/issues/529",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "Epic",
-          "color": "3E4B9E"
-        },
-        {
-          "name": "keep-open",
-          "color": "ffee84"
-        },
-        {
-          "name": "area/design",
-          "color": "0d67d3"
-        },
-        {
-          "name": "area/javascript",
-          "color": "ededed"
-        }
-      ],
-      "score": 22.9739670999407
-    },
-    {
-      "id": "PR_kwDOFLhIt85bqKL8",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: add Bounty Program Rules",
-      "author": "aeworxet",
-      "resourcePath": "/asyncapi/community/pull/897",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 22.68679251119144
+      "score": 35.609649004908086
     },
     {
       "id": "PR_kwDODCuNRs6NwyqP",
@@ -63,7 +20,7 @@
       "resourcePath": "/asyncapi/bindings/pull/270",
       "repo": "asyncapi/bindings",
       "labels": [],
-      "score": 20.38939580119737
+      "score": 33.02507770616476
     },
     {
       "id": "I_kwDOBW5R_c6pn_G2",
@@ -79,7 +36,29 @@
           "color": "F4D03F"
         }
       ],
-      "score": 16.943300736206268
+      "score": 20.38939580119737
+    },
+    {
+      "id": "PR_kwDOBW5R_c6N50TQ",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "refactor: scripts code for better code quality ",
+      "author": "JeelRajodiya",
+      "resourcePath": "/asyncapi/website/pull/3851",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 20.102221212448114
+    },
+    {
+      "id": "PR_kwDOBW5R_c6TnGCE",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore(blog): add singapore summary",
+      "author": "iambami",
+      "resourcePath": "/asyncapi/website/pull/4056",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 17.230475324955524
     },
     {
       "id": "PR_kwDOBW5R_c6KgWbR",
@@ -90,7 +69,7 @@
       "resourcePath": "/asyncapi/website/pull/3658",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 16.943300736206268
+      "score": 17.230475324955524
     },
     {
       "id": "I_kwDOFLhIt85bebeO",
@@ -101,7 +80,18 @@
       "resourcePath": "/asyncapi/community/issues/568",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 16.36895155870775
+      "score": 16.943300736206268
+    },
+    {
+      "id": "PR_kwDOCHlHJM6G3FcZ",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "refactor: improve npm installation by using pacote for package resolu…",
+      "author": "achaljhawar",
+      "resourcePath": "/asyncapi/generator/pull/1329",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 16.943300736206268
     },
     {
       "id": "PR_kwDOFLhIt853IEwA",
@@ -112,30 +102,28 @@
       "resourcePath": "/asyncapi/community/pull/1333",
       "repo": "asyncapi/community",
       "labels": [],
+      "score": 16.65612614745701
+    },
+    {
+      "id": "PR_kwDOFLhIt86LeC8N",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: expand community docs: contributor - simple contribution flow a…",
+      "author": "ezinneanne",
+      "resourcePath": "/asyncapi/community/pull/1730",
+      "repo": "asyncapi/community",
+      "labels": [],
       "score": 16.36895155870775
     },
     {
-      "id": "I_kwDOFLhIt86O7jFN",
+      "id": "I_kwDODwv8N86un74M",
       "isPR": false,
       "isAssigned": true,
-      "title": "[DESIGN] Holopin Design Tracking",
-      "author": "Mayaleeeee",
-      "resourcePath": "/asyncapi/community/issues/1306",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "good first issue",
-          "color": "7057ff"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        },
-        {
-          "name": "area/design",
-          "color": "0d67d3"
-        }
-      ],
+      "title": "Add AsyncAPI Meetups Page to Conference Website",
+      "author": "Shriya-Chauhan",
+      "resourcePath": "/asyncapi/conference-website/issues/644",
+      "repo": "asyncapi/conference-website",
+      "labels": [],
       "score": 15.794602381209232
     },
     {
@@ -152,84 +140,39 @@
           "color": "a2eeef"
         },
         {
-          "name": "bounty",
-          "color": "0E8A16"
+          "name": "keep-open",
+          "color": "f9dd4b"
         }
       ],
-      "score": 14.07155484871368
-    },
-    {
-      "id": "I_kwDODyzcIc5gD3jB",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Automate `paper work` around project governance",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/.github/issues/210",
-      "repo": "asyncapi/.github",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        }
-      ],
-      "score": 13.497205671215161
-    },
-    {
-      "id": "I_kwDOBGu-186XjdU2",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Proposal to add a 'version' value into the message object to support a more granular versioning",
-      "author": "IsmaelMartinez",
-      "resourcePath": "/asyncapi/spec/issues/1068",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 12.348507316218127
+      "score": 15.220253203710714
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOBW5R_c6vPqVh",
-      "title": "Misaligned cards in ambassadorList",
+      "id": "I_kwDODwv8N86y8NIb",
+      "title": "Venue cards date misalignment",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/3937",
-      "repo": "asyncapi/website",
-      "author": "tutankhAman",
+      "resourcePath": "/asyncapi/conference-website/issues/715",
+      "repo": "asyncapi/conference-website",
+      "author": "AceTheCreator",
       "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
-        }
-      ]
+      "labels": []
+    },
+    {
+      "id": "I_kwDOBW5R_c6xUO9N",
+      "title": "Announcement banner not showing or misaligned on some pages",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/4021",
+      "repo": "asyncapi/website",
+      "author": "vishvamsinh28",
+      "area": "Unknown",
+      "labels": []
     },
     {
       "id": "I_kwDOFDnrNc6uQo6r",
       "title": "[Improvement]: Improve the error message while generating project fromgenerate command",
       "isAssigned": true,
       "resourcePath": "/asyncapi/cli/issues/1728",
-      "repo": "asyncapi/cli",
-      "author": "AayushSaini101",
-      "area": "Unknown",
-      "labels": []
-    },
-    {
-      "id": "I_kwDOFDnrNc6uQjwZ",
-      "title": "[Improvement]: Make the steps of Asyncapi start studio command interactive",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/cli/issues/1727",
       "repo": "asyncapi/cli",
       "author": "AayushSaini101",
       "area": "Unknown",
@@ -434,38 +377,12 @@
       "area": "Unknown",
       "labels": [
         {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOGQYLdM6VApSN",
-      "title": "Design a Graphic for Newsletter Promo",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/brand/issues/104",
-      "repo": "asyncapi/brand",
-      "author": "Mayaleeeee",
-      "area": "design",
-      "labels": [
-        {
           "name": "stale",
           "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFLhIt86O7jFN",
-      "title": "[DESIGN] Holopin Design Tracking",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/community/issues/1306",
-      "repo": "asyncapi/community",
-      "author": "Mayaleeeee",
-      "area": "design",
-      "labels": [
+        },
         {
-          "name": "🎨 design",
-          "color": "0D67D3"
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
         }
       ]
     },
@@ -587,6 +504,10 @@
         {
           "name": "bug",
           "color": "d73a4a"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -674,25 +595,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c48lGJg",
-      "title": "Add visual on the \"generator\" and maybe others....",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/403",
-      "repo": "asyncapi/website",
-      "author": "boyney123",
-      "area": "design",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
         }
       ]
     }

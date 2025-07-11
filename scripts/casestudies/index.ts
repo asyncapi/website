@@ -1,13 +1,19 @@
 import { readdir, readFile, writeFile } from 'fs/promises';
 import { join } from 'path';
 
-import { convertToJson } from '../utils';
+import { convertToJson } from '../helpers/utils';
 
 /**
- * Builds a list of case studies from files in a directory and writes it to a specified file.
- * @param {string} dirWithCaseStudy - The directory containing case study files.
- * @param {string} writeFilePath - The path to write the case studies list to.
- * @returns {Promise<object[]>} - The list of case studies.
+ * Compiles a list of case study objects from files in a specified directory and writes the list to a file.
+ *
+ * This function reads all files in the given directory concurrently, converts each file's content to JSON,
+ * writes the aggregated case studies as a JSON array to the specified file, and returns the list.
+ *
+ * @param dirWithCaseStudy - The directory containing the case study files.
+ * @param writeFilePath - The file path where the JSON-formatted list of case studies will be saved.
+ * @returns A promise that resolves to an array of case study objects.
+ *
+ * @throws {Error} If an error occurs during file reading, JSON conversion, or writing operations.
  */
 export async function buildCaseStudiesList(dirWithCaseStudy: string, writeFilePath: string): Promise<object[]> {
   try {

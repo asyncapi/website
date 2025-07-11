@@ -111,7 +111,7 @@
         "slack": "U01DVKKAV5K",
         "availableForHire": false,
         "company": "Solace",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "spec-json-schemas",
             "bindings",
@@ -157,6 +157,7 @@
         "availableForHire": false,
         "linkedin": "fmvilas",
         "isTscMember": true,
+        "isBoardMember": true,
         "repos": [
             "spec",
             "spec-json-schemas",
@@ -434,14 +435,11 @@
         "twitter": "smoyac",
         "company": "Timescale",
         "availableForHire": false,
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
-            "spec",
-            "spec-json-schemas",
             "parser-go",
             "parser-js",
             "converter-go",
-            "bindings",
             "raml-dt-schema-parser",
             "openapi-schema-parser",
             "avro-schema-parser",
@@ -458,8 +456,8 @@
         "slack": "U01SGCZMJKW",
         "twitter": "souvik_ns",
         "linkedin": "souvik-de-a2b941169",
+        "company": "xane.ai",
         "availableForHire": false,
-        "company": "Codemate",
         "isTscMember": true,
         "repos": [
             "cli",
@@ -467,20 +465,6 @@
             "bundler"
         ],
         "githubID": 41781438
-    },
-    {
-        "name": "Quetzalli Writes",
-        "github": "quetzalliwrites",
-        "twitter": "QuetzalliWrites",
-        "slack": "U02AKC14WAJ",
-        "linkedin": "quetzalli-writes",
-        "availableForHire": true,
-        "isTscMember": true,
-        "repos": [
-            "website",
-            "community"
-        ],
-        "githubID": 19964402
     },
     {
         "name": "David Pereira",
@@ -638,8 +622,7 @@
         "isTscMember": true,
         "repos": [
             "spec-json-schemas",
-            "bindings",
-            "saunter"
+            "bindings"
         ],
         "githubID": 5294032
     },
@@ -704,6 +687,7 @@
         "availableForHire": false,
         "company": "AsyncAPI Initiative",
         "isTscMember": true,
+        "isBoardMember": true,
         "repos": [
             "website",
             "conference-website",
@@ -764,15 +748,6 @@
         "githubID": 108233235
     },
     {
-        "name": "Vaishnavi ",
-        "github": "VaishnaviNandakumar",
-        "isTscMember": false,
-        "repos": [
-            "website"
-        ],
-        "githubID": 41518119
-    },
-    {
         "name": "Mihael Bosnjak",
         "github": "mboss37",
         "isTscMember": false,
@@ -830,16 +805,6 @@
             "saunter"
         ],
         "githubID": 109030262
-    },
-    {
-        "name": "Jonathan Stoikovitch",
-        "github": "jstoiko",
-        "twitter": "jstoiko",
-        "isTscMember": false,
-        "repos": [
-            "raml-dt-schema-parser"
-        ],
-        "githubID": 9660342
     },
     {
         "name": "Rishi",
@@ -973,17 +938,6 @@
         "githubID": 126087
     },
     {
-        "name": "Prince Onyeanuna",
-        "github": "Aahil13",
-        "twitter": "OnyeanunaE",
-        "availableForHire": true,
-        "isTscMember": false,
-        "repos": [
-            "website"
-        ],
-        "githubID": 63567230
-    },
-    {
         "name": "Charles d'Avernas",
         "github": "cdavernas",
         "linkedin": "charles-d-avernas-40836a13",
@@ -1000,7 +954,7 @@
         "github": "jbbianchi",
         "twitter": "JBBianchi",
         "linkedin": "jean-baptiste-bianchi-aa42b914",
-        "slack": "D08K91H3DBM",
+        "slack": "U08K91GKK8T",
         "isTscMember": true,
         "availableForHire": false,
         "repos": [
@@ -1017,8 +971,31 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
-            "website"
+            "website",
+            "conference-website"
         ],
         "githubID": 90895835
+    },
+    {
+        "name": "Antonio",
+        "github": "bandantonio",
+        "isTscMember": false,
+        "repos": [
+            "website",
+            "community"
+        ],
+        "githubID": 16765690
+    },
+    {
+        "name": "Christine Belzie",
+        "github": "CBID2",
+        "twitter": "CodesChrissy",
+        "availableForHire": true,
+        "isTscMember": false,
+        "repos": [
+            "website",
+            "community"
+        ],
+        "githubID": 105683440
     }
 ]

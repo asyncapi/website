@@ -12,9 +12,14 @@ const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
 /**
- * Main function to start the build process for posts, RSS feed, case studies, adopters, and finance info.
+ * Initiates the build process for the project's content.
  *
- * @throws {Error} - Throws an error if no finance data is found in the finance directory.
+ * This asynchronous function orchestrates the creation of various content lists by processing designated directories and files.
+ * It builds the posts list, generates the blog RSS feed, creates the case studies list, and compiles the adopters list.
+ * For finance information, it reads the finance directory, filters and sorts numeric filenames representing years, and utilizes the latest year.
+ * The function throws an error if no valid finance data is found.
+ *
+ * @throws {Error} If no numeric finance data is found in the finance directory.
  */
 async function start() {
   const postDirectories = [
