@@ -157,6 +157,7 @@
         "availableForHire": false,
         "linkedin": "fmvilas",
         "isTscMember": true,
+        "isBoardMember": true,
         "repos": [
             "spec",
             "spec-json-schemas",
@@ -474,8 +475,7 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
-            "website",
-            "community"
+            "website"
         ],
         "githubID": 19964402
     },
@@ -700,6 +700,7 @@
         "availableForHire": false,
         "company": "AsyncAPI Initiative",
         "isTscMember": true,
+        "isBoardMember": true,
         "repos": [
             "website",
             "conference-website",
@@ -1007,5 +1008,25 @@
             "conference-website"
         ],
         "githubID": 90895835
+    },
+    {
+        "name": "Antonio",
+        "github": "bandantonio",
+        "isTscMember": false,
+        "repos": [
+            "community"
+        ],
+        "githubID": 16765690
+    },
+    {
+        "name": "Christine Belzie",
+        "github": "CBID2",
+        "twitter": "CodesChrissy",
+        "availableForHire": true,
+        "isTscMember": false,
+        "repos": [
+            "community"
+        ],
+        "githubID": 105683440
     }
 ]
