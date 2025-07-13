@@ -29,7 +29,7 @@ export async function buildNewsroomVideos(writePath: string): Promise<string> {
 
       (error as any).context = {
         operation: 'buildNewsroomVideos',
-        stage: 'environment_check',
+        stage: 'environment_check'
       };
       throw error;
     }
