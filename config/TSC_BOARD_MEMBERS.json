@@ -326,7 +326,7 @@
         "slack": "U01SGCZMJKW",
         "twitter": "souvik_ns",
         "linkedin": "souvik-de-a2b941169",
-        "company": "xane.ai",
+        "company": "Xane AI",
         "availableForHire": false,
         "isTscMember": true,
         "repos": [
@@ -335,62 +335,6 @@
             "bundler"
         ],
         "githubID": 41781438
-    },
-    {
-        "name": "Quetzalli Writes",
-        "github": "quetzalliwrites",
-        "twitter": "QuetzalliWrites",
-        "slack": "U02AKC14WAJ",
-        "linkedin": "quetzalli-writes",
-        "availableForHire": true,
-        "isTscMember": true,
-        "repos": [
-            "website"
-        ],
-        "githubID": 19964402,
-        "img": "https://avatars.githubusercontent.com/u/19964402?v=4",
-        "bio": "Quetzalli Writes is an author of the book titled 'Docs-as-Ecosystem', which was published by the Apress Publishing Company. Quetzalli has been in tech for 9 years, working with SEO, Paid Search, Full-Stack development, UX, Developer Relations, and Technical Writing (Engineering Documentation). She's currently a core OSS contributor for Docs, DevRel, and Community Building at AsyncAPI Initiative. She's also a member of the AsyncAPI Technical Steering Committee (TSC).",
-        "title": "DevRel & DevDocs @AsyncAPI",
-        "company": "Postman",
-        "country": "\ud83c\uddf2\ud83c\uddfd",
-        "contributions": [
-            {
-                "type": "presentation",
-                "title": "How to contribute to AsyncAPI Dev Docs, AsyncAPI Conference",
-                "date": {
-                    "year": 2021,
-                    "month": "November"
-                },
-                "link": "https://www.youtube.com/watch?v=xAzbDDEbQ18"
-            },
-            {
-                "type": "workshop",
-                "title": "Workshop on contributing to AsyncAPI, CCOSS",
-                "date": {
-                    "year": 2021,
-                    "month": "October"
-                },
-                "link": "https://ccoss.org/sessions/2021/taller-contribucion-asyncapi/"
-            },
-            {
-                "type": "article",
-                "title": "Change is coming to our AsyncAPI Developer Documentation",
-                "date": {
-                    "year": 2021,
-                    "month": "December"
-                },
-                "link": "https://www.asyncapi.com/blog/changes-coming-docs"
-            },
-            {
-                "type": "initiative_driver",
-                "title": "Driver and promoter of Google Season of Docs at AsyncAPI",
-                "date": {
-                    "year": 2022,
-                    "month": "December"
-                },
-                "link": "https://www.asyncapi.com/blog/google-season-of-docs-2022"
-            }
-        ]
     },
     {
         "name": "David Pereira",
