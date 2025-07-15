@@ -23,7 +23,7 @@ describe('TSC Newsletter Subscription', () => {
 
   it('should show correct failure message', () => {
 
-    tscpage.fillNewsletterForm('anushka', 'valid@example.com');
+    tscpage.fillNewsletterForm('anushka', 'invalid-email');
     tscpage.submitNewsletter();
     tscpage.getFailureMessage().should('be.visible');
   });

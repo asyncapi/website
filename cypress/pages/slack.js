@@ -30,8 +30,8 @@ class SlackPage {
       .should('have.attr', 'href', '/help/requests/new');
   }
   verifyChangeRegion(){
-    cy.get('a[href="#"]').contains('Change region');
-
+    cy.get('a[href="#"]').should('be.visible')
+    .and('contain.text','Change region');
   }
 }
 
