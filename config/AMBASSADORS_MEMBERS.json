@@ -166,6 +166,7 @@
         "company": "Kong",
         "country": "\ud83c\uddf2\ud83c\uddfd",
         "isTscMember": true,
+        "isBoardMember": true,
         "contributions": [
             {
                 "type": "presentation",
