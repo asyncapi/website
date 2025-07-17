@@ -20,7 +20,7 @@ Gravitee has long been part of AsyncAPI’s journey, not just as a sponsor but a
 
 ### A Shared Vision: Open Collaboration, Stronger Infrastructure
 
-AsyncAPI’s mission is to make working with event-driven systems as seamless as working with REST. That mission only becomes a reality when organizations across industries join forces to push it forward sharing knowledge, building tooling, contributing to the spec, and supporting our diverse global community.
+AsyncAPI’s mission is to make working with event-driven systems as seamless as it is working with REST. That mission only becomes a reality when organizations across industries join forces to push it forward sharing knowledge, building tooling, contributing to the spec, and supporting our diverse global community.
 Gravitee’s sponsorship is rooted in this shared vision. They understand that success in the API economy depends not only on robust tooling but on shared specifications and interoperable ecosystems. That’s why Gravitee has made AsyncAPI an essential part of its architecture, empowering teams to define, document, and govern their asynchronous APIs just as easily as their REST endpoints.
 Gravitee has long aligned with AsyncAPI’s mission to advance the future of event-driven architectures through open collaboration and open standards. This shared vision has naturally positioned Gravitee as a strong supporter of the AsyncAPI Initiative.
 
@@ -39,9 +39,9 @@ In 2025, their contribution helps us go even bigger, with in-person conferences 
 
 ### Gravitee + AsyncAPI: A Real-World Use Case
 
-Behind the sponsorship is a real, practical investment in using AsyncAPI to build and manage asynchronous APIs. Gravitee enables organizations to work seamlessly across protocols like Kafka, MQTT, and WebSockets using the AsyncAPI spec as a foundation for documentation, governance, and developer experience.
+Behind the sponsorship is a real, practical investment in using AsyncAPI to build and manage asynchronous APIs. Gravitee enables organizations to work seamlessly across protocols like [Kafka](https://kafka.apache.org/), [MQTT](https://mqtt.org/), and [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) using the AsyncAPI spec as a foundation for documentation, governance, and developer experience.
 
-- By adopting AsyncAPI, Gravitee:
+By adopting AsyncAPI, Gravitee:
 - Enables better **discoverability** of event-driven APIs
 - Enforces consistent **governance** across async interfaces
 - Improves **observability** for systems using asynchronous messaging
@@ -53,12 +53,13 @@ This real-world usage supports AsyncAPI’s vision of making event-driven APIs e
 As AsyncAPI continues to grow, expanding its tooling, maintainership, and governance, Gravitee’s support will help us scale with intention and care. From better docs and contributor onboarding, to new design systems and international webinars, Gravitee’s sponsorship helps bring these initiatives to life.
 We're especially thrilled to have them with us for **AsyncAPI Conf 2025**, as we bring together contributors, users, and curious minds across continents. Gravitee's support ensures that we can keep these conferences accessible and meaningful for all.
 
-💜 Thank you, Gravitee, for standing with us, and for continuing to believe in the power of open, asynchronous systems.
-Stay Connected
-Explore Gravitee: [gravitee.io](https://www.gravitee.io)
-Follow Gravitee on:
+Thank you Gravitee for standing with us, and continuing to believe in the power of open, asynchronous systems. 💜
+
+## Stay Connected
+
+If you want to learn more about Gravitee, check out their [website](https://www.gravitee.io) and their social media links below:
 - [LinkedIn](https://www.linkedin.com/company/gravitee-io/posts/?feedView=all)
 - [YouTube](https://www.youtube.com/c/Graviteesource)
 - [Facebook](https://www.facebook.com/GraviteeSource)
 
-Stay tuned for more updates as we get closer to more AsyncAPI Conference 2025!
+Stay tuned for more updates as we get closer to AsyncAPI Conference 2025!
