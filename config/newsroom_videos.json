@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/R7pl1F2dYLo/hqdefault.jpg",
-    "title": "Google Summer Of Code 2025 Experience",
-    "description": "Thinking about joining us for GSoC 2025 but not sure where to start? In this stream, I'll break down everything—from finding the ...",
-    "videoId": "R7pl1F2dYLo"
+    "image_url": "https://i.ytimg.com/vi/6AIUb1FNqEk/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting, Tuesday July 1st 2025",
+    "description": "https://github.com/asyncapi/community/issues/1962.",
+    "videoId": "6AIUb1FNqEk"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/awfB_mwUp1c/hqdefault.jpg",
-    "title": "Event-Driven and OpenTelemetry with Eduardo",
-    "description": "Implementing distributed tracing between producers and consumers.",
-    "videoId": "awfB_mwUp1c"
+    "image_url": "https://i.ytimg.com/vi/uVAurockaPc/hqdefault.jpg",
+    "title": "AsyncAPI Design WG Meeting, Tuesday June 17th 2025",
+    "description": "https://github.com/asyncapi/community/issues/1935.",
+    "videoId": "uVAurockaPc"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/e_uo7_QMDd4/hqdefault.jpg",
-    "title": "AsyncAPI Community Working Group Meeting, March 11th 2025",
-    "description": "https://github.com/asyncapi/community/issues/1754.",
-    "videoId": "e_uo7_QMDd4"
+    "image_url": "https://i.ytimg.com/vi/0srKJiLCIUc/hqdefault.jpg",
+    "title": "AsyncAPI Design WG Meeting, Tuesday June 17th 2025",
+    "description": "https://github.com/asyncapi/community/issues/1935.",
+    "videoId": "0srKJiLCIUc"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/IM2znJZsp1E/hqdefault.jpg",
-    "title": "AsyncAPI Community Working Group Meeting, February 25th 2025",
-    "description": "https://github.com/asyncapi/community/issues/1713.",
-    "videoId": "IM2znJZsp1E"
+    "image_url": "https://i.ytimg.com/vi/6PmASob_Cu8/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting, Tuesday June 17th 2025",
+    "description": "https://github.com/asyncapi/community/issues/1935.",
+    "videoId": "6PmASob_Cu8"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/Y_bSIy0xdvM/hqdefault.jpg",
-    "title": "AsyncAPI Design Meeting",
-    "description": "https://github.com/asyncapi/community/issues/1705.",
-    "videoId": "Y_bSIy0xdvM"
+    "image_url": "https://i.ytimg.com/vi/JLNMJ5A8sns/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting, Tuesday June 3rd 2025",
+    "description": "https://github.com/asyncapi/community/issues/1919.",
+    "videoId": "JLNMJ5A8sns"
   }
 ]
