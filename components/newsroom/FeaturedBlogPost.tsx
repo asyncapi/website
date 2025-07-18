@@ -11,6 +11,8 @@ import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 import AuthorAvatars from '../AuthorAvatars';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
+import IconTwitter from '../icons/Twitter';
+import IconLinkedIn from '../icons/LinkedIn';
 
 interface FeaturedBlogPostProps {
   post: IBlogPost;
@@ -40,6 +42,9 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
       break;
     default:
   }
+
+  const shareUrl = encodeURIComponent(`https://www.asyncapi.com${post.slug}`);
+  const shareText = encodeURIComponent(post.title);
 
   return (
     <div className={`rounded-lg ${className}`}>
@@ -106,6 +111,24 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
                     <span data-testid='FeaturedBlogPost-RT'>{post.readingTime} min read</span>
                   </Paragraph>
                 </div>
+              </div>
+              <div className='mt-4 flex space-x-4'>
+                <a
+                  href={`https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}&hashtags=AsyncAPI`}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-blue-500 hover:text-blue-700'
+                >
+                  <IconTwitter className='h-6 w-6' />
+                </a>
+                <a
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-blue-700 hover:text-blue-900'
+                >
+                  <IconLinkedIn className='h-6 w-6' />
+                </a>
               </div>
             </div>
           </span>
