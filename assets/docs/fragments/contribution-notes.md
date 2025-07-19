@@ -9,4 +9,4 @@ To get started as a Docs contributor:
 
 ### Docs contributor questions
 
-Have a question on how to contribute to the docs? Have an issue with your pull request? [Join the community Slack](https://www.asyncapi.com/slack-invite) and ask your question in the `#docs` channel and the maintainers will get back to you.
+Have a question on how to contribute to the docs or an issue with your pull request? [Join the community Slack](https://www.asyncapi.com/slack-invite) and ask your question in the `#docs` channel and the maintainers will get back to you.
