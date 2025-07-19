@@ -9,6 +9,4 @@ To get started as a Docs contributor:
 
 ### Docs contributor questions
 
-Do you have a documentation contributor question and you're wondering how to tag me into a GitHub discussion or PR? Never fear!
-
-Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/asyncapi/community/discussions/categories/docs) via my GitHub handle, [`quetzalliwrites`](https://github.com/quetzalliwrites) 🐙.
+Have a question on how to contribute to the docs? Have an issue with your pull request? [Join the community Slack](https://www.asyncapi.com/slack-invite) and ask your question in the `#docs` channel and the maintainers will get back to you.
