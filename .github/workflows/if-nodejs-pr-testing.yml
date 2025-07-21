@@ -5,7 +5,7 @@ on:
   pull_request_target:
     types: [opened, reopened, synchronize, ready_for_review]
   push:
-    branches: [master]
+    branches: ['master']
 
 jobs:
   test-nodejs-pr:
@@ -80,6 +80,16 @@ jobs:
         name: Run release assets generation to make sure PR does not break it
         shell: bash
         run: npm run generate:assets --if-present
+
+
+      - if: steps.should_run.outputs.shouldrun == 'true' && steps.packagejson.outputs.exists == 'true'
+        name: Run Cypress E2E Tests
+        uses: cypress-io/github-action@6c143abc292aa835d827652c2ea025d098311070
+        with:
+          start: npm run dev
+          wait-on: 'http://localhost:3000'  # Adjust port as needed
+          wait-on-timeout: 120
+          install: false  # Reuse existing dependencies
 
       # Run the test:md script and capture output
       - if: ${{ steps.packagejson.outputs.exists == 'true' && matrix.os == 'ubuntu-latest' }}
