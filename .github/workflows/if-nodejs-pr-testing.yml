@@ -97,7 +97,7 @@ jobs:
         uses: marocchino/sticky-pull-request-comment@3d60a5b2dae89d44e0c6ddc69dd7536aec2071cd
         with:
           header: markdown-check-error
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           message: |
             ### Markdown Check Results
 
@@ -114,7 +114,7 @@ jobs:
         with:
           header: markdown-check-error
           delete: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       # Run the test:locales script and capture output with cleaner formatting
       - if: ${{ steps.packagejson.outputs.exists == 'true' && matrix.os == 'ubuntu-latest' }}
@@ -149,7 +149,7 @@ jobs:
         uses: marocchino/sticky-pull-request-comment@3d60a5b2dae89d44e0c6ddc69dd7536aec2071cd
         with:
           header: locale-check-error
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           message: |
             ### Locale Check Results
             We found issues with locale keys:
@@ -165,7 +165,7 @@ jobs:
         with:
           header: locale-check-error
           delete: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - if: steps.packagejson.outputs.exists == 'true'
         name: Upload Coverage to Codecov
