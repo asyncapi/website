@@ -1,13 +1,13 @@
 ---
 title: "From Curiosity to Contribution: Maya’s Inspiring Journey into Open Source and Leading Design at AsyncAPI!"
-date: 2025-07-03T06:00:00+01:00
+date: 2025-08-08T06:00:00+01:00
 type: Communication
 tags:
   - Interview
   - Spotlight
   - Community
   - Marketing
-cover: 
+cover: /img/posts/marketing-images/maya-story.webp
 authors:
   - name: Atinuke Oluwabamikemi Kayode
     photo: /img/avatars/bami.webp
@@ -51,33 +51,59 @@ In this edition of the AsyncAPI Community Spotlight, we sat down with [Aishat Mu
 
 ## Fun Segment: Have You Ever?
 
-**Bami: I think that is all. Now the fun fact. There’s a lot of fun facts, but we can do “Have you ever?” Ten questions.**
-***Maya:** Okay.*
-**Bami: Have you ever fixed bugs? Do you fix bugs? You’re not a developer.**
-***Maya:** I think I have, on my portfolio when I was doing it on VS Code.*
-**Bami: This has to be API-related o.**
-***Maya:** Oh no, no no no.*
-**Bami: Have you ever created a PR you were super proud of?**
-***Maya:** Yes. Yes, yes.*
-**Bami: Have you ever accidentally broken something important while pushing your PR?**
-***Maya:** No, I thought I did break something but Lukasz told me I did not, so no, I’ve never done that.*
-**Bami: Okay. Have you ever helped a new contributor find their way in the community?**
-***Maya:** Yeah, I mean, yeah. Several times. Yes, a lot.*
-**Bami: Amazing. I like the excitement.**
-**Bami: Have you ever had a eureka moment while doing your design work? Now “eureka” is a time where it’s just super exciting for you.**
-***Maya:** Yes, yes.*
-**Bami: Have you ever joined a meeting in your pajamas?**
-***Maya:** A lot of times I do.*
-**Bami: Have you ever been surprised by how fast someone reviewed your PR?**
-***Maya:** No, I have not.*
-**Bami: Have you ever learned something new from a fellow AsyncAPI contributor?**
-***Maya:** Yes, I have. As a matter of fact, I learn something new from other contributors everyday.*
-**Bami: Have you ever gotten frustrated but kept going anyway?**
-***Maya:** Yes, yes. We don't give up here.*
-**Bami: Have you ever been called out for doing way too much?**
-***Maya:** No, I told you. I know myself, I know what I want. What I can and can not do. Plus the community members are cool people. So no.*
-**Bami: Alright. Cool. Thank you so much for your time. It was beautiful hearing your story.**
-***Maya:** You’re welcome. And thank you too. It's been a pleasure being on this call*
+> **Bami: I think that is all. Now the fun fact. There’s a lot of fun facts, but we can do “Have you ever?” Ten questions.**
+
+> ***Maya:** Okay.*
+
+> **Bami: Have you ever fixed bugs? Do you fix bugs? You’re not a developer.**
+
+> ***Maya:** I think I have, on my portfolio when I was doing it on VS Code.*
+
+> **Bami: This has to be API-related o.**
+
+> ***Maya:** Oh no, no no no.*
+
+> **Bami: Have you ever created a PR you were super proud of?**
+
+> ***Maya:** Yes. Yes, yes.*
+
+> **Bami: Have you ever accidentally broken something important while pushing your PR?**
+
+> ***Maya:** No, I thought I did break something but Lukasz told me I did not, so no, I’ve never done that.*
+
+> **Bami: Okay. Have you ever helped a new contributor find their way in the community?**
+
+> ***Maya:** Yeah, I mean, yeah. Several times. Yes, a lot.*
+
+> **Bami: Amazing. I like the excitement.**
+
+> **Bami: Have you ever had a eureka moment while doing your design work? Now “eureka” is a time where it’s just super exciting for you.**
+
+> ***Maya:** Yes, yes.*
+
+> **Bami: Have you ever joined a meeting in your pajamas?**
+
+> ***Maya:** A lot of times I do.*
+
+> **Bami: Have you ever been surprised by how fast someone reviewed your PR?**
+
+> ***Maya:** No, I have not.*
+
+> **Bami: Have you ever learned something new from a fellow AsyncAPI contributor?**
+
+> ***Maya:** Yes, I have. As a matter of fact, I learn something new from other contributors everyday.*
+
+> **Bami: Have you ever gotten frustrated but kept going anyway?**
+
+> ***Maya:** Yes, yes. We don't give up here.*
+
+> **Bami: Have you ever been called out for doing way too much?**
+
+> ***Maya:** No, I told you. I know myself, I know what I want. What I can and can not do. Plus the community members are cool people. So no.*
+
+> **Bami: Alright. Cool. Thank you so much for your time. It was beautiful hearing your story.**
+
+> ***Maya:** You’re welcome. And thank you too. It's been a pleasure being on this call*
 
 ## Spotlight Summary
 
