@@ -89,7 +89,6 @@ AsyncAPI Impact: Joined in day zero and have stayed since then.
 - Contact Information for questions:
   ```
   Company Email: hugo@konghq.com
-  Personal: hguerreroo@yahoo.com
   Mobile: +1 (978) 489-4887
   ```
 
