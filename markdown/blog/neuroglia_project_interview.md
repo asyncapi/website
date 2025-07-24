@@ -1,6 +1,6 @@
 ---
 title: "AsyncAPI Made Simple: Neuroglia’s Innovative Tools for Developers"
-date: 2025-05-20T06:00:00+01:00
+date: 2025-07-25T06:00:00+01:00
 type: Communication
 tags:
   - Interview
