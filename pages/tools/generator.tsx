@@ -16,7 +16,7 @@ import Paragraph from '../../components/typography/Paragraph';
 /**
  * @description Render the buttons for the Generator page.
  */
-function renderButtons(): JSX.Element {
+function renderButtons(): React.JSX.Element {
   return (
     <div className='mt-8 flex flex-wrap gap-4'>
       {/* <Button
@@ -42,6 +42,7 @@ function renderButtons(): JSX.Element {
 export default function GeneratorPage() {
   const description = 'Generate documentation, code, and more out of your AsyncAPI files with the Generator.';
   const image = '/img/social/generator-card.jpg';
+  const generatorimage = '/img/diagrams/generator.webp';
 
   return (
     <GenericLayout title='Generator' description={description} image={image} wide>
@@ -52,6 +53,7 @@ export default function GeneratorPage() {
               Docs, Code, Anything!
             </Heading>
             <Paragraph className='mt-4'>{description}</Paragraph>
+            <img src={generatorimage} alt='generator diagram' className=' mx-auto h-auto object-cover lg:w-1/2' />
           </div>
 
           <div className='relative mt-12 lg:mt-20 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8'>

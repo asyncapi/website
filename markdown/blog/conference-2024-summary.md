@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: Community Builder and Open Source Fanatic!
 excerpt: 'AsyncAPI Conference Summary for 2024'
-featured: true
 ---
 As the saying goes, `"The second time is a charm."` AsyncAPI Conf on Tour returned in 2024 for a set of events across different locations. Not only did we run in-person conferences, but we also brought back our beloved online conference this time around, making the whole experience complete.
 
