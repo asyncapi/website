@@ -26,8 +26,8 @@ The AsyncAPI CLI makes it easier to work with AsyncAPI documents.
 $ npm install -g @asyncapi/cli
 $ asyncapi COMMAND
 running command...
-$ asyncapi (--version)
-@asyncapi/cli/2.12.0 linux-x64 node-v18.20.5
+$ asyncapi (--version|--v)
+@asyncapi/cli/3.2.0 linux-x64 node-v18.20.8
 $ asyncapi --help [COMMAND]
 USAGE
   $ asyncapi COMMAND
@@ -38,6 +38,7 @@ USAGE
 # Commands
 
 <!-- commands -->
+* [`asyncapi autocomplete [SHELL]`](#asyncapi-autocomplete-shell)
 * [`asyncapi bundle`](#asyncapi-bundle)
 * [`asyncapi config`](#asyncapi-config)
 * [`asyncapi config analytics`](#asyncapi-config-analytics)
@@ -54,7 +55,7 @@ USAGE
 * [`asyncapi diff OLD NEW`](#asyncapi-diff-old-new)
 * [`asyncapi format [SPEC-FILE]`](#asyncapi-format-spec-file)
 * [`asyncapi generate`](#asyncapi-generate)
-* [`asyncapi generate fromTemplate ASYNCAPI TEMPLATE`](#asyncapi-generate-fromtemplate-asyncapi-template)
+* [`asyncapi generate fromTemplate [ASYNCAPI] [TEMPLATE]`](#asyncapi-generate-fromtemplate-asyncapi-template)
 * [`asyncapi generate models LANGUAGE FILE`](#asyncapi-generate-models-language-file)
 * [`asyncapi new`](#asyncapi-new)
 * [`asyncapi new file`](#asyncapi-new-file)
@@ -63,8 +64,40 @@ USAGE
 * [`asyncapi optimize [SPEC-FILE]`](#asyncapi-optimize-spec-file)
 * [`asyncapi pretty SPEC-FILE`](#asyncapi-pretty-spec-file)
 * [`asyncapi start`](#asyncapi-start)
-* [`asyncapi start studio`](#asyncapi-start-studio)
+* [`asyncapi start preview SPEC-FILE`](#asyncapi-start-preview-spec-file)
+* [`asyncapi start studio [SPEC-FILE]`](#asyncapi-start-studio-spec-file)
 * [`asyncapi validate [SPEC-FILE]`](#asyncapi-validate-spec-file)
+
+## `asyncapi autocomplete [SHELL]`
+
+Display autocomplete installation instructions.
+
+```
+USAGE
+  $ asyncapi autocomplete [SHELL] [-r]
+
+ARGUMENTS
+  SHELL  (zsh|bash|powershell) Shell type
+
+FLAGS
+  -r, --refresh-cache  Refresh cache (ignores displaying instructions)
+
+DESCRIPTION
+  Display autocomplete installation instructions.
+
+EXAMPLES
+  $ asyncapi autocomplete
+
+  $ asyncapi autocomplete bash
+
+  $ asyncapi autocomplete zsh
+
+  $ asyncapi autocomplete powershell
+
+  $ asyncapi autocomplete --refresh-cache
+```
+
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v3.2.26/src/commands/autocomplete/index.ts)_
 
 ## `asyncapi bundle`
 
@@ -101,7 +134,7 @@ EXAMPLES
   $ asyncapi bundle ./asyncapi.yaml -o final-asyncapi.yaml --base ../public-api/main.yaml --baseDir ./social-media/comments-service
 ```
 
-_See code: [src/commands/bundle.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/bundle.ts)_
+_See code: [src/commands/bundle.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/bundle.ts)_
 
 ## `asyncapi config`
 
@@ -115,7 +148,7 @@ DESCRIPTION
   CLI config settings
 ```
 
-_See code: [src/commands/config/index.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/config/index.ts)_
+_See code: [src/commands/config/index.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/config/index.ts)_
 
 ## `asyncapi config analytics`
 
@@ -135,7 +168,7 @@ DESCRIPTION
   Enable or disable analytics for metrics collection
 ```
 
-_See code: [src/commands/config/analytics.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/config/analytics.ts)_
+_See code: [src/commands/config/analytics.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/config/analytics.ts)_
 
 ## `asyncapi config context`
 
@@ -149,7 +182,7 @@ DESCRIPTION
   Manage short aliases for full paths to AsyncAPI documents
 ```
 
-_See code: [src/commands/config/context/index.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/config/context/index.ts)_
+_See code: [src/commands/config/context/index.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/config/context/index.ts)_
 
 ## `asyncapi config context add CONTEXT-NAME SPEC-FILE-PATH`
 
@@ -171,7 +204,7 @@ DESCRIPTION
   Add a context to the store
 ```
 
-_See code: [src/commands/config/context/add.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/config/context/add.ts)_
+_See code: [src/commands/config/context/add.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/config/context/add.ts)_
 
 ## `asyncapi config context current`
 
@@ -188,7 +221,7 @@ DESCRIPTION
   Shows the current context that is being used
 ```
 
-_See code: [src/commands/config/context/current.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/config/context/current.ts)_
+_See code: [src/commands/config/context/current.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/config/context/current.ts)_
 
 ## `asyncapi config context edit CONTEXT-NAME NEW-SPEC-FILE-PATH`
 
@@ -209,7 +242,7 @@ DESCRIPTION
   Edit a context in the store
 ```
 
-_See code: [src/commands/config/context/edit.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/config/context/edit.ts)_
+_See code: [src/commands/config/context/edit.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/config/context/edit.ts)_
 
 ## `asyncapi config context init [CONTEXT-FILE-PATH]`
 
@@ -221,9 +254,9 @@ USAGE
 
 ARGUMENTS
   CONTEXT-FILE-PATH  Specify directory in which context file should be created:
-                     - current directory          : asyncapi config context init . (default)
+                     - current directory          : asyncapi config context init .(default)
                      - root of current repository : asyncapi config context init ./
-                     - user's home directory      : asyncapi config context init ~
+                     - user's home directory      : asyncapi config context init ~`
 
 FLAGS
   -h, --help  Show CLI help.
@@ -232,7 +265,7 @@ DESCRIPTION
   Initialize context
 ```
 
-_See code: [src/commands/config/context/init.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/config/context/init.ts)_
+_See code: [src/commands/config/context/init.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/config/context/init.ts)_
 
 ## `asyncapi config context list`
 
@@ -249,7 +282,7 @@ DESCRIPTION
   List all the stored contexts in the store
 ```
 
-_See code: [src/commands/config/context/list.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/config/context/list.ts)_
+_See code: [src/commands/config/context/list.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/config/context/list.ts)_
 
 ## `asyncapi config context remove CONTEXT-NAME`
 
@@ -269,7 +302,7 @@ DESCRIPTION
   Delete a context from the store
 ```
 
-_See code: [src/commands/config/context/remove.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/config/context/remove.ts)_
+_See code: [src/commands/config/context/remove.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/config/context/remove.ts)_
 
 ## `asyncapi config context use CONTEXT-NAME`
 
@@ -289,7 +322,7 @@ DESCRIPTION
   Set a context as current
 ```
 
-_See code: [src/commands/config/context/use.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/config/context/use.ts)_
+_See code: [src/commands/config/context/use.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/config/context/use.ts)_
 
 ## `asyncapi config versions`
 
@@ -306,7 +339,7 @@ DESCRIPTION
   Show versions of AsyncAPI tools used
 ```
 
-_See code: [src/commands/config/versions.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/config/versions.ts)_
+_See code: [src/commands/config/versions.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/config/versions.ts)_
 
 ## `asyncapi convert [SPEC-FILE]`
 
@@ -315,7 +348,7 @@ Convert asyncapi documents older to newer versions or OpenAPI/postman-collection
 ```
 USAGE
   $ asyncapi convert [SPEC-FILE] -f openapi|asyncapi|postman-collection [-h] [-o <value>] [-t <value>] [-p
-    client|server]
+    client|server] [--proxyHost <value>] [--proxyPort <value>]
 
 ARGUMENTS
   SPEC-FILE  spec path, url, or context-name
@@ -329,12 +362,14 @@ FLAGS
                                 server). Note: This option is only applicable for OpenAPI to AsyncAPI conversions.
                                 <options: client|server>
   -t, --target-version=<value>  [default: 3.0.0] asyncapi version to convert to
+      --proxyHost=<value>       Name of the ProxyHost
+      --proxyPort=<value>       Port number number for the proxyHost.
 
 DESCRIPTION
   Convert asyncapi documents older to newer versions or OpenAPI/postman-collection documents to AsyncAPI
 ```
 
-_See code: [src/commands/convert.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/convert.ts)_
+_See code: [src/commands/convert.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/convert.ts)_
 
 ## `asyncapi diff OLD NEW`
 
@@ -375,7 +410,7 @@ DESCRIPTION
   Find diff between two asyncapi files
 ```
 
-_See code: [src/commands/diff.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/diff.ts)_
+_See code: [src/commands/diff.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/diff.ts)_
 
 ## `asyncapi format [SPEC-FILE]`
 
@@ -398,7 +433,7 @@ DESCRIPTION
   Convert asyncapi documents from any format to yaml, yml or JSON
 ```
 
-_See code: [src/commands/format.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/format.ts)_
+_See code: [src/commands/format.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/format.ts)_
 
 ## `asyncapi generate`
 
@@ -412,17 +447,18 @@ DESCRIPTION
   Generate typed models or other things like clients, applications or docs using AsyncAPI Generator templates.
 ```
 
-_See code: [src/commands/generate/index.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/generate/index.ts)_
+_See code: [src/commands/generate/index.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/generate/index.ts)_
 
-## `asyncapi generate fromTemplate ASYNCAPI TEMPLATE`
+## `asyncapi generate fromTemplate [ASYNCAPI] [TEMPLATE]`
 
 Generates whatever you want using templates compatible with AsyncAPI Generator.
 
 ```
 USAGE
-  $ asyncapi generate fromTemplate ASYNCAPI TEMPLATE [-h] [-d <value>...] [--no-interactive] [-i] [--debug] [-n <value>...]
-    [-o <value>] [--force-write] [-w] [-p <value>...] [--map-base-url <value>] [--registry-url <value>] [--registry-auth
-    <value>] [--registry-token <value>] [--use-new-generator]
+  $ asyncapi generate fromTemplate [ASYNCAPI] [TEMPLATE] [-h] [-d <value>...] [--no-interactive] [-i] [--debug] [-n
+    <value>...] [-o <value>] [--force-write] [-w] [-p <value>...] [--map-base-url <value>] [--registry-url <value>]
+    [--registry-auth <value>] [--registry-token <value>] [--use-new-generator] [--proxyHost <value>] [--proxyPort
+    <value>]
 
 ARGUMENTS
   ASYNCAPI  - Local path, url or context-name pointing to AsyncAPI file
@@ -443,6 +479,8 @@ FLAGS
                                  unstaged files or not empty dir (defaults to false)
       --map-base-url=<value>     Maps all schema references from base url to local folder
       --no-interactive           Disable interactive mode and run with the provided flags.
+      --proxyHost=<value>        Name of the ProxyHost
+      --proxyPort=<value>        Port number number for the proxyHost.
       --registry-auth=<value>    The registry username and password encoded with base64, formatted as username:password
       --registry-token=<value>   The npm registry authentication token, that can be passed instead of base64 encoded
                                  username and password
@@ -457,7 +495,7 @@ EXAMPLES
   $ asyncapi generate fromTemplate asyncapi.yaml @asyncapi/html-template --param version=1.0.0 singleFile=true --output ./docs --force-write
 ```
 
-_See code: [src/commands/generate/fromTemplate.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/generate/fromTemplate.ts)_
+_See code: [src/commands/generate/fromTemplate.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/generate/fromTemplate.ts)_
 
 ## `asyncapi generate models LANGUAGE FILE`
 
@@ -469,9 +507,10 @@ USAGE
     [--tsModelType class|interface] [--tsEnumType enum|union] [--tsModuleSystem ESM|CJS] [--tsIncludeComments]
     [--tsExportType default|named] [--tsJsonBinPack] [--tsMarshalling] [--tsExampleInstance] [--tsRawPropertyNames]
     [--csharpAutoImplement] [--csharpNewtonsoft] [--csharpArrayType Array|List] [--csharpHashcode] [--csharpEqual]
-    [--csharpSystemJson] [--javaIncludeComments] [--javaJackson] [--javaConstraints] [--javaArrayType Array|List]
-    [--pyDantic] [--no-interactive] [--log-diagnostics] [--diagnostics-format
-    json|stylish|junit|html|text|teamcity|pretty] [--fail-severity error|warn|info|hint]
+    [--csharpSystemJson] [--goIncludeComments] [--goIncludeTags] [--javaIncludeComments] [--javaJackson]
+    [--javaConstraints] [--javaArrayType Array|List] [--pyDantic] [--no-interactive] [--log-diagnostics]
+    [--diagnostics-format json|stylish|junit|html|text|teamcity|pretty] [--fail-severity error|warn|info|hint]
+    [--proxyHost <value>] [--proxyPort <value>]
 
 ARGUMENTS
   LANGUAGE  (typescript|csharp|golang|java|javascript|dart|python|rust|kotlin|php|cplusplus|scala) The language you want
@@ -493,6 +532,8 @@ FLAGS
       --fail-severity=<option>       [default: error] diagnostics of this level or above will trigger a failure exit
                                      code
                                      <options: error|warn|info|hint>
+      --goIncludeComments            Golang specific, if enabled add comments while generating models.
+      --goIncludeTags                Golang specific, if enabled add tags while generating models.
       --javaArrayType=<option>       [default: Array] Java specific, define which type of array needs to be generated.
                                      <options: Array|List>
       --javaConstraints              Java specific, generate the models with constraints
@@ -504,6 +545,8 @@ FLAGS
       --no-interactive               Disable interactive mode and run with the provided flags.
       --packageName=<value>          Go, Java and Kotlin specific, define the package to use for the generated models.
                                      This is required when language is `go`, `java` or `kotlin`.
+      --proxyHost=<value>            Name of the ProxyHost
+      --proxyPort=<value>            Port number number for the proxyHost.
       --pyDantic                     Python specific, generate the Pydantic models.
       --tsEnumType=<option>          [default: enum] TypeScript specific, define which type of enums needs to be
                                      generated.
@@ -527,65 +570,21 @@ DESCRIPTION
   Generates typed models
 ```
 
-_See code: [src/commands/generate/models.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/generate/models.ts)_
+_See code: [src/commands/generate/models.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/generate/models.ts)_
 
 ## `asyncapi new`
 
-Creates a new asyncapi file
+Create a new AsyncAPI project, specification files, or templates for clients and applications.
 
 ```
 USAGE
-  $ asyncapi new [-h] [-n <value>] [-e <value>] [-s] [-p <value>] [--no-tty]
-
-FLAGS
-  -e, --example=<value>
-      name of the example to use. Available examples are:
-      - simple-asyncapi.yml
-      - adeo-kafka-request-reply-asyncapi.yml
-      - anyof-asyncapi.yml
-      - application-headers-asyncapi.yml
-      - correlation-id-asyncapi.yml
-      - websocket-gemini-asyncapi.yml
-      - gitter-streaming-asyncapi.yml
-      - kraken-websocket-request-reply-message-filter-in-reply-asyncapi.yml
-      - kraken-websocket-request-reply-multiple-channels-asyncapi.yml
-      - mercure-asyncapi.yml
-      - not-asyncapi.yml
-      - operation-security-asyncapi.yml
-      - oneof-asyncapi.yml
-      - rpc-client-asyncapi.yml
-      - rpc-server-asyncapi.yml
-      - slack-rtm-asyncapi.yml
-      - tutorial.yml
-      - streetlights-kafka-asyncapi.yml
-      - streetlights-operation-security-asyncapi.yml
-      - streetlights-mqtt-asyncapi.yml
-
-  -h, --help
-      Show CLI help.
-
-  -n, --file-name=<value>
-      name of the file
-
-  -p, --port=<value>
-      port in which to start Studio
-
-  -s, --studio
-      open in Studio
-
-  --no-tty
-      do not use an interactive terminal
+  $ asyncapi new
 
 DESCRIPTION
-  Creates a new asyncapi file
-
-EXAMPLES
-  $ asyncapi new	 - start creation of a file in interactive mode
-
-  $ asyncapi new --file-name=my-asyncapi.yml --example=default-example.yml --no-tty	 - create a new file with a specific name, using one of the examples and without interactive mode
+  Create a new AsyncAPI project, specification files, or templates for clients and applications.
 ```
 
-_See code: [src/commands/new/index.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/new/index.ts)_
+_See code: [src/commands/new/index.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/new/index.ts)_
 
 ## `asyncapi new file`
 
@@ -640,10 +639,10 @@ DESCRIPTION
 EXAMPLES
   $ asyncapi new	 - start creation of a file in interactive mode
 
-  $ asyncapi new --file-name=my-asyncapi.yml --example=default-example.yml --no-tty	 - create a new file with a specific name, using one of the examples and without interactive mode
+  $ asyncapi new --file-name=my-asyncapi.yaml --example=default-example.yaml --no-tty	 - create a new file with a specific name, using one of the examples and without interactive mode
 ```
 
-_See code: [src/commands/new/file.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/new/file.ts)_
+_See code: [src/commands/new/file.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/new/file.ts)_
 
 ## `asyncapi new glee`
 
@@ -665,7 +664,7 @@ DESCRIPTION
   Creates a new Glee project
 ```
 
-_See code: [src/commands/new/glee.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/new/glee.ts)_
+_See code: [src/commands/new/glee.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/new/glee.ts)_
 
 ## `asyncapi new template`
 
@@ -673,14 +672,12 @@ Creates a new template
 
 ```
 USAGE
-  $ asyncapi new template [-h] [-n <value>] [-t <value>] [-f <value>] [--force-write] [-r <value>]
+  $ asyncapi new template [-h] [-n <value>] [-t <value>] [-f <value>] [--force-write]
 
 FLAGS
   -f, --file=<value>      The path to the AsyncAPI file for generating a template.
   -h, --help              Show CLI help.
   -n, --name=<value>      [default: project] Name of the Project
-  -r, --renderer=<value>  [default: react] Creating a template for particular engine, Its value can be either react or
-                          nunjucks.
   -t, --template=<value>  [default: default] Name of the Template
       --force-write       Force writing of the generated files to given directory even if it is a git repo with unstaged
                           files or not empty dir (defaults to false)
@@ -689,7 +686,7 @@ DESCRIPTION
   Creates a new template
 ```
 
-_See code: [src/commands/new/template.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/new/template.ts)_
+_See code: [src/commands/new/template.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/new/template.ts)_
 
 ## `asyncapi optimize [SPEC-FILE]`
 
@@ -699,7 +696,7 @@ optimize asyncapi specification file
 USAGE
   $ asyncapi optimize [SPEC-FILE] [-h] [-p
     remove-components|reuse-components|move-duplicates-to-components|move-all-to-components...] [-i schema...] [-o
-    terminal|new-file|overwrite] [--no-tty]
+    terminal|new-file|overwrite] [--no-tty] [--proxyHost <value>] [--proxyPort <value>]
 
 ARGUMENTS
   SPEC-FILE  spec path, url, or context-name
@@ -715,6 +712,8 @@ FLAGS
                                   <options: remove-components|reuse-components|move-duplicates-to-components|move-all-to
                                   -components>
       --no-tty                    do not use an interactive terminal
+      --proxyHost=<value>         Name of the ProxyHost
+      --proxyPort=<value>         Port number number for the proxyHost.
 
 DESCRIPTION
   optimize asyncapi specification file
@@ -731,11 +730,11 @@ EXAMPLES
   $ asyncapi optimize ./asyncapi.yaml --ignore=schema
 ```
 
-_See code: [src/commands/optimize.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/optimize.ts)_
+_See code: [src/commands/optimize.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/optimize.ts)_
 
 ## `asyncapi pretty SPEC-FILE`
 
-Format AsyncAPI specification file
+Beautify the AsyncAPI spec file (indentation, styling) in place or output the formatted spec to a new file.
 
 ```
 USAGE
@@ -748,7 +747,7 @@ FLAGS
   -o, --output=<value>  Output file path
 
 DESCRIPTION
-  Format AsyncAPI specification file
+  Beautify the AsyncAPI spec file (indentation, styling) in place or output the formatted spec to a new file.
 
 EXAMPLES
   $ asyncapi pretty ./asyncapi.yaml
@@ -756,7 +755,7 @@ EXAMPLES
   $ asyncapi pretty ./asyncapi.yaml --output formatted-asyncapi.yaml
 ```
 
-_See code: [src/commands/pretty.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/pretty.ts)_
+_See code: [src/commands/pretty.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/pretty.ts)_
 
 ## `asyncapi start`
 
@@ -770,26 +769,59 @@ DESCRIPTION
   Starts AsyncAPI-related services. Currently, it supports launching the AsyncAPI Studio
 ```
 
-_See code: [src/commands/start/index.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/start/index.ts)_
+_See code: [src/commands/start/index.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/start/index.ts)_
 
-## `asyncapi start studio`
+## `asyncapi start preview SPEC-FILE`
+
+starts a new local instance of Studio in minimal state bundling all the refs of the schema file and with no editing allowed.
+
+```
+USAGE
+  $ asyncapi start preview SPEC-FILE [-h] [-p <value>] [-b <value>] [-d <value>] [-x] [-l]
+
+ARGUMENTS
+  SPEC-FILE  the path to the file to be opened with studio or context name
+
+FLAGS
+  -b, --base=<value>     Path to the file which will act as a base. This is required when some properties need to be
+                         overwritten while bundling with the file.
+  -d, --baseDir=<value>  One relative/absolute path to directory relative to which paths to AsyncAPI Documents that
+                         should be bundled will be resolved.
+  -h, --help             Show CLI help.
+  -l, --suppressLogs     Pass this to suppress the detiled error logs.
+  -p, --port=<value>     port in which to start Studio in the preview mode
+  -x, --xOrigin          Pass this switch to generate properties "x-origin" that will contain historical values of
+                         dereferenced "$ref"s.
+
+DESCRIPTION
+  starts a new local instance of Studio in minimal state bundling all the refs of the schema file and with no editing
+  allowed.
+```
+
+_See code: [src/commands/start/preview.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/start/preview.ts)_
+
+## `asyncapi start studio [SPEC-FILE]`
 
 starts a new local instance of Studio
 
 ```
 USAGE
-  $ asyncapi start studio [-h] [-f <value>] [-p <value>]
+  $ asyncapi start studio [SPEC-FILE] [-h] [-f <value>] [-p <value>] [--no-interactive]
+
+ARGUMENTS
+  SPEC-FILE  spec path, url, or context-name
 
 FLAGS
-  -f, --file=<value>  path to the AsyncAPI file to link with Studio
-  -h, --help          Show CLI help.
-  -p, --port=<value>  port in which to start Studio
+  -f, --file=<value>    path to the AsyncAPI file to link with Studio
+  -h, --help            Show CLI help.
+  -p, --port=<value>    port in which to start Studio
+      --no-interactive  disable prompts for this command which asks for file path if not passed via the arguments.
 
 DESCRIPTION
   starts a new local instance of Studio
 ```
 
-_See code: [src/commands/start/studio.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/start/studio.ts)_
+_See code: [src/commands/start/studio.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/start/studio.ts)_
 
 ## `asyncapi validate [SPEC-FILE]`
 
@@ -799,6 +831,7 @@ validate asyncapi file
 USAGE
   $ asyncapi validate [SPEC-FILE] [-h] [-w] [--log-diagnostics] [--diagnostics-format
     json|stylish|junit|html|text|teamcity|pretty] [--fail-severity error|warn|info|hint] [-o <value>] [--score]
+    [--suppressWarnings <value>...] [--suppressAllWarnings] [--proxyHost <value>] [--proxyPort <value>]
 
 ARGUMENTS
   SPEC-FILE  spec path, url, or context-name
@@ -813,12 +846,16 @@ FLAGS
                                      code
                                      <options: error|warn|info|hint>
       --[no-]log-diagnostics         log validation diagnostics or not
+      --proxyHost=<value>            Name of the ProxyHost
+      --proxyPort=<value>            Port number number for the proxyHost.
       --score                        Compute the score of the AsyncAPI document. Scoring is based on whether the
                                      document has description, license, server and/or channels.
+      --suppressAllWarnings          Suppress all warnings from the validation output.
+      --suppressWarnings=<value>...  List of warning codes to suppress from the validation output.
 
 DESCRIPTION
   validate asyncapi file
 ```
 
-_See code: [src/commands/validate.ts](https://github.com/asyncapi/cli/blob/v2.12.0/src/commands/validate.ts)_
+_See code: [src/commands/validate.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/validate.ts)_
 <!-- commandsstop -->
