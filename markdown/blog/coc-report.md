@@ -1,12 +1,10 @@
 ---
-![Aishat_Muibudeen](https://github.com/user-attachments/assets/d72bac7e-8903-4158-8026-bcd3577c4e6f)
 title: "Code of Conduct Incident Report"
-date: 2025-06-20T06:00:00+01:00
+date: 2025-07-28T06:00:00+01:00
 type: Communication
 tags:
   - Community
-cover: ![Coc](https://github.com/user-attachments/assets/aed37a88-03f3-466e-9ce4-1c6dbcd8508f)
-
+cover: /img/posts/conflict-resolve.webp
 authors:
   - name: Aishat Muibudeen (Maya)
     photo: /img/avatars/aishatmuibudeen.webp
