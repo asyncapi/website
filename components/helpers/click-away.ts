@@ -5,7 +5,8 @@
  */
 export function registerClickAway(callback: (event: MouseEvent) => void) {
   /**
-   * @description Handles the click event and invokes the callback function if the click occurs outside of specified elements.
+   * @description Handles the click event and invokes the callback function
+   * if the click occurs outside of specified elements.
    * @param {MouseEvent} event - The MouseEvent object representing the click event.
    */
   function unregisterClickAway(event: MouseEvent) {
