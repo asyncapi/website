@@ -1,5 +1,17 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/FkGnFqMTj88/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting, Tuesday July 15th 2025",
+    "description": "https://github.com/asyncapi/community/issues/1969.",
+    "videoId": "FkGnFqMTj88"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/6AIUb1FNqEk/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting, Tuesday July 1st 2025",
+    "description": "https://github.com/asyncapi/community/issues/1962.",
+    "videoId": "6AIUb1FNqEk"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/uVAurockaPc/hqdefault.jpg",
     "title": "AsyncAPI Design WG Meeting, Tuesday June 17th 2025",
     "description": "https://github.com/asyncapi/community/issues/1935.",
@@ -16,17 +28,5 @@
     "title": "AsyncAPI Community WG Meeting, Tuesday June 17th 2025",
     "description": "https://github.com/asyncapi/community/issues/1935.",
     "videoId": "6PmASob_Cu8"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/JLNMJ5A8sns/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting, Tuesday June 3rd 2025",
-    "description": "https://github.com/asyncapi/community/issues/1919.",
-    "videoId": "JLNMJ5A8sns"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/mhYxES2b13U/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting, Tuesday June 3rd 2025",
-    "description": "https://github.com/asyncapi/community/issues/1919.",
-    "videoId": "mhYxES2b13U"
   }
 ]
