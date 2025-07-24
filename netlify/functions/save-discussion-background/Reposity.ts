@@ -112,7 +112,6 @@ _This discussion has been created from a [slack discussion](${slackURL}). Please
    * @param {string} commentId - Id of the comment that you want to be marked as answer.
    */
   export async function markAnswer(commentId: string) {
-    console.log('marking the answer...');
     await fetchGraphql(`
       mutation {
         markDiscussionCommentAsAnswer(input: {id: "${commentId}" }) {

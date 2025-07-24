@@ -26,7 +26,8 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
   const [readMore, setReadMore] = useState<boolean>(false);
   const descriptionRef = useRef<HTMLDivElement>(null);
 
-  // Decide whether to show full description or not in the card based on the number of lines occupied by the description.
+  // Decide whether to show full description or not in the card based on
+  // the number of lines occupied by the description.
   useEffect(() => {
     if (descriptionRef.current) {
       setIsTruncated(descriptionRef.current?.scrollHeight! > descriptionRef.current?.clientHeight!);
@@ -38,11 +39,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
   if (toolData?.links?.repoUrl) {
     const url = new URL(toolData.links.repoUrl);
 
-    if (url.host === 'github.com') {
-      onGit = true;
-    } else {
-      onGit = false;
-    }
+    onGit = url.host === 'github.com';
   }
 
   const [visible, setVisible] = useState<VisibleDataListType>({
@@ -118,7 +115,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
       <div className='grow'>
         {toolData.filters?.language || toolData?.filters?.technology?.length ? (
           <div className='my-6'>
-            {toolData.filters.language && (
+            {toolData?.filters?.language?.length !== 0 && (
               <div className='mx-6 flex flex-col gap-2'>
                 <CardData
                   className='text-sm'
@@ -172,35 +169,32 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
         <>
           <hr className='' />
           <div className='flex'>
-            {toolData.links.repoUrl && (
-              <>
-                {onGit ? (
-                  <a
-                    className='w-full cursor-pointer border-x px-1 py-6 text-center hover:bg-gray-200'
-                    href={toolData.links.repoUrl}
-                    target='_blank'
-                    rel='noreferrer'
-                    data-testid='ToolsCard-repoUrl'
-                  >
-                    <div className='m-auto flex w-fit gap-2'>
-                      <img src='/img/logos/github-black.svg' alt='GitHub' className='w-5' />
-                      <div className='text-sm text-gray-700'>View Github</div>
-                    </div>
-                  </a>
-                ) : (
-                  <a
-                    className='w-full cursor-pointer border-x border-gray-200 px-1 py-6 text-center hover:bg-gray-200'
-                    href={toolData.links.repoUrl}
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <div className='m-auto flex w-fit gap-2'>
-                      <div className='text-sm text-gray-700'>View Source Code</div>
-                    </div>
-                  </a>
-                )}
-              </>
-            )}
+            {toolData.links.repoUrl &&
+              (onGit ? (
+                <a
+                  className='w-full cursor-pointer border-x px-1 py-6 text-center hover:bg-gray-200'
+                  href={toolData.links.repoUrl}
+                  target='_blank'
+                  rel='noreferrer'
+                  data-testid='ToolsCard-repoUrl'
+                >
+                  <div className='m-auto flex w-fit gap-2'>
+                    <img src='/img/logos/github-black.svg' alt='GitHub' className='w-5' />
+                    <div className='text-sm text-gray-700'>View Github</div>
+                  </div>
+                </a>
+              ) : (
+                <a
+                  className='w-full cursor-pointer border-x border-gray-200 px-1 py-6 text-center hover:bg-gray-200'
+                  href={toolData.links.repoUrl}
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  <div className='m-auto flex w-fit gap-2'>
+                    <div className='text-sm text-gray-700'>View Source Code</div>
+                  </div>
+                </a>
+              ))}
             {toolData.links.websiteUrl && (
               <a
                 className='w-full cursor-pointer border-x border-gray-200 px-1 py-6 text-center hover:bg-gray-200'

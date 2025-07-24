@@ -5,14 +5,14 @@
 # For more details, read the following article on GitHub: https://help.github.com/articles/about-codeowners/.
 
 # The default owners are automatically added as reviewers when you open a pull request unless different owners are specified in the file.
-* @derberg @akshatnema @magicmatatjahu @anshgoyalevil @mayaleeeee @asyncapi-bot-eve
+* @derberg @akshatnema @anshgoyalevil @sambhavgupta0705 @mayaleeeee @asyncapi-bot-eve
 
 # All .md files
-*.md @quetzalliwrites @asyncapi-bot-eve
+*.md @thulieblack @TRohit20 @asyncapi-bot-eve
 
-markdown/blog/*.md @thulieblack @quetzalliwrites
-markdown/community/*.md @thulieblack @quetzalliwrites
+markdown/blog/*.md @thulieblack @TRohit20
+markdown/community/*.md @thulieblack @bandantonio @TRohit20 
 
-README.md @quetzalliwrites @derberg @akshatnema @magicmatatjahu @mayaleeeee @asyncapi-bot-eve
-#docTriagers: TRohit20 BhaswatiRoy VaishnaviNandakumar J0SAL
-#codeTriagers: sambhavgupta0705 devilkiller-ag
+README.md @thulieblack @derberg @akshatnema @mayaleeeee @TRohit20 @asyncapi-bot-eve
+#docTriagers: bandantonio CBID2 
+#codeTriagers: devilkiller-ag vishvamsinh28
