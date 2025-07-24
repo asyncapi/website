@@ -16,13 +16,6 @@ export const Silversponsors: SponsorType[] = [
     imageClass: 'inline-block sm:h-9'
   },
   {
-    name: 'HiveMQ',
-    website: 'https://www.hivemq.com/',
-    altText: 'HiveMQ',
-    imageSrc: '/img/sponsors/hivemq_logo.png',
-    imageClass: 'inline-block sm:h-9'
-  },
-  {
     name: 'Aklivity',
     website: 'https://www.aklivity.io/',
     altText: 'Aklivity',
@@ -34,13 +27,6 @@ export const Silversponsors: SponsorType[] = [
     website: 'https://smartbear.com',
     altText: 'SmartBear',
     imageSrc: '/img/sponsors/smartbear_logo.png',
-    imageClass: 'inline-block sm:h-9'
-  },
-  {
-    name: 'HDI',
-    website: 'https://www.hdi.global/',
-    altText: 'HDI',
-    imageSrc: '/img/sponsors/hdi_logo.png',
     imageClass: 'inline-block sm:h-9'
   },
   {
