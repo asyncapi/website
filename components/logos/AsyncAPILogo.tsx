@@ -12,7 +12,7 @@ interface IAsyncAPILogoProps {
 export default function AsyncAPILogo({ className }: IAsyncAPILogoProps) {
   return (
     <svg
-      className={twMerge('h-10 w-auto mt-0.5', className)}
+      className={twMerge('h-6 w-auto mt-0.5', className)}
       width='165'
       height='36'
       viewBox='0 0 165 36'
