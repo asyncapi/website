@@ -7,7 +7,7 @@ tags:
 cover: /img/posts/conflict-resolve.webp
 authors:
   - name: Aishat Muibudeen (Maya)
-    photo: /img/avatars/aishatmuibudeen.webp
+    photo: /img/avatars/maya_picture.webp
     link: https://www.linkedin.com/in/aishatmuibudeen/
     byline: AsyncAPI Design Lead & Code of Conduct Committee Member
 excerpt: 'AsyncAPI Code of Conduct Committee Report Incident Summary – May 2025'
