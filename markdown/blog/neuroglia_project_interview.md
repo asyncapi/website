@@ -15,7 +15,7 @@ authors:
 excerpt: 'An interview with Neuroglia co-founder Charles d’Avernas on building innovative AsyncAPI SDKs featuring Fluent Builders, IO services, Fluent Validators, and code-first document generation.'
 ---
 
-We recently had the pleasure of interviewing [Charles d'Avernas](https://www.linkedin.com/in/charles-d-avernas-40836a13/), who co-founded [Neuroglia SRL](https://www.linkedin.com/company/neuroglia-srl/) alongside [Jean-Baptiste Bianchi](https://www.linkedin.com/in/jean-baptiste-bianchi-aa42b914/), a company known for providing elegant and straightforward solutions to complex IT challenges. Charles and his team work with prominent players in the IT community, such as Cisco, to create sophisticated event-driven solutions that address core business issues.
+We recently had the pleasure of interviewing [Charles d'Avernas](https://www.linkedin.com/in/charles-d-avernas-40836a13/), who co-founded [Neuroglia SRL](https://neuroglia.io/) alongside [Jean-Baptiste Bianchi](https://www.linkedin.com/in/jean-baptiste-bianchi-aa42b914/), a company known for providing elegant and straightforward solutions to complex IT challenges. Charles and his team work with prominent players in the IT community, such as Cisco, to create sophisticated event-driven solutions that address core business issues.
 
 In our conversation, Charles explained that Neuroglia's focus is mainly on orchestration. Unlike other players in their sector, Neuroglia doesn't take a "refactor or start-from-scratch" approach. Instead, they aim to integrate existing legacy systems into modern solutions, following an orchestration or event-driven approach.
 
@@ -73,4 +73,4 @@ Neuroglia’s approach to AsyncAPI document generation also improves formatting 
 
 Looking ahead, Charles mentioned plans to migrate their UI to use official HTML components for rendering documents. Additionally, they are exploring further ways to enhance their AsyncAPI SDK, making it even more accessible and user-friendly for developers.
 
-Our conversation with Charles d'Avernas provided valuable insights into Neuroglia’s innovative approach to working with AsyncAPI. Their focus on orchestration, compatibility, and developer-friendly tools showcases their dedication to improving the AsyncAPI ecosystem. Neuroglia’s contributions continue to enhance the accessibility and usability of AsyncAPI for developers worldwide. [Read more about the project donation on GitHub](https://github.com/orgs/asyncapi/discussions/1716).
+Neuroglia’s focus on orchestration, compatibility, and developer-friendly tools showcases their dedication to improving the AsyncAPI ecosystem, thus enhancing the accessibility and usability of AsyncAPI for developers worldwide. [Read more about the project on GitHub](https://github.com/orgs/asyncapi/discussions/1716).
