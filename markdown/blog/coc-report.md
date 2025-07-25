@@ -54,7 +54,7 @@ We are taking the following measures:
 
 - The CoC committee plans to establish monthly sync meetings to address community needs and improve coordination proactively.
 - Assigning platform-specific CoC leads (Slack, GitHub, Events, and Socials).
-- Introducing onboarding and awareness sessions for mentors and Mentees.
+- Introducing onboarding and awareness sessions for mentors and mentees.
 
 ## Postponed CoC Committee Nominations
 CoC Committee nominations were temporarily postponed while the incident was being resolved. We now recommend that future nominations be limited to TSC members to ensure all candidates have a verified and trusted presence within the community.
