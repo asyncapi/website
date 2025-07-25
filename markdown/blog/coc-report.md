@@ -16,7 +16,7 @@ excerpt: 'AsyncAPI Code of Conduct Committee Report Incident Summary – May 202
 In early May 2025, the AsyncAPI community experienced a disruptive incident on Slack, involving a GSoC-related discussion that escalated into targeted accusations, hostility, and violations of our community Code of Conduct. This report outlines our findings, the actions taken, and the steps we will take moving forward.
 
 ## What Happened?
-A conversation started in our #mentorship channel, where certain community members raised concerns about the GSoC selection process for mentees. What initially appeared to be a heated discussion soon evolved into a coordinated effort involving multiple fake and impersonated Slack accounts.
+A conversation started in our `#mentorship` channel, where certain community members raised concerns about the GSoC selection process for mentees. What initially appeared to be a heated discussion soon evolved into a coordinated effort involving multiple fake and impersonated Slack accounts.
 
 These accounts were used to:
 
