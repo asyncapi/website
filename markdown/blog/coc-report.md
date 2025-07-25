@@ -50,7 +50,7 @@ All mentees and mentors affected were contacted directly by the CoC team to ensu
 This incident highlighted the importance of better CoC visibility and process clarity. It also underscored how easily trust can be shaken when communication is fragmented or unofficial.
 
 ## Next Steps
-We are taking the following measures:
+To prevent similar incidents from happening in the future, we are taking the following measures:
 
 - The CoC committee plans to establish monthly sync meetings to address community needs and improve coordination proactively.
 - Assigning platform-specific CoC leads (Slack, GitHub, Events, and Socials).
