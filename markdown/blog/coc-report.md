@@ -43,7 +43,7 @@ The fake accounts were permanently removed from the Slack workspace. One individ
 2. Mentor Accountability
 The CoC team has formally warned the mentor involved in the off-platform communications. While they intended to support and onboard contributors, their actions unintentionally contributed to confusion within the community. The CoC emphasized that future concerns regarding mentorship and selection processes should be directed to the official mentorship lead, Ace, to ensure transparency and consistency. Given the circumstances and the mentor’s good intentions, the committee has decided to handle this matter with leniency while providing clear guidance moving forward.
 
-4. Support for Affected Individuals
+3. Support for Affected Individuals
 All mentees and mentors affected were contacted directly by the CoC team to ensure they felt safe, supported, and heard.
 
 ## What We Learned
