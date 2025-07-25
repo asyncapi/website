@@ -16,11 +16,11 @@ authors:
 excerpt: "In this AsyncAPI Community Spotlight, we chat with Aishat Muibudeen (Maya), a product designer turned Lead Design Maintainer at AsyncAPI. From her first contribution in 2022 to founding Open Nest Africa, Maya’s journey shows how showing up and staying curious can lead to leadership in open source."
 ---
 
-In this edition of the AsyncAPI Community Spotlight, we sat down with [Aishat Muibudeen](https://www.linkedin.com/in/aishatmuibudeen/), fondly known in the community as Maya, a product designer, community builder, and the current Lead Design Maintainer at AsyncAPI. Maya shares her fascinating journey from open source newbie to core contributor and founder of [Open-Nest-Africa](https://opencollective.com/open-nest-africa). This is her story.
+In this edition of the AsyncAPI Community Spotlight, we sat down with [Aishat Muibudeen](https://www.linkedin.com/in/aishatmuibudeen/), fondly known in the community as Maya, a product designer, community builder, and the current Lead Design Maintainer at AsyncAPI. Maya shares her fascinating journey from open source newbie to core contributor and founder of [OpenNest-Africa](https://opencollective.com/open-nest-africa). This is her story.
 
 **Bami: Let’s start with a quick intro. Tell us about yourself, what you do and who you are.**
 
-***Maya:** Hi, my name is Aishat Muibudeen, but most people in the community know me as Maya. I’m a product designer and a community person at heart. I’m currently the Lead Design Maintainer at AsyncAPI and a member of the Code of Conduct Committee. Outside of AsyncAPI, I’m also the founder of [Open-Nest-Africa](https://opencollective.com/open-nest-africa).*
+***Maya:** Hi, my name is Aishat Muibudeen, but most people in the community know me as Maya. I’m a product designer and a community person at heart. I’m currently the Lead Design Maintainer at AsyncAPI and a member of the Code of Conduct Committee. Outside of AsyncAPI, I’m also the founder of [OpenNest-Africa](https://opencollective.com/open-nest-africa).*
 
 ## Starting from Zero: Maya’s First Steps in Open Source
 
@@ -115,7 +115,7 @@ In this edition of the AsyncAPI Community Spotlight, we sat down with [Aishat Mu
 - Name: Aishat Muibudeen (Maya)
 - Role at AsyncAPI: Lead Design Maintainer, Code of Conduct Committee Member
 - Key Contributions: AsyncAPI Conference on Tour Website (AACOT’23), Design System, Leading the Design Community
-- Community Project: Founder, Open Nest Africa
+- Community Project: Founder, OpenNest-Africa
 - Started Contributing: October 2022
 
 ## Final Thoughts
