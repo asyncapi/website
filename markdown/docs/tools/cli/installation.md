@@ -1,6 +1,6 @@
 ---
 title: 'Installation guide'
-weight: 30
+weight: 20
 ---
 
 ## Node and npm
@@ -21,10 +21,30 @@ npm --version
 
 If you don’t have Node.js or NPM installed, you can install both with this [Node.js package manager](https://nodejs.org/en/download/package-manager/).
 
-After installing Node.js and NPM, run the following command to install the AsyncAPI CLI globally:
+After installing Node.js and NPM, run the following command to install the AsyncAPI ClI globally:
 ```sh
 npm install -g @asyncapi/cli
 ```
+To enable the autocomplete feature in the CLI for the shells **bash and zshrc**, there is a script that will run automatically and autocomplete is only support for **bash and zshrc** for the **powershell** refer to manually enabling  [autocomplete](https://www.asyncapi.com/docs/tools/cli/autocompleteEnabled) guide in ClI:
+
+After the ClI installation :
+
+if the configuration is not present logs will be:
+```sh
+✅ Autocomplete configuration added to .zshrc.
+```
+If the configuration is present for autocomplete logs:
+```sh
+✅ Autocomplete is already configured. Skipping addition.
+```
+
+To refresh the variables:
+
+```sh
+ source ~/.bashrc   # For bash
+ source ~/.zshrc    # For zsh
+```
+
 ## Docker
 
 Install [Docker](https://docs.docker.com/get-docker/) first, then use docker to build the image using the following command :

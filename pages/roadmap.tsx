@@ -628,7 +628,11 @@ export default function RoadmapPage() {
                 <div className='my-1 mr-2 w-5 rounded bg-orange-200'></div>
                 <div className='mr-4'>
                   Outcome{' '}
-                  <InlineHelp text="An outcome is the result of implementing a solution and represents a specific milestone towards our goals and, therefore, our vision. If you're into OKRs, an outcome is a Key Result." />
+                  <InlineHelp
+                    text="An outcome is the result of implementing a solution and represents a
+                    specific milestone towards our goals and, therefore, our vision. If you're into OKRs, an
+                    outcome is a Key Result."
+                  />
                 </div>
               </div>
               <div className='mb-2 flex justify-center'>
@@ -680,7 +684,9 @@ export default function RoadmapPage() {
             <Warning
               className='mx-auto mt-8 lg:w-1/2'
               title='Warning for Contributors'
-              description="This roadmap reflects the priorities of the AsyncAPI Initiative. If you want to contribute a feature from the roadmap, feel free to let us know on the corresponding GitHub issue so we can discuss what's the best way to proceed and implement it yourself."
+              description="This roadmap reflects the priorities of the AsyncAPI Initiative. If you want to
+               contribute a feature from the roadmap, feel free to let us know on the corresponding GitHub issue
+               so we can discuss what's the best way to proceed and implement it yourself."
             />
           </div>
         </div>
