@@ -18,7 +18,7 @@ export default function ToolsIndex() {
 
   return (
     <div className='my-6'>
-      <GenericLayout title='Tools' description={description} image={image} >
+      <GenericLayout title='Tools' description={description} image={image}>
         <div>
           <div className='mt-12 text-center'>
             <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg}>
