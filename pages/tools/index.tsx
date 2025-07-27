@@ -17,8 +17,8 @@ export default function ToolsIndex() {
   const image = '/img/social/tools-dashboard-card.webp';
 
   return (
-    <div>
-      <GenericLayout title='Tools' description={description} image={image}>
+    <div className='my-6'>
+      <GenericLayout title='Tools' description={description} image={image} >
         <div>
           <div className='mt-12 text-center'>
             <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg}>
