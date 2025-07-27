@@ -774,6 +774,36 @@
         }
       },
       {
+        "title": "The Codegen Project",
+        "description": "Stop wasting time on manual code. Generate Payloads, parameters, headers, types, channel wrappers, and more from your AsyncAPI document! Works with Kafka, NATS, MQTT, event-source, AMQP, HTTP Client!",
+        "links": {
+          "websiteUrl": "https://the-codegen-project.org/",
+          "docsUrl": "https://the-codegen-project.org//docs",
+          "repoUrl": "https://github.com/the-codegen-project/cli/"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "TypeScript",
+              "color": "bg-[#7DBCFE]",
+              "borderColor": "border-[#2C78C7]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "TypeScript",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "code-generator",
+            "cli"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "ZenWave SDK",
         "description": "DDD and API-First for Event-Driven Microservices",
         "links": {
@@ -1166,38 +1196,6 @@
           ],
           "categories": [
             "code-first",
-            "documentation-generator"
-          ],
-          "hasCommercial": false
-        }
-      },
-      {
-        "title": "MessageFlow",
-        "description": "Generate system-architecture documentation and diagrams from AsyncAPI specifications.",
-        "links": {
-          "repoUrl": "https://github.com/denchenko/messageflow"
-        },
-        "filters": {
-          "language": [
-            {
-              "name": "Go/Golang",
-              "color": "bg-[#8ECFDF]",
-              "borderColor": "border-[#00AFD9]"
-            }
-          ],
-          "technology": [
-            {
-              "name": "Go",
-              "color": "bg-[#61d0f2]",
-              "borderColor": "border-[#40ccf7]"
-            },
-            {
-              "name": "Kubernetes-native",
-              "color": "bg-[#D7C7F2]",
-              "borderColor": "border-[#A387D2]"
-            }
-          ],
-          "categories": [
             "documentation-generator"
           ],
           "hasCommercial": false
@@ -2366,7 +2364,7 @@
         "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
         "links": {
           "websiteUrl": "https://www.asyncapi.com/tools/cli",
-          "repoUrl": "https://github.com/asyncapi/cli"
+          "repoUrl": "https://github.com/hkirat/asyncapi-fork"
         },
         "filters": {
           "language": [],
@@ -2389,7 +2387,7 @@
         "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
         "links": {
           "websiteUrl": "https://www.asyncapi.com/tools/cli",
-          "repoUrl": "https://github.com/hkirat/asyncapi-fork"
+          "repoUrl": "https://github.com/asyncapi/cli"
         },
         "filters": {
           "language": [],
@@ -3082,7 +3080,7 @@
         "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
         "links": {
           "websiteUrl": "https://www.asyncapi.com/tools/cli",
-          "repoUrl": "https://github.com/asyncapi/cli"
+          "repoUrl": "https://github.com/hkirat/asyncapi-fork"
         },
         "filters": {
           "language": [],
@@ -3105,7 +3103,7 @@
         "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
         "links": {
           "websiteUrl": "https://www.asyncapi.com/tools/cli",
-          "repoUrl": "https://github.com/hkirat/asyncapi-fork"
+          "repoUrl": "https://github.com/asyncapi/cli"
         },
         "filters": {
           "language": [],
