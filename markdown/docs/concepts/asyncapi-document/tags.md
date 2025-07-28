@@ -6,7 +6,7 @@ weight: 63
 ## `tags` in AsyncAPI document
 A tag is a label or category that groups related entities in an event-driven system.
 
-In the AsyncAPI document, tags are defined as a list of [`tag` objects][tag-object] within the [`tags` object][tags-object] at the [`info` level][info-field].
+In the AsyncAPI document, tags are defined as a list of [`tag` objects](/docs/reference/specification/latest#tagObject) within the [`tags` object](/docs/reference/specification/latest#tagsObject) at the [`info` level](/docs/concepts/asyncapi-document/structure#info-field).
 
 The individual `tags` field contains the following properties:
 
@@ -14,9 +14,9 @@ The individual `tags` field contains the following properties:
 - `description`: A short description explaining the tag's purpose or usage.
 - `externalDocs`: Additional external documentation for the tag.
 
-Tags have different purposes depending on the context. They can either be used for consistent tag usage across the AsyncAPI document and logical component grouping or be applied to individual components like [`servers`][servers-field], [`channels`][channels-field], or [`operations`][operations-field] for more specific purposes.
+Tags have different purposes depending on the context. They can either be used for consistent tag usage across the AsyncAPI document and logical component grouping or be applied to individual components like [`servers`](/docs/concepts/asyncapi-document/structure#servers-field), [`channels`](/docs/concepts/asyncapi-document/structure#channels-field), or [`operations`](/docs/concepts/asyncapi-document/structure#operations-field) for more specific purposes.
 
-To reuse `tags`, you must define them in the [`components` object][components-object] of an AsyncAPI document and then use [reference objects][reference-object] to include them.
+To reuse `tags`, you must define them in the [`components` object](/docs/reference/specification/latest#componentsObject) of an AsyncAPI document and then use [reference objects](/docs/reference/specification/latest#referenceObject) to include them.
 
 ### `tags` in `info` object
 Tags specified in the `tags` property of the `info` object categorize the entire AsyncAPI document. These globally defined tags provide an overarching context, representing key themes or functional areas within the event-driven system. They group elements like channels or servers by relevance, offering a holistic understanding of the application's structure.
@@ -330,13 +330,3 @@ operations:
     tags:
       - $ref: '#/components/tags/video'
 ```
-
-- [info-field]: /docs/concepts/asyncapi-document/structure#info-field
-- [servers-field]: /docs/concepts/asyncapi-document/structure#servers-field
-- [channels-field]: /docs/concepts/asyncapi-document/structure#channels-field
-- [operations-field]: /docs/concepts/asyncapi-document/structure#operations-field
-- [components-field]: /docs/concepts/asyncapi-document/structure#components-field
-- [tag-object]: /docs/reference/specification/latest#tagObject
-- [tags-object]: /docs/reference/specification/latest#tagsObject
-- [components-object]: /docs/reference/specification/latest#componentsObject
-- [reference-object]: /docs/reference/specification/latest#referenceObject
