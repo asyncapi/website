@@ -10,7 +10,7 @@ import { pause } from '../helpers/utils';
 const ignoreFiles = [
   'reference/specification/v2.x.md',
   'reference/specification/v3.0.0-explorer.md',
-  'reference/specification/v3.0.0.md',
+  'reference/specification/v3.0.0.md'
 ];
 
 interface PathObject {
@@ -79,6 +79,10 @@ async function generatePaths(
   folderPath: string,
   editOptions: { value: string; href: string }[],
 ): Promise<PathObject[]> {
+  if (typeof folderPath !== 'string' || !folderPath) {
+    throw new TypeError('The "path" argument must be a non-empty string.');
+  }
+
   const result: PathObject[] = [];
 
   try {
@@ -99,7 +103,10 @@ async function generatePaths(
 
     return result;
   } catch (err) {
-    throw new Error(`Error walking directory ${folderPath}: ${err}`);
+    const errorMessage = err instanceof Error ? err.message : String(err);
+    const errorStack = err instanceof Error ? err.stack : '';
+    throw new Error(`Error walking directory ${folderPath}: ${errorMessage}\n${errorStack}`);
+
   }
 }
 

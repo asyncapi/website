@@ -87,24 +87,19 @@ describe('URL Checker Tests', () => {
       expect(sectionFiles.length).toBe(0);
     });
 
-    it('should skip non-markdown files', async () => {
-      // Create a mock implementation to test the else branch
-      const mockReaddir = jest.spyOn(fs, 'readdir') as jest.Mock;
-      const mockStat = jest.spyOn(fs, 'stat') as jest.Mock;
+   it('should skip non-markdown files', async () => {
+  const mockReaddir = jest.spyOn(fs, 'readdir').mockImplementation(async (dir, opts) => [
+    { name: 'test.js', isFile: () => true, isDirectory: () => false },
+    { name: 'test.md', isFile: () => true, isDirectory: () => false }
+  ]);
 
-      mockReaddir.mockImplementationOnce(() => Promise.resolve(['test.js', 'test.md']));
-      mockStat.mockImplementationOnce(() => Promise.resolve({ isDirectory: () => false, isFile: () => true }));
-      mockStat.mockImplementationOnce(() => Promise.resolve({ isDirectory: () => false, isFile: () => true }));
+  const result = await generatePaths(testDir, editOptions);
 
-      const result = await generatePaths(testDir, editOptions);
+  expect(result.length).toBe(1);
+  expect(result[0].filePath.endsWith('.md')).toBe(true);
 
-      // Only the markdown file should be included, not the js file
-      expect(result.length).toBe(1);
-      expect(result[0].filePath.endsWith('.md')).toBe(true);
-
-      mockReaddir.mockRestore();
-      mockStat.mockRestore();
-    });
+  mockReaddir.mockRestore();
+});
 
     it('should handle errors gracefully', async () => {
       const invalidDir = path.join(__dirname, 'nonexistent');
