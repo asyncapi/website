@@ -37,14 +37,11 @@ The Code of Conduct Committee, composed of Maya, Ace, Thulie, and Łukasz, conve
 
 ## Action Taken
 
-1. Account Bans
-The fake accounts were permanently removed from the Slack workspace. One individual, after being identified, issued an apology and remains in the community. The other did not respond to outreach and has been banned from the platform. We have also recommended their removal from the GSoC program.
+1. **Account Bans**: The fake accounts were permanently removed from the Slack workspace. One individual, after being identified, issued an apology and remains in the community. The other did not respond to outreach and has been banned from the platform. We have also recommended their removal from the GSoC program.
 
-2. Mentor Accountability
-The CoC team has formally warned the mentor involved in the off-platform communications. While they intended to support and onboard contributors, their actions unintentionally contributed to confusion within the community. The CoC emphasized that future concerns regarding mentorship and selection processes should be directed to the official mentorship lead, Ace, to ensure transparency and consistency. Given the circumstances and the mentor’s good intentions, the committee has decided to handle this matter with leniency while providing clear guidance moving forward.
+2. **Mentor Accountability**: The CoC team has formally warned the mentor involved in the off-platform communications. While they intended to support and onboard contributors, their actions unintentionally contributed to confusion within the community. The CoC emphasized that future concerns regarding mentorship and selection processes should be directed to the official mentorship lead, Ace, to ensure transparency and consistency. Given the circumstances and the mentor’s good intentions, the committee has decided to handle this matter with leniency while providing clear guidance moving forward.
 
-3. Support for Affected Individuals
-All mentees and mentors affected were contacted directly by the CoC team to ensure they felt safe, supported, and heard.
+3. **Support for Affected Individuals**: All mentees and mentors affected were contacted directly by the CoC team to ensure they felt safe, supported, and heard.
 
 ## What We Learned
 This incident highlighted the importance of better CoC visibility and process clarity. It also underscored how easily trust can be shaken when communication is fragmented or unofficial.
