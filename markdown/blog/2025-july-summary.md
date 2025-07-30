@@ -120,13 +120,40 @@ We still have the Call for Proposals open for the [AsyncAPI Online Conference](h
 
 Please don't forget to submit those talks before the deadline ends; we look forward to you sharing your knowledge with the rest of the community!
 
-
 ## Spec x Tooling
 
+[Pavel Bodiachevskii](https://github.com/Pakisan) has been working on compiling [AsyncAPI JVM tools under one website](https://asyncapi.pavelon.dev/). He has created the [AsyncAPI Developer Network](https://asyncapi.pavelon.dev), a place where you can find information about the AsyncAPI specification and its components. 
+
+If you're using any tool or plan to use them, please share your feedback.
+
 ## Community Discussions
+We have some various community discussions that need your input and community-wide insights. Please do get involved and share your thoughts.
 
 ### AsyncAPI Conference 2026
+Since we have our first conference for 2026 confirmed and happening on the 18th - 20th of February 2026, it's also time to start the conversations on how we can improve the experience. 
+
+[Please share your thoughts on how we can do better in the AsyncAPI Conference 2026 discussion](https://github.com/asyncapi/community/issues/2015).
 
 ### AsyncAPI Meetups Section
+As part of growing the AsyncAPI Conference brand and expanding our reach, the meetups' goal is to be in more locations beyond the main conferences, where people can come together and share their experiences using AsyncAPI and being part of the community.
+
+Currently, we are in the phase of designing and implementing the page on the conference website. [Shriya Chauhan](https://www.linkedin.com/in/shriya-chauhan-%F0%9F%A6%8B-20a19b200/) has been working hard on this for months.
+
+Please join the discussion and [share your feedback on the Figma designs](https://www.figma.com/design/DlxWIrjez1bhmIIK4VO5Kb/AsyncAPI-Conf-2025--Copy-?node-id=5802-10942&p=f) and the [AsyncAPI Meetups implementation](https://github.com/asyncapi/conference-website/discussions/604).
 
 ### Hacktoberfest
+
+Hacktoberfest season is coming up soon. If you're a maintainer at AsyncAPI and would love to participate, please join the pre-discussion happening on `#wg-community` on how to make the experience better and share best practices on how we can prepare for new contributors coming in through the program.
+
+
+### Registration Platforms
+
+We are looking for platforms that can help us collect data and build a database for all our attendees at the AsyncAPI Conferences, Meetups, and Webinars. The data collected will be used to understand the number of people interested in AsyncAPI, as well as something to present for sponsorships.
+
+If you have any insights on the best platforms or other solutions we can use, [please share your thoughts on the Registration Platforms Research discussion](https://github.com/asyncapi/community/issues/1994).
+
+## Coming in June
+- **AsyncAPI Community Updates Newsletter** - The August Edition will be making its way to your inbox on the 7th. [Please subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/newsletter); don't miss the updates.
+- **AsyncAPI Conference London and Bangalore Edition Speakers** - The speakers for the AsyncAPI Conference in London and Bangalore will be announced in August. Please stay tuned for the updates.
+
+
