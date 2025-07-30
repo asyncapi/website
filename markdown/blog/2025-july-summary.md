@@ -152,7 +152,7 @@ We are looking for platforms that can help us collect data and build a database 
 
 If you have any insights on the best platforms or other solutions we can use, [please share your thoughts on the Registration Platforms Research discussion](https://github.com/asyncapi/community/issues/1994).
 
-## Coming in June
+## Coming in August
 - **AsyncAPI Community Updates Newsletter** - The August Edition will be making its way to your inbox on the 7th. [Please subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/newsletter); don't miss the updates.
 - **AsyncAPI Conference London and Bangalore Edition Speakers** - The speakers for the AsyncAPI Conference in London and Bangalore will be announced in August. Please stay tuned for the updates.
 
