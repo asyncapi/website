@@ -197,8 +197,8 @@ And to our inspiring contributors: you journeyed through trials and triumphs, no
 ]} />
 
 
+
 To the future we innovate, together, one commit at a time! 💜
 
 > Photo by Andrea Piacquadio: https://www.pexels.com/photo/amazed-formal-male-looking-at-laptop-screen-3760809/
-
 > Photo from independent.co.uk : https://www.independent.co.uk/life-style/health-and-families/tired-fatigue-symptoms-reason-help-tips-b2669575.html
