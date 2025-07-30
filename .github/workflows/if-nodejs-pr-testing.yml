@@ -80,8 +80,19 @@ jobs:
         name: Run release assets generation to make sure PR does not break it
         shell: bash
         run: npm run generate:assets --if-present
-
-
+        
+      - if: steps.packagejson.outputs.exists == 'true' && matrix.os == 'macos-13'
+        name: Cache Cypress binary on macOS
+        uses: actions/cache@v3
+        with:
+         path: ~/Library/Caches/Cypress
+         key: cypress-cache-macos-${{ hashFiles('**/package-lock.json') }}
+         restore-keys: |
+          cypress-cache-macos-
+      - if: steps.packagejson.outputs.exists == 'true' && matrix.os == 'macos-13'
+        name: Install Cypress Binary (macOS only)
+        run: npx cypress install
+   
       - if: steps.should_run.outputs.shouldrun == 'true' && steps.packagejson.outputs.exists == 'true'
         name: Run Cypress E2E Tests
         uses: cypress-io/github-action@6c143abc292aa835d827652c2ea025d098311070
