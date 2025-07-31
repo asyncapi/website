@@ -83,12 +83,13 @@ jobs:
         
       - if: steps.packagejson.outputs.exists == 'true' && matrix.os == 'macos-13'
         name: Cache Cypress binary on macOS
-        uses: actions/cache@v3
+        uses: actions/cache@v4   # v4 supports Node 20-based runners
         with:
-         path: ~/Library/Caches/Cypress
-         key: cypress-cache-macos-${{ hashFiles('**/package-lock.json') }}
-         restore-keys: |
-          cypress-cache-macos-
+          path: ~/Library/Caches/Cypress
+          key: cypress-cache-macos-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            cypress-cache-macos-
+              
       - if: steps.packagejson.outputs.exists == 'true' && matrix.os == 'macos-13'
         name: Install Cypress Binary (macOS only)
         run: npx cypress install
