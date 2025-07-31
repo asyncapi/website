@@ -101,7 +101,6 @@ jobs:
           start: npm run dev
           wait-on: 'http://localhost:3000'  # Adjust port as needed
           wait-on-timeout: 120
-          install: false  # Reuse existing dependencies
 
       # Run the test:md script and capture output
       - if: ${{ steps.packagejson.outputs.exists == 'true' && matrix.os == 'ubuntu-latest' }}
