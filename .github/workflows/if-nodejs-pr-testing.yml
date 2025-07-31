@@ -15,7 +15,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-13, windows-latest]
     env:
-      CYPRESS_CACHE_FOLDER: ${{ matrix.os == 'macos-13' && '~/Library/Caches/Cypress' || matrix.os == 'Windows' && '~/AppData/Local/Cypress/Cache' || '~/.cache/Cypress' }}
+      CYPRESS_CACHE_FOLDER: ${{ startsWith(matrix.os, 'macos') && '$HOME/Library/Caches/Cypress' || startsWith(matrix.os, 'windows') && '$HOME/AppData/Local/Cypress/Cache' || '$HOME/.cache/Cypress' }}
     steps:
       - if: >
           !github.event.pull_request.draft && !(
