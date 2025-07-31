@@ -96,18 +96,16 @@ jobs:
           key: cypress-cache-${{ matrix.os }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             cypress-cache-${{ matrix.os }}-
-
       - name: Install Cypress Binary
         if: steps.packagejson.outputs.exists == 'true'
-        run: npx cypress install --force
+        run: npx cypress install
         env:
           CYPRESS_CACHE_FOLDER: ${{ env.CYPRESS_CACHE_FOLDER }}
-   
       - if: steps.should_run.outputs.shouldrun == 'true' && steps.packagejson.outputs.exists == 'true'
         name: Run Cypress E2E Tests
         uses: cypress-io/github-action@6c143abc292aa835d827652c2ea025d098311070
         with:
-          start: npm run dev -- -H 0.0.0.0 -p 3000
+          start: npm run dev
           wait-on: 'http://localhost:3000'  # Adjust port as needed
           wait-on-timeout: 120
           install: true
