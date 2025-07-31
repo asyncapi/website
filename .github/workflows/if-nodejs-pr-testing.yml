@@ -107,7 +107,7 @@ jobs:
         name: Run Cypress E2E Tests
         uses: cypress-io/github-action@6c143abc292aa835d827652c2ea025d098311070
         with:
-          start: npm run dev
+          start: npm run dev -- -H 0.0.0.0 -p 3000
           wait-on: 'http://localhost:3000'  # Adjust port as needed
           wait-on-timeout: 120
           install: true
