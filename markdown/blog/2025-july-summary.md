@@ -29,7 +29,7 @@ We are excited to share that the following sponsors have renewed their sponsorsh
 [SmartBear](https://smartbear.com) as a Silver sponsor. We also extend our gratitude to [Frank Kilcommins](https://www.linkedin.com/in/frank-kilcommins) for always making sure this happens.
 
 <a href='https://smartbear.com/' target='_blank'>
-<img src='/img/sponsors/smartbear_logo.png' alt='SmartBeat' width='500px' />
+<img src='/img/sponsors/smartbear_logo.png' alt='SmartBear' width='500px' />
 </a>
 
 [Solace](https://solace.com) as our Gold sponsor.
@@ -49,6 +49,20 @@ Exciting times are ahead as we grow as a community.
 We had two amazing conferences in two new cities, one in Munich, Germany, and the other in Lagos, Nigeria. [APIdays](https://www.apidays.global) and [APIConf Lagos](https://apiconf.net) hosted us as part of the 2-day conference, and we also brought the API Standards Booth.
 
 ### Munich
+
+We had a 2-day event in Munich, Germany. The most important thing we learned is that AsyncAPI is used in production by insurance giant Allianz, and that the whole event-driven topology at retailers like Lidl and Kaufland (under Schwarz Group) is managed with AsyncAPI.
+
+The first day, what became our tradition, we started with the booth, where we could provide vendor-neutral consulting for the API community. The booth was there under the name `API Standards` with people not only from AsyncAPI but also JSON Schema, OpenAPI, and Arazzo.  In case you want to learn more about the booth, how we organize it, and where, join the [API Standards mailing group](https://groups.io/g/api-standards).
+
+<Figure
+  src="/img/posts/lagos-conf/booth-munich.webp"
+  caption="Booth in Munich From left: Ben, Frank, Lukasz."
+  className="text-center"
+/>
+
+The second day, we had an AsyncAPI track with four amazing presentations. The below short recap will nicely summarize how great it was.
+
+<YouTube id="fsXVL9UUEiQ" />
 
 
 ### Lagos
@@ -110,7 +124,7 @@ I would like to thank everyone for taking the time to attend the conference and 
 
 <Figure
   src="/img/posts/lagos-conf/booth-pic.webp"
-  caption="Day 2 at the booth From left: Ace, Maya, Thulie, Onyedikachi, Olumide."
+  caption="Booth in Lagos From left: Ace, Maya, Thulie, Onyedikachi, Olumide."
   className="text-center"
 />
 
