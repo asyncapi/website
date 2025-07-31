@@ -98,6 +98,8 @@ jobs:
       - name: Install Cypress Binary
         if: steps.packagejson.outputs.exists == 'true'
         run: npx cypress install
+        env:
+          CYPRESS_CACHE_FOLDER: ${{ env.CYPRESS_CACHE_FOLDER }}
    
       - if: steps.should_run.outputs.shouldrun == 'true' && steps.packagejson.outputs.exists == 'true'
         name: Run Cypress E2E Tests
