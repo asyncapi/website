@@ -44,7 +44,7 @@ In this cohort, we deliberately expanded our project horizons. We didn't just we
 
 This strategic expansion is a source of immense pride, strengthening the very fabric of AsyncAPI for years to come. This commitment to broader opportunities yielded impressive results:
 
-- **Vibrant Community Involvement:** The 2024 Mentorship Program's kickoff discussion garnered involvement from 39 community members, including maintainers, contributors, and mentors. This vibrant participation led to 13 proposed project ideas, encompassing two design and two technical writing concepts. From these, [eight](https://github.com/orgs/asyncapi/discussions/1361#discussioncomment-10819168) distinct projects were selected, meeting all program requirements.
+- **Vibrant Community Involvement:** The kickoff discussion garnered involvement from 39 community members, including maintainers, contributors, and mentors. This led to 13 proposed project ideas, encompassing two design and two technical writing concepts. As a result, [eight distinct projects](https://github.com/orgs/asyncapi/discussions/1361#discussioncomment-10819168) were selected, meeting all program requirements.
   
 - **Strong Success Rates:** The 2024 cohort saw a **77.78% mentee success rate** and **90% project completion**. While one coding and one documentation mentee did not pass, the documentation project still achieved full completion thanks to the outstanding collaboration of the remaining mentees.
 
