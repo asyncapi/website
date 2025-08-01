@@ -38,7 +38,21 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   const { pathname, query, asPath } = router;
   const [open, setOpen] = useState<'learning' | 'tooling' | 'community' | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const { i18n } = useTranslation();
+
+  // Adding Scroll listener
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+
+      setIsScrolled(scrollTop > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   /**
    * Retrieves unique language options based on the current path and i18nPaths configuration.
@@ -145,9 +159,10 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
 
   return (
     <>
-      {/* <div className='p-[1px]  rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500'> */}
       <div
-        className={`bg-white/60 mx-auto lg:my-2 ring-1 ring-black/5 max-w-[76rem] shadow-md lg:rounded-lg backdrop-blur-lg ${className} z-50`}
+        // eslint-disable-next-line max-len
+        className={`bg-white/60 transition-all duration-500 ease-in-out    backdrop-blur-lg z-100 
+          ${isScrolled ? 'mx-auto p-2 lg:p-1 lg:m1-1 shadow-md ring-1 ring-black/5  max-w-[76rem] lg:rounded-xl' : ' w-full mt-0 p-4  max-w-[76rem] rounded-none'} ${className}`}
       >
         {/* <div
         className={`bg-white/60 mx-auto fixed flex left-0 right-0 top-0 w-full z-[12] items-center justify-between max-w-[76rem] select-none transition-all duration-300 ease-spring ring-1 ring-black/5 bg-white/76 backdrop-blur-lg shadow-lg lg:rounded-full lg:mt-3 translate-y-0 ${className} z-50`}
@@ -157,7 +172,9 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             <div className='lg:w-auto lg:flex-1'>
               <div className='flex'>
                 <Link href='/' className='cursor-pointer' aria-label='AsyncAPI' data-testid='Navbar-logo'>
-                  <AsyncAPILogo className='w-auto' />
+                  <AsyncAPILogo
+                    className={`w-auto transition-all duration-500 ease-in-out ${isScrolled ? 'h-6 ' : 'h-8'}`}
+                  />
                 </Link>
               </div>
             </div>
@@ -251,6 +268,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
           </nav>
         </div>
       </div>
+
       {/* </div> */}
       {/* Mobile menu, show/hide based on mobile menu state. */}
       {mobileMenuOpen && (

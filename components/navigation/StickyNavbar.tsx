@@ -14,7 +14,7 @@ interface StickyNavbarProps {
  */
 export default function StickyNavbar({ children, className = '' }: StickyNavbarProps) {
   return (
-    <div className={`sticky rounded-full top-0 z-50 lg:py-1 ${className}`} data-testid='Sticky-div'>
+    <div className={`sticky  top-0 z-50 lg:py-2 ${className}`} data-testid='Sticky-div'>
       {children}
     </div>
   );
