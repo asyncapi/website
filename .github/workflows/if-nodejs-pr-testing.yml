@@ -14,6 +14,8 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-13, windows-latest]
+    env:
+      CYPRESS_CACHE_FOLDER: ${{ startsWith(matrix.os, 'macos') && '$HOME/Library/Caches/Cypress' || startsWith(matrix.os, 'windows') && '$HOME/AppData/Local/Cypress/Cache' || '$HOME/.cache/Cypress' }}
     steps:
       - if: >
           !github.event.pull_request.draft && !(
@@ -80,8 +82,25 @@ jobs:
         name: Run release assets generation to make sure PR does not break it
         shell: bash
         run: npm run generate:assets --if-present
+        
+      - name: Cache Cypress binary
+        uses: actions/cache@v4   # v4 supports Node 20-based runners
+        if: steps.packagejson.outputs.exists == 'true'
+        with:
+          path: |
+            ~/.cache/Cypress
+            ~/Library/Caches/Cypress
+            ~/AppData/Local/Cypress/Cache
+          key: cypress-cache-${{ matrix.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            cypress-cache-${{ matrix.os }}-
 
-
+      - name: Install Cypress Binary
+        if: steps.packagejson.outputs.exists == 'true'
+        run: npx cypress install
+        env:
+          CYPRESS_CACHE_FOLDER: ${{ env.CYPRESS_CACHE_FOLDER }}
+   
       - if: steps.should_run.outputs.shouldrun == 'true' && steps.packagejson.outputs.exists == 'true'
         name: Run Cypress E2E Tests
         uses: cypress-io/github-action@6c143abc292aa835d827652c2ea025d098311070
@@ -89,7 +108,7 @@ jobs:
           start: npm run dev
           wait-on: 'http://localhost:3000'  # Adjust port as needed
           wait-on-timeout: 120
-          install: false  # Reuse existing dependencies
+          install: true
 
       # Run the test:md script and capture output
       - if: ${{ steps.packagejson.outputs.exists == 'true' && matrix.os == 'ubuntu-latest' }}
