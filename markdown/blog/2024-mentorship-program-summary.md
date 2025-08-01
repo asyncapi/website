@@ -21,7 +21,7 @@ Yet, here we are again, wrapping up our third edition of the AsyncAPI Mentorship
 
 As the 2024 mentorship program concludes, it's a perfect time to reflect on what has been an incredibly rewarding journey for everyone involved. Beyond lines of code and completed tasks, this year's program truly focused on collective learning, personal growth, and building something significant as a community.
 
-The 2024 mentorship program was filled with a blend of challenges, surprises and successes. While it's natural to focus on the external events that shaped our experiences, this time of the year invites us as a community to turn inward and ask more profound questions about how we learned and grew. 
+The 2024 mentorship program was filled with a blend of challenges, surprises, and successes. While it's natural to focus on the external events that shaped our experiences, this time of the year invites us as a community to turn inward and ask more profound questions about how we learned and grew. 
 
 ## Reflect: Honouring the Lessons of 2024
 
