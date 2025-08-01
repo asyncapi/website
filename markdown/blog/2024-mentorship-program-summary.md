@@ -96,7 +96,7 @@ As we look ahead, we firmly believe that the most significant progress often ari
 
 Our assumptions and beliefs profoundly shape our choices, and recognizing their potential limitations has prompted us to thoroughly examine our approach throughout the program's history. This introspection is designed to foster an even more welcoming and inclusive environment.
 
-Some of the changes coming for the next cohort are as follow:
+Some of the changes coming for the next cohort are as follows:
 
 1. **A New Identity: The AsyncAPI Maintainership Program.** Moving forward, the AsyncAPI Mentorship Program will be formally renamed to the **AsyncAPI Maintainership Program**. This strategic transition reflects a singular, clear objective: to explicitly guide mentees along the path to becoming active AsyncAPI maintainers. This shift will not only impact the depth and type of contributions but is also designed to significantly increase our pool of active maintainers and triagers within the initiative.
    
