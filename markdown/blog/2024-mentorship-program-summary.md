@@ -15,7 +15,7 @@ authors:
 excerpt: 'A Story About Growth, Design, Docs, Code, and Community — The 2024 Mentorship Journey'
 ---
 
-It doesn't feel like that long ago when we got rejected from participating in GSoC in the summer of 2022, which motivated us to pilot our in-house mentorship program that focuses on encouraging contributors to learn, grow, and contribute to exciting opensource projects while receiving guidance from experienced mentors. 
+It doesn't feel like that long ago when we got rejected from participating in GSoC in the summer of 2022, which motivated us to pilot our in-house mentorship program that focuses on encouraging contributors to learn, grow, and contribute to exciting Open Source projects while receiving guidance from experienced mentors. 
 
 Yet, here we are again, wrapping up our third edition of the AsyncAPI Mentorship Program.
 
