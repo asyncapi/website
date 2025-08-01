@@ -31,7 +31,7 @@ Let's take a moment and highlight some of our reflections for the 2024 cohort, s
 
 ### What We're Most Proud Of
 
-What started as a community-wide [Github Discussion](https://github.com/orgs/asyncapi/discussions/1361) transcends into a testament of incredible dedication and involvement from everyone.
+What started as a community-wide [Github Discussion](https://github.com/orgs/asyncapi/discussions/1361) transcended into a testament of incredible dedication and involvement from everyone.
 
 In this cohort, we deliberately expanded our project horizons. We didn't just welcome code-related project ideas; we also opened our doors wide to crucial design and technical writing initiatives.
 
