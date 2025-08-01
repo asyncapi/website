@@ -54,7 +54,7 @@ This strategic expansion is a source of immense pride, strengthening the very fa
   
   The [Holopin Design Project](https://github.com/asyncapi/community/issues/1306) brought this value to life by creating a community-wide badge to recognize contributors doing great work. It was also used to celebrate all mentees who completed their programs, including the mentee who designed the badge.
 
-- **Improved project diversity:** This cohort not only showed us the impact of diversifying project ideas, but also helps us understand that non-code related project can hold equal values in the community as its counterpart. 
+- **Improved project diversity:** This cohort not only showed us the impact of diversifying project ideas, but also helped us understand that non-code related projects can hold equal value in the community as their counterparts. 
 
 ### Where We Felt Challenged
 
