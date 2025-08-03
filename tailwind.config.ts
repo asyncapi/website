@@ -64,6 +64,7 @@ const colorGray: Record<string, string> = {
 };
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -124,7 +125,13 @@ const config: Config = {
         },
         violet: '#8054F2',
         darkGunMetal: '#212526',
-        linkedin: '#0077b5'
+        linkedin: '#0077b5',
+        'darkTheme-background': '#121825',
+        'darkTheme-card': '#131E35',
+        'darkTheme-footer': '#090F1D',
+        'darkTheme-text': '#B8B9C0',
+        'darkTheme-heading': '#FFFFFF',
+        'darkTheme-border': '#8054F2'
       },
       scale: {
         25: '.25'
