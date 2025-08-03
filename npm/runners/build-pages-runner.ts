@@ -1,6 +1,6 @@
 import { copyAndRenameFiles, ensureDirectoryExists } from '@/scripts/build-pages';
 import { logger } from '@/scripts/helpers/logger';
-import { RunnerError } from '@/types/errors/RunnerError';
+import { CustomError } from '@/types/errors/CustomError';
 
 interface BuildPagesOptions {
   sourceDir?: string;
@@ -20,7 +20,7 @@ const DEFAULT_OPTIONS = {
  * into the appropriate format and location for the Next.js pages directory.
  *
  * @param options - Optional configuration for source and target directories
- * @throws {RunnerError} If directory creation or file copying fails
+ * @throws {CustomError} If directory creation or file copying fails
  */
 async function runBuildPages(options: BuildPagesOptions = {}): Promise<void> {
   const config = { ...DEFAULT_OPTIONS, ...options };
@@ -32,40 +32,13 @@ async function runBuildPages(options: BuildPagesOptions = {}): Promise<void> {
     // Then copy and rename files
     await copyAndRenameFiles(config.sourceDir, config.targetDir);
   } catch (error) {
-    // Create or enhance the error with full context
-    const customError = error instanceof RunnerError
-      ? error.updateContext({
-          operation: 'runBuildPages',
-          runner: 'build-pages-runner',
-          script: 'build-pages-runner.ts',
-          task: 'pages',
-          context: {
-            sourceDir: config.sourceDir,
-            targetDir: config.targetDir
-          }
-        })
-      : RunnerError.fromError(error, {
-          errorType: 'runner_level_error',
-          operation: 'runBuildPages',
-          runner: 'build-pages-runner',
-          script: 'build-pages-runner.ts',
-          task: 'pages',
-          note: 'Error occurred at runner level',
-          context: {
-            sourceDir: config.sourceDir,
-            targetDir: config.targetDir
-          }
-        });
-
-    // Log error with full stack trace and context
-    logger.error('Build pages runner failed', {
-      error: customError,
-      script: customError.context.script,
-      task: customError.context.task,
-      timestamp: customError.context.timestamp,
-      configuration: customError.context.context,
-      stackTrace: customError.getFullStack()
+    const customError = CustomError.fromError(error, {
+      category: 'script',
+      operation: 'runBuildPages',
+      detail: `Build pages failed - sourceDir: ${config.sourceDir}, targetDir: ${config.targetDir}`
     });
+
+    logger.error('Build pages runner failed', customError);
 
     throw customError;
   }

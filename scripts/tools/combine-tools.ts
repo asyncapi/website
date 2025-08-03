@@ -147,17 +147,12 @@ const processManualTool = async (tool: AsyncAPITool) => {
   const isValid = await validate(tool);
 
   if (!isValid) {
-    logger.error(
-      JSON.stringify({
-        message: 'Tool validation failed',
-        tool: tool.title,
-        source: 'manual-tools.json',
-        errors: validate.errors,
-        note: 'Script continues execution, error logged for investigation'
-      }),
-      null,
-      2
-    );
+    logger.error('Tool validation failed', {
+      tool: tool.title,
+      source: 'manual-tools.json',
+      errors: validate.errors,
+      note: 'Script continues execution, error logged for investigation'
+    });
 
     return null;
   }
@@ -197,8 +192,7 @@ const combineTools = async (
 
         finalTools[key].toolsList = [...automatedResults, ...manualResults].sort((tool, anotherTool) => {
           if (!tool?.title || !anotherTool?.title) {
-            logger.error({
-              message: 'Tool title is missing during sort',
+            logger.error('Tool title is missing during sort', {
               detail: { tool, anotherTool },
               source: 'combine-tools.ts'
             });

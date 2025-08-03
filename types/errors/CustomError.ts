@@ -1,19 +1,20 @@
 /**
- * Base interface for error context that all custom errors should extend
+ * Error categories for different types of errors
  */
-export interface BaseErrorContext {
+export type ErrorCategory = 'script' | 'api' | 'validation' | 'general';
+
+/**
+ * Simplified error context interface with only essential fields
+ */
+export interface ErrorContext {
+  readonly category: ErrorCategory;
+  readonly detail?: string;
+  readonly operation?: string;
+  readonly statusCode?: number;
   readonly timestamp?: string;
   readonly originalError?: Error | unknown;
   readonly stackTrace?: string;
-  readonly [key: string]: unknown;
 }
-
-/**
- * Generic type for creating custom error contexts
- */
-export type ErrorType<T extends string> = {
-  readonly errorType: T;
-};
 
 /**
  * Captures a formatted stack trace from an error
@@ -27,85 +28,116 @@ function captureFormattedStack(error: Error | unknown): string {
 }
 
 /**
- * Factory function to create custom error classes with specific context types
+ * Unified custom error class for all application errors
  */
-export function createCustomErrorClass<TContext extends BaseErrorContext, TErrorType extends string = string>(
-  errorClassName: string
-) {
-  return class CustomError extends Error {
-    public context: TContext & ErrorType<TErrorType>;
+export class CustomError extends Error {
+  public context: ErrorContext;
 
-    private readonly _originalStack: string;
+  private readonly originalStack: string;
 
-    constructor(message: string, context: TContext & ErrorType<TErrorType>) {
-      super(message);
-      this.name = errorClassName;
+  constructor(message: string, context: ErrorContext) {
+    super(message);
+    this.name = 'CustomError';
 
-      // Capture the original stack trace before it gets modified
-      this._originalStack = this.stack || '';
+    // Capture the original stack trace before it gets modified
+    this.originalStack = this.stack || '';
 
-      // Maintain proper stack trace for where error was thrown
-      if (Error.captureStackTrace) {
-        Error.captureStackTrace(this, this.constructor);
-      }
-
-      // Combine original stack with context stack if available
-      const contextStack = context.originalError ? captureFormattedStack(context.originalError) : '';
-
-      this.context = {
-        ...context,
-        timestamp: context.timestamp || new Date().toISOString(),
-        stackTrace: context.stackTrace || [this._originalStack, contextStack].filter(Boolean).join('\n\nCaused by: ')
-      };
+    // Maintain proper stack trace for where error was thrown
+    if (Error.captureStackTrace) {
+      Error.captureStackTrace(this, this.constructor);
     }
 
-    /**
-     * Creates a new instance from an existing error
-     */
-    static fromError(error: unknown, additionalContext: Partial<TContext & ErrorType<TErrorType>>): CustomError {
-      const isCustomError = error instanceof CustomError;
-      const errorMessage = error instanceof Error ? error.message : String(error);
+    // Combine original stack with context stack if available
+    const contextStack = context.originalError ? captureFormattedStack(context.originalError) : '';
 
-      const context = {
-        ...(isCustomError ? error.context : {}),
-        ...additionalContext,
-        originalError: isCustomError ? error.context.originalError : error,
-        timestamp: new Date().toISOString(),
-        // Preserve existing stack trace if available
-        stackTrace: isCustomError ? error.context.stackTrace : error instanceof Error ? error.stack : undefined
-      } as TContext & ErrorType<TErrorType>;
+    this.context = {
+      ...context,
+      timestamp: context.timestamp || new Date().toISOString(),
+      stackTrace: context.stackTrace || [this.originalStack, contextStack].filter(Boolean).join('\n\nCaused by: ')
+    };
+  }
 
-      return new CustomError(errorMessage, context);
+  /**
+   * Creates a new instance from an existing error
+   */
+  static fromError(error: unknown, additionalContext: Partial<ErrorContext>): CustomError {
+    const isCustomError = error instanceof CustomError;
+    const errorMessage = error instanceof Error ? error.message : String(error);
+
+    let existingStackTrace: string | undefined;
+
+    if (isCustomError) {
+      existingStackTrace = error.context.stackTrace;
+    } else if (error instanceof Error) {
+      existingStackTrace = error.stack;
     }
 
-    /**
-     * Updates the error context while preserving stack traces
-     */
-    updateContext(newContext: Partial<TContext & ErrorType<TErrorType>>): this {
-      this.context = {
-        ...this.context,
-        ...newContext,
-        timestamp: new Date().toISOString(),
-        // Preserve the existing stack trace
-        stackTrace: this.context.stackTrace
-      };
-      x;
+    const context: ErrorContext = {
+      category: 'general',
+      ...(isCustomError ? error.context : {}),
+      ...additionalContext,
+      originalError: isCustomError ? error.context.originalError : error,
+      timestamp: new Date().toISOString(),
+      stackTrace: existingStackTrace
+    };
 
-      return this;
+    return new CustomError(errorMessage, context);
+  }
+
+  /**
+   * Updates the error context while preserving stack traces
+   */
+  updateContext(newContext: Partial<ErrorContext>): this {
+    this.context = {
+      ...this.context,
+      ...newContext,
+      timestamp: new Date().toISOString(),
+      // Preserve the existing stack trace
+      stackTrace: this.context.stackTrace
+    };
+
+    return this;
+  }
+
+  /**
+   * Gets the complete stack trace including any caused by traces
+   */
+  getFullStack(): string {
+    return this.context.stackTrace || this.stack || '';
+  }
+
+  /**
+   * Gets the original stack trace from when the error was first created
+   */
+  getOriginalStack(): string {
+    return this.originalStack;
+  }
+
+  /**
+   * Convenience method to check if error is of a specific category
+   */
+  isCategory(category: ErrorCategory): boolean {
+    return this.context.category === category;
+  }
+
+  /**
+   * Convenience method to get a formatted error summary
+   */
+  getSummary(): string {
+    const parts = [`Category: ${this.context.category}`, `Message: ${this.message}`];
+
+    if (this.context.detail) {
+      parts.push(`Detail: ${this.context.detail}`);
     }
 
-    /**
-     * Gets the complete stack trace including any caused by traces
-     */
-    getFullStack(): string {
-      return this.context.stackTrace || this.stack || '';
+    if (this.context.operation) {
+      parts.push(`Operation: ${this.context.operation}`);
     }
 
-    /**
-     * Gets the original stack trace from when the error was first created
-     */
-    getOriginalStack(): string {
-      return this._originalStack;
+    if (this.context.statusCode) {
+      parts.push(`Status: ${this.context.statusCode}`);
     }
-  };
+
+    return parts.join(' | ');
+  }
 }

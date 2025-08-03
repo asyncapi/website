@@ -3,7 +3,7 @@ import { fileURLToPath } from 'url';
 
 import { buildPostList } from '@/scripts/build-post-list';
 import { logger } from '@/scripts/helpers/logger';
-import { RunnerError } from '@/types/errors/RunnerError';
+import { CustomError } from '@/types/errors/CustomError';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
@@ -23,7 +23,7 @@ interface BuildPostListOptions {
  * and letting the top-level .catch handle process exit.
  *
  * @param options - Optional configuration for post directories, base path, and output path.
- * @throws {RunnerError} If the build process fails or an error occurs in the runner.
+ * @throws {CustomError} If the build process fails or an error occurs in the runner.
  */
 async function runBuildPostList(options: BuildPostListOptions = {}): Promise<void> {
   try {
@@ -38,30 +38,13 @@ async function runBuildPostList(options: BuildPostListOptions = {}): Promise<voi
 
     await buildPostList(postDirectories, basePath, outputPath);
   } catch (error) {
-    // If it's already a RunnerError, add more context
-    const customError = RunnerError.fromError(error, {
-      errorType: 'runner_level_error',
+    const customError = CustomError.fromError(error, {
+      category: 'script',
       operation: 'runBuildPostList',
-      runner: 'build-post-list-runner',
-      script: 'buildPostList',
-      task: 'posts',
-      note: error instanceof RunnerError ? 'Error propagated from script level' : 'Error occurred at runner level',
-      // Preserve important configuration context
-      context: {
-        postDirectories: options.postDirectories,
-        basePath: options.basePath,
-        outputPath: options.outputPath
-      }
+      detail: `Build post list failed with output path: ${options.outputPath}`
     });
 
-    logger.error('Build post list runner failed', {
-      error: customError,
-      script: customError.context.script,
-      task: customError.context.task,
-      timestamp: customError.context.timestamp,
-      // Log additional context for debugging
-      configuration: customError.context.context
-    });
+    logger.error('Build post list runner failed', customError);
 
     throw customError;
   }

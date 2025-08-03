@@ -3,7 +3,7 @@ import { fileURLToPath } from 'url';
 
 import { buildNewsroomVideos } from '@/scripts/build-newsroom-videos';
 import { logger } from '@/scripts/helpers/logger';
-import { RunnerError } from '@/types/errors/RunnerError';
+import { CustomError } from '@/types/errors/CustomError';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
@@ -20,7 +20,7 @@ interface BuildNewsroomVideosOptions {
  * and letting the top-level .catch handle process exit.
  *
  * @param options - Optional configuration for output path
- * @throws {RunnerError} If the build process fails or an error occurs in the runner
+ * @throws {CustomError} If the build process fails or an error occurs in the runner
  */
 async function runBuildNewsroomVideos(options: BuildNewsroomVideosOptions = {}): Promise<void> {
   try {
@@ -28,39 +28,13 @@ async function runBuildNewsroomVideos(options: BuildNewsroomVideosOptions = {}):
 
     await buildNewsroomVideos(outputPath);
   } catch (error) {
-    // Create or enhance the error with full context
-    const customError =
-      error instanceof RunnerError
-        ? error.updateContext({
-            operation: 'runBuildNewsroomVideos',
-            runner: 'build-newsroom-videos-runner',
-            script: 'build-newsroom-videos-runner.ts',
-            task: 'newsroom-videos',
-            context: {
-              outputPath: options.outputPath
-            }
-          })
-        : RunnerError.fromError(error, {
-            errorType: 'runner_level_error',
-            operation: 'runBuildNewsroomVideos',
-            runner: 'build-newsroom-videos-runner',
-            script: 'build-newsroom-videos-runner.ts',
-            task: 'newsroom-videos',
-            note: 'Error occurred at runner level',
-            context: {
-              outputPath: options.outputPath
-            }
-          });
-
-    // Log error with full stack trace and context
-    logger.error('Build newsroom videos runner failed', {
-      error: customError,
-      script: customError.context.script,
-      task: customError.context.task,
-      timestamp: customError.context.timestamp,
-      configuration: customError.context.context,
-      stackTrace: customError.getFullStack()
+    const customError = CustomError.fromError(error, {
+      category: 'script',
+      operation: 'runBuildNewsroomVideos',
+      detail: `Build newsroom videos failed with output path: ${options.outputPath}`
     });
+
+    logger.error('Build newsroom videos runner failed', customError);
 
     throw customError;
   }

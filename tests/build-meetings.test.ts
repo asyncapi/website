@@ -3,6 +3,7 @@ import { google } from 'googleapis';
 import path from 'path';
 
 import { buildMeetings } from '../scripts/build-meetings';
+import { CustomError } from '../types/errors/CustomError';
 import { expectedContent, mockEvents } from './fixtures/meetingsData';
 
 jest.mock('googleapis', () => {
@@ -67,15 +68,7 @@ describe('buildMeetings', () => {
   it('should throw an error if the Google API call fails', async () => {
     mockCalendar.mockRejectedValue(new Error('Google API error'));
 
-    try {
-      await buildMeetings(outputFilePath);
-    } catch (err) {
-      if (err instanceof Error) {
-        expect(err.message).toContain('Google API error');
-      } else {
-        throw new Error('Unexpected error type');
-      }
-    }
+    await expect(buildMeetings(outputFilePath)).rejects.toThrow(CustomError);
   });
 
   it('should throw an error if authentication fails', async () => {
@@ -83,13 +76,7 @@ describe('buildMeetings', () => {
       throw new Error('Authentication failed');
     });
 
-    try {
-      await buildMeetings(outputFilePath);
-    } catch (err) {
-      if (err instanceof Error) {
-        expect(err.message).toContain('Authentication failed');
-      }
-    }
+    await expect(buildMeetings(outputFilePath)).rejects.toThrow(CustomError);
   });
 
   it('should handle file write errors', async () => {
@@ -101,15 +88,7 @@ describe('buildMeetings', () => {
 
     const invalidPath = '/root/invalid_dir/meetings.json';
 
-    try {
-      await buildMeetings(invalidPath);
-    } catch (err) {
-      if (err instanceof Error) {
-        expect(err.message).toMatch(/ENOENT|EACCES/);
-      } else {
-        throw new Error('Unexpected error type');
-      }
-    }
+    await expect(buildMeetings(invalidPath)).rejects.toThrow(CustomError);
   });
 
   it('should throw an error if the data structure received from Google Calendar API is invalid', async () => {
@@ -119,9 +98,7 @@ describe('buildMeetings', () => {
       }
     });
 
-    await expect(buildMeetings('/path/to/write')).rejects.toThrow(
-      'Invalid data structure received from Google Calendar API'
-    );
+    await expect(buildMeetings('/path/to/write')).rejects.toThrow(CustomError);
   });
 
   it('should throw an error if start.dateTime is missing in the event', async () => {
@@ -138,7 +115,7 @@ describe('buildMeetings', () => {
       }
     });
 
-    await expect(buildMeetings('/path/to/write')).rejects.toThrow('start.dateTime is missing in the event');
+    await expect(buildMeetings('/path/to/write')).rejects.toThrow(CustomError);
   });
 
   it('should throw an error if CALENDAR_SERVICE_ACCOUNT is not set', async () => {
@@ -148,9 +125,7 @@ describe('buildMeetings', () => {
     delete process.env.CALENDAR_SERVICE_ACCOUNT;
 
     try {
-      await expect(buildMeetings(outputFilePath)).rejects.toThrow(
-        'CALENDAR_SERVICE_ACCOUNT environment variable is not set'
-      );
+      await expect(buildMeetings(outputFilePath)).rejects.toThrow(CustomError);
     } finally {
       // Restore the environment variable for other tests
       process.env.CALENDAR_SERVICE_ACCOUNT = originalServiceAccount;
@@ -164,7 +139,7 @@ describe('buildMeetings', () => {
     delete process.env.CALENDAR_ID;
 
     try {
-      await expect(buildMeetings(outputFilePath)).rejects.toThrow('CALENDAR_ID environment variable is not set');
+      await expect(buildMeetings(outputFilePath)).rejects.toThrow(CustomError);
     } finally {
       // Restore the environment variable for other tests
       process.env.CALENDAR_ID = originalCalendarId;

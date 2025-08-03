@@ -16,8 +16,8 @@
     "build-scripts": "npm run build:pages && npm run lint:mdx && npm run build:posts",
     "write:blog": "tsx ./scripts/compose.ts",
     "start": "npx serve@latest out",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx --ignore-path .eslintignore",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --ignore-path .eslintignore --fix",
     "format:mdx": "prettier --write \"**/*.mdx\"",
     "lint:mdx": "remark \"**/*.mdx\"",
     "generate:meetings": "tsx scripts/build-meetings.ts",
@@ -37,7 +37,8 @@
     "finance-info-list-runner": "tsx npm/runners/build-finance-info-list-runner.ts",
     "meetings-runner": "tsx npm/runners/build-meetings-runner.ts",
     "newsroom-videos-runner": "tsx npm/runners/build-newsroom-videos-runner.ts",
-    "tools-runner": "tsx npm/runners/build-tools-runner.ts"
+    "tools-runner": "tsx npm/runners/build-tools-runner.ts",
+    "compose-blog-runner": "tsx npm/runners/compose-blog-runner.ts"
   },
   "repository": {
     "type": "git",

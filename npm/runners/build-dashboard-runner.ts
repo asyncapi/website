@@ -3,7 +3,7 @@ import { fileURLToPath } from 'url';
 
 import { start as buildDashboard } from '@/scripts/dashboard/build-dashboard';
 import { logger } from '@/scripts/helpers/logger';
-import { RunnerError } from '@/types/errors/RunnerError';
+import { CustomError } from '@/types/errors/CustomError';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
@@ -20,7 +20,7 @@ interface BuildDashboardOptions {
  * and letting the top-level .catch handle process exit.
  *
  * @param options - Optional configuration for output path
- * @throws {RunnerError} If the build process fails or an error occurs in the runner
+ * @throws {CustomError} If the build process fails or an error occurs in the runner
  */
 async function runBuildDashboard(options: BuildDashboardOptions = {}): Promise<void> {
   try {
@@ -29,37 +29,20 @@ async function runBuildDashboard(options: BuildDashboardOptions = {}): Promise<v
     await buildDashboard(outputPath);
   } catch (error) {
     // Create or enhance the error with full context
-    const customError = error instanceof RunnerError
-      ? error.updateContext({
-          operation: 'runBuildDashboard',
-          runner: 'build-dashboard-runner',
-          script: 'build-dashboard-runner.ts',
-          task: 'dashboard',
-          context: {
-            outputPath: options.outputPath
-          }
-        })
-      : RunnerError.fromError(error, {
-          errorType: 'runner_level_error',
-          operation: 'runBuildDashboard',
-          runner: 'build-dashboard-runner',
-          script: 'build-dashboard-runner.ts',
-          task: 'dashboard',
-          note: 'Error occurred at runner level',
-          context: {
-            outputPath: options.outputPath
-          }
-        });
+    const customError =
+      error instanceof CustomError
+        ? error.updateContext({
+            operation: 'runBuildDashboard',
+            detail: `Runner failed with output path: ${options.outputPath}`
+          })
+        : CustomError.fromError(error, {
+            category: 'script',
+            operation: 'runBuildDashboard',
+            detail: `Build dashboard runner failed with output path: ${options.outputPath}`
+          });
 
-    // Log error with full stack trace and context
-    logger.error('Build dashboard runner failed', {
-      error: customError,
-      script: customError.context.script,
-      task: customError.context.task,
-      timestamp: customError.context.timestamp,
-      configuration: customError.context.context,
-      stackTrace: customError.getFullStack()
-    });
+    // Log error with full context
+    logger.error('Build dashboard runner failed', customError);
 
     throw customError;
   }

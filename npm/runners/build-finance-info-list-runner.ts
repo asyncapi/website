@@ -3,7 +3,7 @@ import { resolve } from 'path';
 
 import { buildFinanceInfoList } from '@/scripts/finance';
 import { logger } from '@/scripts/helpers/logger';
-import { RunnerError } from '@/types/errors/RunnerError';
+import { CustomError } from '@/types/errors/CustomError';
 
 interface BuildFinanceInfoOptions {
   currentDir?: string;
@@ -28,7 +28,7 @@ const DEFAULT_OPTIONS = {
  * It handles errors, logging them with context and letting the top-level .catch handle process exit.
  *
  * @param options - Optional configuration for directories and year
- * @throws {RunnerError} If the build process fails or an error occurs in the runner
+ * @throws {CustomError} If the build process fails or an error occurs in the runner
  */
 async function runBuildFinanceInfoList(options: BuildFinanceInfoOptions = {}): Promise<void> {
   const config = { ...DEFAULT_OPTIONS, ...options };
@@ -48,16 +48,10 @@ async function runBuildFinanceInfoList(options: BuildFinanceInfoOptions = {}): P
         .sort((a, b) => parseFloat(b) - parseFloat(a));
 
       if (yearsList.length === 0) {
-        throw new RunnerError('No finance data found in the finance directory', {
-          errorType: 'runner_level_error',
+        throw new CustomError('No finance data found in the finance directory', {
+          category: 'script',
           operation: 'findLatestYear',
-          runner: 'build-finance-info-list-runner',
-          script: 'build-finance-info-list-runner.ts',
-          task: 'finance',
-          context: {
-            financeDir,
-            availableYears: yearsList
-          }
+          detail: `Finance directory: ${financeDir}, Available years: ${yearsList.join(', ')}`
         });
       }
 
@@ -74,43 +68,13 @@ async function runBuildFinanceInfoList(options: BuildFinanceInfoOptions = {}): P
       jsonDataDir: config.jsonDataDir
     });
   } catch (error) {
-    // Create or enhance the error with full context
-    const customError =
-      error instanceof RunnerError
-        ? error.updateContext({
-            operation: 'runBuildFinanceInfoList',
-            runner: 'build-finance-info-list-runner',
-            script: 'build-finance-info-list-runner.ts',
-            task: 'finance',
-            context: {
-              ...config,
-              targetYear: config.year,
-              financeDir
-            }
-          })
-        : RunnerError.fromError(error, {
-            errorType: 'runner_level_error',
-            operation: 'runBuildFinanceInfoList',
-            runner: 'build-finance-info-list-runner',
-            script: 'build-finance-info-list-runner.ts',
-            task: 'finance',
-            note: 'Error occurred at runner level',
-            context: {
-              ...config,
-              targetYear: config.year,
-              financeDir
-            }
-          });
-
-    // Log error with full stack trace and context
-    logger.error('Build finance info list runner failed', {
-      error: customError,
-      script: customError.context.script,
-      task: customError.context.task,
-      timestamp: customError.context.timestamp,
-      configuration: customError.context.context,
-      stackTrace: customError.getFullStack()
+    const customError = CustomError.fromError(error, {
+      category: 'script',
+      operation: 'runBuildFinanceInfoList',
+      detail: `Build finance info failed for year: ${config.year}, financeDir: ${financeDir}`
     });
+
+    logger.error('Build finance info list runner failed', customError);
 
     throw customError;
   }

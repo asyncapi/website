@@ -1,6 +1,8 @@
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
+import { CustomError } from '@/types/errors/CustomError';
+
 import { writeJSON } from '../helpers/readAndWriteJson';
 
 /**
@@ -19,18 +21,10 @@ export async function buildAdoptersList() {
   try {
     await writeJSON('config/adopters.yml', resolve(currentDirPath, '../../config', 'adopters.json'));
   } catch (err) {
-    const error = new Error(`Failed to build adopters list: ${(err as Error).message}`);
-
-    (error as any).context = {
+    throw CustomError.fromError(err, {
+      category: 'script',
       operation: 'buildAdoptersList',
-      stage: 'main_execution',
-      inputFile: 'config/adopters.yml',
-      outputFile: resolve(currentDirPath, '../../config', 'adopters.json'),
-      errorMessage: (err as Error).message,
-      errorStack: ((err as Error).stack || '').split('\n').slice(0, 3).join('\n'),
-      nestedContext: (err as any)?.context || null,
-      errorType: 'script_level_error',
-    };
-    throw error;
+      detail: `Failed to convert adopters.yml to JSON at ${resolve(currentDirPath, '../../config', 'adopters.json')}`
+    });
   }
 }

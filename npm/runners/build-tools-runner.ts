@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 
 import { logger } from '@/scripts/helpers/logger';
 import { combineTools } from '@/scripts/tools/combine-tools';
-import { RunnerError } from '@/types/errors/RunnerError';
+import { CustomError } from '@/types/errors/CustomError';
 import type { ToolsListObject } from '@/types/scripts/tools';
 
 const currentFilePath = fileURLToPath(import.meta.url);
@@ -25,7 +25,7 @@ interface BuildToolsOptions {
  * and letting the top-level .catch handle process exit.
  *
  * @param options - Optional configuration for tools data and output paths
- * @throws {RunnerError} If the build process fails or an error occurs in the runner
+ * @throws {CustomError} If the build process fails or an error occurs in the runner
  */
 async function runBuildTools(options: BuildToolsOptions = {}): Promise<void> {
   try {
@@ -43,43 +43,19 @@ async function runBuildTools(options: BuildToolsOptions = {}): Promise<void> {
   } catch (error) {
     // Create or enhance the error with full context
     const customError =
-      error instanceof RunnerError
+      error instanceof CustomError
         ? error.updateContext({
             operation: 'runBuildTools',
-            runner: 'build-tools-runner',
-            script: 'build-tools-runner.ts',
-            task: 'tools',
-            context: {
-              automatedToolsPath: options.automatedToolsPath,
-              manualToolsPath: options.manualToolsPath,
-              toolsPath: options.toolsPath,
-              tagsPath: options.tagsPath
-            }
+            detail: `Tools build failed with paths: automated=${options.automatedToolsPath}, manual=${options.manualToolsPath}`
           })
-        : RunnerError.fromError(error, {
-            errorType: 'runner_level_error',
+        : CustomError.fromError(error, {
+            category: 'script',
             operation: 'runBuildTools',
-            runner: 'build-tools-runner',
-            script: 'build-tools-runner.ts',
-            task: 'tools',
-            note: 'Error occurred at runner level',
-            context: {
-              automatedToolsPath: options.automatedToolsPath,
-              manualToolsPath: options.manualToolsPath,
-              toolsPath: options.toolsPath,
-              tagsPath: options.tagsPath
-            }
+            detail: `Build tools runner failed with paths: automated=${options.automatedToolsPath}, manual=${options.manualToolsPath}`
           });
 
-    // Log error with full stack trace and context
-    logger.error('Build tools runner failed', {
-      error: customError,
-      script: customError.context.script,
-      task: customError.context.task,
-      timestamp: customError.context.timestamp,
-      configuration: customError.context.context,
-      stackTrace: customError.getFullStack()
-    });
+    // Log error with full context
+    logger.error('Build tools runner failed', customError);
 
     throw customError;
   }

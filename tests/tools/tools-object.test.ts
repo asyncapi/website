@@ -115,9 +115,15 @@ describe('Tools Object', () => {
     await convertTools(mockData);
 
     expect(logger.warn).toHaveBeenCalledWith(
-      expect.stringContaining(
-        'Script is not failing, it is just dropping errors for further investigation.\nInvalid .asyncapi-tool file.'
-      )
+      'Invalid .asyncapi-tool file detected',
+      expect.objectContaining({
+        message: 'Script is not failing, it is just dropping errors for further investigation',
+        validationErrors: expect.any(Array),
+        tool: expect.objectContaining({
+          name: expect.stringContaining('.asyncapi-tool'),
+          repository: expect.any(String)
+        })
+      })
     );
   });
 

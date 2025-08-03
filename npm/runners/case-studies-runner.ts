@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 
 import { buildCaseStudiesList } from '@/scripts/casestudies';
 import { logger } from '@/scripts/helpers/logger';
-import { RunnerError } from '@/types/errors/RunnerError';
+import { CustomError } from '@/types/errors/CustomError';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
@@ -23,7 +23,7 @@ interface CaseStudiesOptions {
  * If an error occurs, it logs the error with context and lets the top-level .catch handle process exit.
  *
  * @param options - Optional configuration for case study directory and output path
- * @throws {RunnerError} If the build process fails or an error occurs in the runner
+ * @throws {CustomError} If the build process fails or an error occurs in the runner
  */
 async function runCaseStudies(options: CaseStudiesOptions = {}): Promise<void> {
   try {
@@ -32,48 +32,22 @@ async function runCaseStudies(options: CaseStudiesOptions = {}): Promise<void> {
 
     // Validate directory existence before proceeding
     if (!fs.existsSync(caseStudyDirectory)) {
-      throw new RunnerError(`Case-study directory missing: ${caseStudyDirectory}`, {
-        errorType: 'runner_level_error',
+      throw new CustomError(`Case-study directory missing: ${caseStudyDirectory}`, {
+        category: 'script',
         operation: 'validateCaseStudyDirectory',
-        runner: 'case-studies-runner',
-        script: 'case-studies-runner.ts',
-        task: 'case-studies',
-        context: {
-          caseStudyDirectory,
-          writeFilePath
-        }
+        detail: `Directory: ${caseStudyDirectory}, Output: ${writeFilePath}`
       });
     }
 
     await buildCaseStudiesList(caseStudyDirectory, writeFilePath);
   } catch (error) {
-    // If error is not already a RunnerError, wrap it
-    const customError =
-      error instanceof RunnerError
-        ? error
-        : RunnerError.fromError(error, {
-            errorType: 'runner_level_error',
-            operation: 'runCaseStudies',
-            runner: 'case-studies-runner',
-            script: 'case-studies-runner.ts',
-            task: 'case-studies',
-            note:
-              error instanceof RunnerError ? 'Error propagated from script level' : 'Error occurred at runner level',
-            // Preserve important configuration context
-            context: {
-              caseStudyDirectory: options.caseStudyDirectory,
-              outputPath: options.outputPath
-            }
-          });
-
-    logger.error('Case studies runner failed', {
-      error: customError,
-      script: customError.context.script,
-      task: customError.context.task,
-      timestamp: customError.context.timestamp,
-      // Log additional context for debugging
-      configuration: customError.context.context
+    const customError = CustomError.fromError(error, {
+      category: 'script',
+      operation: 'runCaseStudies',
+      detail: `Case studies build failed - directory: ${options.caseStudyDirectory}, output: ${options.outputPath}`
     });
+
+    logger.error('Case studies runner failed', customError);
 
     throw customError;
   }

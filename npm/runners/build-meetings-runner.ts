@@ -3,7 +3,7 @@ import { fileURLToPath } from 'url';
 
 import { buildMeetings } from '@/scripts/build-meetings';
 import { logger } from '@/scripts/helpers/logger';
-import { RunnerError } from '@/types/errors/RunnerError';
+import { CustomError } from '@/types/errors/CustomError';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
@@ -20,7 +20,7 @@ interface BuildMeetingsOptions {
  * and letting the top-level .catch handle process exit.
  *
  * @param options - Optional configuration for output path
- * @throws {RunnerError} If the build process fails or an error occurs in the runner
+ * @throws {CustomError} If the build process fails or an error occurs in the runner
  */
 async function runBuildMeetings(options: BuildMeetingsOptions = {}): Promise<void> {
   try {
@@ -28,39 +28,13 @@ async function runBuildMeetings(options: BuildMeetingsOptions = {}): Promise<voi
 
     await buildMeetings(outputPath);
   } catch (error) {
-    // Create or enhance the error with full context
-    const customError =
-      error instanceof RunnerError
-        ? error.updateContext({
-            operation: 'runBuildMeetings',
-            runner: 'build-meetings-runner',
-            script: 'build-meetings-runner.ts',
-            task: 'meetings',
-            context: {
-              outputPath: options.outputPath
-            }
-          })
-        : RunnerError.fromError(error, {
-            errorType: 'runner_level_error',
-            operation: 'runBuildMeetings',
-            runner: 'build-meetings-runner',
-            script: 'build-meetings-runner.ts',
-            task: 'meetings',
-            note: 'Error occurred at runner level',
-            context: {
-              outputPath: options.outputPath
-            }
-          });
-
-    // Log error with full stack trace and context
-    logger.error('Build meetings runner failed', {
-      error: customError,
-      script: customError.context.script,
-      task: customError.context.task,
-      timestamp: customError.context.timestamp,
-      configuration: customError.context.context,
-      stackTrace: customError.getFullStack()
+    const customError = CustomError.fromError(error, {
+      category: 'script',
+      operation: 'runBuildMeetings',
+      detail: `Build meetings failed with output path: ${options.outputPath}`
     });
+
+    logger.error('Build meetings runner failed', customError);
 
     throw customError;
   }

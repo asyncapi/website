@@ -4,6 +4,7 @@ import os from 'os';
 import path, { resolve } from 'path';
 
 import { buildTools } from '../scripts/build-tools';
+import { CustomError } from '../types/errors/CustomError';
 import { manualTools, mockConvertedData, mockExtractData, tagsData } from './fixtures/buildToolsData';
 
 jest.mock('axios');
@@ -80,7 +81,7 @@ describe('buildTools', () => {
   it('should handle getData error', async () => {
     mockedAxios.get.mockRejectedValue(new Error('Extract error'));
 
-    await expect(buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath)).rejects.toThrow('Extract error');
+    await expect(buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath)).rejects.toThrow(CustomError);
   });
 
   it('should handle file write errors', async () => {
@@ -88,6 +89,6 @@ describe('buildTools', () => {
 
     const invalidPath = path.resolve(os.tmpdir(), 'invalid_dir', 'tools.json');
 
-    await expect(buildTools(invalidPath, manualToolsPath, toolsPath, tagsPath)).rejects.toThrow(/ENOENT|EACCES/);
+    await expect(buildTools(invalidPath, manualToolsPath, toolsPath, tagsPath)).rejects.toThrow(CustomError);
   });
 });

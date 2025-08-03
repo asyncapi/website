@@ -2,8 +2,7 @@ import type { PathLike } from 'fs';
 import fs from 'fs';
 import path from 'path';
 
-const SRC_DIR = 'markdown';
-const TARGET_DIR = 'pages';
+import { CustomError } from '@/types/errors/CustomError';
 
 const capitalizeTags = ['table', 'tr', 'td', 'th', 'thead', 'tbody'];
 
@@ -17,18 +16,11 @@ export function ensureDirectoryExists(directory: PathLike) {
       fs.mkdirSync(directory, { recursive: true });
     }
   } catch (err) {
-    const error = new Error(`Failed to ensure directory exists: ${(err as Error).message}`);
-
-    (error as any).context = {
+    throw CustomError.fromError(err, {
+      category: 'script',
       operation: 'ensureDirectoryExists',
-      stage: 'main_execution',
-      directory,
-      errorMessage: (err as Error).message,
-      errorStack: ((err as Error).stack || '').split('\n').slice(0, 3).join('\n'),
-      nestedContext: (err as any)?.context || null,
-      errorType: 'script_level_error',
-    };
-    throw error;
+      detail: `Failed to ensure directory exists: ${directory}`
+    });
   }
 }
 
@@ -36,13 +28,14 @@ export function ensureDirectoryExists(directory: PathLike) {
  * Capitalizes the first letter of JSX tag names in the provided content if they are in a predefined list.
  *
  * This function scans the input string for opening and closing JSX tags using a regular expression.
- * If a tag's lowercase name is found in the configured list of tags to capitalize, its first character is converted to uppercase.
+ * If a tag's lowercase name is found in the configured list of tags to capitalize,
+ * its first character is converted to uppercase.
  *
  * @param content - The string containing JSX elements.
  * @returns The updated content with designated JSX tag names capitalized.
  */
 export function capitalizeJsxTags(content: string): string {
-  return content.replace(/<\/?(\w+)/g, function (match: string, letter: string): string {
+  return content.replace(/<\/?(\w+)/g, (match: string, letter: string): string => {
     if (capitalizeTags.includes(letter.toLowerCase())) {
       return `<${match[1] === '/' ? '/' : ''}${letter[0].toUpperCase()}${letter.slice(1)}`;
     }
@@ -69,13 +62,13 @@ export function copyAndRenameFiles(srcDir: string, targetDir: string) {
       const targetPath = path.join(targetDir, entry.name);
 
       if (entry.isDirectory()) {
-      // If entry is a directory, create it in target directory and recurse
+        // If entry is a directory, create it in target directory and recurse
         if (!fs.existsSync(targetPath)) {
           fs.mkdirSync(targetPath);
         }
         copyAndRenameFiles(srcPath, targetPath);
       } else if (entry.isFile()) {
-      // Read file content
+        // Read file content
         let content = fs.readFileSync(srcPath, 'utf8');
 
         content = content.replace(/{/g, '{');
@@ -84,28 +77,20 @@ export function copyAndRenameFiles(srcDir: string, targetDir: string) {
 
         content = capitalizeJsxTags(content);
 
-      // Write content to target directory
+        // Write content to target directory
         fs.writeFileSync(targetPath, content, 'utf8');
 
-      // If file has .md extension, rename it to .mdx
+        // If file has .md extension, rename it to .mdx
         if (path.extname(targetPath) === '.md') {
           fs.renameSync(targetPath, `${targetPath.slice(0, -3)}.mdx`);
         }
       }
     });
   } catch (err) {
-    const error = new Error(`Failed to copy and rename files: ${(err as Error).message}`);
-
-    (error as any).context = {
+    throw CustomError.fromError(err, {
+      category: 'script',
       operation: 'copyAndRenameFiles',
-      stage: 'main_execution',
-      srcDir,
-      targetDir,
-      errorMessage: (err as Error).message,
-      errorStack: ((err as Error).stack || '').split('\n').slice(0, 3).join('\n'),
-      nestedContext: (err as any)?.context || null,
-      errorType: 'script_level_error'
-    };
-    throw error;
+      detail: `Failed to copy and rename files from ${srcDir} to ${targetDir}`
+    });
   }
 }

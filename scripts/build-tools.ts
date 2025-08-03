@@ -1,5 +1,7 @@
 import fs from 'fs-extra';
 
+import { CustomError } from '@/types/errors/CustomError';
+
 import { combineTools } from './tools/combine-tools';
 import { getData } from './tools/extract-tools-github';
 import { convertTools } from './tools/tools-object';
@@ -16,7 +18,7 @@ import { convertTools } from './tools/tools-object';
  * @param manualToolsPath - The file path from which the manual tools data is read.
  * @param toolsPath - The file path where the combined tools data will be written.
  * @param tagsPath - The file path where the tags data will be written.
- * @throws {Error} If an error occurs during the build process.
+ * @throws {CustomError} If an error occurs during the build process.
  */
 export async function buildTools(
   automatedToolsPath: string,
@@ -34,20 +36,10 @@ export async function buildTools(
 
     await combineTools(automatedTools, manualTools, toolsPath, tagsPath);
   } catch (err) {
-    const error = new Error(`Failed to build tools: ${(err as Error).message}`);
-
-    (error as any).context = {
+    throw CustomError.fromError(err, {
+      category: 'script',
       operation: 'buildTools',
-      stage: 'main_execution',
-      automatedToolsPath,
-      manualToolsPath,
-      toolsPath,
-      tagsPath,
-      errorMessage: (err as Error).message,
-      errorStack: ((err as Error).stack || '').split('\n').slice(0, 3).join('\n'),
-      nestedContext: (err as any)?.context || null,
-      errorType: 'script_level_error'
-    };
-    throw error;
+      detail: `Failed to build tools - automated: ${automatedToolsPath}, manual: ${manualToolsPath}, output: ${toolsPath}`
+    });
   }
 }
