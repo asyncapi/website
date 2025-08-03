@@ -8,6 +8,7 @@ import { defaultLanguage, i18nPaths, languages } from '@/utils/i18n';
 
 import { SearchButton } from '../AlgoliaSearch';
 import GithubButton from '../buttons/GithubButton';
+import DarkModeToggle from '../DarkModeToggle';
 import { isMobileDevice } from '../helpers/is-mobile';
 import { useOutsideClick } from '../helpers/use-outside-click';
 import IconLoupe from '../icons/Loupe';
@@ -161,7 +162,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
     <>
       <div
         // eslint-disable-next-line max-len
-        className={`bg-white/60 transition-all duration-500 ease-in-out    backdrop-blur-lg z-100 
+        className={`bg-white/60 transition-all duration-500 ease-in-out dark:bg-darkTheme-card lg:rounded-xl  backdrop-blur-lg z-100 
           ${isScrolled ? 'mx-auto p-2 lg:p-1 lg:m1-1 shadow-md ring-1 ring-black/5  max-w-[76rem] lg:rounded-xl' : ' w-full mt-0 p-4  max-w-[76rem] rounded-none'} ${className}`}
       >
         {/* <div
@@ -182,7 +183,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
 
           <div className='-my-2 -mr-2 flex flex-row items-center justify-center lg:hidden' data-testid='Navbar-search'>
             <SearchButton
-              className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 '
+              className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 dark:text-darkTheme-heading transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 '
               aria-label='Open Search'
             >
               <IconLoupe />
@@ -242,7 +243,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
 
             <div className='justify-content flex flex-row items-center'>
               <SearchButton
-                className='mr-2 flex items-center space-x-2 rounded-md p-2 text-left text-zinc-700 text-opacity-75 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-800 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
+                className='mr-2 flex items-center space-x-2 rounded-md p-2 text-left text-zinc-700 dark:text-darkTheme-text dark:hover:text-darkTheme-heading  text-opacity-75 transition duration-150 ease-in-out hover:bg-gray-100 dark:hover:bg-darkTheme-border hover:text-gray-800 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
                 aria-label='Open Search'
               >
                 <IconLoupe />
@@ -264,6 +265,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
                 className='ml-2 py-2'
                 inNav={true}
               />
+              <DarkModeToggle />
             </div>
           </nav>
         </div>
