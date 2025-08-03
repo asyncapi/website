@@ -23,7 +23,7 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Cypress run
         uses: cypress-io/github-action@6c143abc292aa835d827652c2ea025d098311070
