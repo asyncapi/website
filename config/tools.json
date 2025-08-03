@@ -774,6 +774,36 @@
         }
       },
       {
+        "title": "The Codegen Project",
+        "description": "Stop wasting time on manual code. Generate Payloads, parameters, headers, types, channel wrappers, and more from your AsyncAPI document! Works with Kafka, NATS, MQTT, event-source, AMQP, HTTP Client!",
+        "links": {
+          "websiteUrl": "https://the-codegen-project.org/",
+          "docsUrl": "https://the-codegen-project.org//docs",
+          "repoUrl": "https://github.com/the-codegen-project/cli/"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "TypeScript",
+              "color": "bg-[#7DBCFE]",
+              "borderColor": "border-[#2C78C7]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "TypeScript",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "code-generator",
+            "cli"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "ZenWave SDK",
         "description": "DDD and API-First for Event-Driven Microservices",
         "links": {
@@ -2593,7 +2623,7 @@
         "title": "asyncapi-preview",
         "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
         "links": {
-          "repoUrl": "https://github.com/Savio629/testing2"
+          "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
         },
         "filters": {
           "language": [],
@@ -2619,7 +2649,7 @@
         "title": "asyncapi-preview",
         "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
         "links": {
-          "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
+          "repoUrl": "https://github.com/Savio629/testing2"
         },
         "filters": {
           "language": [],
