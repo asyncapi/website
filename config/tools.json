@@ -1202,6 +1202,38 @@
         }
       },
       {
+        "title": "MessageFlow",
+        "description": "Generate system-architecture documentation and diagrams from AsyncAPI specifications.",
+        "links": {
+          "repoUrl": "https://github.com/holydocs/messageflow"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "Go/Golang",
+              "color": "bg-[#8ECFDF]",
+              "borderColor": "border-[#00AFD9]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "Go",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "Kubernetes-native",
+              "color": "bg-[#D7C7F2]",
+              "borderColor": "border-[#A387D2]"
+            }
+          ],
+          "categories": [
+            "documentation-generator"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "Springwolf",
         "description": "Automated documentation for async APIs built with Spring Boot. Like Springfox for AsyncAPI. Auto-generates an AsyncAPI document and a web UI.",
         "links": {
@@ -2766,9 +2798,9 @@
       },
       {
         "title": "HTML Template",
-        "description": "HTML template for AsyncAPI Generator. Use it to generate a static docs. It is using AsyncAPI React component under the hood.",
+        "description": null,
         "links": {
-          "repoUrl": "https://github.com/asyncapi/html-template"
+          "repoUrl": "https://github.com/dipaksodani/async-gen"
         },
         "filters": {
           "language": [
@@ -2793,9 +2825,9 @@
       },
       {
         "title": "HTML Template",
-        "description": null,
+        "description": "HTML template for AsyncAPI Generator. Use it to generate a static docs. It is using AsyncAPI React component under the hood.",
         "links": {
-          "repoUrl": "https://github.com/dipaksodani/async-gen"
+          "repoUrl": "https://github.com/asyncapi/html-template"
         },
         "filters": {
           "language": [
