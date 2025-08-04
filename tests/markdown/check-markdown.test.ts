@@ -175,6 +175,22 @@ describe('Frontmatter Validator', () => {
     mockReaddir.mockRestore(); // Restore the mock to prevent affecting other tests
   });
 
+  it('should handle main function non-Error exceptions', async () => {
+    const mockReaddir = jest.spyOn(fs, 'readdir').mockRejectedValue('String error');
+
+    await main();
+
+    expect(mockProcessExit).toHaveBeenCalledWith(1);
+    expect(logger.error).toHaveBeenCalledWith(
+      'Failed to validate markdown files',
+      expect.objectContaining({
+        error: expect.any(Error)
+      })
+    );
+
+    mockReaddir.mockRestore();
+  });
+
   it('should handle successful main function execution', async () => {
     await main();
 

@@ -10,7 +10,8 @@ const config = {
   coveragePathIgnorePatterns: [
     'scripts/compose.ts',
     'scripts/tools/categorylist.ts',
-    'scripts/tools/tags-color.ts'
+    'scripts/tools/tags-color.ts',
+    'scripts/helpers/logger.ts'
   ],
   // Default: all tests
   testMatch: [

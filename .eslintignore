@@ -4,6 +4,7 @@ out/
 public/
 *.config.js
 *.config.mjs
+*.config.cts
 .storybook/
 coverage/
 netlify/

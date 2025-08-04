@@ -145,4 +145,61 @@ describe('buildMeetings', () => {
       process.env.CALENDAR_ID = originalCalendarId;
     }
   });
+
+  it('should handle events without extendedProperties', async () => {
+    const mockEventsWithoutExtended = [
+      {
+        summary: 'Simple Meeting',
+        htmlLink: 'https://www.google.com/calendar/event?eid=simple',
+        start: { dateTime: '2024-02-20T16:00:00.000Z' }
+        // No extendedProperties
+      }
+    ];
+
+    mockCalendar.mockResolvedValue({ data: { items: mockEventsWithoutExtended } });
+
+    await buildMeetings(outputFilePath);
+
+    const fileContent = readFileSync(outputFilePath, 'utf8');
+    const parsedContent = JSON.parse(fileContent);
+
+    expect(parsedContent).toEqual([
+      {
+        title: 'Simple Meeting',
+        calLink: 'https://www.google.com/calendar/event?eid=simple',
+        date: '2024-02-20T16:00:00.000Z'
+      }
+    ]);
+  });
+
+  it('should handle events with extendedProperties but missing ISSUE_ID or BANNER', async () => {
+    const mockEventsWithPartialExtended = [
+      {
+        summary: 'Partial Extended Meeting',
+        htmlLink: 'https://www.google.com/calendar/event?eid=partial',
+        start: { dateTime: '2024-02-20T16:00:00.000Z' },
+        extendedProperties: {
+          private: {
+            // ISSUE_ID is missing, BANNER is missing
+          }
+        }
+      }
+    ];
+
+    mockCalendar.mockResolvedValue({ data: { items: mockEventsWithPartialExtended } });
+
+    await buildMeetings(outputFilePath);
+
+    const fileContent = readFileSync(outputFilePath, 'utf8');
+    const parsedContent = JSON.parse(fileContent);
+
+    expect(parsedContent).toEqual([
+      {
+        title: 'Partial Extended Meeting',
+        calLink: 'https://www.google.com/calendar/event?eid=partial',
+        url: 'https://github.com/asyncapi/community/issues/undefined',
+        date: '2024-02-20T16:00:00.000Z'
+      }
+    ]);
+  });
 });

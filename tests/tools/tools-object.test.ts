@@ -234,4 +234,36 @@ describe('Tools Object', () => {
     expect(result.Category1.toolsList).toHaveLength(1);
     expect(result.Category1.toolsList[0].title).toBe('Duplicate Category Tool');
   });
+
+  it('should handle individual tool processing errors', async () => {
+    const mockData = createMockData([{ name: '.asyncapi-tool', repoName: 'error-repo' }]);
+
+    // Mock axios to throw an error
+    axiosMock.get.mockRejectedValue(new Error('Network error'));
+
+    await expect(convertTools(mockData)).rejects.toThrow('Network error');
+
+    expect(logger.error).toHaveBeenCalledWith(
+      'Error processing individual tool',
+      expect.objectContaining({
+        error: expect.any(Error),
+        toolName: '.asyncapi-tool',
+        repository: 'asyncapi/error-repo'
+      })
+    );
+  });
+
+  it('should handle overall convertTools processing errors', async () => {
+    // Mock data processing to cause a general error in the outer catch block
+    const mockData = null as any; // This will cause an error
+
+    await expect(convertTools(mockData)).rejects.toThrow();
+
+    expect(logger.error).toHaveBeenCalledWith(
+      'Error processing tools',
+      expect.objectContaining({
+        error: expect.any(Error)
+      })
+    );
+  });
 });

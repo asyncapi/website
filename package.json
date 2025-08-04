@@ -9,6 +9,7 @@
     "build": "npm run build-scripts && next build",
     "test:e2e": "npx cypress run",
     "test": "jest --passWithNoTests",
+    "test:coverage": "jest --coverage",
     "test:unit": "jest --passWithNoTests --testMatch=\"**/tests/**/*.test.*\" --testPathIgnorePatterns=\"integrationTests|netlify\"",
     "test:integration": "jest --passWithNoTests --testMatch=\"**/integrationTests/**/*.test.*\"",
     "build:pages": "tsx npm/runners/build-pages-runner.ts && npm run format:mdx",
