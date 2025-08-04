@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+public/
+*.config.js
+*.config.mjs
+*.config.cts
+.storybook/
+coverage/
+netlify/
+cypress/
+dist/
+build/
+next-env.d.ts

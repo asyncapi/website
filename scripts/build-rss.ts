@@ -2,6 +2,7 @@ import fs from 'fs/promises';
 import he from 'he'; // Updated import
 import json2xml from 'jgexml/json2xml';
 
+import { CustomError } from '@/types/errors/CustomError';
 import type { Details, Result } from '@/types/scripts/build-posts-list';
 import type { BlogPostTypes, RSS, RSSItemType } from '@/types/scripts/build-rss';
 
@@ -29,7 +30,7 @@ async function getAllPosts() {
  * @param desc - A description of the RSS feed.
  * @param outputPath - The file path where the generated RSS feed should be saved.
  *
- * @throws {Error} If any blog post is missing required fields or if an error occurs during the RSS feed generation
+ * @throws {CustomError} If any blog post is missing required fields or if an error occurs during the RSS feed generation
  * or file writing process.
  */
 export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: string, outputPath: string) {
@@ -48,7 +49,11 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
       return i2Date.getTime() - i1Date.getTime();
     });
     if (missingDatePosts.length > 0) {
-      throw new Error(`Missing date in posts: ${missingDatePosts.map((p) => p.title || p.slug).join(', ')}`);
+      throw new CustomError(`Missing date in posts: ${missingDatePosts.map((p) => p.title || p.slug).join(', ')}`, {
+        category: 'validation',
+        operation: 'rssFeed',
+        detail: `Missing date in ${missingDatePosts.length} posts for RSS feed: ${rssTitle}`
+      });
     }
 
     const base = 'https://www.asyncapi.com';
@@ -77,7 +82,11 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
     const invalidPosts = posts.filter((post) => !post.title || !post.slug || !post.excerpt || !post.date);
 
     if (invalidPosts.length > 0) {
-      throw new Error(`Missing required fields in posts: ${invalidPosts.map((p) => p.title || p.slug).join(', ')}`);
+      throw new CustomError('Missing required fields in posts', {
+        category: 'validation',
+        operation: 'rssFeed',
+        detail: `Missing required fields in ${invalidPosts.length} posts: ${invalidPosts.map((p) => p.title || p.slug).join(', ')}`
+      });
     }
     const mimeTypes: {
       [key: string]: string;
@@ -127,6 +136,16 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
 
     await fs.writeFile(`./public/${outputPath}`, xml, 'utf8');
   } catch (err) {
-    throw new Error(`Failed to generate RSS feed: ${(err as Error).message}`);
+    // Re-throw CustomError instances as-is
+    if (err instanceof CustomError) {
+      throw err;
+    }
+
+    // Wrap other errors
+    throw CustomError.fromError(err, {
+      category: 'script',
+      operation: 'rssFeed',
+      detail: `Failed to generate RSS feed - type: ${type}, title: ${rssTitle}, output: ${outputPath}`
+    });
   }
 }

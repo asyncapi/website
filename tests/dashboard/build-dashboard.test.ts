@@ -1,5 +1,5 @@
 import { graphql } from '@octokit/graphql';
-import { mkdirSync, promises as fs, rmSync } from 'fs-extra';
+import { promises as fs, rmSync } from 'fs-extra';
 import os from 'os';
 import { resolve } from 'path';
 
@@ -15,6 +15,7 @@ import {
   writeToFile
 } from '../../scripts/dashboard/build-dashboard';
 import { logger } from '../../scripts/helpers/logger';
+import { CustomError } from '../../types/errors/CustomError';
 import {
   discussionWithMoreComments,
   fullDiscussionDetails,
@@ -35,9 +36,9 @@ describe('GitHub Discussions Processing', () => {
   let consoleErrorSpy: jest.SpyInstance;
   let consoleLogSpy: jest.SpyInstance;
 
-  beforeAll(() => {
+  beforeAll(async () => {
     tempDir = resolve(os.tmpdir(), 'test-config');
-    mkdirSync(tempDir);
+    await fs.mkdir(tempDir, { recursive: true });
     process.env.GITHUB_TOKEN = 'test-token';
   });
 
@@ -45,10 +46,11 @@ describe('GitHub Discussions Processing', () => {
     rmSync(tempDir, { recursive: true, force: true });
   });
 
-  beforeEach(() => {
+  beforeEach(async () => {
     jest.resetAllMocks();
     consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
     consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
+    await fs.mkdir(tempDir, { recursive: true });
   });
 
   afterEach(() => {
@@ -119,8 +121,8 @@ describe('GitHub Discussions Processing', () => {
 
     const filePath = resolve(tempDir, 'error-output.json');
 
-    await start(filePath);
-    expect(logger.error).toHaveBeenCalledWith('There were some issues parsing data from github.');
+    await expect(start(filePath)).rejects.toThrow(CustomError);
+    expect(logger.error).toHaveBeenCalledWith('Failed to build dashboard', expect.any(CustomError));
   });
 
   it('should successfully process and write data', async () => {
@@ -249,13 +251,9 @@ describe('GitHub Discussions Processing', () => {
   });
 
   it('should handle parsing errors in processHotDiscussions', async () => {
-    const localConsoleErrorSpy = jest.spyOn(console, 'error');
+    await expect(getHotDiscussions([undefined] as any)).rejects.toThrow(CustomError);
 
-    await expect(getHotDiscussions([undefined] as any)).rejects.toThrow();
-
-    expect(logger.error).toHaveBeenCalledWith('there were some issues while parsing this item: undefined');
-
-    localConsoleErrorSpy.mockRestore();
+    expect(logger.error).toHaveBeenCalledWith('Failed to process hot discussion', expect.any(CustomError));
   });
 
   it('should handle write failures gracefully', async () => {
@@ -268,9 +266,9 @@ describe('GitHub Discussions Processing', () => {
 
     // getDiscussionsById and getDiscussions
     // @ts-ignore, ignore the typescript error for this test
-    await expect(getDiscussionByID()).rejects.toThrow('GitHub token is not set in environment variables');
+    await expect(getDiscussionByID()).rejects.toThrow(CustomError);
     // @ts-ignore, ignore the typescript error for this test
-    await expect(getDiscussions()).rejects.toThrow('GitHub token is not set in environment variables');
+    await expect(getDiscussions()).rejects.toThrow(CustomError);
 
     process.env.GITHUB_TOKEN = 'test-token';
   });

@@ -1,4 +1,3 @@
-import type { JSONSchemaType } from 'ajv';
 import fs from 'fs';
 import path from 'path';
 
@@ -32,7 +31,27 @@ jest.mock('../../scripts/helpers/logger', () => ({
 
 jest.mock('ajv', () => {
   return jest.fn().mockImplementation(() => ({
-    compile: jest.fn().mockImplementation(() => (data: JSONSchemaType<any>) => data.title !== 'Invalid Tool')
+    compile: jest.fn().mockImplementation(() => {
+      /** Mock validation function that simulates Ajv's validate behavior */
+      function validate(data: any): boolean {
+        const isValid = data.title !== 'Invalid Tool';
+
+        if (!isValid) {
+          (validate as any).errors = [
+            {
+              instancePath: '/title',
+              schemaPath: '#/properties/title',
+              keyword: 'invalid',
+              message: 'Invalid tool title'
+            }
+          ];
+        }
+
+        return isValid;
+      }
+
+      return validate;
+    })
   }));
 });
 
@@ -142,12 +161,15 @@ describe('combineTools function', () => {
   it('should log validation errors to console.error', async () => {
     await combineTools(automatedToolsT4, manualToolsT4, toolsPath, tagsPath);
 
-    const { message, tool, source, note } = JSON.parse(loggerErrorMock.mock.calls[0][0]);
-
-    expect(message).toBe('Tool validation failed');
-    expect(tool).toBe('Invalid Tool');
-    expect(source).toBe('manual-tools.json');
-    expect(note).toBe('Script continues execution, error logged for investigation');
+    expect(loggerErrorMock).toHaveBeenCalledWith(
+      'Tool validation failed',
+      expect.objectContaining({
+        tool: 'Invalid Tool',
+        source: 'manual-tools.json',
+        errors: expect.any(Array),
+        note: 'Script continues execution, error logged for investigation'
+      })
+    );
 
     expect(fs.existsSync(toolsPath)).toBe(true);
     expect(fs.existsSync(tagsPath)).toBe(true);
@@ -291,8 +313,9 @@ describe('combineTools function', () => {
 
     await combineTools(noTitleTools, {}, toolsPath, tagsPath);
     expect(logger.error).toHaveBeenCalledWith(
+      'Tool title is missing during sort',
       expect.objectContaining({
-        message: 'Tool title is missing during sort',
+        detail: expect.any(Object),
         source: 'combine-tools.ts'
       })
     );
