@@ -118,6 +118,23 @@ describe('buildMeetings', () => {
     await expect(buildMeetings('/path/to/write')).rejects.toThrow(CustomError);
   });
 
+  it('should throw an error if start.dateTime is missing and summary is falsy', async () => {
+    mockCalendar.mockResolvedValueOnce({
+      data: {
+        items: [
+          {
+            summary: null, // falsy summary to test the || 'Unknown event' branch
+            htmlLink: 'http://example.com/event',
+            // start.dateTime is intentionally missing to trigger the error
+            start: {}
+          }
+        ]
+      }
+    });
+
+    await expect(buildMeetings('/path/to/write')).rejects.toThrow(CustomError);
+  });
+
   it('should throw an error if CALENDAR_SERVICE_ACCOUNT is not set', async () => {
     // Temporarily remove the environment variable
     const originalServiceAccount = process.env.CALENDAR_SERVICE_ACCOUNT;
@@ -167,6 +184,8 @@ describe('buildMeetings', () => {
       {
         title: 'Simple Meeting',
         calLink: 'https://www.google.com/calendar/event?eid=simple',
+        url: null,
+        banner: null,
         date: '2024-02-20T16:00:00.000Z'
       }
     ]);
@@ -197,7 +216,104 @@ describe('buildMeetings', () => {
       {
         title: 'Partial Extended Meeting',
         calLink: 'https://www.google.com/calendar/event?eid=partial',
-        url: 'https://github.com/asyncapi/community/issues/undefined',
+        url: null, // Should be null when ISSUE_ID is missing
+        banner: null, // Should be null when BANNER is missing
+        date: '2024-02-20T16:00:00.000Z'
+      }
+    ]);
+  });
+
+  it('should handle events with null or undefined extendedProperties.private', async () => {
+    const mockEventsWithNullPrivate = [
+      {
+        summary: 'Meeting Without Private Properties',
+        htmlLink: 'https://www.google.com/calendar/event?eid=no-private',
+        start: { dateTime: '2024-02-20T16:00:00.000Z' },
+        extendedProperties: {
+          private: null
+        }
+      }
+    ];
+
+    mockCalendar.mockResolvedValue({ data: { items: mockEventsWithNullPrivate } });
+
+    await buildMeetings(outputFilePath);
+
+    const fileContent = readFileSync(outputFilePath, 'utf8');
+    const parsedContent = JSON.parse(fileContent);
+
+    expect(parsedContent).toEqual([
+      {
+        title: 'Meeting Without Private Properties',
+        calLink: 'https://www.google.com/calendar/event?eid=no-private',
+        url: null,
+        banner: null,
+        date: '2024-02-20T16:00:00.000Z'
+      }
+    ]);
+  });
+
+  it('should handle events with extendedProperties.private containing falsy ISSUE_ID', async () => {
+    const mockEventsWithFalsyIssueId = [
+      {
+        summary: 'Meeting With Falsy Issue ID',
+        htmlLink: 'https://www.google.com/calendar/event?eid=falsy-issue',
+        start: { dateTime: '2024-02-20T16:00:00.000Z' },
+        extendedProperties: {
+          private: {
+            ISSUE_ID: '', // falsy but private object exists
+            BANNER: 'https://example.com/banner.jpg'
+          }
+        }
+      }
+    ];
+
+    mockCalendar.mockResolvedValue({ data: { items: mockEventsWithFalsyIssueId } });
+
+    await buildMeetings(outputFilePath);
+
+    const fileContent = readFileSync(outputFilePath, 'utf8');
+    const parsedContent = JSON.parse(fileContent);
+
+    expect(parsedContent).toEqual([
+      {
+        title: 'Meeting With Falsy Issue ID',
+        calLink: 'https://www.google.com/calendar/event?eid=falsy-issue',
+        url: null, // Should be null when ISSUE_ID is empty string
+        banner: 'https://example.com/banner.jpg',
+        date: '2024-02-20T16:00:00.000Z'
+      }
+    ]);
+  });
+
+  it('should handle events with extendedProperties.private containing falsy BANNER', async () => {
+    const mockEventsWithFalsyBanner = [
+      {
+        summary: 'Meeting With Falsy Banner',
+        htmlLink: 'https://www.google.com/calendar/event?eid=falsy-banner',
+        start: { dateTime: '2024-02-20T16:00:00.000Z' },
+        extendedProperties: {
+          private: {
+            ISSUE_ID: '456',
+            BANNER: '' // falsy but private object exists
+          }
+        }
+      }
+    ];
+
+    mockCalendar.mockResolvedValue({ data: { items: mockEventsWithFalsyBanner } });
+
+    await buildMeetings(outputFilePath);
+
+    const fileContent = readFileSync(outputFilePath, 'utf8');
+    const parsedContent = JSON.parse(fileContent);
+
+    expect(parsedContent).toEqual([
+      {
+        title: 'Meeting With Falsy Banner',
+        calLink: 'https://www.google.com/calendar/event?eid=falsy-banner',
+        url: 'https://github.com/asyncapi/community/issues/456',
+        banner: null, // Should be null when BANNER is empty string (due to || null)
         date: '2024-02-20T16:00:00.000Z'
       }
     ]);

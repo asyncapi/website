@@ -93,10 +93,10 @@ export async function buildMeetings(writePath: string) {
       return {
         title: e.summary,
         calLink: e.htmlLink,
-        url:
-          e.extendedProperties?.private &&
-          `https://github.com/asyncapi/community/issues/${e.extendedProperties.private.ISSUE_ID}`,
-        banner: e.extendedProperties?.private && e.extendedProperties.private.BANNER,
+        url: e.extendedProperties?.private?.ISSUE_ID
+          ? `https://github.com/asyncapi/community/issues/${e.extendedProperties.private.ISSUE_ID}`
+          : null,
+        banner: e.extendedProperties?.private?.BANNER || null,
         date: new Date(e.start.dateTime)
       };
     });

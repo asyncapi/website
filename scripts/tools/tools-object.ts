@@ -155,22 +155,28 @@ async function convertTools(data: ToolsData) {
             }
           }
         } catch (err) {
+          const errorObj = err instanceof Error ? err : new Error(String(err));
+
           logger.error('Error processing individual tool', {
-            error: err instanceof Error ? err : new Error(String(err)),
+            error: errorObj,
             toolName: tool.name,
             repository: tool.repository?.full_name
           });
-          throw err;
+
+          // Don't throw here, just log and continue with other tools
         }
       })
     );
 
     return finalToolsObject;
   } catch (err: unknown) {
+    const errorObj = err instanceof Error ? err : new Error(String(err));
+
     logger.error('Error processing tools', {
-      error: err instanceof Error ? err : new Error(String(err))
+      error: errorObj
     });
-    throw err;
+
+    throw errorObj;
   }
 }
 
