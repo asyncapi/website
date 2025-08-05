@@ -52,7 +52,7 @@ We had two amazing conferences in two new cities, one in Munich, Germany, and th
 
 We had a 2-day event in Munich, Germany. The most important thing we learned is that AsyncAPI is used in production by insurance giant Allianz, and that the whole event-driven topology at retailers like Lidl and Kaufland (under Schwarz Group) is managed with AsyncAPI.
 
-The first day, what became our tradition, we started with the booth, where we could provide vendor-neutral consulting for the API community. The booth was there under the name `API Standards` with people not only from AsyncAPI but also JSON Schema, OpenAPI, and Arazzo.  In case you want to learn more about the booth, how we organize it, and where, join the [API Standards mailing group](https://groups.io/g/api-standards).
+The first day, what became our tradition, we started with the booth, where we could provide vendor-neutral consulting for the API community. The booth was there under the name `API Standards` with people not only from AsyncAPI but also JSON Schema, OpenAPI, and Arazzo. In case you want to learn more about the booth, how we organize it, and where, join the [API Standards mailing group](https://groups.io/g/api-standards).
 
 <Figure
   src="/img/posts/lagos-conf/booth-munich.webp"
