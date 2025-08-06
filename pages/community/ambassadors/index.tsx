@@ -64,7 +64,7 @@ export default function Index() {
             <Button
               className='mt-10 block text-center focus:outline-none md:inline-block'
               text='Become an AsyncAPI Ambassador'
-              href='https://github.com/asyncapi/community/blob/master/docs/050-mentorship-program/ambassador-program/AMBASSADOR_PROGRAM.md'
+              href='https://www.asyncapi.com/community/ambassadors'
               target='_blank'
             />
           </div>
