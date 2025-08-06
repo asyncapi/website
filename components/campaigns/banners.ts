@@ -22,7 +22,7 @@ export const banners = [
     dateLocation: '9th - 11th of December, 2025 | Paris, France',
     cfaText: 'Apply To Speak',
     eventName: 'the end of Call for Speakers',
-    cfpDeadline: '2025-09-05T06:00:00Z',
+    cfpDeadline: '2025-10-05T06:00:00Z',
     link: 'https://conference.asyncapi.com/venue/Paris'
   },
   {
