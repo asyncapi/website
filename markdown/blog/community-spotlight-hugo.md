@@ -17,7 +17,7 @@ excerpt: "Meet Hugo Guerrero — API expert, open source contributor, and new As
 
 ---
 
-In this edition of our Community Spotlight, we’re excited to feature [Hugo Guerrero](https://www.linkedin.com/in/hugoguerrero/), a seasoned software developer, open source contributor, technical marketer, and advocate for better developer experience in the world of APIs and event-driven architecture. With over two decades of industry experience, Hugo brings both depth and clarity to AsyncAPI’s growing ecosystem. Currently the Head of Technical Marketing at [Kong Inc.](https://www.linkedin.com/company/konghq/)
+In this edition of our Community Spotlight, we’re excited to feature [Hugo Guerrero](https://www.linkedin.com/in/hugoguerrero/), a seasoned software developer, open source contributor, technical marketer, and advocate for better developer experience in the world of APIs and event-driven architecture. With over two decades of industry experience, Hugo brings both depth and clarity to AsyncAPI’s growing ecosystem. Currently, he's the Head of Technical Marketing at [Kong Inc.](https://www.linkedin.com/company/konghq/)
 
 I had the pleasure of catching up with Hugo after the AsyncAPI track at APIDays Singapore, and we sat down for a more in-depth conversation on Hugo’s journey, his contributions, and what he sees on the horizon for AsyncAPI.
 
@@ -33,7 +33,7 @@ Hugo's journey began with an electronic systems engineering background, but his 
 
 ## How Hugo Found AsyncAPI
 
-While working on event-driven products and tools such as Kafka and JMS, Hugo came across AsyncAPI through the work of [Fran Mendez](https://www.linkedin.com/in/fmvilas/) and the wider initiative. Around the same time, he was contributing to a CNCF project called [Microcks](https://github.com/microcks/microcks), which started to adopt AsyncAPI to better support various bindings like **Kafka** and **JMS**.
+While working on event-driven products and tools such as Kafka and JMS, Hugo came across AsyncAPI through the work of [Fran Mendez](https://www.linkedin.com/in/fmvilas/) and the wider initiative. Around the same time, he was contributing to a CNCF project called [Microcks](https://github.com/microcks/microcks), which started to adopt AsyncAPI to better support various bindings like Kafka and JMS.
 
 ***Hugo:** I came across AsyncAPI a few years ago when I was exploring event-driven architectures. At the time, everyone knew OpenAPI for REST APIs, but there was a gap when it came to asynchronous communication. AsyncAPI filled that gap, and did it in a developer-friendly, open way.*
 
@@ -69,7 +69,7 @@ From early contributions on examples and specification discussions to supporting
 
 **Bami: Okay, Okay. So, next is how can others get started contributing to AsyncAPI?**
 
-***Hugo:** In open source and community work, the advice is often the same: start simple, start with what you know. If you notice issues in the documentation, fix them. If you’ve figured out how to make something work with your preferred framework or language, share that knowledge, because you're not the only one who’ll benefit. Your contributions—whether it’s configurations, specifications, or common pitfalls, can help many others.*
+***Hugo:** In open source and community work, the advice is often the same: start simple, start with what you know. If you notice issues in the documentation, fix them. If you’ve figured out how to make something work with your preferred framework or language, share that knowledge, because you're not the only one who’ll benefit. Your contributions, whether it’s configurations, specifications, or common pitfalls can help many others.*
 
 *And don’t underestimate the value of ideas. Share them. Some will gain traction, others might not, but putting them out there is a great way to get involved. Plus, the network you build along the way can open up even more opportunities.*
 
@@ -87,9 +87,9 @@ From early contributions on examples and specification discussions to supporting
 
 **Bami: I can imagine. That must have been fun. Okay, so let’s move forward, what are you looking forward to in AsyncAPI’s future?**
 
-***Hugo:** A robust, growing, and thriving ecosystem — where the specification is at the core, but the surrounding tools, contributors, and adopters bring it to life. hat’s what I expect for the future.*
+***Hugo:** A robust, growing, and thriving ecosystem where the specification is at the core, but the surrounding tools, contributors, and adopters bring it to life. That’s what I expect for the future.*
 
-***Bami: Awesome. Well put it there. Who should we spotlight next?**
+**Bami: Awesome. Well put it there. Who should we spotlight next?**
 
 ***Hugo:** The ambassadors, the contributors, and the adopters. Their work, both behind the scenes and in the spotlight, is what keeps this community moving forward.*
 
