@@ -7,15 +7,29 @@
         "description": "Explore APIs and companies with public AsyncAPI specifications.",
         "links": {
           "websiteUrl": "https://apitracker.io/specifications/asyncapi",
-          "repoUrl": ""
+          "repoUrl": "https://github.com/apideck-io"
         },
         "filters": {
-          "language": [],
-          "technology": [],
-          "categories": [
-            "api",
-            "directory"
+          "language": [
+            {
+              "name": "JavaScript",
+              "color": "bg-[#F2F1C7]",
+              "borderColor": "border-[#BFBE86]"
+            }
           ],
+          "technology": [
+            {
+              "name": "Node.js",
+              "color": "bg-[#BDFF67]",
+              "borderColor": "border-[#84CE24]"
+            },
+            {
+              "name": "TypeScript",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": ["api", "directory"],
           "hasCommercial": false
         }
       },
@@ -41,9 +55,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "api"
-          ],
+          "categories": ["api"],
           "hasCommercial": false
         }
       },
@@ -74,10 +86,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "api",
-            "directory"
-          ],
+          "categories": ["api", "directory"],
           "hasCommercial": false
         }
       },
@@ -109,10 +118,7 @@
               "borderColor": "border-[#A387D2]"
             }
           ],
-          "categories": [
-            "code-first",
-            "api"
-          ],
+          "categories": ["code-first", "api"],
           "hasCommercial": false
         }
       }
@@ -148,11 +154,7 @@
               "borderColor": "border-[#1577BC]"
             }
           ],
-          "categories": [
-            "converters",
-            "code-first",
-            "validator"
-          ],
+          "categories": ["converters", "code-first", "validator"],
           "hasCommercial": false
         }
       },
@@ -183,11 +185,7 @@
               "borderColor": "border-[#1577BC]"
             }
           ],
-          "categories": [
-            "converters",
-            "code-first",
-            "validator"
-          ],
+          "categories": ["converters", "code-first", "validator"],
           "hasCommercial": false
         }
       },
@@ -217,9 +215,7 @@
               "borderColor": "border-[#1577BC]"
             }
           ],
-          "categories": [
-            "code-first"
-          ],
+          "categories": ["code-first"],
           "hasCommercial": false
         }
       },
@@ -239,9 +235,7 @@
               "borderColor": "border-[#84CE24]"
             }
           ],
-          "categories": [
-            "code-first"
-          ],
+          "categories": ["code-first"],
           "hasCommercial": false
         }
       },
@@ -261,10 +255,7 @@
             }
           ],
           "technology": [],
-          "categories": [
-            "code-first",
-            "framework"
-          ],
+          "categories": ["code-first", "framework"],
           "hasCommercial": false
         }
       },
@@ -283,9 +274,7 @@
             }
           ],
           "technology": [],
-          "categories": [
-            "code-first"
-          ],
+          "categories": ["code-first"],
           "hasCommercial": false
         }
       },
@@ -315,9 +304,7 @@
               "borderColor": "border-[#CA1A33]"
             }
           ],
-          "categories": [
-            "code-first"
-          ],
+          "categories": ["code-first"],
           "hasCommercial": false
         }
       },
@@ -347,10 +334,7 @@
               "borderColor": "border-[#5026D4]"
             }
           ],
-          "categories": [
-            "code-first",
-            "documentation-generator"
-          ],
+          "categories": ["code-first", "documentation-generator"],
           "hasCommercial": false
         }
       },
@@ -380,9 +364,7 @@
               "borderColor": "border-[#CA1A33]"
             }
           ],
-          "categories": [
-            "code-first"
-          ],
+          "categories": ["code-first"],
           "hasCommercial": false
         }
       },
@@ -412,9 +394,7 @@
               "borderColor": "border-[#B9012b]"
             }
           ],
-          "categories": [
-            "code-first"
-          ],
+          "categories": ["code-first"],
           "hasCommercial": false
         }
       },
@@ -439,9 +419,7 @@
               "borderColor": "border-[#5026D4]"
             }
           ],
-          "categories": [
-            "code-first"
-          ],
+          "categories": ["code-first"],
           "hasCommercial": false
         }
       },
@@ -471,9 +449,7 @@
               "borderColor": "border-[#1577BC]"
             }
           ],
-          "categories": [
-            "code-first"
-          ],
+          "categories": ["code-first"],
           "hasCommercial": false
         }
       },
@@ -505,10 +481,7 @@
               "borderColor": "border-[#A387D2]"
             }
           ],
-          "categories": [
-            "code-first",
-            "api"
-          ],
+          "categories": ["code-first", "api"],
           "hasCommercial": false
         }
       },
@@ -539,10 +512,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "code-first",
-            "documentation-generator"
-          ],
+          "categories": ["code-first", "documentation-generator"],
           "hasCommercial": false
         }
       },
@@ -562,9 +532,7 @@
             }
           ],
           "technology": [],
-          "categories": [
-            "code-first"
-          ],
+          "categories": ["code-first"],
           "hasCommercial": false
         }
       },
@@ -595,11 +563,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "code-first",
-            "dsl",
-            "framework"
-          ],
+          "categories": ["code-first", "dsl", "framework"],
           "hasCommercial": false
         }
       }
@@ -630,10 +594,7 @@
               "borderColor": "border-[#84CE24]"
             }
           ],
-          "categories": [
-            "code-generator",
-            "documentation-generator"
-          ],
+          "categories": ["code-generator", "documentation-generator"],
           "hasCommercial": false
         }
       },
@@ -665,9 +626,7 @@
               "borderColor": "border-[#2596ED]"
             }
           ],
-          "categories": [
-            "code-generator"
-          ],
+          "categories": ["code-generator"],
           "hasCommercial": false
         }
       },
@@ -693,9 +652,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "code-generator"
-          ],
+          "categories": ["code-generator"],
           "hasCommercial": false
         }
       },
@@ -714,9 +671,7 @@
             }
           ],
           "technology": [],
-          "categories": [
-            "code-generator"
-          ],
+          "categories": ["code-generator"],
           "hasCommercial": false
         }
       },
@@ -746,9 +701,7 @@
               "borderColor": "border-[#CA1A33]"
             }
           ],
-          "categories": [
-            "code-generator"
-          ],
+          "categories": ["code-generator"],
           "hasCommercial": false
         }
       },
@@ -767,9 +720,7 @@
               "borderColor": "border-[#8F0101]"
             }
           ],
-          "categories": [
-            "code-generator"
-          ],
+          "categories": ["code-generator"],
           "hasCommercial": false
         }
       },
@@ -796,10 +747,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "code-generator",
-            "cli"
-          ],
+          "categories": ["code-generator", "cli"],
           "hasCommercial": false
         }
       },
@@ -841,12 +789,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "code-generator",
-            "dsl",
-            "mocking-and-testing",
-            "cli"
-          ],
+          "categories": ["code-generator", "dsl", "mocking-and-testing", "cli"],
           "hasCommercial": false
         }
       }
@@ -876,10 +819,7 @@
               "borderColor": "border-[#84CE24]"
             }
           ],
-          "categories": [
-            "converter",
-            "cli"
-          ],
+          "categories": ["converter", "cli"],
           "hasCommercial": false
         }
       },
@@ -910,11 +850,7 @@
               "borderColor": "border-[#1577BC]"
             }
           ],
-          "categories": [
-            "converters",
-            "code-first",
-            "validator"
-          ],
+          "categories": ["converters", "code-first", "validator"],
           "hasCommercial": false
         }
       },
@@ -945,11 +881,7 @@
               "borderColor": "border-[#1577BC]"
             }
           ],
-          "categories": [
-            "converters",
-            "code-first",
-            "validator"
-          ],
+          "categories": ["converters", "code-first", "validator"],
           "hasCommercial": false
         }
       },
@@ -974,9 +906,7 @@
               "borderColor": "border-[#84CE24]"
             }
           ],
-          "categories": [
-            "converter"
-          ],
+          "categories": ["converter"],
           "hasCommercial": false
         }
       },
@@ -995,9 +925,7 @@
             }
           ],
           "technology": [],
-          "categories": [
-            "converter"
-          ],
+          "categories": ["converter"],
           "hasCommercial": false
         }
       }
@@ -1016,10 +944,7 @@
         "filters": {
           "language": [],
           "technology": [],
-          "categories": [
-            "api",
-            "directory"
-          ],
+          "categories": ["api", "directory"],
           "hasCommercial": false
         }
       },
@@ -1050,10 +975,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "api",
-            "directory"
-          ],
+          "categories": ["api", "directory"],
           "hasCommercial": false
         }
       }
@@ -1089,10 +1011,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "code-generator",
-            "documentation-generator"
-          ],
+          "categories": ["code-generator", "documentation-generator"],
           "hasCommercial": false
         }
       },
@@ -1117,10 +1036,7 @@
               "borderColor": "border-[#08D8FE]"
             }
           ],
-          "categories": [
-            "documentation-generator",
-            "generator-template"
-          ],
+          "categories": ["documentation-generator", "generator-template"],
           "hasCommercial": false
         }
       },
@@ -1135,9 +1051,7 @@
         "filters": {
           "language": [],
           "technology": [],
-          "categories": [
-            "documentation-generator"
-          ],
+          "categories": ["documentation-generator"],
           "hasCommercial": true
         }
       },
@@ -1162,9 +1076,7 @@
               "borderColor": "border-[#84CE24]"
             }
           ],
-          "categories": [
-            "documentation-generator"
-          ],
+          "categories": ["documentation-generator"],
           "hasCommercial": false
         }
       },
@@ -1194,10 +1106,7 @@
               "borderColor": "border-[#5026D4]"
             }
           ],
-          "categories": [
-            "code-first",
-            "documentation-generator"
-          ],
+          "categories": ["code-first", "documentation-generator"],
           "hasCommercial": false
         }
       },
@@ -1260,10 +1169,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "code-first",
-            "documentation-generator"
-          ],
+          "categories": ["code-first", "documentation-generator"],
           "hasCommercial": false
         }
       },
@@ -1294,9 +1200,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "documentation-generator"
-          ],
+          "categories": ["documentation-generator"],
           "hasCommercial": false
         }
       }
@@ -1326,9 +1230,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "editor"
-          ],
+          "categories": ["editor"],
           "hasCommercial": false
         }
       },
@@ -1353,9 +1255,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "editor"
-          ],
+          "categories": ["editor"],
           "hasCommercial": false
         }
       }
@@ -1396,9 +1296,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "ui-component"
-          ],
+          "categories": ["ui-component"],
           "hasCommercial": false
         }
       },
@@ -1428,9 +1326,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "ui-component"
-          ],
+          "categories": ["ui-component"],
           "hasCommercial": false
         }
       }
@@ -1460,9 +1356,7 @@
               "borderColor": "border-[#84CE24]"
             }
           ],
-          "categories": [
-            "dsl"
-          ],
+          "categories": ["dsl"],
           "hasCommercial": false
         }
       },
@@ -1504,12 +1398,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "code-generator",
-            "dsl",
-            "mocking-and-testing",
-            "cli"
-          ],
+          "categories": ["code-generator", "dsl", "mocking-and-testing", "cli"],
           "hasCommercial": false
         }
       },
@@ -1540,11 +1429,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "code-first",
-            "dsl",
-            "framework"
-          ],
+          "categories": ["code-first", "dsl", "framework"],
           "hasCommercial": false
         }
       }
@@ -1575,9 +1460,7 @@
               "borderColor": "border-[#A387D2]"
             }
           ],
-          "categories": [
-            "framework"
-          ],
+          "categories": ["framework"],
           "hasCommercial": false
         }
       },
@@ -1597,10 +1480,7 @@
             }
           ],
           "technology": [],
-          "categories": [
-            "code-first",
-            "framework"
-          ],
+          "categories": ["code-first", "framework"],
           "hasCommercial": false
         }
       },
@@ -1619,9 +1499,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "framework"
-          ],
+          "categories": ["framework"],
           "hasCommercial": false
         }
       },
@@ -1652,11 +1530,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "code-first",
-            "dsl",
-            "framework"
-          ],
+          "categories": ["code-first", "dsl", "framework"],
           "hasCommercial": false
         }
       }
@@ -1681,9 +1555,7 @@
             }
           ],
           "technology": [],
-          "categories": [
-            "github-action"
-          ],
+          "categories": ["github-action"],
           "hasCommercial": false
         }
       },
@@ -1709,10 +1581,7 @@
               "borderColor": "border-[#84CE24]"
             }
           ],
-          "categories": [
-            "github-action",
-            "validator"
-          ],
+          "categories": ["github-action", "validator"],
           "hasCommercial": false
         }
       },
@@ -1738,9 +1607,7 @@
               "borderColor": "border-[#84CE24]"
             }
           ],
-          "categories": [
-            "github-action"
-          ],
+          "categories": ["github-action"],
           "hasCommercial": false
         }
       },
@@ -1759,9 +1626,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "github-actions"
-          ],
+          "categories": ["github-actions"],
           "hasCommercial": false
         }
       },
@@ -1780,9 +1645,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "github-action"
-          ],
+          "categories": ["github-action"],
           "hasCommercial": false
         }
       }
@@ -1823,9 +1686,7 @@
               "borderColor": "border-[#2275AD]"
             }
           ],
-          "categories": [
-            "mocking-and-testing"
-          ],
+          "categories": ["mocking-and-testing"],
           "hasCommercial": false
         }
       },
@@ -1862,10 +1723,7 @@
               "borderColor": "border-[#2596ED]"
             }
           ],
-          "categories": [
-            "mocking-and-testing",
-            "cli"
-          ],
+          "categories": ["mocking-and-testing", "cli"],
           "hasCommercial": false
         }
       },
@@ -1890,9 +1748,7 @@
               "borderColor": "border-[#68BC44]"
             }
           ],
-          "categories": [
-            "mocking-and-testing"
-          ],
+          "categories": ["mocking-and-testing"],
           "hasCommercial": false
         }
       },
@@ -1924,10 +1780,7 @@
               "borderColor": "border-[#CA1A33]"
             }
           ],
-          "categories": [
-            "mocking-and-testing",
-            "CLIs"
-          ],
+          "categories": ["mocking-and-testing", "CLIs"],
           "hasCommercial": true
         }
       },
@@ -1947,9 +1800,7 @@
               "borderColor": "border-[#A387D2]"
             }
           ],
-          "categories": [
-            "mocking-and-testing"
-          ],
+          "categories": ["mocking-and-testing"],
           "hasCommercial": false
         }
       },
@@ -1991,12 +1842,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "code-generator",
-            "dsl",
-            "mocking-and-testing",
-            "cli"
-          ],
+          "categories": ["code-generator", "dsl", "mocking-and-testing", "cli"],
           "hasCommercial": false
         }
       }
@@ -2021,9 +1867,7 @@
             }
           ],
           "technology": [],
-          "categories": [
-            "validator"
-          ],
+          "categories": ["validator"],
           "hasCommercial": false
         }
       },
@@ -2049,10 +1893,7 @@
               "borderColor": "border-[#84CE24]"
             }
           ],
-          "categories": [
-            "github-action",
-            "validator"
-          ],
+          "categories": ["github-action", "validator"],
           "hasCommercial": false
         }
       },
@@ -2077,9 +1918,7 @@
               "borderColor": "border-[#84CE24]"
             }
           ],
-          "categories": [
-            "validator"
-          ],
+          "categories": ["validator"],
           "hasCommercial": false
         }
       },
@@ -2098,9 +1937,7 @@
             }
           ],
           "technology": [],
-          "categories": [
-            "validator"
-          ],
+          "categories": ["validator"],
           "hasCommercial": false
         }
       },
@@ -2119,9 +1956,7 @@
             }
           ],
           "technology": [],
-          "categories": [
-            "validator"
-          ],
+          "categories": ["validator"],
           "hasCommercial": false
         }
       },
@@ -2146,9 +1981,7 @@
               "borderColor": "border-[#84CE24]"
             }
           ],
-          "categories": [
-            "validator"
-          ],
+          "categories": ["validator"],
           "hasCommercial": false
         }
       },
@@ -2173,9 +2006,7 @@
               "borderColor": "border-[#84CE24]"
             }
           ],
-          "categories": [
-            "validator"
-          ],
+          "categories": ["validator"],
           "hasCommercial": false
         }
       },
@@ -2206,11 +2037,7 @@
               "borderColor": "border-[#1577BC]"
             }
           ],
-          "categories": [
-            "converters",
-            "code-first",
-            "validator"
-          ],
+          "categories": ["converters", "code-first", "validator"],
           "hasCommercial": false
         }
       },
@@ -2241,11 +2068,7 @@
               "borderColor": "border-[#1577BC]"
             }
           ],
-          "categories": [
-            "converters",
-            "code-first",
-            "validator"
-          ],
+          "categories": ["converters", "code-first", "validator"],
           "hasCommercial": false
         }
       },
@@ -2270,9 +2093,7 @@
               "borderColor": "border-[#84CE24]"
             }
           ],
-          "categories": [
-            "validator"
-          ],
+          "categories": ["validator"],
           "hasCommercial": false
         }
       }
@@ -2296,9 +2117,7 @@
             }
           ],
           "technology": [],
-          "categories": [
-            "compare-tool"
-          ],
+          "categories": ["compare-tool"],
           "hasCommercial": false
         }
       },
@@ -2323,9 +2142,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "compare-tool"
-          ],
+          "categories": ["compare-tool"],
           "hasCommercial": false
         }
       },
@@ -2352,9 +2169,7 @@
               "borderColor": "border-[#CA1A33]"
             }
           ],
-          "categories": [
-            "compare-tool"
-          ],
+          "categories": ["compare-tool"],
           "hasCommercial": false
         }
       },
@@ -2380,9 +2195,7 @@
               "borderColor": "border-[#CA1A33]"
             }
           ],
-          "categories": [
-            "compare-tool"
-          ],
+          "categories": ["compare-tool"],
           "hasCommercial": false
         }
       }
@@ -2407,10 +2220,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "others",
-            "cli"
-          ],
+          "categories": ["others", "cli"],
           "hasCommercial": false
         }
       },
@@ -2430,10 +2240,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "others",
-            "cli"
-          ],
+          "categories": ["others", "cli"],
           "hasCommercial": false
         }
       },
@@ -2458,10 +2265,7 @@
               "borderColor": "border-[#84CE24]"
             }
           ],
-          "categories": [
-            "converter",
-            "cli"
-          ],
+          "categories": ["converter", "cli"],
           "hasCommercial": false
         }
       },
@@ -2498,10 +2302,7 @@
               "borderColor": "border-[#2596ED]"
             }
           ],
-          "categories": [
-            "mocking-and-testing",
-            "cli"
-          ],
+          "categories": ["mocking-and-testing", "cli"],
           "hasCommercial": false
         }
       },
@@ -2533,10 +2334,7 @@
               "borderColor": "border-[#CA1A33]"
             }
           ],
-          "categories": [
-            "mocking-and-testing",
-            "CLIs"
-          ],
+          "categories": ["mocking-and-testing", "CLIs"],
           "hasCommercial": true
         }
       },
@@ -2578,12 +2376,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "code-generator",
-            "dsl",
-            "mocking-and-testing",
-            "cli"
-          ],
+          "categories": ["code-generator", "dsl", "mocking-and-testing", "cli"],
           "hasCommercial": false
         }
       }
@@ -2613,9 +2406,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "bundler"
-          ],
+          "categories": ["bundler"],
           "hasCommercial": false
         }
       },
@@ -2640,9 +2431,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "bundler"
-          ],
+          "categories": ["bundler"],
           "hasCommercial": false
         }
       }
@@ -2671,9 +2460,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "ide-extension"
-          ],
+          "categories": ["ide-extension"],
           "hasCommercial": false
         }
       },
@@ -2697,9 +2484,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "ide-extension"
-          ],
+          "categories": ["ide-extension"],
           "hasCommercial": false
         }
       },
@@ -2731,9 +2516,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "ide-extension"
-          ],
+          "categories": ["ide-extension"],
           "hasCommercial": false
         }
       }
@@ -2763,9 +2546,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "generator-template"
-          ],
+          "categories": ["generator-template"],
           "hasCommercial": false
         }
       },
@@ -2790,9 +2571,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "generator-template"
-          ],
+          "categories": ["generator-template"],
           "hasCommercial": false
         }
       },
@@ -2817,9 +2596,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "generator-template"
-          ],
+          "categories": ["generator-template"],
           "hasCommercial": false
         }
       },
@@ -2844,9 +2621,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "generator-template"
-          ],
+          "categories": ["generator-template"],
           "hasCommercial": false
         }
       },
@@ -2876,9 +2651,7 @@
               "borderColor": "border-[#CA1A33]"
             }
           ],
-          "categories": [
-            "generator-template"
-          ],
+          "categories": ["generator-template"],
           "hasCommercial": false
         }
       },
@@ -2913,9 +2686,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "generator-template"
-          ],
+          "categories": ["generator-template"],
           "hasCommercial": false
         }
       },
@@ -2940,9 +2711,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "generator-template"
-          ],
+          "categories": ["generator-template"],
           "hasCommercial": false
         }
       },
@@ -2961,9 +2730,7 @@
             }
           ],
           "technology": [],
-          "categories": [
-            "generator-template"
-          ],
+          "categories": ["generator-template"],
           "hasCommercial": false
         }
       },
@@ -2988,9 +2755,7 @@
               "borderColor": "border-[#84CE24]"
             }
           ],
-          "categories": [
-            "generator-template"
-          ],
+          "categories": ["generator-template"],
           "hasCommercial": false
         }
       },
@@ -3015,9 +2780,7 @@
               "borderColor": "border-[#84CE24]"
             }
           ],
-          "categories": [
-            "generator-template"
-          ],
+          "categories": ["generator-template"],
           "hasCommercial": false
         }
       },
@@ -3042,9 +2805,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "generator-template"
-          ],
+          "categories": ["generator-template"],
           "hasCommercial": false
         }
       },
@@ -3069,9 +2830,7 @@
               "borderColor": "border-[#84CE24]"
             }
           ],
-          "categories": [
-            "generator-template"
-          ],
+          "categories": ["generator-template"],
           "hasCommercial": false
         }
       },
@@ -3096,9 +2855,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "generator-template"
-          ],
+          "categories": ["generator-template"],
           "hasCommercial": false
         }
       }
@@ -3123,10 +2880,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "others",
-            "cli"
-          ],
+          "categories": ["others", "cli"],
           "hasCommercial": false
         }
       },
@@ -3146,10 +2900,7 @@
               "borderColor": "border-[#40ccf7]"
             }
           ],
-          "categories": [
-            "others",
-            "cli"
-          ],
+          "categories": ["others", "cli"],
           "hasCommercial": false
         }
       }
