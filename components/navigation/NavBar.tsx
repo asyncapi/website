@@ -48,7 +48,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   const getUniqueLangs = (): string[] => {
     let pathnameWithoutLocale = pathname;
 
-    // Check if the pathname includes '/[lang]', if so, replace it with an empty string
+    // Check if the pathname includes "/[lang]"", if so, replace it with an empty string
     if (pathname && pathname.includes('/[lang]')) {
       pathnameWithoutLocale = pathname.replace('/[lang]', '');
     }
@@ -60,7 +60,11 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
     return uniqueLangs.length === 0 ? ['en'] : uniqueLangs;
   };
 
-  const uniqueLangs = getUniqueLangs().map((lang) => ({ key: lang, text: lang, value: lang }));
+  const uniqueLangs = getUniqueLangs().map((lang) => ({
+    key: lang,
+    text: lang,
+    value: lang
+  }));
 
   /**
    * @description Changes the language and updates the URL accordingly.
@@ -179,6 +183,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             <NavItem
               text='Docs'
               href='/docs'
+              onClick={() => showOnClickMenu('learning')}
               onMouseEnter={() => showMenu('learning')}
               hasDropdown
               isOpen={open === 'learning'}
@@ -190,6 +195,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             <NavItem
               text='Tools'
               href='/tools'
+              onClick={() => showOnClickMenu('tooling')}
               onMouseEnter={() => showMenu('tooling')}
               hasDropdown
               isOpen={open === 'tooling'}
