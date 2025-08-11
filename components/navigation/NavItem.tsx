@@ -69,6 +69,7 @@ export default function NavItem({
         className={`${attrs.className} ${router.pathname.startsWith(href) ? 'text-black' : 'text-gray-700'}`}
         target={target}
         data-testid='NavItem-Link'
+        aria-expanded={isOpen} 
       >
         <span>{text}</span>
         {hasDropdown && (isOpen ? <NavItemDropdownUp /> : <NavItemDropdown />)}
@@ -77,7 +78,7 @@ export default function NavItem({
   }
 
   return (
-    <button type='button' {...attrs} className={`${attrs.className} text-gray-700`}>
+    <button type='button' {...attrs} className={`${attrs.className} text-gray-700`} aria-expanded={isOpen}>
       <span>{text}</span>
       {hasDropdown && (isOpen ? <NavItemDropdownUp /> : <NavItemDropdown />)}
     </button>
