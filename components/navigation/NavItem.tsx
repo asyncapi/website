@@ -78,7 +78,13 @@ export default function NavItem({
   }
 
   return (
-    <button type='button' {...attrs} className={`${attrs.className} text-gray-700`} aria-expanded={isOpen}>
+    <button 
+      type='button'
+      {...attrs}
+      className={`${attrs.className} text-gray-700`}
+      aria-expanded={hasDropdown ? isOpen : undefined}
+      aria-haspopup={hasDropdown ? 'menu' : undefined}
+    >
       <span>{text}</span>
       {hasDropdown && (isOpen ? <NavItemDropdownUp /> : <NavItemDropdown />)}
     </button>
