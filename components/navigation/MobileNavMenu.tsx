@@ -6,6 +6,7 @@ import i18nextConfig from '@/next-i18next.config.cjs';
 import { SearchButton } from '../AlgoliaSearch';
 import IconLanguage from '../icons/Language';
 import NavItemDropdown from '../icons/NavItemDropdown';
+import NavItemDropdownUp from '../icons/NavItemDropdownUp';
 import SearchIcon from '../icons/SearchIcon';
 import AsyncAPILogo from '../logos/AsyncAPILogo';
 import communityItems from './communityItems';
@@ -13,7 +14,6 @@ import learningItems from './learningItems';
 import MenuBlocks from './MenuBlocks';
 import otherItems from './otherItems';
 import toolingItems from './toolingItems';
-import NavItemDropdownUp from '../icons/NavItemDropdownUp';
 
 interface MenuItem {
   href: string;
@@ -89,7 +89,7 @@ export default function MobileNavMenu({
               <Link href='/docs' className='flex cursor-pointer'>
                 Docs
               </Link>
-              {open === 'learning' ? <NavItemDropdownUp/> : <NavItemDropdown /> }
+              {open === 'learning' ? <NavItemDropdownUp /> : <NavItemDropdown />}
             </h4>
             {open === 'learning' && <MenuBlocks items={learningItems} />}
           </div>
@@ -99,7 +99,7 @@ export default function MobileNavMenu({
               <Link href='/tools' className='flex cursor-pointer'>
                 Tools
               </Link>
-              {open === 'tooling' ? <NavItemDropdownUp/> : <NavItemDropdown /> }
+              {open === 'tooling' ? <NavItemDropdownUp /> : <NavItemDropdown />}
             </h4>
             {open === 'tooling' && <MenuBlocks items={toolingItems} />}
           </div>
@@ -108,7 +108,7 @@ export default function MobileNavMenu({
               <Link href='/community' className='flex cursor-pointer'>
                 Community
               </Link>
-              {open === 'community' ? <NavItemDropdownUp/> : <NavItemDropdown /> }
+              {open === 'community' ? <NavItemDropdownUp /> : <NavItemDropdown />}
             </h4>
             {open === 'community' && <MenuBlocks items={communityItems} />}
           </div>
@@ -117,7 +117,7 @@ export default function MobileNavMenu({
               <div>
                 <h4 className='mb-4 flex justify-between font-medium text-gray-800'>
                   <a className='cursor-pointer'>Others</a>
-                  {open === 'others' ? <NavItemDropdownUp/> : <NavItemDropdown /> }
+                  {open === 'others' ? <NavItemDropdownUp /> : <NavItemDropdown />}
                 </h4>
                 {open === 'others' &&
                   otherItems.map((item: MenuItem, index: number) => (
@@ -142,7 +142,7 @@ export default function MobileNavMenu({
                   <a className='flex cursor-pointer items-center gap-x-2'>
                     Language <IconLanguage />
                   </a>
-                  {open === 'language' ? <NavItemDropdownUp/> : <NavItemDropdown /> }
+                  {open === 'language' ? <NavItemDropdownUp /> : <NavItemDropdown />}
                 </h4>
                 {open === 'language' &&
                   uniqueLangs.map((lang) => (
