@@ -78,7 +78,7 @@ export default function NavItem({
   }
 
   return (
-    <button 
+    <button
       type='button'
       {...attrs}
       className={`${attrs.className} text-gray-700`}
