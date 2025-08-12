@@ -72,11 +72,11 @@ export default function EventIndex() {
           />
           <div className='w-full sm:w-[70%]'>
             <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.smSemibold} className='mt-10 lg:text-2xl'>
-              Watch the AsyncAPI 2023 conference recordings from anywhere around the world for free
+              Watch the AsyncAPI 2024 conference recordings from anywhere around the world for free
             </Heading>
             <a
               data-testid='Recordings-Link'
-              href='https://www.youtube.com/playlist?list=PLbi1gRlP7pijHAnmN-n_OiTH6CAXxGthw&si=st3gY7Ri5uzhechB'
+              href='https://www.youtube.com/playlist?list=PLbi1gRlP7pijItMBmw9SeeyWxuEa3jLR2'
               target='_blank'
               rel='noreferrer'
             >
