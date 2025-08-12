@@ -104,9 +104,9 @@ export default function EventIndex() {
               <Meeting
                 name='Community Meeting'
                 purpose='This is an open community meeting to discuss important topics around the AsyncAPI Initiative regularly. We organize it every two weeks in different time zones.'
-                host='Azeez Elegbede'
+                host='V Thulisile Sibanda'
                 bg='bg-gray-100'
-                hostProfile='https://github.com/AceTheCreator'
+                hostProfile='https://github.com/thulieblack'
                 youtube='https://www.youtube.com/playlist?list=PLbi1gRlP7pijUwZJErzyYf_Rc-PWu4lXS'
               />
             </div>
