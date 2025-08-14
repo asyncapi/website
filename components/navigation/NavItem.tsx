@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 
 import NavItemDropdown from '../icons/NavItemDropdown';
+import NavItemDropdownUp from '../icons/NavItemDropdownUp';
 
 interface NavItemProps {
   text: string;
@@ -12,6 +13,7 @@ interface NavItemProps {
   onMouseEnter?: () => void;
   hasDropdown?: boolean;
   className?: string;
+  isOpen?: boolean;
 }
 
 /**
@@ -31,7 +33,8 @@ export default function NavItem({
   onClick = () => {},
   onMouseEnter = () => {},
   hasDropdown = false,
-  className = ''
+  className = '',
+  isOpen = false
 }: NavItemProps) {
   const router = useRouter();
 
@@ -68,7 +71,7 @@ export default function NavItem({
         data-testid='NavItem-Link'
       >
         <span>{text}</span>
-        {hasDropdown && <NavItemDropdown />}
+        {hasDropdown && (isOpen ? <NavItemDropdownUp /> : <NavItemDropdown />)}
       </Link>
     );
   }
@@ -76,7 +79,7 @@ export default function NavItem({
   return (
     <button type='button' {...attrs} className={`${attrs.className} text-gray-700`}>
       <span>{text}</span>
-      {hasDropdown && <NavItemDropdown />}
+      {hasDropdown && (isOpen ? <NavItemDropdownUp /> : <NavItemDropdown />)}
     </button>
   );
 }
