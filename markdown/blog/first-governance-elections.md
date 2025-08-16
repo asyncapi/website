@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/lukasz-gornicki-a621914/
     byline: Open Source Fanatic!
 excerpt: 'Time to present candidates to join AsyncAPI Governance Board and start elections.'
-featured: true
 ---
 
 I'm very proud to announce the first elections for the new **AsyncAPI Governance Board (GB)**. They start today and finish in July.
@@ -89,7 +88,6 @@ AsyncAPI Impact: Joined in day zero and have stayed since then.
 - Contact Information for questions:
   ```
   Company Email: hugo@konghq.com
-  Personal: hguerreroo@yahoo.com
   Mobile: +1 (978) 489-4887
   ```
 
