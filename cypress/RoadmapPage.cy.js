@@ -1,4 +1,4 @@
-import HomePage from './pages/HomePage';
+import HomePage from './pages/homepage';
 
 describe('RoadMap Page Navigation and Functionality', () => {
   let homePage;
