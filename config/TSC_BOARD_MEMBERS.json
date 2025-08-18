@@ -127,12 +127,10 @@
             "converter-js",
             "bindings",
             "enterprise-patterns",
-            "raml-dt-schema-parser",
             "openapi-schema-parser",
             "html-template",
             "markdown-template",
             "nodejs-ws-template",
-            "glee",
             "brand"
         ],
         "githubID": 242119
@@ -150,9 +148,7 @@
             "generator",
             "parser-js",
             "converter-js",
-            "generator-react-sdk",
             "modelina",
-            "simulator",
             "parser-api",
             "EDAVisualiser"
         ],
@@ -171,8 +167,7 @@
             "spec-json-schemas",
             "studio",
             ".github",
-            "optimizer",
-            "glee"
+            "optimizer"
         ],
         "githubID": 32505158
     },
@@ -217,17 +212,13 @@
         "repos": [
             "generator",
             "asyncapi-react",
-            "parser-go",
             "parser-js",
             "converter-js",
-            "converter-go",
             "studio",
             "html-template",
             "markdown-template",
             "template-for-generator-templates",
-            "generator-react-sdk",
             "modelina",
-            "template-for-go-projects",
             "diff",
             "chatbot",
             "server-api",
@@ -331,7 +322,6 @@
         "isTscMember": true,
         "repos": [
             "cli",
-            "glee",
             "bundler"
         ],
         "githubID": 41781438

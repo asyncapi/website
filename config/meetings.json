@@ -1,41 +1,6 @@
 [
   {
     "title": "Marketing WG Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=NWNsZmNtcXFlNDA5aXFxMTZ0MXI4OTBwMmsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1830",
-    "banner": "",
-    "date": "2025-04-29T14:00:00.000Z"
-  },
-  {
-    "title": "Design WG Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=ZnNyczUzZGFwYWp1OHMzNmpkMGE1a2thZmsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1844",
-    "banner": "",
-    "date": "2025-04-17T16:00:00.000Z"
-  },
-  {
-    "title": "AsyncAPI Community Working Group Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=Njk1MDZpYTVwY2F1Y25nMGtsNmF2dTBxZGsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1852",
-    "banner": "https://github.com/user-attachments/assets/e0c22c5a-94a8-488c-970c-14aa1697283c",
-    "date": "2025-04-22T15:00:00.000Z"
-  },
-  {
-    "title": "AsyncAPI Community WG Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=ZmQ4aHUxb2I4a244am5sMGJpdGF2MWM5bHMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1867",
-    "banner": "https://github.com/user-attachments/assets/e0c22c5a-94a8-488c-970c-14aa1697283c",
-    "date": "2025-05-06T15:00:00.000Z"
-  },
-  {
-    "title": "Design WG Meeting ",
-    "calLink": "https://www.google.com/calendar/event?eid=MWxhNTc1cDRqZGc5cGdsdmZ0aWt1YnMwMWsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1868",
-    "banner": "",
-    "date": "2025-05-01T16:00:00.000Z"
-  },
-  {
-    "title": "Marketing WG Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=ZmNmajEwN2J0M2E5anV2dnNhcXRwMWxlaWcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1880",
     "banner": "",
@@ -152,5 +117,26 @@
     "url": "https://github.com/asyncapi/community/issues/1989",
     "banner": "",
     "date": "2025-07-29T13:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI Community WG Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=MmZwZjVqMjQycTJ2ZTgwMmx1bjFua3ZjMHMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/2014",
+    "banner": "https://github.com/user-attachments/assets/e0c22c5a-94a8-488c-970c-14aa1697283c",
+    "date": "2025-08-12T15:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI Design WG Meeting ",
+    "calLink": "https://www.google.com/calendar/event?eid=bzI2c2ZvaTAxNHNtMzBkOXBlcjU4cjA0azggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/2017",
+    "banner": "",
+    "date": "2025-08-07T16:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI Mentorship Program Wrap-Up",
+    "calLink": "https://www.google.com/calendar/event?eid=NXRqbzhsN3YxNmQwamxjOWNuODdhMTNzdDQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/2030",
+    "banner": "https://github.com/user-attachments/assets/a90d8599-6d77-4d0c-a7dd-14849c304c29",
+    "date": "2025-08-15T15:00:00.000Z"
   }
 ]
