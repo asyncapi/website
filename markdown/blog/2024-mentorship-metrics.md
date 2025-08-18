@@ -16,47 +16,47 @@ excerpt: "AsyncAPI Mentorship Program: A Deep Dive into the Stats"
 
 AsyncAPI mentorship program is an online global opensource program that provides a structured pathway for bridging the gap between the AsyncAPI contributors and it's projects by pairing them with experienced mentors and maintainers over a defined period of time. 
 
-The program welcomed 9(nine) contributors for the 2024 edition, with contributions varying from Code to design and technical documentations alongside their mentors and the thriving community in general. We are excited  to share some statistics about the selected contributors in the 2024 edition of the mentorship program.
+AsyncAPI mentorship program is an online global opensource program that provides a structured pathway for bridging the gap between the AsyncAPI contributors and it's projects by pairing them with experienced mentors and maintainers over a defined period of time. 
 
 <Figure
   src="/img/posts/mentorship-assets/overview.webp"
-  caption=""
+  caption="Overview of 2024 Mentorship Program metrics"
   className="text-center"
 />
 
 ## Contributors
 
-- 65.04% of selected contributors have little to no experience contributing to open source.
-- 80% of contributors were active communicator during program duration. 
+- 65.04% of selected contributors had little to no experience contributing to open source.
+- 80% of contributors were active communicators throughout the program. 
 - 77.78% of selected contributors followed best practices while contributing. 
 
 ## Projects
 
-- 37.5% of accepted project proposals was aimed towards projects maintainership
-- The program achieved a 90% project completion success rate. 
-- 85.7% of contributors agreed mentors provided adequate guidance and support to achieve their project goals.
+- 37.5% of accepted project proposals were aimed at project maintainership.
+- The program achieved a project completion rate of 90%.
+- 85.7% of contributors agreed that mentors provided adequate guidance and support to achieve their project goals.
 
 ## Mentors
 
 <Figure
   src="/img/posts/mentorship-assets/pie.webp"
-  caption=""
+  caption="Mentor composition and evaluation outcomes"
   className="text-center"
 />
 
-The 2024 program welcomed 8 high esteemed and experienced mentors with 80% of them being active maintainers. 
+The 2024 program welcomed eight highly esteemed and experienced mentors, 80% of whom are active maintainers.
 
-- Two-thirds of accepted mentors are returning mentors from previous program.
+- Two-thirds of accepted mentors are returning mentors from previous editions of the program.
 
-- 85.7% of mentors passed the passed the mentorship evaluations. 
+- 85.7% of mentors passed the mentorship evaluations. 
 
-- 77.78% of mentors provided mentees with extremely high mentorship experience.
+- 77.78% of mentors provided mentees with an exceptional mentorship experience.
 
 ## Program
 
 <Figure
   src="/img/posts/mentorship-assets/line-graph.webp"
-  caption=""
+  caption="Reported learning impact across the program timeline"
   className="text-center"
 />
 
@@ -88,11 +88,11 @@ The 2024 program welcomed 8 high esteemed and experienced mentors with 80% of th
 
 ### Conclusion
 
-A big thank you to everyone that participated in this program, from program kickoff discussion to the wrap up event, ya'll the special ones. And to those spreading the word about the AsyncAPI Mentorship Program, you all belong on the cover of essence.
+A big thank you to everyone who participated in this program—from the kickoff discussions to the wrap-up event. Y'all are the special ones. And to those spreading the word about the AsyncAPI Mentorship Program, you all belong on the cover of Essence.
 
-And finally a special shout out to the mentors for making this edition of the program a success. We'll keep you updated with future entries about the AsyncAPI Maintainership Program for this year, stay tuned. 
+Finally, a special shout-out to the mentors for making this edition of the program a success. We'll keep you updated on future entries for the AsyncAPI Maintainership Program this year—stay tuned. 
 
-In the meantime, we’ve shared the data from both the first and second evaluation phases for mentors and mentees. If the highlights above don’t already speak for themselves, feel free to dive deeper into the numbers:
+Meanwhile, we’ve shared the data from both the first and second evaluation phases for mentors and mentees. If the highlights above don’t already speak for themselves, feel free to dive deeper into the numbers:
 
 - [Mentees first evaluation document](https://docs.google.com/spreadsheets/d/10jhy0YNAM_-2gpxi4Uqr83Mpky2yGh2FMK-caLPno50/edit?usp=sharing)
 - [Mentees second evaluation data](https://docs.google.com/spreadsheets/d/1icqLP4-ieX9Pp9G_-n3rTD3kzwJOD3nIXg2oyi4gigI/edit?usp=sharing)
