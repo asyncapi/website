@@ -76,7 +76,7 @@ The 2024 program welcomed eight highly esteemed and experienced mentors, 80% of 
 
 > The program is very impactful especially to early-career techies like me so I could grow in open source
 
-> So For one, I suggest a better structure that kicks things off immediately the mentees are announced. That way, we still have that excitement we had getting into the program reserved all the way to the end (Or at least the first evaluation)
+> So, for one, I suggest a better structure that kicks things off immediately after the mentees are announced. That way, we still have that excitement we had getting into the program reserved all the way to the end (Or at least the first evaluation)
 
 > nah, everything is perfect.
 
