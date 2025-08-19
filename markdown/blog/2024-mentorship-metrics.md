@@ -68,7 +68,7 @@ The 2024 program welcomed eight highly esteemed and experienced mentors, 80% of 
 
 > First off, I'll say a very big thank you!
 
-> I've grown so much in this program, and I owe it
+> I've grown so much in this program, and I owe it to the AsyncAPI Initiative.
 
 > Please don't take initiatives that are out of your bandwidth, like to get some feedback on my work, I had to personally dm 5 to 6 people and except for derberg and ace, sometimes the rest don't give a damn.
 
