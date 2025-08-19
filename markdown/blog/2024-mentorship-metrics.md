@@ -33,7 +33,7 @@ AsyncAPI mentorship program is an online global opensource program that provides
 ## Projects
 
 - 37.5% of accepted project proposals were aimed at project maintainership.
-- The program achieved a project completion rate of 90%.
+- 90% - a project completion rate.
 - 85.7% of contributors agreed that mentors provided adequate guidance and support to achieve their project goals.
 
 ## Mentors
