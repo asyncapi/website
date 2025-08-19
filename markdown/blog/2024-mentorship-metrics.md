@@ -89,7 +89,7 @@ A big thank you to everyone who participated in this program—from the kickoff 
 
 Finally, a special shout-out to the mentors for making this edition of the program a success. We'll keep you updated on future entries for the AsyncAPI Maintainership Program this year, so stay tuned. 
 
-Meanwhile, we’ve shared the data from both the first and second evaluation phases for mentors and mentees. If the highlights above don’t already speak for themselves, feel free to dive deeper into the numbers:
+Meanwhile, we've shared the data from both the first and second evaluation phases for mentors and mentees. If the highlights above don’t seem enough, feel free to dive deeper into the numbers:
 
 - [Mentees first evaluation document](https://docs.google.com/spreadsheets/d/10jhy0YNAM_-2gpxi4Uqr83Mpky2yGh2FMK-caLPno50/edit?usp=sharing)
 - [Mentees second evaluation data](https://docs.google.com/spreadsheets/d/1icqLP4-ieX9Pp9G_-n3rTD3kzwJOD3nIXg2oyi4gigI/edit?usp=sharing)
