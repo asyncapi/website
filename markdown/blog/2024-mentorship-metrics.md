@@ -66,7 +66,6 @@ The 2024 program welcomed eight highly esteemed and experienced mentors, 80% of 
 
 > The program is already doing well. I believe if the suggestions made by Ace during one of our community meetings to add certifications are included then the program will be even better.
 
-
 > The program is just amazing for contributors like me who are starting their journey.
 
 > First off, I'll say a very big Thank you!
