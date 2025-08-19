@@ -70,7 +70,7 @@ The 2024 program welcomed eight highly esteemed and experienced mentors, 80% of 
 
 > I've grown so much in this program, and I owe it
 
-> Please don't take initiatives that are out of your bandwith, like to get some feedback of my work I had to personally dm 5 to 6 people and except derberg and ace sometimes the rest don't give a damn.
+> Please don't take initiatives that are out of your bandwidth, like to get some feedback on my work, I had to personally dm 5 to 6 people and except for derberg and ace, sometimes the rest don't give a damn.
 
 > The program goal is clear. But one thing that lukasz always say that we have to focus more on maintainership. Including projects that require maintainership will be very helpful to the community. I agree to this point, it will be giving AsyncAPI community a lot of dedicated contributors.
 
