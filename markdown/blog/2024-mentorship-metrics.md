@@ -66,7 +66,7 @@ The 2024 program welcomed eight highly esteemed and experienced mentors, 80% of 
 
 > The program is just amazing for contributors like me who are starting their journey.
 
-> First off, I'll say a very big Thank you!
+> First off, I'll say a very big thank you!
 
 > I've grown so much in this program, and I owe it
 
