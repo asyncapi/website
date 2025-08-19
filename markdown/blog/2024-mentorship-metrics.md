@@ -82,7 +82,7 @@ The 2024 program welcomed eight highly esteemed and experienced mentors, 80% of 
 
 ### Conclusion
 
-A big thank you to everyone who participated in this program—from the kickoff discussions to the wrap-up event. Y'all are the special ones. And to those spreading the word about the AsyncAPI Mentorship Program, you all belong on the cover of Essence.
+A big thank you to everyone who participated in this program, from the kickoff discussions to the wrap-up event. Y'all are the special ones. And to those spreading the word about the AsyncAPI Mentorship Program, you all belong on the cover of Essence.
 
 Finally, a special shout-out to the mentors for making this edition of the program a success. We'll keep you updated on future entries for the AsyncAPI Maintainership Program this year, so stay tuned. 
 
