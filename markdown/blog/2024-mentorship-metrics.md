@@ -47,9 +47,7 @@ AsyncAPI mentorship program is an online global opensource program that provides
 The 2024 program welcomed eight highly esteemed and experienced mentors, 80% of whom are active maintainers.
 
 - Two-thirds of accepted mentors are returning mentors from previous editions of the program.
-
 - 85.7% of mentors passed the mentorship evaluations. 
-
 - 77.78% of mentors provided mentees with an exceptional mentorship experience.
 
 ## Program
