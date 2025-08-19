@@ -14,9 +14,7 @@ authors:
 excerpt: "AsyncAPI Mentorship Program: A Deep Dive into the Stats"
 ---
 
-AsyncAPI mentorship program is an online global opensource program that provides a structured pathway for bridging the gap between the AsyncAPI contributors and it's projects by pairing them with experienced mentors and maintainers over a defined period of time. 
-
-AsyncAPI mentorship program is an online global opensource program that provides a structured pathway for bridging the gap between the AsyncAPI contributors and it's projects by pairing them with experienced mentors and maintainers over a defined period of time. 
+The AsyncAPI mentorship program is a global online initiative designed to help new and existing contributors make significant contributions to AsyncAPI projects. The program pairs participants with seasoned mentors and maintainers, offering a structured path for growth over a period of time.
 
 <Figure
   src="/img/posts/mentorship-assets/overview.webp"
