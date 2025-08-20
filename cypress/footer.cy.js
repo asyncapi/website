@@ -2,11 +2,10 @@ import Footer from './pages/Footer';
 
 describe('Footer Links Validation', () => {
   const footer = new Footer();
-
   let links;
 
   before(() => {
-    cy.fixture('footerLinks').then((data) => {
+    cy.fixture('footerPageData').then((data) => {
       links = data;
     });
   });
@@ -15,25 +14,25 @@ describe('Footer Links Validation', () => {
     footer.visit();
   });
 
-  it('User verifies the initiative section', () => {
+  it('verifies the initiative links in the footer', () => {
     links.initiativeLinks.forEach(({ href, text }) => {
-      footer.verifyLink(href, text);
+      footer.verifyFooterLink(href, text);
     });
   });
 
-  it('User verifies the social section', () => {
+  it('verifies the social links in the footer', () => {
     links.socialLinks.forEach(({ href, text }) => {
-      footer.verifyLink(href, text);
+      footer.verifyFooterLink(href, text);
     });
   });
 
-  it('User verifies the news section', () => {
+  it('verifies the news links in the footer', () => {
     links.newsLinks.forEach(({ href, text }) => {
-      footer.verifyLink(href, text);
+      footer.verifyFooterLink(href, text);
     });
   });
 
-  it('User verifies Netlify link', () => {
-    footer.verifyLink(links.netlifyLink, '');
+  it('verifies the Netlify link in the footer', () => {
+    footer.verifyFooterLink(links.netlifyLink, '');
   });
 });

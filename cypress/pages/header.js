@@ -1,13 +1,12 @@
-class Header {
-  visit() {
-    cy.visit('/');
-  }
-  
+
+import BasePage from './basepageheader';
+
+class Header extends BasePage {
   verifyDropdownSections(navItemName) {
-    cy.get(`[data-testid="Navbar-main"] a`)
+    this.getElement('[data-testid="Navbar-main"] a')
       .contains(navItemName)
       .trigger('mouseover');
-    cy.get(`[data-testid="Flyout-main"]`).should('be.visible');
+    this.getElement('[data-testid="Flyout-main"]').should('be.visible');
   }
 
   verifyDocsDropdown() {

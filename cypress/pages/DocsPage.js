@@ -1,10 +1,7 @@
 class DocsPage {
-  visit() {
-    cy.visit('/docs');
-    // Clicking outside to remove focus (fixing hover issue)
-    cy.get('body').click(0, 0);
+  verifyPageLoaded() {
+    cy.url().should('include', '/docs');
+    cy.get('article').should('be.visible'); 
   }
 }
-
-
 export default DocsPage;

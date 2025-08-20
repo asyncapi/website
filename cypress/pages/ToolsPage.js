@@ -1,7 +1,6 @@
 class ToolsPage {
-  visit() {
-    cy.visit('/tools');
+  verifyPageLoaded() {
+    cy.contains('h1', 'Tools').should('be.visible');
   }
 }
-
 export default ToolsPage;

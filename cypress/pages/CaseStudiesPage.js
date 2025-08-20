@@ -1,7 +1,6 @@
 class CaseStudiesPage {
-  visit() {
-    cy.visit('/casestudies');
+  verifyPageLoaded() {
+    cy.contains('h1', 'Case Studies').should('be.visible');
   }
 }
-
 export default CaseStudiesPage;

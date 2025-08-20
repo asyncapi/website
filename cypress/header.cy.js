@@ -1,10 +1,11 @@
+
 import Header from './pages/header';
 
 describe('Header Links Validation', () => {
   const header = new Header();
 
   beforeEach(() => {
-    header.visit();
+    header.visit(); 
   });
 
   it('User hovers over Docs dropdown and sees all required sections', () => {

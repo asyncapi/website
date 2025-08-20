@@ -1,18 +1,17 @@
-class Footer {
-  visit() {
-    cy.visit('/');
-  }
+import BasePage from './basepagefooter';
 
-  verifyLink(href, text, attr = 'href') {
-    const element = cy.get(`a[href="${href}"]`).should('be.visible');
-    if (text) {
-      element.and('contain', text).and('have.attr', attr, href);
-    } else {
-      element.and('have.attr', attr, href);
-    }
-  }
-
+class Footer extends BasePage {
   
+  constructor() {
+    super();
+    this.footerSelector = 'footer'; 
+  }
+
+  verifyFooterLink(href, text, attr = 'href') {
+    cy.get(this.footerSelector).within(() => {
+      this.verifyLink(href, text, attr);
+    });
+  }
 }
 
 export default Footer;
