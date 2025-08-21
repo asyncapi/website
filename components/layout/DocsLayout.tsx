@@ -38,6 +38,7 @@ function generateEditLink(post: IPost) {
   if (last.endsWith('.mdx')) {
     last = last.replace('.mdx', '.md');
   }
+
   const target = editOptions.find((edit) => {
     return post.slug.includes(edit.value);
   });
@@ -50,26 +51,23 @@ function generateEditLink(post: IPost) {
   const isHrefToFile = lastListElement.length > 1;
   const EditPage = 'Edit this page on GitHub';
 
+  let finalUrl = '';
   if (target?.value === '') {
-    return (
-      <a
-        target='_blank'
-        rel='noopener noreferrer'
-        href={`${target.href}${post.isIndex ? `${post.slug}/index` : post.slug}.md`}
-        className='ml-1 underline'
-      >
-        {EditPage}
-      </a>
-    );
+    finalUrl = `${target.href}${post.isIndex ? `${post.slug}/index` : post.slug}.md`;
+  } else {
+    if (isHrefToFile) last = '';
+    finalUrl = `${target?.href}/${last}`;
   }
-  if (isHrefToFile) last = '';
 
   return (
-    <a target='_blank' rel='noopener noreferrer' href={`${target?.href}/${last}`} className='ml-1 underline'>
-      {EditPage}
-    </a>
+    <Button
+      text={EditPage}
+      onClick={() => window.open(finalUrl, '_blank', 'noopener,noreferrer')}
+      className="mt-2 ml-2 pt-2 pb-2"
+    />
   );
 }
+
 
 /**
  * @description DocsLayout component
