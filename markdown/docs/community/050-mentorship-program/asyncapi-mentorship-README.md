@@ -12,7 +12,6 @@ The AsyncAPI Mentorship makes it easy to sponsor and help train the next generat
 ### docs
 | Year | Term | Status | Announcement | Details |
 | ---- | ---- | ------ | ------------ | ------- |
-
 | 2024 | Sept-Jan | In Progress |       | [Sept-Jan](asyncapi-mentorship-2024-README.md) |
 | 2024 | Sep-Mar | In Progress  |       | In Progress |
 
