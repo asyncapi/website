@@ -33,38 +33,39 @@ interface IDocsLayoutProps {
  * @param {IPost} post
  */
 function generateEditLink(post: IPost) {
-  let last = post.id.substring(post.id.lastIndexOf('/') + 1);
+  if (post == null) return null;
 
-  if (last.endsWith('.mdx')) {
-    last = last.replace('.mdx', '.md');
-  }
+  let last = post.slug.split('/').pop() || '';
+  const lastListElement = last.split('.');
+  const isHrefToFile = lastListElement.length > 1;
+  const EditPage = 'Edit this page on GitHub';
 
   const target = editOptions.find((edit) => {
     return post.slug.includes(edit.value);
   });
-  const editHref = target?.href;
-  const hrefList = editHref?.split('/');
-
-  if (!hrefList) return null;
-
-  const lastListElement = hrefList[hrefList.length - 1].split('.');
-  const isHrefToFile = lastListElement.length > 1;
-  const EditPage = 'Edit this page on GitHub';
-
   let finalUrl = '';
   if (target?.value === '') {
-    finalUrl = `${target.href}${post.isIndex ? `${post.slug}/index` : post.slug}.md`;
+    const base = (target?.href || '').replace(/\/+$/, '');
+    const slugPath = post.slug.startsWith('/') ? post.slug : `/${post.slug}`;
+    finalUrl = post.isIndex ? `${base}${slugPath}/index.md` : `${base}${slugPath}.md`;
   } else {
-    if (isHrefToFile) last = '';
-    finalUrl = `${target?.href}/${last}`;
+    if (isHrefToFile) {
+      finalUrl = `${target?.href || ''}`;
+    } else {
+      finalUrl = `${(target?.href || '').replace(/\/+$/, '')}/${last}`;
+    }
   }
 
   return (
-    <Button
-      text={EditPage}
-      onClick={() => window.open(finalUrl, '_blank', 'noopener,noreferrer')}
-      className="mt-2 ml-2 pt-2 pb-2"
-    />
+    <>
+      <Button
+        text={EditPage}
+        href={finalUrl}
+        target='_blank'
+        aria-label='Edit this page on GitHub'
+        className='mt-2 ml-2 pt-2 pb-2'
+      />
+    </>
   );
 }
 
