@@ -1,24 +1,26 @@
-### CLI Installation
-Follow the [AsyncAPI CLI installation](https://github.com/asyncapi/cli#installation) instructions below, based on your computer’s operating system.
+### 💡Remember
+---
+
+Follow the **AsyncAPI CLI** installation instructions below, based on your computer's operating system.
 
 <details>
 <summary>MacOS</summary>
 
-`brew`
-<br/>
-You can install in MacOS via brew: `brew install asyncapi`.
+* **Using `brew`**: You can install in MacOS via brew: `brew install asyncapi`.
 
-`pkg`
-<br/>
-Each release of CLI produces a MacOS dedicated pkg file that enables you to install this CLI as MacOS application.
+* **Using `pkg`**: Each release of CLI produces a MacOS dedicated `pkg` file that enables you to install this CLI as MacOS application.
 
-```
-# Download latest release. To download specific release, your link should look similar to https://github.com/asyncapi/cli/releases/download/v0.13.0/asyncapi.pkg. All releases are listed in https://github.com/asyncapi/cli/releases
-curl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi.pkg
-# Install AsyncAPI CLI
-sudo installer -pkg asyncapi.pkg -target /
-```
+    ```shell
+    # Download the latest release.
+    curl -OL [https://github.com/asyncapi/cli/releases/latest/download/asyncapi.pkg](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.pkg)
+    
+    # To download a specific release, your link should look similar to:
+    # curl -OL [https://github.com/asyncapi/cli/releases/download/v0.13.0/asyncapi.pkg](https://github.com/asyncapi/cli/releases/download/v0.13.0/asyncapi.pkg)
+    # All releases are listed in [https://github.com/asyncapi/cli/releases](https://github.com/asyncapi/cli/releases)
 
+    # Install AsyncAPI CLI
+    sudo installer -pkg asyncapi.pkg -target /
+    ```
 </details>
 
 <details>
@@ -26,8 +28,10 @@ sudo installer -pkg asyncapi.pkg -target /
 
 You can install in Linux via `dpkg`, a debian package manager:
 
-1. `curl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi.deb` 
-2. `sudo dpkg -i asyncapi.deb`
+```shell
+curl -OL [https://github.com/asyncapi/cli/releases/latest/download/asyncapi.deb](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.deb)
+sudo dpkg -i asyncapi.deb
+```
 
 </details>
 
@@ -36,26 +40,26 @@ You can install in Linux via `dpkg`, a debian package manager:
 
 For Windows, install the appropriate installer and follow the default installation steps to complete the installation process.
 
-Download [asyncapi.x64.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x64.exe) for 64-bit Windows and [asyncapi.x86.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x86.exe) for 32-bit Windows.
-
+* For 64-bit, download [asyncapi.x64.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x64.exe).
+* For 32-bit, download [asyncapi.x86.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x86.exe).
 
 </details>
 
 <details>
 <summary>Other OS</summary>
 
-[Read further AsyncAPI CLI installation instructions for different operating systems](https://github.com/asyncapi/cli#installation).
+Read further [AsyncAPI CLI installation instructions for different operating systems](https://github.com/asyncapi/cli#installation).
 </details>
 
-#### Using NPM and Node.js
-Alternitavely, you can install the [AsyncAPI CLI](https://github.com/asyncapi/cli#installation) with Node.js `>=v10` and [NPM](https://nodejs.org/en/download/package-manager/).
+### Using NPM and Node.js
+Alternatively, you can install the **AsyncAPI CLI** with Node.js `>=v10` and [NPM](https://nodejs.org/en/download/package-manager/).
 
 <details>
 <summary>Install CLI globally</summary>
 
 Install AsyncAPI CLI _globally_ with the following command:
 
-```
+```shell
 npm install -g @asyncapi/cli
 ```
 </details>
@@ -63,9 +67,9 @@ npm install -g @asyncapi/cli
 <details>
 <summary>Install specific CLI version</summary>
 
-To install a specific version of the AsyncAPI CLI, pass the `verion` during installation:
+To install a specific version of the AsyncAPI CLI, pass the `version` during installation:
 
-```
+```shell
 npm install -g @asyncapi/cli@{version}
 ```
 
