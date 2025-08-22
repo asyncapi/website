@@ -3,6 +3,7 @@ title: Generate code
 description: In this tutorial, you'll learn how to generate code from your AsyncAPI document.
 weight: 100
 ---
+import CliInstallation from '@/assets/docs/fragments/cli-installation.mdx'
 
 ## Introduction
 
@@ -26,9 +27,7 @@ If you did not follow the previous tutorial and do not have an `asyncapi.yaml` f
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/en/download/) <b>10 or higher</b> installed which enables the installation of the required dependencies using <b>npm</b>.
-
-import CliInstallation from '@/assets/docs/fragments/cli-installation.mdx'
+- [Node.js](https://nodejs.org/en/download/) <b>16 or higher</b> installed, which enables installation of the required dependencies using <b>npm</b>.
 
 <CliInstallation />
 
