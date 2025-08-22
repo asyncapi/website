@@ -23,15 +23,14 @@ If you did not follow the previous tutorial and do not have an `asyncapi.yaml` f
 </Remember>
 
 ## Installation guide
-<Remember>
 
-It is important to have [Node.js](https://nodejs.org/en/download/) installed which will enable the installation of the required dependencies using <b>npm</b>.
+### Prerequisites
 
-</Remember>
+- [Node.js](https://nodejs.org/en/download/) <b>10 or higher</b> installed which enables the installation of the required dependencies using <b>npm</b>.
 
-import CliInstallation from '@/assets/docs/fragments/cli-installation.md'
+import CliInstallation from '@/assets/docs/fragments/cli-installation.mdx'
 
-<CliInstallation/>
+<CliInstallation />
 
 ## Create a Glee project
 
