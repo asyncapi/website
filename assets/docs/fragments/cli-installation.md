@@ -4,7 +4,7 @@
 Follow the **AsyncAPI CLI** installation instructions below, based on your computer's operating system.
 
 <details>
-<summary>▼ MacOS</summary>
+<summary>MacOS</summary>
 
 * **Using `brew`**: You can install in MacOS via brew: `brew install asyncapi`.
 
@@ -24,7 +24,7 @@ Follow the **AsyncAPI CLI** installation instructions below, based on your compu
 </details>
 
 <details>
-<summary>▼ Linux</summary>
+<summary>Linux</summary>
 
 You can install in Linux via `dpkg`, a debian package manager:
 
@@ -36,7 +36,7 @@ sudo dpkg -i asyncapi.deb
 </details>
 
 <details>
-<summary>▼ Windows</summary>
+<summary>Windows</summary>
 
 For Windows, install the appropriate installer and follow the default installation steps to complete the installation process.
 
@@ -46,7 +46,7 @@ For Windows, install the appropriate installer and follow the default installati
 </details>
 
 <details>
-<summary>▼ Other OS</summary>
+<summary>Other OS</summary>
 
 Read further [AsyncAPI CLI installation instructions for different operating systems](https://github.com/asyncapi/cli#installation).
 </details>
