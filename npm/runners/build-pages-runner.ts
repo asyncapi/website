@@ -9,7 +9,7 @@ interface BuildPagesOptions {
 
 const DEFAULT_OPTIONS = {
   sourceDir: 'markdown',
-  targetDir: 'pages',
+  targetDir: 'pages'
 };
 
 /**
@@ -35,7 +35,7 @@ async function runBuildPages(options: BuildPagesOptions = {}): Promise<void> {
     const customError = CustomError.fromError(error, {
       category: 'script',
       operation: 'runBuildPages',
-      detail: `Build pages failed - sourceDir: ${config.sourceDir}, targetDir: ${config.targetDir}`,
+      detail: `Build pages failed - sourceDir: ${config.sourceDir}, targetDir: ${config.targetDir}`
     });
 
     logger.error('Build pages runner failed', customError);
