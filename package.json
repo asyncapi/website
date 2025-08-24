@@ -8,6 +8,7 @@
     "dev": "npm run build-scripts && next dev",
     "build": "npm run build-scripts && next build",
     "test": "npm run test:unit && npm run test:integration",
+    "test:e2e": "npx cypress run",
     "test:coverage": "jest --coverage",
     "test:unit": "jest --passWithNoTests --testMatch=\"**/tests/**/*.test.*\" --testPathIgnorePatterns=\"tests/integration|netlify\"",
     "test:integration": "jest --passWithNoTests tests/integration",
