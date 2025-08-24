@@ -53,7 +53,23 @@ async function runBuildPostList(options: BuildPostListOptions = {}): Promise<voi
 // Self-executing async function to handle top-level await
 (async () => {
   try {
-    await runBuildPostList();
+    // Extract the file name and basePath from the CLI command
+    const outputFileArgIndex = process.argv.indexOf('--outputFile');
+    const outputFileName = outputFileArgIndex === -1 ? 'posts.json' : process.argv[outputFileArgIndex + 1];
+
+    const basePathArgIndex = process.argv.indexOf('--basePath');
+    const basePath = basePathArgIndex === -1 ? undefined : process.argv[basePathArgIndex + 1];
+
+    // Build outputPath using resolve(basePath, outputFileName)
+    let outputPath;
+
+    if (basePath) {
+      outputPath = resolve(basePath, outputFileName);
+    } else {
+      outputPath = resolve(currentDirPath, '../../config', outputFileName);
+    }
+
+    await runBuildPostList({ outputPath });
   } catch (error) {
     // Ensure we exit with error code
     process.exit(1);
