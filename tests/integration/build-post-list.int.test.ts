@@ -10,11 +10,16 @@ describe('Integration: build-post-list-runner CLI', () => {
 
   beforeAll(() => {
     tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'build-post-list-real-'));
-    outputPath = path.join(tempDir, 'posts.json');
+    const outputFileName = 'posts.json';
+
+    outputPath = path.join(tempDir, outputFileName);
+
     // Run the build-pages-runner before build-post-list-runner
     execSync('npx tsx npm/runners/build-pages-runner.ts', { stdio: 'inherit' });
-    // Run the runner as a CLI command with the test output path
-    execSync(`npx tsx npm/runners/build-post-list-runner.ts --output ${outputPath}`);
+
+    // Run the runner as a CLI command with the test output file name and basePath
+    execSync(`npx tsx npm/runners/build-post-list-runner.ts --outputFile ${outputFileName} --basePath "${tempDir}"`);
+
     output = JSON.parse(fs.readFileSync(outputPath, 'utf-8'));
   });
 
