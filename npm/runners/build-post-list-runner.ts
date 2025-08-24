@@ -50,10 +50,14 @@ async function runBuildPostList(options: BuildPostListOptions = {}): Promise<voi
   }
 }
 
+// Parse --output argument from CLI
+const outputArgIndex = process.argv.indexOf('--output');
+const cliOutputPath = outputArgIndex === -1 ? undefined : process.argv[outputArgIndex + 1];
+
 // Self-executing async function to handle top-level await
 (async () => {
   try {
-    await runBuildPostList();
+    await runBuildPostList({ outputPath: cliOutputPath });
   } catch (error) {
     // Ensure we exit with error code
     process.exit(1);
