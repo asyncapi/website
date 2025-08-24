@@ -9,7 +9,7 @@ interface BuildPagesOptions {
 
 const DEFAULT_OPTIONS = {
   sourceDir: 'markdown',
-  targetDir: 'pages'
+  targetDir: 'pages',
 };
 
 /**
@@ -35,7 +35,7 @@ async function runBuildPages(options: BuildPagesOptions = {}): Promise<void> {
     const customError = CustomError.fromError(error, {
       category: 'script',
       operation: 'runBuildPages',
-      detail: `Build pages failed - sourceDir: ${config.sourceDir}, targetDir: ${config.targetDir}`
+      detail: `Build pages failed - sourceDir: ${config.sourceDir}, targetDir: ${config.targetDir}`,
     });
 
     logger.error('Build pages runner failed', customError);
@@ -44,20 +44,11 @@ async function runBuildPages(options: BuildPagesOptions = {}): Promise<void> {
   }
 }
 
-// Run only in non-test environments
-if (process.env.NODE_ENV === 'test') {
-  logger.info('Skipping pages build in test environment');
-} else {
-  // Self-executing async function to handle top-level await
-  (async () => {
-    try {
-      await runBuildPages();
-    } catch (error) {
-      // Ensure we exit with error code
-      process.exit(1);
-    }
-  })();
-}
-
-// Export for testing purposes
-export { runBuildPages };
+(async () => {
+  try {
+    await runBuildPages();
+  } catch (error) {
+    // Ensure we exit with error code
+    process.exit(1);
+  }
+})();

@@ -18,7 +18,9 @@ describe('Integration: build-post-list-runner CLI', () => {
     execSync('npx tsx npm/runners/build-pages-runner.ts', { stdio: 'inherit' });
 
     // Run the runner as a CLI command with the test output file name and basePath
-    execSync(`npx tsx npm/runners/build-post-list-runner.ts --outputFile ${outputFileName} --basePath "${tempDir}"`);
+    execSync(
+      `npx tsx npm/runners/build-post-list-runner.ts --outputFile ${outputFileName} --basePath "${tempDir}"`,
+    );
 
     output = JSON.parse(fs.readFileSync(outputPath, 'utf-8'));
   });
@@ -64,9 +66,9 @@ describe('Integration: build-post-list-runner CLI', () => {
       expect.arrayContaining([
         expect.objectContaining({
           title: 'Welcome',
-          slug: '/docs'
-        })
-      ])
+          slug: '/docs',
+        }),
+      ]),
     );
   });
   it('about section contains About entry', () => {
@@ -74,9 +76,9 @@ describe('Integration: build-post-list-runner CLI', () => {
       expect.arrayContaining([
         expect.objectContaining({
           title: 'About',
-          slug: '/about'
-        })
-      ])
+          slug: '/about',
+        }),
+      ]),
     );
   });
 

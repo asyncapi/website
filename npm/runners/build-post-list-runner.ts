@@ -25,23 +25,27 @@ interface BuildPostListOptions {
  * @param options - Optional configuration for post directories, base path, and output path.
  * @throws {CustomError} If the build process fails or an error occurs in the runner.
  */
-async function runBuildPostList(options: BuildPostListOptions = {}): Promise<void> {
+async function runBuildPostList(
+  options: BuildPostListOptions = {},
+): Promise<void> {
   try {
     // Use provided options or fall back to default production paths
     const postDirectories = options.postDirectories || [
       [resolve(currentDirPath, '../../pages/blog'), '/blog'],
       [resolve(currentDirPath, '../../pages/docs'), '/docs'],
-      [resolve(currentDirPath, '../../pages/about'), '/about']
+      [resolve(currentDirPath, '../../pages/about'), '/about'],
     ];
     const basePath = options.basePath || resolve(currentDirPath, '../../pages');
-    const outputPath = options.outputPath || resolve(currentDirPath, '../../config', 'posts.json');
+    const outputPath =
+      options.outputPath ||
+      resolve(currentDirPath, '../../config', 'posts.json');
 
     await buildPostList(postDirectories, basePath, outputPath);
   } catch (error) {
     const customError = CustomError.fromError(error, {
       category: 'script',
       operation: 'runBuildPostList',
-      detail: `Build post list failed with output path: ${options.outputPath}`
+      detail: `Build post list failed with output path: ${options.outputPath}`,
     });
 
     logger.error('Build post list runner failed', customError);
@@ -55,10 +59,14 @@ async function runBuildPostList(options: BuildPostListOptions = {}): Promise<voi
   try {
     // Extract the file name and basePath from the CLI command
     const outputFileArgIndex = process.argv.indexOf('--outputFile');
-    const outputFileName = outputFileArgIndex === -1 ? 'posts.json' : process.argv[outputFileArgIndex + 1];
+    const outputFileName =
+      outputFileArgIndex === -1
+        ? 'posts.json'
+        : process.argv[outputFileArgIndex + 1];
 
     const basePathArgIndex = process.argv.indexOf('--basePath');
-    const basePath = basePathArgIndex === -1 ? undefined : process.argv[basePathArgIndex + 1];
+    const basePath =
+      basePathArgIndex === -1 ? undefined : process.argv[basePathArgIndex + 1];
 
     // Build outputPath using resolve(basePath, outputFileName)
     let outputPath;
