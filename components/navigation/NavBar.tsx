@@ -48,7 +48,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   const getUniqueLangs = (): string[] => {
     let pathnameWithoutLocale = pathname;
 
-    // Check if the pathname includes "/[lang]", if so, replace it with an empty string
+    // Check if the pathname includes "/[lang]"", if so, replace it with an empty string
     if (pathname && pathname.includes('/[lang]')) {
       pathnameWithoutLocale = pathname.replace('/[lang]', '');
     }
@@ -186,6 +186,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               onClick={() => showOnClickMenu('learning')}
               onMouseEnter={() => showMenu('learning')}
               hasDropdown
+              isOpen={open === 'learning'}
             />
             {open === 'learning' && <LearningPanel />}
           </div>
@@ -197,6 +198,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               onClick={() => showOnClickMenu('tooling')}
               onMouseEnter={() => showMenu('tooling')}
               hasDropdown
+              isOpen={open === 'tooling'}
             />
             {open === 'tooling' && <ToolsPanel />}
           </div>
@@ -208,6 +210,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               onClick={() => showOnClickMenu('community')}
               onMouseEnter={() => showMenu('community')}
               hasDropdown
+              isOpen={open === 'community'}
             />
             {open === 'community' && <CommunityPanel />}
           </div>
