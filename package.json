@@ -47,6 +47,7 @@
   },
   "homepage": "https://github.com/asyncapi/website#readme",
   "dependencies": {
+    "@asyncapi/website": "link:",
     "@docsearch/react": "^3.5.2",
     "@fec/remark-a11y-emoji": "^4.0.2",
     "@floating-ui/react-dom-interactions": "^0.13.3",
@@ -62,6 +63,7 @@
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.10",
+    "@types/mdx": "^2.0.13",
     "@types/react-gtm-module": "^2.0.3",
     "@types/react-scrollspy": "^3.3.9",
     "@types/react-typing-animation": "^1.6.6",
@@ -139,6 +141,7 @@
     "@types/he": "^1.2.3",
     "@types/inquirer": "^9.0.7",
     "@types/jest": "^29.5.14",
+    "@types/json-schema": "^7.0.15",
     "@types/lodash": "^4.17.0",
     "@types/node": "^20",
     "@types/react": "^18.0.1",
