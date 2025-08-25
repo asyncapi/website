@@ -47,7 +47,6 @@
   },
   "homepage": "https://github.com/asyncapi/website#readme",
   "dependencies": {
-    "@asyncapi/website": "link:",
     "@docsearch/react": "^3.5.2",
     "@fec/remark-a11y-emoji": "^4.0.2",
     "@floating-ui/react-dom-interactions": "^0.13.3",
