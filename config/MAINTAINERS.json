@@ -971,5 +971,13 @@
             "community"
         ],
         "githubID": 105683440
+    },
+    {
+        "github": "Adi-204",
+        "isTscMember": false,
+        "repos": [
+            "generator"
+        ],
+        "twitter": "AdiBoghawala"
     }
 ]
