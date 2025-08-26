@@ -16,7 +16,7 @@ import Paragraph from '../../components/typography/Paragraph';
 /**
  * @description Render the buttons for the Generator page.
  */
-function renderButtons(): JSX.Element {
+function renderButtons(): React.JSX.Element {
   return (
     <div className='mt-8 flex flex-wrap gap-4'>
       {/* <Button
@@ -53,7 +53,7 @@ export default function GeneratorPage() {
               Docs, Code, Anything!
             </Heading>
             <Paragraph className='mt-4'>{description}</Paragraph>
-            <img src={generatorimage} alt='generator diagram' className=' mx-auto h-auto lg:w-1/2 object-cover' />
+            <img src={generatorimage} alt='generator diagram' className=' mx-auto h-auto object-cover lg:w-1/2' />
           </div>
 
           <div className='relative mt-12 lg:mt-20 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8'>

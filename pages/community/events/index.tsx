@@ -72,11 +72,11 @@ export default function EventIndex() {
           />
           <div className='w-full sm:w-[70%]'>
             <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.smSemibold} className='mt-10 lg:text-2xl'>
-              Watch the AsyncAPI 2023 conference recordings from anywhere around the world for free
+              Watch the AsyncAPI 2024 conference recordings from anywhere around the world for free
             </Heading>
             <a
               data-testid='Recordings-Link'
-              href='https://www.youtube.com/playlist?list=PLbi1gRlP7pijHAnmN-n_OiTH6CAXxGthw&si=st3gY7Ri5uzhechB'
+              href='https://www.youtube.com/playlist?list=PLbi1gRlP7pijItMBmw9SeeyWxuEa3jLR2'
               target='_blank'
               rel='noreferrer'
             >
@@ -104,9 +104,9 @@ export default function EventIndex() {
               <Meeting
                 name='Community Meeting'
                 purpose='This is an open community meeting to discuss important topics around the AsyncAPI Initiative regularly. We organize it every two weeks in different time zones.'
-                host='Azeez Elegbede'
+                host='V Thulisile Sibanda'
                 bg='bg-gray-100'
-                hostProfile='https://github.com/AceTheCreator'
+                hostProfile='https://github.com/thulieblack'
                 youtube='https://www.youtube.com/playlist?list=PLbi1gRlP7pijUwZJErzyYf_Rc-PWu4lXS'
               />
             </div>
@@ -145,7 +145,8 @@ export default function EventIndex() {
             <Meeting
               name='Ad Hoc Meeting'
               bg='bg-gray-100'
-              purpose="Do you want to discuss something with the community and our other meeting formats don't apply? Use this meeting to schedule ad hoc topics with the community."
+              purpose="Do you want to discuss something with the community and our other meeting formats don't apply?
+              Use this meeting to schedule ad hoc topics with the community."
               host='Any of the hosts'
               youtube='https://www.youtube.com/asyncapi'
             />
