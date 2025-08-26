@@ -77,9 +77,13 @@ export default function Pagination({ totalPages, currentPage, onPageChange }: Pa
       <Button
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className={`font-normal flex h-[34px] items-center justify-center rounded bg-white px-3 py-[7px] text-sm leading-[17px] tracking-[-0.01em] ${
-          currentPage === 1 ? 'hover:bg-gray-white cursor-not-allowed text-gray-300' : 'text-[#141717] hover:bg-gray-50'
-        }`}
+        className={`font-normal flex h-[34px] items-center justify-center rounded bg-white px-3 py-[7px] text-sm
+          leading-[17px]
+          tracking-[-0.01em] ${
+            currentPage === 1
+              ? 'hover:bg-gray-white cursor-not-allowed text-gray-300'
+              : 'text-[#141717] hover:bg-gray-50'
+          }`}
         text=''
         icon={<IconPrevious />}
         iconPosition={ButtonIconPosition.LEFT}
@@ -114,11 +118,13 @@ export default function Pagination({ totalPages, currentPage, onPageChange }: Pa
       <Button
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className={`font-normal flex h-[34px] items-center justify-center rounded bg-white px-3 py-[7px] text-sm leading-[17px] tracking-[-0.01em] ${
-          currentPage === totalPages
-            ? 'hover:bg-gray-white cursor-not-allowed text-gray-300'
-            : 'text-[#141717] hover:bg-gray-50'
-        }`}
+        className={`
+          font-normal flex h-[34px] items-center justify-center rounded bg-white px-3 py-[7px] text-sm leading-[17px]
+          tracking-[-0.01em] ${
+            currentPage === totalPages
+              ? 'hover:bg-gray-white cursor-not-allowed text-gray-300'
+              : 'text-[#141717] hover:bg-gray-50'
+          }`}
         text=''
         icon={<IconNext />}
         aria-label='Go to next page'
