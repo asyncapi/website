@@ -39,7 +39,9 @@ export default function Filter<T extends DataObject = DataObject>({
   }, [route, checks, data]);
 
   useEffect(() => {
-    onFilterApply(data, onFilter, routeQuery);
+    const filterableQuery = Object.fromEntries(Object.entries(routeQuery).filter(([key]) => key !== 'page'));
+
+    onFilterApply(data, onFilter, filterableQuery);
   }, [routeQuery, data, onFilter]);
 
   return checks.map((check) => {

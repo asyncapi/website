@@ -33,27 +33,38 @@ export default function Pagination({ totalPages, currentPage, onPageChange }: Pa
   /**
    * @returns number of pages shows in Pagination.
    */
-  const getPageNumbers = (): (number | string)[] => {
-    if (totalPages <= 7) {
-      return Array.from({ length: totalPages }, (_, i) => i + 1);
+  const getPageNumber = (): (number | string)[] => {
+    const pages: (number | string)[] = [];
+
+    // start
+    if (currentPage >= 3) {
+      pages.push(1);
+      pages.push('start-ellipsis');
+    } else {
+      for (let i = 1; i <= Math.min(3, totalPages); i++) {
+        pages.push(i);
+      }
+      if (currentPage < 3) {
+        pages.push('start-ellipsis');
+      }
     }
 
-    const pages: (number | string)[] = [1];
-
-    if (currentPage > 3) {
-      pages.push('ellipsis1');
+    // Mid
+    if (currentPage >= 3 && currentPage < totalPages - 2) {
+      pages.push(currentPage - 1, currentPage, currentPage + 1);
+      pages.push('end-ellipsis');
     }
 
-    const start = Math.max(2, currentPage - 1);
-    const end = Math.min(totalPages - 1, currentPage + 1);
-
-    for (let i = start; i <= end; i++) {
-      pages.push(i);
+    // End
+    if (currentPage >= totalPages - 2) {
+      for (let i = Math.max(totalPages - 2, 4); i <= totalPages; i++) {
+        pages.push(i);
+      }
+    } else {
+      pages.push(totalPages);
     }
 
-    pages.push(totalPages);
-
-    return pages;
+    return [...new Set(pages)];
   };
 
   return (
@@ -69,7 +80,7 @@ export default function Pagination({ totalPages, currentPage, onPageChange }: Pa
         className={`font-normal flex h-[34px] items-center justify-center rounded bg-white px-3 py-[7px] text-sm leading-[17px] tracking-[-0.01em] ${
           currentPage === 1 ? 'hover:bg-gray-white cursor-not-allowed text-gray-300' : 'text-[#141717] hover:bg-gray-50'
         }`}
-        text={<span className='hidden md:inline'>Previous</span>}
+        text=''
         icon={<IconPrevious />}
         iconPosition={ButtonIconPosition.LEFT}
         aria-label='Go to previous page'
@@ -77,7 +88,7 @@ export default function Pagination({ totalPages, currentPage, onPageChange }: Pa
 
       {/* Page numbers */}
       <div className='flex gap-2' role='list'>
-        {getPageNumbers().map((page) =>
+        {getPageNumber().map((page) =>
           typeof page === 'number' ? (
             <PaginationItem
               key={page}
@@ -108,7 +119,7 @@ export default function Pagination({ totalPages, currentPage, onPageChange }: Pa
             ? 'hover:bg-gray-white cursor-not-allowed text-gray-300'
             : 'text-[#141717] hover:bg-gray-50'
         }`}
-        text={<span className='hidden md:inline'>Next</span>}
+        text=''
         icon={<IconNext />}
         aria-label='Go to next page'
       />

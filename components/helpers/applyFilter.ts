@@ -133,14 +133,10 @@ export const onFilterApply = <T extends DataObject>(
   onFilter: (result: T[], query: Filter) => void,
   query: Filter
 ): void => {
-  const nonFilterableKeys = ['page'];
   let result = inputData;
 
   if (query && Object.keys(query).length >= 1) {
     Object.keys(query).forEach((property) => {
-      if (nonFilterableKeys.includes(property)) {
-        return; // Skip non-filterable keys like 'page'
-      }
       const res = result.filter((e) => {
         if (!query[property] || e[property] === query[property]) {
           return e[property];
