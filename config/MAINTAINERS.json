@@ -976,7 +976,10 @@
         "name": "Adi Boghawala",
         "github": "Adi-204",
         "twitter": "AdiBoghawala",
-        "isTscMember": false,
+        "linkedin": "adi-boghawala",
+        "slack": "U0867GV384D",
+        "availableForHire": true,
+        "isTscMember": true,
         "repos": [
             "generator"
         ],
