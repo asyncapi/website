@@ -1,4 +1,4 @@
-import BasePage from './BasePageFooter';
+import BasePage from './BaseFooterPage';
 
 class Footer extends BasePage {
   

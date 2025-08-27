@@ -1,12 +1,13 @@
 
-import BasePage from './basepageheader';
+import BasePage from './BaseHeaderPage';
 
 class Header extends BasePage {
   verifyDropdownSections(navItemName) {
     this.getElement('[data-testid="Navbar-main"] a')
       .contains(navItemName)
+      .should('be.visible')
       .trigger('mouseover');
-    this.getElement('[data-testid="Flyout-main"]').should('be.visible');
+    this.getElement('[data-testid="Flyout-main"]').should('exist').and('be.visible');
   }
 
   verifyDocsDropdown() {

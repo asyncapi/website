@@ -7,6 +7,22 @@ describe('Home Page E2E Tests Using Base Components', () => {
     homePage.visit();
   });
 
+  const navigationTests = [
+    ['Blog', () => homePage.goToBlogPage()],
+    ['Docs', () => homePage.goToDocsPage()],
+    ['Case Studies', () => homePage.goToCaseStudiesPage()],
+    ['Tools', () => homePage.goToToolsPage()],
+    ['Community', () => homePage.goToCommunityPage()],
+    ['Roadmap', () => homePage.goToRoadmapPage()],
+  ];
+
+  navigationTests.forEach(([name, nav]) => {
+    it(`should navigate to the ${name} page`, () => {
+      const page = nav();
+      page.verifyPageLoaded();
+    });
+  });
+  
   it('should display the main header and logo', () => {
     homePage.verifyHeader();
     homePage.verifyNavbarLogo();
@@ -31,34 +47,4 @@ describe('Home Page E2E Tests Using Base Components', () => {
   it('should verify all important homepage links', () => {
     homePage.verifyHomepageCardLinks();
   });
-
-  it('should navigate to the Blog page', () => {
-    const blogPage = homePage.goToBlogPage();
-    blogPage.verifyPageLoaded();
-  });
-
-  it('should navigate to the Docs page', () => {
-    const docsPage = homePage.goToDocsPage();
-    docsPage.verifyPageLoaded(); 
-
-  it('should navigate to the Case Studies page', () => {
-    const caseStudiesPage = homePage.goToCaseStudiesPage();
-    caseStudiesPage.verifyPageLoaded(); 
-  });
-
-  it('should navigate to the Tools page', () => {
-    const toolsPage = homePage.goToToolsPage();
-    toolsPage.verifyPageLoaded(); 
-  });
-
-  it('should navigate to the Community page', () => {
-    const communityPage = homePage.goToCommunityPage();
-    communityPage.verifyPageLoaded(); 
-  });
-
-  it('should navigate to the Roadmap page', () => {
-    const roadmapPage = homePage.goToRoadmapPage();
-    roadmapPage.verifyPageLoaded(); 
-  });
-});
 });
