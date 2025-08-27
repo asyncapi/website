@@ -7,26 +7,11 @@
         "description": "Explore APIs and companies with public AsyncAPI specifications.",
         "links": {
           "websiteUrl": "https://apitracker.io/specifications/asyncapi",
-          "repoUrl": "https://github.com/apideck-io"
+          "repoUrl": ""
         },
         "filters": {
-          "language": [{
-            "name": "JavaScript",
-            "color": "bg-[#F2F1C7]",
-            "borderColor": "border-[#BFBE86]"
-          }],
-          "technology": [
-            {
-              "name": "Node.js",
-              "color": "bg-[#BDFF67]",
-              "borderColor": "border-[#84CE24]"
-            },
-            {
-              "name": "TypeScript",
-              "color": "bg-[#61d0f2]",
-              "borderColor": "border-[#40ccf7]"
-            }
-          ],
+          "language": [],
+          "technology": [],
           "categories": [
             "api",
             "directory"
@@ -1026,28 +1011,11 @@
         "description": "Explore APIs and companies with public AsyncAPI specifications.",
         "links": {
           "websiteUrl": "https://apitracker.io/specifications/asyncapi",
-          "repoUrl": "https://github.com/apideck-io"
+          "repoUrl": ""
         },
         "filters": {
-          "language": [
-            {
-              "name": "JavaScript",
-              "color": "bg-[#F2F1C7]",
-              "borderColor": "border-[#BFBE86]"
-            }
-          ],
-          "technology": [
-            {
-              "name": "Node.js",
-              "color": "bg-[#BDFF67]",
-              "borderColor": "border-[#84CE24]"
-            },
-            {
-              "name": "TypeScript",
-              "color": "bg-[#61d0f2]",
-              "borderColor": "border-[#40ccf7]"
-            }
-          ],
+          "language": [],
+          "technology": [],
           "categories": [
             "api",
             "directory"
