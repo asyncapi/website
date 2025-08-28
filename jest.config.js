@@ -13,10 +13,9 @@ const config = {
     'scripts/tools/tags-color.ts',
     'scripts/helpers/logger.ts'
   ],
-  // Default: all tests
+  // Default: all tests except integration
   testMatch: [
     '**/tests/**/*.test.*',
-    '**/npm/integrationTests/**/*.test.*',
     '!**/netlify/**/*.test.*'
   ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
