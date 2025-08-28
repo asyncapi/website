@@ -69,7 +69,7 @@ async function runBuildPostList(options: BuildPostListOptions = {}): Promise<voi
       outputPath = resolve(currentDirPath, '../../config', outputFileName);
     }
 
-    await runBuildPostList({ outputPath });
+    await runBuildPostList({ basePath, outputPath });
   } catch (error) {
     // Ensure we exit with error code
     process.exit(1);
