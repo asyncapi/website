@@ -34,10 +34,7 @@ interface PathObject {
  */
 
 // ✅ NEW: Async generator for efficient directory traversal
-async function* walkDirectory(
-  dir: string,
-  relativePath = '',
-): AsyncGenerator<{ filePath: string; relativeFilePath: string }> {
+async function* walkDirectory(dir: string, relativePath = ''): AsyncGenerator<{ filePath: string; relativeFilePath: string }> {
   const entries = await fs.readdir(dir, { withFileTypes: true });
 
   for (const entry of entries) {

@@ -20,9 +20,8 @@ import {
 jest.mock('../../scripts/helpers/logger.ts', () => ({
   logger: { info: jest.fn() },
 }));
-jest.mock('node-fetch-2', () => jest.fn());
 
-// Helper for Dirent-like objects for fs.readdir mocking
+jest.mock('node-fetch-2', () => jest.fn());
 function dirent(name: string, isFile = true, isDirectory = false) {
   return { name, isFile: () => isFile, isDirectory: () => isDirectory };
 }
@@ -35,7 +34,6 @@ describe('URL Checker Tests', () => {
     jest.clearAllMocks();
   });
 
-  // ----------- determineEditLink tests -----------
   describe('determineEditLink', () => {
     it('should generate correct edit link for docs with /docs prefix', () => {
       const result = determineEditLink(
@@ -68,32 +66,32 @@ describe('URL Checker Tests', () => {
       const result = determineEditLink(
         'some/nonexistent/path',
         'some/nonexistent/file.md',
-        [], // Empty edit options to ensure no match
+    [], // Empty edit options to ensure no match
       );
       expect(result).toBe(null);
     });
 
-    // --- Extra edge cases to check if fallback works---
+  // ...existing code...
     it('returns fallback link if editOption.value is empty', () => {
       const fallbackOption = [
-        { value: '', href: 'https://github.com/org/repo/edit/main' },
+    { value: '', href: 'https://github.com/org/repo/edit/main' },
       ];
       expect(
         determineEditLink('docs/anything', 'docs/anything.md', fallbackOption),
-      ).toBe('https://github.com/org/repo/edit/main/docs/docs/anything.md');
+  ).toBe('https://github.com/org/repo/edit/main/docs/docs/anything.md');
     });
 
     it('returns correct link for specific match', () => {
       const options = [
-        { value: 'special', href: 'https://github.com/org/repo/edit/main' },
+    { value: 'special', href: 'https://github.com/org/repo/edit/main' },
       ];
       expect(
         determineEditLink('docs/special', 'docs/special.md', options),
-      ).toBe('https://github.com/org/repo/edit/main/special.md');
+  ).toBe('https://github.com/org/repo/edit/main/special.md');
     });
   });
 
-  // ----------- generatePaths tests -----------
+  // ...existing code...
   describe('generatePaths', () => {
     it('should generate correct paths for markdown files', async () => {
       const paths = await generatePaths(testDir, editOptions);
@@ -131,13 +129,13 @@ describe('URL Checker Tests', () => {
       await expect(generatePaths(invalidDir, editOptions)).rejects.toThrow();
     });
 
-    // --- Extra edge cases ---
+  // ...existing code...
     it('throws TypeError for invalid folderPath', async () => {
-      // @ts-expect-error
+  // @ts-expect-error
       await expect(generatePaths(undefined, editOptions)).rejects.toThrow(
         TypeError,
       );
-      // @ts-expect-error
+  // @ts-expect-error
       await expect(generatePaths('', editOptions)).rejects.toThrow(TypeError);
     });
 
@@ -154,11 +152,11 @@ describe('URL Checker Tests', () => {
       jest
         .spyOn(fs, 'readdir')
         .mockImplementationOnce(async () => [
-          dirent('subdir', false, true), // subdirectory
-          dirent('main.md', true, false), // top-level markdown file
+          dirent('subdir', false, true),
+          dirent('main.md', true, false),
         ])
         .mockImplementationOnce(async () => [
-          dirent('subfile.md', true, false), // file inside subdirectory
+          dirent('subfile.md', true, false),
         ]);
       const result = await generatePaths(testDir, editOptions);
       expect(result.some((f) => f.filePath.endsWith('main.md'))).toBe(true);
@@ -166,7 +164,7 @@ describe('URL Checker Tests', () => {
     });
   });
 
-  // ----------- processBatch tests -----------
+  // ...existing code...
   describe('processBatch', () => {
     const testBatch = processBatchData;
 
@@ -216,18 +214,17 @@ describe('URL Checker Tests', () => {
       await expect(processBatch(testBatch)).rejects.toThrow();
     }, 20000);
 
-    // --- Extra edge cases ---
     const batch = [
       {
         filePath: 'file1.md',
         urlPath: 'docs/file1',
-        editLink: 'https://github.com/org/repo/edit/main/file1.md',
+  editLink: 'https://github.com/org/repo/edit/main/file1.md',
       },
       {
         filePath: 'reference/specification/v2.x.md',
         urlPath: 'docs/reference/specification/v2.x',
-        editLink: 'https://github.com/org/repo/edit/main/v2.x.md',
-      }, // ignored
+  editLink: 'https://github.com/org/repo/edit/main/v2.x.md',
+  },
       { filePath: 'file2.md', urlPath: 'docs/file2', editLink: null }, // no editLink
     ];
 
