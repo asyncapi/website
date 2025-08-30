@@ -69,7 +69,7 @@ And I'm very excited to share what we have achieved so far.
 4. **Community Repo Reorg**: With the growth and new documents being authored, it was essential to bring structure, accessibility, and discoverability to the community repo. We needed to improve navigation and consistency. As part of the AsyncAPI Bounty Program, [Anton Zolotukhin](https://www.linkedin.com/in/mister-gold) worked on restructuring and rearranging the page weights.
 
 
-These efforts demonstrate the importance of documentation and its contribution to the overall AsyncAPI ecosystem. This is attested by the fact that we have garnered over **68 036 sessions** and **22,456 new users** from January to August 2025.
+These efforts demonstrate the importance of documentation and its contribution to the overall AsyncAPI ecosystem. This is attested by the fact that we have garnered over **68 036 sessions** and **22 456 new users** from January to August 2025.
 
 Our tutorials and reference content bucket have the highest number of new visitors. 
 
