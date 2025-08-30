@@ -1,12 +1,5 @@
 [
   {
-    "title": "AsyncAPI Community WG Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=NTJwZGM4Z2Flczc0bmRzY2czMjRwaXRjamMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1897",
-    "banner": "https://github.com/user-attachments/assets/e0c22c5a-94a8-488c-970c-14aa1697283c",
-    "date": "2025-05-20T15:00:00.000Z"
-  },
-  {
     "title": "Design WG Meeting ",
     "calLink": "https://www.google.com/calendar/event?eid=OTdwMDl2dTlwdm9yNzRhZTV0ajdsbmQ5aW8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1908",
