@@ -126,18 +126,18 @@ jobs:
           LOCALE_OUTPUT=$(npm run test:locales 2>&1)
           EXIT_CODE=$?
           set -e
-
+          
           # If the command failed, extract and format the error message
           if [ $EXIT_CODE -ne 0 ]; then
             # Extract the found languages
             LANGUAGES=$(echo "$LOCALE_OUTPUT" | grep "Found" | sed 's/.*Found \(.*\) languages.*/Found \1 languages:/')
-
+            
             # Extract the missing keys information without timestamps
             MISSING_KEYS=$(echo "$LOCALE_OUTPUT" | grep -A 100 "Missing keys in" | grep -v "\[.*PM\] \|^\s*$")
-
+            
             # Combine the cleaned output
             CLEANED_OUTPUT="$LANGUAGES\n\n$MISSING_KEYS"
-
+            
             echo "locale_output<<EOF" >> $GITHUB_OUTPUT
             echo -e "$CLEANED_OUTPUT" >> $GITHUB_OUTPUT
             echo "EOF" >> $GITHUB_OUTPUT
