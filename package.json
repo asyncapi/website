@@ -79,7 +79,7 @@
     "gray-matter": "^4.0.3",
     "he": "^1.2.0",
     "i18next": "^23.12.2",
-    "inquirer": "^9.2.14",
+    "inquirer": "^12.9.0",
     "jgexml": "^0.4.4",
     "js-cookie": "^3.0.5",
     "json-schema": "^0.4.0",
