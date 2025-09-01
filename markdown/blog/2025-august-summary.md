@@ -36,7 +36,7 @@ We have the:
 
 We have less than three weeks until the AsyncAPI London Edition, and we are excited to share that we have **FREE Community Tickets** to give to our community members.
 
-This year's conference features an impressive lineup of speakers; [be sure to check the agenda on the conference website](https://conference.asyncapi.com/venue/London) soon (*we are still finalising the scheduling*).
+This year's conference features an impressive lineup of speakers; be sure to [check the agenda on the conference website](https://conference.asyncapi.com/venue/London) soon (*we are still finalising the scheduling*).
 
 To redeem your ticket, please follow these simple steps:
 
@@ -47,9 +47,9 @@ To redeem your ticket, please follow these simple steps:
 
 ### Bangalore 2025
 
-The first batch of speakers for the [AsyncAPI Bangalore Edition is now live on the conference website](https://conference.asyncapi.com/#speakers). We are currently working with the organisers to secure additional speaker slots for the AsyncAPI track. Once finalised, we will update the conference website with the agenda.
+[The first batch of speakers for the AsyncAPI Bangalore Edition is now live on the conference website](https://conference.asyncapi.com/#speakers). We are currently working with the organisers to secure additional speaker slots for the AsyncAPI track. Once finalised, we will update the conference website with the agenda.
 
-Please keep an eye on the `#07_events` [channel on Slack](https://asyncapi.slack.com/archives/C023A76SV2Q) for announcements on the progress, scheduling, and ticket updates.
+Please keep an eye on the [`#07_events` channel on Slack](https://asyncapi.slack.com/archives/C023A76SV2Q) for announcements on the progress, scheduling, and ticket updates.
 
 ## Spec x Tooling
 As I mentioned, some maintainers have been working to improve their projects. One of the initiatives undertaken by the AsyncAPI Generator team is to improve the contribution guide and introduce multiple maintainer roles.
@@ -64,7 +64,7 @@ Over the past few months, I have been working together with docs contributors to
 And I'm very excited to share what we have achieved so far.
 
 1. **Community to Website Repo Workflow**: To achieve our goal of integrating community documentation onto the website, we needed a workflow that automatically pushes all merged documents from the community repository to the website and deploys them live. [Animesh Kumar](https://github.com/animeshk923) led this contribution, [and we now have a functioning workflow in place](https://github.com/asyncapi/community/blob/master/.github/workflows/update-docs-in-website.yml).
-2. **Expand Community Documentation**: Due to the lack of enough onboarding materials for the diverse roles we have in the community, such as documentation contributors, code contributors, ambassadors, maintainers, etc, it made the onboarding experience not efficient, and to reduce the number of onboarding calls, [Anton Zolotukhin](https://www.linkedin.com/in/mister-gold) and I co-mentored as part of the 2024 Mentorship Program. The hard work of [Ezinne Anne Emilia](https://github.com/ezinneanne) and [Prince Onyeanuna](https://github.com/Aahil13), is now part of the[ community content bucket, live on the AsyncAPI website](https://www.asyncapi.com/docs/community/000-onboarding).
+2. **Expand Community Documentation**: We lacked enough onboarding materials for diverse roles we have in the community, such as documentation contributors, code contributors, ambassadors, maintainers, etc, it made the onboarding experience not efficient, and to reduce the number of onboarding calls, [Anton Zolotukhin](https://www.linkedin.com/in/mister-gold) and I co-mentored as part of the 2024 Mentorship Program. The hard work of [Ezinne Anne Emilia](https://github.com/ezinneanne) and [Prince Onyeanuna](https://github.com/Aahil13), is now part of the[ community content bucket, live on the AsyncAPI website](https://www.asyncapi.com/docs/community/000-onboarding).
 3. **Complete the AsyncAPI Style Guide**: As an Open-Source community with diverse contributors, maintaining consistency in our work is crucial. We needed to ensure clarity, uniformity, and consistency in the voice and tone of our documentation. Having all technical writers follow the same guidelines allows readers to find the information more easily and understand how to use our specifications and tooling. We couldn't have done it without our amazing contributors [Karuna Tata](https://github.com/starlightknown), [Rohit T](https://github.com/TRohit20), [Bhaswati Roy](https://github.com/BhaswatiRoy), [Thulisile Sibanda](https://github.com/thulieblack), [Christine Belzie](https://github.com/CBID2), and [Ezinne Anne Emilia](https://github.com/ezinneanne). You can check out [the AsyncAPI Style Guide docs](https://www.asyncapi.com/docs/community/011-styleguide) live on our website.
 4. **Community Repo Reorg**: With the growth and new documents being authored, it was essential to bring structure, accessibility, and discoverability to the community repo. We needed to improve navigation and consistency. As part of the AsyncAPI Bounty Program, [Anton Zolotukhin](https://www.linkedin.com/in/mister-gold) worked on restructuring and rearranging the page weights.
 
