@@ -40,7 +40,7 @@ This year's conference features an impressive lineup of speakers; be sure to [ch
 
 To redeem your ticket, please follow these simple steps:
 
-1. Click on the [ticket link](https://ticket.apidays.global/event/apidays-london-2025/72d72730-dbf4-47d0-aa07-aa9da87d28ca?_gl=1*1ym95pg*_gcl_au*MTEzNDE5MTY3MC4xNzQzNjg5MDky).
+1. Click on the [ticket link](https://ticket.apidays.global/event/apidays-london-2025/72d72730-dbf4-47d0-aa07-aa9da87d28ca).
 2. Select one ticket from the **Apidays London Regular Tickets**.
 3. Use the code "**AsyncAPIVIP**" to redeem your free ticket.
 4. Fill in your details, and we’ll see you at the event!
