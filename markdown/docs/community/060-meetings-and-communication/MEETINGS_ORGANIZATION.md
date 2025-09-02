@@ -165,7 +165,7 @@ We have an automated workflow in place:
 
 Start [discussion in community repository](https://github.com/asyncapi/community/discussions). Explain the idea and justify why it requires a separate meeting. We currently have [approval from the Technical Steering Commitee](https://github.com/asyncapi/community/discussions/295) to pay for up to 8 Zoom licenses.
 
-Once a new meeting is approved, add a [new workflow like this one](../../.github/workflows/create-event-community-meeting.yml) and a [new GitHub issue template like this one](../../.github/workflows/create-event-helpers/issues_templates/community.md).
+Once a new meeting is approved, add a [new workflow like this one](https://github.com/asyncapi/community/blob/master/.github/workflows/create-event-community-meeting.yml) and a [new GitHub issue template like this one](https://github.com/asyncapi/community/blob/master/.github/workflows/create-event-helpers/issues_templates/community.md).
 
 
 ### How can I become a host?
