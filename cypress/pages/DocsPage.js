@@ -1,51 +1,46 @@
-class DocsPage {
+import BasePage from './basepagedocs';
+
+class DocsPage extends BasePage {
   visitDocsPage() {
-    cy.get('[data-testid="NavItem-Link"][href="/docs"]').click();
+    this.verifyLinkByHref('/docs');
   }
 
-  verifyCardLinks(href){
+  verifyCardLinks(href) {
     cy.get(`[href="${href}"]`)
-    .find('[data-testid="Docs-div-contents"]')
-    .find('[data-testid="Paragraph-test"]')
-    .should('exist');
+      .find('[data-testid="Docs-div-contents"]')
+      .find('[data-testid="Paragraph-test"]')
+      .should('exist');
   }
-  
+
+  navigateToSection(section, href) {
+    this.verifyLinkByLabel(href, section);
+  }
   verifyConceptSection(){
     cy.get(`a[href="/docs/concepts"] span`).contains('Concepts').click();
   }
-  navigateToSection(section,href){
-    cy.get(`a[href="${href}"] span`).contains(section).click();
+  goToConceptsSection() {
+    this.navigateToSection('Concepts', '/docs/concepts');
   }
-  goToConceptsSection(){
-    this.navigateToSection('Concepts',"/docs/concepts")
-  }
-
   goToTutorialsSection() {
-    this.navigateToSection('Tutorials',"/docs/tutorials")
+    this.navigateToSection('Tutorials', '/docs/tutorials');
   }
-
   goToToolsSection() {
-    this.navigateToSection('Tools',"/docs/tools")
+    this.navigateToSection('Tools', '/docs/tools');
   }
-
   goToGuidesSection() {
-    this.navigateToSection('Guides',"/docs/guides")
+    this.navigateToSection('Guides', '/docs/guides');
   }
-
   goToReferenceSection() {
-    this.navigateToSection('Reference',"/docs/reference")
+    this.navigateToSection('Reference', '/docs/reference');
   }
-
-  goToMigrationsSection(){
-    this.navigateToSection('Migration',"/docs/migration")
+  goToMigrationsSection() {
+    this.navigateToSection('Migration', '/docs/migration');
   }
-
-  goToCommunitySection(){
-    this.navigateToSection('Community',"/docs/community")
+  goToCommunitySection() {
+    this.navigateToSection('Community', '/docs/community');
   }
-
   verifyConceptSubsection({ href, label}) {
-    cy.get(`a[href="${href}"]`).contains(label).click();
+    this.verifyLinkByLabel(href, label);
   }
 }
 

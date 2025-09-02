@@ -1,7 +1,7 @@
 import HomePage from './pages/homepage';
 import toolsData from './fixtures/toolsData.json';
 
-describe('Tools Page Link Verification', () => {
+describe('Tools Page E2E Tests', () => {
   let homePage;
   let toolsPage;
 
@@ -13,23 +13,20 @@ describe('Tools Page Link Verification', () => {
 
   Object.entries(toolsData).forEach(([sectionName, linksData]) => {
     describe(`${sectionName} section`, () => {
-    it('verifies website links', () => {
-        const websiteLinks = linksData.WebsiteLinks || [];
-        websiteLinks.forEach((link) => {
+      it('verifies Website links', () => {
+        (linksData.WebsiteLinks || []).forEach((link) => {
           toolsPage.verifyWebsiteLinks(link.href, link.heading);
         });
       });
 
       it('verifies GitHub links', () => {
-        const githubLinks = linksData.GithubLinks || [];
-        githubLinks.forEach((link) => {
+        (linksData.GithubLinks || []).forEach((link) => {
           toolsPage.verifyGithubLinks(link.href, link.heading);
         });
       });
 
-      it('verifies documentation links', () => {
-        const docsLinks = linksData.DocsLinks || [];
-        docsLinks.forEach((link) => {
+      it('verifies Docs links', () => {
+        (linksData.DocsLinks || []).forEach((link) => {
           toolsPage.verifyDocsLinks(link.href, link.heading);
         });
       });

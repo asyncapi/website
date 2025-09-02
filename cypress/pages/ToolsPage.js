@@ -1,30 +1,32 @@
-class ToolsPage {
+import BasePage from './BasePageTools';
+
+class ToolsPage extends BasePage {
   visitToolsPage() {
-    cy.visit('/tools');
+    super.visit('/tools');
   }
 
   verifyToolLink(href, heading, linkType) {
-   const linkTexts = {
-     website: 'Visit Website',
-     github: 'View Github', 
-     docs: 'Visit Docs'
+    const linkTexts = {
+      website: 'Visit Website',
+      github: 'View Github',
+      docs: 'Visit Docs'
     };
-   
-   cy.get(`a[href="${href}"]`).contains(linkTexts[linkType]);
-   cy.get('h2').should('contain.text', heading);
- }
 
- verifyWebsiteLinks(href, heading) {
-   this.verifyToolLink(href, heading, 'website');
- }
+    this.getLink(href, linkTexts[linkType]);
+    this.getHeaderText('h2', heading);
+  }
 
- verifyGithubLinks(href, heading) {
-   this.verifyToolLink(href, heading, 'github');
- }
+  verifyWebsiteLinks(href, heading) {
+    this.verifyToolLink(href, heading, 'website');
+  }
 
- verifyDocsLinks(href, heading) {
-   this.verifyToolLink(href, heading, 'docs');
- }
+  verifyGithubLinks(href, heading) {
+    this.verifyToolLink(href, heading, 'github');
+  }
+
+  verifyDocsLinks(href, heading) {
+    this.verifyToolLink(href, heading, 'docs');
+  }
 }
 
 export default ToolsPage;
