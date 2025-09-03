@@ -189,6 +189,8 @@ A dropped Bounty Issue can not be assigned again to the same Bounty Program Part
 
 ## Additional Conditions
 
+The Bounty Program operates on a mutual-exclusion basis: during the time of participation of a GitHub issue in the Bounty Program, contributions (code, documentation, design, and other solutions) are accepted only from the assigned Bounty Program Participants.
+
 AsyncAPI Maintainers are allowed to work on Bounty Issues submitted by themselves.
 
 Bounty Program Participant is allowed to choose up to two Bounty Issues of any Complexity Level for simultaneous resolution.
