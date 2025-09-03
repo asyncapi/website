@@ -118,7 +118,7 @@ You can follow the steps from the [GitHub documentation](https://docs.github.com
 ## Start Contributing
 
 1. Create a branch on your fork.
-2. Commit changes with clear messages. Use the [Conventional Commits](https://github.com/asyncapi/community/pull/1733) format.
+2. Commit changes with clear messages. Use the [Conventional Commits](../010-contribution-guidelines/conventional-commits) format.
 3. Push changes to your fork:
 
     ```bash
