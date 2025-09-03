@@ -31,7 +31,7 @@ TL;DR: GSoC exclusively focuses on coding projects. While initiatives like docum
   Please be sure to familiarize yourself with the AsyncAPI initiative and its mission and [get involved in the community](https://asyncapi.com/slack-invite). Explore the [AsyncAPI projects](https://github.com/asyncapi), get an idea of the project of your interest, and explore the source code and organization of the project.
 
 - **Write your project proposal.**
-  Visit the [ideas page](./summerofcode-2024-asyncapi-gsoc-ideas-page.md) to choose a topic that catches your interest. You can also draw inspiration from projects from previous years.
+  Visit the [ideas page](./summerofcode-2024-asyncapi-gsoc-ideas-page) to choose a topic that catches your interest. You can also draw inspiration from projects from previous years.
   
   We recommend reading [Google's guide for writing a proposal](https://google.github.io/gsocguides/student/writing-a-proposal).
 

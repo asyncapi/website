@@ -5,7 +5,7 @@ weight: 20
 
 ## Governance Board (GB) members
 
-You can determine who the current GB members are by filtering the [MAINTAINERS.yaml](../../MAINTAINERS.yaml) and the [AMBASSADORS_MEMBERS.yaml](../../AMBASSADORS_MEMBERS.yaml) with the `isBoardMember` set to `true`. We also transparently list all the GB members in [AsyncAPI Website](https://asyncapi.com/community/board)
+You can determine who the current GB members are by filtering the [MAINTAINERS.yaml](https://github.com/asyncapi/community/blob/master/MAINTAINERS.yaml) and the [AMBASSADORS_MEMBERS.yaml](https://github.com/asyncapi/community/blob/master/AMBASSADORS_MEMBERS.yaml) with the `isBoardMember` set to `true`. We also transparently list all the GB members in [AsyncAPI Website](https://asyncapi.com/community/board)
 
 To become a GB member, you need to be a member of the Technical Steering Committee (TSC). To become a member of TSC, you need to be either an Ambassador or a Maintainer. 
 
@@ -46,7 +46,7 @@ In the event that a board member's term is terminated prior to its scheduled end
 
 Among others, the duties and responsibilities of the GB include:
 
-- Ensure compliance with the [charter](CHARTER.md).
+- Ensure compliance with the [charter](CHARTER).
 - Maintain a safe and inclusive environment for all AsyncAPI participants.
 - Sustain AsyncAPI’s economic viability, including sponsorship and funding strategies.
 - Securely manage credentials for all AsyncAPI services.
@@ -54,7 +54,7 @@ Among others, the duties and responsibilities of the GB include:
 - Ensure authorized access to AsyncAPI services.
 - Conduct regular GB succession via a transparent voting process.
 - Manage funding streams (e.g., Open Collective, GitHub Sponsors).
-- Serve as a servant leader with authority limited to what is specified in the [charter](CHARTER.md); all proposals require TSC approval.
+- Serve as a servant leader with authority limited to what is specified in the [charter](CHARTER); all proposals require TSC approval.
 
 Please note that the list above is not an exhaustive list and should not be treated as a legal document, but just for reference.
 
@@ -65,13 +65,13 @@ Board members will appoint a chairperson during the first board meeting followin
 
 ## Technical Steering Committee (TSC) members
 
-You can determine who is a TSC member and has the right to vote from [MAINTAINERS.yaml](../../MAINTAINERS.yaml) and [AMBASSADORS_MEMBERS.yaml](../../AMBASSADORS_MEMBERS.yaml), `isTSCMember` properties. We also transparently list all the TSC members in [AsyncAPI Website](https://asyncapi.com/community/tsc).
+You can determine who is a TSC member and has the right to vote from [MAINTAINERS.yaml](https://github.com/asyncapi/community/blob/master/MAINTAINERS.yaml) and [AMBASSADORS_MEMBERS.yaml](https://github.com/asyncapi/community/blob/master/AMBASSADORS_MEMBERS.yaml), `isTSCMember` properties. We also transparently list all the TSC members in [AsyncAPI Website](https://asyncapi.com/community/tsc).
 
 Any maintainer and any ambassador can change their status by editing `isTSCMember` properties.
 
 ## Voting
 
-TSC Voting process and all related rules are described in detail in [voting procedure document](voting.md).
+TSC Voting process and all related rules are described in detail in [voting procedure document](voting).
 
 GB election voting is a separate manual process run by current GB members:
 - The vote should be sent to info@asyncapi.io not later than two weeks after the elections start

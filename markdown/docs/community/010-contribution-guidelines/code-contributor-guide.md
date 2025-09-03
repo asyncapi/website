@@ -13,20 +13,20 @@ Welcome to the AsyncAPI community! We're excited to have you here. Think of Asyn
 ## Prerequisites
  Before you begin contributing code, make sure you're familiar with the following:
 
-- [Git Workflow Guide](git-workflow.md): Learn how to fork, branch, commit, and open pull requests.
+- [Git Workflow Guide](git-workflow): Learn how to fork, branch, commit, and open pull requests.
 - [Git](https://git-scm.com) and [GitHub](https://github.com): These are your primary tools for version control and collaboration. Learn the basics [here](https://docs.github.com/en/get-started).  
 - Code Editor: Your tool to work with the source code of our repositories and version control. For example, [VS Code](https://code.visualstudio.com), [Sublime Text](https://www.sublimetext.com), [JetBrains IDEs](https://www.jetbrains.com/ides/), or any other tool you prefer.
 - [Node.js & npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm): AsyncAPI relies on JavaScript/TypeScript, so ensure these are installed and configured.  
 
 ## Contribution Etiquette  
 1. Follow the [Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md)
-2. Stick to the [Contributing guidelines](../../CONTRIBUTING.md)
+2. Stick to the [Contributing guidelines](https://github.com/asyncapi/community/blob/master/CONTRIBUTING.md)
 3. Document the "why" of your contribution(s). Make sure that someone who opens the code for the first time understands the changes you've made.
 4. Communicate openly through discussions on GitHub or designated Slack channels.
 
 ## Submit Your First Pull Request (PR)  
 
-Once you've made and committed your changes (following the Git Workflow guide), you need to create a Pull Request (PR) to propose merging your work into the official AsyncAPI repository. Make sure to use the [conventional commit style](https://github.com/asyncapi/.github/blob/master/CONTRIBUTING.md#conventional-commits) while creating PRs and follow these steps:  
+Once you've made and committed your changes (following the Git Workflow guide), you need to create a Pull Request (PR) to propose merging your work into the official AsyncAPI repository. Make sure to use the [conventional commit style](../010-contribution-guidelines/conventional-commits) while creating PRs and follow these steps:  
 
 ### Create a Pull Request (PR)
 

@@ -7,4 +7,4 @@ The AsyncAPI style guide helps community members learn how to contribute to our 
 
 The goal is to provide docs contributors with the same guidelines to make it easier for readers to find the necessary information.
 
-> For a comprehensive understanding of the various ways you can contribute to the AsyncAPI Initiative, please consult the [AsyncAPI contributing guidelines](../../CONTRIBUTING.md).
+> For a comprehensive understanding of the various ways you can contribute to the AsyncAPI Initiative, please consult the [AsyncAPI contributing guidelines](https://github.com/asyncapi/community/blob/master/CONTRIBUTING.md).

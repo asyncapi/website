@@ -11,7 +11,7 @@ weight: 90
 
 ## Program Maintainers
 
-- Alejandra Quetzalli ([@alequetzalli](https://github.com/alequetzalli)): https://twitter.com/QuetzalliWrites
+- Quetzalli Writes ([quetzalliwrites](https://github.com/quetzalliwrites)): https://twitter.com/QuetzalliWrites
 - Lukasz Gornicki ([@derberg](https://github.com/derberg)): https://twitter.com/derberq
 ## 2022 participation
 

@@ -5,7 +5,7 @@ weight: 50
 
 ## Voting Overview
 
-In the [search for the right governance model](https://www.asyncapi.com/blog/governance-motivation), we ended up defining a Technical Steering Committee (TSC) that can help make decisions related to the entire AsyncAPI Initiative and not only a specific repository. TSC voting is described in the official [Charter](CHARTER.md#4-tsc-voting). 
+In the [search for the right governance model](https://www.asyncapi.com/blog/governance-motivation), we ended up defining a Technical Steering Committee (TSC) that can help make decisions related to the entire AsyncAPI Initiative and not only a specific repository. TSC voting is described in the official [Charter](CHARTER#5-tsc-voting). 
 
 The Governance Board (GB) manages the voting process.
 
@@ -66,7 +66,7 @@ The Git Vote bot adds a comment that voting is completed.
 
 ### Tracking Voting
 
-We store [the voting history of the entire TSC](TSC_VOTING_OVERVIEW.md) since voting automation was introduced.
+We store [the voting history of the entire TSC](TSC_VOTING_OVERVIEW) since voting automation was introduced.
 
 - 🔕 indicates that the member did not vote.
 - 👍 indicates that the member was in favor.

@@ -83,7 +83,7 @@ A short async or live check-in to confirm everything is ready:
 
 ## Format Guidelines for Host & Guest
 
-Before the live session, hosts and guests should schedule a short planning call and fill out the [webinar planning template](./webinar_planning_template.md) to align on goals, presentation flow, and audience engagement strategies.
+Before the live session, hosts and guests should schedule a short planning call and fill out the [webinar planning template](webinar_planning_template) to align on goals, presentation flow, and audience engagement strategies.
 
 ### For Hosts
 
