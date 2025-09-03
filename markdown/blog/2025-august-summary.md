@@ -110,4 +110,4 @@ We are excited to welcome [Adi Boghawala](https://www.linkedin.com/in/adi-boghaw
 
 ## Coming in September
 - **AsyncAPI Community Updates Newsletter** - The September Edition will be making its way to your inbox on the 5th. [Please subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/newsletter); don't miss the updates.
-- **AsyncAPI Conference London Edition** - Get your **Free Tickets** to the London Conference, and we can't wait to see you there. Be sure to also catch us at the `API Standards Booth`, where you'll find some of our AsyncPI experts and maintainers.
+- **AsyncAPI Conference London Edition** - Get your **Free Tickets** to the London Conference, and we can't wait to see you there. Be sure to also catch us at the `API Standards Booth`, where you'll find some of our AsyncAPI experts and maintainers.
