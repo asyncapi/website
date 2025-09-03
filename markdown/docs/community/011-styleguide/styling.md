@@ -132,9 +132,9 @@ Use asterisks for italics (`*italic*`) and bold (`**bold**`). You can also use u
 ### Links
 Use square brackets to describe links and a parenthesis to insert the actual links. Always use descriptive link text. Avoid phrases like "click here."
 
-- **✅ Good:** See our [Contribution Guide](/docs/community/contribution-guide) for more.
+- **✅ Good:** See our [Contribution Guide](../010-contribution-guidelines) for more.
 
-- **❌ Bad:** For more info, [click here](https://.../contribution-guide).
+- **❌ Bad:** For more info, [click here](../010-contribution-guidelines).
 
 ### Code Blocks
 Use backticks for inline code (`const foo = 'bar';`). For code blocks, use triple backticks and specify the language for syntax highlighting.
