@@ -73,6 +73,8 @@ jobs:
       - if: steps.packagejson.outputs.exists == 'true'
         name: Test
         run: npm test --if-present
+        env:
+         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       - if: steps.packagejson.outputs.exists == 'true' && matrix.os == 'ubuntu-latest'
         name: Run linter
         run: npm run lint --if-present

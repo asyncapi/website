@@ -17,8 +17,7 @@ describe('Integration: build-dashboard CLI', () => {
 
     // Run the dashboard builder as a CLI command using the runner and --outputFile
     execSync(`npx tsx npm/runners/build-dashboard-runner.ts --outputFile "${outputPath}"`, {
-      stdio: 'inherit',
-      env: { ...process.env, GITHUB_TOKEN: process.env.GITHUB_TOKEN }
+      stdio: 'inherit'
     });
 
     // Read and parse the output
