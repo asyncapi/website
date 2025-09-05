@@ -145,6 +145,54 @@ describe('Integration: build-dashboard CLI', () => {
     checkResourcePath(output.goodFirstIssues);
   });
 
+  it('returns at least one hot discussion and one good first issue', () => {
+    expect(output.hotDiscussions.length).toBeGreaterThan(0);
+    expect(output.goodFirstIssues.length).toBeGreaterThan(0);
+  });
+  it('hotDiscussions and goodFirstIssues arrays do not contain null or undefined items', () => {
+    output.hotDiscussions.forEach((item: any) => {
+      expect(item).not.toBeNull();
+      expect(item).not.toBeUndefined();
+    });
+    output.goodFirstIssues.forEach((item: any) => {
+      expect(item).not.toBeNull();
+      expect(item).not.toBeUndefined();
+    });
+  });
+
+  it('all hotDiscussions have a valid score (not NaN or Infinity)', () => {
+    output.hotDiscussions.forEach((item: any) => {
+      expect(Number.isFinite(item.score)).toBe(true);
+    });
+  });
+
+  it('all items in hotDiscussions and goodFirstIssues have a valid id (non-empty string)', () => {
+    const checkId = (items: any[]) => {
+      items.forEach((item) => {
+        expect(typeof item.id).toBe('string');
+        expect(item.id.length).toBeGreaterThan(0);
+      });
+    };
+
+    checkId(output.hotDiscussions);
+    checkId(output.goodFirstIssues);
+  });
+
+  it('output file is valid JSON and not empty', () => {
+    const fileContent = fs.readFileSync(outputPath, 'utf-8');
+
+    expect(() => JSON.parse(fileContent)).not.toThrow();
+    expect(fileContent.length).toBeGreaterThan(2); // '{}' is 2 chars
+  });
+
+  it('hotDiscussions are sorted by score descending', () => {
+    const scores = output.hotDiscussions.map((item: any) => item.score);
+
+    for (let i = 1; i < scores.length; i++) {
+      expect(scores[i - 1]).toBeGreaterThanOrEqual(scores[i]);
+    }
+  });
+
   it('each item has a non-empty author string', () => {
     const checkAuthor = (items: any[]) => {
       items.forEach((item) => {

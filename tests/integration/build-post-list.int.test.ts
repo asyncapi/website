@@ -3,10 +3,12 @@ import fs from 'fs';
 import os from 'os';
 import path from 'path';
 
+import type { Result } from '../../types/scripts/build-posts-list';
+
 describe('Integration: build-post-list-runner CLI', () => {
   let tempDir: string;
   let outputPath: string;
-  let output: any;
+  let output: Result;
 
   beforeAll(() => {
     tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'build-post-list-real-'));
@@ -43,12 +45,17 @@ describe('Integration: build-post-list-runner CLI', () => {
   });
 
   it('each section has expected keys', () => {
-    ['docs', 'blog', 'about'].forEach((section) => {
-      expect(Array.isArray(output[section])).toBe(true);
-      output[section].forEach((item: any) => {
-        expect(item).toHaveProperty('title');
-        expect(item).toHaveProperty('slug');
-      });
+    output.docs.forEach((item) => {
+      expect(item).toHaveProperty('title');
+      expect(item).toHaveProperty('slug');
+    });
+    output.blog.forEach((item) => {
+      expect(item).toHaveProperty('title');
+      expect(item).toHaveProperty('slug');
+    });
+    output.about.forEach((item) => {
+      expect(item).toHaveProperty('title');
+      expect(item).toHaveProperty('slug');
     });
   });
 
@@ -108,6 +115,62 @@ describe('Integration: build-post-list-runner CLI', () => {
     });
     output.blog.forEach((item: any) => {
       expect(item.slug.startsWith('/blog')).toBe(true);
+    });
+  });
+
+  it('all items in docs, blog, and about have unique slugs', () => {
+    (['docs', 'blog', 'about'] as const).forEach((section) => {
+      let items: any[] = [];
+
+      if (section === 'docs') items = output.docs;
+      else if (section === 'blog') items = output.blog;
+      else if (section === 'about') items = output.about;
+
+      const slugs = items.map((item: any) => item.slug);
+      const uniqueSlugs = new Set(slugs);
+
+      expect(uniqueSlugs.size).toBe(slugs.length);
+    });
+  });
+
+  it('docs items with toc have valid structure', () => {
+    output.docs.forEach((item: any) => {
+      if (Array.isArray(item.toc)) {
+        item.toc.forEach((tocItem: any) => {
+          expect(typeof tocItem.content).toBe('string');
+          expect(typeof tocItem.slug).toBe('string');
+          expect(typeof tocItem.lvl).toBe('number');
+          expect(typeof tocItem.i).toBe('number');
+          expect(typeof tocItem.seen).toBe('number');
+        });
+      }
+    });
+  });
+
+  it('all items with readingTime have a positive number', () => {
+    output.docs.forEach((item: any) => {
+      if ('readingTime' in item) {
+        expect(typeof item.readingTime).toBe('number');
+        expect(item.readingTime).toBeGreaterThan(0);
+      }
+    });
+  });
+
+  it('all items with excerpt have a non-empty string', () => {
+    output.docs.forEach((item: any) => {
+      if ('excerpt' in item) {
+        expect(typeof item.excerpt).toBe('string');
+        expect(item.excerpt.length).toBeGreaterThan(0);
+      }
+    });
+  });
+
+  it('all items with id have a valid file path', () => {
+    output.docs.forEach((item: any) => {
+      if ('id' in item) {
+        expect(item.id).toMatch(/\.mdx$/);
+        expect(item.id).toMatch(/pages[\\/]/);
+      }
     });
   });
 });
