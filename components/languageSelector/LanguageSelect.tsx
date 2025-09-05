@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { twMerge } from 'tailwind-merge';
 import IconLanguage from "../icons/Language";
 import i18nextConfig from '@/next-i18next.config.cjs';
+import type { SelectProps } from "../form/Select";
 
 export default function LanguageSelect({
   options = [],
   selected,
   onChange = () => {},
   className = "",
-}) {
+}: SelectProps) {
   const [open, setOpen] = useState(false);
   const { langMap } = i18nextConfig;
 
