@@ -10,6 +10,8 @@ on:
 jobs:
   test-nodejs-pr:
     name: Test NodeJS PR - ${{ matrix.os }}
+    env:
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:

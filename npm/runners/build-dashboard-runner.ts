@@ -48,20 +48,17 @@ async function runBuildDashboard(options: BuildDashboardOptions = {}): Promise<v
   }
 }
 
-// Run only in non-test environments
-if (process.env.NODE_ENV === 'test') {
-  logger.info('Skipping dashboard build in test environment');
-} else {
-  // Self-executing async function to handle top-level await
-  (async () => {
-    try {
-      await runBuildDashboard();
-    } catch (error) {
-      // Ensure we exit with error code
-      process.exit(1);
-    }
-  })();
-}
+(async () => {
+  try {
+    // Extract output file path from CLI args
+    const outputFileArgIndex = process.argv.indexOf('--outputFile');
+    const outputPath =
+      outputFileArgIndex === -1
+        ? resolve(currentDirPath, '../../dashboard.json')
+        : process.argv[outputFileArgIndex + 1];
 
-// Export for testing purposes
-export { runBuildDashboard };
+    await runBuildDashboard({ outputPath });
+  } catch (error) {
+    process.exit(1);
+  }
+})();
