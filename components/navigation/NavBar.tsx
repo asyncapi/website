@@ -144,7 +144,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   }, [asPath]);
 
   return (
-    <div className={`bg-white ${className} z-50`}>
+    <div className={`bg-white ${className} z-50 justify-between `}>
       <div className='flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-2'>
         {!hideLogo && (
           <div className='lg:w-auto lg:flex-1'>
@@ -216,7 +216,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             <NavItem href={item.href} key={index} text={item.text} target={item.target} className={item.className} />
           ))}
 
-          <div className='justify-content flex flex-row items-center'>
+          <div className='justify-content flex flex-row items-center w-full '>
             <SearchButton
               className='mr-2 flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
               aria-label='Open Search'
@@ -237,7 +237,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             <GithubButton
               text='Star on GitHub'
               href='https://github.com/asyncapi/spec'
-              className='ml-2 py-2'
+              className='ml-2 py-0.5 text-xs flex justify-center items-center w-full  '
               inNav={true}
             />
           </div>
