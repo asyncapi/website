@@ -8,7 +8,9 @@ class BasePage {
   }
 
   getLink(href, text) {
-    cy.get(`a[href="${href}"]`).contains(text);
+   return cy.contains(`a[href="${href}"]`, text)
+      .should('be.visible')
+      .and('have.attr', 'href', href);
   }
 }
 

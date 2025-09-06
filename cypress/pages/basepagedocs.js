@@ -4,8 +4,16 @@ class BasePage {
   }
 
   verifyLinkByHref(href) {
-    cy.get(`a[href="${href}"]`).click();
-  }
+    return cy.get(`a[href="${href}"]`)
+      .should('be.visible')
+      .and('have.attr', 'href', href)
+      .then($a => {
+        const wrap = cy.wrap($a);
+        return $a.prop('target') === '_self'
+          ? wrap.invoke('removeAttr', 'target').click()
+         : wrap.click();
+    });
+ }
 
   verifyLinkByLabel(href, label) {
     cy.get(`a[href="${href}"]`).contains(label).click();
