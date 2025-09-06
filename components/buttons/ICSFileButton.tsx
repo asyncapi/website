@@ -6,6 +6,7 @@ import type { IButtonDefaultProps } from '../../types/components/buttons/types';
 import { useTranslation } from '../../utils/i18n';
 import IconCalendar from '../icons/Calendar';
 import Button from './Button';
+import { PlusIcon } from '@heroicons/react/outline';
 
 interface IICSFButtonProps extends IButtonDefaultProps {}
 
@@ -21,7 +22,7 @@ export default function ICSFButton({
   text = 'icsFileBtn',
   href,
   target = '_blank',
-  iconPosition = ButtonIconPosition.LEFT,
+  iconPosition = ButtonIconPosition.RIGHT,
   className
 }: IICSFButtonProps) {
   const { t } = useTranslation('common');
@@ -29,12 +30,12 @@ export default function ICSFButton({
   return (
     <Button
       text={t(text)}
-      icon={<IconCalendar />}
+      icon={<PlusIcon className='-mb-1 size-5' />}
       href={href}
       iconPosition={iconPosition}
       target={target}
-      className={`mt-2 block text-center text-gray-900 md:mt-0 md:inline-block ${className}`}
-      bgClassName='bg-gray-200 hover:bg-gray-100'
+      className={`mt-2 block text-center border-2 border-sky-300 text-sky-400 md:mt-0 md:inline-block ${className}`}
+      bgClassName=' hover:bg-sky-100'
     />
   );
 }

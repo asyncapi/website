@@ -8,6 +8,7 @@ export enum HeadingLevel {
 }
 
 export enum HeadingTypeStyle {
+    xxl= 'heading-xxl',
     xl = 'heading-xl',
     lg = 'heading-lg',
     md = 'heading-md',
@@ -19,4 +20,5 @@ export enum HeadingTypeStyle {
     bodyLg = 'body-lg',
     bodyMd = 'body-md',
     bodySm = 'body-sm',
+    bodyLlg = 'body-llg',
 }

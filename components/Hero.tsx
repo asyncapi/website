@@ -13,6 +13,8 @@ import ArrowRight from './icons/ArrowRight';
 import IconLoupe from './icons/Loupe';
 import Heading from './typography/Heading';
 import Paragraph from './typography/Paragraph';
+import PlatinumSponsors from './sponsors/PlatinumSponsors';
+import DiamondSponsors from './sponsors/DiamondSponsors';
 
 interface HeroProps {
   className?: string;
@@ -32,13 +34,15 @@ export default function Hero({ className = '' }: HeroProps) {
       <AnnouncementHero className='my-4' />
       <header className={`mt-12 px-2 ${className}`}>
         <div className='text-center'>
-          <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.xl} className='mb-4'>
+          <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.xxl} className='mb-4'>
             {t('main.header')} <span className='block md:-mt-4'> {t('main.subHeader')}</span>
+            <span className='block md:-mt-4'>{t('main.extraSubHeader')}</span>
           </Heading>
+
           <Heading
             level={HeadingLevel.h2}
-            typeStyle={HeadingTypeStyle.bodyLg}
-            textColor='text-gray-700'
+            typeStyle={HeadingTypeStyle.bodyLlg}
+            textColor='text-gray-700 dark:text-darkTheme-text'
             className='mx-auto mb-10 max-w-4xl'
           >
             {t('main.body_pretext')} <strong>{t('main.body_boldtext')}</strong>
@@ -72,17 +76,16 @@ export default function Hero({ className = '' }: HeroProps) {
               </SearchButton>
             </AlgoliaSearch>
           </div>
-          <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-4' textColor='text-gray-500'>
-            {t('main.slogan_text')}{' '}
-            <a className='underline' href='https://www.linuxfoundation.org/'>
-              {t('main.slogan_link')}
-            </a>
-          </Paragraph>
+
+          <DiamondSponsors
+            className={'w-full relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]'}
+            showSupportBanner={false}
+          />
         </div>
+        <Features />
         <div className='mt-8 md:mt-16'>
           <DemoAnimation />
         </div>
-        <Features />
       </header>
     </>
   );

@@ -162,8 +162,8 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
     <>
       <div
         // eslint-disable-next-line max-len
-        className={`bg-white/60 transition-all duration-500 ease-in-out dark:bg-darkTheme-card lg:rounded-xl  backdrop-blur-lg z-100 
-          ${isScrolled ? 'mx-auto p-2 lg:p-1 lg:m1-1 shadow-md ring-1 ring-black/5  max-w-[76rem] lg:rounded-xl' : ' w-full mt-0 p-4  max-w-[76rem] rounded-none'} ${className}`}
+        className={`bg-white/60 transition-all duration-500 ease-in-out lg:rounded-xl  backdrop-blur-lg z-100 
+          ${isScrolled ? 'mx-auto p-2 lg:p-1 lg:m1-1 shadow-md ring-1 dark:backdrop-blur-xl dark:bg-darkTheme-card/60  ring-black/5  max-w-[76rem] lg:rounded-xl' : ' w-full mt-0 p-4 dark:bg-darkTheme-background  max-w-[76rem] rounded-none'} ${className}`}
       >
         {/* <div
         className={`bg-white/60 mx-auto fixed flex left-0 right-0 top-0 w-full z-[12] items-center justify-between max-w-[76rem] select-none transition-all duration-300 ease-spring ring-1 ring-black/5 bg-white/76 backdrop-blur-lg shadow-lg lg:rounded-full lg:mt-3 translate-y-0 ${className} z-50`}

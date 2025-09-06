@@ -6,6 +6,8 @@ import type { IButtonDefaultProps } from '../../types/components/buttons/types';
 import { useTranslation } from '../../utils/i18n';
 import IconGoogleCalendar from '../icons/GoogleCalendar';
 import Button from './Button';
+import { PlusSmIcon } from '@heroicons/react/outline';
+import PlusSign from '../icons/PlusSign';
 
 interface IGoogleCalendarButtonProps extends IButtonDefaultProps {}
 
@@ -21,7 +23,7 @@ export default function GoogleCalendarButton({
   text = 'googleCalendarBtn',
   href,
   target = '_blank',
-  iconPosition = ButtonIconPosition.LEFT,
+  iconPosition = ButtonIconPosition.RIGHT,
   className
 }: IGoogleCalendarButtonProps) {
   const { t } = useTranslation('common');
@@ -29,12 +31,12 @@ export default function GoogleCalendarButton({
   return (
     <Button
       text={t(text)}
-      icon={<IconGoogleCalendar />}
+      icon={<PlusSign className='-mb-1 size-5' />}
       href={href}
       iconPosition={iconPosition}
       target={target}
-      className={`mt-2 block text-center text-gray-900 md:mt-0 md:inline-block ${className}`}
-      bgClassName='bg-gray-200 hover:bg-gray-100'
+      className={`mt-2 block text-center text-white md:mt-0 md:inline-block ${className}`}
+      bgClassName='bg-primary-500 hover:bg-primary-400'
     />
   );
 }

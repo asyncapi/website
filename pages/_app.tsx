@@ -13,7 +13,6 @@ import Layout from '@/components/layout/Layout';
 import NavBar from '@/components/navigation/NavBar';
 import StickyNavbar from '@/components/navigation/StickyNavbar';
 import AppContext from '@/context/AppContext';
-import LinuxBanner from '@/components/campaigns/LinuxBanner';
 
 /**
  * @description The MyApp component is the root component for the application.
@@ -31,12 +30,12 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           <StickyNavbar>
             <NavBar className='mx-auto block max-w-screen-xl px-4 sm:px-6 lg:px-8' />
           </StickyNavbar>
-          <LinuxBanner className='-mt-[8px] pt-2 lg:py-1' />
+
           <Layout>
             <Component {...pageProps} />
             <ScrollButton />
           </Layout>
-          <div className='mt-auto'>
+          <div className='mt-auto dark:bg-darkTheme-background'>
             <Footer />
           </div>
         </div>

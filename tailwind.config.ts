@@ -131,7 +131,15 @@ const config: Config = {
         'darkTheme-footer': '#090F1D',
         'darkTheme-text': '#B8B9C0',
         'darkTheme-heading': '#FFFFFF',
-        'darkTheme-border': '#8054F2'
+        'darkTheme-border': '#8054F2',
+    background: "hsl(var(--background))",
+    foreground: "hsl(var(--foreground))",
+    prim: "hsl(var(--primary))",
+    sec: "hsl(var(--secondary))",
+    accent: "hsl(var(--accent))",
+        border: 'hsl(var(--border))',
+    muted: "hsl(var(--muted))",
+        'muted-foreground': 'hsl(var(--muted-foreground))'
       },
       scale: {
         25: '.25'
@@ -204,9 +212,11 @@ const config: Config = {
         'heading-md': ['24px', '1.375'],
         'heading-lg': ['36px', '1.375'],
         'heading-xl': ['64px', '1.375'],
+        'heading-xxl': ['88px', '1.375'],
         'body-sm': ['14px', '1.625'],
         'body-md': ['16px', '1.625'],
-        'body-lg': ['18px', '1.625']
+        'body-lg': ['18px', '1.625'],
+        'body-llg': ['22px', '1.625']
       },
       screens: {
         xs: '475px'
