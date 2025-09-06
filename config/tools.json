@@ -774,6 +774,36 @@
         }
       },
       {
+        "title": "The Codegen Project",
+        "description": "Stop wasting time on manual code. Generate Payloads, parameters, headers, types, channel wrappers, and more from your AsyncAPI document! Works with Kafka, NATS, MQTT, event-source, AMQP, HTTP Client!",
+        "links": {
+          "websiteUrl": "https://the-codegen-project.org/",
+          "docsUrl": "https://the-codegen-project.org//docs",
+          "repoUrl": "https://github.com/the-codegen-project/cli/"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "TypeScript",
+              "color": "bg-[#7DBCFE]",
+              "borderColor": "border-[#2C78C7]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "TypeScript",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "code-generator",
+            "cli"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "ZenWave SDK",
         "description": "DDD and API-First for Event-Driven Microservices",
         "links": {
@@ -1172,6 +1202,38 @@
         }
       },
       {
+        "title": "MessageFlow",
+        "description": "Generate system-architecture documentation and diagrams from AsyncAPI specifications.",
+        "links": {
+          "repoUrl": "https://github.com/holydocs/messageflow"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "Go/Golang",
+              "color": "bg-[#8ECFDF]",
+              "borderColor": "border-[#00AFD9]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "Go",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "Kubernetes-native",
+              "color": "bg-[#D7C7F2]",
+              "borderColor": "border-[#A387D2]"
+            }
+          ],
+          "categories": [
+            "documentation-generator"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "Springwolf",
         "description": "Automated documentation for async APIs built with Spring Boot. Like Springfox for AsyncAPI. Auto-generates an AsyncAPI document and a web UI.",
         "links": {
@@ -1249,6 +1311,33 @@
         "links": {
           "websiteUrl": "https://studio.asyncapi.com",
           "repoUrl": "https://github.com/asyncapi/studio"
+        },
+        "filters": {
+          "language": [],
+          "technology": [
+            {
+              "name": "React JS",
+              "color": "bg-[#9FECFA]",
+              "borderColor": "border-[#08D8FE]"
+            },
+            {
+              "name": "TypeScript",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "editor"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "AsyncAPI Studio",
+        "description": null,
+        "links": {
+          "websiteUrl": "https://studio.asyncapi.com",
+          "repoUrl": "https://github.com/TahaShahid203/async-api-issue"
         },
         "filters": {
           "language": [],
@@ -1543,27 +1632,6 @@
         }
       },
       {
-        "title": "Glee",
-        "description": "Glee — The AsyncAPI framework that will make you smile again :)",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/glee"
-        },
-        "filters": {
-          "language": [],
-          "technology": [
-            {
-              "name": "TypeScript",
-              "color": "bg-[#61d0f2]",
-              "borderColor": "border-[#40ccf7]"
-            }
-          ],
-          "categories": [
-            "framework"
-          ],
-          "hasCommercial": false
-        }
-      },
-      {
         "title": "Zod Sockets",
         "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
         "links": {
@@ -1684,27 +1752,6 @@
       },
       {
         "title": "GitHub Action for Generator",
-        "description": "CLI to work with your AsyncAPI files. You can validate them and in the future use a generator and even bootstrap a new file. Contributions are welcomed!",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/cli"
-        },
-        "filters": {
-          "language": [],
-          "technology": [
-            {
-              "name": "AsyncAPI Generator",
-              "color": "bg-[#61d0f2]",
-              "borderColor": "border-[#40ccf7]"
-            }
-          ],
-          "categories": [
-            "github-actions"
-          ],
-          "hasCommercial": false
-        }
-      },
-      {
-        "title": "GitHub Action for Generator",
         "description": null,
         "links": {
           "repoUrl": "https://github.com/actions-marketplace-validations/asyncapi_github-action-for-generator"
@@ -1720,6 +1767,27 @@
           ],
           "categories": [
             "github-action"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "GitHub Action for Generator",
+        "description": "CLI to work with your AsyncAPI files. You can validate them and in the future use a generator and even bootstrap a new file. Contributions are welcomed!",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/cli"
+        },
+        "filters": {
+          "language": [],
+          "technology": [
+            {
+              "name": "AsyncAPI Generator",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "github-actions"
           ],
           "hasCommercial": false
         }
@@ -1836,7 +1904,7 @@
       },
       {
         "title": "Specmatic",
-        "description": "An API contract testing tool that helps ensure the correctness APIs by automatically generating test cases and verifying them against the API spec. It simplifies the process of testing APIs and reduces the likelihood of bugs and compatibility issues.",
+        "description": "Transform your API Specs into Executable Contracts with #NoCode in Seconds. Experience the power of Contract-Driven Development to confidently develop and independently deploy your Microservices and Microfrontends faster",
         "links": {
           "websiteUrl": "https://specmatic.io",
           "docsUrl": "https://specmatic.io/documentation/",
@@ -1852,15 +1920,21 @@
           ],
           "technology": [
             {
+              "name": "Docker",
+              "color": "bg-[#B8E0FF]",
+              "borderColor": "border-[#2596ED]"
+            },
+            {
               "name": "Maven",
               "color": "bg-[#FF6B80]",
               "borderColor": "border-[#CA1A33]"
             }
           ],
           "categories": [
-            "mocking-and-testing"
+            "mocking-and-testing",
+            "CLIs"
           ],
-          "hasCommercial": false
+          "hasCommercial": true
         }
       },
       {
@@ -2438,6 +2512,41 @@
         }
       },
       {
+        "title": "Specmatic",
+        "description": "Transform your API Specs into Executable Contracts with #NoCode in Seconds. Experience the power of Contract-Driven Development to confidently develop and independently deploy your Microservices and Microfrontends faster",
+        "links": {
+          "websiteUrl": "https://specmatic.io",
+          "docsUrl": "https://specmatic.io/documentation/",
+          "repoUrl": "https://github.com/specmatic/specmatic"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "Kotlin",
+              "color": "bg-[#B1ACDF]",
+              "borderColor": "border-[#756BD9]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "Docker",
+              "color": "bg-[#B8E0FF]",
+              "borderColor": "border-[#2596ED]"
+            },
+            {
+              "name": "Maven",
+              "color": "bg-[#FF6B80]",
+              "borderColor": "border-[#CA1A33]"
+            }
+          ],
+          "categories": [
+            "mocking-and-testing",
+            "CLIs"
+          ],
+          "hasCommercial": true
+        }
+      },
+      {
         "title": "ZenWave SDK",
         "description": "DDD and API-First for Event-Driven Microservices",
         "links": {
@@ -2552,7 +2661,7 @@
         "title": "asyncapi-preview",
         "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
         "links": {
-          "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
+          "repoUrl": "https://github.com/Savio629/testing2"
         },
         "filters": {
           "language": [],
@@ -2578,7 +2687,7 @@
         "title": "asyncapi-preview",
         "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
         "links": {
-          "repoUrl": "https://github.com/Savio629/testing2"
+          "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
         },
         "filters": {
           "language": [],
