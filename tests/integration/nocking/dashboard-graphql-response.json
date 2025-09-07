@@ -1,0 +1,27 @@
+{
+  "rateLimit": {
+    "cost": 1,
+    "limit": 5000,
+    "remaining": 500,
+    "resetAt": "2025-09-06T00:00:00.000Z"
+  },
+  "search": {
+    "pageInfo": { "hasNextPage": false, "endCursor": null },
+    "nodes": [
+      {
+        "id": "I_kwDODwv8N86y8NIb",
+        "__typename": "Issue",
+        "title": "Venue cards date misalignment",
+        "comments": { "totalCount": 0, "nodes": [] },
+        "reactions": { "totalCount": 0 },
+        "assignees": { "totalCount": 0 },
+        "author": { "login": "AceTheCreator" },
+        "resourcePath": "/asyncapi/conference-website/issues/715",
+        "repository": { "name": "conference-website" },
+        "labels": { "nodes": [] },
+        "timelineItems": { "updatedAt": "2025-09-05T00:00:00.000Z" },
+        "reviews": { "totalCount": 0, "nodes": [] }
+      }
+    ]
+  }
+}
