@@ -87,7 +87,7 @@ export default function NewsletterSubscribe({
         }
       });
 
-      if (res.status === res.ok) {
+      if (res.status === 200) {
         setFormStatus(FormStatus.SUCCESS);
       } else {
         setFormStatus(FormStatus.ERROR);
