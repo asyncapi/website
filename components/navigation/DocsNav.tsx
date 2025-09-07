@@ -52,7 +52,7 @@ const serializedBuckets: SerializedBuckets = buckets.reduce(
   {
     welcome: {
       icon: IconHome,
-      className: 'bg-gray-300 border-gray-300'
+      className: 'dark:bg-[#8851FB] bg-gray-300 border-gray-300'
     }
   } as SerializedBuckets // Initial value of the accumulator
 );

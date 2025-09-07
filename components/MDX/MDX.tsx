@@ -66,7 +66,8 @@ function initializeMermaid() {
       fontSize: '18px',
       primaryTextColor: '#242929',
       tertiaryColor: '#F7F9FA',
-      tertiaryBorderColor: '#BFC6C7'
+      tertiaryBorderColor: '#BFC6C7',
+      lineColor: '#BFC6C7'
     }
   });
 }
@@ -215,7 +216,7 @@ const getMDXComponents = {
   blockquote: (props: React.HTMLProps<HTMLQuoteElement>) => (
     <blockquote
       {...props}
-      className={`${props.className || ''} my-4 border-l-4 border-gray-400 bg-white py-1 pl-4 pr-1 font-body italic text-gray-700 antialiased`}
+      className={`${props.className || ''} my-4 border-l-4 border-gray-400 dark:bg-darkTheme-footer bg-white py-1 pl-4 pr-1 font-body italic dark:text-white text-gray-700 antialiased`}
     />
   ),
   p: (props: React.HTMLProps<HTMLParagraphElement>) => (
@@ -225,31 +226,34 @@ const getMDXComponents = {
     />
   ),
   strong: (props: React.HTMLProps<HTMLSpanElement>) => (
-    <strong {...props} className={`${props.className || ''} my-4 font-body font-semibold text-gray-800 antialiased`} />
+    <strong
+      {...props}
+      className={`${props.className || ''} my-4 font-body font-semibold text-gray-800 dark:text-white antialiased`}
+    />
   ),
   a: (props: React.HTMLProps<HTMLAnchorElement>) => (
     <a
       {...props}
-      className={`${props.className || 'border-b border-secondary-400 font-semibold text-gray-900 transition duration-300 ease-in-out hover:border-secondary-500'} font-body antialiased`}
+      className={`${props.className || 'border-b border-secondary-400 dark:text-white font-semibold text-gray-900 transition duration-300 ease-in-out hover:border-secondary-500'} font-body antialiased`}
     />
   ),
   ul: (props: React.HTMLProps<HTMLUListElement>) => (
     <ul
       {...props}
-      className={`${props.className || ''} font-normal my-4 ml-4 list-disc font-body text-gray-700 antialiased`}
+      className={`${props.className || ''} font-normal my-4 ml-4 list-disc font-body dark:text-darkTheme-heading text-gray-700 antialiased`}
     />
   ),
   ol: (props: React.HTMLProps<HTMLOListElement>) => (
     <ol
       {...props}
-      className={`${props.className || ''} font-normal my-4 ml-4 list-decimal font-body text-gray-700 antialiased`}
+      className={`${props.className || ''} font-normal my-4 ml-4 list-decimal font-body dark:text-darkTheme-heading text-gray-700 antialiased`}
       type='1'
     />
   ),
   li: (props: React.HTMLProps<HTMLLIElement>) => (
     <li
       {...props}
-      className={`${props.className || ''} my-3 font-body font-regular tracking-tight text-gray-700 antialiased`}
+      className={`${props.className || ''} my-3 font-body font-regular tracking-tight dark:text-white text-gray-700 antialiased`}
     />
   ),
   button: Button as React.ComponentType<React.ButtonHTMLAttributes<HTMLButtonElement>>,

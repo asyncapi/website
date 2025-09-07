@@ -24,13 +24,13 @@ export default function DocsNavWrapper({ setShowMenu, navigation, post }: IDocsN
       <div className='flex w-64 flex-col border-r-2 border-gray-200 dark:border-border dark:bg-darkTheme-background bg-white py-2'>
         <div className='flex flex-1 bg-transparent flex-col md:sticky md:top-20 md:max-h-(screen-14) md:overflow-y-auto'>
           <SearchButton
-            className='mb-4 mr-2 mt-8 flex items-center space-x-3 rounded-md border border-gray-300 dark:border-darkTheme-text dark:bg-darkTheme-card bg-white px-3 py-1.5 text-left text-sm text-gray-700 dark:text-darkTheme-text shadow-sm transition-all duration-500 ease-in-out hover:border-secondary-500 hover:bg-secondary-100 hover:text-secondary-500'
+            className='mb-4 mr-2 mt-8 flex items-center space-x-3 rounded-md border dark:hover:text-secondary-500 border-gray-300 dark:border-darkTheme-text dark:bg-darkTheme-card bg-white px-3 py-1.5 text-left text-sm text-gray-700 dark:text-darkTheme-text shadow-sm transition-all duration-500 ease-in-out dark:hover:border-secondary-500 hover:border-secondary-500 hover:bg-secondary-100 hover:text-secondary-500'
             indexName={DOCS_INDEX_NAME}
           >
             {({ actionKey }) => (
               <>
                 <IconLoupe />
-                <span className='flex-auto'>Search docs...</span>
+                <span className=' flex-auto'>Search docs...</span>
                 {actionKey && (
                   <kbd className='font-sans font-semibold'>
                     <abbr title={actionKey.key} className='no-underline'>
