@@ -12,8 +12,7 @@ export default function LanguageSelect({
 }: SelectProps) {
   const [open, setOpen] = useState(false);
   const { langMap } = i18nextConfig;
-
-  // Get display text for selected option
+  
   const selectedOption = options.find((o) => o.value === selected);
   const selectedDisplayText = selectedOption 
     ? (langMap[selectedOption.text.toLowerCase() as keyof typeof langMap] || selectedOption.text)
