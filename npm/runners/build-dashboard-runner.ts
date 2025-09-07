@@ -22,7 +22,7 @@ interface BuildDashboardOptions {
  * @param options - Optional configuration for output path
  * @throws {CustomError} If the build process fails or an error occurs in the runner
  */
-async function runBuildDashboard(options: BuildDashboardOptions = {}): Promise<void> {
+export async function runBuildDashboard(options: BuildDashboardOptions = {}): Promise<void> {
   try {
     const outputPath = options.outputPath || resolve(currentDirPath, '../../dashboard.json');
 
