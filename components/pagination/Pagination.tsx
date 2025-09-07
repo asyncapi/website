@@ -33,38 +33,23 @@ export default function Pagination({ totalPages, currentPage, onPageChange }: Pa
   /**
    * @returns number of pages shows in Pagination.
    */
-  const getPageNumber = (): (number | string)[] => {
-    const pages: (number | string)[] = [];
-
-    // start
-    if (currentPage >= 3) {
-      pages.push(1);
-      pages.push('start-ellipsis');
-    } else {
-      for (let i = 1; i <= Math.min(3, totalPages); i++) {
-        pages.push(i);
-      }
-      if (currentPage < 3) {
-        pages.push('start-ellipsis');
-      }
+  const getPageNumber = (): (number | 'start-ellipsis' | 'end-ellipsis')[] => {
+    if (totalPages <= 6) {
+      return Array.from({ length: Math.max(0, totalPages) }, (_, i) => i + 1);
     }
 
-    // Mid
-    if (currentPage >= 3 && currentPage < totalPages - 2) {
-      pages.push(currentPage - 1, currentPage, currentPage + 1);
-      pages.push('end-ellipsis');
-    }
+    const pages: (number | 'start-ellipsis' | 'end-ellipsis')[] = [1];
 
-    // End
-    if (currentPage >= totalPages - 2) {
-      for (let i = Math.max(totalPages - 2, 4); i <= totalPages; i++) {
-        pages.push(i);
-      }
-    } else {
-      pages.push(totalPages);
-    }
+    const left = Math.max(2, currentPage - 1);
+    const right = Math.min(totalPages - 1, currentPage + 1);
 
-    return [...new Set(pages)];
+    if (left > 2) pages.push('start-ellipsis');
+    for (let i = left; i <= right; i++) pages.push(i);
+    if (right < totalPages - 1) pages.push('end-ellipsis');
+
+    pages.push(totalPages);
+
+    return pages;
   };
 
   return (
