@@ -16,7 +16,12 @@ export interface PaginationItemProps {
 /**
  * This is the PaginationItem component. It displays a single page number that can be clicked.
  */
-export default function PaginationItem({ pageNumber, isActive, onPageChange }: PaginationItemProps) {
+export default function PaginationItem({
+  pageNumber,
+  isActive,
+  onPageChange,
+  ...buttonProps
+}: PaginationItemProps & React.ButtonHTMLAttributes<HTMLButtonElement>) {
   return (
     <button
       onClick={() => onPageChange(pageNumber)}
@@ -25,6 +30,7 @@ export default function PaginationItem({ pageNumber, isActive, onPageChange }: P
         ${isActive ? 'bg-[#6200EE] text-white' : 'bg-transparent text-[#141717] hover:bg-gray-50'}
       `}
       aria-current={isActive ? 'page' : undefined}
+      {...buttonProps}
     >
       {pageNumber}
     </button>
