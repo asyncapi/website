@@ -1307,10 +1307,10 @@
     "toolsList": [
       {
         "title": "AsyncAPI Studio",
-        "description": "Visually design your AsyncAPI files and event-driven architecture.",
+        "description": null,
         "links": {
           "websiteUrl": "https://studio.asyncapi.com",
-          "repoUrl": "https://github.com/asyncapi/studio"
+          "repoUrl": "https://github.com/Shurtu-gal/action-test-bed"
         },
         "filters": {
           "language": [],
@@ -1361,10 +1361,10 @@
       },
       {
         "title": "AsyncAPI Studio",
-        "description": null,
+        "description": "Visually design your AsyncAPI files and event-driven architecture.",
         "links": {
           "websiteUrl": "https://studio.asyncapi.com",
-          "repoUrl": "https://github.com/Shurtu-gal/action-test-bed"
+          "repoUrl": "https://github.com/asyncapi/studio"
         },
         "filters": {
           "language": [],
