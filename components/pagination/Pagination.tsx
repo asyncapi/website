@@ -85,7 +85,6 @@ export default function Pagination({ totalPages, currentPage, onPageChange }: Pa
               isActive={page === currentPage}
               onPageChange={handlePageChange}
               aria-label={`Go to page ${page}`}
-              aria-current={page === currentPage ? 'page' : undefined}
             />
           ) : (
             <span
