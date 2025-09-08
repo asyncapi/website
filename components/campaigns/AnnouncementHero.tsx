@@ -48,8 +48,10 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
     return null;
   }
 
+  const outerSpacing = small ? 'my-4' : 'my-6';
+
   return (
-    <Container as='section' padding='' className='text-center'>
+    <Container as='section' padding='' className={`text-center ${outerSpacing}`}>
       <div className='relative flex flex-row items-center justify-center overflow-x-hidden md:gap-4'>
         {numberOfVisibleBanners > 1 && (
           <div

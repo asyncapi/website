@@ -29,7 +29,7 @@ export default function Hero({ className = '' }: HeroProps) {
 
   return (
     <>
-      <AnnouncementHero className='my-4' />
+      <AnnouncementHero />
       <header className={`mt-12 px-2 ${className}`}>
         <div className='text-center'>
           <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.xl} className='mb-4'>
