@@ -17,7 +17,6 @@ interface BannerProps {
   link: string;
   city: string;
   activeBanner: boolean;
-  small: boolean;
   className: string;
 }
 
@@ -31,7 +30,6 @@ interface BannerProps {
  * @param {string} props.link - The link of the banner
  * @param {string} props.city - The city of the banner
  * @param {Boolean} props.activeBanner - Whether the banner is active
- * @param {Boolean} props.small - Whether the banner is small
  * @param {string} props.className - The class name of the banner
  */
 export default function Banner({
@@ -43,7 +41,6 @@ export default function Banner({
   link,
   city,
   activeBanner,
-  small,
   className
 }: BannerProps) {
   return (
