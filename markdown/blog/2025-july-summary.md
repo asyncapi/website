@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: Community Builder and Open Source Fanatic!
 excerpt: 'AsyncAPI community status and project updates for July 2025'
-featured: true
 ---
 It's been a very busy month in July as we had two conferences in two new cities, and we also had our first elected governance board members. It makes it exciting as we work together towards improving and investing in the growth and sustainability of the AsyncAPI Initiative.
 
