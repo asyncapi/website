@@ -17,7 +17,6 @@ interface BannerProps {
   link: string;
   city: string;
   activeBanner: boolean;
-  small: boolean;
   className: string;
 }
 
@@ -31,7 +30,6 @@ interface BannerProps {
  * @param {string} props.link - The link of the banner
  * @param {string} props.city - The city of the banner
  * @param {Boolean} props.activeBanner - Whether the banner is active
- * @param {Boolean} props.small - Whether the banner is small
  * @param {string} props.className - The class name of the banner
  */
 export default function Banner({
@@ -43,12 +41,11 @@ export default function Banner({
   link,
   city,
   activeBanner,
-  small,
   className
 }: BannerProps) {
   return (
     <div
-      className={`size-full rounded border border-gray-200 bg-gray-50 py-6 p-3
+      className={`size-full rounded border border-gray-200 bg-gray-50 px-3 py-6
           transition-transform ${className}
           ${activeBanner ? 'z-10 scale-100 opacity-100' : 'z-0 scale-90 opacity-0'}`}
       data-testid='AnnouncementHero-main-div'
