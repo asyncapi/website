@@ -1,12 +1,11 @@
+import { PlusIcon } from '@heroicons/react/outline';
 import React from 'react';
 
 import { ButtonIconPosition } from '@/types/components/buttons/ButtonPropsType';
 
 import type { IButtonDefaultProps } from '../../types/components/buttons/types';
 import { useTranslation } from '../../utils/i18n';
-import IconCalendar from '../icons/Calendar';
 import Button from './Button';
-import { PlusIcon } from '@heroicons/react/outline';
 
 interface IICSFButtonProps extends IButtonDefaultProps {}
 

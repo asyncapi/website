@@ -32,7 +32,7 @@ export default function Features() {
             {features.map((feature) => (
               <li
                 key={feature.id}
-                className='flex flex-col justify-between rounded-lg border-rounded border dark:border-indigo-500 dark:bg-darkTheme-card  px-6 pb-8 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'
+                className='flex flex-col justify-between rounded-lg border-rounded border dark:border-border dark:bg-darkTheme-card dark:hover:shadow-lg dark:shadow-darkTheme-card px-6 pb-8 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'
                 data-testid='Feature-li'
               >
                 <div>

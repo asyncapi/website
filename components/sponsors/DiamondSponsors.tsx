@@ -1,11 +1,10 @@
 import React from 'react';
 
-import { platinumSponsors } from './PlatinumSponsorsList';
-import SponsorImage from './SponsorImage';
-import Heading from '../typography/Heading';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
-import PlatinumSponsors from './PlatinumSponsors';
+
 import Container from '../layout/Container';
+import Heading from '../typography/Heading';
+import PlatinumSponsors from './PlatinumSponsors';
 
 interface SponsorsProps {
   className: string;

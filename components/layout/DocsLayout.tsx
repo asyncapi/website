@@ -12,7 +12,6 @@ import DocsContext from '../../context/DocsContext';
 import { getAllPosts } from '../../utils/api';
 import Button from '../buttons/Button';
 import DocsButton from '../buttons/DocsButton';
-import AnnouncementHero from '../campaigns/AnnouncementHero';
 import Feedback from '../Feedback';
 import Head from '../Head';
 import ArrowRight from '../icons/ArrowRight';
@@ -21,7 +20,6 @@ import DocsMobileMenu from '../navigation/DocsMobileMenu';
 import DocsNavWrapper from '../navigation/DocsNavWrapper';
 import TOC from '../TOC';
 import Heading from '../typography/Heading';
-import ArrowLeft from '../icons/ArrowLeft';
 
 interface IDocsLayoutProps {
   post: IPost;

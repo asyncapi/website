@@ -1,20 +1,15 @@
 import React from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
-import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 import { useTranslation } from '../utils/i18n';
-import AlgoliaSearch, { SearchButton } from './AlgoliaSearch'; // Import AlgoliaSearch component
 import Button from './buttons/Button';
 import AnnouncementHero from './campaigns/AnnouncementHero';
 import DemoAnimation from './DemoAnimation';
 import Features from './features';
 import ArrowRight from './icons/ArrowRight';
-import IconLoupe from './icons/Loupe';
-import Heading from './typography/Heading';
-import Paragraph from './typography/Paragraph';
-import PlatinumSponsors from './sponsors/PlatinumSponsors';
 import DiamondSponsors from './sponsors/DiamondSponsors';
+import Heading from './typography/Heading';
 
 interface HeroProps {
   className?: string;
@@ -50,31 +45,14 @@ export default function Hero({ className = '' }: HeroProps) {
           </Heading>
           <div className='flex flex-col items-center justify-center gap-2 md:flex-row'>
             <Button
-              className='block w-full md:w-auto'
-              text={t('main.docs_btn')}
-              href='/docs'
+              className='block w-full md:w-1/3 hover:bg-primary-600'
+              text={t('main.community_btn')}
+              href='https://www.asyncapi.com/slack-invite'
+              target='_blank'
+              rel='noopener noreferrer'
               icon={<ArrowRight className='-mb-1 size-5' />}
               data-testid='Hero-Button'
             />
-            {/* Wrap SearchButton with AlgoliaSearch component */}
-            <AlgoliaSearch>
-              <SearchButton className='flex w-full items-center space-x-3 rounded-md border border-secondary-500 bg-secondary-100 px-4 py-3 text-left text-secondary-500 shadow-md transition-all duration-500 ease-in-out hover:bg-secondary-500 hover:text-white md:w-auto'>
-                {({ actionKey }) => (
-                  <>
-                    <IconLoupe />
-                    <span className='flex-auto'>{t('main.search_btn')}</span>
-                    {actionKey && (
-                      <kbd className='font-sans font-semibold'>
-                        <abbr title={actionKey.key} className='no-underline'>
-                          {actionKey.shortKey}
-                        </abbr>{' '}
-                        K
-                      </kbd>
-                    )}
-                  </>
-                )}
-              </SearchButton>
-            </AlgoliaSearch>
           </div>
 
           <DiamondSponsors

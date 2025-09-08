@@ -1,37 +1,24 @@
 import { useTranslation } from 'next-i18next';
 import React from 'react';
 
+import LinuxBanner from '@/components/campaigns/LinuxBanner';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { getStaticPaths, makeStaticProps } from '@/utils/getStatic';
 
 import Button from '../../components/buttons/Button';
 import GoogleCalendarButton from '../../components/buttons/GoogleCalendarButton';
 import ICSFileButton from '../../components/buttons/ICSFileButton';
-import SubscribeButton from '../../components/buttons/SubscribeButton';
-import Calendar from '../../components/Calendar';
 import Head from '../../components/Head';
 import Hero from '../../components/Hero';
 import Container from '../../components/layout/Container';
-import AdidasLogo from '../../components/logos/Adidas';
-import AxwayLogo from '../../components/logos/Axway';
-import SalesforceLogo from '../../components/logos/Salesforce';
-import SapLogo from '../../components/logos/SAP';
-import SlackLogo from '../../components/logos/Slack';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
-import NewsroomSection from '../../components/newsroom/NewsroomSection';
-import Slack from '../../components/slack';
 import GoldSponsors from '../../components/sponsors/GoldSponsors';
 import PlatinumSponsors from '../../components/sponsors/PlatinumSponsors';
 import SilverSponsors from '../../components/sponsors/SilverSponsors';
 import SupportUs from '../../components/SupportUs/SupportUs';
-import Testimonial from '../../components/Testimonial';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
 import TextLink from '../../components/typography/TextLink';
-import LinuxBanner from '@/components/campaigns/LinuxBanner';
-import DiamondSponsors from '@/components/sponsors/DiamondSponsors';
-import ArrowRight from '@/components/icons/ArrowRight';
-import PlusSign from '@/components/icons/PlusSign';
 
 const getStaticProps = makeStaticProps(['landing-page', 'footer', 'common']);
 
