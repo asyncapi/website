@@ -87,9 +87,9 @@ export default function Casestudies() {
           <table className='my-8 w-full border-collapse border table-auto'>
             <thead>
               <tr>
-                <th className='border p-2 font-bold text-left'>Company name</th>
-                <th className='border-2 p-2 font-bold text-left'>Use Case</th>
-                <th className='border-2 p-2 font-bold text-left'>Resources</th>
+                <th className='border p-2 font-bold'>Company name</th>
+                <th className='border-2 p-2 font-bold'>Use Case</th>
+                <th className='border-2 p-2 font-bold'>Resources</th>
               </tr>
             </thead>
             <tbody>
