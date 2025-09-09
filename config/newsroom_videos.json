@@ -1,5 +1,17 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/XjckzYopxoA/hqdefault.jpg",
+    "title": "AsyncAPI Mentorship Program Wrap-Up - 2024",
+    "description": "The livestream will serve as the official wrap-up of the AsyncAPI 2024 Mentorship Program. It's an opportunity for mentors and ...",
+    "videoId": "XjckzYopxoA"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/ncOFU__8hLM/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting , Tuesday Auguest 12th 2025",
+    "description": "https://github.com/asyncapi/community/issues/2014.",
+    "videoId": "ncOFU__8hLM"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/7vvdmDVZPX0/hqdefault.jpg",
     "title": "AsyncAPI Community WG Meeting , Tuesday July 29th 2025",
     "description": "https://github.com/asyncapi/community/issues/1988.",
@@ -16,17 +28,5 @@
     "title": "AsyncAPI Community WG Meeting , Tuesday July 29th 2025",
     "description": "https://github.com/asyncapi/community/issues/1988.",
     "videoId": "xD5smwg6az8"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/FkGnFqMTj88/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting, Tuesday July 15th 2025",
-    "description": "https://github.com/asyncapi/community/issues/1969.",
-    "videoId": "FkGnFqMTj88"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/6AIUb1FNqEk/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting, Tuesday July 1st 2025",
-    "description": "https://github.com/asyncapi/community/issues/1962.",
-    "videoId": "6AIUb1FNqEk"
   }
 ]

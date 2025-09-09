@@ -20,7 +20,7 @@ These are the recommended tools for contributors, as well as instructions for se
 2. Open Command Prompt on your local computer.
 
 3. Clone the forked repository by adding your GitHub username instead of `<username>`.
-   For multiple contributions, follow the [proper configuration of a forked AsyncAPI repo](git-workflow.md).
+    For multiple contributions, follow the [proper configuration of a forked AsyncAPI repo](git-workflow).
 
 ```bash
     git clone https://github.com/<username>/website/
