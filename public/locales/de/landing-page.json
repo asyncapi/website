@@ -1,7 +1,8 @@
 {
     "main": {
         "header": "Aufbau der Zukunft der",
-        "subHeader": "Ereignisgesteuerte Architekturen (EDA)",
+        "subHeader": "Ereignisgesteuerte",
+        "extraSubHeader": "Architekturen (EDA)",
         "body_pretext": "Open-Source-Tools zur einfachen Erstellung und Wartung Ihrer ereignisgesteuerten Architektur. Alle basieren auf der AsyncAPI-Spezifikation, der ",
         "body_boldtext": "Industriestandard",
         "body_posttext": " zur Definition asynchroner APIs.",

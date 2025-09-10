@@ -359,11 +359,10 @@ select {
   border: 2px solid transparent;
   border-image: linear-gradient(225deg, #AD20E2 0%, #2DCCFD 100%);
   border-image-slice: 1;
-  border-radius: 16px; /* <-- make it more rounded */
+  border-radius: 16px; 
 }
 @layer base {
   :root {
-    --background: 0 0% 100%;
     --foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -371,10 +370,10 @@ select {
     --primary: 195 100% 60%;      /* Vibrant cyan */
     --secondary: 280 100% 70%;    /* Electric purple */
     --accent: 45 100% 65%;        /* Warm amber */
-  }
+  } 
+ 
 
   .dark {
-    --background: 225 39% 7%;     /* Deep navy */
     --foreground: 210 40% 98%;    /* Light text */
     --muted: 225 39% 12%;         /* Dark navy muted */
     --muted-foreground: 220 20% 65%; /* Gray-blue text */
