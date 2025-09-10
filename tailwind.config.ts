@@ -64,6 +64,7 @@ const colorGray: Record<string, string> = {
 };
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -124,7 +125,19 @@ const config: Config = {
         },
         violet: '#8054F2',
         darkGunMetal: '#212526',
-        linkedin: '#0077b5'
+        linkedin: '#0077b5',
+        'darkTheme-background': '#121825',
+        'darkTheme-card': '#131E35',
+        'darkTheme-footer': '#090F1D',
+        'darkTheme-text': '#B8B9C0',
+        'darkTheme-heading': '#FFFFFF',
+        foreground: 'hsl(var(--foreground))',
+        prim: 'hsl(var(--primary))',
+        sec: 'hsl(var(--secondary))',
+        accent: 'hsl(var(--accent))',
+        border: 'hsl(var(--border))',
+        muted: 'hsl(var(--muted))',
+        'muted-foreground': 'hsl(var(--muted-foreground))'
       },
       scale: {
         25: '.25'
@@ -197,9 +210,11 @@ const config: Config = {
         'heading-md': ['24px', '1.375'],
         'heading-lg': ['36px', '1.375'],
         'heading-xl': ['64px', '1.375'],
+        'heading-xxl': ['88px', '1.375'],
         'body-sm': ['14px', '1.625'],
         'body-md': ['16px', '1.625'],
-        'body-lg': ['18px', '1.625']
+        'body-lg': ['18px', '1.625'],
+        'body-llg': ['22px', '1.625']
       },
       screens: {
         xs: '475px'
