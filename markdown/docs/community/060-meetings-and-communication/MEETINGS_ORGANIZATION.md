@@ -47,36 +47,37 @@ This is what you need to do to kick it off:
 
 1. Start your meeting by opening a Zoom meeting. Make sure you are logged into Zoom with your AsyncAPI licensed account.
 
-1. Log into [Restream.io](https://app.restream.io/home) and select `Set up for OBS, Zoom, etc.` option:
+1. Log into [Restream.io](https://app.restream.io/home) and select `Encoder|RMTP (Stream from OBS,Zoom,VMix,etc.)` option:
 
-    <img src="../../assets/meetings/restream1.png" width="50%" />
+    <img src="../../assets/meetings/stream1.png" width="50%" alt="Restream: Encoder | RTMP option selected"/>
 
 1. Click `Update Titles` card:
 
-    <img src="../../assets/meetings/restream2.png" width="50%" />
+    <img src="../../assets/meetings/stream2.png" width="50%" alt="Restream: Update Titles card" />
 
 1. Provide title and description:
 
-    - Title for the live stream that corresponds with the meeting you just started,
-    - Meeting description must be provided even if the field is empty; otherwise, the old one from other streams will be used.
+   - Title for the live stream that corresponds to the meeting you just started.
+   - Provide a meeting description even if you plan to leave it brief; otherwise, the previous description from another stream might be reused.
+   - Add a thumbnail for the stream, as platforms like YouTube require one.
 
-    <img src="../../assets/meetings/restream3.png" width="50%" />
+    <img src="../../assets/meetings/stream3.png" width="50%" alt="Restream: Provide title, description, and thumbnail screen" />
 
 1. In Zoom, click the `Live Transcript` button to start transcribing the meeting:
 
-    ![](../../assets/meetings/zoom1.png)
+    ![Live Transcript](../../assets/meetings/zoom1.png)
 
 1. Confirm transcriptions with `Enable` button:
 
-    ![](../../assets/meetings/zoom2.png)
+    ![Enable Transcript](../../assets/meetings/zoom2.png)
 
 1. Click `More`:
 
-    ![](../../assets/meetings/zoom3.png)
+    ![More Options](../../assets/meetings/zoom3.png)
 
 1. Select `Live on Custom Live Stream Service` option to start streaming to Restream and, therefore, to official AsyncAPI social networks:
 
-    ![](../../assets/meetings/zoom4.png)
+    ![Live on Custom Live Stream Service](../../assets/meetings/zoom4.png)
 
 #### Restream-first
 
@@ -86,48 +87,48 @@ This is what you need to do to kick it off:
 
 1. In [YouTube](https://youtube.com), click on your profile picture and select `Switch account`:
 
-    <img src="../../assets/meetings/yt1.png" width="40%" />
+    <img src="../../assets/meetings/yt1.png" width="40%" alt="Switch account to AsyncAPI"/>
 
 1. Select `AsyncAPI`. If you do not see it on the list, it means you did not have all the access rights needed to set up a live stream:
 
-    <img src="../../assets/meetings/yt2.png" width="40%" />
+    <img src="../../assets/meetings/yt2.png" width="40%" alt="AsyncAPI option" />
 
 1. Click on `Create` and select `Go live`:
 
-    <img src="../../assets/meetings/yt3.png" width="40%" />
+    <img src="../../assets/meetings/yt3.png" width="40%" alt="Create and Go Live options"/>
 
-1. Once a new live stream is created, in the list of `Upcoming` streams, click `View in Live Control Room` <img src="../../assets/meetings/yt5.png" width="3%" /> icon next to your live stream:
+1. Once a new live stream is created, in the list of `Upcoming` streams, click `View in Live Control Room` <img src="../../assets/meetings/yt5.png" width="3%" alt="Live icon" /> icon next to your live stream:
 
-    <img src="../../assets/meetings/yt4.png" width="50%" />
+    <img src="../../assets/meetings/yt4.png" width="50%" alt="View in Live Control Room"/>
 
 1. Enable `Closed captions`:
 
-    <img src="../../assets/meetings/yt6.png" width="50%" />
+    <img src="../../assets/meetings/yt6.png" width="50%" alt="Enable closed captions button"/>
 
 1. Log into [Restream.io](https://app.restream.io/home) and select `Start with Studio` option:
 
-    <img src="../../assets/meetings/restream1.png" width="50%" />
+    <img src="../../assets/meetings/restream1.png" width="50%" alt="Restream: Start with studio option" />
 
 1. After enabling the audio, video and providing the name, you will see a Restream Studio. 
 
 1. `Edit` the title and description of the stream:
 
-    <img src="../../assets/meetings/restream4.png" width="50%" />
+    <img src="../../assets/meetings/restream4.png" width="50%" alt="Restream: edit title and description" />
 
 1. Provide title and description and click `Next`:
 
     - Title for the live stream that corresponds with the meeting you just started,
     - Meeting description must be provided even if the field is empty; otherwise, the old one from other streams will be used.
 
-    <img src="../../assets/meetings/restream5.png" width="50%" />
+    <img src="../../assets/meetings/restream5.png" width="50%" alt="Restream: Providing stream details"/>
 
 1. `Edit` YouTube destination:
 
-    <img src="../../assets/meetings/restream6.png" width="40%" />
+    <img src="../../assets/meetings/restream6.png" width="40%" alt="Restream: YouTube destination" />
 
 1. Make sure you do not create a new event, but select the one you already created on YouTube, with closed captions on:
 
-    <img src="../../assets/meetings/restream7.png" width="40%" />
+    <img src="../../assets/meetings/restream7.png" width="40%" alt="Restream: Create event" />
 
 1. You are ready to `Go Live`
 
@@ -171,72 +172,3 @@ Once a new meeting is approved, add a [new workflow like this one](https://githu
 ### How can I become a host?
 
 Once your `Regular` meeting gets approved, contact `Fran Mendez` so he can give you access to all required tools.
-
-
-
-## How do I publish broadcasted meetings as podcasts?
-
-### Why do we need this feature?
-
-- Some people prefer to listen to the video/livestream as an audio (podcast) instead of watching the video.
-
-- The goal is to upload our AsyncAPI video/live streams on `Spotify For Podcasters` platform, ultimately allowing the listener to play the episodes on Spotify. Almost every YouTube video can be converted into a podcast.
-
-
-### Who can upload the videos?
-
-- The workflow can only be triggered by a person with write access to the `master` branch of the `asyncapi/community` repository.
-
-### What is needed?
-
-- The YouTube video ID is needed to trigger the workflow.
-
-### What is YouTube video ID?
-
-- A YouTube video ID is a unique combination of characters that identifies a specific video on the YouTube platform. It's used in the URL of the video to direct users to the exact video they want to watch. The video ID is typically a sequence of letters, numbers, and special characters that generally comes after the "v=" parameter in the URL.
-- [More examples](#list-of-different-types-of-youtube-links) of video ID are given below: ⬇️
-
-#### How to find YouTube ID?
-
-Let's take this video link, for example: https://www.youtube.com/watch?v=3rg_7hIb9PQ.
-
-Here the video ID is the word/entity after `https://www.youtube.com/watch?v=`, i.e., `3rg_7hIb9PQ`
-
-
-### List of different types of YouTube links
-
-- `https://www.youtube.com/watch?v=VIDEO_ID`
-  - Here, it can be https://www.youtube.com/watch?v=3rg_7hIb9PQ
-- `https://youtu.be/VIDEO_ID`
-  - Here, it can be https://www.youtu.be/3rg_7hIb9PQ
-- `https://www.youtube.com/embed/VIDEO_ID`
-  - Here, it can be https://www.youtube.com/embed/3rg_7hIb9PQ
-- `https://www.youtube.com/playlist?list=PLAYLIST_ID`
-  - Here, it can be https://www.youtube.com/playlist?list=PLbi1gRlP7piiaD67o1F4EOPoZztg2r8l6
-- `https://www.youtube.com/shorts/VIDEO_ID`
-  - Here, it can be https://www.youtube.com/shorts/3rg_7hIb9PQ
-- `https://www.youtube.com/watch?v=VIDEO_ID&list=PLAYLIST_ID`
-  - Here, it can be https://www.youtube.com/watch?v=deLUAobdVpw&list=PLbi1gRlP7piiaD67o1F4EOPoZztg2r8l6
-- `https://youtube.com/shorts/VIDEO_ID?feature=share`
-  - Here, it can be https://youtube.com/shorts/U5jUr8XAF_M?feature=share
-
-
-### Step-by-step procedure
-
-Here is an example with a procedure on how to use this workflow:
-
-1. Go to the `Actions` section on GitHub.
-2. Scroll down the menu on the left-hand side.
-3. Click on the `Upload Episode from YouTube To Spotify for Podcasters` option.
-4. Click on the `Run Workflow` button.
-5. Provide the YouTube ID in the box.
-6. Click on `Run workflow` button. 
-7. Wait for the workflow to finish. (Depending on video size, it may take some time to upload, so please have patience. Thank you.) .
-8. A few moments later....Hurray! Your episode is now uploaded successfully!
-
-You can also modify description and other information for uploaded podcast directly in Spotify:
-
-1. Go to https://podcasters.spotify.com/.
-2. Login using AsyncAPI account.
-2. Go to `Episodes` section. There, you will see your latest upload.
-3. Perform edits and save them.
