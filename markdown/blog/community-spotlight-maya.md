@@ -61,7 +61,7 @@ In this edition of the AsyncAPI Community Spotlight, we sat down with [Aishat Mu
 > **Bami: I think that is all. Now the fun fact. There’s a lot of fun facts, but we can do “Have you ever?” Ten questions.**
 >
 > ***Maya:** Okay.*
->
+
 > **Bami: Have you ever fixed bugs? Do you fix bugs? You’re not a developer.**
 >
 > ***Maya:** I think I have, on my portfolio when I was doing it on VS Code.*
