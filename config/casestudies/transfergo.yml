@@ -42,9 +42,8 @@ technical:
     Contract testing with Microcks and LocalStack integrated into Jenkins CI, validating message-driven services without requiring cloud infrastructure.
   architecture: |
     TransferGo relies heavily on an Event Driven Architecture, ensuring instant money transfers and reliable asynchronous communication. Services publish and consume events primarily through AWS Simple Notification Service (SNS) and Simple Queue Service (SQS), with Kafka used where applicable. Symfony-based workers handle incoming messages, while validation and coverage tools ensure contracts remain trustworthy.
-
-codegen: |
-  Code-first generation of AsyncAPI schemas is achieved via internal libraries in PHP and .NET. These libraries automatically reflect DTOs into message payload definitions, ensuring up-to-date and consistent documentation across services.
+  codegen: |
+    Code-first generation of AsyncAPI schemas is achieved via internal libraries in PHP and .NET. These libraries automatically reflect DTOs into message payload definitions, ensuring up-to-date and consistent documentation across services.
 
 schemas:
   description: JSON Schema derived from DTOs.
@@ -55,12 +54,7 @@ schemas:
 
 asyncapi:
   usecase: |
-    - Unifying async API documentation across services.
-    - Generating AsyncAPI schemas from code via internal libraries.
-    - Validating and optimizing schemas in CI pipelines.
-    - Publishing schemas to Port.io Developer Portal for centralized access.
-    - Building Event Catalog for visibility into 300+ channels.
-    - Supporting contract testing with Microcks.
+    TransferGo uses AsyncAPI to unify async API documentation across services, generate schemas from code via internal libraries, validate and optimize schemas in CI pipelines, publish schemas to Port.io Developer Portal for centralized access, build an Event Catalog for visibility into 300+ channels, and support contract testing with Microcks.
   versions:
     - '3.0.0'
     - '2.6.0'
@@ -80,10 +74,6 @@ asyncapi:
   bindings: |
     None
   tools: |
-    * [AsyncAPI CLI](https://www.asyncapi.com/tools/cli)
-    * [AsyncAPI Generator](https://github.com/asyncapi/generator)
-    * [Port.io Developer Portal](https://port.io)
-    * [Event Catalog](https://www.eventcatalog.dev/)
-    * [Microcks](https://microcks.io/)
-    * [LocalStack](https://www.localstack.cloud/)
-    * API Guardian (internal CLI tool)
+    TransferGo relies on AsyncAPI CLI, AsyncAPI Generator, AsyncAPI React, Port.io Developer Portal, Event Catalog, Microcks, LocalStack, and API Guardian (internal CLI).
+  fullExample: resources/casestudies/transfergo/asyncapi.yaml
+additionalResources: ''
