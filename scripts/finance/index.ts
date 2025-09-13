@@ -1,6 +1,8 @@
 import { access, constants, mkdir } from 'fs/promises';
 import { resolve } from 'path';
 
+import { CustomError } from '@/types/errors/CustomError';
+
 import { writeJSON } from '../helpers/readAndWriteJson';
 
 /**
@@ -21,9 +23,10 @@ interface BuildFinanceInfoListProps {
  * ensures the target directory exists, and writes the parsed content as JSON to 'Expenses.json'
  * and 'ExpensesLink.json'. If an error occurs during processing, it throws a new error with a descriptive message.
  *
- * @param props - An object containing configuration paths and the year used for locating the YAML files and determining the output directory.
+ * @param props - An object containing configuration paths and
+ * the year used for locating the YAML files and determining the output directory.
  * @returns A promise that resolves when the finance information list has been successfully built.
- * @throws {Error} If an error occurs during the conversion or file writing process.
+ * @throws {CustomError} If an error occurs during the conversion or file writing process.
  */
 export async function buildFinanceInfoList({
   currentDir,
@@ -53,6 +56,10 @@ export async function buildFinanceInfoList({
 
     await writeJSON(expensesLinkPath, expensesLinkJsonPath);
   } catch (err) {
-    throw new Error(`Error in buildFinanceInfoList: ${err}`);
+    throw CustomError.fromError(err, {
+      category: 'script',
+      operation: 'buildFinanceInfoList',
+      detail: `Failed to build finance info for year ${year} in ${financeDir}`
+    });
   }
 }
