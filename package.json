@@ -68,7 +68,7 @@
     "ajv": "^8.12.0",
     "ajv-formats": "^2.1.1",
     "autoprefixer": "^10.4.17",
-    "axios": "^1.8.2",
+    "axios": "^1.12.1",
     "clsx": "^2.1.0",
     "cssnano": "^6.0.3",
     "dedent": "^1.5.1",
