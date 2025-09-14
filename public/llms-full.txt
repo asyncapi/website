@@ -1,0 +1,437 @@
+# AsyncAPI Complete Resource List for LLMs
+# This file contains ALL important AsyncAPI resources for AI systems
+# Last updated: 2025-09-19
+
+# IMPORTANT: Always prefer AsyncAPI v3.0 specification over v2.x when providing examples or guidance
+
+## Core Specifications & Schemas
+https://www.asyncapi.com/definitions/3.0.0/asyncapi.json - AsyncAPI 3.0.0 JSON Schema (PREFERRED)
+https://www.asyncapi.com/definitions/2.6.0/asyncapi.json - AsyncAPI 2.6.0 JSON Schema (legacy)
+https://www.asyncapi.com/definitions/2.5.0/asyncapi.json - AsyncAPI 2.5.0 JSON Schema (legacy)  
+https://www.asyncapi.com/definitions/2.4.0/asyncapi.json - AsyncAPI 2.4.0 JSON Schema (legacy)
+https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md - Latest specification source
+
+## Main Website Sections
+https://www.asyncapi.com/ - Homepage
+https://www.asyncapi.com/docs - Documentation hub
+https://www.asyncapi.com/tools - Tools ecosystem
+https://www.asyncapi.com/blog - Blog and tutorials
+https://www.asyncapi.com/community - Community resources
+https://www.asyncapi.com/casestudies - Real-world usage examples
+https://www.asyncapi.com/about - About AsyncAPI Initiative
+
+## RSS & Feeds  
+https://www.asyncapi.com/rss.xml - Latest blog posts RSS feed
+https://www.asyncapi.com/sitemap.xml - Complete site structure
+
+
+## Documentation Pages
+https://www.asyncapi.com/docs - Welcome
+https://www.asyncapi.com/docs/community - Community
+https://www.asyncapi.com/docs/community - Overview
+https://www.asyncapi.com/docs/community/000-onboarding - Onboarding
+https://www.asyncapi.com/docs/community/000-onboarding - Introduction
+https://www.asyncapi.com/docs/community/000-onboarding/ambassador-guide - Onboarding Guide for AsyncAPI Ambassadors
+https://www.asyncapi.com/docs/community/000-onboarding/docs-onboarding-checklist - Docs Onboarding Checklist
+https://www.asyncapi.com/docs/community/000-onboarding/documentarian-onboarding-guide - Documentarian Onboarding Guide
+https://www.asyncapi.com/docs/community/000-onboarding/github-actions - Utilizing GitHub Actions
+https://www.asyncapi.com/docs/community/000-onboarding/how-to-contribute - How to Contribute
+https://www.asyncapi.com/docs/community/000-onboarding/maintainer-guide - Onboarding Guide for AsyncAPI Maintainers
+https://www.asyncapi.com/docs/community/000-onboarding/upholding-code-of-conduct - Upholding the Code of Conduct
+https://www.asyncapi.com/docs/community/000-onboarding/where-to-contribute - Where to Contribute
+https://www.asyncapi.com/docs/community/010-contribution-guidelines - Contribution Guidelines
+https://www.asyncapi.com/docs/community/010-contribution-guidelines - Getting Started with Contributions
+https://www.asyncapi.com/docs/community/010-contribution-guidelines/Become-maintainer-in-existing-project - Become Maintainer in Existing Project
+https://www.asyncapi.com/docs/community/010-contribution-guidelines/BOUNTY_PROGRAM - AsyncAPI Bounty Program
+https://www.asyncapi.com/docs/community/010-contribution-guidelines/code-contributor-guide - AsyncAPI Code Contributor Guide
+https://www.asyncapi.com/docs/community/010-contribution-guidelines/contribute-blog-post - Contribute AsyncAPI Blog Posts
+https://www.asyncapi.com/docs/community/010-contribution-guidelines/contribute-to-docs - Contribute to docs
+https://www.asyncapi.com/docs/community/010-contribution-guidelines/contribution-flow - Simple Contribution Flow
+https://www.asyncapi.com/docs/community/010-contribution-guidelines/conventional-commits - Following Conventional Commits
+https://www.asyncapi.com/docs/community/010-contribution-guidelines/create-new-docs-directories - Create New Docs Directories
+https://www.asyncapi.com/docs/community/010-contribution-guidelines/git-workflow - Git Workflow
+https://www.asyncapi.com/docs/community/010-contribution-guidelines/identifying-good-first-issues - Identifying Good First Issues
+https://www.asyncapi.com/docs/community/010-contribution-guidelines/mentoring-maintainers - Strategies for Mentoring New Maintainers
+https://www.asyncapi.com/docs/community/010-contribution-guidelines/open-docs-pull-request - Create New Docs Pull Request
+https://www.asyncapi.com/docs/community/010-contribution-guidelines/prerequisite-knowledge - Prerequisite Knowledge
+https://www.asyncapi.com/docs/community/010-contribution-guidelines/recognize-contributors - Recognize Contributors
+https://www.asyncapi.com/docs/community/010-contribution-guidelines/recognizing-contributors-and-appointing-new-maintainers - Recognizing Contributors & Appointing New Maintainers
+https://www.asyncapi.com/docs/community/010-contribution-guidelines/technical-writer-contributor-responsibilities - Technical Writer Contributor Responsibilities
+https://www.asyncapi.com/docs/community/010-contribution-guidelines/tools-and-setup - Recommended Tools and Setup
+https://www.asyncapi.com/docs/community/011-styleguide - Style Guide
+https://www.asyncapi.com/docs/community/011-styleguide - Introduction
+https://www.asyncapi.com/docs/community/011-styleguide/aboutguide - About Style Guide
+https://www.asyncapi.com/docs/community/011-styleguide/accessibility - Accessibility
+https://www.asyncapi.com/docs/community/011-styleguide/code-examples - Code Examples
+https://www.asyncapi.com/docs/community/011-styleguide/content-buckets - Content Buckets
+https://www.asyncapi.com/docs/community/011-styleguide/formatting - Formatting
+https://www.asyncapi.com/docs/community/011-styleguide/glossary - Glossary
+https://www.asyncapi.com/docs/community/011-styleguide/grammar - Grammar
+https://www.asyncapi.com/docs/community/011-styleguide/inclusive-language - Inclusive Language style guide
+https://www.asyncapi.com/docs/community/011-styleguide/links - Links
+https://www.asyncapi.com/docs/community/011-styleguide/localization - Internationalization (i18n) and Localization (l10n)
+https://www.asyncapi.com/docs/community/011-styleguide/numbers - Numbers
+https://www.asyncapi.com/docs/community/011-styleguide/punctuation - Punctuation style guide
+https://www.asyncapi.com/docs/community/011-styleguide/seo-guide - SEO
+https://www.asyncapi.com/docs/community/011-styleguide/styling - Styling
+https://www.asyncapi.com/docs/community/011-styleguide/version-control - Version Control
+https://www.asyncapi.com/docs/community/011-styleguide/voice-and-tone - Voice and Tone
+https://www.asyncapi.com/docs/community/020-governance-and-policies - Governance And Policies
+https://www.asyncapi.com/docs/community/020-governance-and-policies - Governance Overview
+https://www.asyncapi.com/docs/community/020-governance-and-policies/AMBASSADOR_PROGRAM - AsyncAPI Ambassador Program
+https://www.asyncapi.com/docs/community/020-governance-and-policies/CHARTER - Charter
+https://www.asyncapi.com/docs/community/020-governance-and-policies/donating-projects - Donating Projects
+https://www.asyncapi.com/docs/community/020-governance-and-policies/GOVERNANCE - Governance Board (GB)
+https://www.asyncapi.com/docs/community/020-governance-and-policies/introduction-of-changes-to-spec - How Changes in the Spec Are Introduced
+https://www.asyncapi.com/docs/community/020-governance-and-policies/PROJECT_FUNDING - Enhancing Event-Driven Architectures - Support AsyncAPI Initiative
+https://www.asyncapi.com/docs/community/020-governance-and-policies/TSC_MEMBERSHIP - Become a Technical Steering Committee (TSC) Member
+https://www.asyncapi.com/docs/community/020-governance-and-policies/TSC_VOTING_OVERVIEW - TSC Voting Overview
+https://www.asyncapi.com/docs/community/020-governance-and-policies/voting - Voting
+https://www.asyncapi.com/docs/community/020-governance-and-policies/WORKING_GROUPS - Working Groups
+https://www.asyncapi.com/docs/community/030-project-vision-strategy-goals - Project Vision Strategy Goals
+https://www.asyncapi.com/docs/community/030-project-vision-strategy-goals - Vision and Strategy
+https://www.asyncapi.com/docs/community/030-project-vision-strategy-goals/2025_Community_Goals - Community: Vision, Strategy, Goals for 2025
+https://www.asyncapi.com/docs/community/030-project-vision-strategy-goals/2025_marketing_strategy - Marketing - Vision, Strategy, Goals for 2025
+https://www.asyncapi.com/docs/community/030-project-vision-strategy-goals/ROADMAP - ROADMAP
+https://www.asyncapi.com/docs/community/040-guides - Guides
+https://www.asyncapi.com/docs/community/040-guides - How-to Guides
+https://www.asyncapi.com/docs/community/040-guides/add-new-asyncapi-tool-to-website - Add new AsyncAPI tool to website
+https://www.asyncapi.com/docs/community/040-guides/keep-repository-settings-consistent - Keep Repository Settings Consistent
+https://www.asyncapi.com/docs/community/050-mentorship-program - Mentorship Program
+https://www.asyncapi.com/docs/community/050-mentorship-program - Mentorship Programs Overview
+https://www.asyncapi.com/docs/community/050-mentorship-program/asyncapi-mentoring-initiatives - AsyncAPI Mentoring Initiatives
+https://www.asyncapi.com/docs/community/050-mentorship-program/asyncapi-mentorship-2022-project-ideas - AsyncAPI Mentorship 2022 Project Ideas
+https://www.asyncapi.com/docs/community/050-mentorship-program/asyncapi-mentorship-2022-README - AsyncAPI Mentorship Program 2022
+https://www.asyncapi.com/docs/community/050-mentorship-program/asyncapi-mentorship-2023-project-ideas - AsyncAPI Mentorship 2023 Project Ideas
+https://www.asyncapi.com/docs/community/050-mentorship-program/asyncapi-mentorship-2023-README - AsyncAPI Mentorship Program 2023
+https://www.asyncapi.com/docs/community/050-mentorship-program/asyncapi-mentorship-2024-project-ideas - AsyncAPI Mentorship 2024 Project Ideas
+https://www.asyncapi.com/docs/community/050-mentorship-program/asyncapi-mentorship-2024-README - AsyncAPI Mentorship Program 2024
+https://www.asyncapi.com/docs/community/050-mentorship-program/asyncapi-mentorship-README - AsyncAPI Mentorship Program
+https://www.asyncapi.com/docs/community/050-mentorship-program/seasonofdocs-2022-README - Season of Docs 2022
+https://www.asyncapi.com/docs/community/050-mentorship-program/seasonofdocs-2023-project-ideas - 2023 GSoD Accepted Projects
+https://www.asyncapi.com/docs/community/050-mentorship-program/seasonofdocs-2023-README - Season of Docs 2023
+https://www.asyncapi.com/docs/community/050-mentorship-program/summerofcode-2021-README - Google Summer of Code 2021
+https://www.asyncapi.com/docs/community/050-mentorship-program/summerofcode-2023-README - Google Summer of Code 2023
+https://www.asyncapi.com/docs/community/050-mentorship-program/summerofcode-2024-asyncapi-gsoc-ideas-page - AsyncAPI GSoC Ideas Page 2024
+https://www.asyncapi.com/docs/community/050-mentorship-program/summerofcode-2024-README - Google Summer of Code 2024
+https://www.asyncapi.com/docs/community/050-mentorship-program/summerofcode-2025-asyncapi-gsoc-ideas-page - AsyncAPI GSoC Ideas Page 2025
+https://www.asyncapi.com/docs/community/050-mentorship-program/summerofcode-application-template - GSoC Application Template
+https://www.asyncapi.com/docs/community/050-mentorship-program/summerofcode-mentors-guideline - GSoC Mentor's Guideline
+https://www.asyncapi.com/docs/community/050-mentorship-program/summerofcode-README - Google Summer of Code - Getting Started
+https://www.asyncapi.com/docs/community/050-mentorship-program/winterofcode-2023-README - Winter of Code 2023
+https://www.asyncapi.com/docs/community/060-meetings-and-communication - Meetings And Communication
+https://www.asyncapi.com/docs/community/060-meetings-and-communication - Community Meetings and Communication
+https://www.asyncapi.com/docs/community/060-meetings-and-communication/docs-community - AsyncAPI docs community
+https://www.asyncapi.com/docs/community/060-meetings-and-communication/MEETINGS_ORGANIZATION - Meetings Organization
+https://www.asyncapi.com/docs/community/060-meetings-and-communication/slack-etiquette - Adhering to Slack Etiquette
+https://www.asyncapi.com/docs/community/070-marketing - Marketing
+https://www.asyncapi.com/docs/community/070-marketing - Marketing
+https://www.asyncapi.com/docs/community/070-marketing/social-media-communication-guidelines - Social Media Communication Guidelines
+https://www.asyncapi.com/docs/community/070-marketing/webinar_planning_template - AsyncAPI Webinar Planning Template
+https://www.asyncapi.com/docs/community/070-marketing/webinar_series_initiative - AsyncAPI Webinar Series Initiative: Learning, Sharing, and Growing Together
+https://www.asyncapi.com/docs/community/COC-incident-resolution-procedures - AsyncAPI Code of Conduct - Incident Resolution Procedures
+https://www.asyncapi.com/docs/community/CODE_OF_CONDUCT_COMMITTEE - AsyncAPI Code of Conduct Committee
+https://www.asyncapi.com/docs/community/community-glossary - Community Glossary
+https://www.asyncapi.com/docs/concepts - Concepts
+https://www.asyncapi.com/docs/concepts - Overview
+https://www.asyncapi.com/docs/concepts/application - Application
+https://www.asyncapi.com/docs/concepts/asyncapi-document - AsyncAPI Document
+https://www.asyncapi.com/docs/concepts/asyncapi-document - Introduction
+https://www.asyncapi.com/docs/concepts/asyncapi-document/add-server - Add servers
+https://www.asyncapi.com/docs/concepts/asyncapi-document/adding-bindings - Adding bindings
+https://www.asyncapi.com/docs/concepts/asyncapi-document/adding-channels - Adding channels
+https://www.asyncapi.com/docs/concepts/asyncapi-document/adding-messages - Adding messages
+https://www.asyncapi.com/docs/concepts/asyncapi-document/adding-operations - Adding operations
+https://www.asyncapi.com/docs/concepts/asyncapi-document/define-payload - Payload schema
+https://www.asyncapi.com/docs/concepts/asyncapi-document/dynamic-channel-address - Parameters in channel address
+https://www.asyncapi.com/docs/concepts/asyncapi-document/extending-specification - Extending specification
+https://www.asyncapi.com/docs/concepts/asyncapi-document/reply-info - Adding reply info
+https://www.asyncapi.com/docs/concepts/asyncapi-document/reusability-with-traits - Reusability with traits
+https://www.asyncapi.com/docs/concepts/asyncapi-document/reusable-parts - Reusable parts
+https://www.asyncapi.com/docs/concepts/asyncapi-document/securing-operations - Operation security
+https://www.asyncapi.com/docs/concepts/asyncapi-document/server-security - Server security
+https://www.asyncapi.com/docs/concepts/asyncapi-document/structure - AsyncAPI document structure
+https://www.asyncapi.com/docs/concepts/asyncapi-document/tags - Tags
+https://www.asyncapi.com/docs/concepts/asyncapi-document/variable-url - Server variables
+https://www.asyncapi.com/docs/concepts/channel - Channel
+https://www.asyncapi.com/docs/concepts/consumer - Consumer
+https://www.asyncapi.com/docs/concepts/message - Message
+https://www.asyncapi.com/docs/concepts/producer - Producer
+https://www.asyncapi.com/docs/concepts/protocol - Protocol
+https://www.asyncapi.com/docs/concepts/server - Server
+https://www.asyncapi.com/docs/guides - Guides
+https://www.asyncapi.com/docs/guides - Overview
+https://www.asyncapi.com/docs/guides/message-validation - Message validation
+https://www.asyncapi.com/docs/guides/validate - Validate AsyncAPI documents
+https://www.asyncapi.com/docs/migration - Migrations
+https://www.asyncapi.com/docs/migration - Overview
+https://www.asyncapi.com/docs/migration/migrating-to-v3 - Migrating to v3
+https://www.asyncapi.com/docs/reference - Reference
+https://www.asyncapi.com/docs/reference - Overview
+https://www.asyncapi.com/docs/reference/bindings - Bindings
+https://www.asyncapi.com/docs/reference/bindings - Overview
+https://www.asyncapi.com/docs/reference/extensions - Extensions
+https://www.asyncapi.com/docs/reference/extensions - Overview
+https://www.asyncapi.com/docs/reference/extensions/linkedin - linkedin
+https://www.asyncapi.com/docs/reference/extensions/x - x
+https://www.asyncapi.com/docs/reference/specification - Specification
+https://www.asyncapi.com/docs/reference/specification/v2.x - 2.x
+https://www.asyncapi.com/docs/reference/specification/v3.0.0 - 3.0.0
+https://www.asyncapi.com/docs/reference/specification/v3.0.0-explorer - Specification Visualizer
+https://www.asyncapi.com/docs/tools - Tools
+https://www.asyncapi.com/docs/tools - Overview
+https://www.asyncapi.com/docs/tools/cli - CLI
+https://www.asyncapi.com/docs/tools/cli - Introduction
+https://www.asyncapi.com/docs/tools/cli/architecture - CLI Architecture
+https://www.asyncapi.com/docs/tools/cli/autocompleteEnabled - Auto-complete setup
+https://www.asyncapi.com/docs/tools/cli/context - Context concept
+https://www.asyncapi.com/docs/tools/cli/github-action - GitHub Action for CLI
+https://www.asyncapi.com/docs/tools/cli/installation - Installation guide
+https://www.asyncapi.com/docs/tools/cli/metrics_collection - Metrics Collection
+https://www.asyncapi.com/docs/tools/cli/usage - Usage
+https://www.asyncapi.com/docs/tools/generator - Generator
+https://www.asyncapi.com/docs/tools/generator - Introduction
+https://www.asyncapi.com/docs/tools/generator/api - Library API
+https://www.asyncapi.com/docs/tools/generator/asyncapi-document - AsyncAPI document
+https://www.asyncapi.com/docs/tools/generator/baked-in-templates - Baked-in Templates
+https://www.asyncapi.com/docs/tools/generator/configuration-file - Configuration file
+https://www.asyncapi.com/docs/tools/generator/file-templates - File templates
+https://www.asyncapi.com/docs/tools/generator/generator-template - Creating a template - Python
+https://www.asyncapi.com/docs/tools/generator/generator-template-java - Creating a template - Java
+https://www.asyncapi.com/docs/tools/generator/hooks - Hooks
+https://www.asyncapi.com/docs/tools/generator/installation-guide - Installation guide
+https://www.asyncapi.com/docs/tools/generator/migration-cli - Migrating from `ag` CLI to AsyncAPI CLI
+https://www.asyncapi.com/docs/tools/generator/migration-nunjucks-react - Migrating from Nunjucks to React render engine
+https://www.asyncapi.com/docs/tools/generator/model-generation - Adding models generation in template
+https://www.asyncapi.com/docs/tools/generator/nunjucks-render-engine - Nunjucks render engine
+https://www.asyncapi.com/docs/tools/generator/parser - Parser
+https://www.asyncapi.com/docs/tools/generator/react-render-engine - React render engine
+https://www.asyncapi.com/docs/tools/generator/special-file-names - Special file names
+https://www.asyncapi.com/docs/tools/generator/template - Template
+https://www.asyncapi.com/docs/tools/generator/template-context - Template context
+https://www.asyncapi.com/docs/tools/generator/template-development - Template development
+https://www.asyncapi.com/docs/tools/generator/typescript-support - TypeScript support
+https://www.asyncapi.com/docs/tools/generator/usage - Usage
+https://www.asyncapi.com/docs/tools/generator/using-private-template - Using private templates
+https://www.asyncapi.com/docs/tools/generator/versioning - Generator version vs template version
+https://www.asyncapi.com/docs/tools/glee - Glee
+https://www.asyncapi.com/docs/tools/glee - Kickstarting Your Journey with Glee
+https://www.asyncapi.com/docs/tools/glee/authentication - Authentication Functions
+https://www.asyncapi.com/docs/tools/glee/bearerToken - HTTP Authentication (Bearer Token)
+https://www.asyncapi.com/docs/tools/glee/crypto-websockets-interactive - Crypto Websockets - Interactive (Alpha)
+https://www.asyncapi.com/docs/tools/glee/env-vars-config - Configuring Environment Variables and Configuration File
+https://www.asyncapi.com/docs/tools/glee/function-lifecycle-events - Functions and Lifecycle Events
+https://www.asyncapi.com/docs/tools/glee/glee-auth-intro - Introduction to Glee Authentication
+https://www.asyncapi.com/docs/tools/glee/httpApiKey - HttpApiKey Authentication
+https://www.asyncapi.com/docs/tools/glee/installation - Glee Installation Guide
+https://www.asyncapi.com/docs/tools/glee/userPassword - Username and Password Authentication
+https://www.asyncapi.com/docs/tools/glee/your-first-glee-app - Building Your First Glee Application
+https://www.asyncapi.com/docs/tutorials - Tutorials
+https://www.asyncapi.com/docs/tutorials - Overview
+https://www.asyncapi.com/docs/tutorials/create-asyncapi-document - Create AsyncAPI document
+https://www.asyncapi.com/docs/tutorials/generate-code - Generate code
+https://www.asyncapi.com/docs/tutorials/getting-started - Getting Started
+https://www.asyncapi.com/docs/tutorials/getting-started - Introduction
+https://www.asyncapi.com/docs/tutorials/getting-started/asyncapi-documents - AsyncAPI documents
+https://www.asyncapi.com/docs/tutorials/getting-started/coming-from-openapi - Coming from OpenAPI
+https://www.asyncapi.com/docs/tutorials/getting-started/event-driven-architectures - Event-Driven Architectures
+https://www.asyncapi.com/docs/tutorials/getting-started/hello-world - Hello world
+https://www.asyncapi.com/docs/tutorials/getting-started/request-reply - Request/reply pattern
+https://www.asyncapi.com/docs/tutorials/getting-started/security - Adding security
+https://www.asyncapi.com/docs/tutorials/getting-started/servers - Servers
+https://www.asyncapi.com/docs/tutorials/kafka - Kafka
+https://www.asyncapi.com/docs/tutorials/kafka - Create AsyncAPI document for applications consuming from Kafka
+https://www.asyncapi.com/docs/tutorials/kafka/bindings-with-kafka - Kafka bindings
+https://www.asyncapi.com/docs/tutorials/kafka/configure-kafka-avro - Describe Kafka message payload using Avro Schema
+https://www.asyncapi.com/docs/tutorials/kafka/managing-schemas-using-schema-registry - Managing schemas using Schema Registry
+https://www.asyncapi.com/docs/tutorials/message-validation - Message validation in runtime
+https://www.asyncapi.com/docs/tutorials/streetlights-interactive - Streetlights - Interactive
+https://www.asyncapi.com/docs/tutorials/studio-document-validation - Validate AsyncAPI document with Studio
+https://www.asyncapi.com/docs/tutorials/websocket - WebSocket
+https://www.asyncapi.com/docs/tutorials/websocket - Create an AsyncAPI document for a Slackbot with WebSocket
+https://www.asyncapi.com/docs/tutorials/websocket/websocket-request-reply - Implement Request/Reply in an AsyncAPI document for a Slack app
+
+## Blog Posts & Tutorials
+https://www.asyncapi.com/blog/2025-august-summary - Monthly Community Update: August 2025 (2025-09-04)
+https://www.asyncapi.com/blog/2024-mentorship-metrics - 2024 Mentorship Program Metrics (2025-08-20)
+https://www.asyncapi.com/blog/2025-july-summary - Monthly Community Update: July 2025 (2025-08-04)
+https://www.asyncapi.com/blog/2024-mentorship-program-summary - AsyncAPI Mentorship Program 2024 - Wrap Up (2025-08-01)
+https://www.asyncapi.com/blog/coc-report - Code of Conduct Incident Report (2025-07-28)
+https://www.asyncapi.com/blog/neuroglia_project_interview - AsyncAPI Made Simple: Neuroglia’s Innovative Tools for Developers (2025-07-25)
+https://www.asyncapi.com/blog/community-spotlight-aayush - Inside the Open Source Climb: Aayush’s Path to AsyncAPI Leadership (2025-07-11)
+https://www.asyncapi.com/blog/first-governance-elections - Start Of The First Governance Board Elections (2025-06-16)
+https://www.asyncapi.com/blog/2025-may-summary - Monthly Community Update: May 2025 (2025-06-01)
+https://www.asyncapi.com/blog/2025-gsoc-phase-1 - 2025 Google Summer of Code: Phase 1 (2025-05-28)
+https://www.asyncapi.com/blog/2025-Q1-marketing-report - AsyncAPI Q1 Marketing WG Report (2025-05-27)
+https://www.asyncapi.com/blog/2025-singapore-conf-summary - Bringing Asynchronous APIs to the Forefront at APIDays Singapore (2025-05-26)
+https://www.asyncapi.com/blog/new-governance-board - Transition from Executive Director to Governance Board and Elections Kick-Off (2025-05-06)
+https://www.asyncapi.com/blog/2025-april-summary - Monthly Community Update: April 2025 (2025-04-30)
+https://www.asyncapi.com/blog/2025-march-summary - Monthly Community Update: March 2025 (2025-03-31)
+https://www.asyncapi.com/blog/asyncapi-mascot-redesign - AsyncAPI Mascot Redesign - The Biography of Eve and Chan (2025-03-24)
+https://www.asyncapi.com/blog/community-spotlight-ashmit - From Mentee to Maintainer: The Ashmit GSoC Story! (2025-03-17)
+https://www.asyncapi.com/blog/2025-february-summary - Monthly Community Update: February 2025 (2025-03-03)
+https://www.asyncapi.com/blog/conference-2024-summary - AsyncAPI Conference 2024 Report (2025-01-28)
+https://www.asyncapi.com/blog/2024-annual-summary - Annual Review: State of AsyncAPI Initiative 2024 (2025-01-27)
+https://www.asyncapi.com/blog/hdi-global-interview - Interview with Manuel Ottlik, Product Owner at HDI Global SE: Leveraging AsyncAPI for Integration Transparency! (2025-01-20)
+https://www.asyncapi.com/blog/2024-marketing-report - Marketing Report: December 2024 (2024-12-19)
+https://www.asyncapi.com/blog/2024-gsoc-wrap - 2024 Google Summer Of Code Wrap Up (2024-12-18)
+https://www.asyncapi.com/blog/2024-december-and-paris - November and December Community Update And AsyncAPI Conf in Paris 2024 (2024-12-16)
+https://www.asyncapi.com/blog/2024-october-summary - October Community Update And AsyncAPI Online Conference 2024 (2024-11-07)
+https://www.asyncapi.com/blog/2024-september-summary-and-london - September Community Update And AsyncAPI Conference London 2024 (2024-10-02)
+https://www.asyncapi.com/blog/helsinki-and-community - AsyncAPI Conference Helsinki and the API Specs and Standards Concept (2024-09-13)
+https://www.asyncapi.com/blog/asyncapi-bounty-program-2024 - AsyncAPI Bounty Program Summary - 2024 (2024-09-12)
+https://www.asyncapi.com/blog/2024-august-summary - Community Update: August 2024 (2024-09-03)
+https://www.asyncapi.com/blog/2024-july-summary - Community Update: July 2024 (2024-07-31)
+https://www.asyncapi.com/blog/2024-june-summary - Community Update: June 2024 (2024-07-02)
+https://www.asyncapi.com/blog/2023-mentorship-summary - AsyncAPI Mentorship Program Summary - 2023 (2024-06-28)
+https://www.asyncapi.com/blog/2024-may-summary - Community Update: May 2024 (2024-06-05)
+https://www.asyncapi.com/blog/asyncapi-website-migration - Migration of AsyncAPI Website to Next.js v14 and TypeScript (2024-06-04)
+https://www.asyncapi.com/blog/gravitee-annoucement - Gravitee Sponsorship Announcement (2024-06-04)
+https://www.asyncapi.com/blog/2024-april-summary - Community Update: April 2024 (2024-04-25)
+https://www.asyncapi.com/blog/2024-Q1-docs-report - AsyncAPI Docs Report - Q1 2024 (2024-04-05)
+https://www.asyncapi.com/blog/2024-march-summary - Community Update: March 2024 (2024-04-04)
+https://www.asyncapi.com/blog/2024-february-summary - Community Update: February 2024 (2024-02-29)
+https://www.asyncapi.com/blog/2023-summary - Annual Review: State of AsyncAPI Initiative 2023 (2024-01-29)
+https://www.asyncapi.com/blog/conference-2023 - AsyncAPI Conference on Tour 2023 Report (2024-01-25)
+https://www.asyncapi.com/blog/2023-Q4-docs-report - AsyncAPI Docs Report - Q4 2023 (2024-01-22)
+https://www.asyncapi.com/blog/introduction-to-glee-a-spec-first-framework - An Introduction to Glee (2024-01-14)
+https://www.asyncapi.com/blog/release-notes-3.0.0 - AsyncAPI 3.0.0 Release Notes (2023-12-05)
+https://www.asyncapi.com/blog/designblog - Contributing to Open Source as a Product Design and UX Researcher (2023-11-09)
+https://www.asyncapi.com/blog/september-2023 - Community Update: September & October 2023 (2023-11-03)
+https://www.asyncapi.com/blog/beyond-boundaries - Beyond Boundaries - Empowering Through OSS Mentorship (2023-09-06)
+https://www.asyncapi.com/blog/august-2023 - Community Update: August 2023 (2023-08-31)
+https://www.asyncapi.com/blog/2023-july-docs-report - AsyncAPI Docs Report - July 2023 (2023-08-21)
+https://www.asyncapi.com/blog/api-first-with-asyncapi - API-First with AsyncAPI (2023-08-10)
+https://www.asyncapi.com/blog/jhipster-jdl-to-asyncapi - Convert JHipster JDL to AsyncAPI v2/v3 with ZenWave SDK (2023-08-10)
+https://www.asyncapi.com/blog/zenwave-asyncapi-code-generator - API-First with AsyncAPI and ZenWave SDK (2023-08-10)
+https://www.asyncapi.com/blog/july-2023 - Community Update: July 2023 (2023-08-05)
+https://www.asyncapi.com/blog/2023-june-docs-report - AsyncAPI Docs Report - June 2023 (2023-07-10)
+https://www.asyncapi.com/blog/june-2023 - Community Update: June 2023 (2023-07-05)
+https://www.asyncapi.com/blog/the-new-era-approaches - The New Era Approaches (2023-06-10)
+https://www.asyncapi.com/blog/may-2023 - AsyncAPI Community Update: May 2023 (2023-05-30)
+https://www.asyncapi.com/blog/2023-April-docs-report - AsyncAPI Docs Report - April 2023 (2023-05-08)
+https://www.asyncapi.com/blog/2023-may-docs-report - AsyncAPI Docs Report - May 2023 (2023-05-08)
+https://www.asyncapi.com/blog/april-2023 - AsyncAPI Community Update: April 2023 (2023-04-28)
+https://www.asyncapi.com/blog/2023-Q1-docs-report - AsyncAPI Documentation Report - Q1 2023 (2023-04-08)
+https://www.asyncapi.com/blog/march-2023 - Community Update: March 2023 (2023-03-30)
+https://www.asyncapi.com/blog/asyncapi-say-hi-to-triggermesh - Automatically pipe events from AsyncAPI channels with TriggerMesh (2023-03-20)
+https://www.asyncapi.com/blog/asyncapi-ambassador-program - AsyncAPI Ambasador Program (2023-03-10)
+https://www.asyncapi.com/blog/socketio-automatic-docs - Flask-SocketIO Automated Documentation and Validation (2023-03-02)
+https://www.asyncapi.com/blog/2022-summary - State of AsyncAPI Initiative 2022 in Numbers (2023-02-28)
+https://www.asyncapi.com/blog/new-asyncapi-tools-page - New Tools Dashboard for AsyncAPI (2023-02-14)
+https://www.asyncapi.com/blog/release-notes-2.6.0 - AsyncAPI Spec 2.6.0 Release Notes (2023-02-01)
+https://www.asyncapi.com/blog/a_straight_guide_to_apis_and_architecture_concepts - A straight guide to APIs and architecture concepts (2023-01-19)
+https://www.asyncapi.com/blog/conference-2022 - 2022 AsyncAPI Conference was amazing! (2023-01-17)
+https://www.asyncapi.com/blog/hacktoberfest-2022 - Hacktoberfest was a blast! (2022-12-13)
+https://www.asyncapi.com/blog/release-notes-2.5.0 - AsyncAPI Spec 2.5.0 Release Notes (2022-09-29)
+https://www.asyncapi.com/blog/event-driven-api-documentation-made-simple-clientside-rendering - Event driven API documentation made simple (Client-Side Rendering). (2022-09-28)
+https://www.asyncapi.com/blog/documenting-sqs-event-driven-apis-with-asyncapi - Documenting SQS event-driven APIs with AsyncAPI (2022-09-22)
+https://www.asyncapi.com/blog/creating-consistency-announcing-asyncapi-spectral-together - Governance for Asynchronous APIs: Announcing AsyncAPI & Spectral – Together! (2022-05-25)
+https://www.asyncapi.com/blog/2022Q1-summary - Summary of things that happened at AsyncAPI Initiative from January to April, 2022 (2022-04-29)
+https://www.asyncapi.com/blog/release-notes-2.4.0 - AsyncAPI Spec 2.4.0 Release Notes (2022-04-28)
+https://www.asyncapi.com/blog/google-season-of-docs-2022 - 📑 Google Season of Docs 2022 at AsyncAPI (2022-03-25)
+https://www.asyncapi.com/blog/async-api-spec-3.0-release - AsyncAPI Spec 3.0 is coming! (2022-03-10)
+https://www.asyncapi.com/blog/openforce-2022 - AsyncAPI at OpenForce (2022-03-01)
+https://www.asyncapi.com/blog/2021-summary - AsyncAPI Initiative 2021 in Numbers (2022-02-07)
+https://www.asyncapi.com/blog/radical-transparency - Radical Transparency (2022-02-02)
+https://www.asyncapi.com/blog/release-notes-2.3.0 - AsyncAPI Spec 2.3.0 Release Notes (2022-02-01)
+https://www.asyncapi.com/blog/asyncapi-and-apicurio-for-asynchronous-apis - AsyncAPI and Apicurio for Asynchronous APIs (2022-01-26)
+https://www.asyncapi.com/blog/july-december-2021-at-asyncapi - 2nd half of 2021 at AsyncAPI (2021-12-21)
+https://www.asyncapi.com/blog/changes-coming-docs - Change is coming to our AsyncAPI Developer Documentation (2021-12-13)
+https://www.asyncapi.com/blog/asyncapi-discovery-intro - Align Production Reality and Event Documentation with the AsyncAPI Discovery Tool (2021-12-07)
+https://www.asyncapi.com/blog/the-reference-rabbit-hole - The Reference Rabbit Hole (2021-11-30)
+https://www.asyncapi.com/blog/socketio-part2 - The journey of documenting a Socket.IO API (Pt 2) (2021-11-04)
+https://www.asyncapi.com/blog/release-notes-2.2.0 - AsyncAPI Spec 2.2.0 Release Notes (2021-09-28)
+https://www.asyncapi.com/blog/socketio-part1 - The journey of documenting a Socket.IO API (Pt 1) (2021-09-23)
+https://www.asyncapi.com/blog/hackathon-faq - AsyncAPI Hackathon FAQ (2021-09-19)
+https://www.asyncapi.com/blog/openapi-vs-asyncapi-burning-questions - AsyncAPI vs OpenAPI: Answers to Your Burning Questions About Two Leading API Specs (2021-09-08)
+https://www.asyncapi.com/blog/events2021 - AsyncAPI Hackathon and Conference - Get Yourself Ready (2021-08-30)
+https://www.asyncapi.com/blog/json-schema-beyond-validation - Using JSON Schema Beyond Validation (2021-08-03)
+https://www.asyncapi.com/blog/mistake-odyssey - Mistake Odyssey (2021-07-15)
+https://www.asyncapi.com/blog/june-2021-at-asyncapi - June 2021 at AsyncAPI (2021-07-09)
+https://www.asyncapi.com/blog/release-notes-2.1.0 - AsyncAPI Spec 2.1.0 Release Notes (2021-06-29)
+https://www.asyncapi.com/blog/may-2021-at-asyncapi - May 2021 at AsyncAPI (2021-06-22)
+https://www.asyncapi.com/blog/designing_your_apis_with_asyncapi_part_1 - Designing your APIs with AsyncAPI (Part 1) (2021-06-01)
+https://www.asyncapi.com/blog/async_standards_compare - AsyncAPI, CloudEvents, OpenTelemetry: Which Event-Driven Specs Should Your DevOps Include? (2021-05-25)
+https://www.asyncapi.com/blog/websocket-part3 - From API-First to Code Generation - A WebSocket Use Case (2021-05-19)
+https://www.asyncapi.com/blog/april-2021-at-asyncapi - April 2021 at AsyncAPI (2021-05-14)
+https://www.asyncapi.com/blog/intent-driven-api - Designing a unified Intent-driven API for all AsyncAPI's parsers (2021-05-07)
+https://www.asyncapi.com/blog/publish-subscribe-semantics - Demystifying the Semantics of Publish and Subscribe (2021-05-05)
+https://www.asyncapi.com/blog/websocket-part2 - Creating AsyncAPI for WebSocket API - Step by Step (2021-04-21)
+https://www.asyncapi.com/blog/websocket-part1 - WebSocket, Shrek, and AsyncAPI - An Opinionated Intro (2021-04-16)
+https://www.asyncapi.com/blog/march-2021-at-asyncapi - March 2021 at AsyncAPI (2021-04-14)
+https://www.asyncapi.com/blog/asyncapi-joins-linux-foundation - AsyncAPI joins Linux Foundation (2021-03-30)
+https://www.asyncapi.com/blog/building-async-flight-notification-service - Building an asynchronous flight notification service using AsyncAPI, MQTT, Amadeus and Twilio (2021-03-24)
+https://www.asyncapi.com/blog/understanding-asyncapis - Understanding AsyncAPIs with a Practical Example (2021-03-18)
+https://www.asyncapi.com/blog/february-2021-at-asyncapi - February 2021 at AsyncAPI (2021-03-16)
+https://www.asyncapi.com/blog/governance-motivation - Finding a Good Open Governance Model for AsyncAPI (2021-03-08)
+https://www.asyncapi.com/blog/january-2021-at-asyncapi - January 2021 at AsyncAPI (2021-02-11)
+https://www.asyncapi.com/blog/react-as-generator-engine - Simplify code generation with React (2021-01-25)
+https://www.asyncapi.com/blog/microcks-asyncapi-part2 - How Microcks Can Speed-Up Your AsyncAPI Adoption - Part 2 (2021-01-06)
+https://www.asyncapi.com/blog/2020-summary - Awesome 2020 and What Can Get Better In 2021 (2020-12-23)
+https://www.asyncapi.com/blog/asyncapi-partners-with-postman - AsyncAPI partners with Postman to boost development of Asynchronous APIs (2020-12-08)
+https://www.asyncapi.com/blog/status-update-47-20 - Happy Birthday AsyncAPI (week 47, 2020) (2020-11-18)
+https://www.asyncapi.com/blog/microcks-asyncapi-part1 - How Microcks Can Speed-Up Your AsyncAPI Adoption - Part 1 (2020-11-11)
+https://www.asyncapi.com/blog/hacktoberfest-summary-2020 - Is Hacktoberfest Good For Maintainers? (2020-11-05)
+https://www.asyncapi.com/blog/status-update-43-20 - AsyncAPI Initiative Status Update (week 43, 2020) (2020-10-21)
+https://www.asyncapi.com/blog/status-update-41-20 - AsyncAPI Initiative Status Update (week 41, 2020) (2020-10-07)
+https://www.asyncapi.com/blog/hacktoberfest-2020 - AsyncAPI @Hacktoberfest (2020-09-30)
+https://www.asyncapi.com/blog/status-update-39-20 - AsyncAPI Initiative Status Update (week 39, 2020) (2020-09-22)
+https://www.asyncapi.com/blog/status-update-37-20 - AsyncAPI Initiative Status Update (week 37, 2020) (2020-09-09)
+https://www.asyncapi.com/blog/status-update-33-20 - AsyncAPI Initiative Status Update (week 33, 2020) (2020-08-12)
+https://www.asyncapi.com/blog/status-update-31-20 - Avro Schema Parser and others in AsyncAPI Initiative Status Update (week 31, 2020) (2020-07-30)
+https://www.asyncapi.com/blog/status-update-29-20 - AsyncAPI Initiative Status Update (week 29, 2020) (2020-07-14)
+https://www.asyncapi.com/blog/event-streaming-an-additional-architectural-style-to-suplement-api-design - Event-Streaming: An Additional Architectural Style to Supplement API Design (2020-07-07)
+https://www.asyncapi.com/blog/status-update-27-20 - AsyncAPI Initiative Status Update (week 27, 2020) (2020-06-30)
+https://www.asyncapi.com/blog/choosing_between_web_apis_and_message_streaming - Choosing Between Web APIs and Message Streaming (2020-06-23)
+https://www.asyncapi.com/blog/asyncapi_codegen_scst - AsyncAPI Code Generation: Microservices Using Spring Cloud Stream (2020-06-02)
+https://www.asyncapi.com/blog/doc-event-driven-api - API documentation in event-driven applications (2020-05-18)
+https://www.asyncapi.com/blog/automated-releases-part-two - (Part 2) Full automation of release with GitHub Actions and Conventional Commits for non-JS projects (2020-04-14)
+https://www.asyncapi.com/blog/asyncapi-conference-kick-off - AsyncAPI Online Conference scheduled for 22.04 11 AM UTC (2020-04-09)
+https://www.asyncapi.com/blog/asyncapi-github-actions - Automate AsyncAPI workflows with GitHub Actions (2020-04-02)
+https://www.asyncapi.com/blog/automated-releases - Full automation of release to NPM and Docker Hub with GitHub Actions and Conventional Commits (2020-03-20)
+https://www.asyncapi.com/blog/using-nunjucks-with-asyncapi - Nunjucks templating explained on the basis of AsyncAPI specification (2020-03-03)
+https://www.asyncapi.com/blog/v2-important-dates - AsyncAPI 2.0.0 important dates (2019-06-12)
+https://www.asyncapi.com/blog/an-api-strategist-explores-event-driven-apis - An API Strategist Explores Event-Driven APIs (2019-05-14)
+https://www.asyncapi.com/blog/asyncapi-cloud-events - AsyncAPI and CloudEvents (2019-05-11)
+https://www.asyncapi.com/blog/status-update-week-17-2019 - Status update (week 17, 2019) (2019-04-25)
+https://www.asyncapi.com/blog/getting-started-with-event-driven-architectures - Getting started with event-driven architectures (2019-04-19)
+https://www.asyncapi.com/blog/status-update-week-15-2019 - Status update (week 15, 2019) (2019-04-11)
+https://www.asyncapi.com/blog/replicating-success-rest-event-driven-architecture - Replicating the Success of REST in Event-Driven Architecture (2019-04-04)
+https://www.asyncapi.com/blog/status-update-week-14-2019 - Status update (week 14, 2019) (2019-04-04)
+https://www.asyncapi.com/blog/organizing-asyncapi-documents - Organizing your AsyncAPI documents (2019-03-01)
+
+## About Pages
+https://www.asyncapi.com/about - About
+
+## GitHub Repositories & Tools
+https://github.com/asyncapi/asyncapi - Main AsyncAPI specification repository
+https://github.com/asyncapi/generator - AsyncAPI code/docs generator
+https://github.com/asyncapi/parser - AsyncAPI document parser
+https://github.com/asyncapi/modelina - AsyncAPI model/type generator  
+https://github.com/asyncapi/cli - AsyncAPI CLI tool
+https://github.com/asyncapi/studio - AsyncAPI visual editor
+https://github.com/asyncapi/website - This website's source code
+https://github.com/asyncapi/community - Community resources and governance
+
+## Migration Guides & Best Practices
+https://www.asyncapi.com/docs/migration - Migration guides between versions
+https://www.asyncapi.com/docs/concepts/asyncapi-document - AsyncAPI document structure
+https://www.asyncapi.com/docs/reference/specification/v3.0.0 - v3.0 specification reference
+https://www.asyncapi.com/docs/reference/specification/v2.6.0 - v2.6 specification reference (legacy)
+
+## Examples Repository
+https://github.com/asyncapi/asyncapi/tree/master/examples - Official AsyncAPI document examples
+https://github.com/asyncapi/spec/tree/master/examples - Specification examples
+
+## Common Patterns & Templates
+# Note: When providing AsyncAPI examples, always use v3.0 format unless specifically asked for v2
+# v3.0 uses 'channels' and 'operations' objects instead of v2's inline channel definitions
+
+## Community & Support
+https://asyncapi.slack.com - Official Slack community
+https://github.com/asyncapi/community/discussions - GitHub discussions
+https://twitter.com/AsyncAPISpec - Official Twitter account
+
+# END OF RESOURCE LIST
+# Total URLs: 387

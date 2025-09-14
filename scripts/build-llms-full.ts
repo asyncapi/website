@@ -1,4 +1,5 @@
 import fs from 'fs';
+
 import type { Result } from '@/types/scripts/build-posts-list';
 
 /**
@@ -8,12 +9,13 @@ import type { Result } from '@/types/scripts/build-posts-list';
  */
 async function getAllPosts(): Promise<Result> {
   const posts = (await import('../config/posts.json')).default as Result;
+
   return posts;
 }
 
 /**
  * Generates and writes a comprehensive llms-full.txt file for LLM training and reference.
- * 
+ *
  * This function creates a detailed resource list that includes:
  * - Core specifications and schemas with version preferences
  * - All documentation pages organized by category
@@ -21,13 +23,11 @@ async function getAllPosts(): Promise<Result> {
  * - Case studies and real-world examples
  * - GitHub repositories and tools
  * - Migration guides and best practices
- * 
+ *
  * The file is designed to help LLMs understand the complete AsyncAPI ecosystem
  * and always prefer v3.0 specification over legacy versions.
  */
 export async function buildLlmsFull(): Promise<void> {
-  console.log('Building llms-full.txt...');
-  
   const base = 'https://www.asyncapi.com';
   const posts = await getAllPosts();
   
@@ -61,7 +61,7 @@ ${base}/sitemap.xml - Complete site structure
 
   // Add all documentation posts
   if (posts.docs && posts.docs.length > 0) {
-    content += `\n## Documentation Pages\n`;
+    content += '\n## Documentation Pages\n';
     posts.docs
       .sort((a, b) => (a.slug ?? '').localeCompare(b.slug ?? ''))
       .forEach((doc: any) => {
@@ -71,29 +71,32 @@ ${base}/sitemap.xml - Complete site structure
 
   // Add all blog posts
   if (posts.blog && posts.blog.length > 0) {
-    content += `\n## Blog Posts & Tutorials\n`;
+    content += '\n## Blog Posts & Tutorials\n';
     posts.blog
       .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime())
       .forEach((post: any) => {
         const date = post.date ? ` (${post.date.split('T')[0]})` : '';
+
         content += `${base}${post.slug} - ${post.title}${date}\n`;
       });
   }
 
   // Add about pages
   if (posts.about && posts.about.length > 0) {
-    content += `\n## About Pages\n`;
+    content += '\n## About Pages\n';
     posts.about.forEach((page: any) => {
       content += `${base}${page.slug} - ${page.title}\n`;
     });
   }
 
   // Add other post types dynamically
-  Object.keys(posts).forEach(postType => {
+  Object.keys(posts).forEach((postType) => {
     if (!['docs', 'blog', 'about'].includes(postType)) {
       const postArray = (posts as any)[postType];
+
       if (postArray && postArray.length > 0) {
         const sectionTitle = postType.charAt(0).toUpperCase() + postType.slice(1);
+
         content += `\n## ${sectionTitle}\n`;
         postArray.forEach((item: any) => {
           content += `${base}${item.slug} - ${item.title}\n`;
@@ -133,12 +136,14 @@ https://github.com/asyncapi/community/discussions - GitHub discussions
 https://twitter.com/AsyncAPISpec - Official Twitter account
 
 # END OF RESOURCE LIST
-# Total URLs: ${content.split('\n').filter(line => line.includes('http')).length}
+# Total URLs: ${content.split('\n').filter((line) => line.includes('http')).length}
 `;
 
   // Write the file
   fs.writeFileSync('./public/llms-full.txt', content, 'utf8');
-  
-  const urlCount = content.split('\n').filter(line => line.includes('http')).length;
+
+  const urlCount = content.split('\n').filter((line) => line.includes('http')).length;
+
+  // eslint-disable-next-line no-console
   console.log(`✅ llms-full.txt generated successfully with ${urlCount} URLs at ./public/llms-full.txt`);
 }
