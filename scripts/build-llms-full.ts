@@ -63,7 +63,7 @@ ${base}/sitemap.xml - Complete site structure
   if (posts.docs && posts.docs.length > 0) {
     content += `\n## Documentation Pages\n`;
     posts.docs
-      .sort((a, b) => a.slug.localeCompare(b.slug))
+      .sort((a, b) => (a.slug ?? '').localeCompare(b.slug ?? ''))
       .forEach((doc: any) => {
         content += `${base}${doc.slug} - ${doc.title}\n`;
       });
