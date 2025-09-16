@@ -131,13 +131,13 @@ const config: Config = {
         'darkTheme-footer': '#090F1D',
         'darkTheme-text': '#B8B9C0',
         'darkTheme-heading': '#FFFFFF',
-        foreground: 'hsl(var(--foreground))',
-        prim: 'hsl(var(--primary))',
-        sec: 'hsl(var(--secondary))',
-        accent: 'hsl(var(--accent))',
-        border: 'hsl(var(--border))',
-        muted: 'hsl(var(--muted))',
-        'muted-foreground': 'hsl(var(--muted-foreground))'
+        foreground: '#F8FAFC',
+        prim: '#00CFFF',/* Vibrant cyan */
+        sec: '#D633FF', /* Electric purple */
+        accent: '#FFD166',/* Warm amber */
+        border: '#1E293B',/* Navy border */
+        muted: '#0F172A', /* Dark navy muted */
+        'muted-foreground': '#94A3B8' /* Gray-blue text */
       },
       scale: {
         25: '.25'
