@@ -422,26 +422,26 @@ components:
 ```
 
 
-- [asyncapi-spec]: /docs/reference/specification/latest
-- [info-object]: /docs/reference/specification/latest#infoObject
-- [schema-object]: /docs/reference/specification/latest#schemaObject
-- [server-object]: /docs/reference/specification/latest#serverObject
-- [channel-object]: /docs/reference/specification/latest#channelObject
-- [operation-object]: /docs/reference/specification/latest#operationObject
-- [operation-item-object]: /docs/reference/specification/latest#operationObject
-- [components-object]: /docs/reference/specification/latest#componentsObject
-- [message-object]: /docs/reference/specification/latest#messageObject
-- [security-scheme-object]: /docs/reference/specification/latest#securitySchemeObject
-- [server-variable-object]: /docs/reference/specification/latest#serverVariableObject
-- [parameter-object]: /docs/reference/specification/latest#parameterObject
-- [correlation-id-object]: /docs/reference/specification/latest#correlationIdObject
-- [operation-reply-object]: /docs/reference/specification/latest#operationReplyObject
-- [operation-reply-address-object]: /docs/reference/specification/latest#operationReplyAddressObject
-- [external-documentation-object]: /docs/reference/specification/latest#externalDocumentationObject
-- [tag-object]: /docs/reference/specification/latest#tagObject
-- [operation-trait-object]: /docs/reference/specification/latest#operationTraitObject
-- [message-trait-object]: /docs/reference/specification/latest#messageTraitObject
-- [server-bindings-object]: /docs/reference/specification/latest#serverBindingsObject
-- [channel-bindings-object]: /docs/reference/specification/latest#channelBindingsObject
-- [operation-bindings-object]: /docs/reference/specification/latest#operationBindingsObject
-- [message-bindings-object]: /docs/reference/specification/latest#messageBindingsObject
+[asyncapi-spec]: /docs/reference/specification/latest
+[info-object]: /docs/reference/specification/latest#infoObject
+[schema-object]: /docs/reference/specification/latest#schemaObject
+[server-object]: /docs/reference/specification/latest#serverObject
+[channel-object]: /docs/reference/specification/latest#channelObject
+[operation-object]: /docs/reference/specification/latest#operationObject
+[operation-item-object]: /docs/reference/specification/latest#operationObject
+[components-object]: /docs/reference/specification/latest#componentsObject
+[message-object]: /docs/reference/specification/latest#messageObject
+[security-scheme-object]: /docs/reference/specification/latest#securitySchemeObject
+[server-variable-object]: /docs/reference/specification/latest#serverVariableObject
+[parameter-object]: /docs/reference/specification/latest#parameterObject
+[correlation-id-object]: /docs/reference/specification/latest#correlationIdObject
+[operation-reply-object]: /docs/reference/specification/latest#operationReplyObject
+[operation-reply-address-object]: /docs/reference/specification/latest#operationReplyAddressObject
+[external-documentation-object]: /docs/reference/specification/latest#externalDocumentationObject
+[tag-object]: /docs/reference/specification/latest#tagObject
+[operation-trait-object]: /docs/reference/specification/latest#operationTraitObject
+[message-trait-object]: /docs/reference/specification/latest#messageTraitObject
+[server-bindings-object]: /docs/reference/specification/latest#serverBindingsObject
+[channel-bindings-object]: /docs/reference/specification/latest#channelBindingsObject
+[operation-bindings-object]: /docs/reference/specification/latest#operationBindingsObject
+[message-bindings-object]: /docs/reference/specification/latest#messageBindingsObject
