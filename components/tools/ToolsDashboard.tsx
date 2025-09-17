@@ -163,7 +163,7 @@ export default function ToolsDashboard() {
         document.documentElement.style.scrollPaddingTop = '0';
       }
     }
-  }, []);
+  }, [toolsList]);
   // Function to update the list of tools according to the current filters applied
   const clearFilters = () => {
     setOpenFilter(false);
