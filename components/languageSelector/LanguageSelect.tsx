@@ -23,10 +23,10 @@ export default function LanguageSelect({ options = [], selected, onChange = () =
       : 'Select';
 
   return (
-    <div className="relative inline-block">
+    <div className='relative inline-block'>
       {/* Trigger button */}
       <button
-        type="button"
+        type='button'
         onClick={() => setOpen((prev) => !prev)}
         className={twMerge(
           `flex items-center w-full justify-between rounded-md border border-gray-300 
@@ -34,16 +34,16 @@ export default function LanguageSelect({ options = [], selected, onChange = () =
            focus:outline-none ${className}`
         )}
       >
-        <span className="flex items-center gap-2">
-          <IconLanguage className="text-gray-600" />
+        <span className='flex items-center gap-2'>
+          <IconLanguage className='text-gray-600' />
           {selectedDisplayText}
         </span>
-        <span className="ml-2 text-gray-500">▾</span>
+        <span className='ml-2 text-gray-500'>▾</span>
       </button>
 
       {/* Dropdown menu */}
       {open && (
-        <ul className="absolute mt-1 w-full rounded-md border border-gray-300 bg-white shadow-lg z-10 overflow-hidden">
+        <ul className='absolute mt-1 w-full rounded-md border border-gray-300 bg-white shadow-lg z-10 overflow-hidden'>
           {options.map((option) => (
             <li
               key={option.value}
@@ -51,7 +51,7 @@ export default function LanguageSelect({ options = [], selected, onChange = () =
                 onChange(option.value);
                 setOpen(false);
               }}
-              className="cursor-pointer px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+              className='cursor-pointer px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors'
             >
               {langMap[option.text.toLowerCase() as keyof typeof langMap] || option.text}
             </li>
