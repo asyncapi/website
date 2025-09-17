@@ -1,3 +1,5 @@
+import type { Dispatch, SetStateAction } from 'react';
+
 export interface ToggleProps {
   // eslint-disable-next-line prettier/prettier
 
@@ -5,7 +7,7 @@ export interface ToggleProps {
   checked: boolean;
 
   /** Function to update the toggle state. */
-  setChecked: React.Dispatch<React.SetStateAction<boolean>>;
+  setChecked: Dispatch<SetStateAction<boolean>>;
 
   /** Label text for the toggle. */
   label?: string;

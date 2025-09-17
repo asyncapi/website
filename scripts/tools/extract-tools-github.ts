@@ -12,8 +12,9 @@ dotenv.config();
 /**
  * Retrieves tool data by searching for files named ".asyncapi-tool" using the GitHub Code Search API.
  *
- * This function requires the GITHUB_TOKEN environment variable for authorization. It retrieves data in pages (up to 50 items per page)
- * and pauses 1 second between requests to respect GitHub's rate limits. All pages are aggregated into a single result before being returned.
+ * This function requires the GITHUB_TOKEN environment variable for authorization. It retrieves data in pages (up to 50
+ * items per page) and pauses 1 second between requests to respect GitHub's rate limits. All pages are aggregated into
+ * a single result before being returned.
  *
  * @returns A promise that resolves to the aggregated ToolsData from GitHub.
  * @throws {Error} When the GITHUB_TOKEN environment variable is missing or an error occurs during the fetching process.
