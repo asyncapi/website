@@ -26,7 +26,7 @@ servers:
 channels:
   sns/remittance-transactions-topic:
     description: SNS topic for remittance transaction events.
-    subscribe:
+    publish:
       operationId: publishRemittanceTransactionToSNS
       summary: Publish RemittanceTransactionRequested event to SNS topic
       message:
@@ -34,11 +34,6 @@ channels:
 
   sqs/remittance-transactions-queue:
     description: SQS queue that receives messages forwarded from SNS topic via subscription.
-    publish:
-      operationId: deliverMessageToQueue
-      summary: SNS pushes message into SQS (represented here).
-      message:
-        $ref: '#/components/messages/RemittanceTransactionRequested'
     subscribe:
       operationId: consumeRemittanceTransactionFromSQS
       summary: Consumer service polls SQS to consume RemittanceTransactionRequested events.
