@@ -1,4 +1,7 @@
+
+import homePageData from './fixtures/homePageData.json';
 import HomePage from './pages/homepage';
+import { features } from '../components/features/FeatureList';
 
 describe('Home Page E2E Tests Using Base Components', () => {
   const homePage = new HomePage();
@@ -41,10 +44,15 @@ describe('Home Page E2E Tests Using Base Components', () => {
   });
 
   it('should show all homepage cards with expected titles', () => {
-    homePage.verifyHomepageCards();
+    const { cardTitles, moreCardTitles } = homePageData;
+    homePage.verifyHomepageCards(cardTitles, moreCardTitles);
   });
 
   it('should verify all important homepage links', () => {
-    homePage.verifyHomepageCardLinks();
+    features.forEach(feature => {
+      feature.links.forEach(({ label, href }) => {
+        homePage.verifyHomepageCardLink(label, href);
+      });
+    });
   });
 });

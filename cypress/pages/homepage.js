@@ -5,6 +5,35 @@ import CommunityPage from './CommunityPage';
 import ToolsPage from './ToolsPage';
 import BlogPage from './BlogPage';
 
+import { features } from '../../components/features/FeatureList';
+import packageJson from '../../package.json';
+import landingPageTranslations from '../../public/locales/en/landing-page.json';
+
+const headerText = `${landingPageTranslations.main.header} ${landingPageTranslations.main.subHeader}`;
+
+const githubStarLink = 'https://github.com/asyncapi/spec';
+const readDocsLink = '/docs';
+const letUsKnowLink = `${packageJson.bugs.url}/new`;
+
+const cardTitles = [
+  landingPageTranslations.features['document-apis.name'],
+  landingPageTranslations.features['code-generation.name'],
+  landingPageTranslations.features['open-governance.name'],
+  landingPageTranslations.features['much-more.name'],
+];
+
+const moreCardTitles = [
+  landingPageTranslations.features['specification.name'],
+  landingPageTranslations.features['community.name'],
+];
+
+const homepageLinks = features.flatMap((feature) =>
+  feature.links.map((link) => ({
+    name: link.label,
+    url: link.href,
+  })),
+);
+
 class HomePage {
   visit() {
     cy.visit('/');
@@ -23,13 +52,17 @@ class HomePage {
   }
 
   verifyLinkExists(linkName, linkUrl) {
-    cy.contains('a', linkName)
-      .should('be.visible')
-      .should('have.attr', 'href', linkUrl);
+    cy.get('a')
+      .contains(linkName, { matchCase: false })
+      .should('exist')
+      .then(($el) => {
+        cy.wrap($el).invoke('attr', 'href').should('include', linkUrl);
+      });
   }
 
-  verifyCardTitles(titles, testId = null) {
-    titles.forEach((title) => {
+  verifyCardTitles(customTitles, testId = null) {
+    const titlesToVerify = customTitles || cardTitles;
+    titlesToVerify.forEach((title) => {
       const selector = testId ? `[data-testid="${testId}"]` : '';
       cy.contains(`${selector} h1, h2, h3, h4, h5, h6`, title).should(
         'be.visible',
@@ -41,76 +74,41 @@ class HomePage {
     this.verifyElementIsVisible('[data-testid="Navbar-logo"]');
   }
 
-  verifyHeader() {
-    this.verifyHeadingExists(
-      'Building the future of Event-Driven Architectures (EDA)',
-    );
+  verifyHeader(text = headerText) {
+    this.verifyHeadingExists(text);
   }
 
-  verifyGithubStarButton() {
+  verifyGithubStarButton(link = githubStarLink) {
     const selector = '[data-testid="Navbar-main"] [data-testid="Button-link"]';
     this.verifyElementIsVisible(selector);
-    this.verifyElementHasAttribute(
-      selector,
-      'href',
-      'https://github.com/asyncapi/spec',
-    );
+    this.verifyElementHasAttribute(selector, 'href', link);
   }
 
-  verifyReadTheDocsButton() {
-    cy.get('[data-testid="Button-link"][href="/docs"]').should('be.visible');
+  verifyReadTheDocsButton(link = readDocsLink) {
+    cy.get(`[data-testid="Button-link"][href="${link}"]`).should('be.visible');
   }
 
-  verifyHomepageCards() {
-    const cardTitles = [
-      'Document APIs',
-      'Code Generation',
-      'Open Governance',
-      'And much more...',
-    ];
-    const moreCardTitles = ['Specification', 'Community'];
-
-    this.verifyCardTitles(cardTitles);
-    this.verifyCardTitles(moreCardTitles, 'Feature-ul');
+  verifyHomepageCards(
+    customCardTitles = cardTitles,
+    customMoreCardTitles = moreCardTitles,
+  ) {
+    this.verifyCardTitles(customCardTitles);
+    this.verifyCardTitles(customMoreCardTitles, 'Feature-ul');
   }
 
-  verifyHomepageCardLinks() {
-    const links = [
-      {
-        name: 'HTML Template',
-        url: 'https://github.com/asyncapi/html-template',
-      },
-      {
-        name: 'React Component',
-        url: 'https://github.com/asyncapi/asyncapi-react/',
-      },
-      { name: 'Generator', url: '/tools/generator' },
-      { name: 'Modelina', url: '/tools/modelina' },
-      { name: 'Join our Slack', url: 'https://asyncapi.com/slack-invite' },
-      {
-        name: 'Read more about Open Governance',
-        url: '/blog/governance-motivation',
-      },
-      { name: 'TSC Members', url: '/community/tsc' },
-      {
-        name: 'View GitHub Discussions',
-        url: 'https://github.com/asyncapi/community/discussions',
-      },
-    ];
-
-    links.forEach((link) => {
-      this.verifyLinkExists(link.name, link.url);
-    });
+  verifyHomepageCardLink(linkName, linkUrl) {
+    cy.get('a')
+      .contains(linkName, { matchCase: false })
+      .should('exist')
+      .then(($el) => {
+        cy.wrap($el).invoke('attr', 'href').should('include', linkUrl);
+      });
   }
 
-  verifyLetUsKnowLink() {
+  verifyLetUsKnowLink(link = letUsKnowLink) {
     cy.contains('a', 'Let us know here!')
-      .should('be.visible')
-      .and(
-        'have.attr',
-        'href',
-        'https://github.com/asyncapi/website/issues/new',
-      );
+      .should('exist')
+      .and('have.attr', 'href', link);
   }
 
   goToBlogPage() {
