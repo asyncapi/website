@@ -11,12 +11,7 @@ import type { SelectProps } from "../form/Select";
  * @param {Array} [props.options=[]] - An array of options for the select dropdown.
  * @param {string} props.selected - The currently selected option value.
  */
-export default function LanguageSelect({
-  options = [],
-  selected,
-  onChange = () => {},
-  className = "",
-}: SelectProps) {
+export default function LanguageSelect({ options = [], selected, onChange = () => {}, className = "" }: SelectProps) {
   const [open, setOpen] = useState(false);
   const { langMap } = i18nextConfig;
   
