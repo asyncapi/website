@@ -1,6 +1,6 @@
 ---
 title: "From Curiosity to Contribution - Maya’s Inspiring Journey into Open Source and Leading Design at AsyncAPI!"
-date: 2025-08-08T06:00:00+01:00
+date: 2025-09-08T06:00:00+01:00
 type: Communication
 tags:
   - Interview
