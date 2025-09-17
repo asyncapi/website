@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import i18nextConfig from '@/next-i18next.config.cjs';
+
 import IconLanguage from '../icons/Language';
 import type { SelectProps } from '../form/Select';
 
