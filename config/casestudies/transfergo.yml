@@ -74,6 +74,6 @@ asyncapi:
   bindings: |
     None
   tools: |
-    TransferGo relies on AsyncAPI CLI, AsyncAPI Generator, AsyncAPI React, Port.io Developer Portal, Event Catalog, Microcks, LocalStack, and API Guardian (internal CLI).
+    TransferGo relies on AsyncAPI CLI, AsyncAPI React, Port.io Developer Portal, Event Catalog, Microcks, LocalStack, and API Guardian (internal CLI).
   fullExample: resources/casestudies/transfergo/asyncapi.yaml
 additionalResources: ''
