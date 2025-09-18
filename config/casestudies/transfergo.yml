@@ -56,7 +56,6 @@ asyncapi:
   usecase: |
     TransferGo uses AsyncAPI to unify async API documentation across services, generate schemas from code via internal libraries, validate and optimize schemas in CI pipelines, publish schemas to Port.io Developer Portal for centralized access, build an Event Catalog for visibility into 300+ channels, and support contract testing with Microcks.
   versions:
-    - '3.0.0'
     - '2.6.0'
   storage: |
     Schemas are stored in GitHub repositories and automatically published to an S3 bucket. Port.io Developer Portal ingests these schemas to make them accessible to developers.
@@ -74,6 +73,6 @@ asyncapi:
   bindings: |
     None
   tools: |
-    TransferGo relies on AsyncAPI CLI, AsyncAPI React, Port.io Developer Portal, Event Catalog, Microcks, LocalStack, and API Guardian (internal CLI).
+    TransferGo relies on [AsyncAPI CLI](https://github.com/asyncapi/cli), [AsyncAPI React](https://github.com/asyncapi/asyncapi-react), [Port.io Developer Portal](https://www.port.io/), [Event Catalog](https://www.eventcatalog.dev/), [Microcks](https://microcks.io/), [LocalStack](https://github.com/localstack/localstack), and API Guardian (internal CLI).
   fullExample: resources/casestudies/transfergo/asyncapi.yaml
 additionalResources: ''
