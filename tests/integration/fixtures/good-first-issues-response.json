@@ -1,0 +1,82 @@
+{
+  "data": {
+    "rateLimit": {
+      "cost": 1,
+      "limit": 5000,
+      "remaining": 430,
+      "resetAt": "2025-09-06T00:00:00.000Z"
+    },
+    "search": {
+      "pageInfo": { "hasNextPage": false, "endCursor": null },
+      "nodes": [
+        {
+          "id": "I_gfi_1",
+          "__typename": "Issue",
+          "title": "Good first issue: Add example",
+          "comments": { "totalCount": 0, "nodes": [] },
+          "reactions": { "totalCount": 0 },
+          "assignees": { "totalCount": 0 },
+          "author": { "login": "newcontributor" },
+          "resourcePath": "/asyncapi/website/issues/300",
+          "repository": { "name": "website" },
+          "labels": {
+            "nodes": [
+              { "name": "good first issue", "color": "84b6eb" },
+              { "name": "area/docs", "color": "1d76db" }
+            ]
+          },
+          "timelineItems": { "updatedAt": "2025-07-01T00:00:00.000Z" },
+          "reviews": { "totalCount": 0, "nodes": [] }
+        },
+        {
+          "id": "I_gfi_2",
+          "__typename": "Issue",
+          "title": "Good first issue: Fix typo",
+          "comments": {
+            "totalCount": 1,
+            "nodes": [{ "reactions": { "totalCount": 1 } }]
+          },
+          "reactions": { "totalCount": 2 },
+          "assignees": { "totalCount": 1 },
+          "author": { "login": "developer" },
+          "resourcePath": "/asyncapi/website/issues/301",
+          "repository": { "name": "website" },
+          "labels": {
+            "nodes": [
+              { "name": "good first issue", "color": "84b6eb" },
+              { "name": "area/ui", "color": "bfd4f2" },
+              { "name": "help wanted", "color": "008672" }
+            ]
+          },
+          "timelineItems": { "updatedAt": "2025-06-15T10:30:00.000Z" },
+          "reviews": { "totalCount": 0, "nodes": [] }
+        },
+        {
+          "id": "I_gfi_3",
+          "__typename": "Issue",
+          "title": "Good first issue: Update README",
+          "comments": {
+            "totalCount": 3,
+            "nodes": [
+              { "reactions": { "totalCount": 0 } },
+              { "reactions": { "totalCount": 2 } }
+            ]
+          },
+          "reactions": { "totalCount": 1 },
+          "assignees": { "totalCount": 0 },
+          "author": { "login": "maintainer" },
+          "resourcePath": "/asyncapi/website/issues/302",
+          "repository": { "name": "website" },
+          "labels": {
+            "nodes": [
+              { "name": "good first issue", "color": "84b6eb" },
+              { "name": "area/unknown", "color": "fbca04" }
+            ]
+          },
+          "timelineItems": { "updatedAt": "2025-05-20T14:00:00.000Z" },
+          "reviews": { "totalCount": 0, "nodes": [] }
+        }
+      ]
+    }
+  }
+}

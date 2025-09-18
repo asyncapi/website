@@ -117,12 +117,14 @@ describe('GitHub Discussions Processing', () => {
   });
 
   it('should handle complete failure', async () => {
+    delete process.env.GITHUB_TOKEN; // Ensure token is missing
     mockedGraphql.mockRejectedValue(new Error('Complete API failure'));
 
     const filePath = resolve(tempDir, 'error-output.json');
 
     await expect(start(filePath)).rejects.toThrow(CustomError);
     expect(logger.error).toHaveBeenCalledWith('Failed to build dashboard', expect.any(CustomError));
+    process.env.GITHUB_TOKEN = 'test-token'; // adding it again so that other tests can use it
   });
 
   it('should successfully process and write data', async () => {

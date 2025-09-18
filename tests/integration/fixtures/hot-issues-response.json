@@ -1,0 +1,86 @@
+{
+  "data": {
+    "rateLimit": {
+      "cost": 1,
+      "limit": 5000,
+      "remaining": 450,
+      "resetAt": "2025-09-06T00:00:00.000Z"
+    },
+    "search": {
+      "pageInfo": { "hasNextPage": false, "endCursor": null },
+      "nodes": [
+        {
+          "id": "I_issues_1",
+          "__typename": "Issue",
+          "title": "Issue: Improve docs navigation",
+          "comments": {
+            "totalCount": 2,
+            "pageInfo": { "hasNextPage": false },
+            "nodes": [
+              { "reactions": { "totalCount": 1 } },
+              { "reactions": { "totalCount": 0 } }
+            ]
+          },
+          "reactions": { "totalCount": 3 },
+          "assignees": { "totalCount": 1 },
+          "author": { "login": "doc-contributor" },
+          "resourcePath": "/asyncapi/website/issues/100",
+          "repository": { "name": "website" },
+          "labels": {
+            "nodes": [
+              { "name": "area/docs", "color": "84b6eb" },
+              { "name": "enhancement", "color": "a2eeef" }
+            ]
+          },
+          "timelineItems": { "updatedAt": "2025-08-15T10:00:00.000Z" },
+          "reviews": { "totalCount": 0, "nodes": [] }
+        },
+        {
+          "id": "I_issues_2",
+          "__typename": "Issue",
+          "title": "Issue: Fix broken links",
+          "comments": {
+            "totalCount": 0,
+            "pageInfo": { "hasNextPage": false },
+            "nodes": []
+          },
+          "reactions": { "totalCount": 1 },
+          "assignees": { "totalCount": 0 },
+          "author": { "login": "community-user" },
+          "resourcePath": "/asyncapi/website/issues/101",
+          "repository": { "name": "website" },
+          "labels": { "nodes": [{ "name": "bug", "color": "d73a4a" }] },
+          "timelineItems": { "updatedAt": "2025-09-01T08:00:00.000Z" },
+          "reviews": { "totalCount": 0, "nodes": [] }
+        },
+        {
+          "id": "I_issues_3",
+          "__typename": "Issue",
+          "title": "Issue: Update dependencies",
+          "comments": {
+            "totalCount": 5,
+            "pageInfo": { "hasNextPage": false },
+            "nodes": [
+              { "reactions": { "totalCount": 2 } },
+              { "reactions": { "totalCount": 1 } },
+              { "reactions": { "totalCount": 0 } }
+            ]
+          },
+          "reactions": { "totalCount": 8 },
+          "assignees": { "totalCount": 2 },
+          "author": { "login": "maintainer" },
+          "resourcePath": "/asyncapi/website/issues/102",
+          "repository": { "name": "website" },
+          "labels": {
+            "nodes": [
+              { "name": "area/ci", "color": "0052cc" },
+              { "name": "dependencies", "color": "0366d6" }
+            ]
+          },
+          "timelineItems": { "updatedAt": "2025-07-20T14:30:00.000Z" },
+          "reviews": { "totalCount": 0, "nodes": [] }
+        }
+      ]
+    }
+  }
+}
