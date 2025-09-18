@@ -1,6 +1,4 @@
 import fs from 'fs';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import nock from 'nock';
 import os from 'os';
 import path from 'path';
 
@@ -20,50 +18,6 @@ describe('Integration: build-dashboard CLI', () => {
     // Provide a fake token so the script doesn't throw when run in CI or locally
     process.env.GITHUB_TOKEN = process.env.GITHUB_TOKEN ?? 'test-token';
 
-    // Prevent external network calls and mock GitHub GraphQL responses
-    nock.disableNetConnect();
-
-    const issuesFixture = JSON.parse(
-      fs.readFileSync(
-        path.join(__dirname, 'nocking', 'hot-issues-response.json'),
-        'utf8',
-      ),
-    );
-    const prsFixture = JSON.parse(
-      fs.readFileSync(
-        path.join(__dirname, 'nocking', 'hot-prs-response.json'),
-        'utf8',
-      ),
-    );
-    const gfiFixture = JSON.parse(
-      fs.readFileSync(
-        path.join(__dirname, 'nocking', 'good-first-issues-response.json'),
-        'utf8',
-      ),
-    );
-
-    // Setup nock interceptors for GitHub GraphQL API
-    // The script makes three separate GraphQL requests: issues, PRs, and good first issues
-    // We need to match each query to the correct fixture response
-    nock('https://api.github.com')
-      .post(
-        '/graphql',
-        (body) =>
-          body.query.includes('is:issue') &&
-          !body.query.includes('good first issue'),
-      )
-      .reply(200, issuesFixture)
-      .post('/graphql', (body) => body.query.includes('is:pull-request'))
-      .reply(200, prsFixture)
-      .post('/graphql', (body) => body.query.includes('good first issue'))
-      .reply(200, gfiFixture)
-      // Handle any additional pagination requests
-      .post('/graphql')
-      .reply(200, {
-        data: { search: { nodes: [], pageInfo: { hasNextPage: false } } },
-      })
-      .persist(); // Allow the interceptor to be reused
-
     // Run the dashboard build logic in-process so nock can intercept requests
     return runBuildDashboard({ outputPath }).then(() => {
       output = JSON.parse(fs.readFileSync(outputPath, 'utf-8'));
@@ -73,10 +27,7 @@ describe('Integration: build-dashboard CLI', () => {
   afterAll(() => {
     // Clean up temp files and directory
     if (fs.existsSync(outputPath)) fs.unlinkSync(outputPath);
-    if (fs.existsSync(tempDir))
-      fs.rmSync(tempDir, { recursive: true, force: true });
-    nock.cleanAll();
-    nock.enableNetConnect();
+    if (fs.existsSync(tempDir)) fs.rmSync(tempDir, { recursive: true, force: true });
   });
 
   it('creates the dashboard file at the specified path', () => {
@@ -264,9 +215,7 @@ describe('Integration: build-dashboard CLI', () => {
 
   it('validates score calculation logic with enhanced fixture data', () => {
     // Test that items with more reactions have higher scores
-    const sortedDiscussions = [...output.hotDiscussions].sort(
-      (a: any, b: any) => b.score - a.score,
-    );
+    const sortedDiscussions = [...output.hotDiscussions].sort((a: any, b: any) => b.score - a.score);
 
     // With our enhanced fixtures, we have items with different reaction counts
     // Verify the highest scored item has more reactions than lower scored ones
@@ -287,25 +236,19 @@ describe('Integration: build-dashboard CLI', () => {
 
   it('filters out asyncapi-bot authored items from hot discussions', () => {
     // Our enhanced fixtures include an asyncapi-bot item that should be filtered out
-    const botAuthors = output.hotDiscussions.filter(
-      (item: any) => item.author === 'asyncapi-bot',
-    );
+    const botAuthors = output.hotDiscussions.filter((item: any) => item.author === 'asyncapi-bot');
 
     expect(botAuthors.length).toBe(0);
 
     // Same check for good first issues
-    const botGFI = output.goodFirstIssues.filter(
-      (item: any) => item.author === 'asyncapi-bot',
-    );
+    const botGFI = output.goodFirstIssues.filter((item: any) => item.author === 'asyncapi-bot');
 
     expect(botGFI.length).toBe(0);
   });
 
   it('correctly identifies PRs vs Issues in hot discussions', () => {
     const prs = output.hotDiscussions.filter((item: any) => item.isPR === true);
-    const issues = output.hotDiscussions.filter(
-      (item: any) => item.isPR === false,
-    );
+    const issues = output.hotDiscussions.filter((item: any) => item.isPR === false);
 
     // Based on our fixtures, we should have 2 PRs (1 filtered out for asyncapi-bot) and 3 issues
     expect(prs.length).toBe(2);
@@ -319,29 +262,17 @@ describe('Integration: build-dashboard CLI', () => {
 
   it('correctly determines assignment status', () => {
     // Our enhanced fixtures include both assigned and unassigned items
-    const assigned = output.hotDiscussions.filter(
-      (item: any) => item.isAssigned === true,
-    );
-    const unassigned = output.hotDiscussions.filter(
-      (item: any) => item.isAssigned === false,
-    );
+    const assigned = output.hotDiscussions.filter((item: any) => item.isAssigned === true);
+    const unassigned = output.hotDiscussions.filter((item: any) => item.isAssigned === false);
 
     // We should have both types in our test data
-    expect(assigned.length + unassigned.length).toBe(
-      output.hotDiscussions.length,
-    );
+    expect(assigned.length + unassigned.length).toBe(output.hotDiscussions.length);
 
     // Same for good first issues
-    const assignedGFI = output.goodFirstIssues.filter(
-      (item: any) => item.isAssigned === true,
-    );
-    const unassignedGFI = output.goodFirstIssues.filter(
-      (item: any) => item.isAssigned === false,
-    );
+    const assignedGFI = output.goodFirstIssues.filter((item: any) => item.isAssigned === true);
+    const unassignedGFI = output.goodFirstIssues.filter((item: any) => item.isAssigned === false);
 
-    expect(assignedGFI.length + unassignedGFI.length).toBe(
-      output.goodFirstIssues.length,
-    );
+    expect(assignedGFI.length + unassignedGFI.length).toBe(output.goodFirstIssues.length);
   });
 
   it('extracts area labels correctly for good first issues', () => {
@@ -356,9 +287,7 @@ describe('Integration: build-dashboard CLI', () => {
     });
 
     // At least some issues should have area labels from our enhanced fixtures
-    const issuesWithArea = output.goodFirstIssues.filter(
-      (issue: any) => issue.area,
-    );
+    const issuesWithArea = output.goodFirstIssues.filter((issue: any) => issue.area);
 
     expect(issuesWithArea.length).toBeGreaterThan(0);
   });
@@ -420,7 +349,7 @@ describe('Integration: build-dashboard CLI', () => {
     // Test the overall structure matches expected schema
     expect(output).toEqual({
       hotDiscussions: expect.any(Array),
-      goodFirstIssues: expect.any(Array),
+      goodFirstIssues: expect.any(Array)
     });
 
     // Verify we have the expected number of items from our enhanced fixtures
@@ -439,19 +368,10 @@ describe('Integration: build-dashboard CLI', () => {
       'resourcePath',
       'repo',
       'labels',
-      'score',
+      'score'
     ];
 
-    const requiredGFIFields = [
-      'id',
-      'title',
-      'isAssigned',
-      'resourcePath',
-      'repo',
-      'author',
-      'area',
-      'labels',
-    ];
+    const requiredGFIFields = ['id', 'title', 'isAssigned', 'resourcePath', 'repo', 'author', 'area', 'labels'];
 
     output.hotDiscussions.forEach((item: any) => {
       requiredHotDiscussionFields.forEach((field) => {

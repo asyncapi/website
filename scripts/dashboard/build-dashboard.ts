@@ -18,6 +18,9 @@ import { logger } from '../helpers/logger';
 import { pause } from '../helpers/utils';
 import { Queries } from './issue-queries';
 
+const fs = require('fs');
+const path = require('path');
+
 dotenv.config();
 
 /**
@@ -317,9 +320,39 @@ async function mapGoodFirstIssues(issues: GoodFirstIssues[]): Promise<MappedIssu
  */
 export async function start(writePath: string): Promise<void> {
   try {
-    const issues = (await getDiscussions(Queries.hotDiscussionsIssues, 20)) as HotDiscussionsIssuesNode[];
-    const PRs = (await getDiscussions(Queries.hotDiscussionsPullRequests, 20)) as HotDiscussionsPullRequestsNode[];
-    const rawGoodFirstIssues: GoodFirstIssues[] = await getDiscussions(Queries.goodFirstIssues, 20);
+    let issues: HotDiscussionsIssuesNode[];
+    let PRs: HotDiscussionsPullRequestsNode[];
+    let rawGoodFirstIssues: GoodFirstIssues[];
+
+    // Just for the testing purpose. Ignore this if block and look into the else block if
+    // you are not looking for testing related things
+    if (process.env.NODE_ENV === 'test') {
+      const token = process.env.GITHUB_TOKEN;
+
+      if (!token) {
+        throw new CustomError('GitHub token is not set in environment variables', {
+          category: 'script',
+          operation: 'getDiscussions',
+          detail: 'GITHUB_TOKEN environment variable is missing'
+        });
+      }
+      // Load fixtures for good first issues, hot issues, and hot PRs
+      const gfiFixturePath = path.join(__dirname, '../../tests/integration/fixtures/good-first-issues-response.json');
+      const hotIssuesFixturePath = path.join(__dirname, '../../tests/integration/fixtures/hot-issues-response.json');
+      const hotPrsFixturePath = path.join(__dirname, '../../tests/integration/fixtures/hot-prs-response.json');
+
+      const gfiFixture = JSON.parse(fs.readFileSync(gfiFixturePath, 'utf8'));
+      const hotIssuesFixture = JSON.parse(fs.readFileSync(hotIssuesFixturePath, 'utf8'));
+      const hotPrsFixture = JSON.parse(fs.readFileSync(hotPrsFixturePath, 'utf8'));
+
+      rawGoodFirstIssues = gfiFixture.data.search.nodes;
+      issues = hotIssuesFixture.data.search.nodes;
+      PRs = hotPrsFixture.data.search.nodes;
+    } else {
+      issues = (await getDiscussions(Queries.hotDiscussionsIssues, 20)) as HotDiscussionsIssuesNode[];
+      PRs = (await getDiscussions(Queries.hotDiscussionsPullRequests, 20)) as HotDiscussionsPullRequestsNode[];
+      rawGoodFirstIssues = await getDiscussions(Queries.goodFirstIssues, 20);
+    }
     const discussions = issues.concat(PRs);
     const [hotDiscussions, goodFirstIssues] = await Promise.all([
       getHotDiscussions(discussions),
