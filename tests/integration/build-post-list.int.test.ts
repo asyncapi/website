@@ -98,22 +98,28 @@ describe('Integration: build-post-list Comprehensive Testing', () => {
 
     it('all slugs start with their section', () => {
       runnerOutput.docs.forEach((item) => {
-        expect(item.slug.startsWith('/docs')).toBe(true);
+        expect(typeof item.slug).toBe('string');
+        expect(item.slug!.startsWith('/docs')).toBe(true);
       });
+
       runnerOutput.about.forEach((item) => {
-        expect(item.slug.startsWith('/about')).toBe(true);
+        expect(typeof item.slug).toBe('string');
+        expect(item.slug!.startsWith('/about')).toBe(true);
       });
+
       runnerOutput.blog.forEach((item) => {
-        expect(item.slug.startsWith('/blog')).toBe(true);
+        expect(typeof item.slug).toBe('string');
+        expect(item.slug!.startsWith('/blog')).toBe(true);
       });
     });
 
     it('all items in docs, blog, and about have unique slugs', () => {
       const slugs = [
-        ...runnerOutput.docs.map(item => item.slug),
-        ...runnerOutput.blog.map(item => item.slug),
-        ...runnerOutput.about.map(item => item.slug)
+        ...runnerOutput.docs.map((item) => item.slug),
+        ...runnerOutput.blog.map((item) => item.slug),
+        ...runnerOutput.about.map((item) => item.slug)
       ];
+
       const uniqueSlugs = new Set(slugs);
 
       expect(uniqueSlugs.size).toBe(slugs.length);
