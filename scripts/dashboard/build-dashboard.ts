@@ -1,5 +1,6 @@
 import { graphql } from '@octokit/graphql';
 import dotenv from 'dotenv';
+import fs from 'fs';
 import { writeFile } from 'fs/promises';
 
 import { CustomError } from '@/types/errors/CustomError';
@@ -17,9 +18,6 @@ import type {
 import { logger } from '../helpers/logger';
 import { pause } from '../helpers/utils';
 import { Queries } from './issue-queries';
-
-const fs = require('fs');
-const path = require('path');
 
 dotenv.config();
 
@@ -324,9 +322,8 @@ export async function start(writePath: string): Promise<void> {
     let PRs: HotDiscussionsPullRequestsNode[];
     let rawGoodFirstIssues: GoodFirstIssues[];
 
-    // Just for the testing purpose. Ignore this if block and look into the else block if
-    // you are not looking for testing related things
-    if (process.env.NODE_ENV === 'test') {
+    // Only for integration tests: use fixtures if DASHBOARD_INTEGRATION=1
+    if (process.env.DASHBOARD_INTEGRATION === '1') {
       const token = process.env.GITHUB_TOKEN;
 
       if (!token) {
@@ -336,10 +333,23 @@ export async function start(writePath: string): Promise<void> {
           detail: 'GITHUB_TOKEN environment variable is missing'
         });
       }
+      // Dynamically import url and path for ESM __dirname workaround
+      const { fileURLToPath } = await import('url');
+      const pathModule = await import('path');
+      // eslint-disable-next-line @typescript-eslint/naming-convention, no-underscore-dangle
+      const __filename = fileURLToPath(import.meta.url);
+      // eslint-disable-next-line @typescript-eslint/naming-convention, no-underscore-dangle
+      const __dirname = pathModule.dirname(__filename);
       // Load fixtures for good first issues, hot issues, and hot PRs
-      const gfiFixturePath = path.join(__dirname, '../../tests/integration/fixtures/good-first-issues-response.json');
-      const hotIssuesFixturePath = path.join(__dirname, '../../tests/integration/fixtures/hot-issues-response.json');
-      const hotPrsFixturePath = path.join(__dirname, '../../tests/integration/fixtures/hot-prs-response.json');
+      const gfiFixturePath = pathModule.join(
+        __dirname,
+        '../../tests/integration/fixtures/good-first-issues-response.json'
+      );
+      const hotIssuesFixturePath = pathModule.join(
+        __dirname,
+        '../../tests/integration/fixtures/hot-issues-response.json'
+      );
+      const hotPrsFixturePath = pathModule.join(__dirname, '../../tests/integration/fixtures/hot-prs-response.json');
 
       const gfiFixture = JSON.parse(fs.readFileSync(gfiFixturePath, 'utf8'));
       const hotIssuesFixture = JSON.parse(fs.readFileSync(hotIssuesFixturePath, 'utf8'));

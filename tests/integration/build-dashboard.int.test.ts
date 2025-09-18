@@ -1,8 +1,7 @@
+import { execSync } from 'child_process';
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
-
-import { runBuildDashboard } from '@/npm/runners/build-dashboard-runner';
 
 describe('Integration: build-dashboard CLI', () => {
   let tempDir: string;
@@ -11,17 +10,24 @@ describe('Integration: build-dashboard CLI', () => {
   let output: any;
 
   beforeAll(() => {
-    // Create a unique temp directory for this test run
     tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'build-dashboard-real-'));
     outputFileName = 'dashboard.json';
     outputPath = path.join(tempDir, outputFileName);
-    // Provide a fake token so the script doesn't throw when run in CI or locally
-    process.env.GITHUB_TOKEN = process.env.GITHUB_TOKEN ?? 'test-token';
 
-    // Run the dashboard build logic in-process so nock can intercept requests
-    return runBuildDashboard({ outputPath }).then(() => {
-      output = JSON.parse(fs.readFileSync(outputPath, 'utf-8'));
-    });
+    try {
+      execSync(`npx tsx npm/runners/build-dashboard-runner.ts --outputFile "${outputPath}"`, {
+        stdio: 'inherit',
+        env: {
+          ...process.env,
+          GITHUB_TOKEN: process.env.GITHUB_TOKEN ?? 'test-token',
+          NODE_ENV: 'test',
+          DASHBOARD_INTEGRATION: '1'
+        }
+      });
+    } catch (err) {
+      throw new Error(`Dashboard runner failed: ${err}`);
+    }
+    output = JSON.parse(fs.readFileSync(outputPath, 'utf-8'));
   });
 
   afterAll(() => {
