@@ -1,602 +1,133 @@
 {
   "hotDiscussions": [
     {
-      "id": "PR_kwDOFLhIt86HHVY9",
+      "id": "PR_prs_1",
       "isPR": true,
       "isAssigned": false,
-      "title": "chore: introduce governance board",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/community/pull/1634",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 35.609649004908086
-    },
-    {
-      "id": "PR_kwDODCuNRs6NwyqP",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: initial ROS2 AsyncAPI contribution by SIEMENS AG",
-      "author": "gramss",
-      "resourcePath": "/asyncapi/bindings/pull/270",
-      "repo": "asyncapi/bindings",
-      "labels": [],
-      "score": 33.02507770616476
-    },
-    {
-      "id": "I_kwDOBW5R_c6pn_G2",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Redesign the AsyncAPI Website and Implement Dark Theme",
-      "author": "devilkiller-ag",
-      "resourcePath": "/asyncapi/website/issues/3669",
+      "title": "PR: Improve build scripts",
+      "author": "maintainer",
+      "resourcePath": "/asyncapi/website/pull/200",
       "repo": "asyncapi/website",
       "labels": [
         {
-          "name": "gsoc",
-          "color": "F4D03F"
+          "name": "area/ci",
+          "color": "a2eeef"
         }
       ],
-      "score": 20.38939580119737
+      "score": 5.169142597486657
     },
     {
-      "id": "PR_kwDOBW5R_c6N50TQ",
+      "id": "PR_prs_2",
       "isPR": true,
-      "isAssigned": false,
-      "title": "refactor: scripts code for better code quality ",
-      "author": "JeelRajodiya",
-      "resourcePath": "/asyncapi/website/pull/3851",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 20.102221212448114
-    },
-    {
-      "id": "PR_kwDOBW5R_c6TnGCE",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore(blog): add singapore summary",
-      "author": "iambami",
-      "resourcePath": "/asyncapi/website/pull/4056",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 17.230475324955524
-    },
-    {
-      "id": "PR_kwDOBW5R_c6KgWbR",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: enabled viewing historical finance data",
-      "author": "SahilDahekar",
-      "resourcePath": "/asyncapi/website/pull/3658",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 17.230475324955524
-    },
-    {
-      "id": "I_kwDOFLhIt85bebeO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Meeting Banners Storage",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/issues/568",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 16.943300736206268
-    },
-    {
-      "id": "PR_kwDOCHlHJM6G3FcZ",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "refactor: improve npm installation by using pacote for package resolu…",
-      "author": "achaljhawar",
-      "resourcePath": "/asyncapi/generator/pull/1329",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 16.943300736206268
-    },
-    {
-      "id": "PR_kwDOFLhIt853IEwA",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: added asyncapi student ambassador md file",
-      "author": "iambami",
-      "resourcePath": "/asyncapi/community/pull/1333",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 16.65612614745701
-    },
-    {
-      "id": "PR_kwDOFLhIt86LeC8N",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: expand community docs: contributor - simple contribution flow a…",
-      "author": "ezinneanne",
-      "resourcePath": "/asyncapi/community/pull/1730",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 16.36895155870775
-    },
-    {
-      "id": "I_kwDODwv8N86un74M",
-      "isPR": false,
       "isAssigned": true,
-      "title": "Add AsyncAPI Meetups Page to Conference Website",
-      "author": "Shriya-Chauhan",
-      "resourcePath": "/asyncapi/conference-website/issues/644",
-      "repo": "asyncapi/conference-website",
-      "labels": [],
-      "score": 15.794602381209232
-    },
-    {
-      "id": "I_kwDODou01c5ZAFWh",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Please support File References",
-      "author": "philCryoport",
-      "resourcePath": "/asyncapi/studio/issues/528",
-      "repo": "asyncapi/studio",
+      "title": "PR: Add new component",
+      "author": "contributor",
+      "resourcePath": "/asyncapi/website/pull/201",
+      "repo": "asyncapi/website",
       "labels": [
+        {
+          "name": "area/ui",
+          "color": "bfd4f2"
+        },
+        {
+          "name": "feature",
+          "color": "0e8a16"
+        }
+      ],
+      "score": 1.7230475324955525
+    },
+    {
+      "id": "I_issues_3",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Issue: Update dependencies",
+      "author": "maintainer",
+      "resourcePath": "/asyncapi/website/issues/102",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "area/ci",
+          "color": "0052cc"
+        },
+        {
+          "name": "dependencies",
+          "color": "0366d6"
+        }
+      ],
+      "score": 1.3195079107728942
+    },
+    {
+      "id": "I_issues_1",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Issue: Improve docs navigation",
+      "author": "doc-contributor",
+      "resourcePath": "/asyncapi/website/issues/100",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "area/docs",
+          "color": "84b6eb"
+        },
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
-        {
-          "name": "keep-open",
-          "color": "f9dd4b"
         }
       ],
-      "score": 15.220253203710714
+      "score": 0.8304872930770115
+    },
+    {
+      "id": "I_issues_2",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Issue: Fix broken links",
+      "author": "community-user",
+      "resourcePath": "/asyncapi/website/issues/101",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ],
+      "score": 0.2871745887492588
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDODwv8N86y8NIb",
-      "title": "Venue cards date misalignment",
+      "id": "I_gfi_1",
+      "title": "Good first issue: Add example",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/conference-website/issues/715",
-      "repo": "asyncapi/conference-website",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": []
-    },
-    {
-      "id": "I_kwDOBW5R_c6xUO9N",
-      "title": "Announcement banner not showing or misaligned on some pages",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/4021",
+      "resourcePath": "/asyncapi/website/issues/300",
       "repo": "asyncapi/website",
-      "author": "vishvamsinh28",
-      "area": "Unknown",
+      "author": "newcontributor",
+      "area": "docs",
       "labels": []
     },
     {
-      "id": "I_kwDOFDnrNc6uQo6r",
-      "title": "[Improvement]: Improve the error message while generating project fromgenerate command",
+      "id": "I_gfi_2",
+      "title": "Good first issue: Fix typo",
       "isAssigned": true,
-      "resourcePath": "/asyncapi/cli/issues/1728",
-      "repo": "asyncapi/cli",
-      "author": "AayushSaini101",
-      "area": "Unknown",
+      "resourcePath": "/asyncapi/website/issues/301",
+      "repo": "asyncapi/website",
+      "author": "developer",
+      "area": "ui",
+      "labels": [
+        {
+          "name": "help wanted",
+          "color": "008672"
+        }
+      ]
+    },
+    {
+      "id": "I_gfi_3",
+      "title": "Good first issue: Update README",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/302",
+      "repo": "asyncapi/website",
+      "author": "maintainer",
+      "area": "unknown",
       "labels": []
-    },
-    {
-      "id": "I_kwDOFDnrNc6tHvh5",
-      "title": "[BUG] AsyncAPI/generator needs to upgrade",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/1699",
-      "repo": "asyncapi/cli",
-      "author": "Ervishalpathak7",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFLhIt86sgqy5",
-      "title": "[📑 Docs]: update Community Readme.md",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/community/issues/1762",
-      "repo": "asyncapi/community",
-      "author": "thulieblack",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c6rGtwQ",
-      "title": "[Docs Bug 🐞 report]: Few outdated info on /tools/generator and /tools/cli",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/3721",
-      "repo": "asyncapi/website",
-      "author": "Adi-204",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "🐞 docs bug",
-          "color": "FFD23F"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c6qPG7g",
-      "title": "fix: Update code to support @octokit/request v9 and @octokit/graphql v8",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/3690",
-      "repo": "asyncapi/website",
-      "author": "coderabbitai",
-      "area": "typescript",
-      "labels": []
-    },
-    {
-      "id": "I_kwDOBW5R_c6ovh9-",
-      "title": "[FEATURE] <Social Sharing Buttons on Blogs>",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/3649",
-      "repo": "asyncapi/website",
-      "author": "cbum-dev",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCoBobc6nflHk",
-      "title": "[BUG] Missing server.summary() function",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/parser-js/issues/1076",
-      "repo": "asyncapi/parser-js",
-      "author": "fmvilas",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCoBobc6nSxfV",
-      "title": "[BUG] Missing server.title() function",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/parser-js/issues/1075",
-      "repo": "asyncapi/parser-js",
-      "author": "fmvilas",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFLhIt86m3c8R",
-      "title": "[BUG] Slack groups are not updated",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/community/issues/1658",
-      "repo": "asyncapi/community",
-      "author": "fmvilas",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c6mv2HD",
-      "title": "[BUG] : Comminutiy newsroom latest news section is not ui friendly.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/3587",
-      "repo": "asyncapi/website",
-      "author": "jayraj175coder",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc6mGxDI",
-      "title": "[BUG] Inaccurate error in `asyncapi optimize`",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/1626",
-      "repo": "asyncapi/cli",
-      "author": "derberg",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODwv8N86f37o-",
-      "title": "Return to top arrow feature/button",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/conference-website/issues/475",
-      "repo": "asyncapi/conference-website",
-      "author": "thulieblack",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c6csZFy",
-      "title": "Create Custom LogService Using Winston for Error Logging",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/3358",
-      "repo": "asyncapi/website",
-      "author": "coderabbitai",
-      "area": "typescript",
-      "labels": []
-    },
-    {
-      "id": "I_kwDOCVQpZM6YZd4E",
-      "title": "A fragment with only one child is redundant.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/asyncapi-react/issues/1054",
-      "repo": "asyncapi/asyncapi-react",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCVQpZM6YZbiE",
-      "title": "Remove this redundant \"undefined\"",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/asyncapi-react/issues/1052",
-      "repo": "asyncapi/asyncapi-react",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh386HJeIz",
-      "title": "[BUG] Implement avro schema data type ",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1974",
-      "repo": "asyncapi/modelina",
-      "author": "akkshitgupta",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "avro",
-          "color": "EC3D91"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCHlHJM58YMi8",
-      "title": "Improve arborist (npm installation) to have no hacks",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/generator/issues/1102",
-      "repo": "asyncapi/generator",
-      "author": "derberg",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCoBobc5zosuk",
-      "title": "Parser do not validate and throw error when `parameters` are provided but address is null",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/parser-js/issues/875",
-      "repo": "asyncapi/parser-js",
-      "author": "derberg",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "keep-open",
-          "color": "fce14b"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc5xaTa3",
-      "title": "Parallel execution command asyncapi generate got error",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/cli/issues/814",
-      "repo": "asyncapi/cli",
-      "author": "Zacama",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "bounty",
-          "color": "0e8a16"
-        },
-        {
-          "name": "level/advanced",
-          "color": "0e8a16"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODtTERs5wDOAH",
-      "title": "Support decimal min and max",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/java-spring-template/issues/326",
-      "repo": "asyncapi/java-spring-template",
-      "author": "Tenischev",
-      "area": "java",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5soAAM",
-      "title": "Create a research page to have participants sign up for the research study",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1991",
-      "repo": "asyncapi/website",
-      "author": "Mayaleeeee",
-      "area": "design",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFi_gUM5rHafV",
-      "title": "Glee crashes when body is not proper json in http request",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/glee/issues/476",
-      "repo": "asyncapi/glee",
-      "author": "KhudaDad414",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5eFaBF",
-      "title": "Add proper dropdowns to the Filters Select Menu",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/1318",
-      "repo": "asyncapi/website",
-      "author": "akshatnema",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOIUldZc5XXsGH",
-      "title": "Filter out application which are not in use",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/EDAVisualiser/issues/14",
-      "repo": "asyncapi/EDAVisualiser",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385WoDaU",
-      "title": "Add attrs and/or dataclasses presets to Python generator",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/999",
-      "repo": "asyncapi/modelina",
-      "author": "tokarenko",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "Python generator",
-          "color": "5319e7"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODyzcIc5Uso2Q",
-      "title": "Add support for minimum amount of approvals before merge",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/.github/issues/190",
-      "repo": "asyncapi/.github",
-      "author": "fmvilas",
-      "area": "ci-cd",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFiHaLM5DeQ4y",
-      "title": "Add support for HTML output",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/diff/issues/85",
-      "repo": "asyncapi/diff",
-      "author": "aayushmau5",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
     }
   ]
 }
