@@ -11,7 +11,7 @@ describe('Integration: build-post-list Comprehensive Testing', () => {
 
   beforeAll(() => {
     tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'build-post-list-comprehensive-'));
-    
+
     // Run the build-pages-runner before build-post-list-runner
     execSync('npx tsx npm/runners/build-pages-runner.ts', { stdio: 'inherit' });
   });
@@ -26,6 +26,7 @@ describe('Integration: build-post-list Comprehensive Testing', () => {
 
     beforeAll(() => {
       const outputFileName = 'posts-runner.json';
+
       runnerOutputPath = path.join(tempDir, outputFileName);
 
       // Test the actual npm script/runner
@@ -114,6 +115,7 @@ describe('Integration: build-post-list Comprehensive Testing', () => {
         ...runnerOutput.about.map(item => item.slug)
       ];
       const uniqueSlugs = new Set(slugs);
+
       expect(uniqueSlugs.size).toBe(slugs.length);
     });
   });
@@ -124,6 +126,7 @@ describe('Integration: build-post-list Comprehensive Testing', () => {
 
     beforeAll(async () => {
       const outputFileName = 'posts-script.json';
+
       scriptOutputPath = path.join(tempDir, outputFileName);
 
       // Test the core script directly for coverage
@@ -132,7 +135,7 @@ describe('Integration: build-post-list Comprehensive Testing', () => {
         [path.resolve(__dirname, '../../pages/docs'), '/docs'],
         [path.resolve(__dirname, '../../pages/about'), '/about']
       ];
-      
+
       await buildPostList(postDirectories, tempDir, scriptOutputPath);
       scriptOutput = JSON.parse(fs.readFileSync(scriptOutputPath, 'utf-8'));
     });
