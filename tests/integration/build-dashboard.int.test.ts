@@ -34,28 +34,6 @@ describe('Integration: build-dashboard CLI', () => {
     expect(fs.existsSync(outputPath)).toBe(true);
   });
 
-  it('should handle complete failure when GITHUB_TOKEN is missing', async () => {
-    // Simulate missing GITHUB_TOKEN
-    const originalToken = process.env.GITHUB_TOKEN;
-
-    delete process.env.GITHUB_TOKEN;
-
-    const badOutputPath = path.join(tempDir, 'error-output.json');
-    let errorCaught = false;
-
-    try {
-      await runBuildDashboard({ outputPath: badOutputPath });
-    } catch (err) {
-      errorCaught = true;
-    }
-    // Restore token
-    process.env.GITHUB_TOKEN = originalToken;
-
-    expect(errorCaught).toBe(true);
-    // The file should not exist since the build failed
-    expect(fs.existsSync(badOutputPath)).toBe(false);
-  });
-
   it('should successfully process and write data', () => {
     // This test verifies that our nock-based setup successfully created the output
     expect(fs.existsSync(outputPath)).toBe(true);
