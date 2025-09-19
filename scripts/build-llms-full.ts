@@ -30,7 +30,7 @@ async function getAllPosts(): Promise<Result> {
 export async function buildLlmsFull(): Promise<void> {
   const base = 'https://www.asyncapi.com';
   const posts = await getAllPosts();
-  
+
   let content = `# AsyncAPI Complete Resource List for LLMs
 # This file contains ALL important AsyncAPI resources for AI systems
 # Last updated: ${new Date().toISOString().split('T')[0]}
