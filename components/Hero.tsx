@@ -37,7 +37,7 @@ export default function Hero({ className = '' }: HeroProps) {
           <Heading
             level={HeadingLevel.h2}
             typeStyle={HeadingTypeStyle.bodyLlg}
-            textColor='text-gray-700 dark:text-darkTheme-text'
+            textColor='text-gray-700 dark:text-dark-text'
             className='mx-auto mb-10 max-w-4xl'
           >
             {t('main.body_pretext')} <strong>{t('main.body_boldtext')}</strong>

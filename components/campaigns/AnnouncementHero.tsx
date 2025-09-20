@@ -90,7 +90,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
               <div
                 key={index}
                 className={`mx-1 size-2 cursor-pointer rounded-full ${
-                  activeIndex === index ? 'bg-primary-500' : 'dark:bg-darkTheme-text bg-gray-300'
+                  activeIndex === index ? 'bg-primary-500' : 'dark:bg-dark-text bg-gray-300'
                 }`}
                 onClick={() => goToIndex(index)}
               />

@@ -80,7 +80,7 @@ export default function DocsNav({ item, active, onClick = () => {} }: DocsNavPro
 
   return (
     <li className='mb-4' key={item.item.title} data-testid='DocsNav-item'>
-      <div className='flex gap-2 hover:bg-secondary-100 dark:hover:bg-darkTheme-card my-2 rounded-md bg-transparent '>
+      <div className='flex gap-2 hover:bg-secondary-100 dark:hover:bg-dark-card my-2 rounded-md bg-transparent '>
         <DocsArrow
           isDropDown={Object.values(subCategories).length > 0}
           activeDropDownItem={openSubCategory}

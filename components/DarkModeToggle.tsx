@@ -21,7 +21,7 @@ const MoonIcon = ({ className = 'w-5 h-5' }) => (
   <svg
     className={`stroke-current text-opacity-85 text-zinc-600 ${className}`}
     fill='none'
-    stroke-width='2'
+    strokeWidth='2'
     viewBox='0 0 24 24'
     xmlns='http://www.w3.org/2000/svg'
   >

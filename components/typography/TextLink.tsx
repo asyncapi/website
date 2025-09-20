@@ -21,7 +21,7 @@ export interface TextLinkProps {
 export default function TextLink({ href, className = '', target = '_blank', children, id }: TextLinkProps) {
   // eslint-disable-next-line max-len
   const classNames = twMerge(
-    `text-gray-900 dark:text-darkTheme-text hover:underline hover:text-gray-800 dark:hover:text-darkTheme-heading font-medium transition ease-in-out duration-300 ${className || ''}`
+    `text-gray-900 dark:text-dark-text hover:underline hover:text-gray-800 dark:hover:text-dark-heading font-medium transition ease-in-out duration-300 ${className || ''}`
   );
 
   return (

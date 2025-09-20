@@ -39,7 +39,7 @@ export default function HomePage() {
           <Hero className='mb-24' />
         </Container>
 
-        <div className='mt-8 dark:bg-darkTheme-card bg-dark py-12'>
+        <div className='mt-8 dark:bg-dark-card bg-dark py-12'>
           <Container wide as='section'>
             <NewsletterSubscribe dark />
           </Container>
@@ -49,9 +49,7 @@ export default function HomePage() {
           <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
             {t('community.title')}
           </Heading>
-          <Paragraph className='mt-2 text-left md:mx-auto dark:text-darkTheme-text '>
-            {t('community.subtitle')}
-          </Paragraph>
+          <Paragraph className='mt-2 text-left md:mx-auto dark:text-dark-text '>{t('community.subtitle')}</Paragraph>
           <div className='mt-5 flex justify-center lg:justify-start'>
             <Button className='w-full px-40 md:w-auto' text={t('community.slackCTABtn')} href='/slack-invite' />
           </div>
@@ -61,9 +59,7 @@ export default function HomePage() {
           <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
             {t('events.title')}
           </Heading>
-          <Paragraph className='mx-auto mt-2 dark:text-darkTheme-text  max-w-prose'>
-            {t('events.description')}
-          </Paragraph>
+          <Paragraph className='mx-auto mt-2 dark:text-dark-text  max-w-prose'>{t('events.description')}</Paragraph>
           <Paragraph className='mx-auto mb-6 underline text-sky-400 max-w-prose'>{t('events.meetingTitle')}</Paragraph>
           <div className='flex flex-col items-center justify-center gap-2 md:flex-row'>
             <GoogleCalendarButton

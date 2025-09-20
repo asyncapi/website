@@ -20,7 +20,7 @@ interface SponsorsProps {
 export default function DiamondSponsors({ className }: SponsorsProps): React.ReactNode {
   return (
     <div
-      className={`w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-sky-100 dark:bg-darkTheme-card dark:text-gray-100 ${className}`}
+      className={`w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-sky-100 dark:bg-dark-card dark:text-gray-100 ${className}`}
     >
       <Heading
         level={HeadingLevel.h3}

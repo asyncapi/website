@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             <Component {...pageProps} />
             <ScrollButton />
           </Layout>
-          <div className='mt-auto dark:bg-darkTheme-background'>
+          <div className='mt-auto dark:bg-dark-background'>
             <Footer />
           </div>
         </div>

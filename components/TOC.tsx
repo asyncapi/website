@@ -58,9 +58,9 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
           className={twMerge(`${open && 'mb-4'} flex-1 text-primary-500 font-medium uppercase tracking-wide 
           text-sm font-sans antialiased ${
             cssBreakingPoint === 'xl'
-              ? `xl:mb-4 xl:text-xs xl:text-gray-900 dark:text-darkTheme-text
+              ? `xl:mb-4 xl:text-xs xl:text-gray-900 dark:text-dark-text
           xl:font-bold`
-              : 'lg:mb-4 lg:text-xs lg:text-gray-900 lg:dark:text-darkTheme-text lg:font-bold'
+              : 'lg:mb-4 lg:text-xs lg:text-gray-900 lg:dark:text-dark-text lg:font-bold'
           }`)}
           data-testid='TOC-Heading'
         >

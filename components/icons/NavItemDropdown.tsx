@@ -7,7 +7,7 @@ import React from 'react';
 const NavItemDropdown = () => (
   <span className='inline-block'>
     <svg
-      className='size-5 text-gray-700  dark:text-darkTheme-text duration-200 ease-in-out group-hover:text-gray-900  dark:group-hover:text-white group-focus:text-gray-500 transition-transform group-hover:rotate-180'
+      className='size-5 text-gray-700  dark:text-dark-text duration-200 ease-in-out group-hover:text-gray-900  dark:group-hover:text-white group-focus:text-gray-500 transition-transform group-hover:rotate-180'
       fill='currentColor'
       viewBox='0 0 20 20'
     >

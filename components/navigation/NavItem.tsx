@@ -43,8 +43,8 @@ export default function NavItem({
         rel='noopener noreferrer'
         className={`${className} font-body text-base sm:text-sm/6 font-semibold leading-6  border-b border-transparent dark:hover:border-white hover:border-black transition duration-150 ease-in-out focus:text-black focus:outline-none ${
           router.pathname.startsWith(href)
-            ? 'text-black dark:text-darkTheme-text'
-            : 'text-zinc-800 dark:text-darkTheme-text text-opacity-85 dark:hover:text-darkTheme-heading hover:text-black'
+            ? 'text-black dark:text-dark-text'
+            : 'text-zinc-800 dark:text-dark-text text-opacity-85 dark:hover:text-dark-heading hover:text-black'
         }`}
       >
         {text}
@@ -69,7 +69,7 @@ export default function NavItem({
         target={target}
         data-testid='NavItem-Link'
       >
-        <span className='border-b border-transparent dark:hover:border-white dark:text-darkTheme-text dark:hover:text-darkTheme-heading hover:border-black'>
+        <span className='border-b border-transparent dark:hover:border-white dark:text-dark-text dark:hover:text-dark-heading hover:border-black'>
           {text}
         </span>
         {hasDropdown && <NavItemDropdown />}

@@ -30,8 +30,8 @@ export default function Card({ title, description, link, className, Icon }: Card
     <Link href={link} className='cursor-pointer' data-testid='Docs-link'>
       <div
         className='h-full rounded-lg border dark:border-border
-         dark:bg-darkTheme-card dark:shadow-md dark:transition-all
-         dark:duration-300 dark:ease-in-out dark:hover:shadow-lg dark:hover:shadow-darkTheme-card
+         dark:bg-dark-card dark:shadow-md dark:transition-all
+         dark:duration-300 dark:ease-in-out dark:hover:shadow-lg dark:hover:shadow-dark-card
          border-gray-200 p-6 shadow-md transition-all duration-300 ease-in-out
           hover:shadow-lg'
       >

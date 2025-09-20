@@ -96,13 +96,13 @@ export default function Feedback({ className }: IFeedbackProps) {
 
   return (
     <div
-      className={`flex flex-col rounded-md border dark:bg-darkTheme-card dark:border-border border-gray-200 p-4 shadow-md ${className}`}
+      className={`flex flex-col rounded-md border dark:bg-dark-card dark:border-border border-gray-200 p-4 shadow-md ${className}`}
     >
       <div className='flex flex-row'>
         <img src='/img/illustrations/icons/icon.svg' className='my-auto sm:size-14 lg:w-14' alt='' aria-hidden='true' />
         <div className='ml-4 flex flex-col'>
-          <div className='text-xl dark:text-darkTheme-heading'>Was this helpful?</div>
-          <div className='text-sm dark:text-darkTheme-text text-gray-500'>
+          <div className='text-xl dark:text-dark-heading'>Was this helpful?</div>
+          <div className='text-sm dark:text-dark-text text-gray-500'>
             Help us improve the docs by adding your contribution.
           </div>
         </div>
@@ -110,7 +110,7 @@ export default function Feedback({ className }: IFeedbackProps) {
       <form onSubmit={handleSubmit}>
         <div className='my-4 flex flex-col'>
           <textarea
-            className='inline-block h-20 w-full rounded-md border dark:border-border dark:bg-darkTheme-footer bg-gray-50 px-2 py-1 align-top text-sm text-gray-700 focus:border-0'
+            className='inline-block h-20 w-full rounded-md border dark:border-border dark:bg-dark-footer bg-gray-50 px-2 py-1 align-top text-sm text-gray-700 focus:border-0'
             placeholder='Write your suggestions here'
             onChange={(e) => setFeedback(e.target.value)}
             required
@@ -122,7 +122,7 @@ export default function Feedback({ className }: IFeedbackProps) {
             >
               Submit feedback
             </button>
-            <div className='my-2 w-full text-center dark:text-darkTheme-text font-medium lg:my-auto lg:w-1/12'>OR</div>
+            <div className='my-2 w-full text-center dark:text-dark-text font-medium lg:my-auto lg:w-1/12'>OR</div>
             <GitHubIssue className='bg-secondary-500 dark:border dark:border-secondary-500 dark:hover:bg-transparent' />
           </div>
         </div>

@@ -28,7 +28,7 @@ export default function PlatinumSponsors({ className = '', showSupportBanner = t
               data-testid='Sponsors-link'
             >
               <SponsorImage
-                className={`${sponsor?.imageClass} rounded-lg p-2  dark:bg-darkTheme-text bg-white`}
+                className={`${sponsor?.imageClass} rounded-lg p-2  dark:bg-dark-text bg-white`}
                 src={sponsor.imageSrc}
                 alt={sponsor.altText}
                 data-testid='Sponsors-img'

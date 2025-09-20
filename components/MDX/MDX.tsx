@@ -180,49 +180,49 @@ const getMDXComponents = {
   h1: (props: React.HTMLProps<HTMLHeadingElement>) => (
     <h1
       {...props}
-      className={`${props.className || ''} my-4 font-heading text-2xl font-semibold tracking-heading dark:text-darkTheme-heading text-gray-900 antialiased`}
+      className={`${props.className || ''} my-4 font-heading text-2xl font-semibold tracking-heading dark:text-dark-heading text-gray-900 antialiased`}
     />
   ),
   h2: (props: React.HTMLProps<HTMLHeadingElement>) => (
     <h2
       {...props}
-      className={`${props.className || ''} mb-4 mt-6 font-heading text-2xl font-semibold tracking-heading  dark:text-darkTheme-heading text-gray-900 antialiased`}
+      className={`${props.className || ''} mb-4 mt-6 font-heading text-2xl font-semibold tracking-heading  dark:text-dark-heading text-gray-900 antialiased`}
     />
   ),
   h3: (props: React.HTMLProps<HTMLHeadingElement>) => (
     <h3
       {...props}
-      className={`${props.className || ''} mb-4 mt-6 font-heading text-lg font-medium tracking-heading dark:text-darkTheme-heading text-gray-900 antialiased`}
+      className={`${props.className || ''} mb-4 mt-6 font-heading text-lg font-medium tracking-heading dark:text-dark-heading text-gray-900 antialiased`}
     />
   ),
   h4: (props: React.HTMLProps<HTMLHeadingElement>) => (
     <h4
       {...props}
-      className={`${props.className || ''} text-md my-4 font-heading font-medium dark:text-darkTheme-heading text-gray-900 antialiased`}
+      className={`${props.className || ''} text-md my-4 font-heading font-medium dark:text-dark-heading text-gray-900 antialiased`}
     />
   ),
   h5: (props: React.HTMLProps<HTMLHeadingElement>) => (
     <h5
       {...props}
-      className={`${props.className || ''} text-md my-4 font-heading dark:text-darkTheme-heading   font-bold antialiased`}
+      className={`${props.className || ''} text-md my-4 font-heading dark:text-dark-heading   font-bold antialiased`}
     />
   ),
   h6: (props: React.HTMLProps<HTMLHeadingElement>) => (
     <h6
       {...props}
-      className={`${props.className || ''} my-4 font-heading text-sm font-bold uppercase dark:text-darkTheme-heading text-gray-900 antialiased`}
+      className={`${props.className || ''} my-4 font-heading text-sm font-bold uppercase dark:text-dark-heading text-gray-900 antialiased`}
     />
   ),
   blockquote: (props: React.HTMLProps<HTMLQuoteElement>) => (
     <blockquote
       {...props}
-      className={`${props.className || ''} my-4 border-l-4 border-gray-400 dark:bg-darkTheme-footer bg-white py-1 pl-4 pr-1 font-body italic dark:text-white text-gray-700 antialiased`}
+      className={`${props.className || ''} my-4 border-l-4 border-gray-400 dark:bg-dark-footer bg-white py-1 pl-4 pr-1 font-body italic dark:text-white text-gray-700 antialiased`}
     />
   ),
   p: (props: React.HTMLProps<HTMLParagraphElement>) => (
     <p
       {...props}
-      className={`${props.className || ''} my-4 font-body font-regular dark:text-darkTheme-heading text-gray-700 antialiased`}
+      className={`${props.className || ''} my-4 font-body font-regular dark:text-dark-heading text-gray-700 antialiased`}
     />
   ),
   strong: (props: React.HTMLProps<HTMLSpanElement>) => (
@@ -240,13 +240,13 @@ const getMDXComponents = {
   ul: (props: React.HTMLProps<HTMLUListElement>) => (
     <ul
       {...props}
-      className={`${props.className || ''} font-normal my-4 ml-4 list-disc font-body dark:text-darkTheme-heading text-gray-700 antialiased`}
+      className={`${props.className || ''} font-normal my-4 ml-4 list-disc font-body dark:text-dark-heading text-gray-700 antialiased`}
     />
   ),
   ol: (props: React.HTMLProps<HTMLOListElement>) => (
     <ol
       {...props}
-      className={`${props.className || ''} font-normal my-4 ml-4 list-decimal font-body dark:text-darkTheme-heading text-gray-700 antialiased`}
+      className={`${props.className || ''} font-normal my-4 ml-4 list-decimal font-body dark:text-dark-heading text-gray-700 antialiased`}
       type='1'
     />
   ),

@@ -11,7 +11,7 @@ interface LinuxBannerProps {
 export default function LinuxBanner({ className }: LinuxBannerProps) {
   return (
     <div
-      className={`bg-sky-100 w-full font-heading font-semibold dark:bg-darkTheme-card dark:text-gray-100 text-gray-900 px-1 py-1 text-center mt-4 overflow-x-hidden ${className ?? ''}`}
+      className={`bg-sky-100 w-full font-heading font-semibold dark:bg-dark-card dark:text-gray-100 text-gray-900 px-1 py-1 text-center mt-4 overflow-x-hidden ${className ?? ''}`}
     >
       <p>
         <a

@@ -23,7 +23,7 @@ export default function DocsButton({ post, className = '' }: IDocsButtonProps) {
           <Link href={post.prevPage.href}>
             <div
               className={`h-full cursor-pointer rounded border dark:border-border 
-                dark:hover:bg-darkTheme-card dark:hover:shadow-darkTheme-card
+                dark:hover:bg-dark-card dark:hover:shadow-dark-card
                  border-gray-200 p-4 text-center shadow-md transition-all
                 duration-300 ease-in-out hover:border-gray-300 hover:shadow-lg lg:text-left`}
             >
@@ -56,8 +56,8 @@ export default function DocsButton({ post, className = '' }: IDocsButtonProps) {
           <Link href={post.nextPage.href}>
             <div
               className={`h-full cursor-pointer rounded border border-gray-200 dark:border-border 
-                dark:hover:bg-darkTheme-card p-4 text-center shadow-md
-                transition-all duration-300 ease-in-out dark:hover:shadow-darkTheme-card hover:border-gray-300 hover:shadow-lg lg:text-right`}
+                dark:hover:bg-dark-card p-4 text-center shadow-md
+                transition-all duration-300 ease-in-out dark:hover:shadow-dark-card hover:border-gray-300 hover:shadow-lg lg:text-right`}
             >
               <div className='text-secondary-500' data-testid='DocsButton-Nextdiv'>
                 <div className='my-auto inline text-sm font-bold uppercase'>Up Next</div>

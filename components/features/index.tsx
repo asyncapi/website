@@ -16,23 +16,21 @@ export default function Features() {
   const { t } = useTranslation('landing-page');
 
   return (
-    <section className='relative bg-white  dark:bg-darkTheme-background pt-16'>
+    <section className='relative bg-white  dark:bg-dark-background pt-16'>
       <div className='mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8'>
         <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className='mt-2'>
           {t('features.title')}
         </Heading>
-        <Paragraph className='mx-auto mt-2 dark:text-darkTheme-text  max-w-prose'>
-          {t('features.description')}
-        </Paragraph>
+        <Paragraph className='mx-auto mt-2 dark:text-dark-text  max-w-prose'>{t('features.description')}</Paragraph>
         <div className='mt-12 text-left'>
           <ul
-            className='grid  grid-cols-1  dark:text-darkTheme-text gap-5 sm:grid-cols-2 lg:grid-cols-3'
+            className='grid  grid-cols-1  dark:text-dark-text gap-5 sm:grid-cols-2 lg:grid-cols-3'
             data-testid='Feature-ul'
           >
             {features.map((feature) => (
               <li
                 key={feature.id}
-                className='flex flex-col justify-between rounded-lg border-rounded border dark:border-border dark:bg-darkTheme-card dark:hover:shadow-lg dark:shadow-darkTheme-card px-6 pb-8 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'
+                className='flex flex-col justify-between rounded-lg border-rounded border dark:border-border dark:bg-dark-card dark:hover:shadow-lg dark:shadow-dark-card px-6 pb-8 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'
                 data-testid='Feature-li'
               >
                 <div>
@@ -40,7 +38,7 @@ export default function Features() {
                     {t(`features.${feature.id}.name`)}
                   </Heading>
                   {
-                    <Paragraph typeStyle={ParagraphTypeStyle.md} className='mt-5 dark:text-darkTheme-text'>
+                    <Paragraph typeStyle={ParagraphTypeStyle.md} className='mt-5 dark:text-dark-text'>
                       {t(`features.${feature.id}.description`)}
                     </Paragraph>
                   }

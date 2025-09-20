@@ -71,7 +71,7 @@
     },
     "events": {
         "title": "Our Community Events",
-        "description":"AsyncAPI hosts different meetings every week. They are focused on different topics, sometimes purely technical and sometimes about community building. Pick one and join us!",
-        "meetingTitle":"Learn more about our meetings."
+        "description":"AsyncAPI organiseert wekelijks verschillende bijeenkomsten. Deze richten zich op verschillende onderwerpen, soms puur technisch en soms over community-building. Kies er een en doe mee!",
+        "meetingTitle":"Lees meer over onze bijeenkomsten."
     }
 }

@@ -58,7 +58,5 @@ export default function Layout({ children }: ILayoutProps): React.JSX.Element {
     return <GenericPostLayout post={post as unknown as IPosts['blog'][number]}>{children}</GenericPostLayout>;
   }
 
-  return (
-    <div className='min-h-screen bg-white dark:bg-darkTheme-background transition-colors duration-300'>{children}</div>
-  );
+  return <div className='min-h-screen bg-white dark:bg-dark-background transition-colors duration-300'>{children}</div>;
 }
