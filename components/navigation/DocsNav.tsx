@@ -52,7 +52,7 @@ const serializedBuckets: SerializedBuckets = buckets.reduce(
   {
     welcome: {
       icon: IconHome,
-      className: 'bg-gray-300 border-gray-300'
+      className: 'dark:bg-[#8851FB] bg-gray-300 border-gray-300'
     }
   } as SerializedBuckets // Initial value of the accumulator
 );
@@ -80,7 +80,7 @@ export default function DocsNav({ item, active, onClick = () => {} }: DocsNavPro
 
   return (
     <li className='mb-4' key={item.item.title} data-testid='DocsNav-item'>
-      <div className='flex gap-2'>
+      <div className='flex gap-2 hover:bg-secondary-100 dark:hover:bg-dark-card my-2 rounded-md bg-transparent '>
         <DocsArrow
           isDropDown={Object.values(subCategories).length > 0}
           activeDropDownItem={openSubCategory}
@@ -89,7 +89,7 @@ export default function DocsNav({ item, active, onClick = () => {} }: DocsNavPro
         <DocsNavItem
           {...item.item}
           activeSlug={active}
-          defaultClassName='font-body text-sm text-black hover:font-semibold'
+          defaultClassName='font-body text-sm my-1 text-black dark:text-white hover:font-semibold'
           inactiveClassName='font-regular'
           activeClassName='font-semibold'
           bucket={{

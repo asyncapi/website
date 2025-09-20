@@ -50,8 +50,10 @@ export default function SubCategoryDocsNav({ subCategory, activeItem, onClick }:
         <DocsNavItem
           {...subCategory.item}
           activeSlug={activeItem}
-          defaultClassName={`font-body text-sm text-black leading-8 ${
-            subCategory.children ? 'hover:font-semibold' : 'hover:text-secondary-600'
+          defaultClassName={`font-body text-sm text-black dark:text-white leading-8 ${
+            subCategory.children
+              ? 'hover:font-semibold  dark:text-dark-text'
+              : 'dark:hover:text-secondary-600 hover:text-secondary-600'
           }`}
           inactiveClassName='font-regular'
           activeClassName={subCategory.children ? 'font-semibold' : 'text-secondary-600'}
@@ -66,7 +68,7 @@ export default function SubCategoryDocsNav({ subCategory, activeItem, onClick }:
                 <DocsNavItem
                   {...subItem}
                   activeSlug={activeItem}
-                  defaultClassName='font-body text-sm text-gray-700 leading-7 hover:text-secondary-600'
+                  defaultClassName='font-body text-sm text-gray-700 dark:text-dark-text leading-7 dark:hover:text-secondary-600 hover:text-secondary-600'
                   inactiveClassName='font-regular'
                   activeClassName='text-secondary-600'
                   onClick={onClick}

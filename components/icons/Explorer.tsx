@@ -6,12 +6,12 @@ import React from 'react';
 export default function IconExplorer({ className = '' }) {
   return (
     <svg
-      fill='#000000'
+      fill='currentColor'
       className={className}
       width='35px'
       height='35px'
       viewBox='-2.4 -2.4 28.80 28.80'
-      stroke='#000000'
+      stroke='currentColor'
       strokeWidth='0.1'
       transform='matrix(1, 0, 0, 1, 0, 0)rotate(0)'
     >

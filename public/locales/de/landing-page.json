@@ -1,11 +1,12 @@
 {
     "main": {
         "header": "Aufbau der Zukunft der",
-        "subHeader": "Ereignisgesteuerte Architekturen (EDA)",
+        "subHeader": "Ereignisgesteuerte",
+        "extraSubHeader": "Architekturen (EDA)",
         "body_pretext": "Open-Source-Tools zur einfachen Erstellung und Wartung Ihrer ereignisgesteuerten Architektur. Alle basieren auf der AsyncAPI-Spezifikation, der ",
         "body_boldtext": "Industriestandard",
         "body_posttext": " zur Definition asynchroner APIs.",
-        "docs_btn": "Lesen Sie die Dokumente",
+        "community_btn": "sluit je aan bij onze gemeenschap",
         "search_btn": "Schnellsuche...",
         "slogan_text": "Wir sind stolz darauf, Teil der",
         "slogan_link": "Linux Foundation"
@@ -67,8 +68,5 @@
         "supportedByPretext": "Die folgenden Unternehmen unterstützen uns, indem sie uns erlauben, ihre Produkte kostenlos zu verwenden. Haben Sie Interesse daran, uns ebenfalls zu unterstützen?",
         "supportedByLink": "Kontaktieren Sie uns per E-Mail",
         "supportedByPosttext": " für weitere Informationen."
-    },
-    "testimonials": {
-        "title": "Was die Experten sagen"
-    }
+    } 
 }

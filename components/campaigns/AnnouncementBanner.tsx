@@ -48,7 +48,8 @@ export default function Banner({
 }: BannerProps) {
   return (
     <div
-      className={`size-full rounded border border-gray-200 bg-gray-50 py-6
+      className={`size-full rounded border dark:border-dark-card border-gray-200
+         dark:bg-dark-card bg-gray-50 py-6
           transition-transform${className} ${small ? 'mb-4' : 'mx-3 my-6 p-3'}
           ${activeBanner ? 'z-10 scale-100 opacity-100' : 'z-0 scale-90 opacity-0'}`}
       data-testid='AnnouncementHero-main-div'
@@ -59,7 +60,9 @@ export default function Banner({
       <Heading className='countdown-text-gradient' level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.md}>
         {city}
       </Heading>
-      <Paragraph typeStyle={ParagraphTypeStyle.lg}>{dateLocation}</Paragraph>
+      <Paragraph className='dark:text-dark-text' typeStyle={ParagraphTypeStyle.lg}>
+        {dateLocation}
+      </Paragraph>
       <AnnouncementRemainingDays dateTime={cfpDeadline} eventName={eventName} />
       <div className='mt-6 space-x-2 pb-2'>
         <Button href={link} target='_blank' text={cfaText} data-testid='AnnouncementHero-submit-session' />

@@ -29,20 +29,23 @@ export default function Card({ title, description, link, className, Icon }: Card
   return (
     <Link href={link} className='cursor-pointer' data-testid='Docs-link'>
       <div
-        className='h-full rounded-lg border border-gray-200 p-6 shadow-md transition-all duration-300 ease-in-out
+        className='h-full rounded-lg border dark:border-border
+         dark:bg-dark-card dark:shadow-md dark:transition-all
+         dark:duration-300 dark:ease-in-out dark:hover:shadow-lg dark:hover:shadow-dark-card
+         border-gray-200 p-6 shadow-md transition-all duration-300 ease-in-out
           hover:shadow-lg'
       >
         <div data-testid='Docs-div-contents'>
           <Heading
             level={HeadingLevel.h3}
             typeStyle={HeadingTypeStyle.smSemibold}
-            className='border-b border-gray-300 pb-4'
+            className='border-b dark:text-white border-gray-300 pb-4'
             id={title}
           >
             <div className='flex flex-row items-center'>
               <div
                 className={`flex size-12 shrink-0 items-center justify-center rounded-lg ${className}
-                  text-gray-900 sm:size-12`}
+                   text-primary-500 bg-primary-100 dark:bg-muted border dark:border-primary-500 dark:border-border sm:size-12`}
                 data-testid='Docs-icon'
               >
                 <Icon className='size-6' />
@@ -50,7 +53,7 @@ export default function Card({ title, description, link, className, Icon }: Card
               <span className='ml-4'>{title}</span>
             </div>
           </Heading>
-          <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-5' fontWeight='light'>
+          <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-5 dark:text-white' fontWeight='light'>
             {description}
           </Paragraph>
         </div>

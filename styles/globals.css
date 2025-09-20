@@ -355,3 +355,11 @@ abbr[title] {
 select {
   cursor:pointer;
 }
+.dark .gradient-border {
+  border: 2px solid transparent;
+  border-image: linear-gradient(225deg, #AD20E2 0%, #2DCCFD 100%);
+  border-image-slice: 1;
+  border-radius: 16px; 
+}
+
+
