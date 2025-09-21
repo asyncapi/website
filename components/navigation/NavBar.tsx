@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { NextRouter } from 'next/router';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 import { defaultLanguage, i18nPaths, languages } from '@/utils/i18n';
 
@@ -37,6 +37,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   const router: NextRouter = useRouter();
   const { pathname, query, asPath } = router;
   const [open, setOpen] = useState<'learning' | 'tooling' | 'community' | null>(null);
+  const hideTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const { i18n } = useTranslation();
 
@@ -65,6 +66,10 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
     text: lang,
     value: lang
   }));
+
+  const ariaHiddenLearning = open === 'learning' ? 'false' : 'true';
+  const ariaHiddenTooling = open === 'tooling' ? 'false' : 'true';
+  const ariaHiddenCommunity = open === 'community' ? 'false' : 'true';
 
   /**
    * @description Changes the language and updates the URL accordingly.
@@ -121,6 +126,11 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
    * @param {('learning' | 'tooling' | 'community' | null)} menu - The menu to show or hide.
    */
   function showMenu(menu: 'learning' | 'tooling' | 'community' | null) {
+    // clear any pending hide timer and show requested menu
+    if (hideTimeout.current) {
+      clearTimeout(hideTimeout.current);
+      hideTimeout.current = null;
+    }
     if (open === menu) return;
     setOpen(menu);
   }
@@ -136,6 +146,15 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
     } else {
       setOpen(menu);
     }
+  }
+
+  // schedule closing of a menu with a short delay to allow mouse transitions
+  function scheduleClose(menu: 'learning' | 'tooling' | 'community' | null, delay = 150) {
+    if (hideTimeout.current) clearTimeout(hideTimeout.current);
+    hideTimeout.current = setTimeout(() => {
+      if (open === menu) setOpen(null);
+      hideTimeout.current = null;
+    }, delay);
   }
 
   useEffect(() => {
@@ -156,7 +175,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
           </div>
         )}
 
-        <div className='-my-2 -mr-2 flex flex-row items-center justify-center lg:hidden' data-testid='Navbar-search'>
+          <div className='-my-2 -mr-2 flex flex-row items-center justify-center lg:hidden' data-testid='Navbar-search'>
           <SearchButton
             className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
             aria-label='Open Search'
@@ -165,6 +184,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
           </SearchButton>
           <button
             onClick={() => setMobileMenuOpen(true)}
+            aria-label='Open menu'
             type='button'
             className='inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
           >
@@ -179,7 +199,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
           className='hidden w-full space-x-4 lg:flex lg:items-center lg:justify-end xl:space-x-8'
           data-testid='Navbar-main'
         >
-          <div className='relative' onMouseLeave={() => showMenu(null)} ref={learningRef}>
+          <div className='relative' onMouseLeave={() => scheduleClose('learning')} ref={learningRef}>
             <NavItem
               text='Docs'
               href='/docs'
@@ -187,10 +207,18 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               onMouseEnter={() => showMenu('learning')}
               hasDropdown
             />
-            {open === 'learning' && <LearningPanel />}
+            <div
+              data-testid='Navbar-learning-panel-wrapper'
+              onMouseEnter={() => showMenu('learning')}
+              className={`pointer-events-none transition-all duration-500 ease-in-out transform origin-top will-change-transform ${
+                open === 'learning' ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-6'
+              }`}
+            >
+              <LearningPanel open={open === 'learning'} />
+            </div>
           </div>
 
-          <div className='relative' onMouseLeave={() => showMenu(null)} ref={toolingRef}>
+          <div className='relative' onMouseLeave={() => scheduleClose('tooling')} ref={toolingRef}>
             <NavItem
               text='Tools'
               href='/tools'
@@ -198,10 +226,18 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               onMouseEnter={() => showMenu('tooling')}
               hasDropdown
             />
-            {open === 'tooling' && <ToolsPanel />}
+            <div
+              data-testid='Navbar-tooling-panel-wrapper'
+              onMouseEnter={() => showMenu('tooling')}
+              className={`pointer-events-none transition-all duration-500 ease-in-out transform origin-top will-change-transform ${
+                open === 'tooling' ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-6'
+              }`}
+            >
+              <ToolsPanel open={open === 'tooling'} />
+            </div>
           </div>
 
-          <div className='relative' onMouseLeave={() => showMenu(null)} ref={communityRef}>
+          <div className='relative' onMouseLeave={() => scheduleClose('community')} ref={communityRef}>
             <NavItem
               text='Community'
               href='/community'
@@ -209,7 +245,15 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               onMouseEnter={() => showMenu('community')}
               hasDropdown
             />
-            {open === 'community' && <CommunityPanel />}
+            <div
+              data-testid='Navbar-community-panel-wrapper'
+              onMouseEnter={() => showMenu('community')}
+              className={`pointer-events-none transition-all duration-500 ease-in-out transform origin-top will-change-transform ${
+                open === 'community' ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-6'
+              }`}
+            >
+              <CommunityPanel open={open === 'community'} />
+            </div>
           </div>
 
           {otherItems.map((item, index) => (
