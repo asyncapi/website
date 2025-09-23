@@ -35,3 +35,4 @@ describe('Footer Links Validation', () => {
     footer.verifyFooterLink(footerMiscData.netlifyLink, '');
   });
 });
+
