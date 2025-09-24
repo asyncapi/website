@@ -75,4 +75,4 @@ asyncapi:
   tools: |
     TransferGo relies on [AsyncAPI CLI](https://github.com/asyncapi/cli), [AsyncAPI React](https://github.com/asyncapi/asyncapi-react), [AsyncAPI Modelina](https://github.com/asyncapi/modelina), [Port.io Developer Portal](https://www.port.io/), [Event Catalog](https://www.eventcatalog.dev/), [Microcks](https://microcks.io/), [LocalStack](https://github.com/localstack/localstack), and API Guardian (internal CLI).
   fullExample: resources/casestudies/transfergo/asyncapi.yaml
-additionalResources: ''
+additionalResources: See [slides from 2023](https://drive.google.com/file/d/1t7tYMr8FMRInaZV0lWod1QfDuhhSjwBJ/view?usp=sharing) that show early days of adoption
