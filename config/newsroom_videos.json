@@ -1,5 +1,23 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/gn6765Le_zQ/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting, Tuesday September 23rd 2025",
+    "description": "https://github.com/asyncapi/community/issues/2066.",
+    "videoId": "gn6765Le_zQ"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/7e01rDjnVpY/hqdefault.jpg",
+    "title": "Governance Board Meeting, Monday September 15th 2025",
+    "description": "https://github.com/asyncapi/community/issues/2069.",
+    "videoId": "7e01rDjnVpY"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/m-aLlapR2Mg/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting , Tuesday September 9th 2025",
+    "description": "https://github.com/asyncapi/community/issues/2060.",
+    "videoId": "m-aLlapR2Mg"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/XjckzYopxoA/hqdefault.jpg",
     "title": "AsyncAPI Mentorship Program Wrap-Up - 2024",
     "description": "The livestream will serve as the official wrap-up of the AsyncAPI 2024 Mentorship Program. It's an opportunity for mentors and ...",
@@ -10,23 +28,5 @@
     "title": "AsyncAPI Community WG Meeting , Tuesday Auguest 12th 2025",
     "description": "https://github.com/asyncapi/community/issues/2014.",
     "videoId": "ncOFU__8hLM"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/7vvdmDVZPX0/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting , Tuesday July 29th 2025",
-    "description": "https://github.com/asyncapi/community/issues/1988.",
-    "videoId": "7vvdmDVZPX0"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/SaIPQaROWsc/hqdefault.jpg",
-    "title": "First Meeting of New Governance Board , Tuesday July 29th 2025",
-    "description": "https://github.com/asyncapi/community/issues/1989.",
-    "videoId": "SaIPQaROWsc"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/xD5smwg6az8/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting , Tuesday July 29th 2025",
-    "description": "https://github.com/asyncapi/community/issues/1988.",
-    "videoId": "xD5smwg6az8"
   }
 ]
