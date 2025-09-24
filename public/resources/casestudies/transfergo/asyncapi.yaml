@@ -1,16 +1,15 @@
-asyncapi: '2.6.0'
+asyncapi: 3.0.0
 info:
   title: Remittance Service Event Bus Example
-  version: '1.0.0'
+  version: 1.0.0
   description: |
     Example AsyncAPI 2.6.0 model for a Remittance Service.
     A user makes a cross-border transaction request.
     Events are published to AWS SNS, which pushes them to an SQS queue.
     Downstream services consume the event from SQS.
-
 servers:
   aws:
-    url: 'https://{service}.{region}.amazonaws.com'
+    host: '{service}.{region}.amazonaws.com'
     protocol: https
     description: AWS endpoints for SNS and SQS.
     variables:
@@ -22,24 +21,37 @@ servers:
       region:
         default: us-east-1
         description: AWS region used for the SNS/SQS resources.
-
 channels:
-  sns/remittance-transactions-topic:
+  remittance-transactions-topic:
+    address: sns/remittance-transactions-topic
+    messages:
+      publishRemittanceTransactionToSNS:
+        $ref: '#/components/messages/RemittanceTransactionRequested'
     description: SNS topic for remittance transaction events.
-    publish:
-      operationId: publishRemittanceTransactionToSNS
-      summary: Publish RemittanceTransactionRequested event to SNS topic
-      message:
+  remittance-transactions-queue:
+    address: sqs/remittance-transactions-queue
+    messages:
+      consumeRemittanceTransactionFromSQS:
         $ref: '#/components/messages/RemittanceTransactionRequested'
-
-  sqs/remittance-transactions-queue:
-    description: SQS queue that receives messages forwarded from SNS topic via subscription.
-    subscribe:
-      operationId: consumeRemittanceTransactionFromSQS
-      summary: Consumer service polls SQS to consume RemittanceTransactionRequested events.
-      message:
-        $ref: '#/components/messages/RemittanceTransactionRequested'
-
+    description: SQS queue that receives messages forwarded from SNS topic via
+      subscription.
+operations:
+  publishRemittanceTransactionToSNS:
+    action: receive
+    channel:
+      $ref: '#/channels/remittance-transactions-topic'
+    summary: Publish RemittanceTransactionRequested event to SNS topic
+    messages:
+      - $ref: '#/channels/remittance-transactions-topic/messages/publishRemittanceTransactionToSNS'
+  consumeRemittanceTransactionFromSQS:
+    action: send
+    channel:
+      $ref: '#/channels/remittance-transactions-queue'
+    summary: >-
+      Consumer service polls SQS to consume RemittanceTransactionRequested
+      events.
+    messages:
+      - $ref: '#/channels/remittance-transactions-queue/messages/consumeRemittanceTransactionFromSQS'
 components:
   messages:
     RemittanceTransactionRequested:
@@ -118,17 +130,17 @@ components:
         - name: remittance.transaction.requested.example
           summary: Example remittance transaction request
           payload:
-            transactionId: "33333333-3333-3333-3333-333333333333"
-            transactionType: "remittance.requested"
-            createdAt: "2025-09-16T10:15:00Z"
+            transactionId: 33333333-3333-3333-3333-333333333333
+            transactionType: remittance.requested
+            createdAt: '2025-09-16T10:15:00Z'
             sender:
-              name: "Jonas Petrauskas"
-              email: "jonas.petrauskas@example.lt"
-              country: "LT"
+              name: Jonas Petrauskas
+              email: jonas.petrauskas@example.lt
+              country: LT
             receiver:
-              name: "Olena Shevchenko"
-              email: "olena.shevchenko@example.ua"
-              country: "UA"
-            amount: 750.00
-            currency: "EUR"
-            paymentMethod: "wire_transfer"
+              name: Olena Shevchenko
+              email: olena.shevchenko@example.ua
+              country: UA
+            amount: 750
+            currency: EUR
+            paymentMethod: wire_transfer
