@@ -73,7 +73,6 @@ export const newsLinks: NewsLink[] = [
   }
 ];
 
-
 export const footerMiscData = {
   netlifyLink: 'https://netlify.com'
 };

@@ -4,7 +4,7 @@ import {
   socialMediaData, 
   newsLinks, 
   footerMiscData 
-} from '../components/footer/footerData';
+} from '../components/footer/FooterData';
 
 describe('Footer Links Validation', () => {
   const footer = new Footer();
