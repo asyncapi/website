@@ -1,7 +1,6 @@
 class BasePage {
-  visit(path = '/') {
-    cy.visit(path);
-    return this;
+  visit() {
+    cy.visit('/');
   }
 
   verifyLink(href, text, attr = 'href') {
