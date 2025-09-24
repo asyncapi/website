@@ -1,24 +1,10 @@
 [
   {
-    "title": "AsyncAPI Community WG Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=dTFtbm1jZXJnbWowbDVvNjlmdmJqdDA0cjQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1919",
-    "banner": "https://github.com/user-attachments/assets/e0c22c5a-94a8-488c-970c-14aa1697283c",
-    "date": "2025-06-03T15:00:00.000Z"
-  },
-  {
     "title": "Marketing WG Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=MnNmMmtnbzI2MDdicXZmbWtsMnYyZWNrYTAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/1925",
     "banner": "",
     "date": "2025-10-06T14:00:00.000Z"
-  },
-  {
-    "title": "Marketing WG Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=am9saTZzYThlNjRobXN2M3NzZTN1YTFxbGsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1927",
-    "banner": "",
-    "date": "2025-06-10T14:00:00.000Z"
   },
   {
     "title": "AsyncAPI Design WG Meeting",
@@ -124,5 +110,33 @@
     "url": "https://github.com/asyncapi/community/issues/2060",
     "banner": "https://github.com/user-attachments/assets/e0c22c5a-94a8-488c-970c-14aa1697283c",
     "date": "2025-09-09T15:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI Community WG Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=N3A1ajdoOHFwdnM1MGVpNG9yYmNqaDBvNDQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/2066",
+    "banner": "https://github.com/user-attachments/assets/e0c22c5a-94a8-488c-970c-14aa1697283c",
+    "date": "2025-09-23T15:00:00.000Z"
+  },
+  {
+    "title": "Governance Board Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=aW1wZWFmNGpuM291YTRtbXRkZTM2cWVkcW8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/2069",
+    "banner": "",
+    "date": "2025-09-15T16:00:00.000Z"
+  },
+  {
+    "title": "Governance Board Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=dnE5YXNkMTVvY2wxY2JjbmdpOWhhYWZmZmMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/2073",
+    "banner": "",
+    "date": "2025-09-02T16:00:00.000Z"
+  },
+  {
+    "title": "Governance Board Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=ZmpvZTljZzdkY2pkcXZiczV2MmM1YnE4Y2MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/2074",
+    "banner": "",
+    "date": "2025-09-29T16:00:00.000Z"
   }
 ]
