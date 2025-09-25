@@ -7,7 +7,7 @@ tags: ['transfergo','fintech','asyncapi','modelina', 'event-catalog', 'microcks'
 cover: /img/posts/may-2021-at-asyncapi/cover.webp
 authors:
   - name: Zbigniew Malcherczyk
-    photo: /img/avatars/lpgornicki.webp
+    photo: https://avatars.githubusercontent.com/u/17534504?v=4
     link: https://www.linkedin.com/in/zbigniew-malcherczyk/
     byline: TransferGo Staff Engineer at Developer Experience Team
 excerpt: |
