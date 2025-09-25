@@ -37,7 +37,7 @@ Therefore, the majority of the systems rely on Event Driven Architecture.
 That is asynchronous communication which is sorely built on Amazon Web Services (AWS) and its flag products, Simple Notification
 Service (SNS) and Simple Queue Service (SQS), with a pinch of Kafka.
 
-![](/img/posts/transfergo/light/0.png#gh-light-mode-only)
+![Async Communication flow](/img/posts/transfergo/light/0.png#gh-light-mode-only)
 
 ## How it started?
 
@@ -143,9 +143,9 @@ The [Event Catalog](https://www.eventcatalog.dev/) project, done by [David](http
 show the big picture and significantly showcased scenarios that required our attention. Below, you can find our process
 of gathering schemas and building event catalog from Async API files.
 
-![](/img/posts/transfergo/light/1.png#gh-light-mode-only)
+![Service documentation generation pipeline](/img/posts/transfergo/light/1.png#gh-light-mode-only)
 
-![](/img/posts/transfergo/light/2.png#gh-light-mode-only)
+![Event Catalog Building pipeline](/img/posts/transfergo/light/2.png#gh-light-mode-only)
 
 ### Contract Testing
 
@@ -174,7 +174,7 @@ sends test messages through LocalStack, and we validate that our Symfony workers
 This approach has helped us detect contract issues early, maintain clear communication boundaries between services,
 and keep our integration tests fast and reliable.
 
-![](/img/posts/transfergo/light/microcks.png#gh-light-mode-only)
+![Chart presenting how TransferGo adopts Microcks](/img/posts/transfergo/light/microcks.png#gh-light-mode-only)
 
 ### API Coverage
 
@@ -213,7 +213,7 @@ node asyncapi-coverage
 
 ## The Big Picture
 
-![](/img/posts/transfergo/light/big-picture.png#gh-light-mode-only)
+![TransferGo Big Picture Architecture](/img/posts/transfergo/light/big-picture.png#gh-light-mode-only)
 
 ## Summary
 
