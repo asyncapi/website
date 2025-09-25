@@ -20,7 +20,7 @@ excerpt: |
   across its event-driven architecture.
 ---
 
-# Case Study TransferGo <> AsyncAPI
+# Case Study TransferGo AsyncAPI
 
 ## Introduction
 
