@@ -21,7 +21,7 @@ solution: |
 
   For accessibility, TransferGo automated publishing of AsyncAPI definitions using GitHub Actions. Schemas are stored in S3 and surfaced through Port.io Developer Portal, providing a single interface for developers to browse, search, and visualize service contracts.
 
-  At scale, TransferGo introduced Event Catalog to map their 300+ channels and highlight integration gaps. For testing, they adopted contract testing with Microcks and LocalStack, integrated into Jenkins CI, enabling validation of service interactions against AsyncAPI definitions. Finally, their internal CLI tool, API Guardian, helps ensure schema coverage by comparing AsyncAPI definitions with deployed infrastructure.
+  At scale, TransferGo introduced [Event Catalog](https://www.eventcatalog.dev/) to map their 300+ channels and highlight integration gaps. For testing, they adopted contract testing with [Microcks](https://microcks.io/) and LocalStack, integrated into Jenkins CI, enabling validation of service interactions against AsyncAPI definitions. Finally, their internal CLI tool, API Guardian, helps ensure schema coverage by comparing AsyncAPI definitions with deployed infrastructure.
 
 technical:
   languages:
@@ -54,9 +54,10 @@ schemas:
 
 asyncapi:
   usecase: |
-    TransferGo uses AsyncAPI to unify async API documentation across services, generate schemas from code via internal libraries, validate and optimize schemas in CI pipelines, publish schemas to Port.io Developer Portal for centralized access, build an Event Catalog for visibility into 300+ channels, and support contract testing with Microcks.
+    TransferGo uses AsyncAPI to unify async API documentation across services, generate schemas from code via internal libraries, validate and optimize schemas in CI pipelines, publish schemas to Port.io Developer Portal for centralized access, build an [Event Catalog](https://www.eventcatalog.dev/) for visibility into 300+ channels, and support contract testing with [Microcks](https://microcks.io/).
   versions:
     - '2.6.0'
+    - '3.0.0'
   storage: |
     Schemas are stored in GitHub repositories and automatically published to an S3 bucket. Port.io Developer Portal ingests these schemas to make them accessible to developers.
   editing: |
