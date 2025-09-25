@@ -49,11 +49,11 @@ This is what you need to do to kick it off:
 
 1. Log into [Restream.io](https://app.restream.io/home) and select `Encoder|RMTP (Stream from OBS,Zoom,VMix,etc.)` option:
 
-    <img src="../../assets/meetings/stream1.png" width="50%" alt="Restream: Encoder | RTMP option selected"/>
+    <img src="https://raw.githubusercontent.com/asyncapi/community/master/assets/meetings/stream1.png" width="50%" alt="Restream: Encoder | RTMP option selected"/>
 
 1. Click `Update Titles` card:
 
-    <img src="../../assets/meetings/stream2.png" width="50%" alt="Restream: Update Titles card" />
+    <img src="https://raw.githubusercontent.com/asyncapi/community/master/assets/meetings/stream2.png" width="50%" alt="Restream: Update Titles card" />
 
 1. Provide title and description:
 
@@ -61,23 +61,23 @@ This is what you need to do to kick it off:
    - Provide a meeting description even if you plan to leave it brief; otherwise, the previous description from another stream might be reused.
    - Add a thumbnail for the stream, as platforms like YouTube require one.
 
-    <img src="../../assets/meetings/stream3.png" width="50%" alt="Restream: Provide title, description, and thumbnail screen" />
+    <img src="https://raw.githubusercontent.com/asyncapi/community/master/assets/meetings/stream3.png" width="50%" alt="Restream: Provide title, description, and thumbnail screen" />
 
 1. In Zoom, click the `Live Transcript` button to start transcribing the meeting:
 
-    ![Live Transcript](../../assets/meetings/zoom1.png)
+    ![Live Transcript](https://raw.githubusercontent.com/asyncapi/community/master/assets/meetings/zoom1.png)
 
 1. Confirm transcriptions with `Enable` button:
 
-    ![Enable Transcript](../../assets/meetings/zoom2.png)
+    ![Enable Transcript](https://raw.githubusercontent.com/asyncapi/community/master/assets/meetings/zoom2.png)
 
 1. Click `More`:
 
-    ![More Options](../../assets/meetings/zoom3.png)
+    ![More Options](https://raw.githubusercontent.com/asyncapi/community/master/assets/meetings/zoom3.png)
 
 1. Select `Live on Custom Live Stream Service` option to start streaming to Restream and, therefore, to official AsyncAPI social networks:
 
-    ![Live on Custom Live Stream Service](../../assets/meetings/zoom4.png)
+    ![Live on Custom Live Stream Service](https://raw.githubusercontent.com/asyncapi/community/master/assets/meetings/zoom4.png)
 
 #### Restream-first
 
@@ -87,48 +87,48 @@ This is what you need to do to kick it off:
 
 1. In [YouTube](https://youtube.com), click on your profile picture and select `Switch account`:
 
-    <img src="../../assets/meetings/yt1.png" width="40%" alt="Switch account to AsyncAPI"/>
+    <img src="https://raw.githubusercontent.com/asyncapi/community/master/assets/meetings/yt1.png" width="40%" alt="Switch account to AsyncAPI"/>
 
 1. Select `AsyncAPI`. If you do not see it on the list, it means you did not have all the access rights needed to set up a live stream:
 
-    <img src="../../assets/meetings/yt2.png" width="40%" alt="AsyncAPI option" />
+    <img src="https://raw.githubusercontent.com/asyncapi/community/master/assets/meetings/yt2.png" width="40%" alt="AsyncAPI option" />
 
 1. Click on `Create` and select `Go live`:
 
-    <img src="../../assets/meetings/yt3.png" width="40%" alt="Create and Go Live options"/>
+    <img src="https://raw.githubusercontent.com/asyncapi/community/master/assets/meetings/yt3.png" width="40%" alt="Create and Go Live options"/>
 
-1. Once a new live stream is created, in the list of `Upcoming` streams, click `View in Live Control Room` <img src="../../assets/meetings/yt5.png" width="3%" alt="Live icon" /> icon next to your live stream:
+1. Once a new live stream is created, in the list of `Upcoming` streams, click `View in Live Control Room` <img src="https://raw.githubusercontent.com/asyncapi/community/master/assets/meetings/yt5.png" width="3%" alt="Live icon" /> icon next to your live stream:
 
-    <img src="../../assets/meetings/yt4.png" width="50%" alt="View in Live Control Room"/>
+    <img src="https://raw.githubusercontent.com/asyncapi/community/master/assets/meetings/yt4.png" width="50%" alt="View in Live Control Room"/>
 
 1. Enable `Closed captions`:
 
-    <img src="../../assets/meetings/yt6.png" width="50%" alt="Enable closed captions button"/>
+    <img src="https://raw.githubusercontent.com/asyncapi/community/master/assets/meetings/yt6.png" width="50%" alt="Enable closed captions button"/>
 
 1. Log into [Restream.io](https://app.restream.io/home) and select `Start with Studio` option:
 
-    <img src="../../assets/meetings/restream1.png" width="50%" alt="Restream: Start with studio option" />
+    <img src="https://raw.githubusercontent.com/asyncapi/community/master/assets/meetings/restream1.png" width="50%" alt="Restream: Start with studio option" />
 
 1. After enabling the audio, video and providing the name, you will see a Restream Studio. 
 
 1. `Edit` the title and description of the stream:
 
-    <img src="../../assets/meetings/restream4.png" width="50%" alt="Restream: edit title and description" />
+    <img src="https://raw.githubusercontent.com/asyncapi/community/master/assets/meetings/restream4.png" width="50%" alt="Restream: edit title and description" />
 
 1. Provide title and description and click `Next`:
 
     - Title for the live stream that corresponds with the meeting you just started,
     - Meeting description must be provided even if the field is empty; otherwise, the old one from other streams will be used.
 
-    <img src="../../assets/meetings/restream5.png" width="50%" alt="Restream: Providing stream details"/>
+    <img src="https://raw.githubusercontent.com/asyncapi/community/master/assets/meetings/restream5.png" width="50%" alt="Restream: Providing stream details"/>
 
 1. `Edit` YouTube destination:
 
-    <img src="../../assets/meetings/restream6.png" width="40%" alt="Restream: YouTube destination" />
+    <img src="https://raw.githubusercontent.com/asyncapi/community/master/assets/meetings/restream6.png" width="40%" alt="Restream: YouTube destination" />
 
 1. Make sure you do not create a new event, but select the one you already created on YouTube, with closed captions on:
 
-    <img src="../../assets/meetings/restream7.png" width="40%" alt="Restream: Create event" />
+    <img src="https://raw.githubusercontent.com/asyncapi/community/master/assets/meetings/restream7.png" width="40%" alt="Restream: Create event" />
 
 1. You are ready to `Go Live`
 
