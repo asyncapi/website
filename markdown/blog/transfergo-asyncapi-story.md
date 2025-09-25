@@ -3,7 +3,7 @@ title: How TransferGo adopted AsyncAPI
 date: 2025-09-25T7:26:58+02:00
 type: Marketing
 canonical: transfergo-asyncapi
-tags: ['transfergo','fintech','asyncapi','modelina', 'event-catalog', 'microcks']
+tags: ['transfergo', 'fintech', 'asyncapi', 'modelina', 'event-catalog', 'microcks']
 cover: /img/posts/may-2021-at-asyncapi/cover.webp
 authors:
   - name: Zbigniew Malcherczyk
@@ -54,10 +54,10 @@ didn't advocate for an API-first approach, as the code is a source of truth for 
 repeating the same information over and over, the backend guild rolled out a unique internal library that based on
 Reflection builds message payload from its Data Transfer Object (DTO).
 
-This combination enables your enginner to:
+This combination enables your engineer to:
 
-* Ease the introduction for an enginners
-* Less repetitions in the code
+* Ease the introduction for an engineers
+* Fewer repetitions in the code
 * Ensures standard across company
 * Enables seamless upgrades between Async API versions
 
@@ -167,7 +167,7 @@ Our message-driven architecture includes Symfony-based workers that consume real
 To test these components properly without relying on cloud infrastructure, we use LocalStack to emulate AWS services locally.
 This lets us run realistic, end-to-end contract tests as part of our pipeline.
 
-We’ve integrated this setup into our Jenkins CI pipeline. During test runs, we bootstrap Microcks with our AsyncAPI definitions,
+We’ve integrated this setup into our [Jenkins](https://www.jenkins.io/) CI pipeline. During test runs, we bootstrap Microcks with our AsyncAPI definitions,
 which describe the expected message structure and communication channels. Once the services and workers are up, Microcks
 sends test messages through LocalStack, and we validate that our Symfony workers process them as expected.
 
