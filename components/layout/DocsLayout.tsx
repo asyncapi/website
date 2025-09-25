@@ -158,8 +158,9 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                     </p>
                   </div>
                   {post.releaseNoteLink && (
-                    // show only when it is related to specification (/docs/reference/specification) AND is not a pre-release
-                    // for example, if the post's title is "3.0.0 (Pre-release)", which will not have RN, so do not render this section.
+                    // show only when it is related to specification (/docs/reference/specification)
+                    // AND is not a pre-release. For example, if the post's title is "3.0.0 (Pre-release)",
+                    // which will not have RN, so do not render this section.
                     <div className='mt-5 w-full rounded-lg bg-secondary-100 px-2 py-3 text-center'>
                       <div>
                         <span className='font-sans text-sm text-gray-800 antialiased'>

@@ -64,7 +64,7 @@ export default function Index() {
             <Button
               className='mt-10 block text-center focus:outline-none md:inline-block'
               text='Become an AsyncAPI Ambassador'
-              href='https://github.com/asyncapi/community/blob/master/AMBASSADOR_ORGANIZATION.md#are-you-interested-in-becoming-an-official-asyncapi-ambassador'
+              href='https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/AMBASSADOR_PROGRAM.md'
               target='_blank'
             />
           </div>
@@ -92,7 +92,7 @@ export default function Index() {
         </div>
         <ul className='mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4'>
           {ambassadorList.contents.map((link) => (
-            <li key={link.title} className='flex flex-col items-center justify-center' data-testid='Ambassadors-list'>
+            <li key={link.title} className='flex flex-col items-center justify-start' data-testid='Ambassadors-list'>
               <img src={link.icon} alt={link.title} className='mt-20 w-[200px]' />
               <Heading typeStyle={HeadingTypeStyle.xs} className='mt-5'>
                 {link.title}

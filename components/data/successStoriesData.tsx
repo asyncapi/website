@@ -1,4 +1,4 @@
-// Code: Used this file as tsx file to extend the description field as JSX.Element
+// Code: Used this file as tsx file to extend the description field as React.JSX.Element
 import React from 'react';
 
 import TextLink from '../typography/TextLink';
@@ -8,7 +8,7 @@ import TextLink from '../typography/TextLink';
  * @param {React.ReactNode} props.children contain descriptions of each story
  */
 export function DescriptionComponent({ children }: { children: React.ReactNode }) {
-  return <React.Fragment>{children}</React.Fragment>;
+  return children;
 }
 
 export const successStories = [

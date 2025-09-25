@@ -16,22 +16,15 @@ import Paragraph from '../../components/typography/Paragraph';
 /**
  * @description Render the buttons for the Generator page.
  */
-function renderButtons(): JSX.Element {
+function renderButtons(): React.JSX.Element {
   return (
-    <div className='mt-8 flex flex-wrap gap-4'>
-      {/* <Button
-        text="Learn more"
-        href="/docs/tools/generator"
-        iconPosition="left"
-        icon={<IconRocket className="inline-block w-6 h-6 -mt-1" />}
-        className="w-full mb-2 sm:w-auto sm:mb-0 sm:mr-2"
-      /> */}
+    <div className='mt-8 flex flex-col gap-4 md:flex-row md:flex-wrap md:justify-center lg:justify-start'>
       <GithubButton
         text='View on Github'
-        className='w-full text-center sm:w-fit sm:text-left'
+        className='w-full text-center md:w-auto md:text-left'
         href='https://www.github.com/asyncapi/generator'
       />
-      <Button text='View Docs' href='/docs/tools/generator' className='w-full text-center sm:w-fit sm:text-left' />
+      <Button text='View Docs' href='/docs/tools/generator' className='w-full text-center md:w-auto md:text-left' />
     </div>
   );
 }
@@ -53,7 +46,7 @@ export default function GeneratorPage() {
               Docs, Code, Anything!
             </Heading>
             <Paragraph className='mt-4'>{description}</Paragraph>
-            <img src={generatorimage} alt='generator diagram' className=' mx-auto h-auto lg:w-1/2 object-cover' />
+            <img src={generatorimage} alt='generator diagram' className=' mx-auto h-auto object-cover lg:w-1/2' />
           </div>
 
           <div className='relative mt-12 lg:mt-20 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8'>

@@ -61,17 +61,17 @@ export default function Newsroom() {
             Read about what people are <br /> saying about AsyncAPI
           </Paragraph>
           <div className='my-5' data-testid='Newsroom-Twitter-Link'>
-            <TextLink href='https://twitter.com/AsyncAPISpec' className='mt-4' target='_blank'>
+            <TextLink href='https://twitter.com/AsyncAPISpec' className='mt-4 flex items-center' target='_blank'>
               Follow us on Twitter
-              <ArrowRight className='inline w-6' />
+              <ArrowRight className='ml-2 w-6' />
             </TextLink>
           </div>
         </div>
 
-        <div className='w-full flex-row items-stretch justify-between md:flex md:h-120 lg:w-3/4'>
-          <div className='relative flex w-full flex-col overflow-y-auto md:w-1/2'>
+        <div className='w-full flex-row items-stretch justify-between md:flex lg:w-3/4'>
+          <div className='relative flex max-h-96 w-full flex-col overflow-y-auto'>
             <div className='min-h-0'>
-              <div className='md:t-0 md:b-0 md:l-0 md:r-0 size-full md:absolute'>
+              <div className='size-full'>
                 <NewsroomArticle />
               </div>
             </div>

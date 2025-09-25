@@ -89,9 +89,10 @@ function TOCItem({ item, index, currSelected, closeMenu }: TOCItemProps) {
     <>
       <nav className='relative block max-w-max'>
         <a
-          className={`font-normal mb-1 flex items-center font-sans text-sm text-gray-900 antialiased transition duration-100 ease-in-out hover:underline ${
+          className={twMerge(
+            'font-normal mb-1 flex items-center font-sans text-sm text-gray-900 antialiased transition duration-100 ease-in-out hover:underline',
             active && 'font-bold text-primary-500'
-          }`}
+          )}
           href={`#${item.slug}`}
           key={index}
           style={{ marginLeft: `${(item.lvl - 1) * 16}px` }}

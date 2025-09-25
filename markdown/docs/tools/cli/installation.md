@@ -162,7 +162,27 @@ curl -OL https://github.com/asyncapi/cli/releases/download/<replace this with th
 ```
 
 ### Other distros
-You can install the AsyncAPI CLI for other Linux distros using the archive `tar.gz` file. To download the latest release of the CLI, run this command in your terminal:
+You can install the AsyncAPI CLI for other Linux distros using the archive `tar.gz` file. 
+
+#### For Alpine Linux / musl-based systems:
+To download the latest Alpine-compatible release, run this command in your terminal:
+```sh
+curl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi-alpine.tar.gz
+```
+
+To download a specific Alpine-compatible release, run this command in your terminal:
+```sh
+curl -OL https://github.com/asyncapi/cli/releases/download/<replace this with the specific CLI version e.g v0.13.0>/asyncapi-alpine.tar.gz
+```
+
+Once downloaded, untar the file:
+```sh
+tar -xzf asyncapi-alpine.tar.gz
+```
+
+#### For other Linux distributions (glibc-based):
+
+To download the latest release of the CLI, run this command in your terminal:
 ```sh
 curl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi.tar.gz
 ```
@@ -176,6 +196,8 @@ Once you have downloaded the archived file, untar it by running this command in 
 ```sh
 tar -xzf asyncapi.tar.gz
 ```
+
+### Setting up the symlink (for both Alpine and glibc versions):
 
 The step above will create an `AsyncAPI` directory in the current path. To run the CLI from anywhere, you must create a `symlink`. If the current path you are on is `/user/local/bin`, for example, you must create the `symlink` in the `/user/local/bin` directory by following these steps:
 ```sh
@@ -191,3 +213,5 @@ ln -s <absolute-path>/bin/asyncapi /user/local/bin/asyncapi
 # The "asyncapi" command should be available to be used
 asyncapi
 ```
+> [!NOTE]
+> If youare using Alpine Linux or any musl-based distribution, make sure to download the `-alpine.tar.gz` version to avoid glibc compatibility issues. The regular `asyncapi.tar.gz` file is compiled for glibc-based systems and will not work on Alpine.

@@ -192,7 +192,7 @@ operations:
 ```
 
 ## Messages instead of message
-In v2, channels were defined with one or more messages using the `oneOf` property.
+In v2, channels were defined with one or more messages through the operation using the `oneOf` property.
 
 In v3, messages are defined using the [Messages Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#messagesObject). For a channel with multiple messages, you specify multiple key-value pairs. For a channel with just one message, you use a single key-value pair.
 
@@ -201,20 +201,24 @@ asyncapi: 2.6.0
 ...
 channels:
   user/signedup:
-    message: 
-      oneOf:
-        - messageId: UserMessage
-          ...
-        - messageId: UserMessage2
-          ...
+    publish:
+      ...
+      message: 
+        oneOf:
+          - messageId: UserMessage
+            ...
+          - messageId: UserMessage2
+            ...
 
 asyncapi: 2.6.0
 ...
 channels:
   user/signedup:
-    message: 
-      messageId: UserMessage
+    publish:
       ...
+      message: 
+        messageId: UserMessage
+        ...
 ```
 
 ```yml
@@ -265,10 +269,10 @@ components:
       type: oauth2
       flows:
         implicit:
-          authorizationUrl: https://example.com/api/oauth/dialog
+          authorizationUrl: 'https://example.com/api/oauth/dialog'
           availableScopes:
-            write:pets: modify pets in your account
-            read:pets: read your pets
+            'write:pets': modify pets in your account
+            'read:pets': read your pets
       scopes:
         - 'write:pets'
 ```
@@ -291,10 +295,10 @@ components:
       type: oauth2
       flows:
         implicit:
-          authorizationUrl: https://example.com/api/oauth/dialog
+          authorizationUrl: 'https://example.com/api/oauth/dialog'
           availableScopes:
-            write:pets: modify pets in your account
-            read:pets: read your pets
+            'write:pets': modify pets in your account
+            'read:pets': read your pets
       scopes:
         - "write:pets"
 ```

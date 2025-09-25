@@ -18,7 +18,7 @@ interface ILayoutProps {
  * @description The layout with the content
  * @param props.children - The content of the layout
  */
-export default function Layout({ children }: ILayoutProps): JSX.Element {
+export default function Layout({ children }: ILayoutProps): React.JSX.Element {
   const { pathname } = useRouter();
   const posts = getAllPosts();
   const allDocPosts = posts.docs.filter((p) => p.slug.startsWith('/docs/')) as unknown as NavigationItems;
@@ -58,5 +58,5 @@ export default function Layout({ children }: ILayoutProps): JSX.Element {
     return <GenericPostLayout post={post as unknown as IPosts['blog'][number]}>{children}</GenericPostLayout>;
   }
 
-  return children as JSX.Element;
+  return children as React.JSX.Element;
 }

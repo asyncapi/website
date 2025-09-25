@@ -5,6 +5,7 @@ import IconContributing from '../icons/Contributing';
 import IconDashboard from '../icons/Dashboard';
 import IconGithubOrganization from '../icons/GithubOrganization';
 import IconMeetings from '../icons/Meetings';
+import IconModelina from '../icons/Modelina';
 import IconNewsroom from '../icons/Newsroom';
 import IconSlack from '../icons/Slack';
 import IconTSC from '../icons/TSC';
@@ -51,6 +52,12 @@ const communityItems: CommunityItem[] = [
     title: 'Ambassadors',
     href: '/community/ambassadors',
     description: 'Passionate about APIs? Become an AsyncAPI Ambassador and help shape the future of APIs.'
+  },
+  {
+    icon: IconModelina,
+    title: 'Board Members',
+    href: '/community/board',
+    description: 'Get to know what is a Board member, how you can become one, and meet our current board members.'
   },
   {
     icon: IconDashboard,

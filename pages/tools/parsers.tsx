@@ -48,7 +48,7 @@ console.log(doc.info().title())
 /**
  * @description Render the buttons for the Parsers page.
  */
-function renderButtons(): JSX.Element {
+function renderButtons(): React.JSX.Element {
   return (
     <div className='mt-8'>
       {/* <Button

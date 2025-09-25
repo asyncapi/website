@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 /**
- * @returns {JSX.Element} The ScrollButton component
+ * @returns {React.JSX.Element} The ScrollButton component
  * @description The ScrollButton component is a button that scrolls the user to the top of the page.
  */
 function ScrollButton() {

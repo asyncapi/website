@@ -188,7 +188,8 @@ export default function CommunityIndexPage() {
               tagline='Finance'
               icon='💰'
               heading='Track Initiative Spending with Budget Analysis'
-              description="Explore our transparent finance section for a detailed analysis of our project's budget. See how we track expenses and gain insights into funds allocation."
+              description="Explore our transparent finance section for a detailed analysis of our project's budget.
+               See how we track expenses and gain insights into funds allocation."
               bg='bg-white'
               link='/finance'
             />

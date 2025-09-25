@@ -2,6 +2,7 @@
   "extends": [
     "airbnb-base",
     "next/core-web-vitals",
+    "airbnb-typescript",
     "eslint:recommended",
     "plugin:prettier/recommended",
     "plugin:storybook/recommended"
@@ -14,8 +15,17 @@
   },
   "plugins": [
     "react",
-    "jsx-a11y"
+    "jsx-a11y",
+    "import",
+    "react-hooks",
+    "@typescript-eslint",
+    "tailwindcss",
+    "unused-imports",
+    "simple-import-sort"
   ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "rules": {
     "prettier/prettier": [
       "error",
@@ -24,7 +34,7 @@
         "endOfLine": "auto",
         "semi": true,
         "tabWidth": 2,
-        "trailingComma": "none",
+        "trailingComma": "none", // Ensure no trailing commas in code
         "arrowParens": "always",
         "bracketSpacing": true,
         "jsxBracketSameLine": false,
@@ -43,274 +53,269 @@
         "ignoreUrls": true,
         "ignorePattern": "(className=\\{[\\s\\S]*\\}|.*\\}|'.*'|className='.*')" // Ignore classnames
       }
-    ]
-  },
-  "globals": {
-    "React": true,
-    "expect": true,
-    "jsdom": true,
-    "JSX": true
+    ],
+    "react/jsx-filename-extension": [
+      "error",
+      { "extensions": [".jsx", ".tsx"] }
+    ],
+    "react/jsx-no-useless-fragment": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["**/*.test.js", "**/*.spec.js", "**/setupTests.js"] }
+    ],
+    "no-console": "error",
+    "no-debugger": "error",
+    "no-alert": "error",
+    "no-var": "error",
+    "prefer-const": "error",
+    "prefer-arrow-callback": "error",
+    "no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
+    ],
+    "react/destructuring-assignment": 2, // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "off", // _app.tsx uses spread operator and also, react-hook-form
+    "react-hooks/exhaustive-deps": "warn", // Incorrectly report needed dependency with Next.js router
+    "@next/next/no-img-element": "off", // We currently not using next/image because it isn't supported with SSG mode
+    "@next/next/link-passhref": "off", // Only needed when the child of Link wraps an <a> tag
+    "@typescript-eslint/comma-dangle": "off", // Avoid conflict rule between Eslint and Prettier
+    "@typescript-eslint/indent": "off", // Avoid conflict rule between Eslint and Prettier
+    "@typescript-eslint/consistent-type-imports": "error", // Ensure `import type` is used when it's necessary
+    "no-restricted-syntax": [
+      "error",
+      "ForInStatement",
+      "LabeledStatement",
+      "WithStatement"
+    ], // Overrides Airbnb configuration and enable no-restricted-syntax
+    "import/prefer-default-export": "off", // Named export is easier to refactor automatically
+    "tailwindcss/no-custom-classname": "off", // Disabled otherwise nightmare to allow each custom tailwind classes
+    "simple-import-sort/imports": "error", // Import configuration for `eslint-plugin-simple-import-sort`
+    "simple-import-sort/exports": "error", // Export configuration for `eslint-plugin-simple-import-sort`
+    "@typescript-eslint/no-unused-vars": "error",
+    "class-methods-use-this": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    // Variables
+    "init-declarations": "off",
+    "no-catch-shadow": "off",
+    "no-delete-var": "error",
+    "no-label-var": "error",
+    "no-restricted-globals": "error",
+    "no-shadow": "off",
+    "no-shadow-restricted-names": "error",
+    "no-undef": "error",
+    "no-undef-init": "error",
+    "no-undefined": "off",
+    "no-use-before-define": "error",
+    // Styling
+    "array-bracket-newline": "off",
+    "array-bracket-spacing": "error",
+    "array-element-newline": "off",
+    "block-spacing": "error",
+    "brace-style": [
+      "off",
+      "stroustrup",
+      {
+        "allowSingleLine": true
+      }
+    ],
+    "camelcase": "off",
+    "capitalized-comments": "off",
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "comma-spacing": [
+      2,
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "comma-style": [
+      "error",
+      "last"
+    ],
+    "eol-last": "error",
+    "func-call-spacing": "error",
+    "func-name-matching": "error",
+    "func-names": "off",
+    "func-style": "off",
+    "jsx-quotes": [
+      "error",
+      "prefer-single"
+    ],
+    "key-spacing": "error",
+    "keyword-spacing": "error",
+    "line-comment-position": "off",
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "lines-around-comment": [
+      "error",
+      {
+        "beforeBlockComment": true,
+        "afterBlockComment": false,
+        "beforeLineComment": false,
+        "afterLineComment": false,
+        "allowBlockStart": true,
+        "allowBlockEnd": false,
+        "allowObjectStart": true,
+        "allowObjectEnd": false,
+        "allowArrayStart": true,
+        "allowArrayEnd": false
+      }
+    ],
+    "max-depth": "error",
+    "max-lines": [
+      "error",
+      {
+        "max": 2000
+      }
+    ],
+    "max-nested-callbacks": "error",
+    "max-statements-per-line": [
+      "error",
+      {
+        "max": 2
+      }
+    ],
+    "multiline-comment-style": "off",
+    "multiline-ternary": "off",
+    "new-cap": "off",
+    "new-parens": "error",
+    "newline-per-chained-call": [
+      "error",
+      {
+        "ignoreChainWithDepth": 4
+      }
+    ],
+    "newline-after-var": [
+      "error",
+      "always"
+    ],
+    "no-array-constructor": "error",
+    "no-lonely-if": "error",
+    "no-mixed-operators": "off",
+    "no-mixed-spaces-and-tabs": "error",
+    "no-multi-assign": "off",
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1
+      }
+    ],
+    "no-negated-condition": "error",
+    "no-nested-ternary": "error",
+    "no-new-object": "error",
+    "no-plusplus": "off",
+    "no-tabs": "error",
+    "no-ternary": "off",
+    "no-trailing-spaces": "error",
+    "no-unneeded-ternary": "error",
+    "no-whitespace-before-property": "error",
+    "nonblock-statement-body-position": "error",
+    "object-curly-newline": "off",
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "object-property-newline": "off",
+    "padded-blocks": [
+      "error",
+      "never"
+    ],
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "return"
+      },
+      {
+        "blankLine": "always",
+        "prev": [
+          "const",
+          "let",
+          "var"
+        ],
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": [
+          "const",
+          "let",
+          "var"
+        ],
+        "next": [
+          "const",
+          "let",
+          "var"
+        ]
+      }
+    ],
+    "quote-props": [
+      "error",
+      "as-needed"
+    ],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "require-jsdoc": "warn",
+    "semi": "error",
+    "semi-spacing": "error",
+    "semi-style": [
+      "error",
+      "last"
+    ],
+    "sort-keys": "off",
+    "sort-vars": "off",
+    "space-before-blocks": "error",
+    "space-before-function-paren": "error",
+    "space-in-parens": "error",
+    "space-infix-ops": "error",
+    "space-unary-ops": "error",
+    "spaced-comment": [
+      "error",
+      "always",
+      {
+        "block": {
+          "exceptions": [
+            "!"
+          ]
+        }
+      }
+    ],
+    "switch-colon-spacing": "error"
   },
   "overrides": [
-    // Configuration for TypeScript files
-    {
-      "files": [
-        "**/*.ts",
-        "**/*.tsx",
-        "netlify/*.ts"
-      ],
-      "plugins": [
-        "@typescript-eslint",
-        "tailwindcss",
-        "unused-imports",
-        "simple-import-sort"
-      ],
-      "extends": [
-        "plugin:tailwindcss/recommended",
-        "airbnb-typescript",
-        "next/core-web-vitals",
-        "plugin:prettier/recommended",
-        "plugin:storybook/recommended"
-      ],
-      "parserOptions": {
-        "project": "./tsconfig.json"
-      },
-      "rules": {
-        "react/destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
-        "react/require-default-props": "off", // Allow non-defined react props as undefined
-        "react/jsx-props-no-spreading": "off", // _app.tsx uses spread operator and also, react-hook-form
-        "react-hooks/exhaustive-deps": "off", // Incorrectly report needed dependency with Next.js router
-        "@next/next/no-img-element": "off", // We currently not using next/image because it isn't supported with SSG mode
-        "@next/next/link-passhref": "off", // Only needed when the child of Link wraps an <a> tag
-        "@typescript-eslint/comma-dangle": "off", // Avoid conflict rule between Eslint and Prettier
-        "@typescript-eslint/indent": "off", // Avoid conflict rule between Eslint and Prettier
-        "@typescript-eslint/consistent-type-imports": "error", // Ensure `import type` is used when it's necessary
-        "no-restricted-syntax": [
-          "error",
-          "ForInStatement",
-          "LabeledStatement",
-          "WithStatement"
-        ], // Overrides Airbnb configuration and enable no-restricted-syntax
-        "import/prefer-default-export": "off", // Named export is easier to refactor automatically
-        "tailwindcss/no-custom-classname": "off", // Disabled otherwise nightmare to allow each custom tailwind classes
-        "simple-import-sort/imports": "error", // Import configuration for `eslint-plugin-simple-import-sort`
-        "simple-import-sort/exports": "error", // Export configuration for `eslint-plugin-simple-import-sort`
-        "@typescript-eslint/no-unused-vars": "off",
-        "class-methods-use-this": "off",
-        "unused-imports/no-unused-imports": "error",
-        "unused-imports/no-unused-vars": [
-          "error",
-          {
-            "argsIgnorePattern": "^_"
-          }
-        ],
-        // Variables
-        "init-declarations": "off",
-        "no-catch-shadow": "off",
-        "no-delete-var": "error",
-        "no-label-var": "error",
-        "no-restricted-globals": "error",
-        "no-shadow": "off",
-        "no-shadow-restricted-names": "error",
-        "no-undef": "error",
-        "no-undef-init": "error",
-        "no-undefined": "off",
-        "no-unused-vars": "error",
-        "no-use-before-define": "error",
-        // Styling
-        "array-bracket-newline": "off",
-        "array-bracket-spacing": "error",
-        "array-element-newline": "off",
-        "block-spacing": "error",
-        "brace-style": [
-          "off",
-          "stroustrup",
-          {
-            "allowSingleLine": true
-          }
-        ],
-        "camelcase": "off",
-        "capitalized-comments": "off",
-        "comma-dangle": [
-          "error",
-          "never"
-        ],
-        "comma-spacing": [
-          2,
-          {
-            "before": false,
-            "after": true
-          }
-        ],
-        "comma-style": [
-          "error",
-          "last"
-        ],
-        "eol-last": "error",
-        "func-call-spacing": "error",
-        "func-name-matching": "error",
-        "func-names": "off",
-        "func-style": "off",
-        "jsx-quotes": [
-          "error",
-          "prefer-single"
-        ],
-        "key-spacing": "error",
-        "keyword-spacing": "error",
-        "line-comment-position": "off",
-        "linebreak-style": [
-          "error",
-          "unix"
-        ],
-        "lines-around-comment": [
-          "error",
-          {
-            "beforeBlockComment": true,
-            "afterBlockComment": false,
-            "beforeLineComment": false,
-            "afterLineComment": false,
-            "allowBlockStart": true,
-            "allowBlockEnd": false,
-            "allowObjectStart": true,
-            "allowObjectEnd": false,
-            "allowArrayStart": true,
-            "allowArrayEnd": false
-          }
-        ],
-        "max-depth": "error",
-        "max-lines": [
-          "error",
-          {
-            "max": 2000
-          }
-        ],
-        "max-nested-callbacks": "error",
-        "max-statements-per-line": [
-          "error",
-          {
-            "max": 2
-          }
-        ],
-        "multiline-comment-style": "off",
-        "multiline-ternary": "off",
-        "new-cap": "off",
-        "new-parens": "error",
-        "newline-per-chained-call": [
-          "error",
-          {
-            "ignoreChainWithDepth": 4
-          }
-        ],
-        "newline-after-var": [
-          "error",
-          "always"
-        ],
-        "no-array-constructor": "error",
-        "no-lonely-if": "error",
-        "no-mixed-operators": "off",
-        "no-mixed-spaces-and-tabs": "error",
-        "no-multi-assign": "off",
-        "no-multiple-empty-lines": [
-          "error",
-          {
-            "max": 1
-          }
-        ],
-        "no-negated-condition": "error",
-        "no-nested-ternary": "error",
-        "no-new-object": "error",
-        "no-plusplus": "off",
-        "no-tabs": "error",
-        "no-ternary": "off",
-        "no-trailing-spaces": "error",
-        "no-unneeded-ternary": "error",
-        "no-whitespace-before-property": "error",
-        "nonblock-statement-body-position": "error",
-        "object-curly-newline": "off",
-        "object-curly-spacing": [
-          "error",
-          "always"
-        ],
-        "object-property-newline": "off",
-        "padded-blocks": [
-          "error",
-          "never"
-        ],
-        "padding-line-between-statements": [
-          "error",
-          {
-            "blankLine": "always",
-            "prev": "*",
-            "next": "return"
-          },
-          {
-            "blankLine": "always",
-            "prev": [
-              "const",
-              "let",
-              "var"
-            ],
-            "next": "*"
-          },
-          {
-            "blankLine": "any",
-            "prev": [
-              "const",
-              "let",
-              "var"
-            ],
-            "next": [
-              "const",
-              "let",
-              "var"
-            ]
-          }
-        ],
-        "quote-props": [
-          "error",
-          "as-needed"
-        ],
-        "quotes": [
-          "error",
-          "single",
-          {
-            "avoidEscape": true
-          }
-        ],
-        "require-jsdoc": "warn",
-        "semi": "error",
-        "semi-spacing": "error",
-        "semi-style": [
-          "error",
-          "last"
-        ],
-        "sort-keys": "off",
-        "sort-vars": "off",
-        "space-before-blocks": "error",
-        "space-before-function-paren": "error",
-        "space-in-parens": "error",
-        "space-infix-ops": "error",
-        "space-unary-ops": "error",
-        "spaced-comment": [
-          "error",
-          "always",
-          {
-            "block": {
-              "exceptions": [
-                "!"
-              ]
-            }
-          }
-        ],
-        "switch-colon-spacing": "error"
-      }
-    },
     {
       "files": [
         "components/logos/*"
       ],
       "rules": {
         "max-len": "off"
+      }
+    },
+    {
+      "files": [
+        "**/*.stories.tsx"
+      ],
+      "rules": {
+        "react-hooks/rules-of-hooks": "off"
       }
     }
   ]

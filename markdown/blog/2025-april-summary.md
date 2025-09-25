@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: Community Builder and Open Source Fanatic!
 excerpt: 'AsyncAPI community status and project updates for April 2025'
-featured: true
 ---
 
 We had a busy month, from having our first conference of the year, a new Platinum sponsor, to receiving 204 applications for Google Summer of Code (GSoC'25). Let's dive into the April update!

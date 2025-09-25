@@ -157,6 +157,7 @@
         "availableForHire": false,
         "linkedin": "fmvilas",
         "isTscMember": true,
+        "isBoardMember": true,
         "repos": [
             "spec",
             "spec-json-schemas",
@@ -165,12 +166,10 @@
             "converter-js",
             "bindings",
             "enterprise-patterns",
-            "raml-dt-schema-parser",
             "openapi-schema-parser",
             "html-template",
             "markdown-template",
             "nodejs-ws-template",
-            "glee",
             "brand"
         ],
         "githubID": 242119
@@ -201,9 +200,7 @@
             "generator",
             "parser-js",
             "converter-js",
-            "generator-react-sdk",
             "modelina",
-            "simulator",
             "parser-api",
             "EDAVisualiser"
         ],
@@ -222,8 +219,7 @@
             "spec-json-schemas",
             "studio",
             ".github",
-            "optimizer",
-            "glee"
+            "optimizer"
         ],
         "githubID": 32505158
     },
@@ -297,17 +293,13 @@
         "repos": [
             "generator",
             "asyncapi-react",
-            "parser-go",
             "parser-js",
             "converter-js",
-            "converter-go",
             "studio",
             "html-template",
             "markdown-template",
             "template-for-generator-templates",
-            "generator-react-sdk",
             "modelina",
-            "template-for-go-projects",
             "diff",
             "chatbot",
             "server-api",
@@ -344,18 +336,6 @@
             "python-paho-template"
         ],
         "githubID": 3926925
-    },
-    {
-        "name": "Nektarios Fifes",
-        "github": "NektariosFifes",
-        "linkedin": "nektarios-fifes-372740220",
-        "slack": "U01SE93Q48N",
-        "availableForHire": true,
-        "isTscMember": false,
-        "repos": [
-            "simulator"
-        ],
-        "githubID": 61620751
     },
     {
         "name": "Pavel Bodiachevskii",
@@ -436,14 +416,10 @@
         "availableForHire": false,
         "isTscMember": false,
         "repos": [
-            "parser-go",
             "parser-js",
-            "converter-go",
-            "raml-dt-schema-parser",
             "openapi-schema-parser",
             "avro-schema-parser",
             "go-watermill-template",
-            "template-for-go-projects",
             "parser-api",
             "server-api"
         ],
@@ -455,28 +431,14 @@
         "slack": "U01SGCZMJKW",
         "twitter": "souvik_ns",
         "linkedin": "souvik-de-a2b941169",
-        "availableForHire": true,
+        "company": "Xane AI",
+        "availableForHire": false,
         "isTscMember": true,
         "repos": [
             "cli",
-            "glee",
             "bundler"
         ],
         "githubID": 41781438
-    },
-    {
-        "name": "Quetzalli Writes",
-        "github": "quetzalliwrites",
-        "twitter": "QuetzalliWrites",
-        "slack": "U02AKC14WAJ",
-        "linkedin": "quetzalli-writes",
-        "availableForHire": true,
-        "isTscMember": true,
-        "repos": [
-            "website",
-            "community"
-        ],
-        "githubID": 19964402
     },
     {
         "name": "David Pereira",
@@ -634,8 +596,7 @@
         "isTscMember": true,
         "repos": [
             "spec-json-schemas",
-            "bindings",
-            "saunter"
+            "bindings"
         ],
         "githubID": 5294032
     },
@@ -700,6 +661,7 @@
         "availableForHire": false,
         "company": "AsyncAPI Initiative",
         "isTscMember": true,
+        "isBoardMember": true,
         "repos": [
             "website",
             "conference-website",
@@ -758,15 +720,6 @@
             "website"
         ],
         "githubID": 108233235
-    },
-    {
-        "name": "Vaishnavi ",
-        "github": "VaishnaviNandakumar",
-        "isTscMember": false,
-        "repos": [
-            "website"
-        ],
-        "githubID": 41518119
     },
     {
         "name": "Mihael Bosnjak",
@@ -959,17 +912,6 @@
         "githubID": 126087
     },
     {
-        "name": "Prince Onyeanuna",
-        "github": "Aahil13",
-        "twitter": "OnyeanunaE",
-        "availableForHire": true,
-        "isTscMember": false,
-        "repos": [
-            "website"
-        ],
-        "githubID": 63567230
-    },
-    {
         "name": "Charles d'Avernas",
         "github": "cdavernas",
         "linkedin": "charles-d-avernas-40836a13",
@@ -1007,5 +949,40 @@
             "conference-website"
         ],
         "githubID": 90895835
+    },
+    {
+        "name": "Antonio",
+        "github": "bandantonio",
+        "isTscMember": false,
+        "repos": [
+            "website",
+            "community"
+        ],
+        "githubID": 16765690
+    },
+    {
+        "name": "Christine Belzie",
+        "github": "CBID2",
+        "twitter": "CodesChrissy",
+        "availableForHire": true,
+        "isTscMember": false,
+        "repos": [
+            "website",
+            "community"
+        ],
+        "githubID": 105683440
+    },
+    {
+        "name": "Adi Boghawala",
+        "github": "Adi-204",
+        "twitter": "AdiBoghawala",
+        "linkedin": "adi-boghawala",
+        "slack": "U0867GV384D",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "generator"
+        ],
+        "githubID": 114283933
     }
 ]

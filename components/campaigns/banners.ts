@@ -18,48 +18,12 @@ export function shouldShowBanner(cfpDeadline: string) {
 export const banners = [
   {
     title: 'AsyncAPI Conference',
-    city: 'Singapore Edition',
-    dateLocation: '15th - 16th of April, 2025 | Singapore, Singapore',
-    cfaText: 'Get Free Tickets',
-    eventName: 'you get a Free Ticket',
-    cfpDeadline: '2025-04-13T06:00:00Z',
-    link: 'https://ticket.apidays.global/event/apidays-singapore-2025/4c745e62-0e52-4c4a-9221-29f47bc57128/cart?coupon=ASYNCAPICOMMUNITY'
-  },
-  {
-    title: 'AsyncAPI Conference',
-    city: 'Munich Edition',
-    dateLocation: '2nd - 3rd of July, 2025 | München, Germany',
+    city: 'Paris Edition',
+    dateLocation: '9th - 11th of December, 2025 | Paris, France',
     cfaText: 'Apply To Speak',
     eventName: 'the end of Call for Speakers',
-    cfpDeadline: '2025-05-11T06:00:00Z',
-    link: 'https://apidays.typeform.com/apidayscfp?typeform-source=www.apidays.global'
-  },
-  {
-    title: 'AsyncAPI Conference',
-    city: 'Lagos Edition',
-    dateLocation: '18th - 19th of July, 2025 | Lagos, Nigeria',
-    cfaText: 'Apply To Speak',
-    eventName: 'the end of Call for Speakers',
-    cfpDeadline: '2025-05-17T06:00:00Z',
-    link: 'https://conference.asyncapi.com/venue/Lagos'
-  },
-  {
-    title: 'AsyncAPI Conference',
-    city: 'London Edition',
-    dateLocation: '22nd - 24th of September, 2025 | London, UK',
-    cfaText: 'Apply To Speak',
-    eventName: 'the end of Call for Speakers',
-    cfpDeadline: '2025-07-13T06:00:00Z',
-    link: 'https://conference.asyncapi.com/venue/London'
-  },
-  {
-    title: 'AsyncAPI Conference',
-    city: 'Bangalore Edition',
-    dateLocation: '8th - 9th of October, 2025 | Bangalore, India',
-    cfaText: 'Apply To Speak',
-    eventName: 'the end of Call for Speakers',
-    cfpDeadline: '2025-06-29T06:00:00Z',
-    link: 'https://conference.asyncapi.com/venue/Bangalore'
+    cfpDeadline: '2025-10-05T06:00:00Z',
+    link: 'https://conference.asyncapi.com/venue/Paris'
   },
   {
     title: 'AsyncAPI Conference',
@@ -72,11 +36,11 @@ export const banners = [
   },
   {
     title: 'AsyncAPI Conference',
-    city: 'Paris Edition',
-    dateLocation: '9th - 11th of December, 2025 | Paris, France',
+    city: 'DeveloperWeek 2026',
+    dateLocation: '18th - 20th of February, 2026 | San Jose, United States',
     cfaText: 'Apply To Speak',
     eventName: 'the end of Call for Speakers',
-    cfpDeadline: '2025-08-05T06:00:00Z',
-    link: 'https://conference.asyncapi.com/venue/Paris'
+    cfpDeadline: '2025-11-07T06:00:00Z',
+    link: 'https://confengine.com/conferences/asyncapi-summit-at-developerweek2026'
   }
 ];

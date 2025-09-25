@@ -21,13 +21,15 @@ const ToolsData = ToolsDataList as ToolsListData;
 export default function ToolsDashboard() {
   const router = useRouter();
   const filterRef = useRef<HTMLDivElement>(); // used to provide ref to the Filter menu and outside click close feature
-  const categoryRef = useRef<HTMLDivElement>(); // used to provide ref to the Category menu and outside click close feature
+  // used to provide ref to the Category menu and outside click close feature
+  const categoryRef = useRef<HTMLDivElement>();
   const [openFilter, setOpenFilter] = useState<boolean>(false);
   const [openCategory, setopenCategory] = useState<boolean>(false);
   // filter parameters extracted from the context
   const { isPaid, isAsyncAPIOwner, languages, technologies, categories } = useContext(ToolFilterContext);
   const [searchName, setSearchName] = useState<string>(''); // state variable used to get the search name
-  const [checkToolsList, setCheckToolsList] = useState<boolean>(true); // state variable used to check whether any tool is available according to the needs of the user.
+  // state variable used to check whether any tool is available according to the needs of the user.
+  const [checkToolsList, setCheckToolsList] = useState<boolean>(true);
 
   // useEffect function to enable the close Modal feature when clicked outside of the modal
   useEffect(() => {
@@ -88,7 +90,8 @@ export default function ToolsDashboard() {
       tempToolsList[category].toolsList = tempToolsList[category].toolsList.filter((tool) => {
         // These are filter check variables for respective filters, which are initially made true.
         // If the particular filter is applied by the user, the respective check variable is made false first,
-        // and then tool parameters are checked against the filter variable value to decide if it matches the filter criteria or not.
+        // and then tool parameters are checked against the filter variable value to decide
+        // if it matches the filter criteria or not.
         let isLanguageTool = true;
         let isTechnologyTool = true;
         let isSearchTool = true;
