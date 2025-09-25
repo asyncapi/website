@@ -1,3 +1,25 @@
+---
+title: How TransferGo adopted AsyncAPI
+date: 2025-09-25T7:26:58+02:00
+type: Marketing
+canonical: transfergo-asyncapi
+tags: ['transfergo','fintech','asyncapi','modelina', 'event-catalog', 'microcks']
+cover: /img/posts/may-2021-at-asyncapi/cover.webp
+authors:
+  - name: Zbigniew Malcherczyk
+    photo: /img/avatars/lpgornicki.webp
+    link: https://www.linkedin.com/in/zbigniew-malcherczyk/
+    byline: TransferGo Staff Engineer at Developer Experience Team
+excerpt: |
+  TransferGo, founded in 2012, serves over 8 million customers in 160+ countries by providing fast and affordable
+  international money transfers. In 2021, its Backend Guild faced challenges with inconsistent API documentation and
+  schema maintenance across dozens of services and hundreds of channels. To solve this, TransferGo adopted a code-first
+  AsyncAPI approach with internal PHP/.NET libraries, integrated validation and optimization pipelines, and automated
+  publishing of schemas to a centralized Port.io Developer Portal. With tools like Event Catalog, Microcks, and their
+  internal API Guardian CLI, TransferGo ensures reliable, scalable, and well-documented asynchronous communication
+  across its event-driven architecture.
+---
+
 # Case Study TransferGo <> AsyncAPI
 
 ## Introduction
