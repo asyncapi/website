@@ -19,6 +19,7 @@ import MobileNavMenu from './MobileNavMenu';
 import NavItem from './NavItem';
 import otherItems from './otherItems';
 import ToolsPanel from './ToolsPanel';
+import GithubStarBtn from '../buttons/GithubStarButton';
 
 interface NavBarProps {
   className?: string;
@@ -147,7 +148,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
     <div className={`bg-white ${className} z-50`}>
       <div className='flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-2'>
         {!hideLogo && (
-          <div className='lg:w-auto lg:flex-1'>
+          <div className='lg:w-auto lg:flex-1 lg:mr-8'>
             <div className='flex'>
               <Link href='/' className='cursor-pointer' aria-label='AsyncAPI' data-testid='Navbar-logo'>
                 <AsyncAPILogo className='w-auto' />
@@ -218,7 +219,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
 
           <div className='justify-content flex flex-row items-center'>
             <SearchButton
-              className='mr-2 flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
+              className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
               aria-label='Open Search'
             >
               <IconLoupe />
@@ -234,11 +235,10 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               selected={i18n.language ? i18n.language : 'en'}
             />
 
-            <GithubButton
+            <GithubStarBtn
               text='Star on GitHub'
-              href='https://github.com/asyncapi/spec'
-              className='ml-2 py-2'
-              inNav={true}
+              username='asyncapi'
+              repo='spec'
             />
           </div>
         </nav>
