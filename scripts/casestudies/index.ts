@@ -1,6 +1,8 @@
 import { readdir, readFile, writeFile } from 'fs/promises';
 import { join } from 'path';
 
+import { CustomError } from '@/types/errors/CustomError';
+
 import { convertToJson } from '../helpers/utils';
 
 /**
@@ -13,7 +15,7 @@ import { convertToJson } from '../helpers/utils';
  * @param writeFilePath - The file path where the JSON-formatted list of case studies will be saved.
  * @returns A promise that resolves to an array of case study objects.
  *
- * @throws {Error} If an error occurs during file reading, JSON conversion, or writing operations.
+ * @throws {CustomError} If an error occurs during file reading, JSON conversion, or writing operations.
  */
 export async function buildCaseStudiesList(dirWithCaseStudy: string, writeFilePath: string): Promise<object[]> {
   try {
@@ -34,6 +36,10 @@ export async function buildCaseStudiesList(dirWithCaseStudy: string, writeFilePa
 
     return caseStudiesList;
   } catch (err) {
-    throw new Error(err instanceof Error ? err.message : String(err));
+    throw CustomError.fromError(err, {
+      category: 'script',
+      operation: 'buildCaseStudiesList',
+      detail: `Failed to build case studies from ${dirWithCaseStudy} to ${writeFilePath}`
+    });
   }
 }
