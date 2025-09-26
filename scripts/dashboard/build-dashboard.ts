@@ -107,7 +107,7 @@ async function getDiscussions(
   } catch (e) {
     logger.error(e);
 
-    return Promise.reject(e);
+    throw e;
   }
 }
 
@@ -141,7 +141,7 @@ async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequest
   } catch (e) {
     logger.error(e);
 
-    return Promise.reject(e);
+    throw e;
   }
 }
 
