@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import type { ToolData, VisibleDataListType } from '@/types/components/tools/ToolDataType';
+import type {
+  ToolData,
+  VisibleDataListType
+} from '@/types/components/tools/ToolDataType';
 import { HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
@@ -30,9 +33,12 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
   // the number of lines occupied by the description.
   useEffect(() => {
     if (descriptionRef.current) {
-      setIsTruncated(descriptionRef.current?.scrollHeight! > descriptionRef.current?.clientHeight!);
+      setIsTruncated(
+        descriptionRef.current?.scrollHeight! >
+          descriptionRef.current?.clientHeight!
+      );
     }
-  }, [descriptionRef.current]);
+  }, []);
 
   let onGit = false;
 
@@ -53,7 +59,9 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
       <div className='mb-6 px-6 pt-8'>
         <div className='flex flex-col gap-2'>
           <div className='flex w-full justify-between gap-4'>
-            <Heading typeStyle={HeadingTypeStyle.smSemibold}>{toolData.title}</Heading>
+            <Heading typeStyle={HeadingTypeStyle.smSemibold}>
+              {toolData.title}
+            </Heading>
             <div
               className='size-fit min-w-[5.3rem] rounded-md border border-green-600 bg-green-100 p-1 text-center text-xs text-green-600'
               onMouseEnter={() =>
@@ -70,10 +78,15 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
                   }, 300)
                 }
               >
-                {toolData.filters?.hasCommercial === false ? 'Open Source' : 'Commercial'}
+                {toolData.filters?.hasCommercial === false
+                  ? 'Open Source'
+                  : 'Commercial'}
                 {visible.desc && (
                   <span className='absolute -left-2/3 top-8 z-10 w-48 -translate-x-12 rounded border border-gray-200 bg-white px-2 py-1 text-left text-gray-700 shadow-md'>
-                    {Data.properties.filters.properties.hasCommercial.description}
+                    {
+                      Data.properties.filters.properties.hasCommercial
+                        .description
+                    }
                   </span>
                 )}
               </span>
@@ -130,7 +143,12 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
                 <div className='flex gap-2'>
                   {toolData.filters?.language &&
                     toolData.filters?.language.map((item, index) => (
-                      <Tag key={index} name={item.name} bgColor={item.color} borderColor={item.borderColor} />
+                      <Tag
+                        key={index}
+                        name={item.name}
+                        bgColor={item.color}
+                        borderColor={item.borderColor}
+                      />
                     ))}
                 </div>
               </div>
@@ -140,7 +158,9 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
                 <CardData
                   className='text-sm'
                   heading='TECHNOLOGIES'
-                  data={Data.properties.filters.properties.technology.description}
+                  data={
+                    Data.properties.filters.properties.technology.description
+                  }
                   type='tech'
                   visible={visible}
                   setVisible={setVisible}
@@ -150,7 +170,12 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
                 <div className='flex flex-wrap gap-2'>
                   {toolData.filters?.technology &&
                     toolData.filters.technology.map((item, index) => (
-                      <Tag key={index} name={item.name} bgColor={item.color} borderColor={item.borderColor} />
+                      <Tag
+                        key={index}
+                        name={item.name}
+                        bgColor={item.color}
+                        borderColor={item.borderColor}
+                      />
                     ))}
                 </div>
               </div>
@@ -165,7 +190,9 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
           </div>
         )}
       </div>
-      {(toolData?.links?.repoUrl || toolData?.links?.websiteUrl || toolData?.links?.docsUrl) && (
+      {(toolData?.links?.repoUrl ||
+        toolData?.links?.websiteUrl ||
+        toolData?.links?.docsUrl) && (
         <>
           <hr className='' />
           <div className='flex'>
@@ -179,7 +206,11 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
                   data-testid='ToolsCard-repoUrl'
                 >
                   <div className='m-auto flex w-fit gap-2'>
-                    <img src='/img/logos/github-black.svg' alt='GitHub' className='w-5' />
+                    <img
+                      src='/img/logos/github-black.svg'
+                      alt='GitHub'
+                      className='w-5'
+                    />
                     <div className='text-sm text-gray-700'>View Github</div>
                   </div>
                 </a>
@@ -191,7 +222,9 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
                   rel='noreferrer'
                 >
                   <div className='m-auto flex w-fit gap-2'>
-                    <div className='text-sm text-gray-700'>View Source Code</div>
+                    <div className='text-sm text-gray-700'>
+                      View Source Code
+                    </div>
                   </div>
                 </a>
               ))}
@@ -204,7 +237,11 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
                 data-testid='ToolsCard-websiteUrl'
               >
                 <div className='m-auto flex w-fit gap-2'>
-                  <img src='/img/illustrations/icons/share.svg' alt='Share' className='w-5' />
+                  <img
+                    src='/img/illustrations/icons/share.svg'
+                    alt='Share'
+                    className='w-5'
+                  />
                   <div className='text-sm text-gray-700'>Visit Website</div>
                 </div>
               </a>
@@ -218,7 +255,11 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
                 data-testid='ToolsCard-docsUrl'
               >
                 <div className='m-auto flex w-fit gap-2'>
-                  <img src='/img/illustrations/icons/docs-icon.svg' alt='Docs' className='w-5' />
+                  <img
+                    src='/img/illustrations/icons/docs-icon.svg'
+                    alt='Docs'
+                    className='w-5'
+                  />
                   <div className='text-sm text-gray-700'>Visit Docs</div>
                 </div>
               </a>
