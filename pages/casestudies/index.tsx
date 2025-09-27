@@ -82,38 +82,68 @@ export default function Casestudies() {
           </div>
         </div>
 
-        <center>
-          <div className='overflow-x-auto'>
-            <table className='my-8 w-full max-w-full border-collapse border'>
-              <thead>
-                <tr>
-                  <th className='border p-2 font-bold'>Company name</th>
-                  <th className='border-2 p-2 font-bold'>Use Case</th>
-                  <th className='border-2 p-2 font-bold'>Resources</th>
+        {/* Desktop Table View */}
+        <div className='hidden md:block overflow-x-auto'>
+          <table className='my-8 w-full border-collapse border table-auto'>
+            <thead>
+              <tr>
+                <th className='border p-2 font-bold'>Company name</th>
+                <th className='border-2 p-2 font-bold'>Use Case</th>
+                <th className='border-2 p-2 font-bold'>Resources</th>
+              </tr>
+            </thead>
+            <tbody>
+              {AdoptersList.map((entry: Adopter, index: number) => (
+                <tr key={index} data-testid='Adopters'>
+                  <td className='border-2 p-2'>{entry.companyName}</td>
+                  <td className='border-2 p-2'>{entry.useCase}</td>
+                  <td className='border-2 p-2'>
+                    <ul className='space-y-1'>
+                      {entry.resources.map((resource: Resource, resourceIndex: number) => (
+                        <li key={resourceIndex}>
+                          <a className='text-cyan-500 underline hover:text-cyan-600' href={resource.link}>
+                            {resource.title}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                {AdoptersList.map((entry: Adopter, index: number) => (
-                  <tr key={index} data-testid='Adopters'>
-                    <td className='border-2 p-2'>{entry.companyName}</td>
-                    <td className='border-2 p-2'>{entry.useCase}</td>
-                    <td className='border-2 p-2'>
-                      <ul>
-                        {entry.resources.map((resource: Resource, resourceIndex: number) => (
-                          <li className='p-2' key={resourceIndex}>
-                            <a className='text-cyan-500 underline' href={resource.link}>
-                              {resource.title}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </center>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Mobile Card View */}
+        <div className='md:hidden my-8 space-y-4'>
+          {AdoptersList.map((entry: Adopter, index: number) => (
+            <div
+              key={index}
+              className='border border-gray-300 rounded-lg p-4 bg-white shadow-sm'
+              data-testid='Adopters'
+            >
+              <div className='mb-3'>
+                <h3 className='font-bold text-lg text-gray-900'>{entry.companyName}</h3>
+              </div>
+              <div className='mb-3'>
+                <h4 className='font-semibold text-sm text-gray-700 mb-1'>Use Case:</h4>
+                <p className='text-gray-600 text-sm'>{entry.useCase}</p>
+              </div>
+              <div>
+                <h4 className='font-semibold text-sm text-gray-700 mb-2'>Resources:</h4>
+                <ul className='space-y-1'>
+                  {entry.resources.map((resource: Resource, resourceIndex: number) => (
+                    <li key={resourceIndex}>
+                      <a className='text-cyan-500 underline hover:text-cyan-600 text-sm' href={resource.link}>
+                        {resource.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </GenericLayout>
   );

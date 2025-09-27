@@ -1,0 +1,79 @@
+id: transfergo
+company:
+  name: TransferGo
+  description: |
+    Founded in 2012, TransferGo provides international money transfer services with a focus on accessibility, speed, and affordability for migrants. The company operates in over 160 countries and serves millions of customers globally, ensuring fast and reliable cross-border payments.
+  customers: "over 8 million"
+  industry: Fintech / Payments
+  website: https://www.transfergo.com/
+  logo: /img/casestudies/transfergo/logo.svg
+  contact:
+    - name: Zbigniew Malcherczyk
+      link: https://www.linkedin.com/in/zbigniew-malcherczyk/
+
+challenges: |
+  In 2021, TransferGo's Backend Guild identified challenges with documenting both REST and asynchronous APIs. Different teams used varying approaches, which created inconsistencies and difficulties in maintaining up-to-date API schemas. As services grew past 50 and more events were introduced, inconsistencies and invalid schemas emerged. Additionally, YAML-based documentation was not user-friendly, making discoverability and adoption harder. With over 300 channels, visibility into published events and ensuring trust across distributed systems became a significant challenge.
+
+solution: |
+  TransferGo adopted the AsyncAPI specification to unify documentation practices and improve developer experience. Instead of an API-first approach, they introduced a code-first documentation model using an internal library. This library leverages Reflection in PHP and .NET to generate AsyncAPI schemas directly from DTOs, reducing duplication and ensuring consistency.
+
+  To maintain schema quality, TransferGo integrated AsyncAPI CLI into their pipelines, automating validation and optimization of large schemas. They also contributed to schema scoring capabilities in AsyncAPI CLI, encouraging teams to keep docs clean and consistent.
+
+  For accessibility, TransferGo automated publishing of AsyncAPI definitions using GitHub Actions. Schemas are stored in S3 and surfaced through Port.io Developer Portal, providing a single interface for developers to browse, search, and visualize service contracts.
+
+  At scale, TransferGo introduced [Event Catalog](https://www.eventcatalog.dev/) to map their 300+ channels and highlight integration gaps. For testing, they adopted contract testing with [Microcks](https://microcks.io/) and LocalStack, integrated into Jenkins CI, enabling validation of service interactions against AsyncAPI definitions. Finally, their internal CLI tool, API Guardian, helps ensure schema coverage by comparing AsyncAPI definitions with deployed infrastructure.
+
+technical:
+  languages:
+    - php
+    - .NET
+    - C#
+    - javascript
+    - node.js
+  frameworks:
+    - Symfony
+    - ASP.NET
+  protocols:
+    - SNS
+    - SQS
+    - Kafka
+  brokers: AWS SNS/SQS, Kafka
+  testing: |
+    Contract testing with Microcks and LocalStack integrated into Jenkins CI, validating message-driven services without requiring cloud infrastructure.
+  architecture: |
+    TransferGo relies heavily on an Event Driven Architecture, ensuring instant money transfers and reliable asynchronous communication. Services publish and consume events primarily through AWS Simple Notification Service (SNS) and Simple Queue Service (SQS), with Kafka used where applicable. Symfony-based workers handle incoming messages, while validation and coverage tools ensure contracts remain trustworthy.
+  codegen: |
+    Code-first generation of AsyncAPI schemas is achieved via internal libraries in PHP and .NET. These libraries automatically reflect DTOs into message payload definitions, ensuring up-to-date and consistent documentation across services.
+
+schemas:
+  description: JSON Schema derived from DTOs.
+  storage: Schemas are generated from service code and stored in GitHub repositories, with automated publishing to an S3 bucket for central access.
+  registry: None, schemas are distributed via S3 and Port.io Developer Portal.
+  versioning: Versioning is handled per repository and service team, aligned with service releases.
+  validation: AsyncAPI CLI is used to validate schemas for correctness and optimize file sizes. Jenkins CI pipelines enforce schema validation during builds.
+
+asyncapi:
+  usecase: |
+    TransferGo uses AsyncAPI to unify async API documentation across services, generate schemas from code via internal libraries, validate and optimize schemas in CI pipelines, publish schemas to Port.io Developer Portal for centralized access, build an [Event Catalog](https://www.eventcatalog.dev/) for visibility into 300+ channels, and support contract testing with [Microcks](https://microcks.io/).
+  versions:
+    - '2.6.0'
+    - '3.0.0'
+  storage: |
+    Schemas are stored in GitHub repositories and automatically published to an S3 bucket. Port.io Developer Portal ingests these schemas to make them accessible to developers.
+  editing: |
+    Documentation is maintained via code-first libraries. GitHub Actions pipelines validate and publish updates automatically. AsyncAPI CLI is used for validation, optimization, and schema scoring.
+  maintainers: |
+    Backend Guild maintains the internal libraries and tooling, while individual service teams maintain their own AsyncAPI schemas.
+  audience:
+    internal: true
+    external: false
+  extensions: |
+    None
+  documentation: |
+    AsyncAPI React component was initially used for rendering. Today, Port.io Developer Portal serves as the central platform, presenting all AsyncAPI schemas in a unified, visual interface.
+  bindings: |
+    None
+  tools: |
+    TransferGo relies on [AsyncAPI CLI](https://github.com/asyncapi/cli), [AsyncAPI React](https://github.com/asyncapi/asyncapi-react), [AsyncAPI Modelina](https://github.com/asyncapi/modelina), [Port.io Developer Portal](https://www.port.io/), [Event Catalog](https://www.eventcatalog.dev/), [Microcks](https://microcks.io/), [LocalStack](https://github.com/localstack/localstack), and API Guardian (internal CLI).
+  fullExample: resources/casestudies/transfergo/asyncapi.yaml
+additionalResources: See [slides from 2023](https://drive.google.com/file/d/1t7tYMr8FMRInaZV0lWod1QfDuhhSjwBJ/view?usp=sharing) that show early days of adoption
