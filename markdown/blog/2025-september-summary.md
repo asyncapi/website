@@ -47,17 +47,33 @@ On the second day, we held our AsyncAPI track. The track and booth would not hav
 We are heading to Bangalore on **October 8th and 9th**, and we have a packed AsyncAPI track on the 8th. [Please check out the agenda](https://conference.asyncapi.com/venue/Bangalore), and if you are in and around Bangalore, join us and get to meet some of the AsyncAPI TSC members and Maintainers.
 
 ### AsyncAPI Online Conference
-The AsyncAPI Online Conference returns on October 29th, and this year, we have some exciting speakers lined up to share their expertise. They will cover topics such as contributing to the community, documenting event-driven systems, and working in agile environments.
+The AsyncAPI Online Conference returns on **October 29th**, and this year, we have some exciting speakers lined up to share their expertise. They will cover topics such as contributing to the community, documenting event-driven systems, and working in agile environments.
 
 The agenda and speakers will be available on the website soon. [Don't forget to turn on your notifications on YouTube, and get ready to join us live](https://www.youtube.com/watch?v=KbT7Pw6j46E)!
 
 ### Open Call for Proposals
-We still have a Call for Proposals for the [AsyncAPI Paris Edition](https://conference.asyncapi.com/venue/Paris), which is closing on **5th October** (*make sure to select the "**AsyncAPI**" track when submitting your proposal*), and [AsyncAPI Summit at DeveloperWeek 2026](https://confengine.com/conferences/asyncapi-summit-at-developerweek2026), which is closing on **7th November**.
+We still have a Call for Proposals for the [AsyncAPI Paris Edition](https://conference.asyncapi.com/venue/Paris), which is closing on **October 5th** (*make sure to select the "**AsyncAPI**" track when submitting your proposal*), and [AsyncAPI Summit at DeveloperWeek 2026](https://confengine.com/conferences/asyncapi-summit-at-developerweek2026), which is closing on **November 7th**.
 Please help share the information across your networks.
 
 ## AsyncAPI Community Building and Maintainance Goals 2026
+It's time to start preparing for the Community Building and Goals for 2026. Before we dive into this, it's important to have a look at the few things that we've accomplished.
 
+- We transitioned fully to the Maintainership Program, [and we are currently working on documentation and guides for it](https://github.com/asyncapi/community/pull/1894).
+- We have also completed onboarding docs and [published video content on YouTube](https://youtu.be/5Gaz2Q-CKqE?si=S8gy1v2DfCnMFkBv), with two more currently in progress under the Bounty Program.
+- This year, we expanded our conferences, exploring new locations and having new partnerships.
+- The AsyncAPI Bounty Program is celebrating 2 years of successful running and impacting the community.
+
+These achievements wouldn't be possible without the community builders who are leading different initiatives. Now, it's your turn to participate in building and sustaining our community. Once the goals are finalized, please get involved!
+
+[You can read about the 2025 community building goals to learn more on the approach we take](https://www.asyncapi.com/docs/community/030-project-vision-strategy-goals/2025_Community_Goals).
 
 ## AsyncAPI Case Studies
+We are excited to have our 3rd case study published from TransferGo, a company that operates in over 160 countries, providing international money transfer services with a focus on accessibility, speed, and affordability for migrants.
+
+Huge thanks to [Zbigniew Malcherczyk](https://www.linkedin.com/in/zbigniew-malcherczyk/), and you can [read about how TransferGo uses AsyncAPI in the case study](https://www.asyncapi.com/casestudies/transfergo).
+
 
 ## Coming in October
+- AsyncAPI Community Updates Newsletter - The October Edition will arrive in your inbox on the 9th. P[lease subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/newsletter) to stay up-to-date with the latest updates.
+- [Join us in Bangalore on the 8th and 9th for the AsyncAPI Conference](https://conference.asyncapi.com/venue/Bangalore). We are excited to see you there.
+- The AsyncAPI Online Conference is happening on the 29th. [Turn on your notifications and see you there!](https://www.youtube.com/watch?v=KbT7Pw6j46E)
