@@ -14,12 +14,35 @@ excerpt: 'AsyncAPI community and project updates for September 2025'
 featured: true
 ---
 
-Intor
+As the fourth quarter of the year begins, we enter a new season where we, as a community, reflect on the events of the year while also preparing for the year ahead. It has been a time of growth, but let's dive into the updates from September, including the AsyncAPI London conference, new case studies, and our preparations for the AsyncAPI Community Goals for 2026.
 
 ## AsyncAPI Conference 2025
 
 
 ### AsyncAPI London Recap
+
+We returned to London for the AsyncAPI track at the APIdays London conference. On the first day, we started with the API Standards booth, where our TSC members and maintainers together with OpenAPI and Arazzo.
+
+On the second day, we held our AsyncAPI track. The track and booth would not have been possible without the support of [Dale Lane](https://www.linkedin.com/in/dalelane), [Daniel Kocot](https://www.linkedin.com/in/danielkocot), and [Ian Cooper](https://www.linkedin.com/in/ian-cooper-2b059b), who volunteered, hosted, and ran the booth.
+
+<Profiles profiles={[
+  {
+    name: 'Dale Lane',
+    avatar: 'https://avatars.githubusercontent.com/u/1444788?v=4',
+    link: 'https://github.com/dalelane'
+  },
+  {
+    name: 'Daniel Kocot',
+    avatar: 'https://avatars.githubusercontent.com/u/466609?v=4',
+    link: 'https://github.com/danielkocot'
+  }, 
+  {
+    name: 'Ian Cooper',
+    avatar: 'https://avatars.githubusercontent.com/u/45537?v=4',
+    link: 'https://github.com/iancooper'
+  }
+]} />
+
 
 ### AsyncAPI Conference in Bangalore 
 
