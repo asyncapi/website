@@ -74,6 +74,6 @@ Huge thanks to [Zbigniew Malcherczyk](https://www.linkedin.com/in/zbigniew-malch
 
 
 ## Coming in October
-- AsyncAPI Community Updates Newsletter - The October Edition will arrive in your inbox on the 9th. P[lease subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/newsletter) to stay up-to-date with the latest updates.
+- AsyncAPI Community Updates Newsletter - The October Edition will arrive in your inbox on the 9th. [Please subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/newsletter) to stay up-to-date with the latest updates.
 - [Join us in Bangalore on the 8th and 9th for the AsyncAPI Conference](https://conference.asyncapi.com/venue/Bangalore). We are excited to see you there.
 - The AsyncAPI Online Conference is happening on the 29th. [Turn on your notifications and see you there!](https://www.youtube.com/watch?v=KbT7Pw6j46E)
