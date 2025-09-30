@@ -44,7 +44,7 @@ export default function ToolsDashboard() {
     return () => {
       document.removeEventListener('mousedown', checkIfClickOutside);
     };
-  }, [openFilter]);
+  }, []);
 
   // useEffect function to enable the close Category dropdown Modal feature when clicked outside of the modal
   useEffect(() => {
@@ -59,7 +59,7 @@ export default function ToolsDashboard() {
     return () => {
       document.removeEventListener('mousedown', checkIfClickOutside);
     };
-  }, [openCategory]);
+  }, []);
 
   // useMemo function to filter the tools according to the filters applied by the user
   const toolsList = useMemo(() => {
@@ -163,7 +163,7 @@ export default function ToolsDashboard() {
         document.documentElement.style.scrollPaddingTop = '0';
       }
     }
-  }, [toolsList]);
+  }, []);
   // Function to update the list of tools according to the current filters applied
   const clearFilters = () => {
     setOpenFilter(false);
