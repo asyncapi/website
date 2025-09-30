@@ -1,12 +1,5 @@
 import { useRouter } from 'next/router';
-import React, {
-  createRef,
-  useContext,
-  useEffect,
-  useMemo,
-  useRef,
-  useState
-} from 'react';
+import React, { createRef, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
 import type { ToolsListData } from '@/types/components/tools/ToolDataType';
 
@@ -33,8 +26,7 @@ export default function ToolsDashboard() {
   const [openFilter, setOpenFilter] = useState<boolean>(false);
   const [openCategory, setopenCategory] = useState<boolean>(false);
   // filter parameters extracted from the context
-  const { isPaid, isAsyncAPIOwner, languages, technologies, categories } =
-    useContext(ToolFilterContext);
+  const { isPaid, isAsyncAPIOwner, languages, technologies, categories } = useContext(ToolFilterContext);
   const [searchName, setSearchName] = useState<string>(''); // state variable used to get the search name
   // state variable used to check whether any tool is available according to the needs of the user.
   const [checkToolsList, setCheckToolsList] = useState<boolean>(true);
@@ -42,11 +34,7 @@ export default function ToolsDashboard() {
   // useEffect function to enable the close Modal feature when clicked outside of the modal
   useEffect(() => {
     const checkIfClickOutside = (event: MouseEvent) => {
-      if (
-        openFilter &&
-        filterRef.current &&
-        !filterRef.current.contains(event.target as Node)
-      ) {
+      if (openFilter && filterRef.current && !filterRef.current.contains(event.target as Node)) {
         setOpenFilter(false);
       }
     };
@@ -61,11 +49,7 @@ export default function ToolsDashboard() {
   // useEffect function to enable the close Category dropdown Modal feature when clicked outside of the modal
   useEffect(() => {
     const checkIfClickOutside = (event: MouseEvent) => {
-      if (
-        openCategory &&
-        categoryRef.current &&
-        !categoryRef.current.contains(event.target as Node)
-      ) {
+      if (openCategory && categoryRef.current && !categoryRef.current.contains(event.target as Node)) {
         setopenCategory(false);
       }
     };
@@ -103,9 +87,7 @@ export default function ToolsDashboard() {
     // Each tool selected is then traversed to check against each filter variable (only if the filter is applied),
     // whether they match with the filter applied or not.
     Object.keys(tempToolsList).forEach((category) => {
-      tempToolsList[category].toolsList = tempToolsList[
-        category
-      ].toolsList.filter((tool) => {
+      tempToolsList[category].toolsList = tempToolsList[category].toolsList.filter((tool) => {
         // These are filter check variables for respective filters, which are initially made true.
         // If the particular filter is applied by the user, the respective check variable is made false first,
         // and then tool parameters are checked against the filter variable value to decide
@@ -119,10 +101,7 @@ export default function ToolsDashboard() {
         if (languages.length) {
           isLanguageTool = false;
           for (const language of languages) {
-            if (
-              tool?.filters?.language &&
-              tool.filters.language.find((item) => item.name === language)
-            ) {
+            if (tool?.filters?.language && tool.filters.language.find((item) => item.name === language)) {
               isLanguageTool = true;
             }
           }
@@ -131,19 +110,14 @@ export default function ToolsDashboard() {
         if (technologies.length) {
           isTechnologyTool = false;
           for (const technology of technologies) {
-            if (
-              tool?.filters?.technology &&
-              tool.filters.technology.find((item) => item.name === technology)
-            ) {
+            if (tool?.filters?.technology && tool.filters.technology.find((item) => item.name === technology)) {
               isTechnologyTool = true;
             }
           }
         }
 
         if (searchName) {
-          isSearchTool = tool.title
-            .toLowerCase()
-            .includes(searchName.toLowerCase());
+          isSearchTool = tool.title.toLowerCase().includes(searchName.toLowerCase());
         }
 
         if (isAsyncAPIOwner) {
@@ -158,13 +132,7 @@ export default function ToolsDashboard() {
           }
         }
 
-        return (
-          isLanguageTool &&
-          isTechnologyTool &&
-          isSearchTool &&
-          isAsyncAPITool &&
-          isPaidTool
-        );
+        return isLanguageTool && isTechnologyTool && isSearchTool && isAsyncAPITool && isPaidTool;
       });
 
       if (tempToolsList[category].toolsList.length) {
@@ -179,14 +147,7 @@ export default function ToolsDashboard() {
     });
 
     return tempToolsList;
-  }, [
-    isPaid,
-    isAsyncAPIOwner,
-    languages,
-    technologies,
-    categories,
-    searchName
-  ]);
+  }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, searchName]);
 
   // useEffect to scroll to the opened category when url has category as element id
   useEffect(() => {
@@ -210,11 +171,7 @@ export default function ToolsDashboard() {
   };
 
   const isFiltered = Boolean(
-    isPaid !== 'all' ||
-      isAsyncAPIOwner ||
-      languages.length ||
-      technologies.length ||
-      categories.length
+    isPaid !== 'all' || isAsyncAPIOwner || languages.length || technologies.length || categories.length
   );
 
   return (
@@ -222,10 +179,7 @@ export default function ToolsDashboard() {
       <div>
         <div className='my-10 flex flex-wrap justify-between gap-4 lg:flex-nowrap'>
           <div className='flex h-auto w-[47%] gap-5 lg:w-1/5'>
-            <div
-              className='relative h-auto w-full'
-              ref={filterRef as React.LegacyRef<HTMLDivElement>}
-            >
+            <div className='relative h-auto w-full' ref={filterRef as React.LegacyRef<HTMLDivElement>}>
               <div
                 className='flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-1 text-sm text-gray-700 shadow hover:border-gray-600 hover:shadow-md'
                 onClick={() => setOpenFilter(!openFilter)}
@@ -242,19 +196,14 @@ export default function ToolsDashboard() {
             </div>
           </div>
           <div className='flex h-auto w-[47%] gap-5 lg:w-1/5'>
-            <div
-              className='relative h-auto w-full'
-              ref={categoryRef as React.LegacyRef<HTMLDivElement>}
-            >
+            <div className='relative h-auto w-full' ref={categoryRef as React.LegacyRef<HTMLDivElement>}>
               <div
                 className='flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-1 text-sm text-gray-700 shadow hover:border-gray-600 hover:shadow-md'
                 onClick={() => setopenCategory(!openCategory)}
                 data-testid='ToolsDashboard-category'
               >
                 <div>Jump to Category</div>
-                <ArrowDown
-                  className={`my-auto ${openCategory ? 'rotate-180' : ''}`}
-                />
+                <ArrowDown className={`my-auto ${openCategory ? 'rotate-180' : ''}`} />
               </div>
               {openCategory && (
                 <div className='absolute right-52 top-16 z-20'>
@@ -273,24 +222,14 @@ export default function ToolsDashboard() {
               onChange={(e) => setSearchName(e.target.value)}
             />
             {searchName && (
-              <button
-                className='my-auto h-fit rounded-full p-2 hover:bg-gray-100'
-                onClick={() => setSearchName('')}
-              >
-                <img
-                  src='/img/illustrations/icons/close-icon.svg'
-                  alt='close'
-                  width='10'
-                />
+              <button className='my-auto h-fit rounded-full p-2 hover:bg-gray-100' onClick={() => setSearchName('')}>
+                <img src='/img/illustrations/icons/close-icon.svg' alt='close' width='10' />
               </button>
             )}
           </div>
         </div>
         {isFiltered && (
-          <div
-            className='mt-4 flex cursor-pointer items-center text-gray-600 hover:text-black'
-            onClick={clearFilters}
-          >
+          <div className='mt-4 flex cursor-pointer items-center text-gray-600 hover:text-black' onClick={clearFilters}>
             <Cross />
             <span className='ml-3'>Clear Filters</span>
           </div>
@@ -300,15 +239,8 @@ export default function ToolsDashboard() {
             <ToolsList toolsListData={toolsList} />
           ) : (
             <div className='p-4'>
-              <img
-                src='/img/illustrations/not-found.webp'
-                alt='not found'
-                className='m-auto w-1/2'
-              />
-              <div className='text-center text-lg'>
-                {' '}
-                Sorry, we don&apos;t have tools according to your needs.{' '}
-              </div>
+              <img src='/img/illustrations/not-found.webp' alt='not found' className='m-auto w-1/2' />
+              <div className='text-center text-lg'> Sorry, we don&apos;t have tools according to your needs. </div>
             </div>
           )}
         </div>

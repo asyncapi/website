@@ -1,10 +1,5 @@
 import Footer from './pages/Footer';
-import { 
-  initiativeLinks, 
-  socialMediaData, 
-  newsLinks, 
-  footerMiscData 
-} from '../components/footer/FooterData';
+import { initiativeLinks, socialMediaData, newsLinks, footerMiscData } from '../components/footer/FooterData';
 
 describe('Footer Links Validation', () => {
   const footer = new Footer();
@@ -35,4 +30,3 @@ describe('Footer Links Validation', () => {
     footer.verifyFooterLink(footerMiscData.netlifyLink, '');
   });
 });
-
