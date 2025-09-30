@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/Aw225Eb3hfk/hqdefault.jpg",
+    "title": "Governance Board Meeting, Monday September 29th 2025",
+    "description": "https://github.com/asyncapi/community/issues/2074.",
+    "videoId": "Aw225Eb3hfk"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/gn6765Le_zQ/hqdefault.jpg",
     "title": "AsyncAPI Community WG Meeting, Tuesday September 23rd 2025",
     "description": "https://github.com/asyncapi/community/issues/2066.",
@@ -22,11 +28,5 @@
     "title": "AsyncAPI Mentorship Program Wrap-Up - 2024",
     "description": "The livestream will serve as the official wrap-up of the AsyncAPI 2024 Mentorship Program. It's an opportunity for mentors and ...",
     "videoId": "XjckzYopxoA"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/ncOFU__8hLM/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting , Tuesday Auguest 12th 2025",
-    "description": "https://github.com/asyncapi/community/issues/2014.",
-    "videoId": "ncOFU__8hLM"
   }
 ]
