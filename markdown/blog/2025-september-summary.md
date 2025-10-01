@@ -68,7 +68,7 @@ These achievements wouldn't be possible without the community builders who are l
 [You can read about the 2025 community building goals to learn more on the approach we take](https://www.asyncapi.com/docs/community/030-project-vision-strategy-goals/2025_Community_Goals).
 
 ## AsyncAPI Case Studies
-We are excited to have our 3rd case study published from TransferGo, a company that operates in over 160 countries, providing international money transfer services with a focus on accessibility, speed, and affordability for migrants.
+We are excited to have our 3rd case study published from [TransferGo](https://www.transfergo.com/), a company that operates in over 160 countries, providing international money transfer services with a focus on accessibility, speed, and affordability for migrants.
 
 Huge thanks to [Zbigniew Malcherczyk](https://www.linkedin.com/in/zbigniew-malcherczyk/), and you can [read about how TransferGo uses AsyncAPI in the case study](https://www.asyncapi.com/casestudies/transfergo).
 
