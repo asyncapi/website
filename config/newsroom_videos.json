@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/Mkd7FgKOMNE/hqdefault.jpg",
+    "title": "One Tool, One Flow: AsyncAPI&#39;s New Take on Code/Docs/Config Generation",
+    "description": "Join us on September 30th at 4PM UTC for the first session of our AsyncAPI webinar series with Łukasz. In “One Tool, One Flow: ...",
+    "videoId": "Mkd7FgKOMNE"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/Aw225Eb3hfk/hqdefault.jpg",
     "title": "Governance Board Meeting, Monday September 29th 2025",
     "description": "https://github.com/asyncapi/community/issues/2074.",
@@ -16,12 +22,6 @@
     "title": "Governance Board Meeting, Monday September 15th 2025",
     "description": "https://github.com/asyncapi/community/issues/2069.",
     "videoId": "7e01rDjnVpY"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/Mkd7FgKOMNE/hqdefault.jpg",
-    "title": "One Tool, One Flow: AsyncAPI&#39;s New Take on Code/Docs/Config Generation",
-    "description": "Join us on September 30th at 4PM UTC for the first session of our AsyncAPI webinar series with Łukasz. In “One Tool, One Flow: ...",
-    "videoId": "Mkd7FgKOMNE"
   },
   {
     "image_url": "https://i.ytimg.com/vi/m-aLlapR2Mg/hqdefault.jpg",
