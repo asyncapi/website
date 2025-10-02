@@ -178,12 +178,12 @@
       "borderColor": "border-[#B9012b]"
     },
     {
-      "name": "Socket.IO",
+      "name": "TypeScript",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "TypeScript",
+      "name": "Socket.IO",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
@@ -278,17 +278,17 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
+      "name": "SmartPaste",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "SmartPaste",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
       "name": "JetBrains",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "SmartPaste",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "SmartPaste",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
