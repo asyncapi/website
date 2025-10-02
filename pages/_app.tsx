@@ -13,34 +13,37 @@ import Layout from '@/components/layout/Layout';
 import NavBar from '@/components/navigation/NavBar';
 import StickyNavbar from '@/components/navigation/StickyNavbar';
 import AppContext from '@/context/AppContext';
+import { ThemeProvider } from '@/context/ThemeContext';
 
 /**
  * @description The MyApp component is the root component for the application.
  */
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
-    <AppContext.Provider value={{ path: router.asPath }}>
-      {/* <MDXProvider components={mdxComponents}> */}
-      <Head>
-        <script async defer src='https://buttons.github.io/buttons.js'></script>
-      </Head>
-      <AlgoliaSearch>
-        <div className='flex min-h-screen flex-col'>
-          <Banner />
-          <StickyNavbar>
-            <NavBar className='mx-auto block max-w-screen-xl px-4 sm:px-6 lg:px-8' />
-          </StickyNavbar>
-          <Layout>
-            <Component {...pageProps} />
-            <ScrollButton />
-          </Layout>
-          <div className='mt-auto'>
-            <Footer />
+    <ThemeProvider>
+      <AppContext.Provider value={{ path: router.asPath }}>
+        {/* <MDXProvider components={mdxComponents}> */}
+        <Head>
+          <script async defer src='https://buttons.github.io/buttons.js'></script>
+        </Head>
+        <AlgoliaSearch>
+          <div className='flex min-h-screen flex-col bg-white dark:bg-dark-purple-950 text-gray-900 dark:text-gray-100'>
+            <Banner />
+            <StickyNavbar>
+              <NavBar className='mx-auto block max-w-screen-xl px-4 sm:px-6 lg:px-8' />
+            </StickyNavbar>
+            <Layout>
+              <Component {...pageProps} />
+              <ScrollButton />
+            </Layout>
+            <div className='mt-auto'>
+              <Footer />
+            </div>
           </div>
-        </div>
-      </AlgoliaSearch>
-      {/* </MDXProvider> */}
-    </AppContext.Provider>
+        </AlgoliaSearch>
+        {/* </MDXProvider> */}
+      </AppContext.Provider>
+    </ThemeProvider>
   );
 }
 

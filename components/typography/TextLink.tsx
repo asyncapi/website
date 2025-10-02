@@ -18,10 +18,16 @@ export interface TextLinkProps {
  * @param {React.ReactNode} props.children contains all the child elements bounded inside component
  * @param {string} props.id contains an id to be appended on heading
  */
-export default function TextLink({ href, className = '', target = '_blank', children, id }: TextLinkProps) {
+export default function TextLink({
+  href,
+  className = '',
+  target = '_blank',
+  children,
+  id,
+}: TextLinkProps) {
   // eslint-disable-next-line max-len
   const classNames = twMerge(
-    `text-secondary-500 underline hover:text-gray-800 font-medium transition ease-in-out duration-300 ${className || ''}`
+    `text-secondary-500 dark:text-dark-purple-400 underline hover:text-gray-800 dark:hover:text-white font-medium transition ease-in-out duration-300 ${className || ''}`,
   );
 
   return (
@@ -30,10 +36,10 @@ export default function TextLink({ href, className = '', target = '_blank', chil
       <Link
         href={href}
         target={target}
-        rel='noreferrer noopener'
+        rel="noreferrer noopener"
         className={classNames}
         id={id}
-        data-testid='TextLink-href'
+        data-testid="TextLink-href"
       >
         {children}
       </Link>

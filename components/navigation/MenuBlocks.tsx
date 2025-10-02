@@ -43,7 +43,7 @@ export default function MenuBlocks({ items = [] }: MenuBlocksProps) {
             <span
               data-testid='MenuBlocks-Link'
               className={`-mx-3 mt-1 flex items-start space-x-4 rounded-lg p-3 transition duration-150 ease-in-out ${
-                router.asPath === item.href ? 'bg-secondary-100 shadow-sm' : 'hover:bg-gray-50'
+                router.asPath === item.href ? 'bg-secondary-100 dark:bg-dark-purple-800 shadow-sm' : 'hover:bg-gray-50 dark:hover:bg-dark-purple-800'
               }`}
             >
               <div
@@ -55,11 +55,11 @@ export default function MenuBlocks({ items = [] }: MenuBlocksProps) {
                 <item.icon className='size-6' />
               </div>
               <div className='space-y-1 whitespace-pre-line'>
-                <Paragraph typeStyle={ParagraphTypeStyle.md} textColor='text-gray-900' fontWeight='font-semibold'>
+                <Paragraph typeStyle={ParagraphTypeStyle.md} textColor='text-gray-900 dark:text-white' fontWeight='font-semibold'>
                   <span className={item.comingSoon ? 'opacity-50' : ''}>{item.title}</span>{' '}
                   {item.comingSoon && <Label text='Coming soon' />} {item.beta && <Label text='Beta' />}
                 </Paragraph>
-                <Paragraph typeStyle={ParagraphTypeStyle.sm} className={item.comingSoon ? 'opacity-50' : ''}>
+                <Paragraph typeStyle={ParagraphTypeStyle.sm} className={`${item.comingSoon ? 'opacity-50' : ''} text-gray-600 dark:text-white`}>
                   {item.description}
                 </Paragraph>
               </div>

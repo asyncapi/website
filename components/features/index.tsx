@@ -16,7 +16,7 @@ export default function Features() {
   const { t } = useTranslation('landing-page');
 
   return (
-    <section className='relative bg-white pt-16'>
+    <section className='relative bg-white dark:bg-dark-purple-950 pt-16'>
       <div className='mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8'>
         <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className='mt-2'>
           {t('features.title')}
@@ -27,7 +27,7 @@ export default function Features() {
             {features.map((feature) => (
               <li
                 key={feature.id}
-                className='flex flex-col justify-between rounded-lg border border-gray-200 px-6 pb-8 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'
+                className='flex flex-col justify-between rounded-lg border border-gray-200 dark:border-dark-purple-700 bg-white dark:bg-dark-purple-900 px-6 pb-8 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg dark:hover:shadow-dark-purple-800/50'
                 data-testid='Feature-li'
               >
                 <div>

@@ -11,7 +11,10 @@ interface AnnouncementRemainingDaysProps {
  * @param {string} props.dateTime - The date and time of the announcement
  * @param {string} props.eventName - The name of the event
  */
-export default function AnnouncementRemainingDays({ dateTime, eventName }: AnnouncementRemainingDaysProps) {
+export default function AnnouncementRemainingDays({
+  dateTime,
+  eventName,
+}: AnnouncementRemainingDaysProps) {
   const date = moment(dateTime);
   const now = moment();
   const days = date.diff(now, 'days');
@@ -29,7 +32,10 @@ export default function AnnouncementRemainingDays({ dateTime, eventName }: Annou
   }
 
   return (
-    <span className='countdown-text-gradient block font-extrabold' data-testid='AnnouncementRemainingDays-text'>
+    <span
+      className="countdown-text-gradient block font-extrabold text-gray-900 dark:text-white"
+      data-testid="AnnouncementRemainingDays-text"
+    >
       {text} until {eventName}
     </span>
   );

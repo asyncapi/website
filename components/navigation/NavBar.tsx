@@ -8,6 +8,7 @@ import { defaultLanguage, i18nPaths, languages } from '@/utils/i18n';
 
 import { SearchButton } from '../AlgoliaSearch';
 import GithubButton from '../buttons/GithubButton';
+import ThemeToggle from '../buttons/ThemeToggle';
 import { isMobileDevice } from '../helpers/is-mobile';
 import { useOutsideClick } from '../helpers/use-outside-click';
 import IconLoupe from '../icons/Loupe';
@@ -144,7 +145,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   }, [asPath]);
 
   return (
-    <div className={`bg-white ${className} z-50`}>
+    <div className={`bg-white dark:bg-dark-purple-900 ${className} z-50`}>
       <div className='flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-2'>
         {!hideLogo && (
           <div className='lg:w-auto lg:flex-1'>
@@ -158,15 +159,16 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
 
         <div className='-my-2 -mr-2 flex flex-row items-center justify-center lg:hidden' data-testid='Navbar-search'>
           <SearchButton
-            className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
+            className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none dark:text-white dark:hover:bg-dark-purple-800 dark:hover:text-white dark:focus:bg-dark-purple-800 dark:focus:text-white'
             aria-label='Open Search'
           >
             <IconLoupe />
           </SearchButton>
+          <ThemeToggle className='mr-2' />
           <button
             onClick={() => setMobileMenuOpen(true)}
             type='button'
-            className='inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
+            className='inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none dark:text-white dark:hover:bg-dark-purple-800 dark:hover:text-white dark:focus:bg-dark-purple-800 dark:focus:text-white'
           >
             <svg className='size-6' stroke='currentColor' fill='none' viewBox='0 0 24 24'>
               <title>Menu</title>
@@ -218,11 +220,13 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
 
           <div className='justify-content flex flex-row items-center'>
             <SearchButton
-              className='mr-2 flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
+              className='mr-2 flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none dark:text-white dark:hover:bg-dark-purple-800 dark:hover:text-white dark:focus:bg-dark-purple-800 dark:focus:text-white'
               aria-label='Open Search'
             >
               <IconLoupe />
             </SearchButton>
+
+            <ThemeToggle className='mr-2' />
 
             {/* // Language Picker Component */}
             <LanguageSelect

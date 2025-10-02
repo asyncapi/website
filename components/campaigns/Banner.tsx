@@ -15,18 +15,18 @@ export default function Banner() {
   }
 
   return (
-    <div className='bg-gray-100' data-testid='Banner-main-div'>
+    <div className='bg-gray-100 dark:bg-dark-purple-800' data-testid='Banner-main-div'>
       <div className='mx-auto max-w-screen-xl px-3 py-1 sm:px-6 lg:px-8'>
         <div className='flex flex-wrap items-center justify-between'>
           <div className='flex w-0 flex-1 items-center text-xs md:flex'>
-            <p className='font-medium text-gray-700'>
+            <p className='font-medium text-gray-700 dark:text-gray-200'>
               <span className='md:inline'>AsyncAPI v3 has landed! ⭐️</span>
             </p>
           </div>
           <div className='flex'>
             <a
               href='/blog/release-notes-3.0.0'
-              className='flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-1 text-xs font-medium text-indigo-600 shadow-sm hover:bg-indigo-50 focus:text-indigo-600'
+              className='flex items-center justify-center rounded-md border border-transparent bg-white dark:bg-dark-purple-700 px-4 py-1 text-xs font-medium text-indigo-600 dark:text-indigo-300 shadow-sm hover:bg-indigo-50 dark:hover:bg-dark-purple-600 focus:text-indigo-600 dark:focus:text-indigo-300'
               target='_blank'
               rel='noopener noreferrer'
             >
@@ -34,7 +34,7 @@ export default function Banner() {
             </a>
             <a
               href='https://v2.asyncapi.com/'
-              className='ml-2 flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-1 text-xs font-medium text-indigo-400 shadow-sm hover:bg-indigo-50 focus:text-indigo-600'
+              className='ml-2 flex items-center justify-center rounded-md border border-transparent bg-white dark:bg-dark-purple-700 px-4 py-1 text-xs font-medium text-indigo-400 dark:text-indigo-300 shadow-sm hover:bg-indigo-50 dark:hover:bg-dark-purple-600 focus:text-indigo-600 dark:focus:text-indigo-300'
               target='_blank'
               rel='noopener noreferrer'
             >

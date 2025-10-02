@@ -47,7 +47,7 @@ export default function HomePage() {
           <Hero className='mb-24' />
         </Container>
 
-        <Container className='pb-12 text-center' wide as='section'>
+        <Container className='pb-12 text-center bg-gray-50 dark:bg-dark-purple-900/50 py-16' wide as='section'>
           <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
             {t('adopters.title')}
           </Heading>
@@ -59,13 +59,13 @@ export default function HomePage() {
           </Paragraph>
           <ul className='md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-5'>
             <li className='flex justify-center'>
-              <AdidasLogo className='h-8 text-gray-400 hover:text-black' />
+              <AdidasLogo className='h-8 text-gray-400 hover:text-black dark:hover:text-white' />
             </li>
             <li className='flex justify-center'>
-              <AxwayLogo className='group mt-12 h-14 text-gray-400 hover:text-black md:-mt-5 lg:-mt-5' />
+              <AxwayLogo className='group mt-12 h-14 text-gray-400 hover:text-black dark:hover:text-white md:-mt-5 lg:-mt-5' />
             </li>
             <li className='flex justify-center'>
-              <SlackLogo className='group mt-12 h-10 text-gray-400 hover:text-black md:mt-2 lg:-mt-1' />
+              <SlackLogo className='group mt-12 h-10 text-gray-400 hover:text-black dark:hover:text-white md:mt-2 lg:-mt-1' />
             </li>
             <li className='flex justify-center'>
               <SalesforceLogo className='mt-12 h-16 text-gray-400 md:mt-2 lg:-mt-4' />
@@ -76,13 +76,13 @@ export default function HomePage() {
           </ul>
         </Container>
 
-        <div className='mt-8 bg-dark py-12'>
+        <div className='mt-8 bg-dark dark:bg-dark-purple-900 py-12'>
           <Container wide as='section'>
             <NewsletterSubscribe dark />
           </Container>
         </div>
 
-        <Container className='py-12 text-center' wide as='section'>
+        <Container className='py-12 text-center bg-white dark:bg-dark-purple-950 py-16' wide as='section'>
           <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
             {t('community.title')}
           </Heading>
@@ -144,7 +144,7 @@ export default function HomePage() {
           </div>
         </Container>
 
-        <section className='pb-20' role='contentinfo' aria-label='Our Sponsors'>
+        <section className='pb-20 bg-gray-50 dark:bg-dark-purple-900/50 py-16' role='contentinfo' aria-label='Our Sponsors'>
           <Container className='pb-6 text-center' wide as='section'>
             <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
               {t('sponsors.platinumTitle')}
@@ -178,7 +178,7 @@ export default function HomePage() {
             </Paragraph>
           </Container>
         </section>
-        <Container className='py-6 pb-20 text-center' wide>
+        <Container className='py-6 pb-20 text-center bg-white dark:bg-dark-purple-950 py-16' wide>
           <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
             {t('sponsors.supportedByTitle')}
           </Heading>
@@ -191,7 +191,7 @@ export default function HomePage() {
           </Paragraph>
           <SupportUs className='mt-4' showSupportBanner={false} />
         </Container>
-        <Container className='mt-8 pb-20 text-center' wide as='section'>
+        <Container className='mt-8 pb-20 text-center bg-gray-50 dark:bg-dark-purple-900/50 py-16' wide as='section'>
           <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
             {t('testimonials.title')}
           </Heading>

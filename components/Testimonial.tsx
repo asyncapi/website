@@ -26,27 +26,33 @@ export default function Testimonial({
   text,
   authorName,
   authorDescription,
-  authorAvatar
+  authorAvatar,
 }: TestimonialProps) {
   return (
-    <li className={`flex flex-col gap-6 p-6 sm:px-8 sm:py-6 md:flex-row md:items-start md:gap-8 md:p-8 ${className}`}>
-      <blockquote className='flex flex-col gap-6 text-left md:grow'>
-        <div className='relative text-lg font-medium leading-7 text-gray-600'>
-          <IconQuote className='absolute left-0 top-0 size-8 -translate-y-2 text-primary-500' />
-          <Paragraph className='relative pl-12'>{text}</Paragraph>
+    <li
+      className={`flex flex-col gap-6 p-6 sm:px-8 sm:py-6 md:flex-row md:items-start md:gap-8 md:p-8 ${className}`}
+    >
+      <blockquote className="flex flex-col gap-6 text-left md:grow">
+        <div className="relative text-lg font-medium leading-7 text-gray-600 dark:text-white">
+          <IconQuote className="absolute left-0 top-0 size-8 -translate-y-2 text-primary-500" />
+          <Paragraph className="relative pl-12">{text}</Paragraph>
         </div>
-        <footer className='flex items-center gap-4'>
-          <figure className='shrink-0'>
+        <footer className="flex items-center gap-4">
+          <figure className="shrink-0">
             <img
-              className='size-12 rounded-full border-2 border-white'
+              className="size-12 rounded-full border-2 border-white dark:border-dark-purple-700"
               src={authorAvatar}
               alt={authorName}
-              data-testid='Testimonial-img'
+              data-testid="Testimonial-img"
             />
           </figure>
-          <div className='ml-4 text-left'>
-            <p className='text-base font-bold leading-6 text-gray-900'>{authorName}</p>
-            <p className='text-sm font-medium leading-6 text-primary-500'>{authorDescription}</p>
+          <div className="ml-4 text-left">
+            <p className="text-base font-bold leading-6 text-gray-900 dark:text-white">
+              {authorName}
+            </p>
+            <p className="text-sm font-medium leading-6 text-primary-500 dark:text-white">
+              {authorDescription}
+            </p>
           </div>
         </footer>
       </blockquote>

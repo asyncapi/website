@@ -28,37 +28,60 @@ interface ISlackMessageProps {
  * @param {number} props.reactions[].count - Number of reactions.
  * @param {boolean} props.reactions[].mine - Indicates if the reaction is from the current user.
  */
-export default function SlackMessage({ className = '', avatar, name, text, reactions = [] }: ISlackMessageProps) {
+export default function SlackMessage({
+  className = '',
+  avatar,
+  name,
+  text,
+  reactions = [],
+}: ISlackMessageProps) {
   return (
-    <div className={`my-2 flex pl-2 text-left ${className}`} data-testid='SlackMessage-main-div'>
-      <img className='mr-2 block size-9 rounded object-cover' src={avatar} alt={name} data-testid='SlackMessage-img' />
+    <div
+      className={`my-2 flex pl-2 text-left ${className}`}
+      data-testid="SlackMessage-main-div"
+    >
+      <img
+        className="mr-2 block size-9 rounded object-cover"
+        src={avatar}
+        alt={name}
+        data-testid="SlackMessage-img"
+      />
       <div>
-        <div className='-mt-1 text-sm font-bold' data-testid='SlackMessage-name'>
+        <div
+          className="-mt-1 text-sm font-bold text-gray-900 dark:text-white"
+          data-testid="SlackMessage-name"
+        >
           {name}
         </div>
-        <p className='text-sm' data-testid='SlackMessage-text'>
+        <p
+          className="text-sm text-gray-800 dark:text-white"
+          data-testid="SlackMessage-text"
+        >
           {text}
         </p>
-        <div className='mt-0.5'>
+        <div className="mt-0.5">
           {reactions.map((reaction, index) => (
             <div
               key={index}
-              className={`mr-1 inline rounded-xl px-2 py-0.5 ${reaction.mine ? 'border border-blue-500 bg-blue-50' : 'bg-gray-100'}`}
-              data-testid='SlackMessage-reaction'
+              className={`mr-1 inline rounded-xl px-2 py-0.5 ${reaction.mine ? 'border border-blue-500 bg-blue-50 dark:bg-blue-900/30' : 'bg-gray-100 dark:bg-dark-purple-800'}`}
+              data-testid="SlackMessage-reaction"
             >
               {reaction.icon ? (
                 <img
-                  className='-mt-0.5 inline-block size-4 object-contain'
+                  className="-mt-0.5 inline-block size-4 object-contain"
                   src={reaction.icon}
                   alt={reaction.name}
-                  data-testid='reactionIcon'
+                  data-testid="reactionIcon"
                 />
               ) : (
-                <span className='mr-1 text-xs' data-testid='SlackMessage-span'>
+                <span className="mr-1 text-xs" data-testid="SlackMessage-span">
                   {reaction.emoji}
                 </span>
               )}
-              <span className='ml-1 inline-block text-xs font-bold text-blue-500' data-testid='SlackMessage-count'>
+              <span
+                className="ml-1 inline-block text-xs font-bold text-blue-500 dark:text-white"
+                data-testid="SlackMessage-count"
+              >
                 {reaction.count}
               </span>
             </div>

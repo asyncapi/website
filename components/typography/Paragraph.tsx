@@ -27,10 +27,10 @@ export interface ParagraphProps {
  */
 export default function Paragraph({
   typeStyle = ParagraphTypeStyle.lg,
-  textColor = 'text-gray-700',
+  textColor = 'text-gray-700 dark:text-white',
   fontWeight = '',
   className = '',
-  children
+  children,
 }: ParagraphProps) {
   let classNames = '';
 
@@ -49,7 +49,7 @@ export default function Paragraph({
   }
 
   return (
-    <p data-testid='Paragraph-test' className={twMerge(textColor, classNames)}>
+    <p data-testid="Paragraph-test" className={twMerge(textColor, classNames)}>
       {children}
     </p>
   );

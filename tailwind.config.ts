@@ -64,6 +64,7 @@ const colorGray: Record<string, string> = {
 };
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -124,7 +125,20 @@ const config: Config = {
         },
         violet: '#8054F2',
         darkGunMetal: '#212526',
-        linkedin: '#0077b5'
+        linkedin: '#0077b5',
+        'dark-purple': {
+          50: '#f8f7ff',
+          100: '#f0edff',
+          200: '#e4dcff',
+          300: '#d1c2ff',
+          400: '#b89dff',
+          500: '#9c75ff',
+          600: '#8851fb',
+          700: '#7c3aed',
+          800: '#6b21d4',
+          900: '#581c87',
+          950: '#1e0a3d'
+        }
       },
       scale: {
         25: '.25'

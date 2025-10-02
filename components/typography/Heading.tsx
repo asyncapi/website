@@ -30,10 +30,10 @@ export interface HeadingProps {
 export default function Heading({
   typeStyle = HeadingTypeStyle.lg,
   level = HeadingLevel.h2,
-  textColor = 'text-primary-800',
+  textColor = 'text-primary-800 dark:text-white',
   className = '',
   children,
-  id
+  id,
 }: HeadingProps) {
   const Tag = level ?? HeadingLevel.h2;
 
