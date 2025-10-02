@@ -1359,45 +1359,6 @@
                 "sqs": {},
                 "stomp": {},
                 "redis": {},
-                "ros2": {
-                    "properties": {
-                        "bindingVersion": {
-                            "enum": [
-                                "0.1.0"
-                            ]
-                        }
-                    },
-                    "allOf": [
-                        {
-                            "description": "If no bindingVersion specified, use the latest binding",
-                            "if": {
-                                "not": {
-                                    "required": [
-                                        "bindingVersion"
-                                    ]
-                                }
-                            },
-                            "then": {
-                                "$ref": "#/definitions/bindings-ros2-0.1.0-server"
-                            }
-                        },
-                        {
-                            "if": {
-                                "required": [
-                                    "bindingVersion"
-                                ],
-                                "properties": {
-                                    "bindingVersion": {
-                                        "const": "0.1.0"
-                                    }
-                                }
-                            },
-                            "then": {
-                                "$ref": "#/definitions/bindings-ros2-0.1.0-server"
-                            }
-                        }
-                    ]
-                },
                 "ibmmq": {
                     "properties": {
                         "bindingVersion": {
@@ -2184,44 +2145,6 @@
                     "bindingVersion": "0.0.1"
                 }
             ]
-        },
-        "bindings-ros2-0.1.0-server": {
-            "description": "This object contains information about the server representation in ROS 2.",
-            "examples": [
-                {
-                    "domainId": "0",
-                    "rmwImplementation": "rmw_fastrtps_cpp"
-                }
-            ],
-            "type": "object",
-            "required": [
-                "host",
-                "protocol"
-            ],
-            "properties": {
-                "bindingVersion": {
-                    "description": "The version of this binding. If omitted, 'latest' MUST be assumed.",
-                    "type": "string",
-                    "enum": [
-                        "0.1.0"
-                    ]
-                },
-                "domainId": {
-                    "description": "All ROS 2 nodes use domain ID 0 by default. To prevent interference between different groups of computers running ROS 2 on the same network, a group can be set with a unique domain ID.",
-                    "type": "integer",
-                    "maximum": 231,
-                    "minimum": 0
-                },
-                "rmwImplementation": {
-                    "description": "Specifies the ROS 2 middleware implementation to be used. This determines the underlying middleware implementation that handles communication.",
-                    "type": "string"
-                }
-            },
-            "patternProperties": {
-                "^x-[\\w\\d\\.\\x2d_]+$": {
-                    "$ref": "#/definitions/specificationExtension"
-                }
-            }
         },
         "bindings-ibmmq-0.1.0-server": {
             "title": "IBM MQ server bindings object",
@@ -7190,45 +7113,6 @@
                 },
                 "stomp": {},
                 "redis": {},
-                "ros2": {
-                    "properties": {
-                        "bindingVersion": {
-                            "enum": [
-                                "0.1.0"
-                            ]
-                        }
-                    },
-                    "allOf": [
-                        {
-                            "description": "If no bindingVersion specified, use the latest binding",
-                            "if": {
-                                "not": {
-                                    "required": [
-                                        "bindingVersion"
-                                    ]
-                                }
-                            },
-                            "then": {
-                                "$ref": "#/definitions/bindings-ros2-0.1.0-operation"
-                            }
-                        },
-                        {
-                            "if": {
-                                "required": [
-                                    "bindingVersion"
-                                ],
-                                "properties": {
-                                    "bindingVersion": {
-                                        "const": "0.1.0"
-                                    }
-                                }
-                            },
-                            "then": {
-                                "$ref": "#/definitions/bindings-ros2-0.1.0-operation"
-                            }
-                        }
-                    ]
-                },
                 "ibmmq": {},
                 "solace": {
                     "properties": {
@@ -8296,110 +8180,6 @@
                     ]
                 }
             ]
-        },
-        "bindings-ros2-0.1.0-operation": {
-            "description": "This object contains information about the operation representation in ROS 2.",
-            "examples": [
-                {
-                    "node": "/turtlesim",
-                    "qosPolicies": {
-                        "deadline": "-1",
-                        "durability": "volatile",
-                        "history": "unknown",
-                        "leaseDuration": "-1",
-                        "lifespan": "-1",
-                        "liveliness": "automatic",
-                        "reliability": "reliable"
-                    },
-                    "role": "subscriber"
-                }
-            ],
-            "type": "object",
-            "required": [
-                "role",
-                "node"
-            ],
-            "properties": {
-                "bindingVersion": {
-                    "description": "The version of this binding. If omitted, 'latest' MUST be assumed.",
-                    "type": "string",
-                    "enum": [
-                        "0.1.0"
-                    ]
-                },
-                "node": {
-                    "description": "The name of the ROS 2 node that implements this operation.",
-                    "type": "string"
-                },
-                "qosPolicies": {
-                    "type": "object",
-                    "properties": {
-                        "deadline": {
-                            "description": "The expected maximum amount of time between subsequent messages being published to a topic. -1 means infinite.",
-                            "type": "integer"
-                        },
-                        "durability": {
-                            "description": "Persistence specification that determines message availability for late-joining subscribers",
-                            "type": "string",
-                            "enum": [
-                                "transient_local",
-                                "volatile"
-                            ]
-                        },
-                        "history": {
-                            "description": "Policy parameter that defines the maximum number of samples maintained in the middleware queue",
-                            "type": "string",
-                            "enum": [
-                                "keep_last",
-                                "keep_all",
-                                "unknown"
-                            ]
-                        },
-                        "leaseDuration": {
-                            "description": "The maximum period of time a publisher has to indicate that it is alive before the system considers it to have lost liveliness. -1 means infinite.",
-                            "type": "integer"
-                        },
-                        "lifespan": {
-                            "description": "The maximum amount of time between the publishing and the reception of a message without the message being considered stale or expired. -1 means infinite.",
-                            "type": "integer"
-                        },
-                        "liveliness": {
-                            "description": "Defines the mechanism by which the system monitors and determines the operational status of communication entities within the network.",
-                            "type": "string",
-                            "enum": [
-                                "automatic",
-                                "manual"
-                            ]
-                        },
-                        "reliability": {
-                            "description": "Specifies the communication guarantee model that determines whether message delivery confirmation between publisher and subscriber is required.",
-                            "type": "string",
-                            "enum": [
-                                "best_effort",
-                                "realiable"
-                            ]
-                        }
-                    }
-                },
-                "role": {
-                    "description": "Specifies the ROS 2 type of the node for this operation.",
-                    "type": "string",
-                    "enum": [
-                        "publisher",
-                        "action_client",
-                        "service_client",
-                        "subscriber",
-                        "action_server",
-                        "service_server"
-                    ]
-                }
-            },
-            "patternProperties": {
-                "^x-[\\w\\d\\.\\x2d_]+$": {
-                    "$ref": "#/definitions/specificationExtension"
-                }
-            },
-            "additionalProperties": false
         },
         "bindings-solace-0.4.0-operation": {
             "title": "Solace operation bindings object",
