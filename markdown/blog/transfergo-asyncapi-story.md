@@ -39,13 +39,13 @@ Service (SNS) and Simple Queue Service (SQS), with a pinch of Kafka.
 
 ![Async Communication flow](/img/posts/transfergo/light/0.png#gh-light-mode-only)
 
-## How it started?
+## How it Started?
 
-### Async API standard introduction
+### AsyncAPI Standard Introduction
 
 In 2021, the Backend guild in TransferGo defined a problem. There were too many approaches to documenting REST and async
-APIs within the guild. That was when the story of TransferGo and Async API Initiative began. Let me tell you how we
-leveraged the possibilities of Async API specification to improve and drive our engineer's experience.
+APIs within the guild. That was when the story of TransferGo and AsyncAPI Initiative began. Let me tell you how we
+leveraged the possibilities of the AsyncAPI specification to improve and drive our engineers' experience.
 
 ### Code-first Documentation
 
@@ -56,10 +56,10 @@ Reflection builds message payload from its Data Transfer Object (DTO).
 
 This combination enables your engineer to:
 
-* Ease the introduction for an engineers
+* Ease the introduction for an engineer
 * Fewer repetitions in the code
 * Ensures standard across company
-* Enables seamless upgrades between Async API versions
+* Enables seamless upgrades between AsyncAPI versions
 
 The only minus is that the library must be maintained
 
@@ -110,7 +110,7 @@ schemas. With teams growing, we had to support more events, more operations and 
 writing/generating Async API yaml schema with the help of AI. Growing technical stacks, validated our
 ideas in 2021, and we had to take some actions.
 
-Let's not reinvent the wheel. [Async API CLI](https://www.asyncapi.com/tools/cli) has a built-in validation command, which comes in handy. It's easy to use
+Let's not reinvent the wheel. [AsyncAPI CLI](https://www.asyncapi.com/tools/cli) has a built-in validation command, which comes in handy. It's easy to use
 and quite fast. This way, with simple `asyncapi validate schema.yaml`, we managed to ensure our services expose ONLY valid
 schemas. But some docs were quite heavy. 1 MB. Yes, 100 channels and twice that contracts can bring your schema to that size,
 thanks to `asyncapi optimise schema.yaml` command, we cut the size by about 50%. That's a small win for us, our resources and the planet.
@@ -134,14 +134,14 @@ To keep everything up to date, we automated the publishing process using a **Git
 Now, instead of chasing URLs or digging through repos, developers can browse all available services, see their contracts visually, and quickly understand how to integrate with them — all in one place.
 
 
-## How's it going?
+## How's it Going?
 
 ### Event Catalog
 
 With over 300 channels, learning what's published and where and when is quite a challenge. Gladly, there are solutions for this pain.
 The [Event Catalog](https://www.eventcatalog.dev/) project, done by [David](https://github.com/boyney123) helped us
 show the big picture and significantly showcased scenarios that required our attention. Below, you can find our process
-of gathering schemas and building event catalog from Async API files.
+of gathering schemas and building an event catalog from AsyncAPI files.
 
 ![Service documentation generation pipeline](/img/posts/transfergo/light/1.png#gh-light-mode-only)
 
@@ -150,7 +150,7 @@ of gathering schemas and building event catalog from Async API files.
 ### Contract Testing
 
 Recently, our attention has been focused on contract testing. It would be ideal to build such an extra layer of tests based
-on well-known specs like Open API and Async API. Multiple solutions were tested, but the [Microcks](https://microcks.io/)
+on well-known specs like OpenAPI and AsyncAPI. Multiple solutions were tested, but the [Microcks](https://microcks.io/)
 project seemed to suite us the best.
 
 We’ve recently been focusing more on contract testing as a way to ensure our services interact reliably as they grow and change.
@@ -187,7 +187,7 @@ That's how the concept of API Guardian came up. This is our internal tool that c
 file and async api schema. Looking for forgotten channels. It's nothing more than a simple CLI app based on Oclif
 Framework that compares two or multiple of files. It's a more complicated topic as you need to understand which parts
 of the infrastructure are the contracts. Some elements must be ignored, like Dead Letter Queues or Internal Queues. Because of that,
-we can develop a nice config file that lets you ignore specific sqs, sns and channels of necessary.
+We can develop a nice config file that lets you ignore specific SQS, SNS, and channels as necessary.
 
 ```
 node asyncapi-coverage
@@ -223,5 +223,5 @@ Starting with a code-first approach, we built internal tooling that automaticall
 As the number of services and channels grew, we introduced validation pipelines, schema scoring, and optimization practices to maintain quality at scale.
 We then tackled accessibility by moving from isolated, YAML-based docs to a centralized Developer Portal powered by Port.io.
 For testing, we use Microcks with LocalStack in Jenkins CI to run end-to-end contract tests against real message consumers.
-To further increase trust and visibility, we integrated our schemas into an Event Catalog and built a custom CLI tool - API Guardian - to measure schema coverage against deployed infrastructure.
+To further increase trust and visibility, we integrated our schemas into an Event Catalog and built a custom CLI tool, API Guardian, to measure schema coverage against deployed infrastructure.
 AsyncAPI has become a foundational part of how we scale service development at TransferGo - helping us move fast, stay aligned, and keep our system reliable and well-documented from day one.
