@@ -22,12 +22,12 @@ We are also available on the [AsyncAPI slack](https://asyncapi.com/slack-invite)
 
 | Program | Purpose | Details and historical data |
 |-------- | ------- | --------------------------- |
-| [AsyncAPI Mentorship](https://www.asyncapi.com/) | Mentoring initiative by AsyncAPI | [asyncapi-mentorship](./asyncapi-mentorship-README.md) |
-| [Google Summer of Code](https://summerofcode.withgoogle.com/) | Mentoring program for the students | [summerofcode](./summerofcode-README.md) |
-| [Google Season of Docs](https://developers.google.com/season-of-docs) | Mentoring initiative for technical writers | [seasonofdocs](./seasonofdocs-2023-README.md) |
-| [Winter of Code](https://www.winterofcode.com) | Mentoring initiative aimed to increase participation for the Google Summer of Code program among students | [winterofcode](./winterofcode-2023-README.md) |
-| [OpenForce](https://www.openforce.tech/) | The CROSS Research Experiences program provides support for undergraduate and graduate students contributing to CROSS incubator projects. | [openforce](openforce/README.md) |
-| [Hacktoberfest](https://hacktoberfest.com/) |  The idea of Hacktoberfest is to encourage everyone, especially beginners, to contribute to projects that are dear to their hearts. | [hacktoberfest](hacktoberfest/README.md) |
+| [AsyncAPI Mentorship](https://www.asyncapi.com/) | Mentoring initiative by AsyncAPI | [asyncapi-mentorship](./asyncapi-mentorship-README) |
+| [Google Summer of Code](https://summerofcode.withgoogle.com/) | Mentoring program for the students | [summerofcode](./summerofcode-README) |
+| [Google Season of Docs](https://developers.google.com/season-of-docs) | Mentoring initiative for technical writers | [seasonofdocs](./seasonofdocs-2023-README) |
+| [Winter of Code](https://www.winterofcode.com) | Mentoring initiative aimed to increase participation for the Google Summer of Code program among students | [winterofcode](./winterofcode-2023-README) |
+| [OpenForce](https://www.openforce.tech/) | The CROSS Research Experiences program provides support for undergraduate and graduate students contributing to CROSS incubator projects. | [openforce](openforce/README) |
+| [Hacktoberfest](https://hacktoberfest.com/) |  The idea of Hacktoberfest is to encourage everyone, especially beginners, to contribute to projects that are dear to their hearts. | [hacktoberfest](hacktoberfest/README) |
 
 ## Program Statistics
 

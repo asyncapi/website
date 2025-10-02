@@ -74,9 +74,9 @@ To meet the demands of our growing community, we require full-time commitment. W
 
 We aim to establish our own swag store to efficiently distribute merchandise to contributors, mentees, ambassadors, and other community members. Part of the proceeds from the store can help cover the cost of complimentary swag.
 
-#### Bounty program
+#### Bounty Program
 
-Our bounty program seeks to recognize and reward dedicated contributors and maintainers without relying solely on company-sponsored employees or volunteers. We provide newcomers with free mentoring and assistance in building their contributor portfolios, making it easier for them to secure rewarding tech jobs.
+Our Bounty Program seeks to recognize and reward dedicated contributors and maintainers without relying solely on company-sponsored employees or volunteers. It also provides newcomers with the opportunity to build their contributor portfolios, making it easier for them to secure rewarding tech jobs.
 
 #### Services
 
