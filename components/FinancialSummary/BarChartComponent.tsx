@@ -34,11 +34,11 @@ export default function BarChartComponent() {
         const combined: Record<string, ExpenseItem[]> = {};
 
         Object.entries(Expenses2023Data).forEach(([month, data]) => {
-          combined[`${month} 2023`] = data;
+          combined[`${month} 2023`] = data as ExpenseItem[];
         });
 
         Object.entries(ExpensesData).forEach(([month, data]) => {
-          combined[`${month} 2024`] = data;
+          combined[`${month} 2024`] = data as ExpenseItem[];
         });
 
         return combined;
