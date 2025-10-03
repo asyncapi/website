@@ -55,7 +55,7 @@ export default function BarChartComponent() {
       case '2023':
         return ExpensesLink2023Data;
       case 'All Years': {
-        // Merge links from both years, with 2024 taking precedence for duplicates
+        // Merge links from both years, with 2023 taking precedence for duplicates
         const allLinks = [...ExpensesLink2023Data];
 
         ExpensesLinkData.forEach((link) => {
@@ -77,7 +77,7 @@ export default function BarChartComponent() {
   const currentExpensesLinkData = getExpensesLinkData();
 
   // Extracting unique categories and months from the current data
-  const categories: string[] = getUniqueCategories(currentExpensesData);
+  const categories: string[] = getUniqueCategories(currentExpensesData as Record<string, Array<{ Category: string }>>);
   const months: string[] = Object.keys(currentExpensesData);
 
   // Effect hook to update windowWidth state on resize
@@ -194,7 +194,7 @@ export default function BarChartComponent() {
               onClick={(data) => {
                 const category = data.payload.Category;
                 const matchedLinkObject: ExpensesLinkItem | undefined = currentExpensesLinkData.find(
-                  (obj) => obj.category === category
+                  (obj: ExpensesLinkItem) => obj.category === category
                 );
 
                 if (matchedLinkObject) {
