@@ -53,7 +53,8 @@ export function slugifyToC(str: string) {
 /**
  * Capitalizes the first letter of each word in the provided string.
  *
- * This function splits the text on whitespace and hyphen characters, capitalizes the first letter of each segment, and then joins them with a space.
+ * This function splits the text on whitespace and hyphen characters, capitalizes the first letter of each segment,
+ * and then joins them with a space.
  *
  * @param text - The string to transform.
  * @returns The transformed string with each word's initial letter capitalized.
@@ -68,8 +69,9 @@ function capitalize(text: string) {
 /**
  * Adds an item to the final result based on its details.
  *
- * @param {Details} details - The details of the item to add.
- * @throws {Error} - Throws an error if the details object is invalid.
+ * @param details - The details of the item to add
+ * @param resultObj - The result object to add the item to
+ * @throws {Error} Throws an error if the details object is invalid
  */
 export const addItem = (details: Details, resultObj: Result) => {
   if (!details || typeof details.slug !== 'string') {
@@ -92,7 +94,8 @@ export const addItem = (details: Details, resultObj: Result) => {
 /**
  * Extracts version information from a slug and associates it with a weight.
  *
- * This function parses the provided slug to obtain its basename and extracts the first segment (delimited by a hyphen) as the version identifier.
+ * This function parses the provided slug to obtain its basename and extracts the first segment (delimited by a
+ * hyphen) as the version identifier.
  * If the identifier begins with a "v", that prefix is removed prior to capitalization.
  * The resulting version title, along with the original weight, is returned in an object.
  *
@@ -113,10 +116,12 @@ function getVersionDetails(slug: string, weight: number) {
 }
 
 /**
- * Updates a details object by appending version indicators to its title and marking it as a pre-release when applicable.
+ * Updates a details object by appending version indicators to its title and marking it as a pre-release when
+ * applicable.
  *
  * Specifically, if the file base name contains "next-spec" or "next-major-spec", the function sets the pre-release flag
- * and appends " (Pre-release)" to the title. Additionally, if the file base name includes "explorer", it appends " - Explorer"
+ * and appends " (Pre-release)" to the title. Additionally, if the file base name includes "explorer", it appends
+ * " - Explorer"
  * to the title.
  *
  * @param details - The documentation item's details object.
@@ -125,12 +130,14 @@ function getVersionDetails(slug: string, weight: number) {
  */
 function handleSpecificationVersion(details: Details, fileBaseName: string) {
   const detailsObj = details;
+  const isPrerelease = fileBaseName.includes('next-spec') || fileBaseName.includes('next-major-spec');
+  const isExplorer = fileBaseName.includes('explorer');
 
-  if (fileBaseName.includes('next-spec') || fileBaseName.includes('next-major-spec')) {
+  if (isPrerelease) {
     detailsObj.isPrerelease = true;
     detailsObj.title += ' (Pre-release)';
   }
-  if (fileBaseName.includes('explorer')) {
+  if (isExplorer) {
     detailsObj.title += ' - Explorer';
   }
 
@@ -191,8 +198,10 @@ async function walkDirectories(
 
         if (await isDirectory(fileName)) {
           if (await pathExists(fileNameWithSection)) {
-            // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
-            details = frontMatter(await readFile(fileNameWithSection, 'utf-8'), {}).data as Details;
+            // Disable frontMatter cache. See https://github.com/asyncapi/website/issues/1057
+            const fileContent = await readFile(fileNameWithSection, 'utf-8');
+
+            details = frontMatter(fileContent, {}).data as Details;
             details.title = details.title || capitalize(basename(fileName));
           } else {
             details = {
@@ -224,13 +233,13 @@ async function walkDirectories(
           );
         } else if (file.endsWith('.mdx') && !fileName.endsWith(`${sep}_section.mdx`)) {
           const fileContent = await readFile(fileName, 'utf-8');
-          // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
+          // Disable frontMatter cache. See https://github.com/asyncapi/website/issues/1057
           const { data, content } = frontMatter(fileContent, {});
 
           details = data as Details;
           details.toc = toc(content, { slugify: slugifyToC }).json;
           details.readingTime = Math.ceil(readingTime(content).minutes);
-          details.excerpt = details.excerpt || markdownToTxt(content).substr(0, 200);
+          details.excerpt = details.excerpt || markdownToTxt(content).substring(0, 200);
           details.sectionSlug = sectionSlug || slug.replace(/\.mdx$/, '');
           details.sectionWeight = sectionWeight;
           details.sectionTitle = sectionTitle;
@@ -253,7 +262,7 @@ async function walkDirectories(
             details = handleSpecificationVersion(details, fileBaseName);
           }
 
-          // To create a list of available ReleaseNotes list, which will be used to add details.releaseNoteLink attribute.
+          // Create a list of available ReleaseNotes for details.releaseNoteLink
           if (file.startsWith('release-notes') && dir[1] === '/blog') {
             const { name } = parse(file);
             const version = name.split('-').pop();
@@ -266,7 +275,22 @@ async function walkDirectories(
       }
     }
   } catch (error) {
-    throw new Error(`Error while walking directories: ${(error as Error).message}`);
+    const refinedError = new Error(`Error while walking directories: ${(error as Error).message}`);
+
+    (refinedError as any).context = {
+      operation: 'walkDirectories',
+      stage: 'directory_traversal',
+      directories,
+      basePath,
+      sectionTitle,
+      sectionId,
+      rootSectionId,
+      sectionWeight,
+      originalErrorMessage: (error as Error).message,
+      originalErrorStack: (error as Error).stack?.split('\n').slice(0, 3).join('\n'),
+      nestedContext: (error as any)?.context || null
+    };
+    throw refinedError;
   }
 }
 // Builds a list of posts from the specified directories and writes it to a file
@@ -292,13 +316,37 @@ export async function buildPostList(
 ): Promise<void> {
   try {
     if (!basePath) {
-      throw new Error('Error while building post list: basePath is required');
+      const error = new Error('basePath is required');
+
+      (error as any).context = {
+        function: 'buildPostList',
+        postDirectories,
+        basePath,
+        writeFilePath
+      };
+      throw error;
     }
     if (!writeFilePath) {
-      throw new Error('Error while building post list: writeFilePath is required');
+      const error = new Error('writeFilePath is required');
+
+      (error as any).context = {
+        function: 'buildPostList',
+        postDirectories,
+        basePath,
+        writeFilePath
+      };
+      throw error;
     }
     if (postDirectories.length === 0) {
-      throw new Error('Error while building post list: postDirectories array is empty');
+      const error = new Error('postDirectories array is empty');
+
+      (error as any).context = {
+        function: 'buildPostList',
+        postDirectories: [],
+        basePath,
+        writeFilePath
+      };
+      throw error;
     }
     const normalizedBasePath = normalize(basePath);
 
@@ -309,6 +357,18 @@ export async function buildPostList(
     finalResult.docs = addDocButtons(finalResult.docs, treePosts);
     await writeFile(writeFilePath, JSON.stringify(finalResult, null, '  '));
   } catch (error) {
-    throw new Error(`Error while building post list: ${(error as Error).message}`, { cause: error });
+    const contextError = new Error(`Error while building post list: ${(error as Error).message}`);
+
+    (contextError as any).context = {
+      operation: (error as any)?.context?.operation || 'buildPostList',
+      stage: (error as any)?.context?.stage || 'main_execution',
+      postDirectories,
+      basePath,
+      writeFilePath,
+      normalizedBasePath: basePath ? normalize(basePath) : undefined,
+      errorMessage: (error as Error).message,
+      errorStack: (error as Error).stack?.split('\n').slice(0, 3).join('\n')
+    };
+    throw contextError;
   }
 }

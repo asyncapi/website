@@ -28,16 +28,21 @@ const fuse = new Fuse(categoryList, options);
 /**
  * Constructs a tool object for frontend display.
  *
- * This asynchronous function builds a tool object used by the ToolCard component. It uses the provided tool file to extract
- * details such as title, description, links, and filters. If certain fields (like repository URL or description) are missing
- * in the tool file, the corresponding fallback values from the parameters are used. The filter for AsyncAPI ownership is set
- * based on the isAsyncAPIrepo parameter.
+ * This asynchronous function builds a tool object used by the ToolCard component.
+ * It extracts details such as title, description, links, and filters from the provided
+ * tool file. If certain fields (like repository URL or description) are missing in the
+ * tool file, the corresponding fallback values from the parameters are used.
+ * The filter for AsyncAPI ownership is set based on the isAsyncAPIrepo parameter.
  *
- * @param toolFile - The tool file content containing information such as title, description, links, and filters.
- * @param repositoryUrl - The URL of the tool's repository, used as a fallback if not specified in the tool file.
- * @param repoDescription - The repository description, used as a fallback if the tool file does not provide one.
- * @param isAsyncAPIrepo - Indicates whether the repository belongs to the AsyncAPI organization. Can be a boolean or a string.
- * @returns A promise that resolves to the constructed tool object.
+ * @param toolFile - The tool file content containing information such as title,
+ *                   description, links, and filters
+ * @param repositoryUrl - The URL of the tool's repository, used as a fallback if not
+ *                        specified in the tool file
+ * @param repoDescription - The repository description, used as a fallback if the tool
+ *                          file does not provide one
+ * @param isAsyncAPIrepo - Indicates whether the repository belongs to the AsyncAPI
+ *                         organization
+ * @returns A promise that resolves to the constructed tool object
  */
 async function createToolObject(
   toolFile: AsyncAPITool,
@@ -70,14 +75,17 @@ async function createToolObject(
 /**
  * Processes raw tools data from the GitHub API and categorizes valid tool entries.
  *
- * This asynchronous function iterates over the provided tools data and, for each tool whose name starts with ".asyncapi-tool",
- * it retrieves the tool file content from GitHub, converts it from YAML to JSON, and validates it against a predefined JSON schema.
- * For valid tool files, it creates a tool object and assigns it to one or more categories using fuzzy search on its filter categories.
- * If no matching category is found, the tool is placed in the "Others" category.
+ * This asynchronous function iterates over the provided tools data and, for each tool
+ * whose name starts with ".asyncapi-tool", it retrieves the tool file content from
+ * GitHub, converts it from YAML to JSON, and validates it against a predefined JSON
+ * schema. For valid tool files, it creates a tool object and assigns it to one or more
+ * categories using fuzzy search on its filter categories. If no matching category is
+ * found, the tool is placed in the "Others" category.
  *
- * @param data - The tools data from the GitHub API.
- * @returns A promise that resolves to an object mapping category names to lists of tool objects.
- * @throws {Error} When an error occurs during tool processing.
+ * @param data - The tools data from the GitHub API
+ * @returns A promise that resolves to an object mapping category names to lists of
+ *          tool objects
+ * @throws {Error} When an error occurs during tool processing
  */
 async function convertTools(data: ToolsData) {
   try {
@@ -107,23 +115,24 @@ async function convertTools(data: ToolsData) {
             const jsonToolFileContent = await convertToJson(toolFileContent);
 
             // validating against JSON Schema for tools file
-            const isValid = await validate(jsonToolFileContent);
+            const isValid = validate(jsonToolFileContent);
 
             if (isValid) {
               const repositoryUrl = tool.repository.html_url;
               const repoDescription = tool.repository.description;
               const isAsyncAPIrepo = tool.repository.owner.login === 'asyncapi';
               const toolObject = await createToolObject(
-                jsonToolFileContent,
+                jsonToolFileContent as unknown as AsyncAPITool,
                 repositoryUrl,
                 repoDescription,
                 isAsyncAPIrepo
               );
 
-              // Tool Object is appended to each category array according to Fuse search for categories inside Tool Object
+              // Tool Object is appended to each category array according to Fuse search for categories inside
+              // Tool Object
               await Promise.all(
-                jsonToolFileContent.filters.categories.map(async (category: string) => {
-                  const categorySearch = await fuse.search(category);
+                (jsonToolFileContent as unknown as AsyncAPITool).filters.categories.map(async (category: string) => {
+                  const categorySearch = fuse.search(category);
                   const targetCategory = categorySearch.length ? categorySearch[0].item.name : 'Others';
                   const { toolsList } = finalToolsObject[targetCategory];
 
@@ -133,22 +142,41 @@ async function convertTools(data: ToolsData) {
                 })
               );
             } else {
-              logger.warn(
-                `Script is not failing, it is just dropping errors for further investigation.\nInvalid .asyncapi-tool file. \nLocated in: ${tool.html_url}. \nValidation errors: ${JSON.stringify(validate.errors, null, 2)}`
-              );
+              logger.warn('Invalid .asyncapi-tool file detected', {
+                message: 'Script is not failing, it is just dropping errors for further investigation',
+                location: tool.html_url,
+                validationErrors: validate.errors,
+                tool: {
+                  name: tool.name,
+                  repository: tool.repository.full_name,
+                  path: tool.path
+                }
+              });
             }
           }
         } catch (err) {
-          logger.error(err);
-          throw err;
+          const errorObj = err instanceof Error ? err : new Error(String(err));
+
+          logger.error('Error processing individual tool', {
+            error: errorObj,
+            toolName: tool.name,
+            repository: tool.repository?.full_name
+          });
+
+          // Don't throw here, just log and continue with other tools
         }
       })
     );
 
     return finalToolsObject;
   } catch (err: unknown) {
-    logger.error('Error processing tools:', err);
-    throw err;
+    const errorObj = err instanceof Error ? err : new Error(String(err));
+
+    logger.error('Error processing tools', {
+      error: errorObj
+    });
+
+    throw errorObj;
   }
 }
 

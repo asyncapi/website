@@ -115,9 +115,15 @@ describe('Tools Object', () => {
     await convertTools(mockData);
 
     expect(logger.warn).toHaveBeenCalledWith(
-      expect.stringContaining(
-        'Script is not failing, it is just dropping errors for further investigation.\nInvalid .asyncapi-tool file.'
-      )
+      'Invalid .asyncapi-tool file detected',
+      expect.objectContaining({
+        message: 'Script is not failing, it is just dropping errors for further investigation',
+        validationErrors: expect.any(Array),
+        tool: expect.objectContaining({
+          name: expect.stringContaining('.asyncapi-tool'),
+          repository: expect.any(String)
+        })
+      })
     );
   });
 
@@ -156,7 +162,7 @@ describe('Tools Object', () => {
     expect(result.Others.toolsList[0].title).toBe('Duplicate Tool in Others');
   });
 
-  it('should throw an error if axios.get fails', async () => {
+  it('should handle axios.get failures gracefully', async () => {
     const mockData = createMockData([
       {
         name: '.asyncapi-tool-error',
@@ -166,7 +172,12 @@ describe('Tools Object', () => {
 
     axiosMock.get.mockRejectedValue(new Error('Network Error'));
 
-    await expect(convertTools(mockData)).rejects.toThrow('Network Error');
+    // Should not throw, just log the error and return empty categories
+    const result = await convertTools(mockData);
+
+    expect(result).toBeDefined();
+    expect(result.Category1.toolsList).toHaveLength(0);
+    expect(result.Others.toolsList).toHaveLength(0);
   });
 
   it('should handle malformed JSON in tool file', async () => {
@@ -227,5 +238,93 @@ describe('Tools Object', () => {
     // the tool should only be added once to that category
     expect(result.Category1.toolsList).toHaveLength(1);
     expect(result.Category1.toolsList[0].title).toBe('Duplicate Category Tool');
+  });
+
+  it('should handle individual tool processing errors', async () => {
+    const mockData = createMockData([{ name: '.asyncapi-tool', repoName: 'error-repo' }]);
+
+    // Mock axios to throw an error
+    axiosMock.get.mockRejectedValue(new Error('Network error'));
+
+    // Should not throw, just log the error and continue
+    const result = await convertTools(mockData);
+
+    expect(result).toBeDefined();
+
+    expect(logger.error).toHaveBeenCalledWith(
+      'Error processing individual tool',
+      expect.objectContaining({
+        error: expect.any(Error),
+        toolName: '.asyncapi-tool',
+        repository: 'asyncapi/error-repo'
+      })
+    );
+  });
+
+  it('should handle overall convertTools processing errors', async () => {
+    // Mock data processing to cause a general error in the outer catch block
+    const mockData = null as any; // This will cause an error
+
+    await expect(convertTools(mockData)).rejects.toThrow();
+
+    expect(logger.error).toHaveBeenCalledWith(
+      'Error processing tools',
+      expect.objectContaining({
+        error: expect.any(Error)
+      })
+    );
+  });
+
+  it('should handle non-Error exceptions in individual tool processing', async () => {
+    const mockData = createMockData([{ name: '.asyncapi-tool', repoName: 'error-repo' }]);
+
+    // Mock axios to throw a non-Error object
+    axiosMock.get.mockRejectedValue('String error instead of Error object');
+
+    // Should not throw, just log the error and continue
+    const result = await convertTools(mockData);
+
+    expect(result).toBeDefined();
+
+    expect(logger.error).toHaveBeenCalledWith(
+      'Error processing individual tool',
+      expect.objectContaining({
+        error: expect.any(Error),
+        toolName: '.asyncapi-tool',
+        repository: 'asyncapi/error-repo'
+      })
+    );
+  });
+
+  it('should handle non-Error exceptions in overall processing', async () => {
+    // Create a mock that will cause a non-Error exception in the outer catch
+    const mockData = createMockData([
+      {
+        name: '.asyncapi-tool',
+        repoName: 'test-repo'
+      }
+    ]);
+
+    // Mock Promise.all to throw a non-Error exception
+    const originalPromiseAll = Promise.all;
+
+    Promise.all = jest.fn().mockRejectedValue('Non-error exception');
+
+    try {
+      await convertTools(mockData);
+      expect(true).toBe(false); // Should not reach here
+    } catch (error) {
+      expect(error).toBeInstanceOf(Error);
+    }
+
+    expect(logger.error).toHaveBeenCalledWith(
+      'Error processing tools',
+      expect.objectContaining({
+        error: expect.any(Error)
+      })
+    );
+
+    // Restore Promise.all
+    Promise.all = originalPromiseAll;
   });
 });

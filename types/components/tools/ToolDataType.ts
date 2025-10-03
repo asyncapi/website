@@ -1,3 +1,5 @@
+import type { RefObject } from 'react';
+
 export interface Link {
   repoUrl?: string;
   websiteUrl?: string;
@@ -41,7 +43,7 @@ export interface ToolsListData {
   [category: string]: {
     description: string;
     toolsList: ToolData[];
-    elementRef?: React.RefObject<any>;
+    elementRef?: RefObject<any>;
   };
 }
 
