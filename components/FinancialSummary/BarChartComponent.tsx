@@ -4,7 +4,9 @@ import { Bar, BarChart, CartesianGrid, Legend, Tooltip, YAxis } from 'recharts';
 import type { ExpenseItem, ExpensesLinkItem } from '@/types/FinancialSummary/BarChartComponent';
 
 import ExpensesData from '../../config/finance/json-data/Expenses.json';
+import Expenses2023Data from '../../config/finance/json-data/Expenses2023.json';
 import ExpensesLinkData from '../../config/finance/json-data/ExpensesLink.json';
+import ExpensesLink2023Data from '../../config/finance/json-data/ExpensesLink2023.json';
 import { getUniqueCategories } from '../../utils/getUniqueCategories';
 import CustomTooltip from './CustomTooltip';
 import ExpensesCard from './ExpensesCard';
@@ -16,11 +18,48 @@ export default function BarChartComponent() {
   // Setting up state variables using useState hook
   const [selectedCategory, setSelectedCategory] = useState<string>('All Categories');
   const [selectedMonth, setSelectedMonth] = useState<string>('All Months');
+  const [selectedYear, setSelectedYear] = useState<string>('2024');
   const [windowWidth, setWindowWidth] = useState<number>(0);
 
-  // Extracting unique categories and months from the data
+  // Available years for the dropdown
+  const availableYears = ['2024', '2023', 'All Years'];
+
+  // Function to get the appropriate data based on selected year
+  const getExpensesData = () => {
+    switch (selectedYear) {
+      case '2023':
+        return Expenses2023Data;
+      case 'All Years':
+        // Combine all years data - 2023 data first, then 2024 data
+        // This ensures proper chronological order
+        return { ...Expenses2023Data, ...ExpensesData };
+      case '2024':
+      default:
+        return ExpensesData;
+    }
+  };
+
+  // Function to get the appropriate link data based on selected year
+  const getExpensesLinkData = () => {
+    switch (selectedYear) {
+      case '2023':
+        return ExpensesLink2023Data;
+      case 'All Years':
+        // For all years, use current year links as fallback
+        return ExpensesLinkData;
+      case '2024':
+      default:
+        return ExpensesLinkData;
+    }
+  };
+
+  // Get current data based on selected year
+  const currentExpensesData = getExpensesData();
+  const currentExpensesLinkData = getExpensesLinkData();
+
+  // Extracting unique categories and months from the current data
   const categories: string[] = getUniqueCategories();
-  const months: string[] = Object.keys(ExpensesData);
+  const months: string[] = Object.keys(currentExpensesData);
 
   // Effect hook to update windowWidth state on resize
   useEffect(() => {
@@ -39,7 +78,7 @@ export default function BarChartComponent() {
   }, []);
 
   // Filtering data based on selected month and category
-  const filteredData: ExpenseItem[] = Object.entries(ExpensesData).flatMap(([month, entries]) =>
+  const filteredData: ExpenseItem[] = Object.entries(currentExpensesData).flatMap(([month, entries]) =>
     selectedMonth === 'All Months' || selectedMonth === month
       ? entries.filter((entry) => selectedCategory === 'All Categories' || entry.Category === selectedCategory)
       : []
@@ -107,6 +146,17 @@ export default function BarChartComponent() {
                     </option>
                   ))}
                 </select>
+                <select
+                  className='m-1 w-full rounded-md border border-gray-600 bg-violet p-2 pr-8 text-xs font-semibold text-white sm:w-auto md:w-48'
+                  value={selectedYear}
+                  onChange={(e) => setSelectedYear(e.target.value)}
+                >
+                  {availableYears.map((year) => (
+                    <option key={year} value={year}>
+                      {year}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
           </div>
@@ -122,7 +172,7 @@ export default function BarChartComponent() {
               fill='#7B5DD3FF'
               onClick={(data) => {
                 const category = data.payload.Category;
-                const matchedLinkObject: ExpensesLinkItem | undefined = ExpensesLinkData.find(
+                const matchedLinkObject: ExpensesLinkItem | undefined = currentExpensesLinkData.find(
                   (obj) => obj.category === category
                 );
 
