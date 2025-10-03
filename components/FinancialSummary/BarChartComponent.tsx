@@ -29,10 +29,20 @@ export default function BarChartComponent() {
     switch (selectedYear) {
       case '2023':
         return Expenses2023Data;
-      case 'All Years':
-        // Combine all years data - 2023 data first, then 2024 data
-        // This ensures proper chronological order
-        return { ...Expenses2023Data, ...ExpensesData };
+      case 'All Years': {
+        // Combine all years data with year-prefixed keys
+        const combined: Record<string, ExpenseItem[]> = {};
+
+        Object.entries(Expenses2023Data).forEach(([month, data]) => {
+          combined[`${month} 2023`] = data;
+        });
+
+        Object.entries(ExpensesData).forEach(([month, data]) => {
+          combined[`${month} 2024`] = data;
+        });
+
+        return combined;
+      }
       case '2024':
       default:
         return ExpensesData;
@@ -44,9 +54,18 @@ export default function BarChartComponent() {
     switch (selectedYear) {
       case '2023':
         return ExpensesLink2023Data;
-      case 'All Years':
-        // For all years, use current year links as fallback
-        return ExpensesLinkData;
+      case 'All Years': {
+        // Merge links from both years, with 2024 taking precedence for duplicates
+        const allLinks = [...ExpensesLink2023Data];
+
+        ExpensesLinkData.forEach((link) => {
+          if (!allLinks.find((l) => l.category === link.category)) {
+            allLinks.push(link);
+          }
+        });
+
+        return allLinks;
+      }
       case '2024':
       default:
         return ExpensesLinkData;
@@ -58,7 +77,7 @@ export default function BarChartComponent() {
   const currentExpensesLinkData = getExpensesLinkData();
 
   // Extracting unique categories and months from the current data
-  const categories: string[] = getUniqueCategories();
+  const categories: string[] = getUniqueCategories(currentExpensesData);
   const months: string[] = Object.keys(currentExpensesData);
 
   // Effect hook to update windowWidth state on resize
@@ -80,7 +99,9 @@ export default function BarChartComponent() {
   // Filtering data based on selected month and category
   const filteredData: ExpenseItem[] = Object.entries(currentExpensesData).flatMap(([month, entries]) =>
     selectedMonth === 'All Months' || selectedMonth === month
-      ? entries.filter((entry) => selectedCategory === 'All Categories' || entry.Category === selectedCategory)
+      ? (entries as ExpenseItem[]).filter(
+          (entry) => selectedCategory === 'All Categories' || entry.Category === selectedCategory
+        )
       : []
   );
 
