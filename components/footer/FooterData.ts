@@ -68,7 +68,7 @@ export const socialMediaData: SocialMediaData[] = [
 
 export const newsLinks: NewsLink[] = [
   {
-    url: 'mailto:press@asyncapi.io',
+    url: 'mailto:info@asyncapi.com',
     label: 'Email Us'
   }
 ];
