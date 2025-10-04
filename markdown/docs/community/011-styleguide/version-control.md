@@ -95,4 +95,4 @@ When contributing to documentation, keep the following in mind:
 
 ### Need Help?
 
-Need more assistance with contributing to documentation, check out the [AsyncAPI contribution flow guidelines](../010-contribution-guidelines/contribution-flow.md).
+Need more assistance with contributing to documentation, check out the [AsyncAPI contribution flow guidelines](../010-contribution-guidelines/contribution-flow).

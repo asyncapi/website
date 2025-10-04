@@ -61,7 +61,7 @@ export default function Footer() {
                 <ul className='justify-center'>
                   <li className='py-2'>
                     <div className='text-base leading-6 text-cool-gray transition duration-300 ease-in-out hover:text-white'>
-                      <a href='mailto:press@asyncapi.io'>Email Us</a>
+                      <a href='mailto:info@asyncapi.com'>Email Us</a>
                     </div>
                   </li>
                 </ul>

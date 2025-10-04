@@ -23,12 +23,12 @@ Here's how to select an issue to contribute to:
 
 **Step 2: Open a Pull Request**
 
-To open a pull request successfully, follow our [Git workflows contributors guide](git-workflow.md).
+To open a pull request successfully, follow our [Git workflows contributors guide](git-workflow).
 
 Use the following steps to open your pull request:
 1. Configure a fork
 2. Work on it locally 
-3. Write an appropriate PR title using the [conventional commits specification](https://github.com/asyncapi/.github/blob/master/CONTRIBUTING.md#conventional-commits)
+3. Write an appropriate PR title using the [conventional commits specification](../010-contribution-guidelines/conventional-commits)
 4. Test your PR against GitHub checks to ensure they all pass
 
 **Step 3: Get Pull Request Merged**
@@ -45,4 +45,4 @@ After making several contributions to AsyncAPI, maintainers will recognize you. 
 
 Once you become a maintainer in one of the repositories, you can apply to join a group of [TSC members](https://www.asyncapi.com/community/tsc).
 
-Open a PR in the **community** repository to add your name to the [list of TSC members](../../TSC_BOARD_MEMBERS.yaml). Specify your name, repositories that you maintain, and if you are sponsored by some company. For example [see this PR that introduced one of the new TSC members](https://github.com/asyncapi/community/pull/277).
+Open a PR in the **community** repository to add your name to the [list of TSC members](https://github.com/asyncapi/community/blob/master/TSC_BOARD_MEMBERS.yaml). Specify your name, repositories that you maintain, and if you are sponsored by some company. For example [see this PR that introduced one of the new TSC members](https://github.com/asyncapi/community/pull/277).
