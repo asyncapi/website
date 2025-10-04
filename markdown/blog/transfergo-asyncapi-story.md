@@ -33,9 +33,7 @@ and faster.
 ## TransferGo Architecture
 
 Just like any other fintech, time is crucial to its operation. The customers expect their money to travel instantly.
-Therefore, the majority of the systems rely on Event Driven Architecture.
-That is asynchronous communication which is sorely built on Amazon Web Services (AWS) and its flag products, Simple Notification
-Service (SNS) and Simple Queue Service (SQS), with a pinch of Kafka.
+Therefore, the majority of the systems rely on Event Driven Architecture, an asynchronous communication built on top of Amazon Web Services (AWS) and its products, such as Simple Notification Service (SNS) and Simple Queue Service (SQS), with a pinch of Kafka.
 
 ![Async Communication flow](/img/posts/transfergo/light/0.png#gh-light-mode-only)
 
@@ -49,19 +47,19 @@ leveraged the possibilities of the AsyncAPI specification to improve and drive o
 
 ### Code-first Documentation
 
-Because of quite a big codebase, the threat of API schema being out of date was quite there. Therefore, the organisation
+Given the large codebase, the threat of an outdated API schema was significant. Therefore, the organisation
 didn't advocate for an API-first approach, as the code is a source of truth for a long-living product. To ease the pain of
-repeating the same information over and over, the backend guild rolled out a unique internal library that based on
+repeating the same information over and over, the backend guild rolled out a unique internal library that was based on
 Reflection builds message payload from its Data Transfer Object (DTO).
 
-This combination enables your engineer to:
+This combination enables engineers to:
 
 * Ease the introduction for an engineer
-* Fewer repetitions in the code
-* Ensures standard across company
+* Reduce code repetition
+* Ensure company-wide standards
 * Enables seamless upgrades between AsyncAPI versions
 
-The only minus is that the library must be maintained
+The only downside is that the library needs to be maintained.
 
 ```php
 #[Message(name: 'PaymentExecuted')]
@@ -76,7 +74,7 @@ final readonly class PaymentExecuted
 }
 ```
 
-Our internal library, with just these two attributes, generates an async api schema like this:
+Our internal library, with just these two attributes, generates an AsyncAPI schema like this:
 
 ```yaml
 asyncapi: 3.0.0
@@ -107,25 +105,24 @@ components:
 
 The schema catalog grew quite fast; with over 50 services, we started to notice inconsistencies and sometimes even invalid
 schemas. With teams growing, we had to support more events, more operations and more approaches. For example, some teams preferred
-writing/generating Async API yaml schema with the help of AI. Growing technical stacks, validated our
+writing/generating AsyncAPI yaml schema with the help of AI. Growing technical stacks, validated our
 ideas in 2021, and we had to take some actions.
 
 Let's not reinvent the wheel. [AsyncAPI CLI](https://www.asyncapi.com/tools/cli) has a built-in validation command, which comes in handy. It's easy to use
 and quite fast. This way, with simple `asyncapi validate schema.yaml`, we managed to ensure our services expose ONLY valid
-schemas. But some docs were quite heavy. 1 MB. Yes, 100 channels and twice that contracts can bring your schema to that size,
-thanks to `asyncapi optimise schema.yaml` command, we cut the size by about 50%. That's a small win for us, our resources and the planet.
+schemas. Some docs were quite heavy, reaching 1 MB. With 100 channels and twice that number of contracts, the schema size could reach that. However, thanks to `asyncapi optimize schema.yaml` command, we cut the size by about 50%. That's a small win for us, our resources and the planet.
 
 We also noticed that there are teams that like to pimp-up their schema, and teams that fall behind. We were looking for
 a system that could reward some teams and encourage others. At that time, we also invested time in the Service
-Catalog - That's why we raised a [proposal of adapting an ability to score the schema](https://github.com/asyncapi/cli/issues/1131)
-You can enjoy this feature since [2.2.0 version](https://github.com/asyncapi/cli/releases/tag/v2.2.0)
+Catalog. That's why we raised a [proposal of adapting an ability to score the schema](https://github.com/asyncapi/cli/issues/1131)
+You can enjoy this feature since the [2.2.0 version](https://github.com/asyncapi/cli/releases/tag/v2.2.0)
 
 ### Documentation Showcase
 
-We’ve spent time making sure our services are well-documented and validated - but let’s be honest, reading YAML isn’t exactly fun for (unless you're an AI).
+We’ve spent time making sure our services are well-documented and validated. But let’s be honest, reading YAML isn’t enjoyable for most people.
 So we started looking for tools that could present our schemas in a more visual, developer-friendly way.
 At first, we used the official [React Component](https://github.com/asyncapi/asyncapi-react) to render the documentation. Thanks to our internal tooling,
-each service could host its own visual docs. While this worked in principle, it wasn't the best experience: _engineers had to remember where each service's docs lived or manually navigate to a central document listing them all._
+each service could host its own visual docs. While this worked, it wasn't the best experience: _engineers had to remember where each service's docs lived or manually navigate to a central document listing them all._
 To solve this, we decided to adopt a more modern and scalable approach: a **Service Catalog and Developer Portal**.
 After weighing our options, we chose [Port.io](https://port.io). It offered a lot of functionality, but the key
 win for us was the ability to generate a UI for our AsyncAPI definitions and provide a unified interface where all service documentation is just a click away.
@@ -138,7 +135,7 @@ Now, instead of chasing URLs or digging through repos, developers can browse all
 
 ### Event Catalog
 
-With over 300 channels, learning what's published and where and when is quite a challenge. Gladly, there are solutions for this pain.
+With over 300 channels, learning what's published, where, and when is quite a challenge. Thankfully, there are solutions for this pain.
 The [Event Catalog](https://www.eventcatalog.dev/) project, done by [David](https://github.com/boyney123) helped us
 show the big picture and significantly showcased scenarios that required our attention. Below, you can find our process
 of gathering schemas and building an event catalog from AsyncAPI files.
@@ -183,11 +180,10 @@ Engineers must trust your Event Catalog and your API. To do so, you need to ensu
 Many systems provide Schema Registry, but not all of them. When dealing with mature systems, it's not so easy to migrate
 to new and fancy systems.
 
-That's how the concept of API Guardian came up. This is our internal tool that checks and compares. Service cloudformation
-file and async api schema. Looking for forgotten channels. It's nothing more than a simple CLI app based on Oclif
-Framework that compares two or multiple of files. It's a more complicated topic as you need to understand which parts
+That's how the concept of API Guardian came up. This internal tool compares and checks Service CloudFormation files and AsyncAPI schemas for forgotten channels. It's nothing more than a simple CLI app based on Oclif
+Framework that compares two or multiple files. It's a more complicated topic as you need to understand which parts
 of the infrastructure are the contracts. Some elements must be ignored, like Dead Letter Queues or Internal Queues. Because of that,
-We can develop a nice config file that lets you ignore specific SQS, SNS, and channels as necessary.
+we can develop a nice config file that lets you ignore specific SQS, SNS, and channels as necessary.
 
 ```
 node asyncapi-coverage
@@ -217,7 +213,7 @@ node asyncapi-coverage
 
 ## Summary
 
-At TransferGo, reliable communication between services is critical - especially in a fast-paced, event-driven fintech environment.
+At TransferGo, reliable communication between services is critical, especially in a fast-paced, event-driven fintech environment.
 To support this, we adopted the AsyncAPI specification to bring clarity, consistency, and automation to how we document, validate, and test asynchronous APIs.
 Starting with a code-first approach, we built internal tooling that automatically generates AsyncAPI schemas from DTOs, ensuring that documentation stays in sync with actual behavior.
 As the number of services and channels grew, we introduced validation pipelines, schema scoring, and optimization practices to maintain quality at scale.
