@@ -234,12 +234,13 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               selected={i18n.language ? i18n.language : 'en'}
             />
 
-            <GithubButton
-              text='Star on GitHub'
-              href='https://github.com/asyncapi/spec'
-              className='ml-2 py-2'
-              inNav={true}
-            />
+           <GithubButton
+                text='Start on GitHub'
+                 href='https://github.com/asyncapi/spec'
+                 className='ml-2 py-2'
+                 inNav={true}
+              />
+
           </div>
         </nav>
       </div>
