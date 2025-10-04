@@ -25,7 +25,7 @@ describe('Footer Links Validation', () => {
       footer.verifyFooterLink(url, label);
     });
   });
-
+  
   it('verifies the Netlify link in the footer', () => {
     footer.verifyFooterLink(footerMiscData.netlifyLink, '');
   });
