@@ -25,7 +25,7 @@ export default function NavMenu({ items = [] }: NavMenuProps) {
   if (!items.length) return null;
 
   return (
-    <div className='absolute left-1/2 z-50 mt-3 w-screen max-w-xs -translate-x-1/2 px-2 sm:px-0'>
+    <div className='absolute left-1/2 z-50 mt-3 w-screen max-w-xs -translate-x-1/2 px-2 sm:px-0 animate-in fade-in slide-in-from-top-3 duration-800 ease-out'>
       <div className='rounded-lg shadow-lg'>
         <div className='shadow-xs overflow-hidden rounded-lg'>
           <div className='relative z-20 grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
