@@ -57,7 +57,7 @@ This combination enables engineers to:
 * Ease the introduction for an engineer
 * Reduce code repetition
 * Ensure company-wide standards
-* Enables seamless upgrades between AsyncAPI versions
+* Enable seamless upgrades between AsyncAPI versions
 
 The only downside is that the library needs to be maintained.
 
