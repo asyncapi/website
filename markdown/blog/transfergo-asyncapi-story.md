@@ -1,7 +1,7 @@
 ---
 title: How TransferGo adopted AsyncAPI
 date: 2025-09-25T7:26:58+02:00
-type: Marketing
+type: Communication
 canonical: transfergo-asyncapi
 tags: ['transfergo', 'fintech', 'asyncapi', 'modelina', 'event-catalog', 'microcks']
 cover: /img/posts/may-2021-at-asyncapi/cover.webp
