@@ -1,18 +1,19 @@
 {
     "main": {
         "header": "Building the future of",
-        "subHeader": "Event-Driven Architectures (EDA)",
+        "subHeader": "Event-Driven",
+        "extraSubHeader": "Architectures (EDA)",
         "body_pretext": "Open-Source tools to easily build and maintain your event-driven architecture. All powered by the AsyncAPI specification, the ",
         "body_boldtext": "industry standard",
         "body_posttext": " for defining asynchronous APIs.",
-        "docs_btn": "Read the docs",
+        "community_btn": "Join our community",
         "search_btn": "Quick search...",
         "slogan_text": "Proud to be part of the",
         "slogan_link": "Linux Foundation"
     },
     "features": {
-        "title": "Why AsyncAPI?",
-        "description": "Improving the current state of Event-Driven Architectures (EDA)",
+        "title": "What You Can use AsyncAPI For",
+        "description": "One of our main goals is to improve the current state of Event Driven Architecture (EDA))",
 
         "specification.name": "Specification",
         "specification.description": "Allows you to define the interfaces of asynchronous APIs and is protocol agnostic.",
@@ -48,10 +49,10 @@
     },
     "community": {
         "title": "Join our great community!",
-        "subtitle": "We're a community of great people who are passionate about AsyncAPI and event-driven architectures.",
+        "subtitle": "We're a group of amazing folks who share a great passion for AsyncAPI and event-driven architectures. We extend a warm welcome to anyone who wants to join our Slack workspace. Whether you have questions about using AsyncAPI, want to be a part of our community or simply want to say hello 👋, we'd love to have you! 🙂",
         "slackCTATitle": "Join our Slack workspace",
         "slackCTADesc": "We welcome everyone to join our Slack workspace. If you have a question on how to use AsyncAPI, want to contribute, or simply want to say hello 👋, you're welcome to join us. We're nice people 🙂",
-        "slackCTABtn": "Join us!",
+        "slackCTABtn": "Join us on Slack!",
         "meetingTitle": "Join our public meetings",
         "meetingDesc": "AsyncAPI hosts different meetings every week. They are focused on different topics, sometimes purely technical and sometimes about community building. Pick one and join us!",
         "meetingLink": "Learn more about our meetings."
@@ -68,7 +69,9 @@
         "supportedByLink": "Email us",
         "supportedByPosttext": " for more info."
     },
-    "testimonials": {
-        "title": "What the experts are saying"
+    "events": {
+        "title": "Our Community Events",
+        "description":"AsyncAPI organiseert wekelijks verschillende bijeenkomsten. Deze richten zich op verschillende onderwerpen, soms puur technisch en soms over community-building. Kies er een en doe mee!",
+        "meetingTitle":"Lees meer over onze bijeenkomsten."
     }
 }

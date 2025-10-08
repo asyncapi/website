@@ -17,8 +17,11 @@ interface RememberProps {
  */
 export default function Remember({ title = 'Remember', className = '', children }: RememberProps) {
   return (
-    <div className={`${className} mb-8 mt-4 rounded bg-secondary-100 p-4 text-gray-900`} data-testid='Remember-main'>
-      <h5 className='mb-4 border-b border-gray-900 pb-2 text-lg' data-testid='Remember-heading'>
+    <div
+      className={`${className} mb-8 mt-4 rounded bg-secondary-100 dark:bg-dark-background p-4 text-gray-900`}
+      data-testid='Remember-main'
+    >
+      <h5 className='mb-4 border-b dark:text-white border-gray-900 pb-2 text-lg' data-testid='Remember-heading'>
         <LightBulb className='-mt-0.5 mr-2 inline-block h-8' />
         <span className='ml-2 inline-block font-sans font-medium antialiased' data-testid='Remember-title'>
           {title}
