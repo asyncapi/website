@@ -58,9 +58,9 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
           className={twMerge(`${open && 'mb-4'} flex-1 text-primary-500 font-medium uppercase tracking-wide 
           text-sm font-sans antialiased ${
             cssBreakingPoint === 'xl'
-              ? `xl:mb-4 xl:text-xs xl:text-gray-900 
+              ? `xl:mb-4 xl:text-xs xl:text-gray-900 dark:text-dark-text
           xl:font-bold`
-              : 'lg:mb-4 lg:text-xs lg:text-gray-900 lg:font-bold'
+              : 'lg:mb-4 lg:text-xs lg:text-gray-900 lg:dark:text-dark-text lg:font-bold'
           }`)}
           data-testid='TOC-Heading'
         >
@@ -76,15 +76,15 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
       <div className={`${!open && 'hidden'} ${cssBreakingPoint === 'xl' ? 'xl:block' : 'lg:block'}`}>
         <Scrollspy
           items={tocItems.map((item) => (item.slug ? item.slug : item.slugWithATag))}
-          currentClassName='text-primary-500 font-bold'
+          currentClassName='text-primary-500 dark:text-primary-500 font-bold'
           componentTag='div'
           rootEl={contentSelector}
           offset={-120}
         >
           {tocItems.map((item, index) => (
             <a
-              className={`pl-${2 ** (item.lvl - 1)} font-normal mb-1 block font-sans text-sm 
-                  text-gray-900 antialiased transition duration-100 ease-in-out hover:underline`}
+              className={`pl-${2 ** (item.lvl - 1)} font-normal mb-1 block font-sans text-sm dark:text-white
+                 text-gray-900 antialiased transition duration-100 ease-in-out hover:underline`}
               href={`#${item.slug ? item.slug : item.slugWithATag}`}
               key={index}
               data-testid='TOC-Link'

@@ -60,8 +60,8 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
             <ArrowLeft className='text-white' />
           </div>
         )}
-        <div className='relative flex w-4/5 md:w-5/6 flex-col items-center justify-center gap-2'>
-          <div className='relative flex min-h-72 w-full justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
+        <div className='relative flex w-3/6 md:w-5/6 flex-col items-center justify-center gap-2'>
+          <div className='relative flex min-h-60 w-full justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
             {visibleBanners.map((banner, index) => {
               // Only render the active banner
               const isVisible = index === activeIndex;
@@ -90,7 +90,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
               <div
                 key={index}
                 className={`mx-1 size-2 cursor-pointer rounded-full ${
-                  activeIndex === index ? 'bg-primary-500' : 'bg-gray-300'
+                  activeIndex === index ? 'bg-primary-500' : 'dark:bg-dark-text bg-gray-300'
                 }`}
                 onClick={() => goToIndex(index)}
               />
