@@ -41,11 +41,13 @@ export interface FrontMatter {
 /**
  * Validates the frontmatter of a blog markdown file.
  *
- * This function ensures that the provided frontmatter object includes the necessary fields—`title`, `date`, `type`, `tags`, `cover`, and `authors`—and that these fields conform to expected formats. Specifically, it checks that:
+ * This function ensures that the provided frontmatter object includes the necessary fields—`title`, `date`, `type`,
+ * `tags`, `cover`, and `authors`—and that these fields conform to expected formats. Specifically, it checks that:
  * - The `date` field represents a valid date.
  * - The `tags` field is an array.
  * - The `cover` field is a string.
- * - The `authors` field is an array where each author has a `name` and a `photo`, and if a `link` is provided, it is a valid URL.
+ * - The `authors` field is an array where each author has a `name` and a `photo`, and if a `link` is provided, it is a
+ *   valid URL.
  *
  * @param frontmatter - The frontmatter object to validate.
  * @returns An array of error messages if any validations fail, or null if the frontmatter is valid.
@@ -107,8 +109,9 @@ function validateBlogs(frontmatter: FrontMatter) {
 
 /**
  * Validates the frontmatter of documentation markdown files.
- * @param {FrontMatter} frontmatter - The frontmatter to validate.
- * @returns {string[] | null} - An array of error messages, or null if valid.
+ *
+ * @param frontmatter - The frontmatter to validate
+ * @returns An array of error messages, or null if valid
  */
 function validateDocs(frontmatter: FrontMatter) {
   const errors = [];
@@ -132,7 +135,8 @@ function validateDocs(frontmatter: FrontMatter) {
  * The function scans the specified folder and its subdirectories for files with a '.md' extension, skipping any paths that include "reference/specification". For each markdown file found, it extracts the frontmatter using gray-matter and applies the provided validation function. If validation errors are returned, they are logged and the process exit code is set to 1. Any errors encountered during directory reading or file processing are logged and re-thrown.
  *
  * @param folderPath - The root folder path to scan for markdown files.
- * @param validateFunction - A function that validates frontmatter and returns an array of error messages if validation fails or null if the frontmatter is valid.
+ * @param validateFunction - A function that validates frontmatter and returns an array of error messages if validation
+ *                           fails or null if the frontmatter is valid.
  * @param relativePath - A relative path used for logging file locations; defaults to an empty string.
  *
  * @throws {Error} If an error occurs during directory or file operations.
@@ -149,7 +153,9 @@ async function checkMarkdownFiles(
       const relativeFilePath = path.join(relativePath, file);
 
       // Skip the folder 'docs/reference/specification'
-      if (path.normalize(relativeFilePath).includes(path.join('reference', 'specification'))) {
+      const specPath = path.join('reference', 'specification');
+
+      if (path.normalize(relativeFilePath).includes(specPath)) {
         return;
       }
 
@@ -174,7 +180,10 @@ async function checkMarkdownFiles(
 
     await Promise.all(filePromises);
   } catch (err) {
-    logger.error(`Error in directory ${folderPath}:`, err);
+    logger.error(`Error in directory ${folderPath}`, {
+      error: err instanceof Error ? err : new Error(String(err)),
+      folderPath
+    });
     throw err;
   }
 }
@@ -186,7 +195,8 @@ const blogsFolderPath = path.resolve(currentDirPath, '../../markdown/blog');
  * Executes frontmatter validations for markdown files found in the documentation and blog directories.
  *
  * This asynchronous function concurrently processes markdown files by validating their frontmatter using dedicated
- * validation functions. If any validation fails or an error occurs during file operations, it logs the error and terminates
+ * validation functions. If any validation fails or an error occurs during file operations, it logs the error and
+ * terminates
  * the process with an exit code of 1.
  */
 async function main() {
@@ -196,7 +206,9 @@ async function main() {
       checkMarkdownFiles(blogsFolderPath, validateBlogs)
     ]);
   } catch (error) {
-    logger.error('Failed to validate markdown files:', error);
+    logger.error('Failed to validate markdown files', {
+      error: error instanceof Error ? error : new Error(String(error))
+    });
     process.exit(1);
   }
 }

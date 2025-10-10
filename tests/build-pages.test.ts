@@ -95,4 +95,41 @@ describe('copyAndRenameFiles', () => {
     // delete the test directory after the test
     fs.rmSync(NEW_TEST_DIR, { recursive: true, force: true });
   });
+
+  test('should not create a directory if it already exists', () => {
+    const EXISTING_DIR = 'existingDir';
+
+    // Create the directory first
+    fs.mkdirSync(EXISTING_DIR, { recursive: true });
+    expect(fs.existsSync(EXISTING_DIR)).toBe(true);
+
+    // This should not throw or cause any issues
+    ensureDirectoryExists(EXISTING_DIR);
+    expect(fs.existsSync(EXISTING_DIR)).toBe(true);
+
+    // Clean up
+    fs.rmSync(EXISTING_DIR, { recursive: true, force: true });
+  });
+
+  test('should handle errors in ensureDirectoryExists', () => {
+    const existsSyncSpy = jest.spyOn(fs, 'existsSync').mockReturnValue(false);
+    const mkdirSyncSpy = jest.spyOn(fs, 'mkdirSync').mockImplementation(() => {
+      throw new Error('Directory creation failed');
+    });
+
+    expect(() => ensureDirectoryExists('invalid/path')).toThrow('Directory creation failed');
+
+    existsSyncSpy.mockRestore();
+    mkdirSyncSpy.mockRestore();
+  });
+
+  test('should handle errors in copyAndRenameFiles', () => {
+    const readdirSyncSpy = jest.spyOn(fs, 'readdirSync').mockImplementation(() => {
+      throw new Error('Read directory failed');
+    });
+
+    expect(() => copyAndRenameFiles('invalid/src', 'invalid/target')).toThrow('Read directory failed');
+
+    readdirSyncSpy.mockRestore();
+  });
 });

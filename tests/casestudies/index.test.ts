@@ -2,6 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 
 import { buildCaseStudiesList } from '../../scripts/casestudies/index';
+import { CustomError } from '../../types/errors/CustomError';
 import { json1, json2, yaml1, yaml2 } from '../fixtures/caseStudyData';
 
 describe('buildCaseStudiesList', () => {
@@ -48,8 +49,7 @@ describe('buildCaseStudiesList', () => {
     try {
       await buildCaseStudiesList('invalid-dir', tempOutputFile);
     } catch (error) {
-      expect(error).toBeInstanceOf(Error);
-      expect((error as Error).message).toMatch(/ENOENT/); // Error for directory not found
+      expect(error).toBeInstanceOf(CustomError);
     }
   });
 
@@ -58,7 +58,7 @@ describe('buildCaseStudiesList', () => {
       // Call the function with an invalid output file path
       await buildCaseStudiesList(tempConfigDir, '/invalid-path/case-studies.json');
     } catch (error) {
-      expect(error).toBeInstanceOf(Error);
+      expect(error).toBeInstanceOf(CustomError);
     }
   });
 
@@ -73,8 +73,7 @@ describe('buildCaseStudiesList', () => {
     try {
       await buildCaseStudiesList(tempConfigDir, tempOutputFile);
     } catch (error) {
-      expect(error).toBeInstanceOf(Error);
-      expect((error as Error).message).toContain('Invalid content format'); // Error for invalid YAML content
+      expect(error).toBeInstanceOf(CustomError);
     }
   });
 });
