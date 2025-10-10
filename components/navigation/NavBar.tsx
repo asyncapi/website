@@ -33,11 +33,18 @@ const isMobile = isMobileDevice();
  * @param {string} [props.className=''] - Additional CSS classes for styling.
  * @param {boolean} [props.hideLogo=false] - Indicates whether to hide the logo.
  */
-export default function NavBar({ className = '', hideLogo = false }: NavBarProps) {
+export default function NavBar({
+  className = '',
+  hideLogo = false,
+}: NavBarProps) {
   const router: NextRouter = useRouter();
   const { pathname, query, asPath } = router;
-  const [open, setOpen] = useState<'learning' | 'tooling' | 'community' | null>(null);
+  const [open, setOpen] = useState<'learning' | 'tooling' | 'community' | null>(
+    null,
+  );
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+  const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null);
+
   const { i18n } = useTranslation();
 
   /**
@@ -54,7 +61,9 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
     }
 
     // Filter unique languages based on i18nPaths that include the modified pathnameWithoutLocale
-    const uniqueLangs = Object.keys(i18nPaths).filter((lang) => i18nPaths[lang].includes(pathnameWithoutLocale));
+    const uniqueLangs = Object.keys(i18nPaths).filter((lang) =>
+      i18nPaths[lang].includes(pathnameWithoutLocale),
+    );
 
     // If no unique languages are found, default to ['en']
     return uniqueLangs.length === 0 ? ['en'] : uniqueLangs;
@@ -63,7 +72,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   const uniqueLangs = getUniqueLangs().map((lang) => ({
     key: lang,
     text: lang,
-    value: lang
+    value: lang,
   }));
 
   /**
@@ -72,7 +81,10 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
    * @param {boolean} langPicker - Indicates whether the change is from the language picker.
    *                              If true, stores the language in local storage.
    */
-  const changeLanguage = async (locale: string, langPicker: boolean): Promise<void> => {
+  const changeLanguage = async (
+    locale: string,
+    langPicker: boolean,
+  ): Promise<void> => {
     // Verifies if the language change is from langPicker or the browser-api
     if (langPicker) {
       localStorage.setItem('i18nLang', locale);
@@ -121,7 +133,10 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
    * @param {('learning' | 'tooling' | 'community' | null)} menu - The menu to show or hide.
    */
   function showMenu(menu: 'learning' | 'tooling' | 'community' | null) {
-    if (open === menu) return;
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      setCloseTimeout(null);
+    }
     setOpen(menu);
   }
 
@@ -145,81 +160,157 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
 
   return (
     <div className={`bg-white ${className} z-50`}>
-      <div className='flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-2'>
+      <div className="flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-2">
         {!hideLogo && (
-          <div className='lg:w-auto lg:flex-1'>
-            <div className='flex'>
-              <Link href='/' className='cursor-pointer' aria-label='AsyncAPI' data-testid='Navbar-logo'>
-                <AsyncAPILogo className='w-auto' />
+          <div className="lg:w-auto lg:flex-1">
+            <div className="flex">
+              <Link
+                href="/"
+                className="cursor-pointer"
+                aria-label="AsyncAPI"
+                data-testid="Navbar-logo"
+              >
+                <AsyncAPILogo className="w-auto" />
               </Link>
             </div>
           </div>
         )}
 
-        <div className='-my-2 -mr-2 flex flex-row items-center justify-center lg:hidden' data-testid='Navbar-search'>
+        <div
+          className="-my-2 -mr-2 flex flex-row items-center justify-center lg:hidden"
+          data-testid="Navbar-search"
+        >
           <SearchButton
-            className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
-            aria-label='Open Search'
+            className="flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none"
+            aria-label="Open Search"
           >
             <IconLoupe />
           </SearchButton>
           <button
             onClick={() => setMobileMenuOpen(true)}
-            type='button'
-            className='inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
+            type="button"
+            className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none"
           >
-            <svg className='size-6' stroke='currentColor' fill='none' viewBox='0 0 24 24'>
+            <svg
+              className="size-6"
+              stroke="currentColor"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
               <title>Menu</title>
-              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M4 6h16M4 12h16M4 18h16' />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             </svg>
           </button>
         </div>
 
         <nav
-          className='hidden w-full space-x-4 lg:flex lg:items-center lg:justify-end xl:space-x-8'
-          data-testid='Navbar-main'
+          className="hidden w-full space-x-4 lg:flex lg:items-center lg:justify-end xl:space-x-8"
+          data-testid="Navbar-main"
         >
-          <div className='relative' onMouseLeave={() => showMenu(null)} ref={learningRef}>
+          <div
+            className="relative"
+            ref={learningRef}
+            onMouseEnter={() => showMenu('learning')}
+            onMouseLeave={() => {
+              const timeout = setTimeout(() => setOpen(null), 200);
+              setCloseTimeout(timeout);
+            }}
+          >
             <NavItem
-              text='Docs'
-              href='/docs'
+              text="Docs"
+              href="/docs"
               onClick={() => showOnClickMenu('learning')}
               onMouseEnter={() => showMenu('learning')}
               hasDropdown
             />
-            {open === 'learning' && <LearningPanel />}
+            <div
+              className={`absolute left-0 top-full mt-3 transform transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]
+  ${
+    open === 'learning'
+      ? 'opacity-100 translate-y-0 scale-100 visible'
+      : 'opacity-0 -translate-y-2 scale-95 invisible'
+  }
+  `}
+            >
+              <div className="rounded-xl shadow-lg border border-gray-100 bg-white/95 backdrop-blur-sm">
+                <LearningPanel />
+              </div>
+            </div>
           </div>
 
-          <div className='relative' onMouseLeave={() => showMenu(null)} ref={toolingRef}>
+          <div
+            className="relative"
+            onMouseLeave={() => showMenu(null)}
+            ref={toolingRef}
+          >
             <NavItem
-              text='Tools'
-              href='/tools'
+              text="Tools"
+              href="/tools"
               onClick={() => showOnClickMenu('tooling')}
               onMouseEnter={() => showMenu('tooling')}
               hasDropdown
             />
-            {open === 'tooling' && <ToolsPanel />}
+            <div
+              className={`absolute left-0 top-full mt-3 transform transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]
+  ${
+    open === 'tooling'
+      ? 'opacity-100 translate-y-0 scale-100 visible'
+      : 'opacity-0 -translate-y-2 scale-95 invisible'
+  }
+  `}
+            >
+              <div className="rounded-xl shadow-lg border border-gray-100 bg-white/95 backdrop-blur-sm">
+                <ToolsPanel />
+              </div>
+            </div>
           </div>
 
-          <div className='relative' onMouseLeave={() => showMenu(null)} ref={communityRef}>
+          <div
+            className="relative"
+            onMouseLeave={() => showMenu(null)}
+            ref={communityRef}
+          >
             <NavItem
-              text='Community'
-              href='/community'
+              text="Community"
+              href="/community"
               onClick={() => showOnClickMenu('community')}
               onMouseEnter={() => showMenu('community')}
               hasDropdown
             />
-            {open === 'community' && <CommunityPanel />}
+            <div
+              className={`absolute left-0 top-full mt-3 transform transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]
+  ${
+    open === 'community'
+      ? 'opacity-100 translate-y-0 scale-100 visible'
+      : 'opacity-0 -translate-y-2 scale-95 invisible'
+  }
+  `}
+            >
+              <div className="rounded-xl shadow-lg border border-gray-100 bg-white/95 backdrop-blur-sm">
+                <CommunityPanel />
+              </div>
+            </div>
           </div>
 
           {otherItems.map((item, index) => (
-            <NavItem href={item.href} key={index} text={item.text} target={item.target} className={item.className} />
+            <NavItem
+              href={item.href}
+              key={index}
+              text={item.text}
+              target={item.target}
+              className={item.className}
+            />
           ))}
 
-          <div className='justify-content flex flex-row items-center'>
+          <div className="justify-content flex flex-row items-center">
             <SearchButton
-              className='mr-2 flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
-              aria-label='Open Search'
+              className="mr-2 flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none"
+              aria-label="Open Search"
             >
               <IconLoupe />
             </SearchButton>
@@ -230,14 +321,14 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               onChange={(value) => {
                 changeLanguage(value.toLowerCase(), true);
               }}
-              className=''
+              className=""
               selected={i18n.language ? i18n.language : 'en'}
             />
 
             <GithubButton
-              text='Star on GitHub'
-              href='https://github.com/asyncapi/spec'
-              className='ml-2 py-2'
+              text="Star on GitHub"
+              href="https://github.com/asyncapi/spec"
+              className="ml-2 py-2"
               inNav={true}
             />
           </div>
