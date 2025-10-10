@@ -6,11 +6,11 @@ import Expenses from '../config/finance/json-data/Expenses.json';
  * @param {Object} expenses - The expenses data.
  * @returns {string[]} An array of unique expense categories.
  */
-export const getUniqueCategories = (): string[] => {
+export const getUniqueCategories = (expensesData: Record<string, Array<{ Category: string }>>): string[] => {
   const allCategories: string[] = [];
 
-  Object.keys(Expenses).forEach((month) => {
-    Expenses[month as keyof typeof Expenses].forEach((entry: { Category: string }) => {
+  Object.keys(expensesData).forEach((month) => {
+    expensesData[month].forEach((entry: { Category: string }) => {
       if (!allCategories.includes(entry.Category)) {
         allCategories.push(entry.Category);
       }
