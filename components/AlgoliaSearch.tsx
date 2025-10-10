@@ -112,31 +112,44 @@ function Hit({ hit, children }: IHitProps) {
  */
 function AlgoliaModal({ onClose, initialQuery, indexName }: AlgoliaModalProps) {
   const router = useRouter();
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 10); // Small delay for smooth entry
+
+    return () => clearTimeout(timer); // Cleanup function
+  }, []);
+
+  const handleClose = () => {
+    setIsVisible(false);
+    const timer = setTimeout(onClose, 300); // Delay closing to allow animation to finish
+
+    return () => clearTimeout(timer); // Cleanup function
+  };
 
   return createPortal(
-    <DocSearchModal
-      initialQuery={initialQuery}
-      initialScrollY={window.scrollY}
-      searchParameters={{
-        distinct: 1
-      }}
-      placeholder={indexName === DOCS_INDEX_NAME ? 'Search documentation' : 'Search resources'}
-      onClose={onClose}
-      indexName={indexName}
-      apiKey={API_KEY}
-      appId={APP_ID}
-      navigator={{
-        navigate({ itemUrl }) {
-          onClose();
-          router.push(itemUrl);
-        }
-      }}
-      hitComponent={Hit}
-      transformItems={transformItems}
-      getMissingResultsUrl={({ query }) => {
-        return `https://github.com/asyncapi/website/issues/new?title=Cannot%20search%20given%20query:%20${query}`;
-      }}
-    />,
+    <div className={`fixed inset-0 z-50 bg-black/50 transition-all duration-200  ${ isVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`} onClick={handleClose} >
+      <div role="dialog" aria-modal="true" aria-label={indexName === DOCS_INDEX_NAME ? 'Search documentation' : 'Search resources'} className='rounded-lg bg-transparent p-6 shadow-lg transition-all duration-300' onClick={(e) => e.stopPropagation()} >
+        <DocSearchModal
+          initialQuery={initialQuery}
+          initialScrollY={window.scrollY}
+          searchParameters={{ distinct: 1 }}
+          placeholder={indexName === DOCS_INDEX_NAME ? 'Search documentation' : 'Search resources'}
+          onClose={handleClose}
+          indexName={indexName}
+          apiKey={API_KEY}
+          appId={APP_ID}
+          navigator={{
+            navigate({ itemUrl }) {
+              handleClose();
+              router.push(itemUrl);
+            }
+          }}
+          hitComponent={Hit}
+          transformItems={transformItems}
+        />
+      </div>
+    </div>,
     document.body
   );
 }
