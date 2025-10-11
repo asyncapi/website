@@ -1,3 +1,5 @@
+/// <reference types="node" />
+
 import React, { useEffect, useState } from 'react';
 
 /**
@@ -11,14 +13,15 @@ const ScrollButton: React.FC = () => {
     const handleScroll = () => {
       const scrollPosition = window.innerHeight + window.pageYOffset;
       const pageHeight = document.documentElement.scrollHeight;
+
       setIsBottom(scrollPosition >= pageHeight);
     };
 
     // Initialize the button visibility on mount
     handleScroll();
 
-    // Throttle the scroll event to improve performance
     let throttleTimeout: NodeJS.Timeout | null = null;
+
     const throttledHandleScroll = () => {
       if (throttleTimeout === null) {
         throttleTimeout = setTimeout(() => {
@@ -32,6 +35,7 @@ const ScrollButton: React.FC = () => {
 
     return () => {
       window.removeEventListener('scroll', throttledHandleScroll);
+
       if (throttleTimeout) {
         clearTimeout(throttleTimeout);
       }
