@@ -1,6 +1,6 @@
 ---
 title: How TransferGo adopted AsyncAPI
-date: 2025-09-25T7:26:58+02:00
+date: 2025-10-15T7:26:58+02:00
 type: Communication
 canonical: transfergo-asyncapi
 tags: ['transfergo', 'fintech', 'asyncapi', 'modelina', 'event-catalog', 'microcks']
@@ -20,7 +20,6 @@ excerpt: |
   across its event-driven architecture.
 ---
 
-# Case Study TransferGo AsyncAPI
 
 ## Introduction
 
