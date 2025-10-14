@@ -984,5 +984,16 @@
             "generator"
         ],
         "githubID": 114283933
+    },
+    {
+        "name": "Ruchi Pakhle",
+        "github": "Ruchip16",
+        "twitter": "Ruchicodess",
+        "availableForHire": true,
+        "isTscMember": false,
+        "repos": [
+            "vs-asyncapi-preview"
+        ],
+        "githubID": 72685035
     }
 ]
