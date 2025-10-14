@@ -274,7 +274,6 @@
             "nodejs-ws-template",
             "java-spring-template",
             ".github",
-            "vs-asyncapi-preview",
             "template-for-generator-templates",
             "community",
             "diff",
@@ -984,5 +983,16 @@
             "generator"
         ],
         "githubID": 114283933
+    },
+    {
+        "name": "Ruchi Pakhle",
+        "github": "Ruchip16",
+        "twitter": "Ruchicodess",
+        "availableForHire": true,
+        "isTscMember": false,
+        "repos": [
+            "vs-asyncapi-preview"
+        ],
+        "githubID": 72685035
     }
 ]
