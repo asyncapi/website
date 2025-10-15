@@ -47,9 +47,7 @@ describe('URL Checker Tests', () => {
       );
 
       expect(result).toBe(determineEditLinkData[1].editLink);
-
     });
-
     it('should generate correct edit link for docs with a config', () => {
       const result = determineEditLink(
         determineEditLinkData[2].urlPath,
