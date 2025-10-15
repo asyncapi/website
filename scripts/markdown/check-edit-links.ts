@@ -108,14 +108,23 @@ async function processBatch(batch: PathObject[]): Promise<(PathObject | null)[]>
 
         const controller = new AbortController();
         timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
-        
-        const response = await fetch(editLink, {method: 'HEAD',signal: controller.signal});
 
-        if (response.status === 404) {return { filePath, urlPath, editLink }} return null;
+        const response = await fetch(editLink, {
+          method: 'HEAD',
+          signal: controller.signal
+        });
+
+        if (response.status === 404) {
+          return { filePath, urlPath, editLink };
+        } 
+        
+        return null;
       } catch (error) {
         return Promise.reject(new Error(`Error checking ${editLink}: ${error}`));
       } finally {
-          if (timeout) {clearTimeout(timeout)}
+          if (timeout) {
+            clearTimeout(timeout);
+          }
       }
     })
   );
