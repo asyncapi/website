@@ -102,18 +102,21 @@ describe('URL Checker Tests', () => {
     });
 
     it('should skip non-markdown files', async () => {
+      // Create a mock implementation to test the else branch
       const mockReaddir = jest.spyOn(fs, 'readdir').mockImplementation(async (dir, opts) => [dirent('test.js', true, false),dirent('test.md', true, false)]);
       const result = await generatePaths(testDir, editOptions);
 
       // Only the markdown file should be included, not the js file
       expect(result.length).toBe(1);
       expect(result[0].filePath.endsWith('.md')).toBe(true);
+
       mockReaddir.mockRestore();
       mockStat.mockRestore();
     });
 
     it('should handle errors gracefully', async () => {
       const invalidDir = path.join(__dirname, 'nonexistent');
+
       await expect(generatePaths(invalidDir, editOptions)).rejects.toThrow();
     });
 
