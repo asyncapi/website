@@ -122,7 +122,7 @@ describe('URL Checker Tests', () => {
 
   
     it('throws TypeError for invalid folderPath', async () => {
-  // @ts-expect-error
+      // @ts-expect-error
       await expect(generatePaths(undefined, editOptions)).rejects.toThrow(TypeError);
       await expect(generatePaths('', editOptions)).rejects.toThrow(TypeError);
     });
@@ -148,6 +148,7 @@ describe('URL Checker Tests', () => {
     it('should process valid URLs correctly', async () => {
       mockFetch.mockImplementation(() => Promise.resolve({ status: 200 }));
       const results = await processBatch(testBatch);
+
       expect(results.filter((r) => r !== null).length).toBe(0);
     });
 
