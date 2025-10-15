@@ -234,8 +234,7 @@ describe('URL Checker Tests', () => {
       expect(result[0].filePath).toBe('bad.md');
     });
   });
-
-  // ----------- main tests -----------
+  
   describe('main', () => {
     it('should run successfully when all URLs are valid', async () => {
       mockFetch.mockImplementation(() => Promise.resolve({ status: 200 }));
