@@ -224,8 +224,7 @@ describe('URL Checker Tests', () => {
       const results = await checkUrls(testPaths);
       expect(results.length).toBe(2);
     });
-
-    // --- Extra edge cases ---
+    
     it('returns only 404s from batch', async () => {
       mockFetch.mockImplementation((url) =>Promise.resolve({ status: url.includes('bad') ? 404 : 200 }));
       const paths = [{filePath: 'good.md',urlPath: 'docs/good',editLink: 'https://github.com/org/repo/edit/main/good.md'},{filePath: 'bad.md',urlPath: 'docs/bad',editLink: 'https://github.com/org/repo/edit/main/bad.md'}];
@@ -234,7 +233,7 @@ describe('URL Checker Tests', () => {
       expect(result[0].filePath).toBe('bad.md');
     });
   });
-  
+
   describe('main', () => {
     it('should run successfully when all URLs are valid', async () => {
       mockFetch.mockImplementation(() => Promise.resolve({ status: 200 }));
