@@ -239,7 +239,9 @@ describe('URL Checker Tests', () => {
   describe('main', () => {
     it('should run successfully when all URLs are valid', async () => {
       mockFetch.mockImplementation(() => Promise.resolve({ status: 200 }));
+
       await main();
+
       expect(logger.info).toHaveBeenCalledWith('All URLs are valid.');
     });
 
