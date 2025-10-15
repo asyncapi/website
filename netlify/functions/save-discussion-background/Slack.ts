@@ -128,7 +128,7 @@ export namespace Slack {
         text: message,
         as_user: true,
         thread_ts: threadTS,
-        icon_url: AVATAR_URL,
+        // icon_url: AVATAR_URL,
       });
     } catch (err) {
       console.error(
