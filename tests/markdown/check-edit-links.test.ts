@@ -135,8 +135,7 @@ describe('URL Checker Tests', () => {
       expect(result.some((f) => f.filePath.endsWith('subfile.md'))).toBe(true);
     });
   });
-
-  // ...existing code...
+  
   describe('processBatch', () => {
     const testBatch = processBatchData;
 
