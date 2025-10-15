@@ -5,11 +5,11 @@ import path from 'path';
 import editOptions from '../../config/edit-page-config.json';
 import { logger } from '../../scripts/helpers/logger';
 import { 
-  checkUrls, 
-  determineEditLink, 
-  generatePaths, 
-  main, 
-  processBatch 
+  checkUrls,
+  determineEditLink,
+  generatePaths,
+  main,
+  processBatch
 } from '../../scripts/markdown/check-edit-links';
 import { determineEditLinkData, processBatchData, testPaths } from '../fixtures/markdown/check-edit-links-data';
 
