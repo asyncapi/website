@@ -116,7 +116,7 @@ async function processBatch(batch: PathObject[]): Promise<(PathObject | null)[]>
 
         if (response.status === 404) {
           return { filePath, urlPath, editLink };
-        } 
+        }
         
         return null;
       } catch (error) {
