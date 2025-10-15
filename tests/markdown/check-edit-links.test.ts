@@ -252,7 +252,9 @@ describe('URL Checker Tests', () => {
 
     it('should report invalid URLs when found', async () => {
       mockFetch.mockImplementation(() => Promise.resolve({ status: 404 }));
+
       await main();
+
       expect(logger.info).toHaveBeenCalledWith(expect.stringContaining('URLs returning 404:'));
     });
 
