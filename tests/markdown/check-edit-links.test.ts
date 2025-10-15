@@ -4,13 +4,17 @@ import path from 'path';
 
 import editOptions from '../../config/edit-page-config.json';
 import { logger } from '../../scripts/helpers/logger';
-import { checkUrls, determineEditLink, generatePaths, main, processBatch } from '../../scripts/markdown/check-edit-links';
+import { 
+  checkUrls, 
+  determineEditLink, 
+  generatePaths, 
+  main, 
+  processBatch } from '../../scripts/markdown/check-edit-links';
 import { determineEditLinkData, processBatchData, testPaths } from '../fixtures/markdown/check-edit-links-data';
 
 jest.mock('../../scripts/helpers/logger.ts', () => ({
   logger: { info: jest.fn() }
 }));
-
 jest.mock('node-fetch-2', () => jest.fn());
 function dirent(name: string, isFile = true, isDirectory = false) {
   return { name, isFile: () => isFile, isDirectory: () => isDirectory };
@@ -31,6 +35,7 @@ describe('URL Checker Tests', () => {
         determineEditLinkData[0].filePath,
         editOptions
       );
+
       expect(result).toBe(determineEditLinkData[0].editLink);
     });
 
@@ -40,7 +45,9 @@ describe('URL Checker Tests', () => {
         determineEditLinkData[1].filePath,
         editOptions
       );
+
       expect(result).toBe(determineEditLinkData[1].editLink);
+
     });
 
     it('should generate correct edit link for docs with a config', () => {
@@ -49,6 +56,7 @@ describe('URL Checker Tests', () => {
         determineEditLinkData[2].filePath,
         editOptions
       );
+
       expect(result).toBe(determineEditLinkData[2].editLink);
     });
 
@@ -56,7 +64,7 @@ describe('URL Checker Tests', () => {
       const result = determineEditLink(
         'some/nonexistent/path',
         'some/nonexistent/file.md',
-        [], // Empty edit options to ensure no match
+        [] // Empty edit options to ensure no match
       );
       expect(result).toBe(null);
     });
