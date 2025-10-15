@@ -9,7 +9,8 @@ import {
   determineEditLink, 
   generatePaths, 
   main, 
-  processBatch } from '../../scripts/markdown/check-edit-links';
+  processBatch 
+} from '../../scripts/markdown/check-edit-links';
 import { determineEditLinkData, processBatchData, testPaths } from '../fixtures/markdown/check-edit-links-data';
 
 jest.mock('../../scripts/helpers/logger.ts', () => ({
@@ -64,7 +65,7 @@ describe('URL Checker Tests', () => {
         'some/nonexistent/file.md',
         [] // Empty edit options to ensure no match
       );
-      
+
       expect(result).toBe(null);
     });
 
