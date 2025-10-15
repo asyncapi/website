@@ -5,9 +5,9 @@ import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { useTranslation } from '../utils/i18n';
 import Button from './buttons/Button';
 import AnnouncementHero from './campaigns/AnnouncementHero';
-import DemoAnimation from './DemoAnimation';
 import Features from './features';
 import ArrowRight from './icons/ArrowRight';
+import SneakPeek from './SneakPeek';
 import DiamondSponsors from './sponsors/DiamondSponsors';
 import Heading from './typography/Heading';
 
@@ -62,7 +62,7 @@ export default function Hero({ className = '' }: HeroProps) {
         </div>
         <Features />
         <div className='mt-8 md:mt-16'>
-          <DemoAnimation />
+          <SneakPeek />
         </div>
       </header>
     </>

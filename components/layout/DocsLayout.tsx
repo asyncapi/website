@@ -123,7 +123,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
         <div className='flex flex-row' id='main-content'>
           {/* <!-- Static sidebar for desktop --> */}
           {sidebar}
-          <div className='flex w-0 max-w-full dark:bg-dark-background flex-1 flex-col lg:max-w-(screen-16)'>
+          <div className='flex w-0 max-w-full min-w-0 dark:bg-dark-background flex-1 flex-col overflow-hidden'>
             <main className='relative z-0 pb-6 pt-2 focus:outline-none md:py-6' tabIndex={0}>
               {!showMenu && (
                 <div className='lg:hidden'>
@@ -140,13 +140,13 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
 
               {/* <AnnouncementHero className='ml-6' hideVideo={true} /> */}
 
-              <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
+              <div className={`xl:flex xl:gap-4 ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
                 <TOC
                   toc={post.toc}
                   depth={3}
-                  className='sticky top-20 mt-4 max-h-screen overflow-y-auto bg-blue-100 p-4 xl:mt-0 xl:w-60 xl:bg-transparent xl:pb-8'
+                  className='hidden xl:block sticky top-20 mt-4 max-h-screen overflow-y-auto xl:mt-0 xl:w-60 xl:flex-shrink-0 xl:bg-transparent xl:pb-8'
                 />
-                <div className='px-4 sm:px-6 xl:max-w-208 xl:flex-1 xl:px-8'>
+                <div className='px-4 sm:px-6 xl:flex-1 xl:px-8 min-w-0 overflow-hidden'>
                   <Heading className='dark:text-dark-heading' level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg}>
                     {post.title}
                   </Heading>
@@ -198,7 +198,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                       </div>
                     </div>
                   )}
-                  <article className='my-12'>
+                  <article className='my-12 max-w-full'>
                     <Head title={post.title} description={post.excerpt} image={post.cover} />
                     {children}
                   </article>

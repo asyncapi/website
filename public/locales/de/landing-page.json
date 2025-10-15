@@ -68,5 +68,10 @@
         "supportedByPretext": "Die folgenden Unternehmen unterstützen uns, indem sie uns erlauben, ihre Produkte kostenlos zu verwenden. Haben Sie Interesse daran, uns ebenfalls zu unterstützen?",
         "supportedByLink": "Kontaktieren Sie uns per E-Mail",
         "supportedByPosttext": " für weitere Informationen."
-    } 
+    },
+    "events": {
+        "title": "Unsere Gemeinschafts-Events",
+        "description":"AsyncAPI organiseert wekelijks verschillende bijeenkomsten. Deze richten zich op verschillende onderwerpen, soms puur technisch en soms over community-building. Kies er een en doe mee!",
+        "meetingTitle":"Lees meer over onze bijeenkomsten."
+    }
 }
