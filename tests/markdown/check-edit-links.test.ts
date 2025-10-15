@@ -4,7 +4,7 @@ import path from 'path';
 
 import editOptions from '../../config/edit-page-config.json';
 import { logger } from '../../scripts/helpers/logger';
-import { 
+import {
   checkUrls,
   determineEditLink,
   generatePaths,
