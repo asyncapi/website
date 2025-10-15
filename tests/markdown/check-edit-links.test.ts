@@ -135,7 +135,7 @@ describe('URL Checker Tests', () => {
       expect(result.some((f) => f.filePath.endsWith('subfile.md'))).toBe(true);
     });
   });
-  
+
   describe('processBatch', () => {
     const testBatch = processBatchData;
 
@@ -250,7 +250,8 @@ describe('URL Checker Tests', () => {
     });
 
     it('should handle errors gracefully', async () => {
-      mockFetch.mockImplementation(() =>Promise.reject(new Error('Network error')));
+      mockFetch.mockImplementation(() => Promise.reject(new Error('Network error')));
+
       await expect(main()).rejects.toThrow();
     });
   });
