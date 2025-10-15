@@ -101,7 +101,7 @@ async function processBatch(batch: PathObject[]): Promise<(PathObject | null)[]>
 
         const controller = new AbortController();
         timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
-
+        
         const response = await fetch(editLink, {
           method: 'HEAD',
           signal: controller.signal
