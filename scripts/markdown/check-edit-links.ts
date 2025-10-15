@@ -117,9 +117,7 @@ async function processBatch(
       let timeout: NodeJS.Timeout | undefined;
 
       try {
-        if (
-          !editLink ||
-          ignoreFiles.some((ignorePath) => filePath.endsWith(ignorePath))
+        if (!editLink || ignoreFiles.some((ignorePath) => filePath.endsWith(ignorePath))
         )
           return null;
 
@@ -128,7 +126,7 @@ async function processBatch(
 
         const response = await fetch(editLink, {
           method: 'HEAD',
-          signal: controller.signal,
+          signal: controller.signal
         });
 
         if (response.status === 404) {
@@ -137,15 +135,13 @@ async function processBatch(
 
         return null;
       } catch (error) {
-        return Promise.reject(
-          new Error(`Error checking ${editLink}: ${error}`),
-        );
+        return Promise.reject(new Error(`Error checking ${editLink}: ${error}`));
       } finally {
         if (timeout) {
-          clearTimeout(timeout);
+            clearTimeout(timeout);
         }
       }
-    }),
+    })
   );
 }
 
@@ -177,7 +173,7 @@ async function checkUrls(paths: PathObject[]): Promise<PathObject[]> {
       await pause(1000);
 
       return batchResults.filter((url) => url !== null) as PathObject[];
-    }),
+    })
   );
 
   result.push(...batchResultsArray.flat());
@@ -201,16 +197,12 @@ async function checkUrls(paths: PathObject[]): Promise<PathObject[]> {
 function determineEditLink(
   urlPath: string,
   filePath: string,
-  editOptions: { value: string; href: string }[],
+  editOptions: { value: string; href: string }[]
 ): string | null {
   // Remove leading 'docs/' if present for matching
-  const pathForMatching = urlPath.startsWith('docs/')
-    ? urlPath.slice(5)
-    : urlPath;
+  const pathForMatching = urlPath.startsWith('docs/') ? urlPath.slice(5) : urlPath;
 
-  const target = editOptions.find((edit) =>
-    pathForMatching.includes(edit.value),
-  );
+  const target = editOptions.find((edit) => pathForMatching.includes(edit.value));
 
   // Handle the empty value case (fallback)
   if (target?.value === '') {
@@ -244,9 +236,7 @@ async function main() {
 
     if (invalidUrls.length > 0) {
       logger.info('\nURLs returning 404:\n');
-      invalidUrls.forEach((url) =>
-        logger.info(`- ${url.editLink} generated from ${url.filePath}\n`),
-      );
+      invalidUrls.forEach((url) => logger.info(`- ${url.editLink} generated from ${url.filePath}\n`));
       logger.info(`\nTotal invalid URLs found: ${invalidUrls.length}`);
     } else {
       logger.info('All URLs are valid.');
