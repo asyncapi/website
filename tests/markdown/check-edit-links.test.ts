@@ -177,9 +177,11 @@ describe('URL Checker Tests', () => {
           editLink: 'https://github.com/org/repo/edit/main/v2.x.md'
         }
       ];
+
       mockFetch.mockImplementation(() => Promise.resolve({ status: 404 }));
       const results = await processBatch(batchWithIgnored);
       const validResults = results.filter((r) => r !== null);
+
       expect(validResults.length).toBe(2);
     });
 
