@@ -60,11 +60,7 @@ describe('URL Checker Tests', () => {
     });
 
     it('should return null when no matching target is found', () => {
-      const result = determineEditLink(
-        'some/nonexistent/path',
-        'some/nonexistent/file.md',
-        [] // Empty edit options to ensure no match
-      );
+      const result = determineEditLink('some/nonexistent/path','some/nonexistent/file.md',[]);
 
       expect(result).toBe(null);
     });
