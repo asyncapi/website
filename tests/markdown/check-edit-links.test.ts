@@ -64,6 +64,7 @@ describe('URL Checker Tests', () => {
         'some/nonexistent/file.md',
         [] // Empty edit options to ensure no match
       );
+      
       expect(result).toBe(null);
     });
 
