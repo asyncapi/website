@@ -87,6 +87,7 @@ describe('URL Checker Tests', () => {
   describe('generatePaths', () => {
     it('should generate correct paths for markdown files', async () => {
       const paths = await generatePaths(testDir, editOptions);
+
       expect(Array.isArray(paths)).toBe(true);
       paths.forEach((pathObj) => {
         expect(pathObj).toHaveProperty('filePath');
@@ -98,6 +99,7 @@ describe('URL Checker Tests', () => {
     it('should skip _section.md files', async () => {
       const paths = await generatePaths(testDir, editOptions);
       const sectionFiles = paths.filter((p) => p.filePath.endsWith('_section.md'));
+
       expect(sectionFiles.length).toBe(0);
     });
 
