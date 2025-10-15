@@ -68,10 +68,7 @@ async function* walkDirectory(dir: string, relativePath = ''): AsyncGenerator<{ 
  *
  * @throws Will throw an error if the directory traversal fails.
  */
-async function generatePaths(
-  folderPath: string,
-  editOptions: { value: string; href: string }[],
-): Promise<PathObject[]> {
+async function generatePaths(folderPath: string, editOptions: { value: string; href: string }[]): Promise<PathObject[]> {
   if (typeof folderPath !== 'string' || !folderPath) {
     throw new TypeError('The "path" argument must be a non-empty string.');
   }
