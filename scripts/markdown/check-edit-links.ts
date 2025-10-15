@@ -43,11 +43,7 @@ async function* walkDirectory(dir: string, relativePath = ''): AsyncGenerator<{ 
 
     if (entry.isDirectory()) {
       yield* walkDirectory(absPath, relPath);
-    } else if (
-      entry.isFile() &&
-      entry.name.endsWith('.md') &&
-      entry.name !== '_section.md'
-    ) {
+    } else if (entry.isFile() && entry.name.endsWith('.md') && entry.name !== '_section.md') {
       yield { filePath: absPath, relativeFilePath: relPath };
     }
   }
