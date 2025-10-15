@@ -33,7 +33,7 @@ interface PathObject {
  * @throws {Error} If an error occurs during the HTTP HEAD request for any edit link.
  */
 
-// ✅ NEW: Async generator for efficient directory traversal
+// NEW: Async generator for efficient directory traversal
 async function* walkDirectory(dir: string, relativePath = ''): AsyncGenerator<{ filePath: string; relativeFilePath: string }> {
   const entries = await fs.readdir(dir, { withFileTypes: true });
 
@@ -83,19 +83,9 @@ async function generatePaths(
   const result: PathObject[] = [];
 
   try {
-    for await (const { filePath, relativeFilePath } of walkDirectory(
-      folderPath,
-    )) {
-      const urlPath = relativeFilePath
-        .split(path.sep)
-        .join('/')
-        .replace(/\.md$/, '');
-
-      result.push({
-        filePath,
-        urlPath,
-        editLink: determineEditLink(urlPath, filePath, editOptions),
-      });
+    for await (const { filePath, relativeFilePath } of walkDirectory(folderPath)) {
+      const urlPath = relativeFilePath.split(path.sep).join('/').replace(/\.md$/, '');
+      result.push({filePath,urlPath,editLink: determineEditLink(urlPath, filePath, editOptions)});
     }
 
     return result;
@@ -103,13 +93,10 @@ async function generatePaths(
     const errorMessage = err instanceof Error ? err.message : String(err);
     const errorStack = err instanceof Error ? err.stack : '';
     throw new Error(`Error walking directory ${folderPath}: ${errorMessage}\n${errorStack}`);
-
   }
 }
 
-async function processBatch(
-  batch: PathObject[],
-): Promise<(PathObject | null)[]> {
+async function processBatch(batch: PathObject[]): Promise<(PathObject | null)[]> {
   const TIMEOUT_MS = Number(process.env.DOCS_LINK_CHECK_TIMEOUT) || 5000;
 
   return Promise.all(
@@ -117,29 +104,18 @@ async function processBatch(
       let timeout: NodeJS.Timeout | undefined;
 
       try {
-        if (!editLink || ignoreFiles.some((ignorePath) => filePath.endsWith(ignorePath))
-        )
-          return null;
+        if (!editLink || ignoreFiles.some((ignorePath) => filePath.endsWith(ignorePath))) return null;
 
         const controller = new AbortController();
         timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
+        
+        const response = await fetch(editLink, {method: 'HEAD',signal: controller.signal});
 
-        const response = await fetch(editLink, {
-          method: 'HEAD',
-          signal: controller.signal
-        });
-
-        if (response.status === 404) {
-          return { filePath, urlPath, editLink };
-        }
-
-        return null;
+        if (response.status === 404) {return { filePath, urlPath, editLink }} return null;
       } catch (error) {
         return Promise.reject(new Error(`Error checking ${editLink}: ${error}`));
       } finally {
-        if (timeout) {
-            clearTimeout(timeout);
-        }
+          if (timeout) {clearTimeout(timeout)}
       }
     })
   );
