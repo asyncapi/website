@@ -220,6 +220,7 @@ describe('URL Checker Tests', () => {
     it('should process all URLs in batches', async () => {
       mockFetch.mockImplementation(() => Promise.resolve({ status: 200 }));
       const results = await checkUrls(testPaths);
+
       expect(results.length).toBe(0);
       expect(mockFetch).toHaveBeenCalledTimes(10);
     });
