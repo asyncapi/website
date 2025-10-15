@@ -226,9 +226,12 @@ describe('URL Checker Tests', () => {
 
     it('should handle mixed responses correctly', async () => {
       mockFetch.mockImplementation((url) => {
-        return Promise.resolve({status: url.includes('migration') ? 404 : 200});
+        return Promise.resolve({
+          status: url.includes('migration') ? 404 : 200
+        });
       });
       const results = await checkUrls(testPaths);
+
       expect(results.length).toBe(2);
     });
 
