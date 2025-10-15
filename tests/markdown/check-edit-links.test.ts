@@ -65,7 +65,7 @@ describe('URL Checker Tests', () => {
         'some/nonexistent/file.md',
         [] // Empty edit options to ensure no match
       );
-      
+
       expect(result).toBe(null);
     });
 
@@ -224,7 +224,7 @@ describe('URL Checker Tests', () => {
       const results = await checkUrls(testPaths);
       expect(results.length).toBe(2);
     });
-    
+
     it('returns only 404s from batch', async () => {
       mockFetch.mockImplementation((url) =>Promise.resolve({ status: url.includes('bad') ? 404 : 200 }));
       const paths = [{filePath: 'good.md',urlPath: 'docs/good',editLink: 'https://github.com/org/repo/edit/main/good.md'},{filePath: 'bad.md',urlPath: 'docs/bad',editLink: 'https://github.com/org/repo/edit/main/bad.md'}];
