@@ -32,7 +32,7 @@ interface PathObject {
  *
  * @throws {Error} If an error occurs during the HTTP HEAD request for any edit link.
  */
-
+  
 // NEW: Async generator for efficient directory traversal
 async function* walkDirectory(dir: string, relativePath = ''): AsyncGenerator<{ filePath: string; relativeFilePath: string }> {
   const entries = await fs.readdir(dir, { withFileTypes: true });
@@ -101,7 +101,7 @@ async function processBatch(batch: PathObject[]): Promise<(PathObject | null)[]>
 
         const controller = new AbortController();
         timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
-        
+
         const response = await fetch(editLink, {
           method: 'HEAD',
           signal: controller.signal
