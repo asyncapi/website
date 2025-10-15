@@ -123,7 +123,7 @@ async function processBatch(batch: PathObject[]): Promise<(PathObject | null)[]>
         return Promise.reject(new Error(`Error checking ${editLink}: ${error}`));
       } finally {
         if (timeout) {
-          clearTimeout(timeout);
+            clearTimeout(timeout);
         }
       }
     })
