@@ -9,7 +9,7 @@ usecases:
   docs:
     title: Developer Portal and Discoverability
     description: Generate documentation and share across entire organization which events exist, who produces them, who consumes them, and how traffic flows. This makes onboarding easier and promotes cross-team visibility. Identify what consumers will be affected by event changes introduced by producers.
-  governanace:
+  governance:
     title: Governance and Consistency
     description: Assure consistency across your event ecosystem. You can validate contracts to ensure topic names follow organizational standards, check that no sensitive information is exposed, and apply custom rules through linting. This builds governance into the development lifecycle without slowing teams down.
   selfservice:
@@ -24,109 +24,109 @@ usecases:
 data:
   raiffeisen:
     name: Raiffeisen Bank
-    description:
+    description: Implementing a Continuous Integration and Continuous Delivery (CI/CD) pipeline utilizing GitOps principles to deploy a topology constructed on AsyncAPI definitions using a Kubernetes operator to an Apache Pulsar cluster.
     type: Video
-    url:
-  kuehne:
-    name: Kuehne+Nagel
-    description:
-    type: Slides
-    url:
-  postman:
-    name: Postman
-    description:
-    type: Video
-    url:
+    url: https://www.youtube.com/watch?v=_MwzLZMwFN8
   lego1:
     name: LEGO Group
-    description:
+    description: Managing brokers, where developers abstain from direct access to the management console and instead upload AsyncAPI documents to a self-service API, which provisions access and topics specified in the documents.
     type: Video
-    url:
+    url: https://www.youtube.com/watch?v=m8I0fYjx6Cc
   lego2:
     name: LEGO Group
-    description:
+    description: Defining, documenting, and distributing event-driven APIs while ensuring consistency and governance.
     type: Video
-    url:
+    url: https://www.youtube.com/watch?v=qjarcJQVLOg
   newzealand: 
     name: Bank of New Zealand
-    description:
+    description: Establishing a decentralized company-wide governance strategy for APIs, providing a self-service platform for publishing APIs and documentation.
     type: Video
-    url: 
+    url: https://www.confluent.io/events/kafka-summit-apac-2021/self-service-events-and-decentralised-governance-with-asyncapi-a-real-world/
+  zora:
+    name: Zora Robotics
+    description: Documenting public MQTT APIs for IoT products and constructing a developer portal.
+    type: Video
+    url: https://www.youtube.com/watch?v=yjHgT0n2BtA
+  walmart:
+    name: Walmart
+    description: Managing a centralized API Hub for internal teams, enhancing event discoverability and visibility using AsyncAPI. AsyncAPI facilitates company-wide governance on asynchronous APIs.
+    type: Video
+    url: https://www.youtube.com/watch?v=SxTpGRaNIPo
+  ebay:
+    name: eBay
+    description: Facilitating partner integration with eBay through asynchronous communication, leveraging public AsyncAPI documents for code generation and rapid integration, while ensuring governance and standardization.
+    type: Video
+    url: https://www.youtube.com/watch?v=SxTpGRaNIPo
+  postman:
+    name: Postman
+    description: Enhancing discoverability of information about system events by building a tool called Synapse for provisioning entire event-based infrastructure, with AsyncAPI documents as the source of truth.
+    type: Video
+    url: https://www.youtube.com/watch?v=0_7QZyKLPoE
+  adobe:
+    name: Adobe
+    description: Providing event documentation to expedite development by generating classes based on message payload information from AsyncAPI documents.
+    type: Slides
+    url: https://drive.google.com/file/d/1AVCG9_fFtuOtrvZVZWENmU2aDT7C51Jr/view?usp=sharing
+  universitycatalonia:
+    name: Open University of Catalonia and Prodevelop
+    description: Enabling monitoring of ports through a design-first approach, utilizing UML class diagrams to design the entire infrastructure. UML diagrams are source of truth for generated AsyncAPI documents that later are used for models and clients generation. These documents are extended with additional SLA properties to specify runtime quality of service requirements, facilitating real-time monitoring.
+    type: Video
+    url: https://www.youtube.com/watch?v=m4KS6FSeTT4
+  oracle:
+    name: Oracle
+    description: Documenting data streaming APIs with AsyncAPI documents for client library generation in various programming languages, reducing development time for applications consuming data.
+    type: Video
+    url: https://www.youtube.com/watch?v=CGLlxYy66LY
+  transfergo:
+    name: TransferGo
+    description: Enhancing discoverability of information about event-driven systems by documenting services with AsyncAPI, rendering documentation, and creating catalogs of events. Legacy services utilize a special library to generate AsyncAPI documents, while new services require AsyncAPI documents for generating PHP classes.
+    type: Slides
+    url: https://drive.google.com/file/d/1t7tYMr8FMRInaZV0lWod1QfDuhhSjwBJ/view?usp=sharing
+  kuehne:
+    name: Kuehne+Nagel
+    description: Implementing a GitOps-based pipeline to enable self-service management of Kafka infrastructure, including access control management. Automation of AsyncAPI document governance ensures consistency in the infrastructure at the pull request level.
+    type: Slides
+    url: https://drive.google.com/file/d/1y67PI8NaITPPwZAiDF2Zs7ISfcIpqMV8/view?usp=sharing
+  adidas:
+    name: Adidas
+    description: AsyncAPI is a standard for defining asynchronous APIs using Apache Kafka. AsyncAPI governed under official guidelines. AsyncAPI is promoted to be used for documentation and code generation.
+    type: Docs
+    url: https://adidas.gitbook.io/api-guidelines/asynchronous-api-guidelines/kafka-asynchronous-guidelines/a_introduction/why-asyncapi
+  morgan:
+    name: Morgan Stanley
+    description: AsyncAPI is promoted not only inside the company but also as a standard for FinOS Foundation for managing architecture as code.
+    type: Slides
+    url: https://drive.google.com/file/d/1YzLwQZsMUXGwj_Lsqv-ZnvV2knuowWrS/view?usp=drive_link
   schwarz:
     name: Schwarz Group
     description:
-    type: Video???
-    url: 
-  walmart:
-    name: Walmart
-    description:
     type: Video
-    url: 
-  ebay:
-    name: eBay
-    description:
-    type: Video
-    url: 
-  universitycatalonia:
-    name: Open University of Catalonia
-    description:
-    type: Video
-    url: 
-  transfergo:
-    name: TransferGo          
-    description:
-    type: Video
-    url: 
+    url:
   adeo:
-    name: Adeo          
+    name: Adeo
     description:
     type: Video
-    url:   
+    url:
   hdi:
-    name: HDI Global SE      
+    name: HDI Global SE
     description:
     type: Video
-    url: 
-  adobe:
-    name: Adobe  
-    description:
-    type: Video
-    url: 
-  oracle:
-    name: Oracle  
-    description:
-    type: Video
-    url:   
-  adidas:
-    name: Adidas  
-    description:
-    type: Video
-    url: 
+    url:
   sap:
-    name: SAP  
+    name: SAP
     description:
     type: Video
-    url: 
+    url:
   lombard:
     name: Lombard Odier
     description:
     type: Video
-    url: 
-  zora:
-    name: Zora Robotics
-    description:
-    type: Video
-    url: 
-  morgan:
-    name: Morgan Stanley
-    description:
-    type: Video
-    url: 
+    url:
   siemens:
     name: Siemens
     description:
     type: Video
-    url: 
+    url:
   pagopa:
     name: PagoPA
     description:
