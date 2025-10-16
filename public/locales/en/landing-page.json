@@ -42,6 +42,10 @@
         "much-more.description": "We have many different tools and welcome you to explore our ideas and propose new ideas to AsyncAPI.",
         "much-more.links.whyasyncapi-muchmore-github-link": "View GitHub Discussions"
     },
+    "sneakpeek": {
+        "title": "Sneak Peek Into The Real Process",
+        "description": "One of our main goals is to improve the current state of Event Driven Architecture (EDA))"
+    },
     "adopters": {
         "title": "Adopted by the world leading brands",
         "description": "These brands are already using AsyncAPI in production. Is your company using AsyncAPI and wants to be included in this list?",
@@ -71,7 +75,7 @@
     },
     "events": {
         "title": "Our Community Events",
-        "description":"AsyncAPI organiseert wekelijks verschillende bijeenkomsten. Deze richten zich op verschillende onderwerpen, soms puur technisch en soms over community-building. Kies er een en doe mee!",
-        "meetingTitle":"Lees meer over onze bijeenkomsten."
+        "description":"AsyncAPI hosts different meetings every week. They are focused on different topics, sometimes purely technical and sometimes about community building. Pick one and join us!",
+        "meetingTitle":"Learn more about our meetings."
     }
 }
