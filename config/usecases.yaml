@@ -1,0 +1,134 @@
+description: "All use cases related to AsyncAPI collectively contribute to most important aspect of software development, which is costs reduction. For example with `Infrastructure as Code` instead of enabling costly on-demand topic provisioning in your broker, you can automate it safely using AsyncAPI contracts. Before you provision new topics, you can first validate if it this is not causing duplicates and unnecessary costs increase. Use case like `Governance and Consistency` or `Developer Portal` significantly contributes to adoption of events infrastructure in consistent way and makes onboarding faster, that directly converts to cost reduction."
+usecases:
+  infraascode:
+    title: Infrastructure as Code
+    description: This makes them a great fit for Infrastructure as Code. DevOps teams can use AsyncAPI contracts to automatically provision topics, assign access rights, and configure brokers. Instead of manual setup, everything is declarative and repeatable.
+  testing:
+    title: Testing and Mocking
+    description: "You don’t need to wait for producers to deploy before you start building consumers. Once teams agree on the event structure, you can capture it in an AsyncAPI contract and generate mocks directly. This lets developers test consumers against simulated producers, speeding up development and avoiding bottlenecks."
+  docs:
+    title: Developer Portal and Discoverability
+    description: Generate documentation and share across entire organization which events exist, who produces them, who consumes them, and how traffic flows. This makes onboarding easier and promotes cross-team visibility. Identify what consumers will be affected by event changes introduced by producers.
+  governanace:
+    title: Governance and Consistency
+    description: Assure consistency across your event ecosystem. You can validate contracts to ensure topic names follow organizational standards, check that no sensitive information is exposed, and apply custom rules through linting. This builds governance into the development lifecycle without slowing teams down.
+  selfservice:
+    title: Self-Service
+    description: "Because AsyncAPI is machine-readable, it’s perfect for building self-service platforms. Teams can submit their contracts to a central service, which automatically validates schemas, publishes them to a shared registry, and provisions broker resources. This enables faster time-to-production while keeping standards and compliance intact."
+  codegen:
+    title: Code Generation
+    description: AsyncAPI helps eliminate boilerplate code. You can start by generating strongly typed models from message schemas and go further by producing client libraries or even SDKs. This accelerates development, reduces human error, and ensures producers and consumers always stay aligned with the contract.
+  extensibility: 
+    title: Extensibility - Quality of Service Monitoring
+    description: AsyncAPI supports extensions, so you can enrich contracts with operational requirements like SLA or QoS details. For example, an IoT device might declare its expected latency or throughput. Monitoring tools can read these extensions, track service quality, and raise alerts when metrics fall below agreed levels.
+data:
+  raiffeisen:
+    name: Raiffeisen Bank
+    description:
+    type: Video
+    url:
+  kuehne:
+    name: Kuehne+Nagel
+    description:
+    type: Slides
+    url:
+  postman:
+    name: Postman
+    description:
+    type: Video
+    url:
+  lego1:
+    name: LEGO Group
+    description:
+    type: Video
+    url:
+  lego2:
+    name: LEGO Group
+    description:
+    type: Video
+    url:
+  newzealand: 
+    name: Bank of New Zealand
+    description:
+    type: Video
+    url: 
+  schwarz:
+    name: Schwarz Group
+    description:
+    type: Video???
+    url: 
+  walmart:
+    name: Walmart
+    description:
+    type: Video
+    url: 
+  ebay:
+    name: eBay
+    description:
+    type: Video
+    url: 
+  universitycatalonia:
+    name: Open University of Catalonia
+    description:
+    type: Video
+    url: 
+  transfergo:
+    name: TransferGo          
+    description:
+    type: Video
+    url: 
+  adeo:
+    name: Adeo          
+    description:
+    type: Video
+    url:   
+  hdi:
+    name: HDI Global SE      
+    description:
+    type: Video
+    url: 
+  adobe:
+    name: Adobe  
+    description:
+    type: Video
+    url: 
+  oracle:
+    name: Oracle  
+    description:
+    type: Video
+    url:   
+  adidas:
+    name: Adidas  
+    description:
+    type: Video
+    url: 
+  sap:
+    name: SAP  
+    description:
+    type: Video
+    url: 
+  lombard:
+    name: Lombard Odier
+    description:
+    type: Video
+    url: 
+  zora:
+    name: Zora Robotics
+    description:
+    type: Video
+    url: 
+  morgan:
+    name: Morgan Stanley
+    description:
+    type: Video
+    url: 
+  siemens:
+    name: Siemens
+    description:
+    type: Video
+    url: 
+  pagopa:
+    name: PagoPA
+    description:
+    type: Video
+    url: 
