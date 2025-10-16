@@ -162,8 +162,12 @@ export default function SneakPeek() {
       </div>
       <div>
         &nbsp;&nbsp;&nbsp;&nbsp;<span className='text-yellow-200'>console</span>.
-        <span className='text-yellow-300'>log</span>(<span className='text-teal-200'>`Processing signup for ${'{'}
-        message.displayName{'}'}`</span>);
+        <span className='text-yellow-300'>log</span>(
+        <span className='text-teal-200'>
+          `Processing signup for ${'{'}
+          message.displayName{'}'}`
+        </span>
+        );
       </div>
       <div>&nbsp;&nbsp;{'}'}</div>
       <div>{'}'}</div>
@@ -172,78 +176,78 @@ export default function SneakPeek() {
 
   const renderDocumentationCode = () => (
     <div className='font-sans text-gray-800'>
-        <div className='mb-8 mt-4'>
-          <h1 className='text-2xl font-bold text-gray-500'>Account Service 1.0.0</h1>
-          <p className='text-gray-700'>This service is in charge of processing user signups 🚀</p>
-        </div>
+      <div className='mb-8 mt-4'>
+        <h1 className='text-2xl font-bold text-gray-500'>Account Service 1.0.0</h1>
+        <p className='text-gray-700'>This service is in charge of processing user signups 🚀</p>
+      </div>
 
-        <div className='mb-4'>
-          <span className='mr-2 rounded bg-green-500 px-3 py-2 font-bold text-white text-xs'>RECEIVES</span>{' '}
-          <span className='text-base text-gray-700'>user/signedup</span>
-        </div>
+      <div className='mb-4'>
+        <span className='mr-2 rounded bg-green-500 px-3 py-2 font-bold text-white text-xs'>RECEIVES</span>{' '}
+        <span className='text-base text-gray-700'>user/signedup</span>
+      </div>
 
-        <div>
-          <div className='mb-2 mt-4 text-sm text-gray-500'>Accepts the following message:</div>
-          <div className='rounded bg-gray-200 p-4 text-gray-600'>
-            <div
-              className='cursor-pointer'
-              onClick={() => setShowPayload(!showPayload)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') setShowPayload(!showPayload);
-              }}
-              role='button'
-              tabIndex={0}
-            >
-              <span className='font-medium'>Payload</span>{' '}
-              <ArrowRight
-                className={`inline-block size-4 transition-all duration-300 ease-in-out ${showPayload ? 'rotate-90' : ''}`}
-              />{' '}
-              <span className='ml-24 font-bold text-green-500'>Object</span>
-            </div>
-            {showPayload && (
-              <div>
-                <div className='mt-2 rounded bg-gray-100 p-4'>
-                  <div className='mb-4 grid grid-cols-2 gap-4'>
-                    <div className='text-sm font-medium text-gray-700'>displayName</div>
-                    <div>
-                      <div className='font-bold text-green-500 text-sm'>String</div>
-                      <div className='text-xs text-gray-600 mt-1'>Name of the user</div>
-                    </div>
-                  </div>
-                  <div className='grid grid-cols-2 gap-4'>
-                    <div className='text-sm font-medium text-gray-700'>email</div>
-                    <div>
-                      <div className='font-bold text-green-500 text-sm'>
-                        String
-                        <span className='ml-2 rounded bg-yellow-300 px-1.5 py-0.5 text-xs text-black font-normal'>
-                          email
-                        </span>
-                      </div>
-                      <div className='text-xs text-gray-600 mt-1'>Email of the user</div>
-                    </div>
-                  </div>
-
-                  <div className='mt-8 text-xs text-gray-500'>Additional properties are allowed.</div>
-                </div>
-
-                <div className='mt-4 rounded bg-[#252f3f] p-4 font-mono text-sm'>
-                  <div className='text-gray-500'>// Example</div>
-                  <div>&nbsp;</div>
-                  <div className='text-gray-300'>{'{'}</div>
-                  <div>
-                    <span className='text-teal-400'>&nbsp;&nbsp;&quot;displayName&quot;</span>:{' '}
-                    <span className='text-white'>&quot;Eve & Chan&quot;</span>
-                    <span className='text-gray-300'>,</span>
-                  </div>
-                  <div>
-                    <span className='text-teal-400'>&nbsp;&nbsp;&quot;email&quot;</span>:{' '}
-                    <span className='text-white'>&quot;info@asyncapi.io&quot;</span>
-                  </div>
-                  <div className='text-gray-300'>{'}'}</div>
-                </div>
-              </div>
-            )}
+      <div>
+        <div className='mb-2 mt-4 text-sm text-gray-500'>Accepts the following message:</div>
+        <div className='rounded bg-gray-200 p-4 text-gray-600'>
+          <div
+            className='cursor-pointer'
+            onClick={() => setShowPayload(!showPayload)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') setShowPayload(!showPayload);
+            }}
+            role='button'
+            tabIndex={0}
+          >
+            <span className='font-medium'>Payload</span>{' '}
+            <ArrowRight
+              className={`inline-block size-4 transition-all duration-300 ease-in-out ${showPayload ? 'rotate-90' : ''}`}
+            />{' '}
+            <span className='ml-24 font-bold text-green-500'>Object</span>
           </div>
+          {showPayload && (
+            <div>
+              <div className='mt-2 rounded bg-gray-100 p-4'>
+                <div className='mb-4 grid grid-cols-2 gap-4'>
+                  <div className='text-sm font-medium text-gray-700'>displayName</div>
+                  <div>
+                    <div className='font-bold text-green-500 text-sm'>String</div>
+                    <div className='text-xs text-gray-600 mt-1'>Name of the user</div>
+                  </div>
+                </div>
+                <div className='grid grid-cols-2 gap-4'>
+                  <div className='text-sm font-medium text-gray-700'>email</div>
+                  <div>
+                    <div className='font-bold text-green-500 text-sm'>
+                      String
+                      <span className='ml-2 rounded bg-yellow-300 px-1.5 py-0.5 text-xs text-black font-normal'>
+                        email
+                      </span>
+                    </div>
+                    <div className='text-xs text-gray-600 mt-1'>Email of the user</div>
+                  </div>
+                </div>
+
+                <div className='mt-8 text-xs text-gray-500'>Additional properties are allowed.</div>
+              </div>
+
+              <div className='mt-4 rounded bg-[#252f3f] p-4 font-mono text-sm'>
+                <div className='text-gray-500'>// Example</div>
+                <div>&nbsp;</div>
+                <div className='text-gray-300'>{'{'}</div>
+                <div>
+                  <span className='text-teal-400'>&nbsp;&nbsp;&quot;displayName&quot;</span>:{' '}
+                  <span className='text-white'>&quot;Eve & Chan&quot;</span>
+                  <span className='text-gray-300'>,</span>
+                </div>
+                <div>
+                  <span className='text-teal-400'>&nbsp;&nbsp;&quot;email&quot;</span>:{' '}
+                  <span className='text-white'>&quot;info@asyncapi.io&quot;</span>
+                </div>
+                <div className='text-gray-300'>{'}'}</div>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -289,9 +293,7 @@ export default function SneakPeek() {
               <div key={tab.id} className={activeTab === tab.id ? 'block' : 'hidden'}>
                 <div
                   className={`rounded-b-lg p-6 overflow-auto shadow-lg min-h-[400px] ${
-                    tab.id === 'documentation'
-                      ? 'bg-gray-50 dark:bg-gray-100'
-                      : 'bg-[#1B1130] dark:bg-[#0A0515]'
+                    tab.id === 'documentation' ? 'bg-gray-50 dark:bg-gray-100' : 'bg-[#1B1130] dark:bg-[#0A0515]'
                   }`}
                 >
                   <div className={tab.id === 'documentation' ? '' : 'text-xs sm:text-sm leading-relaxed font-mono'}>
@@ -306,4 +308,3 @@ export default function SneakPeek() {
     </section>
   );
 }
-

@@ -54,7 +54,7 @@ export default function HomePage() {
             <Button className='w-full px-40 md:w-auto' text={t('community.slackCTABtn')} href='/slack-invite' />
           </div>
           <div className='mt-8'>
-            <img src="/img/social/slack.webp" alt="Community Slack" className='rounded-lg shadow-md' />
+            <img src='/img/social/slack.webp' alt='Community Slack' className='rounded-lg shadow-md' />
           </div>
         </Container>
 

@@ -1,8 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 
-import Container from '../layout/Container';
-import ConferenceBanner from './ConferenceBanner';
 import { banners, shouldShowBanner } from './banners';
+import ConferenceBanner from './ConferenceBanner';
 
 interface IAnnouncementHeroProps {
   className?: string;
