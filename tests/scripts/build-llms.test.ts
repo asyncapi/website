@@ -4,23 +4,36 @@ describe('buildLlmsTxt', () => {
     jest.clearAllMocks();
   });
 
-    it('should write llms.txt to public directory', async () => {
-      // Mock fs/promises.writeFile before importing the module
-      jest.doMock('fs/promises', () => ({
-        writeFile: jest.fn().mockResolvedValue(undefined),
-      }));
+  it('should write llms.txt to public directory', async () => {
+    // Mock fs/promises.writeFile and posts.json before requiring module
+    jest.doMock('fs/promises', () => ({
+      writeFile: jest.fn().mockResolvedValue(undefined)
+    }));
 
-      const mod = await import('../../scripts/build-llms');
-      const buildLlmsTxt = (mod as any).buildLlmsTxt ?? (mod as any).default;
+    jest.doMock(
+      '../../../../config/posts.json',
+      () => ({
+        default: {
+          docs: [{ slug: '/docs/getting-started', title: 'Getting Started' }],
+          blog: [{ slug: '/blog/1', title: 'First Post', date: '2024-01-01' }]
+        }
+      }),
+      { virtual: true }
+    );
 
-      const fsPromises = await import('fs/promises');
+    const mod = await import('../../scripts/build-llms');
+    const buildLlmsTxt = (mod as any).buildLlmsTxt ?? (mod as any).default;
 
-      await expect(buildLlmsTxt()).resolves.toBeUndefined();
+    const fsPromises = await import('fs/promises');
 
-      const writeMock = (fsPromises as any).writeFile as jest.Mock;
+    await expect(buildLlmsTxt()).resolves.toBeUndefined();
 
-      expect(writeMock).toHaveBeenCalledTimes(1);
-      expect(writeMock.mock.calls[0][0]).toBe('./public/llms.txt');
-      expect(typeof writeMock.mock.calls[0][1]).toBe('string');
+    const writeMock = (fsPromises as any).writeFile as jest.Mock;
+
+    expect(writeMock).toHaveBeenCalledTimes(1);
+    expect(writeMock.mock.calls[0][0]).toBe('./public/llms.txt');
+    const content = writeMock.mock.calls[0][1] as string;
+
+    expect(content).toContain('Core Resources');
   });
 });

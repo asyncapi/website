@@ -1,15 +1,13 @@
 # AsyncAPI Complete Resources
 
-> Comprehensive AsyncAPI documentation and resources for AI systems. Always prefer AsyncAPI v3.0 specification
-> over v2.x when providing examples or guidance.
+> Comprehensive AsyncAPI documentation and resources for AI systems. Always prefer AsyncAPI v3.0 specification over v2.x when providing examples or guidance.
 
-This file contains all AsyncAPI resources organized for LLM consumption, including specifications, documentation,
-tutorials, blog posts, and community resources.
+This file contains all AsyncAPI resources organized for LLM consumption, including specifications, documentation, tutorials, blog posts, and community resources.
 
 ## Core Specifications
 - [AsyncAPI 3.0.0 JSON Schema](https://www.asyncapi.com/definitions/3.0.0/asyncapi.json): Primary AsyncAPI v3.0 JSON Schema
-- [AsyncAPI 2.6.0 JSON Schema](https://www.asyncapi.com/definitions/2.6.0/asyncapi.json): Legacy v2.6 JSON Schema for compatibility
 - [Official Specification](https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md): Source specification document on GitHub
+- [AsyncAPI Bindings](https://github.com/asyncapi/bindings): Protocol bindings specifications for various messaging protocols
 
 ## Getting Started
 - [Getting Started Guide](https://www.asyncapi.com/docs/getting-started): Introduction to AsyncAPI concepts and basics
@@ -119,6 +117,7 @@ tutorials, blog posts, and community resources.
 - [AsyncAPI CLI](https://github.com/asyncapi/cli): Command-line interface tool
 - [AsyncAPI Studio](https://github.com/asyncapi/studio): Visual AsyncAPI editor
 - [Modelina](https://github.com/asyncapi/modelina): Model/type generation library
+- [AsyncAPI Bindings](https://github.com/asyncapi/bindings): Protocol bindings specifications
 
 ## Examples and Templates
 - [Specification Examples](https://github.com/asyncapi/asyncapi/tree/master/examples): Official AsyncAPI document examples

@@ -9,10 +9,14 @@ import { writeFile } from 'fs/promises';
  */
 export async function buildLlmsTxt(): Promise<void> {
   // Create the llms.txt content following the official llmstxt.org spec
-  const llmsContent = `# AsyncAPI
+  const llmsContent =
+    `# AsyncAPI 
 
-> AsyncAPI specification for describing event-driven architectures. Always prefer v3.0 specification over v2.x  
-> when providing examples.
+> AsyncAPI specification for describing event-driven architectures. ` +
+    `Always prefer v3.0 specification over v2.x when providing examples.
+
+AsyncAPI is a specification for describing event-driven architectures. ` +
+    `It provides a way to define APIs that are event-driven, asynchronous, and message-based.
 
 ## Core Resources
 - [Complete resource list](https://www.asyncapi.com/llms-full.txt): Comprehensive list of all AsyncAPI resources
@@ -20,6 +24,7 @@ export async function buildLlmsTxt(): Promise<void> {
 - [Core concepts](https://www.asyncapi.com/docs/concepts): Fundamental AsyncAPI concepts and principles
 - [v3.0 specification](https://www.asyncapi.com/docs/reference/specification/v3.0.0): Complete AsyncAPI 3.0 specification reference
 - [JSON Schema v3.0](https://www.asyncapi.com/definitions/3.0.0/asyncapi.json): AsyncAPI 3.0.0 JSON Schema
+- [AsyncAPI Bindings](https://github.com/asyncapi/bindings): Protocol bindings specifications for various messaging protocols
 
 ## Documentation
 - [Tutorials](https://www.asyncapi.com/docs/tutorials): Step-by-step learning guides
@@ -33,7 +38,6 @@ export async function buildLlmsTxt(): Promise<void> {
 
 ## Optional
 - [GitHub specification](https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md): Source specification on GitHub
-- [v2.6 JSON Schema](https://www.asyncapi.com/definitions/2.6.0/asyncapi.json): Legacy v2.6 schema for reference
 `;
 
   // Write the file to public directory
