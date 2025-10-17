@@ -79,9 +79,9 @@ data:
     url: https://www.youtube.com/watch?v=CGLlxYy66LY
   transfergo:
     name: TransferGo
-    description: Enhancing discoverability of information about event-driven systems by documenting services with AsyncAPI, rendering documentation, and creating catalogs of events. Legacy services utilize a special library to generate AsyncAPI documents, while new services require AsyncAPI documents for generating PHP classes.
-    type: Slides
-    url: https://drive.google.com/file/d/1t7tYMr8FMRInaZV0lWod1QfDuhhSjwBJ/view?usp=sharing
+    description: TransferGo uses the AsyncAPI specification as the essential, standardized blueprint for their event-driven microservices, enabling automated documentation (Event Catalog), continuous validation, and reliable contract testing (Microcks) to ensure clarity and trust across their system.
+    type: Article
+    url: https://www.asyncapi.com/blog/transfergo-asyncapi-story
   kuehne:
     name: Kuehne+Nagel
     description: Implementing a GitOps-based pipeline to enable self-service management of Kafka infrastructure, including access control management. Automation of AsyncAPI document governance ensures consistency in the infrastructure at the pull request level.
@@ -94,41 +94,41 @@ data:
     url: https://adidas.gitbook.io/api-guidelines/asynchronous-api-guidelines/kafka-asynchronous-guidelines/a_introduction/why-asyncapi
   morgan:
     name: Morgan Stanley
-    description: AsyncAPI is promoted not only inside the company but also as a standard for FinOS Foundation for managing architecture as code.
+    description: Used for sharing Websocket based APIs for discoverability and unified security.
     type: Slides
     url: https://drive.google.com/file/d/1YzLwQZsMUXGwj_Lsqv-ZnvV2knuowWrS/view?usp=drive_link
   schwarz:
     name: Schwarz Group
-    description:
+    description: TODO
     type: Video
-    url:
+    url: TODO
   adeo:
     name: Adeo
-    description:
-    type: Video
-    url:
+    description: Document the API of the product, so its users know how it works and how to use it. AsyncAPI was selected as the standard that allows you to generate documentation from a machine-readable document that describes the API. The goal was to document API in a standardized way, so other internal products could follow to unify how APIs are documented across the company.
+    type: Use Case
+    url: https://www.asyncapi.com/casestudies/adeogroup
   hdi:
     name: HDI Global SE
-    description:
-    type: Video
-    url:
+    description: The AsyncAPI documents are used for documentation purposes by the platform team. It provides a comprehensive overview of the asynchronous communication in our system, including the available topics and the structure of the messages.
+    type: Use Case
+    url: https://www.asyncapi.com/casestudies/hdiglobal
   sap:
     name: SAP
-    description:
+    description: Using AsyncAPI to deliver company wide event catalog for easier discoverability of events and event-driven APIs.
     type: Video
-    url:
+    url: TODO
   lombard:
     name: Lombard Odier
-    description:
-    type: Video
-    url:
+    description: Using AsyncAPI as contract for mocking and testing APIs and documentation.
+    type: Slides
+    url: https://www.slideshare.net/slideshow/apidays-paris-2022-adding-a-mock-as-a-service-capability-to-your-api-strategy-portfolio-ludovic-pourrat-lombard-odier/255041645#4
   siemens:
-    name: Siemens
-    description:
-    type: Video
-    url:
+    name: Siemens AG
+    description: Using AsyncAPI to document their ROS2 interfaces.
+    type: Code
+    url: https://github.com/siemens/rosita
   pagopa:
     name: PagoPA
-    description:
-    type: Video
-    url: 
+    description: Using AsyncAPI for documentation purposes to help developers understand event-driven APIs. Using Springwolf project and generate AsyncAPI documents from code.
+    type: Code
+    url: https://github.com/pagopa/p4pa-registries/blob/develop/asyncapi/generated.asyncapi.json
