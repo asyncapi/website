@@ -51,7 +51,11 @@ export default function HomePage() {
           </Heading>
           <Paragraph className='mt-2 text-left md:mx-auto dark:text-dark-text '>{t('community.subtitle')}</Paragraph>
           <div className='mt-5 flex justify-center lg:justify-start'>
-            <Button className='w-full px-40 md:w-auto' text={t('community.slackCTABtn')} href='/slack-invite' />
+            <Button
+              className='w-full text-center sm:w-auto whitespace-nowrap'
+              text={t('community.slackCTABtn')}
+              href='/slack-invite'
+            />
           </div>
           <div className='mt-8'>
             <img src='/img/social/slack.webp' alt='Community Slack' className='rounded-lg shadow-md' />
