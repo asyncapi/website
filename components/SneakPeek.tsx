@@ -282,9 +282,7 @@ export default function SneakPeek() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex-1 px-3 py-3 sm:px-4 sm:py-4 text-xs sm:text-sm font-medium transition-all duration-200 ${
-                  index !== tabs.length - 1 ? 'border-b sm:border-b-0 sm:border-r' : ''
-                } ${'border-gray-300 dark:border-gray-300'} ${
+                className={`flex-1 px-3 py-3 sm:px-4 sm:py-4 text-xs sm:text-sm font-medium transition-all ${'duration-200'} ${index === tabs.length - 1 ? '' : 'border-b sm:border-b-0 sm:border-r'} ${'border-gray-300 dark:border-gray-300'} ${
                   activeTab === tab.id
                     ? 'bg-white dark:bg-[#1B1B2F] text-gray-900 dark:text-white'
                     : 'bg-[#2D1F3F] dark:bg-[#14111D] text-gray-300 dark:text-gray-400 hover:bg-[#3D2F4F] dark:hover:bg-[#1F1A2F]'
@@ -300,9 +298,7 @@ export default function SneakPeek() {
             {tabs.map((tab) => (
               <div key={tab.id} className={activeTab === tab.id ? 'block' : 'hidden'}>
                 <div
-                  className={`rounded-b-lg p-3 sm:p-4 lg:p-6 overflow-auto shadow-lg min-h-[300px] sm:min-h-[350px] lg:min-h-[400px] max-h-[500px] sm:max-h-[600px] ${
-                    tab.id === 'documentation' ? 'bg-gray-50 dark:bg-gray-100' : 'bg-[#1B1130] dark:bg-[#0A0515]'
-                  }`}
+                  className={`rounded-b-lg p-3 sm:p-4 lg:p-6 overflow-auto shadow-lg ${'min-h-[300px] sm:min-h-[350px] lg:min-h-[400px] max-h-[500px] sm:max-h-[600px]'} ${tab.id === 'documentation' ? 'bg-gray-50 dark:bg-gray-100' : 'bg-[#1B1130] dark:bg-[#0A0515]'}`}
                 >
                   <div
                     className={
