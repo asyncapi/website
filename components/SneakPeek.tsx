@@ -176,19 +176,21 @@ export default function SneakPeek() {
 
   const renderDocumentationCode = () => (
     <div className='font-sans text-gray-800'>
-      <div className='mb-8 mt-4'>
-        <h1 className='text-2xl font-bold text-gray-500'>Account Service 1.0.0</h1>
-        <p className='text-gray-700'>This service is in charge of processing user signups 🚀</p>
+      <div className='mb-6 mt-2 sm:mb-8 sm:mt-4'>
+        <h1 className='text-xl sm:text-2xl font-bold text-gray-500'>Account Service 1.0.0</h1>
+        <p className='text-sm sm:text-base text-gray-700 mt-2'>
+          This service is in charge of processing user signups 🚀
+        </p>
       </div>
 
-      <div className='mb-4'>
-        <span className='mr-2 rounded bg-green-500 px-3 py-2 font-bold text-white text-xs'>RECEIVES</span>{' '}
-        <span className='text-base text-gray-700'>user/signedup</span>
+      <div className='mb-4 flex flex-wrap items-center gap-2'>
+        <span className='rounded bg-green-500 px-2 py-1 sm:px-3 sm:py-2 font-bold text-white text-xs'>RECEIVES</span>
+        <span className='text-sm sm:text-base text-gray-700 break-all'>user/signedup</span>
       </div>
 
       <div>
-        <div className='mb-2 mt-4 text-sm text-gray-500'>Accepts the following message:</div>
-        <div className='rounded bg-gray-200 p-4 text-gray-600'>
+        <div className='mb-2 mt-4 text-xs sm:text-sm text-gray-500'>Accepts the following message:</div>
+        <div className='rounded bg-gray-200 p-3 sm:p-4 text-gray-600'>
           <div
             className='cursor-pointer'
             onClick={() => setShowPayload(!showPayload)}
@@ -198,23 +200,23 @@ export default function SneakPeek() {
             role='button'
             tabIndex={0}
           >
-            <span className='font-medium'>Payload</span>{' '}
+            <span className='font-medium text-sm sm:text-base'>Payload</span>{' '}
             <ArrowRight
               className={`inline-block size-4 transition-all duration-300 ease-in-out ${showPayload ? 'rotate-90' : ''}`}
             />{' '}
-            <span className='ml-24 font-bold text-green-500'>Object</span>
+            <span className='ml-4 sm:ml-24 font-bold text-green-500 text-sm sm:text-base'>Object</span>
           </div>
           {showPayload && (
             <div>
-              <div className='mt-2 rounded bg-gray-100 p-4'>
-                <div className='mb-4 grid grid-cols-2 gap-4'>
+              <div className='mt-2 rounded bg-gray-100 p-3 sm:p-4'>
+                <div className='mb-4 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4'>
                   <div className='text-sm font-medium text-gray-700'>displayName</div>
                   <div>
                     <div className='font-bold text-green-500 text-sm'>String</div>
                     <div className='text-xs text-gray-600 mt-1'>Name of the user</div>
                   </div>
                 </div>
-                <div className='grid grid-cols-2 gap-4'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4'>
                   <div className='text-sm font-medium text-gray-700'>email</div>
                   <div>
                     <div className='font-bold text-green-500 text-sm'>
@@ -227,10 +229,10 @@ export default function SneakPeek() {
                   </div>
                 </div>
 
-                <div className='mt-8 text-xs text-gray-500'>Additional properties are allowed.</div>
+                <div className='mt-6 sm:mt-8 text-xs text-gray-500'>Additional properties are allowed.</div>
               </div>
 
-              <div className='mt-4 rounded bg-[#252f3f] p-4 font-mono text-sm'>
+              <div className='mt-4 rounded bg-[#252f3f] p-3 sm:p-4 font-mono text-xs sm:text-sm overflow-x-auto'>
                 <div className='text-gray-500'>{'//'} Example</div>
                 <div>&nbsp;</div>
                 <div className='text-gray-300'>{'{'}</div>
@@ -259,24 +261,30 @@ export default function SneakPeek() {
   ] as const;
 
   return (
-    <section className='relative bg-sky-100 dark:bg-dark-card py-16'>
+    <section className='relative bg-sky-100 dark:bg-dark-card py-8 sm:py-12 lg:py-16'>
       <div className='mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8'>
-        <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className='mt-2 text-gray-900 dark:text-white'>
+        <Heading
+          level={HeadingLevel.h2}
+          typeStyle={HeadingTypeStyle.lg}
+          className='mt-2 text-gray-900 dark:text-white text-2xl sm:text-3xl lg:text-4xl'
+        >
           {t('sneakpeek.title')}
         </Heading>
-        <Paragraph className='mx-auto mt-2 text-gray-700 dark:text-gray-300 max-w-prose'>
+        <Paragraph className='mx-auto mt-2 text-sm sm:text-base text-gray-700 dark:text-gray-300 max-w-prose'>
           {t('sneakpeek.description')}
         </Paragraph>
 
         {/* Tabs Container */}
-        <div className='mt-12'>
+        <div className='mt-8 sm:mt-12'>
           {/* Tabs Bar */}
-          <div className='flex justify-center bg-dark-background dark:bg-dark-card rounded-t-lg overflow-hidden'>
-            {tabs.map((tab) => (
+          <div className='flex flex-col sm:flex-row justify-center bg-dark-background dark:bg-dark-card rounded-t-lg overflow-hidden'>
+            {tabs.map((tab, index) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex-1 px-6 py-4 text-sm font-medium transition-all duration-200 ${'border-r border-gray-300 dark:border-gray-300 last:border-r-0'} ${
+                className={`flex-1 px-3 py-3 sm:px-4 sm:py-4 text-xs sm:text-sm font-medium transition-all duration-200 ${
+                  index !== tabs.length - 1 ? 'border-b sm:border-b-0 sm:border-r' : ''
+                } ${'border-gray-300 dark:border-gray-300'} ${
                   activeTab === tab.id
                     ? 'bg-white dark:bg-[#1B1B2F] text-gray-900 dark:text-white'
                     : 'bg-[#2D1F3F] dark:bg-[#14111D] text-gray-300 dark:text-gray-400 hover:bg-[#3D2F4F] dark:hover:bg-[#1F1A2F]'
@@ -292,11 +300,15 @@ export default function SneakPeek() {
             {tabs.map((tab) => (
               <div key={tab.id} className={activeTab === tab.id ? 'block' : 'hidden'}>
                 <div
-                  className={`rounded-b-lg p-6 overflow-auto shadow-lg min-h-[400px] ${
+                  className={`rounded-b-lg p-3 sm:p-4 lg:p-6 overflow-auto shadow-lg min-h-[300px] sm:min-h-[350px] lg:min-h-[400px] max-h-[500px] sm:max-h-[600px] ${
                     tab.id === 'documentation' ? 'bg-gray-50 dark:bg-gray-100' : 'bg-[#1B1130] dark:bg-[#0A0515]'
                   }`}
                 >
-                  <div className={tab.id === 'documentation' ? '' : 'text-xs sm:text-sm leading-relaxed font-mono'}>
+                  <div
+                    className={
+                      tab.id === 'documentation' ? '' : 'text-[10px] sm:text-xs md:text-sm leading-relaxed font-mono'
+                    }
+                  >
                     {tab.render()}
                   </div>
                 </div>
