@@ -51,7 +51,14 @@ export default function HomePage() {
           </Heading>
           <Paragraph className='mt-2 text-left md:mx-auto dark:text-dark-text '>{t('community.subtitle')}</Paragraph>
           <div className='mt-5 flex justify-center lg:justify-start'>
-            <Button className='w-full px-40 md:w-auto' text={t('community.slackCTABtn')} href='/slack-invite' />
+            <Button
+              className='w-full text-center sm:w-auto whitespace-nowrap'
+              text={t('community.slackCTABtn')}
+              href='/slack-invite'
+            />
+          </div>
+          <div className='mt-8'>
+            <img src='/img/social/slack.webp' alt='Community Slack' className='rounded-lg shadow-md' />
           </div>
         </Container>
 
@@ -99,7 +106,7 @@ export default function HomePage() {
             <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.mdSemibold} className='mb-4'>
               {t('sponsors.sponsorCTATitle')}
             </Heading>
-            <Paragraph className='mt-2 md:mx-auto md:w-1/2'>
+            <Paragraph className='mt-2 dark:text-dark-text md:mx-auto md:w-1/2'>
               {t('sponsors.sponsorCTADesc')}
               <TextLink href='https://opencollective.com/asyncapi' target='_blank'>
                 {t('sponsors.sponsorCTALink')}
@@ -111,7 +118,7 @@ export default function HomePage() {
           <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
             {t('sponsors.supportedByTitle')}
           </Heading>
-          <Paragraph className='mx-auto mt-3 max-w-2xl pb-4 sm:mt-4'>
+          <Paragraph className='mx-auto mt-3 max-w-2xl pb-4 dark:text-dark-text sm:mt-4'>
             {t('sponsors.supportedByPretext')}
             <TextLink href='mailto:info@asyncapi.io' target='_blank'>
               {t('sponsors.supportedByLink')}
