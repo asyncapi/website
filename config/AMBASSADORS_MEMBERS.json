@@ -753,6 +753,55 @@
         ]
     },
     {
+        "name": "Zbigniew Malcherczyk",
+        "github": "ferror",
+        "githubID": 17534504,
+        "linkedin": "http://linkedin.com/in/zbigniew-malcherczyk/",
+        "twitter": "",
+        "country": "\ud83c\uddf5\ud83c\uddf1",
+        "company": "TransferGo",
+        "title": "Staff Backend Engineer",
+        "img": "https://avatars.githubusercontent.com/u/17534504?v=4",
+        "contributions": [
+            {
+                "type": "article",
+                "title": "How TransferGo adopted AsyncAPI",
+                "date": {
+                    "year": 2025,
+                    "month": "October"
+                },
+                "link": "https://www.asyncapi.com/blog/transfergo-asyncapi-story"
+            },
+            {
+                "type": "casestudy",
+                "title": "How TransferGo adopted AsyncAPI",
+                "date": {
+                    "year": 2025,
+                    "month": "September"
+                },
+                "link": "https://www.asyncapi.com/casestudies/transfergo"
+            },
+            {
+                "type": "talk",
+                "title": "Studium przypadku asynchronicznej konsumpcji zdarze\u0144 w domenie finansowej",
+                "date": {
+                    "year": 2023,
+                    "month": "September"
+                },
+                "link": "https://www.youtube.com/watch?v=CtiqwMbOBes"
+            },
+            {
+                "type": "talk",
+                "title": "How TransferGo uses AsyncAPI to improve Developer Experience",
+                "date": {
+                    "year": 2023,
+                    "month": "December"
+                },
+                "link": "https://github.com/Ferror/keynotes/blob/master/asyncapi-2023-developer-experience.pdf"
+            }
+        ]
+    },
+    {
         "name": "Ankit Kumar",
         "github": "ankitk-me",
         "githubID": 6847653,
