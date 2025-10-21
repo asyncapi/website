@@ -66,5 +66,9 @@
   {
     "value": "community/070-marketing",
     "href": "https://github.com/asyncapi/community/tree/master/docs/070-marketing"
+  },
+  {
+    "value": "community/maintainership-guide",
+    "href": "https://github.com/asyncapi/community/tree/master/docs/maintainership-guide"
   }
 ]
