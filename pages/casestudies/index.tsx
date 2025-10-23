@@ -69,9 +69,6 @@ export default function Casestudies() {
                 Adopters
               </Heading>
               <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4 max-w-4xl'>
-                {UsecasesList.description}
-              </Paragraph>
-              <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4 max-w-4xl'>
                 Feel free to{' '}
                 <a className='underline' href='https://github.com/asyncapi/website/blob/master/config/usecases.yml'>
                   submit a pull request
@@ -79,6 +76,9 @@ export default function Casestudies() {
                 with information about how your company uses AsyncAPI. We know that writing an official case study might
                 be time consuming and requires too much internal paper work. Let&apos;s make sure we can at least
                 capture a use case that is already a great learning information for the community.
+              </Paragraph>
+              <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4 max-w-4xl'>
+                {UsecasesList.description}
               </Paragraph>
             </div>
           </div>

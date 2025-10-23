@@ -1,4 +1,4 @@
-description: "All use cases related to AsyncAPI collectively contribute to most important aspect of software development, which is costs reduction. For example with `Infrastructure as Code` instead of enabling costly on-demand topic provisioning in your broker, you can automate it safely using AsyncAPI contracts. Before you provision new topics, you can first validate if it this is not causing duplicates and unnecessary costs increase. Use case like `Governance and Consistency` or `Developer Portal` significantly contributes to adoption of events infrastructure in consistent way and makes onboarding faster, that directly converts to cost reduction."
+description: "All use cases related to AsyncAPI collectively contribute to most important aspect of software development, which is costs reduction. For example with \"Infrastructure as Code\" instead of enabling costly on-demand topic provisioning in your broker, you can automate it safely using AsyncAPI contracts. Before you provision new topics, you can first validate if it this is not causing duplicates and unnecessary costs increase. Use case like \"Governance and Consistency\" or \"Developer Portal\" significantly contributes to adoption of events infrastructure in consistent way and makes onboarding faster, that directly converts to cost reduction."
 usecases:
   infraascode:
     title: Infrastructure as Code
@@ -154,12 +154,12 @@ data:
     resources:
       - type: Slides
         url: https://drive.google.com/file/d/1YzLwQZsMUXGwj_Lsqv-ZnvV2knuowWrS/view?usp=drive_link
-  schwarz:
-    name: Schwarz Group
-    description: TODO
-    resources:
-      - type: Video
-        url: TODO
+  # schwarz:
+  #   name: Schwarz Group
+  #   description: TODO
+  #   resources:
+  #     - type: Video
+  #       url: TODO
   adeo:
     name: Adeo
     description: Document the API of the product, so its users know how it works and how to use it. AsyncAPI was selected as the standard that allows you to generate documentation from a machine-readable document that describes the API. The goal was to document API in a standardized way, so other internal products could follow to unify how APIs are documented across the company.
