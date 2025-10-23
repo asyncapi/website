@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/B773vgCaCkU/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting, Tuesday October 21st 2025",
+    "description": "https://github.com/asyncapi/community/issues/2087.",
+    "videoId": "B773vgCaCkU"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/nNl0HUdBnmg/hqdefault.jpg",
     "title": "Kickstart your AsyncAPI journey with Springwolf",
     "description": "Join us on the 14th of October at 4 PM UTC for a deep dive into Springwolf, the open-source solution for generating AsyncAPI ...",
@@ -22,11 +28,5 @@
     "title": "AsyncAPI Community WG Meeting, Tuesday September 23rd 2025",
     "description": "https://github.com/asyncapi/community/issues/2066.",
     "videoId": "gn6765Le_zQ"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/7e01rDjnVpY/hqdefault.jpg",
-    "title": "Governance Board Meeting, Monday September 15th 2025",
-    "description": "https://github.com/asyncapi/community/issues/2069.",
-    "videoId": "7e01rDjnVpY"
   }
 ]
