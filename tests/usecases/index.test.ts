@@ -12,6 +12,6 @@ describe('buildAdoptersList', () => {
 
     await buildUsecasesList();
 
-    expect(writeJSON).toHaveBeenCalledWith(expectedReadPath, expectedWritePath);
+    expect(writeJSON).toHaveBeenCalledWith(expectedReadPath, expectedWritePath, true);
   });
 });

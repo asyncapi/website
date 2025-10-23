@@ -9,7 +9,7 @@ usecases:
     - $ref: '#/data/lego1'
     - $ref: '#/data/postman'
     - $ref: '#/data/newzealand'
-    - $ref: '#/data/schwarz'
+    # - $ref: '#/data/schwarz'
   testing:
     title: Testing and Mocking
     description: "You don’t need to wait for producers to deploy before you start building consumers. Once teams agree on the event structure, you can capture it in an AsyncAPI contract and generate mocks directly. This lets developers test consumers against simulated producers, speeding up development and avoiding bottlenecks."
@@ -35,7 +35,6 @@ usecases:
     description: Assure consistency across your event ecosystem. You can validate contracts to ensure topic names follow organizational standards, check that no sensitive information is exposed, and apply custom rules through linting. This builds governance into the development lifecycle without slowing teams down.
     inproduction:
     - $ref: '#/data/lego2'
-    - $ref: '#/data/ebay'
     - $ref: '#/data/kuehne'
     - $ref: '#/data/newzealand'
     - $ref: '#/data/walmart'

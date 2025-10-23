@@ -70,7 +70,7 @@ export default function Casestudies() {
               </Heading>
               <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4 max-w-4xl'>
                 Feel free to{' '}
-                <a className='underline' href='https://github.com/asyncapi/website/blob/master/config/usecases.yml'>
+                <a className='underline' href='https://github.com/asyncapi/website/blob/master/config/usecases.yaml'>
                   submit a pull request
                 </a>{' '}
                 with information about how your company uses AsyncAPI. We know that writing an official case study might
