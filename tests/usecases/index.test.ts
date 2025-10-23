@@ -5,7 +5,7 @@ import { writeJSON } from '../../scripts/helpers/readAndWriteJson';
 
 jest.mock('../../scripts/helpers/readAndWriteJson.ts');
 
-describe('buildAdoptersList', () => {
+describe('buildUsecasesList', () => {
   test('should call writeJSON with correct arguments', async () => {
     const expectedReadPath = 'config/usecases.yaml';
     const expectedWritePath = resolve(__dirname, '../../config', 'usecases.json');
