@@ -9,17 +9,17 @@ import GenericLayout from '../../components/layout/GenericLayout';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
 import TextLink from '../../components/typography/TextLink';
-import AdoptersList from '../../config/adopters.json';
+import UsecasesList from '../../config/usecases.json';
 import CaseStudiesList from '../../config/case-studies.json';
 
 interface Resource {
-  title: string;
-  link: string;
+  type: string;
+  url: string;
 }
 
 interface Adopter {
-  companyName: string;
-  useCase: string;
+  name: string;
+  description: string;
   resources: Resource[];
 }
 
@@ -30,6 +30,8 @@ export default function Casestudies() {
   const description: string = 'Learn about different case studies based on AsyncAPI spec and related tools.';
   const image: string = '/img/social/case-studies.webp';
   const title: string = 'Case Studies';
+
+  const AdoptersList = Object.values(UsecasesList.data) as Adopter[];
 
   return (
     <GenericLayout title={title} description={description} image={image} wide>
@@ -67,11 +69,11 @@ export default function Casestudies() {
                 Adopters
               </Heading>
               <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4 max-w-4xl'>
-                Check out how different companies use AsyncAPI and what problems they solve.
+                {UsecasesList.description}
               </Paragraph>
               <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4 max-w-4xl'>
                 Feel free to{' '}
-                <a className='underline' href='https://github.com/asyncapi/website/blob/master/config/adopters.yml'>
+                <a className='underline' href='https://github.com/asyncapi/website/blob/master/config/usecases.yml'>
                   submit a pull request
                 </a>{' '}
                 with information about how your company uses AsyncAPI. We know that writing an official case study might
@@ -95,14 +97,14 @@ export default function Casestudies() {
             <tbody>
               {AdoptersList.map((entry: Adopter, index: number) => (
                 <tr key={index} data-testid='Adopters'>
-                  <td className='border-2 p-2'>{entry.companyName}</td>
-                  <td className='border-2 p-2'>{entry.useCase}</td>
+                  <td className='border-2 p-2'>{entry.name}</td>
+                  <td className='border-2 p-2'>{entry.description}</td>
                   <td className='border-2 p-2'>
                     <ul className='space-y-1'>
                       {entry.resources.map((resource: Resource, resourceIndex: number) => (
                         <li key={resourceIndex}>
-                          <a className='text-cyan-500 underline hover:text-cyan-600' href={resource.link}>
-                            {resource.title}
+                          <a className='text-cyan-500 underline hover:text-cyan-600' href={resource.url}>
+                            {resource.type}
                           </a>
                         </li>
                       ))}
@@ -123,19 +125,19 @@ export default function Casestudies() {
               data-testid='Adopters'
             >
               <div className='mb-3'>
-                <h3 className='font-bold text-lg text-gray-900'>{entry.companyName}</h3>
+                <h3 className='font-bold text-lg text-gray-900'>{entry.name}</h3>
               </div>
               <div className='mb-3'>
                 <h4 className='font-semibold text-sm text-gray-700 mb-1'>Use Case:</h4>
-                <p className='text-gray-600 text-sm'>{entry.useCase}</p>
+                <p className='text-gray-600 text-sm'>{entry.description}</p>
               </div>
               <div>
                 <h4 className='font-semibold text-sm text-gray-700 mb-2'>Resources:</h4>
                 <ul className='space-y-1'>
                   {entry.resources.map((resource: Resource, resourceIndex: number) => (
                     <li key={resourceIndex}>
-                      <a className='text-cyan-500 underline hover:text-cyan-600 text-sm' href={resource.link}>
-                        {resource.title}
+                      <a className='text-cyan-500 underline hover:text-cyan-600 text-sm' href={resource.url}>
+                        {resource.type}
                       </a>
                     </li>
                   ))}

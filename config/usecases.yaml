@@ -3,132 +3,196 @@ usecases:
   infraascode:
     title: Infrastructure as Code
     description: This makes them a great fit for Infrastructure as Code. DevOps teams can use AsyncAPI contracts to automatically provision topics, assign access rights, and configure brokers. Instead of manual setup, everything is declarative and repeatable.
+    inproduction:
+    - $ref: '#/data/raiffeisen'
+    - $ref: '#/data/kuehne'
+    - $ref: '#/data/lego1'
+    - $ref: '#/data/postman'
+    - $ref: '#/data/newzealand'
+    - $ref: '#/data/schwarz'
   testing:
     title: Testing and Mocking
     description: "You don’t need to wait for producers to deploy before you start building consumers. Once teams agree on the event structure, you can capture it in an AsyncAPI contract and generate mocks directly. This lets developers test consumers against simulated producers, speeding up development and avoiding bottlenecks."
+    inproduction:
+    - $ref: '#/data/transfergo'
+    - $ref: '#/data/lombard'
   docs:
     title: Developer Portal and Discoverability
     description: Generate documentation and share across entire organization which events exist, who produces them, who consumes them, and how traffic flows. This makes onboarding easier and promotes cross-team visibility. Identify what consumers will be affected by event changes introduced by producers.
+    inproduction:
+    - $ref: '#/data/lego1'
+    - $ref: '#/data/transfergo'
+    - $ref: '#/data/newzealand'
+    - $ref: '#/data/zora'
+    - $ref: '#/data/walmart'
+    - $ref: '#/data/hdi'
+    - $ref: '#/data/adidas'
+    - $ref: '#/data/sap'
+    - $ref: '#/data/ebay'
+    - $ref: '#/data/adeo'
   governance:
     title: Governance and Consistency
     description: Assure consistency across your event ecosystem. You can validate contracts to ensure topic names follow organizational standards, check that no sensitive information is exposed, and apply custom rules through linting. This builds governance into the development lifecycle without slowing teams down.
+    inproduction:
+    - $ref: '#/data/lego2'
+    - $ref: '#/data/ebay'
+    - $ref: '#/data/kuehne'
+    - $ref: '#/data/newzealand'
+    - $ref: '#/data/walmart'
+    - $ref: '#/data/ebay'
+    - $ref: '#/data/universitycatalonia'
   selfservice:
     title: Self-Service
     description: "Because AsyncAPI is machine-readable, it’s perfect for building self-service platforms. Teams can submit their contracts to a central service, which automatically validates schemas, publishes them to a shared registry, and provisions broker resources. This enables faster time-to-production while keeping standards and compliance intact."
+    inproduction:
+    - $ref: '#/data/lego1'
+    - $ref: '#/data/walmart'
+    - $ref: '#/data/newzealand'
   codegen:
     title: Code Generation
     description: AsyncAPI helps eliminate boilerplate code. You can start by generating strongly typed models from message schemas and go further by producing client libraries or even SDKs. This accelerates development, reduces human error, and ensures producers and consumers always stay aligned with the contract.
+    inproduction:
+    - $ref: '#/data/raiffeisen'
+    - $ref: '#/data/oracle'
+    - $ref: '#/data/adobe'
+    - $ref: '#/data/adidas'
+    - $ref: '#/data/universitycatalonia'
+    - $ref: '#/data/transfergo'
   extensibility: 
     title: Extensibility - Quality of Service Monitoring
     description: AsyncAPI supports extensions, so you can enrich contracts with operational requirements like SLA or QoS details. For example, an IoT device might declare its expected latency or throughput. Monitoring tools can read these extensions, track service quality, and raise alerts when metrics fall below agreed levels.
+    inproduction:
+    - $ref: '#/data/universitycatalonia'
 data:
   raiffeisen:
     name: Raiffeisen Bank
     description: Implementing a Continuous Integration and Continuous Delivery (CI/CD) pipeline utilizing GitOps principles to deploy a topology constructed on AsyncAPI definitions using a Kubernetes operator to an Apache Pulsar cluster.
-    type: Video
-    url: https://www.youtube.com/watch?v=_MwzLZMwFN8
+    resources:
+      - type: Video
+        url: https://www.youtube.com/watch?v=_MwzLZMwFN8
   lego1:
     name: LEGO Group
     description: Managing brokers, where developers abstain from direct access to the management console and instead upload AsyncAPI documents to a self-service API, which provisions access and topics specified in the documents.
-    type: Video
-    url: https://www.youtube.com/watch?v=m8I0fYjx6Cc
+    resources:
+      - type: Video
+        url: https://www.youtube.com/watch?v=m8I0fYjx6Cc
   lego2:
     name: LEGO Group
     description: Defining, documenting, and distributing event-driven APIs while ensuring consistency and governance.
-    type: Video
-    url: https://www.youtube.com/watch?v=qjarcJQVLOg
+    resources:
+      - type: Video
+        url: https://www.youtube.com/watch?v=qjarcJQVLOg
   newzealand: 
     name: Bank of New Zealand
     description: Establishing a decentralized company-wide governance strategy for APIs, providing a self-service platform for publishing APIs and documentation.
-    type: Video
-    url: https://www.confluent.io/events/kafka-summit-apac-2021/self-service-events-and-decentralised-governance-with-asyncapi-a-real-world/
+    resources:
+      - type: Video
+        url: https://www.confluent.io/events/kafka-summit-apac-2021/self-service-events-and-decentralised-governance-with-asyncapi-a-real-world/
   zora:
     name: Zora Robotics
     description: Documenting public MQTT APIs for IoT products and constructing a developer portal.
-    type: Video
-    url: https://www.youtube.com/watch?v=yjHgT0n2BtA
+    resources:
+      - type: Video
+        url: https://www.youtube.com/watch?v=yjHgT0n2BtA
   walmart:
     name: Walmart
     description: Managing a centralized API Hub for internal teams, enhancing event discoverability and visibility using AsyncAPI. AsyncAPI facilitates company-wide governance on asynchronous APIs.
-    type: Video
-    url: https://www.youtube.com/watch?v=SxTpGRaNIPo
+    resources:
+      - type: Video
+        url: https://www.youtube.com/watch?v=SxTpGRaNIPo
   ebay:
     name: eBay
     description: Facilitating partner integration with eBay through asynchronous communication, leveraging public AsyncAPI documents for code generation and rapid integration, while ensuring governance and standardization.
-    type: Video
-    url: https://www.youtube.com/watch?v=SxTpGRaNIPo
+    resources:
+      - type: Video
+        url: https://www.youtube.com/watch?v=SxTpGRaNIPo
   postman:
     name: Postman
     description: Enhancing discoverability of information about system events by building a tool called Synapse for provisioning entire event-based infrastructure, with AsyncAPI documents as the source of truth.
-    type: Video
-    url: https://www.youtube.com/watch?v=0_7QZyKLPoE
+    resources:
+      - type: Video
+        url: https://www.youtube.com/watch?v=0_7QZyKLPoE
   adobe:
     name: Adobe
     description: Providing event documentation to expedite development by generating classes based on message payload information from AsyncAPI documents.
-    type: Slides
-    url: https://drive.google.com/file/d/1AVCG9_fFtuOtrvZVZWENmU2aDT7C51Jr/view?usp=sharing
+    resources:
+      - type: Slides
+        url: https://drive.google.com/file/d/1AVCG9_fFtuOtrvZVZWENmU2aDT7C51Jr/view?usp=sharing
   universitycatalonia:
     name: Open University of Catalonia and Prodevelop
     description: Enabling monitoring of ports through a design-first approach, utilizing UML class diagrams to design the entire infrastructure. UML diagrams are source of truth for generated AsyncAPI documents that later are used for models and clients generation. These documents are extended with additional SLA properties to specify runtime quality of service requirements, facilitating real-time monitoring.
-    type: Video
-    url: https://www.youtube.com/watch?v=m4KS6FSeTT4
+    resources:
+      - type: Video
+        url: https://www.youtube.com/watch?v=m4KS6FSeTT4
   oracle:
     name: Oracle
     description: Documenting data streaming APIs with AsyncAPI documents for client library generation in various programming languages, reducing development time for applications consuming data.
-    type: Video
-    url: https://www.youtube.com/watch?v=CGLlxYy66LY
+    resources:
+      - type: Video
+        url: https://www.youtube.com/watch?v=CGLlxYy66LY
   transfergo:
     name: TransferGo
     description: TransferGo uses the AsyncAPI specification as the essential, standardized blueprint for their event-driven microservices, enabling automated documentation (Event Catalog), continuous validation, and reliable contract testing (Microcks) to ensure clarity and trust across their system.
-    type: Article
-    url: https://www.asyncapi.com/blog/transfergo-asyncapi-story
+    resources:
+      - type: Article
+        url: https://www.asyncapi.com/blog/transfergo-asyncapi-story
   kuehne:
     name: Kuehne+Nagel
     description: Implementing a GitOps-based pipeline to enable self-service management of Kafka infrastructure, including access control management. Automation of AsyncAPI document governance ensures consistency in the infrastructure at the pull request level.
-    type: Slides
-    url: https://drive.google.com/file/d/1y67PI8NaITPPwZAiDF2Zs7ISfcIpqMV8/view?usp=sharing
+    resources:
+      - type: Slides
+        url: https://drive.google.com/file/d/1y67PI8NaITPPwZAiDF2Zs7ISfcIpqMV8/view?usp=sharing
   adidas:
     name: Adidas
     description: AsyncAPI is a standard for defining asynchronous APIs using Apache Kafka. AsyncAPI governed under official guidelines. AsyncAPI is promoted to be used for documentation and code generation.
-    type: Docs
-    url: https://adidas.gitbook.io/api-guidelines/asynchronous-api-guidelines/kafka-asynchronous-guidelines/a_introduction/why-asyncapi
+    resources:
+      - type: Docs
+        url: https://adidas.gitbook.io/api-guidelines/asynchronous-api-guidelines/kafka-asynchronous-guidelines/a_introduction/why-asyncapi
   morgan:
     name: Morgan Stanley
     description: Used for sharing Websocket based APIs for discoverability and unified security.
-    type: Slides
-    url: https://drive.google.com/file/d/1YzLwQZsMUXGwj_Lsqv-ZnvV2knuowWrS/view?usp=drive_link
+    resources:
+      - type: Slides
+        url: https://drive.google.com/file/d/1YzLwQZsMUXGwj_Lsqv-ZnvV2knuowWrS/view?usp=drive_link
   schwarz:
     name: Schwarz Group
     description: TODO
-    type: Video
-    url: TODO
+    resources:
+      - type: Video
+        url: TODO
   adeo:
     name: Adeo
     description: Document the API of the product, so its users know how it works and how to use it. AsyncAPI was selected as the standard that allows you to generate documentation from a machine-readable document that describes the API. The goal was to document API in a standardized way, so other internal products could follow to unify how APIs are documented across the company.
-    type: Use Case
-    url: https://www.asyncapi.com/casestudies/adeogroup
+    resources:
+      - type: Use Case
+        url: https://www.asyncapi.com/casestudies/adeogroup
   hdi:
     name: HDI Global SE
     description: The AsyncAPI documents are used for documentation purposes by the platform team. It provides a comprehensive overview of the asynchronous communication in our system, including the available topics and the structure of the messages.
-    type: Use Case
-    url: https://www.asyncapi.com/casestudies/hdiglobal
+    resources:
+      - type: Use Case
+        url: https://www.asyncapi.com/casestudies/hdiglobal
   sap:
     name: SAP
     description: Using AsyncAPI to deliver company wide event catalog for easier discoverability of events and event-driven APIs.
-    type: Video
-    url: TODO
+    resources:
+      - type: Video
+        url: https://www.youtube.com/watch?v=KcYiD67gEh0&list=PLbi1gRlP7pig_nA0tRlr0hU_h5sB2HXcq&index=6
   lombard:
     name: Lombard Odier
     description: Using AsyncAPI as contract for mocking and testing APIs and documentation.
-    type: Slides
-    url: https://www.slideshare.net/slideshow/apidays-paris-2022-adding-a-mock-as-a-service-capability-to-your-api-strategy-portfolio-ludovic-pourrat-lombard-odier/255041645#4
+    resources:
+      - type: Slides
+        url: https://www.slideshare.net/slideshow/apidays-paris-2022-adding-a-mock-as-a-service-capability-to-your-api-strategy-portfolio-ludovic-pourrat-lombard-odier/255041645#4
   siemens:
     name: Siemens AG
     description: Using AsyncAPI to document their ROS2 interfaces.
-    type: Code
-    url: https://github.com/siemens/rosita
+    resources:
+      - type: Code
+        url: https://github.com/siemens/rosita
   pagopa:
     name: PagoPA
     description: Using AsyncAPI for documentation purposes to help developers understand event-driven APIs. Using Springwolf project and generate AsyncAPI documents from code.
-    type: Code
-    url: https://github.com/pagopa/p4pa-registries/blob/develop/asyncapi/generated.asyncapi.json
+    resources:
+      - type: Code
+        url: https://github.com/pagopa/p4pa-registries/blob/develop/asyncapi/generated.asyncapi.json
