@@ -9,8 +9,8 @@ import GenericLayout from '../../components/layout/GenericLayout';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
 import TextLink from '../../components/typography/TextLink';
-import UsecasesList from '../../config/usecases.json';
 import CaseStudiesList from '../../config/case-studies.json';
+import UsecasesList from '../../config/usecases.json';
 
 interface Resource {
   type: string;
