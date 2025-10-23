@@ -17,13 +17,13 @@ class MyDocument extends Document {
     return (
       <Html lang={currentLocale as string}>
         <Head>
-          {/* Load Work Sans font */}
-          <link rel='preconnect' href='https://fonts.googleapis.com' />
-          <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='anonymous' />
-          {/* eslint-disable-next-line max-len */}
+          {/* Preload critical Fira Code font */}
           <link
-            href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Work+Sans:wght@200;300;400;500;600;700;800;900&display=swap'
-            rel='stylesheet'
+            rel="preload"
+            href="/fonts/FiraCode-VF.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
           />
 
           {/* Icons */}
