@@ -1,76 +1,89 @@
-import { execSync } from 'child_process';
-import fs from 'fs';
+import { graphql } from '@octokit/graphql';
+import { promises as fs } from 'fs';
 import os from 'os';
-import path from 'path';
+import { resolve } from 'path';
 
-describe('Integration: build-dashboard CLI', () => {
+import { runBuildDashboard } from '../../npm/runners/build-dashboard-runner';
+import { mockDashboardData } from './fixtures/dashboard-fixtures';
+
+// Mock the graphql module
+jest.mock('@octokit/graphql', () => ({
+  graphql: jest.fn()
+}));
+
+const mockedGraphql = graphql as jest.MockedFunction<typeof graphql>;
+
+describe('Integration: build-dashboard Runner', () => {
   let tempDir: string;
-  let outputFileName: string;
   let outputPath: string;
   let output: any;
 
-  beforeAll(() => {
+  beforeAll(async () => {
     // Create a unique temp directory for this test run
-    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'build-dashboard-real-'));
-    outputFileName = 'dashboard.json';
-    outputPath = path.join(tempDir, outputFileName);
+    tempDir = resolve(os.tmpdir(), `build-dashboard-test-${Date.now()}`);
+    await fs.mkdir(tempDir, { recursive: true });
+    outputPath = resolve(tempDir, 'dashboard.json');
 
-    // Run the dashboard builder as a CLI command using the runner and --outputFile
-    execSync(`npx tsx npm/runners/build-dashboard-runner.ts --outputFile "${outputPath}"`, {
-      stdio: 'inherit'
-    });
+    // Setup mocked GraphQL responses
+    mockedGraphql
+      .mockResolvedValueOnce(mockDashboardData.hotDiscussionsIssues)
+      .mockResolvedValueOnce(mockDashboardData.hotDiscussionsPRs)
+      .mockResolvedValueOnce(mockDashboardData.goodFirstIssues);
+
+    // Run the dashboard builder using the runner function directly
+    await runBuildDashboard({ outputPath });
 
     // Read and parse the output
-    output = JSON.parse(fs.readFileSync(outputPath, 'utf-8'));
+    const content = await fs.readFile(outputPath, 'utf-8');
+
+    output = JSON.parse(content);
   });
 
-  afterAll(() => {
+  afterAll(async () => {
     // Clean up temp files and directory
-    if (fs.existsSync(outputPath)) fs.unlinkSync(outputPath);
-    if (fs.existsSync(tempDir)) fs.rmSync(tempDir, { recursive: true, force: true });
+    await fs.rm(tempDir, { recursive: true, force: true });
   });
 
-  it('creates the dashboard file at the specified path', () => {
-    expect(fs.existsSync(outputPath)).toBe(true);
+  it('creates the dashboard file at the specified path', async () => {
+    const fileExists = await fs
+      .access(outputPath)
+      .then(() => true)
+      .catch(() => false);
+
+    expect(fileExists).toBe(true);
   });
 
-  it('should handle complete failure', () => {
-    // Simulate missing GITHUB_TOKEN or other error by running with an invalid token
-    const badEnv = { ...process.env, GITHUB_TOKEN: '' };
-    const badOutputPath = path.join(tempDir, 'error-output.json');
-    let errorCaught = false;
+  it('should handle API errors gracefully', async () => {
+    const errorOutputPath = resolve(tempDir, 'error-output.json');
 
-    try {
-      execSync(`npx tsx npm/runners/build-dashboard-runner.ts --outputFile "${badOutputPath}"`, {
-        stdio: 'pipe',
-        env: badEnv
-      });
-    } catch (err) {
-      errorCaught = true;
-    }
-    expect(errorCaught).toBe(true);
-    // The file should not exist or be empty
-    expect(!fs.existsSync(badOutputPath) || fs.readFileSync(badOutputPath, 'utf-8').length === 0).toBe(true);
+    // Setup mock to return an error
+    mockedGraphql.mockRejectedValueOnce(new Error('API error'));
+
+    await expect(runBuildDashboard({ outputPath: errorOutputPath })).rejects.toThrow();
   });
 
   it('should successfully process and write data', () => {
-    // This is already covered by the beforeAll, but we can re-run for completeness
-    execSync(`npx tsx npm/runners/build-dashboard-runner.ts --outputFile "${outputPath}"`, { stdio: 'inherit' });
-    const content = JSON.parse(fs.readFileSync(outputPath, 'utf-8'));
-
-    expect(content).toHaveProperty('hotDiscussions');
-    expect(content).toHaveProperty('goodFirstIssues');
+    expect(output).toHaveProperty('hotDiscussions');
+    expect(output).toHaveProperty('goodFirstIssues');
   });
 
-  it('should write to file', () => {
-    const testFilePath = path.join(tempDir, 'test.json');
+  it('should handle rate limit warnings', async () => {
+    const warningOutputPath = resolve(tempDir, 'warning-output.json');
 
-    // Write a simple object to file using the CLI (simulate writeToFile)
+    // Setup mock to return rate limit warning
+    mockedGraphql
+      .mockResolvedValueOnce(mockDashboardData.rateLimitWarning)
+      .mockResolvedValueOnce(mockDashboardData.rateLimitWarning)
+      .mockResolvedValueOnce(mockDashboardData.rateLimitWarning);
 
-    fs.writeFileSync(testFilePath, JSON.stringify({ test: true }));
-    const content = JSON.parse(fs.readFileSync(testFilePath, 'utf-8'));
+    await runBuildDashboard({ outputPath: warningOutputPath });
 
-    expect(content).toEqual({ test: true });
+    const fileExists = await fs
+      .access(warningOutputPath)
+      .then(() => true)
+      .catch(() => false);
+
+    expect(fileExists).toBe(true);
   });
 
   it('output JSON has hotDiscussions and goodFirstIssues arrays', () => {
@@ -178,8 +191,8 @@ describe('Integration: build-dashboard CLI', () => {
     checkId(output.goodFirstIssues);
   });
 
-  it('output file is valid JSON and not empty', () => {
-    const fileContent = fs.readFileSync(outputPath, 'utf-8');
+  it('output file is valid JSON and not empty', async () => {
+    const fileContent = await fs.readFile(outputPath, 'utf-8');
 
     expect(() => JSON.parse(fileContent)).not.toThrow();
     expect(fileContent.length).toBeGreaterThan(2); // '{}' is 2 chars

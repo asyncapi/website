@@ -8,7 +8,7 @@ import { CustomError } from '@/types/errors/CustomError';
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
-interface BuildDashboardOptions {
+export interface BuildDashboardOptions {
   outputPath?: string;
 }
 
@@ -22,9 +22,12 @@ interface BuildDashboardOptions {
  * @param options - Optional configuration for output path
  * @throws {CustomError} If the build process fails or an error occurs in the runner
  */
-async function runBuildDashboard(options: BuildDashboardOptions = {}): Promise<void> {
+export async function runBuildDashboard(
+  options: BuildDashboardOptions = {},
+): Promise<void> {
   try {
-    const outputPath = options.outputPath || resolve(currentDirPath, '../../dashboard.json');
+    const outputPath =
+      options.outputPath || resolve(currentDirPath, '../../dashboard.json');
 
     await buildDashboard(outputPath);
   } catch (error) {
@@ -48,17 +51,20 @@ async function runBuildDashboard(options: BuildDashboardOptions = {}): Promise<v
   }
 }
 
-(async () => {
-  try {
-    // Extract output file path from CLI args
-    const outputFileArgIndex = process.argv.indexOf('--outputFile');
-    const outputPath =
-      outputFileArgIndex === -1
-        ? resolve(currentDirPath, '../../dashboard.json')
-        : process.argv[outputFileArgIndex + 1];
+// Only run CLI if this file is executed directly, not when imported
+if (import.meta.url === `file://${process.argv[1]}`) {
+  (async () => {
+    try {
+      // Extract output file path from CLI args
+      const outputFileArgIndex = process.argv.indexOf('--outputFile');
+      const outputPath =
+        outputFileArgIndex === -1
+          ? resolve(currentDirPath, '../../dashboard.json')
+          : process.argv[outputFileArgIndex + 1];
 
-    await runBuildDashboard({ outputPath });
-  } catch (error) {
-    process.exit(1);
-  }
-})();
+      await runBuildDashboard({ outputPath });
+    } catch (error) {
+      process.exit(1);
+    }
+  })();
+}
