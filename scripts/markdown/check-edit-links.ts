@@ -28,7 +28,8 @@ interface PathObject {
  * Each request is aborted if it exceeds a configurable timeout (defaulting to 5000ms).
  *
  * @param batch - Array of path objects, each containing a file path, URL path, and edit link.
- * @returns A promise resolving to an array where each element is either the original path object (if its edit link returned 404) or null.
+ * @returns A promise resolving to an array where each element is either the original path object (if its edit link
+ *          returned 404) or null.
  *
  * @throws {Error} If an error occurs during the HTTP HEAD request for any edit link.
  */
@@ -37,14 +38,15 @@ async function processBatch(batch: PathObject[]): Promise<(PathObject | null)[]>
 
   return Promise.all(
     batch.map(async ({ filePath, urlPath, editLink }) => {
-      let timeout: NodeJS.Timeout | undefined;
-      
+      let timeout: ReturnType<typeof setTimeout> | undefined;
+
       try {
         if (!editLink || ignoreFiles.some((ignorePath) => filePath.endsWith(ignorePath))) return null;
 
         const controller = new AbortController();
+
         timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
-        
+
         const response = await fetch(editLink, {
           method: 'HEAD',
           signal: controller.signal
@@ -56,10 +58,10 @@ async function processBatch(batch: PathObject[]): Promise<(PathObject | null)[]>
 
         return null;
       } catch (error) {
-        return Promise.reject(new Error(`Error checking ${editLink}: ${error}`));
+        return await Promise.reject(new Error(`Error checking ${editLink}: ${error}`));
       } finally {
         if (timeout) {
-            clearTimeout(timeout);
+          clearTimeout(timeout);
         }
       }
     })
@@ -69,7 +71,9 @@ async function processBatch(batch: PathObject[]): Promise<(PathObject | null)[]>
 /**
  * Processes an array of path objects in batches and returns those with broken links.
  *
- * The function splits the provided array into batches determined by the DOCS_LINK_CHECK_BATCH_SIZE environment variable (defaulting to 5) and processes them concurrently using the processBatch function. After processing each batch and pausing briefly, it filters out valid links, returning only path objects that result in a 404 status.
+ * The function splits the provided array into batches determined by the DOCS_LINK_CHECK_BATCH_SIZE environment variable
+ * (defaulting to 5) and processes them concurrently using the processBatch function. After processing each batch and
+ * pausing briefly, it filters out valid links, returning only path objects that result in a 404 status.
  *
  * @param paths - Array of path objects representing URLs to check.
  * @returns A promise that resolves to an array of path objects with broken links.
@@ -137,7 +141,8 @@ function determineEditLink(
 /**
  * Recursively processes markdown files in a directory to generate path objects with corresponding edit links.
  *
- * This function reads the contents of the specified folder, skipping files named "_section.md", and recursively traverses subdirectories.
+ * This function reads the contents of the specified folder, skipping files named "_section.md", and recursively
+ * traverses subdirectories.
  * For each markdown file encountered, it constructs a URL path by replacing system path separators with '/' and removing the file extension,
  * then generates an edit link based on the provided edit options. The results are accumulated in an array and returned.
  *
@@ -193,7 +198,8 @@ async function generatePaths(
  * Executes the main workflow for validating edit links in markdown files.
  *
  * The function loads the edit URL configuration, resolves the documentation folder path relative to the current module,
- * and generates a list of markdown file paths with their associated edit links. It checks the validity of each URL and logs
+ * and generates a list of markdown file paths with their associated edit links. It checks the validity of each URL
+ * and logs
  * any links that return a 404 status. If an error occurs during processing, an error is thrown summarizing the failure.
  *
  * @throws {Error} If the link checking process encounters an error.
@@ -212,7 +218,9 @@ async function main() {
 
     if (invalidUrls.length > 0) {
       logger.info('\nURLs returning 404:\n');
-      invalidUrls.forEach((url) => logger.info(`- ${url.editLink} generated from ${url.filePath}\n`));
+      invalidUrls.forEach((url) => {
+        logger.info(`- ${url.editLink} generated from ${url.filePath}\n`);
+      });
       logger.info(`\nTotal invalid URLs found: ${invalidUrls.length}`);
     } else {
       logger.info('All URLs are valid.');

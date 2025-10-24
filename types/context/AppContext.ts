@@ -1,3 +1,3 @@
 export interface AppContextType {
-    path: string;
+  path: string;
 }

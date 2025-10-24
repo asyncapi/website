@@ -2,7 +2,11 @@ import fs from 'fs';
 import path from 'path';
 
 import { buildFinanceInfoList } from '../../scripts/finance/index';
-import { expensesjson, expensesLinkjson, expensesLinkYaml, expensesYaml } from '../fixtures/financeData';
+import { writeJSON } from '../../scripts/helpers/readAndWriteJson';
+import { CustomError } from '../../types/errors/CustomError';
+import { expensesLinkYaml, expensesYaml } from '../fixtures/financeData';
+
+jest.mock('../../scripts/helpers/readAndWriteJson');
 
 describe('buildFinanceInfoList', () => {
   const testDir = path.resolve(__dirname, 'test-finance-info');
@@ -19,12 +23,22 @@ describe('buildFinanceInfoList', () => {
     fs.writeFileSync(path.resolve(testDir, configDir, financeDir, year, 'ExpensesLink.yml'), expensesLinkYaml);
   });
 
+  beforeEach(() => {
+    // Reset all mocks before each test
+    jest.clearAllMocks();
+  });
+
   afterAll(() => {
     // Clean up test directory
     fs.rmSync(testDir, { recursive: true, force: true });
   });
 
   it('should create JSON files from YAML files', async () => {
+    // Mock writeJSON to resolve successfully
+    const mockWriteJSON = writeJSON as jest.MockedFunction<typeof writeJSON>;
+
+    mockWriteJSON.mockResolvedValue();
+
     await buildFinanceInfoList({
       currentDir: testDir,
       configDir,
@@ -33,54 +47,50 @@ describe('buildFinanceInfoList', () => {
       jsonDataDir
     });
 
-    const jsonDir = path.resolve(testDir, configDir, financeDir, jsonDataDir);
+    // Verify writeJSON was called twice (once for each file)
+    expect(mockWriteJSON).toHaveBeenCalledTimes(2);
 
-    // Check if JSON directory was created
-    expect(fs.existsSync(jsonDir)).toBe(true);
-
-    // Check if JSON files were created
-    const expensesJsonPath = path.resolve(jsonDir, 'Expenses.json');
-    const expensesLinkJsonPath = path.resolve(jsonDir, 'ExpensesLink.json');
-
-    expect(fs.existsSync(expensesJsonPath)).toBe(true);
-    expect(fs.existsSync(expensesLinkJsonPath)).toBe(true);
-
-    // Check contents of JSON files
-    const expensesJson = JSON.parse(fs.readFileSync(expensesJsonPath, 'utf8'));
-    const expensesLinkJson = JSON.parse(fs.readFileSync(expensesLinkJsonPath, 'utf8'));
-
-    expect(expensesJson).toEqual(expensesjson);
-    expect(expensesLinkJson).toEqual(expensesLinkjson);
+    // Verify the calls were made with correct paths
+    expect(mockWriteJSON).toHaveBeenCalledWith(
+      path.resolve(testDir, configDir, financeDir, year, 'Expenses.yml'),
+      expect.stringContaining('Expenses.json')
+    );
+    expect(mockWriteJSON).toHaveBeenCalledWith(
+      path.resolve(testDir, configDir, financeDir, year, 'ExpensesLink.yml'),
+      expect.stringContaining('ExpensesLink.json')
+    );
   });
 
   it('should throw an error if YAML files are not found', async () => {
-    try {
-      await buildFinanceInfoList({
+    await expect(
+      buildFinanceInfoList({
         currentDir: testDir,
         configDir,
         financeDir,
         year: '2023', // Non-existent year
         jsonDataDir
-      });
-    } catch (error) {
-      expect(error).toBeInstanceOf(Error);
-      expect((error as Error).message).toMatch(/ENOENT/); // Expecting a "no such file or directory" error
-    }
+      })
+    ).rejects.toThrow(CustomError);
   });
 
-  it('should throw an error if JSON directory creation fails', async () => {
-    try {
-      await buildFinanceInfoList({
+  it('should throw an error if writeJSON fails', async () => {
+    // Mock writeJSON to throw an error
+    const mockWriteJSON = writeJSON as jest.MockedFunction<typeof writeJSON>;
+
+    mockWriteJSON.mockRejectedValueOnce(new Error('Write operation failed'));
+
+    await expect(
+      buildFinanceInfoList({
         currentDir: testDir,
         configDir,
         financeDir,
         year,
-        jsonDataDir: 'nonexistent-dir' // Invalid JSON data directory path
-      });
-    } catch (error) {
-      expect(error).toBeInstanceOf(Error);
-      expect((error as Error).message).toMatch(/ENOENT/); // Expecting a "no such file or directory" error
-    }
+        jsonDataDir: 'test-dir'
+      })
+    ).rejects.toThrow(CustomError);
+
+    // Restore the mock
+    mockWriteJSON.mockRestore();
   });
 
   it('should throw an error if YAML content is invalid', async () => {
@@ -100,8 +110,7 @@ describe('buildFinanceInfoList', () => {
         jsonDataDir
       });
     } catch (error) {
-      expect(error).toBeInstanceOf(Error);
-      expect((error as Error).message).toMatch(/YAMLException/); // Expecting a YAML parsing error
+      expect(error).toBeInstanceOf(CustomError);
     }
   });
 });

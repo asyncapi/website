@@ -14,7 +14,7 @@ export interface Contribution {
     month?: string;
     year: number;
   };
-};
+}
 
 export interface Ambassador {
   name: string;
@@ -34,7 +34,7 @@ export interface Ambassador {
   isTscMember?: boolean;
   isBoardMember?: boolean;
   isBoardChair?: boolean;
-};
+}
 
 export interface Tsc {
   name: string;
@@ -47,7 +47,7 @@ export interface Tsc {
   twitter?: string;
   company?: string;
   repos: any;
-  githubID: number
+  githubID: number;
   isBoardMember?: boolean;
   isBoardChair?: boolean;
-};
+}

@@ -1,8 +1,8 @@
 import { graphql } from '@octokit/graphql';
+import dotenv from 'dotenv';
 import { writeFile } from 'fs/promises';
-import { dirname, resolve } from 'path';
-import { fileURLToPath } from 'url';
 
+import { CustomError } from '@/types/errors/CustomError';
 import type {
   Discussion,
   GoodFirstIssues,
@@ -18,13 +18,13 @@ import { logger } from '../helpers/logger';
 import { pause } from '../helpers/utils';
 import { Queries } from './issue-queries';
 
-const currentFilePath = fileURLToPath(import.meta.url);
-const currentDirPath = dirname(currentFilePath);
+dotenv.config();
 
 /**
  * Calculates the number of full months elapsed since the provided date.
  *
- * This function computes the difference between the current date and the specified date, converting the elapsed time into full months using a fixed 30-day month approximation.
+ * This function computes the difference between the current date and the specified date,
+ * converting the elapsed time into full months using a fixed 30-day month approximation.
  *
  * @param date - A string representing the start date, in a format recognized by the Date constructor.
  * @returns The number of full months that have elapsed since the specified date.
@@ -59,7 +59,8 @@ function getLabel(issue: GoodFirstIssues, filter: string): string | undefined {
  *
  * This function executes a provided GraphQL query to retrieve discussion nodes in paginated batches.
  * It automatically retrieves subsequent pages if available by recursively updating the pagination cursor.
- * A short pause between requests is included to help manage API rate limits, and a warning is logged when the remaining limit is low.
+ * A short pause between requests is included to help manage API rate limits, and a warning is logged when the
+ * remaining limit is low.
  *
  * @param query - The GraphQL query to execute.
  * @param pageSize - The number of discussion nodes to retrieve per page.
@@ -74,7 +75,11 @@ async function getDiscussions(
   const token = process.env.GITHUB_TOKEN;
 
   if (!token) {
-    throw new Error('GitHub token is not set in environment variables');
+    throw new CustomError('GitHub token is not set in environment variables', {
+      category: 'script',
+      operation: 'getDiscussions',
+      detail: 'GITHUB_TOKEN environment variable is missing'
+    });
   }
   try {
     const result: Discussion = await graphql(query, {
@@ -87,11 +92,7 @@ async function getDiscussions(
 
     if (result.rateLimit.remaining <= 100) {
       logger.warn(
-        'GitHub GraphQL rateLimit \n' +
-          `cost = ${result.rateLimit.cost}\n` +
-          `limit = ${result.rateLimit.limit}\n` +
-          `remaining = ${result.rateLimit.remaining}\n` +
-          `resetAt = ${result.rateLimit.resetAt}`
+        `GitHub GraphQL rateLimit \ncost = ${result.rateLimit.cost}\nlimit = ${result.rateLimit.limit}\nremaining = ${result.rateLimit.remaining}\nresetAt = ${result.rateLimit.resetAt}`
       );
     }
 
@@ -105,9 +106,14 @@ async function getDiscussions(
 
     return result.search.nodes.concat(await getDiscussions(query, pageSize, result.search.pageInfo.endCursor));
   } catch (e) {
-    logger.error(e);
+    const error = CustomError.fromError(e, {
+      category: 'api',
+      operation: 'getDiscussions',
+      detail: `Failed to fetch discussions with query: ${query.substring(0, 100)}...`
+    });
 
-    return Promise.reject(e);
+    logger.error('Failed to fetch discussions from GitHub', error);
+    throw error;
   }
 }
 
@@ -120,13 +126,17 @@ async function getDiscussions(
  * @param id - The unique identifier of the discussion.
  * @returns A promise that resolves with the discussion details.
  *
- * @throws {Error} If the GraphQL request fails.
+ * @throws {CustomError} If the GraphQL request fails.
  */
 async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequestById | IssueById> {
   const token = process.env.GITHUB_TOKEN;
 
   if (!token) {
-    throw new Error('GitHub token is not set in environment variables');
+    throw new CustomError('GitHub token is not set in environment variables', {
+      category: 'script',
+      operation: 'getDiscussionByID',
+      detail: 'GITHUB_TOKEN environment variable is missing'
+    });
   }
 
   try {
@@ -138,10 +148,12 @@ async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequest
     });
 
     return result;
-  } catch (e) {
-    logger.error(e);
-
-    return Promise.reject(e);
+  } catch (err) {
+    throw CustomError.fromError(err, {
+      category: 'api',
+      operation: 'getDiscussionByID',
+      detail: `Failed to get discussion by ID: ${id}, isPR: ${isPR}`
+    });
   }
 }
 
@@ -155,7 +167,7 @@ async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequest
  * @param batch - A batch of hot discussions to process.
  * @returns A promise that resolves to an array of processed discussions with computed scores.
  *
- * @throws {Error} When processing a discussion fails.
+ * @throws {CustomError} When processing a discussion fails.
  */
 async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise<ProcessedDiscussion[]> {
   return Promise.all(
@@ -193,9 +205,15 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise
           labels: discussion.labels ? discussion.labels.nodes : [],
           score: finalInteractionsCount / (monthsSince(discussion.timelineItems.updatedAt) + 2) ** 1.8
         };
-      } catch (e) {
-        logger.error(`there were some issues while parsing this item: ${JSON.stringify(discussion)}`);
-        throw e;
+      } catch (err) {
+        const error = CustomError.fromError(err, {
+          category: 'script',
+          operation: 'processHotDiscussions',
+          detail: `Failed to process discussion: ${discussion?.title || 'Unknown'} (ID: ${discussion?.id || 'Unknown'})`
+        });
+
+        logger.error('Failed to process hot discussion', error);
+        throw error;
       }
     })
   );
@@ -234,12 +252,13 @@ async function getHotDiscussions(discussions: HotDiscussionsIssuesNode[]): Promi
 /**
  * Writes dashboard data as formatted JSON to a file.
  *
- * This function serializes the provided data—containing processed hot discussions and mapped good first issues—and writes it to the specified file path. If the file write operation fails, it logs the error and rethrows it.
+ * This function serializes the provided data—containing processed hot discussions and mapped good first issues—and
+ * writes it to the specified file path. If the file write operation fails, it logs the error and rethrows it.
  *
  * @param content - An object containing hot discussions and good first issues.
  * @param writePath - The file path where the data should be saved.
  *
- * @throws {Error} If writing the file fails.
+ * @throws {CustomError} If writing the file fails.
  */
 async function writeToFile(
   content: {
@@ -250,12 +269,12 @@ async function writeToFile(
 ): Promise<void> {
   try {
     await writeFile(writePath, JSON.stringify(content, null, '  '));
-  } catch (error) {
-    logger.error('Failed to write dashboard data:', {
-      error: (error as Error).message,
-      writePath
+  } catch (err) {
+    throw CustomError.fromError(err, {
+      category: 'script',
+      operation: 'writeToFile',
+      detail: `Failed to write dashboard data to: ${writePath}`
     });
-    throw error;
   }
 }
 
@@ -263,7 +282,8 @@ async function writeToFile(
  * Transforms an array of good first issues into a simplified format for further processing.
  *
  * Each issue is mapped to an object containing its unique identifier, title, assignment status, resource path,
- * repository name (prefixed with "asyncapi/"), author's login, a primary area label (extracted using a filter and defaulting to "Unknown"),
+ * repository name (prefixed with "asyncapi/"), author's login, a primary area label (extracted using a filter and
+ * defaulting to "Unknown"),
  * and a list of labels cleaned to exclude area identifiers and the "good first issue" tag.
  *
  * @param issues - The list of good first issues to transform.
@@ -287,15 +307,15 @@ async function mapGoodFirstIssues(issues: GoodFirstIssues[]): Promise<MappedIssu
 /**
  * Initiates the dashboard generation process by fetching, processing, and writing discussion data.
  *
- * This function orchestrates the retrieval of hot discussions (including issues and pull requests) and good first issues
- * from GitHub via GraphQL queries. It combines and concurrently processes the fetched data—calculating interaction scores
- * for hot discussions and mapping good first issues into a simplified format—and then writes the resulting JSON data to the
- * specified file path. Errors encountered during any stage of the process are logged.
+ * This function orchestrates the retrieval of hot discussions (including issues and pull requests) and good first
+ * issues from GitHub via GraphQL queries. It combines and concurrently processes the fetched data—calculating
+ * interaction scores for hot discussions and mapping good first issues into a simplified format—and then writes the
+ * resulting JSON data to the specified file path. Errors encountered during any stage of the process are logged.
  *
  * @param writePath - The file path where the dashboard data will be saved.
  * @returns A promise that resolves once the data has been successfully written.
  */
-async function start(writePath: string): Promise<void> {
+export async function start(writePath: string): Promise<void> {
   try {
     const issues = (await getDiscussions(Queries.hotDiscussionsIssues, 20)) as HotDiscussionsIssuesNode[];
     const PRs = (await getDiscussions(Queries.hotDiscussionsPullRequests, 20)) as HotDiscussionsPullRequestsNode[];
@@ -307,15 +327,16 @@ async function start(writePath: string): Promise<void> {
     ]);
 
     await writeToFile({ hotDiscussions, goodFirstIssues }, writePath);
-  } catch (e) {
-    logger.error('There were some issues parsing data from github.');
-    logger.error(e);
-  }
-}
+  } catch (err) {
+    const error = CustomError.fromError(err, {
+      category: 'script',
+      operation: 'buildDashboard',
+      detail: `Failed to build dashboard data to: ${writePath}`
+    });
 
-/* istanbul ignore next */
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  start(resolve(currentDirPath, '..', '..', 'dashboard.json'));
+    logger.error('Failed to build dashboard', error);
+    throw error;
+  }
 }
 
 export {
@@ -325,6 +346,5 @@ export {
   getLabel,
   mapGoodFirstIssues,
   processHotDiscussions,
-  start,
   writeToFile
 };
