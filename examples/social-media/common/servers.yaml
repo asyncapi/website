@@ -1,0 +1,4 @@
+websiteWebSocketServer:
+  host: mycompany.com
+  pathname: /ws
+  protocol: ws

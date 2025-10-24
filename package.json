@@ -78,7 +78,7 @@
     "googleapis": "^133.0.0",
     "gray-matter": "^4.0.3",
     "he": "^1.2.0",
-    "i18next": "^23.12.2",
+    "i18next": "^25.6.0",
     "inquirer": "^12.9.0",
     "jgexml": "^0.4.4",
     "js-cookie": "^3.0.5",
