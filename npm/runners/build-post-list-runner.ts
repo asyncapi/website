@@ -25,9 +25,7 @@ export interface BuildPostListOptions {
  * @param options - Optional configuration for post directories, base path, and output path.
  * @throws {CustomError} If the build process fails or an error occurs in the runner.
  */
-export async function runBuildPostList(
-  options: BuildPostListOptions = {},
-): Promise<void> {
+export async function runBuildPostList(options: BuildPostListOptions = {}): Promise<void> {
   try {
     // Use provided options or fall back to default production paths
     const postDirectories = options.postDirectories || [
@@ -59,16 +57,10 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     try {
       // Extract the file name and basePath from the CLI command
       const outputFileArgIndex = process.argv.indexOf('--outputFile');
-      const outputFileName =
-        outputFileArgIndex === -1
-          ? 'posts.json'
-          : process.argv[outputFileArgIndex + 1];
+      const outputFileName = outputFileArgIndex === -1 ? 'posts.json' : process.argv[outputFileArgIndex + 1];
 
       const basePathArgIndex = process.argv.indexOf('--basePath');
-      const basePath =
-        basePathArgIndex === -1
-          ? undefined
-          : process.argv[basePathArgIndex + 1];
+      const basePath = basePathArgIndex === -1 ? undefined : process.argv[basePathArgIndex + 1];
 
       // Build outputPath using resolve(basePath, outputFileName)
       let outputPath;
