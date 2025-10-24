@@ -2,6 +2,7 @@ import { promises as fs } from 'fs';
 import os from 'os';
 import { resolve } from 'path';
 
+import { runBuildPages } from '../../npm/runners/build-pages-runner';
 import { runBuildPostList } from '../../npm/runners/build-post-list-runner';
 import type { Result } from '../../types/scripts/build-posts-list';
 
@@ -17,7 +18,8 @@ describe('Integration: build-post-list-runner', () => {
     const outputFileName = 'posts.json';
 
     outputPath = resolve(tempDir, outputFileName);
-
+    // before running make sure that pages directory is there
+    await runBuildPages();
     await runBuildPostList({
       outputPath
     });

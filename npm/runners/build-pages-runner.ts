@@ -2,7 +2,7 @@ import { copyAndRenameFiles, ensureDirectoryExists } from '@/scripts/build-pages
 import { logger } from '@/scripts/helpers/logger';
 import { CustomError } from '@/types/errors/CustomError';
 
-interface BuildPagesOptions {
+export interface BuildPagesOptions {
   sourceDir?: string;
   targetDir?: string;
 }
@@ -44,11 +44,18 @@ async function runBuildPages(options: BuildPagesOptions = {}): Promise<void> {
   }
 }
 
-(async () => {
-  try {
-    await runBuildPages();
-  } catch (error) {
-    // Ensure we exit with error code
-    process.exit(1);
-  }
-})();
+// Only run CLI if this file is executed directly, not when imported
+if (import.meta.url === `file://${process.argv[1]}`) {
+  // Self-executing async function to handle top-level await
+  (async () => {
+    try {
+      await runBuildPages();
+    } catch (error) {
+      // Ensure we exit with error code
+      process.exit(1);
+    }
+  })();
+}
+
+// Export for testing purposes
+export { runBuildPages };

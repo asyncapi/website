@@ -19,6 +19,8 @@ describe('Integration: build-dashboard Runner', () => {
   let output: any;
 
   beforeAll(async () => {
+    // Mock the GITHUB_TOKEN environment variable
+    process.env.GITHUB_TOKEN = 'test-token';
     // Create a unique temp directory for this test run
     tempDir = resolve(os.tmpdir(), `build-dashboard-test-${Date.now()}`);
     await fs.mkdir(tempDir, { recursive: true });
@@ -42,6 +44,8 @@ describe('Integration: build-dashboard Runner', () => {
   afterAll(async () => {
     // Clean up temp files and directory
     await fs.rm(tempDir, { recursive: true, force: true });
+    // Clean up environment variable
+    delete process.env.GITHUB_TOKEN;
   });
 
   it('creates the dashboard file at the specified path', async () => {
