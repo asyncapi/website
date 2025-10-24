@@ -199,7 +199,7 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise
           isPR,
           isAssigned: !!discussion.assignees.totalCount,
           title: discussion.title,
-          author: discussion.author ? discussion.author.login : 'unknown',
+          author: discussion.author.login,
           resourcePath: discussion.resourcePath,
           repo: `asyncapi/${discussion.repository.name}`,
           labels: discussion.labels ? discussion.labels.nodes : [],
@@ -296,7 +296,7 @@ async function mapGoodFirstIssues(issues: GoodFirstIssues[]): Promise<MappedIssu
     isAssigned: !!issue.assignees.totalCount,
     resourcePath: issue.resourcePath,
     repo: `asyncapi/${issue.repository.name}`,
-    author: issue.author ? issue.author.login : 'unknown',
+    author: issue.author.login,
     area: getLabel(issue, 'area/') || 'Unknown',
     labels: issue.labels!.nodes.filter(
       (label) => !label.name.startsWith('area/') && !label.name.startsWith('good first issue')
