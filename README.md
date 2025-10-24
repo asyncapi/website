@@ -218,6 +218,79 @@ Once you collect all information and create a case study, open a pull request. I
 
 A case study becomes publicly available right after merging and rebuilding the website.
 
+# 🌐 Adding Short URLs to the AsyncAPI Website
+
+The AsyncAPI website supports **short URLs** through Netlify's redirect system using the `public/_redirects` file.  
+This feature enables the creation of memorable, easy-to-share links that redirect to longer URLs — improving user experience and making resources more accessible for the community.
+
+Short URLs are useful for:
+- Community resources (Slack, GitHub)
+- Frequently accessed documentation
+- Marketing campaigns and events
+
+---
+
+## ⚙️ How It Works
+
+All redirects are defined in the `public/_redirects` file. This file follows **Netlify’s redirect syntax** and is automatically processed during deployment.
+
+### Existing Examples
+
+| Short URL | Redirects To | Type |
+|------------|---------------|------|
+| `/slack-invite` | Slack invitation link | Temporary (302) |
+| `/modelina` | `/tools/modelina` | Permanent (301) |
+| `/generator` | `/tools/generator` | Permanent (301) |
+| `/cheatsheet` | GitHub cheatsheet | Permanent (301) |
+
+---
+
+## ✅ When to Create a Short URL
+
+- **Community resources:** Slack, GitHub repositories  
+- **Frequently accessed tools:** AsyncAPI Studio, Generator, Modelina  
+- **Docs shortcuts:** Specification, Getting Started, Tutorials   
+- **Events & campaigns:** Conferences
+
+### Avoid Short URLs For
+
+- Frequently changing internal pages  
+- Temporary content without clear end dates  
+- URLs that conflict with existing site routes  
+- Personal or private organization links  
+- Already short, self-explanatory URLs  
+
+---
+
+## 🪜 How to Add a New Short URL
+
+### Step 1: Plan
+
+1. **Identify the target URL** you want to redirect to.  
+2. **Choose a descriptive short path** (see naming conventions below).  
+3. **Select the correct redirect type** — permanent (301) or temporary (302).  
+4. **Check for conflicts** with existing routes or redirects.
+
+### Step 2: Edit the Redirects File
+
+1. Navigate to `public/_redirects`.  
+2. Find or create an appropriate section (e.g., “Community Resources”).  
+3. Add your redirect entry using the correct syntax.  
+4. Include a descriptive comment explaining the redirect’s purpose.
+
+### Step 3: Submit and Test
+
+1. **Create a Pull Request (PR)** with your changes.  
+2. Add **context in the PR description** — why this short URL is needed.  
+3. **Test the redirect** after deployment to staging/production.  
+4. **Monitor for issues** and update if necessary.
+
+---
+
+## 🧩 Redirect Syntax
+
+`/short-path destination-url status-code!`
+
 ## JSON Schema definitions
 
 All AsyncAPI JSON Schema definition files are being served within the `/definitions/<file>` path. The content is being served from GH, in particular from https://github.com/asyncapi/spec-json-schemas/tree/master/schemas.
