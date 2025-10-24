@@ -1,17 +1,64 @@
-import { graphql } from '@octokit/graphql';
 import { promises as fs } from 'fs';
+import nock from 'nock';
 import os from 'os';
 import { resolve } from 'path';
 
 import { runBuildDashboard } from '../../npm/runners/build-dashboard-runner';
 import { mockDashboardData } from './fixtures/dashboard-fixtures';
 
-// Mock the graphql module
-jest.mock('@octokit/graphql', () => ({
-  graphql: jest.fn()
-}));
+// Helper functions to reduce repetitive nock setup
+/**
+ * Sets up a nock interceptor for GitHub GraphQL API calls
+ * @param data - The GraphQL response data
+ * @param remaining - The remaining rate limit count
+ * @returns The nock interceptor
+ */
+function setupGraphQLMock(data: any, remaining: number = 4999) {
+  return nock('https://api.github.com')
+    .post('/graphql')
+    .matchHeader('authorization', 'token test-token')
+    .reply(200, {
+      data: {
+        ...data,
+        rateLimit: {
+          limit: 5000,
+          remaining,
+          resetAt: '2024-01-01T00:00:00Z',
+          cost: 1
+        }
+      }
+    });
+}
 
-const mockedGraphql = graphql as jest.MockedFunction<typeof graphql>;
+/**
+ * Sets up a nock interceptor for GitHub GraphQL API error responses
+ * @param errorMessage - The error message to return
+ * @returns The nock interceptor
+ */
+function setupGraphQLErrorMock(errorMessage: string = 'API error') {
+  return nock('https://api.github.com')
+    .post('/graphql')
+    .matchHeader('authorization', 'token test-token')
+    .replyWithError(errorMessage);
+}
+
+/**
+ * Sets up all nock interceptors for successful dashboard data fetching
+ */
+function setupCompleteDashboardMocks() {
+  setupGraphQLMock(mockDashboardData.hotDiscussionsIssues, 4999);
+  setupGraphQLMock(mockDashboardData.hotDiscussionsPRs, 4998);
+  setupGraphQLMock(mockDashboardData.goodFirstIssues, 4997);
+}
+
+/**
+ * Sets up nock interceptors for rate limit warning scenarios
+ */
+function setupRateLimitWarningMocks() {
+  setupGraphQLMock(mockDashboardData.rateLimitWarning, 10);
+  setupGraphQLMock(mockDashboardData.rateLimitWarning, 9);
+  setupGraphQLMock(mockDashboardData.rateLimitWarning, 8);
+}
 
 describe('Integration: build-dashboard Runner', () => {
   let tempDir: string;
@@ -26,11 +73,8 @@ describe('Integration: build-dashboard Runner', () => {
     await fs.mkdir(tempDir, { recursive: true });
     outputPath = resolve(tempDir, 'dashboard.json');
 
-    // Setup mocked GraphQL responses
-    mockedGraphql
-      .mockResolvedValueOnce(mockDashboardData.hotDiscussionsIssues)
-      .mockResolvedValueOnce(mockDashboardData.hotDiscussionsPRs)
-      .mockResolvedValueOnce(mockDashboardData.goodFirstIssues);
+    // Setup nock interceptors for GitHub GraphQL API responses using helper function
+    setupCompleteDashboardMocks();
 
     // Run the dashboard builder using the runner function directly
     await runBuildDashboard({ outputPath });
@@ -41,11 +85,18 @@ describe('Integration: build-dashboard Runner', () => {
     output = JSON.parse(content);
   });
 
+  afterEach(() => {
+    // Clean up nock interceptors after each test
+    nock.cleanAll();
+  });
+
   afterAll(async () => {
     // Clean up temp files and directory
     await fs.rm(tempDir, { recursive: true, force: true });
     // Clean up environment variable
     delete process.env.GITHUB_TOKEN;
+    // Clean up nock interceptors
+    nock.cleanAll();
   });
 
   it('creates the dashboard file at the specified path', async () => {
@@ -60,8 +111,8 @@ describe('Integration: build-dashboard Runner', () => {
   it('should handle API errors gracefully', async () => {
     const errorOutputPath = resolve(tempDir, 'error-output.json');
 
-    // Setup mock to return an error
-    mockedGraphql.mockRejectedValueOnce(new Error('API error'));
+    // Setup nock to return an error using helper function
+    setupGraphQLErrorMock('API error');
 
     await expect(runBuildDashboard({ outputPath: errorOutputPath })).rejects.toThrow();
   });
@@ -74,11 +125,8 @@ describe('Integration: build-dashboard Runner', () => {
   it('should handle rate limit warnings', async () => {
     const warningOutputPath = resolve(tempDir, 'warning-output.json');
 
-    // Setup mock to return rate limit warning
-    mockedGraphql
-      .mockResolvedValueOnce(mockDashboardData.rateLimitWarning)
-      .mockResolvedValueOnce(mockDashboardData.rateLimitWarning)
-      .mockResolvedValueOnce(mockDashboardData.rateLimitWarning);
+    // Setup nock to return rate limit warning using helper function
+    setupRateLimitWarningMocks();
 
     await runBuildDashboard({ outputPath: warningOutputPath });
 
