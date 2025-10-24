@@ -125,9 +125,9 @@
     "yaml": "^2.3.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.28.5",
-    "@babel/preset-env": "^7.28.5",
-    "@babel/preset-typescript": "^7.28.5",
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.4",
+    "@babel/preset-typescript": "^7.28.4",
     "@chromatic-com/storybook": "^1.6.1",
     "@netlify/functions": "^2.6.0",
     "@netlify/plugin-nextjs": "^4.41.3",
@@ -152,7 +152,7 @@
     "@types/react-youtube-embed": "^1.0.4",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
-    "babel-jest": "^30.2.0",
+    "babel-jest": "^29.7.0",
     "babel-plugin-transform-import-meta": "^2.2.1",
     "cypress": "^14.4.0",
     "eslint": "^8",
