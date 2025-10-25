@@ -142,7 +142,7 @@ This file contains all AsyncAPI resources organized for LLM consumption, ` +
   content += '\n## Examples and Templates\n';
   content += addLink(
     'Specification Examples',
-    'https://github.com/asyncapi/asyncapi/tree/master/examples',
+    'https://github.com/asyncapi/spec/tree/master/examples',
     'Official AsyncAPI document examples'
   );
   content += addLink(

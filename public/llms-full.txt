@@ -111,8 +111,7 @@ This file contains all AsyncAPI resources organized for LLM consumption, includi
 - [Modelina](https://github.com/asyncapi/modelina): Model/type generation library
 
 ## Examples and Templates
-- [Specification Examples](https://github.com/asyncapi/asyncapi/tree/master/examples): Official AsyncAPI document examples
-- [Template Examples](https://github.com/asyncapi/spec/tree/master/examples): Additional specification examples
+- [Specification Examples](https://github.com/asyncapi/spec/tree/master/examples): Official AsyncAPI document examples
 
 ## Optional
 - [Community Resources](https://www.asyncapi.com/community): Community guidelines and contribution information
