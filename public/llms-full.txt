@@ -81,6 +81,7 @@ This file contains all AsyncAPI resources organized for LLM consumption, includi
 - [Creating a template - Python](https://www.asyncapi.com/docs/tools/generator/generator-template): Tool Documentation
 
 ## Recent Blog Posts
+- [How TransferGo adopted AsyncAPI](https://www.asyncapi.com/blog/transfergo-asyncapi-story): Blog Post
 - [Monthly Community Update: September 2025](https://www.asyncapi.com/blog/2025-september-summary): Blog Post
 - [Monthly Community Update: August 2025](https://www.asyncapi.com/blog/2025-august-summary): Blog Post
 - [2024 Mentorship Program Metrics](https://www.asyncapi.com/blog/2024-mentorship-metrics): Blog Post
@@ -100,7 +101,6 @@ This file contains all AsyncAPI resources organized for LLM consumption, includi
 - [AsyncAPI Mascot Redesign - The Biography of Eve and Chan](https://www.asyncapi.com/blog/asyncapi-mascot-redesign): Blog Post
 - [From Mentee to Maintainer: The Ashmit GSoC Story!](https://www.asyncapi.com/blog/community-spotlight-ashmit): Blog Post
 - [Monthly Community Update: February 2025](https://www.asyncapi.com/blog/2025-february-summary): Blog Post
-- [AsyncAPI Conference 2024 Report](https://www.asyncapi.com/blog/conference-2024-summary): Blog Post
 
 ## GitHub Repositories
 - [AsyncAPI Specification](https://github.com/asyncapi/asyncapi): Main specification repository
@@ -112,6 +112,7 @@ This file contains all AsyncAPI resources organized for LLM consumption, includi
 
 ## Examples and Templates
 - [Specification Examples](https://github.com/asyncapi/spec/tree/master/examples): Official AsyncAPI document examples
+- [Template Examples](https://github.com/asyncapi/generator/tree/master/templates): Generator template examples
 
 ## Optional
 - [Community Resources](https://www.asyncapi.com/community): Community guidelines and contribution information
