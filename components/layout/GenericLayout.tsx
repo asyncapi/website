@@ -36,7 +36,7 @@ export default function GenericLayout({
   }
 
   return (
-    <div data-testid='GenericLayout'>
+    <div className='bg-white dark:bg-dark-background min-h-screen' data-testid='GenericLayout'>
       <Head title={title} description={description} image={image} />
       <Container wide={wide}>
         <div data-testid='GenericLayout-banner'>
