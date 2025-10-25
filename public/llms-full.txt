@@ -103,7 +103,7 @@ This file contains all AsyncAPI resources organized for LLM consumption, includi
 - [Monthly Community Update: February 2025](https://www.asyncapi.com/blog/2025-february-summary): Blog Post
 
 ## GitHub Repositories
-- [AsyncAPI Specification](https://github.com/asyncapi/asyncapi): Main specification repository
+- [AsyncAPI Specification](https://github.com/asyncapi/spec): Main specification repository
 - [AsyncAPI Generator](https://github.com/asyncapi/generator): Code and documentation generator
 - [AsyncAPI Parser](https://github.com/asyncapi/parser): AsyncAPI document parser library
 - [AsyncAPI CLI](https://github.com/asyncapi/cli): Command-line interface tool

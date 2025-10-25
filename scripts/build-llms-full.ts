@@ -131,13 +131,12 @@ This file contains all AsyncAPI resources organized for LLM consumption, ` +
   }
 
   content += '\n## GitHub Repositories\n';
-  content += addLink('AsyncAPI Specification', 'https://github.com/asyncapi/asyncapi', 'Main specification repository');
+  content += addLink('AsyncAPI Specification', 'https://github.com/asyncapi/spec', 'Main specification repository');
   content += addLink('AsyncAPI Generator', 'https://github.com/asyncapi/generator', 'Code and documentation generator');
   content += addLink('AsyncAPI Parser', 'https://github.com/asyncapi/parser', 'AsyncAPI document parser library');
   content += addLink('AsyncAPI CLI', 'https://github.com/asyncapi/cli', 'Command-line interface tool');
   content += addLink('AsyncAPI Studio', 'https://github.com/asyncapi/studio', 'Visual AsyncAPI editor');
   content += addLink('Modelina', 'https://github.com/asyncapi/modelina', 'Model/type generation library');
-  content += addLink('AsyncAPI Bindings', 'https://github.com/asyncapi/bindings', 'Protocol bindings specifications');
 
   content += '\n## Examples and Templates\n';
   content += addLink(
