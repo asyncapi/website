@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useMemo } from 'react';
 
 import Empty from '@/components/illustrations/Empty';
 import GenericLayout from '@/components/layout/GenericLayout';
@@ -24,21 +24,31 @@ export default function BlogIndexPage() {
   const router = useRouter();
   const { navItems } = useContext(BlogContext);
 
-  const [posts, setPosts] = useState<IBlogPost[]>(
-    navItems
-      ? navItems.sort((i1: IBlogPost, i2: IBlogPost) => {
-          const i1Date = new Date(i1.date);
-          const i2Date = new Date(i2.date);
-
-          if (i1.featured && !i2.featured) return -1;
-          if (!i1.featured && i2.featured) return 1;
-
-          return i2Date.getTime() - i1Date.getTime();
-        })
-      : []
-  );
+  const [posts, setPosts] = useState<IBlogPost[]>([]);
   const [isClient, setIsClient] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+
+  // Memoize sorted posts to prevent unnecessary re-renders
+  const sortedPosts = useMemo(() => {
+    if (!navItems || navItems.length === 0) return [];
+    
+    return [...navItems].sort((i1: IBlogPost, i2: IBlogPost) => {
+      const i1Date = new Date(i1.date);
+      const i2Date = new Date(i2.date);
+
+      if (i1.featured && !i2.featured) return -1;
+      if (!i1.featured && i2.featured) return 1;
+
+      return i2Date.getTime() - i1Date.getTime();
+    });
+  }, [navItems]);
+
+  // Update posts when sortedPosts changes
+  useEffect(() => {
+    if (sortedPosts.length > 0) {
+      setPosts(sortedPosts);
+    }
+  }, [sortedPosts]);
 
   const onFilter = (data: IBlogPost[]) => {
     setPosts(data);
