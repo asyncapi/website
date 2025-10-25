@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useMemo } from 'react';
 
 import Empty from '@/components/illustrations/Empty';
 import GenericLayout from '@/components/layout/GenericLayout';
@@ -14,6 +14,9 @@ import type { IBlogPost } from '@/types/post';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
+// Configuration for pagination
+const POSTS_PER_PAGE = 15;
+
 /**
  * @description The BlogIndexPage is the blog index page of the website.
  */
@@ -21,22 +24,36 @@ export default function BlogIndexPage() {
   const router = useRouter();
   const { navItems } = useContext(BlogContext);
 
-  const [posts, setPosts] = useState<IBlogPost[]>(
-    navItems
-      ? navItems.sort((i1: IBlogPost, i2: IBlogPost) => {
-          const i1Date = new Date(i1.date);
-          const i2Date = new Date(i2.date);
-
-          if (i1.featured && !i2.featured) return -1;
-          if (!i1.featured && i2.featured) return 1;
-
-          return i2Date.getTime() - i1Date.getTime();
-        })
-      : []
-  );
+  const [posts, setPosts] = useState<IBlogPost[]>([]);
   const [isClient, setIsClient] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const onFilter = (data: IBlogPost[]) => setPosts(data);
+  // Memoize sorted posts to prevent unnecessary re-renders
+  const sortedPosts = useMemo(() => {
+    if (!navItems || navItems.length === 0) return [];
+    
+    return [...navItems].sort((i1: IBlogPost, i2: IBlogPost) => {
+      const i1Date = new Date(i1.date);
+      const i2Date = new Date(i2.date);
+
+      if (i1.featured && !i2.featured) return -1;
+      if (!i1.featured && i2.featured) return 1;
+
+      return i2Date.getTime() - i1Date.getTime();
+    });
+  }, [navItems]);
+
+  // Update posts when sortedPosts changes
+  useEffect(() => {
+    if (sortedPosts.length > 0) {
+      setPosts(sortedPosts);
+    }
+  }, [sortedPosts]);
+
+  const onFilter = (data: IBlogPost[]) => {
+    setPosts(data);
+    setCurrentPage(1); // Reset to first page when filtering
+  };
   const toFilter = [
     {
       name: 'type'
@@ -53,8 +70,29 @@ export default function BlogIndexPage() {
     router.push(`${router.pathname}`, undefined, {
       shallow: true
     });
+    setCurrentPage(1); // Reset to first page when clearing filters
   };
   const showClearFilters = Object.keys(router.query).length > 0;
+
+  // Pagination calculations
+  const totalPosts = posts.length;
+  const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
+  const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+  const endIndex = startIndex + POSTS_PER_PAGE;
+  const currentPosts = posts.slice(startIndex, endIndex);
+
+  // Pagination handlers
+  const goToNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const goToPreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
 
   const description = 'Find the latest and greatest stories from our community';
   const image = '/img/social/blog.webp';
@@ -121,11 +159,51 @@ export default function BlogIndexPage() {
               </div>
             )}
             {Object.keys(posts).length > 0 && isClient && (
-              <ul className='mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3'>
-                {posts.map((post, index) => (
-                  <BlogPostItem key={index} post={post} />
-                ))}
-              </ul>
+              <>
+                <ul className='mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3'>
+                  {currentPosts.map((post, index) => (
+                    <BlogPostItem key={index} post={post} />
+                  ))}
+                </ul>
+                
+                {/* Pagination Controls */}
+                {totalPages > 1 && (
+                  <div className='mt-12 flex items-center justify-center space-x-4'>
+                    <button
+                      onClick={goToPreviousPage}
+                      disabled={currentPage === 1}
+                      className={`px-6 py-2 rounded-md font-medium transition-all duration-200 ${
+                        currentPage === 1
+                          ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                          : 'bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+                      }`}
+                    >
+                      Previous
+                    </button>
+                    
+                    <div className='flex items-center space-x-2'>
+                      <span className='text-sm text-gray-700'>
+                        Page {currentPage} of {totalPages}
+                      </span>
+                      <span className='text-sm text-gray-500'>
+                        ({totalPosts} total posts)
+                      </span>
+                    </div>
+                    
+                    <button
+                      onClick={goToNextPage}
+                      disabled={currentPage === totalPages}
+                      className={`px-6 py-2 rounded-md font-medium transition-all duration-200 ${
+                        currentPage === totalPages
+                          ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                          : 'bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+                      }`}
+                    >
+                      Next
+                    </button>
+                  </div>
+                )}
+              </>
             )}
             {Object.keys(posts).length > 0 && !isClient && (
               <div className='h-screen w-full'>
