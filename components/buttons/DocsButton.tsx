@@ -13,16 +13,16 @@ export interface IDocsButtonProps {
  * @param {Object} props - The props of the component
  * @param {IPost} props.post - The post object
  * @param {string} props.className - The class name of the component
- * @returns {JSX.Element} The DocsButton component
+ * @returns {React.JSX.Element} The DocsButton component
  */
 export default function DocsButton({ post, className = '' }: IDocsButtonProps) {
   return (
     <div className={`mb-4 flex h-full flex-row gap-4 ${className}`}>
-      <div className='h-auto w-1/2'>
+      <div className='w-1/2'>
         {post?.prevPage && (
           <Link href={post.prevPage.href}>
             <div
-              className={`cursor-pointer rounded border border-gray-200 p-4 text-center shadow-md transition-all
+              className={`h-full cursor-pointer rounded border border-gray-200 p-4 text-center shadow-md transition-all
                             duration-300 ease-in-out hover:border-gray-300 hover:shadow-lg lg:text-left`}
             >
               <div className='text-secondary-500' data-testid='DocsButton-Prevdiv'>
@@ -49,9 +49,9 @@ export default function DocsButton({ post, className = '' }: IDocsButtonProps) {
           </Link>
         )}
       </div>
-      <div className='h-auto w-1/2'>
+      <div className='w-1/2'>
         {post?.nextPage && (
-          <Link href={post.nextPage.href} className='h-auto'>
+          <Link href={post.nextPage.href}>
             <div
               className={`h-full cursor-pointer rounded border border-gray-200 p-4 text-center shadow-md
                           transition-all duration-300 ease-in-out hover:border-gray-300 hover:shadow-lg lg:text-right`}

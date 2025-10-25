@@ -28,11 +28,14 @@ interface BlogPostItemProps {
 
 /**
  * Functional component representing a single blog post item.
+ *
+ * @param {BlogPostItemProps} props - The props for the BlogPostItem component.
+ * @param {IBlogPost} props.post - The blog post data.
+ * @param {string} [props.className] - The additional CSS classes for styling.
+ * @param {string} [props.id] - The HTML id attribute for the component.
+ * @param {Ref<HTMLLIElement>} ref - The reference object for the component.
  */
-export default forwardRef(function BlogPostItem(
-  { post, className = '', id = '' }: BlogPostItemProps,
-  ref: Ref<HTMLLIElement> /** Reference object for the component. */
-) {
+const BlogPostItem = ({ post, className = '', id = '' }: BlogPostItemProps, ref: Ref<HTMLLIElement>) => {
   let typeColors: [string, string] = ['bg-indigo-100', 'text-indigo-800'];
 
   switch (post.type.toLowerCase()) {
@@ -57,10 +60,17 @@ export default forwardRef(function BlogPostItem(
         <Link href={post.slug}>
           <span
             className={
-              'flex h-full cursor-pointer flex-col divide-y divide-gray-200 overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'
+              'relative flex h-full cursor-pointer flex-col divide-y divide-gray-200 overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'
             }
             data-testid='BlogPostItem-Link'
           >
+            {post.featured && (
+              <div className='absolute right-0 top-0 z-10 m-4'>
+                <span className='inline-flex items-center rounded-full bg-purple-100 px-3 py-0.5 text-sm font-medium text-purple-800'>
+                  Featured
+                </span>
+              </div>
+            )}
             <img
               className='h-48 w-full object-cover'
               src={post.cover}
@@ -102,8 +112,6 @@ export default forwardRef(function BlogPostItem(
                               className='cursor-pointer border-none bg-inherit p-0 hover:underline'
                               onClick={(e) => {
                                 e.preventDefault();
-
-                                // Handle the click event, e.g., navigate to author.link
                                 window.open(author.link, '_blank');
                               }}
                             >
@@ -133,4 +141,6 @@ export default forwardRef(function BlogPostItem(
       </article>
     </li>
   );
-});
+};
+
+export default forwardRef(BlogPostItem);

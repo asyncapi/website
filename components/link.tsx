@@ -50,7 +50,8 @@ export default function LinkComponent({
   let href = props.href || pathname;
 
   /*
-    If explicit href is provided, and the language-specific paths for the current language do not include the href, or if the href starts with "http", render a standard Link
+    If explicit href is provided, and the language-specific paths for the current language do not include the href,
+    or if the href starts with "http", render a standard Link
   */
   if ((props.href && i18nPaths[language] && !i18nPaths[language].includes(href)) || href.includes('http', 0)) {
     return (

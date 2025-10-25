@@ -8,11 +8,11 @@
 * @derberg @akshatnema @anshgoyalevil @sambhavgupta0705 @mayaleeeee @asyncapi-bot-eve
 
 # All .md files
-*.md @quetzalliwrites @TRohit20 @asyncapi-bot-eve
+*.md @thulieblack @TRohit20 @asyncapi-bot-eve
 
-markdown/blog/*.md @thulieblack @quetzalliwrites @TRohit20
-markdown/community/*.md @thulieblack @quetzalliwrites @TRohit20 
+markdown/blog/*.md @thulieblack @TRohit20
+markdown/community/*.md @thulieblack @bandantonio @TRohit20 
 
-README.md @quetzalliwrites @derberg @akshatnema @mayaleeeee @TRohit20 @asyncapi-bot-eve
-#docTriagers: VaishnaviNandakumar Aahil13
+README.md @thulieblack @derberg @akshatnema @mayaleeeee @TRohit20 @asyncapi-bot-eve
+#docTriagers: bandantonio CBID2 
 #codeTriagers: devilkiller-ag vishvamsinh28

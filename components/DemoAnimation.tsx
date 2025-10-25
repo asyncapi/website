@@ -230,7 +230,7 @@ export default function DemoAnimation({ className = '' }: IDemoAnimationProps) {
       );
     }
 
-    return renderTyping(<>{common}</>, callback);
+    return renderTyping(common, callback);
   }
 
   /**

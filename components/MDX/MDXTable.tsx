@@ -6,12 +6,12 @@ import React from 'react';
  * @param props contains default HTML table props
  * @returns
  */
-export function Table(props: React.HTMLProps<HTMLTableElement>) {
+export function Table({ className = '' }: { className?: string }) {
   return (
-    <div className={`${props.className || ''} flex flex-col`}>
+    <div className={`${className} flex flex-col`}>
       <div className='my-2 overflow-x-auto py-2 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8'>
         <div className='inline-block w-full overflow-auto border-b border-gray-200 align-middle shadow sm:rounded-lg'>
-          <table {...props} className={`${props.className || ''} w-full`} />
+          <table className={`${className} w-full`} />
         </div>
       </div>
     </div>
@@ -24,8 +24,8 @@ export function Table(props: React.HTMLProps<HTMLTableElement>) {
  * @param props contains default HTML table row props
  * @returns
  */
-export function TableRow(props: React.HTMLProps<HTMLTableRowElement>) {
-  return <tr {...props} className={`${props.className || ''} bg-white`} />;
+export function TableRow({ className = '' }: { className?: string }) {
+  return <tr className={`${className} bg-white`} />;
 }
 
 /**
@@ -34,12 +34,9 @@ export function TableRow(props: React.HTMLProps<HTMLTableRowElement>) {
  * @param props contains default HTML table cell props
  * @returns
  */
-export function TableCell(props: React.HTMLProps<HTMLTableCellElement>) {
+export function TableCell({ className = '' }: { className?: string }) {
   return (
-    <td
-      {...props}
-      className={`${props.className || ''} border-b border-gray-200 px-6 py-4 text-sm leading-5 tracking-tight text-gray-700`}
-    />
+    <td className={`${className} border-b border-gray-200 px-6 py-4 text-sm leading-5 tracking-tight text-gray-700`} />
   );
 }
 
@@ -49,11 +46,10 @@ export function TableCell(props: React.HTMLProps<HTMLTableCellElement>) {
  * @param props contains default HTML table header props
  * @returns
  */
-export function TableHeader(props: React.HTMLProps<HTMLTableCellElement>) {
+export function TableHeader({ className = '' }: { className?: string }) {
   return (
     <th
-      {...props}
-      className={`${props.className || ''} border-b border-gray-200 bg-gray-100 px-6 py-3 text-left font-body text-xs font-medium uppercase leading-4 tracking-wider text-gray-900`}
+      className={`${className} border-b border-gray-200 bg-gray-100 px-6 py-3 text-left font-body text-xs font-medium uppercase leading-4 tracking-wider text-gray-900`}
     />
   );
 }
@@ -64,8 +60,8 @@ export function TableHeader(props: React.HTMLProps<HTMLTableCellElement>) {
  * @param props - The HTML props for the `<tbody>` element.
  * @returns The rendered `<tbody>` element.
  */
-export function TableBody(props: React.HTMLProps<HTMLTableSectionElement>) {
-  return <tbody {...props} className={`${props.className || ''}`} />;
+export function TableBody({ className = '' }: { className?: string }) {
+  return <tbody className={`${className}`} />;
 }
 
 /**
@@ -74,6 +70,6 @@ export function TableBody(props: React.HTMLProps<HTMLTableSectionElement>) {
  * @param props - The HTML props for the `<tbody>` element.
  * @returns The rendered `<tbody>` element.
  */
-export function Thead(props: React.HTMLProps<HTMLTableSectionElement>) {
-  return <thead {...props} className={`${props.className || ''}`} />;
+export function Thead({ className = '' }: { className?: string }) {
+  return <thead className={`${className}`} />;
 }

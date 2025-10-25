@@ -116,6 +116,57 @@ jobs:
           delete: true
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
+      # Run the test:locales script and capture output with cleaner formatting
+      - if: ${{ steps.packagejson.outputs.exists == 'true' && matrix.os == 'ubuntu-latest' }}
+        name: Run locale checks
+        id: locale_check
+        run: |
+          # Run the test and capture any errors
+          set +e
+          LOCALE_OUTPUT=$(npm run test:locales 2>&1)
+          EXIT_CODE=$?
+          set -e
+          
+          # If the command failed, extract and format the error message
+          if [ $EXIT_CODE -ne 0 ]; then
+            # Extract the found languages
+            LANGUAGES=$(echo "$LOCALE_OUTPUT" | grep "Found" | sed 's/.*Found \(.*\) languages.*/Found \1 languages:/')
+            
+            # Extract the missing keys information without timestamps
+            MISSING_KEYS=$(echo "$LOCALE_OUTPUT" | grep -A 100 "Missing keys in" | grep -v "\[.*PM\] \|^\s*$")
+            
+            # Combine the cleaned output
+            CLEANED_OUTPUT="$LANGUAGES\n\n$MISSING_KEYS"
+            
+            echo "locale_output<<EOF" >> $GITHUB_OUTPUT
+            echo -e "$CLEANED_OUTPUT" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          fi
+
+      # Post a comment using sticky-pull-request-comment
+      - name: Comment on PR with locale issues
+        if: ${{ steps.locale_check.outputs.locale_output != '' && matrix.os == 'ubuntu-latest' }}
+        uses: marocchino/sticky-pull-request-comment@3d60a5b2dae89d44e0c6ddc69dd7536aec2071cd
+        with:
+          header: locale-check-error
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          message: |
+            ### Locale Check Results
+            We found issues with locale keys:
+            ```
+            ${{ steps.locale_check.outputs.locale_output }}
+            ```
+            Please make sure all locale files have the same translation keys.
+
+      # Delete the comment if there are no issues
+      - if: ${{ steps.locale_check.outputs.locale_output == '' && steps.packagejson.outputs.exists == 'true' && matrix.os == 'ubuntu-latest' }}
+        name: Delete locale check comment if no issues
+        uses: marocchino/sticky-pull-request-comment@3d60a5b2dae89d44e0c6ddc69dd7536aec2071cd
+        with:
+          header: locale-check-error
+          delete: true
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
       - if: steps.packagejson.outputs.exists == 'true'
         name: Upload Coverage to Codecov
         uses: codecov/codecov-action@e28ff129e5465c2c0dcc6f003fc735cb6ae0c673

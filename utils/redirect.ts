@@ -4,8 +4,13 @@ import { useEffect } from 'react';
 import languageDetector from './languageDetector';
 
 /**
- * Custom hook that redirects the user to a specified URL or the current URL with a language prefix.
- * @param to - The URL to redirect to. If not provided, the current URL will be used.
+ * Redirects the user to a language-specific URL.
+ *
+ * This hook detects the user's language and navigates to a URL prefixed with the detected language code.
+ * If the `to` parameter is not provided, the current URL is used. It also prevents infinite redirection loops
+ * by handling cases where the route is a 404 page.
+ *
+ * @param to - The URL to redirect to; if undefined, the current URL is used.
  * @returns null
  */
 export function useRedirect(to: string | undefined): any {

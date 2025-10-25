@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: Community Builder and Open Source Fanatic!
 excerpt: 'AsyncAPI community status and project updates for March 2025'
-featured: true
 ---
 
 We started the month with exciting news as [AsyncAPI got accepted to the Google Summer of Code](https://summerofcode.withgoogle.com/programs/2025/organizations/asyncapi) (GSoC'25). In the last weeks, the community has seen many enthusiasts join the workspace in anticipation of being accepted to the program. 

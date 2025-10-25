@@ -12,7 +12,7 @@ export default function ExpensesCard() {
   return (
     <div className='overflow-x-auto'>
       <div className='grid auto-cols-max grid-flow-col gap-4 p-4'>
-        {Object.entries(ExpensesData).map(function ([month, data], index) {
+        {Object.entries(ExpensesData).map(([month, data], index) => {
           return <Card key={index} month={month as keyof Expenses} data={data} />;
         })}
       </div>

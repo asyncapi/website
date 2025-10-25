@@ -4,16 +4,19 @@ import dotenv from 'dotenv';
 
 import type { ToolsData } from '@/types/scripts/tools';
 
-import { pause } from '../utils';
-import { logger } from '../utils/logger';
+import { logger } from '../helpers/logger';
+import { pause } from '../helpers/utils';
 
 dotenv.config();
 
 /**
- * Fetches tool data from the GitHub API.
+ * Retrieves tool data by searching for files named ".asyncapi-tool" using the GitHub Code Search API.
  *
- * @returns {Promise<ToolsData>} The data from the GitHub API.
- * @throws {Error} If there is an error fetching the data.
+ * This function requires the GITHUB_TOKEN environment variable for authorization. It retrieves data in pages (up to 50 items per page)
+ * and pauses 1 second between requests to respect GitHub's rate limits. All pages are aggregated into a single result before being returned.
+ *
+ * @returns A promise that resolves to the aggregated ToolsData from GitHub.
+ * @throws {Error} When the GITHUB_TOKEN environment variable is missing or an error occurs during the fetching process.
  */
 export async function getData(): Promise<ToolsData> {
   // eslint-disable-next-line no-useless-catch
@@ -21,8 +24,9 @@ export async function getData(): Promise<ToolsData> {
     if (!process.env.GITHUB_TOKEN) {
       throw new Error('GITHUB_TOKEN environment variable is required');
     }
-    const allItems = [];
+    const allItems = new Set();
     let page = 1;
+    let incompleteResult = false;
 
     const maxPerPage = 50;
     const getReqUrl = (PerPage: number, pageNo: number) =>
@@ -34,11 +38,14 @@ export async function getData(): Promise<ToolsData> {
     const result = await axios.get(getReqUrl(maxPerPage, page), {
       headers
     });
-    const totalResults = result.data.total_count;
 
-    allItems.push(...result.data.items);
+    incompleteResult = result.data.incomplete_results || false;
 
-    while (allItems.length < totalResults) {
+    result.data.items.forEach((item: any) => {
+      allItems.add(item);
+    });
+
+    while (incompleteResult) {
       page++;
 
       logger.info(`Fetching page: ${page}`);
@@ -50,12 +57,16 @@ export async function getData(): Promise<ToolsData> {
 
       const { data } = nextPageData;
 
-      allItems.push(...data.items);
+      data.items.forEach((item: any) => {
+        allItems.add(item);
+      });
+
+      incompleteResult = data.incomplete_results || false;
     }
 
-    result.data.items.push(...allItems);
+    result.data.items = [...allItems];
 
-    return result.data;
+    return result.data.items;
   } catch (err) {
     throw err;
   }

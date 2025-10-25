@@ -7,7 +7,7 @@ interface RateLimit {
 
 interface PageInfo {
   hasNextPage: boolean;
-  endCursor: string | null;
+  endCursor?: string;
 }
 
 interface Reactions {
@@ -63,7 +63,7 @@ interface BasicIssueOrPR {
   repository: Repository;
   labels: {
     nodes: Label[];
-  };
+  } | null;
 }
 
 export interface PullRequestById {

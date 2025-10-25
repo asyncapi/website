@@ -35,7 +35,7 @@ jobs:
         run: echo "shouldrun=true" >> $GITHUB_OUTPUT
         
       - if: steps.should_run.outputs.shouldrun == 'true'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Await Netlify Preview
@@ -46,17 +46,25 @@ jobs:
           max_timeout: 600
 
       - if: steps.should_run.outputs.shouldrun == 'true'
-        name: Lighthouse Audit
+        name: Run Lighthouse Audit
         id: lighthouse_audit
         uses: treosh/lighthouse-ci-action@03becbfc543944dd6e7534f7ff768abb8a296826 #version 10.1 https://github.com/treosh/lighthouse-ci-action/releases/tag/10.1.0
         with:
           urls: |
             https://deploy-preview-$PR_NUMBER--asyncapi-website.netlify.app/
           configPath: ./.github/workflows/lighthouserc.json
-          uploadArtifacts: true
+          uploadArtifacts: false
           temporaryPublicStorage: true
         env:
           PR_NUMBER: ${{ github.event.pull_request.number}}
+
+      - if: steps.should_run.outputs.shouldrun == 'true'
+        name: Upload Lighthouse Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: .lighthouseci
+          include-hidden-files: true
 
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Lighthouse Score Report

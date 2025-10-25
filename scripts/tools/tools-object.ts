@@ -5,8 +5,8 @@ import Fuse from 'fuse.js';
 
 import type { AsyncAPITool, ToolsData, ToolsListObject } from '@/types/scripts/tools';
 
-import { convertToJson } from '../utils';
-import { logger } from '../utils/logger';
+import { logger } from '../helpers/logger';
+import { convertToJson } from '../helpers/utils';
 import { categoryList } from './categorylist';
 import schema from './tools-schema.json';
 
@@ -26,24 +26,24 @@ const options = {
 const fuse = new Fuse(categoryList, options);
 
 /**
- * Creates a tool object for the frontend ToolCard.
- * Using the contents of each toolFile (extracted from Github), along with Github URL
- * (repositoryUrl) of the tool, it's repository description (repoDescription) and
- * isAsyncAPIrepo boolean variable to define whether the tool repository is under
- * AsyncAPI organization or not, to create a JSON tool object as required in the frontend
- * side to show ToolCard.
+ * Constructs a tool object for frontend display.
  *
- * @param {AsyncAPITool} toolFile - The tool file content.
- * @param {string} [repositoryUrl=''] - The URL of the tool's repository.
- * @param {string} [repoDescription=''] - The description of the repository.
- * @param {boolean | string} [isAsyncAPIrepo=''] - Whether the tool repository is under the AsyncAPI organization.
- * @returns {Promise<object>} The tool object.
+ * This asynchronous function builds a tool object used by the ToolCard component. It uses the provided tool file to extract
+ * details such as title, description, links, and filters. If certain fields (like repository URL or description) are missing
+ * in the tool file, the corresponding fallback values from the parameters are used. The filter for AsyncAPI ownership is set
+ * based on the isAsyncAPIrepo parameter.
+ *
+ * @param toolFile - The tool file content containing information such as title, description, links, and filters.
+ * @param repositoryUrl - The URL of the tool's repository, used as a fallback if not specified in the tool file.
+ * @param repoDescription - The repository description, used as a fallback if the tool file does not provide one.
+ * @param isAsyncAPIrepo - Indicates whether the repository belongs to the AsyncAPI organization. Can be a boolean or a string.
+ * @returns A promise that resolves to the constructed tool object.
  */
 async function createToolObject(
   toolFile: AsyncAPITool,
   repositoryUrl = '',
   repoDescription = '',
-  isAsyncAPIrepo: boolean | string = ''
+  isAsyncAPIrepo: boolean = false
 ) {
   const resultantObject = {
     title: toolFile.title,
@@ -68,16 +68,20 @@ async function createToolObject(
 // categories order, which is then updated in `automated-tools.json` file.
 
 /**
- * Converts tools data into a categorized tools list object.
+ * Processes raw tools data from the GitHub API and categorizes valid tool entries.
  *
- * @param {ToolsData} data - The tools data from the GitHub API.
- * @returns {Promise<ToolsListObject>} The categorized tools list object.
- * @throws {Error} If there is an error processing the tools.
+ * This asynchronous function iterates over the provided tools data and, for each tool whose name starts with ".asyncapi-tool",
+ * it retrieves the tool file content from GitHub, converts it from YAML to JSON, and validates it against a predefined JSON schema.
+ * For valid tool files, it creates a tool object and assigns it to one or more categories using fuzzy search on its filter categories.
+ * If no matching category is found, the tool is placed in the "Others" category.
+ *
+ * @param data - The tools data from the GitHub API.
+ * @returns A promise that resolves to an object mapping category names to lists of tool objects.
+ * @throws {Error} When an error occurs during tool processing.
  */
 async function convertTools(data: ToolsData) {
   try {
     let finalToolsObject: ToolsListObject = {};
-    const dataArray = data.items;
 
     // initialising finalToolsObject with all categories inside it with proper elements in each category
     finalToolsObject = Object.fromEntries(
@@ -91,9 +95,8 @@ async function convertTools(data: ToolsData) {
     );
 
     await Promise.all(
-      dataArray.map(async (tool) => {
+      data.map(async (tool) => {
         try {
-          /* istanbul ignore else */
           if (tool.name.startsWith('.asyncapi-tool')) {
             const referenceId = tool.url.split('=')[1];
             const downloadUrl = `https://raw.githubusercontent.com/${tool.repository.full_name}/${referenceId}/${tool.path}`;
@@ -124,8 +127,6 @@ async function convertTools(data: ToolsData) {
                   const targetCategory = categorySearch.length ? categorySearch[0].item.name : 'Others';
                   const { toolsList } = finalToolsObject[targetCategory];
 
-                  /* istanbul ignore else */
-
                   if (!toolsList.includes(toolObject)) {
                     toolsList.push(toolObject);
                   }
@@ -145,8 +146,9 @@ async function convertTools(data: ToolsData) {
     );
 
     return finalToolsObject;
-  } catch (err) {
-    throw new Error(`Error processing tool: ${err}`);
+  } catch (err: unknown) {
+    logger.error('Error processing tools:', err);
+    throw err;
   }
 }
 

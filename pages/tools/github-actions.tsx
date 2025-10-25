@@ -11,7 +11,7 @@ import Paragraph from '../../components/typography/Paragraph';
 /**
  * @description Render the buttons for the Github Actions page.
  */
-function renderButtons(): JSX.Element {
+function renderButtons(): React.JSX.Element {
   return (
     <div className='mt-8'>
       {/* <Button
@@ -46,10 +46,10 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-      
+
       - name: Generating HTML from my AsyncAPI document
         uses: asyncapi/github-action-for-generator
-        
+
       - name: Deploy GH page
         uses: JamesIves/github-pages-deploy-action
         with:

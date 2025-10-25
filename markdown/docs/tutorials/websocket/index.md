@@ -110,9 +110,9 @@ The `payload` attribute specifies the name, format, and description of all the e
           type: object
           properties:
             app_id:
-            type: string
+              type: string
         num_connections:
-            type: integer
+          type: integer
         debug_info:
           type: object
           properties:
@@ -124,30 +124,31 @@ The `payload` attribute specifies the name, format, and description of all the e
               type: integer
             approximate_connection_time:
               type: integer
-      reaction:
-        type: object
-        properties:
-          user:
-            type: string
-            description: User ID who performed this event
-          reaction:
-            type: string
-            description: The only reaction that we need is a heart emoji
-          item_user:
-            type: string
-            description: User ID that created the original item that has been reacted to
-          item:
-            type: object
-            properties:
-              channel:
-                type: string
-                description: Channel information of original message
-              ts:
-                type: string
-                description: Timestamp information of original message
-          event_ts:
-            type: string
-            description: Reaction timestamp `}
+    reaction:
+      type: object
+      properties:
+        user:
+          type: string
+          description: User ID who performed this event
+        reaction:
+          type: string
+          description: The only reaction that we need is a heart emoji
+        item_user:
+          type: string
+          description: User ID that created the original item that has been reacted to
+        item:
+          type: object
+          properties:
+            channel:
+              type: string
+              description: Channel information of original message
+            ts:
+              type: string
+              description: Timestamp information of original message
+        event_ts:
+          type: string
+          description: Reaction timestamp
+`}
 </CodeBlock>
 
 ## Define channels and  bindings

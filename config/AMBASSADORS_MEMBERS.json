@@ -1,651 +1,824 @@
 [
-  {
-    "name": "Quetzalli Writes",
-    "img": "https://avatars.githubusercontent.com/u/19964402?v=4",
-    "bio": "Quetzalli Writes is an author of the book titled 'Docs-as-Ecosystem', which was published by the Apress Publishing Company. Quetzalli has been in tech for 9 years, working with SEO, Paid Search, Full-Stack development, UX, Developer Relations, and Technical Writing (Engineering Documentation). She's currently a core OSS contributor for Docs, DevRel, and Community Building at AsyncAPI Initiative. She's also a member of the AsyncAPI Technical Steering Committee (TSC).",
-    "title": "DevRel & DevDocs @AsyncAPI",
-    "github": "quetzalliwrites",
-    "twitter": "QuetzalliWrites",
-    "linkedin": "quetzalli-writes",
-    "company": "Postman",
-    "country": "🇲🇽",
-    "contributions": [
-      {
-        "type": "presentation",
-        "title": "How to contribute to AsyncAPI Dev Docs, AsyncAPI Conference",
-        "date": {
-          "year": 2021,
-          "month": "November"
-        },
-        "link": "https://www.youtube.com/watch?v=xAzbDDEbQ18"
-      },
-      {
-        "type": "workshop",
-        "title": "Workshop on contributing to AsyncAPI, CCOSS",
-        "date": {
-          "year": 2021,
-          "month": "October"
-        },
-        "link": "https://ccoss.org/sessions/2021/taller-contribucion-asyncapi/"
-      },
-      {
-        "type": "article",
-        "title": "Change is coming to our AsyncAPI Developer Documentation",
-        "date": {
-          "year": 2021,
-          "month": "December"
-        },
-        "link": "https://www.asyncapi.com/blog/changes-coming-docs"
-      },
-      {
-        "type": "iniciative_driver",
-        "title": "Driver and promoter of Google Season of Docs at AsyncAPI",
-        "date": {
-          "year": 2022,
-          "month": "December"
-        },
-        "link": "https://www.asyncapi.com/blog/google-season-of-docs-2022"
-      }
-    ]
-  },
-  {
-    "name": "Daniel Kocot",
-    "img": "https://avatars.githubusercontent.com/u/466609?v=4",
-    "bio": "Daniel has been part of the codecentric team since October 2016. Since the beginning of 2022 he works as Senior Solution Architect at the Dortmund branch. Starting as a consultant with a focus on application lifecycle management, his focus shifted more and more towards APIs. In addition to numerous customer projects and his involvement in the open source world around APIs, our Head of API Experience & Operations is also a frequent speaker at conferences.",
-    "title": "Senior Solution Architect / Head of API Experience and Operations",
-    "github": "danielkocot",
-    "twitter": "dk_1977",
-    "linkedin": "danielkocot",
-    "company": "Codecentric AG",
-    "country": "🇩🇪",
-    "contributions": [
-      {
-	"type": "article",
-        "title": "AsyncAPI - Documentation of event and message-driven architectures",
-        "date": {
-          "year": 2021,
-          "month": "September"
-        },
-        "link": "https://blog.codecentric.de/en/2021/09/asyncapi-documentation-event-message-driven-architectures/?hmsr=joyk.com&utm_source=joyk.com&utm_medium=referral"
-      },
-      {	
-       	"type": "article",
-        "title": "AsyncAPI specification updates",
-        "date": {
-          "year": 2022,
-          "month": "February"
-        },
-       	"link": "https://blog.codecentric.de/en/2022/02/asyncapi-version-2-3-0-specification-updates/"
-      },
-      {
-        "type": "presentation",
-       	"title": "AsyncAPI 101",
-        "date": {
-          "year": 2022,
-          "month": "May"
-	},
-        "link": "https://www.buildingiot.de/veranstaltung-13856-0-asyncapi-101.html"
-      },
-      {
-        "type": "presentation",
-       	"title": "Adopting AsyncAPI in Enterprisey Contexts, AsyncAPI Conference",
-        "date": {
-          "year": 2022,
-          "month": "November"
-       	},
-       	"link": "https://www.youtube.com/watch?v=_wTcV63jrnU"
-      }
-    ]
-  },
-  {
-    "name": "Giri Venkatesan",
-    "github": "gvensan",
-    "twitter": "giri_venkatesan",
-    "country": "🇮🇳",
-    "bio": "Giri Venkatesan, a follower and proponent of AsyncAPI and teams up with companies & SIs to design event-driven architecture and asynchronous APIs. To guide those discussions, I draw upon years of integration and implementation experience, particularly with Solace platforms. I've been a follower of AsyncAPI since 2022, and written blogs and delivered talks at conferences and AsyncAPI confrence tours.",
-    "linkedin": "girivenkatesan",
-    "company": "Solace",
-    "title": "Developer Advocate, Office of the CTO at Solace",
-    "img": "https://avatars.githubusercontent.com/u/4477169?s=96&v=4",
-    "contributions": [
-      {
-        "type": "article",
-        "title": "Bridging Design and Runtime Gaps: AsyncAPI in Event-Driven Architecture",
-        "date": {
-          "year": 2024,
-          "month": "February"
-        },
-        "link": "https://www.linux.com/news/bridging-design-and-runtime-gaps-asyncapi-in-event-driven-architecture/"
-      },
-      {
-        "type": "talk",
-        "title": "Bridging the Gap between Design and Runtime in EDA with AsyncAPI and CI/CD",
-        "date": {
-          "year": 2023,
-          "month": "November"
-        },
-        "link": "https://www.youtube.com/watch?v=CXt-fy82PCk"
-      },
-      {
-        "type": "talk",
-        "title": "Bridging the Gap between Design and Runtime in EDA with AsyncAPI",
-        "date": {
-          "year": 2023,
-          "month": "August"
-        },
-        "link": "https://www.youtube.com/watch?v=ewpADLeLNE4"
-      },
-      {
-        "type": "article",
-        "title": "AsyncAPI + Spring Cloud Stream = Event-Driven Microservices Made Easy",
-        "date": {
-          "year": 2021,
-          "month": "November"
-        },
-        "link": "https://www.youtube.com/watch?v=3EeMHhbwyOQ&t=4142s"
-      }
-    ]
-  },
-  {
-    "name": "Hugo Guerrero",
-    "img": "https://avatars.githubusercontent.com/u/1001939?v=4",
-    "bio": "Hugo Guerrero is a developer advocate for APIs and Event-driven Architecture. He assists organizations in this role by creating, editing, and curating product content shared with the community through webinars, conferences, and other activities. He works on open source software with major private and federal public sector clients looking to connect and extend their system architecture. He has over 20 years of experience as a developer, consultant, architect, and software development manager.",
-    "github": "hguerrero",
-    "twitter": "hguerreroo",
-    "title": "Head of Technical Marketing",
-    "linkedin": "hugoguerrero",
-    "company": "Kong",
-    "contributions": [
-      {
-        "type": "presentation",
-        "title": "Speed-Up Kafka Delivery with AsyncAPI & Microcks",
-        "date": {
-          "year": 2021,
-          "month": "July"
-        },
-        "link": "https://www.confluent.io/events/kafka-summit-apac-2021/speed-up-kafka-delivery-with-asyncapi-and-microcks/"
-      },
-      {
-        "type": "presentation",
-        "title": "Automated Apache Kafka Mocking and Testing with AsyncAPI",
-        "date": {
-          "year": 2021,
-          "month": "September"
-        },
-        "link": "https://www.confluent.io/events/kafka-summit-americas-2021/automated-apache-kafka-mocking-and-testing-with-asyncapi/"
-      },
-      {
-        "type": "presentation",
-        "title": "Event-driven APIs & Schema governance for Apache Kafka, Apidays LIVE Hong Kong",
-        "date": {
-          "year": 2021,
-          "month": "August"
-        },
-        "link": "https://www.youtube.com/watch?v=rwlHJkgaRdw"
-      },
-      {
-        "type": "presentation",
-        "title": "Event-driven APIs & Schema governance for Apache Kafka, API Specification Conference",
-        "date": {
-          "year": 2021,
-          "month": "August"
-        },
-        "link": "https://www.youtube.com/watch?v=QZ4cJyTw-U0"
-      },
-      {
-        "type": "presentation",
-        "title": "Getting started with Event-Driven APIs, Apidays LIVE Paris",
-        "date": {
-          "year": 2021,
-          "month": "December"
-        },
-        "link": "https://www.youtube.com/watch?v=_kIE-qtpwTA&t=9s"
-      }
-    ]
-  },
-  {
-    "name": "Ivan Garcia Sainz-Aja",
-    "github": "ivangsa",
-    "twitter": "ivangsa",
-    "bio": "Java Architect with a deep understanding of Java, Spring-Boot, Spring-Cloud technologies, specializing in Domain-Driven Design (DDD) and Event-Driven Architectures creating Software Easy to Understand. Building ZenWave 360º. ZenWave 360º is a set of tools built on the foundations of Domain Driven Design and API-First principles for Event-Driven Architectures, to help you create software easy to understand. https://www.zenwave360.io/",
-    "linkedin": "ivangarciasainzaja",
-    "company": "IZERTIS",
-    "title": "Java Architect. Speaker. Building ZenWave 360°.",  
-    "img": "https://avatars.githubusercontent.com/u/1246876?v=4",
-    "contributions": [
-      {
-        "type": "iniciative_driver",
-        "title": "AsyncAPI Conference On Tour 2023 - Madrid",
-        "date": {
-          "year": 2023,
-          "month": "October"
-        },
-        "link": "https://www.youtube.com/playlist?list=PLbi1gRlP7pihD-7XYb6c9wcTdkavDzF3_"
-      },
-      {
-        "type": "iniciative_driver",
-        "title": "ZenWave SDK - Code Generator for AsyncAPI with Spring Cloud Streams",
-        "date": {
-          "year": 2024,
-          "month": "2022"
-        },
-        "link": "https://www.zenwave360.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/"
-      },
-      {
-        "type": "article",
-        "title": "API-First with AsyncAPI",
-        "date": {
-          "year": 2023,
-          "month": "March"
-        },
-        "link": "https://www.zenwave360.io/posts/API-First-with-AsyncAPI-And-ZenWave-SDK/"
-      },
-      {
-        "type": "article",
-        "title": "ZenWave AsyncAPI Code Generator",
-        "date": {
-          "year": 2023,
-          "month": "March"
-        },
-        "link": "https://www.zenwave360.io/posts/ZenWave-AsyncAPI-Code-Generator/"
-      },
-      {
-        "type": "article",
-        "title": "Generating AsyncAPI definition files from JDL with ZenWaveSDK",
-        "date": {
-          "year": 2023,
-          "month": "April"
-        },
-        "link": "https://www.zenwave360.io/posts/JHipster-As-IDL-for-AsyncAPIv2/"
-      },
-      {
-        "type": "presentation",
-        "title": "KIT - API-First with AsyncAPI for Event Driven Architectures",
-        "date": {
-          "year": 2023,
-          "month": "May"
-        },
-        "link": "https://www.youtube.com/watch?v=EoWFZfmspFM"
-      },
-      {
-        "type": "presentation",
-        "title": "Practical Event Storming with AsyncAPI v3 and ZenWave SDK",
-        "date": {
-          "year": 2023,
-          "month": "October"
-        },
-        "link": "https://www.youtube.com/watch?v=-uHONzz-a6U"
-      },
-      {
-        "type": "presentation",
-        "title": "Code Generation For Enterprise Integration Patterns w/ AsyncAPI & ZenWave SDK",
-        "date": {
-          "year": 2023,
-          "month": "October"
-        },
-        "link": "https://www.youtube.com/watch?v=gUsoD8RaCuw"
-      }
-    ]
-  },
-  {
-    "name": "Ludovic Dussart",
-    "github": "M3lkior",
-    "twitter": "ldussart",
-    "country": "🇫🇷",
-    "bio": "Ludovic is a Solutions Architect, working with his customers to build EDA-oriented digital products wherever possible. His first contributions to AsyncAPI date back to 2020 around the kafka and avro specifications. Since then, Ludovic has been spreading the word about AsyncAPI to companies in Northern France, to accelerate adoption of the initiative.",
-    "linkedin": "ludovic-dussart-846a8063",
-    "company": "zatsit",
-    "title": "Solutions Architect / DevRel",
-    "img": "https://avatars.githubusercontent.com/u/5501911?s=400&u=d3f33c22f67788aba810ba8e910452aff62ad7c9&v=4",
-    "contributions": [
-      {
-        "type": "presentation",
-        "title": "From specification to production, how to provide a living doc of your asynchronous exchanges?",
-        "date": {
-          "year": 2021,
-          "month": "November"
-        },
-        "link": "https://www.youtube.com/watch?v=WwhRbvrf6Rs"
-      },
-      {
-        "type": "presentation",
-        "title": "AsyncApi Conference 2021 - Panel discussion",
-        "date": {
-          "year": 2021,
-          "month": "November"
-        },
-        "link": "https://www.youtube.com/live/3EeMHhbwyOQ?feature=share&t=23438"
-      },
-      {
-        "type": "presentation",
-        "title": "Building the future of Event-Driven Architecture - Meetup Ineat",
-        "date": {
-          "year": 2022,
-          "month": "January"
-        },
-        "link": ""
-      },
-      {
-        "type": "presentation",
-        "title": "Building the future of Event-Driven Architecture at AXA",
-        "date": {
-          "year": 2022,
-          "month": "March"
-        },
-        "link": ""
-      },
-      {
-        "type": "presentation",
-        "title": "Building the future of Event-Driven Architecture at NoConsulting",
-        "date": {
-          "year": 2022,
-          "month": "March"
-        },
-        "link": ""
-      },
-      {
-        "type": "presentation",
-        "title": "Building the future of Event-Driven Architecture at Adeo",
-        "date": {
-          "year": 2022,
-          "month": "April"
-        },
-        "link": ""
-      },
-      {
-        "type": "presentation",
-        "title": "Building the future of Event-Driven Architecture at Decathlon",
-        "date": {
-          "year": 2022,
-          "month": "April"
-        },
-        "link": ""
-      },
-      {
-        "type": "presentation",
-        "title": "Building the future of Event-Driven Architecture at Sfeir Lille",
-        "date": {
-          "year": 2023,
-          "month": "January"
-        },
-        "link": ""
-      },
-      {
-        "type": "article",
-        "title": "AsyncAPI - Adeo case study",
-        "date": {
-          "year": 2023
-        },
-        "link": "https://www.asyncapi.com/casestudies/adeogroup"
-      },
-      {
-        "type": "presentation",
-        "title": "Building the future of Event-Driven Architecture at Sfeir Paris",
-        "date": {
-          "year": 2023,
-          "month": "March"
-        },
-        "link": ""
-      },
-      {
-        "type": "presentation",
-        "title": "Standardisez votre monde d'événements en documentant vos EDA avec AsyncAPI ! - Cloud Nord 2023",
-        "date": {
-          "year": 2023,
-          "month": "October"
-        },
-        "link": "https://www.youtube.com/watch?v=pFMmQVppV6s"
-      },
-      {
-        "type": "special contribution",
-        "title": "Stay at API Days AsyncAPI Booth to share with attendees.",
-        "date": {
-          "year": 2023,
-          "month": "December"
-        },
-        "link": ""
-      },
-      {
-        "type": "presentation",
-        "title": "Quoi de neuf dans AsyncAPI v3 ? Découvrez le en live avec la migration du use-case Adeo",
-        "date": {
-          "year": 2023,
-          "month": "December"
-        },
-        "link": "https://www.youtube.com/watch?v=WCK9_ZDv6K4"
-      }
-    ]
-  },
-  {
-    "name": "Hari Krishnan",
-    "github": "harikrishnan83",
-    "twitter": "harikrishnan83",
-    "linkedin": "harikrishnan83",
-    "country": "🇮🇳",
-    "bio": "Co-creator of Specmatic and Perfiz. I also advise organizations, both large and small, on their transformation journey. Apart from bringing ideas to life as working software products, I coach developers, project managers, product owners, and engineering leaders. I have spoken at several conferences, including AACoT 2023, API Specification Conference (#ASC2022), API World, SeleniumConf, Agile2021, Agile India, TestingUY 2021, SREConf, PyCon Singapore, RubyConf India. My areas of interest include distributed systems, concurrency, high-performance application architecture, coaching, and training.",
-    "company": "Specmatic and Polarizer Technologies",
-    "title": "Co-founder and CTO at Specmatic, Founder, and CEO at Polarizer Technologies",
-    "img": "https://raw.githubusercontent.com/harikrishnan83/harikrishnan83/master/HariKrishnan-profile.jpg",
-    "contributions": [
-      {
-        "type": "talk",
-        "title": "Kafka and JMS Mocking with AsyncAPI",
-        "date": {
-          "year": 2023,
-          "month": "November"
-        },
-        "link": "https://www.youtube.com/watch?v=9yRf75p_kTU"
-      },
-      {
-        "type": "talk",
-        "title": "Unshackling Your System Under Test: Shift-Left Testing Through Dependency Isolation (Kafka Mocks with AsyncAPI specification)",
-        "date": {
-          "year": 2024,
-          "month": "June"
-        },
-        "link": "https://confengine.com/conferences/selenium-conf-2024/proposal/20021/unshackling-your-system-under-test-shift-left-testing-through-dependency-isolation"
-      },
-      {
-        "type": "talk",
-        "title": "Using API spec as an Executable Contract To Mock and Test Microservices",
-        "date": {
-          "year": 2024,
-          "month": "October"
-        },
-        "link": "https://www.youtube.com/watch?v=wiM20HTCerM"
-      },
-      {
-        "type": "talk",
-        "title": "Contract-Driven Development for Event-Driven Architectures",
-        "date": {
-          "year": 2024,
-          "month": "December"
-        },
-        "link": "https://conference.asyncapi.com/venue/Paris"
-      }
-    ]
-  },
-  {
-    "name": "Manuel Ottlik",
-    "github": "manuelottlik",
-    "twitter": "",
-    "linkedin": "manuelottlik",
-    "country": "🇩🇪",
-    "bio": "Manuel is the Product Owner of the Global Integration Platform at HDI Global SE. He sold his first software at the age of thirteen and has been developing software ever since. After graduating, he joined the financial industry in API management and eventually moved to HDI Global SE to merge a service bus, API management and an event broker into an integration platform for the cloud division. In addition to his work at HDI Global SE, he is co-founder of a small company in the education software sector and freelance writer for heise.de and its magazines.",
-    "company": "HDI Global SE",
-    "title": "Product Owner Integration Platform & PBAC Platform",
-    "img": "https://avatars.githubusercontent.com/u/28919003?v=4",
-    "contributions": [
-      {
-        "type": "talk",
-        "title": "Event-Driven Architecture und REST-APIs: Es gibt keine Konkurrenz!",
-        "date": {
-          "year": 2023,
-          "month": "April"
-        },
-        "link": ""
-      },
-      {
-        "type": "talk",
-        "title": "Event-driven Architecture and REST-APIs: It's not a competition",
-        "date": {
-          "year": 2023,
-          "month": "May"
-        },
-        "link": ""
-      },
-      {
-        "type": "talk",
-        "title": "Event-driven Architecture and REST-APIs: It's not a competition",
-        "date": {
-          "year": 2023,
-          "month": "September"
-        },
-        "link": ""
-      },
-      {
-        "type": "talk",
-        "title": "Event-Driven Architecture und REST-APIs: Es gibt keine Konkurrenz!",
-        "date": {
-          "year": 2023,
-          "month": "October"
-        },
-        "link": ""
-      },
-      {
-        "type": "talk",
-        "title": "Event-driven Architecture and REST-APIs: It's not a competition",
-        "date": {
-          "year": 2023,
-          "month": "December"
-        },
-        "link": "https://drive.google.com/file/d/1KN-iuw0P4nOYNhnT15RQvgq5YqGy4ECC/view?usp=sharing"
-      },
-      {
-        "type": "talk",
-        "title": "Eine Registry, sie alle zu knechten: Schemata von Entitäten mit xRegistry für alle Integrationsprodukte zentralisieren",
-        "date": {
-          "year": 2024,
-          "month": "April"
-        },
-        "link": ""
-      },
-      {
-        "type": "article",
-        "title": "AsyncAPI - HDI Global SE Case Study",
-        "date": {
-          "year": 2024,
-          "month": "July"
-        },
-        "link": "https://www.asyncapi.com/casestudies/hdiglobal"
-      }
-    ]
-  },
-  {
-    "name": "Lorna Mitchell",
-    "bio": "Lorna is based in Yorkshire, UK; she is a technology leader and expert in developer experience, passionate about enhancing APIs and developer tools. In her day job as VP of Developer Experience at Redocly, she works on API and documentation tools for technical teams. Lorna is a published author and a regular speaker at conferences, sharing her insights on a variety of tech-related topics. Lorna serves on the OpenUK board, is on the Technical Steering Committee for OpenAPI specification, and maintains open source projects. To learn more about Lorna's activities, visit her website at https://lornajane.net.",
-    "title": "APIs and Open Source",
-    "img": "https://lornajane.net/wp-content/uploads/2011/08/IMG_9410-smaller.jpg",
-    "github": "lornajane",
-    "twitter": "lornajane",
-    "linkedin": "lornajane",
-    "company": "Redocly",
-    "country": "UK",
-    "contributions": [
-      {
-        "type": "presentation",
-        "title": "API Governance for AsyncAPI",
-        "date": {
-          "year": 2023,
-          "month": "September"
-        },
-        "link": "https://noti.st/lornajane/aOuXwe/api-governance-for-asyncapi"
-      },
-      {
-        "type": "presentation",
-        "title": "AsyncAPI for Apache Kafka",
-        "date": {
-          "year": 2021,
-          "month": "May"
-        },
-        "link": "https://videos.confluent.io/watch/hzjXP8QmLtYRNPukNFUu2D?"
-      },
-      {
-        "type": "article",
-        "title": "Lint AsyncAPI with Redocly CLI",
-        "date": {
-          "year": 2023,
-          "month": "August"
-        },
-        "link": "https://redocly.com/docs/cli/guides/lint-asyncapi"
-      }
-    ]
-  },
-  {
-    "name": "Laurent Broudoux",
-    "github": "lbroudoux",
-    "twitter": "lbroudoux",
-    "country": "🇫🇷",
-    "bio": "Laurent is a Cloud-Native Architecture expert and Enterprise Integration problem lover. He is the founder and lead developer of the Microcks.io open-source project: a cloud-native tool for API mocking and testing. For this, he is using his 10+ years experience as an architect in Financial Services where he defined API transformation strategies, including governance and delivery process.",
-    "linkedin": "laurentbroudoux",
-    "company": "Postman",
-    "title": "Solutions Architect / DevRel",
-    "img": "https://avatars.githubusercontent.com/u/1538635?s=400&v=4",
-    "contributions": [
-      {
-        "type": "talk",
-        "title": "AsyncAPI unit testing - from nightmares to sweet dreams",
-        "date": {
-          "year": 2024,
-          "month": "December"
-        },
-	"link": ""
-      },
-      {
-        "type": "talk",
-        "title": "Using Testcontainers for AsyncAPI unit testing",
-        "date": {
-          "year": 2024,
-          "month": "September"
-        },
-	"link": ""
-      },
-      {
-        "type": "presentation",
-        "title": "Quoi de neuf dans AsyncAPI v3 ? Découvrez le en live avec la migration du use-case Adeo",
-        "date": {
-          "year": 2023,
-          "month": "December"
-        },
-        "link": "https://www.youtube.com/watch?v=WCK9_ZDv6K4"
-      },
-      {
-        "type": "talk",
-        "title": "Elevating Event-Driven Architecture: Boost your delivery with AsyncAPI and Microcks",
-        "date": {
-          "year": 2023,
-          "month": "December"
-        },
-        "link": "https://www.youtube.com/watch?v=PYEW3F91wbI"
-      },
-      {
-        "type": "presentation",
-        "title": "AsyncAPI Recipes for EDA Gourmet",
-        "date": {
-          "year": 2022,
-          "month": "November"
-        },
-        "link": "https://www.youtube.com/watch?v=m6vWzTF7LGI"
-      },
-      {
-        "type": "presentation",
-        "title": "AsyncAPI or CloudEvents? Both My Captain!",
-        "date": {
-          "year": 2021,
-          "month": "November"
-        },
-        "link": "https://www.youtube.com/watch?v=_p9RyClgYhE"
-      }
-    ]
-  }
+    {
+        "name": "Quetzalli Writes",
+        "img": "https://avatars.githubusercontent.com/u/19964402?v=4",
+        "bio": "Quetzalli Writes is an author of the book titled 'Docs-as-Ecosystem', which was published by the Apress Publishing Company. Quetzalli has been in tech for 9 years, working with SEO, Paid Search, Full-Stack development, UX, Developer Relations, and Technical Writing (Engineering Documentation). She's currently a core OSS contributor for Docs, DevRel, and Community Building at AsyncAPI Initiative. She's also a member of the AsyncAPI Technical Steering Committee (TSC).",
+        "title": "DevRel & DevDocs @AsyncAPI",
+        "github": "quetzalliwrites",
+        "githubID": 19964402,
+        "slack": "U02AKC14WAJ",
+        "twitter": "QuetzalliWrites",
+        "linkedin": "quetzalli-writes",
+        "company": "Postman",
+        "country": "\ud83c\uddf2\ud83c\uddfd",
+        "contributions": [
+            {
+                "type": "presentation",
+                "title": "How to contribute to AsyncAPI Dev Docs, AsyncAPI Conference",
+                "date": {
+                    "year": 2021,
+                    "month": "November"
+                },
+                "link": "https://www.youtube.com/watch?v=xAzbDDEbQ18"
+            },
+            {
+                "type": "workshop",
+                "title": "Workshop on contributing to AsyncAPI, CCOSS",
+                "date": {
+                    "year": 2021,
+                    "month": "October"
+                },
+                "link": "https://ccoss.org/sessions/2021/taller-contribucion-asyncapi/"
+            },
+            {
+                "type": "article",
+                "title": "Change is coming to our AsyncAPI Developer Documentation",
+                "date": {
+                    "year": 2021,
+                    "month": "December"
+                },
+                "link": "https://www.asyncapi.com/blog/changes-coming-docs"
+            },
+            {
+                "type": "initiative_driver",
+                "title": "Driver and promoter of Google Season of Docs at AsyncAPI",
+                "date": {
+                    "year": 2022,
+                    "month": "December"
+                },
+                "link": "https://www.asyncapi.com/blog/google-season-of-docs-2022"
+            }
+        ]
+    },
+    {
+        "name": "Daniel Kocot",
+        "img": "https://avatars.githubusercontent.com/u/466609?v=4",
+        "bio": "Daniel has been part of the codecentric team since October 2016. Since the beginning of 2022 he works as Senior Solution Architect at the Dortmund branch. Starting as a consultant with a focus on application lifecycle management, his focus shifted more and more towards APIs. In addition to numerous customer projects and his involvement in the open source world around APIs, our Head of API Experience & Operations is also a frequent speaker at conferences.",
+        "title": "Senior Solution Architect / Head of API Experience and Operations",
+        "github": "danielkocot",
+        "githubID": 466609,
+        "slack": "U029F3XUYM8",
+        "twitter": "dk_1977",
+        "linkedin": "danielkocot",
+        "company": "codecentric AG",
+        "country": "\ud83c\udde9\ud83c\uddea",
+        "isTscMember": true,
+        "contributions": [
+            {
+                "type": "article",
+                "title": "AsyncAPI - Documentation of event and message-driven architectures",
+                "date": {
+                    "year": 2021,
+                    "month": "September"
+                },
+                "link": "https://blog.codecentric.de/en/2021/09/asyncapi-documentation-event-message-driven-architectures/?hmsr=joyk.com&utm_source=joyk.com&utm_medium=referral"
+            },
+            {
+                "type": "article",
+                "title": "AsyncAPI specification updates",
+                "date": {
+                    "year": 2022,
+                    "month": "February"
+                },
+                "link": "https://blog.codecentric.de/en/2022/02/asyncapi-version-2-3-0-specification-updates/"
+            },
+            {
+                "type": "presentation",
+                "title": "AsyncAPI 101",
+                "date": {
+                    "year": 2022,
+                    "month": "May"
+                },
+                "link": "https://www.buildingiot.de/veranstaltung-13856-0-asyncapi-101.html"
+            },
+            {
+                "type": "presentation",
+                "title": "Adopting AsyncAPI in Enterprisey Contexts, AsyncAPI Conference",
+                "date": {
+                    "year": 2022,
+                    "month": "November"
+                },
+                "link": "https://www.youtube.com/watch?v=_wTcV63jrnU"
+            }
+        ]
+    },
+    {
+        "name": "Giri Venkatesan",
+        "github": "gvensan",
+        "githubID": 4477169,
+        "slack": "U02MHRKL2G2",
+        "twitter": "giri_venkatesan",
+        "country": "\ud83c\uddee\ud83c\uddf3",
+        "bio": "Giri Venkatesan, a follower and proponent of AsyncAPI and teams up with companies & SIs to design event-driven architecture and asynchronous APIs. To guide those discussions, I draw upon years of integration and implementation experience, particularly with Solace platforms. I've been a follower of AsyncAPI since 2022, and written blogs and delivered talks at conferences and AsyncAPI confrence tours.",
+        "linkedin": "girivenkatesan",
+        "company": "Solace",
+        "title": "Developer Advocate, Office of the CTO at Solace",
+        "img": "https://avatars.githubusercontent.com/u/4477169?s=96&v=4",
+        "contributions": [
+            {
+                "type": "article",
+                "title": "Bridging Design and Runtime Gaps: AsyncAPI in Event-Driven Architecture",
+                "date": {
+                    "year": 2024,
+                    "month": "February"
+                },
+                "link": "https://www.linux.com/news/bridging-design-and-runtime-gaps-asyncapi-in-event-driven-architecture/"
+            },
+            {
+                "type": "talk",
+                "title": "Bridging the Gap between Design and Runtime in EDA with AsyncAPI and CI/CD",
+                "date": {
+                    "year": 2023,
+                    "month": "November"
+                },
+                "link": "https://www.youtube.com/watch?v=CXt-fy82PCk"
+            },
+            {
+                "type": "talk",
+                "title": "Bridging the Gap between Design and Runtime in EDA with AsyncAPI",
+                "date": {
+                    "year": 2023,
+                    "month": "August"
+                },
+                "link": "https://www.youtube.com/watch?v=ewpADLeLNE4"
+            },
+            {
+                "type": "article",
+                "title": "AsyncAPI + Spring Cloud Stream = Event-Driven Microservices Made Easy",
+                "date": {
+                    "year": 2021,
+                    "month": "November"
+                },
+                "link": "https://www.youtube.com/watch?v=3EeMHhbwyOQ&t=4142s"
+            }
+        ]
+    },
+    {
+        "name": "Hugo Guerrero",
+        "img": "https://avatars.githubusercontent.com/u/1001939?v=4",
+        "bio": "Hugo Guerrero is a developer advocate with over 20 years of hands-on experience in software development. He\u2019s worked across the stack as a developer, consultant, architect, and software factory manager. Hugo is a strong advocate for event-driven systems and actively contributes to open source communities, including AsyncAPI. He maintains the Microcks Docker Desktop Extension and regularly shares practical insights on APIs, distributed systems, and developer tooling.",
+        "github": "hguerrero",
+        "githubID": 1001939,
+        "slack": "U01H9D8J4H1",
+        "twitter": "hguerreroo",
+        "title": "Head of Technical Marketing",
+        "linkedin": "hugoguerrero",
+        "company": "Kong",
+        "country": "\ud83c\uddf2\ud83c\uddfd",
+        "isTscMember": true,
+        "isBoardMember": true,
+        "contributions": [
+            {
+                "type": "presentation",
+                "title": "Speed-Up Kafka Delivery with AsyncAPI & Microcks",
+                "date": {
+                    "year": 2021,
+                    "month": "July"
+                },
+                "link": "https://www.confluent.io/events/kafka-summit-apac-2021/speed-up-kafka-delivery-with-asyncapi-and-microcks/"
+            },
+            {
+                "type": "presentation",
+                "title": "Automated Apache Kafka Mocking and Testing with AsyncAPI",
+                "date": {
+                    "year": 2021,
+                    "month": "September"
+                },
+                "link": "https://www.confluent.io/events/kafka-summit-americas-2021/automated-apache-kafka-mocking-and-testing-with-asyncapi/"
+            },
+            {
+                "type": "presentation",
+                "title": "Event-driven APIs & Schema governance for Apache Kafka, Apidays LIVE Hong Kong",
+                "date": {
+                    "year": 2021,
+                    "month": "August"
+                },
+                "link": "https://www.youtube.com/watch?v=rwlHJkgaRdw"
+            },
+            {
+                "type": "presentation",
+                "title": "Event-driven APIs & Schema governance for Apache Kafka, API Specification Conference",
+                "date": {
+                    "year": 2021,
+                    "month": "August"
+                },
+                "link": "https://www.youtube.com/watch?v=QZ4cJyTw-U0"
+            },
+            {
+                "type": "presentation",
+                "title": "Getting started with Event-Driven APIs, Apidays LIVE Paris",
+                "date": {
+                    "year": 2021,
+                    "month": "December"
+                },
+                "link": "https://www.youtube.com/watch?v=_kIE-qtpwTA&t=9s"
+            }
+        ]
+    },
+    {
+        "name": "Ivan Garcia Sainz-Aja",
+        "github": "ivangsa",
+        "githubID": 1246876,
+        "slack": "UTCN3ET4M",
+        "twitter": "ivangsa",
+        "bio": "Java Architect with a deep understanding of Java, Spring-Boot, Spring-Cloud technologies, specializing in Domain-Driven Design (DDD) and Event-Driven Architectures creating Software Easy to Understand. Building ZenWave 360\u00ba. ZenWave 360\u00ba is a set of tools built on the foundations of Domain Driven Design and API-First principles for Event-Driven Architectures, to help you create software easy to understand. https://www.zenwave360.io/",
+        "linkedin": "ivangarciasainzaja",
+        "company": "IZERTIS",
+        "title": "Java Architect. Speaker. Building ZenWave 360\u00b0.",
+        "img": "https://avatars.githubusercontent.com/u/1246876?v=4",
+        "contributions": [
+            {
+                "type": "initiative_driver",
+                "title": "AsyncAPI Conference On Tour 2023 - Madrid",
+                "date": {
+                    "year": 2023,
+                    "month": "October"
+                },
+                "link": "https://www.youtube.com/playlist?list=PLbi1gRlP7pihD-7XYb6c9wcTdkavDzF3_"
+            },
+            {
+                "type": "initiative_driver",
+                "title": "ZenWave SDK - Code Generator for AsyncAPI with Spring Cloud Streams",
+                "date": {
+                    "year": 2024,
+                    "month": "2022"
+                },
+                "link": "https://www.zenwave360.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/"
+            },
+            {
+                "type": "article",
+                "title": "API-First with AsyncAPI",
+                "date": {
+                    "year": 2023,
+                    "month": "March"
+                },
+                "link": "https://www.zenwave360.io/posts/API-First-with-AsyncAPI-And-ZenWave-SDK/"
+            },
+            {
+                "type": "article",
+                "title": "ZenWave AsyncAPI Code Generator",
+                "date": {
+                    "year": 2023,
+                    "month": "March"
+                },
+                "link": "https://www.zenwave360.io/posts/ZenWave-AsyncAPI-Code-Generator/"
+            },
+            {
+                "type": "article",
+                "title": "Generating AsyncAPI definition files from JDL with ZenWaveSDK",
+                "date": {
+                    "year": 2023,
+                    "month": "April"
+                },
+                "link": "https://www.zenwave360.io/posts/JHipster-As-IDL-for-AsyncAPIv2/"
+            },
+            {
+                "type": "presentation",
+                "title": "KIT - API-First with AsyncAPI for Event Driven Architectures",
+                "date": {
+                    "year": 2023,
+                    "month": "May"
+                },
+                "link": "https://www.youtube.com/watch?v=EoWFZfmspFM"
+            },
+            {
+                "type": "presentation",
+                "title": "Practical Event Storming with AsyncAPI v3 and ZenWave SDK",
+                "date": {
+                    "year": 2023,
+                    "month": "October"
+                },
+                "link": "https://www.youtube.com/watch?v=-uHONzz-a6U"
+            },
+            {
+                "type": "presentation",
+                "title": "Code Generation For Enterprise Integration Patterns w/ AsyncAPI & ZenWave SDK",
+                "date": {
+                    "year": 2023,
+                    "month": "October"
+                },
+                "link": "https://www.youtube.com/watch?v=gUsoD8RaCuw"
+            }
+        ]
+    },
+    {
+        "name": "Ludovic Dussart",
+        "github": "M3lkior",
+        "githubID": 5501911,
+        "slack": "U01BM49KL3Z",
+        "twitter": "ldussart",
+        "country": "\ud83c\uddeb\ud83c\uddf7",
+        "bio": "Ludovic is a Solutions Architect, working with his customers to build EDA-oriented digital products wherever possible. His first contributions to AsyncAPI date back to 2020 around the kafka and avro specifications. Since then, Ludovic has been spreading the word about AsyncAPI to companies in Northern France, to accelerate adoption of the initiative.",
+        "linkedin": "ludovic-dussart-846a8063",
+        "company": "zatsit",
+        "title": "Solutions Architect / DevRel",
+        "img": "https://avatars.githubusercontent.com/u/5501911?s=400&u=d3f33c22f67788aba810ba8e910452aff62ad7c9&v=4",
+        "contributions": [
+            {
+                "type": "presentation",
+                "title": "From specification to production, how to provide a living doc of your asynchronous exchanges?",
+                "date": {
+                    "year": 2021,
+                    "month": "November"
+                },
+                "link": "https://www.youtube.com/watch?v=WwhRbvrf6Rs"
+            },
+            {
+                "type": "presentation",
+                "title": "AsyncApi Conference 2021 - Panel discussion",
+                "date": {
+                    "year": 2021,
+                    "month": "November"
+                },
+                "link": "https://www.youtube.com/live/3EeMHhbwyOQ?feature=share&t=23438"
+            },
+            {
+                "type": "presentation",
+                "title": "Building the future of Event-Driven Architecture - Meetup Ineat",
+                "date": {
+                    "year": 2022,
+                    "month": "January"
+                },
+                "link": ""
+            },
+            {
+                "type": "presentation",
+                "title": "Building the future of Event-Driven Architecture at AXA",
+                "date": {
+                    "year": 2022,
+                    "month": "March"
+                },
+                "link": ""
+            },
+            {
+                "type": "presentation",
+                "title": "Building the future of Event-Driven Architecture at NoConsulting",
+                "date": {
+                    "year": 2022,
+                    "month": "March"
+                },
+                "link": ""
+            },
+            {
+                "type": "presentation",
+                "title": "Building the future of Event-Driven Architecture at Adeo",
+                "date": {
+                    "year": 2022,
+                    "month": "April"
+                },
+                "link": ""
+            },
+            {
+                "type": "presentation",
+                "title": "Building the future of Event-Driven Architecture at Decathlon",
+                "date": {
+                    "year": 2022,
+                    "month": "April"
+                },
+                "link": ""
+            },
+            {
+                "type": "presentation",
+                "title": "Building the future of Event-Driven Architecture at Sfeir Lille",
+                "date": {
+                    "year": 2023,
+                    "month": "January"
+                },
+                "link": ""
+            },
+            {
+                "type": "article",
+                "title": "AsyncAPI - Adeo case study",
+                "date": {
+                    "year": 2023
+                },
+                "link": "https://www.asyncapi.com/casestudies/adeogroup"
+            },
+            {
+                "type": "presentation",
+                "title": "Building the future of Event-Driven Architecture at Sfeir Paris",
+                "date": {
+                    "year": 2023,
+                    "month": "March"
+                },
+                "link": ""
+            },
+            {
+                "type": "presentation",
+                "title": "Standardisez votre monde d'\u00e9v\u00e9nements en documentant vos EDA avec AsyncAPI ! - Cloud Nord 2023",
+                "date": {
+                    "year": 2023,
+                    "month": "October"
+                },
+                "link": "https://www.youtube.com/watch?v=pFMmQVppV6s"
+            },
+            {
+                "type": "special contribution",
+                "title": "Stay at API Days AsyncAPI Booth to share with attendees.",
+                "date": {
+                    "year": 2023,
+                    "month": "December"
+                },
+                "link": ""
+            },
+            {
+                "type": "presentation",
+                "title": "Quoi de neuf dans AsyncAPI v3 ? D\u00e9couvrez le en live avec la migration du use-case Adeo",
+                "date": {
+                    "year": 2023,
+                    "month": "December"
+                },
+                "link": "https://www.youtube.com/watch?v=WCK9_ZDv6K4"
+            }
+        ]
+    },
+    {
+        "name": "Hari Krishnan",
+        "github": "harikrishnan83",
+        "githubID": 126087,
+        "slack": "U067JPY0UH5",
+        "twitter": "harikrishnan83",
+        "linkedin": "harikrishnan83",
+        "country": "\ud83c\uddee\ud83c\uddf3",
+        "bio": "Hari Krishnan has over two decades of experience in building high-performing teams, designing scalable systems, and driving technical strategy for large enterprises and high-growth startups across industries like finance, telecom, logistics, and retail. As Founder and CEO of Polarizer Technologies he has led enterprise-wide initiatives in architecture, developer experience, test automation and AI adoption. He combines deep technical expertise with executive vision, having worked closely with CXOs on strategy, delivery assurance, and organizational agility. He is widely recognized for his contributions to API governance, platform engineering, and contract-driven development. His areas of interest include distributed systems, AI native products, AI augmented and agentic software delivery.",
+        "company": "Polarizer Technologies",
+        "title": "Founder, and CEO at Polarizer Technologies",
+        "img": "https://raw.githubusercontent.com/harikrishnan83/harikrishnan83/master/HariKrishnan-profile.jpg",
+        "isTscMember": true,
+        "contributions": [
+            {
+                "type": "talk",
+                "title": "Kafka and JMS Mocking with AsyncAPI",
+                "date": {
+                    "year": 2023,
+                    "month": "November"
+                },
+                "link": "https://www.youtube.com/watch?v=9yRf75p_kTU"
+            },
+            {
+                "type": "talk",
+                "title": "Unshackling Your System Under Test: Shift-Left Testing Through Dependency Isolation (Kafka Mocks with AsyncAPI specification)",
+                "date": {
+                    "year": 2024,
+                    "month": "June"
+                },
+                "link": "https://confengine.com/conferences/selenium-conf-2024/proposal/20021/unshackling-your-system-under-test-shift-left-testing-through-dependency-isolation"
+            },
+            {
+                "type": "talk",
+                "title": "Using API spec as an Executable Contract To Mock and Test Microservices",
+                "date": {
+                    "year": 2024,
+                    "month": "October"
+                },
+                "link": "https://www.youtube.com/watch?v=wiM20HTCerM"
+            },
+            {
+                "type": "talk",
+                "title": "Contract-Driven Development for Event-Driven Architectures",
+                "date": {
+                    "year": 2024,
+                    "month": "December"
+                },
+                "link": "https://conference.asyncapi.com/venue/Paris"
+            },
+            {
+                "type": "talk",
+                "title": "Unifying OpenAPI & AsyncAPI: Designing JSON Schemas + Examples for Reuse",
+                "date": {
+                    "year": 2025,
+                    "month": "May"
+                },
+                "link": "https://www.openapis.org/events/apidays-new-york-2025"
+            },
+            {
+                "type": "talk",
+                "title": "Reliable AWS Lambda Data Pipelines with AsyncAPI Specification",
+                "date": {
+                    "year": 2025,
+                    "month": "August"
+                },
+                "link": "https://conferences.gotopia.tech/goto-serverless-bengaluru-2025/sessions/3845/reliable-aws-lambda-data-pipelines-with-asyncapi-specification"
+            },
+            {
+                "type": "talk",
+                "title": "AsyncAPI 2.6 to 3.0: Migrating Safely with No-Code Backward Compatibility Checks",
+                "date": {
+                    "year": 2025,
+                    "month": "October"
+                },
+                "link": "https://www.apidays.global/events/india"
+            }
+        ]
+    },
+    {
+        "name": "Manuel Ottlik",
+        "github": "manuelottlik",
+        "githubID": 28919003,
+        "slack": "U07GXSEH0E6",
+        "twitter": "",
+        "linkedin": "manuelottlik",
+        "country": "\ud83c\udde9\ud83c\uddea",
+        "bio": "Manuel is the Product Owner of the Global Integration Platform at HDI Global SE. He sold his first software at the age of thirteen and has been developing software ever since. After graduating, he joined the financial industry in API management and eventually moved to HDI Global SE to merge a service bus, API management and an event broker into an integration platform for the cloud division. In addition to his work at HDI Global SE, he is co-founder of a small company in the education software sector and freelance writer for heise.de and its magazines.",
+        "company": "HDI Global SE",
+        "title": "Product Owner Integration Platform & PBAC Platform",
+        "img": "https://avatars.githubusercontent.com/u/28919003?v=4",
+        "contributions": [
+            {
+                "type": "talk",
+                "title": "Event-Driven Architecture und REST-APIs: Es gibt keine Konkurrenz!",
+                "date": {
+                    "year": 2023,
+                    "month": "April"
+                },
+                "link": ""
+            },
+            {
+                "type": "talk",
+                "title": "Event-driven Architecture and REST-APIs: It's not a competition",
+                "date": {
+                    "year": 2023,
+                    "month": "May"
+                },
+                "link": ""
+            },
+            {
+                "type": "talk",
+                "title": "Event-driven Architecture and REST-APIs: It's not a competition",
+                "date": {
+                    "year": 2023,
+                    "month": "September"
+                },
+                "link": ""
+            },
+            {
+                "type": "talk",
+                "title": "Event-Driven Architecture und REST-APIs: Es gibt keine Konkurrenz!",
+                "date": {
+                    "year": 2023,
+                    "month": "October"
+                },
+                "link": ""
+            },
+            {
+                "type": "talk",
+                "title": "Event-driven Architecture and REST-APIs: It's not a competition",
+                "date": {
+                    "year": 2023,
+                    "month": "December"
+                },
+                "link": "https://drive.google.com/file/d/1KN-iuw0P4nOYNhnT15RQvgq5YqGy4ECC/view?usp=sharing"
+            },
+            {
+                "type": "talk",
+                "title": "Eine Registry, sie alle zu knechten: Schemata von Entit\u00e4ten mit xRegistry f\u00fcr alle Integrationsprodukte zentralisieren",
+                "date": {
+                    "year": 2024,
+                    "month": "April"
+                },
+                "link": ""
+            },
+            {
+                "type": "article",
+                "title": "AsyncAPI - HDI Global SE Case Study",
+                "date": {
+                    "year": 2024,
+                    "month": "July"
+                },
+                "link": "https://www.asyncapi.com/casestudies/hdiglobal"
+            }
+        ]
+    },
+    {
+        "name": "Lorna Mitchell",
+        "bio": "Lorna is based in Yorkshire, UK; she is a technology leader and expert in developer experience, passionate about enhancing APIs and developer tools. In her day job as VP of Developer Experience at Redocly, she works on API and documentation tools for technical teams. Lorna is a published author and a regular speaker at conferences, sharing her insights on a variety of tech-related topics. Lorna serves on the OpenUK board, is on the Technical Steering Committee for OpenAPI specification, and maintains open source projects. To learn more about Lorna's activities, visit her website at https://lornajane.net.",
+        "title": "APIs and Open Source",
+        "img": "https://lornajane.net/wp-content/uploads/2011/08/IMG_9410-smaller.jpg",
+        "github": "lornajane",
+        "githubID": 172607,
+        "slack": "U017NCG83AQ",
+        "twitter": "lornajane",
+        "linkedin": "lornajane",
+        "company": "Redocly",
+        "country": "UK",
+        "contributions": [
+            {
+                "type": "presentation",
+                "title": "API Governance for AsyncAPI",
+                "date": {
+                    "year": 2023,
+                    "month": "September"
+                },
+                "link": "https://noti.st/lornajane/aOuXwe/api-governance-for-asyncapi"
+            },
+            {
+                "type": "presentation",
+                "title": "AsyncAPI for Apache Kafka",
+                "date": {
+                    "year": 2021,
+                    "month": "May"
+                },
+                "link": "https://videos.confluent.io/watch/hzjXP8QmLtYRNPukNFUu2D?"
+            },
+            {
+                "type": "article",
+                "title": "Lint AsyncAPI with Redocly CLI",
+                "date": {
+                    "year": 2023,
+                    "month": "August"
+                },
+                "link": "https://redocly.com/docs/cli/guides/lint-asyncapi"
+            }
+        ]
+    },
+    {
+        "name": "Laurent Broudoux",
+        "github": "lbroudoux",
+        "githubID": 1538635,
+        "slack": "U018NLDV5E1",
+        "twitter": "lbroudoux",
+        "country": "\ud83c\uddeb\ud83c\uddf7",
+        "bio": "Laurent is a Cloud-Native Architecture expert and Enterprise Integration problem lover. He is the founder and lead developer of the Microcks.io open-source project: a cloud-native tool for API mocking and testing. For this, he is using his 10+ years experience as an architect in Financial Services where he defined API transformation strategies, including governance and delivery process.",
+        "linkedin": "laurentbroudoux",
+        "company": "Postman",
+        "title": "Solutions Architect / DevRel",
+        "img": "https://avatars.githubusercontent.com/u/1538635?s=400&v=4",
+        "contributions": [
+            {
+                "type": "talk",
+                "title": "AsyncAPI unit testing - from nightmares to sweet dreams",
+                "date": {
+                    "year": 2024,
+                    "month": "December"
+                },
+                "link": ""
+            },
+            {
+                "type": "talk",
+                "title": "Using Testcontainers for AsyncAPI unit testing",
+                "date": {
+                    "year": 2024,
+                    "month": "September"
+                },
+                "link": ""
+            },
+            {
+                "type": "presentation",
+                "title": "Quoi de neuf dans AsyncAPI v3 ? D\u00e9couvrez le en live avec la migration du use-case Adeo",
+                "date": {
+                    "year": 2023,
+                    "month": "December"
+                },
+                "link": "https://www.youtube.com/watch?v=WCK9_ZDv6K4"
+            },
+            {
+                "type": "talk",
+                "title": "Elevating Event-Driven Architecture: Boost your delivery with AsyncAPI and Microcks",
+                "date": {
+                    "year": 2023,
+                    "month": "December"
+                },
+                "link": "https://www.youtube.com/watch?v=PYEW3F91wbI"
+            },
+            {
+                "type": "presentation",
+                "title": "AsyncAPI Recipes for EDA Gourmet",
+                "date": {
+                    "year": 2022,
+                    "month": "November"
+                },
+                "link": "https://www.youtube.com/watch?v=m6vWzTF7LGI"
+            },
+            {
+                "type": "presentation",
+                "title": "AsyncAPI or CloudEvents? Both My Captain!",
+                "date": {
+                    "year": 2021,
+                    "month": "November"
+                },
+                "link": "https://www.youtube.com/watch?v=_p9RyClgYhE"
+            }
+        ]
+    },
+    {
+        "name": "Naresh Jain",
+        "github": "nashjain",
+        "githubID": 38799,
+        "slack": "U07QPEBAC9Y",
+        "twitter": "nashjain",
+        "linkedin": "http://linkedin.com/in/nareshjain/",
+        "country": "\ud83c\uddee\ud83c\uddf3",
+        "isTscMember": true,
+        "bio": "Naresh is an internationally recognised Technology & Product Development Expert. Over the last 25 years, he has played a key role in streamlining the product engineering culture at many unicorns and fortune 500 companies. Naresh is the Founder, CEO of several companies - Xnsio, ConfEngine and Specmatic. Naresh is also the local organiser of API Days India. In 2004, Naresh started the Agile movement in India. More details: https://nareshjain.com",
+        "company": "Specmatic, Xnsio, ConfEngine",
+        "title": "Founder, CEO at Specmatic, Xnsio and ConfEngine",
+        "img": "https://avatars.githubusercontent.com/u/38799?v=4",
+        "contributions": [
+            {
+                "type": "talk",
+                "title": "Multi-Protocol APIs: Designing a Unified Interface for EDA",
+                "date": {
+                    "year": 2025,
+                    "month": "April"
+                },
+                "link": "https://www.youtube.com/watch?v=mQVo498NtOI"
+            },
+            {
+                "type": "talk",
+                "title": "TMForum's AsyncAPIs For a New Era of Event-Driven Architecture",
+                "date": {
+                    "year": 2024,
+                    "month": "December"
+                },
+                "link": "https://www.youtube.com/watch?v=L2W1058nPyU"
+            },
+            {
+                "type": "talk",
+                "title": "Project API Forge: Streamlining Dev-First API Lifecycle Management",
+                "date": {
+                    "year": 2024,
+                    "month": "December"
+                },
+                "link": "https://www.youtube.com/watch?v=AfopdGddnLc"
+            },
+            {
+                "type": "talk",
+                "title": "10x DevEx: Shift-Left API Governance = CycleTime/2",
+                "date": {
+                    "year": 2024,
+                    "month": "October"
+                },
+                "link": "https://www.youtube.com/watch?v=I5eplxVQrhI"
+            }
+        ]
+    },
+    {
+        "name": "Ankit Kumar",
+        "github": "ankitk-me",
+        "githubID": 6847653,
+        "slack": "U05G8N33D51",
+        "twitter": "ankitm_me",
+        "linkedin": "ankit28",
+        "country": "\ud83c\uddee\ud83c\uddf3",
+        "bio": "Ankit Kumar leads Developer and Customer Success at Aklivity, bringing over eight years of experience in API infrastructure, streaming platforms, and event-driven architectures. He\u2019s an advocate for modern API connectivity, helping developers adopt event-driven systems through community engagement and shared best practices.",
+        "company": "Aklivity",
+        "title": "Head of Developer and Customer Success",
+        "img": "https://avatars.githubusercontent.com/u/6847653?v=4",
+        "contributions": [
+            {
+                "type": "talk",
+                "title": "Dynamic API Delivery with Zilla: Unleashing the Power of AsyncAPI in EDAs",
+                "date": {
+                    "year": 2023,
+                    "month": "November"
+                },
+                "link": "https://youtu.be/3iFdszHUpgI?si=Z4voghTDAgb-nyUP"
+            },
+            {
+                "type": "talk",
+                "title": "AsyncAPI v3: Streamlining Event-Driven API Design",
+                "date": {
+                    "year": 2025,
+                    "month": "April"
+                },
+                "link": "https://youtu.be/iFXYNubBmQc?si=YN_ShCs9ZDwi1aEk"
+            },
+            {
+                "type": "booth",
+                "title": "Manned the AsyncAPI booth during APIDays Singapore to connect with developers and promote the AsyncAPI initiative.",
+                "date": {
+                    "year": 2025,
+                    "month": "April"
+                },
+                "link": ""
+            },
+            {
+                "type": "article",
+                "title": "AsyncAPI v3: Streamlining Event-Driven API Design",
+                "date": {
+                    "year": 2025,
+                    "month": "May"
+                },
+                "link": "https://www.aklivity.io/post/asyncapi-v3-streamlining-event-driven-api-design"
+            },
+            {
+                "type": "article",
+                "title": "AsyncAPI's Role in Next Gen API Management",
+                "date": {
+                    "year": 2025,
+                    "month": "September"
+                },
+                "link": "https://www.aklivity.io/post/asyncapis-role-in-next-gen-api-management"
+            },
+            {
+                "type": "talk",
+                "title": "AsyncAPI's Role in Shift Left Streaming Architectures",
+                "date": {
+                    "year": 2025,
+                    "month": "October"
+                },
+                "link": "https://confengine.com/conferences/apidays-india-2025/proposal/22979/asyncapis-role-in-shift-left-streaming-architectures"
+            }
+        ]
+    }
 ]

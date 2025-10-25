@@ -19,10 +19,13 @@ export function ensureDirectoryExists(directory: PathLike) {
 ensureDirectoryExists(TARGET_DIR);
 
 /**
- * Capitalizes JSX tags in the provided content string.
+ * Capitalizes the first letter of JSX tag names in the provided content if they are in a predefined list.
  *
- * @param {string} content - The content string to process.
- * @returns {string} - The content string with capitalized JSX tags.
+ * This function scans the input string for opening and closing JSX tags using a regular expression.
+ * If a tag's lowercase name is found in the configured list of tags to capitalize, its first character is converted to uppercase.
+ *
+ * @param content - The string containing JSX elements.
+ * @returns The updated content with designated JSX tag names capitalized.
  */
 export function capitalizeJsxTags(content: string): string {
   return content.replace(/<\/?(\w+)/g, function (match: string, letter: string): string {
@@ -35,10 +38,12 @@ export function capitalizeJsxTags(content: string): string {
 }
 
 /**
- * Copies and renames files from the source directory to the target directory.
+ * Recursively copies files and directories from the source to the target directory with content transformations.
  *
- * @param {string} srcDir - The source directory.
- * @param {string} targetDir - The target directory.
+ * The function processes each entry found in the source directory. For files, it transforms the content by converting HTML comments into JSX comments and capitalizing specific JSX tags. After transformation, the content is written to the target directory. Files with a '.md' extension are renamed to use the '.mdx' extension. For directories, a corresponding directory is created in the target if it doesn't exist, and the function is called recursively.
+ *
+ * @param srcDir - The path to the source directory containing files and subdirectories.
+ * @param targetDir - The path to the target directory where transformed files and directories are written.
  */
 export function copyAndRenameFiles(srcDir: string, targetDir: string) {
   // Read all files and directories from source directory
@@ -47,8 +52,6 @@ export function copyAndRenameFiles(srcDir: string, targetDir: string) {
   entries.forEach((entry) => {
     const srcPath = path.join(srcDir, entry.name);
     const targetPath = path.join(targetDir, entry.name);
-
-    /* istanbul ignore else */
 
     if (entry.isDirectory()) {
       // If entry is a directory, create it in target directory and recurse

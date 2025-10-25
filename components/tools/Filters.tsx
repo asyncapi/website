@@ -79,7 +79,8 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
 
     const searchParams = new URLSearchParams();
 
-    // Set the params key only when the default value of the key changes. This is to know when the user actually applies filter(s).
+    // Set the params key only when the default value of the key changes.
+    // This is to know when the user actually applies filter(s).
 
     if (checkPaid !== 'all') {
       searchParams.set('pricing', checkPaid);

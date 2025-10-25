@@ -1,13 +1,14 @@
 import fs from 'fs/promises';
+import he from 'he'; // Updated import
 import json2xml from 'jgexml/json2xml';
 
 import type { Details, Result } from '@/types/scripts/build-posts-list';
 import type { BlogPostTypes, RSS, RSSItemType } from '@/types/scripts/build-rss';
 
 /**
- * Retrieves all blog posts from the configuration file.
+ * Asynchronously retrieves all blog posts from the posts configuration file.
  *
- * @returns {Promise<any>} - A promise that resolves to the list of all blog posts.
+ * @returns A promise that resolves to the list of blog posts.
  */
 async function getAllPosts() {
   const posts = (await import('../config/posts.json')).default as Result;
@@ -16,32 +17,20 @@ async function getAllPosts() {
 }
 
 /**
- * Cleans a string by replacing HTML entities with their corresponding characters.
+ * Generates and writes an RSS feed file for a specified blog post type.
  *
- * @param {string} s - The string to clean.
- * @returns {string} - The cleaned string.
- */
-function clean(s: string) {
-  let cleanS = s;
-
-  cleanS = cleanS.split('&ltspan&gt').join('');
-  cleanS = cleanS.split('&amp').join('&');
-  cleanS = cleanS.split('&#39;').join("'");
-  cleanS = cleanS.split('&lt;').join('<');
-  cleanS = cleanS.split('&gt;').join('>');
-  cleanS = cleanS.split('&quot;').join('"');
-
-  return cleanS;
-}
-
-/**
- * Generates an RSS feed for the specified blog post type.
+ * Retrieves all blog posts, filters out those without a publication date, and validates that each post
+ * contains the required fields (title, slug, excerpt, date). The posts are then sorted by featured status
+ * and publication date before being converted into an RSS feed structure. The resulting XML feed is written
+ * to the specified output file path.
  *
- * @param {BlogPostTypes} type - The type of blog posts to include in the RSS feed.
- * @param {string} rssTitle - The title of the RSS feed.
- * @param {string} desc - The description of the RSS feed.
- * @param {string} outputPath - The output path for the generated RSS feed file.
- * @throws {Error} - Throws an error if there is an issue during the RSS feed generation.
+ * @param type - The blog post type to include in the feed.
+ * @param rssTitle - The title of the RSS feed.
+ * @param desc - A description of the RSS feed.
+ * @param outputPath - The file path where the generated RSS feed should be saved.
+ *
+ * @throws {Error} If any blog post is missing required fields or if an error occurs during the RSS feed generation
+ * or file writing process.
  */
 export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: string, outputPath: string) {
   try {
@@ -58,7 +47,6 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
 
       return i2Date.getTime() - i1Date.getTime();
     });
-    /* istanbul ignore next */
     if (missingDatePosts.length > 0) {
       throw new Error(`Missing date in posts: ${missingDatePosts.map((p) => p.title || p.slug).join(', ')}`);
     }
@@ -109,7 +97,7 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
       const link = `${base}${post.slug}${tracking}`;
       const { title, excerpt, date } = post;
       const pubDate = new Date(date).toUTCString();
-      const description = clean(excerpt!);
+      const description = he.decode(excerpt!);
       const guid = { '@isPermaLink': true, '': link };
       const item: RSSItemType = {
         title,
@@ -122,7 +110,6 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
 
       if (post.cover) {
         const fileExtension = post.cover.substring(post.cover.lastIndexOf('.')).toLowerCase();
-        /* istanbul ignore next */
         const mimeType = mimeTypes[fileExtension] || 'image/jpeg';
 
         item.enclosure = {
