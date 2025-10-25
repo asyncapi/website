@@ -126,7 +126,7 @@ export default function BlogIndexPage() {
       <div className='relative px-4 pb-20 pt-8 sm:px-6 lg:px-8 lg:pb-28 lg:pt-12' id='main-content'>
         <div className='relative mx-auto max-w-7xl'>
           <div className='text-center px-4'>
-            <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg} className='text-gray-900 dark:text-white text-3xl sm:text-4xl md:text-5xl'>
+            <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.xxl} className='text-gray-900 dark:text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl'>
               Welcome to our blog!
             </Heading>
             <Paragraph className='mx-auto mt-3 max-w-2xl text-gray-600 dark:text-gray-300 sm:mt-4 text-base sm:text-lg'>
