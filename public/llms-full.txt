@@ -112,7 +112,6 @@ This file contains all AsyncAPI resources organized for LLM consumption, includi
 
 ## Examples and Templates
 - [Specification Examples](https://github.com/asyncapi/spec/tree/master/examples): Official AsyncAPI document examples
-- [Template Examples](https://github.com/asyncapi/generator/tree/master/templates): Generator template examples
 
 ## Optional
 - [Community Resources](https://www.asyncapi.com/community): Community guidelines and contribution information
