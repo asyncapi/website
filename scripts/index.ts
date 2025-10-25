@@ -7,6 +7,8 @@ import { buildPostList } from './build-post-list';
 import { rssFeed } from './build-rss';
 import { buildCaseStudiesList } from './casestudies/index';
 import { buildFinanceInfoList } from './finance/index';
+import { buildLlmsTxt } from './build-llms';
+import { buildLlmsFull } from './build-llms-full';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
@@ -32,6 +34,8 @@ async function start() {
 
   await buildPostList(postDirectories, basePath, writeFilePath);
   await rssFeed('blog', 'AsyncAPI Initiative Blog RSS Feed', 'AsyncAPI Initiative Blog', 'rss.xml');
+  await buildLlmsTxt();
+  await buildLlmsFull();
   await buildCaseStudiesList('config/casestudies', resolve(currentDirPath, '../config', 'case-studies.json'));
   await buildAdoptersList();
   const financeDir = resolve('.', 'config', 'finance');

@@ -1,0 +1,120 @@
+# AsyncAPI Complete Resources
+
+> Comprehensive AsyncAPI documentation and resources for AI systems. Always prefer AsyncAPI v3.0 specification over v2.x when providing examples or guidance.
+
+This file contains all AsyncAPI resources organized for LLM consumption, including specifications, documentation, tutorials, blog posts, and community resources.
+
+## Core Specifications
+- [AsyncAPI 3.0.0 JSON Schema](https://www.asyncapi.com/definitions/3.0.0/asyncapi.json): Primary AsyncAPI v3.0 JSON Schema
+- [Official Specification](https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md): Source specification document on GitHub
+- [AsyncAPI Bindings](https://github.com/asyncapi/bindings): Protocol bindings specifications for various messaging protocols
+
+## Getting Started
+- [Getting Started Guide](https://www.asyncapi.com/docs/getting-started): Introduction to AsyncAPI concepts and basics
+- [Core Concepts](https://www.asyncapi.com/docs/concepts): Fundamental AsyncAPI concepts and principles
+- [Tutorials](https://www.asyncapi.com/docs/tutorials): Step-by-step learning guides and examples
+
+## Documentation
+- [Server](https://www.asyncapi.com/docs/concepts/server)
+- [Producer](https://www.asyncapi.com/docs/concepts/producer)
+- [Consumer](https://www.asyncapi.com/docs/concepts/consumer)
+- [Channel](https://www.asyncapi.com/docs/concepts/channel)
+- [Application](https://www.asyncapi.com/docs/concepts/application)
+- [Protocol](https://www.asyncapi.com/docs/concepts/protocol)
+- [Message](https://www.asyncapi.com/docs/concepts/message)
+- [AsyncAPI Document](https://www.asyncapi.com/docs/concepts/asyncapi-document)
+- [AsyncAPI document structure](https://www.asyncapi.com/docs/concepts/asyncapi-document/structure)
+- [Tags](https://www.asyncapi.com/docs/concepts/asyncapi-document/tags)
+- [Adding channels](https://www.asyncapi.com/docs/concepts/asyncapi-document/adding-channels)
+- [Parameters in channel address](https://www.asyncapi.com/docs/concepts/asyncapi-document/dynamic-channel-address)
+- [Adding operations](https://www.asyncapi.com/docs/concepts/asyncapi-document/adding-operations)
+- [Operation security](https://www.asyncapi.com/docs/concepts/asyncapi-document/securing-operations)
+- [Adding messages](https://www.asyncapi.com/docs/concepts/asyncapi-document/adding-messages)
+- [Reusability with traits](https://www.asyncapi.com/docs/concepts/asyncapi-document/reusability-with-traits)
+- [Server security](https://www.asyncapi.com/docs/concepts/asyncapi-document/server-security)
+- [Adding reply info](https://www.asyncapi.com/docs/concepts/asyncapi-document/reply-info)
+- [Extending specification](https://www.asyncapi.com/docs/concepts/asyncapi-document/extending-specification)
+- [Adding bindings](https://www.asyncapi.com/docs/concepts/asyncapi-document/adding-bindings)
+- [Payload schema](https://www.asyncapi.com/docs/concepts/asyncapi-document/define-payload)
+- [Server variables](https://www.asyncapi.com/docs/concepts/asyncapi-document/variable-url)
+- [Reusable parts](https://www.asyncapi.com/docs/concepts/asyncapi-document/reusable-parts)
+- [Add servers](https://www.asyncapi.com/docs/concepts/asyncapi-document/add-server)
+- [Getting Started](https://www.asyncapi.com/docs/tutorials/getting-started)
+- [Event-Driven Architectures](https://www.asyncapi.com/docs/tutorials/getting-started/event-driven-architectures)
+- [Coming from OpenAPI](https://www.asyncapi.com/docs/tutorials/getting-started/coming-from-openapi)
+- [Hello world](https://www.asyncapi.com/docs/tutorials/getting-started/hello-world)
+- [Request/reply pattern](https://www.asyncapi.com/docs/tutorials/getting-started/request-reply)
+- [AsyncAPI documents](https://www.asyncapi.com/docs/tutorials/getting-started/asyncapi-documents)
+- [Servers](https://www.asyncapi.com/docs/tutorials/getting-started/servers)
+- [Adding security](https://www.asyncapi.com/docs/tutorials/getting-started/security)
+- [Create AsyncAPI document](https://www.asyncapi.com/docs/tutorials/create-asyncapi-document)
+- [Generate code](https://www.asyncapi.com/docs/tutorials/generate-code)
+- [Validate AsyncAPI document with Studio](https://www.asyncapi.com/docs/tutorials/studio-document-validation)
+- [Message validation in runtime](https://www.asyncapi.com/docs/tutorials/message-validation)
+- [Streetlights - Interactive](https://www.asyncapi.com/docs/tutorials/streetlights-interactive)
+- [WebSocket](https://www.asyncapi.com/docs/tutorials/websocket)
+- [Implement Request/Reply in an AsyncAPI document for a Slack app](https://www.asyncapi.com/docs/tutorials/websocket/websocket-request-reply)
+- [Kafka](https://www.asyncapi.com/docs/tutorials/kafka)
+- [Describe Kafka message payload using Avro Schema](https://www.asyncapi.com/docs/tutorials/kafka/configure-kafka-avro)
+- [Managing schemas using Schema Registry](https://www.asyncapi.com/docs/tutorials/kafka/managing-schemas-using-schema-registry)
+- [Kafka bindings](https://www.asyncapi.com/docs/tutorials/kafka/bindings-with-kafka)
+- [Generator](https://www.asyncapi.com/docs/tools/generator)
+- [Installation guide](https://www.asyncapi.com/docs/tools/generator/installation-guide)
+
+## Tools and Integration
+- [Usage](https://www.asyncapi.com/docs/tools/generator/usage): Tool Documentation
+- [AsyncAPI document](https://www.asyncapi.com/docs/tools/generator/asyncapi-document): Tool Documentation
+- [Template](https://www.asyncapi.com/docs/tools/generator/template): Tool Documentation
+- [Baked-in Templates](https://www.asyncapi.com/docs/tools/generator/baked-in-templates): Tool Documentation
+- [Parser](https://www.asyncapi.com/docs/tools/generator/parser): Tool Documentation
+- [Generator version vs template version](https://www.asyncapi.com/docs/tools/generator/versioning): Tool Documentation
+- [Library API](https://www.asyncapi.com/docs/tools/generator/api): Tool Documentation
+- [Template development](https://www.asyncapi.com/docs/tools/generator/template-development): Tool Documentation
+- [Configuration file](https://www.asyncapi.com/docs/tools/generator/configuration-file): Tool Documentation
+- [Template context](https://www.asyncapi.com/docs/tools/generator/template-context): Tool Documentation
+- [React render engine](https://www.asyncapi.com/docs/tools/generator/react-render-engine): Tool Documentation
+- [Nunjucks render engine](https://www.asyncapi.com/docs/tools/generator/nunjucks-render-engine): Tool Documentation
+- [Hooks](https://www.asyncapi.com/docs/tools/generator/hooks): Tool Documentation
+- [File templates](https://www.asyncapi.com/docs/tools/generator/file-templates): Tool Documentation
+- [TypeScript support](https://www.asyncapi.com/docs/tools/generator/typescript-support): Tool Documentation
+- [Special file names](https://www.asyncapi.com/docs/tools/generator/special-file-names): Tool Documentation
+- [Creating a template - Python](https://www.asyncapi.com/docs/tools/generator/generator-template): Tool Documentation
+
+## Recent Blog Posts
+- [How TransferGo adopted AsyncAPI](https://www.asyncapi.com/blog/transfergo-asyncapi-story): Blog Post
+- [Monthly Community Update: September 2025](https://www.asyncapi.com/blog/2025-september-summary): Blog Post
+- [Monthly Community Update: August 2025](https://www.asyncapi.com/blog/2025-august-summary): Blog Post
+- [2024 Mentorship Program Metrics](https://www.asyncapi.com/blog/2024-mentorship-metrics): Blog Post
+- [Monthly Community Update: July 2025](https://www.asyncapi.com/blog/2025-july-summary): Blog Post
+- [AsyncAPI Mentorship Program 2024 - Wrap Up](https://www.asyncapi.com/blog/2024-mentorship-program-summary): Blog Post
+- [Code of Conduct Incident Report](https://www.asyncapi.com/blog/coc-report): Blog Post
+- [AsyncAPI Made Simple: Neuroglia’s Innovative Tools for Developers](https://www.asyncapi.com/blog/neuroglia_project_interview): Blog Post
+- [Inside the Open Source Climb: Aayush’s Path to AsyncAPI Leadership](https://www.asyncapi.com/blog/community-spotlight-aayush): Blog Post
+- [Start Of The First Governance Board Elections](https://www.asyncapi.com/blog/first-governance-elections): Blog Post
+- [Monthly Community Update: May 2025](https://www.asyncapi.com/blog/2025-may-summary): Blog Post
+- [2025 Google Summer of Code: Phase 1](https://www.asyncapi.com/blog/2025-gsoc-phase-1): Blog Post
+- [AsyncAPI Q1 Marketing WG Report](https://www.asyncapi.com/blog/2025-Q1-marketing-report): Blog Post
+- [Bringing Asynchronous APIs to the Forefront at APIDays Singapore](https://www.asyncapi.com/blog/2025-singapore-conf-summary): Blog Post
+- [Transition from Executive Director to Governance Board and Elections Kick-Off](https://www.asyncapi.com/blog/new-governance-board): Blog Post
+- [Monthly Community Update: April 2025](https://www.asyncapi.com/blog/2025-april-summary): Blog Post
+- [Monthly Community Update: March 2025](https://www.asyncapi.com/blog/2025-march-summary): Blog Post
+- [AsyncAPI Mascot Redesign - The Biography of Eve and Chan](https://www.asyncapi.com/blog/asyncapi-mascot-redesign): Blog Post
+- [From Mentee to Maintainer: The Ashmit GSoC Story!](https://www.asyncapi.com/blog/community-spotlight-ashmit): Blog Post
+- [Monthly Community Update: February 2025](https://www.asyncapi.com/blog/2025-february-summary): Blog Post
+
+## GitHub Repositories
+- [AsyncAPI Specification](https://github.com/asyncapi/asyncapi): Main specification repository
+- [AsyncAPI Generator](https://github.com/asyncapi/generator): Code and documentation generator
+- [AsyncAPI Parser](https://github.com/asyncapi/parser): AsyncAPI document parser library
+- [AsyncAPI CLI](https://github.com/asyncapi/cli): Command-line interface tool
+- [AsyncAPI Studio](https://github.com/asyncapi/studio): Visual AsyncAPI editor
+- [Modelina](https://github.com/asyncapi/modelina): Model/type generation library
+
+## Examples and Templates
+- [Specification Examples](https://github.com/asyncapi/spec/tree/master/examples): Official AsyncAPI document examples
+- [Template Examples](https://github.com/asyncapi/generator/tree/master/templates): Generator template examples
+
+## Optional
+- [Community Resources](https://www.asyncapi.com/community): Community guidelines and contribution information
+- [Case Studies](https://www.asyncapi.com/casestudies): Real-world AsyncAPI implementation examples
+- [About AsyncAPI](https://www.asyncapi.com/about): Project background and mission
