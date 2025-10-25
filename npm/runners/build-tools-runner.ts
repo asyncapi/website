@@ -61,10 +61,12 @@ async function runBuildTools(options: BuildToolsOptions = {}): Promise<void> {
   }
 }
 
-// Run only in non-test environments
-if (process.env.NODE_ENV === 'test') {
-  logger.info('Skipping tools build in test environment');
-} else {
+// Export the function and interface for testing purposes
+export { runBuildTools };
+export type { BuildToolsOptions };
+
+// Only run CLI if this file is executed directly, not when imported
+if (import.meta.url === `file://${process.argv[1]}`) {
   // Self-executing async function to handle top-level await
   (async () => {
     try {
@@ -75,6 +77,3 @@ if (process.env.NODE_ENV === 'test') {
     }
   })();
 }
-
-// Export for testing purposes
-export { runBuildTools };

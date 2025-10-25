@@ -178,6 +178,16 @@
       "borderColor": "border-[#B9012b]"
     },
     {
+      "name": "FastAPI",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "Django",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
       "name": "Socket.IO",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"

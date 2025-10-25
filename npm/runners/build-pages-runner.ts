@@ -2,7 +2,7 @@ import { copyAndRenameFiles, ensureDirectoryExists } from '@/scripts/build-pages
 import { logger } from '@/scripts/helpers/logger';
 import { CustomError } from '@/types/errors/CustomError';
 
-interface BuildPagesOptions {
+export interface BuildPagesOptions {
   sourceDir?: string;
   targetDir?: string;
 }
@@ -44,10 +44,8 @@ async function runBuildPages(options: BuildPagesOptions = {}): Promise<void> {
   }
 }
 
-// Run only in non-test environments
-if (process.env.NODE_ENV === 'test') {
-  logger.info('Skipping pages build in test environment');
-} else {
+// Only run CLI if this file is executed directly, not when imported
+if (import.meta.url === `file://${process.argv[1]}`) {
   // Self-executing async function to handle top-level await
   (async () => {
     try {
