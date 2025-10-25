@@ -37,7 +37,7 @@ export default function BlogIndexPage() {
   const [isClient, setIsClient] = useState(false);
   const [activeTab, setActiveTab] = useState<string>('All Posts');
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 9;
+  const [postsPerPage, setPostsPerPage] = useState(9);
 
   const onFilter = (data: IBlogPost[]) => {
     setPosts(data);
@@ -71,6 +71,24 @@ export default function BlogIndexPage() {
 
   useEffect(() => {
     setIsClient(true);
+    
+    // Set posts per page based on screen size
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setPostsPerPage(5); // Mobile: 5 posts
+      } else {
+        setPostsPerPage(9); // Tablet/Desktop: 9 posts
+      }
+    };
+    
+    // Set initial value
+    handleResize();
+    
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   // Filter posts by active tab (only if no dropdown filters are active)
@@ -89,10 +107,10 @@ export default function BlogIndexPage() {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = filteredByTab.slice(indexOfFirstPost, indexOfLastPost);
 
-  // Reset to page 1 when changing tabs or filters
+  // Reset to page 1 when changing tabs, filters, or posts per page
   useEffect(() => {
     setCurrentPage(1);
-  }, [activeTab, posts]);
+  }, [activeTab, posts, postsPerPage]);
 
   // Reset tab to "All Posts" when dropdown filters change
   useEffect(() => {
@@ -107,14 +125,14 @@ export default function BlogIndexPage() {
     <GenericLayout title='Blog' description={description} image={image} wide>
       <div className='relative px-4 pb-20 pt-8 sm:px-6 lg:px-8 lg:pb-28 lg:pt-12' id='main-content'>
         <div className='relative mx-auto max-w-7xl'>
-          <div className='text-center'>
-            <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg} className='text-gray-900 dark:text-white'>
+          <div className='text-center px-4'>
+            <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg} className='text-gray-900 dark:text-white text-3xl sm:text-4xl md:text-5xl'>
               Welcome to our blog!
             </Heading>
-            <Paragraph className='mx-auto mt-3 max-w-2xl text-gray-600 dark:text-gray-300 sm:mt-4'>
+            <Paragraph className='mx-auto mt-3 max-w-2xl text-gray-600 dark:text-gray-300 sm:mt-4 text-base sm:text-lg'>
               Find the latest and greatest stories from our community
             </Paragraph>
-            <Paragraph typeStyle={ParagraphTypeStyle.md} className='mx-auto mt-3 max-w-2xl text-gray-600 dark:text-gray-300'>
+            <Paragraph typeStyle={ParagraphTypeStyle.md} className='mx-auto mt-3 max-w-2xl text-gray-600 dark:text-gray-300 text-sm sm:text-base'>
               Stay in touch! Get blog posts delivered directly to your{' '}
               <TextLink href='/newsletter' className='text-primary-400 dark:text-primary-400 hover:text-primary-500 dark:hover:text-primary-300'>
                 email
@@ -122,41 +140,46 @@ export default function BlogIndexPage() {
               .
             </Paragraph>
           </div>
-          <div className='mx:64 mt-8 md:flex md:justify-center lg:justify-center'>
-            <Filter
-              data={navItems || []}
-              onFilter={onFilter}
-              className='md: mx-px mt-1 w-full md:mt-0 md:w-1/5 md:text-sm'
-              checks={toFilter}
-            />
-            {showClearFilters && (
-              <button
-                type='button'
-                className='bg-none text-md mt-1 rounded-md border border-gray-200 dark:border-gray-700 px-4 py-2 font-semibold tracking-heading text-gray-800 dark:text-gray-200 shadow-none transition-all duration-500 ease-in-out hover:text-gray-700 dark:hover:text-gray-300 md:mt-0 md:py-0'
-                onClick={clearFilters}
-              >
-                <span className='inline-block'>Clear filters</span>
-              </button>
-            )}
+          {/* Filters Section */}
+          <div className='mx-auto mt-8 max-w-7xl'>
+            <div className='flex flex-col gap-3 md:flex-row md:justify-center md:items-center'>
+              <Filter
+                data={navItems || []}
+                onFilter={onFilter}
+                className='mx-px w-full md:w-auto md:text-sm'
+                checks={toFilter}
+              />
+              {showClearFilters && (
+                <button
+                  type='button'
+                  className='bg-none text-md rounded-md border border-gray-200 dark:border-gray-700 px-4 py-2 font-semibold tracking-heading text-gray-800 dark:text-gray-200 shadow-none transition-all duration-500 ease-in-out hover:text-gray-700 dark:hover:text-gray-300 w-full md:w-auto'
+                  onClick={clearFilters}
+                >
+                  <span className='inline-block'>Clear filters</span>
+                </button>
+              )}
+            </div>
           </div>
 
-          {/* Category Tabs */}
-          <div className='mt-8 flex justify-center'>
-            <div className={`inline-flex rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-dark-card p-1 ${hasDropdownFilters ? 'opacity-50' : ''}`}>
-              {tabs.map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => !hasDropdownFilters && setActiveTab(tab)}
-                  disabled={hasDropdownFilters}
-                  className={`rounded-md px-4 py-2 text-sm font-medium transition-all duration-200 ${
-                    activeTab === tab && !hasDropdownFilters
-                      ? 'bg-primary-500 text-white shadow-sm'
-                      : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
-                  } ${hasDropdownFilters ? 'cursor-not-allowed' : 'cursor-pointer'}`}
-                >
-                  {tab}
-                </button>
-              ))}
+          {/* Category Tabs - Hidden on mobile */}
+          <div className='mt-6 px-4 hidden md:block'>
+            <div className='flex justify-center'>
+              <div className={`inline-flex rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-dark-card p-1 ${hasDropdownFilters ? 'opacity-50' : ''}`}>
+                {tabs.map((tab) => (
+                  <button
+                    key={tab}
+                    onClick={() => !hasDropdownFilters && setActiveTab(tab)}
+                    disabled={hasDropdownFilters}
+                    className={`rounded-md px-3 py-2 text-sm font-medium transition-all duration-200 whitespace-nowrap ${
+                      activeTab === tab && !hasDropdownFilters
+                        ? 'bg-primary-500 text-white shadow-sm'
+                        : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
+                    } ${hasDropdownFilters ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+                  >
+                    {tab}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -171,7 +194,7 @@ export default function BlogIndexPage() {
             )}
             {currentPosts.length > 0 && isClient && (
               <>
-                <ul className='mx-auto mt-12 grid max-w-lg gap-6 lg:max-w-none lg:grid-cols-3'>
+                <ul className='mx-auto mt-12 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl'>
                   {currentPosts.map((post, index) => (
                     <BlogPostItem key={index} post={post} />
                   ))}
@@ -179,79 +202,103 @@ export default function BlogIndexPage() {
 
                 {/* Pagination */}
                 {totalPages > 1 && (
-                  <div className='mt-12 flex items-center justify-center space-x-2'>
-                    <button
-                      onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-                      disabled={currentPage === 1}
-                      className='rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-background disabled:opacity-50 disabled:cursor-not-allowed'
-                    >
-                      ‹
-                    </button>
+                  <div className='mt-12 px-4'>
+                    {/* Mobile Pagination */}
+                    <div className='flex sm:hidden items-center justify-between gap-2'>
+                      <button
+                        onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                        disabled={currentPage === 1}
+                        className='flex-1 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-background disabled:opacity-50 disabled:cursor-not-allowed'
+                      >
+                        Previous
+                      </button>
+                      <span className='text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap'>
+                        Page {currentPage} of {totalPages}
+                      </span>
+                      <button
+                        onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                        disabled={currentPage === totalPages}
+                        className='flex-1 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-background disabled:opacity-50 disabled:cursor-not-allowed'
+                      >
+                        Next
+                      </button>
+                    </div>
 
-                    {Array.from({ length: totalPages }, (_, i) => i + 1)
-                      .filter((page) => {
-                        return (
-                          page === 1 ||
-                          page === totalPages ||
-                          (page >= currentPage - 1 && page <= currentPage + 1)
-                        );
-                      })
-                      .map((page, index, array) => {
-                        if (index > 0 && page - array[index - 1] > 1) {
+                    {/* Desktop/Tablet Pagination */}
+                    <div className='hidden sm:flex items-center justify-center gap-2'>
+                      <button
+                        onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                        disabled={currentPage === 1}
+                        className='rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-background disabled:opacity-50 disabled:cursor-not-allowed'
+                      >
+                        ‹
+                      </button>
+
+                      {Array.from({ length: totalPages }, (_, i) => i + 1)
+                        .filter((page) => {
                           return (
-                            <React.Fragment key={`ellipsis-${page}`}>
-                              <span className='px-2 text-gray-500 dark:text-gray-400'>...</span>
-                              <button
-                                onClick={() => setCurrentPage(page)}
-                                className={`rounded-md px-4 py-2 text-sm font-medium ${
-                                  currentPage === page
-                                    ? 'bg-primary-500 text-white'
-                                    : 'border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-background'
-                                }`}
-                              >
-                                {page}
-                              </button>
-                            </React.Fragment>
+                            page === 1 ||
+                            page === totalPages ||
+                            (page >= currentPage - 1 && page <= currentPage + 1)
                           );
-                        }
+                        })
+                        .map((page, index, array) => {
+                          if (index > 0 && page - array[index - 1] > 1) {
+                            return (
+                              <React.Fragment key={`ellipsis-${page}`}>
+                                <span className='px-2 text-gray-500 dark:text-gray-400'>...</span>
+                                <button
+                                  onClick={() => setCurrentPage(page)}
+                                  className={`rounded-md px-4 py-2 text-sm font-medium ${
+                                    currentPage === page
+                                      ? 'bg-primary-500 text-white'
+                                      : 'border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-background'
+                                  }`}
+                                >
+                                  {page}
+                                </button>
+                              </React.Fragment>
+                            );
+                          }
 
-                        return (
-                          <button
-                            key={page}
-                            onClick={() => setCurrentPage(page)}
-                            className={`rounded-md px-4 py-2 text-sm font-medium ${
-                              currentPage === page
-                                ? 'bg-primary-500 text-white'
-                                : 'border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-background'
-                            }`}
-                          >
+                          return (
+                            <button
+                              key={page}
+                              onClick={() => setCurrentPage(page)}
+                              className={`rounded-md px-4 py-2 text-sm font-medium ${
+                                currentPage === page
+                                  ? 'bg-primary-500 text-white'
+                                  : 'border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-background'
+                              }`}
+                            >
+                              {page}
+                            </button>
+                          );
+                        })}
+
+                      <button
+                        onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                        disabled={currentPage === totalPages}
+                        className='rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-background disabled:opacity-50 disabled:cursor-not-allowed'
+                      >
+                        ›
+                      </button>
+
+                      <span className='ml-4 text-sm text-gray-600 dark:text-gray-400'>
+                        Go to page
+                      </span>
+                      <select
+                        value={currentPage}
+                        onChange={(e) => setCurrentPage(Number(e.target.value))}
+                        className='rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card px-2 py-1 text-sm text-gray-700 dark:text-gray-300'
+                      >
+                        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                          <option key={page} value={page}>
                             {page}
-                          </button>
-                        );
-                      })}
-
-                    <button
-                      onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-                      disabled={currentPage === totalPages}
-                      className='rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-background disabled:opacity-50 disabled:cursor-not-allowed'
-                    >
-                      ›
-                    </button>
-
-                    <span className='ml-4 text-sm text-gray-600 dark:text-gray-400'>
-                      Go to page
-                    </span>
-                    <select
-                      value={currentPage}
-                      onChange={(e) => setCurrentPage(Number(e.target.value))}
-                      className='rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card px-2 py-1 text-sm text-gray-700 dark:text-gray-300'
-                    >
-                      {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                        <option key={page} value={page}>
-                          {page}
-                        </option>
-                      ))}
-                    </select>
+                          </option>
+                        ))}
+                      </select>
+                    </div>
                   </div>
                 )}
               </>
