@@ -44,16 +44,16 @@ export default function MenuBlocks({ items = [] }: MenuBlocksProps) {
               data-testid='MenuBlocks-Link'
               className={`-mx-3 mt-1 flex items-start space-x-4 rounded-lg p-3 transition-all ${'duration-200 ease-in-out'} ${
                 router.asPath === item.href
-                  ? 'bg-secondary-100 dark:bg-secondary-800/50 shadow-sm'
-                  : 'hover:bg-gray-50 dark:hover:bg-gray-800 hover:translate-x-1'
+                  ? 'bg-primary-100 dark:bg-dark-background shadow-sm'
+                  : 'hover:bg-primary-100 dark:hover:bg-dark-background hover:translate-x-1'
               }`}
             >
               <div
                 className={`flex size-10 shrink-0 items-center justify-center rounded-lg ${
                   item.className
                     ? item.className
-                    : 'border border-gray-800 dark:border-gray-600 bg-secondary-100 dark:bg-secondary-800/50'
-                } text-gray-900 dark:text-gray-100 sm:size-12 ${item.comingSoon && 'opacity-50'}`}
+                    : 'border border-primary-500 dark:border-primary-500 bg-primary-100 dark:bg-primary-500/20'
+                } text-primary-600 dark:text-primary-300 sm:size-12 ${item.comingSoon && 'opacity-50'}`}
                 data-testid='MenuBlock-icon'
               >
                 <item.icon className='size-6' />
