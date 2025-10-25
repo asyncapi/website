@@ -23,7 +23,6 @@ This file contains all AsyncAPI resources organized for LLM consumption, includi
 - [Protocol](https://www.asyncapi.com/docs/concepts/protocol)
 - [Message](https://www.asyncapi.com/docs/concepts/message)
 - [AsyncAPI Document](https://www.asyncapi.com/docs/concepts/asyncapi-document)
-- [Introduction](https://www.asyncapi.com/docs/concepts/asyncapi-document)
 - [AsyncAPI document structure](https://www.asyncapi.com/docs/concepts/asyncapi-document/structure)
 - [Tags](https://www.asyncapi.com/docs/concepts/asyncapi-document/tags)
 - [Adding channels](https://www.asyncapi.com/docs/concepts/asyncapi-document/adding-channels)
@@ -41,7 +40,6 @@ This file contains all AsyncAPI resources organized for LLM consumption, includi
 - [Reusable parts](https://www.asyncapi.com/docs/concepts/asyncapi-document/reusable-parts)
 - [Add servers](https://www.asyncapi.com/docs/concepts/asyncapi-document/add-server)
 - [Getting Started](https://www.asyncapi.com/docs/tutorials/getting-started)
-- [Introduction](https://www.asyncapi.com/docs/tutorials/getting-started)
 - [Event-Driven Architectures](https://www.asyncapi.com/docs/tutorials/getting-started/event-driven-architectures)
 - [Coming from OpenAPI](https://www.asyncapi.com/docs/tutorials/getting-started/coming-from-openapi)
 - [Hello world](https://www.asyncapi.com/docs/tutorials/getting-started/hello-world)
@@ -55,60 +53,54 @@ This file contains all AsyncAPI resources organized for LLM consumption, includi
 - [Message validation in runtime](https://www.asyncapi.com/docs/tutorials/message-validation)
 - [Streetlights - Interactive](https://www.asyncapi.com/docs/tutorials/streetlights-interactive)
 - [WebSocket](https://www.asyncapi.com/docs/tutorials/websocket)
-- [Create an AsyncAPI document for a Slackbot with WebSocket](https://www.asyncapi.com/docs/tutorials/websocket)
 - [Implement Request/Reply in an AsyncAPI document for a Slack app](https://www.asyncapi.com/docs/tutorials/websocket/websocket-request-reply)
 - [Kafka](https://www.asyncapi.com/docs/tutorials/kafka)
-- [Create AsyncAPI document for applications consuming from Kafka](https://www.asyncapi.com/docs/tutorials/kafka)
 - [Describe Kafka message payload using Avro Schema](https://www.asyncapi.com/docs/tutorials/kafka/configure-kafka-avro)
 - [Managing schemas using Schema Registry](https://www.asyncapi.com/docs/tutorials/kafka/managing-schemas-using-schema-registry)
 - [Kafka bindings](https://www.asyncapi.com/docs/tutorials/kafka/bindings-with-kafka)
 - [Generator](https://www.asyncapi.com/docs/tools/generator)
-- [Introduction](https://www.asyncapi.com/docs/tools/generator)
 - [Installation guide](https://www.asyncapi.com/docs/tools/generator/installation-guide)
 
 ## Tools and Integration
-- [Generator](https://www.asyncapi.com/docs/tools/generator)
-- [Introduction](https://www.asyncapi.com/docs/tools/generator)
-- [Installation guide](https://www.asyncapi.com/docs/tools/generator/installation-guide)
-- [Usage](https://www.asyncapi.com/docs/tools/generator/usage)
-- [AsyncAPI document](https://www.asyncapi.com/docs/tools/generator/asyncapi-document)
-- [Template](https://www.asyncapi.com/docs/tools/generator/template)
-- [Baked-in Templates](https://www.asyncapi.com/docs/tools/generator/baked-in-templates)
-- [Parser](https://www.asyncapi.com/docs/tools/generator/parser)
-- [Generator version vs template version](https://www.asyncapi.com/docs/tools/generator/versioning)
-- [Library API](https://www.asyncapi.com/docs/tools/generator/api)
-- [Template development](https://www.asyncapi.com/docs/tools/generator/template-development)
-- [Configuration file](https://www.asyncapi.com/docs/tools/generator/configuration-file)
-- [Template context](https://www.asyncapi.com/docs/tools/generator/template-context)
-- [React render engine](https://www.asyncapi.com/docs/tools/generator/react-render-engine)
-- [Nunjucks render engine](https://www.asyncapi.com/docs/tools/generator/nunjucks-render-engine)
-- [Hooks](https://www.asyncapi.com/docs/tools/generator/hooks)
-- [File templates](https://www.asyncapi.com/docs/tools/generator/file-templates)
-- [TypeScript support](https://www.asyncapi.com/docs/tools/generator/typescript-support)
-- [Special file names](https://www.asyncapi.com/docs/tools/generator/special-file-names)
-- [Creating a template - Python](https://www.asyncapi.com/docs/tools/generator/generator-template)
+- [Usage](https://www.asyncapi.com/docs/tools/generator/usage): Tool Documentation
+- [AsyncAPI document](https://www.asyncapi.com/docs/tools/generator/asyncapi-document): Tool Documentation
+- [Template](https://www.asyncapi.com/docs/tools/generator/template): Tool Documentation
+- [Baked-in Templates](https://www.asyncapi.com/docs/tools/generator/baked-in-templates): Tool Documentation
+- [Parser](https://www.asyncapi.com/docs/tools/generator/parser): Tool Documentation
+- [Generator version vs template version](https://www.asyncapi.com/docs/tools/generator/versioning): Tool Documentation
+- [Library API](https://www.asyncapi.com/docs/tools/generator/api): Tool Documentation
+- [Template development](https://www.asyncapi.com/docs/tools/generator/template-development): Tool Documentation
+- [Configuration file](https://www.asyncapi.com/docs/tools/generator/configuration-file): Tool Documentation
+- [Template context](https://www.asyncapi.com/docs/tools/generator/template-context): Tool Documentation
+- [React render engine](https://www.asyncapi.com/docs/tools/generator/react-render-engine): Tool Documentation
+- [Nunjucks render engine](https://www.asyncapi.com/docs/tools/generator/nunjucks-render-engine): Tool Documentation
+- [Hooks](https://www.asyncapi.com/docs/tools/generator/hooks): Tool Documentation
+- [File templates](https://www.asyncapi.com/docs/tools/generator/file-templates): Tool Documentation
+- [TypeScript support](https://www.asyncapi.com/docs/tools/generator/typescript-support): Tool Documentation
+- [Special file names](https://www.asyncapi.com/docs/tools/generator/special-file-names): Tool Documentation
+- [Creating a template - Python](https://www.asyncapi.com/docs/tools/generator/generator-template): Tool Documentation
 
 ## Recent Blog Posts
-- [Monthly Community Update: August 2025](https://www.asyncapi.com/blog/2025-august-summary)
-- [2024 Mentorship Program Metrics](https://www.asyncapi.com/blog/2024-mentorship-metrics)
-- [Monthly Community Update: July 2025](https://www.asyncapi.com/blog/2025-july-summary)
-- [AsyncAPI Mentorship Program 2024 - Wrap Up](https://www.asyncapi.com/blog/2024-mentorship-program-summary)
-- [Code of Conduct Incident Report](https://www.asyncapi.com/blog/coc-report)
-- [AsyncAPI Made Simple: Neuroglia’s Innovative Tools for Developers](https://www.asyncapi.com/blog/neuroglia_project_interview)
-- [Inside the Open Source Climb: Aayush’s Path to AsyncAPI Leadership](https://www.asyncapi.com/blog/community-spotlight-aayush)
-- [Start Of The First Governance Board Elections](https://www.asyncapi.com/blog/first-governance-elections)
-- [Monthly Community Update: May 2025](https://www.asyncapi.com/blog/2025-may-summary)
-- [2025 Google Summer of Code: Phase 1](https://www.asyncapi.com/blog/2025-gsoc-phase-1)
-- [AsyncAPI Q1 Marketing WG Report](https://www.asyncapi.com/blog/2025-Q1-marketing-report)
-- [Bringing Asynchronous APIs to the Forefront at APIDays Singapore](https://www.asyncapi.com/blog/2025-singapore-conf-summary)
-- [Transition from Executive Director to Governance Board and Elections Kick-Off](https://www.asyncapi.com/blog/new-governance-board)
-- [Monthly Community Update: April 2025](https://www.asyncapi.com/blog/2025-april-summary)
-- [Monthly Community Update: March 2025](https://www.asyncapi.com/blog/2025-march-summary)
-- [AsyncAPI Mascot Redesign - The Biography of Eve and Chan](https://www.asyncapi.com/blog/asyncapi-mascot-redesign)
-- [From Mentee to Maintainer: The Ashmit GSoC Story!](https://www.asyncapi.com/blog/community-spotlight-ashmit)
-- [Monthly Community Update: February 2025](https://www.asyncapi.com/blog/2025-february-summary)
-- [AsyncAPI Conference 2024 Report](https://www.asyncapi.com/blog/conference-2024-summary)
-- [Annual Review: State of AsyncAPI Initiative 2024](https://www.asyncapi.com/blog/2024-annual-summary)
+- [Monthly Community Update: September 2025](https://www.asyncapi.com/blog/2025-september-summary): Blog Post
+- [Monthly Community Update: August 2025](https://www.asyncapi.com/blog/2025-august-summary): Blog Post
+- [2024 Mentorship Program Metrics](https://www.asyncapi.com/blog/2024-mentorship-metrics): Blog Post
+- [Monthly Community Update: July 2025](https://www.asyncapi.com/blog/2025-july-summary): Blog Post
+- [AsyncAPI Mentorship Program 2024 - Wrap Up](https://www.asyncapi.com/blog/2024-mentorship-program-summary): Blog Post
+- [Code of Conduct Incident Report](https://www.asyncapi.com/blog/coc-report): Blog Post
+- [AsyncAPI Made Simple: Neuroglia’s Innovative Tools for Developers](https://www.asyncapi.com/blog/neuroglia_project_interview): Blog Post
+- [Inside the Open Source Climb: Aayush’s Path to AsyncAPI Leadership](https://www.asyncapi.com/blog/community-spotlight-aayush): Blog Post
+- [Start Of The First Governance Board Elections](https://www.asyncapi.com/blog/first-governance-elections): Blog Post
+- [Monthly Community Update: May 2025](https://www.asyncapi.com/blog/2025-may-summary): Blog Post
+- [2025 Google Summer of Code: Phase 1](https://www.asyncapi.com/blog/2025-gsoc-phase-1): Blog Post
+- [AsyncAPI Q1 Marketing WG Report](https://www.asyncapi.com/blog/2025-Q1-marketing-report): Blog Post
+- [Bringing Asynchronous APIs to the Forefront at APIDays Singapore](https://www.asyncapi.com/blog/2025-singapore-conf-summary): Blog Post
+- [Transition from Executive Director to Governance Board and Elections Kick-Off](https://www.asyncapi.com/blog/new-governance-board): Blog Post
+- [Monthly Community Update: April 2025](https://www.asyncapi.com/blog/2025-april-summary): Blog Post
+- [Monthly Community Update: March 2025](https://www.asyncapi.com/blog/2025-march-summary): Blog Post
+- [AsyncAPI Mascot Redesign - The Biography of Eve and Chan](https://www.asyncapi.com/blog/asyncapi-mascot-redesign): Blog Post
+- [From Mentee to Maintainer: The Ashmit GSoC Story!](https://www.asyncapi.com/blog/community-spotlight-ashmit): Blog Post
+- [Monthly Community Update: February 2025](https://www.asyncapi.com/blog/2025-february-summary): Blog Post
+- [AsyncAPI Conference 2024 Report](https://www.asyncapi.com/blog/conference-2024-summary): Blog Post
 
 ## GitHub Repositories
 - [AsyncAPI Specification](https://github.com/asyncapi/asyncapi): Main specification repository
@@ -117,7 +109,6 @@ This file contains all AsyncAPI resources organized for LLM consumption, includi
 - [AsyncAPI CLI](https://github.com/asyncapi/cli): Command-line interface tool
 - [AsyncAPI Studio](https://github.com/asyncapi/studio): Visual AsyncAPI editor
 - [Modelina](https://github.com/asyncapi/modelina): Model/type generation library
-- [AsyncAPI Bindings](https://github.com/asyncapi/bindings): Protocol bindings specifications
 
 ## Examples and Templates
 - [Specification Examples](https://github.com/asyncapi/asyncapi/tree/master/examples): Official AsyncAPI document examples
@@ -127,4 +118,3 @@ This file contains all AsyncAPI resources organized for LLM consumption, includi
 - [Community Resources](https://www.asyncapi.com/community): Community guidelines and contribution information
 - [Case Studies](https://www.asyncapi.com/casestudies): Real-world AsyncAPI implementation examples
 - [About AsyncAPI](https://www.asyncapi.com/about): Project background and mission
-- [About](https://www.asyncapi.com/about)
