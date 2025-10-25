@@ -9,9 +9,9 @@ export const mockToolsData = {
           full_name: 'asyncapi/tool1',
           html_url: 'https://github.com/asyncapi/tool1',
           description: 'AsyncAPI Tool 1 - A powerful tool for AsyncAPI',
-          owner: { login: 'asyncapi' },
+          owner: { login: 'asyncapi' }
         },
-        path: '.asyncapi-tool',
+        path: '.asyncapi-tool'
       },
       {
         name: '.asyncapi-tool',
@@ -31,13 +31,13 @@ export const mockToolsData = {
           full_name: 'asyncapi/tool3',
           html_url: 'https://github.com/asyncapi/tool3',
           description: 'AsyncAPI Tool 3 - Third tool in the collection',
-          owner: { login: 'asyncapi' },
+          owner: { login: 'asyncapi' }
         },
-        path: '.asyncapi-tool',
-      },
+        path: '.asyncapi-tool'
+      }
     ],
     total_count: 3,
-    incomplete_results: false,
+    incomplete_results: false
   },
 
   // Second page of GitHub API search results
@@ -50,13 +50,13 @@ export const mockToolsData = {
           full_name: 'asyncapi/tool4',
           html_url: 'https://github.com/asyncapi/tool4',
           description: 'AsyncAPI Tool 4 - Fourth tool',
-          owner: { login: 'asyncapi' },
+          owner: { login: 'asyncapi' }
         },
-        path: '.asyncapi-tool',
-      },
+        path: '.asyncapi-tool'
+      }
     ],
     total_count: 4,
-    incomplete_results: false,
+    incomplete_results: false
   },
 
   // Raw GitHub content responses for .asyncapi-tool files (YAML format)
@@ -113,7 +113,7 @@ filters:
   technology:
     - Vue.js
     - Nuxt.js
-  hasCommercial: false`,
+  hasCommercial: false`
   },
 
   // Manual tools data (already processed format)
@@ -127,37 +127,36 @@ filters:
           description: 'A manually curated tool for AsyncAPI development',
           links: {
             repoUrl: 'https://github.com/manual/tool1',
-            websiteUrl: 'https://manual-tool1.example.com',
+            websiteUrl: 'https://manual-tool1.example.com'
           },
           filters: {
             categories: ['code-generator'],
             language: 'JavaScript',
             technology: ['React'],
-            hasCommercial: false,
-          },
-        },
-      ],
+            hasCommercial: false
+          }
+        }
+      ]
     },
     Validators: {
-      description:
-        'The following is a list of tools that validate AsyncAPI documents.',
+      description: 'The following is a list of tools that validate AsyncAPI documents.',
       toolsList: [
         {
           title: 'Manual Tool 2',
           description: 'Another manual tool for AsyncAPI validation',
           links: {
             repoUrl: 'https://github.com/manual/tool2',
-            docsUrl: 'https://docs.manual-tool2.example.com',
+            docsUrl: 'https://docs.manual-tool2.example.com'
           },
           filters: {
             categories: ['validator'],
             language: 'Python',
             technology: ['FastAPI'],
-            hasCommercial: true,
-          },
-        },
-      ],
-    },
+            hasCommercial: true
+          }
+        }
+      ]
+    }
   },
 
   // Expected automated tools after processing (simplified for testing)
@@ -172,53 +171,52 @@ filters:
           links: {
             repoUrl: 'https://github.com/asyncapi/tool1',
             websiteUrl: 'https://tool1.example.com',
-            docsUrl: 'https://docs.tool1.example.com',
+            docsUrl: 'https://docs.tool1.example.com'
           },
           filters: {
             categories: ['code-generator'],
             language: 'JavaScript',
             technology: ['React', 'Node.js'],
             hasCommercial: false,
-            isAsyncAPIOwner: true,
-          },
+            isAsyncAPIOwner: true
+          }
         },
         {
           title: 'AsyncAPI Tool 4',
           description: 'Fourth tool for code generation',
           links: {
             repoUrl: 'https://github.com/asyncapi/tool4',
-            websiteUrl: 'https://tool4.example.com',
+            websiteUrl: 'https://tool4.example.com'
           },
           filters: {
             categories: ['code-generator'],
             language: 'JavaScript',
             technology: ['Vue.js', 'Nuxt.js'],
             hasCommercial: false,
-            isAsyncAPIOwner: true,
-          },
-        },
-      ],
+            isAsyncAPIOwner: true
+          }
+        }
+      ]
     },
     Validators: {
-      description:
-        'The following is a list of tools that validate AsyncAPI documents.',
+      description: 'The following is a list of tools that validate AsyncAPI documents.',
       toolsList: [
         {
           title: 'AsyncAPI Tool 2',
           description: 'Another great tool for validation',
           links: {
             repoUrl: 'https://github.com/asyncapi/tool2',
-            websiteUrl: 'https://tool2.example.com',
+            websiteUrl: 'https://tool2.example.com'
           },
           filters: {
             categories: ['validator'],
             language: 'Python',
             technology: ['FastAPI', 'Django'],
             hasCommercial: true,
-            isAsyncAPIOwner: true,
-          },
-        },
-      ],
+            isAsyncAPIOwner: true
+          }
+        }
+      ]
     },
     'Documentation Generators': {
       description:
@@ -229,18 +227,18 @@ filters:
           description: 'Third tool in the collection for documentation',
           links: {
             repoUrl: 'https://github.com/asyncapi/tool3',
-            docsUrl: 'https://docs.tool3.example.com',
+            docsUrl: 'https://docs.tool3.example.com'
           },
           filters: {
             categories: ['documentation-generator'],
             language: 'TypeScript',
             technology: ['Next.js', 'React'],
             hasCommercial: false,
-            isAsyncAPIOwner: true,
-          },
-        },
-      ],
-    },
+            isAsyncAPIOwner: true
+          }
+        }
+      ]
+    }
   },
 
   // Expected combined tools (automated + manual)
@@ -255,83 +253,82 @@ filters:
           links: {
             repoUrl: 'https://github.com/asyncapi/tool1',
             websiteUrl: 'https://tool1.example.com',
-            docsUrl: 'https://docs.tool1.example.com',
+            docsUrl: 'https://docs.tool1.example.com'
           },
           filters: {
             categories: ['code-generator'],
             language: 'JavaScript',
             technology: ['React', 'Node.js'],
             hasCommercial: false,
-            isAsyncAPIOwner: true,
-          },
+            isAsyncAPIOwner: true
+          }
         },
         {
           title: 'Manual Tool 1',
           description: 'A manually curated tool for AsyncAPI development',
           links: {
             repoUrl: 'https://github.com/manual/tool1',
-            websiteUrl: 'https://manual-tool1.example.com',
+            websiteUrl: 'https://manual-tool1.example.com'
           },
           filters: {
             categories: ['code-generator'],
             language: 'JavaScript',
             technology: ['React'],
             hasCommercial: false,
-            isAsyncAPIOwner: false,
-          },
+            isAsyncAPIOwner: false
+          }
         },
         {
           title: 'AsyncAPI Tool 4',
           description: 'Fourth tool for code generation',
           links: {
             repoUrl: 'https://github.com/asyncapi/tool4',
-            websiteUrl: 'https://tool4.example.com',
+            websiteUrl: 'https://tool4.example.com'
           },
           filters: {
             categories: ['code-generator'],
             language: 'JavaScript',
             technology: ['Vue.js', 'Nuxt.js'],
             hasCommercial: false,
-            isAsyncAPIOwner: true,
-          },
-        },
-      ],
+            isAsyncAPIOwner: true
+          }
+        }
+      ]
     },
     Validators: {
-      description:
-        'The following is a list of tools that validate AsyncAPI documents.',
+      description: 'The following is a list of tools that validate AsyncAPI documents.',
       toolsList: [
         {
           title: 'AsyncAPI Tool 2',
           description: 'Another great tool for validation',
           links: {
             repoUrl: 'https://github.com/asyncapi/tool2',
-            websiteUrl: 'https://tool2.example.com',
+            websiteUrl: 'https://tool2.example.com'
           },
           filters: {
             categories: ['validator'],
             language: 'Python',
             technology: ['FastAPI', 'Django'],
             hasCommercial: true,
-            isAsyncAPIOwner: true,
-          },
+            isAsyncAPIOwner: true
+          }
         },
         {
           title: 'Manual Tool 2',
           description: 'Another manual tool for AsyncAPI validation',
           links: {
             repoUrl: 'https://github.com/manual/tool2',
-            docsUrl: 'https://docs.manual-tool2.example.com',
+            docsUrl: 'https://docs.manual-tool2.example.com'
           },
           filters: {
             categories: ['validator'],
             language: 'Python',
             technology: ['FastAPI'],
             hasCommercial: true,
-            isAsyncAPIOwner: false,
-          },
-        },
-      ],
+            isAsyncAPIOwner: false
+          }
+        }
+      ]
     },
     'Documentation Generators': {
       description:
@@ -342,18 +339,18 @@ filters:
           description: 'Third tool in the collection for documentation',
           links: {
             repoUrl: 'https://github.com/asyncapi/tool3',
-            docsUrl: 'https://docs.tool3.example.com',
+            docsUrl: 'https://docs.tool3.example.com'
           },
           filters: {
             categories: ['documentation-generator'],
             language: 'TypeScript',
             technology: ['Next.js', 'React'],
             hasCommercial: false,
-            isAsyncAPIOwner: true,
-          },
-        },
-      ],
-    },
+            isAsyncAPIOwner: true
+          }
+        }
+      ]
+    }
   },
 
   expectedTags: {
@@ -361,32 +358,32 @@ filters:
       {
         name: 'JavaScript',
         color: 'bg-[#f1e05a]',
-        borderColor: 'border-[#f1e05a]',
+        borderColor: 'border-[#f1e05a]'
       },
       {
         name: 'Python',
         color: 'bg-[#3572A5]',
-        borderColor: 'border-[#3572A5]',
+        borderColor: 'border-[#3572A5]'
       },
       {
         name: 'TypeScript',
         color: 'bg-[#2b7489]',
-        borderColor: 'border-[#2b7489]',
-      },
+        borderColor: 'border-[#2b7489]'
+      }
     ],
     technologies: [
       { name: 'React', color: 'bg-[#61dafb]', borderColor: 'border-[#61dafb]' },
       {
         name: 'FastAPI',
         color: 'bg-[#009688]',
-        borderColor: 'border-[#009688]',
+        borderColor: 'border-[#009688]'
       },
       {
         name: 'Next.js',
         color: 'bg-[#000000]',
-        borderColor: 'border-[#000000]',
-      },
-    ],
+        borderColor: 'border-[#000000]'
+      }
+    ]
   },
 
   errorResponse: {
@@ -397,6 +394,6 @@ filters:
   emptyResponse: {
     items: [],
     total_count: 0,
-    incomplete_results: false,
-  },
+    incomplete_results: false
+  }
 };
