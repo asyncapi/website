@@ -250,7 +250,7 @@ describe('Integration: build-dashboard Runner', () => {
     expect(fileContent.length).toBeGreaterThan(2); // '{}' is 2 chars
   });
 
-  it('hotDiscussions are sorted by score descending', () => {
+  it('hotDiscussions array is sorted in descending order by score', () => {
     const scores = output.hotDiscussions.map((item: any) => item.score);
 
     for (let i = 1; i < scores.length; i++) {

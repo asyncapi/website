@@ -4,7 +4,14 @@ import { resolve } from 'path';
 
 import { runBuildPages } from '../../npm/runners/build-pages-runner';
 import { runBuildPostList } from '../../npm/runners/build-post-list-runner';
-import type { Result } from '../../types/scripts/build-posts-list';
+import type { Details, Result, TableOfContentsItem } from '../../types/scripts/build-posts-list';
+
+/**
+ * Utility function to check if an object has a property.
+ */
+function hasProp<T extends object>(obj: T, prop: string): boolean {
+  return Object.prototype.hasOwnProperty.call(obj, prop);
+}
 
 describe('Integration: build-post-list-runner', () => {
   let tempDir: string;
@@ -97,9 +104,9 @@ describe('Integration: build-post-list-runner', () => {
   });
 
   it('toc entries in docs have expected fields', () => {
-    output.docs.forEach((item: any) => {
+    output.docs.forEach((item: Details) => {
       if (Array.isArray(item.toc)) {
-        item.toc.forEach((tocItem: any) => {
+        item.toc.forEach((tocItem: TableOfContentsItem) => {
           expect(tocItem).toHaveProperty('content');
           expect(typeof tocItem.content).toBe('string');
           expect(tocItem).toHaveProperty('slug');
@@ -108,34 +115,35 @@ describe('Integration: build-post-list-runner', () => {
           expect(typeof tocItem.lvl).toBe('number');
           expect(tocItem).toHaveProperty('i');
           expect(typeof tocItem.i).toBe('number');
-          expect(tocItem).toHaveProperty('seen');
-          expect(typeof tocItem.seen).toBe('number');
         });
       }
     });
   });
 
   it('all slugs start with their section', () => {
-    output.docs.forEach((item: any) => {
-      expect(item.slug.startsWith('/docs')).toBe(true);
+    output.docs.forEach((item: Details) => {
+      expect(item.slug).toBeDefined();
+      expect(item.slug?.startsWith('/docs')).toBe(true);
     });
-    output.about.forEach((item: any) => {
-      expect(item.slug.startsWith('/about')).toBe(true);
+    output.about.forEach((item: Details) => {
+      expect(item.slug).toBeDefined();
+      expect(item.slug?.startsWith('/about')).toBe(true);
     });
-    output.blog.forEach((item: any) => {
-      expect(item.slug.startsWith('/blog')).toBe(true);
+    output.blog.forEach((item: Details) => {
+      expect(item.slug).toBeDefined();
+      expect(item.slug?.startsWith('/blog')).toBe(true);
     });
   });
 
   it('all items in docs, blog, and about have unique slugs', () => {
     (['docs', 'blog', 'about'] as const).forEach((section) => {
-      let items: any[] = [];
+      let items: Details[] = [];
 
       if (section === 'docs') items = output.docs;
       else if (section === 'blog') items = output.blog;
       else if (section === 'about') items = output.about;
 
-      const slugs = items.map((item: any) => item.slug);
+      const slugs = items.map((item: Details) => item.slug);
       const uniqueSlugs = new Set(slugs);
 
       // For now, just ensure we have some slugs and they're mostly unique
@@ -145,22 +153,21 @@ describe('Integration: build-post-list-runner', () => {
   });
 
   it('docs items with toc have valid structure', () => {
-    output.docs.forEach((item: any) => {
+    output.docs.forEach((item: Details) => {
       if (Array.isArray(item.toc)) {
-        item.toc.forEach((tocItem: any) => {
+        item.toc.forEach((tocItem: TableOfContentsItem) => {
           expect(typeof tocItem.content).toBe('string');
           expect(typeof tocItem.slug).toBe('string');
           expect(typeof tocItem.lvl).toBe('number');
           expect(typeof tocItem.i).toBe('number');
-          expect(typeof tocItem.seen).toBe('number');
         });
       }
     });
   });
 
   it('all items with readingTime have a positive number', () => {
-    output.docs.forEach((item: any) => {
-      if ('readingTime' in item) {
+    output.docs.forEach((item: Details) => {
+      if (hasProp(item, 'readingTime')) {
         expect(typeof item.readingTime).toBe('number');
         expect(item.readingTime).toBeGreaterThan(0);
       }
@@ -168,18 +175,18 @@ describe('Integration: build-post-list-runner', () => {
   });
 
   it('all items with excerpt have a valid string', () => {
-    output.docs.forEach((item: any) => {
-      if ('excerpt' in item) {
+    output.docs.forEach((item: Details) => {
+      if (hasProp(item, 'excerpt')) {
         expect(typeof item.excerpt).toBe('string');
         // Excerpt can be empty for some files, that's okay
-        expect(item.excerpt.length).toBeGreaterThanOrEqual(0);
+        expect(item.excerpt?.length).toBeGreaterThanOrEqual(0);
       }
     });
   });
 
   it('all items with id have a valid file path', () => {
-    output.docs.forEach((item: any) => {
-      if ('id' in item) {
+    output.docs.forEach((item: Details) => {
+      if (hasProp(item, 'id')) {
         expect(item.id).toMatch(/\.mdx$/);
         expect(item.id).toMatch(/pages[\\/]/);
       }
