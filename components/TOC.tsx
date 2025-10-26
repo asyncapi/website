@@ -76,7 +76,7 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
       <div className={`${!open && 'hidden'} ${cssBreakingPoint === 'xl' ? 'xl:block' : 'lg:block'}`}>
         <Scrollspy
           items={tocItems.map((item) => (item.slug ? item.slug : item.slugWithATag))}
-          currentClassName='text-primary-500 dark:text-primary-500 font-bold'
+          currentClassName='!text-primary-500 dark:!text-primary-500 font-bold'
           componentTag='div'
           rootEl={contentSelector}
           offset={-120}

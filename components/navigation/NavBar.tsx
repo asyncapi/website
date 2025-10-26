@@ -181,17 +181,22 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             </div>
           )}
 
-          <div className='-my-2 -mr-2 flex flex-row items-center justify-center lg:hidden' data-testid='Navbar-search'>
+          <div
+            className='-my-2 -mr-2 flex flex-row items-center justify-center gap-1 lg:hidden'
+            data-testid='Navbar-search'
+          >
             <SearchButton
-              className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 dark:text-dark-heading transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 '
+              className='flex items-center rounded-lg p-2.5 text-gray-600 dark:text-gray-300 transition-all duration-200 ease-in-out hover:bg-gray-100 dark:hover:bg-gray-800 hover:scale-105 active:scale-95'
               aria-label='Open Search'
             >
               <IconLoupe />
             </SearchButton>
+            <DarkModeToggle />
             <button
               onClick={() => setMobileMenuOpen(true)}
               type='button'
-              className='inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
+              className='inline-flex items-center justify-center rounded-lg p-2.5 text-gray-600 dark:text-gray-300 transition-all duration-200 ease-in-out hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none hover:scale-105 active:scale-95'
+              aria-label='Open Menu'
             >
               <svg className='size-6' stroke='currentColor' fill='none' viewBox='0 0 24 24'>
                 <title>Menu</title>
