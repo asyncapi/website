@@ -22,12 +22,9 @@ export interface BuildDashboardOptions {
  * @param options - Optional configuration for output path
  * @throws {CustomError} If the build process fails or an error occurs in the runner
  */
-export async function runBuildDashboard(
-  options: BuildDashboardOptions = {},
-): Promise<void> {
+export async function runBuildDashboard(options: BuildDashboardOptions = {}): Promise<void> {
   try {
-    const outputPath =
-      options.outputPath || resolve(currentDirPath, '../../dashboard.json');
+    const outputPath = options.outputPath || resolve(currentDirPath, '../../dashboard.json');
 
     await buildDashboard(outputPath);
   } catch (error) {
@@ -36,12 +33,12 @@ export async function runBuildDashboard(
       error instanceof CustomError
         ? error.updateContext({
             operation: 'runBuildDashboard',
-            detail: `Runner failed with output path: ${options.outputPath}`,
+            detail: `Runner failed with output path: ${options.outputPath}`
           })
         : CustomError.fromError(error, {
             category: 'script',
             operation: 'runBuildDashboard',
-            detail: `Build dashboard runner failed with output path: ${options.outputPath}`,
+            detail: `Build dashboard runner failed with output path: ${options.outputPath}`
           });
 
     // Log error with full context
