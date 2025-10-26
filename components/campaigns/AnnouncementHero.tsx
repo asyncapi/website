@@ -17,7 +17,7 @@ interface IAnnouncementHeroProps {
  */
 export default function AnnouncementHero({ className = '' }: IAnnouncementHeroProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const visibleBanners = useMemo(() => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)), [banners]);
+  const visibleBanners = useMemo(() => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)), []);
 
   useEffect(() => {
     if (visibleBanners.length <= 1) return undefined;
