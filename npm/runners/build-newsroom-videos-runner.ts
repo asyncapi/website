@@ -8,7 +8,7 @@ import { CustomError } from '@/types/errors/CustomError';
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
-interface BuildNewsroomVideosOptions {
+export interface BuildNewsroomVideosOptions {
   outputPath?: string;
 }
 
@@ -41,9 +41,7 @@ async function runBuildNewsroomVideos(options: BuildNewsroomVideosOptions = {}):
 }
 
 // Run only in non-test environments
-if (process.env.NODE_ENV === 'test') {
-  logger.info('Skipping newsroom videos build in test environment');
-} else {
+if (process.env.NODE_ENV !== 'test' && process.env.VITEST_WORKER_ID === undefined) {
   // Self-executing async function to handle top-level await
   (async () => {
     try {
