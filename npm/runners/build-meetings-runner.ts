@@ -8,7 +8,7 @@ import { CustomError } from '@/types/errors/CustomError';
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
-interface BuildMeetingsOptions {
+export interface BuildMeetingsOptions {
   outputPath?: string;
 }
 
@@ -40,10 +40,8 @@ async function runBuildMeetings(options: BuildMeetingsOptions = {}): Promise<voi
   }
 }
 
-// Run only in non-test environments
-if (process.env.NODE_ENV === 'test') {
-  logger.info('Skipping meetings build in test environment');
-} else {
+// Only run CLI if NOT in test environment (when imported by tests, don't auto-run)
+if (process.env.NODE_ENV !== 'test' && process.env.VITEST_WORKER_ID === undefined) {
   // Self-executing async function to handle top-level await
   (async () => {
     try {
