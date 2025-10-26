@@ -118,12 +118,12 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
 
   return (
     <DocsContext.Provider value={{ post, navItems }}>
-      <div className='w-full bg-white dark:bg-dark-background px-4 sm:px-6 lg:px-8 xl:mx-auto'>
+      <div className='w-full bg-white dark:bg-dark-background'>
         {showMenu && <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />}
         <div className='flex flex-row' id='main-content'>
           {/* <!-- Static sidebar for desktop --> */}
           {sidebar}
-          <div className='flex w-0 max-w-full min-w-0 dark:bg-dark-background flex-1 flex-col overflow-hidden'>
+          <div className='flex w-0 max-w-full min-w-0 dark:bg-dark-background flex-1 flex-col'>
             <main className='relative z-0 pb-6 pt-2 focus:outline-none md:py-6' tabIndex={0}>
               {!showMenu && (
                 <div className='lg:hidden'>
@@ -146,7 +146,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                   depth={3}
                   className='hidden xl:block sticky top-20 mt-4 max-h-screen overflow-y-auto xl:mt-0 xl:w-60 xl:flex-shrink-0 xl:bg-transparent xl:pb-8'
                 />
-                <div className='px-4 sm:px-6 xl:flex-1 xl:px-8 min-w-0 overflow-hidden'>
+                <div className='px-4 sm:px-6 w-full lg:max-w-6xl lg:mx-auto lg:px-8 xl:flex-1 xl:max-w-7xl overflow-x-hidden'>
                   <Heading className='dark:text-dark-heading' level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg}>
                     {post.title}
                   </Heading>
@@ -198,7 +198,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                       </div>
                     </div>
                   )}
-                  <article className='my-12'>
+                  <article className='my-12 overflow-x-auto'>
                     <Head title={post.title} description={post.excerpt} image={post.cover} />
                     {children}
                   </article>
