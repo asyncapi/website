@@ -198,7 +198,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                       </div>
                     </div>
                   )}
-                  <article className='my-12 max-w-full'>
+                  <article className='my-12'>
                     <Head title={post.title} description={post.excerpt} image={post.cover} />
                     {children}
                   </article>
