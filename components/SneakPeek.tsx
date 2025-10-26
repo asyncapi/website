@@ -7,12 +7,14 @@ import ArrowRight from './icons/ArrowRight';
 import Heading from './typography/Heading';
 import Paragraph from './typography/Paragraph';
 
+type SneakPeekTab = 'document' | 'generation' | 'documentation';
+
 /**
  * @description This component displays the Sneak Peek section with tabs showing AsyncAPI examples
  */
 export default function SneakPeek() {
   const { t } = useTranslation('landing-page');
-  const [activeTab, setActiveTab] = useState<'document' | 'generation' | 'documentation'>('document');
+  const [activeTab, setActiveTab] = useState<SneakPeekTab>('document');
   const [showPayload, setShowPayload] = useState(true);
 
   const renderAsyncAPICode = () => (

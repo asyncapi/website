@@ -142,9 +142,12 @@ export default function MobileNavMenu({
             <div className='grid gap-4'>
               <div>
                 <h4 className='mb-4 flex justify-between font-semibold text-gray-800 dark:text-white text-base'>
-                  <a className='cursor-pointer hover:text-secondary-600 dark:hover:text-secondary-400 transition-colors'>
+                  <button
+                    type='button'
+                    className='cursor-pointer hover:text-secondary-600 dark:hover:text-secondary-400 transition-colors'
+                  >
                     Others
-                  </a>
+                  </button>
                   <NavItemDropdown />
                 </h4>
                 {open === 'others' && (
@@ -170,9 +173,12 @@ export default function MobileNavMenu({
             <div className='grid gap-4'>
               <div>
                 <h4 className='mb-4 flex justify-between font-semibold text-gray-800 dark:text-white text-base'>
-                  <a className='flex cursor-pointer items-center gap-x-2 hover:text-secondary-600 dark:hover:text-secondary-400 transition-colors'>
+                  <button
+                    type='button'
+                    className='flex cursor-pointer items-center gap-x-2 hover:text-secondary-600 dark:hover:text-secondary-400 transition-colors'
+                  >
                     Language <IconLanguage className='size-5' />
-                  </a>
+                  </button>
                   <NavItemDropdown />
                 </h4>
                 {open === 'language' && (
