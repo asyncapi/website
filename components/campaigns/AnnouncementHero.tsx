@@ -5,14 +5,10 @@ import ConferenceBanner from './ConferenceBanner';
 
 interface IAnnouncementHeroProps {
   className?: string;
-  small?: boolean;
-  hideVideo?: boolean;
 }
 
 /**
  * @param {string} props.className - The class name of the announcement hero
- * @param {Boolean} props.small - Whether the banner is small
- * @param {Boolean} props.hideVideo - Whether the video should be hidden
  * @description The announcement hero - displays one rotating banner that changes every 2 seconds
  */
 export default function AnnouncementHero({ className = '' }: IAnnouncementHeroProps) {
