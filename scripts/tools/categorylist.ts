@@ -49,7 +49,8 @@ const categoryList: CategoryListItem[] = [
     name: 'DSL',
     tag: 'dsl',
     description:
-      "Writing YAML by hand is no fun, and maybe you don't want a GUI, so use a Domain Specific Language to write AsyncAPI in your language of choice."
+      "Writing YAML by hand is no fun, and maybe you don't want a GUI, " +
+      'so use a Domain Specific Language to write AsyncAPI in your language of choice.'
   },
   {
     name: 'Frameworks',
@@ -65,7 +66,8 @@ const categoryList: CategoryListItem[] = [
     name: 'Mocking and Testing',
     tag: 'mocking-and-testing',
     description:
-      'The tools below take specification documents as input, then publish fake messages to broker destinations for simulation purposes. They may also check that publisher messages are compliant with schemas.'
+      'The tools below take specification documents as input, then publish fake messages to broker ' +
+      'destinations for simulation purposes. They may also check that publisher messages are compliant with schemas.'
   },
   {
     name: 'Validators',
@@ -96,7 +98,8 @@ const categoryList: CategoryListItem[] = [
     name: 'AsyncAPI Generator Templates',
     tag: 'generator-template',
     description:
-      'The following is a list of templates compatible with AsyncAPI Generator. You can use them to generate apps, clients or documentation from your AsyncAPI documents.'
+      'The following is a list of templates compatible with AsyncAPI Generator. ' +
+      'You can use them to generate apps, clients or documentation from your AsyncAPI documents.'
   },
   {
     name: 'Others',

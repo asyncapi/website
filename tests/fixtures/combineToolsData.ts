@@ -88,7 +88,9 @@ const automatedToolsT5 = {
 const invalidToolT4 = {
   title: 'Invalid Tool',
   filters: {
-    categories: [] as Category[]
+    categories: [] as Category[],
+    language: [] as string[],
+    technology: [] as string[]
   }
 };
 

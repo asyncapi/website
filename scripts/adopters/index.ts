@@ -1,10 +1,9 @@
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
-import { writeJSON } from '../helpers/readAndWriteJson';
+import { CustomError } from '@/types/errors/CustomError';
 
-const currentFilePath = fileURLToPath(import.meta.url);
-const currentDirPath = dirname(currentFilePath);
+import { writeJSON } from '../helpers/readAndWriteJson';
 
 /**
  * Converts the YAML adopters configuration to a JSON file.
@@ -16,5 +15,16 @@ const currentDirPath = dirname(currentFilePath);
  * performed using the writeJSON utility.
  */
 export async function buildAdoptersList() {
-  writeJSON('config/adopters.yml', resolve(currentDirPath, '../../config', 'adopters.json'));
+  const currentFilePath = fileURLToPath(import.meta.url);
+  const currentDirPath = dirname(currentFilePath);
+
+  try {
+    await writeJSON('config/adopters.yml', resolve(currentDirPath, '../../config', 'adopters.json'));
+  } catch (err) {
+    throw CustomError.fromError(err, {
+      category: 'script',
+      operation: 'buildAdoptersList',
+      detail: `Failed to convert adopters.yml to JSON at ${resolve(currentDirPath, '../../config', 'adopters.json')}`
+    });
+  }
 }

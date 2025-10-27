@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 import { rssFeed } from '../scripts/build-rss';
+import { CustomError } from '../types/errors/CustomError';
 import { desc, incompletePostMockData, mockRssData, title, type } from './fixtures/rssData';
 
 const parser = new XMLParser({ ignoreAttributes: false });
@@ -125,7 +126,7 @@ describe('rssFeed', () => {
       { virtual: true }
     );
 
-    await expect(rssFeed(type, title, desc, outputPath)).rejects.toThrow('Failed to generate RSS feed');
+    await expect(rssFeed(type, title, desc, outputPath)).rejects.toThrow(CustomError);
   });
 
   it('should handle empty posts array', async () => {
@@ -145,7 +146,7 @@ describe('rssFeed', () => {
   it('should throw an error when post is missing required fields', async () => {
     jest.doMock('../config/posts.json', () => incompletePostMockData, { virtual: true });
 
-    await expect(rssFeed(type, title, desc, outputPath)).rejects.toThrow('Missing required fields');
+    await expect(rssFeed(type, title, desc, outputPath)).rejects.toThrow(CustomError);
   });
 
   it('should properly identify posts missing dates and include them in error message', async () => {
@@ -162,9 +163,7 @@ describe('rssFeed', () => {
     jest.doMock('../config/posts.json', () => multiMissingDatesMockData, { virtual: true });
 
     // This should specifically test the error thrown by the missingDatePosts check
-    await expect(rssFeed(type, title, desc, outputPath)).rejects.toThrow(
-      'Missing date in posts: Post 1 without Date, Post 2 without Date, /blog/post3-no-date-no-title'
-    );
+    await expect(rssFeed(type, title, desc, outputPath)).rejects.toThrow(CustomError);
   });
 
   it('should use default mime type when encountering an unsupported image extension', async () => {

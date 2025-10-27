@@ -1,34 +1,46 @@
+import dotenv from 'dotenv';
 import { writeFileSync } from 'fs';
 import { google } from 'googleapis';
-import { dirname, resolve } from 'path';
-import { fileURLToPath } from 'url';
+
+import { CustomError } from '@/types/errors/CustomError';
 
 import { logger } from './helpers/logger';
 
-const currentFilePath = fileURLToPath(import.meta.url);
-const currentDirPath = dirname(currentFilePath);
+dotenv.config();
 
 /**
  * Fetches meeting events from Google Calendar within a predefined time window and writes the formatted data to a file.
  *
- * This function authenticates using service account credentials from environment variables and retrieves events from a calendar identified by an environment variable. It computes a time span ranging from 100 days before the current time to 30 days after, then processes each event to extract key details such as the title, calendar link, optional URL and banner, and the event date. If the API response is invalid or an event lacks a start date-time, an error is thrown. The formatted, pretty-printed JSON data is logged and written to the specified file path.
+ * This function authenticates using service account credentials from environment variables and retrieves events from a
+ * calendar identified by an environment variable. It computes a time span ranging from 100 days before the current time
+ * to 30 days after, then processes each event to extract key details such as the title, calendar link, optional URL and
+ * banner, and the event date. If the API response is invalid or an event lacks a start date-time, an error is thrown.
+ * The formatted, pretty-printed JSON data is logged and written to the specified file path.
  *
  * @param writePath - The file system path where the output JSON data should be saved.
  *
- * @throws {Error} When authentication fails, the calendar API returns an invalid structure, or required event details are missing.
+ * @throws {CustomError} When authentication fails, the calendar API returns an invalid structure, or required event details are missing.
  */
-async function buildMeetings(writePath: string) {
+export async function buildMeetings(writePath: string) {
   let auth;
   let calendar;
 
   // Check if the CALENDAR_SERVICE_ACCOUNT is present in the environment variables
   // Check if required environment variables are present
   if (!process.env.CALENDAR_SERVICE_ACCOUNT) {
-    throw new Error('CALENDAR_SERVICE_ACCOUNT environment variable is not set');
+    throw new CustomError('CALENDAR_SERVICE_ACCOUNT environment variable is not set', {
+      category: 'script',
+      operation: 'buildMeetings',
+      detail: `Environment check failed for writePath: ${writePath}`
+    });
   }
 
   if (!process.env.CALENDAR_ID) {
-    throw new Error('CALENDAR_ID environment variable is not set');
+    throw new CustomError('CALENDAR_ID environment variable is not set', {
+      category: 'script',
+      operation: 'buildMeetings',
+      detail: `Environment check failed for writePath: ${writePath}`
+    });
   }
 
   try {
@@ -39,7 +51,11 @@ async function buildMeetings(writePath: string) {
 
     calendar = google.calendar({ version: 'v3', auth });
   } catch (err) {
-    throw new Error(`Authentication failed: ${err}`);
+    throw CustomError.fromError(err, {
+      category: 'api',
+      operation: 'buildMeetings',
+      detail: `Google Calendar authentication failed for writePath: ${writePath}`
+    });
   }
 
   let eventsItems;
@@ -58,21 +74,29 @@ async function buildMeetings(writePath: string) {
 
     // check if the response is valid and not undefined
     if (!eventsList.data.items || !Array.isArray(eventsList.data.items)) {
-      throw new Error('Invalid data structure received from Google Calendar API');
+      throw new CustomError('Invalid data structure received from Google Calendar API', {
+        category: 'api',
+        operation: 'buildMeetings',
+        detail: `Invalid response structure for calendar events, writePath: ${writePath}`
+      });
     }
 
     eventsItems = eventsList.data.items.map((e) => {
       if (!e.start || !e.start.dateTime) {
-        throw new Error('start.dateTime is missing in the event');
+        throw new CustomError('start.dateTime is missing in the event', {
+          category: 'validation',
+          operation: 'buildMeetings',
+          detail: `Event missing start.dateTime: ${e.summary || 'Unknown event'}`
+        });
       }
 
       return {
         title: e.summary,
         calLink: e.htmlLink,
-        url:
-          e.extendedProperties?.private &&
-          `https://github.com/asyncapi/community/issues/${e.extendedProperties.private.ISSUE_ID}`,
-        banner: e.extendedProperties?.private && e.extendedProperties.private.BANNER,
+        url: e.extendedProperties?.private?.ISSUE_ID
+          ? `https://github.com/asyncapi/community/issues/${e.extendedProperties.private.ISSUE_ID}`
+          : null,
+        banner: e.extendedProperties?.private?.BANNER || null,
         date: new Date(e.start.dateTime)
       };
     });
@@ -83,13 +107,15 @@ async function buildMeetings(writePath: string) {
 
     writeFileSync(writePath, eventsForHuman);
   } catch (err) {
-    throw new Error(`Failed to fetch or process events: ${(err as Error).message}`);
+    // Only wrap if it's not already a CustomError
+    if (err instanceof CustomError) {
+      throw err;
+    }
+
+    throw CustomError.fromError(err, {
+      category: 'api',
+      operation: 'buildMeetings',
+      detail: `Failed to fetch or process calendar events for writePath: ${writePath}`
+    });
   }
 }
-
-/* istanbul ignore next */
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  buildMeetings(resolve(currentDirPath, '../config', 'meetings.json'));
-}
-
-export { buildMeetings };

@@ -2,8 +2,7 @@ import type { PathLike } from 'fs';
 import fs from 'fs';
 import path from 'path';
 
-const SRC_DIR = 'markdown';
-const TARGET_DIR = 'pages';
+import { CustomError } from '@/types/errors/CustomError';
 
 const capitalizeTags = ['table', 'tr', 'td', 'th', 'thead', 'tbody'];
 
@@ -12,23 +11,31 @@ const capitalizeTags = ['table', 'tr', 'td', 'th', 'thead', 'tbody'];
  * @param {PathLike} directory - The directory path to check or create.
  */
 export function ensureDirectoryExists(directory: PathLike) {
-  if (!fs.existsSync(directory)) {
-    fs.mkdirSync(directory, { recursive: true });
+  try {
+    if (!fs.existsSync(directory)) {
+      fs.mkdirSync(directory, { recursive: true });
+    }
+  } catch (err) {
+    throw CustomError.fromError(err, {
+      category: 'script',
+      operation: 'ensureDirectoryExists',
+      detail: `Failed to ensure directory exists: ${directory}`
+    });
   }
 }
-ensureDirectoryExists(TARGET_DIR);
 
 /**
  * Capitalizes the first letter of JSX tag names in the provided content if they are in a predefined list.
  *
  * This function scans the input string for opening and closing JSX tags using a regular expression.
- * If a tag's lowercase name is found in the configured list of tags to capitalize, its first character is converted to uppercase.
+ * If a tag's lowercase name is found in the configured list of tags to capitalize,
+ * its first character is converted to uppercase.
  *
  * @param content - The string containing JSX elements.
  * @returns The updated content with designated JSX tag names capitalized.
  */
 export function capitalizeJsxTags(content: string): string {
-  return content.replace(/<\/?(\w+)/g, function (match: string, letter: string): string {
+  return content.replace(/<\/?(\w+)/g, (match: string, letter: string): string => {
     if (capitalizeTags.includes(letter.toLowerCase())) {
       return `<${match[1] === '/' ? '/' : ''}${letter[0].toUpperCase()}${letter.slice(1)}`;
     }
@@ -47,37 +54,43 @@ export function capitalizeJsxTags(content: string): string {
  */
 export function copyAndRenameFiles(srcDir: string, targetDir: string) {
   // Read all files and directories from source directory
-  const entries = fs.readdirSync(srcDir, { withFileTypes: true });
+  try {
+    const entries = fs.readdirSync(srcDir, { withFileTypes: true });
 
-  entries.forEach((entry) => {
-    const srcPath = path.join(srcDir, entry.name);
-    const targetPath = path.join(targetDir, entry.name);
+    entries.forEach((entry) => {
+      const srcPath = path.join(srcDir, entry.name);
+      const targetPath = path.join(targetDir, entry.name);
 
-    if (entry.isDirectory()) {
-      // If entry is a directory, create it in target directory and recurse
-      if (!fs.existsSync(targetPath)) {
-        fs.mkdirSync(targetPath);
+      if (entry.isDirectory()) {
+        // If entry is a directory, create it in target directory and recurse
+        if (!fs.existsSync(targetPath)) {
+          fs.mkdirSync(targetPath);
+        }
+        copyAndRenameFiles(srcPath, targetPath);
+      } else if (entry.isFile()) {
+        // Read file content
+        let content = fs.readFileSync(srcPath, 'utf8');
+
+        content = content.replace(/{/g, '{');
+
+        content = content.replace(/<!--([\s\S]*?)-->/g, '{/*$1*/}');
+
+        content = capitalizeJsxTags(content);
+
+        // Write content to target directory
+        fs.writeFileSync(targetPath, content, 'utf8');
+
+        // If file has .md extension, rename it to .mdx
+        if (path.extname(targetPath) === '.md') {
+          fs.renameSync(targetPath, `${targetPath.slice(0, -3)}.mdx`);
+        }
       }
-      copyAndRenameFiles(srcPath, targetPath);
-    } else if (entry.isFile()) {
-      // Read file content
-      let content = fs.readFileSync(srcPath, 'utf8');
-
-      content = content.replace(/{/g, '{');
-
-      content = content.replace(/<!--([\s\S]*?)-->/g, '{/*$1*/}');
-
-      content = capitalizeJsxTags(content);
-
-      // Write content to target directory
-      fs.writeFileSync(targetPath, content, 'utf8');
-
-      // If file has .md extension, rename it to .mdx
-      if (path.extname(targetPath) === '.md') {
-        fs.renameSync(targetPath, `${targetPath.slice(0, -3)}.mdx`);
-      }
-    }
-  });
+    });
+  } catch (err) {
+    throw CustomError.fromError(err, {
+      category: 'script',
+      operation: 'copyAndRenameFiles',
+      detail: `Failed to copy and rename files from ${srcDir} to ${targetDir}`
+    });
+  }
 }
-
-copyAndRenameFiles(SRC_DIR, TARGET_DIR);

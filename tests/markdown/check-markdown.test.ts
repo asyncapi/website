@@ -100,7 +100,13 @@ describe('Frontmatter Validator', () => {
 
     await expect(checkMarkdownFiles(invalidFolderPath, validateBlogs)).rejects.toThrow('ENOENT');
 
-    expect(mockLoggerError.mock.calls[0][0]).toContain('Error in directory');
+    expect(mockLoggerError).toHaveBeenCalledWith(
+      expect.stringContaining('Error in directory'),
+      expect.objectContaining({
+        error: expect.any(Error),
+        folderPath: expect.any(String)
+      })
+    );
   });
 
   it('skips the "reference/specification" folder during validation', async () => {
@@ -142,7 +148,13 @@ describe('Frontmatter Validator', () => {
     const mockReadFile = jest.spyOn(fs, 'readFile').mockRejectedValue(new Error('Test readFile error'));
 
     await expect(checkMarkdownFiles(tempDir, validateBlogs)).rejects.toThrow('Test readFile error');
-    expect(logger.error).toHaveBeenCalledWith(expect.stringContaining('Error in directory'), expect.any(Error));
+    expect(logger.error).toHaveBeenCalledWith(
+      expect.stringContaining('Error in directory'),
+      expect.objectContaining({
+        error: expect.any(Error),
+        folderPath: expect.any(String)
+      })
+    );
 
     mockReadFile.mockRestore();
   });
@@ -153,9 +165,30 @@ describe('Frontmatter Validator', () => {
     await main();
 
     expect(mockProcessExit).toHaveBeenCalledWith(1);
-    expect(logger.error).toHaveBeenCalledWith('Failed to validate markdown files:', expect.any(Error));
+    expect(logger.error).toHaveBeenCalledWith(
+      'Failed to validate markdown files',
+      expect.objectContaining({
+        error: expect.any(Error)
+      })
+    );
 
     mockReaddir.mockRestore(); // Restore the mock to prevent affecting other tests
+  });
+
+  it('should handle main function non-Error exceptions', async () => {
+    const mockReaddir = jest.spyOn(fs, 'readdir').mockRejectedValue('String error');
+
+    await main();
+
+    expect(mockProcessExit).toHaveBeenCalledWith(1);
+    expect(logger.error).toHaveBeenCalledWith(
+      'Failed to validate markdown files',
+      expect.objectContaining({
+        error: expect.any(Error)
+      })
+    );
+
+    mockReaddir.mockRestore();
   });
 
   it('should handle successful main function execution', async () => {
