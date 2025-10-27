@@ -69,7 +69,7 @@ The individual `servers` field contains the following properties:
 
 - `host`: The server hostname. It may include the port.
 - `protocol`: The protocol or messaging protocol that is used by the server (for example, AMQP, MQTT, WebSocket).
-- `protocolVersion`: The protocol version used for the connection.
+- `protocolVersion`: The version of the **underlying communication protocol** used for connection (for example, AMQP `0.9.1`, MQTT `3.1.1`, HTTP `2.0`). This is distinct from the AsyncAPI specification version or your application's API version.
 - `pathname`: The path to a resource in the host.
 - `description`: A string describing the server.
 - `title`: A human-friendly title for the server.
