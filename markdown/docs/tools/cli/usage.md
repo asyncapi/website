@@ -42,6 +42,7 @@ USAGE
 * [`asyncapi bundle`](#asyncapi-bundle)
 * [`asyncapi config`](#asyncapi-config)
 * [`asyncapi config analytics`](#asyncapi-config-analytics)
+* [`asyncapi config auth add PATTERN TOKEN`](#asyncapi-config-auth-add-pattern-token)
 * [`asyncapi config context`](#asyncapi-config-context)
 * [`asyncapi config context add CONTEXT-NAME SPEC-FILE-PATH`](#asyncapi-config-context-add-context-name-spec-file-path)
 * [`asyncapi config context current`](#asyncapi-config-context-current)
@@ -169,6 +170,37 @@ DESCRIPTION
 ```
 
 _See code: [src/commands/config/analytics.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/config/analytics.ts)_
+
+## `asyncapi config auth add PATTERN TOKEN`
+
+Add an authentication config for resolving $ref files requiring HTTP Authorization.
+
+```
+USAGE
+  $ asyncapi config auth add PATTERN TOKEN [-a <value>] [-h <value>...]
+
+ARGUMENTS
+  PATTERN  Glob pattern for matching protected URLs (e.g. github.com/org/repo/**/*.*)
+  TOKEN    Authentication token or environment variable reference (prefix with $, e.g. $GITHUB_TOKEN)
+
+FLAGS
+  -a, --auth-type=<value>  Authentication type (default is "Bearer")
+  -h, --header=<value>...  Additional headers in key=value format
+
+DESCRIPTION
+  Add an authentication config for resolving $ref files requiring HTTP Authorization.
+
+EXAMPLES
+  $ asyncapi config auth add "https://github.com/org/repo/**/*" "ghp_XuYi7ZWQWjmrJpY2Kz3ET"
+
+  $ asyncapi config auth add "https://api.github.com/repos/org/repo/**/*" "$GITHUB_TOKEN"
+
+  $ asyncapi config auth add "https://private-registry.com/**/*" "my-token" --auth-type="Token"
+
+  $ asyncapi config auth add "https://api.example.com/**/*" "token123" --header="X-API-Key=abc123" --header="User-Agent=MyApp/1.0"
+```
+
+_See code: [src/commands/config/auth/add.ts](https://github.com/asyncapi/cli/blob/v3.2.0/src/commands/config/auth/add.ts)_
 
 ## `asyncapi config context`
 

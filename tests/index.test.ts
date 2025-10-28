@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-import { buildAdoptersList } from '../scripts/adopters/index';
+import { buildUsecasesList } from '../scripts/usecases/index';
 import { buildPostList } from '../scripts/build-post-list';
 import { rssFeed } from '../scripts/build-rss';
 import { buildCaseStudiesList } from '../scripts/casestudies/index';
@@ -10,7 +10,7 @@ import { start } from '../scripts/index';
 jest.mock('../scripts/build-rss');
 jest.mock('../scripts/build-post-list');
 jest.mock('../scripts/casestudies');
-jest.mock('../scripts/adopters');
+jest.mock('../scripts/usecases');
 jest.mock('../scripts/finance');
 
 describe('start function', () => {
@@ -31,7 +31,7 @@ describe('start function', () => {
     );
 
     expect(buildCaseStudiesList).toHaveBeenCalled();
-    expect(buildAdoptersList).toHaveBeenCalled();
+    expect(buildUsecasesList).toHaveBeenCalled();
     expect(buildFinanceInfoList).toHaveBeenCalled();
   });
 

@@ -48,6 +48,6 @@ export const EmailInput: Story = {
   args: {
     inputType: InputTypes.EMAIL,
     inputName: 'Email',
-    placeholder: 'press@asyncapi.io'
+    placeholder: 'info@asyncapi.com'
   }
 };
