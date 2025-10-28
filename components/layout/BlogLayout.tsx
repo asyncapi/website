@@ -105,7 +105,7 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
               `}</style>
               {post.canonical && <link rel='canonical' href={post.canonical} />}
             </HtmlHead>
-            <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className='my-6 w-full' />
+            <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className='my-6 w-full' width="800" height="400" loading="lazy" />
             {children}
           </article>
         </main>

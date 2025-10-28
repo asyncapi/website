@@ -116,6 +116,9 @@ export default function Footer() {
                   src='https://www.netlify.com/img/global/badges/netlify-color-bg.svg'
                   className='inline'
                   alt='Deploys by Netlify'
+                  width="114"
+                  height="51"
+                  loading='lazy'
                 />
               </a>
             </p>

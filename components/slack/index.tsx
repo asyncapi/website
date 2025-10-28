@@ -37,14 +37,14 @@ export default function Slack({ className = '' }: SlackProps) {
           text={
             <>
               Good Morning
-              <img className='ml-1 inline-block size-5' src='/img/homepage/grain.png' alt='grain' />
-              <img className='ml-1 inline-block size-5' src='/img/homepage/coffee.png' alt='coffee' />
+              <img className='ml-1 inline-block size-5' src='/img/homepage/grain.webp' alt='grain' loading='lazy'/>
+              <img className='ml-1 inline-block size-5' src='/img/homepage/coffee.webp' alt='coffee' loading='lazy'/>
             </>
           }
           reactions={[
-            { icon: '/img/homepage/coffee.png', name: 'coffee', count: 6, mine: true },
+            { icon: '/img/homepage/coffee.webp', name: 'coffee', count: 6, mine: true },
             { icon: '/img/homepage/coffee-parrot.gif', name: 'coffee-parrot', count: 4, mine: true },
-            { icon: '/img/homepage/coffee-bean.png', name: 'coffee-bean', count: 6, mine: true },
+            { icon: '/img/homepage/coffee-bean.webp', name: 'coffee-bean', count: 6, mine: true },
             { icon: '/img/homepage/parrotsleep.gif', name: 'parrotsleep', count: 1, mine: false }
           ]}
         />

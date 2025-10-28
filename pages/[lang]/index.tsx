@@ -199,28 +199,28 @@ export default function HomePage() {
             <Testimonial
               className='md:pr-10 lg:pr-16'
               text='Microservices underline the need for event-based communication in distributed architectures. AsyncAPI brings the richness of the REST API ecosystem to asynchronous APIs.'
-              authorAvatar='/img/testimonials/matt-mclarty.jpg'
+              authorAvatar='/img/testimonials/matt-mclarty.webp'
               authorName='Matt McLarty'
               authorDescription='Global Leader of API Strategy at MuleSoft'
             />
             <Testimonial
               className='md:pl-10 lg:pl-16'
               text='Event-driven APIs need love too! AsyncAPI brings the many benefits of a machine/human-readable specification to these nuanced approaches.'
-              authorAvatar='/img/testimonials/bill-doerrfeld.jpg'
+              authorAvatar='/img/testimonials/bill-doerrfeld.webp'
               authorName='Bill Doerrfeld'
               authorDescription='Editor in Chief at Nordic APIs'
             />
             <Testimonial
               className='md:pr-10 lg:pr-16'
               text="Developers need to be able to quickly and consistently create event-driven applications that provide business value and react to customer needs in realtime. I can't count how many times I've heard developers ask for OpenAPI/Swagger style tools for the asynchronous and event-driven world, and that is exactly what the AsyncAPI initiative is making a reality."
-              authorAvatar='/img/testimonials/jonathan-schabowsky.jpg'
+              authorAvatar='/img/testimonials/jonathan-schabowsky.webp'
               authorName='Jonathan Schabowsky'
               authorDescription='Sr. Architect, Office of the CTO at Solace'
             />
             <Testimonial
               className='md:pl-10 lg:pl-16'
               text='We’ve been focusing on event-driven APIs since 2014 and thank the AsyncAPI contributors every day for driving the community towards common standards.'
-              authorAvatar='/img/testimonials/eric-horesnyi.jpg'
+              authorAvatar='/img/testimonials/eric-horesnyi.webp'
               authorName='Eric Horesnyi'
               authorDescription='CEO at Streamdata.io'
             />

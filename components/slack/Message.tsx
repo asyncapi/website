@@ -31,7 +31,7 @@ interface ISlackMessageProps {
 export default function SlackMessage({ className = '', avatar, name, text, reactions = [] }: ISlackMessageProps) {
   return (
     <div className={`my-2 flex pl-2 text-left ${className}`} data-testid='SlackMessage-main-div'>
-      <img className='mr-2 block size-9 rounded object-cover' src={avatar} alt={name} data-testid='SlackMessage-img' />
+      <img className='mr-2 block size-9 rounded object-cover' src={avatar} alt={name} data-testid='SlackMessage-img' loading='lazy' decoding='async' width="36" height="36"/>
       <div>
         <div className='-mt-1 text-sm font-bold' data-testid='SlackMessage-name'>
           {name}
@@ -52,6 +52,7 @@ export default function SlackMessage({ className = '', avatar, name, text, react
                   src={reaction.icon}
                   alt={reaction.name}
                   data-testid='reactionIcon'
+                  loading='lazy'
                 />
               ) : (
                 <span className='mr-1 text-xs' data-testid='SlackMessage-span'>

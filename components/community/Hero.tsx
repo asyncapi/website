@@ -17,9 +17,9 @@ export default function Hero({ className = '' }: HeroProps) {
     <div className={`orbits overflow-hidden ${className}`}>
       <div className='orbit-container' data-testid='orbit-div'>
         <div id='first-orbit' className='orbit' data-testid='Hero-first'>
-          {orbitData[0].map((orbit) => (
+          {orbitData[0].map((orbit,index) => (
             <div key={orbit.id} className={orbit.id}>
-              <img src={orbit.img} alt={orbit.alt} className='orbit-img' data-testid='Hero-firstimg' />
+              <img src={orbit.img} alt={orbit.alt} width="64" height="64"  fetchPriority={index === 0 ? 'high' : 'low'} className='orbit-img' data-testid='Hero-firstimg' />
             </div>
           ))}
           <div className='absolute z-40 flex size-full justify-center'>

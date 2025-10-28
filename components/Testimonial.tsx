@@ -42,6 +42,9 @@ export default function Testimonial({
               src={authorAvatar}
               alt={authorName}
               data-testid='Testimonial-img'
+              width="48"
+              height="48"
+              loading="lazy"  
             />
           </figure>
           <div className='ml-4 text-left'>
