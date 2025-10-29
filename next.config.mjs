@@ -6,6 +6,8 @@ import slug from 'remark-slug';
 import headingId from 'remark-heading-id';
 import remarkGfm from 'remark-gfm';
 import withMDX from '@next/mdx';
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
 
 /**
  * @type {import('next').NextConfig}
@@ -25,6 +27,13 @@ const nextConfig = {
   }
 };
 
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+  openAnalyzer: false,
+  generateStatsFile: true, // Add this
+  statsFilename: 'stats.json'
+})
+
 const mdxConfig = withMDX({
   extension: /\.mdx?$/,
   providerImportSource: "@mdx-js/react",
@@ -34,4 +43,4 @@ const mdxConfig = withMDX({
   }
 });
 
-export default mdxConfig(nextConfig);
+export default withBundleAnalyzer(mdxConfig(nextConfig));

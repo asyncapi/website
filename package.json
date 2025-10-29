@@ -5,6 +5,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "analyze": "cross-env NODE_OPTIONS=--max-old-space-size=8192 ANALYZE=true next build",
     "dev": "npm run build-scripts && next dev",
     "build": "npm run build-scripts && next build",
     "test:e2e": "npx cypress run",
@@ -54,6 +55,7 @@
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
+    "@next/bundle-analyzer": "^16.0.0",
     "@next/font": "^14.2.15",
     "@next/mdx": "^14.1.0",
     "@octokit/graphql": "^7.0.2",
@@ -71,6 +73,7 @@
     "autoprefixer": "^10.4.17",
     "axios": "^1.12.1",
     "clsx": "^2.1.0",
+    "cross-env": "^10.1.0",
     "cssnano": "^6.0.3",
     "dedent": "^1.5.1",
     "dotenv": "^16.4.4",

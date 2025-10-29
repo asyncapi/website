@@ -1,8 +1,54 @@
-import React, { useState } from 'react';
-import Highlight from 'react-syntax-highlighter';
+import React, { useState, useEffect } from 'react';
+
+import dynamic from 'next/dynamic';
+const Highlight = dynamic(() => import('react-syntax-highlighter'), {
+  ssr: false,
+  loading: () => <div className="animate-pulse bg-gray-200 h-8 rounded" />
+});
 
 import Caption from '../Caption';
 import IconClipboard from '../icons/Clipboard';
+
+const languageModules = {
+  yaml: () => import('react-syntax-highlighter/dist/esm/languages/hljs/yaml'),
+  bash: () => import('react-syntax-highlighter/dist/esm/languages/hljs/bash'),
+  javascript: () => import('react-syntax-highlighter/dist/esm/languages/hljs/javascript'),
+  js: () => import('react-syntax-highlighter/dist/esm/languages/hljs/javascript'),
+  json: () => import('react-syntax-highlighter/dist/esm/languages/hljs/json'),
+  html: () => import('react-syntax-highlighter/dist/esm/languages/hljs/xml'),
+  typescript: () => import('react-syntax-highlighter/dist/esm/languages/hljs/typescript'),
+  ts: () => import('react-syntax-highlighter/dist/esm/languages/hljs/typescript'),
+  python: () => import('react-syntax-highlighter/dist/esm/languages/hljs/python'),
+  java: () => import('react-syntax-highlighter/dist/esm/languages/hljs/java'),
+  cpp: () => import('react-syntax-highlighter/dist/esm/languages/hljs/cpp'),
+  c: () => import('react-syntax-highlighter/dist/esm/languages/hljs/c'),
+  csharp: () => import('react-syntax-highlighter/dist/esm/languages/hljs/csharp'),
+  php: () => import('react-syntax-highlighter/dist/esm/languages/hljs/php'),
+  ruby: () => import('react-syntax-highlighter/dist/esm/languages/hljs/ruby'),
+  go: () => import('react-syntax-highlighter/dist/esm/languages/hljs/go'),
+  rust: () => import('react-syntax-highlighter/dist/esm/languages/hljs/rust'),
+  swift: () => import('react-syntax-highlighter/dist/esm/languages/hljs/swift'),
+  kotlin: () => import('react-syntax-highlighter/dist/esm/languages/hljs/kotlin'),
+  scala: () => import('react-syntax-highlighter/dist/esm/languages/hljs/scala'),
+  clojure: () => import('react-syntax-highlighter/dist/esm/languages/hljs/clojure'),
+  haskell: () => import('react-syntax-highlighter/dist/esm/languages/hljs/haskell'),
+  elixir: () => import('react-syntax-highlighter/dist/esm/languages/hljs/elixir'),
+  erlang: () => import('react-syntax-highlighter/dist/esm/languages/hljs/erlang'),
+  perl: () => import('react-syntax-highlighter/dist/esm/languages/hljs/perl'),
+  r: () => import('react-syntax-highlighter/dist/esm/languages/hljs/r'),
+  sql: () => import('react-syntax-highlighter/dist/esm/languages/hljs/sql'),
+  xml: () => import('react-syntax-highlighter/dist/esm/languages/hljs/xml'),
+  css: () => import('react-syntax-highlighter/dist/esm/languages/hljs/css'),
+  scss: () => import('react-syntax-highlighter/dist/esm/languages/hljs/scss'),
+  less: () => import('react-syntax-highlighter/dist/esm/languages/hljs/less'),
+  dockerfile: () => import('react-syntax-highlighter/dist/esm/languages/hljs/dockerfile'),
+  shell: () => import('react-syntax-highlighter/dist/esm/languages/hljs/shell'),
+  powershell: () => import('react-syntax-highlighter/dist/esm/languages/hljs/powershell'),
+  vim: () => import('react-syntax-highlighter/dist/esm/languages/hljs/vim'),
+  diff: () => import('react-syntax-highlighter/dist/esm/languages/hljs/diff'),
+  text: () => import('react-syntax-highlighter/dist/esm/languages/hljs/plaintext'),
+  plain: () => import('react-syntax-highlighter/dist/esm/languages/hljs/plaintext'),
+};
 
 interface CodeBlockProps {
   children?: string;
@@ -212,9 +258,31 @@ export default function CodeBlock({
 }: CodeBlockProps): React.ReactNode {
   const [activeBlock, setActiveBlock] = useState<number>(0);
   const [showIsCopied, setShowIsCopied] = useState<boolean>(false);
-
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [loadedLanguages, setLoadedLanguages] = useState<Set<string>>(new Set());
   // eslint-disable-next-line no-param-reassign
   codeBlocks = codeBlocks && codeBlocks.length ? codeBlocks : [{ code: children.replace(/\n$/, '') }];
+
+  useEffect(() => {
+    const loadLanguage = async (lang: string) => {
+      if (loadedLanguages.has(lang) || !(lang in languageModules)) return;
+      
+      try {
+        await languageModules[lang as keyof typeof languageModules]();
+        setLoadedLanguages(prev => new Set([...prev, lang]));
+      } catch (error) {
+        console.warn(`Failed to load language: ${lang}`, error);
+      }
+    };
+
+    const currentLanguage = codeBlocks && codeBlocks[activeBlock].language 
+      ? codeBlocks[activeBlock].language 
+      : language;
+
+    loadLanguage(currentLanguage).finally(() => setIsLoading(false));
+  }, [activeBlock, language, loadedLanguages]);
+
+
 
   const tabItemsCommonClassNames =
     'inline-block border-teal-300 py-1 px-2 mx-px cursor-pointer hover:text-teal-300 font-bold';
@@ -224,6 +292,8 @@ export default function CodeBlock({
   /**
    * @description This function handles the copy button click event by copying the active code block to the clipboard.
    */
+
+  
   function onClickCopy() {
     // check if navigator with clipboard exists (fallback for older browsers)
     if (navigator && navigator.clipboard && codeBlocks && codeBlocks[activeBlock]) {
@@ -240,6 +310,15 @@ export default function CodeBlock({
    * @description This function renders the syntax-highlighted code blocks.
    */
   function renderHighlight() {
+
+    if (isLoading) {
+      return (
+        <div className="flex items-center justify-center p-8 bg-gray-50 rounded-lg">
+          <div className="text-gray-500">Loading syntax highlighting...</div>
+        </div>
+      );
+    }
+
     return (
       <div className='h-full max-h-screen'>
         {codeBlocks && codeBlocks.length > 1 && (
