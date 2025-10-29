@@ -1310,33 +1310,6 @@
         "description": null,
         "links": {
           "websiteUrl": "https://studio.asyncapi.com",
-          "repoUrl": "https://github.com/Shurtu-gal/action-test-bed"
-        },
-        "filters": {
-          "language": [],
-          "technology": [
-            {
-              "name": "React JS",
-              "color": "bg-[#9FECFA]",
-              "borderColor": "border-[#08D8FE]"
-            },
-            {
-              "name": "TypeScript",
-              "color": "bg-[#61d0f2]",
-              "borderColor": "border-[#40ccf7]"
-            }
-          ],
-          "categories": [
-            "editor"
-          ],
-          "hasCommercial": false
-        }
-      },
-      {
-        "title": "AsyncAPI Studio",
-        "description": null,
-        "links": {
-          "websiteUrl": "https://studio.asyncapi.com",
           "repoUrl": "https://github.com/TahaShahid203/async-api-issue"
         },
         "filters": {
@@ -1365,6 +1338,33 @@
         "links": {
           "websiteUrl": "https://studio.asyncapi.com",
           "repoUrl": "https://github.com/asyncapi/studio"
+        },
+        "filters": {
+          "language": [],
+          "technology": [
+            {
+              "name": "React JS",
+              "color": "bg-[#9FECFA]",
+              "borderColor": "border-[#08D8FE]"
+            },
+            {
+              "name": "TypeScript",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "editor"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "AsyncAPI Studio",
+        "description": null,
+        "links": {
+          "websiteUrl": "https://studio.asyncapi.com",
+          "repoUrl": "https://github.com/Shurtu-gal/action-test-bed"
         },
         "filters": {
           "language": [],
@@ -2661,7 +2661,7 @@
         "title": "asyncapi-preview",
         "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
         "links": {
-          "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
+          "repoUrl": "https://github.com/Savio629/testing2"
         },
         "filters": {
           "language": [],
@@ -2687,7 +2687,7 @@
         "title": "asyncapi-preview",
         "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
         "links": {
-          "repoUrl": "https://github.com/Savio629/testing2"
+          "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
         },
         "filters": {
           "language": [],
