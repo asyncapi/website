@@ -1,6 +1,6 @@
 ---
 title: AsyncAPI VS Code Preview Goes Web: Now Available in Your Browser 🚀
-date: 2025-10-14T3:45:29+05:30
+date: 2025-10-14T03:45:29+05:30
 type: Community
 canonical:
 tags: ['vscode-extension','webview']
@@ -27,16 +27,16 @@ Making the extension web-compatible required several technical improvements:
 
 - **Removed Node.js-specific modules** like `fs`, `path`, and external dependencies that are incompatible with browsers
 - **Introduced lightweight browser utilities** (`pathUtils`) for cross-platform file handling
-- **Removed EDAVisualizer** (unmaintained, not compatible with webmode)
+- **Removed EDAVisualizer integration** (unmaintained, not compatible with webmode)
 - **Updated VS Code dependencies** (`vscode` and `@types/vscode`) to ensure web extension compatibility
 
 ## Why Does This Matter?
 
 AsyncAPI adoption is growing quickly, and many contributors explore specs directly from GitHub repositories. Web compatibility lowers the barrier for:
 
-📖 **Contributors reviewing AsyncAPI specs on GitHub** - No need to clone repos locally just to preview files  
-🚀 **Teams adopting AsyncAPI in cloud-first workflows** - Work entirely in the browser  
-💡 **New users experimenting** without needing to install VS Code  
+📖 **Contributors reviewing AsyncAPI specs on GitHub** - No need to clone repos locally just to preview files
+🚀 **Teams adopting AsyncAPI in cloud-first workflows** - Work entirely in the browser
+💡 **New users experimenting** without needing to install VS Code
 
 This is a **huge usability improvement** that makes AsyncAPI more accessible to everyone. Whether you're working with public repositories or have access to private ones, you can now preview AsyncAPI files directly from GitHub with just a few clicks!
 
@@ -47,15 +47,12 @@ This is a **huge usability improvement** that makes AsyncAPI more accessible to 
 3. Open a `.yaml` or `.json` file and run **AsyncAPI: Preview Document** from the Command Palette
 4. That's it! Your AsyncAPI docs will render beautifully in your browser 🚀
 
-## See It in Action
+## 🎥 Demo
 
-*[Video demo section - placeholder for showcasing the web extension in action]*
+See the AsyncAPI VS Code Preview running in web mode below:
 
-<!-- TODO: Add video demo showing:
-- Opening a GitHub repo in vscode.dev
-- Installing the AsyncAPI Preview extension
-- Previewing an AsyncAPI file in the browser
-- Highlighting the seamless experience -->
+[![Watch the demo](https://drive.google.com/file/d/1GOUTwhHjV0KdBiRuPLJUEQdYaNvUu6e3/view?usp=sharing)](https://docs.google.com/videos/d/1a9raPb68NdEjj6qExkp81CBQicLPwqYg3V9WeG_P1lg/edit?usp=sharing "Click to watch demo")
+
 
 ## Spreading the Word
 
