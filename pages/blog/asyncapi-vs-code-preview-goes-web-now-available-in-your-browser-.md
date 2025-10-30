@@ -27,7 +27,7 @@ Making the extension web-compatible required several technical improvements:
 
 - **Removed Node.js-specific modules** like `fs`, `path`, and external dependencies that are incompatible with browsers
 - **Introduced lightweight browser utilities** (`pathUtils`) for cross-platform file handling
-- **Removed EDAVisualizer integration** (unmaintained, not compatible with webmode)
+- **Removed EDAVisualizer integration** (unmaintained, incompatible with webmode)
 - **Updated VS Code dependencies** (`vscode` and `@types/vscode`) to ensure web extension compatibility
 
 ## Why Does This Matter?
@@ -68,7 +68,7 @@ This web compatibility represents a significant step forward for AsyncAPI toolin
 This extension is now in maintenance mode:
 
 - We'll continue updating dependencies and ensuring compatibility
-- No new major features are planned at the moment
+- No new major features are planned currently
 - Community contributions for bug fixes and improvements are welcome
 
 ## What's Next?
