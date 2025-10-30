@@ -28,7 +28,6 @@ export default function GenericLayout({
   image,
   children,
   wide = true,
-  // eslint-disable-next-line unused-imports/no-unused-vars, no-unused-vars
   hideBanner = false
 }: IGenericLayoutProps) {
   if (!title || !description || !image) {
@@ -39,9 +38,7 @@ export default function GenericLayout({
     <div data-testid='GenericLayout'>
       <Head title={title} description={description} image={image} />
       <Container wide={wide}>
-        <div data-testid='GenericLayout-banner'>
-          <AnnouncementHero className={`m-4 text-center ${hideBanner && 'hidden'}`} small={true} />
-        </div>
+        <div data-testid='GenericLayout-banner'>{!hideBanner && <AnnouncementHero />}</div>
         <div id='main-content' data-testid='Generic-main'>
           {children}
         </div>
