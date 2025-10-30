@@ -751,5 +751,74 @@
                 "link": "https://www.youtube.com/watch?v=I5eplxVQrhI"
             }
         ]
+    },
+    {
+        "name": "Ankit Kumar",
+        "github": "ankitk-me",
+        "githubID": 6847653,
+        "slack": "U05G8N33D51",
+        "twitter": "ankitm_me",
+        "linkedin": "ankit28",
+        "country": "\ud83c\uddee\ud83c\uddf3",
+        "bio": "Ankit Kumar leads Developer and Customer Success at Aklivity, bringing over eight years of experience in API infrastructure, streaming platforms, and event-driven architectures. He\u2019s an advocate for modern API connectivity, helping developers adopt event-driven systems through community engagement and shared best practices.",
+        "company": "Aklivity",
+        "title": "Head of Developer and Customer Success",
+        "img": "https://avatars.githubusercontent.com/u/6847653?v=4",
+        "contributions": [
+            {
+                "type": "talk",
+                "title": "Dynamic API Delivery with Zilla: Unleashing the Power of AsyncAPI in EDAs",
+                "date": {
+                    "year": 2023,
+                    "month": "November"
+                },
+                "link": "https://youtu.be/3iFdszHUpgI?si=Z4voghTDAgb-nyUP"
+            },
+            {
+                "type": "talk",
+                "title": "AsyncAPI v3: Streamlining Event-Driven API Design",
+                "date": {
+                    "year": 2025,
+                    "month": "April"
+                },
+                "link": "https://youtu.be/iFXYNubBmQc?si=YN_ShCs9ZDwi1aEk"
+            },
+            {
+                "type": "booth",
+                "title": "Manned the AsyncAPI booth during APIDays Singapore to connect with developers and promote the AsyncAPI initiative.",
+                "date": {
+                    "year": 2025,
+                    "month": "April"
+                },
+                "link": ""
+            },
+            {
+                "type": "article",
+                "title": "AsyncAPI v3: Streamlining Event-Driven API Design",
+                "date": {
+                    "year": 2025,
+                    "month": "May"
+                },
+                "link": "https://www.aklivity.io/post/asyncapi-v3-streamlining-event-driven-api-design"
+            },
+            {
+                "type": "article",
+                "title": "AsyncAPI's Role in Next Gen API Management",
+                "date": {
+                    "year": 2025,
+                    "month": "September"
+                },
+                "link": "https://www.aklivity.io/post/asyncapis-role-in-next-gen-api-management"
+            },
+            {
+                "type": "talk",
+                "title": "AsyncAPI's Role in Shift Left Streaming Architectures",
+                "date": {
+                    "year": 2025,
+                    "month": "October"
+                },
+                "link": "https://confengine.com/conferences/apidays-india-2025/proposal/22979/asyncapis-role-in-shift-left-streaming-architectures"
+            }
+        ]
     }
 ]
