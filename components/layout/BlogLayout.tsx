@@ -12,6 +12,7 @@ import AnnouncementHero from '../campaigns/AnnouncementHero';
 import Head from '../Head';
 import TOC from '../TOC';
 import Container from './Container';
+import { SocialShareButtons } from '../SocialShareButtons'; 
 
 interface IBlogLayoutProps {
   post: IPosts['blog'][number];
@@ -33,6 +34,9 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
+  const shareUrl = `https://www.asyncapi.com${router.asPath}`;
+  const shareText = post.title;
 
   return (
     <BlogContext.Provider value={{ post }}>
@@ -77,6 +81,7 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
                 </div>
               </div>
             </div>
+            <SocialShareButtons url={shareUrl} text={shareText} /> {/* Use the SocialShareButtons component */}
           </header>
           <article className='mb-32'>
             <Head title={post.title} description={post.excerpt} image={post.cover} />
@@ -107,6 +112,7 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
             </HtmlHead>
             <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className='my-6 w-full' />
             {children}
+            <SocialShareButtons url={shareUrl} text={shareText} /> {/* Use the SocialShareButtons component */}
           </article>
         </main>
       </Container>
