@@ -195,6 +195,7 @@ export default function AlgoliaSearch({ children }: { children: React.ReactNode 
   const [indexName, setIndexName] = useState<string>(INDEX_NAME);
   const [initialQuery, setInitialQuery] = useState<string>();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [cssLoaded, setCssLoaded] = useState(false);
 
   const onOpen = useCallback(
     (_indexName?: string) => {
@@ -202,16 +203,32 @@ export default function AlgoliaSearch({ children }: { children: React.ReactNode 
         setIndexName(_indexName);
       }
       setIsOpen(true);
-      
+
       // Preload DocSearch when first opened
       if (!isLoaded) {
         import('@docsearch/react').then(() => {
           setIsLoaded(true);
         });
       }
+
+      if (!cssLoaded) {
+        loadDocSearchCSS();
+      }
     },
-    [setIsOpen, setIndexName, isLoaded]
+      [setIsOpen, setIndexName, isLoaded, cssLoaded]
   );
+
+  const loadDocSearchCSS = useCallback(() => {
+    if (cssLoaded) return;
+    
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/docsearch.css'; // Self-hosted path
+    link.onload = () => setCssLoaded(true);
+    link.onerror = () => console.warn('Failed to load DocSearch CSS');
+    
+    document.head.appendChild(link);
+  }, [cssLoaded]);
 
   const onClose = useCallback(() => {
     setIsOpen(false);
@@ -221,7 +238,7 @@ export default function AlgoliaSearch({ children }: { children: React.ReactNode 
     (e: React.KeyboardEvent) => {
       setIsOpen(true);
       setInitialQuery(e.key);
-      
+
       // Preload DocSearch when first opened
       if (!isLoaded) {
         import('@docsearch/react').then(() => {
@@ -243,6 +260,7 @@ export default function AlgoliaSearch({ children }: { children: React.ReactNode 
     <>
       <Head>
         <link rel='preconnect' href={`https://${APP_ID}-dsn.algolia.net`} crossOrigin='anonymous' />
+
       </Head>
       <SearchContext.Provider value={{ isOpen, onOpen, onClose, onInput }}>{children}</SearchContext.Provider>
       {isOpen && isLoaded && <AlgoliaModal initialQuery={initialQuery ?? ''} onClose={onClose} indexName={indexName} />}

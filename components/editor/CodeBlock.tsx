@@ -260,8 +260,22 @@ export default function CodeBlock({
   const [showIsCopied, setShowIsCopied] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [loadedLanguages, setLoadedLanguages] = useState<Set<string>>(new Set());
+  const [fontLoaded, setFontLoaded] = useState<boolean>(false);
+
   // eslint-disable-next-line no-param-reassign
   codeBlocks = codeBlocks && codeBlocks.length ? codeBlocks : [{ code: children.replace(/\n$/, '') }];
+
+  useEffect(() => {
+    if (!fontLoaded) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '/fonts/FiraCode-VF.woff2';
+      link.onload = () => setFontLoaded(true);
+      link.onerror = () => console.warn('Failed to load FiraCode font');
+      
+      document.head.appendChild(link);
+    }
+  }, [fontLoaded]);
 
   useEffect(() => {
     const loadLanguage = async (lang: string) => {

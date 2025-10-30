@@ -17,15 +17,7 @@ class MyDocument extends Document {
     return (
       <Html lang={currentLocale as string}>
         <Head>
-          {/* Preload critical Fira Code font */}
-          <link
-            rel="preload"
-            href="/fonts/FiraCode-VF.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-
+        
           <link rel="preload" as="image" href="/img/homepage/lukasz-homepage-slack.webp" />
           <link rel="preload" as="image" href="/img/homepage/eve-and-chan.webp" />
 
