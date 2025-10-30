@@ -2,6 +2,7 @@ import '../styles/globals.css';
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import Script from 'next/script';
 import { appWithTranslation } from 'next-i18next';
 import React from 'react';
 
@@ -21,9 +22,11 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <AppContext.Provider value={{ path: router.asPath }}>
       {/* <MDXProvider components={mdxComponents}> */}
-      <Head>
-        <script async defer src="https://buttons.github.io/buttons.js"></script>
-      </Head>
+      <Head>{<></>}</Head>
+      <Script
+        src="https://buttons.github.io/buttons.js"
+        strategy="afterInteractive"
+      />
       <AlgoliaSearch>
         <div className="flex min-h-screen flex-col">
           <Banner />
