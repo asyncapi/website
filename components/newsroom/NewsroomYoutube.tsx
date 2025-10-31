@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
-import { A11y, Navigation, Lazy } from 'swiper/modules';
+import { A11y, Navigation } from 'swiper/modules';
 
 
 import videoData from '../../config/newsroom_videos.json';
@@ -31,7 +31,7 @@ export default function NewsroomYoutube({ className = '' }: NewsroomYoutubeProps
   return (
     <div className={`flex-col overflow-auto ${className}`} data-testid='NewsroomYoutube-main'>
       <Swiper
-        modules={[Navigation, A11y, Lazy]}
+        modules={[Navigation, A11y]}
         spaceBetween={8}
         slidesPerView={1}
         onSlideChange={(swiper) => setCurrent(swiper.snapIndex)}
