@@ -23,7 +23,7 @@
 
 ## Overview
 
-This repository contains the sources of AsyncAPI website:
+This repository contains the sources of AsyncAPI website satish:
 
 - It's powered by [Next.js](https://nextjs.org/),
 - It uses [Tailwind](https://tailwindcss.com/) CSS framework,
