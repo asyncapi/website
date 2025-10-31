@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { A11y, Navigation } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { A11y, Navigation, Lazy} from 'swiper/modules';
+import dynamic from 'next/dynamic';
 
 import { getAllPosts } from '../../utils/api';
 import ArrowLeft from '../icons/ArrowLeft';
 import ArrowRight from '../icons/ArrowRight';
 import BlogPostItem from '../navigation/BlogPostItem';
 import { checkLastSnapIndex, useSwiperRef } from './swiper';
+
+const Swiper = dynamic(() => import('swiper/react').then(m => m.Swiper), { ssr: false });
+const SwiperSlide = dynamic(() => import('swiper/react').then(m => m.SwiperSlide), { ssr: false });
 
 /**
  * @description This component displays the latest blog posts.

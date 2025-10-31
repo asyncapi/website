@@ -1,4 +1,4 @@
-import moment from 'moment';
+import dayjs from 'dayjs'
 
 import type { IEvent } from '@/types/event';
 
@@ -11,21 +11,21 @@ import type { IEvent } from '@/types/event';
 export function getEvents(events: IEvent[], size?: number) {
   let meetingsWithDates: any = events.map((event) => ({
     ...event,
-    date: moment(event.date)
+    date: dayjs(event.date)
   }));
 
   meetingsWithDates.sort((a: any, b: any) => a.date - b.date);
 
   if (size) {
     return meetingsWithDates
-      .filter((meeting: any) => meeting.date > moment(new Date()))
+      .filter((meeting: any) => meeting.date > dayjs(new Date()))
       .slice(0, size || meetingsWithDates.length);
   }
 
   const sortedMeetings: any = [];
 
   for (const meeting of meetingsWithDates) {
-    if (meeting.date > moment(new Date())) {
+    if (meeting.date > dayjs(new Date())) {
       sortedMeetings.push(meeting);
     }
   }
@@ -35,7 +35,7 @@ export function getEvents(events: IEvent[], size?: number) {
   });
 
   for (const meeting of meetingsWithDates) {
-    if (meeting.date < moment(new Date())) {
+    if (meeting.date < dayjs(new Date())) {
       sortedMeetings.push(meeting);
     }
   }

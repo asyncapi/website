@@ -1,4 +1,4 @@
-import moment from 'moment';
+import dayjs from 'dayjs';
 import Link from 'next/link';
 import type { Ref } from 'react';
 import React, { forwardRef } from 'react';
@@ -12,6 +12,7 @@ import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 import AuthorAvatars from '../AuthorAvatars';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
+
 
 interface BlogPostItemProps {
   // eslint-disable-next-line prettier/prettier
@@ -129,7 +130,7 @@ const BlogPostItem = ({ post, className = '', id = '' }: BlogPostItemProps, ref:
                     </span>
                   </Heading>
                   <Paragraph typeStyle={ParagraphTypeStyle.sm} className='flex'>
-                    <time dateTime={post.date}>{moment(post.date).format('MMMM D, YYYY')}</time>
+                    <time dateTime={post.date}>{dayjs(post.date).format('MMMM D, YYYY')}</time>
                     <span className='mx-1'>&middot;</span>
                     <span>{post.readingTime} min read</span>
                   </Paragraph>

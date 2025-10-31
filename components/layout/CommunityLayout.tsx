@@ -1,5 +1,4 @@
 import { UserGroupIcon } from '@heroicons/react/outline';
-import { sortBy } from 'lodash';
 import React from 'react';
 
 import type { Ambassador, Tsc } from '@/types/pages/community/Community';
@@ -290,10 +289,10 @@ export default function CommunityLayout({ children, membership }: ICommunityLayo
   const image = `/img/social/community-${membership.toLowerCase()}.webp`;
 
   const isTSCMembership = membership === Membership.TSC;
-  const tscBoardMembers = sortBy(
-    tscBoardList.map((user) => addAdditionalUserInfo(user)),
-    ['name']
-  ).filter((user) => (isTSCMembership ? user.isTscMember : user.isBoardMember || user.isBoardChair));
+  const tscBoardMembers = tscBoardList
+  .map((user) => addAdditionalUserInfo(user))
+  .sort((a, b) => a.name.localeCompare(b.name))
+  .filter((user) => (isTSCMembership ? user.isTscMember : user.isBoardMember || user.isBoardChair))
 
   return (
     <GenericLayout

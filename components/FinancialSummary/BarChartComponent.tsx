@@ -1,5 +1,17 @@
+
 import React, { useEffect, useState } from 'react';
-import { Bar, BarChart, CartesianGrid, Legend, Tooltip, YAxis } from 'recharts';
+
+
+// import { Bar, BarChart, CartesianGrid, Legend, Tooltip, YAxis } from 'recharts';
+
+import dynamic from 'next/dynamic';
+
+const BarChart = dynamic(() => import('recharts').then(m => m.BarChart), { ssr: false }) as any;
+const Bar = dynamic(() => import('recharts').then(m => m.Bar) as any, { ssr: false }) as any;
+const CartesianGrid = dynamic(() => import('recharts').then(m => m.CartesianGrid), { ssr: false }) as any;
+const YAxis = dynamic(() => import('recharts').then(m => m.YAxis), { ssr: false }) as any;
+const Tooltip = dynamic(() => import('recharts').then(m => m.Tooltip) as any, { ssr: false }) as any;
+const Legend = dynamic(() => import('recharts').then(m => m.Legend) as any, { ssr: false }) as any;
 
 import type { ExpenseItem, ExpensesLinkItem } from '@/types/FinancialSummary/BarChartComponent';
 
@@ -8,15 +20,18 @@ import ExpensesLinkData from '../../config/finance/json-data/ExpensesLink.json';
 import { getUniqueCategories } from '../../utils/getUniqueCategories';
 import CustomTooltip from './CustomTooltip';
 import ExpensesCard from './ExpensesCard';
+import { Lazy } from 'swiper/modules';
 
 /**
  * @description BarChartComponent component displays a bar chart for expense analysis.
  */
 export default function BarChartComponent() {
+
   // Setting up state variables using useState hook
   const [selectedCategory, setSelectedCategory] = useState<string>('All Categories');
   const [selectedMonth, setSelectedMonth] = useState<string>('All Months');
   const [windowWidth, setWindowWidth] = useState<number>(0);
+
 
   // Extracting unique categories and months from the data
   const categories: string[] = getUniqueCategories();
@@ -68,6 +83,7 @@ export default function BarChartComponent() {
   const barWidth: number | undefined = windowWidth && windowWidth < 900 ? undefined : 800;
   const barHeight: number | undefined = windowWidth && windowWidth < 900 ? undefined : 400;
 
+
   return (
     <div className='mt-8 flex items-center justify-center sm:px-6 lg:px-8'>
       <div className='w-full px-4 text-center lg:w-2/3'>
@@ -112,15 +128,15 @@ export default function BarChartComponent() {
           </div>
         </div>
         <div className='flex justify-center'>
-          <BarChart width={barWidth} height={barHeight} data={chartData}>
+          <BarChart width={barWidth} height={barHeight} data={chartData as any}>
             <CartesianGrid strokeDasharray='3 3' />
-            <YAxis tickFormatter={(value) => `$${value}`} />
+            <YAxis tickFormatter={(value: number) => `$${value}`} />
             <Tooltip content={<CustomTooltip />} />
             <Legend />
             <Bar
               dataKey='Amount'
               fill='#7B5DD3FF'
-              onClick={(data) => {
+              onClick={(data: any) => {
                 const category = data.payload.Category;
                 const matchedLinkObject: ExpensesLinkItem | undefined = ExpensesLinkData.find(
                   (obj) => obj.category === category

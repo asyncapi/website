@@ -2,18 +2,50 @@ import { MDXProvider as CoreMDXProvider } from '@mdx-js/react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import React, { useEffect, useState } from 'react';
-import {
-  TwitterDMButton,
-  TwitterFollowButton,
-  TwitterHashtagButton,
-  TwitterMentionButton,
-  TwitterMomentShare,
-  TwitterOnAirButton,
-  TwitterShareButton,
-  TwitterTimelineEmbed,
-  TwitterTweetEmbed,
-  TwitterVideoEmbed
-} from 'react-twitter-embed';
+
+
+
+const TwitterTweetEmbed = dynamic(
+  () => import('react-twitter-embed').then((m) => m.TwitterTweetEmbed),
+  { ssr: false, loading: () => <div>Loading tweet…</div> }
+);
+const TwitterTimelineEmbed = dynamic(
+  () => import('react-twitter-embed').then((m) => m.TwitterTimelineEmbed),
+  { ssr: false, loading: () => <div>Loading timeline…</div> }
+);
+const TwitterShareButton = dynamic(
+  () => import('react-twitter-embed').then((m) => m.TwitterShareButton),
+  { ssr: false, loading: () => <div>Loading share…</div> }
+);
+const TwitterFollowButton = dynamic(
+  () => import('react-twitter-embed').then((m) => m.TwitterFollowButton),
+  { ssr: false, loading: () => <div>Loading follow…</div> }
+);
+const TwitterHashtagButton = dynamic(
+  () => import('react-twitter-embed').then((m) => m.TwitterHashtagButton),
+  { ssr: false, loading: () => <div>Loading hashtag…</div> }
+);
+const TwitterMentionButton = dynamic(
+  () => import('react-twitter-embed').then((m) => m.TwitterMentionButton),
+  { ssr: false, loading: () => <div>Loading mention…</div> }
+);
+const TwitterMomentShare = dynamic(
+  () => import('react-twitter-embed').then((m) => m.TwitterMomentShare),
+  { ssr: false, loading: () => <div>Loading moment…</div> }
+);
+const TwitterDMButton = dynamic(
+  () => import('react-twitter-embed').then((m) => m.TwitterDMButton),
+  { ssr: false, loading: () => <div>Loading DM…</div> }
+);
+const TwitterVideoEmbed = dynamic(
+  () => import('react-twitter-embed').then((m) => m.TwitterVideoEmbed),
+  { ssr: false, loading: () => <div>Loading video…</div> }
+);
+const TwitterOnAirButton = dynamic(
+  () => import('react-twitter-embed').then((m) => m.TwitterOnAirButton),
+  { ssr: false, loading: () => <div>Loading on air…</div> }
+);
+
 const YouTube = dynamic(() => import('react-youtube-embed'), { ssr: false });
 
 import Asyncapi3ChannelComparison from '../Asyncapi3Comparison/Asyncapi3ChannelComparison';

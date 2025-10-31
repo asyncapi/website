@@ -1,4 +1,4 @@
-import moment from 'moment';
+import dayjs from 'dayjs'
 import ErrorPage from 'next/error';
 import HtmlHead from 'next/head';
 import { useRouter } from 'next/router';
@@ -71,7 +71,7 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
                   </span>
                 </p>
                 <div className='flex text-sm leading-5 text-gray-500'>
-                  <time dateTime={post.date}>{moment(post.date).format('MMMM D, YYYY')}</time>
+                  <time dateTime={post.date}>{dayjs(post.date).format('MMMM D, YYYY')}</time>
                   <span className='mx-1'>&middot;</span>
                   <span>{post.readingTime} min read</span>
                 </div>

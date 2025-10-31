@@ -1,4 +1,3 @@
-import { sortBy } from 'lodash';
 import Link from 'next/link';
 import React from 'react';
 
@@ -44,10 +43,9 @@ export function addAdditionalUserInfo(user: Ambassador) {
  */
 export default function Index() {
   const image = '/img/social/community-ambassadors.webp';
-  const asyncapiAmbassadors = sortBy(
-    ambassadors.map((user) => addAdditionalUserInfo(user)),
-    ['name']
-  );
+  const asyncapiAmbassadors = ambassadors
+  .map((user) => addAdditionalUserInfo(user))
+  .sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <GenericLayout title='AsyncAPI Ambassador Program' description='The AsyncAPI Ambassador Program' image={image} wide>
