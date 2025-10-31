@@ -65,8 +65,8 @@ const solutions: Record<string, Solution> = {
             business logic changes. Even in production! For more information,
             read{' '}
             <a
-              href="https://twitter.com/ScriptedAlchemy/status/1373743197453656065"
-              target="_blank"
+              href='https://twitter.com/ScriptedAlchemy/status/1373743197453656065'
+              target='_blank'
             >
               this tweet
             </a>{' '}
@@ -492,7 +492,8 @@ const outcomes: Record<string, Outcome> = {
   },
   usersCanModifyExistingAppsToWorkWithAsyncAPI: {
     title:
-      'User can modify their existing APIs to work with AsyncAPI in under an hour with no prior knowledge of AsyncAPI and without leaving their framework of choice',
+      'User can modify their existing APIs to work with AsyncAPI in under an hour ' +
+      'with no prior knowledge of AsyncAPI and without leaving their framework of choice',
     description: (
       <p>
         Even though we're building our own framework, people should not be
@@ -635,36 +636,36 @@ export default function RoadmapPage() {
 
   return (
     <GenericLayout
-      title="Vision & Roadmap"
+      title='Vision & Roadmap'
       description={description}
       image={image}
       wide
     >
-      <div className="overflow-hidden py-12">
-        <div className="relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-screen-xl lg:px-8">
-          <div className="relative">
-            <div className="lg:mx-auto lg:w-2/3 lg:text-center">
+      <div className='overflow-hidden py-12'>
+        <div className='relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-screen-xl lg:px-8'>
+          <div className='relative'>
+            <div className='lg:mx-auto lg:w-2/3 lg:text-center'>
               <Paragraph
                 typeStyle={ParagraphTypeStyle.md}
-                textColor="text-secondary-500"
-                className="text-center font-bold uppercase"
+                textColor='text-secondary-500'
+                className='text-center font-bold uppercase'
               >
                 Vision
               </Paragraph>
-              <Heading level={HeadingLevel.h1} className="text-center">
+              <Heading level={HeadingLevel.h1} className='text-center'>
                 AsyncAPI becomes the #1 API specification for defining and
                 developing APIs.{' '}
-                <span className="block text-secondary-500 underline">
+                <span className='block text-secondary-500 underline'>
                   Any kind of APIs.
                 </span>
               </Heading>
-              <Paragraph className="mt-10 lg:pr-4">
+              <Paragraph className='mt-10 lg:pr-4'>
                 It all starts with a vision.{' '}
                 <strong>This is where we want to see AsyncAPI by 2026.</strong>{' '}
                 To make this vision a reality, we've set some goals below that
                 will help us to get there.
               </Paragraph>
-              <Paragraph className="mt-4 lg:pr-4">
+              <Paragraph className='mt-4 lg:pr-4'>
                 {/* eslint-disable-next-line react/no-unescaped-entities */}
                 These goals are not necessarily everything we'll have to do to
                 get to that vision but instead, they are manageable objectives
@@ -675,15 +676,15 @@ export default function RoadmapPage() {
               </Paragraph>
             </div>
 
-            <div className="relative mt-20">
-              <div className="grid lg:grid-cols-3 lg:gap-8">
+            <div className='relative mt-20'>
+              <div className='grid lg:grid-cols-3 lg:gap-8'>
                 <div>
-                  <div className="h-full rounded-lg border border-gray-200 bg-white p-6 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg">
-                    <div className="mb-2 lg:my-0 lg:text-center">
+                  <div className='h-full rounded-lg border border-gray-200 bg-white p-6 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'>
+                    <div className='mb-2 lg:my-0 lg:text-center'>
                       <Paragraph
                         typeStyle={ParagraphTypeStyle.md}
-                        textColor="text-secondary-500"
-                        className="mr-2 inline-block p-1.5 font-bold uppercase lg:mb-2 lg:mr-0 lg:block lg:bg-transparent lg:p-0"
+                        textColor='text-secondary-500'
+                        className='mr-2 inline-block p-1.5 font-bold uppercase lg:mb-2 lg:mr-0 lg:block lg:bg-transparent lg:p-0'
                       >
                         Goal
                       </Paragraph>
@@ -693,7 +694,7 @@ export default function RoadmapPage() {
                     </div>
                     <Paragraph
                       typeStyle={ParagraphTypeStyle.md}
-                      className="my-4 lg:text-center"
+                      className='my-4 lg:text-center'
                     >
                       Nobody does only event-driven architectures. Most people
                       complement them with REST (OpenAPI), GraphQL, and/or RPC
@@ -709,7 +710,7 @@ export default function RoadmapPage() {
                     </Paragraph>
                     <Paragraph
                       typeStyle={ParagraphTypeStyle.md}
-                      className="my-4 lg:text-center"
+                      className='my-4 lg:text-center'
                     >
                       This is not about reinventing the wheel or creating yet
                       another spec to solve the same problems but to integrate
@@ -718,12 +719,12 @@ export default function RoadmapPage() {
                   </div>
                 </div>
                 <div>
-                  <div className="h-full rounded-lg border border-gray-200 bg-white p-6 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg">
-                    <div className="mb-2 mt-6 lg:my-0 lg:text-center">
+                  <div className='h-full rounded-lg border border-gray-200 bg-white p-6 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'>
+                    <div className='mb-2 mt-6 lg:my-0 lg:text-center'>
                       <Paragraph
                         typeStyle={ParagraphTypeStyle.md}
-                        textColor="text-secondary-500"
-                        className="mr-2 inline-block p-1.5 font-bold uppercase lg:mb-2 lg:mr-0 lg:block lg:bg-transparent lg:p-0"
+                        textColor='text-secondary-500'
+                        className='mr-2 inline-block p-1.5 font-bold uppercase lg:mb-2 lg:mr-0 lg:block lg:bg-transparent lg:p-0'
                       >
                         Goal
                       </Paragraph>
@@ -733,7 +734,7 @@ export default function RoadmapPage() {
                     </div>
                     <Paragraph
                       typeStyle={ParagraphTypeStyle.md}
-                      className="my-4 lg:text-center"
+                      className='my-4 lg:text-center'
                     >
                       We want to make the development experience super seamless,
                       from idea to production.{' '}
@@ -746,7 +747,7 @@ export default function RoadmapPage() {
                     </Paragraph>
                     <Paragraph
                       typeStyle={ParagraphTypeStyle.md}
-                      className="my-4 lg:text-center"
+                      className='my-4 lg:text-center'
                     >
                       Furthermore, making sure production behavior and
                       documentation are always aligned, independently of the
@@ -755,12 +756,12 @@ export default function RoadmapPage() {
                   </div>
                 </div>
                 <div>
-                  <div className="h-full rounded-lg border border-gray-200 bg-white p-6 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg">
-                    <div className="mb-2 mt-6 lg:my-0 lg:text-center">
+                  <div className='h-full rounded-lg border border-gray-200 bg-white p-6 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'>
+                    <div className='mb-2 mt-6 lg:my-0 lg:text-center'>
                       <Paragraph
                         typeStyle={ParagraphTypeStyle.md}
-                        textColor="text-secondary-500"
-                        className="mr-2 inline-block p-1.5 font-bold uppercase lg:mb-2 lg:mr-0 lg:block lg:bg-transparent lg:p-0"
+                        textColor='text-secondary-500'
+                        className='mr-2 inline-block p-1.5 font-bold uppercase lg:mb-2 lg:mr-0 lg:block lg:bg-transparent lg:p-0'
                       >
                         Goal
                       </Paragraph>
@@ -770,7 +771,7 @@ export default function RoadmapPage() {
                     </div>
                     <Paragraph
                       typeStyle={ParagraphTypeStyle.md}
-                      className="my-4 lg:text-center"
+                      className='my-4 lg:text-center'
                     >
                       We are aware that our goals are ambitious.{' '}
                       <strong>
@@ -782,7 +783,7 @@ export default function RoadmapPage() {
                     </Paragraph>
                     <Paragraph
                       typeStyle={ParagraphTypeStyle.md}
-                      className="my-4 lg:text-center"
+                      className='my-4 lg:text-center'
                     >
                       We need people to contribute code, ideas, docs, articles,
                       presentations, and more. The sponsors base should also
@@ -794,22 +795,22 @@ export default function RoadmapPage() {
               </div>
             </div>
 
-            <div className="lg:mx-auto lg:w-2/3 lg:text-center">
-              <Paragraph className="mt-10 lg:pr-4">
+            <div className='lg:mx-auto lg:w-2/3 lg:text-center'>
+              <Paragraph className='mt-10 lg:pr-4'>
                 We'll be regularly setting outcomes or key results that will
                 allow us to accomplish the goals above. You can find a
                 categorization of the outcomes in the roadmap below. They are
                 split by priority and some of them show the related features.
               </Paragraph>
-              <Paragraph className="mb-14 mt-4 lg:pr-4">
+              <Paragraph className='mb-14 mt-4 lg:pr-4'>
                 Please bear in mind{' '}
                 <strong>this is an outcome-based roadmap</strong>. We don't
                 maintain a long-term release plan. If you want to find more
                 specific and actionable items, head to the related repository
                 issues or start an issue/discussion at
                 <TextLink
-                  target="_blank"
-                  href="https://github.com/asyncapi/community"
+                  target='_blank'
+                  href='https://github.com/asyncapi/community'
                 >
                   github.com/asyncapi/community
                 </TextLink>
@@ -819,78 +820,78 @@ export default function RoadmapPage() {
               <Heading
                 level={HeadingLevel.h3}
                 typeStyle={HeadingTypeStyle.lg}
-                className="mt-10 text-center"
+                className='mt-10 text-center'
               >
                 Roadmap
               </Heading>
-              <Paragraph className="mx-auto mt-4 max-w-3xl text-center">
+              <Paragraph className='mx-auto mt-4 max-w-3xl text-center'>
                 The outcomes we want to achieve
               </Paragraph>
             </div>
 
-            <div className="mx-auto mt-10 max-w-3xl text-sm font-semibold uppercase text-gray-800 lg:flex lg:justify-center">
-              <div className="mb-2 flex justify-center">
-                <div className="my-1 mr-2 w-5 rounded bg-green-300"></div>
-                <div className="my-1 mr-2 w-5 rounded bg-yellow-200"></div>
-                <div className="my-1 mr-2 w-5 rounded bg-orange-200"></div>
-                <div className="mr-4">
+            <div className='mx-auto mt-10 max-w-3xl text-sm font-semibold uppercase text-gray-800 lg:flex lg:justify-center'>
+              <div className='mb-2 flex justify-center'>
+                <div className='my-1 mr-2 w-5 rounded bg-green-300'></div>
+                <div className='my-1 mr-2 w-5 rounded bg-yellow-200'></div>
+                <div className='my-1 mr-2 w-5 rounded bg-orange-200'></div>
+                <div className='mr-4'>
                   Outcome{' '}
                   <InlineHelp
-                    text="An outcome is the result of implementing a solution and represents a
+                    text={`An outcome is the result of implementing a solution and represents a
                     specific milestone towards our goals and, therefore, our vision. If you're into OKRs, an
-                    outcome is a Key Result."
+                    outcome is a Key Result.`}
                   />
                 </div>
               </div>
-              <div className="mb-2 flex justify-center">
-                <div className="my-1 mr-2 w-5 rounded bg-blue-400"></div>
-                <div className="mr-4">
+              <div className='mb-2 flex justify-center'>
+                <div className='my-1 mr-2 w-5 rounded bg-blue-400'></div>
+                <div className='mr-4'>
                   Solution{' '}
-                  <InlineHelp text="A solution is an idea we have to achieve its related outcome. It may produce the outcome partially or totally." />
+                  <InlineHelp text='A solution is an idea we have to achieve its related outcome. It may produce the outcome partially or totally.' />
                 </div>
               </div>
-              <div className="mb-2 flex justify-center">
-                <div className="my-1 mr-2 w-5 rounded bg-black"></div>
-                <div className="mr-4">
+              <div className='mb-2 flex justify-center'>
+                <div className='my-1 mr-2 w-5 rounded bg-black'></div>
+                <div className='mr-4'>
                   Implementation{' '}
-                  <InlineHelp text="Related repos, issues, or pull requests implementing the solution. They may implement the solution partially or totally." />
+                  <InlineHelp text='Related repos, issues, or pull requests implementing the solution. They may implement the solution partially or totally.' />
                 </div>
               </div>
             </div>
 
-            <div className="lg:grid lg:grid-cols-3 lg:gap-10">
+            <div className='lg:grid lg:grid-cols-3 lg:gap-10'>
               <RoadmapColumn
-                title="Now"
+                title='Now'
                 description="Our top priority. We're probably working on it right now or starting pretty soon."
-                colorClass="bg-green-300"
+                colorClass='bg-green-300'
                 items={roadmapData.outcomes.now}
               />
               <RoadmapColumn
-                title="Later"
+                title='Later'
                 description="Our next priority. We'll work on this soon if everything goes as planned."
-                colorClass="bg-yellow-200"
+                colorClass='bg-yellow-200'
                 items={roadmapData.outcomes.later}
               />
               <RoadmapColumn
-                title="Future"
+                title='Future'
                 description="Not a priority. We're considering working on this but it's too early to know when."
-                colorClass="bg-orange-200"
+                colorClass='bg-orange-200'
                 items={roadmapData.outcomes.future}
               />
             </div>
 
-            <Paragraph className="mx-auto mb-4 mt-12 text-center lg:w-1/2">
+            <Paragraph className='mx-auto mb-4 mt-12 text-center lg:w-1/2'>
               If you want to know more about the format of this roadmap, watch
               this recording from one of our SIG meetings:
             </Paragraph>
 
-            <div className="mx-auto lg:w-1/2">
-              <YouTubeEmbed id="u83V2gIUGHU" appendSrc="?start=86" />
+            <div className='mx-auto lg:w-1/2'>
+              <YouTubeEmbed id='u83V2gIUGHU' appendSrc='?start=86' />
             </div>
 
             <Warning
-              className="mx-auto mt-8 lg:w-1/2"
-              title="Warning for Contributors"
+              className='mx-auto mt-8 lg:w-1/2'
+              title='Warning for Contributors'
               description="This roadmap reflects the priorities of the AsyncAPI Initiative. If you want to
                contribute a feature from the roadmap, feel free to let us know on the corresponding GitHub issue
                so we can discuss what's the best way to proceed and implement it yourself."
