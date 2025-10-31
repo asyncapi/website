@@ -522,6 +522,7 @@ export default function RoadmapPage() {
             <div className='relative mt-20'>
               <div className='grid lg:grid-cols-3 lg:gap-8'>
                 <div>
+                  <div className='h-full rounded-lg border border-gray-200 bg-white p-6 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'>
                   <div className='mb-2 lg:my-0 lg:text-center'>
                     <Paragraph
                       typeStyle={ParagraphTypeStyle.md}
@@ -548,8 +549,10 @@ export default function RoadmapPage() {
                     This is not about reinventing the wheel or creating yet another spec to solve the same problems but
                     to integrate with the existing tools and specs instead.
                   </Paragraph>
+                  </div>
                 </div>
                 <div>
+                  <div className='h-full rounded-lg border border-gray-200 bg-white p-6 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'>
                   <div className='mb-2 mt-6 lg:my-0 lg:text-center'>
                     <Paragraph
                       typeStyle={ParagraphTypeStyle.md}
@@ -571,8 +574,10 @@ export default function RoadmapPage() {
                     Furthermore, making sure production behavior and documentation are always aligned, independently of
                     the programming language or framework of choice.
                   </Paragraph>
+                  </div>
                 </div>
                 <div>
+                  <div className='h-full rounded-lg border border-gray-200 bg-white p-6 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'>
                   <div className='mb-2 mt-6 lg:my-0 lg:text-center'>
                     <Paragraph
                       typeStyle={ParagraphTypeStyle.md}
@@ -595,6 +600,7 @@ export default function RoadmapPage() {
                     should also grow along with the community size and the donated money should serve to give back to
                     the community.
                   </Paragraph>
+                  </div>
                 </div>
               </div>
             </div>
