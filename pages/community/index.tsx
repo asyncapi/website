@@ -33,7 +33,7 @@ export default function CommunityIndexPage() {
       image={image}
       wide
     >
-      <div className='mt-15 md:hidden'>
+      <div className='md:hidden'>
         <Header />
       </div>
       <Hero />
