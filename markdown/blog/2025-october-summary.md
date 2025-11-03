@@ -63,7 +63,7 @@ The proposal for the 2026 community building goals is now available for review. 
 
 ## Spec x Tooling
 
-We are thrilled to announce that server-api now supports AsyncAPI v3! Following dedicated effort and hard work from [Ashish Padhy](https://www.linkedin.com/in/ashish-padhy3023), the implementation is now up and running smoothly, and you can explore its features. Additionally, Studio support for these new changes will be rolling out soon. However, you can now also use the AsyncAPI CLI to start your API effortlessly. For more details, [check out the deployed link](https://api.asyncapi.com/v1/help/validate). 
+We are thrilled to announce that server-api now supports AsyncAPI v3! Following dedicated effort and hard work from [Ashish Padhy](https://www.linkedin.com/in/ashish-padhy3023), the implementation is now up and running smoothly, and you can explore its features. Additionally, Studio support for these new changes will be rolling out soon. However, you can now also use the AsyncAPI CLI to start your API effortlessly. For more details, [check out the deployed link](https://api.asyncapi.com/v1/help). 
 
 
 ## TSC x Ambassadors
