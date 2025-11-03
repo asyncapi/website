@@ -88,6 +88,21 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
+
+            <div className='mt-8 sm:mt-0'>
+              <div className='py-2'>
+                <div className='text-white'>
+                  <Heading typeStyle={HeadingTypeStyle.smSemibold}>Join Our Community</Heading>
+                </div>
+              </div>
+              <Link href='/join' className='block' aria-label='Open Join page'>
+                <img
+                  src='/img/join-qr.png'
+                  alt='QR code to join page'
+                  className='mx-auto h-40 w-40 rounded-lg border border-cool-gray bg-white p-2 shadow-sm'
+                />
+              </Link>
+            </div>
           </div>
         </nav>
 
