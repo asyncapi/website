@@ -274,7 +274,6 @@
             "nodejs-ws-template",
             "java-spring-template",
             ".github",
-            "vs-asyncapi-preview",
             "template-for-generator-templates",
             "community",
             "diff",
@@ -971,5 +970,29 @@
             "community"
         ],
         "githubID": 105683440
+    },
+    {
+        "name": "Adi Boghawala",
+        "github": "Adi-204",
+        "twitter": "AdiBoghawala",
+        "linkedin": "adi-boghawala",
+        "slack": "U0867GV384D",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "generator"
+        ],
+        "githubID": 114283933
+    },
+    {
+        "name": "Ruchi Pakhle",
+        "github": "Ruchip16",
+        "twitter": "Ruchicodess",
+        "availableForHire": true,
+        "isTscMember": false,
+        "repos": [
+            "vs-asyncapi-preview"
+        ],
+        "githubID": 72685035
     }
 ]

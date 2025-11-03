@@ -44,7 +44,7 @@ If you experience or observe discrimination, harassment, or any behavior that vi
 ### 2. Report the Incident
 You can report a CoC violation by:
 
-- Emailing **conduct@asyncapi.io** – this forwards directly to the [Code of Conduct Committee](../CODE_OF_CONDUCT_COMMITTEE.md)
+- Emailing **conduct@asyncapi.io** – this forwards directly to the [Code of Conduct Committee](../CODE_OF_CONDUCT_COMMITTEE)
 - Reaching out to a specific CoC Committee member if the issue involves someone on the committee
 
 All reports are handled with confidentiality, respect, and prompt action.
@@ -61,5 +61,5 @@ The Code of Conduct Committee is trained to resolve conflicts fairly and ensure 
 
 
 ## Additional Resources
-- [Incident Resolution Procedures](../COC-incident-resolution-procedures.md)
-- [Slack Etiquette Guidelines](../060-meetings-and-communication/slack-etiquette.md)
+- [Incident Resolution Procedures](../COC-incident-resolution-procedures)
+- [Slack Etiquette Guidelines](../060-meetings-and-communication/slack-etiquette)

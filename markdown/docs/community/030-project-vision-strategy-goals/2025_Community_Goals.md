@@ -72,7 +72,7 @@ We remain committed to supporting the following initiatives as they promote comm
 - [Maintainership Program](https://www.asyncapi.com/blog/beyond-boundaries) - Ace
 - [AsyncAPI Ambassador Program](https://www.asyncapi.com/community/ambassadors) - Thulie
 - Student Ambassador Program  - Bami
-- [Working Groups](../../WORKING_GROUPS.yaml) - Bami
+- [Working Groups](https://github.com/asyncapi/community/blob/master/WORKING_GROUPS.yaml) - Bami
 
 
 #### 1. AsyncAPI Conf 2025
