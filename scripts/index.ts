@@ -11,6 +11,11 @@ import { buildToolsManual } from './build-tools';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
+const automatedToolsPath = resolve(currentDirPath, '../config', 'tools-automated.json');
+const manualToolsPath = resolve(currentDirPath, '../config', 'tools-manual.json');
+const toolsPath = resolve(currentDirPath, '../config', 'tools.json');
+const tagsPath = resolve(currentDirPath, '../config', 'all-tags.json');
+
 
 /**
  * Initiates the build process for the project's content.
@@ -37,10 +42,6 @@ async function start() {
   await buildCaseStudiesList('config/casestudies', resolve(currentDirPath, '../config', 'case-studies.json'));
 
   // Build tools manually to reflect changes in tools-manual.json
-  const automatedToolsPath = resolve(currentDirPath, '../config', 'tools-automated.json');
-  const manualToolsPath = resolve(currentDirPath, '../config', 'tools-manual.json');
-  const toolsPath = resolve(currentDirPath, '../config', 'tools.json');
-  const tagsPath = resolve(currentDirPath, '../config', 'all-tags.json');
   await buildToolsManual(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
   
   await buildAdoptersList();
