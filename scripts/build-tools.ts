@@ -16,7 +16,6 @@ const currentDirPath = dirname(currentFilePath);
  * @param manualTools - The manual tools data
  * @param toolsPath - The file path where the combined tools data will be written
  * @param tagsPath - The file path where the tags data will be written
- * @throws {Error} If an error occurs during the combination process
  */
 async function combineAutomatedAndManualTools(
   automatedTools: any,
@@ -28,7 +27,7 @@ async function combineAutomatedAndManualTools(
     await combineTools(automatedTools, manualTools, toolsPath, tagsPath);
   } catch (err) {
     logger.error('Error while combining tools:', err);
-    throw err;
+    throw new Error(`An error occurred while combining tools: ${(err as Error).message}`);
   }
 }
 
@@ -44,7 +43,6 @@ async function combineAutomatedAndManualTools(
  * @param manualToolsPath - The file path from which the manual tools data is read.
  * @param toolsPath - The file path where the combined tools data will be written.
  * @param tagsPath - The file path where the tags data will be written.
- * @throws {Error} If an error occurs during the build process.
  */
 async function buildTools(automatedToolsPath: string, manualToolsPath: string, toolsPath: string, tagsPath: string) {
   try {
@@ -76,7 +74,7 @@ async function buildToolsManual(
     await combineAutomatedAndManualTools(automatedTools, manualTools, toolsPath, tagsPath);
   } catch (err) {
     logger.error('Error in buildToolsManual:', err);
-    throw err;
+    throw new Error(`An error occurred while building tools manually: ${(err as Error).message}`);
   }
 }
 
