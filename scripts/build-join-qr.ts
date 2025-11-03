@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { writeFile } from 'fs/promises';
 import { dirname, resolve } from 'path';
 import QRCode from 'qrcode';
