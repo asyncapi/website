@@ -1,7 +1,7 @@
 class SlackPage {
 
   visitSlack(){
-    cy.visit('https://asyncapi.slack.com/join/shared_invite/zt-33bsaqqgz-ZL0a3ZUiuy4stSbXB~~E9A#/shared-invite/email');
+    cy.visit('https://asyncapi.slack.com/join/shared_invite/zt-3clk6rmc0-Cujl2fChHYnHDUwFKRlQCw#/shared-invite/email');
   }
   verifyGoogleLoginButton() {
     cy.get('[data-qa="base_google_login_button"]')

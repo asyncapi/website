@@ -1,3 +1,4 @@
+import AmbassadorsPage from './ambassadors';
 import TSCPage from './tscpage';
 
 class HomePage {
@@ -35,6 +36,11 @@ class HomePage {
   goToTSCPage(){
     cy.visit('/community/tsc');
     return new TSCPage();
+  }
+
+  goToAmbassadorsPage() {
+    cy.visit('/community/ambassadors');
+    return new AmbassadorsPage();
   }
 }
 
