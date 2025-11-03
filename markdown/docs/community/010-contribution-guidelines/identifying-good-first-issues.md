@@ -73,7 +73,7 @@ AsyncAPI follows a "first come, first served" approach for assigning issues. Her
 - **Comment on the issue:** Start with saying something like, "Hey, I'd like to work on this!" so maintainers know you're interested.
 
 - **Once you comment, wait for approval by maintainers:** They may guide you further (if needed) or might assign the issue to you. If there are no blockers, you can start working!
-- **Start coding**: Once approved, head on to the [git workflow guide](git-workflow.md), and start working!
+- **Start coding**: Once approved, head on to the [git workflow guide](git-workflow), and start working!
 - **Ask for help**: Don't hesitate to ask in the issue comments or the dedicated AsyncAPI Slack Channel if you're stuck.
 
 So what are you waiting for? Go find your first quest, and let's build something awesome together! 

@@ -46,7 +46,7 @@ Before you can become a **maintainer**, you need to start as a **contributor**. 
 
 ### 2. Open a PR
 
-For a comprehensive guide on how to create a fork and start contributing, refer to the [AsyncAPI Git Workflow Guide](../010-contribution-guidelines/git-workflow.md).
+For a comprehensive guide on how to create a fork and start contributing, refer to the [AsyncAPI Git Workflow Guide](../010-contribution-guidelines/git-workflow).
 
 - **Fork the repository**: Fork the repository you want to contribute to and create a new branch for your changes.
 
