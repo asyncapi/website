@@ -43,6 +43,7 @@ async function combineAutomatedAndManualTools(
  * @param manualToolsPath - The file path from which the manual tools data is read.
  * @param toolsPath - The file path where the combined tools data will be written.
  * @param tagsPath - The file path where the tags data will be written.
+ * @throws {Error} If an error occurs during the build process.
  */
 async function buildTools(automatedToolsPath: string, manualToolsPath: string, toolsPath: string, tagsPath: string) {
   try {
