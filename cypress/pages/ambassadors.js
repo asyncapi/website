@@ -4,7 +4,7 @@ class AmbassadorsPage {
   }
 
   verifyKeySectionsAndLinks() {
-    cy.get('a[href="https://github.com/asyncapi/community/blob/master/docs/050-mentorship-program/ambassador-program/AMBASSADOR_PROGRAM.md"]'
+    cy.get('a[href="https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/AMBASSADOR_PROGRAM.md"]'
     )
     .should('be.visible');
     cy.get('[data-testid="Ambassadors-Iframe"]')
