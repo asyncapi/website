@@ -22,23 +22,37 @@ interface IAnnouncementHeroProps {
 export default function AnnouncementHero({ className = '', small = false }: IAnnouncementHeroProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-  const [isVisible, setIsVisible] = useState(() => {
-    if (typeof window !== 'undefined') {
+
+  // Start with a stable server-friendly default. Defer reading localStorage until after mount
+  const [isVisible, setIsVisible] = useState(true);
+
+  // Read persisted preference from localStorage on mount (client-only)
+  useEffect(() => {
+    try {
       const stored = localStorage.getItem('announcementBannerVisible');
 
-      return stored === null ? true : stored === 'true';
+      if (stored == null) {
+        // no persisted preference
+      } else {
+        const val = stored === 'true';
+
+        setIsVisible((prev) => (prev === val ? prev : val));
+      }
+    } catch (e) {
+      // ignore localStorage errors
+    } finally {
+      setIsLoading(false);
     }
-
-    return true;
-  });
-
-  useEffect(() => {
-    setIsLoading(false);
   }, []);
 
+  // Persist visibility changes after initial mount to avoid SSR/client divergence
   useEffect(() => {
     if (!isLoading) {
-      localStorage.setItem('announcementBannerVisible', isVisible.toString());
+      try {
+        localStorage.setItem('announcementBannerVisible', isVisible.toString());
+      } catch (e) {
+        // ignore write errors
+      }
     }
   }, [isVisible, isLoading]);
 
@@ -82,12 +96,14 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
         )}
         <div className='relative flex w-4/5 md:w-5/6 flex-col items-center justify-center gap-2'>
           <div className='relative flex min-h-72 w-full justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
-            <div
-              className='absolute right-2 top-6 z-20 cursor-pointer p-2 hover:opacity-70'
+            <button
+              type='button'
+              className='absolute right-2 top-6 z-20 p-2 hover:opacity-70'
               onClick={() => setIsVisible(false)}
+              aria-label='Close announcement'
             >
               <Cross />
-            </div>
+            </button>
             {visibleBanners.map((banner, index) => {
               // Only render the active banner
               const isActiveBanner = index === activeIndex;
