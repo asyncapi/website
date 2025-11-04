@@ -24,6 +24,14 @@ The AsyncAPI Conference this year couldn't have been a major success without the
 
 I want to thank our Platinum sponsors, [Gravitee](https://www.gravitee.io) and [IBM](https://www.ibm.com), for their sponsorship and partnership with us this year.
 
+<a href='https://www.gravitee.io' target='_blank'>
+<img src='/img/sponsors/gravitee.png' alt='Gravitee.io' width='500px' />
+</a>
+
+<a href='https://www.ibm.com' target='_blank'>
+<img src='/img/sponsors/ibm.png' alt='IBM' width='500px' />
+</a>
+
 ### Bangalore Recap
 
 At the beginning of October, we returned to Bangalore after our last conference, which had taken place two years prior. It was an amazing experience to finally put faces to the names of some of the maintainers, mentees, and ambassadors we have been working with over the past few years. We had the opportunity to utilize the conference budget and cover the costs of our travel to the conference.
