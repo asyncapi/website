@@ -20,6 +20,13 @@ interface IAnnouncementHeroProps {
  */
 export default function AnnouncementHero({ className = '', small = false }: IAnnouncementHeroProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isBannerVisible, setIsBannerVisible] = useState(true);
+
+  // Load banner visibility from localStorage
+  useEffect(() => {
+    const hidden = localStorage.getItem('bannerClosed');
+    if (hidden === 'true') setIsBannerVisible(false);
+  }, []);
 
   const visibleBanners = useMemo(() => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)), [banners]);
   const numberOfVisibleBanners = visibleBanners.length;
@@ -36,15 +43,17 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
     setActiveIndex(index);
   };
 
+  const handleClose = () => {
+    setIsBannerVisible(false);
+    localStorage.setItem('bannerClosed', 'true');
+  };
+
   useEffect(() => {
     const interval = setInterval(() => setActiveIndex((index) => (index + 1) % numberOfVisibleBanners), 10000);
-
-    return () => {
-      clearInterval(interval);
-    };
+    return () => clearInterval(interval);
   }, [numberOfVisibleBanners]);
 
-  if (numberOfVisibleBanners === 0) {
+  if (numberOfVisibleBanners === 0 || !isBannerVisible) {
     return null;
   }
 
@@ -60,33 +69,42 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
             <ArrowLeft className='text-white' />
           </div>
         )}
+
         <div className='relative flex w-4/5 md:w-5/6 flex-col items-center justify-center gap-2'>
           <div className='relative flex min-h-72 w-full justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
             {visibleBanners.map((banner, index) => {
-              // Only render the active banner
-              const isVisible = index === activeIndex;
-
-              if (!isVisible) return null;
+              if (index !== activeIndex) return null;
 
               return (
-                <Banner
-                  key={index}
-                  title={banner.title}
-                  dateLocation={banner.dateLocation}
-                  cfaText={banner.cfaText}
-                  eventName={banner.eventName}
-                  cfpDeadline={banner.cfpDeadline}
-                  link={banner.link}
-                  city={banner.city}
-                  activeBanner={isVisible}
-                  className={className}
-                  small={small}
-                />
+                <div key={index} className='relative w-full flex justify-center'>
+                  {/* Close Button inside the card */}
+                  <button
+                    onClick={handleClose}
+                    aria-label='Close announcement banner'
+                    className='absolute top-[1.7rem] right-4 z-20 flex h-6 w-6 items-center justify-center rounded border border-gray-400 bg-white text-gray-600 hover:bg-gray-100 hover:text-gray-800'
+                  >
+                    ×
+                  </button>
+
+                  <Banner
+                    title={banner.title}
+                    dateLocation={banner.dateLocation}
+                    cfaText={banner.cfaText}
+                    eventName={banner.eventName}
+                    cfpDeadline={banner.cfpDeadline}
+                    link={banner.link}
+                    city={banner.city}
+                    activeBanner={index === activeIndex}
+                    className={className}
+                    small={small}
+                  />
+                </div>
               );
             })}
           </div>
+
           <div className='m-auto flex justify-center'>
-            {visibleBanners.map((banner, index) => (
+            {visibleBanners.map((_, index) => (
               <div
                 key={index}
                 className={`mx-1 size-2 cursor-pointer rounded-full ${
@@ -97,6 +115,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
             ))}
           </div>
         </div>
+
         {numberOfVisibleBanners > 1 && (
           <div
             className={`absolute right-0 top-1/2 z-10 mb-2 size-8 -translate-y-1/2 cursor-pointer
