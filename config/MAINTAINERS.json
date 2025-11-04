@@ -989,7 +989,7 @@
         "github": "Ruchip16",
         "twitter": "Ruchicodess",
         "availableForHire": true,
-        "isTscMember": false,
+        "isTscMember": true,
         "repos": [
             "vs-asyncapi-preview"
         ],
