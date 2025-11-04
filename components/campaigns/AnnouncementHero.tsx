@@ -24,11 +24,22 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
 
   // Load banner visibility from localStorage
   useEffect(() => {
-    const hidden = localStorage.getItem('bannerClosed');
+    const hidden = typeof window !== 'undefined' ? localStorage.getItem('bannerClosed') : null;
+
     if (hidden === 'true') setIsBannerVisible(false);
   }, []);
 
-  const visibleBanners = useMemo(() => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)), [banners]);
+  // Filter banners dynamically based on dismissed banners
+  const visibleBanners = useMemo(() => {
+    if (typeof window === 'undefined') return [];
+
+    const dismissedBanners = JSON.parse(localStorage.getItem('dismissedBanners') || '[]');
+
+    return banners
+      .filter((banner) => shouldShowBanner(banner.cfpDeadline))
+      .filter((b) => !dismissedBanners.includes(b.eventName));
+  }, []);
+
   const numberOfVisibleBanners = visibleBanners.length;
 
   const goToPrevious = () => {
@@ -44,12 +55,29 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
   };
 
   const handleClose = () => {
-    setIsBannerVisible(false);
-    localStorage.setItem('bannerClosed', 'true');
+    if (typeof window === 'undefined') return;
+
+    const currentBanner = visibleBanners[activeIndex];
+    const dismissedBanners = JSON.parse(localStorage.getItem('dismissedBanners') || '[]');
+    dismissedBanners.push(currentBanner.eventName);
+    localStorage.setItem('dismissedBanners', JSON.stringify(dismissedBanners));
+
+    const remainingBanners = visibleBanners.filter(
+      (b) => !dismissedBanners.includes(b.eventName)
+    );
+
+    if (remainingBanners.length === 0) {
+      setIsBannerVisible(false);
+    } else {
+      setActiveIndex((prev) => prev % remainingBanners.length);
+    }
   };
 
   useEffect(() => {
-    const interval = setInterval(() => setActiveIndex((index) => (index + 1) % numberOfVisibleBanners), 10000);
+    const interval = setInterval(
+      () => setActiveIndex((index) => (index + 1) % numberOfVisibleBanners),
+      10000
+    );
     return () => clearInterval(interval);
   }, [numberOfVisibleBanners]);
 
@@ -58,30 +86,30 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
   }
 
   return (
-    <Container as='section' padding='' className='text-center'>
-      <div className='relative flex flex-row items-center justify-center overflow-x-hidden md:gap-4'>
+    <Container as="section" padding="" className="text-center">
+      <div className="relative flex flex-row items-center justify-center overflow-x-hidden md:gap-4">
         {numberOfVisibleBanners > 1 && (
           <div
             className={`absolute left-0 top-1/2 z-10 mb-2 flex size-8 -translate-y-1/2 cursor-pointer
           items-center justify-center rounded-full bg-primary-500 opacity-50 hover:bg-primary-600 md:opacity-100`}
             onClick={goToPrevious}
           >
-            <ArrowLeft className='text-white' />
+            <ArrowLeft className="text-white" />
           </div>
         )}
 
-        <div className='relative flex w-4/5 md:w-5/6 flex-col items-center justify-center gap-2'>
-          <div className='relative flex min-h-72 w-full justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
+        <div className="relative flex w-4/5 md:w-5/6 flex-col items-center justify-center gap-2">
+          <div className="relative flex min-h-72 w-full justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]">
             {visibleBanners.map((banner, index) => {
               if (index !== activeIndex) return null;
 
               return (
-                <div key={index} className='relative w-full flex justify-center'>
+                <div key={index} className="relative w-full flex justify-center">
                   {/* Close Button inside the card */}
                   <button
                     onClick={handleClose}
-                    aria-label='Close announcement banner'
-                    className='absolute top-[1.7rem] right-4 z-20 flex h-6 w-6 items-center justify-center rounded border border-gray-400 bg-white text-gray-600 hover:bg-gray-100 hover:text-gray-800'
+                    aria-label="Close announcement banner"
+                    className="absolute top-[1.7rem] right-4 z-20 flex h-6 w-6 items-center justify-center rounded border border-gray-400 bg-white text-gray-600 hover:bg-gray-100 hover:text-gray-800"
                   >
                     ×
                   </button>
@@ -103,7 +131,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
             })}
           </div>
 
-          <div className='m-auto flex justify-center'>
+          <div className="m-auto flex justify-center">
             {visibleBanners.map((_, index) => (
               <div
                 key={index}
@@ -122,7 +150,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
                       rounded-full bg-primary-500 opacity-50 hover:bg-primary-600 md:opacity-100`}
             onClick={goToNext}
           >
-            <ArrowRight className='text-white' />
+            <ArrowRight className="text-white" />
           </div>
         )}
       </div>
