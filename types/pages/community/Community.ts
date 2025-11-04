@@ -50,4 +50,8 @@ export interface Tsc {
   githubID: number
   isBoardMember?: boolean;
   isBoardChair?: boolean;
+  githubUrl?: string;
+  twitterUrl?: string;
+  linkedinUrl?: string;
+  reposList?: { name: string; url: string }[];
 };
