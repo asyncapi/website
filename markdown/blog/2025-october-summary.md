@@ -20,7 +20,7 @@ Dive into the summary for all the exciting updates!
 
 ## AsyncAPI Conferences 2025
 
-The AsyncAPI Conference this year couldn't have been a major success without the support of our event financial sponsors. We were able to cover most of the logistical aspects that come with conference planning, such as supporting travels, printing cheat sheets for the booth, and shipping swags through their support.
+The AsyncAPI Conference this year couldn't have been a major success without the support of our event financial sponsors. Through their support, we were able to cover most of the logistical aspects that come with conference planning, such as supporting travels, printing cheat sheets for the booth, and shipping swags.
 
 I want to thank our Platinum sponsors, [Gravitee](https://www.gravitee.io) and [IBM](https://www.ibm.com), for their sponsorship and partnership with us this year.
 
@@ -36,20 +36,20 @@ At the beginning of October, we returned to Bangalore after our last conference,
 
 We also had amazing conversations at the `API Standards` booth, together with our friends from JSON Schema, who were also present with us. It was a great time of networking and building boats!
 
-[Recordings from the conference are now available on YouTube; head over and watch](https://conference.asyncapi.com/venue/Bangalore#recordings). 
+[Recordings from the conference are now available on YouTube](https://conference.asyncapi.com/venue/Bangalore#recordings); head over and watch. 
 
 As we prepare for the 2026 conference, Lukasz has written an open letter on why companies should get involved. [Please read and share the article with your networks!](https://www.linkedin.com/pulse/open-letter-companies-use-asyncapi-secure-your-lukasz-gornicki-l4atc/?trackingId=gQjTl9qUT%2FGLhFcPqFzzfw%3D%3D)
 
 ### Online Conference Recap
 This year marked the 5th anniversary of the AsyncAPI Online Conference, and it was interesting to see how much the community has grown. We had attendees and speakers engage with us during the conference, and we garnered over **350 views** from YouTube. 
 
-The event wouldn't have been a success without our volunteers, who worked on various aspects, from design to on-stage and off-stage support, and the speakers who took the time to share their knowledge. [If you missed the conference, you can watch the recorded sessions](https://www.youtube.com/watch?v=KbT7Pw6j46E).
+The event wouldn't have been a success without our volunteers, who worked on various aspects, from design to on-stage and off-stage support, and the speakers who took the time to share their knowledge. If you missed the conference, [you can watch the recorded sessions](https://www.youtube.com/watch?v=KbT7Pw6j46E).
 
 
 ### Paris
-We are heading to Paris **on December 11th** for the AsyncAPI track, and preparations are underway. There is an exciting lineup of speakers and a variety of topics being covered; [be sure to check the agenda once it's out in the coming week](https://conference.asyncapi.com/venue/Paris).
+We are heading to Paris **on December 11th** for the AsyncAPI track, and preparations are underway. There is an exciting lineup of speakers and a variety of topics being covered; [be sure to check the agenda](https://conference.asyncapi.com/venue/Paris) once it's out in the coming week.
 
-[We still have free tickets and discounts available. Be sure also to grab one before they run out!](https://ticket.apidays.global/event/apidays-paris-2025/3cccd07f-acb2-466e-8d91-cb1f208ecf42/asyncapi-conference-at-apidays-paris-2025/cart?coupon=ASYNCAPIVIP)
+[We still have free tickets and discounts available](https://ticket.apidays.global/event/apidays-paris-2025/3cccd07f-acb2-466e-8d91-cb1f208ecf42/asyncapi-conference-at-apidays-paris-2025/cart?coupon=ASYNCAPIVIP). Be sure also to grab one before they run out!
 
 ### Developer Week 2026
 
@@ -63,7 +63,7 @@ The proposal for the 2026 community building goals is now available for review. 
 
 ## Spec x Tooling
 
-We are thrilled to announce that server-api now supports AsyncAPI v3! Following dedicated effort and hard work from [Ashish Padhy](https://www.linkedin.com/in/ashish-padhy3023), the implementation is now up and running smoothly, and you can explore its features. Additionally, Studio support for these new changes will be rolling out soon. However, you can now also use the AsyncAPI CLI to start your API effortlessly. For more details, [check out the deployed link](https://api.asyncapi.com/v1/help). 
+We are thrilled to announce that server-api now supports AsyncAPI v3! Following dedicated effort and hard work from [Ashish Padhy](https://www.linkedin.com/in/ashish-padhy3023), the implementation is now up and running smoothly, and you can explore its features. Additionally, Studio support for these new changes will be rolling out soon. However, you can now also use the AsyncAPI CLI to start your API effortlessly. For more details, [check out the deployed link](https://api.asyncapi.com/v1/docs). 
 
 
 ## TSC x Ambassadors
