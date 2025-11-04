@@ -14,7 +14,7 @@ function DoneIcon() {
       viewBox='0 0 24 24'
       strokeWidth={1.5}
       stroke='currentColor'
-      className='-mt-0.5 mr-2 inline-block size-6 text-green-600'
+      className='-mt-0.5 mr-2 inline-block size-6 text-green-600 dark:text-green-400'
     >
       <path
         strokeLinecap='round'
@@ -68,7 +68,7 @@ export default function Pill({
           ></div>
           <div
             className={
-              'flex flex-1 items-center justify-between rounded-r-md border-y border-r border-gray-200 bg-white'
+              'flex flex-1 items-center justify-between rounded-r-md border-y border-r border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-card'
             }
           >
             <div className='px-4 py-2 text-sm'>
@@ -76,7 +76,7 @@ export default function Pill({
                 href={item.url}
                 rel='noopener noreferrer'
                 onClick={() => !item.url && item.description && setIsDescriptionVisible(true)}
-                className={`block text-left font-medium text-gray-900 ${item.description || item.url ? 'cursor-pointer hover:text-gray-600' : 'cursor-default'}`}
+                className={`block text-left font-medium text-gray-900 dark:text-gray-100 ${item.description || item.url ? 'cursor-pointer hover:text-gray-600 dark:hover:text-gray-400' : 'cursor-default'}`}
               >
                 {item.done && (
                   <span title='Done!'>

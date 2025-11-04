@@ -34,7 +34,7 @@ export default function RoadmapItem({ item, colorClass, showConnector = true, co
   const [isCollapsed, setIsCollapsed] = useState(collapsed);
   const isCollapsible = item.solutions !== undefined;
 
-  const connectorClasses = 'border-l-2 border-dashed border-gray-300';
+  const connectorClasses = 'border-l-2 border-dashed border-gray-300 dark:border-gray-600';
   const classNames = `pt-2 ${showConnector && connectorClasses}`;
 
   return (
@@ -42,7 +42,7 @@ export default function RoadmapItem({ item, colorClass, showConnector = true, co
       <div className='flex'>
         {showConnector && (
           <div className='flex flex-col justify-center'>
-            <div className='my-2 ml-0 mr-2 h-1 w-5 border-b-2 border-dashed border-gray-300'></div>
+            <div className='my-2 ml-0 mr-2 h-1 w-5 border-b-2 border-dashed border-gray-300 dark:border-gray-600'></div>
           </div>
         )}
         <Pill
@@ -59,7 +59,7 @@ export default function RoadmapItem({ item, colorClass, showConnector = true, co
       )}
 
       {!isCollapsed && item?.implementations?.length && (
-        <RoadmapList className='ml-9 pt-3' colorClass='bg-black' items={item.implementations} collapsed={false} />
+        <RoadmapList className='ml-9 pt-3' colorClass='bg-black dark:bg-gray-200' items={item.implementations} collapsed={false} />
       )}
     </li>
   );
