@@ -19,10 +19,10 @@ export const banners = [
   {
     title: 'AsyncAPI Conference',
     city: 'Paris Edition',
-    dateLocation: '9th - 11th of December, 2026 | Paris, France',
+    dateLocation: '9th - 11th of December, 2025 | Paris, France',
     cfaText: 'Apply To Speak',
     eventName: 'the end of Call for Speakers',
-    cfpDeadline: '2026-10-05T06:00:00Z',
+    cfpDeadline: '2025-10-05T06:00:00Z',
     link: 'https://conference.asyncapi.com/venue/Paris'
   },
   {
