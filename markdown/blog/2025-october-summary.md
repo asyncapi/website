@@ -78,7 +78,7 @@ We are excited to welcome [Ankit Kumar](https://www.linkedin.com/in/ankit28) as 
   }
 ]} />
 
-Additionally, we welcome [Ruchi Pahkle](https://www.linkedin.com/in/ruchi-pakhle-a0a5311b0) as the newest addition to the Technical Steering Committee.
+Additionally, we welcome [Ruchi Pahkle](https://www.linkedin.com/in/ruchi-pakhle-a0a5311b0) as the newest addition to the [Technical Steering Committee](https://www.asyncapi.com/community/tsc).
 
 <Profiles profiles={[
   {
