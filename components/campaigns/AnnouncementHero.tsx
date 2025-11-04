@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 
 import ArrowLeft from '../icons/ArrowLeft';
 import ArrowRight from '../icons/ArrowRight';
+import Cross from '../icons/Cross';
 import Container from '../layout/Container';
 import Banner from './AnnouncementBanner';
 import { banners, shouldShowBanner } from './banners';
@@ -20,6 +21,24 @@ interface IAnnouncementHeroProps {
  */
 export default function AnnouncementHero({ className = '', small = false }: IAnnouncementHeroProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isVisible, setIsVisible] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const stored = localStorage.getItem('announcementBannerVisible');
+      return stored === null ? true : stored === 'true';
+    }
+    return true;
+  });
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
+
+  useEffect(() => {
+    if (!isLoading) {
+      localStorage.setItem('announcementBannerVisible', isVisible.toString());
+    }
+  }, [isVisible, isLoading]);
 
   const visibleBanners = useMemo(() => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)), [banners]);
   const numberOfVisibleBanners = visibleBanners.length;
@@ -44,7 +63,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
     };
   }, [numberOfVisibleBanners]);
 
-  if (numberOfVisibleBanners === 0) {
+  if (isLoading || numberOfVisibleBanners === 0 || !isVisible) {
     return null;
   }
 
@@ -62,6 +81,12 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
         )}
         <div className='relative flex w-4/5 md:w-5/6 flex-col items-center justify-center gap-2'>
           <div className='relative flex min-h-72 w-full justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
+            <div
+              className="absolute right-2 top-6 z-20 cursor-pointer p-2 hover:opacity-70"
+              onClick={() => setIsVisible(false)}
+            >
+              <Cross />
+            </div>
             {visibleBanners.map((banner, index) => {
               // Only render the active banner
               const isVisible = index === activeIndex;
