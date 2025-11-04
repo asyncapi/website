@@ -78,6 +78,16 @@ We are excited to welcome [Ankit Kumar](https://www.linkedin.com/in/ankit28) as 
   }
 ]} />
 
+Additionally, we welcome [Ruchi Pahkle](https://www.linkedin.com/in/ruchi-pakhle-a0a5311b0) as the newest addition to the Technical Steering Committee.
+
+<Profiles profiles={[
+  {
+    name: 'Ruchi Pakhle',
+    avatar: 'https://avatars.githubusercontent.com/u/72685035?v=4',
+    link: 'https://github.com/Ruchip16'
+  }
+]} />
+
 ## AsyncAPI Conference Hall of Fame
 
 I would like to highlight and thank these amazing volunteers who dedicated their skills and time to the success of the Online Conference, from designers to those working both on-stage and off-stage.
