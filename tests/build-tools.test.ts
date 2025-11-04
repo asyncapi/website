@@ -3,7 +3,7 @@ import fs from 'fs-extra';
 import os from 'os';
 import path, { resolve } from 'path';
 
-import { buildTools } from '../scripts/build-tools';
+import { buildTools, buildToolsManual } from '../scripts/build-tools';
 import { manualTools, mockConvertedData, mockExtractData, tagsData } from './fixtures/buildToolsData';
 
 jest.mock('axios');
@@ -89,5 +89,59 @@ describe('buildTools', () => {
     const invalidPath = path.resolve(os.tmpdir(), 'invalid_dir', 'tools.json');
 
     await expect(buildTools(invalidPath, manualToolsPath, toolsPath, tagsPath)).rejects.toThrow(/ENOENT|EACCES/);
+  });
+
+  it('should build tools manually from existing files', async () => {
+    fs.writeFileSync(automatedToolsPath, JSON.stringify(mockConvertedData));
+    fs.writeFileSync(manualToolsPath, JSON.stringify(manualTools));
+
+    await buildToolsManual(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
+
+    const combinedToolsContent = JSON.parse(fs.readFileSync(toolsPath, 'utf-8'));
+
+    expect(combinedToolsContent).toHaveProperty('Category1');
+    expect(combinedToolsContent).toHaveProperty('Category2');
+  });
+
+  it('should handle combineTools error', async () => {
+    mockedAxios.get.mockResolvedValue({ data: mockExtractData });
+
+    const combineSpy = jest
+      .spyOn(require('../scripts/tools/combine-tools'), 'combineTools')
+      .mockRejectedValueOnce(new Error('Combine error'));
+
+    await expect(
+      buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath)
+    ).rejects.toThrow(
+      'An error occurred while building tools: An error occurred while combining tools: Combine error'
+    );
+
+    combineSpy.mockRestore();
+  });
+
+  it('should handle buildToolsManual error', async () => {
+    const invalidAutomatedToolsPath = resolve(testDir, 'non-existent-dir', 'tools-automated.json');
+
+    await expect(
+      buildToolsManual(invalidAutomatedToolsPath, manualToolsPath, toolsPath, tagsPath)
+    ).rejects.toThrow('An error occurred while building tools manually:');
+  });
+
+  it('should handle missing automated tools file', async () => {
+    const invalidPath = resolve(testDir, 'missing-automated.json');
+
+    await expect(
+      buildToolsManual(invalidPath, manualToolsPath, toolsPath, tagsPath)
+    ).rejects.toThrow('Automated tools file not found');
+  });
+
+  it('should handle missing manual tools file error', async () => {
+    const invalidManualPath = resolve(testDir, 'nonexistent-manual.json');
+
+    fs.writeFileSync(automatedToolsPath, JSON.stringify(mockConvertedData)); 
+
+    await expect(
+      buildToolsManual(automatedToolsPath, invalidManualPath, toolsPath, tagsPath)
+    ).rejects.toThrow('Manual tools file not found');
   });
 });

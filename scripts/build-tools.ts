@@ -70,6 +70,15 @@ async function buildToolsManual(
   tagsPath: string
 ) {
   try {
+    if (!await fs.pathExists(automatedToolsPath)) {
+      throw new Error(
+        `Automated tools file not found at ${automatedToolsPath}.`);
+    }
+    
+    if (!await fs.pathExists(manualToolsPath)) {
+      throw new Error(`Manual tools file not found at ${manualToolsPath}.`);
+    }
+    
     const automatedTools = JSON.parse(await fs.readFile(automatedToolsPath, 'utf-8'));
     const manualTools = JSON.parse(await fs.readFile(manualToolsPath, 'utf-8'));
     await combineAutomatedAndManualTools(automatedTools, manualTools, toolsPath, tagsPath);
