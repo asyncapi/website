@@ -25,7 +25,6 @@ The AsyncAPI CLI uses oclif (Open CLI Framework) as its core framework, which en
   - `new/`: Create a new AsyncAPI project, specification files, or templates for clients and applications.
     - **Files:**
       - `file.ts`: Handles file creation logic.
-      - `glee.ts`: Related to Glee, a tool for event-driven microservices.
       - `template.ts`: Manages templates for new projects.
   - `start/`: Implements starting functionalities like launching a local server or studio.
     - **Files:**
