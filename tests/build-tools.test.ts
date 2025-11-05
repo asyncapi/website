@@ -138,8 +138,6 @@ describe('buildTools', () => {
   it('should handle missing manual tools file error', async () => {
     const invalidManualPath = resolve(testDir, 'nonexistent-manual.json');
 
-    fs.writeFileSync(automatedToolsPath, JSON.stringify(mockConvertedData)); 
-
     await expect(
       buildToolsManual(automatedToolsPath, invalidManualPath, toolsPath, tagsPath)
     ).rejects.toThrow('Manual tools file not found');

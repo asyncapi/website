@@ -62,6 +62,12 @@ async function buildTools(automatedToolsPath: string, manualToolsPath: string, t
 /**
  * Builds tools manually by combining existing automated tools with manual tools.
  * This function is used to ensure that it reflects changes in tools-manual.json.
+ *
+ * @param automatedToolsPath - The file path from which the automated tools data is read.
+ * @param manualToolsPath - The file path from which the manual tools data is read.
+ * @param toolsPath - The file path where the combined tools data will be written.
+ * @param tagsPath - The file path where the tags data will be written.
+ * @throws {Error} If the automated or manual tools files are not found, or if an error occurs during the build process.
  */
 async function buildToolsManual(
   automatedToolsPath: string, 
@@ -74,7 +80,7 @@ async function buildToolsManual(
       throw new Error(
         `Automated tools file not found at ${automatedToolsPath}.`);
     }
-    
+
     if (!await fs.pathExists(manualToolsPath)) {
       throw new Error(`Manual tools file not found at ${manualToolsPath}.`);
     }
