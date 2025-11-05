@@ -37,7 +37,7 @@ describe('buildTools', () => {
   let consoleErrorMock: jest.SpyInstance;
 
   beforeAll(() => {
-    consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});
+    consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => { });
     fs.ensureDirSync(testDir);
     fs.outputFileSync(manualToolsPath, JSON.stringify(manualTools));
     fs.outputFileSync(automatedToolsPath, JSON.stringify({}));
@@ -101,6 +101,10 @@ describe('buildTools', () => {
 
     expect(combinedToolsContent).toHaveProperty('Category1');
     expect(combinedToolsContent).toHaveProperty('Category2');
+    expect(combinedToolsContent.Category1.description).toEqual(mockConvertedData.Category1.description);
+    expect(combinedToolsContent.Category2.description).toEqual(mockConvertedData.Category2.description);
+    expect(combinedToolsContent.Category1.toolsList).toBeDefined();
+    expect(combinedToolsContent.Category2.toolsList).toBeDefined();
   });
 
   it('should handle combineTools error', async () => {
@@ -110,13 +114,15 @@ describe('buildTools', () => {
       .spyOn(require('../scripts/tools/combine-tools'), 'combineTools')
       .mockRejectedValueOnce(new Error('Combine error'));
 
-    await expect(
-      buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath)
-    ).rejects.toThrow(
-      'An error occurred while building tools: An error occurred while combining tools: Combine error'
-    );
-
-    combineSpy.mockRestore();
+    try {
+      await expect(
+        buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath)
+      ).rejects.toThrow(
+        'An error occurred while building tools: An error occurred while combining tools: Combine error'
+      );
+    } finally {
+      combineSpy.mockRestore();
+    }
   });
 
   it('should handle buildToolsManual error', async () => {
