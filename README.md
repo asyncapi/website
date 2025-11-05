@@ -277,7 +277,7 @@ All redirects are defined in the `public/_redirects` file. This file follows **N
    **Format:** `/short-path destination-url status-code!`
 
    **Examples:**
-   ```
+   ```text
    /slack-invite https://asyncapi.com/slack 302!
    /modelina /tools/modelina 301!
    /github https://github.com/asyncapi 301!
