@@ -33,12 +33,12 @@ describe('Blog Page Tests', () => {
   });
 
   it('User filters by type, verifies specific post link, and checks post header', () => {
-    blog.filterByType('Strategy');
+    blog.filterByType('Communication');
     blog.verifyPostLinkAndClick(
-      /Monthly Community Update/i,
-      '/blog/2025-september-summary',
+      /How TransferGo Adopted AsyncAPI/i,
+      '/blog/transfergo-asyncapi-story',
     );
-    blog.verifyPostHeader('Monthly Community Update: September 2025');
+    blog.verifyPostHeader('How TransferGo adopted AsyncAPI');
   });
 
   it('User filters by author and verifies filtered posts appear', () => {
