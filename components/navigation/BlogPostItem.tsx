@@ -1,4 +1,3 @@
-import moment from 'moment';
 import Link from 'next/link';
 import type { Ref } from 'react';
 import React, { forwardRef } from 'react';
@@ -94,10 +93,17 @@ const BlogPostItem = ({ post, className = '', id = '' }: BlogPostItemProps, ref:
                     {post.type}
                   </span>
                 </Paragraph>
-                <Heading level={HeadingLevel.h5} typeStyle={HeadingTypeStyle.smSemibold} className='mt-2 line-clamp-2 text-sm text-gray-900 dark:text-gray-100'>
+                <Heading
+                  level={HeadingLevel.h5}
+                  typeStyle={HeadingTypeStyle.smSemibold}
+                  className='mt-2 line-clamp-2 text-sm text-gray-900 dark:text-gray-100'
+                >
                   {post.title}
                 </Heading>
-                <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-2 line-clamp-2 text-xs text-gray-600 dark:text-gray-400'>
+                <Paragraph
+                  typeStyle={ParagraphTypeStyle.sm}
+                  className='mt-2 line-clamp-2 text-xs text-gray-600 dark:text-gray-400'
+                >
                   <TextTruncate element='span' line={2} text={post.excerpt} />
                 </Paragraph>
               </div>
@@ -107,7 +113,11 @@ const BlogPostItem = ({ post, className = '', id = '' }: BlogPostItemProps, ref:
                     <AuthorAvatars authors={post.authors} />
                   </div>
                   <div className='ml-2'>
-                    <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.xsSemibold} className='text-gray-900 dark:text-gray-100'>
+                    <Heading
+                      level={HeadingLevel.h3}
+                      typeStyle={HeadingTypeStyle.xsSemibold}
+                      className='text-gray-900 dark:text-gray-100'
+                    >
                       <span className='text-xs'>
                         {post.authors
                           .map((author) => author.name)

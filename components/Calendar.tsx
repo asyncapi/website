@@ -38,7 +38,11 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
         className
       )}
     >
-      <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.mdSemibold} className='dark:text-dark-heading text-gray-900'>
+      <Heading
+        level={HeadingLevel.h2}
+        typeStyle={HeadingTypeStyle.mdSemibold}
+        className='dark:text-dark-heading text-gray-900'
+      >
         {t('calendar.title')}
       </Heading>
       <ul>

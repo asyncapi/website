@@ -32,10 +32,17 @@ export default function YouTubeCard({ video }: YouTubeCardProps) {
 
             <div className='flex flex-1 flex-col justify-between p-4' data-testid='YoutubeCard-main'>
               <div>
-                <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.smSemibold} className='line-clamp-2 text-sm text-gray-900 dark:text-white'>
+                <Heading
+                  level={HeadingLevel.h3}
+                  typeStyle={HeadingTypeStyle.smSemibold}
+                  className='line-clamp-2 text-sm text-gray-900 dark:text-white'
+                >
                   {video.title}
                 </Heading>
-                <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-2 line-clamp-2 text-xs text-gray-600 dark:text-gray-300'>
+                <Paragraph
+                  typeStyle={ParagraphTypeStyle.sm}
+                  className='mt-2 line-clamp-2 text-xs text-gray-600 dark:text-gray-300'
+                >
                   {video.description}
                 </Paragraph>
               </div>

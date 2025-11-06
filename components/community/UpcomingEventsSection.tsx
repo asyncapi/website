@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import EventFilter from '@/components/navigation/EventFilter';
 import EventPostItem from '@/components/navigation/EventPostItem';
 import Heading from '@/components/typography/Heading';
 import Paragraph from '@/components/typography/Paragraph';
@@ -14,7 +13,7 @@ import { getEvents } from '@/utils/staticHelpers';
  * @description UpcomingEventsSection component for displaying upcoming events with pagination
  */
 export default function UpcomingEventsSection() {
-  const [events, setEvents] = useState(getEvents(meetings));
+  const [events] = useState(getEvents(meetings));
   const [currentPage, setCurrentPage] = useState(1);
   const eventsPerPage = 6;
 
@@ -136,7 +135,7 @@ export default function UpcomingEventsSection() {
           Upcoming Events
         </Heading>
         <Paragraph typeStyle={ParagraphTypeStyle.md} className='mx-auto mb-12 max-w-2xl text-gray-600'>
-          Don't miss out on these amazing community gatherings
+          Don&apos;t miss out on these amazing community gatherings
         </Paragraph>
       </div>
 
@@ -159,7 +158,10 @@ export default function UpcomingEventsSection() {
 
       {/* Pagination */}
       {totalPages > 1 && (
-        <div className='mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row' data-testid='UpcomingEvents-Pagination'>
+        <div
+          className='mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row'
+          data-testid='UpcomingEvents-Pagination'
+        >
           <div className='flex items-center gap-2'>{renderPageNumbers()}</div>
           <div className='flex items-center gap-2'>
             <span className='text-sm text-gray-600'>Go to page</span>
@@ -181,4 +183,3 @@ export default function UpcomingEventsSection() {
     </div>
   );
 }
-

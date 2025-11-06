@@ -1,3 +1,6 @@
+/**
+ * @description Icon component for Terminal
+ */
 export default function IconTerminal({ className = '' }) {
   return (
     <svg className={className} fill='currentColor' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'>
@@ -9,6 +12,3 @@ export default function IconTerminal({ className = '' }) {
     </svg>
   );
 }
-
-
-

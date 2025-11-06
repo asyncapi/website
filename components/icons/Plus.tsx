@@ -1,3 +1,6 @@
+/**
+ * @description Icon component for Plus
+ */
 export default function IconPlus({ className = '' }) {
   return (
     <svg className={className} fill='none' viewBox='0 0 24 24' stroke='currentColor' xmlns='http://www.w3.org/2000/svg'>
@@ -5,4 +8,3 @@ export default function IconPlus({ className = '' }) {
     </svg>
   );
 }
-
