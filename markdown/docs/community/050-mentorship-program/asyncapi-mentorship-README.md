@@ -5,143 +5,240 @@ weight: 20
 
 # AsyncAPI Mentorship Program
 
-The AsyncAPI Mentorship makes it easy to sponsor and help train the next generation of open-source developers by serving the community's key needs. Invest in building a stronger, more diverse community of qualified contributors. 
+The AsyncAPI Mentorship Program makes it easy to sponsor and help train the next generation of open-source developers by serving the community's key needs. Invest in building a stronger, more diverse community of qualified contributors.
 
-## Program Cycles and Archive data
+## Program Overview
 
-### docs
-| Year | Term | Status | Announcement | Details |
-| ---- | ---- | ------ | ------------ | ------- |
-| 2024 | Sept-Jan | In Progress |       | [Sept-Jan](asyncapi-mentorship-2024-README) |
-| 2024 | Sep-Mar | In Progress  |       | In Progress |
+The AsyncAPI Mentorship Program connects aspiring developers, technical writers, and designers with experienced mentors to work on meaningful open-source projects. Through structured guidance and hands-on experience, mentees gain valuable skills while contributing to the AsyncAPI ecosystem.
 
-### master
-| Year | Term | Status | Announcement | Details |
-| ---- | ---- | ------ | ------------ | ------- |
-| 2023 | Jan-Nov | Completed   |       | [Jan-Nov](asyncapi-mentorship-2023-README) |
-| 2022 | Jan-Nov | Completed   |       | [Jan-Nov](asyncapi-mentorship-2022-README) |
+### Program Goals
 
+- **Build Community**: Foster a diverse and inclusive community of contributors
+- **Develop Talent**: Train the next generation of open-source developers
+- **Drive Innovation**: Support meaningful contributions to AsyncAPI projects
+- **Create Pathways**: Establish clear paths from contributor to maintainer
 
-## Program Maintainers
+## Program Statistics
 
-- Azeez Elegbede ([@acethecreator](https://github.com/acethecreator)): https://twitter.com/_acebuild
-- Thulisile Sibanda ([@thulieblack](https://github.com/thulieblack)): https://www.linkedin.com/in/v-thulisile-sibanda/
+Our mentorship programs demonstrate strong impact with improving retention rates. For detailed statistics and success stories, visit our [Mentorship Programs Insights](./insights) page.
 
-The AsyncAPI initiative hosts the AsyncAPI mentorship program, an industry standard for defining asynchronous APIs.
+**Highlights:**
+- **50% overall retention rate** - Double the industry standard
+- **13% mentee-to-mentor conversion** - 6 former mentees now serve as mentors
+- **44% mentor retention** - Nearly half of mentors return for multiple years
+- **100% retention of mentor-converts** - All mentees who became mentors remain active
 
-## Definitions 
+## Program Cycles and Archive
 
-  - "**Acceptance Date**" means the date accepted project proposals are announced. 
-  - "**Execution Period**" means the period designated for participants to complete their projects.
-  - "**Community Bonding Period**" means the period for accepted participants to get to know their Mentors and prepare to begin work on their Project.
-  - "**Evaluation Period**" means the period where the Mentor gives an assessment of the Participant's progress so far during the Program.
-  - "**Final Phase**" means the final half of the Execution period of a given project.
-  - "**Final Project Material**" means a Participants final source code/design file and associated documentation for their Project.
-  - "**AsyncAPI Mentee**" means the individual who applies for the Program as an AsyncAPI Contributor.
-  - "**Idea List**" means the list of ideas for Projects publicly published by the Organization.
-  - "**Members**" means the Organization Administrators and Mentors.
-  - "**Phase 1**" means the first half of the Execution Period of a given Project.
-  - "**Program Administrators**" means AsyncAPI's administrators for the Program.
-  - "**Program Period**" is between January 23, 2023, and November 17, 2023.
-  - **Project**" means an open-source project to be worked on by an AsyncAPI's Contributor as an individual. To avoid doubt, projects aren't just coding-related.
-  - "**Project Proposal**" means an AsyncAPI contributor's proposal for a project.
-  - "**Project Submissions**" means the work product that an AsyncAPI Contributor submits for a Project, including the Project Proposal and any software and documentation, including Final Project Materials.
+| Year | Term | Status | Details |
+| ---- | ---- | ------ | ------- |
+| 2024 | Sept-May | Completed | [2024 Projects](./asyncapi-mentorship-2024-project-ideas.md) |
+| 2023 | Jan-Nov | Completed | [2023 Projects](./asyncapi-mentorship-2023-project-ideas.md) |
+| 2022 | Jan-Nov | Completed | [2022 Projects](./asyncapi-mentorship-2022-project-ideas.md) |
+
+## Program Leadership
+
+### Program Administrators
+- **Azeez Elegbede** ([@acethecreator](https://github.com/acethecreator)): [LinkedIn](https://www.linkedin.com/in/aelegbede/)
+- **Thulisile Sibanda** ([@thulieblack](https://github.com/thulieblack)): [LinkedIn](https://www.linkedin.com/in/v-thulisile-sibanda/)
+
+### Contact
+- **Slack**: Join our [AsyncAPI Slack workspace](https://asyncapi.com/slack-invite) and visit `#09_mentorships`
+- **GitHub Discussions**: [Community Discussions](https://github.com/asyncapi/community/discussions)
+
+## Key Definitions
+
+- **Acceptance Date**: Date when accepted project proposals are announced
+- **Community Bonding Period**: Period for accepted mentees to get to know their mentors and prepare to begin work
+- **Execution Period**: Period designated for mentees to complete their projects
+- **Evaluation Period**: Period when mentors assess mentee progress
+- **Phase 1**: First half of the Execution Period
+- **Final Phase**: Second half of the Execution Period
+- **Project**: Open-source contribution (code, documentation, or design) to be completed by a mentee
+- **Project Proposal**: Mentee's detailed proposal for a project from the Ideas List
+- **Final Project Materials**: Mentee's final source code, design files, and documentation
+- **Ideas List**: Publicly published list of available projects
+- **Program Administrators**: AsyncAPI's administrators for the program
+- **Mentor**: Experienced contributor guiding a mentee through their project
+- **Mentee**: Individual participating in the program as a contributor
+
+## For Mentees
+
+### Eligibility Requirements
+
+To participate in the AsyncAPI Mentorship Program, you must:
+
+- Have made **at least two contributions** to any AsyncAPI project.
+- Be a student or beginner in open-source software development.
+- Not be a Program Administrator or Mentor in the current program cycle.
+- Not have participated in the program more than once previously.
+
+### How to Apply
+
+1. **Verify Eligibility**: Ensure you meet all eligibility requirements
+2. **Review Projects**: Browse the [Ideas List](./asyncapi-mentorship-2025-README) for available projects
+3. **Connect with Mentors**: Join our Slack and discuss project ideas in `#09_mentorships`
+4. **Submit Proposal**: Submit your Project Proposal to the project mentor during the application period
+5. **Wait for Acceptance**: Accepted proposals will be announced on the Program Slack channel and GitHub Discussions
+
+### Project Proposals
+
+- **Source**: Proposals must be for projects on the Organization's Ideas List
+- **Limit**: Submit up to **three (3)** proposals; only **one (1)** may be accepted per mentee
+- **Originality**: Work done before proposal acceptance will not be considered for evaluation
+- **Selection**: Mentors review and accept proposals at their discretion
+
+### Mentee Responsibilities
+
+Once accepted, each mentee must:
+
+- Participate in the **Community Bonding Period**
+- Work diligently to complete the project as outlined
+- Follow coding and documentation standards set by the organization
+- Actively participate in the community and adhere to the [Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md)
+- Provide **Evaluation of their Mentor** at designated periods
+- Publish project code in a publicly accessible location under an [OSI-approved license](http://www.opensource.org/licenses/alphabetical)
+- Submit **Final Project Materials** by the deadline
+
+### Evaluation Process
+
+**Phase 1 Evaluation:**
+- Occurs at the midpoint of the Execution Period
+- Failing grade results in removal from the program
+- Work during evaluation period counts toward next evaluation
+
+**Final Evaluation:**
+- Occurs at the end of the Execution Period
+- Must submit Final Project Materials to Organization's GitHub by deadline
+- Failure to submit results in automatic failing grade
+
+**Evaluation Requirements:**
+- Submitted privately to Program Administrators
+- Must meet deadlines agreed upon before program start
+- Only visible to Program Administrators
+- Graded against Project Criteria by mentor
+
+### Stipends
+
+Mentees may receive stipends from AsyncAPI at the organization's discretion. All participants receive equal stipend amounts, not adjusted for cost of living.
+
+**To qualify for stipends:**
+- Pass both Phase 1 and Final Phase Evaluations
+- Complete all required tasks
+- Comply with all program rules and regulations
+
+**Payment schedule:**
+- Stipends issued by the last day of each month
+- Only to mentees who receive passing evaluations for that month
+- Subject to applicable regulations and tax requirements
+
+## For Mentors
+
+### Eligibility Requirements
+
+To serve as a mentor, you must:
+
+1. Be a **contributor or maintainer** to any AsyncAPI project.
+2. **Not be a mentee** in the current program cycle.
+3. Be designated by the Organization Administrator.
+
+### Mentor Responsibilities
+
+Each mentor for an accepted project must:
+
+- Participate in the **Community Bonding Period**
+- Guide mentee(s) on their projects for the organization
+- Respond to mentee requests within **48 hours**
+- Provide **Evaluations** of mentee work by the Project Criteria
+- Submit evaluations by designated deadlines
+
+**Note**: Mentors who fail to meet these responsibilities may be replaced by Program Administrators.
+
+### Multiple Mentors
+
+When a project has multiple mentors:
+- Only **one (1) mentor** must submit an evaluation of the mentee
+- The mentee submits **one overall evaluation** of the mentor team
 
 ## Program Administration
 
-#### Changes to the Program
-AsyncAPI may suspend, cancel, or modify the Program's structure if technical difficulties or events beyond AsyncAPI's reasonable control prevent or make it unfair to run the Program in accordance with these Program Rules.
- 
-#### Program Removal
-In addition to any terms regarding removal from the Program stated in these Program Rules, AsyncAPI may remove a Participant from the Program if AsyncAPI reasonably believes that the Participant has attempted to undermine the legitimate operation of the Program, including:
-- Breaching or refusing to comply with these Program Rules
-- Stressing the Mentor by not being responsive or not keeping the Mentor in the loop during the program period
-- Threatening or harassing AsyncAPI or other Participants, including Organizations' employees and representatives
-- Tampering or interfering with the administration of the Program or with the ability of other Participants to participate in the Program
-- Submitting content that is not original/violates the rights of a third party/lewd, obscene, pornographic, racist, sexist, or otherwise inappropriate to the Program.
-- Suppose a Participant is removed from the Program for any reason. In that case, the Participant will no longer be eligible to receive stipends from AsyncAPI and may be prohibited from participating in any future programs run by the AsyncAPI Initiative. 
+### Code of Conduct
 
-#### Communication
-All communications between AsyncAPI and the Participants, including Github, Slack, and email, will be in English.
+All participants must behave professionally and courteously when interacting with others. Failure to do so may result in removal from the program. All interactions must comply with the [AsyncAPI Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
 
-#### Conduct
-Participants must behave professionally and courteously when interacting with other Participants and Program Administrators. If a Participant does not behave professionally and courteously, AsyncAPI may remove the Participant from the Program.
+### Communication
 
-## Mentors
-The Organization's Administrator must designate mentors. 
-  
-#### Eligibility
-To participate in the Program, mentors must be contributors or maintainers to any project run by AsyncAPI and not be participants in the Program.
+All official program communications will be in **English** and conducted through:
+- GitHub
+- Slack
+- Email
 
-#### Responsibilities
-Each Mentor for an accepted project will:
-- Participate in the Community Bonding Period
-- Guide their Contributor(s) on their Projects for the Organization
-- Use best efforts to respond to Contributor requests within forty-eight (48) hours.
-- Provide Evaluations of their Contributor(s)'’' work by the Project Criteria
+### Removal from Program
 
-Suppose AsyncAPI reasonably believes that a Mentor still needs to meet the primary responsibilities. In that case, AsyncAPI may require the Program Administrators to designate a replacement Mentor and remove the former Mentor from the Program.
+AsyncAPI may remove a participant (mentor or mentee) if they:
 
-## Program Contributors/Mentees
+- Breach or refuse to comply with Program Rules
+- Are unresponsive or fail to keep mentors/mentees informed
+- Threaten or harass other participants or AsyncAPI representatives
+- Tamper with or interfere with program administration
+- Submit content that is not original, violates third-party rights, or is inappropriate
+- Fail to meet primary responsibilities outlined in these rules
 
-#### Eligibility 
-To qualify to participate in the AsyncAPI mentorship program, you have to meet the following criteria:
-- Made at least two contributions to any of the AsyncAPI's projects.
-- Be a student or a beginner in open-source software development.
-- Not be a Project Administrator or Mentor in the Program
-- Only participated in the Program once.
+**Consequences of removal:**
+- No longer eligible for stipends
+- May be prohibited from future AsyncAPI programs
 
-#### How To Apply
-Ensure you're eligible to participate in the Program, then submit a Project Proposal to the project mentor during the application period described in the Program Timeline.
+### Program Modifications
 
-#### Project Proposals
-- Project Proposals must be for Projects on the Organization's Ideas List.
-- If a Project Proposal is for a Project already being worked on by a contributor, note that any work done on the Project before Acceptance of the Project Proposal will not be considered for Evaluation.
-- Each AsyncAPI Contributor may submit up to three (3) Project Proposals; however, only one (1) Project Proposal may be accepted per AsyncAPI Contributor.
+AsyncAPI may suspend, cancel, or modify the program structure if:
+- Technical difficulties arise
+- Events beyond AsyncAPI's control prevent fair operation
+- Modifications are necessary to maintain program integrity
 
-#### Acceptance
-- Project Proposals will be reviewed by the selected project Mentor to which they were submitted. A Mentor may accept or reject any Project Proposal at their sole discretion. If two (2) mentors wish to accept Project Proposals from the same Contributor, the Contributor will decide only to select one Project of their choice. AsyncAPI will announce the Project Proposals accepted to the Program on the Program Slack channel and in the GitHub discussion.
-- Each Contributor with an accepted Project Proposal will be matched with at least one (1) Mentor.
-- To continue with the program, Contributors must have an accepted Project Proposal, and they will have to try again next time.
+### Dispute Resolution
 
-#### Responsibilities
+For questions, concerns, or disputes:
+1. Contact Program Administrators via Slack (`#09_mentorships`)
+2. Open a discussion in [GitHub Discussions](https://github.com/asyncapi/community/discussions)
+3. Program Administrator decisions are final
 
-Each accepted AsyncAPI mentorship participant will perform all necessary additional steps required for them to participate in the Program, including:
-- Participating in the Community Bonding Period
-- Providing Evaluation of their Mentor
-- Working diligently to complete the Project as it may be modified with the agreement of the Organization
-- Following the coding and documentation standards set out by their Organization
-- Actively participating in the Organization's community and adhering to the Organization's rules and [Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
-- Publishing their Project code in a publicly accessible location and under an [Open Source Initiative approved license](http://www.opensource.org/licenses/alphabetical) of the Organization's choice.
+## Success Stories
 
-If AsyncAPI reasonably believes that a Participant has failed to meet the primary responsibilities, AsyncAPI may remove such Participant from the Program.
+Many of our mentees have become active maintainers and mentors:
 
-## Program Participation
+- **[Akshat Nema](https://github.com/akshatnema)**: Mentee 2022 → Mentor since 2023 (3 years)
+- **[Aishat Muibudeen](https://github.com/Mayaleeeee)**: Mentee 2022-23 → Mentor 2024-25 (2 years)
+- **[Sambhav Gupta](https://github.com/sambhavgupta0705)**: Mentee 2023 → Mentor since 2024 (2 years)
+- **[Aayush Saini](https://github.com/AayushSaini101)**: Mentee 2024 → Mentor 2025 (1 year)
+- **[Ashmit Jagtap](https://github.com/ashmit-coder)**: GSoC 2024 mentee → GSoC 2025 mentor (1 year)
+- **[Ashmit JaiSarita Gupta](https://github.com/devilkiller-ag)**: GSoC 2024 mentee → GSoC 2025 mentor (1 year)
 
-#### Evaluations
-- **Multiple Mentors**: If a Participant has more than one(1) mentor:
-    - The Participant is only required to submit an overall Evaluation of the Mentor.
-    - Only one(1) Mentor is required to submit an Evaluation of the Participant.
-- **Form**: Evaluations must be in the form of a private response to the program administrator's questions
-- **Deadlines**: Participants and Mentors must submit Evaluations to the program administrators through the appropriate channel by the agreed deadlines set forth by both parties before the start date 
-- **Visibility**: Evaluations submitted by a Participant will only be visible to the Program Administrators
-- **Grading; Missing Deadlines**: 
-    - If the Participant receives a failing grade on the Phase 1 Evaluation period, the Participant will be removed from the Program.
-    - The Mentor will evaluate the Participant's Project Submissions based on the work done from the beginning of the work period until the start of the evaluation period. Any work done during the evaluation period will be considered for the next evaluation period.
-    - The Mentor will evaluate the Participant's Project Submissions against the Project Criteria.
-    - If a Mentor fails to submit an Evaluation by the applicable deadline, the Participant will not receive the stipend for that Evaluation period.
-- **Final Project Materials**: AsyncAPI mentorship program Participants must submit their Final Project Materials through the Organization Github account by the Final Evaluation deadline. If a participant fails to do so, the Participant will be deemed to have received a failing grade on the Final Evaluation, regardless of the actual grade the Participant received from the Mentor.
+Learn more about our program impact on the [Mentorship Programs Insights](./insights) page.
 
+## Frequently Asked Questions
 
-## Payment
+**Q: Can I apply if I'm not a student?**
+A: Yes! While we welcome students, the program is open to anyone who is a beginner in open-source development and meets the eligibility criteria.
 
-The AsyncAPI participants may receive stipends from AsyncAPI, which are at AsyncAPI's sole discretion and are not adjusted to the cost of living. All participants will receive an equal amount of stipends during the program participation. 
+**Q: How much time commitment is required?**
+A: Projects typically range from 175 to 350 hours, translating to 10-20 hours per week over 3-6 months.
 
-- To qualify for a stipend, each participant must pass both the Phase 1 and Final Phase Evaluation and complete all required tasks.
-- Stipends will be issued by the last day of each month to participants who receive passing evaluations from their mentor for that month.
+**Q: Can I work on multiple projects?**
+A: You can submit up to 3 proposals, but only 1 project per mentee will be accepted.
 
-AsyncAPI is not required to pay any stipends to any Participant who violates any applicable regulation.
+**Q: What happens if I can't complete my project?**
+A: Communicate with your mentor immediately. Depending on circumstances, adjustments may be made, but lack of communication or effort may result in removal from the program.
+
+**Q: Are stipends guaranteed?**
+A: Stipends are at AsyncAPI's discretion and contingent upon passing evaluations and completing required tasks.
+
+**Q: Can I participate again if I've already been a mentee?**
+A: You can participate once more, but priority may be given to first-time applicants. Consider applying as a mentor if you've successfully completed the program!
 
 ## References
 
-This document was adapted from the [GSOC Guidelines and Rules](https://summerofcode.withgoogle.com/rules).
+This document was adapted from the [Google Summer of Code Guidelines and Rules](https://summerofcode.withgoogle.com/rules).
+
+---
+
+*Last updated: October 2025*
