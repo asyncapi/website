@@ -29,12 +29,6 @@ class BlogPage {
       .and('have.attr', 'src', '/img/logos/rss.svg');
   }
 
-  verifyBlogPostsVisible() {
-    cy.get('[data-testid="BlogPostItem-Link"]')
-      .should('have.length.greaterThan', 0)
-      .should('be.visible');
-  }
-
   verifyFilteredPostsVisible() {
     cy.get('[data-testid="BlogPostItem-Link"]').should(
       'have.length.greaterThan',
@@ -74,26 +68,9 @@ class BlogPage {
   }
 
   verifyPostHeader(expectedHeaderText) {
-    cy.get('[data-testid="BlogLayout-main"]').should(
-      'have.text',
-      expectedHeaderText,
-    );
-  }
-
-  verifyBlogPostLinkByTitle(title, expectedHref) {
-    cy.contains('[data-testid="BlogPostItem-Link"]', title)
-      .should('be.visible')
-      .and('have.attr', 'href', expectedHref);
-  }
-
-  clickBlogPostByTitle(title) {
-    cy.contains('[data-testid="BlogPostItem-Link"]', title).click();
-  }
-
-  verifyBlogPostHeader(expectedTitle) {
     cy.get('[data-testid="BlogLayout-main"]')
       .should('be.visible')
-      .and('contain', expectedTitle);
+      .and('contain', expectedHeaderText);
   }
 }
 
