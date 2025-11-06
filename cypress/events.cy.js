@@ -37,17 +37,17 @@ describe('Events Page Tests', () => {
     events.verifyHostLinks();
   });
 
-  it('User verifies first 4 event cards match source data on All tab', () => {
-    events.verifyAllEventCards(4);
+  it('User verifies event cards have valid links on All tab', () => {
+    events.verifyAllEventCards();
   });
 
-  it('User switches to Upcoming tab and verifies event cards match source data', () => {
+  it('User switches to Upcoming tab and verifies event cards have valid links', () => {
     events.switchToUpcoming();
-    events.verifyUpcomingEventCards(1);
+    events.verifyUpcomingEventCards();
   });
 
-  it('User switches to Recorded tab and verifies event cards match source data', () => {
+  it('User switches to Recorded tab and verifies event cards have valid links', () => {
     events.switchToRecorded();
-    events.verifyRecordedEventCards(1);
+    events.verifyRecordedEventCards();
   });
 });

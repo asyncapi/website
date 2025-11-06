@@ -62,28 +62,19 @@ class EventsPage {
       .should('have.attr', 'href', expectedHref);
   }
 
-  verifyEventCards(count) {
-    cy.get('[data-testid="EventPostItem-main"]').then(($cards) => {
-      const actualCount = $cards.length;
-      const cardsToCheck = Math.min(actualCount, count);
-      
-      expect(actualCount).to.be.at.least(1, `Expected at least 1 event card but found ${actualCount}`);
-      
-      cy.wrap($cards)
-        .should('have.length', actualCount)
-        .each(($card, index) => {
-          if (index < cardsToCheck) {
-            cy.wrap($card)
-              .find('a[data-testid="EventPostItem-link"]')
-              .should('have.attr', 'href')
-              .and('match', /github\.com\/asyncapi\/community\/issues\/\d+/);
-          }
-        });
-    });
+  verifyEventCards() {
+    cy.get('[data-testid="EventPostItem-main"]')
+      .should('have.length.greaterThan', 0)
+      .each(($card) => {
+        cy.wrap($card)
+          .find('a[data-testid="EventPostItem-link"]')
+          .should('have.attr', 'href')
+          .and('match', /github\.com\/asyncapi\/community\/issues\/\d+/);
+      });
   }
 
-  verifyAllEventCards(count) {
-    this.verifyEventCards(count);
+  verifyAllEventCards() {
+    this.verifyEventCards();
   }
 
   switchToAll() {
@@ -98,12 +89,12 @@ class EventsPage {
     this.switchToFilter('Recorded');
   }
 
-  verifyUpcomingEventCards(count) {
-    this.verifyEventCards(count);
+  verifyUpcomingEventCards() {
+    this.verifyEventCards();
   }
 
-  verifyRecordedEventCards(count) {
-    this.verifyEventCards(count);
+  verifyRecordedEventCards() {
+    this.verifyEventCards();
   }
 
   verifyEventButtonsLinks() {
