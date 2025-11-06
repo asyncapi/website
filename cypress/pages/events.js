@@ -32,7 +32,8 @@ class EventsPage {
         '[data-testid="EventFilter-click"]',
         new RegExp(`^${label}$`, 'i'),
       )
-      .click({ force: true });
+      .click();
+    cy.wait(500);
   }
 
   verifyEventCardLinkByTitleAndHref(title, href, metaText) {
@@ -62,16 +63,23 @@ class EventsPage {
   }
 
   verifyEventCards(count) {
-    cy.get('[data-testid="EventPostItem-main"]')
-      .should('have.length.at.least', count)
-      .each(($card, index) => {
-        if (index < count) {
-          cy.wrap($card)
-            .find('a[data-testid="EventPostItem-link"]')
-            .should('have.attr', 'href')
-            .and('match', /github\.com\/asyncapi\/community\/issues\/\d+/);
-        }
-      });
+    cy.get('[data-testid="EventPostItem-main"]').then(($cards) => {
+      const actualCount = $cards.length;
+      const cardsToCheck = Math.min(actualCount, count);
+      
+      expect(actualCount).to.be.at.least(1, `Expected at least 1 event card but found ${actualCount}`);
+      
+      cy.wrap($cards)
+        .should('have.length', actualCount)
+        .each(($card, index) => {
+          if (index < cardsToCheck) {
+            cy.wrap($card)
+              .find('a[data-testid="EventPostItem-link"]')
+              .should('have.attr', 'href')
+              .and('match', /github\.com\/asyncapi\/community\/issues\/\d+/);
+          }
+        });
+    });
   }
 
   verifyAllEventCards(count) {

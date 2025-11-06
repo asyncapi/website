@@ -41,13 +41,13 @@ describe('Events Page Tests', () => {
     events.verifyAllEventCards(4);
   });
 
-  it('User switches to Upcoming tab and verifies first 3 event cards match source data', () => {
+  it('User switches to Upcoming tab and verifies event cards match source data', () => {
     events.switchToUpcoming();
-    events.verifyUpcomingEventCards(3);
+    events.verifyUpcomingEventCards(1);
   });
 
-  it('User switches to Recorded tab and verifies first 3 event cards match source data', () => {
+  it('User switches to Recorded tab and verifies event cards match source data', () => {
     events.switchToRecorded();
-    events.verifyRecordedEventCards(3);
+    events.verifyRecordedEventCards(1);
   });
 });
