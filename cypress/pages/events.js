@@ -61,7 +61,7 @@ class EventsPage {
       .should('have.attr', 'href', expectedHref);
   }
 
-  verifyAllEventCards(count) {
+  verifyEventCards(count) {
     cy.get('[data-testid="EventPostItem-main"]')
       .should('have.length.at.least', count)
       .each(($card, index) => {
@@ -72,6 +72,10 @@ class EventsPage {
             .and('match', /github\.com\/asyncapi\/community\/issues\/\d+/);
         }
       });
+  }
+
+  verifyAllEventCards(count) {
+    this.verifyEventCards(count);
   }
 
   switchToAll() {
@@ -87,29 +91,11 @@ class EventsPage {
   }
 
   verifyUpcomingEventCards(count) {
-    cy.get('[data-testid="EventPostItem-main"]')
-      .should('have.length.at.least', count)
-      .each(($card, index) => {
-        if (index < count) {
-          cy.wrap($card)
-            .find('a[data-testid="EventPostItem-link"]')
-            .should('have.attr', 'href')
-            .and('match', /github\.com\/asyncapi\/community\/issues\/\d+/);
-        }
-      });
+    this.verifyEventCards(count);
   }
 
   verifyRecordedEventCards(count) {
-    cy.get('[data-testid="EventPostItem-main"]')
-      .should('have.length.at.least', count)
-      .each(($card, index) => {
-        if (index < count) {
-          cy.wrap($card)
-            .find('a[data-testid="EventPostItem-link"]')
-            .should('have.attr', 'href')
-            .and('match', /github\.com\/asyncapi\/community\/issues\/\d+/);
-        }
-      });
+    this.verifyEventCards(count);
   }
 
   verifyEventButtonsLinks() {
