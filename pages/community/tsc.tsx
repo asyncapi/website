@@ -3,14 +3,14 @@ import { useState } from 'react';
 
 import type { Tsc } from '@/types/pages/community/Community';
 
-import tscBoardList from '../../config/TSC_BOARD_MEMBERS.json';
 import Button from '../../components/buttons/Button';
 import TSCMemberCard from '../../components/community/TSCMemberCard';
+import IconArrowRight from '../../components/icons/ArrowRight';
 import IconDocument from '../../components/icons/Document';
 import IconUsersGroup from '../../components/icons/UsersGroup';
-import IconArrowRight from '../../components/icons/ArrowRight';
 import GenericLayout from '../../components/layout/GenericLayout';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
+import tscBoardList from '../../config/TSC_BOARD_MEMBERS.json';
 
 /**
  * @description Add additional user information to the user object having TSC data
@@ -68,10 +68,11 @@ export default function TSC() {
 
   // Filter members
   const filteredMembers = tscMembers.filter((member) => {
-    const matchesSearch = member.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    const matchesSearch =
+      member.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       (member.github && member.github.toLowerCase().includes(searchTerm.toLowerCase()));
-    
-    const matchesFilter = 
+
+    const matchesFilter =
       filterType === 'all' ||
       (filterType === 'maintainer' && member.repos && member.repos.length > 0) ||
       (filterType === 'available' && member.availableForHire) ||
@@ -86,7 +87,12 @@ export default function TSC() {
   const currentMembers = filteredMembers.slice(indexOfFirstMember, indexOfLastMember);
 
   return (
-    <GenericLayout title='Technical Steering Committee' description='Meet the current AsyncAPI TSC members and learn how you can become one.' image={image} wide>
+    <GenericLayout
+      title='Technical Steering Committee'
+      description='Meet the current AsyncAPI TSC members and learn how you can become one.'
+      image={image}
+      wide
+    >
       {/* Hero Section */}
       <div className='bg-white dark:bg-dark-background py-12 sm:py-16 lg:py-20'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
@@ -95,7 +101,8 @@ export default function TSC() {
               Technical Steering Committee
             </h1>
             <p className='mx-auto max-w-3xl text-lg text-gray-600 dark:text-gray-400 mb-10'>
-              Meet the dedicated maintainers and contributors who guide the AsyncAPI Initiative forward, making strategic decisions that shape the future of event-driven architecture.
+              Meet the dedicated maintainers and contributors who guide the AsyncAPI Initiative forward, making
+              strategic decisions that shape the future of event-driven architecture.
             </p>
             <div className='flex flex-col sm:flex-row gap-4 justify-center items-center'>
               <Button
@@ -153,7 +160,9 @@ export default function TSC() {
               </div>
               <h3 className='text-xl font-bold text-gray-900 dark:text-white mb-4'>What is TSC?</h3>
               <p className='text-gray-600 dark:text-gray-400 leading-relaxed'>
-                The Technical Steering Committee (TSC) is responsible for the oversight of the AsyncAPI Initiative. Maintainers take committee seats decisions on the direction of the project, including releases, contribution policies, and other strategic matters.
+                The Technical Steering Committee (TSC) is responsible for the oversight of the AsyncAPI Initiative.
+                Maintainers take committee seats decisions on the direction of the project, including releases,
+                contribution policies, and other strategic matters.
               </p>
             </div>
 
@@ -164,7 +173,9 @@ export default function TSC() {
               </div>
               <h3 className='text-xl font-bold text-gray-900 dark:text-white mb-4'>How to become a member?</h3>
               <p className='text-gray-600 dark:text-gray-400 leading-relaxed'>
-                Anybody can become a maintainer of the TSC. All you have to do is become a maintainer of one of the AsyncAPI projects. To become a maintainer, you need to be nominated by a TSC member and then other maintainers will make a vote.
+                Anybody can become a maintainer of the TSC. All you have to do is become a maintainer of one of the
+                AsyncAPI projects. To become a maintainer, you need to be nominated by a TSC member and then other
+                maintainers will make a vote.
               </p>
             </div>
 
@@ -175,7 +186,8 @@ export default function TSC() {
               </div>
               <h3 className='text-xl font-bold text-gray-900 dark:text-white mb-4'>Our governance model</h3>
               <p className='text-gray-600 dark:text-gray-400 leading-relaxed'>
-                AsyncAPI Initiative runs under an Open Governance Model with its technical project and community assets under a neutral home, with an independent board of directors representing a cross-section.
+                AsyncAPI Initiative runs under an Open Governance Model with its technical project and community assets
+                under a neutral home, with an independent board of directors representing a cross-section.
               </p>
             </div>
           </div>
@@ -185,7 +197,7 @@ export default function TSC() {
       {/* Newsletter Subscription Section */}
       <div className='bg-white dark:bg-dark-background py-12'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-          <div 
+          <div
             className='rounded-3xl p-8 sm:p-12 shadow-xl'
             style={{ background: 'linear-gradient(90deg, #5B4EFF 0%, #06b6d4 100%)' }}
           >
@@ -203,12 +215,8 @@ export default function TSC() {
       <div id='current-members' className='bg-white dark:bg-dark-background py-16 sm:py-20'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
           <div className='text-center mb-12'>
-            <h2 className='text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4'>
-              Current TSC Members
-            </h2>
-            <p className='text-gray-600 dark:text-gray-400 text-lg'>
-              Meet our dedicated technical steering committee
-            </p>
+            <h2 className='text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4'>Current TSC Members</h2>
+            <p className='text-gray-600 dark:text-gray-400 text-lg'>Meet our dedicated technical steering committee</p>
           </div>
 
           {/* Search and Filters */}
@@ -294,16 +302,16 @@ export default function TSC() {
               {currentPage > 1 && (
                 <button
                   onClick={() => setCurrentPage(1)}
-                  className={`w-10 h-10 flex items-center justify-center rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors`}
+                  className={
+                    'w-10 h-10 flex items-center justify-center rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
+                  }
                 >
                   1
                 </button>
               )}
-              
+
               {currentPage === 1 && (
-                <button
-                  className='w-10 h-10 flex items-center justify-center rounded-md bg-primary-500 text-white font-medium'
-                >
+                <button className='w-10 h-10 flex items-center justify-center rounded-md bg-primary-500 text-white font-medium'>
                   1
                 </button>
               )}
@@ -325,9 +333,7 @@ export default function TSC() {
               {currentPage < totalPages && currentPage > 1 && (
                 <>
                   {currentPage === 2 && (
-                    <button
-                      className='w-10 h-10 flex items-center justify-center rounded-md bg-primary-500 text-white font-medium'
-                    >
+                    <button className='w-10 h-10 flex items-center justify-center rounded-md bg-primary-500 text-white font-medium'>
                       2
                     </button>
                   )}
@@ -351,9 +357,7 @@ export default function TSC() {
               )}
 
               {currentPage === totalPages && (
-                <button
-                  className='w-10 h-10 flex items-center justify-center rounded-md bg-primary-500 text-white font-medium'
-                >
+                <button className='w-10 h-10 flex items-center justify-center rounded-md bg-primary-500 text-white font-medium'>
                   {totalPages}
                 </button>
               )}
@@ -391,9 +395,7 @@ export default function TSC() {
       {/* Want to Join TSC CTA */}
       <div className='bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-gray-900 dark:to-gray-800 py-16'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center'>
-          <h2 className='text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4'>
-            Want to join TSC?
-          </h2>
+          <h2 className='text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4'>Want to join TSC?</h2>
           <p className='text-lg text-gray-600 dark:text-gray-400 mb-8'>
             Join our community and help shape the future of AsyncAPI
           </p>

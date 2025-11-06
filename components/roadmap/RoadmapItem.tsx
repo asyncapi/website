@@ -59,7 +59,12 @@ export default function RoadmapItem({ item, colorClass, showConnector = true, co
       )}
 
       {!isCollapsed && item?.implementations?.length && (
-        <RoadmapList className='ml-9 pt-3' colorClass='bg-black dark:bg-gray-200' items={item.implementations} collapsed={false} />
+        <RoadmapList
+          className='ml-9 pt-3'
+          colorClass='bg-black dark:bg-gray-200'
+          items={item.implementations}
+          collapsed={false}
+        />
       )}
     </li>
   );

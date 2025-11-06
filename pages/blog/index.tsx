@@ -71,7 +71,7 @@ export default function BlogIndexPage() {
 
   useEffect(() => {
     setIsClient(true);
-    
+
     // Set posts per page based on screen size
     const handleResize = () => {
       if (window.innerWidth < 640) {
@@ -80,13 +80,13 @@ export default function BlogIndexPage() {
         setPostsPerPage(9); // Tablet/Desktop: 9 posts
       }
     };
-    
+
     // Set initial value
     handleResize();
-    
+
     // Add event listener
     window.addEventListener('resize', handleResize);
-    
+
     // Cleanup
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -98,6 +98,7 @@ export default function BlogIndexPage() {
     if (hasDropdownFilters) return true;
     // Otherwise, apply tab filter
     if (activeTab === 'All Posts') return true;
+
     return post.type.toLowerCase() === activeTab.toLowerCase();
   });
 
@@ -126,15 +127,25 @@ export default function BlogIndexPage() {
       <div className='relative px-4 pb-20 pt-8 sm:px-6 lg:px-8 lg:pb-28 lg:pt-12' id='main-content'>
         <div className='relative mx-auto max-w-7xl'>
           <div className='text-center px-4'>
-            <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.xxl} className='text-gray-900 dark:text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl'>
+            <Heading
+              level={HeadingLevel.h1}
+              typeStyle={HeadingTypeStyle.xxl}
+              className='text-gray-900 dark:text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl'
+            >
               Welcome to our blog!
             </Heading>
             <Paragraph className='mx-auto mt-3 max-w-2xl text-gray-600 dark:text-gray-300 sm:mt-4 text-base sm:text-lg'>
               Find the latest and greatest stories from our community
             </Paragraph>
-            <Paragraph typeStyle={ParagraphTypeStyle.md} className='mx-auto mt-3 max-w-2xl text-gray-600 dark:text-gray-300 text-sm sm:text-base'>
+            <Paragraph
+              typeStyle={ParagraphTypeStyle.md}
+              className='mx-auto mt-3 max-w-2xl text-gray-600 dark:text-gray-300 text-sm sm:text-base'
+            >
               Stay in touch! Get blog posts delivered directly to your{' '}
-              <TextLink href='/newsletter' className='text-primary-400 dark:text-primary-400 hover:text-primary-500 dark:hover:text-primary-300'>
+              <TextLink
+                href='/newsletter'
+                className='text-primary-400 dark:text-primary-400 hover:text-primary-500 dark:hover:text-primary-300'
+              >
                 email
               </TextLink>
               .
@@ -164,17 +175,20 @@ export default function BlogIndexPage() {
           {/* Category Tabs - Hidden on mobile */}
           <div className='mt-6 px-4 hidden md:block'>
             <div className='flex justify-center'>
-              <div className={`inline-flex rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-dark-card p-1 ${hasDropdownFilters ? 'opacity-50' : ''}`}>
+              <div
+                className={`inline-flex rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-dark-card p-1 ${hasDropdownFilters ? 'opacity-50' : ''}`}
+              >
                 {tabs.map((tab) => (
                   <button
                     key={tab}
                     onClick={() => !hasDropdownFilters && setActiveTab(tab)}
                     disabled={hasDropdownFilters}
-                    className={`rounded-md px-3 py-2 text-sm font-medium transition-all duration-200 whitespace-nowrap ${
-                      activeTab === tab && !hasDropdownFilters
-                        ? 'bg-primary-500 text-white shadow-sm'
-                        : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
-                    } ${hasDropdownFilters ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+                    className={`rounded-md px-3 py-2 text-sm font-medium transition-all duration-200 
+                      whitespace-nowrap ${
+                        activeTab === tab && !hasDropdownFilters
+                          ? 'bg-primary-500 text-white shadow-sm'
+                          : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
+                      } ${hasDropdownFilters ? 'cursor-not-allowed' : 'cursor-pointer'}`}
                   >
                     {tab}
                   </button>
@@ -237,9 +251,7 @@ export default function BlogIndexPage() {
                       {Array.from({ length: totalPages }, (_, i) => i + 1)
                         .filter((page) => {
                           return (
-                            page === 1 ||
-                            page === totalPages ||
-                            (page >= currentPage - 1 && page <= currentPage + 1)
+                            page === 1 || page === totalPages || (page >= currentPage - 1 && page <= currentPage + 1)
                           );
                         })
                         .map((page, index, array) => {
@@ -284,9 +296,7 @@ export default function BlogIndexPage() {
                         ›
                       </button>
 
-                      <span className='ml-4 text-sm text-gray-600 dark:text-gray-400'>
-                        Go to page
-                      </span>
+                      <span className='ml-4 text-sm text-gray-600 dark:text-gray-400'>Go to page</span>
                       <select
                         value={currentPage}
                         onChange={(e) => setCurrentPage(Number(e.target.value))}

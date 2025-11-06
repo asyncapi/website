@@ -23,4 +23,3 @@ export default function GoalCardRoadmapPage({ icon: Icon, title, description }: 
     </div>
   );
 }
-

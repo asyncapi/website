@@ -1,3 +1,6 @@
+/**
+ * @description Icon component for Play
+ */
 export default function IconPlay({ className = '' }) {
   return (
     <svg className={className} fill='currentColor' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'>
@@ -5,6 +8,3 @@ export default function IconPlay({ className = '' }) {
     </svg>
   );
 }
-
-
-

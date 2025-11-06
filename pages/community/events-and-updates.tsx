@@ -42,16 +42,19 @@ export default function EventsAndUpdates() {
         <div className='absolute bottom-0 left-0 size-[400px] -translate-x-1/3 translate-y-1/3 rounded-full bg-gradient-to-tr from-purple-200/30 to-pink-200/30 blur-3xl' />
         <div className='absolute right-0 top-0 size-[450px] translate-x-1/3 -translate-y-1/4 rounded-full bg-gradient-to-bl from-purple-200/40 to-blue-200/40 blur-3xl' />
         <div className='absolute bottom-0 right-0 size-[300px] translate-x-1/4 translate-y-1/2 rounded-full bg-gradient-to-tl from-purple-300/30 to-pink-200/30 blur-3xl' />
-        
+
         <Container wide className='relative z-10 py-20 text-center' data-testid='EventsAndUpdates-Hero'>
           <div className='mx-auto max-w-4xl'>
             <div className='mb-6 inline-block rounded-full bg-cyan-100 px-5 py-2 text-sm font-medium text-cyan-600'>
-              Find out what's New
+              Find out what&apos;s New
             </div>
             <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.xl} className='mb-6 text-gray-900'>
               Events & Updates
             </Heading>
-            <Paragraph typeStyle={ParagraphTypeStyle.lg} className='mx-auto mb-10 max-w-2xl dark:text-gray-400 text-gray-700'>
+            <Paragraph
+              typeStyle={ParagraphTypeStyle.lg}
+              className='mx-auto mb-10 max-w-2xl dark:text-gray-400 text-gray-700'
+            >
               Join thousands of developers, creators, and innovators building the future of event-driven architectures.
               Your journey starts here—connect, learn, and grow with us.
             </Paragraph>
@@ -81,7 +84,10 @@ export default function EventsAndUpdates() {
             <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
               Everything You Need
             </Heading>
-            <Paragraph typeStyle={ParagraphTypeStyle.md} className='mx-auto mb-12 max-w-2xl text-gray-600 dark:text-gray-400'>
+            <Paragraph
+              typeStyle={ParagraphTypeStyle.md}
+              className='mx-auto mb-12 max-w-2xl text-gray-600 dark:text-gray-400'
+            >
               Discover, connect, and grow with our comprehensive community platform
             </Paragraph>
           </div>
@@ -117,8 +123,11 @@ export default function EventsAndUpdates() {
             <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className='mb-4 text-gray-900'>
               Upcoming Events
             </Heading>
-            <Paragraph typeStyle={ParagraphTypeStyle.md} className='mx-auto mb-12 max-w-2xl dark:text-gray-400 text-gray-600'>
-              Don't miss out on these amazing community gatherings
+            <Paragraph
+              typeStyle={ParagraphTypeStyle.md}
+              className='mx-auto mb-12 max-w-2xl dark:text-gray-400 text-gray-600'
+            >
+              Don&apos;t miss out on these amazing community gatherings
             </Paragraph>
           </div>
 
@@ -185,7 +194,11 @@ export default function EventsAndUpdates() {
         <Container wide className='py-20' data-testid='EventsAndUpdates-Videos'>
           <div className='mb-12 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center'>
             <div>
-              <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className='mb-2 text-gray-900 dark:text-dark-heading'>
+              <Heading
+                level={HeadingLevel.h2}
+                typeStyle={HeadingTypeStyle.lg}
+                className='mb-2 text-gray-900 dark:text-dark-heading'
+              >
                 Videos & Live Streams
               </Heading>
               <Paragraph typeStyle={ParagraphTypeStyle.md} className='text-gray-800 dark:text-dark-heading'>

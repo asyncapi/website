@@ -4,7 +4,6 @@ import YouTubeEmbed from 'react-youtube-embed';
 
 import { ButtonIconPosition } from '@/types/components/buttons/ButtonPropsType';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
-import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 import Button from '../components/buttons/Button';
 import IconCode from '../components/icons/Code';
@@ -508,7 +507,9 @@ export default function RoadmapPage() {
                 VISION 2026
               </span>
               <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white mb-6'>
-                AsyncAPI: The #1 API Specification<br />for All APIs
+                AsyncAPI: The #1 API Specification
+                <br />
+                for All APIs
               </h1>
               <div className='mb-8'>
                 <TextLink
@@ -519,8 +520,8 @@ export default function RoadmapPage() {
                 </TextLink>
               </div>
               <p className='mx-auto max-w-3xl text-lg text-gray-600 dark:text-gray-400'>
-                We envision AsyncAPI leading the way by 2026. To achieve this, we've set clear, actionable goals
-                to guide our journey. While not exhaustive, these objectives provide a roadmap for progress.{' '}
+                We envision AsyncAPI leading the way by 2026. To achieve this, we've set clear, actionable goals to
+                guide our journey. While not exhaustive, these objectives provide a roadmap for progress.{' '}
                 <strong>Vision and goals shape the project's future.</strong>
               </p>
             </div>
@@ -547,7 +548,8 @@ export default function RoadmapPage() {
               <GoalCardRoadmapPage
                 icon={IconGear}
                 title='400% Community Growth'
-                description="AsyncAPI thrives on community. Expanding contributions, sponsorships, and engagement ensures continued success. Let's grow together."
+                description="AsyncAPI thrives on community. Expanding contributions, sponsorships, and
+                  engagement ensures continued success. Let's grow together."
               />
             </div>
           </div>
@@ -569,19 +571,16 @@ export default function RoadmapPage() {
             <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 mb-16'>
               {/* Outcome-Based Approach */}
               <div className='bg-secondary-100 dark:bg-dark-card rounded-xl p-8'>
-                <h3 className='text-2xl font-bold text-gray-900 dark:text-white mb-4'>
-                  Outcome-Based Approach
-                </h3>
+                <h3 className='text-2xl font-bold text-gray-900 dark:text-white mb-4'>Outcome-Based Approach</h3>
                 <p className='text-gray-600 dark:text-gray-400 leading-relaxed'>
-                  We focus on impact, not rigid timelines. Instead of a long-term release plan, we prioritize meaningful results.
+                  We focus on impact, not rigid timelines. Instead of a long-term release plan, we prioritize meaningful
+                  results.
                 </p>
               </div>
 
               {/* Get Involved */}
               <div className='bg-secondary-100 dark:bg-dark-card rounded-xl p-8'>
-                <h3 className='text-2xl font-bold text-gray-900 dark:text-white mb-4'>
-                  Get Involved !
-                </h3>
+                <h3 className='text-2xl font-bold text-gray-900 dark:text-white mb-4'>Get Involved !</h3>
                 <p className='text-gray-600 dark:text-gray-400 leading-relaxed mb-6'>
                   Want to dive deeper? Check out our repository discussions or start an issue.
                 </p>
@@ -604,7 +603,9 @@ export default function RoadmapPage() {
             <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mt-10 text-center'>
               Roadmap
             </Heading>
-            <Paragraph className='mx-auto mt-4 dark:text-gray-300 max-w-3xl text-center'>The outcomes we want to achieve</Paragraph>
+            <Paragraph className='mx-auto mt-4 dark:text-gray-300 max-w-3xl text-center'>
+              The outcomes we want to achieve
+            </Paragraph>
 
             <div className='mx-auto mt-10 max-w-3xl text-sm font-semibold uppercase text-gray-800 dark:text-gray-300 lg:flex lg:justify-center'>
               <div className='mb-2 flex justify-center'>
