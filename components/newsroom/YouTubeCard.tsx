@@ -6,7 +6,6 @@ import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 import ArrowRight from '../icons/ArrowRight';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
-import TextLink from '../typography/TextLink';
 
 interface YouTubeVideo {
   image_url: string;
@@ -25,34 +24,32 @@ interface YouTubeCardProps {
  */
 export default function YouTubeCard({ video }: YouTubeCardProps) {
   return (
-    <li className={'min-w-full h-full max-w-md rounded-lg px-2 pb-6'}>
-      <article className='h-full rounded-lg'>
-        <div
-          className={
-            'flex h-full cursor-pointer flex-col divide-y divide-gray-200 overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'
-          }
-        >
-          <img data-testid='YoutubeCard-img' src={video.image_url} alt='video' className='h-60 w-full object-cover' />
+    <li className='h-full list-none'>
+      <a href={`https://youtube.com/watch?v=${video.videoId}`} target='_blank' rel='noreferrer'>
+        <article className='h-full'>
+          <div className='flex h-full cursor-pointer flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-md transition-all duration-300 ease-in-out hover:shadow-lg dark:border-gray-800 dark:bg-dark-background'>
+            <img data-testid='YoutubeCard-img' src={video.image_url} alt='video' className='h-36 w-full object-cover' />
 
-          <div className='flex flex-1 flex-col justify-between bg-white p-6' data-testid='YoutubeCard-main'>
-            <div>
-              <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.smSemibold} className='mt-2'>
-                {video.title}
-              </Heading>
-              <Paragraph typeStyle={ParagraphTypeStyle.md} className='mt-3 break-words'>
-                {video.description}
-              </Paragraph>
-            </div>
+            <div className='flex flex-1 flex-col justify-between p-4' data-testid='YoutubeCard-main'>
+              <div>
+                <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.smSemibold} className='line-clamp-2 text-sm text-gray-900 dark:text-white'>
+                  {video.title}
+                </Heading>
+                <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-2 line-clamp-2 text-xs text-gray-600 dark:text-gray-300'>
+                  {video.description}
+                </Paragraph>
+              </div>
 
-            <div className='mt-6 block'>
-              <TextLink href={`https://youtube.com/watch?v=${video.videoId}`} target='_blank'>
-                Watch on Youtube
-                <ArrowRight className='inline w-6' />
-              </TextLink>
+              <div className='mt-3 block border-t border-gray-200 pt-3 dark:border-gray-700'>
+                <span className='text-xs font-semibold text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300'>
+                  Watch on Youtube
+                  <ArrowRight className='ml-1 inline w-3' />
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </a>
     </li>
   );
 }

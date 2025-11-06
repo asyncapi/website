@@ -68,47 +68,47 @@ const BlogPostItem = ({ post, className = '', id = '' }: BlogPostItemProps, ref:
       <article className='h-full rounded-lg'>
         <Link href={post.slug}>
           <span
-            className='relative flex h-full cursor-pointer flex-col overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-card shadow-sm transition-all duration-300 ease-in-out hover:shadow-lg'
+            className='relative flex h-full cursor-pointer flex-col overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-card shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'
             data-testid='BlogPostItem-Link'
           >
             {post.featured && (
-              <div className='absolute right-0 top-0 z-10 m-4'>
-                <span className='inline-flex items-center rounded-full bg-purple-100 px-3 py-0.5 text-sm font-medium text-purple-800'>
+              <div className='absolute right-0 top-0 z-10 m-3'>
+                <span className='inline-flex items-center rounded-full bg-purple-100 px-2 py-0.5 text-xs font-medium text-purple-800'>
                   Featured
                 </span>
               </div>
             )}
             <img
-              className='h-48 w-full object-cover'
+              className='h-36 w-full object-cover'
               src={post.cover}
               alt={post.title}
               loading='lazy'
               data-testid='BlogPostItem-Img'
             />
-            <div className='flex flex-1 flex-col p-6'>
+            <div className='flex flex-1 flex-col p-4'>
               <div className='flex-1'>
                 <Paragraph typeStyle={ParagraphTypeStyle.sm}>
                   <span
-                    className={`inline-flex items-center rounded-full px-3 py-0.5 ${typeColors[0]} ${typeColors[1]}`}
+                    className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs ${typeColors[0]} ${typeColors[1]}`}
                   >
                     {post.type}
                   </span>
                 </Paragraph>
-                <Heading level={HeadingLevel.h5} typeStyle={HeadingTypeStyle.smSemibold} className='mt-2 text-gray-900 dark:text-gray-100'>
+                <Heading level={HeadingLevel.h5} typeStyle={HeadingTypeStyle.smSemibold} className='mt-2 line-clamp-2 text-sm text-gray-900 dark:text-gray-100'>
                   {post.title}
                 </Heading>
-                <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-3 text-gray-600 dark:text-gray-400'>
-                  <TextTruncate element='span' line={4} text={post.excerpt} />
+                <Paragraph typeStyle={ParagraphTypeStyle.sm} className='mt-2 line-clamp-2 text-xs text-gray-600 dark:text-gray-400'>
+                  <TextTruncate element='span' line={2} text={post.excerpt} />
                 </Paragraph>
               </div>
-              <div className='mt-6 flex items-center justify-between border-t border-gray-100 dark:border-gray-700 pt-4'>
+              <div className='mt-4 flex items-center justify-between border-t border-gray-100 dark:border-gray-700 pt-3'>
                 <div className='flex items-center'>
                   <div className='relative shrink-0'>
                     <AuthorAvatars authors={post.authors} />
                   </div>
-                  <div className='ml-3'>
+                  <div className='ml-2'>
                     <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.xsSemibold} className='text-gray-900 dark:text-gray-100'>
-                      <span className='text-sm'>
+                      <span className='text-xs'>
                         {post.authors
                           .map((author) => author.name)
                           .join(', ')
@@ -117,14 +117,14 @@ const BlogPostItem = ({ post, className = '', id = '' }: BlogPostItemProps, ref:
                           .join(' & ')}
                       </span>
                     </Heading>
-                    <Paragraph typeStyle={ParagraphTypeStyle.sm} className='text-gray-500 dark:text-gray-400 text-xs'>
+                    <Paragraph typeStyle={ParagraphTypeStyle.sm} className='text-xs text-gray-500 dark:text-gray-400'>
                       Data
                     </Paragraph>
                   </div>
                 </div>
                 <div className='text-right'>
-                  <Paragraph typeStyle={ParagraphTypeStyle.sm} className='text-gray-500 dark:text-gray-400 text-xs'>
-                    {post.readingTime} mins read
+                  <Paragraph typeStyle={ParagraphTypeStyle.sm} className='text-xs text-gray-500 dark:text-gray-400'>
+                    {post.readingTime} min
                   </Paragraph>
                 </div>
               </div>

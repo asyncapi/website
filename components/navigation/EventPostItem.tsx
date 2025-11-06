@@ -59,33 +59,48 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
 
   return (
     <li key={id} className={className} data-testid='EventPostItem-main'>
-      <article className='h-full rounded-lg shadow-md hover:shadow-lg'>
-        <a href={post.url} target='_blank' rel='noreferrer' data-testid='EventPostItem-link'>
-          <img
-            src={post.banner ? post.banner : defaultCover}
-            alt={post.title}
-            className='h-52 w-full rounded-t-lg object-cover'
-            data-testid='EventPostItem-img'
-          />
-          <div className='mt-2 flex h-52 flex-col justify-between p-5 ' data-testid='EventPostItem-post'>
-            <div>
-              <div className='flex items-center'>
-                {icon}
-                <p className={`text-md ml-3 font-bold ${color}`}>{type}</p>
-              </div>
-              <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.bodyLg} className='mt-4'>
-                {post.title}
-              </Heading>
-            </div>
-            <div className='flex items-center'>
-              <IconCalendar />
-              <span className='ml-4 text-sm font-semibold' data-testid='Event-span'>
+      <article className='flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-md hover:shadow-lg'>
+        {/* Header with gradient background */}
+        <div className='relative h-40 bg-gradient-to-br from-indigo-600 to-purple-600 p-4'>
+          {/* Badge */}
+          <div className='absolute right-4 top-4'>
+            <span className='rounded-full bg-white px-3 py-1 text-xs font-medium text-gray-700'>
+              {type || 'Online'}
+            </span>
+          </div>
+          {/* Attending count */}
+          <div className='absolute bottom-4 left-4'>
+            <span className='text-sm font-semibold text-white'>150 attending</span>
+          </div>
+        </div>
+
+        {/* Card body */}
+        <div className='flex flex-1 flex-col justify-between p-6'>
+          <div>
+            <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.bodyLg} className='mb-2 text-gray-900'>
+              {post.title}
+            </Heading>
+            <div className='flex items-center text-sm text-gray-600'>
+              <span data-testid='Event-span'>
                 {active ? moment(postDate).format('MMMM D, YYYY') : 'View Recording'}
               </span>
-              <ArrowRightIcon className='ml-3 w-4' />
+            </div>
+            <div className='text-sm text-gray-600'>
+              {postDate.isValid() && moment(postDate).format('h:mm A [UTC]')}
             </div>
           </div>
-        </a>
+
+          {/* Button */}
+          <a
+            href={post.url}
+            target='_blank'
+            rel='noreferrer'
+            className='mt-4 block w-full rounded-lg bg-indigo-600 py-3 text-center font-semibold text-white transition-colors hover:bg-indigo-700'
+            data-testid='EventPostItem-link'
+          >
+            Join Our Community
+          </a>
+        </div>
       </article>
     </li>
   );

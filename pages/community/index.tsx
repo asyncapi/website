@@ -87,12 +87,12 @@ export default function CommunityIndexPage() {
           <div data-testid='CommunityIndex-Newsroom-Card'>
             <Card
               icon='📣'
-              tagline='Newsroom'
+              tagline='Events & Updates'
               type={CardType.SMALL}
               heading='Never Get Left Behind'
-              description='Do you want to get the latest news with recent activities happening in the community?'
+              description='Stay updated with AsyncAPI events, blogs, videos, and community news.'
               bg='bg-white'
-              link='/community/newsroom'
+              link='/community/events-and-updates'
             />
           </div>
           <div className='mt-10 md:mt-0' data-testid='CommunityIndex-Toolings-Card'>
@@ -118,7 +118,7 @@ export default function CommunityIndexPage() {
               events.'
           className='bg-eventCover'
           btnText='Explore more events'
-          link='/community/events'
+          link='/community/events-and-updates'
         />
         <div className='absolute right-0 top-0 mt-[100px] hidden w-[500px] justify-end md:block'>
           <ul>

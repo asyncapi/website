@@ -34,11 +34,11 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
   return (
     <div
       className={twMerge(
-        'overflow-hidden rounded-md border border-gray-200 bg-white p-4 h-full flex flex-col gap-2',
+        'overflow-hidden rounded-md border border-gray-200 bg-white dark:bg-dark-background dark:border-border p-4 h-full flex  flex-col gap-2',
         className
       )}
     >
-      <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.mdSemibold}>
+      <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.mdSemibold} className='dark:text-dark-heading text-gray-900'>
         {t('calendar.title')}
       </Heading>
       <ul>

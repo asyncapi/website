@@ -4,7 +4,7 @@ import React from 'react';
 /**
  * @description Icons for asyncapi website
  */
-export default function IconNewsroom(className = '') {
+export default function IconNewsroom({ className = '' }: { className?: string } = {}) {
   return (
     <svg
       className={className}
