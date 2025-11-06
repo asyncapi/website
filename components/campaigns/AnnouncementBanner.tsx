@@ -49,7 +49,8 @@ export default function Banner({
   return (
     <div
       className={`size-full rounded border border-gray-200 bg-gray-50 
-          transition-transform${className} ${small ? 'mb-4 mx-3 p-6' : 'mx-3 my-6 p-6'}
+          p-6 mx-3 ${small ? 'mb-4' : 'my-6'}
+          transition-transform ${className}
           ${activeBanner ? 'z-10 scale-100 opacity-100' : 'z-0 scale-90 opacity-0'}`}
       data-testid='AnnouncementHero-main-div'
     >
