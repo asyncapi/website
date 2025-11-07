@@ -1,3 +1,8 @@
+import fs from "fs";
+import pkg from "graceful-fs";
+const { gracefulify } = pkg;
+gracefulify(fs);
+
 import frontmatter from 'remark-frontmatter';
 import images from 'remark-images';
 import gemoji from 'remark-gemoji-to-emoji';
@@ -9,10 +14,13 @@ import withMDX from '@next/mdx';
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 
+
+
 /**
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
+  reactStrictMode: true,
   pageExtensions: ['tsx', 'ts', 'md', 'mdx'],
   eslint: {
     ignoreDuringBuilds: true
