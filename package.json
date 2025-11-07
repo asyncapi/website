@@ -4,6 +4,9 @@
   "description": "AsyncAPI website",
   "private": true,
   "type": "module",
+  "optionalDependencies": {
+    "@netlify/esbuild-linux-64": "0.14.39"
+  },
   "scripts": {
     "analyze": "cross-env NODE_OPTIONS=--max-old-space-size=8192 ANALYZE=true next build",
     "dev": "npm run build-scripts && next dev",
@@ -88,7 +91,6 @@
     "jgexml": "^0.4.4",
     "js-cookie": "^3.0.5",
     "json-schema": "^0.4.0",
-    "lighthouse": "^13.0.1",
     "lodash": "^4.17.21",
     "markdown-to-txt": "^2.0.1",
     "markdown-toc": "^1.2.0",
