@@ -10,6 +10,10 @@ class RoadmapPage {
     ).should('be.visible');
   }
 
+  verifyHeader() {
+    this.verifyPageLoaded();
+  }
+
   verifyLink() {
     cy.get('[data-testid="TextLink-href"]').should(
       'have.attr',

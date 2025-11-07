@@ -78,6 +78,10 @@ class HomePage {
     this.verifyHeadingExists(text);
   }
 
+  verifyPageLoaded() {
+    this.verifyHeader();
+  }
+
   verifyGithubStarButton(link = githubStarLink) {
     const selector = '[data-testid="Navbar-main"] [data-testid="Button-link"]';
     this.verifyElementIsVisible(selector);
