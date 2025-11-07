@@ -12,8 +12,6 @@
     "test:coverage": "jest --coverage",
     "test:unit": "jest --passWithNoTests --testMatch=\"**/tests/**/*.test.*\" --testPathIgnorePatterns=\"tests/integration|netlify\"",
     "test:integration": "jest --passWithNoTests tests/integration",
-    "test:build-post-list-runner": "npx tsx npm/runners/build-post-list-runner.ts --outputFile output-post-list.json --basePath tests/integration",
-    "test:build-dashboard": "jest --passWithNoTests tests/integration/build-dashboard.test.ts",
     "build:pages": "tsx npm/runners/build-pages-runner.ts && npm run format:mdx",
     "build:posts": "tsx scripts/index.ts",
     "build-scripts": "npm run build:pages && npm run lint:mdx && npm run build:posts",

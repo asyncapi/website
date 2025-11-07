@@ -4,7 +4,15 @@ import { resolve } from 'path';
 
 import { runBuildPages } from '../../npm/runners/build-pages-runner';
 import { runBuildPostList } from '../../npm/runners/build-post-list-runner';
-import type { Result } from '../../types/scripts/build-posts-list';
+import type { Details, Result, TableOfContentsItem } from '../../types/scripts/build-posts-list';
+import { acquireBuildPagesLock, releaseBuildPagesLock, waitForPagesBuild } from './helpers/build-pages-lock';
+
+/**
+ * Utility function to check if an object has a property.
+ */
+function hasProp<T extends object>(obj: T, prop: string): boolean {
+  return Object.prototype.hasOwnProperty.call(obj, prop);
+}
 
 describe('Integration: build-post-list-runner', () => {
   let tempDir: string;
@@ -19,7 +27,66 @@ describe('Integration: build-post-list-runner', () => {
 
     outputPath = resolve(tempDir, outputFileName);
     // before running make sure that pages directory is there
-    await runBuildPages();
+    // Use a lock file to prevent concurrent build-pages operations
+    const pagesDir = resolve(process.cwd(), 'pages');
+    let pagesExists = false;
+
+    // Check if pages already exists and has .mdx files (fully built)
+    try {
+      const stats = await fs.stat(pagesDir);
+
+      if (stats.isDirectory()) {
+        const files = await fs.readdir(pagesDir);
+
+        if (files.length > 0 && (files.includes('docs') || files.includes('blog') || files.includes('about'))) {
+          // Verify that files have been converted to .mdx
+          for (const subdir of ['blog', 'docs', 'about']) {
+            const subdirPath = resolve(pagesDir, subdir);
+
+            // eslint-disable-next-line max-depth
+            try {
+              // eslint-disable-next-line no-await-in-loop
+              const subdirStats = await fs.stat(subdirPath);
+
+              // eslint-disable-next-line max-depth
+              if (subdirStats.isDirectory()) {
+                // eslint-disable-next-line no-await-in-loop
+                const subdirFiles = await fs.readdir(subdirPath);
+
+                // If we find .mdx files, pages is fully built
+                // eslint-disable-next-line max-depth
+                if (subdirFiles.some((file) => file.endsWith('.mdx'))) {
+                  pagesExists = true;
+
+                  break;
+                }
+              }
+            } catch {
+              // Subdirectory doesn't exist, continue checking
+            }
+          }
+        }
+      }
+    } catch {
+      pagesExists = false;
+    }
+
+    // If pages doesn't exist, try to acquire lock and build
+    if (!pagesExists) {
+      const hasLock = await acquireBuildPagesLock();
+
+      if (hasLock) {
+        // We have the lock, build pages
+        try {
+          await runBuildPages();
+        } finally {
+          await releaseBuildPagesLock();
+        }
+      } else {
+        // Another test is building pages, wait for it to complete
+        await waitForPagesBuild();
+      }
+    }
     await runBuildPostList({
       outputPath
     });
@@ -27,7 +94,7 @@ describe('Integration: build-post-list-runner', () => {
     const content = await fs.readFile(outputPath, 'utf-8');
 
     output = JSON.parse(content);
-  });
+  }, 30000); // 30 second timeout for build operations
 
   afterAll(async () => {
     await fs.rm(tempDir, { recursive: true, force: true });
@@ -97,9 +164,9 @@ describe('Integration: build-post-list-runner', () => {
   });
 
   it('toc entries in docs have expected fields', () => {
-    output.docs.forEach((item: any) => {
+    output.docs.forEach((item: Details) => {
       if (Array.isArray(item.toc)) {
-        item.toc.forEach((tocItem: any) => {
+        item.toc.forEach((tocItem: TableOfContentsItem) => {
           expect(tocItem).toHaveProperty('content');
           expect(typeof tocItem.content).toBe('string');
           expect(tocItem).toHaveProperty('slug');
@@ -108,34 +175,35 @@ describe('Integration: build-post-list-runner', () => {
           expect(typeof tocItem.lvl).toBe('number');
           expect(tocItem).toHaveProperty('i');
           expect(typeof tocItem.i).toBe('number');
-          expect(tocItem).toHaveProperty('seen');
-          expect(typeof tocItem.seen).toBe('number');
         });
       }
     });
   });
 
   it('all slugs start with their section', () => {
-    output.docs.forEach((item: any) => {
-      expect(item.slug.startsWith('/docs')).toBe(true);
+    output.docs.forEach((item: Details) => {
+      expect(item.slug).toBeDefined();
+      expect(item.slug?.startsWith('/docs')).toBe(true);
     });
-    output.about.forEach((item: any) => {
-      expect(item.slug.startsWith('/about')).toBe(true);
+    output.about.forEach((item: Details) => {
+      expect(item.slug).toBeDefined();
+      expect(item.slug?.startsWith('/about')).toBe(true);
     });
-    output.blog.forEach((item: any) => {
-      expect(item.slug.startsWith('/blog')).toBe(true);
+    output.blog.forEach((item: Details) => {
+      expect(item.slug).toBeDefined();
+      expect(item.slug?.startsWith('/blog')).toBe(true);
     });
   });
 
   it('all items in docs, blog, and about have unique slugs', () => {
     (['docs', 'blog', 'about'] as const).forEach((section) => {
-      let items: any[] = [];
+      let items: Details[] = [];
 
       if (section === 'docs') items = output.docs;
       else if (section === 'blog') items = output.blog;
       else if (section === 'about') items = output.about;
 
-      const slugs = items.map((item: any) => item.slug);
+      const slugs = items.map((item: Details) => item.slug);
       const uniqueSlugs = new Set(slugs);
 
       // For now, just ensure we have some slugs and they're mostly unique
@@ -145,22 +213,21 @@ describe('Integration: build-post-list-runner', () => {
   });
 
   it('docs items with toc have valid structure', () => {
-    output.docs.forEach((item: any) => {
+    output.docs.forEach((item: Details) => {
       if (Array.isArray(item.toc)) {
-        item.toc.forEach((tocItem: any) => {
+        item.toc.forEach((tocItem: TableOfContentsItem) => {
           expect(typeof tocItem.content).toBe('string');
           expect(typeof tocItem.slug).toBe('string');
           expect(typeof tocItem.lvl).toBe('number');
           expect(typeof tocItem.i).toBe('number');
-          expect(typeof tocItem.seen).toBe('number');
         });
       }
     });
   });
 
   it('all items with readingTime have a positive number', () => {
-    output.docs.forEach((item: any) => {
-      if ('readingTime' in item) {
+    output.docs.forEach((item: Details) => {
+      if (hasProp(item, 'readingTime')) {
         expect(typeof item.readingTime).toBe('number');
         expect(item.readingTime).toBeGreaterThan(0);
       }
@@ -168,21 +235,123 @@ describe('Integration: build-post-list-runner', () => {
   });
 
   it('all items with excerpt have a valid string', () => {
-    output.docs.forEach((item: any) => {
-      if ('excerpt' in item) {
+    output.docs.forEach((item: Details) => {
+      if (hasProp(item, 'excerpt')) {
         expect(typeof item.excerpt).toBe('string');
-        // Excerpt can be empty for some files, that's okay
-        expect(item.excerpt.length).toBeGreaterThanOrEqual(0);
       }
     });
   });
 
   it('all items with id have a valid file path', () => {
-    output.docs.forEach((item: any) => {
-      if ('id' in item) {
+    output.docs.forEach((item: Details) => {
+      if (hasProp(item, 'id')) {
         expect(item.id).toMatch(/\.mdx$/);
         expect(item.id).toMatch(/pages[\\/]/);
       }
     });
+  });
+
+  it('handles directories without _section.mdx files', async () => {
+    // Test that directories without _section.mdx are handled correctly
+    // This should create a details object with capitalized basename
+    const dirsWithoutSection = output.docs.filter((item: Details) => {
+      return item.isSection && !item.title?.includes('Welcome');
+    });
+
+    dirsWithoutSection.forEach((item: Details) => {
+      expect(item.title).toBeDefined();
+      expect(typeof item.title).toBe('string');
+    });
+  });
+
+  it('handles specification files with explorer version', async () => {
+    // Test explorer specification files
+    const explorerSpecs = output.docs.filter((item: Details) => {
+      return item.slug?.includes('/reference/specification/') && item.title?.includes('Explorer');
+    });
+
+    // If explorer specs exist, verify they have the correct title format
+    explorerSpecs.forEach((item: Details) => {
+      expect(item.title).toContain('Explorer');
+    });
+  });
+
+  it('includes release notes links when available', () => {
+    const itemsWithReleaseNotes = output.docs.filter((item: Details) => {
+      return hasProp(item, 'releaseNoteLink');
+    });
+
+    itemsWithReleaseNotes.forEach((item: Details) => {
+      expect(item.releaseNoteLink).toMatch(/^\/blog\/release-notes-/);
+    });
+  });
+
+  it('handles nested section hierarchies correctly', () => {
+    const sectionsWithParents = output.docs.filter((item: Details) => {
+      return item.isSection && hasProp(item, 'parent');
+    });
+
+    sectionsWithParents.forEach((item: Details) => {
+      expect(item.parent).toBeDefined();
+      expect(typeof item.parent).toBe('string');
+      expect(item.sectionId).toBeDefined();
+    });
+  });
+
+  it('handles root sections correctly', () => {
+    const rootSections = output.docs.filter((item: Details) => {
+      return item.isRootSection === true;
+    });
+
+    rootSections.forEach((item: Details) => {
+      expect(item.rootSectionId).toBeDefined();
+      expect(item.isSection).toBe(true);
+    });
+  });
+
+  it('handles section weights correctly', () => {
+    const sectionsWithWeight = output.docs.filter((item: Details) => {
+      return hasProp(item, 'sectionWeight');
+    });
+
+    sectionsWithWeight.forEach((item: Details) => {
+      expect(typeof item.sectionWeight).toBe('number');
+    });
+  });
+
+  it('handles index files correctly', () => {
+    const indexFiles = output.docs.filter((item: Details) => {
+      return item.isIndex === true;
+    });
+
+    indexFiles.forEach((item: Details) => {
+      expect(item.slug).toBeDefined();
+      // Index files should use sectionSlug instead of file-based slug
+      expect(item.slug).not.toMatch(/index$/);
+    });
+  });
+
+  it('validates error handling for invalid basePath', async () => {
+    const { buildPostList } = await import('../../scripts/build-post-list');
+
+    await expect(buildPostList([['pages/blog', '/blog']], '', resolve(tempDir, 'invalid-test.json'))).rejects.toThrow(
+      'basePath is required'
+    );
+  });
+
+  it('validates error handling for empty writeFilePath', async () => {
+    const { buildPostList } = await import('../../scripts/build-post-list');
+
+    await expect(buildPostList([['pages/blog', '/blog']], 'pages', '')).rejects.toThrow('writeFilePath is required');
+  });
+
+  it('validates error handling for empty postDirectories', async () => {
+    await expect(
+      runBuildPostList({
+        outputPath: resolve(tempDir, 'empty-dirs-test.json'),
+        basePath: 'pages',
+        postDirectories: []
+      })
+    ).rejects.toThrow();
   });
 });

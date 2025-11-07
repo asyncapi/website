@@ -253,3 +253,248 @@ export const mockDashboardData = {
     }
   }
 };
+
+// Mock data for pagination tests
+export const paginationMocks = {
+  // First page with hasNextPage = true
+  firstPage: {
+    search: {
+      nodes: [
+        {
+          id: 'test-node-1',
+          __typename: 'Issue',
+          title: 'Test Issue',
+          assignees: { totalCount: 0 },
+          author: { login: 'testuser' },
+          resourcePath: '/asyncapi/test-repo/issues/1',
+          repository: { name: 'test-repo' },
+          labels: {
+            nodes: [{ name: 'test', color: '000000' }]
+          },
+          reactions: { totalCount: 2 },
+          comments: {
+            totalCount: 5,
+            pageInfo: { hasNextPage: true, endCursor: 'cursor1' },
+            nodes: [{ reactions: { totalCount: 1 } }]
+          },
+          timelineItems: {
+            updatedAt: new Date().toISOString()
+          }
+        }
+      ],
+      pageInfo: {
+        hasNextPage: true,
+        endCursor: 'cursor1'
+      }
+    },
+    rateLimit: {
+      limit: 5000,
+      remaining: 4999,
+      resetAt: '2024-01-01T00:00:00Z',
+      cost: 1
+    }
+  },
+
+  // Second page with hasNextPage = false
+  secondPage: {
+    search: {
+      nodes: [
+        {
+          id: 'test-node-2',
+          __typename: 'Issue',
+          title: 'Test Issue 2',
+          assignees: { totalCount: 0 },
+          author: { login: 'testuser2' },
+          resourcePath: '/asyncapi/test-repo/issues/2',
+          repository: { name: 'test-repo' },
+          labels: {
+            nodes: [{ name: 'test', color: '000000' }]
+          },
+          reactions: { totalCount: 1 },
+          comments: {
+            totalCount: 3,
+            pageInfo: { hasNextPage: false, endCursor: null },
+            nodes: [{ reactions: { totalCount: 0 } }]
+          },
+          timelineItems: {
+            updatedAt: new Date().toISOString()
+          }
+        }
+      ],
+      pageInfo: {
+        hasNextPage: false,
+        endCursor: null
+      }
+    },
+    rateLimit: {
+      limit: 5000,
+      remaining: 4998,
+      resetAt: '2024-01-01T00:00:00Z',
+      cost: 1
+    }
+  },
+
+  // Issue by ID response (for getDiscussionByID)
+  issueById: {
+    node: {
+      id: 'test-node-1',
+      __typename: 'Issue',
+      title: 'Test Issue',
+      assignees: { totalCount: 0 },
+      author: { login: 'testuser' },
+      resourcePath: '/asyncapi/test-repo/issues/1',
+      repository: { name: 'test-repo' },
+      labels: {
+        nodes: [{ name: 'test', color: '000000' }]
+      },
+      reactions: { totalCount: 2 },
+      comments: {
+        totalCount: 10,
+        pageInfo: { hasNextPage: false },
+        nodes: [{ reactions: { totalCount: 1 } }]
+      },
+      timelineItems: {
+        updatedAt: new Date().toISOString()
+      }
+    },
+    rateLimit: {
+      limit: 5000,
+      remaining: 4997,
+      resetAt: '2024-01-01T00:00:00Z',
+      cost: 1
+    }
+  }
+};
+
+// Mock data for pull request tests
+export const pullRequestMocks = {
+  // PR search response
+  prSearch: {
+    search: {
+      nodes: [
+        {
+          id: 'PR_test',
+          __typename: 'PullRequest',
+          title: 'Test PR',
+          assignees: { totalCount: 0 },
+          author: { login: 'testuser' },
+          resourcePath: '/asyncapi/test-repo/pull/1',
+          repository: { name: 'test-repo' },
+          labels: {
+            nodes: [{ name: 'test', color: '000000' }]
+          },
+          reactions: { totalCount: 3 },
+          comments: {
+            totalCount: 5,
+            pageInfo: { hasNextPage: true, endCursor: 'cursor1' },
+            nodes: [{ reactions: { totalCount: 1 } }]
+          },
+          reviews: { totalCount: 2 },
+          timelineItems: {
+            updatedAt: new Date().toISOString()
+          }
+        }
+      ],
+      pageInfo: {
+        hasNextPage: false,
+        endCursor: null
+      }
+    },
+    rateLimit: {
+      limit: 5000,
+      remaining: 4999,
+      resetAt: '2024-01-01T00:00:00Z',
+      cost: 1
+    }
+  },
+
+  // PR by ID response (for getDiscussionByID)
+  prById: {
+    node: {
+      id: 'PR_test',
+      __typename: 'PullRequest',
+      title: 'Test PR',
+      assignees: { totalCount: 0 },
+      author: { login: 'testuser' },
+      resourcePath: '/asyncapi/test-repo/pull/1',
+      repository: { name: 'test-repo' },
+      labels: {
+        nodes: [{ name: 'test', color: '000000' }]
+      },
+      reactions: { totalCount: 3 },
+      comments: {
+        totalCount: 10,
+        pageInfo: { hasNextPage: false },
+        nodes: [{ reactions: { totalCount: 1 } }]
+      },
+      reviews: {
+        totalCount: 3,
+        nodes: [{ comments: { totalCount: 1 } }]
+      },
+      timelineItems: {
+        updatedAt: new Date().toISOString()
+      }
+    },
+    rateLimit: {
+      limit: 5000,
+      remaining: 4998,
+      resetAt: '2024-01-01T00:00:00Z',
+      cost: 1
+    }
+  }
+};
+
+// Empty response for tests
+export const emptyResponse = {
+  search: {
+    nodes: [],
+    pageInfo: { hasNextPage: false, endCursor: null }
+  },
+  rateLimit: {
+    limit: 5000,
+    remaining: 4999,
+    resetAt: '2024-01-01T00:00:00Z',
+    cost: 1
+  }
+};
+
+// Mock data for error handling tests
+export const errorMocks = {
+  issueWithPagination: {
+    search: {
+      nodes: [
+        {
+          id: 'test-node',
+          __typename: 'Issue',
+          assignees: { totalCount: 0 },
+          title: 'Test Issue',
+          author: { login: 'testuser' },
+          resourcePath: '/asyncapi/test-repo/issues/1',
+          repository: { name: 'test-repo' },
+          labels: {
+            nodes: [{ name: 'test', color: '000000' }]
+          },
+          reactions: { totalCount: 2 },
+          comments: {
+            totalCount: 5,
+            pageInfo: { hasNextPage: true, endCursor: 'cursor1' },
+            nodes: [{ reactions: { totalCount: 1 } }]
+          },
+          timelineItems: {
+            updatedAt: new Date().toISOString()
+          }
+        }
+      ],
+      pageInfo: {
+        hasNextPage: false,
+        endCursor: null
+      }
+    },
+    rateLimit: {
+      limit: 5000,
+      remaining: 4999,
+      resetAt: '2024-01-01T00:00:00Z',
+      cost: 1
+    }
+  }
+};

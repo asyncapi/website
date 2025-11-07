@@ -1,30 +1,52 @@
-import { dirname, resolve } from 'path';
-import { fileURLToPath } from 'url';
-
-import { CustomError } from '@/types/errors/CustomError';
-
 import { writeJSON } from '../helpers/readAndWriteJson';
 
 /**
  * Converts the YAML adopters configuration to a JSON file.
  *
- * This asynchronous function reads the adopters configuration from
- * "config/adopters.yml" and converts its content to JSON format. It then writes
- * the resulting JSON data to "adopters.json" in the configuration directory determined
- * by resolving the current file's directory with "../../config". The operation is
- * performed using the writeJSON utility.
+ * This asynchronous function reads the adopters configuration from the specified
+ * source path and converts its content to JSON format. It then writes the resulting
+ * JSON data to the specified target path. The operation is performed using the
+ * writeJSON utility.
+ *
+ * @param sourcePath - The file path to the source YAML file (e.g., 'config/adopters.yml').
+ * @param targetPath - The file path where the JSON output will be written (e.g., 'config/adopters.json').
+ * @throws {Error} When required inputs are missing or an error occurs during file reading, conversion, or writing.
  */
-export async function buildAdoptersList() {
-  const currentFilePath = fileURLToPath(import.meta.url);
-  const currentDirPath = dirname(currentFilePath);
-
+export async function buildAdoptersList(sourcePath: string, targetPath: string): Promise<void> {
   try {
-    await writeJSON('config/adopters.yml', resolve(currentDirPath, '../../config', 'adopters.json'));
-  } catch (err) {
-    throw CustomError.fromError(err, {
-      category: 'script',
-      operation: 'buildAdoptersList',
-      detail: `Failed to convert adopters.yml to JSON at ${resolve(currentDirPath, '../../config', 'adopters.json')}`
-    });
+    if (!sourcePath) {
+      const error = new Error('sourcePath is required');
+
+      (error as any).context = {
+        function: 'buildAdoptersList',
+        sourcePath,
+        targetPath
+      };
+      throw error;
+    }
+    if (!targetPath) {
+      const error = new Error('targetPath is required');
+
+      (error as any).context = {
+        function: 'buildAdoptersList',
+        sourcePath,
+        targetPath
+      };
+      throw error;
+    }
+
+    await writeJSON(sourcePath, targetPath);
+  } catch (error) {
+    const contextError = new Error(`Error while building adopters list: ${(error as Error).message}`);
+
+    (contextError as any).context = {
+      operation: (error as any)?.context?.operation || 'buildAdoptersList',
+      stage: (error as any)?.context?.stage || 'main_execution',
+      sourcePath,
+      targetPath,
+      errorMessage: (error as Error).message,
+      errorStack: (error as Error).stack?.split('\n').slice(0, 3).join('\n')
+    };
+    throw contextError;
   }
 }

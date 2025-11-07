@@ -4,61 +4,15 @@ import os from 'os';
 import { resolve } from 'path';
 
 import { runBuildDashboard } from '../../npm/runners/build-dashboard-runner';
-import { mockDashboardData } from './fixtures/dashboard-fixtures';
-
-// Helper functions to reduce repetitive nock setup
-/**
- * Sets up a nock interceptor for GitHub GraphQL API calls
- * @param data - The GraphQL response data
- * @param remaining - The remaining rate limit count
- * @returns The nock interceptor
- */
-function setupGraphQLMock(data: any, remaining: number = 4999) {
-  return nock('https://api.github.com')
-    .post('/graphql')
-    .matchHeader('authorization', 'token test-token')
-    .reply(200, {
-      data: {
-        ...data,
-        rateLimit: {
-          limit: 5000,
-          remaining,
-          resetAt: '2024-01-01T00:00:00Z',
-          cost: 1
-        }
-      }
-    });
-}
-
-/**
- * Sets up a nock interceptor for GitHub GraphQL API error responses
- * @param errorMessage - The error message to return
- * @returns The nock interceptor
- */
-function setupGraphQLErrorMock(errorMessage: string = 'API error') {
-  return nock('https://api.github.com')
-    .post('/graphql')
-    .matchHeader('authorization', 'token test-token')
-    .replyWithError(errorMessage);
-}
-
-/**
- * Sets up all nock interceptors for successful dashboard data fetching
- */
-function setupCompleteDashboardMocks() {
-  setupGraphQLMock(mockDashboardData.hotDiscussionsIssues, 4999);
-  setupGraphQLMock(mockDashboardData.hotDiscussionsPRs, 4998);
-  setupGraphQLMock(mockDashboardData.goodFirstIssues, 4997);
-}
-
-/**
- * Sets up nock interceptors for rate limit warning scenarios
- */
-function setupRateLimitWarningMocks() {
-  setupGraphQLMock(mockDashboardData.rateLimitWarning, 10);
-  setupGraphQLMock(mockDashboardData.rateLimitWarning, 9);
-  setupGraphQLMock(mockDashboardData.rateLimitWarning, 8);
-}
+import { CustomError } from '../../types/errors/CustomError';
+import {
+  setupCompleteDashboardMocks,
+  setupDashboardPaginationMocks,
+  setupGetDiscussionByIDErrorMocks,
+  setupGraphQLErrorMock,
+  setupPullRequestMocks,
+  setupRateLimitWarningMocks
+} from './fixtures/nock-helpers';
 
 describe('Integration: build-dashboard Runner', () => {
   let tempDir: string;
@@ -108,13 +62,28 @@ describe('Integration: build-dashboard Runner', () => {
     expect(fileExists).toBe(true);
   });
 
-  it('should handle API errors gracefully', async () => {
+  it('throws on API errors', async () => {
     const errorOutputPath = resolve(tempDir, 'error-output.json');
 
     // Setup nock to return an error using helper function
     setupGraphQLErrorMock('API error');
 
-    await expect(runBuildDashboard({ outputPath: errorOutputPath })).rejects.toThrow();
+    try {
+      await runBuildDashboard({ outputPath: errorOutputPath });
+      throw new Error('Expected error to be thrown');
+    } catch (error) {
+      if (error instanceof Error && error.message === 'Expected error to be thrown') {
+        throw error;
+      }
+      expect(error).toBeInstanceOf(CustomError);
+      const customError = error as CustomError;
+
+      expect(customError.context.category).toBe('script');
+      expect(customError.context.operation).toBe('runBuildDashboard');
+      expect(customError.message).toContain('API error');
+      expect(customError.context.detail).toBeDefined();
+      expect(customError.context.detail).toContain('output path');
+    }
   });
 
   it('should successfully process and write data', () => {
@@ -250,12 +219,12 @@ describe('Integration: build-dashboard Runner', () => {
     expect(fileContent.length).toBeGreaterThan(2); // '{}' is 2 chars
   });
 
-  it('hotDiscussions are sorted by score descending', () => {
+  it('hotDiscussions array is sorted in descending order by score', () => {
     const scores = output.hotDiscussions.map((item: any) => item.score);
 
-    for (let i = 1; i < scores.length; i++) {
-      expect(scores[i - 1]).toBeGreaterThanOrEqual(scores[i]);
-    }
+    const isDescending = scores.every((score: number, i: number, arr: number[]) => i === 0 || arr[i - 1] >= score);
+
+    expect(isDescending).toBe(true);
   });
 
   it('each item has a non-empty author string', () => {
@@ -268,5 +237,64 @@ describe('Integration: build-dashboard Runner', () => {
 
     checkAuthor(output.hotDiscussions);
     checkAuthor(output.goodFirstIssues);
+  });
+
+  it('should handle missing GitHub token', async () => {
+    const originalToken = process.env.GITHUB_TOKEN;
+
+    delete process.env.GITHUB_TOKEN;
+
+    const errorOutputPath = resolve(tempDir, 'no-token-output.json');
+
+    await expect(runBuildDashboard({ outputPath: errorOutputPath })).rejects.toThrow('GitHub token is not set');
+
+    // Restore token
+    if (originalToken) {
+      process.env.GITHUB_TOKEN = originalToken;
+    }
+  });
+
+  it('should handle pagination with hasNextPage', async () => {
+    const paginationOutputPath = resolve(tempDir, 'pagination-output.json');
+
+    setupDashboardPaginationMocks();
+
+    await runBuildDashboard({ outputPath: paginationOutputPath });
+
+    const fileExists = await fs
+      .access(paginationOutputPath)
+      .then(() => true)
+      .catch(() => false);
+
+    expect(fileExists).toBe(true);
+
+    nock.cleanAll();
+  });
+
+  it('should handle getDiscussionByID for pull requests', async () => {
+    const prOutputPath = resolve(tempDir, 'pr-output.json');
+
+    setupPullRequestMocks();
+
+    await runBuildDashboard({ outputPath: prOutputPath });
+
+    const fileExists = await fs
+      .access(prOutputPath)
+      .then(() => true)
+      .catch(() => false);
+
+    expect(fileExists).toBe(true);
+
+    nock.cleanAll();
+  });
+
+  it('should handle getDiscussionByID errors gracefully ', async () => {
+    const errorOutputPath = resolve(tempDir, 'discussion-error-output.json');
+
+    setupGetDiscussionByIDErrorMocks();
+
+    await expect(runBuildDashboard({ outputPath: errorOutputPath })).rejects.toThrow();
+
+    nock.cleanAll();
   });
 });

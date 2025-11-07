@@ -5,91 +5,16 @@ import { resolve } from 'path';
 
 import { runBuildTools } from '../../npm/runners/build-tools-runner';
 import { buildTools } from '../../scripts/build-tools';
+import { CustomError } from '../../types/errors/CustomError';
+import {
+  setupCompleteMocks,
+  setupEmptyResponseMock,
+  setupErrorMock,
+  setupGitHubSearchMock,
+  setupMalformedYamlMock,
+  setupToolsPaginationMocks
+} from './fixtures/nock-helpers';
 import { mockToolsData } from './fixtures/tools-fixtures';
-
-// Helper functions to reduce repetitive nock setup
-/**
- * Sets up a nock interceptor for GitHub Code Search API calls
- * @param page - The page number for pagination
- * @param response - The mock response data
- * @returns The nock interceptor
- */
-function setupGitHubSearchMock(page: number = 1, response: any = mockToolsData.githubSearchResponse) {
-  return nock('https://api.github.com')
-    .get('/search/code')
-    .query({ q: 'filename:.asyncapi-tool', per_page: 50, page })
-    .matchHeader('accept', 'application/vnd.github.text-match+json')
-    .matchHeader('authorization', 'token test-token')
-    .reply(200, response);
-}
-
-/**
- * Sets up a nock interceptor for GitHub Raw Content API calls
- * @param toolPath - The path to the tool file
- * @param content - The mock content to return
- * @returns The nock interceptor
- */
-function setupRawContentMock(toolPath: string, content: string) {
-  return nock('https://raw.githubusercontent.com').get(toolPath).reply(200, content);
-}
-
-/**
- * Sets up all nock interceptors for successful tools data fetching
- */
-function setupCompleteMocks() {
-  setupGitHubSearchMock(1, mockToolsData.githubSearchResponse);
-  setupGitHubSearchMock(2, mockToolsData.githubSearchResponsePage2);
-  setupRawContentMock('/asyncapi/tool1/abcdef/.asyncapi-tool', mockToolsData.githubContentResponses.tool1);
-  setupRawContentMock('/asyncapi/tool2/ghijkl/.asyncapi-tool', mockToolsData.githubContentResponses.tool2);
-  setupRawContentMock('/asyncapi/tool3/mnopqr/.asyncapi-tool', mockToolsData.githubContentResponses.tool3);
-  setupRawContentMock('/asyncapi/tool4/stuvwx/.asyncapi-tool', mockToolsData.githubContentResponses.tool4);
-}
-
-/**
- * Sets up a nock interceptor for GitHub API error responses
- * @param errorMessage - The error message to return
- * @returns The nock interceptor
- */
-function setupErrorMock(errorMessage: string = 'GitHub API error') {
-  return nock('https://api.github.com')
-    .get('/search/code')
-    .query({ q: 'filename:.asyncapi-tool', per_page: 50, page: 1 })
-    .matchHeader('accept', 'application/vnd.github.text-match+json')
-    .matchHeader('authorization', 'token test-token')
-    .replyWithError(errorMessage);
-}
-
-/**
- * Sets up a nock interceptor for empty GitHub API responses
- * @returns The nock interceptor
- */
-function setupEmptyResponseMock() {
-  return setupGitHubSearchMock(1, mockToolsData.emptyResponse);
-}
-
-/**
- * Sets up nock interceptors for GitHub API pagination scenarios
- */
-function setupPaginationMocks() {
-  setupGitHubSearchMock(1, {
-    items: [],
-    total_count: 0,
-    incomplete_results: true // Indicates more pages
-  });
-  setupGitHubSearchMock(2, {
-    items: [],
-    total_count: 0,
-    incomplete_results: false // No more pages
-  });
-}
-
-/**
- * Sets up nock interceptors for malformed YAML content scenarios
- */
-function setupMalformedYamlMock() {
-  setupGitHubSearchMock(1, mockToolsData.githubSearchResponse);
-  setupRawContentMock('/asyncapi/tool1/abcdef/.asyncapi-tool', 'invalid: yaml: content: ['); // Malformed YAML
-}
 
 describe('Integration: build-tools Runner', () => {
   let tempDir: string;
@@ -316,7 +241,21 @@ describe('Integration: build-tools Runner', () => {
       // Setup nock to return an error using helper function
       setupErrorMock('GitHub API error');
 
-      await expect(buildTools(errorAutomatedPath, errorManualPath, errorToolsPath, errorTagsPath)).rejects.toThrow();
+      try {
+        await buildTools(errorAutomatedPath, errorManualPath, errorToolsPath, errorTagsPath);
+        throw new Error('Expected error to be thrown');
+      } catch (error) {
+        if (error instanceof Error && error.message === 'Expected error to be thrown') {
+          throw error;
+        }
+        expect(error).toBeInstanceOf(CustomError);
+        const customError = error as CustomError;
+
+        expect(customError.context.category).toBe('script');
+        expect(customError.context.operation).toBe('buildTools');
+        expect(customError.message).toContain('GitHub API error');
+        expect(customError.context.detail).toBeDefined();
+      }
 
       // Clean up
       await fs.rm(errorTempDir, { recursive: true, force: true });
@@ -491,7 +430,7 @@ describe('Integration: build-tools Runner', () => {
       await fs.writeFile(paginationManualPath, JSON.stringify(mockToolsData.manualTools, null, 2));
 
       // Setup nock for pagination scenario using helper function
-      setupPaginationMocks();
+      setupToolsPaginationMocks();
 
       await expect(
         buildTools(paginationAutomatedPath, paginationManualPath, paginationToolsPath, paginationTagsPath)
@@ -620,14 +559,27 @@ describe('Integration: build-tools Runner', () => {
       // Create valid automated tools file
       await fs.writeFile(errorRunnerAutomatedPath, JSON.stringify(mockToolsData.expectedAutomatedTools, null, 2));
 
-      await expect(
-        runBuildTools({
+      try {
+        await runBuildTools({
           automatedToolsPath: errorRunnerAutomatedPath,
           manualToolsPath: errorRunnerManualPath,
           toolsPath: errorRunnerToolsPath,
           tagsPath: errorRunnerTagsPath
-        })
-      ).rejects.toThrow();
+        });
+        throw new Error('Expected error to be thrown');
+      } catch (error) {
+        if (error instanceof Error && error.message === 'Expected error to be thrown') {
+          throw error;
+        }
+        expect(error).toBeInstanceOf(CustomError);
+        const customError = error as CustomError;
+
+        expect(customError.context.category).toBe('script');
+        expect(customError.context.operation).toBe('runBuildTools');
+        expect(customError.context.detail).toBeDefined();
+        expect(customError.context.detail).toContain('automated=');
+        expect(customError.context.detail).toContain('manual=');
+      }
 
       // Clean up
       await fs.rm(errorRunnerTempDir, { recursive: true, force: true });
