@@ -1,7 +1,9 @@
+import { TwitterShareButton, LinkedinShareButton, TwitterIcon, LinkedinIcon } from 'react-share';
+import { useRouter } from 'next/router'; // We'll need this to get the URL
+
 import moment from 'moment';
 import ErrorPage from 'next/error';
 import HtmlHead from 'next/head';
-import { useRouter } from 'next/router';
 import React from 'react';
 
 import type { IPosts } from '@/types/post';
@@ -26,7 +28,9 @@ interface IBlogLayoutProps {
  */
 export default function BlogLayout({ post, children }: IBlogLayoutProps) {
   const router = useRouter();
-
+  const postUrl = `https://www.asyncapi.com${router.asPath}`;
+  const postTitle = post.title;
+  
   if (!post) return <ErrorPage statusCode={404} />;
   if (post.title === undefined) throw new Error('Post title is required');
 
@@ -78,6 +82,20 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
               </div>
             </div>
           </header>
+          {/* ADD THIS CODE BLOCK */}
+              <div className="flex items-center justify-center gap-2 mt-4"> 
+                <span className="text-sm text-gray-500">Share this post:</span>
+                
+                <TwitterShareButton url={postUrl} title={postTitle}>
+                  <TwitterIcon size={32} round />
+                </TwitterShareButton>
+
+                <LinkedinShareButton url={postUrl} title={postTitle}>
+                  <LinkedinIcon size={32} round />
+                </LinkedinShareButton>
+              </div>
+              {/* END ADDED BLOCK */}
+
           <article className='mb-32'>
             <Head title={post.title} description={post.excerpt} image={post.cover} />
             <HtmlHead>
