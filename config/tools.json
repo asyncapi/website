@@ -249,8 +249,8 @@
         "title": "FastStream",
         "description": "A powerful and easy-to-use Python framework for building asynchronous services interacting with event streams such as Apache Kafka, RabbitMQ and NATS.",
         "links": {
-          "websiteUrl": "https://faststream.airt.ai",
-          "repoUrl": "https://github.com/airtai/FastStream"
+          "websiteUrl": "https://faststream.ag2.ai",
+          "repoUrl": "https://github.com/ag2ai/FastStream"
         },
         "filters": {
           "language": [
@@ -1307,10 +1307,10 @@
     "toolsList": [
       {
         "title": "AsyncAPI Studio",
-        "description": null,
+        "description": "Visually design your AsyncAPI files and event-driven architecture.",
         "links": {
           "websiteUrl": "https://studio.asyncapi.com",
-          "repoUrl": "https://github.com/Shurtu-gal/action-test-bed"
+          "repoUrl": "https://github.com/asyncapi/studio"
         },
         "filters": {
           "language": [],
@@ -1361,10 +1361,10 @@
       },
       {
         "title": "AsyncAPI Studio",
-        "description": "Visually design your AsyncAPI files and event-driven architecture.",
+        "description": null,
         "links": {
           "websiteUrl": "https://studio.asyncapi.com",
-          "repoUrl": "https://github.com/asyncapi/studio"
+          "repoUrl": "https://github.com/Shurtu-gal/action-test-bed"
         },
         "filters": {
           "language": [],
@@ -1612,8 +1612,8 @@
         "title": "FastStream",
         "description": "A powerful and easy-to-use Python framework for building asynchronous services interacting with event streams such as Apache Kafka, RabbitMQ and NATS.",
         "links": {
-          "websiteUrl": "https://faststream.airt.ai",
-          "repoUrl": "https://github.com/airtai/FastStream"
+          "websiteUrl": "https://faststream.ag2.ai",
+          "repoUrl": "https://github.com/ag2ai/FastStream"
         },
         "filters": {
           "language": [
@@ -2661,7 +2661,7 @@
         "title": "asyncapi-preview",
         "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
         "links": {
-          "repoUrl": "https://github.com/Savio629/testing2"
+          "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
         },
         "filters": {
           "language": [],
@@ -2687,7 +2687,7 @@
         "title": "asyncapi-preview",
         "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
         "links": {
-          "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
+          "repoUrl": "https://github.com/Savio629/testing2"
         },
         "filters": {
           "language": [],

@@ -4,6 +4,11 @@ class DocsPage extends BasePage {
   visitDocsPage() {
     this.verifyLinkByHref('/docs');
   }
+  
+   verifyPageLoaded() {
+    cy.url().should('include', '/docs');
+    cy.get('article').should('be.visible'); 
+  }
 
   verifyCardLinks(href) {
     cy.get(`[href="${href}"]`)
