@@ -30,7 +30,6 @@ class CaseStudiesPage {
   }
 
   verifyLinksWork(href, label) {
-    // Find and verify the link exists with correct href
     cy.get(`a[href="${href}"]`)
       .first()
       .should('exist')
