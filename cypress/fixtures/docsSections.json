@@ -1,5 +1,5 @@
 [
-  { "href": "/docs/concepts/server", "label": "Server", "heading": "Server"},
+  { "href": "/docs/concepts/server", "label": "Server", "heading": "Server" },
   {
     "href": "/docs/concepts/producer",
     "label": "Producer",
@@ -84,56 +84,78 @@
   },
   { "href": "/docs/tools/cli", "label": "CLI", "heading": "Introduction" },
   {
-    "href": "/docs/guides", "label": "Guides", "heading": "Overview"
+    "href": "/docs/guides",
+    "label": "Guides",
+    "heading": "Overview"
   },
   {
-    "href":"/docs/guides/validate", "label":"Validate AsyncAPI documents",
-    "heading":"Validate AsyncAPI documents"
+    "href": "/docs/guides/validate",
+    "label": "Validate AsyncAPI documents",
+    "heading": "Validate AsyncAPI documents"
   },
   {
-    "href":"/docs/guides/message-validation", "label":"Message validation",
-    "heading":"Message validation"
+    "href": "/docs/guides/message-validation",
+    "label": "Message validation",
+    "heading": "Message validation"
   },
   {
-    "href":"/docs/reference","label":"Reference",
-    "heading":"Overview"
+    "href": "/docs/reference",
+    "label": "Reference",
+    "heading": "Overview"
   },
   {
-    "href":"/docs/reference/specification/v3.0.0", "label":"Specification",
-    "heading":"3.0.0"
+    "href": "/docs/reference/specification/v3.0.0",
+    "label": "Specification",
+    "heading": "3.0.0"
   },
   {
-    "href":"/docs/reference/specification/v2.x","label":"2.x",
-    "heading":"2.x"
+    "href": "/docs/reference/specification/v2.x",
+    "label": "2.x",
+    "heading": "2.x"
   },
   {
-    "href":"/docs/reference/extensions","label":"Extensions",
-    "heading":"Overview"
+    "href": "/docs/reference/extensions",
+    "label": "Extensions",
+    "heading": "Overview"
   },
   {
-    "href":"/docs/reference/extensions/linkedin","label":"linkedin",
-    "heading":"linkedin"
+    "href": "/docs/reference/extensions/linkedin",
+    "label": "linkedin",
+    "heading": "linkedin"
   },
   {
-    "href":"/docs/reference/extensions/x", "label":"x","heading":"x"
+    "href": "/docs/reference/extensions/x",
+    "label": "x",
+    "heading": "x"
   },
   {
-    "href":"/docs/reference/bindings","label":"Bindings",
-    "heading":"Overview"
+    "href": "/docs/reference/bindings",
+    "label": "Bindings",
+    "heading": "Overview"
   },
   {
-    "href":"/docs/migration","label":"Migration","heading":"Overview"
+    "href": "/docs/migration",
+    "label": "Migration",
+    "heading": "Overview"
   },
   {
-    "href":"/docs/migration/migrating-to-v3","label":"Migrating to v3","heading":"Migrating to v3"
+    "href": "/docs/migration/migrating-to-v3",
+    "label": "Migrating to v3",
+    "heading": "Migrating to v3"
   },
   {
-    "href":"/docs/community","label":"Community","heading":"Overview"
+    "href": "/docs/community",
+    "label": "Community",
+    "heading": "Overview"
   },
   {
-    "href":"/docs/community/011-styleguide", "label":"Style Guide","heading":"Introduction"
+    "href": "/docs/community/011-styleguide",
+    "label": "Style Guide",
+    "heading": "Introduction"
   },
   {
-    "href":"/docs/community/000-onboarding","label":"Onboarding","heading":"Introduction"
+    "href": "/docs/community/000-onboarding",
+    "label": "Onboarding",
+    "heading": "Introduction"
   }
 ]
