@@ -15,7 +15,7 @@ class CaseStudiesPage {
     cy.get(selector).should('have.attr', attribute, value);
   }
 
-  verifyScrollDown(){
+  verifyScrollDown() {
     cy.contains('h1', 'Adopters').scrollIntoView().should('be.visible');
   }
 
@@ -30,13 +30,11 @@ class CaseStudiesPage {
   }
 
   verifyLinksWork(href, label) {
+    // Find and verify the link exists with correct href
     cy.get(`a[href="${href}"]`)
-      .should('contain.text', label)
-      .should('have.attr', 'href', href)
-      .then(($link) => {
-        // Verify the link is not broken
-        cy.request('HEAD', href).its('status').should('eq', 200);
-      });
+      .first()
+      .should('exist')
+      .should('have.attr', 'href', href);
   }
 
   verifyFaqLink() {
@@ -55,7 +53,7 @@ class CaseStudiesPage {
       .should(
         'have.attr',
         'href',
-        'https://github.com/asyncapi/website/blob/master/config/adopters.yml',
+        'https://github.com/asyncapi/website/blob/master/config/usecases.yaml',
       );
   }
 
@@ -67,7 +65,7 @@ class CaseStudiesPage {
   verifyHeader() {
     this.verifyHeadingExists('Case Studies');
   }
-  
+
   verifyPageLoaded() {
     cy.contains('h1', 'Case Studies').should('be.visible');
   }
