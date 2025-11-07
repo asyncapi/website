@@ -9,7 +9,7 @@ describe('RoadMap Page Navigation and Functionality', () => {
   });
 
   it('User navigates to the RoadMap Page and verifies the header', () => {
-    roadmapPage.verifyHeader();
+    roadmapPage.verifyPageLoaded();
   });
 
   it('User clicks on the community page link and verifies navigation', () => {
