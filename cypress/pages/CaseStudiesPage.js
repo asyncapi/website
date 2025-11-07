@@ -16,11 +16,8 @@ class CaseStudiesPage {
   }
 
   verifyScrollDown(){
-    cy.contains('h1', 'Adopters')  
-    .scrollIntoView()
-    .should('be.visible');
+    cy.contains('h1', 'Adopters').scrollIntoView().should('be.visible');
   }
-
 
   verifyLinkExists(linkName, linkUrl, index = 0) {
     cy.get('[data-testid="CaseStudyCard-main"]')
@@ -32,15 +29,15 @@ class CaseStudiesPage {
       .should('have.attr', 'href', `${linkUrl}`);
   }
 
-  verifyLinksWork(href,label){
-  cy.get(`a[href="${href}"]`)
+  verifyLinksWork(href, label) {
+    cy.get(`a[href="${href}"]`)
       .should('contain.text', label)
       .should('have.attr', 'href', href)
       .then(($link) => {
         // Verify the link is not broken
         cy.request('HEAD', href).its('status').should('eq', 200);
       });
-    }
+  }
 
   verifyFaqLink() {
     cy.contains('a', 'FAQ')
@@ -52,22 +49,27 @@ class CaseStudiesPage {
       );
   }
 
-  verifySubmitPullRequestLink(){
-    cy.contains('a','submit a pull request')
-    .should('be.visible')
-    .should('have.attr',
-    'href',
-    'https://github.com/asyncapi/website/blob/master/config/adopters.yml',
-    );
+  verifySubmitPullRequestLink() {
+    cy.contains('a', 'submit a pull request')
+      .should('be.visible')
+      .should(
+        'have.attr',
+        'href',
+        'https://github.com/asyncapi/website/blob/master/config/adopters.yml',
+      );
   }
 
-   verifyCardsLink() {
+  verifyCardsLink() {
     this.verifyLinkExists('Adeo Group', 'casestudies/adeogroup', 0); // Selects the first card
     this.verifyLinkExists('HDI Global SE', 'casestudies/hdiglobal', 1); // Selects the second card
   }
 
   verifyHeader() {
     this.verifyHeadingExists('Case Studies');
+  }
+  
+  verifyPageLoaded() {
+    cy.contains('h1', 'Case Studies').should('be.visible');
   }
 }
 
