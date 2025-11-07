@@ -2,7 +2,7 @@ import fs from 'fs';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
-import { buildAdoptersList } from './adopters/index';
+import { buildUsecasesList } from './usecases/index';
 import { buildPostList } from './build-post-list';
 import { rssFeed } from './build-rss';
 import { buildCaseStudiesList } from './casestudies/index';
@@ -33,7 +33,7 @@ async function start() {
   await buildPostList(postDirectories, basePath, writeFilePath);
   await rssFeed('blog', 'AsyncAPI Initiative Blog RSS Feed', 'AsyncAPI Initiative Blog', 'rss.xml');
   await buildCaseStudiesList('config/casestudies', resolve(currentDirPath, '../config', 'case-studies.json'));
-  await buildAdoptersList();
+  await buildUsecasesList();
   const financeDir = resolve('.', 'config', 'finance');
 
   // loop through all the files finance in directory and find the latest year to build the finance info list

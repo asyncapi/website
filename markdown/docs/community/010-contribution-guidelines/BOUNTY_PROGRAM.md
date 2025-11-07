@@ -35,7 +35,7 @@ The approximate maximum quantity of Bounty Issues per calendar quarter round var
 
 Bounty Program Participants are prioritized in the following order:
 
-1. AsyncAPI Maintainers (from the Bounty Issue's repository), checked at [MAINTAINERS.yaml](../../MAINTAINERS.yaml)
+1. AsyncAPI Maintainers (from the Bounty Issue's repository or from other AsyncAPI repositories who have a prior agreement with the Bounty Issue repository's Maintainers to work on the Bounty Issue), checked at [MAINTAINERS.yaml](../../MAINTAINERS.yaml)
 
 2. Regular contributors (GitHub users who have three or more Pull Requests merged throughout the AsyncAPI GitHub Organization, checked with https://github.com/search?q=org%3Aasyncapi+is%3Apr+is%3Amerged+author%3Agh_username).
 
@@ -188,6 +188,8 @@ A dropped Bounty Issue can not be assigned again to the same Bounty Program Part
 
 
 ## Additional Conditions
+
+The Bounty Program operates on a mutual-exclusion basis: during the time of participation of a GitHub issue in the Bounty Program, contributions (code, documentation, design, and other solutions) are accepted only from the assigned Bounty Program Participants.
 
 AsyncAPI Maintainers are allowed to work on Bounty Issues submitted by themselves.
 

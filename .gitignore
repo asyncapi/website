@@ -7,7 +7,7 @@ node_modules
 out
 config/posts.json
 config/case-studies.json
-config/adopters.json
+config/usecases.json
 public/rss.xml
 .env.local
 yarn.lock
