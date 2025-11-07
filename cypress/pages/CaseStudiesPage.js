@@ -60,8 +60,8 @@ class CaseStudiesPage {
   }
 
   verifyCardsLink() {
-    this.verifyLinkExists('Adeo Group', 'casestudies/adeogroup', 0); // Selects the first card
-    this.verifyLinkExists('HDI Global SE', 'casestudies/hdiglobal', 1); // Selects the second card
+    this.verifyLinkExists('Adeo Group', 'casestudies/adeogroup', 0);
+    this.verifyLinkExists('HDI Global SE', 'casestudies/hdiglobal', 1);
   }
 
   verifyHeader() {
