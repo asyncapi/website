@@ -70,7 +70,9 @@ async function waitForPages(maxWaitMs = 60000): Promise<boolean> {
       return true;
     }
     // eslint-disable-next-line no-await-in-loop
-    await new Promise((res) => { setTimeout(res, checkInterval); });
+    await new Promise((res) => {
+      setTimeout(res, checkInterval);
+    });
   }
 
   return false;
