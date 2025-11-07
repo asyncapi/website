@@ -84,11 +84,6 @@
   },
   { "href": "/docs/tools/cli", "label": "CLI", "heading": "Introduction" },
   {
-    "href": "/docs/tools/glee",
-    "label": "Glee",
-    "heading": "Kickstarting Your Journey with Glee"
-  },
-  {
     "href": "/docs/guides", "label": "Guides", "heading": "Overview"
   },
   {
