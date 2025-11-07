@@ -5,13 +5,75 @@ import { resolve } from 'path';
 import { runBuildPages } from '../../npm/runners/build-pages-runner';
 import { runBuildPostList } from '../../npm/runners/build-post-list-runner';
 import type { Details, Result, TableOfContentsItem } from '../../types/scripts/build-posts-list';
-import { acquireBuildPagesLock, releaseBuildPagesLock, waitForPagesBuild } from './helpers/build-pages-lock';
 
 /**
  * Utility function to check if an object has a property.
  */
 function hasProp<T extends object>(obj: T, prop: string): boolean {
   return Object.prototype.hasOwnProperty.call(obj, prop);
+}
+
+/**
+ * Checks if pages directory exists and is valid (has .mdx files)
+ */
+async function isPagesValid(): Promise<boolean> {
+  try {
+    const pagesDir = resolve(process.cwd(), 'pages');
+    const stats = await fs.stat(pagesDir);
+
+    if (stats.isDirectory()) {
+      const files = await fs.readdir(pagesDir);
+
+      if (files.length > 0 && (files.includes('docs') || files.includes('blog') || files.includes('about'))) {
+        // Verify that files have been converted to .mdx
+        for (const subdir of ['blog', 'docs', 'about']) {
+          const subdirPath = resolve(pagesDir, subdir);
+
+          // eslint-disable-next-line max-depth
+          try {
+            // eslint-disable-next-line no-await-in-loop
+            const subdirStats = await fs.stat(subdirPath);
+
+            // eslint-disable-next-line max-depth
+            if (subdirStats.isDirectory()) {
+              // eslint-disable-next-line no-await-in-loop
+              const subdirFiles = await fs.readdir(subdirPath);
+
+              // eslint-disable-next-line max-depth
+              if (subdirFiles.some((file) => file.endsWith('.mdx'))) {
+                return true;
+              }
+            }
+          } catch {
+            // Subdirectory doesn't exist, continue checking
+          }
+        }
+      }
+    }
+  } catch {
+    // Pages directory doesn't exist
+  }
+
+  return false;
+}
+
+/**
+ * Waits for pages to be built by polling
+ */
+async function waitForPages(maxWaitMs = 60000): Promise<boolean> {
+  const startTime = Date.now();
+  const checkInterval = 1000; // Check every 1 second
+
+  while (Date.now() - startTime < maxWaitMs) {
+    // eslint-disable-next-line no-await-in-loop
+    if (await isPagesValid()) {
+      return true;
+    }
+    // eslint-disable-next-line no-await-in-loop
+    await new Promise((res) => { setTimeout(res, checkInterval); });
+  }
+
+  return false;
 }
 
 describe('Integration: build-post-list-runner', () => {
@@ -27,65 +89,18 @@ describe('Integration: build-post-list-runner', () => {
 
     outputPath = resolve(tempDir, outputFileName);
     // before running make sure that pages directory is there
-    // Use a lock file to prevent concurrent build-pages operations
-    const pagesDir = resolve(process.cwd(), 'pages');
-    let pagesExists = false;
-
-    // Check if pages already exists and has .mdx files (fully built)
-    try {
-      const stats = await fs.stat(pagesDir);
-
-      if (stats.isDirectory()) {
-        const files = await fs.readdir(pagesDir);
-
-        if (files.length > 0 && (files.includes('docs') || files.includes('blog') || files.includes('about'))) {
-          // Verify that files have been converted to .mdx
-          for (const subdir of ['blog', 'docs', 'about']) {
-            const subdirPath = resolve(pagesDir, subdir);
-
-            // eslint-disable-next-line max-depth
-            try {
-              // eslint-disable-next-line no-await-in-loop
-              const subdirStats = await fs.stat(subdirPath);
-
-              // eslint-disable-next-line max-depth
-              if (subdirStats.isDirectory()) {
-                // eslint-disable-next-line no-await-in-loop
-                const subdirFiles = await fs.readdir(subdirPath);
-
-                // If we find .mdx files, pages is fully built
-                // eslint-disable-next-line max-depth
-                if (subdirFiles.some((file) => file.endsWith('.mdx'))) {
-                  pagesExists = true;
-
-                  break;
-                }
-              }
-            } catch {
-              // Subdirectory doesn't exist, continue checking
-            }
-          }
-        }
+    // Check if pages exists and is valid
+    if (!(await isPagesValid())) {
+      // Pages doesn't exist or isn't valid, try to build it
+      // If another test is building it concurrently, that's okay - we'll wait for it
+      try {
+        await runBuildPages();
+      } catch {
+        // Build might have failed or another test is building, just wait
       }
-    } catch {
-      pagesExists = false;
-    }
 
-    // If pages doesn't exist, try to acquire lock and build
-    if (!pagesExists) {
-      const hasLock = await acquireBuildPagesLock();
-
-      if (hasLock) {
-        // We have the lock, build pages
-        try {
-          await runBuildPages();
-        } finally {
-          await releaseBuildPagesLock();
-        }
-      } else {
-        // Another test is building pages, wait for it to complete
-        await waitForPagesBuild();
-      }
+      // Wait for pages to be ready (either by our build or another test's build)
+      await waitForPages();
     }
     await runBuildPostList({
       outputPath
