@@ -75,11 +75,11 @@ class HomePage {
   }
 
   verifyHeader(text = headerText) {
-    this.verifyHeadingExists(text);
+    this.verifyPageLoaded();
   }
 
   verifyPageLoaded() {
-    this.verifyHeader();
+    this.verifyHeadingExists(headerText);
   }
 
   verifyGithubStarButton(link = githubStarLink) {
