@@ -1,8 +1,6 @@
-import HomePage from './pages/homepage';
 import RoadmapPage from './pages/RoadmapPage';
 
 describe('RoadMap Page Navigation and Functionality', () => {
-  let homePage;
   let roadmapPage;
 
   beforeEach(() => {

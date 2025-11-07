@@ -61,10 +61,6 @@ class CaseStudiesPage {
     this.verifyLinkExists('HDI Global SE', 'casestudies/hdiglobal', 1);
   }
 
-  verifyHeader() {
-    this.verifyHeadingExists('Case Studies');
-  }
-
   verifyPageLoaded() {
     cy.contains('h1', 'Case Studies').should('be.visible');
   }

@@ -3,10 +3,6 @@ class RoadmapPage {
     cy.visit('/roadmap');
   }
 
-  verifyHeader() {
-    cy.contains('h1, h2, h3, h4, h5, h6', 'Roadmap').should('be.visible');
-  }
-
   verifyPageLoaded() {
     cy.contains('h1', 'AsyncAPI becomes the #1 API specification for defining and developing APIs.').should('be.visible');
   }
