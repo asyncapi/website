@@ -118,7 +118,7 @@ export default function BlogIndexPage() {
     if (hasDropdownFilters) {
       setActiveTab('All Posts');
     }
-  }, [router.query]);
+  }, [router.query, hasDropdownFilters]);
 
   const tabs = ['All Posts', 'Community', 'Conference', 'Communication', 'Engineering', 'Strategy'];
 

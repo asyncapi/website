@@ -315,7 +315,7 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISe
     } else {
       setChildren(children);
     }
-  }, []);
+  }, [actionKey, children]);
 
   return (
     <button

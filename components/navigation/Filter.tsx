@@ -32,11 +32,11 @@ export default function Filter({ data, onFilter, checks, className }: FilterProp
   useEffect(() => {
     setQuery(route.query);
     applyFilterList(checks, data, setFilters);
-  }, [route]);
+  }, [route, checks, data]);
 
   useEffect(() => {
     onFilterApply(data, onFilter, routeQuery);
-  }, [routeQuery]);
+  }, [routeQuery, data, onFilter]);
 
   return checks.map((check) => {
     let selected = '';

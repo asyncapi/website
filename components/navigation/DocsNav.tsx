@@ -76,7 +76,7 @@ export default function DocsNav({ item, active, onClick = () => {} }: DocsNavPro
 
   useEffect(() => {
     setOpenSubCategory(active.startsWith(item.item.slug));
-  }, [active]);
+  }, [active, item.item.slug]);
 
   return (
     <li className='mb-4' key={item.item.title} data-testid='DocsNav-item'>
