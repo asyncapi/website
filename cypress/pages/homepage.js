@@ -140,16 +140,6 @@ class HomePage {
     cy.contains('a', 'Roadmap').click();
     return new RoadmapPage();
   }
-
-  goToToolsPage() {
-    cy.get('[data-testid="Navbar-main"]').contains('Tools').click();
-    return new ToolsPage();
-  }
-
-  goToDocsPage() {
-    cy.get('[data-testid="Navbar-main"]').contains('Docs').click();
-    return new DocsPage();
-  }
 }
 
 export default HomePage;

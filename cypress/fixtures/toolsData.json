@@ -284,7 +284,7 @@
     ],
     "GithubLinks": [
       {
-        "href": "https://github.com/Shurtu-gal/action-test-bed",
+        "href": "https://github.com/asyncapi/studio",
         "heading": "AsyncAPI Studio"
       }
     ]
@@ -386,11 +386,7 @@
         "heading": "Automated version bump for AsyncAPI documents"
       },
       {
-        "href": "https://github.com/asyncapi/cli",
-        "heading": "GitHub Action for Generator"
-      },
-      {
-        "href": "https://github.com/actions-marketplace-validations/asyncapi_github-action-for-generator",
+        "href": "https://github.com/asyncapi/github-action-for-generator",
         "heading": "GitHub Action for Generator"
       }
     ]
@@ -528,10 +524,6 @@
     "GithubLinks": [
       { "href": "https://github.com/asyncapi/cli", "heading": "AsyncAPI CLI" },
       {
-        "href": "https://github.com/hkirat/asyncapi-fork",
-        "heading": "AsyncAPI CLI"
-      },
-      {
         "href": "https://github.com/asyncapi/converter-go",
         "heading": "AsyncAPI-format"
       },
@@ -574,10 +566,6 @@
         "heading": "asyncapi-preview"
       },
       {
-        "href": "https://github.com/Savio629/testing2",
-        "heading": "asyncapi-preview"
-      },
-      {
         "href": "https://github.com/asyncapi/jasyncapi-idea-plugin",
         "heading": "jAsyncAPI - IDEA plugin"
       }
@@ -605,7 +593,7 @@
       },
       {
         "href": "https://github.com/dipaksodani/async-gen",
-        "heading": "HTML Template"
+        "heading": "Async Gen HTML Template (Community)"
       },
       {
         "href": "https://github.com/asyncapi/java-spring-cloud-stream-template",
@@ -625,19 +613,11 @@
       },
       {
         "href": "https://github.com/asyncapi/nodejs-template",
-        "heading": "Node.js Multiprotocol Template"
-      },
-      {
-        "href": "https://github.com/asyncapi/nodejs-template",
         "heading": "Node.js Template"
       },
       {
         "href": "https://github.com/asyncapi/nodejs-ws-template",
         "heading": "Node.js WebSocket Template"
-      },
-      {
-        "href": "https://github.com/asyncapi/nodejs-ws-template",
-        "heading": "Node.js Websockets Template"
       },
       {
         "href": "https://github.com/asyncapi/python-paho-template",
@@ -653,11 +633,7 @@
       }
     ],
     "GithubLinks": [
-      { "href": "https://github.com/asyncapi/cli", "heading": "AsyncAPI CLI" },
-      {
-        "href": "https://github.com/hkirat/asyncapi-fork",
-        "heading": "AsyncAPI CLI"
-      }
+      { "href": "https://github.com/asyncapi/cli", "heading": "AsyncAPI CLI" }
     ]
   }
 }
