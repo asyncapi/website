@@ -67,7 +67,7 @@ const BlogPostItem = ({ post, className = '', id = '' }: BlogPostItemProps, ref:
       <article className='h-full rounded-lg'>
         <Link href={post.slug}>
           <span
-            className='relative flex h-full cursor-pointer flex-col overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-card shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'
+            className='relative flex h-full cursor-pointer flex-col overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-card shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1 hover:border-gray-300 dark:hover:border-gray-600'
             data-testid='BlogPostItem-Link'
           >
             {post.featured && (
