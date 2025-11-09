@@ -181,12 +181,12 @@ export default function ToolsDashboard() {
           <div className='flex h-auto w-[47%] gap-5 lg:w-1/5'>
             <div className='relative h-auto w-full' ref={filterRef as React.LegacyRef<HTMLDivElement>}>
               <div
-                className='flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-1 text-sm text-gray-700 shadow hover:border-gray-600 hover:shadow-md'
+                className='flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-dark-card bg-white px-4 py-1 text-sm text-gray-700 dark:text-gray-300 shadow-md dark:shadow-lg hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-lg transition-all duration-300 hover:scale-[1.02]'
                 onClick={() => setOpenFilter(!openFilter)}
                 data-testid='ToolsDashboard-Filters-Click'
               >
                 <FilterIcon />
-                <div>Filter</div>
+                <div className='font-medium'>Filter</div>
               </div>
               {openFilter && (
                 <button className='absolute top-16 z-20 min-w-[20rem]'>
@@ -198,12 +198,12 @@ export default function ToolsDashboard() {
           <div className='flex h-auto w-[47%] gap-5 lg:w-1/5'>
             <div className='relative h-auto w-full' ref={categoryRef as React.LegacyRef<HTMLDivElement>}>
               <div
-                className='flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-1 text-sm text-gray-700 shadow hover:border-gray-600 hover:shadow-md'
+                className='flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-dark-card bg-white px-4 py-1 text-sm text-gray-700 dark:text-gray-300 shadow-md dark:shadow-lg hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-lg transition-all duration-300 hover:scale-[1.02]'
                 onClick={() => setopenCategory(!openCategory)}
                 data-testid='ToolsDashboard-category'
               >
-                <div>Jump to Category</div>
-                <ArrowDown className={`my-auto ${openCategory ? 'rotate-180' : ''}`} />
+                <div className='font-medium'>Jump to Category</div>
+                <ArrowDown className={`my-auto transition-transform duration-300 ${openCategory ? 'rotate-180' : ''}`} />
               </div>
               {openCategory && (
                 <div className='absolute right-52 top-16 z-20'>
@@ -212,26 +212,26 @@ export default function ToolsDashboard() {
               )}
             </div>
           </div>
-          <div className='flex h-14 w-full rounded-lg border border-gray-300 px-4 py-1 text-sm text-gray-700 shadow hover:border-gray-600 focus:border-gray-600 lg:w-4/5'>
-            <SearchIcon className='my-auto opacity-70' />
+          <div className='flex h-14 w-full rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-dark-card bg-white px-4 py-1 text-sm text-gray-700 dark:text-gray-300 shadow-md dark:shadow-lg hover:border-gray-400 dark:hover:border-gray-500 focus-within:border-gray-500 dark:focus-within:border-gray-400 focus-within:shadow-lg transition-all duration-300 lg:w-4/5'>
+            <SearchIcon className='my-auto opacity-70 dark:opacity-80' />
             <input
-              className='w-11/12 flex-1 border-none outline-none focus:ring-0'
+              className='w-11/12 flex-1 border-none outline-none focus:ring-0 bg-transparent dark:text-white dark:placeholder-gray-400'
               placeholder='Search by name'
               type='text'
               value={searchName}
               onChange={(e) => setSearchName(e.target.value)}
             />
             {searchName && (
-              <button className='my-auto h-fit rounded-full p-2 hover:bg-gray-100' onClick={() => setSearchName('')}>
-                <img src='/img/illustrations/icons/close-icon.svg' alt='close' width='10' />
+              <button className='my-auto h-fit rounded-full p-2 hover:bg-gray-100 dark:hover:bg-dark-background transition-colors duration-200' onClick={() => setSearchName('')}>
+                <img src='/img/illustrations/icons/close-icon.svg' alt='close' width='10' className='dark:invert' />
               </button>
             )}
           </div>
         </div>
         {isFiltered && (
-          <div className='mt-4 flex cursor-pointer items-center text-gray-600 hover:text-black' onClick={clearFilters}>
+          <div className='mt-4 flex cursor-pointer items-center text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200' onClick={clearFilters}>
             <Cross />
-            <span className='ml-3'>Clear Filters</span>
+            <span className='ml-3 font-medium'>Clear Filters</span>
           </div>
         )}
         <div className='mt-0'>
@@ -239,8 +239,8 @@ export default function ToolsDashboard() {
             <ToolsList toolsListData={toolsList} />
           ) : (
             <div className='p-4'>
-              <img src='/img/illustrations/not-found.webp' alt='not found' className='m-auto w-1/2' />
-              <div className='text-center text-lg'> Sorry, we don&apos;t have tools according to your needs. </div>
+              <img src='/img/illustrations/not-found.webp' alt='not found' className='m-auto w-1/2 dark:opacity-80' />
+              <div className='text-center text-lg dark:text-gray-300'> Sorry, we don&apos;t have tools according to your needs. </div>
             </div>
           )}
         </div>

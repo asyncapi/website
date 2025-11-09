@@ -24,12 +24,14 @@ export default function ToolsList({ toolsListData }: ToolsListProp) {
       {Object.keys(toolsListData).map((categoryName, index) => {
         if (toolsListData[categoryName].toolsList.length > 0) {
           return (
-            <div className='my-8' key={index} id={categoryName} ref={toolsListData[categoryName].elementRef}>
-              <Heading typeStyle={HeadingTypeStyle.mdSemibold} className='my-2'>
-                {categoryName}
-              </Heading>
-              <Paragraph typeStyle={ParagraphTypeStyle.md}>{toolsListData[categoryName].description}</Paragraph>
-              <hr className='my-8' />
+            <div className='my-12' key={index} id={categoryName} ref={toolsListData[categoryName].elementRef}>
+              <div className='mb-4'>
+                <Heading typeStyle={HeadingTypeStyle.mdSemibold} className='my-2 text-gray-900 dark:text-white font-bold'>
+                  {categoryName}
+                </Heading>
+                <Paragraph typeStyle={ParagraphTypeStyle.md} className='text-gray-700 dark:text-gray-300'>{toolsListData[categoryName].description}</Paragraph>
+              </div>
+              <hr className='my-6 border-gray-200 dark:border-gray-700' />
               <div className='flex grid-cols-3 flex-col gap-8 lg:grid'>
                 {toolsListData[categoryName].toolsList.map((tool, toolIndex) => (
                   <ToolsCard key={toolIndex} toolData={tool} />

@@ -49,13 +49,13 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
   });
 
   return (
-    <div className='flex h-auto flex-col rounded-lg border shadow-md'>
+    <div className='flex h-auto flex-col rounded-xl border border-gray-200 dark:border-gray-700 shadow-md dark:shadow-xl bg-white dark:bg-dark-card hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] hover:border-gray-300 dark:hover:border-gray-600 overflow-hidden'>
       <div className='mb-6 px-6 pt-8'>
         <div className='flex flex-col gap-2'>
           <div className='flex w-full justify-between gap-4'>
-            <Heading typeStyle={HeadingTypeStyle.smSemibold}>{toolData.title}</Heading>
+            <Heading typeStyle={HeadingTypeStyle.smSemibold} className='dark:text-white'>{toolData.title}</Heading>
             <div
-              className='size-fit min-w-[5.3rem] rounded-md border border-green-600 bg-green-100 p-1 text-center text-xs text-green-600'
+              className='size-fit min-w-[5.3rem] rounded-lg border border-green-600 dark:border-green-500 bg-green-100 dark:bg-green-900/30 p-1 text-center text-xs text-green-700 dark:text-green-400 font-semibold shadow-sm'
               onMouseEnter={() =>
                 setTimeout(() => {
                   if (!visible.desc) setVisible({ ...visible, desc: true });
@@ -72,7 +72,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
               >
                 {toolData.filters?.hasCommercial === false ? 'Open Source' : 'Commercial'}
                 {visible.desc && (
-                  <span className='absolute -left-2/3 top-8 z-10 w-48 -translate-x-12 rounded border border-gray-200 bg-white px-2 py-1 text-left text-gray-700 shadow-md'>
+                  <span className='absolute -left-2/3 top-8 z-10 w-48 -translate-x-12 rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-dark-card px-3 py-2 text-left text-gray-700 dark:text-gray-300 shadow-lg text-xs'>
                     {Data.properties.filters.properties.hasCommercial.description}
                   </span>
                 )}
@@ -80,7 +80,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
             </div>
           </div>
           <div className='relative'>
-            <Paragraph typeStyle={ParagraphTypeStyle.sm}>
+            <Paragraph typeStyle={ParagraphTypeStyle.sm} className='dark:text-gray-300'>
               <span
                 className={`w-full ${isTruncated ? 'cursor-pointer' : ''}`}
                 onMouseEnter={() =>
@@ -100,10 +100,10 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
 
             {showDescription && (
               <div
-                className='absolute top-0 z-10 w-full border border-gray-200 bg-white p-2 shadow-md'
+                className='absolute top-0 z-10 w-full border border-gray-200 dark:border-gray-600 bg-white dark:bg-dark-card p-3 shadow-xl dark:shadow-2xl rounded-lg'
                 onMouseLeave={() => setShowDescription(false)}
               >
-                <Paragraph typeStyle={ParagraphTypeStyle.sm} className=''>
+                <Paragraph typeStyle={ParagraphTypeStyle.sm} className='dark:text-gray-300'>
                   {toolData.description}
                 </Paragraph>
               </div>
@@ -111,14 +111,14 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
           </div>
         </div>
       </div>
-      <hr className='mx-6' />
+      <hr className='mx-6 border-gray-200 dark:border-gray-700' />
       <div className='grow'>
         {toolData.filters?.language || toolData?.filters?.technology?.length ? (
           <div className='my-6'>
             {toolData?.filters?.language?.length !== 0 && (
               <div className='mx-6 flex flex-col gap-2'>
                 <CardData
-                  className='text-sm'
+                  className='text-sm dark:text-gray-300'
                   heading='LANGUAGE'
                   data={Data.properties.filters.properties.language.description}
                   type='lang'
@@ -127,7 +127,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
                   read={readMore}
                   setRead={setReadMore}
                 />
-                <div className='flex gap-2'>
+                <div className='flex gap-2 flex-wrap'>
                   {toolData.filters?.language &&
                     toolData.filters?.language.map((item, index) => (
                       <Tag key={index} name={item.name} bgColor={item.color} borderColor={item.borderColor} />
@@ -138,7 +138,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
             {toolData.filters.technology?.length !== 0 && (
               <div className='mx-6 my-4 flex flex-col gap-2'>
                 <CardData
-                  className='text-sm'
+                  className='text-sm dark:text-gray-300'
                   heading='TECHNOLOGIES'
                   data={Data.properties.filters.properties.technology.description}
                   type='tech'
@@ -157,7 +157,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
             )}
           </div>
         ) : (
-          <div className='relative size-full p-8 text-center text-gray-700'>
+          <div className='relative size-full p-8 text-center text-gray-700 dark:text-gray-400'>
             <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
               {' '}
               No further details provided{' '}
@@ -167,59 +167,59 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
       </div>
       {(toolData?.links?.repoUrl || toolData?.links?.websiteUrl || toolData?.links?.docsUrl) && (
         <>
-          <hr className='' />
-          <div className='flex'>
+          <hr className='border-gray-200 dark:border-gray-700' />
+          <div className='flex divide-x divide-gray-200 dark:divide-gray-700'>
             {toolData.links.repoUrl &&
               (onGit ? (
                 <a
-                  className='w-full cursor-pointer border-x px-1 py-6 text-center hover:bg-gray-200'
+                  className='w-full cursor-pointer px-1 py-6 text-center hover:bg-gray-100 dark:hover:bg-dark-background transition-colors duration-200 group'
                   href={toolData.links.repoUrl}
                   target='_blank'
                   rel='noreferrer'
                   data-testid='ToolsCard-repoUrl'
                 >
-                  <div className='m-auto flex w-fit gap-2'>
-                    <img src='/img/logos/github-black.svg' alt='GitHub' className='w-5' />
-                    <div className='text-sm text-gray-700'>View Github</div>
+                  <div className='m-auto flex w-fit gap-2 items-center'>
+                    <img src='/img/logos/github-black.svg' alt='GitHub' className='w-5 dark:invert group-hover:scale-110 transition-transform duration-200' />
+                    <div className='text-sm text-gray-700 dark:text-gray-300 font-medium'>View Github</div>
                   </div>
                 </a>
               ) : (
                 <a
-                  className='w-full cursor-pointer border-x border-gray-200 px-1 py-6 text-center hover:bg-gray-200'
+                  className='w-full cursor-pointer px-1 py-6 text-center hover:bg-gray-100 dark:hover:bg-dark-background transition-colors duration-200 group'
                   href={toolData.links.repoUrl}
                   target='_blank'
                   rel='noreferrer'
                 >
-                  <div className='m-auto flex w-fit gap-2'>
-                    <div className='text-sm text-gray-700'>View Source Code</div>
+                  <div className='m-auto flex w-fit gap-2 items-center'>
+                    <div className='text-sm text-gray-700 dark:text-gray-300 font-medium'>View Source Code</div>
                   </div>
                 </a>
               ))}
             {toolData.links.websiteUrl && (
               <a
-                className='w-full cursor-pointer border-x border-gray-200 px-1 py-6 text-center hover:bg-gray-200'
+                className='w-full cursor-pointer px-1 py-6 text-center hover:bg-gray-100 dark:hover:bg-dark-background transition-colors duration-200 group'
                 href={toolData.links.websiteUrl}
                 target='_blank'
                 rel='noreferrer'
                 data-testid='ToolsCard-websiteUrl'
               >
-                <div className='m-auto flex w-fit gap-2'>
-                  <img src='/img/illustrations/icons/share.svg' alt='Share' className='w-5' />
-                  <div className='text-sm text-gray-700'>Visit Website</div>
+                <div className='m-auto flex w-fit gap-2 items-center'>
+                  <img src='/img/illustrations/icons/share.svg' alt='Share' className='w-5 dark:invert group-hover:scale-110 transition-transform duration-200' />
+                  <div className='text-sm text-gray-700 dark:text-gray-300 font-medium'>Visit Website</div>
                 </div>
               </a>
             )}
             {toolData.links.docsUrl && (
               <a
-                className='w-full cursor-pointer border-x border-gray-200 px-1 py-6 text-center hover:bg-gray-200'
+                className='w-full cursor-pointer px-1 py-6 text-center hover:bg-gray-100 dark:hover:bg-dark-background transition-colors duration-200 group'
                 href={toolData.links.docsUrl}
                 target='_blank'
                 rel='noreferrer'
                 data-testid='ToolsCard-docsUrl'
               >
-                <div className='m-auto flex w-fit gap-2'>
-                  <img src='/img/illustrations/icons/docs-icon.svg' alt='Docs' className='w-5' />
-                  <div className='text-sm text-gray-700'>Visit Docs</div>
+                <div className='m-auto flex w-fit gap-2 items-center'>
+                  <img src='/img/illustrations/icons/docs-icon.svg' alt='Docs' className='w-5 dark:invert group-hover:scale-110 transition-transform duration-200' />
+                  <div className='text-sm text-gray-700 dark:text-gray-300 font-medium'>Visit Docs</div>
                 </div>
               </a>
             )}

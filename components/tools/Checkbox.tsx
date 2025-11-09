@@ -24,14 +24,14 @@ const Checkbox = ({
   return (
     <div
       className={twMerge(
-        `border ${borderColor} ${bgColor} ${textColor} p-1 pb-0 rounded-2xl flex gap-1 cursor-pointer items-start ${checked ? `${checkedStateBgColor} ${checkedStateTextColor}` : ''}`
+        `border ${borderColor} dark:border-secondary-500 ${bgColor} dark:bg-gray-800 ${textColor} dark:text-secondary-400 p-1 pb-0 rounded-2xl flex gap-1 cursor-pointer items-start transition-all duration-200 hover:shadow-md ${checked ? `${checkedStateBgColor} dark:bg-secondary-700 ${checkedStateTextColor} dark:text-white` : ''}`
       )}
       onClick={handleClick}
     >
       {checked ? (
-        <img src='/img/illustrations/icons/CheckedIcon.svg' alt='checked' />
+        <img src='/img/illustrations/icons/CheckedIcon.svg' alt='checked' className='dark:invert' />
       ) : (
-        <img src='/img/illustrations/icons/UncheckedIcon.svg' alt='unchecked' />
+        <img src='/img/illustrations/icons/UncheckedIcon.svg' alt='unchecked' className='dark:invert dark:opacity-80' />
       )}
       <div className='-mt-px mb-px text-xs'>{name}</div>
     </div>
