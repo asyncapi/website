@@ -29,7 +29,7 @@ export default function ToolsIndex() {
               community. Have an AsyncAPI tool you want to be featured on this list? Then follow the procedure given in
               the
               <TextLink
-                href='https://github.com/asyncapi/community/blob/master/docs/040-guides/add-new-asyncapi-tool-to-website.md'
+                href='https://www.asyncapi.com/docs/community/040-guides/add-new-asyncapi-tool-to-website '
                 target='_blank'
               >
                 Tool Documentation
