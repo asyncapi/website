@@ -1,24 +1,16 @@
-import type moment from 'moment';
+import Link from 'next/link';
 import React from 'react';
 
-import { CardType } from '@/types/components/community/CardPropsType';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
+import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
-import Card from '../../components/community/Card';
 import Header from '../../components/community/Header';
 import Hero from '../../components/community/Hero';
-import HomeCards from '../../components/community/HomeCard';
+import ToolingsShowcase from '../../components/community/ToolingsShowcase';
 import GenericLayout from '../../components/layout/GenericLayout';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 import Heading from '../../components/typography/Heading';
-import eventsData from '../../config/meetings.json';
-import { getEvents } from '../../utils/staticHelpers';
-
-interface Event {
-  title: string;
-  date: moment.Moment;
-  url: string;
-}
+import Paragraph from '../../components/typography/Paragraph';
 
 /**
  * @description This component displays the Community Index Page.
@@ -37,177 +29,277 @@ export default function CommunityIndexPage() {
         <Header />
       </div>
       <Hero />
-      <div className='gh-img mt-10 h-auto w-full object-contain md:mt-0'>
-        <img className='gh-img object-contain' src='/img/homepage/discuss-page.webp' alt='github-discussion' />
+      
+      {/* CTA Section - Contribute & Committee */}
+      <div className='mt-10 md:mt-0 bg-secondary-100 dark:bg-dark-card rounded-3xl py-20 px-6 md:px-12'>
+        <div className='max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16'>
+          {/* Left Content */}
+          <div className='flex-1 space-y-12'>
+            {/* Contribute to Hot Issues */}
+            <div className='space-y-4'>
+              <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className='text-gray-900 dark:text-dark-heading font-bold'>
+                Contribute To Hot Issues
+              </Heading>
+              <Paragraph typeStyle={ParagraphTypeStyle.md} className='text-gray-700 dark:text-gray-300'>
+                Discover over 100s of interesting issues, suitable for new and existing contributors.
+              </Paragraph>
+              <a
+                href='https://github.com/search?q=is%3Aissue+is%3Aopen+org%3Aasyncapi+label%3A%22good+first+issue%22&type=issues'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='inline-flex items-center px-6 py-3 text-secondary-500 dark:text-secondary-400 border-2 border-secondary-500 dark:border-secondary-400 rounded-lg hover:bg-secondary-500 hover:text-white dark:hover:bg-secondary-500 dark:hover:text-white transition-all font-medium group'
+              >
+                <svg
+                  className='w-5 h-5 mr-2 transform group-hover:translate-x-1 transition-transform'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
+                  />
+                </svg>
+                View on GitHub
+              </a>
+            </div>
+
+            {/* Become a Committee Member */}
+            <div className='space-y-4'>
+              <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className='text-gray-900 dark:text-dark-heading font-bold'>
+                Become a Committee Member
+              </Heading>
+              <Paragraph typeStyle={ParagraphTypeStyle.md} className='text-gray-700 dark:text-gray-300'>
+                Learn how to become a Technical Steering Committee (TSC) member and see our current members.
+              </Paragraph>
+              <a
+                href='/community/tsc'
+                className='inline-flex items-center px-6 py-3 text-secondary-500 dark:text-secondary-400 border-2 border-secondary-500 dark:border-secondary-400 rounded-lg hover:bg-secondary-500 hover:text-white dark:hover:bg-secondary-500 dark:hover:text-white transition-all font-medium group'
+              >
+                <svg
+                  className='w-5 h-5 mr-2 transform group-hover:translate-x-1 transition-transform'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M13 7l5 5m0 0l-5 5m5-5H6'
+                  />
+                </svg>
+                Learn More
+              </a>
+            </div>
+          </div>
+
+          {/* Right Preview Image */}
+          <div className='flex-1 w-full lg:max-w-2xl'>
+            <div className='relative bg-white dark:bg-dark-card rounded-lg shadow-2xl dark:shadow-primary-500/20 overflow-hidden border border-gray-200 dark:border-gray-700'>
+              <img 
+                src='/img/social/communitypage.webp' 
+                alt='AsyncAPI GitHub Community Preview' 
+                className='w-full h-auto'
+              />
+            </div>
+          </div>
+        </div>
       </div>
-      <div className='mt-20 flex flex-col items-center justify-center text-center'>
-        <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.xl}>
-          Home of #CommunityOps
-        </Heading>
-        <div>
-          <Heading
-            level={HeadingLevel.h2}
-            typeStyle={HeadingTypeStyle.bodyLg}
-            textColor='text-gray-700'
-            className='text-slate-500'
-          >
-            Join the conversation with over 10k+ developers from literally everywhere.
+
+      {/* AsyncAPI Slack Section */}
+      <div className='mt-20 py-20 px-6 md:px-12'>
+        <div className='max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16'>
+          {/* Left Content */}
+          <div className='flex-1 space-y-6'>
+            <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.xl} className='text-gray-900 dark:text-dark-heading font-bold'>
+              AsyncAPI Slack
+            </Heading>
+            <Paragraph typeStyle={ParagraphTypeStyle.lg} className='text-gray-700 dark:text-gray-300 leading-relaxed'>
+              AsyncAPI&apos;s incredible community of developers, designers, technical writers, and more hail from over 83 countries. We actively contribute, collaborate, and mentor others on how to build with AsyncAPI.
+            </Paragraph>
+            <a
+              href='https://asyncapi.com/slack-invite'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='inline-flex items-center px-8 py-4 bg-primary-500 hover:bg-primary-600 dark:bg-primary-500 dark:hover:bg-primary-600 text-white rounded-lg transition-all font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'
+            >
+              Join the Slack Community
+            </a>
+          </div>
+
+          {/* Right Slack Screenshot */}
+          <div className='flex-1 w-full lg:max-w-2xl'>
+            <div className='relative rounded-lg shadow-2xl dark:shadow-primary-500/20 overflow-hidden'>
+              <img 
+                src='/img/social/slack-ss.webp' 
+                alt='AsyncAPI Slack Community Screenshot' 
+                className='w-full h-auto'
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Community Meetings & Events Section */}
+      <div className='mt-20 bg-primary-100 dark:bg-dark-card rounded-3xl py-20 px-6 md:px-12'>
+        <div className='max-w-7xl mx-auto'>
+          {/* Top Content */}
+          <div className='mb-12'>
+            <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className='text-gray-900 dark:text-dark-heading font-bold mb-6'>
+              AsyncAPI Community Meetings & Events
+            </Heading>
+            <Paragraph typeStyle={ParagraphTypeStyle.lg} className='text-gray-700 dark:text-gray-300 leading-relaxed mb-6 max-w-4xl'>
+              Join an AsyncAPI meeting from anywhere in the world! We host both live and recorded community events. You can also sign up for our community newsletter to stay up-to-date on all meetings and events.
+            </Paragraph>
+            <a
+              href='/community/events'
+              className='inline-flex items-center px-8 py-4 bg-primary-500 hover:bg-primary-600 dark:bg-primary-500 dark:hover:bg-primary-600 text-white rounded-lg transition-all font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'
+            >
+              Explore Events
+            </a>
+          </div>
+
+          {/* Bottom Slack Events Screenshot */}
+          <div className='mt-12 flex justify-center'>
+            <div className='relative rounded-lg shadow-2xl dark:shadow-primary-500/20 overflow-hidden bg-white dark:bg-gray-800 max-w-4xl w-full'>
+              <img 
+                src='/img/social/community-3.webp' 
+                alt='AsyncAPI Community Events and Meetings' 
+                className='w-full h-auto'
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Ambassador Programs Section */}
+      <div className='mt-20 py-12 px-6 md:px-12 bg-gray-50 dark:bg-dark-background'>
+        <div className='max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-12'>
+          {/* Left Content */}
+          <div className='flex-1 space-y-4'>
+            <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className='text-gray-900 dark:text-dark-heading font-bold'>
+              Ambassador Programs
+            </Heading>
+            <Paragraph typeStyle={ParagraphTypeStyle.md} className='text-gray-700 dark:text-gray-300 leading-relaxed'>
+              Launch OSS community programs that your community is proud to participate in. Let&apos;s build thriving OSS communities together!
+            </Paragraph>
+            <a
+              href='/community/ambassadors'
+              className='inline-flex items-center px-6 py-3 bg-primary-500 hover:bg-primary-600 dark:bg-primary-500 dark:hover:bg-primary-600 text-white rounded-lg transition-all font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'
+            >
+              Become an Ambassador
+            </a>
+          </div>
+
+          {/* Right Image */}
+          <div className='flex-shrink-0'>
+            <div className='relative w-72 lg:w-96 rounded-xl overflow-hidden shadow-2xl dark:shadow-primary-500/20'>
+              <img 
+                src='/img/social/woman.jpg' 
+                alt='AsyncAPI Ambassador' 
+                className='w-full h-auto object-cover'
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Our Goals, Financials, and Merchandising Section */}
+      <div className='mt-20 py-20 px-6 md:px-12'>
+        <div className='max-w-7xl mx-auto'>
+          {/* Section Title */}
+          <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg} className='text-gray-900 dark:text-dark-heading font-bold mb-12 text-center lg:text-left'>
+            Our Goals, Financials, and Merchandising
           </Heading>
-        </div>
-      </div>
-      <div data-testid='CommunityIndex-HomeCard'>
-        <HomeCards
-          headline='Thanking our AsyncAPI Ambassadors'
-          title='Ambassador Programs'
-          description="Launch OSS community programs that your community is proud to
-            participate in. Let's build thriving OSS communities together!"
-          btnText='Become an ambassador'
-          link='/community/ambassadors'
-          className='bg-ambassador'
-        />
-      </div>
-      <div className='mt-20 w-full md:flex md:justify-between'>
-        <div className='text-white md:w-1/2' data-testid='CommunityIndex-IssuesCard'>
-          <Card
-            taglineBg='bg-pink-100'
-            bg='bg-code-editor-dark'
-            heading='Explore and Contribute to Hot Issues'
-            description='Discover over 100s of interesting issues, suitable for new and existing contributors.'
-            tagline='Issues'
-            icon='🔥'
-            btnText='Explore issues'
-            btnBg='fill-pink-200 text-pink-200'
-            link='/community/dashboard'
-          />
-        </div>
-        <div
-          className='mt-10 flex flex-col justify-between md:mt-0 md:w-[45%]'
-          data-testid='CommunityIndex-SmallsCards'
-        >
-          <div data-testid='CommunityIndex-Newsroom-Card'>
-            <Card
-              icon='📣'
-              tagline='Events & Updates'
-              type={CardType.SMALL}
-              heading='Never Get Left Behind'
-              description='Stay updated with AsyncAPI events, blogs, videos, and community news.'
-              bg='bg-white'
-              link='/community/events-and-updates'
-            />
-          </div>
-          <div className='mt-10 md:mt-0' data-testid='CommunityIndex-Toolings-Card'>
-            <Card
-              icon='🧰'
-              tagline='Toolings'
-              type={CardType.SMALL}
-              heading='Check out our collection of Toolings'
-              description='Discover various AsyncAPI tools to optimize your journey! These tools are made by the community, for the community.'
-              bg='bg-pink-200'
-              link='/tools'
-            />
-          </div>
-        </div>
-      </div>
-      <div className='relative size-full'>
-        <HomeCards
-          headline='Community heartbeat'
-          title='AsyncAPI Community Meetings & Events'
-          description='Join an AsyncAPI meeting from anywhere in the world! We host both
-              live and recorded community events. You can also sign up for our
-              community newsletter to stay up-to-date on all meetings and
-              events.'
-          className='bg-eventCover'
-          btnText='Explore more events'
-          link='/community/events-and-updates'
-        />
-        <div className='absolute right-0 top-0 mt-[100px] hidden w-[500px] justify-end md:block'>
-          <ul>
-            {getEvents(eventsData, 3).map((event: Event, index: number) => {
-              return (
-                <li key={index} className='mt-2 w-full rounded-l-md bg-white p-2 md:p-10'>
-                  <a href={event.url} className='flex'>
-                    <div className='inline-flex h-12 min-w-12 flex-row rounded-full bg-pink-500 font-bold text-white'>
-                      <span className='flex-1 self-center text-center'>{event.date.format('D')}</span>
-                    </div>
-                    <div className='ml-4 text-left'>
-                      <h1 className='text-md md:text-lg'>{event.title}</h1>
-                      <span className='text-xs text-gray-500 md:text-sm'>
-                        {event.date.local().format('LLLL')} UTC
-                        {event.date.local().format('Z')}
-                      </span>
-                    </div>
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </div>
-      <div className='mt-10 flex flex-col sm:flex-row'>
-        <div className='m-5' data-testid='CommunityCards-Goals'>
-          <Card
-            type={CardType.SMALL}
-            tagline='Goals'
-            icon='🎯'
-            heading='2024 AsyncAPI Community Goals'
-            description='Help us improve our 2024 AsyncAPI community building and maintenance goals.'
-            bg='bg-white'
-            link='https://github.com/orgs/asyncapi/discussions/948'
-          />
-        </div>
-        <div className='m-5' data-testid='CommunityCards-TSC'>
-          <Card
-            type={CardType.SMALL}
-            tagline='TSC'
-            icon='🚀'
-            heading='Meet Folks Redefining the Initiative'
-            description='Learn how to become a Technical Steering Committee (TSC) member and see our current members.'
-            bg='bg-white'
-            link='/community/tsc'
-          />
-        </div>
-      </div>
-      <div className='' data-testid='CommunityCards-Slack'>
-        <HomeCards
-          headline='All community info, tracked'
-          title='AsyncAPI Slack'
-          description="AsyncAPI's incredible community of developers, designers,
-              technical writers, and more hail from over 83 countries. We
-              actively contribute, collaborate, and mentor others on how to
-              build with AsyncAPI."
-          btnText='Join AsyncAPI slack'
-          link='https://asyncapi.com/slack-invite'
-          className='bg-channelCover'
-        />
-      </div>
-      <div className='mt-10 flex justify-center'>
-        <div className='m-5 w-full max-w-6xl rounded-lg bg-gray-100 p-8 shadow-md'>
-          <div className='w-full'>
-            <Card
-              type={CardType.SMALL}
-              tagline='Finance'
-              icon='💰'
-              heading='Track Initiative Spending with Budget Analysis'
-              description="Explore our transparent finance section for a detailed analysis of our project's budget.
-               See how we track expenses and gain insights into funds allocation."
-              bg='bg-white'
-              link='/finance'
-            />
+
+          {/* Cards Grid */}
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+            {/* Community Goal Card */}
+            <a 
+              href='https://github.com/orgs/asyncapi/discussions/948' 
+              target='_blank'
+              rel='noopener noreferrer'
+              className='relative group bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border border-purple-200 dark:border-purple-700 hover:scale-[1.02] cursor-pointer'
+            >
+              <div className='absolute top-6 right-6'>
+                <svg className='w-8 h-8 text-purple-400 dark:text-purple-300 group-hover:text-purple-500 dark:group-hover:text-purple-200 transition-colors' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14' />
+                </svg>
+              </div>
+              <div className='mb-6'>
+                <svg className='w-12 h-12 text-purple-600 dark:text-purple-400' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z' />
+                </svg>
+              </div>
+              <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.md} className='text-purple-900 dark:text-purple-100 font-bold mb-3'>
+                Community Goal
+              </Heading>
+              <Paragraph typeStyle={ParagraphTypeStyle.sm} className='text-purple-800 dark:text-purple-200'>
+                Help us improve our 2024 AsyncAPI community building and maintenance goals.
+              </Paragraph>
+            </a>
+
+            {/* Swags & Goodies Card */}
+            <a 
+              href='https://www.store.asyncapi.com/' 
+              target='_blank'
+              rel='noopener noreferrer'
+              className='relative group bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-900/20 dark:to-pink-800/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border border-pink-200 dark:border-pink-700 hover:scale-[1.02] cursor-pointer'
+            >
+              <div className='absolute top-6 right-6'>
+                <svg className='w-8 h-8 text-pink-400 dark:text-pink-300 group-hover:text-pink-500 dark:group-hover:text-pink-200 transition-colors' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14' />
+                </svg>
+              </div>
+              <div className='mb-6'>
+                <svg className='w-12 h-12 text-pink-600 dark:text-pink-400' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z' />
+                </svg>
+              </div>
+              <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.md} className='text-pink-900 dark:text-pink-100 font-bold mb-3'>
+                Swags & Goodies
+              </Heading>
+              <Paragraph typeStyle={ParagraphTypeStyle.sm} className='text-pink-800 dark:text-pink-200'>
+                Explore our swag collection of AsyncAPI-themed t-shirts and goodies.
+              </Paragraph>
+            </a>
+
+            {/* Finance Card */}
+            <Link 
+              href='/finance'
+              className='relative group bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-900/20 dark:to-cyan-800/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border border-cyan-200 dark:border-cyan-700 hover:scale-[1.02] cursor-pointer block'
+            >
+              <div className='absolute top-6 right-6'>
+                <svg className='w-8 h-8 text-cyan-400 dark:text-cyan-300 group-hover:text-cyan-500 dark:group-hover:text-cyan-200 transition-colors' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14' />
+                </svg>
+              </div>
+              <div className='mb-6'>
+                <svg className='w-12 h-12 text-cyan-600 dark:text-cyan-400' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z' />
+                </svg>
+              </div>
+              <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.md} className='text-cyan-900 dark:text-cyan-100 font-bold mb-3'>
+                Finance
+              </Heading>
+              <Paragraph typeStyle={ParagraphTypeStyle.sm} className='text-cyan-800 dark:text-cyan-200'>
+                Explore our transparent finance section for a detailed analysis of our project&apos;s budget. See how we track expenses and gain insights into funds allocation.
+              </Paragraph>
+            </Link>
           </div>
         </div>
-        {/* <div className='m-5'>
-          <Card
-            type={CardType.SMALL}
-            tagline='Store'
-            icon='🛒'
-            heading='Swags and Goodies'
-            description='Explore our swag collection of AsyncAPI-themed t-shirts and goodies.'
-            link='https://www.store.asyncapi.com/'
-            bg='bg-primary-200'
-          />
-        </div> */}
       </div>
-      <div className='mt-8 rounded-lg bg-dark py-12 md:mt-20' data-testid='CommunityCard-subscribe'>
+
+      {/* Toolings Showcase Section */}
+      <ToolingsShowcase />
+
+      {/* Newsletter Subscribe Section */}
+      <div className='mt-20 rounded-lg bg-dark py-12 md:mt-20' data-testid='CommunityCard-subscribe'>
         <NewsletterSubscribe dark />
       </div>
     </GenericLayout>
