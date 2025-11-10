@@ -45,7 +45,7 @@ export default function UpcomingEventsSection() {
         key='prev'
         onClick={() => goToPage(currentPage - 1)}
         disabled={currentPage === 1}
-        className='rounded border border-gray-300 bg-white px-3 py-2 text-gray-700 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50'
+        className='rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-dark-card px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:cursor-not-allowed disabled:opacity-50'
         data-testid='Pagination-Prev'
       >
         &lt;
@@ -58,7 +58,7 @@ export default function UpcomingEventsSection() {
         <button
           key={1}
           onClick={() => goToPage(1)}
-          className='rounded border border-gray-300 bg-white px-4 py-2 text-gray-700 hover:bg-gray-50'
+          className='rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-dark-card px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
           data-testid='Pagination-Page-1'
         >
           1
@@ -66,7 +66,7 @@ export default function UpcomingEventsSection() {
       );
       if (startPage > 2) {
         pageNumbers.push(
-          <span key='ellipsis1' className='px-2 text-gray-500'>
+          <span key='ellipsis1' className='px-2 text-gray-500 dark:text-gray-400'>
             ...
           </span>
         );
@@ -81,8 +81,8 @@ export default function UpcomingEventsSection() {
           onClick={() => goToPage(i)}
           className={`rounded border px-4 py-2 ${
             currentPage === i
-              ? 'border-indigo-600 bg-indigo-600 text-white'
-              : 'border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
+              ? 'border-indigo-600 dark:border-primary-500 bg-indigo-600 dark:bg-primary-500 text-white'
+              : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-dark-card text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
           }`}
           data-testid={`Pagination-Page-${i}`}
         >
@@ -95,7 +95,7 @@ export default function UpcomingEventsSection() {
     if (endPage < totalPages) {
       if (endPage < totalPages - 1) {
         pageNumbers.push(
-          <span key='ellipsis2' className='px-2 text-gray-500'>
+          <span key='ellipsis2' className='px-2 text-gray-500 dark:text-gray-400'>
             ...
           </span>
         );
@@ -104,7 +104,7 @@ export default function UpcomingEventsSection() {
         <button
           key={totalPages}
           onClick={() => goToPage(totalPages)}
-          className='rounded border border-gray-300 bg-white px-4 py-2 text-gray-700 hover:bg-gray-50'
+          className='rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-dark-card px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
           data-testid={`Pagination-Page-${totalPages}`}
         >
           {totalPages}
@@ -118,7 +118,7 @@ export default function UpcomingEventsSection() {
         key='next'
         onClick={() => goToPage(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className='rounded border border-gray-300 bg-white px-3 py-2 text-gray-700 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50'
+        className='rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-dark-card px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:cursor-not-allowed disabled:opacity-50'
         data-testid='Pagination-Next'
       >
         &gt;
@@ -131,10 +131,10 @@ export default function UpcomingEventsSection() {
   return (
     <div className='py-20' data-testid='UpcomingEvents-Section'>
       <div className='text-center'>
-        <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className='mb-4 text-gray-900'>
+        <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className='mb-4 text-gray-900 dark:text-dark-heading'>
           Upcoming Events
         </Heading>
-        <Paragraph typeStyle={ParagraphTypeStyle.md} className='mx-auto mb-12 max-w-2xl text-gray-600'>
+        <Paragraph typeStyle={ParagraphTypeStyle.md} className='mx-auto mb-12 max-w-2xl text-gray-600 dark:text-gray-300'>
           Don&apos;t miss out on these amazing community gatherings
         </Paragraph>
       </div>
@@ -164,11 +164,11 @@ export default function UpcomingEventsSection() {
         >
           <div className='flex items-center gap-2'>{renderPageNumbers()}</div>
           <div className='flex items-center gap-2'>
-            <span className='text-sm text-gray-600'>Go to page</span>
+            <span className='text-sm text-gray-600 dark:text-gray-400'>Go to page</span>
             <select
               value={currentPage}
               onChange={(e) => goToPage(Number(e.target.value))}
-              className='rounded border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 hover:bg-gray-50'
+              className='rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-dark-card px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
               data-testid='Pagination-Dropdown'
             >
               {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (

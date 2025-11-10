@@ -145,6 +145,10 @@ abbr[title] {
   transition: 0.2s;
 }
 
+.dark .orbit {
+  border-color: rgba(168, 126, 252, 0.3);
+}
+
 .orbit > div {
   cursor: pointer;
 }
@@ -317,6 +321,11 @@ abbr[title] {
   border-radius: 10px;
   box-shadow: 5px 20px 18px 10px #e8e8e8;
   background: linear-gradient(225deg, #2dccfd 9.35%, #ad20e2 88.41%);
+}
+
+.dark .gh-img {
+  border-color: rgba(168, 126, 252, 0.2);
+  box-shadow: 5px 20px 18px 10px rgba(136, 81, 251, 0.1);
 }
 
 .community-pattern {
