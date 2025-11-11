@@ -17,13 +17,13 @@ interface SponsorsProps {
 export default function PlatinumSponsors({ className = '', showSupportBanner = true }: SponsorsProps): React.ReactNode {
   return (
     <div className={`text-center ${className}`}>
-      <ul className='mb-4 flex flex-wrap items-center justify-center md:px-4'>
+      <ul className='mb-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-8 px-4 sm:gap-x-12 sm:gap-y-10'>
         {platinumSponsors.map((sponsor, index) => (
-          <li key={index} className='w-2/3 sm:w-1/4 md:w-1/3 lg:w-1/5' data-testid='Sponsors-list'>
+          <li key={index} data-testid='Sponsors-list'>
             <a
               href={sponsor.website}
               target='_blank'
-              className='relative block p-4 text-center sm:p-0'
+              className='group relative flex min-h-24 items-center justify-center rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:shadow-lg'
               rel='noopener noreferrer'
               data-testid='Sponsors-link'
             >
