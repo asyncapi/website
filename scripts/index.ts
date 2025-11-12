@@ -59,7 +59,7 @@ async function start() {
       return parseFloat(b) - parseFloat(a);
     });
 
-  if (yearsList.length === 0) {
+  if (!yearsList || yearsList.length === 0) {
     throw new Error('No finance data found in the finance directory.');
   }
 
