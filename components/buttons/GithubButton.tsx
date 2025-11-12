@@ -38,7 +38,7 @@ export default function GithubButton({
         href={href}
         iconPosition={iconPosition}
         target={target}
-        className={`${className}ml-1 hidden xl:inline-block`}
+        className={`${className} ml-1 hidden xl:inline-block`}
         data-testid='Github-button'
         bgClassName='bg-gray-800 hover:bg-gray-700'
         buttonSize={inNav ? ButtonSize.SMALL : ButtonSize.DEFAULT}
