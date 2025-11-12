@@ -6,6 +6,8 @@ import type { IButtonDefaultProps } from '../../types/components/buttons/types';
 import { useTranslation } from '../../utils/i18n';
 import IconGithub from '../icons/Github';
 import Button from './Button';
+import Link from 'next/link';
+import { useWindowSize } from '@/utils/windowSize';
 
 interface IGithubButtonProps extends IButtonDefaultProps {
   inNav?: boolean;
@@ -28,18 +30,27 @@ export default function GithubButton({
   inNav
 }: IGithubButtonProps) {
   const { t } = useTranslation('common');
+  const { width } = useWindowSize();
 
   return (
-    <Button
-      text={t(text)}
-      icon={<IconGithub className='-mt-1 inline-block size-6' />}
-      href={href}
-      iconPosition={iconPosition}
-      target={target}
-      className={className}
-      data-testid='Github-button'
-      bgClassName='bg-gray-800 hover:bg-gray-700'
-      buttonSize={inNav ? ButtonSize.SMALL : ButtonSize.DEFAULT}
-    />
+    <div className="flex items-center">
+      {width > 1144 ? (
+        <Button
+          text={t(text)}
+          icon={<IconGithub className="-mt-1 inline-block size-6" />}
+          href={href}
+          iconPosition={iconPosition}
+          target={target}
+          className={className}
+          data-testid="Github-button"
+          bgClassName="bg-gray-800 hover:bg-gray-700"
+          buttonSize={inNav ? ButtonSize.SMALL : ButtonSize.DEFAULT}
+        />
+      ) : (
+        <Link href="https://github.com/asyncapi" target="_blank">
+          <IconGithub className="-mt-1 ml-5 inline-block size-8 cursor-pointer" />
+        </Link>
+      )}
+    </div>
   );
 }
