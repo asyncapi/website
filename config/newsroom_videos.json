@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/zOkWc886ZZI/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting, Tuesday November 11th 2025",
+    "description": "https://github.com/asyncapi/community/issues/2107.",
+    "videoId": "zOkWc886ZZI"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/KnXXiv0HEMA/hqdefault.jpg",
     "title": "Governance Board Meeting, Monday November 3rd 2025",
     "description": "https://github.com/asyncapi/community/issues/2116.",
@@ -12,21 +18,15 @@
     "videoId": "KbT7Pw6j46E"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/gn6765Le_zQ/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting, Tuesday September 23rd 2025",
-    "description": "https://github.com/asyncapi/community/issues/2066.",
-    "videoId": "gn6765Le_zQ"
+    "image_url": "https://i.ytimg.com/vi/B773vgCaCkU/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting, Tuesday October 21st 2025",
+    "description": "https://github.com/asyncapi/community/issues/2087.",
+    "videoId": "B773vgCaCkU"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/m-aLlapR2Mg/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting , Tuesday September 9th 2025",
-    "description": "https://github.com/asyncapi/community/issues/2060.",
-    "videoId": "m-aLlapR2Mg"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/7vvdmDVZPX0/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting , Tuesday July 29th 2025",
-    "description": "https://github.com/asyncapi/community/issues/1988.",
-    "videoId": "7vvdmDVZPX0"
+    "image_url": "https://i.ytimg.com/vi/nNl0HUdBnmg/hqdefault.jpg",
+    "title": "Kickstart your AsyncAPI journey with Springwolf",
+    "description": "Join us on the 14th of October at 4 PM UTC for a deep dive into Springwolf, the open-source solution for generating AsyncAPI ...",
+    "videoId": "nNl0HUdBnmg"
   }
 ]
