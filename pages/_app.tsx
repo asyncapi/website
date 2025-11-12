@@ -21,12 +21,10 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <AppContext.Provider value={{ path: router.asPath }}>
       {/* <MDXProvider components={mdxComponents}> */}
-      <Head>
-        <Script
-          strategy="afterInteractive"
-          src="https://buttons.github.io/buttons.js"
-        />
-      </Head>
+      <Script
+        strategy="afterInteractive"
+        src="https://buttons.github.io/buttons.js"
+      />
       <AlgoliaSearch>
         <div className="flex min-h-screen flex-col">
           <Banner />
