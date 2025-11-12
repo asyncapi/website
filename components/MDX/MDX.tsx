@@ -12,7 +12,7 @@ import {
   TwitterShareButton,
   TwitterTimelineEmbed,
   TwitterTweetEmbed,
-  TwitterVideoEmbed,
+  TwitterVideoEmbed
 } from 'react-twitter-embed';
 import YouTube from 'react-youtube-embed';
 
@@ -39,14 +39,7 @@ import Profiles from '../Profiles';
 import Remember from '../Remember';
 import Sponsors from '../sponsors/PlatinumSponsors';
 import Warning from '../Warning';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHeader,
-  TableRow,
-  Thead,
-} from './MDXTable';
+import { Table, TableBody, TableCell, TableHeader, TableRow, Thead } from './MDXTable';
 
 let mermaidInitialized = false;
 
@@ -73,8 +66,8 @@ function initializeMermaid() {
       fontSize: '18px',
       primaryTextColor: '#242929',
       tertiaryColor: '#F7F9FA',
-      tertiaryBorderColor: '#BFC6C7',
-    },
+      tertiaryBorderColor: '#BFC6C7'
+    }
   });
 }
 
@@ -111,8 +104,9 @@ function MermaidDiagram({ graph }: MermaidDiagramProps) {
 
     (async () => {
       try {
-        const { svg } = await mermaid.render(uuid(), graph);
-        setSvg(svg);
+        const { svg: svgGraph } = await mermaid.render(uuid(), graph);
+
+        setSvg(svgGraph);
       } catch (e) {
         setSvg(null);
         // eslint-disable-next-line no-console
@@ -139,12 +133,7 @@ interface CodeComponentProps {
  * @param {string} [props.className] - The code block class name.
  * @param {string} [props.metastring] - The code block metastring.
  */
-function CodeComponent({
-  children,
-  className = '',
-  metastring = '',
-  ...rest
-}: CodeComponentProps) {
+function CodeComponent({ children, className = '', metastring = '', ...rest }: CodeComponentProps) {
   let caption;
   const meta = metastring.split(/([\w]+=[\w\d\s\-_:><.]+)/) || [];
 
@@ -157,8 +146,7 @@ function CodeComponent({
     }
   });
   const maybeLanguage = className.match(/language-([\w\d\-_]+)/);
-  const language =
-    maybeLanguage && maybeLanguage.length >= 2 ? maybeLanguage[1] : undefined;
+  const language = maybeLanguage && maybeLanguage.length >= 2 ? maybeLanguage[1] : undefined;
 
   if (language === 'mermaid') {
     return <MermaidDiagram graph={children} />;
@@ -215,10 +203,7 @@ const getMDXComponents = {
     />
   ),
   h5: (props: React.HTMLProps<HTMLHeadingElement>) => (
-    <h5
-      {...props}
-      className={`${props.className || ''} text-md my-4 font-heading font-bold antialiased`}
-    />
+    <h5 {...props} className={`${props.className || ''} text-md my-4 font-heading font-bold antialiased`} />
   ),
   h6: (props: React.HTMLProps<HTMLHeadingElement>) => (
     <h6
@@ -233,16 +218,10 @@ const getMDXComponents = {
     />
   ),
   p: (props: React.HTMLProps<HTMLParagraphElement>) => (
-    <p
-      {...props}
-      className={`${props.className || ''} my-4 font-body font-regular text-gray-700 antialiased`}
-    />
+    <p {...props} className={`${props.className || ''} my-4 font-body font-regular text-gray-700 antialiased`} />
   ),
   strong: (props: React.HTMLProps<HTMLSpanElement>) => (
-    <strong
-      {...props}
-      className={`${props.className || ''} my-4 font-body font-semibold text-gray-800 antialiased`}
-    />
+    <strong {...props} className={`${props.className || ''} my-4 font-body font-semibold text-gray-800 antialiased`} />
   ),
   a: (props: React.HTMLProps<HTMLAnchorElement>) => (
     <a
@@ -260,7 +239,7 @@ const getMDXComponents = {
     <ol
       {...props}
       className={`${props.className || ''} font-normal my-4 ml-4 list-decimal font-body text-gray-700 antialiased`}
-      type="1"
+      type='1'
     />
   ),
   li: (props: React.HTMLProps<HTMLLIElement>) => (
@@ -269,13 +248,11 @@ const getMDXComponents = {
       className={`${props.className || ''} my-3 font-body font-regular tracking-tight text-gray-700 antialiased`}
     />
   ),
-  button: Button as React.ComponentType<
-    React.ButtonHTMLAttributes<HTMLButtonElement>
-  >,
+  button: Button as React.ComponentType<React.ButtonHTMLAttributes<HTMLButtonElement>>,
   table: (props: React.HTMLProps<HTMLTableElement>) => (
     <div className={`${props.className || ''} flex flex-col`}>
-      <div className="my-2 overflow-x-auto py-2 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-        <div className="inline-block w-full overflow-auto border-b border-gray-200 align-middle shadow sm:rounded-lg">
+      <div className='my-2 overflow-x-auto py-2 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8'>
+        <div className='inline-block w-full overflow-auto border-b border-gray-200 align-middle shadow sm:rounded-lg'>
           <table {...props} className={`${props.className || ''} w-full`} />
         </div>
       </div>
@@ -296,25 +273,18 @@ const getMDXComponents = {
       className={`${props.className || ''} border-b border-gray-200 px-6 py-4 text-sm leading-5 tracking-tight text-gray-700`}
     />
   ),
-  pre: (props: React.HTMLProps<HTMLPreElement>) =>
-    CodeComponent((props.children as React.ReactElement)?.props),
+  pre: (props: React.HTMLProps<HTMLPreElement>) => CodeComponent((props.children as React.ReactElement)?.props),
   code: (props: React.HTMLProps<HTMLElement>) => (
     <code
       {...props}
       className={`${props.className || ''} rounded bg-gray-200 px-1 py-0.5 font-mono text-sm text-gray-800`}
     />
   ),
-  hr: (props: React.HTMLProps<HTMLHRElement>) => (
-    <hr {...props} className={`${props.className || ''} my-8`} />
-  ),
-  Link: ({
-    href = '/',
-    children,
-    ...props
-  }: React.HTMLProps<HTMLAnchorElement>) => (
+  hr: (props: React.HTMLProps<HTMLHRElement>) => <hr {...props} className={`${props.className || ''} my-8`} />,
+  Link: ({ href = '/', children, ...props }: React.HTMLProps<HTMLAnchorElement>) => (
     <Link
       href={href as string}
-      className="border-b border-secondary-400 font-body font-semibold text-gray-900 antialiased transition duration-300 ease-in-out hover:border-secondary-500"
+      className='border-b border-secondary-400 font-body font-semibold text-gray-900 antialiased transition duration-300 ease-in-out hover:border-secondary-500'
       {...props}
     >
       {children}
@@ -359,7 +329,7 @@ const getMDXComponents = {
   TwitterVideoEmbed,
   TwitterOnAirButton,
   Profiles,
-  Visualizer,
+  Visualizer
 };
 
 export const mdxComponents = getMDXComponents;
@@ -375,7 +345,5 @@ interface MDXProviderProps {
  * @param {React.ReactNode} props.children - The children to render.
  */
 export function MDXProvider({ children }: MDXProviderProps) {
-  return (
-    <CoreMDXProvider components={mdxComponents}>{children}</CoreMDXProvider>
-  );
+  return <CoreMDXProvider components={mdxComponents}>{children}</CoreMDXProvider>;
 }
