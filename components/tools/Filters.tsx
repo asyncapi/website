@@ -115,7 +115,10 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
 
   return (
     <ToolFilter>
-      <div className='z-20 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-dark-card py-4 shadow-lg dark:shadow-xl' data-testid='Filters-div'>
+      <div
+        className='z-20 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-dark-card py-4 shadow-lg dark:shadow-xl'
+        data-testid='Filters-div'
+      >
         <div className='mx-4 flex flex-col gap-2'>
           <div className='flex items-baseline justify-between gap-2'>
             <div className='text-sm text-gray-500 dark:text-gray-400'>
@@ -129,7 +132,10 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
                 setRead={setReadMore}
               />
             </div>
-            <div className='mb-0 flex cursor-pointer gap-0.5 text-xs hover:underline text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors' onClick={undoChanges}>
+            <div
+              className='mb-0 flex cursor-pointer gap-0.5 text-xs hover:underline text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors'
+              onClick={undoChanges}
+            >
               Undo Changes
             </div>
           </div>

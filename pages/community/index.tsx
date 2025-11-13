@@ -29,7 +29,7 @@ export default function CommunityIndexPage() {
         <Header />
       </div>
       <Hero />
-      
+
       {/* CTA Section - Contribute & Committee */}
       <div className='mt-10 md:mt-0 bg-secondary-100 dark:bg-dark-card rounded-3xl py-20 px-6 md:px-12'>
         <div className='max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16'>
@@ -37,7 +37,11 @@ export default function CommunityIndexPage() {
           <div className='flex-1 space-y-12'>
             {/* Contribute to Hot Issues */}
             <div className='space-y-4'>
-              <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className='text-gray-900 dark:text-dark-heading font-bold'>
+              <Heading
+                level={HeadingLevel.h2}
+                typeStyle={HeadingTypeStyle.lg}
+                className='text-gray-900 dark:text-dark-heading font-bold'
+              >
                 Contribute To Hot Issues
               </Heading>
               <Paragraph typeStyle={ParagraphTypeStyle.md} className='text-gray-700 dark:text-gray-300'>
@@ -69,13 +73,17 @@ export default function CommunityIndexPage() {
 
             {/* Become a Committee Member */}
             <div className='space-y-4'>
-              <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className='text-gray-900 dark:text-dark-heading font-bold'>
+              <Heading
+                level={HeadingLevel.h2}
+                typeStyle={HeadingTypeStyle.lg}
+                className='text-gray-900 dark:text-dark-heading font-bold'
+              >
                 Become a Committee Member
               </Heading>
               <Paragraph typeStyle={ParagraphTypeStyle.md} className='text-gray-700 dark:text-gray-300'>
                 Learn how to become a Technical Steering Committee (TSC) member and see our current members.
               </Paragraph>
-              <a
+              <Link
                 href='/community/tsc'
                 className='inline-flex items-center px-6 py-3 text-secondary-500 dark:text-secondary-400 border-2 border-secondary-500 dark:border-secondary-400 rounded-lg hover:bg-secondary-500 hover:text-white dark:hover:bg-secondary-500 dark:hover:text-white transition-all font-medium group'
               >
@@ -86,24 +94,19 @@ export default function CommunityIndexPage() {
                   viewBox='0 0 24 24'
                   xmlns='http://www.w3.org/2000/svg'
                 >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M13 7l5 5m0 0l-5 5m5-5H6'
-                  />
+                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M13 7l5 5m0 0l-5 5m5-5H6' />
                 </svg>
                 Learn More
-              </a>
+              </Link>
             </div>
           </div>
 
           {/* Right Preview Image */}
           <div className='flex-1 w-full lg:max-w-2xl'>
             <div className='relative bg-white dark:bg-dark-card rounded-lg shadow-2xl dark:shadow-primary-500/20 overflow-hidden border border-gray-200 dark:border-gray-700'>
-              <img 
-                src='/img/social/communitypage.webp' 
-                alt='AsyncAPI GitHub Community Preview' 
+              <img
+                src='/img/social/communitypage.webp'
+                alt='AsyncAPI GitHub Community Preview'
                 className='w-full h-auto'
               />
             </div>
@@ -116,11 +119,16 @@ export default function CommunityIndexPage() {
         <div className='max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16'>
           {/* Left Content */}
           <div className='flex-1 space-y-6'>
-            <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.xl} className='text-gray-900 dark:text-dark-heading font-bold'>
+            <Heading
+              level={HeadingLevel.h1}
+              typeStyle={HeadingTypeStyle.xl}
+              className='text-gray-900 dark:text-dark-heading font-bold'
+            >
               AsyncAPI Slack
             </Heading>
             <Paragraph typeStyle={ParagraphTypeStyle.lg} className='text-gray-700 dark:text-gray-300 leading-relaxed'>
-              AsyncAPI&apos;s incredible community of developers, designers, technical writers, and more hail from over 83 countries. We actively contribute, collaborate, and mentor others on how to build with AsyncAPI.
+              AsyncAPI&apos;s incredible community of developers, designers, technical writers, and more hail from over
+              83 countries. We actively contribute, collaborate, and mentor others on how to build with AsyncAPI.
             </Paragraph>
             <a
               href='https://asyncapi.com/slack-invite'
@@ -135,9 +143,9 @@ export default function CommunityIndexPage() {
           {/* Right Slack Screenshot */}
           <div className='flex-1 w-full lg:max-w-2xl'>
             <div className='relative rounded-lg shadow-2xl dark:shadow-primary-500/20 overflow-hidden'>
-              <img 
-                src='/img/social/slack-ss.webp' 
-                alt='AsyncAPI Slack Community Screenshot' 
+              <img
+                src='/img/social/slack-ss.webp'
+                alt='AsyncAPI Slack Community Screenshot'
                 className='w-full h-auto'
               />
             </div>
@@ -150,26 +158,34 @@ export default function CommunityIndexPage() {
         <div className='max-w-7xl mx-auto'>
           {/* Top Content */}
           <div className='mb-12'>
-            <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className='text-gray-900 dark:text-dark-heading font-bold mb-6'>
+            <Heading
+              level={HeadingLevel.h2}
+              typeStyle={HeadingTypeStyle.lg}
+              className='text-gray-900 dark:text-dark-heading font-bold mb-6'
+            >
               AsyncAPI Community Meetings & Events
             </Heading>
-            <Paragraph typeStyle={ParagraphTypeStyle.lg} className='text-gray-700 dark:text-gray-300 leading-relaxed mb-6 max-w-4xl'>
-              Join an AsyncAPI meeting from anywhere in the world! We host both live and recorded community events. You can also sign up for our community newsletter to stay up-to-date on all meetings and events.
+            <Paragraph
+              typeStyle={ParagraphTypeStyle.lg}
+              className='text-gray-700 dark:text-gray-300 leading-relaxed mb-6 max-w-4xl'
+            >
+              Join an AsyncAPI meeting from anywhere in the world! We host both live and recorded community events. You
+              can also sign up for our community newsletter to stay up-to-date on all meetings and events.
             </Paragraph>
-            <a
+            <Link
               href='/community/events'
               className='inline-flex items-center px-8 py-4 bg-primary-500 hover:bg-primary-600 dark:bg-primary-500 dark:hover:bg-primary-600 text-white rounded-lg transition-all font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'
             >
               Explore Events
-            </a>
+            </Link>
           </div>
 
           {/* Bottom Slack Events Screenshot */}
           <div className='mt-12 flex justify-center'>
             <div className='relative rounded-lg shadow-2xl dark:shadow-primary-500/20 overflow-hidden bg-white dark:bg-gray-800 max-w-4xl w-full'>
-              <img 
-                src='/img/social/community-3.webp' 
-                alt='AsyncAPI Community Events and Meetings' 
+              <img
+                src='/img/social/community-3.webp'
+                alt='AsyncAPI Community Events and Meetings'
                 className='w-full h-auto'
               />
             </div>
@@ -182,28 +198,29 @@ export default function CommunityIndexPage() {
         <div className='max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-12'>
           {/* Left Content */}
           <div className='flex-1 space-y-4'>
-            <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className='text-gray-900 dark:text-dark-heading font-bold'>
+            <Heading
+              level={HeadingLevel.h2}
+              typeStyle={HeadingTypeStyle.lg}
+              className='text-gray-900 dark:text-dark-heading font-bold'
+            >
               Ambassador Programs
             </Heading>
             <Paragraph typeStyle={ParagraphTypeStyle.md} className='text-gray-700 dark:text-gray-300 leading-relaxed'>
-              Launch OSS community programs that your community is proud to participate in. Let&apos;s build thriving OSS communities together!
+              Launch OSS community programs that your community is proud to participate in. Let&apos;s build thriving
+              OSS communities together!
             </Paragraph>
-            <a
+            <Link
               href='/community/ambassadors'
               className='inline-flex items-center px-6 py-3 bg-primary-500 hover:bg-primary-600 dark:bg-primary-500 dark:hover:bg-primary-600 text-white rounded-lg transition-all font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'
             >
               Become an Ambassador
-            </a>
+            </Link>
           </div>
 
           {/* Right Image */}
           <div className='flex-shrink-0'>
             <div className='relative w-72 lg:w-96 rounded-xl overflow-hidden shadow-2xl dark:shadow-primary-500/20'>
-              <img 
-                src='/img/social/woman.jpg' 
-                alt='AsyncAPI Ambassador' 
-                className='w-full h-auto object-cover'
-              />
+              <img src='/img/social/woman.jpg' alt='AsyncAPI Ambassador' className='w-full h-auto object-cover' />
             </div>
           </div>
         </div>
@@ -213,30 +230,58 @@ export default function CommunityIndexPage() {
       <div className='mt-20 py-20 px-6 md:px-12'>
         <div className='max-w-7xl mx-auto'>
           {/* Section Title */}
-          <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg} className='text-gray-900 dark:text-dark-heading font-bold mb-12 text-center lg:text-left'>
+          <Heading
+            level={HeadingLevel.h1}
+            typeStyle={HeadingTypeStyle.lg}
+            className='text-gray-900 dark:text-dark-heading font-bold mb-12 text-center lg:text-left'
+          >
             Our Goals, Financials, and Merchandising
           </Heading>
 
           {/* Cards Grid */}
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
             {/* Community Goal Card */}
-            <a 
-              href='https://github.com/orgs/asyncapi/discussions/948' 
+            <a
+              href='https://github.com/orgs/asyncapi/discussions/948'
               target='_blank'
               rel='noopener noreferrer'
               className='relative group bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border border-purple-200 dark:border-purple-700 hover:scale-[1.02] cursor-pointer'
             >
               <div className='absolute top-6 right-6'>
-                <svg className='w-8 h-8 text-purple-400 dark:text-purple-300 group-hover:text-purple-500 dark:group-hover:text-purple-200 transition-colors' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14' />
+                <svg
+                  className='w-8 h-8 text-purple-400 dark:text-purple-300 group-hover:text-purple-500 dark:group-hover:text-purple-200 transition-colors'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
+                  />
                 </svg>
               </div>
               <div className='mb-6'>
-                <svg className='w-12 h-12 text-purple-600 dark:text-purple-400' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z' />
+                <svg
+                  className='w-12 h-12 text-purple-600 dark:text-purple-400'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z'
+                  />
                 </svg>
               </div>
-              <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.md} className='text-purple-900 dark:text-purple-100 font-bold mb-3'>
+              <Heading
+                level={HeadingLevel.h3}
+                typeStyle={HeadingTypeStyle.md}
+                className='text-purple-900 dark:text-purple-100 font-bold mb-3'
+              >
                 Community Goal
               </Heading>
               <Paragraph typeStyle={ParagraphTypeStyle.sm} className='text-purple-800 dark:text-purple-200'>
@@ -245,23 +290,47 @@ export default function CommunityIndexPage() {
             </a>
 
             {/* Swags & Goodies Card */}
-            <a 
-              href='https://www.store.asyncapi.com/' 
+            <a
+              href='https://www.store.asyncapi.com/'
               target='_blank'
               rel='noopener noreferrer'
               className='relative group bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-900/20 dark:to-pink-800/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border border-pink-200 dark:border-pink-700 hover:scale-[1.02] cursor-pointer'
             >
               <div className='absolute top-6 right-6'>
-                <svg className='w-8 h-8 text-pink-400 dark:text-pink-300 group-hover:text-pink-500 dark:group-hover:text-pink-200 transition-colors' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14' />
+                <svg
+                  className='w-8 h-8 text-pink-400 dark:text-pink-300 group-hover:text-pink-500 dark:group-hover:text-pink-200 transition-colors'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
+                  />
                 </svg>
               </div>
               <div className='mb-6'>
-                <svg className='w-12 h-12 text-pink-600 dark:text-pink-400' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z' />
+                <svg
+                  className='w-12 h-12 text-pink-600 dark:text-pink-400'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z'
+                  />
                 </svg>
               </div>
-              <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.md} className='text-pink-900 dark:text-pink-100 font-bold mb-3'>
+              <Heading
+                level={HeadingLevel.h3}
+                typeStyle={HeadingTypeStyle.md}
+                className='text-pink-900 dark:text-pink-100 font-bold mb-3'
+              >
                 Swags & Goodies
               </Heading>
               <Paragraph typeStyle={ParagraphTypeStyle.sm} className='text-pink-800 dark:text-pink-200'>
@@ -270,25 +339,50 @@ export default function CommunityIndexPage() {
             </a>
 
             {/* Finance Card */}
-            <Link 
+            <Link
               href='/finance'
               className='relative group bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-900/20 dark:to-cyan-800/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border border-cyan-200 dark:border-cyan-700 hover:scale-[1.02] cursor-pointer block'
             >
               <div className='absolute top-6 right-6'>
-                <svg className='w-8 h-8 text-cyan-400 dark:text-cyan-300 group-hover:text-cyan-500 dark:group-hover:text-cyan-200 transition-colors' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14' />
+                <svg
+                  className='w-8 h-8 text-cyan-400 dark:text-cyan-300 group-hover:text-cyan-500 dark:group-hover:text-cyan-200 transition-colors'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
+                  />
                 </svg>
               </div>
               <div className='mb-6'>
-                <svg className='w-12 h-12 text-cyan-600 dark:text-cyan-400' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z' />
+                <svg
+                  className='w-12 h-12 text-cyan-600 dark:text-cyan-400'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z'
+                  />
                 </svg>
               </div>
-              <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.md} className='text-cyan-900 dark:text-cyan-100 font-bold mb-3'>
+              <Heading
+                level={HeadingLevel.h3}
+                typeStyle={HeadingTypeStyle.md}
+                className='text-cyan-900 dark:text-cyan-100 font-bold mb-3'
+              >
                 Finance
               </Heading>
               <Paragraph typeStyle={ParagraphTypeStyle.sm} className='text-cyan-800 dark:text-cyan-200'>
-                Explore our transparent finance section for a detailed analysis of our project&apos;s budget. See how we track expenses and gain insights into funds allocation.
+                Explore our transparent finance section for a detailed analysis of our project&apos;s budget. See how we
+                track expenses and gain insights into funds allocation.
               </Paragraph>
             </Link>
           </div>

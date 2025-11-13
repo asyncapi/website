@@ -131,10 +131,17 @@ export default function UpcomingEventsSection() {
   return (
     <div className='py-20' data-testid='UpcomingEvents-Section'>
       <div className='text-center'>
-        <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className='mb-4 text-gray-900 dark:text-dark-heading'>
+        <Heading
+          level={HeadingLevel.h2}
+          typeStyle={HeadingTypeStyle.lg}
+          className='mb-4 text-gray-900 dark:text-dark-heading'
+        >
           Upcoming Events
         </Heading>
-        <Paragraph typeStyle={ParagraphTypeStyle.md} className='mx-auto mb-12 max-w-2xl text-gray-600 dark:text-gray-300'>
+        <Paragraph
+          typeStyle={ParagraphTypeStyle.md}
+          className='mx-auto mb-12 max-w-2xl text-gray-600 dark:text-gray-300'
+        >
           Don&apos;t miss out on these amazing community gatherings
         </Paragraph>
       </div>

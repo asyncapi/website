@@ -63,7 +63,11 @@ export default function Card({
             </Heading>
           </div>
           <div className='mt-2' data-testid='Card-desc'>
-            <Paragraph textColor={bg === 'bg-white' ? 'text-gray-600' : 'text-black'} typeStyle={ParagraphTypeStyle.sm} className='dark:text-gray-300'>
+            <Paragraph
+              textColor={bg === 'bg-white' ? 'text-gray-600' : 'text-black'}
+              typeStyle={ParagraphTypeStyle.sm}
+              className='dark:text-gray-300'
+            >
               {description}
             </Paragraph>
           </div>
@@ -88,12 +92,19 @@ export default function Card({
       </div>
 
       <div className='mt-10' data-testid='Card-heading-lg'>
-        <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg} textColor={bg && 'text-white'} className={!bg ? 'dark:text-dark-heading' : ''}>
+        <Heading
+          level={HeadingLevel.h1}
+          typeStyle={HeadingTypeStyle.lg}
+          textColor={bg && 'text-white'}
+          className={bg ? '' : 'dark:text-dark-heading'}
+        >
           {heading}
         </Heading>
       </div>
       <div className='mt-6' data-testid='Card-desc-lg'>
-        <Paragraph textColor={bg && 'text-gray-400'} className={!bg ? 'dark:text-gray-300' : ''}>{description}</Paragraph>
+        <Paragraph textColor={bg && 'text-gray-400'} className={bg ? '' : 'dark:text-gray-300'}>
+          {description}
+        </Paragraph>
       </div>
       <div className='mt-10'>
         <Link href={link} data-testid='Card-link-lg'>

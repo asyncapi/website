@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
@@ -101,10 +102,10 @@ export default function ToolingsShowcase() {
 
   const handleToolChange = (toolName: string) => {
     if (toolName === selectedTool) return;
-    
+
     // Start shuffle animation
     setIsShuffling(true);
-    
+
     // Change tool after shuffle animation starts
     setTimeout(() => {
       setSelectedTool(toolName);
@@ -133,12 +134,14 @@ export default function ToolingsShowcase() {
             </div>
 
             {/* Explore Tools Button */}
-            <a
+            <Link
               href='/tools'
-              className='inline-block px-8 py-4 bg-primary-500 hover:bg-primary-600 dark:bg-primary-500 dark:hover:bg-primary-600 text-white rounded-lg transition-all font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'
+              className='inline-block px-8 py-4 bg-primary-500 hover:bg-primary-600
+                dark:bg-primary-500 dark:hover:bg-primary-600 text-white rounded-lg transition-all
+                font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'
             >
               Explore Tools
-            </a>
+            </Link>
 
             {/* Tool Tags */}
             <div className='flex flex-wrap gap-3 pt-4'>
@@ -147,7 +150,9 @@ export default function ToolingsShowcase() {
                   key={tool.name}
                   onClick={() => handleToolChange(tool.name)}
                   className={`px-4 py-2 border-2 ${tool.color} rounded-lg transition-all font-medium hover:shadow-md ${
-                    selectedTool === tool.name ? 'ring-2 ring-primary-500 ring-offset-2 dark:ring-offset-dark-background' : ''
+                    selectedTool === tool.name
+                      ? 'ring-2 ring-primary-500 ring-offset-2 dark:ring-offset-dark-background'
+                      : ''
                   }`}
                 >
                   {tool.displayName}
@@ -157,12 +162,13 @@ export default function ToolingsShowcase() {
           </div>
 
           {/* Right Card Showcase */}
-          <div 
-            className={`flex-1 w-full lg:max-w-xl flex justify-center lg:justify-end pt-8 pb-4 pl-16 pr-4 transition-all duration-300 ease-in-out ${
-              isShuffling 
-                ? 'opacity-0 scale-90 -rotate-6 translate-x-[-30px]' 
-                : 'opacity-100 scale-100 rotate-0 translate-x-0'
-            }`}
+          <div
+            className={`flex-1 w-full lg:max-w-xl flex justify-center lg:justify-end pt-8 pb-4 
+              pl-16 pr-4 transition-all duration-300 ease-in-out ${
+                isShuffling
+                  ? 'opacity-0 scale-90 -rotate-6 translate-x-[-30px]'
+                  : 'opacity-100 scale-100 rotate-0 translate-x-0'
+              }`}
           >
             <ToolingCard
               name={currentTool.displayName}
@@ -178,4 +184,3 @@ export default function ToolingsShowcase() {
     </div>
   );
 }
-

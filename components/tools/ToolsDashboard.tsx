@@ -203,7 +203,9 @@ export default function ToolsDashboard() {
                 data-testid='ToolsDashboard-category'
               >
                 <div className='font-medium'>Jump to Category</div>
-                <ArrowDown className={`my-auto transition-transform duration-300 ${openCategory ? 'rotate-180' : ''}`} />
+                <ArrowDown
+                  className={`my-auto transition-transform duration-300 ${openCategory ? 'rotate-180' : ''}`}
+                />
               </div>
               {openCategory && (
                 <div className='absolute right-52 top-16 z-20'>
@@ -222,14 +224,20 @@ export default function ToolsDashboard() {
               onChange={(e) => setSearchName(e.target.value)}
             />
             {searchName && (
-              <button className='my-auto h-fit rounded-full p-2 hover:bg-gray-100 dark:hover:bg-dark-background transition-colors duration-200' onClick={() => setSearchName('')}>
+              <button
+                className='my-auto h-fit rounded-full p-2 hover:bg-gray-100 dark:hover:bg-dark-background transition-colors duration-200'
+                onClick={() => setSearchName('')}
+              >
                 <img src='/img/illustrations/icons/close-icon.svg' alt='close' width='10' className='dark:invert' />
               </button>
             )}
           </div>
         </div>
         {isFiltered && (
-          <div className='mt-4 flex cursor-pointer items-center text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200' onClick={clearFilters}>
+          <div
+            className='mt-4 flex cursor-pointer items-center text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200'
+            onClick={clearFilters}
+          >
             <Cross />
             <span className='ml-3 font-medium'>Clear Filters</span>
           </div>
@@ -240,7 +248,10 @@ export default function ToolsDashboard() {
           ) : (
             <div className='p-4'>
               <img src='/img/illustrations/not-found.webp' alt='not found' className='m-auto w-1/2 dark:opacity-80' />
-              <div className='text-center text-lg dark:text-gray-300'> Sorry, we don&apos;t have tools according to your needs. </div>
+              <div className='text-center text-lg dark:text-gray-300'>
+                {' '}
+                Sorry, we don&apos;t have tools according to your needs.{' '}
+              </div>
             </div>
           )}
         </div>
