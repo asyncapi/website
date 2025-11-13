@@ -26,10 +26,15 @@ export default function ToolsList({ toolsListData }: ToolsListProp) {
           return (
             <div className='my-12' key={index} id={categoryName} ref={toolsListData[categoryName].elementRef}>
               <div className='mb-4'>
-                <Heading typeStyle={HeadingTypeStyle.mdSemibold} className='my-2 text-gray-900 dark:text-white font-bold'>
+                <Heading
+                  typeStyle={HeadingTypeStyle.mdSemibold}
+                  className='my-2 text-gray-900 dark:text-white font-bold'
+                >
                   {categoryName}
                 </Heading>
-                <Paragraph typeStyle={ParagraphTypeStyle.md} className='text-gray-700 dark:text-gray-300'>{toolsListData[categoryName].description}</Paragraph>
+                <Paragraph typeStyle={ParagraphTypeStyle.md} className='text-gray-700 dark:text-gray-300'>
+                  {toolsListData[categoryName].description}
+                </Paragraph>
               </div>
               <hr className='my-6 border-gray-200 dark:border-gray-700' />
               <div className='flex grid-cols-3 flex-col gap-8 lg:grid'>

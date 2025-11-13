@@ -53,7 +53,9 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
       <div className='mb-6 px-6 pt-8'>
         <div className='flex flex-col gap-2'>
           <div className='flex w-full justify-between gap-4'>
-            <Heading typeStyle={HeadingTypeStyle.smSemibold} className='dark:text-white'>{toolData.title}</Heading>
+            <Heading typeStyle={HeadingTypeStyle.smSemibold} className='dark:text-white'>
+              {toolData.title}
+            </Heading>
             <div
               className='size-fit min-w-[5.3rem] rounded-lg border border-green-600 dark:border-green-500 bg-green-100 dark:bg-green-900/30 p-1 text-center text-xs text-green-700 dark:text-green-400 font-semibold shadow-sm'
               onMouseEnter={() =>
@@ -179,7 +181,11 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
                   data-testid='ToolsCard-repoUrl'
                 >
                   <div className='m-auto flex w-fit gap-2 items-center'>
-                    <img src='/img/logos/github-black.svg' alt='GitHub' className='w-5 dark:invert group-hover:scale-110 transition-transform duration-200' />
+                    <img
+                      src='/img/logos/github-black.svg'
+                      alt='GitHub'
+                      className='w-5 dark:invert group-hover:scale-110 transition-transform duration-200'
+                    />
                     <div className='text-sm text-gray-700 dark:text-gray-300 font-medium'>View Github</div>
                   </div>
                 </a>
@@ -204,7 +210,11 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
                 data-testid='ToolsCard-websiteUrl'
               >
                 <div className='m-auto flex w-fit gap-2 items-center'>
-                  <img src='/img/illustrations/icons/share.svg' alt='Share' className='w-5 dark:invert group-hover:scale-110 transition-transform duration-200' />
+                  <img
+                    src='/img/illustrations/icons/share.svg'
+                    alt='Share'
+                    className='w-5 dark:invert group-hover:scale-110 transition-transform duration-200'
+                  />
                   <div className='text-sm text-gray-700 dark:text-gray-300 font-medium'>Visit Website</div>
                 </div>
               </a>
@@ -218,7 +228,11 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
                 data-testid='ToolsCard-docsUrl'
               >
                 <div className='m-auto flex w-fit gap-2 items-center'>
-                  <img src='/img/illustrations/icons/docs-icon.svg' alt='Docs' className='w-5 dark:invert group-hover:scale-110 transition-transform duration-200' />
+                  <img
+                    src='/img/illustrations/icons/docs-icon.svg'
+                    alt='Docs'
+                    className='w-5 dark:invert group-hover:scale-110 transition-transform duration-200'
+                  />
                   <div className='text-sm text-gray-700 dark:text-gray-300 font-medium'>Visit Docs</div>
                 </div>
               </a>

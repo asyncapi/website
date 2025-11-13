@@ -30,7 +30,12 @@ export default function HomeCards({ headline, title, description, btnText, link,
     <div className='z-40 mt-20 w-full rounded-lg bg-white dark:bg-dark-card shadow-xl dark:shadow-primary-500/10 md:flex md:h-130 md:justify-between'>
       <div className='flex h-auto w-full flex-col justify-between p-10 text-center md:w-2/5 md:text-left'>
         <div data-testid='HomeCard-main'>
-          <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.md} textColor='text-purple-300' className='dark:text-primary-400'>
+          <Heading
+            level={HeadingLevel.h2}
+            typeStyle={HeadingTypeStyle.md}
+            textColor='text-purple-300'
+            className='dark:text-primary-400'
+          >
             {headline}
           </Heading>
         </div>
