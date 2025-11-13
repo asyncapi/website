@@ -22,25 +22,51 @@ interface ErrorResponse {
  */
 const handler: Handler = async function (event: HandlerEvent) {
   if (event.httpMethod === 'POST') {
-    const { title, feedback } = JSON.parse(event.body || '');
+    let title, feedback;
+    
+    try {
+      const bodyData = JSON.parse(event.body || '{}');
+      title = bodyData.title;
+      feedback = bodyData.feedback;
+    } catch (parseError) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({
+          message: 'Invalid JSON in request body'
+        })
+      };
+    }
+    
+    // Validate required fields
+    if (!title || !feedback) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({
+          message: 'Title and feedback are required'
+        })
+      };
+    }
 
     try {
       // eslint-disable-next-line function-paren-newline
       const createDiscussion: GraphQlQueryResponseData = await graphql(
-        `mutation {
-            createDiscussion(input:{repositoryId:"${repositoryID}", categoryId:"${categoryID}", title:"${title}", body:"${feedback}"}){
+        `mutation($repositoryId: ID!, $categoryId: ID!, $title: String!, $body: String!) {
+            createDiscussion(input:{repositoryId:$repositoryId, categoryId:$categoryId, title:$title, body:$body}){
              discussion{
                url
              }
            }
         }`,
         {
-          owner: 'asyncapi',
-          repo: 'community',
+          repositoryId: repositoryID,
+          categoryId: categoryID,
+          title: title,
+          body: feedback,
           headers: {
             authorization: `token ${process.env.GITHUB_TOKEN_CREATE_DISCUSSION}`
           }
-        });
+        }
+      );
       const { url } = createDiscussion.createDiscussion.discussion;
 
       return {
@@ -55,7 +81,9 @@ const handler: Handler = async function (event: HandlerEvent) {
 
       return {
         statusCode: error.response.status,
-        message: error.response.data.message
+        body: JSON.stringify({
+          message: error.response.data.message
+        })
       };
     }
   } else {
