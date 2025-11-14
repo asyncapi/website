@@ -753,7 +753,7 @@
                 "title": "AsyncAPI-format",
                 "description": "Format an AsyncAPI document by ordering, casing, formatting, and filtering fields.",
                 "links": {
-                    "repoUrl": "https://github.com/asyncapi/converter-go"
+                    "repoUrl": "https://github.com/thim81/asyncapi-format"
                 },
                 "filters": {
                     "language": "JavaScript",
