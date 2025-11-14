@@ -108,6 +108,7 @@ export default function BlogIndexPage() {
                 type='button'
                 className='bg-none text-md mt-1 rounded-md border border-gray-200 px-4 py-2 font-semibold tracking-heading text-gray-800 shadow-none transition-all duration-500 ease-in-out hover:text-gray-700 md:mt-0 md:py-0'
                 onClick={clearFilters}
+                aria-label='Clear all filters'
               >
                 <span className='inline-block'>Clear filters</span>
               </button>
@@ -115,7 +116,7 @@ export default function BlogIndexPage() {
           </div>
           <div>
             {Object.keys(posts).length === 0 && (
-              <div className='mt-16 flex flex-col items-center justify-center'>
+              <div className='mt-16 flex flex-col items-center justify-center'  role='status' aria-live='polite'>
                 <Empty />
                 <p className='mx-auto mt-3 max-w-2xl text-xl leading-7 text-gray-500'>No post matches your filter</p>
               </div>
@@ -123,12 +124,12 @@ export default function BlogIndexPage() {
             {Object.keys(posts).length > 0 && isClient && (
               <ul className='mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3'>
                 {posts.map((post, index) => (
-                  <BlogPostItem key={index} post={post} />
+                  <BlogPostItem key={index} post={post} index={index}/>
                 ))}
               </ul>
             )}
             {Object.keys(posts).length > 0 && !isClient && (
-              <div className='h-screen w-full'>
+              <div className='h-screen w-full' role='status' aria-live='polite' aria-label='Loading blog posts'>
                 <Loader loaderText='Loading Blogs' className='mx-auto my-60' pulsating />
               </div>
             )}
