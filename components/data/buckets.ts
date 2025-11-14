@@ -26,7 +26,7 @@ export const buckets: Bucket[] = [
     title: 'Concepts',
     description: 'Our Concepts section defines the concepts of AsyncAPI features and capabilities.',
     link: '/docs/concepts',
-    className: 'bg-[#EFE6FD]',
+    className: 'bg-primary-100 dark:bg-primary-500/20 border border-primary-500 text-primary-600 dark:text-primary-300',
     borderClassName: 'border-secondary-200',
     href: '/docs/concepts',
     icon: IconGettingStarted
@@ -36,7 +36,7 @@ export const buckets: Bucket[] = [
     title: 'Tutorials',
     description: 'Our Tutorials section teaches beginner processes with AsyncAPI, guiding you from Point A to Point B.',
     link: '/docs/tutorials',
-    className: 'bg-[#EFE6FD]',
+    className: 'bg-primary-100 dark:bg-primary-500/20 border border-primary-500 text-primary-600 dark:text-primary-300',
     borderClassName: 'border-pink-100',
     href: '/docs/tutorials',
     icon: IconTutorials
@@ -46,7 +46,7 @@ export const buckets: Bucket[] = [
     title: 'Guides',
     description: "Our Guides section teaches AsyncAPI's capabilities at a high level.",
     link: '/docs/guides',
-    className: 'bg-[#EFE6FD]',
+    className: 'bg-primary-100 dark:bg-primary-500/20 border border-primary-500 text-primary-600 dark:text-primary-300',
     borderClassName: 'border-primary-200',
     href: '/docs/guides',
     icon: IconGuide
@@ -56,7 +56,7 @@ export const buckets: Bucket[] = [
     title: 'Tools',
     description: 'Our Tools section documents the AsyncAPI tools ecosystem.',
     link: '/docs/tools',
-    className: 'bg-[#EFE6FD]',
+    className: 'bg-primary-100 dark:bg-primary-500/20 border border-primary-500 text-primary-600 dark:text-primary-300',
     borderClassName: 'border-green-200',
     href: '/docs/tools',
     icon: IconUseCases
@@ -66,7 +66,7 @@ export const buckets: Bucket[] = [
     title: 'Reference',
     description: 'Our Reference section documents the AsyncAPI specification.',
     link: '/docs/reference',
-    className: 'bg-[#EFE6FD]',
+    className: 'bg-primary-100 dark:bg-primary-500/20 border border-primary-500 text-primary-600 dark:text-primary-300',
     borderClassName: 'border-yellow-200',
     href: '/docs/reference',
     icon: IconSpec
@@ -76,7 +76,7 @@ export const buckets: Bucket[] = [
     title: 'Migration',
     description: 'Our migration guides on how to upgrade to newer AsyncAPI versions.',
     link: '/docs/migration',
-    className: 'bg-[#EFE6FD]',
+    className: 'bg-primary-100 dark:bg-primary-500/20 border border-primary-500 text-primary-600 dark:text-primary-300',
     borderClassName: 'border-blue-400',
     href: '/docs/migration',
     icon: IconMigration
@@ -86,7 +86,7 @@ export const buckets: Bucket[] = [
     title: 'Community',
     description: 'Our Community section documents the community guidelines and resources.',
     link: '/docs/community',
-    className: 'bg-[#EFE6FD]',
+    className: 'bg-primary-100 dark:bg-primary-500/20 border border-primary-500 text-primary-600 dark:text-primary-300',
     borderClassName: 'border-primary-500',
     href: '/docs/community',
     icon: IconUsers
@@ -96,7 +96,7 @@ export const buckets: Bucket[] = [
     title: 'Specification Explorer',
     description: 'Simplifying our Specification JSON Schema like a pro.',
     link: '/docs/reference/specification/v3.0.0-explorer',
-    className: 'bg-[#EFE6FD]',
+    className: 'bg-primary-100 dark:bg-primary-500/20 border border-primary-500 text-primary-600 dark:text-primary-300',
     borderClassName: 'border-primary-200',
     icon: IconExplorer
   }
