@@ -440,10 +440,11 @@
         "twitter": "harikrishnan83",
         "linkedin": "harikrishnan83",
         "country": "\ud83c\uddee\ud83c\uddf3",
-        "bio": "Co-creator of Specmatic and Perfiz. I also advise organizations, both large and small, on their transformation journey. Apart from bringing ideas to life as working software products, I coach developers, project managers, product owners, and engineering leaders. I have spoken at several conferences, including AACoT 2023, API Specification Conference (#ASC2022), API World, SeleniumConf, Agile2021, Agile India, TestingUY 2021, SREConf, PyCon Singapore, RubyConf India. My areas of interest include distributed systems, concurrency, high-performance application architecture, coaching, and training.",
-        "company": "Specmatic and Polarizer Technologies",
-        "title": "Co-founder and CTO at Specmatic, Founder, and CEO at Polarizer Technologies",
+        "bio": "Hari Krishnan has over two decades of experience in building high-performing teams, designing scalable systems, and driving technical strategy for large enterprises and high-growth startups across industries like finance, telecom, logistics, and retail. As Founder and CEO of Polarizer Technologies he has led enterprise-wide initiatives in architecture, developer experience, test automation and AI adoption. He combines deep technical expertise with executive vision, having worked closely with CXOs on strategy, delivery assurance, and organizational agility. He is widely recognized for his contributions to API governance, platform engineering, and contract-driven development. His areas of interest include distributed systems, AI native products, AI augmented and agentic software delivery.",
+        "company": "Polarizer Technologies",
+        "title": "Founder, and CEO at Polarizer Technologies",
         "img": "https://raw.githubusercontent.com/harikrishnan83/harikrishnan83/master/HariKrishnan-profile.jpg",
+        "isTscMember": true,
         "contributions": [
             {
                 "type": "talk",
@@ -480,6 +481,33 @@
                     "month": "December"
                 },
                 "link": "https://conference.asyncapi.com/venue/Paris"
+            },
+            {
+                "type": "talk",
+                "title": "Unifying OpenAPI & AsyncAPI: Designing JSON Schemas + Examples for Reuse",
+                "date": {
+                    "year": 2025,
+                    "month": "May"
+                },
+                "link": "https://www.openapis.org/events/apidays-new-york-2025"
+            },
+            {
+                "type": "talk",
+                "title": "Reliable AWS Lambda Data Pipelines with AsyncAPI Specification",
+                "date": {
+                    "year": 2025,
+                    "month": "August"
+                },
+                "link": "https://conferences.gotopia.tech/goto-serverless-bengaluru-2025/sessions/3845/reliable-aws-lambda-data-pipelines-with-asyncapi-specification"
+            },
+            {
+                "type": "talk",
+                "title": "AsyncAPI 2.6 to 3.0: Migrating Safely with No-Code Backward Compatibility Checks",
+                "date": {
+                    "year": 2025,
+                    "month": "October"
+                },
+                "link": "https://www.apidays.global/events/india"
             }
         ]
     },
@@ -721,6 +749,75 @@
                     "month": "October"
                 },
                 "link": "https://www.youtube.com/watch?v=I5eplxVQrhI"
+            }
+        ]
+    },
+    {
+        "name": "Ankit Kumar",
+        "github": "ankitk-me",
+        "githubID": 6847653,
+        "slack": "U05G8N33D51",
+        "twitter": "ankitm_me",
+        "linkedin": "ankit28",
+        "country": "\ud83c\uddee\ud83c\uddf3",
+        "bio": "Ankit Kumar leads Developer and Customer Success at Aklivity, bringing over eight years of experience in API infrastructure, streaming platforms, and event-driven architectures. He\u2019s an advocate for modern API connectivity, helping developers adopt event-driven systems through community engagement and shared best practices.",
+        "company": "Aklivity",
+        "title": "Head of Developer and Customer Success",
+        "img": "https://avatars.githubusercontent.com/u/6847653?v=4",
+        "contributions": [
+            {
+                "type": "talk",
+                "title": "Dynamic API Delivery with Zilla: Unleashing the Power of AsyncAPI in EDAs",
+                "date": {
+                    "year": 2023,
+                    "month": "November"
+                },
+                "link": "https://youtu.be/3iFdszHUpgI?si=Z4voghTDAgb-nyUP"
+            },
+            {
+                "type": "talk",
+                "title": "AsyncAPI v3: Streamlining Event-Driven API Design",
+                "date": {
+                    "year": 2025,
+                    "month": "April"
+                },
+                "link": "https://youtu.be/iFXYNubBmQc?si=YN_ShCs9ZDwi1aEk"
+            },
+            {
+                "type": "booth",
+                "title": "Manned the AsyncAPI booth during APIDays Singapore to connect with developers and promote the AsyncAPI initiative.",
+                "date": {
+                    "year": 2025,
+                    "month": "April"
+                },
+                "link": ""
+            },
+            {
+                "type": "article",
+                "title": "AsyncAPI v3: Streamlining Event-Driven API Design",
+                "date": {
+                    "year": 2025,
+                    "month": "May"
+                },
+                "link": "https://www.aklivity.io/post/asyncapi-v3-streamlining-event-driven-api-design"
+            },
+            {
+                "type": "article",
+                "title": "AsyncAPI's Role in Next Gen API Management",
+                "date": {
+                    "year": 2025,
+                    "month": "September"
+                },
+                "link": "https://www.aklivity.io/post/asyncapis-role-in-next-gen-api-management"
+            },
+            {
+                "type": "talk",
+                "title": "AsyncAPI's Role in Shift Left Streaming Architectures",
+                "date": {
+                    "year": 2025,
+                    "month": "October"
+                },
+                "link": "https://confengine.com/conferences/apidays-india-2025/proposal/22979/asyncapis-role-in-shift-left-streaming-architectures"
             }
         ]
     }

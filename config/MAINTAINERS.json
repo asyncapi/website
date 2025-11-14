@@ -166,12 +166,10 @@
             "converter-js",
             "bindings",
             "enterprise-patterns",
-            "raml-dt-schema-parser",
             "openapi-schema-parser",
             "html-template",
             "markdown-template",
             "nodejs-ws-template",
-            "glee",
             "brand"
         ],
         "githubID": 242119
@@ -203,7 +201,6 @@
             "parser-js",
             "converter-js",
             "modelina",
-            "simulator",
             "parser-api",
             "EDAVisualiser"
         ],
@@ -222,8 +219,7 @@
             "spec-json-schemas",
             "studio",
             ".github",
-            "optimizer",
-            "glee"
+            "optimizer"
         ],
         "githubID": 32505158
     },
@@ -278,7 +274,6 @@
             "nodejs-ws-template",
             "java-spring-template",
             ".github",
-            "vs-asyncapi-preview",
             "template-for-generator-templates",
             "community",
             "diff",
@@ -297,16 +292,13 @@
         "repos": [
             "generator",
             "asyncapi-react",
-            "parser-go",
             "parser-js",
             "converter-js",
-            "converter-go",
             "studio",
             "html-template",
             "markdown-template",
             "template-for-generator-templates",
             "modelina",
-            "template-for-go-projects",
             "diff",
             "chatbot",
             "server-api",
@@ -343,18 +335,6 @@
             "python-paho-template"
         ],
         "githubID": 3926925
-    },
-    {
-        "name": "Nektarios Fifes",
-        "github": "NektariosFifes",
-        "linkedin": "nektarios-fifes-372740220",
-        "slack": "U01SE93Q48N",
-        "availableForHire": true,
-        "isTscMember": false,
-        "repos": [
-            "simulator"
-        ],
-        "githubID": 61620751
     },
     {
         "name": "Pavel Bodiachevskii",
@@ -435,14 +415,10 @@
         "availableForHire": false,
         "isTscMember": false,
         "repos": [
-            "parser-go",
             "parser-js",
-            "converter-go",
-            "raml-dt-schema-parser",
             "openapi-schema-parser",
             "avro-schema-parser",
             "go-watermill-template",
-            "template-for-go-projects",
             "parser-api",
             "server-api"
         ],
@@ -459,7 +435,6 @@
         "isTscMember": true,
         "repos": [
             "cli",
-            "glee",
             "bundler"
         ],
         "githubID": 41781438
@@ -995,5 +970,29 @@
             "community"
         ],
         "githubID": 105683440
+    },
+    {
+        "name": "Adi Boghawala",
+        "github": "Adi-204",
+        "twitter": "AdiBoghawala",
+        "linkedin": "adi-boghawala",
+        "slack": "U0867GV384D",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "generator"
+        ],
+        "githubID": 114283933
+    },
+    {
+        "name": "Ruchi Pakhle",
+        "github": "Ruchip16",
+        "twitter": "Ruchicodess",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "vs-asyncapi-preview"
+        ],
+        "githubID": 72685035
     }
 ]

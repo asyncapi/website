@@ -249,8 +249,8 @@
         "title": "FastStream",
         "description": "A powerful and easy-to-use Python framework for building asynchronous services interacting with event streams such as Apache Kafka, RabbitMQ and NATS.",
         "links": {
-          "websiteUrl": "https://faststream.airt.ai",
-          "repoUrl": "https://github.com/airtai/FastStream"
+          "websiteUrl": "https://faststream.ag2.ai",
+          "repoUrl": "https://github.com/ag2ai/FastStream"
         },
         "filters": {
           "language": [
@@ -1202,6 +1202,38 @@
         }
       },
       {
+        "title": "MessageFlow",
+        "description": "Generate system-architecture documentation and diagrams from AsyncAPI specifications.",
+        "links": {
+          "repoUrl": "https://github.com/holydocs/messageflow"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "Go/Golang",
+              "color": "bg-[#8ECFDF]",
+              "borderColor": "border-[#00AFD9]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "Go",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "Kubernetes-native",
+              "color": "bg-[#D7C7F2]",
+              "borderColor": "border-[#A387D2]"
+            }
+          ],
+          "categories": [
+            "documentation-generator"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "Springwolf",
         "description": "Automated documentation for async APIs built with Spring Boot. Like Springfox for AsyncAPI. Auto-generates an AsyncAPI document and a web UI.",
         "links": {
@@ -1279,6 +1311,33 @@
         "links": {
           "websiteUrl": "https://studio.asyncapi.com",
           "repoUrl": "https://github.com/asyncapi/studio"
+        },
+        "filters": {
+          "language": [],
+          "technology": [
+            {
+              "name": "React JS",
+              "color": "bg-[#9FECFA]",
+              "borderColor": "border-[#08D8FE]"
+            },
+            {
+              "name": "TypeScript",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "editor"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "AsyncAPI Studio",
+        "description": null,
+        "links": {
+          "websiteUrl": "https://studio.asyncapi.com",
+          "repoUrl": "https://github.com/TahaShahid203/async-api-issue"
         },
         "filters": {
           "language": [],
@@ -1553,8 +1612,8 @@
         "title": "FastStream",
         "description": "A powerful and easy-to-use Python framework for building asynchronous services interacting with event streams such as Apache Kafka, RabbitMQ and NATS.",
         "links": {
-          "websiteUrl": "https://faststream.airt.ai",
-          "repoUrl": "https://github.com/airtai/FastStream"
+          "websiteUrl": "https://faststream.ag2.ai",
+          "repoUrl": "https://github.com/ag2ai/FastStream"
         },
         "filters": {
           "language": [
@@ -1567,27 +1626,6 @@
           "technology": [],
           "categories": [
             "code-first",
-            "framework"
-          ],
-          "hasCommercial": false
-        }
-      },
-      {
-        "title": "Glee",
-        "description": "Glee — The AsyncAPI framework that will make you smile again :)",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/glee"
-        },
-        "filters": {
-          "language": [],
-          "technology": [
-            {
-              "name": "TypeScript",
-              "color": "bg-[#61d0f2]",
-              "borderColor": "border-[#40ccf7]"
-            }
-          ],
-          "categories": [
             "framework"
           ],
           "hasCommercial": false
@@ -1714,27 +1752,6 @@
       },
       {
         "title": "GitHub Action for Generator",
-        "description": "CLI to work with your AsyncAPI files. You can validate them and in the future use a generator and even bootstrap a new file. Contributions are welcomed!",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/cli"
-        },
-        "filters": {
-          "language": [],
-          "technology": [
-            {
-              "name": "AsyncAPI Generator",
-              "color": "bg-[#61d0f2]",
-              "borderColor": "border-[#40ccf7]"
-            }
-          ],
-          "categories": [
-            "github-actions"
-          ],
-          "hasCommercial": false
-        }
-      },
-      {
-        "title": "GitHub Action for Generator",
         "description": null,
         "links": {
           "repoUrl": "https://github.com/actions-marketplace-validations/asyncapi_github-action-for-generator"
@@ -1750,6 +1767,27 @@
           ],
           "categories": [
             "github-action"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "GitHub Action for Generator",
+        "description": "CLI to work with your AsyncAPI files. You can validate them and in the future use a generator and even bootstrap a new file. Contributions are welcomed!",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/cli"
+        },
+        "filters": {
+          "language": [],
+          "technology": [
+            {
+              "name": "AsyncAPI Generator",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "github-actions"
           ],
           "hasCommercial": false
         }

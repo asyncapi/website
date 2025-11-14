@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: Community Builder and Open Source Fanatic!
 excerpt: 'AsyncAPI community status and project updates for May 2025'
-featured: true
 ---
 
 As May ushers in the warmth of spring, while some of us in the southern hemisphere brace ourselves for the upcoming winter season, it's also a time to recognize and celebrate the dedication of those who contribute to projects that drive innovation in the community. 
