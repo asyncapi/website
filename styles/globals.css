@@ -17,6 +17,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  background-color: white;
+}
+
+html.dark,
+html.dark body {
+  background-color: #121825; /* dark-background color */
 }
 
 li>p {
