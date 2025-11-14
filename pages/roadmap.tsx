@@ -521,7 +521,7 @@ export default function RoadmapPage() {
 
             <div className='relative mt-20'>
               <div className='grid lg:grid-cols-3 lg:gap-8'>
-                <div>
+                <div className='border border-gray-200 rounded-lg shadow-md bg-white p-6'>
                   <div className='mb-2 lg:my-0 lg:text-center'>
                     <Paragraph
                       typeStyle={ParagraphTypeStyle.md}
@@ -549,7 +549,7 @@ export default function RoadmapPage() {
                     to integrate with the existing tools and specs instead.
                   </Paragraph>
                 </div>
-                <div>
+                <div className='border border-gray-200 rounded-lg shadow-md bg-white p-6'>
                   <div className='mb-2 mt-6 lg:my-0 lg:text-center'>
                     <Paragraph
                       typeStyle={ParagraphTypeStyle.md}
@@ -572,7 +572,7 @@ export default function RoadmapPage() {
                     the programming language or framework of choice.
                   </Paragraph>
                 </div>
-                <div>
+                <div className='border border-gray-200 rounded-lg shadow-md bg-white p-6'>
                   <div className='mb-2 mt-6 lg:my-0 lg:text-center'>
                     <Paragraph
                       typeStyle={ParagraphTypeStyle.md}
