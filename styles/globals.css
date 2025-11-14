@@ -25,6 +25,38 @@ html.dark body {
   background-color: #121825; /* dark-background color */
 }
 
+/* Disable transitions on initial load to prevent flash */
+html:not(.transitions-enabled) *,
+html:not(.transitions-enabled) *::before,
+html:not(.transitions-enabled) *::after {
+  transition: none !important;
+}
+
+/* Smooth theme transitions - only enabled after page loads */
+html.transitions-enabled [class*="bg-"],
+html.transitions-enabled [class*="text-"],
+html.transitions-enabled [class*="border-"],
+html.transitions-enabled svg,
+html.transitions-enabled path,
+html.transitions-enabled circle,
+html.transitions-enabled rect,
+html.transitions-enabled line,
+html.transitions-enabled polyline,
+html.transitions-enabled polygon {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-out;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
+
 li>p {
   display: inline;
 }
