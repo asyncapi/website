@@ -1,8 +1,3 @@
-import fs from "fs";
-import pkg from "graceful-fs";
-const { gracefulify } = pkg;
-gracefulify(fs);
-
 import frontmatter from 'remark-frontmatter';
 import images from 'remark-images';
 import gemoji from 'remark-gemoji-to-emoji';
