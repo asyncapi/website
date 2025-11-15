@@ -10,7 +10,7 @@
                     "repoUrl": "https://github.com/APIs-guru/asyncapi-directory"
                 },
                 "filters": {
-                    "language": "JavaScript",
+                    "language": "PrinceTesting",
                     "technology": ["Node.js", "Liquid"],
                     "categories": ["api", "directory"]
                 }
