@@ -38,31 +38,35 @@ class SlackPage {
 
   verifyGoogleLoginButton() {
     cy.get('[data-qa="base_google_login_button"]')
-      .should('have.id', 'google_login_button')
+      .should('be.visible')
+      .and('have.id', 'google_login_button')
       .and('have.attr', 'type', 'button');
   }
 
   verifyAppleLoginButton() {
     cy.get('[data-qa="base_apple_login_button"]')
-      .should('have.id', 'apple_login_button')
+      .should('be.visible')
+      .and('have.id', 'apple_login_button')
       .and('have.attr', 'href')
       .and('include', 'slack.com/shared-invite/oauth/apple/start');
   }
 
   verifyContinueWithEmail() {
-    cy.get('[data-qa="join_with_email"]').should('have.attr', 'type', 'button');
+    cy.get('[data-qa="join_with_email"]')
+      .should('be.visible')
+      .and('have.attr', 'type', 'button');
   }
 
   verifyPrivacyAndTerms() {
-    cy.get('[href="/legal"]').should('have.attr', 'href', '/legal');
+    cy.get('[href="/legal"]')
+      .should('be.visible')
+      .and('have.attr', 'href', '/legal');
   }
 
   verifyContactUs() {
-    cy.get('[href="/help/requests/new"]').should(
-      'have.attr',
-      'href',
-      '/help/requests/new',
-    );
+    cy.get('[href="/help/requests/new"]')
+      .should('be.visible')
+      .and('have.attr', 'href', '/help/requests/new');
   }
 
   verifyChangeRegion() {

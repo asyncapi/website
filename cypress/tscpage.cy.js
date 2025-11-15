@@ -41,7 +41,7 @@ describe('TSC Newsletter Subscription', () => {
     ];
 
     linksToVerify.forEach(({ href, label }) => {
-      cy.get(`a[href="${href}"]`).contains(label);
+      cy.get(`a[href="${href}"]`).contains(label).should('be.visible');
     });
   });
 
