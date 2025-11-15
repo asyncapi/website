@@ -13,7 +13,7 @@ beforeEach(() => {
 
 describe('Docs Page Tests', () => {
   it('User navigates SideBar containing various sections', () => {
-    docsPage.verifyConceptSection();
+    docsPage.goToConceptsSection();
 
     cy.get('@subsections').then((subsections) => {
       subsections.forEach((subsection) => {
