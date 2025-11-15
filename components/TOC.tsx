@@ -38,10 +38,19 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
       // markdown document MDX takes these "a" tags and uses them to render the "id" for headers like
       // a-namedefinitionsapplicationaapplication slugWithATag contains transformed heading name that is later used
       // for scroll spy identification
-      slugWithATag: item.content
-        .replace(/[<>?!:`'."\\/=@#$%^&*()[\]{}+,;]/gi, '')
-        .replace(/\s/gi, '-')
-        .toLowerCase()
+      slugWithATag: (() => {
+        const base = item.content
+          .replace(/[<>?!:`'."\\/=@#$%^&*()[\]{}+,;]/gi, '')
+          .replace(/\s/gi, '-')
+          .toLowerCase();
+
+
+        if (typeof (item as any).seen === 'number' && (item as any).seen > 0) {
+          return `${base}-${(item as any).seen}`;
+        }
+
+        return base;
+      })()
     }));
 
   return (
@@ -56,12 +65,11 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
       >
         <h5
           className={twMerge(`${open && 'mb-4'} flex-1 text-primary-500 font-medium uppercase tracking-wide 
-          text-sm font-sans antialiased ${
-            cssBreakingPoint === 'xl'
+          text-sm font-sans antialiased ${cssBreakingPoint === 'xl'
               ? `xl:mb-4 xl:text-xs xl:text-gray-900 
           xl:font-bold`
               : 'lg:mb-4 lg:text-xs lg:text-gray-900 lg:font-bold'
-          }`)}
+            }`)}
           data-testid='TOC-Heading'
         >
           On this page
@@ -97,3 +105,4 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
     </div>
   );
 }
+
