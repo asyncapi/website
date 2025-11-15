@@ -11,6 +11,7 @@ interface ITOCProps {
     lvl: number;
     content: string;
     slug: string;
+    seen?: number;
   }[];
   contentSelector?: string;
   depth?: number;
@@ -28,7 +29,9 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
   const [open, setOpen] = useState(false);
 
   if (!toc || !toc.length) return null;
+
   const minLevel = toc.reduce((mLevel, item) => (!mLevel || item.lvl < mLevel ? item.lvl : mLevel), 0);
+
   const tocItems = toc
     .filter((item) => item.lvl <= minLevel + depth)
     .map((item) => ({
@@ -44,9 +47,8 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
           .replace(/\s/gi, '-')
           .toLowerCase();
 
-
-        if (typeof (item as any).seen === 'number' && (item as any).seen > 0) {
-          return `${base}-${(item as any).seen}`;
+        if (typeof item.seen === 'number' && item.seen > 0) {
+          return `${base}-${item.seen}`;
         }
 
         return base;
@@ -55,8 +57,10 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
 
   return (
     <div
-      className={twMerge(`${className} ${tocItems.length ? '' : 'hidden'} 
-      ${cssBreakingPoint === 'xl' ? 'xl:block' : 'lg:block'} md:top-24 md:max-h-(screen-14) mb-4 z-20`)}
+      className={twMerge(
+        `${className} ${tocItems.length ? '' : 'hidden'} 
+      ${cssBreakingPoint === 'xl' ? 'xl:block' : 'lg:block'} md:top-24 md:max-h-(screen-14) mb-4 z-20`
+      )}
       onClick={() => setOpen(!open)}
     >
       <div
@@ -64,12 +68,14 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
         ${cssBreakingPoint === 'xl' ? 'xl:cursor-auto' : 'lg:cursor-auto'} xl:mt-2`}
       >
         <h5
-          className={twMerge(`${open && 'mb-4'} flex-1 text-primary-500 font-medium uppercase tracking-wide 
+          className={twMerge(
+            `${open && 'mb-4'} flex-1 text-primary-500 font-medium uppercase tracking-wide 
           text-sm font-sans antialiased ${cssBreakingPoint === 'xl'
               ? `xl:mb-4 xl:text-xs xl:text-gray-900 
           xl:font-bold`
               : 'lg:mb-4 lg:text-xs lg:text-gray-900 lg:font-bold'
-            }`)}
+            }`
+          )}
           data-testid='TOC-Heading'
         >
           On this page
@@ -105,4 +111,3 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
     </div>
   );
 }
-
