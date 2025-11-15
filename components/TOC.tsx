@@ -29,6 +29,7 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
   const [open, setOpen] = useState(false);
 
   if (!toc || !toc.length) return null;
+
   const minLevel = toc.reduce((mLevel, item) => (!mLevel || item.lvl < mLevel ? item.lvl : mLevel), 0);
 
   const tocItems = toc
@@ -68,17 +69,17 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
       >
         <h5
           className={twMerge(
-            `${open && 'mb-4'} flex-1 text-primary-500 font-medium uppercase tracking-wide 
-          text-sm font-sans antialiased ${cssBreakingPoint === 'xl'
-              ? `xl:mb-4 xl:text-xs xl:text-gray-900 
-          xl:font-bold`
-              : 'lg:mb-4 lg:text-xs lg:text-gray-900 lg:font-bold'
+            `${open && 'mb-4'} flex-1 text-primary-500 font-medium uppercase tracking-wide text-sm font-sans antialiased ${
+              cssBreakingPoint === 'xl'
+                ? 'xl:mb-4 xl:text-xs xl:text-gray-900 xl:font-bold'
+                : 'lg:mb-4 lg:text-xs lg:text-gray-900 lg:font-bold'
             }`
           )}
           data-testid='TOC-Heading'
         >
           On this page
         </h5>
+
         <div className={`text-underline p4 text-center ${cssBreakingPoint === 'xl' ? 'xl:hidden' : 'lg:hidden'}`}>
           <ArrowRight
             className={`${open ? '-rotate-90' : 'rotate-90'} -mt-0.5 h-6 
