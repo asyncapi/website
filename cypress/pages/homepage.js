@@ -1,5 +1,38 @@
-import ToolsPage from './ToolsPage';
+import CaseStudiesPage from './CaseStudiesPage';
 import DocsPage from './DocsPage';
+import RoadmapPage from './RoadmapPage';
+import CommunityPage from './CommunityPage';
+import ToolsPage from './ToolsPage';
+import BlogPage from './BlogPage';
+
+import { features } from '../../components/features/FeatureList';
+import packageJson from '../../package.json';
+import landingPageTranslations from '../../public/locales/en/landing-page.json';
+
+const headerText = `${landingPageTranslations.main.header} ${landingPageTranslations.main.subHeader}`;
+
+const githubStarLink = 'https://github.com/asyncapi/spec';
+const readDocsLink = '/docs';
+const letUsKnowLink = `${packageJson.bugs.url}/new`;
+
+const cardTitles = [
+  landingPageTranslations.features['document-apis.name'],
+  landingPageTranslations.features['code-generation.name'],
+  landingPageTranslations.features['open-governance.name'],
+  landingPageTranslations.features['much-more.name'],
+];
+
+const moreCardTitles = [
+  landingPageTranslations.features['specification.name'],
+  landingPageTranslations.features['community.name'],
+];
+
+const homepageLinks = features.flatMap((feature) =>
+  feature.links.map((link) => ({
+    name: link.label,
+    url: link.href,
+  })),
+);
 
 class HomePage {
   visit() {
@@ -106,16 +139,6 @@ class HomePage {
   goToRoadmapPage() {
     cy.contains('a', 'Roadmap').click();
     return new RoadmapPage();
-  }
-
-  goToToolsPage() {
-    cy.get('[data-testid="Navbar-main"]').contains('Tools').click();
-    return new ToolsPage();
-  }
-
-  goToDocsPage() {
-    cy.get('[data-testid="Navbar-main"]').contains('Docs').click();
-    return new DocsPage();
   }
 }
 
