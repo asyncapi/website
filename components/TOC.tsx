@@ -29,7 +29,6 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
   const [open, setOpen] = useState(false);
 
   if (!toc || !toc.length) return null;
-
   const minLevel = toc.reduce((mLevel, item) => (!mLevel || item.lvl < mLevel ? item.lvl : mLevel), 0);
 
   const tocItems = toc
