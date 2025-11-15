@@ -5,11 +5,19 @@ class ToolsPage extends BasePage {
     super.visit('/tools');
   }
 
+  verifyPageLoaded() {
+    cy.contains('h1', 'Tools').should('be.visible');
+  }
+
+  verifyHeader() {
+    this.verifyPageLoaded();
+  }
+
   verifyToolLink(href, heading, linkType) {
     const linkTexts = {
       website: 'Visit Website',
       github: 'View Github',
-      docs: 'Visit Docs'
+      docs: 'Visit Docs',
     };
 
     this.getLink(href, linkTexts[linkType]);
