@@ -5,9 +5,16 @@ class SlackPage {
     );
   }
 
-  isLinkInactive() {
-    return cy.get('body').then(($body) => {
-      return $body.find('.p-refreshed_page__heading').length > 0;
+  waitForPageLoad() {
+    cy.wait(2000);
+  }
+
+  checkLinkStatus(callback) {
+    cy.get('body').then(($body) => {
+      const isInactive =
+        $body.find('.p-refreshed_page__heading').length > 0 &&
+        $body.text().includes('This link is no longer active');
+      callback(isInactive);
     });
   }
 
@@ -15,6 +22,18 @@ class SlackPage {
     cy.get('.p-refreshed_page__heading')
       .should('be.visible')
       .and('have.text', 'This link is no longer active');
+  }
+
+  verifyAllLoginMethods() {
+    this.verifyGoogleLoginButton();
+    this.verifyAppleLoginButton();
+    this.verifyContinueWithEmail();
+  }
+
+  verifyAllFooterLinks() {
+    this.verifyPrivacyAndTerms();
+    this.verifyContactUs();
+    this.verifyChangeRegion();
   }
 
   verifyGoogleLoginButton() {
@@ -37,6 +56,7 @@ class SlackPage {
   verifyPrivacyAndTerms() {
     cy.get('[href="/legal"]').should('have.attr', 'href', '/legal');
   }
+
   verifyContactUs() {
     cy.get('[href="/help/requests/new"]').should(
       'have.attr',
@@ -44,6 +64,7 @@ class SlackPage {
       '/help/requests/new',
     );
   }
+
   verifyChangeRegion() {
     cy.get('a[href="#"]')
       .should('be.visible')
