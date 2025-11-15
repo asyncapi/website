@@ -6,7 +6,13 @@ class SlackPage {
   }
 
   waitForPageLoad() {
-    cy.wait(2000);
+    cy.get('body', { timeout: 10000 }).should(($body) => {
+      const hasInactiveMessage =
+        $body.find('.p-refreshed_page__heading').length > 0;
+      const hasLoginButton =
+        $body.find('[data-qa="base_google_login_button"]').length > 0;
+      expect(hasInactiveMessage || hasLoginButton).to.be.true;
+    });
   }
 
   checkLinkStatus(callback) {
