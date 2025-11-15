@@ -78,7 +78,6 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
         >
           On this page
         </h5>
-
         <div className={`text-underline p4 text-center ${cssBreakingPoint === 'xl' ? 'xl:hidden' : 'lg:hidden'}`}>
           <ArrowRight
             className={`${open ? '-rotate-90' : 'rotate-90'} -mt-0.5 h-6 
