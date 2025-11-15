@@ -45,7 +45,7 @@ AsyncAPI is a community-driven project and we welcome all kinds of contributions
 
 To better understand AsyncAPI and how the Spec 3.0 release will play out, we recommend watching our [past meeting recordings](https://www.youtube.com/watch?v=CLNgLB4-UnA&list=PLbi1gRlP7pihClJY-kXuTRRJ8n1awb0VV). To know how you can contribute, we recommend checking out our [contributing guidelines](https://github.com/asyncapi/spec/blob/master/CONTRIBUTING.md). If you wish to keep track of all the work that is happening on the Spec 3.0 release, we recommend checking out our [GitHub issue](https://github.com/asyncapi/spec/issues/691).
 
-Before landing in your contributions, make sure you follow our [Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md) and the pull request you raised is [described properly](https://github.com/asyncapi/.github/blob/master/CONTRIBUTING.md#conventional-commits). To know how we collaborate using Git & GitHub, follow the [Git workflow](https://github.com/asyncapi/community/blob/master/git-workflow.md) that we have developed for contributors.
+Before landing in your contributions, make sure you follow our [Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md) and the pull request you raised is [described properly](https://github.com/asyncapi/.github/blob/master/CONTRIBUTING.md#conventional-commits). To know how we collaborate using Git & GitHub, follow the [Git workflow](https://github.com/asyncapi/community/blob/master/docs/010-contribution-guidelines/git-workflow.md) that we have developed for contributors.
 
 ## When will the release happen?
 
