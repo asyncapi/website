@@ -20,8 +20,12 @@ class ToolsPage extends BasePage {
       docs: 'Visit Docs',
     };
 
-    this.getLink(href, linkTexts[linkType]);
-    this.getHeaderText('h2', heading);
+    this.getLink(href, linkTexts[linkType])
+      .parents('.rounded-lg.border.shadow-md')
+      .first()
+      .within(() => {
+        cy.get('h2').should('contain', heading);
+      });
   }
 
   verifyWebsiteLinks(href, heading) {
