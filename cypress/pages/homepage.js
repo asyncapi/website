@@ -143,16 +143,6 @@ class HomePage {
     return new RoadmapPage();
   }
 
-  goToToolsPage() {
-    cy.get('[data-testid="Navbar-main"]').contains('Tools').click();
-    return new ToolsPage();
-  }
-
-  goToDocsPage() {
-    cy.get('[data-testid="Navbar-main"]').contains('Docs').click();
-    return new DocsPage();
-  }
-
   goToTSCPage(){
     cy.visit('/community/tsc');
     return new TSCPage();
