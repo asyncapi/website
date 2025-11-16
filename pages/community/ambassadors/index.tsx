@@ -19,6 +19,7 @@ import IconUsersGroup from '../../../components/icons/UsersGroup';
 import IconVideo from '../../../components/icons/Video';
 import GenericLayout from '../../../components/layout/GenericLayout';
 import NewsletterSubscribe from '../../../components/NewsletterSubscribe';
+import PaginationComponent from '../../../components/Pagination';
 import Heading from '../../../components/typography/Heading';
 import ambassadorList from '../../../config/ambassador_lists.json';
 import ambassadors from '../../../config/AMBASSADORS_MEMBERS.json';
@@ -353,39 +354,15 @@ export default function Index() {
           </div>
 
           {/* Pagination */}
-          {totalPages > 1 && (
-            <div className='mt-12 flex items-center justify-center gap-2'>
-              <button
-                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-                disabled={currentPage === 1}
-                className='px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
-              >
-                Previous
-              </button>
-
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                <button
-                  key={page}
-                  onClick={() => setCurrentPage(page)}
-                  className={`px-4 py-2 rounded-lg transition-colors ${
-                    currentPage === page
-                      ? 'bg-primary-500 text-white'
-                      : 'border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
-                  }`}
-                >
-                  {page}
-                </button>
-              ))}
-
-              <button
-                onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-                disabled={currentPage === totalPages}
-                className='px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
-              >
-                Next
-              </button>
-            </div>
-          )}
+          <div className='mt-12'>
+            <PaginationComponent
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={setCurrentPage}
+              variant='simple'
+              showGoToPage={false}
+            />
+          </div>
         </div>
       </div>
       {/* Tokens Section */}

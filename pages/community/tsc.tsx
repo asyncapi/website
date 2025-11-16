@@ -10,6 +10,7 @@ import IconDocument from '../../components/icons/Document';
 import IconUsersGroup from '../../components/icons/UsersGroup';
 import GenericLayout from '../../components/layout/GenericLayout';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
+import PaginationComponent from '../../components/Pagination';
 import tscBoardList from '../../config/TSC_BOARD_MEMBERS.json';
 
 /**
@@ -286,109 +287,12 @@ export default function TSC() {
           </div>
 
           {/* Pagination */}
-          {totalPages > 1 && (
-            <div className='flex justify-center items-center gap-2 flex-wrap'>
-              {/* Previous Button */}
-              <button
-                onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
-                disabled={currentPage === 1}
-                className='w-10 h-10 flex items-center justify-center rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
-                aria-label='Previous page'
-              >
-                ‹
-              </button>
-
-              {/* Page Numbers */}
-              {currentPage > 1 && (
-                <button
-                  onClick={() => setCurrentPage(1)}
-                  className={
-                    'w-10 h-10 flex items-center justify-center rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
-                  }
-                >
-                  1
-                </button>
-              )}
-
-              {currentPage === 1 && (
-                <button className='w-10 h-10 flex items-center justify-center rounded-md bg-primary-500 text-white font-medium'>
-                  1
-                </button>
-              )}
-
-              {currentPage > 2 && currentPage < totalPages - 1 && (
-                <>
-                  {currentPage > 3 && <span className='px-2 text-gray-500 dark:text-gray-400'>...</span>}
-                  {currentPage > 2 && (
-                    <button
-                      onClick={() => setCurrentPage(currentPage)}
-                      className='w-10 h-10 flex items-center justify-center rounded-md bg-primary-500 text-white font-medium'
-                    >
-                      {currentPage}
-                    </button>
-                  )}
-                </>
-              )}
-
-              {currentPage < totalPages && currentPage > 1 && (
-                <>
-                  {currentPage === 2 && (
-                    <button className='w-10 h-10 flex items-center justify-center rounded-md bg-primary-500 text-white font-medium'>
-                      2
-                    </button>
-                  )}
-                  {currentPage > 2 && currentPage < totalPages - 1 && (
-                    <span className='px-2 text-gray-500 dark:text-gray-400'>...</span>
-                  )}
-                </>
-              )}
-
-              {currentPage < totalPages - 1 && totalPages > 2 && (
-                <span className='px-2 text-gray-500 dark:text-gray-400'>...</span>
-              )}
-
-              {currentPage !== totalPages && totalPages > 1 && (
-                <button
-                  onClick={() => setCurrentPage(totalPages)}
-                  className='w-10 h-10 flex items-center justify-center rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
-                >
-                  {totalPages}
-                </button>
-              )}
-
-              {currentPage === totalPages && (
-                <button className='w-10 h-10 flex items-center justify-center rounded-md bg-primary-500 text-white font-medium'>
-                  {totalPages}
-                </button>
-              )}
-
-              {/* Next Button */}
-              <button
-                onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
-                disabled={currentPage === totalPages}
-                className='w-10 h-10 flex items-center justify-center rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
-                aria-label='Next page'
-              >
-                ›
-              </button>
-
-              {/* Go to Page Dropdown */}
-              <div className='flex items-center gap-2 ml-4'>
-                <span className='text-sm text-gray-600 dark:text-gray-400'>Go to page</span>
-                <select
-                  value={currentPage}
-                  onChange={(e) => setCurrentPage(Number(e.target.value))}
-                  className='px-3 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent'
-                >
-                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                    <option key={page} value={page}>
-                      {page}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-          )}
+          <PaginationComponent
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={setCurrentPage}
+            variant='compact'
+          />
         </div>
       </div>
 
