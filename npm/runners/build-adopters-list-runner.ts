@@ -23,24 +23,18 @@ export interface BuildAdoptersListOptions {
  * @param options - Optional configuration for source and target paths.
  * @throws {CustomError} When the build process fails or an error occurs in the runner.
  */
-async function runBuildAdoptersList(
-  options: BuildAdoptersListOptions = {},
-): Promise<void> {
+async function runBuildAdoptersList(options: BuildAdoptersListOptions = {}): Promise<void> {
   try {
     // Use provided options or fall back to default production paths
-    const sourcePath =
-      options.sourcePath ||
-      resolve(currentDirPath, '../../config', 'adopters.yml');
-    const targetPath =
-      options.targetPath ||
-      resolve(currentDirPath, '../../config', 'adopters.json');
+    const sourcePath = options.sourcePath || resolve(currentDirPath, '../../config', 'adopters.yml');
+    const targetPath = options.targetPath || resolve(currentDirPath, '../../config', 'adopters.json');
 
     await buildAdoptersList(sourcePath, targetPath);
   } catch (error) {
     const customError = CustomError.fromError(error, {
       category: 'script',
       operation: 'runBuildAdoptersList',
-      detail: `Build adopters list failed - sourcePath: ${options.sourcePath}, targetPath: ${options.targetPath}`,
+      detail: `Build adopters list failed - sourcePath: ${options.sourcePath}, targetPath: ${options.targetPath}`
     });
 
     logger.error('Build adopters list runner failed', customError);
@@ -50,10 +44,7 @@ async function runBuildAdoptersList(
 }
 
 // Only run CLI if NOT in test environment
-if (
-  process.env.NODE_ENV !== 'test' &&
-  process.env.VITEST_WORKER_ID === undefined
-) {
+if (process.env.NODE_ENV !== 'test' && process.env.VITEST_WORKER_ID === undefined) {
   // Self-executing async function to handle top-level await
   (async () => {
     try {
@@ -62,7 +53,7 @@ if (
       const customError = CustomError.fromError(error, {
         category: 'script',
         operation: 'runBuildAdoptersList',
-        detail: 'Build adopters list runner CLI failed',
+        detail: 'Build adopters list runner CLI failed'
       });
 
       logger.error('Build adopters list runner CLI failed', customError);

@@ -52,7 +52,11 @@ export async function runBuildPostList(options: BuildPostListOptions = {}): Prom
 
 // Only run CLI if this file is executed directly, not when imported
 // Strict check: only run if NOT in test environment
-if (process.env.NODE_ENV !== 'test' && process.env.VITEST_WORKER_ID === undefined && import.meta.url === `file://${process.argv[1]}`) {
+if (
+  process.env.NODE_ENV !== 'test' &&
+  process.env.VITEST_WORKER_ID === undefined &&
+  import.meta.url === `file://${process.argv[1]}`
+) {
   // Self-executing async function to handle top-level await
   (async () => {
     try {
