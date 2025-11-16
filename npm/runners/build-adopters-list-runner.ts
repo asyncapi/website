@@ -34,7 +34,7 @@ async function runBuildAdoptersList(options: BuildAdoptersListOptions = {}): Pro
     const customError = CustomError.fromError(error, {
       category: 'script',
       operation: 'runBuildAdoptersList',
-      detail: `Build adopters list failed - sourcePath: ${options.sourcePath}, targetPath: ${options.targetPath}`
+      detail: `Build adopters list failed - sourcePath: ${sourcePath}, targetPath: ${targetPath}`
     });
 
     logger.error('Build adopters list runner failed', customError);
