@@ -197,7 +197,7 @@ const Index: React.FC<IndexProps> = ({
         <CaseTOC
           toc={content}
           cssBreakingPoint='lg'
-          className='sticky top-20 mt-4 max-h-screen overflow-y-auto bg-blue-100 p-4 lg:top-24 lg:-mr-14 lg:mt-2 lg:max-h-(screen-16) lg:min-w-[265px] lg:max-w-72 lg:flex-1 lg:border-l lg:border-gray-200 lg:bg-transparent lg:pb-8 lg:pt-0'
+          className='sticky top-20 mt-4 max-h-screen overflow-y-auto bg-blue-100 p-4 lg:top-24 lg:-mr-14 lg:mt-2 lg:max-h-(screen-16) lg:min-w-[265px] lg:max-w-72 lg:flex-1 lg:border-l lg:border-gray-200 lg:dark:border-gray-700 lg:bg-transparent lg:pb-8 lg:pt-0'
         />
         <div className='case-study px-4 sm:px-6 lg:max-w-[812px] lg:flex-1 xl:max-w-5xl xl:px-0'>
           <div className='mt-10 flex flex-col items-center justify-between md:mt-20 md:flex-row'>
@@ -211,7 +211,7 @@ const Index: React.FC<IndexProps> = ({
                     <Heading typeStyle={HeadingTypeStyle.bodyLg}>
                       <Link
                         href={item.link}
-                        className='text-md font-medium leading-5 text-gray-900 hover:underline'
+                        className='text-md font-medium leading-5 text-gray-900 dark:text-gray-300 hover:underline'
                         target='_blank'
                       >
                         <span>
