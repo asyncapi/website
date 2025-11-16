@@ -6,6 +6,7 @@ import GenericLayout from '@/components/layout/GenericLayout';
 import Loader from '@/components/Loader';
 import BlogPostItem from '@/components/navigation/BlogPostItem';
 import Filter from '@/components/navigation/Filter';
+import PaginationComponent from '@/components/Pagination';
 import Heading from '@/components/typography/Heading';
 import Paragraph from '@/components/typography/Paragraph';
 import TextLink from '@/components/typography/TextLink';
@@ -239,75 +240,13 @@ export default function BlogIndexPage() {
                     </div>
 
                     {/* Desktop/Tablet Pagination */}
-                    <div className='hidden sm:flex items-center justify-center gap-2'>
-                      <button
-                        onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-                        disabled={currentPage === 1}
-                        className='rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-background disabled:opacity-50 disabled:cursor-not-allowed'
-                      >
-                        ‹
-                      </button>
-
-                      {Array.from({ length: totalPages }, (_, i) => i + 1)
-                        .filter((page) => {
-                          return (
-                            page === 1 || page === totalPages || (page >= currentPage - 1 && page <= currentPage + 1)
-                          );
-                        })
-                        .map((page, index, array) => {
-                          if (index > 0 && page - array[index - 1] > 1) {
-                            return (
-                              <React.Fragment key={`ellipsis-${page}`}>
-                                <span className='px-2 text-gray-500 dark:text-gray-400'>...</span>
-                                <button
-                                  onClick={() => setCurrentPage(page)}
-                                  className={`rounded-md px-4 py-2 text-sm font-medium ${
-                                    currentPage === page
-                                      ? 'bg-primary-500 text-white'
-                                      : 'border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-background'
-                                  }`}
-                                >
-                                  {page}
-                                </button>
-                              </React.Fragment>
-                            );
-                          }
-
-                          return (
-                            <button
-                              key={page}
-                              onClick={() => setCurrentPage(page)}
-                              className={`rounded-md px-4 py-2 text-sm font-medium ${
-                                currentPage === page
-                                  ? 'bg-primary-500 text-white'
-                                  : 'border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-background'
-                              }`}
-                            >
-                              {page}
-                            </button>
-                          );
-                        })}
-
-                      <button
-                        onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-                        disabled={currentPage === totalPages}
-                        className='rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-background disabled:opacity-50 disabled:cursor-not-allowed'
-                      >
-                        ›
-                      </button>
-
-                      <span className='ml-4 text-sm text-gray-600 dark:text-gray-400'>Go to page</span>
-                      <select
-                        value={currentPage}
-                        onChange={(e) => setCurrentPage(Number(e.target.value))}
-                        className='rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card px-2 py-1 text-sm text-gray-700 dark:text-gray-300'
-                      >
-                        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                          <option key={page} value={page}>
-                            {page}
-                          </option>
-                        ))}
-                      </select>
+                    <div className='hidden sm:block'>
+                      <PaginationComponent
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        onPageChange={setCurrentPage}
+                        variant='compact'
+                      />
                     </div>
                   </div>
                 )}

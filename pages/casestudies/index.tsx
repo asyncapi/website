@@ -9,6 +9,7 @@ import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import Button from '../../components/buttons/Button';
 import Container from '../../components/layout/Container';
 import GenericLayout from '../../components/layout/GenericLayout';
+import PaginationComponent from '../../components/Pagination';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
 import AdoptersList from '../../config/adopters.json';
@@ -32,7 +33,6 @@ const ITEMS_PER_PAGE = 5;
  */
 export default function CaseStudies() {
   const [currentPage, setCurrentPage] = useState(1);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const adopters = AdoptersList as Adopter[];
   const totalPages = Math.ceil(adopters.length / ITEMS_PER_PAGE);
@@ -258,105 +258,14 @@ export default function CaseStudies() {
           </div>
 
           {/* Pagination */}
-          {totalPages > 1 && (
-            <div className='flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-2 mt-6'>
-              {/* Page Navigation Buttons */}
-              <div className='flex items-center gap-2'>
-                <button
-                  onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
-                  disabled={currentPage === 1}
-                  className='px-3 py-2 rounded-lg text-gray-600 dark:text-gray-400 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
-                  aria-label='Previous page'
-                >
-                  ‹
-                </button>
-
-                {Array.from({ length: Math.min(totalPages, 5) }, (_, i) => {
-                  let pageNum;
-
-                  if (totalPages <= 5) {
-                    pageNum = i + 1;
-                  } else if (currentPage <= 3) {
-                    pageNum = i + 1;
-                  } else if (currentPage >= totalPages - 2) {
-                    pageNum = totalPages - 4 + i;
-                  } else {
-                    pageNum = currentPage - 2 + i;
-                  }
-
-                  return (
-                    <button
-                      key={pageNum}
-                      onClick={() => setCurrentPage(pageNum)}
-                      className={`px-4 py-2 rounded-lg transition-colors ${
-                        currentPage === pageNum
-                          ? 'bg-primary-500 text-white'
-                          : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'
-                      }`}
-                    >
-                      {pageNum}
-                    </button>
-                  );
-                })}
-
-                {totalPages > 5 && <span className='px-2 text-gray-600 dark:text-gray-400'>...</span>}
-
-                <button
-                  onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
-                  disabled={currentPage === totalPages}
-                  className='px-3 py-2 rounded-lg text-gray-600 dark:text-gray-400 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
-                  aria-label='Next page'
-                >
-                  ›
-                </button>
-              </div>
-
-              {/* Go to Page Dropdown - Custom dropdown that opens downward */}
-              <div className='relative flex items-center gap-2 sm:ml-4'>
-                <span className='text-sm text-gray-600 dark:text-gray-400'>Go to page</span>
-                <div className='relative'>
-                  <button
-                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    onBlur={() => setTimeout(() => setIsDropdownOpen(false), 200)}
-                    className='px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm min-w-[60px] text-left flex items-center justify-between gap-2 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors'
-                    aria-label='Select page'
-                  >
-                    {currentPage}
-                    <svg
-                      className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
-                      fill='none'
-                      stroke='currentColor'
-                      viewBox='0 0 24 24'
-                    >
-                      <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M19 9l-7 7-7-7' />
-                    </svg>
-                  </button>
-
-                  {/* Dropdown Menu - Opens downward */}
-                  {isDropdownOpen && (
-                    <div className='absolute top-full left-0 mt-1 w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg max-h-48 overflow-y-auto z-50'>
-                      {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                        <button
-                          key={page}
-                          onClick={() => {
-                            setCurrentPage(page);
-                            setIsDropdownOpen(false);
-                          }}
-                          className={`w-full px-3 py-2 text-left text-sm transition-colors ${
-                            currentPage === page
-                              ? 'bg-primary-500 text-white hover:bg-primary-600'
-                              : 'text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'
-                          }`}
-                        >
-                          {page}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          )}
+          <div className='mt-6'>
+            <PaginationComponent
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={setCurrentPage}
+              variant='default'
+            />
+          </div>
         </Container>
       </section>
 
