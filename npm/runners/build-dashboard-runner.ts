@@ -55,7 +55,7 @@ if (process.env.NODE_ENV !== 'test' && typeof process.env.VITEST_WORKER_ID === u
       // Extract output file path from CLI args
       const outputFileArgIndex = process.argv.indexOf('--outputFile');
       const outputPath =
-        outputFileArgIndex === -1
+        outputFileArgIndex === -1 || !process.argv[outputFileArgIndex + 1]
           ? resolve(currentDirPath, '../../dashboard.json')
           : process.argv[outputFileArgIndex + 1];
 
