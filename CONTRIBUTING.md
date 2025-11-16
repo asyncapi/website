@@ -49,7 +49,7 @@ Issues and pull requests without activity from the triager or committer within 1
 
 ### Issues
 
-[Open an issue](https://github.com/asyncapi/asyncapi/issues/new) **only** if you want to report a bug or a feature. Don't open issues for questions or support; join our [AsyncAPI Slack workspace](https://www.asyncapi.com/slack-invite) and post your queries on the relevant channels. Don't forget to follow our [Slack Etiquette](https://github.com/asyncapi/community/blob/master/slack-etiquette.md) while interacting with community members! It's more likely you'll get help, and much faster!
+[Open an issue](https://github.com/asyncapi/asyncapi/issues/new) **only** if you want to report a bug or a feature. Don't open issues for questions or support; join our [AsyncAPI Slack workspace](https://www.asyncapi.com/slack-invite) and post your queries on the relevant channels. Don't forget to follow our [Slack Etiquette](https://github.com/asyncapi/community/blob/master/docs/060-meetings-and-communication/slack-etiquette.md) while interacting with community members! It's more likely you'll get help, and much faster!
 
 ### Bug Reports and Feature Requests
 
@@ -84,7 +84,7 @@ When you submit changes, your submissions are understood to be under the same [A
 
 ## Contribution recognition
 
-We use the [All Contributors](https://allcontributors.org/docs/en/specification) specification to handle recognitions. Read the [`recognize contributors` document](https://github.com/asyncapi/community/blob/master/recognize-contributors.md).
+We use the [All Contributors](https://allcontributors.org/docs/en/specification) specification to handle recognitions. Read the [`recognize contributors` document](https://github.com/asyncapi/community/blob/master/docs/010-contribution-guidelines/recognize-contributors.md).
 
 ## Maintainers setup
 
