@@ -109,7 +109,15 @@ describe('URL Checker Tests', () => {
     it('should handle errors gracefully', async () => {
       const invalidDir = path.join(__dirname, 'nonexistent');
 
-      await expect(generatePaths(invalidDir, editOptions)).rejects.toThrow();
+      await expect(generatePaths(invalidDir, editOptions)).rejects.toThrow('Error processing directory');
+    });
+
+    it('should handle errors when reading directory fails', async () => {
+      const mockReaddir = jest.spyOn(fs, 'readdir').mockRejectedValue(new Error('Directory read error'));
+
+      await expect(generatePaths(testDir, editOptions)).rejects.toThrow('Directory read error');
+
+      mockReaddir.mockRestore();
     });
   });
 
@@ -163,6 +171,49 @@ describe('URL Checker Tests', () => {
       );
       await expect(processBatch(testBatch)).rejects.toThrow();
     }, 20000);
+
+    it('should return null when editLink is null', async () => {
+      const batchWithNullLink = [{ filePath: 'test.md', urlPath: 'test', editLink: null }];
+      const results = await processBatch(batchWithNullLink);
+
+      expect(results[0]).toBeNull();
+      expect(mockFetch).not.toHaveBeenCalled();
+    });
+
+    it('should handle errors with proper error message formatting', async () => {
+      const testError = new Error('Test error');
+
+      mockFetch.mockImplementation(() => Promise.reject(testError));
+
+      await expect(processBatch(testBatch)).rejects.toThrow('Error checking');
+    });
+
+    it('should clear timeout in finally block', async () => {
+      const clearTimeoutSpy = jest.spyOn(global, 'clearTimeout');
+
+      mockFetch.mockImplementation(() => Promise.resolve({ status: 200 }));
+
+      await processBatch(testBatch);
+
+      expect(clearTimeoutSpy).toHaveBeenCalled();
+      clearTimeoutSpy.mockRestore();
+    });
+
+    it('should handle empty batch', async () => {
+      const results = await processBatch([]);
+
+      expect(results).toEqual([]);
+      expect(mockFetch).not.toHaveBeenCalled();
+    });
+
+    it('should handle AbortController signal', async () => {
+      const controller = new AbortController();
+
+      controller.abort();
+      mockFetch.mockImplementation(() => Promise.reject(new Error('Aborted')));
+
+      await expect(processBatch(testBatch)).rejects.toThrow();
+    });
   });
 
   describe('checkUrls', () => {
@@ -206,7 +257,66 @@ describe('URL Checker Tests', () => {
     it('should handle errors gracefully', async () => {
       mockFetch.mockImplementation(() => Promise.reject(new Error('Network error')));
 
-      await expect(main()).rejects.toThrow();
+      await expect(main()).rejects.toThrow('Failed to check edit links');
+    });
+
+    it('should handle empty paths array', async () => {
+      // eslint-disable-next-line global-require
+      const mockGeneratePaths = jest.spyOn(require('../../scripts/markdown/check-edit-links'), 'generatePaths');
+
+      mockGeneratePaths.mockResolvedValue([]);
+      mockFetch.mockImplementation(() => Promise.resolve({ status: 200 }));
+
+      await main();
+
+      expect(logger.info).toHaveBeenCalledWith('All URLs are valid.');
+      mockGeneratePaths.mockRestore();
+    });
+  });
+
+  describe('checkUrls edge cases', () => {
+    it('should handle empty paths array', async () => {
+      const results = await checkUrls([]);
+
+      expect(results).toEqual([]);
+    });
+
+    it('should use DOCS_LINK_CHECK_BATCH_SIZE environment variable', async () => {
+      const originalEnv = process.env.DOCS_LINK_CHECK_BATCH_SIZE;
+
+      process.env.DOCS_LINK_CHECK_BATCH_SIZE = '2';
+      mockFetch.mockImplementation(() => Promise.resolve({ status: 200 }));
+
+      const largePathsArray = Array.from({ length: 10 }, (_, i) => ({
+        filePath: `test${i}.md`,
+        urlPath: `test${i}`,
+        editLink: `https://example.com/test${i}`
+      }));
+
+      await checkUrls(largePathsArray);
+
+      // Should create 5 batches (10 items / 2 per batch)
+      expect(logger.info).toHaveBeenCalledWith('Processing 5 batches concurrently...');
+
+      if (originalEnv) {
+        process.env.DOCS_LINK_CHECK_BATCH_SIZE = originalEnv;
+      } else {
+        delete process.env.DOCS_LINK_CHECK_BATCH_SIZE;
+      }
+    });
+
+    it('should handle paths not divisible by batch size', async () => {
+      mockFetch.mockImplementation(() => Promise.resolve({ status: 200 }));
+
+      const pathsArray = Array.from({ length: 7 }, (_, i) => ({
+        filePath: `test${i}.md`,
+        urlPath: `test${i}`,
+        editLink: `https://example.com/test${i}`
+      }));
+
+      const results = await checkUrls(pathsArray);
+
+      expect(results).toEqual([]);
     });
   });
 });

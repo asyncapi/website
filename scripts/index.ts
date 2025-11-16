@@ -33,7 +33,10 @@ async function start() {
   await buildPostList(postDirectories, basePath, writeFilePath);
   await rssFeed('blog', 'AsyncAPI Initiative Blog RSS Feed', 'AsyncAPI Initiative Blog', 'rss.xml');
   await buildCaseStudiesList('config/casestudies', resolve(currentDirPath, '../config', 'case-studies.json'));
-  await buildAdoptersList();
+  await buildAdoptersList(
+    resolve(currentDirPath, '../config', 'adopters.yml'),
+    resolve(currentDirPath, '../config', 'adopters.json')
+  );
   const financeDir = resolve('.', 'config', 'finance');
 
   // loop through all the files finance in directory and find the latest year to build the finance info list

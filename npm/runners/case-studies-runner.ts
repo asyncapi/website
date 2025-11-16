@@ -53,12 +53,18 @@ async function runCaseStudies(options: CaseStudiesOptions = {}): Promise<void> {
   }
 }
 
-// Self-executing async function to handle top-level await
-(async () => {
-  try {
-    await runCaseStudies();
-  } catch (error) {
-    // Ensure we exit with error code
-    process.exit(1);
-  }
-})();
+// Run only in non-test environments
+if (process.env.NODE_ENV !== 'test' && process.env.VITEST_WORKER_ID === undefined) {
+  // Self-executing async function to handle top-level await
+  (async () => {
+    try {
+      await runCaseStudies();
+    } catch (error) {
+      // Ensure we exit with error code
+      process.exit(1);
+    }
+  })();
+}
+
+// Export for testing purposes
+export { runCaseStudies };

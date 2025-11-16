@@ -1,4 +1,4 @@
-import { mkdirSync, readFileSync, rmSync } from 'fs';
+import { mkdirSync, promises as fs, readFileSync } from 'fs';
 import { google } from 'googleapis';
 import path from 'path';
 
@@ -39,8 +39,13 @@ describe('buildMeetings', () => {
     mkdirSync(testDir, { recursive: true });
   });
 
-  afterEach(() => {
-    rmSync(testDir, { recursive: true, force: true });
+  afterEach(async () => {
+    try {
+      await fs.rm(testDir, { recursive: true, force: true });
+    } catch (error) {
+      // Ignore errors if directory doesn't exist or is locked
+      // This can happen on Windows due to file handle delays
+    }
   });
 
   it('should fetch events, process them, and write to a file', async () => {

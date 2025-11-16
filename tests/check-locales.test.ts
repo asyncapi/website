@@ -505,4 +505,54 @@ describe('check-locales', () => {
 
     // This test ensures the filter logic on line 183 is covered
   });
+
+  it('should calculate and log validation summary when errors exist', () => {
+    const languages = ['en', 'de'];
+
+    mockedFs.readdirSync
+      .mockImplementationOnce(() => languages as any)
+      .mockImplementationOnce(() => ['common.json', 'file2.json'] as any)
+      .mockImplementationOnce(() => ['common.json', 'file2.json'] as any);
+
+    mockedFs.statSync.mockImplementation(
+      () =>
+        ({
+          isDirectory: () => true
+        }) as any
+    );
+
+    mockedFs.readFileSync.mockImplementation((filePath: any) => {
+      if (typeof filePath === 'string' && filePath.includes('en/common.json')) {
+        return '{"key1":"value1","key2":"value2"}';
+      }
+      if (typeof filePath === 'string' && filePath.includes('de/common.json')) {
+        return '{"key1":"value1"}';
+      }
+      if (typeof filePath === 'string' && filePath.includes('file2.json')) {
+        return '{"key3":"value3"}';
+      }
+
+      return '{}';
+    });
+
+    expect(() => validateLocales()).toThrow('Some translation keys are missing');
+
+    // Verify validationSummary is calculated and logged
+    expect(logger.error).toHaveBeenCalledWith(
+      'Locale validation failed: Missing translation keys',
+      expect.objectContaining({
+        error: expect.any(Error),
+        operation: 'validateLocales',
+        errorType: 'TRANSLATION_VALIDATION_FAILED',
+        validationSummary: expect.objectContaining({
+          totalFiles: expect.any(Number),
+          totalLanguages: 2,
+          filesWithIssues: expect.any(Number)
+        }),
+        languages: ['en', 'de'],
+        localesDir: expect.any(String),
+        hasErrors: true
+      })
+    );
+  });
 });

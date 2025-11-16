@@ -144,7 +144,9 @@ describe('rssFeed', () => {
   });
 
   it('should throw an error when post is missing required fields', async () => {
-    jest.doMock('../config/posts.json', () => incompletePostMockData, { virtual: true });
+    jest.doMock('../config/posts.json', () => incompletePostMockData, {
+      virtual: true
+    });
 
     await expect(rssFeed(type, title, desc, outputPath)).rejects.toThrow(CustomError);
   });
@@ -153,14 +155,33 @@ describe('rssFeed', () => {
     // Create mock data with multiple posts missing dates to test the mapping function
     const multiMissingDatesMockData = {
       blog: [
-        { title: 'Post 1 without Date', slug: '/blog/post1-no-date', excerpt: 'Test excerpt' },
-        { title: 'Post 2 without Date', slug: '/blog/post2-no-date', excerpt: 'Test excerpt' },
-        { title: null, slug: '/blog/post3-no-date-no-title', excerpt: 'Test excerpt' }, // Test post with no title to ensure slug is used
-        { title: 'Post with Date', slug: '/blog/post-with-date', excerpt: 'Test excerpt', date: '2023-01-01' }
+        {
+          title: 'Post 1 without Date',
+          slug: '/blog/post1-no-date',
+          excerpt: 'Test excerpt'
+        },
+        {
+          title: 'Post 2 without Date',
+          slug: '/blog/post2-no-date',
+          excerpt: 'Test excerpt'
+        },
+        {
+          title: null,
+          slug: '/blog/post3-no-date-no-title',
+          excerpt: 'Test excerpt'
+        }, // Test post with no title to ensure slug is used
+        {
+          title: 'Post with Date',
+          slug: '/blog/post-with-date',
+          excerpt: 'Test excerpt',
+          date: '2023-01-01'
+        }
       ]
     };
 
-    jest.doMock('../config/posts.json', () => multiMissingDatesMockData, { virtual: true });
+    jest.doMock('../config/posts.json', () => multiMissingDatesMockData, {
+      virtual: true
+    });
 
     // This should specifically test the error thrown by the missingDatePosts check
     await expect(rssFeed(type, title, desc, outputPath)).rejects.toThrow(CustomError);
@@ -182,7 +203,9 @@ describe('rssFeed', () => {
       ]
     };
 
-    jest.doMock('../config/posts.json', () => mockDataWithUnknownExt, { virtual: true });
+    jest.doMock('../config/posts.json', () => mockDataWithUnknownExt, {
+      virtual: true
+    });
 
     await expect(rssFeed(type, title, desc, outputPath)).resolves.toBeUndefined();
 
@@ -191,5 +214,57 @@ describe('rssFeed', () => {
 
     expect(fileContent).toContain('<enclosure url="https://www.asyncapi.com/img/test-cover.unknown"');
     expect(fileContent).toContain('type="image/jpeg"'); // Should use default mime type
+  });
+
+  it('should re-throw CustomError instances without wrapping', async () => {
+    jest.doMock('../config/posts.json', () => incompletePostMockData, {
+      virtual: true
+    });
+
+    await expect(rssFeed(type, title, desc, outputPath)).rejects.toThrow(CustomError);
+
+    try {
+      await rssFeed(type, title, desc, outputPath);
+    } catch (error) {
+      expect(error).toBeInstanceOf(CustomError);
+      const customError = error as CustomError;
+
+      expect(customError.context.operation).toBe('rssFeed');
+      expect(customError.context.category).toBe('validation');
+    }
+  });
+
+  it('should wrap non-Error exceptions in CustomError', async () => {
+    jest.doMock('../config/posts.json', () => mockRssData, { virtual: true });
+    const mockWriteFile = jest.spyOn(fs.promises, 'writeFile').mockRejectedValue('String error');
+
+    await expect(rssFeed(type, title, desc, outputPath)).rejects.toThrow(CustomError);
+
+    mockWriteFile.mockRestore();
+  });
+
+  it('should handle posts without cover images (no enclosure)', async () => {
+    const mockDataWithoutCover = {
+      blog: [
+        {
+          title: 'Post without cover',
+          slug: '/blog/no-cover',
+          excerpt: 'Test excerpt',
+          date: '2023-01-01'
+        }
+      ]
+    };
+
+    jest.doMock('../config/posts.json', () => mockDataWithoutCover, {
+      virtual: true
+    });
+
+    await expect(rssFeed(type, title, desc, outputPath)).resolves.toBeUndefined();
+
+    const filePath = path.join(__dirname, '..', 'public', outputPath);
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+
+    expect(fileContent).toContain('<item>');
+    expect(fileContent).not.toContain('<enclosure');
   });
 });
