@@ -9,21 +9,21 @@ import SlackButton from '../buttons/SlackButton';
  */
 export default function Header() {
   return (
-    <div className='sm:flex sm:justify-between' id='main-content'>
+    <div className='sm:flex sm:justify-between items-start' id='main-content'>
       <div className='lg:flex lg:justify-between'>
-        <div className='max-w-xl'>
+        <div className='max-w-2xl'>
           <h2
-            className='text-4xl font-extrabold leading-10 text-gray-900 sm:text-4xl sm:leading-none sm:tracking-tight'
+            className='text-4xl font-extrabold leading-10 text-gray-900 dark:text-white sm:text-4xl sm:leading-none sm:tracking-tight mb-4'
             data-testid='Header-heading'
           >
             Dashboard
           </h2>
-          <p className='mt-5 text-xl leading-7 text-gray-700' data-testid='Header-paragraph'>
+          <p className='text-xl leading-7 text-gray-700 dark:text-gray-300' data-testid='Header-paragraph'>
             Visualize our progress. Get involved.{' '}
           </p>
         </div>
       </div>
-      <div className='mt-3 flex flex-col gap-x-2 gap-y-1 self-end text-center xs:flex-row'>
+      <div className='mt-6 sm:mt-0 flex flex-col gap-2 self-end text-center xs:flex-row'>
         <Button
           text='Contribution Guide'
           href='https://github.com/asyncapi?type=source#-contribute-to-asyncapi'
