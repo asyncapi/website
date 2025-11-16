@@ -288,7 +288,7 @@ describe('Integration: build-dashboard Runner', () => {
     nock.cleanAll();
   });
 
-  it('should handle getDiscussionByID errors gracefully ', async () => {
+  it('should handle getDiscussionByID errors gracefully', async () => {
     const errorOutputPath = resolve(tempDir, 'discussion-error-output.json');
 
     setupGetDiscussionByIDErrorMocks();
