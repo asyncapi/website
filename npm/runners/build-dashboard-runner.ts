@@ -49,7 +49,7 @@ export async function runBuildDashboard(options: BuildDashboardOptions = {}): Pr
 }
 
 // Only run CLI if NOT in test environment (when imported by tests, don't auto-run)
-if (process.env.NODE_ENV !== 'test' && process.env.VITEST_WORKER_ID === undefined) {
+if (process.env.NODE_ENV !== 'test' && typeof process.env.VITEST_WORKER_ID === undefined) {
   (async () => {
     try {
       // Extract output file path from CLI args
