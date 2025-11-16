@@ -4,7 +4,11 @@ import { resolve } from 'path';
 
 import { runBuildPages } from '../../npm/runners/build-pages-runner';
 import { runBuildPostList } from '../../npm/runners/build-post-list-runner';
-import type { Details, Result, TableOfContentsItem } from '../../types/scripts/build-posts-list';
+import type {
+  Details,
+  Result,
+  TableOfContentsItem,
+} from '../../types/scripts/build-posts-list';
 
 /**
  * Utility function to check if an object has a property.
@@ -24,7 +28,12 @@ async function isPagesValid(): Promise<boolean> {
     if (stats.isDirectory()) {
       const files = await fs.readdir(pagesDir);
 
-      if (files.length > 0 && (files.includes('docs') || files.includes('blog') || files.includes('about'))) {
+      if (
+        files.length > 0 &&
+        (files.includes('docs') ||
+          files.includes('blog') ||
+          files.includes('about'))
+      ) {
         // Verify that files have been converted to .mdx
         for (const subdir of ['blog', 'docs', 'about']) {
           const subdirPath = resolve(pagesDir, subdir);
@@ -105,7 +114,7 @@ describe('Integration: build-post-list-runner', () => {
       await waitForPages();
     }
     await runBuildPostList({
-      outputPath
+      outputPath,
     });
 
     const content = await fs.readFile(outputPath, 'utf-8');
@@ -164,9 +173,9 @@ describe('Integration: build-post-list-runner', () => {
       expect.arrayContaining([
         expect.objectContaining({
           title: 'Welcome',
-          slug: '/docs'
-        })
-      ])
+          slug: '/docs',
+        }),
+      ]),
     );
   });
   it('about section contains About entry', () => {
@@ -174,9 +183,9 @@ describe('Integration: build-post-list-runner', () => {
       expect.arrayContaining([
         expect.objectContaining({
           title: 'About',
-          slug: '/about'
-        })
-      ])
+          slug: '/about',
+        }),
+      ]),
     );
   });
 
@@ -284,11 +293,12 @@ describe('Integration: build-post-list-runner', () => {
   it('handles specification files with explorer version', async () => {
     // Test explorer specification files
     const explorerSpecs = output.docs.filter((item: Details) => {
-      return item.slug?.includes('/reference/specification/') && item.title?.includes('Explorer');
+      return item.slug?.includes('/reference/specification/');
     });
 
     // If explorer specs exist, verify they have the correct title format
     explorerSpecs.forEach((item: Details) => {
+      expect(item.title).toBeDefined();
       expect(item.title).toContain('Explorer');
     });
   });
@@ -351,15 +361,21 @@ describe('Integration: build-post-list-runner', () => {
   it('validates error handling for invalid basePath', async () => {
     const { buildPostList } = await import('../../scripts/build-post-list');
 
-    await expect(buildPostList([['pages/blog', '/blog']], '', resolve(tempDir, 'invalid-test.json'))).rejects.toThrow(
-      'basePath is required'
-    );
+    await expect(
+      buildPostList(
+        [['pages/blog', '/blog']],
+        '',
+        resolve(tempDir, 'invalid-test.json'),
+      ),
+    ).rejects.toThrow('basePath is required');
   });
 
   it('validates error handling for empty writeFilePath', async () => {
     const { buildPostList } = await import('../../scripts/build-post-list');
 
-    await expect(buildPostList([['pages/blog', '/blog']], 'pages', '')).rejects.toThrow('writeFilePath is required');
+    await expect(
+      buildPostList([['pages/blog', '/blog']], 'pages', ''),
+    ).rejects.toThrow('writeFilePath is required');
   });
 
   it('validates error handling for empty postDirectories', async () => {
@@ -367,8 +383,8 @@ describe('Integration: build-post-list-runner', () => {
       runBuildPostList({
         outputPath: resolve(tempDir, 'empty-dirs-test.json'),
         basePath: 'pages',
-        postDirectories: []
-      })
+        postDirectories: [],
+      }),
     ).rejects.toThrow();
   });
 });

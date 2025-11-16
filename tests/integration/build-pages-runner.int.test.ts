@@ -263,7 +263,7 @@ But it should still be copied.
       if (!pagesExists) {
         // Try to build, but don't fail if another test is building
         try {
-          await expect(runBuildPages()).resolves.not.toThrow();
+          await runBuildPages();
         } catch {
           // Another test might be building, wait a bit
           await new Promise((res) => {

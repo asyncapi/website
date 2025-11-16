@@ -144,10 +144,16 @@ describe('Integration: build-newsroom-videos-runner', () => {
   });
 
   describe('Export and Type Safety', () => {
-    it('should export the runBuildNewsroomVideos function', () => {
+    it('should export the runBuildNewsroomVideos function', async () => {
       expect(typeof runBuildNewsroomVideos).toBe('function');
       // Verify it's a Promise-returning function
       expect(runBuildNewsroomVideos()).toBeInstanceOf(Promise);
+
+      // Setup mock to prevent real API calls
+      setupYouTubeAPIMock(mockApiResponse);
+
+      // Await the function to ensure Promise is tracked and nock intercepts requests
+      await runBuildNewsroomVideos();
     });
   });
 
