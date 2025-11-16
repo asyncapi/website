@@ -137,7 +137,12 @@ describe('Integration: build-adopters-list-runner', () => {
   it('should handle the runner function being exported', () => {
     expect(typeof runBuildAdoptersList).toBe('function');
     // Verify it's a Promise-returning function
-    expect(runBuildAdoptersList()).toBeInstanceOf(Promise);
+   expect(
+      runBuildAdoptersList({
+        sourcePath: path.join(tempDir, 'mock-source.yml'),
+        targetPath: path.join(tempDir, 'mock-output.json')
+      })
+    ).toBeInstanceOf(Promise);
   });
 
   describe('Data Quality', () => {
