@@ -497,6 +497,7 @@ company:
       expect(typeof runCaseStudies).toBe('function');
       // Verify it's a Promise-returning function
       const promise = runCaseStudies();
+
       expect(promise).toBeInstanceOf(Promise);
       // Await the Promise to handle any potential rejections
       await promise;

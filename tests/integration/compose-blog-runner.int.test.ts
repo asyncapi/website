@@ -9,11 +9,13 @@ import { CustomError } from '../../types/errors/CustomError';
  * Helper function to generate filename from title (matching ComposeBlog logic)
  */
 function generateFileName(title: string): string {
-  return title
-    .toLowerCase()
-    .replace(/[^a-zA-Z0-9 ]/g, '')
-    .replace(/ /g, '-')
-    .replace(/-+/g, '-') || 'untitled';
+  return (
+    title
+      .toLowerCase()
+      .replace(/[^a-zA-Z0-9 ]/g, '')
+      .replace(/ /g, '-')
+      .replace(/-+/g, '-') || 'untitled'
+  );
 }
 
 describe('Integration: compose-blog-runner', () => {
@@ -684,6 +686,7 @@ describe('Integration: compose-blog-runner', () => {
 
       // Clean up the file if it exists from a previous test run
       const projectFilePath = resolve(process.cwd(), expectedRelativePath);
+
       try {
         await fs.unlink(projectFilePath);
       } catch {
