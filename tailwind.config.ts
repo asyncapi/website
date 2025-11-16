@@ -64,6 +64,7 @@ const colorGray: Record<string, string> = {
 };
 
 const config: Config = {
+  darkMode: 'class', // Enable dark mode with class strategy
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -113,7 +114,13 @@ const config: Config = {
           dark: '#252f3f',
           'dark-highlight': '#3e4d64'
         },
-        dark: '#1B1130',
+        dark: {
+          DEFAULT: '#1B1130',
+          bg: '#1a202c',
+          surface: '#2d3748',
+          text: '#e2e8f0',
+          muted: '#a0aec0',
+        },
         'cool-gray': '#9C96A8',
         hub: '#252f3f',
         slack: '#371038',

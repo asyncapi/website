@@ -19,6 +19,63 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Dark mode styles */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #0f172a; /* slate-900 */
+  color: #ffffff; /* Pure white for maximum contrast */
+}
+
+/* Dark mode component overrides */
+html.dark .bg-white {
+  background-color: #1e293b !important; /* slate-800 */
+}
+
+html.dark .text-gray-900 {
+  color: #ffffff !important; /* Pure white for better contrast */
+}
+
+html.dark .text-gray-700 {
+  color: #e2e8f0 !important; /* slate-200 for better readability */
+}
+
+html.dark .text-gray-600 {
+  color: #cbd5e1 !important; /* slate-300 */
+}
+
+html.dark .text-gray-500 {
+  color: #94a3b8 !important; /* slate-400 */
+}
+
+html.dark .border-gray-300 {
+  border-color: #475569 !important; /* slate-600 */
+}
+
+/* Additional text color overrides for better visibility */
+html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
+  color: #ffffff !important;
+}
+
+html.dark p {
+  color: #e2e8f0 !important; /* slate-200 */
+}
+
+html.dark a {
+  color: #60a5fa !important; /* blue-400 for links */
+}
+
+html.dark a:hover {
+  color: #93c5fd !important; /* blue-300 for link hover */
+}
+
+/* Ensure smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
 li>p {
   display: inline;
 }
