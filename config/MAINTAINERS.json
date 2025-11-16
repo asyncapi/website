@@ -414,7 +414,6 @@
         "availableForHire": false,
         "isTscMember": false,
         "repos": [
-            "parser-js",
             "openapi-schema-parser",
             "avro-schema-parser",
             "go-watermill-template",
