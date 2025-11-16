@@ -20,7 +20,12 @@ export default function Dashboard() {
           <Table
             title={
               <div className='flex items-center gap-3'>
-                <img data-tooltip-target='tooltip-default' src='/img/illustrations/icons/fire.svg' alt='Tooltip' className='w-5 h-5 dark:invert dark:opacity-90' />
+                <img
+                  data-tooltip-target='tooltip-default'
+                  src='/img/illustrations/icons/fire.svg'
+                  alt='Tooltip'
+                  className='w-5 h-5 dark:invert dark:opacity-90'
+                />
                 <div
                   id='tooltip-default'
                   role='tooltip'

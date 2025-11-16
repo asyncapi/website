@@ -15,17 +15,14 @@ interface RowProps {
 export default function Row({ item }: RowProps) {
   return (
     <li>
-      <a
-        target='_blank'
-        rel='noreferrer'
-        href={`https://github.com/${item.resourcePath}`}
-        className='block group'
-      >
+      <a target='_blank' rel='noreferrer' href={`https://github.com/${item.resourcePath}`} className='block group'>
         <div className='rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-background p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 hover:border-primary-300 dark:hover:border-primary-600 cursor-pointer'>
           <div className='flex justify-between items-start gap-4'>
             <div className='flex flex-col gap-3 flex-1 min-w-0'>
               <div className='flex items-center gap-2'>
-                <div className={`flex items-center justify-center w-5 h-5 rounded ${item.isPR ? 'bg-blue-100 dark:bg-blue-900/30' : 'bg-green-100 dark:bg-green-900/30'}`}>
+                <div
+                  className={`flex items-center justify-center w-5 h-5 rounded ${item.isPR ? 'bg-blue-100 dark:bg-blue-900/30' : 'bg-green-100 dark:bg-green-900/30'}`}
+                >
                   <img
                     alt='issue or pull-request icon'
                     className='size-3 dark:invert dark:opacity-80'
@@ -65,7 +62,12 @@ export default function Row({ item }: RowProps) {
             </div>
             <div className='flex-shrink-0 my-auto'>
               <div className='w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center group-hover:bg-primary-100 dark:group-hover:bg-primary-900/30 transition-colors'>
-                <svg className='w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+                <svg
+                  className='w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                >
                   <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 5l7 7-7 7' />
                 </svg>
               </div>
