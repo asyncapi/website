@@ -260,13 +260,13 @@ describe('Integration: build-meetings-runner', () => {
     it('should wrap errors in CustomError with context', async () => {
       mockCalendar.mockRejectedValue(new Error('Test error'));
 
+      await expect(runBuildMeetings({ outputPath: '/test/path.json' })).rejects.toThrow(CustomError);
+
+      // Verify the error has proper context by catching it
       try {
         await runBuildMeetings({ outputPath: '/test/path.json' });
-        throw new Error('Expected error to be thrown');
+        expect.fail('Expected error to be thrown');
       } catch (error) {
-        if (error instanceof Error && error.message === 'Expected error to be thrown') {
-          throw error;
-        }
         expect(error).toBeInstanceOf(CustomError);
         const customError = error as CustomError;
 
