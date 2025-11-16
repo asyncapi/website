@@ -280,7 +280,7 @@ describe('Integration: build-tools Runner', () => {
       // The empty response should still work - files should be created with empty/manual data
       await expect(
         buildTools(emptyAutomatedPath, emptyManualPath, emptyToolsPath, emptyTagsPath)
-      ).resolves.not.toThrow();
+      ).resolves.toBeUndefined();
 
       // Check that files were created even with empty API response
       const automatedExists = await fs
@@ -364,7 +364,7 @@ describe('Integration: build-tools Runner', () => {
 
     it('should use default paths in runner when no options provided', async () => {
       // This should work because default config files exist in the project
-      await expect(runBuildTools()).resolves.not.toThrow();
+      await expect(runBuildTools()).resolves.toBeUndefined();
     });
   });
 
@@ -434,7 +434,7 @@ describe('Integration: build-tools Runner', () => {
 
       await expect(
         buildTools(paginationAutomatedPath, paginationManualPath, paginationToolsPath, paginationTagsPath)
-      ).resolves.not.toThrow();
+      ).resolves.toBeUndefined();
 
       // Verify files were created
       const automatedExists = await fs
@@ -472,7 +472,7 @@ describe('Integration: build-tools Runner', () => {
       // This should not throw - the script should handle malformed YAML gracefully
       await expect(
         buildTools(malformedAutomatedPath, malformedManualPath, malformedToolsPath, malformedTagsPath)
-      ).resolves.not.toThrow();
+      ).resolves.toBeUndefined();
 
       // Verify files were still created (with warnings logged)
       const automatedExists = await fs

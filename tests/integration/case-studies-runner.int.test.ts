@@ -493,10 +493,13 @@ company:
   });
 
   describe('Function Export', () => {
-    it('should export the runner function', () => {
+    it('should export the runner function', async () => {
       expect(typeof runCaseStudies).toBe('function');
       // Verify it's a Promise-returning function
-      expect(runCaseStudies()).toBeInstanceOf(Promise);
+      const promise = runCaseStudies();
+      expect(promise).toBeInstanceOf(Promise);
+      // Await the Promise to handle any potential rejections
+      await promise;
     });
   });
 });

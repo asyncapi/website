@@ -358,7 +358,7 @@ describe('Integration: build-finance-info-list-runner', () => {
   });
 
   describe('Default Options', () => {
-    it('uses default options when no options are provided', async () => {
+    it('uses default directory structure with explicit currentDir', async () => {
       // Create structure matching default paths
       const defaultConfigDir = resolve(tempDir, 'config');
       const defaultFinanceDir = resolve(defaultConfigDir, 'finance');
@@ -370,26 +370,19 @@ describe('Integration: build-finance-info-list-runner', () => {
       await fs.writeFile(join(defaultYearDir, 'Expenses.yml'), 'expenses: []', 'utf-8');
       await fs.writeFile(join(defaultYearDir, 'ExpensesLink.yml'), 'links: []', 'utf-8');
 
-      // Change to temp directory to test default options
-      const originalCwd = process.cwd();
+      // Use explicit currentDir option instead of process.chdir() to avoid mutating global state
+      await runBuildFinanceInfoList({
+        currentDir: tempDir,
+        year: '2024'
+      });
 
-      try {
-        process.chdir(tempDir);
+      const expensesJsonPath = resolve(defaultJsonDataDir, 'Expenses.json');
+      const fileExists = await fs
+        .access(expensesJsonPath)
+        .then(() => true)
+        .catch(() => false);
 
-        await runBuildFinanceInfoList({
-          year: '2024'
-        });
-
-        const expensesJsonPath = resolve(defaultJsonDataDir, 'Expenses.json');
-        const fileExists = await fs
-          .access(expensesJsonPath)
-          .then(() => true)
-          .catch(() => false);
-
-        expect(fileExists).toBe(true);
-      } finally {
-        process.chdir(originalCwd);
-      }
+      expect(fileExists).toBe(true);
     });
   });
 
