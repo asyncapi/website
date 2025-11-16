@@ -202,7 +202,7 @@ describe('Integration: build-adopters-list-runner', () => {
           sourcePath: invalidSourcePath,
           targetPath: testOutputPath
         })
-      ).rejects.toThrow();
+      ).rejects.toThrow(CustomError);
     });
   });
 
