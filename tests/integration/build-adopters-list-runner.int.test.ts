@@ -134,15 +134,17 @@ describe('Integration: build-adopters-list-runner', () => {
     expect(fileContent.length).toBeGreaterThan(2);
   });
 
-  it('should handle the runner function being exported', () => {
+  it('should handle the runner function being exported', async () => {
     expect(typeof runBuildAdoptersList).toBe('function');
     // Verify it's a Promise-returning function
-   expect(
-      runBuildAdoptersList({
-        sourcePath: path.join(tempDir, 'mock-source.yml'),
-        targetPath: path.join(tempDir, 'mock-output.json')
-      })
-    ).toBeInstanceOf(Promise);
+    const promise = runBuildAdoptersList({
+      sourcePath: path.join(tempDir, 'mock-source.yml'),
+      targetPath: path.join(tempDir, 'mock-output.json')
+    });
+
+    expect(promise).toBeInstanceOf(Promise);
+    // Await the promise to handle any potential rejections
+    await expect(promise).rejects.toThrow();
   });
 
   describe('Data Quality', () => {
@@ -174,22 +176,30 @@ describe('Integration: build-adopters-list-runner', () => {
       const invalidSourcePath = path.join(tempDir, 'non-existent.yml');
       const testOutputPath = path.join(tempDir, 'test-output.json');
 
+      await expect(
+        runBuildAdoptersList({
+          sourcePath: invalidSourcePath,
+          targetPath: testOutputPath
+        })
+      ).rejects.toThrow(CustomError);
+
+      // Verify the error has proper context by catching it
       try {
         await runBuildAdoptersList({
           sourcePath: invalidSourcePath,
           targetPath: testOutputPath
         });
-        throw new Error('Expected error to be thrown');
+        // Should not reach here
+        expect(true).toBe(false);
       } catch (error) {
-        if (error instanceof Error && error.message === 'Expected error to be thrown') {
-          throw error;
-        }
         expect(error).toBeInstanceOf(CustomError);
         const customError = error as CustomError;
 
         expect(customError.context.category).toBe('script');
         expect(customError.context.operation).toBe('runBuildAdoptersList');
         expect(customError.context.detail).toBeDefined();
+        expect(customError.context.detail).toContain('sourcePath:');
+        expect(customError.context.detail).toContain('targetPath:');
       }
     });
 
