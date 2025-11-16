@@ -27,7 +27,7 @@ export default function Layout({ children }: ILayoutProps): React.JSX.Element {
     const post = getDocBySlug(posts.docs as IPost[], pathname) as IPost;
 
     return (
-      <div data-testid='Docs-main-container'>
+      <div data-testid='Docs-main-container' className='bg-white dark:bg-slate-900 text-gray-900 dark:text-white min-h-screen'>
         <DocsLayout post={post} navItems={allDocPosts}>
           {children}
         </DocsLayout>
@@ -38,7 +38,7 @@ export default function Layout({ children }: ILayoutProps): React.JSX.Element {
     const post = getPostBySlug(pathname, 'blog');
 
     return (
-      <div data-testid='Blogs-main-container'>
+      <div data-testid='Blogs-main-container' className='bg-white dark:bg-slate-900 text-gray-900 dark:text-white min-h-screen'>
         <BlogLayout post={post as unknown as IPosts['blog'][number]} navItems={posts.blog}>
           {children}
         </BlogLayout>
@@ -47,7 +47,7 @@ export default function Layout({ children }: ILayoutProps): React.JSX.Element {
   }
   if (pathname === '/blog') {
     return (
-      <div data-testid='Blogs-sub-container'>
+      <div data-testid='Blogs-sub-container' className='bg-white dark:bg-slate-900 text-gray-900 dark:text-white min-h-screen'>
         <BlogContext.Provider value={{ navItems: posts.blog }}>{children}</BlogContext.Provider>
       </div>
     );
