@@ -198,7 +198,6 @@
         "repos": [
             "spec-json-schemas",
             "generator",
-            "parser-js",
             "converter-js",
             "modelina",
             "parser-api",
