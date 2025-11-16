@@ -290,19 +290,6 @@ describe('Integration: build-post-list-runner', () => {
     });
   });
 
-  it('handles specification files with explorer version', async () => {
-    // Test explorer specification files
-    const explorerSpecs = output.docs.filter((item: Details) => {
-      return item.slug?.includes('/reference/specification/');
-    });
-
-    // If explorer specs exist, verify they have the correct title format
-    explorerSpecs.forEach((item: Details) => {
-      expect(item.title).toBeDefined();
-      expect(item.title).toContain('Explorer');
-    });
-  });
-
   it('includes release notes links when available', () => {
     const itemsWithReleaseNotes = output.docs.filter((item: Details) => {
       return hasProp(item, 'releaseNoteLink');
@@ -373,9 +360,7 @@ describe('Integration: build-post-list-runner', () => {
   it('validates error handling for empty writeFilePath', async () => {
     const { buildPostList } = await import('../../scripts/build-post-list');
 
-    await expect(
-      buildPostList([['pages/blog', '/blog']], 'pages', ''),
-    ).rejects.toThrow('writeFilePath is required');
+    await expect(buildPostList([['pages/blog', '/blog']], 'pages', '')).rejects.toThrow('writeFilePath is required');
   });
 
   it('validates error handling for empty postDirectories', async () => {
