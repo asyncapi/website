@@ -2,7 +2,16 @@ import BasePage from './basepagedocs';
 
 class DocsPage extends BasePage {
   visitDocsPage() {
-    this.verifyLinkByHref('/docs');
+    cy.visit('/docs');
+  }
+
+  verifyPageLoaded() {
+    cy.url().should('include', '/docs');
+    cy.get('article').should('be.visible');
+  }
+
+  verifyHeader() {
+    this.verifyPageLoaded();
   }
 
   verifyCardLinks(href) {
@@ -15,9 +24,7 @@ class DocsPage extends BasePage {
   navigateToSection(section, href) {
     this.verifyLinkByLabel(href, section);
   }
-  verifyConceptSection(){
-    cy.get(`a[href="/docs/concepts"] span`).contains('Concepts').click();
-  }
+
   goToConceptsSection() {
     this.navigateToSection('Concepts', '/docs/concepts');
   }
@@ -39,7 +46,7 @@ class DocsPage extends BasePage {
   goToCommunitySection() {
     this.navigateToSection('Community', '/docs/community');
   }
-  verifyConceptSubsection({ href, label}) {
+  verifyConceptSubsection({ href, label }) {
     this.verifyLinkByLabel(href, label);
   }
 }
