@@ -74,7 +74,7 @@ class HomePage {
     this.verifyElementIsVisible('[data-testid="Navbar-logo"]');
   }
 
-  verifyHeader(text = headerText) {
+  verifyHeader() {
     this.verifyPageLoaded();
   }
 
