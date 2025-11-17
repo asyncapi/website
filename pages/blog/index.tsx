@@ -2,10 +2,12 @@ import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useState } from 'react';
 
 import Empty from '@/components/illustrations/Empty';
+import Container from '@/components/layout/Container';
 import GenericLayout from '@/components/layout/GenericLayout';
 import Loader from '@/components/Loader';
 import BlogPostItem from '@/components/navigation/BlogPostItem';
 import Filter from '@/components/navigation/Filter';
+import NewsletterSubscribe from '@/components/NewsletterSubscribe';
 import PaginationComponent from '@/components/Pagination';
 import Heading from '@/components/typography/Heading';
 import Paragraph from '@/components/typography/Paragraph';
@@ -259,6 +261,13 @@ export default function BlogIndexPage() {
             )}
           </div>
         </div>
+      </div>
+
+      {/* Newsletter Section */}
+      <div className='mt-8 bg-dark rounded-3xl py-12'>
+        <Container wide>
+          <NewsletterSubscribe dark />
+        </Container>
       </div>
     </GenericLayout>
   );

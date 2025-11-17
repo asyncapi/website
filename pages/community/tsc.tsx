@@ -297,18 +297,21 @@ export default function TSC() {
       </div>
 
       {/* Want to Join TSC CTA */}
-      <div className='bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-gray-900 dark:to-gray-800 py-16'>
-        <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center'>
-          <h2 className='text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4'>Want to join TSC?</h2>
-          <p className='text-lg text-gray-600 dark:text-gray-400 mb-8'>
-            Join our community and help shape the future of AsyncAPI
-          </p>
-          <Button
-            text='Get Started'
-            href='https://github.com/asyncapi/community/blob/master/CONTRIBUTING.md'
-            target='_blank'
-            className='text-center hover:bg-primary-600 focus:outline-none'
-          />
+      <div className='bg-white dark:bg-dark-background py-12'>
+        <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+          <div
+            className='rounded-3xl p-8 sm:p-12 shadow-xl text-center'
+            style={{ background: 'linear-gradient(90deg, #8B5CF6 0%, #7C3AED 50%, #22D3EE 100%)' }}
+          >
+            <h2 className='text-3xl sm:text-4xl font-bold text-white mb-4'>Want to join TSC?</h2>
+            <p className='text-lg text-white/90 mb-8'>Join our community and help shape the future of AsyncAPI</p>
+            <Button
+              text='Get Started'
+              href='https://github.com/asyncapi/community/blob/master/CONTRIBUTING.md'
+              target='_blank'
+              className='text-center bg-white text-primary-600 hover:bg-gray-100 focus:outline-none'
+            />
+          </div>
         </div>
       </div>
     </GenericLayout>
