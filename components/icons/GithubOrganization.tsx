@@ -14,7 +14,7 @@ export default function IconGithubOrganization({ className = '' }) {
       viewBox='0 0 24.63 26.6'
     >
       <defs>
-        <style>{'.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;}'}</style>
+        <style>{'.cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;}'}</style>
       </defs>
       <path
         className='cls-1'
