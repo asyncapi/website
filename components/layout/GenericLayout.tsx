@@ -47,7 +47,7 @@ export default function GenericLayout({
             small={true}
           />
         </div>
-        <div data-testid='Generic-main'>
+        <div id='main-content' data-testid='Generic-main'>
           {children}
         </div>
       </Container>

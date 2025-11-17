@@ -32,12 +32,10 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         <StickyNavbar>
           <NavBar className="mx-auto block max-w-screen-xl px-4 sm:px-6 lg:px-8" />
         </StickyNavbar>
-        <main id="main-content">
-          <Layout>
-            <Component {...pageProps} />
-            <ScrollButton />
-          </Layout>
-        </main>
+        <Layout>
+          <Component {...pageProps} />
+          <ScrollButton />
+        </Layout>
         <div className="mt-auto">
           <Footer />
         </div>

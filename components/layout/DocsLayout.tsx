@@ -144,7 +144,7 @@ export default function DocsLayout({
             navigation={navigation}
           />
         )}
-        <div className="flex flex-row">
+        <div className="flex flex-row" id="main-content">
           {/* <!-- Static sidebar for desktop --> */}
           {sidebar}
           <div className="flex w-0 max-w-full flex-1 flex-col lg:max-w-(screen-16)">
