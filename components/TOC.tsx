@@ -10,7 +10,8 @@ interface ITOCProps {
   toc: {
     lvl: number;
     content: string;
-    slug: string;
+    slug?: string;
+    i?: number;
   }[];
   contentSelector?: string;
   depth?: number;

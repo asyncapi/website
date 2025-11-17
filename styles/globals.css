@@ -12,6 +12,22 @@
 @tailwind utilities;
 @tailwind variants;
 
+/* Skip to main content link styles */
+.skip-to-main-content-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #4b5563;
+  color: white;
+  padding: 8px;
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+
+.skip-to-main-content-link:focus {
+  top: 0;
+}
+
 html,
 body {
   -webkit-font-smoothing: antialiased;

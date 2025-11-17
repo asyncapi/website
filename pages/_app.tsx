@@ -25,6 +25,13 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         <script async defer src='https://buttons.github.io/buttons.js'></script>
       </Head>
       <AlgoliaSearch>
+        {/* Skip to main content link for accessibility */}
+        <a 
+          href="#main-content" 
+          className="skip-to-main-content-link absolute left-[-999px] top-auto z-50 m-2 rounded bg-secondary-500 px-4 py-2 text-white shadow-lg transition-all duration-200 focus:left-1 focus:z-50 focus:underline"
+        >
+          Skip to main content
+        </a>
         <div className='flex min-h-screen flex-col'>
           <Banner />
           <StickyNavbar>
