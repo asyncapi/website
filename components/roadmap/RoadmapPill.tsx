@@ -88,7 +88,9 @@ export default function Pill({
             </div>
             {isCollapsible && (
               <button className='mr-2' onClick={onClickCollapse} data-testid='RoadmapItem-button'>
-                <IconArrowRight className={`h-4 ${isCollapsed ? 'rotate-90' : '-rotate-90'}`} />
+                <IconArrowRight
+                  className={`h-4 text-gray-900 dark:text-white ${isCollapsed ? 'rotate-90' : '-rotate-90'}`}
+                />
               </button>
             )}
           </div>
