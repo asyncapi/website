@@ -127,7 +127,7 @@ function SocialLink({ href, social }: SocialLinkProps) {
       <a
         data-testid='Social-Links'
         href={href}
-        className='text-gray-600 hover:text-gray-500'
+        className='text-gray-600 dark:text-gray-400 hover:text-gray-500 dark:hover:text-gray-300'
         target='_blank'
         rel='noreferrer noopener'
       >
@@ -149,7 +149,7 @@ function UserWorkStatus({ user }: TSCUser) {
     return (
       <div
         data-testid='status-element'
-        className='text-md inline-flex items-center rounded-full bg-green-100 px-3 py-1 font-medium leading-5 text-green-800'
+        className='text-md inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/30 px-3 py-1 font-medium leading-5 text-green-800 dark:text-green-300'
       >
         Available for hire
       </div>
@@ -159,7 +159,7 @@ function UserWorkStatus({ user }: TSCUser) {
     return (
       <div
         data-testid='status-element'
-        className='text-md inline-flex items-center rounded-full bg-orange-100 px-3 py-1 font-medium leading-5 text-orange-800'
+        className='text-md inline-flex items-center rounded-full bg-orange-100 dark:bg-orange-900/30 px-3 py-1 font-medium leading-5 text-orange-800 dark:text-orange-300'
       >
         {user.company}
       </div>
@@ -169,7 +169,7 @@ function UserWorkStatus({ user }: TSCUser) {
   return (
     <div
       data-testid='status-element'
-      className='text-md inline-flex items-center rounded-full bg-blue-100 px-3 py-1 font-medium leading-5 text-blue-800'
+      className='text-md inline-flex items-center rounded-full bg-blue-100 dark:bg-blue-900/30 px-3 py-1 font-medium leading-5 text-blue-800 dark:text-blue-300'
     >
       Individual Member
     </div>
@@ -189,7 +189,7 @@ function UserInfo({ user, membership }: TSCUser) {
   return (
     <li
       data-testid='UserInfo-list'
-      className='rounded-md border border-gray-200 p-4 text-center shadow-md'
+      className='rounded-md border border-gray-200 dark:border-gray-700 p-4 text-center shadow-md bg-white dark:bg-dark-card'
       key={user.github}
     >
       <div className='flex flex-row'>
@@ -200,7 +200,7 @@ function UserInfo({ user, membership }: TSCUser) {
           className='mx-auto size-20 rounded-full xl:size-28'
         />
         <div className='flex-1'>
-          <div className='my-3 text-lg font-bold' data-testid='UserInfo-name'>
+          <div className='my-3 text-lg font-bold text-gray-900 dark:text-white' data-testid='UserInfo-name'>
             {user.name}
           </div>
           <UserWorkStatus user={user} />
@@ -212,13 +212,13 @@ function UserInfo({ user, membership }: TSCUser) {
         </div>
       </div>
       {'repos' in user ? (
-        <div className='flex flex-wrap items-center gap-1'>
+        <div className='flex flex-wrap items-center gap-1 text-gray-900 dark:text-gray-300'>
           Maintainer of:
           {user.repos.map((repo: { name: string; url: string }) => (
             <a
               data-testid='Repo-Links'
               key={repo.name}
-              className='inline-flex items-center rounded-full bg-cyan-100 px-3 py-0.5 text-xs font-medium leading-5 text-cyan-800 hover:bg-cyan-300'
+              className='inline-flex items-center rounded-full bg-cyan-100 dark:bg-cyan-900/30 px-3 py-0.5 text-xs font-medium leading-5 text-cyan-800 dark:text-cyan-300 hover:bg-cyan-300 dark:hover:bg-cyan-900/50'
               href={repo.url}
             >
               {repo.name}
@@ -229,7 +229,7 @@ function UserInfo({ user, membership }: TSCUser) {
         // fallback to ambassador page
         <TextLink
           href={`/community/ambassadors/${githubUsername}`}
-          className='flex font-normal text-base text-blue-500 no-underline hover:text-sky-400'
+          className='flex font-normal text-base text-blue-500 dark:text-blue-400 no-underline hover:text-sky-400 dark:hover:text-sky-300'
         >
           AsyncAPI Ambassador
         </TextLink>
@@ -254,19 +254,19 @@ function UserInfo({ user, membership }: TSCUser) {
  */
 function QuestionCard() {
   return (
-    <li className='rounded-md border border-gray-200 p-4 px-6 py-10 text-center shadow-md' data-testid='Question-card'>
+    <li className='rounded-md border border-gray-200 dark:border-gray-700 p-4 px-6 py-10 text-center shadow-md bg-white dark:bg-dark-card' data-testid='Question-card'>
       <img
         data-testid='Question-card-img'
         src='/img/avatars/questionmark.webp'
         alt='Question Mark'
         className='mx-auto size-20 rounded-full xl:size-28'
       />
-      <div className='my-4'>
+      <div className='my-4 text-gray-900 dark:text-gray-300'>
         Want to become a member? Follow this
         <TextLink
           href='https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md'
           target='_blank'
-          className='font-normal text-base text-sky-600 no-underline hover:text-sky-400'
+          className='font-normal text-base text-sky-600 dark:text-sky-400 no-underline hover:text-sky-400 dark:hover:text-sky-300'
         >
           Link
         </TextLink>
@@ -314,9 +314,9 @@ export default function CommunityLayout({ children, membership }: ICommunityLayo
           </div>
         )}
         <div className='mt-10'>
-          <div className='text-primary-800 mb-5 text-center'>
+          <div className='text-primary-800 dark:text-white mb-5 text-center'>
             <h3 className='text-2xl font-semibold'>Current {membership} members</h3>
-            <span className='font-thin text-sm'>(in alphabetical order)</span>
+            <span className='font-thin text-sm text-gray-600 dark:text-gray-400'>(in alphabetical order)</span>
           </div>
 
           <ul role='list' className='space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8'>
