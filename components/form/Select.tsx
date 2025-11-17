@@ -31,12 +31,12 @@ export default function Select({ className = '', onChange = () => {}, options, s
       data-testid='Select-form'
       onChange={handleOnChange}
       className={twMerge(
-        `form-select h-full pl-2 pr-8 inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500 ${className}`
+        `form-select h-full pl-2 pr-8 inline-flex justify-center rounded-md border border-gray-300 dark:border-gray-700 shadow-sm px-4 py-2 bg-white dark:bg-dark-card text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-background focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 dark:focus:ring-offset-dark-background focus:ring-primary-500 ${className}`
       )}
       value={selected}
     >
       {options.map((option, index) => (
-        <option key={index} value={option.value} data-testid='Option-form'>
+        <option key={index} value={option.value} data-testid='Option-form' className='bg-white dark:bg-dark-card'>
           {option.text}
         </option>
       ))}
