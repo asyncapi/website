@@ -51,9 +51,9 @@ export default function Board() {
             What are the responsibilities of a board member?
           </h3>
           <p className='my-4 text-base text-gray-500 dark:text-gray-400 lg:text-center'>
-            GB members guide AsyncAPI's financial strategy, sponsorships, hiring, and service access management. They
-            also help sustain an inclusive and safe environment. All major proposals require TSC approval, ensuring a
-            balanced and collaborative governance model. See the{' '}
+            GB members guide AsyncAPI&apos;s financial strategy, sponsorships, hiring, and service access management.
+            They also help sustain an inclusive and safe environment. All major proposals require TSC approval, ensuring
+            a balanced and collaborative governance model. See the{' '}
             <a
               href='https://github.com/asyncapi/community/blob/master/GOVERNANCE.md#duties-and-responsibilities'
               className='text-blue-500 dark:text-blue-400 hover:text-blue-400 dark:hover:text-blue-300'

@@ -254,7 +254,10 @@ function UserInfo({ user, membership }: TSCUser) {
  */
 function QuestionCard() {
   return (
-    <li className='rounded-md border border-gray-200 dark:border-gray-700 p-4 px-6 py-10 text-center shadow-md bg-white dark:bg-dark-card' data-testid='Question-card'>
+    <li
+      className='rounded-md border border-gray-200 dark:border-gray-700 p-4 px-6 py-10 text-center shadow-md bg-white dark:bg-dark-card'
+      data-testid='Question-card'
+    >
       <img
         data-testid='Question-card-img'
         src='/img/avatars/questionmark.webp'
