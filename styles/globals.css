@@ -50,8 +50,8 @@
   outline-offset: 2px;
 }
 
-/* Ensure skip link is visible when programmatically shown */
-.skip-to-main-content-link[style*="left: 0"] {
+/* Ensure skip link is visible when focused */
+.skip-to-main-content-link:focus {
   top: 0;
   left: 0 !important;
 }

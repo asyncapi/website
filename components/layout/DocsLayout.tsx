@@ -121,11 +121,11 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
     <DocsContext.Provider value={{ post, navItems }}>
       <div className='w-full bg-white px-4 sm:px-6 lg:px-8 xl:mx-auto xl:max-w-7xl'>
         {showMenu && <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />}
-        <div className='flex flex-row' id='main-content'>
+        <main className='flex flex-row' id='main-content'>
           {/* <!-- Static sidebar for desktop --> */}
           {sidebar}
           <div className='flex w-0 max-w-full flex-1 flex-col lg:max-w-(screen-16)'>
-            <main className='relative z-0 pb-6 pt-2 focus:outline-none md:py-6' tabIndex={0}>
+            <div className='relative z-0 pb-6 pt-2 focus:outline-none md:py-6' tabIndex={0}>
               {!showMenu && (
                 <div className='lg:hidden'>
                   <button
@@ -211,9 +211,9 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                   </div>
                 </div>
               </div>
-            </main>
+            </div>
           </div>
-        </div>
+        </main>
       </div>
     </DocsContext.Provider>
   );

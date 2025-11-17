@@ -42,9 +42,9 @@ export default function GenericLayout({
         <div data-testid='GenericLayout-banner'>
           <AnnouncementHero className={`m-4 text-center ${hideBanner && 'hidden'}`} small={true} />
         </div>
-        <div id='main-content' data-testid='Generic-main'>
+        <main id='main-content' data-testid='Generic-main'>
           {children}
-        </div>
+        </main>
       </Container>
     </div>
   );
