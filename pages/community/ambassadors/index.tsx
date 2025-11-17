@@ -17,6 +17,7 @@ import IconStar from '../../../components/icons/Star';
 import IconTerminal from '../../../components/icons/Terminal';
 import IconUsersGroup from '../../../components/icons/UsersGroup';
 import IconVideo from '../../../components/icons/Video';
+import Container from '../../../components/layout/Container';
 import GenericLayout from '../../../components/layout/GenericLayout';
 import NewsletterSubscribe from '../../../components/NewsletterSubscribe';
 import PaginationComponent from '../../../components/Pagination';
@@ -443,7 +444,13 @@ export default function Index() {
           </div>
         </section>
       </div>
-      <NewsletterSubscribe className='mt-20 text-center' />
+
+      {/* Newsletter Section */}
+      <div className='mt-8 bg-dark rounded-3xl py-12'>
+        <Container wide>
+          <NewsletterSubscribe dark />
+        </Container>
+      </div>
     </GenericLayout>
   );
 }
