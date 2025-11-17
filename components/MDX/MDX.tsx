@@ -103,8 +103,13 @@ function MermaidDiagram({ graph }: MermaidDiagramProps) {
     }
 
     try {
-      mermaid.mermaidAPI.render(uuid(), graph, (svgGraph) => {
+      // Use the correct API for the current Mermaid version
+      mermaid.render(uuid(), graph).then(({ svg: svgGraph }) => {
         setSvg(svgGraph);
+      }).catch((e) => {
+        setSvg(null);
+        // eslint-disable-next-line no-console
+        console.error(e);
       });
     } catch (e) {
       setSvg(null);

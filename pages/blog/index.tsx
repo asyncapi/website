@@ -65,7 +65,7 @@ export default function BlogIndexPage() {
 
   return (
     <GenericLayout title='Blog' description={description} image={image} wide>
-      <div className='relative px-4 pb-20 pt-8 sm:px-6 lg:px-8 lg:pb-28 lg:pt-12' id='main-content'>
+      <div className='relative px-4 pb-20 pt-8 sm:px-6 lg:px-8 lg:pb-28 lg:pt-12'>
         <div className='absolute inset-0'>
           <div className='h-1/3 bg-white sm:h-2/3'></div>
         </div>

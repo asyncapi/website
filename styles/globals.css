@@ -16,16 +16,44 @@
 .skip-to-main-content-link {
   position: absolute;
   top: -40px;
-  left: 0;
+  left: -999px;
   background-color: #4b5563;
   color: white;
-  padding: 8px;
+  padding: 8px 16px;
   z-index: 1000;
-  transition: top 0.3s ease;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
 }
 
-.skip-to-main-content-link:focus {
+.skip-to-main-content-link:focus,
+.skip-to-main-content-link:active {
   top: 0;
+  left: 0;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.skip-to-main-content-link:hover {
+  background-color: #374151;
+}
+
+/* Ensure main content areas can receive focus */
+#main-content {
+  outline: none;
+}
+
+#main-content:focus {
+  outline: 2px solid #4b5563;
+  outline-offset: 2px;
+}
+
+/* Ensure skip link is visible when programmatically shown */
+.skip-to-main-content-link[style*="left: 0"] {
+  top: 0;
+  left: 0 !important;
 }
 
 html,
