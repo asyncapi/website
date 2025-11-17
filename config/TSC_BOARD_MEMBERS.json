@@ -123,6 +123,7 @@
             "spec",
             "spec-json-schemas",
             "asyncapi-react",
+            "parser-js",
             "extensions-catalog",
             "converter-js",
             "bindings",
@@ -146,7 +147,6 @@
         "repos": [
             "spec-json-schemas",
             "generator",
-            "parser-js",
             "converter-js",
             "modelina",
             "parser-api",
