@@ -30,7 +30,7 @@ export const items: ISupportItemType[] = [
   },
   {
     href: 'https://confengine.com',
-    imgSrc: '/img/supportus/confengine.png',
+    imgSrc: '/img/supportus/confengine.webp',
     imgTitle: 'Confengine - CFP platform sponsorship for AsyncAPI Conference.',
     imgClass: 'inline-block px-4 sm:h-14 mt-4',
     section: 2

@@ -92,10 +92,10 @@ const config: Config = {
       mapCover: "url('/img/homepage/mapbase.webp')"
     },
     fontFamily: {
-      sans: ['Inter', ...defaultTheme.fontFamily.sans],
-      heading: ['Work Sans', ...defaultTheme.fontFamily.sans],
-      body: ['Inter', ...defaultTheme.fontFamily.sans],
-      mono: ['Fira Code VF', 'Fira Code', ...defaultTheme.fontFamily.mono]
+      sans: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
+      heading: ['var(--font-work-sans)', ...defaultTheme.fontFamily.sans],
+      body: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
+      mono: ['Fira Code VF', 'Fira Code', ...defaultTheme.fontFamily.mono] 
     },
     minWidth: {
       72: '18rem',

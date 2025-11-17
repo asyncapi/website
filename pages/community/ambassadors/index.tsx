@@ -1,4 +1,3 @@
-import { sortBy } from 'lodash';
 import Link from 'next/link';
 import React from 'react';
 
@@ -11,6 +10,7 @@ import NewsletterSubscribe from '../../../components/NewsletterSubscribe';
 import Heading from '../../../components/typography/Heading';
 import ambassadorList from '../../../config/ambassador_lists.json';
 import ambassadors from '../../../config/AMBASSADORS_MEMBERS.json';
+import LazyYouTubeEmbed from '../../../components/Youtube/LazyYouTubeEmbed';
 
 /**
  * @description Add additional user information to the user object having ambassador data
@@ -44,10 +44,9 @@ export function addAdditionalUserInfo(user: Ambassador) {
  */
 export default function Index() {
   const image = '/img/social/community-ambassadors.webp';
-  const asyncapiAmbassadors = sortBy(
-    ambassadors.map((user) => addAdditionalUserInfo(user)),
-    ['name']
-  );
+  const asyncapiAmbassadors = ambassadors
+    .map((user) => addAdditionalUserInfo(user))
+    .sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <GenericLayout title='AsyncAPI Ambassador Program' description='The AsyncAPI Ambassador Program' image={image} wide>
@@ -74,13 +73,11 @@ export default function Index() {
         </div>
       </div>
       <div className='mt-20'>
-        <div className='aspect-h-9 aspect-w-16 bg-center'>
-          <iframe
-            src='https://www.youtube.com/embed/3rg_7hIb9PQ'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-            data-testid='Ambassadors-Iframe'
-          ></iframe>
-        </div>
+        <LazyYouTubeEmbed
+          id='3rg_7hIb9PQ'
+          title='AsyncAPI Ambassador Program Introduction'
+          aspectRatio='aspect-h-9 aspect-w-16'
+        />
         <div className='flex justify-center'>
           <div className='mt-10 text-center lg:w-[55%]' data-testid='Ambassadors-contributions'>
             <Heading typeStyle={HeadingTypeStyle.lg}>AsyncAPI Ambassador Contributions</Heading>

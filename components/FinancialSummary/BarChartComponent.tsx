@@ -1,5 +1,7 @@
+'use client';
+
 import React, { useEffect, useState } from 'react';
-import { Bar, BarChart, CartesianGrid, Legend, Tooltip, YAxis } from 'recharts';
+import dynamic from 'next/dynamic';
 
 import type { ExpenseItem, ExpensesLinkItem } from '@/types/FinancialSummary/BarChartComponent';
 
@@ -9,46 +11,53 @@ import { getUniqueCategories } from '../../utils/getUniqueCategories';
 import CustomTooltip from './CustomTooltip';
 import ExpensesCard from './ExpensesCard';
 
+// Create a client-only chart wrapper component
+const ChartWrapper = dynamic(
+  () => import('./BarChartWrapper'),
+  { 
+    ssr: false,
+    loading: () => (
+      <div className='flex h-[400px] items-center justify-center'>
+        <div className='text-gray-500'>Loading chart...</div>
+      </div>
+    )
+  }
+);
+
 /**
  * @description BarChartComponent component displays a bar chart for expense analysis.
  */
 export default function BarChartComponent() {
-  // Setting up state variables using useState hook
   const [selectedCategory, setSelectedCategory] = useState<string>('All Categories');
   const [selectedMonth, setSelectedMonth] = useState<string>('All Months');
   const [windowWidth, setWindowWidth] = useState<number>(0);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
 
-  // Extracting unique categories and months from the data
-  const categories: string[] = getUniqueCategories();
-  const months: string[] = Object.keys(ExpensesData);
-
-  // Effect hook to update windowWidth state on resize
   useEffect(() => {
+    setIsMounted(true);
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
 
-    // Initial setup and event listener
     handleResize();
     window.addEventListener('resize', handleResize);
 
-    // Cleanup function to remove event listener
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  // Filtering data based on selected month and category
+  const categories: string[] = getUniqueCategories();
+  const months: string[] = Object.keys(ExpensesData);
+
   const filteredData: ExpenseItem[] = Object.entries(ExpensesData).flatMap(([month, entries]) =>
     selectedMonth === 'All Months' || selectedMonth === month
       ? entries.filter((entry) => selectedCategory === 'All Categories' || entry.Category === selectedCategory)
       : []
   );
 
-  // Calculating total amount of filtered data
   const totalAmount: number = filteredData.reduce((total, entry) => total + parseFloat(entry.Amount), 0);
 
-  // Calculating total amount per category
   const categoryAmounts: { [category: string]: number } = {};
 
   filteredData.forEach((entry) => {
@@ -59,14 +68,13 @@ export default function BarChartComponent() {
     }
   });
 
-  // Formatting data for the chart
   const chartData: { Category: string; Amount: number }[] = Object.keys(categoryAmounts).map((category) => ({
     Category: category,
     Amount: categoryAmounts[category]
   }));
 
-  const barWidth: number | undefined = windowWidth && windowWidth < 900 ? undefined : 800;
-  const barHeight: number | undefined = windowWidth && windowWidth < 900 ? undefined : 400;
+  const barWidth: number | undefined = isMounted && windowWidth && windowWidth < 900 ? undefined : 800;
+  const barHeight: number | undefined = isMounted && windowWidth && windowWidth < 900 ? undefined : 400;
 
   return (
     <div className='mt-8 flex items-center justify-center sm:px-6 lg:px-8'>
@@ -112,28 +120,14 @@ export default function BarChartComponent() {
           </div>
         </div>
         <div className='flex justify-center'>
-          <BarChart width={barWidth} height={barHeight} data={chartData}>
-            <CartesianGrid strokeDasharray='3 3' />
-            <YAxis tickFormatter={(value) => `$${value}`} />
-            <Tooltip content={<CustomTooltip />} />
-            <Legend />
-            <Bar
-              dataKey='Amount'
-              fill='#7B5DD3FF'
-              onClick={(data) => {
-                const category = data.payload.Category;
-                const matchedLinkObject: ExpensesLinkItem | undefined = ExpensesLinkData.find(
-                  (obj) => obj.category === category
-                );
-
-                if (matchedLinkObject) {
-                  window.open(matchedLinkObject.link, '_blank');
-                }
-              }}
-            />
-          </BarChart>
+          <ChartWrapper
+            chartData={chartData}
+            barWidth={barWidth}
+            barHeight={barHeight}
+            ExpensesLinkData={ExpensesLinkData}
+          />
         </div>
-        {windowWidth && windowWidth < 900 ? <ExpensesCard /> : null}
+        {isMounted && windowWidth && windowWidth < 900 ? <ExpensesCard /> : null}
       </div>
     </div>
   );

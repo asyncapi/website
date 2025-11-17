@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import YouTubeEmbed from 'react-youtube-embed';
+
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
@@ -12,6 +12,7 @@ import Heading from '../components/typography/Heading';
 import Paragraph from '../components/typography/Paragraph';
 import TextLink from '../components/typography/TextLink';
 import Warning from '../components/Warning';
+import LazyYouTubeEmbed from '../components/Youtube/LazyYouTubeEmbed';
 
 interface RoadmapData {
   outcomes: {
@@ -678,7 +679,12 @@ export default function RoadmapPage() {
             </Paragraph>
 
             <div className='mx-auto lg:w-1/2'>
-              <YouTubeEmbed id='u83V2gIUGHU' appendSrc='?start=86' />
+              <LazyYouTubeEmbed
+                id='u83V2gIUGHU'
+                appendSrc='?start=86'
+                title='AsyncAPI SIG Meeting - Roadmap Format Discussion'
+                aspectRatio='aspect-h-9 aspect-w-16'
+              />
             </div>
 
             <Warning

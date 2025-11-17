@@ -1,20 +1,52 @@
 import { MDXProvider as CoreMDXProvider } from '@mdx-js/react';
-import mermaid from 'mermaid';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import React, { useEffect, useState } from 'react';
-import {
-  TwitterDMButton,
-  TwitterFollowButton,
-  TwitterHashtagButton,
-  TwitterMentionButton,
-  TwitterMomentShare,
-  TwitterOnAirButton,
-  TwitterShareButton,
-  TwitterTimelineEmbed,
-  TwitterTweetEmbed,
-  TwitterVideoEmbed
-} from 'react-twitter-embed';
-import YouTube from 'react-youtube-embed';
+
+
+
+const TwitterTweetEmbed = dynamic(
+  () => import('react-twitter-embed').then((m) => m.TwitterTweetEmbed),
+  { ssr: false, loading: () => <div>Loading tweet…</div> }
+);
+const TwitterTimelineEmbed = dynamic(
+  () => import('react-twitter-embed').then((m) => m.TwitterTimelineEmbed),
+  { ssr: false, loading: () => <div>Loading timeline…</div> }
+);
+const TwitterShareButton = dynamic(
+  () => import('react-twitter-embed').then((m) => m.TwitterShareButton),
+  { ssr: false, loading: () => <div>Loading share…</div> }
+);
+const TwitterFollowButton = dynamic(
+  () => import('react-twitter-embed').then((m) => m.TwitterFollowButton),
+  { ssr: false, loading: () => <div>Loading follow…</div> }
+);
+const TwitterHashtagButton = dynamic(
+  () => import('react-twitter-embed').then((m) => m.TwitterHashtagButton),
+  { ssr: false, loading: () => <div>Loading hashtag…</div> }
+);
+const TwitterMentionButton = dynamic(
+  () => import('react-twitter-embed').then((m) => m.TwitterMentionButton),
+  { ssr: false, loading: () => <div>Loading mention…</div> }
+);
+const TwitterMomentShare = dynamic(
+  () => import('react-twitter-embed').then((m) => m.TwitterMomentShare),
+  { ssr: false, loading: () => <div>Loading moment…</div> }
+);
+const TwitterDMButton = dynamic(
+  () => import('react-twitter-embed').then((m) => m.TwitterDMButton),
+  { ssr: false, loading: () => <div>Loading DM…</div> }
+);
+const TwitterVideoEmbed = dynamic(
+  () => import('react-twitter-embed').then((m) => m.TwitterVideoEmbed),
+  { ssr: false, loading: () => <div>Loading video…</div> }
+);
+const TwitterOnAirButton = dynamic(
+  () => import('react-twitter-embed').then((m) => m.TwitterOnAirButton),
+  { ssr: false, loading: () => <div>Loading on air…</div> }
+);
+
+const YouTube = dynamic(() => import('react-youtube-embed'), { ssr: false });
 
 import Asyncapi3ChannelComparison from '../Asyncapi3Comparison/Asyncapi3ChannelComparison';
 import Asyncapi3IdAndAddressComparison from '../Asyncapi3Comparison/Asyncapi3IdAndAddressComparison';
@@ -46,14 +78,14 @@ let mermaidInitialized = false;
 /**
  * @description Initializes the Mermaid library if not already initialized.
  */
-function initializeMermaid() {
+async function initializeMermaid(mermaidInstance: any) {
   if (mermaidInitialized) {
     return;
   }
 
   mermaidInitialized = true;
-  mermaid.initialize({
-    startOnLoad: true,
+  mermaidInstance.initialize({
+    startOnLoad: false, // Changed to false to prevent auto-initialization
     theme: 'base',
     securityLevel: 'loose',
     themeCSS: '',
@@ -71,8 +103,6 @@ function initializeMermaid() {
   });
 }
 
-initializeMermaid();
-
 let currentId = 0;
 
 /**
@@ -86,32 +116,79 @@ interface MermaidDiagramProps {
 }
 
 /**
- * @description This component renders Mermaid diagrams.
+ * @description This component renders Mermaid diagrams with dynamic loading.
  *
  * @param {MermaidDiagramProps} props - The props for the MermaidDiagram component.
  * @param {string} props.graph - The Mermaid graph to render.
  */
 function MermaidDiagram({ graph }: MermaidDiagramProps) {
   const [svg, setSvg] = useState<string | null>(null);
+  const [mermaid, setMermaid] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   /**
-   * @description Renders the Mermaid diagram.
+   * @description Dynamically loads and initializes Mermaid library.
    */
   useEffect(() => {
-    if (!graph) {
+    const loadMermaid = async () => {
+      try {
+        setIsLoading(true);
+        setError(null);
+
+        // Dynamic import of Mermaid
+        const mermaidModule = await import('mermaid');
+        const mermaidInstance = mermaidModule.default;
+
+        // Initialize Mermaid if not already done
+        await initializeMermaid(mermaidInstance);
+
+        setMermaid(mermaidInstance);
+      } catch (err) {
+        console.error('Failed to load Mermaid:', err);
+        setError('Failed to load diagram renderer');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadMermaid();
+  }, []);
+
+  /**
+   * @description Renders the Mermaid diagram when both graph and mermaid are available.
+   */
+  useEffect(() => {
+    if (!graph || !mermaid) {
       return;
     }
 
     try {
-      mermaid.mermaidAPI.render(uuid(), graph, (svgGraph) => {
+      mermaid.mermaidAPI.render(uuid(), graph, (svgGraph: string) => {
         setSvg(svgGraph);
       });
     } catch (e) {
       setSvg(null);
-      // eslint-disable-next-line no-console
-      console.error(e);
+      setError('Failed to render diagram');
+      console.error('Mermaid rendering error:', e);
     }
-  }, [graph]);
+  }, [graph, mermaid]);
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center p-8 bg-gray-50 rounded-lg">
+        <div className="text-gray-500">Loading diagram...</div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center p-8 bg-red-50 rounded-lg border border-red-200">
+        <div className="text-red-600">{error}</div>
+      </div>
+    );
+  }
 
   return svg ? <div dangerouslySetInnerHTML={{ __html: svg }} /> : null;
 }

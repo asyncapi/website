@@ -19,21 +19,21 @@ export const Silversponsors: SponsorType[] = [
     name: 'Aklivity',
     website: 'https://www.aklivity.io/',
     altText: 'Aklivity',
-    imageSrc: '/img/sponsors/aklivity_logo.png',
+    imageSrc: '/img/sponsors/aklivity_logo.webp',
     imageClass: 'inline-block sm:h-9'
   },
   {
     name: 'SmartBear',
     website: 'https://smartbear.com',
     altText: 'SmartBear',
-    imageSrc: '/img/sponsors/smartbear_logo.png',
+    imageSrc: '/img/sponsors/smartbear_logo.webp',
     imageClass: 'inline-block sm:h-9'
   },
   {
     name: 'Route4Me',
     website: 'https://route4me.com',
     altText: 'Best Route Planning and Route Optimization Software',
-    imageSrc: '/img/sponsors/route4me_logo.png',
+    imageSrc: '/img/sponsors/route4me_logo.webp',
     imageClass: 'inline-block sm:h-9'
   }
 ];

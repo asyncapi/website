@@ -1,4 +1,4 @@
-import moment from 'moment';
+import dayjs from 'dayjs'
 import Link from 'next/link';
 import React from 'react';
 import TextTruncate from 'react-text-truncate';
@@ -100,7 +100,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
                   </Heading>
                   <Paragraph typeStyle={ParagraphTypeStyle.sm} className='flex'>
                     <time dateTime={post.date} data-testid='FeaturedBlogPost-date'>
-                      {moment(post.date).format('MMMM D, YYYY')}
+                      {dayjs(post.date).format('MMMM D, YYYY')}
                     </time>
                     <span className='mx-1'>&middot;</span>
                     <span data-testid='FeaturedBlogPost-RT'>{post.readingTime} min read</span>

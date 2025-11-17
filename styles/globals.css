@@ -1,5 +1,3 @@
-@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
-@import url(https://cdn.jsdelivr.net/npm/@docsearch/css@3);
 
 @import "swiper/css";
 @import "swiper/css/a11y";
@@ -17,6 +15,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  font-display: swap;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
 }
 
 li>p {
@@ -47,6 +48,15 @@ abbr[title] {
   -webkit-animation: GradientAnimation 50s ease infinite alternate;
   -moz-animation: GradientAnimation 50s ease infinite alternate;
   animation: GradientAnimation 50s ease infinite alternate;
+}
+
+@font-face {
+  font-family: 'Fira Code VF';
+  src: url('/fonts/FiraCode-VF.woff2') format('woff2-variations');
+  font-weight: 300 700;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2C60-2C7F, U+A720-A7FF;
+  font-variation-settings: 'wght' 400;
 }
 
 @keyframes GradientAnimation {

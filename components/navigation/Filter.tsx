@@ -38,6 +38,15 @@ export default function Filter({ data, onFilter, checks, className }: FilterProp
     onFilterApply(data, onFilter, routeQuery);
   }, [routeQuery]);
 
+  const getFilterLabel = (filterName: string): string => {
+    const labelMap: Record<string, string> = {
+      type: 'Filter by type',
+      authors: 'Filter by author',
+      tags: 'Filter by tags'
+    };
+    return labelMap[filterName] || `Filter by ${filterName}`;
+  };
+
   return checks.map((check) => {
     let selected = '';
 
@@ -54,9 +63,15 @@ export default function Filter({ data, onFilter, checks, className }: FilterProp
       ...(filters[check.name] || [])
     ];
 
+    const filterLabel = getFilterLabel(check.name);
+    const selectId = `filter-${check.name}`;
+
     return (
       <Select
         key={check.name}
+        id={selectId}
+        label={filterLabel}
+        ariaLabel={filterLabel}
         options={selectOptions}
         onChange={(e) => {
           const { query } = route;

@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 
 import { defaultLanguage, i18nPaths, languages } from '@/utils/i18n';
 
+import AlgoliaSearch from '../AlgoliaSearch';
 import { SearchButton } from '../AlgoliaSearch';
 import GithubButton from '../buttons/GithubButton';
 import { isMobileDevice } from '../helpers/is-mobile';
@@ -144,6 +145,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   }, [asPath]);
 
   return (
+    <AlgoliaSearch>
     <div className={`bg-white ${className} z-50`}>
       <div className='flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-2'>
         {!hideLogo && (
@@ -254,5 +256,6 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
         />
       )}
     </div>
+    </AlgoliaSearch>
   );
 }

@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
 import { A11y, Navigation } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+
 
 import videoData from '../../config/newsroom_videos.json';
 import ArrowLeft from '../icons/ArrowLeft';
 import ArrowRight from '../icons/ArrowRight';
 import { checkLastSnapIndex, useSwiperRef } from './swiper';
 import YouTubeCard from './YouTubeCard';
+
+const Swiper = dynamic(() => import('swiper/react').then(m => m.Swiper), { ssr: false });
+const SwiperSlide = dynamic(() => import('swiper/react').then(m => m.SwiperSlide), { ssr: false });
 
 interface NewsroomYoutubeProps {
   className?: string;

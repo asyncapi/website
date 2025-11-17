@@ -13,7 +13,15 @@ interface SponsorImageProps {
 export default function SponsorImage({ src, alt = 'Sponsor logo', className }: SponsorImageProps) {
   return (
     <div className='flex size-full items-center justify-center'>
-      <img src={src} alt={alt} className={twMerge('max-h-9 sm:max-h-12 w-auto object-contain', className)} />
+      <img 
+        src={src} 
+        alt={alt} 
+        className={twMerge('max-h-9 sm:max-h-12 w-auto object-contain', className)}
+        width="120"
+        height="48"
+        loading="lazy"
+        decoding='async'
+      />
     </div>
   );
 }
