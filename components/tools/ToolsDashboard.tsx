@@ -150,9 +150,10 @@ export default function ToolsDashboard() {
   }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, searchName]);
 
   // useEffect to scroll to the opened category when url has category as element id
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+
   useEffect(() => {
     const { hash } = window.location;
-
     if (hash) {
       const elementID = decodeURIComponent(hash.slice(1));
       const element = toolsList[elementID]?.elementRef!;

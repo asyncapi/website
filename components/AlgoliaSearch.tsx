@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import { DocSearchModal } from '@docsearch/react';
-import type { DocSearchHit, InternalDocSearchHit, StoredDocSearchHit } from '@docsearch/react/dist/esm/types';
+import type { DocSearchHit, InternalDocSearchHit, StoredDocSearchHit } from '@docsearch/react';
 import clsx from 'clsx';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -315,7 +315,7 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISe
     } else {
       setChildren(children);
     }
-  }, []);
+  }, [children, actionKey]);
 
   return (
     <button
