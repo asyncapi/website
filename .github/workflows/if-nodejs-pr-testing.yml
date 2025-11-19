@@ -188,3 +188,11 @@ jobs:
           files: ./coverage/lcov.info
           token: ${{ secrets.CODECOV_TOKEN }}
           verbose: true
+
+      # Ensure coverage is generated on the ubuntu runner before uploading to Codecov
+      - if: steps.packagejson.outputs.exists == 'true' && matrix.os == 'ubuntu-latest'
+        name: Run tests with coverage
+        run: |
+          # Run Jest with coverage and output lcov report
+          # Use npm test fallback; pass -- to forward args to jest
+          npm test --if-present -- --coverage --coverageDirectory=coverage --coverageReporters=lcov
