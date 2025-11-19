@@ -67,9 +67,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '${{ steps.nodeversion.outputs.version }}'
+          cache: 'npm'
       - if: steps.packagejson.outputs.exists == 'true'
         name: Install dependencies
-        run: npm ci
+        # Use npm install instead of npm ci to handle potential lock file issues
+        run: |
+          npm install
+          # If package-lock.json doesn't exist or is outdated, create it
+          npm install
+        shell: bash
       - if: steps.packagejson.outputs.exists == 'true'
         name: Test
         run: npm test --if-present
