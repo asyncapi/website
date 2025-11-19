@@ -59,9 +59,5 @@ export default function Layout({ children }: ILayoutProps): React.JSX.Element {
   }
 
   // For all other pages, ensure main-content ID is present
-  return (
-    <div id='main-content'>
-      {children}
-    </div>
-  ) as React.JSX.Element;
+  return (<div id='main-content'>{children}</div>) as React.JSX.Element;
 }

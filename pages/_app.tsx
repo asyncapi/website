@@ -5,7 +5,6 @@ import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next';
 import React, { useEffect } from 'react';
 
-
 import ScrollButton from '@/components/buttons/ScrollButton';
 import Banner from '@/components/campaigns/Banner';
 import Footer from '@/components/footer/Footer';
@@ -26,6 +25,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       if (e.key === 'Tab' && !keyboardNavigation) {
         keyboardNavigation = true;
         const skipLink = document.querySelector('.skip-to-main-content-link');
+
         if (skipLink) {
           (skipLink as HTMLElement).style.top = '0';
         }
@@ -36,6 +36,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       if (keyboardNavigation) {
         keyboardNavigation = false;
         const skipLink = document.querySelector('.skip-to-main-content-link');
+
         if (skipLink) {
           (skipLink as HTMLElement).style.top = '-40px';
         }
@@ -55,22 +56,22 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     <AppContext.Provider value={{ path: router.asPath }}>
       {/* <MDXProvider components={mdxComponents}> */}
       <Head>
-        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <script async defer src='https://buttons.github.io/buttons.js'></script>
       </Head>
       {/* Skip to main content link for accessibility - placed before header */}
-      <a href="#main-content" className="skip-to-main-content-link">
+      <a href='#main-content' className='skip-to-main-content-link'>
         Skip to main content
       </a>
-      <div className="flex min-h-screen flex-col">
+      <div className='flex min-h-screen flex-col'>
         <Banner />
         <StickyNavbar>
-          <NavBar className="mx-auto block max-w-screen-xl px-4 sm:px-6 lg:px-8" />
+          <NavBar className='mx-auto block max-w-screen-xl px-4 sm:px-6 lg:px-8' />
         </StickyNavbar>
         <Layout>
           <Component {...pageProps} />
           <ScrollButton />
         </Layout>
-        <div className="mt-auto">
+        <div className='mt-auto'>
           <Footer />
         </div>
       </div>
