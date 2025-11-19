@@ -47,7 +47,7 @@ export default function Layout({ children }: ILayoutProps): React.JSX.Element {
   }
   if (pathname === '/blog') {
     return (
-      <div data-testid='Blogs-sub-container'>
+      <div data-testid='Blogs-sub-container' id='main-content'>
         <BlogContext.Provider value={{ navItems: posts.blog }}>{children}</BlogContext.Provider>
       </div>
     );
@@ -58,5 +58,10 @@ export default function Layout({ children }: ILayoutProps): React.JSX.Element {
     return <GenericPostLayout post={post as unknown as IPosts['blog'][number]}>{children}</GenericPostLayout>;
   }
 
-  return children as React.JSX.Element;
+  // For all other pages, ensure main-content ID is present
+  return (
+    <div id='main-content'>
+      {children}
+    </div>
+  ) as React.JSX.Element;
 }

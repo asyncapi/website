@@ -2,7 +2,7 @@ import type { NavTree } from './build-docs';
 
 export interface TableOfContentsItem {
   content: string;
-  slug: string;
+  slug?: string;
   lvl: number;
   i: number;
 }

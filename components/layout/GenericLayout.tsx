@@ -29,22 +29,27 @@ export default function GenericLayout({
   children,
   wide = true,
   // eslint-disable-next-line unused-imports/no-unused-vars, no-unused-vars
-  hideBanner = false
+  hideBanner = false,
 }: IGenericLayoutProps) {
   if (!title || !description || !image) {
-    throw new Error('Props `title`, `description`, and `image` are required at GenericLayout component.');
+    throw new Error(
+      'Props `title`, `description`, and `image` are required at GenericLayout component.',
+    );
   }
 
   return (
-    <div data-testid='GenericLayout'>
+    <div data-testid="GenericLayout">
       <Head title={title} description={description} image={image} />
       <Container wide={wide}>
-        <div data-testid='GenericLayout-banner'>
-          <AnnouncementHero className={`m-4 text-center ${hideBanner && 'hidden'}`} small={true} />
+        <div data-testid="GenericLayout-banner">
+          <AnnouncementHero
+            className={`m-4 text-center ${hideBanner && 'hidden'}`}
+            small={true}
+          />
         </div>
-        <div id='main-content' data-testid='Generic-main'>
+        <main id="main-content" data-testid="Generic-main">
           {children}
-        </div>
+        </main>
       </Container>
     </div>
   );

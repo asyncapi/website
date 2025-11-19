@@ -103,7 +103,7 @@ function MermaidDiagram({ graph }: MermaidDiagramProps) {
     }
 
     try {
-      mermaid.mermaidAPI.render(uuid(), graph, (svgGraph) => {
+      mermaid.mermaidAPI.render(uuid(), graph, (svgGraph: string) => {
         setSvg(svgGraph);
       });
     } catch (e) {
