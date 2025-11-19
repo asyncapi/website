@@ -68,6 +68,13 @@ jobs:
         with:
           node-version: '${{ steps.nodeversion.outputs.version }}'
           cache: 'npm'
+      # Fallback Node.js setup when .nvmrc is missing but package.json exists
+      - if: steps.packagejson.outputs.exists == 'true' && steps.nvmrc.outputs.exists == 'false'
+        name: Setup Node.js (fallback)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
       - if: steps.packagejson.outputs.exists == 'true'
         name: Install dependencies
         # Use npm install instead of npm ci to handle potential lock file issues
