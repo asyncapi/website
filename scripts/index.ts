@@ -76,4 +76,14 @@ async function start() {
 
 export { start };
 
-start();
+// Only invoke start when not running in a test environment.
+// This prevents side-effects during import in unit tests.
+if (process.env.NODE_ENV !== 'test') {
+  start().catch((err) => {
+    // Log the error and exit with failure when running as a script
+    // (but keep tests free of process.exit calls).
+    // eslint-disable-next-line no-console
+    console.error(err);
+    process.exit(1);
+  });
+}

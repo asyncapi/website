@@ -9,6 +9,7 @@
     "build": "npm run build-scripts && next build",
     "test:e2e": "npx cypress run",
     "test": "jest --passWithNoTests",
+    "test:ci": "node scripts/test-ci.js",
     "build:pages": "tsx scripts/build-pages.ts && npm run format:mdx",
     "build:posts": "tsx scripts/index.ts",
     "build-scripts": "npm run build:pages && npm run lint:mdx && npm run build:posts",
