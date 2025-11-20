@@ -180,14 +180,8 @@ jobs:
           delete: true
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - if: steps.packagejson.outputs.exists == 'true'
-        name: Upload Coverage to Codecov
-        uses: codecov/codecov-action@e28ff129e5465c2c0dcc6f003fc735cb6ae0c673
-        with:
-          fail_ci_if_error: true
-          files: ./coverage/lcov.info
-          token: ${{ secrets.CODECOV_TOKEN }}
-          verbose: true
+      # Upload coverage to Codecov is executed after coverage has been generated
+      # and only on the ubuntu runner where tests with coverage are run.
 
       # Ensure coverage is generated on the ubuntu runner before uploading to Codecov
       - if: steps.packagejson.outputs.exists == 'true' && matrix.os == 'ubuntu-latest'
@@ -196,3 +190,12 @@ jobs:
           # Run Jest with coverage and output lcov report
           # Use npm test fallback; pass -- to forward args to jest
           npm test --if-present -- --coverage --coverageDirectory=coverage --coverageReporters=lcov
+
+      - if: steps.packagejson.outputs.exists == 'true' && matrix.os == 'ubuntu-latest'
+        name: Upload Coverage to Codecov
+        uses: codecov/codecov-action@e28ff129e5465c2c0dcc6f003fc735cb6ae0c673
+        with:
+          fail_ci_if_error: true
+          files: ./coverage/lcov.info
+          token: ${{ secrets.CODECOV_TOKEN }}
+          verbose: true
