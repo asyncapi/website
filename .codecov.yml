@@ -1,0 +1,16 @@
+# Codecov configuration: ignore frontend and static files from patch coverage
+# This prevents Codecov's patch report from failing when coverage is only
+# collected for `scripts/**` (the test suite targets scripts).
+ignore:
+  - "components/**"
+  - "pages/**"
+  - "public/**"
+  - "styles/**"
+  - "assets/**"
+  - "templates/**"
+  - "config/**"
+  - "types/**"
+
+# Optionally disable comment on PRs
+comment:
+  layout: "none"
