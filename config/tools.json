@@ -2661,7 +2661,7 @@
         "title": "asyncapi-preview",
         "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
         "links": {
-          "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
+          "repoUrl": "https://github.com/Savio629/testing2"
         },
         "filters": {
           "language": [],
@@ -2687,7 +2687,7 @@
         "title": "asyncapi-preview",
         "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
         "links": {
-          "repoUrl": "https://github.com/Savio629/testing2"
+          "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
         },
         "filters": {
           "language": [],
@@ -2804,9 +2804,9 @@
       },
       {
         "title": "HTML Template",
-        "description": "HTML template for AsyncAPI Generator. Use it to generate a static docs. It is using AsyncAPI React component under the hood.",
+        "description": null,
         "links": {
-          "repoUrl": "https://github.com/asyncapi/html-template"
+          "repoUrl": "https://github.com/dipaksodani/async-gen"
         },
         "filters": {
           "language": [
@@ -2831,9 +2831,9 @@
       },
       {
         "title": "HTML Template",
-        "description": null,
+        "description": "HTML template for AsyncAPI Generator. Use it to generate a static docs. It is using AsyncAPI React component under the hood.",
         "links": {
-          "repoUrl": "https://github.com/dipaksodani/async-gen"
+          "repoUrl": "https://github.com/asyncapi/html-template"
         },
         "filters": {
           "language": [
