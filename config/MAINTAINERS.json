@@ -416,7 +416,6 @@
         "isTscMember": false,
         "repos": [
             "openapi-schema-parser",
-            "avro-schema-parser",
             "go-watermill-template",
             "parser-api",
             "server-api"
