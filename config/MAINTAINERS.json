@@ -477,19 +477,6 @@
         "githubID": 45017928
     },
     {
-        "name": "Tom Jefferson",
-        "github": "JEFFLUFC",
-        "linkedin": "t-jefferson",
-        "slack": "U02FPPCEH6H",
-        "availableForHire": false,
-        "company": "IBM",
-        "isTscMember": false,
-        "repos": [
-            "java-template"
-        ],
-        "githubID": 54025356
-    },
-    {
         "name": "Lewis Relph",
         "github": "lewis-relph",
         "availableForHire": false,
