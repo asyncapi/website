@@ -18,18 +18,28 @@ interface IAnnouncementHeroProps {
  * @param {Boolean} props.hideVideo - Whether the video should be hidden
  * @description The announcement hero
  */
-export default function AnnouncementHero({ className = '', small = false }: IAnnouncementHeroProps) {
+export default function AnnouncementHero({
+  className = '',
+  small = false,
+}: IAnnouncementHeroProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const visibleBanners = useMemo(() => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)), [banners]);
+  const visibleBanners = useMemo(
+    () => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)),
+    [banners],
+  );
   const numberOfVisibleBanners = visibleBanners.length;
 
   const goToPrevious = () => {
-    setActiveIndex((prevIndex) => (prevIndex === 0 ? numberOfVisibleBanners - 1 : prevIndex - 1));
+    setActiveIndex((prevIndex) =>
+      prevIndex === 0 ? numberOfVisibleBanners - 1 : prevIndex - 1,
+    );
   };
 
   const goToNext = () => {
-    setActiveIndex((prevIndex) => (prevIndex === numberOfVisibleBanners - 1 ? 0 : prevIndex + 1));
+    setActiveIndex((prevIndex) =>
+      prevIndex === numberOfVisibleBanners - 1 ? 0 : prevIndex + 1,
+    );
   };
 
   const goToIndex = (index: number) => {
@@ -37,7 +47,10 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
   };
 
   useEffect(() => {
-    const interval = setInterval(() => setActiveIndex((index) => (index + 1) % numberOfVisibleBanners), 10000);
+    const interval = setInterval(
+      () => setActiveIndex((index) => (index + 1) % numberOfVisibleBanners),
+      10000,
+    );
 
     return () => {
       clearInterval(interval);
@@ -49,19 +62,19 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
   }
 
   return (
-    <Container as='section' padding='' className='text-center'>
-      <div className='relative flex flex-row items-center justify-center overflow-x-hidden md:gap-4'>
+    <Container as="section" padding="" className="text-center">
+      <div className="relative flex flex-row mt-6 items-center justify-center overflow-x-hidden md:gap-4">
         {numberOfVisibleBanners > 1 && (
           <div
-            className={`absolute left-0 top-1/2 z-10 mb-2 flex size-8 -translate-y-1/2 cursor-pointer
+            className={`absolute left-0 top-1/2 mt-10 z-10 mb-2 flex size-8 -translate-y-1/2 cursor-pointer
           items-center justify-center rounded-full bg-primary-500 opacity-50 hover:bg-primary-600 md:opacity-100`}
             onClick={goToPrevious}
           >
-            <ArrowLeft className='text-white' />
+            <ArrowLeft className="text-white" />
           </div>
         )}
-        <div className='relative flex w-4/5 md:w-5/6 flex-col items-center justify-center gap-2'>
-          <div className='relative flex min-h-72 w-full justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
+        <div className="relative flex w-4/5 md:w-5/6 flex-col items-center justify-center gap-2">
+          <div className="relative flex min-h-72 w-full justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]">
             {visibleBanners.map((banner, index) => {
               // Only render the active banner
               const isVisible = index === activeIndex;
@@ -85,7 +98,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
               );
             })}
           </div>
-          <div className='m-auto flex justify-center'>
+          <div className="m-auto flex justify-center">
             {visibleBanners.map((banner, index) => (
               <div
                 key={index}
@@ -103,7 +116,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
                       rounded-full bg-primary-500 opacity-50 hover:bg-primary-600 md:opacity-100`}
             onClick={goToNext}
           >
-            <ArrowRight className='text-white' />
+            <ArrowRight className="text-white" />
           </div>
         )}
       </div>
