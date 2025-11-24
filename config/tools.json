@@ -23,7 +23,6 @@
         "title": "AsyncAPI Server API",
         "description": "Server API providing official AsyncAPI tools",
         "links": {
-          "websiteUrl": "https://api.asyncapi.com/v1",
           "docsUrl": "https://api.asyncapi.com/v1/docs",
           "repoUrl": "https://github.com/asyncapi/server-api"
         },
@@ -1307,10 +1306,10 @@
     "toolsList": [
       {
         "title": "AsyncAPI Studio",
-        "description": "Visually design your AsyncAPI files and event-driven architecture.",
+        "description": null,
         "links": {
           "websiteUrl": "https://studio.asyncapi.com",
-          "repoUrl": "https://github.com/asyncapi/studio"
+          "repoUrl": "https://github.com/TahaShahid203/async-api-issue"
         },
         "filters": {
           "language": [],
@@ -1334,10 +1333,10 @@
       },
       {
         "title": "AsyncAPI Studio",
-        "description": null,
+        "description": "Visually design your AsyncAPI files and event-driven architecture.",
         "links": {
           "websiteUrl": "https://studio.asyncapi.com",
-          "repoUrl": "https://github.com/TahaShahid203/async-api-issue"
+          "repoUrl": "https://github.com/asyncapi/studio"
         },
         "filters": {
           "language": [],
@@ -2804,9 +2803,9 @@
       },
       {
         "title": "HTML Template",
-        "description": null,
+        "description": "HTML template for AsyncAPI Generator. Use it to generate a static docs. It is using AsyncAPI React component under the hood.",
         "links": {
-          "repoUrl": "https://github.com/dipaksodani/async-gen"
+          "repoUrl": "https://github.com/asyncapi/html-template"
         },
         "filters": {
           "language": [
@@ -2831,9 +2830,36 @@
       },
       {
         "title": "HTML Template",
-        "description": "HTML template for AsyncAPI Generator. Use it to generate a static docs. It is using AsyncAPI React component under the hood.",
+        "description": null,
         "links": {
-          "repoUrl": "https://github.com/asyncapi/html-template"
+          "repoUrl": "https://github.com/WSOL12/html-template"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "JavaScript",
+              "color": "bg-[#F2F1C7]",
+              "borderColor": "border-[#BFBE86]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "HTML",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "generator-template"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "HTML Template",
+        "description": null,
+        "links": {
+          "repoUrl": "https://github.com/dipaksodani/async-gen"
         },
         "filters": {
           "language": [
