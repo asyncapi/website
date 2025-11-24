@@ -1,16 +1,16 @@
 ---
-title: AsyncAPI VS Code Preview Goes Web: Now Available in Your Browser 🚀
-date: 2025-10-14T03:45:29+05:30
+title: AsyncAPI VS Code Preview Goes Web: Now Available in Your Browser
+date: 2024-11-10T06:00:00+01:00
 type: Community
 canonical:
 tags: ['vscode-extension','webview']
 cover: /img/posts/may-2021-at-asyncapi/cover.webp
 authors:
   - name: Ruchi Pakhle
-    photo: /img/avatars/lpgornicki.webp
+    photo: /img/avatars/questionmark.webp
     link: https://twitter.com/Ruchicodess
     byline: AsyncAPI Maintainer
-excerpt: We’re excited to announce that the AsyncAPI VS Code Preview extension is now compatible with the web version of Visual Studio Code. This means you can preview AsyncAPI files directly in your browser, whether you’re using vscode.dev, github.dev, or a local web extension host.
+excerpt: We're excited to announce that the AsyncAPI VS Code Preview extension is now compatible with the web version of Visual Studio Code. This means you can preview AsyncAPI files directly in your browser, whether you're using vscode.dev, github.dev, or a local web extension host.
 ---
 
 For years, the AsyncAPI VS Code Preview extension has been helping developers visualize and work with AsyncAPI documents directly inside VS Code. But until now, you needed a full desktop installation of VS Code to use it.
@@ -45,13 +45,13 @@ This is a **huge usability improvement** that makes AsyncAPI more accessible to 
 1. Open any repo with AsyncAPI files on [vscode.dev](https://vscode.dev)
 2. Install the AsyncAPI Preview extension (now web-compatible)
 3. Open a `.yaml` or `.json` file and run **AsyncAPI: Preview Document** from the Command Palette
-4. That's it! Your AsyncAPI docs will render beautifully in your browser 🚀
+4. That's it! Your AsyncAPI docs will render beautifully in your browser
 
-## 🎥 Demo
+## Demo
 
 See the AsyncAPI VS Code Preview running in web mode below:
 
-[![Watch the demo](https://drive.google.com/file/d/1GOUTwhHjV0KdBiRuPLJUEQdYaNvUu6e3/view?usp=sharing)](https://docs.google.com/videos/d/1a9raPb68NdEjj6qExkp81CBQicLPwqYg3V9WeG_P1lg/edit?usp=sharing "Click to watch demo")
+<iframe width="560" height="315" src="https://youtu.be/JcS1VRyYmhE" title="AsyncAPI VS Code Preview Web Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ## Spreading the Word
@@ -79,4 +79,4 @@ We're excited to bring AsyncAPI Preview into the browser, making it even easier 
 - **Open source contributions** - Lower barrier for reviewing and contributing to AsyncAPI projects
 - **Remote collaboration** - Teams can work with AsyncAPI files without local setup requirements
 
-Give it a try on [vscode.dev](https://vscode.dev) today, and let us know what you think in the [AsyncAPI community Slack](https://www.asyncapi.com/slack-invite). Your feedback helps us continue improving the AsyncAPI developer experience! 🚀
+Give it a try on [vscode.dev](https://vscode.dev) today, and let us know what you think in the [AsyncAPI community Slack](https://www.asyncapi.com/slack-invite). Your feedback helps us continue improving the AsyncAPI developer experience!
