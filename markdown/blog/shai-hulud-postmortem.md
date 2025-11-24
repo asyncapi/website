@@ -6,6 +6,7 @@ tags:
   - Security
   - Incident
   - Postmortem
+cover: /img/posts/shai-hulud-postmortem/shai-hulud-banner.webp
 authors:
   - name: Ashish Padhy
     photo: /img/avatars/shurtugal.webp
