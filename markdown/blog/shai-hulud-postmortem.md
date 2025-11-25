@@ -40,7 +40,7 @@ Simultaneously, we were notified by [Yusuke Sugamiya](https://x.com/DNPP) that o
 
 All AsyncAPI packages had malicious versions published with a pattern of two bad patch releases. Example: for package version 1.2.3, versions 1.2.4 and 1.2.5 were malicious. The malicious code was designed to collect environment variables and send them to an external server controlled by the attacker. More on the technical details can be found in [Aikido's detailed analysis](https://www.aikido.dev/blog/shai-hulud-strikes-again-hitting-zapier-ensdomains). 
 
-This led to a spread onto other dependent packages and services, including Postman, Zapier and ENS Domains. The worm works by scanning environment variables for sensitive information and publishing them in user's public repositories. The code for worm propagation is located in `bun_environment.js` file within the malicious package versions. And the same is run through `setup_bun.js` during package postinstall script execution.
+This attack was part of a broader campaign that also targeted other organizations including Postman, Zapier and ENS Domains. The worm works by scanning environment variables for sensitive information and publishing them in user's public repositories. The code for worm propagation is located in `bun_environment.js` file within the malicious package versions. And the same is run through `setup_bun.js` during package postinstall script execution. One example of how this works was in v1.0.1 of `vs-asyncapi-preview` extension, which had a `npm install github:asyncapi/cli#2efa4dff59bc3d3cecdf897ccf178f99b115d63d` pointing to a [commit in a malicious fork](https://github.com/asyncapi/cli/commit/2efa4dff59bc3d3cecdf897ccf178f99b115d63d) which holds the above files.
 
 ```
 async ["bundleAssets"](_0x349b3d) {
@@ -72,7 +72,7 @@ Upon learning about the incident, we immediately initiated our incident response
 ### Next Steps
 
 - Conduct a thorough security audit of our publishing processes and infrastructure.
-- Publish a GHSA detailing the incident and our response.
+- Publish a Github Security Advisory detailing the incident and our response.
 
 ## How it happened: attack chain
 
@@ -82,7 +82,7 @@ The investigation is still ongoing, but preliminary findings suggest that the at
 
 If you have used any of the affected packages, we recommend taking the following steps:
 1. **Audit Your Environment**: Check for any unusual activity or changes in your environment variables
-2. **Update Dependencies**: Ensure that you are using the latest, non-malicious versions of the affected packages.
+2. **Update Dependencies**: Ensure that you are using the latest, non-malicious versions of the affected packages. The best way to do this is to delete your `node_modules` folder and lock files and reinstall your dependencies as the malicious versions have been unpublished.
 3. **Rotate Credentials**: If you suspect that any sensitive information may have been compromised, rotate your credentials immediately.
 4. Review your [GitHub security log](https://github.com/settings/security-log?q=action%3Arepo.create) for suspicious repositories that were created unexpectedly.
 5. Check your ~/.bashrc or ~/.zshrc for suspicious additions like sudo shutdown -h 0.
@@ -91,7 +91,7 @@ If you have used any of the affected packages, we recommend taking the following
 
 Regardless of how much we prepare, security incidents can still occur. This incident has highlighted several areas for improvement:
 
-- We no longer plan to use NPM tokens for our publishing process and were in the process of switching to the recently released [Trusted Publisher](https://docs.npmjs.com/trusted-publishers/) using OIDC authentication when this incident occurred 😢. This effectively connects our GitHub repo, our CI pipeline, and the NPM registry.
+- We no longer plan to use NPM tokens for our publishing process and were in the process of switching to the recently released [Trusted Publisher](https://docs.npmjs.com/trusted-publishers/) using **OIDC (OpenID Connect)** authentication when this incident occurred. This effectively connects our GitHub repo, our CI pipeline, and the NPM registry.
 
 - Have back up maintainers with publishing rights and revoking rights for tokens to reduce single points of failure.
 - Token rotation and limited scope tokens should be enforced. Our current NPM token was 3 years old.
