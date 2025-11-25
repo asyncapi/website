@@ -75,10 +75,12 @@ When we learned about the incident, we immediately started our incident response
 
 ## How it Happened: Attack Chain
 
-The investigation is still ongoing, but preliminary findings suggest that the attacker gained access to our npm and OpenVSX publishing tokens, possibly through a compromised CI/CD pipeline or a leaked token in a public repository. Once they had access, they published malicious versions of our packages without our knowledge. We don't yet know when or how the initial compromise occurred, but as our CI/CD pipelines have recently been audited, we feel that the token leak had occurred a long time ago, as we have not rotated the NPM token.
+The investigation is still ongoing, but preliminary findings suggest that the attacker gained access to our npm and OpenVSX publishing tokens, possibly through a compromised CI/CD pipeline or a leaked token in a public repository. Once they had access, they were able to publish malicious versions of our packages without our knowledge. We don't yet know when or how the initial compromise occurred, but as our CI/CD pipelines have recently been audited, we feel that the token leak had occurred a long time ago, as we have not rotated the NPM token.
+
+We are also 100% confident that the tokens were not stolen from any local machine. Our OpenVSX token was configured a long time ago, stored exclusively in GitHub repository secrets, and no team member ever had a local copy or password associated with it. Additionally, the npm bot user’s password had been lost for an extended period; it actually took us four months to recover access, during which 2FA was enforced as part of the account restoration. No one on the team had access to this password at any point, further ruling out the possibility of local compromise.
 
 ## Are You Affected?
-> Malicious versions are no longer in NPM. They were permanently deleted by NPM team. You no longer can access or install them.
+> Malicious versions are no longer in NPM. They were permanently deleted by the NPM team. You can no longer access or install them.
 
 If you have used any of the affected packages, we recommend taking the following steps:
 1. **Audit Your Environment**: Check for any unusual activity or changes in your environment variables
