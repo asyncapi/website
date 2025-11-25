@@ -162,6 +162,7 @@
             "spec",
             "spec-json-schemas",
             "asyncapi-react",
+            "parser-js",
             "extensions-catalog",
             "converter-js",
             "bindings",
@@ -198,7 +199,6 @@
         "repos": [
             "spec-json-schemas",
             "generator",
-            "parser-js",
             "converter-js",
             "modelina",
             "parser-api",
@@ -415,9 +415,7 @@
         "availableForHire": false,
         "isTscMember": false,
         "repos": [
-            "parser-js",
             "openapi-schema-parser",
-            "avro-schema-parser",
             "go-watermill-template",
             "parser-api",
             "server-api"
@@ -989,7 +987,7 @@
         "github": "Ruchip16",
         "twitter": "Ruchicodess",
         "availableForHire": true,
-        "isTscMember": false,
+        "isTscMember": true,
         "repos": [
             "vs-asyncapi-preview"
         ],
