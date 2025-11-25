@@ -29,7 +29,7 @@ On November 24, 2025, our systems experienced a significant security incident th
   - `11:46:00 UTC` — Action taken by NPM security team to unpublish the malicious packages.
   - `13:33:00 UTC` — Suspected leak found in [vs-asyncapi-preview](https://github.com/asyncapi/vs-asyncapi-preview), as malicious version (1.0.1) was pushed to [OpenVSX Registry](https://open-vsx.org/extension/asyncapi/asyncapi-preview) through report from [Yusuke Sugamiya](https://x.com/DNPP)
   - `13:45:00 UTC` — Revoked OpenVSX token and reported to OpenVSX security team.
-  - `14:30:00 UTC` — OpenVSX team unpublished the malicious package version.
+  - `13:52:00 UTC` — OpenVSX team unpublished the malicious package version.
   - `15:45:00 UTC` — Incident report writing started.
 
 ## What Happened
