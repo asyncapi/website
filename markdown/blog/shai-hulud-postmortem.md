@@ -78,10 +78,11 @@ When we learned about the incident, we immediately started our incident response
 The investigation is still ongoing, but preliminary findings suggest that the attacker gained access to our npm and OpenVSX publishing tokens, possibly through a compromised CI/CD pipeline or a leaked token in a public repository. Once they had access, they published malicious versions of our packages without our knowledge. We don't yet know when or how the initial compromise occurred, but as our CI/CD pipelines have recently been audited, we feel that the token leak had occurred a long time ago, as we have not rotated the NPM token.
 
 ## Are You Affected?
+> Malicious versions are no longer in NPM. They were permanently deleted by NPM team. You no longer can access or install them.
 
 If you have used any of the affected packages, we recommend taking the following steps:
 1. **Audit Your Environment**: Check for any unusual activity or changes in your environment variables
-2. **Update Dependencies**: Ensure that you are using the latest, non-malicious versions of the affected packages. The best way to do this is to delete your `node_modules` folder and lock files and reinstall your dependencies, as the malicious versions have been unpublished.
+2. **Update Dependencies**: Ensure that you are using the latest, non-malicious versions of the affected packages. The best way to do this is to delete your `node_modules` folder and lock files and reinstall your dependencies as the malicious versions have been unpublished.
 3. **Rotate Credentials**: If you suspect that any sensitive information may have been compromised, rotate your credentials immediately.
 4. Review your [GitHub security log](https://github.com/settings/security-log?q=action%3Arepo.create) for suspicious repositories that were created unexpectedly.
 5. Check your ~/.bashrc or ~/.zshrc for suspicious additions like sudo shutdown -h 0.
