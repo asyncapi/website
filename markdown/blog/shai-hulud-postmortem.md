@@ -96,7 +96,7 @@ Regardless of how much we prepare, security incidents can still occur. This inci
 - We no longer plan to use NPM tokens for our publishing process and were in the process of switching to the recently released [Trusted Publisher](https://docs.npmjs.com/trusted-publishers/) using **OIDC (OpenID Connect)** authentication when this incident occurred. This effectively connects our GitHub repo, our CI pipeline, and the NPM registry.
 
 - Have backup maintainers with publishing rights and revoking rights for tokens to reduce single points of failure.
-- Token rotation and limited scope tokens should be enforced. Our current NPM token is 3 years old.
+- Token rotation and limited scope tokens should be enforced. The NPM token we were using was three years old and has now been revoked.
 - Got to know about a [workflow with unsecured context](https://github.com/asyncapi/cli/blob/master/.github/workflows/auto-changeset.yml) in GitHub Actions. Although it is not the root cause here, we have fixed it to avoid any future risks in [PR #1909](https://github.com/asyncapi/cli/pull/1909)
 
 
