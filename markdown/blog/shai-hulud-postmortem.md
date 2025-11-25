@@ -1,6 +1,6 @@
 ---
-title: Shai-Hulud — What happened, how we fixed it, and what we learned
-date: 2025-11-24T16:56:08.828Z
+title: Shai-Hulud — What Happened, How We Fixed It, and What We Learned
+date: 2025-11-26T16:56:08.828Z
 type: Communication
 tags:
   - Security
@@ -20,13 +20,12 @@ On November 24, 2025, our systems experienced a significant security incident th
 ## Incident Timeline
 
  **Mon, 24 Nov 2025**
-  - `03:58:47 UTC` — Pushing of malicious package versions to npm registry.
-
+  - `03:58:47 UTC` — Pushing of malicious package versions to the NPM registry.
   - `10:02:00 UTC` — [Report by Charlie Eriksen](https://www.aikido.dev/blog/shai-hulud-strikes-again-hitting-zapier-ensdomains) from Aikido about compromised packages.
-  - `10:32:00 UTC` — Acknowledgment of the issue by AsyncAPI team, and communication initiated to inform the community.
+  - `10:32:00 UTC` — Acknowledgment of the issue by the AsyncAPI team, and communication initiated to inform the community.
   - `10:42:00 UTC` — Initial investigation and revoking of NPM tokens.
-  - `10:58:00 UTC` — Reported the incident to npm security team and started deprecating affected packages as unpublishing is not allowed with dependent packages.
-  - `11:46:00 UTC` — Action taken by NPM security team to unpublish the malicious packages.
+  - `10:58:00 UTC` — Reported the incident to the NPM security team and started deprecating affected packages, as unpublishing is not allowed with dependent packages.
+  - `11:46:00 UTC` — Action taken by the NPM security team to unpublish the malicious packages.
   - `13:33:00 UTC` — Suspected leak found in [vs-asyncapi-preview](https://github.com/asyncapi/vs-asyncapi-preview), as malicious version (1.0.1) was pushed to [OpenVSX Registry](https://open-vsx.org/extension/asyncapi/asyncapi-preview) through report from [Yusuke Sugamiya](https://x.com/DNPP)
   - `13:45:00 UTC` — Revoked OpenVSX token and reported to OpenVSX security team.
   - `13:52:00 UTC` — OpenVSX team unpublished the malicious package version.
@@ -34,13 +33,13 @@ On November 24, 2025, our systems experienced a significant security incident th
 
 ## What Happened
 
-On the morning of November 24, 2025, we were alerted by Charlie Eriksen from Aikido about suspicious activity involving several AsyncAPI-related packages on the npm registry. Upon investigation, we discovered that unauthorized versions of our packages had been published, containing malicious code designed to exfiltrate sensitive information from users' environments. This was further verified by Charlie who identified it as a Shai-Hulud worm attack. 
+On the morning of November 24, 2025, we were alerted by Charlie Eriksen from Aikido about suspicious activity involving several AsyncAPI-related packages on the npm registry. Upon investigation, we discovered that unauthorized versions of our packages had been published, containing malicious code designed to exfiltrate sensitive information from users' environments. This was further verified by Charlie, who identified it as a Shai-Hulud worm attack. 
 
-Simultaneously, we were notified by [Yusuke Sugamiya](https://x.com/DNPP) that one of our Visual Studio Code extensions, [vs-asyncapi-preview](https://open-vsx.org/extension/asyncapi/asyncapi-preview) had also been compromised, with a malicious version (1.0.1) being published to the OpenVSX registry.
+Simultaneously, we were notified by [Yusuke Sugamiya](https://x.com/DNPP) that one of our Visual Studio Code extensions, [vs-asyncapi-preview](https://open-vsx.org/extension/asyncapi/asyncapi-preview), had also been compromised, with a malicious version (1.0.1) being published to the OpenVSX registry.
 
 All AsyncAPI packages had malicious versions published with a pattern of two bad patch releases. Example: for package version 1.2.3, versions 1.2.4 and 1.2.5 were malicious. The malicious code was designed to collect environment variables and send them to an external server controlled by the attacker. More on the technical details can be found in [Aikido's detailed analysis](https://www.aikido.dev/blog/shai-hulud-strikes-again-hitting-zapier-ensdomains). 
 
-This attack was part of a broader campaign that also targeted other organizations including Postman, Zapier and ENS Domains. The worm works by scanning environment variables for sensitive information and publishing them in user's public repositories. The code for worm propagation is located in `bun_environment.js` file within the malicious package versions. And the same is run through `setup_bun.js` during package postinstall script execution. One example of how this works was in v1.0.1 of `vs-asyncapi-preview` extension, which had a `npm install github:asyncapi/cli#2efa4dff59bc3d3cecdf897ccf178f99b115d63d` pointing to a [commit in a malicious fork](https://github.com/asyncapi/cli/commit/2efa4dff59bc3d3cecdf897ccf178f99b115d63d) which holds the above files.
+This attack was part of a broader campaign that also targeted other organizations, including Postman, Zapier, and ENS Domains. The worm works by scanning environment variables for sensitive information and publishing them in the user's public repositories. The code for worm propagation is located in the `bun_environment.js` file within the malicious package versions. And the same is run through `setup_bun.js` during package postinstall script execution. One example of how this works was in v1.0.1 of `vs-asyncapi-preview` extension, which had an `npm install github:asyncapi/cli#2efa4dff59bc3d3cecdf897ccf178f99b115d63d` pointing to a [commit in a malicious fork](https://github.com/asyncapi/cli/commit/2efa4dff59bc3d3cecdf897ccf178f99b115d63d) which holds the above files.
 
 ```
 async ["bundleAssets"](_0x349b3d) {
@@ -63,26 +62,26 @@ This led to [24k compromised repositories](https://github.com/search?q=Sha1-Hulu
 
 ## Our Response
 
-Upon learning about the incident, we immediately initiated our incident response protocol. Our first steps included:
+When we learned about the incident, we immediately started our incident response protocol. Our first steps included:
 - Revoking all npm and OpenVSX tokens to prevent further unauthorized access.
 - Deprecating the affected package versions on npm and OpenVSX registries.
 - Collaborating with the npm and OpenVSX security teams to remove the malicious package versions.
-- Maintaining open communication with our community and security researchers in slack.
+- Maintaining open communication with our community and security researchers on Slack.
 
 ### Next Steps
 
 - Conduct a thorough security audit of our publishing processes and infrastructure.
-- Publish a Github Security Advisory detailing the incident and our response.
+- Publish a GitHub Security Advisory detailing the incident and our response.
 
-## How it happened: attack chain
+## How it Happened: Attack Chain
 
-The investigation is still ongoing, but preliminary findings suggest that the attacker gained access to our npm and OpenVSX publishing tokens, possibly through a compromised CI/CD pipeline or a leaked token in a public repository. Once they had access, they were able to publish malicious versions of our packages without our knowledge. We don't yet know when or how the initial compromise occurred, but as our CI/CD pipelines have recently been audited, we feel that the token leak had occurred a long time ago as we have not rotated the NPM token.
+The investigation is still ongoing, but preliminary findings suggest that the attacker gained access to our npm and OpenVSX publishing tokens, possibly through a compromised CI/CD pipeline or a leaked token in a public repository. Once they had access, they published malicious versions of our packages without our knowledge. We don't yet know when or how the initial compromise occurred, but as our CI/CD pipelines have recently been audited, we feel that the token leak had occurred a long time ago, as we have not rotated the NPM token.
 
-## Are you affected?
+## Are You Affected?
 
 If you have used any of the affected packages, we recommend taking the following steps:
 1. **Audit Your Environment**: Check for any unusual activity or changes in your environment variables
-2. **Update Dependencies**: Ensure that you are using the latest, non-malicious versions of the affected packages. The best way to do this is to delete your `node_modules` folder and lock files and reinstall your dependencies as the malicious versions have been unpublished.
+2. **Update Dependencies**: Ensure that you are using the latest, non-malicious versions of the affected packages. The best way to do this is to delete your `node_modules` folder and lock files and reinstall your dependencies, as the malicious versions have been unpublished.
 3. **Rotate Credentials**: If you suspect that any sensitive information may have been compromised, rotate your credentials immediately.
 4. Review your [GitHub security log](https://github.com/settings/security-log?q=action%3Arepo.create) for suspicious repositories that were created unexpectedly.
 5. Check your ~/.bashrc or ~/.zshrc for suspicious additions like sudo shutdown -h 0.
@@ -93,8 +92,8 @@ Regardless of how much we prepare, security incidents can still occur. This inci
 
 - We no longer plan to use NPM tokens for our publishing process and were in the process of switching to the recently released [Trusted Publisher](https://docs.npmjs.com/trusted-publishers/) using **OIDC (OpenID Connect)** authentication when this incident occurred. This effectively connects our GitHub repo, our CI pipeline, and the NPM registry.
 
-- Have back up maintainers with publishing rights and revoking rights for tokens to reduce single points of failure.
-- Token rotation and limited scope tokens should be enforced. Our current NPM token was 3 years old.
+- Have backup maintainers with publishing rights and revoking rights for tokens to reduce single points of failure.
+- Token rotation and limited scope tokens should be enforced. Our current NPM token is 3 years old.
 - Got to know about a [workflow with unsecured context](https://github.com/asyncapi/cli/blob/master/.github/workflows/auto-changeset.yml) in GitHub Actions. Although it is not the root cause here, we have fixed it to avoid any future risks in [PR #1909](https://github.com/asyncapi/cli/pull/1909)
 
 
