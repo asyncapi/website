@@ -123,6 +123,7 @@
             "spec",
             "spec-json-schemas",
             "asyncapi-react",
+            "parser-js",
             "extensions-catalog",
             "converter-js",
             "bindings",
@@ -146,7 +147,6 @@
         "repos": [
             "spec-json-schemas",
             "generator",
-            "parser-js",
             "converter-js",
             "modelina",
             "parser-api",
@@ -193,7 +193,6 @@
             "nodejs-ws-template",
             "java-spring-template",
             ".github",
-            "vs-asyncapi-preview",
             "template-for-generator-templates",
             "community",
             "diff",
@@ -742,6 +741,17 @@
             "generator"
         ],
         "githubID": 114283933
+    },
+    {
+        "name": "Ruchi Pakhle",
+        "github": "Ruchip16",
+        "twitter": "Ruchicodess",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "vs-asyncapi-preview"
+        ],
+        "githubID": 72685035
     },
     {
         "name": "Daniel Kocot",
