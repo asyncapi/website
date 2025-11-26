@@ -153,7 +153,7 @@
     "cypress": "^14.4.0",
     "eslint": "^8",
     "eslint-config-airbnb-typescript": "^17.1.0",
-    "eslint-config-next": "14.1.0",
+    "eslint-config-next": "16.0.3",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-mdx": "^3.1.5",
