@@ -16,7 +16,7 @@ For years, the AsyncAPI VS Code Preview extension has been helping developers vi
 
 With this release, the extension is now fully web-compatible. That means:
 
-✨ **Open any GitHub repo in vscode.dev or github.dev**, and you can instantly preview AsyncAPI files in your browser.
+✨ **Open any GitHub repo in vscode.dev or GitHub.dev**, and you can instantly preview AsyncAPI files in your browser.
 🌐 **No local setup required** — just your browser and an internet connection.
 🔄 **Works consistently across desktop and web**, providing the same preview experience.
 
@@ -26,7 +26,7 @@ Making the extension web-compatible required several technical improvements:
 
 - **Removed Node.js-specific modules** like `fs`, `path`, and external dependencies that are incompatible with browsers
 - **Introduced lightweight browser utilities** (`pathUtils`) for cross-platform file handling
-- **Removed EDAVisualizer integration** (unmaintained, incompatible with webmode)
+- **Removed EDAVisualizer integration** (unmaintained, incompatible with web mode)
 - **Updated VS Code dependencies** (`vscode` and `@types/vscode`) to ensure web extension compatibility
 
 ## Why Does This Matter?
@@ -50,8 +50,7 @@ This is a **huge usability improvement** that makes AsyncAPI more accessible to 
 
 See the AsyncAPI VS Code Preview running in web mode below:
 
-<iframe width="560" height="315" src="https://youtu.be/JcS1VRyYmhE" title="AsyncAPI VS Code Preview Web Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JcS1VRyYmhE?si=DlqqYs3PmJtROTvF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Spreading the Word
 
