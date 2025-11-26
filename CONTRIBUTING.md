@@ -49,7 +49,7 @@ Issues and pull requests without activity from the triager or committer within 1
 
 ### Issues
 
-[Open an issue](https://github.com/asyncapi/asyncapi/issues/new) **only** if you want to report a bug or a feature. Don't open issues for questions or support; join our [AsyncAPI Slack workspace](https://www.asyncapi.com/slack-invite) and post your queries on the relevant channels. Don't forget to follow our [Slack Etiquette](https://github.com/asyncapi/community/blob/master/slack-etiquette.md) while interacting with community members! It's more likely you'll get help, and much faster!
+[Open an issue](https://github.com/asyncapi/asyncapi/issues/new) **only** if you want to report a bug or a feature. Don't open issues for questions or support; join our [AsyncAPI Slack workspace](https://www.asyncapi.com/slack-invite) and post your queries on the relevant channels. Don't forget to follow our [Slack Etiquette](https://www.asyncapi.com/docs/community/060-meetings-and-communication/slack-etiquette) while interacting with community members! It's more likely you'll get help, and much faster!
 
 ### Bug Reports and Feature Requests
 
@@ -59,7 +59,7 @@ Please use our issues templates, which provide hints on what information we need
 
 **Please open an issue before starting a Pull Request unless it's a typo or a really obvious error.** Pull requests are the best way to propose changes to the specification. It may be rejected if no issue was created first to discuss the need for a pull request.
 
-Get familiar with our document that explains the [Git workflow](https://github.com/asyncapi/community/blob/master/docs/010-contribution-guidelines/git-workflow.md) used in our repositories.
+Get familiar with our document that explains the [Git workflow](https://www.asyncapi.com/docs/community/010-contribution-guidelines/git-workflow) used in our repositories.
 
 ## Conventional commits
 
@@ -84,7 +84,7 @@ When you submit changes, your submissions are understood to be under the same [A
 
 ## Contribution recognition
 
-We use the [All Contributors](https://allcontributors.org/docs/en/specification) specification to handle recognitions. Read the [`recognize contributors` document](https://github.com/asyncapi/community/blob/master/recognize-contributors.md).
+We use the [All Contributors](https://allcontributors.org/docs/en/specification) specification to handle recognitions. Read the [`recognize contributors` document](https://www.asyncapi.com/docs/community/010-contribution-guidelines/recognize-contributors).
 
 ## Maintainers setup
 
