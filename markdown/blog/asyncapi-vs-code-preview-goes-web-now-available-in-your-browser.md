@@ -73,8 +73,8 @@ This extension is now in maintenance mode:
 
 We're excited to bring AsyncAPI Preview into the browser, making it even easier for developers to adopt and explore AsyncAPI. This web compatibility opens up new possibilities for:
 
-- **Educational content** - Easier to demonstrate AsyncAPI concepts
-- **Open source contributions** - Lower barrier for reviewing and contributing to AsyncAPI projects
-- **Remote collaboration** - Teams can work with AsyncAPI files without local setup requirements
+- **educational content** - Easier to demonstrate AsyncAPI concepts
+- **open-source contributions** - Lower barrier for reviewing and contributing to AsyncAPI projects
+- **remote collaboration** - Teams can work with AsyncAPI files without local setup requirements
 
 Give it a try on [vscode.dev](https://vscode.dev) today, and let us know what you think in the [AsyncAPI community Slack](https://www.asyncapi.com/slack-invite). Your feedback helps us continue improving the AsyncAPI developer experience!
