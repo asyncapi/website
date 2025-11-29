@@ -1,0 +1,82 @@
+[
+  {
+    "href": "https://www.youtube.com/watch?v=_MwzLZMwFN8",
+    "label": "Video: Raiffeisen Bank - GitOps with AsyncAPI"
+  },
+  {
+    "href": "https://www.youtube.com/watch?v=m8I0fYjx6Cc",
+    "label": "Video: LEGO Group - Documentation as Configuration"
+  },
+  {
+    "href": "https://www.youtube.com/watch?v=qjarcJQVLOg",
+    "label": "Video: LEGO Group - Cross-Domain Events"
+  },
+  {
+    "href": "https://www.confluent.io/events/kafka-summit-apac-2021/self-service-events-and-decentralised-governance-with-asyncapi-a-real-world/",
+    "label": "Video: Bank of New Zealand - Self-service Events"
+  },
+  {
+    "href": "https://www.youtube.com/watch?v=yjHgT0n2BtA",
+    "label": "Video: Zora Robotics - MQTT APIs for IoT"
+  },
+  {
+    "href": "https://www.youtube.com/watch?v=SxTpGRaNIPo",
+    "label": "Video: Walmart and eBay - AsyncAPI Specification"
+  },
+  {
+    "href": "https://www.youtube.com/watch?v=0_7QZyKLPoE",
+    "label": "Video: Postman - Synapse Event Infrastructure"
+  },
+  {
+    "href": "https://drive.google.com/file/d/1AVCG9_fFtuOtrvZVZWENmU2aDT7C51Jr/view?usp=sharing",
+    "label": "Slides: Adobe - AsyncAPI and Modelina"
+  },
+  {
+    "href": "https://www.youtube.com/watch?v=m4KS6FSeTT4",
+    "label": "Video: Open University of Catalonia - Smart Ports"
+  },
+  {
+    "href": "https://www.youtube.com/watch?v=CGLlxYy66LY",
+    "label": "Video: Oracle - Data Replication"
+  },
+  {
+    "href": "https://www.asyncapi.com/blog/transfergo-asyncapi-story",
+    "label": "Article: TransferGo - AsyncAPI Story"
+  },
+  {
+    "href": "https://drive.google.com/file/d/1y67PI8NaITPPwZAiDF2Zs7ISfcIpqMV8/view?usp=sharing",
+    "label": "Slides: Kuehne+Nagel - GitOps for Kafka"
+  },
+  {
+    "href": "https://adidas.gitbook.io/api-guidelines/asynchronous-api-guidelines/kafka-asynchronous-guidelines/a_introduction/why-asyncapi",
+    "label": "Docs: Adidas - API Guidelines"
+  },
+  {
+    "href": "https://drive.google.com/file/d/1YzLwQZsMUXGwj_Lsqv-ZnvV2knuowWrS/view?usp=drive_link",
+    "label": "Slides: Morgan Stanley - WebSocket APIs"
+  },
+  {
+    "href": "https://www.asyncapi.com/casestudies/adeogroup",
+    "label": "Use Case: Adeo - Documentation Standards"
+  },
+  {
+    "href": "https://www.asyncapi.com/casestudies/hdiglobal",
+    "label": "Use Case: HDI Global SE - Documentation"
+  },
+  {
+    "href": "https://www.youtube.com/watch?v=KcYiD67gEh0&list=PLbi1gRlP7pig_nA0tRlr0hU_h5sB2HXcq&index=6",
+    "label": "Video: SAP - Event Catalog"
+  },
+  {
+    "href": "https://www.slideshare.net/slideshow/apidays-paris-2022-adding-a-mock-as-a-service-capability-to-your-api-strategy-portfolio-ludovic-pourrat-lombard-odier/255041645#4",
+    "label": "Slides: Lombard Odier - Mock as a Service"
+  },
+  {
+    "href": "https://github.com/siemens/rosita",
+    "label": "Code: Siemens AG - ROS2 Interfaces"
+  },
+  {
+    "href": "https://github.com/pagopa/p4pa-registries/blob/develop/asyncapi/generated.asyncapi.json",
+    "label": "Code: PagoPA - Event-Driven APIs"
+  }
+]
