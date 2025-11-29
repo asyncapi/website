@@ -308,6 +308,11 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
+      "name": "HTML",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
       "name": "Watermill",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
