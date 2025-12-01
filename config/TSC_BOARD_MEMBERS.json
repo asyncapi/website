@@ -220,7 +220,6 @@
             "modelina",
             "diff",
             "chatbot",
-            "server-api",
             "EDAVisualiser",
             "problem"
         ],
@@ -324,20 +323,6 @@
             "bundler"
         ],
         "githubID": 41781438
-    },
-    {
-        "name": "David Pereira",
-        "github": "BOLT04",
-        "twitter": "BOLT2938",
-        "slack": "U02EC8BT0TX",
-        "linkedin": "jos\u00e9-david-pereira-13ba5315a",
-        "availableForHire": false,
-        "company": "Create IT",
-        "isTscMember": true,
-        "repos": [
-            "server-api"
-        ],
-        "githubID": 18630253
     },
     {
         "name": "Daniel Raper",
