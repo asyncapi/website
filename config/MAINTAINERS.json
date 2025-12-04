@@ -101,6 +101,7 @@
         "isTscMember": true,
         "repos": [
             "studio",
+            ".github",
             "cli"
         ],
         "githubID": 100484401
@@ -218,7 +219,6 @@
         "repos": [
             "spec-json-schemas",
             "studio",
-            ".github",
             "optimizer"
         ],
         "githubID": 32505158
@@ -519,7 +519,8 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
-            "generator"
+            "generator",
+            ".github"
         ],
         "githubID": 40742916
     },
