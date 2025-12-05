@@ -83,7 +83,7 @@ const languagesColor: LanguageColorItem[] = [
     borderColor: 'border-[#609DBC]'
   },
   {
-    name: 'Php',
+    name: 'PHP',
     color: 'bg-[#B0B3D6]',
     borderColor: 'border-[#787CB5]'
   }
@@ -176,14 +176,14 @@ const technologiesColor: LanguageColorItem[] = [
     borderColor: 'border-[#B9012b]'
   },
   {
-    name: 'Php',
+    name: 'PHP',
     color: 'bg-[#B0B3D6]',
     borderColor: 'border-[#787CB5]'
   },
   {
     name: 'Laravel',
-    color: 'bg-[#f55247]',
-    borderColor: 'border-[#f43b2f]'
+    color: 'bg-[#F55247]',
+    borderColor: 'border-[#F43B2F]'
   },
   {
     name: 'Symfony',
