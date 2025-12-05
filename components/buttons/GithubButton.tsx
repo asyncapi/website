@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import { ButtonIconPosition, ButtonSize } from '@/types/components/buttons/ButtonPropsType';
 
@@ -36,7 +37,7 @@ export default function GithubButton({
       href={href}
       iconPosition={iconPosition}
       target={target}
-      className={className}
+      className={twMerge('ml-2 px-2 py-2 md:px-4 md:py-3 flex items-center whitespace-nowrap', className)}
       data-testid='Github-button'
       bgClassName='bg-gray-800 hover:bg-gray-700'
       buttonSize={inNav ? ButtonSize.SMALL : ButtonSize.DEFAULT}
