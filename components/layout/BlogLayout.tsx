@@ -12,6 +12,7 @@ import AnnouncementHero from '../campaigns/AnnouncementHero';
 import Head from '../Head';
 import TOC from '../TOC';
 import Container from './Container';
+import SocialShare from '../navigation/SocialShare';
 
 interface IBlogLayoutProps {
   post: IPosts['blog'][number];
@@ -107,6 +108,16 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
             </HtmlHead>
             <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className='my-6 w-full' />
             {children}
+
+            <div className="mt-10 border-t border-gray-200 pt-6">
+               <h4 className="mb-4 text-lg font-bold text-gray-700">Share this post:</h4>
+               <SocialShare
+                 title={post.title}
+                 path={router.asPath}
+                 hashtags={post.tags}
+               />
+            </div>
+
           </article>
         </main>
       </Container>
