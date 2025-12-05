@@ -42,7 +42,7 @@ export default function HomePage() {
   return (
     <>
       <Head title='AsyncAPI Initiative for event-driven APIs' />
-      <main id='main-content' className='scroll-mt-5'>
+      <main id='main-content' className='scroll-mt-5 -mt-6'>
         <Container wide>
           <Hero className='mb-24' />
         </Container>
