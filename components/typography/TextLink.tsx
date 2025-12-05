@@ -19,24 +19,30 @@ export interface TextLinkProps {
  * @param {string} props.id contains an id to be appended on heading
  */
 export default function TextLink({ href, className = '', target = '_blank', children, id }: TextLinkProps) {
-  // eslint-disable-next-line max-len
   const classNames = twMerge(
-    `text-secondary-500 underline hover:text-gray-800 font-medium transition ease-in-out duration-300 ${className || ''}`
+    `
+      text-blue-600
+      hover:text-blue-700
+      font-medium
+      underline-offset-4
+      hover:underline
+      transition-all
+      duration-200
+      ease-out
+      ${className}
+    `
   );
 
   return (
-    <>
-      {' '}
-      <Link
-        href={href}
-        target={target}
-        rel='noreferrer noopener'
-        className={classNames}
-        id={id}
-        data-testid='TextLink-href'
-      >
-        {children}
-      </Link>
-    </>
+    <Link
+      href={href}
+      target={target}
+      rel='noreferrer noopener'
+      className={classNames}
+      id={id}
+      data-testid='TextLink-href'
+    >
+      {children}
+    </Link>
   );
 }
