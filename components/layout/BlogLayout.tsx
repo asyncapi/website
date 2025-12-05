@@ -36,7 +36,7 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
 
   return (
     <BlogContext.Provider value={{ post }}>
-      <AnnouncementHero className='mx-8 my-4' />
+      <AnnouncementHero className='mx-8' />
       <Container cssBreakingPoint='lg' flex flexReverse>
         <TOC
           toc={post.toc}

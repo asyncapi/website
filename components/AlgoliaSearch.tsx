@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
+import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 export const INDEX_NAME = 'asyncapi';
@@ -243,7 +243,7 @@ export default function AlgoliaSearch({ children }: { children: React.ReactNode 
       }
       setIsOpen(true);
     },
-    [setIsOpen, setIndexName]
+    [setIsOpen]
   );
 
   const onClose = useCallback(() => {
@@ -255,14 +255,13 @@ export default function AlgoliaSearch({ children }: { children: React.ReactNode 
       setIsOpen(true);
       setInitialQuery(e.key);
     },
-    [setIsOpen, setInitialQuery]
+    [setIsOpen]
   );
 
   useDocSearchKeyboardEvents({
     isOpen,
     onOpen,
-    onClose,
-    onInput
+    onClose
   });
 
   return (
@@ -285,7 +284,7 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISe
   const { onOpen, onInput } = useContext(SearchContext);
   const [Children, setChildren] = useState<string | React.ReactNode>('');
   const searchButtonRef = useRef<HTMLButtonElement>(null);
-  const actionKey = getActionKey();
+  const actionKey = useMemo(() => getActionKey(), []);
 
   useEffect(() => {
     /**
@@ -307,7 +306,7 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISe
     return () => {
       window.removeEventListener('keydown', onKeyDown);
     };
-  }, [onInput, searchButtonRef]);
+  }, [onInput]);
 
   useEffect(() => {
     if (typeof children === 'function') {
@@ -315,7 +314,7 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISe
     } else {
       setChildren(children);
     }
-  }, []);
+  }, [children, actionKey]);
 
   return (
     <button
