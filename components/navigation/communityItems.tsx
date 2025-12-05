@@ -9,6 +9,7 @@ import IconModelina from '../icons/Modelina';
 import IconNewsroom from '../icons/Newsroom';
 import IconSlack from '../icons/Slack';
 import IconTSC from '../icons/TSC';
+import IconUsers from '../icons/Users';
 
 interface CommunityItem {
   icon: React.ComponentType<any>;
@@ -77,7 +78,13 @@ const communityItems: CommunityItem[] = [
     title: 'Newsroom',
     href: '/community/newsroom',
     description: 'Get upto date with the recent activity in the initiative.'
-  }
+  },
+  {
+    icon: IconUsers,
+    title: 'Contributors',
+    href: '/community/contributors',
+    description: 'See who are the developers of AsyncAPI.'
+  },
 ];
 
 export default communityItems;

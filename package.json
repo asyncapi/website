@@ -73,6 +73,7 @@
     "cssnano": "^6.0.3",
     "dedent": "^1.5.1",
     "dotenv": "^16.4.4",
+    "framer-motion": "^12.23.25",
     "fs-extra": "^11.2.0",
     "fuse.js": "^7.0.0",
     "googleapis": "^133.0.0",
