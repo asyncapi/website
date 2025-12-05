@@ -81,6 +81,11 @@ const languagesColor: LanguageColorItem[] = [
     name: 'Groovy',
     color: 'bg-[#B6D5E5]',
     borderColor: 'border-[#609DBC]'
+  },
+  {
+    name: 'PHP',
+    color: 'bg-[#B0B3D6]',
+    borderColor: 'border-[#787CB5]'
   }
 ];
 
@@ -169,6 +174,21 @@ const technologiesColor: LanguageColorItem[] = [
     name: 'Nest Js',
     color: 'bg-[#E1224E]',
     borderColor: 'border-[#B9012b]'
+  },
+  {
+    name: 'PHP',
+    color: 'bg-[#B0B3D6]',
+    borderColor: 'border-[#787CB5]'
+  },
+  {
+    name: 'Laravel',
+    color: 'bg-[#F55247]',
+    borderColor: 'border-[#F43B2F]'
+  },
+  {
+    name: 'Symfony',
+    color: 'bg-[#666666]',
+    borderColor: 'border-[#333333]'
   }
 ];
 
