@@ -192,14 +192,16 @@ const ContributorsPage: React.FC = () => {
       <div className="space-y-3 max-h-[65vh] overflow-y-auto pr-1 -mx-2 px-2">
         <AnimatePresence>
           {filteredRepos.map((repo) => (
-            <motion.div
+            <motion.button
               key={repo.id}
+              type="button"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               whileHover={{ scale: 1.02 }}
               onClick={() => handleRepoClick(repo.name)}
-              className={`p-4 rounded-lg cursor-pointer transition duration-300 border-l-4 ${selectedRepo === repo.name
+              aria-pressed={selectedRepo === repo.name}
+              className={`text-left w-full p-4 rounded-lg cursor-pointer transition duration-300 border-l-4 ${selectedRepo === repo.name
                 ? 'bg-blue-50 border-blue-500'
                 : 'hover:bg-gray-50 border-transparent hover:border-gray-200'
                 }`}
@@ -224,7 +226,7 @@ const ContributorsPage: React.FC = () => {
                   {formatDate(repo.updated_at)}
                 </span>
               </div>
-            </motion.div>
+            </motion.button>
           ))}
         </AnimatePresence>
       </div>
