@@ -45,7 +45,7 @@ jobs:
         with:
           # Checkout the merge commit instead of the pull request head commit for a pull request
           # Fallback to the head commit if its not a pull request
-          ref: ${{ github.event.pull_request.number != '' && format('refs/pull/{0}/merge', github.event.pull_request.number) || github.ref }}
+          ref: ${{ github.event.pull_request.number && format('refs/pull/{0}/merge', github.event.pull_request.number) || github.ref }}
 
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Check if Node.js project and has package.json
