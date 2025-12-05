@@ -72,9 +72,12 @@ export default function SocialShare({
   ]
     .filter(Boolean)
     .join('&');
+
   const redditShare = `https://www.reddit.com/submit?${redditParams}`;
 
-  const facebookShare = `https://www.facebook.com/sharer/sharer.php?u=${encode(shareUrl)}`;
+  const facebookShare = `https://www.facebook.com/sharer/sharer.php?u=${encode(
+    shareUrl
+  )}`;
 
   if (!shareUrl) return null;
 
@@ -90,7 +93,8 @@ export default function SocialShare({
       openInNewWindow(href);
     };
 
-  const iconClass = 'w-4 h-4';
+  // base icon class + hover scale via parent .group
+  const iconClass = 'w-4 h-4 transition-transform group-hover:scale-125';
 
   return (
     <div className={`inline-flex items-center space-x-2 ${className}`}>
@@ -100,7 +104,10 @@ export default function SocialShare({
         title="Share on X (Twitter)"
         type="button"
         onClick={handleClick(twitterShare)}
-        className="inline-flex items-center gap-2 whitespace-nowrap rounded-md border px-3 py-1 text-sm font-medium transition hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2"
+        className="group inline-flex items-center gap-2 whitespace-nowrap rounded-md border px-3 py-1 text-sm font-medium
+                   text-gray-700 hover:text-black
+                   transition-transform duration-200 hover:scale-110
+                   hover:border-black/50 focus:outline-none focus:ring-2 focus:ring-offset-2"
       >
         <FontAwesomeIcon icon={faXTwitter} className={iconClass} aria-hidden />
       </button>
@@ -111,7 +118,10 @@ export default function SocialShare({
         title="Share on LinkedIn"
         type="button"
         onClick={handleClick(linkedinShare)}
-        className="inline-flex items-center gap-2 whitespace-nowrap rounded-md border px-3 py-1 text-sm font-medium transition hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2"
+        className="group inline-flex items-center gap-2 whitespace-nowrap rounded-md border px-3 py-1 text-sm font-medium
+                   text-gray-700 hover:text-[#0077B5]
+                   transition-transform duration-200 hover:scale-110
+                   hover:border-[#0077B5]/60 focus:outline-none focus:ring-2 focus:ring-offset-2"
       >
         <FontAwesomeIcon
           icon={faLinkedinIn}
@@ -126,7 +136,10 @@ export default function SocialShare({
         title="Share on Reddit"
         type="button"
         onClick={handleClick(redditShare)}
-        className="inline-flex items-center gap-2 whitespace-nowrap rounded-md border px-3 py-1 text-sm font-medium transition hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2"
+        className="group inline-flex items-center gap-2 whitespace-nowrap rounded-md border px-3 py-1 text-sm font-medium
+                   text-gray-700 hover:text-[#FF5700]
+                   transition-transform duration-200 hover:scale-110
+                   hover:border-[#FF5700]/60 focus:outline-none focus:ring-2 focus:ring-offset-2"
       >
         <FontAwesomeIcon
           icon={faRedditAlien}
@@ -141,7 +154,10 @@ export default function SocialShare({
         title="Share on Facebook"
         type="button"
         onClick={handleClick(facebookShare)}
-        className="inline-flex items-center gap-2 whitespace-nowrap rounded-md border px-3 py-1 text-sm font-medium transition hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2"
+        className="group inline-flex items-center gap-2 whitespace-nowrap rounded-md border px-3 py-1 text-sm font-medium
+                   text-gray-700 hover:text-[#1877F2]
+                   transition-transform duration-200 hover:scale-110
+                   hover:border-[#1877F2]/60 focus:outline-none focus:ring-2 focus:ring-offset-2"
       >
         <FontAwesomeIcon icon={faFacebookF} className={iconClass} aria-hidden />
       </button>

@@ -51,31 +51,41 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
             <h1 className='font-normal font-sans text-4xl text-gray-800 antialiased' data-testid='BlogLayout-main'>
               {post.title}
             </h1>
-            <div className='mt-6 flex items-center'>
-              <div className='relative shrink-0'>
-                <AuthorAvatars authors={post.authors} />
-              </div>
-              <div className='ml-3'>
-                <p className='text-sm font-medium leading-5 text-gray-900'>
-                  <span className='hover:underline'>
-                    {post.authors
-                      .map((author, index) =>
-                        author.link ? (
-                          <a key={index} href={author.link}>
-                            {author.name}
-                          </a>
-                        ) : (
-                          author.name
-                        )
-                      )
-                      .reduce((prev, curr) => [prev, ' & ', curr] as any)}
-                  </span>
-                </p>
-                <div className='flex text-sm leading-5 text-gray-500'>
-                  <time dateTime={post.date}>{moment(post.date).format('MMMM D, YYYY')}</time>
-                  <span className='mx-1'>&middot;</span>
-                  <span>{post.readingTime} min read</span>
+            <div className='mt-6 flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between'>
+              <div className='flex items-center '>
+                <div className='relative shrink-0'>
+                  <AuthorAvatars authors={post.authors} />
                 </div>
+                <div className='ml-3'>
+                  <p className='text-sm font-medium leading-5 text-gray-900'>
+                    <span className='hover:underline'>
+                      {post.authors
+                        .map((author, index) =>
+                          author.link ? (
+                            <a key={index} href={author.link}>
+                              {author.name}
+                            </a>
+                          ) : (
+                            author.name
+                          )
+                        )
+                        .reduce((prev, curr) => [prev, ' & ', curr] as any)}
+                    </span>
+                  </p>
+                  <div className='flex text-sm leading-5 text-gray-500'>
+                    <time dateTime={post.date}>{moment(post.date).format('MMMM D, YYYY')}</time>
+                    <span className='mx-1'>&middot;</span>
+                    <span>{post.readingTime} min read</span>
+                  </div>
+                </div>
+              </div>
+              <div className=" border-gray-200 flex items-center ">
+                <h4 className="text-sm font-medium text-gray-700 mr-1">Share this post:</h4>
+                <SocialShare
+                  title={post.title}
+                  path={router.asPath}
+                  hashtags={post.tags}
+                />
               </div>
             </div>
           </header>
@@ -109,14 +119,6 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
             <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className='my-6 w-full' />
             {children}
 
-            <div className="mt-10 border-t border-gray-200 pt-6">
-               <h4 className="mb-4 text-lg font-bold text-gray-700">Share this post:</h4>
-               <SocialShare
-                 title={post.title}
-                 path={router.asPath}
-                 hashtags={post.tags}
-               />
-            </div>
 
           </article>
         </main>
