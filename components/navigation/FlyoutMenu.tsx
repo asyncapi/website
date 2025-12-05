@@ -18,7 +18,7 @@ export default function Flyout({ items = [] }: FlyoutProps) {
   useEffect(() => {
     if (contentRef.current) {
       const contentHeight = contentRef.current.scrollHeight;
-      const maxHeight = window.innerHeight * 0.8; // 70vh
+      const maxHeight = window.innerHeight * 0.8; // 80vh
       setNeedsScroll(contentHeight > maxHeight);
     }
   }, [items]);
@@ -33,7 +33,7 @@ export default function Flyout({ items = [] }: FlyoutProps) {
           <div
             ref={contentRef}
             className={`relative z-20 grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2 ${
-              needsScroll ? 'max-h-[70vh] overflow-y-auto' : ''
+              needsScroll ? 'max-h-[80vh] overflow-y-auto' : ''
             }`}
           >
             <MenuBlocks items={items} />
