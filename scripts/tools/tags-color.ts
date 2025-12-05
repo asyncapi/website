@@ -169,6 +169,16 @@ const technologiesColor: LanguageColorItem[] = [
     name: 'Nest Js',
     color: 'bg-[#E1224E]',
     borderColor: 'border-[#B9012b]'
+  },
+  {
+    name: 'Django',
+    color: 'bg-[#A3D9B1]',
+    borderColor: 'border-[#0C4B33]'
+  },
+  {
+    name: 'FastAPI',
+    color: 'bg-[#7DD3C0]',
+    borderColor: 'border-[#009688]'
   }
 ];
 
