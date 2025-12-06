@@ -183,12 +183,12 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "TypeScript",
+      "name": "Liquid",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "Liquid",
+      "name": "TypeScript",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
@@ -294,6 +294,11 @@
     },
     {
       "name": "IntelliJ IDEA",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "HTML",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },

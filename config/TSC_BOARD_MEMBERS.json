@@ -89,6 +89,7 @@
         "isTscMember": true,
         "repos": [
             "studio",
+            ".github",
             "cli"
         ],
         "githubID": 100484401
@@ -123,6 +124,7 @@
             "spec",
             "spec-json-schemas",
             "asyncapi-react",
+            "parser-js",
             "extensions-catalog",
             "converter-js",
             "bindings",
@@ -146,7 +148,6 @@
         "repos": [
             "spec-json-schemas",
             "generator",
-            "parser-js",
             "converter-js",
             "modelina",
             "parser-api",
@@ -166,7 +167,6 @@
         "repos": [
             "spec-json-schemas",
             "studio",
-            ".github",
             "optimizer"
         ],
         "githubID": 32505158
@@ -193,7 +193,6 @@
             "nodejs-ws-template",
             "java-spring-template",
             ".github",
-            "vs-asyncapi-preview",
             "template-for-generator-templates",
             "community",
             "diff",
@@ -221,7 +220,6 @@
             "modelina",
             "diff",
             "chatbot",
-            "server-api",
             "EDAVisualiser",
             "problem"
         ],
@@ -278,6 +276,7 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
+            "website",
             "studio"
         ],
         "githubID": 44585452
@@ -325,20 +324,6 @@
             "bundler"
         ],
         "githubID": 41781438
-    },
-    {
-        "name": "David Pereira",
-        "github": "BOLT04",
-        "twitter": "BOLT2938",
-        "slack": "U02EC8BT0TX",
-        "linkedin": "jos\u00e9-david-pereira-13ba5315a",
-        "availableForHire": false,
-        "company": "Create IT",
-        "isTscMember": true,
-        "repos": [
-            "server-api"
-        ],
-        "githubID": 18630253
     },
     {
         "name": "Daniel Raper",
@@ -477,7 +462,8 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
-            "generator"
+            "generator",
+            ".github"
         ],
         "githubID": 40742916
     },
@@ -621,9 +607,9 @@
         ],
         "githubID": 126087,
         "country": "\ud83c\uddee\ud83c\uddf3",
-        "bio": "Hari Krishnan has over two decades of experience in building high-performing teams, designing scalable systems, and driving technical strategy for large enterprises and high-growth startups across industries like finance, telecom, logistics, and retail. As Founder and CEO of Polarizer Technologies he has led enterprise-wide initiatives in architecture, developer experience, test automation and AI adoption. He combines deep technical expertise with executive vision, having worked closely with CXOs on strategy, delivery assurance, and organizational agility. He is widely recognized for his contributions to API governance, platform engineering, and contract-driven development. He has spoken at several conferences including APIDays (New York, Paris), Developer Week Sunnyvale, NordicAPIs Platform Summit, GoTo Copenhagen, API Specification Conference (#ASC2022), API World, SeleniumConf, Agile2021, Agile India, TestingUY 2021, SREConf, PyCon Singapore, RubyConf India. He actively contributes to several open-source projects including Specmatic and Perfiz. His areas of interest include distributed systems, AI-native products and exploring how AI can be leveraged to rethink software delivery and next-gen developer experience.",
-        "company": "Specmatic and Polarizer Technologies",
-        "title": "Co-founder and CTO at Specmatic, Founder, and CEO at Polarizer Technologies",
+        "bio": "Hari Krishnan has over two decades of experience in building high-performing teams, designing scalable systems, and driving technical strategy for large enterprises and high-growth startups across industries like finance, telecom, logistics, and retail. As Founder and CEO of Polarizer Technologies he has led enterprise-wide initiatives in architecture, developer experience, test automation and AI adoption. He combines deep technical expertise with executive vision, having worked closely with CXOs on strategy, delivery assurance, and organizational agility. He is widely recognized for his contributions to API governance, platform engineering, and contract-driven development. His areas of interest include distributed systems, AI native products, AI augmented and agentic software delivery.",
+        "company": "Polarizer Technologies",
+        "title": "Founder, and CEO at Polarizer Technologies",
         "img": "https://raw.githubusercontent.com/harikrishnan83/harikrishnan83/master/HariKrishnan-profile.jpg",
         "contributions": [
             {
@@ -679,6 +665,15 @@
                     "month": "August"
                 },
                 "link": "https://conferences.gotopia.tech/goto-serverless-bengaluru-2025/sessions/3845/reliable-aws-lambda-data-pipelines-with-asyncapi-specification"
+            },
+            {
+                "type": "talk",
+                "title": "AsyncAPI 2.6 to 3.0: Migrating Safely with No-Code Backward Compatibility Checks",
+                "date": {
+                    "year": 2025,
+                    "month": "October"
+                },
+                "link": "https://www.apidays.global/events/india"
             }
         ]
     },
@@ -720,6 +715,30 @@
             "conference-website"
         ],
         "githubID": 90895835
+    },
+    {
+        "name": "Adi Boghawala",
+        "github": "Adi-204",
+        "twitter": "AdiBoghawala",
+        "linkedin": "adi-boghawala",
+        "slack": "U0867GV384D",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "generator"
+        ],
+        "githubID": 114283933
+    },
+    {
+        "name": "Ruchi Pakhle",
+        "github": "Ruchip16",
+        "twitter": "Ruchicodess",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "vs-asyncapi-preview"
+        ],
+        "githubID": 72685035
     },
     {
         "name": "Daniel Kocot",

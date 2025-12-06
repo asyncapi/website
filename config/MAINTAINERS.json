@@ -101,6 +101,7 @@
         "isTscMember": true,
         "repos": [
             "studio",
+            ".github",
             "cli"
         ],
         "githubID": 100484401
@@ -162,6 +163,7 @@
             "spec",
             "spec-json-schemas",
             "asyncapi-react",
+            "parser-js",
             "extensions-catalog",
             "converter-js",
             "bindings",
@@ -198,7 +200,6 @@
         "repos": [
             "spec-json-schemas",
             "generator",
-            "parser-js",
             "converter-js",
             "modelina",
             "parser-api",
@@ -218,7 +219,6 @@
         "repos": [
             "spec-json-schemas",
             "studio",
-            ".github",
             "optimizer"
         ],
         "githubID": 32505158
@@ -274,7 +274,6 @@
             "nodejs-ws-template",
             "java-spring-template",
             ".github",
-            "vs-asyncapi-preview",
             "template-for-generator-templates",
             "community",
             "diff",
@@ -302,7 +301,6 @@
             "modelina",
             "diff",
             "chatbot",
-            "server-api",
             "EDAVisualiser",
             "problem"
         ],
@@ -373,6 +371,7 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
+            "website",
             "studio"
         ],
         "githubID": 44585452
@@ -416,12 +415,9 @@
         "availableForHire": false,
         "isTscMember": false,
         "repos": [
-            "parser-js",
             "openapi-schema-parser",
-            "avro-schema-parser",
             "go-watermill-template",
-            "parser-api",
-            "server-api"
+            "parser-api"
         ],
         "githubID": 1083296
     },
@@ -439,20 +435,6 @@
             "bundler"
         ],
         "githubID": 41781438
-    },
-    {
-        "name": "David Pereira",
-        "github": "BOLT04",
-        "twitter": "BOLT2938",
-        "slack": "U02EC8BT0TX",
-        "linkedin": "jos\u00e9-david-pereira-13ba5315a",
-        "availableForHire": false,
-        "company": "Create IT",
-        "isTscMember": true,
-        "repos": [
-            "server-api"
-        ],
-        "githubID": 18630253
     },
     {
         "name": "Daniel Raper",
@@ -478,19 +460,6 @@
             "java-template"
         ],
         "githubID": 45017928
-    },
-    {
-        "name": "Tom Jefferson",
-        "github": "JEFFLUFC",
-        "linkedin": "t-jefferson",
-        "slack": "U02FPPCEH6H",
-        "availableForHire": false,
-        "company": "IBM",
-        "isTscMember": false,
-        "repos": [
-            "java-template"
-        ],
-        "githubID": 54025356
     },
     {
         "name": "Lewis Relph",
@@ -551,7 +520,8 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
-            "generator"
+            "generator",
+            ".github"
         ],
         "githubID": 40742916
     },
@@ -971,5 +941,29 @@
             "community"
         ],
         "githubID": 105683440
+    },
+    {
+        "name": "Adi Boghawala",
+        "github": "Adi-204",
+        "twitter": "AdiBoghawala",
+        "linkedin": "adi-boghawala",
+        "slack": "U0867GV384D",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "generator"
+        ],
+        "githubID": 114283933
+    },
+    {
+        "name": "Ruchi Pakhle",
+        "github": "Ruchip16",
+        "twitter": "Ruchicodess",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "vs-asyncapi-preview"
+        ],
+        "githubID": 72685035
     }
 ]
