@@ -23,7 +23,7 @@ export default class ErrorBoundary extends React.Component<React.PropsWithChildr
     const { hasError } = this.state;
     const { children } = this.props;
 
-    //shown when any component breaks
+    // shown when any component breaks
     if (hasError) {
       return (
         <div className='flex h-screen flex-col items-center justify-center px-4 text-center'>
