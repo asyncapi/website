@@ -81,13 +81,13 @@ export default function NewsletterSubscribe({
           'Content-Type': 'application/json'
         }
       });
-  
+
       if (res.status === 200) {
         setFormStatus(FormStatus.SUCCESS);
       } else {
         setFormStatus(FormStatus.ERROR);
       }
-  
+
       await res.json();
     } catch (err) {
       setFormStatus(FormStatus.ERROR);

@@ -44,13 +44,12 @@ export default function Feedback({ className }: IFeedbackProps) {
           'Content-Type': 'application/json'
         }
       });
-  
+
       if (response.status === 200) {
         setSubmitted(true);
       } else {
         setError(true);
       }
-  
       await response.json();
     } catch (err) {
       setError(true);
