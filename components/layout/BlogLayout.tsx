@@ -10,9 +10,9 @@ import BlogContext from '../../context/BlogContext';
 import AuthorAvatars from '../AuthorAvatars';
 import AnnouncementHero from '../campaigns/AnnouncementHero';
 import Head from '../Head';
+import SocialShare from '../navigation/SocialShare';
 import TOC from '../TOC';
 import Container from './Container';
-import SocialShare from '../navigation/SocialShare';
 
 interface IBlogLayoutProps {
   post: IPosts['blog'][number];
@@ -79,21 +79,16 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
                   </div>
                 </div>
               </div>
-              
-              <div className="flex items-center">
-                <h4 className="text-sm font-medium text-gray-700 mr-1">Share this post:</h4>
-                <SocialShare
-                  title={post.title}
-                  path={router.asPath}
-                  hashtags={post.tags}
-                />
+
+              <div className='flex items-center'>
+                <h4 className='text-sm font-medium text-gray-700 mr-1'>Share this post:</h4>
+                <SocialShare title={post.title} path={router.asPath} hashtags={post.tags} />
               </div>
             </div>
           </header>
           <article className='mb-32'>
             <Head title={post.title} description={post.excerpt} image={post.cover} />
             <HtmlHead>
-              {/* FIX: Removed the deprecated AddThis script and styles */}
               {post.canonical && <link rel='canonical' href={post.canonical} />}
             </HtmlHead>
             <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className='my-6 w-full' />
