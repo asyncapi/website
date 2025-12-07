@@ -88,9 +88,7 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
           </header>
           <article className='mb-32'>
             <Head title={post.title} description={post.excerpt} image={post.cover} />
-            <HtmlHead>
-              {post.canonical && <link rel='canonical' href={post.canonical} />}
-            </HtmlHead>
+            <HtmlHead>{post.canonical && <link rel='canonical' href={post.canonical} />}</HtmlHead>
             <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className='my-6 w-full' />
             {children}
           </article>

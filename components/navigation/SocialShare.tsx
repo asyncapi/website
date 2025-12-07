@@ -67,10 +67,7 @@ export default function SocialShare({ url, path, title, hashtags = [], text = ''
 
   const linkedinShare = `https://www.linkedin.com/sharing/share-offsite/?${linkedinParams}`;
 
-  const redditParams = [
-    shareUrl ? `url=${encode(shareUrl)}` : '',
-    title ? `title=${encode(title)}` : ''
-  ]
+  const redditParams = [shareUrl ? `url=${encode(shareUrl)}` : '', title ? `title=${encode(title)}` : '']
     .filter(Boolean)
     .join('&');
 
