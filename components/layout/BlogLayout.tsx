@@ -79,7 +79,8 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
                   </div>
                 </div>
               </div>
-              <div className=" border-gray-200 flex items-center ">
+              
+              <div className="flex items-center">
                 <h4 className="text-sm font-medium text-gray-700 mr-1">Share this post:</h4>
                 <SocialShare
                   title={post.title}
@@ -92,34 +93,11 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
           <article className='mb-32'>
             <Head title={post.title} description={post.excerpt} image={post.cover} />
             <HtmlHead>
-              <script
-                type='text/javascript'
-                src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cb852c7b57ed596'
-                async
-              />
-              <style>{`
-                /* AddThis hack */
-
-                #at4-share {
-                    left: 50%;
-                    margin-left: -500px !important;
-                    position: absolute;
-
-                    &amp;.addthis-animated {
-                      animation-duration: 0s !important;
-                    }
-                }
-
-                #at4-scc {
-                    display: none !important;
-                }
-              `}</style>
+              {/* FIX: Removed the deprecated AddThis script and styles */}
               {post.canonical && <link rel='canonical' href={post.canonical} />}
             </HtmlHead>
             <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className='my-6 w-full' />
             {children}
-
-
           </article>
         </main>
       </Container>

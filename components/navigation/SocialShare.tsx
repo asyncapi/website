@@ -7,6 +7,9 @@ import {
   faXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 
+/**
+ * Props for the SocialShare component
+ */
 type Props = {
   url?: string;
   path?: string;
@@ -16,10 +19,21 @@ type Props = {
   className?: string;
 };
 
+/**
+ * Helper to encode URI components safely
+ * @param s - The string to encode
+ */
 function encode(s?: string) {
   return encodeURIComponent(s ?? '');
 }
 
+/**
+ * SocialShare Component
+ * * Renders a row of social media sharing buttons (X, LinkedIn, Reddit, Facebook).
+ * Automatically generates sharing URLs based on the provided title and path.
+ * * @param {Props} props - The component props
+ * @returns {JSX.Element | null} The rendered button group or null if URL cannot be determined
+ */
 export default function SocialShare({
   url,
   path,
@@ -47,7 +61,7 @@ export default function SocialShare({
 
   const twitterParams = [
     text
-      ? `text=${encode(text + (text ? ' ' : '') + title)}`
+      ? `text=${encode(text + ' ' + title)}`
       : `text=${encode(title)}`,
     shareUrl ? `url=${encode(shareUrl)}` : '',
     hashtagParam ? `hashtags=${encode(hashtagParam)}` : '',
@@ -59,7 +73,6 @@ export default function SocialShare({
 
   const linkedinParams = [
     shareUrl ? `url=${encode(shareUrl)}` : '',
-    title ? `title=${encode(title)}` : '',
   ]
     .filter(Boolean)
     .join('&');
@@ -93,7 +106,6 @@ export default function SocialShare({
       openInNewWindow(href);
     };
 
-  // base icon class + hover scale via parent .group
   const iconClass = 'w-4 h-4 transition-transform group-hover:scale-125';
 
   return (
