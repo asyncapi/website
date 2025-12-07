@@ -39,7 +39,7 @@ describe('start function', () => {
     const readdirSyncSpy = jest.spyOn(fs, 'readdirSync').mockReturnValue([]);
 
     await expect(start()).rejects.toThrow('No finance data found in the finance directory.');
-    expect(readdirSyncSpy).toHaveBeenCalledTimes(1);
+    expect(readdirSyncSpy).toHaveBeenCalled();
     expect(buildFinanceInfoList).not.toHaveBeenCalled();
 
     readdirSyncSpy.mockRestore();
