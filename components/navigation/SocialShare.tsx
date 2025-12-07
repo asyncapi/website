@@ -1,9 +1,4 @@
-import {
-  faFacebookF,
-  faLinkedinIn,
-  faRedditAlien,
-  faXTwitter,
-} from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faLinkedinIn, faRedditAlien, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useMemo } from 'react';
 
@@ -34,14 +29,7 @@ function encode(s?: string) {
  * @param {Props} props - The component props
  * @returns {JSX.Element | null} The rendered button group or null if URL cannot be determined
  */
-export default function SocialShare({
-  url,
-  path,
-  title,
-  hashtags = [],
-  text = '',
-  className = '',
-}: Props) {
+export default function SocialShare({ url, path, title, hashtags = [], text = '', className = '' }: Props) {
   const shareUrl = useMemo(() => {
     if (url) return url;
 
@@ -68,7 +56,7 @@ export default function SocialShare({
   const twitterParams = [
     text ? `text=${encode(`${text} ${title}`)}` : `text=${encode(title)}`,
     shareUrl ? `url=${encode(shareUrl)}` : '',
-    hashtagParam ? `hashtags=${encode(hashtagParam)}` : '',
+    hashtagParam ? `hashtags=${encode(hashtagParam)}` : ''
   ]
     .filter(Boolean)
     .join('&');
@@ -81,7 +69,7 @@ export default function SocialShare({
 
   const redditParams = [
     shareUrl ? `url=${encode(shareUrl)}` : '',
-    title ? `title=${encode(title)}` : '',
+    title ? `title=${encode(title)}` : ''
   ]
     .filter(Boolean)
     .join('&');
@@ -109,52 +97,44 @@ export default function SocialShare({
     <div className={`inline-flex items-center space-x-2 ${className}`}>
       {/* X / Twitter */}
       <button
-        aria-label={`Share '${title}' on X (Twitter)`}
+        aria-label='Share on X (Twitter)'
         title='Share on X (Twitter)'
         type='button'
         onClick={handleClick(twitterShare)}
-        className="group inline-flex items-center gap-2 whitespace-nowrap rounded-md border px-3 py-1 text-sm
-          font-medium text-gray-700 hover:text-black transition-transform duration-200 hover:scale-110
-          hover:border-black/50 focus:outline-none focus:ring-2 focus:ring-offset-2"
+        className='group inline-flex items-center gap-2 whitespace-nowrap rounded-md border px-3 py-1 text-sm font-medium text-gray-700 hover:text-black transition-transform duration-200 hover:scale-110 hover:border-black/50 focus:outline-none focus:ring-2 focus:ring-offset-2'
       >
         <FontAwesomeIcon icon={faXTwitter} className={iconClass} aria-hidden />
       </button>
 
       {/* LinkedIn */}
       <button
-        aria-label={`Share '${title}' on LinkedIn`}
+        aria-label='Share on LinkedIn'
         title='Share on LinkedIn'
         type='button'
         onClick={handleClick(linkedinShare)}
-        className="group inline-flex items-center gap-2 whitespace-nowrap rounded-md border px-3 py-1 text-sm
-          font-medium text-gray-700 hover:text-[#0077B5] transition-transform duration-200 hover:scale-110
-          hover:border-[#0077B5]/60 focus:outline-none focus:ring-2 focus:ring-offset-2"
+        className='group inline-flex items-center gap-2 whitespace-nowrap rounded-md border px-3 py-1 text-sm font-medium text-gray-700 hover:text-[#0077B5] transition-transform duration-200 hover:scale-110 hover:border-[#0077B5]/60 focus:outline-none focus:ring-2 focus:ring-offset-2'
       >
         <FontAwesomeIcon icon={faLinkedinIn} className={iconClass} aria-hidden />
       </button>
 
       {/* Reddit */}
       <button
-        aria-label={`Share '${title}' on Reddit`}
+        aria-label='Share on Reddit'
         title='Share on Reddit'
         type='button'
         onClick={handleClick(redditShare)}
-        className="group inline-flex items-center gap-2 whitespace-nowrap rounded-md border px-3 py-1 text-sm
-          font-medium text-gray-700 hover:text-[#FF5700] transition-transform duration-200 hover:scale-110
-          hover:border-[#FF5700]/60 focus:outline-none focus:ring-2 focus:ring-offset-2"
+        className='group inline-flex items-center gap-2 whitespace-nowrap rounded-md border px-3 py-1 text-sm font-medium text-gray-700 hover:text-[#FF5700] transition-transform duration-200 hover:scale-110 hover:border-[#FF5700]/60 focus:outline-none focus:ring-2 focus:ring-offset-2'
       >
         <FontAwesomeIcon icon={faRedditAlien} className={iconClass} aria-hidden />
       </button>
 
       {/* Facebook */}
       <button
-        aria-label={`Share '${title}' on Facebook`}
+        aria-label='Share on Facebook'
         title='Share on Facebook'
         type='button'
         onClick={handleClick(facebookShare)}
-        className="group inline-flex items-center gap-2 whitespace-nowrap rounded-md border px-3 py-1 text-sm
-          font-medium text-gray-700 hover:text-[#1877F2] transition-transform duration-200 hover:scale-110
-          hover:border-[#1877F2]/60 focus:outline-none focus:ring-2 focus:ring-offset-2"
+        className='group inline-flex items-center gap-2 whitespace-nowrap rounded-md border px-3 py-1 text-sm font-medium text-gray-700 hover:text-[#1877F2] transition-transform duration-200 hover:scale-110 hover:border-[#1877F2]/60 focus:outline-none focus:ring-2 focus:ring-offset-2'
       >
         <FontAwesomeIcon icon={faFacebookF} className={iconClass} aria-hidden />
       </button>
