@@ -76,6 +76,6 @@ export async function start() {
 }
 
 // Only run the function if this file is executed directly
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (typeof process.argv[1] !== 'undefined' && currentFilePath === resolve(process.argv[1])) {
   start().catch(console.error);
 }
