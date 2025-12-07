@@ -44,7 +44,7 @@ Use the following tools to set up the project:
 2. Open Command Prompt on your local computer.
 
 3. Clone the forked repository by adding your own GitHub username in place of `<username>`.
-   For multiple contributions it is recommended to have [proper configuration of forked repo](https://github.com/asyncapi/community/blob/master/git-workflow.md).
+   For multiple contributions it is recommended to have [proper configuration of forked repo](https://github.com/asyncapi/community/blob/master/docs/010-contribution-guidelines/git-workflow.md).
 
 ```bash
     git clone https://github.com/<username>/website/
