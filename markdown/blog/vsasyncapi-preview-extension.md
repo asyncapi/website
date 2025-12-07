@@ -1,15 +1,16 @@
 ---
-title: AsyncAPI VS Code Preview Goes Web: Now Available in Your Browser
-date: 2024-11-10T06:00:00+01:00
+title: AsyncAPI-VS-Code-Preview Goes Web, Now Available in Your Browser
+date: 2025-12-07T06:00:00+01:00
 type: Community
-canonical:
-tags: ['vscode-extension','webview']
-cover: /img/posts/may-2021-at-asyncapi/cover.webp
+tags:
+  - vscode-extension
+  - webview
 authors:
   - name: Ruchi Pakhle
+    photo: /img/avatars/ruchip16.webp
     link: https://twitter.com/Ruchicodess
     byline: AsyncAPI Maintainer & TSC Member
-excerpt: We're excited to announce that the AsyncAPI VS Code Preview extension is now compatible with the web version of Visual Studio Code. This means you can preview AsyncAPI files directly in your browser, whether you're using vscode.dev, github.dev, or a local web extension host.
+excerpt: 'We're excited to announce that the AsyncAPI VS Code Preview extension is now compatible with the web version of Visual Studio Code. This means you can preview AsyncAPI files directly in your browser, whether you're using vscode.dev, github.dev, or a local web extension host.'
 ---
 
 For years, the AsyncAPI VS Code Preview extension has been helping developers visualize and work with AsyncAPI documents directly inside VS Code. But until now, you needed a full desktop installation of VS Code to use it.
