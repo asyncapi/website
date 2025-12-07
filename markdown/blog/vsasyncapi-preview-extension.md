@@ -50,9 +50,28 @@ This is a **huge usability improvement** that makes AsyncAPI more accessible to 
 
 ## Demo
 
-See the AsyncAPI VS Code Preview running in web mode below:
+Watch the AsyncAPI VS Code Preview extension working seamlessly in your web browser. This demonstration shows how to install the extension in VS Code web, open an AsyncAPI document, and use the preview functionality to render beautiful documentation directly in the browser without needing a local VS Code installation.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JcS1VRyYmhE?si=DlqqYs3PmJtROTvF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div id="demo-description" style="margin-bottom: 1rem;">
+<p><strong>Demo Overview:</strong> The video demonstrates opening a GitHub repository in vscode.dev, installing the AsyncAPI Preview extension, opening a sample AsyncAPI YAML file, and executing the preview command to generate interactive documentation in the web browser.</p>
+</div>
+
+<iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/JcS1VRyYmhE?si=DlqqYs3PmJtROTvF" 
+  title="AsyncAPI VS Code Preview Web Demo - Browser Extension Walkthrough" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  referrerpolicy="strict-origin-when-cross-origin" 
+  allowfullscreen
+  aria-label="Video demonstration of AsyncAPI VS Code Preview extension working in web browser"
+  aria-describedby="demo-description">
+</iframe>
+
+<p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">
+<strong>Accessibility Note:</strong> This video includes visual demonstrations of the AsyncAPI extension interface. For a text-based description of the steps shown, please refer to the "How to Try It Out" section above. <a href="#how-to-try-it-out">Jump to written instructions</a>.
+</p>
 
 ## Spreading the Word
 
