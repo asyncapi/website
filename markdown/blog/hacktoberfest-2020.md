@@ -65,7 +65,7 @@ In case you:
 - you picked up an issue where you need to make changes to more than just one file,
 - you also need to run the project locally to check if it works
 
-Then follow [this](https://github.com/asyncapi/community/blob/master/git-workflow.md) short instruction on how to fork the repository and set it up locally.
+Then follow [this](https://github.com/asyncapi/community/blob/master/docs/010-contribution-guidelines/git-workflow.md) short instruction on how to fork the repository and set it up locally.
 
 Once you are ready with your changes, submit a pull request. Be nice and follow our [code of conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md) and make sure your pull request is [described properly](https://github.com/asyncapi/.github/blob/master/CONTRIBUTING.md#conventional-commits).
 

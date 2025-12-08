@@ -59,7 +59,7 @@ Please use our issues templates, which provide hints on what information we need
 
 **Please open an issue before starting a Pull Request unless it's a typo or a really obvious error.** Pull requests are the best way to propose changes to the specification. It may be rejected if no issue was created first to discuss the need for a pull request.
 
-Get familiar with our document that explains the [Git workflow](https://github.com/asyncapi/community/blob/master/git-workflow.md) used in our repositories.
+Get familiar with our document that explains the [Git workflow](https://github.com/asyncapi/community/blob/master/docs/010-contribution-guidelines/git-workflow.md) used in our repositories.
 
 ## Conventional commits
 

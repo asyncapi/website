@@ -1,0 +1,48 @@
+{
+  "headerText": "Building the future of Event-Driven Architectures (EDA)",
+  "githubStarLink": "https://github.com/asyncapi/spec",
+  "readDocsLink": "/docs",
+  "letUsKnowLink": "https://github.com/asyncapi/website/issues/new",
+  "cardTitles": [
+    "Document APIs",
+    "Code Generation",
+    "Open Governance",
+    "And much more..."
+  ],
+  "moreCardTitles": ["Specification", "Community"],
+  "homepageLinks": [
+    {
+      "name": "HTML Template",
+      "url": "https://github.com/asyncapi/html-template"
+    },
+    {
+      "name": "React Component",
+      "url": "https://github.com/asyncapi/asyncapi-react/"
+    },
+    {
+      "name": "Generator",
+      "url": "/tools/generator"
+    },
+    {
+      "name": "Modelina",
+      "url": "/tools/modelina"
+    },
+    {
+      "name": "Join our Slack",
+      "url": "https://asyncapi.com/slack-invite"
+    },
+    {
+      "name": "Read more about Open Governance",
+      "url": "/blog/governance-motivation"
+    },
+    {
+      "name": "TSC Members",
+      "url": "/community/tsc"
+    },
+    {
+      "name": "View GitHub Discussions",
+      "url": "https://github.com/asyncapi/community/discussions"
+    }
+  ]
+}
+

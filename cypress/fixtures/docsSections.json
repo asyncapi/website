@@ -1,0 +1,161 @@
+[
+  { "href": "/docs/concepts/server", "label": "Server", "heading": "Server" },
+  {
+    "href": "/docs/concepts/producer",
+    "label": "Producer",
+    "heading": "Producer"
+  },
+  {
+    "href": "/docs/concepts/consumer",
+    "label": "Consumer",
+    "heading": "Consumer"
+  },
+  {
+    "href": "/docs/concepts/channel",
+    "label": "Channel",
+    "heading": "Channel"
+  },
+  {
+    "href": "/docs/concepts/application",
+    "label": "Application",
+    "heading": "Application"
+  },
+  {
+    "href": "/docs/concepts/protocol",
+    "label": "Protocol",
+    "heading": "Protocol"
+  },
+  {
+    "href": "/docs/concepts/message",
+    "label": "Message",
+    "heading": "Message"
+  },
+  {
+    "href": "/docs/concepts/asyncapi-document",
+    "label": "AsyncAPI Document",
+    "heading": "Introduction"
+  },
+  { "href": "/docs/tutorials", "label": "Tutorials", "heading": "Overview" },
+  {
+    "href": "/docs/tutorials/getting-started",
+    "label": "Getting Started",
+    "heading": "Introduction"
+  },
+  {
+    "href": "/docs/tutorials/create-asyncapi-document",
+    "label": "Create AsyncAPI document",
+    "heading": "Create AsyncAPI document"
+  },
+  {
+    "href": "/docs/tutorials/generate-code",
+    "label": "Generate code",
+    "heading": "Generate code"
+  },
+  {
+    "href": "/docs/tutorials/studio-document-validation",
+    "label": "Validate AsyncAPI document with Studio",
+    "heading": "Validate AsyncAPI document with Studio"
+  },
+  {
+    "href": "/docs/tutorials/message-validation",
+    "label": "Message validation in runtime",
+    "heading": "Message validation in runtime"
+  },
+  {
+    "href": "/docs/tutorials/streetlights-interactive",
+    "label": "Streetlights - Interactive",
+    "heading": "Streetlights - Interactive"
+  },
+  {
+    "href": "/docs/tutorials/websocket",
+    "label": "WebSocket",
+    "heading": "Create an AsyncAPI document for a Slackbot with WebSocket"
+  },
+  {
+    "href": "/docs/tutorials/kafka",
+    "label": "Kafka",
+    "heading": "Create AsyncAPI document for applications consuming from Kafka"
+  },
+  { "href": "/docs/tools", "label": "Tools", "heading": "Overview" },
+  {
+    "href": "/docs/tools/generator",
+    "label": "Generator",
+    "heading": "Introduction"
+  },
+  { "href": "/docs/tools/cli", "label": "CLI", "heading": "Introduction" },
+  {
+    "href": "/docs/guides",
+    "label": "Guides",
+    "heading": "Overview"
+  },
+  {
+    "href": "/docs/guides/validate",
+    "label": "Validate AsyncAPI documents",
+    "heading": "Validate AsyncAPI documents"
+  },
+  {
+    "href": "/docs/guides/message-validation",
+    "label": "Message validation",
+    "heading": "Message validation"
+  },
+  {
+    "href": "/docs/reference",
+    "label": "Reference",
+    "heading": "Overview"
+  },
+  {
+    "href": "/docs/reference/specification/v3.0.0",
+    "label": "Specification",
+    "heading": "3.0.0"
+  },
+  {
+    "href": "/docs/reference/specification/v2.x",
+    "label": "2.x",
+    "heading": "2.x"
+  },
+  {
+    "href": "/docs/reference/extensions",
+    "label": "Extensions",
+    "heading": "Overview"
+  },
+  {
+    "href": "/docs/reference/extensions/linkedin",
+    "label": "linkedin",
+    "heading": "linkedin"
+  },
+  {
+    "href": "/docs/reference/extensions/x",
+    "label": "x",
+    "heading": "x"
+  },
+  {
+    "href": "/docs/reference/bindings",
+    "label": "Bindings",
+    "heading": "Overview"
+  },
+  {
+    "href": "/docs/migration",
+    "label": "Migration",
+    "heading": "Overview"
+  },
+  {
+    "href": "/docs/migration/migrating-to-v3",
+    "label": "Migrating to v3",
+    "heading": "Migrating to v3"
+  },
+  {
+    "href": "/docs/community",
+    "label": "Community",
+    "heading": "Overview"
+  },
+  {
+    "href": "/docs/community/011-styleguide",
+    "label": "Style Guide",
+    "heading": "Introduction"
+  },
+  {
+    "href": "/docs/community/000-onboarding",
+    "label": "Onboarding",
+    "heading": "Introduction"
+  }
+]
