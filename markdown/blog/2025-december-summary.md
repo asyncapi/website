@@ -42,7 +42,7 @@ Thanks to their quick action, the issue was contained and resolved. We’re grat
 
 
 ## Spec x Tooling
-AsyncAPI now supports a formal media type (MIME type) for the AsyncAPI Object. This change improves interoperability and strengthens tooling capabilities for API specifications while addressing the ongoing efforts in standards communities, emphasizing the importance of recognizing AsyncAPI artifacts with well-defined media types for seamless documentation, validation, and system exchanges. You can get more details [about this on the formal media type for the AsyncAPI Object issue](https://github.com/asyncapi/spec/issues/936).
+AsyncAPI now supports a formal media type (MIME type) for the AsyncAPI Object. This change improves interoperability and strengthens tooling capabilities for API specifications, emphasizing the importance of recognizing AsyncAPI artifacts with well-defined media types for seamless documentation, validation, and system exchanges. You can get more details [about this on the formal media type for the AsyncAPI Object issue](https://github.com/asyncapi/spec/issues/936).
 
 Additionally, Spec meetings are now back. Keep an eye [on the spec meeting issue if you're interested in joining](https://github.com/asyncapi/spec/issues/1131).
 
