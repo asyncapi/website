@@ -14,7 +14,7 @@ excerpt: 'AsyncAPI community and project updates for November and December 2025'
 featured: true
 ---
 
-Well, believe it or not, we are in the final week of 2025! It's been a great year as we navigated crucial growth in the community and, of course, some challenges along the way. Most importantly, we have new experiences that continuously make us better.
+Well, believe it or not, we are in the final weeks of 2025! It's been a great year as we navigated crucial growth in the community and, of course, some challenges along the way. Most importantly, we have new experiences that continuously make us better.
 
 As this is the last summary of the year, I'll keep it short, highlight some of the details that happened in November and December, and give a quick glimpse of what to expect next year.
 
@@ -29,7 +29,7 @@ The agenda is being finalized, and the conference tickets will be shared at the 
 
 ### AsyncAPI Conference 2026
 
-We're exploring new venues or partners who would love to host us for 2026. If you or your company can host us, or know conference organizers who would like to have an AsyncAPI track, please share your thoughts and insights in the [AsyncAPI conference venues for 2026 discussion](https://github.com/asyncapi/community/issues/2133).
+We're exploring new venues or partners who would love to host us for 2026. If you or your company can host us, or know conference organizers who would be open to have an AsyncAPI track, please share your thoughts and insights in the [AsyncAPI conference venues for 2026 discussion](https://github.com/asyncapi/community/issues/2133).
 
 ## AsyncAPI NPM Packages Security Update
 
@@ -45,4 +45,12 @@ Thanks to their quick action, the issue was contained and resolved. We’re grat
 AsyncAPI now supports a formal media type (MIME type) for the AsyncAPI Object. This change improves interoperability and strengthens tooling capabilities for API specifications while addressing the ongoing efforts in standards communities, emphasizing the importance of recognizing AsyncAPI artifacts with well-defined media types for seamless documentation, validation, and system exchanges. You can get more details [about this on the formal media type for the AsyncAPI Object issue](https://github.com/asyncapi/spec/issues/936).
 
 Additionally, Spec meetings are now back. Keep an eye [on the spec meeting issue if you're interested in joining](https://github.com/asyncapi/spec/issues/1131).
+
 ## Final Remarks
+I want to thank the community for taking the time to read the AsyncAPI monthly summary and for the consistent support. It has been amazing to contribute to our shared efforts throughout the year.
+
+As we head to the holiday season, I wish everyone and your family a joyful time and a great 2026 ahead.
+
+I'll be back next year with another detailed summary, including key insights and numbers.
+
+**Until then, stay safe and happy holidays!**
