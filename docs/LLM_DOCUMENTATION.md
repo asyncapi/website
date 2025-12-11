@@ -2,16 +2,22 @@
 
 This guide explains how to maintain the LLM-friendly documentation files (`llms.txt`, `llms-full.txt`, `sitemap.xml`) for the AsyncAPI website.
 
+## ⚠️ IMPORTANT: Generated Files
+
+**These files are generated during the build process and should NOT be committed to git:**
+- `/public/llms.txt`
+- `/public/llms-full.txt`
+- `/public/sitemap.xml`
+- `/public/schemas/`
+
+They are already added to `.gitignore` and will be automatically generated during:
+- Local development: `npm run build-scripts`
+- CI/CD: Build process before deployment
+
 ## Overview
 
 The AsyncAPI website provides LLM-optimized documentation following the [llms.txt standard](https://llmstxt.org/) to help AI assistants generate correct AsyncAPI v3 documents.
 
-## Files Generated
-
-- **`public/llms.txt`**: Structured markdown index of key documentation
-- **`public/llms-full.txt`**: Expanded version with additional context
-- **`public/sitemap.xml`**: Standard XML sitemap for search engines and crawlers
-- **`public/schemas/3.0.0.json`**: AsyncAPI v3 JSON Schema
 
 ## Build Scripts
 

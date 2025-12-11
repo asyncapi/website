@@ -24,3 +24,9 @@ coverage
 deno.lock
 cypress/videos
 cypress/screenshots
+
+# Generated LLM documentation files (built by scripts/build-llms-txt.ts and scripts/build-sitemap.ts)
+/public/llms.txt
+/public/llms-full.txt
+/public/sitemap.xml
+/public/schemas/
