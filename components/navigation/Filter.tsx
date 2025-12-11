@@ -6,12 +6,11 @@ import { applyFilterList, onFilterApply } from '../helpers/applyFilter';
 
 interface Check {
   name: string;
-  [key: string]: any;
 }
 
-interface FilterProps {
-  data: any[];
-  onFilter: (data: any[]) => void;
+interface FilterProps<T = any> {
+  data: T[];
+  onFilter: (data: T[]) => void;
   checks: Check[];
   className?: string;
 }
@@ -24,18 +23,18 @@ interface FilterProps {
  * @param {Object[]} props.checks - The list of filter options.
  * @param {string} [props.className] - Additional CSS classes for styling.
  */
-export default function Filter({ data, onFilter, checks, className }: FilterProps) {
+export default function Filter<T = any>({ data, onFilter, checks, className }: FilterProps<T>) {
   const route = useRouter();
-  const [filters, setFilters] = useState<Record<string, any>>({});
-  const [routeQuery, setQuery] = useState<Record<string, any>>({});
+  const [filters, setFilters] = useState<Record<string, { value: string; text: string }[]>>({});
+  const [routeQuery, setQuery] = useState<Record<string, string>>({});
 
   useEffect(() => {
-    setQuery(route.query);
-    applyFilterList(checks, data, setFilters);
+    setQuery(route.query as Record<string, string>);
+    applyFilterList(checks, data as any, setFilters);
   }, [route]);
 
   useEffect(() => {
-    onFilterApply(data, onFilter, routeQuery);
+    onFilterApply(data as any, onFilter as any, routeQuery);
   }, [routeQuery]);
 
   return checks.map((check) => {
