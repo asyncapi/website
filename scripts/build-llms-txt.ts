@@ -2,18 +2,8 @@ import fs from 'fs/promises';
 import path from 'path';
 import { existsSync } from 'fs';
 
-/**
- * Generates LLM-friendly documentation files following the llms.txt standard.
- * This includes:
- * - /llms.txt - A concise markdown index of key documentation
- * - /llms-full.txt - An expanded version with all linked content
- * 
- * Standard: https://llmstxt.org/
- */
-
 const WEBSITE_BASE = 'https://www.asyncapi.com';
 const PUBLIC_DIR = './public';
-const DOCS_DIR = './markdown/docs';
 const CONFIG_DIR = './config';
 
 interface LLMSection {
@@ -25,10 +15,6 @@ interface LLMSection {
     }>;
 }
 
-/**
- * Main llms.txt content structure.
- * This follows the llms.txt spec with clear sections for LLM consumption.
- */
 function generateLLMSTxt(): string {
     const sections: LLMSection[] = [
         {
@@ -162,11 +148,6 @@ function generateLLMSTxt(): string {
     return content;
 }
 
-/**
- * Generates llms-full.txt by expanding the llms.txt content.
- * This is a simplified version - in production, this would fetch and include
- * the full content of all linked pages.
- */
 function generateLLMSFullTxt(llmsTxt: string): string {
     let content = llmsTxt;
     content += '\n---\n\n';
@@ -185,9 +166,6 @@ function generateLLMSFullTxt(llmsTxt: string): string {
     return content;
 }
 
-/**
- * Copies the AsyncAPI JSON schema to the public schemas directory.
- */
 async function copySchemas() {
     const schemasDir = path.join(PUBLIC_DIR, 'schemas');
 
@@ -206,9 +184,6 @@ async function copySchemas() {
     }
 }
 
-/**
- * Main function to generate all LLM-friendly files.
- */
 async function main() {
     try {
         console.log('Generating LLM-friendly documentation files...\n');

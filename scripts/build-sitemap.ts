@@ -1,13 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-/**
- * Generates sitemap.xml for the AsyncAPI website.
- * This provides a standard XML sitemap for broader consumption beyond Google Search.
- * 
- * Standard: https://www.sitemaps.org/protocol.html
- */
-
 const WEBSITE_BASE = 'https://www.asyncapi.com';
 const PUBLIC_DIR = './public';
 
@@ -18,9 +11,6 @@ interface SitemapURL {
     priority?: number;
 }
 
-/**
- * Generates the sitemap.xml content.
- */
 function generateSitemapXML(): string {
     const today = new Date().toISOString().split('T')[0];
 
@@ -87,9 +77,6 @@ function generateSitemapXML(): string {
     return xml;
 }
 
-/**
- * Escapes XML special characters.
- */
 function escapeXML(str: string): string {
     return str
         .replace(/&/g, '&amp;')
@@ -99,9 +86,6 @@ function escapeXML(str: string): string {
         .replace(/'/g, '&apos;');
 }
 
-/**
- * Main function to generate sitemap.xml.
- */
 async function main() {
     try {
         console.log('Generating sitemap.xml...\n');
