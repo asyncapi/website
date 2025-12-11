@@ -188,28 +188,17 @@ async function main() {
     try {
         console.log('Generating LLM-friendly documentation files...\n');
 
-        // Generate llms.txt
         const llmsTxt = generateLLMSTxt();
         await fs.writeFile(path.join(PUBLIC_DIR, 'llms.txt'), llmsTxt, 'utf-8');
         console.log('✓ Generated llms.txt');
 
-        // Generate llms-full.txt
         const llmsFullTxt = generateLLMSFullTxt(llmsTxt);
         await fs.writeFile(path.join(PUBLIC_DIR, 'llms-full.txt'), llmsFullTxt, 'utf-8');
         console.log('✓ Generated llms-full.txt');
 
-        // Copy JSON schemas
         await copySchemas();
 
         console.log('\n✅ All LLM documentation files generated successfully!');
-        console.log('\nGenerated files:');
-        console.log('  - public/llms.txt');
-        console.log('  - public/llms-full.txt');
-        console.log('  - public/schemas/3.0.0.json');
-        console.log('\nNext steps:');
-        console.log('  1. Test llms.txt format compliance');
-        console.log('  2. Submit to https://llmstxt.site/');
-        console.log('  3. Submit to https://directory.llmstxt.cloud/');
     } catch (error) {
         console.error('Error generating LLM documentation files:', error);
         process.exit(1);

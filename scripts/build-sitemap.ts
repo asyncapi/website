@@ -88,15 +88,9 @@ function escapeXML(str: string): string {
 
 async function main() {
     try {
-        console.log('Generating sitemap.xml...\n');
-
         const sitemapXML = generateSitemapXML();
         await fs.writeFile(path.join(PUBLIC_DIR, 'sitemap.xml'), sitemapXML, 'utf-8');
-
-        console.log('✅ Generated sitemap.xml successfully!');
-        console.log('\nGenerated file:');
-        console.log('  - public/sitemap.xml');
-        console.log('\nThis sitemap complements the existing rss.xml and is designed for broader consumption.');
+        console.log('✅ Generated sitemap.xml');
     } catch (error) {
         console.error('Error generating sitemap.xml:', error);
         process.exit(1);
