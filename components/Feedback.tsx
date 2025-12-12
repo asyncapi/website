@@ -30,28 +30,35 @@ export default function Feedback({ className }: IFeedbackProps) {
    * @param {React.FormEvent<HTMLFormElement>} e - The form event
    */
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const data = {
-      title: `Feedback on ${asPath} - ${timeStamp}`,
-      feedback
-    };
+  e.preventDefault();
+  setSubmitted(false);
+  setError(false);
 
-    fetch('/.netlify/functions/github_discussions', {
+  const data = {
+    title: `Feedback on ${asPath} - ${timeStamp}`,
+    feedback
+  };
+
+  try {
+    const response = await fetch('/.netlify/functions/github_discussions', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
         'Content-Type': 'application/json'
       }
-    }).then((response) => {
-      if (response.status === 200) {
-        setSubmitted(true);
-      }
-      if (response.status !== 200) {
-        setError(true);
-      }
-      response.json();
     });
+
+    if (!response.ok) {
+      throw new Error(`Request failed with status ${response.status}`);
+    }
+
+    await response.json();
+    setSubmitted(true);
+  } catch (err) {
+    console.error('Feedback submission failed:', err);
+    setError(true);
   }
+}
 
   if (submitted) {
     return (
