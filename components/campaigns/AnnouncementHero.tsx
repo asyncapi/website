@@ -21,7 +21,7 @@ interface IAnnouncementHeroProps {
 export default function AnnouncementHero({ className = '', small = false }: IAnnouncementHeroProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const visibleBanners = useMemo(() => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)), [banners]);
+  const visibleBanners = useMemo(() => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)), []);
   const numberOfVisibleBanners = visibleBanners.length;
 
   const goToPrevious = () => {
@@ -48,8 +48,10 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
     return null;
   }
 
+  const outerSpacing = small ? 'my-4' : 'my-6';
+
   return (
-    <Container as='section' padding='' className='text-center'>
+    <Container as='section' padding='' className={`text-center ${outerSpacing} ${className}`}>
       <div className='relative flex flex-row items-center justify-center overflow-x-hidden md:gap-4'>
         {numberOfVisibleBanners > 1 && (
           <div
@@ -79,8 +81,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
                   link={banner.link}
                   city={banner.city}
                   activeBanner={isVisible}
-                  className={className}
-                  small={small}
+                  className=''
                 />
               );
             })}
