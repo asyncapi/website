@@ -57,11 +57,11 @@ export default function AccordionItem({ itemIndex, title, content, isActive, set
           )}
         </div>
       </button>
-      {isActive && (
-        <div className='rounded-sm border-t border-gray-200 py-2 font-body font-regular text-gray-700 antialiased'>
+      {
+        <div className={`rounded-sm border-t border-gray-200 font-body font-regular text-gray-700 antialiased overflow-hidden transition-all duration-300 ease-in-out ${isActive ? 'max-h-40 opacity-100 py-2' : 'max-h-0 opacity-0 py-0'}`}>
           {content}
         </div>
-      )}
+      }
     </div>
   );
 }
