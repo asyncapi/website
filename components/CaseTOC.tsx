@@ -1,8 +1,16 @@
+import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import React, { useMemo, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { useHeadingsObserver } from './helpers/useHeadingsObserver';
 import ArrowRight from './icons/ArrowRight';
+
+interface CaseContentItem {
+  title: string;
+  content?: MDXRemoteSerializeResult;
+  items?: string[];
+  children?: CaseContentItem[];
+}
 
 interface TocItem {
   lvl: number;
@@ -21,7 +29,7 @@ interface TOCItemProps {
 interface CaseTOCProps {
   className: string;
   cssBreakingPoint?: 'xl' | 'lg';
-  toc: any[];
+  toc: CaseContentItem[];
 }
 
 /**

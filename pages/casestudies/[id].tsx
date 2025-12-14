@@ -37,8 +37,15 @@ interface IndexProps {
   fullExample: MDXRemoteSerializeResult;
 }
 
+interface CaseStudyContentItem {
+  title: string;
+  content?: MDXRemoteSerializeResult;
+  items?: string[];
+  children?: CaseStudyContentItem[];
+}
+
 const renderContent = (
-  content: any[],
+  content: CaseStudyContentItem[],
   allComponents: Record<string, React.ComponentType<any>>,
   level: number
 ): React.JSX.Element[] => {

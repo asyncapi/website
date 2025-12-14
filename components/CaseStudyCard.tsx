@@ -1,12 +1,12 @@
 import React from 'react';
 
-import type { ICaseStudies } from '@/types/post';
+import type { ICaseStudy } from '@/types/post';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 import Paragraph from './typography/Paragraph';
 
 interface ICaseStudyCardProps {
-  studies?: ICaseStudies;
+  studies?: ICaseStudy[];
 }
 
 /**
