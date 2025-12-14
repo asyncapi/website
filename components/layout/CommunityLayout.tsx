@@ -1,6 +1,6 @@
 import { UserGroupIcon } from '@heroicons/react/outline';
 import { sortBy } from 'lodash';
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 import type { Ambassador, Tsc } from '@/types/pages/community/Community';
 
@@ -56,8 +56,6 @@ function addAdditionalUserInfo(user: Tsc | Ambassador) {
   if (userData.twitter) {
     userData.twitter = `https://www.twitter.com/${userData.twitter}`;
   }
-
-  // (avatarUrl was set above when github exists)
 
   // make repo links
   if ('repos' in userData) {
@@ -178,6 +176,47 @@ function UserWorkStatus({ user }: TSCUser) {
 }
 
 /**
+ * @description Renders the role-related information for a TSC member or ambassador.
+ *
+ * @param {Tsc | Ambassador} user - The user object containing maintainer or ambassador data.
+ * @param {string} githubUsername - Extracted GitHub username used for fallback ambassador link.
+ * @returns {JSX.Element | null} - The rendered role UI content.
+ */
+function renderMemberRole(user: Tsc | Ambassador, githubUsername: string) {
+  // Maintainer case – user has repos
+  if ('repos' in user && user.repos) {
+    return (
+      <div className='flex flex-wrap items-center gap-1'>
+        Maintainer of:
+        {user.repos.map((repo: { name: string; url: string }) => (
+          <a
+            data-testid='Repo-Links'
+            key={repo.name}
+            className='inline-flex items-center rounded-full bg-cyan-100 px-3 py-0.5 text-xs font-medium leading-5 text-cyan-800 hover:bg-cyan-300'
+            href={repo.url}
+          >
+            {repo.name}
+          </a>
+        ))}
+      </div>
+    );
+  }
+
+  if (githubUsername) {
+    return (
+      <TextLink
+        href={`/community/ambassadors/${githubUsername}`}
+        className='flex font-normal text-base text-blue-500 no-underline hover:text-sky-400'
+      >
+        AsyncAPI Ambassador
+      </TextLink>
+    );
+  }
+
+  return null;
+}
+
+/**
  * @description This function returns the user info component.
  *
  * @param {TSCUser} props - The props for the user info component.
@@ -212,38 +251,7 @@ function UserInfo({ user, membership }: TSCUser) {
           </ul>
         </div>
       </div>
-      {(() => {
-        if ('repos' in user) {
-          return (
-            <div className='flex flex-wrap items-center gap-1'>
-              Maintainer of:
-              {user.repos.map((repo: { name: string; url: string }) => (
-                <a
-                  data-testid='Repo-Links'
-                  key={repo.name}
-                  className='inline-flex items-center rounded-full bg-cyan-100 px-3 py-0.5 text-xs font-medium leading-5 text-cyan-800 hover:bg-cyan-300'
-                  href={repo.url}
-                >
-                  {repo.name}
-                </a>
-              ))}
-            </div>
-          );
-        }
-
-        if (githubUsername) {
-          return (
-            <TextLink
-              href={`/community/ambassadors/${githubUsername}`}
-              className='flex font-normal text-base text-blue-500 no-underline hover:text-sky-400'
-            >
-              AsyncAPI Ambassador
-            </TextLink>
-          );
-        }
-
-        return null;
-      })()}
+      {renderMemberRole(user, githubUsername)}
 
       <div className='flex justify-end mt-4'>
         {membership === Membership.BOARD && user.isBoardChair && (
@@ -293,13 +301,18 @@ interface ICommunityLayout {
 }
 
 /**
- * @description This function returns the TSC or Board component.
- * @param {Membership} props.membership - determines the community members belong to board or TSC (ambassadors & maintainers).
+ * @description Renders the Community layout for TSC or Board pages, including
+ * member search, repository filtering, dropdown interactions, and optional
+ * newsletter subscription section.
+ *
+ * @param {ICommunityLayout} props - Component props.
+ * @param {React.ReactNode} props.children - Content to be displayed within the layout.
+ * @param {Membership} props.membership - Determines whether the page shows TSC or Board members.
+ * @returns {JSX.Element} The rendered Community layout.
  */
 export default function CommunityLayout({ children, membership }: ICommunityLayout) {
   const description = `Meet the current AsyncAPI ${membership} members and learn how you can become one.`;
   const image = `/img/social/community-${membership.toLowerCase()}.webp`;
-
   const isTSCMembership = membership === Membership.TSC;
 
   // State for search and filtering
@@ -307,6 +320,27 @@ export default function CommunityLayout({ children, membership }: ICommunityLayo
   const [selectedRepo, setSelectedRepo] = useState('all');
   const [repoSearchQuery, setRepoSearchQuery] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  /**
+   * @description Sets up a listener to close the repo dropdown when clicking outside of it.
+   * The listener is attached on mount and cleaned up on unmount.
+   */
+  useEffect(() => {
+    /**
+     * @description Handles document clicks and closes dropdown when clicking outside its container.
+     * @param {MouseEvent} e - Mouse event fired on document click.
+     */
+    function handleClickOutside(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const tscBoardMembers = useMemo(() => {
     return sortBy(
@@ -412,15 +446,21 @@ export default function CommunityLayout({ children, membership }: ICommunityLayo
                   <label htmlFor='maintainer-repo' className='mb-2 block text-sm font-medium text-gray-700'>
                     Maintainer repo
                   </label>
-                  <div className='relative'>
+
+                  <div className='relative' ref={dropdownRef}>
                     <button
+                      id='maintainer-repo'
                       type='button'
                       onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                      aria-expanded={isDropdownOpen}
+                      aria-haspopup='listbox'
+                      aria-controls='repo-listbox'
                       className='w-full rounded-md border border-gray-300 bg-white px-4 py-2.5 text-left text-sm text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500'
                     >
                       <span className='block truncate'>
                         {selectedRepo === 'all' ? 'All repositories' : selectedRepo}
                       </span>
+
                       <span className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2'>
                         <svg
                           className={`h-5 w-5 text-gray-400 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
@@ -448,14 +488,31 @@ export default function CommunityLayout({ children, membership }: ICommunityLayo
                             onClick={(e) => e.stopPropagation()}
                           />
                         </div>
-                        <ul className='max-h-60 overflow-auto py-1'>
+                        <ul
+                          id='repo-listbox'
+                          role='listbox'
+                          aria-labelledby='maintainer-repo'
+                          className='max-h-60 overflow-auto py-1'
+                        >
+                          {/* ALL option */}
                           <li
+                            role='option'
+                            tabIndex={0}
+                            aria-selected={selectedRepo === 'all'}
                             onClick={() => {
                               setSelectedRepo('all');
                               setIsDropdownOpen(false);
                               setRepoSearchQuery('');
                             }}
-                            className='cursor-pointer px-4 py-2 text-sm text-gray-900 hover:bg-gray-100'
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                setSelectedRepo('all');
+                                setIsDropdownOpen(false);
+                                setRepoSearchQuery('');
+                              }
+                            }}
+                            className='cursor-pointer px-4 py-2 text-sm text-gray-900 hover:bg-gray-100 focus:bg-gray-100'
                           >
                             <span className='flex items-center'>
                               {selectedRepo === 'all' && (
@@ -470,15 +527,28 @@ export default function CommunityLayout({ children, membership }: ICommunityLayo
                               All repositories
                             </span>
                           </li>
+
+                          {/* Repo options */}
                           {filteredRepositories.map((repo) => (
                             <li
                               key={repo}
+                              role='option'
+                              tabIndex={0}
+                              aria-selected={selectedRepo === repo}
                               onClick={() => {
                                 setSelectedRepo(repo);
                                 setIsDropdownOpen(false);
                                 setRepoSearchQuery('');
                               }}
-                              className='cursor-pointer px-4 py-2 text-sm text-gray-900 hover:bg-gray-100'
+                              onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                  e.preventDefault();
+                                  setSelectedRepo(repo);
+                                  setIsDropdownOpen(false);
+                                  setRepoSearchQuery('');
+                                }
+                              }}
+                              className='cursor-pointer px-4 py-2 text-sm text-gray-900 hover:bg-gray-100 focus:bg-gray-100'
                             >
                               <span className='flex items-center'>
                                 {selectedRepo === repo && (
