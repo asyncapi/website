@@ -30,12 +30,12 @@ describe('scripts/index.ts direct execution', () => {
 
     // Set up process.argv to simulate direct execution
     const originalArgv = process.argv;
-    const testFilePath = require.resolve('../../scripts/index.ts');
+    const testFilePath = require.resolve('../../scripts/index');
     process.argv = ['', testFilePath];
 
     // Dynamically import the module to trigger the direct execution
     // Using require to ensure the module is evaluated
-    await import('../../scripts/index.ts');
+    await import('../../scripts/index');
 
     // Clean up
     process.argv = originalArgv;
