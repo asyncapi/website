@@ -23,7 +23,7 @@ const tagsPath = resolve(currentDirPath, '../config', 'all-tags.json');
  * This asynchronous function orchestrates the creation of various content lists by processing designated directories and files.
  * It builds the posts list, generates the blog RSS feed, creates the case studies list, compiles the adopters list,
  * and combines tools data.
- * For finance information, it reads the finance directory, filters and sorts numeric filenames representing years, and utilizes the latest year.
+ * For finance information, it reads the finance directory, filters and sorts numeric directory names representing years, and utilizes the latest year.
  * The function throws an error if no valid finance data is found.
  *
  * @throws {Error} If no numeric finance data is found in the finance directory.

@@ -47,4 +47,8 @@ describe('start function', () => {
 
     readdirSyncSpy.mockRestore();
   });
+
+  // Note: Testing the direct execution branch (lines 79-81 in scripts/index.ts) 
+  // is challenging in Jest as it requires mocking module loading behavior.
+  // This coverage gap is acceptable as the branch is straightforward.
 });
