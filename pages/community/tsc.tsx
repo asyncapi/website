@@ -1,5 +1,5 @@
 import { sortBy } from 'lodash';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import type { Tsc } from '@/types/pages/community/Community';
 
@@ -86,6 +86,13 @@ export default function TSC() {
   const indexOfLastMember = currentPage * membersPerPage;
   const indexOfFirstMember = indexOfLastMember - membersPerPage;
   const currentMembers = filteredMembers.slice(indexOfFirstMember, indexOfLastMember);
+
+  // Reset and clamp pagination when filters/search change
+  useEffect(() => {
+    if (totalPages === 0 || currentPage > totalPages) {
+      setCurrentPage(1);
+    }
+  }, [searchTerm, filterType, filteredMembers.length, totalPages, currentPage]);
 
   return (
     <GenericLayout
@@ -225,15 +232,21 @@ export default function TSC() {
             <div className='w-full sm:w-auto sm:flex-1 max-w-md'>
               <input
                 type='text'
-                placeholder='Search members by role or name...'
+                placeholder='Search members by name or GitHub handle...'
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                  setCurrentPage(1);
+                }}
                 className='w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent'
               />
             </div>
             <div className='flex gap-2 flex-wrap'>
               <button
-                onClick={() => setFilterType('all')}
+                onClick={() => {
+                  setFilterType('all');
+                  setCurrentPage(1);
+                }}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   filterType === 'all'
                     ? 'bg-primary-500 text-white'
@@ -243,7 +256,10 @@ export default function TSC() {
                 All
               </button>
               <button
-                onClick={() => setFilterType('maintainer')}
+                onClick={() => {
+                  setFilterType('maintainer');
+                  setCurrentPage(1);
+                }}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   filterType === 'maintainer'
                     ? 'bg-primary-500 text-white'
@@ -253,7 +269,10 @@ export default function TSC() {
                 Maintainer
               </button>
               <button
-                onClick={() => setFilterType('available')}
+                onClick={() => {
+                  setFilterType('available');
+                  setCurrentPage(1);
+                }}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   filterType === 'available'
                     ? 'bg-primary-500 text-white'
@@ -263,7 +282,10 @@ export default function TSC() {
                 Available to hire
               </button>
               <button
-                onClick={() => setFilterType('company')}
+                onClick={() => {
+                  setFilterType('company');
+                  setCurrentPage(1);
+                }}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   filterType === 'company'
                     ? 'bg-primary-500 text-white'
@@ -280,11 +302,17 @@ export default function TSC() {
           </p>
 
           {/* Members Grid */}
-          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12'>
-            {currentMembers.map((member) => (
-              <TSCMemberCard key={member.github} member={member} />
-            ))}
-          </div>
+          {filteredMembers.length === 0 ? (
+            <div className='text-center py-12'>
+              <p className='text-gray-600 dark:text-gray-400 text-lg'>No members found for this filter</p>
+            </div>
+          ) : (
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12'>
+              {currentMembers.map((member) => (
+                <TSCMemberCard key={member.github} member={member} />
+              ))}
+            </div>
+          )}
 
           {/* Pagination */}
           <PaginationComponent

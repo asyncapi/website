@@ -45,18 +45,18 @@ function addAdditionalUserInfo(user: Tsc | Ambassador) {
 
   // add social links
   if (userData.github) {
-    userData.github = `https://www.github.com/${userData.github}`;
+    userData.githubUrl = `https://www.github.com/${userData.github}`;
   }
   if (userData.linkedin) {
-    userData.linkedin = `https://www.linkedin.com/in/${userData.linkedin}`;
+    userData.linkedinUrl = `https://www.linkedin.com/in/${userData.linkedin}`;
   }
   if (userData.twitter) {
-    userData.twitter = `https://www.twitter.com/${userData.twitter}`;
+    userData.twitterUrl = `https://www.twitter.com/${userData.twitter}`;
   }
 
   // add avatar url
   // github redirects to avatar url using `https://www.github.com/<username>.png`
-  userData.avatarUrl = `${userData.github}.png`;
+  userData.avatarUrl = userData.githubUrl ? `${userData.githubUrl}.png` : '';
 
   // make repo links
   if ('repos' in userData) {
@@ -184,7 +184,7 @@ function UserWorkStatus({ user }: TSCUser) {
  * @param {Membership} props.membership - determines the community members belong to board or TSC (ambassadors & maintainers).
  */
 function UserInfo({ user, membership }: TSCUser) {
-  const githubUsername = user.github.split('/').pop();
+  const githubUsername = user.github;
 
   return (
     <li
@@ -205,9 +205,9 @@ function UserInfo({ user, membership }: TSCUser) {
           </div>
           <UserWorkStatus user={user} />
           <ul role='list' className='my-5 flex justify-center space-x-5'>
-            <SocialLink href={user.github} social='GitHub' />
-            {user.twitter ? <SocialLink href={user.twitter} social='Twitter' /> : null}
-            {user.linkedin ? <SocialLink href={user.linkedin} social='Linkedin' /> : null}
+            {user.githubUrl ? <SocialLink href={user.githubUrl} social='GitHub' /> : null}
+            {user.twitterUrl ? <SocialLink href={user.twitterUrl} social='Twitter' /> : null}
+            {user.linkedinUrl ? <SocialLink href={user.linkedinUrl} social='Linkedin' /> : null}
           </ul>
         </div>
       </div>

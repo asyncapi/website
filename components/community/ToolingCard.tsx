@@ -44,7 +44,14 @@ export default function ToolingCard({ name, description, badge, language, link, 
 
           {/* Bottom Large Fan/Petal Shape - Blue gradient */}
           <div className='absolute -bottom-40 -left-32 w-[700px] h-[500px]'>
-            <svg viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg' className='w-full h-full'>
+            <svg
+              viewBox='0 0 500 500'
+              xmlns='http://www.w3.org/2000/svg'
+              className='w-full h-full'
+              aria-hidden='true'
+              role='presentation'
+              focusable='false'
+            >
               <defs>
                 <linearGradient id='blueGradient' x1='20%' y1='80%' x2='80%' y2='20%'>
                   <stop

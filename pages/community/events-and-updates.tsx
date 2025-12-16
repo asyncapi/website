@@ -120,7 +120,11 @@ export default function EventsAndUpdates() {
       <div className='bg-secondary-200 rounded-3xl dark:bg-dark-card'>
         <Container wide className='py-20'>
           <div className='text-center'>
-            <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className='mb-4 text-gray-900'>
+            <Heading
+              level={HeadingLevel.h2}
+              typeStyle={HeadingTypeStyle.lg}
+              className='mb-4 text-gray-900 dark:text-dark-heading'
+            >
               Upcoming Events
             </Heading>
             <Paragraph
@@ -137,13 +141,20 @@ export default function EventsAndUpdates() {
             </section>
             <section className='mt-10 lg:mt-0 lg:max-w-xl lg:text-left'>
               <div>
-                <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.mdSemibold} className='text-gray-900'>
+                <Heading
+                  level={HeadingLevel.h3}
+                  typeStyle={HeadingTypeStyle.mdSemibold}
+                  className='text-gray-900 dark:text-dark-heading'
+                >
                   Join AsyncAPI meetings
                 </Heading>
                 <Paragraph typeStyle={ParagraphTypeStyle.md} className='mt-4 dark:text-gray-400 text-gray-600'>
                   We meet every week to discuss the future of AsyncAPI and event-driven architectures. Join us to share
                   your ideas, ask questions, and connect with the community.{' '}
-                  <TextLink href='/community/meetings' className='text-indigo-600 hover:text-indigo-700'>
+                  <TextLink
+                    href='/community/meetings'
+                    className='text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300'
+                  >
                     Learn more about our meetings
                   </TextLink>
                 </Paragraph>
@@ -169,10 +180,14 @@ export default function EventsAndUpdates() {
         <Container wide className='py-20' data-testid='EventsAndUpdates-Blogs'>
           <div className='mb-12 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center'>
             <div>
-              <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg} className='mb-2 text-gray-900'>
+              <Heading
+                level={HeadingLevel.h2}
+                typeStyle={HeadingTypeStyle.lg}
+                className='mb-2 text-gray-900 dark:text-white'
+              >
                 From the Blogs
               </Heading>
-              <Paragraph typeStyle={ParagraphTypeStyle.md} className='text-gray-600'>
+              <Paragraph typeStyle={ParagraphTypeStyle.md} className='text-gray-600 dark:text-gray-300'>
                 Stay connected with the pulse of our community
               </Paragraph>
             </div>

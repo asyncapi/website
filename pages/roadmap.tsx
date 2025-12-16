@@ -548,8 +548,10 @@ export default function RoadmapPage() {
               <GoalCardRoadmapPage
                 icon={IconGear}
                 title='400% Community Growth'
-                description="AsyncAPI thrives on community. Expanding contributions, sponsorships, and
-                  engagement ensures continued success. Let's grow together."
+                description={
+                  'AsyncAPI thrives on community. Expanding contributions, sponsorships, and engagement ensures continued success. ' +
+                  "Let's grow together."
+                }
               />
             </div>
           </div>

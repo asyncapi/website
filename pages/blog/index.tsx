@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 
 import Empty from '@/components/illustrations/Empty';
 import Container from '@/components/layout/Container';
@@ -42,13 +42,16 @@ export default function BlogIndexPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(9);
 
-  const onFilter = (data: IBlogPost[]) => {
-    setPosts(data);
-    // Reset tab filter to "All Posts" when dropdown filters are applied
-    if (Object.keys(router.query).length > 0) {
-      setActiveTab('All Posts');
-    }
-  };
+  const onFilter = useCallback(
+    (data: IBlogPost[]) => {
+      setPosts(data);
+      // Reset tab filter to "All Posts" when dropdown filters are applied
+      if (Object.keys(router.query).length > 0) {
+        setActiveTab('All Posts');
+      }
+    },
+    [router.query]
+  );
   const toFilter = [
     {
       name: 'type'
