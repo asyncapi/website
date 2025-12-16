@@ -34,11 +34,15 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
   return (
     <div
       className={twMerge(
-        'overflow-hidden rounded-md border border-gray-200 bg-white p-4 h-full flex flex-col gap-2',
+        'overflow-hidden rounded-md border border-gray-200 bg-white dark:bg-dark-background dark:border-border p-4 h-full flex  flex-col gap-2',
         className
       )}
     >
-      <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.mdSemibold}>
+      <Heading
+        level={HeadingLevel.h2}
+        typeStyle={HeadingTypeStyle.mdSemibold}
+        className='dark:text-dark-heading text-gray-900'
+      >
         {t('calendar.title')}
       </Heading>
       <ul>
@@ -49,8 +53,10 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
                 <span className='flex-1 self-center text-center'>{moment(event.date).format('D')}</span>
               </div>
               <div className='grow text-left sm:mt-0 sm:pl-6'>
-                <h2 className='title-font font-medium text-gray-900 hover:text-gray-500'>{event.title}</h2>
-                <p className='text-gray-600'>
+                <h2 className='title-font font-medium text-gray-900 dark:text-white hover:text-gray-500 dark:hover:text-gray-300'>
+                  {event.title}
+                </h2>
+                <p className='text-gray-600 dark:text-gray-300'>
                   {moment(event.date).local().format('LLLL')} UTC
                   {moment(event.date).local().format('Z')}
                 </p>
@@ -60,7 +66,9 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
         ))}
       </ul>
       <div className='h-full content-center'>
-        {!eventsExist && <div className='font-bold text-gray-700 lg:pb-8'>{t('calendar.noMeetingsMessage')}</div>}
+        {!eventsExist && (
+          <div className='font-bold text-gray-700 dark:text-gray-300 lg:pb-8'>{t('calendar.noMeetingsMessage')}</div>
+        )}
         <div className='sm:pt-0 md:pt-2 lg:pb-8 lg:pt-0' data-testid='Calendar-button'>
           <GoogleCalendarButton href={CALENDAR_URL} text={t('calendar.viewCalendarBtn')} />
         </div>

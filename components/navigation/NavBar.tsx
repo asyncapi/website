@@ -163,12 +163,12 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
       <div
         // eslint-disable-next-line max-len
         className={`bg-white/60 transition-all duration-500 ease-in-out lg:rounded-xl  backdrop-blur-lg z-100 
-          ${isScrolled ? 'mx-auto p-2 lg:p-1 lg:m1-1 shadow-md ring-1 dark:backdrop-blur-xl dark:bg-dark-card/60  ring-black/5  max-w-[76rem] lg:rounded-xl' : ' w-full mt-0 p-4 dark:bg-dark-background  max-w-[76rem] rounded-none'} ${className}`}
+          ${isScrolled ? 'py-2 lg:py-1 shadow-md ring-1 dark:backdrop-blur-xl dark:bg-dark-card/60  ring-black/5 lg:rounded-xl' : 'mt-0 py-4 dark:bg-dark-background rounded-none'} ${className}`}
       >
         {/* <div
         className={`bg-white/60 mx-auto fixed flex left-0 right-0 top-0 w-full z-[12] items-center justify-between max-w-[76rem] select-none transition-all duration-300 ease-spring ring-1 ring-black/5 bg-white/76 backdrop-blur-lg shadow-lg lg:rounded-full lg:mt-3 translate-y-0 ${className} z-50`}
       ></div> */}
-        <div className='flex w-full max-w-[76rem] items-center justify-between py-1 lg:justify-start lg:space-x-2'>
+        <div className='flex w-full items-center justify-between py-1 lg:justify-start lg:space-x-2'>
           {!hideLogo && (
             <div className='lg:w-auto lg:flex-1'>
               <div className='flex'>
@@ -248,7 +248,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
 
             <div className='justify-content flex flex-row items-center'>
               <SearchButton
-                className='mr-2 flex items-center space-x-2 rounded-md p-2 text-left text-zinc-700 dark:text-dark-text dark:hover:text-dark-heading  text-opacity-75 transition duration-150 ease-in-out hover:bg-gray-100 dark:hover:bg-dark-border hover:text-gray-800 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
+                className='mr-2 flex items-center space-x-2 rounded-md p-2 text-left text-zinc-700 dark:text-dark-text dark:hover:text-dark-heading  text-opacity-75 transition duration-150 ease-in-out hover:bg-gray-100 dark:hover:bg-primary-500 hover:text-gray-800 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
                 aria-label='Open Search'
               >
                 <IconLoupe />
