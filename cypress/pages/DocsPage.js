@@ -1,6 +1,6 @@
-import BasePage from './basepagedocs';
+import BaseDocsPage from './BaseDocsPage';
 
-class DocsPage extends BasePage {
+class DocsPage extends BaseDocsPage {
   visitDocsPage() {
     cy.visit('/docs');
   }
