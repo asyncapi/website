@@ -1,6 +1,6 @@
 ---
 title: "Monthly Community Update: November & December 2025"
-date: 2025-12-16T06:00:00+01:00
+date: 2025-12-17T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
@@ -22,6 +22,72 @@ As this is the last summary of the year, I'll keep it short, highlight some of t
 ## AsyncAPI Conferences
 
 ### Paris
+
+Paris hosted the last conference of the year, which spanned a busy three days. The biggest highlight of the conference was the API Standards booth, which we shared with friends from GraphQL, JSON Schema, and OpenAPI. It was a busy moment with attendees interested in our work, and many ever surprised by our focus on promoting Open Source.
+
+On the third day, we had the AsyncAPI track, which included a variety of talks, with the ambassador panel as the highlight of the event.
+
+<Figure
+  src="/img/posts/2025-blog-banner/ambassadors.webp"
+  caption="AsyncAPI Ambassadors Panel"
+  className="text-center"
+/>
+
+A huge thank you to our speakers, TSC members, and Ambassadors for volunteering at the booth, delivering presentations, and sharing their valuable insights.
+
+<Profiles profiles={[
+  {
+    name: 'Daniel Kocot',
+    avatar: 'https://avatars.githubusercontent.com/u/466609?v=4',
+    link: 'https://github.com/danielkocot'
+  },
+  {
+    name: 'Florence Njeri',
+    avatar: 'https://avatars.githubusercontent.com/u/40742916?v=4',
+    link: 'https://github.com/Florence-Njeri'
+  },
+  {
+    name: 'Fran Méndez',
+    avatar: 'https://avatars.githubusercontent.com/u/242119?v=4',
+    link: 'https://github.com/fmvilas'
+  },
+  {
+    name: 'Dale Lane',
+    avatar: 'https://avatars.githubusercontent.com/u/1444788?v=4',
+    link: 'https://github.com/dalelane'
+  },
+  {
+    name: 'Hugo Guerrero',
+    avatar: 'https://avatars.githubusercontent.com/u/1001939?v=4',
+    link: 'https://github.com/hguerrero'
+  },
+  {
+    name: 'Jonas Lagoni',
+    avatar: 'https://avatars.githubusercontent.com/u/13396189?v=4',
+    link: 'https://github.com/jonaslagoni'
+  },
+  {
+    name: 'Ludovic Dussart',
+    avatar: 'https://avatars.githubusercontent.com/u/5501911?v=4',
+    link: 'https://github.com/M3lkior'
+  },
+  {
+    name: 'Samir Amzani',
+    avatar: 'https://avatars.githubusercontent.com/u/554438?v=4',
+    link: 'https://github.com/Amzani'
+  },
+  {
+    name: 'Naresh Jain',
+    avatar: 'https://avatars.githubusercontent.com/u/38799?v=4',
+    link: 'https://github.com/nashjain'
+  },
+  {
+    name: 'Laurent Broudoux',
+    avatar: 'https://avatars.githubusercontent.com/u/1538635?v=4',
+    link: 'https://github.com/lbroudoux'
+  }
+]} 
+/>
 
 ### Developer Week 2026
 Planning for the AsyncAPI Conference at DeveloperWeek 2026 is underway. Speakers are selected, and final confirmation emails have also been sent. 
@@ -47,6 +113,7 @@ AsyncAPI now supports a formal media type (MIME type) for the AsyncAPI Object. T
 Additionally, Spec meetings are now back. Keep an eye [on the spec meeting issue if you're interested in joining](https://github.com/asyncapi/spec/issues/1131).
 
 ## Final Remarks
+
 I want to thank the community for taking the time to read the AsyncAPI monthly summary and for the consistent support. It has been amazing to contribute to our shared efforts throughout the year.
 
 As we head to the holiday season, I wish everyone and your family a joyful time and a great 2026 ahead.
