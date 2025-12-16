@@ -1,31 +1,25 @@
-class ToolsModelinaPage {
-  visit() {
-    cy.visit('/tools/modelina');
-  }
+import BaseToolsPage from './BaseToolsPage';
 
-  verifyHeadingExists(text) {
-    cy.contains('h1, h2, h3, h4, h5, h6', text).should('be.visible');
+class ToolsModelina extends BaseToolsPage {
+  visit() {
+    return super.visit('/tools/modelina');
   }
 
   verifyHeader() {
-    this.verifyHeadingExists('Modelina');
+    return this.verifyHeadingExists('Modelina');
   }
 
   verifyGithubLink() {
-    cy.contains('a', 'View on Github')
-      .should('be.visible')
-      .and('have.attr', 'href', 'https://www.github.com/asyncapi/modelina');
+    return super.verifyGithubLink('https://www.github.com/asyncapi/modelina');
   }
 
   verifyTryItNowLink() {
-    cy.contains('a', 'Try it now')
-      .should('be.visible')
-      .and('have.attr', 'href', 'https://modelina.org/playground');
+    return this.verifyCustomLink('Try it now', 'https://modelina.org/playground');
   }
 
   verifyInstallSnippet() {
-    cy.contains('code', 'npm install @asyncapi/modelina').should('exist');
+    return this.verifyCodeSnippet('npm install @asyncapi/modelina');
   }
 }
 
-export default ToolsModelinaPage;
+export default ToolsModelina;

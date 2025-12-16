@@ -1,7 +1,7 @@
-import ToolsGeneratorPage from './pages/toolsGenerator';
+import ToolsGenerator from './pages/toolsGenerator';
 
 describe('Tools - Generator Page', () => {
-  const page = new ToolsGeneratorPage();
+  const page = new ToolsGenerator();
 
   beforeEach(() => {
     page.visit();

@@ -1,7 +1,7 @@
-import ToolsMiscPage from './pages/toolsMisc';
+import ToolsMisc from './pages/toolsMisc';
 
 describe('Tools - CLI / Parsers / GitHub Actions', () => {
-  const page = new ToolsMiscPage();
+  const page = new ToolsMisc();
 
   describe('CLI', () => {
     beforeEach(() => {

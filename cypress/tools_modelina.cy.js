@@ -1,7 +1,7 @@
-import ToolsModelinaPage from './pages/toolsModelina';
+import ToolsModelina from './pages/toolsModelina';
 
 describe('Tools - Modelina Page', () => {
-  const page = new ToolsModelinaPage();
+  const page = new ToolsModelina();
 
   beforeEach(() => {
     page.visit();

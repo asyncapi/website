@@ -1,72 +1,55 @@
-class ToolsMiscPage {
+import BaseToolsPage from './BaseToolsPage';
+
+class ToolsMisc extends BaseToolsPage {
   visitCli() {
-    cy.visit('/tools/cli');
+    return super.visit('/tools/cli');
   }
 
   visitParsers() {
-    cy.visit('/tools/parsers');
+    return super.visit('/tools/parsers');
   }
 
   visitGithubActions() {
-    cy.visit('/tools/github-actions');
+    return super.visit('/tools/github-actions');
   }
 
-  verifyHeadingExists(text) {
-    cy.contains('h1, h2, h3, h4, h5, h6', text).should('be.visible');
-  }
-
-  // CLI page checks
   verifyCliHeader() {
-    this.verifyHeadingExists(
+    return this.verifyHeadingExists(
       'Interact with AsyncAPI from the comfort of your CLI',
     );
   }
 
   verifyCliGithubLink() {
-    cy.contains('a', 'View on Github')
-      .should('be.visible')
-      .and('have.attr', 'href', 'https://www.github.com/asyncapi/cli');
+    return super.verifyGithubLink('https://www.github.com/asyncapi/cli');
   }
 
   verifyCliDocsLink() {
-    cy.contains('a', 'View Docs')
-      .should('be.visible')
-      .and('have.attr', 'href', '/docs/tools/cli');
+    return super.verifyDocsLink('/docs/tools/cli');
   }
 
   verifyCliInstallSnippet() {
-    cy.contains('code', 'npm install -g @asyncapi/cli').should('exist');
+    return this.verifyCodeSnippet('npm install -g @asyncapi/cli');
   }
 
-  // Parsers page checks
   verifyParsersHeader() {
-    this.verifyHeadingExists('Build your own tools');
+    return this.verifyHeadingExists('Build your own tools');
   }
 
   verifyParsersGithubLink() {
-    cy.contains('a', 'View on Github')
-      .should('be.visible')
-      .and('have.attr', 'href', 'https://www.github.com/asyncapi/parser-js');
+    return super.verifyGithubLink('https://www.github.com/asyncapi/parser-js');
   }
 
   verifyParsersInstallSnippet() {
-    cy.contains('code', 'npm install @asyncapi/parser').should('exist');
+    return this.verifyCodeSnippet('npm install @asyncapi/parser');
   }
 
-  // GitHub Actions page checks
   verifyGhActionsHeader() {
-    this.verifyHeadingExists('Automate using GitHub Actions');
+    return this.verifyHeadingExists('Automate using GitHub Actions');
   }
 
   verifyGhActionsGithubLink() {
-    cy.contains('a', 'View on Github')
-      .should('be.visible')
-      .and(
-        'have.attr',
-        'href',
-        'https://www.github.com/asyncapi/github-action-for-generator',
-      );
+    return super.verifyGithubLink('https://www.github.com/asyncapi/github-action-for-generator');
   }
 }
 
-export default ToolsMiscPage;
+export default ToolsMisc;

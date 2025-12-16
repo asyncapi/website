@@ -1,31 +1,25 @@
-class ToolsGeneratorPage {
-  visit() {
-    cy.visit('/tools/generator');
-  }
+import BaseToolsPage from './BaseToolsPage';
 
-  verifyHeadingExists(text) {
-    cy.contains('h1, h2, h3, h4, h5, h6', text).should('be.visible');
+class ToolsGenerator extends BaseToolsPage {
+  visit() {
+    return super.visit('/tools/generator');
   }
 
   verifyHeader() {
-    this.verifyHeadingExists('Docs, Code, Anything!');
+    return this.verifyHeadingExists('Docs, Code, Anything!');
   }
 
   verifyMainImage() {
-    cy.get('img[alt="generator diagram"]').should('be.visible');
+    return this.verifyImageVisible('generator diagram');
   }
 
   verifyGithubLink() {
-    cy.contains('a', 'View on Github')
-      .should('be.visible')
-      .and('have.attr', 'href', 'https://www.github.com/asyncapi/generator');
+    return super.verifyGithubLink('https://www.github.com/asyncapi/generator');
   }
 
   verifyDocsLink() {
-    cy.contains('a', 'View Docs')
-      .should('be.visible')
-      .and('have.attr', 'href', '/docs/tools/generator');
+    return super.verifyDocsLink('/docs/tools/generator');
   }
 }
 
-export default ToolsGeneratorPage;
+export default ToolsGenerator;
