@@ -1,5 +1,23 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/yRjdA0DYvBM/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting",
+    "description": "",
+    "videoId": "yRjdA0DYvBM"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/G2JTsDe0h-g/hqdefault.jpg",
+    "title": "AsyncAPI Spec Triage, 14:00 UTC Wednesday November 19th 2025",
+    "description": "https://github.com/asyncapi/community/issues/2141.",
+    "videoId": "G2JTsDe0h-g"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/zOkWc886ZZI/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting, Tuesday November 11th 2025",
+    "description": "https://github.com/asyncapi/community/issues/2107.",
+    "videoId": "zOkWc886ZZI"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/KnXXiv0HEMA/hqdefault.jpg",
     "title": "Governance Board Meeting, Monday November 3rd 2025",
     "description": "https://github.com/asyncapi/community/issues/2116.",
@@ -10,23 +28,5 @@
     "title": "AsyncAPI Online Conference 2025",
     "description": "Join us this year for another edition of the AsyncAPI Online Conference 2025, featuring incredible speakers from around the world ...",
     "videoId": "KbT7Pw6j46E"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/B773vgCaCkU/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting, Tuesday October 21st 2025",
-    "description": "https://github.com/asyncapi/community/issues/2087.",
-    "videoId": "B773vgCaCkU"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/nNl0HUdBnmg/hqdefault.jpg",
-    "title": "Kickstart your AsyncAPI journey with Springwolf",
-    "description": "Join us on the 14th of October at 4 PM UTC for a deep dive into Springwolf, the open-source solution for generating AsyncAPI ...",
-    "videoId": "nNl0HUdBnmg"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/Mkd7FgKOMNE/hqdefault.jpg",
-    "title": "One Tool, One Flow: AsyncAPI&#39;s New Take on Code/Docs/Config Generation",
-    "description": "Join us on September 30th at 4PM UTC for the first session of our AsyncAPI webinar series with Łukasz. In “One Tool, One Flow: ...",
-    "videoId": "Mkd7FgKOMNE"
   }
 ]
