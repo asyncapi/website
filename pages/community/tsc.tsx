@@ -5,6 +5,7 @@ import type { Tsc } from '@/types/pages/community/Community';
 
 import Button from '../../components/buttons/Button';
 import TSCMemberCard from '../../components/community/TSCMemberCard';
+import { COMMUNITY_URLS } from '../../components/footer/FooterList';
 import IconArrowRight from '../../components/icons/ArrowRight';
 import IconDocument from '../../components/icons/Document';
 import IconUsersGroup from '../../components/icons/UsersGroup';
@@ -115,7 +116,7 @@ export default function TSC() {
             <div className='flex flex-col sm:flex-row gap-4 justify-center items-center'>
               <Button
                 text='Learn How to Join'
-                href='https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md'
+                href={COMMUNITY_URLS.GITHUB.TSC_MEMBERSHIP}
                 target='_blank'
                 className='hover:bg-primary-600 focus:outline-none'
                 icon={<IconArrowRight className='-mb-1 size-5' />}
@@ -335,7 +336,7 @@ export default function TSC() {
             <p className='text-lg text-white/90 mb-8'>Join our community and help shape the future of AsyncAPI</p>
             <Button
               text='Get Started'
-              href='https://github.com/asyncapi/community/blob/master/CONTRIBUTING.md'
+              href={COMMUNITY_URLS.GITHUB.CONTRIBUTING}
               target='_blank'
               className='text-center bg-white text-primary-600 hover:bg-gray-100 focus:outline-none'
             />

@@ -6,6 +6,7 @@ import ICSFileButton from '@/components/buttons/ICSFileButton';
 import SubscribeButton from '@/components/buttons/SubscribeButton';
 import Calendar from '@/components/Calendar';
 import FeatureCard from '@/components/community/FeatureCard';
+import { COMMUNITY_URLS } from '@/components/footer/FooterList';
 import IconCalendar from '@/components/icons/Calendar';
 import IconNewsroom from '@/components/icons/Newsroom';
 import IconUsersGroup from '@/components/icons/UsersGroup';
@@ -67,7 +68,7 @@ export default function EventsAndUpdates() {
               />
               <Button
                 text='Watch intro video +'
-                href='https://www.youtube.com/asyncapi'
+                href={COMMUNITY_URLS.YOUTUBE.BASE}
                 target='_blank'
                 className='rounded-lg border-2 border-cyan-500 bg-transparent px-8 py-3 font-semibold text-cyan-600 hover:bg-cyan-50'
                 bgClassName='bg-transparent hover:bg-cyan-50 border-2 border-cyan-500'
@@ -222,7 +223,7 @@ export default function EventsAndUpdates() {
             </div>
             <Button
               text='Check Out all Videos'
-              href='https://www.youtube.com/asyncapi'
+              href={COMMUNITY_URLS.YOUTUBE.BASE}
               target='_blank'
               className='rounded-lg bg-indigo-600 px-8 py-3 font-semibold text-white shadow-lg hover:bg-indigo-700'
               bgClassName='bg-indigo-600 hover:bg-indigo-700'

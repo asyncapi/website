@@ -6,6 +6,7 @@ import type { Ambassador } from '@/types/pages/community/Community';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
 import Button from '../../../components/buttons/Button';
+import { AMBASSADORS_CONFIG, COMMUNITY_URLS, SOCIAL_MEDIA_BASE_URLS } from '../../../components/footer/FooterList';
 import IconBook from '../../../components/icons/Book';
 import IconClipboard from '../../../components/icons/Clipboard';
 import IconCode from '../../../components/icons/Code';
@@ -34,15 +35,14 @@ export function addAdditionalUserInfo(user: Ambassador) {
     ...user
   };
 
-  // add social links
   if (userData.github) {
-    userData.githubUrl = `https://www.github.com/${userData.github}`;
+    userData.githubUrl = `${SOCIAL_MEDIA_BASE_URLS.GITHUB}/${userData.github}`;
   }
   if (userData.linkedin) {
-    userData.linkedinUrl = `https://www.linkedin.com/in/${userData.linkedin}`;
+    userData.linkedinUrl = `${SOCIAL_MEDIA_BASE_URLS.LINKEDIN}/${userData.linkedin}`;
   }
   if (userData.twitter) {
-    userData.twitterUrl = `https://www.twitter.com/${userData.twitter}`;
+    userData.twitterUrl = `${SOCIAL_MEDIA_BASE_URLS.TWITTER}/${userData.twitter}`;
   }
 
   // add img url
@@ -82,7 +82,7 @@ export default function Index() {
   );
 
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 6;
+  const postsPerPage = AMBASSADORS_CONFIG.POSTS_PER_PAGE;
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentAmbassadors = asyncapiAmbassadors.slice(indexOfFirstPost, indexOfLastPost);
@@ -116,7 +116,7 @@ export default function Index() {
                 <Button
                   className='inline-block text-center hover:bg-primary-600 focus:outline-none text-base font-semibold'
                   text='Become an Ambassador'
-                  href='https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/AMBASSADOR_PROGRAM.md'
+                  href={COMMUNITY_URLS.GITHUB.AMBASSADOR_PROGRAM}
                   target='_blank'
                 />
               </div>
@@ -182,7 +182,7 @@ export default function Index() {
           <div className='relative rounded-3xl overflow-hidden shadow-2xl bg-gray-900' data-testid='Ambassadors-video'>
             <div className='relative w-full' style={{ paddingBottom: '56.25%' }}>
               <iframe
-                src='https://www.youtube.com/embed/3rg_7hIb9PQ'
+                src={`https://www.youtube.com/embed/${AMBASSADORS_CONFIG.YOUTUBE_VIDEO_ID}`}
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                 className='absolute top-0 left-0 w-full h-full'
                 data-testid='Ambassadors-Iframe'
@@ -423,14 +423,14 @@ export default function Index() {
               <Button
                 className='w-full sm:w-auto bg-white text-primary-600 hover:bg-gray-50 focus:outline-none font-semibold shadow-lg'
                 text='Become an Ambassador Now'
-                href='https://github.com/asyncapi/community/blob/master/AMBASSADOR_ORGANIZATION.md#are-you-interested-in-becoming-an-official-asyncapi-ambassador'
+                href={COMMUNITY_URLS.GITHUB.AMBASSADOR_ORGANIZATION}
                 target='_blank'
               />
               <Button
                 bgClassName='bg-transparent border-2 border-white hover:bg-white/20'
                 className='w-full sm:w-auto text-white focus:outline-none font-semibold'
                 text='Learn More'
-                href='https://www.asyncapi.com/blog/asyncapi-ambassador-program'
+                href={COMMUNITY_URLS.BLOG.AMBASSADOR_PROGRAM}
                 target='_blank'
               />
             </div>
