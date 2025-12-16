@@ -8,20 +8,15 @@ beforeEach(() => {
 });
 
 describe('Critical User Flows in CaseStudies Page', () => {
-it('User navigates to the Case Studies Page and verifies the header', () => {
-  casestudiespage.verifyHeader();
-});
+  const verifications = [
+    { name: 'header', testName: 'User navigates to the Case Studies Page and verifies the header', fn: () => casestudiespage.verifyHeader() },
+    { name: 'FAQ link', testName: 'User verifies FAQ link is visible and contains correct URL', fn: () => casestudiespage.verifyFaqLink() },
+    { name: 'Cards link', testName: 'User verifies Cards link is visible and contains correct URL', fn: () => casestudiespage.verifyCardsLink() },
+    { name: 'Submit PR link', testName: 'User verifies Submit a Pull Request Link is visible and contains correct URL', fn: () => casestudiespage.verifySubmitPullRequestLink() }
+  ];
 
-it('User verifies FAQ link is visible and contains correct URL', () => {
-  casestudiespage.verifyFaqLink();
-});
-
-it('User verifies Cards link is visible and contains correct URL', () => {
-  casestudiespage.verifyCardsLink();
-});
-
-  it('User verifies Submit a Pull Request Link is visible and contains correct URL', () => {
-    casestudiespage.verifySubmitPullRequestLink();
+  verifications.forEach(({ testName, fn }) => {
+    it(testName, fn);
   });
 });
 

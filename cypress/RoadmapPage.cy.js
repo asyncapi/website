@@ -16,15 +16,15 @@ describe('RoadMap Page Navigation and Functionality', () => {
     roadmapPage.verifyLink();
   });
 
-  it('User verifies Outcome tooltip', () => {
-    roadmapPage.verifyTooltip(0);
-  });
+  const tooltips = [
+    { name: 'Outcome', index: 0 },
+    { name: 'Solution', index: 1 },
+    { name: 'Implementation', index: 2 }
+  ];
 
-  it('User verifies Solution tooltip', () => {
-    roadmapPage.verifyTooltip(1);
-  });
-
-  it('User verifies Implementation tooltip', () => {
-    roadmapPage.verifyTooltip(2);
+  tooltips.forEach(({ name, index }) => {
+    it(`User verifies ${name} tooltip`, () => {
+      roadmapPage.verifyTooltip(index);
+    });
   });
 });
