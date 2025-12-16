@@ -78,23 +78,18 @@ export default function BlogIndexPage() {
   useEffect(() => {
     setIsClient(true);
 
-    // Set posts per page based on screen size
-    const handleResize = () => {
+    const updatePostsPerPage = () => {
       if (window.innerWidth < 640) {
-        setPostsPerPage(5); // Mobile: 5 posts
+        setPostsPerPage(5);
       } else {
-        setPostsPerPage(9); // Tablet/Desktop: 9 posts
+        setPostsPerPage(9);
       }
     };
 
-    // Set initial value
-    handleResize();
+    updatePostsPerPage();
+    window.addEventListener('resize', updatePostsPerPage);
 
-    // Add event listener
-    window.addEventListener('resize', handleResize);
-
-    // Cleanup
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', updatePostsPerPage);
   }, []);
 
   // Filter posts by active tab (only if no dropdown filters are active)

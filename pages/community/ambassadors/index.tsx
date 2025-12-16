@@ -90,7 +90,6 @@ export default function Index() {
 
   return (
     <GenericLayout title='AsyncAPI Ambassador Program' description='The AsyncAPI Ambassador Program' image={image} wide>
-      {/* Hero Section */}
       <div className='bg-white dark:bg-dark-background py-12 sm:py-16 lg:py-20'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center'>
@@ -178,7 +177,6 @@ export default function Index() {
           </div>
         </div>
       </div>
-      {/* Video Section */}
       <div className='bg-secondary-100 rounded-3xl dark:bg-dark-card py-20 sm:py-28'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
           <div className='relative rounded-3xl overflow-hidden shadow-2xl bg-gray-900' data-testid='Ambassadors-video'>
@@ -199,7 +197,6 @@ export default function Index() {
         </div>
       </div>
 
-      {/* Contributions Section */}
       <div className='bg-white dark:bg-dark-background py-16 sm:py-20'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
           <div className='text-center mb-12' data-testid='Ambassadors-contributions'>
@@ -244,7 +241,6 @@ export default function Index() {
           </div>
         </div>
       </div>
-      {/* Ambassadors Section */}
       <div className='bg-secondary-100 dark:bg-dark-card rounded-3xl py-16 sm:py-20'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
           <div className='text-center mb-12'>
@@ -366,7 +362,6 @@ export default function Index() {
           </div>
         </div>
       </div>
-      {/* Tokens Section */}
       <div className='bg-white dark:bg-dark-background py-16 sm:py-20'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
           <div className='text-center mb-12' data-testid='Events-token'>
@@ -406,9 +401,7 @@ export default function Index() {
         </div>
       </div>
 
-      {/* CTA Section */}
       <div className='relative py-20 sm:py-24 overflow-hidden' data-testid='Events-ambassadors'>
-        {/* Gradient background div */}
         <section
           className='relative overflow-hidden py-12 sm:py-16 rounded-xl mx-4 sm:mx-6 lg:mx-8 mb-12'
           style={{ background: 'linear-gradient(90deg, #8B5CF6 0%, #7C3AED 50%, #22D3EE 100%)' }}
@@ -445,7 +438,6 @@ export default function Index() {
         </section>
       </div>
 
-      {/* Newsletter Section */}
       <div className='mt-8 bg-dark rounded-3xl py-12'>
         <Container wide>
           <NewsletterSubscribe dark />

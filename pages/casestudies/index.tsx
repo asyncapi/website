@@ -29,7 +29,7 @@ interface Adopter {
 const ITEMS_PER_PAGE = 5;
 
 /**
- * @description Renders the Case Studies page with modern design and horizontal card carousel.
+ * @description Renders the Case Studies page with horizontal card carousel.
  */
 export default function CaseStudies() {
   const [currentPage, setCurrentPage] = useState(1);
