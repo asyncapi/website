@@ -46,21 +46,17 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
   return (
     <li key={id} className={className} data-testid='EventPostItem-main'>
       <article className='flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-md hover:shadow-lg'>
-        {/* Header with gradient background */}
         <div className='relative h-40 bg-gradient-to-br from-indigo-600 to-purple-600 p-4'>
-          {/* Badge */}
           <div className='absolute right-4 top-4'>
             <span className='rounded-full bg-white px-3 py-1 text-xs font-medium text-gray-700'>
               {type || 'Online'}
             </span>
           </div>
-          {/* Attending count */}
           <div className='absolute bottom-4 left-4'>
             <span className='text-sm font-semibold text-white'>150 attending</span>
           </div>
         </div>
 
-        {/* Card body */}
         <div className='flex flex-1 flex-col justify-between p-6'>
           <div>
             <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.bodyLg} className='mb-2 text-gray-900'>
@@ -74,7 +70,6 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
             <div className='text-sm text-gray-600'>{postDate.isValid() && moment(postDate).format('h:mm A [UTC]')}</div>
           </div>
 
-          {/* Button */}
           <a
             href={post.url}
             target='_blank'

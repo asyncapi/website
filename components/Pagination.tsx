@@ -183,7 +183,6 @@ export default function Pagination({
 
   return (
     <div className={`flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-2 ${className}`}>
-      {/* Page Navigation Buttons */}
       <div className='flex items-center gap-2'>
         <button
           onClick={() => handlePageClick(currentPage - 1)}
@@ -206,7 +205,6 @@ export default function Pagination({
         </button>
       </div>
 
-      {/* Go to Page Dropdown */}
       {showGoToPage && (
         <div className='relative flex items-center gap-2 sm:ml-4'>
           <span className='text-sm text-gray-600 dark:text-gray-400'>Go to page</span>
@@ -238,7 +236,6 @@ export default function Pagination({
               })()}
             </button>
 
-            {/* Dropdown Menu - Opens downward or upward, restricted to 3-4 options */}
             {isDropdownOpen && (
               <div
                 className={`absolute left-0 w-[60px] sm:w-[65px] md:w-[70px] bg-white dark:bg-gray-800 
