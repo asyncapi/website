@@ -173,7 +173,7 @@ export default function CommunityIndexPage() {
               can also sign up for our community newsletter to stay up-to-date on all meetings and events.
             </Paragraph>
             <Link
-              href='/community/events'
+              href='/community/events-and-updates'
               className='inline-flex items-center px-8 py-4 bg-primary-500 hover:bg-primary-600 dark:bg-primary-500 dark:hover:bg-primary-600 text-white rounded-lg transition-all font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'
             >
               Explore Events
