@@ -14,7 +14,10 @@ interface StickyNavbarProps {
  */
 export default function StickyNavbar({ children, className = '' }: StickyNavbarProps) {
   return (
-    <div className={`sticky top-0 z-50 w-full border-b border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 ${className}`} data-testid='Sticky-div'>
+    <div
+      className={`sticky top-0 z-50 w-full border-b border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 ${className}`}
+      data-testid='Sticky-div'
+    >
       {children}
     </div>
   );

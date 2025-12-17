@@ -217,7 +217,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             <NavItem href={item.href} key={index} text={item.text} target={item.target} className={item.className} />
           ))}
 
-          <div className="justify-content flex flex-row items-center space-x-2">
+          <div className='justify-content flex flex-row items-center space-x-2'>
             <ThemeToggle />
             <SearchButton
               className='mr-2 flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 dark:text-gray-300 transition duration-150 ease-in-out hover:bg-gray-100 dark:hover:bg-slate-700 hover:text-gray-500 dark:hover:text-gray-200 focus:bg-gray-100 dark:focus:bg-slate-700 focus:text-gray-500 dark:focus:text-gray-200 focus:outline-none'
