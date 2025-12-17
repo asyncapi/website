@@ -1,7 +1,14 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "ALLOW-FROM https://www.youtube.com/"
+    # Enhanced security headers
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    X-DNS-Prefetch-Control = "on"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    Referrer-Policy = "origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://buttons.github.io https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://buttons.github.io; frame-src 'self' https://www.youtube.com"
     Access-Control-Allow-Origin = "*"
 
 [build]

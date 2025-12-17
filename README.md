@@ -197,8 +197,11 @@ AsyncAPI Financial Summary page aims to provide transparency and clarity regardi
 
 - Modify the years within the `scripts/finance/index.js` , `lib/getUniqueCategories.js` and `components/FinancialSummary/BarChartComponent.js` to handle data for different years effectively.
 
-## Case studies
+## Security
 
+This project implements various security measures to protect against common web vulnerabilities. For detailed information about the security headers and implementation, please refer to our [Security Documentation](SECURITY.md).
+
+## Case studies
 ### Overview
 
 A case study is a special document that any end-user company can provide. An end-user company is a company that uses AsyncAPI to solve technical challenges. A case study is not a document where a vendor company can describe how they build their commercial AsyncAPI-based product. On the other hand, it is completely fine if a case study of some end-user mentions some commercial tools that helped them to work with AsyncAPI or event-driven architecture. An example of such a case can be a case study from an end-user where at some point, Confluent Schema Registry is mentioned in an explanation about schemas and runtime message validation.
