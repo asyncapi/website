@@ -4,11 +4,11 @@ This document outlines the security measures implemented for the AsyncAPI websit
 
 ## Implemented Security Headers
 
-We've implemented comprehensive security headers at multiple levels:
+Since this project uses Next.js with static export (`output: 'export'`), security headers cannot be implemented through Next.js middleware or the `headers()` function in `next.config.mjs`. Instead, all security headers are configured in Netlify's configuration file.
 
-### 1. Next.js Configuration (`next.config.mjs`)
+### Netlify Configuration (`netlify.toml`)
 
-Added the `headers()` function to configure security headers for all routes:
+All security headers are configured in `netlify.toml` to ensure they're applied at the CDN level:
 
 - `X-DNS-Prefetch-Control`: Controls DNS prefetching
 - `Strict-Transport-Security`: Enforces HTTPS connections
@@ -17,14 +17,6 @@ Added the `headers()` function to configure security headers for all routes:
 - `Referrer-Policy`: Controls referrer information
 - `Permissions-Policy`: Restricts browser features
 - `Content-Security-Policy`: Prevents XSS and other code injection attacks
-
-### 2. Netlify Configuration (`netlify.toml`)
-
-Enhanced the headers configuration with the same security headers to ensure they're applied at the CDN level.
-
-### 3. Next.js Middleware (`middleware.ts`)
-
-Created application-level middleware that applies security headers to all responses, providing an additional layer of protection.
 
 ## Content Security Policy (CSP)
 
@@ -49,7 +41,7 @@ This policy:
 
 ## Additional Security Measures
 
-1. **X-Frame-Options**: Changed from `ALLOW-FROM https://www.youtube.com/` to `SAMEORIGIN` for better security
+1. **X-Frame-Options**: Set to `SAMEORIGIN` for better security
 2. **HSTS**: Implemented with a 2-year max-age and preload directive
 3. **DNS Prefetch Control**: Enabled to control DNS prefetching behavior
 4. **Referrer Policy**: Set to `origin-when-cross-origin` for privacy protection
@@ -60,7 +52,7 @@ This policy:
 To verify that the security headers are properly applied:
 
 1. Build the site: `npm run build`
-2. Start the server: `npm start`
+2. Deploy to Netlify or use Netlify Dev: `netlify dev`
 3. Use browser developer tools or tools like curl to inspect response headers
 4. Alternatively, use online security header checkers
 
