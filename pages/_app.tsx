@@ -24,6 +24,13 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       <Head>
         <script async defer src='https://buttons.github.io/buttons.js'></script>
       </Head>
+      {/* Skip to main content link for accessibility */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-black focus:outline-black"
+      >
+        Skip to main content
+      </a>
       <AlgoliaSearch>
         <div className='flex min-h-screen flex-col'>
           <Banner />
@@ -31,7 +38,9 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             <NavBar className='mx-auto block max-w-screen-xl px-4 sm:px-6 lg:px-8' />
           </StickyNavbar>
           <Layout>
-            <Component {...pageProps} />
+            <div id="main-content">
+              <Component {...pageProps} />
+            </div>
             <ScrollButton />
           </Layout>
           <div className='mt-auto'>

@@ -10,63 +10,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@tailwind variants;
 
-html,
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
-}
-
-li>p {
-  display: inline;
-}
-
-.atss {
-  /* AddThis plugin */
-  z-index: 10 !important;
-}
-
-abbr[title] {
-  text-decoration: none;
-}
-
-.countdown-text-gradient {
-  background: linear-gradient(
-    230deg,
-    #e74694,
-    #4b79cf,
-    #4bc5cf,
-    #4b79cf,
-    #e74694
-  );
-  background-size: 500% 100%;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: GradientAnimation 50s ease infinite alternate;
-  -moz-animation: GradientAnimation 50s ease infinite alternate;
-  animation: GradientAnimation 50s ease infinite alternate;
-}
-
-@keyframes GradientAnimation {
-  0% {
-    background-position: 0% 50%
-  }
-
-  100% {
-    background-position: 200% 50%
-  }
-}
-
-:target {
-  scroll-margin-top: 120px;
-}
-
-@media (max-width: 1280px) {
-  :target {
-    scroll-margin-top: 155px;
-  }
+/* Custom fonts */
+@font-face {
+  font-family: 'Work Sans';
+  src: url('/fonts/WorkSans-Bold.ttf') format('truetype');
+  font-display: swap;
 }
 
 /* adjust swiper library */
@@ -154,204 +103,26 @@ abbr[title] {
   cursor: pointer;
 }
 
-.orbit > div > img {
-  border-radius: 100%;
-}
-.title {
-  line-height: 0.9;
-  font-size: 60px;
-}
-#first-orbit {
-  --n: 6; /* number of item */
-  --d: 70s; /* duration */
-  width: 600px;
-  height: 600px;
-  top: 165px;
-  left: calc(50% - 300px);
-  position: relative;
-  display: grid;
-  grid-template-columns: 35px;
-  grid-template-rows: 35px;
-  place-content: center;
+/* Accessibility: Skip link styles */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
-#second-orbit {
-  --no: 7; /* number of item */
-  --de: 80s; /* duration */
-  width: 800px;
-  height: 800px;
-  top: 75px;
-  left: calc(50% - 400px);
-  display: grid;
-  grid-template-columns: 35px;
-  grid-template-rows: 35px;
-  place-content: center;
-}
-
-#third-orbit {
-  --ni: 7; /* number of item */
-  --ds: 80s; /* duration */
-  width: 1000px;
-  height: 1000px;
-  top: -10px;
-  left: calc(50% - 500px);
-  display: grid;
-  grid-template-columns: 35px;
-  grid-template-rows: 35px;
-  place-content: center;
-}
-
-.item,
-.item-2,
-.item-3 {
-  grid-area: 1/1;
-  line-height: 30px;
-  text-align: center;
-  border-radius: 50%;
-}
-
-.item {
-  animation: orbit-spin var(--d) linear infinite;
-  transform: rotate(0) translate(300px) rotate(0);
-}
-
-.item-2 {
-  animation: orbit-spin2 var(--de) linear infinite;
-  transform: rotate(-0) translate(400px) rotate(-0);
-}
-
-.item-3 {
-  animation: orbit-spin3 var(--ds) linear infinite;
-  transform: rotate(0) translate(500px) rotate(0);
-}
-@keyframes orbit-spin {
-  100% {
-    transform: rotate(1turn) translate(300px) rotate(-1turn);
-  }
-}
-
-.item:nth-child(1) {
-  animation-delay: calc(-0 * var(--d) / var(--n));
-}
-.item:nth-child(2) {
-  animation-delay: calc(-1 * var(--d) / var(--n));
-}
-.item:nth-child(3) {
-  animation-delay: calc(-2 * var(--d) / var(--n));
-}
-.item:nth-child(4) {
-  animation-delay: calc(-3 * var(--d) / var(--n));
-}
-.item:nth-child(5) {
-  animation-delay: calc(-4 * var(--d) / var(--n));
-}
-.item:nth-child(6) {
-  animation-delay: calc(-5 * var(--d) / var(--n));
-}
-
-@keyframes orbit-spin2 {
-  100% {
-    transform: rotate(-1turn) translate(400px) rotate(1turn);
-  }
-}
-
-.item-2:nth-child(1) {
-  animation-delay: calc(-0 * var(--de) / var(--no));
-}
-.item-2:nth-child(2) {
-  animation-delay: calc(-1 * var(--de) / var(--no));
-}
-.item-2:nth-child(3) {
-  animation-delay: calc(-2 * var(--de) / var(--no));
-}
-.item-2:nth-child(4) {
-  animation-delay: calc(-3 * var(--de) / var(--no));
-}
-.item-2:nth-child(5) {
-  animation-delay: calc(-4 * var(--de) / var(--no));
-}
-.item-2:nth-child(6) {
-  animation-delay: calc(-5 * var(--de) / var(--no));
-}
-.item-2:nth-child(7) {
-  animation-delay: calc(-6 * var(--de) / var(--no));
-}
-.item-2:nth-child(8) {
-  animation-delay: calc(-7 * var(--de) / var(--no));
-}
-.item-2:nth-child(9) {
-  animation-delay: calc(-8 * var(--de) / var(--no));
-}
-
-@keyframes orbit-spin3 {
-  100% {
-    transform: rotate(1turn) translate(500px) rotate(-1turn);
-  }
-}
-
-.item-3:nth-child(1) {
-  animation-delay: calc(-0 * var(--ds) / var(--ni));
-}
-.item-3:nth-child(2) {
-  animation-delay: calc(-1 * var(--ds) / var(--ni));
-}
-.item-3:nth-child(3) {
-  animation-delay: calc(-2 * var(--ds) / var(--ni));
-}
-.item-3:nth-child(4) {
-  animation-delay: calc(-3 * var(--ds) / var(--ni));
-}
-.item-3:nth-child(5) {
-  animation-delay: calc(-4 * var(--ds) / var(--ni));
-}
-.item-3:nth-child(6) {
-  animation-delay: calc(-5 * var(--ds) / var(--ni));
-}
-.item-3:nth-child(7) {
-  animation-delay: calc(-6 * var(--ds) / var(--ni));
-}
-.item-3:nth-child(8) {
-  animation-delay: calc(-7 * var(--ds) / var(--ni));
-}
-.item-3:nth-child(9) {
-  animation-delay: calc(-8 * var(--ds) / var(--ni));
-}
-
-.gh-img {
-  border: 1px solid #d4cfd76a;
-  border-radius: 10px;
-  box-shadow: 5px 20px 18px 10px #e8e8e8;
-  background: linear-gradient(225deg, #2dccfd 9.35%, #ad20e2 88.41%);
-}
-
-.community-pattern {
-  background: url('/img/homepage/circular-pattern.png');
-  width: 100%;
-  height: 90%;
-  background-position: center;
-  background-size: cover;
-  margin-top: -1900px;
-}
-
-.meeting-card:hover > div:nth-child(1) > div {
-  display: block;
-  color: white;
-}
-
-.meeting-card:hover > div:nth-child(2) > p  {
-  color: white;
-}
-
-.explorer-menu-wrapper > div > div{
-  border: 1px solid rgb(228, 228, 228);
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.explorer-menu-wrapper > div > div > div > button {
-  margin-top: 0px;
-}
-
-select {
-  cursor:pointer;
+.sr-only.focus:not-sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
 }

@@ -38,6 +38,13 @@ export default function GenericLayout({
   return (
     <div data-testid='GenericLayout'>
       <Head title={title} description={description} image={image} />
+      {/* Skip to main content link for accessibility */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-black focus:outline-black"
+      >
+        Skip to main content
+      </a>
       <Container wide={wide}>
         <div data-testid='GenericLayout-banner'>
           <AnnouncementHero className={`m-4 text-center ${hideBanner && 'hidden'}`} small={true} />
