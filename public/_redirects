@@ -73,4 +73,3 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 
 #short urls
 /s/asyncapiv2 https://raw.githubusercontent.com/asyncapi/asyncapi/2.0.0/examples/2.0.0/streetlights.yml 301!
-
