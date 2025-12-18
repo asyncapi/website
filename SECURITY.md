@@ -22,7 +22,7 @@ All security headers are configured in `netlify.toml` to ensure they're applied 
 
 Our CSP is designed to be restrictive while allowing necessary functionality:
 
-```
+```text
 default-src 'self';
 script-src 'self' 'unsafe-inline' https://buttons.github.io https://www.googletagmanager.com https://www.google-analytics.com;
 style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;

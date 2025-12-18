@@ -18,7 +18,7 @@ const doc = await parse(\`
 asyncapi: '3.0.0'
 info:
   title: Example
-  version: 1.0.0
+  version: '1.0.0'
 channels:
   example:
     address: example/channel

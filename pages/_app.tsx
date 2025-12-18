@@ -22,15 +22,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     <AppContext.Provider value={{ path: router.asPath }}>
       {/* <MDXProvider components={mdxComponents}> */}
       <Head>
-        <script async defer src='https://buttons.github.io/buttons.js'></script>
+        <script async defer src='https://buttons.github.io/buttons.js' />
       </Head>
-      {/* Skip to main content link for accessibility */}
-      <a 
-        href="#main-content" 
-        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-black focus:outline-black"
-      >
-        Skip to main content
-      </a>
       <AlgoliaSearch>
         <div className='flex min-h-screen flex-col'>
           <Banner />
@@ -38,7 +31,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             <NavBar className='mx-auto block max-w-screen-xl px-4 sm:px-6 lg:px-8' />
           </StickyNavbar>
           <Layout>
-            <div id="main-content">
+            <div>
               <Component {...pageProps} />
             </div>
             <ScrollButton />
