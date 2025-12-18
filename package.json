@@ -27,7 +27,8 @@
     "test:editlinks": "tsx scripts/markdown/check-edit-links.ts",
     "test:locales": "tsx scripts/helpers/check-locales.ts",
     "dev:storybook": "storybook dev -p 6006",
-    "build:storybook": "storybook build"
+    "build:storybook": "storybook build",
+    "generate:join-qr": "tsx scripts/build-join-qr.ts"
   },
   "repository": {
     "type": "git",
@@ -120,7 +121,8 @@
     "tailwind-merge": "^2.2.1",
     "tailwindcss": "^3.4.3",
     "winston": "^3.17.0",
-    "yaml": "^2.3.4"
+    "yaml": "^2.3.4",
+    "qrcode": "^1.5.4"
   },
   "devDependencies": {
     "@apidevtools/json-schema-ref-parser": "^14.2.1",
@@ -142,6 +144,7 @@
     "@types/jest": "^29.5.14",
     "@types/lodash": "^4.17.0",
     "@types/node": "^20",
+    "@types/qrcode": "^1.5.6",
     "@types/react": "^18.0.1",
     "@types/react-dom": "^18",
     "@types/react-syntax-highlighter": "^15.5.11",
