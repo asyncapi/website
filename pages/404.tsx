@@ -12,7 +12,7 @@ export default function ErrorPage() {
 
   return (
     <div className='text-center'>
-      <div className='mt-20 flex-col items-center justify-center md:flex-row'>
+      <div className='-mt-5 flex-col items-center justify-center md:flex-row'>
         <div>
           <AnnouncementHero className='my-4' />
           <header className='mt-12 px-2 '>

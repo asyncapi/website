@@ -51,10 +51,10 @@ export default function NewsroomYoutube({ className = '' }: NewsroomYoutubeProps
       <div className='justify-content-center md:justify-content-start ml-2 flex flex-row'>
         <button
           ref={prevElRef}
-          className={`${buttonClass} ml-0 px-6 py-3 ${current === 0 ? 'cursor-not-allowed border-gray-200 bg-white text-gray-200' : 'border-secondary-500  bg-secondary-100 text-secondary-500  hover:bg-secondary-500 hover:text-white'}`}
+          className={`${buttonClass} ml-0 px-4 py-2 ${current === 0 ? 'cursor-not-allowed border-gray-200 bg-white text-gray-200' : 'border-secondary-500  bg-secondary-100 text-secondary-500  hover:bg-secondary-500 hover:text-white'}`}
           data-testid='Youtube-Prev-button'
         >
-          <ArrowLeft className='w-4' />
+          <ArrowLeft className='w-8' />
         </button>
         <button
           ref={nextElRef}
