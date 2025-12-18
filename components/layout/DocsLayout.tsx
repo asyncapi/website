@@ -21,6 +21,7 @@ import DocsMobileMenu from '../navigation/DocsMobileMenu';
 import DocsNavWrapper from '../navigation/DocsNavWrapper';
 import TOC from '../TOC';
 import Heading from '../typography/Heading';
+import SpecVersionSwitcher from '../SpecVersionSwitcher';
 
 interface IDocsLayoutProps {
   post: IPost;
@@ -148,9 +149,12 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                   className='sticky top-20 mt-4 max-h-screen overflow-y-auto bg-blue-100 p-4 xl:mt-0 xl:w-72 xl:bg-transparent xl:pb-8'
                 />
                 <div className='px-4 sm:px-6 xl:max-w-184 xl:flex-1 xl:px-8'>
-                  <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg}>
-                    {post.title}
-                  </Heading>
+                  <div className='flex items-center justify-between'>
+                    <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg}>
+                      {post.title}
+                    </Heading>
+                    <SpecVersionSwitcher />
+                  </div>
                   <div>
                     <p className='font-normal font-sans text-sm text-gray-600 antialiased'>
                       Found an error? Have a suggestion?
