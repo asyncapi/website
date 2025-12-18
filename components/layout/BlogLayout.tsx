@@ -1,22 +1,23 @@
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
-import type { NextSeoProps } from 'next-seo';
-import { NextSeo } from 'next-seo';
 import React, { useContext } from 'react';
 
 import AppContext from '@/context/AppContext';
-import { BlogPost } from '@/types/post';
+import { IBlog, IBlogPost } from '@/types/post';
+import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
+import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 import AuthorAvatars from '../../components/AuthorAvatars';
 import Container from '../../components/layout/Container';
 import BlogContext from '../../context/BlogContext';
-import Heading, { HeadingLevel, HeadingTypeStyle } from '../typography/Heading';
-import Paragraph, { ParagraphTypeStyle } from '../typography/Paragraph';
+import Heading from '../typography/Heading';
+import Paragraph from '../typography/Paragraph';
 
 interface IBlogLayoutProps {
-  post: BlogPost;
+  post: IBlogPost;
   children: React.ReactNode;
-  seo?: NextSeoProps;
+  seo?: any; // SEO properties
   source?: MDXRemoteSerializeResult;
+  navItems?: IBlog; // Navigation items for blog posts
 }
 
 /**
@@ -25,41 +26,19 @@ interface IBlogLayoutProps {
  * @param props.children - The content of the blog post
  * @param props.seo - The SEO data for the blog post
  * @param props.source - The MDX source for the blog post
+ * @param props.navItems - Navigation items for blog posts
  */
-export default function BlogLayout({ post, children, seo, source }: IBlogLayoutProps) {
+export default function BlogLayout({ post, children, seo, source, navItems }: IBlogLayoutProps) {
   const appContext = useContext(AppContext);
   const { path = '' } = appContext || {};
 
   return (
-    <BlogContext.Provider value={{ post, source }}>
-      <NextSeo
-        title={post.title}
-        description={post.excerpt}
-        canonical={post.canonical}
-        openGraph={{
-          type: 'article',
-          article: {
-            publishedTime: post.date,
-            modifiedTime: post.date,
-            authors: post.authors ? post.authors.map((author) => author.name) : [],
-            tags: post.tags
-          },
-          images: post.cover
-            ? [
-                {
-                  url: post.cover,
-                  alt: post.coverCaption
-                }
-              ]
-            : []
-        }}
-        {...seo}
-      />
+    <BlogContext.Provider value={{ post, navItems }}>
       <Container cssBreakingPoint='lg' wide>
         <main className='mx-auto mt-5 w-full lg:mt-10' data-testid='Blog-layout'>
           <header className='mb-10 md:mb-16'>
             <div className='mb-4'>
-              <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.headingLg}>
+              <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg}>
                 {post.title}
               </Heading>
             </div>
@@ -92,20 +71,6 @@ export default function BlogLayout({ post, children, seo, source }: IBlogLayoutP
             </div>
           </header>
           <article className='mb-32'>
-            <NextSeo
-              title={post.title}
-              description={post.excerpt}
-              openGraph={{
-                images: post.cover
-                  ? [
-                      {
-                        url: post.cover,
-                        alt: post.coverCaption
-                      }
-                    ]
-                  : []
-              }}
-            />
             {/* Conditionally load AddThis script only on client side */}
             {typeof window !== 'undefined' && (
               <script
