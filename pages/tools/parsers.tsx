@@ -18,31 +18,23 @@ const doc = await parse(\`
 asyncapi: '3.0.0'
 info:
   title: Example
-  version: '1.0.0'
+  version: 1.0.0
 channels:
   example:
-    address: example-channel
+    address: example/channel
     messages:
-      example:
+      exampleMessage:
         payload:
-          type: object
-          properties:
-            exampleField:
-              type: string
-            exampleNumber:
-              type: number
-            exampleDate:
-              type: string
-              format: date-time
+          type: string
 operations:
-  example:
+  sendExample:
     action: send
     channel:
       $ref: '#/channels/example'
 \`)
 
-console.log(doc.info().title())
-// => Example`;
+// Example of accessing parsed document
+// console.log(doc.info().title()) // This would output: Example`;
 }
 
 /**
