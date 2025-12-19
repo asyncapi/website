@@ -1,4 +1,5 @@
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import Script from 'next/script';
 import React, { useContext } from 'react';
 
 import AppContext from '@/context/AppContext';
@@ -71,23 +72,19 @@ export default function BlogLayout({ post, children, seo, source, navItems }: IB
             </div>
           </header>
           <article className='mb-32'>
-            {/* Conditionally load AddThis script only on client side */}
-            {typeof window !== 'undefined' && (
-              <script
-                type='text/javascript'
-                src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cb852c7b57ed596'
-                async
-              />
-            )}
+            <Script
+              src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cb852c7b57ed596"
+              strategy="afterInteractive"
+            />
             <style>{`
               /* AddThis hack */
               #at4-share {
                   left: 50%;
                   margin-left: -500px !important;
                   position: absolute;
-                  &.addthis-animated {
-                    animation-duration: 0s !important;
-                  }
+              }
+              #at4-share.addthis-animated {
+                animation-duration: 0s !important;
               }
               #at4-scc {
                   display: none !important;

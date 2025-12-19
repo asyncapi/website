@@ -11,12 +11,13 @@ Since this project uses Next.js with static export (`output: 'export'`), securit
 All security headers are configured in `netlify.toml` to ensure they're applied at the CDN level:
 
 - `X-DNS-Prefetch-Control`: Controls DNS prefetching
-- `Strict-Transport-Security`: Enforces HTTPS connections
+- `Strict-Transport-Security`: Enforces HTTPS connections (removed preload directive for safety)
 - `X-Content-Type-Options`: Prevents MIME-type sniffing
 - `X-Frame-Options`: Prevents clickjacking attacks
 - `Referrer-Policy`: Controls referrer information
 - `Permissions-Policy`: Restricts browser features
 - `Content-Security-Policy`: Prevents XSS and other code injection attacks
+- `Access-Control-Allow-Origin`: Restricted to specific trusted origins for Netlify Functions
 
 ## Content Security Policy (CSP)
 
@@ -39,10 +40,21 @@ This policy:
 - Limits connections to essential services
 - Allows YouTube embeds in frames
 
+## CORS Security for Netlify Functions
+
+To prevent unauthorized access to sensitive Netlify Functions, CORS headers have been restricted:
+
+- `Access-Control-Allow-Origin`: Set to `https://www.asyncapi.com` for Netlify Functions
+- `Access-Control-Allow-Methods`: Limited to `GET, POST, OPTIONS`
+- `Access-Control-Allow-Headers`: Limited to `Content-Type`
+- `Access-Control-Max-Age`: Set to 86400 seconds (24 hours)
+
+This prevents malicious websites from making unauthorized requests to our Netlify Functions while still allowing legitimate requests from our domain.
+
 ## Additional Security Measures
 
 1. **X-Frame-Options**: Set to `SAMEORIGIN` for better security
-2. **HSTS**: Implemented with a 2-year max-age and preload directive
+2. **HSTS**: Implemented with a 2-year max-age without preload directive for safety
 3. **DNS Prefetch Control**: Enabled to control DNS prefetching behavior
 4. **Referrer Policy**: Set to `origin-when-cross-origin` for privacy protection
 5. **Permissions Policy**: Restricted access to sensitive browser features

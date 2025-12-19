@@ -5,11 +5,19 @@
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
     X-DNS-Prefetch-Control = "on"
-    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains"
     Referrer-Policy = "origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://buttons.github.io https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://buttons.github.io; frame-src 'self' https://www.youtube.com"
-    Access-Control-Allow-Origin = "*"
+
+# Specific headers for Netlify Functions
+[[headers]]
+  for = "/.netlify/functions/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "https://www.asyncapi.com"
+    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type"
+    Access-Control-Max-Age = "86400"
 
 [build]
   command = "npm run build"

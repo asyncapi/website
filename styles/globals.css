@@ -1,128 +1,110 @@
-@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
-@import url(https://cdn.jsdelivr.net/npm/@docsearch/css@3);
-
-@import "swiper/css";
-@import "swiper/css/a11y";
-@import "swiper/css/navigation";
-@import "swiper/css/pagination";
-@import "swiper/css/scrollbar";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom fonts */
-@font-face {
-  font-family: 'Work Sans';
-  src: url('/fonts/WorkSans-Bold.ttf') format('truetype');
-  font-display: swap;
-}
-
-/* adjust swiper library */
-.swiper-wrapper {
-  align-items: stretch;
-}
-
-.swiper-slide {
-  height: auto !important;
-}
-
-/* adjust DocsSearch input styles */
-.DocSearch-Input {
-  border-width: 0;
-  background-color: transparent;
-}
-
-.DocSearch-Input:focus {
-  outline: 0;
-  outline-offset: 0;
-  box-shadow: none;
-}
-
-.DocSearch-Screen-Icon {
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.DocSearch-Help > a {
-  appearance: none;
-  background: none;
-  border: 0;
-  border-radius: 1em;
-  color: var(--docsearch-highlight-color);
-  cursor: pointer;
-  display: inline-block;
-  font-size: 1em;
-  font-weight: 700;
-  padding: 0;
-}
-
-.DocSearch-Help > a:focus, .DocSearch-Help > a:hover {
-  outline: none;
-  text-decoration: underline;
-}
-
-.two-liner {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* adjust DocsSearch mobile styles */
-@media (max-width: 750px) {
-  .DocSearch-Container {
-    position: fixed !important;
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
-}
 
-@media (max-width: 767px){
-  .orbits{
-    display: none;
+  body {
+    @apply font-sans text-gray-900 antialiased;
   }
-}
-.orbit-container {
-  position: relative;
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  top: -200px;
-}
 
-.orbit {
-  position: absolute;
-  border-radius: 100%;
-  border: solid 3px #f3f3f4;
-  transition: 0.2s;
-}
+  /* Custom heading classes */
+  .heading-h1 {
+    @apply text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl;
+  }
 
-.orbit > div {
-  cursor: pointer;
-}
+  .heading-h2 {
+    @apply text-3xl font-bold leading-tight tracking-tight sm:text-4xl;
+  }
 
-/* Accessibility: Skip link styles */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
+  .heading-h3 {
+    @apply text-2xl font-bold leading-snug tracking-tight sm:text-3xl;
+  }
 
-.sr-only.focus:not-sr-only {
-  position: static;
-  width: auto;
-  height: auto;
-  padding: 0;
-  margin: 0;
-  overflow: visible;
-  clip: auto;
-  white-space: normal;
+  .heading-h4 {
+    @apply text-xl font-bold leading-normal tracking-tight sm:text-2xl;
+  }
+
+  .heading-h5 {
+    @apply text-lg font-bold leading-relaxed tracking-tight sm:text-xl;
+  }
+
+  .heading-h6 {
+    @apply text-base font-bold leading-relaxed tracking-tight sm:text-lg;
+  }
+
+  /* Custom paragraph classes */
+  .paragraph-lg {
+    @apply text-lg leading-relaxed;
+  }
+
+  .paragraph-base {
+    @apply text-base leading-relaxed;
+  }
+
+  .paragraph-sm {
+    @apply text-sm leading-relaxed;
+  }
+
+  .paragraph-xs {
+    @apply text-xs leading-relaxed;
+  }
+
+  /* Custom link classes */
+  .link-primary {
+    @apply text-blue-600 underline hover:text-blue-800;
+  }
+
+  .link-secondary {
+    @apply text-gray-600 underline hover:text-gray-800;
+  }
+
+  /* Custom button classes */
+  .btn-primary {
+    @apply rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply rounded-md bg-gray-200 px-4 py-2 text-gray-800 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+  }
+
+  /* Custom utility classes */
+  .container-custom {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+
+  .card-shadow {
+    @apply shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl;
+  }
+
+  /* Skip link styles for accessibility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
 }
