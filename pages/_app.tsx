@@ -15,7 +15,6 @@ import StickyNavbar from '@/components/navigation/StickyNavbar';
 import AppContext from '@/context/AppContext';
 import { SpecVersionProvider } from '@/context/SpecVersionContext';
 import { MDXProvider } from '@/components/MDX/MDX';
-import { mdxComponents } from '@/components/MDX/MDX';
 
 /**
  * @description The MyApp component is the root component for the application.

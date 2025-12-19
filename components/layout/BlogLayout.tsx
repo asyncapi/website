@@ -1,4 +1,5 @@
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import Head from 'next/head';
 import Script from 'next/script';
 import React, { useContext } from 'react';
 
@@ -36,6 +37,9 @@ export default function BlogLayout({ post, children, seo, source, navItems }: IB
   return (
     <BlogContext.Provider value={{ post, navItems }}>
       <Container cssBreakingPoint='lg' wide>
+        <Head>
+          {post.canonical && <link rel='canonical' href={post.canonical} />}
+        </Head>
         <main className='mx-auto mt-5 w-full lg:mt-10' data-testid='Blog-layout'>
           <header className='mb-10 md:mb-16'>
             <div className='mb-4'>
@@ -90,7 +94,6 @@ export default function BlogLayout({ post, children, seo, source, navItems }: IB
                   display: none !important;
               }
             `}</style>
-            {post.canonical && <link rel='canonical' href={post.canonical} />}
             <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className='my-6 w-full' />
             {children}
           </article>

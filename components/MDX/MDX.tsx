@@ -334,6 +334,14 @@ const getMDXComponents = {
 
 export const mdxComponents = getMDXComponents;
 
+// Export the useMDXComponents function for Next.js MDX configuration
+export function useMDXComponents(components: any) {
+  return {
+    ...mdxComponents,
+    ...components,
+  };
+}
+
 interface MDXProviderProps {
   children: React.ReactNode;
 }

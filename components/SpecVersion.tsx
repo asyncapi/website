@@ -1,7 +1,5 @@
 import React, { ReactNode } from 'react';
-import { useSpecVersion } from '@/context/SpecVersionContext';
-
-type SpecVersion = '2.x' | '3.x';
+import { useSpecVersion, type SpecVersion } from '@/context/SpecVersionContext';
 
 interface SpecVersionProps {
   when: SpecVersion;
@@ -29,9 +27,6 @@ interface SpecVersionProps {
  */
 export default function SpecVersion({ when, children }: SpecVersionProps) {
   const { version } = useSpecVersion();
-  
-  // Debugging: Log to console to see if component is being called
-  console.log(`SpecVersion component called - when: ${when}, current version: ${version}`);
   
   if (version !== when) {
     return null;
