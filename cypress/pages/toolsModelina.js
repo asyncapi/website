@@ -1,6 +1,6 @@
 import BasePage from './BasePage';
 
-class toolsModelina extends BasePage {
+class ToolsModelina extends BasePage {
     verifyTryItNowLink() {
         return this.verifyCustomLink('Try it now', 'https://modelina.org/playground');
     }

@@ -1,7 +1,8 @@
+import ToolsMisc from './pages/toolsMisc';
 import toolsData from './fixtures/toolsPages.json';
 
 describe('Tools - CLI / Parsers / GitHub Actions', () => {
-  const page = new toolsMisc();
+  const page = new ToolsMisc();
 
   describe('CLI', () => {
     beforeEach(() => {
