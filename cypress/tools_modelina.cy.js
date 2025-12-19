@@ -1,8 +1,8 @@
-import toolsModelina from './pages/toolsModelina';
+import ToolsModelina from './pages/toolsModelina';
 import toolsData from './fixtures/toolsPages.json';
 
 describe('Tools - Modelina Page', () => {
-  const page = new toolsModelina();
+  const page = new ToolsModelina();
 
   beforeEach(() => {
     page.visit(toolsData.modelina.path);
