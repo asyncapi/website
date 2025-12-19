@@ -8,7 +8,7 @@
     Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
     Referrer-Policy = "origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' https://buttons.github.io https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://buttons.github.io; frame-src 'self' https://www.youtube.com"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://buttons.github.io https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://buttons.github.io; frame-src 'self' https://www.youtube.com"
 
 # Specific headers for Netlify Functions
 [[headers]]
@@ -22,7 +22,7 @@
 [build]
   command = "npm run build"
   functions = "netlify/functions"
-  publish = "out"
+  publish = ".next/static-export"
 
 [build.environment]
   NPM_FLAGS = "--production=false"
@@ -36,19 +36,9 @@
   to = "https://github.com/asyncapi/spec-json-schemas/tree/master/schemas"
   status = 200
 
-[[edge_functions]]
-function = "serve-definitions"
-path = "/definitions/*"
-
 # Used by JSON Schema definitions fetched from schemastore.org
 [[redirects]]
   from = "/schema-store"
   to = "https://github.com/asyncapi/spec-json-schemas/tree/master/schemas"
   status = 200
 
-[[edge_functions]]
-function = "serve-definitions"
-path = "/schema-store/*"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"

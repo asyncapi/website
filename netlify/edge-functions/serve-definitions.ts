@@ -1,8 +1,8 @@
 // Changes to URL from 'netlify:edge' because we don't have package aliasing setup in our workflow.
 import type { Context } from "https://edge-bootstrap.netlify.app/v1/index.ts";
 
-const GITHUB_TOKEN = Deno.env.get("GITHUB_TOKEN_NR");
-const NR_API_KEY = Deno.env.get("NR_API_KEY");
+const GITHUB_TOKEN = Deno.env.get("GITHUB_TOKEN_NR") || "";
+const NR_API_KEY = Deno.env.get("NR_API_KEY") || "";
 const NR_METRICS_ENDPOINT = Deno.env.get("NR_METRICS_ENDPOINT") || "https://metric-api.eu.newrelic.com/metric/v1";
 
 const URL_DEST_SCHEMAS = "https://raw.githubusercontent.com/asyncapi/spec-json-schemas/master/schemas";
@@ -86,7 +86,9 @@ function buildRewrite(originalRequest: Request): (Request | null) {
     url = `${URL_DEST_DEFINITIONS  }/${definitionVersion}${file}`;
   }
 
-  originalRequest.headers.set('Authorization', `token ${  GITHUB_TOKEN}`);
+  if (GITHUB_TOKEN) {
+    originalRequest.headers.set('Authorization', `token ${  GITHUB_TOKEN}`);
+  }
 
   return new Request(url, {
     method: originalRequest.method,
@@ -109,13 +111,18 @@ async function doFetch(resource: string, options: TimeoutRequestInit): Promise<R
 }
 
 async function sendMetricToNR(context: Context, metric: NRMetric) {
+  // Skip sending metrics if NR_API_KEY is not set
+  if (!NR_API_KEY) {
+    return;
+  }
+  
   const metrics = [{ "metrics": [metric] }];
   try {
     const rawResponse = await doFetch(NR_METRICS_ENDPOINT, {
       timeout: 2000, // Success in 2 seconds, cancel if not. User's request is more important than collecting metrics.
       method: 'POST',
       headers: {
-        'Api-Key': NR_API_KEY || "",
+        'Api-Key': NR_API_KEY,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(metrics)

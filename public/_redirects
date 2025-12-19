@@ -1,5 +1,6 @@
-# These rules will change if you change your site’s custom domains or HTTPS settings
+# These rules will change if you change your site's custom domains or HTTPS settings
 
+# Redirect all non-www domains to www
 https://asyncapi.com/* https://www.asyncapi.com/:splat 301!
 https://asyncapi.org/* https://www.asyncapi.com/:splat 301!
 https://www.asyncapi.org/* https://www.asyncapi.com/:splat 301!
