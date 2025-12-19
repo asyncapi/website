@@ -108,9 +108,32 @@ Thanks to their quick action, the issue was contained and resolved. We’re grat
 
 
 ## Spec x Tooling
-AsyncAPI now supports a formal media type (MIME type) for the AsyncAPI Object. This change improves interoperability and strengthens tooling capabilities for API specifications, emphasizing the importance of recognizing AsyncAPI artifacts with well-defined media types for seamless documentation, validation, and system exchanges. You can get more details [about this on the formal media type for the AsyncAPI Object issue](https://github.com/asyncapi/spec/issues/936).
 
-Additionally, Spec meetings are now back. Keep an eye [on the spec meeting issue if you're interested in joining](https://github.com/asyncapi/spec/issues/1131).
+### Official MIME types
+
+The AsyncAPI media types are now officially registered under iana.org:
+- [`application/asyncapi+json`](https://www.iana.org/assignments/media-types/application/asyncapi+json)
+- [`application/asyncapi+yaml`](https://www.iana.org/assignments/media-types/application/asyncapi+yaml)
+
+This transition from informal conventions to a globally recognized standard improves interoperability and strengthens tooling capabilities. Detailed information on this registration can be found in the [original specification issue](https://github.com/asyncapi/spec/issues/936).
+
+### Spec Triage Meetings
+
+We started doing public meetings about the specification, where we triage backlog and discuss proposals. Keep an eye [on the spec meeting issue if you're interested in joining](https://github.com/asyncapi/spec/issues/1131).
+
+As [a result of the last meeting](https://github.com/asyncapi/community/issues/2187#issuecomment-3671287512), we scheduled the next AsyncAPI v3.1 release for January 2026. At the moment, we know that [ROS 2](https://github.com/asyncapi/spec/pull/1109) binding is scheduled for this release.
+
+Stay tuned. We will for sure organize the third meeting in January. Three meetings in three months means we are getting regular and might transform into an official working group.
+
+### Adding `AND` Logic In Security Section
+
+We are seeking community input on [the proposal to change the `security` field type](https://github.com/asyncapi/spec/issues/1129) under the [`Server Object`](https://www.asyncapi.com/docs/reference/specification/v3.0.0#serverObject)
+
+Specifically, we would like to understand use cases where there is a technical requirement for multiple authentication methods to be fulfilled simultaneously. Please share your experiences, especially if you can provide:
+
+- Publicly known use cases involving simultaneous authentication.
+- Example AsyncAPI documents where you have implemented workarounds to support this.
+- Technical stories explaining why a single security requirement was insufficient for your needs.
 
 ## Final Remarks
 
