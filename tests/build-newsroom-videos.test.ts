@@ -1,4 +1,4 @@
-import { mkdirpSync, outputFileSync, readFileSync, removeSync } from 'fs-extra';
+import fs, { mkdirpSync, outputFileSync, readFileSync, removeSync } from 'fs-extra';
 // Get reference to the mocked fetch function
 import fetch from 'node-fetch-2';
 import os from 'os';
@@ -14,10 +14,12 @@ jest.mock('node-fetch-2', () => {
 const mockFetch = fetch as jest.Mock;
 
 describe('buildNewsroomVideos', () => {
-  const testDir = join(os.tmpdir(), 'test_config');
-  const testFilePath = resolve(testDir, 'newsroom_videos.json');
+  let testDir: string;
+  let testFilePath: string;
 
   beforeAll(() => {
+    testDir = fs.mkdtempSync(join(os.tmpdir(), 'test_config-'));
+    testFilePath = resolve(testDir, 'newsroom_videos.json');
     mkdirpSync(testDir);
     outputFileSync(testFilePath, JSON.stringify({}));
     process.env.YOUTUBE_TOKEN = 'testkey';

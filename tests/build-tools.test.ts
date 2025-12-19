@@ -29,15 +29,20 @@ jest.mock('../scripts/tools/tags-color', () => ({
 }));
 
 describe('buildTools', () => {
-  const testDir = path.join(String(os.tmpdir()), 'test_config');
-  const toolsPath = resolve(testDir, 'tools.json');
-  const tagsPath = resolve(testDir, 'all-tags.json');
-  const automatedToolsPath = resolve(testDir, 'tools-automated.json');
-  const manualToolsPath = resolve(testDir, 'tools-manual.json');
+  let testDir: string;
+  let toolsPath: string;
+  let tagsPath: string;
+  let automatedToolsPath: string;
+  let manualToolsPath: string;
   let consoleErrorMock: jest.SpyInstance;
 
   beforeAll(() => {
     consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => { });
+    testDir = fs.mkdtempSync(path.join(String(os.tmpdir()), 'test_config-'));
+    toolsPath = resolve(testDir, 'tools.json');
+    tagsPath = resolve(testDir, 'all-tags.json');
+    automatedToolsPath = resolve(testDir, 'tools-automated.json');
+    manualToolsPath = resolve(testDir, 'tools-manual.json');
     fs.ensureDirSync(testDir);
     fs.outputFileSync(manualToolsPath, JSON.stringify(manualTools));
     fs.outputFileSync(automatedToolsPath, JSON.stringify({}));

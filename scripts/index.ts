@@ -43,7 +43,7 @@ async function start() {
 
   // Build tools manually to reflect changes in tools-manual.json
   await buildToolsManual(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
-  
+
   await buildUsecasesList();
   const financeDir = resolve('.', 'config', 'finance');
 
@@ -76,4 +76,6 @@ async function start() {
 
 export { start };
 
-start();
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  start();
+}

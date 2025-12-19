@@ -1,6 +1,7 @@
-import { mkdirSync, readFileSync, rmSync } from 'fs';
+import fs, { mkdirSync, readFileSync, rmSync, mkdtempSync } from 'fs';
 import { google } from 'googleapis';
 import path from 'path';
+import os from 'os';
 
 import { buildMeetings } from '../scripts/build-meetings';
 import { expectedContent, mockEvents } from './fixtures/meetingsData';
@@ -25,8 +26,8 @@ jest.mock('googleapis', () => {
 });
 
 describe('buildMeetings', () => {
-  const testDir = path.join(__dirname, 'testCache');
-  const outputFilePath = path.join(testDir, 'meetings.json');
+  let testDir: string;
+  let outputFilePath: string;
   const mockCalendar = google.calendar('v3').events.list as jest.Mock;
   const mockGoogleAuth = google.auth.GoogleAuth as unknown as jest.Mock;
 
@@ -35,11 +36,15 @@ describe('buildMeetings', () => {
     process.env.CALENDAR_SERVICE_ACCOUNT = JSON.stringify({ key: 'test_key' });
     process.env.CALENDAR_ID = 'test_calendar_id';
 
+    testDir = mkdtempSync(path.join(os.tmpdir(), 'meetings-test-'));
+    outputFilePath = path.join(testDir, 'meetings.json');
     mkdirSync(testDir, { recursive: true });
   });
 
   afterEach(() => {
-    rmSync(testDir, { recursive: true, force: true });
+    if (testDir && fs.existsSync(testDir)) {
+      rmSync(testDir, { recursive: true, force: true });
+    }
   });
 
   it('should fetch events, process them, and write to a file', async () => {
