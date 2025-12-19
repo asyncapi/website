@@ -1,4 +1,3 @@
-import toolsMisc from './pages/toolsMisc';
 import toolsData from './fixtures/toolsPages.json';
 
 describe('Tools - CLI / Parsers / GitHub Actions', () => {
