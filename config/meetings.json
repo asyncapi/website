@@ -15,13 +15,6 @@
   },
   {
     "title": "AsyncAPI Community WG Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=dmdkdG5zcGtzcTJjNTdjbHFrdDdzNXZycXMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/2060",
-    "banner": "https://github.com/user-attachments/assets/e0c22c5a-94a8-488c-970c-14aa1697283c",
-    "date": "2025-09-09T15:00:00.000Z"
-  },
-  {
-    "title": "AsyncAPI Community WG Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=N3A1ajdoOHFwdnM1MGVpNG9yYmNqaDBvNDQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/2066",
     "banner": "https://github.com/user-attachments/assets/e0c22c5a-94a8-488c-970c-14aa1697283c",
@@ -33,13 +26,6 @@
     "url": "https://github.com/asyncapi/community/issues/2069",
     "banner": "",
     "date": "2025-09-15T16:00:00.000Z"
-  },
-  {
-    "title": "Governance Board Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=dnE5YXNkMTVvY2wxY2JjbmdpOWhhYWZmZmMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/2073",
-    "banner": "",
-    "date": "2025-09-02T16:00:00.000Z"
   },
   {
     "title": "Governance Board Meeting",
@@ -89,5 +75,40 @@
     "url": "https://github.com/asyncapi/community/issues/2141",
     "banner": "",
     "date": "2025-11-19T14:00:00.000Z"
+  },
+  {
+    "title": "Worfklow Test",
+    "calLink": "https://www.google.com/calendar/event?eid=MXRuYjBibTNjcXZpcmtvaXF2cDQ5M2ZncDQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/2183",
+    "banner": "",
+    "date": "2025-12-11T15:00:00.000Z"
+  },
+  {
+    "title": "Governance Board Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=NmlyYW5pZWhzbzJnYTlkdm1uMHRubjZsMm8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/2186",
+    "banner": "",
+    "date": "2025-12-15T16:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI Spec Triage",
+    "calLink": "https://www.google.com/calendar/event?eid=dDY0M2M3bDIwOGg0N2ViYTlxdXAwNm02aTAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/2187",
+    "banner": "",
+    "date": "2025-12-18T16:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI Conference Triaging ",
+    "calLink": "https://www.google.com/calendar/event?eid=aWFucGhpc2xqbTViYWRkNjBkbDMzcWc0cmMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/2189",
+    "banner": "",
+    "date": "2025-12-16T13:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI Conference Triage",
+    "calLink": "https://www.google.com/calendar/event?eid=NWFhcGJtNjk2bmE0OTIwdTQ0OTNtcjRwa3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/2193",
+    "banner": "",
+    "date": "2025-12-23T13:00:00.000Z"
   }
 ]
