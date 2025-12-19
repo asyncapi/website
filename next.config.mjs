@@ -27,7 +27,7 @@ const nextConfig = {
 
 const mdxConfig = withMDX({
   extension: /\.mdx?$/,
-  providerImportSource: "@mdx-js/react",
+  providerImportSource: "@/components/MDX/MDX",
   options: {
     remarkPlugins: [frontmatter, gemoji, headingId, slug, images, a11yEmoji, remarkGfm],
     rehypePlugins: []

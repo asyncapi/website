@@ -14,6 +14,8 @@ import NavBar from '@/components/navigation/NavBar';
 import StickyNavbar from '@/components/navigation/StickyNavbar';
 import AppContext from '@/context/AppContext';
 import { SpecVersionProvider } from '@/context/SpecVersionContext';
+import { MDXProvider } from '@/components/MDX/MDX';
+import { mdxComponents } from '@/components/MDX/MDX';
 
 /**
  * @description The MyApp component is the root component for the application.
@@ -22,28 +24,28 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <AppContext.Provider value={{ path: router.asPath }}>
       <SpecVersionProvider>
-        {/* <MDXProvider components={mdxComponents}> */}
-        <Head>
-          <script async defer src='https://buttons.github.io/buttons.js' />
-        </Head>
-        <AlgoliaSearch>
-          <div className='flex min-h-screen flex-col'>
-            <Banner />
-            <StickyNavbar>
-              <NavBar className='mx-auto block max-w-screen-xl px-4 sm:px-6 lg:px-8' />
-            </StickyNavbar>
-            <Layout>
-              <div>
-                <Component {...pageProps} />
+        <MDXProvider>
+          <Head>
+            <script async defer src='https://buttons.github.io/buttons.js' />
+          </Head>
+          <AlgoliaSearch>
+            <div className='flex min-h-screen flex-col'>
+              <Banner />
+              <StickyNavbar>
+                <NavBar className='mx-auto block max-w-screen-xl px-4 sm:px-6 lg:px-8' />
+              </StickyNavbar>
+              <Layout>
+                <div>
+                  <Component {...pageProps} />
+                </div>
+                <ScrollButton />
+              </Layout>
+              <div className='mt-auto'>
+                <Footer />
               </div>
-              <ScrollButton />
-            </Layout>
-            <div className='mt-auto'>
-              <Footer />
             </div>
-          </div>
-        </AlgoliaSearch>
-        {/* </MDXProvider> */}
+          </AlgoliaSearch>
+        </MDXProvider>
       </SpecVersionProvider>
     </AppContext.Provider>
   );

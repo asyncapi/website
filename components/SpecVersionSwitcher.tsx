@@ -7,11 +7,17 @@ import { useSpecVersion } from '@/context/SpecVersionContext';
  */
 export default function SpecVersionSwitcher() {
   const { version, setVersion } = useSpecVersion();
+  
+  // Debugging: Log to console to see current version
+  console.log(`SpecVersionSwitcher - current version: ${version}`);
 
   return (
     <div className="flex items-center rounded-lg border border-gray-200 p-1 dark:border-gray-700">
       <button
-        onClick={() => setVersion('2.x')}
+        onClick={() => {
+          console.log('Setting version to 2.x');
+          setVersion('2.x');
+        }}
         className={`px-3 py-1 text-sm font-medium rounded-md transition-colors ${
           version === '2.x'
             ? 'bg-blue-500 text-white shadow-sm'
@@ -22,7 +28,10 @@ export default function SpecVersionSwitcher() {
         2.x
       </button>
       <button
-        onClick={() => setVersion('3.x')}
+        onClick={() => {
+          console.log('Setting version to 3.x');
+          setVersion('3.x');
+        }}
         className={`px-3 py-1 text-sm font-medium rounded-md transition-colors ${
           version === '3.x'
             ? 'bg-blue-500 text-white shadow-sm'
