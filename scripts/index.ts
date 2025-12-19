@@ -23,12 +23,12 @@ const tagsPath = resolve(currentDirPath, '../config', 'all-tags.json');
  * This asynchronous function orchestrates the creation of various content lists by processing designated directories and files.
  * It builds the posts list, generates the blog RSS feed, creates the case studies list, compiles the adopters list,
  * and combines tools data.
- * For finance information, it reads the finance directory, filters and sorts numeric filenames representing years, and utilizes the latest year.
+ * For finance information, it reads the finance directory, filters and sorts numeric directory names representing years, and utilizes the latest year.
  * The function throws an error if no valid finance data is found.
  *
  * @throws {Error} If no numeric finance data is found in the finance directory.
  */
-async function start() {
+export async function start() {
   const postDirectories = [
     ['pages/blog', '/blog'],
     ['pages/docs', '/docs'],
@@ -47,12 +47,13 @@ async function start() {
   await buildUsecasesList();
   const financeDir = resolve('.', 'config', 'finance');
 
-  // loop through all the files finance in directory and find the latest year to build the finance info list
+  // loop through all the directories in finance directory and find the latest year to build the finance info list
   const yearsList = fs
     .readdirSync(financeDir)
-    // filter out any files that are not numbers
-    .filter((file) => {
-      return !Number.isNaN(parseFloat(file));
+    // filter out any items that are not directories with numeric names
+    .filter((item) => {
+      const itemPath = resolve(financeDir, item);
+      return fs.statSync(itemPath).isDirectory() && !Number.isNaN(parseFloat(item));
     })
     // sort the years in descending order
     .sort((a, b) => {
@@ -74,6 +75,7 @@ async function start() {
   });
 }
 
-export { start };
-
-start();
+// Only run the function if this file is executed directly
+if (process.argv[1] === currentFilePath) {
+  start().catch(console.error);
+}

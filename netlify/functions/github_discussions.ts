@@ -55,7 +55,9 @@ const handler: Handler = async function (event: HandlerEvent) {
 
       return {
         statusCode: error.response.status,
-        message: error.response.data.message
+        body: JSON.stringify({
+          message: error.response.data.message
+        })
       };
     }
   } else {
