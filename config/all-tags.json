@@ -81,6 +81,11 @@
       "borderColor": "border-[#609DBC]"
     },
     {
+      "name": "PHP",
+      "color": "bg-[#B0B3D6]",
+      "borderColor": "border-[#787CB5]"
+    },
+    {
       "name": "Scala",
       "color": "bg-[#57f281]",
       "borderColor": "border-[#37f069]"
@@ -178,6 +183,21 @@
       "borderColor": "border-[#B9012b]"
     },
     {
+      "name": "PHP",
+      "color": "bg-[#B0B3D6]",
+      "borderColor": "border-[#787CB5]"
+    },
+    {
+      "name": "Laravel",
+      "color": "bg-[#F55247]",
+      "borderColor": "border-[#F43B2F]"
+    },
+    {
+      "name": "Symfony",
+      "color": "bg-[#666666]",
+      "borderColor": "border-[#333333]"
+    },
+    {
       "name": "Socket.IO",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
@@ -188,7 +208,17 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
+      "name": "Django",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
       "name": "TypeScript",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "FastAPI",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
@@ -223,11 +253,6 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "Go",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
       "name": "Markdown",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
@@ -258,7 +283,7 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "AsyncAPI Generator",
+      "name": "AsyncAPI CLI",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
@@ -283,12 +308,12 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "JetBrains",
+      "name": "SmartPaste",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "SmartPaste",
+      "name": "JetBrains",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
