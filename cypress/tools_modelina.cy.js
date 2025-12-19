@@ -1,25 +1,26 @@
 import toolsModelina from './pages/toolsModelina';
+import toolsData from './fixtures/toolsPages.json';
 
 describe('Tools - Modelina Page', () => {
   const page = new toolsModelina();
 
   beforeEach(() => {
-    page.visit('/tools/modelina');
+    page.visit(toolsData.modelina.path);
   });
 
   it('User sees the main header and intro', () => {
-    page.verifyHeadingExists('Modelina');
+    page.verifyHeadingExists(toolsData.modelina.heading);
   });
 
   it('User sees install snippet', () => {
-    page.verifyInstallSnippet();
+    page.verifyCodeSnippet(toolsData.modelina.install);
   });
 
   it('User verifies GitHub button link', () => {
-    page.verifyGithubLink('https://www.github.com/asyncapi/modelina');
+    page.verifyGithubLink(toolsData.modelina.github);
   });
 
   it('User verifies Try it now link', () => {
-    page.verifyTryItNowLink();
+    page.verifyCustomLink(toolsData.modelina.tryIt.text, toolsData.modelina.tryIt.href);
   });
 });
