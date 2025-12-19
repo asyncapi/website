@@ -1,4 +1,4 @@
-import BasePage from './BasePageTools';
+import BasePage from './BasePage';
 
 class ToolsPage extends BasePage {
   visitToolsPage() {

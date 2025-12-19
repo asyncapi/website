@@ -1,24 +1,14 @@
-import BaseToolsPage from './BaseToolsPage';
+import BasePage from './BasePage';
 
-class toolsGenerator extends BaseToolsPage {
-  visit() {
-    return super.visit('/tools/generator');
-  }
+class ToolsGenerator extends BasePage {
 
-  verifyDiagramImage() {
+  verifyGeneratorWorkflowDiagram() {
     return cy.get('img[alt="generator diagram"]')
       .should('be.visible')
       .and('have.attr', 'src')
       .should('not.be.empty');
   }
 
-  verifyGithubLink() {
-    return super.verifyGithubLink('https://www.github.com/asyncapi/generator');
-  }
-
-  verifyDocsLink() {
-    return super.verifyDocsLink('/docs/tools/generator');
-  }
 }
 
-export default toolsGenerator;
+export default ToolsGenerator;

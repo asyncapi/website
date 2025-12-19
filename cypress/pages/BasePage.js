@@ -33,6 +33,32 @@ class BasePage {
       .and('have.attr', attr, href);
     return text ? chain.and('contain', text) : chain;
   }
+
+  verifyGithubLink(href) {
+    return cy.contains('a', 'View on Github')
+      .should('be.visible')
+      .and('have.attr', 'href', href);
+  }
+
+  verifyDocsLink(href) {
+    return cy.contains('a', 'View Docs')
+      .should('be.visible')
+      .and('have.attr', 'href', href);
+  }
+
+  verifyCodeSnippet(text) {
+    return cy.contains('code', text).should('exist');
+  }
+
+  verifyImageVisible(altText) {
+    return cy.get(`img[alt="${altText}"]`).should('be.visible');
+  }
+
+  verifyCustomLink(text, href) {
+    return cy.contains('a', text)
+      .should('be.visible')
+      .and('have.attr', 'href', href);
+  }
 }
 
 export default BasePage;
