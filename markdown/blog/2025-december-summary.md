@@ -23,7 +23,7 @@ As this is the last summary of the year, I'll keep it short, highlight some of t
 
 ### Paris
 
-Paris hosted the last conference of the year, which spanned a busy three days. The biggest highlight of the conference was the API Standards booth, which we shared with friends from GraphQL, JSON Schema, and OpenAPI. It was a busy moment with attendees interested in our work, and many ever surprised by our focus on promoting Open Source.
+Paris hosted the last conference of the year, which spanned three busy days. The biggest highlight of the conference was the API Standards booth, which we shared with friends from GraphQL, JSON Schema, and OpenAPI. It was a busy moment with attendees interested in our work, and many ever surprised by our focus on promoting Open Source.
 
 On the third day, we had the AsyncAPI track, which included a variety of talks, with the ambassador panel as the highlight of the event.
 
