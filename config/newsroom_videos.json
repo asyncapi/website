@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/WuYQSYaWk1g/hqdefault.jpg",
+    "title": "AsyncAPI Spec Triage, 16:00 UTC Thursday December 18th 2025",
+    "description": "https://github.com/asyncapi/community/issues/2187.",
+    "videoId": "WuYQSYaWk1g"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/yRjdA0DYvBM/hqdefault.jpg",
     "title": "AsyncAPI Community WG Meeting",
     "description": "",
@@ -22,11 +28,5 @@
     "title": "Governance Board Meeting, Monday November 3rd 2025",
     "description": "https://github.com/asyncapi/community/issues/2116.",
     "videoId": "KnXXiv0HEMA"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/KbT7Pw6j46E/hqdefault.jpg",
-    "title": "AsyncAPI Online Conference 2025",
-    "description": "Join us this year for another edition of the AsyncAPI Online Conference 2025, featuring incredible speakers from around the world ...",
-    "videoId": "KbT7Pw6j46E"
   }
 ]
