@@ -1,16 +1,15 @@
 import BaseToolsPage from './BaseToolsPage';
 
-class ToolsGenerator extends BaseToolsPage {
+class toolsGenerator extends BaseToolsPage {
   visit() {
     return super.visit('/tools/generator');
   }
 
-  verifyHeader() {
-    return this.verifyHeadingExists('Docs, Code, Anything!');
-  }
-
-  verifyMainImage() {
-    return this.verifyImageVisible('generator diagram');
+  verifyDiagramImage() {
+    return cy.get('img[alt="generator diagram"]')
+      .should('be.visible')
+      .and('have.attr', 'src')
+      .should('not.be.empty');
   }
 
   verifyGithubLink() {
@@ -22,4 +21,4 @@ class ToolsGenerator extends BaseToolsPage {
   }
 }
 
-export default ToolsGenerator;
+export default toolsGenerator;

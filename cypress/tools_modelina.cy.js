@@ -1,14 +1,14 @@
-import ToolsModelina from './pages/toolsModelina';
+import toolsModelina from './pages/toolsModelina';
 
 describe('Tools - Modelina Page', () => {
-  const page = new ToolsModelina();
+  const page = new toolsModelina();
 
   beforeEach(() => {
-    page.visit();
+    page.visit('/tools/modelina');
   });
 
   it('User sees the main header and intro', () => {
-    page.verifyHeader();
+    page.verifyHeadingExists('Modelina');
   });
 
   it('User sees install snippet', () => {
@@ -16,7 +16,7 @@ describe('Tools - Modelina Page', () => {
   });
 
   it('User verifies GitHub button link', () => {
-    page.verifyGithubLink();
+    page.verifyGithubLink('https://www.github.com/asyncapi/modelina');
   });
 
   it('User verifies Try it now link', () => {

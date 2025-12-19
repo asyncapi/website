@@ -1,18 +1,18 @@
-import ToolsGenerator from './pages/toolsGenerator';
+import toolsGenerator from './pages/toolsGenerator';
 
 describe('Tools - Generator Page', () => {
-  const page = new ToolsGenerator();
+  const page = new toolsGenerator();
 
   beforeEach(() => {
     page.visit();
   });
 
   it('User sees the main header', () => {
-    page.verifyHeader();
+    page.verifyHeadingExists('Docs, Code, Anything!');
   });
 
   it('User sees the generator diagram image', () => {
-    page.verifyMainImage();
+    page.verifyDiagramImage();
   });
 
   it('User verifies GitHub button link', () => {

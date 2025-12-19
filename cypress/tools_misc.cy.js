@@ -1,20 +1,20 @@
-import ToolsMisc from './pages/toolsMisc';
+import toolsMisc from './pages/toolsMisc';
 
 describe('Tools - CLI / Parsers / GitHub Actions', () => {
-  const page = new ToolsMisc();
+  const page = new toolsMisc();
 
   describe('CLI', () => {
     beforeEach(() => {
-      page.visitCli();
+      page.visit('/tools/cli');
     });
 
     it('User sees the CLI header', () => {
-      page.verifyCliHeader();
+      page.verifyHeadingExists('Interact with AsyncAPI from the comfort of your CLI');
     });
 
     it('User verifies CLI GitHub and Docs links', () => {
-      page.verifyCliGithubLink();
-      page.verifyCliDocsLink();
+      page.verifyGithubLink('https://www.github.com/asyncapi/cli');
+      page.verifyDocsLink('/docs/tools/cli');
     });
 
     it('User sees CLI install snippet', () => {
@@ -24,15 +24,15 @@ describe('Tools - CLI / Parsers / GitHub Actions', () => {
 
   describe('Parsers', () => {
     beforeEach(() => {
-      page.visitParsers();
+      page.visit('/tools/parsers');
     });
 
     it('User sees the Parsers header', () => {
-      page.verifyParsersHeader();
+      page.verifyHeadingExists('Build your own tools');
     });
 
     it('User verifies Parsers GitHub link', () => {
-      page.verifyParsersGithubLink();
+      page.verifyGithubLink('https://www.github.com/asyncapi/parser-js');
     });
 
     it('User sees Parsers install snippet', () => {
@@ -42,15 +42,15 @@ describe('Tools - CLI / Parsers / GitHub Actions', () => {
 
   describe('GitHub Actions', () => {
     beforeEach(() => {
-      page.visitGithubActions();
+      page.visit('/tools/github-actions');
     });
 
     it('User sees the GitHub Actions header', () => {
-      page.verifyGhActionsHeader();
+      page.verifyHeadingExists('Automate using GitHub Actions');
     });
 
     it('User verifies GitHub Actions GitHub link', () => {
-      page.verifyGhActionsGithubLink();
+      page.verifyGithubLink('https://www.github.com/asyncapi/github-action-for-generator');
     });
   });
 });
