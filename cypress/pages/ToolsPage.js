@@ -1,6 +1,4 @@
 import BasePage from './BasePage';
-
-
 class ToolsPage extends BasePage {
   visitToolsPage() {
     super.visit('/tools');
@@ -41,5 +39,4 @@ class ToolsPage extends BasePage {
     this.verifyToolLink(href, heading, 'docs');
   }
 }
-
 export default ToolsPage;
