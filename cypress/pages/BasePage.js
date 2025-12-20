@@ -35,15 +35,11 @@ class BasePage {
   }
 
   verifyGithubLink(href) {
-    return cy.contains('a', 'View on Github')
-      .should('be.visible')
-      .and('have.attr', 'href', href);
+    return this.verifyCustomLink('View on Github', href);
   }
 
   verifyDocsLink(href) {
-    return cy.contains('a', 'View Docs')
-      .should('be.visible')
-      .and('have.attr', 'href', href);
+    return this.verifyCustomLink('View Docs', href);
   }
 
   verifyCodeSnippet(text) {
