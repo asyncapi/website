@@ -39,8 +39,6 @@ export { getStaticPaths, getStaticProps };
 export default function HomePage() {
   const { t } = useTranslation('landing-page');
 
-  // @ts-ignore
-  // @ts-ignore
   return (
     <>
       <Head title='AsyncAPI Initiative for event-driven APIs' />
@@ -194,57 +192,40 @@ export default function HomePage() {
           <SupportUs className='mt-4' showSupportBanner={false} />
         </Container>
         <Container className='mt-8 pb-20 text-center' wide as='section'>
-          <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mb-4 text-4xl font-bold'>
+          <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
             {t('testimonials.title')}
           </Heading>
-          <Paragraph className='mx-auto mb-16 max-w-2xl text-lg text-gray-500'>
-            Join thousands of developers who are already building the future with our AI platform
-          </Paragraph>
 
-          <div className='relative overflow-hidden'>
+          <div className='relative mt-12 overflow-hidden'>
             {/* Fading Edges Mask */}
             <div className='pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-white to-transparent md:w-48' />
             <div className='pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-white to-transparent md:w-48' />
 
-            <div className='flex w-max animate-scroll gap-6 py-4'>
-              <ul className='flex gap-6'>
+            <div className='flex w-max animate-scroll gap-6 py-8'>
+              <ul className='flex items-start gap-6'>
                 <Testimonial
-                  className='w-[350px] shrink-0 md:w-[450px]'
                   text='Microservices underline the need for event-based communication in distributed architectures. AsyncAPI brings the richness of the REST API ecosystem to asynchronous APIs.'
                   authorAvatar='/img/testimonials/matt-mclarty.jpg'
-                  authorName='Sofia Rodriguez'
-                  authorDescription='@sofiaml'
+                  authorName='Matt McLarty'
+                  authorDescription='Global Leader of API Strategy at MuleSoft'
                 />
                 <Testimonial
-                  className='w-[350px] shrink-0 md:w-[450px]'
                   text='Event-driven APIs need love too! AsyncAPI brings the many benefits of a machine/human-readable specification to these nuanced approaches.'
                   authorAvatar='/img/testimonials/bill-doerrfeld.jpg'
-                  authorName='Emma Thompson'
-                  authorDescription='@emmaai'
+                  authorName='Bill Doerrfeld'
+                  authorDescription='Editor in Chief at Nordic APIs'
                 />
                 <Testimonial
-                  className='w-[350px] shrink-0 md:w-[450px]'
-                  text='The API integration is flawless. We’ve reduced our development time by 60% since implementing this solution.'
+                  text="Developers need to be able to quickly and consistently create event-driven applications that provide business value and react to customer needs in realtime. I can't count how many times I've heard developers ask for OpenAPI/Swagger style tools for the asynchronous and event-driven world, and that is exactly what the AsyncAPI initiative is making a reality."
+                  authorAvatar='/img/testimonials/jonathan-schabowsky.jpg'
+                  authorName='Jonathan Schabowsky'
+                  authorDescription='Sr. Architect, Office of the CTO at Solace'
+                />
+                <Testimonial
+                  text='We’ve been focusing on event-driven APIs since 2014 and thank the AsyncAPI contributors every day for driving the community towards common standards.'
                   authorAvatar='/img/testimonials/eric-horesnyi.jpg'
-                  authorName='David Park'
-                  authorDescription='@davidtech'
-                />
-              </ul>
-              {/* Duplicate set for seamless infinite scrolling */}
-              <ul className='flex gap-6' aria-hidden='true'>
-                <Testimonial
-                  className='w-[350px] shrink-0 md:w-[450px]'
-                  text='Microservices underline the need for event-based communication in distributed architectures. AsyncAPI brings the richness of the REST API ecosystem to asynchronous APIs.'
-                  authorAvatar='/img/testimonials/matt-mclarty.jpg'
-                  authorName='Sofia Rodriguez'
-                  authorDescription='@sofiaml'
-                />
-                <Testimonial
-                  className='w-[350px] shrink-0 md:w-[450px]'
-                  text='Event-driven APIs need love too! AsyncAPI brings the many benefits of a machine/human-readable specification to these nuanced approaches.'
-                  authorAvatar='/img/testimonials/bill-doerrfeld.jpg'
-                  authorName='Emma Thompson'
-                  authorDescription='@emmaai'
+                  authorName='Eric Horesnyi'
+                  authorDescription='CEO at Streamdata.io'
                 />
               </ul>
             </div>

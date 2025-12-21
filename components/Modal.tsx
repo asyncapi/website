@@ -4,6 +4,7 @@ interface IModalProps {
   title: string;
   children: React.ReactNode;
   onModalClose?: () => void;
+  onClose?: () => void;
 }
 
 /**
