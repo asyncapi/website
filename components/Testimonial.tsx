@@ -22,6 +22,14 @@ export default function Testimonial({
   return (
     <li
       onClick={() => setIsExpanded(!isExpanded)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          setIsExpanded(!isExpanded);
+        }
+      }}
+      role='button'
+      tabIndex={0}
       className={`flex flex-col gap-4 rounded-xl border bg-white p-6 shadow-sm transition-all duration-500 ease-in-out
       cursor-pointer overflow-hidden
         ${isExpanded ? 'w-[400px] md:w-[600px] border-primary-500 ring-2 ring-primary-500/10 shadow-xl' : 'w-[300px] md:w-[450px] border-gray-100 h-[240px] hover:border-primary-500'}
@@ -47,9 +55,9 @@ export default function Testimonial({
         >
           {text}
         </Paragraph>
-        <button className='mt-3 block text-xs font-bold text-primary-500'>
+        <span className='mt-3 block text-xs font-bold text-primary-500'>
           {isExpanded ? 'Show less ↑' : 'Read full testimonial →'}
-        </button>
+        </span>
       </blockquote>
     </li>
   );

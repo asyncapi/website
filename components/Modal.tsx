@@ -13,7 +13,12 @@ interface IModalProps {
  * @param {React.ReactNode} props.children - The content of the modal.
  * @param {function} props.onModalClose=()=>{} - Function to handle modal close event.
  */
-export default function Modal({ title, children, onModalClose = () => {} }: IModalProps) {
+export default function Modal({
+  title,
+  children,
+  onModalClose = () => { },
+  onClose
+}: IModalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
 
   // Focus the modal when it mounts
@@ -28,6 +33,7 @@ export default function Modal({ title, children, onModalClose = () => {} }: IMod
   function backdropClickHandler(e: React.MouseEvent<HTMLDivElement>) {
     if (modalRef.current && (modalRef.current === e.target || !modalRef.current.contains(e.target as Node))) {
       onModalClose();
+      if (onClose) onClose();
     }
   }
 
@@ -36,7 +42,10 @@ export default function Modal({ title, children, onModalClose = () => {} }: IMod
    * @param {React.KeyboardEvent<HTMLDivElement>} e - The event object.
    */
   function onKeyUpHandler(e: React.KeyboardEvent<HTMLDivElement>) {
-    if (e.key === 'Escape') onModalClose();
+    if (e.key === 'Escape') {
+      onModalClose();
+      if (onClose) onClose();
+    }
   }
 
   return (
@@ -50,7 +59,13 @@ export default function Modal({ title, children, onModalClose = () => {} }: IMod
       <div className='relative m-auto overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:w-full sm:max-w-4xl sm:p-6'>
         <div className='mb-6 flex justify-between'>
           <h1 className='mr-4 truncate text-lg font-bold'>{title}</h1>
-          <button onClick={() => onModalClose()} data-testid='Modal-close'>
+          <button
+            onClick={() => {
+              onModalClose();
+              if (onClose) onClose();
+            }}
+            data-testid='Modal-close'
+          >
             <svg
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
