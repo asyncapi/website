@@ -15,9 +15,17 @@ interface IModalProps {
 export default function Modal({ title, children, onModalClose = () => {} }: IModalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
 
-  // Focus the modal when it mounts
+  // Focus the modal when it mounts and lock body scroll
   useEffect(() => {
     if (modalRef.current) modalRef.current.focus();
+
+    // Prevent background scroll when modal is open
+    document.body.style.overflow = 'hidden';
+
+    // Cleanup: restore scroll when modal is closed
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, []);
 
   /**
