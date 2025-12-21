@@ -34,7 +34,7 @@ export default function LinkComponent({
   // If there is no router available (e.g., during server-side rendering & cypress tests), render a standard Link
   if (!router) {
     return (
-      <Link href={props.href || ''}  target={target} rel={rel}>
+      <Link href={props.href || ''} target={target} rel={rel}>
         {children}
       </Link>
     );
@@ -55,7 +55,7 @@ export default function LinkComponent({
   */
   if ((props.href && i18nPaths[language] && !i18nPaths[language].includes(href)) || href.includes('http', 0)) {
     return (
-      <Link href={href}   target={target} rel={rel}>
+      <Link href={href} target={target} rel={rel}>
         {children}
       </Link>
     );
@@ -78,7 +78,7 @@ export default function LinkComponent({
   href = href.replace(/([^:/]|^)\/{2,}/g, '$1/');
 
   return (
-    <Link href={href}  target={target} rel={rel} >
+    <Link href={href} target={target} rel={rel}>
       {children}
     </Link>
   );
@@ -92,7 +92,7 @@ export const LinkText = ({
   rel = ''
 }: LinkComponentProps) => {
   return (
-    <Link href={href || ''} target={target} rel={rel} >
+    <Link href={href || ''} target={target} rel={rel}>
       {children}
     </Link>
   );
