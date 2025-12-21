@@ -170,7 +170,7 @@
     "remark-cli": "^12.0.1",
     "remark-lint": "^10.0.0",
     "remark-mdx": "^3.0.1",
-    "storybook": "^8.6.12",
+    "storybook": "^8.6.15",
     "tsx": "^4.19.4",
     "typescript": "^5.3.3"
   }
