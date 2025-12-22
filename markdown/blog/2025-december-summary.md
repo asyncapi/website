@@ -1,6 +1,6 @@
 ---
 title: "Monthly Community Update: November & December 2025"
-date: 2025-12-17T06:00:00+01:00
+date: 2025-12-22T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
