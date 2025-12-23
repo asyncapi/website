@@ -29,7 +29,10 @@ interface Adopter {
 const ITEMS_PER_PAGE = 5;
 
 /**
- * @description Renders the Case Studies page with horizontal card carousel.
+ * @description Renders the Case Studies page featuring:
+ * - Featured case studies displayed in a horizontal card carousel (Swiper)
+ * - Paginated table of companies using AsyncAPI with their use cases
+ * - Responsive design with mobile navigation controls
  */
 export default function CaseStudies() {
   const [currentPage, setCurrentPage] = useState(1);
