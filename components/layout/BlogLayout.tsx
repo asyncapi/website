@@ -8,6 +8,7 @@ import type { IPosts } from '@/types/post';
 
 import BlogContext from '../../context/BlogContext';
 import AuthorAvatars from '../AuthorAvatars';
+import EditPageButton from '../buttons/EditPageButton';
 import AnnouncementHero from '../campaigns/AnnouncementHero';
 import Head from '../Head';
 import TOC from '../TOC';
@@ -107,6 +108,9 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
             </HtmlHead>
             <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className='my-6 w-full' />
             {children}
+            <div className='mt-8 pt-4 border-t border-gray-200'>
+              <EditPageButton slug={post.slug} contentType='blog' />
+            </div>
           </article>
         </main>
       </Container>

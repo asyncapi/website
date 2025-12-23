@@ -5,6 +5,7 @@ import React from 'react';
 import type { IPosts } from '@/types/post';
 
 import GenericPostContext from '../../context/GenericPostContext';
+import EditPageButton from '../buttons/EditPageButton';
 import AnnouncementHero from '../campaigns/AnnouncementHero';
 import Head from '../Head';
 import Container from './Container';
@@ -46,6 +47,9 @@ export default function GenericPostLayout({ post, children }: IGenericPostLayout
           <article className='mb-32' data-testid='GenericPostLayout-Head'>
             <Head title={post.title} description={post.excerpt} image={post.cover} />
             {children}
+            <div className='mt-8 pt-4 border-t border-gray-200'>
+              <EditPageButton slug={post.slug} contentType='about' />
+            </div>
           </article>
         </main>
       </Container>
