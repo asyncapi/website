@@ -75,5 +75,3 @@ async function start() {
 }
 
 export { start };
-
-start();
