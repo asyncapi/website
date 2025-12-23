@@ -75,3 +75,8 @@ async function start() {
 }
 
 export { start };
+
+/* istanbul ignore next */
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  start();
+}
