@@ -7,6 +7,7 @@ import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 import InlineHelp from '../components/InlineHelp';
 import GenericLayout from '../components/layout/GenericLayout';
+import GoalCard from '../components/roadmap/GoalCard';
 import RoadmapColumn from '../components/roadmap/RoadmapColumn';
 import Heading from '../components/typography/Heading';
 import Paragraph from '../components/typography/Paragraph';
@@ -520,82 +521,65 @@ export default function RoadmapPage() {
             </div>
 
             <div className='relative mt-20'>
-              <div className='grid lg:grid-cols-3 lg:gap-8'>
-                <div>
-                  <div className='mb-2 lg:my-0 lg:text-center'>
-                    <Paragraph
-                      typeStyle={ParagraphTypeStyle.md}
-                      textColor='text-secondary-500'
-                      className='mr-2 inline-block p-1.5 font-bold uppercase lg:mb-2 lg:mr-0 lg:block lg:bg-transparent lg:p-0'
-                    >
-                      Goal
-                    </Paragraph>
-                    <Heading typeStyle={HeadingTypeStyle.mdSemibold}>
-                      AsyncAPI unifies all the API specifications
-                    </Heading>
-                  </div>
-                  <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4 lg:text-center'>
-                    Nobody does only event-driven architectures. Most people complement them with REST (OpenAPI),
-                    GraphQL, and/or RPC APIs.{' '}
-                    <strong>
-                      We want people to use the AsyncAPI specification and tooling together with their existing OpenAPI,
-                      GraphQL, and gRPC definitions.
-                    </strong>{' '}
-                    For that purpose, our specification and tools will need to understand and leverage many other
-                    specifications and tools.
-                  </Paragraph>
-                  <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4 lg:text-center'>
-                    This is not about reinventing the wheel or creating yet another spec to solve the same problems but
-                    to integrate with the existing tools and specs instead.
-                  </Paragraph>
-                </div>
-                <div>
-                  <div className='mb-2 mt-6 lg:my-0 lg:text-center'>
-                    <Paragraph
-                      typeStyle={ParagraphTypeStyle.md}
-                      textColor='text-secondary-500'
-                      className='mr-2 inline-block p-1.5 font-bold uppercase lg:mb-2 lg:mr-0 lg:block lg:bg-transparent lg:p-0'
-                    >
-                      Goal
-                    </Paragraph>
-                    <Heading typeStyle={HeadingTypeStyle.mdSemibold}>API development experience is seamless</Heading>
-                  </div>
-                  <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4 lg:text-center'>
-                    We want to make the development experience super seamless, from idea to production.{' '}
-                    <strong>
-                      Users should be able to create their first API within minutes without prior knowledge of AsyncAPI,
-                      the communication protocol, or anything else that's not business logic.
-                    </strong>
-                  </Paragraph>
-                  <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4 lg:text-center'>
-                    Furthermore, making sure production behavior and documentation are always aligned, independently of
-                    the programming language or framework of choice.
-                  </Paragraph>
-                </div>
-                <div>
-                  <div className='mb-2 mt-6 lg:my-0 lg:text-center'>
-                    <Paragraph
-                      typeStyle={ParagraphTypeStyle.md}
-                      textColor='text-secondary-500'
-                      className='mr-2 inline-block p-1.5 font-bold uppercase lg:mb-2 lg:mr-0 lg:block lg:bg-transparent lg:p-0'
-                    >
-                      Goal
-                    </Paragraph>
-                    <Heading typeStyle={HeadingTypeStyle.mdSemibold}>The AsyncAPI community grows 400%</Heading>
-                  </div>
-                  <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4 lg:text-center'>
-                    We are aware that our goals are ambitious.{' '}
-                    <strong>
-                      None of the other goals are possible if we don't have a huge community supporting us. AsyncAPI is
-                      and must continue being a community-driven initiative. Now more than ever.
-                    </strong>
-                  </Paragraph>
-                  <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4 lg:text-center'>
-                    We need people to contribute code, ideas, docs, articles, presentations, and more. The sponsors base
-                    should also grow along with the community size and the donated money should serve to give back to
-                    the community.
-                  </Paragraph>
-                </div>
+              <div className='grid gap-8 lg:grid-cols-3'>
+                <GoalCard
+                  title='AsyncAPI unifies all the API specifications'
+                  description={
+                    <>
+                      <Paragraph typeStyle={ParagraphTypeStyle.md} className='mb-4'>
+                        Nobody does only event-driven architectures. Most people complement them with REST (OpenAPI),
+                        GraphQL, and/or RPC APIs.{' '}
+                        <strong>
+                          We want people to use the AsyncAPI specification and tooling together with their existing
+                          OpenAPI, GraphQL, and gRPC definitions.
+                        </strong>{' '}
+                        For that purpose, our specification and tools will need to understand and leverage many other
+                        specifications and tools.
+                      </Paragraph>
+                      <Paragraph typeStyle={ParagraphTypeStyle.md}>
+                        This is not about reinventing the wheel or creating yet another spec to solve the same problems
+                        but to integrate with the existing tools and specs instead.
+                      </Paragraph>
+                    </>
+                  }
+                />
+                <GoalCard
+                  title='API development experience is seamless'
+                  description={
+                    <>
+                      <Paragraph typeStyle={ParagraphTypeStyle.md} className='mb-4'>
+                        We want to make the development experience super seamless, from idea to production.{' '}
+                        <strong>
+                          Users should be able to create their first API within minutes without prior knowledge of
+                          AsyncAPI, the communication protocol, or anything else that's not business logic.
+                        </strong>
+                      </Paragraph>
+                      <Paragraph typeStyle={ParagraphTypeStyle.md}>
+                        Furthermore, making sure production behavior and documentation are always aligned, independently
+                        of the programming language or framework of choice.
+                      </Paragraph>
+                    </>
+                  }
+                />
+                <GoalCard
+                  title='The AsyncAPI community grows 400%'
+                  description={
+                    <>
+                      <Paragraph typeStyle={ParagraphTypeStyle.md} className='mb-4'>
+                        We are aware that our goals are ambitious.{' '}
+                        <strong>
+                          None of the other goals are possible if we don't have a huge community supporting us. AsyncAPI
+                          is and must continue being a community-driven initiative. Now more than ever.
+                        </strong>
+                      </Paragraph>
+                      <Paragraph typeStyle={ParagraphTypeStyle.md}>
+                        We need people to contribute code, ideas, docs, articles, presentations, and more. The sponsors
+                        base should also grow along with the community size and the donated money should serve to give
+                        back to the community.
+                      </Paragraph>
+                    </>
+                  }
+                />
               </div>
             </div>
 
@@ -609,7 +593,11 @@ export default function RoadmapPage() {
                 Please bear in mind <strong>this is an outcome-based roadmap</strong>. We don't maintain a long-term
                 release plan. If you want to find more specific and actionable items, head to the related repository
                 issues or start an issue/discussion at
-                <TextLink target='_blank' href='https://github.com/asyncapi/community'>
+                <TextLink
+                  target='_blank'
+                  href='https://github.com/asyncapi/community'
+                  className='break-all text-base font-semibold'
+                >
                   github.com/asyncapi/community
                 </TextLink>
                 .
