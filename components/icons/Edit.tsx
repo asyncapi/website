@@ -5,7 +5,7 @@ interface EditIconProps {
 }
 
 /**
- * Edit icon component for the edit page button
+ * Edit icon component for the EditPageButton
  */
 export default function EditIcon({ className = '' }: EditIconProps) {
   return (
