@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 
 /**
  * Represents a roadmap item that can contain nested roadmap items in solutions or implementations.
