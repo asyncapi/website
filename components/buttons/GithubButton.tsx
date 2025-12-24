@@ -40,6 +40,7 @@ export default function GithubButton({
       data-testid='Github-button'
       bgClassName='bg-gray-800 hover:bg-gray-700'
       buttonSize={inNav ? ButtonSize.SMALL : ButtonSize.DEFAULT}
+      textSpanClassName={inNav ? 'hidden xl:inline' : ''}
     />
   );
 }

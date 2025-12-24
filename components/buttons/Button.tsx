@@ -25,6 +25,9 @@ type IButtonProps = {
   /** The class name to be applied to the button's text. */
   textClassName?: string;
 
+  /** The class name to be applied to the text span element (for visibility/display). */
+  textSpanClassName?: string;
+
   /** The icon to be displayed on the button. */
   icon?: React.ReactNode;
 
@@ -59,6 +62,7 @@ export default function Button({
   className = '',
   bgClassName = twMerge('bg-primary-500 hover:bg-primary-400'),
   textClassName = twMerge('text-white'),
+  textSpanClassName = '',
   buttonSize,
   ...props
 }: IButtonProps): React.ReactElement {
@@ -76,13 +80,20 @@ export default function Button({
         data-testid='Button-main'
       >
         {icon && iconPosition === ButtonIconPosition.LEFT && (
-          <span className='mr-2 inline-block' data-testid='Button-icon-left'>
+          <span className='inline-block' data-testid='Button-icon-left'>
             {icon}
           </span>
         )}
-        <span className='inline-block'>{text}</span>
+        <span
+          className={`inline-block ${icon && iconPosition === ButtonIconPosition.LEFT ? 'ml-2' : ''} ${textSpanClassName || ''}`}
+        >
+          {text}
+        </span>
         {icon && iconPosition === ButtonIconPosition.RIGHT && (
-          <span className='ml-2 inline-block' data-testid='Button-icon-right'>
+          <span
+            className={`inline-block ${textSpanClassName?.includes('hidden') ? '' : 'ml-2'}`}
+            data-testid='Button-icon-right'
+          >
             {icon}
           </span>
         )}
@@ -98,9 +109,15 @@ export default function Button({
       className={buttonSize === ButtonSize.SMALL ? smallButtonClasses : classNames}
       data-testid='Button-link'
     >
-      {icon && iconPosition === ButtonIconPosition.LEFT && <span className='mr-2 inline-block'>{icon}</span>}
-      <span className='inline-block'>{text}</span>
-      {icon && iconPosition === ButtonIconPosition.RIGHT && <span className='ml-2 inline-block'>{icon}</span>}
+      {icon && iconPosition === ButtonIconPosition.LEFT && <span className='inline-block'>{icon}</span>}
+      <span
+        className={`inline-block ${icon && iconPosition === ButtonIconPosition.LEFT ? 'ml-2' : ''} ${textSpanClassName || ''}`}
+      >
+        {text}
+      </span>
+      {icon && iconPosition === ButtonIconPosition.RIGHT && (
+        <span className={`inline-block ${textSpanClassName?.includes('hidden') ? '' : 'ml-2'}`}>{icon}</span>
+      )}
     </Link>
   );
 }
