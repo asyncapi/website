@@ -31,11 +31,11 @@ export default function Filter<T = any>({ data, onFilter, checks, className }: F
   useEffect(() => {
     setQuery(route.query as Record<string, string>);
     applyFilterList(checks, data as any, setFilters);
-  }, [route]);
+  }, [route, checks, data]);
 
   useEffect(() => {
     onFilterApply(data as any, onFilter as any, routeQuery);
-  }, [routeQuery]);
+  }, [routeQuery, data, onFilter]);
 
   return checks.map((check) => {
     let selected = '';
