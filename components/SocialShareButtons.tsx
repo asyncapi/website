@@ -24,10 +24,14 @@ export default function SocialShareButtons({ title, url }: SocialShareButtonsPro
 
   const handleCopy = () => {
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(currentUrl).then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-      });
+      navigator.clipboard.writeText(currentUrl)
+        .then(() => {
+          setCopied(true);
+          setTimeout(() => setCopied(false), 2000);
+        })
+        .catch((err) => {
+          console.error('Failed to copy to clipboard:', err);
+        });
     }
   };
 
