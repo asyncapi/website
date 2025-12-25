@@ -20,8 +20,9 @@ Examples of documentation contributions:
 - Updating outdated content
 
 Relevant repositories:
-- https://github.com/asyncapi/website
-- https://github.com/asyncapi/spec
+- [AsyncAPI Website](https://github.com/asyncapi/website)
+- [AsyncAPI Specification](https://github.com/asyncapi/spec)
+
 
 ---
 
@@ -36,9 +37,10 @@ Common contribution areas include:
 - Core libraries
 
 Relevant repositories:
-- https://github.com/asyncapi/cli
-- https://github.com/asyncapi/generator
-- https://github.com/asyncapi/website
+- [AsyncAPI CLI](https://github.com/asyncapi/cli)
+- [AsyncAPI Generator](https://github.com/asyncapi/generator)
+- [AsyncAPI Website](https://github.com/asyncapi/website)
+
 
 ---
 
