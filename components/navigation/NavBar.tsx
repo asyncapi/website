@@ -158,7 +158,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
 
         <div className='-my-2 -mr-2 flex flex-row items-center justify-center lg:hidden' data-testid='Navbar-search'>
           <SearchButton
-            className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none focus:ring-2 focus:ring-violet-500'
+            className='flex items-center space-x-2 rounded-sm p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-900'
             aria-label='Open Search'
           >
             <IconLoupe />
@@ -166,7 +166,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
           <button
             onClick={() => setMobileMenuOpen(true)}
             type='button'
-            className='inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none focus:ring-2 focus:ring-violet-500'
+            className='inline-flex items-center justify-center rounded-sm p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-900'
           >
             <svg className='size-6' stroke='currentColor' fill='none' viewBox='0 0 24 24'>
               <title>Menu</title>
@@ -218,7 +218,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
 
           <div className='justify-content flex flex-row items-center'>
             <SearchButton
-              className='mr-2 flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none focus:ring-2 focus:ring-violet-500'
+              className='mr-2 flex items-center space-x-2 rounded-sm p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-900'
               aria-label='Open Search'
             >
               <IconLoupe />
