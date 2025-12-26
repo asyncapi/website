@@ -176,7 +176,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
         </div>
 
         <nav
-          className='hidden w-full space-x-4 lg:flex lg:items-center lg:justify-end xl:space-x-8'
+          className='hidden w-full space-x-2 lg:flex lg:items-center lg:justify-end lg:space-x-4 xl:space-x-8'
           data-testid='Navbar-main'
         >
           <div className='relative' onMouseLeave={() => showMenu(null)} ref={learningRef}>
@@ -216,9 +216,9 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             <NavItem href={item.href} key={index} text={item.text} target={item.target} className={item.className} />
           ))}
 
-          <div className='justify-content flex flex-row items-center'>
+          <div className='justify-content flex flex-row flex-nowrap items-center shrink-0'>
             <SearchButton
-              className='mr-2 flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
+              className='mr-2 flex shrink-0 items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
               aria-label='Open Search'
             >
               <IconLoupe />
@@ -230,14 +230,14 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               onChange={(value) => {
                 changeLanguage(value.toLowerCase(), true);
               }}
-              className=''
+              className='shrink-0'
               selected={i18n.language ? i18n.language : 'en'}
             />
 
             <GithubButton
               text='Star on GitHub'
               href='https://github.com/asyncapi/spec'
-              className='ml-2 py-2'
+              className='ml-2 shrink-0 py-2'
               inNav={true}
             />
           </div>
