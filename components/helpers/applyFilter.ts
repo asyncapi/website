@@ -1,6 +1,6 @@
 interface DataObject {
   name: string;
-  [key: string]: any;
+  [key: string]: string | Array<{ name: string } | string>;
 }
 
 interface FilterCriteria {
@@ -60,7 +60,7 @@ export const applyFilterList = (
           if (lists[key].length) {
             if (Array.isArray(result)) {
               result.forEach((a) => {
-                if (a.name) {
+                if (typeof a === 'object' && a !== null && 'name' in a) {
                   if (!lists[key].some((e) => e.value === a.name)) {
                     const newData = {
                       value: a.name,
@@ -70,7 +70,7 @@ export const applyFilterList = (
                     lists[key].push(newData);
                     sortFilter(lists[key]);
                   }
-                } else if (!lists[key].some((e) => e.value === a)) {
+                } else if (typeof a === 'string' && !lists[key].some((e) => e.value === a)) {
                   const newData = {
                     value: a,
                     text: a
@@ -80,7 +80,7 @@ export const applyFilterList = (
                   sortFilter(lists[key]);
                 }
               });
-            } else if (!lists[key].some((e) => e.value === result)) {
+            } else if (typeof result === 'string' && !lists[key].some((e) => e.value === result)) {
               const newData = {
                 value: result,
                 text: result
@@ -91,14 +91,14 @@ export const applyFilterList = (
             }
           } else if (Array.isArray(result)) {
             result.forEach((e) => {
-              if (e.name) {
+              if (typeof e === 'object' && e !== null && 'name' in e) {
                 const newData = {
                   value: e.name,
                   text: e.name
                 };
 
                 lists[key].push(newData);
-              } else {
+              } else if (typeof e === 'string') {
                 const newData = {
                   value: e,
                   text: e
@@ -107,7 +107,7 @@ export const applyFilterList = (
                 lists[key].push(newData);
               }
             });
-          } else {
+          } else if (typeof result === 'string') {
             const newData = {
               value: result,
               text: result
@@ -142,9 +142,13 @@ export const onFilterApply = (
           return e[property];
         }
         if (Array.isArray(e[property])) {
+          const propertyValue = e[property];
+
           return (
-            e[property].some((data: any) => data.name === query[property]) ||
-            e[property].includes(query[property]) ||
+            propertyValue.some((data) =>
+              typeof data === 'object' && data !== null && 'name' in data ? data.name === query[property] : false
+            ) ||
+            propertyValue.includes(query[property]) ||
             false
           );
         }
