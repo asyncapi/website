@@ -64,31 +64,37 @@ export default function NewsletterSubscribe({
     }, 10000);
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    setStatus(FormStatus.LOADING);
-    event.preventDefault();
-    const data = {
-      name,
-      email,
-      interest: type
-    };
+ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  setStatus(FormStatus.LOADING);
+  event.preventDefault();
 
-    fetch('/.netlify/functions/newsletter_subscription', {
+  const data = {
+    name,
+    email,
+    interest: type
+  };
+
+  try {
+    const res = await fetch('/.netlify/functions/newsletter_subscription', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
         'Content-Type': 'application/json'
       }
-    }).then((res) => {
-      if (res.status === 200) {
-        setFormStatus(FormStatus.SUCCESS);
-      } else {
-        setFormStatus(FormStatus.ERROR);
-      }
-
-      return res.json();
     });
+
+    if (!res.ok) {
+      throw new Error(`Request failed with status ${res.status}`);
+     }
+
+    await res.json();
+    setFormStatus(FormStatus.SUCCESS);
+   } catch (err) {
+    console.error('Newsletter subscription failed:', err);
+    setFormStatus(FormStatus.ERROR);
+    }
   };
+
 
   if (status === FormStatus.SUCCESS) {
     return (
