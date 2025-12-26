@@ -12,6 +12,7 @@ import AnnouncementHero from '../campaigns/AnnouncementHero';
 import Head from '../Head';
 import TOC from '../TOC';
 import Container from './Container';
+import SocialShareButtons from '../SocialShareButtons';
 
 interface IBlogLayoutProps {
   post: IPosts['blog'][number];
@@ -77,6 +78,7 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
                 </div>
               </div>
             </div>
+            <SocialShareButtons title={post.title} />
           </header>
           <article className='mb-32'>
             <Head title={post.title} description={post.excerpt} image={post.cover} />
