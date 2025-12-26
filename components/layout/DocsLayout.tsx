@@ -130,7 +130,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                 <div className='lg:hidden'>
                   <button
                     onClick={() => setShowMenu(true)}
-                    className='flex px-4 text-gray-500 hover:text-gray-900 focus:outline-none sm:px-6 md:px-8'
+                    className='flex rounded-md px-4 text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-violet-500 sm:px-6 md:px-8'
                     aria-label='Open sidebar'
                   >
                     <span>{post.title}</span>
