@@ -18,7 +18,7 @@ interface HeaderProps {
 export default function Header({ className = '' }: HeaderProps) {
   return (
     <div
-      className={`mt-10 flex flex-col items-center justify-center text-center md:mt-0 ${className}`}
+      className={`mt-10 flex flex-col items-center justify-center text-center cursor-default md:mt-0 ${className}`}
       data-testid='Header-hero-heading'
     >
       <Heading className='countdown-text-gradient font-bold' level={HeadingLevel.h6} typeStyle={HeadingTypeStyle.xs}>
@@ -45,7 +45,7 @@ export default function Header({ className = '' }: HeaderProps) {
       </div>
       <div className='mt-10'>
         <Button
-          className='block focus:outline-none md:inline-block'
+          className='block focus:outline-none md:inline-block cursor-pointer'
           text='AsyncAPI Discussions'
           href='https://github.com/orgs/asyncapi/discussions'
           target='_blank'
