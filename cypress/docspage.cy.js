@@ -28,22 +28,22 @@ describe('Docs Page Tests', () => {
     docsPage.goToReferenceSection();
     docsPage.goToMigrationsSection();
     docsPage.goToCommunitySection();
+  });
 
-    it('User verifies Card Links present on the Docs Page', () => {
-      const cards = [
-        { href: '/docs/concepts' },
-        { href: '/docs/tutorials' },
-        { href: '/docs/guides' },
-        { href: '/docs/tools' },
-        { href: '/docs/reference' },
-        { href: '/docs/migration' },
-        { href: '/docs/community' },
-        { href: '/docs/reference/specification/v3.0.0-explorer' },
-      ];
+  it('User verifies Card Links present on the Docs Page', () => {
+    const cards = [
+      { href: '/docs/concepts' },
+      { href: '/docs/tutorials' },
+      { href: '/docs/guides' },
+      { href: '/docs/tools' },
+      { href: '/docs/reference' },
+      { href: '/docs/migration' },
+      { href: '/docs/community' },
+      { href: '/docs/reference/specification/v3.0.0-explorer' },
+    ];
 
-      cards.forEach((card) => {
-        docsPage.verifyCardLinks(card.href);
-      });
+    cards.forEach((card) => {
+      docsPage.verifyCardLinks(card.href);
     });
   });
 });

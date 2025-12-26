@@ -1,6 +1,6 @@
-import BasePage from './BasePageTools';
+import BaseToolsPage from './BaseToolsPage';
 
-class ToolsPage extends BasePage {
+class ToolsPage extends BaseToolsPage {
   visitToolsPage() {
     super.visit('/tools');
   }
