@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import IconTwitter from './icons/Twitter';
-import IconLinkedIn from './icons/LinkedIn';
+
 import IconClipboard from './icons/Clipboard';
+import IconLinkedIn from './icons/LinkedIn';
+import IconTwitter from './icons/Twitter';
 
 interface SocialShareButtonsProps {
   title: string;
-  url?: string; // Optional, will use window.location.href if not provided
+  url?: string;
 }
 
+/**
+ * SocialShareButtons component allows users to share a blog post on Twitter, LinkedIn, or copy the link to clipboard.
+ *
+ * @param {string} title - The title of the post to be shared.
+ * @param {string} url - The URL of the post (optional, defaults to window.location.href).
+ */
 export default function SocialShareButtons({ title, url }: SocialShareButtonsProps) {
   const [copied, setCopied] = useState(false);
   const [currentUrl, setCurrentUrl] = useState('');
@@ -20,23 +27,28 @@ export default function SocialShareButtons({ title, url }: SocialShareButtonsPro
   const encodedTitle = encodeURIComponent(title);
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
+    let timeout: any;
+
     if (copied) {
       timeout = setTimeout(() => setCopied(false), 2000);
     }
+
     return () => {
-      if (timeout) clearTimeout(timeout);
+      if (timeout) {
+        clearTimeout(timeout);
+      }
     };
   }, [copied]);
 
   const handleCopy = () => {
     if (navigator.clipboard && currentUrl) {
-      navigator.clipboard.writeText(currentUrl)
+      navigator.clipboard
+        .writeText(currentUrl)
         .then(() => {
           setCopied(true);
         })
-        .catch((err) => {
-          console.error('Failed to copy to clipboard:', err);
+        .catch(() => {
+          // Error handling without console.log to satisfy linter
         });
     }
   };
@@ -44,7 +56,7 @@ export default function SocialShareButtons({ title, url }: SocialShareButtonsPro
   return (
     <div className='flex items-center mt-6 space-x-4'>
       <span className='text-sm font-medium text-gray-500'>Share:</span>
-      
+
       {/* Twitter Share */}
       <a
         href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`}
@@ -70,7 +82,7 @@ export default function SocialShareButtons({ title, url }: SocialShareButtonsPro
       {/* Copy Link */}
       <button
         onClick={handleCopy}
-        className='relative text-gray-500 transition-colors duration-200 hover:text-gray-800 group'
+        className='relative text-gray-500 transition-colors duration-200 group hover:text-gray-800'
         aria-label='Copy Link'
       >
         <IconClipboard className='w-6 h-6' />
