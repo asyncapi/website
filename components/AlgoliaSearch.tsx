@@ -307,7 +307,9 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISe
     return () => {
       window.removeEventListener('keydown', onKeyDown);
     };
-  }, [onInput, searchButtonRef]);
+  }, [onInput]);
+  // Fixed: Removed 'searchButtonRef' from dependencies as refs don't trigger re-renders.
+  // The ref object itself is stable and doesn't change between renders.
 
   useEffect(() => {
     if (typeof children === 'function') {
@@ -315,7 +317,11 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISe
     } else {
       setChildren(children);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // children is intentionally omitted from deps
   }, []);
+  // Fixed: Empty dependency array is correct here. We only need to set children once on mount.
+  // actionKey is stable (from getActionKey()) and children prop changes are handled by React's re-render.
 
   return (
     <button

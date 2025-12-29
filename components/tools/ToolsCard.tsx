@@ -32,7 +32,10 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
     if (descriptionRef.current) {
       setIsTruncated(descriptionRef.current?.scrollHeight! > descriptionRef.current?.clientHeight!);
     }
-  }, [descriptionRef.current]);
+  }, []);
+  // Fixed: Changed to empty array as we only need to check truncation on mount.
+  // The ref will be populated during the first render, and we don't need to
+  // re-check on every render. This prevents unnecessary re-calculations.
 
   let onGit = false;
 

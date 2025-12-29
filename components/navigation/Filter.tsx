@@ -32,11 +32,15 @@ export default function Filter({ data, onFilter, checks, className }: FilterProp
   useEffect(() => {
     setQuery(route.query);
     applyFilterList(checks, data, setFilters);
-  }, [route]);
+  }, [route.query, checks, data]);
+  // Fixed: Changed from [route] to specific dependencies [route.query, checks, data]
+  // to prevent unnecessary re-renders and ensure the filter updates when these values change.
 
   useEffect(() => {
     onFilterApply(data, onFilter, routeQuery);
-  }, [routeQuery]);
+  }, [routeQuery, data, onFilter]);
+  // Fixed: Added 'data' and 'onFilter' to dependencies to ensure filtering
+  // happens with the latest data and callback reference.
 
   return checks.map((check) => {
     let selected = '';

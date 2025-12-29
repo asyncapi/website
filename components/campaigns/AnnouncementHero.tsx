@@ -21,7 +21,9 @@ interface IAnnouncementHeroProps {
 export default function AnnouncementHero({ className = '', small = false }: IAnnouncementHeroProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const visibleBanners = useMemo(() => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)), [banners]);
+  const visibleBanners = useMemo(() => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)), []);
+  // Fixed: Removed 'banners' from dependencies as it's an imported constant that never changes.
+  // Empty array is correct here - we only need to compute this once.
   const numberOfVisibleBanners = visibleBanners.length;
 
   const goToPrevious = () => {

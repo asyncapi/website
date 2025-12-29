@@ -39,7 +39,8 @@ function useOutsideAlerter(ref: RefObject<any>, setOpen: (open: boolean) => void
       // Unbind the event listener on clean up
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [ref]);
+  }, [ref, setOpen]);
+  // Fixed: Added 'setOpen' to dependencies to ensure the effect uses the latest callback reference.
 }
 
 /**

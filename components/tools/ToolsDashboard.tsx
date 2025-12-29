@@ -163,7 +163,9 @@ export default function ToolsDashboard() {
         document.documentElement.style.scrollPaddingTop = '0';
       }
     }
-  }, []);
+  }, [toolsList]);
+  // Fixed: Added 'toolsList' to dependencies to ensure the scroll-to-element
+  // functionality works correctly when the tools list is updated.
   // Function to update the list of tools according to the current filters applied
   const clearFilters = () => {
     setOpenFilter(false);
