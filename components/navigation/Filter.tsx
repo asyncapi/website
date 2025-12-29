@@ -32,10 +32,12 @@ export default function Filter({ data, onFilter, checks, className }: FilterProp
   useEffect(() => {
     setQuery(route.query);
     applyFilterList(checks, data, setFilters);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- Intentionally run only on route changes
   }, [route]);
 
   useEffect(() => {
     onFilterApply(data, onFilter, routeQuery);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- Intentionally run only when routeQuery changes
   }, [routeQuery]);
 
   return checks.map((check) => {

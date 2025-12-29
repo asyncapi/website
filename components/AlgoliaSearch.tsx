@@ -315,6 +315,7 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISe
     } else {
       setChildren(children);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- Intentionally run on mount only
   }, []);
 
   return (
