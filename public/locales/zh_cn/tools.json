@@ -1,0 +1,25 @@
+{
+    "cli": {
+        "title": "在命令行中轻松使用 AsyncAPI",
+        "description": "使用我们的 CLI 工具创建、验证并探索你的 AsyncAPI 文件。",
+        "installationTitle": "安装与使用",
+        "installationDescription": "通过选择我们的命令，即可在几秒内开始使用 AsyncAPI CLI。",
+        "docsButton": "查看文档",
+        "installingTitle": "安装中",
+        "exampleTitle": "示例",
+        "exampleDescription": "创建一个新的 AsyncAPI 文件",
+        "featuresTitle": "功能特点",
+        "featuresDescription": "使用 AsyncAPI CLI 工具帮助你创建、开发和维护 AsyncAPI 文件。",
+        "features": {
+           "new-files.name": "新建文件",
+            "new-files.description": "使用 CLI 工具快速创建新的 AsyncAPI 文件。可从多种模板中选择（MQTT、WebSockets、Kafka 等）。",
+            "validate.name": "验证",
+            "validate.description": "使用 CLI 验证你的 AsyncAPI 文档。快速获得反馈，确保文档格式正确。",
+            "open-studio.name": "打开 Studio",
+            "open-studio.description_pretext": "本地已有 AsyncAPI 文件？运行",
+            "open-studio.description_posttext": "即可在几秒内打开我们的 Studio。",
+            "open-source.name": "开源",
+            "open-source.description": "我们的所有工具都是开源的，欢迎贡献新命令或帮助改进现有工具。"
+        }
+    }
+}
