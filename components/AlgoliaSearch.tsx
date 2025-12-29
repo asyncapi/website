@@ -317,12 +317,8 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISe
     } else {
       setChildren(children);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    // children is intentionally omitted from deps
   }, []);
-  // Fixed: Empty dependency array is correct here. We only need to set children once on mount.
-  // actionKey is stable (from getActionKey()) and children prop changes are handled by React's re-render.
-
+  
   return (
     <button
       type='button'
