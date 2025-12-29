@@ -155,14 +155,15 @@ export default function ToolsDashboard() {
 
     if (hash) {
       const elementID = decodeURIComponent(hash.slice(1));
-      const element = toolsList[elementID]?.elementRef!;
+      const element = toolsList[elementID]?.elementRef;
 
-      if (element.current) {
+      if (element?.current) {
         document.documentElement.style.scrollPaddingTop = '6rem';
         element.current.scrollIntoView({ behavior: 'smooth' });
         document.documentElement.style.scrollPaddingTop = '0';
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- Intentionally run only on mount to scroll to hash once
   }, []);
   // Function to update the list of tools according to the current filters applied
   const clearFilters = () => {
