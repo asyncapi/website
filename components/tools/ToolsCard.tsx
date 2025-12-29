@@ -32,7 +32,8 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
     if (descriptionRef.current) {
       setIsTruncated(descriptionRef.current?.scrollHeight! > descriptionRef.current?.clientHeight!);
     }
-  }, [descriptionRef.current]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- Check truncation on mount after ref is attached
+  }, []);
 
   let onGit = false;
 
