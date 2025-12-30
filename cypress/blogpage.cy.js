@@ -1,4 +1,4 @@
-import BlogPage from './pages/blog';
+import BlogPage from './pages/BlogPage';
 
 describe('Blog Page Tests', () => {
   const blog = new BlogPage();
