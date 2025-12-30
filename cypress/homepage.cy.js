@@ -22,10 +22,10 @@ describe('Home Page E2E Tests Using Base Components', () => {
   navigationTests.forEach(([name, nav]) => {
     it(`should navigate to the ${name} page`, () => {
       const page = nav();
-      page.verifyPageLoaded();
+      page.verifyHeader();
     });
   });
-  
+
   it('should display the main header and logo', () => {
     homePage.verifyHeader();
     homePage.verifyNavbarLogo();
