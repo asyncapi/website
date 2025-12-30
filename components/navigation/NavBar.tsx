@@ -19,6 +19,8 @@ import MobileNavMenu from './MobileNavMenu';
 import NavItem from './NavItem';
 import otherItems from './otherItems';
 import ToolsPanel from './ToolsPanel';
+import { twMerge } from 'tailwind-merge';
+
 
 interface NavBarProps {
   className?: string;
@@ -144,7 +146,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   }, [asPath]);
 
   return (
-    <div className={`bg-white ${className} z-50`}>
+     <div className={twMerge('bg-white z-50', className)}>
       <div className='flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-2'>
         {!hideLogo && (
           <div className='lg:w-auto lg:flex-1'>
