@@ -16,7 +16,7 @@ class ToolsPage extends BaseToolsPage {
   verifyToolLink(href, heading, linkType) {
     const linkTexts = {
       website: 'Visit Website',
-      github: 'View Github',
+      github: 'View GitHub',
       docs: 'Visit Docs',
     };
 

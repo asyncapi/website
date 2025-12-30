@@ -1,4 +1,5 @@
 import CaseStudiesPage from './pages/CaseStudiesPage';
+import { verifyLinks } from '../support/helpers';
 
 let casestudiespage;
 
@@ -36,8 +37,6 @@ describe('Links under Resources Section', () => {
   });
 
   it('Verifies all Links under Resources work', () => {
-    links.forEach(({ href, label }) => {
-      casestudiespage.verifyLinksWork(href, label);
-    });
+    verifyLinks(links, (href, label) => casestudiespage.verifyLinksWork(href, label), 'href', 'label');
   });
 });
