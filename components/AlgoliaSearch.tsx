@@ -231,7 +231,7 @@ function useDocSearchKeyboardEvents({ isOpen, onOpen, onClose }: IUseDocSearchKe
  * @description The Algolia search component used for searching the website
  * @param {React.ReactNode} children - The content of the page
  */
-export default function AlgoliaSearch({ children }: { children: React.ReactNode }) { 
+export default function AlgoliaSearch({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [indexName, setIndexName] = useState<string>(INDEX_NAME);
   const [initialQuery, setInitialQuery] = useState<string>();
