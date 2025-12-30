@@ -22,7 +22,7 @@ describe('Home Page E2E Tests Using Base Components', () => {
   navigationTests.forEach(([name, nav]) => {
     it(`should navigate to the ${name} page`, () => {
       const page = nav();
-      page.verifyHeader();
+      page.verifyPageLoaded();
     });
   });
 

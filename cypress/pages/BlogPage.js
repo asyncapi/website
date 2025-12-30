@@ -4,7 +4,7 @@ class BlogPage {
   }
 
   verifyPageLoaded() {
-    cy.get('h1', 'Welcome to our blog!').should('be.visible');
+    cy.contains('h1', 'Welcome to our blog!').should('be.visible');
   }
 
   verifyHeader() {
