@@ -46,7 +46,6 @@ describe('TSC Newsletter Subscription', () => {
   });
 
   it('verifies social links for selected TSC members', () => {
-
     const members = [
       {
         name: 'Aishat Muibudeen',
