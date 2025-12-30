@@ -1,7 +1,9 @@
-class CommunityPage {
+import BasePage from './BasePage';
+
+class CommunityPage extends BasePage {
   verifyPageLoaded() {
-    cy.contains('h1','Home of #CommunityOps')
-    .should('be.visible');
+    this.verifyHeadingExists('Home of #CommunityOps');
   }
 }
+
 export default CommunityPage;
