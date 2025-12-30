@@ -3,6 +3,10 @@ class BlogPage {
     cy.visit('/blog');
   }
 
+  verifyPageLoaded() {
+    cy.get('h1', 'Welcome to our blog!').should('be.visible');
+  }
+
   verifyHeader() {
     cy.contains('h1', 'Welcome to our blog!').should('be.visible');
   }
