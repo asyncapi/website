@@ -7,13 +7,13 @@ describe('Slack workspace tests', () => {
     slackPage.visitSlack();
   });
 
-  it('User can access all login methods', () => {
+  it('Should show all login methods when the Slack invite link is active', () => {
     slackPage.verifyGoogleLoginButton();
     slackPage.verifyAppleLoginButton();
     slackPage.verifyContinueWithEmail();
   });
 
-  it('User can view links for Privacy, Contact Us, and Region Change', () => {
+  it('Should show links for Privacy, Contact Us, and Region Change', () => {
     slackPage.verifyPrivacyAndTerms();
     slackPage.verifyContactUs();
     slackPage.verifyChangeRegion();

@@ -1,11 +1,9 @@
 
 class TSCPage {
-
-
   hoverCommunityLink() {
     cy.get('[data-testid="NavItem-Link"]').contains('Community').trigger('mouseover');
   }
-  
+
   fillNewsletterForm(name, email) {
     cy.get('[data-testid="NewsletterSubscribe-text-input"]').type(name);
     cy.get('[data-testid="NewsletterSubscribe-email-input"]').type(email);
@@ -24,7 +22,7 @@ class TSCPage {
   getFailureMessage() {
     return cy.get('[data-testid="Paragraph-test"]').contains(`Subscription failed, please let us know about it by submitting a bug`)
   }
-  verifyMemberSocialLinks(name, links) {
+  verifyTSCMemberSocialLinks(name, links) {
     cy.contains('[data-testid="UserInfo-name"]', name)
       .closest('[data-testid="UserInfo-list"]')
       .within(() => {

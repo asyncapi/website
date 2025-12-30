@@ -11,7 +11,7 @@ beforeEach(() => {
   homePage.goToTSCPage();
 });
 
-describe('TSC Newsletter Subscription', () => {
+describe('TSC Page', () => {
   it('should succeed in subscribing to the newsletter', () => {
     tscpage.fillNewsletterForm('anushka', 'valid@example.com');
     tscpage.submitNewsletter();
@@ -75,7 +75,7 @@ describe('TSC Newsletter Subscription', () => {
     ];
 
     members.forEach(({ name, links }) => {
-      tscpage.verifyMemberSocialLinks(name, links);
+      tscpage.verifyTSCMemberSocialLinks(name, links);
     });
   });
 });
