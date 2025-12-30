@@ -30,7 +30,7 @@ class BlogPage {
   }
 
   verifyFilteredPostsVisible() {
-    cy.get('[data-testid="BlogPostItem-Link"]').should(
+    cy.get('[data-testid="BlogPostItem-Link"]', { timeout: 10000 }).should(
       'have.length.greaterThan',
       0,
     );
@@ -49,15 +49,15 @@ class BlogPage {
   }
 
   filterByType(type) {
-    cy.get('[data-testid="blog-filter-type"]').select(type);
+    cy.contains('select', 'Filter by type').select(type);
   }
 
   filterByAuthor(author) {
-    cy.get('[data-testid="blog-filter-authors"]').select(author);
+    cy.contains('select', 'Filter by authors').select(author);
   }
 
   filterByTag(tag) {
-    cy.get('[data-testid="blog-filter-tags"]').select(tag);
+    cy.contains('select', 'Filter by tags').select(tag);
   }
 
   verifyPostLinkAndClick(titlePattern, expectedHref) {
@@ -73,20 +73,23 @@ class BlogPage {
       .and('contain', expectedHeaderText);
   }
 
-
   filterByFirstAvailableAuthor() {
-    cy.get('[data-testid="blog-filter-authors"]').find('option').then(($options) => {
+    cy.get('[data-testid="BlogPostItem-Link"]', { timeout: 10000 }).should('have.length.greaterThan', 0);
+    cy.contains('select', 'Filter by authors').find('option', { timeout: 10000 }).should('have.length.greaterThan', 1);
+    cy.contains('select', 'Filter by authors').find('option').then(($options) => {
       const nonEmptyOptions = [...$options].filter(opt => opt.value && opt.value !== '');
       expect(nonEmptyOptions.length, 'No author filter options available').to.be.greaterThan(0);
-      cy.get('[data-testid="blog-filter-authors"]').select(nonEmptyOptions[0].value);
+      cy.contains('select', 'Filter by authors').select(nonEmptyOptions[0].value);
     });
   }
 
   filterByFirstAvailableTag() {
-    cy.get('[data-testid="blog-filter-tags"]').find('option').then(($options) => {
+    cy.get('[data-testid="BlogPostItem-Link"]', { timeout: 10000 }).should('have.length.greaterThan', 0);
+    cy.contains('select', 'Filter by tags').find('option', { timeout: 10000 }).should('have.length.greaterThan', 1);
+    cy.contains('select', 'Filter by tags').find('option').then(($options) => {
       const nonEmptyOptions = [...$options].filter(opt => opt.value && opt.value !== '');
       expect(nonEmptyOptions.length, 'No tag filter options available').to.be.greaterThan(0);
-      cy.get('[data-testid="blog-filter-tags"]').select(nonEmptyOptions[0].value);
+      cy.contains('select', 'Filter by tags').select(nonEmptyOptions[0].value);
     });
   }
 
