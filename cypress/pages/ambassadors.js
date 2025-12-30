@@ -19,9 +19,9 @@ class AmbassadorsPage {
 }
 
   verifyAmbassadorSocialLinks(name, links) {
-    
     cy.contains('[data-testid="Ambassadors-members-details"]', name)
       .closest('[data-testid="Ambassadors-members"]')
+      .within(() => {
       .within(() => {
         if (links.twitter) cy.get(`a[href="${links.twitter}"]`).should('be.visible');
         if (links.github) cy.get(`a[href="${links.github}"]`).should('be.visible');
