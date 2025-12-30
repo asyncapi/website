@@ -143,7 +143,7 @@ class HomePage {
     return new RoadmapPage();
   }
 
-  goToTSCPage(){
+  goToTSCPage() {
     cy.visit('/community/tsc');
     return new TSCPage();
   }
