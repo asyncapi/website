@@ -24,11 +24,55 @@ For the past achievements, [please read the previous Project Status updates](h
 
 ## Slack
 
+The AsyncAPI Slack workspace is our primary channel for most communications and updates, where contributors and adopters join to collaborate with others, understand how we work as a community, and chat with maintainers of the specifications and tooling.
+
+In 2025, we welcomed **1857** new joiners and have a total of **7964** members.
+
+<Figure
+  src="/img/posts/2025-blog-banner/Joiners vs. Year.webp"
+  caption="New members on Slack each year."
+  className="text-center"
+/>
+
+Our weekly activity reduced by 19% this year, with the intention of reducing noise in channels by disabling some workflow notifications and pausing certain channels. Also, we ran one mentorship program instead of multiple as we did in previous years, and had fewer active working groups.
+
+<Figure
+  src="/img/posts/2025-blog-banner/Average and Median.webp"
+  caption="Weekly Slack activity over the years."
+  className="text-center"
+/>
+
 ## Social Media 
+Our social media platforms help us to share community news, updates, and announcements. We don’t use any premium or paid marketing, and we only maintain LinkedIn, X/Twitter, Mastodon, and YouTube platforms. We use Buffer to publish and manage content across social media.
+
+### Buffer
+We began using Buffer in July 2024 and switched to paid services in September. This gave us more tools to track and report on our social media management. The analytics below cover LinkedIn and X/Twitter, which Buffer currently supports.
+
+We also have some analytics recorded dating back to 2023.
+
+<Figure
+  src="/img/posts/2025-blog-banner/Audience and Engagement.webp"
+  caption="Audience and Engagement analytics from Buffer."
+  className="text-center"
+/>
 
 ### LinkedIn
 
-### X/Twitter
+We gained **945** followers on LinkedIn in 2025, bringing our overall following to **4928**.
+
+<Figure
+  src="/img/posts/2025-blog-banner/Followes vs. Year.webp"
+  caption="Yearly followers on LinkedIn."
+  className="text-center"
+/>
+
+In 2025, referrals from LinkedIn to asyncapi.com showed a 9.5% increase in total users, indicating continued reach, while new users decreased by 2.5% and sessions dropped significantly by 66.9%, suggesting lower repeat engagement and fewer browsing interactions compared to 2024.
+
+<Figure
+  src="/img/posts/2025-blog-banner/reffered-LindkeIn.webp"
+  caption="Website visits referred by LinkedIn"
+  className="text-center"
+/>
 
 ### YouTube
 
