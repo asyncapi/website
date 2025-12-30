@@ -15,8 +15,7 @@ class AmbassadorsPage {
     .should('be.visible');
     cy.get('a[href="https://www.asyncapi.com/blog/asyncapi-ambassador-program"]')
     .should('be.visible');
-  
-}
+  }
 
   verifyAmbassadorSocialLinks(name, links) {
     cy.contains('[data-testid="Ambassadors-members-details"]', name)
