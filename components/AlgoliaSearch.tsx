@@ -231,7 +231,7 @@ function useDocSearchKeyboardEvents({ isOpen, onOpen, onClose }: IUseDocSearchKe
  * @description The Algolia search component used for searching the website
  * @param {React.ReactNode} children - The content of the page
  */
-export default function AlgoliaSearch({ children }: { children: React.ReactNode }) {
+export default function AlgoliaSearch({ children }: { children: React.ReactNode }) { 
   const [isOpen, setIsOpen] = useState(false);
   const [indexName, setIndexName] = useState<string>(INDEX_NAME);
   const [initialQuery, setInitialQuery] = useState<string>();
@@ -283,7 +283,6 @@ export default function AlgoliaSearch({ children }: { children: React.ReactNode 
  */
 export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISearchButtonProps) {
   const { onOpen, onInput } = useContext(SearchContext);
-  const [Children, setChildren] = useState<string | React.ReactNode>('');
   const searchButtonRef = useRef<HTMLButtonElement>(null);
   const actionKey = getActionKey();
 
@@ -309,13 +308,7 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISe
     };
   }, [onInput, searchButtonRef]);
 
-  useEffect(() => {
-    if (typeof children === 'function') {
-      setChildren(children({ actionKey }));
-    } else {
-      setChildren(children);
-    }
-  }, []);
+  const childContent = typeof children === 'function' ? children({ actionKey }) : children;
 
   return (
     <button
@@ -327,7 +320,7 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISe
       {...props}
       data-testid='Search-Button'
     >
-      {Children}
+      {childContent}
     </button>
   );
 }
