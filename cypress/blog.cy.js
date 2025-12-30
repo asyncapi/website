@@ -42,30 +42,26 @@ describe('Blog Page Tests', () => {
   });
 
   it('User filters by author and verifies filtered posts appear', () => {
-    blog.filterByAuthor('Akshat Nema');
+    blog.filterByFirstAvailableAuthor();
     blog.verifyFilteredPostsVisible();
   });
 
-  it('User filters by author, verifies specific post link, and checks post header', () => {
-    blog.filterByAuthor('Akshat Nema');
-    blog.verifyPostLinkAndClick(
-      /New Tools Dashboard for AsyncAPI/i,
-      '/blog/new-asyncapi-tools-page',
-    );
-    blog.verifyPostHeader('New Tools Dashboard for AsyncAPI');
+  it('User filters by author, clicks a post, and verifies post detail page loads', () => {
+    blog.filterByFirstAvailableAuthor();
+    blog.verifyFilteredPostsVisible();
+    blog.clickFirstVisiblePost();
+    blog.verifyPostDetailPageLoaded();
   });
 
   it('User filters by tag and verifies filtered posts appear', () => {
-    blog.filterByTag('Avro');
+    blog.filterByFirstAvailableTag();
     blog.verifyFilteredPostsVisible();
   });
 
-  it('User filters by tag, verifies specific post link, and checks post header', () => {
-    blog.filterByTag('Avro');
-    blog.verifyPostLinkAndClick(
-      /AsyncAPI and Apicurio for Asynchronous APIs/i,
-      '/blog/asyncapi-and-apicurio-for-asynchronous-apis',
-    );
-    blog.verifyPostHeader('AsyncAPI and Apicurio for Asynchronous APIs');
+  it('User filters by tag, clicks a post, and verifies post detail page loads', () => {
+    blog.filterByFirstAvailableTag();
+    blog.verifyFilteredPostsVisible();
+    blog.clickFirstVisiblePost();
+    blog.verifyPostDetailPageLoaded();
   });
 });

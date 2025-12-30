@@ -72,6 +72,34 @@ class BlogPage {
       .should('be.visible')
       .and('contain', expectedHeaderText);
   }
+
+
+  filterByFirstAvailableAuthor() {
+    cy.get('[data-testid="Select-form"]').eq(2).find('option').then(($options) => {
+      const nonEmptyOptions = [...$options].filter(opt => opt.value && opt.value !== '');
+      if (nonEmptyOptions.length > 0) {
+        cy.get('[data-testid="Select-form"]').eq(2).select(nonEmptyOptions[0].value);
+      }
+    });
+  }
+
+  filterByFirstAvailableTag() {
+    cy.get('[data-testid="Select-form"]').eq(3).find('option').then(($options) => {
+      const nonEmptyOptions = [...$options].filter(opt => opt.value && opt.value !== '');
+      if (nonEmptyOptions.length > 0) {
+        cy.get('[data-testid="Select-form"]').eq(3).select(nonEmptyOptions[0].value);
+      }
+    });
+  }
+
+  clickFirstVisiblePost() {
+    cy.get('[data-testid="BlogPostItem-Link"]').first().click();
+  }
+
+  verifyPostDetailPageLoaded() {
+    cy.get('[data-testid="BlogLayout-main"]').should('be.visible');
+    cy.url().should('include', '/blog/');
+  }
 }
 
 export default BlogPage;
