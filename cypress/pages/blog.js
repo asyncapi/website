@@ -49,15 +49,15 @@ class BlogPage {
   }
 
   filterByType(type) {
-    cy.get('[data-testid="Select-form"]').eq(1).select(type);
+    cy.get('[data-testid="Select-form-type"]').select(type);
   }
 
   filterByAuthor(author) {
-    cy.get('[data-testid="Select-form"]').eq(2).select(author);
+    cy.get('[data-testid="Select-form-author"]').select(author);
   }
 
   filterByTag(tag) {
-    cy.get('[data-testid="Select-form"]').eq(3).select(tag);
+    cy.get('[data-testid="Select-form-tag"]').select(tag);
   }
 
   verifyPostLinkAndClick(titlePattern, expectedHref) {
