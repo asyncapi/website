@@ -41,12 +41,11 @@ describe('TSC Page', () => {
     ];
 
     linksToVerify.forEach(({ href, label }) => {
-      cy.get(`a[href="${href}"]`).contains(label);
+      cy.get(`a[href="${href}"]`).contains(label).should('be.visible');
     });
   });
 
   it('verifies social links for selected TSC members', () => {
-
     const members = [
       {
         name: 'Aishat Muibudeen',

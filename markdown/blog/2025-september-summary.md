@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: Community Builder and Open Source Fanatic!
 excerpt: 'AsyncAPI community and project updates for September 2025'
-featured: true
 ---
 
 As the fourth quarter of the year begins, we enter a new season where we, as a community, reflect on the events of the year while also preparing for the year ahead. It has been a time of growth, but let's dive into the updates from September, including the AsyncAPI London conference, new case studies, and our preparations for the AsyncAPI Community Goals for 2026.
