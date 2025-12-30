@@ -24,14 +24,14 @@ export default function BlogIndexPage() {
   const [posts, setPosts] = useState<IBlogPost[]>(
     navItems
       ? navItems.sort((i1: IBlogPost, i2: IBlogPost) => {
-          const i1Date = new Date(i1.date);
-          const i2Date = new Date(i2.date);
+        const i1Date = new Date(i1.date);
+        const i2Date = new Date(i2.date);
 
-          if (i1.featured && !i2.featured) return -1;
-          if (!i1.featured && i2.featured) return 1;
+        if (i1.featured && !i2.featured) return -1;
+        if (!i1.featured && i2.featured) return 1;
 
-          return i2Date.getTime() - i1Date.getTime();
-        })
+        return i2Date.getTime() - i1Date.getTime();
+      })
       : []
   );
   const [isClient, setIsClient] = useState(false);
@@ -93,7 +93,9 @@ export default function BlogIndexPage() {
                 height='18px'
                 width='18px'
               />
-              <TextLink href='/rss.xml'> RSS Feed</TextLink>, too!
+              <a href='/rss.xml' className="text-secondary-500 underline hover:text-gray-800 font-medium transition ease-in-out duration-300">
+                RSS Feed
+              </a>, too!
             </Paragraph>
           </div>
           <div className='mx:64 mt-12 md:flex md:justify-center lg:justify-center'>
