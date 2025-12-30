@@ -23,7 +23,7 @@ class TSCPage {
   getFailureMessage() {
     return cy.get('[data-testid="Paragraph-test"]').contains(`Subscription failed, please let us know about it by submitting a bug`);
   }
-  verifyMemberSocialLinks(name, links) {
+  verifyTSCMemberSocialLinks(name, links) {
     cy.contains('[data-testid="UserInfo-name"]', name)
       .closest('[data-testid="UserInfo-list"]')
       .within(() => {
