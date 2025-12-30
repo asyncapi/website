@@ -1,9 +1,6 @@
 class TSCPage {
 
 
-  hoverCommunityLink() {
-    cy.get('[data-testid="NavItem-Link"]').contains('Community').trigger('mouseover');
-  }
   
   fillNewsletterForm(name, email) {
     cy.get('[data-testid="NewsletterSubscribe-text-input"]').type(name);
