@@ -61,7 +61,7 @@ We also have some analytics recorded dating back to 2023.
 We gained **945** followers on LinkedIn in 2025, bringing our overall following to **4928**.
 
 <Figure
-  src="/img/posts/2025-blog-banner/Followes vs. Year.webp"
+  src="/img/posts/2025-blog-banner/Followers vs. Year.webp"
   caption="Yearly followers on LinkedIn."
   className="text-center"
 />
@@ -69,7 +69,7 @@ We gained **945** followers on LinkedIn in 2025, bringing our overall following 
 In 2025, referrals from LinkedIn to asyncapi.com showed a 9.5% increase in total users, indicating continued reach, while new users decreased by 2.5% and sessions dropped significantly by 66.9%, suggesting lower repeat engagement and fewer browsing interactions compared to 2024.
 
 <Figure
-  src="/img/posts/2025-blog-banner/reffered-LindkeIn.webp"
+  src="/img/posts/2025-blog-banner/referred-LinkedIn.webp"
   caption="Website visits referred by LinkedIn"
   className="text-center"
 />
@@ -82,7 +82,7 @@ In 2025, referrals from LinkedIn to asyncapi.com showed a 9.5% increase in total
 
 ## Google Search Console
 
-## GitHub
+## LF Insights/GitHub
 
 ## NPM
 
