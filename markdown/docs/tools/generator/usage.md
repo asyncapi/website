@@ -45,7 +45,7 @@ asyncapi generate fromTemplate asyncapi.yaml @asyncapi/html-template@3.0.0 --use
 
 **Generating from a URL:**
 ```bash
-asyncapi generate fromTemplate https://bit.ly/asyncapi @asyncapi/html-template@3.0.0 --use-new-generator
+asyncapi generate fromTemplate https://asyncapi.com/s/asyncapiv2 @asyncapi/html-template@3.0.0 --use-new-generator
 ```
 
 **Specify where to put the result:**

@@ -23,11 +23,6 @@ li>p {
   display: inline;
 }
 
-.atss {
-  /* AddThis plugin */
-  z-index: 10 !important;
-}
-
 abbr[title] {
   text-decoration: none;
 }

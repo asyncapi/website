@@ -106,7 +106,7 @@ operations:
 
 ## Multiple messages over the same channel when reply address is known
 
-In some cases, representing the [same information](#multiple-channels-with-single-message) might require a different approach. You can do so by specifying multiple messages under the same channel. In such scenarios, use the `messages` property in the `Operation` object to explicitly define which message among the multiple messages available over the same channel is a request and which is a reply.  
+In some cases, representing the [same information](#multiple-channels-with-single-message-when-reply-address-is-known) might require a different approach. You can do so by specifying multiple messages under the same channel. In such scenarios, use the `messages` property in the `Operation` object to explicitly define which message among the multiple messages available over the same channel is a request and which is a reply.  
 
 Consider an example where multiple messages are transmitted over a single channel, all sharing the same address. In this setup, the `Operation` object is utilized to distinctly specify which of these messages serves as the request and which functions as the reply:
 ```yml

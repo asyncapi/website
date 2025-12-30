@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: Community Builder and Open Source Fanatic!
 excerpt: 'AsyncAPI community and project updates for October 2025'
-featured: true
 ---
 
 October has been buzzing with excitement as we hosted two AsyncAPI conferences and deployed a new version of our server-api. We also welcomed a new ambassador, and our **Community Building Goals for 2026** are now ready for review. 

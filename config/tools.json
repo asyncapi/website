@@ -2442,7 +2442,7 @@
         "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
         "links": {
           "websiteUrl": "https://www.asyncapi.com/tools/cli",
-          "repoUrl": "https://github.com/hkirat/asyncapi-fork"
+          "repoUrl": "https://github.com/asyncapi/cli"
         },
         "filters": {
           "language": [],
@@ -2465,7 +2465,7 @@
         "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
         "links": {
           "websiteUrl": "https://www.asyncapi.com/tools/cli",
-          "repoUrl": "https://github.com/asyncapi/cli"
+          "repoUrl": "https://github.com/hkirat/asyncapi-fork"
         },
         "filters": {
           "language": [],
@@ -3185,7 +3185,7 @@
         "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
         "links": {
           "websiteUrl": "https://www.asyncapi.com/tools/cli",
-          "repoUrl": "https://github.com/hkirat/asyncapi-fork"
+          "repoUrl": "https://github.com/asyncapi/cli"
         },
         "filters": {
           "language": [],
@@ -3208,7 +3208,7 @@
         "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
         "links": {
           "websiteUrl": "https://www.asyncapi.com/tools/cli",
-          "repoUrl": "https://github.com/asyncapi/cli"
+          "repoUrl": "https://github.com/hkirat/asyncapi-fork"
         },
         "filters": {
           "language": [],
