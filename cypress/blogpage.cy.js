@@ -7,32 +7,32 @@ describe('Blog Page Tests', () => {
     blog.visit();
   });
 
-  it('User navigates to blog and verifies header', () => {
+  it('Navigation to blog page and verification of header', () => {
     blog.verifyHeader();
   });
 
-  it('User verifies submit blog post link', () => {
+  it('Verification of submit blog post link', () => {
     blog.verifySubmitLink();
   });
 
-  it('User verifies RSS feed link and image', () => {
+  it('Verification of RSS feed link and image', () => {
     blog.verifyRSSLink();
     blog.verifyRSSImage();
   });
 
-  it('User verifies clear filters button works', () => {
+  it('Verification of clear filters button', () => {
     blog.filterByType('Strategy');
     blog.verifyClearFiltersButton();
     blog.clickClearFilters();
     blog.verifyNoFilterButton();
   });
 
-  it('User filters by type and verifies filtered posts appear', () => {
+  it('Verification of filtered posts', () => {
     blog.filterByType('Engineering');
     blog.verifyFilteredPostsVisible();
   });
 
-  it('User filters by type, verifies specific post link, and checks post header', () => {
+  it('Verification of specific post link, and checking post header', () => {
     blog.filterByType('Communication');
     blog.verifyPostLinkAndClick(
       /How TransferGo Adopted AsyncAPI/i,
@@ -41,24 +41,24 @@ describe('Blog Page Tests', () => {
     blog.verifyPostHeader('How TransferGo adopted AsyncAPI');
   });
 
-  it('User filters by author and verifies filtered posts appear', () => {
+  it('Verification of filters by author and checking filtered posts appear', () => {
     blog.filterByFirstAvailableAuthor();
     blog.verifyFilteredPostsVisible();
   });
 
-  it('User filters by author, clicks a post, and verifies post detail page loads', () => {
+  it('Verification of filters by author, clicking a post, and verifying post detail page loads', () => {
     blog.filterByFirstAvailableAuthor();
     blog.verifyFilteredPostsVisible();
     blog.clickFirstVisiblePost();
     blog.verifyPostDetailPageLoaded();
   });
 
-  it('User filters by tag and verifies filtered posts appear', () => {
+  it('Verification of filters by tag and checking filtered posts appear', () => {
     blog.filterByFirstAvailableTag();
     blog.verifyFilteredPostsVisible();
   });
 
-  it('User filters by tag, clicks a post, and verifies post detail page loads', () => {
+  it('Verification of filters by tag, clicking a post, and verifying post detail page loads', () => {
     blog.filterByFirstAvailableTag();
     blog.verifyFilteredPostsVisible();
     blog.clickFirstVisiblePost();
