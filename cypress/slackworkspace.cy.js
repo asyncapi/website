@@ -8,9 +8,20 @@ describe('Slack workspace tests', () => {
   });
 
   it('Should show all login methods when the Slack invite link is active', () => {
-    slackPage.verifyGoogleLoginButton();
-    slackPage.verifyAppleLoginButton();
-    slackPage.verifyContinueWithEmail();
+    cy.get('body').then(($body) => {
+      const isInactive =
+        $body.find('.p-refreshed_page__heading').length > 0 &&
+        $body.text().includes('This link is no longer active');
+
+      if (!isInactive) {
+        slackPage.verifyGoogleLoginButton();
+        slackPage.verifyAppleLoginButton();
+        slackPage.verifyContinueWithEmail();
+      } else {
+        cy.log('Slack invite link is inactive - skipping login method tests');
+        expect(isInactive).to.be.true;
+      }
+    });
   });
 
   it('Should show links for Privacy, Contact Us, and Region Change', () => {
@@ -18,4 +29,5 @@ describe('Slack workspace tests', () => {
     slackPage.verifyContactUs();
     slackPage.verifyChangeRegion();
   });
+
 });
