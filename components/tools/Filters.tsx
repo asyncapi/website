@@ -19,6 +19,13 @@ interface FiltersProps {
   setOpenFilter: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+enum OpenedFiltersDropdownType {
+  NONE = '',
+  LANGUAGE = 'language',
+  TECHNOLOGY = 'technology',
+  CATEGORY = 'category'
+}
+
 /**
  * @description This component displays Filters.
  * @param {FiltersProps} props - Props for Filters component.
@@ -30,9 +37,9 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
   const { isPaid, isAsyncAPIOwner, languages, technologies, categories } = useContext(ToolFilterContext);
 
   // State variables to operate dropdowns of respective filters
-  const [openLanguage, setopenLanguage] = useState<boolean>(false);
-  const [openTechnology, setopenTechnology] = useState<boolean>(false);
-  const [openCategory, setopenCategory] = useState<boolean>(false);
+  const [openedFiltersDropown, setOpenedFiltersDropown] = useState<OpenedFiltersDropdownType>(
+    OpenedFiltersDropdownType.NONE
+  );
 
   // Filter state variables for user checked values are created, initialising it with the values already set by user.
   const [checkPaid, setCheckPaid] = useState<string>(isPaid);
@@ -113,6 +120,10 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
     setCheckOwner(isAsyncAPIOwner);
   };
 
+  const toggleDropdown = (dropdownType: OpenedFiltersDropdownType) => {
+    setOpenedFiltersDropown(openedFiltersDropown === dropdownType ? OpenedFiltersDropdownType.NONE : dropdownType);
+  };
+
   return (
     <ToolFilter>
       <div className='z-20 rounded-lg border border-gray-300 bg-white py-4 shadow-md' data-testid='Filters-div'>
@@ -183,9 +194,9 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
           <div className='w-full'>
             <div
               className={twMerge(
-                `px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openLanguage ? 'rounded-b-none' : ''}`
+                `px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openedFiltersDropown === OpenedFiltersDropdownType.LANGUAGE ? 'rounded-b-none' : ''}`
               )}
-              onClick={() => setopenLanguage(!openLanguage)}
+              onClick={() => toggleDropdown(OpenedFiltersDropdownType.LANGUAGE)}
             >
               <div className='flex items-center text-dark'>
                 {/* eslint-disable-next-line no-nested-ternary */}
@@ -195,9 +206,11 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
                     : `${checkedLanguage.length} options selected`
                   : 'Select Languages...'}
               </div>
-              <ArrowDown className={`my-auto ${openLanguage ? 'rotate-180' : ''}`} />
+              <ArrowDown
+                className={`my-auto ${openedFiltersDropown === OpenedFiltersDropdownType.LANGUAGE ? 'rotate-180' : ''}`}
+              />
             </div>
-            {openLanguage && (
+            {openedFiltersDropown === OpenedFiltersDropdownType.LANGUAGE && (
               <div className='w-auto overflow-x-auto rounded-b-lg border border-gray-400 bg-gray-200 duration-150'>
                 <FiltersDropdown
                   dataList={languageList}
@@ -223,9 +236,9 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
           <div className='w-full'>
             <div
               className={twMerge(
-                `px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openTechnology ? 'rounded-b-none' : ''}`
+                `px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openedFiltersDropown === OpenedFiltersDropdownType.TECHNOLOGY ? 'rounded-b-none' : ''}`
               )}
-              onClick={() => setopenTechnology(!openTechnology)}
+              onClick={() => toggleDropdown(OpenedFiltersDropdownType.TECHNOLOGY)}
             >
               <div className='flex items-center text-dark'>
                 {/* eslint-disable-next-line no-nested-ternary */}
@@ -235,9 +248,11 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
                     : `${checkedTechnology.length} options selected`
                   : 'Select Technologies...'}
               </div>
-              <ArrowDown className={`my-auto ${openTechnology ? 'rotate-180' : ''}`} />
+              <ArrowDown
+                className={`my-auto ${openedFiltersDropown === OpenedFiltersDropdownType.TECHNOLOGY ? 'rotate-180' : ''}`}
+              />
             </div>
-            {openTechnology && (
+            {openedFiltersDropown === OpenedFiltersDropdownType.TECHNOLOGY && (
               <div className='w-auto overflow-x-auto rounded-b-lg border border-gray-400 bg-gray-200 duration-150'>
                 <FiltersDropdown
                   dataList={technologyList}
@@ -263,9 +278,9 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
           <div className='w-full'>
             <div
               className={twMerge(
-                `px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openCategory ? 'rounded-b-none' : ''}`
+                `px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openedFiltersDropown === OpenedFiltersDropdownType.CATEGORY ? 'rounded-b-none' : ''}`
               )}
-              onClick={() => setopenCategory(!openCategory)}
+              onClick={() => toggleDropdown(OpenedFiltersDropdownType.CATEGORY)}
             >
               <div className='flex items-center text-dark'>
                 {/* eslint-disable-next-line no-nested-ternary */}
@@ -275,9 +290,11 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
                     : `${checkedCategory.length} options selected`
                   : 'Select Categories...'}
               </div>
-              <ArrowDown className={`my-auto ${openCategory ? 'rotate-180' : ''}`} />
+              <ArrowDown
+                className={`my-auto ${openedFiltersDropown === OpenedFiltersDropdownType.CATEGORY ? 'rotate-180' : ''}`}
+              />
             </div>
-            {openCategory && (
+            {openedFiltersDropown === OpenedFiltersDropdownType.CATEGORY && (
               <div className='w-auto overflow-x-auto rounded-b-lg border border-gray-400 bg-gray-200 duration-150'>
                 <FiltersDropdown
                   dataList={categoryList}
