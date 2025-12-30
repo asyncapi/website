@@ -93,7 +93,7 @@ export default function BlogIndexPage() {
                 height='18px'
                 width='18px'
               />
-              <TextLink href='/rss.xml'> RSS Feed</TextLink>, too!
+              <a href='/rss.xml'> RSS Feed</a>, too!
             </Paragraph>
           </div>
           <div className='mx:64 mt-12 md:flex md:justify-center lg:justify-center'>
