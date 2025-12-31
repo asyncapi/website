@@ -5,6 +5,7 @@ import { useTranslation } from 'next-i18next';
 import React, { useEffect, useState } from 'react';
 
 import { defaultLanguage, i18nPaths, languages } from '@/utils/i18n';
+import { twMerge } from 'tailwind-merge';
 
 import { SearchButton } from '../AlgoliaSearch';
 import GithubButton from '../buttons/GithubButton';
