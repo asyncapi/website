@@ -4,8 +4,10 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import React, { useEffect, useState } from 'react';
 
-import { defaultLanguage, i18nPaths, languages } from '@/utils/i18n';
 import { twMerge } from 'tailwind-merge';
+
+import { defaultLanguage, i18nPaths, languages } from '@/utils/i18n';
+
 
 import { SearchButton } from '../AlgoliaSearch';
 import GithubButton from '../buttons/GithubButton';
@@ -20,7 +22,7 @@ import MobileNavMenu from './MobileNavMenu';
 import NavItem from './NavItem';
 import otherItems from './otherItems';
 import ToolsPanel from './ToolsPanel';
-import { twMerge } from 'tailwind-merge';
+
 
 
 interface NavBarProps {
