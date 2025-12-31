@@ -73,7 +73,7 @@ describe('Tools Object', () => {
       additionalLinks: { docsUrl: 'https://docs.example.com' }
     });
 
-    // @ts-expect-error – testing wrong data type
+    // @ts-expect-error – testing malformed tool data
 
     expected.filters.isAsyncAPIOwner = false;
     const result = await createToolObject(toolFile);
