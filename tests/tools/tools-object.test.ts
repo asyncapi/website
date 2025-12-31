@@ -172,7 +172,7 @@ describe('Tools Object', () => {
   it('should handle malformed JSON in tool file', async () => {
     const malformedContent = createMalformedYAML();
 
-    // @ts-expect-error – testing unknown category
+    // @ts-expect-error – testing malformed tool data
 
     await expect(convertTools(malformedContent)).rejects.toThrow();
   });
