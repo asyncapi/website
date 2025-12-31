@@ -83,7 +83,7 @@ describe('Frontmatter Validator', () => {
       cover: ['not-a-string'],
       authors: { name: 'John Doe' }
     };
-    // @ts-expect-error – simulating missing frontmatter
+    // @ts-expect-error – simulating invalid frontmatter
     const errors = validateBlogs(frontmatter);
 
     expect(errors).toEqual([
