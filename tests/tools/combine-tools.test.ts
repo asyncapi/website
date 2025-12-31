@@ -287,7 +287,7 @@ describe('combineTools function', () => {
       }
     };
 
-    // @ts-ignore, ignore the error for missing properties
+    // @ts-expect-error - Intentionally passing tools without title to test error logging
 
     await combineTools(noTitleTools, {}, toolsPath, tagsPath);
     expect(logger.error).toHaveBeenCalledWith(
