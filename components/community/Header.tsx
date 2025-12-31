@@ -19,7 +19,7 @@ interface HeaderProps {
 export default function Header({ className = '' }: HeaderProps) {
   return (
     <div
-      className={twMerge('mt-10 flex flex-col items-center justify-center text-center md:mt-0', className)}
+      className={twMerge('mt-10 flex flex-col items-center justify-center text-center cursor-auto md:mt-0', className)}
       data-testid='Header-hero-heading'
     >
       <Heading className='countdown-text-gradient font-bold' level={HeadingLevel.h6} typeStyle={HeadingTypeStyle.xs}>
