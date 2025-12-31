@@ -130,6 +130,6 @@ I completed this project during the 2022 AsyncAPI Mentorship program, mentored b
 - [feat: added new /tools page](https://github.com/asyncapi/website/pull/940)
 - [feat: manual tools added to the Tools Dashboard](https://github.com/asyncapi/website/pull/1191)
 
-You are welcome to review my work in the program and I will love to get your feedback on this. You can contact me via [my email](mailto:akshatnema.official@gmail.com) or DM me in [AsyncAPI Slack](https://asyncapi.com/slack-invite). Thank you to AsyncAPI and its community members for providing me with this opportunity and I'll be looking for more such activities to contribute to the organization. Also, we are close to announcing the next AsyncAPI Mentorship Program in the year 2023, so stay tuned with us on [AsyncAPI Slack](https://asyncapi.com/slack-invite).
+You are welcome to review my work in the program and I will love to get your feedback on this. You can contact me via [my email](mailto:akshatnema.official@gmail.com) or DM me in [AsyncAPI Slack](https://join.slack.com/t/asyncapi/shared_invite/zt-3m4pmrguv-SUN9Js4BkQHocIH54F59sA). Thank you to AsyncAPI and its community members for providing me with this opportunity and I'll be looking for more such activities to contribute to the organization. Also, we are close to announcing the next AsyncAPI Mentorship Program in the year 2023, so stay tuned with us on [AsyncAPI Slack](https://join.slack.com/t/asyncapi/shared_invite/zt-3m4pmrguv-SUN9Js4BkQHocIH54F59sA).
 
 > Photo by DEWALT hand tools: https://www.dewalt.com/products/hand-tools

@@ -55,7 +55,7 @@ export const features: Feature[] = [
     links: [
       {
         label: 'Join our Slack',
-        href: 'https://asyncapi.com/slack-invite',
+        href: 'https://join.slack.com/t/asyncapi/shared_invite/zt-3m4pmrguv-SUN9Js4BkQHocIH54F59sA',
         id: 'whyasyncapi-community-slack-link'
       }
     ]

@@ -139,7 +139,7 @@ If you or someone you know would be a great fit, reach out to us!
 
 ## What’s Next?
 
-The AsyncAPI Webinar Series is just getting started! Stay tuned for upcoming sessions, and if you have suggestions for topics or speakers, [we’d love to hear from you](https://asyncapi.com/slack-invite).
+The AsyncAPI Webinar Series is just getting started! Stay tuned for upcoming sessions, and if you have suggestions for topics or speakers, [we’d love to hear from you](https://join.slack.com/t/asyncapi/shared_invite/zt-3m4pmrguv-SUN9Js4BkQHocIH54F59sA).
 
 Want to attend the next session? Follow our updates on LinkedIn, [subscribe to our YouTube page and turn on notifications!](https://www.youtube.com/@AsyncAPI) Interested in speaking? Reach out to us, we’d love to have you!
 

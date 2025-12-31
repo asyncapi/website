@@ -165,7 +165,7 @@ Finally, a wonderful shout to [Stephanie Taylor](https://www.linkedin.com/in/ste
 
 ## Closing Remark 
 
-If you’re considering joining GSoC with AsyncAPI next year, we encourage you to hop into our [Slack community](https://asyncapi.com/slack-invite) and say hello in the **#mentorship** channel. We’re always excited to welcome new contributors and mentors into our growing family.
+If you’re considering joining GSoC with AsyncAPI next year, we encourage you to hop into our [Slack community](https://join.slack.com/t/asyncapi/shared_invite/zt-3m4pmrguv-SUN9Js4BkQHocIH54F59sA) and say hello in the **#mentorship** channel. We’re always excited to welcome new contributors and mentors into our growing family.
 
 We’re already looking forward to next year’s program and are committed to using this year’s lessons to make the experience even better.
 

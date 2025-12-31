@@ -12,7 +12,7 @@ Learn how to add your tool to the AsyncAPI website using the `.asyncapi-tool` fi
 
 ## AsyncAPI tool file
 
-The [`.asyncapi-tool` file](https://github.com/asyncapi/website/blob/master/scripts/tools/tools-schema.json) requires a specific schema to describe the type and details of your AsyncAPI tool; this file automatically adds your tool to our website's [Tools Dashboard](https://www.asyncapi.com/tools) within a week. Every Monday, we run our workflow to add new tools or update existing tools in our website and thus, notifies us regarding the wrong format of the file used somewhere in Github using Slack notifications. You can even ask the maintainers to manually trigger workflow by [Creating a Github issue](https://github.com/asyncapi/website/issues/new/choose) or contact us via [AsyncAPI Slack](https://asyncapi.com/slack-invite).
+The [`.asyncapi-tool` file](https://github.com/asyncapi/website/blob/master/scripts/tools/tools-schema.json) requires a specific schema to describe the type and details of your AsyncAPI tool; this file automatically adds your tool to our website's [Tools Dashboard](https://www.asyncapi.com/tools) within a week. Every Monday, we run our workflow to add new tools or update existing tools in our website and thus, notifies us regarding the wrong format of the file used somewhere in Github using Slack notifications. You can even ask the maintainers to manually trigger workflow by [Creating a Github issue](https://github.com/asyncapi/website/issues/new/choose) or contact us via [AsyncAPI Slack](https://join.slack.com/t/asyncapi/shared_invite/zt-3m4pmrguv-SUN9Js4BkQHocIH54F59sA).
 
 You must create and maintain your `.asyncapi-tool` file in your tool's repository, as it doesn't require AsyncAPI approval. There is no restriction on the directory in which the file has to be created. In case, you need to create 2 or more `.asyncapi-tool` files in same repository, you can do the same, just make sure you provide correct `repoUrl` for each of them. Same case applies for monorepo as well.
 
@@ -119,7 +119,7 @@ Here's what a sample JSON object for an AsyncAPI tool should look like after it 
 }
 ```
 
-> If your tool's information isn't showing up correctly in this file, please [create a new AsyncAPI GitHub issue](https://github.com/asyncapi/website/issues/new/choose) or contact us via [AsyncAPI Slack](https://asyncapi.com/slack-invite).
+> If your tool's information isn't showing up correctly in this file, please [create a new AsyncAPI GitHub issue](https://github.com/asyncapi/website/issues/new/choose) or contact us via [AsyncAPI Slack](https://join.slack.com/t/asyncapi/shared_invite/zt-3m4pmrguv-SUN9Js4BkQHocIH54F59sA).
 
 ## Adding New Category
 

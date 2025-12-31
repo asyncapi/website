@@ -57,7 +57,7 @@ export const socialMediaData: SocialMediaData[] = [
     label: 'YouTube'
   },
   {
-    url: 'https://asyncapi.com/slack-invite',
+    url: 'https://join.slack.com/t/asyncapi/shared_invite/zt-3m4pmrguv-SUN9Js4BkQHocIH54F59sA',
     label: 'Slack'
   },
   {

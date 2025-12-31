@@ -33,7 +33,7 @@ export default function Table({ title, data, className, listClassName }: TablePr
             <ul className='mt-3 list-disc pl-5 text-sm font-[400]'>
               <li className='mb-2'>
                 Join our{' '}
-                <a href='https://asyncapi.com/slack-invite' className='text-blue-500 underline'>
+                <a href='https://join.slack.com/t/asyncapi/shared_invite/zt-3m4pmrguv-SUN9Js4BkQHocIH54F59sA' className='text-blue-500 underline'>
                   Slack
                 </a>{' '}
                 to seek help.

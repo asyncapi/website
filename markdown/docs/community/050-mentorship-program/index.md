@@ -11,7 +11,7 @@ AsyncAPI offers diverse mentorship opportunities for students, developers, and t
 
 Need assistance with mentorship programs? Connect with us:
 
-- **Slack**: Join our [AsyncAPI Slack workspace](https://asyncapi.com/slack-invite) and visit the `#mentorship` channel
+- **Slack**: Join our [AsyncAPI Slack workspace](https://join.slack.com/t/asyncapi/shared_invite/zt-3m4pmrguv-SUN9Js4BkQHocIH54F59sA) and visit the `#mentorship` channel
 - **GitHub Discussions**: Post questions on our [Discussions board](https://github.com/asyncapi/community/discussions)
 
 > **Note**: Please use public channels rather than direct messages when possible. This helps maintainers manage communications effectively and allows others to benefit from the discussion.

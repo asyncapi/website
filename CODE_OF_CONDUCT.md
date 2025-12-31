@@ -48,7 +48,7 @@ Tensions can occur between community members even when they are trying their bes
 
 When an incident does occur, it is important to report it promptly. To report a possible violation, here are a few simple ways to do it:  
 
-- Join our [AsyncAPI Slack](https://asyncapi.com/slack-invite) and share your report in the `#coc` channel.  
+- Join our [AsyncAPI Slack](https://join.slack.com/t/asyncapi/shared_invite/zt-3m4pmrguv-SUN9Js4BkQHocIH54F59sA) and share your report in the `#coc` channel.  
 - Reach out directly to any member of the [Code of Conduct Committee](https://github.com/orgs/asyncapi/teams/code_of_conduct).
 - Or, if you’d prefer, just send us an email at **conduct@asyncapi.com**.
 

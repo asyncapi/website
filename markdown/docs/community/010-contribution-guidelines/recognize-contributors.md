@@ -11,7 +11,7 @@ There should always be a **Contributors** section in the readme, like [this one]
 
 Remember, not only code matters! You can contribute to AsyncAPI in different ways. You can:
 - Report a well-written issue that explains a bug or a feature that later is fixed/implemented.
-- Share with us feedback on [slack](https://asyncapi.com/slack-invite) or some other channel. You come up with the idea that we used to do something great with the project.
+- Share with us feedback on [slack](https://join.slack.com/t/asyncapi/shared_invite/zt-3m4pmrguv-SUN9Js4BkQHocIH54F59sA) or some other channel. You come up with the idea that we used to do something great with the project.
 - Improve documentation.
 - Help with a review of pull requests. You are a language expert and can review docs or an expert in a specific programming language. As a result, you can review pull requests for a template written for a particular language.
 - Write a blog post on the AsyncAPI blog.
@@ -19,7 +19,7 @@ Remember, not only code matters! You can contribute to AsyncAPI in different way
 
 You can help us out in many different ways. Just check out [this](https://allcontributors.org/docs/en/emoji-key) list of possible contributions. All of this is a contribution!
 
-> We apologize in advance if we failed in recognizing your work. Feel free to contact us on [slack](https://asyncapi.com/slack-invite), and we will fix it immediately, or talk to All Contributors bot directly.
+> We apologize in advance if we failed in recognizing your work. Feel free to contact us on [slack](https://join.slack.com/t/asyncapi/shared_invite/zt-3m4pmrguv-SUN9Js4BkQHocIH54F59sA), and we will fix it immediately, or talk to All Contributors bot directly.
 
 ## All Contributors cheat sheet
 

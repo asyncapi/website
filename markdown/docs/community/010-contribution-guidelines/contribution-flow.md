@@ -22,7 +22,7 @@ Contrary to popular belief, **contributions are not limited to code**. At AsyncA
 |  🐛   | Bug Reports          | Report bugs, help reproduce issues, suggest fixes. [Open a bug issue](https://github.com/asyncapi/community/issues/new?assignees=&labels=bug&template=bug_report.md).                                                                                 |
 |  ⚠️   | Tests                | Add or improve tests, increase coverage, verify fixes.                                                                                                                                                                                                |
 |  🎨   | Design               | Propose UI/UX improvements, contribute graphics, review design discussions.                                                                                                                                                                           |
-|  💬   | Answering Questions    | Answer questions on [Slack](https://asyncapi.com/slack-invite) or [GitHub Issues](https://github.com/asyncapi/community/issues), help new contributors, provide mentorship.                                                                                                                      |
+|  💬   | Answering Questions    | Answer questions on [Slack](https://join.slack.com/t/asyncapi/shared_invite/zt-3m4pmrguv-SUN9Js4BkQHocIH54F59sA) or [GitHub Issues](https://github.com/asyncapi/community/issues), help new contributors, provide mentorship.                                                                                                                      |
 |  📝  | Blogposts             | Write blog posts for [AsyncAPI's blog](https://www.asyncapi.com/blog).                                                                                                   |
 |  📆 | Project Management   | Triage issues and organize tasks and workflows, help with releases.                                                                                                                                                                          |
 | 🌍  | Translation          | Translate documentation or resources into other languages.                                                                                                                                                                                            |
@@ -38,9 +38,9 @@ Contrary to popular belief, **contributions are not limited to code**. At AsyncA
 |  💡 | Examples          | Provide links to examples of AsyncAPI being used in projects |
 
 ### Before You Start Contributing
-- If you are joining AsyncAPI through [Slack](https://asyncapi.com/slack-invite) or an event, take your time to explore the [AsyncAPI website](https://www.asyncapi.com/).  
+- If you are joining AsyncAPI through [Slack](https://join.slack.com/t/asyncapi/shared_invite/zt-3m4pmrguv-SUN9Js4BkQHocIH54F59sA) or an event, take your time to explore the [AsyncAPI website](https://www.asyncapi.com/).  
 - Read our [Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).  
-- [Attend meetings](https://www.asyncapi.com/community/events) and engage in discussions in the [`#11_contributing` Slack channel](https://asyncapi.com/slack-invite).
+- [Attend meetings](https://www.asyncapi.com/community/events) and engage in discussions in the [`#11_contributing` Slack channel](https://join.slack.com/t/asyncapi/shared_invite/zt-3m4pmrguv-SUN9Js4BkQHocIH54F59sA).
 - Read the [documentation](https://www.asyncapi.com/docs) to learn more about AsyncAPI.
 
 ### Before Making a Contribution

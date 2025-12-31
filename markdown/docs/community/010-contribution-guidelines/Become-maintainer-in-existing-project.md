@@ -18,7 +18,7 @@ We know you are nervous about making your first contribution. In this section, w
 Here's how to select an issue to contribute to:
 * Join existing PR reviews
 * Look for issues with a [**good first issue** label](https://github.com/issues?page=1&q=is%3Aopen+org%3Aasyncapi+sort%3Aupdated-desc+label%3A%22good+first+issue%22)
-* Join the [AsyncAPI Slack community workspace](https://asyncapi.com/slack-invite) and the `#11_how-to-contribute` channel
+* Join the [AsyncAPI Slack community workspace](https://join.slack.com/t/asyncapi/shared_invite/zt-3m4pmrguv-SUN9Js4BkQHocIH54F59sA) and the `#11_how-to-contribute` channel
 * Ask maintainers to do a public live stream called **Let's talk about contributing** where they can explain a specific part of the project where you want to contribute.
 
 **Step 2: Open a Pull Request**

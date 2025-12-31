@@ -126,4 +126,4 @@ Thank you so much to everyone who took part! We welcomed new contributors but we
 
 ## Hacktoberfest is over, but Open Source is for life
 
-Are you interested in getting involved with AsyncAPI? You can always find us on [AsyncAPI GitHub](https://github.com/asyncapi) or our [AsyncAPI Slack](https://asyncapi.com/slack-invite) workspace. Can't wait to meet you and merge your PR!
+Are you interested in getting involved with AsyncAPI? You can always find us on [AsyncAPI GitHub](https://github.com/asyncapi) or our [AsyncAPI Slack](https://join.slack.com/t/asyncapi/shared_invite/zt-3m4pmrguv-SUN9Js4BkQHocIH54F59sA) workspace. Can't wait to meet you and merge your PR!

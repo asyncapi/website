@@ -43,7 +43,7 @@ Our mentorship programs demonstrate strong impact with improving retention rates
 - **Thulisile Sibanda** ([@thulieblack](https://github.com/thulieblack)): [LinkedIn](https://www.linkedin.com/in/v-thulisile-sibanda/)
 
 ### Contact
-- **Slack**: Join our [AsyncAPI Slack workspace](https://asyncapi.com/slack-invite) and visit `#09_mentorships`
+- **Slack**: Join our [AsyncAPI Slack workspace](https://join.slack.com/t/asyncapi/shared_invite/zt-3m4pmrguv-SUN9Js4BkQHocIH54F59sA) and visit `#09_mentorships`
 - **GitHub Discussions**: [Community Discussions](https://github.com/asyncapi/community/discussions)
 
 ## Key Definitions
