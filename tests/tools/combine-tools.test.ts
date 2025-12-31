@@ -287,7 +287,7 @@ describe('combineTools function', () => {
       }
     };
 
-    // @ts-ignore, ignore the error for missing properties
+    // @ts-expect-error – testing missing required properties
 
     await combineTools(noTitleTools, {}, toolsPath, tagsPath);
     expect(logger.error).toHaveBeenCalledWith(

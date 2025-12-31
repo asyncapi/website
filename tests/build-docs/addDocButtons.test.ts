@@ -81,7 +81,7 @@ describe('addDocButtons', () => {
     let error: Error | undefined;
 
     try {
-      // @ts-ignore
+      // @ts-expect-error – intentional type error for test case
       addDocButtons(docPosts, invalidTreePosts);
     } catch (err) {
       error = err as Error;

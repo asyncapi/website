@@ -200,14 +200,14 @@ describe('buildPostList', () => {
   });
 
   it('throws specific error message when basePath parameter is undefined', async () => {
-    // @ts-ignore, ignore the type error for this test
+    // @ts-expect-error – intentional type error for test
     await expect(buildPostList(postDirectories, undefined, writeFilePath)).rejects.toThrow(
       'Error while building post list: basePath is required'
     );
   });
 
   it('throws specific error message when writeFilePath parameter is undefined', async () => {
-    // @ts-ignore, ignore the type error for this test
+    // @ts-expect-error – intentional type error for test
     await expect(buildPostList(postDirectories, tempDir, undefined)).rejects.toThrow(
       'Error while building post list: writeFilePath is required'
     );
@@ -216,13 +216,13 @@ describe('buildPostList', () => {
   it('throws an error when details object is invalid', () => {
     const finalResult: Result = { blog: [], docs: [], about: [], docsTree: {} };
 
-    // @ts-ignore
+    // @ts-expect-error – intentional type violation for test
     expect(() => addItem(null, finalResult)).toThrow('Invalid details object provided to addItem');
-    // @ts-ignore
+    // @ts-expect-error – intentional type violation for test
     expect(() => addItem({}, finalResult)).toThrow('Invalid details object provided to addItem');
-    // @ts-ignore
+    // @ts-expect-error – intentional type violation for test
     expect(() => addItem({ slug: 123 }, finalResult)).toThrow('Invalid details object provided to addItem');
-    // @ts-ignore
+    // @ts-expect-error – intentional type violation for test
     expect(() => addItem(undefined, finalResult)).toThrow('Invalid details object provided to addItem');
   });
 
@@ -291,11 +291,11 @@ describe('buildPostList', () => {
     });
 
     it('handles invalid input types gracefully', () => {
-      // @ts-ignore
+      // @ts-expect-error – intentional type violation for test
       expect(slugifyToC(null)).toBe('');
-      // @ts-ignore
+      // @ts-expect-error – intentional type violation for test
       expect(slugifyToC(undefined)).toBe('');
-      // @ts-ignore
+      // @ts-expect-error – intentional type violation for test
       expect(slugifyToC(123)).toBe('');
     });
 

@@ -259,7 +259,7 @@ describe('GitHub Discussions Processing', () => {
   });
 
   it('should handle write failures gracefully', async () => {
-    // @ts-ignore, ignore the type error for this test
+    // @ts-expect-error – intentionally triggering type error for test
     await expect(writeToFile()).rejects.toThrow();
   });
 
@@ -267,9 +267,9 @@ describe('GitHub Discussions Processing', () => {
     delete process.env.GITHUB_TOKEN;
 
     // getDiscussionsById and getDiscussions
-    // @ts-ignore, ignore the typescript error for this test
+    // @ts-expect-error – intentional type error for missing environment variable
     await expect(getDiscussionByID()).rejects.toThrow('GitHub token is not set in environment variables');
-    // @ts-ignore, ignore the typescript error for this test
+    // @ts-expect-error – intentional type error for missing environment variable
     await expect(getDiscussions()).rejects.toThrow('GitHub token is not set in environment variables');
 
     process.env.GITHUB_TOKEN = 'test-token';

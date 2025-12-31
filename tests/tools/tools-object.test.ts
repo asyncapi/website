@@ -73,7 +73,7 @@ describe('Tools Object', () => {
       additionalLinks: { docsUrl: 'https://docs.example.com' }
     });
 
-    // @ts-ignore, ignore the error for wrong data type
+    // @ts-expect-error – testing wrong data type
 
     expected.filters.isAsyncAPIOwner = false;
     const result = await createToolObject(toolFile);
@@ -95,7 +95,7 @@ describe('Tools Object', () => {
   });
 
   it('should assign tool to Others category if no matching category is found', async () => {
-    // @ts-ignore, ignore the error for unknown category
+    // @ts-expect-error – testing unknown category
     const toolContent = createToolFileContent({ title: 'Unknown Category Tool', categories: ['UnknownCategory'] });
     const mockData = mockToolData(toolContent);
 
@@ -144,7 +144,7 @@ describe('Tools Object', () => {
   it('should add tool to Others category only once', async () => {
     const toolContent = createToolFileContent({
       title: 'Duplicate Tool in Others',
-      // @ts-ignore, ignore the error for unknown category
+      // @ts-expect-error – testing unknown category
       categories: ['UnknownCategory']
     });
 
@@ -172,7 +172,7 @@ describe('Tools Object', () => {
   it('should handle malformed JSON in tool file', async () => {
     const malformedContent = createMalformedYAML();
 
-    // @ts-ignore, ignore the error for wrong data type
+    // @ts-expect-error – testing unknown category
 
     await expect(convertTools(malformedContent)).rejects.toThrow();
   });
