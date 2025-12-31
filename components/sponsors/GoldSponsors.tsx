@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import { goldSponsors } from './GoldSponsorsList';
 import SponsorImage from './SponsorImage';
@@ -16,7 +17,7 @@ interface GoldSponsorsProps {
  */
 export default function GoldSponsors({ className = '' }: GoldSponsorsProps): React.ReactNode {
   return (
-    <div className={`text-center ${className}`}>
+    <div className={twMerge('text-center', className)}>
       <div className='mb-8 flex flex-wrap items-center justify-center md:px-4'>
         {goldSponsors.map((sponsor, index) => (
           <a

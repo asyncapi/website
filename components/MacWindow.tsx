@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 interface IMacWindowProps {
   className?: string;
@@ -16,7 +17,7 @@ interface IMacWindowProps {
  */
 export default function MacWindow({ className = '', contentClassName = '', title, children }: IMacWindowProps) {
   return (
-    <div className={`${className} rounded`} data-testid='MacWindow-main'>
+    <div className={twMerge('rounded', className)} data-testid='MacWindow-main'>
       <div className='flex px-4 py-2 text-left' data-testid='MacWindow-div'>
         <div>
           <span className='mr-2 inline-block size-2.5 rounded-full bg-mac-window-close'></span>
@@ -38,7 +39,7 @@ export default function MacWindow({ className = '', contentClassName = '', title
           <span className='mr-2 inline-block size-2.5'></span>
         </div>
       </div>
-      <div className={`${contentClassName} px-4 pb-4`}>{children}</div>
+      <div className={twMerge('px-4 pb-4', contentClassName)}>{children}</div>
     </div>
   );
 }

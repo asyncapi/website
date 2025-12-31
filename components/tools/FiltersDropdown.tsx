@@ -37,7 +37,7 @@ export default function FiltersDropdown({
 
   return (
     <div
-      className={twMerge(`max-w-lg flex gap-2 flex-wrap p-2 duration-200 delay-150 ${className}`)}
+      className={twMerge('max-w-lg flex gap-2 flex-wrap p-2 duration-200 delay-150', className)}
       data-testid='FiltersDropdown-div'
     >
       {dataList.map((data, index) => {

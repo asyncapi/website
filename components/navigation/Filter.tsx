@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import Select from '../form/Select';
 import { applyFilterList, onFilterApply } from '../helpers/applyFilter';
@@ -79,7 +80,7 @@ export default function Filter({ data, onFilter, checks, className }: FilterProp
           }
         }}
         selected={selected}
-        className={`${className} md:mr-4`}
+        className={twMerge('md:mr-4', className)}
       />
     );
   });

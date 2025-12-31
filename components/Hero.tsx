@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
@@ -30,7 +31,7 @@ export default function Hero({ className = '' }: HeroProps) {
   return (
     <>
       <AnnouncementHero className='my-4' />
-      <header className={`mt-12 px-2 ${className}`}>
+      <header className={twMerge('mt-12 px-2', className)}>
         <div className='text-center'>
           <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.xl} className='mb-4'>
             {t('main.header')} <span className='block md:-mt-4'> {t('main.subHeader')}</span>

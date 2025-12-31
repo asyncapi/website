@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import { ButtonSize } from '@/types/components/buttons/ButtonPropsType';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
@@ -51,7 +52,9 @@ export default function HomeCards({ headline, title, description, btnText, link,
           </div>
         </div>
       </div>
-      <div className={`h-fit-content flex w-full justify-end rounded-r-lg bg-cover bg-center md:w-3/6 ${className}`} />
+      <div
+        className={twMerge('h-fit-content flex w-full justify-end rounded-r-lg bg-cover bg-center md:w-3/6', className)}
+      />
     </div>
   );
 }

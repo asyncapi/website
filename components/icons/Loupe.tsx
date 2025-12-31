@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 /* eslint-disable max-len */
 /**
@@ -14,7 +15,7 @@ export default function IconLoupe({ className = '' }) {
       strokeWidth='2'
       strokeLinecap='round'
       strokeLinejoin='round'
-      className={`${className} flex-none`}
+      className={twMerge('flex-none', className)}
       aria-hidden='true'
     >
       <path d='m19 19-3.5-3.5' />

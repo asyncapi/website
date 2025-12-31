@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import NavItemDropdown from '../icons/NavItemDropdown';
 
@@ -41,9 +42,11 @@ export default function NavItem({
         href={href}
         target={target}
         rel='noopener noreferrer'
-        className={`${className} font-body text-base font-semibold leading-6 text-gray-700 transition duration-150 ease-in-out hover:text-gray-900 focus:text-gray-900 focus:outline-none ${
+        className={twMerge(
+          className,
+          'font-body text-base font-semibold leading-6 text-gray-700 transition duration-150 ease-in-out hover:text-gray-900 focus:text-gray-900 focus:outline-none',
           router.pathname.startsWith(href) ? 'text-black' : 'text-gray-700'
-        }`}
+        )}
       >
         {text}
       </Link>
@@ -52,10 +55,14 @@ export default function NavItem({
 
   // Object 'attrs' defines HTML element attributes, including event handlers and styling classes.
   // 'onClick' and 'onMouseEnter' handle events, 'className' defines styling with hover and focus effects.
+  const baseClassName = twMerge(
+    className,
+    'group inline-flex items-center space-x-2 font-body text-base leading-6 font-semibold hover:text-gray-900 focus:outline-none focus:text-gray-900 tracking-heading transition ease-in-out duration-150'
+  );
   const attrs = {
     onClick,
     onMouseEnter,
-    className: `${className} group inline-flex items-center space-x-2 font-body text-base leading-6 font-semibold hover:text-gray-900 focus:outline-none focus:text-gray-900 tracking-heading transition ease-in-out duration-150`
+    className: baseClassName
   };
 
   if (href) {
@@ -63,7 +70,7 @@ export default function NavItem({
       <Link
         href={href}
         {...attrs}
-        className={`${attrs.className} ${router.pathname.startsWith(href) ? 'text-black' : 'text-gray-700'}`}
+        className={twMerge(attrs.className, router.pathname.startsWith(href) ? 'text-black' : 'text-gray-700')}
         target={target}
         data-testid='NavItem-Link'
       >
@@ -74,7 +81,7 @@ export default function NavItem({
   }
 
   return (
-    <button type='button' {...attrs} className={`${attrs.className} text-gray-700`}>
+    <button type='button' {...attrs} className={twMerge(attrs.className, 'text-gray-700')}>
       <span>{text}</span>
       {hasDropdown && <NavItemDropdown />}
     </button>
