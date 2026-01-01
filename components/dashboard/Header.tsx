@@ -30,7 +30,8 @@ export default function Header() {
           target='_blank'
         />
         <GithubButton text='View on Github' className='lg:mt-0' />
-        <SlackButton className='lg:mt-0' />
+        <SlackButton className='lg:mt-0'
+          href='https://join.slack.com/t/asyncapi/shared_invite/zt-3mdikt8oy-qBVhDMe23Q54FXE58vzEIA'/>
       </div>
     </div>
   );
