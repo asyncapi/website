@@ -171,6 +171,7 @@
     "remark-lint": "^10.0.0",
     "remark-mdx": "^3.0.1",
     "storybook": "^8.6.12",
+    "ts-node": "^10.9.2",
     "tsx": "^4.19.4",
     "typescript": "^5.3.3"
   }
