@@ -32,7 +32,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
     if (descriptionRef.current) {
       setIsTruncated(descriptionRef.current?.scrollHeight! > descriptionRef.current?.clientHeight!);
     }
-  }, [descriptionRef.current]);
+  }, []);
 
   let onGit = false;
 
@@ -91,7 +91,9 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
               >
                 <span
                   ref={descriptionRef}
-                  className={`line-clamp-3 inline-block ${isTruncated && 'after:ml-1 after:content-["..."]'}`}
+                  className={`line-clamp-3 inline-block ${
+                    isTruncated && 'after:ml-1 after:content-["..."]'
+                  }`}
                 >
                   {toolData.description}
                 </span>
