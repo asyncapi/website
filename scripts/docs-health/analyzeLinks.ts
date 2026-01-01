@@ -5,7 +5,7 @@ import { HealthIssue } from './types';
 // Simple regex to catch [text](link)
 const LINK_REGEX = /\[([^\]]+)\]\(([^)]+)\)/g;
 
-export function analyzeLinks(filePath: string, allFiles: string[]): HealthIssue[] {
+export function analyzeLinks(filePath: string): HealthIssue[] {
     const issues: HealthIssue[] = [];
     const content = fs.readFileSync(filePath, 'utf8');
     const dir = path.dirname(filePath);
