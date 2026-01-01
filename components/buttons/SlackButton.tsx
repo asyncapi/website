@@ -9,22 +9,20 @@ import Button from './Button';
 interface ISlackButtonProps extends IButtonDefaultProps {}
 
 /**
- * @description The SlackButton component is a button that links to the AsyncAPI Slack channel.
+ * SlackButton component always opens AsyncAPI Slack invite in a new tab.
  */
-export default function SlackButton({
-  text = 'Join on Slack',
-  href = 'https://www.asyncapi.com/slack-invite',
-  target = '_blank',
-  iconPosition = ButtonIconPosition.LEFT,
-  className = ''
-}: ISlackButtonProps) {
+export default function SlackButton({ text = 'Join on Slack', className = '' }: ISlackButtonProps) {
+  const href = 'https://www.asyncapi.com/slack-invite';
+
   return (
     <Button
+      as='a'
+      href={href}
       text={text}
       icon={<IconSlack className='-mt-1 inline-block size-6 p-0.5' />}
-      href={href}
-      iconPosition={iconPosition}
-      target={target}
+      iconPosition={ButtonIconPosition.LEFT}
+      target='_blank'
+      rel='noopener noreferrer'
       className={className}
       data-testid='Slack-button'
       bgClassName='bg-slack hover:bg-slack-light'

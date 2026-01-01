@@ -102,6 +102,7 @@ export default function HomePage() {
                   </div>
                   <div className='mt-5 flex justify-center lg:justify-start'>
                     <Button
+                      as='a'
                       className='w-full md:w-auto'
                       text={t('community.slackCTABtn')}
                       href='https://www.asyncapi.com/slack-invite'
