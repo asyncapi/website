@@ -130,28 +130,45 @@ export default function NewsletterSubscribe({
       {status === 'loading' ? (
         <Loader loaderText={'Waiting for response...'} loaderIcon={<IconCircularLoader dark />} dark={dark} />
       ) : (
-        <form className='flex flex-col gap-4 md:flex-row' onSubmit={handleSubmit}>
-          <InputBox
-            inputType={InputTypes.TEXT}
-            inputName='name'
-            placeholder={ready ? t('nameInput') : 'Your name'}
-            inputValue={name}
-            setInput={setName}
-          />
-          <InputBox
-            inputType={InputTypes.EMAIL}
-            inputName='email'
-            placeholder={ready ? t('emailInput') : 'Your email'}
-            inputValue={email}
-            setInput={setEmail}
-          />
-          <Button
-            type={ButtonType.SUBMIT}
-            text={ready ? t('subscribeBtn') : 'Subscribe'}
-            className='mt-2 w-full md:mr-2 md:mt-0 md:flex-1'
-            href=''
-          />
-        </form>
+        <form 
+  className="
+    w-full flex flex-col gap-4 md:flex-row
+    [&>div]:!w-full md:[&>div]:!w-auto
+    [&_input]:!w-full
+    [&_input]:!border
+    [&_input]:!border-purple-600
+    [&_input]:!bg-gray-100
+    [&_input]:!placeholder-gray-500
+    [&_input]:!pl-4
+    [&_input]:!py-3
+    [&_input]:rounded
+  "
+  onSubmit={handleSubmit}
+>
+  <InputBox
+    inputType={InputTypes.TEXT}
+    inputName="name"
+    placeholder={ready ? t('nameInput') : 'Your name'}
+    inputValue={name}
+    setInput={setName}
+  />
+
+  <InputBox
+    inputType={InputTypes.EMAIL}
+    inputName="email"
+    placeholder={ready ? t('emailInput') : 'Your email'}
+    inputValue={email}
+    setInput={setEmail}
+  />
+
+  <Button
+    type={ButtonType.SUBMIT}
+    text={ready ? t('subscribeBtn') : 'Subscribe'}
+    className="mt-2 w-full md:mr-2 md:mt-0 md:flex-1"
+    href=''
+  />
+</form>
+
       )}
     </div>
   );
