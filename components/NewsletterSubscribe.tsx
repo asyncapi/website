@@ -171,6 +171,7 @@ export default function NewsletterSubscribe({
     type={ButtonType.SUBMIT}
     text={ready ? t('subscribeBtn') : 'Subscribe'}
     className="mt-2 w-full md:mr-2 md:mt-0 md:flex-1"
+    href='undefined'
   />
 </form>
 
