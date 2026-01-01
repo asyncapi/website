@@ -131,8 +131,10 @@ export default function NewsletterSubscribe({
         <Loader loaderText={'Waiting for response...'} loaderIcon={<IconCircularLoader dark />} dark={dark} />
       ) : (
        <form
-  className="
+  className={`
     w-full flex flex-col gap-4 md:flex-row
+    ${dark ? 'dark' : ''}
+
     [&_input]:w-full
     [&_input]:border
     [&_input]:border-primary-600
@@ -145,12 +147,13 @@ export default function NewsletterSubscribe({
     [&_input]:focus:ring-2
     [&_input]:focus:ring-primary-400
 
-    dark:[&_input]:bg-gray-300
+    dark:[&_input]:bg-gray-800
     dark:[&_input]:border-primary-500
-    dark:[&_input]:placeholder-black
-  "
+    dark:[&_input]:placeholder-gray-400
+  `}
   onSubmit={handleSubmit}
 >
+
   <InputBox
     inputType={InputTypes.TEXT}
     inputName="name"
