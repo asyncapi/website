@@ -183,7 +183,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             <NavItem
               text='Docs'
               href='/docs'
-              onClick={() => showOnClickMenu('learning')}
+              onDropdownClick={() => showOnClickMenu('learning')}
               onMouseEnter={() => showMenu('learning')}
               hasDropdown
             />
@@ -194,7 +194,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             <NavItem
               text='Tools'
               href='/tools'
-              onClick={() => showOnClickMenu('tooling')}
+              onDropdownClick={() => showOnClickMenu('tooling')}
               onMouseEnter={() => showMenu('tooling')}
               hasDropdown
             />
@@ -205,7 +205,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             <NavItem
               text='Community'
               href='/community'
-              onClick={() => showOnClickMenu('community')}
+              onDropdownClick={() => showOnClickMenu('community')}
               onMouseEnter={() => showMenu('community')}
               hasDropdown
             />

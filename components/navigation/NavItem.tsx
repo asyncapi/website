@@ -10,6 +10,7 @@ interface NavItemProps {
   target?: string;
   onClick?: () => void;
   onMouseEnter?: () => void;
+  onDropdownClick?: () => void;
   hasDropdown?: boolean;
   className?: string;
 }
@@ -21,6 +22,7 @@ interface NavItemProps {
  * @param {string} [props.target='_self'] - The target attribute for the link.
  * @param {Function} [props.onClick] - Event handler for click event.
  * @param {Function} [props.onMouseEnter] - Event handler for mouse enter event.
+ * @param {Function} [props.onDropdownClick] - Event handler for dropdown arrow click.
  * @param {boolean} [props.hasDropdown=false] - Indicates if the navigation item has a dropdown menu.
  * @param {string} [props.className=''] - Additional CSS classes for styling.
  */
@@ -30,6 +32,7 @@ export default function NavItem({
   target = '_self',
   onClick = () => {},
   onMouseEnter = () => {},
+  onDropdownClick,
   hasDropdown = false,
   className = ''
 }: NavItemProps) {
@@ -60,16 +63,31 @@ export default function NavItem({
 
   if (href) {
     return (
-      <Link
-        href={href}
-        {...attrs}
-        className={`${attrs.className} ${router.pathname.startsWith(href) ? 'text-black' : 'text-gray-700'}`}
-        target={target}
-        data-testid='NavItem-Link'
-      >
-        <span>{text}</span>
-        {hasDropdown && <NavItemDropdown />}
-      </Link>
+      <div className='inline-flex items-center' onMouseEnter={onMouseEnter}>
+        <Link
+          href={href}
+          className={`group inline-flex items-center font-body text-base leading-6 font-semibold hover:text-gray-900 focus:outline-none focus:text-gray-900 tracking-heading transition ease-in-out duration-150 ${
+            router.pathname.startsWith(href) ? 'text-black' : 'text-gray-700'
+          } ${className}`}
+          target={target}
+          data-testid='NavItem-Link'
+        >
+          <span>{text}</span>
+        </Link>
+        {hasDropdown && (
+          <button
+            type='button'
+            onClick={(e) => {
+              e.preventDefault();
+              if (onDropdownClick) onDropdownClick();
+            }}
+            className='ml-2 text-gray-700 hover:text-gray-900 focus:outline-none'
+            aria-label='Toggle dropdown'
+          >
+            <NavItemDropdown />
+          </button>
+        )}
+      </div>
     );
   }
 
