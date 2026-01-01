@@ -24,3 +24,6 @@ coverage
 deno.lock
 cypress/videos
 cypress/screenshots
+
+# Generated documentation health report
+public/docs-health.json
