@@ -145,9 +145,9 @@ abbr[title] {
   transition: 0.2s;
 }
 
-.orbit > div {
+/* .orbit > div {
   cursor: pointer;
-}
+} */
 
 .orbit > div > img {
   border-radius: 100%;
