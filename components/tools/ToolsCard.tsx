@@ -91,9 +91,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
               >
                 <span
                   ref={descriptionRef}
-                  className={`line-clamp-3 inline-block ${
-                    isTruncated && 'after:ml-1 after:content-["..."]'
-                  }`}
+                  className={`line-clamp-3 inline-block ${isTruncated && 'after:ml-1 after:content-["..."]'}`}
                 >
                   {toolData.description}
                 </span>
