@@ -23,6 +23,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   useEffect(() => {
     initializeStorage();
   }, []);
+
   return (
     <AppContext.Provider value={{ path: router.asPath }}>
       {/* <MDXProvider components={mdxComponents}> */}
