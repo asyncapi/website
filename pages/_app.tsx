@@ -3,7 +3,7 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import AlgoliaSearch from '@/components/AlgoliaSearch';
 import ScrollButton from '@/components/buttons/ScrollButton';
@@ -13,11 +13,16 @@ import Layout from '@/components/layout/Layout';
 import NavBar from '@/components/navigation/NavBar';
 import StickyNavbar from '@/components/navigation/StickyNavbar';
 import AppContext from '@/context/AppContext';
+import { initializeStorage } from '@/utils/storage';
 
 /**
  * @description The MyApp component is the root component for the application.
  */
 function MyApp({ Component, pageProps, router }: AppProps) {
+  // Initialize storage on mount to prevent runtime errors from null values
+  useEffect(() => {
+    initializeStorage();
+  }, []);
   return (
     <AppContext.Provider value={{ path: router.asPath }}>
       {/* <MDXProvider components={mdxComponents}> */}
