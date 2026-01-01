@@ -176,7 +176,7 @@ export default function CommunityIndexPage() {
               actively contribute, collaborate, and mentor others on how to
               build with AsyncAPI."
           btnText='Join AsyncAPI slack'
-          link='https://asyncapi.com/slack-invite'
+          link='https://www.asyncapi.com/slack-invite'
           className='bg-channelCover'
         />
       </div>

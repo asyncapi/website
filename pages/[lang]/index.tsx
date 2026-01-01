@@ -101,8 +101,15 @@ export default function HomePage() {
                     <Paragraph className='mt-2'>{t('community.slackCTADesc')}</Paragraph>
                   </div>
                   <div className='mt-5 flex justify-center lg:justify-start'>
-                    <Button className='w-full md:w-auto' text={t('community.slackCTABtn')} href='/slack-invite' />
+                     <Button
+                          className='w-full md:w-auto'
+                           text={t('community.slackCTABtn')}
+                           href="https://www.asyncapi.com/slack-invite"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                     />
                   </div>
+
                 </section>
               </div>
 
