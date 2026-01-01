@@ -1,65 +1,38 @@
 import fs from 'fs';
 import matter from 'gray-matter';
-import { HealthIssue } from './types.js';
+import { HealthIssue } from './types';
 
-/**
- * Analyzes front-matter metadata in markdown files
- * Checks for required fields like title, description, etc.
- * @param filePath - Path to the markdown file
- * @returns Array of issues found
- */
 export function analyzeMetadata(filePath: string): HealthIssue[] {
     const issues: HealthIssue[] = [];
+    const content = fs.readFileSync(filePath, 'utf8');
 
     try {
-        const content = fs.readFileSync(filePath, 'utf-8');
         const { data } = matter(content);
 
-        // Check for required fields
-        if (!data.title || data.title.trim() === '') {
+        if (!data.title) {
             issues.push({
-                type: 'missing-title',
+                type: 'metadata',
                 file: filePath,
-                message: 'Missing or empty title in front-matter',
-                severity: 'high'
+                message: 'Missing "title" in frontmatter',
+                severity: 'high',
             });
         }
 
-        if (!data.description || data.description.trim() === '') {
+        if (!data.description) {
             issues.push({
-                type: 'missing-description',
+                type: 'metadata',
                 file: filePath,
-                message: 'Missing or empty description in front-matter',
-                severity: 'medium'
+                message: 'Missing "description" in frontmatter',
+                severity: 'medium',
             });
         }
 
-        // Check for excessively long titles
-        if (data.title && data.title.length > 100) {
-            issues.push({
-                type: 'long-title',
-                file: filePath,
-                message: `Title is too long (${data.title.length} characters, recommended max: 100)`,
-                severity: 'low'
-            });
-        }
-
-        // Check for excessively long descriptions
-        if (data.description && data.description.length > 200) {
-            issues.push({
-                type: 'long-description',
-                file: filePath,
-                message: `Description is too long (${data.description.length} characters, recommended max: 200)`,
-                severity: 'low'
-            });
-        }
-
-    } catch (error) {
+    } catch (e: any) {
         issues.push({
-            type: 'parse-error',
+            type: 'metadata',
             file: filePath,
-            message: `Failed to parse file: ${error instanceof Error ? error.message : 'Unknown error'}`,
-            severity: 'high'
+            message: `Failed to parse frontmatter: ${e.message}`,
+            severity: 'high',
         });
     }
 

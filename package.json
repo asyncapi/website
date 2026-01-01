@@ -26,6 +26,7 @@
     "test:md": "tsx scripts/markdown/check-markdown.ts",
     "test:editlinks": "tsx scripts/markdown/check-edit-links.ts",
     "test:locales": "tsx scripts/helpers/check-locales.ts",
+    "docs:health": "tsx scripts/docs-health/index.ts",
     "dev:storybook": "storybook dev -p 6006",
     "docs:health": "tsx scripts/docs-health/index.ts",
     "build:storybook": "storybook build"

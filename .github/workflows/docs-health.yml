@@ -1,0 +1,55 @@
+name: Documentation Health (Non-blocking)
+
+on:
+  pull_request:
+    paths:
+      - "markdown/**"
+      - "scripts/docs-health/**"
+      - "package.json"
+  push:
+    branches:
+      - main
+
+jobs:
+  docs-health:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run documentation health check
+        run: |
+          npm run docs:health || true
+
+      - name: Upload docs health report
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs-health-report
+          path: public/docs-health.json
+          if-no-files-found: ignore
+
+      - name: Print summary
+        run: |
+          if [ -f public/docs-health.json ]; then
+            echo "📊 Documentation Health Summary:"
+            node -e "
+              const r = require('./public/docs-health.json');
+              console.log('Files:', r.summary.totalFiles);
+              console.log('Issues:', r.summary.issues);
+              console.log('High:', r.summary.high);
+              console.log('Medium:', r.summary.medium);
+              console.log('Low:', r.summary.low);
+            "
+          else
+            echo '⚠️ No docs health report generated'
+          fi

@@ -1,0 +1,1187 @@
+{
+  "summary": {
+    "totalFiles": 237,
+    "issues": 196,
+    "high": 2,
+    "medium": 194,
+    "low": 0
+  },
+  "issues": [
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\000-onboarding\\ambassador-guide.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\000-onboarding\\docs-onboarding-checklist.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\000-onboarding\\documentarian-onboarding-guide.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\000-onboarding\\github-actions.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\000-onboarding\\how-to-contribute.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\000-onboarding\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "broken-link",
+      "file": "E:\\website\\markdown\\docs\\community\\000-onboarding\\index.md",
+      "message": "Broken internal link: ../../CONTRIBUTING.md",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\000-onboarding\\maintainer-guide.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\000-onboarding\\where-to-contribute.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\000-onboarding\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\010-contribution-guidelines\\Become-maintainer-in-existing-project.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\010-contribution-guidelines\\BOUNTY_PROGRAM.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\010-contribution-guidelines\\contribute-blog-post.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\010-contribution-guidelines\\contribute-to-docs.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\010-contribution-guidelines\\contribution-flow.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\010-contribution-guidelines\\create-new-docs-directories.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\010-contribution-guidelines\\git-workflow.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\010-contribution-guidelines\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\010-contribution-guidelines\\open-docs-pull-request.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\010-contribution-guidelines\\prerequisite-knowledge.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\010-contribution-guidelines\\recognize-contributors.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\010-contribution-guidelines\\recognizing-contributors-and-appointing-new-maintainers.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\010-contribution-guidelines\\technical-writer-contributor-responsibilities.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\010-contribution-guidelines\\tools-and-setup.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\010-contribution-guidelines\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\011-styleguide\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\011-styleguide\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\020-governance-and-policies\\AMBASSADOR_PROGRAM.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\020-governance-and-policies\\CHARTER.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\020-governance-and-policies\\donating-projects.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\020-governance-and-policies\\GOVERNANCE.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\020-governance-and-policies\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\020-governance-and-policies\\initiative-inventory.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\020-governance-and-policies\\introduction-of-changes-to-spec.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\020-governance-and-policies\\PROJECT_FUNDING.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\020-governance-and-policies\\travel-guide.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\020-governance-and-policies\\TSC_MEMBERSHIP.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\020-governance-and-policies\\TSC_VOTING_OVERVIEW.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\020-governance-and-policies\\voting.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\020-governance-and-policies\\WORKING_GROUPS.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\020-governance-and-policies\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\030-project-vision-strategy-goals\\2025_Community_Goals.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\030-project-vision-strategy-goals\\2025_marketing_strategy.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\030-project-vision-strategy-goals\\2026_Community_Goals.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\030-project-vision-strategy-goals\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\030-project-vision-strategy-goals\\ROADMAP.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\030-project-vision-strategy-goals\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\040-guides\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\040-guides\\keep-repository-settings-consistent.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\040-guides\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\050-mentorship-program\\asyncapi-mentorship-2022-project-ideas.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\050-mentorship-program\\asyncapi-mentorship-2023-project-ideas.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\050-mentorship-program\\asyncapi-mentorship-2024-project-ideas.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\050-mentorship-program\\asyncapi-mentorship-README.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\050-mentorship-program\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\050-mentorship-program\\insights.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\050-mentorship-program\\seasonofdocs-2022-README.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\050-mentorship-program\\seasonofdocs-2023-project-ideas.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\050-mentorship-program\\seasonofdocs-2023-README.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\050-mentorship-program\\summerofcode-2021-README.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\050-mentorship-program\\summerofcode-2023-asyncapi-gsoc-ideas-page.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\050-mentorship-program\\summerofcode-2024-asyncapi-gsoc-ideas-page.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\050-mentorship-program\\summerofcode-2025-asyncapi-gsoc-ideas-page.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\050-mentorship-program\\summerofcode-application-template.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\050-mentorship-program\\summerofcode-mentors-guideline.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\050-mentorship-program\\summerofcode-README.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\050-mentorship-program\\winterofcode-2023-README.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\050-mentorship-program\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\060-meetings-and-communication\\docs-community.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\060-meetings-and-communication\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\060-meetings-and-communication\\MEETINGS_ORGANIZATION.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\060-meetings-and-communication\\publishing-podcasts.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\060-meetings-and-communication\\slack-etiquette.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\060-meetings-and-communication\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\070-marketing\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\070-marketing\\social-media-communication-guidelines.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\070-marketing\\webinar_planning_template.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\070-marketing\\webinar_series_initiative.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\070-marketing\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\COC-incident-resolution-procedures.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\CODE_OF_CONDUCT_COMMITTEE.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\community-glossary.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\maintainership-guide\\amp-code-of-conduct.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\maintainership-guide\\amp-communications.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\maintainership-guide\\amp-contributor-application-review-process.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\maintainership-guide\\amp-contributor-benefits-and-expectations.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\maintainership-guide\\amp-contributor-how-to-apply.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\maintainership-guide\\amp-definitions.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\maintainership-guide\\amp-evaluation-checkin-process.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\maintainership-guide\\amp-evaluation-process.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\maintainership-guide\\amp-faq.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\maintainership-guide\\amp-mentor-onboarding-process.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\maintainership-guide\\amp-mentor-project-tips-and-submission.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\maintainership-guide\\amp-mentor-responsibilities-and-best-practices.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\maintainership-guide\\amp-mentor-support-and-escalation-path.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\maintainership-guide\\amp-organizer-volunteers.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\maintainership-guide\\amp-payments-disbursement.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\maintainership-guide\\amp-payments-eligibility.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\maintainership-guide\\amp-what-mentees-says.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\maintainership-guide\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\maintainership-guide\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\community\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\application.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\asyncapi-document\\add-server.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\asyncapi-document\\adding-bindings.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\asyncapi-document\\adding-channels.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\asyncapi-document\\adding-messages.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\asyncapi-document\\adding-operations.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\asyncapi-document\\define-payload.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\asyncapi-document\\dynamic-channel-address.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\asyncapi-document\\extending-specification.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\asyncapi-document\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\asyncapi-document\\reply-info.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\asyncapi-document\\reusability-with-traits.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\asyncapi-document\\reusable-parts.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\asyncapi-document\\securing-operations.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\asyncapi-document\\server-security.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\asyncapi-document\\structure.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\asyncapi-document\\tags.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\asyncapi-document\\variable-url.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\asyncapi-document\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\channel.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\consumer.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\message.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\producer.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\protocol.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\server.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\concepts\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\guides\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\guides\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\migration\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\migration\\migrating-to-v3.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\migration\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\reference\\bindings\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\reference\\bindings\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\reference\\extensions\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\reference\\extensions\\linkedin.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\reference\\extensions\\x.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\reference\\extensions\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\reference\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\reference\\specification\\v2.x.md",
+      "message": "Missing \"title\" in frontmatter",
+      "severity": "high"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\reference\\specification\\v2.x.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\reference\\specification\\v3.0.0.md",
+      "message": "Missing \"title\" in frontmatter",
+      "severity": "high"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\reference\\specification\\v3.0.0.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\reference\\specification\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\reference\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\cli\\architecture.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\cli\\autocompleteEnabled.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\cli\\context.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\cli\\github-action.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\cli\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\cli\\installation.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\cli\\metrics_collection.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\cli\\usage.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\cli\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\api.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\asyncapi-document.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\baked-in-templates.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\configuration-file.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\file-templates.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\generator-template-java.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\generator-template.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\hooks.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\installation-guide.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\model-generation.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\parser.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\react-render-engine.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\special-file-names.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\template-context.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\template-development.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\template.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\typescript-support.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\usage.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\using-private-template.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\versioning.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\generator\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tools\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tutorials\\getting-started\\asyncapi-documents.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tutorials\\getting-started\\coming-from-openapi.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tutorials\\getting-started\\event-driven-architectures.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tutorials\\getting-started\\hello-world.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tutorials\\getting-started\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tutorials\\getting-started\\request-reply.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tutorials\\getting-started\\security.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tutorials\\getting-started\\servers.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tutorials\\getting-started\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tutorials\\index.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tutorials\\kafka\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tutorials\\websocket\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\tutorials\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    },
+    {
+      "type": "metadata",
+      "file": "E:\\website\\markdown\\docs\\_section.md",
+      "message": "Missing \"description\" in frontmatter",
+      "severity": "medium"
+    }
+  ]
+}
