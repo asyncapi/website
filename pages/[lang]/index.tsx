@@ -104,9 +104,9 @@ export default function HomePage() {
                      <Button
                           className='w-full md:w-auto'
                            text={t('community.slackCTABtn')}
-                           href="https://www.asyncapi.com/slack-invite"
-                           target="_blank"
-                           rel="noopener noreferrer"
+                           href='https://www.asyncapi.com/slack-invite'
+                           target='_blank'
+                           rel='noopener noreferrer'
                      />
                   </div>
 
