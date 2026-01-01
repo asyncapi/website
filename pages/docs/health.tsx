@@ -1,22 +1,8 @@
 import { GetStaticProps } from 'next';
 import fs from 'fs';
 import path from 'path';
+import { HealthReport } from '../../scripts/docs-health/types.js';
 
-type HealthReport = {
-    summary: {
-        totalFiles: number;
-        issues: number;
-        high: number;
-        medium: number;
-        low: number;
-    };
-    issues: {
-        type: string;
-        file: string;
-        message: string;
-        severity: string;
-    }[];
-};
 
 export const getStaticProps: GetStaticProps = async () => {
     const filePath = path.join(process.cwd(), 'public', 'docs-health.json');
