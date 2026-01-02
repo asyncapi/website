@@ -1,7 +1,7 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "ALLOW-FROM https://www.youtube.com/"
+    X-Frame-Options = "SAMEORIGIN"
     Access-Control-Allow-Origin = "*"
 
 [build]
