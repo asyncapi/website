@@ -27,7 +27,7 @@ function run(): void {
     files.forEach((file, index) => {
         try {
             issues.push(...analyzeMetadata(file))
-            issues.push(...analyzeLinks(file, files))
+            issues.push(...analyzeLinks(file))
         } catch (error: any) {
             issues.push({
                 type: 'analyzer-error',
