@@ -2,11 +2,13 @@ import Link from 'next/link';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ButtonIconPosition, ButtonSize, ButtonType } from '@/types/components/buttons/ButtonPropsType';
+import {
+  ButtonIconPosition,
+  ButtonSize,
+  ButtonType,
+} from '@/types/components/buttons/ButtonPropsType';
 
 type IButtonProps = {
-  // eslint-disable-next-line prettier/prettier
-
   /** The text to be displayed on the button. */
   text: string;
 
@@ -33,15 +35,12 @@ type IButtonProps = {
 
   /** The target attribute for the anchor tag. Defaults to '_self'. */
   target?: string;
+
+  /** Optional href — presence decides Link vs button */
+  href?: string;
 } & (
-  | ({
-      // eslint-disable-next-line prettier/prettier
-      /** The href attribute for the anchor tag. */
-      href: string;
-    } & React.AnchorHTMLAttributes<HTMLAnchorElement>)
-  | ({
-      href?: undefined | null;
-    } & React.ButtonHTMLAttributes<HTMLButtonElement>)
+  | React.AnchorHTMLAttributes<HTMLAnchorElement>
+  | React.ButtonHTMLAttributes<HTMLButtonElement>
 );
 
 /**
@@ -62,27 +61,31 @@ export default function Button({
   buttonSize,
   ...props
 }: IButtonProps): React.ReactElement {
-  const smallButtonClasses = twMerge(`${bgClassName} ${textClassName} transition-all duration-500
+  const smallButtonClasses =
+    twMerge(`${bgClassName} ${textClassName} transition-all duration-500
                             ease-in-out rounded-md px-3 py-2 text-sm font-medium tracking-heading ${className || ''}`);
-  const classNames = twMerge(`${bgClassName} ${textClassName} transition-all duration-500 ease-in-out
+  const classNames =
+    twMerge(`${bgClassName} ${textClassName} transition-all duration-500 ease-in-out
                           rounded-md px-4 py-3 text-md font-semibold tracking-heading ${className || ''}`);
 
-  if (!props.href) {
+  if (!('href' in props) || !props.href) {
     return (
       <button
         {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}
         type={type}
-        className={buttonSize === ButtonSize.SMALL ? smallButtonClasses : classNames}
-        data-testid='Button-main'
+        className={
+          buttonSize === ButtonSize.SMALL ? smallButtonClasses : classNames
+        }
+        data-testid="Button-main"
       >
         {icon && iconPosition === ButtonIconPosition.LEFT && (
-          <span className='mr-2 inline-block' data-testid='Button-icon-left'>
+          <span className="mr-2 inline-block" data-testid="Button-icon-left">
             {icon}
           </span>
         )}
-        <span className='inline-block'>{text}</span>
+        <span className="inline-block">{text}</span>
         {icon && iconPosition === ButtonIconPosition.RIGHT && (
-          <span className='ml-2 inline-block' data-testid='Button-icon-right'>
+          <span className="ml-2 inline-block" data-testid="Button-icon-right">
             {icon}
           </span>
         )}
@@ -90,17 +93,27 @@ export default function Button({
     );
   }
 
+  const { href, ...linkProps } =
+    props as React.AnchorHTMLAttributes<HTMLAnchorElement>;
+
   return (
     <Link
-      {...props}
+      href={href!}
+      {...linkProps}
       target={target}
-      rel='noopener noreferrer'
-      className={buttonSize === ButtonSize.SMALL ? smallButtonClasses : classNames}
-      data-testid='Button-link'
+      rel="noopener noreferrer"
+      className={
+        buttonSize === ButtonSize.SMALL ? smallButtonClasses : classNames
+      }
+      data-testid="Button-link"
     >
-      {icon && iconPosition === ButtonIconPosition.LEFT && <span className='mr-2 inline-block'>{icon}</span>}
-      <span className='inline-block'>{text}</span>
-      {icon && iconPosition === ButtonIconPosition.RIGHT && <span className='ml-2 inline-block'>{icon}</span>}
+      {icon && iconPosition === ButtonIconPosition.LEFT && (
+        <span className="mr-2 inline-block">{icon}</span>
+      )}
+      <span className="inline-block">{text}</span>
+      {icon && iconPosition === ButtonIconPosition.RIGHT && (
+        <span className="ml-2 inline-block">{icon}</span>
+      )}
     </Link>
   );
 }
