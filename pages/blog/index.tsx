@@ -95,7 +95,7 @@ export default function BlogIndexPage() {
               />
               <a
                 href='/rss.xml'
-                className='text-secondary-500 underline hover:text-gray-800 font-medium transition ease-in-out duration-300'
+                className='ml-1 text-secondary-500 underline hover:text-gray-800 font-medium transition ease-in-out duration-300'
               >
                 RSS Feed
               </a>
