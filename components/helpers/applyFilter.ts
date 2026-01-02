@@ -1,13 +1,13 @@
-interface DataObject {
-  name: string;
-  [key: string]: string | Array<{ name: string } | string>;
+export interface DataObject {
+  name?: string;
+  [key: string]: unknown;
 }
 
 interface FilterCriteria {
   name: string;
 }
 
-interface Filter {
+export interface Filter {
   [key: string]: string;
 }
 
@@ -36,12 +36,12 @@ export function sortFilter(arr: { value: string }[]): { value: string }[] {
 /**
  * @description Apply filters to data and update the filters.
  * @param {FilterCriteria[]} checks - Array of filter criteria objects.
- * @param {DataObject[]} data - Array of data objects to filter.
+ * @param {T[]} data - Array of data objects to filter.
  * @param {(lists: { [key: string]: FilterOption[] }) => void} setFilters - Function to update the filters.
  */
-export const applyFilterList = (
+export const applyFilterList = <T extends DataObject>(
   checks: FilterCriteria[],
-  data: DataObject[],
+  data: T[],
   setFilters: (lists: { [key: string]: FilterOption[] }) => void
 ): void => {
   if (Object.keys(checks).length) {
@@ -124,13 +124,13 @@ export const applyFilterList = (
 
 /**
  * @description Apply filters to data and trigger the filter action.
- * @param {DataObject[]} inputData - Array of data objects to filter.
- * @param {(result: DataObject[], query: Filter) => void} onFilter - Function to apply the filter action.
+ * @param {T[]} inputData - Array of data objects to filter.
+ * @param {(result: T[], query: Filter) => void} onFilter - Function to apply the filter action.
  * @param {Filter} query - Filter criteria.
  */
-export const onFilterApply = (
-  inputData: DataObject[],
-  onFilter: (result: DataObject[], query: Filter) => void,
+export const onFilterApply = <T extends DataObject>(
+  inputData: T[],
+  onFilter: (result: T[], query: Filter) => void,
   query: Filter
 ): void => {
   let result = inputData;
