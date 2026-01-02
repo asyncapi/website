@@ -283,7 +283,6 @@ export default function AlgoliaSearch({ children }: { children: React.ReactNode 
  */
 export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISearchButtonProps) {
   const { onOpen, onInput } = useContext(SearchContext);
-  const [Children, setChildren] = useState<string | React.ReactNode>('');
   const searchButtonRef = useRef<HTMLButtonElement>(null);
   const actionKey = getActionKey();
 
@@ -309,14 +308,7 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISe
     };
   }, [onInput, searchButtonRef]);
 
-  useEffect(() => {
-    if (typeof children === 'function') {
-      setChildren(children({ actionKey }));
-    } else {
-      setChildren(children);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- Intentionally run on mount only
-  }, []);
+  const childContent = typeof children === 'function' ? children({ actionKey }) : children;
 
   return (
     <button
@@ -328,7 +320,7 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISe
       {...props}
       data-testid='Search-Button'
     >
-      {Children}
+      {childContent}
     </button>
   );
 }
