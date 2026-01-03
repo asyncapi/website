@@ -29,7 +29,7 @@ export default function AnnouncementRemainingDays({ dateTime, eventName }: Annou
   }
 
   return (
-    <span className='countdown-text-gradient block font-extrabold' data-testid='AnnouncementRemainingDays-text'>
+    <span className='countdown-text-gradient block font-extrabold' data-testid='AnnouncementRemainingDays-text' suppressHydrationWarning>
       {text} until {eventName}
     </span>
   );
