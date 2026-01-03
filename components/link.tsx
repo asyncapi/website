@@ -85,7 +85,7 @@ export const LinkText = ({
   href,
   children,
   target = '_self',
-  rel = ''
+  rel = '',
 }: LinkComponentProps) => {
   return (
     <Link href={href || ''} target={target} rel={rel}>
