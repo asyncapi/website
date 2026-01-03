@@ -19,13 +19,7 @@ interface LinkComponentProps {
  * @param {string} [props.locale] - The locale for the link.
  * @param {string} [props.href] - The URL the link points to.
  */
-export default function LinkComponent({
-  children,
-  locale,
-  target = '_self',
-  rel = '',
-  ...props
-}: LinkComponentProps) {
+export default function LinkComponent({ children, locale, target = '_self', rel = '', ...props }: LinkComponentProps) {
   const router = useRouter();
 
   // If there is no router available (e.g., during server-side rendering & cypress tests), render a standard Link
@@ -81,12 +75,7 @@ export default function LinkComponent({
   );
 }
 
-export const LinkText = ({
-  href,
-  children,
-  target = '_self',
-  rel = '',
-}: LinkComponentProps) => {
+export const LinkText = ({ href, children, target = '_self', rel = '' }: LinkComponentProps) => {
   return (
     <Link href={href || ''} target={target} rel={rel}>
       {children}
