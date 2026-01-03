@@ -28,10 +28,9 @@ export default function ToolsDashboard() {
   // filter parameters extracted from the context
   const { isPaid, isAsyncAPIOwner, languages, technologies, categories } = useContext(ToolFilterContext);
   const [searchName, setSearchName] = useState<string>(''); // state variable used to get the search name
-  // state variable used to check whether any tool is available according to the needs of the user.
-  const [checkToolsList, setCheckToolsList] = useState<boolean>(true);
 
   // useEffect function to enable the close Modal feature when clicked outside of the modal
+
   useEffect(() => {
     const checkIfClickOutside = (event: MouseEvent) => {
       if (openFilter && filterRef.current && !filterRef.current.contains(event.target as Node)) {
@@ -80,10 +79,6 @@ export default function ToolsDashboard() {
       // if no category is selected, then all tools are selected for further check on filters
       tempToolsList = JSON.parse(JSON.stringify(ToolsData));
     }
-
-    // checkToolsList is initially made false to check whether any tools are present according to the filters.
-    setCheckToolsList(false);
-
     // Each tool selected is then traversed to check against each filter variable (only if the filter is applied),
     // whether they match with the filter applied or not.
     Object.keys(tempToolsList).forEach((category) => {
@@ -134,10 +129,6 @@ export default function ToolsDashboard() {
 
         return isLanguageTool && isTechnologyTool && isSearchTool && isAsyncAPITool && isPaidTool;
       });
-
-      if (tempToolsList[category].toolsList.length) {
-        setCheckToolsList(true);
-      }
     });
 
     Object.keys(tempToolsList).map((category) => {
@@ -148,6 +139,11 @@ export default function ToolsDashboard() {
 
     return tempToolsList;
   }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, searchName]);
+
+  // helper function for checking if at least one tool exists after filtering
+  const checkToolsList = useMemo(() => {
+    return Object.values(toolsList).some((category) => category.toolsList.length > 0);
+  }, [toolsList]);
 
   // useEffect to scroll to the opened category when url has category as element id
   useEffect(() => {
@@ -163,7 +159,7 @@ export default function ToolsDashboard() {
         document.documentElement.style.scrollPaddingTop = '0';
       }
     }
-  }, []);
+  }, [toolsList]);
   // Function to update the list of tools according to the current filters applied
   const clearFilters = () => {
     setOpenFilter(false);
