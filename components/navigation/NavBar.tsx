@@ -244,15 +244,15 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
         </nav>
       </div>
 
-      {/* Mobile menu, show/hide based on mobile menu state. */}
-      {mobileMenuOpen && (
-        <MobileNavMenu
-          onClickClose={() => setMobileMenuOpen(false)}
-          uniqueLangs={uniqueLangs}
-          currentLanguage={i18n.language ? i18n.language : 'en'}
-          changeLanguage={changeLanguage}
-        />
-      )}
+      {/* Mobile menu */}
+      <MobileNavMenu
+        isOpen={mobileMenuOpen}
+        onClickClose={() => setMobileMenuOpen(false)}
+        uniqueLangs={uniqueLangs}
+        currentLanguage={i18n.language ? i18n.language : 'en'}
+        changeLanguage={changeLanguage}
+      />
+
     </div>
   );
 }
