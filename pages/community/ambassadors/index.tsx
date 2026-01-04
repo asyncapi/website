@@ -205,7 +205,7 @@ export default function Index() {
                 <Button
                   className='mt-5 block text-center focus:outline-none md:mt-10 md:inline-block md:w-[48%]'
                   text='Become an Ambassador now'
-                  href='https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/AMBASSADOR_PROGRAM.md#are-you-interested-in-becoming-an-official-asyncapi-ambassador'
+                  href='https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/AMBASSADOR_PROGRAM.md'
                   target='_blank'
                 />
                 <Button
