@@ -6,7 +6,7 @@ weight: 2
 
 The AsyncAPI technical writer onboarding guide teaches new community members how to contribute to our documentation effectively. 
 
-> For a comprehensive understanding of the various ways you can contribute to the AsyncAPI Initiative, please consult the [AsyncAPI contributing guidelines](../../CONTRIBUTING.md).
+> For a comprehensive understanding of the various ways you can contribute to the AsyncAPI Initiative, please consult the [AsyncAPI contribution guidelines](https://www.asyncapi.com/docs/community/010-contribution-guidelines).
 
 The goal is providing docs contributors with the necessary tools and knowledge to:
 
