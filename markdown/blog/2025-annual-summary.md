@@ -171,7 +171,7 @@ We had so many achievements this year, and here are a few highlights:
 - We transitioned and nominated our first [Governance Board](https://www.asyncapi.com/community/board).
 - We published our [second case study](https://www.asyncapi.com/casestudies/transfergo) by TransferGo.
 - The AsyncAPI Bounty Program turned 2 with over [36 issues resolved](https://github.com/orgs/asyncapi/projects/36/views/4?filterQuery=-no%3Alevel+status%3ACompleted).
-- We had six in-person conferences, one on, one conference, and over 30 speakers.
+- We had six in-person conferences, an online conference, and over 30 speakers.
 - Welcomed [two ambassadors](https://www.asyncapi.com/community/ambassadors) and introduced monthly meetings.
 - Expanded our [community docs](https://www.asyncapi.com/docs/community) and content.
 
