@@ -128,7 +128,7 @@ export default function GeneratorPage() {
                     </div>
                   </div>
                 </li>
-              </ul>        
+              </ul>
               <div className='mt-16 text-center'>{renderButtons()}</div>
             </div>
 
