@@ -74,16 +74,10 @@ export default function NewsletterSubscribe({
       .then(async (res) => {
         if (res.status === 200) {
           setFormStatus(FormStatus.SUCCESS);
-        } else if (res.status === 401) {
+        } else if (res.status === 503) {
           setFormStatus(FormStatus.SERVICE_UNAVAILABLE);
         } else {
           setFormStatus(FormStatus.ERROR);
-        }
-
-        try {
-          return await res.json();
-        } catch {
-          return null;
         }
       })
       .catch(() => {
