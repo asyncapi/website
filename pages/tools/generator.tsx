@@ -128,7 +128,8 @@ export default function GeneratorPage() {
                     </div>
                   </div>
                 </li>
-              </ul>
+              </ul>        
+              <div className='mt-16 text-center'>{renderButtons()}</div>
             </div>
 
             <div className='relative -mx-4 mt-10 lg:mt-0'>
@@ -138,7 +139,6 @@ export default function GeneratorPage() {
           </div>
         </div>
 
-        <div className='mt-16 text-center'>{renderButtons()}</div>
       </div>
     </GenericLayout>
   );
