@@ -8,7 +8,7 @@ As an open-source initiative with a global community, technical writer contribut
 
 Complete in order the following onboarding tasks:
 
-<input type="checkbox" disabled style={{ transform: 'scale(1.3)', marginRight: '8px' }} /> Read the [AsyncAPI Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).<br />
+<input type="checkbox" disabled style={{ transform: 'scale(1.3)', marginRight: '8px' }} /> Read the [AsyncAPI Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).<br /><br />
 <input type="checkbox" disabled style={{ transform: 'scale(1.3)', marginRight: '8px' }} /> Read the [AsyncAPI Slack etiquette](../060-meetings-and-communication/slack-etiquette).<br /><br /> 
 <input type="checkbox" disabled style={{ transform: 'scale(1.3)', marginRight: '8px' }} /> Join [the AsyncAPI Slack workspace](https://asyncapi.com/slack-invite).<br /><br />
 <input type="checkbox" disabled style={{ transform: 'scale(1.3)', marginRight: '8px' }} /> Add the AsyncAPI calendar found in [the AsyncAPI events page](https://www.asyncapi.com/community/events).<br /><br />
