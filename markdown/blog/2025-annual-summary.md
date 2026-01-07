@@ -66,14 +66,6 @@ We gained **945** followers on LinkedIn in 2025, bringing our overall following 
   className="text-center"
 />
 
-In 2025, referrals from LinkedIn to asyncapi.com showed a 9.5% increase in total users, indicating continued reach, while new users decreased by 2.5% and sessions dropped significantly by 66.9%, suggesting lower repeat engagement and fewer browsing interactions compared to 2024.
-
-<Figure
-  src="/img/posts/2025-blog-banner/referred-LinkedIn.webp"
-  caption="Website visits referred by LinkedIn"
-  className="text-center"
-/>
-
 ### YouTube
 We had **272** new subscribers to our YouTube channel this year, bringing our total subscribers to **1,983**. While our views and watch time dropped by 29% compared to last year, the community continues to grow and engage.
 
@@ -108,6 +100,8 @@ The overall site performance declined this year, with users by 4.4%, sessions by
   caption="Website visits each year."
   className="text-center"
 />
+
+The contributing factor leading to the drop in analytics is due to several factors, including users blocking tracking, privacy tools, and browser extensions. This trend affects the traffic recorded, and user behaviour data does not fully reflect the actual audience, as they’re excluded from the analytics reports.
 
 ## Google Search Console
 
