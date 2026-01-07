@@ -168,6 +168,7 @@ We had so many achievements this year, and here are a few highlights:
 - We had six in-person conferences, an online conference, and over 30 speakers.
 - Welcomed [two ambassadors](https://www.asyncapi.com/community/ambassadors) and introduced monthly meetings.
 - Expanded our [community docs](https://www.asyncapi.com/docs/community) and content.
+- Surpassed [5,000 stars on the Spec repo](https://github.com/asyncapi/spec/stargazers) in GitHub.
 
 
 These are just a few, but we have so much planned for 2026. Be sure [to read the community goals](https://www.asyncapi.com/docs/community/030-project-vision-strategy-goals/2026_Community_Goals) to gain insight into what we will be focusing on.
