@@ -53,7 +53,7 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 /asyncapi-react https://asyncapi.github.io/asyncapi-react 301!
 
 # Slack
-/slack-invite https://join.slack.com/t/asyncapi/shared_invite/zt-3io4bbs42-8E_iWOfMDQ0NnG9A3BAG9A 302!
+/slack-invite https://join.slack.com/t/asyncapi/shared_invite/zt-3m4pmrguv-SUN9Js4BkQHocIH54F59sA 302!
 
 # Central Maven repository verification
 /OSSRH-63280 https://github.com/asyncapi/java-asyncapi
@@ -70,3 +70,6 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 # Additional redirection
 /community/meetings /community/events 301!
 /cheatsheet https://github.com/asyncapi/website/tree/master/cheatsheet 302!
+
+# Short URLs
+/s/asyncapiv2 https://raw.githubusercontent.com/asyncapi/asyncapi/2.0.0/examples/2.0.0/streetlights.yml 301!
