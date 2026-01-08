@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useState } from 'react';
 
+import type { Filter as FilterType } from '@/components/helpers/applyFilter';
 import Empty from '@/components/illustrations/Empty';
 import GenericLayout from '@/components/layout/GenericLayout';
 import Loader from '@/components/Loader';
@@ -36,7 +37,8 @@ export default function BlogIndexPage() {
   );
   const [isClient, setIsClient] = useState(false);
 
-  const onFilter = (data: IBlogPost[]) => setPosts(data);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const onFilter = (data: IBlogPost[], _query: FilterType) => setPosts(data);
   const toFilter = [
     {
       name: 'type'
@@ -93,7 +95,13 @@ export default function BlogIndexPage() {
                 height='18px'
                 width='18px'
               />
-              <TextLink href='/rss.xml'> RSS Feed</TextLink>, too!
+              <a
+                href='/rss.xml'
+                className='ml-1 text-secondary-500 underline hover:text-gray-800 font-medium transition ease-in-out duration-300'
+              >
+                RSS Feed
+              </a>
+              {', too!'}
             </Paragraph>
           </div>
           <div className='mx:64 mt-12 md:flex md:justify-center lg:justify-center'>
