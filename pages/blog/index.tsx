@@ -25,14 +25,14 @@ export default function BlogIndexPage() {
   const [posts, setPosts] = useState<IBlogPost[]>(
     navItems
       ? navItems.sort((i1: IBlogPost, i2: IBlogPost) => {
-        const i1Date = new Date(i1.date);
-        const i2Date = new Date(i2.date);
+          const i1Date = new Date(i1.date);
+          const i2Date = new Date(i2.date);
 
-        if (i1.featured && !i2.featured) return -1;
-        if (!i1.featured && i2.featured) return 1;
+          if (i1.featured && !i2.featured) return -1;
+          if (!i1.featured && i2.featured) return 1;
 
-        return i2Date.getTime() - i1Date.getTime();
-      })
+          return i2Date.getTime() - i1Date.getTime();
+        })
       : []
   );
   const [isClient, setIsClient] = useState(false);
