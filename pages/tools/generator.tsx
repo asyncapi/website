@@ -138,7 +138,6 @@ export default function GeneratorPage() {
             </div>
           </div>
         </div>
-
       </div>
     </GenericLayout>
   );
