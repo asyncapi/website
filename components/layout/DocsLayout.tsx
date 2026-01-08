@@ -127,7 +127,6 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
           {sidebar}
           <div className='flex w-0 max-w-full flex-1 flex-col lg:max-w-(screen-16)'>
             <main className='relative z-0 pb-6 pt-2 focus:outline-none md:py-6' tabIndex={0}>
-              <DocsNavigationShortcuts post={post} />
               {!showMenu && (
                 <div className='lg:hidden'>
                   <button
@@ -153,6 +152,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                   <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg}>
                     {post.title}
                   </Heading>
+                  <DocsNavigationShortcuts post={post} />
                   <div>
                     <p className='font-normal font-sans text-sm text-gray-600 antialiased'>
                       Found an error? Have a suggestion?
