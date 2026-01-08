@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 
 import type { Filter as FilterType } from '@/components/helpers/applyFilter';
 import Empty from '@/components/illustrations/Empty';
@@ -25,20 +25,20 @@ export default function BlogIndexPage() {
   const [posts, setPosts] = useState<IBlogPost[]>(
     navItems
       ? navItems.sort((i1: IBlogPost, i2: IBlogPost) => {
-          const i1Date = new Date(i1.date);
-          const i2Date = new Date(i2.date);
+        const i1Date = new Date(i1.date);
+        const i2Date = new Date(i2.date);
 
-          if (i1.featured && !i2.featured) return -1;
-          if (!i1.featured && i2.featured) return 1;
+        if (i1.featured && !i2.featured) return -1;
+        if (!i1.featured && i2.featured) return 1;
 
-          return i2Date.getTime() - i1Date.getTime();
-        })
+        return i2Date.getTime() - i1Date.getTime();
+      })
       : []
   );
   const [isClient, setIsClient] = useState(false);
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const onFilter = (data: IBlogPost[], _query: FilterType) => setPosts(data);
+  const onFilter = useCallback((data: IBlogPost[], _query: FilterType) => setPosts(data), []);
   const toFilter = [
     {
       name: 'type'
