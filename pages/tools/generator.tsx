@@ -28,6 +28,21 @@ function renderButtons(): React.JSX.Element {
     </div>
   );
 }
+/**
+ * @description Render the buttons for the Generator page.
+ */
+function renderCenteredButtons(): React.JSX.Element {
+  return (
+    <div className='mt-8 flex flex-col gap-4 md:flex-row md:flex-wrap md:justify-center lg:justify-center'>
+      <GithubButton
+        text='View on Github'
+        className='w-full text-center md:w-auto md:text-left'
+        href='https://www.github.com/asyncapi/generator'
+      />
+      <Button text='View Docs' href='/docs/tools/generator' className='w-full text-center md:w-auto md:text-left' />
+    </div>
+  );
+}
 
 /**
  * @description The Generator page component.
@@ -135,7 +150,7 @@ export default function GeneratorPage() {
               <img className='relative mx-auto mt-8 rounded shadow-lg' src='/img/tools/generator-2.png' alt='' />
             </div>
           </div>
-          <div className='mt-16 text-center'>{renderButtons()}</div>
+          <div className='mt-16 text-center'>{renderCenteredButtons()}</div>
         </div>
       </div>
     </GenericLayout>
