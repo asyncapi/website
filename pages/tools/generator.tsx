@@ -27,7 +27,7 @@ function renderButtons(centered: boolean = false): React.JSX.Element {
         className={`w-full${buttonTextAlign}`}
         href='https://www.github.com/asyncapi/generator'
       />
-      <Button text='View Docs' href='/docs/tools/generator' className={`w-full ${buttonTextAlign}`}  />
+      <Button text='View Docs' href='/docs/tools/generator' className={`w-full ${buttonTextAlign}`} />
     </div>
   );
 }
