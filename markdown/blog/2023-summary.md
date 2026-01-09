@@ -155,7 +155,7 @@ We achieved so much this year, and here are some of the highlights from the Asyn
 - We launched the [AsyncAPI Bounty Program](https://github.com/asyncapi/community/pull/897/files#diff-25ecb20a61754c225d6511ca08d7e7c9a14b9ca5a93e89bd42331e51c9ebf26dR155), where we successfully resolved and paid out a total of 11 out of 16 issues during the initial trial and 2023 Q4 round.
 - Established our very first [AsyncAPI Code of Conduct Committee](https://github.com/orgs/asyncapi/discussions/682#discussioncomment-7498209).
 - Barbaño González shared a detailed article on [Why Women Are Underrepresented In Open-Source](https://thenewstack.io/why-women-are-underrepresented-in-open-source/).
-- Participated in [GSoC'23](https://github.com/orgs/asyncapi/discussions/997) and [GSoD'23](https://github.com/orgs/asyncapi/discussions/961), while kickstarting the [AsyncAPI Mentorship Program II](https://github.com/asyncapi/community/blob/master/docs/050-mentorship-program/asyncapi-mentorship-README.md).
+- Participated in [GSoC'23](https://github.com/orgs/asyncapi/discussions/997) and [GSoD'23](https://github.com/orgs/asyncapi/discussions/961), while kickstarting the [AsyncAPI Mentorship Program II](https://github.com/asyncapi/community/blob/master/docs/050-mentorship-program/asyncapi-mentorship-2023-project-ideas.md).
 - Held our first in-person [AsyncAPI Conference on Tour](https://conference.asyncapi.com/) in London, Madrid, Bangalore and Paris.
 - Released the [AsyncAPI v3](https://www.asyncapi.com/blog/release-notes-3.0.0).
 - Launched the [AsyncAPI Store](https://asyncapi-store.com/).
