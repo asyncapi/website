@@ -20,6 +20,7 @@ import Paragraph from '../../components/typography/Paragraph';
 function renderButtons(centered: boolean = false): React.JSX.Element {
   const justifyClass = centered ? 'md:justify-center' : 'lg:justify-start';
   const buttonTextAlign = centered ? 'text-center md:w-auto' : 'text-center md:w-auto md:text-left';
+  
   return (
     <div className={`mt-8 flex flex-col gap-4 md:flex-row md:flex-wrap ${justifyClass}`}>
       <GithubButton
