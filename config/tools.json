@@ -2844,33 +2844,6 @@
       },
       {
         "title": "HTML Template",
-        "description": null,
-        "links": {
-          "repoUrl": "https://github.com/dipaksodani/async-gen"
-        },
-        "filters": {
-          "language": [
-            {
-              "name": "JavaScript",
-              "color": "bg-[#F2F1C7]",
-              "borderColor": "border-[#BFBE86]"
-            }
-          ],
-          "technology": [
-            {
-              "name": "HTML",
-              "color": "bg-[#61d0f2]",
-              "borderColor": "border-[#40ccf7]"
-            }
-          ],
-          "categories": [
-            "generator-template"
-          ],
-          "hasCommercial": false
-        }
-      },
-      {
-        "title": "HTML Template",
         "description": "HTML template for AsyncAPI Generator. Use it to generate a static docs. It is using AsyncAPI React component under the hood.",
         "links": {
           "repoUrl": "https://github.com/asyncapi/html-template"
@@ -2901,6 +2874,33 @@
         "description": null,
         "links": {
           "repoUrl": "https://github.com/WSOL12/html-template"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "JavaScript",
+              "color": "bg-[#F2F1C7]",
+              "borderColor": "border-[#BFBE86]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "HTML",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "generator-template"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "HTML Template",
+        "description": null,
+        "links": {
+          "repoUrl": "https://github.com/dipaksodani/async-gen"
         },
         "filters": {
           "language": [
