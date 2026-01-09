@@ -129,14 +129,13 @@ export default function GeneratorPage() {
                   </div>
                 </li>
               </ul>
-              <div className='mt-16 text-center'>{renderButtons()}</div>
             </div>
-
             <div className='relative -mx-4 mt-10 lg:mt-0'>
               <img className='relative mx-auto rounded shadow-lg' src='/img/tools/generator-1.png' alt='' />
               <img className='relative mx-auto mt-8 rounded shadow-lg' src='/img/tools/generator-2.png' alt='' />
             </div>
           </div>
+          <div className='mt-16 text-center'>{renderButtons()}</div>
         </div>
       </div>
     </GenericLayout>
