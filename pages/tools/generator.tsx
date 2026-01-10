@@ -25,7 +25,7 @@ function renderButtons(centered: boolean = false): React.JSX.Element {
     <div className={`mt-8 flex flex-col gap-4 md:flex-row md:flex-wrap ${justifyClass}`}>
       <GithubButton
         text='View on Github'
-        className={`w-full${buttonTextAlign}`}
+        className={`w-full ${buttonTextAlign}`}
         href='https://www.github.com/asyncapi/generator'
       />
       <Button text='View Docs' href='/docs/tools/generator' className={`w-full ${buttonTextAlign}`} />
