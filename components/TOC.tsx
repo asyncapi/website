@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Scrollspy from 'react-scrollspy';
 import { twMerge } from 'tailwind-merge';
-
+import { useRouter } from 'next/router';
 import ArrowRight from './icons/ArrowRight';
 
 interface ITOCProps {
@@ -26,6 +26,7 @@ interface ITOCProps {
  * @param {number} props.depth - The depth of the table of contents
  */
 export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSelector, depth = 2 }: ITOCProps) {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
 
   if (!toc || !toc.length) return null;
@@ -87,6 +88,7 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
       </div>
       <div className={`${!open && 'hidden'} ${cssBreakingPoint === 'xl' ? 'xl:block' : 'lg:block'}`}>
         <Scrollspy
+        key = {router.asPath}
           items={tocItems.map((item) => (item.slug ? item.slug : item.slugWithATag))}
           currentClassName='text-primary-500 font-bold'
           componentTag='div'
