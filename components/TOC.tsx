@@ -1,7 +1,8 @@
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import Scrollspy from 'react-scrollspy';
 import { twMerge } from 'tailwind-merge';
-import { useRouter } from 'next/router';
+
 import ArrowRight from './icons/ArrowRight';
 
 interface ITOCProps {
@@ -88,7 +89,7 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
       </div>
       <div className={`${!open && 'hidden'} ${cssBreakingPoint === 'xl' ? 'xl:block' : 'lg:block'}`}>
         <Scrollspy
-        key = {router.asPath}
+          key={router.asPath}
           items={tocItems.map((item) => (item.slug ? item.slug : item.slugWithATag))}
           currentClassName='text-primary-500 font-bold'
           componentTag='div'
