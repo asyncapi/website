@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { HeadingTypeStyle } from '@/types/typography/Heading';
 
@@ -12,19 +12,22 @@ import { initiativeLinks, socialMediaLinks } from './FooterList';
  * @description The Footer component is the footer for the application.
  */
 export default function Footer() {
+  const [netlifyImageError, setNetlifyImageError] = useState(false);
+
   return (
     <footer className='margin: 0 auto mt-12 bg-dark'>
       <div className='mx-auto max-w-screen-xl divide-y divide-cool-gray overflow-hidden px-3 py-4 sm:p-6 md:py-12 lg:px-8 xl:py-16'>
         <nav className='flex flex-wrap justify-between py-4 sm:py-10'>
           <div className='mr-14 w-full md:w-auto'>
-            <div className=''>
+            <div>
               <Link href='/' aria-label='AsyncAPI'>
                 <span className='cursor-pointer' data-testid='Footer-logo-link'>
                   <AsyncAPILogoLight className='mt-3 h-10 w-auto' />
                 </span>
               </Link>
             </div>
-            <div className=''>
+
+            <div>
               <Heading className='mb-14 mt-12 text-white' typeStyle={HeadingTypeStyle.smSemibold}>
                 Building the future of <br /> Event-Driven Architectures.
               </Heading>
@@ -34,10 +37,8 @@ export default function Footer() {
           <div className='flex flex-col sm:flex-row'>
             <div className='flex'>
               <div className='mb-5 px-0 lg:ml-5 lg:px-10'>
-                <div className='py-2'>
-                  <div className='text-white'>
-                    <Heading typeStyle={HeadingTypeStyle.smSemibold}>The Initiative</Heading>
-                  </div>
+                <div className='py-2 text-white'>
+                  <Heading typeStyle={HeadingTypeStyle.smSemibold}>The Initiative</Heading>
                 </div>
                 <ul className='justify-center'>
                   {initiativeLinks.map((link: InitiativeLink, index: number) => (
@@ -53,16 +54,17 @@ export default function Footer() {
               </div>
 
               <div className='mb-5 px-14 sm:ml-10 sm:px-8 md:ml-5'>
-                <div className='py-2'>
-                  <div className='text-white'>
-                    <Heading typeStyle={HeadingTypeStyle.smSemibold}>News</Heading>
-                  </div>
+                <div className='py-2 text-white'>
+                  <Heading typeStyle={HeadingTypeStyle.smSemibold}>News</Heading>
                 </div>
                 <ul className='justify-center'>
                   <li className='py-2'>
-                    <div className='text-base leading-6 text-cool-gray transition duration-300 ease-in-out hover:text-white'>
-                      <a href='mailto:info@asyncapi.com'>Email Us</a>
-                    </div>
+                    <a
+                      href='mailto:info@asyncapi.com'
+                      className='text-base leading-6 text-cool-gray transition duration-300 ease-in-out hover:text-white'
+                    >
+                      Email Us
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -109,14 +111,22 @@ export default function Footer() {
               </a>
             </p>
           </div>
+
           <div className='mt-8 block sm:mt-0'>
             <p className='block text-sm leading-6'>
               <a href='https://netlify.com' target='_blank' rel='noopener noreferrer'>
-                <img
-                  src='https://www.netlify.com/img/global/badges/netlify-color-bg.svg'
-                  className='inline'
-                  alt='Deploys by Netlify'
-                />
+                {!netlifyImageError ? (
+                  <img
+                    src='https://www.netlify.com/img/global/badges/netlify-color-bg.svg'
+                    alt='Deploys by Netlify'
+                    className='inline'
+                    onError={() => setNetlifyImageError(true)}
+                  />
+                ) : (
+                  <span className='inline-flex items-center rounded border border-cool-gray px-2 py-1 text-sm text-cool-gray'>
+                    Deploys by Netlify
+                  </span>
+                )}
               </a>
             </p>
           </div>
