@@ -1,4 +1,4 @@
-class BasePage {
+class BaseFooterPage {
   visit() {
     cy.visit('/');
   }
@@ -12,4 +12,4 @@ class BasePage {
   }
 }
 
-export default BasePage;
+export default BaseFooterPage;
