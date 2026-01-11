@@ -115,17 +115,17 @@ export default function Footer() {
           <div className='mt-8 block sm:mt-0'>
             <p className='block text-sm leading-6'>
               <a href='https://netlify.com' target='_blank' rel='noopener noreferrer'>
-                {!netlifyImageError ? (
+                {netlifyImageError ? (
+                  <span className='inline-flex items-center rounded border border-cool-gray px-2 py-1 text-sm text-cool-gray'>
+                    Deploys by Netlify
+                  </span>
+                ) : (
                   <img
                     src='https://www.netlify.com/img/global/badges/netlify-color-bg.svg'
                     alt='Deploys by Netlify'
                     className='inline'
                     onError={() => setNetlifyImageError(true)}
                   />
-                ) : (
-                  <span className='inline-flex items-center rounded border border-cool-gray px-2 py-1 text-sm text-cool-gray'>
-                    Deploys by Netlify
-                  </span>
                 )}
               </a>
             </p>
