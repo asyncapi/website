@@ -1,6 +1,7 @@
 language: "en-US"
 reviews:
   high_level_summary: true
+  instructions: "Please diligently check for duplicate or similar issues in the repository before analyzing the current issue/PR. If a similar issue exists, please reference it explicitly in your review."
   tools:
     markdownlint:
       enabled: true
