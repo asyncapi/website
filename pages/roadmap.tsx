@@ -1,19 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
-import YouTubeEmbed from '../components/YouTubeEmbed';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 import InlineHelp from '../components/InlineHelp';
 import GenericLayout from '../components/layout/GenericLayout';
+import Modal from '../components/Modal';
 import RoadmapColumn from '../components/roadmap/RoadmapColumn';
 import type { RoadmapItem } from '../components/roadmap/types';
 import Heading from '../components/typography/Heading';
 import Paragraph from '../components/typography/Paragraph';
 import TextLink from '../components/typography/TextLink';
 import Warning from '../components/Warning';
-import Modal from '../components/Modal';
+import YouTubeEmbed from '../components/YouTubeEmbed';
 
 interface RoadmapData {
   outcomes: {
@@ -58,7 +58,11 @@ const solutions: Record<string, Solution> = {
           <li>
             In JS, it's able to hot reload when the AsyncAPI file changes or the business logic changes. Even in
             production! For more information, read{' '}
-            <a href='https://twitter.com/ScriptedAlchemy/status/1373743197453656065' target='_blank'>
+            <a
+              href='https://twitter.com/ScriptedAlchemy/status/1373743197453656065'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               this tweet
             </a>{' '}
             and reach out to @ScriptedAlchemy for collaboration, as he is implementing something similar.
@@ -684,55 +688,81 @@ export default function RoadmapPage() {
 
             <div className='mx-auto lg:w-1/2'>
               <div
-                className="relative w-full aspect-video cursor-pointer group overflow-hidden rounded-lg shadow-lg bg-gray-100"
+                role='button'
+                tabIndex={0}
+                aria-label='Play AsyncAPI SIG meeting 51 video'
+                className='relative w-full aspect-video cursor-pointer group overflow-hidden rounded-lg shadow-lg bg-gray-100'
                 onClick={() => {
                   setCurrentVideoId('u83V2gIUGHU');
                   setVideoModalOpen(true);
                 }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setCurrentVideoId('u83V2gIUGHU');
+                    setVideoModalOpen(true);
+                  }
+                }}
               >
                 {/* Thumbnail Image */}
                 <img
-                  src="https://img.youtube.com/vi/u83V2gIUGHU/maxresdefault.jpg"
-                  alt="AsyncAPI SIG meeting 51"
-                  className="w-full h-full object-cover"
+                  src='https://img.youtube.com/vi/u83V2gIUGHU/maxresdefault.jpg'
+                  alt='AsyncAPI SIG meeting 51'
+                  className='w-full h-full object-cover'
                 />
 
                 {/* Top Gradient Overlay */}
                 <div
-                  className="absolute top-0 left-0 w-full h-32 pointer-events-none z-10"
+                  className='absolute top-0 left-0 w-full h-32 pointer-events-none z-10'
                   style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)' }}
                 />
 
                 {/* Top Bar: Channel Info */}
-                <div className="absolute top-4 left-4 flex items-center z-20 font-sans pointer-events-none">
-                  <a href="https://www.youtube.com/@AsyncAPI" target="_blank" rel="noopener noreferrer" className="mr-3 pointer-events-auto" onClick={(e) => e.stopPropagation()}>
+                <div className='absolute top-4 left-4 flex items-center z-20 font-sans pointer-events-none'>
+                  <a
+                    href='https://www.youtube.com/@AsyncAPI'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='mr-3 pointer-events-auto'
+                    onClick={(e) => e.stopPropagation()}
+                  >
                     <img
-                      src="https://github.com/asyncapi.png"
-                      alt="AsyncAPI"
-                      className="w-10 h-10 rounded-full shadow-md"
+                      src='https://github.com/asyncapi.png'
+                      alt='AsyncAPI'
+                      className='w-10 h-10 rounded-full shadow-md'
                     />
                   </a>
-                  <div className="flex flex-col">
-                    <a href="https://www.youtube.com/@AsyncAPI" target="_blank" rel="noopener noreferrer" className="text-white text-lg font-medium leading-tight drop-shadow-md hover:underline pointer-events-auto" onClick={(e) => e.stopPropagation()}>
+                  <div className='flex flex-col'>
+                    <a
+                      href='https://www.youtube.com/@AsyncAPI'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='text-white text-lg font-medium leading-tight drop-shadow-md hover:underline pointer-events-auto'
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       AsyncAPI
                     </a>
                   </div>
                 </div>
 
                 {/* Center Play Button */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
-                  <div className="w-16 h-11 bg-[#FF0000] rounded-[20%] flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-200">
-                    <svg className="w-6 h-6 text-white fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                <div className='absolute inset-0 flex items-center justify-center pointer-events-none z-10'>
+                  <div
+                    className='w-16 h-11 bg-[#FF0000] rounded-[20%] flex items-center justify-center
+                    shadow-2xl group-hover:scale-110 transition-transform duration-200'
+                  >
+                    <svg className='w-6 h-6 text-white fill-current ml-1' viewBox='0 0 24 24'>
+                      <path d='M8 5v14l11-7z' />
+                    </svg>
                   </div>
                 </div>
               </div>
 
               {videoModalOpen && (
-                <Modal title="AsyncAPI Video" onModalClose={() => setVideoModalOpen(false)}>
+                <Modal title='AsyncAPI Video' onModalClose={() => setVideoModalOpen(false)}>
                   <YouTubeEmbed id={currentVideoId} appendSrc='?start=86' />
                 </Modal>
               )}
-
             </div>
 
             <Warning
