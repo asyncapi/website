@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react';
-import YouTubeEmbed from 'react-youtube-embed';
+import React, { useState } from 'react';
+import YouTubeEmbed from '../components/YouTubeEmbed';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
@@ -13,6 +13,7 @@ import Heading from '../components/typography/Heading';
 import Paragraph from '../components/typography/Paragraph';
 import TextLink from '../components/typography/TextLink';
 import Warning from '../components/Warning';
+import Modal from '../components/Modal';
 
 interface RoadmapData {
   outcomes: {
@@ -487,6 +488,9 @@ export default function RoadmapPage() {
   const description: string = 'Long-term vision and plans for the AsyncAPI Initiative.';
   const image: string = '/img/social/website-card.jpg';
 
+  const [videoModalOpen, setVideoModalOpen] = useState(false);
+  const [currentVideoId, setCurrentVideoId] = useState('');
+
   if (Object.keys(roadmapData).length === 0) {
     return <GenericLayout title='Vision & Roadmap' description={description} image={image} wide></GenericLayout>;
   }
@@ -679,15 +683,64 @@ export default function RoadmapPage() {
             </Paragraph>
 
             <div className='mx-auto lg:w-1/2'>
-              <YouTubeEmbed id='u83V2gIUGHU' appendSrc='?start=86' />
+              <div
+                className="relative w-full aspect-video cursor-pointer group overflow-hidden rounded-lg shadow-lg bg-gray-100"
+                onClick={() => {
+                  setCurrentVideoId('u83V2gIUGHU');
+                  setVideoModalOpen(true);
+                }}
+              >
+                {/* Thumbnail Image */}
+                <img
+                  src="https://img.youtube.com/vi/u83V2gIUGHU/maxresdefault.jpg"
+                  alt="AsyncAPI SIG meeting 51"
+                  className="w-full h-full object-cover"
+                />
+
+                {/* Top Gradient Overlay */}
+                <div
+                  className="absolute top-0 left-0 w-full h-32 pointer-events-none z-10"
+                  style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)' }}
+                />
+
+                {/* Top Bar: Channel Info */}
+                <div className="absolute top-4 left-4 flex items-center z-20 font-sans pointer-events-none">
+                  <a href="https://www.youtube.com/@AsyncAPI" target="_blank" rel="noopener noreferrer" className="mr-3 pointer-events-auto" onClick={(e) => e.stopPropagation()}>
+                    <img
+                      src="https://github.com/asyncapi.png"
+                      alt="AsyncAPI"
+                      className="w-10 h-10 rounded-full shadow-md"
+                    />
+                  </a>
+                  <div className="flex flex-col">
+                    <a href="https://www.youtube.com/@AsyncAPI" target="_blank" rel="noopener noreferrer" className="text-white text-lg font-medium leading-tight drop-shadow-md hover:underline pointer-events-auto" onClick={(e) => e.stopPropagation()}>
+                      AsyncAPI
+                    </a>
+                  </div>
+                </div>
+
+                {/* Center Play Button */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+                  <div className="w-16 h-11 bg-[#FF0000] rounded-[20%] flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-200">
+                    <svg className="w-6 h-6 text-white fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </div>
+                </div>
+              </div>
+
+              {videoModalOpen && (
+                <Modal title="AsyncAPI Video" onModalClose={() => setVideoModalOpen(false)}>
+                  <YouTubeEmbed id={currentVideoId} appendSrc='?start=86' />
+                </Modal>
+              )}
+
             </div>
 
             <Warning
               className='mx-auto mt-8 lg:w-1/2'
               title='Warning for Contributors'
               description="This roadmap reflects the priorities of the AsyncAPI Initiative. If you want to
-               contribute a feature from the roadmap, feel free to let us know on the corresponding GitHub issue
-               so we can discuss what's the best way to proceed and implement it yourself."
+              contribute a feature from the roadmap, feel free to let us know on the corresponding GitHub issue
+              so we can discuss what's the best way to proceed and implement it yourself."
             />
           </div>
         </div>
