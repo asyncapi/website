@@ -14,39 +14,25 @@ authors:
 excerpt: 'AsyncAPI VS Code Preview extension is now web-compatible. Preview AsyncAPI files directly in your browser using vscode.dev or github.dev.'
 ---
 
-For years, the AsyncAPI VS Code Preview extension has been helping developers visualize and work with AsyncAPI documents directly inside VS Code. But until now, you needed a full desktop installation of VS Code to use it.
+For years, the AsyncAPI VS Code Preview extension has been helping developers visualize and work with AsyncAPI documents directly inside VS Code. But there was always one limitation: you needed VS Code installed on your machine.
 
-With this release, the extension is now fully web-compatible. That means:
-
-✨ **Open any GitHub repo in vscode.dev or GitHub.dev**, and you can instantly preview AsyncAPI files in your browser.
-🌐 **No local setup required** — just your browser and an internet connection.
-🔄 **Works consistently across desktop and web**, providing the same preview experience.
+Not anymore! We've made the extension fully web-compatible, which means you can now open any GitHub repository in vscode.dev or github.dev and instantly preview AsyncAPI files right in your browser. No downloads, no local setup – just open and preview.
 
 ## What Changed Under the Hood?
 
-Making the extension web-compatible required several technical improvements:
+Making the extension web-compatible required some technical changes:
 
-- **Removed Node.js-specific modules** like `fs`, `path`, and external dependencies that are incompatible with browsers
-- **Introduced lightweight browser utilities** (`pathUtils`) for cross-platform file handling
-- **Removed EDAVisualizer integration** (unmaintained, incompatible with web mode)
+- **Introduced lightweight browser utilities** like `pathUtils` for cross-platform file handling
 - **Updated VS Code dependencies** (`vscode` and `@types/vscode`) to ensure web extension compatibility
+- **Removed Node.js-specific modules** like `fs`, `path`, and other dependencies that don't work in browsers
+- **Removed EDAVisualizer integration** since it's unmaintained and incompatible with web mode
 
-## Why Does This Matter?
+## Why This Is a Big Deal
 
-AsyncAPI adoption is growing quickly, and many contributors explore specs directly from GitHub repositories. Web compatibility lowers the barrier for:
+This change removes a major friction point for AsyncAPI adoption. Think about it: how many times have you wanted to quickly check an AsyncAPI file in a GitHub repo but didn't want to go through the hassle of cloning it locally?
 
-📖 **Contributors reviewing AsyncAPI specs on GitHub** - No need to clone repos locally just to preview files
-🚀 **Teams adopting AsyncAPI in cloud-first workflows** - Work entirely in the browser
-💡 **New users experimenting** without needing to install VS Code
+Now contributors can review specs directly on GitHub, teams working in cloud-first environments don't need local VS Code installations, and newcomers can experiment with AsyncAPI without any setup. It's especially useful for open-source maintainers who spend a lot of time reviewing specs in pull requests.
 
-This is a **huge usability improvement** that makes AsyncAPI more accessible to everyone. Whether you're working with public repositories or have access to private ones, you can now preview AsyncAPI files directly from GitHub with just a few clicks!
-
-## How to Try It Out
-
-1. Open any repo with AsyncAPI files on [vscode.dev](https://vscode.dev)
-2. Install the AsyncAPI Preview extension (now web-compatible)
-3. Open a `.yaml` or `.json` file and run **AsyncAPI: Preview Document** from the Command Palette
-4. That's it! Your AsyncAPI docs will render beautifully in your browser
 
 ## Demo
 
@@ -56,31 +42,18 @@ Watch the AsyncAPI VS Code Preview extension working seamlessly in your web brow
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JcS1VRyYmhE?si=DlqqYs3PmJtROTvF" title="AsyncAPI VS Code Preview Web Demo - Browser Extension Walkthrough" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-**Accessibility Note:** This video includes visual demonstrations of the AsyncAPI extension interface. For a text-based description of the steps shown, please refer to the "How to Try It Out" section above.
+**Accessibility Note:** This video includes visual demonstrations of the AsyncAPI extension interface. For a text-based description of the steps shown, please refer to the "Try It Out" section below.
 
-## Spreading the Word
+## Looking Forward
 
-This web compatibility represents a significant step forward for AsyncAPI tooling accessibility. Here's how we can make the community aware of this improvement:
-
-- **Share your experience** on social media when you try the web extension
-- **Demonstrate it during team meetings** to show how easy AsyncAPI adoption can be
-- **Contribute to discussions** in the AsyncAPI community Slack about web-based tooling
-- **Write about your use cases** and how web compatibility improves your workflow
+This web compatibility opens up some interesting possibilities we hadn't considered before. Educators can now easily demonstrate AsyncAPI concepts without asking students to install anything. Open-source projects get more contributors because the barrier to reviewing and understanding specs is much lower. Remote teams can collaborate on AsyncAPI files without worrying about everyone having the same local setup.
 
 ## Maintenance Mode
 
-This extension is now in maintenance mode:
+A quick note: this extension is now in maintenance mode. We'll keep it working and updated, but we're not planning major new features. That said, if you run into bugs or have ideas for improvements, community contributions are always welcome!
 
-- We'll continue updating dependencies and ensuring compatibility
-- No new major features are planned currently
-- Community contributions for bug fixes and improvements are welcome
+## Try It Out
 
-## What's Next?
+If you want to see this in action, head over to [vscode.dev](https://vscode.dev) and open any repo with AsyncAPI files. Install the AsyncAPI Preview extension, open a `.yaml` or `.json` file, and run "AsyncAPI: Preview Document" from the Command Palette. You'll have beautiful rendered docs in seconds.
 
-We're excited to bring AsyncAPI Preview into the browser, making it even easier for developers to adopt and explore AsyncAPI. This web compatibility opens up new possibilities for:
-
-- **educational content** - Easier to demonstrate AsyncAPI concepts
-- **open-source contributions** - Lower barrier for reviewing and contributing to AsyncAPI projects
-- **remote collaboration** - Teams can work with AsyncAPI files without local setup requirements
-
-Give it a try on [vscode.dev](https://vscode.dev) today, and let us know what you think in the [AsyncAPI community Slack](https://www.asyncapi.com/slack-invite). Your feedback helps us continue improving the AsyncAPI developer experience!
+We'd love to hear how this works for you! Drop by the [AsyncAPI community Slack](https://www.asyncapi.com/slack-invite) and let us know if you find any issues or have suggestions for improvements.
