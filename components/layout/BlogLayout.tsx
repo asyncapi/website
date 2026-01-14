@@ -88,7 +88,31 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
           </header>
           <article className='mb-32'>
             <Head title={post.title} description={post.excerpt} image={post.cover} />
-            <HtmlHead>{post.canonical && <link rel='canonical' href={post.canonical} />}</HtmlHead>
+            <HtmlHead>
+              <script
+                type='text/javascript'
+                src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cb852c7b57ed596'
+                async
+              />
+              <style>{`
+                /* AddThis hack */
+
+                #at4-share {
+                    left: 50%;
+                    margin-left: -500px !important;
+                    position: absolute;
+
+                    &amp;.addthis-animated {
+                      animation-duration: 0s !important;
+                    }
+                }
+
+                #at4-scc {
+                    display: none !important;
+                }
+              `}</style>
+              {post.canonical && <link rel='canonical' href={post.canonical} />}
+            </HtmlHead>
             <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className='my-6 w-full' />
             {children}
           </article>
