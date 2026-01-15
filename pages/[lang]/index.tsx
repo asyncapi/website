@@ -153,14 +153,14 @@ export default function HomePage() {
           </Container>
 
           <Container className='pb-6 text-center' wide as='section'>
-            <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
+            <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mb-4 mt-8'>
               {t('sponsors.goldTitle')}
             </Heading>
             <GoldSponsors className='mt-4' showSupportBanner={false} />
           </Container>
 
-          <Container className='pyb-6 text-center' wide as='section'>
-            <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
+          <Container className='pb-6 text-center' wide as='section'>
+            <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mb-4 mt-8'>
               {t('sponsors.silverTitle')}
             </Heading>
             <SilverSponsors className='mt-4' showSupportBanner={false} />
