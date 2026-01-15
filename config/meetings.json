@@ -1,12 +1,5 @@
 [
   {
-    "title": "Marketing WG Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=MnNmMmtnbzI2MDdicXZmbWtsMnYyZWNrYTAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/1925",
-    "banner": "",
-    "date": "2025-10-06T14:00:00.000Z"
-  },
-  {
     "title": "AsyncAPI Online Conference 2025",
     "calLink": "https://www.google.com/calendar/event?eid=MzBrbmNtbDRqYWcyMDQ2YmwycTE0bTRpYmcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/2077",
