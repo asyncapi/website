@@ -23,7 +23,10 @@ const Toggle = ({
       />
       <div
         className={twMerge(
-          `w-11 h-6 ${bgColor} peer-focus:outline-none rounded-full peer after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all ${checked ? `after:translate-x-full after:border-white ${checkedStateBgColor}` : ''}`
+          "w-11 h-6 peer-focus:outline-none rounded-full peer after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all",
+          bgColor,
+          checked && 'after:translate-x-full after:border-white',
+          checked && checkedStateBgColor
         )}
       ></div>
       {label && <div className='ml-2 text-sm font-medium'>{label}</div>}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import { Silversponsors } from './SilverSponsorsList';
 import SponsorImage from './SponsorImage';
@@ -16,7 +17,7 @@ interface SilverSponsorsProps {
  */
 export default function SilverSponsors({ className = '' }: SilverSponsorsProps): React.ReactNode {
   return (
-    <div className={`text-center ${className}`}>
+    <div className={twMerge('text-center', className)}>
       <div className='mb-8 flex flex-wrap items-center justify-center md:px-4'>
         {Silversponsors.map((sponsor, index) => (
           <a
