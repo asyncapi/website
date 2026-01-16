@@ -3,18 +3,12 @@
 import React from 'react';
 
 import RoadmapItem from './RoadmapItem';
+import type { RoadmapItem as RoadmapItemType } from './types';
 
 interface IRoadmapListProps {
   colorClass: string;
   className?: string;
-  items?: {
-    solutions?: any[];
-    implementations?: any[];
-    done?: boolean;
-    url?: string;
-    description?: string;
-    title: string;
-  }[];
+  items?: RoadmapItemType[];
   showConnector?: boolean;
   collapsed?: boolean;
   childrenCollapsed?: boolean;

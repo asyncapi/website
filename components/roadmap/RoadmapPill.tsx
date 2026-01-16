@@ -29,7 +29,7 @@ interface IPillProps {
   item: {
     done?: boolean;
     url?: string;
-    description?: string;
+    description?: string | React.ReactNode;
     title: string;
   };
   colorClass?: string;
