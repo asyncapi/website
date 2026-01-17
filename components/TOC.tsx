@@ -62,13 +62,14 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
       )}
     >
       <button
+        type='button'
         className={`flex cursor-pointer ${tocItems.length ? '' : 'hidden'}
         ${cssBreakingPoint === 'xl' ? 'xl:cursor-auto' : 'lg:cursor-auto'} xl:mt-2`}
         onClick={() => setOpen(!open)}
         aria-expanded={open}
         aria-label='Toggle table of contents'
       >
-        <h5
+        <span
           className={twMerge(
             `${open && 'mb-4'} flex-1 text-primary-500 font-medium uppercase tracking-wide text-sm font-sans antialiased ${
               cssBreakingPoint === 'xl'
@@ -79,13 +80,13 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
           data-testid='TOC-Heading'
         >
           On this page
-        </h5>
-        <div className={`text-underline p4 text-center ${cssBreakingPoint === 'xl' ? 'xl:hidden' : 'lg:hidden'}`}>
+        </span>
+        <span className={`text-underline p4 text-center ${cssBreakingPoint === 'xl' ? 'xl:hidden' : 'lg:hidden'}`}>
           <ArrowRight
             className={`${open ? '-rotate-90' : 'rotate-90'} -mt-0.5 h-6 
             text-primary-500 transition duration-200 ease-in-out`}
           />
-        </div>
+        </span>
       </button>
       <div className={`${!open && 'hidden'} ${cssBreakingPoint === 'xl' ? 'xl:block' : 'lg:block'}`}>
         <Scrollspy
