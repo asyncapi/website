@@ -114,7 +114,7 @@ export default function Footer() {
               <a href='https://netlify.com' target='_blank' rel='noopener noreferrer'>
                 <img
                   src='https://www.netlify.com/img/global/badges/netlify-color-bg.svg'
-                  className='inline'
+                  className='inline-block align-middle ml-3 text-sm font-medium text-cool-gray'
                   alt='Deploys by Netlify'
                 />
               </a>
