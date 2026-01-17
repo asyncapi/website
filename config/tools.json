@@ -2454,30 +2454,6 @@
             }
           ],
           "categories": [
-            "others",
-            "cli"
-          ],
-          "hasCommercial": false
-        }
-      },
-      {
-        "title": "AsyncAPI CLI",
-        "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
-        "links": {
-          "websiteUrl": "https://www.asyncapi.com/tools/cli",
-          "repoUrl": "https://github.com/hkirat/asyncapi-fork"
-        },
-        "filters": {
-          "language": [],
-          "technology": [
-            {
-              "name": "TypeScript",
-              "color": "bg-[#61d0f2]",
-              "borderColor": "border-[#40ccf7]"
-            }
-          ],
-          "categories": [
-            "others",
             "cli"
           ],
           "hasCommercial": false
@@ -3177,55 +3153,9 @@
       }
     ]
   },
-  "Others": {
+  "Others":{
     "description": "The following is a list of tools that comes under Other category.",
     "toolsList": [
-      {
-        "title": "AsyncAPI CLI",
-        "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
-        "links": {
-          "websiteUrl": "https://www.asyncapi.com/tools/cli",
-          "repoUrl": "https://github.com/asyncapi/cli"
-        },
-        "filters": {
-          "language": [],
-          "technology": [
-            {
-              "name": "TypeScript",
-              "color": "bg-[#61d0f2]",
-              "borderColor": "border-[#40ccf7]"
-            }
-          ],
-          "categories": [
-            "others",
-            "cli"
-          ],
-          "hasCommercial": false
-        }
-      },
-      {
-        "title": "AsyncAPI CLI",
-        "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
-        "links": {
-          "websiteUrl": "https://www.asyncapi.com/tools/cli",
-          "repoUrl": "https://github.com/hkirat/asyncapi-fork"
-        },
-        "filters": {
-          "language": [],
-          "technology": [
-            {
-              "name": "TypeScript",
-              "color": "bg-[#61d0f2]",
-              "borderColor": "border-[#40ccf7]"
-            }
-          ],
-          "categories": [
-            "others",
-            "cli"
-          ],
-          "hasCommercial": false
-        }
-      }
     ]
   }
 }
