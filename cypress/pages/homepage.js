@@ -1,3 +1,5 @@
+import AmbassadorsPage from './ambassadors';
+import TSCPage from './tscpage';
 import CaseStudiesPage from './CaseStudiesPage';
 import DocsPage from './DocsPage';
 import RoadmapPage from './RoadmapPage';
@@ -139,6 +141,16 @@ class HomePage {
   goToRoadmapPage() {
     cy.contains('a', 'Roadmap').click();
     return new RoadmapPage();
+  }
+
+  goToTSCPage() {
+    cy.visit('/community/tsc');
+    return new TSCPage();
+  }
+
+  goToAmbassadorsPage() {
+    cy.visit('/community/ambassadors');
+    return new AmbassadorsPage();
   }
 }
 
