@@ -678,7 +678,7 @@ export default function RoadmapPage() {
             </Paragraph>
 
             <div className='mx-auto lg:w-1/2'>
-              <YouTubeEmbed id='u83V2gIUGHU' appendSrc='?start=86' />
+              <YouTubeEmbed id='u83V2gIUGHU' appendSrc='?start=86&rel=0' />
             </div>
 
             <Warning
