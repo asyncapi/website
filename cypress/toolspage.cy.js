@@ -13,21 +13,15 @@ describe('Tools Page E2E Tests', () => {
 
   Object.entries(toolsData).forEach(([sectionName, linksData]) => {
     describe(`${sectionName} section`, () => {
-      it('verifies Website links', () => {
-        (linksData.WebsiteLinks || []).forEach((link) => {
-          toolsPage.verifyWebsiteLinks(link.href, link.heading);
-        });
-      });
+      const linkTypes = [
+        { name: 'Website', links: linksData.WebsiteLinks, verifyFn: (link) => toolsPage.verifyWebsiteLinks(link.href, link.heading) },
+        { name: 'GitHub', links: linksData.GithubLinks, verifyFn: (link) => toolsPage.verifyGithubLinks(link.href, link.heading) },
+        { name: 'Docs', links: linksData.DocsLinks, verifyFn: (link) => toolsPage.verifyDocsLinks(link.href, link.heading) }
+      ];
 
-      it('verifies GitHub links', () => {
-        (linksData.GithubLinks || []).forEach((link) => {
-          toolsPage.verifyGithubLinks(link.href, link.heading);
-        });
-      });
-
-      it('verifies Docs links', () => {
-        (linksData.DocsLinks || []).forEach((link) => {
-          toolsPage.verifyDocsLinks(link.href, link.heading);
+      linkTypes.forEach(({ name, links, verifyFn }) => {
+        it(`verifies ${name} links`, () => {
+          (links || []).forEach(verifyFn);
         });
       });
     });
