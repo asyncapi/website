@@ -8,6 +8,7 @@ import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 import InlineHelp from '../components/InlineHelp';
 import GenericLayout from '../components/layout/GenericLayout';
 import RoadmapColumn from '../components/roadmap/RoadmapColumn';
+import type { RoadmapItem } from '../components/roadmap/types';
 import Heading from '../components/typography/Heading';
 import Paragraph from '../components/typography/Paragraph';
 import TextLink from '../components/typography/TextLink';
@@ -15,9 +16,9 @@ import Warning from '../components/Warning';
 
 interface RoadmapData {
   outcomes: {
-    now: any[];
-    later: any[];
-    future: any[];
+    now: RoadmapItem[];
+    later: RoadmapItem[];
+    future: RoadmapItem[];
   };
 }
 
