@@ -1,0 +1,28 @@
+{
+    "newsletterCTA": {
+        "title": "订阅我们的新闻通讯以接收有关 AsyncAPI 的新闻。",
+        "subtitle": "我们承诺只发送有用内容，没有垃圾邮件。 ✌️",
+        "nameInput": "你的名字",
+        "emailInput": "你的邮箱",
+        "subscribeBtn": "订阅",
+        "successTitle": "感谢你的订阅！",
+        "errorTitle": "发生了错误",
+        "errorSubtitle": "订阅失败，请通过提交错误报告告知我们",
+        "errorLinkText": "这里"
+    },
+    "newsroomSection": {
+        "title": "最新新闻和博客",
+        "description": "欢迎来到我们的新闻室。在这里，您将获得有关我们博客、文章、公告和 YouTube 直播的最新信息。让我们跟上组织最近的活动。",
+        "newsroomBtn": "访问新闻室",
+        "newsroomFeaturedPost": "特色博客文章"
+    },
+    "googleCalendarBtn": "添加到 Google 日历",
+    "subscribeBtn": "订阅",
+    "icsFileBtn": "下载 ICS 文件",
+    "githubButton": "在 Github 上查看",
+    "calendar": {
+        "title": "即将举行的活动",
+        "viewCalendarBtn": "查看日历",
+        "noMeetingsMessage": "接下来几天没有安排会议。您可以通过点击下面的按钮查看即将举行的活动。"
+    }
+}
