@@ -34,7 +34,7 @@ We worked with an incredible group of contributors, connecting regularly through
 
 Google Summer of Code was a big success for AsyncAPI this year, with a higher number of projects, an encouraging sign of what’s ahead in the coming years. GSoC has consistently proven to be a great entry point into the AsyncAPI community, something we know firsthand from participating in the program over multiple years. We’re excited to continue taking part in GSoC this year and in many more to come.
 
-If you’re interested in becoming a GSoC contributor, check out our **GSoC project ideas list** and our **guide for new contributors** to get started.
+If you’re interested in becoming a GSoC contributor, check out our [**GSoC project ideas list**](https://github.com/asyncapi/community/blob/master/docs/050-mentorship-program/summerofcode-2025-asyncapi-gsoc-ideas-page.md) and our [**guide for new contributors**](https://github.com/asyncapi/community/blob/master/docs/010-contribution-guidelines/contribution-flow.md) to get started.
 
 ## Project Highlight
 
@@ -63,7 +63,7 @@ We’d like to sincerely thank Adi for his outstanding contributions and congrat
 
 - **Contributor:** [Ruchi Pakhle](https://github.com/Adi-204)
 - **Mentor:** [Iván García Sainz-Aja](https://github.com/ivangsa)
-- **Final report:** [Read here](https://gist.github.com/Adi-204/a4040124ed8cb510465e8e38b1fd422d)
+- **Final report:** [Read here](https://github.com/Ruchip16/website/blob/new_blog/markdown/blog/vsasyncapi-preview-extension.md)
 
 The [AsyncAPI VS Code Extension](https://github.com/asyncapi/vs-asyncapi-preview) is the official tool for previewing AsyncAPI documents directly within VS Code. Prior to GSoC, the extension was close to entering maintenance mode due to a lack of active maintainers. During the program, Ruchi stepped in as a co-maintainer alongside Iván and quickly took ownership of a critical new feature that significantly expanded the reach of the tool.
 
@@ -147,7 +147,7 @@ Thanks to Shriya, the website will have a refined, fresh look, and we can't wait
 
 - **Contributor:** [Sagar Kori](https://github.com/sagarkori143)
 - **Mentor:** [Akshat Nema](https://github.com/akshatnema)
-- **Final report:** [Read here](https://gist.github.com/ssala034/4f90f4695a34d0e6bb897d2551aea973)
+- **Final report:** [Read here](https://docs.google.com/document/d/1gx7uGdJvUEM5M8KgPV1V-eC_bPSoj8Y8pJ80e0VHaQs/edit?usp=sharing)
 
 Sagar took on a critical challenge: modernizing the AsyncAPI website's build infrastructure. The website relied on Node.js and TypeScript scripts to generate static .mdx and .json files during builds and scheduled cron jobs, but it had become fragile and difficult to maintain.
 
