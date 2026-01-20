@@ -61,7 +61,7 @@ We’d like to sincerely thank Adi for his outstanding contributions and congrat
 
 ### VS Code Extension Maintainership
 
-- **Contributor:** [Ruchi Pakhle](https://github.com/Adi-204)
+- **Contributor:** [Ruchi Pakhle](https://github.com/Ruchip16)
 - **Mentor:** [Iván García Sainz-Aja](https://github.com/ivangsa)
 - **Final report:** [Read here](https://github.com/Ruchip16/website/blob/new_blog/markdown/blog/vsasyncapi-preview-extension.md)
 
