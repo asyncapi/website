@@ -132,7 +132,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   function showOnClickMenu(event: React.MouseEvent, menu: 'learning' | 'tooling' | 'community' | null) {
     // Check if device supports hover directly from media query (not relying on state which might be out of sync)
     const supportsHover = typeof window !== 'undefined' && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    
+
     // For devices that cannot hover (touch/tablet/Nest Hub), toggle dropdown on click
     // and prevent navigation to the page. For devices that can hover, let navigation happen.
     if (!supportsHover) {
