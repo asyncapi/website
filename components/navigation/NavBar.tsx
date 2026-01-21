@@ -129,12 +129,16 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
    * @description Shows or hides the specified menu on click (for mobile).
    * @param {('learning' | 'tooling' | 'community' | null)} menu - The menu to show or hide.
    */
-  function showOnClickMenu(menu: 'learning' | 'tooling' | 'community' | null) {
-    if (!isMobile) return;
-    if (open === menu) {
-      setOpen(null);
-    } else {
-      setOpen(menu);
+  function showOnClickMenu(event: React.MouseEvent, menu: 'learning' | 'tooling' | 'community' | null) {
+    // Check if device supports hover directly from media query (not relying on state which might be out of sync)
+    const supportsHover = typeof window !== 'undefined' && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    
+    // For devices that cannot hover (touch/tablet/Nest Hub), toggle dropdown on click
+    // and prevent navigation to the page. For devices that can hover, let navigation happen.
+    if (!supportsHover) {
+      event.preventDefault();
+      event.stopPropagation();
+      setOpen((current) => (current === menu ? null : menu));
     }
   }
 
@@ -183,7 +187,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             <NavItem
               text='Docs'
               href='/docs'
-              onClick={() => showOnClickMenu('learning')}
+              onClick={(event) => showOnClickMenu(event, 'learning')}
               onMouseEnter={() => showMenu('learning')}
               hasDropdown
             />
@@ -194,7 +198,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             <NavItem
               text='Tools'
               href='/tools'
-              onClick={() => showOnClickMenu('tooling')}
+              onClick={(event) => showOnClickMenu(event, 'tooling')}
               onMouseEnter={() => showMenu('tooling')}
               hasDropdown
             />
@@ -205,7 +209,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             <NavItem
               text='Community'
               href='/community'
-              onClick={() => showOnClickMenu('community')}
+              onClick={(event) => showOnClickMenu(event, 'community')}
               onMouseEnter={() => showMenu('community')}
               hasDropdown
             />
