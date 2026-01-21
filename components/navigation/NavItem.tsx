@@ -12,17 +12,11 @@ interface NavItemProps {
   onMouseEnter?: () => void;
   hasDropdown?: boolean;
   className?: string;
+  isOpen?: boolean;
 }
 
 /**
  * @description NavItem component renders a navigation item.
- * @param {string} props.text - The text to be displayed in the navigation item.
- * @param {string} [props.href] - The URL to link to. If provided, the navigation item will be a link.
- * @param {string} [props.target='_self'] - The target attribute for the link.
- * @param {Function} [props.onClick] - Event handler for click event.
- * @param {Function} [props.onMouseEnter] - Event handler for mouse enter event.
- * @param {boolean} [props.hasDropdown=false] - Indicates if the navigation item has a dropdown menu.
- * @param {string} [props.className=''] - Additional CSS classes for styling.
  */
 export default function NavItem({
   text,
@@ -31,7 +25,8 @@ export default function NavItem({
   onClick = () => {},
   onMouseEnter = () => {},
   hasDropdown = false,
-  className = ''
+  className = '',
+  isOpen = false
 }: NavItemProps) {
   const router = useRouter();
 
@@ -50,8 +45,6 @@ export default function NavItem({
     );
   }
 
-  // Object 'attrs' defines HTML element attributes, including event handlers and styling classes.
-  // 'onClick' and 'onMouseEnter' handle events, 'className' defines styling with hover and focus effects.
   const attrs = {
     onClick,
     onMouseEnter,
@@ -63,12 +56,21 @@ export default function NavItem({
       <Link
         href={href}
         {...attrs}
-        className={`${attrs.className} ${router.pathname.startsWith(href) ? 'text-black' : 'text-gray-700'}`}
+        className={`${attrs.className} text-gray-700 hover:text-gray-900`}
         target={target}
         data-testid='NavItem-Link'
       >
         <span>{text}</span>
-        {hasDropdown && <NavItemDropdown />}
+
+        {hasDropdown && (
+          <span
+            className={`inline-flex size-5 items-center justify-center transition-transform duration-200 ${
+              isOpen ? 'rotate-180' : 'rotate-0'
+            }`}
+          >
+            <NavItemDropdown />
+          </span>
+        )}
       </Link>
     );
   }
@@ -76,7 +78,16 @@ export default function NavItem({
   return (
     <button type='button' {...attrs} className={`${attrs.className} text-gray-700`}>
       <span>{text}</span>
-      {hasDropdown && <NavItemDropdown />}
+
+      {hasDropdown && (
+        <span
+          className={`inline-flex size-5 items-center justify-center transition-transform duration-200 ${
+            isOpen ? 'rotate-180' : 'rotate-0'
+          }`}
+        >
+          <NavItemDropdown />
+        </span>
+      )}
     </button>
   );
 }
