@@ -181,8 +181,8 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
         >
           <div className='relative' onMouseLeave={() => showMenu(null)} ref={learningRef}>
             <NavItem
-              text="Docs"
-              href="/docs"
+              text='Docs'
+              href='/docs'
               onClick={() => showOnClickMenu('learning')}
               onMouseEnter={() => showMenu('learning')}
               hasDropdown
@@ -194,8 +194,8 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
 
           <div className='relative' onMouseLeave={() => showMenu(null)} ref={toolingRef}>
             <NavItem
-              text="Tools"
-              href="/tools"
+              text='Tools'      // Change from "Tools"
+              href='/tools'
               onClick={() => showOnClickMenu('tooling')}
               onMouseEnter={() => showMenu('tooling')}
               hasDropdown
@@ -206,8 +206,8 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
 
           <div className='relative' onMouseLeave={() => showMenu(null)} ref={communityRef}>
             <NavItem
-              text="Community"
-              href="/community"
+              text='Community'
+              href='/community'
               onClick={() => showOnClickMenu('community')}
               onMouseEnter={() => showMenu('community')}
               hasDropdown
