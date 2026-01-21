@@ -36,8 +36,7 @@ const communityItems: CommunityItem[] = [
   {
     icon: IconContributing,
     title: 'Contributing',
-    href: 'https://github.com/asyncapi?type=source#-contribute-to-asyncapi',
-    target: '_blank',
+    href: '/docs/community/010-contribution-guidelines',
     description:
       'We are always welcoming and looking for contributions. If you are interested check out our contribution guide.'
   },
