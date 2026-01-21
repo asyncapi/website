@@ -194,7 +194,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
 
           <div className='relative' onMouseLeave={() => showMenu(null)} ref={toolingRef}>
             <NavItem
-              text='Tools'  
+              text='Tools'
               href='/tools'
               onClick={() => showOnClickMenu('tooling')}
               onMouseEnter={() => showMenu('tooling')}
