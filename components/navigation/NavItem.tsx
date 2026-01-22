@@ -33,7 +33,7 @@ export default function NavItem({
   onMouseEnter = () => {},
   hasDropdown = false,
   className = '',
-  isOpen = false
+  isOpen = false,
 }: NavItemProps) {
   const router = useRouter();
 
@@ -57,7 +57,7 @@ export default function NavItem({
   const attrs = {
     onClick,
     onMouseEnter,
-    className: `${className} group inline-flex items-center space-x-2 font-body text-base leading-6 font-semibold hover:text-gray-900 focus:outline-none focus:text-gray-900 tracking-heading transition ease-in-out duration-150`
+    className: `${className} group inline-flex items-center space-x-2 font-body text-base leading-6 font-semibold hover:text-gray-900 focus:outline-none focus:text-gray-900 tracking-heading transition ease-in-out duration-150`,
   };
 
   if (href) {
@@ -67,7 +67,7 @@ export default function NavItem({
         {...attrs}
         className={`${attrs.className} ${router.pathname.startsWith(href) ? 'text-black' : 'text-gray-700'}`}
         target={target}
-        data-testid='NavItem-Link'
+        data-testid="NavItem-Link"
       >
         <span>{text}</span>
 
@@ -85,7 +85,11 @@ export default function NavItem({
   }
 
   return (
-    <button type='button' {...attrs} className={`${attrs.className} text-gray-700`}>
+    <button
+      type="button"
+      {...attrs}
+      className={`${attrs.className} text-gray-700`}
+    >
       <span>{text}</span>
 
       {hasDropdown && (
