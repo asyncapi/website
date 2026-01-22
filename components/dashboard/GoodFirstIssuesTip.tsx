@@ -1,4 +1,4 @@
-import { useFloating } from '@floating-ui/react-dom-interactions';
+import { useFloating } from '@floating-ui/react';
 import React, { useState } from 'react';
 
 /**
@@ -6,7 +6,7 @@ import React, { useState } from 'react';
  */
 export default function GoodFirstIssuesTip() {
   const [open, setOpen] = useState(false);
-  const { x, y, reference, floating, strategy } = useFloating({
+  const { x, y, refs, strategy } = useFloating({
     placement: 'right-start',
     open
   });
@@ -16,7 +16,7 @@ export default function GoodFirstIssuesTip() {
       <img
         onMouseLeave={() => setOpen(false)}
         onMouseEnter={() => setOpen(true)}
-        ref={reference}
+        ref={refs.setReference}
         src='/img/illustrations/icons/tip-icon.svg'
         data-testid='GoodFirstIssuesTip-hover-icon'
         alt='Tooltip'
@@ -24,7 +24,7 @@ export default function GoodFirstIssuesTip() {
 
       {open && (
         <div
-          ref={floating}
+          ref={refs.setFloating}
           style={{
             position: strategy,
             top: y ?? '',
