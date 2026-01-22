@@ -17,6 +17,13 @@ interface NavItemProps {
 
 /**
  * @description NavItem component renders a navigation item.
+ * @param {string} props.text - The text to be displayed in the navigation item.
+ * @param {string} [props.href] - The URL to link to. If provided, the navigation item will be a link.
+ * @param {string} [props.target='_self'] - The target attribute for the link.
+ * @param {Function} [props.onClick] - Event handler for click event.
+ * @param {Function} [props.onMouseEnter] - Event handler for mouse enter event.
+ * @param {boolean} [props.hasDropdown=false] - Indicates if the navigation item has a dropdown menu.
+ * @param {string} [props.className=''] - Additional CSS classes for styling.
  */
 export default function NavItem({
   text,
@@ -45,6 +52,8 @@ export default function NavItem({
     );
   }
 
+  // Object 'attrs' defines HTML element attributes, including event handlers and styling classes.
+  // 'onClick' and 'onMouseEnter' handle events, 'className' defines styling with hover and focus effects.
   const attrs = {
     onClick,
     onMouseEnter,
@@ -56,7 +65,7 @@ export default function NavItem({
       <Link
         href={href}
         {...attrs}
-        className={`${attrs.className} text-gray-700 hover:text-gray-900`}
+        className={`${attrs.className} ${router.pathname.startsWith(href) ? 'text-black' : 'text-gray-700'}`}
         target={target}
         data-testid='NavItem-Link'
       >
