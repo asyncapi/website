@@ -21,7 +21,7 @@ export { getStaticPaths, getStaticProps };
 interface Feature {
   name: string;
   description: () => string | React.JSX.Element;
-  icon: (props: React.ComponentProps<'svg'>) => React.JSX.Element;
+  icon: React.ComponentType<React.ComponentProps<'svg'>>;
 }
 
 const features: Feature[] = [
