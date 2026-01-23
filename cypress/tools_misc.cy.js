@@ -19,7 +19,7 @@ describe('Tools - CLI / Parsers / GitHub Actions', () => {
     });
 
     it('Verifying if CLI install snippet is visible', () => {
-      page.verifyCodeSnippet(toolsData.cli.install);
+      page.verifyElementContainsText('code', toolsData.cli.install);
     });
   });
 
@@ -37,7 +37,7 @@ describe('Tools - CLI / Parsers / GitHub Actions', () => {
     });
 
     it('Verifying if Parsers install snippet is visible', () => {
-      page.verifyCodeSnippet(toolsData.parsers.install);
+      page.verifyElementContainsText('code', toolsData.parsers.install);
     });
   });
 

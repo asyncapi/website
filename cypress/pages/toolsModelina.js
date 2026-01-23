@@ -6,7 +6,7 @@ class ToolsModelina extends BasePage {
     }
 
     verifyInstallSnippet() {
-        return this.verifyCodeSnippet('npm install @asyncapi/modelina');
+        return this.verifyElementContainsText('code', 'npm install @asyncapi/modelina');
     }
 }
 

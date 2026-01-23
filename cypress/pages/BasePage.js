@@ -38,8 +38,8 @@ class BasePage {
     return this.verifyCustomLink(buttonText, href);
   }
 
-  verifyCodeSnippet(text) {
-    return cy.contains('code', text).should('exist');
+  verifyElementContainsText(selector, text) {
+    return cy.contains(selector, text).should('exist');
   }
 
   verifyImageVisible(altText) {

@@ -13,7 +13,7 @@ describe('Tools - Modelina Page', () => {
   });
 
   it('verifying install snippet', () => {
-    page.verifyCodeSnippet(toolsData.modelina.install);
+    page.verifyElementContainsText('code', toolsData.modelina.install);
   });
 
   it('Verifiying the GitHub button link', () => {
