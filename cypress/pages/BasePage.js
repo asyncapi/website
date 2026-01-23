@@ -15,11 +15,11 @@ class BasePage {
   }
 
   verifyElementIsVisible(selector) {
-    return cy.get(selector).should('be.visible');
+    return this.getElement(selector).should('be.visible');
   }
 
   verifyElementHasAttribute(selector, attribute, value) {
-    return cy.get(selector).should('have.attr', attribute, value);
+    return this.getElement(selector).should('have.attr', attribute, value);
   }
 
   verifyHeadingExists(headingText) {
