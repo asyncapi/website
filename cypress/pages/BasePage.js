@@ -34,12 +34,8 @@ class BasePage {
     return text ? chain.and('contain', text) : chain;
   }
 
-  verifyGithubLink(href) {
-    return this.verifyCustomLink('View on Github', href);
-  }
-
-  verifyDocsLink(href) {
-    return this.verifyCustomLink('View Docs', href);
+  verifyButtonLink(href, buttonText) {
+    return this.verifyCustomLink(buttonText, href);
   }
 
   verifyCodeSnippet(text) {
