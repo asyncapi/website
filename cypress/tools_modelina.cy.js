@@ -17,7 +17,7 @@ describe('Tools - Modelina Page', () => {
   });
 
   it('Verifiying the GitHub button link', () => {
-    page.verifyGithubLink(toolsData.modelina.github);
+    page.verifyButtonLink(toolsData.modelina.github, 'View on Github');
   });
 
   it('Verifying the Try it now link', () => {

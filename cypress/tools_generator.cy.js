@@ -17,10 +17,10 @@ describe('Tools - Generator Page', () => {
   });
 
   it('Verifying if GitHub button link works', () => {
-    page.verifyGithubLink(toolsData.generator.github);
+    page.verifyButtonLink(toolsData.generator.github, 'View on Github');
   });
 
   it('Verifying if Docs button link works', () => {
-    page.verifyDocsLink(toolsData.generator.docs);
+    page.verifyButtonLink(toolsData.generator.docs, 'View Docs');
   });
 });

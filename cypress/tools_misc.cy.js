@@ -14,8 +14,8 @@ describe('Tools - CLI / Parsers / GitHub Actions', () => {
     });
 
     it('Verifying if CLI GitHub and Docs links work', () => {
-      page.verifyGithubLink(toolsData.cli.github);
-      page.verifyDocsLink(toolsData.cli.docs);
+      page.verifyButtonLink(toolsData.cli.github, 'View on Github');
+      page.verifyButtonLink(toolsData.cli.docs, 'View Docs');
     });
 
     it('Verifying if CLI install snippet is visible', () => {
@@ -33,7 +33,7 @@ describe('Tools - CLI / Parsers / GitHub Actions', () => {
     });
 
     it('Verifying if Parsers GitHub link works', () => {
-      page.verifyGithubLink(toolsData.parsers.github);
+      page.verifyButtonLink(toolsData.parsers.github, 'View on Github');
     });
 
     it('Verifying if Parsers install snippet is visible', () => {
@@ -51,7 +51,7 @@ describe('Tools - CLI / Parsers / GitHub Actions', () => {
     });
 
     it('Verifying if GitHub Actions GitHub link works', () => {
-      page.verifyGithubLink(toolsData.githubActions.github);
+      page.verifyButtonLink(toolsData.githubActions.github, 'View on Github');
     });
   });
 });
