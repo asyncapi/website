@@ -8,19 +8,19 @@ describe('Tools - Generator Page', () => {
     page.visit(toolsData.generator.path);
   });
 
-  it('User sees the main header', () => {
+  it('Verifying if the main header is visible', () => {
     page.verifyHeadingExists(toolsData.generator.heading);
   });
 
-  it('User sees the generator diagram image', () => {
+  it('Verifying if the generator diagram image is visible', () => {
     page.verifyGeneratorWorkflowDiagram();
   });
 
-  it('User verifies GitHub button link', () => {
+  it('Verifying if GitHub button link works', () => {
     page.verifyGithubLink(toolsData.generator.github);
   });
 
-  it('User verifies Docs button link', () => {
+  it('Verifying if Docs button link works', () => {
     page.verifyDocsLink(toolsData.generator.docs);
   });
 });

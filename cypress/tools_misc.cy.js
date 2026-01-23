@@ -9,16 +9,16 @@ describe('Tools - CLI / Parsers / GitHub Actions', () => {
       page.visit(toolsData.cli.path);
     });
 
-    it('User sees the CLI header', () => {
+    it('Verifying if the CLI header is visible', () => {
       page.verifyHeadingExists(toolsData.cli.heading);
     });
 
-    it('User verifies CLI GitHub and Docs links', () => {
+    it('Verifying if CLI GitHub and Docs links work', () => {
       page.verifyGithubLink(toolsData.cli.github);
       page.verifyDocsLink(toolsData.cli.docs);
     });
 
-    it('User sees CLI install snippet', () => {
+    it('Verifying if CLI install snippet is visible', () => {
       page.verifyCodeSnippet(toolsData.cli.install);
     });
   });
@@ -28,15 +28,15 @@ describe('Tools - CLI / Parsers / GitHub Actions', () => {
       page.visit(toolsData.parsers.path);
     });
 
-    it('User sees the Parsers header', () => {
+    it('Verifying if the Parsers header is visible', () => {
       page.verifyHeadingExists(toolsData.parsers.heading);
     });
 
-    it('User verifies Parsers GitHub link', () => {
+    it('Verifying if Parsers GitHub link works', () => {
       page.verifyGithubLink(toolsData.parsers.github);
     });
 
-    it('User sees Parsers install snippet', () => {
+    it('Verifying if Parsers install snippet is visible', () => {
       page.verifyCodeSnippet(toolsData.parsers.install);
     });
   });
@@ -46,11 +46,11 @@ describe('Tools - CLI / Parsers / GitHub Actions', () => {
       page.visit(toolsData.githubActions.path);
     });
 
-    it('User sees the GitHub Actions header', () => {
+    it('Verifying if the GitHub Actions header is visible', () => {
       page.verifyHeadingExists(toolsData.githubActions.heading);
     });
 
-    it('User verifies GitHub Actions GitHub link', () => {
+    it('Verifying if GitHub Actions GitHub link works', () => {
       page.verifyGithubLink(toolsData.githubActions.github);
     });
   });
