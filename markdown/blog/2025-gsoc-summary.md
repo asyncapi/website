@@ -17,7 +17,7 @@ authors:
 
 **Celebrating real impact, strong mentorship, and a growing community**
 
-AsyncAPI participated in Google Summer of Code (GSoC) for the fourth time in 2025, a significant milestone that speaks to our commitment to nurturing the next generation of open source contributors. Seven contributors invested months building meaningful projects within the AsyncAPI ecosystem. As with previous years, project timelines varied, with some wrapping up in early October and others extending into late November.
+AsyncAPI participated in Google Summer of Code (GSoC) for the fourth time in 2025, a significant milestone that speaks to our commitment to nurturing the next generation of open-source contributors. Seven contributors invested months building meaningful projects within the AsyncAPI ecosystem. As with previous years, project timelines varied, with some wrapping up in early October and others extending into late November.
 
 We're thrilled to report that **6 out of 7 projects were successfully completed**, with the remaining one still actively progressing. Each project brings its own story of growth, collaboration, and impact.
 
@@ -117,11 +117,11 @@ Over the coding period, Tenzin methodically built out the UI Kit through multipl
   
 - **Component Development & Reusability:** The real impact came through systematic component work. Tenzin modernized the Button component with significant architectural improvements, refactoring it to accept flexible props (including text, outline, and, crucially, icon positioning), and then created comprehensive Storybook stories showcasing all variations. He systematically updated all Button usage across the codebase; in forms, headers, and CTAs. 
   
-- **Infrastructure & Tooling Excellence:** Tenzin executed a Storybook 9 migration while simultaneously introducing a comprehensive icon system as React components. Rather than relying on image files scattered throughout the codebase, he created modular icon components (Github, LinkedIn, X, YouTube social icons, map pointers, arrows, and more). This refactor touched 24 files, replacing all image-based icons with clean, scalable React component equivalents, a subtle but significant improvement to maintainability and performance.
+- **Infrastructure & Tooling Excellence:** Tenzin executed a Storybook 9 migration while simultaneously introducing a comprehensive icon system as React components. Rather than relying on image files scattered throughout the codebase, he created modular icon components (GitHub, LinkedIn, X, YouTube social icons, map pointers, arrows, and more). This refactor touched 24 files, replacing all image-based icons with clean, scalable React component equivalents, a subtle but significant improvement to maintainability and performance.
 
 Each PR wasn't just about adding features; it was about establishing patterns. By making the Dropdown generic, he created a blueprint for component reusability across different data types. 
 
-In Tezin's words... "Working with AsyncAPI during GSoC has been a transformative experience. Beyond the code, I gained a profound understanding of what open source really is. It’s about the incredible community and the chance to learn alongside people who share the same passions." Thank you for your great work!
+In Tezin's words... "Working with AsyncAPI during GSoC has been a transformative experience. Beyond the code, I gained a profound understanding of what open-source really is. It’s about the incredible community and the chance to learn alongside people who share the same passions." Thank you for your great work!
 
 ### Redesign the AsyncAPI Website and Implement Dark Theme
 
@@ -167,7 +167,7 @@ Sagar's work represents crucial foundational progress for AsyncAPI's build infra
 
 We want to extend our heartfelt gratitude to every contributor who dedicated their summer to AsyncAPI through Google Summer of Code 2025. Your energy, creativity, and commitment have left a lasting impact on our community. We're already excited about the innovations you'll bring in future seasons.
 
-A huge thank you to Google for making GSoC possible and granting us a spot. Your investment in open source mentorship continues to shape the next generation of developers.
+A huge thank you to Google for making GSoC possible and granting us a spot. Your investment in open-source mentorship continues to shape the next generation of developers.
 
 Finally, to our mentors... your patience, guidance, and unwavering support were the backbone of every contributor's success. You went above and beyond, spanning time zones and challenges, to help bring these projects to life. AsyncAPI's GSoC journey simply wouldn't exist without you.
 
