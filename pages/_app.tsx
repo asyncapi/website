@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         <script async defer src='https://buttons.github.io/buttons.js'></script>
       </Head>
       <AlgoliaSearch>
-        <div className='flex min-h-screen flex-col'>
+        <div className='flex min-h-screen flex-col bg-white dark:bg-slate-900 text-gray-900 dark:text-white transition-colors duration-300'>
           <Banner />
           <StickyNavbar>
             <NavBar className='mx-auto block max-w-screen-xl px-4 sm:px-6 lg:px-8' />

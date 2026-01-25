@@ -13,7 +13,7 @@ import { initiativeLinks, socialMediaLinks } from './FooterList';
  */
 export default function Footer() {
   return (
-    <footer className='margin: 0 auto mt-12 bg-dark'>
+    <footer className='margin: 0 auto mt-12 bg-dark dark:bg-slate-800'>
       <div className='mx-auto max-w-screen-xl divide-y divide-cool-gray overflow-hidden px-3 py-4 sm:p-6 md:py-12 lg:px-8 xl:py-16'>
         <nav className='flex flex-wrap justify-between py-4 sm:py-10'>
           <div className='mr-14 w-full md:w-auto'>
@@ -94,7 +94,7 @@ export default function Footer() {
         <div className='justify-between py-8 sm:flex sm:py-12 xl:mt-20' data-testid='Footer-content'>
           <div className='w-full sm:w-2/3'>
             <p className='mb-3 text-left text-base leading-6 text-cool-gray'>
-              Made with <span className='font-mono text-secondary-500'>:love:</span> by the AsyncAPI Initiative.
+              Made with <span className='font-mono text-secondary-500'>❤️</span> by the AsyncAPI Initiative.
             </p>
             <p className='w-full text-left text-sm leading-6 text-cool-gray sm:w-2/3' data-testid='Footer-copyright'>
               Copyright &copy; AsyncAPI Project a Series of LF Projects, LLC. For web site terms of use, trademark
