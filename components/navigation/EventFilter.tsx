@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import type { IEvent } from '@/types/event';
-import { formatDate, isDateAfter, isDateBefore } from '@/utils/dateHelpers';
+import { isDateAfter, isDateBefore } from '@/utils/dateHelpers';
 
 import { getEvents } from '../../utils/staticHelpers';
 
@@ -23,11 +23,12 @@ interface EventFilterProps {
  * @param {React.Dispatch<React.SetStateAction<IEvent[]>>} props.setData - The function to update the filtered events.
  */
 export default function EventFilter({ data, setData }: EventFilterProps) {
-  const currentDate = new Date();
   const filterList: string[] = ['All', 'Upcoming', 'Recorded'];
   const [active, setActive] = useState<string>('All');
 
   useEffect(() => {
+    const currentDate = new Date();
+
     switch (active) {
       case ActiveState.All:
         setData(getEvents(data));
@@ -50,7 +51,7 @@ export default function EventFilter({ data, setData }: EventFilterProps) {
         setData(getEvents(data));
         break;
     }
-  }, [active, data, setData, currentDate]);
+  }, [active, data, setData]);
 
   return (
     <div

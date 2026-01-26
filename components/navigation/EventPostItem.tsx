@@ -48,7 +48,7 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
   const defaultCover = 'https://github.com/asyncapi/community/assets/40604284/01c2b8de-fa5c-44dd-81a5-70cb96df4813';
   let active = true;
   let postDate: Date = new Date();
-  
+
   try {
     postDate = parseDate(post.date);
     if (isDateBefore(postDate, currentDate)) {

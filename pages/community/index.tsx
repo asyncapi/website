@@ -131,9 +131,7 @@ export default function CommunityIndexPage() {
                     </div>
                     <div className='ml-4 text-left'>
                       <h1 className='text-md md:text-lg'>{event.title}</h1>
-                      <span className='text-xs text-gray-500 md:text-sm'>
-                        {formatDateWithTimezone(event.date)}
-                      </span>
+                      <span className='text-xs text-gray-500 md:text-sm'>{formatDateWithTimezone(event.date)}</span>
                     </div>
                   </a>
                 </li>

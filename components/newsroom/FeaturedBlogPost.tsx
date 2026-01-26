@@ -3,10 +3,10 @@ import React from 'react';
 import TextTruncate from 'react-text-truncate';
 
 import { BlogPostType } from '@/types/components/navigation/BlogPostType';
-import { formatDate } from '@/utils/dateHelpers';
 import type { IBlogPost } from '@/types/post';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
+import { formatDate } from '@/utils/dateHelpers';
 
 import AuthorAvatars from '../AuthorAvatars';
 import Heading from '../typography/Heading';

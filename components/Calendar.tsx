@@ -50,9 +50,7 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
               </div>
               <div className='grow text-left sm:mt-0 sm:pl-6'>
                 <h2 className='title-font font-medium text-gray-900 hover:text-gray-500'>{event.title}</h2>
-                <p className='text-gray-600'>
-                  {formatDateWithTimezone(event.date)}
-                </p>
+                <p className='text-gray-600'>{formatDateWithTimezone(event.date)}</p>
               </div>
             </a>
           </li>
