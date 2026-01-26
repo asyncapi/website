@@ -17,12 +17,11 @@ authors:
 
 Recently, while building a collaborative drawing web application with WebSocket for one of my livestreams, I discovered just how efficient it is to document a WebSocket server using the AsyncAPI specification in a spec-first approach. But what exactly do I mean by “spec-first”?
 
-## What Do I Mean by Spec-First?
 ![API spec first diagram](/img/diagrams/spec-first.webp)
 
 The spec-first API development approach involves designing the API using an API specification _before_ implementing it. This method offers significant advantages, such as reducing the time needed to build the actual API, improving communication with stakeholders, and producing higher-quality APIs overall. But let’s save the deep dive into spec-first for another time and get back on track!
 
-## So Why WebSocket and AsyncAPI Instead of OpenAPI?
+## Why WebSocket and AsyncAPI Instead of OpenAPI?
 
 ![Asyncapi-OpenAPI](/img/diagrams/asyncapi-openapi.webp)
 
@@ -35,6 +34,7 @@ So, why would I use OpenAPI for that? Now you see why AsyncAPI is the better fit
 Let’s explore why combining AsyncAPI with WebSocket is such a powerful approach.
 
 ## The Intersection
+
 As I mentioned earlier, `WebSocket enables an event-driven connection between client and server`, meaning it operates asynchronously. AsyncAPI offers a standardized way to define these asynchronous APIs, making it a perfect match. This combination enhances real-time application development by ensuring consistent, reliable message formats and enabling instant, bidirectional data exchange between client and server.
 
 Now, let’s dive deeper into this powerful intersection!
