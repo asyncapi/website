@@ -1,4 +1,3 @@
-import type moment from 'moment';
 import React from 'react';
 
 import { CardType } from '@/types/components/community/CardPropsType';
@@ -12,11 +11,12 @@ import GenericLayout from '../../components/layout/GenericLayout';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 import Heading from '../../components/typography/Heading';
 import eventsData from '../../config/meetings.json';
+import { formatDate, formatDateWithTimezone } from '../../utils/dateHelpers';
 import { getEvents } from '../../utils/staticHelpers';
 
 interface Event {
   title: string;
-  date: moment.Moment;
+  date: Date;
   url: string;
 }
 
@@ -127,13 +127,12 @@ export default function CommunityIndexPage() {
                 <li key={index} className='mt-2 w-full rounded-l-md bg-white p-2 md:p-10'>
                   <a href={event.url} className='flex'>
                     <div className='inline-flex h-12 min-w-12 flex-row rounded-full bg-pink-500 font-bold text-white'>
-                      <span className='flex-1 self-center text-center'>{event.date.format('D')}</span>
+                      <span className='flex-1 self-center text-center'>{formatDate(event.date, 'd')}</span>
                     </div>
                     <div className='ml-4 text-left'>
                       <h1 className='text-md md:text-lg'>{event.title}</h1>
                       <span className='text-xs text-gray-500 md:text-sm'>
-                        {event.date.local().format('LLLL')} UTC
-                        {event.date.local().format('Z')}
+                        {formatDateWithTimezone(event.date)}
                       </span>
                     </div>
                   </a>

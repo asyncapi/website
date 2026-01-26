@@ -1,10 +1,10 @@
-import moment from 'moment';
 import Link from 'next/link';
 import type { Ref } from 'react';
 import React, { forwardRef } from 'react';
 import TextTruncate from 'react-text-truncate';
 
 import { BlogPostType } from '@/types/components/navigation/BlogPostType';
+import { formatDate } from '@/utils/dateHelpers';
 import type { IBlogPost } from '@/types/post';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
@@ -129,7 +129,7 @@ const BlogPostItem = ({ post, className = '', id = '' }: BlogPostItemProps, ref:
                     </span>
                   </Heading>
                   <Paragraph typeStyle={ParagraphTypeStyle.sm} className='flex'>
-                    <time dateTime={post.date}>{moment(post.date).format('MMMM D, YYYY')}</time>
+                    <time dateTime={post.date}>{formatDate(post.date, 'MMMM d, yyyy')}</time>
                     <span className='mx-1'>&middot;</span>
                     <span>{post.readingTime} min read</span>
                   </Paragraph>

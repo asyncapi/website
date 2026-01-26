@@ -3,9 +3,9 @@
  */
 
 import dedent from 'dedent';
+import { format } from 'date-fns';
 import fs from 'fs';
 import inquirer from 'inquirer';
-import moment from 'moment';
 
 import { logger } from './helpers/logger';
 
@@ -41,7 +41,7 @@ function genFrontMatter(answers: ComposePromptType): string {
 
   let frontMatter = dedent`---
   title: ${answers.title ? answers.title : 'Untitled'}
-  date: ${moment().format('YYYY-MM-DDTh:mm:ssZ')}
+  date: ${format(new Date(), "yyyy-MM-dd'T'HH:mm:ssXXX")}
   type: ${answers.type}
   canonical: ${answers.canonical ? answers.canonical : ''}
   tags: [${answers.tags ? tags : ''}]

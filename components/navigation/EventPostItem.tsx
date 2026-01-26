@@ -1,9 +1,9 @@
 import { ArrowRightIcon } from '@heroicons/react/outline';
-import moment from 'moment';
 import React from 'react';
 
 import type { IEvent } from '@/types/event';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
+import { formatDate, isDateBefore, parseDate } from '@/utils/dateHelpers';
 
 import IconCalendar from '../icons/Calendar';
 import Community from '../icons/Community';
@@ -25,8 +25,7 @@ interface EventPostItemProps {
  *
  */
 function EventPostItem({ post, className = '', id }: EventPostItemProps): React.JSX.Element {
-  const localTime = moment().format('YYYY-MM-DD'); // store localTime
-  const currentDate = `${localTime}T00:00:00.000Z`;
+  const currentDate = new Date();
   const title = post.title || '';
   let color = '';
   let icon: React.ReactElement | null = null;
@@ -48,12 +47,14 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
 
   const defaultCover = 'https://github.com/asyncapi/community/assets/40604284/01c2b8de-fa5c-44dd-81a5-70cb96df4813';
   let active = true;
-  const postDate = moment(post.date); // Convert post.date to a moment object if necessary
-
-  if (!postDate.isValid()) {
-    // Handle invalid date if necessary
-    active = false;
-  } else if (currentDate > postDate.format()) {
+  let postDate: Date = new Date();
+  
+  try {
+    postDate = parseDate(post.date);
+    if (isDateBefore(postDate, currentDate)) {
+      active = false;
+    }
+  } catch {
     active = false;
   }
 
@@ -80,7 +81,7 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
             <div className='flex items-center'>
               <IconCalendar />
               <span className='ml-4 text-sm font-semibold' data-testid='Event-span'>
-                {active ? moment(postDate).format('MMMM D, YYYY') : 'View Recording'}
+                {active ? formatDate(postDate, 'MMMM d, yyyy') : 'View Recording'}
               </span>
               <ArrowRightIcon className='ml-3 w-4' />
             </div>

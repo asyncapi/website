@@ -1,7 +1,7 @@
-import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 
 import type { IEvent } from '@/types/event';
+import { formatDate, isDateAfter, isDateBefore } from '@/utils/dateHelpers';
 
 import { getEvents } from '../../utils/staticHelpers';
 
@@ -23,8 +23,7 @@ interface EventFilterProps {
  * @param {React.Dispatch<React.SetStateAction<IEvent[]>>} props.setData - The function to update the filtered events.
  */
 export default function EventFilter({ data, setData }: EventFilterProps) {
-  const localTime = moment().format('YYYY-MM-DD');
-  const currentDate = `${localTime}T00:00:00.000Z`;
+  const currentDate = new Date();
   const filterList: string[] = ['All', 'Upcoming', 'Recorded'];
   const [active, setActive] = useState<string>('All');
 
@@ -36,14 +35,14 @@ export default function EventFilter({ data, setData }: EventFilterProps) {
       case ActiveState.Upcoming:
         setData(
           getEvents(data).filter((event: IEvent) => {
-            return moment(event.date).format() > currentDate;
+            return isDateAfter(event.date, currentDate);
           })
         );
         break;
       case ActiveState.Recorded:
         setData(
           getEvents(data).filter((event: IEvent) => {
-            return moment(event.date).format() < currentDate;
+            return isDateBefore(event.date, currentDate);
           })
         );
         break;
