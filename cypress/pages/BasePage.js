@@ -1,7 +1,6 @@
 class BasePage {
-  visit(path = '/') {
-    cy.visit(path);
-    return this;
+  visit() {
+    cy.visit('/');
   }
 
   getElement(selector) {
@@ -26,16 +25,17 @@ class BasePage {
     return cy.contains('h1, h2, h3, h4, h5, h6', headingText).should('be.visible');
   }
 
-  verifyLink(href, text, attr = 'href') {
-    const chain = cy
-      .get(`a[${attr}="${href}"]`)
-      .should('be.visible')
-      .and('have.attr', attr, href);
+  verifyLink(href, text, { findByText = false } = {}) {
+    if (findByText && text) {
+      const chain = cy.contains('a', text).should('be.visible');
+      return href ? chain.and('have.attr', 'href', href) : chain;
+    }
+    const chain = cy.get(`a[href="${href}"]`).should('be.visible').and('have.attr', 'href', href);
     return text ? chain.and('contain', text) : chain;
   }
 
   verifyButtonLink(href, buttonText) {
-    return this.verifyCustomLink(buttonText, href);
+    return this.verifyLink(href, buttonText, { findByText: true });
   }
 
   verifyElementContainsText(selector, text) {
@@ -43,14 +43,13 @@ class BasePage {
   }
 
   verifyImageVisible(altText) {
-    return cy.get(`img[alt="${altText}"]`).should('be.visible');
+    return cy.get(`img[alt="${altText}"]`)
+      .should('be.visible')
+      .and('have.attr', 'src')
+      .should('not.be.empty');
   }
 
-  verifyCustomLink(text, href) {
-    return cy.contains('a', text)
-      .should('be.visible')
-      .and('have.attr', 'href', href);
-  }
+
 }
 
 export default BasePage;

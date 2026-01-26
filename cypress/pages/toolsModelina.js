@@ -2,7 +2,7 @@ import BasePage from './BasePage';
 
 class ToolsModelina extends BasePage {
     verifyTryItNowLink() {
-        return this.verifyCustomLink('Try it now', 'https://modelina.org/playground');
+        return this.verifyLink('https://modelina.org/playground', 'Try it now', { findByText: true });
     }
 
     verifyInstallSnippet() {

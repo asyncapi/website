@@ -21,6 +21,6 @@ describe('Tools - Modelina Page', () => {
   });
 
   it('Verifying the Try it now link', () => {
-    page.verifyCustomLink(toolsData.modelina.tryIt.text, toolsData.modelina.tryIt.href);
+    page.verifyLink(toolsData.modelina.tryIt.href, toolsData.modelina.tryIt.text, { findByText: true });
   });
 });
