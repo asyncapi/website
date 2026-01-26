@@ -40,15 +40,6 @@ class HomePage extends BasePage {
     return super.visit('/');
   }
 
-  verifyLinkExists(linkName, linkUrl) {
-    cy.get('a')
-      .contains(linkName, { matchCase: false })
-      .should('exist')
-      .then(($el) => {
-        cy.wrap($el).invoke('attr', 'href').should('include', linkUrl);
-      });
-  }
-
   verifyCardTitles(customTitles, testId = null) {
     const titlesToVerify = customTitles || cardTitles;
     titlesToVerify.forEach((title) => {
@@ -69,8 +60,7 @@ class HomePage extends BasePage {
 
   verifyGithubStarButton(link = githubStarLink) {
     const selector = '[data-testid="Navbar-main"] [data-testid="Button-link"]';
-    this.verifyElementIsVisible(selector);
-    return this.verifyElementHasAttribute(selector, 'href', link);
+    return this.verifyElementIsVisible(selector).and('have.attr', 'href', link);
   }
 
   verifyReadTheDocsButton(link = readDocsLink) {

@@ -1,12 +1,12 @@
-import BasePage from './BasePage';
+import toolsData from '../fixtures/toolsPages.json';
 
 class ToolsModelina extends BasePage {
     verifyTryItNowLink() {
-        return this.verifyLink('https://modelina.org/playground', 'Try it now', { findByText: true });
+        return this.verifyLink(toolsData.modelina.tryIt.href, toolsData.modelina.tryIt.text, { findByText: true });
     }
 
     verifyInstallSnippet() {
-        return this.verifyElementContainsText('code', 'npm install @asyncapi/modelina');
+        return this.verifyElementContainsText('code', toolsData.modelina.install);
     }
 }
 

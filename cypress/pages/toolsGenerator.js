@@ -1,12 +1,10 @@
 import BasePage from './BasePage';
+import toolsData from '../fixtures/toolsPages.json';
 
 class ToolsGenerator extends BasePage {
 
   verifyGeneratorWorkflowDiagram() {
-    return cy.get('img[alt="generator diagram"]')
-      .should('be.visible')
-      .and('have.attr', 'src')
-      .should('not.be.empty');
+    return this.verifyImageVisible(toolsData.generator.image);
   }
 
 }

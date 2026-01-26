@@ -1,6 +1,6 @@
 class BasePage {
-  visit() {
-    cy.visit('/');
+  visit(url = '/') {
+    cy.visit(url);
   }
 
   getElement(selector) {
