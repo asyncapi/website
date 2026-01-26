@@ -1,4 +1,5 @@
 import toolsData from '../fixtures/toolsPages.json';
+import BasePage from './BasePage';
 
 class ToolsModelina extends BasePage {
     verifyTryItNowLink() {
