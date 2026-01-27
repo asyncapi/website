@@ -23,7 +23,7 @@ We're thrilled to report that **6 out of 7 projects were successfully completed*
 
 We worked with an incredible group of contributors, connecting regularly through group video calls to discuss their GSoC projects and tackle blockers together, helping ensure a smooth and productive summer for everyone. Throughout their time with AsyncAPI, contributors picked up new skills, made meaningful improvements to our tooling, and helped shape our ecosystem. We’re deeply grateful for their contributions and the energy they brought to the program.
 
-**Fun news:** some of our GSoC 2025 contributors have continued working on their projects even after the program concluded. Even more exciting, two former GSoC contributors have stepped into [Technical Steering Committee](https://www.asyncapi.com/community/tsc) roles, highlighting both the impact of their work and the level of responsibility and ownership they’ve grown into.
+**Fun news:** Some of our GSoC 2025 contributors have continued working on their projects even after the program concluded. Even more exciting, two former GSoC contributors have stepped into [Technical Steering Committee](https://www.asyncapi.com/community/tsc) roles, highlighting both the impact of their work and the level of responsibility and ownership they’ve grown into.
 
 <Figure
   src="/img/posts/asyncapi-bangalore.webp"
