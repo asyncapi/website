@@ -54,7 +54,7 @@ Let me provide more context in FAQ style:
 
 #### Is Linux Foundation taking control over AsyncAPI
 
-No. AsyncAPI Initiative runs under [open governance model](https://github.com/asyncapi/community/blob/master/CHARTER.md) and is community-driven. LF assures the project's intellectual property (IP), and related assets do not belong to any company or individual. [Fran Mendez](https://twitter.com/fmvilas) does not retire. He only handed over rights to the project to the foundation to assure the community that it is completely safe for all to use the spec and its tooling.
+No. AsyncAPI Initiative runs under [open governance model](https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/CHARTER.md) and is community-driven. LF assures the project's intellectual property (IP), and related assets do not belong to any company or individual. [Fran Mendez](https://twitter.com/fmvilas) does not retire. He only handed over rights to the project to the foundation to assure the community that it is completely safe for all to use the spec and its tooling.
 
 It also means our [GitHub organization](https://github.com/asyncapi) is not going anywhere. Nothing changes.
 
