@@ -14,7 +14,7 @@ excerpt: 'AsyncAPI community status and project updates for February 2025'
 ---
 
 It's been a busy few weeks in the community, and we are establishing an organizational structure as we continue to grow. 
-[We now have the Community Working Group](https://github.com/asyncapi/community/blob/master/annual-goals/2025_Community_Goals.md#community-working-group-umbrella), which serves as an umbrella for the initiatives and programs under AsyncAPI while increasing visibility for our community builder's efforts to sustain the community. 
+[We now have the Community Working Group](https://github.com/asyncapi/community/blob/master/docs/030-project-vision-strategy-goals/2025_Community_Goals.md#community-working-group-umbrella), which serves as an umbrella for the initiatives and programs under AsyncAPI while increasing visibility for our community builder's efforts to sustain the community. 
 
 In light of that, we are also discussing the introduction of a Governance Board to replace the Executive Director position with a board of 3 to 5 members. 
 The board aims to share community responsibilities, reduce the risk of key-person dependency (bus factor), and work towards sustaining the community in the long term. [Please participate in this discussion and share your thoughts and ideas on establishing our first AsyncAPI Governance Board](https://github.com/asyncapi/community/pull/1634).
