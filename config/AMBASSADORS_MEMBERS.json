@@ -53,14 +53,14 @@
     {
         "name": "Daniel Kocot",
         "img": "https://avatars.githubusercontent.com/u/466609?v=4",
-        "bio": "Daniel has been part of the codecentric team since October 2016. Since the beginning of 2022 he works as Senior Solution Architect at the Dortmund branch. Starting as a consultant with a focus on application lifecycle management, his focus shifted more and more towards APIs. In addition to numerous customer projects and his involvement in the open source world around APIs, our Head of API Experience & Operations is also a frequent speaker at conferences.",
-        "title": "Senior Solution Architect / Head of API Experience and Operations",
+        "bio": "Daniel joined the team at adorsys GmbH & Co. KG as Principal Integration Architect in January 2026. He has been dedicated to integration-related topics for almost 10 years. Initially focusing on gateways and the early days of APIOps, he later shifted his focus to methodologies, strategy, and enterprise architecture. In his daily work with his customers, he attaches particular importance to ensuring that interfaces are not only understood as technical tools.",
+        "title": "Principal Integration Architect",
         "github": "danielkocot",
         "githubID": 466609,
         "slack": "U029F3XUYM8",
-        "twitter": "dk_1977",
+        "twitter": "",
         "linkedin": "danielkocot",
-        "company": "codecentric AG",
+        "company": "adorsys GmbH & Co. KG",
         "country": "\ud83c\udde9\ud83c\uddea",
         "isTscMember": true,
         "contributions": [
