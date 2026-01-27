@@ -223,7 +223,7 @@
         "twitter": "ivangsa",
         "bio": "Java Architect with a deep understanding of Java, Spring-Boot, Spring-Cloud technologies, specializing in Domain-Driven Design (DDD) and Event-Driven Architectures creating Software Easy to Understand. Building ZenWave 360\u00ba. ZenWave 360\u00ba is a set of tools built on the foundations of Domain Driven Design and API-First principles for Event-Driven Architectures, to help you create software easy to understand. https://www.zenwave360.io/",
         "linkedin": "ivangarciasainzaja",
-        "company": "IZERTIS",
+        "company": "ZenWave360",
         "title": "Java Architect. Speaker. Building ZenWave 360\u00b0.",
         "img": "https://avatars.githubusercontent.com/u/1246876?v=4",
         "contributions": [
@@ -298,6 +298,60 @@
                     "month": "October"
                 },
                 "link": "https://www.youtube.com/watch?v=gUsoD8RaCuw"
+            },
+            {
+                "type": "talk",
+                "title": "AsyncAPI Full Code Generation for Java with ZenWave SDK",
+                "date": {
+                    "year": 2024,
+                    "month": "October"
+                },
+                "link": "https://www.youtube.com/watch?v=q5vt2TLGoaQ"
+            },
+            {
+                "type": "article",
+                "title": "Transactional OutBox With AsyncAPI, SpringModulith and ZenWaveSDK (full project and tutorial)",
+                "date": {
+                    "year": 2025,
+                    "month": "April"
+                },
+                "link": "https://www.zenwave360.io/posts/TransactionalOutBoxWithAsyncAPIAndSpringModulith/"
+            },
+            {
+                "type": "talk",
+                "title": "Arquitecturas Event-Driven y Monolitos Modulares con AsyncAPI",
+                "date": {
+                    "year": 2025,
+                    "month": "May"
+                },
+                "link": "https://www.youtube.com/watch?v=08MWIWljbIQ"
+            },
+            {
+                "type": "talk",
+                "title": "Event-Driven Architectures with Spring Modulith and AsyncAPI",
+                "date": {
+                    "year": 2025,
+                    "month": "May"
+                },
+                "link": "https://2025.springio.net/sessions/event-driven-architectures-with-spring-modulith-and-asyncapi/"
+            },
+            {
+                "type": "article",
+                "title": "ZenWave AsyncAPI Generator",
+                "date": {
+                    "year": 2025,
+                    "month": "October"
+                },
+                "link": "https://www.zenwave360.io/zenwave-sdk/plugins/asyncapi-generator/"
+            },
+            {
+                "type": "article",
+                "title": "ShoppingCart with AsyncAPI (full project and tutorial)",
+                "date": {
+                    "year": 2026,
+                    "month": "Jan"
+                },
+                "link": "https://www.zenwave360.io/docs/examples/eda-examples/asyncapi-shopping-cart/"
             }
         ]
     },
