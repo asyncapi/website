@@ -1,5 +1,5 @@
 import { readFile, writeFile } from 'fs/promises';
-
+import $RefParser from '@apidevtools/json-schema-ref-parser';
 import { convertToJson } from './utils';
 
 /**
@@ -9,9 +9,11 @@ import { convertToJson } from './utils';
  *
  * @param readPath - The file path from which to read the content.
  * @param writePath - The file path where the JSON output will be written.
+ * @param dereference - A boolean flag indicating whether to dereference JSON references ($ref).
+ * @returns A promise that resolves when the JSON file has been successfully written.
  * @throws {Error} If reading the file, converting its content to JSON, or writing the JSON output fails.
  */
-export async function writeJSON(readPath: string, writePath: string) {
+export async function writeJSON(readPath: string, writePath: string, dereference: boolean = false): Promise<void> {
   let readContent;
   let jsonContent;
 
@@ -29,9 +31,11 @@ export async function writeJSON(readPath: string, writePath: string) {
     return Promise.reject(err);
   }
 
+  const dereferenced = await $RefParser.dereference(jsonContent);
+
   // Attempt to write the JSON content to file
   try {
-    await writeFile(writePath, JSON.stringify(jsonContent));
+    await writeFile(writePath, JSON.stringify(dereferenced));
   } catch (err) {
     return Promise.reject(err);
   }
