@@ -6,7 +6,7 @@ weight: 20
  [Schedule your own docs meetings](MEETINGS_ORGANIZATION).
 
 ## AsyncAPI Slack workspace and docs channels
-Join the [AsyncAPI documentation Slack channel](https://asyncapi.com/slack-invite/enQtNjUxNTY1NTU1MDk0NS1mYjNhODFhZDI3ZDRjODA1ZWRkZTZlYmM4ZTNjNzZjNTg5NTBiYjNmNTkwYzRlYzY4ZjQ4M2RhMDYzMjI3N2U5) to meet other technical writers:
+Join the [AsyncAPI documentation Slack channel](https://asyncapi.com/slack-invite) to meet other technical writers:
 
 - **#13_docs:** A space for all technical writers to start discussions, ask questions, share new ideas, and request `good first issues.`
 
