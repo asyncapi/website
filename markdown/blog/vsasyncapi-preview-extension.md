@@ -40,7 +40,7 @@ Watch the AsyncAPI VS Code Preview extension working seamlessly in your web brow
 
 **Demo Overview:** The video demonstrates opening a GitHub repository in vscode.dev, installing the AsyncAPI Preview extension, opening a sample AsyncAPI YAML file, and executing the preview command to generate interactive documentation in the web browser.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JcS1VRyYmhE?si=DlqqYs3PmJtROTvF" title="AsyncAPI VS Code Preview Web Demo - Browser Extension Walkthrough" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<YouTube id="DlqqYs3PmJtROTvF" />
 
 **Accessibility Note:** This video includes visual demonstrations of the AsyncAPI extension interface. For a text-based description of the steps shown, please refer to the "Try It Out" section below.
 
