@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { A11y, Navigation, Pagination } from 'swiper/modules';
+import { A11y, Navigation, Pagination as SwiperPagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import type { ICaseStudies } from '@/types/post';
@@ -9,7 +9,7 @@ import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import Button from '../../components/buttons/Button';
 import Container from '../../components/layout/Container';
 import GenericLayout from '../../components/layout/GenericLayout';
-import PaginationComponent from '../../components/Pagination';
+import Pagination from '../../components/Pagination';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
 import AdoptersList from '../../config/adopters.json';
@@ -89,7 +89,7 @@ export default function CaseStudies() {
         <Container wide>
           <div className='relative px-12'>
             <Swiper
-              modules={[Navigation, Pagination, A11y]}
+              modules={[Navigation, SwiperPagination, A11y]}
               spaceBetween={20}
               slidesPerView={1}
               navigation={{
@@ -262,7 +262,7 @@ export default function CaseStudies() {
 
           {/* Pagination */}
           <div className='mt-6'>
-            <PaginationComponent
+            <Pagination
               currentPage={currentPage}
               totalPages={totalPages}
               onPageChange={setCurrentPage}
