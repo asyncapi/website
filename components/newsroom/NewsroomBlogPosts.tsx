@@ -60,14 +60,14 @@ export default function NewsroomBlogPosts() {
           className={`${buttonClass} ml-0 px-6 py-3 ${current === 0 ? 'cursor-not-allowed border-gray-200 bg-white text-gray-200' : 'border-secondary-500  bg-secondary-100 text-secondary-500  hover:bg-secondary-500 hover:text-white'}`}
           data-testid='Blog-Prev-button'
         >
-          <ArrowLeft className='w-4' />
+          <ArrowLeft className='w-6' />
         </button>
         <button
           ref={nextElRef}
-          className={`${buttonClass} px-4 py-1 ${checkLastSnapIndex(current) ? 'cursor-not-allowed border-gray-200 bg-white text-gray-200' : 'border-secondary-500  bg-secondary-100 text-secondary-500  hover:bg-secondary-500 hover:text-white'}`}
+          className={`${buttonClass} px-6 py-3 ${checkLastSnapIndex(current) ? 'cursor-not-allowed border-gray-200 bg-white text-gray-200' : 'border-secondary-500  bg-secondary-100 text-secondary-500  hover:bg-secondary-500 hover:text-white'}`}
           data-testid='Blog-Next-button'
         >
-          <ArrowRight className='w-8' />
+          <ArrowRight className='w-6' />
         </button>
       </div>
     </div>
