@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useContext } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import ReactGA from 'react-ga';
 import TagManager from 'react-gtm-module';
 
@@ -33,8 +33,35 @@ export default function HeadComponent({
   const url = process.env.NEXT_PUBLIC_DEPLOY_PRIME_URL || process.env.NEXT_PUBLIC_DEPLOY_URL || 'http://localhost:3000';
   const appContext = useContext(AppContext);
   const { path = '' } = appContext || {};
-  let currImage = image;
 
+  // useRef guard to prevent double initialization (especially in React Strict Mode)
+  const isAnalyticsInitialized = useRef(false);
+
+  // Initialize Google Analytics and GTM only once on mount
+  useEffect(() => {
+    if (
+      !isAnalyticsInitialized.current &&
+      typeof window !== 'undefined' &&
+      window.location.hostname.includes('asyncapi.com')
+    ) {
+      TagManager.initialize({ gtmId: 'GTM-T58BTVQ' });
+      ReactGA.initialize('UA-109278936-1');
+      isAnalyticsInitialized.current = true;
+    }
+  }, []); // Empty dependency array = runs only once on mount
+
+  // Track pageviews when path changes
+  useEffect(() => {
+    if (
+      isAnalyticsInitialized.current &&
+      typeof window !== 'undefined' &&
+      window.location.hostname.includes('asyncapi.com')
+    ) {
+      ReactGA.pageview(window.location.pathname + window.location.search);
+    }
+  }, [path]); // Runs when path changes
+
+  let currImage = image;
   const permalink = `${url}${path}`;
   let type = 'website';
 
@@ -49,13 +76,6 @@ export default function HeadComponent({
   const permTitle = 'AsyncAPI Initiative for event-driven APIs';
 
   const currTitle = title ? `${title} | ${permTitle}` : permTitle;
-
-  // enable google analytics
-  if (typeof window !== 'undefined' && window.location.hostname.includes('asyncapi.com')) {
-    TagManager.initialize({ gtmId: 'GTM-T58BTVQ' });
-    ReactGA.initialize('UA-109278936-1');
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }
 
   return (
     <Head>
