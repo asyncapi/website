@@ -58,7 +58,7 @@ Thank you to [APIdays](https://www.apidays.global) and [APIConf Lagos](https://a
 </a>
 
 ### Financial Sponsors
-To facilitate travel, have MCs on-site to support the events and cover logistics for shipping swag. It was because of our Financial [Gravitee](https://www.gravitee.io) and [IBM](https://www.ibm.com). We appreciate them for their support.
+To facilitate travel, have MCs on-site to support the events and cover logistics for shipping swag, , we received support from [Gravitee](https://www.gravitee.io) and [IBM](https://www.ibm.com) who were our Financial sponsors. We appreciate them for their support.
 
 <a href='https://www.gravitee.io' target='_blank'>
 <img src='/img/sponsors/gravitee.png' alt='gravitee.io' width='500px' />
@@ -137,7 +137,7 @@ And a huge thanks to the behind-the-scenes crew who made everything work and led
 
 For our first conference for the year, we will be heading to DeveloperWeek February 19–20 in San Jose, CA, where the [AsyncAPI track](https://conference.asyncapi.com/venue/California) will be at the Frontend World + Dev Innovation World Stage.
 
-We have [Free Open Passes](). Please help us share and spread the word, and see you there!
+We have [Free Open Passes](https://link.devnetwork.com/1Uvd6FUb). Please help us share and spread the word, and see you there!
 
 
 Additionally, we are looking to complement our large conference tracks with intimate, community-led meetups. If your company has a venue to share or would like to host an AsyncAPI meetup in 2026, please reach out!
