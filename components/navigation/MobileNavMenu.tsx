@@ -46,7 +46,6 @@ export default function MobileNavMenu({
   function showMenu(menu: string) {
     if (open === menu) {
       setOpen(null);
-
       return;
     }
     setOpen(menu);
@@ -65,8 +64,8 @@ export default function MobileNavMenu({
               </Link>
               <div className='justify-content -mr-2 flex flex-row items-center' data-testid='MobileNav-button'>
                 <SearchButton
-                  className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 
-                  transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 
+                  className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400
+                  transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500
                   focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
                   aria-label='Open Search'
                 >
@@ -75,8 +74,8 @@ export default function MobileNavMenu({
                 <button
                   onClick={onClickClose}
                   type='button'
-                  className='inline-flex items-center justify-center rounded-md p-2 text-gray-400 
-                  transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 
+                  className='inline-flex items-center justify-center rounded-md p-2 text-gray-400
+                  transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500
                   focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
                 >
                   <svg className='size-6' stroke='currentColor' fill='none' viewBox='0 0 24 24'>
@@ -88,7 +87,6 @@ export default function MobileNavMenu({
           </div>
           <div className='space-y-2 px-5 py-2' onClick={() => showMenu('learning')} data-testid='MobileNav-docs'>
             <h4 className='flex justify-between font-medium text-gray-800'>
-              {' '}
               <Link href='/docs' className='flex cursor-pointer'>
                 Docs
               </Link>
@@ -104,7 +102,6 @@ export default function MobileNavMenu({
           </div>
           <div className='space-y-2 px-5 py-2' onClick={() => showMenu('tooling')} data-testid='MobileNav-tools'>
             <h4 className='flex justify-between font-medium text-gray-800'>
-              {' '}
               <Link href='/tools' className='flex cursor-pointer'>
                 Tools
               </Link>
@@ -153,7 +150,7 @@ export default function MobileNavMenu({
                       key={index}
                       target={item.target || '_self'}
                       rel='noopener noreferrer'
-                      className='mb-4 block rounded-lg py-1 text-base font-medium leading-6 text-gray-700 
+                      className='mb-4 block rounded-lg py-1 text-base font-medium leading-6 text-gray-700
                       transition duration-150 ease-in-out hover:bg-gray-50'
                       data-testid='MobileNav-others'
                     >
@@ -183,11 +180,12 @@ export default function MobileNavMenu({
                     <button
                       key={lang.key}
                       onClick={() => changeLanguage(lang.value.toLowerCase(), true)}
-                      className={`mb-4 ml-2 block w-full rounded-lg py-1 text-start text-sm 
-                      font-medium leading-6 text-gray-700 transition duration-150 ease-in-out 
+                      className={`mb-4 ml-2 block w-full rounded-lg py-1 text-start text-sm
+                      font-medium leading-6 text-gray-700 transition duration-150 ease-in-out
                       hover:bg-gray-50 ${
-                        currentLanguage.toLowerCase() === lang.text.toLowerCase() 
-                        ? 'text-secondary-500' : ''
+                        currentLanguage.toLowerCase() === lang.text.toLowerCase()
+                          ? 'text-secondary-500'
+                          : ''
                       }`}
                       data-testid='MobileNav-language-item'
                     >
