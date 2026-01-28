@@ -9,7 +9,7 @@ interface GoldSponsorsProps {
 }
 
 /**
- * @description This component displays Gold Sponsors.
+ * @description This component displays Gold Sponsors with a professional layout.
  * @param {GoldSponsorsProps} props - The props for GoldSponsors component.
  * @param {string} props.className - Additional CSS classes for styling.
  * @param {boolean} props.showSupportBanner - Indicates whether support banner should be displayed.
@@ -17,24 +17,26 @@ interface GoldSponsorsProps {
 export default function GoldSponsors({ className = '' }: GoldSponsorsProps): React.ReactNode {
   return (
     <div className={`text-center ${className}`}>
-      <div className='mb-8 flex flex-wrap items-center justify-center md:px-4'>
-        {goldSponsors.map((sponsor, index) => (
-          <a
-            key={index}
-            href={sponsor.website}
-            target='_blank'
-            className='relative block w-2/3 p-4 text-center sm:w-1/2 sm:p-0 md:w-1/3 lg:w-1/5'
-            rel='noopener noreferrer'
-            data-testid='GoldSponsors-link'
-          >
-            <SponsorImage
-              src={sponsor.imageSrc}
-              alt={sponsor.altText}
-              className={sponsor.imageClass}
-              data-testid='GoldSponsors-img'
-            />
-          </a>
-        ))}
+      <div className='mx-auto max-w-3xl px-4 py-4'>
+        <div className='flex flex-wrap items-center justify-center gap-4 md:gap-6'>
+          {goldSponsors.map((sponsor, index) => (
+            <a
+              key={index}
+              href={sponsor.website}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='group flex items-center justify-center rounded-lg border border-gray-100 bg-white px-6 py-3 shadow-sm transition-all duration-300 hover:border-gray-200 hover:shadow-md'
+              data-testid='GoldSponsors-link'
+            >
+              <SponsorImage
+                src={sponsor.imageSrc}
+                alt={sponsor.altText}
+                className={sponsor.imageClass}
+                data-testid='GoldSponsors-img'
+              />
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );
