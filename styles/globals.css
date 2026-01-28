@@ -17,6 +17,44 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  background-color: white;
+}
+
+html.dark,
+html.dark body {
+  background-color: #121825; /* dark-background color */
+}
+
+/* Disable transitions on initial load to prevent flash */
+html:not(.transitions-enabled) *,
+html:not(.transitions-enabled) *::before,
+html:not(.transitions-enabled) *::after {
+  transition: none !important;
+}
+
+/* Smooth theme transitions - only enabled after page loads */
+html.transitions-enabled [class*="bg-"],
+html.transitions-enabled [class*="text-"],
+html.transitions-enabled [class*="border-"],
+html.transitions-enabled svg,
+html.transitions-enabled path,
+html.transitions-enabled circle,
+html.transitions-enabled rect,
+html.transitions-enabled line,
+html.transitions-enabled polyline,
+html.transitions-enabled polygon {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-out;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
 }
 
 li>p {
@@ -143,6 +181,10 @@ abbr[title] {
   border-radius: 100%;
   border: solid 3px #f3f3f4;
   transition: 0.2s;
+}
+
+.dark .orbit {
+  border-color: rgba(168, 126, 252, 0.3);
 }
 
 .orbit > div {
@@ -319,6 +361,11 @@ abbr[title] {
   background: linear-gradient(225deg, #2dccfd 9.35%, #ad20e2 88.41%);
 }
 
+.dark .gh-img {
+  border-color: rgba(168, 126, 252, 0.2);
+  box-shadow: 5px 20px 18px 10px rgba(136, 81, 251, 0.1);
+}
+
 .community-pattern {
   background: url('/img/homepage/circular-pattern.png');
   width: 100%;
@@ -357,4 +404,103 @@ select {
   border-radius: 16px; 
 }
 
+/* Line clamp utilities for text truncation */
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
 
+.line-clamp-4 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.line-clamp-6 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+}
+
+/* Smooth gradient animation for CTA section */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Custom Swiper Styles for Featured Case Studies */
+.featured-case-studies-swiper {
+  padding: 20px 0 60px 0;
+}
+
+.featured-case-studies-swiper .swiper-pagination {
+  bottom: 20px;
+}
+
+.featured-case-studies-swiper .swiper-pagination-bullet {
+  background: #8851FB;
+  opacity: 0.5;
+  width: 10px;
+  height: 10px;
+}
+
+.featured-case-studies-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 24px;
+  border-radius: 5px;
+}
+
+.featured-case-studies-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+/* Dark mode pagination bullets */
+.dark .featured-case-studies-swiper .swiper-pagination-bullet {
+  background: #A87EFC;
+}
+
+/* Custom Swiper Styles for Use Cases Carousel */
+.case-studies-swiper {
+  padding: 20px 0 60px 0;
+}
+
+.case-studies-swiper .swiper-pagination {
+  bottom: 20px;
+}
+
+.case-studies-swiper .swiper-pagination-bullet {
+  background: #8851FB;
+  opacity: 0.5;
+  width: 10px;
+  height: 10px;
+}
+
+.case-studies-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 24px;
+  border-radius: 5px;
+}
+
+.case-studies-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+/* Dark mode pagination bullets */
+.dark .case-studies-swiper .swiper-pagination-bullet {
+  background: #A87EFC;
+}

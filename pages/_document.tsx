@@ -17,6 +17,24 @@ class MyDocument extends Document {
     return (
       <Html lang={currentLocale as string}>
         <Head>
+          {/* Blocking script to apply dark mode before React hydrates - prevents flash */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function() {
+                  try {
+                    var theme = localStorage.getItem('theme');
+                    var systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    var shouldUseDark = theme === 'dark' || (!theme && systemPrefersDark);
+                    if (shouldUseDark) {
+                      document.documentElement.classList.add('dark');
+                    }
+                    document.documentElement.classList.add('transitions-enabled');
+                  } catch (e) {}
+                })();
+              `
+            }}
+          />
           {/* Load Work Sans font */}
           <link rel='preconnect' href='https://fonts.googleapis.com' />
           <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='anonymous' />
