@@ -1,4 +1,4 @@
-class BasePage {
+class BaseDocsPage {
   visit(path = '/') {
     cy.visit(path);
   }
@@ -11,9 +11,9 @@ class BasePage {
         const wrap = cy.wrap($a);
         return $a.prop('target') === '_self'
           ? wrap.invoke('removeAttr', 'target').click()
-         : wrap.click();
-    });
- }
+          : wrap.click();
+      });
+  }
 
   verifyLinkByLabel(href, label) {
     cy.get(`a[href="${href}"]`).contains(label).click();
@@ -24,4 +24,4 @@ class BasePage {
   }
 }
 
-export default BasePage;
+export default BaseDocsPage;
