@@ -33,7 +33,7 @@ export default function RoadmapList({
 }: IRoadmapListProps) {
   return (
     items &&
-    items.length && (
+    items.length !== 0 && (
       <ul className={className} data-testid='RoadmapList-list'>
         {!collapsed &&
           items.map((item, index) => (
