@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import type { Issue } from '@/types/components/dashboard/TableTypes';
 
@@ -22,7 +23,7 @@ interface TableProps {
  */
 export default function Table({ title, data, className, listClassName }: TableProps) {
   return (
-    <div className={`rounded border border-gray-200  bg-gray-50 lg:w-1/2 ${className}`}>
+    <div className={twMerge('rounded border border-gray-200 bg-gray-50 lg:w-1/2', className)}>
       <div className='inline-flex w-full rounded bg-white p-5'>
         <h2 className='w-full text-base font-semibold'>{title}</h2>
       </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 /* eslint-disable max-len */
 /**
@@ -12,7 +13,7 @@ export default function IconGuide({ className = '' }) {
       viewBox='0 0 24 24'
       strokeWidth={1.5}
       stroke='currentColor'
-      className={`size-5 ${className}`}
+      className={twMerge('size-5', className)}
     >
       <path
         strokeLinecap='round'

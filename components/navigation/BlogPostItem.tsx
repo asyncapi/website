@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Ref } from 'react';
 import React, { forwardRef } from 'react';
 import TextTruncate from 'react-text-truncate';
+import { twMerge } from 'tailwind-merge';
 
 import { BlogPostType } from '@/types/components/navigation/BlogPostType';
 import type { IBlogPost } from '@/types/post';
@@ -55,7 +56,7 @@ const BlogPostItem = ({ post, className = '', id = '' }: BlogPostItemProps, ref:
   }
 
   return (
-    <li className={`list-none rounded-lg ${className}`} ref={ref} id={id}>
+    <li className={twMerge('list-none rounded-lg', className)} ref={ref} id={id}>
       <article className='h-full rounded-lg'>
         <Link href={post.slug}>
           <span
