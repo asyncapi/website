@@ -28,12 +28,14 @@ In 2023, we had 1488 people joining our workspace:
 
 <Figure
   src="/img/posts/2023-summary/new-users-joining-per-year.webp"
+  caption="Chart showing new Slack members joining per year from 2020 to 2023"
 />
 
 Below are our top 5 members who joined the community in 2023 and have been the most active among other newcomers. As a community, we are proud of their contributions to our Mentorship programs. They even keep us entertained with memes 😀.
 
 <Figure
   src="/img/posts/2023-summary/Top-5-members.webp"
+  caption="Top 5 most active new members who joined the AsyncAPI community in 2023"
 />
 
 
@@ -41,6 +43,7 @@ Additionally, our weekly activity continues to grow as we run different mentorsh
 
 <Figure
   src="/img/posts/2023-summary/slack-activity.webp"
+  caption="Weekly Slack activity statistics showing community engagement trends"
 />
 
 
@@ -59,12 +62,14 @@ For our LinkedIn page, we are currently sitting at **2988** overall followers. D
 
 <Figure
   src="/img/posts/2023-summary/linkedin.webp"
+  caption="LinkedIn follower growth chart showing 849 new followers in 2023"
 />
 
 We also don't use any premium or marketing services; everything you see here is 100% organic. Even though LinkedIn still has much to offer, it is better than the X/Twitter app.
 
 <Figure
   src="/img/posts/2023-summary/referred-by-LinkedIn.webp"
+  caption="Website traffic referred by LinkedIn analytics"
 />
 
 #### X/Twitter
@@ -73,6 +78,7 @@ We gained almost 1K followers since 2022, and now have 4.4k overall followers. W
 
 <Figure
   src="/img/posts/2023-summary/referred-by-Twitter.webp"
+  caption="Website traffic referred by X/Twitter showing decline compared to 2022"
 /> 
 
 Although the decline is shallow, I'm not extremely worried. Most top tweets for this year were appreciation tweets balanced with technical tweets. We don't use advertising because we don't consider the X/Twitter platform worth additional investment.
@@ -83,6 +89,7 @@ The AsyncAPI YouTube channel performed way better than expected, especially as w
 
 <Figure
   src="/img/posts/2023-summary/youtube.webp"
+  caption="YouTube channel statistics showing subscriber growth to over 1.46k total"
 /> 
 
 #### Newsletter
@@ -91,12 +98,14 @@ Over the past nine months, the December Edition was the most popular due to the 
 
 <Figure
   src="/img/posts/2023-summary/total-opens.webp"
+  caption="Newsletter open rates with December Edition being the most popular"
 /> 
 
 And, of course, I'm not exempt from unsubscribers. Although the number might seem minimal to some, it still stings as a writer.
 
 <Figure
   src="/img/posts/2023-summary/unsubscribed.webp"
+  caption="Newsletter unsubscriber statistics over 2023"
 /> 
 
 Looking forward to sending the 2024 Editions!!🎉🎉
@@ -107,6 +116,7 @@ AsyncAPI website sessions and unique user have increased significantly over the 
 
 <Figure
   src="/img/posts/2023-summary/google-analytics.webp"
+  caption="Google Analytics showing website sessions and unique users growth"
 /> 
 
 We also lost 21 days' worth of data during October due to a PR update that affected the analytics workflow, but we are doing well.
@@ -117,6 +127,7 @@ Google Search Console is one of my favorite tools as it shows how much impact an
 
 <Figure
   src="/img/posts/2023-summary/google-console.webp"
+  caption="Google Search Console data showing surge in impressions and clicks"
 /> 
 
 ### Github
@@ -125,12 +136,14 @@ The number of contributors in the community keeps growing, from having over **16
 
 <Figure
   src="/img/posts/2023-summary/Total-Contributors.webp"
+  caption="Total GitHub contributors growth from 1600 in 2022 to 2320 in 2023"
 /> 
 
 Although we have a handful of maintainers, we try our best to manage, resolve, and close issues as much as we can. Additionally, we are focusing on growing the number of maintainers in the coming years.
 
 <Figure
   src="/img/posts/2023-summary/Issue-History.webp"
+  caption="GitHub issue history showing resolved and closed issues over time"
 /> 
 
 ### NPM
@@ -139,6 +152,7 @@ Numbers don't lie; and yes, these are the total downloads of the top AsyncAPI pa
 
 <Figure
   src="/img/posts/2023-summary/NPM-packages.webp"
+  caption="NPM package downloads showing AsyncAPI spec growth from 5M to 17M"
 /> 
 
 If you are worried about the project slowing down anytime soon, we are still growing strong.
