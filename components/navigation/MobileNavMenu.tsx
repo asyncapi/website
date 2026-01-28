@@ -65,7 +65,9 @@ export default function MobileNavMenu({
               </Link>
               <div className='justify-content -mr-2 flex flex-row items-center' data-testid='MobileNav-button'>
                 <SearchButton
-                  className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
+                  className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 
+                  transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 
+                  focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
                   aria-label='Open Search'
                 >
                   <SearchIcon />
@@ -73,7 +75,9 @@ export default function MobileNavMenu({
                 <button
                   onClick={onClickClose}
                   type='button'
-                  className='inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
+                  className='inline-flex items-center justify-center rounded-md p-2 text-gray-400 
+                  transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 
+                  focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
                 >
                   <svg className='size-6' stroke='currentColor' fill='none' viewBox='0 0 24 24'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M6 18L18 6M6 6l12 12' />
@@ -149,7 +153,8 @@ export default function MobileNavMenu({
                       key={index}
                       target={item.target || '_self'}
                       rel='noopener noreferrer'
-                      className='mb-4 block rounded-lg py-1 text-base font-medium leading-6 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-50'
+                      className='mb-4 block rounded-lg py-1 text-base font-medium leading-6 text-gray-700 
+                      transition duration-150 ease-in-out hover:bg-gray-50'
                       data-testid='MobileNav-others'
                     >
                       {item.text}
@@ -178,8 +183,11 @@ export default function MobileNavMenu({
                     <button
                       key={lang.key}
                       onClick={() => changeLanguage(lang.value.toLowerCase(), true)}
-                      className={`mb-4 ml-2 block w-full rounded-lg py-1 text-start text-sm font-medium leading-6 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-50 ${
-                        currentLanguage.toLowerCase() === lang.text.toLowerCase() ? 'text-secondary-500' : ''
+                      className={`mb-4 ml-2 block w-full rounded-lg py-1 text-start text-sm 
+                      font-medium leading-6 text-gray-700 transition duration-150 ease-in-out 
+                      hover:bg-gray-50 ${
+                        currentLanguage.toLowerCase() === lang.text.toLowerCase() 
+                        ? 'text-secondary-500' : ''
                       }`}
                       data-testid='MobileNav-language-item'
                     >
