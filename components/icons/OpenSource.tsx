@@ -15,4 +15,3 @@ export default function IconOpenSource(props: React.SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
-

@@ -6,10 +6,10 @@ import React, { useState } from 'react';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
+import communityToolingsShowcase from '../../config/community-toolings-showcase.json';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 import ToolingCard from './ToolingCard';
-import communityToolingsShowcase from '../../config/community-toolings-showcase.json';
 
 interface ToolData {
   name: string;

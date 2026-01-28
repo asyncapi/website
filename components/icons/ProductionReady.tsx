@@ -15,4 +15,3 @@ export default function IconProductionReady(props: React.SVGProps<SVGSVGElement>
     </svg>
   );
 }
-

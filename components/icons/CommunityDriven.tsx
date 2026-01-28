@@ -11,4 +11,3 @@ export default function IconCommunityDriven(props: React.SVGProps<SVGSVGElement>
     </svg>
   );
 }
-

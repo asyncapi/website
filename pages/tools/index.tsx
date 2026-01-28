@@ -3,10 +3,10 @@ import React from 'react';
 import ToolsDashboard from '@/components/tools/ToolsDashboard';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
-import GenericLayout from '../../components/layout/GenericLayout';
-import IconOpenSource from '../../components/icons/OpenSource';
 import IconCommunityDriven from '../../components/icons/CommunityDriven';
+import IconOpenSource from '../../components/icons/OpenSource';
 import IconProductionReady from '../../components/icons/ProductionReady';
+import GenericLayout from '../../components/layout/GenericLayout';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
 import TextLink from '../../components/typography/TextLink';

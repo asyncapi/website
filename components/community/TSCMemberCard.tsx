@@ -59,7 +59,11 @@ export default function TSCMemberCard({ member }: TSCMemberCardProps) {
   return (
     <div className='bg-white dark:bg-dark-card rounded-xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition-shadow'>
       <div className='flex items-start gap-4 mb-4'>
-        <img src={member.github ? `https://www.github.com/${member.github}.png` : ''} alt={member.name} className='w-16 h-16 rounded-full' />
+        <img
+          src={member.github ? `https://www.github.com/${member.github}.png` : ''}
+          alt={member.name}
+          className='w-16 h-16 rounded-full'
+        />
         <div className='flex-1 min-w-0'>
           <h3 className='text-lg font-bold text-gray-900 dark:text-white truncate'>{member.name}</h3>
           <p className='text-sm text-gray-600 dark:text-gray-400'>
