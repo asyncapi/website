@@ -23,12 +23,10 @@ function addAdditionalUserInfo(user: any): Tsc {
     ...user
   };
 
-  // if username is not present, use the github username
   if (!userData.name) {
     userData.name = userData.github;
   }
 
-  // add social links
   if (userData.github) {
     userData.githubUrl = `https://www.github.com/${userData.github}`;
   }
@@ -39,10 +37,8 @@ function addAdditionalUserInfo(user: any): Tsc {
     userData.twitterUrl = `https://www.twitter.com/${userData.twitter}`;
   }
 
-  // add avatar url
   userData.avatarUrl = `${userData.githubUrl}.png`;
 
-  // make repo links
   if (userData.repos) {
     userData.reposList = userData.repos.map((repoName: string) => ({
       name: repoName,
@@ -68,7 +64,6 @@ export default function TSC() {
   const [filterType, setFilterType] = useState<'all' | 'maintainer' | 'available' | 'company'>('all');
   const membersPerPage = 9;
 
-  // Filter members
   const filteredMembers = tscMembers.filter((member) => {
     const matchesSearch =
       member.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -88,7 +83,6 @@ export default function TSC() {
   const indexOfFirstMember = indexOfLastMember - membersPerPage;
   const currentMembers = filteredMembers.slice(indexOfFirstMember, indexOfLastMember);
 
-  // Reset and clamp pagination when filters/search change
   useEffect(() => {
     if (totalPages === 0 || currentPage > totalPages) {
       setCurrentPage(1);

@@ -25,3 +25,4 @@ deno.lock
 cypress/videos
 cypress/screenshots
 next-env.d.ts
+*.tsbuildinfo
