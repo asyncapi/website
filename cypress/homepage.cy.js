@@ -25,7 +25,7 @@ describe('Home Page E2E Tests Using Base Components', () => {
       page.verifyPageLoaded();
     });
   });
-  
+
   it('should display the main header and logo', () => {
     homePage.verifyHeader();
     homePage.verifyNavbarLogo();
