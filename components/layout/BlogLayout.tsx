@@ -1,4 +1,3 @@
-import moment from 'moment';
 import ErrorPage from 'next/error';
 import HtmlHead from 'next/head';
 import { useRouter } from 'next/router';
@@ -7,6 +6,7 @@ import React from 'react';
 import type { IPosts } from '@/types/post';
 
 import BlogContext from '../../context/BlogContext';
+import { formatDate } from '../../utils/dateHelpers';
 import AuthorAvatars from '../AuthorAvatars';
 import AnnouncementHero from '../campaigns/AnnouncementHero';
 import Head from '../Head';
@@ -71,7 +71,7 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
                   </span>
                 </p>
                 <div className='flex text-sm leading-5 text-gray-500'>
-                  <time dateTime={post.date}>{moment(post.date).format('MMMM D, YYYY')}</time>
+                  <time dateTime={post.date}>{formatDate(post.date, 'MMMM d, yyyy')}</time>
                   <span className='mx-1'>&middot;</span>
                   <span>{post.readingTime} min read</span>
                 </div>

@@ -1,4 +1,3 @@
-import moment from 'moment';
 import Link from 'next/link';
 import React from 'react';
 import TextTruncate from 'react-text-truncate';
@@ -7,6 +6,7 @@ import { BlogPostType } from '@/types/components/navigation/BlogPostType';
 import type { IBlogPost } from '@/types/post';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
+import { formatDate } from '@/utils/dateHelpers';
 
 import AuthorAvatars from '../AuthorAvatars';
 import Heading from '../typography/Heading';
@@ -100,7 +100,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
                   </Heading>
                   <Paragraph typeStyle={ParagraphTypeStyle.sm} className='flex'>
                     <time dateTime={post.date} data-testid='FeaturedBlogPost-date'>
-                      {moment(post.date).format('MMMM D, YYYY')}
+                      {formatDate(post.date, 'MMMM d, yyyy')}
                     </time>
                     <span className='mx-1'>&middot;</span>
                     <span data-testid='FeaturedBlogPost-RT'>{post.readingTime} min read</span>

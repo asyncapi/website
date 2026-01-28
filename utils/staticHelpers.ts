@@ -1,6 +1,6 @@
-import moment from 'moment';
-
 import type { IEvent } from '@/types/event';
+
+import { isDateAfter, parseDate } from './dateHelpers';
 
 /**
  * Retrieves events sorted by date.
@@ -11,31 +11,31 @@ import type { IEvent } from '@/types/event';
 export function getEvents(events: IEvent[], size?: number) {
   let meetingsWithDates: any = events.map((event) => ({
     ...event,
-    date: moment(event.date)
+    date: parseDate(event.date)
   }));
 
-  meetingsWithDates.sort((a: any, b: any) => a.date - b.date);
+  meetingsWithDates.sort((a: any, b: any) => a.date.getTime() - b.date.getTime());
 
   if (size) {
     return meetingsWithDates
-      .filter((meeting: any) => meeting.date > moment(new Date()))
+      .filter((meeting: any) => isDateAfter(meeting.date, new Date()))
       .slice(0, size || meetingsWithDates.length);
   }
 
   const sortedMeetings: any = [];
 
   for (const meeting of meetingsWithDates) {
-    if (meeting.date > moment(new Date())) {
+    if (isDateAfter(meeting.date, new Date())) {
       sortedMeetings.push(meeting);
     }
   }
 
   meetingsWithDates.sort((a: any, b: any) => {
-    return b.date - a.date;
+    return b.date.getTime() - a.date.getTime();
   });
 
   for (const meeting of meetingsWithDates) {
-    if (meeting.date < moment(new Date())) {
+    if (!isDateAfter(meeting.date, new Date())) {
       sortedMeetings.push(meeting);
     }
   }

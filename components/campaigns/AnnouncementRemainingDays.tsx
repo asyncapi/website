@@ -1,5 +1,6 @@
-import moment from 'moment';
 import React from 'react';
+
+import { getDaysDifference, getHoursDifference, getMinutesDifference, parseDate } from '../../utils/dateHelpers';
 
 interface AnnouncementRemainingDaysProps {
   dateTime: string;
@@ -12,11 +13,11 @@ interface AnnouncementRemainingDaysProps {
  * @param {string} props.eventName - The name of the event
  */
 export default function AnnouncementRemainingDays({ dateTime, eventName }: AnnouncementRemainingDaysProps) {
-  const date = moment(dateTime);
-  const now = moment();
-  const days = date.diff(now, 'days');
-  const hours = date.diff(now, 'hours');
-  const minutes = date.diff(now, 'minutes');
+  const date = parseDate(dateTime);
+  const now = new Date();
+  const days = getDaysDifference(date, now);
+  const hours = getHoursDifference(date, now);
+  const minutes = getMinutesDifference(date, now);
 
   let text = '';
 
