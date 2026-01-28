@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import type { Language, Technology, VisibleDataListType } from '@/types/components/tools/ToolDataType';
@@ -58,8 +58,8 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
   }, [languages, technologies, categories, isPaid, isAsyncAPIOwner]);
 
   // contains the list of languages and technologies
-  const languageList = tags.languages as Language[];
-  const technologyList = tags.technologies as Technology[];
+  const languageList = useMemo(() => tags.languages as Language[], []);
+  const technologyList = useMemo(() => tags.technologies as Technology[], []);
 
   // For Showing language, technology and category information
   const [visible, setVisible] = useState<VisibleDataListType>({
