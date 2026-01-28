@@ -27,10 +27,6 @@ export interface Ambassador {
   company: string;
   contributions: Contribution[];
   country?: string;
-  githubUrl?: string;
-  linkedinUrl?: string;
-  twitterUrl?: string;
-  avatarUrl?: string;
   isTscMember?: boolean;
   isBoardMember?: boolean;
   isBoardChair?: boolean;
@@ -38,7 +34,6 @@ export interface Ambassador {
 
 export interface Tsc {
   name: string;
-  avatarUrl?: string;
   isTscMember: boolean;
   availableForHire?: boolean;
   github: string;
@@ -47,11 +42,6 @@ export interface Tsc {
   twitter?: string;
   company?: string;
   repos: any;
-  githubID: number
   isBoardMember?: boolean;
   isBoardChair?: boolean;
-  githubUrl?: string;
-  twitterUrl?: string;
-  linkedinUrl?: string;
-  reposList?: { name: string; url: string }[];
 };

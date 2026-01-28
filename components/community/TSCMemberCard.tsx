@@ -59,7 +59,7 @@ export default function TSCMemberCard({ member }: TSCMemberCardProps) {
   return (
     <div className='bg-white dark:bg-dark-card rounded-xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition-shadow'>
       <div className='flex items-start gap-4 mb-4'>
-        <img src={member.avatarUrl} alt={member.name} className='w-16 h-16 rounded-full' />
+        <img src={member.github ? `https://www.github.com/${member.github}.png` : ''} alt={member.name} className='w-16 h-16 rounded-full' />
         <div className='flex-1 min-w-0'>
           <h3 className='text-lg font-bold text-gray-900 dark:text-white truncate'>{member.name}</h3>
           <p className='text-sm text-gray-600 dark:text-gray-400'>
@@ -73,21 +73,21 @@ export default function TSCMemberCard({ member }: TSCMemberCardProps) {
         )}
       </div>
 
-      {member.reposList && member.reposList.length > 0 && (
+      {member.repos && Array.isArray(member.repos) && member.repos.length > 0 && (
         <div className='mb-4'>
           <p className='text-xs text-gray-500 dark:text-gray-300 mb-2'>Maintainer of:</p>
           <div className='flex flex-wrap gap-2'>
-            {member.reposList.slice(0, 2).map((repo: { name: string; url: string }) => (
+            {member.repos.slice(0, 2).map((repoName: string) => (
               <span
-                key={repo.name}
+                key={repoName}
                 className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300'
               >
-                {repo.name}
+                {repoName}
               </span>
             ))}
-            {member.reposList.length > 2 && (
+            {member.repos.length > 2 && (
               <span className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400'>
-                +{member.reposList.length - 2}
+                +{member.repos.length - 2}
               </span>
             )}
           </div>
@@ -95,9 +95,9 @@ export default function TSCMemberCard({ member }: TSCMemberCardProps) {
       )}
 
       <div className='flex gap-3 pt-4 border-t border-gray-200 dark:border-gray-700'>
-        {member.githubUrl && (
+        {member.github && (
           <a
-            href={member.githubUrl}
+            href={`https://www.github.com/${member.github}`}
             target='_blank'
             rel='noreferrer'
             aria-label={`${member.name || 'Member'} on GitHub`}
@@ -106,9 +106,9 @@ export default function TSCMemberCard({ member }: TSCMemberCardProps) {
             <GitHubIcon className='h-5 w-5' />
           </a>
         )}
-        {member.twitterUrl && (
+        {member.twitter && (
           <a
-            href={member.twitterUrl}
+            href={`https://www.twitter.com/${member.twitter}`}
             target='_blank'
             rel='noreferrer'
             aria-label={`${member.name || 'Member'} on Twitter`}
@@ -117,9 +117,9 @@ export default function TSCMemberCard({ member }: TSCMemberCardProps) {
             <TwitterIcon className='h-5 w-5' />
           </a>
         )}
-        {member.linkedinUrl && (
+        {member.linkedin && (
           <a
-            href={member.linkedinUrl}
+            href={`https://www.linkedin.com/in/${member.linkedin}`}
             target='_blank'
             rel='noreferrer'
             aria-label={`${member.name || 'Member'} on LinkedIn`}

@@ -36,18 +36,8 @@ export function addAdditionalUserInfo(user: Ambassador) {
   };
 
   if (userData.github) {
-    userData.githubUrl = `${SOCIAL_MEDIA_BASE_URLS.GITHUB}/${userData.github}`;
+    userData.img = `${SOCIAL_MEDIA_BASE_URLS.GITHUB}/${userData.github}.png`;
   }
-  if (userData.linkedin) {
-    userData.linkedinUrl = `${SOCIAL_MEDIA_BASE_URLS.LINKEDIN}/${userData.linkedin}`;
-  }
-  if (userData.twitter) {
-    userData.twitterUrl = `${SOCIAL_MEDIA_BASE_URLS.TWITTER}/${userData.twitter}`;
-  }
-
-  // add img url
-  // github redirects to avatar url using `https://www.github.com/<username>.png`
-  userData.img = `${userData.githubUrl}.png`;
 
   return userData;
 }
@@ -290,9 +280,9 @@ export default function Index() {
                   <div className='pt-4 border-t border-gray-200 dark:border-gray-700'>
                     <p className='text-xs text-gray-500 dark:text-gray-500 mb-3'>Socials</p>
                     <div className='flex items-center gap-3' data-testid='Ambassadors-members-socials'>
-                      {ambassador.twitterUrl && (
+                      {ambassador.twitter && (
                         <a
-                          href={ambassador.twitterUrl}
+                          href={`${SOCIAL_MEDIA_BASE_URLS.TWITTER}/${ambassador.twitter}`}
                           target='_blank'
                           rel='noreferrer'
                           className='text-gray-600 dark:text-gray-400 hover:!text-primary-500 dark:hover:!text-primary-500 transition-colors duration-200'
@@ -307,9 +297,9 @@ export default function Index() {
                           </svg>
                         </a>
                       )}
-                      {ambassador.githubUrl && (
+                      {ambassador.github && (
                         <a
-                          href={ambassador.githubUrl}
+                          href={`${SOCIAL_MEDIA_BASE_URLS.GITHUB}/${ambassador.github}`}
                           target='_blank'
                           rel='noreferrer'
                           className='text-gray-600 dark:text-gray-400 hover:!text-primary-500 dark:hover:!text-primary-500 transition-colors duration-200'
@@ -327,9 +317,9 @@ export default function Index() {
                           </svg>
                         </a>
                       )}
-                      {ambassador.linkedinUrl && (
+                      {ambassador.linkedin && (
                         <a
-                          href={ambassador.linkedinUrl}
+                          href={`${SOCIAL_MEDIA_BASE_URLS.LINKEDIN}/${ambassador.linkedin}`}
                           target='_blank'
                           rel='noreferrer'
                           className='text-gray-600 dark:text-gray-400 hover:!text-primary-500 dark:hover:!text-primary-500 transition-colors duration-200'

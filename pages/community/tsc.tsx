@@ -27,25 +27,6 @@ function addAdditionalUserInfo(user: any): Tsc {
     userData.name = userData.github;
   }
 
-  if (userData.github) {
-    userData.githubUrl = `https://www.github.com/${userData.github}`;
-  }
-  if (userData.linkedin) {
-    userData.linkedinUrl = `https://www.linkedin.com/in/${userData.linkedin}`;
-  }
-  if (userData.twitter) {
-    userData.twitterUrl = `https://www.twitter.com/${userData.twitter}`;
-  }
-
-  userData.avatarUrl = `${userData.githubUrl}.png`;
-
-  if (userData.repos) {
-    userData.reposList = userData.repos.map((repoName: string) => ({
-      name: repoName,
-      url: `https://www.github.com/asyncapi/${repoName}`
-    }));
-  }
-
   return userData;
 }
 
