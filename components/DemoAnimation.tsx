@@ -310,7 +310,7 @@ export default function DemoAnimation({ className = '' }: IDemoAnimationProps) {
             <OpenInStudioButton />
           </div>
           <MacWindow
-            className={`min-h-full border border-gray-200 bg-gray-50 shadow-lg transition-all duration-500 ease-in-out ${showControls ? 'h-0 -translate-x-full opacity-0 lg:h-auto lg:-translate-x-3/4 lg:opacity-100' : ''}`}
+            className={`min-h-full border border-gray-200 bg-gray-50 shadow-lg transition-all duration-500 ease-in-out ${showControls ? 'h-0 -translate-x-full opacity-0' : ''}`}
             contentClassName='text-left h-full text-gray-800 text-sm font-medium transition-all duration-500 ease-in-out'
             title='Account Service Documentation'
           >
