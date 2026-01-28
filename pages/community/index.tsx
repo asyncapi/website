@@ -7,6 +7,9 @@ import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 import Header from '../../components/community/Header';
 import Hero from '../../components/community/Hero';
 import ToolingsShowcase from '../../components/community/ToolingsShowcase';
+import IconExternalLink from '../../components/icons/ExternalLink';
+import IconBadgeCheckmark from '../../components/icons/BadgeCheckmark';
+import IconArrowRightStroke from '../../components/icons/ArrowRightStroke';
 import GenericLayout from '../../components/layout/GenericLayout';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 import Heading from '../../components/typography/Heading';
@@ -53,20 +56,7 @@ export default function CommunityIndexPage() {
                 rel='noopener noreferrer'
                 className='inline-flex items-center px-6 py-3 text-secondary-500 dark:text-secondary-400 border-2 border-secondary-500 dark:border-secondary-400 rounded-lg hover:bg-secondary-500 hover:text-white dark:hover:bg-secondary-500 dark:hover:text-white transition-all font-medium group'
               >
-                <svg
-                  className='w-5 h-5 mr-2 transform group-hover:translate-x-1 transition-transform'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
-                  />
-                </svg>
+                <IconExternalLink className='w-5 h-5 mr-2 transform group-hover:translate-x-1 transition-transform' />
                 View on GitHub
               </a>
             </div>
@@ -87,15 +77,7 @@ export default function CommunityIndexPage() {
                 href='/community/tsc'
                 className='inline-flex items-center px-6 py-3 text-secondary-500 dark:text-secondary-400 border-2 border-secondary-500 dark:border-secondary-400 rounded-lg hover:bg-secondary-500 hover:text-white dark:hover:bg-secondary-500 dark:hover:text-white transition-all font-medium group'
               >
-                <svg
-                  className='w-5 h-5 mr-2 transform group-hover:translate-x-1 transition-transform'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M13 7l5 5m0 0l-5 5m5-5H6' />
-                </svg>
+                <IconArrowRightStroke className='w-5 h-5 mr-2 transform group-hover:translate-x-1 transition-transform' />
                 Learn More
               </Link>
             </div>
@@ -248,34 +230,10 @@ export default function CommunityIndexPage() {
               className='relative group bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border border-purple-200 dark:border-purple-700 hover:scale-[1.02] cursor-pointer'
             >
               <div className='absolute top-6 right-6'>
-                <svg
-                  className='w-8 h-8 text-purple-400 dark:text-purple-300 group-hover:text-purple-500 dark:group-hover:text-purple-200 transition-colors'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
-                  />
-                </svg>
+                <IconExternalLink className='w-8 h-8 text-purple-400 dark:text-purple-300 group-hover:text-purple-500 dark:group-hover:text-purple-200 transition-colors' />
               </div>
               <div className='mb-6'>
-                <svg
-                  className='w-12 h-12 text-purple-600 dark:text-purple-400'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z'
-                  />
-                </svg>
+                <IconBadgeCheckmark className='w-12 h-12 text-purple-600 dark:text-purple-400' />
               </div>
               <Heading
                 level={HeadingLevel.h3}
@@ -297,34 +255,10 @@ export default function CommunityIndexPage() {
               className='relative group bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-900/20 dark:to-pink-800/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border border-pink-200 dark:border-pink-700 hover:scale-[1.02] cursor-pointer'
             >
               <div className='absolute top-6 right-6'>
-                <svg
-                  className='w-8 h-8 text-pink-400 dark:text-pink-300 group-hover:text-pink-500 dark:group-hover:text-pink-200 transition-colors'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
-                  />
-                </svg>
+                <IconExternalLink className='w-8 h-8 text-pink-400 dark:text-pink-300 group-hover:text-pink-500 dark:group-hover:text-pink-200 transition-colors' />
               </div>
               <div className='mb-6'>
-                <svg
-                  className='w-12 h-12 text-pink-600 dark:text-pink-400'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z'
-                  />
-                </svg>
+                <IconBadgeCheckmark className='w-12 h-12 text-pink-600 dark:text-pink-400' />
               </div>
               <Heading
                 level={HeadingLevel.h3}
@@ -344,34 +278,10 @@ export default function CommunityIndexPage() {
               className='relative group bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-900/20 dark:to-cyan-800/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border border-cyan-200 dark:border-cyan-700 hover:scale-[1.02] cursor-pointer block'
             >
               <div className='absolute top-6 right-6'>
-                <svg
-                  className='w-8 h-8 text-cyan-400 dark:text-cyan-300 group-hover:text-cyan-500 dark:group-hover:text-cyan-200 transition-colors'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
-                  />
-                </svg>
+                <IconExternalLink className='w-8 h-8 text-cyan-400 dark:text-cyan-300 group-hover:text-cyan-500 dark:group-hover:text-cyan-200 transition-colors' />
               </div>
               <div className='mb-6'>
-                <svg
-                  className='w-12 h-12 text-cyan-600 dark:text-cyan-400'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z'
-                  />
-                </svg>
+                <IconBadgeCheckmark className='w-12 h-12 text-cyan-600 dark:text-cyan-400' />
               </div>
               <Heading
                 level={HeadingLevel.h3}
