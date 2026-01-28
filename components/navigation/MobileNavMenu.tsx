@@ -46,6 +46,7 @@ export default function MobileNavMenu({
   function showMenu(menu: string) {
     if (open === menu) {
       setOpen(null);
+
       return;
     }
     setOpen(menu);
@@ -183,9 +184,7 @@ export default function MobileNavMenu({
                       className={`mb-4 ml-2 block w-full rounded-lg py-1 text-start text-sm
                       font-medium leading-6 text-gray-700 transition duration-150 ease-in-out
                       hover:bg-gray-50 ${
-                        currentLanguage.toLowerCase() === lang.text.toLowerCase()
-                          ? 'text-secondary-500'
-                          : ''
+                        currentLanguage.toLowerCase() === lang.text.toLowerCase() ? 'text-secondary-500' : ''
                       }`}
                       data-testid='MobileNav-language-item'
                     >
