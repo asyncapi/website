@@ -1,41 +1,80 @@
-import React from 'react';
-import { twMerge } from 'tailwind-merge';
-
+import React, { useEffect, useRef, useState } from 'react';
 import i18nextConfig from '@/next-i18next.config.cjs';
 
-import type { SelectProps } from '../form/Select';
 import IconLanguage from '../icons/Language';
+import NavItemDropdown from '../icons/NavItemDropdown';
 
-/**
- * @description LanguageSelect component for selecting a language.
- * @param {string} [props.className=''] - Additional classes for styling.
- * @param {Function} [props.onChange=()=>{}] - The callback function invoked when the selection changes.
- * @param {Array} [props.options=[]] - An array of options for the select dropdown.
- * @param {string} props.selected - The currently selected option value.
- */
-export default function LanguageSelect({ className = '', onChange = () => {}, options = [], selected }: SelectProps) {
+interface LanguageSelectProps {
+  uniqueLangs: { key: string; text: string; value: string }[];
+  currentLanguage: string;
+  changeLanguage: (locale: string, langPicker: boolean) => void;
+}
+
+export default function LanguageSelect({
+  uniqueLangs,
+  currentLanguage,
+  changeLanguage
+}: LanguageSelectProps) {
+  const [open, setOpen] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const { langMap } = i18nextConfig;
 
+  const currentLangLabel =
+    langMap[currentLanguage.toLowerCase() as keyof typeof langMap] ||
+    currentLanguage;
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(event.target as Node)
+      ) {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () =>
+      document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
-    <div className='relative inline-block'>
-      <div className='relative flex items-center gap-2'>
-        {/* Display Icon Next to the Select Box */}
-        <IconLanguage className='pointer-events-none absolute left-3 text-gray-600' />
-        <select
-          data-testid='Select-form'
-          onChange={(ev) => onChange(ev.target.value)}
-          className={twMerge(
-            `form-select h-full px-10 pr-7 inline-flex justify-center rounded-md border border-gray-300 shadow-sm py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:border-gray-500 focus:outline-none focus:ring-0 focus:ring-black ${className}`
-          )}
-          value={selected}
-        >
-          {options.map((option, index) => (
-            <option key={index} value={option.value} data-testid='Option-form'>
-              {langMap[option.text.toLowerCase() as keyof typeof langMap] || option.text}
-            </option>
-          ))}
-        </select>
-      </div>
+    <div ref={wrapperRef} className="relative inline-block">
+
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="flex items-center gap-x-2 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-800 shadow-sm transition hover:bg-gray-50"
+      >
+        <IconLanguage className="h-4 w-4 text-gray-800" />
+        <span>{currentLangLabel}</span>
+        <NavItemDropdown />
+      </button>
+
+      {/* Dropdown panel */}
+      {open && (
+        <div className="absolute right-0 top-full z-50 mt-2 w-48 rounded-lg bg-white px-3 py-3 shadow-lg">
+          {uniqueLangs.map((lang) => {
+            const isActive =
+              currentLanguage.toLowerCase() === lang.text.toLowerCase();
+
+            return (
+              <button
+                key={lang.key}
+                onClick={() => {
+                  changeLanguage(lang.value.toLowerCase(), true);
+                  setOpen(false);
+                }}
+                className={`block w-full rounded-lg py-1 px-2 text-start text-sm font-medium leading-6 transition duration-150 ease-in-out hover:bg-gray-50 ${
+                  isActive ? 'text-secondary-500' : 'text-gray-700'
+                }`}
+              >
+                {langMap[lang.text.toLowerCase() as keyof typeof langMap] ||
+                  lang.text}
+              </button>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
