@@ -965,5 +965,23 @@
             "vs-asyncapi-preview"
         ],
         "githubID": 72685035
+    },
+    {
+        "name": "amparosancho",
+        "github": "amparosancho",
+        "isTscMember": false,
+        "repos": [
+            "bindings"
+        ],
+        "githubID": 214812239
+    },
+    {
+        "name": "Florian Gram\u00df",
+        "github": "gramss",
+        "isTscMember": false,
+        "repos": [
+            "bindings"
+        ],
+        "githubID": 6034322
     }
 ]
