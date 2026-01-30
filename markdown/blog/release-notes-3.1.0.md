@@ -10,7 +10,7 @@ authors:
   - name: Lukasz Gornicki
     photo: /img/avatars/lpgornicki.webp
     link: https://www.linkedin.com/in/lukasz-gornicki-a621914/
-excerpt: 'AsyncAPI 3.1 is now released with new RSO 2 binding.'
+excerpt: 'AsyncAPI 3.1 is now released with new ROS 2 binding.'
 featured: true
 ---
 
@@ -29,7 +29,7 @@ For more details, check out [ROS 2 binding definition](https://github.com/asynca
 ## Tooling support
 
 The following official AsyncAPI tools are already updated to support 3.1.0 version of the specification:
-- JSON Schema that supports validation of AsyncAPI documents with RSO 2 binding is updated in [this](https://github.com/asyncapi/spec-json-schemas) repository. Also **@asyncapi/specs** package has been updated on NPM to version 6.11.0.
+- JSON Schema that supports validation of AsyncAPI documents with ROS 2 binding is updated in [this](https://github.com/asyncapi/spec-json-schemas) repository. Also **@asyncapi/specs** package has been updated on NPM to version 6.11.0.
 - [JavaScript Parser](https://github.com/asyncapi/parser-js/) uses latest **@asyncapi/specs** package and can be used to parse and validate 3.1.0 documents. Upgrade to latest version.
 
 ## Look ahead
