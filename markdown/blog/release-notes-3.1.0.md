@@ -24,13 +24,26 @@ The new version of the AsyncAPI specification - 3.1.0 - is now available. It loo
 The specification is now extended to support another custom protocol through the bindings feature:
 
 ROS 2 ([official docs](https://docs.ros.org/en/jazzy/)), thanks to [@gramss](https://github.com/gramss) and [@amparosancho](https://github.com/amparosancho).
+
 For more details, check out [ROS 2 binding definition](https://github.com/asyncapi/bindings/tree/master/ros2).
 
 ## Tooling support
 
 The following official AsyncAPI tools are already updated to support 3.1.0 version of the specification:
 - JSON Schema that supports validation of AsyncAPI documents with ROS 2 binding is updated in [this](https://github.com/asyncapi/spec-json-schemas) repository. Also **@asyncapi/specs** package has been updated on NPM to version 6.11.0.
-- [JavaScript Parser](https://github.com/asyncapi/parser-js/) uses latest **@asyncapi/specs** package and can be used to parse and validate 3.1.0 documents. Upgrade to latest version.
+- [JavaScript Parser](https://github.com/asyncapi/parser-js/releases/tag/%40asyncapi%2Fparser%403.6.0) uses latest **@asyncapi/specs** package and can be used to parse and validate 3.1.0 documents. Upgrade to latest version.
+- [JavaScript Converter](https://github.com/asyncapi/converter-js/releases/tag/v1.7.0) uses latest **@asyncapi/parser** package and can be used to convert to 3.1.0 documents. Upgrade to latest version. This conversion is just the version change in `asyncapi` field.
+- [AsyncAPI Studio](https://github.com/asyncapi/studio) is also updated so just go to https://studio.asyncapi.com/ and see you can already write 3.1.0 documents.
+
+## Thank you
+
+Huge thanks to contributors of new addition to the spec: [Amparo Sancho Arellano](https://github.com/amparosancho) and [Florian Gramß](https://github.com/gramss).
+
+Huge thanks to specification maintainers that supported the process: [Fran Méndez](https://github.com/fmvilas), [Dale Lane](https://github.com/dalelane), [Vladimír Gorej](https://github.com/char0n) and [Lukasz Gornicki](https://github.com/derberg).
+
+Huge thanks to maintainers that helped with smooth updates of core tooling: [Maciej Urbańczyk](https://github.com/magicmatatjahu), [Ashish Padhy](https://github.com/Shurtu-gal), [Pavel Bodiachevskii](https://github.com/Pakisan), [Fran Méndez](https://github.com/fmvilas).
+
+And I ([Lukasz Gornicki](https://github.com/derberg)) was your release coordinator and I just gave myself a round of applause.
 
 ## Look ahead
 
