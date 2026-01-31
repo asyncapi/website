@@ -1,6 +1,6 @@
-import BasePage from './BasePageTools';
+import BaseToolsPage from './BaseToolsPage';
 
-class ToolsPage extends BasePage {
+class ToolsPage extends BaseToolsPage {
   visitToolsPage() {
     super.visit('/tools');
   }
@@ -16,7 +16,7 @@ class ToolsPage extends BasePage {
   verifyToolLink(href, heading, linkType) {
     const linkTexts = {
       website: 'Visit Website',
-      github: 'View Github',
+      github: 'View GitHub',
       docs: 'Visit Docs',
     };
 
