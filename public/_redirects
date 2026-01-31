@@ -19,10 +19,11 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 
 # Redirection will be handled automatically by Action.
 # LATEST-SPEC-REDIRECTION:START
-/docs/reference/specification/latest /docs/reference/specification/v3.0.0 302!
+/docs/reference/specification/latest /docs/reference/specification/v3.1.0 302!
 # LATEST-SPEC-REDIRECTION:END
 
 # SPEC-REDIRECTION:START
+/docs/reference/specification/3.1.0 /docs/reference/specification/v3.1.0 302!
 /docs/reference/specification/3.0.0 /docs/reference/specification/v3.0.0 302!
 # SPEC-REDIRECTION:END
 
