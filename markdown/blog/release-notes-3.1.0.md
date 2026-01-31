@@ -30,7 +30,7 @@ For more details, check out [ROS 2 binding definition](https://github.com/asynca
 ## Tooling support
 
 The following official AsyncAPI tools are already updated to support 3.1.0 version of the specification:
-- JSON Schema that supports validation of AsyncAPI documents with ROS 2 binding is updated in [this](https://github.com/asyncapi/spec-json-schemas) repository. Also **@asyncapi/specs** package has been updated on NPM to version 6.11.0.
+- JSON Schema that supports validation of AsyncAPI documents with ROS 2 binding is updated in [this](https://github.com/asyncapi/spec-json-schemas/releases/tag/v6.11.1) repository. Also **@asyncapi/specs** package has been updated on NPM to version 6.11.1.
 - [JavaScript Parser](https://github.com/asyncapi/parser-js/releases/tag/%40asyncapi%2Fparser%403.6.0) uses latest **@asyncapi/specs** package and can be used to parse and validate 3.1.0 documents. Upgrade to latest version.
 - [JavaScript Converter](https://github.com/asyncapi/converter-js/releases/tag/v1.7.0) uses latest **@asyncapi/parser** package and can be used to convert to 3.1.0 documents. Upgrade to latest version. This conversion is just the version change in `asyncapi` field.
 - [AsyncAPI Studio](https://github.com/asyncapi/studio) is also updated so just go to https://studio.asyncapi.com/ and see you can already write 3.1.0 documents.
