@@ -1,6 +1,6 @@
 ---
 title: AsyncAPI Spec 3.1.0 Release Notes
-date: 2026-01-30T19:00:00+01:00
+date: 2026-01-31T19:00:00+01:00
 type: Communication
 tags:
   - Specification
