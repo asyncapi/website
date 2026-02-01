@@ -19,9 +19,9 @@ export interface TextLinkProps {
  * @param {string} props.id contains an id to be appended on heading
  */
 export default function TextLink({ href, className = '', target = '_blank', children, id }: TextLinkProps) {
-  // eslint-disable-next-line max-len
   const classNames = twMerge(
-    `text-secondary-500 underline hover:text-gray-800 font-medium transition ease-in-out duration-300 ${className || ''}`
+    'text-secondary-500 underline hover:text-gray-800 font-medium transition ease-in-out duration-300',
+    className
   );
 
   return (

@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
@@ -37,48 +38,48 @@ export default function Heading({
 }: HeadingProps) {
   const Tag = level ?? HeadingLevel.h2;
 
-  let classNames = '';
+  let baseClassNames = '';
 
   switch (typeStyle) {
     case HeadingTypeStyle.xl:
-      classNames = `font-heading text-heading-md font-bold tracking-heading md:text-heading-xl ${className || ''}`;
+      baseClassNames = 'font-heading text-heading-md font-bold tracking-heading md:text-heading-xl';
       break;
     case HeadingTypeStyle.lg:
-      classNames = `font-heading text-heading-md font-bold tracking-heading md:text-heading-lg ${className || ''}`;
+      baseClassNames = 'font-heading text-heading-md font-bold tracking-heading md:text-heading-lg';
       break;
     case HeadingTypeStyle.md:
-      classNames = `font-heading text-heading-md font-bold tracking-heading ${className || ''}`;
+      baseClassNames = 'font-heading text-heading-md font-bold tracking-heading';
       break;
     case HeadingTypeStyle.mdSemibold:
-      classNames = `font-heading text-heading-md font-semibold tracking-heading ${className || ''}`;
+      baseClassNames = 'font-heading text-heading-md font-semibold tracking-heading';
       break;
     case HeadingTypeStyle.sm:
-      classNames = `font-heading text-heading-sm font-bold tracking-heading ${className || ''}`;
+      baseClassNames = 'font-heading text-heading-sm font-bold tracking-heading';
       break;
     case HeadingTypeStyle.smSemibold:
-      classNames = `font-heading text-heading-sm font-semibold tracking-heading ${className || ''}`;
+      baseClassNames = 'font-heading text-heading-sm font-semibold tracking-heading';
       break;
     case HeadingTypeStyle.xs:
-      classNames = `font-heading text-heading-xs font-bold tracking-heading ${className || ''}`;
+      baseClassNames = 'font-heading text-heading-xs font-bold tracking-heading';
       break;
     case HeadingTypeStyle.xsSemibold:
-      classNames = `font-heading text-heading-xs font-semibold tracking-heading ${className || ''}`;
+      baseClassNames = 'font-heading text-heading-xs font-semibold tracking-heading';
       break;
     case HeadingTypeStyle.bodyLg:
-      classNames = `font-heading text-body-lg tracking-body font-regular ${className || ''}`;
+      baseClassNames = 'font-heading text-body-lg tracking-body font-regular';
       break;
     case HeadingTypeStyle.bodyMd:
-      classNames = `font-heading text-body-md tracking-body font-regular ${className || ''}`;
+      baseClassNames = 'font-heading text-body-md tracking-body font-regular';
       break;
     case HeadingTypeStyle.bodySm:
-      classNames = `font-heading text-body-sm tracking-body font-regular ${className || ''}`;
+      baseClassNames = 'font-heading text-body-sm tracking-body font-regular';
       break;
     default:
-      classNames = `font-heading text-heading-md font-bold tracking-heading md:text-heading-xl ${className || ''}`;
+      baseClassNames = 'font-heading text-heading-md font-bold tracking-heading md:text-heading-xl';
   }
 
   return (
-    <Tag id={id} className={`${textColor} ${classNames}`}>
+    <Tag id={id} className={twMerge(textColor, baseClassNames, className)}>
       {children}
     </Tag>
   );

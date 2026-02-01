@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import SlackMessage from './Message';
 
@@ -12,7 +13,7 @@ interface SlackProps {
  */
 export default function Slack({ className = '' }: SlackProps) {
   return (
-    <div className={`flex overflow-hidden rounded-md border border-gray-200 bg-white ${className}`}>
+    <div className={twMerge('flex overflow-hidden rounded-md border border-gray-200 bg-white', className)}>
       <div className='hidden w-1/5 bg-slack p-2 sm:block'>
         <div className='mb-1 h-2 w-3/4 rounded-xl bg-white/25'></div>
         <div className='mb-1 h-2 w-1/3 rounded-xl bg-white/25'></div>

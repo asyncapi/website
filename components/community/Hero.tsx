@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import orbitData from '../../config/orbitData.json';
 import Header from './Header';
@@ -14,7 +15,7 @@ interface HeroProps {
  */
 export default function Hero({ className = '' }: HeroProps) {
   return (
-    <div className={`orbits overflow-hidden ${className}`}>
+    <div className={twMerge('orbits overflow-hidden', className)}>
       <div className='orbit-container' data-testid='orbit-div'>
         <div id='first-orbit' className='orbit' data-testid='Hero-first'>
           {orbitData[0].map((orbit) => (
