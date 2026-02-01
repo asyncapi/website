@@ -124,6 +124,7 @@ query($first: Int!, $after: String) {
         id
         title
         resourcePath
+        state
         repository {
           name
         }
