@@ -1,4 +1,4 @@
-import { BadgeCheckIcon, CodeIcon, DocumentAddIcon, GlobeIcon } from '@heroicons/react/outline';
+import { CheckBadgeIcon, CodeBracketIcon, DocumentPlusIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 import React from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
@@ -16,13 +16,13 @@ const features = [
     name: 'New files',
     description: () =>
       'Use the CLI tool to quickly create new AsyncAPI files. Select from a range of templates (MQTT, WebSockets, Kafka, and more.)',
-    icon: DocumentAddIcon
+    icon: DocumentPlusIcon
   },
   {
     name: 'Validate',
     description: () =>
       'Validate your AsyncAPI documents with the CLI. Quickly get feedback to verify your AsyncAPI document is within the correct format.',
-    icon: BadgeCheckIcon
+    icon: CheckBadgeIcon
   },
   {
     name: 'Open Studio',
@@ -34,13 +34,13 @@ const features = [
         to open our studio in seconds.
       </>
     ),
-    icon: CodeIcon
+    icon: CodeBracketIcon
   },
   {
     name: 'Open Source',
     description: () =>
       'All our tools are open source, feel free to contribute new commands or help evolve our existing ones.',
-    icon: GlobeIcon
+    icon: GlobeAltIcon
   }
 ];
 
