@@ -17,7 +17,7 @@ export interface IDocsButtonProps {
  */
 export default function DocsButton({ post, className = '' }: IDocsButtonProps) {
   return (
-    <div className={`mb-4 flex h-full flex-row gap-4 ${className}`}>
+    <div className={`mb-4 flex h-full flex-row gap-4 sticky bottom-4 z-20 bg-white/95 backdrop-blur-sm rounded-lg border border-gray-200 p-4 shadow-lg ${className}`}>
       <div className='w-1/2'>
         {post?.prevPage && (
           <Link href={post.prevPage.href}>
