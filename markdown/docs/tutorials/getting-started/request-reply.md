@@ -18,7 +18,7 @@ A requester can be configured with the `send` operation, where it dispatches a m
 In the below example, the `Operation Reply` object within the `pingRequest` operation provides essential details, like the destination for the reply, which is the `pong` channel. Since the `pong` channel is configured with only one message, there's no need to explicitly define the reply message. Similarly, the `ping` channel has just one message, eliminating the need to specify the message sent in the request.
 
 <CodeBlock highlightedLines={[6,7,8,9,10,11,18,19,20,21,22,23,24]}>
-{`asyncapi: 3.0.0
+{`asyncapi: 3.1.0
 info:
   title: Ping/pong example with static reply channel
   version: 1.0.0
@@ -69,7 +69,7 @@ In scenarios where the address or reply channel is unknown at design time, the `
 In this situation, the `location` property is assigned the runtime expression `$message.header#/replyTo`. Such an expression indicates that the address for the reply is located within the header of the request, specifically in the `replyTo` field. This method dynamically determines the reply address based on the content of the request header.
 
 <CodeBlock highlightedLines={[13,14,15,16,22,23,24,25,26,27,30,31,32,33,34,35]}>
-{`asyncapi: 3.0.0
+{`asyncapi: 3.1.0
 info:
   title: Ping/pong example with reply specified as dynamic information provided in the runtime
   version: 1.0.0
