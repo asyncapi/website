@@ -88,7 +88,7 @@ export default function MobileNavMenu({
               <Link href='/docs' className='flex cursor-pointer'>
                 Docs
               </Link>
-              <NavItemDropdown />
+              <NavItemDropdown isOpen={open === 'learning'} />
             </h4>
             {open === 'learning' && <MenuBlocks items={learningItems} />}
           </div>
@@ -98,7 +98,7 @@ export default function MobileNavMenu({
               <Link href='/tools' className='flex cursor-pointer'>
                 Tools
               </Link>
-              <NavItemDropdown />
+              <NavItemDropdown isOpen={open === 'tooling'} />
             </h4>
             {open === 'tooling' && <MenuBlocks items={toolingItems} />}
           </div>
@@ -107,7 +107,7 @@ export default function MobileNavMenu({
               <Link href='/community' className='flex cursor-pointer'>
                 Community
               </Link>
-              <NavItemDropdown />
+              <NavItemDropdown isOpen={open === 'community'} />
             </h4>
             {open === 'community' && <MenuBlocks items={communityItems} />}
           </div>

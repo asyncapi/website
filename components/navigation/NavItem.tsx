@@ -11,6 +11,7 @@ interface NavItemProps {
   onClick?: () => void;
   onMouseEnter?: () => void;
   hasDropdown?: boolean;
+  isOpen?: boolean;
   className?: string;
 }
 
@@ -68,7 +69,7 @@ export default function NavItem({
         data-testid='NavItem-Link'
       >
         <span>{text}</span>
-        {hasDropdown && <NavItemDropdown />}
+        {hasDropdown && <NavItemDropdown isOpen={isOpen} />}
       </Link>
     );
   }
@@ -76,7 +77,7 @@ export default function NavItem({
   return (
     <button type='button' {...attrs} className={`${attrs.className} text-gray-700`}>
       <span>{text}</span>
-      {hasDropdown && <NavItemDropdown />}
+      {hasDropdown && <NavItemDropdown isOpen={isOpen} />}
     </button>
   );
 }

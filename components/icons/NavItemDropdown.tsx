@@ -4,10 +4,10 @@ import React from 'react';
 /**
  * @description Icons for asyncapi website
  */
-const NavItemDropdown = () => (
+const NavItemDropdown = ({ isOpen = false }: { isOpen?: boolean }) => (
   <span className='inline-block'>
     <svg
-      className='size-5 text-gray-400 transition duration-150 ease-in-out group-hover:text-gray-500 group-focus:text-gray-500'
+      className={`size-5 text-gray-400 transition duration-150 ease-in-out transform ${isOpen ? 'rotate-180 text-gray-500' : 'group-hover:text-gray-500 group-focus:text-gray-500'}`}
       fill='currentColor'
       viewBox='0 0 20 20'
     >
