@@ -1,5 +1,7 @@
+import { CheckIcon } from '@heroicons/react/outline';
 import React, { useState } from 'react';
 import Highlight from 'react-syntax-highlighter';
+import { twMerge } from 'tailwind-merge';
 
 import Caption from '../Caption';
 import IconClipboard from '../icons/Clipboard';
@@ -333,13 +335,23 @@ export default function CodeBlock({
               title='Copy to clipboard'
               data-test='copy-button'
             >
-              {showIsCopied && (
-                <span className='mr-2 inline-block pl-2 pt-1' data-testid='clicked-text'>
-                  Copied!
+              <span className='relative inline-block mt-[3px] size-4'>
+                <span
+                  className={twMerge(
+                    'absolute inset-0 transition-all duration-200 ease-out',
+                    showIsCopied ? 'opacity-0 scale-50' : 'opacity-100 scale-100'
+                  )}
+                >
+                  <IconClipboard />
                 </span>
-              )}
-              <span className='inline-block pt-1'>
-                <IconClipboard className='-mt-0.5 inline-block size-4' />
+                <span
+                  className={twMerge(
+                    'absolute inset-0 transition-all duration-200 ease-in',
+                    showIsCopied ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
+                  )}
+                >
+                  <CheckIcon />
+                </span>
               </span>
             </button>
           </div>
