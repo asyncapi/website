@@ -21,8 +21,7 @@ class DashboardPage extends BasePage {
     cy.contains('[data-testid="Button-link"]', 'Contribution Guide')
       .should('be.visible')
       .and('have.attr', 'href')
-      .and('include', 'github.com/asyncapi')
-      .and('include', 'type=source');
+      .and('include', 'docs/community/010-contribution-guidelines');
 
     this.verifyLinkWithText(
       '[data-testid="Button-link"]',
