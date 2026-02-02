@@ -213,7 +213,7 @@ Thus, you can say that for a `reaction` message received over the `root` channel
 
 Putting all this together, you have your AsyncAPI document ready to go!
 <CodeBlock language="yaml">
-{`asyncapi: 3.0.0
+{`asyncapi: 3.1.0
 info:
   title: Implement Request/Reply in an AsyncAPI document for a Slack app
   version: 1.0.0
