@@ -74,8 +74,12 @@ class HomePage {
     this.verifyElementIsVisible('[data-testid="Navbar-logo"]');
   }
 
-  verifyHeader(text = headerText) {
-    this.verifyHeadingExists(text);
+  verifyHeader() {
+    this.verifyPageLoaded();
+  }
+
+  verifyPageLoaded() {
+    this.verifyHeadingExists(headerText);
   }
 
   verifyGithubStarButton(link = githubStarLink) {
