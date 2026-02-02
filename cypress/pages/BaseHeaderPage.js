@@ -1,8 +1,7 @@
 
 class BasePage {
-  visit(path = '/') {
-    cy.visit(path)
-    return this;
+  visit() {
+    cy.visit('/')
   }
 
   getElement(selector) {
@@ -11,8 +10,8 @@ class BasePage {
 
   hoverElement(selector) {
     return this.getElement(selector)
-    .trigger('mouseover')
-    .trigger('mouseenter');
+      .trigger('mouseover')
+      .trigger('mouseenter');
   }
 }
 

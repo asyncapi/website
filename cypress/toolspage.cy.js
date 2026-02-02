@@ -15,19 +15,19 @@ describe('Tools Page E2E Tests', () => {
     describe(`${sectionName} section`, () => {
       it('verifies Website links', () => {
         (linksData.WebsiteLinks || []).forEach((link) => {
-          toolsPage.verifyWebsiteLinks(link.href, link.heading);
+          toolsPage.verifyToolLink(link.href, link.heading, 'website');
         });
       });
 
       it('verifies GitHub links', () => {
         (linksData.GithubLinks || []).forEach((link) => {
-          toolsPage.verifyGithubLinks(link.href, link.heading);
+          toolsPage.verifyToolLink(link.href, link.heading, 'github');
         });
       });
 
       it('verifies Docs links', () => {
         (linksData.DocsLinks || []).forEach((link) => {
-          toolsPage.verifyDocsLinks(link.href, link.heading);
+          toolsPage.verifyToolLink(link.href, link.heading, 'docs');
         });
       });
     });
