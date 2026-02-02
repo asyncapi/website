@@ -1,35 +1,33 @@
-class CaseStudiesPage {
+import BasePage from './BasePage';
+
+class CaseStudiesPage extends BasePage {
   visit() {
-    cy.visit('/casestudies');
+    super.visit('/casestudies');
   }
 
-  verifyElementIsVisible(selector) {
-    cy.get(selector).should('be.visible');
+  verifyPageLoaded() {
+    this.verifyHeadingExists('Case Studies', 'h1');
   }
 
-  verifyHeadingExists(headingText) {
-    cy.contains('h1', headingText).should('be.visible');
-  }
-
-  verifyElementHasAttribute(selector, attribute, value) {
-    cy.get(selector).should('have.attr', attribute, value);
+  verifyHeader() {
+    this.verifyPageLoaded();
   }
 
   verifyScrollDown() {
-    cy.contains('h1', 'Adopters').scrollIntoView().should('be.visible');
+    this.scrollToText('Adopters');
   }
 
-  verifyLinkExists(linkName, linkUrl, index = 0) {
+  verifyCardLink(cardName, cardUrl, index = 0) {
     cy.get('[data-testid="CaseStudyCard-main"]')
       .eq(index)
       .within(() => {
-        cy.get(`img[alt*="${linkName.split(' ')[0]}"]`).should('exist');
+        cy.get(`img[alt*="${cardName.split(' ')[0]}"]`).should('exist');
       })
       .closest('a')
-      .should('have.attr', 'href', `${linkUrl}`);
+      .should('have.attr', 'href', cardUrl);
   }
 
-  verifyLinksWork(href, label) {
+  verifyResourceLink(href) {
     cy.get(`a[href="${href}"]`)
       .first()
       .should('exist')
@@ -37,36 +35,23 @@ class CaseStudiesPage {
   }
 
   verifyFaqLink() {
-    cy.contains('a', 'FAQ')
-      .should('be.visible')
-      .should(
-        'have.attr',
-        'href',
-        'https://github.com/asyncapi/website/blob/master/README.md#case-studies',
-      );
+    this.verifyButtonLink(
+      'https://github.com/asyncapi/website/blob/master/README.md#case-studies',
+      'FAQ'
+    );
   }
 
   verifySubmitPullRequestLink() {
-    cy.contains('a', 'submit a pull request')
-      .should('be.visible')
-      .should(
-        'have.attr',
-        'href',
-        'https://github.com/asyncapi/website/blob/master/config/usecases.yaml',
-      );
+    this.verifyButtonLink(
+      'https://github.com/asyncapi/website/blob/master/config/usecases.yaml',
+      'submit a pull request'
+    );
   }
 
   verifyCardsLink() {
-    this.verifyLinkExists('Adeo Group', 'casestudies/adeogroup', 0);
-    this.verifyLinkExists('HDI Global SE', 'casestudies/hdiglobal', 1);
-  }
-
-  verifyPageLoaded() {
-    cy.contains('h1', 'Case Studies').should('be.visible');
-  }
-
-  verifyHeader() {
-    this.verifyPageLoaded();
+    this.verifyCardLink('Adeo Group', 'casestudies/adeogroup', 0);
+    this.verifyCardLink('HDI Global SE', 'casestudies/hdiglobal', 1);
   }
 }
+
 export default CaseStudiesPage;

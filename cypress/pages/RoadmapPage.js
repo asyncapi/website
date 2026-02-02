@@ -1,24 +1,26 @@
-class RoadmapPage {
+import BasePage from './BasePage';
+
+class RoadmapPage extends BasePage {
   visit() {
-    cy.visit('/roadmap');
+    super.visit('/roadmap');
   }
 
   verifyPageLoaded() {
-    cy.contains(
-      'h1',
+    this.verifyHeadingExists(
       'AsyncAPI becomes the #1 API specification for defining and developing APIs.',
-    ).should('be.visible');
+      'h1'
+    );
   }
 
   verifyHeader() {
     this.verifyPageLoaded();
   }
 
-  verifyLink() {
-    cy.get('[data-testid="TextLink-href"]').should(
-      'have.attr',
+  verifyCommunityLink() {
+    this.verifyElementHasAttribute(
+      '[data-testid="TextLink-href"]',
       'href',
-      'https://github.com/asyncapi/community',
+      'https://github.com/asyncapi/community'
     );
   }
 

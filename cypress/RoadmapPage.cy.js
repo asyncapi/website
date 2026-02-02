@@ -13,7 +13,7 @@ describe('RoadMap Page Navigation and Functionality', () => {
   });
   
   it('User clicks on the community page link and verifies navigation', () => {
-    roadmapPage.verifyLink();
+    roadmapPage.verifyCommunityLink();
   });
 
   const tooltips = [
