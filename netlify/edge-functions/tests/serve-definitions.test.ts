@@ -53,7 +53,7 @@ let metricCalls = 0;
 function setup() {
   mf.install();
 
-  mf.mock("*", (req) => {
+  mf.mock("*", (req: Request) => {
     console.log(req.url);
     
     if (req.url === metricURL) {
@@ -131,7 +131,7 @@ Deno.test("serve-definitions test for various response statuses", async () => {
 
     mf.install();
 
-    mf.mock("*", () => {
+    mf.mock("*", (_req: Request) => {
       return new Response(status === 200 ? JSON.stringify({ url: requestURL }) : null, {
         status,
       });
