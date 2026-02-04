@@ -14,7 +14,7 @@ export default function IconTSC({ className = '' }) {
       viewBox='0 0 28.15 18.69'
     >
       <defs>
-        <style>{'.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;}'}</style>
+        <style>{'.cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;}'}</style>
       </defs>
       <line className='cls-1' x1='17.86' y1='12.89' x2='10.93' y2='12.89' />
       <path

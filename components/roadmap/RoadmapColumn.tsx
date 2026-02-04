@@ -13,6 +13,7 @@ interface IRoadmapColumnProps {
   colorClass: string;
   items?: any[];
   childrenCollapsed?: boolean;
+  className?: string;
 }
 
 /**
@@ -22,21 +23,23 @@ interface IRoadmapColumnProps {
  * @param {string} props.colorClass - The color class for styling.
  * @param {array} props.items - The array of items.
  * @param {boolean} props.childrenCollapsed - Whether children items are collapsed.
+ * @param {string} props.className - Optional className for custom styling.
  */
 export default function RoadmapColumn({
   title,
   description,
   colorClass,
   items = [],
-  childrenCollapsed = false
+  childrenCollapsed = false,
+  className = ''
 }: IRoadmapColumnProps): React.ReactElement {
   return (
     <div className='mt-8 lg:mt-4'>
-      <div className='p-4 text-center' data-testid='RoadmapColumn-heading'>
-        <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.smSemibold}>
+      <div className={`p-4 text-center ${className}`} data-testid='RoadmapColumn-heading'>
+        <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.smSemibold} className='dark:text-white'>
           {title}
         </Heading>
-        <Paragraph typeStyle={ParagraphTypeStyle.md} className='mt-2'>
+        <Paragraph typeStyle={ParagraphTypeStyle.md} className='mt-2 dark:text-gray-300'>
           {description}
         </Paragraph>
       </div>

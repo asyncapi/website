@@ -1,8 +1,10 @@
+import Link from 'next/link';
 import React from 'react';
 
 import type { ICaseStudies } from '@/types/post';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
+import Button from './buttons/Button';
 import Paragraph from './typography/Paragraph';
 
 interface ICaseStudyCardProps {
@@ -10,7 +12,7 @@ interface ICaseStudyCardProps {
 }
 
 /**
- * @description A component that displays a list of case studies in a card format
+ * @description Displays case studies in a card grid layout
  * @param {ICaseStudies} props.studies - The list of case studies to display
  */
 export default function CaseStudyCard({ studies = [] }: ICaseStudyCardProps) {
@@ -19,21 +21,26 @@ export default function CaseStudyCard({ studies = [] }: ICaseStudyCardProps) {
   }
 
   return (
-    <div className='flex flex-wrap justify-center gap-3 pt-10 lg:gap-8 lg:text-center'>
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8'>
       {studies.map((study, index) => (
-        <a key={index} className='lg:w-[30%]' href={`casestudies/${study.id}`}>
-          <div
-            className='h-full min-h-[300px] max-w-sm overflow-hidden rounded-md border border-gray-200 bg-white p-4'
-            data-testid='CaseStudyCard-main'
-          >
-            <span className='mr-2'>
-              <img className='m-auto h-16' src={study.company.logo} alt={study.company.name} />
-            </span>
-            <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4'>
+        <Link key={index} href={`/casestudies/${study.id}`} className='group block h-full'>
+          <div className='h-full bg-white dark:bg-dark-background border border-gray-200 dark:border-gray-700 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1'>
+            <div className='flex items-center justify-center h-20 mb-6'>
+              <img src={study.company.logo} alt={study.company.name} className='max-h-16 max-w-full object-contain' />
+            </div>
+
+            <Paragraph typeStyle={ParagraphTypeStyle.md} className='text-gray-600 dark:text-gray-400 mb-6 line-clamp-4'>
               {study.company.description}
             </Paragraph>
+
+            <div className='mt-auto'>
+              <Button
+                text='Read case study →'
+                className='w-full bg-primary-500 hover:bg-primary-600 text-white group-hover:bg-primary-600 transition-colors'
+              />
+            </div>
           </div>
-        </a>
+        </Link>
       ))}
     </div>
   );

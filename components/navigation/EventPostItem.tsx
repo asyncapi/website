@@ -1,14 +1,9 @@
-import { ArrowRightIcon } from '@heroicons/react/outline';
 import moment from 'moment';
 import React from 'react';
 
 import type { IEvent } from '@/types/event';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
-import IconCalendar from '../icons/Calendar';
-import Community from '../icons/Community';
-import Conference from '../icons/Conference';
-import Webinar from '../icons/Webinar';
 import Heading from '../typography/Heading';
 
 interface EventPostItemProps {
@@ -28,25 +23,16 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
   const localTime = moment().format('YYYY-MM-DD'); // store localTime
   const currentDate = `${localTime}T00:00:00.000Z`;
   const title = post.title || '';
-  let color = '';
-  let icon: React.ReactElement | null = null;
   let type = '';
 
   if (title.includes('community')) {
-    icon = <Community />;
-    color = 'text-green-800';
     type = 'COMMUNITY';
   } else if (title.includes('conference')) {
-    icon = <Conference />;
-    color = 'text-orange-800';
     type = 'CONFERENCE';
   } else if (title.includes('workshop')) {
-    icon = <Webinar />;
-    color = 'text-blue-400';
     type = 'WORKSHOP';
   }
 
-  const defaultCover = 'https://github.com/asyncapi/community/assets/40604284/01c2b8de-fa5c-44dd-81a5-70cb96df4813';
   let active = true;
   const postDate = moment(post.date); // Convert post.date to a moment object if necessary
 
@@ -59,33 +45,41 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
 
   return (
     <li key={id} className={className} data-testid='EventPostItem-main'>
-      <article className='h-full rounded-lg shadow-md hover:shadow-lg'>
-        <a href={post.url} target='_blank' rel='noreferrer' data-testid='EventPostItem-link'>
-          <img
-            src={post.banner ? post.banner : defaultCover}
-            alt={post.title}
-            className='h-52 w-full rounded-t-lg object-cover'
-            data-testid='EventPostItem-img'
-          />
-          <div className='mt-2 flex h-52 flex-col justify-between p-5 ' data-testid='EventPostItem-post'>
-            <div>
-              <div className='flex items-center'>
-                {icon}
-                <p className={`text-md ml-3 font-bold ${color}`}>{type}</p>
-              </div>
-              <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.bodyLg} className='mt-4'>
-                {post.title}
-              </Heading>
-            </div>
-            <div className='flex items-center'>
-              <IconCalendar />
-              <span className='ml-4 text-sm font-semibold' data-testid='Event-span'>
+      <article className='flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-md hover:shadow-lg'>
+        <div className='relative h-40 bg-gradient-to-br from-indigo-600 to-purple-600 p-4'>
+          <div className='absolute right-4 top-4'>
+            <span className='rounded-full bg-white px-3 py-1 text-xs font-medium text-gray-700'>
+              {type || 'Online'}
+            </span>
+          </div>
+          <div className='absolute bottom-4 left-4'>
+            <span className='text-sm font-semibold text-white'>150 attending</span>
+          </div>
+        </div>
+
+        <div className='flex flex-1 flex-col justify-between p-6'>
+          <div>
+            <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.bodyLg} className='mb-2 text-gray-900'>
+              {post.title}
+            </Heading>
+            <div className='flex items-center text-sm text-gray-600'>
+              <span data-testid='Event-span'>
                 {active ? moment(postDate).format('MMMM D, YYYY') : 'View Recording'}
               </span>
-              <ArrowRightIcon className='ml-3 w-4' />
             </div>
+            <div className='text-sm text-gray-600'>{postDate.isValid() && moment(postDate).format('h:mm A [UTC]')}</div>
           </div>
-        </a>
+
+          <a
+            href={post.url}
+            target='_blank'
+            rel='noreferrer'
+            className='mt-4 block w-full rounded-lg bg-indigo-600 py-3 text-center font-semibold text-white transition-colors hover:bg-indigo-700'
+            data-testid='EventPostItem-link'
+          >
+            Join Our Community
+          </a>
+        </div>
       </article>
     </li>
   );

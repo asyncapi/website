@@ -13,12 +13,11 @@ export default function IconDashboard({ className = '' }) {
       viewBox='0 0 24 24'
       role='img'
       aria-labelledby='dashboardIconTitle'
-      stroke='#000000'
-      stroke-width='1'
-      stroke-linecap='square'
-      stroke-line-join='miter'
+      stroke='currentColor'
+      strokeWidth='1'
+      strokeLinecap='square'
+      strokeLinejoin='miter'
       fill='none'
-      color='#000000'
       className={className}
     >
       {' '}
