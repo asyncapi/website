@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import { CheckIcon } from '@heroicons/react/outline';
+import React, { useState } from 'react';
 import Highlight from 'react-syntax-highlighter';
 
 import Caption from '../Caption';
