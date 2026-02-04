@@ -1,7 +1,6 @@
+import { CheckIcon } from '@heroicons/react/outline';
 import React, { useState } from 'react';
 import Highlight from 'react-syntax-highlighter';
-
-import { CheckIcon } from '@heroicons/react/outline';
 
 import Caption from '../Caption';
 import IconClipboard from '../icons/Clipboard';
