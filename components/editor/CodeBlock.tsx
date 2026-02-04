@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Highlight from 'react-syntax-highlighter';
 
+import { CheckIcon } from '@heroicons/react/outline';
+
 import Caption from '../Caption';
 import IconClipboard from '../icons/Clipboard';
 
@@ -335,7 +337,7 @@ export default function CodeBlock({
             >
               {showIsCopied && (
                 <span className='mr-2 inline-block pl-2 pt-1' data-testid='clicked-text'>
-                  Copied!
+                  <CheckIcon className='-mt-0.5 inline-block size-5 md:size-6 text-teal-600 dark:text-teal-400 flex-shrink-0' />
                 </span>
               )}
               <span className='inline-block pt-1'>
