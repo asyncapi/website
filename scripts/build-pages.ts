@@ -36,23 +36,16 @@ try {
  * If a tag's lowercase name is found in the configured list of tags to capitalize, its first character is converted to uppercase.
  *
  * @param content - The string containing JSX elements.
- * @param filePath - The file path for error reporting.
  * @returns The updated content with designated JSX tag names capitalized.
  */
-export function capitalizeJsxTags(content: string, filePath?: string): string {
-  try {
-    return content.replace(/<\/?(\w+)/g, function (match: string, letter: string): string {
-      if (capitalizeTags.includes(letter.toLowerCase())) {
-        return `<${match[1] === '/' ? '/' : ''}${letter[0].toUpperCase()}${letter.slice(1)}`;
-      }
+export function capitalizeJsxTags(content: string): string {
+  return content.replace(/<\/?(\w+)/g, function (match: string, letter: string): string {
+    if (capitalizeTags.includes(letter.toLowerCase())) {
+      return `<${match[1] === '/' ? '/' : ''}${letter[0].toUpperCase()}${letter.slice(1)}`;
+    }
 
-      return match;
-    });
-  } catch (error) {
-    const fileInfo = filePath ? ` in file: ${filePath}` : '';
-    console.error(`❌ Error capitalizing JSX tags${fileInfo}:`, error);
-    throw error;
-  }
+    return match;
+  });
 }
 
 /**
@@ -62,8 +55,14 @@ export function capitalizeJsxTags(content: string, filePath?: string): string {
  *
  * @param srcDir - The path to the source directory containing files and subdirectories.
  * @param targetDir - The path to the target directory where transformed files and directories are written.
+ * @param stats - Optional tracking state for processed and failed files across recursive calls.
+ * @returns The tracking state with counts of processed and failed files.
  */
-export function copyAndRenameFiles(srcDir: string, targetDir: string) {
+export function copyAndRenameFiles(
+  srcDir: string,
+  targetDir: string,
+  stats: { processedFiles: number; failedFiles: string[] } = { processedFiles: 0, failedFiles: [] }
+): { processedFiles: number; failedFiles: string[] } {
   let entries;
 
   try {
@@ -73,9 +72,6 @@ export function copyAndRenameFiles(srcDir: string, targetDir: string) {
     console.error(`❌ Error reading source directory: ${srcDir}`, error);
     throw error;
   }
-
-  let processedFiles = 0;
-  let failedFiles: string[] = [];
 
   entries.forEach((entry) => {
     const srcPath = path.join(srcDir, entry.name);
@@ -88,7 +84,7 @@ export function copyAndRenameFiles(srcDir: string, targetDir: string) {
           if (!fs.existsSync(targetPath)) {
             fs.mkdirSync(targetPath);
           }
-          copyAndRenameFiles(srcPath, targetPath);
+          copyAndRenameFiles(srcPath, targetPath, stats);
         } catch (error) {
           console.error(`❌ Error processing directory: ${srcPath}`, error);
           throw error;
@@ -119,12 +115,7 @@ export function copyAndRenameFiles(srcDir: string, targetDir: string) {
             throw error;
           }
 
-          try {
-            content = capitalizeJsxTags(content, srcPath);
-          } catch (error) {
-            console.error(`❌ Error capitalizing JSX tags in file: ${srcPath}`, error);
-            throw error;
-          }
+          content = capitalizeJsxTags(content);
 
           // Write content to target directory
           try {
@@ -145,9 +136,9 @@ export function copyAndRenameFiles(srcDir: string, targetDir: string) {
             }
           }
 
-          processedFiles++;
+          stats.processedFiles++;
         } catch (error) {
-          failedFiles.push(srcPath);
+          stats.failedFiles.push(srcPath);
           console.error(`\n⚠️  Failed to process file: ${srcPath}`);
           console.error(`   Error details:`, error instanceof Error ? error.message : error);
           // Continue processing other files instead of crashing
@@ -160,14 +151,7 @@ export function copyAndRenameFiles(srcDir: string, targetDir: string) {
     }
   });
 
-  // Summary logging
-  if (failedFiles.length > 0) {
-    console.error(`\n⚠️  Build completed with errors:`);
-    console.error(`   ✅ Successfully processed: ${processedFiles} files`);
-    console.error(`   ❌ Failed: ${failedFiles.length} files`);
-    console.error(`\n   Failed files:`);
-    failedFiles.forEach((file) => console.error(`   - ${file}`));
-  }
+  return stats;
 }
 
 try {
@@ -175,9 +159,19 @@ try {
   console.log(`   Source directory: ${SRC_DIR}`);
   console.log(`   Target directory: ${TARGET_DIR}\n`);
   
-  copyAndRenameFiles(SRC_DIR, TARGET_DIR);
+  const stats = copyAndRenameFiles(SRC_DIR, TARGET_DIR);
   
-  console.log(`\n✅ Build completed successfully!`);
+  // Summary logging
+  if (stats.failedFiles.length > 0) {
+    console.error(`\n⚠️  Build completed with errors:`);
+    console.error(`   ✅ Successfully processed: ${stats.processedFiles} files`);
+    console.error(`   ❌ Failed: ${stats.failedFiles.length} files`);
+    console.error(`\n   Failed files:`);
+    stats.failedFiles.forEach((file) => console.error(`   - ${file}`));
+  } else {
+    console.log(`\n✅ Build completed successfully!`);
+    console.log(`   Total files processed: ${stats.processedFiles}`);
+  }
 } catch (error) {
   console.error(`\n❌ Build process failed:`, error);
   console.error(`\nPlease check the error messages above for details.`);
