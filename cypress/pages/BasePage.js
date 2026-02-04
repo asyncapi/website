@@ -49,7 +49,6 @@ class BasePage {
       .should('not.be.empty');
   }
 
-
 }
 
 export default BasePage;

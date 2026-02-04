@@ -2,18 +2,18 @@ import BasePage from './pages/BasePage';
 import toolsData from './fixtures/toolsPages.json';
 
 describe('Tools - GitHub Actions', () => {
-    const page = new BasePage();
+  const page = new BasePage();
 
-    beforeEach(() => {
-        cy.viewport(1280, 720);
-        page.visit(toolsData.githubActions.path);
-    });
+  beforeEach(() => {
+    cy.viewport(1280, 720);
+    page.visit(toolsData.githubActions.path);
+  });
 
-    it('Verifying if the GitHub Actions header is visible', () => {
-        page.verifyHeadingExists(toolsData.githubActions.heading);
-    });
+  it('Verifying if the GitHub Actions header is visible', () => {
+    page.verifyHeadingExists(toolsData.githubActions.heading);
+  });
 
-    it('Verifying if GitHub Actions GitHub link works', () => {
-        page.verifyButtonLink(toolsData.githubActions.github, 'View on Github');
-    });
+  it('Verifying if GitHub Actions GitHub link works', () => {
+    page.verifyButtonLink(toolsData.githubActions.github, 'View on Github');
+  });
 });

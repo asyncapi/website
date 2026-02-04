@@ -8,19 +8,19 @@ describe('Tools - Modelina Page', () => {
     page.visit(toolsData.modelina.path);
   });
 
-  it('Verifying the main header and intro', () => {
+  it('should display the main header and intro', () => {
     page.verifyHeadingExists(toolsData.modelina.heading);
   });
 
-  it('verifying install snippet', () => {
-    page.verifyElementContainsText('code', toolsData.modelina.install);
+  it('should show the install snippet', () => {
+    page.verifyInstallSnippet();
   });
 
-  it('Verifiying the GitHub button link', () => {
+  it('should verify the GitHub button link', () => {
     page.verifyButtonLink(toolsData.modelina.github, 'View on Github');
   });
 
-  it('Verifying the Try it now link', () => {
-    page.verifyLink(toolsData.modelina.tryIt.href, toolsData.modelina.tryIt.text, { findByText: true });
+  it('should verify the Try it now link', () => {
+    page.verifyTryItNowLink();
   });
 });
