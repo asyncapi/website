@@ -25,8 +25,6 @@ interface EventPostItemProps {
  *
  */
 function EventPostItem({ post, className = '', id }: EventPostItemProps): React.JSX.Element {
-  const localTime = moment().format('YYYY-MM-DD'); // store localTime
-  const currentDate = `${localTime}T00:00:00.000Z`;
   const title = post.title || '';
   let color = '';
   let icon: React.ReactElement | null = null;
@@ -47,11 +45,13 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
   }
 
   const defaultCover = 'https://github.com/asyncapi/community/assets/40604284/01c2b8de-fa5c-44dd-81a5-70cb96df4813';
-  let active = true;
-  const postDate = moment(post.date); // Convert post.date to a moment object if necessary
 
+  const localTime = moment().format('YYYY-MM-DD');
+  const currentDate = `${localTime}T00:00:00.000Z`;
+  const postDate = moment(post.date);
+
+  let active = true;
   if (!postDate.isValid()) {
-    // Handle invalid date if necessary
     active = false;
   } else if (currentDate > postDate.format()) {
     active = false;
@@ -79,7 +79,7 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
             </div>
             <div className='flex items-center'>
               <IconCalendar />
-              <span className='ml-4 text-sm font-semibold' data-testid='Event-span'>
+              <span className='ml-4 text-sm font-semibold' data-testid='Event-span' suppressHydrationWarning>
                 {active ? moment(postDate).format('MMMM D, YYYY') : 'View Recording'}
               </span>
               <ArrowRightIcon className='ml-3 w-4' />
