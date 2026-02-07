@@ -12,7 +12,7 @@ beforeEach(() => {
 });
 
 describe('Docs Page Tests', () => {
-  it('User navigates SideBar containing various sections', () => {
+  it('verifying navigation to SideBar containing various sections', () => {
     docsPage.goToConceptsSection();
 
     cy.get('@subsections').then((subsections) => {
@@ -29,7 +29,7 @@ describe('Docs Page Tests', () => {
     docsPage.goToMigrationsSection();
     docsPage.goToCommunitySection();
 
-    it('User verifies Card Links present on the Docs Page', () => {
+    it('verifying Card Links present on the Docs Page', () => {
       const cards = [
         { href: '/docs/concepts' },
         { href: '/docs/tutorials' },
