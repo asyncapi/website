@@ -368,7 +368,7 @@
         "linkedin": "ivangarciasainzaja",
         "slack": "UTCN3ET4M",
         "availableForHire": false,
-        "company": "IZERTIS",
+        "company": "ZenWave360",
         "isTscMember": true,
         "repos": [
             "vs-asyncapi-preview"
@@ -450,6 +450,60 @@
                     "month": "October"
                 },
                 "link": "https://www.youtube.com/watch?v=gUsoD8RaCuw"
+            },
+            {
+                "type": "talk",
+                "title": "AsyncAPI Full Code Generation for Java with ZenWave SDK",
+                "date": {
+                    "year": 2024,
+                    "month": "October"
+                },
+                "link": "https://www.youtube.com/watch?v=q5vt2TLGoaQ"
+            },
+            {
+                "type": "article",
+                "title": "Transactional OutBox With AsyncAPI, SpringModulith and ZenWaveSDK (full project and tutorial)",
+                "date": {
+                    "year": 2025,
+                    "month": "April"
+                },
+                "link": "https://www.zenwave360.io/posts/TransactionalOutBoxWithAsyncAPIAndSpringModulith/"
+            },
+            {
+                "type": "talk",
+                "title": "Arquitecturas Event-Driven y Monolitos Modulares con AsyncAPI",
+                "date": {
+                    "year": 2025,
+                    "month": "May"
+                },
+                "link": "https://www.youtube.com/watch?v=08MWIWljbIQ"
+            },
+            {
+                "type": "talk",
+                "title": "Event-Driven Architectures with Spring Modulith and AsyncAPI",
+                "date": {
+                    "year": 2025,
+                    "month": "May"
+                },
+                "link": "https://2025.springio.net/sessions/event-driven-architectures-with-spring-modulith-and-asyncapi/"
+            },
+            {
+                "type": "article",
+                "title": "ZenWave AsyncAPI Generator",
+                "date": {
+                    "year": 2025,
+                    "month": "October"
+                },
+                "link": "https://www.zenwave360.io/zenwave-sdk/plugins/asyncapi-generator/"
+            },
+            {
+                "type": "article",
+                "title": "ShoppingCart with AsyncAPI (full project and tutorial)",
+                "date": {
+                    "year": 2026,
+                    "month": "Jan"
+                },
+                "link": "https://www.zenwave360.io/docs/examples/eda-examples/asyncapi-shopping-cart/"
             }
         ]
     },
@@ -540,20 +594,6 @@
             "community"
         ],
         "githubID": 66913810
-    },
-    {
-        "name": "Ashmit JaiSarita Gupta",
-        "github": "devilkiller-ag",
-        "linkedin": "jaisarita",
-        "twitter": "jaisarita",
-        "slack": "U062LA14E58",
-        "availableForHire": true,
-        "isTscMember": true,
-        "repos": [
-            "website",
-            "modelina"
-        ],
-        "githubID": 43639341
     },
     {
         "name": "Sambhav Gupta",
@@ -743,14 +783,14 @@
     {
         "name": "Daniel Kocot",
         "img": "https://avatars.githubusercontent.com/u/466609?v=4",
-        "bio": "Daniel has been part of the codecentric team since October 2016. Since the beginning of 2022 he works as Senior Solution Architect at the Dortmund branch. Starting as a consultant with a focus on application lifecycle management, his focus shifted more and more towards APIs. In addition to numerous customer projects and his involvement in the open source world around APIs, our Head of API Experience & Operations is also a frequent speaker at conferences.",
-        "title": "Senior Solution Architect / Head of API Experience and Operations",
+        "bio": "Daniel joined the team at adorsys GmbH & Co. KG as Principal Integration Architect in January 2026. He has been dedicated to integration-related topics for almost 10 years. Initially focusing on gateways and the early days of APIOps, he later shifted his focus to methodologies, strategy, and enterprise architecture. In his daily work with his customers, he attaches particular importance to ensuring that interfaces are not only understood as technical tools.",
+        "title": "Principal Integration Architect",
         "github": "danielkocot",
         "githubID": 466609,
         "slack": "U029F3XUYM8",
-        "twitter": "dk_1977",
+        "twitter": "",
         "linkedin": "danielkocot",
-        "company": "codecentric AG",
+        "company": "adorsys GmbH & Co. KG",
         "country": "\ud83c\udde9\ud83c\uddea",
         "isTscMember": true,
         "contributions": [

@@ -39,7 +39,7 @@ describe('Docs Page Tests', () => {
       { href: '/docs/reference' },
       { href: '/docs/migration' },
       { href: '/docs/community' },
-      { href: '/docs/reference/specification/v3.0.0-explorer' },
+      { href: '/docs/reference/specification/v3.1.0-explorer' },
     ];
 
     cards.forEach((card) => {

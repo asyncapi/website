@@ -18,7 +18,7 @@ The AsyncAPI project started at Hitch (a.k.a. API Changelog). Hitch needed a mac
 
 Free software allows users to apply, modify, and continue in the chain by distributing copies to help others and, in this case, disseminating modified versions of the specification. 
 
-Transferring AsyncAPI to the Linux Foundation and forming [an open governance model](https://github.com/asyncapi/community/blob/master/CHARTER.md) assures the community that a single company does not control AsyncAPI Initiative. This move takes the project to a higher level of transparency. 
+Transferring AsyncAPI to the Linux Foundation and forming [an open governance model](https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/CHARTER.md) assures the community that a single company does not control AsyncAPI Initiative. This move takes the project to a higher level of transparency. 
 
 In doing so, we achieve:
 

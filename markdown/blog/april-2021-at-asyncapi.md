@@ -32,7 +32,7 @@ I'm super happy to share that we removed the last roadblock for the next AsyncAP
 
 I hope you noticed a pattern. We do not want to do releases during the summer holidays and stay away from December :smiley:.
 
-In June 2021, we will release 2.1.0 version of the specification. It is going to be the first release under [open governance model](https://github.com/asyncapi/community/blob/master/CHARTER.md), under Linux Foundation and new [contribution guide](https://github.com/asyncapi/spec/blob/master/CONTRIBUTING.md). So many new things, a lot to organize around. It means we probably won't accept too many changes as logistics will consume a lot of time. We welcome any help. Join our [Slack](https://www.asyncapi.com/slack-invite/) for more details. 
+In June 2021, we will release 2.1.0 version of the specification. It is going to be the first release under [open governance model](https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/CHARTER.md), under Linux Foundation and new [contribution guide](https://github.com/asyncapi/spec/blob/master/CONTRIBUTING.md). So many new things, a lot to organize around. It means we probably won't accept too many changes as logistics will consume a lot of time. We welcome any help. Join our [Slack](https://www.asyncapi.com/slack-invite/) for more details. 
 
 ## AsyncAPI use case at eBay
 
