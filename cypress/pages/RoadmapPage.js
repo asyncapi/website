@@ -1,19 +1,8 @@
 import BasePage from './BasePage';
 
 class RoadmapPage extends BasePage {
-  visit() {
-    super.visit('/roadmap');
-  }
-
   verifyPageLoaded() {
-    this.verifyHeadingExists(
-      'AsyncAPI becomes the #1 API specification for defining and developing APIs.',
-      'h1'
-    );
-  }
-
-  verifyHeader() {
-    this.verifyPageLoaded();
+    this.verifyHeadingExists('AsyncAPI becomes the #1 API specification for defining and developing APIs.');
   }
 
   verifyCommunityLink() {

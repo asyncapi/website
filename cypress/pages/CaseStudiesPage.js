@@ -1,16 +1,8 @@
 import BasePage from './BasePage';
 
 class CaseStudiesPage extends BasePage {
-  visit() {
-    super.visit('/casestudies');
-  }
-
   verifyPageLoaded() {
-    this.verifyHeadingExists('Case Studies', 'h1');
-  }
-
-  verifyHeader() {
-    this.verifyPageLoaded();
+    this.verifyHeadingExists('Case Studies');
   }
 
   verifyScrollDown() {

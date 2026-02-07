@@ -1,6 +1,6 @@
-class BaseToolsPage {
-  visit(path) {
-    cy.visit(path);
+class BasePage {
+  visit() {
+    cy.visit('/');
   }
 
   getHeaderText(selector, expectedText) {
@@ -8,11 +8,11 @@ class BaseToolsPage {
   }
 
   getLink(href, text) {
-   return cy.contains(`a[href="${href}"]`, text)
+    return cy.contains(`a[href="${href}"]`, text)
       .should('be.visible')
       .and('have.attr', 'href', href);
   }
 }
 
-export default BaseToolsPage;
+export default BasePage;
 

@@ -1,6 +1,6 @@
 class BaseHeaderPage {
   visit(path = '/') {
-    cy.visit(path)
+    cy.visit(path);
     return this;
   }
 
@@ -10,8 +10,8 @@ class BaseHeaderPage {
 
   hoverElement(selector) {
     return this.getElement(selector)
-    .trigger('mouseover')
-    .trigger('mouseenter');
+      .trigger('mouseover')
+      .trigger('mouseenter');
   }
 }
 
