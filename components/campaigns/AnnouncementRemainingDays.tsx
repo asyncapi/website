@@ -1,4 +1,4 @@
-import moment from 'moment';
+import dayjs from 'dayjs';
 import React from 'react';
 
 interface AnnouncementRemainingDaysProps {
@@ -12,8 +12,8 @@ interface AnnouncementRemainingDaysProps {
  * @param {string} props.eventName - The name of the event
  */
 export default function AnnouncementRemainingDays({ dateTime, eventName }: AnnouncementRemainingDaysProps) {
-  const date = moment(dateTime);
-  const now = moment();
+  const date = dayjs(dateTime);
+  const now = dayjs();
   const days = date.diff(now, 'days');
   const hours = date.diff(now, 'hours');
   const minutes = date.diff(now, 'minutes');
