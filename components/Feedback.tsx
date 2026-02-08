@@ -113,7 +113,7 @@ export default function Feedback({ className }: IFeedbackProps) {
           />
           <div className='mt-4 block text-sm lg:flex lg:flex-row'>
             <button
-              className='w-full rounded bg-primary-500 py-2 text-white shadow-md transition-all duration-500 ease-in-out hover:shadow-lg lg:w-6/12'
+              className='w-full rounded bg-primary-500 py-2 text-white shadow-md transition-all duration-500 ease-in-out hover:bg-primary-400 hover:shadow-lg lg:w-6/12'
               type='submit'
             >
               Submit feedback
