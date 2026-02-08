@@ -60,7 +60,8 @@ export default function Index() {
             Teachers. Champions. <span className='countdown-text-gradient'>Ambassadors!</span>
           </h1>
           <Heading typeStyle={HeadingTypeStyle.bodyLg} textColor='text-gray-700' className='mt-5 text-slate-500'>
-            Passionate about event-driven architectures or message-driven APIs? Become an AsyncAPI Ambassador and help the OSS community build the future of APIs.
+            Passionate about event-driven architectures or message-driven APIs? Become an AsyncAPI Ambassador and help
+            the OSS community build the future of APIs.
           </Heading>
           <div data-testid='Ambassadors-button'>
             <Button
@@ -93,11 +94,7 @@ export default function Index() {
         </div>
         <ul className='mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4'>
           {ambassadorList.contents.map((link) => (
-            <li
-              key={link.title}
-              className='flex flex-col items-center justify-start'
-              data-testid='Ambassadors-list'
-            >
+            <li key={link.title} className='flex flex-col items-center justify-start' data-testid='Ambassadors-list'>
               <img src={link.icon} alt={link.title} className='mt-20 w-[200px]' />
               <Heading typeStyle={HeadingTypeStyle.xs} className='mt-5'>
                 {link.title}
@@ -209,7 +206,8 @@ export default function Index() {
               <Heading typeStyle={HeadingTypeStyle.lg}>Become an AsyncAPI Ambassador</Heading>
               <Heading typeStyle={HeadingTypeStyle.bodyLg}>
                 The AsyncAPI Ambassador program is now open for applications! If you&apos;re selected, you&apos;ll join
-                AsyncAPI&apos;s mission of helping community members all over the world, build the future of Event-Driven APIs.
+                AsyncAPI&apos;s mission of helping community members all over the world, build the future of
+                Event-Driven APIs.
               </Heading>
               <div className='md:item-center w-full md:flex md:justify-between'>
                 <Button
