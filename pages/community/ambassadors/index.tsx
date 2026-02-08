@@ -47,20 +47,37 @@ export function addAdditionalUserInfo(user: Ambassador) {
  */
 export default function Index() {
   const image = '/img/social/community-ambassadors.webp';
-  const asyncapiAmbassadors = sortBy(ambassadors.map((user) => addAdditionalUserInfo(user)), ['name']);
+  const asyncapiAmbassadors = sortBy(
+    ambassadors.map((user) => addAdditionalUserInfo(user)),
+    ['name']
+  );
 
   return (
-    <GenericLayout title='AsyncAPI Ambassador Program' description='The AsyncAPI Ambassador Program' image={image} wide>
+    <GenericLayout
+      title='AsyncAPI Ambassador Program'
+      description='The AsyncAPI Ambassador Program'
+      image={image}
+      wide
+    >
       <div className='flex flex-col items-center justify-between lg:flex-row' data-testid='Ambassadors-main'>
         <div className='w-full text-center lg:w-[45%] lg:text-left' data-testid='Ambassadors-content'>
           <h1 className='mt-10  text-3xl font-semibold md:text-4xl lg:text-5xl' data-testid='Ambassadors-title'>
             Teachers. Champions. <span className='countdown-text-gradient'>Ambassadors!</span>
           </h1>
-          <Heading typeStyle={HeadingTypeStyle.bodyLg} textColor='text-gray-700' className='mt-5 text-slate-500'>
+          <Heading
+            typeStyle={HeadingTypeStyle.bodyLg}
+            textColor='text-gray-700'
+            className='mt-5 text-slate-500'
+          >
             Passionate about event-driven architectures or message-driven APIs? Become an AsyncAPI Ambassador and help the OSS community build the future of APIs.
           </Heading>
           <div data-testid='Ambassadors-button'>
-            <Button className='mt-10 block text-center focus:outline-none md:inline-block' text='Become an AsyncAPI Ambassador' href='https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/AMBASSADOR_PROGRAM.md' target='_blank' />
+            <Button
+              className='mt-10 block text-center focus:outline-none md:inline-block'
+              text='Become an AsyncAPI Ambassador'
+              href='https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/AMBASSADOR_PROGRAM.md'
+              target='_blank'
+            />
           </div>
         </div>
         <div className='hidden w-1/2 lg:block'>
@@ -69,7 +86,11 @@ export default function Index() {
       </div>
       <div className='mt-20'>
         <div className='aspect-h-9 aspect-w-16 bg-center'>
-          <iframe src='https://www.youtube.com/embed/3rg_7hIb9PQ' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' data-testid='Ambassadors-Iframe'></iframe>
+          <iframe
+            src='https://www.youtube.com/embed/3rg_7hIb9PQ'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+            data-testid='Ambassadors-Iframe'
+          ></iframe>
         </div>
         <div className='flex justify-center'>
           <div className='mt-10 text-center lg:w-[55%]' data-testid='Ambassadors-contributions'>
@@ -96,9 +117,16 @@ export default function Index() {
         <Heading typeStyle={HeadingTypeStyle.bodyLg} textColor='text-gray-700' className='mt-5 text-slate-500'>
           Learn and share knowledge with community members
         </Heading>
-        <div className='mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3' data-testid='Ambassadors-members-main'>
+        <div
+          className='mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3'
+          data-testid='Ambassadors-members-main'
+        >
           {asyncapiAmbassadors.map((ambassador: Ambassador, index: number) => (
-            <div key={index} className='mt-6 flex flex-col justify-between rounded-md border pb-2 text-left' data-testid='Ambassadors-members'>
+            <div
+              key={index}
+              className='mt-6 flex flex-col justify-between rounded-md border pb-2 text-left'
+              data-testid='Ambassadors-members'
+            >
               <div>
                 <div className='flex justify-between p-2' data-testid='Ambassadors-members-details'>
                   <div>{ambassador.name}</div>
@@ -107,7 +135,11 @@ export default function Index() {
                 <Link href={`ambassadors/${ambassador.github}`} as={`ambassadors/${ambassador.github}`}>
                   <div className='p-2 cursor-pointer'>
                     <div className='h-auto w-full rounded-md bg-center' data-testid='Ambassadors-members-img'>
-                      <img src={ambassador.img} alt={ambassador.name} className='h-auto w-full rounded-lg object-contain' />
+                      <img
+                        src={ambassador.img}
+                        alt={ambassador.name}
+                        className='h-auto w-full rounded-lg object-contain'
+                      />
                     </div>
                     <div className='mt-2 w-full rounded-lg border p-2 text-sm'>{ambassador.title}</div>
                   </div>
@@ -116,13 +148,29 @@ export default function Index() {
               <div className='flex h-full flex-col justify-between'>
                 <div className='p-2 text-sm'>{ambassador.bio}</div>
                 <div className='flex border-t p-2 gap-4' data-testid='Ambassadors-members-socials'>
-                  <a href={ambassador.twitterUrl} target='_blank' rel='noreferrer' className='text-gray-500 hover:text-black transition-colors' data-testid='Ambassadors-members-twitter'>
+                  <a
+                    href={ambassador.twitterUrl}
+                    target='_blank'
+                    rel='noreferrer'
+                    className='text-gray-500 hover:text-black transition-colors'
+                    data-testid='Ambassadors-members-twitter'
+                  >
                     <IconTwitter className='h-5 w-5 fill-current' />
                   </a>
-                  <a href={ambassador.githubUrl} target='_blank' rel='noreferrer' className='text-gray-500 hover:text-black transition-colors'>
+                  <a
+                    href={ambassador.githubUrl}
+                    target='_blank'
+                    rel='noreferrer'
+                    className='text-gray-500 hover:text-black transition-colors'
+                  >
                     <IconGithub className='h-5 w-5 fill-current' />
                   </a>
-                  <a href={ambassador.linkedinUrl} target='_blank' rel='noreferrer' className='text-gray-500 hover:text-[#0077b5] transition-colors'>
+                  <a
+                    href={ambassador.linkedinUrl}
+                    target='_blank'
+                    rel='noreferrer'
+                    className='text-gray-500 hover:text-[#0077b5] transition-colors'
+                  >
                     <IconLinkedIn className='h-5 w-5 fill-current' />
                   </a>
                 </div>
@@ -157,16 +205,30 @@ export default function Index() {
             ))}
           </ul>
         </div>
-        <div className='mt-20 h-auto w-full rounded-lg bg-dark bg-mapCover bg-cover bg-center p-4 bg-blend-soft-light' data-testid='Events-ambassadors'>
+        <div
+          className='mt-20 h-auto w-full rounded-lg bg-dark bg-mapCover bg-cover bg-center p-4 bg-blend-soft-light'
+          data-testid='Events-ambassadors'
+        >
           <div className='flex justify-center'>
             <div className='p-4 text-center text-white lg:w-[65%]'>
               <Heading typeStyle={HeadingTypeStyle.lg}>Become an AsyncAPI Ambassador</Heading>
               <Heading typeStyle={HeadingTypeStyle.bodyLg}>
-                The AsyncAPI Ambassador program is now open for applications! If you're selected, you'll join AsyncAPI's mission of helping community members all over the world, build the future of Event-Driven APIs.
+                The AsyncAPI Ambassador program is now open for applications! If you&apos;re selected, you&apos;ll join AsyncAPI&apos;s mission of helping community members all over the world, build the future of Event-Driven APIs.
               </Heading>
               <div className='md:item-center w-full md:flex md:justify-between'>
-                <Button className='mt-5 block text-center focus:outline-none md:mt-10 md:inline-block md:w-[48%]' text='Become an Ambassador now' href='https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/AMBASSADOR_PROGRAM.md' target='_blank' />
-                <Button bgClassName='bg-transparent border border-primary-600 hover:bg-primary-400' className='mt-5 block text-center focus:outline-none md:mt-10 md:inline-block md:w-[48%]' text='Learn more' href='https://www.asyncapi.com/blog/asyncapi-ambassador-program' target='_blank' />
+                <Button
+                  className='mt-5 block text-center focus:outline-none md:mt-10 md:inline-block md:w-[48%]'
+                  text='Become an Ambassador now'
+                  href='https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/AMBASSADOR_PROGRAM.md'
+                  target='_blank'
+                />
+                <Button
+                  bgClassName='bg-transparent border border-primary-600 hover:bg-primary-400'
+                  className='mt-5 block text-center focus:outline-none md:mt-10 md:inline-block md:w-[48%]'
+                  text='Learn more'
+                  href='https://www.asyncapi.com/blog/asyncapi-ambassador-program'
+                  target='_blank'
+                />
               </div>
             </div>
           </div>
