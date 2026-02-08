@@ -50,7 +50,7 @@ export default function Index() {
   );
 
   // Variable to handle long URL and pass max-len linter
-  const ambassadorProgramUrl = 
+  const ambassadorProgramUrl =
     'https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/AMBASSADOR_PROGRAM.md';
 
   return (
