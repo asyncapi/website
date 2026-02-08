@@ -1,6 +1,6 @@
-class BasePage {
-  visit() {
-    cy.visit('/');
+class BaseDocsPage {
+  visit(path = '/') {
+    cy.visit(path);
   }
 
   verifyLinkByHref(href) {
@@ -24,4 +24,4 @@ class BasePage {
   }
 }
 
-export default BasePage;
+export default BaseDocsPage;
