@@ -12,6 +12,7 @@ interface NavItemProps {
   onMouseEnter?: () => void;
   hasDropdown?: boolean;
   className?: string;
+  isOpen?: boolean;
 }
 
 /**
@@ -31,7 +32,8 @@ export default function NavItem({
   onClick = () => {},
   onMouseEnter = () => {},
   hasDropdown = false,
-  className = ''
+  className = '',
+  isOpen = false
 }: NavItemProps) {
   const router = useRouter();
 
@@ -68,7 +70,16 @@ export default function NavItem({
         data-testid='NavItem-Link'
       >
         <span>{text}</span>
-        {hasDropdown && <NavItemDropdown />}
+
+        {hasDropdown && (
+          <span
+            className={`inline-flex size-5 items-center justify-center transition-transform duration-200 ${
+              isOpen ? 'rotate-180' : 'rotate-0'
+            }`}
+          >
+            <NavItemDropdown />
+          </span>
+        )}
       </Link>
     );
   }
@@ -76,7 +87,16 @@ export default function NavItem({
   return (
     <button type='button' {...attrs} className={`${attrs.className} text-gray-700`}>
       <span>{text}</span>
-      {hasDropdown && <NavItemDropdown />}
+
+      {hasDropdown && (
+        <span
+          className={`inline-flex size-5 items-center justify-center transition-transform duration-200 ${
+            isOpen ? 'rotate-180' : 'rotate-0'
+          }`}
+        >
+          <NavItemDropdown />
+        </span>
+      )}
     </button>
   );
 }
