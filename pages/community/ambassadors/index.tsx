@@ -74,7 +74,7 @@ export default function Index() {
           </div>
         </div>
         <div className='hidden w-1/2 lg:block'>
-          <img src='/img/homepage/ambassador-cover.svg' alt='ambassador-cover' className='w-full' />
+          <img src='/img/homepage/ambassador-cover.svg' alt='ambassador-cover' className='full' />
         </div>
       </div>
       <div className='mt-20'>
