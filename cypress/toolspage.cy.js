@@ -1,5 +1,5 @@
 import HomePage from './pages/homepage';
-import toolsData from './fixtures/toolsData.json';
+import toolsData from '../config/tools-automated.json';
 
 describe('Tools Page E2E Tests', () => {
   let homePage;
