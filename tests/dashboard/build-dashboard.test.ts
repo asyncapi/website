@@ -23,12 +23,18 @@ import {
   mockRateLimitResponse
 } from '../fixtures/dashboardData';
 
+const mockGraphqlFn = jest.fn();
 jest.mock('../../scripts/helpers/logger', () => ({
   logger: { error: jest.fn(), warn: jest.fn() }
 }));
 
-jest.mock('@octokit/graphql');
-const mockedGraphql = graphql as unknown as jest.Mock; // Declare graphql as a mock type
+jest.mock('@octokit/graphql', () => ({
+  graphql: {
+    defaults: jest.fn(),
+  },
+}));
+
+const mockedGraphql = mockGraphqlFn as jest.Mock;
 
 describe('GitHub Discussions Processing', () => {
   let tempDir: string;
@@ -47,6 +53,9 @@ describe('GitHub Discussions Processing', () => {
 
   beforeEach(() => {
     jest.resetAllMocks();
+
+    (graphql as any).defaults.mockImplementation(() => mockGraphqlFn);
+    
     consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
     consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
   });
@@ -65,8 +74,7 @@ describe('GitHub Discussions Processing', () => {
       expect.any(String),
       expect.objectContaining({
         id: 'paginated-discussion',
-        headers: expect.any(Object)
-      })
+     })
     );
 
     expect(result[0]).toMatchObject({

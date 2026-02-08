@@ -18,6 +18,20 @@ import { logger } from '../helpers/logger';
 import { pause } from '../helpers/utils';
 import { Queries } from './issue-queries';
 
+function getGraphqlClient() {
+  const token = process.env.GITHUB_TOKEN;
+
+  if (!token) {
+    throw new Error('GitHub token is not set in environment variables');
+  }
+
+  return graphql.defaults({
+    headers: {
+      authorization: `token ${token}`,
+    },
+  });
+}
+
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
@@ -71,18 +85,11 @@ async function getDiscussions(
   pageSize: number,
   endCursor: null | string = null
 ): Promise<Discussion['search']['nodes']> {
-  const token = process.env.GITHUB_TOKEN;
-
-  if (!token) {
-    throw new Error('GitHub token is not set in environment variables');
-  }
   try {
-    const result: Discussion = await graphql(query, {
+    const graphqlWithAuth = getGraphqlClient();
+    const result: Discussion = await graphqlWithAuth(query, {
       first: pageSize,
       after: endCursor,
-      headers: {
-        authorization: `token ${process.env.GITHUB_TOKEN}`
-      }
     });
 
     if (result.rateLimit.remaining <= 100) {
@@ -97,19 +104,19 @@ async function getDiscussions(
 
     await pause(500);
 
-    const { hasNextPage } = result.search.pageInfo;
-
-    if (!hasNextPage) {
+    if (!result.search.pageInfo.hasNextPage) {
       return result.search.nodes;
     }
 
-    return result.search.nodes.concat(await getDiscussions(query, pageSize, result.search.pageInfo.endCursor));
+    return result.search.nodes.concat(
+      await getDiscussions(query, pageSize, result.search.pageInfo.endCursor)
+    );
   } catch (e) {
     logger.error(e);
-
     return Promise.reject(e);
   }
 }
+
 
 /**
  * Retrieves a discussion from GitHub by its unique ID.
@@ -123,19 +130,12 @@ async function getDiscussions(
  * @throws {Error} If the GraphQL request fails.
  */
 async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequestById | IssueById> {
-  const token = process.env.GITHUB_TOKEN;
-
-  if (!token) {
-    throw new Error('GitHub token is not set in environment variables');
-  }
 
   try {
-    const result: PullRequestById | IssueById = await graphql(isPR ? Queries.pullRequestById : Queries.issueById, {
-      id,
-      headers: {
-        authorization: `token ${token}`
-      }
-    });
+    const graphqlWithAuth = getGraphqlClient();
+    const result: PullRequestById | IssueById = await graphqlWithAuth(isPR ? Queries.pullRequestById : Queries.issueById, {
+      id}
+    );
 
     return result;
   } catch (e) {
