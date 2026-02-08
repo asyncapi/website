@@ -87,9 +87,10 @@ export default function Index() {
         <div className='flex justify-center'>
           <div className='mt-10 text-center lg:w-[55%]' data-testid='Ambassadors-contributions'>
             <Heading typeStyle={HeadingTypeStyle.lg}>AsyncAPI Ambassador Contributions</Heading>
-            <Heading typeStyle={HeadingTypeStyle.bodyLg} textColor='text-gray-700' className='mt-5 text-slate-500'>
-              AsyncAPI Ambassadors are passionate about APIs and AsyncAPI. They share their interest, expertise, and excitement within their communities to help others build better software.
-            </Heading>
+              <Heading typeStyle={HeadingTypeStyle.bodyLg} textColor='text-gray-700' className='mt-5 text-slate-500'>
+                AsyncAPI Ambassadors are passionate about APIs and AsyncAPI. They share their interest, expertise,
+                and excitement within their communities to help others build better software.
+              </Heading>
           </div>
         </div>
         <ul className='mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4'>
@@ -175,9 +176,10 @@ export default function Index() {
         <div className='flex justify-center'>
           <div className='mt-10 text-center lg:w-[55%]' data-testid='Events-token'>
             <Heading typeStyle={HeadingTypeStyle.lg}>Tokens of our appreciation</Heading>
-            <Heading typeStyle={HeadingTypeStyle.bodyLg} textColor='text-gray-700' className='mt-5 text-slate-500'>
-              We appreciate your commitment and passion for sharing your knowledge with your communities. Let us support you!
-            </Heading>
+              <Heading typeStyle={HeadingTypeStyle.bodyLg} textColor='text-gray-700' className='mt-5 text-slate-500'>
+                We appreciate your commitment and passion for sharing your knowledge with your communities.
+                Let us support you!
+              </Heading>
           </div>
         </div>
         <div className='mt-10'>
