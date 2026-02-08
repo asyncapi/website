@@ -74,7 +74,7 @@ export default function Index() {
           </div>
         </div>
         <div className='hidden w-1/2 lg:block'>
-          <img src='/img/homepage/ambassador-cover.svg' alt='ambassador-cover' className='full' />
+          <img src='/img/homepage/ambassador-cover.svg' alt='ambassador-cover' className='w-full' />
         </div>
       </div>
       <div className='mt-20'>
@@ -142,31 +142,37 @@ export default function Index() {
               <div className='flex h-full flex-col justify-between'>
                 <div className='p-2 text-sm'>{ambassador.bio}</div>
                 <div className='flex border-t p-2 gap-4' data-testid='Ambassadors-members-socials'>
-                  <a
-                    href={ambassador.twitterUrl}
-                    target='_blank'
-                    rel='noreferrer'
-                    className='text-gray-500 hover:text-black transition-colors'
-                    data-testid='Ambassadors-members-twitter'
-                  >
-                    <IconTwitter className='h-5 w-5 fill-current' />
-                  </a>
-                  <a
-                    href={ambassador.githubUrl}
-                    target='_blank'
-                    rel='noreferrer'
-                    className='text-gray-500 hover:text-black transition-colors'
-                  >
-                    <IconGithub className='h-5 w-5 fill-current' />
-                  </a>
-                  <a
-                    href={ambassador.linkedinUrl}
-                    target='_blank'
-                    rel='noreferrer'
-                    className='text-gray-500 hover:text-[#0077b5] transition-colors'
-                  >
-                    <IconLinkedIn className='h-5 w-5 fill-current' />
-                  </a>
+                  {ambassador.twitterUrl && (
+                    <a
+                      href={ambassador.twitterUrl}
+                      target='_blank'
+                      rel='noreferrer'
+                      className='text-gray-500 hover:text-black transition-colors'
+                      data-testid='Ambassadors-members-twitter'
+                    >
+                      <IconTwitter className='h-5 w-5 fill-current' />
+                    </a>
+                  )}
+                  {ambassador.githubUrl && (
+                    <a
+                      href={ambassador.githubUrl}
+                      target='_blank'
+                      rel='noreferrer'
+                      className='text-gray-500 hover:text-black transition-colors'
+                    >
+                      <IconGithub className='h-5 w-5 fill-current' />
+                    </a>
+                  )}
+                  {ambassador.linkedinUrl && (
+                    <a
+                      href={ambassador.linkedinUrl}
+                      target='_blank'
+                      rel='noreferrer'
+                      className='text-gray-500 hover:text-[#0077b5] transition-colors'
+                    >
+                      <IconLinkedIn className='h-5 w-5 fill-current' />
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
