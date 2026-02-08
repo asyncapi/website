@@ -53,22 +53,13 @@ export default function Index() {
   );
 
   return (
-    <GenericLayout
-      title='AsyncAPI Ambassador Program'
-      description='The AsyncAPI Ambassador Program'
-      image={image}
-      wide
-    >
+    <GenericLayout title='AsyncAPI Ambassador Program' description='The AsyncAPI Ambassador Program' image={image} wide>
       <div className='flex flex-col items-center justify-between lg:flex-row' data-testid='Ambassadors-main'>
         <div className='w-full text-center lg:w-[45%] lg:text-left' data-testid='Ambassadors-content'>
           <h1 className='mt-10  text-3xl font-semibold md:text-4xl lg:text-5xl' data-testid='Ambassadors-title'>
             Teachers. Champions. <span className='countdown-text-gradient'>Ambassadors!</span>
           </h1>
-          <Heading
-            typeStyle={HeadingTypeStyle.bodyLg}
-            textColor='text-gray-700'
-            className='mt-5 text-slate-500'
-          >
+          <Heading typeStyle={HeadingTypeStyle.bodyLg} textColor='text-gray-700' className='mt-5 text-slate-500'>
             Passionate about event-driven architectures or message-driven APIs? Become an AsyncAPI Ambassador and help the OSS community build the future of APIs.
           </Heading>
           <div data-testid='Ambassadors-button'>
@@ -102,7 +93,11 @@ export default function Index() {
         </div>
         <ul className='mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4'>
           {ambassadorList.contents.map((link) => (
-            <li key={link.title} className='flex flex-col items-center justify-start' data-testid='Ambassadors-list'>
+            <li
+              key={link.title}
+              className='flex flex-col items-center justify-start'
+              data-testid='Ambassadors-list'
+            >
               <img src={link.icon} alt={link.title} className='mt-20 w-[200px]' />
               <Heading typeStyle={HeadingTypeStyle.xs} className='mt-5'>
                 {link.title}
@@ -213,7 +208,8 @@ export default function Index() {
             <div className='p-4 text-center text-white lg:w-[65%]'>
               <Heading typeStyle={HeadingTypeStyle.lg}>Become an AsyncAPI Ambassador</Heading>
               <Heading typeStyle={HeadingTypeStyle.bodyLg}>
-                The AsyncAPI Ambassador program is now open for applications! If you&apos;re selected, you&apos;ll join AsyncAPI&apos;s mission of helping community members all over the world, build the future of Event-Driven APIs.
+                The AsyncAPI Ambassador program is now open for applications! If you&apos;re selected, you&apos;ll join
+                AsyncAPI&apos;s mission of helping community members all over the world, build the future of Event-Driven APIs.
               </Heading>
               <div className='md:item-center w-full md:flex md:justify-between'>
                 <Button
