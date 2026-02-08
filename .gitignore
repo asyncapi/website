@@ -24,3 +24,5 @@ coverage
 deno.lock
 cypress/videos
 cypress/screenshots
+
+tsconfig.tsbuildinfo
