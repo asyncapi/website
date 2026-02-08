@@ -23,7 +23,7 @@ interface GeneratorFlags {
 export default function GeneratorInstallation() {
   const [template, setTemplate] = useState<string>('@asyncapi/html-template@3.0.0');
   // By default we will have output folder flag so its set here.
-  const [params, setParams] = useState<string>('-o example --use-new-generator');
+  const [params, setParams] = useState<string>('-o example ');
   const [specPath, setSpecPath] = useState<string>('https://asyncapi.com/s/asyncapiv2');
 
   const generatorflags = generatorflagList as GeneratorFlags;
