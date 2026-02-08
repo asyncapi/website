@@ -15,7 +15,7 @@ class RoadmapPage extends BasePage {
 
   verifyTooltip(index) {
     cy.get('[data-testid="InlineHelp-icon"]').eq(index).trigger('mouseover');
-    cy.get('[data-testid="InlineHelp"]').should('be.visible');
+    cy.get('[data-testid="InlineHelp"]').eq(index).should('be.visible');
   }
 }
 
