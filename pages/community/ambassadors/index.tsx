@@ -24,7 +24,6 @@ export function addAdditionalUserInfo(user: Ambassador) {
     ...user
   };
 
-  // add social links
   if (userData.github) {
     userData.githubUrl = `https://www.github.com/${userData.github}`;
   }
@@ -35,16 +34,11 @@ export function addAdditionalUserInfo(user: Ambassador) {
     userData.twitterUrl = `https://www.twitter.com/${userData.twitter}`;
   }
 
-  // add img url
-  // github redirects to avatar url using `https://www.github.com/<username>.png`
   userData.img = `${userData.githubUrl}.png`;
 
   return userData;
 }
 
-/**
- * @description The main page for the AsyncAPI Ambassador Program.
- */
 export default function Index() {
   const image = '/img/social/community-ambassadors.webp';
   const asyncapiAmbassadors = sortBy(
@@ -52,28 +46,32 @@ export default function Index() {
     ['name']
   );
 
+  // Variable to handle long URL and pass max-len linter
+  const ambassadorProgramUrl = 
+    'https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/AMBASSADOR_PROGRAM.md';
+
   return (
     <GenericLayout title='AsyncAPI Ambassador Program' description='The AsyncAPI Ambassador Program' image={image} wide>
       <div className='flex flex-col items-center justify-between lg:flex-row' data-testid='Ambassadors-main'>
         <div className='w-full text-center lg:w-[45%] lg:text-left' data-testid='Ambassadors-content'>
-          <h1 className='mt-10  text-3xl font-semibold md:text-4xl lg:text-5xl' data-testid='Ambassadors-title'>
+          <h1 className='mt-10 text-3xl font-semibold md:text-4xl lg:text-5xl' data-testid='Ambassadors-title'>
             Teachers. Champions. <span className='countdown-text-gradient'>Ambassadors!</span>
           </h1>
           <Heading typeStyle={HeadingTypeStyle.bodyLg} textColor='text-gray-700' className='mt-5 text-slate-500'>
-            Passionate about event-driven architectures or message-driven APIs? Become an AsyncAPI Ambassador
-            and help the OSS community build the future of APIs.
+            Passionate about event-driven architectures or message-driven APIs? Become an AsyncAPI Ambassador and help
+            the OSS community build the future of APIs.
           </Heading>
           <div data-testid='Ambassadors-button'>
             <Button
               className='mt-10 block text-center focus:outline-none md:inline-block'
               text='Become an AsyncAPI Ambassador'
-              href='https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/AMBASSADOR_PROGRAM.md'
+              href={ambassadorProgramUrl}
               target='_blank'
             />
           </div>
         </div>
         <div className='hidden w-1/2 lg:block'>
-          <img src='/img/homepage/ambassador-cover.svg' alt='ambassador-cover' className='w-full' />
+          <img src='/img/homepage/ambassador-cover.svg' alt='ambassador-cover' className='full' />
         </div>
       </div>
       <div className='mt-20'>
@@ -88,7 +86,8 @@ export default function Index() {
           <div className='mt-10 text-center lg:w-[55%]' data-testid='Ambassadors-contributions'>
             <Heading typeStyle={HeadingTypeStyle.lg}>AsyncAPI Ambassador Contributions</Heading>
             <Heading typeStyle={HeadingTypeStyle.bodyLg} textColor='text-gray-700' className='mt-5 text-slate-500'>
-              AsyncAPI Ambassadors are passionate about APIs and AsyncAPI. They share their interest, expertise, and excitement within their communities to help others build better software.
+              AsyncAPI Ambassadors are passionate about APIs and AsyncAPI. They share their interest, expertise, and
+              excitement within their communities to help others build better software.
             </Heading>
           </div>
         </div>
@@ -176,8 +175,8 @@ export default function Index() {
           <div className='mt-10 text-center lg:w-[55%]' data-testid='Events-token'>
             <Heading typeStyle={HeadingTypeStyle.lg}>Tokens of our appreciation</Heading>
             <Heading typeStyle={HeadingTypeStyle.bodyLg} textColor='text-gray-700' className='mt-5 text-slate-500'>
-              We appreciate your commitment and passion for sharing your knowledge with your
-              communities. Let us support you!
+              We appreciate your commitment and passion for sharing your knowledge with your communities.
+              Let us support you!
             </Heading>
           </div>
         </div>
@@ -214,7 +213,7 @@ export default function Index() {
                 <Button
                   className='mt-5 block text-center focus:outline-none md:mt-10 md:inline-block md:w-[48%]'
                   text='Become an Ambassador now'
-                  href='https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/AMBASSADOR_PROGRAM.md'
+                  href={ambassadorProgramUrl}
                   target='_blank'
                 />
                 <Button
