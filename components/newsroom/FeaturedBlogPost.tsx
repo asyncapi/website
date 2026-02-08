@@ -2,6 +2,7 @@ import dayjs from 'dayjs';
 import Link from 'next/link';
 import React from 'react';
 import TextTruncate from 'react-text-truncate';
+import { twMerge } from 'tailwind-merge';
 
 import { BlogPostType } from '@/types/components/navigation/BlogPostType';
 import type { IBlogPost } from '@/types/post';
@@ -42,7 +43,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
   }
 
   return (
-    <div className={`rounded-lg ${className}`}>
+    <div className={twMerge('rounded-lg', className)}>
       <article className='h-full rounded-lg'>
         <Link href={post.slug}>
           <span
