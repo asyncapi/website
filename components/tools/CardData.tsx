@@ -68,8 +68,8 @@ export const CardData = ({
   useEffect(() => {
     const maybeHandler = (event: MouseEvent) => {
       setOutsideClick(true);
-      if (domNode.current && !domNode.current.contains(event.target as Node)) {
-        setOutsideClick(false);
+      if (domNode.current && domNode.current.contains(event.target as Node)) {
+        setOutsideClick(true);
       }
     };
 
