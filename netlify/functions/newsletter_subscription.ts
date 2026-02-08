@@ -7,7 +7,7 @@ import config from '../../config/mailchimp-config.json';
 export const handler: Handler = async (event: HandlerEvent) => {
   if (event.httpMethod === 'POST') {
     const { listId } = config;
-    const { email, name, interest } = JSON.parse(event.body || '');
+    const { email, name, interest }: { email: string; name: string; interest: keyof typeof config.interests } = JSON.parse(event.body || '');
 
     const subscriberHash = md5(email.toLowerCase());
 
@@ -34,7 +34,7 @@ export const handler: Handler = async (event: HandlerEvent) => {
         statusCode: 200,
         body: JSON.stringify(response)
       };
-    } catch (err) {
+    } catch (err: any) {
       return {
         statusCode: err.status,
         body: JSON.stringify(err)
