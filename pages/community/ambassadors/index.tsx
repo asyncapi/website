@@ -11,6 +11,9 @@ import NewsletterSubscribe from '../../../components/NewsletterSubscribe';
 import Heading from '../../../components/typography/Heading';
 import ambassadorList from '../../../config/ambassador_lists.json';
 import ambassadors from '../../../config/AMBASSADORS_MEMBERS.json';
+import IconGithub from '../../../components/icons/Github';
+import IconLinkedIn from '../../../components/icons/LinkedIn';
+import IconTwitter from '../../../components/icons/Twitter';
 
 /**
  * @description Add additional user information to the user object having ambassador data
@@ -123,9 +126,9 @@ export default function Index() {
                   <div data-testid='Ambassadors-members-country'>{ambassador.country}</div>
                 </div>
                 <Link href={`ambassadors/${ambassador.github}`} as={`ambassadors/${ambassador.github}`}>
-                  <div className='p-2'>
+                  <div className='p-2 cursor-pointer'>
                     <div
-                      className='h-auto w-full cursor-pointer rounded-md bg-center'
+                      className='h-auto w-full rounded-md bg-center'
                       data-testid='Ambassadors-members-img'
                     >
                       <img
@@ -140,21 +143,31 @@ export default function Index() {
               </div>
               <div className='flex h-full flex-col justify-between'>
                 <div className='p-2 text-sm'>{ambassador.bio}</div>
-                <div className='flex border-t p-2' data-testid='Ambassadors-members-socials'>
+                <div className='flex border-t p-2 gap-4' data-testid='Ambassadors-members-socials'>
                   <a
                     href={ambassador.twitterUrl}
                     target='_blank'
                     rel='noreferrer'
-                    className='underline'
+                    className='text-gray-500 hover:text-black transition-colors'
                     data-testid='Ambassadors-members-twitter'
                   >
-                    Twitter ↗
+                    <IconTwitter className='h-5 w-5 fill-current' />
                   </a>
-                  <a href={ambassador.githubUrl} target='_blank' rel='noreferrer' className='ml-3 underline'>
-                    Github ↗
+                  <a 
+                    href={ambassador.githubUrl} 
+                    target='_blank' 
+                    rel='noreferrer'
+                    className='text-gray-500 hover:text-black transition-colors'
+                  >
+                    <IconGithub className='h-5 w-5 fill-current' />
                   </a>
-                  <a href={ambassador.linkedinUrl} target='_blank' rel='noreferrer' className='ml-3 underline'>
-                    Linkedin ↗
+                  <a 
+                    href={ambassador.linkedinUrl} 
+                    target='_blank' 
+                    rel='noreferrer'
+                    className='text-gray-500 hover:text-[#0077b5] transition-colors'
+                  >
+                    <IconLinkedIn className='h-5 w-5 fill-current' />
                   </a>
                 </div>
               </div>
