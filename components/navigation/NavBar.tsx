@@ -226,12 +226,9 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
 
             {/* // Language Picker Component */}
             <LanguageSelect
-              options={uniqueLangs}
-              onChange={(value) => {
-                changeLanguage(value.toLowerCase(), true);
-              }}
-              className=''
-              selected={i18n.language ? i18n.language : 'en'}
+              uniqueLangs={uniqueLangs}
+              currentLanguage={i18n.language ? i18n.language : 'en'}
+              changeLanguage={changeLanguage}
             />
 
             <GithubButton
