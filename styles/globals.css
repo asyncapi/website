@@ -377,7 +377,6 @@ select {
   cursor: pointer;
 }
 
-
 @media (max-width: 768px) {
   .visualizer-container .body-wrapper {
     display: flex !important;
@@ -390,16 +389,13 @@ select {
   .visualizer-container .node-container {
     display: none;
     width: 125% !important;
-
     height: 75vh !important;
-
     border-right: none !important;
     border-bottom: 2px solid #e5e7eb;
     margin-bottom: -15% !important;
     transform: scale(0.8);
     transform-origin: top left;
   }
-
 
   .visualizer-container.show-map .node-container {
     display: block;
@@ -415,7 +411,6 @@ select {
     overflow-y: visible !important;
   }
 
-
   .visualizer-container .panel h1,
   .visualizer-container .panel h2,
   .visualizer-container .panel p {
@@ -423,13 +418,11 @@ select {
     white-space: normal;
   }
 
-
   .visualizer-container .panel pre {
     max-width: 100%;
     overflow-x: auto;
   }
 }
-
 
 @media (min-width: 769px) {
   .mobile-toggle {
