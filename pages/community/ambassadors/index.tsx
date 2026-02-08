@@ -60,8 +60,8 @@ export default function Index() {
             Teachers. Champions. <span className='countdown-text-gradient'>Ambassadors!</span>
           </h1>
           <Heading typeStyle={HeadingTypeStyle.bodyLg} textColor='text-gray-700' className='mt-5 text-slate-500'>
-            Passionate about event-driven architectures or message-driven APIs? Become an AsyncAPI Ambassador and help
-            the OSS community build the future of APIs.
+            Passionate about event-driven architectures or message-driven APIs? Become an AsyncAPI Ambassador 
+            and help the OSS community build the future of APIs.
           </Heading>
           <div data-testid='Ambassadors-button'>
             <Button
@@ -88,8 +88,8 @@ export default function Index() {
           <div className='mt-10 text-center lg:w-[55%]' data-testid='Ambassadors-contributions'>
             <Heading typeStyle={HeadingTypeStyle.lg}>AsyncAPI Ambassador Contributions</Heading>
             <Heading typeStyle={HeadingTypeStyle.bodyLg} textColor='text-gray-700' className='mt-5 text-slate-500'>
-              AsyncAPI Ambassadors are passionate about APIs and AsyncAPI. They share their interest, expertise,
-              and excitement within their communities to help others build better software.
+              AsyncAPI Ambassadors are passionate about APIs and AsyncAPI. They share their interest, expertise, and
+              excitement within their communities to help others build better software.
             </Heading>
           </div>
         </div>
@@ -177,8 +177,8 @@ export default function Index() {
           <div className='mt-10 text-center lg:w-[55%]' data-testid='Events-token'>
             <Heading typeStyle={HeadingTypeStyle.lg}>Tokens of our appreciation</Heading>
             <Heading typeStyle={HeadingTypeStyle.bodyLg} textColor='text-gray-700' className='mt-5 text-slate-500'>
-              We appreciate your commitment and passion for sharing your knowledge with your communities.
-              Let us support you!
+              We appreciate your commitment and passion for sharing your knowledge with your communities. Let us support 
+              you!
             </Heading>
           </div>
         </div>
