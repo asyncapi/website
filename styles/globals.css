@@ -348,6 +348,11 @@ select {
 }
 
 @media (max-width: 768px) {
+
+  .visualizer-container {
+    overflow-x: hidden;
+  }
+  
   .visualizer-container .body-wrapper {
     display: flex !important;
     flex-direction: column !important;
