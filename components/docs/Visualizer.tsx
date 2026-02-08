@@ -19,7 +19,7 @@ function Visualizer() {
       <div className='mobile-toggle px-4'>
         <button
           onClick={() => setShowMap(!showMap)}
-          className='bg-primary-500 hover:bg-primary-600 text-white font-bold py-2 px-4 rounded mb-2 mt-4 w-full md:hidden'
+          className='bg-primary-500 hover:bg-primary-600 text-white font-bold py-2 px-4 rounded mb-2 mt-4 w-full'
         >
           {showMap ? 'Hide Visual Map' : 'Show Visual Map'}
         </button>
