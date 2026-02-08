@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { BadgeCheckIcon, CodeIcon, DocumentAddIcon, GlobeIcon } from '@heroicons/react/outline';
+import { CheckBadgeIcon, CodeBracketIcon, DocumentPlusIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 import React from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
@@ -21,7 +21,7 @@ export { getStaticPaths, getStaticProps };
 interface Feature {
   name: string;
   description: () => string | React.JSX.Element;
-  icon: (props: React.ComponentProps<'svg'>) => React.JSX.Element;
+  icon: React.ComponentType<React.ComponentProps<'svg'>>;
 }
 
 const features: Feature[] = [
@@ -32,7 +32,7 @@ const features: Feature[] = [
 
       return t('cli.features.new-files.description');
     },
-    icon: DocumentAddIcon
+    icon: DocumentPlusIcon
   },
   {
     name: 'cli.features.validate.name',
@@ -41,7 +41,7 @@ const features: Feature[] = [
 
       return t('cli.features.validate.description');
     },
-    icon: BadgeCheckIcon
+    icon: CheckBadgeIcon
   },
   {
     name: 'cli.features.open-studio.name',
@@ -58,7 +58,7 @@ const features: Feature[] = [
         </>
       );
     },
-    icon: CodeIcon
+    icon: CodeBracketIcon
   },
   {
     name: 'cli.features.open-source.name',
@@ -67,7 +67,7 @@ const features: Feature[] = [
 
       return t('cli.features.open-source.description');
     },
-    icon: GlobeIcon
+    icon: GlobeAltIcon
   }
 ];
 
