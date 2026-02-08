@@ -35,8 +35,17 @@ export default function Filter({ data, onFilter, checks, className }: FilterProp
   }, [route]);
 
   useEffect(() => {
-    onFilterApply(data, onFilter, routeQuery);
-  }, [routeQuery]);
+    // Filter routeQuery to only include keys defined in 'checks'
+    const validKeys = checks.map((c) => c.name);
+    const filteredQuery: Record<string, any> = {};
+    Object.keys(routeQuery).forEach((key) => {
+      if (validKeys.includes(key)) {
+        filteredQuery[key] = routeQuery[key];
+      }
+    });
+
+    onFilterApply(data, onFilter, filteredQuery);
+  }, [routeQuery, checks, data, onFilter]);
 
   return checks.map((check) => {
     let selected = '';
@@ -70,6 +79,10 @@ export default function Filter({ data, onFilter, checks, className }: FilterProp
             // Remove a specific filter upon clicking Select Placeholder option
             delete newQuery[check.name];
           }
+
+          // Reset pagination when filter changes
+          delete newQuery.page;
+
           if (newQuery) {
             const queryParams = new URLSearchParams(newQuery as { [key: string]: string }).toString();
 
