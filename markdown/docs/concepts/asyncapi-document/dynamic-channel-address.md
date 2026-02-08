@@ -58,7 +58,7 @@ components:
       description: The ID of the streetlight.
 ```
 
-You can reuse parameters using the [Reference Object](/docs/reference/specification/v3.0.0#referenceObject) like in the following example:
+You can reuse parameters using the [Reference Object](/docs/reference/specification/v3.1.0#referenceObject) like in the following example:
 
 ```yml
     parameters:
@@ -68,7 +68,7 @@ You can reuse parameters using the [Reference Object](/docs/reference/specificat
 
 Here's the complete AsyncAPI document with the channels' parameters for the `address` field:
 ```yaml
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 info:
   title: Example API
   version: '1.0.0'

@@ -264,7 +264,7 @@ function QuestionCard() {
       <div className='my-4'>
         Want to become a member? Follow this
         <TextLink
-          href='https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md'
+          href='https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/TSC_MEMBERSHIP.md'
           target='_blank'
           className='font-normal text-base text-sky-600 no-underline hover:text-sky-400'
         >
