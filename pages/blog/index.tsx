@@ -44,8 +44,8 @@ export default function BlogIndexPage() {
 
   const prevFiltersRef = useRef<string>('');
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onFilter = useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     (data: IBlogPost[], _query: FilterType) => {
       setPosts(data);
 
