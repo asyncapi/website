@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 
 import AsyncAPISummary from '../components/FinancialSummary/AsyncAPISummary';
 import BarChartComponent from '../components/FinancialSummary/BarChartComponent';
@@ -36,11 +36,7 @@ export default function FinancialSummary() {
   );
 
   return (
-    <Container
-      fluid
-      className='min-[1701px]:mx-auto min-[1701px]:w-full min-[1701px]:max-w-screen-xl'
-      padding='none'
-    >
+    <Container fluid className='min-[1701px]:mx-auto min-[1701px]:w-full min-[1701px]:max-w-screen-xl' padding='none'>
       {renderComponents()}
     </Container>
   );
