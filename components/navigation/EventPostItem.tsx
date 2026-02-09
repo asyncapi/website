@@ -5,10 +5,6 @@ import React from 'react';
 import type { IEvent } from '@/types/event';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
-import IconCalendar from '../icons/Calendar';
-import Community from '../icons/Community';
-import Conference from '../icons/Conference';
-import Webinar from '../icons/Webinar';
 import Heading from '../typography/Heading';
 
 interface EventPostItemProps {
@@ -28,25 +24,16 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
   const localTime = dayjs().format('YYYY-MM-DD'); // store localTime
   const currentDate = `${localTime}T00:00:00.000Z`;
   const title = post.title || '';
-  let color = '';
-  let icon: React.ReactElement | null = null;
   let type = '';
 
   if (title.includes('community')) {
-    icon = <Community />;
-    color = 'text-green-800';
     type = 'COMMUNITY';
   } else if (title.includes('conference')) {
-    icon = <Conference />;
-    color = 'text-orange-800';
     type = 'CONFERENCE';
   } else if (title.includes('workshop')) {
-    icon = <Webinar />;
-    color = 'text-blue-400';
     type = 'WORKSHOP';
   }
 
-  const defaultCover = 'https://github.com/asyncapi/community/assets/40604284/01c2b8de-fa5c-44dd-81a5-70cb96df4813';
   let active = true;
   const postDate = dayjs(post.date); // Convert post.date to a dayjs object if necessary
 
@@ -82,10 +69,20 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
               <span className='ml-4 text-sm font-semibold' data-testid='Event-span'>
                 {active ? postDate.format('MMMM D, YYYY') : 'View Recording'}
               </span>
-              <ArrowRightIcon className='ml-3 w-4' />
             </div>
+            <div className='text-sm text-gray-600'>{postDate.isValid() && moment(postDate).format('h:mm A [UTC]')}</div>
           </div>
-        </a>
+
+          <a
+            href={post.url}
+            target='_blank'
+            rel='noreferrer'
+            className='mt-4 block w-full rounded-lg bg-indigo-600 py-3 text-center font-semibold text-white transition-colors hover:bg-indigo-700'
+            data-testid='EventPostItem-link'
+          >
+            Join Our Community
+          </a>
+        </div>
       </article>
     </li>
   );

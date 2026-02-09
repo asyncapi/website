@@ -18,7 +18,6 @@ export default function IconDashboard({ className = '' }) {
       strokeLinecap='square'
       strokeLinejoin='miter'
       fill='none'
-      color='#000000'
       className={className}
     >
       {' '}

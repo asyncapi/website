@@ -35,36 +35,42 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
   }
 
   return (
-    <BlogContext.Provider value={{ post }}>
-      <AnnouncementHero className='mx-8 my-4' />
-      <Container cssBreakingPoint='lg' flex flexReverse>
-        <TOC
-          toc={post.toc}
-          cssBreakingPoint='lg'
-          className={`sticky top-20 mt-4 max-h-screen overflow-y-auto bg-blue-100 p-4 lg:top-24
-            lg:-mr-20 lg:mt-2 lg:max-h-(screen-16) lg:min-w-40 lg:max-w-64 lg:border-l lg:border-gray-200
-            lg:bg-transparent lg:pb-8 lg:pt-0 xl:-mr-36 xl:min-w-72`}
-        />
-        <main className='mt-8 px-4 sm:px-6 lg:max-w-172 lg:flex-1 lg:pl-0 lg:pr-8 xl:max-w-172'>
-          <header className='pr-4 sm:pr-6 md:pr-8'>
-            <h1 className='font-normal font-sans text-4xl text-gray-800 antialiased' data-testid='BlogLayout-main'>
-              {post.title}
-            </h1>
-            <div className='mt-6 flex items-center'>
-              <div className='relative shrink-0'>
-                <AuthorAvatars authors={post.authors} />
-              </div>
-              <div className='ml-3'>
-                <p className='text-sm font-medium leading-5 text-gray-900'>
-                  <span className='hover:underline'>
-                    {post.authors
-                      .map((author, index) =>
-                        author.link ? (
-                          <a key={index} href={author.link}>
-                            {author.name}
-                          </a>
-                        ) : (
-                          author.name
+    <div className='min-h-screen bg-white dark:bg-dark-background'>
+      <BlogContext.Provider value={{ post }}>
+        <AnnouncementHero className='mx-8 my-4' />
+        <Container cssBreakingPoint='lg' flex flexReverse>
+          <TOC
+            toc={post.toc}
+            cssBreakingPoint='lg'
+            className={`sticky top-20 mt-4 max-h-screen overflow-y-auto bg-blue-100 dark:bg-dark-card p-4 lg:top-24
+              lg:-mr-20 lg:mt-2 lg:max-h-(screen-16) lg:min-w-40 lg:max-w-64 lg:border-l lg:border-gray-200
+              dark:border-gray-700 lg:bg-transparent dark:lg:bg-transparent lg:pb-8 lg:pt-0 xl:-mr-36
+              xl:min-w-72`}
+          />
+          <main className='mt-8 px-4 sm:px-6 lg:max-w-172 lg:flex-1 lg:pl-0 lg:pr-8 xl:max-w-172'>
+            <header className='pr-4 sm:pr-6 md:pr-8'>
+              <h1
+                className='font-normal font-sans text-4xl text-gray-800 dark:text-white antialiased'
+                data-testid='BlogLayout-main'
+              >
+                {post.title}
+              </h1>
+              <div className='mt-6 flex items-center'>
+                <div className='relative shrink-0'>
+                  <AuthorAvatars authors={post.authors} />
+                </div>
+                <div className='ml-3'>
+                  <p className='text-sm font-medium leading-5 text-gray-900 dark:text-gray-100'>
+                    <span className='hover:underline'>
+                      {post.authors
+                        .map((author, index) =>
+                          author.link ? (
+                            <a key={index} href={author.link} className='dark:text-gray-100'>
+                              {author.name}
+                            </a>
+                          ) : (
+                            author.name
+                          )
                         )
                       )
                       .reduce((prev, curr) => [prev, ' & ', curr] as any)}
@@ -76,20 +82,20 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
                   <span>{post.readingTime} min read</span>
                 </div>
               </div>
-            </div>
-          </header>
-          <article className='mb-32'>
-            <Head title={post.title} description={post.excerpt} image={post.cover} />
-            {post.canonical && (
-              <HtmlHead>
-                <link rel='canonical' href={post.canonical} />
-              </HtmlHead>
-            )}
-            <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className='my-6 w-full' />
-            {children}
-          </article>
-        </main>
-      </Container>
-    </BlogContext.Provider>
+            </header>
+            <article className='mb-32'>
+              <Head title={post.title} description={post.excerpt} image={post.cover} />
+              {post.canonical && (
+                <HtmlHead>
+                  <link rel='canonical' href={post.canonical} />
+                </HtmlHead>
+              )}
+              <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className='my-6 w-full' />
+              {children}
+            </article>
+          </main>
+        </Container>
+      </BlogContext.Provider>
+    </div>
   );
 }

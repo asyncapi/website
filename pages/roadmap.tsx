@@ -2,11 +2,17 @@
 import React from 'react';
 import YouTubeEmbed from 'react-youtube-embed';
 
+import { ButtonIconPosition } from '@/types/components/buttons/ButtonPropsType';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
-import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
+import Button from '../components/buttons/Button';
+import IconCode from '../components/icons/Code';
+import IconGear from '../components/icons/Gear';
+import IconLightning from '../components/icons/Lightning';
+import IconPlus from '../components/icons/Plus';
 import InlineHelp from '../components/InlineHelp';
 import GenericLayout from '../components/layout/GenericLayout';
+import GoalCardRoadmapPage from '../components/roadmap/GoalCardRoadmapPage';
 import RoadmapColumn from '../components/roadmap/RoadmapColumn';
 import type { RoadmapItem } from '../components/roadmap/types';
 import Heading from '../components/typography/Heading';
@@ -493,136 +499,118 @@ export default function RoadmapPage() {
 
   return (
     <GenericLayout title='Vision & Roadmap' description={description} image={image} wide>
-      <div className='overflow-hidden py-12'>
-        <div className='relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-screen-xl lg:px-8'>
-          <div className='relative'>
-            <div className='lg:mx-auto lg:w-2/3 lg:text-center'>
-              <Paragraph
-                typeStyle={ParagraphTypeStyle.md}
-                textColor='text-secondary-500'
-                className='text-center font-bold uppercase'
-              >
-                Vision
-              </Paragraph>
-              <Heading level={HeadingLevel.h1} className='text-center'>
-                AsyncAPI becomes the #1 API specification for defining and developing APIs.{' '}
-                <span className='block text-secondary-500 underline'>Any kind of APIs.</span>
-              </Heading>
-              <Paragraph className='mt-10 lg:pr-4'>
-                It all starts with a vision. <strong>This is where we want to see AsyncAPI by 2026.</strong> To make
-                this vision a reality, we've set some goals below that will help us to get there.
-              </Paragraph>
-              <Paragraph className='mt-4 lg:pr-4'>
-                {/* eslint-disable-next-line react/no-unescaped-entities */}
-                These goals are not necessarily everything we'll have to do to get to that vision but instead, they are
-                manageable objectives we can already anticipate.{' '}
-                <strong>Together, vision and goals set the direction of the project.</strong>
-              </Paragraph>
+      <div className='overflow-hidden'>
+        {/* Hero Section */}
+        <div className='bg-white dark:bg-dark-background py-16 sm:py-20'>
+          <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+            <div className='text-center'>
+              <span className='inline-block rounded-full border border-secondary-300 dark:border-secondary-600 bg-white dark:bg-dark-card px-4 py-2 text-sm font-semibold text-secondary-500 dark:text-secondary-400 mb-6'>
+                VISION 2026
+              </span>
+              <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white mb-6'>
+                AsyncAPI: The #1 API Specification
+                <br />
+                for All APIs
+              </h1>
+              <div className='mb-8'>
+                <TextLink
+                  href='#'
+                  className='text-xl sm:text-2xl font-semibold text-secondary-500 dark:text-secondary-400 underline hover:text-secondary-600 dark:hover:text-secondary-300'
+                >
+                  Any kind of APIs
+                </TextLink>
+              </div>
+              <p className='mx-auto max-w-3xl text-lg text-gray-600 dark:text-gray-400'>
+                We envision AsyncAPI leading the way by 2026. To achieve this, we've set clear, actionable goals to
+                guide our journey. While not exhaustive, these objectives provide a roadmap for progress.{' '}
+                <strong>Vision and goals shape the project's future.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Our Goals Section */}
+        <div className='bg-secondary-100 rounded-2xl dark:bg-dark-card py-16 sm:py-20'>
+          <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+            <h2 className='text-3xl sm:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12'>
+              Our Goals
+            </h2>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+              <GoalCardRoadmapPage
+                icon={IconCode}
+                title='Unified API Specifications'
+                description='AsyncAPI seamlessly integrates with OpenAPI, GraphQL, and gRPC—no need to reinvent the wheel. Our docs embrace, not replace, existing specifications.'
+              />
+              <GoalCardRoadmapPage
+                icon={IconLightning}
+                title='Effortless API Development'
+                description='Build your first API in minutes—no prior AsyncAPI knowledge needed. Just add a goal as frictionless user experience. Your idea to production, across all frameworks.'
+              />
+              <GoalCardRoadmapPage
+                icon={IconGear}
+                title='400% Community Growth'
+                description={
+                  'AsyncAPI thrives on community. Expanding contributions, sponsorships, and engagement ensures continued success. ' +
+                  "Let's grow together."
+                }
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Outcomes Section */}
+        <div className='bg-white dark:bg-dark-background py-16 sm:py-20'>
+          <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+            <div className='text-center mb-12'>
+              <h2 className='text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4'>
+                Outcomes we want to achieve
+              </h2>
+              <p className='mx-auto max-w-3xl text-lg text-gray-600 dark:text-gray-400'>
+                At AsyncAPI, we focus on outcomes over rigid timelines. We prioritize meaningful results that drive our
+                goals forward. Our roadmap categorizes these outcomes by priority, highlighting related features.
+              </p>
             </div>
 
-            <div className='relative mt-20'>
-              <div className='grid lg:grid-cols-3 lg:gap-8'>
-                <div>
-                  <div className='mb-2 lg:my-0 lg:text-center'>
-                    <Paragraph
-                      typeStyle={ParagraphTypeStyle.md}
-                      textColor='text-secondary-500'
-                      className='mr-2 inline-block p-1.5 font-bold uppercase lg:mb-2 lg:mr-0 lg:block lg:bg-transparent lg:p-0'
-                    >
-                      Goal
-                    </Paragraph>
-                    <Heading typeStyle={HeadingTypeStyle.mdSemibold}>
-                      AsyncAPI unifies all the API specifications
-                    </Heading>
-                  </div>
-                  <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4 lg:text-center'>
-                    Nobody does only event-driven architectures. Most people complement them with REST (OpenAPI),
-                    GraphQL, and/or RPC APIs.{' '}
-                    <strong>
-                      We want people to use the AsyncAPI specification and tooling together with their existing OpenAPI,
-                      GraphQL, and gRPC definitions.
-                    </strong>{' '}
-                    For that purpose, our specification and tools will need to understand and leverage many other
-                    specifications and tools.
-                  </Paragraph>
-                  <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4 lg:text-center'>
-                    This is not about reinventing the wheel or creating yet another spec to solve the same problems but
-                    to integrate with the existing tools and specs instead.
-                  </Paragraph>
-                </div>
-                <div>
-                  <div className='mb-2 mt-6 lg:my-0 lg:text-center'>
-                    <Paragraph
-                      typeStyle={ParagraphTypeStyle.md}
-                      textColor='text-secondary-500'
-                      className='mr-2 inline-block p-1.5 font-bold uppercase lg:mb-2 lg:mr-0 lg:block lg:bg-transparent lg:p-0'
-                    >
-                      Goal
-                    </Paragraph>
-                    <Heading typeStyle={HeadingTypeStyle.mdSemibold}>API development experience is seamless</Heading>
-                  </div>
-                  <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4 lg:text-center'>
-                    We want to make the development experience super seamless, from idea to production.{' '}
-                    <strong>
-                      Users should be able to create their first API within minutes without prior knowledge of AsyncAPI,
-                      the communication protocol, or anything else that's not business logic.
-                    </strong>
-                  </Paragraph>
-                  <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4 lg:text-center'>
-                    Furthermore, making sure production behavior and documentation are always aligned, independently of
-                    the programming language or framework of choice.
-                  </Paragraph>
-                </div>
-                <div>
-                  <div className='mb-2 mt-6 lg:my-0 lg:text-center'>
-                    <Paragraph
-                      typeStyle={ParagraphTypeStyle.md}
-                      textColor='text-secondary-500'
-                      className='mr-2 inline-block p-1.5 font-bold uppercase lg:mb-2 lg:mr-0 lg:block lg:bg-transparent lg:p-0'
-                    >
-                      Goal
-                    </Paragraph>
-                    <Heading typeStyle={HeadingTypeStyle.mdSemibold}>The AsyncAPI community grows 400%</Heading>
-                  </div>
-                  <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4 lg:text-center'>
-                    We are aware that our goals are ambitious.{' '}
-                    <strong>
-                      None of the other goals are possible if we don't have a huge community supporting us. AsyncAPI is
-                      and must continue being a community-driven initiative. Now more than ever.
-                    </strong>
-                  </Paragraph>
-                  <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4 lg:text-center'>
-                    We need people to contribute code, ideas, docs, articles, presentations, and more. The sponsors base
-                    should also grow along with the community size and the donated money should serve to give back to
-                    the community.
-                  </Paragraph>
-                </div>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 mb-16'>
+              {/* Outcome-Based Approach */}
+              <div className='bg-secondary-100 dark:bg-dark-card rounded-xl p-8'>
+                <h3 className='text-2xl font-bold text-gray-900 dark:text-white mb-4'>Outcome-Based Approach</h3>
+                <p className='text-gray-600 dark:text-gray-400 leading-relaxed'>
+                  We focus on impact, not rigid timelines. Instead of a long-term release plan, we prioritize meaningful
+                  results.
+                </p>
+              </div>
+
+              {/* Get Involved */}
+              <div className='bg-secondary-100 dark:bg-dark-card rounded-xl p-8'>
+                <h3 className='text-2xl font-bold text-gray-900 dark:text-white mb-4'>Get Involved !</h3>
+                <p className='text-gray-600 dark:text-gray-400 leading-relaxed mb-6'>
+                  Want to dive deeper? Check out our repository discussions or start an issue.
+                </p>
+                <Button
+                  text='Join Our Community'
+                  href='https://github.com/asyncapi/community'
+                  target='_blank'
+                  className='hover:bg-primary-600'
+                  icon={<IconPlus className='w-5 h-5' />}
+                  iconPosition={ButtonIconPosition.RIGHT}
+                />
               </div>
             </div>
+          </div>
+        </div>
 
-            <div className='lg:mx-auto lg:w-2/3 lg:text-center'>
-              <Paragraph className='mt-10 lg:pr-4'>
-                We'll be regularly setting outcomes or key results that will allow us to accomplish the goals above. You
-                can find a categorization of the outcomes in the roadmap below. They are split by priority and some of
-                them show the related features.
-              </Paragraph>
-              <Paragraph className='mb-14 mt-4 lg:pr-4'>
-                Please bear in mind <strong>this is an outcome-based roadmap</strong>. We don't maintain a long-term
-                release plan. If you want to find more specific and actionable items, head to the related repository
-                issues or start an issue/discussion at
-                <TextLink target='_blank' href='https://github.com/asyncapi/community'>
-                  github.com/asyncapi/community
-                </TextLink>
-                .
-              </Paragraph>
+        {/* Roadmap Graph Section */}
+        <div className='relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-screen-xl lg:px-8 py-12'>
+          <div className='relative'>
+            <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mt-10 text-center'>
+              Roadmap
+            </Heading>
+            <Paragraph className='mx-auto mt-4 dark:text-gray-300 max-w-3xl text-center'>
+              The outcomes we want to achieve
+            </Paragraph>
 
-              <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mt-10 text-center'>
-                Roadmap
-              </Heading>
-              <Paragraph className='mx-auto mt-4 max-w-3xl text-center'>The outcomes we want to achieve</Paragraph>
-            </div>
-
-            <div className='mx-auto mt-10 max-w-3xl text-sm font-semibold uppercase text-gray-800 lg:flex lg:justify-center'>
+            <div className='mx-auto mt-10 max-w-3xl text-sm font-semibold uppercase text-gray-800 dark:text-gray-300 lg:flex lg:justify-center'>
               <div className='mb-2 flex justify-center'>
                 <div className='my-1 mr-2 w-5 rounded bg-green-300'></div>
                 <div className='my-1 mr-2 w-5 rounded bg-yellow-200'></div>
@@ -644,7 +632,7 @@ export default function RoadmapPage() {
                 </div>
               </div>
               <div className='mb-2 flex justify-center'>
-                <div className='my-1 mr-2 w-5 rounded bg-black'></div>
+                <div className='my-1 mr-2 w-5 rounded bg-black dark:bg-gray-200'></div>
                 <div className='mr-4'>
                   Implementation{' '}
                   <InlineHelp text='Related repos, issues, or pull requests implementing the solution. They may implement the solution partially or totally.' />
@@ -673,7 +661,7 @@ export default function RoadmapPage() {
               />
             </div>
 
-            <Paragraph className='mx-auto mb-4 mt-12 text-center lg:w-1/2'>
+            <Paragraph className='mx-auto mb-4 mt-12 text-center dark:text-gray-300 lg:w-1/2'>
               If you want to know more about the format of this roadmap, watch this recording from one of our SIG
               meetings:
             </Paragraph>

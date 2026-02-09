@@ -10,7 +10,7 @@ export default function IconAmbassador({ className = '' }) {
       width='11'
       height='7'
       viewBox='0 0 512 512'
-      fill='#000000'
+      fill='currentColor'
       xmlns='http://www.w3.org/2000/svg'
       className={className}
     >

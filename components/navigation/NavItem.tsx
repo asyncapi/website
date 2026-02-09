@@ -41,8 +41,10 @@ export default function NavItem({
         href={href}
         target={target}
         rel='noopener noreferrer'
-        className={`${className} font-body text-base font-semibold leading-6 text-gray-700 transition duration-150 ease-in-out hover:text-gray-900 focus:text-gray-900 focus:outline-none ${
-          router.pathname.startsWith(href) ? 'text-black' : 'text-gray-700'
+        className={`${className} font-body text-base sm:text-sm/6 font-semibold leading-6  border-b border-transparent dark:hover:border-white hover:border-black transition duration-150 ease-in-out focus:text-black focus:outline-none ${
+          router.pathname.startsWith(href)
+            ? 'text-black dark:text-dark-text'
+            : 'text-zinc-800 dark:text-dark-text text-opacity-85 dark:hover:text-dark-heading hover:text-black'
         }`}
       >
         {text}
@@ -55,7 +57,7 @@ export default function NavItem({
   const attrs = {
     onClick,
     onMouseEnter,
-    className: `${className} group inline-flex items-center space-x-2 font-body text-base leading-6 font-semibold hover:text-gray-900 focus:outline-none focus:text-gray-900 tracking-heading transition ease-in-out duration-150`
+    className: `${className} group inline-flex items-center space-x-0 font-body text-base sm:text-sm leading-6 font-semibold  focus:outline-none focus:text-black tracking-heading transition ease-in-out duration-150`
   };
 
   if (href) {
@@ -63,18 +65,20 @@ export default function NavItem({
       <Link
         href={href}
         {...attrs}
-        className={`${attrs.className} ${router.pathname.startsWith(href) ? 'text-black' : 'text-gray-700'}`}
+        className={`${attrs.className} ${router.pathname.startsWith(href) ? 'text-black' : 'text-zinc-800 text-opacity-85  hover:text-black'}`}
         target={target}
         data-testid='NavItem-Link'
       >
-        <span>{text}</span>
+        <span className='border-b border-transparent dark:hover:border-white dark:text-dark-text dark:hover:text-dark-heading hover:border-black'>
+          {text}
+        </span>
         {hasDropdown && <NavItemDropdown />}
       </Link>
     );
   }
 
   return (
-    <button type='button' {...attrs} className={`${attrs.className} text-gray-700`}>
+    <button type='button' {...attrs} className={`${attrs.className} text-gray-900`}>
       <span>{text}</span>
       {hasDropdown && <NavItemDropdown />}
     </button>
