@@ -16,24 +16,6 @@ import Container from '../components/layout/Container';
  * bar chart, success stories, and contact us components.
  */
 export default function FinancialSummary() {
-  const [windowWidth, setWindowWidth] = useState<number>(0);
-
-  const handleResizeRef = useRef<() => void>(null!);
-
-  handleResizeRef.current = () => {
-    setWindowWidth(window.innerWidth);
-  };
-
-  // Handle window resize event to update the window width state value for responsive design purposes
-  useEffect(() => {
-    handleResizeRef.current!();
-    window.addEventListener('resize', handleResizeRef.current!);
-
-    return () => {
-      window.removeEventListener('resize', handleResizeRef.current!);
-    };
-  }, []);
-
   const title = 'AsyncAPI Finance Summary';
   const description = 'Financial Summary of AsyncAPI';
 
@@ -53,7 +35,13 @@ export default function FinancialSummary() {
     </>
   );
 
-  const shouldUseContainer = windowWidth > 1700;
-
-  return <div>{shouldUseContainer ? <Container wide>{renderComponents()}</Container> : renderComponents()}</div>;
+  return (
+    <Container
+      fluid
+      className='min-[1701px]:mx-auto min-[1701px]:w-full min-[1701px]:max-w-screen-xl'
+      padding='none'
+    >
+      {renderComponents()}
+    </Container>
+  );
 }
