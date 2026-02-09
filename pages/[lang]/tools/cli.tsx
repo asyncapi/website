@@ -1,10 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import {
-  BadgeCheckIcon,
-  CodeIcon,
-  DocumentAddIcon,
-  GlobeIcon,
-} from '@heroicons/react/outline';
+import { BadgeCheckIcon, CodeIcon, DocumentAddIcon, GlobeIcon } from '@heroicons/react/outline';
 import React from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
@@ -37,7 +32,7 @@ const features: Feature[] = [
 
       return t('cli.features.new-files.description');
     },
-    icon: DocumentAddIcon,
+    icon: DocumentAddIcon
   },
   {
     name: 'cli.features.validate.name',
@@ -46,7 +41,7 @@ const features: Feature[] = [
 
       return t('cli.features.validate.description');
     },
-    icon: BadgeCheckIcon,
+    icon: BadgeCheckIcon
   },
   {
     name: 'cli.features.open-studio.name',
@@ -56,14 +51,14 @@ const features: Feature[] = [
       return (
         <>
           {t('cli.features.open-studio.description_pretext')}{' '}
-          <code className=" rounded bg-gray-200 px-1 py-0.5 font-mono text-sm text-gray-900">
+          <code className=' rounded bg-gray-200 px-1 py-0.5 font-mono text-sm text-gray-900'>
             asyncapi start studio
           </code>{' '}
           {t('cli.features.open-studio.description_posttext')}
         </>
       );
     },
-    icon: CodeIcon,
+    icon: CodeIcon
   },
   {
     name: 'cli.features.open-source.name',
@@ -72,8 +67,8 @@ const features: Feature[] = [
 
       return t('cli.features.open-source.description');
     },
-    icon: GlobeIcon,
-  },
+    icon: GlobeIcon
+  }
 ];
 
 /**
@@ -88,16 +83,16 @@ export default function CliPage() {
    */
   function renderButtons() {
     return (
-      <div className="mt-8">
+      <div className='mt-8'>
         <GithubButton
-          text="View on Github"
-          className="mt-2 block w-full sm:w-auto md:mt-0 md:inline-block"
-          href="https://www.github.com/asyncapi/cli"
+          text='View on Github'
+          className='mt-2 block w-full sm:w-auto md:mt-0 md:inline-block'
+          href='https://www.github.com/asyncapi/cli'
         />
         <Button
           text={t('cli.docsButton')}
-          href="/docs/tools/cli"
-          className="mt-2 block w-full sm:w-auto md:ml-2 md:mt-0 md:inline-block"
+          href='/docs/tools/cli'
+          className='mt-2 block w-full sm:w-auto md:ml-2 md:mt-0 md:inline-block'
         />
       </div>
     );
@@ -119,71 +114,60 @@ export default function CliPage() {
   };
 
   return (
-    <GenericLayout title="CLI" description={description} image={image} wide>
-      <div className="overflow-hidden py-12">
-        <div className="relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-screen-xl lg:px-8">
-          <div className="relative">
-            <Heading
-              level={HeadingLevel.h1}
-              typeStyle={HeadingTypeStyle.lg}
-              className="text-center"
-            >
-              <span className="hidden md:block">{t('cli.title')}</span>
-              <span className="md:hidden">AsyncAPI CLI</span>
+    <GenericLayout title='CLI' description={description} image={image} wide>
+      <div className='overflow-hidden py-12'>
+        <div className='relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-screen-xl lg:px-8'>
+          <div className='relative'>
+            <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg} className='text-center'>
+              <span className='hidden md:block'>{t('cli.title')}</span>
+              <span className='md:hidden'>AsyncAPI CLI</span>
             </Heading>
-            <Paragraph className="mx-auto mt-4 max-w-3xl text-center">
-              {t(description)}
-            </Paragraph>
+            <Paragraph className='mx-auto mt-4 max-w-3xl text-center'>{t(description)}</Paragraph>
           </div>
 
-          <div className="relative mt-12 lg:mt-20 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
-            <div className="relative lg:mt-8">
-              <Heading
-                level={HeadingLevel.h4}
-                typeStyle={HeadingTypeStyle.mdSemibold}
-              >
+          <div className='relative mt-12 lg:mt-20 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8'>
+            <div className='relative lg:mt-8'>
+              <Heading level={HeadingLevel.h4} typeStyle={HeadingTypeStyle.mdSemibold}>
                 {t('cli.installationTitle')}
               </Heading>
-              <Paragraph className="mt-3 lg:pr-4">
-                {t('cli.installationDescription')}
-              </Paragraph>
+              <Paragraph className='mt-3 lg:pr-4'>{t('cli.installationDescription')}</Paragraph>
               {renderButtons()}
             </div>
 
-            <div className="relative mx-auto mt-8 w-full space-y-10">
+            <div className='relative mx-auto mt-8 w-full space-y-10'>
               <div>
                 <Heading
                   level={HeadingLevel.h3}
                   typeStyle={HeadingTypeStyle.smSemibold}
-                  className="mb-4 text-center md:text-left"
+                  className='mb-4 text-center md:text-left'
                 >
                   {t('cli.installingTitle')}
                 </Heading>
                 <CodeBlock
-                  language="generator-cli"
-                  textSizeClassName="text-sm"
-                  className="shadow-lg"
+                  language='generator-cli'
+                  textSizeClassName='text-sm'
+                  className='shadow-lg'
                   codeBlocks={[
                     {
                       language: 'npm',
-                      code: 'npm install -g @asyncapi/cli',
+                      code: 'npm install -g @asyncapi/cli'
                     },
                     {
                       language: 'brew',
-                      code: 'brew install asyncapi',
+                      code: 'brew install asyncapi'
                     },
                     {
                       language: '.pkg',
-                      code: getPkgCode(),
+                      code: getPkgCode()
                     },
                     {
                       language: 'windows',
-                      code: setUpWin(),
+                      code: setUpWin()
                     },
                     {
                       language: 'linux',
-                      code: setUpLinux(),
-                    },
+                      code: setUpLinux()
+                    }
                   ]}
                 />
               </div>
@@ -192,27 +176,24 @@ export default function CliPage() {
                 <Heading
                   level={HeadingLevel.h3}
                   typeStyle={HeadingTypeStyle.smSemibold}
-                  className="mb-4 text-center md:text-left"
+                  className='mb-4 text-center md:text-left'
                 >
                   {t('cli.exampleTitle')}
                 </Heading>
-                <div className="space-y-5">
+                <div className='space-y-5'>
                   <div>
-                    <Paragraph
-                      typeStyle={ParagraphTypeStyle.md}
-                      className="mb-4"
-                    >
+                    <Paragraph typeStyle={ParagraphTypeStyle.md} className='mb-4'>
                       {t('cli.exampleDescription')}
                     </Paragraph>
                     <CodeBlock
-                      language="generator-cli"
-                      textSizeClassName="text-sm"
-                      className="shadow-lg"
+                      language='generator-cli'
+                      textSizeClassName='text-sm'
+                      className='shadow-lg'
                       codeBlocks={[
                         {
                           language: 'npm',
-                          code: 'asyncapi new',
-                        },
+                          code: 'asyncapi new'
+                        }
                       ]}
                     />
                   </div>
@@ -220,37 +201,30 @@ export default function CliPage() {
               </div>
             </div>
           </div>
-          <div className="mt-20 bg-white lg:py-12">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="mb-16 text-center">
-                <Heading
-                  level={HeadingLevel.h2}
-                  typeStyle={HeadingTypeStyle.mdSemibold}
-                >
+          <div className='mt-20 bg-white lg:py-12'>
+            <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+              <div className='mb-16 text-center'>
+                <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.mdSemibold}>
                   {t('cli.featuresTitle')}
                 </Heading>
-                <Paragraph className="mx-auto mt-3 max-w-lg text-center lg:pr-4">
+                <Paragraph className='mx-auto mt-3 max-w-lg text-center lg:pr-4'>
                   {t('cli.featuresDescription')}
                 </Paragraph>
               </div>
 
-              <div className="mt-10">
-                <dl className=" md:grid lg:grid-cols-2 lg:space-y-0">
+              <div className='mt-10'>
+                <dl className=' md:grid lg:grid-cols-2 lg:space-y-0'>
                   {features.map(({ description: Description, ...feature }) => (
-                    <div key={feature.name} className="relative mb-10">
+                    <div key={feature.name} className='relative mb-10'>
                       <dt>
-                        <div className="absolute flex size-12 items-center justify-center rounded-md border border-gray-900 bg-secondary-100 text-gray-900">
-                          <feature.icon className="size-6" aria-hidden="true" />
+                        <div className='absolute flex size-12 items-center justify-center rounded-md border border-gray-900 bg-secondary-100 text-gray-900'>
+                          <feature.icon className='size-6' aria-hidden='true' />
                         </div>
-                        <Heading
-                          level={HeadingLevel.h4}
-                          typeStyle={HeadingTypeStyle.smSemibold}
-                          className="ml-16"
-                        >
+                        <Heading level={HeadingLevel.h4} typeStyle={HeadingTypeStyle.smSemibold} className='ml-16'>
                           {t(feature.name)}
                         </Heading>
                       </dt>
-                      <dd className="ml-16 mt-2 pr-10">
+                      <dd className='ml-16 mt-2 pr-10'>
                         <Paragraph typeStyle={ParagraphTypeStyle.md}>
                           <Description />
                         </Paragraph>
@@ -261,7 +235,7 @@ export default function CliPage() {
               </div>
             </div>
           </div>
-          <div className="mt-16 text-center">{renderButtons()}</div>
+          <div className='mt-16 text-center'>{renderButtons()}</div>
         </div>
       </div>
     </GenericLayout>
