@@ -81,7 +81,7 @@ components:
 
 ### Define domain and port variables
 
-Use `components.serverVariables` in your server using the [Reference Object](/docs/reference/specification/v3.0.0#referenceObject) to avoid repeating information:
+Use `components.serverVariables` in your server using the [Reference Object](/docs/reference/specification/v3.1.0#referenceObject) to avoid repeating information:
 
 ```yml
     variables:
@@ -92,7 +92,7 @@ Use `components.serverVariables` in your server using the [Reference Object](/do
 Here's the complete AsyncAPI document with the servers' variables for the `host` field:
 
 ```yaml
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 info:
   title: Example API
   version: '1.0.0'
