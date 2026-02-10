@@ -20,4 +20,7 @@ export interface InputBoxProps {
 
   /** The function to set value of the input. */
   setInput: (value: string) => void;
+
+  /** If true, the theme of the component will be dark. */
+  dark?: boolean;
 }
