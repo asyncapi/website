@@ -17,7 +17,7 @@ enum FormStatus {
   NORMAL = 'normal',
   LOADING = 'loading',
   SUCCESS = 'success',
-  ERROR = 'error'
+  ERROR = 'error',
 }
 
 interface NewsletterSubscribeProps {
@@ -46,7 +46,7 @@ export default function NewsletterSubscribe({
   title = 'Subscribe to our newsletter to receive news about AsyncAPI.',
   subtitle = 'We respect your inbox. No spam, promise ✌️',
   type = 'Newsletter',
-  errorSubtitle = 'Subscription failed, please let us know about it by submitting a bug'
+  errorSubtitle = 'Subscription failed, please let us know about it by submitting a bug',
 }: NewsletterSubscribeProps) {
   const [email, setEmail] = useState<string>('');
   const [name, setName] = useState<string>('');
@@ -70,15 +70,15 @@ export default function NewsletterSubscribe({
     const data = {
       name,
       email,
-      interest: type
+      interest: type,
     };
 
     fetch('/.netlify/functions/newsletter_subscription', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     }).then((res) => {
       if (res.status === 200) {
         setFormStatus(FormStatus.SUCCESS);
@@ -92,11 +92,16 @@ export default function NewsletterSubscribe({
 
   if (status === FormStatus.SUCCESS) {
     return (
-      <div className={className} data-testid='NewsletterSubscribe-main'>
-        <Heading level={HeadingLevel.h3} textColor={headTextColor} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
+      <div className={className} data-testid="NewsletterSubscribe-main">
+        <Heading
+          level={HeadingLevel.h3}
+          textColor={headTextColor}
+          typeStyle={HeadingTypeStyle.lg}
+          className="mb-4"
+        >
           {ready ? t('successTitle') : 'Thank you for subscribing!'}
         </Heading>
-        <Paragraph className='mb-8' textColor={paragraphTextColor}>
+        <Paragraph className="mb-8" textColor={paragraphTextColor}>
           {ready ? t('subtitle') : subtitle}
         </Paragraph>
       </div>
@@ -105,13 +110,21 @@ export default function NewsletterSubscribe({
 
   if (status === FormStatus.ERROR) {
     return (
-      <div className={className} data-testid='NewsletterSubscribe-main'>
-        <Heading level={HeadingLevel.h3} textColor={headTextColor} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
+      <div className={className} data-testid="NewsletterSubscribe-main">
+        <Heading
+          level={HeadingLevel.h3}
+          textColor={headTextColor}
+          typeStyle={HeadingTypeStyle.lg}
+          className="mb-4"
+        >
           {ready ? t('errorTitle') : 'Something went wrong'}
         </Heading>
-        <Paragraph className='mb-8' textColor={paragraphTextColor}>
+        <Paragraph className="mb-8" textColor={paragraphTextColor}>
           {ready ? t('errorSubtitle') : errorSubtitle}{' '}
-          <TextLink href='https://github.com/asyncapi/website/issues/new?template=bug.md' target='_blank'>
+          <TextLink
+            href="https://github.com/asyncapi/website/issues/new?template=bug.md"
+            target="_blank"
+          >
             {ready ? t('errorLinkText') : 'here'}
           </TextLink>
         </Paragraph>
@@ -120,20 +133,32 @@ export default function NewsletterSubscribe({
   }
 
   return (
-    <div className={className} data-testid='NewsletterSubscribe-main'>
-      <Heading level={HeadingLevel.h3} textColor={headTextColor} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
+    <div className={className} data-testid="NewsletterSubscribe-main">
+      <Heading
+        level={HeadingLevel.h3}
+        textColor={headTextColor}
+        typeStyle={HeadingTypeStyle.lg}
+        className="mb-4"
+      >
         {ready ? t('title') : title}
       </Heading>
-      <Paragraph className='mb-8' textColor={paragraphTextColor}>
+      <Paragraph className="mb-8" textColor={paragraphTextColor}>
         {ready ? t('subtitle') : subtitle}
       </Paragraph>
       {status === 'loading' ? (
-        <Loader loaderText={'Waiting for response...'} loaderIcon={<IconCircularLoader dark />} dark={dark} />
+        <Loader
+          loaderText={'Waiting for response...'}
+          loaderIcon={<IconCircularLoader dark />}
+          dark={dark}
+        />
       ) : (
-        <form className='flex flex-col gap-4 md:flex-row' onSubmit={handleSubmit}>
+        <form
+          className="flex flex-col gap-4 md:flex-row"
+          onSubmit={handleSubmit}
+        >
           <InputBox
             inputType={InputTypes.TEXT}
-            inputName='name'
+            inputName="name"
             placeholder={ready ? t('nameInput') : 'Your name'}
             inputValue={name}
             setInput={setName}
@@ -141,7 +166,7 @@ export default function NewsletterSubscribe({
           />
           <InputBox
             inputType={InputTypes.EMAIL}
-            inputName='email'
+            inputName="email"
             placeholder={ready ? t('emailInput') : 'Your email'}
             inputValue={email}
             setInput={setEmail}
@@ -150,8 +175,8 @@ export default function NewsletterSubscribe({
           <Button
             type={ButtonType.SUBMIT}
             text={ready ? t('subscribeBtn') : 'Subscribe'}
-            className='mt-2 w-full md:mr-2 md:mt-0 md:flex-1'
-            href=''
+            className="mt-2 w-full md:mr-2 md:mt-0 md:flex-1"
+            href=""
           />
         </form>
       )}
