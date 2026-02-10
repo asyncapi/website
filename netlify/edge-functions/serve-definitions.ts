@@ -56,7 +56,6 @@ export default async (request: Request, context: Context) => {
         default:
           // Notifying NR of the error.
           metricName = "asyncapi.jsonschema.download.error";
-          console.log(`Error downloading JSON Schema file: ${  response.status  } ${  response.statusText}`);
           break;
       }
     }
