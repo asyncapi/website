@@ -1,19 +1,5 @@
 [
   {
-    "title": "AsyncAPI Online Conference 2025",
-    "calLink": "https://www.google.com/calendar/event?eid=MzBrbmNtbDRqYWcyMDQ2YmwycTE0bTRpYmcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/2077",
-    "banner": "",
-    "date": "2025-10-29T10:00:00.000Z"
-  },
-  {
-    "title": "AsyncAPI Community WG Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=cDduNWJzOWI0NWloNm5wc2ljdTZ0NGd0azQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/2087",
-    "banner": "https://github.com/user-attachments/assets/e0c22c5a-94a8-488c-970c-14aa1697283c",
-    "date": "2025-10-21T15:00:00.000Z"
-  },
-  {
     "title": "AsyncAPI Community WG Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=a29zYnNtaXFxbG9waDM2MG8wbGxmNmRnaGsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/2107",
@@ -103,5 +89,12 @@
     "url": "https://github.com/asyncapi/community/issues/2256",
     "banner": "",
     "date": "2026-01-26T16:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI Community WG Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=aXQwdHFudTgyMzA1ZDZrMmtjajVxbzUzcm8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/2277",
+    "banner": "https://github.com/user-attachments/assets/b4e255b8-5c7e-4821-82c9-3bcbc18b68ef",
+    "date": "2026-02-17T15:00:00.000Z"
   }
 ]
