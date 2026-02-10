@@ -1,7 +1,7 @@
 export enum InputTypes {
   TEXT = 'text',
   EMAIL = 'email',
-  NUMBER = 'number',
+  NUMBER = 'number'
 }
 export interface InputBoxProps {
   // eslint-disable-next-line prettier/prettier

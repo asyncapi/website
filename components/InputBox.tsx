@@ -11,7 +11,7 @@ export default function InputBox({
   placeholder,
   inputValue,
   setInput,
-  dark = false,
+  dark = false
 }: InputBoxProps) {
   return (
     <input
