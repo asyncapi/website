@@ -1,12 +1,5 @@
 [
   {
-    "title": "AsyncAPI Online Conference 2025",
-    "calLink": "https://www.google.com/calendar/event?eid=MzBrbmNtbDRqYWcyMDQ2YmwycTE0bTRpYmcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/2077",
-    "banner": "",
-    "date": "2025-10-29T10:00:00.000Z"
-  },
-  {
     "title": "AsyncAPI Community WG Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=a29zYnNtaXFxbG9waDM2MG8wbGxmNmRnaGsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/2107",

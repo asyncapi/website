@@ -86,6 +86,11 @@
       "borderColor": "border-[#787CB5]"
     },
     {
+      "name": "csharp",
+      "color": "bg-[#57f281]",
+      "borderColor": "border-[#37f069]"
+    },
+    {
       "name": "Scala",
       "color": "bg-[#57f281]",
       "borderColor": "border-[#37f069]"
@@ -213,12 +218,17 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "FastAPI",
+      "name": "ASP.NET Core",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
     {
       "name": "TypeScript",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "FastAPI",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
@@ -278,12 +288,12 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "AsyncAPI Generator",
+      "name": "AsyncAPI CLI",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "AsyncAPI CLI",
+      "name": "AsyncAPI Generator",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
@@ -303,17 +313,17 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
+      "name": "SmartPaste",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "SmartPaste",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
       "name": "JetBrains",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "SmartPaste",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "SmartPaste",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
