@@ -75,7 +75,9 @@ We sponsored travel for **13 individuals** to attend the conferences, both local
 
 ## API Standards Booth
 
-// Lukasz to add something, feedback maybe, lessons?
+The API Standards booth in Paris was super busy. We had representatives from AsyncAPI, GraphQL, and JSON Schema. Our initiative of having a vendor-neutral booth with open source API standards reached momentum, where there are too many of us, which is good; this means we want to share space together and have discussions.
+
+You can also join at https://groups.io/g/api-standards and help drive the initiative further. See the messages and discussion on the Paris retrospective.
 
 ## Special Thank You
 
