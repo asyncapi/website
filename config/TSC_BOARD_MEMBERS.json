@@ -166,8 +166,7 @@
         "isTscMember": true,
         "repos": [
             "spec-json-schemas",
-            "studio",
-            "optimizer"
+            "studio"
         ],
         "githubID": 32505158
     },
