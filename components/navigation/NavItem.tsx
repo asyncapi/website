@@ -11,6 +11,7 @@ interface NavItemProps {
   onClick?: () => void;
   onMouseEnter?: () => void;
   hasDropdown?: boolean;
+  isOpen?: boolean;
   className?: string;
 }
 
@@ -22,6 +23,7 @@ interface NavItemProps {
  * @param {Function} [props.onClick] - Event handler for click event.
  * @param {Function} [props.onMouseEnter] - Event handler for mouse enter event.
  * @param {boolean} [props.hasDropdown=false] - Indicates if the navigation item has a dropdown menu.
+ * @param {boolean} [props.isOpen=false] - Indicates if the dropdown menu is open.
  * @param {string} [props.className=''] - Additional CSS classes for styling.
  */
 export default function NavItem({
@@ -31,6 +33,7 @@ export default function NavItem({
   onClick = () => {},
   onMouseEnter = () => {},
   hasDropdown = false,
+  isOpen = false,
   className = ''
 }: NavItemProps) {
   const router = useRouter();
@@ -68,7 +71,7 @@ export default function NavItem({
         data-testid='NavItem-Link'
       >
         <span>{text}</span>
-        {hasDropdown && <NavItemDropdown />}
+        {hasDropdown && <NavItemDropdown isOpen={isOpen} />}
       </Link>
     );
   }
@@ -76,7 +79,7 @@ export default function NavItem({
   return (
     <button type='button' {...attrs} className={`${attrs.className} text-gray-700`}>
       <span>{text}</span>
-      {hasDropdown && <NavItemDropdown />}
+      {hasDropdown && <NavItemDropdown isOpen={isOpen} />}
     </button>
   );
 }
