@@ -841,19 +841,6 @@
         "githubID": 758568
     },
     {
-        "name": "Ashmit Jagtap",
-        "github": "ashmit-coder",
-        "linkedin": "ashmit-jagtap",
-        "twitter": "AshmitJagtap",
-        "slack": "U06RA7GDHU1",
-        "availableForHire": true,
-        "isTscMember": true,
-        "repos": [
-            "conference-website"
-        ],
-        "githubID": 69006513
-    },
-    {
         "name": "HariKrishnan",
         "github": "harikrishnan83",
         "twitter": "harikrishnan83",
@@ -900,8 +887,7 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
-            "website",
-            "conference-website"
+            "website"
         ],
         "githubID": 90895835
     },
@@ -970,5 +956,14 @@
             "bindings"
         ],
         "githubID": 6034322
+    },
+    {
+        "name": "TenzDelek",
+        "github": "TenzDelek",
+        "isTscMember": false,
+        "repos": [
+            "conference-website"
+        ],
+        "githubID": 122612557
     }
 ]
