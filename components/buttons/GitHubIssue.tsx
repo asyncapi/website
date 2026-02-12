@@ -8,7 +8,7 @@ export default function GitHubIssue({ className = '' }) {
   return (
     <a
       className={`flex flex-row justify-center rounded bg-black py-2 text-white 
-                shadow-md transition-all duration-500 ease-in-out hover:bg-gray-700 hover:shadow-lg lg:w-6/12 ${className}`}
+                shadow-md transition-all duration-500 ease-in-out hover:bg-gray-700  lg:w-6/12 ${className}`}
       href='https://github.com/asyncapi/website/issues/new/choose'
       target='_blank'
       rel='noopener noreferrer'
