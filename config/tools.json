@@ -196,6 +196,39 @@
         }
       },
       {
+        "title": "Bielu.AspNetCore.AsyncApi",
+        "description": "A library that provides built-in support for generating AsyncAPI documents from minimal or controller-based APIs in ASP.NET Core, bringing the same developer experience as Microsoft.AspNetCore.OpenApi but for AsyncAPI specifications.",
+        "links": {
+          "repoUrl": "https://github.com/bielu/Bielu.AspNetCore.AsyncApi"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "csharp",
+              "color": "bg-[#57f281]",
+              "borderColor": "border-[#37f069]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "ASP.NET Core",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": ".NET",
+              "color": "bg-[#A184FF]",
+              "borderColor": "border-[#5026D4]"
+            }
+          ],
+          "categories": [
+            "code-first",
+            "documentation-generator"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "ChanX",
         "description": "WebSocket framework for Django/FastAPI with AsyncAPI 3.0 spec generation and Python client generation from AsyncAPI schemas",
         "links": {
@@ -1160,6 +1193,39 @@
           "categories": [
             "documentation-generator",
             "generator-template"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "Bielu.AspNetCore.AsyncApi",
+        "description": "A library that provides built-in support for generating AsyncAPI documents from minimal or controller-based APIs in ASP.NET Core, bringing the same developer experience as Microsoft.AspNetCore.OpenApi but for AsyncAPI specifications.",
+        "links": {
+          "repoUrl": "https://github.com/bielu/Bielu.AspNetCore.AsyncApi"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "csharp",
+              "color": "bg-[#57f281]",
+              "borderColor": "border-[#37f069]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "ASP.NET Core",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": ".NET",
+              "color": "bg-[#A184FF]",
+              "borderColor": "border-[#5026D4]"
+            }
+          ],
+          "categories": [
+            "code-first",
+            "documentation-generator"
           ],
           "hasCommercial": false
         }
@@ -2844,33 +2910,6 @@
       },
       {
         "title": "HTML Template",
-        "description": null,
-        "links": {
-          "repoUrl": "https://github.com/dipaksodani/async-gen"
-        },
-        "filters": {
-          "language": [
-            {
-              "name": "JavaScript",
-              "color": "bg-[#F2F1C7]",
-              "borderColor": "border-[#BFBE86]"
-            }
-          ],
-          "technology": [
-            {
-              "name": "HTML",
-              "color": "bg-[#61d0f2]",
-              "borderColor": "border-[#40ccf7]"
-            }
-          ],
-          "categories": [
-            "generator-template"
-          ],
-          "hasCommercial": false
-        }
-      },
-      {
-        "title": "HTML Template",
         "description": "HTML template for AsyncAPI Generator. Use it to generate a static docs. It is using AsyncAPI React component under the hood.",
         "links": {
           "repoUrl": "https://github.com/asyncapi/html-template"
@@ -2901,6 +2940,33 @@
         "description": null,
         "links": {
           "repoUrl": "https://github.com/WSOL12/html-template"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "JavaScript",
+              "color": "bg-[#F2F1C7]",
+              "borderColor": "border-[#BFBE86]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "HTML",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "generator-template"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "HTML Template",
+        "description": null,
+        "links": {
+          "repoUrl": "https://github.com/dipaksodani/async-gen"
         },
         "filters": {
           "language": [

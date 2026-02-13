@@ -126,4 +126,4 @@ E --> H
 
 ## Contribute to AsyncAPI Documentation
 
-To get started as a docs contributor, follow the steps in the [AsyncAPI Technical Writer Onboarding Checklist](https://github.com/asyncapi/community/blob/master/docs/onboarding-guide/docs-onboarding-checklist.md).
+To get started as a docs contributor, follow the steps in the [AsyncAPI Technical Writer Onboarding Checklist](https://github.com/asyncapi/community/blob/master/docs/000-onboarding/docs-onboarding-checklist.md).
