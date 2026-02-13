@@ -166,8 +166,7 @@
         "isTscMember": true,
         "repos": [
             "spec-json-schemas",
-            "studio",
-            "optimizer"
+            "studio"
         ],
         "githubID": 32505158
     },
@@ -596,20 +595,6 @@
         "githubID": 66913810
     },
     {
-        "name": "Ashmit JaiSarita Gupta",
-        "github": "devilkiller-ag",
-        "linkedin": "jaisarita",
-        "twitter": "jaisarita",
-        "slack": "U062LA14E58",
-        "availableForHire": true,
-        "isTscMember": true,
-        "repos": [
-            "website",
-            "modelina"
-        ],
-        "githubID": 43639341
-    },
-    {
         "name": "Sambhav Gupta",
         "github": "sambhavgupta0705",
         "linkedin": "sambhavgupta0705",
@@ -634,19 +619,6 @@
             "website"
         ],
         "githubID": 108233235
-    },
-    {
-        "name": "Ashmit Jagtap",
-        "github": "ashmit-coder",
-        "linkedin": "ashmit-jagtap",
-        "twitter": "AshmitJagtap",
-        "slack": "U06RA7GDHU1",
-        "availableForHire": true,
-        "isTscMember": true,
-        "repos": [
-            "conference-website"
-        ],
-        "githubID": 69006513
     },
     {
         "name": "Hari Krishnan",
@@ -765,8 +737,7 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
-            "website",
-            "conference-website"
+            "website"
         ],
         "githubID": 90895835
     },
