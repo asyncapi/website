@@ -32,7 +32,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
     if (descriptionRef.current) {
       setIsTruncated(descriptionRef.current?.scrollHeight! > descriptionRef.current?.clientHeight!);
     }
-  }, [descriptionRef.current]);
+  }, []);
 
   let onGit = false;
 
