@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import Select from '../form/Select';
 import { applyFilterList, type DataObject, type Filter as FilterQuery, onFilterApply } from '../helpers/applyFilter';
@@ -83,7 +84,7 @@ export default function Filter<T extends DataObject = DataObject>({
           }
         }}
         selected={selected}
-        className={`${className} md:mr-4`}
+        className={twMerge('md:mr-4', className)}
       />
     );
   });
