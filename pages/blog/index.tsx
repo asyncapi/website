@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
-import type { Filter as FilterType } from '@/components/helpers/applyFilter';
+import { type Filter as FilterType, onFilterApply } from '@/components/helpers/applyFilter';
 import { usePagination } from '@/components/helpers/usePagination';
 import Empty from '@/components/illustrations/Empty';
 import GenericLayout from '@/components/layout/GenericLayout';
@@ -24,55 +24,104 @@ export default function BlogIndexPage() {
   const router = useRouter();
   const { navItems } = useContext(BlogContext);
 
-  const [posts, setPosts] = useState<IBlogPost[]>(
-    navItems
-      ? navItems.sort((i1: IBlogPost, i2: IBlogPost) => {
-          const i1Date = new Date(i1.date);
-          const i2Date = new Date(i2.date);
+  const sortedPosts = useMemo(() => {
+    if (!navItems) return [];
 
-          if (i1.featured && !i2.featured) return -1;
-          if (!i1.featured && i2.featured) return 1;
+    return [...navItems].sort((i1: IBlogPost, i2: IBlogPost) => {
+      const i1Date = new Date(i1.date);
+      const i2Date = new Date(i2.date);
 
-          return i2Date.getTime() - i1Date.getTime();
-        })
-      : []
-  );
+      if (i1.featured && !i2.featured) return -1;
+      if (!i1.featured && i2.featured) return 1;
+
+      return i2Date.getTime() - i1Date.getTime();
+    });
+  }, [navItems]);
 
   const postsPerPage = 9;
-  const { currentPage, setCurrentPage, currentItems, maxPage } = usePagination(posts, postsPerPage);
+  const filters = useMemo<FilterType>(() => {
+    const entries = Object.entries(router.query).filter(([key]) => key !== 'page');
+    const result: FilterType = {};
 
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
+    entries.forEach(([key, value]) => {
+      if (Array.isArray(value)) {
+        const [first] = value;
 
-    const currentFilters = { ...router.query, page: page.toString() };
+        if (first) result[key] = first;
+      } else if (typeof value === 'string' && value.length > 0) {
+        result[key] = value;
+      }
+    });
 
-    router.push(
-      {
-        pathname: router.pathname,
-        query: currentFilters
+    return result;
+  }, [router.query]);
+
+  const filteredPosts = useMemo(() => {
+    let result = sortedPosts;
+
+    onFilterApply(
+      sortedPosts,
+      (next) => {
+        result = next;
       },
-      undefined,
-      { shallow: true }
+      filters
     );
-  };
+
+    return result;
+  }, [sortedPosts, filters]);
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+  const pageParam = Array.isArray(router.query.page) ? router.query.page[0] : router.query.page;
+  const pageFromQuery = pageParam ? parseInt(pageParam, 10) : 1;
+  const normalizedPage = Number.isNaN(pageFromQuery) ? 1 : pageFromQuery;
+  const queryPage = totalPages > 0 && (normalizedPage < 1 || normalizedPage > totalPages) ? 1 : normalizedPage;
+  const { currentPage, currentItems, maxPage } = usePagination(filteredPosts, postsPerPage, { currentPage: queryPage });
+
+  const handlePageChange = useCallback(
+    (page: number) => {
+      if (page === currentPage) return;
+
+      const currentFilters = { ...router.query };
+
+      if (page <= 1) {
+        delete currentFilters.page;
+      } else {
+        currentFilters.page = page.toString();
+      }
+
+      router.push(
+        {
+          pathname: router.pathname,
+          query: currentFilters
+        },
+        undefined,
+        { shallow: true, scroll: true }
+      );
+    },
+    [router, currentPage]
+  );
 
   useEffect(() => {
-    const pageFromQuery = parseInt(router.query.page as string, 10);
+    if (!router.isReady) return;
+    if (!pageParam) return;
 
-    if (!Number.isNaN(pageFromQuery) && maxPage > 0) {
-      if (pageFromQuery >= 1 && pageFromQuery <= maxPage && pageFromQuery !== currentPage) {
-        setCurrentPage(pageFromQuery);
-      } else if (pageFromQuery < 1 || pageFromQuery > maxPage) {
-        // Only reset to page 1 if the page number is actually invalid
-        handlePageChange(1);
-      }
+    if (Number.isNaN(pageFromQuery) || pageFromQuery < 1 || (totalPages > 0 && pageFromQuery > totalPages)) {
+      const nextQuery = { ...router.query };
+
+      delete nextQuery.page;
+
+      router.replace(
+        {
+          pathname: router.pathname,
+          query: nextQuery
+        },
+        undefined,
+        { shallow: true, scroll: false }
+      );
     }
-  }, [router.query.page, maxPage, currentPage]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [router.isReady, router.query, pageParam, pageFromQuery, totalPages]);
 
   const [isClient, setIsClient] = useState(false);
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const onFilter = useCallback((data: IBlogPost[], _query: FilterType) => setPosts(data), []);
   const toFilter = [
     {
       name: 'type'
@@ -85,12 +134,14 @@ export default function BlogIndexPage() {
       name: 'tags'
     }
   ];
+
   const clearFilters = () => {
     router.push(`${router.pathname}`, undefined, {
       shallow: true
     });
   };
-  const showClearFilters = Object.keys(router.query).length > 0;
+
+  const showClearFilters = Object.keys(filters).length > 0;
 
   const description = 'Find the latest and greatest stories from our community';
   const image = '/img/social/blog.webp';
@@ -140,8 +191,7 @@ export default function BlogIndexPage() {
           </div>
           <div className='mx:64 mt-12 md:flex md:justify-center lg:justify-center'>
             <Filter
-              data={navItems || []}
-              onFilter={onFilter}
+              data={sortedPosts}
               className='md: mx-px mt-1 w-full md:mt-0 md:w-1/5 md:text-sm'
               checks={toFilter}
             />
@@ -156,20 +206,20 @@ export default function BlogIndexPage() {
             )}
           </div>
           <div>
-            {Object.keys(posts).length === 0 && (
+            {filteredPosts.length === 0 && (
               <div className='mt-16 flex flex-col items-center justify-center'>
                 <Empty />
                 <p className='mx-auto mt-3 max-w-2xl text-xl leading-7 text-gray-500'>No post matches your filter</p>
               </div>
             )}
-            {Object.keys(posts).length > 0 && isClient && (
+            {filteredPosts.length > 0 && isClient && (
               <ul className='mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3'>
-                {currentItems.map((post, index) => (
-                  <BlogPostItem key={index} post={post} />
+                {currentItems.map((post) => (
+                  <BlogPostItem key={post.slug} post={post} />
                 ))}
               </ul>
             )}
-            {Object.keys(currentItems).length > 0 && !isClient && (
+            {currentItems.length > 0 && !isClient && (
               <div className='h-screen w-full'>
                 <Loader loaderText='Loading Blogs' className='mx-auto my-60' pulsating />
               </div>

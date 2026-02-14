@@ -25,8 +25,8 @@ export default function PaginationItem({
   return (
     <button
       onClick={() => onPageChange(pageNumber)}
-      className={`font-inter font-normal relative flex size-10 items-center
-        justify-center rounded-full text-sm leading-[26px]
+      className={`font-inter font-normal relative flex size-8 items-center
+        justify-center rounded-full text-xs leading-[26px] md:size-10 md:text-sm
         ${isActive ? 'bg-[#6200EE] text-white' : 'bg-transparent text-[#141717] hover:bg-gray-50'}
       `}
       aria-current={isActive ? 'page' : undefined}

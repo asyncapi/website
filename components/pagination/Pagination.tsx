@@ -56,7 +56,7 @@ export default function Pagination({ totalPages, currentPage, onPageChange }: Pa
     <nav
       role='navigation'
       aria-label='Pagination'
-      className='font-inter flex min-w-[326px] items-center justify-center md:gap-8'
+      className='font-inter flex items-center justify-center gap-2 md:gap-8'
     >
       {/* Previous button */}
       <Button
@@ -89,7 +89,7 @@ export default function Pagination({ totalPages, currentPage, onPageChange }: Pa
           ) : (
             <span
               key={page}
-              className='font-inter flex size-10 items-center justify-center text-sm font-semibold text-[#6B6B6B]'
+              className='font-inter flex size-8 items-center justify-center text-sm font-semibold text-[#6B6B6B] md:size-10'
               aria-hidden='true'
             >
               ...
