@@ -31,7 +31,7 @@ graph LR
 
 ## Operation section
 
-Security information for an operation is defined using a [Security Scheme](/docs/reference/specification/v3.0.0#securitySchemeObject) at the operation level. You can reference a scheme from another location, such as `components.securitySchemes`, using the `$ref` keyword.
+Security information for an operation is defined using a [Security Scheme](/docs/reference/specification/v3.1.0#securitySchemeObject) at the operation level. You can reference a scheme from another location, such as `components.securitySchemes`, using the `$ref` keyword.
 
 ```yaml
 operations:

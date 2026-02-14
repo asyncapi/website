@@ -11,6 +11,11 @@ interface TocItem {
   children?: TocItem[];
 }
 
+interface TocSection {
+  title: string;
+  children?: TocSection[];
+}
+
 interface TOCItemProps {
   item: TocItem;
   index: number;
@@ -21,7 +26,7 @@ interface TOCItemProps {
 interface CaseTOCProps {
   className: string;
   cssBreakingPoint?: 'xl' | 'lg';
-  toc: any[];
+  toc: TocSection[];
 }
 
 /**
@@ -38,11 +43,11 @@ const checkIfActive = (item: TocItem, currSelected: string): boolean => {
 /**
  *  @description Converts content to TOC items.
  *
- * @param {any[]} content - The content to convert to TOC items.
+ * @param {TocSection[]} content - The content to convert to TOC items.
  * @param {number} level - The level of the TOC item.
  * @returns {TocItem[]} - The array of TOC items.
  */
-const convertContentToTocItems = (content: any[], level: number = 1): TocItem[] => {
+const convertContentToTocItems = (content: TocSection[], level: number = 1): TocItem[] => {
   const tocItems = [];
 
   for (const section of content) {
