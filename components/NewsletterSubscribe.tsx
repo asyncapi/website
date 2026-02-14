@@ -17,7 +17,8 @@ enum FormStatus {
   NORMAL = 'normal',
   LOADING = 'loading',
   SUCCESS = 'success',
-  ERROR = 'error'
+  ERROR = 'error',
+  SERVICE_UNAVAILABLE = 'service_unavailable'
 }
 
 interface NewsletterSubscribeProps {
@@ -29,17 +30,6 @@ interface NewsletterSubscribeProps {
   errorSubtitle?: string;
 }
 
-/**
- * @description This component displays Newsletter Subscribe component.
- *
- * @param {NewsletterSubscribeProps} props - The props for the Newsletter Subscribe component.
- * @param {string} props.className - CSS class for styling the card.
- * @param {boolean} props.dark - If true, the theme of the component will be dark.
- * @param {string} props.title - The title of the Subscribe card.
- * @param {string} props.subtitle - The subtitle of the Subscribe card.
- * @param {string} props.type - The type of subscription.
- * @param {string} props.errorSubtitle - The error subtitle to be displayed.
- */
 export default function NewsletterSubscribe({
   className = 'p-8 text-center text-black',
   dark = false,
@@ -67,6 +57,7 @@ export default function NewsletterSubscribe({
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     setStatus(FormStatus.LOADING);
     event.preventDefault();
+
     const data = {
       name,
       email,
@@ -79,15 +70,19 @@ export default function NewsletterSubscribe({
       headers: {
         'Content-Type': 'application/json'
       }
-    }).then((res) => {
-      if (res.status === 200) {
-        setFormStatus(FormStatus.SUCCESS);
-      } else {
-        setFormStatus(FormStatus.ERROR);
-      }
-
-      return res.json();
-    });
+    })
+      .then(async (res) => {
+        if (res.status === 200) {
+          setFormStatus(FormStatus.SUCCESS);
+        } else if (res.status === 503) {
+          setFormStatus(FormStatus.SERVICE_UNAVAILABLE);
+        } else {
+          setFormStatus(FormStatus.ERROR);
+        }
+      })
+      .catch(() => {
+        setFormStatus(FormStatus.SERVICE_UNAVAILABLE);
+      });
   };
 
   if (status === FormStatus.SUCCESS) {
@@ -98,6 +93,19 @@ export default function NewsletterSubscribe({
         </Heading>
         <Paragraph className='mb-8' textColor={paragraphTextColor}>
           {ready ? t('subtitle') : subtitle}
+        </Paragraph>
+      </div>
+    );
+  }
+
+  if (status === FormStatus.SERVICE_UNAVAILABLE) {
+    return (
+      <div className={className} data-testid='NewsletterSubscribe-main'>
+        <Heading level={HeadingLevel.h3} textColor={headTextColor} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
+          Newsletter service temporarily unavailable
+        </Heading>
+        <Paragraph className='mb-8' textColor={paragraphTextColor}>
+          Please try again later.
         </Paragraph>
       </div>
     );
@@ -127,7 +135,7 @@ export default function NewsletterSubscribe({
       <Paragraph className='mb-8' textColor={paragraphTextColor}>
         {ready ? t('subtitle') : subtitle}
       </Paragraph>
-      {status === 'loading' ? (
+      {status === FormStatus.LOADING ? (
         <Loader loaderText={'Waiting for response...'} loaderIcon={<IconCircularLoader dark />} dark={dark} />
       ) : (
         <form className='flex flex-col gap-4 md:flex-row' onSubmit={handleSubmit}>
