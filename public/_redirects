@@ -19,10 +19,11 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 
 # Redirection will be handled automatically by Action.
 # LATEST-SPEC-REDIRECTION:START
-/docs/reference/specification/latest /docs/reference/specification/v3.0.0 302!
+/docs/reference/specification/latest /docs/reference/specification/v3.1.0 302!
 # LATEST-SPEC-REDIRECTION:END
 
 # SPEC-REDIRECTION:START
+/docs/reference/specification/3.1.0 /docs/reference/specification/v3.1.0 302!
 /docs/reference/specification/3.0.0 /docs/reference/specification/v3.0.0 302!
 # SPEC-REDIRECTION:END
 
@@ -53,7 +54,7 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 /asyncapi-react https://asyncapi.github.io/asyncapi-react 301!
 
 # Slack
-/slack-invite https://join.slack.com/t/asyncapi/shared_invite/zt-3clk6rmc0-Cujl2fChHYnHDUwFKRlQCw 302!
+/slack-invite https://join.slack.com/t/asyncapi/shared_invite/zt-3m4pmrguv-SUN9Js4BkQHocIH54F59sA 302!
 
 # Central Maven repository verification
 /OSSRH-63280 https://github.com/asyncapi/java-asyncapi
@@ -70,3 +71,6 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 # Additional redirection
 /community/meetings /community/events 301!
 /cheatsheet https://github.com/asyncapi/website/tree/master/cheatsheet 302!
+
+# Short URLs
+/s/asyncapiv2 https://raw.githubusercontent.com/asyncapi/asyncapi/2.0.0/examples/2.0.0/streetlights.yml 301!

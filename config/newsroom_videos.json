@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/Mkd7FgKOMNE/hqdefault.jpg",
-    "title": "One Tool, One Flow: AsyncAPI&#39;s New Take on Code/Docs/Config Generation",
-    "description": "Join us on September 30th at 4PM UTC for the first session of our AsyncAPI webinar series with Łukasz. In “One Tool, One Flow: ...",
-    "videoId": "Mkd7FgKOMNE"
+    "image_url": "https://i.ytimg.com/vi/Q6oGGfIsI2g/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday February 3rd 2026",
+    "description": "https://github.com/asyncapi/community/issues/2249.",
+    "videoId": "Q6oGGfIsI2g"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/Aw225Eb3hfk/hqdefault.jpg",
-    "title": "Governance Board Meeting, Monday September 29th 2025",
-    "description": "https://github.com/asyncapi/community/issues/2074.",
-    "videoId": "Aw225Eb3hfk"
+    "image_url": "https://i.ytimg.com/vi/pvZcbln80ak/hqdefault.jpg",
+    "title": "AsyncAPI Spec Triage, 16:00 UTC Thursday January 22nd 2026",
+    "description": "https://github.com/asyncapi/community/issues/2244.",
+    "videoId": "pvZcbln80ak"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/gn6765Le_zQ/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting, Tuesday September 23rd 2025",
-    "description": "https://github.com/asyncapi/community/issues/2066.",
-    "videoId": "gn6765Le_zQ"
+    "image_url": "https://i.ytimg.com/vi/mzHvMYMyFHU/hqdefault.jpg",
+    "title": "Power AI with Real-Time Data using AsyncAPI &amp; Agent Mesh",
+    "description": "Catch Julien Testut and Alessandro Cagnetti as they dive into the future of real-time data for AI! Learn how Change Data Capture ...",
+    "videoId": "mzHvMYMyFHU"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/7e01rDjnVpY/hqdefault.jpg",
-    "title": "Governance Board Meeting, Monday September 15th 2025",
-    "description": "https://github.com/asyncapi/community/issues/2069.",
-    "videoId": "7e01rDjnVpY"
+    "image_url": "https://i.ytimg.com/vi/WuYQSYaWk1g/hqdefault.jpg",
+    "title": "AsyncAPI Spec Triage, 16:00 UTC Thursday December 18th 2025",
+    "description": "https://github.com/asyncapi/community/issues/2187.",
+    "videoId": "WuYQSYaWk1g"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/m-aLlapR2Mg/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting , Tuesday September 9th 2025",
-    "description": "https://github.com/asyncapi/community/issues/2060.",
-    "videoId": "m-aLlapR2Mg"
+    "image_url": "https://i.ytimg.com/vi/yRjdA0DYvBM/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting",
+    "description": "",
+    "videoId": "yRjdA0DYvBM"
   }
 ]

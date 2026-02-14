@@ -101,6 +101,7 @@
         "isTscMember": true,
         "repos": [
             "studio",
+            ".github",
             "cli"
         ],
         "githubID": 100484401
@@ -162,6 +163,7 @@
             "spec",
             "spec-json-schemas",
             "asyncapi-react",
+            "parser-js",
             "extensions-catalog",
             "converter-js",
             "bindings",
@@ -198,7 +200,6 @@
         "repos": [
             "spec-json-schemas",
             "generator",
-            "parser-js",
             "converter-js",
             "modelina",
             "parser-api",
@@ -217,9 +218,7 @@
         "isTscMember": true,
         "repos": [
             "spec-json-schemas",
-            "studio",
-            ".github",
-            "optimizer"
+            "studio"
         ],
         "githubID": 32505158
     },
@@ -274,7 +273,6 @@
             "nodejs-ws-template",
             "java-spring-template",
             ".github",
-            "vs-asyncapi-preview",
             "template-for-generator-templates",
             "community",
             "diff",
@@ -302,7 +300,6 @@
             "modelina",
             "diff",
             "chatbot",
-            "server-api",
             "EDAVisualiser",
             "problem"
         ],
@@ -373,6 +370,7 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
+            "website",
             "studio"
         ],
         "githubID": 44585452
@@ -416,12 +414,9 @@
         "availableForHire": false,
         "isTscMember": false,
         "repos": [
-            "parser-js",
             "openapi-schema-parser",
-            "avro-schema-parser",
             "go-watermill-template",
-            "parser-api",
-            "server-api"
+            "parser-api"
         ],
         "githubID": 1083296
     },
@@ -439,20 +434,6 @@
             "bundler"
         ],
         "githubID": 41781438
-    },
-    {
-        "name": "David Pereira",
-        "github": "BOLT04",
-        "twitter": "BOLT2938",
-        "slack": "U02EC8BT0TX",
-        "linkedin": "jos\u00e9-david-pereira-13ba5315a",
-        "availableForHire": false,
-        "company": "Create IT",
-        "isTscMember": true,
-        "repos": [
-            "server-api"
-        ],
-        "githubID": 18630253
     },
     {
         "name": "Daniel Raper",
@@ -478,19 +459,6 @@
             "java-template"
         ],
         "githubID": 45017928
-    },
-    {
-        "name": "Tom Jefferson",
-        "github": "JEFFLUFC",
-        "linkedin": "t-jefferson",
-        "slack": "U02FPPCEH6H",
-        "availableForHire": false,
-        "company": "IBM",
-        "isTscMember": false,
-        "repos": [
-            "java-template"
-        ],
-        "githubID": 54025356
     },
     {
         "name": "Lewis Relph",
@@ -551,7 +519,8 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
-            "generator"
+            "generator",
+            ".github"
         ],
         "githubID": 40742916
     },
@@ -668,20 +637,6 @@
             "community"
         ],
         "githubID": 66913810
-    },
-    {
-        "name": "Ashmit JaiSarita Gupta",
-        "github": "devilkiller-ag",
-        "linkedin": "jaisarita",
-        "twitter": "jaisarita",
-        "slack": "U062LA14E58",
-        "availableForHire": true,
-        "isTscMember": true,
-        "repos": [
-            "website",
-            "modelina"
-        ],
-        "githubID": 43639341
     },
     {
         "name": "Sambhav Gupta",
@@ -886,19 +841,6 @@
         "githubID": 758568
     },
     {
-        "name": "Ashmit Jagtap",
-        "github": "ashmit-coder",
-        "linkedin": "ashmit-jagtap",
-        "twitter": "AshmitJagtap",
-        "slack": "U06RA7GDHU1",
-        "availableForHire": true,
-        "isTscMember": true,
-        "repos": [
-            "conference-website"
-        ],
-        "githubID": 69006513
-    },
-    {
         "name": "HariKrishnan",
         "github": "harikrishnan83",
         "twitter": "harikrishnan83",
@@ -945,8 +887,7 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
-            "website",
-            "conference-website"
+            "website"
         ],
         "githubID": 90895835
     },
@@ -984,5 +925,45 @@
             "generator"
         ],
         "githubID": 114283933
+    },
+    {
+        "name": "Ruchi Pakhle",
+        "github": "Ruchip16",
+        "twitter": "Ruchicodess",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "vs-asyncapi-preview"
+        ],
+        "githubID": 72685035
+    },
+    {
+        "name": "amparosancho",
+        "github": "amparosancho",
+        "isTscMember": false,
+        "repos": [
+            "spec-json-schemas",
+            "bindings"
+        ],
+        "githubID": 214812239
+    },
+    {
+        "name": "Florian Gram\u00df",
+        "github": "gramss",
+        "isTscMember": false,
+        "repos": [
+            "spec-json-schemas",
+            "bindings"
+        ],
+        "githubID": 6034322
+    },
+    {
+        "name": "TenzDelek",
+        "github": "TenzDelek",
+        "isTscMember": false,
+        "repos": [
+            "conference-website"
+        ],
+        "githubID": 122612557
     }
 ]
