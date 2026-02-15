@@ -1,10 +1,11 @@
 import { useRouter } from 'next/router';
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 
 import type { Filter as FilterType } from '@/components/helpers/applyFilter';
 import Empty from '@/components/illustrations/Empty';
 import GenericLayout from '@/components/layout/GenericLayout';
 import Loader from '@/components/Loader';
+import BlogPagination from '@/components/navigation/BlogPagination';
 import BlogPostItem from '@/components/navigation/BlogPostItem';
 import Filter from '@/components/navigation/Filter';
 import Heading from '@/components/typography/Heading';
@@ -14,6 +15,8 @@ import BlogContext from '@/context/BlogContext';
 import type { IBlogPost } from '@/types/post';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
+
+const POSTS_PER_PAGE = 12;
 
 /**
  * @description The BlogIndexPage is the blog index page of the website.
@@ -37,8 +40,31 @@ export default function BlogIndexPage() {
   );
   const [isClient, setIsClient] = useState(false);
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const onFilter = useCallback((data: IBlogPost[], _query: FilterType) => setPosts(data), []);
+  const currentPage = Math.max(1, parseInt(router.query.page as string, 10) || 1);
+
+  const prevFiltersRef = useRef<string>('');
+
+  const onFilter = useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    (data: IBlogPost[], _query: FilterType) => {
+      setPosts(data);
+
+      const currentQuery = { ...router.query };
+
+      delete currentQuery.page;
+      const currentFilters = JSON.stringify(currentQuery);
+
+      if (router.query.page && prevFiltersRef.current && currentFilters !== prevFiltersRef.current) {
+        const queryParams = new URLSearchParams(currentQuery as Record<string, string>).toString();
+        const url = queryParams ? `${router.pathname}?${queryParams}` : router.pathname;
+
+        router.push(url, undefined, { shallow: true });
+      }
+
+      prevFiltersRef.current = currentFilters;
+    },
+    [router]
+  );
   const toFilter = [
     {
       name: 'type'
@@ -58,12 +84,39 @@ export default function BlogIndexPage() {
   };
   const showClearFilters = Object.keys(router.query).length > 0;
 
+  const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
+  const validCurrentPage = Math.min(Math.max(1, currentPage), Math.max(1, totalPages));
+  const startIndex = (validCurrentPage - 1) * POSTS_PER_PAGE;
+  const endIndex = startIndex + POSTS_PER_PAGE;
+  const displayedPosts = posts.slice(startIndex, endIndex);
+
+  const handlePageChange = (page: number) => {
+    const newQuery = { ...router.query, page: page.toString() };
+    const queryParams = new URLSearchParams(newQuery as { [key: string]: string }).toString();
+
+    router.push(`${router.pathname}?${queryParams}`, undefined, {
+      shallow: true
+    });
+    document.getElementById('main-content')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const description = 'Find the latest and greatest stories from our community';
   const image = '/img/social/blog.webp';
 
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  useEffect(() => {
+    const rawPage = parseInt(router.query.page as string, 10);
+
+    if (posts.length > 0 && router.query.page && rawPage !== validCurrentPage) {
+      const newQuery = { ...router.query, page: validCurrentPage.toString() };
+      const queryParams = new URLSearchParams(newQuery as Record<string, string>).toString();
+
+      router.replace(`${router.pathname}?${queryParams}`, undefined, { shallow: true });
+    }
+  }, [router.query.page, validCurrentPage, posts.length, router]);
 
   return (
     <GenericLayout title='Blog' description={description} image={image} wide>
@@ -122,20 +175,31 @@ export default function BlogIndexPage() {
             )}
           </div>
           <div>
-            {Object.keys(posts).length === 0 && (
+            {posts.length === 0 && (
               <div className='mt-16 flex flex-col items-center justify-center'>
                 <Empty />
                 <p className='mx-auto mt-3 max-w-2xl text-xl leading-7 text-gray-500'>No post matches your filter</p>
               </div>
             )}
-            {Object.keys(posts).length > 0 && isClient && (
-              <ul className='mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3'>
-                {posts.map((post, index) => (
-                  <BlogPostItem key={index} post={post} />
-                ))}
-              </ul>
+            {posts.length > 0 && isClient && (
+              <>
+                <ul className='mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3'>
+                  {displayedPosts.map((post, index) => (
+                    <BlogPostItem key={index} post={post} />
+                  ))}
+                </ul>
+                {totalPages > 1 && (
+                  <BlogPagination
+                    currentPage={validCurrentPage}
+                    totalPages={totalPages}
+                    totalPosts={posts.length}
+                    postsPerPage={POSTS_PER_PAGE}
+                    onPageChange={handlePageChange}
+                  />
+                )}
+              </>
             )}
-            {Object.keys(posts).length > 0 && !isClient && (
+            {posts.length > 0 && !isClient && (
               <div className='h-screen w-full'>
                 <Loader loaderText='Loading Blogs' className='mx-auto my-60' pulsating />
               </div>
