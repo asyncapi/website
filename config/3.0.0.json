@@ -12,7 +12,7 @@
             "$ref": "#/definitions/specificationExtension"
         }
     },
-    "properties": {
+    "properties": { #there the properties change i create 
         "asyncapi": {
             "type": "string",
             "const": "3.0.0",
