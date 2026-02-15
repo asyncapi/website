@@ -137,6 +137,7 @@ export default function NewsletterSubscribe({
             placeholder={ready ? t('nameInput') : 'Your name'}
             inputValue={name}
             setInput={setName}
+            dark={dark}
           />
           <InputBox
             inputType={InputTypes.EMAIL}
@@ -144,6 +145,7 @@ export default function NewsletterSubscribe({
             placeholder={ready ? t('emailInput') : 'Your email'}
             inputValue={email}
             setInput={setEmail}
+            dark={dark}
           />
           <Button
             type={ButtonType.SUBMIT}
