@@ -960,7 +960,10 @@
     {
         "name": "TenzDelek",
         "github": "TenzDelek",
-        "isTscMember": false,
+        "linkedin": "tenzdelek",
+        "slack": "U06SWFWLLQG",
+        "availableForHire": true,
+        "isTscMember": true,
         "repos": [
             "conference-website"
         ],
