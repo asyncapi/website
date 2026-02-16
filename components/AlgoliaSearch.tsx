@@ -37,6 +37,7 @@ interface AlgoliaModalProps {
   onClose: (event?: React.MouseEvent) => void;
   initialQuery: string;
   indexName: string;
+  onQueryChange: (query: string) => void;
 }
 
 interface IUseDocSearchKeyboardEvents {
@@ -110,8 +111,20 @@ function Hit({ hit, children }: IHitProps) {
  * @description The Algolia modal used for searching the website
  * @param {IAlgoliaModalProps} props - The props of the Algolia modal
  */
-function AlgoliaModal({ onClose, initialQuery, indexName }: AlgoliaModalProps) {
+function AlgoliaModal({ onClose, initialQuery, indexName, onQueryChange }: AlgoliaModalProps) {
   const router = useRouter();
+
+  const handleClose = useCallback(
+    (event?: React.MouseEvent) => {
+      const input = document.querySelector('.DocSearch-Input') as HTMLInputElement;
+
+      if (input?.value) {
+        onQueryChange(input.value);
+      }
+      onClose(event);
+    },
+    [onClose, onQueryChange]
+  );
 
   return createPortal(
     <DocSearchModal
@@ -121,13 +134,13 @@ function AlgoliaModal({ onClose, initialQuery, indexName }: AlgoliaModalProps) {
         distinct: 1
       }}
       placeholder={indexName === DOCS_INDEX_NAME ? 'Search documentation' : 'Search resources'}
-      onClose={onClose}
+      onClose={handleClose}
       indexName={indexName}
       apiKey={API_KEY}
       appId={APP_ID}
       navigator={{
         navigate({ itemUrl }) {
-          onClose();
+          handleClose();
           router.push(itemUrl);
         }
       }}
@@ -271,7 +284,14 @@ export default function AlgoliaSearch({ children }: { children: React.ReactNode 
         <link rel='preconnect' href={`https://${APP_ID}-dsn.algolia.net`} crossOrigin='anonymous' />
       </Head>
       <SearchContext.Provider value={{ isOpen, onOpen, onClose, onInput }}>{children}</SearchContext.Provider>
-      {isOpen && <AlgoliaModal initialQuery={initialQuery ?? ''} onClose={onClose} indexName={indexName} />}
+      {isOpen && (
+        <AlgoliaModal
+          initialQuery={initialQuery ?? ''}
+          onClose={onClose}
+          indexName={indexName}
+          onQueryChange={setInitialQuery}
+        />
+      )}
     </>
   );
 }
