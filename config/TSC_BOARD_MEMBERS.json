@@ -766,6 +766,18 @@
         "githubID": 72685035
     },
     {
+        "name": "TenzDelek",
+        "github": "TenzDelek",
+        "linkedin": "tenzdelek",
+        "slack": "U06SWFWLLQG",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "conference-website"
+        ],
+        "githubID": 122612557
+    },
+    {
         "name": "Daniel Kocot",
         "img": "https://avatars.githubusercontent.com/u/466609?v=4",
         "bio": "Daniel joined the team at adorsys GmbH & Co. KG as Principal Integration Architect in January 2026. He has been dedicated to integration-related topics for almost 10 years. Initially focusing on gateways and the early days of APIOps, he later shifted his focus to methodologies, strategy, and enterprise architecture. In his daily work with his customers, he attaches particular importance to ensuring that interfaces are not only understood as technical tools.",
