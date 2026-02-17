@@ -27,7 +27,10 @@ jest.mock('../../scripts/helpers/logger', () => ({
   logger: { error: jest.fn(), warn: jest.fn() }
 }));
 
-jest.mock('@octokit/graphql');
+jest.mock('@octokit/graphql', () => ({
+  graphql: jest.fn(),
+}));
+
 const mockedGraphql = graphql as unknown as jest.Mock; // Declare graphql as a mock type
 
 describe('GitHub Discussions Processing', () => {
