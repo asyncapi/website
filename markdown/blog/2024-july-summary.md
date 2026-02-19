@@ -57,7 +57,7 @@ Our Google Summer of Code'24 mentors have recently submitted their mid-term eval
 [You can check out the accepted AsyncAPI project list](https://summerofcode.withgoogle.com/programs/2024/organizations/asyncapi) and see what the mentees are working on.
 
 ## Technical Steering Committee
-To improve transparency in the project and ensure regular monitoring of the TSC's participation, we have implemented an automated report of TSC voting with support from [Aayush Saini](https://github.com/AayushSaini101). The report provides detailed information about the voting process, and [you can check out the first version of the TSC Overview doc report](https://github.com/asyncapi/community/blob/master/TSC_VOTING_OVERVIEW.md).
+To improve transparency in the project and ensure regular monitoring of the TSC's participation, we have implemented an automated report of TSC voting with support from [Aayush Saini](https://github.com/AayushSaini101). The report provides detailed information about the voting process, and [you can check out the first version of the TSC Overview doc report](https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/TSC_VOTING_OVERVIEW.md).
 
 As a TSC member, if you identify incorrect data, [please create an issue in the community repository](https://github.com/asyncapi/community/issues) with the correct information, as it will allow us to review and address any issues with the automation process or voting discrepancies.
 

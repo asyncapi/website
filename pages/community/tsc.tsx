@@ -28,7 +28,7 @@ export default function TSC() {
             don&apos;t have yet in our GitHub organization and donate it (we&apos;ll ask you to stay as a maintainer).
             Follow this
             <TextLink
-              href='https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md'
+              href='https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/TSC_MEMBERSHIP.md'
               target='_blank'
               className='font-normal text-base text-blue-500 no-underline hover:text-sky-400'
             >
@@ -43,7 +43,7 @@ export default function TSC() {
             AsyncAPI Initiative runs under an{' '}
             <a
               data-testid='TSC-Governance-Link'
-              href='https://github.com/asyncapi/community/blob/master/CHARTER.md'
+              href='https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/CHARTER.md'
               className='text-blue-500 hover:text-blue-400'
             >
               Open Governance Model
