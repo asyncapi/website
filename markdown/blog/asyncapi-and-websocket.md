@@ -120,7 +120,7 @@ Rather than treating your specification as an afterthought to satisfy documentat
 
 ![AsyncAPI Ecosystem](/img/diagrams/ecosystem.webp)
 
-As the industry standard for defining asynchronous APIs, AsyncAPI unlocks a robust ecosystem of tools maintained by the AsyncAPI initiative. You can generate production-ready code in multiple languages, create deployment-ready documentation automatically, and set up mock servers for development with tools like [Microcks](https://microcks.io/), all directly from your specification.
+As the industry standard for defining asynchronous APIs, AsyncAPI unlocks a robust ecosystem of tools maintained by the AsyncAPI Initiative. You can generate production-ready code in multiple languages, create deployment-ready documentation automatically, and set up mock servers for development with tools like [Microcks](https://microcks.io/), all directly from your specification.
 
 Now that you've seen the power of this approach, let's explore the key concepts in AsyncAPI for building WebSocket APIs.
 
@@ -128,7 +128,7 @@ Now that you've seen the power of this approach, let's explore the key concepts 
 
 If you've used WebSocket before, you're likely familiar with **channels**, sometimes called `topics` or `paths`. Channels are specific routes within a WebSocket connection that organize how messages flow. For example, with channels named `general` and `members`, you can send and receive messages independently on each one. If you only want messages from the `members` channel, you simply listen to that channel and ignore the rest.
 
-### Channels
+### [Channels](https://www.asyncapi.com/docs/concepts/channel)
 
 AsyncAPI channels establish bi-directional communication between message senders and receivers. They're more than just message highways, they're composed of several elements that work together:
 
@@ -137,11 +137,11 @@ AsyncAPI channels establish bi-directional communication between message senders
 - **Messages**: The list of message types that can be sent and received on this channel
 - **Bindings**: WebSocket-specific configuration that customizes connection details
 
-### Messages
+### [Messages](https://www.asyncapi.com/docs/concepts/message)
 
 In an event-driven system, **data exchange** is everything. AsyncAPI provides a structured, consistent way to define this exchange across WebSocket connections.
 
-A **message** is the mechanism by which information flows between senders and receivers via channels. Messages are flexible and can represent events, commands, requests, or responses. Basically whatever your system needs.
+A **message** is the asset by which information flows between senders and receivers via channels. Messages are flexible and can represent events, commands, requests, or responses. Basically whatever your system needs.
 
 Each message consists of:
 
@@ -157,13 +157,13 @@ An **operation** defines the specific actions that can occur within a channel, e
 Each operation includes:
 
 - **Action**: Either `send` (app sends a message) or `receive` (app expects to receive a message)
-- **Channel**: The specific channel where the operation happens(from the list of defined channels in your asyncapi spec)
-- **Reply**: Specifies the expected response message in request-reply operations(optional)
+- **Channel**: The specific channel where the operation happens(from the list of defined channels in your AsyncAPI specification)
+- **Reply**: Specifies the expected response message in request-reply operations (optional)
 - **Title**: A descriptive name for the operation
 - **Summary**: A quick overview of what the operation does
 - **Description**: Detailed explanation of the operation's purpose
 
-Together, these three concepts give you complete control over message flow and make AsyncAPI a powerful tool for building scalable event-driven systems.
+Together, these three concepts (Channels, Messages, Operations) give you complete control over message flow and make AsyncAPI a powerful tool for building scalable event-driven systems.
 
 ## The Complete Breakdown
 
@@ -173,7 +173,7 @@ Now that we've explored the key concepts, let's build a complete AsyncAPI docume
 
 First, we provide essential information about our API, including server details for client connections.
 ```yaml
-asyncapi: "3.0.0"
+asyncapi: "3.1.0"
 
 info:
   title: Simple Chat API
@@ -201,7 +201,7 @@ We'll define messages separately in components to keep the channel definition cl
 
 ### Step 3 - Creating Reusable Message Components
 
-Components hold reusable objects for different aspects of your AsyncAPI spec. They only take effect when explicitly referenced elsewhere. Let's define our chat message:
+Components hold reusable objects for different aspects of your AsyncAPI specification. They only take effect when explicitly referenced elsewhere. Let's define our chat message:
 ```yaml
 components:
   messages:
@@ -402,7 +402,7 @@ Now users can connect once to `/?roomIds=room1,room2,room3` and exchange message
 
 Here's your finished AsyncAPI document bringing everything together:
 ```yaml
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 info:
   title: Simple Chat API
   version: 1.0.0
@@ -536,13 +536,13 @@ With your AsyncAPI specification complete, the spec-first approach unlocks power
 
 - **Generate Documentation:** Tools like [AsyncAPI Studio](https://studio.asyncapi.com/) let you visualize and interact with your API definition in your browser. You can also generate and download markdown documentation or a deployable HTML website directly from your specification.
 
-- **Generate Code:** The [AsyncAPI CLI](https://www.asyncapi.com/tools/cli) transforms your spec into production-ready code in multiple languages. Generate client or server implementations, data models, and more, reducing development time and inconsistencies.
+- **Generate Code:** The [AsyncAPI CLI](https://www.asyncapi.com/tools/cli) transforms your specification into production-ready code in multiple languages. Generate client or server implementations, data models, and more, reducing development time and inconsistencies.
 
 - **Contract Testing:** Tools like [Microcks](https://microcks.io/) let you test and mock your API directly from your specification, ensuring your implementation matches your design before going live.
 
-Install the [AsyncAPI CLI](https://www.asyncapi.com/tools/cli) and try generating documentation with: `asyncapi generate fromTemplate ./asyncapi.yaml @asyncapi/html-template@3.0.0 --use-new-generator`
+Install the [AsyncAPI CLI](https://www.asyncapi.com/tools/cli) and try generating documentation with: ```asyncapi generate fromTemplate ./asyncapi.yaml @asyncapi/html-template@3.0.0 --use-new-generator```
 
-Or preview your spec live in [AsyncAPI Studio](https://studio.asyncapi.com/?url=https://gist.githubusercontent.com/AceTheCreator/1651bd1fa1eed947441e5828d357ac4f/raw/475484a530044d734bb847ae17048fd6b20dcad2/gistfile1.txt).
+Or preview your specification live in [AsyncAPI Studio](https://studio.asyncapi.com/?url=https://gist.githubusercontent.com/AceTheCreator/1651bd1fa1eed947441e5828d357ac4f/raw/475484a530044d734bb847ae17048fd6b20dcad2/gistfile1.txt).
 
 ## Conclusion
 
