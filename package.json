@@ -117,7 +117,7 @@
     "remark-images": "^4.0.0",
     "remark-slug": "^7.0.1",
     "schyma": "^1.0.7",
-    "swiper": "^11.0.7",
+    "swiper": "^12.1.2",
     "tailwind-merge": "^2.2.1",
     "tailwindcss": "^3.4.3",
     "winston": "^3.17.0",
