@@ -39,7 +39,10 @@ export default function Filter<T extends DataObject = DataObject>({
   }, [route, checks, data]);
 
   useEffect(() => {
-    onFilterApply(data, onFilter, routeQuery);
+    const filterQuery = { ...routeQuery };
+
+    delete filterQuery.page;
+    onFilterApply(data, onFilter, filterQuery);
   }, [routeQuery, data, onFilter]);
 
   return checks.map((check) => {
