@@ -34,6 +34,12 @@ class BasePage {
     return text ? chain.and('contain', text) : chain;
   }
 
+  getLink(href, text) {
+    return cy.contains(`a[href="${href}"]`, text)
+      .should('be.visible')
+      .and('have.attr', 'href', href);
+  }
+
   verifyButtonLink(href, buttonText) {
     return this.verifyLink(href, buttonText, { findByText: true });
   }
@@ -49,6 +55,13 @@ class BasePage {
       .should('not.be.empty');
   }
 
+  scrollToElement(selector) {
+    cy.get(selector).scrollIntoView().should('be.visible');
+  }
+
+  scrollToText(text) {
+    cy.contains(text).scrollIntoView().should('be.visible');
+  }
 }
 
 export default BasePage;
