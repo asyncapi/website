@@ -1443,7 +1443,7 @@
         "description": null,
         "links": {
           "websiteUrl": "https://studio.asyncapi.com",
-          "repoUrl": "https://github.com/Shurtu-gal/action-test-bed"
+          "repoUrl": "https://github.com/TahaShahid203/async-api-issue"
         },
         "filters": {
           "language": [],
@@ -1470,7 +1470,7 @@
         "description": null,
         "links": {
           "websiteUrl": "https://studio.asyncapi.com",
-          "repoUrl": "https://github.com/TahaShahid203/async-api-issue"
+          "repoUrl": "https://github.com/Shurtu-gal/action-test-bed"
         },
         "filters": {
           "language": [],
@@ -1946,7 +1946,7 @@
         "description": "Your API Mocking Tool for Agile Development. Mock and simulate AsyncAPI and OpenAPI services for local testing, development, and CI pipelines — with a visual dashboard to inspect your mocks and a powerful test data generator fully customizable with JavaScript.",
         "links": {
           "websiteUrl": "https://mokapi.io",
-          "docsUrl": "https://mokapi.io/docs/guides/welcome",
+          "docsUrl": "https://mokapi.io/docs/welcome",
           "repoUrl": "https://github.com/marle3003/mokapi"
         },
         "filters": {
@@ -2582,7 +2582,7 @@
         "description": "Your API Mocking Tool for Agile Development. Mock and simulate AsyncAPI and OpenAPI services for local testing, development, and CI pipelines — with a visual dashboard to inspect your mocks and a powerful test data generator fully customizable with JavaScript.",
         "links": {
           "websiteUrl": "https://mokapi.io",
-          "docsUrl": "https://mokapi.io/docs/guides/welcome",
+          "docsUrl": "https://mokapi.io/docs/welcome",
           "repoUrl": "https://github.com/marle3003/mokapi"
         },
         "filters": {
