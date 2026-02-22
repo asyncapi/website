@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
@@ -41,8 +42,10 @@ export default function Card({ title, description, link, className, Icon }: Card
           >
             <div className='flex flex-row items-center'>
               <div
-                className={`flex size-12 shrink-0 items-center justify-center rounded-lg ${className}
-                  text-gray-900 sm:size-12`}
+                className={twMerge(
+                  'flex size-12 shrink-0 items-center justify-center rounded-lg text-gray-900 sm:size-12',
+                  className
+                )}
                 data-testid='Docs-icon'
               >
                 <Icon className='size-6' />
