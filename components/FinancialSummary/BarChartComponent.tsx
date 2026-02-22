@@ -13,42 +13,24 @@ import ExpensesCard from './ExpensesCard';
  * @description BarChartComponent component displays a bar chart for expense analysis.
  */
 export default function BarChartComponent() {
-  // Setting up state variables using useState hook
   const [selectedCategory, setSelectedCategory] = useState<string>('All Categories');
   const [selectedMonth, setSelectedMonth] = useState<string>('All Months');
-  const [windowWidth, setWindowWidth] = useState<number>(0);
+  const [isMounted, setIsMounted] = useState(false);
 
-  // Extracting unique categories and months from the data
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const categories: string[] = getUniqueCategories();
   const months: string[] = Object.keys(ExpensesData);
 
-  // Effect hook to update windowWidth state on resize
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    // Initial setup and event listener
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    // Cleanup function to remove event listener
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  // Filtering data based on selected month and category
   const filteredData: ExpenseItem[] = Object.entries(ExpensesData).flatMap(([month, entries]) =>
     selectedMonth === 'All Months' || selectedMonth === month
       ? entries.filter((entry) => selectedCategory === 'All Categories' || entry.Category === selectedCategory)
       : []
   );
 
-  // Calculating total amount of filtered data
   const totalAmount: number = filteredData.reduce((total, entry) => total + parseFloat(entry.Amount), 0);
-
-  // Calculating total amount per category
   const categoryAmounts: { [category: string]: number } = {};
 
   filteredData.forEach((entry) => {
@@ -59,14 +41,10 @@ export default function BarChartComponent() {
     }
   });
 
-  // Formatting data for the chart
   const chartData: { Category: string; Amount: number }[] = Object.keys(categoryAmounts).map((category) => ({
     Category: category,
     Amount: categoryAmounts[category]
   }));
-
-  const barWidth: number | undefined = windowWidth && windowWidth < 900 ? undefined : 800;
-  const barHeight: number | undefined = windowWidth && windowWidth < 900 ? undefined : 400;
 
   return (
     <div className='mt-8 flex items-center justify-center sm:px-6 lg:px-8'>
@@ -111,29 +89,37 @@ export default function BarChartComponent() {
             </div>
           </div>
         </div>
-        <div className='flex justify-center'>
-          <BarChart width={barWidth} height={barHeight} data={chartData}>
-            <CartesianGrid strokeDasharray='3 3' />
-            <YAxis tickFormatter={(value) => `$${value}`} />
-            <Tooltip content={<CustomTooltip />} />
-            <Legend />
-            <Bar
-              dataKey='Amount'
-              fill='#7B5DD3FF'
-              onClick={(data) => {
-                const category = data.payload.Category;
-                const matchedLinkObject: ExpensesLinkItem | undefined = ExpensesLinkData.find(
-                  (obj) => obj.category === category
-                );
+        <div className='flex justify-center h-[400px]'>
+          {isMounted ? (
+            <BarChart width={800} height={400} data={chartData}>
+              <CartesianGrid strokeDasharray='3 3' />
+              <YAxis tickFormatter={(value) => `$${value}`} />
+              <Tooltip content={<CustomTooltip />} />
+              <Legend />
+              <Bar
+                dataKey='Amount'
+                fill='#7B5DD3FF'
+                onClick={(data) => {
+                  const category = data.payload.Category;
+                  const matchedLinkObject: ExpensesLinkItem | undefined = ExpensesLinkData.find(
+                    (obj) => obj.category === category
+                  );
 
-                if (matchedLinkObject) {
-                  window.open(matchedLinkObject.link, '_blank');
-                }
-              }}
-            />
-          </BarChart>
+                  if (matchedLinkObject) {
+                    window.open(matchedLinkObject.link, '_blank');
+                  }
+                }}
+              />
+            </BarChart>
+          ) : (
+            <div className='h-[400px] w-full flex items-center justify-center bg-gray-50 rounded-lg'>
+              Loading chart...
+            </div>
+          )}
         </div>
-        {windowWidth && windowWidth < 900 ? <ExpensesCard /> : null}
+        <div className='block min-[901px]:hidden mt-8'>
+          <ExpensesCard />
+        </div>
       </div>
     </div>
   );
