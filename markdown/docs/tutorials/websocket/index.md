@@ -68,7 +68,7 @@ The WebSocket URL is generated  by invoking the <a href="https://api.slack.com/m
 </Remember>
 
 <CodeBlock language="yaml">
-{`asyncapi: '3.0.0'
+{`asyncapi: '3.1.0'
 info:
   title: Create an AsyncAPI document for a Slackbot with WebSocket
   version: '1.0.0'
@@ -208,7 +208,7 @@ Your Slack application is designed to be notified of events within your workspac
 Congratulations, you've completed the tutorial! Putting these blocks together gives you an AsyncAPI document all ready to go.
 
 <CodeBlock language="yaml">
-{`asyncapi: '3.0.0'
+{`asyncapi: '3.1.0'
 info:
   title: Create an AsyncAPI document for a Slackbot with WebSocket
   version: '1.0.0'
