@@ -61,7 +61,7 @@ In the above code snippet:
 Now let's combine the above Avro Schema with the AsyncAPI document that you created in the previous tutorial. Check out below what an AsyncAPI document fully equipped with Avro Schema looks like!
 
 ```
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 info:
   title: User Signup API
   version: 1.0.0
@@ -123,7 +123,7 @@ Assume you have a file named `userSchema.json` that encapsulates the Avro Schema
 To seamlessly incorporate this existing Avro schema into your AsyncAPI document, you can use the `$ref` property to reference the path to the JSON file. This way, your AsyncAPI document will incorporate the Avro Schema from the external JSON file, ensuring consistency and interoperability in your Kafka ecosystem. 
 
 ```
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 info:
   title: User Signup API
   version: 1.0.0
