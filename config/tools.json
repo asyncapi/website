@@ -23,7 +23,7 @@
         "title": "AsyncAPI-Directory by APIs.guru",
         "description": "Directory of asynchronous API specifications in AsyncAPI format.",
         "links": {
-          "websiteUrl": "https://apis.guru/asyncapi-directory/",
+          "websiteUrl": "https://apis.guru/",
           "repoUrl": "https://github.com/APIs-guru/asyncapi-directory"
         },
         "filters": {
@@ -1100,7 +1100,7 @@
         "title": "AsyncAPI-Directory by APIs.guru",
         "description": "Directory of asynchronous API specifications in AsyncAPI format.",
         "links": {
-          "websiteUrl": "https://apis.guru/asyncapi-directory/",
+          "websiteUrl": "https://apis.guru/",
           "repoUrl": "https://github.com/APIs-guru/asyncapi-directory"
         },
         "filters": {
