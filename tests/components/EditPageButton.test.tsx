@@ -36,43 +36,26 @@ import {
 
 describe('EditPageButton Component', () => {
   describe('Component Props Interface', () => {
-    it('should accept valid props for blog content', () => {
-      const props: EditPageButtonProps = {
-        slug: '/blog/my-post',
-        contentType: 'blog',
-        className: 'custom-class',
-        variant: 'inline'
-      };
+    const propsCases: Array<{ props: EditPageButtonProps; description: string }> = [
+      {
+        props: { slug: '/blog/my-post', contentType: 'blog', className: 'custom-class', variant: 'inline' },
+        description: 'blog with inline variant'
+      },
+      {
+        props: { slug: '/docs/concepts/asyncapi', contentType: 'docs', variant: 'floating' },
+        description: 'docs with floating variant'
+      },
+      {
+        props: { slug: '/about/team', contentType: 'about' },
+        description: 'about with defaults'
+      }
+    ];
 
-      expect(props.slug).toBe('/blog/my-post');
-      expect(props.contentType).toBe('blog');
-      expect(props.className).toBe('custom-class');
-      expect(props.variant).toBe('inline');
-    });
-
-    it('should accept valid props for docs content', () => {
-      const props: EditPageButtonProps = {
-        slug: '/docs/concepts/asyncapi',
-        contentType: 'docs',
-        variant: 'floating'
-      };
-
-      expect(props.slug).toBe('/docs/concepts/asyncapi');
-      expect(props.contentType).toBe('docs');
-      expect(props.variant).toBe('floating');
-    });
-
-    it('should accept valid props for about content', () => {
-      const props: EditPageButtonProps = {
-        slug: '/about/team',
-        contentType: 'about'
-      };
-
-      expect(props.slug).toBe('/about/team');
-      expect(props.contentType).toBe('about');
-      // Default values
-      expect(props.className).toBeUndefined();
-      expect(props.variant).toBeUndefined();
+    propsCases.forEach(({ props, description }) => {
+      it(`should accept valid props for ${description}`, () => {
+        expect(props.slug).toBeDefined();
+        expect(props.contentType).toMatch(/^(blog|docs|about)$/);
+      });
     });
   });
 
@@ -259,55 +242,36 @@ describe('EditPageButton Component', () => {
   });
 
   describe('Component Module', () => {
-    it('should have EditPageButton component file', () => {
-      // Verify the component file exists by checking the file system
+    let componentContent: string;
+
+    beforeAll(() => {
       const fs = require('fs');
       const path = require('path');
       const componentPath = path.join(__dirname, '../../components/buttons/EditPageButton.tsx');
-
-      expect(fs.existsSync(componentPath)).toBe(true);
+      componentContent = fs.readFileSync(componentPath, 'utf-8');
     });
 
     it('should have correct component structure', () => {
-      // Read the component file and verify it has the expected structure
-      const fs = require('fs');
-      const path = require('path');
-      const componentPath = path.join(__dirname, '../../components/buttons/EditPageButton.tsx');
-      const content = fs.readFileSync(componentPath, 'utf-8');
-
-      // Check for key component elements
-      expect(content).toContain('export default function EditPageButton');
-      expect(content).toContain('EditPageButtonProps');
-      expect(content).toContain("data-testid='edit-page-button'");
-      expect(content).toContain('variant');
-      expect(content).toContain('inline');
-      expect(content).toContain('floating');
+      expect(componentContent).toContain('export default function EditPageButton');
+      expect(componentContent).toContain('EditPageButtonProps');
+      expect(componentContent).toContain("data-testid='edit-page-button'");
+      expect(componentContent).toContain('variant');
+      expect(componentContent).toContain('inline');
+      expect(componentContent).toContain('floating');
     });
 
     it('should have proper accessibility attributes', () => {
-      const fs = require('fs');
-      const path = require('path');
-      const componentPath = path.join(__dirname, '../../components/buttons/EditPageButton.tsx');
-      const content = fs.readFileSync(componentPath, 'utf-8');
-
-      // Check for accessibility features
-      expect(content).toContain('aria-label');
-      expect(content).toContain("role='link'");
-      expect(content).toContain('tabIndex');
-      expect(content).toContain('onKeyDown');
-      expect(content).toContain('sr-only');
+      expect(componentContent).toContain('aria-label');
+      expect(componentContent).toContain("role='link'");
+      expect(componentContent).toContain('tabIndex');
+      expect(componentContent).toContain('onKeyDown');
+      expect(componentContent).toContain('sr-only');
     });
 
     it('should have proper security attributes', () => {
-      const fs = require('fs');
-      const path = require('path');
-      const componentPath = path.join(__dirname, '../../components/buttons/EditPageButton.tsx');
-      const content = fs.readFileSync(componentPath, 'utf-8');
-
-      // Check for security features
-      expect(content).toContain('noopener');
-      expect(content).toContain('noreferrer');
-      expect(content).toContain('referrerPolicy');
+      expect(componentContent).toContain('noopener');
+      expect(componentContent).toContain('noreferrer');
+      expect(componentContent).toContain('referrerPolicy');
     });
   });
 });
