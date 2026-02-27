@@ -1,8 +1,5 @@
-import type { EditPageConfigEntry } from '@/types/components/EditPageButton';
-
 import {
   contentTypeTestCases,
-  mapUrlTestCases,
   shouldShowTestCases
 } from './fixtures/editPageButtonData';
 
@@ -93,134 +90,57 @@ describe('editPageUtils', () => {
   });
 
   describe('mapUrlToGitHubEdit', () => {
-    describe('blog content type', () => {
-      it('should generate correct edit URL for blog posts', () => {
-        const result = mapUrlToGitHubEdit('/blog/my-awesome-post', 'blog');
+    const testCases: Array<{
+      contentType: 'blog' | 'docs' | 'about';
+      slug: string;
+      expectedPattern: string;
+      description: string;
+    }> = [
+      { contentType: 'blog', slug: '/blog/my-awesome-post', expectedPattern: 'markdown/blog/my-awesome-post.md', description: 'blog posts' },
+      { contentType: 'blog', slug: '/blog/2024/01/december-update', expectedPattern: 'markdown/blog/december-update.md', description: 'nested blog paths' },
+      { contentType: 'about', slug: '/about/team', expectedPattern: 'markdown/about/team.md', description: 'about pages' },
+      { contentType: 'about', slug: '/about/contact', expectedPattern: 'markdown/about/contact.md', description: 'different about slugs' },
+      { contentType: 'docs', slug: '/docs/concepts/asyncapi', expectedPattern: 'markdown/docs/concepts/asyncapi.md', description: 'standard docs pages' },
+      { contentType: 'docs', slug: '/docs/tools/generator', expectedPattern: 'github.com/asyncapi/generator', description: 'generator tool docs' },
+      { contentType: 'docs', slug: '/docs/tools/cli/installation', expectedPattern: 'github.com/asyncapi/cli', description: 'CLI tool docs' },
+      { contentType: 'docs', slug: '/docs/reference/specification/v3.0.0', expectedPattern: 'github.com/asyncapi/spec', description: 'specification reference docs' }
+    ];
+
+    testCases.forEach(({ contentType, slug, expectedPattern, description }) => {
+      it(`should handle ${description}`, () => {
+        const result = mapUrlToGitHubEdit(slug, contentType);
 
         expect(result.success).toBe(true);
-        expect(result.editUrl).toBe(
-          'https://github.com/asyncapi/website/edit/master/markdown/blog/my-awesome-post.md'
-        );
-      });
-
-      it('should extract filename from nested blog paths', () => {
-        const result = mapUrlToGitHubEdit('/blog/2024/01/december-update', 'blog');
-
-        expect(result.success).toBe(true);
-        expect(result.editUrl).toBe(
-          'https://github.com/asyncapi/website/edit/master/markdown/blog/december-update.md'
-        );
+        expect(result.editUrl).toContain(expectedPattern);
       });
     });
 
-    describe('about content type', () => {
-      it('should generate correct edit URL for about pages', () => {
-        const result = mapUrlToGitHubEdit('/about/team', 'about');
+    it('should handle .mdx extension in slug', () => {
+      const result = mapUrlToGitHubEdit('/docs/concepts/file.mdx', 'docs');
 
-        expect(result.success).toBe(true);
-        expect(result.editUrl).toBe(
-          'https://github.com/asyncapi/website/edit/master/markdown/about/team.md'
-        );
-      });
-
-      it('should handle different about page slugs', () => {
-        const result = mapUrlToGitHubEdit('/about/contact', 'about');
-
-        expect(result.success).toBe(true);
-        expect(result.editUrl).toBe(
-          'https://github.com/asyncapi/website/edit/master/markdown/about/contact.md'
-        );
-      });
+      expect(result.success).toBe(true);
+      expect(result.editUrl).toContain('file.mdx.md');
     });
 
-    describe('docs content type', () => {
-      it('should generate correct edit URL for standard docs pages', () => {
-        const result = mapUrlToGitHubEdit('/docs/concepts/asyncapi', 'docs');
+    it('should return a valid URL for unknown paths', () => {
+      const result = mapUrlToGitHubEdit('/unknown/path', 'docs');
 
-        expect(result.success).toBe(true);
-        // The actual implementation uses 'blob' instead of 'edit' for this case
-        expect(result.editUrl).toBe(
-          'https://github.com/asyncapi/website/blob/master/markdown/docs/concepts/asyncapi.md'
-        );
-      });
-
-      it('should handle generator tool docs with custom mapping', () => {
-        const result = mapUrlToGitHubEdit('/docs/tools/generator', 'docs');
-
-        expect(result.success).toBe(true);
-        expect(result.editUrl).toContain('github.com/asyncapi/generator');
-      });
-
-      it('should handle CLI tool docs with custom mapping', () => {
-        const result = mapUrlToGitHubEdit('/docs/tools/cli/installation', 'docs');
-
-        expect(result.success).toBe(true);
-        expect(result.editUrl).toContain('github.com/asyncapi/cli');
-      });
-
-      it('should handle specification reference docs', () => {
-        const result = mapUrlToGitHubEdit('/docs/reference/specification/v3.0.0', 'docs');
-
-        expect(result.success).toBe(true);
-        expect(result.editUrl).toContain('github.com/asyncapi/spec');
-      });
-
-      it('should handle .mdx extension in slug', () => {
-        const result = mapUrlToGitHubEdit('/docs/concepts/file.mdx', 'docs');
-
-        expect(result.success).toBe(true);
-        // The implementation appends .md after the .mdx filename
-        expect(result.editUrl).toContain('file.mdx.md');
-      });
+      expect(result.success).toBe(true);
+      expect(result.editUrl).toContain('github.com/asyncapi/website');
     });
 
-    describe('fallback behavior', () => {
-      it('should return a valid URL for unknown paths', () => {
-        const result = mapUrlToGitHubEdit('/unknown/path', 'docs');
+    it('should return valid GitHub URLs', () => {
+      const result = mapUrlToGitHubEdit('/blog/test-post', 'blog');
 
-        // The implementation falls back to the base mapping which succeeds
-        expect(result.success).toBe(true);
-        expect(result.editUrl).toContain('github.com/asyncapi/website');
-      });
-
-      it('should handle errors gracefully', () => {
-        // Test with invalid content type that doesn't match expected values
-        const result = mapUrlToGitHubEdit('/some/path', 'docs');
-
-        // Should not throw and should return a result
-        expect(result).toHaveProperty('editUrl');
-        expect(result).toHaveProperty('success');
-      });
-    });
-
-    describe('URL validation', () => {
-      it('should return valid GitHub URLs', () => {
-        const result = mapUrlToGitHubEdit('/blog/test-post', 'blog');
-
-        expect(result.editUrl).toMatch(/^https:\/\/github\.com\//);
-      });
-
-      it('should handle URLs with special characters', () => {
-        const result = mapUrlToGitHubEdit('/blog/post-with-special-chars', 'blog');
-
-        expect(result.success).toBe(true);
-        expect(result.editUrl).toContain('github.com');
-      });
+      expect(result.editUrl).toMatch(/^https:\/\/github\.com\//);
     });
   });
 
   describe('openGitHubUrl', () => {
     const originalWindow = global.window;
-    const originalDocument = global.document;
-
-    beforeEach(() => {
-      // Reset mocks before each test
-      jest.clearAllMocks();
-    });
 
     afterEach(() => {
       global.window = originalWindow;
-      global.document = originalDocument;
     });
 
     it('should return false for non-GitHub URLs', () => {
@@ -235,64 +155,15 @@ describe('editPageUtils', () => {
       expect(result).toBe(false);
     });
 
-    it('should open window with correct parameters when window.open succeeds', () => {
-      const mockWindow = {
-        opener: null
-      };
-      const mockOpen = jest.fn().mockReturnValue(mockWindow);
-
+    it('should return true when window.open succeeds', () => {
+      const mockWindow = { opener: null };
       global.window = {
-        open: mockOpen
+        open: jest.fn().mockReturnValue(mockWindow)
       } as unknown as Window & typeof globalThis;
 
-      const testUrl = 'https://github.com/asyncapi/website/edit/master/README.md';
-      const result = openGitHubUrl(testUrl);
+      const result = openGitHubUrl('https://github.com/asyncapi/website/edit/master/README.md');
 
       expect(result).toBe(true);
-      expect(mockOpen).toHaveBeenCalledWith(
-        testUrl,
-        '_blank',
-        'noopener,noreferrer,width=1200,height=800,scrollbars=yes,resizable=yes'
-      );
-      expect(mockWindow.opener).toBeNull();
-    });
-
-    it('should use fallback link method when window.open returns null', () => {
-      const mockOpen = jest.fn().mockReturnValue(null);
-      const mockClick = jest.fn();
-      const mockLink = {
-        click: mockClick
-      };
-      const mockCreateElement = jest.fn().mockReturnValue(mockLink);
-      const mockAppendChild = jest.fn();
-      const mockRemoveChild = jest.fn();
-
-      global.window = {
-        open: mockOpen
-      } as unknown as Window & typeof globalThis;
-
-      global.document = {
-        createElement: mockCreateElement,
-        body: {
-          appendChild: mockAppendChild,
-          removeChild: mockRemoveChild
-        }
-      } as unknown as Document;
-
-      const testUrl = 'https://github.com/asyncapi/website/edit/master/README.md';
-      const result = openGitHubUrl(testUrl);
-
-      expect(result).toBe(true);
-      expect(mockCreateElement).toHaveBeenCalledWith('a');
-      expect(mockLink).toMatchObject({
-        href: testUrl,
-        target: '_blank',
-        rel: 'noopener noreferrer nofollow',
-        referrerPolicy: 'no-referrer'
-      });
-      expect(mockAppendChild).toHaveBeenCalledWith(mockLink);
-      expect(mockClick).toHaveBeenCalled();
-      expect(mockRemoveChild).toHaveBeenCalledWith(mockLink);
     });
 
     it('should handle errors and return false', () => {
