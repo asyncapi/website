@@ -7,13 +7,6 @@
     "date": "2025-12-02T15:00:00.000Z"
   },
   {
-    "title": "AsyncAPI Spec Triage ",
-    "calLink": "https://www.google.com/calendar/event?eid=NXYzamZpYW9lajZjMWk1aWtnNzY1NWhidWcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/2141",
-    "banner": "",
-    "date": "2025-11-19T14:00:00.000Z"
-  },
-  {
     "title": "Worfklow Test",
     "calLink": "https://www.google.com/calendar/event?eid=MXRuYjBibTNjcXZpcmtvaXF2cDQ5M2ZncDQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/2183",
@@ -89,5 +82,19 @@
     "url": "https://github.com/asyncapi/community/issues/2295",
     "banner": "https://github.com/user-attachments/assets/b4e255b8-5c7e-4821-82c9-3bcbc18b68ef",
     "date": "2026-03-03T15:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI Governance Board Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=Mms3bnA3dXZkbjNpaGJmcTdjMW9iYjd2bTQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/2300",
+    "banner": "",
+    "date": "2026-02-24T15:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI Website Triage Meeting | 15:30 UTC Friday February 27, 2026",
+    "calLink": "https://www.google.com/calendar/event?eid=czM2MWk2bDU4bTIzdnAwbjZvc202MHRoc2cgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/2304",
+    "banner": "",
+    "date": "2026-02-27T15:30:00.000Z"
   }
 ]
