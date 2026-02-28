@@ -368,7 +368,7 @@ export default function DemoAnimation({ className = '' }: IDemoAnimationProps) {
                     </div>
                     <div className={transitionClassNames(showEmail)}>
                       <span className='text-teal-400'>&nbsp;&nbsp;&quot;email&quot;</span>:{' '}
-                      <span className='text-white'>&quot;info@asyncapi.io&quot;</span>
+                      <span className='text-white'>&quot;info@asyncapi.com&quot;</span>
                     </div>
                     <div>{'}'}</div>
                   </div>

@@ -26,10 +26,10 @@ export default function ContactUs() {
               <span>
                 <TextLink
                   className='text-base font-semibold text-violet'
-                  href='mailto:info@asyncapi.io'
+                  href='mailto:info@asyncapi.com'
                   target='_blank'
                 >
-                  info@asyncapi.io
+                  info@asyncapi.com
                 </TextLink>
               </span>
             </Paragraph>
@@ -37,7 +37,7 @@ export default function ContactUs() {
         </div>
       </div>
       <div className='flex justify-center'>
-        <Button text='Contact Us' href='mailto:info@asyncapi.io' target='_blank' />
+        <Button text='Contact Us' href='mailto:info@asyncapi.com' target='_blank' />
       </div>
     </div>
   );
