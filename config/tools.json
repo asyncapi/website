@@ -23,7 +23,7 @@
         "title": "AsyncAPI-Directory by APIs.guru",
         "description": "Directory of asynchronous API specifications in AsyncAPI format.",
         "links": {
-          "websiteUrl": "https://apis.guru/asyncapi-directory/",
+          "websiteUrl": "https://apis.guru/",
           "repoUrl": "https://github.com/APIs-guru/asyncapi-directory"
         },
         "filters": {
@@ -1100,7 +1100,7 @@
         "title": "AsyncAPI-Directory by APIs.guru",
         "description": "Directory of asynchronous API specifications in AsyncAPI format.",
         "links": {
-          "websiteUrl": "https://apis.guru/asyncapi-directory/",
+          "websiteUrl": "https://apis.guru/",
           "repoUrl": "https://github.com/APIs-guru/asyncapi-directory"
         },
         "filters": {
@@ -1443,7 +1443,7 @@
         "description": null,
         "links": {
           "websiteUrl": "https://studio.asyncapi.com",
-          "repoUrl": "https://github.com/Shurtu-gal/action-test-bed"
+          "repoUrl": "https://github.com/TahaShahid203/async-api-issue"
         },
         "filters": {
           "language": [],
@@ -1470,7 +1470,7 @@
         "description": null,
         "links": {
           "websiteUrl": "https://studio.asyncapi.com",
-          "repoUrl": "https://github.com/TahaShahid203/async-api-issue"
+          "repoUrl": "https://github.com/Shurtu-gal/action-test-bed"
         },
         "filters": {
           "language": [],
@@ -1946,7 +1946,7 @@
         "description": "Your API Mocking Tool for Agile Development. Mock and simulate AsyncAPI and OpenAPI services for local testing, development, and CI pipelines — with a visual dashboard to inspect your mocks and a powerful test data generator fully customizable with JavaScript.",
         "links": {
           "websiteUrl": "https://mokapi.io",
-          "docsUrl": "https://mokapi.io/docs/guides/welcome",
+          "docsUrl": "https://mokapi.io/docs/welcome",
           "repoUrl": "https://github.com/marle3003/mokapi"
         },
         "filters": {
@@ -2582,7 +2582,7 @@
         "description": "Your API Mocking Tool for Agile Development. Mock and simulate AsyncAPI and OpenAPI services for local testing, development, and CI pipelines — with a visual dashboard to inspect your mocks and a powerful test data generator fully customizable with JavaScript.",
         "links": {
           "websiteUrl": "https://mokapi.io",
-          "docsUrl": "https://mokapi.io/docs/guides/welcome",
+          "docsUrl": "https://mokapi.io/docs/welcome",
           "repoUrl": "https://github.com/marle3003/mokapi"
         },
         "filters": {
@@ -2767,7 +2767,7 @@
         "title": "asyncapi-preview",
         "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
         "links": {
-          "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
+          "repoUrl": "https://github.com/Savio629/testing2"
         },
         "filters": {
           "language": [],
@@ -2793,7 +2793,7 @@
         "title": "asyncapi-preview",
         "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
         "links": {
-          "repoUrl": "https://github.com/Savio629/testing2"
+          "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
         },
         "filters": {
           "language": [],
@@ -2939,7 +2939,7 @@
         "title": "HTML Template",
         "description": null,
         "links": {
-          "repoUrl": "https://github.com/WSOL12/html-template"
+          "repoUrl": "https://github.com/dipaksodani/async-gen"
         },
         "filters": {
           "language": [
@@ -2966,7 +2966,7 @@
         "title": "HTML Template",
         "description": null,
         "links": {
-          "repoUrl": "https://github.com/dipaksodani/async-gen"
+          "repoUrl": "https://github.com/WSOL12/html-template"
         },
         "filters": {
           "language": [
