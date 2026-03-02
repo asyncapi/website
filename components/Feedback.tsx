@@ -36,21 +36,24 @@ export default function Feedback({ className }: IFeedbackProps) {
       feedback
     };
 
-    fetch('/.netlify/functions/github_discussions', {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then((response) => {
+    try {
+      const response = await fetch('/.netlify/functions/github_discussions', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
       if (response.status === 200) {
         setSubmitted(true);
-      }
-      if (response.status !== 200) {
+      } else {
         setError(true);
       }
-      response.json();
-    });
+      await response.json();
+    } catch (err) {
+      setError(true);
+    }
   }
 
   if (submitted) {

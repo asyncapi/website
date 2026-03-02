@@ -64,7 +64,7 @@ export default function NewsletterSubscribe({
     }, 10000);
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     setStatus(FormStatus.LOADING);
     event.preventDefault();
     const data = {
@@ -73,21 +73,25 @@ export default function NewsletterSubscribe({
       interest: type
     };
 
-    fetch('/.netlify/functions/newsletter_subscription', {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then((res) => {
+    try {
+      const res = await fetch('/.netlify/functions/newsletter_subscription', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
       if (res.status === 200) {
         setFormStatus(FormStatus.SUCCESS);
       } else {
         setFormStatus(FormStatus.ERROR);
       }
 
-      return res.json();
-    });
+      await res.json();
+    } catch (err) {
+      setFormStatus(FormStatus.ERROR);
+    }
   };
 
   if (status === FormStatus.SUCCESS) {
