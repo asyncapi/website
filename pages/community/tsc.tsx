@@ -7,20 +7,21 @@ import TextLink from '@/components/typography/TextLink';
 export default function TSC() {
   return (
     <CommunityLayout membership={Membership.TSC}>
-      <div className='mx-auto my-0 grid max-w-xl lg:max-w-screen-xl lg:grid-cols-3 lg:gap-8' data-testid='TSC-content'>
-        <div>
-          <h3 className='text-primary-800  mb-2 font-semibold lg:text-center lg:text-2xl'>What is a TSC?</h3>
-          <p className='my-4 text-base text-gray-500 lg:text-center'>
+      <div
+        className='mx-auto my-0 gap-y-2 grid max-w-xl lg:max-w-screen-xl lg:grid-cols-3 lg:gap-8'
+        data-testid='TSC-content'
+      >
+        <div className='rounded-lg border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow'>
+          <h3 className='text-primary-800 mb-2 font-semibold lg:text-2xl'>What is a TSC?</h3>
+          <p className='my-4 text-base text-gray-500 text-justify'>
             The Technical Steering Committee (TSC) is responsible for the oversight of the AsyncAPI Initiative.
             Maintainers (aka committers) make decisions at the given repository/project level. The TSC helps to make
             decisions on a higher level, or when maintainers cannot find a consensus.
           </p>
         </div>
-        <div>
-          <h3 className='text-primary-800  mb-2 font-semibold lg:text-center lg:text-2xl'>
-            How can I become a TSC member?
-          </h3>
-          <p className='my-4 text-base text-gray-500 lg:text-center'>
+        <div className='rounded-lg border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow'>
+          <h3 className='text-primary-800 mb-2 font-semibold lg:text-2xl'>How can I become a TSC member?</h3>
+          <p className='my-4 text-base text-gray-500 text-justify'>
             Anybody can become a member of the TSC. All you have to do is become a maintainer of one of the AsyncAPI
             projects! To become a maintainer, you just need to regularly contribute to one of the projects and then
             other maintainers will invite you to join. You can also build a great AsyncAPI-based project that we
@@ -36,9 +37,9 @@ export default function TSC() {
             &nbsp;to know more!
           </p>
         </div>
-        <div>
-          <h3 className='text-primary-800  mb-2 font-semibold lg:text-center lg:text-2xl'>Our governance model</h3>
-          <p className='my-4 text-base text-gray-500 lg:text-center'>
+        <div className='rounded-lg border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow'>
+          <h3 className='text-primary-800 mb-2 font-semibold lg:text-2xl'>Our governance model</h3>
+          <p className='my-4 text-base text-gray-500 text-justify'>
             AsyncAPI Initiative runs under an{' '}
             <a
               data-testid='TSC-Governance-Link'
