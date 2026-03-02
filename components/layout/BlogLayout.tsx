@@ -6,12 +6,13 @@ import React from 'react';
 
 import type { IPosts } from '@/types/post';
 
-import BlogContext from '../../context/BlogContext';
-import AuthorAvatars from '../AuthorAvatars';
-import AnnouncementHero from '../campaigns/AnnouncementHero';
-import Head from '../Head';
-import TOC from '../TOC';
-import Container from './Container';
+import AnnouncementHero from '@/components/campaigns/AnnouncementHero';
+import AuthorAvatars from '@/components/AuthorAvatars';
+import Head from '@/components/Head';
+import SocialShareButtons from '@/components/SocialShareButtons';
+import TOC from '@/components/TOC';
+import Container from '@/components/layout/Container';
+import BlogContext from '@/context/BlogContext';
 
 interface IBlogLayoutProps {
   post: IPosts['blog'][number];
@@ -77,6 +78,7 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
                 </div>
               </div>
             </div>
+            <SocialShareButtons title={post.title} />
           </header>
           <article className='mb-32'>
             <Head title={post.title} description={post.excerpt} image={post.cover} />
