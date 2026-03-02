@@ -6,6 +6,9 @@ import type { Ambassador } from '@/types/pages/community/Community';
 import { HeadingTypeStyle } from '@/types/typography/Heading';
 
 import Button from '../../../components/buttons/Button';
+import IconGithub from '../../../components/icons/Github';
+import IconLinkedIn from '../../../components/icons/LinkedIn';
+import IconTwitter from '../../../components/icons/Twitter';
 import GenericLayout from '../../../components/layout/GenericLayout';
 import NewsletterSubscribe from '../../../components/NewsletterSubscribe';
 import Heading from '../../../components/typography/Heading';
@@ -21,7 +24,6 @@ export function addAdditionalUserInfo(user: Ambassador) {
     ...user
   };
 
-  // add social links
   if (userData.github) {
     userData.githubUrl = `https://www.github.com/${userData.github}`;
   }
@@ -32,8 +34,6 @@ export function addAdditionalUserInfo(user: Ambassador) {
     userData.twitterUrl = `https://www.twitter.com/${userData.twitter}`;
   }
 
-  // add img url
-  // github redirects to avatar url using `https://www.github.com/<username>.png`
   userData.img = `${userData.githubUrl}.png`;
 
   return userData;
@@ -49,11 +49,15 @@ export default function Index() {
     ['name']
   );
 
+  // Variable to handle long URL and pass max-len linter
+  const ambassadorProgramUrl =
+    'https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/AMBASSADOR_PROGRAM.md';
+
   return (
     <GenericLayout title='AsyncAPI Ambassador Program' description='The AsyncAPI Ambassador Program' image={image} wide>
       <div className='flex flex-col items-center justify-between lg:flex-row' data-testid='Ambassadors-main'>
         <div className='w-full text-center lg:w-[45%] lg:text-left' data-testid='Ambassadors-content'>
-          <h1 className='mt-10  text-3xl font-semibold md:text-4xl lg:text-5xl' data-testid='Ambassadors-title'>
+          <h1 className='mt-10 text-3xl font-semibold md:text-4xl lg:text-5xl' data-testid='Ambassadors-title'>
             Teachers. Champions. <span className='countdown-text-gradient'>Ambassadors!</span>
           </h1>
           <Heading typeStyle={HeadingTypeStyle.bodyLg} textColor='text-gray-700' className='mt-5 text-slate-500'>
@@ -64,7 +68,7 @@ export default function Index() {
             <Button
               className='mt-10 block text-center focus:outline-none md:inline-block'
               text='Become an AsyncAPI Ambassador'
-              href='https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/AMBASSADOR_PROGRAM.md'
+              href={ambassadorProgramUrl}
               target='_blank'
             />
           </div>
@@ -123,11 +127,8 @@ export default function Index() {
                   <div data-testid='Ambassadors-members-country'>{ambassador.country}</div>
                 </div>
                 <Link href={`ambassadors/${ambassador.github}`} as={`ambassadors/${ambassador.github}`}>
-                  <div className='p-2'>
-                    <div
-                      className='h-auto w-full cursor-pointer rounded-md bg-center'
-                      data-testid='Ambassadors-members-img'
-                    >
+                  <div className='p-2 cursor-pointer'>
+                    <div className='h-auto w-full rounded-md bg-center' data-testid='Ambassadors-members-img'>
                       <img
                         src={ambassador.img}
                         alt={ambassador.name}
@@ -140,22 +141,38 @@ export default function Index() {
               </div>
               <div className='flex h-full flex-col justify-between'>
                 <div className='p-2 text-sm'>{ambassador.bio}</div>
-                <div className='flex border-t p-2' data-testid='Ambassadors-members-socials'>
-                  <a
-                    href={ambassador.twitterUrl}
-                    target='_blank'
-                    rel='noreferrer'
-                    className='underline'
-                    data-testid='Ambassadors-members-twitter'
-                  >
-                    Twitter ↗
-                  </a>
-                  <a href={ambassador.githubUrl} target='_blank' rel='noreferrer' className='ml-3 underline'>
-                    Github ↗
-                  </a>
-                  <a href={ambassador.linkedinUrl} target='_blank' rel='noreferrer' className='ml-3 underline'>
-                    Linkedin ↗
-                  </a>
+                <div className='flex border-t p-2 gap-4' data-testid='Ambassadors-members-socials'>
+                  {ambassador.twitterUrl && (
+                    <a
+                      href={ambassador.twitterUrl}
+                      target='_blank'
+                      rel='noreferrer'
+                      className='text-gray-500 hover:text-black transition-colors'
+                      data-testid='Ambassadors-members-twitter'
+                    >
+                      <IconTwitter className='h-5 w-5 fill-current' />
+                    </a>
+                  )}
+                  {ambassador.githubUrl && (
+                    <a
+                      href={ambassador.githubUrl}
+                      target='_blank'
+                      rel='noreferrer'
+                      className='text-gray-500 hover:text-black transition-colors'
+                    >
+                      <IconGithub className='h-5 w-5 fill-current' />
+                    </a>
+                  )}
+                  {ambassador.linkedinUrl && (
+                    <a
+                      href={ambassador.linkedinUrl}
+                      target='_blank'
+                      rel='noreferrer'
+                      className='text-gray-500 hover:text-[#0077b5] transition-colors'
+                    >
+                      <IconLinkedIn className='h-5 w-5 fill-current' />
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -205,7 +222,7 @@ export default function Index() {
                 <Button
                   className='mt-5 block text-center focus:outline-none md:mt-10 md:inline-block md:w-[48%]'
                   text='Become an Ambassador now'
-                  href='https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/AMBASSADOR_PROGRAM.md'
+                  href={ambassadorProgramUrl}
                   target='_blank'
                 />
                 <Button
