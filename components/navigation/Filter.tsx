@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import Select from '../form/Select';
 import { applyFilterList, type DataObject, type Filter as FilterQuery, onFilterApply } from '../helpers/applyFilter';
@@ -10,7 +10,7 @@ interface Check {
 
 interface FilterProps<T extends DataObject = DataObject> {
   data: T[];
-  onFilter: (data: T[], query: FilterQuery) => void;
+  onFilter?: (data: T[], query: FilterQuery) => void;
   checks: Check[];
   className?: string;
 }
@@ -32,6 +32,7 @@ export default function Filter<T extends DataObject = DataObject>({
   const route = useRouter();
   const [filters, setFilters] = useState<Record<string, { value: string; text: string }[]>>({});
   const [routeQuery, setQuery] = useState<Record<string, string>>({});
+  const lastFilterKeyRef = useRef<string | null>(null);
 
   useEffect(() => {
     setQuery(route.query as Record<string, string>);
@@ -39,7 +40,16 @@ export default function Filter<T extends DataObject = DataObject>({
   }, [route, checks, data]);
 
   useEffect(() => {
-    onFilterApply(data, onFilter, routeQuery);
+    if (!onFilter) return;
+    const filterableQuery = Object.fromEntries(Object.entries(routeQuery).filter(([key]) => key !== 'page'));
+    const filterKey = Object.entries(filterableQuery)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([key, value]) => `${key}:${value}`)
+      .join('|');
+
+    if (filterKey === lastFilterKeyRef.current) return;
+    lastFilterKeyRef.current = filterKey;
+    onFilterApply(data, onFilter, filterableQuery);
   }, [routeQuery, data, onFilter]);
 
   return checks.map((check) => {
