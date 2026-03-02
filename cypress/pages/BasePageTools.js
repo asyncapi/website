@@ -1,6 +1,6 @@
 class BasePage {
-  visit(path) {
-    cy.visit(path);
+  visit() {
+    cy.visit('/');
   }
 
   verifyElementIsVisible(selector) {

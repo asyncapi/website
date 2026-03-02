@@ -23,7 +23,7 @@
         "title": "AsyncAPI-Directory by APIs.guru",
         "description": "Directory of asynchronous API specifications in AsyncAPI format.",
         "links": {
-          "websiteUrl": "https://apis.guru/asyncapi-directory/",
+          "websiteUrl": "https://apis.guru/",
           "repoUrl": "https://github.com/APIs-guru/asyncapi-directory"
         },
         "filters": {
@@ -191,6 +191,39 @@
           ],
           "categories": [
             "code-first"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "Bielu.AspNetCore.AsyncApi",
+        "description": "A library that provides built-in support for generating AsyncAPI documents from minimal or controller-based APIs in ASP.NET Core, bringing the same developer experience as Microsoft.AspNetCore.OpenApi but for AsyncAPI specifications.",
+        "links": {
+          "repoUrl": "https://github.com/bielu/Bielu.AspNetCore.AsyncApi"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "csharp",
+              "color": "bg-[#57f281]",
+              "borderColor": "border-[#37f069]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "ASP.NET Core",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": ".NET",
+              "color": "bg-[#A184FF]",
+              "borderColor": "border-[#5026D4]"
+            }
+          ],
+          "categories": [
+            "code-first",
+            "documentation-generator"
           ],
           "hasCommercial": false
         }
@@ -814,6 +847,45 @@
         }
       },
       {
+        "title": "PHP AsyncAPI Annotations",
+        "description": "A comprehensive PHP library providing annotations/attributes for the AsyncAPI 3.0.0 specification. This library enables you to define AsyncAPI specifications using modern PHP 8.3+ attributes with strict typing, PSR compliance, and support for all protocol bindings.",
+        "links": {
+          "websiteUrl": "https://github.com/drmmr763/php-asyncapi-annotations",
+          "docsUrl": "https://github.com/drmmr763/php-asyncapi-annotations#readme",
+          "repoUrl": "https://github.com/drmmr763/php-asyncapi-annotations"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "PHP",
+              "color": "bg-[#B0B3D6]",
+              "borderColor": "border-[#787CB5]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "PHP",
+              "color": "bg-[#B0B3D6]",
+              "borderColor": "border-[#787CB5]"
+            },
+            {
+              "name": "Laravel",
+              "color": "bg-[#F55247]",
+              "borderColor": "border-[#F43B2F]"
+            },
+            {
+              "name": "Symfony",
+              "color": "bg-[#666666]",
+              "borderColor": "border-[#333333]"
+            }
+          ],
+          "categories": [
+            "code-generator"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "The Codegen Project",
         "description": "Stop wasting time on manual code. Generate Payloads, parameters, headers, types, channel wrappers, and more from your AsyncAPI document! Works with Kafka, NATS, MQTT, event-source, AMQP, HTTP Client!",
         "links": {
@@ -1067,7 +1139,7 @@
         "title": "AsyncAPI-Directory by APIs.guru",
         "description": "Directory of asynchronous API specifications in AsyncAPI format.",
         "links": {
-          "websiteUrl": "https://apis.guru/asyncapi-directory/",
+          "websiteUrl": "https://apis.guru/",
           "repoUrl": "https://github.com/APIs-guru/asyncapi-directory"
         },
         "filters": {
@@ -1160,6 +1232,39 @@
           "categories": [
             "documentation-generator",
             "generator-template"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "Bielu.AspNetCore.AsyncApi",
+        "description": "A library that provides built-in support for generating AsyncAPI documents from minimal or controller-based APIs in ASP.NET Core, bringing the same developer experience as Microsoft.AspNetCore.OpenApi but for AsyncAPI specifications.",
+        "links": {
+          "repoUrl": "https://github.com/bielu/Bielu.AspNetCore.AsyncApi"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "csharp",
+              "color": "bg-[#57f281]",
+              "borderColor": "border-[#37f069]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "ASP.NET Core",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": ".NET",
+              "color": "bg-[#A184FF]",
+              "borderColor": "border-[#5026D4]"
+            }
+          ],
+          "categories": [
+            "code-first",
+            "documentation-generator"
           ],
           "hasCommercial": false
         }
@@ -1347,6 +1452,33 @@
     "toolsList": [
       {
         "title": "AsyncAPI Studio",
+        "description": "Visually design your AsyncAPI files and event-driven architecture.",
+        "links": {
+          "websiteUrl": "https://studio.asyncapi.com",
+          "repoUrl": "https://github.com/asyncapi/studio"
+        },
+        "filters": {
+          "language": [],
+          "technology": [
+            {
+              "name": "React JS",
+              "color": "bg-[#9FECFA]",
+              "borderColor": "border-[#08D8FE]"
+            },
+            {
+              "name": "TypeScript",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "editor"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "AsyncAPI Studio",
         "description": null,
         "links": {
           "websiteUrl": "https://studio.asyncapi.com",
@@ -1378,33 +1510,6 @@
         "links": {
           "websiteUrl": "https://studio.asyncapi.com",
           "repoUrl": "https://github.com/TahaShahid203/async-api-issue"
-        },
-        "filters": {
-          "language": [],
-          "technology": [
-            {
-              "name": "React JS",
-              "color": "bg-[#9FECFA]",
-              "borderColor": "border-[#08D8FE]"
-            },
-            {
-              "name": "TypeScript",
-              "color": "bg-[#61d0f2]",
-              "borderColor": "border-[#40ccf7]"
-            }
-          ],
-          "categories": [
-            "editor"
-          ],
-          "hasCommercial": false
-        }
-      },
-      {
-        "title": "AsyncAPI Studio",
-        "description": "Visually design your AsyncAPI files and event-driven architecture.",
-        "links": {
-          "websiteUrl": "https://studio.asyncapi.com",
-          "repoUrl": "https://github.com/asyncapi/studio"
         },
         "filters": {
           "language": [],
@@ -1880,7 +1985,7 @@
         "description": "Your API Mocking Tool for Agile Development. Mock and simulate AsyncAPI and OpenAPI services for local testing, development, and CI pipelines — with a visual dashboard to inspect your mocks and a powerful test data generator fully customizable with JavaScript.",
         "links": {
           "websiteUrl": "https://mokapi.io",
-          "docsUrl": "https://mokapi.io/docs/guides/welcome",
+          "docsUrl": "https://mokapi.io/docs/welcome",
           "repoUrl": "https://github.com/marle3003/mokapi"
         },
         "filters": {
@@ -2516,7 +2621,7 @@
         "description": "Your API Mocking Tool for Agile Development. Mock and simulate AsyncAPI and OpenAPI services for local testing, development, and CI pipelines — with a visual dashboard to inspect your mocks and a powerful test data generator fully customizable with JavaScript.",
         "links": {
           "websiteUrl": "https://mokapi.io",
-          "docsUrl": "https://mokapi.io/docs/guides/welcome",
+          "docsUrl": "https://mokapi.io/docs/welcome",
           "repoUrl": "https://github.com/marle3003/mokapi"
         },
         "filters": {
@@ -2844,6 +2949,33 @@
       },
       {
         "title": "HTML Template",
+        "description": null,
+        "links": {
+          "repoUrl": "https://github.com/WSOL12/html-template"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "JavaScript",
+              "color": "bg-[#F2F1C7]",
+              "borderColor": "border-[#BFBE86]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "HTML",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "generator-template"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "HTML Template",
         "description": "HTML template for AsyncAPI Generator. Use it to generate a static docs. It is using AsyncAPI React component under the hood.",
         "links": {
           "repoUrl": "https://github.com/asyncapi/html-template"
@@ -2874,33 +3006,6 @@
         "description": null,
         "links": {
           "repoUrl": "https://github.com/dipaksodani/async-gen"
-        },
-        "filters": {
-          "language": [
-            {
-              "name": "JavaScript",
-              "color": "bg-[#F2F1C7]",
-              "borderColor": "border-[#BFBE86]"
-            }
-          ],
-          "technology": [
-            {
-              "name": "HTML",
-              "color": "bg-[#61d0f2]",
-              "borderColor": "border-[#40ccf7]"
-            }
-          ],
-          "categories": [
-            "generator-template"
-          ],
-          "hasCommercial": false
-        }
-      },
-      {
-        "title": "HTML Template",
-        "description": null,
-        "links": {
-          "repoUrl": "https://github.com/WSOL12/html-template"
         },
         "filters": {
           "language": [
