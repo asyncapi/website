@@ -143,6 +143,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
 
               <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
                 <TOC
+                  key = {router.asPath}
                   toc={post.toc}
                   depth={3}
                   className='sticky top-20 mt-4 max-h-screen overflow-y-auto bg-blue-100 p-4 xl:mt-0 xl:w-72 xl:bg-transparent xl:pb-8'
