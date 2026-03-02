@@ -11,7 +11,7 @@ class AmbassadorsPage {
       .should('be.visible');
     cy.get('[data-testid="Ambassadors-members-main"]')
       .should('be.visible');
-    cy.get('a[href="https://github.com/asyncapi/community/blob/master/AMBASSADOR_ORGANIZATION.md#are-you-interested-in-becoming-an-official-asyncapi-ambassador"]')
+    cy.get('[data-testid="Events-ambassadors"]')
       .scrollIntoView()
       .should('be.visible');
     cy.get('a[href="https://www.asyncapi.com/blog/asyncapi-ambassador-program"]')
