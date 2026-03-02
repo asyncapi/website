@@ -5,6 +5,8 @@ import RoadmapPage from './RoadmapPage';
 import CommunityPage from './CommunityPage';
 import ToolsPage from './ToolsPage';
 import BlogPage from './BlogPage';
+import TSCPage from './tscpage';
+import AmbassadorsPage from './ambassadors';
 
 import { features } from '../../components/features/FeatureList';
 import packageJson from '../../package.json';
@@ -118,6 +120,16 @@ class HomePage extends BasePage {
   goToRoadmapPage() {
     cy.contains('a', 'Roadmap').click();
     return new RoadmapPage();
+  }
+
+  goToTSCPage() {
+    cy.visit('/community/tsc');
+    return new TSCPage();
+  }
+
+  goToAmbassadorsPage() {
+    cy.visit('/community/ambassadors');
+    return new AmbassadorsPage();
   }
 }
 
