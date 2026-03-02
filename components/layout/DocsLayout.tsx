@@ -19,6 +19,7 @@ import ArrowRight from '../icons/ArrowRight';
 import IconMenuCenter from '../icons/CenterMenu';
 import DocsMobileMenu from '../navigation/DocsMobileMenu';
 import DocsNavWrapper from '../navigation/DocsNavWrapper';
+import DocsNavigationShortcuts from '../navigation/DocsNavigationShortcuts';
 import TOC from '../TOC';
 import Heading from '../typography/Heading';
 
@@ -151,6 +152,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                   <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg}>
                     {post.title}
                   </Heading>
+                  <DocsNavigationShortcuts post={post} />
                   <div>
                     <p className='font-normal font-sans text-sm text-gray-600 antialiased'>
                       Found an error? Have a suggestion?
