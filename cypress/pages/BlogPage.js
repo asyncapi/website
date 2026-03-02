@@ -1,6 +1,10 @@
 import BasePage from './BasePage';
 
 class BlogPage extends BasePage {
+  visit() {
+    super.visit('/blog');
+  }
+
   verifyPageLoaded() {
     this.verifyHeadingExists('Welcome to our blog!');
   }
