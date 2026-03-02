@@ -1,5 +1,5 @@
 import ToolsModelina from './pages/toolsModelina';
-import toolsData from './fixtures/toolsPages.json';
+import toolsData from './data/toolsPages.json';
 
 describe('Tools - Modelina Page', () => {
   const page = new ToolsModelina();

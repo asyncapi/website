@@ -1,5 +1,5 @@
 import toolsGenerator from './pages/toolsGenerator';
-import toolsData from './fixtures/toolsPages.json';
+import toolsData from './data/toolsPages.json';
 
 describe('Tools - Generator Page', () => {
   const page = new toolsGenerator();

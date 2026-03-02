@@ -1,5 +1,5 @@
 import BasePage from './pages/BasePage';
-import toolsData from './fixtures/toolsPages.json';
+import toolsData from './data/toolsPages.json';
 
 describe('Tools - CLI', () => {
  const page = new BasePage();
