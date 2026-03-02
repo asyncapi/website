@@ -13,6 +13,8 @@ import Layout from '@/components/layout/Layout';
 import NavBar from '@/components/navigation/NavBar';
 import StickyNavbar from '@/components/navigation/StickyNavbar';
 import AppContext from '@/context/AppContext';
+import ErrorBoundary from '@/components/ErrorBoundary';
+
 
 /**
  * @description The MyApp component is the root component for the application.
@@ -21,6 +23,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <AppContext.Provider value={{ path: router.asPath }}>
       {/* <MDXProvider components={mdxComponents}> */}
+      <ErrorBoundary>
       <Head>
         <script async defer src='https://buttons.github.io/buttons.js'></script>
       </Head>
@@ -39,6 +42,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           </div>
         </div>
       </AlgoliaSearch>
+        </ErrorBoundary>
       {/* </MDXProvider> */}
     </AppContext.Provider>
   );

@@ -38,6 +38,9 @@ export { getStaticPaths, getStaticProps };
  */
 export default function HomePage() {
   const { t } = useTranslation('landing-page');
+  
+
+  
 
   return (
     <>
