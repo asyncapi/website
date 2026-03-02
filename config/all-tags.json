@@ -223,12 +223,12 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "FastAPI",
+      "name": "TypeScript",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "TypeScript",
+      "name": "FastAPI",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
@@ -288,12 +288,12 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "AsyncAPI CLI",
+      "name": "AsyncAPI Generator",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "AsyncAPI Generator",
+      "name": "AsyncAPI CLI",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
@@ -318,12 +318,12 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "JetBrains",
+      "name": "SmartPaste",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "SmartPaste",
+      "name": "JetBrains",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
