@@ -1,4 +1,4 @@
-import { useFloating } from '@floating-ui/react-dom-interactions';
+import { useFloating } from '@floating-ui/react';
 import type { RefObject } from 'react';
 import React, { useEffect, useRef, useState } from 'react';
 
@@ -63,7 +63,7 @@ export default function Filters({
   setSelectedArea
 }: FilterProps) {
   const [open, setOpen] = useState(false);
-  const { x, y, reference, floating, strategy } = useFloating({
+  const { x, y, refs, strategy } = useFloating({
     placement: 'left-start',
     open
   });
@@ -87,7 +87,7 @@ export default function Filters({
     <>
       <img
         onClick={() => setOpen(!open)}
-        ref={reference}
+        ref={refs.setReference}
         alt='filter menu'
         src='/img/illustrations/icons/filters-icon.svg'
         className={`cursor-pointer ${className}`}
@@ -97,7 +97,7 @@ export default function Filters({
       <div ref={wrapperRef}>
         {open && (
           <div
-            ref={floating}
+            ref={refs.setFloating}
             className={`${strategy} ${x && x > 0 ? `left-[${x}px]` : 'left-[14px]'}`}
             style={{
               top: y ?? '',

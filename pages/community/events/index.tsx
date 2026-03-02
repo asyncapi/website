@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { ArrowRightIcon } from '@heroicons/react/outline';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 import CommunityEvents from '@/components/CommunityEvents';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
