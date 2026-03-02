@@ -5,6 +5,8 @@ import RoadmapPage from './RoadmapPage';
 import CommunityPage from './CommunityPage';
 import ToolsPage from './ToolsPage';
 import BlogPage from './BlogPage';
+import AmbassadorsPage from './ambassadors';
+import TSCPage from './TSCPage';
 
 import { features } from '../../components/features/FeatureList';
 import packageJson from '../../package.json';
