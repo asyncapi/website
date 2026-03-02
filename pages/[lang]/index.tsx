@@ -159,7 +159,7 @@ export default function HomePage() {
             <GoldSponsors className='mt-4' showSupportBanner={false} />
           </Container>
 
-          <Container className='pyb-6 text-center' wide as='section'>
+          <Container className='pb-6 text-center' wide as='section'>
             <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
               {t('sponsors.silverTitle')}
             </Heading>
