@@ -30,7 +30,7 @@ You can also skip the step below by clicking on New File in Studio and opening t
 2. Copy and paste the below invalid AsyncAPI document:
 
 ```yaml
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 info:
   title: Streetlights API
   version: '1.0.0'

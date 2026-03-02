@@ -1,10 +1,8 @@
-class EventsPage {
-  visit() {
-    cy.visit('/community/events');
-  }
+import BasePage from './BasePageTools';
 
-  verifyElementIsVisible(selector) {
-    cy.get(selector).should('be.visible');
+class EventsPage extends BasePage {
+  visit() {
+    super.visit('/community/events');
   }
 
   verifyMainVisible() {
@@ -33,33 +31,7 @@ class EventsPage {
         new RegExp(`^${label}$`, 'i'),
       )
       .click();
-    cy.wait(500);
-  }
-
-  verifyEventCardLinkByTitleAndHref(title, href, metaText) {
-    if (metaText) {
-      cy.contains('[data-testid="Event-span"]', metaText)
-        .parents('[data-testid="EventPostItem-main"]')
-        .within(() => {
-          cy.contains('h3', title).should('exist');
-          cy.get('a[data-testid="EventPostItem-link"]').should(
-            'have.attr',
-            'href',
-            href,
-          );
-        });
-    } else {
-      cy.contains('[data-testid="EventPostItem-main"]', title)
-        .find('a[data-testid="EventPostItem-link"]')
-        .should('have.attr', 'href', href);
-    }
-  }
-
-  verifyEventCardHrefByIndex(index, expectedHref) {
-    cy.get('[data-testid="EventPostItem-main"]')
-      .eq(index)
-      .find('a[data-testid="EventPostItem-link"]')
-      .should('have.attr', 'href', expectedHref);
+    cy.get('[data-testid="EventPostItem-main"]').should('be.visible');
   }
 
   verifyEventCards() {
@@ -73,10 +45,6 @@ class EventsPage {
       });
   }
 
-  verifyAllEventCards() {
-    this.verifyEventCards();
-  }
-
   switchToAll() {
     this.switchToFilter('All');
   }
@@ -87,14 +55,6 @@ class EventsPage {
 
   switchToRecorded() {
     this.switchToFilter('Recorded');
-  }
-
-  verifyUpcomingEventCards() {
-    this.verifyEventCards();
-  }
-
-  verifyRecordedEventCards() {
-    this.verifyEventCards();
   }
 
   verifyEventButtonsLinks() {
@@ -138,7 +98,10 @@ class EventsPage {
     cy.get('a[data-testid="TextLink-href"]')
       .should('have.length.greaterThan', 0)
       .each(($link) => {
-        cy.wrap($link).should('have.attr', 'href');
+        cy.wrap($link)
+          .should('have.attr', 'href')
+          .and('not.be.empty')
+          .and('match', /^https?:\/\/.+/);
       });
   }
 }

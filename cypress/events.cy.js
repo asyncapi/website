@@ -1,53 +1,53 @@
 import EventsPage from './pages/events';
 
-describe('Events Page Tests', () => {
+describe('Events Page', () => {
   const events = new EventsPage();
 
   beforeEach(() => {
     events.visit();
   });
 
-  it('User navigates to the events page and verifies main sections and action buttons', () => {
+  it('should display main sections and action buttons', () => {
     events.verifyMainVisible();
     events.verifyActionButtons();
   });
 
-  it('User verifies Google Calendar and ICS file button links', () => {
+  it('should display Google Calendar and ICS file button links', () => {
     events.verifyEventButtonsLinks();
   });
 
-  it('User verifies recordings section with correct link', () => {
+  it('should display recordings section with correct link', () => {
     events.verifyRecordingsSection();
     events.verifyRecordingsLinkHref();
   });
 
-  it('User verifies all event recording links from source', () => {
+  it('should display all event recording links', () => {
     events.verifyEventRecordingLinks();
   });
 
-  it('User verifies event types section', () => {
+  it('should display event types section', () => {
     events.verifyEventTypes();
   });
 
-  it('User verifies FAQ link points to correct documentation', () => {
+  it('should display FAQ link pointing to correct documentation', () => {
     events.verifyFaqLink();
   });
 
-  it('User verifies all host profile links', () => {
+  it('should display all host profile links', () => {
     events.verifyHostLinks();
   });
 
-  it('User verifies event cards have valid links on All tab', () => {
-    events.verifyAllEventCards();
+  it('should display event cards with valid links on All tab', () => {
+    events.verifyEventCards();
   });
 
-  it('User switches to Upcoming tab and verifies event cards have valid links', () => {
+  it('should display event cards with valid links on Upcoming tab', () => {
     events.switchToUpcoming();
-    events.verifyUpcomingEventCards();
+    events.verifyEventCards();
   });
 
-  it('User switches to Recorded tab and verifies event cards have valid links', () => {
+  it('should display event cards with valid links on Recorded tab', () => {
     events.switchToRecorded();
-    events.verifyRecordedEventCards();
+    events.verifyEventCards();
   });
 });

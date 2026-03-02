@@ -1,25 +1,25 @@
 import DashboardPage from './pages/dashboard';
 
-describe('Dashboard Page Tests', () => {
+describe('Dashboard Page', () => {
   const dashboard = new DashboardPage();
 
   beforeEach(() => {
     dashboard.visit();
   });
 
-  it('User navigates to the dashboard and verifies header', () => {
+  it('should display the header', () => {
     dashboard.verifyHeader();
   });
 
-  it('User verifies Hot Topics section', () => {
+  it('should display the Hot Topics section', () => {
     dashboard.verifyHotTopicsSection();
   });
 
-  it('User verifies Good First Issues section', () => {
+  it('should display the Good First Issues section', () => {
     dashboard.verifyGoodFirstIssuesSection();
   });
 
-  it('User verifies all header links point to correct URLs from source', () => {
+  it('should display header links with correct URLs', () => {
     dashboard.verifyHeaderLinks();
   });
 });

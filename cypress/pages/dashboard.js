@@ -1,14 +1,8 @@
-class DashboardPage {
+import BasePage from './BasePageTools';
+
+class DashboardPage extends BasePage {
   visit() {
-    cy.visit('/community/dashboard');
-  }
-
-  verifyElementIsVisible(selector) {
-    cy.get(selector).should('be.visible');
-  }
-
-  verifyTextVisible(text) {
-    cy.contains(text).should('be.visible');
+    super.visit('/community/dashboard');
   }
 
   verifyHeader() {
@@ -23,26 +17,11 @@ class DashboardPage {
     this.verifyTextVisible('Hot Topics');
   }
 
-  verifyElementHasAttribute(selector, attribute, value) {
-    cy.get(selector).should('have.attr', attribute, value);
-  }
-
-  verifyLinkWithText(selector, text, expectedHrefPart) {
-    cy.contains(selector, text)
+  verifyHeaderLinks() {
+    cy.contains('[data-testid="Button-link"]', 'Contribution Guide')
       .should('be.visible')
       .and('have.attr', 'href')
-      .and('include', expectedHrefPart);
-  }
-
-  verifyHeaderLinks() {
-    this.verifyLinkWithText(
-      '[data-testid="Button-link"]',
-      'Contribution Guide',
-      'github.com/asyncapi',
-    );
-
-    cy.contains('[data-testid="Button-link"]', 'Contribution Guide')
-      .should('have.attr', 'href')
+      .and('include', 'github.com/asyncapi')
       .and('include', 'type=source');
 
     this.verifyLinkWithText(

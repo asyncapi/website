@@ -1,0 +1,74 @@
+{
+    "main": {
+       "header": "构建未来的",
+        "subHeader": "事件驱动架构（EDA）",
+        "body_pretext": "开源工具，让你轻松构建和维护事件驱动架构。所有这些都基于 AsyncAPI 规范，",
+        "body_boldtext": "行业标准",
+        "body_posttext": "，用于定义异步 API。",
+        "docs_btn": "阅读文档",
+        "search_btn": "快速搜索...",
+        "slogan_text": "自豪地成为",
+        "slogan_link": "Linux 基金会的一部分"
+    },
+    "features": {
+        "title": "为什么选择 AsyncAPI？",
+        "description": "改善事件驱动架构（EDA）的现状",
+
+        "specification.name": "规范",
+        "specification.description": "允许你定义异步 API 的接口，并且与协议无关。",
+        "specification.links.whyasyncapi-spec-documentation-link": "文档",
+
+        "document-apis.name": "API 文档",
+        "document-apis.description": "使用我们的工具在构建阶段、服务器端或客户端生成文档。",
+        "document-apis.links.whyasyncapi-apis-htmltemplate-link": "HTML 模板",
+        "document-apis.links.whyasyncapi-apis-reactcomponents-link": "React 组件",
+
+        "code-generation.name": "代码生成",
+        "code-generation.description": "从你的 AsyncAPI 文件中生成文档、代码（TypeScript、Java、C# 等）以及更多内容。",
+        "code-generation.links.whyasyncapi-generation-generator-link": "代码生成器",
+        "code-generation.links.whyasyncapi-generation-modelina-link": "Modelina",
+
+        "community.name": "社区",
+        "community.description": "我们是一个由热爱 AsyncAPI 和事件驱动架构的优秀成员组成的社区。",
+        "community.links.whyasyncapi-community-slack-link": "加入我们的 Slack 工作区",
+
+        "open-governance.name": "开放式治理",
+        "open-governance.description": "我们的开源项目隶属于 Linux 基金会，并采用开放式治理模式运作。",
+        "open-governance.links.whyasyncapi-governance-more-link": "了解更多关于开放式治理",
+        "open-governance.links.whyasyncapi-governance-tsc-link": "TSC 成员",
+
+        "much-more.name": "还有更多……",
+        "much-more.description": "我们拥有许多不同的工具，欢迎你探索我们的想法，并为 AsyncAPI 提出新的创意。",
+        "much-more.links.whyasyncapi-muchmore-github-link": "查看 GitHub 讨论"
+    },
+    "adopters": {
+        "title": "被全球领先品牌采用",
+        "description": "这些品牌已经在生产环境中使用 AsyncAPI。贵公司是否也在使用 AsyncAPI，并希望加入此列表？",
+        "linkText": "在这里告诉我们！"
+    },
+    "community": {
+        "title": "加入我们优秀的社区！",
+        "subtitle": "我们是一个由对 AsyncAPI 和事件驱动架构充满热情的优秀成员组成的社区。",
+        "slackCTATitle": "加入我们的 Slack 工作空间",
+        "slackCTADesc": "我们欢迎所有人加入我们的 Slack 工作空间。如果你对如何使用 AsyncAPI 有疑问、想参与贡献，或只是想打个招呼 👋，都非常欢迎加入我们。我们都是友善的人 🙂",
+        "slackCTABtn": "加入我们！",
+        "meetingTitle": "参加我们的公开会议",
+        "meetingDesc": "AsyncAPI 每周都会举办不同的会议。这些会议专注于不同主题，有时是纯技术内容，有时是关于社区建设。选择一个你感兴趣的会议并加入我们吧！",
+        "meetingLink": "了解更多会议信息。"
+    },
+    "sponsors": {
+        "platinumTitle": "白金赞助商",
+        "goldTitle": "黄金赞助商",
+        "silverTitle": "白银赞助商",
+        "sponsorCTATitle": "想赞助我们吗？",
+        "sponsorCTADesc": "这些优秀的组织已经在支持 AsyncAPI。想成为赞助商吗？",
+        "sponsorCTALink": "支持我们！",
+        "supportedByTitle": "合作支持",
+        "supportedByPretext": "以下公司通过免费提供产品来支持我们。你也想支持我们吗？",
+        "supportedByLink": "给我们发邮件",
+        "supportedByPosttext": " 获取更多信息。"
+        },
+    "testimonials": {
+        "title": "专业人士观点"
+    }
+}
