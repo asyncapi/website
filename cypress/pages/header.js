@@ -1,7 +1,6 @@
+import BaseHeaderPage from './BaseHeaderPage';
 
-import BasePage from './BaseHeaderPage';
-
-class Header extends BasePage {
+class Header extends BaseHeaderPage {
   verifyDropdownSections(navItemName) {
     this.getElement('[data-testid="Navbar-main"] a')
       .contains(navItemName)

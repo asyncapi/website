@@ -8,21 +8,17 @@ describe('Footer Links Validation', () => {
     footer.visit();
   });
 
-  it('verifies the initiative links in the footer', () => {
-    initiativeLinks.forEach(({ url, label }) => {
-      footer.verifyFooterLink(url, label);
-    });
-  });
+  const linkGroups = [
+    { name: 'initiative', links: initiativeLinks },
+    { name: 'social', links: socialMediaData },
+    { name: 'news', links: newsLinks }
+  ];
 
-  it('verifies the social links in the footer', () => {
-    socialMediaData.forEach(({ url, label }) => {
-      footer.verifyFooterLink(url, label);
-    });
-  });
-
-  it('verifies the news links in the footer', () => {
-    newsLinks.forEach(({ url, label }) => {
-      footer.verifyFooterLink(url, label);
+  linkGroups.forEach(({ name, links }) => {
+    it(`verifies the ${name} links in the footer`, () => {
+      links.forEach(({ url, label }) => {
+        footer.verifyFooterLink(url, label);
+      });
     });
   });
   

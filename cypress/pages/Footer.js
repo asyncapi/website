@@ -1,7 +1,6 @@
-import BasePage from './BaseFooterPage';
+import BaseFooterPage from './BaseFooterPage';
 
-class Footer extends BasePage {
-
+class Footer extends BaseFooterPage {
   constructor() {
     super();
     this.footerSelector = 'footer';

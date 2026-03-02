@@ -1,5 +1,5 @@
 import BasePage from './BasePage';
-import toolsData from '../fixtures/toolsPages.json';
+import toolsData from '../data/toolsPages.json';
 
 class ToolsGenerator extends BasePage {
   verifyGeneratorWorkflowDiagram() {

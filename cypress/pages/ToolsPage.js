@@ -1,4 +1,5 @@
 import BasePage from './BasePage';
+
 class ToolsPage extends BasePage {
   visitToolsPage() {
     super.visit('/tools');
@@ -8,14 +9,10 @@ class ToolsPage extends BasePage {
     this.verifyHeadingExists('Tools');
   }
 
-  verifyHeader() {
-    this.verifyPageLoaded();
-  }
-
   verifyToolLink(href, heading, linkType) {
     const linkTexts = {
       website: 'Visit Website',
-      github: 'View Github',
+      github: 'View GitHub',
       docs: 'Visit Docs',
     };
 
@@ -27,4 +24,5 @@ class ToolsPage extends BasePage {
       });
   }
 }
+
 export default ToolsPage;
