@@ -166,8 +166,7 @@
         "isTscMember": true,
         "repos": [
             "spec-json-schemas",
-            "studio",
-            "optimizer"
+            "studio"
         ],
         "githubID": 32505158
     },
@@ -622,19 +621,6 @@
         "githubID": 108233235
     },
     {
-        "name": "Ashmit Jagtap",
-        "github": "ashmit-coder",
-        "linkedin": "ashmit-jagtap",
-        "twitter": "AshmitJagtap",
-        "slack": "U06RA7GDHU1",
-        "availableForHire": true,
-        "isTscMember": true,
-        "repos": [
-            "conference-website"
-        ],
-        "githubID": 69006513
-    },
-    {
         "name": "Hari Krishnan",
         "github": "harikrishnan83",
         "twitter": "harikrishnan83",
@@ -751,8 +737,7 @@
         "availableForHire": true,
         "isTscMember": true,
         "repos": [
-            "website",
-            "conference-website"
+            "website"
         ],
         "githubID": 90895835
     },
@@ -779,6 +764,18 @@
             "vs-asyncapi-preview"
         ],
         "githubID": 72685035
+    },
+    {
+        "name": "TenzDelek",
+        "github": "TenzDelek",
+        "linkedin": "tenzdelek",
+        "slack": "U06SWFWLLQG",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "conference-website"
+        ],
+        "githubID": 122612557
     },
     {
         "name": "Daniel Kocot",
