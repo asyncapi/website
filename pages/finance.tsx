@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import AsyncAPISummary from '../components/FinancialSummary/AsyncAPISummary';
 import BarChartComponent from '../components/FinancialSummary/BarChartComponent';
@@ -16,21 +16,24 @@ import Container from '../components/layout/Container';
  * bar chart, success stories, and contact us components.
  */
 export default function FinancialSummary() {
-  const [windowWidth, setWindowWidth] = useState<number>(0);
+  // Initialize as null to avoid hydration/layout shift
+  const [windowWidth, setWindowWidth] = useState<number | null>(null);
+   const handleResize = () => {
+    console.log("resized")
+      setWindowWidth(window.innerWidth);
+    };
 
-  const handleResizeRef = useRef<() => void>(null!);
-
-  handleResizeRef.current = () => {
-    setWindowWidth(window.innerWidth);
-  };
-
-  // Handle window resize event to update the window width state value for responsive design purposes
+  // Properly scoped resize handler with correct cleanup
   useEffect(() => {
-    handleResizeRef.current!();
-    window.addEventListener('resize', handleResizeRef.current!);
+
+
+    // Set initial width on mount
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResizeRef.current!);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -41,8 +44,9 @@ export default function FinancialSummary() {
     <>
       <Head>
         <title>{title}</title>
-        <meta name='description' content={description} />
+        <meta name="description" content={description} />
       </Head>
+
       <AsyncAPISummary />
       <SponsorshipTiers />
       <OtherFormsComponent />
@@ -53,7 +57,18 @@ export default function FinancialSummary() {
     </>
   );
 
+  // Avoid rendering until window size is known (prevents CLS)
+  if (windowWidth === null) {
+    return null; // or a skeleton/loading placeholder
+  }
+
   const shouldUseContainer = windowWidth > 1700;
 
-  return <div>{shouldUseContainer ? <Container wide>{renderComponents()}</Container> : renderComponents()}</div>;
+  return (
+    <div className="w-full">
+  <div className="2xl:container 2xl:mx-auto 2xl:px-8">
+    {renderComponents()}
+  </div>
+</div>
+  );
 }
