@@ -45,29 +45,73 @@ To refresh the variables:
  source ~/.zshrc    # For zsh
 ```
 
-## Docker
+# Docker
 
-Install [Docker](https://docs.docker.com/get-docker/) first, then use docker to build the image using the following command :
-``` 
-docker build -t asyncapi/cli:latest . 
-``` 
-and run the image using the following command :
+Install [Docker](https://docs.docker.com/get-docker/) first, then you can either **build the image locally** or **pull it from Docker Hub**.
+
+---
+
+## 🏗️ Option 1: Build the image locally
+
+Build the image using:
+
+```bash
+docker build   -t asyncapi/cli:latest   .
+```
+
+Run the image using:
 
 ```bash
 docker run --rm -it \
---user=root \
--v [ASYNCAPI SPEC FILE LOCATION]:/app/asyncapi.yml \
--v [GENERATED FILES LOCATION]:/app/output \
-asyncapi/cli [COMMAND HERE]
-
-# Example that you can run inside the cli directory after cloning this repository. First, you specify the mount in the location of your AsyncAPI specification file and then you mount it in the directory where the generation result should be saved.
-docker run --rm -it \
-   --user=root \
-   -v ${PWD}/test/integration/fixtures/asyncapi_v1.yml:/app/asyncapi.yml \
-   -v ${PWD}/output:/app/output \
-   asyncapi/cli generate fromTemplate -o /app/output /app/asyncapi.yml @asyncapi/html-template --force-write
+  --user=root \
+  -v [ASYNCAPI SPEC FILE LOCATION]:/app/asyncapi.yml \
+  -v [GENERATED FILES LOCATION]:/app/output \
+  asyncapi/cli [COMMAND HERE]
 ```
-Note: Use ``` ` ``` instead of `\` for Windows.
+
+### Example
+
+You can run this example inside the `cli` directory after cloning this repository.
+
+```bash
+docker run --rm -it \
+  --user=root \
+  -v ${PWD}/test/integration/fixtures/asyncapi_v1.yml:/app/asyncapi.yml \
+  -v ${PWD}/output:/app/output asyncapi/cli generate fromTemplate \
+  -o /app/output /app/asyncapi.yml @asyncapi/html-template --force-write
+```
+
+> **Note:** Use backticks (`` ` ``) instead of backslashes (`\`) when running on Windows.
+
+---
+
+## 🐳 Option 2: Pull the image from Docker Hub
+
+Instead of building the image manually, you can pull the official image directly from Docker Hub:
+
+```bash
+docker pull asyncapi/cli
+```
+
+Then, run it the same way:
+
+```bash
+docker run --rm -it \
+  --user=root \
+  -v [ASYNCAPI SPEC FILE LOCATION]:/app/asyncapi.yml \
+  -v [GENERATED FILES LOCATION]:/app/output \
+  asyncapi/cli [COMMAND HERE]
+
+```
+### Example
+
+```bash
+docker run --rm -it \
+  --user=root \
+  -v ${PWD}/test/integration/fixtures/asyncapi_v1.yml:/app/asyncapi.yml \
+  -v ${PWD}/output:/app/output asyncapi/cli generate fromTemplate \
+  -o /app/output /app/asyncapi.yml @asyncapi/html-template --force-write
+```
 
 
 ## Mac
