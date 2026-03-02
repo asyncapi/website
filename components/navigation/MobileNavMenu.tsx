@@ -65,7 +65,9 @@ export default function MobileNavMenu({
               </Link>
               <div className='justify-content -mr-2 flex flex-row items-center' data-testid='MobileNav-button'>
                 <SearchButton
-                  className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
+                  className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400
+                  transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500
+                  focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
                   aria-label='Open Search'
                 >
                   <SearchIcon />
@@ -73,7 +75,9 @@ export default function MobileNavMenu({
                 <button
                   onClick={onClickClose}
                   type='button'
-                  className='inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
+                  className='inline-flex items-center justify-center rounded-md p-2 text-gray-400
+                  transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500
+                  focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
                 >
                   <svg className='size-6' stroke='currentColor' fill='none' viewBox='0 0 24 24'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M6 18L18 6M6 6l12 12' />
@@ -84,21 +88,31 @@ export default function MobileNavMenu({
           </div>
           <div className='space-y-2 px-5 py-2' onClick={() => showMenu('learning')} data-testid='MobileNav-docs'>
             <h4 className='flex justify-between font-medium text-gray-800'>
-              {' '}
               <Link href='/docs' className='flex cursor-pointer'>
                 Docs
               </Link>
-              <NavItemDropdown />
+              <span
+                className={`inline-flex items-center transition-transform duration-200 ${
+                  open === 'learning' ? 'rotate-180' : ''
+                }`}
+              >
+                <NavItemDropdown />
+              </span>
             </h4>
             {open === 'learning' && <MenuBlocks items={learningItems} />}
           </div>
           <div className='space-y-2 px-5 py-2' onClick={() => showMenu('tooling')} data-testid='MobileNav-tools'>
             <h4 className='flex justify-between font-medium text-gray-800'>
-              {' '}
               <Link href='/tools' className='flex cursor-pointer'>
                 Tools
               </Link>
-              <NavItemDropdown />
+              <span
+                className={`inline-flex items-center transition-transform duration-200 ${
+                  open === 'tooling' ? 'rotate-180' : ''
+                }`}
+              >
+                <NavItemDropdown />
+              </span>
             </h4>
             {open === 'tooling' && <MenuBlocks items={toolingItems} />}
           </div>
@@ -107,7 +121,13 @@ export default function MobileNavMenu({
               <Link href='/community' className='flex cursor-pointer'>
                 Community
               </Link>
-              <NavItemDropdown />
+              <span
+                className={`inline-flex items-center transition-transform duration-200 ${
+                  open === 'community' ? 'rotate-180' : ''
+                }`}
+              >
+                <NavItemDropdown />
+              </span>
             </h4>
             {open === 'community' && <MenuBlocks items={communityItems} />}
           </div>
@@ -116,7 +136,13 @@ export default function MobileNavMenu({
               <div>
                 <h4 className='mb-4 flex justify-between font-medium text-gray-800'>
                   <a className='cursor-pointer'>Others</a>
-                  <NavItemDropdown />
+                  <span
+                    className={`inline-flex items-center transition-transform duration-200 ${
+                      open === 'others' ? 'rotate-180' : ''
+                    }`}
+                  >
+                    <NavItemDropdown />
+                  </span>
                 </h4>
                 {open === 'others' &&
                   otherItems.map((item: MenuItem, index: number) => (
@@ -125,7 +151,8 @@ export default function MobileNavMenu({
                       key={index}
                       target={item.target || '_self'}
                       rel='noopener noreferrer'
-                      className='mb-4 block rounded-lg py-1 text-base font-medium leading-6 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-50'
+                      className='mb-4 block rounded-lg py-1 text-base font-medium leading-6 text-gray-700
+                      transition duration-150 ease-in-out hover:bg-gray-50'
                       data-testid='MobileNav-others'
                     >
                       {item.text}
@@ -141,14 +168,24 @@ export default function MobileNavMenu({
                   <a className='flex cursor-pointer items-center gap-x-2'>
                     Language <IconLanguage />
                   </a>
-                  <NavItemDropdown />
+                  <span
+                    className={`inline-flex items-center transition-transform duration-200 ${
+                      open === 'language' ? 'rotate-180' : ''
+                    }`}
+                  >
+                    <NavItemDropdown />
+                  </span>
                 </h4>
                 {open === 'language' &&
                   uniqueLangs.map((lang) => (
                     <button
                       key={lang.key}
                       onClick={() => changeLanguage(lang.value.toLowerCase(), true)}
-                      className={`mb-4 ml-2 block w-full rounded-lg py-1 text-start text-sm font-medium leading-6 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-50 ${currentLanguage.toLowerCase() === lang.text.toLowerCase() ? 'text-secondary-500' : ''}`}
+                      className={`mb-4 ml-2 block w-full rounded-lg py-1 text-start text-sm
+                      font-medium leading-6 text-gray-700 transition duration-150 ease-in-out
+                      hover:bg-gray-50 ${
+                        currentLanguage.toLowerCase() === lang.text.toLowerCase() ? 'text-secondary-500' : ''
+                      }`}
                       data-testid='MobileNav-language-item'
                     >
                       {langMap[lang.text.toLowerCase() as keyof typeof langMap] || lang.text}
