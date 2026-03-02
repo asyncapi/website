@@ -66,5 +66,15 @@
   {
     "value": "community/maintainership-guide",
     "href": "https://github.com/asyncapi/community/tree/master/docs/maintainership-guide"
+  },
+  {
+    "value": "/blog/",
+    "href": "https://github.com/asyncapi/website/edit/master/markdown/blog",
+    "contentType": "blog"
+  },
+  {
+    "value": "/about/",
+    "href": "https://github.com/asyncapi/website/edit/master/markdown/about",
+    "contentType": "about"
   }
 ]
