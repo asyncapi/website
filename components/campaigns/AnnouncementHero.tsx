@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 
 import ArrowLeft from '../icons/ArrowLeft';
 import ArrowRight from '../icons/ArrowRight';
+import Cross from '../icons/Cross';
 import Container from '../layout/Container';
 import Banner from './AnnouncementBanner';
 import { banners, shouldShowBanner } from './banners';
@@ -20,8 +21,42 @@ interface IAnnouncementHeroProps {
  */
 export default function AnnouncementHero({ className = '', small = false }: IAnnouncementHeroProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const visibleBanners = useMemo(() => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)), [banners]);
+  // Start with a stable server-friendly default. Defer reading localStorage until after mount
+  const [isVisible, setIsVisible] = useState(true);
+
+  // Read persisted preference from localStorage on mount (client-only)
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('announcementBannerVisible');
+
+      if (stored == null) {
+        // no persisted preference
+      } else {
+        const val = stored === 'true';
+
+        setIsVisible((prev) => (prev === val ? prev : val));
+      }
+    } catch (e) {
+      // ignore localStorage errors
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
+  // Persist visibility changes after initial mount to avoid SSR/client divergence
+  useEffect(() => {
+    if (!isLoading) {
+      try {
+        localStorage.setItem('announcementBannerVisible', isVisible.toString());
+      } catch (e) {
+        // ignore write errors
+      }
+    }
+  }, [isVisible, isLoading]);
+
+  const visibleBanners = useMemo(() => banners.filter((banner) => shouldShowBanner(banner.cfpDeadline)), []);
   const numberOfVisibleBanners = visibleBanners.length;
 
   const goToPrevious = () => {
@@ -44,7 +79,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
     };
   }, [numberOfVisibleBanners]);
 
-  if (numberOfVisibleBanners === 0) {
+  if (isLoading || numberOfVisibleBanners === 0 || !isVisible) {
     return null;
   }
 
@@ -53,8 +88,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
       <div className='relative flex flex-row items-center justify-center overflow-x-hidden md:gap-4'>
         {numberOfVisibleBanners > 1 && (
           <div
-            className={`absolute left-0 top-1/2 z-10 mb-2 flex size-8 -translate-y-1/2 cursor-pointer
-          items-center justify-center rounded-full bg-primary-500 opacity-50 hover:bg-primary-600 md:opacity-100`}
+            className='absolute left-0 top-1/2 z-10 mb-2 flex size-8 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-primary-500 opacity-50 hover:bg-primary-600 md:opacity-100'
             onClick={goToPrevious}
           >
             <ArrowLeft className='text-white' />
@@ -62,11 +96,19 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
         )}
         <div className='relative flex w-4/5 md:w-5/6 flex-col items-center justify-center gap-2'>
           <div className='relative flex min-h-72 w-full justify-center overflow-hidden lg:h-[17rem] lg:w-[38rem]'>
+            <button
+              type='button'
+              className='absolute right-2 top-6 z-20 p-2 hover:opacity-70'
+              onClick={() => setIsVisible(false)}
+              aria-label='Close announcement'
+            >
+              <Cross />
+            </button>
             {visibleBanners.map((banner, index) => {
               // Only render the active banner
-              const isVisible = index === activeIndex;
+              const isActiveBanner = index === activeIndex;
 
-              if (!isVisible) return null;
+              if (!isActiveBanner) return null;
 
               return (
                 <Banner
@@ -78,7 +120,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
                   cfpDeadline={banner.cfpDeadline}
                   link={banner.link}
                   city={banner.city}
-                  activeBanner={isVisible}
+                  activeBanner={isActiveBanner}
                   className={className}
                   small={small}
                 />
@@ -89,9 +131,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
             {visibleBanners.map((banner, index) => (
               <div
                 key={index}
-                className={`mx-1 size-2 cursor-pointer rounded-full ${
-                  activeIndex === index ? 'bg-primary-500' : 'bg-gray-300'
-                }`}
+                className={`mx-1 size-2 cursor-pointer rounded-full ${activeIndex === index ? 'bg-primary-500' : 'bg-gray-300'}`}
                 onClick={() => goToIndex(index)}
               />
             ))}
@@ -99,8 +139,7 @@ export default function AnnouncementHero({ className = '', small = false }: IAnn
         </div>
         {numberOfVisibleBanners > 1 && (
           <div
-            className={`absolute right-0 top-1/2 z-10 mb-2 size-8 -translate-y-1/2 cursor-pointer
-                      rounded-full bg-primary-500 opacity-50 hover:bg-primary-600 md:opacity-100`}
+            className='absolute right-0 top-1/2 z-10 mb-2 size-8 -translate-y-1/2 cursor-pointer rounded-full bg-primary-500 opacity-50 hover:bg-primary-600 md:opacity-100'
             onClick={goToNext}
           >
             <ArrowRight className='text-white' />
