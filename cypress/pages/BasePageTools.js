@@ -1,6 +1,21 @@
 class BasePage {
-  visit() {
-    cy.visit('/');
+  visit(path = '/') {
+    cy.visit(path);
+  }
+
+  verifyElementIsVisible(selector) {
+    cy.get(selector).should('be.visible');
+  }
+
+  verifyTextVisible(text) {
+    cy.contains(text).should('be.visible');
+  }
+
+  verifyLinkWithText(selector, text, expectedHrefPart) {
+    cy.contains(selector, text)
+      .should('be.visible')
+      .and('have.attr', 'href')
+      .and('include', expectedHrefPart);
   }
 
   getHeaderText(selector, expectedText) {
