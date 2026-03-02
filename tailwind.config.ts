@@ -116,7 +116,10 @@ const config: Config = {
         dark: '#1B1130',
         'cool-gray': '#9C96A8',
         hub: '#252f3f',
-        slack: '#371038',
+        slack: {
+          DEFAULT: '#371038',
+          light: '#4A154B'
+        },
         'mac-window': {
           close: '#ff5f56',
           minimize: '#ffbd2e',
