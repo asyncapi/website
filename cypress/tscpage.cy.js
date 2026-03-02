@@ -27,11 +27,11 @@ describe('TSC Page', () => {
   it('verifies key links on the TSC page', () => {
     const linksToVerify = [
       {
-        href: 'https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md',
+        href: 'https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/TSC_MEMBERSHIP.md',
         label: 'Link',
       },
       {
-        href: 'https://github.com/asyncapi/community/blob/master/CHARTER.md',
+        href: 'https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/CHARTER.md',
         label: 'Open Governance Model',
       },
       {
