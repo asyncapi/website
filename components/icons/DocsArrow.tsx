@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 /* eslint-disable max-len */
 /**
@@ -20,14 +21,18 @@ interface DocsArrowProps {
 export default function DocsArrow({ isDropDown, activeDropDownItem, onClick, className }: DocsArrowProps) {
   return (
     <div
-      className={`my-auto w-6 cursor-pointer rounded-md p-2 ${isDropDown && 'hover:bg-gray-100'}`}
+      className={twMerge('my-auto w-6 cursor-pointer rounded-md p-2', isDropDown && 'hover:bg-gray-100')}
       onClick={isDropDown ? onClick : () => {}}
     >
       {isDropDown && (
         <img
           alt='docs arrow'
           src='/img/illustrations/icons/arrow.svg'
-          className={`m-auto w-fit transition-transform duration-200${className} ${activeDropDownItem ? 'rotate-90' : ''}`}
+          className={twMerge(
+            'm-auto w-fit transition-transform duration-200',
+            className,
+            activeDropDownItem && 'rotate-90'
+          )}
         />
       )}
     </div>

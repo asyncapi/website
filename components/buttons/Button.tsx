@@ -57,15 +57,23 @@ export default function Button({
   icon,
   iconPosition = ButtonIconPosition.RIGHT,
   className = '',
-  bgClassName = twMerge('bg-primary-500 hover:bg-primary-400'),
-  textClassName = twMerge('text-white'),
+  bgClassName = 'bg-primary-500 hover:bg-primary-400',
+  textClassName = 'text-white',
   buttonSize,
   ...props
 }: IButtonProps): React.ReactElement {
-  const smallButtonClasses = twMerge(`${bgClassName} ${textClassName} transition-all duration-500
-                            ease-in-out rounded-md px-3 py-2 text-sm font-medium tracking-heading ${className || ''}`);
-  const classNames = twMerge(`${bgClassName} ${textClassName} transition-all duration-500 ease-in-out
-                          rounded-md px-4 py-3 text-md font-semibold tracking-heading ${className || ''}`);
+  const smallButtonClasses = twMerge(
+    bgClassName,
+    textClassName,
+    'transition-all duration-500 ease-in-out rounded-md px-3 py-2 text-sm font-medium tracking-heading',
+    className
+  );
+  const classNames = twMerge(
+    bgClassName,
+    textClassName,
+    'transition-all duration-500 ease-in-out rounded-md px-4 py-3 text-md font-semibold tracking-heading',
+    className
+  );
 
   if (!props.href) {
     return (

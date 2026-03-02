@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 export interface Tab {
   id: string;
@@ -25,7 +26,7 @@ export default function Tabs({ tabs = [], className = '' }: TabsProps): React.Re
   const tabItemsActiveClassNames = `${tabItemsCommonClassNames} text-teal-300 border-b-2`;
 
   return (
-    <div className={`flex flex-col ${className}`}>
+    <div className={twMerge('flex flex-col', className)}>
       <ul className='flex flex-none rounded-t bg-code-editor-dark pl-1 text-xs'>
         {filteredTabs.map(({ id }) => (
           <li

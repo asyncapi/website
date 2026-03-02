@@ -1,6 +1,7 @@
 import { CheckIcon } from '@heroicons/react/outline';
 import React, { useState } from 'react';
 import Highlight from 'react-syntax-highlighter';
+import { twMerge } from 'tailwind-merge';
 
 import Caption from '../Caption';
 import IconClipboard from '../icons/Clipboard';
@@ -261,7 +262,7 @@ export default function CodeBlock({
           </div>
         )}
 
-        <div className={`relative overflow-y-auto pr-8 ${highlightClassName}`}>
+        <div className={twMerge('relative overflow-y-auto pr-8', highlightClassName)}>
           <Highlight
             className={`pb-2 pt-px text-sm font-medium font-ligatures-contextual
               ${showLineNumbers ? 'ml-0' : 'ml-3'} ${textSizeClassName}`}
@@ -317,7 +318,9 @@ export default function CodeBlock({
 
   return (
     <>
-      <div className={`relative z-10 my-8 max-w-full overflow-auto rounded bg-code-editor-dark pt-2 ${className}`}>
+      <div
+        className={twMerge('relative z-10 my-8 max-w-full overflow-auto rounded bg-code-editor-dark pt-2', className)}
+      >
         {hasWindow && (
           <div className='pb-2 pl-4'>
             <span className='mr-2 inline-block size-2.5 rounded-full bg-mac-window-close'></span>

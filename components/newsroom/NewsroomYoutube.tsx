@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { A11y, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { twMerge } from 'tailwind-merge';
 
 import videoData from '../../config/newsroom_videos.json';
 import ArrowLeft from '../icons/ArrowLeft';
@@ -25,7 +26,7 @@ export default function NewsroomYoutube({ className = '' }: NewsroomYoutubeProps
   const buttonClass = 'shadow-md rounded border mx-2 mb-2 focus:outline-none';
 
   return (
-    <div className={`flex-col overflow-auto ${className}`} data-testid='NewsroomYoutube-main'>
+    <div className={twMerge('flex-col overflow-auto', className)} data-testid='NewsroomYoutube-main'>
       <Swiper
         modules={[Navigation, A11y]}
         spaceBetween={8}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 interface ISlackMessageProps {
   className?: string;
@@ -30,7 +31,7 @@ interface ISlackMessageProps {
  */
 export default function SlackMessage({ className = '', avatar, name, text, reactions = [] }: ISlackMessageProps) {
   return (
-    <div className={`my-2 flex pl-2 text-left ${className}`} data-testid='SlackMessage-main-div'>
+    <div className={twMerge('my-2 flex pl-2 text-left', className)} data-testid='SlackMessage-main-div'>
       <img className='mr-2 block size-9 rounded object-cover' src={avatar} alt={name} data-testid='SlackMessage-img' />
       <div>
         <div className='-mt-1 text-sm font-bold' data-testid='SlackMessage-name'>
