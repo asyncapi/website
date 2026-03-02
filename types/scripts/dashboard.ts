@@ -84,7 +84,9 @@ export interface IssueById {
   } & BasicIssueOrPR;
 }
 
-export interface GoodFirstIssues extends BasicIssueOrPR {}
+export interface GoodFirstIssues extends BasicIssueOrPR {
+  state: string;
+}
 
 export interface HotDiscussionsIssuesNode extends BasicIssueOrPR {
   timelineItems: TimelineItems;
@@ -128,4 +130,5 @@ export interface MappedIssue {
   author: string;
   area: string;
   labels: Label[];
+  state?: string;
 }
