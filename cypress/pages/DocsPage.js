@@ -2,7 +2,7 @@ import BaseDocsPage from './BaseDocsPage';
 
 class DocsPage extends BaseDocsPage {
   visitDocsPage() {
-    cy.visit('/docs');
+    super.visit('/docs');
   }
 
   verifyPageLoaded() {
@@ -22,7 +22,7 @@ class DocsPage extends BaseDocsPage {
   }
 
   navigateToSection(section, href) {
-    this.verifyLinkByLabel(href, section);
+    super.verifyLinkByLabel(href, section);
   }
 
   goToConceptsSection() {
@@ -54,7 +54,7 @@ class DocsPage extends BaseDocsPage {
   }
 
   verifyConceptSubsection({ href, label }) {
-    this.verifyLinkByLabel(href, label);
+    super.verifyLinkByLabel(href, label);
   }
 }
 

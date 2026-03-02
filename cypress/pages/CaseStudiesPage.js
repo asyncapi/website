@@ -1,12 +1,20 @@
 import BasePage from './BasePage';
 
 class CaseStudiesPage extends BasePage {
+  visit() {
+    super.visit('/casestudies');
+  }
+
   verifyPageLoaded() {
-    this.verifyHeadingExists('Case Studies');
+    super.verifyHeadingExists('Case Studies');
+  }
+
+  verifyHeader() {
+    this.verifyPageLoaded();
   }
 
   verifyScrollDown() {
-    this.scrollToText('Adopters');
+    super.scrollToText('Adopters');
   }
 
   verifyCardLink(cardName, cardUrl, index = 0) {
@@ -27,14 +35,14 @@ class CaseStudiesPage extends BasePage {
   }
 
   verifyFaqLink() {
-    this.verifyButtonLink(
+    super.verifyButtonLink(
       'https://github.com/asyncapi/website/blob/master/README.md#case-studies',
       'FAQ'
     );
   }
 
   verifySubmitPullRequestLink() {
-    this.verifyButtonLink(
+    super.verifyButtonLink(
       'https://github.com/asyncapi/website/blob/master/config/usecases.yaml',
       'submit a pull request'
     );
