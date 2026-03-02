@@ -30,7 +30,6 @@ describe('Ambassadors Page', () => {
         name: 'Daniel Kocot',
         links: {
           github: 'https://www.github.com/danielkocot',
-          twitter: 'https://www.twitter.com/dk_1977',
           linkedin: 'https://www.linkedin.com/in/danielkocot'
         }
       },
