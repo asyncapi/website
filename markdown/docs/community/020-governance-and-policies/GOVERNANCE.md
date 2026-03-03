@@ -67,7 +67,7 @@ Board members will appoint a chairperson during the first board meeting followin
 
 You can determine who is a TSC member and has the right to vote from [MAINTAINERS.yaml](https://github.com/asyncapi/community/blob/master/MAINTAINERS.yaml) and [AMBASSADORS_MEMBERS.yaml](https://github.com/asyncapi/community/blob/master/AMBASSADORS_MEMBERS.yaml), `isTSCMember` properties. We also transparently list all the TSC members in [AsyncAPI Website](https://asyncapi.com/community/tsc).
 
-Any maintainer and any ambassador can change their status by editing `isTSCMember` properties.
+Any maintainer and any ambassador can change their status by editing `isTSCMember` properties. They also must provide date of the change to `true` under `tscMemberSince` property.
 
 ## Voting
 
