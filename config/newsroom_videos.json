@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/QM0m25V8pJs/hqdefault.jpg",
+    "title": "AsyncAPI Website Triage Meeting, 15:30 UTC Wednesday March 4th 2026",
+    "description": "https://github.com/asyncapi/community/issues/2306.",
+    "videoId": "QM0m25V8pJs"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/Bbff9W2e85w/hqdefault.jpg",
     "title": "Community WG Meeting, 15:00 UTC Tuesday March 3rd 2026",
     "description": "https://github.com/asyncapi/community/issues/2295.",
@@ -22,11 +28,5 @@
     "title": "Power AI with Real-Time Data using AsyncAPI &amp; Agent Mesh",
     "description": "Catch Julien Testut and Alessandro Cagnetti as they dive into the future of real-time data for AI! Learn how Change Data Capture ...",
     "videoId": "mzHvMYMyFHU"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/WuYQSYaWk1g/hqdefault.jpg",
-    "title": "AsyncAPI Spec Triage, 16:00 UTC Thursday December 18th 2025",
-    "description": "https://github.com/asyncapi/community/issues/2187.",
-    "videoId": "WuYQSYaWk1g"
   }
 ]
