@@ -8,7 +8,7 @@ interface NavItemProps {
   text: string;
   href?: string;
   target?: string;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent) => void;
   onMouseEnter?: () => void;
   hasDropdown?: boolean;
   className?: string;
