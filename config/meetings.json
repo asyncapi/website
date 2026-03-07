@@ -124,5 +124,12 @@
     "url": "https://github.com/asyncapi/community/issues/2315",
     "banner": "https://private-user-images.githubusercontent.com/44585452/556327345-f493d033-e266-4b71-9ff0-d801130a8af3.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzI2NDUzNzAsIm5iZiI6MTc3MjY0NTA3MCwicGF0aCI6Ii80NDU4NTQ1Mi81NTYzMjczNDUtZjQ5M2QwMzMtZTI2Ni00YjcxLTlmZjAtZDgwMTEzMGE4YWYzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAzMDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMzA0VDE3MjQzMFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTk4ZmZlZDI0YWNkOTViNzRkNWRkZTI1MTM0YTMzMTgwZmExMjIwYzFjNWE3NWU1MzFkOWZjYzc4YjE1NTk1ZDYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.-IpfxZKndu6O50VInyiT9vMSQXpMyn5ejXieaGIYTqw",
     "date": "2026-03-18T15:30:00.000Z"
+  },
+  {
+    "title": "Spec meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=OHFvMG9icDluOXBvcTlsOG9xdDltaTZkcmcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/2319",
+    "banner": "",
+    "date": "2026-03-25T16:00:00.000Z"
   }
 ]
