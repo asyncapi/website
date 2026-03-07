@@ -57,7 +57,6 @@ async function handleDialogSubmission(payload: any) {
   try {
     const discussion = await Slack.getSlackDiscussion(channelId, threadTS);
 
-    console.log('got the following discussion', discussion);
     const categoryId = payload.submission.category;
 
     if (!discussion) return;
@@ -79,7 +78,6 @@ async function handleDialogSubmission(payload: any) {
         }
       }
     }
-    console.log(payload);
     const message = `Thanks to <@${payload.user.id}>, this discussion has been preserved here: ${discussionURL}`;
 
     await Slack.postReplyInThread(message, channelId, threadTS);
