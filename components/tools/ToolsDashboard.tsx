@@ -196,15 +196,17 @@ export default function ToolsDashboard() {
                 type='button'
                 className='flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-dark-card bg-white px-4 py-1 text-sm text-gray-700 dark:text-gray-300 shadow-md dark:shadow-lg hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-lg transition-all duration-300 hover:scale-[1.02]'
                 onClick={() => setOpenFilter(!openFilter)}
+                aria-expanded={openFilter}
+                aria-controls='tools-filter-panel'
                 data-testid='ToolsDashboard-Filters-Click'
               >
                 <FilterIcon />
                 <span className='font-medium'>Filter</span>
               </button>
               {openFilter && (
-                <button className='absolute top-16 z-20 min-w-[20rem]'>
+                <div id='tools-filter-panel' className='absolute top-16 z-20 min-w-[20rem]'>
                   <Filters setOpenFilter={setOpenFilter} />
-                </button>
+                </div>
               )}
             </div>
           </div>
@@ -214,6 +216,8 @@ export default function ToolsDashboard() {
                 type='button'
                 className='flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-dark-card bg-white px-4 py-1 text-sm text-gray-700 dark:text-gray-300 shadow-md dark:shadow-lg hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-lg transition-all duration-300 hover:scale-[1.02]'
                 onClick={() => setopenCategory(!openCategory)}
+                aria-expanded={openCategory}
+                aria-controls='tools-category-panel'
                 data-testid='ToolsDashboard-category'
               >
                 <span className='font-medium'>Jump to Category</span>
@@ -222,7 +226,7 @@ export default function ToolsDashboard() {
                 />
               </button>
               {openCategory && (
-                <div className='absolute right-52 top-16 z-20'>
+                <div id='tools-category-panel' className='absolute right-52 top-16 z-20'>
                   <CategoryDropdown setopenCategory={setopenCategory} />
                 </div>
               )}
