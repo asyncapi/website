@@ -24,7 +24,12 @@ const Checkbox = ({
   return (
     <div
       className={twMerge(
-        `border ${borderColor} ${bgColor} ${textColor} p-1 pb-0 rounded-2xl flex gap-1 cursor-pointer items-start ${checked ? `${checkedStateBgColor} ${checkedStateTextColor}` : ''}`
+        'border p-1 pb-0 rounded-2xl flex gap-1 cursor-pointer items-start',
+        borderColor,
+        bgColor,
+        textColor,
+        checked && checkedStateBgColor,
+        checked && checkedStateTextColor
       )}
       onClick={handleClick}
     >

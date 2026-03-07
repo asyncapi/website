@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React, { useContext } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import type { DocsContextType } from '@/types/context/DocsContext';
 import type { IDoc } from '@/types/post';
@@ -32,7 +33,7 @@ export default function TutorialList({ className = '' }: TutorialListProps) {
   ) as IDoc[];
 
   return (
-    <div className={`${className} grid grid-cols-1 gap-4 sm:grid-cols-2`}>
+    <div className={twMerge('grid grid-cols-1 gap-4 sm:grid-cols-2', className)}>
       {tutorials.map((tuto: IDoc, index: number) => (
         <Link href={tuto.slug} key={index}>
           <span className='mt-4 flex max-w-lg cursor-pointer flex-col rounded border border-gray-200 p-6 text-gray-700 shadow-md transition-all duration-300 ease-in-out hover:border-gray-300 hover:shadow-lg'>

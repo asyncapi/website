@@ -1,6 +1,7 @@
 import { useFloating } from '@floating-ui/react-dom-interactions';
 import type { RefObject } from 'react';
 import React, { useEffect, useRef, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import type { Issue } from '@/types/components/dashboard/TableTypes';
 
@@ -90,7 +91,7 @@ export default function Filters({
         ref={reference}
         alt='filter menu'
         src='/img/illustrations/icons/filters-icon.svg'
-        className={`cursor-pointer ${className}`}
+        className={twMerge('cursor-pointer', className)}
         data-testid='Filters-img-container'
       />
 
