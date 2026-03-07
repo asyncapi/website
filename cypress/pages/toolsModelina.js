@@ -1,4 +1,4 @@
-import toolsData from '../fixtures/toolsPages.json';
+import toolsData from '../data/toolsPages.json';
 import BasePage from './BasePage';
 
 class ToolsModelina extends BasePage {
