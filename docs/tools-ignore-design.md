@@ -13,7 +13,7 @@
    - [Ignore Variations](#ignore-variations)
    - [Decision Flowchart](#decision-flowchart)
 7. [Usage Guide](#usage-guide)
-   - [Variation 1: Ignore by Title (Global)](#variation-1-ignore-by-title-global)
+   - [Variation 1: Ignore by Title](#variation-1-ignore-by-title-all-categories)
    - [Variation 2: Ignore by repoUrl (Quick Remove)](#variation-2-ignore-by-repourl-quick-remove)
    - [Variation 3: Ignore by Title + repoUrl (Specific Fork)](#variation-3-ignore-by-title--repourl-specific-fork)
    - [Variation 4: Ignore by Title with Category Scope](#variation-4-ignore-by-title-with-category-scope)
@@ -291,7 +291,7 @@ If no entry matches after checking all: KEEP the tool
 
 ## Usage Guide
 
-### Variation 1: Ignore by Title (Global)
+### Variation 1: Ignore by Title
 
 Remove a tool from **every** category it appears in. Use when the tool itself is the problem (deprecated, spam, etc.).
 
