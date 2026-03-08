@@ -564,6 +564,25 @@ describe('combineTools with ignore file', () => {
     expect(auditLog.ignoredTools).toHaveLength(0);
   });
 
+  it('should log zero ignored when rules exist but none match', async () => {
+    fs.writeFileSync(
+      ignorePath,
+      JSON.stringify({
+        description: 'test',
+        tools: [{ title: 'Non-Existent Tool', reason: 'Does not exist' }]
+      })
+    );
+
+    await combineTools(automatedToolsForIgnore, {}, toolsPath, tagsPath, ignorePath, ignoredOutputPath);
+
+    const combined = JSON.parse(fs.readFileSync(toolsPath, 'utf-8'));
+
+    expect(combined.category1.toolsList).toHaveLength(4);
+    expect(logger.info).toHaveBeenCalledWith(
+      expect.stringContaining('Tools ignored: 0')
+    );
+  });
+
   it('should work normally when no ignore file path is provided', async () => {
     await combineTools(automatedToolsForIgnore, {}, toolsPath, tagsPath);
 

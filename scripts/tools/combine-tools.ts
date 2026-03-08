@@ -173,6 +173,19 @@ const processManualTool = async (tool: AsyncAPITool) => {
 };
 
 /**
+ * Checks whether a single ignore entry matches the given tool in the given category.
+ */
+function doesEntryMatchTool(entry: ToolIgnoreEntry, tool: AsyncAPITool, category: string): boolean {
+  if (!entry.title && !entry.repoUrl) return false;
+  if (entry.categories?.length && !entry.categories.includes(category)) return false;
+
+  const titleMatches = entry.title ? tool.title === entry.title : true;
+  const repoMatches = entry.repoUrl ? tool.links?.repoUrl === entry.repoUrl : true;
+
+  return titleMatches && repoMatches;
+}
+
+/**
  * Checks whether a tool matches any entry in the ignore list for the given category.
  *
  * Each ignore entry must have at least `title` or `repoUrl` (or both).
@@ -185,36 +198,7 @@ const processManualTool = async (tool: AsyncAPITool) => {
  * - If `categories` is provided, the match only applies within those categories.
  */
 function shouldIgnoreTool(tool: AsyncAPITool, category: string, ignoreList: ToolIgnoreEntry[]): ToolIgnoreEntry | null {
-  for (const entry of ignoreList) {
-    if (!entry.title && !entry.repoUrl) {
-      continue;
-    }
-
-    if (entry.categories?.length && !entry.categories.includes(category)) {
-      continue;
-    }
-
-    const hasTitle = Boolean(entry.title);
-    const hasRepoUrl = Boolean(entry.repoUrl);
-    const titleMatches = hasTitle && tool.title === entry.title;
-    const repoMatches = hasRepoUrl && tool.links?.repoUrl === entry.repoUrl;
-
-    if (hasTitle && hasRepoUrl) {
-      if (titleMatches && repoMatches) {
-        return entry;
-      }
-    } else if (hasTitle) {
-      if (titleMatches) {
-        return entry;
-      }
-    } else if (hasRepoUrl) {
-      if (repoMatches) {
-        return entry;
-      }
-    }
-  }
-
-  return null;
+  return ignoreList.find((entry) => doesEntryMatchTool(entry, tool, category)) ?? null;
 }
 
 /**
