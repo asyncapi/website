@@ -16,8 +16,8 @@ const currentDirPath = dirname(currentFilePath);
  * @param manualTools - The manual tools data
  * @param toolsPath - The file path where the combined tools data will be written
  * @param tagsPath - The file path where the tags data will be written
- * @param ignorePath - Optional path to the tools-ignore.json file
- * @param ignoredOutputPath - Optional path to write the audit log of ignored tools
+ * @param ignorePath - Path to the tools-ignore.json file
+ * @param ignoredOutputPath - Path to write the audit log of ignored tools
  */
 async function combineAutomatedAndManualTools(
   automatedTools: any,
@@ -47,8 +47,8 @@ async function combineAutomatedAndManualTools(
  * @param manualToolsPath - The file path from which the manual tools data is read.
  * @param toolsPath - The file path where the combined tools data will be written.
  * @param tagsPath - The file path where the tags data will be written.
- * @param ignorePath - Optional path to the tools-ignore.json file.
- * @param ignoredOutputPath - Optional path to write the audit log of ignored tools.
+ * @param ignorePath - Path to the tools-ignore.json file.
+ * @param ignoredOutputPath - Path to write the audit log of ignored tools.
  * @throws {Error} If an error occurs during the build process.
  */
 async function buildTools(
@@ -80,8 +80,8 @@ async function buildTools(
  * @param manualToolsPath - The file path from which the manual tools data is read.
  * @param toolsPath - The file path where the combined tools data will be written.
  * @param tagsPath - The file path where the tags data will be written.
- * @param ignorePath - Optional path to the tools-ignore.json file.
- * @param ignoredOutputPath - Optional path to write the audit log of ignored tools.
+ * @param ignorePath - Path to the tools-ignore.json file.
+ * @param ignoredOutputPath - Path to write the audit log of ignored tools.
  * @throws {Error} If the automated or manual tools files are not found, or if an error occurs during the build process.
  */
 async function buildToolsManual(

@@ -225,8 +225,8 @@ function shouldIgnoreTool(tool: AsyncAPITool, category: string, ignoreList: Tool
  * @param {ToolsListObject} manualTools - The list of manual tools.
  * @param {string} toolsPath - The path to save the combined tools JSON file.
  * @param {string} tagsPath - The path to save the tags JSON file.
- * @param {string} [ignorePath] - Optional path to the tools-ignore.json file.
- * @param {string} [ignoredOutputPath] - Optional path to write the audit log of ignored tools.
+ * @param {string} [ignorePath] - Path to the tools-ignore.json file.
+ * @param {string} [ignoredOutputPath] - Path to write the audit log of ignored tools.
  */
 const combineTools = async (
   automatedTools: ToolsListObject,

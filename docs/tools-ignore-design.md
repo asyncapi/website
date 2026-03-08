@@ -1,4 +1,4 @@
-# Tools Ignore System -- Architecture & Design Document
+# Tools Ignore System -- Design Document
 
 ## Table of Contents
 
@@ -12,21 +12,14 @@
 6. [Matching Algorithm](#matching-algorithm)
    - [Ignore Variations](#ignore-variations)
    - [Decision Flowchart](#decision-flowchart)
-7. [Code Walkthrough](#code-walkthrough)
-   - [Type Definitions](#type-definitions)
-   - [shouldIgnoreTool()](#shouldignoretool)
-   - [combineTools()](#combinetools)
-   - [build-tools.ts Entry Point](#build-toolsts-entry-point)
-8. [Usage Guide](#usage-guide)
+7. [Usage Guide](#usage-guide)
    - [Variation 1: Ignore by Title (Global)](#variation-1-ignore-by-title-global)
    - [Variation 2: Ignore by repoUrl (Quick Remove)](#variation-2-ignore-by-repourl-quick-remove)
    - [Variation 3: Ignore by Title + repoUrl (Specific Fork)](#variation-3-ignore-by-title--repourl-specific-fork)
    - [Variation 4: Ignore by Title with Category Scope](#variation-4-ignore-by-title-with-category-scope)
    - [Variation 5: Ignore by repoUrl with Category Scope](#variation-5-ignore-by-repourl-with-category-scope)
    - [Variation 6: Ignore by Title + repoUrl + Category Scope](#variation-6-ignore-by-title--repourl--category-scope)
-9. [Why This Design?](#why-this-design)
-10. [Test Coverage](#test-coverage)
-11. [Backward Compatibility](#backward-compatibility)
+8. [Why This Design?](#why-this-design)
 
 ---
 
@@ -74,7 +67,7 @@ A combine script merges both sources into a single `tools.json` that the website
               |         |
               v         v
       +-------------------------+
-      |   combine-tools.ts      |  (merge + filter + enrich)
+      |   combine-tools.ts      |  (merge + filter)
       +-------------------------+
               |              |
               v              v
@@ -86,7 +79,7 @@ A combine script merges both sources into a single `tools.json` that the website
         Website UI
 ```
 
-The new `tools-ignore.json` file sits alongside the existing config files and is read during the combine step. Any tool matching an ignore rule is filtered out **before** enrichment and merging. A companion `tools-ignored.json` audit log is written to record exactly what was filtered and why.
+The new `tools-ignore.json` file sits alongside the existing config files and is read during the combine step. Any tool matching an ignore rule is filtered out **before** merging. A companion `tools-ignored.json` audit log is written to record exactly what was filtered and why.
 
 ---
 
@@ -115,17 +108,17 @@ Here is the step-by-step flow when `npm run generate:tools` executes:
        |       |         (shouldIgnoreTool() called per tool)
        |       |         Ignored tools are recorded in the audit array
        |       |
-       |       +---> Enrich surviving automated tools (getFinalTool)
-       |       |         - Fuzzy-match language/technology tags
+       |       +---> Process kept automated tools (getFinalTool)
+       |       |         - Match language/technology tags
        |       |         - Assign display colors
        |       |
        |       +---> Filter manual tools against the ignore list
        |       |         (shouldIgnoreTool() called per tool)
        |       |         Ignored tools are recorded in the audit array
        |       |
-       |       +---> Validate & enrich surviving manual tools
+       |       +---> Validate & process kept manual tools
        |       |         - JSON schema validation (Ajv)
-       |       |         - getFinalTool enrichment
+       |       |         - getFinalTool processing
        |       |
        |       +---> Merge automated + manual results
        |       |
@@ -136,6 +129,8 @@ Here is the step-by-step flow when `npm run generate:tools` executes:
 9. Write config/all-tags.json (language + technology tags)
        |
 10. Write config/tools-ignored.json (audit log of what was filtered)
+       |
+11. Log ignored tools summary to stdout (visible in workflow logs)
 ```
 
 ---
@@ -151,7 +146,7 @@ Here is the step-by-step flow when `npm run generate:tools` executes:
 | `config/all-tags.json` | Aggregated language/technology tags | Yes |
 | `config/tools-ignored.json` | Auto-generated audit log | No (.gitignore) |
 | `scripts/build-tools.ts` | Orchestrator / entry point | Yes |
-| `scripts/tools/combine-tools.ts` | Core merge + filter + enrich logic | Yes |
+| `scripts/tools/combine-tools.ts` | Core merge + filter logic | Yes |
 | `types/scripts/tools.ts` | TypeScript type definitions | Yes |
 | `tests/tools/combine-tools.test.ts` | Unit tests | Yes |
 | `tests/fixtures/combineToolsData.ts` | Test fixture data | Yes |
@@ -294,132 +289,6 @@ If no entry matches after checking all: KEEP the tool
 
 ---
 
-## Code Walkthrough
-
-### Type Definitions
-
-**File:** `types/scripts/tools.ts`
-
-Three types were added to support the ignore system:
-
-```typescript
-// A single entry in tools-ignore.json (at least one of title/repoUrl required)
-export interface ToolIgnoreEntry {
-  title?: string;
-  repoUrl?: string;
-  reason: string;
-  categories?: string[];
-}
-
-// The top-level structure of tools-ignore.json
-export interface ToolsIgnoreFile {
-  description: string;
-  tools: ToolIgnoreEntry[];
-}
-
-// A record in the tools-ignored.json audit log
-export interface IgnoredToolRecord {
-  title: string;
-  repoUrl?: string;
-  reason: string;
-  category: string;
-  source: 'automated' | 'manual';
-  ignoredAt: string;
-}
-```
-
-### shouldIgnoreTool()
-
-**File:** `scripts/tools/combine-tools.ts`
-
-This is the core matching function. It takes a tool, the current category name, and the full ignore list, then returns the matching ignore entry (or `null` if no match).
-
-```typescript
-function shouldIgnoreTool(
-  tool: AsyncAPITool,
-  category: string,
-  ignoreList: ToolIgnoreEntry[]
-): ToolIgnoreEntry | null {
-  for (const entry of ignoreList) {
-    // Skip entries that have neither title nor repoUrl
-    if (!entry.title && !entry.repoUrl) continue;
-
-    // Skip if entry is scoped to specific categories and this isn't one of them
-    if (entry.categories?.length && !entry.categories.includes(category)) continue;
-
-    const hasTitle = Boolean(entry.title);
-    const hasRepoUrl = Boolean(entry.repoUrl);
-    const titleMatches = hasTitle && tool.title === entry.title;
-    const repoMatches = hasRepoUrl && tool.links?.repoUrl === entry.repoUrl;
-
-    if (hasTitle && hasRepoUrl) {
-      if (titleMatches && repoMatches) return entry;     // Both must match
-    } else if (hasTitle) {
-      if (titleMatches) return entry;                     // Title-only match
-    } else if (hasRepoUrl) {
-      if (repoMatches) return entry;                      // repoUrl-only match
-    }
-  }
-
-  return null;
-}
-```
-
-Key design decisions:
-- Entries with neither `title` nor `repoUrl` are silently skipped (defensive guard).
-- All matching is **exact** (case-sensitive). This prevents accidental matches on similar-but-different tools.
-- When both `title` and `repoUrl` are present, they act as an AND condition (most precise).
-- When only `repoUrl` is present, it acts as a standalone matcher -- useful for quickly removing a tool by its repo without needing to look up the title.
-- The function returns the matched `ToolIgnoreEntry` (not just a boolean) so the caller can extract the `reason` for the audit log.
-
-### combineTools()
-
-**File:** `scripts/tools/combine-tools.ts`
-
-The main combine function was updated to accept two new optional parameters:
-
-```typescript
-const combineTools = async (
-  automatedTools: ToolsListObject,
-  manualTools: ToolsListObject,
-  toolsPath: string,
-  tagsPath: string,
-  ignorePath?: string,         // NEW
-  ignoredOutputPath?: string   // NEW
-): Promise<void> => { ... }
-```
-
-The ignore logic is inserted **before** the enrichment step for both automated and manual tools:
-
-```
-Original flow:      automated tools --> enrich --> merge with manual --> sort --> write
-New flow:           automated tools --> FILTER --> enrich --> merge with FILTERED manual --> sort --> write
-                                          |                                    |
-                                          +--- audit record ---+--- audit record ----> write audit log
-```
-
-Filtering happens via `Array.filter()` with `shouldIgnoreTool()`. Each filtered-out tool gets an `IgnoredToolRecord` pushed to the `ignoredTools` array, which is written to the audit file at the end.
-
-### build-tools.ts Entry Point
-
-**File:** `scripts/build-tools.ts`
-
-Both `buildTools()` and `buildToolsManual()` were updated to accept and pass through `ignorePath` and `ignoredOutputPath`. The main CLI entry block resolves these paths:
-
-```typescript
-const ignorePath = resolve(currentDirPath, '../config', 'tools-ignore.json');
-const ignoredOutputPath = resolve(currentDirPath, '../config', 'tools-ignored.json');
-
-buildTools(
-  automatedToolsPath, manualToolsPath, toolsPath, tagsPath,
-  ignorePath, ignoredOutputPath
-);
-```
-
-These parameters are optional. When not provided (or when the ignore file doesn't exist on disk), the combine step behaves identically to before -- no tools are filtered.
-
----
-
 ## Usage Guide
 
 ### Variation 1: Ignore by Title (Global)
@@ -520,67 +389,3 @@ Exact matching is predictable and auditable. When a maintainer adds an ignore ru
 ### Why category scoping?
 
 The same tool frequently appears in multiple categories (e.g., a tool categorized as both `code-first` and `framework`). Category scoping lets maintainers make precise corrections to categorization without removing the tool entirely.
-
-### Why an audit log?
-
-The audit log (`tools-ignored.json`) provides:
-- **Verification** -- After running the build, a maintainer can inspect exactly what was filtered.
-- **Debugging** -- If a tool unexpectedly disappears from the website, the audit log shows whether it was filtered by an ignore rule.
-- **Transparency** -- The audit log records the reason, source, category, and timestamp for every ignored entry.
-
-### Why is the audit log git-ignored?
-
-It is regenerated on every combine run and contains timestamps that would create noisy diffs. It is meant as a local verification tool, not a permanent record.
-
----
-
-## Test Coverage
-
-The ignore system is covered by **19 dedicated tests** across two test suites in `tests/tools/combine-tools.test.ts`:
-
-### `shouldIgnoreTool` unit tests (10 tests)
-
-| Test | What It Verifies |
-|------|-----------------|
-| Match by title only | A title-only rule matches tools with that title |
-| No match when title differs | Non-matching titles are not affected |
-| Match specific repo | A title+repoUrl rule only matches the exact combination |
-| Respect category scope | A category-scoped rule only applies within those categories |
-| Empty ignore list | Returns null when the ignore list is empty |
-| Match by repoUrl only | A repoUrl-only rule matches any tool with that repo |
-| No match when repo differs (repoUrl-only) | Non-matching repos are not affected |
-| Match repoUrl-only regardless of title | Different title, same repo still matches |
-| Respect category scope with repoUrl-only | Category scoping works with repoUrl-only entries |
-| Skip entries with neither title nor repoUrl | Invalid entries are safely ignored |
-
-### `combineTools` with ignore file integration tests (10 tests)
-
-| Test | What It Verifies |
-|------|-----------------|
-| Ignore automated tools by title | Filtered tools are absent from output |
-| Ignore only the fork by repoUrl | Original tool survives, fork is removed |
-| Category-scoped ignore | Tool removed from target category, present in others |
-| Ignore manual tools | Manual tools are also subject to ignore rules |
-| Audit log content | Correct title, reason, source, category, and timestamp in log |
-| Empty audit log | Audit file is written even when nothing is ignored |
-| No ignore path provided | Falls back to original behavior (no filtering) |
-| Non-existent ignore file | Gracefully handled, no filtering applied |
-| Ignore by repoUrl only across all categories | repoUrl-only rule filters from combined output |
-| Respect category scope with repoUrl-only | repoUrl-only + categories filters selectively |
-
-All tests can be run with:
-
-```bash
-npx jest tests/tools/combine-tools.test.ts
-```
-
----
-
-## Backward Compatibility
-
-The ignore system is fully backward compatible:
-
-- All new parameters (`ignorePath`, `ignoredOutputPath`) are **optional** in every function signature.
-- When `tools-ignore.json` does not exist or has an empty `tools` array, the combine step produces **identical output** to the original implementation.
-- Existing tests continue to pass unchanged -- they call `combineTools()` without the new parameters and work exactly as before.
-- The GitHub Actions workflow (`regenerate-tools.yml`) does not need any changes. The `npm run generate:tools` command calls `build-tools.ts`, which automatically resolves and uses the ignore file if present.
