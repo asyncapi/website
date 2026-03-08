@@ -19,9 +19,11 @@
    - [build-tools.ts Entry Point](#build-toolsts-entry-point)
 8. [Usage Guide](#usage-guide)
    - [Variation 1: Ignore by Title (Global)](#variation-1-ignore-by-title-global)
-   - [Variation 2: Ignore by Title + repoUrl (Specific Fork)](#variation-2-ignore-by-title--repourl-specific-fork)
-   - [Variation 3: Ignore by Title with Category Scope](#variation-3-ignore-by-title-with-category-scope)
-   - [Variation 4: Ignore by Title + repoUrl + Category Scope](#variation-4-ignore-by-title--repourl--category-scope)
+   - [Variation 2: Ignore by repoUrl (Quick Remove)](#variation-2-ignore-by-repourl-quick-remove)
+   - [Variation 3: Ignore by Title + repoUrl (Specific Fork)](#variation-3-ignore-by-title--repourl-specific-fork)
+   - [Variation 4: Ignore by Title with Category Scope](#variation-4-ignore-by-title-with-category-scope)
+   - [Variation 5: Ignore by repoUrl with Category Scope](#variation-5-ignore-by-repourl-with-category-scope)
+   - [Variation 6: Ignore by Title + repoUrl + Category Scope](#variation-6-ignore-by-title--repourl--category-scope)
 9. [Why This Design?](#why-this-design)
 10. [Test Coverage](#test-coverage)
 11. [Backward Compatibility](#backward-compatibility)
@@ -180,10 +182,12 @@ Located at `config/tools-ignore.json`. This is the file maintainers edit to cont
 
 | Field | Type | Required | Description |
 |-------|------|:--------:|-------------|
-| `title` | `string` | Yes | Exact title of the tool to match. |
-| `repoUrl` | `string` | No | When provided, both `title` AND `repoUrl` must match. This is how you target a specific fork without affecting the original. |
+| `title` | `string` | No* | Exact title of the tool to match. |
+| `repoUrl` | `string` | No* | Repository URL to match. When used alone, all tools with this repo are ignored regardless of title. |
 | `reason` | `string` | Yes | Documents why this tool is being excluded. Appears in the audit log. |
 | `categories` | `string[]` | No | When provided, the tool is only removed from these specific categories. When omitted, the tool is removed from **all** categories it appears in. Values must match category names exactly (e.g., `"Editors"`, `"Code-first tools"`, `"AsyncAPI Generator Templates"`). |
+
+> *At least one of `title` or `repoUrl` must be provided. Entries with neither are skipped.
 
 ### tools-ignored.json (Audit Log)
 
@@ -226,14 +230,16 @@ A single ignore rule can produce multiple audit records if the tool appears in s
 
 ### Ignore Variations
 
-The system supports four distinct ignore strategies, each providing a different level of precision:
+The system supports six distinct ignore strategies, each providing a different level of precision:
 
 | # | Strategy | Fields Used | What Gets Removed |
 |---|----------|-------------|-------------------|
 | 1 | Title only | `title` | All tools with that title, in all categories |
-| 2 | Title + repoUrl | `title`, `repoUrl` | Only the exact title+repo combination, in all categories |
-| 3 | Title + categories | `title`, `categories` | All tools with that title, but only in the listed categories |
-| 4 | Title + repoUrl + categories | `title`, `repoUrl`, `categories` | Only the exact title+repo combination, only in the listed categories |
+| 2 | repoUrl only | `repoUrl` | All tools with that repo, in all categories (quick remove) |
+| 3 | Title + repoUrl | `title`, `repoUrl` | Only the exact title+repo combination, in all categories |
+| 4 | Title + categories | `title`, `categories` | All tools with that title, but only in the listed categories |
+| 5 | repoUrl + categories | `repoUrl`, `categories` | All tools with that repo, but only in the listed categories |
+| 6 | Title + repoUrl + categories | `title`, `repoUrl`, `categories` | Only the exact title+repo combination, only in the listed categories |
 
 ### Decision Flowchart
 
@@ -241,6 +247,12 @@ For each tool in each category, the `shouldIgnoreTool()` function evaluates ever
 
 ```
 For each ignore entry:
+  |
+  +---> Does the entry have at least `title` or `repoUrl`?
+  |       |
+  |       No --> SKIP (invalid entry)
+  |       |
+  |       Yes --> continue
   |
   +---> Does the entry have `categories`?
   |       |
@@ -252,21 +264,30 @@ For each ignore entry:
   |       |
   |       No --> continue (applies to all categories)
   |
-  +---> Does `tool.title === entry.title`?
+  +---> Does the entry have BOTH `title` and `repoUrl`?
   |       |
-  |       No --> SKIP this entry, move to next
+  |       Yes --> Do both match the tool?
+  |       |        |
+  |       |        Yes --> MATCH -> ignore this tool
+  |       |        No  --> SKIP
   |       |
-  |       Yes --> continue
+  |       No --> continue
   |
-  +---> Does the entry have `repoUrl`?
+  +---> Does the entry have only `title`?
+  |       |
+  |       Yes --> Does `tool.title === entry.title`?
+  |       |        |
+  |       |        Yes --> MATCH -> ignore this tool
+  |       |        No  --> SKIP
+  |       |
+  |       No --> continue
+  |
+  +---> Does the entry have only `repoUrl`?
           |
           Yes --> Does `tool.links.repoUrl === entry.repoUrl`?
-          |        |
-          |        Yes --> MATCH FOUND -> ignore this tool
-          |        |
-          |        No --> SKIP this entry, move to next
-          |
-          No --> MATCH FOUND -> ignore this tool
+                   |
+                   Yes --> MATCH -> ignore this tool
+                   No  --> SKIP
 
 If no entry matches after checking all: KEEP the tool
 ```
@@ -282,9 +303,9 @@ If no entry matches after checking all: KEEP the tool
 Three types were added to support the ignore system:
 
 ```typescript
-// A single entry in tools-ignore.json
+// A single entry in tools-ignore.json (at least one of title/repoUrl required)
 export interface ToolIgnoreEntry {
-  title: string;
+  title?: string;
   repoUrl?: string;
   reason: string;
   categories?: string[];
@@ -320,21 +341,23 @@ function shouldIgnoreTool(
   ignoreList: ToolIgnoreEntry[]
 ): ToolIgnoreEntry | null {
   for (const entry of ignoreList) {
+    // Skip entries that have neither title nor repoUrl
+    if (!entry.title && !entry.repoUrl) continue;
+
     // Skip if entry is scoped to specific categories and this isn't one of them
-    if (entry.categories?.length && !entry.categories.includes(category)) {
-      continue;
-    }
+    if (entry.categories?.length && !entry.categories.includes(category)) continue;
 
-    const titleMatches = tool.title === entry.title;
+    const hasTitle = Boolean(entry.title);
+    const hasRepoUrl = Boolean(entry.repoUrl);
+    const titleMatches = hasTitle && tool.title === entry.title;
+    const repoMatches = hasRepoUrl && tool.links?.repoUrl === entry.repoUrl;
 
-    if (entry.repoUrl) {
-      // When repoUrl is specified, both title AND repoUrl must match
-      if (titleMatches && tool.links?.repoUrl === entry.repoUrl) {
-        return entry;
-      }
-    } else if (titleMatches) {
-      // When only title is specified, title match is sufficient
-      return entry;
+    if (hasTitle && hasRepoUrl) {
+      if (titleMatches && repoMatches) return entry;     // Both must match
+    } else if (hasTitle) {
+      if (titleMatches) return entry;                     // Title-only match
+    } else if (hasRepoUrl) {
+      if (repoMatches) return entry;                      // repoUrl-only match
     }
   }
 
@@ -343,8 +366,10 @@ function shouldIgnoreTool(
 ```
 
 Key design decisions:
-- Title matching is **exact** (case-sensitive). This prevents accidental matches on similar-but-different tools.
-- When `repoUrl` is present, it acts as an AND condition with `title`, not a standalone matcher. This ensures you cannot accidentally ignore a tool just because it shares a repo URL.
+- Entries with neither `title` nor `repoUrl` are silently skipped (defensive guard).
+- All matching is **exact** (case-sensitive). This prevents accidental matches on similar-but-different tools.
+- When both `title` and `repoUrl` are present, they act as an AND condition (most precise).
+- When only `repoUrl` is present, it acts as a standalone matcher -- useful for quickly removing a tool by its repo without needing to look up the title.
 - The function returns the matched `ToolIgnoreEntry` (not just a boolean) so the caller can extract the `reason` for the audit log.
 
 ### combineTools()
@@ -410,9 +435,22 @@ Remove a tool from **every** category it appears in. Use when the tool itself is
 
 **Effect:** Every entry with `title === "SIO-AsyncAPI"` is removed from all categories (APIs, Code-first tools, etc.).
 
-### Variation 2: Ignore by Title + repoUrl (Specific Fork)
+### Variation 2: Ignore by repoUrl (Quick Remove)
 
-Remove only a specific fork/clone while keeping the original. Use when multiple tools share the same title but have different repositories.
+Remove a tool by its repo URL alone, without needing to know or specify its title. Useful for quickly blocking a fork or spam repo.
+
+```json
+{
+  "repoUrl": "https://github.com/hkirat/asyncapi-fork",
+  "reason": "Unauthorized fork"
+}
+```
+
+**Effect:** Every entry whose `repoUrl` matches `"https://github.com/hkirat/asyncapi-fork"` is removed from all categories, regardless of what title the tool has.
+
+### Variation 3: Ignore by Title + repoUrl (Specific Fork)
+
+Remove only a specific fork/clone while keeping the original. Use when multiple tools share the same title but have different repositories, and you want maximum precision.
 
 ```json
 {
@@ -424,7 +462,7 @@ Remove only a specific fork/clone while keeping the original. Use when multiple 
 
 **Effect:** Only the entry with title `"AsyncAPI Studio"` AND repo `"https://github.com/Shurtu-gal/action-test-bed"` is removed. The official `asyncapi/studio` and any other forks with different repos are untouched.
 
-### Variation 3: Ignore by Title with Category Scope
+### Variation 4: Ignore by Title with Category Scope
 
 Remove a tool from specific categories only. Use when a tool is correctly listed in some categories but incorrectly appears in others.
 
@@ -438,7 +476,21 @@ Remove a tool from specific categories only. Use when a tool is correctly listed
 
 **Effect:** `"Zod Sockets"` is removed from the `"Frameworks"` category only. It remains in `"Code-first tools"` and `"DSL"`.
 
-### Variation 4: Ignore by Title + repoUrl + Category Scope
+### Variation 5: Ignore by repoUrl with Category Scope
+
+Remove a repo from specific categories only, without needing the title. Useful when a repo auto-populates into wrong categories.
+
+```json
+{
+  "repoUrl": "https://github.com/example/some-tool",
+  "reason": "Incorrectly categorized in CLIs",
+  "categories": ["CLIs"]
+}
+```
+
+**Effect:** The tool with that repo URL is removed only from `"CLIs"`. It remains in all other categories.
+
+### Variation 6: Ignore by Title + repoUrl + Category Scope
 
 The most precise option. Targets a specific repo in specific categories.
 
@@ -457,9 +509,9 @@ The most precise option. Targets a specific repo in specific categories.
 
 ## Why This Design?
 
-### Why title as the primary key (not repoUrl alone)?
+### Why are both title and repoUrl optional?
 
-A tool's identity from a user's perspective is its **title**. Using title as the required field makes the ignore file readable and reviewable. The `repoUrl` serves as an optional disambiguator for the common case where forks share a title.
+Either field can serve as the primary identifier depending on the use case. `title` makes the ignore file human-readable and reviewable. `repoUrl` enables quick, precise removal when you have a repo URL at hand (e.g., from a GitHub notification) without needing to look up the tool's display title. When both are provided, they form an AND condition for maximum precision.
 
 ### Why exact matching instead of fuzzy/regex?
 
@@ -484,9 +536,9 @@ It is regenerated on every combine run and contains timestamps that would create
 
 ## Test Coverage
 
-The ignore system is covered by **13 dedicated tests** across two test suites in `tests/tools/combine-tools.test.ts`:
+The ignore system is covered by **19 dedicated tests** across two test suites in `tests/tools/combine-tools.test.ts`:
 
-### `shouldIgnoreTool` unit tests (5 tests)
+### `shouldIgnoreTool` unit tests (10 tests)
 
 | Test | What It Verifies |
 |------|-----------------|
@@ -495,8 +547,13 @@ The ignore system is covered by **13 dedicated tests** across two test suites in
 | Match specific repo | A title+repoUrl rule only matches the exact combination |
 | Respect category scope | A category-scoped rule only applies within those categories |
 | Empty ignore list | Returns null when the ignore list is empty |
+| Match by repoUrl only | A repoUrl-only rule matches any tool with that repo |
+| No match when repo differs (repoUrl-only) | Non-matching repos are not affected |
+| Match repoUrl-only regardless of title | Different title, same repo still matches |
+| Respect category scope with repoUrl-only | Category scoping works with repoUrl-only entries |
+| Skip entries with neither title nor repoUrl | Invalid entries are safely ignored |
 
-### `combineTools` with ignore file integration tests (8 tests)
+### `combineTools` with ignore file integration tests (10 tests)
 
 | Test | What It Verifies |
 |------|-----------------|
@@ -508,6 +565,8 @@ The ignore system is covered by **13 dedicated tests** across two test suites in
 | Empty audit log | Audit file is written even when nothing is ignored |
 | No ignore path provided | Falls back to original behavior (no filtering) |
 | Non-existent ignore file | Gracefully handled, no filtering applied |
+| Ignore by repoUrl only across all categories | repoUrl-only rule filters from combined output |
+| Respect category scope with repoUrl-only | repoUrl-only + categories filters selectively |
 
 All tests can be run with:
 

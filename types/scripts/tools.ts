@@ -102,7 +102,7 @@ export type ToolsListObject = ToolsList<AsyncAPITool>;
 export type FinalToolsListObject = ToolsList<FinalAsyncAPITool>;
 
 export interface ToolIgnoreEntry {
-  title: string;
+  title?: string;
   repoUrl?: string;
   reason: string;
   categories?: string[];

@@ -1,4 +1,4 @@
 {
-  "description": "List of tools to exclude from the final tools.json during the combine step. Each entry targets a specific tool by title and optionally by repoUrl and/or categories. When 'repoUrl' is provided, only the entry with that exact repo is ignored (useful when multiple tools share the same title). When 'categories' is provided, the tool is only removed from those specific categories; omit it to remove from all categories.",
+  "description": "List of tools to exclude from the final tools.json during the combine step. Each entry must have at least 'title' or 'repoUrl' (or both). When only 'repoUrl' is provided, all tools with that repo are ignored regardless of title. When only 'title' is provided, all tools with that title are ignored. When both are provided, both must match. When 'categories' is provided, the tool is only removed from those specific categories; omit it to remove from all categories.",
   "tools": []
 }

@@ -175,25 +175,42 @@ const processManualTool = async (tool: AsyncAPITool) => {
 /**
  * Checks whether a tool matches any entry in the ignore list for the given category.
  *
+ * Each ignore entry must have at least `title` or `repoUrl` (or both).
+ * Entries missing both are skipped.
+ *
  * Matching rules:
- * - If an ignore entry has `repoUrl`, the tool must have a matching repoUrl AND matching title.
- * - If an ignore entry has only `title` (no repoUrl), any tool with that title matches.
- * - If an ignore entry has `categories`, the match only applies within those categories.
+ * - Both `title` and `repoUrl` provided: tool must match both (most precise).
+ * - Only `title` provided: any tool with that exact title matches.
+ * - Only `repoUrl` provided: any tool with that exact repoUrl matches.
+ * - If `categories` is provided, the match only applies within those categories.
  */
 function shouldIgnoreTool(tool: AsyncAPITool, category: string, ignoreList: ToolIgnoreEntry[]): ToolIgnoreEntry | null {
   for (const entry of ignoreList) {
+    if (!entry.title && !entry.repoUrl) {
+      continue;
+    }
+
     if (entry.categories?.length && !entry.categories.includes(category)) {
       continue;
     }
 
-    const titleMatches = tool.title === entry.title;
+    const hasTitle = Boolean(entry.title);
+    const hasRepoUrl = Boolean(entry.repoUrl);
+    const titleMatches = hasTitle && tool.title === entry.title;
+    const repoMatches = hasRepoUrl && tool.links?.repoUrl === entry.repoUrl;
 
-    if (entry.repoUrl) {
-      if (titleMatches && tool.links?.repoUrl === entry.repoUrl) {
+    if (hasTitle && hasRepoUrl) {
+      if (titleMatches && repoMatches) {
         return entry;
       }
-    } else if (titleMatches) {
-      return entry;
+    } else if (hasTitle) {
+      if (titleMatches) {
+        return entry;
+      }
+    } else if (hasRepoUrl) {
+      if (repoMatches) {
+        return entry;
+      }
     }
   }
 

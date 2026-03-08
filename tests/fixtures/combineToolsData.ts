@@ -344,6 +344,21 @@ const ignoreManualTool: ToolIgnoreEntry[] = [
   }
 ];
 
+const ignoreByRepoUrlOnly: ToolIgnoreEntry[] = [
+  {
+    repoUrl: 'https://github.com/example/tool-beta',
+    reason: 'Remove by repoUrl alone'
+  }
+];
+
+const ignoreByRepoUrlWithCategoryScope: ToolIgnoreEntry[] = [
+  {
+    repoUrl: 'https://github.com/example/tool-alpha',
+    reason: 'Remove by repoUrl only from category1',
+    categories: ['category1']
+  }
+];
+
 export {
   automatedToolsForIgnore,
   automatedToolsT4,
@@ -356,6 +371,8 @@ export {
   circularTool,
   expectedDataT1,
   finalToolWithMissingData,
+  ignoreByRepoUrlOnly,
+  ignoreByRepoUrlWithCategoryScope,
   ignoreByTitleAndRepo,
   ignoreByTitleOnly,
   ignoreManualTool,

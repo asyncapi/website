@@ -18,6 +18,8 @@ import {
   circularTool,
   expectedDataT1,
   finalToolWithMissingData,
+  ignoreByRepoUrlOnly,
+  ignoreByRepoUrlWithCategoryScope,
   ignoreByTitleAndRepo,
   ignoreByTitleOnly,
   ignoreManualTool,
@@ -393,6 +395,64 @@ describe('shouldIgnoreTool', () => {
 
     expect(shouldIgnoreTool(tool, 'category1', [])).toBeNull();
   });
+
+  it('should match by repoUrl only when no title in ignore entry', () => {
+    const tool = {
+      title: 'Tool Beta',
+      filters: { language: ['Python'], technology: [], categories: [] },
+      links: { repoUrl: 'https://github.com/example/tool-beta' }
+    } as AsyncAPITool;
+
+    const result = shouldIgnoreTool(tool, 'category1', ignoreByRepoUrlOnly);
+
+    expect(result).not.toBeNull();
+    expect(result?.reason).toBe('Remove by repoUrl alone');
+  });
+
+  it('should not match by repoUrl only when repo differs', () => {
+    const tool = {
+      title: 'Tool Alpha',
+      filters: { language: ['JavaScript'], technology: [], categories: [] },
+      links: { repoUrl: 'https://github.com/example/tool-alpha' }
+    } as AsyncAPITool;
+
+    const result = shouldIgnoreTool(tool, 'category1', ignoreByRepoUrlOnly);
+
+    expect(result).toBeNull();
+  });
+
+  it('should match by repoUrl only regardless of the tool title', () => {
+    const tool = {
+      title: 'Completely Different Title',
+      filters: { language: [], technology: [], categories: [] },
+      links: { repoUrl: 'https://github.com/example/tool-beta' }
+    } as AsyncAPITool;
+
+    expect(shouldIgnoreTool(tool, 'category1', ignoreByRepoUrlOnly)).not.toBeNull();
+  });
+
+  it('should respect category scope with repoUrl-only entry', () => {
+    const tool = {
+      title: 'Tool Alpha',
+      filters: { language: ['JavaScript'], technology: ['Node.js'], categories: [] },
+      links: { repoUrl: 'https://github.com/example/tool-alpha' }
+    } as AsyncAPITool;
+
+    expect(shouldIgnoreTool(tool, 'category1', ignoreByRepoUrlWithCategoryScope)).not.toBeNull();
+    expect(shouldIgnoreTool(tool, 'category2', ignoreByRepoUrlWithCategoryScope)).toBeNull();
+  });
+
+  it('should skip entries that have neither title nor repoUrl', () => {
+    const tool = {
+      title: 'Any Tool',
+      filters: { language: [], technology: [], categories: [] },
+      links: { repoUrl: 'https://github.com/example/any' }
+    } as AsyncAPITool;
+
+    const invalidEntries = [{ reason: 'Missing both title and repoUrl' }];
+
+    expect(shouldIgnoreTool(tool, 'category1', invalidEntries)).toBeNull();
+  });
 });
 
 describe('combineTools with ignore file', () => {
@@ -520,5 +580,36 @@ describe('combineTools with ignore file', () => {
     const combined = JSON.parse(fs.readFileSync(toolsPath, 'utf-8'));
 
     expect(combined.category1.toolsList).toHaveLength(4);
+  });
+
+  it('should ignore tools by repoUrl only across all categories', async () => {
+    fs.writeFileSync(
+      ignorePath,
+      JSON.stringify({ description: 'test', tools: ignoreByRepoUrlOnly })
+    );
+
+    await combineTools(automatedToolsForIgnore, {}, toolsPath, tagsPath, ignorePath, ignoredOutputPath);
+
+    const combined = JSON.parse(fs.readFileSync(toolsPath, 'utf-8'));
+    const category1Repos = combined.category1.toolsList.map((t: any) => t.links?.repoUrl);
+
+    expect(category1Repos).not.toContain('https://github.com/example/tool-beta');
+    expect(category1Repos).toContain('https://github.com/example/tool-alpha');
+  });
+
+  it('should respect category scope with repoUrl-only ignore entry', async () => {
+    fs.writeFileSync(
+      ignorePath,
+      JSON.stringify({ description: 'test', tools: ignoreByRepoUrlWithCategoryScope })
+    );
+
+    await combineTools(automatedToolsForIgnore, {}, toolsPath, tagsPath, ignorePath, ignoredOutputPath);
+
+    const combined = JSON.parse(fs.readFileSync(toolsPath, 'utf-8'));
+    const cat1Repos = combined.category1.toolsList.map((t: any) => t.links?.repoUrl);
+    const cat2Repos = combined.category2.toolsList.map((t: any) => t.links?.repoUrl);
+
+    expect(cat1Repos).not.toContain('https://github.com/example/tool-alpha');
+    expect(cat2Repos).toContain('https://github.com/example/tool-alpha');
   });
 });
