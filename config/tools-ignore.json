@@ -1,4 +1,29 @@
 {
   "description": "List of tools to exclude from the final tools.json during the combine step. Each entry must have at least 'title' or 'repoUrl' (or both). When only 'repoUrl' is provided, all tools with that repo are ignored regardless of title. When only 'title' is provided, all tools with that title are ignored. When both are provided, both must match. When 'categories' is provided, the tool is only removed from those specific categories; omit it to remove from all categories.",
-  "tools": []
+  "tools": [
+    {
+      "repoUrl": "https://github.com/hkirat/asyncapi-fork",
+      "reason": "Fork of asyncapi/cli, not an independent tool"
+    },
+    {
+      "title": "AsyncAPI Studio",
+      "repoUrl": "https://github.com/Shurtu-gal/action-test-bed",
+      "reason": "Fork of asyncapi/studio, not an independent tool"
+    },
+    {
+      "title": "HTML Template",
+      "repoUrl": "https://github.com/WSOL12/html-template",
+      "reason": "Fork of asyncapi/html-template, not an independent tool"
+    },
+    {
+      "title": "HTML Template",
+      "repoUrl": "https://github.com/dipaksodani/async-gen",
+      "reason": "Fork of asyncapi/html-template, not an independent tool"
+    },
+    {
+      "title": "AsyncAPI Studio",
+      "repoUrl": "https://github.com/TahaShahid203/async-api-issue",
+      "reason": "Fork of asyncapi/studio, not an independent tool"
+    }
+  ]
 }
