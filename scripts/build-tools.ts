@@ -121,10 +121,9 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const ignoredOutputPath = resolve(currentDirPath, '../config', 'tools-ignored.json');
 
   buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath, ignorePath, ignoredOutputPath).catch((err) => {
-      logger.error('Failed to build tools:', err);
-      process.exit(1);
-    }
-  );
+    logger.error('Failed to build tools:', err);
+    process.exit(1);
+  });
 }
 
 export { buildTools, buildToolsManual };
