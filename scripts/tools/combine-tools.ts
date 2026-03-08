@@ -325,7 +325,12 @@ const combineTools = async (
     );
 
     if (ignoredTools.length > 0) {
-      logger.info(`Tools ignored: ${ignoredTools.length} tool(s) removed by ${ignoreList.length} ignore rule(s).`);
+      logger.info(
+        `Tools ignored: ${ignoredTools.length} tool(s) removed by ${ignoreList.length} ignore rule(s).\n` +
+          ignoredTools
+            .map((t) => `  - "${t.title}" (${t.repoUrl || 'no repo'}) from [${t.category}]`)
+            .join('\n')
+      );
     } else if (ignoreList.length > 0) {
       logger.info(`Tools ignored: 0 (none of the ${ignoreList.length} ignore rule(s) matched any tool).`);
     }
