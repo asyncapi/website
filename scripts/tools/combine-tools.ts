@@ -324,6 +324,12 @@ const combineTools = async (
       )
     );
 
+    if (ignoredTools.length > 0) {
+      logger.info(`Tools ignored: ${ignoredTools.length} tool(s) removed by ${ignoreList.length} ignore rule(s).`);
+    } else if (ignoreList.length > 0) {
+      logger.info(`Tools ignored: 0 (none of the ${ignoreList.length} ignore rule(s) matched any tool).`);
+    }
+
     if (ignoredOutputPath && ignoredTools.length > 0) {
       fs.writeFileSync(
         ignoredOutputPath,

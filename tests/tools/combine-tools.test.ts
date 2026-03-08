@@ -35,7 +35,7 @@ import {
 } from '../fixtures/combineToolsData';
 
 jest.mock('../../scripts/helpers/logger', () => ({
-  logger: { error: jest.fn() }
+  logger: { error: jest.fn(), info: jest.fn() }
 }));
 
 jest.mock('ajv', () => {
