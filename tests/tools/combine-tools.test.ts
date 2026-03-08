@@ -583,6 +583,48 @@ describe('combineTools with ignore file', () => {
     );
   });
 
+  it('should use empty ignore list when ignore file has no tools property', async () => {
+    fs.writeFileSync(ignorePath, JSON.stringify({ description: 'test' }));
+
+    await combineTools(automatedToolsForIgnore, {}, toolsPath, tagsPath, ignorePath, ignoredOutputPath);
+
+    const combined = JSON.parse(fs.readFileSync(toolsPath, 'utf-8'));
+
+    expect(combined.category1.toolsList).toHaveLength(4);
+  });
+
+  it('should log "no repo" for ignored tools without repoUrl', async () => {
+    const automatedWithNoRepo = {
+      category1: {
+        description: 'Category 1',
+        toolsList: [
+          {
+            title: 'Tool Without Repo',
+            filters: {
+              language: ['JavaScript'],
+              technology: [],
+              categories: ['api']
+            },
+            links: {}
+          }
+        ]
+      }
+    };
+    fs.writeFileSync(
+      ignorePath,
+      JSON.stringify({
+        description: 'test',
+        tools: [{ title: 'Tool Without Repo', reason: 'No repo URL' }]
+      })
+    );
+
+    await combineTools(automatedWithNoRepo, {}, toolsPath, tagsPath, ignorePath, ignoredOutputPath);
+
+    expect(logger.info).toHaveBeenCalledWith(
+      expect.stringContaining('no repo')
+    );
+  });
+
   it('should work normally when no ignore file path is provided', async () => {
     await combineTools(automatedToolsForIgnore, {}, toolsPath, tagsPath);
 

@@ -113,14 +113,14 @@ async function buildToolsManual(
 
 /* istanbul ignore next */
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  const automatedToolsPath = resolve(currentDirPath, '../config', 'tools-automated.json');
-  const manualToolsPath = resolve(currentDirPath, '../config', 'tools-manual.json');
-  const toolsPath = resolve(currentDirPath, '../config', 'tools.json');
-  const tagsPath = resolve(currentDirPath, '../config', 'all-tags.json');
-  const ignorePath = resolve(currentDirPath, '../config', 'tools-ignore.json');
-  const ignoredOutputPath = resolve(currentDirPath, '../config', 'tools-ignored.json');
+  void (async () => {
+    const automatedToolsPath = resolve(currentDirPath, '../config', 'tools-automated.json');
+    const manualToolsPath = resolve(currentDirPath, '../config', 'tools-manual.json');
+    const toolsPath = resolve(currentDirPath, '../config', 'tools.json');
+    const tagsPath = resolve(currentDirPath, '../config', 'all-tags.json');
+    const ignorePath = resolve(currentDirPath, '../config', 'tools-ignore.json');
+    const ignoredOutputPath = resolve(currentDirPath, '../config', 'tools-ignored.json');
 
-  (async () => {
     try {
       await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath, ignorePath, ignoredOutputPath);
     } catch (err) {
