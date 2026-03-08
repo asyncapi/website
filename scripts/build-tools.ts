@@ -113,21 +113,18 @@ async function buildToolsManual(
 
 /* istanbul ignore next */
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  void (async () => {
-    const automatedToolsPath = resolve(currentDirPath, '../config', 'tools-automated.json');
-    const manualToolsPath = resolve(currentDirPath, '../config', 'tools-manual.json');
-    const toolsPath = resolve(currentDirPath, '../config', 'tools.json');
-    const tagsPath = resolve(currentDirPath, '../config', 'all-tags.json');
-    const ignorePath = resolve(currentDirPath, '../config', 'tools-ignore.json');
-    const ignoredOutputPath = resolve(currentDirPath, '../config', 'tools-ignored.json');
+  const automatedToolsPath = resolve(currentDirPath, '../config', 'tools-automated.json');
+  const manualToolsPath = resolve(currentDirPath, '../config', 'tools-manual.json');
+  const toolsPath = resolve(currentDirPath, '../config', 'tools.json');
+  const tagsPath = resolve(currentDirPath, '../config', 'all-tags.json');
+  const ignorePath = resolve(currentDirPath, '../config', 'tools-ignore.json');
+  const ignoredOutputPath = resolve(currentDirPath, '../config', 'tools-ignored.json');
 
-    try {
-      await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath, ignorePath, ignoredOutputPath);
-    } catch (err) {
+  buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath, ignorePath, ignoredOutputPath).catch((err) => {
       logger.error('Failed to build tools:', err);
       process.exit(1);
     }
-  })();
+  );
 }
 
 export { buildTools, buildToolsManual };
