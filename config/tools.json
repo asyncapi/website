@@ -1943,6 +1943,37 @@
     "description": "The tools below take specification documents as input, then publish fake messages to broker destinations for simulation purposes. They may also check that publisher messages are compliant with schemas.",
     "toolsList": [
       {
+        "title": "AsyncAPI Payload Validator",
+        "description": "A Python library and CLI for validating message payloads against AsyncAPI 2.x and 3.x specifications written in JSON or YAML format. Performs detailed JSON Schema validation including type checking, required fields, string patterns, enums, numeric constraints, and composition rules. Supports HTML reports, Jinja2 template validation, and is CI/CD ready with GitHub Actions and GitLab CI examples.",
+        "links": {
+          "websiteUrl": "https://pypi.org/project/asyncapi-payload-validator/",
+          "docsUrl": "https://github.com/ingka-group/asyncapi-payload-validator#readme",
+          "repoUrl": "https://github.com/ingka-group/asyncapi-payload-validator"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "Python",
+              "color": "bg-[#A8D0EF]",
+              "borderColor": "border-[#3878AB]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "AsyncAPI CLI",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "validator",
+            "mocking-and-testing",
+            "cli"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "Microcks",
         "description": "Mocking and testing platform for API and microservices. Turn your AsyncAPI, OpenAPI contract examples, or Postman collections into ready-to-use mocks. Use examples to simulate and validate received messages according to schema elements.",
         "links": {
@@ -2277,6 +2308,37 @@
         }
       },
       {
+        "title": "AsyncAPI Payload Validator",
+        "description": "A Python library and CLI for validating message payloads against AsyncAPI 2.x and 3.x specifications written in JSON or YAML format. Performs detailed JSON Schema validation including type checking, required fields, string patterns, enums, numeric constraints, and composition rules. Supports HTML reports, Jinja2 template validation, and is CI/CD ready with GitHub Actions and GitLab CI examples.",
+        "links": {
+          "websiteUrl": "https://pypi.org/project/asyncapi-payload-validator/",
+          "docsUrl": "https://github.com/ingka-group/asyncapi-payload-validator#readme",
+          "repoUrl": "https://github.com/ingka-group/asyncapi-payload-validator"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "Python",
+              "color": "bg-[#A8D0EF]",
+              "borderColor": "border-[#3878AB]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "AsyncAPI CLI",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "validator",
+            "mocking-and-testing",
+            "cli"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "AsyncAPI Validation",
         "description": "Message validation package for YAML and JSON AsyncAPI documents.",
         "links": {
@@ -2583,6 +2645,37 @@
           ],
           "categories": [
             "others",
+            "cli"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "AsyncAPI Payload Validator",
+        "description": "A Python library and CLI for validating message payloads against AsyncAPI 2.x and 3.x specifications written in JSON or YAML format. Performs detailed JSON Schema validation including type checking, required fields, string patterns, enums, numeric constraints, and composition rules. Supports HTML reports, Jinja2 template validation, and is CI/CD ready with GitHub Actions and GitLab CI examples.",
+        "links": {
+          "websiteUrl": "https://pypi.org/project/asyncapi-payload-validator/",
+          "docsUrl": "https://github.com/ingka-group/asyncapi-payload-validator#readme",
+          "repoUrl": "https://github.com/ingka-group/asyncapi-payload-validator"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "Python",
+              "color": "bg-[#A8D0EF]",
+              "borderColor": "border-[#3878AB]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "AsyncAPI CLI",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "validator",
+            "mocking-and-testing",
             "cli"
           ],
           "hasCommercial": false
@@ -2949,33 +3042,6 @@
       },
       {
         "title": "HTML Template",
-        "description": null,
-        "links": {
-          "repoUrl": "https://github.com/dipaksodani/async-gen"
-        },
-        "filters": {
-          "language": [
-            {
-              "name": "JavaScript",
-              "color": "bg-[#F2F1C7]",
-              "borderColor": "border-[#BFBE86]"
-            }
-          ],
-          "technology": [
-            {
-              "name": "HTML",
-              "color": "bg-[#61d0f2]",
-              "borderColor": "border-[#40ccf7]"
-            }
-          ],
-          "categories": [
-            "generator-template"
-          ],
-          "hasCommercial": false
-        }
-      },
-      {
-        "title": "HTML Template",
         "description": "HTML template for AsyncAPI Generator. Use it to generate a static docs. It is using AsyncAPI React component under the hood.",
         "links": {
           "repoUrl": "https://github.com/asyncapi/html-template"
@@ -3006,6 +3072,33 @@
         "description": null,
         "links": {
           "repoUrl": "https://github.com/WSOL12/html-template"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "JavaScript",
+              "color": "bg-[#F2F1C7]",
+              "borderColor": "border-[#BFBE86]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "HTML",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "generator-template"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "HTML Template",
+        "description": null,
+        "links": {
+          "repoUrl": "https://github.com/dipaksodani/async-gen"
         },
         "filters": {
           "language": [
