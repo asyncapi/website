@@ -88,7 +88,7 @@ export default function MobileNavMenu({
               <Link href='/docs' className='flex cursor-pointer'>
                 Docs
               </Link>
-              <NavItemDropdown />
+              <NavItemDropdown isOpen={open === 'learning'} />
             </h4>
             {open === 'learning' && <MenuBlocks items={learningItems} />}
           </div>
@@ -98,7 +98,7 @@ export default function MobileNavMenu({
               <Link href='/tools' className='flex cursor-pointer'>
                 Tools
               </Link>
-              <NavItemDropdown />
+              <NavItemDropdown isOpen={open === 'tooling'} />
             </h4>
             {open === 'tooling' && <MenuBlocks items={toolingItems} />}
           </div>
@@ -107,7 +107,7 @@ export default function MobileNavMenu({
               <Link href='/community' className='flex cursor-pointer'>
                 Community
               </Link>
-              <NavItemDropdown />
+              <NavItemDropdown isOpen={open === 'community'} />
             </h4>
             {open === 'community' && <MenuBlocks items={communityItems} />}
           </div>
@@ -116,7 +116,7 @@ export default function MobileNavMenu({
               <div>
                 <h4 className='mb-4 flex justify-between font-medium text-gray-800'>
                   <a className='cursor-pointer'>Others</a>
-                  <NavItemDropdown />
+                  <NavItemDropdown isOpen={open === 'others'} />
                 </h4>
                 {open === 'others' &&
                   otherItems.map((item: MenuItem, index: number) => (
@@ -141,7 +141,7 @@ export default function MobileNavMenu({
                   <a className='flex cursor-pointer items-center gap-x-2'>
                     Language <IconLanguage />
                   </a>
-                  <NavItemDropdown />
+                  <NavItemDropdown isOpen={open === 'language'} />
                 </h4>
                 {open === 'language' &&
                   uniqueLangs.map((lang) => (
