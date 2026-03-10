@@ -1,11 +1,8 @@
 import 'schyma/dist/esm/style.css';
 
 import type { JSONSchema7Object } from 'json-schema';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Schyma from 'schyma';
-
-import schemav3 from '../../config/3.0.0.json';
-import schemav3_1 from '../../config/3.1.0.json';
 
 /**
  * @description This component renders the spec explorer.
@@ -14,11 +11,39 @@ import schemav3_1 from '../../config/3.1.0.json';
 interface VisualizerProps {
   version: string;
 }
-function Visualizer({ version }: VisualizerProps) {
-  let typeSchema = schemav3 as unknown as JSONSchema7Object;
 
-  if (version === '3.1.0') {
-    typeSchema = schemav3_1 as unknown as JSONSchema7Object;
+type SupportedVersion = '3.0.0' | '3.1.0';
+
+const schemaLoaders: Record<SupportedVersion, () => Promise<{ default: unknown }>> = {
+  '3.0.0': () => import('../../config/3.0.0.json'),
+  '3.1.0': () => import('../../config/3.1.0.json')
+};
+
+function Visualizer({ version }: VisualizerProps) {
+  const [schema, setSchema] = useState<JSONSchema7Object | null>(null);
+
+  useEffect(() => {
+    let isMounted = true;
+    const currentVersion: SupportedVersion = version === '3.1.0' ? '3.1.0' : '3.0.0';
+
+    setSchema(null);
+    (async () => {
+      try {
+        const module = await schemaLoaders[currentVersion]();
+
+        if (isMounted) setSchema(module.default as JSONSchema7Object);
+      } catch {
+        if (isMounted) setSchema(null);
+      }
+    })();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [version]);
+
+  if (!schema) {
+    return null;
   }
 
   return (
@@ -29,7 +54,7 @@ function Visualizer({ version }: VisualizerProps) {
         AsyncAPI document to describe an application's API. The document may reference other files for
         additional details or shared fields, but it is typically a single,
         primary document that encapsulates the API description."
-        schema={typeSchema}
+        schema={schema}
       />
     </div>
   );
