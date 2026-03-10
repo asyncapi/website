@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI & WebSocket A Match Made from Heaven?"
+title: "AsyncAPI & WebSocket: A Match Made from Heaven?"
 date: 2026-02-22T06:00:00+01:00
 type: Engineering
 tags:
@@ -184,7 +184,7 @@ servers:
   development:
     host: localhost:8787
     description: Development WebSocket broker
-    protocol: wss
+    protocol: ws
 ```
 
 ### Step 2 - Defining Our WebSocket Channel
@@ -411,7 +411,7 @@ info:
 servers:
   production:
     host: chat.example.com
-    protocol: ws
+    protocol: wss
     description: Production server
     security:
       - $ref: '#/components/securitySchemes/apiKeyHeader'
