@@ -16,13 +16,15 @@ interface VisualizerProps {
 }
 function Visualizer({ version }: VisualizerProps) {
   let typeSchema = schemav3 as unknown as JSONSchema7Object;
+
   if (version === '3.1.0') {
     typeSchema = schemav3_1 as unknown as JSONSchema7Object;
   }
+
   return (
-    <div className="overflow-hidden">
+    <div className='overflow-hidden'>
       <Schyma
-        title="AsyncAPI Specification"
+        title='AsyncAPI Specification'
         description="The AsyncAPI Specification defines a set of fields that can be used in an
         AsyncAPI document to describe an application's API. The document may reference other files for
         additional details or shared fields, but it is typically a single,
