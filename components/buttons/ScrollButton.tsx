@@ -9,13 +9,15 @@ function ScrollButton() {
   const scrollImage = '/img/loaders/scroll.svg';
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 150) {
-        setBackToTopButton(true);
-      } else {
-        setBackToTopButton(false);
-      }
-    });
+    const handleScroll = () => {
+      setBackToTopButton(window.scrollY > 150);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const scrollUp = () => {

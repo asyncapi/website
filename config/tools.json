@@ -23,7 +23,7 @@
         "title": "AsyncAPI-Directory by APIs.guru",
         "description": "Directory of asynchronous API specifications in AsyncAPI format.",
         "links": {
-          "websiteUrl": "https://apis.guru/asyncapi-directory/",
+          "websiteUrl": "https://apis.guru/",
           "repoUrl": "https://github.com/APIs-guru/asyncapi-directory"
         },
         "filters": {
@@ -847,6 +847,45 @@
         }
       },
       {
+        "title": "PHP AsyncAPI Annotations",
+        "description": "A comprehensive PHP library providing annotations/attributes for the AsyncAPI 3.0.0 specification. This library enables you to define AsyncAPI specifications using modern PHP 8.3+ attributes with strict typing, PSR compliance, and support for all protocol bindings.",
+        "links": {
+          "websiteUrl": "https://github.com/drmmr763/php-asyncapi-annotations",
+          "docsUrl": "https://github.com/drmmr763/php-asyncapi-annotations#readme",
+          "repoUrl": "https://github.com/drmmr763/php-asyncapi-annotations"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "PHP",
+              "color": "bg-[#B0B3D6]",
+              "borderColor": "border-[#787CB5]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "PHP",
+              "color": "bg-[#B0B3D6]",
+              "borderColor": "border-[#787CB5]"
+            },
+            {
+              "name": "Laravel",
+              "color": "bg-[#F55247]",
+              "borderColor": "border-[#F43B2F]"
+            },
+            {
+              "name": "Symfony",
+              "color": "bg-[#666666]",
+              "borderColor": "border-[#333333]"
+            }
+          ],
+          "categories": [
+            "code-generator"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "The Codegen Project",
         "description": "Stop wasting time on manual code. Generate Payloads, parameters, headers, types, channel wrappers, and more from your AsyncAPI document! Works with Kafka, NATS, MQTT, event-source, AMQP, HTTP Client!",
         "links": {
@@ -1100,7 +1139,7 @@
         "title": "AsyncAPI-Directory by APIs.guru",
         "description": "Directory of asynchronous API specifications in AsyncAPI format.",
         "links": {
-          "websiteUrl": "https://apis.guru/asyncapi-directory/",
+          "websiteUrl": "https://apis.guru/",
           "repoUrl": "https://github.com/APIs-guru/asyncapi-directory"
         },
         "filters": {
@@ -1443,7 +1482,7 @@
         "description": null,
         "links": {
           "websiteUrl": "https://studio.asyncapi.com",
-          "repoUrl": "https://github.com/Shurtu-gal/action-test-bed"
+          "repoUrl": "https://github.com/TahaShahid203/async-api-issue"
         },
         "filters": {
           "language": [],
@@ -1470,7 +1509,7 @@
         "description": null,
         "links": {
           "websiteUrl": "https://studio.asyncapi.com",
-          "repoUrl": "https://github.com/TahaShahid203/async-api-issue"
+          "repoUrl": "https://github.com/Shurtu-gal/action-test-bed"
         },
         "filters": {
           "language": [],
@@ -1904,6 +1943,37 @@
     "description": "The tools below take specification documents as input, then publish fake messages to broker destinations for simulation purposes. They may also check that publisher messages are compliant with schemas.",
     "toolsList": [
       {
+        "title": "AsyncAPI Payload Validator",
+        "description": "A Python library and CLI for validating message payloads against AsyncAPI 2.x and 3.x specifications written in JSON or YAML format. Performs detailed JSON Schema validation including type checking, required fields, string patterns, enums, numeric constraints, and composition rules. Supports HTML reports, Jinja2 template validation, and is CI/CD ready with GitHub Actions and GitLab CI examples.",
+        "links": {
+          "websiteUrl": "https://pypi.org/project/asyncapi-payload-validator/",
+          "docsUrl": "https://github.com/ingka-group/asyncapi-payload-validator#readme",
+          "repoUrl": "https://github.com/ingka-group/asyncapi-payload-validator"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "Python",
+              "color": "bg-[#A8D0EF]",
+              "borderColor": "border-[#3878AB]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "AsyncAPI CLI",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "validator",
+            "mocking-and-testing",
+            "cli"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "Microcks",
         "description": "Mocking and testing platform for API and microservices. Turn your AsyncAPI, OpenAPI contract examples, or Postman collections into ready-to-use mocks. Use examples to simulate and validate received messages according to schema elements.",
         "links": {
@@ -1946,7 +2016,7 @@
         "description": "Your API Mocking Tool for Agile Development. Mock and simulate AsyncAPI and OpenAPI services for local testing, development, and CI pipelines — with a visual dashboard to inspect your mocks and a powerful test data generator fully customizable with JavaScript.",
         "links": {
           "websiteUrl": "https://mokapi.io",
-          "docsUrl": "https://mokapi.io/docs/guides/welcome",
+          "docsUrl": "https://mokapi.io/docs/welcome",
           "repoUrl": "https://github.com/marle3003/mokapi"
         },
         "filters": {
@@ -2233,6 +2303,37 @@
           "technology": [],
           "categories": [
             "validator"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "AsyncAPI Payload Validator",
+        "description": "A Python library and CLI for validating message payloads against AsyncAPI 2.x and 3.x specifications written in JSON or YAML format. Performs detailed JSON Schema validation including type checking, required fields, string patterns, enums, numeric constraints, and composition rules. Supports HTML reports, Jinja2 template validation, and is CI/CD ready with GitHub Actions and GitLab CI examples.",
+        "links": {
+          "websiteUrl": "https://pypi.org/project/asyncapi-payload-validator/",
+          "docsUrl": "https://github.com/ingka-group/asyncapi-payload-validator#readme",
+          "repoUrl": "https://github.com/ingka-group/asyncapi-payload-validator"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "Python",
+              "color": "bg-[#A8D0EF]",
+              "borderColor": "border-[#3878AB]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "AsyncAPI CLI",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "validator",
+            "mocking-and-testing",
+            "cli"
           ],
           "hasCommercial": false
         }
@@ -2550,6 +2651,37 @@
         }
       },
       {
+        "title": "AsyncAPI Payload Validator",
+        "description": "A Python library and CLI for validating message payloads against AsyncAPI 2.x and 3.x specifications written in JSON or YAML format. Performs detailed JSON Schema validation including type checking, required fields, string patterns, enums, numeric constraints, and composition rules. Supports HTML reports, Jinja2 template validation, and is CI/CD ready with GitHub Actions and GitLab CI examples.",
+        "links": {
+          "websiteUrl": "https://pypi.org/project/asyncapi-payload-validator/",
+          "docsUrl": "https://github.com/ingka-group/asyncapi-payload-validator#readme",
+          "repoUrl": "https://github.com/ingka-group/asyncapi-payload-validator"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "Python",
+              "color": "bg-[#A8D0EF]",
+              "borderColor": "border-[#3878AB]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "AsyncAPI CLI",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "validator",
+            "mocking-and-testing",
+            "cli"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "AsyncAPI-format",
         "description": "Format an AsyncAPI document by ordering, casing, formatting, and filtering fields.",
         "links": {
@@ -2582,7 +2714,7 @@
         "description": "Your API Mocking Tool for Agile Development. Mock and simulate AsyncAPI and OpenAPI services for local testing, development, and CI pipelines — with a visual dashboard to inspect your mocks and a powerful test data generator fully customizable with JavaScript.",
         "links": {
           "websiteUrl": "https://mokapi.io",
-          "docsUrl": "https://mokapi.io/docs/guides/welcome",
+          "docsUrl": "https://mokapi.io/docs/welcome",
           "repoUrl": "https://github.com/marle3003/mokapi"
         },
         "filters": {
@@ -2767,7 +2899,7 @@
         "title": "asyncapi-preview",
         "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
         "links": {
-          "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
+          "repoUrl": "https://github.com/Savio629/testing2"
         },
         "filters": {
           "language": [],
@@ -2793,7 +2925,7 @@
         "title": "asyncapi-preview",
         "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
         "links": {
-          "repoUrl": "https://github.com/Savio629/testing2"
+          "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
         },
         "filters": {
           "language": [],
