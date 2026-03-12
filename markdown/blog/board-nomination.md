@@ -27,7 +27,7 @@ Joining the Governance Board is a meaningful way to contribute and help shape ou
 * Overseeing AsyncAPI employees, program leads, and hiring
 * Managing funding streams (e.g., Open Collective, GitHub Sponsors)
 
-Most importantly, we’re looking for those who lead with empathy and service. Board members empower others, working within the charter, and all proposals are shaped together with the TSC. For more details, please read our Charter and Governance Guide.
+Most importantly, we’re looking for those who lead with empathy and service. Board members empower others, working within the charter, and all proposals are shaped together with the TSC. For more details, please read our [Charter](https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/CHARTER.md) and [Governance Guide](https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/GOVERNANCE.md).
 
 ## Eligibility
 
@@ -50,7 +50,7 @@ We encourage you to share any details you feel would help the TSC get to know no
 
 ## Timeline
 
-Nominations are open from the 1st to the 26th of April at 12.00 PM UTC. Simply email your name, or your nominee’s name, along with the submission details to **info@asyncapi.com**. We look forward to seeing all your wonderful nominations!
+Nominations are open from the **1st to the 26th of April at 12.00 PM UTC**. Simply email your name, or your nominee’s name, along with the submission details to **info@asyncapi.com**. We look forward to seeing all your wonderful nominations!
 
 Candidates will be announced on 30 April. Voting begins from 1 to 31 May.
 
