@@ -4,6 +4,7 @@ export default defineConfig({
   defaultCommandTimeout: 15000,
   screenshotOnRunFailure: true,
   e2e: {
+    fixturesFolder: 'cypress/data',
     screenshotsFolder: 'cypress/screenshots',
     viewportWidth: 1280,
     viewportHeight: 720,

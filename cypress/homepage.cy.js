@@ -1,5 +1,5 @@
 
-import homePageData from './fixtures/homePageData.json';
+import homePageData from './data/homePageData.json';
 import HomePage from './pages/homepage';
 import { features } from '../components/features/FeatureList';
 

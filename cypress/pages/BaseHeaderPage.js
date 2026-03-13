@@ -1,7 +1,7 @@
-
-class BasePage {
-  visit() {
-    cy.visit('/')
+class BaseHeaderPage {
+  visit(path = '/') {
+    cy.visit(path);
+    return this;
   }
 
   getElement(selector) {
@@ -15,4 +15,4 @@ class BasePage {
   }
 }
 
-export default BasePage;
+export default BaseHeaderPage;
