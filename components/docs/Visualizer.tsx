@@ -1,12 +1,9 @@
+/* eslint-disable require-jsdoc */
 import 'schyma/dist/esm/style.css';
 
 import type { JSONSchema7Object } from 'json-schema';
 import React, { useEffect, useState } from 'react';
 import Schyma from 'schyma';
-
-/**
- * @description This component renders the spec explorer.
- */
 
 interface VisualizerProps {
   version: string;
@@ -29,9 +26,9 @@ function Visualizer({ version }: VisualizerProps) {
     setSchema(null);
     (async () => {
       try {
-        const module = await schemaLoaders[currentVersion]();
+        const schemaModule = await schemaLoaders[currentVersion]();
 
-        if (isMounted) setSchema(module.default as JSONSchema7Object);
+        if (isMounted) setSchema(schemaModule.default as JSONSchema7Object);
       } catch {
         if (isMounted) setSchema(null);
       }
