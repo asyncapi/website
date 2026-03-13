@@ -265,23 +265,27 @@ async function writeToFile(
  * Each issue is mapped to an object containing its unique identifier, title, assignment status, resource path,
  * repository name (prefixed with "asyncapi/"), author's login, a primary area label (extracted using a filter and defaulting to "Unknown"),
  * and a list of labels cleaned to exclude area identifiers and the "good first issue" tag.
+ * Closed issues are filtered out during this transformation.
  *
  * @param issues - The list of good first issues to transform.
- * @returns A promise that resolves to an array of simplified issue objects.
+ * @returns A promise that resolves to an array of simplified issue objects, excluding closed issues.
  */
 async function mapGoodFirstIssues(issues: GoodFirstIssues[]): Promise<MappedIssue[]> {
-  return issues.map((issue) => ({
-    id: issue.id,
-    title: issue.title,
-    isAssigned: !!issue.assignees.totalCount,
-    resourcePath: issue.resourcePath,
-    repo: `asyncapi/${issue.repository.name}`,
-    author: issue.author.login,
-    area: getLabel(issue, 'area/') || 'Unknown',
-    labels: issue.labels!.nodes.filter(
-      (label) => !label.name.startsWith('area/') && !label.name.startsWith('good first issue')
-    )
-  }));
+  return issues
+    .filter((issue) => issue.state === 'OPEN')
+    .map((issue) => ({
+      id: issue.id,
+      title: issue.title,
+      isAssigned: !!issue.assignees.totalCount,
+      resourcePath: issue.resourcePath,
+      repo: `asyncapi/${issue.repository.name}`,
+      author: issue.author.login,
+      area: getLabel(issue, 'area/') || 'Unknown',
+      labels: issue.labels!.nodes.filter(
+        (label) => !label.name.startsWith('area/') && !label.name.startsWith('good first issue')
+      ),
+      state: issue.state
+    }));
 }
 
 /**
