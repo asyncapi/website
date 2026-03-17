@@ -1,15 +1,35 @@
 {
-    "main": {
-        "header": "Building the future of",
-        "subHeader": "Event-Driven Architectures (EDA)",
-        "body_pretext": "Open-Source tools to easily build and maintain your event-driven architecture. All powered by the AsyncAPI specification, the ",
-        "body_boldtext": "industry standard",
-        "body_posttext": " for defining asynchronous APIs.",
-        "docs_btn": "Read the docs",
-        "search_btn": "Quick search...",
-        "slogan_text": "Proud to be part of the",
-        "slogan_link": "Linux Foundation"
+  "main": {
+    "header": "Building the future of",
+    "subHeader": "Event-Driven Architectures (EDA)",
+    "body_pretext": "Open-Source tools to easily build and maintain your event-driven architecture. All powered by the AsyncAPI specification, the ",
+    "body_boldtext": "industry standard",
+    "body_posttext": " for defining asynchronous APIs.",
+    "heroBadge": "Event-driven architecture, without the guesswork",
+    "docs_btn": "Read the docs",
+    "search_btn": "Quick search...",
+    "specSignalTitle": "Specification signal",
+    "specSignalSubtitle": "Trusted by tooling teams",
+    "cards": {
+      "standardize": {
+        "label": "Standardize",
+        "title": "Events",
+        "description": "Describe brokers, messages, channels, and payloads in one contract."
+      },
+      "generate": {
+        "label": "Generate",
+        "title": "Tooling",
+        "description": "Move from schema review to docs, validation, and code generation faster."
+      },
+      "align": {
+        "label": "Align",
+        "title": "Teams",
+        "description": "Give platform, product, and integration teams one shared source of truth."
+      }
     },
+    "slogan_text": "Proud to be part of the",
+    "slogan_link": "Linux Foundation"
+  },
     "features": {
         "title": "Why AsyncAPI?",
         "description": "Improving the current state of Event-Driven Architectures (EDA)",
