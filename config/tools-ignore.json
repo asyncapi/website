@@ -22,6 +22,10 @@
     {
       "repoUrl": "https://github.com/TahaShahid203/async-api-issue",
       "reason": "Duplicate of asyncapi/studio, not an independent tool"
+    },
+    {
+      "repoUrl": "https://github.com/Savio629/testing2",
+      "reason": "Duplicate of asyncapi/vs-asyncapi-preview, not an independent tool"
     }
   ]
 }
