@@ -1,15 +1,35 @@
 {
-    "main": {
-       "header": "构建未来的",
-        "subHeader": "事件驱动架构（EDA）",
-        "body_pretext": "开源工具，让你轻松构建和维护事件驱动架构。所有这些都基于 AsyncAPI 规范，",
-        "body_boldtext": "行业标准",
-        "body_posttext": "，用于定义异步 API。",
-        "docs_btn": "阅读文档",
-        "search_btn": "快速搜索...",
-        "slogan_text": "自豪地成为",
-        "slogan_link": "Linux 基金会的一部分"
+  "main": {
+    "header": "构建未来的",
+    "subHeader": "事件驱动架构（EDA）",
+    "body_pretext": "开源工具，让你轻松构建和维护事件驱动架构。所有这些都基于 AsyncAPI 规范，",
+    "body_boldtext": "行业标准",
+    "body_posttext": "，用于定义异步 API。",
+    "heroBadge": "事件驱动架构，不再靠猜",
+    "docs_btn": "阅读文档",
+    "search_btn": "快速搜索...",
+    "specSignalTitle": "规范信号",
+    "specSignalSubtitle": "已获工具团队信任",
+    "cards": {
+      "standardize": {
+        "label": "标准化",
+        "title": "事件",
+        "description": "用一份契约描述 broker、消息、通道和载荷。"
+      },
+      "generate": {
+        "label": "生成",
+        "title": "工具链",
+        "description": "更快地从 schema 评审走到文档、校验和代码生成。"
+      },
+      "align": {
+        "label": "对齐",
+        "title": "团队",
+        "description": "为平台、产品和集成团队提供统一的事实来源。"
+      }
     },
+    "slogan_text": "自豪地成为",
+    "slogan_link": "Linux 基金会的一部分"
+  },
     "features": {
         "title": "为什么选择 AsyncAPI？",
         "description": "改善事件驱动架构（EDA）的现状",
