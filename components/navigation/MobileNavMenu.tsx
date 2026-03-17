@@ -74,6 +74,7 @@ export default function MobileNavMenu({
                   onClick={onClickClose}
                   type='button'
                   className='inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
+                  aria-label='Close menu'
                 >
                   <svg className='size-6' stroke='currentColor' fill='none' viewBox='0 0 24 24'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M6 18L18 6M6 6l12 12' />
