@@ -149,7 +149,7 @@ export default function HomePage() {
           </div>
         </Container>
 
-        <section className='pb-20' role='contentinfo' aria-label='Our Sponsors'>
+        <section className='pb-20' role='region' aria-label='Our Sponsors'>
           <Container
             className='rounded-[2rem] border border-slate-200 bg-white px-6 py-10 text-center shadow-sm md:px-10'
             wide
