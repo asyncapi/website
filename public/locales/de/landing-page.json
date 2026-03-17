@@ -1,15 +1,35 @@
 {
-    "main": {
-        "header": "Aufbau der Zukunft der",
-        "subHeader": "Ereignisgesteuerte Architekturen (EDA)",
-        "body_pretext": "Open-Source-Tools zur einfachen Erstellung und Wartung Ihrer ereignisgesteuerten Architektur. Alle basieren auf der AsyncAPI-Spezifikation, der ",
-        "body_boldtext": "Industriestandard",
-        "body_posttext": " zur Definition asynchroner APIs.",
-        "docs_btn": "Lesen Sie die Dokumente",
-        "search_btn": "Schnellsuche...",
-        "slogan_text": "Wir sind stolz darauf, Teil der",
-        "slogan_link": "Linux Foundation"
+  "main": {
+    "header": "Aufbau der Zukunft der",
+    "subHeader": "Ereignisgesteuerte Architekturen (EDA)",
+    "body_pretext": "Open-Source-Tools zur einfachen Erstellung und Wartung Ihrer ereignisgesteuerten Architektur. Alle basieren auf der AsyncAPI-Spezifikation, der ",
+    "body_boldtext": "Industriestandard",
+    "body_posttext": " zur Definition asynchroner APIs.",
+    "heroBadge": "Event-getriebene Architektur ohne Rätselraten",
+    "docs_btn": "Lesen Sie die Dokumente",
+    "search_btn": "Schnellsuche...",
+    "specSignalTitle": "Spezifikationssignal",
+    "specSignalSubtitle": "Vertrauenswürdig für Tooling-Teams",
+    "cards": {
+      "standardize": {
+        "label": "Standardisieren",
+        "title": "Events",
+        "description": "Beschreiben Sie Broker, Nachrichten, Kanäle und Payloads in einem gemeinsamen Vertrag."
+      },
+      "generate": {
+        "label": "Generieren",
+        "title": "Tooling",
+        "description": "Gehen Sie schneller von der Schema-Prüfung zu Dokumentation, Validierung und Code-Generierung über."
+      },
+      "align": {
+        "label": "Ausrichten",
+        "title": "Teams",
+        "description": "Geben Sie Plattform-, Produkt- und Integrationsteams eine gemeinsame Source of Truth."
+      }
     },
+    "slogan_text": "Wir sind stolz darauf, Teil der",
+    "slogan_link": "Linux Foundation"
+  },
     "features": {
         "title": "Warum AsyncAPI?",
         "description": "Verbesserung des aktuellen Stands der ereignisgesteuerten Architekturen (EDA)",
