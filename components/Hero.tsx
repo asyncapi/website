@@ -38,7 +38,7 @@ export default function Hero({ className = '' }: HeroProps) {
         <div className='relative grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:items-center'>
           <div className='text-center lg:text-left'>
             <div className='inline-flex items-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-cyan-100'>
-              Event-driven architecture, without the guesswork
+              {t('main.heroBadge')}
             </div>
             <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.xl} className='mt-6 text-white'>
               {t('main.header')} <span className='block text-cyan-200 md:-mt-4'>{t('main.subHeader')}</span>
@@ -93,30 +93,24 @@ export default function Hero({ className = '' }: HeroProps) {
             <div className='absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-cyan-400/20 via-sky-500/10 to-transparent blur-2xl' />
             <div className='relative rounded-[1.75rem] border border-white/10 bg-white/5 p-5 shadow-2xl shadow-slate-950/30 backdrop-blur-sm'>
               <div className='mb-4 flex items-center justify-between rounded-full border border-white/10 bg-slate-900/70 px-4 py-2 text-xs uppercase tracking-[0.2em] text-slate-300'>
-                <span>Specification signal</span>
-                <span className='text-cyan-200'>Trusted by tooling teams</span>
+                <span>{t('main.specSignalTitle')}</span>
+                <span className='text-cyan-200'>{t('main.specSignalSubtitle')}</span>
               </div>
               <div className='grid gap-3 sm:grid-cols-3'>
                 <div className='rounded-2xl border border-white/10 bg-slate-900/70 p-4 text-left'>
-                  <p className='text-xs uppercase tracking-[0.18em] text-slate-400'>Standardize</p>
-                  <p className='mt-3 text-2xl font-semibold text-white'>Events</p>
-                  <p className='mt-2 text-sm text-slate-300'>
-                    Describe brokers, messages, channels, and payloads in one contract.
-                  </p>
+                  <p className='text-xs uppercase tracking-[0.18em] text-slate-400'>{t('main.cards.standardize.label')}</p>
+                  <p className='mt-3 text-2xl font-semibold text-white'>{t('main.cards.standardize.title')}</p>
+                  <p className='mt-2 text-sm text-slate-300'>{t('main.cards.standardize.description')}</p>
                 </div>
                 <div className='rounded-2xl border border-cyan-400/30 bg-cyan-400/10 p-4 text-left'>
-                  <p className='text-xs uppercase tracking-[0.18em] text-cyan-100'>Generate</p>
-                  <p className='mt-3 text-2xl font-semibold text-white'>Tooling</p>
-                  <p className='mt-2 text-sm text-cyan-50'>
-                    Move from schema review to docs, validation, and code generation faster.
-                  </p>
+                  <p className='text-xs uppercase tracking-[0.18em] text-cyan-100'>{t('main.cards.generate.label')}</p>
+                  <p className='mt-3 text-2xl font-semibold text-white'>{t('main.cards.generate.title')}</p>
+                  <p className='mt-2 text-sm text-cyan-50'>{t('main.cards.generate.description')}</p>
                 </div>
                 <div className='rounded-2xl border border-white/10 bg-slate-900/70 p-4 text-left'>
-                  <p className='text-xs uppercase tracking-[0.18em] text-slate-400'>Align</p>
-                  <p className='mt-3 text-2xl font-semibold text-white'>Teams</p>
-                  <p className='mt-2 text-sm text-slate-300'>
-                    Give platform, product, and integration teams one shared source of truth.
-                  </p>
+                  <p className='text-xs uppercase tracking-[0.18em] text-slate-400'>{t('main.cards.align.label')}</p>
+                  <p className='mt-3 text-2xl font-semibold text-white'>{t('main.cards.align.title')}</p>
+                  <p className='mt-2 text-sm text-slate-300'>{t('main.cards.align.description')}</p>
                 </div>
               </div>
               <div className='mt-5 rounded-[1.5rem] border border-white/10 bg-slate-900/80 p-3'>
