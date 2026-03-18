@@ -65,18 +65,18 @@ const serializedBuckets: SerializedBuckets = buckets.reduce(
  * @param {Function} [props.onClick=() => {}] - The function to be called when the navigation item is clicked.
  */
 export default function DocsNav({ item, active, onClick = () => {} }: DocsNavProps) {
+  const slug = item.item.slug;
   const subCategories = item.children;
   const bucket = serializedBuckets[item.item.rootSectionId];
-  const [openSubCategory, setOpenSubCategory] = useState(active.startsWith(item.item.slug));
-
+  const [openSubCategory, setOpenSubCategory] = useState(active.startsWith(slug));
   const onClickHandler = () => {
-    setOpenSubCategory(!openSubCategory);
+    setOpenSubCategory(prev =>!prev);
     onClick();
   };
 
   useEffect(() => {
-    setOpenSubCategory(active.startsWith(item.item.slug));
-  }, [active]);
+    setOpenSubCategory(active.startsWith(slug));
+  }, [active, slug]);
 
   return (
     <li className='mb-4' key={item.item.title} data-testid='DocsNav-item'>
@@ -84,7 +84,7 @@ export default function DocsNav({ item, active, onClick = () => {} }: DocsNavPro
         <DocsArrow
           isDropDown={Object.values(subCategories).length > 0}
           activeDropDownItem={openSubCategory}
-          onClick={() => setOpenSubCategory(!openSubCategory)}
+          onClick={() => setOpenSubCategory(prev => !prev)}
         />
         <DocsNavItem
           {...item.item}
