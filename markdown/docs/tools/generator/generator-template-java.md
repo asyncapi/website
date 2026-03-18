@@ -513,7 +513,7 @@ public class TestClient {
         int idLength = 8;
         int minValue = (int) Math.pow(10, idLength - 1); // Minimum 8-digit number (e.g., 10000000)
         int maxValue = (int) Math.pow(10, idLength) - 1; // Maximum 8-digit number (e.g., 99999999)
-        System.out.println("Validating generated generated Client.java");
+        System.out.println("Validating generated Client.java");
         System.out.println("Running tests in TestClient.java");
         System.out.println("Sending temperature changes to the broker...");
         System.err.println("\n");
@@ -540,7 +540,7 @@ Run `npm test` to validate that everything works as expected. You should see log
 ```cmd
 Connected to MQTT broker: tcp://test.mosquitto.org:1883
 
-Validating generated generated Client.java
+Validating generated Client.java
 Running tests in TestClient.java
 Sending temperature changes to the broker...
 TemperatureDrop change sent: 43289900
