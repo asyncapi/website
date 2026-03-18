@@ -46,8 +46,9 @@ export default function FiltersDisplay({ checkedOptions = [], setCheckedOptions 
                   className='mt-[-2px] rounded-full p-1 hover:bg-gray-100'
                   onClick={(event) => handleClickOption(event, items, checkedOptions, setCheckedOptions)}
                   data-testid='Filters-Display-Button'
+                  aria-label={`Remove ${items} filter`}
                 >
-                  <img src='/img/illustrations/icons/close-icon.svg' alt='close' width='10' />
+                  <img src='/img/illustrations/icons/close-icon.svg' alt='' width='10' />
                 </button>
               </div>
             );
