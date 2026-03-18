@@ -98,7 +98,9 @@ export default function Hero({ className = '' }: HeroProps) {
               </div>
               <div className='grid gap-3 sm:grid-cols-3'>
                 <div className='rounded-2xl border border-white/10 bg-slate-900/70 p-4 text-left'>
-                  <p className='text-xs uppercase tracking-[0.18em] text-slate-400'>{t('main.cards.standardize.label')}</p>
+                  <p className='text-xs uppercase tracking-[0.18em] text-slate-400'>
+                    {t('main.cards.standardize.label')}
+                  </p>
                   <p className='mt-3 text-2xl font-semibold text-white'>{t('main.cards.standardize.title')}</p>
                   <p className='mt-2 text-sm text-slate-300'>{t('main.cards.standardize.description')}</p>
                 </div>
