@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/T8RHRCHtPhs/hqdefault.jpg",
+    "title": "AsyncAPI Website Triage Meeting, 15:30 UTC Wednesday March 18th 2026",
+    "description": "https://github.com/asyncapi/community/issues/2315.",
+    "videoId": "T8RHRCHtPhs"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/ZNGe0cU5Mpg/hqdefault.jpg",
     "title": "Community WG Meeting, 15:00 UTC Tuesday March 17th 2026",
     "description": "https://github.com/asyncapi/community/issues/2311.",
@@ -22,11 +28,5 @@
     "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday February 3rd 2026",
     "description": "https://github.com/asyncapi/community/issues/2249.",
     "videoId": "Q6oGGfIsI2g"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/pvZcbln80ak/hqdefault.jpg",
-    "title": "AsyncAPI Spec Triage, 16:00 UTC Thursday January 22nd 2026",
-    "description": "https://github.com/asyncapi/community/issues/2244.",
-    "videoId": "pvZcbln80ak"
   }
 ]
