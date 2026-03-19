@@ -61,7 +61,7 @@ Path to the AsyncAPI document that you want to process.
 
 Template for the generator. Official templates are listed here https://github.com/asyncapi/generator#list-of-official-generator-templates. You can pass template as npm package, url to git repository, link to tar file or local template.
 
-**Default** points to `@asyncapi/markdown-template@0.10.0` template.
+**Default** points to `@asyncapi/markdown-template@2.0.0` template.
 
 > [!TIP]
 > We recommend to always specify the version of the template to not encounter any issues with the action in case of release of the template that is not compatible with given version of the generator.
@@ -229,7 +229,7 @@ Use following commands to run and test github action locally:
 2. Execute docker image with proper arguments
 
   ```bash
-    docker run -e GITHUB_WORKSPACE="" --workdir /action  -v "/home/{user}/path/to/repo":"/action" asyncapi/github-action-for-cli  "" "generate" "github-action/test/asyncapi.yml" "@asyncapi/markdown-template@0.10.0" "" "output" "" ""
+    docker run -e GITHUB_WORKSPACE="" --workdir /action  -v "/home/{user}/path/to/repo":"/action" asyncapi/github-action-for-cli  "" "generate" "github-action/test/asyncapi.yml" "@asyncapi/markdown-template@2.0.0" "" "output" "" ""
   ```
 
 Make sure to change the path of the repo and user in the command.
