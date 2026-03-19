@@ -18,7 +18,77 @@ export default function BarChartComponent() {
   const [selectedMonth, setSelectedMonth] = useState<string>('All Months');
   const [windowWidth, setWindowWidth] = useState<number>(0);
 
-  // Extracting unique categories and months from the data
+  /*
+    TODO: Uncomment the block below to enable previous-years data (2023) and "All Years" selection.
+    Uncomment this code to implement data of previous years in finance chart.
+    When enabled, this replaces direct usage of `ExpensesData`/`ExpensesLinkData` with `currentExpensesData`
+    and `currentExpensesLinkData` so the chart can show 2023, 2024, or All Years combined.
+  */
+
+  // // import Expenses2023Data from '../../config/finance/json-data/Expenses2023.json';
+  // // import ExpensesLink2023Data from '../../config/finance/json-data/ExpensesLink2023.json';
+  // //
+  // // // Selected year state
+  // // const [selectedYear, setSelectedYear] = useState<string>('2024');
+  // //
+  // // // Available years for the dropdown
+  // // const availableYears = ['2024', '2023', 'All Years'];
+  // //
+  // // // Function to get the appropriate data based on selected year
+  // // const getExpensesData = () => {
+  // //   switch (selectedYear) {
+  // //     case '2023':
+  // //       return Expenses2023Data;
+  // //     case 'All Years': {
+  // //       // Combine all years data with year-prefixed keys
+  // //       const combined: Record<string, ExpenseItem[]> = {};
+  // //
+  // //       Object.entries(Expenses2023Data).forEach(([month, data]) => {
+  // //         combined[`${month} 2023`] = data as ExpenseItem[];
+  // //       });
+  // //
+  // //       Object.entries(ExpensesData).forEach(([month, data]) => {
+  // //         combined[`${month} 2024`] = data as ExpenseItem[];
+  // //       });
+  // //
+  // //       return combined;
+  // //     }
+  // //     case '2024':
+  // //     default:
+  // //       return ExpensesData;
+  // //   }
+  // // };
+  // //
+  // // // Function to get the appropriate link data based on selected year
+  // // const getExpensesLinkData = () => {
+  // //   switch (selectedYear) {
+  // //     case '2023':
+  // //       return ExpensesLink2023Data;
+  // //     case 'All Years': {
+  // //       // Merge links from both years, with 2023 taking precedence for duplicates
+  // //       const allLinks = [...ExpensesLink2023Data];
+  // //
+  // //       ExpensesLinkData.forEach((link) => {
+  // //         if (!allLinks.find((l) => l.category === link.category)) {
+  // //           allLinks.push(link);
+  // //         }
+  // //       });
+  // //
+  // //       return allLinks;
+  // //     }
+  // //     case '2024':
+  // //     default:
+  // //       return ExpensesLinkData;
+  // //   }
+  // // };
+  // //
+  // // // Get current data based on selected year
+  // // const currentExpensesData = getExpensesData();
+  // // const currentExpensesLinkData = getExpensesLinkData();
+
+  // (If you enable the block above, replace categories and months with following block of code:
+  // const categories: string[] = getUniqueCategories(currentExpensesData as Record<string, Array<{ Category: string }>>);
+  // const months: string[] = Object.keys(currentExpensesData);)
   const categories: string[] = getUniqueCategories();
   const months: string[] = Object.keys(ExpensesData);
 
@@ -38,12 +108,21 @@ export default function BarChartComponent() {
     };
   }, []);
 
-  // Filtering data based on selected month and category
+  // Filtering data based on selected month and category (code 2 - active)
   const filteredData: ExpenseItem[] = Object.entries(ExpensesData).flatMap(([month, entries]) =>
     selectedMonth === 'All Months' || selectedMonth === month
       ? entries.filter((entry) => selectedCategory === 'All Categories' || entry.Category === selectedCategory)
       : []
   );
+
+  // // --- if previous-years support is enabled: Uncomment code block given below
+  // // const filteredData: ExpenseItem[] = Object.entries(currentExpensesData).flatMap(([month, entries]) =>
+  // //   selectedMonth === 'All Months' || selectedMonth === month
+  // //     ? (entries as ExpenseItem[]).filter(
+  // //         (entry) => selectedCategory === 'All Categories' || entry.Category === selectedCategory
+  // //       )
+  // //     : []
+  // // );
 
   // Calculating total amount of filtered data
   const totalAmount: number = filteredData.reduce((total, entry) => total + parseFloat(entry.Amount), 0);
@@ -95,6 +174,7 @@ export default function BarChartComponent() {
                     </option>
                   ))}
                 </select>
+
                 <select
                   className='m-1 w-full rounded-md border border-gray-600 bg-violet p-2 pr-8 text-xs font-semibold text-white sm:w-auto md:w-48'
                   value={selectedMonth}
@@ -107,6 +187,21 @@ export default function BarChartComponent() {
                     </option>
                   ))}
                 </select>
+
+                {/*
+                  If you enable the previous-years block above, add the year selector here:
+                  <select
+                    className='m-1 w-full rounded-md border border-gray-600 bg-violet p-2 pr-8 text-xs font-semibold text-white sm:w-auto md:w-48'
+                    value={selectedYear}
+                    onChange={(e) => setSelectedYear(e.target.value)}
+                  >
+                    {availableYears.map((year) => (
+                      <option key={year} value={year}>
+                        {year}
+                      </option>
+                    ))}
+                  </select>
+                */}
               </div>
             </div>
           </div>
@@ -122,6 +217,8 @@ export default function BarChartComponent() {
               fill='#7B5DD3FF'
               onClick={(data) => {
                 const category = data.payload.Category;
+
+                // Active behavior: use the static 2024 ExpensesLinkData (code 2)
                 const matchedLinkObject: ExpensesLinkItem | undefined = ExpensesLinkData.find(
                   (obj) => obj.category === category
                 );
@@ -129,6 +226,15 @@ export default function BarChartComponent() {
                 if (matchedLinkObject) {
                   window.open(matchedLinkObject.link, '_blank');
                 }
+
+                // // --- if previous-years support is enabled: Uncomment code given below
+                // // const matchedLinkObject: ExpensesLinkItem | undefined = currentExpensesLinkData.find(
+                // //   (obj: ExpensesLinkItem) => obj.category === category
+                // // );
+                // //
+                // // if (matchedLinkObject) {
+                // //   window.open(matchedLinkObject.link, '_blank');
+                // // }
               }}
             />
           </BarChart>
