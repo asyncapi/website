@@ -39,9 +39,9 @@ export default function AccordionItem({ itemIndex, title, content, isActive, set
               <path
                 d='M18 15C18 15 13.5811 9.00001 12 9C10.4188 8.99999 6 15 6 15'
                 stroke='#556061'
-                stroke-width='1.5'
-                stroke-linecap='round'
-                stroke-linejoin='round'
+                strokeWidth='1.5'
+                strokeLinecap='round'
+                strokeLinejoin='round'
               />
             </svg>
           ) : (
@@ -49,9 +49,9 @@ export default function AccordionItem({ itemIndex, title, content, isActive, set
               <path
                 d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9'
                 stroke='#556061'
-                stroke-width='1.5'
-                stroke-linecap='round'
-                stroke-linejoin='round'
+                strokeWidth='1.5'
+                strokeLinecap='round'
+                strokeLinejoin='round'
               />
             </svg>
           )}

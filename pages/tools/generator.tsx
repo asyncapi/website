@@ -15,23 +15,20 @@ import Paragraph from '../../components/typography/Paragraph';
 
 /**
  * @description Render the buttons for the Generator page.
+ * @param {boolean} centered - Whether to center the buttons (default: false)
  */
-function renderButtons(): React.JSX.Element {
+function renderButtons(centered: boolean = false): React.JSX.Element {
+  const justifyClass = centered ? 'md:justify-center' : 'lg:justify-start';
+  const buttonTextAlign = centered ? 'text-center md:w-auto' : 'text-center md:w-auto md:text-left';
+
   return (
-    <div className='mt-8 flex flex-wrap gap-4'>
-      {/* <Button
-        text="Learn more"
-        href="/docs/tools/generator"
-        iconPosition="left"
-        icon={<IconRocket className="inline-block w-6 h-6 -mt-1" />}
-        className="w-full mb-2 sm:w-auto sm:mb-0 sm:mr-2"
-      /> */}
+    <div className={`mt-8 flex flex-col gap-4 md:flex-row md:flex-wrap ${justifyClass}`}>
       <GithubButton
         text='View on Github'
-        className='w-full text-center sm:w-fit sm:text-left'
+        className={`w-full ${buttonTextAlign}`}
         href='https://www.github.com/asyncapi/generator'
       />
-      <Button text='View Docs' href='/docs/tools/generator' className='w-full text-center sm:w-fit sm:text-left' />
+      <Button text='View Docs' href='/docs/tools/generator' className={`w-full ${buttonTextAlign}`} />
     </div>
   );
 }
@@ -137,15 +134,13 @@ export default function GeneratorPage() {
                 </li>
               </ul>
             </div>
-
             <div className='relative -mx-4 mt-10 lg:mt-0'>
               <img className='relative mx-auto rounded shadow-lg' src='/img/tools/generator-1.png' alt='' />
               <img className='relative mx-auto mt-8 rounded shadow-lg' src='/img/tools/generator-2.png' alt='' />
             </div>
           </div>
+          <div className='mt-16 text-center'>{renderButtons(true)}</div>
         </div>
-
-        <div className='mt-16 text-center'>{renderButtons()}</div>
       </div>
     </GenericLayout>
   );

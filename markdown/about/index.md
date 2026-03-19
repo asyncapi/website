@@ -18,7 +18,7 @@ The AsyncAPI project started at Hitch (a.k.a. API Changelog). Hitch needed a mac
 
 Free software allows users to apply, modify, and continue in the chain by distributing copies to help others and, in this case, disseminating modified versions of the specification. 
 
-Transferring AsyncAPI to the Linux Foundation and forming [an open governance model](https://github.com/asyncapi/community/blob/master/CHARTER.md) assures the community that a single company does not control AsyncAPI Initiative. This move takes the project to a higher level of transparency. 
+Transferring AsyncAPI to the Linux Foundation and forming [an open governance model](https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/CHARTER.md) assures the community that a single company does not control AsyncAPI Initiative. This move takes the project to a higher level of transparency. 
 
 In doing so, we achieve:
 
@@ -88,7 +88,7 @@ All the information about the project's economy, the amount of the donations, th
 ## Contact details
 
 - Press & communications info:
-[**press@asyncapi.io**](mailto:press@asyncapi.io).
+[**info@asyncapi.com**](mailto:info@asyncapi.com).
 - [**Twitter**](https://twitter.com/asyncapispec?lang=es): It's used for disseminating all news and information regarding the project, resolving user queries, and sharing the latest updates within AsyncAPI.
 - [**Slack workspace**](https://www.asyncapi.com/slack-invite): The main place of encounter for the whole community of AsyncAPI.
 - [**Newsletter**](https://www.asyncapi.com/newsletter): To learn about the status of the project, news, actualizations, recorded events, and meetings.
