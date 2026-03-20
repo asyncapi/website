@@ -32,24 +32,24 @@ export default function Paragraph({
   className = '',
   children
 }: ParagraphProps) {
-  let classNames = '';
+  let baseClassNames = '';
 
   switch (typeStyle) {
     case ParagraphTypeStyle.lg:
-      classNames = `text-lg ${fontWeight || ''} ${className || ''}`;
+      baseClassNames = 'text-lg';
       break;
     case ParagraphTypeStyle.md:
-      classNames = `text-md ${fontWeight || ''} ${className || ''}`;
+      baseClassNames = 'text-md';
       break;
     case ParagraphTypeStyle.sm:
-      classNames = `text-sm ${fontWeight || ''} ${className || ''}`;
+      baseClassNames = 'text-sm';
       break;
     default:
-      classNames = `text-lg font-regular ${className || ''}`;
+      baseClassNames = 'text-lg font-regular';
   }
 
   return (
-    <p data-testid='Paragraph-test' className={twMerge(textColor, classNames)}>
+    <p data-testid='Paragraph-test' className={twMerge(textColor, baseClassNames, fontWeight, className)}>
       {children}
     </p>
   );
