@@ -41,7 +41,7 @@ export default function NavItem({
         href={href}
         target={target}
         rel='noopener noreferrer'
-        className={`${className} font-body text-base font-semibold leading-6 text-gray-700 transition duration-150 ease-in-out hover:text-gray-900 focus:text-gray-900 focus:outline-none ${
+        className={`${className} rounded-sm font-body text-base font-semibold leading-6 text-gray-700 transition duration-150 ease-in-out hover:text-gray-900 focus:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 ${
           router.pathname.startsWith(href) ? 'text-black' : 'text-gray-700'
         }`}
       >
@@ -55,7 +55,7 @@ export default function NavItem({
   const attrs = {
     onClick,
     onMouseEnter,
-    className: `${className} group inline-flex items-center space-x-2 font-body text-base leading-6 font-semibold hover:text-gray-900 focus:outline-none focus:text-gray-900 tracking-heading transition ease-in-out duration-150`
+    className: `${className} rounded-sm group inline-flex items-center space-x-2 font-body text-base leading-6 font-semibold hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:text-gray-900 tracking-heading transition ease-in-out duration-150`
   };
 
   if (href) {
