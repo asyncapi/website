@@ -104,10 +104,9 @@ async function getDiscussions(
     }
 
     return result.search.nodes.concat(await getDiscussions(query, pageSize, result.search.pageInfo.endCursor));
-  } catch (e) {
-    logger.error(e);
-
-    return Promise.reject(e);
+  } catch (error) {
+    logger.error(error);
+    throw error;
   }
 }
 
@@ -138,10 +137,9 @@ async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequest
     });
 
     return result;
-  } catch (e) {
-    logger.error(e);
-
-    return Promise.reject(e);
+  } catch (error) {
+    logger.error(error);
+    throw error;
   }
 }
 
@@ -193,9 +191,9 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise
           labels: discussion.labels ? discussion.labels.nodes : [],
           score: finalInteractionsCount / (monthsSince(discussion.timelineItems.updatedAt) + 2) ** 1.8
         };
-      } catch (e) {
+      } catch (error) {
         logger.error(`there were some issues while parsing this item: ${JSON.stringify(discussion)}`);
-        throw e;
+        throw error;
       }
     })
   );
@@ -307,9 +305,9 @@ async function start(writePath: string): Promise<void> {
     ]);
 
     await writeToFile({ hotDiscussions, goodFirstIssues }, writePath);
-  } catch (e) {
+  } catch (error) {
     logger.error('There were some issues parsing data from github.');
-    logger.error(e);
+    logger.error(error);
   }
 }
 
