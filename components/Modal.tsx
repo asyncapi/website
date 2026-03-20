@@ -57,7 +57,7 @@ export default function Modal({ title, children, onModalClose = () => {} }: IMod
       <div className='relative m-auto overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:w-full sm:max-w-4xl sm:p-6'>
         <div className='mb-6 flex justify-between'>
           <h1 className='mr-4 truncate text-lg font-bold'>{title}</h1>
-          <button onClick={() => onModalClose()} data-testid='Modal-close' aria-label="Close modal">
+          <button onClick={() => onModalClose()} data-testid='Modal-close' aria-label='Close modal'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
