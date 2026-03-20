@@ -1,4 +1,6 @@
-import type moment from 'moment';
+import type { Dayjs } from 'dayjs';
+import dayjs from 'dayjs';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
 import React from 'react';
 
 import { CardType } from '@/types/components/community/CardPropsType';
@@ -14,9 +16,11 @@ import Heading from '../../components/typography/Heading';
 import eventsData from '../../config/meetings.json';
 import { getEvents } from '../../utils/staticHelpers';
 
+dayjs.extend(localizedFormat);
+
 interface Event {
   title: string;
-  date: moment.Moment;
+  date: Dayjs;
   url: string;
 }
 
@@ -132,8 +136,8 @@ export default function CommunityIndexPage() {
                     <div className='ml-4 text-left'>
                       <h1 className='text-md md:text-lg'>{event.title}</h1>
                       <span className='text-xs text-gray-500 md:text-sm'>
-                        {event.date.local().format('LLLL')} UTC
-                        {event.date.local().format('Z')}
+                        {event.date.format('LLLL')} UTC
+                        {event.date.format('Z')}
                       </span>
                     </div>
                   </a>
