@@ -49,12 +49,17 @@ export default function NewsletterSubscribe({
 
   const setFormStatus = (formResponse: FormStatus) => {
     setStatus(formResponse);
+    if (formResponse === FormStatus.SUCCESS) {
+      // Reset form fields on success
+      setName('');
+      setEmail('');
+    }
     setTimeout(() => {
       setStatus(FormStatus.NORMAL);
     }, 10000);
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     setStatus(FormStatus.LOADING);
     event.preventDefault();
 
