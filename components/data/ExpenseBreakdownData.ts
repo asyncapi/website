@@ -25,7 +25,7 @@ export const expenseData = [
     imageUrl: '/img/illustrations/SwagStore.webp',
     description:
       'Creating a swag store for seamless distribution to contributors, mentees, ambassadors, and community members. Store profits can fund complimentary swag expenses.',
-    link: 'https://www.asyncapi.com/tools'
+    link: 'https://www.asyncapi.com'
   },
   {
     title: 'Hiring',
