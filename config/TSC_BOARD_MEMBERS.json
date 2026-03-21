@@ -7,6 +7,7 @@
         "twitter": "maya_ux_ui",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-13",
         "repos": [
             "website",
             "conference-website",
@@ -22,6 +23,7 @@
         "twitter": "aayushmau5",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "diff"
         ],
@@ -35,6 +37,7 @@
         "twitter": "Aayush__Saini_",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2025-01-13",
         "repos": [
             "cli"
         ],
@@ -48,6 +51,7 @@
         "github": "imabp",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "problem"
         ],
@@ -61,6 +65,7 @@
         "twitter": "AksNema",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "website"
         ],
@@ -74,6 +79,7 @@
         "twitter": "thisisanshg",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2024-05-29",
         "repos": [
             "website"
         ],
@@ -87,6 +93,7 @@
         "twitter": "Shurtu_Gal",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2024-01-26",
         "repos": [
             "studio",
             ".github",
@@ -102,6 +109,7 @@
         "twitter": "dalelane",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "company": "IBM",
         "repos": [
             "spec",
@@ -119,6 +127,7 @@
         "availableForHire": false,
         "linkedin": "fmvilas",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "isBoardMember": true,
         "repos": [
             "spec",
@@ -145,6 +154,7 @@
         "company": "EventStack",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "spec-json-schemas",
             "generator",
@@ -164,10 +174,10 @@
         "availableForHire": false,
         "company": "Postman",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "spec-json-schemas",
-            "studio",
-            "optimizer"
+            "studio"
         ],
         "githubID": 32505158
     },
@@ -179,6 +189,7 @@
         "twitter": "derberq",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "spec",
             "website",
@@ -208,6 +219,7 @@
         "slack": "U01EB02BP7A",
         "company": "Travelping GmbH",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "generator",
             "asyncapi-react",
@@ -233,6 +245,7 @@
         "slack": "U01RWDD69PZ",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "asyncapi-react",
             "conference-website",
@@ -247,6 +260,7 @@
         "twitter": "pbodiachevskii",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "spec-json-schemas",
             "tck",
@@ -262,6 +276,7 @@
         "twitter": "philschlesinger",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "jasyncapi-idea-plugin"
         ],
@@ -275,6 +290,7 @@
         "twitter": "iamPrince_2003",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2023-11-30",
         "repos": [
             "website",
             "studio"
@@ -289,6 +305,7 @@
         "availableForHire": false,
         "company": "IBM",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "spec-json-schemas",
             "bindings"
@@ -304,6 +321,7 @@
         "company": "Apideck",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2024-01-26",
         "repos": [
             "studio",
             "cli"
@@ -319,6 +337,7 @@
         "company": "Xane AI",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "cli",
             "bundler"
@@ -332,6 +351,7 @@
         "linkedin": "danielr",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "java-template"
         ],
@@ -344,6 +364,7 @@
         "availableForHire": true,
         "slack": "U011D1DAU6S",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "java-spring-template"
         ],
@@ -357,6 +378,7 @@
         "availableForHire": false,
         "company": "ThoughtWorks",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "modelina"
         ],
@@ -370,6 +392,7 @@
         "availableForHire": false,
         "company": "ZenWave360",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "vs-asyncapi-preview"
         ],
@@ -515,6 +538,7 @@
         "twitter": "njericodes",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "generator",
             ".github"
@@ -530,6 +554,7 @@
         "availableForHire": false,
         "company": "Google",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "spec-json-schemas",
             "bindings"
@@ -544,6 +569,7 @@
         "availableForHire": false,
         "company": "The LEGO Group",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "spec-json-schemas",
             "bindings"
@@ -558,25 +584,11 @@
         "availableForHire": false,
         "company": "Sportradar",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "modelina"
         ],
         "githubID": 1437394
-    },
-    {
-        "name": "Heiko Henning",
-        "github": "GreenRover",
-        "slack": "U03AC4G51H8",
-        "availableForHire": false,
-        "company": "mtrail GmbH",
-        "isTscMember": true,
-        "repos": [
-            "spec",
-            "spec-json-schemas",
-            "bindings",
-            "protobuf-schema-parser"
-        ],
-        "githubID": 512850
     },
     {
         "name": "Thulisile Sibanda",
@@ -587,6 +599,7 @@
         "availableForHire": false,
         "company": "AsyncAPI Initiative",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "isBoardMember": true,
         "repos": [
             "website",
@@ -603,6 +616,7 @@
         "slack": "U04630DU3N3",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2024-02-06",
         "repos": [
             "website"
         ],
@@ -616,23 +630,11 @@
         "twitter": "TRRohit20",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2025-02-17",
         "repos": [
             "website"
         ],
         "githubID": 108233235
-    },
-    {
-        "name": "Ashmit Jagtap",
-        "github": "ashmit-coder",
-        "linkedin": "ashmit-jagtap",
-        "twitter": "AshmitJagtap",
-        "slack": "U06RA7GDHU1",
-        "availableForHire": true,
-        "isTscMember": true,
-        "repos": [
-            "conference-website"
-        ],
-        "githubID": 69006513
     },
     {
         "name": "Hari Krishnan",
@@ -642,6 +644,7 @@
         "slack": "U067JPY0UH5",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2025-01-21",
         "repos": [
             "jasyncapi"
         ],
@@ -724,6 +727,7 @@
         "slack": "U02MRF09BL1",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2025-03-25",
         "repos": [
             "net-sdk"
         ],
@@ -736,6 +740,7 @@
         "linkedin": "jean-baptiste-bianchi-aa42b914",
         "slack": "U08K91GKK8T",
         "isTscMember": true,
+        "tscMemberSince": "2025-03-25",
         "availableForHire": false,
         "repos": [
             "net-sdk"
@@ -750,9 +755,9 @@
         "slack": "U05FM7WRKU4",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2025-03-25",
         "repos": [
-            "website",
-            "conference-website"
+            "website"
         ],
         "githubID": 90895835
     },
@@ -764,6 +769,7 @@
         "slack": "U0867GV384D",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2025-08-27",
         "repos": [
             "generator"
         ],
@@ -775,10 +781,24 @@
         "twitter": "Ruchicodess",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2025-11-04",
         "repos": [
             "vs-asyncapi-preview"
         ],
         "githubID": 72685035
+    },
+    {
+        "name": "TenzDelek",
+        "github": "TenzDelek",
+        "linkedin": "tenzdelek",
+        "slack": "U06SWFWLLQG",
+        "availableForHire": true,
+        "isTscMember": true,
+        "tscMemberSince": "2026-02-17",
+        "repos": [
+            "conference-website"
+        ],
+        "githubID": 122612557
     },
     {
         "name": "Daniel Kocot",
@@ -793,6 +813,7 @@
         "company": "adorsys GmbH & Co. KG",
         "country": "\ud83c\udde9\ud83c\uddea",
         "isTscMember": true,
+        "tscMemberSince": "2025-05-28",
         "contributions": [
             {
                 "type": "article",
@@ -845,6 +866,7 @@
         "company": "Kong",
         "country": "\ud83c\uddf2\ud83c\uddfd",
         "isTscMember": true,
+        "tscMemberSince": "2025-06-10",
         "isBoardMember": true,
         "contributions": [
             {
@@ -903,6 +925,7 @@
         "linkedin": "http://linkedin.com/in/nareshjain/",
         "country": "\ud83c\uddee\ud83c\uddf3",
         "isTscMember": true,
+        "tscMemberSince": "2025-05-28",
         "bio": "Naresh is an internationally recognised Technology & Product Development Expert. Over the last 25 years, he has played a key role in streamlining the product engineering culture at many unicorns and fortune 500 companies. Naresh is the Founder, CEO of several companies - Xnsio, ConfEngine and Specmatic. Naresh is also the local organiser of API Days India. In 2004, Naresh started the Agile movement in India. More details: https://nareshjain.com",
         "company": "Specmatic, Xnsio, ConfEngine",
         "title": "Founder, CEO at Specmatic, Xnsio and ConfEngine",
