@@ -1,0 +1,3 @@
+{
+    "note": "Kit.com (formerly ConvertKit) configuration. Set KIT_API_KEY and KIT_FORM_ID as environment variables in Netlify."
+}
