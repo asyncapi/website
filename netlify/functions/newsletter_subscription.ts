@@ -22,7 +22,15 @@ export const handler: Handler = async (event: HandlerEvent) => {
     };
   }
 
-  const { email, name } = JSON.parse(event.body || '');
+  let email, name;
+  try {
+    ({ email, name } = JSON.parse(event.body || ''));
+  } catch {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: 'Invalid request body.' })
+    };
+  }
 
   if (!email) {
     return {
@@ -30,6 +38,9 @@ export const handler: Handler = async (event: HandlerEvent) => {
       body: JSON.stringify({ message: 'Email address is required.' })
     };
   }
+
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 8000);
 
   try {
     const response = await fetch(`https://api.kit.com/v4/forms/${formId}/subscribers`, {
@@ -41,10 +52,18 @@ export const handler: Handler = async (event: HandlerEvent) => {
       body: JSON.stringify({
         email_address: email,
         ...(name ? { first_name: name } : {})
-      })
+      }),
+      signal: controller.signal
     });
 
-    const data = await response.json();
+    clearTimeout(timeoutId);
+
+    let data;
+    try {
+      data = await response.json();
+    } catch {
+      data = await response.text();
+    }
 
     if (!response.ok) {
       return {
@@ -58,6 +77,7 @@ export const handler: Handler = async (event: HandlerEvent) => {
       body: JSON.stringify(data)
     };
   } catch (err) {
+    clearTimeout(timeoutId);
     return {
       statusCode: 500,
       body: JSON.stringify({
