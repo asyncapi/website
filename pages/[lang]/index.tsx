@@ -184,7 +184,7 @@ export default function HomePage() {
           </Heading>
           <Paragraph className='mx-auto mt-3 max-w-2xl pb-4 sm:mt-4'>
             {t('sponsors.supportedByPretext')}
-            <TextLink href='mailto:info@asyncapi.io' target='_blank'>
+            <TextLink href='mailto:info@asyncapi.com' target='_blank'>
               {t('sponsors.supportedByLink')}
             </TextLink>{' '}
             {t('sponsors.supportedByPosttext')}

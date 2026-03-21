@@ -18,7 +18,7 @@
     { "href": "https://www.twitch.tv/asyncapi", "text": "Twitch" }
   ],
   "newsLinks": [
-    { "href": "mailto:press@asyncapi.io", "text": "Email Us" }
+    { "href": "mailto:press@asyncapi.com", "text": "Email Us" }
   ],
   "netlifyLink": "https://netlify.com"
 }
