@@ -506,7 +506,7 @@ export default function RoadmapPage() {
               </Paragraph>
               <Heading level={HeadingLevel.h1} className='text-center'>
                 AsyncAPI becomes the #1 API specification for defining and developing APIs.{' '}
-                <span className='block text-secondary-500 underline'>Any kind of APIs.</span>
+                <span className='block text-secondary-500'>It supports any kind of APIs.</span>
               </Heading>
               <Paragraph className='mt-10 lg:pr-4'>
                 It all starts with a vision. <strong>This is where we want to see AsyncAPI by 2026.</strong> To make
