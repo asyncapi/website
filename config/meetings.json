@@ -1,12 +1,5 @@
 [
   {
-    "title": "Worfklow Test",
-    "calLink": "https://www.google.com/calendar/event?eid=MXRuYjBibTNjcXZpcmtvaXF2cDQ5M2ZncDQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/2183",
-    "banner": "",
-    "date": "2025-12-11T15:00:00.000Z"
-  },
-  {
     "title": "Governance Board Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=NmlyYW5pZWhzbzJnYTlkdm1uMHRubjZsMm8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/2186",
