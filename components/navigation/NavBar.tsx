@@ -167,6 +167,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             onClick={() => setMobileMenuOpen(true)}
             type='button'
             className='inline-flex items-center justify-center rounded-sm p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-900'
+            aria-label='Open mobile menu'
           >
             <svg className='size-6' stroke='currentColor' fill='none' viewBox='0 0 24 24'>
               <title>Menu</title>
@@ -186,7 +187,9 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               onClick={() => showOnClickMenu('learning')}
               onMouseEnter={() => showMenu('learning')}
               hasDropdown
+              isOpen={open === 'learning'}
             />
+
             {open === 'learning' && <LearningPanel />}
           </div>
 
@@ -197,6 +200,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               onClick={() => showOnClickMenu('tooling')}
               onMouseEnter={() => showMenu('tooling')}
               hasDropdown
+              isOpen={open === 'tooling'}
             />
             {open === 'tooling' && <ToolsPanel />}
           </div>
@@ -208,6 +212,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
               onClick={() => showOnClickMenu('community')}
               onMouseEnter={() => showMenu('community')}
               hasDropdown
+              isOpen={open === 'community'}
             />
             {open === 'community' && <CommunityPanel />}
           </div>
