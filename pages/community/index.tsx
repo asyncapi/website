@@ -206,7 +206,7 @@ export default function CommunityIndexPage() {
             icon='🛒'
             heading='Swags and Goodies'
             description='Explore our swag collection of AsyncAPI-themed t-shirts and goodies.'
-            link='https://www.store.asyncapi.com/'
+            link='https://www.asyncapi.com'
             bg='bg-primary-200'
           />
         </div> */}
