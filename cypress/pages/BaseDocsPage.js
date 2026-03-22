@@ -24,4 +24,5 @@ class BaseDocsPage {
   }
 }
 
+
 export default BaseDocsPage;
