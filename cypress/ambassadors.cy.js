@@ -19,11 +19,11 @@ describe('Ambassadors Page', () => {
   it('verifies social links for selected Ambassadors', () => {
     const ambassadors = [
       {
-        name: 'Quetzalli Writes',
+        name: 'Giri Venkatesan',
         links: {
-          github: 'https://www.github.com/quetzalliwrites',
-          twitter: 'https://www.twitter.com/QuetzalliWrites',
-          linkedin: 'https://www.linkedin.com/in/quetzalli-writes'
+          github: 'https://www.github.com/gvensan',
+          twitter: 'https://www.twitter.com/giri_venkatesan',
+          linkedin: 'https://www.linkedin.com/in/girivenkatesan'
         }
       },
       {
