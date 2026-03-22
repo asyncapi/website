@@ -10,7 +10,7 @@
 # All .md files
 *.md @thulieblack @TRohit20 @asyncapi-bot-eve @anshgoyalevil
 
-markdown/blog/*.md @thulieblack @TRohit20
+markdown/blog/*.md @thulieblack @TRohit20 @anshgoyalevil
 markdown/community/*.md @thulieblack @bandantonio @TRohit20 @anshgoyalevil
 
 README.md @thulieblack @derberg @akshatnema @mayaleeeee @TRohit20 @asyncapi-bot-eve @anshgoyalevil
