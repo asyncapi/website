@@ -102,7 +102,7 @@ The process for adding translations to a page that is not yet available in any e
   - Skip to `Step 3` in case you haven't created new `JSON` files.
 
 **2. Modify the i18n configuration**
-  - Navigate to the `next-i18next-static-site.config.js` file in the root of the project folder.
+  - Navigate to the `next-i18next.config.cjs` file in the root of the project folder.
   - Add the name of the newly added `JSON` file to the `namespaces` array.
 
 **3. Add the static site functions**
@@ -252,7 +252,7 @@ If you want to add a new locale like `fr` to serve pages in the French locale on
   - Copy the existing `JSON` files present in the `en` folder. Change the values of those translation keys according to the new localization.
 
 **2. Modify i18n configuration**
-  - Navigate to the `next-i18next.config.js` file in the root of the project folder.
+  - Navigate to the `next-i18next.config.cjs` file in the root of the project folder.
   - Add the name of the newly added `locale` to the `languages` array.
 
 **3. Configure i18n routing**
@@ -278,9 +278,9 @@ If you have added the 'fr' locale and translated the 'tools/cli' page, clicking 
 +  ┃ ┗ tools.json
 ```
 
-- Change the `next-i18next.config.js` config.
+- Change the `next-i18next.config.cjs` config.
 
-`next-i18next.config.js`
+`next-i18next.config.cjs`
 ```diff
 module.exports = {
     i18n: {
