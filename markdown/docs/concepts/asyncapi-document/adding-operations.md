@@ -9,7 +9,7 @@ In an AsyncAPI document, operations describe your application's behaviors and ca
 
 ## Defining operations
 
-Operations can be defined as an independent object in the AsyncAPI document. More information about each field name that is used to define operations can be found [in the reference documentation of the specification](/docs/reference/specification/v3.0.0#operationObject). 
+Operations can be defined as an independent object in the AsyncAPI document. More information about each field name that is used to define operations can be found [in the reference documentation of the specification](/docs/reference/specification/v3.1.0#operationObject). 
 
 The following diagram declares the field names that are frequently used to define operations in an AsyncAPI document:
 

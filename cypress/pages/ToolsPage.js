@@ -1,12 +1,11 @@
-import BasePage from './BasePageTools';
-
+import BasePage from './BasePage';
 class ToolsPage extends BasePage {
   visitToolsPage() {
     super.visit('/tools');
   }
 
   verifyPageLoaded() {
-    cy.contains('h1', 'Tools').should('be.visible');
+    this.verifyHeadingExists('Tools');
   }
 
   verifyHeader() {
@@ -24,21 +23,8 @@ class ToolsPage extends BasePage {
       .parents('.rounded-lg.border.shadow-md')
       .first()
       .within(() => {
-        cy.get('h2').should('contain', heading);
+        this.verifyHeadingExists(heading);
       });
   }
-
-  verifyWebsiteLinks(href, heading) {
-    this.verifyToolLink(href, heading, 'website');
-  }
-
-  verifyGithubLinks(href, heading) {
-    this.verifyToolLink(href, heading, 'github');
-  }
-
-  verifyDocsLinks(href, heading) {
-    this.verifyToolLink(href, heading, 'docs');
-  }
 }
-
 export default ToolsPage;

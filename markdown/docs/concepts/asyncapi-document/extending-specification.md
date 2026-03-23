@@ -16,7 +16,7 @@ Extensions can be used in any part of the AsyncAPI document.
 Here is an example of how to extend the AsyncAPI document with a custom property:
 
 ```yml
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 info:
   title: Cool Example
   version: 0.1.0

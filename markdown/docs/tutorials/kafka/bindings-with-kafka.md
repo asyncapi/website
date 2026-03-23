@@ -21,7 +21,7 @@ Using the code snippets from the previous tutorial, where you learned [how to ma
 Below, you can find the updated schema reference file you'll use for this tutorial.
 
 ```yaml
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 info:
   title: User Signup API
   version: 1.0.0
@@ -161,7 +161,7 @@ components:
 Congratulations, you've completed the tutorial! Putting these blocks together gives you an AsyncAPI document all ready to go.
 
 ```yaml
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 info:
   title: User Signup API
   version: 1.0.0
