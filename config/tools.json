@@ -204,16 +204,16 @@
         "filters": {
           "language": [
             {
-              "name": "csharp",
-              "color": "bg-[#57f281]",
-              "borderColor": "border-[#37f069]"
+              "name": "C#",
+              "color": "bg-[#E3AFE0]",
+              "borderColor": "border-[#9B4F96]"
             }
           ],
           "technology": [
             {
-              "name": "ASP.NET Core",
-              "color": "bg-[#61d0f2]",
-              "borderColor": "border-[#40ccf7]"
+              "name": "ASP.NET",
+              "color": "bg-[#71C2FB]",
+              "borderColor": "border-[#1577BC]"
             },
             {
               "name": ".NET",
@@ -223,7 +223,11 @@
           ],
           "categories": [
             "code-first",
-            "documentation-generator"
+            "documentation-generator",
+            "cli",
+            "framework",
+            "ui-component",
+            "bundler"
           ],
           "hasCommercial": false
         }
@@ -1245,16 +1249,16 @@
         "filters": {
           "language": [
             {
-              "name": "csharp",
-              "color": "bg-[#57f281]",
-              "borderColor": "border-[#37f069]"
+              "name": "C#",
+              "color": "bg-[#E3AFE0]",
+              "borderColor": "border-[#9B4F96]"
             }
           ],
           "technology": [
             {
-              "name": "ASP.NET Core",
-              "color": "bg-[#61d0f2]",
-              "borderColor": "border-[#40ccf7]"
+              "name": "ASP.NET",
+              "color": "bg-[#71C2FB]",
+              "borderColor": "border-[#1577BC]"
             },
             {
               "name": ".NET",
@@ -1264,7 +1268,11 @@
           ],
           "categories": [
             "code-first",
-            "documentation-generator"
+            "documentation-generator",
+            "cli",
+            "framework",
+            "ui-component",
+            "bundler"
           ],
           "hasCommercial": false
         }
@@ -1551,6 +1559,43 @@
           ],
           "hasCommercial": false
         }
+      },
+      {
+        "title": "Bielu.AspNetCore.AsyncApi",
+        "description": "A library that provides built-in support for generating AsyncAPI documents from minimal or controller-based APIs in ASP.NET Core, bringing the same developer experience as Microsoft.AspNetCore.OpenApi but for AsyncAPI specifications.",
+        "links": {
+          "repoUrl": "https://github.com/bielu/Bielu.AspNetCore.AsyncApi"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "C#",
+              "color": "bg-[#E3AFE0]",
+              "borderColor": "border-[#9B4F96]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "ASP.NET",
+              "color": "bg-[#71C2FB]",
+              "borderColor": "border-[#1577BC]"
+            },
+            {
+              "name": ".NET",
+              "color": "bg-[#A184FF]",
+              "borderColor": "border-[#5026D4]"
+            }
+          ],
+          "categories": [
+            "code-first",
+            "documentation-generator",
+            "cli",
+            "framework",
+            "ui-component",
+            "bundler"
+          ],
+          "hasCommercial": false
+        }
       }
     ]
   },
@@ -1695,6 +1740,43 @@
           ],
           "categories": [
             "framework"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "Bielu.AspNetCore.AsyncApi",
+        "description": "A library that provides built-in support for generating AsyncAPI documents from minimal or controller-based APIs in ASP.NET Core, bringing the same developer experience as Microsoft.AspNetCore.OpenApi but for AsyncAPI specifications.",
+        "links": {
+          "repoUrl": "https://github.com/bielu/Bielu.AspNetCore.AsyncApi"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "C#",
+              "color": "bg-[#E3AFE0]",
+              "borderColor": "border-[#9B4F96]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "ASP.NET",
+              "color": "bg-[#71C2FB]",
+              "borderColor": "border-[#1577BC]"
+            },
+            {
+              "name": ".NET",
+              "color": "bg-[#A184FF]",
+              "borderColor": "border-[#5026D4]"
+            }
+          ],
+          "categories": [
+            "code-first",
+            "documentation-generator",
+            "cli",
+            "framework",
+            "ui-component",
+            "bundler"
           ],
           "hasCommercial": false
         }
@@ -1906,7 +1988,7 @@
           ],
           "technology": [
             {
-              "name": "AsyncAPI CLI",
+              "name": "AsyncAPI Generator",
               "color": "bg-[#61d0f2]",
               "borderColor": "border-[#40ccf7]"
             }
@@ -2271,7 +2353,7 @@
           ],
           "technology": [
             {
-              "name": "AsyncAPI CLI",
+              "name": "AsyncAPI Generator",
               "color": "bg-[#61d0f2]",
               "borderColor": "border-[#40ccf7]"
             }
@@ -2591,7 +2673,7 @@
           ],
           "technology": [
             {
-              "name": "AsyncAPI CLI",
+              "name": "AsyncAPI Generator",
               "color": "bg-[#61d0f2]",
               "borderColor": "border-[#40ccf7]"
             }
@@ -2628,6 +2710,43 @@
           "categories": [
             "converter",
             "cli"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "Bielu.AspNetCore.AsyncApi",
+        "description": "A library that provides built-in support for generating AsyncAPI documents from minimal or controller-based APIs in ASP.NET Core, bringing the same developer experience as Microsoft.AspNetCore.OpenApi but for AsyncAPI specifications.",
+        "links": {
+          "repoUrl": "https://github.com/bielu/Bielu.AspNetCore.AsyncApi"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "C#",
+              "color": "bg-[#E3AFE0]",
+              "borderColor": "border-[#9B4F96]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "ASP.NET",
+              "color": "bg-[#71C2FB]",
+              "borderColor": "border-[#1577BC]"
+            },
+            {
+              "name": ".NET",
+              "color": "bg-[#A184FF]",
+              "borderColor": "border-[#5026D4]"
+            }
+          ],
+          "categories": [
+            "code-first",
+            "documentation-generator",
+            "cli",
+            "framework",
+            "ui-component",
+            "bundler"
           ],
           "hasCommercial": false
         }
@@ -2808,6 +2927,43 @@
             }
           ],
           "categories": [
+            "bundler"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "Bielu.AspNetCore.AsyncApi",
+        "description": "A library that provides built-in support for generating AsyncAPI documents from minimal or controller-based APIs in ASP.NET Core, bringing the same developer experience as Microsoft.AspNetCore.OpenApi but for AsyncAPI specifications.",
+        "links": {
+          "repoUrl": "https://github.com/bielu/Bielu.AspNetCore.AsyncApi"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "C#",
+              "color": "bg-[#E3AFE0]",
+              "borderColor": "border-[#9B4F96]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "ASP.NET",
+              "color": "bg-[#71C2FB]",
+              "borderColor": "border-[#1577BC]"
+            },
+            {
+              "name": ".NET",
+              "color": "bg-[#A184FF]",
+              "borderColor": "border-[#5026D4]"
+            }
+          ],
+          "categories": [
+            "code-first",
+            "documentation-generator",
+            "cli",
+            "framework",
+            "ui-component",
             "bundler"
           ],
           "hasCommercial": false
