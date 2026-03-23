@@ -57,34 +57,23 @@ To get started:
 1. Install [Spectral](https://meta.stoplight.io/docs/spectral/b8391e051b7d8-installation). 
 2. Create a file named `.spectral.yaml` to begin writing your API description and document rules. 
     Example:
-    ```js
-    {
-      "rules": {
-        // add your own rules here
-      }
-    }
+    ```yaml
+    rules:
+      # add your own rules here
     ```
 
 3. Create and add your own custom ruleset:
- ```js
-  {
-      "rules": {
-          "valid-document-version": {
-              "message": "Application title must start with upper case",
-              "severity": "error",
-              "given": "$.info",
-              "then": [
-                  {
-                      "field": "title",
-                      "function": "pattern",
-                      "functionOptions": {
-                          "match": "^[A-Z]"
-                      }
-                  }
-              ]
-          }
-      }
-  }
+ ```yaml
+  rules:
+    valid-document-version:
+      message: Application title must start with upper case
+      severity: error
+      given: "$.info"
+      then:
+        - field: title
+          function: pattern
+          functionOptions:
+            match: "^[A-Z]"
   ```
 
 4. After setting up Spectral and creating custom rules following steps 1 - 3, validate your AsyncAPI document using this Spectral CLI command:
