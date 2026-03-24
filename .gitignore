@@ -21,6 +21,7 @@ cypress/videos
 *storybook.log
 /storybook-static/
 coverage
+config/tools-ignored.json
 deno.lock
 cypress/videos
 cypress/screenshots
