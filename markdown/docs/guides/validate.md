@@ -63,18 +63,19 @@ To get started:
     ```
 
 3. Create and add your own custom ruleset:
- ```yaml
-  rules:
-    valid-document-version:
-      message: Application title must start with upper case
-      severity: error
-      given: "$.info"
-      then:
-        - field: title
-          function: pattern
-          functionOptions:
-            match: "^[A-Z]"
-  ```
+
+   ```yaml
+   rules:
+     valid-document-version:
+       message: Application title must start with upper case
+       severity: error
+       given: "$.info"
+       then:
+         - field: title
+           function: pattern
+           functionOptions:
+             match: "^[A-Z]"
+   ```
 
 4. After setting up Spectral and creating custom rules following steps 1 - 3, validate your AsyncAPI document using this Spectral CLI command:
 
