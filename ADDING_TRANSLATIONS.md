@@ -158,8 +158,8 @@ After adding a new internationalized page, test it to sure the page is being ser
   ```diff
   module.exports = {
       i18n: {
-          languages: ["en", "de"],
-          defaultLanguage: "en",
+          locales: ["en", "de"],
+          defaultLocale: "en",
   -       namespaces: ["landing-page", "common", "tools"],
   +       namespaces: ["landing-page", "common", "tools", "newsletter"],
           defaultNamespace: "landing-page",
@@ -253,7 +253,7 @@ If you want to add a new locale like `fr` to serve pages in the French locale on
 
 **2. Modify i18n configuration**
   - Navigate to the `next-i18next.config.cjs` file in the root of the project folder.
-  - Add the name of the newly added `locale` to the `languages` array.
+  - Add the name of the newly added `locale` to the `locales` array.
 
 **3. Configure i18n routing**
 After adding a new internationalized page, ensure it is being served on the website when someone visits.
@@ -284,9 +284,9 @@ If you have added the 'fr' locale and translated the 'tools/cli' page, clicking 
 ```diff
 module.exports = {
     i18n: {
--       languages: ["en", "de"],
-+       languages: ["en", "de", "fr"],
-        defaultLanguage: "en",
+-       locales: ["en", "de"],
++       locales: ["en", "de", "fr"],
+        defaultLocale: "en",
         namespaces: ["landing-page", "common", "tools"],
         defaultNamespace: "landing-page",
     },
