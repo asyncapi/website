@@ -89,7 +89,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
                         <React.Fragment key={index}>
                           {index > 0 && ' & '}
                           {author.link ? (
-                            <span data-alt={author.name} rel='noreferrer'>
+                            <span data-alt={author.name}>
                               {author.name}
                             </span>
                           ) : (

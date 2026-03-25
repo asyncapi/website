@@ -103,11 +103,11 @@ const BlogPostItem = ({ post, className = '', id = '' }: BlogPostItemProps, ref:
                 <div className='ml-3'>
                   <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.xsSemibold} textColor='text-gray-900'>
                     <span>
-                      {post.authors
-                        .map((author: IBlogPost['authors'][number], index: number) =>
-                          author.link ? (
+                      {post.authors.map((author: IBlogPost['authors'][number], index: number) => (
+                        <React.Fragment key={index}>
+                          {index > 0 && ' & '}
+                          {author.link ? (
                             <button
-                              key={index}
                               data-alt={author.name}
                               className='cursor-pointer border-none bg-inherit p-0 hover:underline'
                               onClick={(e) => {
@@ -119,13 +119,9 @@ const BlogPostItem = ({ post, className = '', id = '' }: BlogPostItemProps, ref:
                             </button>
                           ) : (
                             author.name
-                          )
-                        )
-                        .reduce((prev: React.ReactNode, curr: React.ReactNode, index: number) => (
-                          <React.Fragment key={`author-${index}`}>
-                            {prev} & {curr}
-                          </React.Fragment>
-                        ))}
+                          )}
+                        </React.Fragment>
+                      ))}
                     </span>
                   </Heading>
                   <Paragraph typeStyle={ParagraphTypeStyle.sm} className='flex'>
