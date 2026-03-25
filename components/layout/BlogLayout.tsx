@@ -57,17 +57,12 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
               <div className='ml-3'>
                 <p className='text-sm font-medium leading-5 text-gray-900'>
                   <span className='hover:underline'>
-                    {post.authors
-                      .map((author: IBlogPost['authors'][number], index: number) =>
-                        author.link ? (
-                          <a key={index} href={author.link}>
-                            {author.name}
-                          </a>
-                        ) : (
-                          author.name
-                        )
-                      )
-                      .reduce((prev: string | React.JSX.Element, curr: string | React.JSX.Element) => (<>{prev} & {curr}</>) as unknown as string & React.JSX.Element)}
+                    {post.authors.map((author: IBlogPost['authors'][number], index: number) => (
+                      <React.Fragment key={index}>
+                        {index > 0 && ' & '}
+                        {author.link ? <a href={author.link}>{author.name}</a> : author.name}
+                      </React.Fragment>
+                    ))}
                   </span>
                 </p>
                 <div className='flex text-sm leading-5 text-gray-500'>

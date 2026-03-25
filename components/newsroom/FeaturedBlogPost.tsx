@@ -85,17 +85,18 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
                 <div className='ml-3'>
                   <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.xsSemibold} textColor='text-gray-900'>
                     <span className='hover:underline' data-testid='FeaturedBlogPost-AuthorName'>
-                      {post.authors
-                        .map((author: IBlogPost['authors'][number], index: number) =>
-                          author.link ? (
-                            <span key={index} data-alt={author.name} rel='noreferrer'>
+                      {post.authors.map((author: IBlogPost['authors'][number], index: number) => (
+                        <React.Fragment key={index}>
+                          {index > 0 && ' & '}
+                          {author.link ? (
+                            <span data-alt={author.name} rel='noreferrer'>
                               {author.name}
                             </span>
                           ) : (
                             author.name
-                          )
-                        )
-                        .reduce((prev: string | React.JSX.Element, curr: string | React.JSX.Element) => (<>{prev} & {curr}</>) as unknown as string & React.JSX.Element)}
+                          )}
+                        </React.Fragment>
+                      ))}
                     </span>
                   </Heading>
                   <Paragraph typeStyle={ParagraphTypeStyle.sm} className='flex'>
