@@ -222,7 +222,11 @@ export default function ToolsDashboard() {
               onChange={(e) => setSearchName(e.target.value)}
             />
             {searchName && (
-              <button className='my-auto h-fit rounded-full p-2 hover:bg-gray-100' onClick={() => setSearchName('')}>
+              <button
+                className='my-auto h-fit rounded-full p-2 hover:bg-gray-100'
+                onClick={() => setSearchName('')}
+                aria-label='Clear search'
+              >
                 <img src='/img/illustrations/icons/close-icon.svg' alt='close' width='10' />
               </button>
             )}
