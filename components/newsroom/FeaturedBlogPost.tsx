@@ -95,7 +95,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
                             author.name
                           )
                         )
-                        .reduce((prev: string, curr: string) => [prev, ' & ', curr].join(''))}
+                        .reduce((prev: string | React.JSX.Element, curr: string | React.JSX.Element) => (<>{prev} & {curr}</>) as unknown as string & React.JSX.Element)}
                     </span>
                   </Heading>
                   <Paragraph typeStyle={ParagraphTypeStyle.sm} className='flex'>

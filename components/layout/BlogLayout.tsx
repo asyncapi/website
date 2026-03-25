@@ -67,7 +67,7 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
                           author.name
                         )
                       )
-                      .reduce((prev: React.ReactNode, curr: React.ReactNode) => [prev, ' & ', curr] as React.ReactNode[])}
+                      .reduce((prev: string | React.JSX.Element, curr: string | React.JSX.Element) => (<>{prev} & {curr}</>) as unknown as string & React.JSX.Element)}
                   </span>
                 </p>
                 <div className='flex text-sm leading-5 text-gray-500'>
