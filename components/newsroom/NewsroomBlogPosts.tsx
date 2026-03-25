@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { A11y, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import type { IBlogPost } from '@/types/post';
+
 import { getAllPosts } from '../../utils/api';
 import ArrowLeft from '../icons/ArrowLeft';
 import ArrowRight from '../icons/ArrowRight';
@@ -17,7 +19,7 @@ export default function NewsroomBlogPosts() {
   const [current, setCurrent] = useState<number>(0);
 
   const posts = getAllPosts()
-    .blog.sort((i1, i2) => {
+    .blog.sort((i1: IBlogPost, i2: IBlogPost) => {
       const i1Date = new Date(i1.date);
       const i2Date = new Date(i2.date);
 
@@ -47,7 +49,7 @@ export default function NewsroomBlogPosts() {
           }
         }}
       >
-        {posts.map((post, index) => (
+        {posts.map((post: IBlogPost, index: number) => (
           <SwiperSlide key={index}>
             <BlogPostItem post={post} className='min-w-full h-full px-2 pb-6' />
           </SwiperSlide>

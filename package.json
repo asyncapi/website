@@ -141,6 +141,7 @@
     "@types/he": "^1.2.3",
     "@types/inquirer": "^9.0.7",
     "@types/jest": "^29.5.14",
+    "@types/json-schema": "^7.0.15",
     "@types/lodash": "^4.17.0",
     "@types/node": "^20",
     "@types/react": "^18.0.1",

@@ -4,7 +4,7 @@ import HtmlHead from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
 
-import type { IPosts } from '@/types/post';
+import type { IBlogPost, IPosts } from '@/types/post';
 
 import BlogContext from '../../context/BlogContext';
 import AuthorAvatars from '../AuthorAvatars';
@@ -58,7 +58,7 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
                 <p className='text-sm font-medium leading-5 text-gray-900'>
                   <span className='hover:underline'>
                     {post.authors
-                      .map((author, index) =>
+                      .map((author: IBlogPost['authors'][number], index: number) =>
                         author.link ? (
                           <a key={index} href={author.link}>
                             {author.name}
@@ -67,7 +67,7 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
                           author.name
                         )
                       )
-                      .reduce((prev, curr) => [prev, ' & ', curr] as any)}
+                      .reduce((prev: React.ReactNode, curr: React.ReactNode) => [prev, ' & ', curr] as React.ReactNode[])}
                   </span>
                 </p>
                 <div className='flex text-sm leading-5 text-gray-500'>

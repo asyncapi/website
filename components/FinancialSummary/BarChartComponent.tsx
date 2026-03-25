@@ -109,10 +109,11 @@ export default function BarChartComponent() {
   }, []);
 
   // Filtering data based on selected month and category (code 2 - active)
-  const filteredData: ExpenseItem[] = Object.entries(ExpensesData).flatMap(([month, entries]) =>
-    selectedMonth === 'All Months' || selectedMonth === month
-      ? entries.filter((entry) => selectedCategory === 'All Categories' || entry.Category === selectedCategory)
-      : []
+  const filteredData: ExpenseItem[] = Object.entries(ExpensesData as Record<string, ExpenseItem[]>).flatMap(
+    ([month, entries]) =>
+      selectedMonth === 'All Months' || selectedMonth === month
+        ? entries.filter((entry) => selectedCategory === 'All Categories' || entry.Category === selectedCategory)
+        : []
   );
 
   // // --- if previous-years support is enabled: Uncomment code block given below
@@ -220,7 +221,7 @@ export default function BarChartComponent() {
 
                 // Active behavior: use the static 2024 ExpensesLinkData (code 2)
                 const matchedLinkObject: ExpensesLinkItem | undefined = ExpensesLinkData.find(
-                  (obj) => obj.category === category
+                  (obj: ExpensesLinkItem) => obj.category === category
                 );
 
                 if (matchedLinkObject) {

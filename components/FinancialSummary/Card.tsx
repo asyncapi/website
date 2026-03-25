@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { ExpenseItem, Expenses } from '@/types/FinancialSummary/BarChartComponent';
+import type { ExpenseItem, Expenses, ExpensesLinkItem } from '@/types/FinancialSummary/BarChartComponent';
 
 import ExpensesLinkData from '../../config/finance/json-data/ExpensesLink.json';
 
@@ -18,7 +18,7 @@ export default function Card({ month, data }: { month: keyof Expenses; data: Exp
    * {void}
    */
   function handleExpenseClick(category: string) {
-    const matchedLinkObject = ExpensesLinkData.find((obj) => obj.category === category);
+    const matchedLinkObject = ExpensesLinkData.find((obj: ExpensesLinkItem) => obj.category === category);
 
     if (matchedLinkObject) {
       window.open(matchedLinkObject.link, '_blank');

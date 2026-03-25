@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { ICaseStudies } from '@/types/post';
+import type { ICaseStudies, ICaseStudy } from '@/types/post';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 import Paragraph from './typography/Paragraph';
@@ -20,7 +20,7 @@ export default function CaseStudyCard({ studies = [] }: ICaseStudyCardProps) {
 
   return (
     <div className='flex flex-wrap justify-center gap-3 pt-10 lg:gap-8 lg:text-center'>
-      {studies.map((study, index) => (
+      {studies.map((study: ICaseStudy, index: number) => (
         <a key={index} className='lg:w-[30%]' href={`casestudies/${study.id}`}>
           <div
             className='h-full min-h-[300px] max-w-sm overflow-hidden rounded-md border border-gray-200 bg-white p-4'

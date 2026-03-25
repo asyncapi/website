@@ -206,7 +206,7 @@ const Index: React.FC<IndexProps> = ({
                 {casestudy.company.name}
               </Heading>
               <div className='flex flex-wrap gap-1' id='Contacts'>
-                {contacts.map((item, index) => (
+                {contacts.map((item: ICaseStudy['company']['contact'][number], index: number) => (
                   <div key={index}>
                     <Heading typeStyle={HeadingTypeStyle.bodyLg}>
                       <Link

@@ -86,7 +86,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
                   <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.xsSemibold} textColor='text-gray-900'>
                     <span className='hover:underline' data-testid='FeaturedBlogPost-AuthorName'>
                       {post.authors
-                        .map((author, index) =>
+                        .map((author: IBlogPost['authors'][number], index: number) =>
                           author.link ? (
                             <span key={index} data-alt={author.name} rel='noreferrer'>
                               {author.name}
@@ -95,7 +95,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
                             author.name
                           )
                         )
-                        .reduce((prev, curr) => [prev, ' & ', curr].join(''))}
+                        .reduce((prev: string, curr: string) => [prev, ' & ', curr].join(''))}
                     </span>
                   </Heading>
                   <Paragraph typeStyle={ParagraphTypeStyle.sm} className='flex'>

@@ -3,6 +3,8 @@ import React from 'react';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
+import type { IBlogPost } from '@/types/post';
+
 import { getAllPosts } from '../../utils/api';
 import { useTranslation } from '../../utils/i18n';
 import Button from '../buttons/Button';
@@ -20,7 +22,7 @@ export default function NewsroomSection() {
    * Retrieves all blog posts and news and sorts them based on their date and featured status.
    */
   const posts = getAllPosts()
-    .blog.sort((i1, i2) => {
+    .blog.sort((i1: IBlogPost, i2: IBlogPost) => {
       const i1Date = new Date(i1.date);
       const i2Date = new Date(i2.date);
 

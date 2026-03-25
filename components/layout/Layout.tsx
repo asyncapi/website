@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 
 import type { NavigationItems } from '@/types/context/DocsContext';
-import type { IPost, IPosts } from '@/types/post';
+import type { IDoc, IPost, IPosts } from '@/types/post';
 
 import BlogContext from '../../context/BlogContext';
 import { getAllPosts, getDocBySlug, getPostBySlug } from '../../utils/api';
@@ -21,7 +21,7 @@ interface ILayoutProps {
 export default function Layout({ children }: ILayoutProps): React.JSX.Element {
   const { pathname } = useRouter();
   const posts = getAllPosts();
-  const allDocPosts = posts.docs.filter((p) => p.slug.startsWith('/docs/')) as unknown as NavigationItems;
+  const allDocPosts = posts.docs.filter((p: IDoc) => p.slug.startsWith('/docs/')) as unknown as NavigationItems;
 
   if (pathname.startsWith('/docs')) {
     const post = getDocBySlug(posts.docs as IPost[], pathname) as IPost;

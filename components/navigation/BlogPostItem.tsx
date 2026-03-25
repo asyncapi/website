@@ -104,7 +104,7 @@ const BlogPostItem = ({ post, className = '', id = '' }: BlogPostItemProps, ref:
                   <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.xsSemibold} textColor='text-gray-900'>
                     <span>
                       {post.authors
-                        .map((author, index) =>
+                        .map((author: IBlogPost['authors'][number], index: number) =>
                           author.link ? (
                             <button
                               key={index}
@@ -121,7 +121,7 @@ const BlogPostItem = ({ post, className = '', id = '' }: BlogPostItemProps, ref:
                             author.name
                           )
                         )
-                        .reduce((prev, curr, index) => (
+                        .reduce((prev: React.ReactNode, curr: React.ReactNode, index: number) => (
                           <React.Fragment key={`author-${index}`}>
                             {prev} & {curr}
                           </React.Fragment>
