@@ -85,7 +85,7 @@ docker run --rm -it \
 
 ---
 
-## 🐳 Option 2: Pull the image from Docker Hub
+## Option 2: Pull the image from Docker Hub
 
 Instead of building the image manually, you can pull the official image directly from Docker Hub:
 
