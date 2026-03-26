@@ -56,7 +56,7 @@ describe('Frontmatter Validator', () => {
 
   it('validates docs frontmatter for required fields', async () => {
     const frontmatter = { title: 123, weight: 'not-a-number' };
-    // @ts-ignore, to simulate invalid frontmatter
+    // @ts-expect-error - Intentionally passing invalid frontmatter types to test validation
     const errors = validateDocs(frontmatter);
 
     expect(errors).toEqual(
@@ -83,7 +83,7 @@ describe('Frontmatter Validator', () => {
       cover: ['not-a-string'],
       authors: { name: 'John Doe' }
     };
-    // @ts-ignore, to simulate invalid frontmatter
+    // @ts-expect-error - Intentionally passing invalid frontmatter types to test error detection
     const errors = validateBlogs(frontmatter);
 
     expect(errors).toEqual([
@@ -174,7 +174,7 @@ describe('Frontmatter Validator', () => {
   });
 
   it('should throw an error if frontmatter is missing', () => {
-    // @ts-ignore, to simulate missing frontmatter
+    // @ts-expect-error - Intentionally passing undefined to test missing frontmatter handling
     const errors = validateBlogs(undefined);
 
     expect(errors).toEqual(['Frontmatter is missing']);
@@ -182,7 +182,7 @@ describe('Frontmatter Validator', () => {
   it('does not push errors if docs frontmatter is valid', () => {
     const frontmatter = { title: 'Valid Title', weight: 10 };
 
-    // @ts-ignore, to simulate valid frontmatter
+    // @ts-expect-error - Intentionally passing minimal frontmatter to test validation
     const errors = validateDocs(frontmatter);
 
     expect(errors).toBeNull();
