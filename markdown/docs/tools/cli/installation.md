@@ -103,7 +103,7 @@ docker run --rm -it \
   asyncapi/cli [COMMAND HERE]
 
 ```
-### Example
+**Example**
 
 ```bash
 docker run --rm -it \
