@@ -7,6 +7,7 @@
         "twitter": "maya_ux_ui",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-13",
         "repos": [
             "website",
             "conference-website",
@@ -22,6 +23,7 @@
         "twitter": "aayushmau5",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "diff"
         ],
@@ -35,7 +37,9 @@
         "twitter": "Aayush__Saini_",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2025-01-13",
         "repos": [
+            "openapi-schema-parser",
             "cli"
         ],
         "githubID": 60972989
@@ -48,6 +52,7 @@
         "github": "imabp",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "problem"
         ],
@@ -61,6 +66,7 @@
         "twitter": "AksNema",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "website"
         ],
@@ -74,6 +80,7 @@
         "twitter": "thisisanshg",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2024-05-29",
         "repos": [
             "website"
         ],
@@ -87,8 +94,10 @@
         "twitter": "Shurtu_Gal",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2024-01-26",
         "repos": [
             "studio",
+            ".github",
             "cli"
         ],
         "githubID": 100484401
@@ -101,6 +110,7 @@
         "twitter": "dalelane",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "company": "IBM",
         "repos": [
             "spec",
@@ -118,11 +128,13 @@
         "availableForHire": false,
         "linkedin": "fmvilas",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "isBoardMember": true,
         "repos": [
             "spec",
             "spec-json-schemas",
             "asyncapi-react",
+            "parser-js",
             "extensions-catalog",
             "converter-js",
             "bindings",
@@ -143,10 +155,10 @@
         "company": "EventStack",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "spec-json-schemas",
             "generator",
-            "parser-js",
             "converter-js",
             "modelina",
             "parser-api",
@@ -163,11 +175,10 @@
         "availableForHire": false,
         "company": "Postman",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "spec-json-schemas",
-            "studio",
-            ".github",
-            "optimizer"
+            "studio"
         ],
         "githubID": 32505158
     },
@@ -179,6 +190,7 @@
         "twitter": "derberq",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "spec",
             "website",
@@ -193,7 +205,6 @@
             "nodejs-ws-template",
             "java-spring-template",
             ".github",
-            "vs-asyncapi-preview",
             "template-for-generator-templates",
             "community",
             "diff",
@@ -209,6 +220,7 @@
         "slack": "U01EB02BP7A",
         "company": "Travelping GmbH",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "generator",
             "asyncapi-react",
@@ -221,7 +233,6 @@
             "modelina",
             "diff",
             "chatbot",
-            "server-api",
             "EDAVisualiser",
             "problem"
         ],
@@ -235,6 +246,7 @@
         "slack": "U01RWDD69PZ",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "asyncapi-react",
             "conference-website",
@@ -249,6 +261,7 @@
         "twitter": "pbodiachevskii",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "spec-json-schemas",
             "tck",
@@ -264,6 +277,7 @@
         "twitter": "philschlesinger",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "jasyncapi-idea-plugin"
         ],
@@ -277,7 +291,9 @@
         "twitter": "iamPrince_2003",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2023-11-30",
         "repos": [
+            "website",
             "studio"
         ],
         "githubID": 44585452
@@ -290,6 +306,7 @@
         "availableForHire": false,
         "company": "IBM",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "spec-json-schemas",
             "bindings"
@@ -305,6 +322,7 @@
         "company": "Apideck",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2024-01-26",
         "repos": [
             "studio",
             "cli"
@@ -320,25 +338,12 @@
         "company": "Xane AI",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "cli",
             "bundler"
         ],
         "githubID": 41781438
-    },
-    {
-        "name": "David Pereira",
-        "github": "BOLT04",
-        "twitter": "BOLT2938",
-        "slack": "U02EC8BT0TX",
-        "linkedin": "jos\u00e9-david-pereira-13ba5315a",
-        "availableForHire": false,
-        "company": "Create IT",
-        "isTscMember": true,
-        "repos": [
-            "server-api"
-        ],
-        "githubID": 18630253
     },
     {
         "name": "Daniel Raper",
@@ -347,6 +352,7 @@
         "linkedin": "danielr",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "java-template"
         ],
@@ -359,6 +365,7 @@
         "availableForHire": true,
         "slack": "U011D1DAU6S",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "java-spring-template"
         ],
@@ -372,6 +379,7 @@
         "availableForHire": false,
         "company": "ThoughtWorks",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "modelina"
         ],
@@ -383,8 +391,9 @@
         "linkedin": "ivangarciasainzaja",
         "slack": "UTCN3ET4M",
         "availableForHire": false,
-        "company": "IZERTIS",
+        "company": "ZenWave360",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "vs-asyncapi-preview"
         ],
@@ -465,6 +474,60 @@
                     "month": "October"
                 },
                 "link": "https://www.youtube.com/watch?v=gUsoD8RaCuw"
+            },
+            {
+                "type": "talk",
+                "title": "AsyncAPI Full Code Generation for Java with ZenWave SDK",
+                "date": {
+                    "year": 2024,
+                    "month": "October"
+                },
+                "link": "https://www.youtube.com/watch?v=q5vt2TLGoaQ"
+            },
+            {
+                "type": "article",
+                "title": "Transactional OutBox With AsyncAPI, SpringModulith and ZenWaveSDK (full project and tutorial)",
+                "date": {
+                    "year": 2025,
+                    "month": "April"
+                },
+                "link": "https://www.zenwave360.io/posts/TransactionalOutBoxWithAsyncAPIAndSpringModulith/"
+            },
+            {
+                "type": "talk",
+                "title": "Arquitecturas Event-Driven y Monolitos Modulares con AsyncAPI",
+                "date": {
+                    "year": 2025,
+                    "month": "May"
+                },
+                "link": "https://www.youtube.com/watch?v=08MWIWljbIQ"
+            },
+            {
+                "type": "talk",
+                "title": "Event-Driven Architectures with Spring Modulith and AsyncAPI",
+                "date": {
+                    "year": 2025,
+                    "month": "May"
+                },
+                "link": "https://2025.springio.net/sessions/event-driven-architectures-with-spring-modulith-and-asyncapi/"
+            },
+            {
+                "type": "article",
+                "title": "ZenWave AsyncAPI Generator",
+                "date": {
+                    "year": 2025,
+                    "month": "October"
+                },
+                "link": "https://www.zenwave360.io/zenwave-sdk/plugins/asyncapi-generator/"
+            },
+            {
+                "type": "article",
+                "title": "ShoppingCart with AsyncAPI (full project and tutorial)",
+                "date": {
+                    "year": 2026,
+                    "month": "Jan"
+                },
+                "link": "https://www.zenwave360.io/docs/examples/eda-examples/asyncapi-shopping-cart/"
             }
         ]
     },
@@ -476,8 +539,10 @@
         "twitter": "njericodes",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
-            "generator"
+            "generator",
+            ".github"
         ],
         "githubID": 40742916
     },
@@ -490,6 +555,7 @@
         "availableForHire": false,
         "company": "Google",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "spec-json-schemas",
             "bindings"
@@ -504,6 +570,7 @@
         "availableForHire": false,
         "company": "The LEGO Group",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "spec-json-schemas",
             "bindings"
@@ -518,25 +585,11 @@
         "availableForHire": false,
         "company": "Sportradar",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "modelina"
         ],
         "githubID": 1437394
-    },
-    {
-        "name": "Heiko Henning",
-        "github": "GreenRover",
-        "slack": "U03AC4G51H8",
-        "availableForHire": false,
-        "company": "mtrail GmbH",
-        "isTscMember": true,
-        "repos": [
-            "spec",
-            "spec-json-schemas",
-            "bindings",
-            "protobuf-schema-parser"
-        ],
-        "githubID": 512850
     },
     {
         "name": "Thulisile Sibanda",
@@ -547,6 +600,7 @@
         "availableForHire": false,
         "company": "AsyncAPI Initiative",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "isBoardMember": true,
         "repos": [
             "website",
@@ -556,20 +610,6 @@
         "githubID": 66913810
     },
     {
-        "name": "Ashmit JaiSarita Gupta",
-        "github": "devilkiller-ag",
-        "linkedin": "jaisarita",
-        "twitter": "jaisarita",
-        "slack": "U062LA14E58",
-        "availableForHire": true,
-        "isTscMember": true,
-        "repos": [
-            "website",
-            "modelina"
-        ],
-        "githubID": 43639341
-    },
-    {
         "name": "Sambhav Gupta",
         "github": "sambhavgupta0705",
         "linkedin": "sambhavgupta0705",
@@ -577,6 +617,7 @@
         "slack": "U04630DU3N3",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2024-02-06",
         "repos": [
             "website"
         ],
@@ -590,23 +631,11 @@
         "twitter": "TRRohit20",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2025-02-17",
         "repos": [
             "website"
         ],
         "githubID": 108233235
-    },
-    {
-        "name": "Ashmit Jagtap",
-        "github": "ashmit-coder",
-        "linkedin": "ashmit-jagtap",
-        "twitter": "AshmitJagtap",
-        "slack": "U06RA7GDHU1",
-        "availableForHire": true,
-        "isTscMember": true,
-        "repos": [
-            "conference-website"
-        ],
-        "githubID": 69006513
     },
     {
         "name": "Hari Krishnan",
@@ -616,14 +645,15 @@
         "slack": "U067JPY0UH5",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2025-01-21",
         "repos": [
             "jasyncapi"
         ],
         "githubID": 126087,
         "country": "\ud83c\uddee\ud83c\uddf3",
-        "bio": "Hari Krishnan has over two decades of experience in building high-performing teams, designing scalable systems, and driving technical strategy for large enterprises and high-growth startups across industries like finance, telecom, logistics, and retail. As Founder and CEO of Polarizer Technologies he has led enterprise-wide initiatives in architecture, developer experience, test automation and AI adoption. He combines deep technical expertise with executive vision, having worked closely with CXOs on strategy, delivery assurance, and organizational agility. He is widely recognized for his contributions to API governance, platform engineering, and contract-driven development. He has spoken at several conferences including APIDays (New York, Paris), Developer Week Sunnyvale, NordicAPIs Platform Summit, GoTo Copenhagen, API Specification Conference (#ASC2022), API World, SeleniumConf, Agile2021, Agile India, TestingUY 2021, SREConf, PyCon Singapore, RubyConf India. He actively contributes to several open-source projects including Specmatic and Perfiz. His areas of interest include distributed systems, AI-native products and exploring how AI can be leveraged to rethink software delivery and next-gen developer experience.",
-        "company": "Specmatic and Polarizer Technologies",
-        "title": "Co-founder and CTO at Specmatic, Founder, and CEO at Polarizer Technologies",
+        "bio": "Hari Krishnan has over two decades of experience in building high-performing teams, designing scalable systems, and driving technical strategy for large enterprises and high-growth startups across industries like finance, telecom, logistics, and retail. As Founder and CEO of Polarizer Technologies he has led enterprise-wide initiatives in architecture, developer experience, test automation and AI adoption. He combines deep technical expertise with executive vision, having worked closely with CXOs on strategy, delivery assurance, and organizational agility. He is widely recognized for his contributions to API governance, platform engineering, and contract-driven development. His areas of interest include distributed systems, AI native products, AI augmented and agentic software delivery.",
+        "company": "Polarizer Technologies",
+        "title": "Founder, and CEO at Polarizer Technologies",
         "img": "https://raw.githubusercontent.com/harikrishnan83/harikrishnan83/master/HariKrishnan-profile.jpg",
         "contributions": [
             {
@@ -679,6 +709,15 @@
                     "month": "August"
                 },
                 "link": "https://conferences.gotopia.tech/goto-serverless-bengaluru-2025/sessions/3845/reliable-aws-lambda-data-pipelines-with-asyncapi-specification"
+            },
+            {
+                "type": "talk",
+                "title": "AsyncAPI 2.6 to 3.0: Migrating Safely with No-Code Backward Compatibility Checks",
+                "date": {
+                    "year": 2025,
+                    "month": "October"
+                },
+                "link": "https://www.apidays.global/events/india"
             }
         ]
     },
@@ -689,6 +728,7 @@
         "slack": "U02MRF09BL1",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2025-03-25",
         "repos": [
             "net-sdk"
         ],
@@ -701,6 +741,7 @@
         "linkedin": "jean-baptiste-bianchi-aa42b914",
         "slack": "U08K91GKK8T",
         "isTscMember": true,
+        "tscMemberSince": "2025-03-25",
         "availableForHire": false,
         "repos": [
             "net-sdk"
@@ -715,9 +756,9 @@
         "slack": "U05FM7WRKU4",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2025-03-25",
         "repos": [
-            "website",
-            "conference-website"
+            "website"
         ],
         "githubID": 90895835
     },
@@ -729,24 +770,51 @@
         "slack": "U0867GV384D",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2025-08-27",
         "repos": [
             "generator"
         ],
         "githubID": 114283933
     },
     {
+        "name": "Ruchi Pakhle",
+        "github": "Ruchip16",
+        "twitter": "Ruchicodess",
+        "availableForHire": true,
+        "isTscMember": true,
+        "tscMemberSince": "2025-11-04",
+        "repos": [
+            "vs-asyncapi-preview"
+        ],
+        "githubID": 72685035
+    },
+    {
+        "name": "TenzDelek",
+        "github": "TenzDelek",
+        "linkedin": "tenzdelek",
+        "slack": "U06SWFWLLQG",
+        "availableForHire": true,
+        "isTscMember": true,
+        "tscMemberSince": "2026-02-17",
+        "repos": [
+            "conference-website"
+        ],
+        "githubID": 122612557
+    },
+    {
         "name": "Daniel Kocot",
         "img": "https://avatars.githubusercontent.com/u/466609?v=4",
-        "bio": "Daniel has been part of the codecentric team since October 2016. Since the beginning of 2022 he works as Senior Solution Architect at the Dortmund branch. Starting as a consultant with a focus on application lifecycle management, his focus shifted more and more towards APIs. In addition to numerous customer projects and his involvement in the open source world around APIs, our Head of API Experience & Operations is also a frequent speaker at conferences.",
-        "title": "Senior Solution Architect / Head of API Experience and Operations",
+        "bio": "Daniel joined the team at adorsys GmbH & Co. KG as Principal Integration Architect in January 2026. He has been dedicated to integration-related topics for almost 10 years. Initially focusing on gateways and the early days of APIOps, he later shifted his focus to methodologies, strategy, and enterprise architecture. In his daily work with his customers, he attaches particular importance to ensuring that interfaces are not only understood as technical tools.",
+        "title": "Principal Integration Architect",
         "github": "danielkocot",
         "githubID": 466609,
         "slack": "U029F3XUYM8",
-        "twitter": "dk_1977",
+        "twitter": "",
         "linkedin": "danielkocot",
-        "company": "codecentric AG",
+        "company": "adorsys GmbH & Co. KG",
         "country": "\ud83c\udde9\ud83c\uddea",
         "isTscMember": true,
+        "tscMemberSince": "2025-05-28",
         "contributions": [
             {
                 "type": "article",
@@ -799,6 +867,7 @@
         "company": "Kong",
         "country": "\ud83c\uddf2\ud83c\uddfd",
         "isTscMember": true,
+        "tscMemberSince": "2025-06-10",
         "isBoardMember": true,
         "contributions": [
             {
@@ -857,6 +926,7 @@
         "linkedin": "http://linkedin.com/in/nareshjain/",
         "country": "\ud83c\uddee\ud83c\uddf3",
         "isTscMember": true,
+        "tscMemberSince": "2025-05-28",
         "bio": "Naresh is an internationally recognised Technology & Product Development Expert. Over the last 25 years, he has played a key role in streamlining the product engineering culture at many unicorns and fortune 500 companies. Naresh is the Founder, CEO of several companies - Xnsio, ConfEngine and Specmatic. Naresh is also the local organiser of API Days India. In 2004, Naresh started the Agile movement in India. More details: https://nareshjain.com",
         "company": "Specmatic, Xnsio, ConfEngine",
         "title": "Founder, CEO at Specmatic, Xnsio and ConfEngine",

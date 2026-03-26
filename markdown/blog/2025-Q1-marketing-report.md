@@ -98,7 +98,7 @@ Similarly, "Understanding AsyncAPIs with a Practical Example" drew good engageme
 
 Over the next few months, we will begin rolling out initiatives aligned with the strategy, and our progress will be tracked through clearly defined KPIs, and consistent quarterly reports will be shared to ensure transparency and accountability.
 
-[Read the 2025 AsyncAPI Marketing Strategy](https://github.com/asyncapi/community/blob/master/annual-goals/2025_marketing_strategy.md)
+[Read the 2025 AsyncAPI Marketing Strategy](https://github.com/asyncapi/community/blob/master/docs/030-project-vision-strategy-goals/2025_marketing_strategy.md)
 
 ## Event & Community Engagement
 

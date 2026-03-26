@@ -47,7 +47,7 @@ You can create a new `asyncapi.yaml` document by running:
 Create the following specification document titled `asyncapi` with a `.yaml` extension.
 
 <CodeBlock>
-{`asyncapi: 3.0.0
+{`asyncapi: 3.1.0
 info:
   title: Streetlights App
   version: '1.0.0'
@@ -93,7 +93,7 @@ operations:
 Let's break the above code snippet down into pieces:
 
 <CodeBlock>
-{`asyncapi: 3.0.0
+{`asyncapi: 3.1.0
 info:
   title: Streetlights App
   version: '1.0.0'
@@ -105,7 +105,7 @@ info:
     url: 'https://www.apache.org/licenses/LICENSE-2.0'`}
 </CodeBlock>
 
-- The `asyncapi` field indicates you use the AsyncAPI version 3.0.0.
+- The `asyncapi` field indicates you use the AsyncAPI version 3.1.0.
 
 - The `info` field holds information about the Streetlights application. Here, the title, version, description, and license were defined.
 

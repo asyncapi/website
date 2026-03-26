@@ -23,11 +23,20 @@ export interface AccordionItemProps {
  * This is the AccordionItem component. It displays a single item that can be expanded or collapsed.
  */
 export default function AccordionItem({ itemIndex, title, content, isActive, setActiveIndex }: AccordionItemProps) {
+  const contentRef = React.useRef<HTMLDivElement>(null);
+  const [contentHeight, setContentHeight] = React.useState(0);
+
   const handleClick = () => {
     const nextIndex = isActive ? null : itemIndex;
 
     setActiveIndex(nextIndex);
   };
+
+  React.useEffect(() => {
+    if (contentRef.current) {
+      setContentHeight(isActive ? contentRef.current.scrollHeight : 0);
+    }
+  }, [isActive]);
 
   return (
     <div className='my-2 flex size-full flex-col gap-1 border border-gray-200 bg-white px-2'>
@@ -39,9 +48,9 @@ export default function AccordionItem({ itemIndex, title, content, isActive, set
               <path
                 d='M18 15C18 15 13.5811 9.00001 12 9C10.4188 8.99999 6 15 6 15'
                 stroke='#556061'
-                stroke-width='1.5'
-                stroke-linecap='round'
-                stroke-linejoin='round'
+                strokeWidth='1.5'
+                strokeLinecap='round'
+                strokeLinejoin='round'
               />
             </svg>
           ) : (
@@ -49,19 +58,25 @@ export default function AccordionItem({ itemIndex, title, content, isActive, set
               <path
                 d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9'
                 stroke='#556061'
-                stroke-width='1.5'
-                stroke-linecap='round'
-                stroke-linejoin='round'
+                strokeWidth='1.5'
+                strokeLinecap='round'
+                strokeLinejoin='round'
               />
             </svg>
           )}
         </div>
       </button>
-      {isActive && (
-        <div className='rounded-sm border-t border-gray-200 py-2 font-body font-regular text-gray-700 antialiased'>
+      <div
+        className='overflow-hidden transition-all duration-300 ease-in-out'
+        style={{ maxHeight: `${contentHeight}px` }}
+      >
+        <div
+          ref={contentRef}
+          className='rounded-sm border-t border-gray-200 py-2 font-body font-regular text-gray-700 antialiased'
+        >
           {content}
         </div>
-      )}
+      </div>
     </div>
   );
 }

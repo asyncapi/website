@@ -16,7 +16,7 @@ If you're using AsyncAPI to define an API that connects to a message broker, you
 Continuing with the `hello world` application example, let's learn how to define a simple security scheme (mechanism) for it.
 
 <CodeBlock highlightedLines={[10,11]}>
-{`asyncapi: 3.0.0
+{`asyncapi: 3.1.0
 info:
   title: Hello world application
   version: '0.1.0'
@@ -77,7 +77,7 @@ There's a property in the server object called `security`. It's an array and can
 A best practice is to put security details inside the `components.securitySchemes` section as it enables reusability across multiple servers. Below, you can see the same example, but this time, under server security, you see that `$ref` links to more security details located under the `user-password` object in `securitySchemes`.
 
 <CodeBlock highlightedLines={[10,11,53,54,55]}>
-{`asyncapi: 3.0.0
+{`asyncapi: 3.1.0
 info:
   title: Hello world application
   version: '0.1.0'

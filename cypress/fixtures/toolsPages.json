@@ -1,0 +1,37 @@
+{
+    "generator": {
+        "path": "/tools/generator",
+        "heading": "Docs, Code, Anything!",
+        "image": "generator diagram",
+        "github": "https://www.github.com/asyncapi/generator",
+        "docs": "/docs/tools/generator"
+    },
+    "cli": {
+        "path": "/tools/cli",
+        "heading": "Interact with AsyncAPI from the comfort of your CLI",
+        "install": "npm install -g @asyncapi/cli",
+        "github": "https://www.github.com/asyncapi/cli",
+        "docs": "/docs/tools/cli"
+    },
+    "parsers": {
+        "path": "/tools/parsers",
+        "heading": "Build your own tools",
+        "install": "npm install @asyncapi/parser",
+        "github": "https://www.github.com/asyncapi/parser-js"
+    },
+    "githubActions": {
+        "path": "/tools/github-actions",
+        "heading": "Automate using GitHub Actions",
+        "github": "https://www.github.com/asyncapi/github-action-for-generator"
+    },
+    "modelina": {
+        "path": "/tools/modelina",
+        "heading": "Modelina",
+        "install": "npm install @asyncapi/modelina",
+        "tryIt": {
+            "text": "Try it now",
+            "href": "https://modelina.org/playground"
+        },
+        "github": "https://www.github.com/asyncapi/modelina"
+    }
+}
