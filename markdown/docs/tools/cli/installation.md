@@ -51,7 +51,7 @@ Install [Docker](https://docs.docker.com/get-docker/) first, then you can either
 
 ---
 
-## 🏗️ Option 1: Build the image locally
+## Option 1: Build the image locally
 
 Build the image using:
 
