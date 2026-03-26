@@ -81,7 +81,7 @@ describe('addDocButtons', () => {
     let error: Error | undefined;
 
     try {
-      // @ts-ignore
+      // @ts-expect-error - Intentionally passing invalid treePosts structure to test error handling
       addDocButtons(docPosts, invalidTreePosts);
     } catch (err) {
       error = err as Error;
