@@ -50,14 +50,14 @@ We encourage you to share any details you feel would help the TSC get to know no
 
 ## Timeline
 
-Nominations are open from the **1st to the 26th of April at 12.00 PM UTC**. Simply email your name, or your nominee’s name, along with the submission details to **info@asyncapi.com**. We look forward to seeing all your wonderful nominations!
+Nominations are open from the **April 1st to April 26th at 12.00 PM UTC**. Simply email your name, or your nominee’s name, along with the submission details to **info@asyncapi.com**. We look forward to seeing all your wonderful nominations!
 
-Candidates will be announced on 30 April. Voting begins from 1 to 31 May.
+Candidates will be announced on **April 30th**. Voting begins from **May 1st to May 31st**.
 
 
 ## In summary
 
-- Nominations Open: **1 of April 2026**
-- Nominations Close: **26 April 2026**
-- Announcement: **30 April 2026**
-- Voting: **1 - 31 May 2026**
+- Nominations Open: **April 1st, 2026**
+- Nominations Close: **April 26th, 2026**
+- Announcement: **April 30th, 2026**
+- Voting: **May 1st - May 31st, 2026**
