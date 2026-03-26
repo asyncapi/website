@@ -39,6 +39,7 @@
         "isTscMember": true,
         "tscMemberSince": "2025-01-13",
         "repos": [
+            "openapi-schema-parser",
             "cli"
         ],
         "githubID": 60972989
