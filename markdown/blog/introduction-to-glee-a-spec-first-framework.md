@@ -13,6 +13,11 @@ authors:
 excerpt: Glee is a powerful spec-first framework that streamlines the building of server-side applications. By integrating your code with the spec, Glee takes care of the heavy lifting involved in creating and managing connections, allowing you to focus on the business logic that truly matters.
 ---
 
+:::caution Archived Project
+Glee was archived on August 4, 2025 and is no longer maintained. The content below is preserved for historical reference and may be outdated.
+Archived repo: [asyncapi-archived-repos/glee](https://github.com/asyncapi-archived-repos/glee).
+:::
+
 For the last year, I have been working full-time on AsyncAPI, where I have actively taken part in building a new framework called [Glee](https://github.com/asyncapi/glee). This is the first of many blogs to come where I will be talking about Glee and all the cool stuff we can build with it. In this blog, I will introduce Glee and give a broad overview of how to get started and keep up with Glee's development.
 
 # Introduction 

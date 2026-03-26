@@ -42,7 +42,7 @@ In this section, you’ll create an AsyncAPI document to describe the `UserSignU
 Let's begin by analyzing the document. As you progress in the tutorial, we'll break down each segment, uncovering its purpose and functionality.
 
 ```
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 info:
   title: User Signup API
   version: 1.0.0
@@ -97,7 +97,7 @@ Let's now break it down into pieces.
 First, you must describe your application, including the AsyncAPI version, the info about the document, and the server your application is based on.
 
 ```
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 info:
   title: User Signup API
   version: 1.0.0
@@ -119,7 +119,7 @@ servers:
 
 In the above snippet:
 
-- The `asyncapi` field indicates that you use AsyncAPI version 3.0.0.
+- The `asyncapi` field indicates that you use AsyncAPI version 3.1.0.
   
 - The `info` field provides information about the API. Here the the APIs `title`, `version`, and `description` are being defined.
   

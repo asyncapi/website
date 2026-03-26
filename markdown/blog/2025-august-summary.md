@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: Community Builder and Open Source Fanatic!
 excerpt: 'AsyncAPI community and project updates for August 2025'
-featured: true
 ---
 
 As summer vacation comes to an end and we welcome everyone back from their holidays, it has been a busy season for some community builders and maintainers. Many have been actively pushing various initiatives and working on their projects. We have also been focusing on achieving our goals and improving existing initiatives. Let’s take a look at the community updates from August.

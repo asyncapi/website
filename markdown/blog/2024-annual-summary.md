@@ -169,7 +169,7 @@ These are some of the few highlights for 2024, and we have more planned for 2025
 
 We are starting the year with [an open discussion on establishing our first AsyncAPI Governance Board](https://github.com/asyncapi/community/pull/1634), so please join the conversation.
 
-You can also check out the [2025 AsyncAPI Community Building Goals](https://github.com/asyncapi/community/blob/master/annual-goals/2025_Community_Goals.md) to see what's in store for this year.
+You can also check out the [2025 AsyncAPI Community Building Goals](https://github.com/asyncapi/community/blob/master/docs/030-project-vision-strategy-goals/2025_Community_Goals.md) to see what's in store for this year.
 
 
 > Image by Canva
