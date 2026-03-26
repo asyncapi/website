@@ -69,7 +69,7 @@ docker run --rm -it \
   asyncapi/cli [COMMAND HERE]
 ```
 
-### Example
+**Example**
 
 You can run this example inside the `cli` directory after cloning this repository.
 
