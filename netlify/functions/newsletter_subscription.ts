@@ -15,17 +15,41 @@ export const handler: Handler = async (event: HandlerEvent) => {
   const { email, name, interest } = JSON.parse(event.body || '');
   const tagId = config.tags[interest as keyof typeof config.tags];
 
+  if (!process.env.KIT_API_KEY) {
+    return {
+      statusCode: 503,
+      body: JSON.stringify({ message: 'Subscription is temporarily unavailable. Please try again later.' })
+    };
+  }
+
+  if (tagId == null || Number(tagId) === 0) {
+    return {
+      statusCode: 503,
+      body: JSON.stringify({ message: 'Subscription is temporarily unavailable. Please try again later.' })
+    };
+  }
+
   const headers = {
-    'X-Kit-Api-Key': process.env.KIT_API_KEY!,
+    'X-Kit-Api-Key': process.env.KIT_API_KEY,
     'Content-Type': 'application/json'
   };
 
   try {
-    await fetch(`${KIT_BASE}/subscribers`, {
+    const subRes = await fetch(`${KIT_BASE}/subscribers`, {
       method: 'POST',
       headers,
       body: JSON.stringify({ email_address: email, first_name: name, state: 'active' })
     });
+
+    if (!subRes.ok) {
+      await subRes.text().catch(() => undefined);
+      return {
+        statusCode: 502,
+        body: JSON.stringify({
+          message: 'Subscription could not be completed. Please try again later.'
+        })
+      };
+    }
 
     const tagRes = await fetch(`${KIT_BASE}/tags/${tagId}/subscribers`, {
       method: 'POST',
@@ -34,10 +58,12 @@ export const handler: Handler = async (event: HandlerEvent) => {
     });
 
     if (!tagRes.ok) {
-      const errBody = await tagRes.json().catch(() => ({}));
+      await tagRes.text().catch(() => undefined);
       return {
-        statusCode: tagRes.status,
-        body: JSON.stringify(errBody)
+        statusCode: 502,
+        body: JSON.stringify({
+          message: 'Subscription could not be completed. Please try again later.'
+        })
       };
     }
 
@@ -45,10 +71,12 @@ export const handler: Handler = async (event: HandlerEvent) => {
       statusCode: 200,
       body: JSON.stringify({ message: 'Subscribed successfully.' })
     };
-  } catch (err) {
+  } catch {
     return {
       statusCode: 500,
-      body: JSON.stringify({ message: (err as Error).message })
+      body: JSON.stringify({
+        message: 'An unexpected error occurred. Please try again later.'
+      })
     };
   }
 };
