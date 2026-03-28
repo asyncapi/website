@@ -1,51 +1,54 @@
-import mailchimp from '@mailchimp/mailchimp_marketing';
 import type { Handler, HandlerEvent } from '@netlify/functions';
-import md5 from 'md5';
 
-import config from '../../config/mailchimp-config.json';
+import config from '../../config/kit-config.json';
+
+const KIT_BASE = 'https://api.kit.com/v4';
 
 export const handler: Handler = async (event: HandlerEvent) => {
-  if (event.httpMethod === 'POST') {
-    const { listId } = config;
-    const { email, name, interest } = JSON.parse(event.body || '');
+  if (event.httpMethod !== 'POST') {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ message: 'The specified HTTP method is not allowed.' })
+    };
+  }
 
-    const subscriberHash = md5(email.toLowerCase());
+  const { email, name, interest } = JSON.parse(event.body || '');
+  const tagId = config.tags[interest as keyof typeof config.tags];
 
-    try {
-      mailchimp.setConfig({
-        apiKey: process.env.MAILCHIMP_API_KEY,
-        server: 'us12'
-      });
+  const headers = {
+    'X-Kit-Api-Key': process.env.KIT_API_KEY!,
+    'Content-Type': 'application/json'
+  };
 
-      const response = await mailchimp.lists.setListMember(listId,
-        subscriberHash,
-        {
-          email_address: email,
-          merge_fields: {
-            FNAME: name
-          },
-          status: 'subscribed',
-          interests: {
-            [config.interests[interest]]: true
-          }
-        });
+  try {
+    await fetch(`${KIT_BASE}/subscribers`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ email_address: email, first_name: name, state: 'active' })
+    });
 
+    const tagRes = await fetch(`${KIT_BASE}/tags/${tagId}/subscribers`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ email_address: email })
+    });
+
+    if (!tagRes.ok) {
+      const errBody = await tagRes.json().catch(() => ({}));
       return {
-        statusCode: 200,
-        body: JSON.stringify(response)
-      };
-    } catch (err) {
-      return {
-        statusCode: err.status,
-        body: JSON.stringify(err)
+        statusCode: tagRes.status,
+        body: JSON.stringify(errBody)
       };
     }
-  } else {
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ message: 'Subscribed successfully.' })
+    };
+  } catch (err) {
     return {
       statusCode: 500,
-      body: JSON.stringify({
-        message: 'The specified HTTP method is not allowed.'
-      })
+      body: JSON.stringify({ message: (err as Error).message })
     };
   }
 };
