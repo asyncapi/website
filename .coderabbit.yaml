@@ -20,7 +20,7 @@ reviews:
   pre_merge_checks:
     title:
       mode: error
-      requirements: "Use a concise title that follows our Conventional Commits guidelines and clearly summarizes the change using imperative mood (it means spoken or written as if giving a command or instruction, like 'add new helper for listing operations'). In Generator, prepend feat: or fix: in PR title only when PATCH/MINOR release must be triggered."
+      requirements: "Use a concise title that follows our Conventional Commits guidelines and clearly summarizes the change in imperative mood (for example: 'add new helper for listing operations')."
   tools:
     markdownlint:
       enabled: true
