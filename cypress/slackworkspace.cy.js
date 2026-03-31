@@ -5,6 +5,7 @@ describe('Slack workspace tests', () => {
 
   beforeEach(() => {
     slackPage.visitSlack();
+    slackPage.waitForPageLoad();
   });
 
   it('Should show all login methods when the Slack invite link is active', () => {
