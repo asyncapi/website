@@ -256,15 +256,19 @@ This is possible thanks to the following:
 This repository has the following structure:
 
 <!-- If you make any changes in the project structure, remember to update it. -->
-
-```text
+```
   ├── .github                                  # Definitions of GitHub workflows, pull request and issue templates
+  ├── .storybook                               # Storybook configuration for UI components
   ├── assets                                   # Various assets
   |    ├── docs                                # Documentation assets
   |        | fragments                         # Documentations for CLI installation and contribution.
+  ├── cheatsheet                               # Markdown based cheatsheets used in the website
   ├── components                               # Various generic components such as "Button", "Figure", etc.
   ├── config                                   # Transformed static data to display on the pages such as blog posts etc.
   ├── context                                  # Various React's contexts used in website
+  ├── cypress                                  # End-to-end tests for the website
+  ├── development                              # Development utilities and helper scripts
+  ├── docs                                     # Documentation related resources
   ├── locales                                  # Translations for the website
   ├── markdown                                 # Markdown files for the website
        ├── about                               # Markdown files for the /about page
@@ -280,11 +284,12 @@ This repository has the following structure:
   ├── scripts                                  # Scripts used in the build and dev processes
   ├── styles                                   # Various CSS files
   ├── templates                                # Various template markdown files
-  ├── types                                    #  Various typeScript types used in the website
+  ├── tests                                    # Test files for the project
+  ├── types                                    # Various TypeScript types used in the website
   ├── utils                                    # Various JS code for preparing static data to render in pages
   ├── next.config.mjs                          # Next.js configuration file
   ├── README.md                                # Project's README file
-  ├── tailwind.config.js                       # TailwindCSS configuration file
+  ├── tailwind.config.ts                       # TailwindCSS configuration file
   └── tsconfig.json                            # TypeScript configuration file
 ```
 
