@@ -119,13 +119,6 @@
     "date": "2026-03-31T15:00:00.000Z"
   },
   {
-    "title": "AsyncAPI Website Triage Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=bTFwM2NlaGNrdG1iM3VtNXZzaTY0N2todmsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/2330",
-    "banner": "https://private-user-images.githubusercontent.com/44585452/556327345-f493d033-e266-4b71-9ff0-d801130a8af3.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzM4NTA4NjQsIm5iZiI6MTc3Mzg1MDU2NCwicGF0aCI6Ii80NDU4NTQ1Mi81NTYzMjczNDUtZjQ5M2QwMzMtZTI2Ni00YjcxLTlmZjAtZDgwMTEzMGE4YWYzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAzMTglMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMzE4VDE2MTYwNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTAxMjhkODE2N2M5YjJlZDZiNTRjOTczYWU0NjFlZmZiODg1MWNmOWVlYWJlZjgwNWQwNzFlYTUyZDNmMGE1MWImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.H6794yWKfkgJR7mxnTStOtn-sh5Dtokc6PbGf-La_1s",
-    "date": "2026-04-01T15:30:00.000Z"
-  },
-  {
     "title": "AsyncAPI Community WG Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=NmVic2libGpzbzY0ZTZoN29ramFvNWswbTggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/3498",
