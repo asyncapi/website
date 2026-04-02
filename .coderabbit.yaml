@@ -1,6 +1,33 @@
 language: "en-US"
 reviews:
   high_level_summary: true
+  auto_review:
+    enabled: true
+  path_instructions:
+    - path: "components/**"
+      instructions: |
+        Ensure components use functional React patterns with explicit TypeScript
+        prop interfaces. Props must be destructured in the function signature.
+        All styling must use Tailwind CSS classes - no inline styles or CSS modules.
+        Translatable text must use the useTranslation hook from @/utils/i18n.
+    - path: "pages/**"
+      instructions: |
+        Page components must follow Next.js conventions. Check for proper
+        static generation support since the site uses static export (output: 'export').
+        Ensure i18n routing works with the [lang] parameter.
+    - path: "scripts/**"
+      instructions: |
+        Scripts must be written in TypeScript. Verify proper error handling
+        and that generated output files are not committed manually.
+    - path: "markdown/**"
+      instructions: |
+        Ensure MDX content has valid frontmatter. Blog posts must have required
+        fields (title, date, type, authors, etc.). Check for broken links
+        and proper image references.
+    - path: "public/locales/**"
+      instructions: |
+        Translation files must maintain consistent keys across all locales
+        (en, de, zh_cn). Do not remove existing translation keys.
   tools:
     markdownlint:
       enabled: true

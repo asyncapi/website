@@ -1,0 +1,63 @@
+# AsyncAPI Website - Cursor Rules
+
+## Project Overview
+This is the AsyncAPI website built with Next.js 15, TypeScript (strict), and Tailwind CSS 3. It uses static export and deploys on Netlify.
+
+## Contribution Rules
+- Open an issue first before submitting a PR (unless fixing a typo or obvious error).
+- One PR per change. Do not bundle unrelated changes.
+- Reference the related issue in the PR description (e.g., `Closes #1234`).
+- PR titles MUST follow Conventional Commits:
+  - `fix:` bug fix
+  - `feat:` new feature
+  - `docs:` documentation only
+  - `chore:` cleanup, deps, config
+  - `test:` test changes
+  - `refactor:` restructure without behavior change
+- Titles must use imperative mood and be self-descriptive.
+
+## Before Submitting
+Run these commands and ensure they pass:
+- `npm run lint` - ESLint
+- `npm run test` - Jest unit tests
+- `npm run test:e2e` - Cypress E2E (recommended)
+
+## Code Style
+- 2 spaces indentation, single quotes, semicolons required
+- No trailing commas
+- Max line length: 120 characters
+- LF line endings (Unix)
+- Use `@/` path alias for project root imports
+- Use `import type` for type-only imports
+- Prefix unused variables with `_`
+- No console/debugger/alert in production code
+- Import order enforced by eslint-plugin-simple-import-sort
+
+## Project Structure
+- pages/ → Next.js routes ([lang]/ for i18n)
+- components/ → React components (TypeScript interfaces for props)
+- markdown/ → MDX content (blog, docs)
+- scripts/ → Build scripts (TypeScript)
+- config/ → Data files, JSON schemas
+- types/ → TypeScript type definitions
+- utils/ → Shared utilities
+- context/ → React Context providers
+- tests/ → Jest tests
+- cypress/ → E2E tests
+- public/locales/ → i18n translations (en, de, zh_cn)
+- netlify/ → Edge functions
+
+## Component Patterns
+- Functional components with explicit TypeScript prop interfaces
+- Destructure props in function signature
+- Use Tailwind CSS classes for styling (no inline styles, no CSS modules)
+- Use `useTranslation` from `@/utils/i18n` for translatable text
+- Storybook stories: Meta/StoryObj pattern from @storybook/react
+
+## Do Not
+- Modify auto-generated files (dashboard.json, roadmap.json, meetings.json) by hand
+- Commit .env or credential files
+- Add new dependencies without justification
+- Use `any` type in TypeScript
+- Skip or disable ESLint rules without maintainer approval
+- Bundle multiple unrelated changes in one PR
