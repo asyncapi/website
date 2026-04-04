@@ -172,7 +172,7 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise
         const interactionsCount =
           discussion.reactions.totalCount +
           discussion.comments.totalCount +
-          discussion.comments.nodes?.reduce((acc, curr) => acc + curr.reactions.totalCount, 0) ?? 0;
+          (discussion.comments.nodes?.reduce((acc, curr) => acc + curr.reactions.totalCount, 0) ?? 0);
 
         const finalInteractionsCount = isPR
           ? interactionsCount +
