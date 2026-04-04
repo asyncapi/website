@@ -116,6 +116,9 @@ channels:
 
   agentResults:
     address: agents/results/{taskId}
+    parameters:
+      taskId:
+        description: Unique task identifier
     messages:
       TaskResult:
         payload:
@@ -182,9 +185,9 @@ The `confidence` field in results lets the coordinator decide whether to:
 The beauty of AsyncAPI is that this specification isn't just documentation — it generates code. Using the AsyncAPI Generator:
 
 ```bash
-# Generate a Node.js NATS client from the spec
+# Generate a Node.js service from the spec
 npx @asyncapi/generator@latest agent-protocol.yaml \
-  @asyncapi/nodejs-nats-template -o ./generated
+  @asyncapi/nodejs-template -o ./generated
 ```
 
 This produces typed message handlers, serialization/deserialization logic, and channel subscription code. Your agents start with a correct, type-safe communication layer instead of hand-rolled message parsing.
