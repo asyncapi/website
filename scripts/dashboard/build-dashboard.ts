@@ -170,14 +170,20 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise
         }
 
         const interactionsCount =
-          discussion.reactions.totalCount +
-          discussion.comments.totalCount +
-          (discussion.comments.nodes?.reduce((acc, curr) => acc + curr.reactions.totalCount, 0) ?? 0);
+          (discussion.reactions?.totalCount ?? 0) +
+          (discussion.comments?.totalCount ?? 0) +
+          ((discussion.comments?.nodes ?? []).reduce(
+            (acc, curr) => acc + (curr?.reactions?.totalCount ?? 0),
+            0,
+          ));
 
         const finalInteractionsCount = isPR
           ? interactionsCount +
-            discussion.reviews.totalCount +
-            (discussion.reviews.nodes?.reduce((acc, curr) => acc + curr.comments.totalCount, 0) ?? 0)
+            (discussion.reviews?.totalCount ?? 0) +
+            ((discussion.reviews?.nodes ?? []).reduce(
+              (acc, curr) => acc + (curr?.comments?.totalCount ?? 0),
+              0,
+            ))
           : interactionsCount;
 
         return {
