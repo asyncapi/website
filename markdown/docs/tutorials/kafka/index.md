@@ -44,7 +44,7 @@ Before starting this tutorial, ensure you have the following:
       -e KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=0@localhost:9093 \
       -e KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER \
       -e KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092 \
-      bitnami/kafka:latest
+      apache/kafka:4.1.1
     ```
 
 > **Note:** This tutorial focuses on creating and understanding AsyncAPI documents for Kafka. Running a live Kafka broker is only needed if you want to test the generated code against a real system. The subsequent tutorials on [Avro Schema](/docs/tutorials/kafka/configure-kafka-avro) and [Schema Registry](/docs/tutorials/kafka/managing-schemas-using-schema-registry) build on this document and may require Docker.

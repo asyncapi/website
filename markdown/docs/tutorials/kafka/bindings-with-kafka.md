@@ -14,6 +14,9 @@ Before starting this tutorial, make sure you have:
 
 - Completed the previous tutorials on [Kafka](/docs/tutorials/kafka), [Avro Schema](/docs/tutorials/kafka/configure-kafka-avro), and [Schema Registry](/docs/tutorials/kafka/managing-schemas-using-schema-registry).
 - [Docker](https://docs.docker.com/engine/install/) installed on your machine (required for running the Schema Registry and Kafka broker).
+- Local services reachable at:
+  - Kafka broker: `localhost:9092`
+  - Schema Registry: `http://localhost:8080`
 - A text editor or [AsyncAPI Studio](https://studio.asyncapi.com/) for editing AsyncAPI documents.
 - Familiarity with [Kafka bindings](https://github.com/asyncapi/bindings/tree/master/kafka#readme) concepts (helpful but not required).
 
