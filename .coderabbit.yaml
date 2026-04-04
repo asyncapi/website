@@ -1,6 +1,28 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+
 language: "en-US"
 reviews:
   high_level_summary: true
+  poem: false
+  review_status: true
+  changed_files_summary: true
+  assess_linked_issues: true
+  related_issues: true
+  related_prs: true
+  auto_review:
+    enabled: true
+    auto_incremental_review: true
+    ignore_usernames:
+      - dependabot
+      - asyncapi-bot
+      - asyncapi-bot-eve
+  pre_merge_checks:
+    title:
+      mode: error
+      requirements: >
+        Use a concise title that follows Conventional Commits guidelines
+        and clearly summarizes the change using imperative mood
+        (e.g. 'fix: resolve broken link in docs sidebar').
   tools:
     markdownlint:
       enabled: true
@@ -25,10 +47,21 @@ reviews:
       enabled: true
     semgrep:
       enabled: true
+
+chat:
+  auto_reply: false
+
 knowledge_base:
   opt_out: false
+  web_search:
+    enabled: true
+  code_guidelines:
+    enabled: true
+    filePatterns:
+      - "CONTRIBUTING.md"
+      - ".github/pr-review-checklist.md"
   learnings:
-    scope: "local"
+    scope: "auto"
   issues:
     scope: "local"
   pull_requests:
