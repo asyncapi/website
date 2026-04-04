@@ -8,6 +8,15 @@ weight: 300
 
 [You learned how to manage schemas with a schema registry in the previous tutorial](/docs/tutorials/kafka/managing-schemas-using-schema-registry). This tutorial teaches you how Kafka bindings function by defining Kafka messages and expanding your AsyncAPI document with protocol-specific details.
 
+## Prerequisites
+
+Before starting this tutorial, make sure you have:
+
+- Completed the previous tutorials on [Kafka](/docs/tutorials/kafka), [Avro Schema](/docs/tutorials/kafka/configure-kafka-avro), and [Schema Registry](/docs/tutorials/kafka/managing-schemas-using-schema-registry).
+- [Docker](https://docs.docker.com/engine/install/) installed on your machine (required for running the Schema Registry and Kafka broker).
+- A text editor or [AsyncAPI Studio](https://studio.asyncapi.com/) for editing AsyncAPI documents.
+- Familiarity with [Kafka bindings](https://github.com/asyncapi/bindings/tree/master/kafka#readme) concepts (helpful but not required).
+
 ## Background context
 
 Bindings are essential for event-driven applications because they provide protocol-specific details, abstracting the complexities of message handling from your application's core logic. They enhance the API's clarity and usability by offering setup options and context for different protocols. Bindings include the topics your application reads from or writes to, message formatting, and rules for interacting with multiple data or messages.
