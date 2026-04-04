@@ -172,7 +172,7 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise
         const interactionsCount =
           discussion.reactions.totalCount +
           discussion.comments.totalCount +
-          discussion.comments.nodes.reduce((acc, curr) => acc + curr.reactions.totalCount, 0);
+          discussion.comments.nodes?.reduce((acc, curr) => acc + curr.reactions.totalCount, 0) ?? 0;
 
         const finalInteractionsCount = isPR
           ? interactionsCount +
@@ -185,7 +185,7 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise
           isPR,
           isAssigned: !!discussion.assignees.totalCount,
           title: discussion.title,
-          author: discussion.author.login,
+          author: discussion.author?.login ?? 'Unknown',
           resourcePath: discussion.resourcePath,
           repo: `asyncapi/${discussion.repository.name}`,
           labels: discussion.labels ? discussion.labels.nodes : [],
@@ -274,9 +274,9 @@ async function mapGoodFirstIssues(issues: GoodFirstIssues[]): Promise<MappedIssu
     isAssigned: !!issue.assignees.totalCount,
     resourcePath: issue.resourcePath,
     repo: `asyncapi/${issue.repository.name}`,
-    author: issue.author.login,
+    author: issue.author?.login ?? 'Unknown',
     area: getLabel(issue, 'area/') || 'Unknown',
-    labels: issue.labels!.nodes.filter(
+    labels: (issue.labels?.nodes ?? []).filter(
       (label) => !label.name.startsWith('area/') && !label.name.startsWith('good first issue')
     )
   }));
