@@ -10,6 +10,14 @@ The previous tutorial on [creating an AsyncAPI document for applications consumi
 
 While AsyncAPI schema can be the default choice for describing payloads, many prefer using Avro Schemas to define messages in Kafka. This tutorial teaches you to modify your existing AsyncAPI schema to add Avro schema into your document in both YAML and JSON formats.
 
+## Prerequisites
+
+Before starting this tutorial, make sure you have:
+
+- Completed the [previous Kafka tutorial](/docs/tutorials/kafka) on creating an AsyncAPI document for Kafka.
+- A text editor or [AsyncAPI Studio](https://studio.asyncapi.com/) for editing AsyncAPI documents.
+- Basic familiarity with [Avro](https://avro.apache.org/) data serialization concepts (helpful but not required).
+
 ## Background context
 
 AsyncAPI is a specification for describing Event-Driven Architectures (EDAs) in a machine-readable format. AsyncAPI schema outlines the format and content specifications that enable a consistent representation of agreements for communication between services in an Event-Driven Architecture.

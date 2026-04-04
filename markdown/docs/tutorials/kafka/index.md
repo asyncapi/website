@@ -25,6 +25,30 @@ sequenceDiagram
 ```    
 
 
+## Prerequisites
+
+Before starting this tutorial, ensure you have the following:
+
+- Basic understanding of [Event-Driven Architecture](/docs/tutorials/getting-started/event-driven-architectures) concepts.
+- A text editor for creating and editing AsyncAPI documents (e.g., [AsyncAPI Studio](https://studio.asyncapi.com/)).
+- (Optional) If you plan to run the examples locally with a real Kafka broker:
+  - [Docker](https://docs.docker.com/engine/install/) installed on your machine.
+  - A running Apache Kafka instance. You can start one quickly using Docker:
+    ```bash
+    docker run -d --name kafka \
+      -p 9092:9092 \
+      -e KAFKA_CFG_NODE_ID=0 \
+      -e KAFKA_CFG_PROCESS_ROLES=controller,broker \
+      -e KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093 \
+      -e KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT \
+      -e KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=0@localhost:9093 \
+      -e KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER \
+      -e KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092 \
+      apache/kafka:4.1.1
+    ```
+
+> **Note:** This tutorial focuses on creating and understanding AsyncAPI documents for Kafka. Running a live Kafka broker is only needed if you want to test the generated code against a real system. The subsequent tutorials on [Avro Schema](/docs/tutorials/kafka/configure-kafka-avro) and [Schema Registry](/docs/tutorials/kafka/managing-schemas-using-schema-registry) build on this document and may require Docker.
+
 ## Background context
 
 [Event-Driven Architecture (EDA)](/docs/tutorials/getting-started/event-driven-architectures) is a design pattern that revolves around the production, detection, and reaction to events over time. It consists of three main components: a message broker, event publishers, and subscribers, which together serve as the backbone for event exchange within different services. 
@@ -198,3 +222,4 @@ The ability to generate an AsyncAPI document for Kafka is now in your toolkit. Y
 ## Next steps
 
 Now that you know how to write an AsyncAPI document for Kafka messages using the default schema, let's learn how to create an [AsyncAPI document using Avro Schema instead](/docs/tutorials/kafka/configure-kafka-avro). 
+
