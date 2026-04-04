@@ -256,7 +256,8 @@ This is possible thanks to the following:
 This repository has the following structure:
 
 <!-- If you make any changes in the project structure, remember to update it. -->
-```
+
+```text
   ├── .github                                  # Definitions of GitHub workflows, pull request and issue templates
   ├── .storybook                               # Storybook configuration for UI components
   ├── assets                                   # Various assets
