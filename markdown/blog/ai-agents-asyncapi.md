@@ -155,7 +155,7 @@ channels:
 
 AsyncAPI 3.0's channel parameters let us route tasks by agent type:
 
-```
+```text
 agents/tasks/coder     → Code analysis agents
 agents/tasks/researcher → Web research agents  
 agents/tasks/writer    → Content generation agents
