@@ -40,7 +40,14 @@ async function processBatch(batch: PathObject[]): Promise<(PathObject | null)[]>
       let timeout: NodeJS.Timeout | undefined;
       
       try {
-        if (!editLink || ignoreFiles.some((ignorePath) => filePath.endsWith(ignorePath))) return null;
+// Normalize file path so ignore checks work consistently across OS (Windows uses "\" while ignore list uses "/")
+const normalizedFilePath = filePath.split(path.sep).join('/');
+
+// Skip files that either don't have an edit link or are listed in ignoreFiles
+// This prevents unnecessary requests and avoids false 404 reports
+if (!editLink || ignoreFiles.some((ignorePath) => normalizedFilePath.endsWith(ignorePath))) {
+  return null;
+}
 
         const controller = new AbortController();
         timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
@@ -120,19 +127,58 @@ function determineEditLink(
   filePath: string,
   editOptions: { value: string; href: string }[]
 ): string | null {
-  // Remove leading 'docs/' if present for matching
+
+  // Remove leading 'docs/' if present (to match config values correctly)
   const pathForMatching = urlPath.startsWith('docs/') ? urlPath.slice(5) : urlPath;
 
+  // Find matching edit option based on path
   const target = editOptions.find((edit) => pathForMatching.includes(edit.value));
 
-  // Handle the empty value case (fallback)
+  // Handle fallback case when value is empty (default docs link structure)
   if (target?.value === '') {
     return `${target.href}/docs/${urlPath}.md`;
   }
 
-  // For other cases with specific targets
-  return target ? `${target.href}/${path.basename(filePath)}` : null;
+  // Fix: generate correct edit links using full relative path instead of basename
+  if (target) {
+    // Normalize path for cross-platform compatibility (Windows "\" → "/")
+    const normalizedPath = filePath.split(path.sep).join('/');
+
+    // Extract path relative to markdown/docs/
+    // Example:
+    // "C:/.../markdown/docs/reference/specification/v3.0.0.md"
+    // → "reference/specification/v3.0.0.md"
+    const parts = normalizedPath.split('markdown/docs/');
+    const relativePath = parts[1];
+
+// Safety fallback: if extraction fails, use filename only
+if (!relativePath) {
+  return `${target.href}/${path.basename(filePath)}`;
 }
+
+// Some external repos do not keep the same docs-side folder structure,
+// so remove those prefixes before building the final edit link.
+let repoRelativePath = relativePath;
+
+if (target.href.includes('asyncapi/bindings')) {
+  repoRelativePath = repoRelativePath.replace('reference/bindings/', '');
+}
+
+if (target.href.includes('asyncapi/spec')) {
+  repoRelativePath = repoRelativePath.replace('reference/specification/', '');
+}
+
+// Construct correct GitHub edit link
+return `${target.href}/${repoRelativePath}`;
+
+  
+  
+}
+  // If no matching config found, return null
+return null
+}
+
+
 
 /**
  * Recursively processes markdown files in a directory to generate path objects with corresponding edit links.
