@@ -28,9 +28,9 @@ export default function SupportUs({ className = '' }: SupportUsProps): React.Rea
               href={item.href}
               target='_blank'
               rel='noopener noreferrer'
-              className='relative block w-2/3 p-4 text-center sm:w-1/3 sm:p-0 md:w-1/3 lg:w-1/5'
+              className='group relative block w-2/3 p-4 text-center sm:w-1/3 sm:p-0 md:w-1/3 lg:w-1/5'
             >
-              <img className={item.imgClass} src={item.imgSrc} title={item.imgTitle} alt={item.imgTitle} />
+              <img className={`${item.imgClass} group-hover:scale-105 group-hover:brightness-110 transition-all duration-300`} src={item.imgSrc} title={item.imgTitle} alt={item.imgTitle} />
             </a>
           ))}
       </div>
@@ -43,9 +43,9 @@ export default function SupportUs({ className = '' }: SupportUsProps): React.Rea
               href={item.href}
               target='_blank'
               rel='noopener noreferrer'
-              className='relative block w-2/3 p-4 text-center sm:w-1/3 sm:p-0 md:w-1/3 lg:w-1/5'
+              className='group relative block w-2/3 p-4 text-center sm:w-1/3 sm:p-0 md:w-1/3 lg:w-1/5'
             >
-              <img className={item.imgClass} src={item.imgSrc} title={item.imgTitle} alt={item.imgTitle} />
+              <img className={`${item.imgClass} group-hover:scale-105 group-hover:brightness-110 transition-all duration-300`} src={item.imgSrc} title={item.imgTitle} alt={item.imgTitle} />
             </a>
           ))}
       </div>
@@ -58,9 +58,9 @@ export default function SupportUs({ className = '' }: SupportUsProps): React.Rea
               href={item.href}
               target='_blank'
               rel='noopener noreferrer'
-              className='relative block w-2/3 p-4 text-center sm:w-1/3 sm:p-0 md:w-1/3 lg:w-1/5'
+              className='group relative block w-2/3 p-4 text-center sm:w-1/3 sm:p-0 md:w-1/3 lg:w-1/5'
             >
-              <img className={item.imgClass} src={item.imgSrc} title={item.imgTitle} alt={item.imgTitle} />
+              <img className={`${item.imgClass} group-hover:scale-105 group-hover:brightness-110 transition-all duration-300`} src={item.imgSrc} title={item.imgTitle} alt={item.imgTitle} />
             </a>
           ))}
       </div>

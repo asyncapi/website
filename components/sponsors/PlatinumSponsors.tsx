@@ -23,7 +23,7 @@ export default function PlatinumSponsors({ className = '', showSupportBanner = t
             <a
               href={sponsor.website}
               target='_blank'
-              className='relative block p-4 text-center sm:p-0'
+              className='group relative block p-4 text-center sm:p-0'
               rel='noopener noreferrer'
               data-testid='Sponsors-link'
             >

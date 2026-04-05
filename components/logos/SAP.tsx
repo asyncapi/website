@@ -1,26 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 /**
  * @description Logo for SAP
  * @param {string} className - used to style the svg
  */
 export default function SapLogo({ className }: { className?: string }) {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
   return (
     <svg
       className={className || 'inline-block'}
       fill='currentColor'
       viewBox='0 0 1024 522'
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
     >
       <linearGradient
         id='path3060_1_'
@@ -31,8 +20,8 @@ export default function SapLogo({ className }: { className?: string }) {
         y2='661.6777'
         gradientTransform='matrix(0 513.7015 -513.7015 0 340415.5625 65474.9453)'
       >
-        <stop offset='0' style={{ stopColor: isHovered ? '#1661BE' : 'currentColor' }} />
-        <stop offset='1' style={{ stopColor: isHovered ? '#019CE0' : 'currentColor' }} />
+        <stop offset='0' style={{ stopColor: 'currentColor' }} />
+        <stop offset='1' style={{ stopColor: 'currentColor' }} />
       </linearGradient>
       <path
         id='path3060'
