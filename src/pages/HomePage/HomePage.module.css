@@ -1,0 +1,240 @@
+/* General Body & Root Styling */
+.homepage {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fcfcfc;
+  scroll-behavior: smooth;
+}
+
+/* Global Section Styling */
+.homepage section {
+  padding: 60px 20px;
+  margin-bottom: 0; /* Remove default margin for cleaner breaks */
+  text-align: center;
+  box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #0056b3, #007bff); /* Gradient blue */
+  color: white;
+  padding: 100px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.heroContent {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3.8em;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.4em;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+/* Buttons */
+.primaryButton, .secondaryButton {
+  display: inline-block;
+  padding: 15px 35px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-size: 1.1em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.primaryButton {
+  background-color: #28a745; /* Vibrant green */
+  color: white;
+}
+
+.primaryButton:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.secondaryButton {
+  background-color: #6c757d; /* Muted gray */
+  color: white;
+}
+
+.secondaryButton:hover {
+  background-color: #5a6268;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Features Section */
+.features {
+  background-color: white;
+  padding-bottom: 80px;
+}
+
+.features h2 {
+  font-size: 3em;
+  margin-bottom: 50px;
+  color: #0056b3;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featureCard {
+  background-color: #f8faff; /* Very light blue background */
+  padding: 35px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 5px solid #007bff; /* Accent border */
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.featureCard h3 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #007bff;
+}
+
+.featureCard p {
+  font-size: 1.05em;
+  color: #555;
+}
+
+/* About Us Section */
+.aboutUs {
+  background-color: #eaf1f8; /* Softer light gray/blue */
+  padding: 80px 20px;
+}
+
+.aboutContent {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.aboutUs h2 {
+  font-size: 3em;
+  margin-bottom: 25px;
+  color: #0056b3;
+}
+
+.aboutUs p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  color: #444;
+}
+
+/* CTA Section */
+.cta {
+  background: linear-gradient(90deg, #343a40, #495057); /* Darker gradient */
+  color: white;
+  padding: 80px 20px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.cta h2 {
+  font-size: 3.2em;
+  margin-bottom: 25px;
+}
+
+.cta p {
+  font-size: 1.3em;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 3em;
+  }
+  .hero p {
+    font-size: 1.2em;
+  }
+  .features h2, .aboutUs h2, .cta h2 {
+    font-size: 2.5em;
+  }
+  .featureCard h3 {
+    font-size: 1.6em;
+  }
+  .aboutUs p, .cta p {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage section {
+    padding: 50px 15px;
+  }
+  .hero {
+    min-height: 450px;
+    padding: 80px 15px;
+  }
+  .hero h1 {
+    font-size: 2.5em;
+  }
+  .hero p {
+    font-size: 1em;
+    margin-bottom: 30px;
+  }
+  .features h2, .aboutUs h2, .cta h2 {
+    font-size: 2.2em;
+  }
+  .featureGrid {
+    grid-template-columns: 1fr; /* Stack cards on smaller screens */
+  }
+  .featureCard {
+    text-align: center; /* Center align cards on mobile */
+  }
+  .featureCard p {
+    font-size: 0.95em;
+  }
+  .primaryButton, .secondaryButton {
+    padding: 12px 25px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2em;
+  }
+  .hero p {
+    font-size: 0.9em;
+  }
+  .features h2, .aboutUs h2, .cta h2 {
+    font-size: 1.8em;
+  }
+  .featureCard h3 {
+    font-size: 1.4em;
+  }
+  .primaryButton, .secondaryButton {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+}
