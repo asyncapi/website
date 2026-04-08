@@ -1,183 +1,63 @@
 import React from 'react';
 
-/**
- * KitNewsletterForm component renders a subscription form that posts directly to Kit.com.
- *
- * This component assumes Kit.com provides a direct POST endpoint for newsletter subscriptions,
- * similar to how services like Mailchimp typically offer embeddable forms.
- * The form's action URL is fetched from an environment variable, allowing easy switching
- * between different Kit.com accounts (e.g., personal testing account vs. organizational plan).
- *
- * For this migration, the most straightforward approach is to replace the existing Mailchimp form
- * with this Kit.com-compatible form, relying on Kit.com to handle the submission and any
- * subsequent user feedback (e.g., via a redirect or a new tab).
- *
- * In a more advanced scenario, if Kit.com offers a JavaScript SDK or a JSON API endpoint,
- * you might implement an AJAX-based submission to provide dynamic client-side feedback
- * without page reloads. However, for a direct migration, this simple POST form is often sufficient.
- */
 const KitNewsletterForm: React.FC = () => {
-  // The form action URL should be provided by Kit.com and configured via environment variables.
-  // Example: NEXT_PUBLIC_KIT_NEWSLETTER_FORM_ACTION_URL="https://forms.kit.com/your-form-id/subscribe"
-  const formActionUrl = process.env.NEXT_PUBLIC_KIT_NEWSLETTER_FORM_ACTION_URL;
-
-  if (!formActionUrl) {
-    return (
-      <div className="newsletter-container configuration-error">
-        <h3>Newsletter Service Configuration Required</h3>
-        <p>
-          The newsletter subscription service is not fully configured.
-          Please ensure the <code>NEXT_PUBLIC_KIT_NEWSLETTER_FORM_ACTION_URL</code>
-          environment variable is set with your Kit.com form's action URL.
-        </p>
-        <p>
-          This is required to connect the form to your Kit.com account (personal for testing, organizational later).
-        </p>
-        <style jsx>{`
-          .newsletter-container.configuration-error {
-            background-color: #fff3cd; /* Light yellow */
-            border: 1px solid #ffeeba; /* Darker yellow border */
-            color: #856404; /* Dark yellow text */
-            padding: 15px 20px;
-            border-radius: 8px;
-            max-width: 500px;
-            margin: 20px auto;
-            text-align: left;
-            font-size: 0.95em;
-          }
-          .newsletter-container.configuration-error h3 {
-            color: #856404;
-            margin-bottom: 10px;
-            font-size: 1.5em;
-            text-align: center;
-          }
-          .newsletter-container.configuration-error p {
-            margin-bottom: 10px;
-            line-height: 1.5;
-          }
-          .newsletter-container.configuration-error code {
-            background-color: #e9ecef; /* Light gray */
-            padding: 2px 4px;
-            border-radius: 3px;
-            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-            font-size: 0.9em;
-            color: #bd4147; /* Reddish for variable */
-          }
-        `}</style>
-      </div>
-    );
-  }
-
+  /**
+   * This component integrates the Kit.com newsletter subscription form.
+   *
+   * IMPORTANT:
+   * 1. You will need to obtain the actual embed code from your Kit.com account
+   *    after creating a form.
+   * 2. Replace the placeholder 'action' URL and any hidden input fields
+   *    with the exact details provided by Kit.com.
+   * 3. The 'name' attribute for the email input (e.g., 'email') must match
+   *    what Kit.com expects.
+   *
+   * This example uses a generic HTML form structure, which is common for
+   * embeddable newsletter forms. Kit.com might also provide a JavaScript snippet
+   * or iframe. Adjust this component to match the provided Kit.com embed method.
+   */
   return (
-    <div className="newsletter-container">
-      <h3>Subscribe to Our Newsletter</h3>
-      <p>Stay up-to-date with our latest news and community updates!</p>
+    <div className="kit-newsletter-section">
+      <h2 className="kit-newsletter-title">Join Our Community Newsletter</h2>
+      <p className="kit-newsletter-description">
+        Stay up-to-date with the latest news, updates, and community highlights directly in your inbox.
+      </p>
       <form
-        action={formActionUrl}
+        // Replace with the actual POST URL provided by Kit.com for your form
+        action="https://forms.kit.com/your-organization/your-form-id-goes-here"
         method="post"
-        name="kit-newsletter-form"
-        id="kit-newsletter-form"
-        target="_blank" // Often used for embedded forms to show success on a new page or tab.
-        noValidate      // Disable default browser validation if Kit.com handles its own.
-        aria-label="Newsletter Subscription Form"
+        target="_blank" // Opens the success page (if any) in a new tab; remove if Kit.com handles submission via AJAX
+        noValidate // Prevents browser's default HTML5 validation, allowing Kit.com to handle it
+        className="kit-newsletter-form"
       >
         <div className="form-group">
-          {/* Label moved to be visually hidden but available for screen readers */}
-          <label htmlFor="kit-email" className="sr-only">Email Address</label>
+          <label htmlFor="email_address" className="sr-only">Email Address</label>
           <input
             type="email"
-            name="email" // Assuming 'email' is the expected field name by Kit.com. Verify with Kit.com documentation.
-            id="kit-email"
+            name="email" // This name must match what Kit.com expects for the email field
+            id="email_address"
             placeholder="Enter your email address"
+            aria-label="Email Address"
             required
-            aria-required="true"
+            className="form-control"
           />
         </div>
         {/*
-          If Kit.com requires specific hidden fields (e.g., for list IDs, form identifiers, etc.),
-          they would be added here based on Kit.com's provided embed code or API documentation.
-          Example: <input type="hidden" name="list_id" value="your_kit_list_id" />
+          Add any hidden input fields that Kit.com provides in its embed code.
+          These often include identifiers for your account or specific form.
+          Example:
+          <input type="hidden" name="u" value="your-account-unique-id" />
+          <input type="hidden" name="id" value="your-form-unique-id" />
         */}
-
-        <button type="submit" className="button">
-          Subscribe
-        </button>
+        <div className="form-group">
+          <button type="submit" className="btn btn-primary kit-newsletter-submit">
+            Subscribe
+          </button>
+        </div>
+        <p className="kit-newsletter-note">
+          We respect your privacy. Unsubscribe at any time.
+        </p>
       </form>
-      <style jsx>{`
-        .newsletter-container {
-          background-color: #f7f7f7;
-          border: 1px solid #eee;
-          padding: 25px 30px;
-          border-radius: 8px;
-          max-width: 500px;
-          margin: 20px auto;
-          text-align: center;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-        h3 {
-          color: #333;
-          margin-bottom: 15px;
-          font-size: 2em;
-          font-weight: 700;
-        }
-        p {
-          color: #666;
-          margin-bottom: 30px;
-          line-height: 1.6;
-          font-size: 1.1em;
-        }
-        .form-group {
-          margin-bottom: 20px;
-        }
-        .sr-only {
-          position: absolute;
-          width: 1px;
-          height: 1px;
-          padding: 0;
-          margin: -1px;
-          overflow: hidden;
-          clip: rect(0, 0, 0, 0);
-          white-space: nowrap;
-          border-width: 0;
-        }
-        input[type="email"] {
-          width: calc(100% - 24px); /* Account for padding */
-          padding: 14px 12px;
-          border: 1px solid #ccc;
-          border-radius: 6px;
-          box-sizing: border-box;
-          font-size: 17px;
-          margin-bottom: 10px;
-          transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        }
-        input[type="email"]:focus {
-          border-color: #0070f3;
-          outline: none;
-          box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.25);
-        }
-        button {
-          background-color: #0070f3;
-          color: white;
-          padding: 14px 30px;
-          border: none;
-          border-radius: 6px;
-          cursor: pointer;
-          font-size: 18px;
-          font-weight: bold;
-          transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
-          letter-spacing: 0.5px;
-          box-shadow: 0 2px 8px rgba(0, 112, 243, 0.2);
-        }
-        button:hover {
-          background-color: #005bb5;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(0, 112, 243, 0.3);
-        }
-        button:active {
-          transform: translateY(0);
-          box-shadow: 0 2px 8px rgba(0, 112, 243, 0.2);
-        }
-      `}</style>
     </div>
   );
 };
