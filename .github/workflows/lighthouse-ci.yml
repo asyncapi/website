@@ -1,103 +1,56 @@
 name: Lighthouse CI
 
 on:
-  pull_request_target:
+  push:
     branches:
-      - master
-    types: [opened, reopened, synchronize, ready_for_review]
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
 
 jobs:
-  lighthouse-ci:
-    name: Lighthouse CI
+  lighthouse:
     runs-on: ubuntu-latest
-
     steps:
-      - if: >
-          !github.event.pull_request.draft && !(
-            (github.actor == 'asyncapi-bot' && (
-              startsWith(github.event.pull_request.title, 'ci: update global workflows') || 
-              startsWith(github.event.pull_request.title, 'chore: update code of conduct') || 
-              startsWith(github.event.pull_request.title, 'ci: update global contribution guide') || 
-              startsWith(github.event.pull_request.title, 'ci: update workflows for go projects') || 
-              startsWith(github.event.pull_request.title, 'ci: update workflows for nodejs projects') || 
-              startsWith(github.event.pull_request.title, 'ci: update release-related workflows for nodejs projects') || 
-              startsWith(github.event.pull_request.title, 'ci: update semantic release config file') || 
-              startsWith(github.event.pull_request.title, 'ci: update generic workflows') || 
-              startsWith(github.event.pull_request.title, 'ci: update workflows for docker-based projects') ||
-              startsWith(github.event.pull_request.title, 'chore(release):')
-            )) ||
-            (github.actor == 'allcontributors[bot]' && 
-              startsWith(github.event.pull_request.title, 'docs: add')
-            )
-          )
-        id: should_run
-        name: Should Run
-        run: echo "shouldrun=true" >> $GITHUB_OUTPUT
-        
-      - if: steps.should_run.outputs.shouldrun == 'true'
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - if: steps.should_run.outputs.shouldrun == 'true'
-        name: Await Netlify Preview
-        uses: jakepartusch/wait-for-netlify-action@f1e137043864b9ab9034ae3a5adc1c108e3f1a48 #version 1.4 https://github.com/JakePartusch/wait-for-netlify-action/releases/tag/v1.4
-        id: netlify
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          site_name: asyncapi-website
-          max_timeout: 600
+          node-version: '18' # Adjust to the project's required Node.js version
 
-      - if: steps.should_run.outputs.shouldrun == 'true'
-        name: Run Lighthouse Audit
-        id: lighthouse_audit
-        uses: treosh/lighthouse-ci-action@03becbfc543944dd6e7534f7ff768abb8a296826 #version 10.1 https://github.com/treosh/lighthouse-ci-action/releases/tag/10.1.0
-        with:
-          urls: |
-            https://deploy-preview-$PR_NUMBER--asyncapi-website.netlify.app/
-          configPath: ./.github/workflows/lighthouserc.json
-          uploadArtifacts: false
-          temporaryPublicStorage: true
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps # Use --legacy-peer-deps if needed due to peer dependency issues
+
+      - name: Build project
+        run: npm run build # Assumes a 'build' script exists in package.json that generates static assets
+
+      - name: Install @lhci/cli
+        run: npm install -g @lhci/cli@0.12.x # Install LHCI CLI globally
+
+      - name: Serve built project and run Lighthouse CI
+        run: |
+          # Install 'serve' package to serve the static build output
+          npm install -g serve
+          # Start serving the 'build' directory on port 8080 in the background
+          # Adjust 'build' to your actual build output directory (e.g., 'dist', 'out')
+          serve -s build -l 8080 &
+
+          # Install 'wait-on' package to wait for the server to be ready
+          npm install -g wait-on
+          wait-on http://localhost:8080
+
+          # Run Lighthouse CI against the locally served build
+          lhci autorun \
+            --collect.url=http://localhost:8080 \
+            --collect.numberOfRuns=3 \
+            --assert.preset=lighthouse:recommended \
+            --upload.target=temporary-public-storage \
+            --upload.githubToken=${{ secrets.GITHUB_TOKEN }} # Enables PR comments and status checks
         env:
-          PR_NUMBER: ${{ github.event.pull_request.number}}
-
-      - if: steps.should_run.outputs.shouldrun == 'true'
-        name: Upload Lighthouse Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: lighthouse-report
-          path: .lighthouseci
-          include-hidden-files: true
-
-      - if: steps.should_run.outputs.shouldrun == 'true'
-        name: Lighthouse Score Report
-        id: lighthouse_score_report
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const result = ${{ steps.lighthouse_audit.outputs.manifest }}[0].summary
-            const links = ${{ steps.lighthouse_audit.outputs.links }}
-            const formatResult = (res) => Math.round((res * 100))
-            Object.keys(result).forEach(key => result[key] = formatResult(result[key]))
-            const score = res => res >= 90 ? '🟢' : res >= 50 ? '🟠' : '🔴'
-            const comment = [
-                `⚡️ [Lighthouse report](${Object.values(links)[0]}) for the changes in this PR:`,
-                '| Category | Score |',
-                '| --- | --- |',
-                `| ${score(result.performance)} Performance | ${result.performance} |`,
-                `| ${score(result.accessibility)} Accessibility | ${result.accessibility} |`,
-                `| ${score(result['best-practices'])} Best practices | ${result['best-practices']} |`,
-                `| ${score(result.seo)} SEO | ${result.seo} |`,
-                `| ${score(result.pwa)} PWA | ${result.pwa} |`,
-                ' ',
-                `*Lighthouse ran on [${Object.keys(links)[0]}](${Object.keys(links)[0]})*`
-            ].join('\n')
-             core.setOutput("comment", comment);
-
-      - if: steps.should_run.outputs.shouldrun == 'true'
-        name: LightHouse Statistic Comment
-        id: lighthouse_statistic_comment
-        uses: marocchino/sticky-pull-request-comment@efaaab3fd41a9c3de579aba759d2552635e590fd # version 2.8 https://github.com/marocchino/sticky-pull-request-comment/releases/tag/v2.8.0
-        with:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          number: ${{ github.event.pull_request.number }}
-          header: lighthouse
-          message: ${{ steps.lighthouse_score_report.outputs.comment }}
+          # Increase Node.js memory limit for large builds or Lighthouse runs if needed
+          NODE_OPTIONS: "--max-old-space-size=4096"
+          # Optionally, if using a persistent LHCI server, configure LHCI_TOKEN
+          # LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
