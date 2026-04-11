@@ -82,7 +82,7 @@ export default function ToolsDashboard() {
     }
 
     // checkToolsList is initially made false to check whether any tools are present according to the filters.
-    setCheckToolsList(false);
+    // checkToolsList is computed via useEffect below
 
     // Each tool selected is then traversed to check against each filter variable (only if the filter is applied),
     // whether they match with the filter applied or not.
@@ -136,7 +136,7 @@ export default function ToolsDashboard() {
       });
 
       if (tempToolsList[category].toolsList.length) {
-        setCheckToolsList(true);
+        // checkToolsList is computed via useEffect below
       }
     });
 
@@ -148,6 +148,15 @@ export default function ToolsDashboard() {
 
     return tempToolsList;
   }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, searchName]);
+
+  // Update checkToolsList based on filtered results (moved from useMemo to avoid side effects)
+  useEffect(() => {
+    const hasTools = Object.keys(toolsList).some(
+      (category) => toolsList[category]?.toolsList?.length > 0
+    );
+    setCheckToolsList(hasTools);
+  }, [toolsList]);
+
 
   // useEffect to scroll to the opened category when url has category as element id
   useEffect(() => {
