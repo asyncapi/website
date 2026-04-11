@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: Community Builder and Open Source Fanatic!
 excerpt: 'AsyncAPI Annual Review for 2025 in Numbers'
-featured: true
 ---
 
 Happy 2026 to the AsyncAPI community!
