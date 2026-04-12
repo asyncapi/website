@@ -49,7 +49,7 @@ export const handler: Handler = async (event: HandlerEvent) => {
   if (
     typeof email !== 'string' ||
     typeof interest !== 'string' ||
-    !Object.prototype.hasOwnProperty.call(config.tags, interest)
+    !Object.hasOwn(config.tags, interest)
   ) {
     return {
       statusCode: 400,
