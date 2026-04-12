@@ -135,9 +135,6 @@ export default function ToolsDashboard() {
         return isLanguageTool && isTechnologyTool && isSearchTool && isAsyncAPITool && isPaidTool;
       });
 
-      if (tempToolsList[category].toolsList.length) {
-        // checkToolsList is computed via useEffect below
-      }
     });
 
     Object.keys(tempToolsList).map((category) => {
