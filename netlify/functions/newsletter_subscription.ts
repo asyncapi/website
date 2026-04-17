@@ -1,9 +1,30 @@
 import type { Handler, HandlerEvent } from '@netlify/functions';
 
-import config from '../../config/kit-config.json';
-
 const KIT_BASE = 'https://api.kit.com/v4';
 const REQUEST_TIMEOUT_MS = 15_000;
+
+const INTEREST_TO_ENV = {
+  Newsletter: 'KIT_NEWSLETTER_TAG_ID',
+  Meetings: 'KIT_MEETINGS_TAG_ID',
+  'TSC Voting': 'KIT_TSC_TAG_ID'
+} as const;
+
+type ValidInterest = keyof typeof INTEREST_TO_ENV;
+
+function isValidInterest(s: string): s is ValidInterest {
+  return Object.hasOwn(INTEREST_TO_ENV, s);
+}
+
+function parseTagId(raw: string | undefined): number | null {
+  if (raw == null || raw.trim() === '') {
+    return null;
+  }
+  const n = Number(raw.trim());
+  if (!Number.isInteger(n) || n <= 0) {
+    return null;
+  }
+  return n;
+}
 
 function isAbortError(err: unknown): boolean {
   return err instanceof Error && err.name === 'AbortError';
@@ -46,18 +67,12 @@ export const handler: Handler = async (event: HandlerEvent) => {
 
   const { email, name, interest } = body as Partial<Record<'email' | 'name' | 'interest', unknown>>;
 
-  if (
-    typeof email !== 'string' ||
-    typeof interest !== 'string' ||
-    !Object.hasOwn(config.tags, interest)
-  ) {
+  if (typeof email !== 'string' || typeof interest !== 'string' || !isValidInterest(interest)) {
     return {
       statusCode: 400,
       body: JSON.stringify({ message: 'Invalid subscription request.' })
     };
   }
-
-  const tagId = config.tags[interest as keyof typeof config.tags];
 
   if (!process.env.KIT_API_KEY) {
     return {
@@ -66,7 +81,10 @@ export const handler: Handler = async (event: HandlerEvent) => {
     };
   }
 
-  if (tagId == null || Number(tagId) === 0) {
+  const envVarName = INTEREST_TO_ENV[interest];
+  const tagId = parseTagId(process.env[envVarName]);
+
+  if (tagId == null) {
     return {
       statusCode: 503,
       body: JSON.stringify({ message: 'Subscription is temporarily unavailable. Please try again later.' })
