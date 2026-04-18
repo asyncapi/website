@@ -14,7 +14,7 @@ Guidelines for AI coding assistants working on this repository. Read this before
 
 ## Project Structure
 
-```
+```text
 pages/              # Next.js page routes (includes [lang]/ for i18n)
 components/         # Reusable React/TypeScript UI components
 markdown/           # Blog posts, docs, and about content (MDX/MD)
@@ -33,7 +33,7 @@ netlify/            # Netlify edge functions
 
 ## Contribution Workflow
 
-1. **Open an issue first** and get it approved before starting any PR, unless its a typo or obvious fix
+1. **Open an issue first** and get it approved before starting any PR, unless it's a typo or obvious fix
 2. **One PR = one thing** — don't bundle multiple features or fixes into a single PR
 3. PR titles **must** follow Conventional Commits:
    - `feat:` `fix:` `docs:` `chore:` `test:` `refactor:`
@@ -109,10 +109,10 @@ This project uses **custom design tokens** defined in `tailwind.config.ts`. Use 
 
 ## TypeScript Conventions
 
-- Props interfaces use JSDoc comments on each field
-- Data shape interfaces use `I` prefix (e.g. `IBlogPost`, `IHeadProps`)
-- Component props use descriptive names (e.g. `HeadingProps`, `ButtonProps`)
-- Enum values are used for component variants (see `@/types/`)
+- Prefer adding JSDoc comments to fields in props types/interfaces
+- Data shape types/interfaces often use an `I` prefix (e.g. `IBlogPost`, `IHeadProps`)
+- Prefer descriptive names for component props types/interfaces (e.g. `HeadingProps`, `ButtonProps`)
+- Enum values are commonly used for component variants (see `@/types/`)
 
 ## Behavioral Guidelines
 
@@ -128,7 +128,7 @@ When modifying existing code:
 Unless explicitly asked:
 - `package-lock.json` — only modify through `npm install`
 - `.github/workflows/` — CI configuration
-- `config/` JSON files — auto-generated data
+- Auto-generated config outputs (`config/tools.json`, `config/all-tags.json`, `config/posts.json`, etc.) — other `config/` files may be manually maintained
 - `public/locales/` — translation files require sync across all locales
 
 ## Common Mistakes to Avoid
