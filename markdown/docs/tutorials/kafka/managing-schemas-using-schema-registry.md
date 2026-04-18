@@ -18,7 +18,7 @@ While several Schema Registry implementations exist, you will use the [Apicurio 
 ## AsyncAPI document with Avro Schema
 The previous tutorial taught you how to write an AsyncAPI document for Kafka messages using the Avro schema. Here's an example of what an AsyncAPI document fully equipped with Avro schema looks like:
 ```
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 info:
   title: User Signup API
   version: 1.0.0
@@ -105,7 +105,7 @@ $ref: http://localhost:8080/apis/registry/v2/groups/my-group/artifacts/UserSigne
 ```
 
 ```
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 info:
   title: User Signup API
   version: 1.0.0
