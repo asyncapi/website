@@ -7,6 +7,7 @@
         "twitter": "maya_ux_ui",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-13",
         "repos": [
             "website",
             "conference-website",
@@ -22,6 +23,7 @@
         "twitter": "aayushmau5",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "diff"
         ],
@@ -35,7 +37,9 @@
         "twitter": "Aayush__Saini_",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2025-01-13",
         "repos": [
+            "openapi-schema-parser",
             "cli"
         ],
         "githubID": 60972989
@@ -48,6 +52,7 @@
         "github": "imabp",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "problem"
         ],
@@ -61,6 +66,7 @@
         "twitter": "AksNema",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "website"
         ],
@@ -74,6 +80,7 @@
         "twitter": "thisisanshg",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2024-05-29",
         "repos": [
             "website"
         ],
@@ -99,6 +106,7 @@
         "twitter": "Shurtu_Gal",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2024-01-26",
         "repos": [
             "studio",
             ".github",
@@ -129,6 +137,7 @@
         "twitter": "dalelane",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "company": "IBM",
         "repos": [
             "spec",
@@ -158,6 +167,7 @@
         "availableForHire": false,
         "linkedin": "fmvilas",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "isBoardMember": true,
         "repos": [
             "spec",
@@ -197,6 +207,7 @@
         "company": "EventStack",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "spec-json-schemas",
             "generator",
@@ -215,7 +226,7 @@
         "slack": "U01RVRD1TCL",
         "availableForHire": false,
         "company": "Postman",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "spec-json-schemas",
             "studio"
@@ -259,6 +270,7 @@
         "twitter": "derberq",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "spec",
             "website",
@@ -288,6 +300,7 @@
         "slack": "U01EB02BP7A",
         "company": "Travelping GmbH",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "generator",
             "asyncapi-react",
@@ -313,6 +326,7 @@
         "slack": "U01RWDD69PZ",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "asyncapi-react",
             "conference-website",
@@ -341,6 +355,7 @@
         "twitter": "pbodiachevskii",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "spec-json-schemas",
             "tck",
@@ -356,6 +371,7 @@
         "twitter": "philschlesinger",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "jasyncapi-idea-plugin"
         ],
@@ -369,6 +385,7 @@
         "twitter": "iamPrince_2003",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2023-11-30",
         "repos": [
             "website",
             "studio"
@@ -383,6 +400,7 @@
         "availableForHire": false,
         "company": "IBM",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "spec-json-schemas",
             "bindings"
@@ -398,6 +416,7 @@
         "company": "Apideck",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2024-01-26",
         "repos": [
             "studio",
             "cli"
@@ -429,6 +448,7 @@
         "company": "Xane AI",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "cli",
             "bundler"
@@ -441,7 +461,7 @@
         "slack": "U02FP8WBFQE",
         "linkedin": "danielr",
         "availableForHire": false,
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "java-template"
         ],
@@ -479,6 +499,7 @@
         "availableForHire": true,
         "slack": "U011D1DAU6S",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "java-spring-template"
         ],
@@ -492,6 +513,7 @@
         "availableForHire": false,
         "company": "ThoughtWorks",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "modelina"
         ],
@@ -505,6 +527,7 @@
         "availableForHire": false,
         "company": "SNGULAR",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "vs-asyncapi-preview"
         ],
@@ -518,6 +541,7 @@
         "twitter": "njericodes",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "generator",
             ".github"
@@ -533,6 +557,7 @@
         "availableForHire": false,
         "company": "Google",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "spec-json-schemas",
             "bindings"
@@ -562,7 +587,7 @@
         "slack": "U04C58GB8TF",
         "availableForHire": false,
         "company": "The LEGO Group",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "spec-json-schemas",
             "bindings"
@@ -577,6 +602,7 @@
         "availableForHire": false,
         "company": "Sportradar",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "repos": [
             "modelina"
         ],
@@ -588,7 +614,7 @@
         "slack": "U03AC4G51H8",
         "availableForHire": false,
         "company": "mtrail GmbH",
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "spec",
             "spec-json-schemas",
@@ -630,6 +656,7 @@
         "availableForHire": false,
         "company": "AsyncAPI Initiative",
         "isTscMember": true,
+        "tscMemberSince": "2023-07-05",
         "isBoardMember": true,
         "repos": [
             "website",
@@ -645,7 +672,7 @@
         "twitter": "sambhavgupta75",
         "slack": "U04630DU3N3",
         "availableForHire": true,
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "website"
         ],
@@ -671,6 +698,7 @@
         "twitter": "TRRohit20",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2025-02-17",
         "repos": [
             "website"
         ],
@@ -848,6 +876,7 @@
         "slack": "U067JPY0UH5",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2025-01-21",
         "repos": [
             "jasyncapi"
         ],
@@ -860,6 +889,7 @@
         "slack": "U02MRF09BL1",
         "availableForHire": false,
         "isTscMember": true,
+        "tscMemberSince": "2025-03-25",
         "repos": [
             "net-sdk"
         ],
@@ -872,6 +902,7 @@
         "linkedin": "jean-baptiste-bianchi-aa42b914",
         "slack": "U08K91GKK8T",
         "isTscMember": true,
+        "tscMemberSince": "2025-03-25",
         "availableForHire": false,
         "repos": [
             "net-sdk"
@@ -886,6 +917,7 @@
         "slack": "U05FM7WRKU4",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2025-03-25",
         "repos": [
             "website"
         ],
@@ -921,6 +953,7 @@
         "slack": "U0867GV384D",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2025-08-27",
         "repos": [
             "generator"
         ],
@@ -931,7 +964,7 @@
         "github": "Ruchip16",
         "twitter": "Ruchicodess",
         "availableForHire": true,
-        "isTscMember": true,
+        "isTscMember": false,
         "repos": [
             "vs-asyncapi-preview"
         ],
@@ -964,6 +997,7 @@
         "slack": "U06SWFWLLQG",
         "availableForHire": true,
         "isTscMember": true,
+        "tscMemberSince": "2026-02-17",
         "repos": [
             "conference-website"
         ],
