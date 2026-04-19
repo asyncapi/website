@@ -145,6 +145,14 @@ async function convertTools(data: ToolsData) {
       })
     );
 
+    // Sort each category's toolsList by title for deterministic output,
+    // since Promise.all resolves tools concurrently in non-deterministic order.
+    for (const category of Object.keys(finalToolsObject)) {
+      finalToolsObject[category].toolsList.sort((a: any, b: any) =>
+        (a.title || '').localeCompare(b.title || '')
+      );
+    }
+
     return finalToolsObject;
   } catch (err: unknown) {
     logger.error('Error processing tools:', err);

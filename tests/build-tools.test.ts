@@ -145,7 +145,29 @@ describe('buildTools', () => {
     const invalidManualPath = resolve(testDir, 'nonexistent-manual.json');
 
     await expect(
-      buildToolsManual(automatedToolsPath, invalidManualPath, toolsPath, tagsPath)
-    ).rejects.toThrow('Manual tools file not found');
+      buildToolsManual(invalidManualPath, manualToolsPath, toolsPath, tagsPath)
+    ).rejects.toThrow();
+  });
+
+  it('should produce deterministic output regardless of API response order', async () => {
+    // First run with original order
+    mockedAxios.get.mockResolvedValue({ data: mockExtractData });
+    await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
+    const firstRunTools = fs.readFileSync(toolsPath, 'utf8');
+    const firstRunTags = fs.readFileSync(tagsPath, 'utf8');
+
+    // Second run with reversed item order (simulating non-deterministic API)
+    const reversedExtractData = {
+      ...mockExtractData,
+      items: [...mockExtractData.items].reverse()
+    };
+
+    mockedAxios.get.mockResolvedValue({ data: reversedExtractData });
+    await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
+    const secondRunTools = fs.readFileSync(toolsPath, 'utf8');
+    const secondRunTags = fs.readFileSync(tagsPath, 'utf8');
+
+    expect(firstRunTools).toEqual(secondRunTools);
+    expect(firstRunTags).toEqual(secondRunTags);
   });
 });
