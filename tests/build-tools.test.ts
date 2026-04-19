@@ -148,4 +148,21 @@ describe('buildTools', () => {
       buildToolsManual(automatedToolsPath, invalidManualPath, toolsPath, tagsPath)
     ).rejects.toThrow('Manual tools file not found');
   });
+
+  it('should produce sorted tags in deterministic order', async () => {
+    mockedAxios.get.mockResolvedValue({ data: mockExtractData });
+    await buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
+
+    const tagsContent = JSON.parse(fs.readFileSync(tagsPath, 'utf8'));
+
+    // Verify languages are sorted alphabetically by name
+    const languageNames = tagsContent.languages.map((l: { name: string }) => l.name);
+
+    expect(languageNames).toEqual([...languageNames].sort());
+
+    // Verify technologies are sorted alphabetically by name
+    const technologyNames = tagsContent.technologies.map((t: { name: string }) => t.name);
+
+    expect(technologyNames).toEqual([...technologyNames].sort());
+  });
 });

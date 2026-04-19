@@ -62,8 +62,17 @@ export async function getData(): Promise<ToolsData> {
     incompleteResult = data.incomplete_results || false;
   }
 
-  result.data.items = [...allItems];
+  const items = [...allItems] as ToolsData;
 
-  return result.data.items;
+  // Sort items by repository full_name for deterministic ordering,
+  // since the GitHub Code Search API returns results in non-deterministic order.
+  items.sort((a: any, b: any) => {
+    const repoA = a.repository?.full_name || '';
+    const repoB = b.repository?.full_name || '';
+
+    return repoA.localeCompare(repoB) || (a.path || '').localeCompare(b.path || '');
+  });
+
+  return items;
 }
 
