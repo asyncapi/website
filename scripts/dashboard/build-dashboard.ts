@@ -20,6 +20,44 @@ import { Queries } from './issue-queries';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
+const RATE_LIMIT_RETRY_BUFFER_MS = 10_000;
+const RATE_LIMIT_LOW_WATERMARK = Number(process.env.DASHBOARD_RATE_LIMIT_LOW_WATERMARK || 100);
+const RATE_LIMIT_MAX_WAIT_MS = Number(process.env.DASHBOARD_RATE_LIMIT_MAX_WAIT_MS || 15 * 60 * 1000);
+
+type RateLimit = {
+  cost: number;
+  limit: number;
+  remaining: number;
+  resetAt: string;
+};
+
+async function waitForRateLimitReset(rateLimit: RateLimit): Promise<void> {
+  if (rateLimit.remaining > RATE_LIMIT_LOW_WATERMARK) {
+    return;
+  }
+
+  const resetAt = new Date(rateLimit.resetAt).valueOf();
+  const waitMs = Math.max(0, resetAt - Date.now() + RATE_LIMIT_RETRY_BUFFER_MS);
+
+  logger.warn(
+    'GitHub GraphQL rateLimit is low\n' +
+      `cost = ${rateLimit.cost}\n` +
+      `limit = ${rateLimit.limit}\n` +
+      `remaining = ${rateLimit.remaining}\n` +
+      `resetAt = ${rateLimit.resetAt}\n` +
+      `waitMs = ${waitMs}`
+  );
+
+  if (waitMs > RATE_LIMIT_MAX_WAIT_MS) {
+    throw new Error(
+      `GitHub GraphQL rate limit reset wait (${waitMs}ms) exceeds max wait (${RATE_LIMIT_MAX_WAIT_MS}ms)`
+    );
+  }
+
+  if (waitMs > 0) {
+    await pause(waitMs);
+  }
+}
 
 /**
  * Calculates the number of full months elapsed since the provided date.
@@ -85,15 +123,7 @@ async function getDiscussions(
       }
     });
 
-    if (result.rateLimit.remaining <= 100) {
-      logger.warn(
-        'GitHub GraphQL rateLimit \n' +
-          `cost = ${result.rateLimit.cost}\n` +
-          `limit = ${result.rateLimit.limit}\n` +
-          `remaining = ${result.rateLimit.remaining}\n` +
-          `resetAt = ${result.rateLimit.resetAt}`
-      );
-    }
+    await waitForRateLimitReset(result.rateLimit);
 
     await pause(500);
 
@@ -135,6 +165,8 @@ async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequest
         authorization: `token ${token}`
       }
     });
+
+    await waitForRateLimitReset(result.rateLimit);
 
     return result;
   } catch (error) {
@@ -294,21 +326,16 @@ async function mapGoodFirstIssues(issues: GoodFirstIssues[]): Promise<MappedIssu
  * @returns A promise that resolves once the data has been successfully written.
  */
 async function start(writePath: string): Promise<void> {
-  try {
-    const issues = (await getDiscussions(Queries.hotDiscussionsIssues, 20)) as HotDiscussionsIssuesNode[];
-    const PRs = (await getDiscussions(Queries.hotDiscussionsPullRequests, 20)) as HotDiscussionsPullRequestsNode[];
-    const rawGoodFirstIssues: GoodFirstIssues[] = await getDiscussions(Queries.goodFirstIssues, 20);
-    const discussions = issues.concat(PRs);
-    const [hotDiscussions, goodFirstIssues] = await Promise.all([
-      getHotDiscussions(discussions),
-      mapGoodFirstIssues(rawGoodFirstIssues)
-    ]);
+  const issues = (await getDiscussions(Queries.hotDiscussionsIssues, 20)) as HotDiscussionsIssuesNode[];
+  const PRs = (await getDiscussions(Queries.hotDiscussionsPullRequests, 20)) as HotDiscussionsPullRequestsNode[];
+  const rawGoodFirstIssues: GoodFirstIssues[] = await getDiscussions(Queries.goodFirstIssues, 20);
+  const discussions = issues.concat(PRs);
+  const [hotDiscussions, goodFirstIssues] = await Promise.all([
+    getHotDiscussions(discussions),
+    mapGoodFirstIssues(rawGoodFirstIssues)
+  ]);
 
-    await writeToFile({ hotDiscussions, goodFirstIssues }, writePath);
-  } catch (error) {
-    logger.error('There were some issues parsing data from github.');
-    logger.error(error);
-  }
+  await writeToFile({ hotDiscussions, goodFirstIssues }, writePath);
 }
 
 /* istanbul ignore next */
@@ -324,5 +351,6 @@ export {
   mapGoodFirstIssues,
   processHotDiscussions,
   start,
+  waitForRateLimitReset,
   writeToFile
 };

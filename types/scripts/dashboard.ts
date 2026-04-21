@@ -73,6 +73,7 @@ export interface PullRequestById {
     timelineItems: TimelineItems;
     comments: Comments;
   } & BasicIssueOrPR;
+  rateLimit: RateLimit;
 }
 
 export interface IssueById {
@@ -82,6 +83,7 @@ export interface IssueById {
     comments: Comments;
     reviews: Reviews;
   } & BasicIssueOrPR;
+  rateLimit: RateLimit;
 }
 
 export interface GoodFirstIssues extends BasicIssueOrPR {}
