@@ -1,4 +1,4 @@
-import moment from 'moment';
+import dayjs from 'dayjs';
 import React from 'react';
 
 import type { IEvent } from '@/types/event';
@@ -20,7 +20,7 @@ interface EventPostItemProps {
  *
  */
 function EventPostItem({ post, className = '', id }: EventPostItemProps): React.JSX.Element {
-  const localTime = moment().format('YYYY-MM-DD'); // store localTime
+  const localTime = dayjs().format('YYYY-MM-DD'); // store localTime
   const currentDate = `${localTime}T00:00:00.000Z`;
   const title = post.title || '';
   let type = '';
@@ -34,7 +34,7 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
   }
 
   let active = true;
-  const postDate = moment(post.date); // Convert post.date to a moment object if necessary
+  const postDate = dayjs(post.date); // Convert post.date to a dayjs object if necessary
 
   if (!postDate.isValid()) {
     // Handle invalid date if necessary
@@ -43,9 +43,11 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
     active = false;
   }
 
+  const eventDateLabel = active ? dayjs(postDate).format('MMMM D, YYYY') : 'View Recording';
+
   return (
     <li key={id} className={className} data-testid='EventPostItem-main'>
-      <article className='flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-md hover:shadow-lg'>
+      <article className='flex h-full flex-col overflow-hidden rounded-lg bg-white dark:bg-dark-card shadow-md hover:shadow-lg border border-gray-200 dark:border-gray-700'>
         <div className='relative h-40 bg-gradient-to-br from-indigo-600 to-purple-600 p-4'>
           <div className='absolute right-4 top-4'>
             <span className='rounded-full bg-white px-3 py-1 text-xs font-medium text-gray-700'>
@@ -59,15 +61,19 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
 
         <div className='flex flex-1 flex-col justify-between p-6'>
           <div>
-            <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.bodyLg} className='mb-2 text-gray-900'>
+            <Heading
+              level={HeadingLevel.h3}
+              typeStyle={HeadingTypeStyle.bodyLg}
+              className='mb-2 text-gray-900 dark:text-white'
+            >
               {post.title}
             </Heading>
-            <div className='flex items-center text-sm text-gray-600'>
-              <span data-testid='Event-span'>
-                {active ? moment(postDate).format('MMMM D, YYYY') : 'View Recording'}
-              </span>
+            <div className='flex items-center text-sm text-gray-600 dark:text-gray-400'>
+              <span data-testid='Event-span'>{eventDateLabel}</span>
             </div>
-            <div className='text-sm text-gray-600'>{postDate.isValid() && moment(postDate).format('h:mm A [UTC]')}</div>
+            <div className='text-sm text-gray-600 dark:text-gray-400'>
+              {postDate.isValid() && dayjs(postDate).format('h:mm A [UTC]')}
+            </div>
           </div>
 
           <a

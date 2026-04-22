@@ -95,7 +95,7 @@ export default function HomePage() {
             <GoldSponsors className='mt-4' showSupportBanner={false} />
           </Container>
 
-          <Container className='pyb-6 text-center' wide as='section'>
+          <Container className='pb-6 text-center' wide as='section'>
             <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.lg} className='mb-4'>
               {t('sponsors.silverTitle')}
             </Heading>
@@ -120,7 +120,7 @@ export default function HomePage() {
           </Heading>
           <Paragraph className='mx-auto mt-3 max-w-2xl pb-4 dark:text-dark-text sm:mt-4'>
             {t('sponsors.supportedByPretext')}
-            <TextLink href='mailto:info@asyncapi.io' target='_blank'>
+            <TextLink href='mailto:info@asyncapi.com' target='_blank'>
               {t('sponsors.supportedByLink')}
             </TextLink>{' '}
             {t('sponsors.supportedByPosttext')}
