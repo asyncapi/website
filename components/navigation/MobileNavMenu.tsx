@@ -82,6 +82,7 @@ export default function MobileNavMenu({
                   onClick={onClickClose}
                   type='button'
                   className='inline-flex items-center justify-center rounded-lg p-2.5 text-gray-700 dark:text-gray-200 transition-all duration-200 ease-in-out hover:bg-gray-100/80 dark:hover:bg-gray-700/50 hover:rotate-90 active:scale-95'
+                  aria-label='Close menu'
                 >
                   <svg className='size-6' stroke='currentColor' fill='none' viewBox='0 0 24 24'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M6 18L18 6M6 6l12 12' />
@@ -98,7 +99,13 @@ export default function MobileNavMenu({
               >
                 Docs
               </Link>
-              <NavItemDropdown />
+              <span
+                className={`inline-flex items-center transition-transform duration-200 ${
+                  open === 'learning' ? 'rotate-180' : ''
+                }`}
+              >
+                <NavItemDropdown />
+              </span>
             </h4>
             {open === 'learning' && (
               <div className='animate-in fade-in slide-in-from-top-2 duration-200'>
@@ -114,7 +121,13 @@ export default function MobileNavMenu({
               >
                 Tools
               </Link>
-              <NavItemDropdown />
+              <span
+                className={`inline-flex items-center transition-transform duration-200 ${
+                  open === 'tooling' ? 'rotate-180' : ''
+                }`}
+              >
+                <NavItemDropdown />
+              </span>
             </h4>
             {open === 'tooling' && (
               <div className='animate-in fade-in slide-in-from-top-2 duration-200'>
@@ -130,7 +143,13 @@ export default function MobileNavMenu({
               >
                 Community
               </Link>
-              <NavItemDropdown />
+              <span
+                className={`inline-flex items-center transition-transform duration-200 ${
+                  open === 'community' ? 'rotate-180' : ''
+                }`}
+              >
+                <NavItemDropdown />
+              </span>
             </h4>
             {open === 'community' && (
               <div className='animate-in fade-in slide-in-from-top-2 duration-200'>

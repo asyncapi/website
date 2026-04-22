@@ -167,6 +167,8 @@ export default function Index() {
           </div>
         </div>
       </div>
+        </div>
+      </div>
       <div className='bg-secondary-100 rounded-3xl dark:bg-dark-card py-20 sm:py-28'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
           <div className='relative rounded-3xl overflow-hidden shadow-2xl bg-gray-900' data-testid='Ambassadors-video'>

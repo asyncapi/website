@@ -26,7 +26,7 @@ export default function Header() {
       <div className='mt-6 sm:mt-0 flex flex-col gap-2 self-end text-center xs:flex-row'>
         <Button
           text='Contribution Guide'
-          href='https://github.com/asyncapi?type=source#-contribute-to-asyncapi'
+          href='https://www.asyncapi.com/docs/community/010-contribution-guidelines'
           target='_blank'
         />
         <GithubButton text='View on Github' className='lg:mt-0' />

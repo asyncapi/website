@@ -100,3 +100,24 @@ type ToolsList<T> = {
 
 export type ToolsListObject = ToolsList<AsyncAPITool>;
 export type FinalToolsListObject = ToolsList<FinalAsyncAPITool>;
+
+export interface ToolIgnoreEntry {
+  title?: string;
+  repoUrl?: string;
+  reason: string;
+  categories?: string[];
+}
+
+export interface ToolsIgnoreFile {
+  description: string;
+  tools: ToolIgnoreEntry[];
+}
+
+export interface IgnoredToolRecord {
+  title: string;
+  repoUrl?: string;
+  reason: string;
+  category: string;
+  source: 'automated' | 'manual';
+  ignoredAt: string;
+}

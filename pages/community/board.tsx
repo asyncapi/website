@@ -37,7 +37,7 @@ export default function Board() {
             community-driven voting process held every 12 months. Learn more about the eligibility and election cycle on
             our{' '}
             <TextLink
-              href='https://github.com/asyncapi/community/blob/master/GOVERNANCE.md'
+              href='https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/GOVERNANCE.md'
               target='_blank'
               className='font-normal text-base text-blue-500 dark:text-blue-400 no-underline hover:text-sky-400 dark:hover:text-sky-300'
             >
@@ -55,7 +55,7 @@ export default function Board() {
             They also help sustain an inclusive and safe environment. All major proposals require TSC approval, ensuring
             a balanced and collaborative governance model. See the{' '}
             <a
-              href='https://github.com/asyncapi/community/blob/master/GOVERNANCE.md#duties-and-responsibilities'
+              href='https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/GOVERNANCE.md#duties-and-responsibilities'
               className='text-blue-500 dark:text-blue-400 hover:text-blue-400 dark:hover:text-blue-300'
               target='_blank'
               rel='noopener noreferrer'

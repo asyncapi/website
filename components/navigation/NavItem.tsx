@@ -12,6 +12,7 @@ interface NavItemProps {
   onMouseEnter?: () => void;
   hasDropdown?: boolean;
   className?: string;
+  isOpen?: boolean;
 }
 
 /**
@@ -31,24 +32,25 @@ export default function NavItem({
   onClick = () => {},
   onMouseEnter = () => {},
   hasDropdown = false,
-  className = ''
+  className = '',
+  isOpen = false
 }: NavItemProps) {
   const router = useRouter();
 
   if (href && !hasDropdown) {
     return (
-      <Link
-        href={href}
-        target={target}
-        rel='noopener noreferrer'
-        className={`${className} font-body text-base sm:text-sm/6 font-semibold leading-6  border-b border-transparent dark:hover:border-white hover:border-black transition duration-150 ease-in-out focus:text-black focus:outline-none ${
-          router.pathname.startsWith(href)
-            ? 'text-black dark:text-dark-text'
-            : 'text-zinc-800 dark:text-dark-text text-opacity-85 dark:hover:text-dark-heading hover:text-black'
-        }`}
-      >
-        {text}
-      </Link>
+    <Link
+      href={href}
+      target={target}
+      rel='noopener noreferrer'
+      className={`${className} font-body text-base sm:text-sm/6 font-semibold leading-6  border-b border-transparent dark:hover:border-white hover:border-black transition duration-150 ease-in-out focus:text-black focus:outline-none ${
+        router.pathname.startsWith(href)
+          ? 'text-black dark:text-dark-text'
+          : 'text-zinc-800 dark:text-dark-text text-opacity-85 dark:hover:text-dark-heading hover:text-black'
+      }`}
+    >
+      {text}
+    </Link>
     );
   }
 
@@ -65,22 +67,39 @@ export default function NavItem({
       <Link
         href={href}
         {...attrs}
-        className={`${attrs.className} ${router.pathname.startsWith(href) ? 'text-black' : 'text-zinc-800 text-opacity-85  hover:text-black'}`}
+        className={`${attrs.className} ${router.pathname.startsWith(href) ? 'text-black dark:text-dark-text' : 'text-zinc-800 dark:text-dark-text text-opacity-85 dark:hover:text-dark-heading hover:text-black'}`}
         target={target}
         data-testid='NavItem-Link'
       >
-        <span className='border-b border-transparent dark:hover:border-white dark:text-dark-text dark:hover:text-dark-heading hover:border-black'>
+        <span className='border-b border-transparent dark:hover:border-white hover:border-black'>
           {text}
         </span>
-        {hasDropdown && <NavItemDropdown />}
+        {hasDropdown && (
+          <span
+            className={`inline-flex size-5 items-center justify-center transition-transform duration-200 ${
+              isOpen ? 'rotate-180' : 'rotate-0'
+            }`}
+          >
+            <NavItemDropdown />
+          </span>
+        )}
       </Link>
     );
   }
 
   return (
-    <button type='button' {...attrs} className={`${attrs.className} text-gray-900`}>
+    <button type='button' {...attrs} className={`${attrs.className} text-gray-900 dark:text-dark-text`}>
       <span>{text}</span>
-      {hasDropdown && <NavItemDropdown />}
+
+      {hasDropdown && (
+        <span
+          className={`inline-flex size-5 items-center justify-center transition-transform duration-200 ${
+            isOpen ? 'rotate-180' : 'rotate-0'
+          }`}
+        >
+          <NavItemDropdown />
+        </span>
+      )}
     </button>
   );
 }
