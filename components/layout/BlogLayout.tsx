@@ -80,6 +80,7 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
                     <span className='mx-1'>&middot;</span>
                     <span>{post.readingTime} min read</span>
                   </div>
+                </div>
               </div>
             </header>
             <article className='mb-32'>
