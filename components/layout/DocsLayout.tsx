@@ -93,12 +93,12 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
 
   const sidebar = <DocsNavWrapper setShowMenu={setShowMenu} navigation={navigation} post={post} />;
 
-  if (router.pathname.includes('v3.0.0-explorer')) {
+  if (router.pathname.includes('-explorer')) {
     return (
       <div>
         <div className='absolute left-2 top-24 z-10'>
           <Button
-            className='inline-flex h-full justify-center rounded-md border border-gray-300 bg-white py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:border-gray-500 focus:outline-none focus:ring-0 focus:ring-black'
+            className='inline-flex h-full justify-center rounded-sm border border-gray-300 bg-white py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-900'
             text='Menu'
             icon={<IconMenuCenter className='size-4 fill-gray-700' />}
             onClick={() => {

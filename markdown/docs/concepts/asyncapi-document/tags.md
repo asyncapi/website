@@ -40,7 +40,7 @@ graph LR
 Below is an example of the `tags` object inside the `info` object in an AsyncAPI document:
 
 ```yaml
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 info:
   title: AsyncAPI Documentation
   version: 1.0.0
@@ -87,7 +87,7 @@ graph LR
 Below is an example of the `tags` object inside the `servers` object in an AsyncAPI document:
 
 ```yaml
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 
 info:
   title: AsyncAPI Documentation
@@ -143,7 +143,7 @@ graph LR
 Below is an example of the `tags` object inside the `channels` object in an AsyncAPI document:
 
 ```yaml
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 
 info:
   title: AsyncAPI Documentation
@@ -256,7 +256,7 @@ payload:
 Below is an example of all the tags defined in the `components` object and referenced in other components like `servers` and `channels`:
 
 ```yml
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 
 components:
   tags:

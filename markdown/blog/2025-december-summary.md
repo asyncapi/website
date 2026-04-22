@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: Community Builder and Open Source Fanatic!
 excerpt: 'AsyncAPI community and project updates for November and December 2025'
-featured: true
 ---
 
 Well, believe it or not, we are in the final weeks of 2025! It's been a great year as we navigated crucial growth in the community and, of course, some challenges along the way. Most importantly, we have new experiences that continuously make us better.

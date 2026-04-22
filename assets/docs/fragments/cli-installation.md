@@ -48,7 +48,7 @@ Download [asyncapi.x64.exe](https://github.com/asyncapi/cli/releases/latest/down
 </details>
 
 #### Using NPM and Node.js
-Alternitavely, you can install the [AsyncAPI CLI](https://github.com/asyncapi/cli#installation) with Node.js `>=v10` and [NPM](https://nodejs.org/en/download/package-manager/).
+Alternatively, you can install the [AsyncAPI CLI](https://github.com/asyncapi/cli#installation) with Node.js `>=v10` and [NPM](https://nodejs.org/en/download/package-manager/).
 
 <details>
 <summary>Install CLI globally</summary>
@@ -63,7 +63,7 @@ npm install -g @asyncapi/cli
 <details>
 <summary>Install specific CLI version</summary>
 
-To install a specific version of the AsyncAPI CLI, pass the `verion` during installation:
+To install a specific version of the AsyncAPI CLI, pass the `version` during installation:
 
 ```
 npm install -g @asyncapi/cli@{version}

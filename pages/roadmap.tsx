@@ -14,6 +14,7 @@ import InlineHelp from '../components/InlineHelp';
 import GenericLayout from '../components/layout/GenericLayout';
 import GoalCardRoadmapPage from '../components/roadmap/GoalCardRoadmapPage';
 import RoadmapColumn from '../components/roadmap/RoadmapColumn';
+import type { RoadmapItem } from '../components/roadmap/types';
 import Heading from '../components/typography/Heading';
 import Paragraph from '../components/typography/Paragraph';
 import TextLink from '../components/typography/TextLink';
@@ -21,9 +22,9 @@ import Warning from '../components/Warning';
 
 interface RoadmapData {
   outcomes: {
-    now: any[];
-    later: any[];
-    future: any[];
+    now: RoadmapItem[];
+    later: RoadmapItem[];
+    future: RoadmapItem[];
   };
 }
 
@@ -666,7 +667,7 @@ export default function RoadmapPage() {
             </Paragraph>
 
             <div className='mx-auto lg:w-1/2'>
-              <YouTubeEmbed id='u83V2gIUGHU' appendSrc='?start=86' />
+              <YouTubeEmbed id='u83V2gIUGHU' appendSrc='?start=86&rel=0&modestbranding=1' />
             </div>
 
             <Warning
