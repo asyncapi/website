@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 
-import type { Filter as FilterType } from '@/components/helpers/applyFilter';
 import Empty from '@/components/illustrations/Empty';
 import Container from '@/components/layout/Container';
 import GenericLayout from '@/components/layout/GenericLayout';
