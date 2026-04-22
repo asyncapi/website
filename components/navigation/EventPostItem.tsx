@@ -43,6 +43,8 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
     active = false;
   }
 
+  const eventDateLabel = active ? dayjs(postDate).format('MMMM D, YYYY') : 'View Recording';
+
   return (
     <li key={id} className={className} data-testid='EventPostItem-main'>
       <article className='flex h-full flex-col overflow-hidden rounded-lg bg-white dark:bg-dark-card shadow-md hover:shadow-lg border border-gray-200 dark:border-gray-700'>
@@ -67,9 +69,7 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
               {post.title}
             </Heading>
             <div className='flex items-center text-sm text-gray-600 dark:text-gray-400'>
-              <span data-testid='Event-span'>
-                {active ? dayjs(postDate).format('MMMM D, YYYY') : 'View Recording'}
-              </span>
+              <span data-testid='Event-span'>{eventDateLabel}</span>
             </div>
             <div className='text-sm text-gray-600 dark:text-gray-400'>
               {postDate.isValid() && dayjs(postDate).format('h:mm A [UTC]')}
