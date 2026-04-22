@@ -140,9 +140,9 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
                 setRead={setReadMore}
               />
             </div>
-            <div className='mb-0 flex cursor-pointer gap-0.5 text-xs hover:underline' onClick={undoChanges}>
+            <button type='button' className='mb-0 flex cursor-pointer gap-0.5 bg-transparent text-xs hover:underline' onClick={undoChanges}>
               Undo Changes
-            </div>
+            </button>
           </div>
           <div className='flex gap-2' data-testid='Applied-filters'>
             <div
