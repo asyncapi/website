@@ -39,18 +39,18 @@ export default function NavItem({
 
   if (href && !hasDropdown) {
     return (
-    <Link
-      href={href}
-      target={target}
-      rel='noopener noreferrer'
-      className={`${className} font-body text-base sm:text-sm/6 font-semibold leading-6  border-b border-transparent dark:hover:border-white hover:border-black transition duration-150 ease-in-out focus:text-black focus:outline-none ${
-        router.pathname.startsWith(href)
-          ? 'text-black dark:text-dark-text'
-          : 'text-zinc-800 dark:text-dark-text text-opacity-85 dark:hover:text-dark-heading hover:text-black'
-      }`}
-    >
-      {text}
-    </Link>
+      <Link
+        href={href}
+        target={target}
+        rel='noopener noreferrer'
+        className={`${className} font-body text-base sm:text-sm/6 font-semibold leading-6  border-b border-transparent dark:hover:border-white hover:border-black transition duration-150 ease-in-out focus:text-black focus:outline-none ${
+          router.pathname.startsWith(href)
+            ? 'text-black dark:text-dark-text'
+            : 'text-zinc-800 dark:text-dark-text text-opacity-85 dark:hover:text-dark-heading hover:text-black'
+        }`}
+      >
+        {text}
+      </Link>
     );
   }
 
@@ -71,9 +71,7 @@ export default function NavItem({
         target={target}
         data-testid='NavItem-Link'
       >
-        <span className='border-b border-transparent dark:hover:border-white hover:border-black'>
-          {text}
-        </span>
+        <span className='border-b border-transparent dark:hover:border-white hover:border-black'>{text}</span>
         {hasDropdown && (
           <span
             className={`inline-flex size-5 items-center justify-center transition-transform duration-200 ${

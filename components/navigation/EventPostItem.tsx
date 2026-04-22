@@ -59,7 +59,11 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
 
         <div className='flex flex-1 flex-col justify-between p-6'>
           <div>
-            <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.bodyLg} className='mb-2 text-gray-900 dark:text-white'>
+            <Heading
+              level={HeadingLevel.h3}
+              typeStyle={HeadingTypeStyle.bodyLg}
+              className='mb-2 text-gray-900 dark:text-white'
+            >
               {post.title}
             </Heading>
             <div className='flex items-center text-sm text-gray-600 dark:text-gray-400'>
@@ -67,7 +71,9 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
                 {active ? dayjs(postDate).format('MMMM D, YYYY') : 'View Recording'}
               </span>
             </div>
-            <div className='text-sm text-gray-600 dark:text-gray-400'>{postDate.isValid() && dayjs(postDate).format('h:mm A [UTC]')}</div>
+            <div className='text-sm text-gray-600 dark:text-gray-400'>
+              {postDate.isValid() && dayjs(postDate).format('h:mm A [UTC]')}
+            </div>
           </div>
 
           <a
