@@ -136,6 +136,8 @@ const BlogPostItem = ({ post, className = '', id = '' }: BlogPostItemProps, ref:
                 <div className='text-right'>
                   <Paragraph typeStyle={ParagraphTypeStyle.sm} className='text-xs text-gray-500 dark:text-gray-400'>
                     {post.readingTime} min
+                  </Paragraph>
+                </div>
               </div>
             </div>
           </span>
