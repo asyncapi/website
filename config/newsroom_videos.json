@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/8fkwstMaggI/hqdefault.jpg",
+    "title": "Let&#39;s talk about contributing: The State of Maintainership",
+    "description": "https://github.com/asyncapi/community/issues/3513.",
+    "videoId": "8fkwstMaggI"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/Cy_yCrwtXGY/hqdefault.jpg",
     "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday April 14th 2026",
     "description": "https://github.com/asyncapi/community/issues/3498#issuecomment-4243180197.",
@@ -22,11 +28,5 @@
     "title": "Docs Meeting, 15:00 UTC Wednesday March 25th 2026",
     "description": "https://github.com/asyncapi/community/issues/2323.",
     "videoId": "CkfW2GAMTI0"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/T8RHRCHtPhs/hqdefault.jpg",
-    "title": "AsyncAPI Website Triage Meeting, 15:30 UTC Wednesday March 18th 2026",
-    "description": "https://github.com/asyncapi/community/issues/2315.",
-    "videoId": "T8RHRCHtPhs"
   }
 ]
