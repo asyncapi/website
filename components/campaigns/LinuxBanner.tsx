@@ -1,8 +1,8 @@
 import React from 'react';
 
-interface LinuxBannerProps {
+type LinuxBannerProps = Readonly<{
   className?: string;
-}
+}>;
 
 /**
  * LinuxBanner component displays a simple banner component that displays a message

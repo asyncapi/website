@@ -2,9 +2,9 @@ import React from 'react';
 
 import type { Tsc } from '@/types/pages/community/Community';
 
-interface TSCMemberCardProps {
+type TSCMemberCardProps = Readonly<{
   member: Tsc;
-}
+}>;
 
 /**
  * @param {{ className?: string }} props - Props for the GitHub icon

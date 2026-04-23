@@ -140,7 +140,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
 
               {/* <AnnouncementHero className='ml-6' hideVideo={true} /> */}
 
-              <div className={`xl:flex xl:gap-4 ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
+              <div className={`xl:flex xl:gap-4 ${post?.toc?.length ? 'xl:flex-row-reverse' : ''}`}>
                 <TOC
                   toc={post.toc}
                   depth={3}

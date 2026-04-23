@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 
-interface PaginationProps {
+type PaginationProps = Readonly<{
   currentPage: number;
   totalPages: number;
-  onPageChange: (page: number) => void;
+  onPageChange: (_page: number) => void;
   showGoToPage?: boolean;
   variant?: 'default' | 'simple' | 'compact';
   className?: string;
-}
+}>;
 
 /**
  * @description Unified Pagination component with customizable display modes and "Go to page" dropdown
  * @param {PaginationProps} props - The props for the component
  * @param {number} props.currentPage - The current active page number
  * @param {number} props.totalPages - The total number of pages
- * @param {(page: number) => void} props.onPageChange - Callback function when page changes
+ * @param {(_page: number) => void} props.onPageChange - Callback function when page changes
  * @param {boolean} [props.showGoToPage=true] - Whether to show the "Go to page" dropdown
  * @param {'default' | 'simple' | 'compact'} [props.variant='default'] - Display variant
  * @param {string} [props.className=''] - Additional CSS classes
@@ -95,8 +95,12 @@ export default function Pagination({
 
       return pages.map((page, index) => {
         if (page === 'ellipsis') {
+          const prevPage = pages[index - 1];
+          const nextPage = pages[index + 1];
+          const key = `ellipsis-${prevPage}-${nextPage}`;
+
           return (
-            <span key={`ellipsis-${index}`} className='px-2 text-gray-600 dark:text-gray-400'>
+            <span key={key} className='px-2 text-gray-600 dark:text-gray-400'>
               ...
             </span>
           );

@@ -3,9 +3,9 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { banners, shouldShowBanner } from './banners';
 import ConferenceBanner from './ConferenceBanner';
 
-interface IAnnouncementHeroProps {
+type IAnnouncementHeroProps = Readonly<{
   className?: string;
-}
+}>;
 
 /**
  * @param {string} props.className - The class name of the announcement hero

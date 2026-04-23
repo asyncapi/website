@@ -22,8 +22,8 @@ export default function CaseStudyCard({ studies = [] }: ICaseStudyCardProps) {
 
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8'>
-      {studies.map((study, index) => (
-        <Link key={index} href={`/casestudies/${study.id}`} className='group block h-full'>
+      {studies.map((study: any) => (
+        <Link key={study.id} href={`/casestudies/${study.id}`} className='group block h-full'>
           <div className='h-full bg-white dark:bg-dark-background border border-gray-200 dark:border-gray-700 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1'>
             <div className='flex items-center justify-center h-20 mb-6'>
               <img src={study.company.logo} alt={study.company.name} className='max-h-16 max-w-full object-contain' />

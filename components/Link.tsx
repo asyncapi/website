@@ -4,14 +4,14 @@ import React from 'react';
 
 import { defaultLanguage, i18nPaths, languages } from '@/utils/i18n';
 
-interface LinkComponentProps {
+type LinkComponentProps = Readonly<{
   children: React.ReactNode;
   locale?: string;
   href?: string;
   legacyBehavior?: boolean;
   target?: string;
   rel?: string;
-}
+}>;
 
 /**
  * @description Custom Link component for handling internationalization (i18n).
@@ -31,7 +31,7 @@ export default function LinkComponent({
 }: LinkComponentProps) {
   const router = useRouter();
 
-  // If there is no router available (e.g., during server-side rendering & cypress tests), render a standard Link
+  // Render plain Link if no router (SSR / tests)
   if (!router) {
     return (
       <Link href={props.href || ''} legacyBehavior={legacyBehavior} target={target} rel={rel}>
@@ -42,40 +42,42 @@ export default function LinkComponent({
 
   const { pathname, query, asPath } = router;
 
-  // Detect current language based on the path or query parameter
-  const slug = asPath.split('/')[1];
-  const langSlug = languages.includes(slug) && slug;
-  const language: string = query.lang && typeof query.lang === 'string' ? query.lang : langSlug || defaultLanguage; // Ensure language is always a string
+  const pathSlug = asPath.split('/')[1];
+  const langFromPath = languages.includes(pathSlug) ? pathSlug : undefined;
+  const language = typeof query.lang === 'string' ? query.lang : langFromPath || defaultLanguage;
 
-  let href = props.href || pathname;
+  const originalHref = props.href ?? pathname;
+  const isExternal = originalHref.startsWith('http');
+  const hasI18n = Boolean(i18nPaths[language]);
+  const hrefInI18n = hasI18n && i18nPaths[language].includes(originalHref);
 
-  /*
-    If explicit href is provided, and the language-specific paths for the current language do not include the href,
-    or if the href starts with "http", render a standard Link
-  */
-  if ((props.href && i18nPaths[language] && !i18nPaths[language].includes(href)) || href.includes('http', 0)) {
+  // External links or links not present in i18n map -> simple Link
+  if (isExternal || (props.href && !hrefInI18n)) {
     return (
-      <Link href={href} legacyBehavior={legacyBehavior} passHref target={target} rel={rel}>
+      <Link href={originalHref} legacyBehavior={legacyBehavior} passHref target={target} rel={rel}>
         {children}
       </Link>
     );
   }
-  // If a locale is provided, update the href with the locale
-  if (locale) {
-    if (props.href) {
-      href = `/${locale}${href}`;
-    } else {
-      // If the current path starts with "/404", update href to be the root path with the locale
-      // Otherwise, replace "[lang]" placeholder with the locale
-      href = pathname.startsWith('/404') ? `/${locale}` : pathname.replace('[lang]', locale);
-    }
-  } else {
-    // If no locale is provided, update the href with the current language or keep it as is
-    href = language ? `/${language}${href}` : `/${href}`;
-  }
 
-  // Fix double slashes
-  href = href.replace(/([^:/]|^)\/{2,}/g, '$1/');
+  // Build localized href
+  const buildLocalizedHref = (): string => {
+    if (locale) {
+      if (props.href) return `/${locale}${originalHref}`;
+
+      return pathname.startsWith('/404') ? `/${locale}` : pathname.replace('[lang]', locale);
+    }
+
+    // No explicit locale: prefer resolved language; keep leading slash consistent
+    const langPrefix = language ? `/${language}` : '/';
+
+    return `${langPrefix}${originalHref}`.replaceAll(/\/{2,}/g, '/');
+  };
+
+  let href = buildLocalizedHref();
+
+  // Fix double slashes (ensure protocol slashes preserved)
+  href = href.replaceAll(/([^:/]|^)\/{2,}/g, '$1/');
 
   return (
     <Link href={href} legacyBehavior={legacyBehavior} target={target} rel={rel} passHref>

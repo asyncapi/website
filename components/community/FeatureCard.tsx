@@ -6,11 +6,11 @@ import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 
-interface FeatureCardProps {
+type FeatureCardProps = Readonly<{
   icon: React.ReactNode;
   title: string;
   description: string;
-}
+}>;
 
 /**
  * @description FeatureCard component for displaying a feature card with icon, title and description
