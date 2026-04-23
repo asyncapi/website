@@ -56,11 +56,11 @@ describe('TSC Page', () => {
         }
       },
       {
-        name: 'Khuda Dad Nomani',
+        name: 'Thulisile Sibanda',
         links: {
-          GitHub: 'https://www.github.com/KhudaDad414',
-          Twitter: 'https://www.twitter.com/KhudaDadNomani',
-          Linkedin: 'https://www.linkedin.com/in/khudadadnomani'
+          GitHub: 'https://www.github.com/thulieblack',
+          Twitter: 'https://www.twitter.com/thulieblack',
+          Linkedin: 'https://www.linkedin.com/in/v-thulisile-sibanda'
         }
       },
       {
