@@ -22,7 +22,7 @@ query IssueByID($id: ID!) {
       reactions(last: 1) {
         totalCount
       }
-      reviews(first: 10) {
+      reviews(first: 1) { # Reduced from 'first: 10' to 'first: 1' to reduce API cost
         totalCount
         nodes {
           lastEditedAt
@@ -31,7 +31,7 @@ query IssueByID($id: ID!) {
           }
         }
       }
-      comments(first: 10) {
+      comments(first: 1) { # Reduced from 'first: 10' to 'first: 1' to reduce API cost
         totalCount
         pageInfo {
           hasNextPage
@@ -80,7 +80,7 @@ query IssueByID($id: ID!) {
       reactions(last: 1) {
         totalCount
       }
-      comments(last: 100) {
+      comments(last: 1) { # Reduced from 'last: 100' to 'last: 1' to significantly reduce API cost
         totalCount
         pageInfo {
           hasNextPage
@@ -183,16 +183,8 @@ query($first: Int!, $after: String) {
         reactions(last: 1) {
           totalCount
         }
-        comments(first: 20) {
+        comments { # Removed 'first: 20' and nested 'nodes' to only fetch 'totalCount' and reduce API cost
           totalCount
-          pageInfo {
-            hasNextPage
-          }
-          nodes {
-            reactions(last: 1) {
-              totalCount
-            }
-          }
         }
       }
     }
@@ -244,25 +236,11 @@ query($first: Int!, $after: String) {
         reactions(last: 1) {
           totalCount
         }
-        reviews(first: 10) {
+        reviews { # Removed 'first: 10' and nested 'nodes' to only fetch 'totalCount' and reduce API cost
           totalCount
-          nodes {
-            lastEditedAt
-            comments(first: 1) {
-              totalCount
-            }
-          }
         }
-        comments(first: 10) {
+        comments { # Removed 'first: 10' and nested 'nodes' to only fetch 'totalCount' and reduce API cost
           totalCount
-          pageInfo {
-            hasNextPage
-          }
-          nodes {
-            reactions(last: 1) {
-              totalCount
-            }
-          }
         }
       }
     }
