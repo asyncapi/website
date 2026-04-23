@@ -167,22 +167,6 @@
         "githubID": 13396189
     },
     {
-        "name": "Khuda Dad Nomani",
-        "github": "KhudaDad414",
-        "twitter": "KhudaDadNomani",
-        "linkedin": "khudadadnomani",
-        "slack": "U01RVRD1TCL",
-        "availableForHire": false,
-        "company": "Postman",
-        "isTscMember": true,
-        "tscMemberSince": "2023-07-05",
-        "repos": [
-            "spec-json-schemas",
-            "studio"
-        ],
-        "githubID": 32505158
-    },
-    {
         "name": "Lukasz Gornicki",
         "github": "derberg",
         "linkedin": "lukasz-gornicki-a621914",
@@ -344,19 +328,6 @@
             "bundler"
         ],
         "githubID": 41781438
-    },
-    {
-        "name": "Daniel Raper",
-        "github": "dan-r",
-        "slack": "U02FP8WBFQE",
-        "linkedin": "danielr",
-        "availableForHire": false,
-        "isTscMember": true,
-        "tscMemberSince": "2023-07-05",
-        "repos": [
-            "java-template"
-        ],
-        "githubID": 1384852
     },
     {
         "name": "Semen Tenishchev",
@@ -563,21 +534,6 @@
         "githubID": 98899
     },
     {
-        "name": "Alexander Wichmann",
-        "github": "VisualBean",
-        "linkedin": "alexcarlsen",
-        "slack": "U04C58GB8TF",
-        "availableForHire": false,
-        "company": "The LEGO Group",
-        "isTscMember": true,
-        "tscMemberSince": "2023-07-05",
-        "repos": [
-            "spec-json-schemas",
-            "bindings"
-        ],
-        "githubID": 5294032
-    },
-    {
         "name": "Kenneth Aasan",
         "github": "kennethaasan",
         "slack": "U037S2HK4TS",
@@ -608,20 +564,6 @@
             "community"
         ],
         "githubID": 66913810
-    },
-    {
-        "name": "Sambhav Gupta",
-        "github": "sambhavgupta0705",
-        "linkedin": "sambhavgupta0705",
-        "twitter": "sambhavgupta75",
-        "slack": "U04630DU3N3",
-        "availableForHire": true,
-        "isTscMember": true,
-        "tscMemberSince": "2024-02-06",
-        "repos": [
-            "website"
-        ],
-        "githubID": 81870866
     },
     {
         "name": "Rohit T",
@@ -775,18 +717,6 @@
             "generator"
         ],
         "githubID": 114283933
-    },
-    {
-        "name": "Ruchi Pakhle",
-        "github": "Ruchip16",
-        "twitter": "Ruchicodess",
-        "availableForHire": true,
-        "isTscMember": true,
-        "tscMemberSince": "2025-11-04",
-        "repos": [
-            "vs-asyncapi-preview"
-        ],
-        "githubID": 72685035
     },
     {
         "name": "TenzDelek",
