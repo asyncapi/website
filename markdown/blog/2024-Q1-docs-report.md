@@ -74,7 +74,7 @@ We have also created a new [AsyncAPI Slack channel named `#temp-gsod-2024`](http
 > _NOTE: Google will publish the list of accepted organizations on April 10, 2024, at 18:00 UTC. Stay tuned for updates!_
 
 ## Technical Writer Onboarding Guide
-In our efforts to automate the onboarding process for new documentation contributors at AsyncAPI, we've created the [AsyncAPI Technical Writer Onboarding Guide and Checklist](https://github.com/asyncapi/community/blob/master/docs/onboarding-guide). The guide is designed to empower new community members with the necessary knowledge and skills to contribute effectively to our documentation. We also believe this guide will encourage greater participation.
+In our efforts to automate the onboarding process for new documentation contributors at AsyncAPI, we've created the [AsyncAPI Technical Writer Onboarding Guide and Checklist](https://github.com/asyncapi/community/blob/master/docs/000-onboarding). The guide is designed to empower new community members with the necessary knowledge and skills to contribute effectively to our documentation. We also believe this guide will encourage greater participation.
 
 Outlined in this guide are various workflows and processes, including:
 - Responsibilities of technical writer contributors
