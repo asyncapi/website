@@ -306,6 +306,68 @@ describe('combineTools function', () => {
     );
   });
 
+  it('produces deterministically-ordered all-tags.json regardless of tool arrival order (tail is sorted)', async () => {
+    await jest.isolateModulesAsync(async () => {
+      const freshCombine: typeof import('../../scripts/tools/combine-tools') = await import(
+        '../../scripts/tools/combine-tools'
+      );
+
+      const toolsWithNewTags = {
+        category1: {
+          description: 'Sample Category 1',
+          toolsList: [
+            {
+              title: 'Tool Alpha',
+              filters: {
+                language: ['Zeta-Lang'],
+                technology: ['Zeta-Tech'],
+                categories: ['category1']
+              },
+              links: { repoUrl: 'https://github.com/example/tool-alpha' }
+            },
+            {
+              title: 'Tool Beta',
+              filters: {
+                language: ['Alpha-Lang'],
+                technology: ['Alpha-Tech'],
+                categories: ['category1']
+              },
+              links: { repoUrl: 'https://github.com/example/tool-beta' }
+            },
+            {
+              title: 'Tool Gamma',
+              filters: {
+                language: ['Middle-Lang'],
+                technology: ['Middle-Tech'],
+                categories: ['category1']
+              },
+              links: { repoUrl: 'https://github.com/example/tool-gamma' }
+            }
+          ]
+        }
+      } as unknown as Parameters<typeof freshCombine.combineTools>[0];
+
+      await freshCombine.combineTools(toolsWithNewTags, {}, toolsPath, tagsPath);
+
+      const tagsData = readJSON(tagsPath);
+
+      expect(tagsData.languages.map((l: any) => l.name)).toEqual([
+        'JavaScript',
+        'Python',
+        'Alpha-Lang',
+        'Middle-Lang',
+        'Zeta-Lang'
+      ]);
+      expect(tagsData.technologies.map((t: any) => t.name)).toEqual([
+        'Node.js',
+        'Flask',
+        'Alpha-Tech',
+        'Middle-Tech',
+        'Zeta-Tech'
+      ]);
+    });
+  });
+
   it('should skip inherited prototype properties in automatedTools', async () => {
     const proto = {
       extraCategory: {

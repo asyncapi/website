@@ -16,6 +16,7 @@ import type {
 
 import { logger } from '../helpers/logger';
 import { categoryList } from './categorylist';
+import { compareToolsDeterministic } from './compare-tools';
 import { languagesColor, technologiesColor } from './tags-color';
 import { createToolObject } from './tools-object';
 import schema from './tools-schema.json';
@@ -46,8 +47,40 @@ const options = {
 // from specified list of same.
 const languageList = [...languagesColor];
 const technologyList = [...technologiesColor];
+// Snapshot the seed boundaries so, when serialising all-tags.json, we can keep
+// the curated seed order from tags-color.ts intact and only deterministically
+// sort tags that were auto-discovered during the run. Without this the tail of
+// the list is ordered by whichever Promise.all branch finished its Fuse search
+// first, which is what produces the no-op `FastAPI↔TypeScript`-style diffs in
+// the weekly "chore: update tools.json" PR (see docs/tools-workflow-no-op-pr-fix.md).
+const seedLanguageCount = languageList.length;
+const seedTechnologyCount = technologyList.length;
 let languageFuse = new Fuse(languageList, options);
 let technologyFuse = new Fuse(technologyList, options);
+
+/**
+ * Returns a copy of a tag list where entries added beyond the seed boundary
+ * are deduplicated by `name` and sorted alphabetically. The seed entries
+ * (from tags-color.ts) keep their original, curated order.
+ */
+function stabiliseTagList(list: LanguageColorItem[], seedCount: number): LanguageColorItem[] {
+  const seed = list.slice(0, seedCount);
+  const discovered = list.slice(seedCount);
+
+  const seenNames = new Set<string>(seed.map((tag) => tag.name));
+  const uniqueDiscovered: LanguageColorItem[] = [];
+
+  for (const tag of discovered) {
+    if (!seenNames.has(tag.name)) {
+      seenNames.add(tag.name);
+      uniqueDiscovered.push(tag);
+    }
+  }
+
+  uniqueDiscovered.sort((a, b) => a.name.localeCompare(b.name, 'en'));
+
+  return [...seed, ...uniqueDiscovered];
+}
 
 /**
  * Enriches a tool object by processing its language and technology filters for display on the website.
@@ -290,7 +323,7 @@ const combineTools = async (
             return 0;
           }
 
-          return tool.title.localeCompare(anotherTool.title);
+          return compareToolsDeterministic(tool, anotherTool);
         }) as FinalAsyncAPITool[];
       }
     }
@@ -300,8 +333,8 @@ const combineTools = async (
       tagsPath,
       JSON.stringify(
         {
-          languages: languageList,
-          technologies: technologyList
+          languages: stabiliseTagList(languageList, seedLanguageCount),
+          technologies: stabiliseTagList(technologyList, seedTechnologyCount)
         },
         null,
         2
