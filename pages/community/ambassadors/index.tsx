@@ -210,7 +210,7 @@ export default function Index() {
 
               return (
                 <div
-                  key={index}
+                  key={link.title}
                   className='flex flex-col items-center text-center p-6 rounded-2xl bg-white dark:bg-dark-card border border-gray-200 dark:border-gray-700 hover:shadow-lg  transition-shadow '
                 >
                   <div className='rounded-full bg-secondary-100 dark:bg-secondary-900/30 p-4 mb-4'>
@@ -251,7 +251,7 @@ export default function Index() {
           <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3' data-testid='Ambassadors-members-main'>
             {currentAmbassadors.map((ambassador: Ambassador, index: number) => (
               <div
-                key={index}
+                key={ambassador.github}
                 className='group relative bg-white dark:bg-dark-background rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1'
                 data-testid='Ambassadors-members'
               >
@@ -372,7 +372,7 @@ export default function Index() {
           <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4'>
             {ambassadorList.tokens.map((token, index) => (
               <div
-                key={index}
+                key={token.title}
                 className='flex flex-col items-center text-center p-8 rounded-3xl bg-white dark:bg-dark-card border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all duration-300'
               >
                 <div className='rounded-full bg-secondary-100 dark:bg-secondary-900/30 p-4 mb-6'>

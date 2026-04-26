@@ -3,9 +3,9 @@ import React from 'react';
 /**
  * @description Icon component for Play
  */
-interface IconPlayProps {
+type IconPlayProps = Readonly<{
   className?: string;
-}
+}>;
 
 /**
  * @param {IconPlayProps} props - The props for the Play icon

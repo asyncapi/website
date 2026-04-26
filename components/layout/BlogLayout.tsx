@@ -13,11 +13,11 @@ import Head from '../Head';
 import TOC from '../TOC';
 import Container from './Container';
 
-interface IBlogLayoutProps {
+type IBlogLayoutProps = Readonly<{
   post: IPosts['blog'][number];
   children: React.ReactNode;
   navItems?: IPosts['blog'];
-}
+}>;
 
 /**
  * @description The blog layout with the post and its content
@@ -65,7 +65,7 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
                       {post.authors
                         .map((author, index) =>
                           author.link ? (
-                            <a key={index} href={author.link} className='dark:text-gray-100'>
+                            <a key={author.name} href={author.link} className='dark:text-gray-100'>
                               {author.name}
                             </a>
                           ) : (

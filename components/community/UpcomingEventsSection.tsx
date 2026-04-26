@@ -157,7 +157,7 @@ export default function UpcomingEventsSection() {
         ) : (
           <ul className='grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3' data-testid='UpcomingEvents-Grid'>
             {currentEvents.map((event: Event, index: number) => {
-              return <EventPostItem key={index} id={event.title} post={event} />;
+              return <EventPostItem key={event.title} id={event.title} post={event} />;
             })}
           </ul>
         )}

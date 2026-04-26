@@ -57,7 +57,6 @@ export default function Hero({ className = '' }: HeroProps) {
 
           <DiamondSponsors
             className={'w-full relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]'}
-            showSupportBanner={false}
           />
         </div>
         <Features />

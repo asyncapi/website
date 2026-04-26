@@ -10,6 +10,81 @@ type PaginationProps = Readonly<{
 }>;
 
 /**
+ * @description Returns the active/inactive button class string for a page button.
+ */
+function getPageButtonClass(isActive: boolean, padding = 'px-4 py-2'): string {
+  if (isActive) {
+    return `${padding} rounded-lg transition-colors bg-primary-500 text-white`;
+  }
+
+  return `${padding} rounded-lg transition-colors text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800`;
+}
+
+/**
+ * @description Builds the compact page list with ellipsis markers.
+ */
+function buildCompactPageList(totalPages: number, currentPage: number): (number | 'ellipsis')[] {
+  if (totalPages <= 7) {
+    return Array.from({ length: totalPages }, (_, i) => i + 1);
+  }
+
+  const pages: (number | 'ellipsis')[] = [1];
+
+  if (currentPage > 3) {
+    pages.push('ellipsis');
+  }
+
+  const start = Math.max(2, currentPage - 1);
+  const end = Math.min(totalPages - 1, currentPage + 1);
+
+  for (let i = start; i <= end; i++) {
+    if (i !== 1 && i !== totalPages) {
+      pages.push(i);
+    }
+  }
+
+  if (currentPage < totalPages - 2) {
+    pages.push('ellipsis');
+  }
+
+  if (totalPages > 1) {
+    pages.push(totalPages);
+  }
+
+  return pages;
+}
+
+/**
+ * @description Computes the visible page range for the default variant.
+ */
+function getDefaultPageRange(totalPages: number, currentPage: number, maxVisible: number) {
+  if (totalPages <= maxVisible) {
+    return { startPage: 1, endPage: totalPages };
+  }
+
+  if (currentPage <= 3) {
+    return { startPage: 1, endPage: maxVisible };
+  }
+
+  if (currentPage >= totalPages - 2) {
+    return { startPage: totalPages - maxVisible + 1, endPage: totalPages };
+  }
+
+  return { startPage: currentPage - 2, endPage: currentPage + 2 };
+}
+
+/**
+ * @description Returns the CSS rotation class for the dropdown chevron.
+ */
+function getChevronRotation(isOpen: boolean, direction: 'down' | 'up'): string {
+  if (!isOpen) {
+    return '';
+  }
+
+  return direction === 'up' ? 'rotate-0' : 'rotate-180';
+}
+
+/**
  * @description Unified Pagination component with customizable display modes and "Go to page" dropdown
  * @param {PaginationProps} props - The props for the component
  * @param {number} props.currentPage - The current active page number
@@ -38,108 +113,49 @@ export default function Pagination({
     }
   };
 
-  const renderPageNumbers = () => {
-    if (variant === 'simple') {
-      // Simple variant: show all page numbers
-      return Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+  const renderSimplePages = () =>
+    Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+      <button
+        key={page}
+        onClick={() => handlePageClick(page)}
+        className={`${getPageButtonClass(currentPage === page)} ${
+          currentPage !== page ? 'border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800' : ''
+        }`}
+      >
+        {page}
+      </button>
+    ));
+
+  const renderCompactPages = () => {
+    const pages = buildCompactPageList(totalPages, currentPage);
+
+    return pages.map((page, index) => {
+      if (page === 'ellipsis') {
+        const prevPage = pages[index - 1];
+        const nextPage = pages[index + 1];
+
+        return (
+          <span key={`ellipsis-${prevPage}-${nextPage}`} className='px-2 text-gray-600 dark:text-gray-400'>
+            ...
+          </span>
+        );
+      }
+
+      return (
         <button
           key={page}
           onClick={() => handlePageClick(page)}
-          className={`px-4 py-2 rounded-lg transition-colors ${
-            currentPage === page
-              ? 'bg-primary-500 text-white'
-              : 'border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
-          }`}
+          className={getPageButtonClass(currentPage === page, 'px-3 py-2')}
         >
           {page}
         </button>
-      ));
-    }
+      );
+    });
+  };
 
-    if (variant === 'compact') {
-      // Compact variant: show current ±1, first, last with ellipsis
-      const pages: (number | 'ellipsis')[] = [];
-
-      if (totalPages <= 7) {
-        // Show all pages if 7 or fewer
-        for (let i = 1; i <= totalPages; i++) {
-          pages.push(i);
-        }
-      } else {
-        // Always show first page
-        pages.push(1);
-
-        if (currentPage > 3) {
-          pages.push('ellipsis');
-        }
-
-        // Show pages around current
-        const start = Math.max(2, currentPage - 1);
-        const end = Math.min(totalPages - 1, currentPage + 1);
-
-        for (let i = start; i <= end; i++) {
-          if (i !== 1 && i !== totalPages) {
-            pages.push(i);
-          }
-        }
-
-        if (currentPage < totalPages - 2) {
-          pages.push('ellipsis');
-        }
-
-        // Always show last page
-        if (totalPages > 1) {
-          pages.push(totalPages);
-        }
-      }
-
-      return pages.map((page, index) => {
-        if (page === 'ellipsis') {
-          const prevPage = pages[index - 1];
-          const nextPage = pages[index + 1];
-          const key = `ellipsis-${prevPage}-${nextPage}`;
-
-          return (
-            <span key={key} className='px-2 text-gray-600 dark:text-gray-400'>
-              ...
-            </span>
-          );
-        }
-
-        return (
-          <button
-            key={page}
-            onClick={() => handlePageClick(page)}
-            className={`px-3 py-2 rounded-lg transition-colors ${
-              currentPage === page
-                ? 'bg-primary-500 text-white'
-                : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'
-            }`}
-          >
-            {page}
-          </button>
-        );
-      });
-    }
-
-    // Default variant: show up to 5 pages with ellipsis
+  const renderDefaultPages = () => {
     const maxVisible = 5;
-    let startPage: number;
-    let endPage: number;
-
-    if (totalPages <= maxVisible) {
-      startPage = 1;
-      endPage = totalPages;
-    } else if (currentPage <= 3) {
-      startPage = 1;
-      endPage = maxVisible;
-    } else if (currentPage >= totalPages - 2) {
-      startPage = totalPages - maxVisible + 1;
-      endPage = totalPages;
-    } else {
-      startPage = currentPage - 2;
-      endPage = currentPage + 2;
-    }
+    const { startPage, endPage } = getDefaultPageRange(totalPages, currentPage, maxVisible);
 
     const pages: React.JSX.Element[] = [];
 
@@ -148,11 +164,7 @@ export default function Pagination({
         <button
           key={i}
           onClick={() => handlePageClick(i)}
-          className={`px-4 py-2 rounded-lg transition-colors ${
-            currentPage === i
-              ? 'bg-primary-500 text-white'
-              : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'
-          }`}
+          className={getPageButtonClass(currentPage === i)}
         >
           {i}
         </button>
@@ -167,6 +179,17 @@ export default function Pagination({
         )}
       </>
     );
+  };
+
+  const renderPageNumbers = () => {
+    switch (variant) {
+      case 'simple':
+        return renderSimplePages();
+      case 'compact':
+        return renderCompactPages();
+      default:
+        return renderDefaultPages();
+    }
   };
 
   const handleDropdownToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -184,6 +207,8 @@ export default function Pagination({
     }
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  const chevronRotation = getChevronRotation(isDropdownOpen, dropdownDirection);
 
   return (
     <div className={`flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-2 ${className}`}>
@@ -220,24 +245,14 @@ export default function Pagination({
               aria-label='Select page'
             >
               <span className='flex-1 text-left text-gray-900 dark:text-white'>{currentPage}</span>
-              {(() => {
-                let rotationClass = '';
-
-                if (isDropdownOpen) {
-                  rotationClass = dropdownDirection === 'up' ? 'rotate-0' : 'rotate-180';
-                }
-
-                return (
-                  <svg
-                    className={`w-4 h-4 flex-shrink-0 text-gray-600 dark:text-gray-400 transition-transform ${rotationClass}`}
-                    fill='none'
-                    stroke='currentColor'
-                    viewBox='0 0 24 24'
-                  >
-                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M19 9l-7 7-7-7' />
-                  </svg>
-                );
-              })()}
+              <svg
+                className={`w-4 h-4 flex-shrink-0 text-gray-600 dark:text-gray-400 transition-transform ${chevronRotation}`}
+                fill='none'
+                stroke='currentColor'
+                viewBox='0 0 24 24'
+              >
+                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M19 9l-7 7-7-7' />
+              </svg>
             </button>
 
             {isDropdownOpen && (

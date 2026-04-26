@@ -3,9 +3,9 @@ import React from 'react';
 /**
  * @description Icon component for Microphone
  */
-interface IconMicrophoneProps {
+type IconMicrophoneProps = Readonly<{
   className?: string;
-}
+}>;
 
 /**
  * @param {IconMicrophoneProps} props - The props for the Microphone icon

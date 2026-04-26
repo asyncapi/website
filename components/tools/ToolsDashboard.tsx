@@ -176,14 +176,15 @@ export default function ToolsDashboard() {
         <div className='my-10 flex flex-wrap justify-between gap-4 lg:flex-nowrap'>
           <div className='flex h-auto w-[47%] gap-5 lg:w-1/5'>
             <div className='relative h-auto w-full' ref={filterRef as React.LegacyRef<HTMLDivElement>}>
-              <div
+              <button
+                type='button'
                 className='flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-dark-card bg-white px-4 py-1 text-sm text-gray-700 dark:text-gray-300 shadow-md dark:shadow-lg hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-lg transition-all duration-300 hover:scale-[1.02]'
                 onClick={() => setOpenFilter(!openFilter)}
                 data-testid='ToolsDashboard-Filters-Click'
               >
                 <FilterIcon />
-                <div className='font-medium'>Filter</div>
-              </div>
+                <span className='font-medium'>Filter</span>
+              </button>
               {openFilter && (
                 <button className='absolute top-16 z-20 min-w-[20rem]'>
                   <Filters setOpenFilter={setOpenFilter} />
@@ -193,16 +194,17 @@ export default function ToolsDashboard() {
           </div>
           <div className='flex h-auto w-[47%] gap-5 lg:w-1/5'>
             <div className='relative h-auto w-full' ref={categoryRef as React.LegacyRef<HTMLDivElement>}>
-              <div
+              <button
+                type='button'
                 className='flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-dark-card bg-white px-4 py-1 text-sm text-gray-700 dark:text-gray-300 shadow-md dark:shadow-lg hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-lg transition-all duration-300 hover:scale-[1.02]'
                 onClick={() => setopenCategory(!openCategory)}
                 data-testid='ToolsDashboard-category'
               >
-                <div className='font-medium'>Jump to Category</div>
+                <span className='font-medium'>Jump to Category</span>
                 <ArrowDown
                   className={`my-auto transition-transform duration-300 ${openCategory ? 'rotate-180' : ''}`}
                 />
-              </div>
+              </button>
               {openCategory && (
                 <div className='absolute right-52 top-16 z-20'>
                   <CategoryDropdown setopenCategory={setopenCategory} />
@@ -231,13 +233,14 @@ export default function ToolsDashboard() {
           </div>
         </div>
         {isFiltered && (
-          <div
+          <button
+            type='button'
             className='mt-4 flex cursor-pointer items-center text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200'
             onClick={clearFilters}
           >
             <Cross />
             <span className='ml-3 font-medium'>Clear Filters</span>
-          </div>
+          </button>
         )}
         <div className='mt-0'>
           {checkToolsList ? (

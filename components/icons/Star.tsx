@@ -3,9 +3,9 @@ import React from 'react';
 /**
  * @description Icon component for Star
  */
-interface IconStarProps {
+type IconStarProps = Readonly<{
   className?: string;
-}
+}>;
 
 /**
  * @param {IconStarProps} props - The props for the Star icon

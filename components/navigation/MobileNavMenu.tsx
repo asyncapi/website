@@ -21,12 +21,12 @@ interface MenuItem {
   text: string;
 }
 
-interface MobileNavMenuProps {
+type MobileNavMenuProps = Readonly<{
   onClickClose?: () => void;
   uniqueLangs: { key: string; text: string; value: string }[];
   currentLanguage: string;
   changeLanguage: (locale: string, langPicker: boolean) => void;
-}
+}>;
 
 /**
  * @description MobileNavMenu component for displaying a responsive navigation menu on mobile devices.
@@ -91,7 +91,7 @@ export default function MobileNavMenu({
               </div>
             </div>
           </div>
-          <div className='space-y-2 px-5 py-3' onClick={() => showMenu('learning')} data-testid='MobileNav-docs'>
+          <div className='space-y-2 px-5 py-3' data-testid='MobileNav-docs'>
             <h4 className='flex justify-between font-semibold text-gray-800 dark:text-white text-base'>
               <Link
                 href='/docs'
@@ -99,13 +99,17 @@ export default function MobileNavMenu({
               >
                 Docs
               </Link>
-              <span
-                className={`inline-flex items-center transition-transform duration-200 ${
+              <button
+                type='button'
+                aria-expanded={open === 'learning'}
+                aria-label='Toggle Docs menu'
+                onClick={() => showMenu('learning')}
+                className={`inline-flex items-center transition-transform duration-200 hover:text-secondary-600 dark:hover:text-secondary-400 ${
                   open === 'learning' ? 'rotate-180' : ''
                 }`}
               >
                 <NavItemDropdown />
-              </span>
+              </button>
             </h4>
             {open === 'learning' && (
               <div className='animate-in fade-in slide-in-from-top-2 duration-200'>
@@ -113,7 +117,7 @@ export default function MobileNavMenu({
               </div>
             )}
           </div>
-          <div className='space-y-2 px-5 py-3' onClick={() => showMenu('tooling')} data-testid='MobileNav-tools'>
+          <div className='space-y-2 px-5 py-3' data-testid='MobileNav-tools'>
             <h4 className='flex justify-between font-semibold text-gray-800 dark:text-white text-base'>
               <Link
                 href='/tools'
@@ -121,13 +125,17 @@ export default function MobileNavMenu({
               >
                 Tools
               </Link>
-              <span
-                className={`inline-flex items-center transition-transform duration-200 ${
+              <button
+                type='button'
+                aria-expanded={open === 'tooling'}
+                aria-label='Toggle Tools menu'
+                onClick={() => showMenu('tooling')}
+                className={`inline-flex items-center transition-transform duration-200 hover:text-secondary-600 dark:hover:text-secondary-400 ${
                   open === 'tooling' ? 'rotate-180' : ''
                 }`}
               >
                 <NavItemDropdown />
-              </span>
+              </button>
             </h4>
             {open === 'tooling' && (
               <div className='animate-in fade-in slide-in-from-top-2 duration-200'>
@@ -135,7 +143,7 @@ export default function MobileNavMenu({
               </div>
             )}
           </div>
-          <div className='space-y-2 px-5 py-3' onClick={() => showMenu('community')} data-testid='MobileNav-community'>
+          <div className='space-y-2 px-5 py-3' data-testid='MobileNav-community'>
             <h4 className='flex justify-between font-semibold text-gray-800 dark:text-white text-base'>
               <Link
                 href='/community'
@@ -143,13 +151,17 @@ export default function MobileNavMenu({
               >
                 Community
               </Link>
-              <span
-                className={`inline-flex items-center transition-transform duration-200 ${
+              <button
+                type='button'
+                aria-expanded={open === 'community'}
+                aria-label='Toggle Community menu'
+                onClick={() => showMenu('community')}
+                className={`inline-flex items-center transition-transform duration-200 hover:text-secondary-600 dark:hover:text-secondary-400 ${
                   open === 'community' ? 'rotate-180' : ''
                 }`}
               >
                 <NavItemDropdown />
-              </span>
+              </button>
             </h4>
             {open === 'community' && (
               <div className='animate-in fade-in slide-in-from-top-2 duration-200'>
@@ -157,24 +169,29 @@ export default function MobileNavMenu({
               </div>
             )}
           </div>
-          <div className='space-y-2 px-5 py-3' onClick={() => showMenu('others')} data-testid='MobileNav-others'>
+          <div className='space-y-2 px-5 py-3' data-testid='MobileNav-others'>
             <div className='grid gap-4'>
               <div>
                 <h4 className='mb-4 flex justify-between font-semibold text-gray-800 dark:text-white text-base'>
+                  <span className='text-gray-800 dark:text-white'>Others</span>
                   <button
                     type='button'
-                    className='cursor-pointer hover:text-secondary-600 dark:hover:text-secondary-400 transition-colors'
+                    aria-expanded={open === 'others'}
+                    aria-label='Toggle Others menu'
+                    onClick={() => showMenu('others')}
+                    className={`inline-flex items-center transition-transform duration-200 hover:text-secondary-600 dark:hover:text-secondary-400 ${
+                      open === 'others' ? 'rotate-180' : ''
+                    }`}
                   >
-                    Others
+                    <NavItemDropdown />
                   </button>
-                  <NavItemDropdown />
                 </h4>
                 {open === 'others' && (
                   <div className='animate-in fade-in slide-in-from-top-2 duration-200'>
                     {otherItems.map((item: MenuItem, index: number) => (
                       <Link
                         href={item.href}
-                        key={index}
+                        key={item.href}
                         target={item.target || '_self'}
                         rel='noopener noreferrer'
                         className='mb-3 block rounded-lg px-3 py-2 text-base font-medium leading-6 text-gray-700 dark:text-gray-300 transition-all duration-150 ease-in-out hover:bg-gray-100/60 dark:hover:bg-gray-700/40 hover:translate-x-1'
@@ -188,17 +205,24 @@ export default function MobileNavMenu({
               </div>
             </div>
           </div>
-          <div className='space-y-2 px-5 py-3 pb-6' onClick={() => showMenu('language')}>
+          <div className='space-y-2 px-5 py-3 pb-6'>
             <div className='grid gap-4'>
               <div>
                 <h4 className='mb-4 flex justify-between font-semibold text-gray-800 dark:text-white text-base'>
+                  <span className='flex items-center gap-x-2 text-gray-800 dark:text-white'>
+                    Language <IconLanguage className='size-5' />
+                  </span>
                   <button
                     type='button'
-                    className='flex cursor-pointer items-center gap-x-2 hover:text-secondary-600 dark:hover:text-secondary-400 transition-colors'
+                    aria-expanded={open === 'language'}
+                    aria-label='Toggle Language menu'
+                    onClick={() => showMenu('language')}
+                    className={`inline-flex items-center transition-transform duration-200 hover:text-secondary-600 dark:hover:text-secondary-400 ${
+                      open === 'language' ? 'rotate-180' : ''
+                    }`}
                   >
-                    Language <IconLanguage className='size-5' />
+                    <NavItemDropdown />
                   </button>
-                  <NavItemDropdown />
                 </h4>
                 {open === 'language' && (
                   <div className='animate-in fade-in slide-in-from-top-2 duration-200'>
@@ -206,7 +230,7 @@ export default function MobileNavMenu({
                       <button
                         key={lang.key}
                         onClick={() => changeLanguage(lang.value.toLowerCase(), true)}
-                        className={`mb-3 ml-2 block w-full rounded-lg px-3 py-2 text-start text-sm ${'font-medium leading-6 transition-all duration-150 ease-in-out'} ${'hover:bg-gray-100/60 dark:hover:bg-gray-700/40 hover:translate-x-1'} ${
+                        className={`mb-3 ml-2 block w-full rounded-lg px-3 py-2 text-start text-sm font-medium leading-6 transition-all duration-150 ease-in-out hover:bg-gray-100/60 dark:hover:bg-gray-700/40 hover:translate-x-1 ${
                           currentLanguage.toLowerCase() === lang.text.toLowerCase()
                             ? 'text-secondary-600 dark:text-secondary-400 bg-secondary-100/70 dark:bg-gray-700/50'
                             : 'text-gray-700 dark:text-gray-300'

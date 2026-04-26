@@ -3,9 +3,9 @@ import React from 'react';
 /**
  * @description Icon component for Plus
  */
-interface IconProps {
+type IconProps = Readonly<{
   className?: string;
-}
+}>;
 
 /**
  * @param {IconProps} props - The props for the Plus icon

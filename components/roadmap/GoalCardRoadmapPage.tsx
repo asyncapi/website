@@ -1,10 +1,10 @@
 import React from 'react';
 
-interface GoalCardRoadmapPageProps {
+type GoalCardRoadmapPageProps = Readonly<{
   icon: React.ComponentType<{ className?: string }>;
   title: string;
   description: string;
-}
+}>;
 
 /**
  * @description GoalCardRoadmapPage component displays a goal with an icon, title, and description.

@@ -113,7 +113,7 @@ export default function CaseStudies() {
               className='featured-case-studies-swiper'
             >
               {(CaseStudiesList as ICaseStudies).map((study, index) => (
-                <SwiperSlide key={index}>
+                <SwiperSlide key={study.id}>
                   <Link href={`/casestudies/${study.id}`} className='group block h-full'>
                     <div className='h-full bg-white dark:bg-dark-background border border-gray-200 dark:border-gray-700 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 min-h-[320px] flex flex-col'>
                       {/* Company Logo */}
@@ -226,7 +226,7 @@ export default function CaseStudies() {
           <div className='space-y-4 mt-4'>
             {paginatedAdopters.map((adopter, index) => (
               <div
-                key={index}
+                key={`${adopter.companyName}-${index}`}
                 className='border-2 border-primary-500/50 dark:border-primary-500/50 rounded-xl px-6 py-6 bg-white dark:bg-dark-card transition-all duration-300 hover:border-primary-500 dark:hover:border-primary-400 hover:shadow-2xl hover:-translate-y-1 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 cursor-pointer'
               >
                 <div className='grid grid-cols-12 gap-4 items-center'>

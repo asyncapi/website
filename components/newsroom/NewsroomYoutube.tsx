@@ -3,9 +3,9 @@ import React from 'react';
 import videoData from '../../config/newsroom_videos.json';
 import YouTubeCard from './YouTubeCard';
 
-interface NewsroomYoutubeProps {
+type NewsroomYoutubeProps = Readonly<{
   className?: string;
-}
+}>;
 
 /**
  * Newsroom Youtube component displays a grid of YouTubeCard components.
@@ -20,7 +20,7 @@ export default function NewsroomYoutube({ className = '' }: NewsroomYoutubeProps
     <div className={className} data-testid='NewsroomYoutube-main'>
       <ul className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
         {videos.map((video, index) => (
-          <YouTubeCard key={index} video={video} />
+          <YouTubeCard key={video.videoId} video={video} />
         ))}
       </ul>
     </div>

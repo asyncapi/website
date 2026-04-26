@@ -1,13 +1,13 @@
 import React from 'react';
 
-interface ToolingCardProps {
+type ToolingCardProps = Readonly<{
   name: string;
   description: string;
   badge?: string;
   language: string;
   link?: string;
   isShuffling?: boolean;
-}
+}>;
 
 /**
  * @description ToolingCard component for displaying AsyncAPI tools with stacked, rotated effect

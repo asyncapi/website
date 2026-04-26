@@ -15,9 +15,9 @@ import FiltersDisplay from './FiltersDisplay';
 import FiltersDropdown from './FiltersDropdown';
 import Toggle from './Toggle';
 
-interface FiltersProps {
+type FiltersProps = Readonly<{
   setOpenFilter: React.Dispatch<React.SetStateAction<boolean>>;
-}
+}>;
 
 enum OpenedFiltersDropdownType {
   NONE = '',
@@ -143,30 +143,33 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
                 setRead={setReadMore}
               />
             </div>
-            <div
+            <button
+              type='button'
               className='mb-0 flex cursor-pointer gap-0.5 text-xs hover:underline text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors'
               onClick={undoChanges}
             >
               Undo Changes
-            </div>
+            </button>
           </div>
           <div className='flex gap-2' data-testid='Applied-filters'>
-            <div
+            <button
+              type='button'
               className={twMerge(
                 `bg-gray-200 dark:bg-gray-700 px-4 py-2 flex gap-1 rounded-md hover:bg-secondary-100 dark:hover:bg-secondary-900/50 border hover:border-secondary-500 dark:hover:border-secondary-400 cursor-pointer transition-all dark:text-gray-300 ${checkPaid === 'free' ? 'bg-secondary-100 dark:bg-secondary-900/50 border-secondary-500 dark:border-secondary-400' : ''}`
               )}
               onClick={() => (checkPaid === 'free' ? setCheckPaid('all') : setCheckPaid('free'))}
             >
-              <div className='text-sm'>Open Source</div>
+              <span className='text-sm'>Open Source</span>
               <img src='/img/illustrations/icons/FreeIcon.svg' alt='Free' className='dark:invert' />
-            </div>
-            <div
+            </button>
+            <button
+              type='button'
               className={`flex cursor-pointer gap-1 rounded-md border bg-gray-200 dark:bg-gray-700 px-4 py-2 hover:border-secondary-500 dark:hover:border-secondary-400 hover:bg-secondary-100 dark:hover:bg-secondary-900/50 transition-all dark:text-gray-300 ${checkPaid === 'paid' ? 'border-secondary-500 dark:border-secondary-400 bg-secondary-100 dark:bg-secondary-900/50' : ''}`}
               onClick={() => (checkPaid === 'paid' ? setCheckPaid('all') : setCheckPaid('paid'))}
             >
-              <div className='text-sm'>Commercial</div>
+              <span className='text-sm'>Commercial</span>
               <img src='/img/illustrations/icons/PaidIcon.svg' alt='Paid' className='dark:invert' />
-            </div>
+            </button>
           </div>
         </div>
         <hr className='my-4 border-gray-200 dark:border-gray-700' />
@@ -198,24 +201,25 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
             setRead={setReadMore}
           />
           <div className='w-full'>
-            <div
+            <button
+              type='button'
               className={twMerge(
                 `px-4 py-2 flex justify-between rounded-lg border border-gray-400 dark:border-gray-600 w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 shadow text-sm cursor-pointer transition-all ${openedFiltersDropown === OpenedFiltersDropdownType.LANGUAGE ? 'rounded-b-none' : ''}`
               )}
               onClick={() => toggleDropdown(OpenedFiltersDropdownType.LANGUAGE)}
             >
-              <div className='flex items-center text-dark dark:text-gray-300'>
+              <span className='flex items-center text-dark dark:text-gray-300'>
                 {/* eslint-disable-next-line no-nested-ternary */}
                 {checkedLanguage.length > 0
                   ? checkedLanguage.length === 1
                     ? '1 option selected'
                     : `${checkedLanguage.length} options selected`
                   : 'Select Languages...'}
-              </div>
+              </span>
               <ArrowDown
                 className={`my-auto transition-transform ${openedFiltersDropown === OpenedFiltersDropdownType.LANGUAGE ? 'rotate-180' : ''}`}
               />
-            </div>
+            </button>
             {openedFiltersDropown === OpenedFiltersDropdownType.LANGUAGE && (
               <div className='w-auto overflow-x-auto rounded-b-lg border border-gray-400 dark:border-gray-600 bg-gray-200 dark:bg-gray-700 duration-150'>
                 <FiltersDropdown
@@ -240,24 +244,25 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
             setRead={setReadMore}
           />
           <div className='w-full'>
-            <div
+            <button
+              type='button'
               className={twMerge(
                 `px-4 py-2 flex justify-between rounded-lg border border-gray-400 dark:border-gray-600 w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 shadow text-sm cursor-pointer transition-all ${openedFiltersDropown === OpenedFiltersDropdownType.TECHNOLOGY ? 'rounded-b-none' : ''}`
               )}
               onClick={() => toggleDropdown(OpenedFiltersDropdownType.TECHNOLOGY)}
             >
-              <div className='flex items-center text-dark dark:text-gray-300'>
+              <span className='flex items-center text-dark dark:text-gray-300'>
                 {/* eslint-disable-next-line no-nested-ternary */}
                 {checkedTechnology.length > 0
                   ? checkedTechnology.length === 1
                     ? '1 option selected'
                     : `${checkedTechnology.length} options selected`
                   : 'Select Technologies...'}
-              </div>
+              </span>
               <ArrowDown
                 className={`my-auto transition-transform ${openedFiltersDropown === OpenedFiltersDropdownType.TECHNOLOGY ? 'rotate-180' : ''}`}
               />
-            </div>
+            </button>
             {openedFiltersDropown === OpenedFiltersDropdownType.TECHNOLOGY && (
               <div className='w-auto overflow-x-auto rounded-b-lg border border-gray-400 dark:border-gray-600 bg-gray-200 dark:bg-gray-700 duration-150'>
                 <FiltersDropdown
@@ -282,24 +287,25 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
             setRead={setReadMore}
           />
           <div className='w-full'>
-            <div
+            <button
+              type='button'
               className={twMerge(
                 `px-4 py-2 flex justify-between rounded-lg border border-gray-400 dark:border-gray-600 w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 shadow text-sm cursor-pointer transition-all ${openedFiltersDropown === OpenedFiltersDropdownType.CATEGORY ? 'rounded-b-none' : ''}`
               )}
               onClick={() => toggleDropdown(OpenedFiltersDropdownType.CATEGORY)}
             >
-              <div className='flex items-center text-dark dark:text-gray-300'>
+              <span className='flex items-center text-dark dark:text-gray-300'>
                 {/* eslint-disable-next-line no-nested-ternary */}
                 {checkedCategory.length > 0
                   ? checkedCategory.length === 1
                     ? '1 option selected'
                     : `${checkedCategory.length} options selected`
                   : 'Select Categories...'}
-              </div>
+              </span>
               <ArrowDown
                 className={`my-auto transition-transform ${openedFiltersDropown === OpenedFiltersDropdownType.CATEGORY ? 'rotate-180' : ''}`}
               />
-            </div>
+            </button>
             {openedFiltersDropown === OpenedFiltersDropdownType.CATEGORY && (
               <div className='w-auto overflow-x-auto rounded-b-lg border border-gray-400 dark:border-gray-600 bg-gray-200 dark:bg-gray-700 duration-150'>
                 <FiltersDropdown
@@ -313,8 +319,8 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
           </div>
         </div>
         <hr className='my-4 border-gray-200 dark:border-gray-700' />
-        <div className='mx-4 my-6 mb-0 w-auto' onClick={handleApplyFilters}>
-          <Button text='Apply Filters' className='w-full' />
+        <div className='mx-4 my-6 mb-0 w-auto'>
+          <Button text='Apply Filters' className='w-full' onClick={handleApplyFilters} />
         </div>
       </div>
     </ToolFilter>
