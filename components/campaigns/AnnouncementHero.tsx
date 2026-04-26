@@ -20,7 +20,7 @@ export default function AnnouncementHero({ className = '' }: IAnnouncementHeroPr
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % visibleBanners.length);
-    }, 2000); // Change every 2 seconds
+    }, 5000); // Change every 5 seconds
 
     return () => clearInterval(interval);
   }, [visibleBanners.length]);
