@@ -2,14 +2,14 @@ import React from 'react';
 
 import IconArrowRight from '../icons/ArrowRight';
 
-interface ConferenceBannerProps {
+type ConferenceBannerProps = Readonly<{
   title: string;
   city: string;
   dateLocation: string;
   cfaText: string;
   link: string;
   className?: string;
-}
+}>;
 
 /**
  * @description Small banner component for conference announcements, similar to the green banner style

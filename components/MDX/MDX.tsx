@@ -1,7 +1,7 @@
 import { MDXProvider as CoreMDXProvider } from '@mdx-js/react';
 import mermaid from 'mermaid';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useId, useState } from 'react';
 import {
   TwitterDMButton,
   TwitterFollowButton,
@@ -174,44 +174,109 @@ function Text({ content = '', className = '' }) {
 }
 
 /**
+ * Recursively extracts and concatenates text content from a React node.
+ *
+ * Handles the common React node types:
+ * - null/undefined and boolean: treated as empty strings
+ * - string and number: converted to string
+ * - arrays: each element is processed and results concatenated
+ * - React elements: their `props.children` are recursively processed
+ * - any other values: treated as empty string
+ *
+ * Examples:
+ * - extractText("hello") -> "hello"
+ * - extractText(123) -> "123"
+ * - extractText([ "a", <span>b</span>, null ]) -> "ab"
+ *
+ * @param {React.ReactNode} node - The React node to extract text from. May be a string, number, boolean, null, array, or a React element.
+ * @returns {string} The concatenated text content found within the node and its children.
+ */
+function extractText(node: React.ReactNode): string {
+  if (node == null || typeof node === 'boolean') return '';
+  if (typeof node === 'string' || typeof node === 'number') return String(node);
+  if (Array.isArray(node)) return node.map(extractText).join('');
+  if (React.isValidElement(node)) return extractText((node.props as { children?: React.ReactNode }).children);
+
+  return '';
+}
+
+/**
+ * @description Generates a URL-safe slug from text.
+ *
+ * @param {React.ReactNode} text - The text to convert to a slug.
+ * @returns {string} - A URL-safe slug.
+ */
+function generateSlug(text: React.ReactNode): string {
+  return extractText(text)
+    .toLowerCase()
+    .trim()
+    .replaceAll(/\s+/g, '-')
+    .replaceAll(/[^\w-]/g, '');
+}
+
+/**
  * @description This function returns MDX components.
  */
-const getMDXComponents = {
+const getMDXComponents = (reactId: string) => ({
   h1: (props: React.HTMLProps<HTMLHeadingElement>) => (
     <h1
       {...props}
+      id={props.id || generateSlug(props.children) || `heading-${reactId}`}
       className={`${props.className || ''} my-4 font-heading text-2xl font-semibold tracking-heading dark:text-dark-heading text-gray-900 antialiased`}
-    />
+      aria-label={props['aria-label'] ?? (extractText(props.children).trim() ? undefined : 'Section title')}
+    >
+      {props.children || <span className='sr-only'>Section title</span>}
+    </h1>
   ),
   h2: (props: React.HTMLProps<HTMLHeadingElement>) => (
     <h2
       {...props}
+      id={props.id || generateSlug(props.children) || `heading-${reactId}`}
       className={`${props.className || ''} mb-4 mt-6 font-heading text-2xl font-semibold tracking-heading  dark:text-dark-heading text-gray-900 antialiased`}
-    />
+      aria-label={props['aria-label'] ?? (extractText(props.children).trim() ? undefined : 'Section title')}
+    >
+      {props.children || <span className='sr-only'>Section title</span>}
+    </h2>
   ),
   h3: (props: React.HTMLProps<HTMLHeadingElement>) => (
     <h3
       {...props}
+      id={props.id || generateSlug(props.children) || `heading-${reactId}`}
       className={`${props.className || ''} mb-4 mt-6 font-heading text-lg font-medium tracking-heading dark:text-dark-heading text-gray-900 antialiased`}
-    />
+      aria-label={props['aria-label'] ?? (extractText(props.children).trim() ? undefined : 'Section title')}
+    >
+      {props.children || <span className='sr-only'>Section title</span>}
+    </h3>
   ),
   h4: (props: React.HTMLProps<HTMLHeadingElement>) => (
     <h4
       {...props}
+      id={props.id || generateSlug(props.children) || `heading-${reactId}`}
       className={`${props.className || ''} text-md my-4 font-heading font-medium dark:text-dark-heading text-gray-900 antialiased`}
-    />
+      aria-label={props['aria-label'] ?? (extractText(props.children).trim() ? undefined : 'Section title')}
+    >
+      {props.children || <span className='sr-only'>Section title</span>}
+    </h4>
   ),
   h5: (props: React.HTMLProps<HTMLHeadingElement>) => (
     <h5
       {...props}
+      id={props.id || generateSlug(props.children) || `heading-${reactId}`}
       className={`${props.className || ''} text-md my-4 font-heading dark:text-dark-heading   font-bold antialiased`}
-    />
+      aria-label={props['aria-label'] ?? (extractText(props.children).trim() ? undefined : 'Section title')}
+    >
+      {props.children || <span className='sr-only'>Section title</span>}
+    </h5>
   ),
   h6: (props: React.HTMLProps<HTMLHeadingElement>) => (
     <h6
       {...props}
+      id={props.id || generateSlug(props.children) || `heading-${reactId}`}
       className={`${props.className || ''} my-4 font-heading text-sm font-bold uppercase dark:text-dark-heading text-gray-900 antialiased`}
-    />
+      aria-label={props['aria-label'] ?? (extractText(props.children).trim() ? undefined : 'Section title')}
+    >
+      {props.children || <span className='sr-only'>Section title</span>}
+    </h6>
   ),
   blockquote: (props: React.HTMLProps<HTMLQuoteElement>) => (
     <blockquote
@@ -338,7 +403,7 @@ const getMDXComponents = {
   TwitterOnAirButton,
   Profiles,
   Visualizer
-};
+});
 
 export const mdxComponents = getMDXComponents;
 
@@ -353,5 +418,7 @@ interface MDXProviderProps {
  * @param {React.ReactNode} props.children - The children to render.
  */
 export function MDXProvider({ children }: MDXProviderProps) {
-  return <CoreMDXProvider components={mdxComponents}>{children}</CoreMDXProvider>;
+  const reactId = useId();
+
+  return <CoreMDXProvider components={mdxComponents(reactId)}>{children}</CoreMDXProvider>;
 }

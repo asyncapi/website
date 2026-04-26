@@ -3,7 +3,7 @@ import React from 'react';
 
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
-import LinkComponent from '../link';
+import LinkComponent from '../Link';
 import Paragraph from '../typography/Paragraph';
 import Label from './Label';
 

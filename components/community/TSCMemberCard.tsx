@@ -2,9 +2,9 @@ import React from 'react';
 
 import type { Tsc } from '@/types/pages/community/Community';
 
-interface TSCMemberCardProps {
+type TSCMemberCardProps = Readonly<{
   member: Tsc;
-}
+}>;
 
 /**
  * @param {{ className?: string }} props - Props for the GitHub icon
@@ -61,7 +61,7 @@ export default function TSCMemberCard({ member }: TSCMemberCardProps) {
       <div className='flex items-start gap-4 mb-4'>
         <img
           src={member.github ? `https://www.github.com/${member.github}.png` : ''}
-          alt={member.name}
+          alt={member.name || 'TSC Member'}
           className='w-16 h-16 rounded-full'
         />
         <div className='flex-1 min-w-0'>

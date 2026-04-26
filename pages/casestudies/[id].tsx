@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { MDXRemote } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
-import React from 'react';
+import React, { useId } from 'react';
 
 import { readYamlFile } from '@/components/helpers/read-yaml-file';
 import type { ICaseStudy } from '@/types/post';
@@ -160,7 +160,8 @@ const Index: React.FC<IndexProps> = ({
   additionalResources
 }) => {
   const image = '/img/social/website-card.jpg';
-  const allComponents = mdxComponents;
+  const reactId = useId();
+  const allComponents = mdxComponents(reactId);
   const contacts = casestudy.company.contact;
 
   const content = generateCaseStudyContent({

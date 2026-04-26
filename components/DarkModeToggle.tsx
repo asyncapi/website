@@ -8,7 +8,7 @@ const SunIcon = ({ className = 'w-5 h-5' }) => (
     className={className}
     fill='none'
     stroke='white'
-    stroke-width='2'
+    strokeWidth='2'
     viewBox='0 0 24 24'
     xmlns='http://www.w3.org/2000/svg'
   >
@@ -41,7 +41,7 @@ export default function DarkModeToggle() {
     setMounted(true);
     // Load preference on mount
     const storedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches; // NOSONAR
 
     const shouldUseDark = storedTheme === 'dark' || (!storedTheme && systemPrefersDark);
 
