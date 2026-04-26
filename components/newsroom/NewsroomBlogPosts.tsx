@@ -22,7 +22,7 @@ export default function NewsroomBlogPosts() {
   return (
     <div data-testid='NewsroomBlog-main-div'>
       <ul className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
-        {posts.map((post, index) => (
+        {posts.map((post) => (
           <BlogPostItem key={post.slug} post={post} />
         ))}
       </ul>

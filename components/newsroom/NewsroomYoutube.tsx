@@ -19,7 +19,7 @@ export default function NewsroomYoutube({ className = '' }: NewsroomYoutubeProps
   return (
     <div className={className} data-testid='NewsroomYoutube-main'>
       <ul className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
-        {videos.map((video, index) => (
+        {videos.map((video) => (
           <YouTubeCard key={video.videoId} video={video} />
         ))}
       </ul>

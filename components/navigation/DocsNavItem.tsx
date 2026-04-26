@@ -69,7 +69,7 @@ export default function DocsNavItem({
     <div>
       <div className={classes}>
         <Link href={href || slug} className='inline-block w-full' onClick={onClick}>
-          {bucket && (
+          {bucket &&
             (() => {
               const isBucketActive = slug === '/docs' ? slug === activeSlug : activeSlug.startsWith(slug);
               const bucketClass = isBucketActive ? `${bucket.className} dark:bg-primary-500` : '';
@@ -82,8 +82,7 @@ export default function DocsNavItem({
                   <bucket.icon className='size-5' />
                 </div>
               );
-            })()
-          )}
+            })()}
           <span>{title}</span>
         </Link>
       </div>

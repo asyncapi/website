@@ -48,7 +48,7 @@ export default function TSC() {
   const filteredMembers = tscMembers.filter((member) => {
     const matchesSearch =
       member.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      (member.github && member.github.toLowerCase().includes(searchTerm.toLowerCase()));
+      member.github?.toLowerCase().includes(searchTerm.toLowerCase());
 
     const matchesFilter =
       filterType === 'all' ||

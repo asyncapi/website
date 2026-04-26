@@ -119,7 +119,9 @@ export default function Pagination({
         key={page}
         onClick={() => handlePageClick(page)}
         className={`${getPageButtonClass(currentPage === page)} ${
-          currentPage !== page ? 'border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800' : ''
+          currentPage === page
+            ? ''
+            : 'border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
         }`}
       >
         {page}
@@ -161,11 +163,7 @@ export default function Pagination({
 
     for (let i = startPage; i <= endPage; i++) {
       pages.push(
-        <button
-          key={i}
-          onClick={() => handlePageClick(i)}
-          className={getPageButtonClass(currentPage === i)}
-        >
+        <button key={i} onClick={() => handlePageClick(i)} className={getPageButtonClass(currentPage === i)}>
           {i}
         </button>
       );

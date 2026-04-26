@@ -205,7 +205,7 @@ export default function Index() {
           </div>
 
           <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4' data-testid='Ambassadors-list'>
-            {ambassadorList.contents.map((link, index) => {
+            {ambassadorList.contents.map((link) => {
               const IconComponent = getContributionIcon(link.title);
 
               return (
@@ -249,7 +249,7 @@ export default function Index() {
           </div>
 
           <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3' data-testid='Ambassadors-members-main'>
-            {currentAmbassadors.map((ambassador: Ambassador, index: number) => (
+            {currentAmbassadors.map((ambassador: Ambassador) => (
               <div
                 key={ambassador.github}
                 className='group relative bg-white dark:bg-dark-background rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1'
@@ -370,7 +370,7 @@ export default function Index() {
           </div>
 
           <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4'>
-            {ambassadorList.tokens.map((token, index) => (
+            {ambassadorList.tokens.map((token) => (
               <div
                 key={token.title}
                 className='flex flex-col items-center text-center p-8 rounded-3xl bg-white dark:bg-dark-card border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all duration-300'

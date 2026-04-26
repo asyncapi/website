@@ -63,7 +63,7 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
                   <p className='text-sm font-medium leading-5 text-gray-900 dark:text-gray-100'>
                     <span className='hover:underline'>
                       {post.authors
-                        .map((author, index) =>
+                        .map((author) =>
                           author.link ? (
                             <a key={author.name} href={author.link} className='dark:text-gray-100'>
                               {author.name}

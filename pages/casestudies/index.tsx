@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { A11y, Navigation, Pagination as SwiperPagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import type { ICaseStudies } from '@/types/post';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
 import Button from '../../components/buttons/Button';
@@ -112,7 +111,7 @@ export default function CaseStudies() {
               }}
               className='featured-case-studies-swiper'
             >
-              {(CaseStudiesList as ICaseStudies).map((study, index) => (
+              {CaseStudiesList.map((study) => (
                 <SwiperSlide key={study.id}>
                   <Link href={`/casestudies/${study.id}`} className='group block h-full'>
                     <div className='h-full bg-white dark:bg-dark-background border border-gray-200 dark:border-gray-700 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 min-h-[320px] flex flex-col'>

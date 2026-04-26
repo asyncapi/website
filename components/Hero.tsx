@@ -55,9 +55,7 @@ export default function Hero({ className = '' }: HeroProps) {
             />
           </div>
 
-          <DiamondSponsors
-            className={'w-full relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]'}
-          />
+          <DiamondSponsors className={'w-full relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]'} />
         </div>
         <Features />
         <div className='mt-8 md:mt-16'>
