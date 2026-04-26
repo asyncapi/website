@@ -163,13 +163,7 @@ export default function SneakPeek() {
         &nbsp;&nbsp;&nbsp;&nbsp;<span className='text-gray-500'>{'//'} Your business logic here</span>
       </div>
       <div>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span className='text-yellow-200'>console</span>.
-        <span className='text-yellow-300'>log</span>(
-        <span className='text-teal-200'>
-          `Processing signup for ${'{'}
-          message.displayName{'}'}`
-        </span>
-        );
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className='text-yellow-200'>console</span>{'.'}<span className='text-yellow-300'>log</span>{'('}<span className='text-teal-200'>{`\`Processing signup for \${message.displayName}\``}</span>{')'}{';'}
       </div>
       <div>&nbsp;&nbsp;{'}'}</div>
       <div>{'}'}</div>
@@ -218,10 +212,7 @@ export default function SneakPeek() {
                   <div className='text-sm font-medium text-gray-700'>email</div>
                   <div>
                     <div className='font-bold text-green-500 text-sm'>
-                      String
-                      <span className='ml-2 rounded bg-yellow-300 px-1.5 py-0.5 text-xs text-black font-normal'>
-                        email
-                      </span>
+                      String{' '}<span className='ml-2 rounded bg-yellow-300 px-1.5 py-0.5 text-xs text-black font-normal'>email</span>
                     </div>
                     <div className='text-xs text-gray-600 mt-1'>Email of the user</div>
                   </div>

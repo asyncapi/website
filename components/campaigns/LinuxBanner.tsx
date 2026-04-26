@@ -26,7 +26,7 @@ export default function LinuxBanner({ className }: LinuxBannerProps) {
         <a href='https://www.linuxfoundation.org/' target='_blank' rel='noopener noreferrer' className='font-regular'>
           Linux Foundation
         </a>
-        .
+        {'.'}
       </p>
     </div>
   );
