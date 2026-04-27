@@ -68,6 +68,32 @@ const mockRateLimitResponse = {
   }
 };
 
+const mockHealthyRateLimitResponse = {
+  search: {
+    nodes: [mockDiscussion],
+    pageInfo: { hasNextPage: false }
+  },
+  rateLimit: {
+    cost: 1,
+    limit: 5000,
+    remaining: 4000,
+    resetAt: new Date(Date.now() + 3600000).toISOString()
+  }
+};
+
+const mockMediumRateLimitResponse = {
+  search: {
+    nodes: [mockDiscussion],
+    pageInfo: { hasNextPage: false }
+  },
+  rateLimit: {
+    cost: 1,
+    limit: 5000,
+    remaining: 300,
+    resetAt: new Date(Date.now() + 3600000).toISOString()
+  }
+};
+
 const issues = [
   {
     id: '1',
@@ -80,4 +106,12 @@ const issues = [
   }
 ] as GoodFirstIssues[];
 
-export { discussionWithMoreComments, fullDiscussionDetails, issues, mockDiscussion, mockRateLimitResponse };
+export {
+  discussionWithMoreComments,
+  fullDiscussionDetails,
+  issues,
+  mockDiscussion,
+  mockHealthyRateLimitResponse,
+  mockMediumRateLimitResponse,
+  mockRateLimitResponse
+};
