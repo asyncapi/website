@@ -75,6 +75,17 @@
       "score": 10.338285194973315
     },
     {
+      "id": "PR_kwDOCHlHJM7LNhwU",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "refactor: update getQueryParams to support multiple channels",
+      "author": "SushanthMusham",
+      "resourcePath": "/asyncapi/generator/pull/2026",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 10.338285194973315
+    },
+    {
       "id": "I_kwDOFDnrNc7zQ5Vt",
       "isPR": false,
       "isAssigned": true,
@@ -169,26 +180,6 @@
       "repo": "asyncapi/generator",
       "labels": [],
       "score": 6.89219012998221
-    },
-    {
-      "id": "I_kwDOBW5R_c73DGLM",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "E2E test are failing",
-      "author": "princerajpoot20",
-      "resourcePath": "/asyncapi/website/issues/5281",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "good first issue",
-          "color": "7057ff"
-        },
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ],
-      "score": 4.59479341998814
     }
   ],
   "goodFirstIssues": [

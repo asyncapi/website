@@ -19,14 +19,13 @@ import {
   writeToFile
 } from '../../scripts/dashboard/build-dashboard';
 import { logger } from '../../scripts/helpers/logger';
+import { pause } from '../../scripts/helpers/utils';
 import {
   discussionWithMoreComments,
   fullDiscussionDetails,
   issues,
   mockDiscussion,
-  mockHealthyRateLimitResponse,
-  mockMediumRateLimitResponse,
-  mockRateLimitResponse
+  mockHealthyRateLimitResponse
 } from '../fixtures/dashboardData';
 
 jest.mock('../../scripts/helpers/logger', () => ({
@@ -63,9 +62,6 @@ describe('GitHub Discussions Processing', () => {
     jest.resetAllMocks();
     consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
     consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
-    // Re-apply pause mock after resetAllMocks
-    const { pause } = require('../../scripts/helpers/utils');
-
     (pause as jest.Mock).mockResolvedValue(undefined);
   });
 
@@ -107,8 +103,6 @@ describe('GitHub Discussions Processing', () => {
   });
 
   it('should apply adaptive delay based on rate limit remaining', async () => {
-    const { pause } = require('../../scripts/helpers/utils');
-
     await adaptiveDelay({ limit: 5000, cost: 1, remaining: 50, resetAt: new Date().toISOString() });
     expect(logger.warn).toHaveBeenCalledWith(expect.stringContaining('Rate limit critically low'));
     expect(pause).toHaveBeenCalled();
@@ -434,8 +428,6 @@ describe('getHotDiscussionsCutoffDate', () => {
 describe('retryWithBackoff', () => {
   beforeEach(() => {
     jest.resetAllMocks();
-    const { pause } = require('../../scripts/helpers/utils');
-
     (pause as jest.Mock).mockResolvedValue(undefined);
   });
 
@@ -461,14 +453,25 @@ describe('retryWithBackoff', () => {
     expect(logger.warn).toHaveBeenCalledWith(expect.stringContaining('Retryable error during test'));
   });
 
-  it('should throw after exhausting retries', async () => {
+  it('should throw after exhausting retries with a descriptive message', async () => {
     const fn = jest.fn().mockRejectedValue(new Error('You have exceeded a secondary rate limit.'));
 
-    await expect(retryWithBackoff(fn, 'test')).rejects.toThrow('secondary rate limit');
+    await expect(retryWithBackoff(fn, 'test')).rejects.toThrow(
+      'Exhausted 3 retries for test: You have exceeded a secondary rate limit.'
+    );
     expect(fn).toHaveBeenCalledTimes(4); // 1 initial + 3 retries
   });
 
-  it('should not retry non-rate-limit errors', async () => {
+  it('should wrap non-Error thrown values in the exhaustion message', async () => {
+    const fn = jest.fn().mockRejectedValue('secondary rate limit hit');
+
+    await expect(retryWithBackoff(fn, 'test')).rejects.toThrow(
+      'Exhausted 3 retries for test: secondary rate limit hit'
+    );
+    expect(fn).toHaveBeenCalledTimes(4);
+  });
+
+  it('should not retry non-retryable errors', async () => {
     const fn = jest.fn().mockRejectedValue(new Error('Network timeout'));
 
     await expect(retryWithBackoff(fn, 'test')).rejects.toThrow('Network timeout');

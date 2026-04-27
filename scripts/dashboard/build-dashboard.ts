@@ -7,7 +7,6 @@ import type {
   Discussion,
   GoodFirstIssues,
   HotDiscussionsIssuesNode,
-  HotDiscussionsPullRequestsNode,
   IssueById,
   MappedIssue,
   ProcessedDiscussion,
@@ -26,6 +25,8 @@ const HOT_DISCUSSIONS_MONTHS_BACK = 6;
 const PAGE_SIZE = 30;
 
 const MAX_PAGES_HOT_DISCUSSIONS = 5;
+
+const MAX_PAGES_GOOD_FIRST_ISSUES = 5;
 
 const BASE_DELAY_MS = 2000;
 
@@ -64,7 +65,11 @@ async function retryWithBackoff<T>(fn: () => Promise<T>, context: string): Promi
     } catch (error) {
       lastError = error;
 
-      if (!isRetryableError(error) || attempt === MAX_RETRIES) {
+      if (!isRetryableError(error)) {
+        throw error;
+      }
+
+      if (attempt === MAX_RETRIES) {
         break;
       }
 
@@ -78,7 +83,9 @@ async function retryWithBackoff<T>(fn: () => Promise<T>, context: string): Promi
     }
   }
 
-  throw lastError;
+  const originalMessage = lastError instanceof Error ? lastError.message : String(lastError);
+
+  throw new Error(`Exhausted ${MAX_RETRIES} retries for ${context}: ${originalMessage}`);
 }
 
 async function adaptiveDelay(rateLimit: Discussion['rateLimit']): Promise<void> {
@@ -366,18 +373,18 @@ async function start(writePath: string): Promise<void> {
   let goodFirstIssuesFailed = false;
 
   try {
-    const issues = (await getDiscussions(
+    const issues = await getDiscussions(
       Queries.hotDiscussionsIssues(cutoffDate),
       PAGE_SIZE,
       null,
       MAX_PAGES_HOT_DISCUSSIONS
-    )) as HotDiscussionsIssuesNode[];
-    const PRs = (await getDiscussions(
+    );
+    const PRs = await getDiscussions(
       Queries.hotDiscussionsPullRequests(cutoffDate),
       PAGE_SIZE,
       null,
       MAX_PAGES_HOT_DISCUSSIONS
-    )) as HotDiscussionsPullRequestsNode[];
+    );
     const discussions = issues.concat(PRs);
 
     hotDiscussions = await getHotDiscussions(discussions);
@@ -389,7 +396,12 @@ async function start(writePath: string): Promise<void> {
   }
 
   try {
-    const rawGoodFirstIssues: GoodFirstIssues[] = await getDiscussions(Queries.goodFirstIssues, PAGE_SIZE);
+    const rawGoodFirstIssues: GoodFirstIssues[] = await getDiscussions(
+      Queries.goodFirstIssues,
+      PAGE_SIZE,
+      null,
+      MAX_PAGES_GOOD_FIRST_ISSUES
+    );
 
     goodFirstIssues = await mapGoodFirstIssues(rawGoodFirstIssues);
     logger.info(`Collected ${goodFirstIssues.length} good first issues`);

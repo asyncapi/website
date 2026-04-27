@@ -55,19 +55,6 @@ const fullDiscussionDetails = {
   }
 };
 
-const mockRateLimitResponse = {
-  search: {
-    nodes: [mockDiscussion],
-    pageInfo: { hasNextPage: false }
-  },
-  rateLimit: {
-    cost: 1,
-    limit: 5000,
-    remaining: 50,
-    resetAt: new Date().toISOString()
-  }
-};
-
 const mockHealthyRateLimitResponse = {
   search: {
     nodes: [mockDiscussion],
@@ -77,19 +64,6 @@ const mockHealthyRateLimitResponse = {
     cost: 1,
     limit: 5000,
     remaining: 4000,
-    resetAt: new Date(Date.now() + 3600000).toISOString()
-  }
-};
-
-const mockMediumRateLimitResponse = {
-  search: {
-    nodes: [mockDiscussion],
-    pageInfo: { hasNextPage: false }
-  },
-  rateLimit: {
-    cost: 1,
-    limit: 5000,
-    remaining: 300,
     resetAt: new Date(Date.now() + 3600000).toISOString()
   }
 };
@@ -111,7 +85,5 @@ export {
   fullDiscussionDetails,
   issues,
   mockDiscussion,
-  mockHealthyRateLimitResponse,
-  mockMediumRateLimitResponse,
-  mockRateLimitResponse
+  mockHealthyRateLimitResponse
 };

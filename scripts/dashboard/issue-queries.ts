@@ -101,13 +101,13 @@ query IssueByID($id: ID!) {
   }
 }`;
 
-const goodFirstIssues = `
+const goodFirstIssues = String.raw`
 query($first: Int!, $after: String) {
   search(
     first: $first
     after: $after
     type: ISSUE
-    query: "org:asyncapi state:open is:issue label:\\"good first issue\\""
+    query: "org:asyncapi state:open is:issue label:\"good first issue\""
   ) {
     pageInfo {
       hasNextPage
