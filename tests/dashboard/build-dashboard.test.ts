@@ -74,6 +74,14 @@ describe('GitHub Discussions Processing', () => {
     consoleLogSpy.mockRestore();
   });
 
+  const makePageResponse = (page: number, hasNext: boolean) => ({
+    search: {
+      nodes: [{ ...mockDiscussion, id: `test-id-${page}` }],
+      pageInfo: { hasNextPage: hasNext, endCursor: `cursor${page}` }
+    },
+    rateLimit: { remaining: 1000, limit: 5000, cost: 1, resetAt: new Date().toISOString() }
+  });
+
   it('should fetch additional discussion details when comments have next page', async () => {
     mockedGraphql.mockResolvedValueOnce(fullDiscussionDetails);
 
@@ -118,23 +126,9 @@ describe('GitHub Discussions Processing', () => {
   });
 
   it('should handle pagination', async () => {
-    const mockFirstResponse = {
-      search: {
-        nodes: [mockDiscussion],
-        pageInfo: { hasNextPage: true, endCursor: 'cursor1' }
-      },
-      rateLimit: { remaining: 1000, limit: 5000, cost: 1, resetAt: new Date().toISOString() }
-    };
-
-    const mockSecondResponse = {
-      search: {
-        nodes: [{ ...mockDiscussion, id: 'test-id-2' }],
-        pageInfo: { hasNextPage: false }
-      },
-      rateLimit: { remaining: 999, limit: 5000, cost: 1, resetAt: new Date().toISOString() }
-    };
-
-    mockedGraphql.mockResolvedValueOnce(mockFirstResponse).mockResolvedValueOnce(mockSecondResponse);
+    mockedGraphql
+      .mockResolvedValueOnce(makePageResponse(1, true))
+      .mockResolvedValueOnce(makePageResponse(2, false));
 
     const result = await getDiscussions('test-query', 10);
 
@@ -142,14 +136,6 @@ describe('GitHub Discussions Processing', () => {
   });
 
   it('should respect maxPages parameter', async () => {
-    const makePageResponse = (page: number, hasNext: boolean) => ({
-      search: {
-        nodes: [{ ...mockDiscussion, id: `test-id-${page}` }],
-        pageInfo: { hasNextPage: hasNext, endCursor: `cursor${page}` }
-      },
-      rateLimit: { remaining: 1000, limit: 5000, cost: 1, resetAt: new Date().toISOString() }
-    });
-
     mockedGraphql
       .mockResolvedValueOnce(makePageResponse(1, true))
       .mockResolvedValueOnce(makePageResponse(2, true))
@@ -162,14 +148,6 @@ describe('GitHub Discussions Processing', () => {
   });
 
   it('should not limit pages when maxPages is 0', async () => {
-    const makePageResponse = (page: number, hasNext: boolean) => ({
-      search: {
-        nodes: [{ ...mockDiscussion, id: `test-id-${page}` }],
-        pageInfo: { hasNextPage: hasNext, endCursor: `cursor${page}` }
-      },
-      rateLimit: { remaining: 1000, limit: 5000, cost: 1, resetAt: new Date().toISOString() }
-    });
-
     mockedGraphql
       .mockResolvedValueOnce(makePageResponse(1, true))
       .mockResolvedValueOnce(makePageResponse(2, true))

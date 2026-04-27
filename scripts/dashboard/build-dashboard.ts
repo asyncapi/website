@@ -56,12 +56,16 @@ function isRetryableError(error: unknown): boolean {
 }
 
 async function retryWithBackoff<T>(fn: () => Promise<T>, context: string): Promise<T> {
+  let lastError: unknown;
+
   for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
     try {
       return await fn();
     } catch (error) {
+      lastError = error;
+
       if (!isRetryableError(error) || attempt === MAX_RETRIES) {
-        throw error;
+        break;
       }
 
       const delayMs = RETRY_BASE_DELAY_MS * 2 ** attempt;
@@ -74,7 +78,7 @@ async function retryWithBackoff<T>(fn: () => Promise<T>, context: string): Promi
     }
   }
 
-  throw new Error(`Exhausted ${MAX_RETRIES} retries for ${context}`);
+  throw lastError;
 }
 
 async function adaptiveDelay(rateLimit: Discussion['rateLimit']): Promise<void> {
