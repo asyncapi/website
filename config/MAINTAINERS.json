@@ -173,7 +173,6 @@
         "repos": [
             "spec",
             "spec-json-schemas",
-            "asyncapi-react",
             "parser-js",
             "extensions-catalog",
             "converter-js",
@@ -1003,14 +1002,5 @@
             "conference-website"
         ],
         "githubID": 122612557
-    },
-    {
-        "name": "Mohammed Mehdi",
-        "github": "catosaurusrex2003",
-        "isTscMember": false,
-        "repos": [
-            "asyncapi-react"
-        ],
-        "githubID": 96487647
     }
 ]
