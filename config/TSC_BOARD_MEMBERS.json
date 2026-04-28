@@ -134,7 +134,6 @@
         "repos": [
             "spec",
             "spec-json-schemas",
-            "asyncapi-react",
             "parser-js",
             "extensions-catalog",
             "converter-js",
