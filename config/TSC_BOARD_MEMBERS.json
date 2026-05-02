@@ -39,6 +39,7 @@
         "isTscMember": true,
         "tscMemberSince": "2025-01-13",
         "repos": [
+            "parser-js",
             "openapi-schema-parser",
             "cli"
         ],
@@ -133,7 +134,6 @@
         "repos": [
             "spec",
             "spec-json-schemas",
-            "asyncapi-react",
             "parser-js",
             "extensions-catalog",
             "converter-js",
