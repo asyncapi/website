@@ -1,9 +1,9 @@
+import debounce from 'lodash/debounce';
 import Link from 'next/link';
 import type { NextRouter } from 'next/router';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import React, { useEffect, useState } from 'react';
-import debounce from 'lodash/debounce';
 
 import { defaultLanguage, i18nPaths, languages } from '@/utils/i18n';
 
@@ -177,9 +177,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             <div className='lg:w-auto lg:flex-1'>
               <div className='flex'>
                 <Link href='/' className='cursor-pointer' aria-label='AsyncAPI' data-testid='Navbar-logo'>
-                  <AsyncAPILogo
-                    className={`w-auto transition-all duration-500 ease-in-out h-8`}
-                  />
+                  <AsyncAPILogo className={'w-auto transition-all duration-500 ease-in-out h-8'} />
                 </Link>
               </div>
             </div>

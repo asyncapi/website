@@ -1,6 +1,6 @@
+import debounce from 'lodash/debounce';
 import type { ReactNode } from 'react';
 import React, { useEffect, useState } from 'react';
-import debounce from 'lodash/debounce';
 
 interface StickyNavbarProps {
   children: ReactNode;
