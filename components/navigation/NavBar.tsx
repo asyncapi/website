@@ -5,6 +5,7 @@ import { useTranslation } from 'next-i18next';
 import React, { useEffect, useState } from 'react';
 
 import { defaultLanguage, i18nPaths, languages } from '@/utils/i18n';
+import { setStorageItem } from '@/utils/storage';
 
 import { SearchButton } from '../AlgoliaSearch';
 import GithubButton from '../buttons/GithubButton';
@@ -75,7 +76,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   const changeLanguage = async (locale: string, langPicker: boolean): Promise<void> => {
     // Verifies if the language change is from langPicker or the browser-api
     if (langPicker) {
-      localStorage.setItem('i18nLang', locale);
+      setStorageItem('i18nLang', locale);
     }
 
     // Detect current language
