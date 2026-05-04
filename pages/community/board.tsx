@@ -8,7 +8,7 @@ export default function Board() {
   return (
     <CommunityLayout membership={Membership.BOARD}>
       <div className='mx-auto my-0 grid max-w-xl lg:max-w-screen-xl lg:grid-cols-3 lg:gap-8' data-testid='GB-content'>
-        <div>
+        <div className='rounded-md border border-gray-200 p-4 text-center shadow-md'>
           <h3 className='text-primary-800 mb-2 font-semibold lg:text-center lg:text-2xl'>
             What is the Governance Board?
           </h3>
@@ -27,7 +27,7 @@ export default function Board() {
             .
           </p>
         </div>
-        <div>
+        <div className='rounded-md border border-gray-200 p-4 text-center shadow-md'>
           <h3 className='text-primary-800 mb-2 font-semibold lg:text-center lg:text-2xl'>
             How can I become a Board Member?
           </h3>
@@ -46,7 +46,7 @@ export default function Board() {
             .
           </p>
         </div>
-        <div>
+        <div className='rounded-md border border-gray-200 p-4 text-center shadow-md'>
           <h3 className='text-primary-800 mb-2 font-semibold lg:text-center lg:text-2xl'>
             What are the responsibilities of a board member?
           </h3>

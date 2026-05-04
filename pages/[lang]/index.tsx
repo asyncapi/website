@@ -59,13 +59,13 @@ export default function HomePage() {
           </Paragraph>
           <ul className='md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-5'>
             <li className='flex justify-center'>
-              <AdidasLogo className='h-8 text-gray-400 hover:text-black' />
+              <AdidasLogo className='h-8 text-gray-400' />
             </li>
             <li className='flex justify-center'>
-              <AxwayLogo className='group mt-12 h-14 text-gray-400 hover:text-black md:-mt-5 lg:-mt-5' />
+              <AxwayLogo className='mt-12 h-14 text-gray-400 md:-mt-5 lg:-mt-5' />
             </li>
             <li className='flex justify-center'>
-              <SlackLogo className='group mt-12 h-10 text-gray-400 hover:text-black md:mt-2 lg:-mt-1' />
+              <SlackLogo className='mt-12 h-10 text-gray-400 md:mt-2 lg:-mt-1' />
             </li>
             <li className='flex justify-center'>
               <SalesforceLogo className='mt-12 h-16 text-gray-400 md:mt-2 lg:-mt-4' />
