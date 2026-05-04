@@ -7,7 +7,6 @@ import type {
   Discussion,
   GoodFirstIssues,
   HotDiscussionsIssuesNode,
-  HotDiscussionsPullRequestsNode,
   IssueById,
   MappedIssue,
   ProcessedDiscussion,
@@ -20,6 +19,90 @@ import { Queries } from './issue-queries';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
+
+const HOT_DISCUSSIONS_MONTHS_BACK = 6;
+
+const PAGE_SIZE = 30;
+
+const MAX_PAGES_HOT_DISCUSSIONS = 5;
+
+const MAX_PAGES_GOOD_FIRST_ISSUES = 5;
+
+const BASE_DELAY_MS = 2000;
+
+const MAX_RETRIES = 3;
+
+const RETRY_BASE_DELAY_MS = 60000;
+
+function getHotDiscussionsCutoffDate(): string {
+  const date = new Date();
+
+  date.setMonth(date.getMonth() - HOT_DISCUSSIONS_MONTHS_BACK);
+
+  return date.toISOString().split('T')[0];
+}
+
+function isRetryableError(error: unknown): boolean {
+  const message = error instanceof Error ? error.message : String(error);
+  const lowerMessage = message.toLowerCase();
+
+  return (
+    lowerMessage.includes('secondary rate limit') ||
+    lowerMessage.includes('502 bad gateway') ||
+    lowerMessage.includes('unicorn') ||
+    lowerMessage.includes('server error') ||
+    lowerMessage.includes('econnreset') ||
+    lowerMessage.includes('etimedout')
+  );
+}
+
+async function retryWithBackoff<T>(fn: () => Promise<T>, context: string): Promise<T> {
+  let lastError: unknown;
+
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      return await fn();
+    } catch (error) {
+      lastError = error;
+
+      if (!isRetryableError(error)) {
+        throw error;
+      }
+
+      if (attempt === MAX_RETRIES) {
+        break;
+      }
+
+      const delayMs = RETRY_BASE_DELAY_MS * 2 ** attempt;
+
+      logger.warn(
+        `Retryable error during ${context} (attempt ${attempt + 1}/${MAX_RETRIES}). ` +
+          `Retrying in ${delayMs / 1000}s...`
+      );
+      await pause(delayMs);
+    }
+  }
+
+  const originalMessage = lastError instanceof Error ? lastError.message : String(lastError);
+
+  throw new Error(`Exhausted ${MAX_RETRIES} retries for ${context}: ${originalMessage}`);
+}
+
+async function adaptiveDelay(rateLimit: Discussion['rateLimit']): Promise<void> {
+  if (rateLimit.remaining <= 100) {
+    const resetTime = new Date(rateLimit.resetAt).getTime();
+    const waitMs = Math.max(resetTime - Date.now(), 0) + 1000;
+
+    logger.warn(
+      `Rate limit critically low (${rateLimit.remaining} remaining). Waiting ${Math.round(waitMs / 1000)}s until reset.`
+    );
+    await pause(waitMs);
+  } else if (rateLimit.remaining <= 500) {
+    await pause(5000);
+  } else {
+    await pause(BASE_DELAY_MS);
+  }
+}
 
 /**
  * Calculates the number of full months elapsed since the provided date.
@@ -55,59 +138,51 @@ function getLabel(issue: GoodFirstIssues, filter: string): string | undefined {
 }
 
 /**
- * Recursively fetches discussion nodes from the GitHub GraphQL API.
- *
- * This function executes a provided GraphQL query to retrieve discussion nodes in paginated batches.
- * It automatically retrieves subsequent pages if available by recursively updating the pagination cursor.
- * A short pause between requests is included to help manage API rate limits, and a warning is logged when the remaining limit is low.
+ * Fetches discussion nodes from the GitHub GraphQL API with pagination, adaptive throttling, and retry logic.
  *
  * @param query - The GraphQL query to execute.
  * @param pageSize - The number of discussion nodes to retrieve per page.
- * @param endCursor - (Optional) The pagination cursor; set to null to start from the first page.
+ * @param endCursor - The pagination cursor; null to start from the first page.
+ * @param maxPages - Maximum number of pages to fetch. 0 means unlimited.
+ * @param currentPage - Current page counter (used internally for recursion).
  * @returns A promise that resolves with an array of discussion nodes.
  */
 async function getDiscussions(
   query: string,
   pageSize: number,
-  endCursor: null | string = null
+  endCursor: null | string = null,
+  maxPages: number = 0,
+  currentPage: number = 1
 ): Promise<Discussion['search']['nodes']> {
   const token = process.env.GITHUB_TOKEN;
 
   if (!token) {
     throw new Error('GitHub token is not set in environment variables');
   }
-  try {
-    const result: Discussion = await graphql(query, {
-      first: pageSize,
-      after: endCursor,
-      headers: {
-        authorization: `token ${process.env.GITHUB_TOKEN}`
-      }
-    });
 
-    if (result.rateLimit.remaining <= 100) {
-      logger.warn(
-        'GitHub GraphQL rateLimit \n' +
-          `cost = ${result.rateLimit.cost}\n` +
-          `limit = ${result.rateLimit.limit}\n` +
-          `remaining = ${result.rateLimit.remaining}\n` +
-          `resetAt = ${result.rateLimit.resetAt}`
-      );
-    }
+  const result: Discussion = await retryWithBackoff(
+    () =>
+      graphql(query, {
+        first: pageSize,
+        after: endCursor,
+        headers: {
+          authorization: `token ${token}`
+        }
+      }),
+    `getDiscussions page ${currentPage}`
+  );
 
-    await pause(500);
+  await adaptiveDelay(result.rateLimit);
 
-    const { hasNextPage } = result.search.pageInfo;
+  const { hasNextPage } = result.search.pageInfo;
 
-    if (!hasNextPage) {
-      return result.search.nodes;
-    }
-
-    return result.search.nodes.concat(await getDiscussions(query, pageSize, result.search.pageInfo.endCursor));
-  } catch (error) {
-    logger.error(error);
-    throw error;
+  if (!hasNextPage || (maxPages > 0 && currentPage >= maxPages)) {
+    return result.search.nodes;
   }
+
+  return result.search.nodes.concat(
+    await getDiscussions(query, pageSize, result.search.pageInfo.endCursor, maxPages, currentPage + 1)
+  );
 }
 
 /**
@@ -128,19 +203,16 @@ async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequest
     throw new Error('GitHub token is not set in environment variables');
   }
 
-  try {
-    const result: PullRequestById | IssueById = await graphql(isPR ? Queries.pullRequestById : Queries.issueById, {
-      id,
-      headers: {
-        authorization: `token ${token}`
-      }
-    });
-
-    return result;
-  } catch (error) {
-    logger.error(error);
-    throw error;
-  }
+  return retryWithBackoff(
+    () =>
+      graphql(isPR ? Queries.pullRequestById : Queries.issueById, {
+        id,
+        headers: {
+          authorization: `token ${token}`
+        }
+      }),
+    `getDiscussionByID ${id}`
+  );
 }
 
 /**
@@ -284,31 +356,70 @@ async function mapGoodFirstIssues(issues: GoodFirstIssues[]): Promise<MappedIssu
 
 /**
  * Initiates the dashboard generation process by fetching, processing, and writing discussion data.
- *
- * This function orchestrates the retrieval of hot discussions (including issues and pull requests) and good first issues
- * from GitHub via GraphQL queries. It combines and concurrently processes the fetched data—calculating interaction scores
- * for hot discussions and mapping good first issues into a simplified format—and then writes the resulting JSON data to the
- * specified file path. Errors encountered during any stage of the process are logged.
+ * Collects data incrementally -- if one section fails, whatever was successfully collected is still written.
  *
  * @param writePath - The file path where the dashboard data will be saved.
  * @returns A promise that resolves once the data has been successfully written.
+ * @throws {Error} If both hot discussions and good first issues fail to fetch.
  */
 async function start(writePath: string): Promise<void> {
-  try {
-    const issues = (await getDiscussions(Queries.hotDiscussionsIssues, 20)) as HotDiscussionsIssuesNode[];
-    const PRs = (await getDiscussions(Queries.hotDiscussionsPullRequests, 20)) as HotDiscussionsPullRequestsNode[];
-    const rawGoodFirstIssues: GoodFirstIssues[] = await getDiscussions(Queries.goodFirstIssues, 20);
-    const discussions = issues.concat(PRs);
-    const [hotDiscussions, goodFirstIssues] = await Promise.all([
-      getHotDiscussions(discussions),
-      mapGoodFirstIssues(rawGoodFirstIssues)
-    ]);
+  const cutoffDate = getHotDiscussionsCutoffDate();
 
-    await writeToFile({ hotDiscussions, goodFirstIssues }, writePath);
+  logger.info(`Fetching hot discussions updated since ${cutoffDate} (${HOT_DISCUSSIONS_MONTHS_BACK} months back)`);
+
+  let hotDiscussions: ProcessedDiscussion[] = [];
+  let goodFirstIssues: MappedIssue[] = [];
+  let hotDiscussionsFailed = false;
+  let goodFirstIssuesFailed = false;
+
+  try {
+    const issues = await getDiscussions(
+      Queries.hotDiscussionsIssues(cutoffDate),
+      PAGE_SIZE,
+      null,
+      MAX_PAGES_HOT_DISCUSSIONS
+    );
+    const PRs = await getDiscussions(
+      Queries.hotDiscussionsPullRequests(cutoffDate),
+      PAGE_SIZE,
+      null,
+      MAX_PAGES_HOT_DISCUSSIONS
+    );
+    const discussions = issues.concat(PRs);
+
+    hotDiscussions = await getHotDiscussions(discussions);
+    logger.info(`Collected ${hotDiscussions.length} hot discussions`);
   } catch (error) {
-    logger.error('There were some issues parsing data from github.');
+    hotDiscussionsFailed = true;
+    logger.error('Failed to fetch hot discussions:');
     logger.error(error);
   }
+
+  try {
+    const rawGoodFirstIssues: GoodFirstIssues[] = await getDiscussions(
+      Queries.goodFirstIssues,
+      PAGE_SIZE,
+      null,
+      MAX_PAGES_GOOD_FIRST_ISSUES
+    );
+
+    goodFirstIssues = await mapGoodFirstIssues(rawGoodFirstIssues);
+    logger.info(`Collected ${goodFirstIssues.length} good first issues`);
+  } catch (error) {
+    goodFirstIssuesFailed = true;
+    logger.error('Failed to fetch good first issues:');
+    logger.error(error);
+  }
+
+  if (hotDiscussionsFailed && goodFirstIssuesFailed) {
+    throw new Error('Dashboard generation failed: unable to fetch any data from GitHub.');
+  }
+
+  if (hotDiscussionsFailed || goodFirstIssuesFailed) {
+    logger.warn('Dashboard generated with partial data due to errors above.');
+  }
+
+  await writeToFile({ hotDiscussions, goodFirstIssues }, writePath);
 }
 
 /* istanbul ignore next */
@@ -317,12 +428,16 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
 }
 
 export {
+  adaptiveDelay,
   getDiscussionByID,
   getDiscussions,
   getHotDiscussions,
+  getHotDiscussionsCutoffDate,
   getLabel,
+  isRetryableError,
   mapGoodFirstIssues,
   processHotDiscussions,
+  retryWithBackoff,
   start,
   writeToFile
 };

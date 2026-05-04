@@ -1,5 +1,4 @@
-export const Queries = Object.freeze({
-  pullRequestById: ` 
+const pullRequestById = ` 
 query IssueByID($id: ID!) {
   node(id: $id) {
     __typename
@@ -31,7 +30,7 @@ query IssueByID($id: ID!) {
           }
         }
       }
-      comments(first: 10) {
+      comments(first: 20) {
         totalCount
         pageInfo {
           hasNextPage
@@ -50,8 +49,9 @@ query IssueByID($id: ID!) {
     remaining
     resetAt
   }
-}`,
-  issueById: ` 
+}`;
+
+const issueById = ` 
 query IssueByID($id: ID!) {
   node(id: $id) {
     __typename
@@ -99,14 +99,15 @@ query IssueByID($id: ID!) {
     remaining
     resetAt
   }
-}`,
-  goodFirstIssues: `
+}`;
+
+const goodFirstIssues = String.raw`
 query($first: Int!, $after: String) {
   search(
     first: $first
     after: $after
     type: ISSUE
-    query: "org:asyncapi state:open is:issue label:\\"good first issue\\""
+    query: "org:asyncapi state:open is:issue label:\"good first issue\""
   ) {
     pageInfo {
       hasNextPage
@@ -143,14 +144,16 @@ query($first: Int!, $after: String) {
     resetAt
   }
 }
-`,
-  hotDiscussionsIssues: `
+`;
+
+function hotDiscussionsIssues(updatedSince: string) {
+  return `
 query($first: Int!, $after: String) {
   search(
     first: $first
     after: $after
     type: ISSUE
-    query: "org:asyncapi state:open is:issue"
+    query: "org:asyncapi state:open is:issue updated:>${updatedSince}"
   ) {
     pageInfo {
       hasNextPage
@@ -204,14 +207,17 @@ query($first: Int!, $after: String) {
     resetAt
   }
 }
-`,
-  hotDiscussionsPullRequests: `
+`;
+}
+
+function hotDiscussionsPullRequests(updatedSince: string) {
+  return `
 query($first: Int!, $after: String) {
   search(
     first: $first
     after: $after
     type: ISSUE
-    query: "org:asyncapi state:open is:pull-request"
+    query: "org:asyncapi state:open is:pull-request updated:>${updatedSince}"
   ) {
     pageInfo {
       hasNextPage
@@ -253,7 +259,7 @@ query($first: Int!, $after: String) {
             }
           }
         }
-        comments(first: 10) {
+        comments(first: 20) {
           totalCount
           pageInfo {
             hasNextPage
@@ -274,5 +280,13 @@ query($first: Int!, $after: String) {
     resetAt
   }
 }
-`
-});
+`;
+}
+
+export const Queries = {
+  pullRequestById,
+  issueById,
+  goodFirstIssues,
+  hotDiscussionsIssues,
+  hotDiscussionsPullRequests
+};

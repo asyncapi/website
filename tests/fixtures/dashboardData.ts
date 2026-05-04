@@ -55,7 +55,7 @@ const fullDiscussionDetails = {
   }
 };
 
-const mockRateLimitResponse = {
+const mockHealthyRateLimitResponse = {
   search: {
     nodes: [mockDiscussion],
     pageInfo: { hasNextPage: false }
@@ -63,8 +63,8 @@ const mockRateLimitResponse = {
   rateLimit: {
     cost: 1,
     limit: 5000,
-    remaining: 50,
-    resetAt: new Date().toISOString()
+    remaining: 4000,
+    resetAt: new Date(Date.now() + 3600000).toISOString()
   }
 };
 
@@ -80,4 +80,10 @@ const issues = [
   }
 ] as GoodFirstIssues[];
 
-export { discussionWithMoreComments, fullDiscussionDetails, issues, mockDiscussion, mockRateLimitResponse };
+export {
+  discussionWithMoreComments,
+  fullDiscussionDetails,
+  issues,
+  mockDiscussion,
+  mockHealthyRateLimitResponse
+};
