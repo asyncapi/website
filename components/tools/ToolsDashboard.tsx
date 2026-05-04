@@ -176,33 +176,39 @@ export default function ToolsDashboard() {
         <div className='my-10 flex flex-wrap justify-between gap-4 lg:flex-nowrap'>
           <div className='flex h-auto w-[47%] gap-5 lg:w-1/5'>
             <div className='relative h-auto w-full' ref={filterRef as React.LegacyRef<HTMLDivElement>}>
-              <div
+              <button
+                type='button'
                 className='flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-1 text-sm text-gray-700 shadow hover:border-gray-600 hover:shadow-md'
                 onClick={() => setOpenFilter(!openFilter)}
+                aria-expanded={openFilter}
+                aria-controls='tools-filter-panel'
                 data-testid='ToolsDashboard-Filters-Click'
               >
                 <FilterIcon />
-                <div>Filter</div>
-              </div>
+                <span>Filter</span>
+              </button>
               {openFilter && (
-                <button className='absolute top-16 z-20 min-w-[20rem]'>
+                <div id='tools-filter-panel' className='absolute top-16 z-20 min-w-[20rem]'>
                   <Filters setOpenFilter={setOpenFilter} />
-                </button>
+                </div>
               )}
             </div>
           </div>
           <div className='flex h-auto w-[47%] gap-5 lg:w-1/5'>
             <div className='relative h-auto w-full' ref={categoryRef as React.LegacyRef<HTMLDivElement>}>
-              <div
+              <button
+                type='button'
                 className='flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-1 text-sm text-gray-700 shadow hover:border-gray-600 hover:shadow-md'
                 onClick={() => setopenCategory(!openCategory)}
+                aria-expanded={openCategory}
+                aria-controls='tools-category-panel'
                 data-testid='ToolsDashboard-category'
               >
-                <div>Jump to Category</div>
+                <span>Jump to Category</span>
                 <ArrowDown className={`my-auto ${openCategory ? 'rotate-180' : ''}`} />
-              </div>
+              </button>
               {openCategory && (
-                <div className='absolute right-52 top-16 z-20'>
+                <div id='tools-category-panel' className='absolute right-52 top-16 z-20'>
                   <CategoryDropdown setopenCategory={setopenCategory} />
                 </div>
               )}
@@ -229,10 +235,14 @@ export default function ToolsDashboard() {
           </div>
         </div>
         {isFiltered && (
-          <div className='mt-4 flex cursor-pointer items-center text-gray-600 hover:text-black' onClick={clearFilters}>
+          <button
+            type='button'
+            className='mt-4 flex items-center text-gray-600 hover:text-black'
+            onClick={clearFilters}
+          >
             <Cross />
             <span className='ml-3'>Clear Filters</span>
-          </div>
+          </button>
         )}
         <div className='mt-0'>
           {checkToolsList ? (
