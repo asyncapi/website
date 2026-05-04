@@ -7,11 +7,11 @@ import type { NavigationItems } from '@/types/context/DocsContext';
 import type { IPost } from '@/types/post';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
-import editOptions from '../../config/edit-page-config.json';
 import DocsContext from '../../context/DocsContext';
 import { getAllPosts } from '../../utils/api';
 import Button from '../buttons/Button';
 import DocsButton from '../buttons/DocsButton';
+import EditPageButton from '../buttons/EditPageButton';
 import AnnouncementHero from '../campaigns/AnnouncementHero';
 import Feedback from '../Feedback';
 import Head from '../Head';
@@ -26,49 +26,6 @@ interface IDocsLayoutProps {
   post: IPost;
   navItems?: NavigationItems;
   children: React.ReactNode;
-}
-
-/**
- * @description Generate edit link for the post
- * @param {IPost} post
- */
-function generateEditLink(post: IPost) {
-  let last = post.id.substring(post.id.lastIndexOf('/') + 1);
-
-  if (last.endsWith('.mdx')) {
-    last = last.replace('.mdx', '.md');
-  }
-  const target = editOptions.find((edit) => {
-    return post.slug.includes(edit.value);
-  });
-  const editHref = target?.href;
-  const hrefList = editHref?.split('/');
-
-  if (!hrefList) return null;
-
-  const lastListElement = hrefList[hrefList.length - 1].split('.');
-  const isHrefToFile = lastListElement.length > 1;
-  const EditPage = 'Edit this page on GitHub';
-
-  if (target?.value === '') {
-    return (
-      <a
-        target='_blank'
-        rel='noopener noreferrer'
-        href={`${target.href}${post.isIndex ? `${post.slug}/index` : post.slug}.md`}
-        className='ml-1 underline'
-      >
-        {EditPage}
-      </a>
-    );
-  }
-  if (isHrefToFile) last = '';
-
-  return (
-    <a target='_blank' rel='noopener noreferrer' href={`${target?.href}/${last}`} className='ml-1 underline'>
-      {EditPage}
-    </a>
-  );
 }
 
 /**
@@ -154,8 +111,8 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                   <div>
                     <p className='font-normal font-sans text-sm text-gray-600 antialiased'>
                       Found an error? Have a suggestion?
-                      {generateEditLink(post)}
                     </p>
+                    <EditPageButton slug={post.slug} contentType='docs' className='mt-2' />
                   </div>
                   {post.releaseNoteLink && (
                     // show only when it is related to specification (/docs/reference/specification)
