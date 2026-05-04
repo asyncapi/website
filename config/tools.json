@@ -798,6 +798,27 @@
         }
       },
       {
+        "title": "Golang AsyncAPI Code Generator",
+        "description": "Generate Go user and application boilerplate from AsyncAPI specifications. Can be called from `go generate` without requirements.\n",
+        "links": {
+          "repoUrl": "https://github.com/dimonoff/asyncapi-codegen"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "Go/Golang",
+              "color": "bg-[#8ECFDF]",
+              "borderColor": "border-[#00AFD9]"
+            }
+          ],
+          "technology": [],
+          "categories": [
+            "code-generator"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "MultiAPI Generator",
         "description": "This is a plugin designed to help developers automatizing the creation of code classes from YML files based on AsyncApi and OpenAPI. It is presented in 2 flavours Maven and Gradle",
         "links": {
@@ -1988,7 +2009,7 @@
           ],
           "technology": [
             {
-              "name": "AsyncAPI Generator",
+              "name": "AsyncAPI CLI",
               "color": "bg-[#61d0f2]",
               "borderColor": "border-[#40ccf7]"
             }
@@ -2353,7 +2374,7 @@
           ],
           "technology": [
             {
-              "name": "AsyncAPI Generator",
+              "name": "AsyncAPI CLI",
               "color": "bg-[#61d0f2]",
               "borderColor": "border-[#40ccf7]"
             }
@@ -2673,7 +2694,7 @@
           ],
           "technology": [
             {
-              "name": "AsyncAPI Generator",
+              "name": "AsyncAPI CLI",
               "color": "bg-[#61d0f2]",
               "borderColor": "border-[#40ccf7]"
             }
