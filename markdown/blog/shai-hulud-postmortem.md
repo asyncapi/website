@@ -97,7 +97,7 @@ Regardless of how much we prepare, security incidents can still occur. This inci
 
 - Have backup maintainers with publishing rights and revoking rights for tokens to reduce single points of failure.
 - Token rotation and limited scope tokens should be enforced. The NPM token we were using was three years old and has now been revoked.
-- Got to know about a [workflow with unsecured context](https://github.com/asyncapi/cli/blob/master/.github/workflows/auto-changeset.yml) in GitHub Actions. Although it is not the root cause here, we have fixed it to avoid any future risks in [PR #1909](https://github.com/asyncapi/cli/pull/1909)
+- Got to know about a [workflow with unsecured context](https://github.com/asyncapi/cli/blob/6729f4c087c668e34106a21e766e651b6f0a2b5f/.github/workflows/auto-changeset.yml) in GitHub Actions. Although it is not the root cause here, we have fixed it to avoid any future risks in [PR #1909](https://github.com/asyncapi/cli/pull/1909)
 
 
 **If you have any further questions or need assistance, please do not hesitate to reach out to us at [security@asyncapi.com](mailto:security@asyncapi.com)**

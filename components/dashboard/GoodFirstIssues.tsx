@@ -15,48 +15,24 @@ interface GoodFirstIssuesProps {
   issues: Issue[];
 }
 
-/**
- * @description Filter issues based on selected repo and area.
- *
- * @param {Issue[]} issues - The list of issues to filter.
- * @param {FiltersType} filters - The filters to apply.
- * @returns {Issue[]} The filtered list of issues.
- */
 export function filterIssues(issues: Issue[], filters: FiltersType): Issue[] {
   let result = issues;
 
-  if (filters.selectedRepo !== 'Repository - All') {
+  if (filters.selectedRepo !== 'All') {
     result = result.filter((issue) => issue.repo === filters.selectedRepo);
   }
-  if (filters.selectedArea !== 'Area - All') {
+  if (filters.selectedArea !== 'All') {
     result = result.filter((issue) => issue.area === filters.selectedArea);
   }
 
   return result;
 }
 
-/**
- * @description Component that displays a list of good first issues.
- *
- * @param {GoodFirstIssuesProps} props - The props for the component.
- * @param {Issue[]} props.issues - The list of good first issues.
- */
 export default function GoodFirstIssues({ issues }: GoodFirstIssuesProps) {
   const [selectedRepo, setSelectedRepo] = useState('All');
   const [selectedArea, setSelectedArea] = useState('All');
 
-  // Get current issues
-
-  let filteredIssues = issues;
-
-  const allIssues = issues;
-
-  if (selectedRepo !== 'All') {
-    filteredIssues = filteredIssues.filter((issue) => issue.repo === selectedRepo);
-  }
-  if (selectedArea !== 'All') {
-    filteredIssues = filteredIssues.filter((issue) => issue.area === selectedArea);
-  }
+  const filteredIssues = filterIssues(issues, { selectedRepo, selectedArea });
 
   return (
     <Table
@@ -68,7 +44,7 @@ export default function GoodFirstIssues({ issues }: GoodFirstIssuesProps) {
             className='ml-auto'
             data-testid='GoodFirstIssues-filter-component'
             issues={filteredIssues}
-            allIssues={allIssues}
+            allIssues={issues}
             setSelectedRepo={setSelectedRepo}
             setSelectedArea={setSelectedArea}
             selectedArea={selectedArea}
