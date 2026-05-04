@@ -1,15 +1,15 @@
 [
-  {
-    "value": "reference/bindings/",
-    "href": "https://github.com/asyncapi/bindings/tree/master"
-  },
+{
+  "value": "reference/bindings/",
+  "href": "https://github.com/asyncapi/bindings/blob/master"
+},
   {
     "value": "/tools/generator",
     "href": "https://github.com/asyncapi/generator/tree/master/apps/generator/docs"
   },
   {
     "value": "reference/specification/",
-    "href": "https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md"
+    "href": "https://github.com/asyncapi/spec/blob/master/spec"
   },
   {
     "value": "/tools/cli",
