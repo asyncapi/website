@@ -36,6 +36,7 @@ interface IPillProps {
   isCollapsible?: boolean;
   isCollapsed?: boolean;
   onClickCollapse?: () => void;
+  collapsibleContentId?: string;
 }
 
 /**
@@ -55,9 +56,45 @@ export default function Pill({
   colorClass = '',
   isCollapsible = false,
   isCollapsed = false,
-  onClickCollapse = () => {}
+  onClickCollapse = () => {},
+  collapsibleContentId
 }: IPillProps) {
   const [isDescriptionVisible, setIsDescriptionVisible] = useState(false);
+  const isDescriptionTrigger = !item.url && Boolean(item.description);
+  const interactiveClassName =
+    'block rounded-md text-left font-medium text-gray-900 transition-colors hover:text-gray-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet focus-visible:ring-offset-2';
+  const titleContent = (
+    <>
+      {item.done && (
+        <span title='Done!'>
+          <DoneIcon />
+        </span>
+      )}
+      <span>{item.title}</span>
+    </>
+  );
+
+  let titleElement = <span className='block text-left font-medium text-gray-900'>{item.title}</span>;
+
+  if (item.url) {
+    titleElement = (
+      <a href={item.url} rel='noopener noreferrer' className={`${interactiveClassName} cursor-pointer`}>
+        {titleContent}
+      </a>
+    );
+  } else if (isDescriptionTrigger) {
+    titleElement = (
+      <button
+        type='button'
+        onClick={() => setIsDescriptionVisible(true)}
+        aria-label={`Open details for ${item.title}`}
+        aria-haspopup='dialog'
+        className={`${interactiveClassName} cursor-pointer`}
+      >
+        {titleContent}
+      </button>
+    );
+  }
 
   return (
     <>
@@ -71,23 +108,17 @@ export default function Pill({
               'flex flex-1 items-center justify-between rounded-r-md border-y border-r border-gray-200 bg-white'
             }
           >
-            <div className='px-4 py-2 text-sm'>
-              <a
-                href={item.url}
-                rel='noopener noreferrer'
-                onClick={() => !item.url && item.description && setIsDescriptionVisible(true)}
-                className={`block text-left font-medium text-gray-900 ${item.description || item.url ? 'cursor-pointer hover:text-gray-600' : 'cursor-default'}`}
-              >
-                {item.done && (
-                  <span title='Done!'>
-                    <DoneIcon />
-                  </span>
-                )}
-                <span>{item.title}</span>
-              </a>
-            </div>
+            <div className='px-4 py-2 text-sm'>{titleElement}</div>
             {isCollapsible && (
-              <button className='mr-2' onClick={onClickCollapse} data-testid='RoadmapItem-button'>
+              <button
+                type='button'
+                className='mr-2 rounded-md p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet focus-visible:ring-offset-2'
+                onClick={onClickCollapse}
+                data-testid='RoadmapItem-button'
+                aria-expanded={!isCollapsed}
+                aria-controls={collapsibleContentId}
+                aria-label={`${isCollapsed ? 'Expand' : 'Collapse'} ${item.title}`}
+              >
                 <IconArrowRight className={`h-4 ${isCollapsed ? 'rotate-90' : '-rotate-90'}`} />
               </button>
             )}

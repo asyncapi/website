@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useId, useState } from 'react';
 
 // Since a roadmap item can contain nested roadmap lists, we need to import RoadmapList to display them.
 /* eslint-disable import/no-cycle*/
@@ -26,7 +26,8 @@ export interface IRoadmapItemProps {
  */
 export default function RoadmapItem({ item, colorClass, showConnector = true, collapsed = true }: IRoadmapItemProps) {
   const [isCollapsed, setIsCollapsed] = useState(collapsed);
-  const isCollapsible = item.solutions !== undefined;
+  const isCollapsible = item.solutions !== undefined || item.implementations !== undefined;
+  const collapsibleContentId = useId();
 
   const connectorClasses = 'border-l-2 border-dashed border-gray-300';
   const classNames = `pt-2 ${showConnector && connectorClasses}`;
@@ -45,15 +46,20 @@ export default function RoadmapItem({ item, colorClass, showConnector = true, co
           isCollapsed={isCollapsed}
           isCollapsible={isCollapsible}
           onClickCollapse={() => setIsCollapsed(!isCollapsed)}
+          collapsibleContentId={collapsibleContentId}
         />
       </div>
 
-      {!isCollapsed && item?.solutions?.length && (
-        <RoadmapList className='ml-2 pt-3' colorClass='bg-blue-400' items={item.solutions} collapsed={false} />
-      )}
+      {isCollapsible && (
+        <div id={collapsibleContentId} hidden={isCollapsed}>
+          {!isCollapsed && item?.solutions?.length && (
+            <RoadmapList className='ml-2 pt-3' colorClass='bg-blue-400' items={item.solutions} collapsed={false} />
+          )}
 
-      {!isCollapsed && item?.implementations?.length && (
-        <RoadmapList className='ml-9 pt-3' colorClass='bg-black' items={item.implementations} collapsed={false} />
+          {!isCollapsed && item?.implementations?.length && (
+            <RoadmapList className='ml-9 pt-3' colorClass='bg-black' items={item.implementations} collapsed={false} />
+          )}
+        </div>
       )}
     </li>
   );
