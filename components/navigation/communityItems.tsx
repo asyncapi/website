@@ -4,7 +4,6 @@ import IconAmbassador from '../icons/Ambassador';
 import IconContributing from '../icons/Contributing';
 import IconDashboard from '../icons/Dashboard';
 import IconGithubOrganization from '../icons/GithubOrganization';
-import IconMeetings from '../icons/Meetings';
 import IconModelina from '../icons/Modelina';
 import IconNewsroom from '../icons/Newsroom';
 import IconSlack from '../icons/Slack';
@@ -67,16 +66,10 @@ const communityItems: CommunityItem[] = [
       'Just need a good first issue to start your contribution journey? or want to see what topics are hot in discussion?'
   },
   {
-    icon: IconMeetings,
-    title: 'Events',
-    href: '/community/events',
-    description: 'See what events and meetings are organized under AsyncAPI umbrella and join one of them.'
-  },
-  {
     icon: IconNewsroom,
-    title: 'Newsroom',
-    href: '/community/newsroom',
-    description: 'Get upto date with the recent activity in the initiative.'
+    title: 'Events & Updates',
+    href: '/community/events-and-updates',
+    description: 'Stay updated with AsyncAPI events, blogs, videos, and community news.'
   }
 ];
 

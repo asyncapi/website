@@ -70,6 +70,7 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 
 # Additional redirection
 /community/meetings /community/events 301!
+/community/events /community/events-and-updates 301!
 /cheatsheet https://github.com/asyncapi/website/tree/master/cheatsheet 302!
 
 # Short URLs

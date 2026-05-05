@@ -95,7 +95,7 @@ function TOCItem({ item, index, currSelected, closeMenu }: TOCItemProps) {
       <nav className='relative block max-w-max'>
         <a
           className={twMerge(
-            'font-normal mb-1 flex items-center font-sans text-sm text-gray-900 antialiased transition duration-100 ease-in-out hover:underline',
+            'font-normal mb-1 flex items-center font-sans text-sm dark:text-white text-gray-900 antialiased transition duration-100 ease-in-out hover:underline',
             active && 'font-bold text-primary-500'
           )}
           href={`#${item.slug}`}
@@ -168,8 +168,8 @@ export default function CaseTOC({ className, cssBreakingPoint = 'xl', toc }: Cas
               open && 'mb-4'
             } flex-1 text-primary-500 font-medium uppercase tracking-wide text-sm font-sans antialiased ${
               cssBreakingPoint === 'xl'
-                ? 'xl:mb-4 xl:text-xs xl:text-gray-900 xl:font-bold'
-                : 'lg:mb-4 lg:text-xs lg:text-gray-900 lg:font-bold'
+                ? 'xl:mb-4 xl:text-xs xl:text-gray-900 dark:text-gray-300 xl:font-bold'
+                : 'lg:mb-4 lg:text-xs lg:text-gray-900 dark:text-gray-300 lg:font-bold'
             }`
           )}
         >

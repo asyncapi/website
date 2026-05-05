@@ -32,7 +32,7 @@ export default function GenericPostLayout({ post, children }: IGenericPostLayout
 
   return (
     <GenericPostContext.Provider value={{ post }}>
-      <AnnouncementHero className='m-4 text-center' small={true} />
+      <AnnouncementHero className='m-4 text-center' />
       <Container>
         <main className='mt-8 px-4 sm:px-6' data-testid='GenericPostLayout-main-div'>
           <header className='pr-4 sm:pr-6 md:pr-8'>

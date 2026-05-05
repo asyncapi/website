@@ -25,7 +25,7 @@ export default function Header({ className = '' }: HeaderProps) {
         AsyncAPI Community
       </Heading>
       <div className='mt-10' data-testid='Header-heading-1'>
-        <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.xl} className=''>
+        <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.xl} className='dark:text-white'>
           <span className='title block leading-[3rem] md:-mt-1'>
             Welcome to the
             <br /> AsyncAPI Community
@@ -37,7 +37,7 @@ export default function Header({ className = '' }: HeaderProps) {
           level={HeadingLevel.h2}
           typeStyle={HeadingTypeStyle.bodyMd}
           textColor='text-gray-700'
-          className='text-slate-500'
+          className='text-slate-500 dark:text-gray-300'
         >
           We&apos;re an OSS community that&apos;s passionate about AsyncAPI. Join us in building the future of Event
           Driven APIs by asking questions, sharing ideas, and building connections.

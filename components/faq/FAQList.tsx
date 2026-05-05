@@ -19,7 +19,7 @@ export const faqList: FAQ[] = [
         WebSockets, Kafka, STOMP, HTTP, Mercure, etc). For more information, refer to the{' '}
         <a
           href='https://www.asyncapi.com/docs/reference/specification/latest#serverBindingsObject'
-          className='border-b border-secondary-400 font-semibold text-gray-900 transition duration-300 ease-in-out hover:border-secondary-500'
+          className='border-b border-secondary-400 font-semibold text-gray-900 transition duration-300 ease-in-out hover:border-secondary-500 dark:text-white'
         >
           AsyncAPI specification documentation
         </a>

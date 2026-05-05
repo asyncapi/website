@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-export interface DocsNavItemProps {
+export type DocsNavItemProps = Readonly<{
   title: string;
   slug: string;
   href?: string;
@@ -13,9 +13,9 @@ export interface DocsNavItemProps {
   activeClassName?: string;
   bucket?: {
     className: string;
-    icon: React.ComponentType<any>;
+    icon: React.ComponentType<{ className?: string }>;
   };
-}
+}>;
 
 /**
  * @description Determines if a given slug is active.
@@ -69,14 +69,20 @@ export default function DocsNavItem({
     <div>
       <div className={classes}>
         <Link href={href || slug} className='inline-block w-full' onClick={onClick}>
-          {bucket && (
-            <div
-              className={`${(slug === '/docs' ? slug === activeSlug : activeSlug.startsWith(slug)) ? bucket.className : ''} inline-block rounded`}
-              style={{ marginRight: '5px', marginBottom: '-6px', padding: '2px' }}
-            >
-              <bucket.icon className='size-5' />
-            </div>
-          )}
+          {bucket &&
+            (() => {
+              const isBucketActive = slug === '/docs' ? slug === activeSlug : activeSlug.startsWith(slug);
+              const bucketClass = isBucketActive ? `${bucket.className} dark:bg-primary-500` : '';
+
+              return (
+                <div
+                  className={`${bucketClass} inline-block rounded`}
+                  style={{ marginRight: '5px', marginBottom: '-6px', padding: '2px' }}
+                >
+                  <bucket.icon className='size-5' />
+                </div>
+              );
+            })()}
           <span>{title}</span>
         </Link>
       </div>

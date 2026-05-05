@@ -73,3 +73,33 @@ export const initiativeLinks: InitiativeLink[] = [
     url: '/about#faqs'
   }
 ];
+
+export const COMMUNITY_URLS = {
+  GITHUB: {
+    BASE: 'https://github.com/asyncapi/community',
+    AMBASSADOR_PROGRAM:
+      'https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/AMBASSADOR_PROGRAM.md',
+    AMBASSADOR_ORGANIZATION:
+      'https://github.com/asyncapi/community/blob/master/AMBASSADOR_ORGANIZATION.md#are-you-interested-in-becoming-an-official-asyncapi-ambassador',
+    TSC_MEMBERSHIP: 'https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md',
+    CONTRIBUTING: 'https://github.com/asyncapi/community/blob/master/CONTRIBUTING.md'
+  },
+  YOUTUBE: {
+    BASE: 'https://www.youtube.com/asyncapi',
+    AMBASSADOR_VIDEO_ID: '3rg_7hIb9PQ'
+  },
+  BLOG: {
+    AMBASSADOR_PROGRAM: 'https://www.asyncapi.com/blog/asyncapi-ambassador-program'
+  }
+} as const;
+
+export const AMBASSADORS_CONFIG = {
+  POSTS_PER_PAGE: 6,
+  YOUTUBE_VIDEO_ID: '3rg_7hIb9PQ'
+} as const;
+
+export const SOCIAL_MEDIA_BASE_URLS = {
+  GITHUB: 'https://www.github.com',
+  LINKEDIN: 'https://www.linkedin.com/in',
+  TWITTER: 'https://www.twitter.com'
+} as const;

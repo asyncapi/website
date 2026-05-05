@@ -19,7 +19,7 @@ export default function Flyout({ items = [] }: FlyoutProps) {
     >
       <div className='rounded-lg shadow-lg'>
         <div className='shadow-xs overflow-hidden rounded-lg'>
-          <div className='relative z-20 grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2'>
+          <div className='relative z-20 grid gap-6 bg-white dark:bg-dark-card px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2'>
             <MenuBlocks items={items} />
           </div>
         </div>

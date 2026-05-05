@@ -1,0 +1,65 @@
+{
+  "go-asyncapi": {
+    "name": "go-asyncapi",
+    "displayName": "Go AsyncAPI",
+    "description": "This library helps to create AsyncAPI spec from your Go message structures. It uses reflection to translate Go structures in JSON Schema definitions and arrange them in AsyncAPI schema.",
+    "language": "Go",
+    "link": "https://github.com/swaggest/go-asyncapi",
+    "color": "border-cyan-400 text-cyan-600 dark:text-cyan-400 hover:bg-cyan-50 dark:hover:bg-cyan-900/20",
+    "badge": "Open Source"
+  },
+  "faststream": {
+    "name": "faststream",
+    "displayName": "FastStream",
+    "description": "A powerful and easy-to-use Python framework for building asynchronous services interacting with event streams such as Apache Kafka, RabbitMQ and NATS.",
+    "language": "Python",
+    "link": "https://faststream.ag2.ai",
+    "color": "border-cyan-400 text-cyan-600 dark:text-cyan-400 hover:bg-cyan-50 dark:hover:bg-cyan-900/20",
+    "badge": "Open Source"
+  },
+  "modelina": {
+    "name": "modelina",
+    "displayName": "AsyncAPI Modelina",
+    "description": "Generate payload models into Java, TypeScript, Go, etc, you name it, from AsyncAPI documents. This tool gives you full control over the models through high customization.",
+    "language": "TypeScript",
+    "link": "https://modelina.org",
+    "color": "border-cyan-400 text-cyan-600 dark:text-cyan-400 hover:bg-cyan-50 dark:hover:bg-cyan-900/20",
+    "badge": "Open Source"
+  },
+  "converter": {
+    "name": "converter",
+    "displayName": "Converter",
+    "description": "Converts old versions of AsyncAPI files into the latest version.",
+    "language": "TypeScript",
+    "link": "https://www.asyncapi.com/tools/converter",
+    "color": "border-green-400 text-green-600 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/20",
+    "badge": "Open Source"
+  },
+  "java-asyncapi": {
+    "name": "java-asyncapi",
+    "displayName": "Java AsyncAPI",
+    "description": "This tool stores modules, which simplifies interacting with AsyncAPI in jvm ecosystem.",
+    "language": "Java",
+    "link": "https://github.com/asyncapi/jasyncapi",
+    "color": "border-cyan-400 text-cyan-600 dark:text-cyan-400 hover:bg-cyan-50 dark:hover:bg-cyan-900/20",
+    "badge": "Open Source"
+  },
+  "kotlin-asyncapi": {
+    "name": "kotlin-asyncapi",
+    "displayName": "Kotlin AsyncAPI",
+    "description": "The Kotlin AsyncAPI project aims to provide convenience tools for generating and serving AsyncAPI documentation. The core of this project is a Kotlin DSL for building the specification in a typesafe way.",
+    "language": "Kotlin",
+    "link": "https://github.com/OpenFolder/kotlin-asyncapi",
+    "color": "border-cyan-400 text-cyan-600 dark:text-cyan-400 hover:bg-cyan-50 dark:hover:bg-cyan-900/20",
+    "badge": "Open Source"
+  },
+  "saunter": {
+    "name": "saunter",
+    "displayName": "Saunter",
+    "description": "Saunter is an AsyncAPI documentation generator for dotnet. Generates (and hosts) an AsyncAPI schema document from your code.",
+    "language": "C#",
+    "link": "https://github.com/tehmantra/saunter",
+    "color": "border-pink-500 text-pink-600 dark:text-pink-400 hover:bg-pink-50 dark:hover:bg-pink-900/20",
+    "badge": "Open Source"
+  }
+}

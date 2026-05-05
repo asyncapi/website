@@ -15,9 +15,9 @@ import FiltersDisplay from './FiltersDisplay';
 import FiltersDropdown from './FiltersDropdown';
 import Toggle from './Toggle';
 
-interface FiltersProps {
+type FiltersProps = Readonly<{
   setOpenFilter: React.Dispatch<React.SetStateAction<boolean>>;
-}
+}>;
 
 enum OpenedFiltersDropdownType {
   NONE = '',
@@ -126,10 +126,13 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
 
   return (
     <ToolFilter>
-      <div className='z-20 rounded-lg border border-gray-300 bg-white py-4 shadow-md' data-testid='Filters-div'>
+      <div
+        className='z-20 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-dark-card py-4 shadow-lg dark:shadow-xl'
+        data-testid='Filters-div'
+      >
         <div className='mx-4 flex flex-col gap-2'>
           <div className='flex items-baseline justify-between gap-2'>
-            <div className='text-sm text-gray-500'>
+            <div className='text-sm text-gray-500 dark:text-gray-400'>
               <CardData
                 heading='PRICING'
                 data={Data.properties.filters.properties.hasCommercial.description}
@@ -140,32 +143,38 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
                 setRead={setReadMore}
               />
             </div>
-            <div className='mb-0 flex cursor-pointer gap-0.5 text-xs hover:underline' onClick={undoChanges}>
+            <button
+              type='button'
+              className='mb-0 flex cursor-pointer gap-0.5 text-xs hover:underline text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors'
+              onClick={undoChanges}
+            >
               Undo Changes
-            </div>
+            </button>
           </div>
           <div className='flex gap-2' data-testid='Applied-filters'>
-            <div
+            <button
+              type='button'
               className={twMerge(
-                `bg-gray-200 px-4 py-2 flex gap-1 rounded-md hover:bg-secondary-100 border hover:border-secondary-500 cursor-pointer ${checkPaid === 'free' ? 'bg-secondary-100 border-secondary-500' : ''}`
+                `bg-gray-200 dark:bg-gray-700 px-4 py-2 flex gap-1 rounded-md hover:bg-secondary-100 dark:hover:bg-secondary-900/50 border hover:border-secondary-500 dark:hover:border-secondary-400 cursor-pointer transition-all dark:text-gray-300 ${checkPaid === 'free' ? 'bg-secondary-100 dark:bg-secondary-900/50 border-secondary-500 dark:border-secondary-400' : ''}`
               )}
               onClick={() => (checkPaid === 'free' ? setCheckPaid('all') : setCheckPaid('free'))}
             >
-              <div className='text-sm'>Open Source</div>
-              <img src='/img/illustrations/icons/FreeIcon.svg' alt='Free' />
-            </div>
-            <div
-              className={`flex cursor-pointer gap-1 rounded-md border bg-gray-200 px-4 py-2 hover:border-secondary-500 hover:bg-secondary-100 ${checkPaid === 'paid' ? 'border-secondary-500 bg-secondary-100' : ''}`}
+              <span className='text-sm'>Open Source</span>
+              <img src='/img/illustrations/icons/FreeIcon.svg' alt='Free' className='dark:invert' />
+            </button>
+            <button
+              type='button'
+              className={`flex cursor-pointer gap-1 rounded-md border bg-gray-200 dark:bg-gray-700 px-4 py-2 hover:border-secondary-500 dark:hover:border-secondary-400 hover:bg-secondary-100 dark:hover:bg-secondary-900/50 transition-all dark:text-gray-300 ${checkPaid === 'paid' ? 'border-secondary-500 dark:border-secondary-400 bg-secondary-100 dark:bg-secondary-900/50' : ''}`}
               onClick={() => (checkPaid === 'paid' ? setCheckPaid('all') : setCheckPaid('paid'))}
             >
-              <div className='text-sm'>Commercial</div>
-              <img src='/img/illustrations/icons/PaidIcon.svg' alt='Paid' />
-            </div>
+              <span className='text-sm'>Commercial</span>
+              <img src='/img/illustrations/icons/PaidIcon.svg' alt='Paid' className='dark:invert' />
+            </button>
           </div>
         </div>
-        <hr className='my-4' />
+        <hr className='my-4 border-gray-200 dark:border-gray-700' />
         <div className='mx-4 flex flex-col gap-2'>
-          <div className='text-left text-sm text-gray-500'>
+          <div className='text-left text-sm text-gray-500 dark:text-gray-400'>
             <CardData
               heading='OWNERSHIP'
               data='It describes whether the tools are maintained by AsyncAPI organization or not.'
@@ -180,7 +189,7 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
             <Toggle checked={checkOwner} setChecked={setCheckOwner} label='Show only AsyncAPI-owned tools' />
           </div>
         </div>
-        <hr className='my-4' />
+        <hr className='my-4 border-gray-200 dark:border-gray-700' />
         <div className='mx-4 flex flex-col gap-2' data-testid='Filters-Language-dropdown'>
           <CardData
             heading='LANGUAGE'
@@ -192,26 +201,27 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
             setRead={setReadMore}
           />
           <div className='w-full'>
-            <div
+            <button
+              type='button'
               className={twMerge(
-                `px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openedFiltersDropown === OpenedFiltersDropdownType.LANGUAGE ? 'rounded-b-none' : ''}`
+                `px-4 py-2 flex justify-between rounded-lg border border-gray-400 dark:border-gray-600 w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 shadow text-sm cursor-pointer transition-all ${openedFiltersDropown === OpenedFiltersDropdownType.LANGUAGE ? 'rounded-b-none' : ''}`
               )}
               onClick={() => toggleDropdown(OpenedFiltersDropdownType.LANGUAGE)}
             >
-              <div className='flex items-center text-dark'>
+              <span className='flex items-center text-dark dark:text-gray-300'>
                 {/* eslint-disable-next-line no-nested-ternary */}
                 {checkedLanguage.length > 0
                   ? checkedLanguage.length === 1
                     ? '1 option selected'
                     : `${checkedLanguage.length} options selected`
                   : 'Select Languages...'}
-              </div>
+              </span>
               <ArrowDown
-                className={`my-auto ${openedFiltersDropown === OpenedFiltersDropdownType.LANGUAGE ? 'rotate-180' : ''}`}
+                className={`my-auto transition-transform ${openedFiltersDropown === OpenedFiltersDropdownType.LANGUAGE ? 'rotate-180' : ''}`}
               />
-            </div>
+            </button>
             {openedFiltersDropown === OpenedFiltersDropdownType.LANGUAGE && (
-              <div className='w-auto overflow-x-auto rounded-b-lg border border-gray-400 bg-gray-200 duration-150'>
+              <div className='w-auto overflow-x-auto rounded-b-lg border border-gray-400 dark:border-gray-600 bg-gray-200 dark:bg-gray-700 duration-150'>
                 <FiltersDropdown
                   dataList={languageList}
                   checkedOptions={checkedLanguage}
@@ -222,7 +232,7 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
             <FiltersDisplay checkedOptions={checkedLanguage} setCheckedOptions={setCheckedLanguage} />
           </div>
         </div>
-        <hr className='my-4' />
+        <hr className='my-4 border-gray-200 dark:border-gray-700' />
         <div className='mx-4 flex flex-col gap-2' data-testid='Filters-Technology-dropdown'>
           <CardData
             heading='TECHNOLOGY'
@@ -234,26 +244,27 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
             setRead={setReadMore}
           />
           <div className='w-full'>
-            <div
+            <button
+              type='button'
               className={twMerge(
-                `px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openedFiltersDropown === OpenedFiltersDropdownType.TECHNOLOGY ? 'rounded-b-none' : ''}`
+                `px-4 py-2 flex justify-between rounded-lg border border-gray-400 dark:border-gray-600 w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 shadow text-sm cursor-pointer transition-all ${openedFiltersDropown === OpenedFiltersDropdownType.TECHNOLOGY ? 'rounded-b-none' : ''}`
               )}
               onClick={() => toggleDropdown(OpenedFiltersDropdownType.TECHNOLOGY)}
             >
-              <div className='flex items-center text-dark'>
+              <span className='flex items-center text-dark dark:text-gray-300'>
                 {/* eslint-disable-next-line no-nested-ternary */}
                 {checkedTechnology.length > 0
                   ? checkedTechnology.length === 1
                     ? '1 option selected'
                     : `${checkedTechnology.length} options selected`
                   : 'Select Technologies...'}
-              </div>
+              </span>
               <ArrowDown
-                className={`my-auto ${openedFiltersDropown === OpenedFiltersDropdownType.TECHNOLOGY ? 'rotate-180' : ''}`}
+                className={`my-auto transition-transform ${openedFiltersDropown === OpenedFiltersDropdownType.TECHNOLOGY ? 'rotate-180' : ''}`}
               />
-            </div>
+            </button>
             {openedFiltersDropown === OpenedFiltersDropdownType.TECHNOLOGY && (
-              <div className='w-auto overflow-x-auto rounded-b-lg border border-gray-400 bg-gray-200 duration-150'>
+              <div className='w-auto overflow-x-auto rounded-b-lg border border-gray-400 dark:border-gray-600 bg-gray-200 dark:bg-gray-700 duration-150'>
                 <FiltersDropdown
                   dataList={technologyList}
                   checkedOptions={checkedTechnology}
@@ -264,7 +275,7 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
             <FiltersDisplay checkedOptions={checkedTechnology} setCheckedOptions={setCheckedTechnology} />
           </div>
         </div>
-        <hr className='my-4' />
+        <hr className='my-4 border-gray-200 dark:border-gray-700' />
         <div className='mx-4 flex flex-col gap-2' data-testid='Filters-Category-dropdown'>
           <CardData
             heading='CATEGORY'
@@ -276,26 +287,27 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
             setRead={setReadMore}
           />
           <div className='w-full'>
-            <div
+            <button
+              type='button'
               className={twMerge(
-                `px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openedFiltersDropown === OpenedFiltersDropdownType.CATEGORY ? 'rounded-b-none' : ''}`
+                `px-4 py-2 flex justify-between rounded-lg border border-gray-400 dark:border-gray-600 w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 shadow text-sm cursor-pointer transition-all ${openedFiltersDropown === OpenedFiltersDropdownType.CATEGORY ? 'rounded-b-none' : ''}`
               )}
               onClick={() => toggleDropdown(OpenedFiltersDropdownType.CATEGORY)}
             >
-              <div className='flex items-center text-dark'>
+              <span className='flex items-center text-dark dark:text-gray-300'>
                 {/* eslint-disable-next-line no-nested-ternary */}
                 {checkedCategory.length > 0
                   ? checkedCategory.length === 1
                     ? '1 option selected'
                     : `${checkedCategory.length} options selected`
                   : 'Select Categories...'}
-              </div>
+              </span>
               <ArrowDown
-                className={`my-auto ${openedFiltersDropown === OpenedFiltersDropdownType.CATEGORY ? 'rotate-180' : ''}`}
+                className={`my-auto transition-transform ${openedFiltersDropown === OpenedFiltersDropdownType.CATEGORY ? 'rotate-180' : ''}`}
               />
-            </div>
+            </button>
             {openedFiltersDropown === OpenedFiltersDropdownType.CATEGORY && (
-              <div className='w-auto overflow-x-auto rounded-b-lg border border-gray-400 bg-gray-200 duration-150'>
+              <div className='w-auto overflow-x-auto rounded-b-lg border border-gray-400 dark:border-gray-600 bg-gray-200 dark:bg-gray-700 duration-150'>
                 <FiltersDropdown
                   dataList={categoryList}
                   checkedOptions={checkedCategory}
@@ -306,9 +318,9 @@ export default function Filters({ setOpenFilter }: FiltersProps) {
             <FiltersDisplay checkedOptions={checkedCategory} setCheckedOptions={setCheckedCategory} />
           </div>
         </div>
-        <hr className='my-4' />
-        <div className='mx-4 my-6 mb-0 w-auto' onClick={handleApplyFilters}>
-          <Button text='Apply Filters' className='w-full' />
+        <hr className='my-4 border-gray-200 dark:border-gray-700' />
+        <div className='mx-4 my-6 mb-0 w-auto'>
+          <Button text='Apply Filters' className='w-full' onClick={handleApplyFilters} />
         </div>
       </div>
     </ToolFilter>

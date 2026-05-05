@@ -1,11 +1,12 @@
 {
     "main": {
         "header": "Aufbau der Zukunft der",
-        "subHeader": "Ereignisgesteuerte Architekturen (EDA)",
+        "subHeader": "Ereignisgesteuerte",
+        "extraSubHeader": "Architekturen (EDA)",
         "body_pretext": "Open-Source-Tools zur einfachen Erstellung und Wartung Ihrer ereignisgesteuerten Architektur. Alle basieren auf der AsyncAPI-Spezifikation, der ",
         "body_boldtext": "Industriestandard",
         "body_posttext": " zur Definition asynchroner APIs.",
-        "docs_btn": "Lesen Sie die Dokumente",
+        "community_btn": "sluit je aan bij onze gemeenschap",
         "search_btn": "Schnellsuche...",
         "slogan_text": "Wir sind stolz darauf, Teil der",
         "slogan_link": "Linux Foundation"
@@ -41,6 +42,10 @@
         "much-more.description": "Wir haben viele verschiedene Tools und laden Sie ein, unsere Ideen zu erkunden und neue Ideen für AsyncAPI vorzuschlagen.",
         "much-more.links.whyasyncapi-muchmore-github-link": "GitHub-Diskussionen anzeigen"
     },
+    "sneakpeek": {
+        "title": "Ein Einblick in den echten Prozess",
+        "description": "Eines unserer Hauptziele ist es, den aktuellen Stand der ereignisgesteuerten Architektur (EDA) zu verbessern."
+    },
     "adopters": {
         "title": "Von den weltweit führenden Marken übernommen",
         "description": "Diese Marken verwenden AsyncAPI bereits in der Produktion. Nutzt Ihr Unternehmen AsyncAPI und möchte in diese Liste aufgenommen werden?",
@@ -68,7 +73,9 @@
         "supportedByLink": "Kontaktieren Sie uns per E-Mail",
         "supportedByPosttext": " für weitere Informationen."
     },
-    "testimonials": {
-        "title": "Was die Experten sagen"
+    "events": {
+        "title": "Unsere Gemeinschafts-Events",
+        "description":"AsyncAPI organiseert wekelijks verschillende bijeenkomsten. Deze richten zich op verschillende onderwerpen, soms puur technisch en soms over community-building. Kies er een en doe mee!",
+        "meetingTitle":"Lees meer over onze bijeenkomsten."
     }
 }

@@ -38,16 +38,16 @@ export default function FiltersDisplay({ checkedOptions = [], setCheckedOptions 
               <div
                 key={index}
                 className={twMerge(
-                  'hover:border-black border border-gray-600 text-gray-600 hover:text-black p-1 pb-0 rounded-2xl flex gap-1 items-start'
+                  'hover:border-gray-800 dark:hover:border-gray-400 border border-gray-600 dark:border-gray-500 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white p-1 pb-0 rounded-2xl flex gap-1 items-start transition-colors duration-200'
                 )}
               >
                 <div className='m-auto h-fit text-xs'>{items}</div>
                 <button
-                  className='mt-[-2px] rounded-full p-1 hover:bg-gray-100'
+                  className='mt-[-2px] rounded-full p-1 hover:bg-gray-100 dark:hover:bg-dark-background transition-colors duration-200'
                   onClick={(event) => handleClickOption(event, items, checkedOptions, setCheckedOptions)}
                   data-testid='Filters-Display-Button'
                 >
-                  <img src='/img/illustrations/icons/close-icon.svg' alt='close' width='10' />
+                  <img src='/img/illustrations/icons/close-icon.svg' alt='close' width='10' className='dark:invert' />
                 </button>
               </div>
             );
