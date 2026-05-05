@@ -1,3 +1,4 @@
+import debounce from 'lodash/debounce';
 import Link from 'next/link';
 import type { NextRouter } from 'next/router';
 import { useRouter } from 'next/router';
@@ -44,15 +45,18 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
 
   // Adding Scroll listener
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = debounce(() => {
       const scrollTop = window.scrollY;
 
       setIsScrolled(scrollTop > 50);
-    };
+    }, 10);
 
     window.addEventListener('scroll', handleScroll);
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      handleScroll.cancel();
+    };
   }, []);
 
   /**
@@ -162,8 +166,8 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
     <>
       <div
         // eslint-disable-next-line max-len
-        className={`bg-white/60 transition-all duration-500 ease-in-out lg:rounded-xl  backdrop-blur-lg z-100 
-          ${isScrolled ? 'py-2 lg:py-1 shadow-md ring-1 dark:backdrop-blur-xl dark:bg-dark-card/60  ring-black/5 lg:rounded-xl' : 'mt-0 py-4 dark:bg-dark-background rounded-none'} ${className}`}
+        className={`bg-white/60 transition-all duration-500 ease-in-out lg:rounded-xl backdrop-blur-lg z-50 
+          ${isScrolled ? 'py-4 shadow-md ring-1 dark:backdrop-blur-xl dark:bg-dark-card/60 ring-black/5 lg:rounded-xl' : 'mt-0 py-4 dark:bg-dark-background rounded-none'} ${className}`}
       >
         {/* <div
         className={`bg-white/60 mx-auto fixed flex left-0 right-0 top-0 w-full z-[12] items-center justify-between max-w-[76rem] select-none transition-all duration-300 ease-spring ring-1 ring-black/5 bg-white/76 backdrop-blur-lg shadow-lg lg:rounded-full lg:mt-3 translate-y-0 ${className} z-50`}
@@ -173,9 +177,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
             <div className='lg:w-auto lg:flex-1'>
               <div className='flex'>
                 <Link href='/' className='cursor-pointer' aria-label='AsyncAPI' data-testid='Navbar-logo'>
-                  <AsyncAPILogo
-                    className={`w-auto transition-all duration-500 ease-in-out ${isScrolled ? 'h-6 ' : 'h-8'}`}
-                  />
+                  <AsyncAPILogo className={'w-auto transition-all duration-500 ease-in-out h-8'} />
                 </Link>
               </div>
             </div>
