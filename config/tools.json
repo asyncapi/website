@@ -938,7 +938,7 @@
               "borderColor": "border-[#CA1A33]"
             },
             {
-              "name": "Liquid",
+              "name": "AsyncAPI CLI",
               "color": "bg-[#61d0f2]",
               "borderColor": "border-[#40ccf7]"
             },
@@ -1607,7 +1607,7 @@
               "borderColor": "border-[#CA1A33]"
             },
             {
-              "name": "Liquid",
+              "name": "AsyncAPI CLI",
               "color": "bg-[#61d0f2]",
               "borderColor": "border-[#40ccf7]"
             },

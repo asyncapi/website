@@ -71,8 +71,14 @@ jobs:
         name: Install dependencies
         run: npm ci
       - if: steps.packagejson.outputs.exists == 'true'
-        name: Test
+        name: Run tests
         run: npm test --if-present
+      - if: steps.packagejson.outputs.exists == 'true'
+        name: Build project
+        run: npm run build --if-present
+      - if: steps.packagejson.outputs.exists == 'true' && matrix.os == 'ubuntu-latest'
+        name: Run E2E tests (Cypress)
+        run: npm run test:e2e --if-present
       - if: steps.packagejson.outputs.exists == 'true' && matrix.os == 'ubuntu-latest'
         name: Run linter
         run: npm run lint --if-present

@@ -4,6 +4,7 @@ import React from 'react';
 
 import type { Ambassador } from '@/types/pages/community/Community';
 import { HeadingTypeStyle } from '@/types/typography/Heading';
+import { addAdditionalUserInfo } from '@/utils/ambassadors';
 
 import Button from '../../../components/buttons/Button';
 import GenericLayout from '../../../components/layout/GenericLayout';
@@ -11,33 +12,6 @@ import NewsletterSubscribe from '../../../components/NewsletterSubscribe';
 import Heading from '../../../components/typography/Heading';
 import ambassadorList from '../../../config/ambassador_lists.json';
 import ambassadors from '../../../config/AMBASSADORS_MEMBERS.json';
-
-/**
- * @description Add additional user information to the user object having ambassador data
- * @param {Ambassador} user - The user object having ambassador data
- */
-export function addAdditionalUserInfo(user: Ambassador) {
-  const userData: Ambassador = {
-    ...user
-  };
-
-  // add social links
-  if (userData.github) {
-    userData.githubUrl = `https://www.github.com/${userData.github}`;
-  }
-  if (userData.linkedin) {
-    userData.linkedinUrl = `https://www.linkedin.com/in/${userData.linkedin}`;
-  }
-  if (userData.twitter) {
-    userData.twitterUrl = `https://www.twitter.com/${userData.twitter}`;
-  }
-
-  // add img url
-  // github redirects to avatar url using `https://www.github.com/<username>.png`
-  userData.img = `${userData.githubUrl}.png`;
-
-  return userData;
-}
 
 /**
  * @description The main page for the AsyncAPI Ambassador Program.
@@ -141,21 +115,27 @@ export default function Index() {
               <div className='flex h-full flex-col justify-between'>
                 <div className='p-2 text-sm'>{ambassador.bio}</div>
                 <div className='flex border-t p-2' data-testid='Ambassadors-members-socials'>
-                  <a
-                    href={ambassador.twitterUrl}
-                    target='_blank'
-                    rel='noreferrer'
-                    className='underline'
-                    data-testid='Ambassadors-members-twitter'
-                  >
-                    Twitter ↗
-                  </a>
-                  <a href={ambassador.githubUrl} target='_blank' rel='noreferrer' className='ml-3 underline'>
-                    Github ↗
-                  </a>
-                  <a href={ambassador.linkedinUrl} target='_blank' rel='noreferrer' className='ml-3 underline'>
-                    Linkedin ↗
-                  </a>
+                  {ambassador.twitterUrl && (
+                    <a
+                      href={ambassador.twitterUrl}
+                      target='_blank'
+                      rel='noreferrer'
+                      className='underline'
+                      data-testid='Ambassadors-members-twitter'
+                    >
+                      Twitter ↗
+                    </a>
+                  )}
+                  {ambassador.githubUrl && (
+                    <a href={ambassador.githubUrl} target='_blank' rel='noreferrer' className='ml-3 underline'>
+                      Github ↗
+                    </a>
+                  )}
+                  {ambassador.linkedinUrl && (
+                    <a href={ambassador.linkedinUrl} target='_blank' rel='noreferrer' className='ml-3 underline'>
+                      Linkedin ↗
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
