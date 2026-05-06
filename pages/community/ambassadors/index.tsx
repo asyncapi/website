@@ -4,6 +4,7 @@ import React from 'react';
 
 import type { Ambassador } from '@/types/pages/community/Community';
 import { HeadingTypeStyle } from '@/types/typography/Heading';
+import { addAdditionalUserInfo } from '@/utils/ambassadors';
 
 import Button from '../../../components/buttons/Button';
 import IconGithub from '../../../components/icons/Github';
@@ -14,30 +15,6 @@ import NewsletterSubscribe from '../../../components/NewsletterSubscribe';
 import Heading from '../../../components/typography/Heading';
 import ambassadorList from '../../../config/ambassador_lists.json';
 import ambassadors from '../../../config/AMBASSADORS_MEMBERS.json';
-
-/**
- * @description Add additional user information to the user object having ambassador data
- * @param {Ambassador} user - The user object having ambassador data
- */
-export function addAdditionalUserInfo(user: Ambassador) {
-  const userData: Ambassador = {
-    ...user
-  };
-
-  if (userData.github) {
-    userData.githubUrl = `https://www.github.com/${userData.github}`;
-  }
-  if (userData.linkedin) {
-    userData.linkedinUrl = `https://www.linkedin.com/in/${userData.linkedin}`;
-  }
-  if (userData.twitter) {
-    userData.twitterUrl = `https://www.twitter.com/${userData.twitter}`;
-  }
-
-  userData.img = `${userData.githubUrl}.png`;
-
-  return userData;
-}
 
 /**
  * @description The main page for the AsyncAPI Ambassador Program.
