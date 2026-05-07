@@ -14,13 +14,6 @@
     "date": "2026-02-03T15:00:00.000Z"
   },
   {
-    "title": "Governance Board Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=a2QzdDBwNzk3bDk3M3NodnY0NDdhdGM3aTggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/2256",
-    "banner": "",
-    "date": "2026-01-26T16:00:00.000Z"
-  },
-  {
     "title": "AsyncAPI Community WG Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=aXQwdHFudTgyMzA1ZDZrMmtjajVxbzUzcm8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/2277",
