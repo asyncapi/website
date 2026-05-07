@@ -17,6 +17,7 @@ export default function BarChartComponent() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All Categories');
   const [selectedMonth, setSelectedMonth] = useState<string>('All Months');
   const [windowWidth, setWindowWidth] = useState<number>(0);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
 
   /*
     TODO: Uncomment the block below to enable previous-years data (2023) and "All Years" selection.
@@ -94,6 +95,7 @@ export default function BarChartComponent() {
 
   // Effect hook to update windowWidth state on resize
   useEffect(() => {
+    setIsMounted(true);
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
@@ -158,7 +160,9 @@ export default function BarChartComponent() {
           <div className='my-4 flex flex-col justify-between md:m-8 md:flex-row md:items-center md:justify-between'>
             <div className='my-2'>
               <p className='text-center sm:text-left'>Expenses</p>
-              <p className='mt-1 text-center text-xl font-semibold sm:text-left dark:text-white'>${totalAmount.toFixed(2)}</p>
+              <p className='mt-1 text-center text-xl font-semibold sm:text-left dark:text-white'>
+                ${totalAmount.toFixed(2)}
+              </p>
             </div>
             <div className='space-x-4 md:flex'>
               <div className='mx-auto'>
@@ -207,39 +211,41 @@ export default function BarChartComponent() {
           </div>
         </div>
         <div className='flex justify-center dark:text-dark-text'>
-          <BarChart width={barWidth} height={barHeight} data={chartData}>
-            <CartesianGrid strokeDasharray='3 3' stroke='currentColor' className='opacity-30' />
-            <YAxis tickFormatter={(value) => `$${value}`} stroke='currentColor' />
-            <Tooltip content={<CustomTooltip />} />
-            <Legend wrapperStyle={{ color: 'inherit' }} />
-            <Bar
-              dataKey='Amount'
-              fill='#7B5DD3FF'
-              onClick={(data) => {
-                const category = data.payload.Category;
+          {isMounted && (
+            <BarChart width={barWidth} height={barHeight} data={chartData}>
+              <CartesianGrid strokeDasharray='3 3' stroke='currentColor' className='opacity-30' />
+              <YAxis tickFormatter={(value) => `$${value}`} stroke='currentColor' />
+              <Tooltip content={<CustomTooltip />} />
+              <Legend wrapperStyle={{ color: 'inherit' }} />
+              <Bar
+                dataKey='Amount'
+                fill='#7B5DD3FF'
+                onClick={(data) => {
+                  const category = data.payload.Category;
 
-                // Active behavior: use the static 2024 ExpensesLinkData (code 2)
-                const matchedLinkObject: ExpensesLinkItem | undefined = ExpensesLinkData.find(
-                  (obj) => obj.category === category
-                );
+                  // Active behavior: use the static 2024 ExpensesLinkData (code 2)
+                  const matchedLinkObject: ExpensesLinkItem | undefined = ExpensesLinkData.find(
+                    (obj) => obj.category === category
+                  );
 
-                if (matchedLinkObject) {
-                  window.open(matchedLinkObject.link, '_blank');
-                }
+                  if (matchedLinkObject) {
+                    window.open(matchedLinkObject.link, '_blank');
+                  }
 
-                // // --- if previous-years support is enabled: Uncomment code given below
-                // // const matchedLinkObject: ExpensesLinkItem | undefined = currentExpensesLinkData.find(
-                // //   (obj: ExpensesLinkItem) => obj.category === category
-                // // );
-                // //
-                // // if (matchedLinkObject) {
-                // //   window.open(matchedLinkObject.link, '_blank');
-                // // }
-              }}
-            />
-          </BarChart>
+                  // // --- if previous-years support is enabled: Uncomment code given below
+                  // // const matchedLinkObject: ExpensesLinkItem | undefined = currentExpensesLinkData.find(
+                  // //   (obj: ExpensesLinkItem) => obj.category === category
+                  // // );
+                  // //
+                  // // if (matchedLinkObject) {
+                  // //   window.open(matchedLinkObject.link, '_blank');
+                  // // }
+                }}
+              />
+            </BarChart>
+          )}
         </div>
-        {windowWidth && windowWidth < 900 ? <ExpensesCard /> : null}
+        {isMounted && windowWidth < 900 ? <ExpensesCard /> : null}
       </div>
     </div>
   );
