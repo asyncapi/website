@@ -149,21 +149,21 @@ export default function BarChartComponent() {
 
   return (
     <div className='mt-8 flex items-center justify-center sm:px-6 lg:px-8'>
-      <div className='w-full px-4 text-center lg:w-2/3'>
+      <div className='w-full px-4 text-center lg:w-2/3 dark:text-dark-text'>
         <div className='mb-5'>
-          <h1 id='budget-analysis' className='my-2 mb-4 text-3xl font-semibold'>
+          <h1 id='budget-analysis' className='my-2 mb-4 text-3xl font-semibold dark:text-white'>
             Budget Analysis
           </h1>
           <p>Gain insights into the allocation of funds across different categories through our Budget Analysis</p>
           <div className='my-4 flex flex-col justify-between md:m-8 md:flex-row md:items-center md:justify-between'>
             <div className='my-2'>
               <p className='text-center sm:text-left'>Expenses</p>
-              <p className='mt-1 text-center text-xl font-semibold sm:text-left'>${totalAmount.toFixed(2)}</p>
+              <p className='mt-1 text-center text-xl font-semibold sm:text-left dark:text-white'>${totalAmount.toFixed(2)}</p>
             </div>
             <div className='space-x-4 md:flex'>
               <div className='mx-auto'>
                 <select
-                  className='m-1 w-full rounded-md border border-gray-600 bg-white p-2 text-xs font-semibold text-violet sm:w-auto md:w-48'
+                  className='m-1 w-full rounded-md border border-gray-600 bg-white dark:bg-dark-card dark:text-white p-2 text-xs font-semibold text-violet sm:w-auto md:w-48'
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
                 >
@@ -206,12 +206,12 @@ export default function BarChartComponent() {
             </div>
           </div>
         </div>
-        <div className='flex justify-center'>
+        <div className='flex justify-center dark:text-dark-text'>
           <BarChart width={barWidth} height={barHeight} data={chartData}>
-            <CartesianGrid strokeDasharray='3 3' />
-            <YAxis tickFormatter={(value) => `$${value}`} />
+            <CartesianGrid strokeDasharray='3 3' stroke='currentColor' className='opacity-30' />
+            <YAxis tickFormatter={(value) => `$${value}`} stroke='currentColor' />
             <Tooltip content={<CustomTooltip />} />
-            <Legend />
+            <Legend wrapperStyle={{ color: 'inherit' }} />
             <Bar
               dataKey='Amount'
               fill='#7B5DD3FF'
