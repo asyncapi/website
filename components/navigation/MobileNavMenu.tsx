@@ -54,6 +54,15 @@ export default function MobileNavMenu({
   }
 
   const { langMap } = i18nextConfig;
+  const sectionToggleButtonClass =
+    'inline-flex items-center transition-transform duration-200 hover:text-secondary-600 dark:hover:text-secondary-400';
+  const otherLinkClass =
+    'mb-3 block rounded-lg px-3 py-2 text-base font-medium leading-6 text-gray-700 dark:text-gray-300';
+  const otherLinkHoverClass =
+    'transition-all duration-150 ease-in-out hover:bg-gray-100/60 dark:hover:bg-gray-700/40 hover:translate-x-1';
+  const languageButtonClass =
+    'mb-3 ml-2 block w-full rounded-lg px-3 py-2 text-start text-sm font-medium leading-6 transition-all duration-150';
+  const languageButtonHoverClass = 'ease-in-out hover:bg-gray-100/60 dark:hover:bg-gray-700/40 hover:translate-x-1';
 
   return (
     <div className='fixed inset-x-0 top-0 z-60 max-h-full origin-top-right overflow-y-auto py-2 transition lg:hidden animate-in fade-in slide-in-from-top-5 duration-300'>
@@ -104,9 +113,7 @@ export default function MobileNavMenu({
                 aria-expanded={open === 'learning'}
                 aria-label='Toggle Docs menu'
                 onClick={() => showMenu('learning')}
-                className={`inline-flex items-center transition-transform duration-200 hover:text-secondary-600 dark:hover:text-secondary-400 ${
-                  open === 'learning' ? 'rotate-180' : ''
-                }`}
+                className={`${sectionToggleButtonClass} ${open === 'learning' ? 'rotate-180' : ''}`}
               >
                 <NavItemDropdown />
               </button>
@@ -130,9 +137,7 @@ export default function MobileNavMenu({
                 aria-expanded={open === 'tooling'}
                 aria-label='Toggle Tools menu'
                 onClick={() => showMenu('tooling')}
-                className={`inline-flex items-center transition-transform duration-200 hover:text-secondary-600 dark:hover:text-secondary-400 ${
-                  open === 'tooling' ? 'rotate-180' : ''
-                }`}
+                className={`${sectionToggleButtonClass} ${open === 'tooling' ? 'rotate-180' : ''}`}
               >
                 <NavItemDropdown />
               </button>
@@ -156,9 +161,7 @@ export default function MobileNavMenu({
                 aria-expanded={open === 'community'}
                 aria-label='Toggle Community menu'
                 onClick={() => showMenu('community')}
-                className={`inline-flex items-center transition-transform duration-200 hover:text-secondary-600 dark:hover:text-secondary-400 ${
-                  open === 'community' ? 'rotate-180' : ''
-                }`}
+                className={`${sectionToggleButtonClass} ${open === 'community' ? 'rotate-180' : ''}`}
               >
                 <NavItemDropdown />
               </button>
@@ -179,22 +182,20 @@ export default function MobileNavMenu({
                     aria-expanded={open === 'others'}
                     aria-label='Toggle Others menu'
                     onClick={() => showMenu('others')}
-                    className={`inline-flex items-center transition-transform duration-200 hover:text-secondary-600 dark:hover:text-secondary-400 ${
-                      open === 'others' ? 'rotate-180' : ''
-                    }`}
+                    className={`${sectionToggleButtonClass} ${open === 'others' ? 'rotate-180' : ''}`}
                   >
                     <NavItemDropdown />
                   </button>
                 </h4>
                 {open === 'others' && (
                   <div className='animate-in fade-in slide-in-from-top-2 duration-200'>
-                    {otherItems.map((item: MenuItem, index: number) => (
+                    {otherItems.map((item: MenuItem) => (
                       <Link
                         href={item.href}
                         key={item.href}
                         target={item.target || '_self'}
                         rel='noopener noreferrer'
-                        className='mb-3 block rounded-lg px-3 py-2 text-base font-medium leading-6 text-gray-700 dark:text-gray-300 transition-all duration-150 ease-in-out hover:bg-gray-100/60 dark:hover:bg-gray-700/40 hover:translate-x-1'
+                        className={`${otherLinkClass} ${otherLinkHoverClass}`}
                         data-testid='MobileNav-others'
                       >
                         {item.text}
@@ -217,9 +218,7 @@ export default function MobileNavMenu({
                     aria-expanded={open === 'language'}
                     aria-label='Toggle Language menu'
                     onClick={() => showMenu('language')}
-                    className={`inline-flex items-center transition-transform duration-200 hover:text-secondary-600 dark:hover:text-secondary-400 ${
-                      open === 'language' ? 'rotate-180' : ''
-                    }`}
+                    className={`${sectionToggleButtonClass} ${open === 'language' ? 'rotate-180' : ''}`}
                   >
                     <NavItemDropdown />
                   </button>
@@ -230,7 +229,7 @@ export default function MobileNavMenu({
                       <button
                         key={lang.key}
                         onClick={() => changeLanguage(lang.value.toLowerCase(), true)}
-                        className={`mb-3 ml-2 block w-full rounded-lg px-3 py-2 text-start text-sm font-medium leading-6 transition-all duration-150 ease-in-out hover:bg-gray-100/60 dark:hover:bg-gray-700/40 hover:translate-x-1 ${
+                        className={`${languageButtonClass} ${languageButtonHoverClass} ${
                           currentLanguage.toLowerCase() === lang.text.toLowerCase()
                             ? 'text-secondary-600 dark:text-secondary-400 bg-secondary-100/70 dark:bg-gray-700/50'
                             : 'text-gray-700 dark:text-gray-300'
