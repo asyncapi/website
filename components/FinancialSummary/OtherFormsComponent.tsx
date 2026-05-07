@@ -28,7 +28,7 @@ export default function OtherFormsComponent() {
             {otherFormsData.map((form, index) => (
               <div key={index} className='flex flex-col items-center rounded-md bg-white dark:bg-dark-card p-4 text-center shadow-md'>
                 <img src={form.imageUrl} alt={form.title} className='m-2 h-auto w-1/3 object-cover' />
-                <h2 className='my-2 text-2xl font-semibold'>{form.title}</h2>
+                <h2 className='my-2 text-2xl font-semibold text-gray-900 dark:text-white'>{form.title}</h2>
                 <p className='mx-2 mt-1 text-base text-darkGunMetal dark:text-dark-text'>{form.description}</p>
               </div>
             ))}

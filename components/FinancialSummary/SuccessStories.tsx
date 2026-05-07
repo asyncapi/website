@@ -11,7 +11,7 @@ export default function SuccessStories() {
       <div className='my-16 grid lg:grid-cols-9 lg:gap-8 lg:text-center'>
         <div className='col-span-7 col-start-2 my-12'>
           <div className='mx-2'>
-            <h1 id='success-stories' className='m-3 text-center text-4xl font-bold'>
+            <h1 id='success-stories' className='m-3 text-center text-4xl font-bold text-gray-900 dark:text-white'>
               Success Stories
             </h1>
             <p className='mx-auto my-3 max-w-4xl text-center text-lg text-darkGunMetal dark:text-dark-text'>
@@ -22,7 +22,7 @@ export default function SuccessStories() {
           <div className='mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
             {successStories.map((story, index) => (
               <div key={index} className='m-4 p-2'>
-                <h1 className='mb-2 text-2xl font-semibold'>{story.title}</h1>
+                <h1 className='mb-2 text-2xl font-semibold text-gray-900 dark:text-white'>{story.title}</h1>
                 <p className='text-base text-darkGunMetal dark:text-dark-text'>{story.description}</p>
               </div>
             ))}
