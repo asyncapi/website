@@ -54,7 +54,7 @@ When looking at issues, you might see different labels. Here's what they mean:
 | **bug**             | Something isn't working correctly, so it's time to fix it!|
 | **area/javascript** | Issues specific to JavaScript projects. |
 | **area/typescript** | Issues specific to TypeScript projects. |
-| **bounty**          | AsyncAPI Bounty program-related issue. |
+| **microgrant**      | AsyncAPI Microgrant program-related issue. |
 | **gsoc**           | Google Summer of Code-related ideas/issues. |
 | **Hacktoberfest**   | Available for Hacktoberfest participants. |
 | **dependencies**    | Pull requests that update dependencies. |
