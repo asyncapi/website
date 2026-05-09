@@ -130,55 +130,55 @@ export default function SneakPeek() {
     </>
   );
 
-  const renderGenerationCode = () => (
-    <>
-      <div>
-        <span className='text-gray-500'>{'//'} Generated TypeScript code</span>
-      </div>
-      <div>
-        <span className='text-purple-400'>export</span> <span className='text-purple-400'>interface</span>{' '}
-        <span className='text-yellow-200'>UserSignedUp</span> {'{'}
-      </div>
-      <div>
-        &nbsp;&nbsp;<span className='text-white'>displayName</span>: <span className='text-teal-400'>string</span>;
-      </div>
-      <div>
-        &nbsp;&nbsp;<span className='text-white'>email</span>: <span className='text-teal-400'>string</span>;
-      </div>
-      <div>{'}'}</div>
-      <div>&nbsp;</div>
-      <div>
-        <span className='text-purple-400'>export</span> <span className='text-purple-400'>class</span>{' '}
-        <span className='text-yellow-200'>UserSignupService</span> {'{'}
-      </div>
-      <div>
-        &nbsp;&nbsp;<span className='text-purple-400'>async</span>{' '}
-        <span className='text-yellow-300'>processSignup</span>(<span className='text-orange-300'>message</span>:{' '}
-        <span className='text-yellow-200'>UserSignedUp</span>): <span className='text-yellow-200'>Promise</span>
-        {'<'}
-        <span className='text-teal-400'>void</span>
-        {'>'} {'{'}
-      </div>
-      <div>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span className='text-gray-500'>{'//'} Your business logic here</span>
-      </div>
-      <div>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span className='text-yellow-200'>console</span>
-        {'.'}
-        <span className='text-yellow-300'>log</span>
-        {'('}
-        <span className='text-teal-200'>
-          {'`Processing signup for '}
-          {'${'}message.displayName{'}'}
-          {'`'}
-        </span>
-        {')'}
-        {';'}
-      </div>
-      <div>&nbsp;&nbsp;{'}'}</div>
-      <div>{'}'}</div>
-    </>
-  );
+  const renderGenerationCode = () => {
+    const logStatement = String.raw`\`Processing signup for \${message.displayName}\``;
+
+    return (
+      <>
+        <div>
+          <span className='text-gray-500'>{'//'} Generated TypeScript code</span>
+        </div>
+        <div>
+          <span className='text-purple-400'>export</span> <span className='text-purple-400'>interface</span>{' '}
+          <span className='text-yellow-200'>UserSignedUp</span> {'{'}
+        </div>
+        <div>
+          &nbsp;&nbsp;<span className='text-white'>displayName</span>: <span className='text-teal-400'>string</span>;
+        </div>
+        <div>
+          &nbsp;&nbsp;<span className='text-white'>email</span>: <span className='text-teal-400'>string</span>;
+        </div>
+        <div>{'}'}</div>
+        <div>&nbsp;</div>
+        <div>
+          <span className='text-purple-400'>export</span> <span className='text-purple-400'>class</span>{' '}
+          <span className='text-yellow-200'>UserSignupService</span> {'{'}
+        </div>
+        <div>
+          &nbsp;&nbsp;<span className='text-purple-400'>async</span>{' '}
+          <span className='text-yellow-300'>processSignup</span>(<span className='text-orange-300'>message</span>:{' '}
+          <span className='text-yellow-200'>UserSignedUp</span>): <span className='text-yellow-200'>Promise</span>
+          {'<'}
+          <span className='text-teal-400'>void</span>
+          {'>'} {'{'}
+        </div>
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className='text-gray-500'>{'//'} Your business logic here</span>
+        </div>
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className='text-yellow-200'>console</span>
+          {'.'}
+          <span className='text-yellow-300'>log</span>
+          {'('}
+          <span className='text-teal-200'>{logStatement}</span>
+          {')'}
+          {';'}
+        </div>
+        <div>&nbsp;&nbsp;{'}'}</div>
+        <div>{'}'}</div>
+      </>
+    );
+  };
 
   const renderDocumentationCode = () => (
     <div className='font-sans text-gray-800'>
