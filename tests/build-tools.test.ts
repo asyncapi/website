@@ -158,11 +158,11 @@ describe('buildTools', () => {
     // Verify languages are sorted alphabetically by name
     const languageNames = tagsContent.languages.map((l: { name: string }) => l.name);
 
-    expect(languageNames).toEqual([...languageNames].sort());
+    expect(languageNames).toEqual([...languageNames].sort((a, b) => a.localeCompare(b)));
 
     // Verify technologies are sorted alphabetically by name
     const technologyNames = tagsContent.technologies.map((t: { name: string }) => t.name);
 
-    expect(technologyNames).toEqual([...technologyNames].sort());
+    expect(technologyNames).toEqual([...technologyNames].sort((a, b) => a.localeCompare(b)));
   });
 });
