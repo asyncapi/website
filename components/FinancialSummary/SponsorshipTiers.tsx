@@ -19,7 +19,10 @@ export default function SponsorshipTiers() {
             Sponsorship Tiers
           </Heading>
 
-          <Paragraph typeStyle={ParagraphTypeStyle.md} className='mx-auto my-3 max-w-4xl text-base text-darkGunMetal dark:text-dark-text'>
+          <Paragraph
+            typeStyle={ParagraphTypeStyle.md}
+            className='mx-auto my-3 max-w-4xl text-base text-darkGunMetal dark:text-dark-text'
+          >
             AsyncAPI offers various sponsorship tiers, each with its own set <br className='hidden lg:inline-block' />
             of benefits and privileges. These tiers include Bronze, Silver,
             <br className='hidden lg:inline-block' />

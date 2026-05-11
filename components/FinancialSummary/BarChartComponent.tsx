@@ -211,7 +211,7 @@ export default function BarChartComponent() {
           </div>
         </div>
         <div className='flex justify-center dark:text-dark-text'>
-          {isMounted && (
+          {isMounted && windowWidth >= 900 && (
             <BarChart width={barWidth} height={barHeight} data={chartData}>
               <CartesianGrid strokeDasharray='3 3' stroke='currentColor' className='opacity-30' />
               <YAxis tickFormatter={(value) => `$${value}`} stroke='currentColor' />
@@ -229,7 +229,7 @@ export default function BarChartComponent() {
                   );
 
                   if (matchedLinkObject) {
-                    window.open(matchedLinkObject.link, '_blank');
+                    window.open(matchedLinkObject.link, '_blank', 'noopener,noreferrer');
                   }
 
                   // // --- if previous-years support is enabled: Uncomment code given below

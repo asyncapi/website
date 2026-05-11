@@ -20,13 +20,17 @@ export default function OtherFormsComponent() {
               typeStyle={ParagraphTypeStyle.md}
               className='mx-auto mb-3 max-w-4xl text-center text-darkGunMetal dark:text-dark-text'
             >
-              You can also support AsyncAPI initiative by getting<br className='hidden lg:inline-block'></br> involved
-              through employment, providing services and<br className='hidden lg:inline-block'></br> organizing events
+              You can also support AsyncAPI initiative by getting
+              <br className='hidden lg:inline-block'></br> involved through employment, providing services and
+              <br className='hidden lg:inline-block'></br> organizing events
             </Paragraph>
           </div>
           <div className='mx-3 mt-8 grid grid-cols-1 gap-10 md:grid-cols-3'>
-            {otherFormsData.map((form, index) => (
-              <div key={index} className='flex flex-col items-center rounded-md bg-white dark:bg-dark-card p-4 text-center shadow-md'>
+            {otherFormsData.map((form) => (
+              <div
+                key={form.title}
+                className='flex flex-col items-center rounded-md bg-white dark:bg-dark-card p-4 text-center shadow-md'
+              >
                 <img src={form.imageUrl} alt={form.title} className='m-2 h-auto w-1/3 object-cover' />
                 <h2 className='my-2 text-2xl font-semibold text-gray-900 dark:text-white'>{form.title}</h2>
                 <p className='mx-2 mt-1 text-base text-darkGunMetal dark:text-dark-text'>{form.description}</p>

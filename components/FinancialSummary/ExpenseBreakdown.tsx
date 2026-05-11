@@ -38,7 +38,9 @@ export default function ExpenseBreakdown() {
                         alt={expense.title}
                         className='m-1 h-auto w-1/5 rounded-md object-cover'
                       />
-                      <h2 className='my-2 text-center text-2xl font-semibold text-darkGunMetal dark:text-white'>{expense.title}</h2>
+                      <h2 className='my-2 text-center text-2xl font-semibold text-darkGunMetal dark:text-white'>
+                        {expense.title}
+                      </h2>
                     </div>
                     <p className='text-center text-base text-darkGunMetal dark:text-dark-text'>{expense.description}</p>
                   </div>

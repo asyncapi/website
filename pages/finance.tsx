@@ -55,5 +55,9 @@ export default function FinancialSummary() {
 
   const shouldUseContainer = windowWidth > 1700;
 
-  return <div className='dark:bg-dark-background'>{shouldUseContainer ? <Container wide>{renderComponents()}</Container> : renderComponents()}</div>;
+  return (
+    <div className='dark:bg-dark-background'>
+      {shouldUseContainer ? <Container wide>{renderComponents()}</Container> : renderComponents()}
+    </div>
+  );
 }
