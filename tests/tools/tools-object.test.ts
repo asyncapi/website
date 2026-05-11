@@ -2,8 +2,8 @@ import axios from 'axios';
 
 import type { AsyncAPITool, Category } from '@/types/scripts/tools';
 
-import { logger } from '../../scripts/helpers/logger';
-import { convertTools, createToolObject } from '../../scripts/tools/tools-object';
+import { logger } from '../scripts/helpers/logger';
+import { convertTools, createToolObject } from '../scripts/tools/tools-object';
 import {
   createExpectedToolObject,
   createMalformedYAML,
@@ -11,12 +11,12 @@ import {
   createToolFileContent
 } from '../helper/toolsObjectData';
 
-jest.mock('../../scripts/helpers/logger.ts', () => ({
+jest.mock('../scripts/helpers/logger.ts', () => ({
   logger: { warn: jest.fn(), error: jest.fn() }
 }));
 
 jest.mock('axios');
-jest.mock('../../scripts/tools/categorylist', () => ({
+jest.mock('../scripts/tools/categorylist', () => ({
   categoryList: [
     { name: 'Category1', tag: 'Category1', description: 'Description for Category1' },
     { name: 'Others', tag: 'Others', description: 'Other tools category' }
@@ -227,5 +227,44 @@ describe('Tools Object', () => {
     // the tool should only be added once to that category
     expect(result.Category1.toolsList).toHaveLength(1);
     expect(result.Category1.toolsList[0].title).toBe('Duplicate Category Tool');
+  });
+
+  it('should sort tools in each category alphabetically by title', async () => {
+    const toolContentZ = {
+      title: 'Z Tool',
+      description: 'Z Tool Description',
+      links: { repoUrl: 'https://github.com/asyncapi/z-tool' },
+      filters: { categories: ['Category1' as unknown as Category] }
+    };
+    const toolContentA = {
+      title: 'A Tool',
+      description: 'A Tool Description',
+      links: { repoUrl: 'https://github.com/asyncapi/a-tool' },
+      filters: { categories: ['Category1' as unknown as Category] }
+    };
+    const toolContentM = {
+      title: 'M Tool',
+      description: 'M Tool Description',
+      links: { repoUrl: 'https://github.com/asyncapi/m-tool' },
+      filters: { categories: ['Category1' as unknown as Category] }
+    };
+
+    const mockData = createMockData([
+      { name: '.asyncapi-tool-z', repoName: 'z-tool' },
+      { name: '.asyncapi-tool-a', repoName: 'a-tool' },
+      { name: '.asyncapi-tool-m', repoName: 'm-tool' }
+    ]);
+
+    axiosMock.get
+      .mockResolvedValueOnce({ data: toolContentZ })
+      .mockResolvedValueOnce({ data: toolContentA })
+      .mockResolvedValueOnce({ data: toolContentM });
+
+    const result = await convertTools(mockData);
+
+    expect(result.Category1.toolsList).toHaveLength(3);
+    expect(result.Category1.toolsList[0].title).toBe('A Tool');
+    expect(result.Category1.toolsList[1].title).toBe('M Tool');
+    expect(result.Category1.toolsList[2].title).toBe('Z Tool');
   });
 });
