@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-import { logger } from '../../scripts/helpers/logger';
-import { getData } from '../../scripts/tools/extract-tools-github';
+import { logger } from '../scripts/helpers/logger';
+import { getData } from '../scripts/tools/extract-tools-github';
 
-jest.mock('../../scripts/helpers/logger', () => ({
+jest.mock('../scripts/helpers/logger', () => ({
   logger: { info: jest.fn() }
 }));
 
@@ -99,5 +99,63 @@ describe('getData', () => {
     await expect(getData()).rejects.toThrow('GITHUB_TOKEN environment variable is required');
 
     process.env.GITHUB_TOKEN = 'mockToken';
+  });
+
+  it('should return items sorted by repository full_name', async () => {
+    const unsortedItems = [
+      {
+        name: '.asyncapi-tool',
+        path: '.asyncapi-tool',
+        repository: {
+          full_name: 'z-project/tool',
+          html_url: 'https://github.com/z-project/tool',
+          description: 'Z project',
+          owner: { login: 'z-project' }
+        }
+      },
+      {
+        name: '.asyncapi-tool',
+        path: '.asyncapi-tool',
+        repository: {
+          full_name: 'a-project/tool',
+          html_url: 'https://github.com/a-project/tool',
+          description: 'A project',
+          owner: { login: 'a-project' }
+        }
+      },
+      {
+        name: '.asyncapi-tool',
+        path: '.asyncapi-tool',
+        repository: {
+          full_name: 'm-project/tool',
+          html_url: 'https://github.com/m-project/tool',
+          description: 'M project',
+          owner: { login: 'm-project' }
+        }
+      }
+    ];
+
+    const mockData = {
+      data: {
+        items: unsortedItems,
+        total_count: 3
+      }
+    };
+
+    const apiBaseUrl = 'https://api.github.com/search/code?q=filename:.asyncapi-tool&per_page=50&page=1';
+    const headers = {
+      accept: 'application/vnd.github.text-match+json',
+      authorization: `token ${process.env.GITHUB_TOKEN}`
+    };
+
+    mockedAxios.get.mockResolvedValue(mockData);
+
+    const result = await getData();
+
+    expect(result).toHaveLength(3);
+    expect(result[0].repository.full_name).toBe('a-project/tool');
+    expect(result[1].repository.full_name).toBe('m-project/tool');
+    expect(result[2].repository.full_name).toBe('z-project/tool');
+    expect(axios.get).toHaveBeenCalledWith(apiBaseUrl, { headers });
   });
 });
