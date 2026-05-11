@@ -4,8 +4,8 @@ const tagsData = {
     { name: 'Python', color: 'bg-[#3572A5]', borderColor: 'border-[#3572A5]' }
   ],
   technologies: [
-    { name: 'React', color: 'bg-[#61dafb]', borderColor: 'border-[#61dafb]' },
-    { name: 'Node.js', color: 'bg-[#68a063]', borderColor: 'border-[#68a063]' }
+    { name: 'Node.js', color: 'bg-[#68a063]', borderColor: 'border-[#68a063]' },
+    { name: 'React', color: 'bg-[#61dafb]', borderColor: 'border-[#61dafb]' }
   ]
 };
 

@@ -45,7 +45,7 @@ async function createToolObject(
   repoDescription = '',
   isAsyncAPIrepo: boolean = false
 ) {
-  const resultantObject = {
+  const resultObject = {
     title: toolFile.title,
     description: toolFile?.description ? toolFile.description : repoDescription,
     links: {
@@ -59,10 +59,10 @@ async function createToolObject(
     }
   };
 
-  return resultantObject;
+  return resultObject;
 }
 
-// Each result obtained from the Github API call will be tested and verified
+// Each result obtained from the GitHub API call will be tested and verified
 // using the defined JSON schema, categorising each tool inside their defined categories
 // and creating a JSON tool object in which all the tools are listed in defined
 // categories order, which is then updated in `automated-tools.json` file.
@@ -144,6 +144,14 @@ async function convertTools(data: ToolsData) {
         }
       })
     );
+
+    // Sort each category's toolsList by title for deterministic output,
+    // since Promise.all resolves tools concurrently in non-deterministic order.
+    for (const category of Object.keys(finalToolsObject)) {
+      finalToolsObject[category].toolsList.sort((a: any, b: any) =>
+        (a.title || '').localeCompare(b.title || '')
+      );
+    }
 
     return finalToolsObject;
   } catch (err: unknown) {

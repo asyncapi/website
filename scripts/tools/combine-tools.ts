@@ -296,12 +296,18 @@ const combineTools = async (
     }
 
     fs.writeFileSync(toolsPath, JSON.stringify(finalTools, null, 2));
+
+    // Sort language and technology tags by name for deterministic output,
+    // since new tags are appended in encounter order which varies between runs.
+    const sortedLanguages = [...languageList].sort((a, b) => a.name.localeCompare(b.name));
+    const sortedTechnologies = [...technologyList].sort((a, b) => a.name.localeCompare(b.name));
+
     fs.writeFileSync(
       tagsPath,
       JSON.stringify(
         {
-          languages: languageList,
-          technologies: technologyList
+          languages: sortedLanguages,
+          technologies: sortedTechnologies
         },
         null,
         2
