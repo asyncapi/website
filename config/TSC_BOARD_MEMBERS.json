@@ -278,6 +278,7 @@
         "tscMemberSince": "2023-11-30",
         "repos": [
             "website",
+            "parser-js",
             "studio"
         ],
         "githubID": 44585452
