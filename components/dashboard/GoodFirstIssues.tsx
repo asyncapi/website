@@ -25,10 +25,10 @@ interface GoodFirstIssuesProps {
 export function filterIssues(issues: Issue[], filters: FiltersType): Issue[] {
   let result = issues;
 
-  if (filters.selectedRepo !== 'Repository - All') {
+  if (filters.selectedRepo !== 'All') {
     result = result.filter((issue) => issue.repo === filters.selectedRepo);
   }
-  if (filters.selectedArea !== 'Area - All') {
+  if (filters.selectedArea !== 'All') {
     result = result.filter((issue) => issue.area === filters.selectedArea);
   }
 
@@ -47,16 +47,8 @@ export default function GoodFirstIssues({ issues }: GoodFirstIssuesProps) {
 
   // Get current issues
 
-  let filteredIssues = issues;
-
   const allIssues = issues;
-
-  if (selectedRepo !== 'All') {
-    filteredIssues = filteredIssues.filter((issue) => issue.repo === selectedRepo);
-  }
-  if (selectedArea !== 'All') {
-    filteredIssues = filteredIssues.filter((issue) => issue.area === selectedArea);
-  }
+  const filteredIssues = filterIssues(issues, { selectedRepo, selectedArea });
 
   return (
     <Table
