@@ -992,7 +992,11 @@
     {
         "name": "Mohammed Mehdi",
         "github": "catosaurusrex2003",
-        "isTscMember": false,
+        "linkedin": "mohammed-mehdi-a5833b229",
+        "slack": "U07M2JLLWF7",
+        "availableForHire": true,
+        "isTscMember": true,
+        "tscMemberSince": "2026-04-22",
         "repos": [
             "asyncapi-react"
         ],
