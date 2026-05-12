@@ -173,7 +173,6 @@
         "repos": [
             "spec",
             "spec-json-schemas",
-            "parser-js",
             "extensions-catalog",
             "converter-js",
             "bindings",
