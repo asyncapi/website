@@ -18,6 +18,26 @@ import { logger } from '../helpers/logger';
 import { pause } from '../helpers/utils';
 import { Queries } from './issue-queries';
 
+const RATE_LIMIT_MAX_RETRIES = 5;
+const RATE_LIMIT_BACKOFF_MS = 60_000;
+
+function isRateLimitError(error: unknown): { hit: boolean; message: string } {
+  const message = error instanceof Error ? error.message : String(error);
+  const hit = /rate limit|secondary rate/i.test(message);
+
+  return { hit, message };
+}
+
+async function waitForRateLimitReset(rateLimit: { remaining: number; resetAt: string }): Promise<void> {
+  if (rateLimit.remaining <= 0) {
+    const resetAt = new Date(rateLimit.resetAt).getTime();
+    const waitMs = Math.max(resetAt - Date.now(), 0) + 1000;
+
+    logger.warn(`Rate limit exhausted. Waiting ${Math.ceil(waitMs / 1000)}s until reset...`);
+    await pause(waitMs);
+  }
+}
+
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
 
@@ -69,7 +89,8 @@ function getLabel(issue: GoodFirstIssues, filter: string): string | undefined {
 async function getDiscussions(
   query: string,
   pageSize: number,
-  endCursor: null | string = null
+  endCursor: null | string = null,
+  attempt: number = 0
 ): Promise<Discussion['search']['nodes']> {
   const token = process.env.GITHUB_TOKEN;
 
@@ -95,6 +116,11 @@ async function getDiscussions(
       );
     }
 
+    // Wait for rate limit reset if exhausted
+    if (result.rateLimit.remaining <= 0) {
+      await waitForRateLimitReset(result.rateLimit);
+    }
+
     await pause(500);
 
     const { hasNextPage } = result.search.pageInfo;
@@ -104,7 +130,16 @@ async function getDiscussions(
     }
 
     return result.search.nodes.concat(await getDiscussions(query, pageSize, result.search.pageInfo.endCursor));
-  } catch (error) {
+  } catch (error: unknown) {
+    const { hit, message } = isRateLimitError(error);
+
+    if (hit && attempt < RATE_LIMIT_MAX_RETRIES) {
+      logger.warn(`Rate limit hit (attempt ${attempt + 1}/${RATE_LIMIT_MAX_RETRIES}), waiting 60s: ${message}`);
+      await pause(RATE_LIMIT_BACKOFF_MS);
+
+      return getDiscussions(query, pageSize, endCursor, attempt + 1);
+    }
+
     logger.error(error);
     throw error;
   }
@@ -121,7 +156,7 @@ async function getDiscussions(
  *
  * @throws {Error} If the GraphQL request fails.
  */
-async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequestById | IssueById> {
+async function getDiscussionByID(isPR: boolean, id: string, attempt: number = 0): Promise<PullRequestById | IssueById> {
   const token = process.env.GITHUB_TOKEN;
 
   if (!token) {
@@ -137,7 +172,16 @@ async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequest
     });
 
     return result;
-  } catch (error) {
+  } catch (error: unknown) {
+    const { hit, message } = isRateLimitError(error);
+
+    if (hit && attempt < RATE_LIMIT_MAX_RETRIES) {
+      logger.warn(`Rate limit hit in getDiscussionByID (attempt ${attempt + 1}/${RATE_LIMIT_MAX_RETRIES}), waiting 60s: ${message}`);
+      await pause(RATE_LIMIT_BACKOFF_MS);
+
+      return getDiscussionByID(isPR, id, attempt + 1);
+    }
+
     logger.error(error);
     throw error;
   }
