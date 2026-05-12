@@ -3,7 +3,10 @@ import { mkdirSync, promises as fs, rmSync } from 'fs-extra';
 import os from 'os';
 import { resolve } from 'path';
 
-import type { GoodFirstIssues, HotDiscussionsIssuesNode } from '@/types/scripts/dashboard';
+import type {
+  GoodFirstIssues,
+  HotDiscussionsIssuesNode,
+} from '@/types/scripts/dashboard';
 
 import {
   getDiscussionByID,
@@ -12,7 +15,7 @@ import {
   getLabel,
   mapGoodFirstIssues,
   start,
-  writeToFile
+  writeToFile,
 } from '../../scripts/dashboard/build-dashboard';
 import { logger } from '../../scripts/helpers/logger';
 import {
@@ -20,11 +23,15 @@ import {
   fullDiscussionDetails,
   issues,
   mockDiscussion,
-  mockRateLimitResponse
+  mockRateLimitResponse,
 } from '../fixtures/dashboardData';
 
 jest.mock('../../scripts/helpers/logger', () => ({
-  logger: { error: jest.fn(), warn: jest.fn() }
+  logger: { error: jest.fn(), warn: jest.fn() },
+}));
+
+jest.mock('../../scripts/helpers/utils', () => ({
+  pause: jest.fn(),
 }));
 
 jest.mock('@octokit/graphql', () => ({
@@ -68,14 +75,14 @@ describe('GitHub Discussions Processing', () => {
       expect.any(String),
       expect.objectContaining({
         id: 'paginated-discussion',
-        headers: expect.any(Object)
-      })
+        headers: expect.any(Object),
+      }),
     );
 
     expect(result[0]).toMatchObject({
       id: 'paginated-discussion',
       isPR: false,
-      title: 'Test with Pagination'
+      title: 'Test with Pagination',
     });
 
     const firstResult = result[0];
@@ -89,7 +96,58 @@ describe('GitHub Discussions Processing', () => {
     await getDiscussions('test-query', 10);
 
     expect(logger.warn).toHaveBeenCalledWith(
-      expect.stringContaining('GitHub GraphQL rateLimit \ncost = 1\nlimit = 5000\nremaining = 50')
+      expect.stringContaining(
+        'GitHub GraphQL rateLimit \ncost = 1\nlimit = 5000\nremaining = 50',
+      ),
+    );
+  });
+
+  it('should reject invalid resetAt timestamps', async () => {
+    mockedGraphql.mockResolvedValueOnce({
+      ...mockRateLimitResponse,
+      rateLimit: {
+        ...mockRateLimitResponse.rateLimit,
+        remaining: 0,
+        resetAt: 'invalid-date',
+      },
+    });
+
+    await expect(getDiscussions('test-query', 10)).rejects.toThrow(
+      'Invalid resetAt timestamp: invalid-date',
+    );
+    expect(logger.error).toHaveBeenCalledWith(
+      'Invalid resetAt timestamp: invalid-date',
+    );
+  });
+
+  it('should wait when the rate limit is exhausted', async () => {
+    mockedGraphql.mockResolvedValueOnce({
+      ...mockRateLimitResponse,
+      rateLimit: {
+        ...mockRateLimitResponse.rateLimit,
+        remaining: 0,
+        resetAt: new Date(Date.now() - 1000).toISOString(),
+      },
+    });
+
+    await getDiscussions('test-query', 10);
+
+    expect(logger.warn).toHaveBeenCalledWith(
+      expect.stringContaining('Rate limit exhausted. Waiting'),
+    );
+  });
+
+  it('should retry getDiscussions when GitHub returns a rate limit error', async () => {
+    mockedGraphql
+      .mockRejectedValueOnce(new Error('rate limit exceeded'))
+      .mockResolvedValueOnce(mockRateLimitResponse);
+
+    const result = await getDiscussions('test-query', 10);
+
+    expect(result).toEqual(mockRateLimitResponse.search.nodes);
+    expect(mockedGraphql).toHaveBeenCalledTimes(2);
+    expect(logger.warn).toHaveBeenCalledWith(
+      expect.stringContaining('Rate limit hit (attempt 1/5)'),
     );
   });
 
@@ -97,20 +155,22 @@ describe('GitHub Discussions Processing', () => {
     const mockFirstResponse = {
       search: {
         nodes: [mockDiscussion],
-        pageInfo: { hasNextPage: true, endCursor: 'cursor1' }
+        pageInfo: { hasNextPage: true, endCursor: 'cursor1' },
       },
-      rateLimit: { remaining: 1000 }
+      rateLimit: { remaining: 1000 },
     };
 
     const mockSecondResponse = {
       search: {
         nodes: [{ ...mockDiscussion, id: 'test-id-2' }],
-        pageInfo: { hasNextPage: false }
+        pageInfo: { hasNextPage: false },
       },
-      rateLimit: { remaining: 1000 }
+      rateLimit: { remaining: 1000 },
     };
 
-    mockedGraphql.mockResolvedValueOnce(mockFirstResponse).mockResolvedValueOnce(mockSecondResponse);
+    mockedGraphql
+      .mockResolvedValueOnce(mockFirstResponse)
+      .mockResolvedValueOnce(mockSecondResponse);
 
     const result = await getDiscussions('test-query', 10);
 
@@ -123,7 +183,9 @@ describe('GitHub Discussions Processing', () => {
     const filePath = resolve(tempDir, 'error-output.json');
 
     await start(filePath);
-    expect(logger.error).toHaveBeenCalledWith('There were some issues parsing data from github.');
+    expect(logger.error).toHaveBeenCalledWith(
+      'There were some issues parsing data from github.',
+    );
   });
 
   it('should successfully process and write data', async () => {
@@ -141,7 +203,7 @@ describe('GitHub Discussions Processing', () => {
 
   it('should get labels correctly', () => {
     const issue = {
-      labels: { nodes: [{ name: 'area/bug' }, { name: 'good first issue' }] }
+      labels: { nodes: [{ name: 'area/bug' }, { name: 'good first issue' }] },
     } as GoodFirstIssues;
 
     expect(getLabel(issue, 'area/')).toBe('bug');
@@ -153,7 +215,7 @@ describe('GitHub Discussions Processing', () => {
 
     expect(result[0]).toMatchObject({
       id: '1',
-      area: 'docs'
+      area: 'docs',
     });
   });
 
@@ -170,9 +232,9 @@ describe('GitHub Discussions Processing', () => {
         nodes: [
           { name: 'area/documentation', color: '#0366d6' },
           { name: 'good first issue', color: '#7057ff' },
-          { name: 'bug', color: '#d73a4a' }
-        ]
-      }
+          { name: 'bug', color: '#d73a4a' },
+        ],
+      },
     };
 
     const result = await mapGoodFirstIssues([mockIssue]);
@@ -186,7 +248,7 @@ describe('GitHub Discussions Processing', () => {
       repo: 'asyncapi/test-repo',
       author: 'testuser',
       area: 'documentation',
-      labels: [{ name: 'bug', color: '#d73a4a' }]
+      labels: [{ name: 'bug', color: '#d73a4a' }],
     });
   });
 
@@ -200,14 +262,35 @@ describe('GitHub Discussions Processing', () => {
     await expect(getDiscussionByID(true, 'test-id')).rejects.toThrow();
   });
 
+  it('should retry getDiscussionByID when GitHub returns a secondary rate limit error', async () => {
+    mockedGraphql
+      .mockRejectedValueOnce(new Error('secondary rate limit'))
+      .mockResolvedValueOnce({ node: mockDiscussion });
+
+    const result = await getDiscussionByID(false, 'test-id');
+
+    expect(result.node).toBe(mockDiscussion);
+    expect(mockedGraphql).toHaveBeenCalledTimes(2);
+    expect(logger.warn).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'Rate limit hit in getDiscussionByID (attempt 1/5)',
+      ),
+    );
+  });
+
   it('should process hot discussions', async () => {
     const prDiscussion = {
       ...mockDiscussion,
       __typename: 'PullRequest',
       reviews: {
         totalCount: 1,
-        nodes: [{ lastEditedAt: new Date().toISOString(), comments: { totalCount: 1 } }]
-      }
+        nodes: [
+          {
+            lastEditedAt: new Date().toISOString(),
+            comments: { totalCount: 1 },
+          },
+        ],
+      },
     } as HotDiscussionsIssuesNode;
 
     const result = await getHotDiscussions([mockDiscussion, prDiscussion]);
@@ -221,8 +304,8 @@ describe('GitHub Discussions Processing', () => {
       __typename: 'PullRequest',
       reviews: {
         totalCount: 1,
-        nodes: undefined // This will trigger the ?? 0 part
-      }
+        nodes: undefined, // This will trigger the ?? 0 part
+      },
     };
 
     const result = await getHotDiscussions([prDiscussion]);
@@ -234,7 +317,7 @@ describe('GitHub Discussions Processing', () => {
     const prDiscussion = {
       ...mockDiscussion,
       __typename: 'PullRequest',
-      labels: null // This will trigger the ?? [] part
+      labels: null, // This will trigger the ?? [] part
     };
 
     const result = await getHotDiscussions([prDiscussion]);
@@ -256,7 +339,9 @@ describe('GitHub Discussions Processing', () => {
 
     await expect(getHotDiscussions([undefined] as any)).rejects.toThrow();
 
-    expect(logger.error).toHaveBeenCalledWith('there were some issues while parsing this item: undefined');
+    expect(logger.error).toHaveBeenCalledWith(
+      'there were some issues while parsing this item: undefined',
+    );
 
     localConsoleErrorSpy.mockRestore();
   });
@@ -271,9 +356,13 @@ describe('GitHub Discussions Processing', () => {
 
     // getDiscussionsById and getDiscussions
     // @ts-expect-error - Intentionally calling without arguments to test missing token error
-    await expect(getDiscussionByID()).rejects.toThrow('GitHub token is not set in environment variables');
+    await expect(getDiscussionByID()).rejects.toThrow(
+      'GitHub token is not set in environment variables',
+    );
     // @ts-expect-error - Intentionally calling without arguments to test missing token error
-    await expect(getDiscussions()).rejects.toThrow('GitHub token is not set in environment variables');
+    await expect(getDiscussions()).rejects.toThrow(
+      'GitHub token is not set in environment variables',
+    );
 
     process.env.GITHUB_TOKEN = 'test-token';
   });
@@ -282,13 +371,17 @@ describe('GitHub Discussions Processing', () => {
     // Create two identical discussions but with different update timestamps
     const recentDiscussion = {
       ...mockDiscussion,
-      timelineItems: { updatedAt: new Date().toISOString() }
+      timelineItems: { updatedAt: new Date().toISOString() },
     };
 
     const olderDiscussion = {
       ...mockDiscussion,
       id: 'older-discussion',
-      timelineItems: { updatedAt: new Date(Date.now() - 6 * 30 * 24 * 60 * 60 * 1000).toISOString() } // 6 months ago
+      timelineItems: {
+        updatedAt: new Date(
+          Date.now() - 6 * 30 * 24 * 60 * 60 * 1000,
+        ).toISOString(),
+      }, // 6 months ago
     };
 
     const result = await getHotDiscussions([recentDiscussion, olderDiscussion]);
