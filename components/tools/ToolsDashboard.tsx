@@ -160,10 +160,7 @@ export default function ToolsDashboard() {
   const searchResultCount = useMemo(() => {
     if (!debouncedSearchName) return -1; // -1 indicates no active search
 
-    return Object.keys(toolsList).reduce(
-      (count, category) => count + toolsList[category].toolsList.length,
-      0
-    );
+    return Object.keys(toolsList).reduce((count, category) => count + toolsList[category].toolsList.length, 0);
   }, [toolsList, debouncedSearchName]);
 
   // useEffect to scroll to the opened category when url has category as element id
@@ -263,7 +260,9 @@ export default function ToolsDashboard() {
           <div className='mt-2 flex items-center gap-2 text-sm'>
             <span className='text-gray-500 dark:text-gray-400'>
               {searchResultCount === 0 ? (
-                <span className='text-amber-600 dark:text-amber-400'>No tools found matching &quot;{debouncedSearchName}&quot;</span>
+                <span className='text-amber-600 dark:text-amber-400'>
+                  No tools found matching &quot;{debouncedSearchName}&quot;
+                </span>
               ) : (
                 <>
                   Found <span className='font-semibold text-gray-700 dark:text-gray-200'>{searchResultCount}</span>{' '}
