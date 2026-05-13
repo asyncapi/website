@@ -23,15 +23,14 @@ authors:
 excerpt: 'In Event-Driven Architectures, API Drift happens in two places: implementation and platform. AsyncAPI and API-First Ops can keep both continuously aligned from a single contract.'
 ---
 
-# API Drift in Event-Driven Architectures has Two Faces
 
-In REST architectures, gateways usually mediate communication. They handle routing, authentication, observability, and rate limiting, but they rarely shape the behavior of the system itself.
+In REST architectures, gateways usually mediate communication. They handle routing, authentication, observability, and rate limiting, but they rarely shape the system's behaviour.
 
 Event-Driven Architectures are different.
 
-In EDA, the broker shapes behavioral semantics. Kafka topics define scalability, ordering guarantees, replay capabilities, and retention behavior. Schema Registries define schema evolution, compatibility rules, and message contracts.
+In EDA, the broker shapes behavioural semantics. Kafka topics define scalability, ordering guarantees, replay capabilities, and retention behaviour. Schema Registries define schema evolution, compatibility rules, and message contracts.
 
-The broker and schema infrastructure become part of the behavioral model of the system itself.
+The broker and schema infrastructure become part of the behavioural model of the system itself.
 
 This changes what API Drift means in Event-Driven Architectures.
 
@@ -44,7 +43,7 @@ API Drift in Event-Driven Architectures is a problem with two faces.
 This is the drift most teams already know:
 - generated code diverges
 - implementations evolve separately
-- consumers rely on undocumented behavior
+- consumers rely on undocumented behaviour
 - contracts and services fall out of sync
 
 API-First development practices solve this increasingly well.
