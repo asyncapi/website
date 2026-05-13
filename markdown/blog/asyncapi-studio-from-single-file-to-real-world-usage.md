@@ -13,7 +13,7 @@ authors:
     photo: /img/avatars/ivangsa.webp
     link: https://ivangsa.com/about
     byline: Software Engineer. Speaker. Building ZenWave 360º
-excerpt: 'AsyncAPI Studio was previously a single in-memory file editor. This prevented using relative $refs to external .avsc Avro files. This new contribution now tracks the document source, resolves relative references, and can read and write files directly to disk using the browser''s File System Access API when working with a local folder.'
+excerpt: 'AsyncAPI Studio was previously a single in-memory file editor. This prevented the use of relative $refs to external .avsc Avro files. This new contribution now tracks the document source, resolves relative references, and can read and write files directly to disk using the browser's File System Access API when working with a local folder.'
 ---
 
 # AsyncAPI Studio: From Single File to Real World Usage
@@ -34,9 +34,9 @@ So, I contributed [#1224](https://github.com/asyncapi/studio/issues/1224) to fix
 
 **Open local folders.** Studio can request access to a local folder and show a file tree in the sidebar. AsyncAPI files show the live preview. `.avsc` and `.md` files get syntax-highlighted views.
 
-And since you are already opening the whole folder, Studio now also previews Markdown files and Avro schemas as Mermaid diagrams. Your .avsc files are not just resolved, they are visualized.
+And since you are already opening the whole folder, Studio now also previews Markdown files and Avro schemas as Mermaid diagrams. Your .avsc files are not just resolved, they are visualised.
 
-**Save back to disk.** Changes go back to the original files. No export dialogs.
+**Save back to disk.** Changes go back to the original files. No export dialogues.
 
 **Relative `$ref` resolution.** The root issue behind all of the above. Cross-file references now work whether the source is remote or local.
 
