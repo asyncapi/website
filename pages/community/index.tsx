@@ -243,7 +243,7 @@ export default function CommunityIndexPage() {
                 Community Goal
               </Heading>
               <Paragraph typeStyle={ParagraphTypeStyle.sm} className='text-purple-800 dark:text-purple-200'>
-                Help us improve our 2024 AsyncAPI community building and maintenance goals.
+                Help us improve our 2026 AsyncAPI community building and maintenance goals.
               </Paragraph>
             </a>
             {/* Finance Card */}
