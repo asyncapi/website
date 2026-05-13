@@ -1,6 +1,6 @@
 ---
 title: API Drift in Event-Driven Architectures has Two Faces
-date: 2026-05-12T09:00:00+02:00
+date: 2026-05-15T09:00:00+02:00
 type: Engineering
 tags:
   - API-First
