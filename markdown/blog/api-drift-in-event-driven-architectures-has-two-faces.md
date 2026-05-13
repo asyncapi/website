@@ -24,19 +24,11 @@ excerpt: 'In Event-Driven Architectures, API Drift happens in two places: implem
 ---
 
 
-In REST architectures, gateways usually mediate communication. They handle routing, authentication, observability, and rate limiting, but they rarely shape the system's behaviour.
+In REST architectures, gateways usually mediate communication. They handle routing, authentication, observability, and rate limiting, but they rarely shape the system's behaviour. Event-Driven Architectures are different.
 
-Event-Driven Architectures are different.
-
-In EDA, the broker shapes behavioural semantics. Kafka topics define scalability, ordering guarantees, replay capabilities, and retention behaviour. Schema Registries define schema evolution, compatibility rules, and message contracts.
-
-The broker and schema infrastructure become part of the behavioural model of the system itself.
-
-This changes what API Drift means in Event-Driven Architectures.
+In EDA, the broker shapes behavioural semantics. Kafka topics define scalability, ordering guarantees, replay capabilities, and retention behaviour. Schema Registries define schema evolution, compatibility rules, and message contracts. The broker and schema infrastructure become part of the behavioural model of the system itself; this changes what API Drift means in Event-Driven Architectures.
 
 API Drift in Event-Driven Architectures is a problem with two faces.
-
----
 
 ## Implementation Drift
 
@@ -53,20 +45,11 @@ Using AsyncAPI as the canonical representation, we can:
 - validate schemas
 - continuously rebuild implementations from the contract
 
-This is API-First Dev. The contract becomes the source of truth for implementation.
-
-We can reduce implementation drift by generating read-only code on every build.
-
-If generated code is not committed to source control, and implementations are continuously rebuilt
-from the canonical API contract, specification and implementation stay synchronized by construction.
-
----
+This is API-First Dev. The contract becomes the source of truth for implementation. We can reduce implementation drift by generating read-only code on every build. If the generated code is not committed to source control and implementations are continuously rebuilt from the canonical API contract, then the specification and implementation stay synchronised by construction.
 
 ## Platform Drift
 
-In Event-Driven Architectures, infrastructure itself also drifts.
-
-Over time:
+In Event-Driven Architectures, infrastructure itself also drifts. Over time:
 - topic configuration diverges
 - retention policies evolve independently
 - ACLs drift
@@ -77,40 +60,23 @@ Eventually:
 - the platform runs another
 - applications assume something else
 
-This is platform drift.
+This is platform drift. And unlike implementation drift, most API-First approaches still ignore it. But if the broker shapes system behaviour, then infrastructure itself must become contract-driven.
 
-And unlike implementation drift, most API-First approaches still ignore it.
-
-But if the broker shapes system behavior, then infrastructure itself must become contract-driven.
-
-This is where API-First Ops begins.
-
-Using AsyncAPI as the operational source of truth, we can derive:
+This is where API-First Ops begins. Using AsyncAPI as the operational source of truth, we can derive:
 - Kafka topics
 - Schema Registry subjects
 - ACLs
 - Terraform infrastructure
 - governance validation
 
-directly from the API contract itself.
-
-One contract. Two faces of API Drift solved together.
-
----
+Directly from the API contract itself. One contract, two faces of API Drift solved together.
 
 ## Tooling
 
-These are not new ideas.
-
-The implementation side has been running in production Java and Spring shops since 2020. It started
-as a closed source internal tool inside a large organization and became open source in 2023. The
-AsyncAPI Generator for Spring Boot and Spring Cloud Stream and Spring Kafka is the direct evolution of that work. It
-is battle tested.
+These are not new ideas. The implementation side has been running in production Java and Spring shops since 2020. It started as a closed-source internal tool inside a large organisation and became open source in 2023. The AsyncAPI Generator for Spring Boot, Spring Cloud Stream, and Spring Kafka is the direct evolution of that work. It is battle-tested.
 
 The operational side is newer. AsyncAPI to Terraform is recent, and the Kafka binding extensions it
-depends on are still open proposals. But the principle is exactly the same:
-
-derive infrastructure from the contract the same way we derive code.
+depends on are still open proposals. But the principle is exactly the same; derive infrastructure from the contract the same way we derive code.
 
 If you want to explore either side:
 
