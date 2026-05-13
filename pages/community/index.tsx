@@ -224,7 +224,7 @@ export default function CommunityIndexPage() {
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
             {/* Community Goal Card */}
             <a
-              href='https://github.com/orgs/asyncapi/discussions/948'
+              href='https://github.com/asyncapi/community/blob/master/docs/030-project-vision-strategy-goals/2026_Community_Goals.md'
               target='_blank'
               rel='noopener noreferrer'
               className='relative group bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border border-purple-200 dark:border-purple-700 hover:scale-[1.02] cursor-pointer'
@@ -246,32 +246,6 @@ export default function CommunityIndexPage() {
                 Help us improve our 2024 AsyncAPI community building and maintenance goals.
               </Paragraph>
             </a>
-
-            {/* Swags & Goodies Card */}
-            <a
-              href='https://www.store.asyncapi.com/'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='relative group bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-900/20 dark:to-pink-800/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border border-pink-200 dark:border-pink-700 hover:scale-[1.02] cursor-pointer'
-            >
-              <div className='absolute top-6 right-6'>
-                <IconExternalLink className='w-8 h-8 text-pink-400 dark:text-pink-300 group-hover:text-pink-500 dark:group-hover:text-pink-200 transition-colors' />
-              </div>
-              <div className='mb-6'>
-                <IconBadgeCheckmark className='w-12 h-12 text-pink-600 dark:text-pink-400' />
-              </div>
-              <Heading
-                level={HeadingLevel.h3}
-                typeStyle={HeadingTypeStyle.md}
-                className='text-pink-900 dark:text-pink-100 font-bold mb-3'
-              >
-                Swags & Goodies
-              </Heading>
-              <Paragraph typeStyle={ParagraphTypeStyle.sm} className='text-pink-800 dark:text-pink-200'>
-                Explore our swag collection of AsyncAPI-themed t-shirts and goodies.
-              </Paragraph>
-            </a>
-
             {/* Finance Card */}
             <Link
               href='/finance'
