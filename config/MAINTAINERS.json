@@ -173,7 +173,6 @@
         "repos": [
             "spec",
             "spec-json-schemas",
-            "parser-js",
             "extensions-catalog",
             "converter-js",
             "bindings",
@@ -388,6 +387,7 @@
         "tscMemberSince": "2023-11-30",
         "repos": [
             "website",
+            "parser-js",
             "studio"
         ],
         "githubID": 44585452
@@ -910,20 +910,6 @@
         "githubID": 72747835
     },
     {
-        "name": "Vishvamsinh Vaghela",
-        "github": "vishvamsinh28",
-        "twitter": "Vishvamsinh28",
-        "linkedin": "vishvamsinh-vaghela-591695217",
-        "slack": "U05FM7WRKU4",
-        "availableForHire": true,
-        "isTscMember": true,
-        "tscMemberSince": "2025-03-25",
-        "repos": [
-            "website"
-        ],
-        "githubID": 90895835
-    },
-    {
         "name": "Antonio",
         "github": "bandantonio",
         "isTscMember": false,
@@ -1006,7 +992,11 @@
     {
         "name": "Mohammed Mehdi",
         "github": "catosaurusrex2003",
-        "isTscMember": false,
+        "linkedin": "mohammed-mehdi-a5833b229",
+        "slack": "U07M2JLLWF7",
+        "availableForHire": true,
+        "isTscMember": true,
+        "tscMemberSince": "2026-04-22",
         "repos": [
             "asyncapi-react"
         ],
