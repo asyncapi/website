@@ -13,7 +13,7 @@ authors:
     photo: /img/avatars/ivangsa.webp
     link: https://ivangsa.com/about
     byline: Software Engineer. Speaker. Building ZenWave 360º
-excerpt: 'AsyncAPI Studio was previously a single in-memory file editor. This prevented the use of relative $refs to external .avsc Avro files. This new contribution now tracks the document source, resolves relative references, and can read and write files directly to disk using the browser's File System Access API when working with a local folder.'
+excerpt: "AsyncAPI Studio was previously a single in-memory file editor. This prevented the use of relative $refs to external .avsc Avro files. This new contribution now tracks the document source, resolves relative references, and can read and write files directly to disk using the browser's File System Access API when working with a local folder."
 ---
 
 # AsyncAPI Studio: From Single File to Real World Usage

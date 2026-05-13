@@ -20,7 +20,7 @@ authors:
     photo: /img/avatars/ivangsa.webp
     link: https://ivangsa.com/about
     byline: Software Engineer. Speaker. Building ZenWave 360º
-excerpt: 'In Event-Driven Architectures, API Drift happens in two places: implementation and platform. AsyncAPI and API-First Ops can keep both continuously aligned from a single contract.'
+excerpt: "In Event-Driven Architectures, API Drift happens in two places: implementation and platform. AsyncAPI and API-First Ops can keep both continuously aligned from a single contract."
 ---
 
 
