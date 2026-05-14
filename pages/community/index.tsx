@@ -246,6 +246,8 @@ export default function CommunityIndexPage() {
                 Help us improve our 2026 AsyncAPI community building and maintenance goals.
               </Paragraph>
             </a>
+
+            {/* commenting this out because we have closed our swags store */}
             {/* Swags & Goodies Card
             <a
               href='https://www.store.asyncapi.com/'
