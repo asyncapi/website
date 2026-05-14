@@ -117,5 +117,19 @@
     "url": "https://github.com/asyncapi/community/issues/3513",
     "banner": "",
     "date": "2026-04-21T14:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI Community WG Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=bGxpNWJpMnF2YWltbDJ2dG1vMTVibTcwMGsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/3548",
+    "banner": "https://github.com/user-attachments/assets/b4e255b8-5c7e-4821-82c9-3bcbc18b68ef",
+    "date": "2026-05-26T15:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI Docs Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=OGxpajEwa2IycW40OWl1b3Azbm9mbzZzb2sgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/3549",
+    "banner": "",
+    "date": "2026-05-27T16:00:00.000Z"
   }
 ]
