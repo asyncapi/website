@@ -246,6 +246,31 @@ export default function CommunityIndexPage() {
                 Help us improve our 2026 AsyncAPI community building and maintenance goals.
               </Paragraph>
             </a>
+            {/* Swags & Goodies Card
+            <a
+              href='https://www.store.asyncapi.com/'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='relative group bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-900/20 dark:to-pink-800/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border border-pink-200 dark:border-pink-700 hover:scale-[1.02] cursor-pointer'
+            >
+              <div className='absolute top-6 right-6'>
+                <IconExternalLink className='w-8 h-8 text-pink-400 dark:text-pink-300 group-hover:text-pink-500 dark:group-hover:text-pink-200 transition-colors' />
+              </div>
+              <div className='mb-6'>
+                <IconBadgeCheckmark className='w-12 h-12 text-pink-600 dark:text-pink-400' />
+              </div>
+              <Heading
+                level={HeadingLevel.h3}
+                typeStyle={HeadingTypeStyle.md}
+                className='text-pink-900 dark:text-pink-100 font-bold mb-3'
+              >
+                Swags & Goodies
+              </Heading>
+              <Paragraph typeStyle={ParagraphTypeStyle.sm} className='text-pink-800 dark:text-pink-200'>
+                Explore our swag collection of AsyncAPI-themed t-shirts and goodies.
+              </Paragraph>
+            </a> */}
+
             {/* Finance Card */}
             <Link
               href='/finance'
