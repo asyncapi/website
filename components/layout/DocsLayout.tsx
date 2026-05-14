@@ -207,7 +207,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                     <DocsButton post={post} />
                   </div>
                   <div className=''>
-                    <Feedback />
+                    <Feedback post={post} />
                   </div>
                 </div>
               </div>
