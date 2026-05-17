@@ -308,6 +308,9 @@ async function start(writePath: string): Promise<void> {
   } catch (error) {
     logger.error('There were some issues parsing data from github.');
     logger.error(error);
+    // Re-throw so the workflow step fails and alerts the team
+    // instead of silently skipping dashboard.json generation.
+    throw error;
   }
 }
 
