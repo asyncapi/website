@@ -69,7 +69,7 @@ export default function Feedback({ className }: IFeedbackProps) {
           href='https://github.com/asyncapi/website'
           target='_blank'
           rel='noopener noreferrer'
-          className='mx-auto mt-4 w-full rounded-md bg-black p-2 shadow-md transition-all duration-500 ease-in-out hover:shadow-lg md:w-1/2'
+          className='mx-auto mt-4 w-full rounded-md bg-black p-2 shadow-md transition-all duration-500 ease-in-out hover:bg-gray-800 hover:shadow-lg md:w-1/2'
         >
           <div className='flex flex-row justify-center text-center text-white'>
             <img src='/img/logos/github-fill.svg' className='mr-2 w-6' alt='GitHub' aria-hidden='true' />
@@ -113,7 +113,7 @@ export default function Feedback({ className }: IFeedbackProps) {
           />
           <div className='mt-4 block text-sm lg:flex lg:flex-row'>
             <button
-              className='w-full rounded bg-primary-500 py-2 text-white shadow-md transition-all duration-500 ease-in-out hover:shadow-lg lg:w-6/12'
+              className='w-full rounded bg-primary-500 py-2 text-white shadow-md transition-all duration-500 ease-in-out hover:bg-primary-600 hover:shadow-lg lg:w-6/12'
               type='submit'
             >
               Submit feedback
