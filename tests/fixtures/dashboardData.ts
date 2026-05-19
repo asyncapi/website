@@ -52,6 +52,12 @@ const fullDiscussionDetails = {
       nodes: [{ reactions: { totalCount: 1 } }, { reactions: { totalCount: 2 } }, { reactions: { totalCount: 3 } }],
       pageInfo: { hasNextPage: false }
     }
+  },
+  rateLimit: {
+    cost: 1,
+    limit: 5000,
+    remaining: 4000,
+    resetAt: new Date(Date.now() + 3600000).toISOString()
   }
 };
 

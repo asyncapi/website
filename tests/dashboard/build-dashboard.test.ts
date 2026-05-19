@@ -281,7 +281,10 @@ describe('GitHub Discussions Processing', () => {
   });
 
   it('should handle discussion retrieval', async () => {
-    mockedGraphql.mockResolvedValueOnce({ node: mockDiscussion });
+    mockedGraphql.mockResolvedValueOnce({
+      node: mockDiscussion,
+      rateLimit: { remaining: 4000, limit: 5000, cost: 1, resetAt: new Date().toISOString() }
+    });
     const result = await getDiscussionByID(false, 'test-id');
 
     expect(result.node).toBeDefined();

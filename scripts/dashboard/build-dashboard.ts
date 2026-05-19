@@ -203,7 +203,7 @@ async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequest
     throw new Error('GitHub token is not set in environment variables');
   }
 
-  return retryWithBackoff(
+  const result: PullRequestById | IssueById = await retryWithBackoff(
     () =>
       graphql(isPR ? Queries.pullRequestById : Queries.issueById, {
         id,
@@ -213,6 +213,10 @@ async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequest
       }),
     `getDiscussionByID ${id}`
   );
+
+  await adaptiveDelay(result.rateLimit);
+
+  return result;
 }
 
 /**
@@ -228,47 +232,50 @@ async function getDiscussionByID(isPR: boolean, id: string): Promise<PullRequest
  * @throws {Error} When processing a discussion fails.
  */
 async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise<ProcessedDiscussion[]> {
-  return Promise.all(
-    batch.map(async (discussion) => {
-      try {
-        // eslint-disable-next-line no-underscore-dangle
-        const isPR = discussion.__typename === 'PullRequest';
+  const results: ProcessedDiscussion[] = [];
 
-        if (discussion.comments.pageInfo?.hasNextPage) {
-          const fetchedDiscussion = await getDiscussionByID(isPR, discussion.id);
+  for (const discussion of batch) {
+    try {
+      // eslint-disable-next-line no-underscore-dangle
+      const isPR = discussion.__typename === 'PullRequest';
+      let item = discussion;
 
-          // eslint-disable-next-line no-param-reassign
-          discussion = fetchedDiscussion.node;
-        }
+      if (item.comments.pageInfo?.hasNextPage) {
+        // eslint-disable-next-line no-await-in-loop
+        const fetchedDiscussion = await getDiscussionByID(isPR, item.id);
 
-        const interactionsCount =
-          discussion.reactions.totalCount +
-          discussion.comments.totalCount +
-          discussion.comments.nodes.reduce((acc, curr) => acc + curr.reactions.totalCount, 0);
-
-        const finalInteractionsCount = isPR
-          ? interactionsCount +
-            discussion.reviews.totalCount +
-            (discussion.reviews.nodes?.reduce((acc, curr) => acc + curr.comments.totalCount, 0) ?? 0)
-          : interactionsCount;
-
-        return {
-          id: discussion.id,
-          isPR,
-          isAssigned: !!discussion.assignees.totalCount,
-          title: discussion.title,
-          author: discussion.author.login,
-          resourcePath: discussion.resourcePath,
-          repo: `asyncapi/${discussion.repository.name}`,
-          labels: discussion.labels ? discussion.labels.nodes : [],
-          score: finalInteractionsCount / (monthsSince(discussion.timelineItems.updatedAt) + 2) ** 1.8
-        };
-      } catch (error) {
-        logger.error(`there were some issues while parsing this item: ${JSON.stringify(discussion)}`);
-        throw error;
+        item = fetchedDiscussion.node;
       }
-    })
-  );
+
+      const interactionsCount =
+        item.reactions.totalCount +
+        item.comments.totalCount +
+        item.comments.nodes.reduce((acc, curr) => acc + curr.reactions.totalCount, 0);
+
+      const finalInteractionsCount = isPR
+        ? interactionsCount +
+          item.reviews.totalCount +
+          (item.reviews.nodes?.reduce((acc, curr) => acc + curr.comments.totalCount, 0) ?? 0)
+        : interactionsCount;
+
+      results.push({
+        id: item.id,
+        isPR,
+        isAssigned: !!item.assignees.totalCount,
+        title: item.title,
+        author: item.author.login,
+        resourcePath: item.resourcePath,
+        repo: `asyncapi/${item.repository.name}`,
+        labels: item.labels ? item.labels.nodes : [],
+        score: finalInteractionsCount / (monthsSince(item.timelineItems.updatedAt) + 2) ** 1.8
+      });
+    } catch (error) {
+      logger.error(`there were some issues while parsing this item: ${JSON.stringify(discussion)}`);
+      throw error;
+    }
+  }
+
+  return results;
 }
 
 /**
