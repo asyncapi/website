@@ -35,11 +35,14 @@ const MAX_RETRIES = 3;
 const RETRY_BASE_DELAY_MS = 60000;
 
 function getHotDiscussionsCutoffDate(): string {
-  const date = new Date();
+  const now = new Date();
+  const targetMonth = now.getMonth() - HOT_DISCUSSIONS_MONTHS_BACK;
+  // Clamp the day to the last valid day of the target month so that dates like
+  // Aug 31 don't roll over into the next month (e.g. Feb 31 → Mar 3).
+  const lastDayOfTargetMonth = new Date(now.getFullYear(), targetMonth + 1, 0).getDate();
+  const clampedDay = Math.min(now.getDate(), lastDayOfTargetMonth);
 
-  date.setMonth(date.getMonth() - HOT_DISCUSSIONS_MONTHS_BACK);
-
-  return date.toISOString().split('T')[0];
+  return new Date(now.getFullYear(), targetMonth, clampedDay).toISOString().split('T')[0];
 }
 
 function isRetryableError(error: unknown): boolean {
@@ -61,6 +64,7 @@ async function retryWithBackoff<T>(fn: () => Promise<T>, context: string): Promi
 
   for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
     try {
+      // eslint-disable-next-line no-await-in-loop
       return await fn();
     } catch (error) {
       lastError = error;
@@ -79,6 +83,7 @@ async function retryWithBackoff<T>(fn: () => Promise<T>, context: string): Promi
         `Retryable error during ${context} (attempt ${attempt + 1}/${MAX_RETRIES}). ` +
           `Retrying in ${delayMs / 1000}s...`
       );
+      // eslint-disable-next-line no-await-in-loop
       await pause(delayMs);
     }
   }

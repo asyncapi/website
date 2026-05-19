@@ -287,7 +287,7 @@ Partial fresh data is better than completely stale data from a year ago.
 
 If BOTH sections fail (no data at all), the script throws an error. But in the GitHub Actions workflow, the dashboard step uses a fallback:
 ```yaml
-npm run generate:dashboard || echo "Dashboard generation failed"
+npm run generate:dashboard || echo "::warning::Dashboard generation failed, continuing with available data"
 ```
 
 This means meetings and videos are still updated and committed even if the dashboard generation fails completely. The failure is logged as a warning in the workflow output.
