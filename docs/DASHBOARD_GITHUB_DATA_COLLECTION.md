@@ -207,6 +207,16 @@ Fewer pages = fewer requests = less likely to hit velocity-based rate limits. Th
 
 We chose 30 (not 50 or 100) because testing showed it works reliably within GitHub's server-side complexity limits when combined with the nested fields we request.
 
+### 3a. Sort hot discussions by most recently updated (`sort:updated-desc`)
+
+Both hot discussion search queries now include `sort:updated-desc`. This ensures GitHub returns the most recently active issues and PRs first, rather than using its internal relevance ordering.
+
+**Why this matters**: Without this sort, GitHub's default ordering can place highly-active items far past the 150-item cap (5 pages × 30 items). A PR last updated yesterday could appear at position 160 in default order and never be fetched or scored. With `sort:updated-desc`, recently active items are always in the first pages.
+
+**Cost**: Zero additional API calls. It is a single string addition to the query.
+
+The `goodFirstIssues` query intentionally does **not** use this sort. The purpose of showing good first issues is to distribute new contributor traffic across all available issues — including quiet ones that have received little attention. Sorting by most recently updated would keep sending contributors to the same already-active issues while neglecting ones that genuinely need someone to pick them up.
+
 ### 3. Retry with exponential backoff
 
 If a request fails with a retryable error (secondary rate limit, 502, network timeout), the script now waits and retries up to 3 times with increasing delays: 60 seconds, then 120 seconds, then 240 seconds.
@@ -220,7 +230,7 @@ After each successful request, the script checks how many rate limit points are 
 
 ### 5. Maximum pages cap
 
-Hot discussion queries are capped at 5 pages (150 items with page size 30). Since we only need the top 12 by score, 150 recently-updated items is more than sufficient. Good first issues have no cap.
+Hot discussion queries are capped at 5 pages (150 items with page size 30). Since we only need the top 12 by score, 150 most-recently-updated items is more than sufficient (the `sort:updated-desc` ordering ensures these are the right 150 items). Good first issues are also capped at 5 pages (150 items) but use no sort filter — the goal there is to surface all available issues without bias.
 
 ### 6. Progressive data saving
 
@@ -311,8 +321,9 @@ All configuration constants are at the top of `scripts/dashboard/build-dashboard
 | Constant | Current Value | What It Controls |
 |----------|---------------|------------------|
 | `HOT_DISCUSSIONS_MONTHS_BACK` | `6` | How far back to search for hot discussions. Increase to cast a wider net, decrease to reduce API load. |
-| `PAGE_SIZE` | `30` | Items per API request. Higher = fewer requests but heavier queries. Keep at 30 or below for reliability. |
-| `MAX_PAGES_HOT_DISCUSSIONS` | `5` | Maximum pagination pages for hot discussions. 5 pages x 30 items = 150 items max. Only applies to hot discussions; good first issues have no cap. |
+| `PAGE_SIZE` | `30` | Items per API request. Higher = fewer requests but heavier queries. Keep at 30 or below — at 100, queries always 502. |
+| `MAX_PAGES_HOT_DISCUSSIONS` | `5` | Maximum pagination pages for hot discussions. 5 pages × 30 items = 150 items max. With `sort:updated-desc` these are the 150 most recently active items. |
+| `MAX_PAGES_GOOD_FIRST_ISSUES` | `5` | Maximum pagination pages for good first issues. 5 pages × 30 items = 150 items max. No sort filter applied — all issues are shown without bias toward recently active ones. |
 | `BASE_DELAY_MS` | `2000` | Minimum delay between API requests (milliseconds). Increase if hitting rate limits. |
 | `MAX_RETRIES` | `3` | Number of retry attempts on retryable errors. |
 | `RETRY_BASE_DELAY_MS` | `60000` | Initial retry delay (60 seconds). Doubles with each attempt: 60s, 120s, 240s. |

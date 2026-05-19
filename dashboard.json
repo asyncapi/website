@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/5253",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 22.9739670999407
+      "score": 28.430284286176615
     },
     {
       "id": "I_kwDOBW5R_c7pGlqB",
@@ -33,120 +33,140 @@
           "color": "0052cc"
         }
       ],
-      "score": 16.08177696995849
+      "score": 22.112443333692923
     },
     {
-      "id": "I_kwDOFLhIt87veiYf",
+      "id": "I_kwDOFLhIt87jC_4a",
       "isPR": false,
       "isAssigned": true,
-      "title": "Cleanup Inactive Working Groups",
-      "author": "thulieblack",
-      "resourcePath": "/asyncapi/community/issues/2312",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "vote",
-          "color": "EF813F"
-        },
-        {
-          "name": "gitvote",
-          "color": "ededed"
-        },
-        {
-          "name": "gitvote/closed",
-          "color": "ededed"
-        },
-        {
-          "name": "gitvote/passed",
-          "color": "ededed"
-        }
-      ],
-      "score": 11.48698354997035
-    },
-    {
-      "id": "I_kwDOFLhIt87yTEIV",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Update the outdated packages",
-      "author": "thulieblack",
-      "resourcePath": "/asyncapi/community/issues/2324",
+      "title": "Code of Conduct Nomination - 2026",
+      "author": "Mayaleeeee",
+      "resourcePath": "/asyncapi/community/issues/2236",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 10.338285194973315
+      "score": 10.912634372471834
     },
     {
-      "id": "PR_kwDOCHlHJM7LNhwU",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "refactor: update getQueryParams to support multiple channels",
-      "author": "SushanthMusham",
-      "resourcePath": "/asyncapi/generator/pull/2026",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 10.338285194973315
-    },
-    {
-      "id": "I_kwDOFDnrNc7zQ5Vt",
+      "id": "I_kwDOGQYLdM67ixbm",
       "isPR": false,
       "isAssigned": true,
-      "title": "[BOUNTY] Set of issues for resolution under the Bounty Program 2026-04",
-      "author": "AayushSaini101",
-      "resourcePath": "/asyncapi/cli/issues/2039",
-      "repo": "asyncapi/cli",
+      "title": "Create a Unified Iconography System for Marketing & Tooling",
+      "author": "Mayaleeeee",
+      "resourcePath": "/asyncapi/brand/issues/119",
+      "repo": "asyncapi/brand",
       "labels": [
         {
-          "name": "bounty",
-          "color": "0e8a16"
-        }
-      ],
-      "score": 8.328063073728504
-    },
-    {
-      "id": "I_kwDOFdFGUs7qGiVC",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Record and release training video based on VIDEO_5_SCRIPT.md",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/training/issues/58",
-      "repo": "asyncapi/training",
-      "labels": [
+          "name": ":art: design",
+          "color": "0D67D3"
+        },
+        {
+          "name": "area/design",
+          "color": "0d67d3"
+        },
         {
           "name": "bounty",
           "color": "0E8A16"
         }
       ],
-      "score": 7.7537138962299865
+      "score": 10.625459783722574
     },
     {
-      "id": "PR_kwDOCHlHJM7TlrHF",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore: add AGENT.md and tune CodeRabbit review config",
-      "author": "Adi-204",
-      "resourcePath": "/asyncapi/generator/pull/2065",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 7.7537138962299865
-    },
-    {
-      "id": "I_kwDOBW5R_c7uh0fo",
+      "id": "I_kwDOBW5R_c67zQdK",
       "isPR": false,
-      "isAssigned": false,
-      "title": "[FEATURE] Introduce AI-facing documentation",
-      "author": "sammy200-ui",
-      "resourcePath": "/asyncapi/website/issues/5205",
+      "isAssigned": true,
+      "title": "[FEATURE] “Edit This Page” Button for Docs and Blog Pages",
+      "author": "Sauve9119",
+      "resourcePath": "/asyncapi/website/issues/4187",
       "repo": "asyncapi/website",
       "labels": [
         {
           "name": "enhancement",
           "color": "84b6eb"
+        }
+      ],
+      "score": 10.338285194973315
+    },
+    {
+      "id": "I_kwDODCuNRs6NFZib",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "ROS2 bindings",
+      "author": "renzo-sie",
+      "resourcePath": "/asyncapi/bindings/issues/254",
+      "repo": "asyncapi/bindings",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 10.051110606224057
+    },
+    {
+      "id": "I_kwDOCHlHJM61Y1X2",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "explore how to handle `reply` operation in code generation",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/generator/issues/1547",
+      "repo": "asyncapi/generator",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 8.615237662477762
+    },
+    {
+      "id": "PR_kwDOBW5R_c7OKdhx",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "Fix finance memory leak remove resize listener leak and layout shift",
+      "author": "codxbrexx",
+      "resourcePath": "/asyncapi/website/pull/5285",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 8.328063073728504
+    },
+    {
+      "id": "I_kwDOBW5R_c60eZiB",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[FEATURE] \"Join the AsyncAPI Community\" Section",
+      "author": "iambami",
+      "resourcePath": "/asyncapi/website/issues/4077",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "Priority: P2",
+          "color": "FBCA04"
         },
         {
           "name": "triaged",
           "color": "0052cc"
         }
       ],
-      "score": 7.466539307480728
+      "score": 7.7537138962299865
+    },
+    {
+      "id": "PR_kwDODwv8N866EXtA",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add image gallery for past conferences",
+      "author": "kajal-jotwani",
+      "resourcePath": "/asyncapi/conference-website/pull/890",
+      "repo": "asyncapi/conference-website",
+      "labels": [],
+      "score": 7.7537138962299865
     },
     {
       "id": "I_kwDOFLhIt874rNRL",
@@ -157,44 +177,72 @@
       "resourcePath": "/asyncapi/community/issues/3495",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 6.89219012998221
+      "score": 7.179364718731469
     },
     {
-      "id": "PR_kwDOBW5R_c7OWtuk",
+      "id": "PR_kwDOE8Qh387CD5_6",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: improve coderabbit workflow",
-      "author": "animeshk923",
-      "resourcePath": "/asyncapi/website/pull/5294",
-      "repo": "asyncapi/website",
+      "title": "chore: resolve broken and empty links across modelina documentation",
+      "author": "Ishita-190",
+      "resourcePath": "/asyncapi/modelina/pull/2432",
+      "repo": "asyncapi/modelina",
       "labels": [],
-      "score": 6.89219012998221
-    },
-    {
-      "id": "PR_kwDOCHlHJM7OPUEf",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "test(websocket-js): add snapshot test for CompileOperationSchemas component",
-      "author": "SHUBHANSHU602",
-      "resourcePath": "/asyncapi/generator/pull/2034",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 6.89219012998221
+      "score": 7.179364718731469
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOBW5R_c73DGLM",
-      "title": "E2E test are failing",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/5281",
-      "repo": "asyncapi/website",
-      "author": "princerajpoot20",
+      "id": "I_kwDOFttfzM8AAAABAGs3PA",
+      "title": "Project maintenance status + request for .NET 10 support and dependency upgrades",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/net-sdk/issues/74",
+      "repo": "asyncapi/net-sdk",
+      "author": "SergeyZubatkin",
       "area": "Unknown",
       "labels": [
         {
-          "name": "triaged",
-          "color": "0052cc"
+          "name": "type: feature",
+          "color": "a2eeef"
+        },
+        {
+          "name": "area: core",
+          "color": "45EBCB"
+        },
+        {
+          "name": "weight: 3",
+          "color": "FBCA04"
+        },
+        {
+          "name": "priority: normal",
+          "color": "A0E245"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFttfzM7pu13X",
+      "title": "Make components section usable in case of code-first generation",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/net-sdk/issues/72",
+      "repo": "asyncapi/net-sdk",
+      "author": "ljd1fe",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "type: feature",
+          "color": "a2eeef"
+        },
+        {
+          "name": "area: core",
+          "color": "45EBCB"
+        },
+        {
+          "name": "weight: 3",
+          "color": "FBCA04"
+        },
+        {
+          "name": "priority: normal",
+          "color": "A0E245"
         }
       ]
     },
@@ -210,6 +258,37 @@
         {
           "name": "bug",
           "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFttfzM7mELUN",
+      "title": "V3 FluentBuilder validation failed when an operation references a component message",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/net-sdk/issues/71",
+      "repo": "asyncapi/net-sdk",
+      "author": "Foorcee",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "type: bug",
+          "color": "d73a4a"
+        },
+        {
+          "name": "area: builders",
+          "color": "DCD108"
+        },
+        {
+          "name": "change: fix",
+          "color": "E9F0B3"
+        },
+        {
+          "name": "weight: 3",
+          "color": "FBCA04"
+        },
+        {
+          "name": "priority: normal",
+          "color": "A0E245"
         }
       ]
     },
@@ -338,7 +417,12 @@
       "repo": "asyncapi/cli",
       "author": "AayushSaini101",
       "area": "Unknown",
-      "labels": []
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ]
     },
     {
       "id": "I_kwDOFDnrNc7DhEVD",
@@ -348,7 +432,12 @@
       "repo": "asyncapi/cli",
       "author": "derberg",
       "area": "javascript",
-      "labels": []
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ]
     },
     {
       "id": "I_kwDOFDnrNc6uQo6r",
@@ -449,6 +538,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },

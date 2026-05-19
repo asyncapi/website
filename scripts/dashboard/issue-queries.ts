@@ -153,7 +153,7 @@ query($first: Int!, $after: String) {
     first: $first
     after: $after
     type: ISSUE
-    query: "org:asyncapi state:open is:issue updated:>${updatedSince}"
+    query: "org:asyncapi state:open is:issue updated:>${updatedSince} sort:updated-desc"
   ) {
     pageInfo {
       hasNextPage
@@ -217,7 +217,7 @@ query($first: Int!, $after: String) {
     first: $first
     after: $after
     type: ISSUE
-    query: "org:asyncapi state:open is:pull-request updated:>${updatedSince}"
+    query: "org:asyncapi state:open is:pull-request updated:>${updatedSince} sort:updated-desc"
   ) {
     pageInfo {
       hasNextPage
