@@ -88,10 +88,14 @@ async function retryWithBackoff<T>(fn: () => Promise<T>, context: string): Promi
   throw new Error(`Exhausted ${MAX_RETRIES} retries for ${context}: ${originalMessage}`);
 }
 
+const MAX_ADAPTIVE_DELAY_MS = 15 * 60_000;
+
 async function adaptiveDelay(rateLimit: Discussion['rateLimit']): Promise<void> {
   if (rateLimit.remaining <= 100) {
     const resetTime = new Date(rateLimit.resetAt).getTime();
-    const waitMs = Math.max(resetTime - Date.now(), 0) + 1000;
+    const safeResetTime = Number.isFinite(resetTime) ? resetTime : Date.now();
+    const rawWaitMs = Math.max(safeResetTime - Date.now(), 0) + 1000;
+    const waitMs = Math.min(rawWaitMs, MAX_ADAPTIVE_DELAY_MS);
 
     logger.warn(
       `Rate limit critically low (${rateLimit.remaining} remaining). Waiting ${Math.round(waitMs / 1000)}s until reset.`
@@ -379,27 +383,48 @@ async function start(writePath: string): Promise<void> {
   let hotDiscussionsFailed = false;
   let goodFirstIssuesFailed = false;
 
+  let hotIssues: Discussion['search']['nodes'] = [];
+  let hotPRs: Discussion['search']['nodes'] = [];
+  let hotIssuesFetchFailed = false;
+  let hotPRsFetchFailed = false;
+
   try {
-    const issues = await getDiscussions(
+    hotIssues = await getDiscussions(
       Queries.hotDiscussionsIssues(cutoffDate),
       PAGE_SIZE,
       null,
       MAX_PAGES_HOT_DISCUSSIONS
     );
-    const PRs = await getDiscussions(
+  } catch (error) {
+    hotIssuesFetchFailed = true;
+    logger.error('Failed to fetch hot discussion issues:');
+    logger.error(error);
+  }
+
+  try {
+    hotPRs = await getDiscussions(
       Queries.hotDiscussionsPullRequests(cutoffDate),
       PAGE_SIZE,
       null,
       MAX_PAGES_HOT_DISCUSSIONS
     );
-    const discussions = issues.concat(PRs);
-
-    hotDiscussions = await getHotDiscussions(discussions);
-    logger.info(`Collected ${hotDiscussions.length} hot discussions`);
   } catch (error) {
-    hotDiscussionsFailed = true;
-    logger.error('Failed to fetch hot discussions:');
+    hotPRsFetchFailed = true;
+    logger.error('Failed to fetch hot discussion PRs:');
     logger.error(error);
+  }
+
+  if (hotIssuesFetchFailed && hotPRsFetchFailed) {
+    hotDiscussionsFailed = true;
+  } else {
+    try {
+      hotDiscussions = await getHotDiscussions(hotIssues.concat(hotPRs));
+      logger.info(`Collected ${hotDiscussions.length} hot discussions`);
+    } catch (error) {
+      hotDiscussionsFailed = true;
+      logger.error('Failed to process hot discussions:');
+      logger.error(error);
+    }
   }
 
   try {

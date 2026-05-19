@@ -119,6 +119,25 @@ describe('GitHub Discussions Processing', () => {
     expect(pause).toHaveBeenCalledWith(2000);
   });
 
+  it('should cap adaptive delay at 15 minutes and handle invalid resetAt', async () => {
+    await adaptiveDelay({ limit: 5000, cost: 1, remaining: 50, resetAt: 'invalid-date' });
+    expect(logger.warn).toHaveBeenCalledWith(expect.stringContaining('Rate limit critically low'));
+    const [waitArg] = (pause as jest.Mock).mock.calls[0];
+
+    expect(waitArg).toBeLessThanOrEqual(15 * 60_000);
+    expect(waitArg).toBeGreaterThan(0);
+
+    (pause as jest.Mock).mockClear();
+    (logger.warn as jest.Mock).mockClear();
+
+    const farFuture = new Date(Date.now() + 2 * 60 * 60_000).toISOString();
+
+    await adaptiveDelay({ limit: 5000, cost: 1, remaining: 50, resetAt: farFuture });
+    const [cappedWait] = (pause as jest.Mock).mock.calls[0];
+
+    expect(cappedWait).toBeLessThanOrEqual(15 * 60_000);
+  });
+
   it('should handle pagination', async () => {
     mockedGraphql
       .mockResolvedValueOnce(makePageResponse(1, true))
@@ -159,7 +178,8 @@ describe('GitHub Discussions Processing', () => {
     const filePath = resolve(tempDir, 'error-output.json');
 
     await expect(start(filePath)).rejects.toThrow('Dashboard generation failed');
-    expect(logger.error).toHaveBeenCalledWith('Failed to fetch hot discussions:');
+    expect(logger.error).toHaveBeenCalledWith('Failed to fetch hot discussion issues:');
+    expect(logger.error).toHaveBeenCalledWith('Failed to fetch hot discussion PRs:');
     expect(logger.error).toHaveBeenCalledWith('Failed to fetch good first issues:');
   });
 
@@ -169,13 +189,12 @@ describe('GitHub Discussions Processing', () => {
     mockedGraphql.mockImplementation(() => {
       callCount++;
 
-      // First call is hot discussions issues — fail it (PRs fetch is never reached
-      // because issues + PRs are in the same try/catch)
-      if (callCount === 1) {
+      // First two calls are hot discussion issues and PRs — both fail
+      if (callCount <= 2) {
         return Promise.reject(new Error('Hot discussions API failure'));
       }
 
-      // Second call is good first issues — succeed
+      // Third call is good first issues — succeed
       return Promise.resolve(mockHealthyRateLimitResponse);
     });
 
@@ -187,6 +206,41 @@ describe('GitHub Discussions Processing', () => {
 
     expect(content.hotDiscussions).toEqual([]);
     expect(content.goodFirstIssues).toHaveLength(1);
+    expect(logger.warn).toHaveBeenCalledWith('Dashboard generated with partial data due to errors above.');
+  });
+
+  it('should write partial data when hot discussion processing fails', async () => {
+    const malformedResponse = {
+      search: {
+        nodes: [{ id: 'bad-node' }],
+        pageInfo: { hasNextPage: false }
+      },
+      rateLimit: { remaining: 4000, limit: 5000, cost: 1, resetAt: new Date().toISOString() }
+    };
+
+    let callCount = 0;
+
+    mockedGraphql.mockImplementation(() => {
+      callCount++;
+
+      // Hot issues and PRs return malformed data that will crash processing
+      if (callCount <= 2) {
+        return Promise.resolve(malformedResponse);
+      }
+
+      // Good first issues succeeds normally
+      return Promise.resolve(mockHealthyRateLimitResponse);
+    });
+
+    const filePath = resolve(tempDir, 'partial-processing-fail.json');
+
+    await start(filePath);
+
+    const content = JSON.parse(await fs.readFile(filePath, 'utf-8'));
+
+    expect(content.hotDiscussions).toEqual([]);
+    expect(content.goodFirstIssues).toHaveLength(1);
+    expect(logger.error).toHaveBeenCalledWith('Failed to process hot discussions:');
     expect(logger.warn).toHaveBeenCalledWith('Dashboard generated with partial data due to errors above.');
   });
 
