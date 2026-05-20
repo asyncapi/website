@@ -113,7 +113,7 @@ export default function Footer() {
             <p className='block text-sm leading-6'>
               <a href='https://netlify.com' target='_blank' rel='noopener noreferrer'>
                 <img
-                  src='https://www.netlify.com/img/global/badges/netlify-color-bg.svg'
+                  src='/img/badges/netlify-color-bg.svg'
                   className='inline'
                   alt='Deploys by Netlify'
                 />
