@@ -70,7 +70,7 @@ export default function Modal({ title, children, onModalClose = () => {} }: IMod
             </svg>
           </button>
         </div>
-        <div className='max-h-[65vh] w-full overflow-auto lg:max-h-[70vh]'>{children}</div>
+        <div className='max-h-[65vh] w-full overflow-auto break-words lg:max-h-[70vh]'>{children}</div>
       </div>
     </div>
   );
