@@ -291,6 +291,7 @@ const combineTools = async (
           }
 
           const titleCmp = tool.title.localeCompare(anotherTool.title);
+
           if (titleCmp !== 0) return titleCmp;
 
           // Secondary sort by repoUrl to ensure deterministic ordering when titles match
