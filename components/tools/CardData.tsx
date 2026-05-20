@@ -67,9 +67,10 @@ export const CardData = ({
   // Decide whether the user click outside this component (card description) or not.
   useEffect(() => {
     const maybeHandler = (event: MouseEvent) => {
-      setOutsideClick(true);
       if (domNode.current && !domNode.current.contains(event.target as Node)) {
         setOutsideClick(false);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        setVisible((prev: any) => ({ ...prev, [type]: false }));
       }
     };
 
@@ -78,7 +79,7 @@ export const CardData = ({
     return () => {
       document.removeEventListener('mousedown', maybeHandler);
     };
-  }, []);
+  }, [type, setVisible]);
 
   return (
     <div className={twMerge('text-left text-sm text-gray-500', className)}>
