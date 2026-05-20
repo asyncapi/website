@@ -169,6 +169,17 @@
       "score": 7.7537138962299865
     },
     {
+      "id": "PR_kwDOCHlHJM7NT-iG",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: rewrite Java template tutorial to AsyncAPI v3",
+      "author": "wei123-web",
+      "resourcePath": "/asyncapi/generator/pull/2029",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 7.466539307480728
+    },
+    {
       "id": "I_kwDOFLhIt874rNRL",
       "isPR": false,
       "isAssigned": true,
@@ -176,17 +187,6 @@
       "author": "princerajpoot20",
       "resourcePath": "/asyncapi/community/issues/3495",
       "repo": "asyncapi/community",
-      "labels": [],
-      "score": 7.179364718731469
-    },
-    {
-      "id": "PR_kwDOE8Qh387CD5_6",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore: resolve broken and empty links across modelina documentation",
-      "author": "Ishita-190",
-      "resourcePath": "/asyncapi/modelina/pull/2432",
-      "repo": "asyncapi/modelina",
       "labels": [],
       "score": 7.179364718731469
     }
@@ -243,6 +243,21 @@
         {
           "name": "priority: normal",
           "color": "A0E245"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c7o1a3K",
+      "title": "[TEST]: Add unit tests for scripts/compose.ts",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/5096",
+      "repo": "asyncapi/website",
+      "author": "codxbrexx",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "triaged",
+          "color": "0052cc"
         }
       ]
     },
@@ -312,12 +327,12 @@
       ]
     },
     {
-      "id": "I_kwDOBW5R_c7jlJXk",
-      "title": "[BUG] : Unreadable Text in Roadmap Item Details",
+      "id": "I_kwDOBW5R_c7j-AS6",
+      "title": "[BUG] :Broken link: “workflow with unsecured context” points to missing GitHub Actions workflow",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/4958",
+      "resourcePath": "/asyncapi/website/issues/4970",
       "repo": "asyncapi/website",
-      "author": "sauraviiitk",
+      "author": "SHUBHANSHU602",
       "area": "Unknown",
       "labels": [
         {
@@ -331,14 +346,18 @@
       ]
     },
     {
-      "id": "I_kwDOBW5R_c7jecmh",
-      "title": "[DESIGN]: Improve layout structure and text readability of TSC section",
+      "id": "I_kwDOBW5R_c7jlJXk",
+      "title": "[BUG] : Unreadable Text in Roadmap Item Details",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/4954",
+      "resourcePath": "/asyncapi/website/issues/4958",
       "repo": "asyncapi/website",
-      "author": "SinghSwayam",
+      "author": "sauraviiitk",
       "area": "Unknown",
       "labels": [
+        {
+          "name": "bug",
+          "color": "ee0701"
+        },
         {
           "name": "triaged",
           "color": "0052cc"
