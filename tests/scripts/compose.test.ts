@@ -28,16 +28,22 @@ function mockAnswers(overrides: Record<string, string> = {}) {
   (inquirer.prompt as jest.Mock).mockResolvedValue({ ...defaults, ...overrides });
 }
 
-function mockWriteFileSuccess() {
+function mockWriteFile(errorMessage?: string) {
   (fs.writeFile as jest.Mock).mockImplementation((_path: string, _content: string, _options: object, callback: (err: Error | null) => void) => {
-    callback(null);
+    callback(errorMessage ? new Error(errorMessage) : null);
   });
 }
 
-function mockWriteFileError(errorMessage: string) {
-  (fs.writeFile as jest.Mock).mockImplementation((_path: string, _content: string, _options: object, callback: (err: Error | null) => void) => {
-    callback(new Error(errorMessage));
+/**
+ * Helper: runs a test by importing compose.ts via jest.isolateModules and
+ * returns the file write call for assertions.
+ */
+function runCompose() {
+  jest.isolateModules(() => {
+    require('../../scripts/compose');
   });
+  const writeFileCalls = (fs.writeFile as jest.Mock).mock.calls;
+  return { writeFileCalls };
 }
 
 describe('scripts/compose.ts', () => {
@@ -47,15 +53,13 @@ describe('scripts/compose.ts', () => {
 
   describe('Happy path', () => {
     test('should generate a blog post with correct file path and front matter', () => {
-      mockWriteFileSuccess();
+      mockWriteFile();
       mockAnswers();
 
-      jest.isolateModules(() => {
-        require('../../scripts/compose');
-      });
+      const { writeFileCalls } = runCompose();
 
       expect(fs.writeFile).toHaveBeenCalledTimes(1);
-      const [filePath, content, options] = (fs.writeFile as jest.Mock).mock.calls[0];
+      const [filePath, content, options] = writeFileCalls[0];
 
       // Verify file path is kebab-case slug
       expect(filePath).toBe('pages/blog/test-blog-post.md');
@@ -74,7 +78,7 @@ describe('scripts/compose.ts', () => {
     });
 
     test('should use defaults for optional fields when empty', () => {
-      mockWriteFileSuccess();
+      mockWriteFile();
       mockAnswers({
         title: '',
         excerpt: '',
@@ -82,12 +86,10 @@ describe('scripts/compose.ts', () => {
         canonical: ''
       });
 
-      jest.isolateModules(() => {
-        require('../../scripts/compose');
-      });
+      const { writeFileCalls } = runCompose();
 
       expect(fs.writeFile).toHaveBeenCalledTimes(1);
-      const [filePath, content] = (fs.writeFile as jest.Mock).mock.calls[0];
+      const [filePath, content] = writeFileCalls[0];
 
       // Empty title defaults to 'untitled'
       expect(filePath).toBe('pages/blog/untitled.md');
@@ -99,73 +101,33 @@ describe('scripts/compose.ts', () => {
   });
 
   describe('Slug generation', () => {
-    test('should remove special characters from title slug', () => {
-      mockWriteFileSuccess();
-      mockAnswers({ title: 'Hello!!! World??? & More***' });
+    test.each([
+      { title: 'Hello!!! World??? & More***', expected: 'pages/blog/hello-world--more.md' },
+      { title: 'Too    Many   Spaces', expected: 'pages/blog/too-many-spaces.md' },
+      { title: 'UPPERCASE Title Test', expected: 'pages/blog/uppercase-title-test.md' }
+    ])('should convert "$title" to slug "$expected"', ({ title, expected }) => {
+      mockWriteFile();
+      mockAnswers({ title });
 
-      jest.isolateModules(() => {
-        require('../../scripts/compose');
-      });
-
-      const [filePath] = (fs.writeFile as jest.Mock).mock.calls[0];
-      expect(filePath).toBe('pages/blog/hello-world--more.md');
-    });
-
-    test('should collapse multiple hyphens into one', () => {
-      mockWriteFileSuccess();
-      mockAnswers({ title: 'Too    Many   Spaces' });
-
-      jest.isolateModules(() => {
-        require('../../scripts/compose');
-      });
-
-      const [filePath] = (fs.writeFile as jest.Mock).mock.calls[0];
-      expect(filePath).toBe('pages/blog/too-many-spaces.md');
-    });
-
-    test('should convert title to lowercase', () => {
-      mockWriteFileSuccess();
-      mockAnswers({ title: 'UPPERCASE Title Test' });
-
-      jest.isolateModules(() => {
-        require('../../scripts/compose');
-      });
-
-      const [filePath] = (fs.writeFile as jest.Mock).mock.calls[0];
-      expect(filePath).toBe('pages/blog/uppercase-title-test.md');
+      const { writeFileCalls } = runCompose();
+      const [filePath] = writeFileCalls[0];
+      expect(filePath).toBe(expected);
     });
   });
 
   describe('Error handling', () => {
-    test('should log error when file write fails', () => {
-      const errorMessage = 'EEXIST: file already exists';
-      mockWriteFileError(errorMessage);
+    test.each([
+      { message: 'EEXIST: file already exists', label: 'file exists error' },
+      { message: 'ENOSPC: no space left on device', label: 'disk full error' }
+    ])('should log $label: "$message"', ({ message }) => {
+      mockWriteFile(message);
       mockAnswers({ title: 'Error Test' });
 
-      jest.isolateModules(() => {
-        require('../../scripts/compose');
-      });
+      const { writeFileCalls } = runCompose();
 
       expect(fs.writeFile).toHaveBeenCalledTimes(1);
-      // The compose.ts catch block should have logged the error
       expect(logger.error).toHaveBeenCalled();
-      expect(logger.error).toHaveBeenCalledWith(expect.objectContaining({ message: errorMessage }));
-      expect(logger.error).toHaveBeenCalledWith('Something went wrong, sorry!');
-    });
-
-    test('should handle fs.writeFile callback error gracefully', () => {
-      const diskError = 'ENOSPC: no space left on device';
-      mockWriteFileError(diskError);
-      mockAnswers({ title: 'Disk Full Test' });
-
-      jest.isolateModules(() => {
-        require('../../scripts/compose');
-      });
-
-      // The error inside fs.writeFile callback triggers the .catch() which calls logger.error
-      expect(fs.writeFile).toHaveBeenCalledTimes(1);
-      expect(logger.error).toHaveBeenCalled();
-      expect(logger.error).toHaveBeenCalledWith(expect.objectContaining({ message: diskError }));
+      expect(logger.error).toHaveBeenCalledWith(expect.objectContaining({ message }));
       expect(logger.error).toHaveBeenCalledWith('Something went wrong, sorry!');
     });
   });
