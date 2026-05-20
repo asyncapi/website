@@ -15,14 +15,14 @@ const expectedDataT1 = {
   ],
   technologies: [
     {
-      name: 'Node.js',
-      color: 'bg-[#61d0f2]',
-      borderColor: 'border-[#40ccf7]'
-    },
-    {
       name: 'Flask',
       color: 'bg-[#000000]',
       borderColor: 'border-[#FFFFFF]'
+    },
+    {
+      name: 'Node.js',
+      color: 'bg-[#61d0f2]',
+      borderColor: 'border-[#40ccf7]'
     }
   ]
 };

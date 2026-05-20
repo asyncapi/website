@@ -290,18 +290,29 @@ const combineTools = async (
             return 0;
           }
 
-          return tool.title.localeCompare(anotherTool.title);
+          const titleCmp = tool.title.localeCompare(anotherTool.title);
+          if (titleCmp !== 0) return titleCmp;
+
+          // Secondary sort by repoUrl to ensure deterministic ordering when titles match
+          const repoA = tool.links?.repoUrl || '';
+          const repoB = anotherTool.links?.repoUrl || '';
+          return repoA.localeCompare(repoB);
         }) as FinalAsyncAPITool[];
       }
     }
 
     fs.writeFileSync(toolsPath, JSON.stringify(finalTools, null, 2));
+
+    // Sort tags alphabetically to ensure deterministic output
+    const sortedLanguages = [...languageList].sort((a, b) => a.name.localeCompare(b.name));
+    const sortedTechnologies = [...technologyList].sort((a, b) => a.name.localeCompare(b.name));
+
     fs.writeFileSync(
       tagsPath,
       JSON.stringify(
         {
-          languages: languageList,
-          technologies: technologyList
+          languages: sortedLanguages,
+          technologies: sortedTechnologies
         },
         null,
         2
@@ -320,6 +331,15 @@ const combineTools = async (
     }
 
     if (ignoredOutputPath && ignoredTools.length > 0) {
+      // Sort ignored tools deterministically for consistent output
+      const sortedIgnoredTools = [...ignoredTools].sort((a, b) => {
+        const titleCmp = (a.title || '').localeCompare(b.title || '');
+        if (titleCmp !== 0) return titleCmp;
+        const catCmp = (a.category || '').localeCompare(b.category || '');
+        if (catCmp !== 0) return catCmp;
+        return (a.repoUrl || '').localeCompare(b.repoUrl || '');
+      });
+
       fs.writeFileSync(
         ignoredOutputPath,
         JSON.stringify(
@@ -327,7 +347,7 @@ const combineTools = async (
             description: 'Auto-generated audit log of tools ignored during the last combine run.',
             generatedAt: new Date().toISOString(),
             totalIgnored: ignoredTools.length,
-            ignoredTools
+            ignoredTools: sortedIgnoredTools
           },
           null,
           2
