@@ -31,7 +31,7 @@ type ComposePromptType = {
  * @param answers - User inputs for the blog post, including title, excerpt, comma-separated tags, type, and canonical URL.
  * @returns The generated Markdown front matter and blog post content template.
  */
-function genFrontMatter(answers: ComposePromptType): string {
+export function genFrontMatter(answers: ComposePromptType): string {
   const tagArray = answers.tags.split(',');
 
   tagArray.forEach((tag: string, index: number) => {
