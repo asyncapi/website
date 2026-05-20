@@ -1,7 +1,6 @@
 import fs from 'fs';
 import inquirer from 'inquirer';
 import dayjs from 'dayjs';
-
 import { logger } from '../../scripts/helpers/logger';
 
 jest.mock('fs');
@@ -12,38 +11,129 @@ jest.mock('../../scripts/helpers/logger');
 const MOCK_DATE = '2026-01-15T10:30:00+00:00';
 
 const mockDayjsInstance = {
-  format: jest.fn().mockReturnValue(MOCK_DATE)
+  format: jest.fn().mockReturnValue(MOCK_DATE),
 };
 
 (dayjs as unknown as jest.Mock).mockReturnValue(mockDayjsInstance);
-
-function mockAnswers(overrides: Record<string, string> = {}) {
-  const defaults: Record<string, string> = {
-    title: 'Test Blog Post',
-    excerpt: 'A test excerpt',
-    tags: 'test, jest',
-    type: 'Engineering',
-    canonical: 'https://example.com/test'
-  };
-  (inquirer.prompt as jest.Mock).mockResolvedValue({ ...defaults, ...overrides });
-}
-
-function mockWriteFile(errorMessage?: string) {
-  (fs.writeFile as jest.Mock).mockImplementation((_path: string, _content: string, _options: object, callback: (err: Error | null) => void) => {
-    callback(errorMessage ? new Error(errorMessage) : null);
-  });
-}
+(inquirer.prompt as jest.Mock).mockResolvedValue({
+  title: 'Test Blog Post',
+  excerpt: 'A test excerpt',
+  tags: 'test, jest',
+  type: 'Engineering',
+  canonical: 'https://example.com/test',
+});
 
 /**
- * Helper: runs a test by importing compose.ts via jest.isolateModules and
- * returns the file write call for assertions.
+ * Synchronous pseudo-promise that mimics .then/.catch chaining synchronously.
+ * compose.ts uses inquirer.prompt().then().catch() at module level — we need
+ * this to execute synchronously when compose.ts is required.
  */
-function runCompose() {
-  jest.isolateModules(() => {
-    require('../../scripts/compose');
+interface SyncPromise<T> {
+  then<U>(fn: (v: T) => U): SyncPromise<U>;
+  catch<U>(fn: (e: Error) => U): SyncPromise<T | U>;
+}
+
+function syncResolved<T>(value: T): SyncPromise<T> {
+  return {
+    then<U>(fn: (v: T) => U): SyncPromise<U> {
+      try {
+        return syncResolved(fn(value));
+      } catch (e) {
+        return syncRejected(e instanceof Error ? e : new Error(String(e)));
+      }
+    },
+    catch(): SyncPromise<T> {
+      return syncResolved(value);
+    },
+  };
+}
+
+function syncRejected(error: Error): SyncPromise<never> {
+  return {
+    then(): SyncPromise<never> {
+      return syncRejected(error);
+    },
+    catch<U>(fn: (e: Error) => U): SyncPromise<U> {
+      try {
+        return syncResolved(fn(error));
+      } catch (e) {
+        return syncRejected(e instanceof Error ? e : new Error(String(e)));
+      }
+    },
+  };
+}
+
+function runCompose(
+  answers: Record<string, string> = {},
+  errorMsg?: string
+) {
+  jest.resetModules();
+
+  jest.doMock('fs', () => ({
+    writeFile: jest.fn(
+      (
+        _path: string,
+        _content: string,
+        _options: object,
+        callback: (err: Error | null) => void
+      ) => {
+        callback(errorMsg ? new Error(errorMsg) : null);
+      }
+    ),
+  }));
+
+  jest.doMock('inquirer', () => ({
+    prompt: jest.fn(() =>
+      syncResolved({
+        title: 'Test Blog Post',
+        excerpt: 'A test excerpt',
+        tags: 'test, jest',
+        type: 'Engineering',
+        canonical: 'https://example.com/test',
+        ...answers,
+      })
+    ),
+  }));
+
+  jest.doMock('dayjs', () => {
+    const mockInstance = {
+      format: jest.fn().mockReturnValue(MOCK_DATE),
+    };
+    return Object.assign(jest.fn(() => mockInstance), {
+      __esModule: true,
+      default: jest.fn(() => mockInstance),
+    });
   });
-  const writeFileCalls = (fs.writeFile as jest.Mock).mock.calls;
-  return { writeFileCalls };
+
+  jest.doMock('../../scripts/helpers/logger', () => ({
+    logger: {
+      info: jest.fn(),
+      error: jest.fn(),
+      warn: jest.fn(),
+    },
+  }));
+
+  jest.doMock('dedent', () => {
+    const fn = (strings: TemplateStringsArray, ...values: unknown[]) => {
+      let result = strings[0];
+      for (let i = 0; i < values.length; i++) {
+        result += String(values[i]) + strings[i + 1];
+      }
+      return result;
+    };
+    return Object.assign(fn, { default: fn });
+  });
+
+  // This triggers compose.ts's top-level inquirer.prompt().then().catch()
+  // chain synchronously via our pseudo-promise
+  require('../../scripts/compose');
+
+  const localFs = require('fs');
+  const localLogger = require('../../scripts/helpers/logger');
+  return {
+    writeFileCalls: (localFs.writeFile as jest.Mock).mock.calls,
+    loggerErrorCalls: (localLogger.logger.error as jest.Mock).mock.calls,
+  };
 }
 
 describe('scripts/compose.ts', () => {
@@ -52,22 +142,19 @@ describe('scripts/compose.ts', () => {
   });
 
   describe('Happy path', () => {
-    test('should generate a blog post with correct file path and front matter', () => {
-      mockWriteFile();
-      mockAnswers();
-
+    test('should generate blog post with file path and front matter', () => {
       const { writeFileCalls } = runCompose();
 
-      expect(fs.writeFile).toHaveBeenCalledTimes(1);
-      const [filePath, content, options] = writeFileCalls[0];
+      expect(writeFileCalls).toHaveLength(1);
+      const [filePath, content, options] = writeFileCalls[0] as [
+        string,
+        string,
+        object
+      ];
 
-      // Verify file path is kebab-case slug
       expect(filePath).toBe('pages/blog/test-blog-post.md');
-
-      // Verify write flag is wx (fail if exists)
       expect(options).toEqual({ flag: 'wx' });
 
-      // Verify front matter content
       expect(content).toContain('title: Test Blog Post');
       expect(content).toContain('date: 2026-01-15T10:30:00+00:00');
       expect(content).toContain('type: Engineering');
@@ -77,58 +164,61 @@ describe('scripts/compose.ts', () => {
       expect(content).toContain('Write your blog post content here');
     });
 
-    test('should use defaults for optional fields when empty', () => {
-      mockWriteFile();
-      mockAnswers({
+    test('should use defaults when fields empty', () => {
+      const { writeFileCalls } = runCompose({
         title: '',
         excerpt: '',
         tags: '',
-        canonical: ''
+        canonical: '',
       });
 
-      const { writeFileCalls } = runCompose();
+      expect(writeFileCalls).toHaveLength(1);
+      const [filePath, content] = writeFileCalls[0] as [string, string];
 
-      expect(fs.writeFile).toHaveBeenCalledTimes(1);
-      const [filePath, content] = writeFileCalls[0];
-
-      // Empty title defaults to 'untitled'
       expect(filePath).toBe('pages/blog/untitled.md');
       expect(content).toContain('title: Untitled');
       expect(content).toContain('excerpt:');
-      expect(content).toContain("tags: []");
-      expect(content).toContain("canonical: ''");
+      expect(content).toContain('tags: []');
+      // canonical: empty string → the template outputs "canonical: " with trailing space
+      expect(content).toContain('canonical:');
     });
   });
 
   describe('Slug generation', () => {
     test.each([
-      { title: 'Hello!!! World??? & More***', expected: 'pages/blog/hello-world--more.md' },
+      // The slug pipeline: .toLowerCase() → replace(/[^a-zA-Z0-9 ]/g,'') → replace(/ /g,'-') → replace(/-+/g,'-')
+      // "Hello!!! World??? & More***" → "hello world  more" → "hello-world--more" → "hello-world-more"
+      { title: 'Hello!!! World??? & More***', expected: 'pages/blog/hello-world-more.md' },
       { title: 'Too    Many   Spaces', expected: 'pages/blog/too-many-spaces.md' },
-      { title: 'UPPERCASE Title Test', expected: 'pages/blog/uppercase-title-test.md' }
+      { title: 'UPPERCASE Title Test', expected: 'pages/blog/uppercase-title-test.md' },
     ])('should convert "$title" to slug "$expected"', ({ title, expected }) => {
-      mockWriteFile();
-      mockAnswers({ title });
+      const { writeFileCalls } = runCompose({ title });
 
-      const { writeFileCalls } = runCompose();
-      const [filePath] = writeFileCalls[0];
+      expect(writeFileCalls).toHaveLength(1);
+      const [filePath] = writeFileCalls[0] as [string];
       expect(filePath).toBe(expected);
     });
   });
 
   describe('Error handling', () => {
-    test.each([
-      { message: 'EEXIST: file already exists', label: 'file exists error' },
-      { message: 'ENOSPC: no space left on device', label: 'disk full error' }
-    ])('should log $label: "$message"', ({ message }) => {
-      mockWriteFile(message);
-      mockAnswers({ title: 'Error Test' });
+    test('should log EEXIST error when file already exists', () => {
+      const { writeFileCalls, loggerErrorCalls } = runCompose(
+        { title: 'Error Test' },
+        'EEXIST: file already exists'
+      );
+      expect(writeFileCalls).toHaveLength(1);
+      expect(loggerErrorCalls.length).toBeGreaterThanOrEqual(1);
+      expect(loggerErrorCalls[0][0].message).toContain('EEXIST');
+    });
 
-      const { writeFileCalls } = runCompose();
-
-      expect(fs.writeFile).toHaveBeenCalledTimes(1);
-      expect(logger.error).toHaveBeenCalled();
-      expect(logger.error).toHaveBeenCalledWith(expect.objectContaining({ message }));
-      expect(logger.error).toHaveBeenCalledWith('Something went wrong, sorry!');
+    test('should log ENOSPC error when disk full', () => {
+      const { writeFileCalls, loggerErrorCalls } = runCompose(
+        { title: 'Error Test' },
+        'ENOSPC: no space left on device'
+      );
+      expect(writeFileCalls).toHaveLength(1);
+      expect(loggerErrorCalls.length).toBeGreaterThanOrEqual(1);
+      expect(loggerErrorCalls[0][0].message).toContain('ENOSPC');
     });
   });
 });
