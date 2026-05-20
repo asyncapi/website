@@ -134,7 +134,6 @@
         "repos": [
             "spec",
             "spec-json-schemas",
-            "parser-js",
             "extensions-catalog",
             "converter-js",
             "bindings",
@@ -278,6 +277,7 @@
         "tscMemberSince": "2023-11-30",
         "repos": [
             "website",
+            "parser-js",
             "studio"
         ],
         "githubID": 44585452
