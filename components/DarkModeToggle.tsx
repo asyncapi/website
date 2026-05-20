@@ -45,7 +45,7 @@ export default function DarkModeToggle() {
     // const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches; // NOSONAR
     // const shouldUseDark = storedTheme === 'dark' || (!storedTheme && systemPrefersDark);
 
-    const shouldUseDark = storedTheme === 'dark';
+    const shouldUseDark = true;
 
     document.documentElement.classList.toggle('dark', shouldUseDark);
     setIsDark(shouldUseDark);
