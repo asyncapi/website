@@ -45,7 +45,7 @@ export default function CommunityIndexPage() {
                 typeStyle={HeadingTypeStyle.lg}
                 className='text-gray-900 dark:text-dark-heading font-bold'
               >
-                Contribute To Hot Issues
+                Explore and Contribute to Hot Issues
               </Heading>
               <Paragraph typeStyle={ParagraphTypeStyle.md} className='text-gray-700 dark:text-gray-300'>
                 Discover over 100s of interesting issues, suitable for new and existing contributors.
@@ -243,7 +243,7 @@ export default function CommunityIndexPage() {
                 Community Goal
               </Heading>
               <Paragraph typeStyle={ParagraphTypeStyle.sm} className='text-purple-800 dark:text-purple-200'>
-                Help us improve our 2026 AsyncAPI community building and maintenance goals.
+                Help us in achieving our 2026 AsyncAPI community building and maintenance goals.
               </Paragraph>
             </a>
 

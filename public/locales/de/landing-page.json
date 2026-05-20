@@ -6,7 +6,7 @@
         "body_pretext": "Open-Source-Tools zur einfachen Erstellung und Wartung Ihrer ereignisgesteuerten Architektur. Alle basieren auf der AsyncAPI-Spezifikation, der ",
         "body_boldtext": "Industriestandard",
         "body_posttext": " zur Definition asynchroner APIs.",
-        "community_btn": "sluit je aan bij onze gemeenschap",
+        "community_btn": "Treten Sie unserer Gemeinschaft bei",
         "search_btn": "Schnellsuche...",
         "slogan_text": "Wir sind stolz darauf, Teil der",
         "slogan_link": "Linux Foundation"
@@ -75,7 +75,7 @@
     },
     "events": {
         "title": "Unsere Gemeinschafts-Events",
-        "description":"AsyncAPI organiseert wekelijks verschillende bijeenkomsten. Deze richten zich op verschillende onderwerpen, soms puur technisch en soms over community-building. Kies er een en doe mee!",
-        "meetingTitle":"Lees meer over onze bijeenkomsten."
+        "description":"AsyncAPI veranstaltet jede Woche verschiedene Treffen. Sie konzentrieren sich auf verschiedene Themen, manchmal rein technisch und manchmal zum Aufbau der Gemeinschaft. Wählen Sie eins aus und machen Sie mit!",
+        "meetingTitle":"Erfahren Sie mehr über unsere Treffen."
     }
 }

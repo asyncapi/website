@@ -88,11 +88,11 @@ export default function ToolsIndex() {
                 </div>
                 <div className='flex items-center gap-2 px-4 py-2 rounded-lg bg-white/50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 backdrop-blur-sm'>
                   <IconCommunityDriven className='w-5 h-5 text-blue-600 dark:text-blue-400' />
-                  <span className='font-medium text-gray-700 dark:text-gray-300'>Community Driven</span>
+                  <span className='font-medium text-gray-700 dark:text-gray-300'>Community-Driven</span>
                 </div>
                 <div className='flex items-center gap-2 px-4 py-2 rounded-lg bg-white/50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 backdrop-blur-sm'>
                   <IconProductionReady className='w-5 h-5 text-purple-600 dark:text-purple-400' />
-                  <span className='font-medium text-gray-700 dark:text-gray-300'>Production Ready</span>
+                  <span className='font-medium text-gray-700 dark:text-gray-300'>Production-Ready</span>
                 </div>
               </div>
             </div>

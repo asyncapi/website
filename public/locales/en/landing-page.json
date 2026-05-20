@@ -12,8 +12,8 @@
         "slogan_link": "Linux Foundation"
     },
     "features": {
-        "title": "What You Can use AsyncAPI For",
-        "description": "One of our main goals is to improve the current state of Event Driven Architecture (EDA))",
+        "title": "What you can use AsyncAPI for",
+        "description": "One of our main goals is to improve the current state of Event Driven Architecture (EDA)",
 
         "specification.name": "Specification",
         "specification.description": "Allows you to define the interfaces of asynchronous APIs and is protocol agnostic.",
@@ -44,7 +44,7 @@
     },
     "sneakpeek": {
         "title": "Sneak Peek Into The Real Process",
-        "description": "One of our main goals is to improve the current state of Event Driven Architecture (EDA))"
+        "description": "One of our main goals is to improve the current state of Event Driven Architecture (EDA)"
     },
     "adopters": {
         "title": "Adopted by the world leading brands",
@@ -53,10 +53,10 @@
     },
     "community": {
         "title": "Join our great community!",
-        "subtitle": "We're a group of amazing folks who share a great passion for AsyncAPI and event-driven architectures. We extend a warm welcome to anyone who wants to join our Slack workspace. Whether you have questions about using AsyncAPI, want to be a part of our community or simply want to say hello 👋, we'd love to have you! 🙂",
+        "subtitle": "We're a community of passionate folks who love AsyncAPI and event-driven architectures. Join our Slack workspace if you have questions about AsyncAPI, want to be part of our community, or just want to say hello.",
         "slackCTATitle": "Join our Slack workspace",
         "slackCTADesc": "We welcome everyone to join our Slack workspace. If you have a question on how to use AsyncAPI, want to contribute, or simply want to say hello 👋, you're welcome to join us. We're nice people 🙂",
-        "slackCTABtn": "Join us on Slack!",
+        "slackCTABtn": "Join us on Slack",
         "meetingTitle": "Join our public meetings",
         "meetingDesc": "AsyncAPI hosts different meetings every week. They are focused on different topics, sometimes purely technical and sometimes about community building. Pick one and join us!",
         "meetingLink": "Learn more about our meetings."

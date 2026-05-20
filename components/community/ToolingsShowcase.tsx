@@ -57,11 +57,10 @@ export default function ToolingsShowcase() {
                 typeStyle={HeadingTypeStyle.xl}
                 className='text-gray-900 dark:text-dark-heading font-bold mb-4'
               >
-                Checkout Our Collection of Toolings
+                Check out our Tools collection
               </Heading>
               <Paragraph typeStyle={ParagraphTypeStyle.lg} className='text-gray-700 dark:text-gray-300 leading-relaxed'>
-                Discover various AsyncAPI tools to optimize your journey! These tools are made by the community, for the
-                community.
+                Discover community-made AsyncAPI tools to optimize your journey
               </Paragraph>
             </div>
 

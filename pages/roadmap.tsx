@@ -539,12 +539,12 @@ export default function RoadmapPage() {
               <GoalCardRoadmapPage
                 icon={IconCode}
                 title='Unified API Specifications'
-                description='AsyncAPI seamlessly integrates with OpenAPI, GraphQL, and gRPC—no need to reinvent the wheel. Our docs embrace, not replace, existing specifications.'
+                description='AsyncAPI seamlessly integrates with OpenAPI, GraphQL, and gRPC. Our docs support existing specifications.'
               />
               <GoalCardRoadmapPage
                 icon={IconLightning}
                 title='Effortless API Development'
-                description='Build your first API in minutes—no prior AsyncAPI knowledge needed. Just add a goal as frictionless user experience. Your idea to production, across all frameworks.'
+                description='Build your first API in minutes—no prior AsyncAPI knowledge needed.'
               />
               <GoalCardRoadmapPage
                 icon={IconGear}

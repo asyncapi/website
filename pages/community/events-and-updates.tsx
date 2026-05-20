@@ -47,7 +47,7 @@ export default function EventsAndUpdates() {
         <Container wide className='relative z-10 py-20 text-center' data-testid='EventsAndUpdates-Hero'>
           <div className='mx-auto max-w-4xl'>
             <div className='mb-6 inline-block rounded-full bg-cyan-100 px-5 py-2 text-sm font-medium text-cyan-600'>
-              Find out what&apos;s New
+              Find out what&apos;s new
             </div>
             <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.xl} className='mb-6 text-gray-900'>
               Events & Updates

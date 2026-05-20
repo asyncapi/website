@@ -72,7 +72,7 @@ export default function TSC() {
 
   return (
     <GenericLayout
-      title='Technical Steering Committee'
+      title='Technical Steering Committee (TSC)'
       description='Meet the current AsyncAPI TSC members and learn how you can become one.'
       image={image}
       wide
@@ -82,7 +82,7 @@ export default function TSC() {
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
           <div className='text-center'>
             <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white mb-6'>
-              Technical Steering Committee
+              Technical Steering Committee (TSC)
             </h1>
             <p className='mx-auto max-w-3xl text-lg text-gray-600 dark:text-gray-400 mb-10'>
               Meet the dedicated maintainers and contributors who guide the AsyncAPI Initiative forward, making
@@ -215,7 +215,7 @@ export default function TSC() {
               <input
                 type='text'
                 aria-label='Search TSC members'
-                placeholder='Search members by name or GitHub handle...'
+                placeholder='Search TSC members by name or GitHub handle...'
                 value={searchTerm}
                 onChange={(e) => {
                   setSearchTerm(e.target.value);
@@ -287,7 +287,9 @@ export default function TSC() {
           {/* Members Grid */}
           {filteredMembers.length === 0 ? (
             <div className='text-center py-12'>
-              <p className='text-gray-600 dark:text-gray-400 text-lg'>No members found for this filter</p>
+              <p className='text-gray-600 dark:text-gray-400 text-lg'>
+                No TSC members found for the selected filter(s)
+              </p>
             </div>
           ) : (
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12'>
