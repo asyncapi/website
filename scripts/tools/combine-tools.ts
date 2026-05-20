@@ -296,6 +296,7 @@ const combineTools = async (
           // Secondary sort by repoUrl to ensure deterministic ordering when titles match
           const repoA = tool.links?.repoUrl || '';
           const repoB = anotherTool.links?.repoUrl || '';
+
           return repoA.localeCompare(repoB);
         }) as FinalAsyncAPITool[];
       }
@@ -334,9 +335,13 @@ const combineTools = async (
       // Sort ignored tools deterministically for consistent output
       const sortedIgnoredTools = [...ignoredTools].sort((a, b) => {
         const titleCmp = (a.title || '').localeCompare(b.title || '');
+
         if (titleCmp !== 0) return titleCmp;
+
         const catCmp = (a.category || '').localeCompare(b.category || '');
+
         if (catCmp !== 0) return catCmp;
+
         return (a.repoUrl || '').localeCompare(b.repoUrl || '');
       });
 
