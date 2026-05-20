@@ -69,8 +69,7 @@ export const CardData = ({
     const maybeHandler = (event: MouseEvent) => {
       if (domNode.current && !domNode.current.contains(event.target as Node)) {
         setOutsideClick(false);
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        setVisible((prev: any) => ({ ...prev, [type]: false }));
+        setVisible((prev: VisibleDataListType) => ({ ...prev, [type]: false }));
       }
     };
 
