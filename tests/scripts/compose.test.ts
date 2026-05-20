@@ -148,8 +148,9 @@ describe('scripts/compose.ts', () => {
 
       expect(fs.writeFile).toHaveBeenCalledTimes(1);
       // The compose.ts catch block should have logged the error
-      // Since the error is thrown synchronously in the callback,
-      // the .catch handler on the promise will fire
+      expect(logger.error).toHaveBeenCalled();
+      expect(logger.error).toHaveBeenCalledWith(expect.objectContaining({ message: errorMessage }));
+      expect(logger.error).toHaveBeenCalledWith('Something went wrong, sorry!');
     });
 
     test('should handle fs.writeFile callback error gracefully', () => {
@@ -161,9 +162,11 @@ describe('scripts/compose.ts', () => {
         require('../../scripts/compose');
       });
 
-      // The error is thrown, not logged - it's in the .then() callback
-      // This triggers the .catch() which calls logger.error
+      // The error inside fs.writeFile callback triggers the .catch() which calls logger.error
       expect(fs.writeFile).toHaveBeenCalledTimes(1);
+      expect(logger.error).toHaveBeenCalled();
+      expect(logger.error).toHaveBeenCalledWith(expect.objectContaining({ message: diskError }));
+      expect(logger.error).toHaveBeenCalledWith('Something went wrong, sorry!');
     });
   });
 });
