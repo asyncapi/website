@@ -113,6 +113,7 @@ export const CardData = ({
         )}
         <button
           onClick={() => {
+            setOutsideClick(true);
             setRead(false);
             setVisible({ ...initial, [type]: !visible[type] });
           }}
