@@ -70,8 +70,8 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
           className={twMerge(
             `${open && 'mb-4'} flex-1 text-primary-500 font-medium uppercase tracking-wide text-sm font-sans antialiased ${
               cssBreakingPoint === 'xl'
-                ? 'xl:mb-4 xl:text-xs xl:text-gray-900 xl:font-bold'
-                : 'lg:mb-4 lg:text-xs lg:text-gray-900 lg:font-bold'
+                ? 'xl:mb-4 xl:text-xs xl:text-gray-900 dark:xl:text-gray-300 xl:font-bold'
+                : 'lg:mb-4 lg:text-xs lg:text-gray-900 dark:lg:text-gray-300 lg:font-bold'
             }`
           )}
           data-testid='TOC-Heading'

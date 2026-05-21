@@ -55,14 +55,16 @@ export default function Feedback({ className }: IFeedbackProps) {
 
   if (submitted) {
     return (
-      <div className={`flex flex-col rounded-md border border-gray-200 p-4 text-center shadow-md ${className}`}>
+      <div
+        className={`flex flex-col rounded-md border border-gray-200 dark:border-border dark:bg-dark-card p-4 text-center shadow-md ${className}`}
+      >
         <div className='mx-auto block w-fit'>
           <img src='/img/illustrations/icons/icon-check.svg' className='md:w-14' alt='checkmark' aria-hidden='true' />
         </div>
-        <div className='mx-auto mt-4 text-center text-lg' data-testid='Feedback-div'>
+        <div className='mx-auto mt-4 text-center text-lg dark:text-white' data-testid='Feedback-div'>
           Thank you for your feedback!
         </div>
-        <div className='text-md mx-auto text-center text-gray-500'>
+        <div className='text-md mx-auto text-center text-gray-500 dark:text-gray-400'>
           Your contribution has been received and we couldn&apos;t be happier.
         </div>
         <a
@@ -81,14 +83,18 @@ export default function Feedback({ className }: IFeedbackProps) {
   }
   if (error) {
     return (
-      <div className={`flex flex-col rounded-md border border-gray-200 p-4 text-center shadow-md ${className}`}>
+      <div
+        className={`flex flex-col rounded-md border border-gray-200 dark:border-border dark:bg-dark-card p-4 text-center shadow-md ${className}`}
+      >
         <div className='mx-auto block w-fit'>
           <img src='/img/illustrations/icons/icon-x.svg' className='md:w-14' alt='x' aria-hidden='true' />
         </div>
-        <div className='mx-auto mt-4 text-center text-lg' data-testid='Feedback-error'>
+        <div className='mx-auto mt-4 text-center text-lg dark:text-white' data-testid='Feedback-error'>
           Oops! Something went wrong...
         </div>
-        <div className='text-md mx-auto text-center text-gray-500'>We were unable to process your feedback</div>
+        <div className='text-md mx-auto text-center text-gray-500 dark:text-gray-400'>
+          We were unable to process your feedback
+        </div>
         <GitHubIssue className='mx-auto' />
       </div>
     );
@@ -110,7 +116,7 @@ export default function Feedback({ className }: IFeedbackProps) {
       <form onSubmit={handleSubmit}>
         <div className='my-4 flex flex-col'>
           <textarea
-            className='inline-block h-20 w-full rounded-md border dark:border-border dark:bg-dark-footer bg-gray-50 px-2 py-1 align-top text-sm text-gray-700 focus:border-0'
+            className='inline-block h-20 w-full rounded-md border dark:border-border dark:bg-dark-footer bg-gray-50 px-2 py-1 align-top text-sm text-gray-700 dark:text-gray-300 focus:border-0'
             placeholder='Write your suggestions here'
             onChange={(e) => setFeedback(e.target.value)}
             required
