@@ -31,7 +31,7 @@ type ComposePromptType = {
  * @param answers - User inputs for the blog post, including title, excerpt, comma-separated tags, type, and canonical URL.
  * @returns The generated Markdown front matter and blog post content template.
  */
-function genFrontMatter(answers: ComposePromptType): string {
+export function genFrontMatter(answers: ComposePromptType): string {
   const tagArray = answers.tags.split(',');
 
   tagArray.forEach((tag: string, index: number) => {
@@ -118,7 +118,21 @@ function genFrontMatter(answers: ComposePromptType): string {
   return frontMatter;
 }
 
-inquirer
+export function generateSlug(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[^a-zA-Z0-9 ]/g, '')
+    .replace(/ /g, '-')
+    .replace(/-+/g, '-');
+}
+
+export function generateFilePath(title: string): string {
+  const slug = generateSlug(title);
+  return `pages/blog/${slug || 'untitled'}.md`;
+}
+
+if (require.main === module) {
+  inquirer
   .prompt([
     {
       name: 'title',
@@ -173,3 +187,4 @@ inquirer
       logger.error('Something went wrong, sorry!');
     }
   });
+}
