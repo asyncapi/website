@@ -240,6 +240,19 @@
                     "categories": ["code-first", "framework"],
                     "hasCommercial": false
                 }
+            },
+            {
+                "title": "Repid",
+                "description": "A simple, fast, and extensible async task queue framework, with built-in AsyncAPI 3.0 schema generation.",
+                "links": {
+                    "websiteUrl": "https://repid.aleksul.space",
+                    "repoUrl": "https://github.com/aleksul/repid"
+                },
+                "filters": {
+                    "language": "Python",
+                    "categories": ["code-first", "framework"],
+                    "hasCommercial": false
+                }
             }
         ]
     },
@@ -526,6 +539,19 @@
                 "links": {
                     "websiteUrl": "https://faststream.ag2.ai",
                     "repoUrl": "https://github.com/ag2ai/FastStream"
+                },
+                "filters": {
+                    "language": "Python",
+                    "categories": ["code-first", "framework"],
+                    "hasCommercial": false
+                }
+            },
+            {
+                "title": "Repid",
+                "description": "A simple, fast, and extensible async task queue framework, with built-in AsyncAPI 3.0 schema generation.",
+                "links": {
+                    "websiteUrl": "https://repid.aleksul.space",
+                    "repoUrl": "https://github.com/aleksul/repid"
                 },
                 "filters": {
                     "language": "Python",
