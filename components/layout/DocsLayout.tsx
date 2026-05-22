@@ -75,7 +75,7 @@ function generateEditLink(post: IPost) {
 /**
  * @description Screen shown when the specification explorer is unavailable on small devices.
  */
-function MobileExplorerUnavailable({ href }: { href: string }) {
+function MobileExplorerUnavailable({ href }: Readonly<{ href: string }>) {
   return (
     <main className='flex min-h-screen items-center justify-center bg-gray-50 px-6 py-16'>
       <section className='max-w-md text-center'>
