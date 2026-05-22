@@ -37,7 +37,7 @@ In the case where you don't know the address of the reply yet, you have the opti
 For instance, this pattern allows the replier to direct its response to a specific channel as defined by the requestor. This is typically achieved by including a `replyTo` property in the request header. The requestor specifies this property to indicate where it expects to receive the response, guiding the communication flow in a structured and predictable manner.
 
 ```yml
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 
 info:
   title: Ping/pong example for a requester with a dynamic reply channel
@@ -75,7 +75,7 @@ The request/reply pattern can also be implemented over multiple channels with a 
 
 Here's an example of setting up both the requestor and replier over the same address:
 ```yml
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 
 info:
   title: Ping/pong example with requester over the same channel
@@ -110,7 +110,7 @@ In some cases, representing the [same information](#multiple-channels-with-singl
 
 Consider an example where multiple messages are transmitted over a single channel, all sharing the same address. In this setup, the `Operation` object is utilized to distinctly specify which of these messages serves as the request and which functions as the reply:
 ```yml
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 
 info:
   title: Ping/pong example when a channel contains multiple messages

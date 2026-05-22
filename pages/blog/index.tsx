@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 
 import type { Filter as FilterType } from '@/components/helpers/applyFilter';
 import Empty from '@/components/illustrations/Empty';
@@ -38,7 +38,7 @@ export default function BlogIndexPage() {
   const [isClient, setIsClient] = useState(false);
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const onFilter = (data: IBlogPost[], _query: FilterType) => setPosts(data);
+  const onFilter = useCallback((data: IBlogPost[], _query: FilterType) => setPosts(data), []);
   const toFilter = [
     {
       name: 'type'

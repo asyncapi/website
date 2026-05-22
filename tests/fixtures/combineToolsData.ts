@@ -1,4 +1,4 @@
-import type { Category } from '../../types/scripts/tools';
+import type { Category, ToolIgnoreEntry } from '../../types/scripts/tools';
 
 const expectedDataT1 = {
   languages: [
@@ -240,7 +240,127 @@ const finalToolWithMissingData = {
   }
 };
 
+const automatedToolsForIgnore = {
+  category1: {
+    description: 'Category 1 Description',
+    toolsList: [
+      {
+        title: 'Tool Alpha',
+        filters: {
+          language: ['JavaScript'],
+          technology: ['Node.js'],
+          categories: ['api' as Category]
+        },
+        links: { repoUrl: 'https://github.com/example/tool-alpha' }
+      },
+      {
+        title: 'Tool Beta',
+        filters: {
+          language: ['Python'],
+          technology: [],
+          categories: ['api' as Category]
+        },
+        links: { repoUrl: 'https://github.com/example/tool-beta' }
+      },
+      {
+        title: 'Shared Name Tool',
+        filters: {
+          language: ['JavaScript'],
+          technology: [],
+          categories: ['api' as Category]
+        },
+        links: { repoUrl: 'https://github.com/original/shared-name' }
+      },
+      {
+        title: 'Shared Name Tool',
+        filters: {
+          language: ['JavaScript'],
+          technology: [],
+          categories: ['api' as Category]
+        },
+        links: { repoUrl: 'https://github.com/fork/shared-name' }
+      }
+    ]
+  },
+  category2: {
+    description: 'Category 2 Description',
+    toolsList: [
+      {
+        title: 'Tool Alpha',
+        filters: {
+          language: ['JavaScript'],
+          technology: ['Node.js'],
+          categories: ['code-generator' as Category]
+        },
+        links: { repoUrl: 'https://github.com/example/tool-alpha' }
+      }
+    ]
+  }
+};
+
+const manualToolsForIgnore = {
+  category1: {
+    description: 'Category 1 Description',
+    toolsList: [
+      {
+        title: 'Manual Tool',
+        filters: {
+          language: ['JavaScript'],
+          technology: ['Node.js'],
+          categories: ['api' as Category]
+        },
+        links: { repoUrl: 'https://github.com/asyncapi/manual-tool' }
+      }
+    ]
+  }
+};
+
+const ignoreByTitleOnly: ToolIgnoreEntry[] = [
+  { title: 'Tool Beta', reason: 'Deprecated tool' }
+];
+
+const ignoreByTitleAndRepo: ToolIgnoreEntry[] = [
+  {
+    title: 'Shared Name Tool',
+    repoUrl: 'https://github.com/fork/shared-name',
+    reason: 'Fork, not the original'
+  }
+];
+
+const ignoreWithCategoryScope: ToolIgnoreEntry[] = [
+  {
+    title: 'Tool Alpha',
+    repoUrl: 'https://github.com/example/tool-alpha',
+    reason: 'Remove from category1 only',
+    categories: ['category1']
+  }
+];
+
+const ignoreManualTool: ToolIgnoreEntry[] = [
+  {
+    title: 'Manual Tool',
+    repoUrl: 'https://github.com/asyncapi/manual-tool',
+    reason: 'Temporarily hiding manual tool'
+  }
+];
+
+const ignoreByRepoUrlOnly: ToolIgnoreEntry[] = [
+  {
+    repoUrl: 'https://github.com/example/tool-beta',
+    reason: 'Remove by repoUrl alone'
+  }
+];
+
+const ignoreByRepoUrlWithCategoryScope: ToolIgnoreEntry[] = [
+  {
+    repoUrl: 'https://github.com/example/tool-alpha',
+    reason: 'Remove by repoUrl only from category1',
+    categories: ['category1']
+  }
+];
+
 export {
+  automatedToolsForIgnore,
   automatedToolsT4,
   automatedToolsT5,
   automatedToolsT6,
@@ -251,7 +371,14 @@ export {
   circularTool,
   expectedDataT1,
   finalToolWithMissingData,
+  ignoreByRepoUrlOnly,
+  ignoreByRepoUrlWithCategoryScope,
+  ignoreByTitleAndRepo,
+  ignoreByTitleOnly,
+  ignoreManualTool,
+  ignoreWithCategoryScope,
   invalidAutomatedToolsT10,
+  manualToolsForIgnore,
   manualToolsT4,
   manualToolsT8,
   manualToolsT9,
