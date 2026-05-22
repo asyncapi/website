@@ -111,10 +111,10 @@ export default function Footer() {
           </div>
           <div className='mt-8 block sm:mt-0'>
             <p className='block text-sm leading-6'>
-              <a href='https://netlify.com' target='_blank' rel='noopener noreferrer'>
+              <a href='https://netlify.com' target='_blank' rel='noopener noreferrer' className='inline-block'>
                 <img
-                  src='https://www.netlify.com/img/global/badges/netlify-color-bg.svg'
-                  className='inline'
+                  src='/img/supportus/netlify.png'
+                  className='inline h-11'
                   alt='Deploys by Netlify'
                 />
               </a>
