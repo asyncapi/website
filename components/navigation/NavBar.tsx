@@ -6,6 +6,8 @@ import React, { useEffect, useState } from 'react';
 
 import { defaultLanguage, i18nPaths, languages } from '@/utils/i18n';
 
+import { twMerge } from 'tailwind-merge';
+
 import { SearchButton } from '../AlgoliaSearch';
 import GithubButton from '../buttons/GithubButton';
 import { isMobileDevice } from '../helpers/is-mobile';
@@ -144,7 +146,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   }, [asPath]);
 
   return (
-    <div className={`bg-white ${className} z-50`}>
+    <div className={twMerge('bg-white z-50', className)}>
       <div className='flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-2'>
         {!hideLogo && (
           <div className='lg:w-auto lg:flex-1'>
