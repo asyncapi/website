@@ -21,7 +21,7 @@ function Visualizer({ version }: VisualizerProps) {
   const [isExplorerAvailable, setIsExplorerAvailable] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 1024px)');
+    const mediaQuery = globalThis.matchMedia('(min-width: 1024px)');
     const updateExplorerAvailability = () => setIsExplorerAvailable(mediaQuery.matches);
 
     updateExplorerAvailability();

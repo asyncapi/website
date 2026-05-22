@@ -75,7 +75,7 @@ function generateEditLink(post: IPost) {
 /**
  * @description Screen shown when the specification explorer is unavailable on small devices.
  */
-function MobileExplorerUnavailable() {
+function MobileExplorerUnavailable({ href }: { href: string }) {
   return (
     <main className='flex min-h-screen items-center justify-center bg-gray-50 px-6 py-16'>
       <section className='max-w-md text-center'>
@@ -90,7 +90,7 @@ function MobileExplorerUnavailable() {
           tablet or desktop, or read the standard specification reference instead.
         </p>
         <Link
-          href='/docs/reference/specification/v3.0.0'
+          href={href}
           className='mt-6 inline-flex rounded-md bg-secondary-500 px-4 py-2 font-body text-sm font-medium text-white transition duration-150 ease-in-out hover:bg-secondary-600 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2'
         >
           View specification reference
@@ -122,12 +122,13 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
   const navigation = posts.docsTree;
 
   const sidebar = <DocsNavWrapper setShowMenu={setShowMenu} navigation={navigation} post={post} />;
+  const explorerReferenceHref = post.slug.replace(/-explorer$/, '');
 
   if (router.pathname.includes('-explorer')) {
     return (
       <>
         <div className='lg:hidden'>
-          <MobileExplorerUnavailable />
+          <MobileExplorerUnavailable href={explorerReferenceHref} />
         </div>
         <div className='hidden lg:block'>
           <div className='absolute left-2 top-24 z-10'>
