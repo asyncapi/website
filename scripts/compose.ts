@@ -162,14 +162,8 @@ if (require.main === module) {
     }
   ])
   .then((answers: ComposePromptType) => {
-    // Remove special characters and replace space with -
-    const fileName = answers.title
-      .toLowerCase()
-      .replace(/[^a-zA-Z0-9 ]/g, '')
-      .replace(/ /g, '-')
-      .replace(/-+/g, '-');
+    const filePath = generateFilePath(answers.title);
     const frontMatter = genFrontMatter(answers);
-    const filePath = `pages/blog/${fileName || 'untitled'}.md`;
 
     fs.writeFile(filePath, frontMatter, { flag: 'wx' }, (err) => {
       if (err) {
