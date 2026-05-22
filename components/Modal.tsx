@@ -54,10 +54,15 @@ export default function Modal({ title, children, onModalClose = () => {} }: IMod
       onClick={backdropClickHandler}
       onKeyUp={onKeyUpHandler}
     >
-      <div className='relative m-auto overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:w-full sm:max-w-4xl sm:p-6'>
+      <div className='relative m-auto overflow-hidden rounded-lg bg-white dark:bg-dark-background px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:w-full sm:max-w-4xl sm:p-6'>
         <div className='mb-6 flex justify-between'>
-          <h1 className='mr-4 truncate text-lg font-bold'>{title}</h1>
-          <button onClick={() => onModalClose()} data-testid='Modal-close' aria-label='Close modal'>
+          <h1 className='mr-4 truncate text-lg font-bold dark:text-white'>{title}</h1>
+          <button
+            onClick={() => onModalClose()}
+            data-testid='Modal-close'
+            aria-label='Close modal'
+            className='dark:text-white dark:hover:text-gray-300'
+          >
             <svg
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
@@ -70,7 +75,7 @@ export default function Modal({ title, children, onModalClose = () => {} }: IMod
             </svg>
           </button>
         </div>
-        <div className='max-h-[65vh] w-full overflow-auto lg:max-h-[70vh]'>{children}</div>
+        <div className='max-h-[65vh] w-full overflow-auto dark:text-gray-300 lg:max-h-[70vh]'>{children}</div>
       </div>
     </div>
   );

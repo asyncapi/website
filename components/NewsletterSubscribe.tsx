@@ -41,7 +41,7 @@ interface NewsletterSubscribeProps {
  * @param {string} props.errorSubtitle - The error subtitle to be displayed.
  */
 export default function NewsletterSubscribe({
-  className = 'p-8 text-center text-black',
+  className = 'p-8 text-center',
   dark = false,
   title = 'Subscribe to our newsletter to receive news about AsyncAPI.',
   subtitle = 'We respect your inbox. No spam, promise ✌️',
@@ -54,8 +54,8 @@ export default function NewsletterSubscribe({
 
   const { t, ready } = useTranslation('common', { keyPrefix: 'newsletterCTA' });
 
-  const headTextColor = dark ? 'text-white' : '';
-  const paragraphTextColor = dark ? 'text-gray-300' : '';
+  const headTextColor = dark ? 'text-white' : 'text-darkGunMetal dark:text-white';
+  const paragraphTextColor = dark ? 'text-gray-300' : 'text-gray-700 dark:text-gray-300';
 
   const setFormStatus = (formResponse: FormStatus) => {
     setStatus(formResponse);

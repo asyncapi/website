@@ -189,7 +189,8 @@ export default function TSC() {
               type='TSC Voting'
               title='Get notified when TSC is voting'
               subtitle="You'll receive an email whenever someone requests the TSC to vote"
-              className='text-white'
+              className='text-center'
+              dark
             />
           </div>
         </div>

@@ -28,6 +28,8 @@ export default function ToolsDashboard() {
   // filter parameters extracted from the context
   const { isPaid, isAsyncAPIOwner, languages, technologies, categories } = useContext(ToolFilterContext);
   const [searchName, setSearchName] = useState<string>(''); // state variable used to get the search name
+  const [debouncedSearchName, setDebouncedSearchName] = useState<string>(''); // debounced search value for filtering
+  const hasScrolledToHash = useRef<boolean>(false); // track if initial hash scroll has occurred
 
   // useEffect function to enable the close Modal feature when clicked outside of the modal
   useEffect(() => {
@@ -58,6 +60,15 @@ export default function ToolsDashboard() {
       document.removeEventListener('mousedown', checkIfClickOutside);
     };
   });
+
+  // Debounce search input for smoother filtering
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedSearchName(searchName);
+    }, 200);
+
+    return () => clearTimeout(timer);
+  }, [searchName]);
 
   // useMemo function to filter the tools according to the filters applied by the user
   const toolsList = useMemo(() => {
@@ -111,8 +122,8 @@ export default function ToolsDashboard() {
           }
         }
 
-        if (searchName) {
-          isSearchTool = tool.title.toLowerCase().includes(searchName.toLowerCase());
+        if (debouncedSearchName) {
+          isSearchTool = tool.title.toLowerCase().includes(debouncedSearchName.toLowerCase());
         }
 
         if (isAsyncAPIOwner) {
@@ -138,7 +149,7 @@ export default function ToolsDashboard() {
     });
 
     return tempToolsList;
-  }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, searchName]);
+  }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, debouncedSearchName]);
 
   // Derive checkToolsList from toolsList - no state updates in useMemo
   const checkToolsList = useMemo(() => {
@@ -146,20 +157,25 @@ export default function ToolsDashboard() {
   }, [toolsList]);
 
   // useEffect to scroll to the opened category when url has category as element id
+  // Only fires on initial mount, NOT during search
   useEffect(() => {
+    if (hasScrolledToHash.current) return;
+    if (debouncedSearchName) return; // Don't scroll when user is searching
+
     const { hash } = window.location;
 
     if (hash) {
       const elementID = decodeURIComponent(hash.slice(1));
-      const element = toolsList[elementID]?.elementRef!;
+      const element = toolsList[elementID]?.elementRef;
 
-      if (element.current) {
+      if (element?.current) {
+        hasScrolledToHash.current = true;
         document.documentElement.style.scrollPaddingTop = '6rem';
         element.current.scrollIntoView({ behavior: 'smooth' });
         document.documentElement.style.scrollPaddingTop = '0';
       }
     }
-  }, [toolsList]);
+  }, [toolsList, debouncedSearchName]);
   // Function to update the list of tools according to the current filters applied
   const clearFilters = () => {
     setOpenFilter(false);
@@ -232,6 +248,7 @@ export default function ToolsDashboard() {
             )}
           </div>
         </div>
+
         {isFiltered && (
           <button
             type='button'

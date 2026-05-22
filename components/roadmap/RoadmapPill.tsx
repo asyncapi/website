@@ -98,7 +98,7 @@ export default function Pill({
       </div>
       {isDescriptionVisible && (
         <Modal title={item.title} onModalClose={() => setIsDescriptionVisible(false)}>
-          <div className='prose'>{item.description}</div>
+          <div className='prose dark:prose-invert'>{item.description}</div>
         </Modal>
       )}
     </>

@@ -12,14 +12,17 @@ import Paragraph from '../typography/Paragraph';
  */
 export default function SponsorshipTiers() {
   return (
-    <div className='mt-16 grid bg-purple-100 px-4 sm:px-6 lg:grid-cols-9 lg:gap-8 lg:px-8 lg:text-center'>
+    <div className='mt-16 grid bg-purple-100 dark:bg-dark-card px-4 sm:px-6 lg:grid-cols-9 lg:gap-8 lg:px-8 lg:text-center'>
       <div className='col-span-7 col-start-2 my-12'>
         <div id='sponsorship' className='mx-2'>
           <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg} className='my-3 text-base'>
             Sponsorship Tiers
           </Heading>
 
-          <Paragraph typeStyle={ParagraphTypeStyle.md} className='mx-auto my-3 max-w-4xl text-base text-darkGunMetal'>
+          <Paragraph
+            typeStyle={ParagraphTypeStyle.md}
+            className='mx-auto my-3 max-w-4xl text-base text-darkGunMetal dark:text-dark-text'
+          >
             AsyncAPI offers various sponsorship tiers, each with its own set <br className='hidden lg:inline-block' />
             of benefits and privileges. These tiers include Bronze, Silver,
             <br className='hidden lg:inline-block' />
@@ -41,13 +44,13 @@ export default function SponsorshipTiers() {
               <tbody className='font-normal text-sm'>
                 {sponsorshipTiers.map((tier, index) => (
                   <tr key={index}>
-                    <td className='border border-gray-500 p-2 text-left text-darkGunMetal md:px-10 md:py-2 md:text-base'>
+                    <td className='border border-gray-500 p-2 text-left text-darkGunMetal dark:text-dark-text md:px-10 md:py-2 md:text-base'>
                       {tier.tier}
                     </td>
-                    <td className='border border-gray-500 p-2 text-darkGunMetal md:px-10 md:py-2 md:text-base'>
+                    <td className='border border-gray-500 p-2 text-darkGunMetal dark:text-dark-text md:px-10 md:py-2 md:text-base'>
                       {tier.amount}
                     </td>
-                    <td className='border border-gray-500 p-2 text-left text-darkGunMetal md:px-10 md:py-2 md:text-base'>
+                    <td className='border border-gray-500 p-2 text-left text-darkGunMetal dark:text-dark-text md:px-10 md:py-2 md:text-base'>
                       {tier.benefits}
                     </td>
                   </tr>

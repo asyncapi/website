@@ -35,7 +35,7 @@ export default function Loader({
   return (
     <div className={twMerge(`w-fit flex gap-4 m-auto items-center ${pulsating ? 'animate-pulse ' : ''} ${className}`)}>
       {loaderIcon}
-      <div className={`my-2 ${dark ? 'text-white' : 'text-black'}`}>{loaderText}</div>
+      <div className={`my-2 ${dark ? 'text-white' : 'text-black dark:text-white'}`}>{loaderText}</div>
     </div>
   );
 }

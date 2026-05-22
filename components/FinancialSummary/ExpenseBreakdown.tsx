@@ -11,14 +11,14 @@ import Paragraph from '../typography/Paragraph';
  */
 export default function ExpenseBreakdown() {
   return (
-    <div className='bg-[#EFFAFE] px-4 sm:px-6 lg:px-8'>
+    <div className='bg-[#EFFAFE] dark:bg-dark-background px-4 sm:px-6 lg:px-8'>
       <div className='mb-16 grid lg:grid-cols-9 lg:gap-8 lg:text-center'>
         <div className='col-span-7 col-start-2 my-12'>
           <div className='mx-2'>
             <Heading className='m-3 text-center text-base'>Expense Breakdown</Heading>
             <Paragraph
               typeStyle={ParagraphTypeStyle.md}
-              className='mx-auto my-3 max-w-4xl text-center text-darkGunMetal'
+              className='mx-auto my-3 max-w-4xl text-center text-darkGunMetal dark:text-dark-text'
             >
               Funds from GitHub Sponsors are directly transferred to our AsyncAPI Open Collective account. We maintain
               transparency in all expenses, and the TSC approves anticipated expenses.
@@ -28,19 +28,21 @@ export default function ExpenseBreakdown() {
             {expenseData.map((expense, index) => (
               <div
                 key={index}
-                className='flex flex-col items-center rounded-md bg-white p-4 shadow-md transition-transform hover:scale-105 active:scale-90'
+                className='flex flex-col items-center rounded-md bg-white dark:bg-dark-card p-4 shadow-md transition-transform hover:scale-105 active:scale-90'
               >
                 <a href={expense.link} target='_blank' rel='noopener noreferrer'>
-                  <div className='text-darkGunMetal'>
+                  <div className='text-darkGunMetal dark:text-dark-text'>
                     <div className='flex flex-col items-center'>
                       <img
                         src={expense.imageUrl}
                         alt={expense.title}
                         className='m-1 h-auto w-1/5 rounded-md object-cover'
                       />
-                      <h2 className='my-2 text-center text-2xl font-semibold text-darkGunMetal'>{expense.title}</h2>
+                      <h2 className='my-2 text-center text-2xl font-semibold text-darkGunMetal dark:text-white'>
+                        {expense.title}
+                      </h2>
                     </div>
-                    <p className='text-center text-base text-darkGunMetal'>{expense.description}</p>
+                    <p className='text-center text-base text-darkGunMetal dark:text-dark-text'>{expense.description}</p>
                   </div>
                 </a>
               </div>
