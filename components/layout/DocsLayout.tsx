@@ -17,6 +17,7 @@ import Feedback from '../Feedback';
 import Head from '../Head';
 import ArrowRight from '../icons/ArrowRight';
 import IconMenuCenter from '../icons/CenterMenu';
+import IconExplorer from '../icons/Explorer';
 import DocsMobileMenu from '../navigation/DocsMobileMenu';
 import DocsNavWrapper from '../navigation/DocsNavWrapper';
 import TOC from '../TOC';
@@ -72,6 +73,34 @@ function generateEditLink(post: IPost) {
 }
 
 /**
+ * @description Screen shown when the specification explorer is unavailable on small devices.
+ */
+function MobileExplorerUnavailable() {
+  return (
+    <main className='flex min-h-screen items-center justify-center bg-gray-50 px-6 py-16'>
+      <section className='max-w-md text-center'>
+        <div className='mx-auto flex size-14 items-center justify-center rounded-full bg-secondary-100'>
+          <IconExplorer className='size-8 fill-secondary-500 stroke-secondary-500' />
+        </div>
+        <Heading className='mt-6' level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.md}>
+          Specification Explorer is not available on mobile
+        </Heading>
+        <p className='mt-4 font-sans text-base leading-7 text-gray-600 antialiased'>
+          The explorer needs a larger screen to show the schema navigation and details clearly. Open this page on a
+          tablet or desktop, or read the standard specification reference instead.
+        </p>
+        <Link
+          href='/docs/reference/specification/v3.0.0'
+          className='mt-6 inline-flex rounded-md bg-secondary-500 px-4 py-2 font-body text-sm font-medium text-white transition duration-150 ease-in-out hover:bg-secondary-600 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2'
+        >
+          View specification reference
+        </Link>
+      </section>
+    </main>
+  );
+}
+
+/**
  * @description DocsLayout component
  * @param {IPost} props.post The post to render in the layout
  * @param {NavigationItems} props.navItems Navigation items for the post
@@ -96,24 +125,29 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
 
   if (router.pathname.includes('-explorer')) {
     return (
-      <div>
-        <div className='absolute left-2 top-24 z-10'>
-          <Button
-            className='inline-flex h-full justify-center rounded-sm border border-gray-300 bg-white py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-900'
-            text='Menu'
-            icon={<IconMenuCenter className='size-6 fill-gray-700' />}
-            onClick={() => {
-              if (explorerDocMenu) {
-                setExplorerDocMenu(false);
-              } else {
-                setExplorerDocMenu(true);
-              }
-            }}
-          />
-          {explorerDocMenu && <div className='explorer-menu-wrapper mt-2'>{sidebar}</div>}
+      <>
+        <div className='lg:hidden'>
+          <MobileExplorerUnavailable />
         </div>
-        <article className=''>{children}</article>
-      </div>
+        <div className='hidden lg:block'>
+          <div className='absolute left-2 top-24 z-10'>
+            <Button
+              className='inline-flex h-full justify-center rounded-sm border border-gray-300 bg-white py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-900'
+              text='Menu'
+              icon={<IconMenuCenter className='size-6 fill-gray-700' />}
+              onClick={() => {
+                if (explorerDocMenu) {
+                  setExplorerDocMenu(false);
+                } else {
+                  setExplorerDocMenu(true);
+                }
+              }}
+            />
+            {explorerDocMenu && <div className='explorer-menu-wrapper mt-2'>{sidebar}</div>}
+          </div>
+          <article>{children}</article>
+        </div>
+      </>
     );
   }
 

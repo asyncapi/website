@@ -18,9 +18,29 @@ const schemaLoaders: Record<SupportedVersion, () => Promise<{ default: unknown }
 
 function Visualizer({ version }: VisualizerProps) {
   const [schema, setSchema] = useState<JSONSchema7Object | null>(null);
+  const [isExplorerAvailable, setIsExplorerAvailable] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 1024px)');
+    const updateExplorerAvailability = () => setIsExplorerAvailable(mediaQuery.matches);
+
+    updateExplorerAvailability();
+    mediaQuery.addEventListener('change', updateExplorerAvailability);
+
+    return () => mediaQuery.removeEventListener('change', updateExplorerAvailability);
+  }, []);
 
   useEffect(() => {
     let isMounted = true;
+
+    if (!isExplorerAvailable) {
+      setSchema(null);
+
+      return () => {
+        isMounted = false;
+      };
+    }
+
     const currentVersion: SupportedVersion = version === '3.1.0' ? '3.1.0' : '3.0.0';
 
     setSchema(null);
@@ -37,9 +57,9 @@ function Visualizer({ version }: VisualizerProps) {
     return () => {
       isMounted = false;
     };
-  }, [version]);
+  }, [isExplorerAvailable, version]);
 
-  if (!schema) {
+  if (!isExplorerAvailable || !schema) {
     return null;
   }
 
