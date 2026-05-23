@@ -242,7 +242,7 @@ const finalToolWithMissingData = {
 
 const makeTagTool = (title: string, lang: string, tech: string, repoUrl: string) => ({
   title,
-  filters: { language: [lang], technology: [tech], categories: ['category1'] },
+  filters: { language: [lang], technology: [tech], categories: ['category1' as Category] },
   links: { repoUrl }
 });
 
