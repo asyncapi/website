@@ -14,7 +14,7 @@ jest.mock('node-fetch-2', () => {
 const mockFetch = fetch as jest.Mock;
 
 describe('buildNewsroomVideos', () => {
-  const testDir = join(os.tmpdir(), 'test_config');
+  const testDir = join(os.tmpdir(), 'test_config_newsroom');
   const testFilePath = resolve(testDir, 'newsroom_videos.json');
 
   beforeAll(() => {
