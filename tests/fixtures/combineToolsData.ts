@@ -240,46 +240,20 @@ const finalToolWithMissingData = {
   }
 };
 
+const makeTagTool = (title: string, lang: string, tech: string, repoUrl: string) => ({
+  title,
+  filters: { language: [lang], technology: [tech], categories: ['category1'] },
+  links: { repoUrl }
+});
+
 const toolsWithNewTags = {
   category1: {
     description: 'Sample Category 1',
     toolsList: [
-      {
-        title: 'Tool Alpha',
-        filters: {
-          language: ['Zeta-Lang'],
-          technology: ['Zeta-Tech'],
-          categories: ['category1']
-        },
-        links: { repoUrl: 'https://github.com/example/tool-alpha' }
-      },
-      {
-        title: 'Tool Beta',
-        filters: {
-          language: ['Alpha-Lang'],
-          technology: ['Alpha-Tech'],
-          categories: ['category1']
-        },
-        links: { repoUrl: 'https://github.com/example/tool-beta' }
-      },
-      {
-        title: 'Tool Gamma',
-        filters: {
-          language: ['Middle-Lang'],
-          technology: ['Middle-Tech'],
-          categories: ['category1']
-        },
-        links: { repoUrl: 'https://github.com/example/tool-gamma' }
-      },
-      {
-        title: 'Tool Delta',
-        filters: {
-          language: ['Alpha-Lang'],
-          technology: ['Alpha-Tech'],
-          categories: ['category1']
-        },
-        links: { repoUrl: 'https://github.com/example/tool-delta' }
-      }
+      makeTagTool('Tool Alpha', 'Zeta-Lang', 'Zeta-Tech', 'https://github.com/example/tool-alpha'),
+      makeTagTool('Tool Beta', 'Alpha-Lang', 'Alpha-Tech', 'https://github.com/example/tool-beta'),
+      makeTagTool('Tool Gamma', 'Middle-Lang', 'Middle-Tech', 'https://github.com/example/tool-gamma'),
+      makeTagTool('Tool Delta', 'Alpha-Lang', 'Alpha-Tech', 'https://github.com/example/tool-delta')
     ]
   }
 };
