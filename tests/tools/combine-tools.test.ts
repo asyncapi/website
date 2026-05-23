@@ -308,9 +308,7 @@ describe('combineTools function', () => {
 
   it('produces deterministically-ordered all-tags.json regardless of tool arrival order (tail is sorted)', async () => {
     await jest.isolateModulesAsync(async () => {
-      const freshCombine: typeof import('../../scripts/tools/combine-tools') = await import(
-        '../../scripts/tools/combine-tools'
-      );
+      const freshCombine = await import('../../scripts/tools/combine-tools');
 
       const toolsWithNewTags = {
         category1: {
@@ -342,6 +340,15 @@ describe('combineTools function', () => {
                 categories: ['category1']
               },
               links: { repoUrl: 'https://github.com/example/tool-gamma' }
+            },
+            {
+              title: 'Tool Delta',
+              filters: {
+                language: ['Alpha-Lang'],
+                technology: ['Alpha-Tech'],
+                categories: ['category1']
+              },
+              links: { repoUrl: 'https://github.com/example/tool-delta' }
             }
           ]
         }

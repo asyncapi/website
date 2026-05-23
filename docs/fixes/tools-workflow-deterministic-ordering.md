@@ -22,7 +22,7 @@ Three independent sources of non-determinism caused tool/tag ordering to vary be
 
 ### 2. Combined tools sort (`combine-tools.ts`)
 
-After merging automated and manual tools, `combineTools` sorted them using a simple `title.localeCompare(anotherTitle)`. This is insufficient when two tools share the same title (common with forks), because `localeCompare` returns `0` and `Array.prototype.sort` is not guaranteed to be stable across engines or runs.
+After merging automated and manual tools, `combineTools` sorted them using a simple `title.localeCompare(anotherTitle)`. This is insufficient when two tools share the same title (common with forks): `localeCompare` returns `0`, so their relative order is left as-is — whatever order they happened to arrive in from the concurrent API fetches, which varies between runs.
 
 ### 3. Language/technology discovery order (`combine-tools.ts`)
 
@@ -49,7 +49,7 @@ After these changes:
 
 ## Pipeline Overview
 
-```
+```text
 GitHub Search API
        │
        ▼

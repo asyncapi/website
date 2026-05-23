@@ -2,7 +2,7 @@ import type { AsyncAPITool } from '@/types/scripts/tools';
 
 import { compareToolsDeterministic } from '../../scripts/tools/compare-tools';
 
-const tool = (title: string, repoUrl?: string): AsyncAPITool =>
+const tool = (title: string, repoUrl?: string) =>
   ({
     title,
     filters: { categories: [], language: [], technology: [] },
@@ -53,9 +53,12 @@ describe('compareToolsDeterministic', () => {
     ];
 
     const sortedA = [...set].sort(compareToolsDeterministic).map((t) => `${t.title}|${t.links?.repoUrl}`);
-    const sortedB = [...set].reverse().sort(compareToolsDeterministic).map((t) => `${t.title}|${t.links?.repoUrl}`);
+    const sortedB = [...set]
+      .reverse()
+      .sort(compareToolsDeterministic)
+      .map((t) => `${t.title}|${t.links?.repoUrl}`);
     const shuffled = [set[3], set[0], set[5], set[1], set[4], set[2]];
-    const sortedC = shuffled.sort(compareToolsDeterministic).map((t) => `${t.title}|${t.links?.repoUrl}`);
+    const sortedC = [...shuffled].sort(compareToolsDeterministic).map((t) => `${t.title}|${t.links?.repoUrl}`);
 
     expect(sortedA).toEqual(sortedB);
     expect(sortedA).toEqual(sortedC);
