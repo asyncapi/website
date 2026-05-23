@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/5253",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 28.430284286176615
+      "score": 28.717458874925875
     },
     {
       "id": "I_kwDOBW5R_c7pGlqB",
@@ -87,42 +87,6 @@
       "score": 10.338285194973315
     },
     {
-      "id": "I_kwDODCuNRs6NFZib",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "ROS2 bindings",
-      "author": "renzo-sie",
-      "resourcePath": "/asyncapi/bindings/issues/254",
-      "repo": "asyncapi/bindings",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 10.051110606224057
-    },
-    {
-      "id": "I_kwDOCHlHJM61Y1X2",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "explore how to handle `reply` operation in code generation",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/generator/issues/1547",
-      "repo": "asyncapi/generator",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 8.615237662477762
-    },
-    {
       "id": "PR_kwDOBW5R_c7OKdhx",
       "isPR": true,
       "isAssigned": false,
@@ -154,6 +118,17 @@
       "score": 7.7537138962299865
     },
     {
+      "id": "PR_kwDOCHlHJM7NT-iG",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: rewrite Java template tutorial to AsyncAPI v3",
+      "author": "wei123-web",
+      "resourcePath": "/asyncapi/generator/pull/2029",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 7.7537138962299865
+    },
+    {
       "id": "PR_kwDODwv8N866EXtA",
       "isPR": true,
       "isAssigned": false,
@@ -165,17 +140,6 @@
       "score": 7.7537138962299865
     },
     {
-      "id": "PR_kwDOCHlHJM7NT-iG",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: rewrite Java template tutorial to AsyncAPI v3",
-      "author": "wei123-web",
-      "resourcePath": "/asyncapi/generator/pull/2029",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 7.466539307480728
-    },
-    {
       "id": "I_kwDOFLhIt874rNRL",
       "isPR": false,
       "isAssigned": true,
@@ -185,6 +149,28 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 7.179364718731469
+    },
+    {
+      "id": "PR_kwDOE8Qh387CD5_6",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore: resolve broken and empty links across modelina documentation",
+      "author": "Ishita-190",
+      "resourcePath": "/asyncapi/modelina/pull/2432",
+      "repo": "asyncapi/modelina",
+      "labels": [],
+      "score": 7.179364718731469
+    },
+    {
+      "id": "PR_kwDOFLhIt87ZqBG1",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore(docs): asyncapi maintainership program docs update",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/pull/3541",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 6.89219012998221
     }
   ],
   "goodFirstIssues": [
@@ -354,21 +340,6 @@
           "name": "bug",
           "color": "ee0701"
         },
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c7ih5i8",
-      "title": "[DESIGN]: Footer Netlify badge alt text renders poorly and inconsistently when image fails to load",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/4921",
-      "repo": "asyncapi/website",
-      "author": "SHUBHANSHU602",
-      "area": "Unknown",
-      "labels": [
         {
           "name": "triaged",
           "color": "0052cc"
