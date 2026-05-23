@@ -43,10 +43,8 @@ const options = {
   keys: ['name', 'color', 'borderColor']
 };
 
-// Working copies of the curated language/technology color lists from tags-color.ts.
-// New items discovered while processing tools are appended beyond initialLanguageCount /
-// initialTechnologyCount, so sortColorItems() can keep the curated portion in its
-// original order and only sort the newly appended items alphabetically.
+// Two seperate lists and Fuse objects initialised to search languages and technologies tags
+// from specified list of same.
 const languageList = [...languagesColor];
 const technologyList = [...technologiesColor];
 const initialLanguageCount = languageList.length;
@@ -54,11 +52,6 @@ const initialTechnologyCount = technologyList.length;
 let languageFuse = new Fuse(languageList, options);
 let technologyFuse = new Fuse(technologyList, options);
 
-/**
- * Returns a copy of a `LanguageColorItem` list where entries appended beyond
- * the initial count are deduplicated by `name` and sorted alphabetically.
- * The initial entries (from tags-color.ts) keep their original, curated order.
- */
 function sortColorItems(list: LanguageColorItem[], initialCount: number): LanguageColorItem[] {
   const initial = list.slice(0, initialCount);
   const discovered = list.slice(initialCount);
