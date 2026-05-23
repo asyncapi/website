@@ -24,9 +24,9 @@ Three independent sources of non-determinism caused tool/tag ordering to vary be
 
 After merging automated and manual tools, `combineTools` sorted them using a simple `title.localeCompare(anotherTitle)`. This is insufficient when two tools share the same title (common with forks), because `localeCompare` returns `0` and `Array.prototype.sort` is not guaranteed to be stable across engines or runs.
 
-### 3. Tag discovery order (`combine-tools.ts`)
+### 3. Language/technology discovery order (`combine-tools.ts`)
 
-When a tool references a language or technology not already in the seed list from `tags-color.ts`, a new tag object is appended to the global `languageList` / `technologyList` arrays. The order of these appends depends on which tool's Fuse search runs first inside the `Promise.all`, making the tail of `all-tags.json` non-deterministic.
+When a tool references a language or technology not already in the initial list from `tags-color.ts`, a new `LanguageColorItem` is appended to the global `languageList` / `technologyList` arrays. The order of these appends depends on which tool's Fuse search runs first inside the `Promise.all`, making the tail of `all-tags.json` non-deterministic.
 
 ## Solution
 
@@ -71,28 +71,28 @@ finalTools[key].toolsList = [...automatedResults, ...manualResults]
 
 This makes `config/tools.json` byte-stable.
 
-### Tag list stabilisation (`stabiliseTagList` in `combine-tools.ts`)
+### Color item list sorting (`sortColorItems` in `combine-tools.ts`)
 
-A new helper function `stabiliseTagList` ensures `config/all-tags.json` is deterministic:
+A new helper function `sortColorItems` ensures `config/all-tags.json` is deterministic:
 
-1. **Seed tags** (from `scripts/tools/tags-color.ts`) keep their original, curated order.
-2. **Discovered tags** (appended during the run) are:
-   - Deduplicated by `name` against both the seed set and each other.
+1. **Initial items** (from `scripts/tools/tags-color.ts`) keep their original, curated order.
+2. **Discovered items** (appended during the run) are:
+   - Deduplicated by `name` against both the initial set and each other.
    - Sorted alphabetically by `name` using `localeCompare(…, 'en')`.
 
-The seed boundary is captured at module load time (`seedLanguageCount`, `seedTechnologyCount`) before any tools are processed:
+The initial counts are captured at module load time (`initialLanguageCount`, `initialTechnologyCount`) before any tools are processed:
 
 ```typescript
-const seedLanguageCount = languageList.length;
-const seedTechnologyCount = technologyList.length;
+const initialLanguageCount = languageList.length;
+const initialTechnologyCount = technologyList.length;
 ```
 
-When writing `all-tags.json`, the stabilised lists are used:
+When writing `all-tags.json`, the sorted lists are used:
 
 ```typescript
 fs.writeFileSync(tagsPath, JSON.stringify({
-  languages: stabiliseTagList(languageList, seedLanguageCount),
-  technologies: stabiliseTagList(technologyList, seedTechnologyCount)
+  languages: sortColorItems(languageList, initialLanguageCount),
+  technologies: sortColorItems(technologyList, initialTechnologyCount)
 }, null, 2));
 ```
 
@@ -102,7 +102,7 @@ fs.writeFileSync(tagsPath, JSON.stringify({
 |------|--------|
 | `scripts/tools/compare-tools.ts` | **New.** Deterministic comparator function. |
 | `scripts/tools/tools-object.ts` | Added post-`Promise.all` sort using `compareToolsDeterministic`. |
-| `scripts/tools/combine-tools.ts` | Replaced bare `localeCompare` with `compareToolsDeterministic`; added `stabiliseTagList` for tag ordering; captured seed boundary constants. |
+| `scripts/tools/combine-tools.ts` | Replaced bare `localeCompare` with `compareToolsDeterministic`; added `sortColorItems` for language/technology list ordering; captured initial count constants. |
 | `tests/tools/compare-tools.test.ts` | **New.** Unit tests for the comparator (alphabetical, case tie-breaking, repoUrl tie-breaking, input-order independence, null safety). |
 | `tests/tools/tools-object.test.ts` | Added test proving deterministic output regardless of `axios.get` resolution order. |
 | `tests/tools/combine-tools.test.ts` | Added test for deterministic `all-tags.json` ordering; added test for missing-title error logging during sort. |
@@ -149,8 +149,8 @@ GitHub Search API
  combineTools() ─── merges with config/tools-manual.json
        │                applies ignore rules from config/tools-ignore.json
        │                sorts combined list (deterministic)
-       │                stabilises tag lists
+       │                sorts tag lists
        │
        ├──▶ config/tools.json      (final combined output)
-       └──▶ config/all-tags.json   (stabilised tag lists)
+       └──▶ config/all-tags.json   (sorted tag lists)
 ```

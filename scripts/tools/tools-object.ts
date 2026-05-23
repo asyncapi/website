@@ -146,10 +146,8 @@ async function convertTools(data: ToolsData) {
       })
     );
 
-    // Tools are pushed in HTTP-response-completion order above, which is
-    // non-deterministic across runs. Sort each category's list deterministically
-    // by (title, repoUrl) so that `tools-automated.json` is byte-stable when the
-    // underlying set of tools hasn't changed. See docs/tools-workflow-no-op-pr-fix.md.
+    // Sort each category's list deterministically
+    // by (title, repoUrl) so that `tools-automated.json` is deterministic.
     for (const category of Object.keys(finalToolsObject)) {
       finalToolsObject[category].toolsList.sort(compareToolsDeterministic);
     }

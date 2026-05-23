@@ -11,14 +11,6 @@ import type { AsyncAPITool, FinalAsyncAPITool } from '@/types/scripts/tools';
  * making the order fully deterministic even for duplicate-title tools.
  *
  * Missing titles or repoUrls are normalised to `""` and always sort first.
- *
- * This is used by `tools-object.ts::convertTools` and
- * `combine-tools.ts::combineTools` to ensure `config/tools-automated.json`
- * and `config/tools.json` are byte-stable across regeneration runs — which
- * is what makes the weekly `chore: update tools.json` PR close automatically
- * as a no-op when nothing has actually changed upstream.
- *
- * See docs/tools-workflow-no-op-pr-fix.md for the full rationale.
  */
 export function compareToolsDeterministic(
   a: AsyncAPITool | FinalAsyncAPITool | undefined | null,
