@@ -31,7 +31,8 @@ import {
   manualToolsT9,
   manualToolsToSort,
   manualToolsWithInvalidURLT11,
-  manualToolsWithMissingData
+  manualToolsWithMissingData,
+  toolsWithNewTags
 } from '../fixtures/combineToolsData';
 
 jest.mock('../../scripts/helpers/logger', () => ({
@@ -310,51 +311,12 @@ describe('combineTools function', () => {
     await jest.isolateModulesAsync(async () => {
       const freshCombine = await import('../../scripts/tools/combine-tools');
 
-      const toolsWithNewTags = {
-        category1: {
-          description: 'Sample Category 1',
-          toolsList: [
-            {
-              title: 'Tool Alpha',
-              filters: {
-                language: ['Zeta-Lang'],
-                technology: ['Zeta-Tech'],
-                categories: ['category1']
-              },
-              links: { repoUrl: 'https://github.com/example/tool-alpha' }
-            },
-            {
-              title: 'Tool Beta',
-              filters: {
-                language: ['Alpha-Lang'],
-                technology: ['Alpha-Tech'],
-                categories: ['category1']
-              },
-              links: { repoUrl: 'https://github.com/example/tool-beta' }
-            },
-            {
-              title: 'Tool Gamma',
-              filters: {
-                language: ['Middle-Lang'],
-                technology: ['Middle-Tech'],
-                categories: ['category1']
-              },
-              links: { repoUrl: 'https://github.com/example/tool-gamma' }
-            },
-            {
-              title: 'Tool Delta',
-              filters: {
-                language: ['Alpha-Lang'],
-                technology: ['Alpha-Tech'],
-                categories: ['category1']
-              },
-              links: { repoUrl: 'https://github.com/example/tool-delta' }
-            }
-          ]
-        }
-      } as unknown as Parameters<typeof freshCombine.combineTools>[0];
-
-      await freshCombine.combineTools(toolsWithNewTags, {}, toolsPath, tagsPath);
+      await freshCombine.combineTools(
+        toolsWithNewTags as unknown as Parameters<typeof freshCombine.combineTools>[0],
+        {},
+        toolsPath,
+        tagsPath
+      );
 
       const tagsData = readJSON(tagsPath);
 

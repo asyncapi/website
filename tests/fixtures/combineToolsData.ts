@@ -240,6 +240,50 @@ const finalToolWithMissingData = {
   }
 };
 
+const toolsWithNewTags = {
+  category1: {
+    description: 'Sample Category 1',
+    toolsList: [
+      {
+        title: 'Tool Alpha',
+        filters: {
+          language: ['Zeta-Lang'],
+          technology: ['Zeta-Tech'],
+          categories: ['category1']
+        },
+        links: { repoUrl: 'https://github.com/example/tool-alpha' }
+      },
+      {
+        title: 'Tool Beta',
+        filters: {
+          language: ['Alpha-Lang'],
+          technology: ['Alpha-Tech'],
+          categories: ['category1']
+        },
+        links: { repoUrl: 'https://github.com/example/tool-beta' }
+      },
+      {
+        title: 'Tool Gamma',
+        filters: {
+          language: ['Middle-Lang'],
+          technology: ['Middle-Tech'],
+          categories: ['category1']
+        },
+        links: { repoUrl: 'https://github.com/example/tool-gamma' }
+      },
+      {
+        title: 'Tool Delta',
+        filters: {
+          language: ['Alpha-Lang'],
+          technology: ['Alpha-Tech'],
+          categories: ['category1']
+        },
+        links: { repoUrl: 'https://github.com/example/tool-delta' }
+      }
+    ]
+  }
+};
+
 const automatedToolsForIgnore = {
   category1: {
     description: 'Category 1 Description',
@@ -361,6 +405,7 @@ const ignoreByRepoUrlWithCategoryScope: ToolIgnoreEntry[] = [
 
 export {
   automatedToolsForIgnore,
+  toolsWithNewTags,
   automatedToolsT4,
   automatedToolsT5,
   automatedToolsT6,
