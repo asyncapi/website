@@ -311,12 +311,7 @@ describe('combineTools function', () => {
     await jest.isolateModulesAsync(async () => {
       const freshCombine = await import('../../scripts/tools/combine-tools');
 
-      await freshCombine.combineTools(
-        toolsWithNewTags as unknown as Parameters<typeof freshCombine.combineTools>[0],
-        {},
-        toolsPath,
-        tagsPath
-      );
+      await freshCombine.combineTools(toolsWithNewTags, {}, toolsPath, tagsPath);
 
       const tagsData = readJSON(tagsPath);
 
