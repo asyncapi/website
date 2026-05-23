@@ -40,7 +40,6 @@ export const CardData = ({
   type,
   className = ''
 }: CardDataProps) => {
-  const [outsideClick, setOutsideClick] = useState<boolean>(true);
   const [description, setShowDescription] = useState<boolean>(false);
   const initial = {
     lang: false,
@@ -50,6 +49,7 @@ export const CardData = ({
     ownership: false
   };
   const domNode = useRef<HTMLSpanElement>(null);
+  const containerRef = useRef<HTMLSpanElement>(null);
 
   // Decide whether to show full description or not in the card based on the
   // number of lines occupied by the description.
@@ -64,12 +64,11 @@ export const CardData = ({
     }
   }, [visible]);
 
-  // Decide whether the user click outside this component (card description) or not.
+  // Close the tooltip when clicking outside the tooltip or info button.
   useEffect(() => {
     const maybeHandler = (event: MouseEvent) => {
-      setOutsideClick(true);
-      if (domNode.current && !domNode.current.contains(event.target as Node)) {
-        setOutsideClick(false);
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setVisible((prev) => ({ ...prev, [type]: false }));
       }
     };
 
@@ -78,13 +77,13 @@ export const CardData = ({
     return () => {
       document.removeEventListener('mousedown', maybeHandler);
     };
-  }, []);
+  }, [type, setVisible]);
 
   return (
     <div className={twMerge('text-left text-sm text-gray-500', className)}>
       {heading}
-      <span className='group relative'>
-        {outsideClick && visible[type] && (
+      <span className='group relative' ref={containerRef}>
+        {visible[type] && (
           <span
             ref={domNode}
             data-testid='Carddata-description'
@@ -102,7 +101,6 @@ export const CardData = ({
               <button
                 className='cursor-pointer text-cyan-600'
                 onClick={() => {
-                  setOutsideClick(true);
                   setRead(!read);
                 }}
               >
