@@ -142,11 +142,11 @@ export default function TSC() {
               <div className='flex items-center justify-center w-14 h-14 rounded-full bg-purple-100 dark:bg-purple-900/30 mb-6'>
                 <IconUsersGroup className='w-8 h-8 text-purple-600 dark:text-purple-400' />
               </div>
-              <h3 className='text-xl font-bold text-gray-900 dark:text-white mb-4'>What is TSC?</h3>
+              <h3 className='text-xl font-bold text-gray-900 dark:text-white mb-4'>What is a TSC?</h3>
               <p className='text-gray-600 dark:text-gray-400 leading-relaxed'>
                 The Technical Steering Committee (TSC) is responsible for the oversight of the AsyncAPI Initiative.
-                Maintainers take committee seats decisions on the direction of the project, including releases,
-                contribution policies, and other strategic matters.
+                Maintainers (aka committers) make decisions at the given repository/project level. The TSC helps to make
+                decisions on a higher level, or when maintainers cannot find a consensus.
               </p>
             </div>
 
@@ -155,11 +155,22 @@ export default function TSC() {
               <div className='flex items-center justify-center w-14 h-14 rounded-full bg-purple-100 dark:bg-purple-900/30 mb-6'>
                 <IconArrowRight className='w-8 h-8 text-purple-600 dark:text-purple-400' />
               </div>
-              <h3 className='text-xl font-bold text-gray-900 dark:text-white mb-4'>How to become a member?</h3>
+              <h3 className='text-xl font-bold text-gray-900 dark:text-white mb-4'>How can I become a TSC member?</h3>
               <p className='text-gray-600 dark:text-gray-400 leading-relaxed'>
-                Anybody can become a maintainer of the TSC. All you have to do is become a maintainer of one of the
-                AsyncAPI projects. To become a maintainer, you need to be nominated by a TSC member and then other
-                maintainers will make a vote.
+                Anybody can become a member of the TSC. All you have to do is become a maintainer of one of the AsyncAPI
+                projects! To become a maintainer, you just need to regularly contribute to one of the projects and then
+                other maintainers will invite you to join. You can also build a great AsyncAPI-based project that we
+                don&apos;t have yet in our GitHub organization and donate it (we&apos;ll ask you to stay as a
+                maintainer). Follow this{' '}
+                <a
+                  href='https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/TSC_MEMBERSHIP.md'
+                  className='text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Link
+                </a>{' '}
+                to know more!
               </p>
             </div>
 
