@@ -170,8 +170,26 @@ export default function TSC() {
               </div>
               <h3 className='text-xl font-bold text-gray-900 dark:text-white mb-4'>Our governance model</h3>
               <p className='text-gray-600 dark:text-gray-400 leading-relaxed'>
-                AsyncAPI Initiative runs under an Open Governance Model with its technical project and community assets
-                under a neutral home, with an independent board of directors representing a cross-section.
+                AsyncAPI Initiative runs under an{' '}
+                <a
+                  href='https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/CHARTER.md'
+                  className='text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Open Governance Model
+                </a>{' '}
+                that gives power to the people actively involved and working on the project. No matter if you are an
+                individual contributor or backed by a company, you have equal rights. Read{' '}
+                <a
+                  href='https://www.asyncapi.com/blog/governance-motivation'
+                  className='text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  this
+                </a>{' '}
+                article to learn more.
               </p>
             </div>
           </div>
