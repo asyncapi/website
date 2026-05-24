@@ -21,7 +21,7 @@ interface ToolData {
   badge?: string;
 }
 
-const toolsData: Record<string, ToolData> = communityToolingsShowcase as Record<string, ToolData>;
+const toolsData: Record<string, ToolData> = communityToolingsShowcase;
 
 /**
  * @description ToolingsShowcase component for displaying AsyncAPI tools collection

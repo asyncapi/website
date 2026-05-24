@@ -42,9 +42,6 @@ export default function DarkModeToggle() {
     // Load preference on mount
     const storedTheme = localStorage.getItem('theme');
 
-    // const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches; // NOSONAR
-    // const shouldUseDark = storedTheme === 'dark' || (!storedTheme && systemPrefersDark);
-
     const shouldUseDark = storedTheme === 'dark';
 
     document.documentElement.classList.toggle('dark', shouldUseDark);
