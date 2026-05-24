@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/5253",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 28.717458874925875
+      "score": 29.004633463675134
     },
     {
       "id": "I_kwDOBW5R_c7pGlqB",
@@ -69,22 +69,6 @@
         }
       ],
       "score": 10.625459783722574
-    },
-    {
-      "id": "I_kwDOBW5R_c67zQdK",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "[FEATURE] “Edit This Page” Button for Docs and Blog Pages",
-      "author": "Sauve9119",
-      "resourcePath": "/asyncapi/website/issues/4187",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ],
-      "score": 10.338285194973315
     },
     {
       "id": "PR_kwDOBW5R_c7OKdhx",
@@ -160,6 +144,17 @@
       "repo": "asyncapi/modelina",
       "labels": [],
       "score": 7.179364718731469
+    },
+    {
+      "id": "PR_kwDOBW5R_c7dnok8",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: apply maintainer-reviewed text changes ",
+      "author": "sammy200-ui",
+      "resourcePath": "/asyncapi/website/pull/5429",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 6.89219012998221
     },
     {
       "id": "PR_kwDOFLhIt87ZqBG1",
@@ -301,6 +296,10 @@
         {
           "name": "bug",
           "color": "d73a4a"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         },
         {
           "name": "triaged",
