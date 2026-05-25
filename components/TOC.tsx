@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import Scrollspy from 'react-scrollspy';
+import React, { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import ArrowRight from './icons/ArrowRight';
@@ -18,6 +17,59 @@ interface ITOCProps {
 }
 
 /**
+ * @description Track the last heading that has passed the fixed page header.
+ * Keeping that heading active means long sections remain identified while reading their content.
+ * @param {string[]} itemIds - The heading ids represented by the table of contents
+ * @param {string} contentSelector - Optional scroll container selector
+ * @param {number} topOffset - Fixed header offset in pixels
+ * @returns {string | null} The active heading id
+ */
+function useActiveTocItem(itemIds: string[], contentSelector: string | undefined, topOffset: number) {
+  const [activeItem, setActiveItem] = useState<string | null>(null);
+  const itemIdsKey = JSON.stringify(itemIds);
+
+  useEffect(() => {
+    const scrollContainer = contentSelector ? document.querySelector<HTMLElement>(contentSelector) : null;
+    const scrollTarget = scrollContainer || globalThis;
+    const headings = (JSON.parse(itemIdsKey) as string[])
+      .map((itemId) => document.getElementById(itemId))
+      .filter((heading): heading is HTMLElement => heading !== null);
+
+    if (!headings.length) {
+      setActiveItem(null);
+
+      return undefined;
+    }
+
+    const updateActiveItem = () => {
+      const activationLine = (scrollContainer?.getBoundingClientRect().top || 0) + topOffset;
+      let nextActiveItem = headings[0].id;
+
+      for (const heading of headings) {
+        if (heading.getBoundingClientRect().top <= activationLine) {
+          nextActiveItem = heading.id;
+        } else {
+          break;
+        }
+      }
+
+      setActiveItem(nextActiveItem);
+    };
+
+    updateActiveItem();
+    scrollTarget.addEventListener('scroll', updateActiveItem, { passive: true });
+    globalThis.addEventListener('resize', updateActiveItem);
+
+    return () => {
+      scrollTarget.removeEventListener('scroll', updateActiveItem);
+      globalThis.removeEventListener('resize', updateActiveItem);
+    };
+  }, [contentSelector, itemIdsKey, topOffset]);
+
+  return activeItem;
+}
+
+/**
  * @description The table of contents
  * @param {string} props.className - The class name of the component
  * @param {string} props.cssBreakingPoint - The CSS breaking point
@@ -28,10 +80,9 @@ interface ITOCProps {
 export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSelector, depth = 2 }: ITOCProps) {
   const [open, setOpen] = useState(false);
 
-  if (!toc || !toc.length) return null;
-  const minLevel = toc.reduce((mLevel, item) => (!mLevel || item.lvl < mLevel ? item.lvl : mLevel), 0);
+  const minLevel = toc?.reduce((mLevel, item) => (!mLevel || item.lvl < mLevel ? item.lvl : mLevel), 0) || 0;
 
-  const tocItems = toc
+  const tocItems = (toc || [])
     .filter((item) => item.lvl <= minLevel + depth)
     .map((item) => ({
       ...item,
@@ -53,6 +104,10 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
         return base;
       })()
     }));
+  const getItemId = (item: (typeof tocItems)[number]) => item.slug || item.slugWithATag;
+  const activeItem = useActiveTocItem(tocItems.map(getItemId), contentSelector, 120);
+
+  if (!toc || !toc.length) return null;
 
   return (
     <div
@@ -86,25 +141,22 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
         </div>
       </div>
       <div className={`${!open && 'hidden'} ${cssBreakingPoint === 'xl' ? 'xl:block' : 'lg:block'}`}>
-        <Scrollspy
-          items={tocItems.map((item) => (item.slug ? item.slug : item.slugWithATag))}
-          currentClassName='!text-primary-500 dark:!text-primary-500 font-bold'
-          componentTag='div'
-          rootEl={contentSelector}
-          offset={-120}
-        >
+        <div>
           {tocItems.map((item, index) => (
             <a
-              className={`pl-${2 ** (item.lvl - 1)} font-normal mb-1 block font-sans text-sm dark:text-white
-                 text-gray-900 antialiased transition duration-100 ease-in-out hover:underline`}
-              href={`#${item.slug ? item.slug : item.slugWithATag}`}
+              className={twMerge(
+                `pl-${2 ** (item.lvl - 1)} font-normal mb-1 block font-sans text-sm dark:text-white
+                 text-gray-900 antialiased transition duration-100 ease-in-out hover:underline`,
+                activeItem === getItemId(item) && '!text-primary-500 dark:!text-primary-500 font-bold'
+              )}
+              href={`#${getItemId(item)}`}
               key={index}
               data-testid='TOC-Link'
             >
               {item.content.replaceAll('`', '')}
             </a>
           ))}
-        </Scrollspy>
+        </div>
       </div>
     </div>
   );
