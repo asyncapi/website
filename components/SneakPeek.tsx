@@ -195,7 +195,9 @@ export default function SneakPeek() {
       </div>
 
       <div>
-        <div className='mb-2 mt-4 text-xs sm:text-sm text-gray-500 dark:text-gray-400'>Accepts the following message:</div>
+        <div className='mb-2 mt-4 text-xs sm:text-sm text-gray-500 dark:text-gray-400'>
+          Accepts the following message:
+        </div>
         <div className='rounded bg-gray-200 dark:bg-gray-800 p-3 sm:p-4 text-gray-600 dark:text-gray-300'>
           <button
             type='button'
@@ -231,7 +233,9 @@ export default function SneakPeek() {
                   </div>
                 </div>
 
-                <div className='mt-6 sm:mt-8 text-xs text-gray-500 dark:text-gray-400'>Additional properties are allowed.</div>
+                <div className='mt-6 sm:mt-8 text-xs text-gray-500 dark:text-gray-400'>
+                  Additional properties are allowed.
+                </div>
               </div>
 
               <div className='mt-4 rounded bg-[#252f3f] p-3 sm:p-4 font-mono text-xs sm:text-sm overflow-x-auto'>
