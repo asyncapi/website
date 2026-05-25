@@ -181,28 +181,28 @@ export default function SneakPeek() {
   };
 
   const renderDocumentationCode = () => (
-    <div className='font-sans text-gray-800'>
+    <div className='font-sans text-gray-800 dark:text-gray-200'>
       <div className='mb-6 mt-2 sm:mb-8 sm:mt-4'>
-        <h1 className='text-xl sm:text-2xl font-bold text-gray-500'>Account Service 1.0.0</h1>
-        <p className='text-sm sm:text-base text-gray-700 mt-2'>
+        <h1 className='text-xl sm:text-2xl font-bold text-gray-500 dark:text-gray-400'>Account Service 1.0.0</h1>
+        <p className='text-sm sm:text-base text-gray-700 dark:text-gray-300 mt-2'>
           This service is in charge of processing user signups 🚀
         </p>
       </div>
 
       <div className='mb-4 flex flex-wrap items-center gap-2'>
         <span className='rounded bg-green-500 px-2 py-1 sm:px-3 sm:py-2 font-bold text-white text-xs'>RECEIVES</span>
-        <span className='text-sm sm:text-base text-gray-700 break-all'>user/signedup</span>
+        <span className='text-sm sm:text-base text-gray-700 dark:text-gray-300 break-all'>user/signedup</span>
       </div>
 
       <div>
-        <div className='mb-2 mt-4 text-xs sm:text-sm text-gray-500'>Accepts the following message:</div>
-        <div className='rounded bg-gray-200 p-3 sm:p-4 text-gray-600'>
+        <div className='mb-2 mt-4 text-xs sm:text-sm text-gray-500 dark:text-gray-400'>Accepts the following message:</div>
+        <div className='rounded bg-gray-200 dark:bg-gray-800 p-3 sm:p-4 text-gray-600 dark:text-gray-300'>
           <button
             type='button'
             className='cursor-pointer bg-transparent border-none p-0 text-left w-full'
             onClick={() => setShowPayload(!showPayload)}
           >
-            <span className='font-medium text-sm sm:text-base'>Payload</span>{' '}
+            <span className='font-medium text-sm sm:text-base text-gray-900 dark:text-white'>Payload</span>{' '}
             <ArrowRight
               className={`inline-block size-4 transition-all duration-300 ease-in-out ${showPayload ? 'rotate-90' : ''}`}
             />{' '}
@@ -210,16 +210,16 @@ export default function SneakPeek() {
           </button>
           {showPayload && (
             <div>
-              <div className='mt-2 rounded bg-gray-100 p-3 sm:p-4'>
+              <div className='mt-2 rounded bg-gray-100 dark:bg-gray-700 p-3 sm:p-4'>
                 <div className='mb-4 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4'>
-                  <div className='text-sm font-medium text-gray-700'>displayName</div>
+                  <div className='text-sm font-medium text-gray-700 dark:text-gray-300'>displayName</div>
                   <div>
                     <div className='font-bold text-green-500 text-sm'>String</div>
-                    <div className='text-xs text-gray-600 mt-1'>Name of the user</div>
+                    <div className='text-xs text-gray-600 dark:text-gray-400 mt-1'>Name of the user</div>
                   </div>
                 </div>
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4'>
-                  <div className='text-sm font-medium text-gray-700'>email</div>
+                  <div className='text-sm font-medium text-gray-700 dark:text-gray-300'>email</div>
                   <div>
                     <div className='font-bold text-green-500 text-sm'>
                       String{' '}
@@ -227,11 +227,11 @@ export default function SneakPeek() {
                         email
                       </span>
                     </div>
-                    <div className='text-xs text-gray-600 mt-1'>Email of the user</div>
+                    <div className='text-xs text-gray-600 dark:text-gray-400 mt-1'>Email of the user</div>
                   </div>
                 </div>
 
-                <div className='mt-6 sm:mt-8 text-xs text-gray-500'>Additional properties are allowed.</div>
+                <div className='mt-6 sm:mt-8 text-xs text-gray-500 dark:text-gray-400'>Additional properties are allowed.</div>
               </div>
 
               <div className='mt-4 rounded bg-[#252f3f] p-3 sm:p-4 font-mono text-xs sm:text-sm overflow-x-auto'>
@@ -300,7 +300,7 @@ export default function SneakPeek() {
             {tabs.map((tab) => (
               <div key={tab.id} className={activeTab === tab.id ? 'block' : 'hidden'}>
                 <div
-                  className={`rounded-b-lg p-3 sm:p-4 lg:p-6 overflow-auto shadow-lg min-h-[300px] sm:min-h-[350px] lg:min-h-[400px] max-h-[500px] sm:max-h-[600px] ${tab.id === 'documentation' ? 'bg-gray-50 dark:bg-gray-100' : 'bg-[#1B1130] dark:bg-[#0A0515]'}`}
+                  className={`rounded-b-lg p-3 sm:p-4 lg:p-6 overflow-auto shadow-lg min-h-[300px] sm:min-h-[350px] lg:min-h-[400px] max-h-[500px] sm:max-h-[600px] ${tab.id === 'documentation' ? 'bg-gray-50 dark:bg-[#1B1B2F]' : 'bg-[#1B1130] dark:bg-[#0A0515]'}`}
                 >
                   <div
                     className={
