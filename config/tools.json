@@ -2055,7 +2055,7 @@
           ],
           "technology": [
             {
-              "name": "AsyncAPI CLI",
+              "name": "AsyncAPI Generator",
               "color": "bg-[#61d0f2]",
               "borderColor": "border-[#40ccf7]"
             }
@@ -2420,7 +2420,7 @@
           ],
           "technology": [
             {
-              "name": "AsyncAPI CLI",
+              "name": "AsyncAPI Generator",
               "color": "bg-[#61d0f2]",
               "borderColor": "border-[#40ccf7]"
             }
@@ -2740,7 +2740,7 @@
           ],
           "technology": [
             {
-              "name": "AsyncAPI CLI",
+              "name": "AsyncAPI Generator",
               "color": "bg-[#61d0f2]",
               "borderColor": "border-[#40ccf7]"
             }
