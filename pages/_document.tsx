@@ -31,6 +31,7 @@ class MyDocument extends Document {
                     if (shouldUseDark) {
                       document.documentElement.classList.add('dark');
                     }
+                    document.documentElement.dataset.theme = shouldUseDark ? 'dark' : 'light';
                     document.documentElement.classList.add('transitions-enabled');
                   } catch (e) {}
                 })();
