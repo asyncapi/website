@@ -15,7 +15,18 @@ interface RowProps {
 export default function Row({ item }: RowProps) {
   return (
     <li>
-      <a target='_blank' rel='noreferrer' href={`https://github.com/${item.resourcePath}`} className='block group'>
+      <div
+        role='button'
+        tabIndex={0}
+        onClick={() => window.open(`https://github.com/${item.resourcePath}`, '_blank', 'noopener,noreferrer')}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            window.open(`https://github.com/${item.resourcePath}`, '_blank', 'noopener,noreferrer');
+          }
+        }}
+        className='block group'
+      >
         <div className='rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-background p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 hover:border-primary-300 dark:hover:border-primary-600 cursor-pointer'>
           <div className='flex justify-between items-start gap-4'>
             <div className='flex flex-col gap-3 flex-1 min-w-0'>
@@ -30,18 +41,16 @@ export default function Row({ item }: RowProps) {
                     data-testid='Row-img-issue'
                   />
                 </div>
-                <button
-                  type='button'
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    window.open(`https://github.com/${item.repo}`, '_blank', 'noopener,noreferrer');
-                  }}
-                  className='text-xs font-medium lowercase text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors cursor-pointer text-left'
+                <a
+                  target='_blank'
+                  rel='noreferrer'
+                  onClick={(e) => e.stopPropagation()}
+                  className='text-xs font-medium lowercase text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors'
+                  href={`https://github.com/${item.repo}`}
                   data-testid='Row-github-redirect'
                 >
                   {item.repo}
-                </button>
+                </a>
               </div>
               <span
                 className='two-liner w-full text-base font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors'
@@ -76,7 +85,7 @@ export default function Row({ item }: RowProps) {
             </div>
           </div>
         </div>
-      </a>
+      </div>
     </li>
   );
 }
