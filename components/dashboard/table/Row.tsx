@@ -15,19 +15,15 @@ interface RowProps {
 export default function Row({ item }: RowProps) {
   return (
     <li>
-      <div
-        role='button'
-        tabIndex={0}
-        onClick={() => window.open(`https://github.com/${item.resourcePath}`, '_blank', 'noopener,noreferrer')}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            window.open(`https://github.com/${item.resourcePath}`, '_blank', 'noopener,noreferrer');
-          }
-        }}
-        className='block group'
-      >
-        <div className='rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-background p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 hover:border-primary-300 dark:hover:border-primary-600 cursor-pointer'>
+      <div className='block group relative'>
+        <div className='rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-background p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 hover:border-primary-300 dark:hover:border-primary-600'>
+          <a
+            target='_blank'
+            rel='noopener noreferrer'
+            href={`https://github.com/${item.resourcePath}`}
+            className='absolute inset-0 z-10 rounded-lg'
+            aria-label={`Open ${item.title}`}
+          />
           <div className='flex justify-between items-start gap-4'>
             <div className='flex flex-col gap-3 flex-1 min-w-0'>
               <div className='flex items-center gap-2'>
@@ -44,8 +40,7 @@ export default function Row({ item }: RowProps) {
                 <a
                   target='_blank'
                   rel='noreferrer'
-                  onClick={(e) => e.stopPropagation()}
-                  className='text-xs font-medium lowercase text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors'
+                  className='relative z-20 text-xs font-medium lowercase text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors'
                   href={`https://github.com/${item.repo}`}
                   data-testid='Row-github-redirect'
                 >
