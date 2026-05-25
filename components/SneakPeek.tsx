@@ -304,7 +304,7 @@ export default function SneakPeek() {
             {tabs.map((tab) => (
               <div key={tab.id} className={activeTab === tab.id ? 'block' : 'hidden'}>
                 <div
-                  className={`rounded-b-lg p-3 sm:p-4 lg:p-6 overflow-auto shadow-lg min-h-[300px] sm:min-h-[350px] lg:min-h-[400px] max-h-[500px] sm:max-h-[600px] ${tab.id === 'documentation' ? 'bg-gray-50 dark:bg-[#1B1B2F]' : 'bg-[#1B1130] dark:bg-[#0A0515]'}`}
+                  className={`rounded-b-lg p-3 sm:p-4 lg:p-6 overflow-auto shadow-lg min-h-[300px] sm:min-h-[350px] lg:min-h-[400px] max-h-[500px] sm:max-h-[600px] ${tab.id === 'documentation' ? 'bg-gray-50 dark:bg-[#0A0515]' : 'bg-[#1B1130] dark:bg-[#0A0515]'}`}
                 >
                   <div
                     className={
