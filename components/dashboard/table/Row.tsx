@@ -20,7 +20,7 @@ export default function Row({ item }: RowProps) {
           <a
             target='_blank'
             rel='noopener noreferrer'
-            href={`https://github.com/${item.resourcePath}`}
+            href={`https://github.com${item.resourcePath}`}
             className='absolute inset-0 z-10 rounded-lg'
             aria-label={`Open ${item.title}`}
           />
@@ -39,7 +39,7 @@ export default function Row({ item }: RowProps) {
                 </div>
                 <a
                   target='_blank'
-                  rel='noreferrer'
+                  rel='noopener noreferrer'
                   className='relative z-20 text-xs font-medium lowercase text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors'
                   href={`https://github.com/${item.repo}`}
                   data-testid='Row-github-redirect'
