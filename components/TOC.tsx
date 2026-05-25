@@ -30,7 +30,7 @@ function useActiveTocItem(itemIds: string[], contentSelector: string | undefined
 
   useEffect(() => {
     const scrollContainer = contentSelector ? document.querySelector<HTMLElement>(contentSelector) : null;
-    const scrollTarget: HTMLElement | Window = scrollContainer || window;
+    const scrollTarget = scrollContainer || globalThis;
     const headings = (JSON.parse(itemIdsKey) as string[])
       .map((itemId) => document.getElementById(itemId))
       .filter((heading): heading is HTMLElement => heading !== null);
@@ -58,11 +58,11 @@ function useActiveTocItem(itemIds: string[], contentSelector: string | undefined
 
     updateActiveItem();
     scrollTarget.addEventListener('scroll', updateActiveItem, { passive: true });
-    window.addEventListener('resize', updateActiveItem);
+    globalThis.addEventListener('resize', updateActiveItem);
 
     return () => {
       scrollTarget.removeEventListener('scroll', updateActiveItem);
-      window.removeEventListener('resize', updateActiveItem);
+      globalThis.removeEventListener('resize', updateActiveItem);
     };
   }, [contentSelector, itemIdsKey, topOffset]);
 
