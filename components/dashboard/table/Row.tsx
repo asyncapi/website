@@ -16,7 +16,7 @@ export default function Row({ item }: RowProps) {
   return (
     <li>
       <div className='block group relative'>
-        <div className='rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-background p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 hover:border-primary-300 dark:hover:border-primary-600'>
+        <div className='rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-background p-5 transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-0.5 group-hover:border-primary-300 dark:group-hover:border-primary-600'>
           <a
             target='_blank'
             rel='noopener noreferrer'
