@@ -44,7 +44,7 @@ export default function NavItem({
         target={target}
         rel='noopener noreferrer'
         className={`${className} font-body text-base sm:text-sm/6 font-semibold leading-6  border-b border-transparent dark:hover:border-white hover:border-black transition duration-150 ease-in-out focus:text-black focus:outline-none ${
-          router.pathname.startsWith(href)
+          (href === '/' ? router.pathname === '/' : router.pathname.startsWith(href))
             ? 'text-black dark:text-dark-text'
             : 'text-zinc-800 dark:text-dark-text text-opacity-85 dark:hover:text-dark-heading hover:text-black'
         }`}
@@ -67,7 +67,7 @@ export default function NavItem({
       <Link
         href={href}
         {...attrs}
-        className={`${attrs.className} ${router.pathname.startsWith(href) ? 'text-black dark:text-dark-text' : 'text-zinc-800 dark:text-dark-text text-opacity-85 dark:hover:text-dark-heading hover:text-black'}`}
+        className={`${attrs.className} ${(href === '/' ? router.pathname === '/' : router.pathname.startsWith(href)) ? 'text-black dark:text-dark-text' : 'text-zinc-800 dark:text-dark-text text-opacity-85 dark:hover:text-dark-heading hover:text-black'}`}
         target={target}
         data-testid='NavItem-Link'
       >

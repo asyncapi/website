@@ -30,16 +30,18 @@ export default function Row({ item }: RowProps) {
                     data-testid='Row-img-issue'
                   />
                 </div>
-                <a
-                  target='_blank'
-                  rel='noreferrer'
-                  onClick={(e) => e.stopPropagation()}
-                  className='text-xs font-medium lowercase text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors'
-                  href={`https://github.com/${item.repo}`}
+                <button
+                  type='button'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    window.open(`https://github.com/${item.repo}`, '_blank', 'noopener,noreferrer');
+                  }}
+                  className='text-xs font-medium lowercase text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors cursor-pointer text-left'
                   data-testid='Row-github-redirect'
                 >
                   {item.repo}
-                </a>
+                </button>
               </div>
               <span
                 className='two-liner w-full text-base font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors'
