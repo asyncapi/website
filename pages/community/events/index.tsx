@@ -33,7 +33,7 @@ export default function EventIndex() {
             Join an AsyncAPI event from anywhere in the world.
           </h1>
           <div className='mt-10' data-testid='Events-Button'>
-            <GoogleCalendarButton href='https://calendar.google.com/calendar/u/3?cid=Y19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t' />
+            <GoogleCalendarButton href='https://calendar.google.com/calendar/u/0?cid=Y19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t' />
             <ICSFileButton
               href='https://calendar.google.com/calendar/ical/c_q9tseiglomdsj6njuhvbpts11c%40group.calendar.google.com/public/basic.ics'
               className='mt-2 md:ml-2 md:mt-0'
