@@ -591,8 +591,8 @@ export default function RoadmapPage() {
                   text='Join Our Community'
                   href='https://github.com/asyncapi/community'
                   target='_blank'
-                  className='hover:bg-primary-600'
-                  icon={<IconPlus className='w-5 h-5' />}
+                  className='inline-flex items-center hover:bg-primary-600'
+                  icon={<IconPlus className='size-5 shrink-0' />}
                   iconPosition={ButtonIconPosition.RIGHT}
                 />
               </div>

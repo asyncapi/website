@@ -160,7 +160,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                     // show only when it is related to specification (/docs/reference/specification)
                     // AND is not a pre-release. For example, if the post's title is "3.0.0 (Pre-release)",
                     // which will not have RN, so do not render this section.
-                    <div className='mt-5 w-full rounded-lg bg-secondary-100 px-2 py-3 text-center'>
+                    <div className='mt-5 w-full rounded-lg bg-secondary-100 px-2 py-3 text-center dark:bg-dark-card'>
                       <div>
                         <span className='font-sans text-sm dark:text-dark-heading text-gray-800 antialiased'>
                           {`What is new in v${post.title}? Have a look at the `}
@@ -181,7 +181,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                         <span className='font-sans text-sm dark:text-dark-text text-gray-800 antialiased'>
                           Interested in release notes of other versions of the specification?&nbsp;
                         </span>
-                        <span className='font-sans text-sm text-gray-800 antialiased'>
+                        <span className='font-sans text-sm text-gray-800 antialiased dark:text-dark-text'>
                           Check&nbsp;
                           <Link
                             href='https://www.asyncapi.com/blog?tags=Release+Notes'

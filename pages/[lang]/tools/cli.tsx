@@ -51,7 +51,7 @@ const features: Feature[] = [
       return (
         <>
           {t('cli.features.open-studio.description_pretext')}{' '}
-          <code className=' rounded bg-gray-200 px-1 py-0.5 font-mono text-sm text-gray-900'>
+          <code className='rounded bg-gray-200 px-1 py-0.5 font-mono text-sm text-gray-900 dark:bg-dark-card dark:text-dark-heading'>
             asyncapi start studio
           </code>{' '}
           {t('cli.features.open-studio.description_posttext')}
@@ -201,7 +201,7 @@ export default function CliPage() {
               </div>
             </div>
           </div>
-          <div className='mt-20 bg-white lg:py-12'>
+          <div className='mt-20 bg-white dark:bg-dark-background lg:py-12'>
             <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
               <div className='mb-16 text-center'>
                 <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.mdSemibold}>
@@ -217,7 +217,7 @@ export default function CliPage() {
                   {features.map(({ description: Description, ...feature }) => (
                     <div key={feature.name} className='relative mb-10'>
                       <dt>
-                        <div className='absolute flex size-12 items-center justify-center rounded-md border border-gray-900 bg-secondary-100 text-gray-900'>
+                        <div className='absolute flex size-12 items-center justify-center rounded-md border border-gray-900 bg-secondary-100 text-gray-900 dark:border-dark-text dark:bg-dark-card dark:text-dark-heading'>
                           <feature.icon className='size-6' aria-hidden='true' />
                         </div>
                         <Heading level={HeadingLevel.h4} typeStyle={HeadingTypeStyle.smSemibold} className='ml-16'>
