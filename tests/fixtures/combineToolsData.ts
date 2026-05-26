@@ -240,6 +240,24 @@ const finalToolWithMissingData = {
   }
 };
 
+const makeTagTool = (title: string, lang: string, tech: string, repoUrl: string) => ({
+  title,
+  filters: { language: [lang], technology: [tech], categories: ['category1' as Category] },
+  links: { repoUrl }
+});
+
+const toolsWithNewTags = {
+  category1: {
+    description: 'Sample Category 1',
+    toolsList: [
+      makeTagTool('Tool Alpha', 'Zeta-Lang', 'Zeta-Tech', 'https://github.com/example/tool-alpha'),
+      makeTagTool('Tool Beta', 'Alpha-Lang', 'Alpha-Tech', 'https://github.com/example/tool-beta'),
+      makeTagTool('Tool Gamma', 'Middle-Lang', 'Middle-Tech', 'https://github.com/example/tool-gamma'),
+      makeTagTool('Tool Delta', 'Alpha-Lang', 'Alpha-Tech', 'https://github.com/example/tool-delta')
+    ]
+  }
+};
+
 const automatedToolsForIgnore = {
   category1: {
     description: 'Category 1 Description',
@@ -361,6 +379,7 @@ const ignoreByRepoUrlWithCategoryScope: ToolIgnoreEntry[] = [
 
 export {
   automatedToolsForIgnore,
+  toolsWithNewTags,
   automatedToolsT4,
   automatedToolsT5,
   automatedToolsT6,

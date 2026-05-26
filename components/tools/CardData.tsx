@@ -67,9 +67,14 @@ export const CardData = ({
   // Decide whether the user click outside this component (card description) or not.
   useEffect(() => {
     const maybeHandler = (event: MouseEvent) => {
-      setOutsideClick(true);
       if (domNode.current && !domNode.current.contains(event.target as Node)) {
+        // Clicked outside: hide tooltip and reset visibility so it won't
+        // reappear on the next arbitrary click (fixes #5098)
         setOutsideClick(false);
+        setVisible((prev) => ({ ...prev, [type]: false }));
+        setRead(false);
+      } else {
+        setOutsideClick(true);
       }
     };
 
@@ -78,7 +83,7 @@ export const CardData = ({
     return () => {
       document.removeEventListener('mousedown', maybeHandler);
     };
-  }, []);
+  }, [type, setVisible, setRead]);
 
   return (
     <div className={twMerge('text-left text-sm text-gray-500', className)}>
