@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/5253",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 31.87637935116772
+      "score": 40.20444242489623
     },
     {
       "id": "I_kwDOBW5R_c7pGlqB",
@@ -71,15 +71,15 @@
       "score": 10.625459783722574
     },
     {
-      "id": "PR_kwDOBW5R_c7OKdhx",
+      "id": "PR_kwDOBW5R_c7e8bZY",
       "isPR": true,
       "isAssigned": false,
-      "title": "Fix finance memory leak remove resize listener leak and layout shift",
-      "author": "codxbrexx",
-      "resourcePath": "/asyncapi/website/pull/5285",
+      "title": "fix: resolve nested anchors in Row and root path logic in NavItem",
+      "author": "sammy200-ui",
+      "resourcePath": "/asyncapi/website/pull/5476",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 8.328063073728504
+      "score": 9.763936017474798
     },
     {
       "id": "I_kwDOBW5R_c60eZiB",
