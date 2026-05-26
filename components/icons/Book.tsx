@@ -1,7 +1,7 @@
 /**
  * @description Icon component for Book
  */
-export default function IconBook({ className = '' }: { className?: string }) {
+export default function IconBook({ className = '' }: { readonly className?: string }) {
   return (
     <svg className={className} fill='none' viewBox='0 0 24 24' stroke='currentColor' xmlns='http://www.w3.org/2000/svg'>
       <path
