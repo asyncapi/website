@@ -210,7 +210,7 @@ export default function BarChartComponent() {
             </div>
           </div>
         </div>
-        <div className='flex justify-center dark:text-dark-text'>
+        <div className='finance-chart flex justify-center dark:text-dark-text'>
           {isMounted && windowWidth >= 900 && (
             <BarChart width={barWidth} height={barHeight} data={chartData}>
               <CartesianGrid strokeDasharray='3 3' stroke='currentColor' className='opacity-30' />

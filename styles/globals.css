@@ -25,6 +25,10 @@ html.dark body {
   background-color: #121825; /* dark-background color */
 }
 
+.dark .finance-chart .recharts-tooltip-cursor {
+  fill: #131e35; /* dark-card color */
+}
+
 /* Disable transitions on initial load to prevent flash */
 html:not(.transitions-enabled) *,
 html:not(.transitions-enabled) *::before,
