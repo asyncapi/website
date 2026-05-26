@@ -1,4 +1,5 @@
-import moment from 'moment';
+import dayjs from 'dayjs';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
@@ -10,6 +11,8 @@ import { useTranslation } from '../utils/i18n';
 import { getEvents } from '../utils/staticHelpers';
 import GoogleCalendarButton from './buttons/GoogleCalendarButton';
 import Heading from './typography/Heading';
+
+dayjs.extend(localizedFormat);
 
 interface ICalendarProps {
   className?: string;
@@ -29,7 +32,7 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
   const CALENDAR_URL =
     'https://calendar.google.com/calendar/embed?src=c_q9tseiglomdsj6njuhvbpts11c%40group.calendar.google.com&ctz=UTC';
   const currentDate = new Date();
-  const eventsExist = eventsData?.filter((event: IEvent) => moment(event.date).isAfter(currentDate)).length > 0;
+  const eventsExist = eventsData?.filter((event: IEvent) => dayjs(event.date).isAfter(currentDate)).length > 0;
 
   return (
     <div
@@ -46,13 +49,13 @@ export default function Calendar({ className = '', size }: ICalendarProps) {
           <li key={index} data-testid='Calendar-list-item'>
             <a href={event.url} className='mb-1 mt-2 flex grow flex-col items-start sm:flex-row sm:items-center'>
               <div className='inline-flex h-12 min-w-12 flex-row rounded-full bg-pink-500 font-bold text-white'>
-                <span className='flex-1 self-center text-center'>{moment(event.date).format('D')}</span>
+                <span className='flex-1 self-center text-center'>{dayjs(event.date).format('D')}</span>
               </div>
               <div className='grow text-left sm:mt-0 sm:pl-6'>
                 <h2 className='title-font font-medium text-gray-900 hover:text-gray-500'>{event.title}</h2>
                 <p className='text-gray-600'>
-                  {moment(event.date).local().format('LLLL')} UTC
-                  {moment(event.date).local().format('Z')}
+                  {dayjs(event.date).format('LLLL')} UTC
+                  {dayjs(event.date).format('Z')}
                 </p>
               </div>
             </a>

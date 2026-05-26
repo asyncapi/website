@@ -13,6 +13,7 @@ interface NavItemProps {
   onMouseEnter?: () => void;
   hasDropdown?: boolean;
   className?: string;
+  isOpen?: boolean;
 }
 
 /**
@@ -32,7 +33,8 @@ export default function NavItem({
   onClick = () => {},
   onMouseEnter = () => {},
   hasDropdown = false,
-  className = ''
+  className = '',
+  isOpen = false
 }: NavItemProps) {
   const router = useRouter();
 
@@ -44,7 +46,7 @@ export default function NavItem({
         rel='noopener noreferrer'
         className={twMerge(
           className,
-          'font-body text-base font-semibold leading-6 text-gray-700 transition duration-150 ease-in-out hover:text-gray-900 focus:text-gray-900 focus:outline-none',
+          'rounded-sm font-body text-base font-semibold leading-6 transition duration-150 ease-in-out hover:text-gray-900 focus:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900',
           router.pathname.startsWith(href) ? 'text-black' : 'text-gray-700'
         )}
       >
@@ -57,7 +59,7 @@ export default function NavItem({
   // 'onClick' and 'onMouseEnter' handle events, 'className' defines styling with hover and focus effects.
   const baseClassName = twMerge(
     className,
-    'group inline-flex items-center space-x-2 font-body text-base leading-6 font-semibold hover:text-gray-900 focus:outline-none focus:text-gray-900 tracking-heading transition ease-in-out duration-150'
+    'rounded-sm group inline-flex items-center space-x-2 font-body text-base leading-6 font-semibold hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:text-gray-900 tracking-heading transition ease-in-out duration-150'
   );
   const attrs = {
     onClick,
@@ -75,7 +77,16 @@ export default function NavItem({
         data-testid='NavItem-Link'
       >
         <span>{text}</span>
-        {hasDropdown && <NavItemDropdown />}
+
+        {hasDropdown && (
+          <span
+            className={`inline-flex size-5 items-center justify-center transition-transform duration-200 ${
+              isOpen ? 'rotate-180' : 'rotate-0'
+            }`}
+          >
+            <NavItemDropdown />
+          </span>
+        )}
       </Link>
     );
   }
@@ -83,7 +94,16 @@ export default function NavItem({
   return (
     <button type='button' {...attrs} className={twMerge(attrs.className, 'text-gray-700')}>
       <span>{text}</span>
-      {hasDropdown && <NavItemDropdown />}
+
+      {hasDropdown && (
+        <span
+          className={`inline-flex size-5 items-center justify-center transition-transform duration-200 ${
+            isOpen ? 'rotate-180' : 'rotate-0'
+          }`}
+        >
+          <NavItemDropdown />
+        </span>
+      )}
     </button>
   );
 }

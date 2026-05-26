@@ -8,15 +8,15 @@ describe('Header Links Validation', () => {
     header.visit(); 
   });
 
-  it('User hovers over Docs dropdown and sees the dropdown', () => {
+  it('Verifying if user hovers over Docs dropdown and sees the dropdown', () => {
     header.verifyDocsDropdown();
   });
 
-  it('User hovers over Tools dropdown and sees the dropdown', () => {
+  it('Verifying if user hovers over Tools dropdown and sees the dropdown', () => {
     header.verifyToolsDropdown();
   });
 
-  it('User hovers over Community dropdown and sees the dropdown', () => {
+  it('Verifying if user hovers over Community dropdown and sees the dropdown', () => {
     header.verifyCommunityDropdown();
   });
 });

@@ -41,7 +41,7 @@ After some weeks of discussing the marketing efforts, we are now looking for som
 We have a new Conference Coordination Working Group that focuses on planning, managing, and creating a seamless way to enhance the conference experience. If you want to join the working group or read more about their work, please check out the [Conference Coordination Working Group discussion](https://github.com/orgs/asyncapi/discussions/1170).
 
 ## TSC x Ambassadors
-We're thrilled to announce a new automated TSC voting system! We want to thank [Aayush Saini](https://github.com/AayushSaini101) for working on the implementation, as this will make the voting process smoother, more efficient, and more transparent. With this new system, we hope to encourage greater participation and engagement. Please make sure to [read the voting docs](https://github.com/asyncapi/community/blob/master/voting.md) to familiarize yourself with the new voting system.
+We're thrilled to announce a new automated TSC voting system! We want to thank [Aayush Saini](https://github.com/AayushSaini101) for working on the implementation, as this will make the voting process smoother, more efficient, and more transparent. With this new system, we hope to encourage greater participation and engagement. Please make sure to [read the voting docs](https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/voting.md) to familiarize yourself with the new voting system.
 
 ## Coming in May
 - **AACoT'24 Helsinki** - The Helsinki Edition will take place on May 28th and 29th. Please keep an eye out for announcements on community tickets on Slack and our social channels.
