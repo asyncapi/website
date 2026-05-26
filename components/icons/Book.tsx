@@ -1,9 +1,18 @@
 /**
  * @description Icon component for Book
  */
-export default function IconBook({ className = '' }: { readonly className?: string }) {
+import React from 'react';
+
+export default function IconBook({ className = '', ...props }: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg className={className} fill='none' viewBox='0 0 24 24' stroke='currentColor' xmlns='http://www.w3.org/2000/svg'>
+    <svg
+      className={className}
+      fill='none'
+      viewBox='0 0 24 24'
+      stroke='currentColor'
+      xmlns='http://www.w3.org/2000/svg'
+      {...props}
+    >
       <path
         strokeLinecap='round'
         strokeLinejoin='round'
