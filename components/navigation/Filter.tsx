@@ -36,7 +36,7 @@ export default function Filter<T extends DataObject = DataObject>({
   useEffect(() => {
     setQuery(route.query as Record<string, string>);
     applyFilterList(checks, data, setFilters);
-  }, [route, checks, data]);
+  }, [route.query, checks, data]);
 
   useEffect(() => {
     onFilterApply(data, onFilter, routeQuery);
