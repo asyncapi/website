@@ -238,6 +238,7 @@ export default function TSC() {
             <div className='w-full sm:w-auto sm:flex-1 max-w-md'>
               <input
                 type='text'
+                aria-label='Search TSC members'
                 placeholder='Search members by name or GitHub handle...'
                 value={searchTerm}
                 onChange={(e) => {

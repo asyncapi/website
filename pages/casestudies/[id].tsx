@@ -214,6 +214,7 @@ const Index: React.FC<IndexProps> = ({
                         href={item.link}
                         className='text-md font-medium leading-5 text-gray-900 dark:text-gray-300 hover:underline'
                         target='_blank'
+                        rel='noopener noreferrer'
                       >
                         <span>
                           {item.name}
@@ -243,6 +244,7 @@ const Index: React.FC<IndexProps> = ({
                     href={`/${casestudy.asyncapi.fullExample}`}
                     className='ml-2 font-medium text-secondary-500 underline transition duration-300 ease-in-out hover:text-gray-800'
                     target='_blank'
+                    rel='noopener noreferrer'
                   >
                     full production-used AsyncAPI document
                   </Link>
