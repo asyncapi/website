@@ -489,6 +489,29 @@
         }
       },
       {
+        "title": "Repid",
+        "description": "A simple, fast, and extensible async task queue framework, with built-in AsyncAPI 3.0 schema generation.",
+        "links": {
+          "websiteUrl": "https://repid.aleksul.space",
+          "repoUrl": "https://github.com/aleksul/repid"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "Python",
+              "color": "bg-[#A8D0EF]",
+              "borderColor": "border-[#3878AB]"
+            }
+          ],
+          "technology": [],
+          "categories": [
+            "code-first",
+            "framework"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "Saunter",
         "description": "Saunter is an AsyncAPI documentation generator for dotnet. Generates (and hosts) an AsyncAPI schema document from your code.",
         "links": {
@@ -771,6 +794,27 @@
           ],
           "categories": [
             "code-first",
+            "code-generator"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "Golang AsyncAPI Code Generator",
+        "description": "Generate Go user and application boilerplate from AsyncAPI specifications. Can be called from `go generate` without requirements.\n",
+        "links": {
+          "repoUrl": "https://github.com/dimonoff/asyncapi-codegen"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "Go/Golang",
+              "color": "bg-[#8ECFDF]",
+              "borderColor": "border-[#00AFD9]"
+            }
+          ],
+          "technology": [],
+          "categories": [
             "code-generator"
           ],
           "hasCommercial": false
@@ -1805,6 +1849,29 @@
         }
       },
       {
+        "title": "Repid",
+        "description": "A simple, fast, and extensible async task queue framework, with built-in AsyncAPI 3.0 schema generation.",
+        "links": {
+          "websiteUrl": "https://repid.aleksul.space",
+          "repoUrl": "https://github.com/aleksul/repid"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "Python",
+              "color": "bg-[#A8D0EF]",
+              "borderColor": "border-[#3878AB]"
+            }
+          ],
+          "technology": [],
+          "categories": [
+            "code-first",
+            "framework"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "Zod Sockets",
         "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
         "links": {
@@ -1988,7 +2055,7 @@
           ],
           "technology": [
             {
-              "name": "AsyncAPI Generator",
+              "name": "AsyncAPI CLI",
               "color": "bg-[#61d0f2]",
               "borderColor": "border-[#40ccf7]"
             }
@@ -2353,7 +2420,7 @@
           ],
           "technology": [
             {
-              "name": "AsyncAPI Generator",
+              "name": "AsyncAPI CLI",
               "color": "bg-[#61d0f2]",
               "borderColor": "border-[#40ccf7]"
             }
@@ -2673,7 +2740,7 @@
           ],
           "technology": [
             {
-              "name": "AsyncAPI Generator",
+              "name": "AsyncAPI CLI",
               "color": "bg-[#61d0f2]",
               "borderColor": "border-[#40ccf7]"
             }
