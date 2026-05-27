@@ -21,6 +21,18 @@ type ComposePromptType = {
 };
 
 /**
+ * Converts a blog post title into a URL-safe kebab-case filename (without extension).
+ * Special characters are stripped, spaces become hyphens, and consecutive hyphens are collapsed.
+ */
+export function generateFileName(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[^a-zA-Z0-9 ]/g, '')
+    .replace(/ /g, '-')
+    .replace(/-+/g, '-');
+}
+
+/**
  * Generates a complete Markdown front matter block for a blog post.
  *
  * Constructs a YAML front matter section using the blog post details provided by the user,
@@ -31,7 +43,7 @@ type ComposePromptType = {
  * @param answers - User inputs for the blog post, including title, excerpt, comma-separated tags, type, and canonical URL.
  * @returns The generated Markdown front matter and blog post content template.
  */
-function genFrontMatter(answers: ComposePromptType): string {
+export function genFrontMatter(answers: ComposePromptType): string {
   const tagArray = answers.tags.split(',');
 
   tagArray.forEach((tag: string, index: number) => {
@@ -118,8 +130,8 @@ function genFrontMatter(answers: ComposePromptType): string {
   return frontMatter;
 }
 
-inquirer
-  .prompt([
+export async function run(): Promise<void> {
+  const answers = (await inquirer.prompt([
     {
       name: 'title',
       message: 'Enter post title:',
@@ -146,30 +158,29 @@ inquirer
       message: 'Enter the canonical URL if any:',
       type: 'input'
     }
-  ])
-  .then((answers: ComposePromptType) => {
-    // Remove special characters and replace space with -
-    const fileName = answers.title
-      .toLowerCase()
-      .replace(/[^a-zA-Z0-9 ]/g, '')
-      .replace(/ /g, '-')
-      .replace(/-+/g, '-');
-    const frontMatter = genFrontMatter(answers);
-    const filePath = `pages/blog/${fileName || 'untitled'}.md`;
+  ])) as ComposePromptType;
 
+  const fileName = generateFileName(answers.title);
+  const frontMatter = genFrontMatter(answers);
+  const filePath = `pages/blog/${fileName || 'untitled'}.md`;
+
+  await new Promise<void>((resolve, reject) => {
     fs.writeFile(filePath, frontMatter, { flag: 'wx' }, (err) => {
       if (err) {
-        throw err;
+        reject(err);
       } else {
         logger.info(`Blog post generated successfully at ${filePath}`);
+        resolve();
       }
     });
-  })
-  .catch((error) => {
-    logger.error(error);
-    if (error.isTtyError) {
-      logger.error("Prompt couldn't be rendered in the current environment");
-    } else {
-      logger.error('Something went wrong, sorry!');
-    }
   });
+}
+
+run().catch((error) => {
+  logger.error(error);
+  if (error.isTtyError) {
+    logger.error("Prompt couldn't be rendered in the current environment");
+  } else {
+    logger.error('Something went wrong, sorry!');
+  }
+});
