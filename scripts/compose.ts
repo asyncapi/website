@@ -23,7 +23,8 @@ type ComposePromptType = {
 
 /**
  * Converts a blog post title into a URL-safe kebab-case filename (without extension).
- * Special characters are stripped, spaces become hyphens, and consecutive hyphens are collapsed.
+ * Special characters are stripped, spaces become hyphens, and empty segments (from
+ * consecutive hyphens or leading/trailing special characters) are removed.
  */
 export function generateFileName(title: string): string {
   return title
@@ -31,8 +32,9 @@ export function generateFileName(title: string): string {
     .toLowerCase()
     .replace(/[^a-z0-9 ]/g, '')
     .replace(/ /g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-+|-+$/g, '');
+    .split('-')
+    .filter(Boolean)
+    .join('-');
 }
 
 /**
