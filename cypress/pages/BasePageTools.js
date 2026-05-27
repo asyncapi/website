@@ -1,5 +1,5 @@
 class BasePage {
-  visit(path) {
+  visit(path = '/') {
     cy.visit(path);
   }
 
