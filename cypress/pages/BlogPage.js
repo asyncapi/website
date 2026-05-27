@@ -1,10 +1,12 @@
-class BlogPage {
+import BasePage from './BasePage';
+
+class BlogPage extends BasePage {
   visit() {
-    cy.visit('/blog');
+    super.visit('/blog');
   }
 
   verifyPageLoaded() {
-    cy.contains('h1', 'Welcome to our blog!').should('be.visible');
+    this.verifyHeadingExists('Welcome to our blog!');
   }
 
   verifyHeader() {

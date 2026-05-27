@@ -5,7 +5,7 @@
 import dedent from 'dedent';
 import fs from 'fs';
 import inquirer from 'inquirer';
-import moment from 'moment';
+import dayjs from 'dayjs';
 
 import { logger } from './helpers/logger';
 
@@ -41,7 +41,7 @@ function genFrontMatter(answers: ComposePromptType): string {
 
   let frontMatter = dedent`---
   title: ${answers.title ? answers.title : 'Untitled'}
-  date: ${moment().format('YYYY-MM-DDTh:mm:ssZ')}
+  date: ${dayjs().format('YYYY-MM-DDTh:mm:ssZ')}
   type: ${answers.type}
   canonical: ${answers.canonical ? answers.canonical : ''}
   tags: [${answers.tags ? tags : ''}]

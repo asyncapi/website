@@ -1,6 +1,6 @@
 class BasePage {
-  visit(path = '/') {
-    cy.visit(path);
+  visit() {
+    cy.visit('/');
   }
 
   verifyLinkByHref(href) {
@@ -11,9 +11,9 @@ class BasePage {
         const wrap = cy.wrap($a);
         return $a.prop('target') === '_self'
           ? wrap.invoke('removeAttr', 'target').click()
-         : wrap.click();
-    });
- }
+          : wrap.click();
+      });
+  }
 
   verifyLinkByLabel(href, label) {
     cy.get(`a[href="${href}"]`).contains(label).click();

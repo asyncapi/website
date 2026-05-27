@@ -3,7 +3,7 @@ title: AsyncAPI GSoC Ideas Page 2025
 weight: 190
 ---
 
-> **Program Status: In-progress**
+> **Program Status: Completed**
 
 # AsyncAPI Ideas Page: Google Summer of Code 2025
 
