@@ -27,7 +27,7 @@ We currently have [43 members](https://github.com/asyncapi/community/blob/master
 
 GB voting is not the typical automated voting process we use for simple "yes" or "no" decisions with emojis in GitHub issues and pull requests. These elections are a manual process.
 
-As described in the [Governance document](https://github.com/asyncapi/community/blob/master/GOVERNANCE.md#voting), we use a **"first-past-the-post"** voting system.
+As described in the [Governance document](https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/GOVERNANCE.md#voting), we use a **"first-past-the-post"** voting system.
 
 **You should:**
 * Send your vote to **info@asyncapi.io** no later than two weeks after the elections begin.
