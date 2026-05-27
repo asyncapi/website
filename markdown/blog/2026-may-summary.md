@@ -24,7 +24,7 @@ For the full agenda and time, [please visit the conference website for more deta
 
 ## Spec x Tooling
 
-We’re very excited that the Arrazzo Spev v1.1 now supports AsyncAPI v3, thanks to the contributions and work of [Frank Kilcommins](https://www.linkedin.com/in/frank-kilcommins) and [Naresh Jain](https://www.linkedin.com/in/http://linkedin.com/in/nareshjain). For more details, [please read the Arazzo Spec version release blog](https://www.openapis.org/blog/2026/05/19/announcing-arazzo-specification-1-1).
+We’re very excited that the Arrazzo Spec v1.1 now supports AsyncAPI v3, thanks to the contributions and work of [Frank Kilcommins](https://www.linkedin.com/in/frank-kilcommins) and [Naresh Jain](https://www.linkedin.com/in/nareshjain). For more details, [please read the Arazzo Spec version release blog](https://www.openapis.org/blog/2026/05/19/announcing-arazzo-specification-1-1).
 
 ## AsyncAPI Maintainership 2026
 
