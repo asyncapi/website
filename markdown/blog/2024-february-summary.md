@@ -13,7 +13,7 @@ authors:
 excerpt: 'Community update for February'
 ---
 
-We are starting the year off with a bang as we got accepted to the [Google Summer of Code 2024](https://summerofcode.withgoogle.com/programs/2024/organizations/asyncapi) program after two years of rejections. It is an incredible achievement for the community, and we wouldn't have done it without our Doc's Lead, [Quetzalli Writes](https://www.linkedin.com/in/quetzalli-writes), who crafted an excellent proposal, and [Elegbede Azeez](https://twitter.com/_acebuild). We are very excited to have received this opportunity, and you can read [the AsyncAPI Project Ideas Page](https://github.com/asyncapi/community/blob/master/mentorship/summerofcode/2024/asyncapi-gsoc-ideas-page.md) for in-depth details on participating projects.
+We are starting the year off with a bang as we got accepted to the [Google Summer of Code 2024](https://summerofcode.withgoogle.com/programs/2024/organizations/asyncapi) program after two years of rejections. It is an incredible achievement for the community, and we wouldn't have done it without our Doc's Lead, [Quetzalli Writes](https://www.linkedin.com/in/quetzalli-writes), who crafted an excellent proposal, and [Elegbede Azeez](https://twitter.com/_acebuild). We are very excited to have received this opportunity, and you can read [the AsyncAPI Project Ideas Page](https://github.com/asyncapi/community/blob/master/docs/050-mentorship-program/summerofcode-2024-asyncapi-gsoc-ideas-page.md) for in-depth details on participating projects.
 
 ## AsyncAPI Conf on Tour 2024
 The planning of AACoT'24 is already underway as we prepare for our first conference in Helsinki on the 28th - 29th of May. We are putting in the final touches to update our conference website with the latest details, and we will soon announce the Call for Speakers. In the meantime, be sure to start crafting those proposals and get ready to share your expertise with the community.
@@ -45,7 +45,7 @@ We have important discussions that require the community's attention:
 - ### Cupid is Looking For Maintainers
   We're on the lookout for maintainers for the AsyncAPI Cupid. The library focuses on finding and analyzing the relationships between AsyncAPI documents. If you're well-versed in Event-Driven Architecture and AsyncAPI, please [join the Cupid repository discussion](https://github.com/asyncapi/cupid/issues/182) and help us drive its development.
 - ### AsyncAPI Working Groups
-  We are finally officializing working groups throughout the AsyncAPI community. A working group will be a community where people share similar interests beyond GitHub repositories. You can read the [Working Groups docs](https://github.com/asyncapi/community/blob/master/WORKING_GROUPS.md) or view the [Working Group public discussion](https://github.com/orgs/asyncapi/discussions/1037) for more comprehensive details.
+  We are finally officializing working groups throughout the AsyncAPI community. A working group will be a community where people share similar interests beyond GitHub repositories. You can read the [Working Groups docs](https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/WORKING_GROUPS.md) or view the [Working Group public discussion](https://github.com/orgs/asyncapi/discussions/1037) for more comprehensive details.
 
 ## TSC Members x Ambassadors
 

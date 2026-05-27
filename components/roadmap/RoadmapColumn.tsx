@@ -6,12 +6,13 @@ import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 import RoadmapList from './RoadmapList';
+import type { RoadmapItem } from './types';
 
 interface IRoadmapColumnProps {
   title: string;
   description: string;
   colorClass: string;
-  items?: any[];
+  items?: RoadmapItem[];
   childrenCollapsed?: boolean;
 }
 

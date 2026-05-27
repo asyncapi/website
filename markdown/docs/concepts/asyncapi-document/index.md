@@ -8,7 +8,7 @@ The [AsyncAPI specification](/docs/reference/specification/latest) defines field
 The AsyncAPI document is a communication contract between senders and receivers within an event-driven system. It specifies the payload content required for a service to send a message and provides the receiver with guidance about the message's properties.
 
 ```yaml
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 info:
   title: Cool Example
   version: 0.1.0

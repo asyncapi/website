@@ -59,6 +59,11 @@ export default function NewsletterSubscribe({
 
   const setFormStatus = (formResponse: FormStatus) => {
     setStatus(formResponse);
+    if (formResponse === FormStatus.SUCCESS) {
+      // Reset form fields on success
+      setName('');
+      setEmail('');
+    }
     setTimeout(() => {
       setStatus(FormStatus.NORMAL);
     }, 10000);
@@ -89,7 +94,7 @@ export default function NewsletterSubscribe({
       }
 
       await res.json();
-    } catch (err) {
+    } catch (error) {
       setFormStatus(FormStatus.ERROR);
     }
   };

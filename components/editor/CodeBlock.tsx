@@ -1,3 +1,4 @@
+import { CheckIcon } from '@heroicons/react/outline';
 import React, { useState } from 'react';
 import Highlight from 'react-syntax-highlighter';
 
@@ -333,13 +334,11 @@ export default function CodeBlock({
               title='Copy to clipboard'
               data-test='copy-button'
             >
-              {showIsCopied && (
-                <span className='mr-2 inline-block pl-2 pt-1' data-testid='clicked-text'>
-                  Copied!
-                </span>
-              )}
-              <span className='inline-block pt-1'>
-                <IconClipboard className='-mt-0.5 inline-block size-4' />
+              <output className='sr-only' aria-live='polite' aria-atomic='true'>
+                {showIsCopied ? 'Copy to clipboard' : ''}
+              </output>
+              <span className='relative inline-block mt-1 size-4' aria-hidden='true'>
+                {showIsCopied ? <CheckIcon className='h-full w-full' /> : <IconClipboard className='h-full w-full' />}
               </span>
             </button>
           </div>

@@ -74,7 +74,7 @@ It was a pleasure to work with these folks and see them staying with us after GS
 
 ## Technical Steering Committee members setup
 
-After joining the [Linux Foundation (LF)](https://www.asyncapi.com/blog/asyncapi-joins-linux-foundation) and applying the [open governance model](https://github.com/asyncapi/community/blob/master/CHARTER.md), it was time for us to start setting up a Technical Steering Committee (TSC).
+After joining the [Linux Foundation (LF)](https://www.asyncapi.com/blog/asyncapi-joins-linux-foundation) and applying the [open governance model](https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/CHARTER.md), it was time for us to start setting up a Technical Steering Committee (TSC).
 
 So here we are, 9 months after joining LF, we already have 24 members. Check out the [complete list of all the TSC members](https://www.asyncapi.com/community/tsc). Pay attention to those that are marked as **Available for hire**. Don't let folks work for free. Pay them to work on open-source. Be good humans.
 

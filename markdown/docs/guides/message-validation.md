@@ -85,7 +85,7 @@ With the Schema Registry in place, the producer first talks to the Schema Regist
 AsyncAPI is not directly involved in validation based on the Schema Registry. The good thing is that you do not have to duplicate schemas in your AsyncAPI document stored in Schema Registry. You can reference schemas from Schema Registry in your AsyncAPI documents.
 Here's an example of an AsyncAPI document where you can see both `schemaFormat` and `payload` referenced from the Schema Registry:
 ```yml
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 info:
   title: Example with Avro
   version: 0.1.0
