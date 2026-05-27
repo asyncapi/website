@@ -5,7 +5,6 @@ class ToolsGenerator extends BasePage {
   verifyGeneratorWorkflowDiagram() {
     return this.verifyImageVisible(toolsData.generator.image);
   }
-
 }
 
 export default ToolsGenerator;
