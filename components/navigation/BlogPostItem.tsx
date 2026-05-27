@@ -1,4 +1,4 @@
-import moment from 'moment';
+import dayjs from 'dayjs';
 import Link from 'next/link';
 import type { Ref } from 'react';
 import React, { forwardRef } from 'react';
@@ -129,7 +129,7 @@ const BlogPostItem = ({ post, className = '', id = '' }: BlogPostItemProps, ref:
                     </span>
                   </Heading>
                   <Paragraph typeStyle={ParagraphTypeStyle.sm} className='flex'>
-                    <time dateTime={post.date}>{moment(post.date).format('MMMM D, YYYY')}</time>
+                    <time dateTime={post.date}>{dayjs(post.date).format('MMMM D, YYYY')}</time>
                     <span className='mx-1'>&middot;</span>
                     <span>{post.readingTime} min read</span>
                   </Paragraph>
