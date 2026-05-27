@@ -166,7 +166,7 @@ export default function SneakPeek() {
           <span className='text-gray-500 dark:text-gray-400'>{'//'} Your business logic here</span>
         </div>
         <div>
-          {'\u00A0\u00A0\u00A0\u00A0'}
+          &nbsp;&nbsp;&nbsp;&nbsp;
           <span className={YELLOW_LIGHT}>console</span>
           {'.'}
           <span className={YELLOW}>log</span>
@@ -175,7 +175,7 @@ export default function SneakPeek() {
           {')'}
           {';'}
         </div>
-        <div>{'\u00A0\u00A0}'}</div>
+        <div>&nbsp;&nbsp;{'}'}</div>
         <div>{'}'}</div>
       </>
     );
