@@ -2,26 +2,26 @@ import HomePage from './pages/homepage';
 import TSCPage from './pages/tscpage';
 
 let homePage;
-let tscpage;
+let tscPage;
 
 beforeEach(() => {
   homePage = new HomePage();
-  tscpage = new TSCPage();
+  tscPage = new TSCPage();
   homePage.visit();
   homePage.goToTSCPage();
 });
 
 describe('TSC Page', () => {
   it('should succeed in subscribing to the newsletter', () => {
-    tscpage.fillNewsletterForm('anushka', 'valid@example.com');
-    tscpage.submitNewsletter();
-    tscpage.getSuccessMessage().should('be.visible');
+    tscPage.fillNewsletterForm('anushka', 'valid@example.com');
+    tscPage.submitNewsletter();
+    tscPage.getSuccessMessage().should('be.visible');
   });
 
   it('should show correct failure message', () => {
-    tscpage.fillNewsletterForm('aditi', 'kerghjh@fhgj');
-    tscpage.submitNewsletter();
-    tscpage.getFailureMessage().should('be.visible');
+    tscPage.fillNewsletterForm('aditi', 'kerghjh@fhgj');
+    tscPage.submitNewsletter();
+    tscPage.getFailureMessage().should('be.visible');
   });
 
   it('verifies key links on the TSC page', () => {
@@ -46,7 +46,7 @@ describe('TSC Page', () => {
   });
 
   it('verifies social links for selected TSC members', () => {
-    const members = [
+    const tscMembers = [
       {
         name: 'Aishat Muibudeen',
         links: {
@@ -56,11 +56,11 @@ describe('TSC Page', () => {
         }
       },
       {
-        name: 'Thulisile Sibanda',
+        name: 'Akshat Nema',
         links: {
-          GitHub: 'https://www.github.com/thulieblack',
-          Twitter: 'https://www.twitter.com/thulieblack',
-          Linkedin: 'https://www.linkedin.com/in/v-thulisile-sibanda'
+          GitHub: 'https://www.github.com/akshatnema',
+          Twitter: 'https://www.twitter.com/AksNema',
+          Linkedin: 'https://www.linkedin.com/in/akshat-nema'
         }
       },
       {
@@ -73,8 +73,8 @@ describe('TSC Page', () => {
       }
     ];
 
-    members.forEach(({ name, links }) => {
-      tscpage.verifyTSCMemberSocialLinks(name, links);
+    tscMembers.forEach(({ name, links }) => {
+      tscPage.verifyTSCMemberSocialLinks(name, links);
     });
   });
 });
