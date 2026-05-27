@@ -185,13 +185,7 @@ export default function SneakPeek() {
           &nbsp;&nbsp;&nbsp;&nbsp;<span className='text-gray-500'>{'//'} Your business logic here</span>
         </div>
         <div>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span className='text-yellow-600 dark:text-yellow-200'>console</span>
-          {'.'}
-          <span className='text-yellow-600 dark:text-yellow-300'>log</span>
-          {'('}
-          <span className='text-teal-600 dark:text-teal-200'>{logStatement}</span>
-          {')'}
-          {';'}
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className='text-yellow-600 dark:text-yellow-200'>console</span>{'.'}<span className='text-yellow-600 dark:text-yellow-300'>log</span>{'('}<span className='text-teal-600 dark:text-teal-200'>{logStatement}</span>{')'}{';'}
         </div>
         <div>&nbsp;&nbsp;{'}'}</div>
         <div>{'}'}</div>
@@ -322,9 +316,7 @@ export default function SneakPeek() {
           <div className='text-left'>
             {tabs.map((tab) => (
               <div key={tab.id} className={activeTab === tab.id ? 'block' : 'hidden'}>
-                <div
-                  className={`rounded-b-lg p-3 sm:p-4 lg:p-6 overflow-auto shadow-lg min-h-[300px] sm:min-h-[350px] lg:min-h-[400px] max-h-[500px] sm:max-h-[600px] ${tab.id === 'documentation' ? 'bg-white dark:bg-[#1B1B2F] border border-gray-200 dark:border-none' : 'bg-white dark:bg-[#1B1B2F] border border-gray-200 dark:border-none'}`}
-                >
+                <div className='rounded-b-lg p-3 sm:p-4 lg:p-6 overflow-auto shadow-lg min-h-[300px] sm:min-h-[350px] lg:min-h-[400px] max-h-[500px] sm:max-h-[600px] bg-white dark:bg-[#1B1B2F] border-x border-b border-gray-200 dark:border-none'>
                   <div
                     className={
                       tab.id === 'documentation' ? '' : 'text-[10px] sm:text-xs md:text-sm leading-relaxed font-mono'
