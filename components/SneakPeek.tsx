@@ -142,7 +142,7 @@ export default function SneakPeek() {
           <span className='text-gray-500'>{'//'} Generated TypeScript code</span>
         </div>
         <div>
-          <span className={PURPLE}>export</span> <span className={PURPLE}>interface</span>&nbsp;
+          <span className={PURPLE}>export</span> <span className={PURPLE}>{'interface '}</span>
           <span className={YELLOW_LIGHT}>UserSignedUp</span> {'{'}
         </div>
         <div>
@@ -154,12 +154,12 @@ export default function SneakPeek() {
         <div>{'}'}</div>
         <div>&nbsp;</div>
         <div>
-          <span className={PURPLE}>export</span> <span className={PURPLE}>class</span>&nbsp;
+          <span className={PURPLE}>export</span> <span className={PURPLE}>{'class '}</span>
           <span className={YELLOW_LIGHT}>UserSignupService</span> {'{'}
         </div>
         <div>
           &nbsp;&nbsp;<span className={PURPLE}>async</span> <span className={YELLOW}>processSignup</span>(
-          <span className={ORANGE}>message</span>: <span className={YELLOW_LIGHT}>UserSignedUp</span>):&nbsp;
+          <span className={ORANGE}>message</span>: <span className={YELLOW_LIGHT}>{'UserSignedUp): '}</span>
           <span className={YELLOW_LIGHT}>Promise</span>
           {'<'}
           <span className={TEAL}>void</span>
@@ -247,12 +247,12 @@ export default function SneakPeek() {
                 <div>&nbsp;</div>
                 <div className='text-gray-300'>{'{'}</div>
                 <div>
-                  <span className='text-teal-400'>&nbsp;&nbsp;&quot;displayName&quot;</span>:&nbsp;
+                  <span className='text-teal-400'>{'\u00A0\u00A0"displayName": '}</span>
                   <span className='text-white'>&quot;Eve & Chan&quot;</span>
                   <span className='text-gray-300'>,</span>
                 </div>
                 <div>
-                  <span className='text-teal-400'>&nbsp;&nbsp;&quot;email&quot;</span>:&nbsp;
+                  <span className='text-teal-400'>{'\u00A0\u00A0"email": '}</span>
                   <span className='text-white'>&quot;info@asyncapi.io&quot;</span>
                 </div>
                 <div className='text-gray-300'>{'}'}</div>
