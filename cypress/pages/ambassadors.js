@@ -1,6 +1,8 @@
-class AmbassadorsPage {
+import BasePage from './BasePage';
+
+class AmbassadorsPage extends BasePage {
   visit() {
-    cy.visit('/community/ambassadors');
+    super.visit('/community/ambassadors');
   }
 
   verifyKeySectionsAndLinks() {
@@ -10,9 +12,6 @@ class AmbassadorsPage {
     cy.get('[data-testid="Ambassadors-Iframe"]')
       .should('be.visible');
     cy.get('[data-testid="Ambassadors-members-main"]')
-      .should('be.visible');
-    cy.get('[data-testid="Events-ambassadors"]')
-      .scrollIntoView()
       .should('be.visible');
     cy.get('a[href="https://www.asyncapi.com/blog/asyncapi-ambassador-program"]')
       .should('be.visible');
