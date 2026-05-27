@@ -49,11 +49,6 @@ class BasePage {
       .should('not.be.empty');
   }
 
-  getLink(href, text) {
-    return cy.contains(`a[href="${href}"]`, text)
-      .should('be.visible')
-      .and('have.attr', 'href', href);
-  }
 }
 
 export default BasePage;
