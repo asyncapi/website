@@ -1,3 +1,9 @@
+import fs from 'fs';
+import inquirer from 'inquirer';
+
+import { genFrontMatter, generateFileName, handleError, run } from '../../scripts/compose';
+import { logger } from '../../scripts/helpers/logger';
+
 jest.mock('fs', () => ({
   writeFile: jest.fn((_path: any, _data: any, _opts: any, cb: any) => cb(null))
 }));
@@ -14,10 +20,6 @@ jest.mock('dayjs', () => () => ({ format: () => '2026-01-15T12:00:00+0000' }));
 jest.mock('../../scripts/helpers/logger', () => ({
   logger: { info: jest.fn(), error: jest.fn() }
 }));
-
-import fs from 'fs';
-import inquirer from 'inquirer';
-import { genFrontMatter, generateFileName, run } from '../../scripts/compose';
 
 const baseAnswers = {
   title: 'Hello World',
@@ -110,7 +112,7 @@ describe('run', () => {
     expect(mockWriteFile).toHaveBeenCalledWith(
       'pages/blog/my-new-blog-post.md',
       expect.stringContaining('title: My New Blog Post'),
-      expect.anything(),
+      expect.objectContaining({ flag: 'wx' }),
       expect.any(Function)
     );
   });
@@ -134,5 +136,39 @@ describe('run', () => {
     mockWriteFile.mockImplementation((_path: any, _data: any, _opts: any, cb: any) => cb(writeError));
 
     await expect(run()).rejects.toThrow('EEXIST: file already exists');
+  });
+});
+
+describe('generateFileName edge cases', () => {
+  it('trims leading and trailing whitespace before slugifying', () => {
+    expect(generateFileName('  Hello World  ')).toBe('hello-world');
+  });
+
+  it('strips leading and trailing hyphens produced by special characters', () => {
+    expect(generateFileName('!Hello World!')).toBe('hello-world');
+  });
+});
+
+describe('handleError', () => {
+  beforeEach(() => {
+    jest.mocked(logger.error).mockClear();
+  });
+
+  it('logs the TTY-specific message when isTtyError is true', () => {
+    const error = Object.assign(new Error('tty failure'), { isTtyError: true });
+
+    handleError(error);
+
+    expect(logger.error).toHaveBeenCalledWith(error);
+    expect(logger.error).toHaveBeenCalledWith("Prompt couldn't be rendered in the current environment");
+  });
+
+  it('logs the generic fallback message when isTtyError is false', () => {
+    const error = new Error('unexpected failure');
+
+    handleError(error);
+
+    expect(logger.error).toHaveBeenCalledWith(error);
+    expect(logger.error).toHaveBeenCalledWith('Something went wrong, sorry!');
   });
 });

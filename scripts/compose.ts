@@ -6,6 +6,7 @@ import dedent from 'dedent';
 import fs from 'fs';
 import inquirer from 'inquirer';
 import dayjs from 'dayjs';
+import { fileURLToPath } from 'url';
 
 import { logger } from './helpers/logger';
 
@@ -26,10 +27,12 @@ type ComposePromptType = {
  */
 export function generateFileName(title: string): string {
   return title
+    .trim()
     .toLowerCase()
-    .replace(/[^a-zA-Z0-9 ]/g, '')
+    .replace(/[^a-z0-9 ]/g, '')
     .replace(/ /g, '-')
-    .replace(/-+/g, '-');
+    .replace(/-+/g, '-')
+    .replace(/^-+|-+$/g, '');
 }
 
 /**
@@ -130,6 +133,27 @@ export function genFrontMatter(answers: ComposePromptType): string {
   return frontMatter;
 }
 
+/**
+ * Handles errors thrown by the run() entry point, logging a TTY-specific
+ * message when the prompt cannot be rendered, or a generic fallback otherwise.
+ * Accepts unknown because Promise.catch() callbacks receive unknown at runtime.
+ *
+ * @param error - The value caught from the top-level run() rejection.
+ */
+export function handleError(error: unknown): void {
+  logger.error(error);
+  if (error instanceof Error && (error as Error & { isTtyError?: boolean }).isTtyError) {
+    logger.error("Prompt couldn't be rendered in the current environment");
+  } else {
+    logger.error('Something went wrong, sorry!');
+  }
+}
+
+/**
+ * Entry point for the blog post composition CLI.
+ * Prompts the user for post metadata, generates the front matter and slug,
+ * and writes a new Markdown file to pages/blog/<slug>.md.
+ */
 export async function run(): Promise<void> {
   const answers = (await inquirer.prompt([
     {
@@ -176,11 +200,6 @@ export async function run(): Promise<void> {
   });
 }
 
-run().catch((error) => {
-  logger.error(error);
-  if (error.isTtyError) {
-    logger.error("Prompt couldn't be rendered in the current environment");
-  } else {
-    logger.error('Something went wrong, sorry!');
-  }
-});
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  run().catch(handleError);
+}
