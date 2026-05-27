@@ -200,14 +200,14 @@ describe('buildPostList', () => {
   });
 
   it('throws specific error message when basePath parameter is undefined', async () => {
-    // @ts-ignore, ignore the type error for this test
+    // @ts-expect-error - Intentionally passing undefined basePath to test error handling
     await expect(buildPostList(postDirectories, undefined, writeFilePath)).rejects.toThrow(
       'Error while building post list: basePath is required'
     );
   });
 
   it('throws specific error message when writeFilePath parameter is undefined', async () => {
-    // @ts-ignore, ignore the type error for this test
+    // @ts-expect-error - Intentionally passing undefined writeFilePath to test error handling
     await expect(buildPostList(postDirectories, tempDir, undefined)).rejects.toThrow(
       'Error while building post list: writeFilePath is required'
     );
@@ -216,13 +216,13 @@ describe('buildPostList', () => {
   it('throws an error when details object is invalid', () => {
     const finalResult: Result = { blog: [], docs: [], about: [], docsTree: {} };
 
-    // @ts-ignore
+    // @ts-expect-error - Intentionally passing null to test invalid details object handling
     expect(() => addItem(null, finalResult)).toThrow('Invalid details object provided to addItem');
-    // @ts-ignore
+    // @ts-expect-error - Intentionally passing empty object to test invalid details object handling
     expect(() => addItem({}, finalResult)).toThrow('Invalid details object provided to addItem');
-    // @ts-ignore
+    // @ts-expect-error - Intentionally passing object with invalid slug type to test validation
     expect(() => addItem({ slug: 123 }, finalResult)).toThrow('Invalid details object provided to addItem');
-    // @ts-ignore
+    // @ts-expect-error - Intentionally passing undefined to test invalid details object handling
     expect(() => addItem(undefined, finalResult)).toThrow('Invalid details object provided to addItem');
   });
 
@@ -291,11 +291,11 @@ describe('buildPostList', () => {
     });
 
     it('handles invalid input types gracefully', () => {
-      // @ts-ignore
+      // @ts-expect-error - Intentionally passing null to test graceful handling of invalid input
       expect(slugifyToC(null)).toBe('');
-      // @ts-ignore
+      // @ts-expect-error - Intentionally passing undefined to test graceful handling of invalid input
       expect(slugifyToC(undefined)).toBe('');
-      // @ts-ignore
+      // @ts-expect-error - Intentionally passing number to test graceful handling of invalid input
       expect(slugifyToC(123)).toBe('');
     });
 
