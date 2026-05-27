@@ -31,7 +31,8 @@ import {
   manualToolsT9,
   manualToolsToSort,
   manualToolsWithInvalidURLT11,
-  manualToolsWithMissingData
+  manualToolsWithMissingData,
+  toolsWithNewTags
 } from '../fixtures/combineToolsData';
 
 jest.mock('../../scripts/helpers/logger', () => ({
@@ -304,6 +305,31 @@ describe('combineTools function', () => {
         source: 'combine-tools.ts'
       })
     );
+  });
+
+  it('produces deterministically-ordered all-tags.json regardless of tool arrival order (tail is sorted)', async () => {
+    await jest.isolateModulesAsync(async () => {
+      const freshCombine = await import('../../scripts/tools/combine-tools');
+
+      await freshCombine.combineTools(toolsWithNewTags, {}, toolsPath, tagsPath);
+
+      const tagsData = readJSON(tagsPath);
+
+      expect(tagsData.languages.map((l: any) => l.name)).toEqual([
+        'JavaScript',
+        'Python',
+        'Alpha-Lang',
+        'Middle-Lang',
+        'Zeta-Lang'
+      ]);
+      expect(tagsData.technologies.map((t: any) => t.name)).toEqual([
+        'Node.js',
+        'Flask',
+        'Alpha-Tech',
+        'Middle-Tech',
+        'Zeta-Tech'
+      ]);
+    });
   });
 
   it('should skip inherited prototype properties in automatedTools', async () => {
