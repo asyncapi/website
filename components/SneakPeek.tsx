@@ -139,7 +139,7 @@ export default function SneakPeek() {
     return (
       <>
         <div>
-          <span className='text-gray-500'>{'//'} Generated TypeScript code</span>
+          <span className='text-gray-500 dark:text-gray-400'>{'//'} Generated TypeScript code</span>
         </div>
         {/* prettier-ignore */}
         <div>
@@ -162,7 +162,8 @@ export default function SneakPeek() {
           &nbsp;&nbsp;<span className={PURPLE}>async</span> <span className={YELLOW}>processSignup</span>(<span className={ORANGE}>message</span>: <span className={YELLOW_LIGHT}>UserSignedUp</span>): <span className={YELLOW_LIGHT}>Promise</span>{'<'}<span className={TEAL}>void</span>{'>'} {'{'}
         </div>
         <div>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span className='text-gray-500'>{'//'} Your business logic here</span>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <span className='text-gray-500 dark:text-gray-400'>{'//'} Your business logic here</span>
         </div>
         <div>
           {'\u00A0\u00A0\u00A0\u00A0'}
@@ -183,7 +184,7 @@ export default function SneakPeek() {
   const renderDocumentationCode = () => (
     <div className='font-sans text-gray-800 dark:text-gray-200'>
       <div className='mb-6 mt-2 sm:mb-8 sm:mt-4'>
-        <h1 className='text-xl sm:text-2xl font-bold text-gray-500 dark:text-gray-400'>Account Service 1.0.0</h1>
+        <h1 className='text-xl sm:text-2xl font-bold text-gray-700 dark:text-gray-400'>Account Service 1.0.0</h1>
         <p className='text-sm sm:text-base text-gray-700 dark:text-gray-300 mt-2'>
           This service is in charge of processing user signups 🚀
         </p>
@@ -227,7 +228,7 @@ export default function SneakPeek() {
                   <div>
                     <div className='font-bold text-green-500 text-sm'>
                       String{' '}
-                      <span className='ml-2 rounded bg-yellow-300 px-1.5 py-0.5 text-xs text-black font-normal'>
+                      <span className='ml-2 rounded bg-yellow-300 dark:bg-yellow-500 px-1.5 py-0.5 text-xs text-black font-normal'>
                         email
                       </span>
                     </div>
