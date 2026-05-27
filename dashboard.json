@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/5253",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 40.20444242489623
+      "score": 43.076188312388815
     },
     {
       "id": "I_kwDOBW5R_c7pGlqB",
@@ -34,6 +34,26 @@
         }
       ],
       "score": 24.122665454937735
+    },
+    {
+      "id": "I_kwDOBW5R_c6pn_G2",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Redesign the AsyncAPI Website and Implement Dark Theme",
+      "author": "ashmitjsg",
+      "resourcePath": "/asyncapi/website/issues/3669",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
+          "name": "gsoc",
+          "color": "F4D03F"
+        }
+      ],
+      "score": 22.68679251119144
     },
     {
       "id": "I_kwDOFLhIt87jC_4a",
@@ -71,15 +91,35 @@
       "score": 10.625459783722574
     },
     {
-      "id": "PR_kwDOBW5R_c7e8bZY",
+      "id": "I_kwDOBW5R_c6rxQC5",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "[FEATURE] Modify Github Bot to review & close Spam Issues/PRs",
+      "author": "TRohit20",
+      "resourcePath": "/asyncapi/website/issues/3742",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 10.338285194973315
+    },
+    {
+      "id": "PR_kwDOBW5R_c7OKdhx",
       "isPR": true,
       "isAssigned": false,
-      "title": "fix: resolve nested anchors in Row and root path logic in NavItem",
-      "author": "sammy200-ui",
-      "resourcePath": "/asyncapi/website/pull/5476",
+      "title": "Fix finance memory leak remove resize listener leak and layout shift",
+      "author": "codxbrexx",
+      "resourcePath": "/asyncapi/website/pull/5285",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 9.763936017474798
+      "score": 8.328063073728504
     },
     {
       "id": "I_kwDOBW5R_c60eZiB",
@@ -99,6 +139,17 @@
           "color": "0052cc"
         }
       ],
+      "score": 7.7537138962299865
+    },
+    {
+      "id": "PR_kwDOBW5R_c7e7wq8",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: add missing dark mode styling to SneakPeek documentation tab",
+      "author": "sammy200-ui",
+      "resourcePath": "/asyncapi/website/pull/5474",
+      "repo": "asyncapi/website",
+      "labels": [],
       "score": 7.7537138962299865
     },
     {
@@ -133,39 +184,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 7.179364718731469
-    },
-    {
-      "id": "PR_kwDOE8Qh387CD5_6",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore: resolve broken and empty links across modelina documentation",
-      "author": "Ishita-190",
-      "resourcePath": "/asyncapi/modelina/pull/2432",
-      "repo": "asyncapi/modelina",
-      "labels": [],
-      "score": 7.179364718731469
-    },
-    {
-      "id": "PR_kwDOBW5R_c7dnok8",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: apply maintainer-reviewed text changes ",
-      "author": "sammy200-ui",
-      "resourcePath": "/asyncapi/website/pull/5429",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 6.89219012998221
-    },
-    {
-      "id": "PR_kwDOFLhIt87ZqBG1",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore(docs): asyncapi maintainership program docs update",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/pull/3541",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 6.89219012998221
     }
   ],
   "goodFirstIssues": [
@@ -308,25 +326,6 @@
       ]
     },
     {
-      "id": "I_kwDOBW5R_c7j-AS6",
-      "title": "[BUG] :Broken link: “workflow with unsecured context” points to missing GitHub Actions workflow",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/4970",
-      "repo": "asyncapi/website",
-      "author": "SHUBHANSHU602",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
-        },
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOBW5R_c7jlJXk",
       "title": "[BUG] : Unreadable Text in Roadmap Item Details",
       "isAssigned": false,
@@ -339,21 +338,6 @@
           "name": "bug",
           "color": "ee0701"
         },
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c7hqpc-",
-      "title": "refactor: Remove or use unused exported filterIssues function",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/4889",
-      "repo": "asyncapi/website",
-      "author": "sammy200-ui",
-      "area": "Unknown",
-      "labels": [
         {
           "name": "triaged",
           "color": "0052cc"

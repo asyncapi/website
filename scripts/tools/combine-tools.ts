@@ -16,6 +16,7 @@ import type {
 
 import { logger } from '../helpers/logger';
 import { categoryList } from './categorylist';
+import { compareToolsDeterministic } from './compare-tools';
 import { languagesColor, technologiesColor } from './tags-color';
 import { createToolObject } from './tools-object';
 import schema from './tools-schema.json';
@@ -46,8 +47,29 @@ const options = {
 // from specified list of same.
 const languageList = [...languagesColor];
 const technologyList = [...technologiesColor];
+const initialLanguageCount = languageList.length;
+const initialTechnologyCount = technologyList.length;
 let languageFuse = new Fuse(languageList, options);
 let technologyFuse = new Fuse(technologyList, options);
+
+function sortColorItems(list: LanguageColorItem[], initialCount: number): LanguageColorItem[] {
+  const initial = list.slice(0, initialCount);
+  const discovered = list.slice(initialCount);
+
+  const seenNames = new Set<string>(initial.map((item) => item.name));
+  const uniqueDiscovered: LanguageColorItem[] = [];
+
+  for (const item of discovered) {
+    if (!seenNames.has(item.name)) {
+      seenNames.add(item.name);
+      uniqueDiscovered.push(item);
+    }
+  }
+
+  uniqueDiscovered.sort((a, b) => a.name.localeCompare(b.name, 'en'));
+
+  return [...initial, ...uniqueDiscovered];
+}
 
 /**
  * Enriches a tool object by processing its language and technology filters for display on the website.
@@ -290,7 +312,7 @@ const combineTools = async (
             return 0;
           }
 
-          return tool.title.localeCompare(anotherTool.title);
+          return compareToolsDeterministic(tool, anotherTool);
         }) as FinalAsyncAPITool[];
       }
     }
@@ -300,8 +322,8 @@ const combineTools = async (
       tagsPath,
       JSON.stringify(
         {
-          languages: languageList,
-          technologies: technologyList
+          languages: sortColorItems(languageList, initialLanguageCount),
+          technologies: sortColorItems(technologyList, initialTechnologyCount)
         },
         null,
         2
