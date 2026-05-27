@@ -88,6 +88,7 @@ export default function Pill({
             </div>
             {isCollapsible && (
               <button
+                type='button'
                 className='mr-2'
                 aria-label={isCollapsed ? 'Expand roadmap item' : 'Collapse roadmap item'}
                 onClick={onClickCollapse}
