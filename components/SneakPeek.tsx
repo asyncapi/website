@@ -9,6 +9,15 @@ import Paragraph from './typography/Paragraph';
 
 type SneakPeekTab = 'document' | 'generation' | 'documentation';
 
+const TEAL = 'text-teal-600 dark:text-teal-400';
+const TEAL_LIGHT = 'text-teal-600 dark:text-teal-200';
+const WHITE = 'text-gray-900 dark:text-white';
+const YELLOW = 'text-yellow-600 dark:text-yellow-300';
+const YELLOW_LIGHT = 'text-yellow-600 dark:text-yellow-200';
+const PURPLE = 'text-purple-600 dark:text-purple-400';
+const GREEN = 'text-green-600 dark:text-green-400';
+const ORANGE = 'text-orange-600 dark:text-orange-300';
+
 /**
  * @description This component displays the Sneak Peek section with tabs showing AsyncAPI examples
  */
@@ -16,15 +25,6 @@ export default function SneakPeek() {
   const { t } = useTranslation('landing-page');
   const [activeTab, setActiveTab] = useState<SneakPeekTab>('document');
   const [showPayload, setShowPayload] = useState(true);
-
-  const TEAL = 'text-teal-600 dark:text-teal-400';
-  const TEAL_LIGHT = 'text-teal-600 dark:text-teal-200';
-  const WHITE = 'text-gray-900 dark:text-white';
-  const YELLOW = 'text-yellow-600 dark:text-yellow-300';
-  const YELLOW_LIGHT = 'text-yellow-600 dark:text-yellow-200';
-  const PURPLE = 'text-purple-600 dark:text-purple-400';
-  const GREEN = 'text-green-600 dark:text-green-400';
-  const ORANGE = 'text-orange-600 dark:text-orange-300';
 
   const renderAsyncAPICode = () => (
     <>
@@ -141,9 +141,9 @@ export default function SneakPeek() {
         <div>
           <span className='text-gray-500'>{'//'} Generated TypeScript code</span>
         </div>
+        {/* prettier-ignore */}
         <div>
-          <span className={PURPLE}>export</span> <span className={PURPLE}>{'interface '}</span>
-          <span className={YELLOW_LIGHT}>UserSignedUp</span> {'{'}
+          <span className={PURPLE}>export</span> <span className={PURPLE}>interface</span>{' '}<span className={YELLOW_LIGHT}>UserSignedUp</span> {'{'}
         </div>
         <div>
           &nbsp;&nbsp;<span className={WHITE}>displayName</span>: <span className={TEAL}>string</span>;
@@ -153,17 +153,13 @@ export default function SneakPeek() {
         </div>
         <div>{'}'}</div>
         <div>&nbsp;</div>
+        {/* prettier-ignore */}
         <div>
-          <span className={PURPLE}>export</span> <span className={PURPLE}>{'class '}</span>
-          <span className={YELLOW_LIGHT}>UserSignupService</span> {'{'}
+          <span className={PURPLE}>export</span> <span className={PURPLE}>class</span>{' '}<span className={YELLOW_LIGHT}>UserSignupService</span> {'{'}
         </div>
+        {/* prettier-ignore */}
         <div>
-          &nbsp;&nbsp;<span className={PURPLE}>async</span> <span className={YELLOW}>processSignup</span>(
-          <span className={ORANGE}>message</span>: <span className={YELLOW_LIGHT}>{'UserSignedUp): '}</span>
-          <span className={YELLOW_LIGHT}>Promise</span>
-          {'<'}
-          <span className={TEAL}>void</span>
-          {'>'} {'{'}
+          &nbsp;&nbsp;<span className={PURPLE}>async</span> <span className={YELLOW}>processSignup</span>(<span className={ORANGE}>message</span>: <span className={YELLOW_LIGHT}>UserSignedUp</span>): <span className={YELLOW_LIGHT}>Promise</span>{'<'}<span className={TEAL}>void</span>{'>'} {'{'}
         </div>
         <div>
           &nbsp;&nbsp;&nbsp;&nbsp;<span className='text-gray-500'>{'//'} Your business logic here</span>
@@ -207,6 +203,8 @@ export default function SneakPeek() {
             type='button'
             className='cursor-pointer bg-transparent border-none p-0 text-left w-full'
             onClick={() => setShowPayload((prev) => !prev)}
+            aria-expanded={showPayload}
+            aria-controls='sneakpeek-payload-content'
           >
             <span className='font-medium text-sm sm:text-base text-gray-900 dark:text-white'>Payload</span>{' '}
             <ArrowRight
@@ -215,7 +213,7 @@ export default function SneakPeek() {
             <span className='ml-4 sm:ml-24 font-bold text-green-500 text-sm sm:text-base'>Object</span>
           </button>
           {showPayload && (
-            <div>
+            <div id='sneakpeek-payload-content'>
               <div className='mt-2 rounded bg-gray-100 dark:bg-gray-700 p-3 sm:p-4'>
                 <div className='mb-4 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4'>
                   <div className='text-sm font-medium text-gray-700 dark:text-gray-300'>displayName</div>
@@ -246,14 +244,13 @@ export default function SneakPeek() {
                 <div className='text-gray-500'>{'//'} Example</div>
                 <div>&nbsp;</div>
                 <div className='text-gray-300'>{'{'}</div>
+                {/* prettier-ignore */}
                 <div>
-                  <span className='text-teal-400'>{'\u00A0\u00A0"displayName": '}</span>
-                  <span className='text-white'>&quot;Eve & Chan&quot;</span>
-                  <span className='text-gray-300'>,</span>
+                  <span className='text-teal-400'>&nbsp;&nbsp;&quot;displayName&quot;</span>: <span className='text-white'>&quot;Eve &amp; Chan&quot;</span><span className='text-gray-300'>,</span>
                 </div>
+                {/* prettier-ignore */}
                 <div>
-                  <span className='text-teal-400'>{'\u00A0\u00A0"email": '}</span>
-                  <span className='text-white'>&quot;info@asyncapi.io&quot;</span>
+                  <span className='text-teal-400'>&nbsp;&nbsp;&quot;email&quot;</span>: <span className='text-white'>&quot;info@asyncapi.io&quot;</span>
                 </div>
                 <div className='text-gray-300'>{'}'}</div>
               </div>
