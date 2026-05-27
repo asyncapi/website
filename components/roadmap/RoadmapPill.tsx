@@ -91,6 +91,7 @@ export default function Pill({
                 type='button'
                 className='mr-2'
                 aria-label={isCollapsed ? 'Expand roadmap item' : 'Collapse roadmap item'}
+                aria-expanded={!isCollapsed}
                 onClick={onClickCollapse}
                 data-testid='RoadmapItem-button'
               >
