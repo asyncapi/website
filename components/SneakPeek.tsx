@@ -17,128 +17,118 @@ export default function SneakPeek() {
   const [activeTab, setActiveTab] = useState<SneakPeekTab>('document');
   const [showPayload, setShowPayload] = useState(true);
 
+  const TEAL = 'text-teal-600 dark:text-teal-400';
+  const TEAL_LIGHT = 'text-teal-600 dark:text-teal-200';
+  const WHITE = 'text-gray-900 dark:text-white';
+  const YELLOW = 'text-yellow-600 dark:text-yellow-300';
+  const YELLOW_LIGHT = 'text-yellow-600 dark:text-yellow-200';
+  const PURPLE = 'text-purple-600 dark:text-purple-400';
+  const GREEN = 'text-green-600 dark:text-green-400';
+  const ORANGE = 'text-orange-600 dark:text-orange-300';
+
   const renderAsyncAPICode = () => (
     <>
       <div>
-        <span className='text-teal-600 dark:text-teal-400'>asyncapi:</span>{' '}
-        <span className='text-gray-900 dark:text-white'>3.0.0</span>
+        <span className={TEAL}>asyncapi:</span> <span className={WHITE}>3.0.0</span>
       </div>
       <div>
-        <span className='text-teal-600 dark:text-teal-400'>info:</span>
+        <span className={TEAL}>info:</span>
       </div>
       <div>
-        <span className='text-teal-600 dark:text-teal-400'>&nbsp;&nbsp;title:</span>{' '}
-        <span className='text-gray-900 dark:text-white'>Account Service</span>
+        <span className={TEAL}>&nbsp;&nbsp;title:</span> <span className={WHITE}>Account Service</span>
       </div>
       <div>
-        <span className='text-teal-600 dark:text-teal-400'>&nbsp;&nbsp;version:</span>{' '}
-        <span className='text-gray-900 dark:text-white'>1.0.0</span>
+        <span className={TEAL}>&nbsp;&nbsp;version:</span> <span className={WHITE}>1.0.0</span>
       </div>
       <div>
-        <span className='text-teal-600 dark:text-teal-400'>&nbsp;&nbsp;description:</span>{' '}
-        <span className='text-gray-900 dark:text-white'>
-          This service is in charge of processing user signups :rocket:
-        </span>
+        <span className={TEAL}>&nbsp;&nbsp;description:</span>{' '}
+        <span className={WHITE}>This service is in charge of processing user signups :rocket:</span>
       </div>
       <div>
-        <span className='text-teal-600 dark:text-teal-400'>channels:</span>
+        <span className={TEAL}>channels:</span>
       </div>
       <div>
-        <span className='text-yellow-600 dark:text-yellow-300'>&nbsp;&nbsp;userSignedup:</span>
+        <span className={YELLOW}>&nbsp;&nbsp;userSignedup:</span>
       </div>
       <div>
-        <span className='text-purple-600 dark:text-purple-400'>&nbsp;&nbsp;&nbsp;&nbsp;address:</span>
-        <span className='text-teal-600 dark:text-teal-200'>&apos;user/signedup&apos;</span>
+        <span className={PURPLE}>&nbsp;&nbsp;&nbsp;&nbsp;address:</span>
+        <span className={TEAL_LIGHT}>&apos;user/signedup&apos;</span>
       </div>
       <div>
-        <span className='text-teal-600 dark:text-teal-400'>&nbsp;&nbsp;&nbsp;&nbsp;messages:</span>
+        <span className={TEAL}>&nbsp;&nbsp;&nbsp;&nbsp;messages:</span>
       </div>
       <div>
-        <span className='text-yellow-600 dark:text-yellow-300'>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSignedupMessage:
-        </span>
+        <span className={YELLOW}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSignedupMessage:</span>
       </div>
       <div>
-        <span className='text-teal-600 dark:text-teal-200'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ref:</span>
-        <span className='text-teal-600 dark:text-teal-200'>&apos;#/components/messages/UserSignedUp&apos;</span>
+        <span className={TEAL_LIGHT}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ref:</span>
+        <span className={TEAL_LIGHT}>&apos;#/components/messages/UserSignedUp&apos;</span>
       </div>
       <div>
-        <span className='text-teal-600 dark:text-teal-400'>operations:</span>
+        <span className={TEAL}>operations:</span>
       </div>
       <div>
-        <span className='text-yellow-600 dark:text-yellow-300'>&nbsp;&nbsp;processUserSignedupMessage:</span>
+        <span className={YELLOW}>&nbsp;&nbsp;processUserSignedupMessage:</span>
       </div>
       <div>
-        <span className='text-purple-600 dark:text-purple-400'>&nbsp;&nbsp;&nbsp;&nbsp;action:</span>
-        <span className='text-teal-600 dark:text-teal-200'>&apos;receive&apos;</span>
+        <span className={PURPLE}>&nbsp;&nbsp;&nbsp;&nbsp;action:</span>
+        <span className={TEAL_LIGHT}>&apos;receive&apos;</span>
       </div>
       <div>
-        <span className='text-teal-600 dark:text-teal-400'>&nbsp;&nbsp;&nbsp;&nbsp;channel:</span>
+        <span className={TEAL}>&nbsp;&nbsp;&nbsp;&nbsp;channel:</span>
       </div>
       <div>
-        <span className='text-teal-600 dark:text-teal-200'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ref:</span>
-        <span className='text-teal-600 dark:text-teal-200'> &apos;#/channels/UserSignedup&apos;</span>
+        <span className={TEAL_LIGHT}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ref:</span>
+        <span className={TEAL_LIGHT}> &apos;#/channels/UserSignedup&apos;</span>
       </div>
       <div>
-        <span className='text-teal-600 dark:text-teal-400'>components:</span>
+        <span className={TEAL}>components:</span>
       </div>
       <div>
-        <span className='text-teal-600 dark:text-teal-400'>&nbsp;&nbsp;messages:</span>
+        <span className={TEAL}>&nbsp;&nbsp;messages:</span>
       </div>
       <div>
-        <span className='text-teal-600 dark:text-teal-200'>&nbsp;&nbsp;&nbsp;&nbsp;UserSignedUp:</span>
+        <span className={TEAL_LIGHT}>&nbsp;&nbsp;&nbsp;&nbsp;UserSignedUp:</span>
       </div>
       <div>
-        <span className='text-teal-600 dark:text-teal-400'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;payload:</span>
+        <span className={TEAL}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;payload:</span>
       </div>
       <div>
-        <span className='text-teal-600 dark:text-teal-400'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type:</span>
-        <span className='text-gray-900 dark:text-white'> object</span>
+        <span className={TEAL}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type:</span>
+        <span className={WHITE}> object</span>
       </div>
       <div>
-        <span className='text-teal-600 dark:text-teal-400'>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties:
-        </span>
+        <span className={TEAL}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties:</span>
       </div>
       <div>
-        <span className='text-green-600 dark:text-green-400'>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;displayName:
-        </span>
+        <span className={GREEN}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;displayName:</span>
       </div>
       <div>
-        <span className='text-teal-600 dark:text-teal-400'>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type:
-        </span>
-        <span className='text-gray-900 dark:text-white'> object</span>
+        <span className={TEAL}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type:</span>
+        <span className={WHITE}> object</span>
       </div>
       <div>
-        <span className='text-teal-600 dark:text-teal-400'>
+        <span className={TEAL}>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description:
         </span>
-        <span className='text-gray-900 dark:text-white'> Name of the User</span>
+        <span className={WHITE}> Name of the User</span>
       </div>
       <div>
-        <span className='text-green-600 dark:text-green-400'>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email:
-        </span>
+        <span className={GREEN}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email:</span>
       </div>
       <div>
-        <span className='text-teal-600 dark:text-teal-400'>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type:
-        </span>
-        <span className='text-gray-900 dark:text-white'> string</span>
+        <span className={TEAL}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type:</span>
+        <span className={WHITE}> string</span>
       </div>
       <div>
-        <span className='text-teal-600 dark:text-teal-400'>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;format:
-        </span>
-        <span className='text-gray-900 dark:text-white'> email</span>
+        <span className={TEAL}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;format:</span>
+        <span className={WHITE}> email</span>
       </div>
       <div>
-        <span className='text-teal-600 dark:text-teal-400'>
+        <span className={TEAL}>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description:
         </span>
-        <span className='text-gray-900 dark:text-white'> Email of the User</span>
+        <span className={WHITE}> Email of the User</span>
       </div>
     </>
   );
@@ -152,42 +142,43 @@ export default function SneakPeek() {
           <span className='text-gray-500'>{'//'} Generated TypeScript code</span>
         </div>
         <div>
-          <span className='text-purple-600 dark:text-purple-400'>export</span>{' '}
-          <span className='text-purple-600 dark:text-purple-400'>interface</span>{' '}
-          <span className='text-yellow-600 dark:text-yellow-200'>UserSignedUp</span> {'{'}
+          <span className={PURPLE}>export</span> <span className={PURPLE}>interface</span>{' '}
+          <span className={YELLOW_LIGHT}>UserSignedUp</span> {'{'}
         </div>
         <div>
-          &nbsp;&nbsp;<span className='text-gray-900 dark:text-white'>displayName</span>:{' '}
-          <span className='text-teal-600 dark:text-teal-400'>string</span>;
+          &nbsp;&nbsp;<span className={WHITE}>displayName</span>: <span className={TEAL}>string</span>;
         </div>
         <div>
-          &nbsp;&nbsp;<span className='text-gray-900 dark:text-white'>email</span>:{' '}
-          <span className='text-teal-600 dark:text-teal-400'>string</span>;
+          &nbsp;&nbsp;<span className={WHITE}>email</span>: <span className={TEAL}>string</span>;
         </div>
         <div>{'}'}</div>
         <div>&nbsp;</div>
         <div>
-          <span className='text-purple-600 dark:text-purple-400'>export</span>{' '}
-          <span className='text-purple-600 dark:text-purple-400'>class</span>{' '}
-          <span className='text-yellow-600 dark:text-yellow-200'>UserSignupService</span> {'{'}
+          <span className={PURPLE}>export</span> <span className={PURPLE}>class</span>{' '}
+          <span className={YELLOW_LIGHT}>UserSignupService</span> {'{'}
         </div>
         <div>
-          &nbsp;&nbsp;<span className='text-purple-600 dark:text-purple-400'>async</span>{' '}
-          <span className='text-yellow-600 dark:text-yellow-300'>processSignup</span>(
-          <span className='text-orange-600 dark:text-orange-300'>message</span>:{' '}
-          <span className='text-yellow-600 dark:text-yellow-200'>UserSignedUp</span>):{' '}
-          <span className='text-yellow-600 dark:text-yellow-200'>Promise</span>
+          &nbsp;&nbsp;<span className={PURPLE}>async</span> <span className={YELLOW}>processSignup</span>(
+          <span className={ORANGE}>message</span>: <span className={YELLOW_LIGHT}>UserSignedUp</span>):{' '}
+          <span className={YELLOW_LIGHT}>Promise</span>
           {'<'}
-          <span className='text-teal-600 dark:text-teal-400'>void</span>
+          <span className={TEAL}>void</span>
           {'>'} {'{'}
         </div>
         <div>
           &nbsp;&nbsp;&nbsp;&nbsp;<span className='text-gray-500'>{'//'} Your business logic here</span>
         </div>
         <div>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span className='text-yellow-600 dark:text-yellow-200'>console</span>{'.'}<span className='text-yellow-600 dark:text-yellow-300'>log</span>{'('}<span className='text-teal-600 dark:text-teal-200'>{logStatement}</span>{')'}{';'}
+          {'\u00A0\u00A0\u00A0\u00A0'}
+          <span className={YELLOW_LIGHT}>console</span>
+          {'.'}
+          <span className={YELLOW}>log</span>
+          {'('}
+          <span className={TEAL_LIGHT}>{logStatement}</span>
+          {')'}
+          {';'}
         </div>
-        <div>&nbsp;&nbsp;{'}'}</div>
+        <div>{'\u00A0\u00A0}'}</div>
         <div>{'}'}</div>
       </>
     );
@@ -215,7 +206,7 @@ export default function SneakPeek() {
           <button
             type='button'
             className='cursor-pointer bg-transparent border-none p-0 text-left w-full'
-            onClick={() => setShowPayload(!showPayload)}
+            onClick={() => setShowPayload((prev) => !prev)}
           >
             <span className='font-medium text-sm sm:text-base text-gray-900 dark:text-white'>Payload</span>{' '}
             <ArrowRight
