@@ -8,7 +8,7 @@ tags:
 cover: /img/posts/gsod-2022/SeasonofDocs_Logo.webp
 authors:
   - name: Quetzalli Writes
-    photo: /canela-quetzalli.webp
+    photo: /img/avatars/canela-quetzalli.webp
     link: https://www.linkedin.com/in/quetzalli-writes/
     byline: Our proposal? Update Docs Information Architecture
 excerpt: Check out the Docs project proposal we're submitting to GSoD 2022! You won't want to miss out.

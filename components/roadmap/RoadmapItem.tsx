@@ -4,16 +4,10 @@ import React, { useState } from 'react';
 /* eslint-disable import/no-cycle*/
 import RoadmapList from './RoadmapList';
 import Pill from './RoadmapPill';
+import type { RoadmapItem as RoadmapItemType } from './types';
 
 export interface IRoadmapItemProps {
-  item: {
-    solutions?: any[];
-    implementations?: any[];
-    done?: boolean;
-    url?: string;
-    description?: string;
-    title: string;
-  };
+  item: RoadmapItemType;
   colorClass: string;
   showConnector?: boolean;
   collapsed?: boolean;

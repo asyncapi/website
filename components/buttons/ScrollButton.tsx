@@ -9,13 +9,15 @@ function ScrollButton() {
   const scrollImage = '/img/loaders/scroll.svg';
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 150) {
-        setBackToTopButton(true);
-      } else {
-        setBackToTopButton(false);
-      }
-    });
+    const handleScroll = () => {
+      setBackToTopButton(window.scrollY > 150);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const scrollUp = () => {
@@ -31,6 +33,7 @@ function ScrollButton() {
         <button
           className='rounded-full bg-white shadow-md transition-all duration-300 ease-in-out hover:scale-110 hover:bg-[#8851FB]'
           onClick={scrollUp}
+          aria-label='Scroll to top'
         >
           <img src={scrollImage} alt='scroll to top' />
         </button>
