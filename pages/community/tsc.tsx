@@ -109,30 +109,6 @@ export default function TSC() {
         </div>
       </div>
 
-      {/* Stats Section */}
-      <div className='bg-white dark:bg-dark-background py-12'>
-        <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-          <div className='rounded-3xl py-20 px-8 bg-secondary-200 dark:bg-dark-card'>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-12 text-center text-gray-900 dark:text-white'>
-              <div className='flex flex-col items-center'>
-                <div className='bg-white/40 dark:bg-white/10 rounded-full p-4 mb-4'>
-                  <IconUsersGroup className='w-12 h-12 text-gray-900 dark:text-white' />
-                </div>
-                <div className='text-5xl font-bold mb-2'>10+</div>
-                <div className='text-xl font-medium opacity-90'>Active members</div>
-              </div>
-              <div className='flex flex-col items-center'>
-                <div className='bg-white/40 dark:bg-white/10 rounded-full p-4 mb-4'>
-                  <IconUsersGroup className='w-12 h-12 text-gray-900 dark:text-white' />
-                </div>
-                <div className='text-5xl font-bold mb-2'>100%</div>
-                <div className='text-xl font-medium opacity-90'>Open Source</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Info Cards Section */}
       <div className='bg-white dark:bg-dark-background py-16 sm:py-20'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
