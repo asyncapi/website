@@ -6,7 +6,7 @@ class CaseStudiesPage extends BasePage {
   }
 
   verifyPageLoaded() {
-    this.verifyHeadingExists('Case Studies', 'h1');
+    this.verifyHeadingExists('Case Studies');
   }
 
   verifyHeader() {

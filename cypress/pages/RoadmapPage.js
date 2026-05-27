@@ -6,10 +6,7 @@ class RoadmapPage extends BasePage {
   }
 
   verifyPageLoaded() {
-    this.verifyHeadingExists(
-      'AsyncAPI becomes the #1 API specification for defining and developing APIs.',
-      'h1'
-    );
+    this.verifyHeadingExists('AsyncAPI becomes the #1 API specification for defining and developing APIs.');
   }
 
   verifyHeader() {
