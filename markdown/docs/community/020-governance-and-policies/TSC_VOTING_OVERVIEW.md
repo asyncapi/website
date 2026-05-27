@@ -36,47 +36,43 @@ A TSC member is automatically moved to emeritus only when they have missed **at 
 | #10 | [AsyncAPI GitHub Organization cleanup - some repos should be archived](https://github.com/asyncapi/community/issues/1948) |
 | #11 | [Voting to improve the Bounty program](https://github.com/asyncapi/community/issues/2163) |
 | #12 | [Voting AsyncAPI 2026 budget](https://github.com/asyncapi/community/issues/2221) |
+| #13 | [Cleanup Inactive Working Groups](https://github.com/asyncapi/community/issues/2312) |
 
-| GitHub handle | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11 | #12 | Last participated | Active (3 months) | Last vote closed | In favor | Against | Abstain | Not participated |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [aayushmau5](https://github.com/aayushmau5) | 🔕 | 👍 | 👍 | 🔕 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 2026-01-08 | true | 2026-01-14 | 10 | 0 | 0 | 2 |
-| [AayushSaini101](https://github.com/AayushSaini101) | - | - | - | - | - | - | 👍 | 👍 | 👍 | 🔕 | 👍 | 👍 | 2026-01-07 | true | 2026-01-14 | 5 | 0 | 0 | 1 |
-| [AceTheCreator](https://github.com/AceTheCreator) | 🔕 | 👍 | 👍 | 🔕 | 🔕 | 👍 | 🔕 | 👍 | 🔕 | 👍 | 👍 | 🔕 | 2025-12-03 | true | 2026-01-14 | 6 | 0 | 0 | 6 |
-| [Adi-204](https://github.com/Adi-204) | - | - | - | - | - | - | - | - | - | - | 👍 | 👍 | 2026-01-08 | true | 2026-01-14 | 2 | 0 | 0 | 0 |
-| [akshatnema](https://github.com/akshatnema) | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 🔕 | 🔕 | 👍 | 2026-01-09 | true | 2026-01-14 | 10 | 0 | 0 | 2 |
-| [Amzani](https://github.com/Amzani) | 🔕 | 👍 | 👍 | 🔕 | 👍 | 👍 | 🔕 | 🔕 | 👍 | 👍 | 👍 | 🔕 | 2025-11-28 | true | 2026-01-14 | 7 | 0 | 0 | 5 |
-| [anshgoyalevil](https://github.com/anshgoyalevil) | - | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 🔕 | 👍 | 👍 | 🔕 | 2025-11-29 | true | 2026-01-14 | 9 | 0 | 0 | 2 |
-| [cdavernas](https://github.com/cdavernas) | - | - | - | - | - | - | - | - | 👍 | 👍 | 👍 | 👍 | 2026-01-08 | true | 2026-01-14 | 4 | 0 | 0 | 0 |
-| [dalelane](https://github.com/dalelane) | 🔕 | 🔕 | 👀 | 👍 | 👎 | 👀 | 🔕 | 👀 | 👍 | 👍 | 👀 | 👀 | 2026-01-08 | true | 2026-01-14 | 3 | 1 | 5 | 3 |
-| [dan-r](https://github.com/dan-r) | 🔕 | 🔕 | 🔕 | 👍 | 👍 | 🔕 | 👍 | 👍 | 👍 | 👍 | 🔕 | 🔕 | 2025-07-04 | false | 2026-01-14 | 6 | 0 | 0 | 6 |
-| [danielkocot](https://github.com/danielkocot) | - | - | - | - | - | - | - | - | - | 👍 | 👍 | 👍 | 2026-01-12 | true | 2026-01-14 | 3 | 0 | 0 | 0 |
-| [derberg](https://github.com/derberg) | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 2026-01-07 | true | 2026-01-14 | 12 | 0 | 0 | 0 |
-| [Florence-Njeri](https://github.com/Florence-Njeri) | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 🔕 | 👍 | 👍 | 🔕 | 👍 | 👍 | 2026-01-08 | true | 2026-01-14 | 10 | 0 | 0 | 2 |
-| [fmvilas](https://github.com/fmvilas) | 👍 | 👍 | 👍 | 🔕 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 2026-01-07 | true | 2026-01-14 | 11 | 0 | 0 | 1 |
-| [harikrishnan83](https://github.com/harikrishnan83) | - | - | - | - | - | - | 🔕 | 🔕 | 👍 | 👍 | 👍 | 👍 | 2026-01-12 | true | 2026-01-14 | 4 | 0 | 0 | 2 |
-| [hguerrero](https://github.com/hguerrero) | - | - | - | - | - | - | - | - | - | 👍 | 👍 | 👍 | 2026-01-12 | true | 2026-01-14 | 3 | 0 | 0 | 0 |
-| [imabp](https://github.com/imabp) | 👍 | 🔕 | 👍 | 👍 | 👍 | 🔕 | 🔕 | 👍 | 🔕 | 👍 | 👍 | 👍 | 2026-01-14 | true | 2026-01-14 | 8 | 0 | 0 | 4 |
-| [ivangsa](https://github.com/ivangsa) | 👍 | 🔕 | 🔕 | 👍 | 👎 | 🔕 | 🔕 | 👀 | 👍 | 👍 | 👀 | 👀 | 2026-01-09 | true | 2026-01-14 | 4 | 1 | 3 | 4 |
-| [jbbianchi](https://github.com/jbbianchi) | - | - | - | - | - | - | - | - | 👍 | 👀 | 👍 | 👍 | 2026-01-07 | true | 2026-01-14 | 3 | 0 | 1 | 0 |
-| [jonaslagoni](https://github.com/jonaslagoni) | 👍 | 👍 | 👍 | 👍 | 👍 | 🔕 | 🔕 | 👍 | 👍 | 👍 | 👍 | 👍 | 2026-01-13 | true | 2026-01-14 | 10 | 0 | 0 | 2 |
-| [kennethaasan](https://github.com/kennethaasan) | 👍 | 👍 | 👍 | 👍 | 🔕 | 🔕 | 🔕 | 👍 | 👍 | 🔕 | 👍 | 👍 | 2026-01-08 | true | 2026-01-14 | 8 | 0 | 0 | 4 |
-| [KhudaDad414](https://github.com/KhudaDad414) | 👍 | 👍 | 👍 | 🔕 | 👍 | 🔕 | 🔕 | 🔕 | 🔕 | 👍 | 🔕 | 🔕 | 2025-07-04 | false | 2026-01-14 | 5 | 0 | 0 | 7 |
-| [magicmatatjahu](https://github.com/magicmatatjahu) | 👍 | 👍 | 👍 | 🔕 | 👀 | 🔕 | 👍 | 👍 | 👍 | 👍 | 🔕 | 👍 | 2026-01-08 | true | 2026-01-14 | 8 | 0 | 1 | 3 |
-| [Mayaleeeee](https://github.com/Mayaleeeee) | 👍 | 👍 | 👍 | 👍 | 👍 | 🔕 | 👍 | 👍 | 👍 | 🔕 | 👍 | 👍 | 2026-01-09 | true | 2026-01-14 | 10 | 0 | 0 | 2 |
-| [nashjain](https://github.com/nashjain) | - | - | - | - | - | - | - | - | - | 👍 | 🔕 | 👍 | 2026-01-07 | true | 2026-01-14 | 2 | 0 | 0 | 1 |
-| [Pakisan](https://github.com/Pakisan) | 👍 | 👍 | 🔕 | 👍 | 👍 | 👍 | 👍 | 🔕 | 👍 | 👍 | 👍 | 🔕 | 2025-12-03 | true | 2026-01-14 | 9 | 0 | 0 | 3 |
-| [princerajpoot20](https://github.com/princerajpoot20) | 👍 | 👍 | 👍 | 🔕 | 👀 | 🔕 | 👍 | 👀 | 👍 | 👍 | 👍 | 👍 | 2026-01-11 | true | 2026-01-14 | 8 | 0 | 2 | 2 |
-| [rcoppen](https://github.com/rcoppen) | 🔕 | 🔕 | 🔕 | 👍 | 👀 | 👀 | 🔕 | 👀 | 👍 | 👍 | 👀 | 👀 | 2026-01-08 | true | 2026-01-14 | 3 | 0 | 5 | 4 |
-| [Ruchip16](https://github.com/Ruchip16) | - | - | - | - | - | - | - | - | - | - | 🔕 | 🔕 | Member has not participated in all previous voting processes. | Member has not participated in all previous voting processes. | 2026-01-14 | 0 | 0 | 0 | 2 |
-| [sambhavgupta0705](https://github.com/sambhavgupta0705) | 👍 | 👍 | 🔕 | 👍 | 👍 | 👍 | 👍 | 🔕 | 👍 | 👍 | 🔕 | 🔕 | 2025-07-21 | false | 2026-01-14 | 8 | 0 | 0 | 4 |
-| [Samridhi-98](https://github.com/Samridhi-98) | 👍 | 🔕 | 🔕 | 👍 | 👍 | 👍 | 🔕 | 🔕 | 👍 | 👍 | 👍 | 👍 | 2026-01-14 | true | 2026-01-14 | 8 | 0 | 0 | 4 |
-| [Shurtu-gal](https://github.com/Shurtu-gal) | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 2026-01-07 | true | 2026-01-14 | 12 | 0 | 0 | 0 |
-| [Souvikns](https://github.com/Souvikns) | 👍 | 🔕 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 🔕 | 🔕 | 👍 | 2026-01-08 | true | 2026-01-14 | 9 | 0 | 0 | 3 |
-| [Tenischev](https://github.com/Tenischev) | 🔕 | 🔕 | 🔕 | 👍 | 👀 | 👍 | 👍 | 🔕 | 🔕 | 🔕 | 👀 | 🔕 | 2025-12-03 | true | 2026-01-14 | 3 | 0 | 2 | 7 |
-| [TenzDelek](https://github.com/TenzDelek) | - | - | - | - | - | - | - | - | - | - | - | - | Member has not participated in all previous voting processes. | Member has not participated in all previous voting processes. | 2026-01-14 | 0 | 0 | 0 | 0 |
-| [theschles](https://github.com/theschles) | 👍 | 🔕 | 🔕 | 👍 | 👎 | 🔕 | 🔕 | 🔕 | 👀 | 👀 | 🔕 | 🔕 | 2025-07-09 | false | 2026-01-14 | 2 | 1 | 2 | 7 |
-| [thulieblack](https://github.com/thulieblack) | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👀 | 👍 | 👍 | 👍 | 👍 | 2026-01-13 | true | 2026-01-14 | 11 | 0 | 1 | 0 |
-| [TRohit20](https://github.com/TRohit20) | - | - | - | - | - | - | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 2026-01-14 | true | 2026-01-14 | 6 | 0 | 0 | 0 |
-| [vishvamsinh28](https://github.com/vishvamsinh28) | - | - | - | - | - | - | - | - | 👍 | 👍 | 👍 | 👍 | 2026-01-07 | true | 2026-01-14 | 4 | 0 | 0 | 0 |
-| [VisualBean](https://github.com/VisualBean) | 👍 | 👍 | 👍 | 👀 | 👍 | 🔕 | 👍 | 👀 | 🔕 | 👍 | 🔕 | 🔕 | 2025-06-30 | false | 2026-01-14 | 6 | 0 | 2 | 4 |
-| [whitlockjc](https://github.com/whitlockjc) | 🔕 | 🔕 | 👍 | 🔕 | 👍 | 👍 | 👍 | 👍 | 👍 | 🔕 | 👍 | 👍 | 2026-01-08 | true | 2026-01-14 | 8 | 0 | 0 | 4 |
+| GitHub handle | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11 | #12 | #13 | Last participated | Active (3 months) | Last vote closed | In favor | Against | Abstain | Not participated |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| [aayushmau5](https://github.com/aayushmau5) | 🔕 | 👍 | 👍 | 🔕 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 2026-03-25 | true | 2026-04-01 | 11 | 0 | 0 | 2 |
+| [AayushSaini101](https://github.com/AayushSaini101) | - | - | - | - | - | - | 👍 | 👍 | 👍 | 🔕 | 👍 | 👍 | 👍 | 2026-03-26 | true | 2026-04-01 | 6 | 0 | 0 | 1 |
+| [AceTheCreator](https://github.com/AceTheCreator) | 🔕 | 👍 | 👍 | 🔕 | 🔕 | 👍 | 🔕 | 👍 | 🔕 | 👍 | 👍 | 🔕 | 🔕 | 2025-12-03 | false | 2026-04-01 | 6 | 0 | 0 | 7 |
+| [Adi-204](https://github.com/Adi-204) | - | - | - | - | - | - | - | - | - | - | 👍 | 👍 | 👍 | 2026-03-25 | true | 2026-04-01 | 3 | 0 | 0 | 0 |
+| [akshatnema](https://github.com/akshatnema) | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 🔕 | 🔕 | 👍 | 🔕 | 2026-01-09 | true | 2026-04-01 | 10 | 0 | 0 | 3 |
+| [Amzani](https://github.com/Amzani) | 🔕 | 👍 | 👍 | 🔕 | 👍 | 👍 | 🔕 | 🔕 | 👍 | 👍 | 👍 | 🔕 | 👍 | 2026-03-30 | true | 2026-04-01 | 8 | 0 | 0 | 5 |
+| [anshgoyalevil](https://github.com/anshgoyalevil) | - | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 🔕 | 👍 | 👍 | 🔕 | 🔕 | 2025-11-29 | false | 2026-04-01 | 9 | 0 | 0 | 3 |
+| [cdavernas](https://github.com/cdavernas) | - | - | - | - | - | - | - | - | 👍 | 👍 | 👍 | 👍 | 👍 | 2026-03-24 | true | 2026-04-01 | 5 | 0 | 0 | 0 |
+| [dalelane](https://github.com/dalelane) | 🔕 | 🔕 | 👀 | 👍 | 👎 | 👀 | 🔕 | 👀 | 👍 | 👍 | 👀 | 👀 | 👍 | 2026-03-25 | true | 2026-04-01 | 4 | 1 | 5 | 3 |
+| [danielkocot](https://github.com/danielkocot) | - | - | - | - | - | - | - | - | - | 👍 | 👍 | 👍 | 🔕 | 2026-01-12 | true | 2026-04-01 | 3 | 0 | 0 | 1 |
+| [derberg](https://github.com/derberg) | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 2026-03-30 | true | 2026-04-01 | 13 | 0 | 0 | 0 |
+| [Florence-Njeri](https://github.com/Florence-Njeri) | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 🔕 | 👍 | 👍 | 🔕 | 👍 | 👍 | 🔕 | 2026-01-08 | true | 2026-04-01 | 10 | 0 | 0 | 3 |
+| [fmvilas](https://github.com/fmvilas) | 👍 | 👍 | 👍 | 🔕 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 2026-03-24 | true | 2026-04-01 | 12 | 0 | 0 | 1 |
+| [harikrishnan83](https://github.com/harikrishnan83) | - | - | - | - | - | - | 🔕 | 🔕 | 👍 | 👍 | 👍 | 👍 | 👍 | 2026-03-26 | true | 2026-04-01 | 5 | 0 | 0 | 2 |
+| [hguerrero](https://github.com/hguerrero) | - | - | - | - | - | - | - | - | - | 👍 | 👍 | 👍 | 🔕 | 2026-01-12 | true | 2026-04-01 | 3 | 0 | 0 | 1 |
+| [imabp](https://github.com/imabp) | 👍 | 🔕 | 👍 | 👍 | 👍 | 🔕 | 🔕 | 👍 | 🔕 | 👍 | 👍 | 👍 | 👍 | 2026-03-26 | true | 2026-04-01 | 9 | 0 | 0 | 4 |
+| [ivangsa](https://github.com/ivangsa) | 👍 | 🔕 | 🔕 | 👍 | 👎 | 🔕 | 🔕 | 👀 | 👍 | 👍 | 👀 | 👀 | 👍 | 2026-03-24 | true | 2026-04-01 | 5 | 1 | 3 | 4 |
+| [jbbianchi](https://github.com/jbbianchi) | - | - | - | - | - | - | - | - | 👍 | 👀 | 👍 | 👍 | 👍 | 2026-03-25 | true | 2026-04-01 | 4 | 0 | 1 | 0 |
+| [jonaslagoni](https://github.com/jonaslagoni) | 👍 | 👍 | 👍 | 👍 | 👍 | 🔕 | 🔕 | 👍 | 👍 | 👍 | 👍 | 👍 | 🔕 | 2026-01-13 | true | 2026-04-01 | 10 | 0 | 0 | 3 |
+| [kennethaasan](https://github.com/kennethaasan) | 👍 | 👍 | 👍 | 👍 | 🔕 | 🔕 | 🔕 | 👍 | 👍 | 🔕 | 👍 | 👍 | 🔕 | 2026-01-08 | true | 2026-04-01 | 8 | 0 | 0 | 5 |
+| [magicmatatjahu](https://github.com/magicmatatjahu) | 👍 | 👍 | 👍 | 🔕 | 👀 | 🔕 | 👍 | 👍 | 👍 | 👍 | 🔕 | 👍 | 🔕 | 2026-01-08 | true | 2026-04-01 | 8 | 0 | 1 | 4 |
+| [Mayaleeeee](https://github.com/Mayaleeeee) | 👍 | 👍 | 👍 | 👍 | 👍 | 🔕 | 👍 | 👍 | 👍 | 🔕 | 👍 | 👍 | 👍 | 2026-03-31 | true | 2026-04-01 | 11 | 0 | 0 | 2 |
+| [nashjain](https://github.com/nashjain) | - | - | - | - | - | - | - | - | - | 👍 | 🔕 | 👍 | 🔕 | 2026-01-07 | true | 2026-04-01 | 2 | 0 | 0 | 2 |
+| [Pakisan](https://github.com/Pakisan) | 👍 | 👍 | 🔕 | 👍 | 👍 | 👍 | 👍 | 🔕 | 👍 | 👍 | 👍 | 🔕 | 👍 | 2026-03-25 | true | 2026-04-01 | 10 | 0 | 0 | 3 |
+| [princerajpoot20](https://github.com/princerajpoot20) | 👍 | 👍 | 👍 | 🔕 | 👀 | 🔕 | 👍 | 👀 | 👍 | 👍 | 👍 | 👍 | 👍 | 2026-03-26 | true | 2026-04-01 | 9 | 0 | 2 | 2 |
+| [rcoppen](https://github.com/rcoppen) | 🔕 | 🔕 | 🔕 | 👍 | 👀 | 👀 | 🔕 | 👀 | 👍 | 👍 | 👀 | 👀 | 👍 | 2026-03-24 | true | 2026-04-01 | 4 | 0 | 5 | 4 |
+| [Samridhi-98](https://github.com/Samridhi-98) | 👍 | 🔕 | 🔕 | 👍 | 👍 | 👍 | 🔕 | 🔕 | 👍 | 👍 | 👍 | 👍 | 👍 | 2026-03-25 | true | 2026-04-01 | 9 | 0 | 0 | 4 |
+| [Shurtu-gal](https://github.com/Shurtu-gal) | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 2026-03-25 | true | 2026-04-01 | 13 | 0 | 0 | 0 |
+| [Souvikns](https://github.com/Souvikns) | 👍 | 🔕 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 🔕 | 🔕 | 👍 | 👍 | 2026-03-25 | true | 2026-04-01 | 10 | 0 | 0 | 3 |
+| [Tenischev](https://github.com/Tenischev) | 🔕 | 🔕 | 🔕 | 👍 | 👀 | 👍 | 👍 | 🔕 | 🔕 | 🔕 | 👀 | 🔕 | 👍 | 2026-03-30 | true | 2026-04-01 | 4 | 0 | 2 | 7 |
+| [TenzDelek](https://github.com/TenzDelek) | - | - | - | - | - | - | - | - | - | - | - | - | 👍 | 2026-03-25 | true | 2026-04-01 | 1 | 0 | 0 | 0 |
+| [theschles](https://github.com/theschles) | 👍 | 🔕 | 🔕 | 👍 | 👎 | 🔕 | 🔕 | 🔕 | 👀 | 👀 | 🔕 | 🔕 | 👍 | 2026-03-29 | true | 2026-04-01 | 3 | 1 | 2 | 7 |
+| [thulieblack](https://github.com/thulieblack) | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👀 | 👍 | 👍 | 👍 | 👍 | 👍 | 2026-03-26 | true | 2026-04-01 | 12 | 0 | 1 | 0 |
+| [TRohit20](https://github.com/TRohit20) | - | - | - | - | - | - | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 🔕 | 2026-01-14 | true | 2026-04-01 | 6 | 0 | 0 | 1 |
+| [vishvamsinh28](https://github.com/vishvamsinh28) | - | - | - | - | - | - | - | - | 👍 | 👍 | 👍 | 👍 | 👍 | 2026-03-25 | true | 2026-04-01 | 5 | 0 | 0 | 0 |
+| [whitlockjc](https://github.com/whitlockjc) | 🔕 | 🔕 | 👍 | 🔕 | 👍 | 👍 | 👍 | 👍 | 👍 | 🔕 | 👍 | 👍 | 👍 | 2026-03-25 | true | 2026-04-01 | 9 | 0 | 0 | 4 |

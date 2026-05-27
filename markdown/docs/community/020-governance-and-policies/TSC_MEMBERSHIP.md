@@ -64,7 +64,7 @@ Possible topics:
 * Archive inactive projects without regular maintenance.
 * Programs organization that affect the whole organization, not a single repository:
   * Ambassador program
-  * Bounty program
+  * Microgrant program
 * Budget approval to allocate sponsorship funds for different initiatives.
 * Conflicts resolution - TSC resolves tech-related conflicts, while a dedicated committee handles personal conflicts related to the Code of Conduct.
 
