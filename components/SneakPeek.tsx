@@ -20,112 +20,125 @@ export default function SneakPeek() {
   const renderAsyncAPICode = () => (
     <>
       <div>
-        <span className='text-teal-400'>asyncapi:</span> <span className='text-white'>3.0.0</span>
+        <span className='text-teal-600 dark:text-teal-400'>asyncapi:</span>{' '}
+        <span className='text-gray-900 dark:text-white'>3.0.0</span>
       </div>
       <div>
-        <span className='text-teal-400'>info:</span>
+        <span className='text-teal-600 dark:text-teal-400'>info:</span>
       </div>
       <div>
-        <span className='text-teal-400'>&nbsp;&nbsp;title:</span> <span className='text-white'>Account Service</span>
+        <span className='text-teal-600 dark:text-teal-400'>&nbsp;&nbsp;title:</span>{' '}
+        <span className='text-gray-900 dark:text-white'>Account Service</span>
       </div>
       <div>
-        <span className='text-teal-400'>&nbsp;&nbsp;version:</span> <span className='text-white'>1.0.0</span>
+        <span className='text-teal-600 dark:text-teal-400'>&nbsp;&nbsp;version:</span>{' '}
+        <span className='text-gray-900 dark:text-white'>1.0.0</span>
       </div>
       <div>
-        <span className='text-teal-400'>&nbsp;&nbsp;description:</span>{' '}
-        <span className='text-white'>This service is in charge of processing user signups :rocket:</span>
+        <span className='text-teal-600 dark:text-teal-400'>&nbsp;&nbsp;description:</span>{' '}
+        <span className='text-gray-900 dark:text-white'>
+          This service is in charge of processing user signups :rocket:
+        </span>
       </div>
       <div>
-        <span className='text-teal-400'>channels:</span>
+        <span className='text-teal-600 dark:text-teal-400'>channels:</span>
       </div>
       <div>
-        <span className='text-yellow-300'>&nbsp;&nbsp;userSignedup:</span>
+        <span className='text-yellow-600 dark:text-yellow-300'>&nbsp;&nbsp;userSignedup:</span>
       </div>
       <div>
-        <span className='text-purple-400'>&nbsp;&nbsp;&nbsp;&nbsp;address:</span>
-        <span className='text-teal-200'>&apos;user/signedup&apos;</span>
+        <span className='text-purple-600 dark:text-purple-400'>&nbsp;&nbsp;&nbsp;&nbsp;address:</span>
+        <span className='text-teal-600 dark:text-teal-200'>&apos;user/signedup&apos;</span>
       </div>
       <div>
-        <span className='text-teal-400'>&nbsp;&nbsp;&nbsp;&nbsp;messages:</span>
+        <span className='text-teal-600 dark:text-teal-400'>&nbsp;&nbsp;&nbsp;&nbsp;messages:</span>
       </div>
       <div>
-        <span className='text-yellow-300'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSignedupMessage:</span>
+        <span className='text-yellow-600 dark:text-yellow-300'>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSignedupMessage:
+        </span>
       </div>
       <div>
-        <span className='text-teal-200'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ref:</span>
-        <span className='text-teal-200'>&apos;#/components/messages/UserSignedUp&apos;</span>
+        <span className='text-teal-600 dark:text-teal-200'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ref:</span>
+        <span className='text-teal-600 dark:text-teal-200'>&apos;#/components/messages/UserSignedUp&apos;</span>
       </div>
       <div>
-        <span className='text-teal-400'>operations:</span>
+        <span className='text-teal-600 dark:text-teal-400'>operations:</span>
       </div>
       <div>
-        <span className='text-yellow-300'>&nbsp;&nbsp;processUserSignedupMessage:</span>
+        <span className='text-yellow-600 dark:text-yellow-300'>&nbsp;&nbsp;processUserSignedupMessage:</span>
       </div>
       <div>
-        <span className='text-purple-400'>&nbsp;&nbsp;&nbsp;&nbsp;action:</span>
-        <span className='text-teal-200'>&apos;receive&apos;</span>
+        <span className='text-purple-600 dark:text-purple-400'>&nbsp;&nbsp;&nbsp;&nbsp;action:</span>
+        <span className='text-teal-600 dark:text-teal-200'>&apos;receive&apos;</span>
       </div>
       <div>
-        <span className='text-teal-400'>&nbsp;&nbsp;&nbsp;&nbsp;channel:</span>
+        <span className='text-teal-600 dark:text-teal-400'>&nbsp;&nbsp;&nbsp;&nbsp;channel:</span>
       </div>
       <div>
-        <span className='text-teal-200'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ref:</span>
-        <span className='text-teal-200'> &apos;#/channels/UserSignedup&apos;</span>
+        <span className='text-teal-600 dark:text-teal-200'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ref:</span>
+        <span className='text-teal-600 dark:text-teal-200'> &apos;#/channels/UserSignedup&apos;</span>
       </div>
       <div>
-        <span className='text-teal-400'>components:</span>
+        <span className='text-teal-600 dark:text-teal-400'>components:</span>
       </div>
       <div>
-        <span className='text-teal-400'>&nbsp;&nbsp;messages:</span>
+        <span className='text-teal-600 dark:text-teal-400'>&nbsp;&nbsp;messages:</span>
       </div>
       <div>
-        <span className='text-teal-200'>&nbsp;&nbsp;&nbsp;&nbsp;UserSignedUp:</span>
+        <span className='text-teal-600 dark:text-teal-200'>&nbsp;&nbsp;&nbsp;&nbsp;UserSignedUp:</span>
       </div>
       <div>
-        <span className='text-teal-400'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;payload:</span>
+        <span className='text-teal-600 dark:text-teal-400'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;payload:</span>
       </div>
       <div>
-        <span className='text-teal-400'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type:</span>
-        <span className='text-white'> object</span>
+        <span className='text-teal-600 dark:text-teal-400'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type:</span>
+        <span className='text-gray-900 dark:text-white'> object</span>
       </div>
       <div>
-        <span className='text-teal-400'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties:</span>
+        <span className='text-teal-600 dark:text-teal-400'>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties:
+        </span>
       </div>
       <div>
-        <span className='text-green-400'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;displayName:</span>
+        <span className='text-green-600 dark:text-green-400'>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;displayName:
+        </span>
       </div>
       <div>
-        <span className='text-teal-400'>
+        <span className='text-teal-600 dark:text-teal-400'>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type:
         </span>
-        <span className='text-white'> object</span>
+        <span className='text-gray-900 dark:text-white'> object</span>
       </div>
       <div>
-        <span className='text-teal-400'>
+        <span className='text-teal-600 dark:text-teal-400'>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description:
         </span>
-        <span className='text-white'> Name of the User</span>
+        <span className='text-gray-900 dark:text-white'> Name of the User</span>
       </div>
       <div>
-        <span className='text-green-400'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email:</span>
+        <span className='text-green-600 dark:text-green-400'>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email:
+        </span>
       </div>
       <div>
-        <span className='text-teal-400'>
+        <span className='text-teal-600 dark:text-teal-400'>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type:
         </span>
-        <span className='text-white'> string</span>
+        <span className='text-gray-900 dark:text-white'> string</span>
       </div>
       <div>
-        <span className='text-teal-400'>
+        <span className='text-teal-600 dark:text-teal-400'>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;format:
         </span>
-        <span className='text-white'> email</span>
+        <span className='text-gray-900 dark:text-white'> email</span>
       </div>
       <div>
-        <span className='text-teal-400'>
+        <span className='text-teal-600 dark:text-teal-400'>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description:
         </span>
-        <span className='text-white'> Email of the User</span>
+        <span className='text-gray-900 dark:text-white'> Email of the User</span>
       </div>
     </>
   );
@@ -139,38 +152,44 @@ export default function SneakPeek() {
           <span className='text-gray-500'>{'//'} Generated TypeScript code</span>
         </div>
         <div>
-          <span className='text-purple-400'>export</span> <span className='text-purple-400'>interface</span>{' '}
-          <span className='text-yellow-200'>UserSignedUp</span> {'{'}
+          <span className='text-purple-600 dark:text-purple-400'>export</span>{' '}
+          <span className='text-purple-600 dark:text-purple-400'>interface</span>{' '}
+          <span className='text-yellow-600 dark:text-yellow-200'>UserSignedUp</span> {'{'}
         </div>
         <div>
-          &nbsp;&nbsp;<span className='text-white'>displayName</span>: <span className='text-teal-400'>string</span>;
+          &nbsp;&nbsp;<span className='text-gray-900 dark:text-white'>displayName</span>:{' '}
+          <span className='text-teal-600 dark:text-teal-400'>string</span>;
         </div>
         <div>
-          &nbsp;&nbsp;<span className='text-white'>email</span>: <span className='text-teal-400'>string</span>;
+          &nbsp;&nbsp;<span className='text-gray-900 dark:text-white'>email</span>:{' '}
+          <span className='text-teal-600 dark:text-teal-400'>string</span>;
         </div>
         <div>{'}'}</div>
         <div>&nbsp;</div>
         <div>
-          <span className='text-purple-400'>export</span> <span className='text-purple-400'>class</span>{' '}
-          <span className='text-yellow-200'>UserSignupService</span> {'{'}
+          <span className='text-purple-600 dark:text-purple-400'>export</span>{' '}
+          <span className='text-purple-600 dark:text-purple-400'>class</span>{' '}
+          <span className='text-yellow-600 dark:text-yellow-200'>UserSignupService</span> {'{'}
         </div>
         <div>
-          &nbsp;&nbsp;<span className='text-purple-400'>async</span>{' '}
-          <span className='text-yellow-300'>processSignup</span>(<span className='text-orange-300'>message</span>:{' '}
-          <span className='text-yellow-200'>UserSignedUp</span>): <span className='text-yellow-200'>Promise</span>
+          &nbsp;&nbsp;<span className='text-purple-600 dark:text-purple-400'>async</span>{' '}
+          <span className='text-yellow-600 dark:text-yellow-300'>processSignup</span>(
+          <span className='text-orange-600 dark:text-orange-300'>message</span>:{' '}
+          <span className='text-yellow-600 dark:text-yellow-200'>UserSignedUp</span>):{' '}
+          <span className='text-yellow-600 dark:text-yellow-200'>Promise</span>
           {'<'}
-          <span className='text-teal-400'>void</span>
+          <span className='text-teal-600 dark:text-teal-400'>void</span>
           {'>'} {'{'}
         </div>
         <div>
           &nbsp;&nbsp;&nbsp;&nbsp;<span className='text-gray-500'>{'//'} Your business logic here</span>
         </div>
         <div>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span className='text-yellow-200'>console</span>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className='text-yellow-600 dark:text-yellow-200'>console</span>
           {'.'}
-          <span className='text-yellow-300'>log</span>
+          <span className='text-yellow-600 dark:text-yellow-300'>log</span>
           {'('}
-          <span className='text-teal-200'>{logStatement}</span>
+          <span className='text-teal-600 dark:text-teal-200'>{logStatement}</span>
           {')'}
           {';'}
         </div>
@@ -283,15 +302,15 @@ export default function SneakPeek() {
         {/* Tabs Container */}
         <div className='mt-8 sm:mt-12'>
           {/* Tabs Bar */}
-          <div className='flex flex-col sm:flex-row justify-center bg-dark-background dark:bg-dark-card rounded-t-lg overflow-hidden'>
+          <div className='flex flex-col sm:flex-row justify-center bg-gray-100 dark:bg-dark-card rounded-t-lg overflow-hidden'>
             {tabs.map((tab, index) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex-1 px-3 py-3 sm:px-4 sm:py-4 text-xs sm:text-sm font-medium transition-all duration-200 ${index === tabs.length - 1 ? '' : 'border-b sm:border-b-0 sm:border-r'} border-gray-300 dark:border-gray-300 ${
+                className={`flex-1 px-3 py-3 sm:px-4 sm:py-4 text-xs sm:text-sm font-medium transition-all duration-200 ${index === tabs.length - 1 ? '' : 'border-b sm:border-b-0 sm:border-r'} border-gray-300 dark:border-gray-700 ${
                   activeTab === tab.id
                     ? 'bg-white dark:bg-[#1B1B2F] text-gray-900 dark:text-white'
-                    : 'bg-[#2D1F3F] dark:bg-[#14111D] text-gray-300 dark:text-gray-400 hover:bg-[#3D2F4F] dark:hover:bg-[#1F1A2F]'
+                    : 'bg-gray-100 dark:bg-[#14111D] text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-[#1F1A2F]'
                 }`}
               >
                 {tab.label}
@@ -304,7 +323,7 @@ export default function SneakPeek() {
             {tabs.map((tab) => (
               <div key={tab.id} className={activeTab === tab.id ? 'block' : 'hidden'}>
                 <div
-                  className={`rounded-b-lg p-3 sm:p-4 lg:p-6 overflow-auto shadow-lg min-h-[300px] sm:min-h-[350px] lg:min-h-[400px] max-h-[500px] sm:max-h-[600px] ${tab.id === 'documentation' ? 'bg-gray-50 dark:bg-[#1B1B2F]' : 'bg-[#1B1130] dark:bg-[#1B1B2F]'}`}
+                  className={`rounded-b-lg p-3 sm:p-4 lg:p-6 overflow-auto shadow-lg min-h-[300px] sm:min-h-[350px] lg:min-h-[400px] max-h-[500px] sm:max-h-[600px] ${tab.id === 'documentation' ? 'bg-white dark:bg-[#1B1B2F] border border-gray-200 dark:border-none' : 'bg-white dark:bg-[#1B1B2F] border border-gray-200 dark:border-none'}`}
                 >
                   <div
                     className={
