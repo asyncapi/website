@@ -212,6 +212,63 @@ describe('Tools Object', () => {
     expect(result.Others.toolsList).toHaveLength(0);
   });
 
+  it('produces a deterministic toolsList order regardless of axios.get resolution order', async () => {
+    const toolZ = createToolFileContent({
+      title: 'Zeta Tool',
+      repoUrl: 'https://github.com/example/zeta',
+      categories: ['Category1' as unknown as Category]
+    });
+    const toolA = createToolFileContent({
+      title: 'Alpha Tool',
+      repoUrl: 'https://github.com/example/alpha',
+      categories: ['Category1' as unknown as Category]
+    });
+    const toolM = createToolFileContent({
+      title: 'Middle Tool',
+      repoUrl: 'https://github.com/example/middle',
+      categories: ['Category1' as unknown as Category]
+    });
+
+    const mockData = createMockData([
+      { name: '.asyncapi-tool-z', repoName: 'zeta' },
+      { name: '.asyncapi-tool-a', repoName: 'alpha' },
+      { name: '.asyncapi-tool-m', repoName: 'middle' }
+    ]);
+
+    const responsesByUrl: Record<string, unknown> = {
+      [`https://raw.githubusercontent.com/asyncapi/zeta/${mockData[0].url.split('=')[1]}/.asyncapi-tool`]: toolZ,
+      [`https://raw.githubusercontent.com/asyncapi/alpha/${mockData[1].url.split('=')[1]}/.asyncapi-tool`]: toolA,
+      [`https://raw.githubusercontent.com/asyncapi/middle/${mockData[2].url.split('=')[1]}/.asyncapi-tool`]: toolM
+    };
+
+    const runWithDelays = async (delays: Record<string, number>) => {
+      axiosMock.get.mockReset();
+      axiosMock.get.mockImplementation((url: string) => {
+        const data = responsesByUrl[url];
+
+        return new Promise((resolve) => {
+          setTimeout(() => resolve({ data }), delays[url] ?? 0);
+        });
+      });
+
+      return convertTools(mockData);
+    };
+
+    const resultRun1 = await runWithDelays({
+      [Object.keys(responsesByUrl)[0]]: 5,
+      [Object.keys(responsesByUrl)[1]]: 1,
+      [Object.keys(responsesByUrl)[2]]: 3
+    });
+    const resultRun2 = await runWithDelays({
+      [Object.keys(responsesByUrl)[0]]: 1,
+      [Object.keys(responsesByUrl)[1]]: 5,
+      [Object.keys(responsesByUrl)[2]]: 3
+    });
+
+    expect(resultRun1.Category1.toolsList.map((t) => t.title)).toEqual(['Alpha Tool', 'Middle Tool', 'Zeta Tool']);
+    expect(JSON.stringify(resultRun1)).toBe(JSON.stringify(resultRun2));
+  });
+
   it('should not add the same tool object to the same category twice when a tool lists the same category multiple times', async () => {
     // Create a tool with duplicate categories
     const toolContent = createToolFileContent({
