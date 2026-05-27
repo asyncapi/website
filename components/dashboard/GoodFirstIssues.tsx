@@ -6,33 +6,8 @@ import GoodFirstIssuesTip from './GoodFirstIssuesTip';
 import Filters from './table/Filters';
 import Table from './table/Table';
 
-interface FiltersType {
-  selectedRepo: string;
-  selectedArea: string;
-}
-
 interface GoodFirstIssuesProps {
   issues: Issue[];
-}
-
-/**
- * @description Filter issues based on selected repo and area.
- *
- * @param {Issue[]} issues - The list of issues to filter.
- * @param {FiltersType} filters - The filters to apply.
- * @returns {Issue[]} The filtered list of issues.
- */
-export function filterIssues(issues: Issue[], filters: FiltersType): Issue[] {
-  let result = issues;
-
-  if (filters.selectedRepo !== 'Repository - All') {
-    result = result.filter((issue) => issue.repo === filters.selectedRepo);
-  }
-  if (filters.selectedArea !== 'Area - All') {
-    result = result.filter((issue) => issue.area === filters.selectedArea);
-  }
-
-  return result;
 }
 
 /**

@@ -262,7 +262,7 @@ function QuestionCard() {
         data-testid='Question-card-img'
         src='/img/avatars/questionmark.webp'
         alt='Question Mark'
-        className='mx-auto size-20 rounded-full xl:size-28'
+        className='mx-auto size-20 rounded-full xl:size-28 dark:invert'
       />
       <div className='my-4 text-gray-900 dark:text-gray-300'>
         Want to become a member? Follow this

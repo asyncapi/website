@@ -2335,6 +2335,27 @@
       },
       {
         "title": "AsyncAPI Parser",
+        "description": "The AsyncAPI Parser validates AsyncAPI documents according to dedicated schemas.",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/parser-go"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "Go/Golang",
+              "color": "bg-[#8ECFDF]",
+              "borderColor": "border-[#00AFD9]"
+            }
+          ],
+          "technology": [],
+          "categories": [
+            "validator"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "AsyncAPI Parser",
         "description": "Use this package to parse and validate AsyncAPI documents —either YAML or JSON— in your Node.js or browser application. Updated bundle for the browser is always attached to the GitHub Release.",
         "links": {
           "repoUrl": "https://github.com/asyncapi/parser-js"
@@ -2354,27 +2375,6 @@
               "borderColor": "border-[#84CE24]"
             }
           ],
-          "categories": [
-            "validator"
-          ],
-          "hasCommercial": false
-        }
-      },
-      {
-        "title": "AsyncAPI Parser",
-        "description": "The AsyncAPI Parser validates AsyncAPI documents according to dedicated schemas.",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/parser-go"
-        },
-        "filters": {
-          "language": [
-            {
-              "name": "Go/Golang",
-              "color": "bg-[#8ECFDF]",
-              "borderColor": "border-[#00AFD9]"
-            }
-          ],
-          "technology": [],
           "categories": [
             "validator"
           ],

@@ -5,12 +5,12 @@ import i18nextConfig from '@/next-i18next.config.cjs';
 
 import { SearchButton } from '../AlgoliaSearch';
 import DarkModeToggle from '../DarkModeToggle';
+import { buckets } from '../data/buckets';
 import IconLanguage from '../icons/Language';
 import NavItemDropdown from '../icons/NavItemDropdown';
 import SearchIcon from '../icons/SearchIcon';
 import AsyncAPILogo from '../logos/AsyncAPILogo';
 import communityItems from './communityItems';
-import learningItems from './learningItems';
 import MenuBlocks from './MenuBlocks';
 import otherItems from './otherItems';
 import toolingItems from './toolingItems';
@@ -120,7 +120,7 @@ export default function MobileNavMenu({
             </h4>
             {open === 'learning' && (
               <div className='animate-in fade-in slide-in-from-top-2 duration-200'>
-                <MenuBlocks items={learningItems} />
+                <MenuBlocks items={buckets} />
               </div>
             )}
           </div>

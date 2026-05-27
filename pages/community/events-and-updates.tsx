@@ -161,7 +161,7 @@ export default function EventsAndUpdates() {
                 </Paragraph>
                 <ul className='mt-8 flex flex-wrap justify-center gap-3 lg:justify-start'>
                   <li>
-                    <GoogleCalendarButton href='https://calendar.google.com/calendar/u/3?cid=Y19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t' />
+                    <GoogleCalendarButton href='https://calendar.google.com/calendar/u/0?cid=Y19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t' />
                   </li>
                   <li>
                     <SubscribeButton href='/community/meetings' />

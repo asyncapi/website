@@ -30,6 +30,21 @@ const MoonIcon = ({ className = 'w-5 h-5' }) => (
 );
 
 /**
+ * Applies the selected theme to the website.
+ */
+function applyTheme(isDark: boolean) {
+  document.documentElement.classList.toggle('dark', isDark);
+
+  if (isDark) {
+    document.documentElement.dataset.theme = 'dark';
+
+    return;
+  }
+
+  delete document.documentElement.dataset.theme;
+}
+
+/**
  * A modern toggle button component that switches between light and dark mode.
  * Remembers the selected mode using localStorage with smooth animations.
  */
@@ -44,14 +59,14 @@ export default function DarkModeToggle() {
 
     const shouldUseDark = storedTheme === 'dark';
 
-    document.documentElement.classList.toggle('dark', shouldUseDark);
+    applyTheme(shouldUseDark);
     setIsDark(shouldUseDark);
   }, []);
 
   const toggleDarkMode = () => {
     const newTheme = !isDark;
 
-    document.documentElement.classList.toggle('dark', newTheme);
+    applyTheme(newTheme);
     localStorage.setItem('theme', newTheme ? 'dark' : 'light');
     setIsDark(newTheme);
   };

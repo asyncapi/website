@@ -70,7 +70,7 @@ export default function HomePage() {
           <Paragraph className='mx-auto mb-6 underline text-sky-400 max-w-prose'>{t('events.meetingTitle')}</Paragraph>
           <div className='flex flex-col items-center justify-center gap-2 md:flex-row'>
             <GoogleCalendarButton
-              href='https://calendar.google.com/calendar/u/3?cid=Y19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t'
+              href='https://calendar.google.com/calendar/u/0?cid=Y19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t'
               className='mt-2 md:ml-2 md:mt-0'
             />
             <ICSFileButton

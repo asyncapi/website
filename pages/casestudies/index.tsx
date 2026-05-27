@@ -295,7 +295,7 @@ export default function CaseStudies() {
               />
               <Button
                 text='Join Our Community'
-                href='https://asyncapi.slack.com/join/shared_invite/zt-3clk6rmc0-Cujl2fChHYnHDUwFKRlQCw'
+                href='https://asyncapi.com/slack-invite'
                 className='w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white/10'
               />
             </div>
