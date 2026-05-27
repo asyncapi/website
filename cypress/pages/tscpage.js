@@ -1,4 +1,6 @@
-class TSCPage {
+import BasePage from './BasePage';
+
+class TSCPage extends BasePage {
   hoverCommunityLink() {
     cy.get('[data-testid="NavItem-Link"]').contains('Community').trigger('mouseover');
   }
@@ -21,6 +23,7 @@ class TSCPage {
   getFailureMessage() {
     return cy.get('[data-testid="Paragraph-test"]').contains(`Subscription failed, please let us know about it by submitting a bug`);
   }
+
   verifyTSCMemberSocialLinks(name, links) {
     cy.contains('[data-testid="UserInfo-name"]', name)
       .closest('[data-testid="UserInfo-list"]')
@@ -33,4 +36,3 @@ class TSCPage {
 }
 
 export default TSCPage;
-
