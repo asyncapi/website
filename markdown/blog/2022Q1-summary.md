@@ -60,7 +60,7 @@ Because of the community's growth and the growing number of topic-specific meeti
 
 Huge thanks to [Krishna Kumar](https://github.com/Krishks369) and [Shreyansh Jain](https://github.com/sudoshreyansh), who helped research the implementation. :heart:
 
-If you want to learn more about becoming a meeting host, or something else related to meetings, get familiar with our [dedicated meetings FAQ](https://github.com/asyncapi/community/blob/master/MEETINGS_ORGANIZATION.md).
+If you want to learn more about becoming a meeting host, or something else related to meetings, get familiar with our [dedicated meetings FAQ](https://github.com/asyncapi/community/blob/master/docs/060-meetings-and-communication/MEETINGS_ORGANIZATION.md).
 
 Oh, and I almost forgot, look at this. :point_down: :star: 
 All [info about AsyncAPI-related meetings](https://www.asyncapi.com/community/meetings) is in one beautiful place! :heart:

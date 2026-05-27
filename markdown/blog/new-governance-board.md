@@ -31,7 +31,7 @@ Our Ambassadors have delivered high-quality educational content, promotional art
 
 We will replace the single Executive Director with a three-person Governance Board this year. We will expand to five members in 2026. This change significantly improves our resilience against the [bus factor](https://en.wikipedia.org/wiki/Bus_factor).
 
-For details, see the updated [Charter](https://github.com/asyncapi/community/blob/master/CHARTER.md) and [Governance Guide](https://github.com/asyncapi/community/blob/master/GOVERNANCE.md).
+For details, see the updated [Charter](https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/CHARTER.md) and [Governance Guide](https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/GOVERNANCE.md).
 
 ## Election Timeline
 

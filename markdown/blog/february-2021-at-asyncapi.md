@@ -36,7 +36,7 @@ We had some significant traffic in the area of code generation templates in Febr
 [Emiliano Zublena](https://github.com/emilianozublena) joined the AsyncAPI community big time by starting with donating [a new template for PHP](https://github.com/asyncapi/asyncapi-php-template). It is not yet released under **@asyncapi** scope on npm, but you can already play with it by using the AsyncAPI Generator with a direct GitHub link like:
 
 ```bash
-ag https://bit.ly/asyncapi https://github.com/asyncapi/asyncapi-php-template -o output`
+ag https://asyncapi.com/s/asyncapiv2 https://github.com/asyncapi/asyncapi-php-template -o output`
 ```
 
 ### Go
@@ -44,7 +44,7 @@ ag https://bit.ly/asyncapi https://github.com/asyncapi/asyncapi-php-template -o 
 We merged the initial pull request to the [Go template](https://github.com/asyncapi/go-template). The initial contributor was not able to continue working on the template, but the foundation was there. [Emiliano Zublena](https://github.com/emilianozublena) and [Takumi Sueda](https://github.com/puhitaku) will try to help to drive forward template development. This template is not yet released as we need to get some feedback from the community first. Give it a try with:
 
 ```bash
-ag https://bit.ly/asyncapi https://github.com/asyncapi/go-template -o output
+ag https://asyncapi.com/s/asyncapiv2 https://github.com/asyncapi/go-template -o output
 ```
 Let us know what you think in the GitHub issues section. Thank you, [Jacob Poston](https://github.com/jposton96a) for your initial hard work on the template!
 
@@ -154,7 +154,7 @@ We are very noisy :sweat_smile:
   EOF
 
   # 3, Generate Markdown file that includes the frontmatter
-  ag https://bit.ly/asyncapi @asyncapi/markdown-template -o output -p frontMatter=ssg.yml
+  ag https://asyncapi.com/s/asyncapiv2 @asyncapi/markdown-template -o output -p frontMatter=ssg.yml
 
   # 4. Check out the output
   cat output/asyncapi.md

@@ -23,11 +23,6 @@ li>p {
   display: inline;
 }
 
-.atss {
-  /* AddThis plugin */
-  z-index: 10 !important;
-}
-
 abbr[title] {
   text-decoration: none;
 }
@@ -148,10 +143,6 @@ abbr[title] {
   border-radius: 100%;
   border: solid 3px #f3f3f4;
   transition: 0.2s;
-}
-
-.orbit > div {
-  cursor: pointer;
 }
 
 .orbit > div > img {

@@ -15,6 +15,8 @@ const automatedToolsPath = resolve(currentDirPath, '../config', 'tools-automated
 const manualToolsPath = resolve(currentDirPath, '../config', 'tools-manual.json');
 const toolsPath = resolve(currentDirPath, '../config', 'tools.json');
 const tagsPath = resolve(currentDirPath, '../config', 'all-tags.json');
+const toolsIgnorePath = resolve(currentDirPath, '../config', 'tools-ignore.json');
+const toolsIgnoredOutputPath = resolve(currentDirPath, '../config', 'tools-ignored.json');
 
 
 /**
@@ -41,8 +43,15 @@ async function start() {
   await rssFeed('blog', 'AsyncAPI Initiative Blog RSS Feed', 'AsyncAPI Initiative Blog', 'rss.xml');
   await buildCaseStudiesList('config/casestudies', resolve(currentDirPath, '../config', 'case-studies.json'));
 
-  // Build tools manually to reflect changes in tools-manual.json
-  await buildToolsManual(automatedToolsPath, manualToolsPath, toolsPath, tagsPath);
+  // Build tools manually to reflect changes in tools-manual.json (with tools-ignore)
+  await buildToolsManual(
+    automatedToolsPath,
+    manualToolsPath,
+    toolsPath,
+    tagsPath,
+    toolsIgnorePath,
+    toolsIgnoredOutputPath
+  );
   
   await buildUsecasesList();
   const financeDir = resolve('.', 'config', 'finance');
@@ -76,4 +85,7 @@ async function start() {
 
 export { start };
 
-start();
+/* istanbul ignore next */
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  start();
+}

@@ -1,6 +1,9 @@
-class RoadmapPage {
+import BasePage from './BasePage';
+
+class RoadmapPage extends BasePage {
   verifyPageLoaded() {
-    cy.contains('h1', 'AsyncAPI becomes the #1 API specification for defining and developing APIs.').should('be.visible');
+    this.verifyHeadingExists('AsyncAPI becomes the #1 API specification for defining and developing APIs.');
   }
 }
+
 export default RoadmapPage;

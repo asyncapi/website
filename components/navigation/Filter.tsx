@@ -2,16 +2,15 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
 import Select from '../form/Select';
-import { applyFilterList, onFilterApply } from '../helpers/applyFilter';
+import { applyFilterList, type DataObject, type Filter as FilterQuery, onFilterApply } from '../helpers/applyFilter';
 
 interface Check {
   name: string;
-  [key: string]: any;
 }
 
-interface FilterProps {
-  data: any[];
-  onFilter: (data: any[]) => void;
+interface FilterProps<T extends DataObject = DataObject> {
+  data: T[];
+  onFilter: (data: T[], query: FilterQuery) => void;
   checks: Check[];
   className?: string;
 }
@@ -20,23 +19,28 @@ interface FilterProps {
  * @description Component representing a filter for data.
  * @param {Object} props - The props for the Filter component.
  * @param {Object[]} props.data - The data to be filtered.
- * @param {(data: Object[]) => void} props.onFilter - The callback function to handle filtering.
+ * @param {(data: Object[], query: FilterQuery) => void} props.onFilter - The callback function to handle filtering.
  * @param {Object[]} props.checks - The list of filter options.
  * @param {string} [props.className] - Additional CSS classes for styling.
  */
-export default function Filter({ data, onFilter, checks, className }: FilterProps) {
+export default function Filter<T extends DataObject = DataObject>({
+  data,
+  onFilter,
+  checks,
+  className
+}: FilterProps<T>) {
   const route = useRouter();
-  const [filters, setFilters] = useState<Record<string, any>>({});
-  const [routeQuery, setQuery] = useState<Record<string, any>>({});
+  const [filters, setFilters] = useState<Record<string, { value: string; text: string }[]>>({});
+  const [routeQuery, setQuery] = useState<Record<string, string>>({});
 
   useEffect(() => {
-    setQuery(route.query);
+    setQuery(route.query as Record<string, string>);
     applyFilterList(checks, data, setFilters);
-  }, [route]);
+  }, [route, checks, data]);
 
   useEffect(() => {
     onFilterApply(data, onFilter, routeQuery);
-  }, [routeQuery]);
+  }, [routeQuery, data, onFilter]);
 
   return checks.map((check) => {
     let selected = '';
