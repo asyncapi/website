@@ -1,4 +1,6 @@
-class TSCPage {
+import BasePage from './BasePage';
+
+class TSCPage extends BasePage {
   hoverCommunityLink() {
     cy.get('[data-testid="NavItem-Link"]').contains('Community').trigger('mouseover');
   }

@@ -1,4 +1,6 @@
-class SlackPage {
+import BasePage from './BasePage';
+
+class SlackPage extends BasePage {
   visitSlack() {
     cy.visit(
       'https://asyncapi.slack.com/join/shared_invite/zt-3clk6rmc0-Cujl2fChHYnHDUwFKRlQCw#/shared-invite/email',

@@ -56,11 +56,11 @@ describe('TSC Page', () => {
         }
       },
       {
-        name: 'Khuda Dad Nomani',
+        name: 'Akshat Nema',
         links: {
-          GitHub: 'https://www.github.com/KhudaDad414',
-          Twitter: 'https://www.twitter.com/KhudaDadNomani',
-          Linkedin: 'https://www.linkedin.com/in/khudadadnomani'
+          GitHub: 'https://www.github.com/akshatnema',
+          Twitter: 'https://www.twitter.com/AksNema',
+          Linkedin: 'https://www.linkedin.com/in/akshat-nema'
         }
       },
       {

@@ -1,6 +1,8 @@
-class AmbassadorsPage {
+import BasePage from './BasePage';
+
+class AmbassadorsPage extends BasePage {
   visit() {
-    cy.visit('/community/ambassadors');
+    super.visit('/community/ambassadors');
   }
 
   verifyKeySectionsAndLinks() {

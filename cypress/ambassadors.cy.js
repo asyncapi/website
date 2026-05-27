@@ -19,11 +19,10 @@ describe('Ambassadors Page', () => {
   it('verifies social links for selected Ambassadors', () => {
     const ambassadors = [
       {
-        name: 'Quetzalli Writes',
+        name: 'Daniel Kocot',
         links: {
-          github: 'https://www.github.com/quetzalliwrites',
-          twitter: 'https://www.twitter.com/QuetzalliWrites',
-          linkedin: 'https://www.linkedin.com/in/quetzalli-writes'
+          github: 'https://www.github.com/danielkocot',
+          linkedin: 'https://www.linkedin.com/in/danielkocot'
         }
       },
       {
