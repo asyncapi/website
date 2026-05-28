@@ -86,17 +86,12 @@
       "borderColor": "border-[#787CB5]"
     },
     {
-      "name": "csharp",
+      "name": ".NET",
       "color": "bg-[#57f281]",
       "borderColor": "border-[#37f069]"
     },
     {
       "name": "Scala",
-      "color": "bg-[#57f281]",
-      "borderColor": "border-[#37f069]"
-    },
-    {
-      "name": ".NET",
       "color": "bg-[#57f281]",
       "borderColor": "border-[#37f069]"
     }
@@ -203,87 +198,7 @@
       "borderColor": "border-[#333333]"
     },
     {
-      "name": "Socket.IO",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "Liquid",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "Django",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "ASP.NET Core",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "TypeScript",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "FastAPI",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "Kotlin",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "Gradle",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
       "name": "amqp",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "Spring Cloud Streams",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "JHipster JDL",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "Groovy",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "Markdown",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "Shell",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "WebComponents",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "Babel",
-      "color": "bg-[#61d0f2]",
-      "borderColor": "border-[#40ccf7]"
-    },
-    {
-      "name": "Storybook",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
@@ -298,32 +213,32 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "JavaScript",
+      "name": "Babel",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "VSCode",
+      "name": "Django",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "VSCode",
+      "name": "FastAPI",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "SmartPaste",
+      "name": "Gradle",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "SmartPaste",
+      "name": "Groovy",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "JetBrains",
+      "name": "HTML",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
@@ -333,22 +248,32 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "HTML",
+      "name": "JavaScript",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "HTML",
+      "name": "JetBrains",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "HTML",
+      "name": "JHipster JDL",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
     {
-      "name": "Watermill",
+      "name": "Kotlin",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "Liquid",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "Markdown",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
@@ -359,6 +284,51 @@
     },
     {
       "name": "RabbitMQ",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "Shell",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "SmartPaste",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "Socket.IO",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "Spring Cloud Streams",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "Storybook",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "TypeScript",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "VSCode",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "Watermill",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "WebComponents",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     }

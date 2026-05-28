@@ -11,7 +11,6 @@ authors:
     photo: /img/avatars/lpgornicki.webp
     link: https://www.linkedin.com/in/lukasz-gornicki-a621914/
 excerpt: 'AsyncAPI 3.1 is now released with a new ROS 2 binding.'
-featured: true
 ---
 
 The new version of the AsyncAPI specification - 3.1.0 - is now available. It looks like we are out of the long break after v3 release.

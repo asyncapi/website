@@ -1,4 +1,5 @@
 import BasePage from './BasePage';
+
 class ToolsPage extends BasePage {
   visitToolsPage() {
     super.visit('/tools');

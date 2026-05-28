@@ -28,8 +28,6 @@ export default function ToolsDashboard() {
   // filter parameters extracted from the context
   const { isPaid, isAsyncAPIOwner, languages, technologies, categories } = useContext(ToolFilterContext);
   const [searchName, setSearchName] = useState<string>(''); // state variable used to get the search name
-  // state variable used to check whether any tool is available according to the needs of the user.
-  const [checkToolsList, setCheckToolsList] = useState<boolean>(true);
 
   // useEffect function to enable the close Modal feature when clicked outside of the modal
   useEffect(() => {
@@ -44,7 +42,7 @@ export default function ToolsDashboard() {
     return () => {
       document.removeEventListener('mousedown', checkIfClickOutside);
     };
-  });
+  }, [openFilter]);
 
   // useEffect function to enable the close Category dropdown Modal feature when clicked outside of the modal
   useEffect(() => {
@@ -59,7 +57,7 @@ export default function ToolsDashboard() {
     return () => {
       document.removeEventListener('mousedown', checkIfClickOutside);
     };
-  });
+  }, [openCategory]);
 
   // useMemo function to filter the tools according to the filters applied by the user
   const toolsList = useMemo(() => {
@@ -80,9 +78,6 @@ export default function ToolsDashboard() {
       // if no category is selected, then all tools are selected for further check on filters
       tempToolsList = JSON.parse(JSON.stringify(ToolsData));
     }
-
-    // checkToolsList is initially made false to check whether any tools are present according to the filters.
-    setCheckToolsList(false);
 
     // Each tool selected is then traversed to check against each filter variable (only if the filter is applied),
     // whether they match with the filter applied or not.
@@ -134,10 +129,6 @@ export default function ToolsDashboard() {
 
         return isLanguageTool && isTechnologyTool && isSearchTool && isAsyncAPITool && isPaidTool;
       });
-
-      if (tempToolsList[category].toolsList.length) {
-        setCheckToolsList(true);
-      }
     });
 
     Object.keys(tempToolsList).map((category) => {
@@ -148,6 +139,11 @@ export default function ToolsDashboard() {
 
     return tempToolsList;
   }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, searchName]);
+
+  // Derive checkToolsList from toolsList - no state updates in useMemo
+  const checkToolsList = useMemo(() => {
+    return Object.keys(toolsList).some((category) => toolsList[category].toolsList.length > 0);
+  }, [toolsList]);
 
   // useEffect to scroll to the opened category when url has category as element id
   useEffect(() => {
@@ -163,7 +159,7 @@ export default function ToolsDashboard() {
         document.documentElement.style.scrollPaddingTop = '0';
       }
     }
-  }, []);
+  }, [toolsList]);
   // Function to update the list of tools according to the current filters applied
   const clearFilters = () => {
     setOpenFilter(false);
@@ -222,7 +218,11 @@ export default function ToolsDashboard() {
               onChange={(e) => setSearchName(e.target.value)}
             />
             {searchName && (
-              <button className='my-auto h-fit rounded-full p-2 hover:bg-gray-100' onClick={() => setSearchName('')}>
+              <button
+                className='my-auto h-fit rounded-full p-2 hover:bg-gray-100'
+                onClick={() => setSearchName('')}
+                aria-label='Clear search'
+              >
                 <img src='/img/illustrations/icons/close-icon.svg' alt='close' width='10' />
               </button>
             )}
