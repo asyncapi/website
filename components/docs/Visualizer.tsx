@@ -44,7 +44,7 @@ function Visualizer({ version }: VisualizerProps) {
   }
 
   return (
-    <div className='overflow-hidden'>
+    <div className='schema-visualizer overflow-hidden'>
       <Schyma
         title='AsyncAPI Specification'
         description="The AsyncAPI Specification defines a set of fields that can be used in an

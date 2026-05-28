@@ -95,12 +95,12 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
 
   if (router.pathname.includes('-explorer')) {
     return (
-      <div>
+      <div className='asyncapi-schema-explorer min-h-screen bg-white text-gray-900 dark:bg-dark-background dark:text-dark-text'>
         <div className='absolute left-2 top-24 z-10'>
           <Button
-            className='inline-flex h-full justify-center rounded-sm border border-gray-300 bg-white py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-900'
+            className='inline-flex h-full justify-center rounded-sm border border-gray-300 bg-white py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:border-border dark:bg-dark-card dark:text-dark-text dark:hover:bg-muted dark:focus:ring-secondary-500'
             text='Menu'
-            icon={<IconMenuCenter className='size-4 fill-gray-700' />}
+            icon={<IconMenuCenter className='size-4 fill-gray-700 dark:fill-dark-text' />}
             onClick={() => {
               if (explorerDocMenu) {
                 setExplorerDocMenu(false);
@@ -111,7 +111,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
           />
           {explorerDocMenu && <div className='explorer-menu-wrapper mt-2'>{sidebar}</div>}
         </div>
-        <article className=''>{children}</article>
+        <article>{children}</article>
       </div>
     );
   }

@@ -425,8 +425,130 @@ abbr[title] {
   padding: 10px;
 }
 
+.dark .explorer-menu-wrapper > div > div {
+  border-color: #1e293b;
+  background: #121825;
+}
+
 .explorer-menu-wrapper > div > div > div > button {
   margin-top: 0px;
+}
+
+.schema-visualizer {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.dark .schema-visualizer {
+  background: #121825;
+  color: #b8b9c0;
+}
+
+.dark .schema-visualizer .body-wrapper {
+  background: #121825;
+}
+
+.dark .schema-visualizer .panel,
+.dark .schema-visualizer .panel-toggle-btn,
+.dark .schema-visualizer .custom-node,
+.dark .schema-visualizer .react-flow__node-default,
+.dark .schema-visualizer .react-flow__node-input,
+.dark .schema-visualizer .react-flow__node-output,
+.dark .schema-visualizer .react-flow__node-group {
+  background: #131e35;
+  border-color: #1e293b;
+  color: #b8b9c0;
+}
+
+.dark .schema-visualizer .panel-content > h1,
+.dark .schema-visualizer .custom-node-label {
+  color: #ffffff;
+}
+
+.dark .schema-visualizer .panel_table-wrapper > table > thead,
+.dark .schema-visualizer .panel_table-wrapper_tbody_active,
+.dark .schema-visualizer .examples-tab-active,
+.dark .schema-visualizer .examples-tab-active:hover {
+  background: #1e293b;
+  border-color: #1e293b;
+  color: #ffffff;
+}
+
+.dark .schema-visualizer .panel_table-wrapper_tbody {
+  border-color: #1e293b;
+}
+
+.dark .schema-visualizer .main-tabs,
+.dark .schema-visualizer .example-header {
+  background: #0f172a;
+  border-color: #1e293b;
+}
+
+.dark .schema-visualizer .main-tab-active,
+.dark .schema-visualizer .examples-tab {
+  background: #131e35;
+  border-color: #1e293b;
+  color: #b8b9c0;
+}
+
+.dark .schema-visualizer .main-tab,
+.dark .schema-visualizer .required-sentence {
+  color: #94a3b8;
+}
+
+.dark .schema-visualizer .main-tab-active {
+  color: #47bcee;
+}
+
+.dark .schema-visualizer .react-flow__controls-button,
+.dark .schema-visualizer .react-flow__attribution,
+.dark .schema-visualizer .composition-symbol {
+  background: #131e35;
+  color: #b8b9c0;
+}
+
+.dark .schema-visualizer .react-flow__controls-button {
+  border-color: #1e293b;
+}
+
+.dark .schema-visualizer .examples-code-container {
+  background: #0a0515;
+}
+
+.dark .schema-visualizer .examples-code-container pre,
+.dark .schema-visualizer .examples-code-container code {
+  background: #0a0515 !important;
+  color: #d1d5db !important;
+  font-family: 'Fira Code VF', 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-shadow: none !important;
+}
+
+.dark .schema-visualizer .examples-code-container .token {
+  background: transparent !important;
+  text-shadow: none !important;
+}
+
+.dark .schema-visualizer .examples-code-container .token.property {
+  color: #47bcee !important;
+}
+
+.dark .schema-visualizer .examples-code-container .token.string {
+  color: #ffffff !important;
+}
+
+.dark .schema-visualizer .examples-code-container .token.punctuation {
+  color: #d1d5db !important;
+}
+
+.dark .schema-visualizer .examples-code-container .token.operator,
+.dark .schema-visualizer .examples-code-container .token.number,
+.dark .schema-visualizer .examples-code-container .token.boolean,
+.dark .schema-visualizer .examples-code-container .token.null {
+  color: #80d9ff !important;
+}
+
+.dark .schema-visualizer .rules-block {
+  color: #ffd166;
 }
 
 select {
