@@ -11,7 +11,7 @@ You can describe how your server is secured with the `security` property where y
 
 Here is an example of adding security to your server, demonstrating that different servers can employ various security mechanisms:
 ```yml
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 info:
   title: Streetlights Kafka API
   version: 1.0.0

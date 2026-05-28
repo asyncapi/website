@@ -189,7 +189,7 @@ NODE_ENV=development DEBUG=* node ./lib/apps/api/server.js
 # Validate endpoint
 curl -X POST http://localhost:3000/v1/validate \
   -H "Content-Type: application/json" \
-  -d '{"asyncapi": "asyncapi: 3.0.0\ninfo:\n  title: Test\n  version: 1.0.0\nchannels: {}"}'
+  -d '{"asyncapi": "asyncapi: 3.1.0\ninfo:\n  title: Test\n  version: 1.0.0\nchannels: {}"}'
 
 # Parse endpoint
 curl -X POST http://localhost:3000/v1/parse \

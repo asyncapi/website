@@ -3,7 +3,7 @@ title: Adding messages
 weight: 140
 ---
 
-In an AsyncAPI document, adding [messages](/docs/reference/specification/v3.0.0#messageObject) mainly means setting up channels and operations. This is key for explaining how data moves between your applications. However, sometimes you might just want to use the AsyncAPI document to describe the messages themselves, without anything else.
+In an AsyncAPI document, adding [messages](/docs/reference/specification/v3.1.0#messageObject) mainly means setting up channels and operations. This is key for explaining how data moves between your applications. However, sometimes you might just want to use the AsyncAPI document to describe the messages themselves, without anything else.
 
 ## Add messages
 
@@ -72,7 +72,7 @@ components:
                  description: Id of the comment that was liked
 ```
 
-You can reuse messages using the [Reference Object](/docs/reference/specification/v3.0.0#referenceObject). For example:
+You can reuse messages using the [Reference Object](/docs/reference/specification/v3.1.0#referenceObject). For example:
 
 ```yml
     messages:
@@ -82,7 +82,7 @@ You can reuse messages using the [Reference Object](/docs/reference/specificatio
 
 Here's the complete AsyncAPI document with channels reusing the same message:
 ```yml
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 info:
   title: Example API
   version: '1.0.0'
