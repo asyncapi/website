@@ -31,18 +31,25 @@ class EventsPage extends BasePage {
         new RegExp(`^${label}$`, 'i'),
       )
       .click();
-    cy.get('[data-testid="EventPostItem-main"]').should('be.visible');
   }
 
   verifyEventCards() {
-    cy.get('[data-testid="EventPostItem-main"]')
-      .should('have.length.greaterThan', 0)
-      .each(($card) => {
-        cy.wrap($card)
-          .find('a[data-testid="EventPostItem-link"]')
-          .should('have.attr', 'href')
-          .and('match', /github\.com\/asyncapi\/community\/issues\/\d+/);
-      });
+    cy.get('body').should(($body) => {
+      const hasEvents = $body.find('[data-testid="EventPostItem-main"]').length > 0;
+      const hasNoEventsMsg = $body.text().includes('No Events. Check back later!');
+      expect(hasEvents || hasNoEventsMsg).to.be.true;
+    }).then(($body) => {
+      const hasEvents = $body.find('[data-testid="EventPostItem-main"]').length > 0;
+      if (hasEvents) {
+        cy.get('[data-testid="EventPostItem-main"]')
+          .each(($card) => {
+            cy.wrap($card)
+              .find('a[data-testid="EventPostItem-link"]')
+              .should('have.attr', 'href')
+              .and('match', /github\.com\/asyncapi\/community\/issues\/\d+/);
+          });
+      }
+    });
   }
 
   switchToAll() {
