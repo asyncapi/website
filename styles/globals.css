@@ -511,6 +511,14 @@ abbr[title] {
   border-color: #1e293b;
 }
 
+.dark .schema-visualizer .react-flow__controls-button svg {
+  fill: #b8b9c0;
+}
+
+.dark .schema-visualizer .react-flow__controls-button:hover {
+  background: #1e293b;
+}
+
 .dark .schema-visualizer .examples-code-container {
   background: #0a0515;
 }
