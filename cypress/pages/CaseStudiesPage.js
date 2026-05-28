@@ -1,6 +1,9 @@
-class CaseStudiesPage {
+import BasePage from './BasePage';
+
+class CaseStudiesPage extends BasePage {
   verifyPageLoaded() {
-    cy.contains('h1', 'Case Studies').should('be.visible');
+    this.verifyHeadingExists('Case Studies');
   }
 }
+
 export default CaseStudiesPage;

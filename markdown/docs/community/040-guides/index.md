@@ -21,3 +21,4 @@ This section contains step-by-step instructions and best practices for working o
 - Deployment and maintenance procedures for community resources
 - Integration guidelines for third-party tools and services
 - Quality assurance and testing procedures
+- Holopin badge workflow setup and usage for recognizing contributors
