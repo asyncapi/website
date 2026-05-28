@@ -9,8 +9,8 @@ import React from 'react';
 export function Table({ className = '' }: { className?: string }) {
   return (
     <div className={`${className} flex flex-col`}>
-      <div className='my-2 overflow-x-auto py-2 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8'>
-        <div className='inline-block w-full overflow-auto border-b border-gray-200 dark:border-gray-800 align-middle shadow sm:rounded-lg'>
+      <div className='my-2 overflow-x-auto py-2'>
+        <div className='inline-block min-w-full border-b border-gray-200 dark:border-gray-800 align-middle shadow sm:rounded-lg'>
           <table className={`${className} w-full`} />
         </div>
       </div>

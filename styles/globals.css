@@ -29,6 +29,32 @@ html.dark body {
   fill: #131e35; /* dark-card color */
 }
 
+/* Dark mode scrollbar styling for overflow containers */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Firefox dark mode scrollbar */
+.dark * {
+  scrollbar-color: #475569 #1e293b;
+  scrollbar-width: thin;
+}
+
 /* Disable transitions on initial load to prevent flash */
 html:not(.transitions-enabled) *,
 html:not(.transitions-enabled) *::before,
