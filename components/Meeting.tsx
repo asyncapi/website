@@ -1,5 +1,6 @@
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import React, { useEffect, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
@@ -45,23 +46,41 @@ export default function Meeting({
   return (
     <a href={youtube} target='_blank' rel='noreferrer' data-testid='Meeting-link'>
       <div
-        className={`meeting-card bg-overflow-hidden flex h-[300px] w-full cursor-pointer flex-col justify-between p-4 hover:bg-dark hover:text-white lg:w-[300px] ${bg}`}
+        className={twMerge(
+          'meeting-card group bg-overflow-hidden flex h-[300px] w-full cursor-pointer flex-col justify-between border border-gray-200 bg-white p-4 text-gray-900 transition-all duration-300 hover:bg-dark hover:text-white dark:border-border dark:bg-dark-card dark:text-white dark:hover:border-primary-400 dark:hover:bg-[#1E2A45] dark:hover:shadow-[0_0_20px_rgba(100,80,220,0.25)] lg:w-[300px]',
+          bg
+        )}
       >
         <div>
-          <h3 className='text-xl' data-testid='Meeting-heading'>
+          <h3
+            className='text-xl text-gray-900 transition-colors duration-300 group-hover:text-white dark:text-white dark:group-hover:text-primary-200'
+            data-testid='Meeting-heading'
+          >
             {name}
           </h3>
           <div data-testid='Meeting-paragraph'>
-            <Paragraph typeStyle={ParagraphTypeStyle.sm} className='my-4' textColor='white'>
+            <Paragraph
+              typeStyle={ParagraphTypeStyle.sm}
+              className='my-4'
+              textColor='text-gray-700 transition-colors duration-300 group-hover:text-white dark:text-gray-300 dark:group-hover:text-gray-100'
+            >
               {purpose}
             </Paragraph>
           </div>
         </div>
         <div className='flex items-center justify-between'>
-          <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-4'>
+          <Paragraph
+            typeStyle={ParagraphTypeStyle.md}
+            className='my-4'
+            textColor='text-gray-700 transition-colors duration-300 group-hover:text-white dark:text-gray-300 dark:group-hover:text-gray-100'
+          >
             <strong data-testid='Meeting-host'>Host:&nbsp;</strong>
             {hostProfile ? (
-              <TextLink href={hostProfile} target='_blank' className='hover:text-primary-500'>
+              <TextLink
+                href={hostProfile}
+                target='_blank'
+                className='text-gray-700 transition-colors duration-300 hover:text-primary-500 group-hover:text-white dark:text-gray-300 dark:group-hover:text-primary-200'
+              >
                 {host}
               </TextLink>
             ) : (
@@ -69,7 +88,7 @@ export default function Meeting({
             )}
           </Paragraph>
           <div>
-            <ArrowRightIcon className='ml-3 w-[20px] text-slate-400' />
+            <ArrowRightIcon className='ml-3 w-[20px] text-slate-400 transition-colors duration-300 group-hover:text-white dark:text-gray-400 dark:group-hover:text-primary-300' />
           </div>
         </div>
       </div>

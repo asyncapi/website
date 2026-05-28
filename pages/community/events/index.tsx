@@ -60,7 +60,7 @@ export default function EventIndex() {
             </Heading>
           </div>
         </div>
-        <hr className='mt-20 border-t-2 border-dotted border-black ' />
+        <hr className='mt-20 border-t-2 border-dotted border-black dark:border-gray-700' />
       </div>
       <div className='mt-24 h-auto w-full sm:h-[400px]'>
         <div className='flex size-full flex-col justify-between rounded-md bg-confBg bg-cover bg-center p-10 text-white'>
