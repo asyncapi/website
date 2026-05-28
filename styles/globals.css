@@ -537,11 +537,19 @@ abbr[title] {
 }
 
 .dark .schema-visualizer .examples-code-container .token.property {
-  color: #47bcee !important;
+  color: #7edcda !important;
+}
+
+.dark .schema-visualizer .examples-code-container span[style*="color: rgb(153, 0, 85)"] {
+  color: #7edcda !important;
 }
 
 .dark .schema-visualizer .examples-code-container .token.string {
-  color: #ffffff !important;
+  color: #c0e2a3 !important;
+}
+
+.dark .schema-visualizer .examples-code-container span[style*="color: rgb(102, 153, 0)"] {
+  color: #c0e2a3 !important;
 }
 
 .dark .schema-visualizer .examples-code-container .token.punctuation {
