@@ -520,12 +520,12 @@ abbr[title] {
 }
 
 .dark .schema-visualizer .examples-code-container {
-  background: #0a0515;
+  background: #131e35;
 }
 
 .dark .schema-visualizer .examples-code-container pre,
 .dark .schema-visualizer .examples-code-container code {
-  background: #0a0515 !important;
+  background: #131e35 !important;
   color: #d1d5db !important;
   font-family: 'Fira Code VF', 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   text-shadow: none !important;
