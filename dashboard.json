@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/5253",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 43.076188312388815
+      "score": 44.799235844884365
     },
     {
       "id": "I_kwDOBW5R_c7pGlqB",
@@ -45,15 +45,42 @@
       "repo": "asyncapi/website",
       "labels": [
         {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
           "name": "gsoc",
           "color": "F4D03F"
         }
       ],
       "score": 22.68679251119144
+    },
+    {
+      "id": "PR_kwDOBW5R_c7e7wq8",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: add missing dark mode styling to SneakPeek documentation tab",
+      "author": "sammy200-ui",
+      "resourcePath": "/asyncapi/website/pull/5474",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 15.507427792459973
+    },
+    {
+      "id": "I_kwDOE8Qh386IiMCQ",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[FEATURE] Change the name of the generated model class withe name of message name.",
+      "author": "AayushSaini101",
+      "resourcePath": "/asyncapi/modelina/issues/1996",
+      "repo": "asyncapi/modelina",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 11.48698354997035
     },
     {
       "id": "I_kwDOFLhIt87jC_4a",
@@ -111,6 +138,26 @@
       "score": 10.338285194973315
     },
     {
+      "id": "I_kwDOBGu-185zXJ6b",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "v3 introduces some regression if it comes to `parameters` description",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/spec/issues/979",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "819cd3"
+        },
+        {
+          "name": "❔ Question",
+          "color": "54B65C"
+        }
+      ],
+      "score": 9.18958683997628
+    },
+    {
       "id": "PR_kwDOBW5R_c7OKdhx",
       "isPR": true,
       "isAssigned": false,
@@ -120,6 +167,17 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 8.328063073728504
+    },
+    {
+      "id": "PR_kwDOFLhIt87ZqBG1",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore(docs): asyncapi maintainership program docs update",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/pull/3541",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 8.040888484979245
     },
     {
       "id": "I_kwDOBW5R_c60eZiB",
@@ -140,50 +198,6 @@
         }
       ],
       "score": 7.7537138962299865
-    },
-    {
-      "id": "PR_kwDOBW5R_c7e7wq8",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: add missing dark mode styling to SneakPeek documentation tab",
-      "author": "sammy200-ui",
-      "resourcePath": "/asyncapi/website/pull/5474",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 7.7537138962299865
-    },
-    {
-      "id": "PR_kwDOCHlHJM7NT-iG",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: rewrite Java template tutorial to AsyncAPI v3",
-      "author": "wei123-web",
-      "resourcePath": "/asyncapi/generator/pull/2029",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 7.7537138962299865
-    },
-    {
-      "id": "PR_kwDODwv8N866EXtA",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add image gallery for past conferences",
-      "author": "kajal-jotwani",
-      "resourcePath": "/asyncapi/conference-website/pull/890",
-      "repo": "asyncapi/conference-website",
-      "labels": [],
-      "score": 7.7537138962299865
-    },
-    {
-      "id": "I_kwDOFLhIt874rNRL",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "[2026 Goals][S1] Repository Audit & Consolidation (Targets O1, O2)",
-      "author": "princerajpoot20",
-      "resourcePath": "/asyncapi/community/issues/3495",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 7.179364718731469
     }
   ],
   "goodFirstIssues": [
@@ -318,44 +332,6 @@
         {
           "name": "stale",
           "color": "ededed"
-        },
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c7jlJXk",
-      "title": "[BUG] : Unreadable Text in Roadmap Item Details",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/4958",
-      "repo": "asyncapi/website",
-      "author": "sauraviiitk",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
-        },
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c7hMwbK",
-      "title": "Missing hover effect on two-color (Purple and Dark/Black) buttons in Docs options pages",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/4867",
-      "repo": "asyncapi/website",
-      "author": "Gorachand-Senapati",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
         },
         {
           "name": "triaged",
