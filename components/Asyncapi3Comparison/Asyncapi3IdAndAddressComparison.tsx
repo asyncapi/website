@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { Column, HoverBox } from './ComparisonCommon';
+
 export interface HoverState {
   Paths: boolean;
   PathItem: boolean;
@@ -19,57 +21,57 @@ export default function Asyncapi3IdAndAddressComparison({ className = '' }: Asyn
     PathItem: false
   });
 
-  const handleMouseEnter = (key: keyof HoverState) => {
-    setHoverState((prevState) => ({ ...prevState, [key]: true }));
-  };
-
-  const handleMouseLeave = (key: keyof HoverState) => {
-    setHoverState((prevState) => ({ ...prevState, [key]: false }));
-  };
-
   return (
     <div className={`${className} flex flex-col flex-wrap gap-1 text-center md:flex-row`}>
-      <div className='ml-1 flex-1 border border-black p-2'>
-        <h3 className='mb-4 ml-2 font-sans text-lg font-medium'>AsyncAPI 2.x</h3>
-        <div>
-          <div
-            className={`${hoverState.Paths ? 'bg-yellow-100' : ' '} m-2 border border-yellow-300 p-2`}
-            onMouseEnter={() => handleMouseEnter('Paths')}
-            onMouseLeave={() => handleMouseLeave('Paths')}
+      <Column title='AsyncAPI 2.x'>
+        <HoverBox<HoverState>
+          label='Channels'
+          fieldKey='Paths'
+          hoverState={hoverState}
+          setHoverState={setHoverState}
+          activeClass='bg-yellow-100 dark:bg-yellow-900/40'
+          defaultClass=' '
+          borderClass='border-yellow-300 dark:border-yellow-700'
+        >
+          <HoverBox<HoverState>
+            label='Channel Item'
+            fieldKey='PathItem'
+            hoverState={hoverState}
+            setHoverState={setHoverState}
+            activeClass='bg-yellow-300 dark:bg-yellow-800/60'
+            borderClass='border-yellow-600 dark:border-yellow-700'
+            useMouseOver
+          />
+        </HoverBox>
+      </Column>
+
+      <Column title='AsyncAPI 3.0'>
+        <HoverBox<HoverState>
+          label='Channels'
+          fieldKey='Paths'
+          hoverState={hoverState}
+          setHoverState={setHoverState}
+          activeClass='bg-yellow-100 dark:bg-yellow-900/40'
+          defaultClass=' '
+          borderClass='border-yellow-300 dark:border-yellow-700'
+        >
+          <HoverBox<HoverState>
+            label='Channel'
+            fieldKey='PathItem'
+            hoverState={hoverState}
+            setHoverState={setHoverState}
+            activeClass='bg-yellow-300 dark:bg-yellow-800/60'
+            borderClass='border-yellow-600 dark:border-yellow-700'
+            useMouseOver
           >
-            Channels
-            <div
-              className={`${hoverState.PathItem ? 'bg-yellow-300' : 'bg-white'} m-2 border border-yellow-600 p-2`}
-              onMouseOver={() => handleMouseEnter('PathItem')}
-              onMouseLeave={() => handleMouseLeave('PathItem')}
-            >
-              Channel Item
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className='ml-1 flex-1 border border-black p-2'>
-        <h3 className='mb-4 ml-2 font-sans text-lg font-medium'>AsyncAPI 3.0</h3>
-        <div>
-          <div
-            className={`${hoverState.Paths ? 'bg-yellow-100' : ' '} m-2 border border-yellow-300 p-2`}
-            onMouseEnter={() => handleMouseEnter('Paths')}
-            onMouseLeave={() => handleMouseLeave('Paths')}
-          >
-            Channels
-            <div
-              className={`${hoverState.PathItem ? 'bg-yellow-300' : 'bg-white'} m-2 border border-yellow-600 p-2`}
-              onMouseOver={() => handleMouseEnter('PathItem')}
-              onMouseLeave={() => handleMouseLeave('PathItem')}
-            >
-              Channel
-              <div className='flex flex-1 flex-col flex-wrap'>
-                <div className='m-2 border border-blue-500 bg-white p-2 hover:bg-blue-200'>address</div>
+            <div className='flex flex-1 flex-col flex-wrap'>
+              <div className='m-2 border border-blue-500 bg-white p-2 hover:bg-blue-200 dark:border-blue-400 dark:bg-gray-900 dark:hover:bg-blue-900/50'>
+                address
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </HoverBox>
+        </HoverBox>
+      </Column>
     </div>
   );
 }

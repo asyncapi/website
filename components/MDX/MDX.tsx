@@ -41,38 +41,79 @@ import Sponsors from '../sponsors/PlatinumSponsors';
 import Warning from '../Warning';
 import { Table, TableBody, TableCell, TableHeader, TableRow, Thead } from './MDXTable';
 
-let mermaidInitialized = false;
+type MermaidTheme = 'light' | 'dark';
+
+const MERMAID_THEME_VARIABLES: Record<MermaidTheme, Record<string, string>> = {
+  light: {
+    primaryColor: '#EDFAFF',
+    primaryBorderColor: '#47BCEE',
+    secondaryColor: '#F4EFFC',
+    secondaryBorderColor: '#875AE2',
+    fontFamily: 'Inter, sans-serif',
+    fontSize: '18px',
+    primaryTextColor: '#242929',
+    tertiaryColor: '#F7F9FA',
+    tertiaryBorderColor: '#BFC6C7',
+    lineColor: '#BFC6C7',
+    mainBkg: '#EDFAFF',
+    secondBkg: '#F4EFFC',
+    tertiaryBkg: '#F7F9FA',
+    clusterBkg: '#F7F9FA',
+    clusterBorder: '#BFC6C7',
+    edgeLabelBackground: '#FFFFFF'
+  },
+  dark: {
+    primaryColor: '#1E293B',
+    primaryBorderColor: '#38BDF8',
+    secondaryColor: '#2E2459',
+    secondaryBorderColor: '#A87EFC',
+    fontFamily: 'Inter, sans-serif',
+    fontSize: '18px',
+    primaryTextColor: '#F8FAFC',
+    tertiaryColor: '#121825',
+    tertiaryBorderColor: '#475569',
+    lineColor: '#94A3B8',
+    mainBkg: '#1E293B',
+    secondBkg: '#2E2459',
+    tertiaryBkg: '#121825',
+    clusterBkg: '#121825',
+    clusterBorder: '#475569',
+    edgeLabelBackground: '#1E293B'
+  }
+};
+
+// Cache the theme Mermaid was initialized with across client-side page transitions.
+let initializedMermaidTheme: MermaidTheme | null = null;
 
 /**
- * @description Initializes the Mermaid library if not already initialized.
+ * @description Returns the Mermaid theme that matches the current website theme.
  */
-function initializeMermaid() {
-  if (mermaidInitialized) {
+function getMermaidTheme(): MermaidTheme {
+  if (typeof document === 'undefined') {
+    return 'light';
+  }
+
+  return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+}
+
+/**
+ * @description Initializes the Mermaid library for the selected theme.
+ */
+function initializeMermaid(theme: MermaidTheme) {
+  if (initializedMermaidTheme === theme) {
     return;
   }
 
-  mermaidInitialized = true;
+  initializedMermaidTheme = theme;
   mermaid.initialize({
-    startOnLoad: true,
+    startOnLoad: false,
     theme: 'base',
-    securityLevel: 'loose',
+    securityLevel: 'strict',
+    // Keep Mermaid styling fully controlled by MERMAID_THEME_VARIABLES.
     themeCSS: '',
-    themeVariables: {
-      primaryColor: '#EDFAFF',
-      primaryBorderColor: '#47BCEE',
-      secondaryColor: '#F4EFFC',
-      secondaryBorderColor: '#875AE2',
-      fontFamily: 'Inter, sans-serif',
-      fontSize: '18px',
-      primaryTextColor: '#242929',
-      tertiaryColor: '#F7F9FA',
-      tertiaryBorderColor: '#BFC6C7',
-      lineColor: '#BFC6C7'
-    }
+    themeVariables: MERMAID_THEME_VARIABLES[theme]
   });
 }
-
-initializeMermaid();
 
 let currentId = 0;
 
@@ -94,27 +135,51 @@ interface MermaidDiagramProps {
  */
 function MermaidDiagram({ graph }: MermaidDiagramProps) {
   const [svg, setSvg] = useState<string | null>(null);
+  const [theme, setTheme] = useState<MermaidTheme>('light');
+
+  useEffect(() => {
+    setTheme(getMermaidTheme());
+
+    const observer = new MutationObserver(() => {
+      setTheme(getMermaidTheme());
+    });
+
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+    return () => observer.disconnect();
+  }, []);
 
   /**
    * @description Renders the Mermaid diagram.
    */
   useEffect(() => {
-    if (!graph) {
-      return;
-    }
+    let mounted = true;
 
-    try {
-      mermaid.mermaidAPI.render(uuid(), graph, (svgGraph) => {
-        setSvg(svgGraph);
-      });
-    } catch (e) {
+    if (graph) {
+      try {
+        initializeMermaid(theme);
+        mermaid.mermaidAPI.render(uuid(), graph.trim(), (svgGraph) => {
+          if (mounted) {
+            setSvg(svgGraph);
+          }
+        });
+      } catch (e) {
+        if (mounted) {
+          setSvg(null);
+        }
+        // eslint-disable-next-line no-console
+        console.error(e);
+      }
+    } else {
       setSvg(null);
-      // eslint-disable-next-line no-console
-      console.error(e);
     }
-  }, [graph]);
 
-  return svg ? <div dangerouslySetInnerHTML={{ __html: svg }} /> : null;
+    return () => {
+      mounted = false;
+    };
+  }, [graph, theme]);
+
+  return <div dangerouslySetInnerHTML={{ __html: svg || '' }} />;
 }
 
 interface CodeComponentProps {
@@ -324,8 +389,8 @@ const getMDXComponents = (reactId: string) => ({
   button: Button as React.ComponentType<React.ButtonHTMLAttributes<HTMLButtonElement>>,
   table: (props: React.HTMLProps<HTMLTableElement>) => (
     <div className={`${props.className || ''} flex flex-col`}>
-      <div className='my-2 overflow-x-auto py-2 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8'>
-        <div className='inline-block w-full overflow-auto border-b border-gray-200 align-middle shadow sm:rounded-lg'>
+      <div className='my-2 overflow-x-auto py-2'>
+        <div className='inline-block min-w-full border-b border-gray-200 dark:border-gray-800 align-middle shadow sm:rounded-lg'>
           <table {...props} className={`${props.className || ''} w-full`} />
         </div>
       </div>
@@ -334,23 +399,23 @@ const getMDXComponents = (reactId: string) => ({
   th: (props: React.HTMLProps<HTMLTableCellElement>) => (
     <th
       {...props}
-      className={`${props.className || ''} border-b border-gray-200 bg-gray-100 px-6 py-3 text-left font-body text-xs font-medium uppercase leading-4 tracking-wider text-gray-900`}
+      className={`${props.className || ''} border-b border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-dark-card px-6 py-3 text-left font-body text-xs font-medium uppercase leading-4 tracking-wider text-gray-900 dark:text-gray-200`}
     />
   ),
   tr: (props: React.HTMLProps<HTMLTableRowElement>) => (
-    <tr {...props} className={`${props.className || ''} bg-white`} />
+    <tr {...props} className={`${props.className || ''} bg-white dark:bg-transparent`} />
   ),
   td: (props: React.HTMLProps<HTMLTableCellElement>) => (
     <td
       {...props}
-      className={`${props.className || ''} border-b border-gray-200 px-6 py-4 text-sm leading-5 tracking-tight text-gray-700`}
+      className={`${props.className || ''} border-b border-gray-200 dark:border-gray-800 px-6 py-4 text-sm leading-5 tracking-tight text-gray-700 dark:text-gray-300`}
     />
   ),
   pre: (props: React.HTMLProps<HTMLPreElement>) => CodeComponent((props.children as React.ReactElement)?.props),
   code: (props: React.HTMLProps<HTMLElement>) => (
     <code
       {...props}
-      className={`${props.className || ''} rounded bg-gray-200 px-1 py-0.5 font-mono text-sm text-gray-800`}
+      className={`${props.className || ''} rounded bg-gray-200 dark:bg-gray-800 px-1 py-0.5 font-mono text-sm text-gray-800 dark:text-gray-300`}
     />
   ),
   hr: (props: React.HTMLProps<HTMLHRElement>) => <hr {...props} className={`${props.className || ''} my-8`} />,

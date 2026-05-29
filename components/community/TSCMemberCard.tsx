@@ -58,20 +58,25 @@ function LinkedInIcon({ className = '' }: Readonly<{ className?: string }>): Rea
 export default function TSCMemberCard({ member }: TSCMemberCardProps) {
   return (
     <div className='bg-white dark:bg-dark-card rounded-xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition-shadow'>
-      <div className='flex items-start gap-4 mb-4'>
+      <div className='flex items-center sm:items-start gap-4 mb-4'>
         <img
           src={member.github ? `https://www.github.com/${member.github}.png` : ''}
           alt={member.name || 'TSC Member'}
-          className='w-16 h-16 rounded-full'
+          className='w-16 h-16 rounded-full shrink-0'
         />
         <div className='flex-1 min-w-0'>
           <h3 className='text-lg font-bold text-gray-900 dark:text-white truncate'>{member.name}</h3>
-          <p className='text-sm text-gray-600 dark:text-gray-400'>
+          <p className='text-sm text-gray-600 dark:text-gray-400 mb-1 sm:mb-0'>
             {member.availableForHire ? 'Available for hire' : member.company || 'Individual Member'}
           </p>
+          {member.availableForHire && (
+            <span className='inline-flex sm:hidden items-center px-1.5 py-0.5 rounded-full text-[11px] font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 w-fit mt-1'>
+              Available
+            </span>
+          )}
         </div>
         {member.availableForHire && (
-          <span className='inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300'>
+          <span className='hidden sm:inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 shrink-0'>
             Available
           </span>
         )}

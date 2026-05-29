@@ -1,4 +1,4 @@
-import { useFloating } from '@floating-ui/react-dom-interactions';
+import { flip, offset, shift, useFloating } from '@floating-ui/react';
 import type { RefObject } from 'react';
 import React, { useEffect, useRef, useState } from 'react';
 
@@ -80,9 +80,10 @@ export default function Filters({
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const { x, y, reference, floating, strategy } = useFloating({
+  const { x, y, refs, strategy } = useFloating({
     placement,
-    open
+    open,
+    middleware: [offset(10), flip(), shift({ padding: 10 })]
   });
 
   const wrapperRef = useRef(null);
@@ -104,22 +105,18 @@ export default function Filters({
     <>
       <button
         onClick={() => setOpen(!open)}
-        ref={reference}
+        ref={refs.setReference}
         className={`flex items-center justify-center w-8 h-8 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-dark-background hover:bg-gray-50 dark:hover:bg-dark-card transition-all duration-200 hover:shadow-md ${className}`}
         aria-label='Filter issues'
         data-testid='Filters-img-container'
       >
-        <img
-          alt='filter menu'
-          src='/img/illustrations/icons/filters-icon.svg'
-          className='w-4 h-4 dark:invert dark:opacity-80'
-        />
+        <img alt='filter menu' src='/img/illustrations/icons/filters-icon.svg' className='w-4 h-4 dark:opacity-80' />
       </button>
 
       <div ref={wrapperRef}>
         {open && (
           <div
-            ref={floating}
+            ref={refs.setFloating}
             className='z-50'
             style={{
               position: strategy,

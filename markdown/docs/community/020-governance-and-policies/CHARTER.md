@@ -3,8 +3,8 @@ title: Charter
 weight: 10
 ---
 
-<p align="center"><strong>Technical Charter (the “Charter”)</strong></p>
-<p align="center">
+<p className="text-center text-gray-900 dark:text-white font-bold">Technical Charter (the “Charter”)</p>
+<p className="text-center text-gray-700 dark:text-dark-text">
   for<br />
   AsyncAPI Project a Series of LF Projects, LLC<br />
   Adopted 03-19-2021, Amended 05-05-2025

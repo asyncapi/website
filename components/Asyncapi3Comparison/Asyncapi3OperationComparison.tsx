@@ -11,32 +11,36 @@ export interface Asyncapi3OperationComparisonProps {
 export default function Asyncapi3OperationComparison({ className = '' }: Asyncapi3OperationComparisonProps) {
   return (
     <div className={`${className} flex flex-col flex-wrap gap-1 text-center md:flex-row`}>
-      <div className='ml-1 flex-1 border border-black p-2'>
+      <div className='ml-1 flex-1 border border-black p-2 dark:border-gray-600 dark:text-gray-100'>
         <h3 className='mb-4 ml-2 font-sans text-lg font-medium'>AsyncAPI 2.x</h3>
         <div>
-          <div className='m-2 border border-yellow-300 p-2'>
+          <div className='m-2 border border-yellow-300 p-2 dark:border-yellow-700'>
             Channels
             <div className='flex flex-1 flex-wrap'>
-              <div className='m-2 border border-yellow-600 p-2'>
+              <div className='m-2 border border-yellow-600 p-2 dark:border-yellow-700'>
                 Channel Item
                 <div className='flex flex-1 flex-wrap'>
-                  <div className='m-2 flex-1 border border-orange-300 p-2'>Operation (Publish and Subscribe)</div>
+                  <div className='m-2 flex-1 border border-orange-300 p-2 dark:border-orange-700'>
+                    Operation (Publish and Subscribe)
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className='ml-1 flex-1 border border-black p-2'>
+      <div className='ml-1 flex-1 border border-black p-2 dark:border-gray-600 dark:text-gray-100'>
         <h3 className='mb-4 ml-2 font-sans text-lg font-medium'>AsyncAPI 3.0</h3>
         <div>
-          <div className='m-2 border border-yellow-300 p-2'>
+          <div className='m-2 border border-yellow-300 p-2 dark:border-yellow-700'>
             Operations
             <div className='flex flex-1 flex-wrap'>
-              <div className='m-2 flex-1 border border-orange-300 p-2'>
+              <div className='m-2 flex-1 border border-orange-300 p-2 dark:border-orange-700'>
                 Operation
                 <div className='flex flex-1 flex-col flex-wrap'>
-                  <div className='m-2 border border-blue-500 bg-white p-2'>action (send or receive)</div>
+                  <div className='m-2 border border-blue-500 bg-white p-2 dark:border-blue-400 dark:bg-gray-900'>
+                    action (send or receive)
+                  </div>
                 </div>
               </div>
             </div>

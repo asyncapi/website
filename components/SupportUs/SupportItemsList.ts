@@ -29,13 +29,6 @@ export const items: ISupportItemType[] = [
     section: 1
   },
   {
-    href: 'https://confengine.com',
-    imgSrc: '/img/supportus/confengine.png',
-    imgTitle: 'Confengine - CFP platform sponsorship for AsyncAPI Conference.',
-    imgClass: 'inline-block px-4 sm:h-14 rounded-lg p-2 bg-white',
-    section: 2
-  },
-  {
     href: 'https://www.digitalocean.com/press/',
     imgSrc: '/img/supportus/digitalocean.webp',
     imgTitle: 'DigitalOcean - 500 dollars on cloud services.',

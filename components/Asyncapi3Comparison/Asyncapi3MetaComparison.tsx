@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { Column, HoverBox } from './ComparisonCommon';
+
 export interface Asyncapi3MetaComparisonProps {
   className?: string;
 }
@@ -23,62 +25,72 @@ export default function Asyncapi3MetaComparison({ className = '' }: Asyncapi3Met
 
   return (
     <div className={`${className} flex flex-col flex-wrap gap-1 text-center md:flex-row`}>
-      <div className='ml-1 flex-1 border border-black p-2'>
-        <h3 className='mb-4 ml-2 font-sans text-lg font-medium'>AsyncAPI 2.x</h3>
-        <div>
-          <div
-            className={`${hoverState.Info ? 'bg-blue-100 ' : ' '}m-2 border border-blue-300 p-2`}
-            onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Info: true }))}
-            onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Info: false }))}
-          >
-            Info
-          </div>
+      <Column title='AsyncAPI 2.x'>
+        <HoverBox<HoverState>
+          label='Info'
+          fieldKey='Info'
+          hoverState={hoverState}
+          setHoverState={setHoverState}
+          activeClass='bg-blue-100 dark:bg-blue-900/40'
+          borderClass='border-blue-300 dark:border-blue-700'
+        />
+        <div className='flex flex-1 flex-wrap'>
+          <HoverBox<HoverState>
+            label='Tags'
+            fieldKey='Tags'
+            hoverState={hoverState}
+            setHoverState={setHoverState}
+            activeClass='bg-pink-300 dark:bg-pink-900/60'
+            borderClass='border-black dark:border-gray-600'
+            className='flex-1'
+            focusable
+          />
+          <HoverBox<HoverState>
+            label='External Docs'
+            fieldKey='External'
+            hoverState={hoverState}
+            setHoverState={setHoverState}
+            activeClass='bg-green-500 dark:bg-green-900/60'
+            borderClass='border-black dark:border-gray-600'
+            className='flex-1'
+            focusable
+          />
+        </div>
+      </Column>
+
+      <Column title='AsyncAPI 3.0'>
+        <HoverBox<HoverState>
+          label='Info'
+          fieldKey='Info'
+          hoverState={hoverState}
+          setHoverState={setHoverState}
+          activeClass='bg-blue-100 dark:bg-blue-900/40'
+          borderClass='border-blue-300 dark:border-blue-700'
+        >
           <div className='flex flex-1 flex-wrap'>
-            <div
-              className={`${hoverState.Tags ? 'bg-pink-300' : ' '} m-2 flex flex-1 items-center justify-center border border-black p-2`}
-              onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Tags: true }))}
-              onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Tags: false }))}
-            >
-              <p>Tags</p>
-            </div>
-            <div
-              className={`${hoverState.External ? 'bg-green-500' : ' '} m-2 flex flex-1 items-center justify-center border border-black p-2`}
-              onMouseOver={() => setHoverState((prevState) => ({ ...prevState, External: true }))}
-              onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, External: false }))}
-            >
-              <p>External Docs</p>
-            </div>
+            <HoverBox<HoverState>
+              label='Tags'
+              fieldKey='Tags'
+              hoverState={hoverState}
+              setHoverState={setHoverState}
+              activeClass='bg-pink-300 dark:bg-pink-900/60'
+              borderClass='border-black dark:border-gray-600'
+              className='flex-1'
+              focusable
+            />
+            <HoverBox<HoverState>
+              label='External Docs'
+              fieldKey='External'
+              hoverState={hoverState}
+              setHoverState={setHoverState}
+              activeClass='bg-green-500 dark:bg-green-900/60'
+              borderClass='border-black dark:border-gray-600'
+              className='flex-1'
+              focusable
+            />
           </div>
-        </div>
-      </div>
-      <div className='ml-1 flex-1 border border-black p-2'>
-        <h3 className='mb-4 ml-2 font-sans text-lg font-medium'>AsyncAPI 3.0</h3>
-        <div>
-          <div
-            className={`${hoverState.Info ? 'bg-blue-100 ' : ' '}m-2 border border-blue-300 p-2`}
-            onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Info: true }))}
-            onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Info: false }))}
-          >
-            Info
-            <div className='flex flex-1 flex-wrap'>
-              <div
-                className={`${hoverState.Tags ? 'bg-pink-300' : ' '} m-2 flex flex-1 items-center justify-center border border-black p-2`}
-                onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Tags: true }))}
-                onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Tags: false }))}
-              >
-                <p>Tags</p>
-              </div>
-              <div
-                className={`${hoverState.External ? 'bg-green-500' : ' '} m-2 flex flex-1 items-center justify-center border border-black p-2`}
-                onMouseOver={() => setHoverState((prevState) => ({ ...prevState, External: true }))}
-                onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, External: false }))}
-              >
-                <p>External Docs</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        </HoverBox>
+      </Column>
     </div>
   );
 }

@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 
+import { Column, HoverBox } from './ComparisonCommon';
+
 export interface Asyncapi3SchemaFormatComparisonProps {
   className?: string;
+}
+
+export interface HoverState {
+  SchemaFormat: boolean;
+  Payload: boolean;
+  Schema: boolean;
 }
 
 /**
@@ -9,100 +17,103 @@ export interface Asyncapi3SchemaFormatComparisonProps {
  * @param {string} [props.className=''] - Additional CSS classes for styling.
  */
 export default function Asyncapi3SchemaFormatComparison({ className = '' }: Asyncapi3SchemaFormatComparisonProps) {
-  const [hoverState, setHoverState] = useState({
+  const [hoverState, setHoverState] = useState<HoverState>({
     SchemaFormat: false,
     Payload: false,
     Schema: false
   });
 
+  const renderSchemaFormat = () => (
+    <HoverBox<HoverState>
+      label='schemaFormat'
+      fieldKey='SchemaFormat'
+      hoverState={hoverState}
+      setHoverState={setHoverState}
+      activeClass='bg-orange-100 dark:bg-orange-900/40'
+      borderClass='border-orange-300 dark:border-orange-700'
+      className='flex-1'
+      useMouseOver
+      focusable
+    />
+  );
+
+  const renderSchema = () => (
+    <HoverBox<HoverState>
+      label='schema'
+      fieldKey='Schema'
+      hoverState={hoverState}
+      setHoverState={setHoverState}
+      activeClass='bg-blue-300 dark:bg-blue-900/60'
+      borderClass='border-orange-300 dark:border-orange-700'
+      className='flex-1'
+      useMouseOver
+      focusable
+    />
+  );
+
   return (
     <div className={`${className} flex flex-col flex-wrap gap-1 text-center md:flex-row`}>
-      <div className='ml-1 flex-1 border border-black p-2'>
-        <h3 className='mb-4 ml-2 font-sans text-lg font-medium'>AsyncAPI 2.x</h3>
-        <div>
-          <div className={'m-2 border border-yellow-300 p-2'}>
-            components | channels
-            <div className='flex flex-1 flex-wrap'>
-              <div className={'m-2 border border-yellow-600 bg-white p-2'}>
-                messages
-                <div className='flex flex-1 flex-wrap'>
-                  <div className={'m-2 border border-yellow-600 bg-white p-2'}>
-                    message
-                    <div className='flex flex-1 flex-wrap'>
-                      <div
-                        className={`${hoverState.SchemaFormat ? 'bg-orange-100' : 'bg-white '} m-2 flex-1 border border-orange-300 p-2`}
-                        onMouseOver={() => setHoverState((prevState) => ({ ...prevState, SchemaFormat: true }))}
-                        onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, SchemaFormat: false }))}
-                      >
-                        schemaFormat
-                      </div>
-                      <div
-                        className={`${hoverState.Payload ? 'bg-yellow-300' : 'bg-white'} m-2 flex-1 border border-yellow-600 p-2`}
-                        onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Payload: true }))}
-                        onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Payload: false }))}
-                      >
-                        payload
-                        <div className='flex flex-1 flex-wrap'>
-                          <div
-                            className={`${hoverState.Schema ? 'bg-blue-300' : 'bg-white'} m-2 flex-1 border border-orange-300 p-2`}
-                            onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Schema: true }))}
-                            onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Schema: false }))}
-                          >
-                            schema
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+      <Column title='AsyncAPI 2.x'>
+        <div className='m-2 border border-yellow-300 p-2 dark:border-yellow-700'>
+          components | channels
+          <div className='flex flex-1 flex-wrap'>
+            <div className='m-2 border border-yellow-600 bg-white p-2 dark:border-yellow-700 dark:bg-gray-900'>
+              messages
+              <div className='flex flex-1 flex-wrap'>
+                <div className='m-2 border border-yellow-600 bg-white p-2 dark:border-yellow-700 dark:bg-gray-900'>
+                  message
+                  <div className='flex flex-1 flex-wrap'>
+                    {renderSchemaFormat()}
+                    <HoverBox<HoverState>
+                      label='payload'
+                      fieldKey='Payload'
+                      hoverState={hoverState}
+                      setHoverState={setHoverState}
+                      activeClass='bg-yellow-300 dark:bg-yellow-800/60'
+                      borderClass='border-yellow-600 dark:border-yellow-700'
+                      className='flex-1'
+                    >
+                      <div className='flex flex-1 flex-wrap'>{renderSchema()}</div>
+                    </HoverBox>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className='ml-1 flex-1 border border-black p-2'>
-        <h3 className='mb-4 ml-2 font-sans text-lg font-medium'>AsyncAPI 3.0</h3>
-        <div>
-          <div className={'m-2 border border-yellow-300 p-2'}>
-            components | channels
-            <div className='flex flex-1 flex-wrap'>
-              <div className={'m-2 border border-yellow-600 bg-white p-2'}>
-                messages
-                <div className='flex flex-1 flex-wrap'>
-                  <div className={'m-2 border border-yellow-600 bg-white p-2'}>
-                    message
-                    <div className='flex flex-1 flex-wrap'>
-                      <div
-                        className={`${hoverState.Payload ? 'bg-yellow-300' : 'bg-white'} m-2 border border-yellow-600 p-2`}
-                        onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Payload: true }))}
-                        onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Payload: false }))}
-                      >
-                        payload
-                        <div className='flex flex-1 flex-wrap'>
-                          <div
-                            className={`${hoverState.SchemaFormat ? 'bg-orange-100' : 'bg-white '} m-2 flex-1 border border-orange-300 p-2`}
-                            onMouseOver={() => setHoverState((prevState) => ({ ...prevState, SchemaFormat: true }))}
-                            onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, SchemaFormat: false }))}
-                          >
-                            schemaFormat
-                          </div>
-                          <div
-                            className={`${hoverState.Schema ? 'bg-blue-300' : 'bg-white'} m-2 flex-1 border border-orange-300 p-2`}
-                            onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Schema: true }))}
-                            onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Schema: false }))}
-                          >
-                            schema
-                          </div>
-                        </div>
+      </Column>
+
+      <Column title='AsyncAPI 3.0'>
+        <div className='m-2 border border-yellow-300 p-2 dark:border-yellow-700'>
+          components | channels
+          <div className='flex flex-1 flex-wrap'>
+            <div className='m-2 border border-yellow-600 bg-white p-2 dark:border-yellow-700 dark:bg-gray-900'>
+              messages
+              <div className='flex flex-1 flex-wrap'>
+                <div className='m-2 border border-yellow-600 bg-white p-2 dark:border-yellow-700 dark:bg-gray-900'>
+                  message
+                  <div className='flex flex-1 flex-wrap'>
+                    <HoverBox<HoverState>
+                      label='payload'
+                      fieldKey='Payload'
+                      hoverState={hoverState}
+                      setHoverState={setHoverState}
+                      activeClass='bg-yellow-300 dark:bg-yellow-800/60'
+                      borderClass='border-yellow-600 dark:border-yellow-700'
+                      className='flex-1'
+                    >
+                      <div className='flex flex-1 flex-wrap'>
+                        {renderSchemaFormat()}
+                        {renderSchema()}
                       </div>
-                    </div>
+                    </HoverBox>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </Column>
     </div>
   );
 }
