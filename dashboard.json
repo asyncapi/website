@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/5253",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 44.799235844884365
+      "score": 48.81968008737399
     },
     {
       "id": "I_kwDOBW5R_c7pGlqB",
@@ -52,17 +52,6 @@
       "score": 22.68679251119144
     },
     {
-      "id": "PR_kwDOBW5R_c7e7wq8",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: add missing dark mode styling to SneakPeek documentation tab",
-      "author": "sammy200-ui",
-      "resourcePath": "/asyncapi/website/pull/5474",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 15.507427792459973
-    },
-    {
       "id": "I_kwDOE8Qh386IiMCQ",
       "isPR": false,
       "isAssigned": false,
@@ -80,7 +69,7 @@
           "color": "ededed"
         }
       ],
-      "score": 11.48698354997035
+      "score": 11.774158138719608
     },
     {
       "id": "I_kwDOFLhIt87jC_4a",
@@ -158,17 +147,6 @@
       "score": 9.18958683997628
     },
     {
-      "id": "PR_kwDOBW5R_c7OKdhx",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "Fix finance memory leak remove resize listener leak and layout shift",
-      "author": "codxbrexx",
-      "resourcePath": "/asyncapi/website/pull/5285",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 8.328063073728504
-    },
-    {
       "id": "PR_kwDOFLhIt87ZqBG1",
       "isPR": true,
       "isAssigned": false,
@@ -197,6 +175,28 @@
           "color": "0052cc"
         }
       ],
+      "score": 7.7537138962299865
+    },
+    {
+      "id": "PR_kwDOCHlHJM7NT-iG",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: rewrite Java template tutorial to AsyncAPI v3",
+      "author": "wei123-web",
+      "resourcePath": "/asyncapi/generator/pull/2029",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 7.7537138962299865
+    },
+    {
+      "id": "PR_kwDODwv8N866EXtA",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add image gallery for past conferences",
+      "author": "kajal-jotwani",
+      "resourcePath": "/asyncapi/conference-website/pull/890",
+      "repo": "asyncapi/conference-website",
+      "labels": [],
       "score": 7.7537138962299865
     }
   ],
