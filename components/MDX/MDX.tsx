@@ -133,7 +133,7 @@ interface MermaidDiagramProps {
  * @param {MermaidDiagramProps} props - The props for the MermaidDiagram component.
  * @param {string} props.graph - The Mermaid graph to render.
  */
-function MermaidDiagram({ graph }: MermaidDiagramProps) {
+function MermaidDiagram({ graph }: Readonly<MermaidDiagramProps>) {
   const [svg, setSvg] = useState<string | null>(null);
   const [theme, setTheme] = useState<MermaidTheme>('light');
 
