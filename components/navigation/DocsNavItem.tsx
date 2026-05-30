@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 export type DocsNavItemProps = Readonly<{
   title: string;
@@ -63,7 +64,7 @@ export default function DocsNavItem({
   bucket
 }: DocsNavItemProps) {
   const isActive = isActiveSlug(slug, activeSlug, sectionSlug);
-  const classes = `${isActive ? activeClassName : inactiveClassName} ${defaultClassName} inline-block w-full`;
+  const classes = twMerge('inline-block w-full', defaultClassName, isActive ? activeClassName : inactiveClassName);
 
   return (
     <div>
