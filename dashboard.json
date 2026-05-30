@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/5253",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 48.81968008737399
+      "score": 50.8299022086188
     },
     {
       "id": "I_kwDOBW5R_c7pGlqB",
@@ -33,7 +33,7 @@
           "color": "0052cc"
         }
       ],
-      "score": 24.122665454937735
+      "score": 24.409840043686994
     },
     {
       "id": "I_kwDOBW5R_c6pn_G2",
@@ -178,6 +178,26 @@
       "score": 7.7537138962299865
     },
     {
+      "id": "PR_kwDOBW5R_c7dnok8",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: apply maintainer-reviewed text changes ",
+      "author": "sammy200-ui",
+      "resourcePath": "/asyncapi/website/pull/5429",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "do-not-merge",
+          "color": "B60205"
+        },
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ],
+      "score": 7.7537138962299865
+    },
+    {
       "id": "PR_kwDOCHlHJM7NT-iG",
       "isPR": true,
       "isAssigned": true,
@@ -185,17 +205,6 @@
       "author": "wei123-web",
       "resourcePath": "/asyncapi/generator/pull/2029",
       "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 7.7537138962299865
-    },
-    {
-      "id": "PR_kwDODwv8N866EXtA",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add image gallery for past conferences",
-      "author": "kajal-jotwani",
-      "resourcePath": "/asyncapi/conference-website/pull/890",
-      "repo": "asyncapi/conference-website",
       "labels": [],
       "score": 7.7537138962299865
     }
