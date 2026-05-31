@@ -440,7 +440,7 @@ const getMDXComponents = (reactId: string) => ({
   Dt: ({ className, ...props }: React.HTMLProps<HTMLElement>) => (
     <dt
       {...props}
-      className={`${className || ''} mt-6 font-heading text-lg font-semibold dark:text-white text-gray-900 antialiased [&_a]:border-b [&_a]:border-secondary-400 [&_a]:dark:text-white [&_a]:font-semibold [&_a]:text-gray-900 [&_a]:transition [&_a]:duration-300 [&_a]:ease-in-out [&_a]:hover:border-secondary-500 [&_a]:font-body [&_a]:antialiased [&_code]:rounded [&_code]:bg-gray-200 [&_code]:dark:bg-gray-800 [&_code]:px-1 [&_code]:py-0.5 [&_code]:font-mono [&_code]:text-sm [&_code]:text-gray-800 [&_code]:dark:text-gray-300`}
+      className={`${className || ''} mt-6 font-heading text-lg font-semibold dark:text-dark-heading text-gray-900 antialiased [&_a]:border-b [&_a]:border-secondary-400 [&_a]:dark:text-white [&_a]:font-semibold [&_a]:text-gray-900 [&_a]:transition [&_a]:duration-300 [&_a]:ease-in-out [&_a]:hover:border-secondary-500 [&_a]:font-body [&_a]:antialiased [&_code]:rounded [&_code]:bg-gray-200 [&_code]:dark:bg-gray-800 [&_code]:px-1 [&_code]:py-0.5 [&_code]:font-mono [&_code]:text-sm [&_code]:text-gray-800 [&_code]:dark:text-gray-300`}
     />
   ),
   Dd: ({ className, ...props }: React.HTMLProps<HTMLElement>) => (
