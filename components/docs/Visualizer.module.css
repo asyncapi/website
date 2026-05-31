@@ -2,6 +2,10 @@
 /* Dark theme overrides for third-party classes from schyma and react-flow.
    Uses :global() to prevent CSS Modules from hashing external class names. */
 
+.schemaVisualizer {
+  overflow: hidden;
+}
+
 :global(.dark) .schemaVisualizer :global(.body-wrapper) {
   background: #121825;
   color: #b8b9c0;
