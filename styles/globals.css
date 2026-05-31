@@ -544,3 +544,10 @@ select {
 .dark .case-studies-swiper .swiper-pagination-bullet {
   background: #A87EFC;
 }
+
+/* Invert documentation diagrams in dark mode */
+.dark img[src*="SNS-SQS-Pub-Sub.png"],
+.dark img[src*="SNS-HTTP.png"],
+.dark img[src*="SQS-Point-To-Point.png"] {
+  filter: invert(100%) hue-rotate(180deg);
+}
