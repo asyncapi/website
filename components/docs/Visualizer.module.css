@@ -124,9 +124,3 @@
 :global(.dark) .schemaVisualizer :global(.rules-block) {
   color: #ffd166;
 }
-
-/* Explorer sidebar menu dark mode override */
-:global(.dark) :global(.explorer-menu-wrapper > div > div) {
-  border-color: #1e293b;
-  background: #121825;
-}

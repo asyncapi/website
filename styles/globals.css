@@ -424,6 +424,12 @@ abbr[title] {
   border-radius: 10px;
   padding: 10px;
 }
+
+.dark .explorer-menu-wrapper > div > div {
+  border-color: #1e293b;
+  background: #121825;
+}
+
 .explorer-menu-wrapper > div > div > div > button {
   margin-top: 0px;
 }
