@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/5253",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 50.8299022086188
+      "score": 51.11707679736806
     },
     {
       "id": "I_kwDOBW5R_c7pGlqB",
@@ -147,6 +147,22 @@
       "score": 9.18958683997628
     },
     {
+      "id": "PR_kwDOBW5R_c7gPqR-",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: enhance dark theme support for Visualizer and DocsLayout components",
+      "author": "hasithasandunlakshan",
+      "resourcePath": "/asyncapi/website/pull/5507",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "waiting-for-author",
+          "color": "BDDB3C"
+        }
+      ],
+      "score": 8.615237662477762
+    },
+    {
       "id": "PR_kwDOFLhIt87ZqBG1",
       "isPR": true,
       "isAssigned": false,
@@ -156,6 +172,26 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 8.040888484979245
+    },
+    {
+      "id": "I_kwDOFDnrNc6w5oVf",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[FEATURE] Reduce number of dependencies and install size (v2.17 needs 1700 dependencies, takes 1.7Gb of space)",
+      "author": "peitschie",
+      "resourcePath": "/asyncapi/cli/issues/1752",
+      "repo": "asyncapi/cli",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 7.7537138962299865
     },
     {
       "id": "I_kwDOBW5R_c60eZiB",
@@ -175,37 +211,6 @@
           "color": "0052cc"
         }
       ],
-      "score": 7.7537138962299865
-    },
-    {
-      "id": "PR_kwDOBW5R_c7dnok8",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: apply maintainer-reviewed text changes ",
-      "author": "sammy200-ui",
-      "resourcePath": "/asyncapi/website/pull/5429",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "do-not-merge",
-          "color": "B60205"
-        },
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ],
-      "score": 7.7537138962299865
-    },
-    {
-      "id": "PR_kwDOCHlHJM7NT-iG",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: rewrite Java template tutorial to AsyncAPI v3",
-      "author": "wei123-web",
-      "resourcePath": "/asyncapi/generator/pull/2029",
-      "repo": "asyncapi/generator",
-      "labels": [],
       "score": 7.7537138962299865
     }
   ],
@@ -360,6 +365,10 @@
         {
           "name": "enhancement",
           "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
