@@ -1,5 +1,6 @@
 /* eslint-disable require-jsdoc */
 import 'schyma/dist/esm/style.css';
+import './Visualizer.css';
 
 import type { JSONSchema7Object } from 'json-schema';
 import React, { useEffect, useState } from 'react';
