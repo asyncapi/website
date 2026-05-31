@@ -1,4 +1,4 @@
-/* stylelint-disable selector-type-no-unknown */
+/* stylelint-disable selector-pseudo-class-no-unknown, selector-type-no-unknown */
 /* Dark theme overrides for third-party classes from schyma and react-flow.
    Uses :global() to prevent CSS Modules from hashing external class names. */
 
