@@ -17,28 +17,6 @@ interface ITOCProps {
 }
 
 /**
- * @description Removes markdown syntax that should not be part of heading text.
- */
-function normalizeTocContent(content: string) {
-  return content
-    .replace(/\s?\{#[\w\d\-_]+\}$/, '')
-    .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
-    .replace(/<[^>]*>/g, '');
-}
-
-/**
- * @description Builds a slug source that matches rendered markdown link headings.
- */
-function getSlugContent(content: string) {
-  if (!content.includes('](')) {
-    return content;
-  }
-
-  return normalizeTocContent(content).replace(/[^\w\s-]/g, '');
-}
-
-/**
  * @description Track the last heading that has passed the fixed page header.
  * Keeping that heading active means long sections remain identified while reading their content.
  * @param {string[]} itemIds - The heading ids represented by the table of contents
@@ -108,13 +86,13 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
     .filter((item) => item.lvl <= minLevel + depth)
     .map((item) => ({
       ...item,
-      content: normalizeTocContent(item.content),
+      content: item.content,
       // For TOC rendering in specification files in the spec repo we have "a" tags added manually to the spec
       // markdown document MDX takes these "a" tags and uses them to render the "id" for headers like
       // a-namedefinitionsapplicationaapplication slugWithATag contains transformed heading name that is later used
       // for scroll spy identification
       slugWithATag: (() => {
-        const base = getSlugContent(item.content)
+        const base = item.content
           .replace(/[<>?!:`'."\\/=@#$%^&*()[\]{}+,;]/gi, '')
           .replace(/\s/gi, '-')
           .toLowerCase();

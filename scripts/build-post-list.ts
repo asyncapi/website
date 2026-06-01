@@ -27,6 +27,116 @@ const releaseNotes: (string | undefined)[] = [];
 const HEADING_ID_REGEX = /[\s]*(?:\{#([a-zA-Z0-9\-_]+)\}|<a[\s]+name="([a-zA-Z0-9\-_]+)")/;
 
 /**
+ * Removes an explicit markdown heading id from the end of a heading.
+ *
+ * @param content - The heading content to normalize.
+ * @returns Heading content without an explicit id suffix.
+ */
+function removeTrailingHeadingId(content: string) {
+  const trimmedEnd = content.trimEnd();
+  const idStart = trimmedEnd.lastIndexOf(' {#');
+
+  if (idStart === -1 || !trimmedEnd.endsWith('}')) {
+    return content;
+  }
+
+  return trimmedEnd.slice(0, idStart);
+}
+
+/**
+ * Replaces simple markdown links and images with their label text.
+ *
+ * @param content - The heading content to normalize.
+ * @returns Heading content with markdown link URLs removed.
+ */
+function stripMarkdownLinks(content: string) {
+  let result = '';
+  let index = 0;
+
+  while (index < content.length) {
+    let labelStart = -1;
+
+    if (content[index] === '!' && content[index + 1] === '[') {
+      labelStart = index + 1;
+    } else if (content[index] === '[') {
+      labelStart = index;
+    }
+
+    if (labelStart === -1) {
+      result += content[index];
+      index += 1;
+    } else {
+      const labelEnd = content.indexOf(']', labelStart + 1);
+      const urlStart = labelEnd === -1 ? -1 : labelEnd + 1;
+      const urlEnd = urlStart === -1 || content[urlStart] !== '(' ? -1 : content.indexOf(')', urlStart + 1);
+
+      if (labelEnd === -1 || urlEnd === -1) {
+        result += content[index];
+        index += 1;
+      } else {
+        result += content.slice(labelStart + 1, labelEnd);
+        index = urlEnd + 1;
+      }
+    }
+  }
+
+  return result;
+}
+
+/**
+ * Removes inline HTML tags from a heading.
+ *
+ * @param content - The heading content to normalize.
+ * @returns Heading content without inline HTML tags.
+ */
+function stripHtmlTags(content: string) {
+  let result = '';
+  let index = 0;
+
+  while (index < content.length) {
+    if (content[index] === '<') {
+      const tagEnd = content.indexOf('>', index + 1);
+
+      if (tagEnd === -1) {
+        result += content[index];
+        index += 1;
+      } else {
+        index = tagEnd + 1;
+      }
+    } else {
+      result += content[index];
+      index += 1;
+    }
+  }
+
+  return result;
+}
+
+/**
+ * Removes syntax that is not part of the rendered heading text.
+ *
+ * @param content - The heading content to normalize.
+ * @returns The rendered text for a heading.
+ */
+function normalizeTocContent(content: string) {
+  return stripHtmlTags(stripMarkdownLinks(removeTrailingHeadingId(content)));
+}
+
+/**
+ * Generates the same fallback slug format used by rendered markdown headings.
+ *
+ * @param content - The heading content to slugify.
+ * @returns URL-safe heading slug.
+ */
+function slugifyHeading(content: string) {
+  return normalizeTocContent(content)
+    .toLowerCase()
+    .trim()
+    .replaceAll(/\s+/g, '-')
+    .replaceAll(/[^\w-]/g, '');
+}
+
+/**
  * Extracts a slug from a markdown heading string for table of contents usage.
  *
  * This function searches for a valid heading ID in the form `{#someId}` within the input string
@@ -46,8 +156,9 @@ export function slugifyToC(str: string) {
 
   slug = (headingId || anchorId || '').trim();
 
-  // If no valid ID is found, return an empty string
-  return slug;
+  if (slug || str.includes('{#') || str.includes('<a name=')) return slug;
+
+  return slugifyHeading(str);
 }
 
 /**
@@ -228,7 +339,10 @@ async function walkDirectories(
           const { data, content } = frontMatter(fileContent, {});
 
           details = data as Details;
-          details.toc = toc(content, { slugify: slugifyToC }).json;
+          details.toc = toc(content, { slugify: slugifyToC }).json.map((item) => ({
+            ...item,
+            content: normalizeTocContent(item.content)
+          }));
           details.readingTime = Math.ceil(readingTime(content).minutes);
           details.excerpt = details.excerpt || markdownToTxt(content).substr(0, 200);
           details.sectionSlug = sectionSlug || slug.replace(/\.mdx$/, '');

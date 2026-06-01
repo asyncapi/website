@@ -290,6 +290,16 @@ describe('buildPostList', () => {
       expect(slugifyToC('## Heading {#id} {<a name="name"/>}')).toBe('id');
     });
 
+    it('generates slugs for headings without explicit IDs', () => {
+      expect(slugifyToC('Timeline')).toBe('timeline');
+    });
+
+    it('generates slugs for headings with markdown links', () => {
+      const input = '1) [Enhancing Developer Experience in CLI](https://github.com/asyncapi/cli/issues/1508) ✅';
+
+      expect(slugifyToC(input)).toBe('1-enhancing-developer-experience-in-cli-');
+    });
+
     it('handles invalid input types gracefully', () => {
       // @ts-expect-error - Intentionally passing null to test graceful handling of invalid input
       expect(slugifyToC(null)).toBe('');
