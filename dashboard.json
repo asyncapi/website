@@ -1,41 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "PR_kwDOBW5R_c7Llp2_",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat!: dark Theme Rollout",
-      "author": "princerajpoot20",
-      "resourcePath": "/asyncapi/website/pull/5253",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 51.11707679736806
-    },
-    {
-      "id": "I_kwDOBW5R_c7pGlqB",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[Release] [Prod] [DarkTheme] Rollout plan for dark theme",
-      "author": "princerajpoot20",
-      "resourcePath": "/asyncapi/website/issues/5103",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        },
-        {
-          "name": "Priority: P2",
-          "color": "FBCA04"
-        },
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ],
-      "score": 24.409840043686994
-    },
-    {
       "id": "I_kwDOBW5R_c6pn_G2",
       "isPR": false,
       "isAssigned": false,
@@ -50,6 +15,30 @@
         }
       ],
       "score": 22.68679251119144
+    },
+    {
+      "id": "I_kwDOBW5R_c6VGYzo",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "[FEATURE] Performance + Accessibility Improvement of website",
+      "author": "akshatnema",
+      "resourcePath": "/asyncapi/website/issues/3186",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "Epic",
+          "color": "3E4B9E"
+        },
+        {
+          "name": "bounty",
+          "color": "0e8a16"
+        }
+      ],
+      "score": 13.78438025996442
     },
     {
       "id": "I_kwDOE8Qh386IiMCQ",
@@ -147,22 +136,6 @@
       "score": 9.18958683997628
     },
     {
-      "id": "PR_kwDOBW5R_c7gPqR-",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: enhance dark theme support for Visualizer and DocsLayout components",
-      "author": "hasithasandunlakshan",
-      "resourcePath": "/asyncapi/website/pull/5507",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "waiting-for-author",
-          "color": "BDDB3C"
-        }
-      ],
-      "score": 8.615237662477762
-    },
-    {
       "id": "PR_kwDOFLhIt87ZqBG1",
       "isPR": true,
       "isAssigned": false,
@@ -211,6 +184,28 @@
           "color": "0052cc"
         }
       ],
+      "score": 7.7537138962299865
+    },
+    {
+      "id": "PR_kwDOCHlHJM7NT-iG",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: rewrite Java template tutorial to AsyncAPI v3",
+      "author": "wei123-web",
+      "resourcePath": "/asyncapi/generator/pull/2029",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 7.7537138962299865
+    },
+    {
+      "id": "PR_kwDODwv8N866EXtA",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add image gallery for past conferences",
+      "author": "kajal-jotwani",
+      "resourcePath": "/asyncapi/conference-website/pull/890",
+      "repo": "asyncapi/conference-website",
+      "labels": [],
       "score": 7.7537138962299865
     }
   ],
