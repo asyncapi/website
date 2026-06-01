@@ -318,35 +318,20 @@ describe('buildPostList', () => {
   });
 
   describe('normalizeTocContent', () => {
-    it('removes trailing heading IDs', () => {
-      expect(normalizeTocContent('My Heading {#custom-id}')).toBe('My Heading');
-    });
-
-    it('strips inline markdown links, keeping label text', () => {
-      expect(normalizeTocContent('[Some Label](https://example.com)')).toBe('Some Label');
-    });
-
-    it('strips inline markdown images, keeping alt text', () => {
-      expect(normalizeTocContent('![Alt Text](https://example.com/img.png)')).toBe('Alt Text');
-    });
-
-    it('strips HTML tags', () => {
-      expect(normalizeTocContent('Hello <em>World</em>')).toBe('Hello World');
-    });
-
-    it('preserves angle brackets that are not valid HTML tags', () => {
-      expect(normalizeTocContent('Foo < Bar > Baz')).toBe('Foo < Bar > Baz');
-    });
-
-    it('handles a heading with both a markdown link and a trailing ID', () => {
-      expect(normalizeTocContent('[My Feature](https://example.com) {#my-feature}')).toBe('My Feature');
-    });
-
-    // Known limitation: reference-style links ([label][ref]) are not handled and will
-    // pass through unchanged, producing an incorrect slug. Inline links should be used
-    // in headings instead.
-    it('does not strip reference-style links (known limitation)', () => {
-      expect(normalizeTocContent('[My Label][some-ref]')).toBe('[My Label][some-ref]');
+    it.each([
+      ['removes trailing heading IDs', 'My Heading {#custom-id}', 'My Heading'],
+      ['strips inline markdown links, keeping label text', '[Some Label](https://example.com)', 'Some Label'],
+      ['strips inline markdown images, keeping alt text', '![Alt Text](https://example.com/img.png)', 'Alt Text'],
+      ['strips HTML tags', 'Hello <em>World</em>', 'Hello World'],
+      ['preserves angle brackets that are not valid HTML tags', 'Foo < Bar > Baz', 'Foo < Bar > Baz'],
+      [
+        'handles a heading with both a markdown link and a trailing ID',
+        '[My Feature](https://example.com) {#my-feature}',
+        'My Feature'
+      ],
+      ['does not strip reference-style links', '[My Label][some-ref]', '[My Label][some-ref]']
+    ])('%s', (_description, input, expected) => {
+      expect(normalizeTocContent(input)).toBe(expected);
     });
   });
 });
