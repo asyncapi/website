@@ -21,17 +21,17 @@ interface ITOCProps {
  */
 function normalizeTocContent(content: string) {
   return content
-    .replace(/[\s]?\{#[\w\d\-_]+\}$/, '')
+    .replace(/\s?\{#[\w\d\-_]+\}$/, '')
     .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
     .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
-    .replace(/(<([^>]+)>)/gi, '');
+    .replace(/<[^>]*>/g, '');
 }
 
 /**
  * @description Builds a slug source that matches rendered markdown link headings.
  */
 function getSlugContent(content: string) {
-  if (!/\[[^\]]+\]\([^)]+\)/.test(content)) {
+  if (!content.includes('](')) {
     return content;
   }
 
