@@ -91,12 +91,12 @@ function stripMarkdownLinks(content: string) {
     const markdownLink = getMarkdownLinkAt(content, index);
 
     if (markdownLink) {
-  result += markdownLink.label;
-  index = markdownLink.nextIndex;
-} else {
-  result += content[index];
-  index += 1;
-}
+      result += markdownLink.label;
+      index = markdownLink.nextIndex;
+    } else {
+      result += content[index];
+      index += 1;
+    }
   }
 
   return result;
@@ -115,12 +115,14 @@ function stripHtmlTags(content: string) {
   while (index < content.length) {
     if (content[index] === '<') {
       const tagEnd = content.indexOf('>', index + 1);
+      const tagContent = tagEnd !== -1 ? content.slice(index + 1, tagEnd) : '';
 
-      if (tagEnd === -1) {
+      // Only skip content that looks like an actual HTML tag
+      if (tagEnd !== -1 && /^[a-zA-Z/!]/.test(tagContent)) {
+        index = tagEnd + 1;
+      } else {
         result += content[index];
         index += 1;
-      } else {
-        index = tagEnd + 1;
       }
     } else {
       result += content[index];
@@ -137,7 +139,7 @@ function stripHtmlTags(content: string) {
  * @param content - The heading content to normalize.
  * @returns The rendered text for a heading.
  */
-function normalizeTocContent(content: string) {
+export function normalizeTocContent(content: string) {
   return stripHtmlTags(stripMarkdownLinks(removeTrailingHeadingId(content)));
 }
 
@@ -151,8 +153,8 @@ function slugifyHeading(content: string) {
   return normalizeTocContent(content)
     .toLowerCase()
     .trim()
-    .replaceAll(/\s+/g, '-')
-    .replaceAll(/[^\w-]/g, '');
+    .replaceAll(/\s/g, '-')
+    .replaceAll(/[^\w-]+/g, '');
 }
 
 /**

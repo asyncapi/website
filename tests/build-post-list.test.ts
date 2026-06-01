@@ -3,7 +3,7 @@ import { join, resolve } from 'path';
 
 import type { Details, Result } from '@/types/scripts/build-posts-list';
 
-import { addItem, buildPostList, slugifyToC } from '../scripts/build-post-list';
+import { addItem, buildPostList, normalizeTocContent, slugifyToC } from '../scripts/build-post-list';
 import { generateTempDirPath, setupTestDirectories } from './helper/buildPostListSetup';
 
 describe('buildPostList', () => {
@@ -297,6 +297,8 @@ describe('buildPostList', () => {
     it('generates slugs for headings with markdown links', () => {
       const input = '1) [Enhancing Developer Experience in CLI](https://github.com/asyncapi/cli/issues/1508) ✅';
 
+      // Trailing hyphen is intentional: github-slugger also does not trim trailing hyphens,
+      // so the rendered heading ID on the page would also end with a hyphen.
       expect(slugifyToC(input)).toBe('1-enhancing-developer-experience-in-cli-');
     });
 
@@ -312,6 +314,39 @@ describe('buildPostList', () => {
     it('ignores invalid characters in heading IDs', () => {
       expect(slugifyToC('## Heading {#invalid@id}')).toBe('');
       expect(slugifyToC('## Heading {#invalid spaces}')).toBe('');
+    });
+  });
+
+  describe('normalizeTocContent', () => {
+    it('removes trailing heading IDs', () => {
+      expect(normalizeTocContent('My Heading {#custom-id}')).toBe('My Heading');
+    });
+
+    it('strips inline markdown links, keeping label text', () => {
+      expect(normalizeTocContent('[Some Label](https://example.com)')).toBe('Some Label');
+    });
+
+    it('strips inline markdown images, keeping alt text', () => {
+      expect(normalizeTocContent('![Alt Text](https://example.com/img.png)')).toBe('Alt Text');
+    });
+
+    it('strips HTML tags', () => {
+      expect(normalizeTocContent('Hello <em>World</em>')).toBe('Hello World');
+    });
+
+    it('preserves angle brackets that are not valid HTML tags', () => {
+      expect(normalizeTocContent('Foo < Bar > Baz')).toBe('Foo < Bar > Baz');
+    });
+
+    it('handles a heading with both a markdown link and a trailing ID', () => {
+      expect(normalizeTocContent('[My Feature](https://example.com) {#my-feature}')).toBe('My Feature');
+    });
+
+    // Known limitation: reference-style links ([label][ref]) are not handled and will
+    // pass through unchanged, producing an incorrect slug. Inline links should be used
+    // in headings instead.
+    it('does not strip reference-style links (known limitation)', () => {
+      expect(normalizeTocContent('[My Label][some-ref]')).toBe('[My Label][some-ref]');
     });
   });
 });
