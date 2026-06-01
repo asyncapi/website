@@ -44,6 +44,40 @@ function removeTrailingHeadingId(content: string) {
 }
 
 /**
+ * Finds a simple markdown link or image at the provided position.
+ *
+ * @param content - The heading content to inspect.
+ * @param index - The position to inspect.
+ * @returns The link label and the next index after the link, or null when no link is found.
+ */
+function getMarkdownLinkAt(content: string, index: number) {
+  let labelStart = -1;
+
+  if (content[index] === '!' && content[index + 1] === '[') {
+    labelStart = index + 1;
+  } else if (content[index] === '[') {
+    labelStart = index;
+  }
+
+  if (labelStart === -1) {
+    return null;
+  }
+
+  const labelEnd = content.indexOf(']', labelStart + 1);
+  const urlStart = labelEnd === -1 ? -1 : labelEnd + 1;
+  const urlEnd = urlStart === -1 || content[urlStart] !== '(' ? -1 : content.indexOf(')', urlStart + 1);
+
+  if (labelEnd === -1 || urlEnd === -1) {
+    return null;
+  }
+
+  return {
+    label: content.slice(labelStart + 1, labelEnd),
+    nextIndex: urlEnd + 1
+  };
+}
+
+/**
  * Replaces simple markdown links and images with their label text.
  *
  * @param content - The heading content to normalize.
@@ -54,29 +88,14 @@ function stripMarkdownLinks(content: string) {
   let index = 0;
 
   while (index < content.length) {
-    let labelStart = -1;
+    const markdownLink = getMarkdownLinkAt(content, index);
 
-    if (content[index] === '!' && content[index + 1] === '[') {
-      labelStart = index + 1;
-    } else if (content[index] === '[') {
-      labelStart = index;
-    }
-
-    if (labelStart === -1) {
+    if (!markdownLink) {
       result += content[index];
       index += 1;
     } else {
-      const labelEnd = content.indexOf(']', labelStart + 1);
-      const urlStart = labelEnd === -1 ? -1 : labelEnd + 1;
-      const urlEnd = urlStart === -1 || content[urlStart] !== '(' ? -1 : content.indexOf(')', urlStart + 1);
-
-      if (labelEnd === -1 || urlEnd === -1) {
-        result += content[index];
-        index += 1;
-      } else {
-        result += content.slice(labelStart + 1, labelEnd);
-        index = urlEnd + 1;
-      }
+      result += markdownLink.label;
+      index = markdownLink.nextIndex;
     }
   }
 
