@@ -9,12 +9,12 @@ export interface FilterDropdownOption {
   text: string;
 }
 
-interface FilterDropdownProps {
+type FilterDropdownProps = Readonly<{
   className?: string;
   onChange: (selected: string) => void;
   options: FilterDropdownOption[];
   selected?: string;
-}
+}>;
 
 /**
  * @description Single-select dropdown for navigation filters.
@@ -53,10 +53,7 @@ export default function FilterDropdown({ className = '', onChange, options, sele
       </button>
 
       {isOpen && (
-        <div
-          role='listbox'
-          className='absolute left-0 z-50 mt-1 max-h-72 min-w-full overflow-y-auto rounded-md border border-gray-300 bg-white py-1 shadow-lg dark:border-gray-700 dark:bg-dark-card md:min-w-64'
-        >
+        <div className='absolute left-0 z-50 mt-1 max-h-72 min-w-full overflow-y-auto rounded-md border border-gray-300 bg-white py-1 shadow-lg dark:border-gray-700 dark:bg-dark-card md:min-w-64'>
           {options.map((option) => {
             const isSelected = Boolean(selected) && option.value === selected;
 
@@ -64,8 +61,7 @@ export default function FilterDropdown({ className = '', onChange, options, sele
               <button
                 key={option.value || option.text}
                 type='button'
-                role='option'
-                aria-selected={isSelected}
+                aria-current={isSelected}
                 className={twMerge(
                   `block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100
                   dark:text-gray-200 dark:hover:bg-dark-background`,
