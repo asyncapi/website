@@ -90,13 +90,13 @@ function stripMarkdownLinks(content: string) {
   while (index < content.length) {
     const markdownLink = getMarkdownLinkAt(content, index);
 
-    if (!markdownLink) {
-      result += content[index];
-      index += 1;
-    } else {
-      result += markdownLink.label;
-      index = markdownLink.nextIndex;
-    }
+    if (markdownLink) {
+  result += markdownLink.label;
+  index = markdownLink.nextIndex;
+} else {
+  result += content[index];
+  index += 1;
+}
   }
 
   return result;
