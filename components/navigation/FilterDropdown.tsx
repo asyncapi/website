@@ -30,7 +30,15 @@ export default function FilterDropdown({ className = '', onChange, options, sele
   };
 
   return (
-    <div ref={dropdownRef} className={twMerge(`relative inline-block ${className}`)}>
+    <div
+      ref={dropdownRef}
+      className={twMerge(`relative inline-block ${className}`)}
+      onKeyDown={(event) => {
+        if (event.key === 'Escape') {
+          setIsOpen(false);
+        }
+      }}
+    >
       <button
         type='button'
         aria-expanded={isOpen}
@@ -42,11 +50,6 @@ export default function FilterDropdown({ className = '', onChange, options, sele
           dark:text-gray-300 dark:hover:bg-dark-background dark:focus:ring-offset-dark-background`
         )}
         onClick={() => setIsOpen((current) => !current)}
-        onKeyDown={(event) => {
-          if (event.key === 'Escape') {
-            setIsOpen(false);
-          }
-        }}
       >
         <span className='truncate'>{selectedOption?.text}</span>
         <ArrowDown className={`shrink-0 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
