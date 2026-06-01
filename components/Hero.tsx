@@ -8,7 +8,6 @@ import AnnouncementHero from './campaigns/AnnouncementHero';
 import Features from './features';
 import ArrowRight from './icons/ArrowRight';
 import SneakPeek from './SneakPeek';
-import DiamondSponsors from './sponsors/DiamondSponsors';
 import Heading from './typography/Heading';
 
 interface HeroProps {
@@ -54,8 +53,6 @@ export default function Hero({ className = '' }: HeroProps) {
               data-testid='Hero-Button'
             />
           </div>
-
-          <DiamondSponsors className={'w-full relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]'} />
         </div>
         <Features />
         <div className='mt-8 md:mt-16'>
