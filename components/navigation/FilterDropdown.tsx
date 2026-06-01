@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { useOutsideClick } from '../helpers/use-outside-click';
@@ -29,16 +29,22 @@ export default function FilterDropdown({ className = '', onChange, options, sele
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscapeKey);
+    }
+
+    return () => document.removeEventListener('keydown', handleEscapeKey);
+  }, [isOpen]);
+
   return (
-    <div
-      ref={dropdownRef}
-      className={twMerge(`relative inline-block ${className}`)}
-      onKeyDown={(event) => {
-        if (event.key === 'Escape') {
-          setIsOpen(false);
-        }
-      }}
-    >
+    <div ref={dropdownRef} className={twMerge(`relative inline-block ${className}`)}>
       <button
         type='button'
         aria-expanded={isOpen}
