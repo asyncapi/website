@@ -33,15 +33,18 @@ class BlogPage extends BasePage {
   }
 
   filterByType(type) {
-    cy.contains('select', 'Filter by type').select(type);
+    cy.contains('[data-testid="FilterDropdown-button"]', 'Filter by type').click();
+    cy.contains('[data-testid="FilterDropdown-option"]', type).click();
   }
 
   filterByAuthor(author) {
-    cy.contains('select', 'Filter by authors').select(author);
+    cy.contains('[data-testid="FilterDropdown-button"]', 'Filter by authors').click();
+    cy.contains('[data-testid="FilterDropdown-option"]', author).click();
   }
 
   filterByTag(tag) {
-    cy.contains('select', 'Filter by tags').select(tag);
+    cy.contains('[data-testid="FilterDropdown-button"]', 'Filter by tags').click();
+    cy.contains('[data-testid="FilterDropdown-option"]', tag).click();
   }
 
   verifyPostLinkAndClick(titlePattern, expectedHref) {
@@ -59,22 +62,14 @@ class BlogPage extends BasePage {
 
   filterByFirstAvailableAuthor() {
     cy.get('[data-testid="BlogPostItem-Link"]', { timeout: 10000 }).should('have.length.greaterThan', 0);
-    cy.contains('select', 'Filter by authors').find('option', { timeout: 10000 }).should('have.length.greaterThan', 1);
-    cy.contains('select', 'Filter by authors').find('option').then(($options) => {
-      const nonEmptyOptions = [...$options].filter(opt => opt.value && opt.value !== '');
-      expect(nonEmptyOptions.length, 'No author filter options available').to.be.greaterThan(0);
-      cy.contains('select', 'Filter by authors').select(nonEmptyOptions[0].value);
-    });
+    cy.contains('[data-testid="FilterDropdown-button"]', 'Filter by authors').click();
+    cy.get('[data-testid="FilterDropdown-option"]', { timeout: 10000 }).should('have.length.greaterThan', 1).eq(1).click();
   }
 
   filterByFirstAvailableTag() {
     cy.get('[data-testid="BlogPostItem-Link"]', { timeout: 10000 }).should('have.length.greaterThan', 0);
-    cy.contains('select', 'Filter by tags').find('option', { timeout: 10000 }).should('have.length.greaterThan', 1);
-    cy.contains('select', 'Filter by tags').find('option').then(($options) => {
-      const nonEmptyOptions = [...$options].filter(opt => opt.value && opt.value !== '');
-      expect(nonEmptyOptions.length, 'No tag filter options available').to.be.greaterThan(0);
-      cy.contains('select', 'Filter by tags').select(nonEmptyOptions[0].value);
-    });
+    cy.contains('[data-testid="FilterDropdown-button"]', 'Filter by tags').click();
+    cy.get('[data-testid="FilterDropdown-option"]', { timeout: 10000 }).should('have.length.greaterThan', 1).eq(1).click();
   }
 
   clickFirstVisiblePost() {
