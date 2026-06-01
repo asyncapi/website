@@ -297,8 +297,6 @@ describe('buildPostList', () => {
     it('generates slugs for headings with markdown links', () => {
       const input = '1) [Enhancing Developer Experience in CLI](https://github.com/asyncapi/cli/issues/1508) ✅';
 
-      // Trailing hyphen is intentional: github-slugger also does not trim trailing hyphens,
-      // so the rendered heading ID on the page would also end with a hyphen.
       expect(slugifyToC(input)).toBe('1-enhancing-developer-experience-in-cli-');
     });
 

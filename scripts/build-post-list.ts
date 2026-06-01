@@ -118,7 +118,6 @@ function stripHtmlTags(content: string) {
       const hasTagEnd = tagEnd > -1;
       const tagContent = hasTagEnd ? content.slice(index + 1, tagEnd) : '';
 
-      // Only skip content that looks like an actual HTML tag
       if (hasTagEnd && /^[a-zA-Z/!]/.test(tagContent)) {
         index = tagEnd + 1;
       } else {
