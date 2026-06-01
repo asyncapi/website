@@ -323,6 +323,8 @@ describe('buildPostList', () => {
       ['strips inline markdown links, keeping label text', '[Some Label](https://example.com)', 'Some Label'],
       ['strips inline markdown images, keeping alt text', '![Alt Text](https://example.com/img.png)', 'Alt Text'],
       ['strips HTML tags', 'Hello <em>World</em>', 'Hello World'],
+      ['preserves incomplete markdown links', '[Broken Label', '[Broken Label'],
+      ['preserves unclosed HTML tags', 'Hello <em', 'Hello <em'],
       ['preserves angle brackets that are not valid HTML tags', 'Foo < Bar > Baz', 'Foo < Bar > Baz'],
       [
         'handles a heading with both a markdown link and a trailing ID',
