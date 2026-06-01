@@ -86,7 +86,7 @@ export default function TOC({ className, cssBreakingPoint = 'xl', toc, contentSe
     .filter((item) => item.lvl <= minLevel + depth)
     .map((item) => ({
       ...item,
-      content: item.content,
+      content: item.content.replace(/[\s]?\{#[\w\d\-_]+\}$/, '').replace(/(<([^>]+)>)/gi, ''),
       // For TOC rendering in specification files in the spec repo we have "a" tags added manually to the spec
       // markdown document MDX takes these "a" tags and uses them to render the "id" for headers like
       // a-namedefinitionsapplicationaapplication slugWithATag contains transformed heading name that is later used
