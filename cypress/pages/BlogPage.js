@@ -73,9 +73,15 @@ class BlogPage extends BasePage {
     cy.get('[data-testid="FilterDropdown-option"]', { timeout: 10000 })
       .should('have.length.greaterThan', 1)
       .should('be.visible')
-      .filter(':not(:empty)')
-      .first()
-      .click();
+      .then(($options) => {
+        const firstSelectable = [...$options].find((option) => {
+          const label = option.textContent?.trim();
+          return label && !label.startsWith('Filter by');
+        });
+
+        expect(firstSelectable, 'first selectable author option').to.exist;
+        cy.wrap(firstSelectable).click();
+      });
   }
 
   filterByFirstAvailableTag() {
@@ -84,9 +90,15 @@ class BlogPage extends BasePage {
     cy.get('[data-testid="FilterDropdown-option"]', { timeout: 10000 })
       .should('have.length.greaterThan', 1)
       .should('be.visible')
-      .filter(':not(:empty)')
-      .first()
-      .click();
+      .then(($options) => {
+        const firstSelectable = [...$options].find((option) => {
+          const label = option.textContent?.trim();
+          return label && !label.startsWith('Filter by');
+        });
+
+        expect(firstSelectable, 'first selectable tag option').to.exist;
+        cy.wrap(firstSelectable).click();
+      });
   }
 
   clickFirstVisiblePost() {
