@@ -203,11 +203,13 @@ export default function ToolsDashboard() {
                 <FilterIcon />
                 <span className='font-medium'>Filter</span>
               </button>
-              {openFilter && (
-                <div id='tools-filter-panel' className='absolute top-16 z-20 min-w-[20rem]'>
-                  <Filters setOpenFilter={setOpenFilter} />
-                </div>
-              )}
+              <div
+                id='tools-filter-panel'
+                hidden={!openFilter}
+                className={`absolute top-16 z-20 min-w-[20rem] ${openFilter ? '' : 'hidden'}`}
+              >
+                <Filters setOpenFilter={setOpenFilter} />
+              </div>
             </div>
           </div>
           <div className='flex h-auto w-[47%] gap-5 lg:w-1/5'>
@@ -225,11 +227,13 @@ export default function ToolsDashboard() {
                   className={`my-auto transition-transform duration-300 ${openCategory ? 'rotate-180' : ''}`}
                 />
               </button>
-              {openCategory && (
-                <div id='tools-category-panel' className='absolute right-52 top-16 z-20'>
-                  <CategoryDropdown setopenCategory={setopenCategory} />
-                </div>
-              )}
+              <div
+                id='tools-category-panel'
+                hidden={!openCategory}
+                className={`absolute right-52 top-16 z-20 ${openCategory ? '' : 'hidden'}`}
+              >
+                <CategoryDropdown setopenCategory={setopenCategory} />
+              </div>
             </div>
           </div>
           <div className='flex h-14 w-full rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-dark-card bg-white px-4 py-1 text-sm text-gray-700 dark:text-gray-300 shadow-md dark:shadow-lg hover:border-gray-400 dark:hover:border-gray-500 focus-within:border-gray-500 dark:focus-within:border-gray-400 focus-within:shadow-lg transition-all duration-300 lg:w-4/5'>
