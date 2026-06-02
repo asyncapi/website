@@ -1,6 +1,10 @@
 import BasePage from './BasePage';
 
 class BlogPage extends BasePage {
+  escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
   visit() {
     super.visit('/blog');
   }
@@ -34,17 +38,20 @@ class BlogPage extends BasePage {
 
   filterByType(type) {
     cy.contains('[data-testid="FilterDropdown-button"]', 'Filter by type').click();
-    cy.contains('[data-testid="FilterDropdown-option"]', type).click();
+    cy.get('[data-testid="FilterDropdown-option"]').should('be.visible');
+    cy.contains('[data-testid="FilterDropdown-option"]', new RegExp(`^${this.escapeRegExp(type)}$`)).click();
   }
 
   filterByAuthor(author) {
     cy.contains('[data-testid="FilterDropdown-button"]', 'Filter by authors').click();
-    cy.contains('[data-testid="FilterDropdown-option"]', author).click();
+    cy.get('[data-testid="FilterDropdown-option"]').should('be.visible');
+    cy.contains('[data-testid="FilterDropdown-option"]', new RegExp(`^${this.escapeRegExp(author)}$`)).click();
   }
 
   filterByTag(tag) {
     cy.contains('[data-testid="FilterDropdown-button"]', 'Filter by tags').click();
-    cy.contains('[data-testid="FilterDropdown-option"]', tag).click();
+    cy.get('[data-testid="FilterDropdown-option"]').should('be.visible');
+    cy.contains('[data-testid="FilterDropdown-option"]', new RegExp(`^${this.escapeRegExp(tag)}$`)).click();
   }
 
   verifyPostLinkAndClick(titlePattern, expectedHref) {
@@ -63,13 +70,23 @@ class BlogPage extends BasePage {
   filterByFirstAvailableAuthor() {
     cy.get('[data-testid="BlogPostItem-Link"]', { timeout: 10000 }).should('have.length.greaterThan', 0);
     cy.contains('[data-testid="FilterDropdown-button"]', 'Filter by authors').click();
-    cy.get('[data-testid="FilterDropdown-option"]', { timeout: 10000 }).should('have.length.greaterThan', 1).eq(1).click();
+    cy.get('[data-testid="FilterDropdown-option"]', { timeout: 10000 })
+      .should('have.length.greaterThan', 1)
+      .should('be.visible')
+      .filter(':not(:empty)')
+      .first()
+      .click();
   }
 
   filterByFirstAvailableTag() {
     cy.get('[data-testid="BlogPostItem-Link"]', { timeout: 10000 }).should('have.length.greaterThan', 0);
     cy.contains('[data-testid="FilterDropdown-button"]', 'Filter by tags').click();
-    cy.get('[data-testid="FilterDropdown-option"]', { timeout: 10000 }).should('have.length.greaterThan', 1).eq(1).click();
+    cy.get('[data-testid="FilterDropdown-option"]', { timeout: 10000 })
+      .should('have.length.greaterThan', 1)
+      .should('be.visible')
+      .filter(':not(:empty)')
+      .first()
+      .click();
   }
 
   clickFirstVisiblePost() {
