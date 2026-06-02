@@ -67,9 +67,8 @@ class BlogPage extends BasePage {
       .and('contain', expectedHeaderText);
   }
 
-  filterByFirstAvailableAuthor() {
-    cy.get('[data-testid="BlogPostItem-Link"]', { timeout: 10000 }).should('have.length.greaterThan', 0);
-    cy.contains('[data-testid="FilterDropdown-button"]', 'Filter by authors').click();
+  selectFirstValidDropdownOption(dropdownLabel, optionType) {
+    cy.contains('[data-testid="FilterDropdown-button"]', dropdownLabel).click();
     cy.get('[data-testid="FilterDropdown-option"]', { timeout: 10000 })
       .should('have.length.greaterThan', 1)
       .should('be.visible')
@@ -79,26 +78,19 @@ class BlogPage extends BasePage {
           return label && !label.startsWith('Filter by');
         });
 
-        expect(firstSelectable, 'first selectable author option').to.exist;
+        expect(firstSelectable, `first selectable ${optionType} option`).to.exist;
         cy.wrap(firstSelectable).click();
       });
   }
 
+  filterByFirstAvailableAuthor() {
+    cy.get('[data-testid="BlogPostItem-Link"]', { timeout: 10000 }).should('have.length.greaterThan', 0);
+    this.selectFirstValidDropdownOption('Filter by authors', 'author');
+  }
+
   filterByFirstAvailableTag() {
     cy.get('[data-testid="BlogPostItem-Link"]', { timeout: 10000 }).should('have.length.greaterThan', 0);
-    cy.contains('[data-testid="FilterDropdown-button"]', 'Filter by tags').click();
-    cy.get('[data-testid="FilterDropdown-option"]', { timeout: 10000 })
-      .should('have.length.greaterThan', 1)
-      .should('be.visible')
-      .then(($options) => {
-        const firstSelectable = [...$options].find((option) => {
-          const label = option.textContent?.trim();
-          return label && !label.startsWith('Filter by');
-        });
-
-        expect(firstSelectable, 'first selectable tag option').to.exist;
-        cy.wrap(firstSelectable).click();
-      });
+    this.selectFirstValidDropdownOption('Filter by tags', 'tag');
   }
 
   clickFirstVisiblePost() {
