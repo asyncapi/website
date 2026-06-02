@@ -71,7 +71,7 @@ export default function ToolsIndex() {
                 community. Have an AsyncAPI tool you want to be featured on this list? Then follow the procedure given
                 in the{' '}
                 <TextLink
-                  href='https://github.com/asyncapi/community/blob/master/new-tool-documentation.md'
+                  href='https://github.com/asyncapi/community/blob/master/docs/040-guides/add-new-asyncapi-tool-to-website.md'
                   target='_blank'
                   className='text-gray-900 dark:text-white font-semibold hover:text-gray-600 dark:hover:text-gray-300 underline-offset-4 underline decoration-2 decoration-primary-500 dark:decoration-primary-400 transition-colors duration-200'
                 >
