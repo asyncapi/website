@@ -1,22 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "I_kwDOBW5R_c6pn_G2",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Redesign the AsyncAPI Website and Implement Dark Theme",
-      "author": "ashmitjsg",
-      "resourcePath": "/asyncapi/website/issues/3669",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        }
-      ],
-      "score": 22.68679251119144
-    },
-    {
       "id": "I_kwDOBW5R_c6VGYzo",
       "isPR": false,
       "isAssigned": true,
@@ -93,7 +77,7 @@
           "color": "0E8A16"
         }
       ],
-      "score": 10.625459783722574
+      "score": 11.199808961221091
     },
     {
       "id": "I_kwDOBW5R_c6rxQC5",
@@ -144,7 +128,7 @@
       "resourcePath": "/asyncapi/community/pull/3541",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 8.040888484979245
+      "score": 8.615237662477762
     },
     {
       "id": "I_kwDOFDnrNc6w5oVf",
@@ -207,6 +191,22 @@
       "repo": "asyncapi/conference-website",
       "labels": [],
       "score": 7.7537138962299865
+    },
+    {
+      "id": "I_kwDOFDnrNc7_yTml",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Set of issues for resolution under the MICROGRANT Program 2026-05",
+      "author": "AayushSaini101",
+      "resourcePath": "/asyncapi/cli/issues/2125",
+      "repo": "asyncapi/cli",
+      "labels": [
+        {
+          "name": "bounty",
+          "color": "0e8a16"
+        }
+      ],
+      "score": 7.179364718731469
     }
   ],
   "goodFirstIssues": [
