@@ -22,7 +22,18 @@
           "color": "0e8a16"
         }
       ],
-      "score": 13.78438025996442
+      "score": 14.07155484871368
+    },
+    {
+      "id": "I_kwDOFLhIt87jC_4a",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Code of Conduct Nomination - 2026",
+      "author": "Mayaleeeee",
+      "resourcePath": "/asyncapi/community/issues/2236",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 11.774158138719608
     },
     {
       "id": "I_kwDOE8Qh386IiMCQ",
@@ -43,17 +54,6 @@
         }
       ],
       "score": 11.774158138719608
-    },
-    {
-      "id": "I_kwDOFLhIt87jC_4a",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Code of Conduct Nomination - 2026",
-      "author": "Mayaleeeee",
-      "resourcePath": "/asyncapi/community/issues/2236",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 11.48698354997035
     },
     {
       "id": "I_kwDOGQYLdM67ixbm",
@@ -206,7 +206,7 @@
           "color": "0e8a16"
         }
       ],
-      "score": 7.179364718731469
+      "score": 7.466539307480728
     }
   ],
   "goodFirstIssues": [
@@ -339,10 +339,6 @@
           "color": "d73a4a"
         },
         {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
           "name": "triaged",
           "color": "0052cc"
         }
@@ -462,25 +458,6 @@
         {
           "name": "stale",
           "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5soAAM",
-      "title": "Create a research page to have participants sign up for the research study",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1991",
-      "repo": "asyncapi/website",
-      "author": "Mayaleeeee",
-      "area": "design",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
         }
       ]
     },

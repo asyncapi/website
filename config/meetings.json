@@ -112,10 +112,17 @@
     "date": "2026-05-27T16:00:00.000Z"
   },
   {
+    "title": "AsyncAPI Community WG Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=cWozYmhwa2lobTVoZGhvcmZkNzNzbzFhczAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/3570",
+    "banner": "https://github.com/user-attachments/assets/b4e255b8-5c7e-4821-82c9-3bcbc18b68ef",
+    "date": "2026-06-16T15:00:00.000Z"
+  },
+  {
     "title": "Governance Board Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=MWU5MHIyYm5ucnQzYjB2OWhyMmFqZ21vZXMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/3569",
+    "calLink": "https://www.google.com/calendar/event?eid=dmpoZmhlbTZ0ZGU0ajZrMHFta2RucTNvbWMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/3571",
     "banner": "",
-    "date": "2026-06-02T15:00:00.000Z"
+    "date": "2026-06-03T15:00:00.000Z"
   }
 ]
