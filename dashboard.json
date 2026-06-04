@@ -22,7 +22,7 @@
           "color": "0e8a16"
         }
       ],
-      "score": 14.07155484871368
+      "score": 16.08177696995849
     },
     {
       "id": "I_kwDOFLhIt87jC_4a",
@@ -100,6 +100,22 @@
       "score": 10.338285194973315
     },
     {
+      "id": "I_kwDOCoBobc6fqNYx",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[BUG] `@asyncapi/multi-parser` still depending on vulnerable version of `jsonpath-plus`",
+      "author": "BenjaminSchwendner",
+      "resourcePath": "/asyncapi/parser-js/issues/1065",
+      "repo": "asyncapi/parser-js",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ],
+      "score": 10.051110606224057
+    },
+    {
       "id": "I_kwDOBGu-185zXJ6b",
       "isPR": false,
       "isAssigned": false,
@@ -129,6 +145,22 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 8.615237662477762
+    },
+    {
+      "id": "I_kwDOFDnrNc7_yTml",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Set of issues for resolution under the MICROGRANT Program 2026-05",
+      "author": "AayushSaini101",
+      "resourcePath": "/asyncapi/cli/issues/2125",
+      "repo": "asyncapi/cli",
+      "labels": [
+        {
+          "name": "bounty",
+          "color": "0e8a16"
+        }
+      ],
+      "score": 7.7537138962299865
     },
     {
       "id": "I_kwDOFDnrNc6w5oVf",
@@ -180,33 +212,6 @@
       "repo": "asyncapi/generator",
       "labels": [],
       "score": 7.7537138962299865
-    },
-    {
-      "id": "PR_kwDODwv8N866EXtA",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add image gallery for past conferences",
-      "author": "kajal-jotwani",
-      "resourcePath": "/asyncapi/conference-website/pull/890",
-      "repo": "asyncapi/conference-website",
-      "labels": [],
-      "score": 7.7537138962299865
-    },
-    {
-      "id": "I_kwDOFDnrNc7_yTml",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Set of issues for resolution under the MICROGRANT Program 2026-05",
-      "author": "AayushSaini101",
-      "resourcePath": "/asyncapi/cli/issues/2125",
-      "repo": "asyncapi/cli",
-      "labels": [
-        {
-          "name": "bounty",
-          "color": "0e8a16"
-        }
-      ],
-      "score": 7.466539307480728
     }
   ],
   "goodFirstIssues": [
@@ -468,25 +473,6 @@
       "resourcePath": "/asyncapi/EDAVisualiser/issues/14",
       "repo": "asyncapi/EDAVisualiser",
       "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFiHaLM5DeQ4y",
-      "title": "Add support for HTML output",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/diff/issues/85",
-      "repo": "asyncapi/diff",
-      "author": "aayushmau5",
       "area": "Unknown",
       "labels": [
         {
