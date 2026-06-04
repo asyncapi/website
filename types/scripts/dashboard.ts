@@ -31,10 +31,6 @@ interface Assignees {
   totalCount: number;
 }
 
-interface TimelineItems {
-  updatedAt: string;
-}
-
 interface Comments {
   totalCount: number;
   pageInfo?: PageInfo;
@@ -70,7 +66,6 @@ export interface PullRequestById {
   node: {
     reactions: Reactions;
     reviews: Reviews;
-    timelineItems: TimelineItems;
     comments: Comments;
   } & BasicIssueOrPR;
   rateLimit: RateLimit;
@@ -78,7 +73,6 @@ export interface PullRequestById {
 
 export interface IssueById {
   node: {
-    timelineItems: TimelineItems;
     reactions: Reactions;
     comments: Comments;
     reviews: Reviews;
@@ -89,14 +83,12 @@ export interface IssueById {
 export interface GoodFirstIssues extends BasicIssueOrPR {}
 
 export interface HotDiscussionsIssuesNode extends BasicIssueOrPR {
-  timelineItems: TimelineItems;
   reactions: Reactions;
   comments: Comments;
   reviews: Reviews;
 }
 
 export interface HotDiscussionsPullRequestsNode extends BasicIssueOrPR {
-  timelineItems: TimelineItems;
   reactions: Reactions;
   reviews: Reviews;
   comments: Comments;

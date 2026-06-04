@@ -15,7 +15,7 @@ const mockDiscussion = {
     pageInfo: { hasNextPage: false },
   },
   labels: { nodes: [] },
-  timelineItems: { updatedAt: new Date().toISOString() },
+      updatedAt: new Date().toISOString() },
   reviews: {
     totalCount: 0,
     nodes: [],
@@ -37,7 +37,7 @@ const discussionWithMoreComments = {
     pageInfo: { hasNextPage: true },
   },
   labels: { nodes: [] },
-  timelineItems: { updatedAt: new Date().toISOString() },
+      updatedAt: new Date().toISOString() },
   reviews: {
     totalCount: 0,
     nodes: [],

@@ -136,7 +136,7 @@ Here is a simplified view of what one search request asks GitHub to compute:
 search(first: 30)                   -- Give me 30 issues
   for EACH of those 30 issues:
     ├── assignees(first: 1)         -- 30 x 1 = 30 assignee checks
-    ├── timelineItems(first: 1)     -- 30 x 1 = 30 timeline lookups
+    ├── (top-level updatedAt)      -- 30 x 1 = 30 updatedAt lookups
     ├── author                      -- 30 x 1 = 30 author lookups
     ├── labels(first: 10)           -- 30 x 10 = 300 label nodes
     ├── reactions(last: 1)          -- 30 x 1 = 30 reaction nodes

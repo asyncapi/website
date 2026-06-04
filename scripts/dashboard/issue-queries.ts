@@ -6,9 +6,7 @@ query IssueByID($id: ID!) {
       assignees(first:1){
         totalCount
       }
-      timelineItems(first: 1){
-        updatedAt
-      }
+      updatedAt
       author {
         login
       }
@@ -59,9 +57,7 @@ query IssueByID($id: ID!) {
       assignees(first:1){
         totalCount
       }
-      timelineItems(first: 1){
-        updatedAt
-      }
+      updatedAt
       author {
         login
       }
@@ -165,9 +161,7 @@ query($first: Int!, $after: String) {
         assignees(first:1){
           totalCount
         }
-        timelineItems(first: 1){
-          updatedAt
-        }
+        updatedAt
         author {
           login
         }
@@ -229,9 +223,7 @@ query($first: Int!, $after: String) {
         assignees(first:1){
           totalCount
         }
-        timelineItems(first: 1){
-          updatedAt
-        }
+        updatedAt
         author {
           login
         }

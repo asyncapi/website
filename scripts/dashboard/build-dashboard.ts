@@ -276,7 +276,7 @@ async function processHotDiscussions(batch: HotDiscussionsIssuesNode[]): Promise
         resourcePath: item.resourcePath,
         repo: `asyncapi/${item.repository.name}`,
         labels: item.labels ? item.labels.nodes : [],
-        score: finalInteractionsCount / (monthsSince(item.timelineItems.updatedAt) + 2) ** 1.8
+        score: finalInteractionsCount / (monthsSince(item.updatedAt) + 2) ** 1.8
       });
     } catch (error) {
       logger.error(`there were some issues while parsing this item: ${JSON.stringify(discussion)}`);

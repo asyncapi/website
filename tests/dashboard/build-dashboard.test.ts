@@ -501,14 +501,13 @@ describe('GitHub Discussions Processing', () => {
   it('should correctly calculate score based on months since update', async () => {
     const recentDiscussion = {
       ...mockDiscussion,
-      timelineItems: { updatedAt: new Date().toISOString() },
+      updatedAt: new Date().toISOString() },
     };
 
     const olderDiscussion = {
       ...mockDiscussion,
       id: 'older-discussion',
-      timelineItems: {
-        updatedAt: new Date(
+      updatedAt: new Date(
           Date.now() - 6 * 30 * 24 * 60 * 60 * 1000,
         ).toISOString(),
       },
