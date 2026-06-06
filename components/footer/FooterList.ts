@@ -81,7 +81,8 @@ export const COMMUNITY_URLS = {
       'https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/AMBASSADOR_PROGRAM.md',
     AMBASSADOR_ORGANIZATION:
       'https://github.com/asyncapi/community/blob/master/AMBASSADOR_ORGANIZATION.md#are-you-interested-in-becoming-an-official-asyncapi-ambassador',
-    TSC_MEMBERSHIP: 'https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md',
+    TSC_MEMBERSHIP:
+      'https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/TSC_MEMBERSHIP.md',
     CONTRIBUTING: 'https://github.com/asyncapi/community/blob/master/CONTRIBUTING.md'
   },
   YOUTUBE: {
