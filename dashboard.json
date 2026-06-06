@@ -25,6 +25,30 @@
       "score": 16.08177696995849
     },
     {
+      "id": "I_kwDOGQYLdM67ixbm",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Create a Unified Iconography System for Marketing & Tooling",
+      "author": "Mayaleeeee",
+      "resourcePath": "/asyncapi/brand/issues/119",
+      "repo": "asyncapi/brand",
+      "labels": [
+        {
+          "name": ":art: design",
+          "color": "0D67D3"
+        },
+        {
+          "name": "area/design",
+          "color": "0d67d3"
+        },
+        {
+          "name": "bounty",
+          "color": "0E8A16"
+        }
+      ],
+      "score": 12.348507316218127
+    },
+    {
       "id": "I_kwDOFLhIt87jC_4a",
       "isPR": false,
       "isAssigned": true,
@@ -54,30 +78,6 @@
         }
       ],
       "score": 11.774158138719608
-    },
-    {
-      "id": "I_kwDOGQYLdM67ixbm",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Create a Unified Iconography System for Marketing & Tooling",
-      "author": "Mayaleeeee",
-      "resourcePath": "/asyncapi/brand/issues/119",
-      "repo": "asyncapi/brand",
-      "labels": [
-        {
-          "name": ":art: design",
-          "color": "0D67D3"
-        },
-        {
-          "name": "area/design",
-          "color": "0d67d3"
-        },
-        {
-          "name": "bounty",
-          "color": "0E8A16"
-        }
-      ],
-      "score": 11.48698354997035
     },
     {
       "id": "I_kwDOBW5R_c6rxQC5",
@@ -116,6 +116,17 @@
       "score": 10.051110606224057
     },
     {
+      "id": "PR_kwDOFLhIt87ZqBG1",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore(docs): asyncapi maintainership program docs update",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/pull/3541",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 9.476761428725538
+    },
+    {
       "id": "I_kwDOBGu-185zXJ6b",
       "isPR": false,
       "isAssigned": false,
@@ -136,17 +147,6 @@
       "score": 9.18958683997628
     },
     {
-      "id": "PR_kwDOFLhIt87ZqBG1",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore(docs): asyncapi maintainership program docs update",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/pull/3541",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 8.615237662477762
-    },
-    {
       "id": "I_kwDOFDnrNc7_yTml",
       "isPR": false,
       "isAssigned": true,
@@ -160,7 +160,7 @@
           "color": "0e8a16"
         }
       ],
-      "score": 7.7537138962299865
+      "score": 8.040888484979245
     },
     {
       "id": "I_kwDOFDnrNc6w5oVf",
