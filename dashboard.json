@@ -22,38 +22,7 @@
           "color": "0e8a16"
         }
       ],
-      "score": 13.78438025996442
-    },
-    {
-      "id": "I_kwDOE8Qh386IiMCQ",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[FEATURE] Change the name of the generated model class withe name of message name.",
-      "author": "AayushSaini101",
-      "resourcePath": "/asyncapi/modelina/issues/1996",
-      "repo": "asyncapi/modelina",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 11.774158138719608
-    },
-    {
-      "id": "I_kwDOFLhIt87jC_4a",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Code of Conduct Nomination - 2026",
-      "author": "Mayaleeeee",
-      "resourcePath": "/asyncapi/community/issues/2236",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 11.48698354997035
+      "score": 16.08177696995849
     },
     {
       "id": "I_kwDOGQYLdM67ixbm",
@@ -77,7 +46,38 @@
           "color": "0E8A16"
         }
       ],
-      "score": 11.199808961221091
+      "score": 12.348507316218127
+    },
+    {
+      "id": "I_kwDOFLhIt87jC_4a",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Code of Conduct Nomination - 2026",
+      "author": "Mayaleeeee",
+      "resourcePath": "/asyncapi/community/issues/2236",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 12.061332727468868
+    },
+    {
+      "id": "I_kwDOE8Qh386IiMCQ",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[FEATURE] Change the name of the generated model class withe name of message name.",
+      "author": "AayushSaini101",
+      "resourcePath": "/asyncapi/modelina/issues/1996",
+      "repo": "asyncapi/modelina",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 11.774158138719608
     },
     {
       "id": "I_kwDOBW5R_c6rxQC5",
@@ -100,6 +100,33 @@
       "score": 10.338285194973315
     },
     {
+      "id": "I_kwDOCoBobc6fqNYx",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[BUG] `@asyncapi/multi-parser` still depending on vulnerable version of `jsonpath-plus`",
+      "author": "BenjaminSchwendner",
+      "resourcePath": "/asyncapi/parser-js/issues/1065",
+      "repo": "asyncapi/parser-js",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ],
+      "score": 10.051110606224057
+    },
+    {
+      "id": "PR_kwDOFLhIt87ZqBG1",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore(docs): asyncapi maintainership program docs update",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/pull/3541",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 9.476761428725538
+    },
+    {
       "id": "I_kwDOBGu-185zXJ6b",
       "isPR": false,
       "isAssigned": false,
@@ -120,15 +147,20 @@
       "score": 9.18958683997628
     },
     {
-      "id": "PR_kwDOFLhIt87ZqBG1",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore(docs): asyncapi maintainership program docs update",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/pull/3541",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 8.615237662477762
+      "id": "I_kwDOFDnrNc7_yTml",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Set of issues for resolution under the MICROGRANT Program 2026-05",
+      "author": "AayushSaini101",
+      "resourcePath": "/asyncapi/cli/issues/2125",
+      "repo": "asyncapi/cli",
+      "labels": [
+        {
+          "name": "bounty",
+          "color": "0e8a16"
+        }
+      ],
+      "score": 8.040888484979245
     },
     {
       "id": "I_kwDOFDnrNc6w5oVf",
@@ -180,33 +212,6 @@
       "repo": "asyncapi/generator",
       "labels": [],
       "score": 7.7537138962299865
-    },
-    {
-      "id": "PR_kwDODwv8N866EXtA",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add image gallery for past conferences",
-      "author": "kajal-jotwani",
-      "resourcePath": "/asyncapi/conference-website/pull/890",
-      "repo": "asyncapi/conference-website",
-      "labels": [],
-      "score": 7.7537138962299865
-    },
-    {
-      "id": "I_kwDOFDnrNc7_yTml",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Set of issues for resolution under the MICROGRANT Program 2026-05",
-      "author": "AayushSaini101",
-      "resourcePath": "/asyncapi/cli/issues/2125",
-      "repo": "asyncapi/cli",
-      "labels": [
-        {
-          "name": "bounty",
-          "color": "0e8a16"
-        }
-      ],
-      "score": 7.179364718731469
     }
   ],
   "goodFirstIssues": [
@@ -339,10 +344,6 @@
           "color": "d73a4a"
         },
         {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
           "name": "triaged",
           "color": "0052cc"
         }
@@ -466,50 +467,12 @@
       ]
     },
     {
-      "id": "I_kwDOBW5R_c5soAAM",
-      "title": "Create a research page to have participants sign up for the research study",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1991",
-      "repo": "asyncapi/website",
-      "author": "Mayaleeeee",
-      "area": "design",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOIUldZc5XXsGH",
       "title": "Filter out application which are not in use",
       "isAssigned": false,
       "resourcePath": "/asyncapi/EDAVisualiser/issues/14",
       "repo": "asyncapi/EDAVisualiser",
       "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFiHaLM5DeQ4y",
-      "title": "Add support for HTML output",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/diff/issues/85",
-      "repo": "asyncapi/diff",
-      "author": "aayushmau5",
       "area": "Unknown",
       "labels": [
         {
