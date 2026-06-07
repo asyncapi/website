@@ -16,11 +16,12 @@ export default function Feedback({ className }: IFeedbackProps) {
 
   // Strip query string and hash so only the pathname appears in the issue title
   const docsPath = asPath.split('?')[0].split('#')[0];
+  const issueTitle = `Docs Feedback: ${docsPath}`;
 
   const feedbackUrl =
-    `https://github.com/asyncapi/website/issues/new` +
-    `?template=docs-feedback.yml` +
-    `&title=${encodeURIComponent(`Docs Feedback: ${docsPath}`)}` +
+    'https://github.com/asyncapi/website/issues/new' +
+    '?template=docs-feedback.yml' +
+    `&title=${encodeURIComponent(issueTitle)}` +
     `&labels=${encodeURIComponent('📑 docs')}`;
 
   return (

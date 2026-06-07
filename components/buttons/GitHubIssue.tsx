@@ -1,8 +1,8 @@
 import React from 'react';
 
 interface IGitHubIssueProps {
-  className?: string;
-  href?: string;
+  readonly className?: string;
+  readonly href?: string;
 }
 
 /**
