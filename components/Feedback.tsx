@@ -42,13 +42,13 @@ export default function Feedback({ className }: IFeedbackProps) {
           href={feedbackUrl}
           target='_blank'
           rel='noopener noreferrer'
-          className='flex w-full flex-row justify-center rounded bg-primary-500 py-2 text-white shadow-md transition-all duration-300 ease-in-out hover:shadow-lg dark:border dark:border-primary-500 dark:bg-transparent dark:hover:bg-primary-500 lg:w-6/12'
+          className='flex w-full flex-row justify-center rounded bg-primary-500 dark:border border-primary-500 dark:hover:bg-transparent py-2 text-white shadow-md transition-all duration-300 ease-in-out hover:shadow-lg lg:w-6/12'
           data-testid='Feedback-submit-link'
         >
           Submit Feedback
         </a>
         <div className='my-2 w-full text-center dark:text-dark-text font-medium lg:my-auto lg:w-1/12'>OR</div>
-        <GitHubIssue className='bg-secondary-500 dark:border dark:border-secondary-500 dark:bg-transparent dark:hover:bg-secondary-500' />
+        <GitHubIssue className='bg-secondary-500 dark:border dark:border-secondary-500 dark:hover:bg-transparent' />
       </div>
     </div>
   );
