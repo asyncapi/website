@@ -1,6 +1,10 @@
 import BasePage from './BasePage';
 
 class BlogPage extends BasePage {
+  escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, String.raw`\$&`);
+  }
+
   visit() {
     super.visit('/blog');
   }
@@ -33,15 +37,21 @@ class BlogPage extends BasePage {
   }
 
   filterByType(type) {
-    cy.contains('select', 'Filter by type').select(type);
+    cy.contains('[data-testid="FilterDropdown-button"]', 'Filter by type').click();
+    cy.get('[data-testid="FilterDropdown-option"]').should('be.visible');
+    cy.contains('[data-testid="FilterDropdown-option"]', new RegExp(`^${this.escapeRegExp(type)}$`)).click();
   }
 
   filterByAuthor(author) {
-    cy.contains('select', 'Filter by authors').select(author);
+    cy.contains('[data-testid="FilterDropdown-button"]', 'Filter by authors').click();
+    cy.get('[data-testid="FilterDropdown-option"]').should('be.visible');
+    cy.contains('[data-testid="FilterDropdown-option"]', new RegExp(`^${this.escapeRegExp(author)}$`)).click();
   }
 
   filterByTag(tag) {
-    cy.contains('select', 'Filter by tags').select(tag);
+    cy.contains('[data-testid="FilterDropdown-button"]', 'Filter by tags').click();
+    cy.get('[data-testid="FilterDropdown-option"]').should('be.visible');
+    cy.contains('[data-testid="FilterDropdown-option"]', new RegExp(`^${this.escapeRegExp(tag)}$`)).click();
   }
 
   verifyPostLinkAndClick(titlePattern, expectedHref) {
@@ -57,24 +67,30 @@ class BlogPage extends BasePage {
       .and('contain', expectedHeaderText);
   }
 
+  selectFirstValidDropdownOption(dropdownLabel, optionType) {
+    cy.contains('[data-testid="FilterDropdown-button"]', dropdownLabel).click();
+    cy.get('[data-testid="FilterDropdown-option"]', { timeout: 10000 })
+      .should('have.length.greaterThan', 1)
+      .should('be.visible')
+      .then(($options) => {
+        const firstSelectable = [...$options].find((option) => {
+          const label = option.textContent?.trim();
+          return label && !label.startsWith('Filter by');
+        });
+
+        expect(firstSelectable, `first selectable ${optionType} option`).to.exist;
+        cy.wrap(firstSelectable).click();
+      });
+  }
+
   filterByFirstAvailableAuthor() {
     cy.get('[data-testid="BlogPostItem-Link"]', { timeout: 10000 }).should('have.length.greaterThan', 0);
-    cy.contains('select', 'Filter by authors').find('option', { timeout: 10000 }).should('have.length.greaterThan', 1);
-    cy.contains('select', 'Filter by authors').find('option').then(($options) => {
-      const nonEmptyOptions = [...$options].filter(opt => opt.value && opt.value !== '');
-      expect(nonEmptyOptions.length, 'No author filter options available').to.be.greaterThan(0);
-      cy.contains('select', 'Filter by authors').select(nonEmptyOptions[0].value);
-    });
+    this.selectFirstValidDropdownOption('Filter by authors', 'author');
   }
 
   filterByFirstAvailableTag() {
     cy.get('[data-testid="BlogPostItem-Link"]', { timeout: 10000 }).should('have.length.greaterThan', 0);
-    cy.contains('select', 'Filter by tags').find('option', { timeout: 10000 }).should('have.length.greaterThan', 1);
-    cy.contains('select', 'Filter by tags').find('option').then(($options) => {
-      const nonEmptyOptions = [...$options].filter(opt => opt.value && opt.value !== '');
-      expect(nonEmptyOptions.length, 'No tag filter options available').to.be.greaterThan(0);
-      cy.contains('select', 'Filter by tags').select(nonEmptyOptions[0].value);
-    });
+    this.selectFirstValidDropdownOption('Filter by tags', 'tag');
   }
 
   clickFirstVisiblePost() {

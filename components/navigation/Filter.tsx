@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
-import Select from '../form/Select';
 import { applyFilterList, type DataObject, type Filter as FilterQuery, onFilterApply } from '../helpers/applyFilter';
+import FilterDropdown from './FilterDropdown';
 
 interface Check {
   name: string;
@@ -64,7 +64,7 @@ export default function Filter<T extends DataObject = DataObject>({
     ];
 
     return (
-      <Select
+      <FilterDropdown
         key={check.name}
         options={selectOptions}
         onChange={(e) => {
