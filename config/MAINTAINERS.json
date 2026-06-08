@@ -388,7 +388,8 @@
         "repos": [
             "website",
             "parser-js",
-            "studio"
+            "studio",
+            "openapi-schema-parser"
         ],
         "githubID": 44585452
     },
@@ -433,7 +434,6 @@
         "availableForHire": false,
         "isTscMember": false,
         "repos": [
-            "openapi-schema-parser",
             "go-watermill-template",
             "parser-api"
         ],
