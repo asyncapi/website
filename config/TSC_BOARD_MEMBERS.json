@@ -278,7 +278,8 @@
         "repos": [
             "website",
             "parser-js",
-            "studio"
+            "studio",
+            "openapi-schema-parser"
         ],
         "githubID": 44585452
     },
