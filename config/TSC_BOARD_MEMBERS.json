@@ -138,7 +138,6 @@
             "converter-js",
             "bindings",
             "enterprise-patterns",
-            "openapi-schema-parser",
             "html-template",
             "markdown-template",
             "nodejs-ws-template",
