@@ -160,7 +160,7 @@
           "color": "0e8a16"
         }
       ],
-      "score": 8.040888484979245
+      "score": 8.328063073728504
     },
     {
       "id": "I_kwDOFDnrNc6w5oVf",
@@ -183,26 +183,6 @@
       "score": 7.7537138962299865
     },
     {
-      "id": "I_kwDOBW5R_c60eZiB",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[FEATURE] \"Join the AsyncAPI Community\" Section",
-      "author": "iambami",
-      "resourcePath": "/asyncapi/website/issues/4077",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "Priority: P2",
-          "color": "FBCA04"
-        },
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ],
-      "score": 7.7537138962299865
-    },
-    {
       "id": "PR_kwDOCHlHJM7NT-iG",
       "isPR": true,
       "isAssigned": true,
@@ -210,6 +190,17 @@
       "author": "wei123-web",
       "resourcePath": "/asyncapi/generator/pull/2029",
       "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 7.7537138962299865
+    },
+    {
+      "id": "PR_kwDODwv8N866EXtA",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add image gallery for past conferences",
+      "author": "kajal-jotwani",
+      "resourcePath": "/asyncapi/conference-website/pull/890",
+      "repo": "asyncapi/conference-website",
       "labels": [],
       "score": 7.7537138962299865
     }
@@ -296,6 +287,10 @@
         {
           "name": "bug",
           "color": "d73a4a"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -425,6 +420,36 @@
         {
           "name": "enhancement",
           "color": "84b6eb"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOCoBobc6nflHk",
+      "title": "[BUG] Missing server.summary() function",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/parser-js/issues/1076",
+      "repo": "asyncapi/parser-js",
+      "author": "fmvilas",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOCoBobc6nSxfV",
+      "title": "[BUG] Missing server.title() function",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/parser-js/issues/1075",
+      "repo": "asyncapi/parser-js",
+      "author": "fmvilas",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
         }
       ]
     },
