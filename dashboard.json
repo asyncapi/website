@@ -46,7 +46,7 @@
           "color": "0E8A16"
         }
       ],
-      "score": 12.348507316218127
+      "score": 12.635681904967385
     },
     {
       "id": "I_kwDOFLhIt87jC_4a",
@@ -147,22 +147,6 @@
       "score": 9.18958683997628
     },
     {
-      "id": "I_kwDOFDnrNc7_yTml",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Set of issues for resolution under the MICROGRANT Program 2026-05",
-      "author": "AayushSaini101",
-      "resourcePath": "/asyncapi/cli/issues/2125",
-      "repo": "asyncapi/cli",
-      "labels": [
-        {
-          "name": "bounty",
-          "color": "0e8a16"
-        }
-      ],
-      "score": 8.328063073728504
-    },
-    {
       "id": "I_kwDOFDnrNc6w5oVf",
       "isPR": false,
       "isAssigned": false,
@@ -203,6 +187,17 @@
       "repo": "asyncapi/conference-website",
       "labels": [],
       "score": 7.7537138962299865
+    },
+    {
+      "id": "I_kwDOFLhIt874rNRL",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "[2026 Goals][S1] Repository Audit & Consolidation (Targets O1, O2)",
+      "author": "princerajpoot20",
+      "resourcePath": "/asyncapi/community/issues/3495",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 7.179364718731469
     }
   ],
   "goodFirstIssues": [
@@ -446,6 +441,21 @@
       "repo": "asyncapi/parser-js",
       "author": "fmvilas",
       "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOCoBobc5zovn3",
+      "title": "Parser do not validate if channel that is referenced in reply with location has `null` in address",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/parser-js/issues/876",
+      "repo": "asyncapi/parser-js",
+      "author": "derberg",
+      "area": "typescript",
       "labels": [
         {
           "name": "bug",
