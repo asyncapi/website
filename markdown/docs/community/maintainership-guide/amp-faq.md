@@ -22,7 +22,9 @@ We welcome participants from all over the world, especially those passionate abo
 
 ## Do mentees receive a stipend?
 
-Yes. Selected mentees will receive a stipend for completing their project. The exact amount may vary depending on available funding and project scope.
+It depends on the cohort. In a **funded cohort**, selected mentees receive a stipend for completing their project. In a **volunteer cohort**, no stipend is provided; participation is purely community-driven.
+
+The cohort type is always announced before applications open, so you'll know upfront what to expect.
 
 ## What kind of projects will I work on?
 
@@ -46,7 +48,9 @@ Mentees are selected based on:
 
 ## Are mentors paid?
 
-AMP mentors are dedicated volunteers from the AsyncAPI community. While they receive a $500 stipend per project as a token of appreciation, their primary reward is the opportunity to support emerging maintainers and be publicly recognized for their impact on the community.
+AMP mentors are dedicated volunteers from the AsyncAPI community. In a **funded cohort**, mentors receive a $500 stipend per project as a token of appreciation. In a **volunteer cohort**, no stipend is provided.
+
+Either way, mentors are publicly recognized for their impact, and their primary reward remains the opportunity to support the next generation of AsyncAPI maintainers.
 
 ## Do I need to be a student to participate?
 
@@ -56,9 +60,9 @@ No. While students are encouraged to apply, **you do not need to be enrolled in 
 
 Communication happens primarily through:
 
-- **Slack** – `#mentorships` and cohort-specific channels
-- **GitHub** – for project collaboration and discussions
-- **Email** – for formal updates and reminders
+- **Slack:** `#mentorships` and cohort-specific channels
+- **GitHub:** For project collaboration and discussions
+- **Email:** For formal updates and reminders
 
 ## Where can I find the list of available projects?
 
