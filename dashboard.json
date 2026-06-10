@@ -80,6 +80,22 @@
       "score": 11.774158138719608
     },
     {
+      "id": "I_kwDOCoBobc6fqNYx",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[BUG] `@asyncapi/multi-parser` still depending on vulnerable version of `jsonpath-plus`",
+      "author": "BenjaminSchwendner",
+      "resourcePath": "/asyncapi/parser-js/issues/1065",
+      "repo": "asyncapi/parser-js",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ],
+      "score": 10.338285194973315
+    },
+    {
       "id": "I_kwDOBW5R_c6rxQC5",
       "isPR": false,
       "isAssigned": true,
@@ -98,22 +114,6 @@
         }
       ],
       "score": 10.338285194973315
-    },
-    {
-      "id": "I_kwDOCoBobc6fqNYx",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[BUG] `@asyncapi/multi-parser` still depending on vulnerable version of `jsonpath-plus`",
-      "author": "BenjaminSchwendner",
-      "resourcePath": "/asyncapi/parser-js/issues/1065",
-      "repo": "asyncapi/parser-js",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ],
-      "score": 10.051110606224057
     },
     {
       "id": "PR_kwDOFLhIt87ZqBG1",
@@ -189,14 +189,23 @@
       "score": 7.7537138962299865
     },
     {
-      "id": "I_kwDOFLhIt874rNRL",
+      "id": "I_kwDODwv8N861E-jc",
       "isPR": false,
       "isAssigned": true,
-      "title": "[2026 Goals][S1] Repository Audit & Consolidation (Targets O1, O2)",
-      "author": "princerajpoot20",
-      "resourcePath": "/asyncapi/community/issues/3495",
-      "repo": "asyncapi/community",
-      "labels": [],
+      "title": "feat: Internationalization for the Conference Website",
+      "author": "Recxsmacx",
+      "resourcePath": "/asyncapi/conference-website/issues/722",
+      "repo": "asyncapi/conference-website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "priority",
+          "color": "09c8b7"
+        }
+      ],
       "score": 7.179364718731469
     }
   ],
