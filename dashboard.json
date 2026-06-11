@@ -46,7 +46,7 @@
           "color": "0E8A16"
         }
       ],
-      "score": 12.635681904967385
+      "score": 12.922856493716644
     },
     {
       "id": "I_kwDOFLhIt87jC_4a",
@@ -93,7 +93,7 @@
           "color": "d73a4a"
         }
       ],
-      "score": 10.338285194973315
+      "score": 10.625459783722574
     },
     {
       "id": "I_kwDOBW5R_c6rxQC5",
@@ -116,17 +116,6 @@
       "score": 10.338285194973315
     },
     {
-      "id": "PR_kwDOFLhIt87ZqBG1",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore(docs): asyncapi maintainership program docs update",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/pull/3541",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 9.476761428725538
-    },
-    {
       "id": "I_kwDOBGu-185zXJ6b",
       "isPR": false,
       "isAssigned": false,
@@ -145,6 +134,17 @@
         }
       ],
       "score": 9.18958683997628
+    },
+    {
+      "id": "PR_kwDOFLhIt87RR7SG",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: improve contributing docs",
+      "author": "CBID2",
+      "resourcePath": "/asyncapi/community/pull/3508",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 8.328063073728504
     },
     {
       "id": "I_kwDOFDnrNc6w5oVf",
