@@ -46,7 +46,18 @@
           "color": "0E8A16"
         }
       ],
-      "score": 12.922856493716644
+      "score": 13.497205671215161
+    },
+    {
+      "id": "PR_kwDODwv8N86vDWYn",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: added download agenda as a pdf ",
+      "author": "harshhgithub",
+      "resourcePath": "/asyncapi/conference-website/pull/823",
+      "repo": "asyncapi/conference-website",
+      "labels": [],
+      "score": 13.497205671215161
     },
     {
       "id": "I_kwDOFLhIt87jC_4a",
@@ -147,6 +158,26 @@
       "score": 8.328063073728504
     },
     {
+      "id": "I_kwDODwv8N861E-jc",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "feat: Internationalization for the Conference Website",
+      "author": "Recxsmacx",
+      "resourcePath": "/asyncapi/conference-website/issues/722",
+      "repo": "asyncapi/conference-website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "priority",
+          "color": "09c8b7"
+        }
+      ],
+      "score": 7.7537138962299865
+    },
+    {
       "id": "I_kwDOFDnrNc6w5oVf",
       "isPR": false,
       "isAssigned": false,
@@ -176,40 +207,24 @@
       "repo": "asyncapi/generator",
       "labels": [],
       "score": 7.7537138962299865
-    },
+    }
+  ],
+  "goodFirstIssues": [
     {
-      "id": "PR_kwDODwv8N866EXtA",
-      "isPR": true,
+      "id": "I_kwDODwv8N88AAAABFFvB1w",
+      "title": "[DESIGN]: Navbar & Footer Layout Issues",
       "isAssigned": false,
-      "title": "feat: add image gallery for past conferences",
-      "author": "kajal-jotwani",
-      "resourcePath": "/asyncapi/conference-website/pull/890",
+      "resourcePath": "/asyncapi/conference-website/issues/1029",
       "repo": "asyncapi/conference-website",
-      "labels": [],
-      "score": 7.7537138962299865
-    },
-    {
-      "id": "I_kwDODwv8N861E-jc",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "feat: Internationalization for the Conference Website",
-      "author": "Recxsmacx",
-      "resourcePath": "/asyncapi/conference-website/issues/722",
-      "repo": "asyncapi/conference-website",
+      "author": "AceTheCreator",
+      "area": "Unknown",
       "labels": [
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
-        {
-          "name": "priority",
-          "color": "09c8b7"
         }
-      ],
-      "score": 7.179364718731469
-    }
-  ],
-  "goodFirstIssues": [
+      ]
+    },
     {
       "id": "I_kwDOFttfzM8AAAABAGs3PA",
       "title": "Project maintenance status + request for .NET 10 support and dependency upgrades",
