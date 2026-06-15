@@ -46,7 +46,7 @@
           "color": "0E8A16"
         }
       ],
-      "score": 13.497205671215161
+      "score": 13.78438025996442
     },
     {
       "id": "PR_kwDODwv8N86vDWYn",
@@ -158,6 +158,28 @@
       "score": 8.328063073728504
     },
     {
+      "id": "PR_kwDOCHlHJM7NT-iG",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: rewrite Java template tutorial to AsyncAPI v3",
+      "author": "wei123-web",
+      "resourcePath": "/asyncapi/generator/pull/2029",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 8.040888484979245
+    },
+    {
+      "id": "PR_kwDODwv8N866EXtA",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add image gallery for past conferences",
+      "author": "kajal-jotwani",
+      "resourcePath": "/asyncapi/conference-website/pull/890",
+      "repo": "asyncapi/conference-website",
+      "labels": [],
+      "score": 8.040888484979245
+    },
+    {
       "id": "I_kwDODwv8N861E-jc",
       "isPR": false,
       "isAssigned": true,
@@ -176,44 +198,13 @@
         }
       ],
       "score": 7.7537138962299865
-    },
-    {
-      "id": "I_kwDOFDnrNc6w5oVf",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[FEATURE] Reduce number of dependencies and install size (v2.17 needs 1700 dependencies, takes 1.7Gb of space)",
-      "author": "peitschie",
-      "resourcePath": "/asyncapi/cli/issues/1752",
-      "repo": "asyncapi/cli",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 7.7537138962299865
-    },
-    {
-      "id": "PR_kwDOCHlHJM7NT-iG",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: rewrite Java template tutorial to AsyncAPI v3",
-      "author": "wei123-web",
-      "resourcePath": "/asyncapi/generator/pull/2029",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 7.7537138962299865
     }
   ],
   "goodFirstIssues": [
     {
       "id": "I_kwDODwv8N88AAAABFFvB1w",
       "title": "[DESIGN]: Navbar & Footer Layout Issues",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/conference-website/issues/1029",
       "repo": "asyncapi/conference-website",
       "author": "AceTheCreator",
