@@ -169,7 +169,6 @@
         "linkedin": "fmvilas",
         "isTscMember": true,
         "tscMemberSince": "2023-07-05",
-        "isBoardMember": true,
         "repos": [
             "spec",
             "spec-json-schemas",
