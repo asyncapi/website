@@ -4,7 +4,6 @@ date: 2026-06-19T06:00:00+01:00
 type: Community
 tags:
   - Project Kickoff
-  - Maintainership
   - Mentorship
   - Maintainership
 cover: /img/posts/2026-blog-banner/jackson-sophat-unsplash.webp
@@ -56,7 +55,7 @@ Applications are closed. The contributors have been selected. These are the peop
 
 ### Selected Contributors
 
-[**Ishita Sati: AsyncAPI React**](https://github.com/batchu5)
+[**Ishita Sati: AsyncAPI React**](https://github.com/Ishita-190)
 
 Ishita Sati is a B.Tech sophomore at Indira Gandhi Delhi Technical University for Women, India, and a full-stack developer with experience across multiple tech stacks.
 
