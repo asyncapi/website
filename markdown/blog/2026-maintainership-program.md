@@ -10,10 +10,11 @@ tags:
 cover: /img/posts/2026-blog-banner/jackson-sophat-unsplash.webp
 authors:
   - name: Azeez Elegbede
-    photo: /img/avatars/thulieblack.webp
+    photo: /img/avatars/ace.webp
     link: https://aelegbede.com/
     byline: AsyncAPI Preacher!
 excerpt: 'We Got Rejected by GSoC, So We Built Something Better'
+---
 
 Most open-source contributors disappear.
 
