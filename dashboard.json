@@ -236,7 +236,7 @@
     {
       "id": "I_kwDOCoBobc6nflHk",
       "title": "[BUG] Missing server.summary() function",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/parser-js/issues/1076",
       "repo": "asyncapi/parser-js",
       "author": "fmvilas",
@@ -251,7 +251,7 @@
     {
       "id": "I_kwDOCoBobc6nSxfV",
       "title": "[BUG] Missing server.title() function",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/parser-js/issues/1075",
       "repo": "asyncapi/parser-js",
       "author": "fmvilas",
@@ -281,7 +281,7 @@
     {
       "id": "I_kwDOCoBobc5zosuk",
       "title": "Parser do not validate and throw error when `parameters` are provided but address is null",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/parser-js/issues/875",
       "repo": "asyncapi/parser-js",
       "author": "derberg",
