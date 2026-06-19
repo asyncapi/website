@@ -143,7 +143,7 @@ The program doesn't just end. Mentees get invited to join working groups, keep c
 
 If you want the full breakdown, the [Maintainership Program documentation](https://www.asyncapi.com/docs/community/maintainership-guide) has everything laid out in detail.
 
-## You Missed This Cycle. Now What?
+## You missed this cycle, so now what?
 
 If you didn't apply in time, don't just wait.
 
