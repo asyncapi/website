@@ -39,7 +39,6 @@ We proposed two project ideas structured entirely around maintainership, everyth
 
 Both contributors became maintainers. Not one, both.
 
-A 100% conversion rate. That felt like proof.
 
 ## Google said no, we said fine
 
