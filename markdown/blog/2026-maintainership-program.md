@@ -31,7 +31,7 @@ The answer felt obvious once we said it out loud. Most GSoC projects are built a
 
 So we ran an experiment.
 
-We proposed two project ideas structured entirely around maintainership, not features to ship, but roles to grow into. Issue triaging, PR reviews, documentation, and contributor onboarding. The full picture of what it actually means to maintain a project.
+We proposed two project ideas structured entirely around maintainership, everything from issue triaging to PR reviews, documentation, and contributor onboarding. Basically, the full picture of what it means to maintain a project.
 
 Both contributors became maintainers. Not one, both.
 
