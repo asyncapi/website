@@ -35,7 +35,7 @@ Both contributors became maintainers. Not one. Both.
 
 A 100% conversion rate. That felt like proof.
 
-## Google Said No. We Said Fine.
+## Google said no, we said fine
 
 This summer, we went all in; every single project idea we submitted to GSoC was built around maintainership.
 
