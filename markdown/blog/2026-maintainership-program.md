@@ -49,7 +49,7 @@ Here's the difference between this and GSoC: we don't give contributors a projec
 
 That's a different outcome entirely. And it changes what open source means for the people who go through it.
 
-## Who's In This Cycle
+## So, who's in this cycle?
 
 Applications are closed. The contributors have been selected. These are the people walking the road this cycle.
 
