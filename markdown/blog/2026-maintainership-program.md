@@ -21,7 +21,7 @@ They show up, merge a few PRs, maybe close some issues, and then you never hear 
 
 We thought we had the fix. We were wrong, at least according to Google.
 
-## The Rejection That Started Everything
+## The rejection that started everything
 
 Last year, we were participating in Google Summer of Code when a question kept coming up in our conversations: *Why do contributors leave after the program ends?*
 
