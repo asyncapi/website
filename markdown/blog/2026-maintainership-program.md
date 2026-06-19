@@ -118,7 +118,7 @@ Four projects this cycle. Each one is chosen because it offers real scope for lo
 
 None of this happens by accident. Every cycle follows a structured timeline, designed to keep things transparent and fair for everyone involved, from the mentors proposing projects to the contributors hoping to land one.
 
-Here's what the full cycle looks like:
+Below is what the full cycle looks like:
 
 **Program Announcement - February 1**: Coordinators publish the program details: goals, structure, participation guidelines. Outreach to potential volunteers begins.
 
