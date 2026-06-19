@@ -100,7 +100,7 @@ Azeez and Mohammed both know the React Component from the inside, the design dec
 
 Together, they're mentoring contributors into a project that sits right at the edge of tooling and developer experience. If you've ever used an AsyncAPI playground or rendered an AsyncAPI document in a UI, you've interacted with what their mentees will be owning.
 
-## The Projects
+## The projects
 
 Four projects this cycle. Each one is chosen because it offers real scope for long-term ownership, not just a task list to check off.
 
