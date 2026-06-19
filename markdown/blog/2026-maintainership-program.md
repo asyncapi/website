@@ -53,7 +53,7 @@ That's a different outcome entirely. And it changes what open source means for t
 
 Applications are closed. The contributors have been selected. These are the people walking the road this cycle.
 
-### Selected Contributors
+### Selected contributors
 
 [**Ishita Sati: AsyncAPI React**](https://github.com/Ishita-190)
 
