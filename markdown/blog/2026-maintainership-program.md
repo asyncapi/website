@@ -33,7 +33,7 @@ So we ran an experiment.
 
 We proposed two project ideas structured entirely around maintainership, not features to ship, but roles to grow into. Issue triaging, PR reviews, documentation, and contributor onboarding. The full picture of what it actually means to maintain a project.
 
-Both contributors became maintainers. Not one. Both.
+Both contributors became maintainers. Not one, both.
 
 A 100% conversion rate. That felt like proof.
 
