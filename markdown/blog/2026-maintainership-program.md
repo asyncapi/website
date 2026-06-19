@@ -114,7 +114,7 @@ Four projects this cycle. Each one is chosen because it offers real scope for lo
   
   > The AsyncAPI Website project has been withdrawn from this cohort due to unforeseen timing constraints affecting mentor availability. The project is expected to be resubmitted for consideration in the LFX cohort of the Maintainership Program this fall.
 
-## How the Program Actually Runs
+## How does the program run?
 
 None of this happens by accident. Every cycle follows a structured timeline, designed to keep things transparent and fair for everyone involved, from the mentors proposing projects to the contributors hoping to land one.
 
