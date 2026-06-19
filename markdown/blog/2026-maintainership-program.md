@@ -17,7 +17,9 @@ excerpt: 'We Got Rejected by GSoC, So We Built Something Better'
 
 Most open-source contributors disappear.
 
-They show up, merge a few PRs, maybe close some issues, and then you never hear from them again. It's not their fault. It's the structure. Most programs hand contributors a task, watch them complete it, and send them on their way. No ownership. No stake. No reason to stay.
+They show up, merge a few PRs, maybe close some issues, and then you never hear from them again. It's less of their fault and more of the structure of the program.
+
+Most programs just hand contributors a task, watch them complete it, and send them on their way, with no ownership, leaving them with no reason to stay.
 
 We thought we had the fix. We were wrong, at least according to Google.
 
