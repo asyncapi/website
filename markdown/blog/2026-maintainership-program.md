@@ -23,7 +23,7 @@ We thought we had the fix. We were wrong, at least according to Google.
 
 ## The Rejection That Started Everything
 
-Last year, we were participating in Google Summer of Code when a question kept coming up in our conversations: *why do contributors leave after the program ends?*
+Last year, we were participating in Google Summer of Code when a question kept coming up in our conversations: *Why do contributors leave after the program ends?*
 
 The answer felt obvious once we said it out loud. Most GSoC projects are built around completion, not ownership. You get assigned a feature or a bug list. You do the work. The summer ends. And then — nothing. No stake in what you helped build. No reason to come back.
 
@@ -37,13 +37,13 @@ A 100% conversion rate. That felt like proof.
 
 ## Google Said No. We Said Fine.
 
-This summer, we went all in. Every single project idea we submitted to GSoC was built around maintainership.
+This summer, we went all in; every single project idea we submitted to GSoC was built around maintainership.
 
 Google rejected us.
 
 Which raised an uncomfortable question: *Does that mean this idea isn't worth pursuing?*
 
-We sat with that for about five minutes(kidding, took us longer than that :/ ). Then we built the **Maintainership Program** anyway.
+We sat with that for about five minutes (kidding, took us longer than that :/ ). Then we built the **Maintainership Program** anyway.
 
 Here's the difference between this and GSoC: we don't give contributors a project to finish. We give them something to own. By the time the program wraps, contributors aren't just done, they're triagers, reviewers, the people the projects actually depend on.
 
@@ -139,7 +139,7 @@ Mentors sign up, get reviewed for eligibility, and propose project ideas. Organi
 
 **Post-Program Pathways - Late October onwards**:
 
-The program doesn't just end. Mentees get invited to join working groups, keep contributing, or come back as mentors for the next cohort. Speaking opportunities at AsyncAPI conferences and open-source leadership resources are shared here too.
+The program doesn't just end. Mentees get invited to join working groups, keep contributing, or come back as mentors for the next cohort. Speaking opportunities at AsyncAPI conferences and open-source leadership resources are shared here, too.
 
 If you want the full breakdown, the [Maintainership Program documentation](https://www.asyncapi.com/docs/community/maintainership-guide) has everything laid out in detail.
 
