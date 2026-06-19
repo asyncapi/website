@@ -21,7 +21,7 @@ They show up, merge a few PRs, maybe close some issues, and then you never hear 
 
 Most programs just hand contributors a task, watch them complete it, and send them on their way, with no ownership, leaving them with no reason to stay.
 
-We thought we had the fix. We were wrong, at least according to Google.
+We thought we had the fix, but we were wrong...at least according to Google.
 
 ## The rejection that started everything
 
