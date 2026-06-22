@@ -144,7 +144,7 @@ Mentors sign up, get reviewed for eligibility, and propose project ideas. Organi
 
 **Post-Program Pathways - Late October onwards**:
 
-The program doesn't just end. Mentees get invited to join working groups, keep contributing, or come back as mentors for the next cohort. Speaking opportunities at AsyncAPI conferences and open-source leadership resources are shared here, too.
+The program doesn't just end. Mentees are invited to join working groups, continue contributing, or return as mentors for the next cohort. Speaking opportunities at AsyncAPI conferences and open-source leadership resources are also shared here.
 
 If you want the full breakdown, the [Maintainership Program documentation](https://www.asyncapi.com/docs/community/maintainership-guide) has everything laid out in detail.
 
