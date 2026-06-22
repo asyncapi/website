@@ -1,6 +1,6 @@
 ---
 title: "AsyncAPI Maintainership Program: Volunteer Edition"
-date: 2026-06-19T06:00:00+01:00
+date: 2026-06-23T06:00:00+01:00
 type: Community
 tags:
   - Project Kickoff
