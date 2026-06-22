@@ -129,7 +129,7 @@ Every cycle follows a structured timeline, designed to keep things transparent a
 
 Below is what the full cycle looks like:
 
-**Program Announcement - February 1**: Coordinators publish the program details: goals, structure, participation guidelines. Outreach to potential volunteers begins.
+- **Program Announcement - February 1**: Coordinators publish the program details, including the goals, structure, and participation guidelines. Then, outreach to potential volunteers begins.
 
 **Call for Mentors & Project Proposals - March 10 to April 30**:
 Mentors sign up, get reviewed for eligibility, and propose project ideas. Organizers approve or reject proposals. Selected mentors go through a short onboarding session and put together task lists for contributors.
