@@ -62,7 +62,7 @@ Unfortunately (for those who missed it), applications are closed, and contributo
 
 ### Selected contributors
 
-[**Ishita Sati: AsyncAPI React**](https://github.com/Ishita-190)
+- [**Ishita Sati: AsyncAPI React**](https://github.com/Ishita-190)
 
 Ishita Sati is a B.Tech sophomore at Indira Gandhi Delhi Technical University for Women, India, and a full-stack developer with experience across multiple tech stacks.
 
