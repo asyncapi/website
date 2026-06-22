@@ -58,7 +58,7 @@ This strategy produces a different outcome entirely, and it changes what open-so
 
 ## So, who's in this cycle?
 
-Applications are closed. The contributors have been selected. These are the people walking the road this cycle.
+Unfortunately (for those who missed it), applications are closed, and contributors have been selected. So, let's introduce you to the contributors in this cycle:
 
 ### Selected contributors
 
