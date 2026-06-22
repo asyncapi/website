@@ -103,7 +103,7 @@ Adi maintains the AsyncAPI Generator, the toolchain that turns your AsyncAPI def
 
 What the Generator asks of contributors is comprehension. You can't meaningfully contribute to a code generation toolchain without understanding how the pieces fit together. Adi's mentee won't just be adding features; they'll be learning how to think about a project that other developers build on top of.
 
-**[Azeez Elegbede](https://github.com/AceTheCreator) & [Mohammed Mehdi](https://github.com/catosaurusrex2003): AsyncAPI React Component**
+- **[Azeez Elegbede](https://github.com/AceTheCreator) & [Mohammed Mehdi](https://github.com/catosaurusrex2003): AsyncAPI React Component**
 
 Azeez and Mohammed both know the React Component from the inside, the design decisions baked into it, the tradeoffs that aren't obvious from the outside, the things that only become clear once you've spent real time in the codebase.
 
