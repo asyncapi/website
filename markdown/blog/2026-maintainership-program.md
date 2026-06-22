@@ -111,7 +111,7 @@ Together, they're mentoring contributors into a project that sits right at the e
 
 ## The projects
 
-Four projects this cycle. Each one is chosen because it offers real scope for long-term ownership, not just a task list to check off.
+There are four projects in this cycle. Each one is chosen because it offers a good enough scope for long-term ownership.
 
 - **[AsyncAPI CLI](https://github.com/asyncapi/cli)**: The command-line interface for working with AsyncAPI files.
 
