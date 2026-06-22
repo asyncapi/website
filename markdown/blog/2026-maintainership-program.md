@@ -76,7 +76,7 @@ Tushar Anand is a pre-final year student at IIIT Bhubaneswar, India, and a devel
 
 He has worked on multiple team-based open-source projects at his college and enjoys building scalable, reliable software that can benefit a wide range of users. He is also interested in long-term involvement with the AsyncAPI community and aspires to grow into a maintainer role within its ecosystem.
 
-[**Varshitha Besthavemula: AsyncAPI Generator**](https://github.com/batchu5)
+- [**Varshitha Besthavemula: AsyncAPI Generator**](https://github.com/batchu5)
 
 Varshitha Besthavemula is a full-stack developer with experience in MERN, TypeScript, and Next.js, and a strong interest in building reliable developer tools and open-source systems. She has been actively contributing to the AsyncAPI Generator repository, where she has worked across documentation improvements, error handling, and extensive testing of generator components and templates, including Python WebSocket client features and core rendering flows.
 
