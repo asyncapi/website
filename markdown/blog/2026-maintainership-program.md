@@ -97,7 +97,7 @@ The CLI demands something specific from contributors: you have to understand how
 
 Prince has shaped the AsyncAPI Website long enough to know exactly where the gaps are, the undocumented decisions, the content that quietly confuses newcomers, the pages that turn people away before they ever get started.
 
-**[Adi Boghawala](https://github.com/Adi-204): AsyncAPI Generator**
+- **[Adi Boghawala](https://github.com/Adi-204): AsyncAPI Generator**
 
 Adi maintains the AsyncAPI Generator, the toolchain that turns your AsyncAPI definitions into working code and documentation. This cycle, he's mentoring contributors into the same depth of ownership he's built up on the project.
 
