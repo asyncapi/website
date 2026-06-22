@@ -54,7 +54,7 @@ The difference between this and GSoC is that we don't give contributors a projec
 
 So that, by the time the program is over, contributors aren't just done; they remain part of the project as triagers or reviewers.
 
-That's a different outcome entirely. And it changes what open source means for the people who go through it.
+This strategy produces a different outcome entirely, and it changes what open-source means for the people who go through it.
 
 ## So, who's in this cycle?
 
