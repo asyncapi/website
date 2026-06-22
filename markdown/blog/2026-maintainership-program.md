@@ -50,7 +50,9 @@ Which raised an uncomfortable question: *Does that mean this idea isn't worth pu
 
 We sat with that for about five minutes (kidding, took us longer than that :/ ). Then we built the **Maintainership Program** anyway.
 
-Here's the difference between this and GSoC: we don't give contributors a project to finish. We give them something to own. By the time the program wraps, contributors aren't just done, they're triagers, reviewers, the people the projects actually depend on.
+The difference between this and GSoC is that we don't give contributors a project to finish, but rather, we give them something to own.
+
+So that, by the time the program is over, contributors aren't just done; they remain part of the project as triagers or reviewers.
 
 That's a different outcome entirely. And it changes what open source means for the people who go through it.
 
