@@ -70,7 +70,7 @@ She began contributing to open-source during the 2025 Girl Script Summer of Code
 
 She is passionate about building robust systems and seeks to further strengthen her expertise by continuing to contribute to open-source projects such as the AsyncAPI React component infrastructure.
 
-[**TUSHAR ANAND: AsyncAPI CLI**](https://github.com/neoandmatrix)
+- [**TUSHAR ANAND: AsyncAPI CLI**](https://github.com/neoandmatrix)
 
 Tushar Anand is a pre-final year student at IIIT Bhubaneswar, India, and a developer passionate about learning, collaboration, and exploring new technologies. 
 
