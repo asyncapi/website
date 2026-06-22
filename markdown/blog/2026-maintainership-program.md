@@ -136,7 +136,7 @@ Mentors sign up, get reviewed for eligibility, and propose project ideas. Organi
 
 **Contributor Selection - June 1 to 12**: Applicants hear back, whether selected or not. Mentors' task lists go out to the contributors who made it in. Selected mentees are announced publicly.
 
-**Program Kickoff - June 15**: Mentees join project Slack channels, meet their mentors and cohort, and align on weekly goals. A welcome call kicks off the whole cycle.
+- **Program Kickoff - June 15**: Mentees join project Slack channels, meet their mentors and cohort, and align on weekly goals. A welcome call kicks off the whole cycle.
 
 **Midterm Evaluations - August 12 to 22**: Mentors and mentees fill out evaluation forms. Organizers run check-in calls to catch blockers early. Anyone at risk of falling behind gets flagged for extra support, not to penalize them, but to keep them in it.
 
