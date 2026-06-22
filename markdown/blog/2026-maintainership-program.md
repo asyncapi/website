@@ -142,7 +142,7 @@ Mentors sign up, get reviewed for eligibility, and propose project ideas. Organi
 
 - **Final Evaluations - October 6 to 17**: Mentors assess contributions and growth. Mentees assess their mentors. Everyone reflects through self-assessments and feedback sessions. Final project submissions go in for review.
 
-**Recognition - October 24**: Successful mentees get digital certificates, a spot in the community spotlight, and letters of recommendation. This is also where the conversation about actual maintainership invitations starts.
+- **Recognition - October 24**: Successful mentees get digital certificates, a spot in the community spotlight, and letters of recommendation. This is also where the conversation about actual maintainership invitations starts.
 
 **Post-Program Pathways - Late October onwards**:
 
