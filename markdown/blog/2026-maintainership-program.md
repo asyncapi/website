@@ -125,7 +125,7 @@ There are four projects in this cycle. Each one is chosen because it offers a go
 
 ## How does the program run?
 
-None of this happens by accident. Every cycle follows a structured timeline, designed to keep things transparent and fair for everyone involved, from the mentors proposing projects to the contributors hoping to land one.
+Every cycle follows a structured timeline, designed to keep things transparent and fair for everyone involved, from the mentors proposing projects to the contributors hoping to land one.
 
 Below is what the full cycle looks like:
 
