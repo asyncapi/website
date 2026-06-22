@@ -66,7 +66,7 @@ Ishita Sati is a B.Tech sophomore at Indira Gandhi Delhi Technical University fo
 
 She began contributing to open source during the 2025 Girl Script Summer of Code (GSSoC) and has since honed her skills through active contributions, including work with AsyncAPI and MoFA Org on testing, regression monitoring, and CI/CD improvements. 
 
-She is passionate about building robust systems and seeks to further strengthen her expertise through continued contributions to open-source projects such as the AsyncAPI React component infrastructure.
+She is passionate about building robust systems and seeks to further strengthen her expertise by continuing to contribute to open-source projects such as the AsyncAPI React component infrastructure.
 
 [**TUSHAR ANAND: AsyncAPI CLI**](https://github.com/neoandmatrix)
 
