@@ -135,7 +135,7 @@ Below is what the full cycle looks like:
 
 - **Contributor Applications - May 10 to May 30**: Contributors apply, choosing one or more projects they want to work on. Organizers begin reviewing.
 
-**Contributor Selection - June 1 to 12**: Applicants hear back, whether selected or not. Mentors' task lists go out to the contributors who made it in. Selected mentees are announced publicly.
+- **Contributor Selection - June 1 to 12**: Applicants hear back, whether selected or not. Mentors' task lists go out to the contributors who made it in. Selected mentees are announced publicly.
 
 - **Program Kickoff - June 15**: Mentees join project Slack channels, meet their mentors and cohort, and align on weekly goals. A welcome call kicks off the whole cycle.
 
