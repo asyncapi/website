@@ -134,7 +134,7 @@ Below is what the full cycle looks like:
 **Call for Mentors & Project Proposals - March 10 to April 30**:
 Mentors sign up, get reviewed for eligibility, and propose project ideas. Organizers approve or reject proposals. Selected mentors go through a short onboarding session and put together task lists for contributors.
 
-**Contributor Applications - May 10 to May 30**: Contributors apply, choosing one or more projects they want to work on. Organizers begin reviewing.
+- **Contributor Applications - May 10 to May 30**: Contributors apply, choosing one or more projects they want to work on. Organizers begin reviewing.
 
 **Contributor Selection - June 1 to 12**: Applicants hear back, whether selected or not. Mentors' task lists go out to the contributors who made it in. Selected mentees are announced publicly.
 
