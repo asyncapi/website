@@ -138,7 +138,7 @@ Mentors sign up, get reviewed for eligibility, and propose project ideas. Organi
 
 - **Program Kickoff - June 15**: Mentees join project Slack channels, meet their mentors and cohort, and align on weekly goals. A welcome call kicks off the whole cycle.
 
-**Midterm Evaluations - August 12 to 22**: Mentors and mentees fill out evaluation forms. Organizers run check-in calls to catch blockers early. Anyone at risk of falling behind gets flagged for extra support, not to penalize them, but to keep them in it.
+- **Midterm Evaluations - August 12 to 22**: Mentors and mentees fill out evaluation forms, and organizers run check-in calls to catch blockers early. Anyone at risk of falling behind gets flagged for extra support, not for the purpose of penalizing them, but to keep them going in the program
 
 **Final Evaluations - October 6 to 17**: Mentors assess contributions and growth. Mentees assess their mentors. Everyone reflects through self-assessments and feedback sessions. Final project submissions go in for review.
 
