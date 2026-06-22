@@ -93,7 +93,7 @@ Aayush maintains the AsyncAPI CLI, a command-line tool for working with your Asy
 
 The CLI demands something specific from contributors: you have to understand how a real tool fits into real workflows. It's not a training ground. It's production.
 
-**[Prince Rajpoot](https://github.com/princerajpoot20): AsyncAPI Website**
+- **[Prince Rajpoot](https://github.com/princerajpoot20): AsyncAPI Website**
 
 Prince has shaped the AsyncAPI Website long enough to know exactly where the gaps are, the undocumented decisions, the content that quietly confuses newcomers, the pages that turn people away before they ever get started.
 
