@@ -27,7 +27,7 @@ We thought we had the fix, but Google thought otherwise.
 
 Last year, we were participating in Google Summer of Code when a question kept coming up in our conversations: *Why do contributors leave after the program ends?*
 
-Once we sat down to think about it, to our surprise, the answer was obvious.
+Once we sat down to think about it, the answer was, to our surprise, obvious.
 
 Most GSoC projects are built around completion, not ownership. So, a contributor is assigned a feature or a bug list, they do the work, and once summer is over, they're gone.
 
