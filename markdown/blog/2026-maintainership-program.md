@@ -140,7 +140,7 @@ Mentors sign up, get reviewed for eligibility, and propose project ideas. Organi
 
 - **Midterm Evaluations - August 12 to 22**: Mentors and mentees fill out evaluation forms, and organizers run check-in calls to catch blockers early. Anyone at risk of falling behind gets flagged for extra support, not for the purpose of penalizing them, but to keep them going in the program
 
-**Final Evaluations - October 6 to 17**: Mentors assess contributions and growth. Mentees assess their mentors. Everyone reflects through self-assessments and feedback sessions. Final project submissions go in for review.
+- **Final Evaluations - October 6 to 17**: Mentors assess contributions and growth. Mentees assess their mentors. Everyone reflects through self-assessments and feedback sessions. Final project submissions go in for review.
 
 **Recognition - October 24**: Successful mentees get digital certificates, a spot in the community spotlight, and letters of recommendation. This is also where the conversation about actual maintainership invitations starts.
 
