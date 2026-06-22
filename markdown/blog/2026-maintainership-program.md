@@ -83,7 +83,9 @@ Varshitha Besthavemula is a full-stack developer with experience in MERN, TypeSc
 Through her work, she has developed a solid understanding of the AsyncAPI Generator internals, including template resolution, document validation, rendering workflows, and hook execution within the CLI generation pipeline. She has also explored template development in depth, including building a Python client generator and improving documentation around template usage and structure.
 ### Mentors
 
-The mentors here aren't just people who know the codebase. They're people who've already walked the road from contributor to maintainer and chose to come back and make it easier for the next person.
+These mentors are people who've already walked the road from contributor to maintainer and chose to come back and make it easier for the next person.
+
+They are:
 
 **[Aayush Saini](https://github.com/AayushSaini101) & [Ashish Padhy](https://github.com/Shurtu-gal): AsyncAPI CLI**
 
