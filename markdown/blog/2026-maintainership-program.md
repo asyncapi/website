@@ -87,7 +87,7 @@ These mentors are people who've already walked the road from contributor to main
 
 They are:
 
-**[Aayush Saini](https://github.com/AayushSaini101) & [Ashish Padhy](https://github.com/Shurtu-gal): AsyncAPI CLI**
+- **[Aayush Saini](https://github.com/AayushSaini101) & [Ashish Padhy](https://github.com/Shurtu-gal): AsyncAPI CLI**
 
 Aayush maintains the AsyncAPI CLI, a command-line tool for working with your AsyncAPI files directly from the terminal. This year, he flips the role, guiding contributors into maintainership on the same project he maintains. Ashish is right there with him.
 
