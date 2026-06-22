@@ -101,7 +101,7 @@ Prince has shaped the AsyncAPI Website long enough to know exactly where the gap
 
 Adi maintains the AsyncAPI Generator, the toolchain that turns your AsyncAPI definitions into working code and documentation. This cycle, he's mentoring contributors into the same depth of ownership he's built up on the project.
 
-What the Generator asks of contributors is real comprehension. You can't meaningfully contribute to a code generation toolchain without understanding how the pieces fit together. Adi's mentee won't just be adding features; they'll be learning how to think about a project that other developers build on top of.
+What the Generator asks of contributors is comprehension. You can't meaningfully contribute to a code generation toolchain without understanding how the pieces fit together. Adi's mentee won't just be adding features; they'll be learning how to think about a project that other developers build on top of.
 
 **[Azeez Elegbede](https://github.com/AceTheCreator) & [Mohammed Mehdi](https://github.com/catosaurusrex2003): AsyncAPI React Component**
 
