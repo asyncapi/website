@@ -54,7 +54,7 @@ The difference between this and GSoC is that we don't give contributors a projec
 
 So that, by the time the program is over, contributors aren't just done; they remain part of the project as triagers or reviewers.
 
-This strategy produces a different outcome entirely, and it changes what open-source means for the people who go through it.
+This strategy produces an entirely different outcome, and it changes what open-source means for the people who go through it.
 
 ## So, who's in this cycle?
 
@@ -101,7 +101,7 @@ Prince has shaped the AsyncAPI Website long enough to know exactly where the gap
 
 Adi maintains the AsyncAPI Generator, the toolchain that turns your AsyncAPI definitions into working code and documentation. This cycle, he's mentoring contributors into the same depth of ownership he's built up on the project.
 
-What the Generator asks of contributors is comprehension. You can't meaningfully contribute to a code generation toolchain without understanding how the pieces fit together. Adi's mentee won't just be adding features; they'll be learning how to think about a project that other developers build on top of.
+What the Generator asks of contributors is comprehension. You can't meaningfully contribute to a code generation toolchain without understanding how the pieces fit together. Adi's mentee won't just be adding features; they'll learn to think about a project that other developers can build on top of.
 
 - **[Azeez Elegbede](https://github.com/AceTheCreator) & [Mohammed Mehdi](https://github.com/catosaurusrex2003): AsyncAPI React Component**
 
