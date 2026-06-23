@@ -11,12 +11,12 @@ export type ConnectCardProps = Readonly<{
  * @description ConnectCard renders a single social link card used on the /connect page.
  */
 export default function ConnectCard({ label, url, Icon }: ConnectCardProps) {
-  const isExternal = url.startsWith('http');
+  const isExternalHttp = /^https?:\/\//.test(url);
 
   return (
     <Link
       href={url}
-      target={isExternal ? '_blank' : '_self'}
+      target={isExternalHttp ? '_blank' : '_self'}
       rel='noopener noreferrer'
       className='group flex min-h-[90px] items-center space-x-5 rounded-2xl border border-gray-200 bg-white px-6 py-4 shadow-sm transition-all duration-300 hover:border-primary-300 hover:shadow-md dark:border-border dark:bg-dark-card dark:hover:border-primary-500'
       data-testid={`ConnectCard-${label}`}

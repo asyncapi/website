@@ -5,8 +5,6 @@ import ConnectPage from '../components/ConnectPage';
 
 /**
  * @description The Connect page displays all AsyncAPI social media and contact links.
- * This page is intentionally not wrapped in i18n redirect so that
- * it works cleanly as a QR-code landing page at asyncapi.com/connect.
  */
 export default function Connect() {
   return (

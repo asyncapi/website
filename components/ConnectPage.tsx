@@ -41,7 +41,6 @@ const CONNECT_LINKS: ConnectCardProps[] = [
 
 /**
  * @description ConnectPage renders the /connect route with a grid of AsyncAPI social links.
- * This page is designed to be converted into a QR code for conference banners and printed materials.
  */
 export default function ConnectPage() {
   const isLastOdd = CONNECT_LINKS.length % 2 !== 0;
