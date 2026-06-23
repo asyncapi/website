@@ -11,7 +11,7 @@ export type ConnectCardProps = Readonly<{
  * @description ConnectCard renders a single social link card used on the /connect page.
  */
 export default function ConnectCard({ label, url, Icon }: ConnectCardProps) {
-  const isExternal = url.startsWith('http') || url.startsWith('mailto:');
+  const isExternal = url.startsWith('http');
 
   return (
     <Link
