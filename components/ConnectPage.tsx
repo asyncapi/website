@@ -2,7 +2,8 @@ import React from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
-import ConnectCard, { ConnectCardProps } from './connect/ConnectCard';
+import type { ConnectCardProps } from './connect/ConnectCard';
+import ConnectCard from './connect/ConnectCard';
 import IconLinkedInColor from './icons/LinkedInColor';
 import IconMail from './icons/Mail';
 import IconMastodonColor from './icons/MastodonColor';
@@ -14,28 +15,28 @@ const CONNECT_LINKS: ConnectCardProps[] = [
   {
     label: 'Slack',
     url: 'https://asyncapi.com/slack-invite',
-    Icon: IconSlackColor,
+    Icon: IconSlackColor
   },
   {
     label: 'Email',
     url: 'mailto:info@asyncapi.com',
-    Icon: IconMail,
+    Icon: IconMail
   },
   {
     label: 'Conferences',
     url: 'https://conference.asyncapi.com',
-    Icon: IconPodium,
+    Icon: IconPodium
   },
   {
     label: 'Mastodon',
     url: 'https://fosstodon.org/@AsyncAPISpec',
-    Icon: IconMastodonColor,
+    Icon: IconMastodonColor
   },
   {
     label: 'LinkedIn',
     url: 'https://www.linkedin.com/company/asyncapi',
-    Icon: IconLinkedInColor,
-  },
+    Icon: IconLinkedInColor
+  }
 ];
 
 /**
@@ -49,7 +50,7 @@ export default function ConnectPage() {
     <div data-testid='ConnectPage-main'>
       <div className='mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8'>
         <div className='text-center'>
-          <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.xl} textColor='text-gray-900 dark:text-white'>
+          <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.xxl} textColor='text-gray-900 dark:text-white'>
             Get in Touch
           </Heading>
         </div>
