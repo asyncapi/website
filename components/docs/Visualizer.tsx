@@ -5,6 +5,8 @@ import type { JSONSchema7Object } from 'json-schema';
 import React, { useEffect, useState } from 'react';
 import Schyma from 'schyma';
 
+import styles from './Visualizer.module.css';
+
 interface VisualizerProps {
   version: string;
 }
@@ -44,7 +46,7 @@ function Visualizer({ version }: VisualizerProps) {
   }
 
   return (
-    <div className='overflow-hidden'>
+    <div className={styles.schemaVisualizer}>
       <Schyma
         title='AsyncAPI Specification'
         description="The AsyncAPI Specification defines a set of fields that can be used in an

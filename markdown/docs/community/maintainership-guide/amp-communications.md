@@ -13,10 +13,10 @@ Slack is the main platform for real-time communication during the program. Once 
 
 Key channels include:
 
-- **#mentorships** – Program-wide updates, announcements, and shared resources.
-- **#maintainership-[year]-cohort** – Dedicated support channel for contributors to ask questions and seek guidance.
-- **#maintainership-[year]-mentors** – Mentor-only space for coordination, shared tips, and updates.
-- **Direct Messages (DMs)** – For private, one-on-one conversations with mentors, mentees, or program organizers.
+- **#mentorships**: Program-wide updates, announcements, and shared resources.
+- **#maintainership-[year]-cohort**: Dedicated support channel for contributors to ask questions and seek guidance.
+- **#maintainership-[year]-mentors**: Mentor-only space for coordination, shared tips, and updates.
+- **Direct Messages (DMs)**: For private, one-on-one conversations with mentors, mentees, or program organizers.
 
  _Please stay responsive to messages and maintain timely communication._
 
@@ -24,14 +24,14 @@ Key channels include:
 
 GitHub is the primary platform for managing and tracking project work.
 
-- **Repositories** – Each project will have a dedicated GitHub repository for code, issues, and pull requests.
-- **GitHub Discussions** – Used by program organizers to share updates, request feedback, announce planning decisions, and collect project ideas.
+- **Repositories**: Each project will have a dedicated GitHub repository for code, issues, and pull requests.
+- **GitHub Discussions**: Used by program organizers to share updates, request feedback, announce planning decisions, and collect project ideas.
 
 _Contributors must follow contribution guidelines and use clear, descriptive messages._
 
 ## Email
 
-All official communications from the AMP team — including evaluation reminders, key deadlines, and other important announcements — will be sent via email.
+All official communications from the AMP team, including evaluation reminders, key deadlines, and other important announcements will be sent via email.
 
 _Be sure to check your inbox regularly and avoid missing critical updates from the program organizers._
 

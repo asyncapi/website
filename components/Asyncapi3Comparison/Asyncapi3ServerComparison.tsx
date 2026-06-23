@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { Column } from '../ComparisonCommon';
+
 export interface Asyncapi3ServerComparisonProps {
   className?: string;
 }
@@ -8,6 +10,26 @@ export interface HoverState {
   Host: boolean;
   Path: boolean;
 }
+
+interface ServerButtonProps {
+  label: string;
+  active: boolean;
+  onHover: (val: boolean) => void;
+  className?: string;
+}
+
+const ServerButton = ({ label, active, onHover, className = '' }: ServerButtonProps) => (
+  <button
+    type='button'
+    className={`${active ? 'bg-pink-300 dark:bg-pink-900/60' : ' '} m-2 border border-black p-2 dark:border-gray-600 focus:outline-none ${className}`}
+    onMouseEnter={() => onHover(true)}
+    onMouseLeave={() => onHover(false)}
+    onFocus={() => onHover(true)}
+    onBlur={() => onHover(false)}
+  >
+    <p>{label}</p>
+  </button>
+);
 
 /**
  * @description React component for comparing AsyncAPI servers between versions 2.x and 3.0.
@@ -21,57 +43,49 @@ export default function Asyncapi3ServerComparison({ className = '' }: Asyncapi3S
 
   return (
     <div className={`${className} flex flex-col flex-wrap gap-1 text-center md:flex-row`}>
-      <div className='ml-1 flex-1 border border-black p-2'>
-        <h3 className='mb-4 ml-2 font-sans text-lg font-medium'>AsyncAPI 2.x</h3>
-        <div>
-          <div className='m-2 border border-blue-300 p-2'>
-            Servers
-            <div className='flex flex-1 flex-col flex-wrap'>
-              <div className='m-2 border border-blue-600 p-2'>
-                Server
-                <div className='flex flex-1 flex-wrap'>
-                  <div
-                    className={`${hoverState.Host || hoverState.Path ? 'bg-pink-300' : ' '} m-2 flex flex-1 items-center justify-center border border-black p-2`}
-                    onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Host: true, Path: true }))}
-                    onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Host: false, Path: false }))}
-                  >
-                    <p>Url</p>
-                  </div>
-                </div>
+      <Column title='AsyncAPI 2.x'>
+        <div className='m-2 border border-blue-300 p-2 dark:border-blue-700'>
+          Servers
+          <div className='flex flex-1 flex-col flex-wrap'>
+            <div className='m-2 border border-blue-600 p-2 dark:border-blue-700'>
+              Server
+              <div className='flex flex-1 flex-wrap'>
+                <ServerButton
+                  label='Url'
+                  active={hoverState.Host || hoverState.Path}
+                  onHover={(val) => setHoverState({ Host: val, Path: val })}
+                  className='flex flex-1 items-center justify-center'
+                />
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className='ml-1 flex-1 border border-black p-2'>
-        <h3 className='mb-4 ml-2 font-sans text-lg font-medium'>AsyncAPI 3.0</h3>
-        <div>
-          <div className='m-2 border border-blue-300 p-2'>
-            Servers
-            <div className='flex flex-1 flex-col flex-wrap'>
-              <div className='m-2 border border-blue-600 p-2'>
-                Server
-                <div className='flex flex-1 flex-wrap'>
-                  <div
-                    className={`${hoverState.Host ? 'bg-pink-300' : ' '} m-2 mr-1 box-border flex-1 border border-black p-2`}
-                    onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Host: true }))}
-                    onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Host: false }))}
-                  >
-                    <p>Host</p>
-                  </div>
-                  <div
-                    className={`${hoverState.Path ? 'bg-pink-300' : ' '} m-2 mr-1 box-border flex-1 border border-black p-2`}
-                    onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Path: true }))}
-                    onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Path: false }))}
-                  >
-                    <p>Pathname</p>
-                  </div>
-                </div>
+      </Column>
+
+      <Column title='AsyncAPI 3.0'>
+        <div className='m-2 border border-blue-300 p-2 dark:border-blue-700'>
+          Servers
+          <div className='flex flex-1 flex-col flex-wrap'>
+            <div className='m-2 border border-blue-600 p-2 dark:border-blue-700'>
+              Server
+              <div className='flex flex-1 flex-wrap'>
+                <ServerButton
+                  label='Host'
+                  active={hoverState.Host}
+                  onHover={(val) => setHoverState((prev) => ({ ...prev, Host: val }))}
+                  className='mr-1 box-border flex-1'
+                />
+                <ServerButton
+                  label='Pathname'
+                  active={hoverState.Path}
+                  onHover={(val) => setHoverState((prev) => ({ ...prev, Path: val }))}
+                  className='mr-1 box-border flex-1'
+                />
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </Column>
     </div>
   );
 }

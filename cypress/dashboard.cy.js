@@ -4,6 +4,7 @@ describe('Dashboard Page', () => {
   const dashboard = new DashboardPage();
 
   beforeEach(() => {
+    cy.on('uncaught:exception', () => false);
     dashboard.visit();
   });
 

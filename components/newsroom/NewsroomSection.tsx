@@ -56,7 +56,7 @@ export default function NewsroomSection() {
         <div className='mt-7'>
           <Button
             text={t('newsroomSection.newsroomBtn')}
-            href='/community/newsroom'
+            href='/community/events-and-updates'
             data-testid='NewsroomSection-Link'
           />
         </div>

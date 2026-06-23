@@ -4,9 +4,9 @@
 name: Welcome first time contributors
 
 on:
-  pull_request:
-    types: 
-      - opened
+  pull_request_target:      # Needed to write welcome comments on fork PRs; script only uses the GitHub API.
+    types:
+      - opened              # zizmor: ignore[dangerous-triggers]
   issues:
     types:
       - opened
@@ -25,11 +25,11 @@ jobs:
       issues: write             # Required to post welcome message on issues
       pull-requests: write      # Required to post welcome message on pull requests
     steps:
-    - uses: actions/github-script@v7
+    - uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
       with:
         github-token: ${{ github.token }}
         script: |
-          const issueMessage = `Welcome to AsyncAPI. Thanks a lot for reporting your first issue. Please check out our [contributors guide](https://github.com/asyncapi/community/blob/master/CONTRIBUTING.md) and the instructions about a [basic recommended setup](https://github.com/asyncapi/community/blob/master/git-workflow.md) useful for opening a pull request.<br />Keep in mind there are also other channels you can use to interact with AsyncAPI community. For more details check out [this issue](https://github.com/asyncapi/asyncapi/issues/115).`;
+          const issueMessage = `Welcome to AsyncAPI. Thanks a lot for reporting your first issue. Please check out our [contributors guide](https://github.com/asyncapi/community/blob/master/CONTRIBUTING.md) and the instructions about a [basic recommended setup](https://github.com/asyncapi/community/blob/master/docs/010-contribution-guidelines/git-workflow.md) useful for opening a pull request.<br />Keep in mind there are also other channels you can use to interact with AsyncAPI community. For more details check out [this issue](https://github.com/asyncapi/asyncapi/issues/115).`;
           const prMessage = `Welcome to AsyncAPI. Thanks a lot for creating your first pull request. Please check out our [contributors guide](https://github.com/asyncapi/community/blob/master/CONTRIBUTING.md) useful for opening a pull request.<br />Keep in mind there are also other channels you can use to interact with AsyncAPI community. For more details check out [this issue](https://github.com/asyncapi/asyncapi/issues/115).`;
           if (!issueMessage && !prMessage) {
               throw new Error('Action must have at least one of issue-message or pr-message set');

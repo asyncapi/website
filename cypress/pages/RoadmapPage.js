@@ -2,7 +2,7 @@ import BasePage from './BasePage';
 
 class RoadmapPage extends BasePage {
   verifyPageLoaded() {
-    this.verifyHeadingExists('AsyncAPI becomes the #1 API specification for defining and developing APIs.');
+    this.verifyHeadingExists('AsyncAPI: The #1 API Specification');
   }
 }
 

@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
-import Select from '../form/Select';
 import { applyFilterList, type DataObject, type Filter as FilterQuery, onFilterApply } from '../helpers/applyFilter';
+import FilterDropdown from './FilterDropdown';
 
 interface Check {
   name: string;
@@ -36,7 +36,12 @@ export default function Filter<T extends DataObject = DataObject>({
   useEffect(() => {
     setQuery(route.query as Record<string, string>);
     applyFilterList(checks, data, setFilters);
-  }, [route, checks, data]);
+    // route.asPath is used as a proxy for route.query because route.query is an object
+    // that Next.js recreates on each render, which would cause infinite re-renders.
+    // route.asPath (a string) changes whenever the URL query parameters change,
+    // making it a stable and correct dependency for re-reading route.query.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [route.asPath, checks, data]);
 
   useEffect(() => {
     onFilterApply(data, onFilter, routeQuery);
@@ -59,7 +64,7 @@ export default function Filter<T extends DataObject = DataObject>({
     ];
 
     return (
-      <Select
+      <FilterDropdown
         key={check.name}
         options={selectOptions}
         onChange={(e) => {

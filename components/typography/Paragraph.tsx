@@ -27,7 +27,7 @@ export interface ParagraphProps {
  */
 export default function Paragraph({
   typeStyle = ParagraphTypeStyle.lg,
-  textColor = 'text-gray-700',
+  textColor = 'text-gray-700 dark:text-gray-300',
   fontWeight = '',
   className = '',
   children

@@ -6,14 +6,14 @@ export const Silversponsors: SponsorType[] = [
     website: 'https://www.svix.com/',
     altText: 'Svix',
     imageSrc: '/img/sponsors/svix_logo.svg',
-    imageClass: 'inline-block sm:h-9'
+    imageClass: 'inline-block sm:h-20'
   },
   {
     name: 'Aklivity',
     website: 'https://www.aklivity.io/',
     altText: 'Aklivity',
     imageSrc: '/img/sponsors/aklivity_logo.png',
-    imageClass: 'inline-block sm:h-9'
+    imageClass: 'inline-block sm:h-20'
   },
   {
     name: 'SmartBear',

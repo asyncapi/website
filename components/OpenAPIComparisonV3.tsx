@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
 
+import { Column, ComparisonBox, HoverBox } from './ComparisonCommon';
+import {
+  AsyncAPIServersSection,
+  OpenAPIServersSection,
+  SpecComponentsSection,
+  SpecInfoSection,
+  TagsAndExternalDocsSection
+} from './OpenAPIComparisonCommon';
+
 interface HoverState {
   Info: boolean;
   Servers: boolean;
@@ -19,9 +28,35 @@ interface OpenAPIComparisonV3Props {
   className?: string;
 }
 
+/** Component entries shown inside the OpenAPI 3.0 Components section (V3 comparison). */
+const OPENAPI_V3_COMPONENT_NAMES = [
+  'Definitions',
+  'Responses',
+  'Parameters',
+  'Response Headers',
+  'Security Definitions',
+  'Callbacks',
+  'Links'
+];
+
+/** Component entries shown inside the AsyncAPI 3.0 Components section. */
+const ASYNCAPI_V3_COMPONENT_NAMES = [
+  'Schemas',
+  'Messages',
+  'Security Schemes',
+  'Parameters',
+  'Correlation Ids',
+  'Operation Traits',
+  'Message Traits',
+  'Server Bindings',
+  'Channel Bindings',
+  'Operation Bindings',
+  'Message Bindings'
+];
+
 /**
  * @description OpenAPIComparisonV3 component displays a comparison between OpenAPI 3.0 and AsyncAPI 3.0 specifications.
- * @param {string} [props.className=''] - Additional CSS classes for styling
+ * @param {string} [props.className=''] - Additional CSS classes for styling.
  */
 export default function OpenAPIComparisonV3({ className = '' }: OpenAPIComparisonV3Props) {
   const [hoverState, setHoverState] = useState<HoverState>({
@@ -40,265 +75,205 @@ export default function OpenAPIComparisonV3({ className = '' }: OpenAPICompariso
   });
 
   return (
-    <div className={`${className} flex flex-wrap text-center`}>
-      <div className='mr-1 flex-1 border border-black p-2'>
-        <h3 className='mb-4 ml-2 font-sans text-lg font-medium'>OpenAPI 3.0</h3>
-        <div>
-          <div
-            className={`${hoverState.Info ? 'bg-blue-100 ' : ' '}m-2 border border-blue-300 p-2`}
-            onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Info: true }))}
-            onMouseLeave={() => setHoverState({ ...hoverState, Info: false })}
-          >
-            Info
-          </div>
+    <div className={`${className} flex flex-col flex-wrap gap-1 text-center md:flex-row`}>
+      <Column title='OpenAPI 3.0'>
+        <SpecInfoSection hoverState={hoverState} setHoverState={setHoverState} />
+        <OpenAPIServersSection hoverState={hoverState} setHoverState={setHoverState} />
+        <HoverBox<HoverState>
+          label='Paths'
+          fieldKey='Paths'
+          hoverState={hoverState}
+          setHoverState={setHoverState}
+          activeClass='bg-yellow-100 dark:bg-yellow-900/40'
+          defaultClass=''
+          borderClass='border-yellow-300 dark:border-yellow-700'
+        >
           <div className='flex flex-1 flex-wrap'>
-            <div
-              className={`${hoverState.Servers ? 'bg-green-100' : ' '} m-2 flex-1 border border-green-300 p-2`}
-              onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Servers: true }))}
-              onMouseLeave={() => setHoverState({ ...hoverState, Servers: false })}
+            <HoverBox<HoverState>
+              label='Path Item'
+              fieldKey='PathItem'
+              hoverState={hoverState}
+              setHoverState={setHoverState}
+              activeClass='bg-yellow-300 dark:bg-yellow-800/60'
+              borderClass='border-yellow-600 dark:border-yellow-700'
             >
-              Servers
-            </div>
-            <div className='border-bg-gray-500 m-2 flex-1 border p-2 hover:bg-gray-200'>Security</div>
-          </div>
-          <div
-            className={`${hoverState.Paths ? 'bg-yellow-100' : ' '} m-2 border border-yellow-300 p-2`}
-            onMouseEnter={() => setHoverState((prevState) => ({ ...prevState, Paths: true }))}
-            onMouseLeave={() => setHoverState({ ...hoverState, Paths: false })}
-          >
-            Paths
-            <div className='flex flex-1 flex-wrap'>
-              <div
-                className={`${hoverState.PathItem ? 'bg-yellow-300' : 'bg-white'} m-2 border border-yellow-600 p-2`}
-                onMouseEnter={() => {
-                  return setHoverState((prevState) => ({ ...prevState, PathItem: true }));
-                }}
-                onMouseLeave={() => {
-                  return setHoverState({ ...hoverState, PathItem: false });
-                }}
-              >
-                Path Item
-                <div className='flex flex-1 flex-col flex-wrap'>
-                  <div
-                    className={`${hoverState.Summary ? 'bg-blue-200' : 'bg-white'} m-2 border border-blue-500 p-2`}
-                    onMouseEnter={() => setHoverState((prevState) => ({ ...prevState, Summary: true }))}
-                    onMouseLeave={() => {
-                      return setHoverState({ ...hoverState, Summary: false });
-                    }}
-                  >
-                    Summary and description
-                  </div>
-                  <div className='flex flex-1 flex-wrap'>
-                    <div
-                      className={`${hoverState.OperationItem ? 'bg-orange-300' : 'bg-white'} m-2 flex-1 border border-orange-300 p-2`}
-                      onMouseEnter={() => setHoverState((prevState) => ({ ...prevState, OperationItem: true }))}
-                      onMouseLeave={() => setHoverState({ ...hoverState, OperationItem: false })}
-                    >
-                      Operation
-                      <div
-                        className={`${hoverState.OperationType ? 'bg-orange-400' : 'bg-white'} m-2 flex-1 border border-orange-300 p-2`}
-                        onMouseEnter={() => setHoverState((prevState) => ({ ...prevState, OperationType: true }))}
-                        onMouseLeave={() => setHoverState({ ...hoverState, OperationType: false })}
-                      >
-                        GET, PUT, POST, etc.
-                      </div>
-                      <div
-                        className={`${hoverState.Message ? 'bg-red-400' : 'bg-white'} m-2 flex-1 border border-red-600 p-2`}
-                        onMouseEnter={() => setHoverState((prevState) => ({ ...prevState, Message: true }))}
-                        onMouseLeave={() => setHoverState({ ...hoverState, Message: false })}
-                      >
-                        Request
-                      </div>
-                      <div
-                        className={`${hoverState.Message ? 'bg-red-400' : 'bg-white'} m-2 flex-1 border border-red-600 p-2`}
-                        onMouseEnter={() => setHoverState((prevState) => ({ ...prevState, Message: true }))}
-                        onMouseLeave={() => setHoverState({ ...hoverState, Message: false })}
-                      >
-                        Responses
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='flex flex-1 flex-wrap'>
-            <div
-              className={`${hoverState.Tags ? 'bg-pink-300' : ' '} m-2 flex flex-1 items-center justify-center border border-black p-2`}
-              onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Tags: true }))}
-              onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Tags: false }))}
-            >
-              <p>Tags</p>
-            </div>
-            <div
-              className={`${hoverState.External ? 'bg-green-500' : ' '} m-2 flex flex-1 items-center justify-center border border-black p-2`}
-              onMouseOver={() => setHoverState((prevState) => ({ ...prevState, External: true }))}
-              onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, External: false }))}
-            >
-              <p>External Docs</p>
-            </div>
-          </div>
-          <div
-            className={`${hoverState.Components ? 'bg-gray-100' : ' '} m-2 flex-1 border border-black p-2`}
-            onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Components: true }))}
-            onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Components: false }))}
-          >
-            Components
-            <div className='grid-gap-2 mt-1 grid flex-1 grid-cols-2'>
-              <div className='m-2 border border-black bg-gray-100 p-2'>Definitions</div>
-              <div className='m-2 border border-black bg-gray-100 p-2'>Responses</div>
-              <div className='m-2 border border-black bg-gray-100 p-2'>Parameters</div>
-              <div className='m-2 border border-black bg-gray-100 p-2'>Response Headers</div>
-              <div className='m-2 border border-black bg-gray-100 p-2'>Security Definitions</div>
-              <div className='m-2 border border-black bg-gray-100 p-2'>Callbacks</div>
-              <div className='m-2 border border-black bg-gray-100 p-2'>Links</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className='ml-1 flex-1 border border-black p-2'>
-        <h3 className='mb-4 ml-2 font-sans text-lg font-medium'>AsyncAPI 3.0</h3>
-        <div>
-          <div
-            className={`${hoverState.Info ? 'bg-blue-100 ' : ' '}m-2 border border-blue-300 p-2`}
-            onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Info: true }))}
-            onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Info: false }))}
-          >
-            Info
-          </div>
-          <div className='flex flex-1 flex-wrap'>
-            <div
-              className={`${hoverState.Servers ? 'bg-green-100' : ' '} m-2 flex-1 border border-green-300 p-2`}
-              onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Servers: true }))}
-              onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Servers: false }))}
-            >
-              Servers (hosts + security)
-            </div>
-          </div>
-          <div
-            className={`${hoverState.Paths ? 'bg-yellow-100' : ' '} m-2 border border-yellow-300 p-2`}
-            onMouseEnter={() => setHoverState((prevState) => ({ ...prevState, Paths: true }))}
-            onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Paths: false }))}
-          >
-            Channels
-            <div className='flex flex-1 flex-wrap'>
-              <div
-                className={`${hoverState.PathItem ? 'bg-yellow-300' : 'bg-white'} m-2 border border-yellow-600 p-2`}
-                onMouseOver={() => setHoverState((prevState) => ({ ...prevState, PathItem: true }))}
-                onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, PathItem: false }))}
-              >
-                Channel
+              <div className='flex flex-1 flex-col flex-wrap'>
+                <HoverBox<HoverState>
+                  label='Summary and description'
+                  fieldKey='Summary'
+                  hoverState={hoverState}
+                  setHoverState={setHoverState}
+                  activeClass='bg-blue-200 dark:bg-blue-900/50'
+                  borderClass='border-blue-500 dark:border-blue-400'
+                />
                 <div className='flex flex-1 flex-wrap'>
+                  <HoverBox<HoverState>
+                    label='Operation'
+                    fieldKey='OperationItem'
+                    hoverState={hoverState}
+                    setHoverState={setHoverState}
+                    activeClass='bg-orange-300 dark:bg-orange-800/60'
+                    borderClass='border-orange-300 dark:border-orange-700'
+                    className='flex-1'
+                  >
+                    <HoverBox<HoverState>
+                      label='GET, PUT, POST, etc.'
+                      fieldKey='OperationType'
+                      hoverState={hoverState}
+                      setHoverState={setHoverState}
+                      activeClass='bg-orange-400 dark:bg-orange-900/70'
+                      borderClass='border-orange-300 dark:border-orange-700'
+                      className='flex-1'
+                    />
+                    <HoverBox<HoverState>
+                      label='Request'
+                      fieldKey='Message'
+                      hoverState={hoverState}
+                      setHoverState={setHoverState}
+                      activeClass='bg-red-400 dark:bg-red-900/60'
+                      borderClass='border-red-600 dark:border-red-700'
+                      className='flex-1'
+                    />
+                    <HoverBox<HoverState>
+                      label='Responses'
+                      fieldKey='Message'
+                      hoverState={hoverState}
+                      setHoverState={setHoverState}
+                      activeClass='bg-red-400 dark:bg-red-900/60'
+                      borderClass='border-red-600 dark:border-red-700'
+                      className='flex-1'
+                    />
+                  </HoverBox>
+                </div>
+              </div>
+            </HoverBox>
+          </div>
+        </HoverBox>
+        <TagsAndExternalDocsSection hoverState={hoverState} setHoverState={setHoverState} />
+        <SpecComponentsSection
+          hoverState={hoverState}
+          setHoverState={setHoverState}
+          componentNames={OPENAPI_V3_COMPONENT_NAMES}
+        />
+      </Column>
+
+      <Column title='AsyncAPI 3.0'>
+        <SpecInfoSection hoverState={hoverState} setHoverState={setHoverState} />
+        <AsyncAPIServersSection hoverState={hoverState} setHoverState={setHoverState} />
+        <HoverBox<HoverState>
+          label='Channels'
+          fieldKey='Paths'
+          hoverState={hoverState}
+          setHoverState={setHoverState}
+          activeClass='bg-yellow-100 dark:bg-yellow-900/40'
+          defaultClass=''
+          borderClass='border-yellow-300 dark:border-yellow-700'
+        >
+          <div className='flex flex-1 flex-wrap'>
+            <HoverBox<HoverState>
+              label='Channel'
+              fieldKey='PathItem'
+              hoverState={hoverState}
+              setHoverState={setHoverState}
+              activeClass='bg-yellow-300 dark:bg-yellow-800/60'
+              borderClass='border-yellow-600 dark:border-yellow-700'
+              useMouseOver
+            >
+              <div className='flex flex-1 flex-wrap'>
+                <div className='flex flex-1 flex-wrap'>
+                  <HoverBox<HoverState>
+                    label='Summary, description'
+                    fieldKey='Summary'
+                    hoverState={hoverState}
+                    setHoverState={setHoverState}
+                    activeClass='bg-blue-200 dark:bg-blue-900/50'
+                    borderClass='border-blue-500 dark:border-blue-400'
+                    useMouseOver
+                  />
                   <div className='flex flex-1 flex-wrap'>
-                    <div
-                      className={`${hoverState.Summary ? 'bg-blue-200' : 'bg-white'} m-2 border border-blue-500 p-2`}
-                      onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Summary: true }))}
-                      onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Summary: false }))}
+                    <HoverBox<HoverState>
+                      label='Messages'
+                      fieldKey='Message'
+                      hoverState={hoverState}
+                      setHoverState={setHoverState}
+                      activeClass='bg-red-400 dark:bg-red-900/60'
+                      borderClass='border-red-600 dark:border-red-700'
+                      className='flex-1'
                     >
-                      Summary, description
-                    </div>
-                    <div className='flex flex-1 flex-wrap'>
-                      <div
-                        className={`${hoverState.Message ? 'bg-red-400' : 'bg-white'} m-2 flex-1 border border-red-600 p-2`}
-                        onMouseEnter={() => setHoverState((prevState) => ({ ...prevState, Message: true }))}
-                        onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Message: false }))}
-                      >
-                        Messages
-                        <div className='m-2 mr-1 box-border flex-1 border border-black p-2'>Headers</div>
-                        <div className='m-2 mr-1 box-border flex-1 border border-black p-2'>Payload</div>
-                      </div>
-                    </div>
+                      <ComparisonBox className='box-border flex-1'>Headers</ComparisonBox>
+                      <ComparisonBox className='box-border flex-1'>Payload</ComparisonBox>
+                    </HoverBox>
                   </div>
                 </div>
               </div>
-            </div>
+            </HoverBox>
           </div>
-          <div
-            className={`${hoverState.Operations ? 'bg-orange-200' : 'bg-white '} m-2 flex-1 border border-orange-300 p-2`}
-            onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Operations: true }))}
-            onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Operations: false }))}
-          >
-            Operations
-            <div className='flex flex-1 flex-wrap'>
-              <div
-                className={`${hoverState.OperationItem ? 'bg-orange-300' : 'bg-white '} m-2 flex-1 border border-orange-300 p-2`}
-                onMouseOver={() => setHoverState((prevState) => ({ ...prevState, OperationItem: true }))}
-                onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, OperationItem: false }))}
-              >
-                Operation
-                <div className='flex flex-1 flex-col flex-wrap'>
-                  <div
-                    className={`${hoverState.OperationType ? 'bg-orange-400' : 'bg-white '} m-2 flex-1 border border-orange-300 p-2`}
-                    onMouseOver={() => setHoverState((prevState) => ({ ...prevState, OperationType: true }))}
-                    onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, OperationType: false }))}
-                  >
-                    action (send or receive)
-                  </div>
-                  <div
-                    className={`${hoverState.PathItem ? 'bg-yellow-300' : 'bg-white'} m-2 border border-yellow-600 p-2`}
-                    onMouseEnter={() => {
-                      return setHoverState((prevState) => ({ ...prevState, PathItem: true }));
-                    }}
-                    onMouseLeave={() => {
-                      return setHoverState({ ...hoverState, PathItem: false });
-                    }}
-                  >
-                    Channel reference
-                  </div>
-                  <div
-                    className={`${hoverState.Message ? 'bg-red-400' : 'bg-white'} m-2 flex-1 border border-red-600 p-2`}
-                    onMouseEnter={() => setHoverState((prevState) => ({ ...prevState, Message: true }))}
-                    onMouseLeave={() => setHoverState({ ...hoverState, Message: false })}
-                  >
-                    Messages reference
-                  </div>
-                </div>
+        </HoverBox>
+        <HoverBox<HoverState>
+          label='Operations'
+          fieldKey='Operations'
+          hoverState={hoverState}
+          setHoverState={setHoverState}
+          activeClass='bg-orange-200 dark:bg-orange-900/50'
+          borderClass='border-orange-300 dark:border-orange-700'
+          className='flex-1'
+          useMouseOver
+        >
+          <div className='flex flex-1 flex-wrap'>
+            <HoverBox<HoverState>
+              label='Operation'
+              fieldKey='OperationItem'
+              hoverState={hoverState}
+              setHoverState={setHoverState}
+              activeClass='bg-orange-300 dark:bg-orange-800/60'
+              borderClass='border-orange-300 dark:border-orange-700'
+              className='flex-1'
+              useMouseOver
+            >
+              <div className='flex flex-1 flex-col flex-wrap'>
+                <HoverBox<HoverState>
+                  label='action (send or receive)'
+                  fieldKey='OperationType'
+                  hoverState={hoverState}
+                  setHoverState={setHoverState}
+                  activeClass='bg-orange-400 dark:bg-orange-900/70'
+                  borderClass='border-orange-300 dark:border-orange-700'
+                  className='flex-1'
+                  useMouseOver
+                />
+                <HoverBox<HoverState>
+                  label='Channel reference'
+                  fieldKey='PathItem'
+                  hoverState={hoverState}
+                  setHoverState={setHoverState}
+                  activeClass='bg-yellow-300 dark:bg-yellow-800/60'
+                  borderClass='border-yellow-600 dark:border-yellow-700'
+                />
+                <HoverBox<HoverState>
+                  label='Messages reference'
+                  fieldKey='Message'
+                  hoverState={hoverState}
+                  setHoverState={setHoverState}
+                  activeClass='bg-red-400 dark:bg-red-900/60'
+                  borderClass='border-red-600 dark:border-red-700'
+                  className='flex-1'
+                />
               </div>
-            </div>
+            </HoverBox>
           </div>
-          <div className='flex flex-1 flex-wrap'>
-            <div className='m-2 box-border flex-1 border border-black p-2 hover:bg-blue-400'>
-              Id (application identifier)
-            </div>
-          </div>
-          <div className='flex flex-1 flex-wrap'>
-            <div
-              className={`${hoverState.Tags ? 'bg-pink-300' : ' '} m-2 flex flex-1 items-center justify-center border border-black p-2`}
-              onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Tags: true }))}
-              onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Tags: false }))}
-            >
-              <p>Tags</p>
-            </div>
-            <div
-              className={`${hoverState.External ? 'bg-green-500' : ' '} m-2 flex flex-1 items-center justify-center border border-black p-2`}
-              onMouseOver={() => setHoverState((prevState) => ({ ...prevState, External: true }))}
-              onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, External: false }))}
-            >
-              <p>External Docs</p>
-            </div>
-          </div>
-          <div
-            className={`${hoverState.Components ? 'bg-gray-100' : ' '} m-2 flex-1 border border-black p-2`}
-            onMouseOver={() => setHoverState((prevState) => ({ ...prevState, Components: true }))}
-            onMouseLeave={() => setHoverState((prevState) => ({ ...prevState, Components: false }))}
-          >
-            Components
-            <div className='grid-gap-2 mt-2 grid flex-1 grid-cols-2 flex-wrap'>
-              <div className='m-2 box-border border border-black bg-gray-100 p-2'>Schemas</div>
-              <div className='m-2 box-border border border-black bg-gray-100 p-2'>Messages</div>
-              <div className='m-2 box-border border border-black bg-gray-100 p-2'>Security Schemes</div>
-              <div className='m-2 box-border border border-black bg-gray-100 p-2'>Parameters</div>
-              <div className='m-2 box-border border border-black bg-gray-100 p-2'>Correlation Ids</div>
-              <div className='m-2 box-border border border-black bg-gray-100 p-2'>Operation Traits</div>
-              <div className='m-2 box-border border border-black bg-gray-100 p-2'>Message Traits</div>
-              <div className='m-2 box-border border border-black bg-gray-100 p-2'>Server Bindings</div>
-              <div className='m-2 box-border border border-black bg-gray-100 p-2'>Channel Bindings</div>
-              <div className='m-2 box-border border border-black bg-gray-100 p-2'>Operation Bindings</div>
-              <div className='m-2 box-border border border-black bg-gray-100 p-2'>Message Bindings</div>
-            </div>
-          </div>
+        </HoverBox>
+        <div className='flex flex-1 flex-wrap'>
+          <ComparisonBox className='box-border flex-1 hover:bg-blue-400 dark:hover:bg-blue-900/50'>
+            Id (application identifier)
+          </ComparisonBox>
         </div>
-      </div>
+        <TagsAndExternalDocsSection hoverState={hoverState} setHoverState={setHoverState} />
+        <SpecComponentsSection
+          hoverState={hoverState}
+          setHoverState={setHoverState}
+          componentNames={ASYNCAPI_V3_COMPONENT_NAMES}
+        />
+      </Column>
     </div>
   );
 }

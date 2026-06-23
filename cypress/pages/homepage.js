@@ -65,7 +65,7 @@ class HomePage extends BasePage {
     return this.verifyElementIsVisible(selector).and('have.attr', 'href', link);
   }
 
-  verifyReadTheDocsButton(link = readDocsLink) {
+  verifySlackCTAButton(link = 'https://www.asyncapi.com/slack-invite') {
     return cy.get(`[data-testid="Button-link"][href="${link}"]`).should('be.visible');
   }
 
@@ -86,10 +86,8 @@ class HomePage extends BasePage {
       });
   }
 
-  verifyLetUsKnowLink(link = letUsKnowLink) {
-    cy.contains('a', 'Let us know here!')
-      .should('exist')
-      .and('have.attr', 'href', link);
+  verifyLetUsKnowLink() {
+    cy.get('a[href*="calendar.google.com"]').should('exist');
   }
 
   goToBlogPage() {

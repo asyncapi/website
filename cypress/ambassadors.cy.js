@@ -19,18 +19,18 @@ describe('Ambassadors Page', () => {
   it('verifies social links for selected Ambassadors', () => {
     const ambassadors = [
       {
+        name: 'Daniel Kocot',
+        links: {
+          github: 'https://www.github.com/danielkocot',
+          linkedin: 'https://www.linkedin.com/in/danielkocot'
+        }
+      },
+      {
         name: 'Giri Venkatesan',
         links: {
           github: 'https://www.github.com/gvensan',
           twitter: 'https://www.twitter.com/giri_venkatesan',
           linkedin: 'https://www.linkedin.com/in/girivenkatesan'
-        }
-      },
-      {
-        name: 'Daniel Kocot',
-        links: {
-          github: 'https://www.github.com/danielkocot',
-          linkedin: 'https://www.linkedin.com/in/danielkocot'
         }
       },
       {
@@ -48,4 +48,3 @@ describe('Ambassadors Page', () => {
     });
   });
 });
-

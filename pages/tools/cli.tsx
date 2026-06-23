@@ -1,4 +1,4 @@
-import { BadgeCheckIcon, CodeIcon, DocumentAddIcon, GlobeIcon } from '@heroicons/react/outline';
+import { CheckBadgeIcon, CodeBracketIcon, DocumentPlusIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 import React from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
@@ -16,13 +16,13 @@ const features = [
     name: 'New files',
     description: () =>
       'Use the CLI tool to quickly create new AsyncAPI files. Select from a range of templates (MQTT, WebSockets, Kafka, and more.)',
-    icon: DocumentAddIcon
+    icon: DocumentPlusIcon
   },
   {
     name: 'Validate',
     description: () =>
       'Validate your AsyncAPI documents with the CLI. Quickly get feedback to verify your AsyncAPI document is within the correct format.',
-    icon: BadgeCheckIcon
+    icon: CheckBadgeIcon
   },
   {
     name: 'Open Studio',
@@ -30,17 +30,19 @@ const features = [
     description: () => (
       <>
         Got an AsyncAPI file locally? Run{' '}
-        <code className=' rounded bg-gray-200 px-1 py-0.5 font-mono text-sm text-gray-900'>asyncapi start studio</code>{' '}
+        <code className='rounded bg-gray-200 px-1 py-0.5 font-mono text-sm text-gray-900 dark:bg-dark-card dark:text-dark-heading'>
+          asyncapi start studio
+        </code>{' '}
         to open our studio in seconds.
       </>
     ),
-    icon: CodeIcon
+    icon: CodeBracketIcon
   },
   {
     name: 'Open Source',
     description: () =>
       'All our tools are open source, feel free to contribute new commands or help evolve our existing ones.',
-    icon: GlobeIcon
+    icon: GlobeAltIcon
   }
 ];
 
@@ -173,7 +175,7 @@ export default function CliPage() {
               </div>
             </div>
           </div>
-          <div className='mt-20 bg-white lg:py-12'>
+          <div className='mt-20 bg-white dark:bg-dark-background lg:py-12'>
             <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
               <div className='mb-16 text-center'>
                 <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.mdSemibold}>
@@ -189,7 +191,7 @@ export default function CliPage() {
                   {features.map(({ description: Description, ...feature }) => (
                     <div key={feature.name} className='relative mb-10'>
                       <dt>
-                        <div className='absolute flex size-12 items-center justify-center rounded-md border border-gray-900 bg-secondary-100 text-gray-900'>
+                        <div className='absolute flex size-12 items-center justify-center rounded-md border border-gray-900 bg-secondary-100 text-gray-900 dark:border-dark-text dark:bg-dark-card dark:text-dark-heading'>
                           <feature.icon className='size-6' aria-hidden='true' />
                         </div>
                         <Heading level={HeadingLevel.h4} typeStyle={HeadingTypeStyle.smSemibold} className='ml-16'>

@@ -13,7 +13,7 @@ import { initiativeLinks, socialMediaLinks } from './FooterList';
  */
 export default function Footer() {
   return (
-    <footer className='margin: 0 auto mt-12 bg-dark'>
+    <footer className='margin: 0 auto mt-12 dark:bg-dark-footer bg-dark'>
       <div className='mx-auto max-w-screen-xl divide-y divide-cool-gray overflow-hidden px-3 py-4 sm:p-6 md:py-12 lg:px-8 xl:py-16'>
         <nav className='flex flex-wrap justify-between py-4 sm:py-10'>
           <div className='mr-14 w-full md:w-auto'>
@@ -109,12 +109,12 @@ export default function Footer() {
               </a>
             </p>
           </div>
-          <div className='mt-8 block sm:mt-0'>
+          <div className='mt-8 flex sm:mt-0 sm:justify-end'>
             <p className='block text-sm leading-6'>
               <a href='https://netlify.com' target='_blank' rel='noopener noreferrer'>
                 <img
                   src='https://www.netlify.com/img/global/badges/netlify-color-bg.svg'
-                  className='inline-block align-middle ml-3 text-sm font-medium text-cool-gray'
+                  className='inline-block align-middle text-sm font-medium text-cool-gray'
                   alt='Deploys by Netlify'
                 />
               </a>

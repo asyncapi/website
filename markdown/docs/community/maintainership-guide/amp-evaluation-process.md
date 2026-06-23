@@ -28,7 +28,7 @@ The form takes roughly **10–15 minutes** to fill out and includes questions re
 - Passing or failing mentor or contributor
 - Quality of program organization
 
-After the evaluation window closes, you’ll receive an email from the organizers with your result — pass or fail.
+After the evaluation window closes, you’ll receive an email from the organizers with your result, pass or fail.
 
 >_Submitting your evaluation is **mandatory**. Failure to complete it during any phase will result in immediate removal from the program and loss of stipend eligibility._
 

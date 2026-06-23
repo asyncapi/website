@@ -26,7 +26,7 @@ export default function Card({ month, data }: { month: keyof Expenses; data: Exp
   }
 
   return (
-    <div className='flex h-56 flex-col overflow-hidden rounded-lg bg-slate-100 p-4 shadow-lg'>
+    <div className='flex h-56 flex-col overflow-hidden rounded-lg bg-slate-100 dark:bg-dark-card dark:text-white p-4 shadow-lg'>
       <div className='mb-4 text-lg font-semibold'>{month}</div>
       <div className='flex flex-col overflow-auto'>
         {data.map((item, index) => (

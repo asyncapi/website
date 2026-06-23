@@ -130,7 +130,6 @@
         "linkedin": "fmvilas",
         "isTscMember": true,
         "tscMemberSince": "2023-07-05",
-        "isBoardMember": true,
         "repos": [
             "spec",
             "spec-json-schemas",
@@ -138,7 +137,6 @@
             "converter-js",
             "bindings",
             "enterprise-patterns",
-            "openapi-schema-parser",
             "html-template",
             "markdown-template",
             "nodejs-ws-template",
@@ -278,7 +276,8 @@
         "repos": [
             "website",
             "parser-js",
-            "studio"
+            "studio",
+            "openapi-schema-parser"
         ],
         "githubID": 44585452
     },

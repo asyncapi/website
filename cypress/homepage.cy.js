@@ -35,11 +35,11 @@ describe('Home Page E2E Tests Using Base Components', () => {
     homePage.verifyGithubStarButton();
   });
 
-  it('should show the "Read the Docs" button', () => {
-    homePage.verifyReadTheDocsButton();
+  it('should show the primary CTA Slack button', () => {
+    homePage.verifySlackCTAButton();
   });
 
-  it('should display the "Let us know here!" link with correct URL', () => {
+  it('should display the Google Calendar link', () => {
     homePage.verifyLetUsKnowLink();
   });
 

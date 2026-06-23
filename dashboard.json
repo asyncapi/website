@@ -1,192 +1,21 @@
 {
-  "hotDiscussions": [
+  "hotDiscussions": [],
+  "goodFirstIssues": [
     {
-      "id": "PR_kwDOBW5R_c7Llp2_",
-      "isPR": true,
+      "id": "I_kwDODwv8N88AAAABFFvB1w",
+      "title": "[DESIGN]: Navbar & Footer Layout Issues",
       "isAssigned": true,
-      "title": "feat!: dark Theme Rollout",
-      "author": "princerajpoot20",
-      "resourcePath": "/asyncapi/website/pull/5253",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 43.076188312388815
-    },
-    {
-      "id": "I_kwDOBW5R_c7pGlqB",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[Release] [Prod] [DarkTheme] Rollout plan for dark theme",
-      "author": "princerajpoot20",
-      "resourcePath": "/asyncapi/website/issues/5103",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        },
-        {
-          "name": "Priority: P2",
-          "color": "FBCA04"
-        },
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ],
-      "score": 24.122665454937735
-    },
-    {
-      "id": "I_kwDOBW5R_c6pn_G2",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Redesign the AsyncAPI Website and Implement Dark Theme",
-      "author": "ashmitjsg",
-      "resourcePath": "/asyncapi/website/issues/3669",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        }
-      ],
-      "score": 22.68679251119144
-    },
-    {
-      "id": "I_kwDOFLhIt87jC_4a",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Code of Conduct Nomination - 2026",
-      "author": "Mayaleeeee",
-      "resourcePath": "/asyncapi/community/issues/2236",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 11.48698354997035
-    },
-    {
-      "id": "I_kwDOGQYLdM67ixbm",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Create a Unified Iconography System for Marketing & Tooling",
-      "author": "Mayaleeeee",
-      "resourcePath": "/asyncapi/brand/issues/119",
-      "repo": "asyncapi/brand",
-      "labels": [
-        {
-          "name": ":art: design",
-          "color": "0D67D3"
-        },
-        {
-          "name": "area/design",
-          "color": "0d67d3"
-        },
-        {
-          "name": "bounty",
-          "color": "0E8A16"
-        }
-      ],
-      "score": 10.625459783722574
-    },
-    {
-      "id": "I_kwDOBW5R_c6rxQC5",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "[FEATURE] Modify Github Bot to review & close Spam Issues/PRs",
-      "author": "TRohit20",
-      "resourcePath": "/asyncapi/website/issues/3742",
-      "repo": "asyncapi/website",
+      "resourcePath": "/asyncapi/conference-website/issues/1029",
+      "repo": "asyncapi/conference-website",
+      "author": "AceTheCreator",
+      "area": "Unknown",
       "labels": [
         {
           "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
+          "color": "a2eeef"
         }
-      ],
-      "score": 10.338285194973315
+      ]
     },
-    {
-      "id": "PR_kwDOBW5R_c7OKdhx",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "Fix finance memory leak remove resize listener leak and layout shift",
-      "author": "codxbrexx",
-      "resourcePath": "/asyncapi/website/pull/5285",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 8.328063073728504
-    },
-    {
-      "id": "I_kwDOBW5R_c60eZiB",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[FEATURE] \"Join the AsyncAPI Community\" Section",
-      "author": "iambami",
-      "resourcePath": "/asyncapi/website/issues/4077",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "Priority: P2",
-          "color": "FBCA04"
-        },
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ],
-      "score": 7.7537138962299865
-    },
-    {
-      "id": "PR_kwDOBW5R_c7e7wq8",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: add missing dark mode styling to SneakPeek documentation tab",
-      "author": "sammy200-ui",
-      "resourcePath": "/asyncapi/website/pull/5474",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 7.7537138962299865
-    },
-    {
-      "id": "PR_kwDOCHlHJM7NT-iG",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: rewrite Java template tutorial to AsyncAPI v3",
-      "author": "wei123-web",
-      "resourcePath": "/asyncapi/generator/pull/2029",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 7.7537138962299865
-    },
-    {
-      "id": "PR_kwDODwv8N866EXtA",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add image gallery for past conferences",
-      "author": "kajal-jotwani",
-      "resourcePath": "/asyncapi/conference-website/pull/890",
-      "repo": "asyncapi/conference-website",
-      "labels": [],
-      "score": 7.7537138962299865
-    },
-    {
-      "id": "I_kwDOFLhIt874rNRL",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "[2026 Goals][S1] Repository Audit & Consolidation (Targets O1, O2)",
-      "author": "princerajpoot20",
-      "resourcePath": "/asyncapi/community/issues/3495",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 7.179364718731469
-    }
-  ],
-  "goodFirstIssues": [
     {
       "id": "I_kwDOFttfzM8AAAABAGs3PA",
       "title": "Project maintenance status + request for .NET 10 support and dependency upgrades",
@@ -268,6 +97,10 @@
         {
           "name": "bug",
           "color": "d73a4a"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -316,48 +149,6 @@
           "color": "d73a4a"
         },
         {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c7jlJXk",
-      "title": "[BUG] : Unreadable Text in Roadmap Item Details",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/4958",
-      "repo": "asyncapi/website",
-      "author": "sauraviiitk",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
-        },
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c7hMwbK",
-      "title": "Missing hover effect on two-color (Purple and Dark/Black) buttons in Docs options pages",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/4867",
-      "repo": "asyncapi/website",
-      "author": "Gorachand-Senapati",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
-        },
-        {
           "name": "triaged",
           "color": "0052cc"
         }
@@ -375,6 +166,10 @@
         {
           "name": "enhancement",
           "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -439,9 +234,54 @@
       ]
     },
     {
+      "id": "I_kwDOCoBobc6nflHk",
+      "title": "[BUG] Missing server.summary() function",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/parser-js/issues/1076",
+      "repo": "asyncapi/parser-js",
+      "author": "fmvilas",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOCoBobc6nSxfV",
+      "title": "[BUG] Missing server.title() function",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/parser-js/issues/1075",
+      "repo": "asyncapi/parser-js",
+      "author": "fmvilas",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOCoBobc5zovn3",
+      "title": "Parser do not validate if channel that is referenced in reply with location has `null` in address",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/parser-js/issues/876",
+      "repo": "asyncapi/parser-js",
+      "author": "derberg",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
       "id": "I_kwDOCoBobc5zosuk",
       "title": "Parser do not validate and throw error when `parameters` are provided but address is null",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/parser-js/issues/875",
       "repo": "asyncapi/parser-js",
       "author": "derberg",
@@ -477,50 +317,12 @@
       ]
     },
     {
-      "id": "I_kwDOBW5R_c5soAAM",
-      "title": "Create a research page to have participants sign up for the research study",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1991",
-      "repo": "asyncapi/website",
-      "author": "Mayaleeeee",
-      "area": "design",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOIUldZc5XXsGH",
       "title": "Filter out application which are not in use",
       "isAssigned": false,
       "resourcePath": "/asyncapi/EDAVisualiser/issues/14",
       "repo": "asyncapi/EDAVisualiser",
       "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFiHaLM5DeQ4y",
-      "title": "Add support for HTML output",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/diff/issues/85",
-      "repo": "asyncapi/diff",
-      "author": "aayushmau5",
       "area": "Unknown",
       "labels": [
         {

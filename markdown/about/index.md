@@ -38,9 +38,9 @@ You can see the list of maintainers who also form part of the [AsyncAPI TSC here
 
 ## Contributors
 
-We do our best to recognize every contribution to the project. We do it individually in every repository from [AsyncAPI GitHub organization](https://github.com/asyncapi/). There should always be a **Contributors** section in the readme, like [this one](https://github.com/asyncapi/asyncapi/blob/master/README.md#contributors). We use [All Contributors](https://allcontributors.org/docs/en/specification) specification to handle recognitions. 
+We do our best to recognize every contribution to the project. We do it individually in every repository from [AsyncAPI GitHub organization](https://github.com/asyncapi/). There should always be a **Contributors** section in the readme, like [this one](https://github.com/asyncapi/asyncapi/blob/master/README.md#contributors). We use [All Contributors](https://allcontributors.org/en/reference/specification/) specification to handle recognitions. 
 
-We apologize in advance if we failed to recognize your work. Feel free to contact us on [Slack](https://www.asyncapi.com/slack-invite/), and we will fix it immediately, or just talk to our [All Contributors bot](https://allcontributors.org).
+We apologize in advance if we failed to recognize your work. Feel free to contact us on [Slack](https://www.asyncapi.com/slack-invite/), and we will fix it immediately, or just talk to our [All Contributors bot](https://allcontributors.org/en/bot/).
 
 ## AsyncAPI, in numbers
 Interested to know more about our growth? Feel free to check our annual summary report: 

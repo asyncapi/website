@@ -1,4 +1,6 @@
-class TSCPage {
+import BasePage from './BasePage';
+
+class TSCPage extends BasePage {
   hoverCommunityLink() {
     cy.get('[data-testid="NavItem-Link"]').contains('Community').trigger('mouseover');
   }
@@ -21,16 +23,19 @@ class TSCPage {
   getFailureMessage() {
     return cy.get('[data-testid="Paragraph-test"]').contains(`Subscription failed, please let us know about it by submitting a bug`);
   }
+
   verifyTSCMemberSocialLinks(name, links) {
-    cy.contains('[data-testid="UserInfo-name"]', name)
-      .closest('[data-testid="UserInfo-list"]')
+    // Search for the member to bring them into view regardless of pagination
+    cy.get('input[aria-label="Search TSC members"]').clear().type(name);
+    cy.contains('h3', name)
+      .closest('[class*="rounded-xl"]')
       .within(() => {
         if (links.GitHub) cy.get(`a[href="${links.GitHub}"]`).should('be.visible');
         if (links.Twitter) cy.get(`a[href="${links.Twitter}"]`).should('be.visible');
         if (links.Linkedin) cy.get(`a[href="${links.Linkedin}"]`).should('be.visible');
       });
+    cy.get('input[aria-label="Search TSC members"]').clear();
   }
 }
 
 export default TSCPage;
-
