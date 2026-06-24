@@ -24,7 +24,9 @@ export default function ConnectCard({ label, url, Icon }: ConnectCardProps) {
       <div className='flex size-16 shrink-0 items-center justify-center text-gray-800 transition-transform duration-300 group-hover:scale-110 dark:text-white'>
         <Icon className='size-14' />
       </div>
-      <h3 className='font-heading text-heading-lg font-semibold tracking-heading text-gray-900 dark:text-white'>{label}</h3>
+      <h3 className='font-heading text-heading-lg font-semibold tracking-heading text-gray-900 dark:text-white'>
+        {label}
+      </h3>
     </Link>
   );
 }
