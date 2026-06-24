@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/eQTBXG7spgk/hqdefault.jpg",
+    "title": "AsyncAPI Maintainership Program Kickoff, 12:00 UTC Tuesday June 23rd 2026",
+    "description": "https://github.com/asyncapi/community/issues/3586.",
+    "videoId": "eQTBXG7spgk"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/XF_iP5KkHC8/hqdefault.jpg",
     "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday June 16th 2026",
     "description": "https://github.com/asyncapi/community/issues/3570.",
@@ -22,11 +28,5 @@
     "title": "Let&#39;s talk about contributing: The State of Maintainership",
     "description": "https://github.com/asyncapi/community/issues/3513.",
     "videoId": "8fkwstMaggI"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/Cy_yCrwtXGY/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday April 14th 2026",
-    "description": "https://github.com/asyncapi/community/issues/3498#issuecomment-4243180197.",
-    "videoId": "Cy_yCrwtXGY"
   }
 ]
