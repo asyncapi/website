@@ -18,13 +18,13 @@ export default function ConnectCard({ label, url, Icon }: ConnectCardProps) {
       href={url}
       target={isExternalHttp ? '_blank' : '_self'}
       rel='noopener noreferrer'
-      className='group flex min-h-[90px] items-center space-x-5 rounded-2xl border border-gray-200 bg-white px-6 py-4 shadow-sm transition-all duration-300 hover:border-primary-300 hover:shadow-md dark:border-border dark:bg-dark-card dark:hover:border-primary-500'
+      className='group flex min-h-[120px] items-center space-x-6 rounded-2xl border border-gray-200 bg-white px-8 py-6 shadow-sm transition-all duration-300 hover:border-primary-300 hover:shadow-md dark:border-border dark:bg-dark-card dark:hover:border-primary-500'
       data-testid={`ConnectCard-${label}`}
     >
-      <div className='flex size-12 shrink-0 items-center justify-center text-gray-800 transition-transform duration-300 group-hover:scale-110 dark:text-white'>
-        <Icon className='size-10' />
+      <div className='flex size-16 shrink-0 items-center justify-center text-gray-800 transition-transform duration-300 group-hover:scale-110 dark:text-white'>
+        <Icon className='size-14' />
       </div>
-      <h3 className='font-heading text-heading-md font-bold tracking-heading text-gray-900 dark:text-white'>{label}</h3>
+      <h3 className='font-heading text-heading-lg font-bold tracking-heading text-gray-900 dark:text-white'>{label}</h3>
     </Link>
   );
 }

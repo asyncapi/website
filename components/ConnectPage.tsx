@@ -4,6 +4,7 @@ import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
 import type { ConnectCardProps } from './connect/ConnectCard';
 import ConnectCard from './connect/ConnectCard';
+import IconGithubColor from './icons/GithubColor';
 import IconLinkedInColor from './icons/LinkedInColor';
 import IconMail from './icons/Mail';
 import IconMastodonColor from './icons/MastodonColor';
@@ -16,6 +17,11 @@ const CONNECT_LINKS: ConnectCardProps[] = [
     label: 'Slack',
     url: 'https://asyncapi.com/slack-invite',
     Icon: IconSlackColor
+  },
+  {
+    label: 'GitHub',
+    url: 'https://github.com/asyncapi',
+    Icon: IconGithubColor
   },
   {
     label: 'Email',
