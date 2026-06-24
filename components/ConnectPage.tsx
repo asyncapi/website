@@ -19,19 +19,14 @@ const CONNECT_LINKS: ConnectCardProps[] = [
     Icon: IconSlackColor
   },
   {
-    label: 'GitHub',
-    url: 'https://github.com/asyncapi',
-    Icon: IconGithubColor
-  },
-  {
-    label: 'Email',
-    url: 'mailto:info@asyncapi.com',
-    Icon: IconMail
-  },
-  {
     label: 'Conferences',
     url: 'https://conference.asyncapi.com',
     Icon: IconPodium
+  },
+  {
+    label: 'LinkedIn',
+    url: 'https://www.linkedin.com/company/asyncapi',
+    Icon: IconLinkedInColor
   },
   {
     label: 'Mastodon',
@@ -39,9 +34,14 @@ const CONNECT_LINKS: ConnectCardProps[] = [
     Icon: IconMastodonColor
   },
   {
-    label: 'LinkedIn',
-    url: 'https://www.linkedin.com/company/asyncapi',
-    Icon: IconLinkedInColor
+    label: 'Email',
+    url: 'mailto:info@asyncapi.com',
+    Icon: IconMail
+  },
+  {
+    label: 'GitHub',
+    url: 'https://github.com/asyncapi',
+    Icon: IconGithubColor
   }
 ];
 
