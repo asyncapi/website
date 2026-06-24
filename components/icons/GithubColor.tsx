@@ -3,7 +3,7 @@ import React from 'react';
 /**
  * @description GitHub colored icon for asyncapi website
  */
-export default function IconGithubColor({ className = '' }: { className?: string }) {
+export default function IconGithubColor({ className = '' }: Readonly<{ className?: string }>) {
   return (
     <svg className={className} viewBox='0 0 98 96' xmlns='http://www.w3.org/2000/svg'>
       <path
