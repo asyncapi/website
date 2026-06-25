@@ -2,6 +2,21 @@
   "hotDiscussions": [],
   "goodFirstIssues": [
     {
+      "id": "I_kwDOBW5R_c8AAAABFzEUtw",
+      "title": "Remove the Roadmap from the website",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/5572",
+      "repo": "asyncapi/website",
+      "author": "thulieblack",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "triaged",
+          "color": "0052cc"
+        }
+      ]
+    },
+    {
       "id": "I_kwDODwv8N88AAAABFFvB1w",
       "title": "[DESIGN]: Navbar & Footer Layout Issues",
       "isAssigned": true,
