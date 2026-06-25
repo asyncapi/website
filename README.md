@@ -37,6 +37,18 @@ Use the following tools to set up the project:
 - [Node.js](https://nodejs.org/) v20.12.0+
 - [npm](https://www.npmjs.com/) v10.5.0+
 
+## 🎨 Icons
+Icons used across the AsyncAPI website are part of the [AsyncAPI design system](https://www.figma.com/design/cFsY4LCfKmDqdlaTIJPpA1/AsyncAPI-Design-System?node-id=354-2046&p=f&t=CINUpbY33cZmalFG-0). All icons follow a 24px grid, 1.5px stroke outline style.
+To find and use icons:
+
+1. Open the [AsyncAPI design system](https://www.figma.com/design/cFsY4LCfKmDqdlaTIJPpA1/AsyncAPI-Design-System?node-id=354-2046&p=f&t=CINUpbY33cZmalFG-0) Figma file
+2. Right-click any icon → Copy as → SVG
+<img width="686" height="335" alt="hacopy" src="https://github.com/user-attachments/assets/bab0c13a-75f1-4106-9fe3-b746506f9d6a" />
+
+3. Paste inline in your component
+
+For the full icon audit, style rules, and contribution guidelines see the [Icon System documentation](https://www.figma.com/design/kXSY2ELWaViixVT5gHZUGK/AsyncAPI-Icon-System?node-id=45-462&t=aE3kEtdRSApYj7XK-0).
+
 ## Run locally
 
 1. Fork the repository by clicking on `Fork` option on top right of the main repository.
