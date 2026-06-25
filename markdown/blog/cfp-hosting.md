@@ -18,7 +18,7 @@ authors:
 excerpt: 'What starts as a workaround often becomes a turning point, especially when growth is involved. We built a better system that reflects who we are.'
 ---
 
-What starts as a workaround often becomes a turning point, especially when growth is involved. We have been running the AsyncAPI Conference brand for years (including the online editions), but we haven’t had a very stable system or process. We were content at the time until we reached a moment where it was no longer enough. We want sustainability, control, and a process that actually reflects a proper way of running the brand; hence, we steered towards this goal.
+What starts as a workaround often becomes a turning point, especially when growth is involved. We have been running the AsyncAPI Conference brand for years (including the online editions), but we haven’t had a very stable system or process. We were content at the time until we reached a moment where it was no longer enough. We want sustainability, control, and a process that properly reflects how the brand should be run; hence, we steered towards this goal.
 
 
 ## The Back Story and Need
@@ -62,7 +62,7 @@ flowchart TD
 
 The important design decision is that the website is not the source of truth for CFP operations. Pretalx owns the event workflow. The website consumes a generated snapshot of the public data.
 
-That gives us a static, predictable website build while still letting organizers work in a proper conference management system.
+That gives us a static, predictable website build while still letting organisers work in a proper conference management system.
 
 ## Pretalx on DigitalOcean
 
@@ -117,7 +117,7 @@ services:
     image: redis:7-alpine
 ```
 
-Only the Pretalx image tag is configurable. The supporting service images are pinned so upgrades are deliberate instead of accidental.
+Only the Pretalx image tag is configurable. The supporting service images are pinned, so upgrades are deliberate rather than accidental.
 
 ## Why nginx and Caddy Both Exist
 
@@ -160,7 +160,7 @@ server {
 }
 ```
 
-This split matters for image uploads. Pretalx can successfully upload and generate files, but if `/media/...` is not routed to the shared public volume, the browser will still see `404` for speaker avatars or event images.
+This split matters for image uploads. Pretalx can successfully upload and generate files, but if `/media/...` is not routed to the shared public volume, the browser will still see a `404` for speaker avatars or event images.
 
 ## Pretalx Configuration
 
@@ -184,11 +184,11 @@ url = https://cfp.asyncapi.com
 
 The `url` value needs to be the public URL, not the internal container URL or a Droplet IP with a port. Pretalx uses this value when it builds absolute links. If it points to `localhost` or `:8346`, relative media URLs may work while absolute links break.
 
-The upload limit is intentionally small. Speaker avatars and event images should be optimized before upload, and the Droplet should not spend storage and CPU on oversized media files.
+The upload limit is intentionally small. Speaker avatars and event images should be optimised before upload, and the Droplet should not spend storage or CPU resources on oversized media files.
 
 ## Custom Pretalx Plugin
 
-Pretalx gives us the CFP and schedule data, but the conference website also needs location metadata that is specific to our site. For example:
+Pretalx provides us with the CFP and schedule data, but the conference website also needs location metadata specific to our site. For example:
 
 - city
 - country
@@ -196,7 +196,7 @@ Pretalx gives us the CFP and schedule data, but the conference website also need
 - map URL
 - event image URL
 
-We added a small Pretalx plugin for that. Organizers can fill the fields in Pretalx, and the plugin exposes them through a public event endpoint:
+We added a small Pretalx plugin for that. Organisers can fill the fields in Pretalx, and the plugin exposes them through a public event endpoint:
 
 ```text
 GET /api/events/{event}/p/asyncapi-cfp/event-info/
@@ -214,9 +214,9 @@ The response is website-friendly:
 }
 ```
 
-The `image_url` field is what lets city lists and venue pages show location-specific images without hardcoding those images directly in website components.
+The `image_url` field lets city lists and venue pages display location-specific images without hardcoding them directly in website components.
 
-## Website Sync
+## Conference Website Sync
 
 The website does not fetch Pretalx on every page view. Instead, we sync public Pretalx data into the repository as generated JSON.
 
@@ -256,7 +256,7 @@ config/pretalx/agenda.json
 
 Those files are then merged into the existing conference website data model. This keeps the website static and reviewable: every sync opens a pull request, and maintainers can inspect what changed before it reaches production.
 
-The agenda behavior also follows the Pretalx schedule state. If the schedule is released, the website can show agenda data even if the CFP deadline has not passed yet. If there is no released schedule, the website can continue showing the CFP flow for that location.
+The agenda behaviour also follows the Pretalx schedule state. If the schedule is released, the website can display agenda data even if the CFP deadline has not yet passed. If no schedule has been released, the website can continue to show the CFP flow for that location.
 
 ## Deployment Workflow
 
@@ -284,13 +284,13 @@ GUNICORN_FORWARDED_ALLOW_IPS=127.0.0.1
 
 The one-time Droplet setup includes:
 
-- create a `pretalx` deploy user
-- install Docker and the Compose plugin
-- create `/opt/asyncapi-pretalx`
-- point DNS to the Droplet
-- allow inbound `22`, `80`, and `443` in the DigitalOcean firewall
-- install Caddy
-- configure backups and periodic jobs
+- Create a `pretalx` deploy user
+- Install Docker and the Compose plugin
+- Create `/opt/asyncapi-pretalx`
+- Point DNS to the Droplet
+- Allow inbound `22`, `80`, and `443` in the DigitalOcean firewall
+- Install Caddy
+- Configure backups and periodic jobs
 
 ## Email Delivery
 
@@ -373,20 +373,20 @@ docker compose --env-file .env logs --tail=100 nginx
 docker compose --env-file .env exec pretalx supervisorctl status
 ```
 
-These checks caught issues that normal unit tests would not catch: wrong public URLs, missing media routing, broken absolute image links, incorrect volume permissions, and health checks failing because redirects were not followed.
+These checks caught issues that normal unit tests would not: incorrect public URLs, missing media routing, broken absolute image links, incorrect volume permissions, and health checks failing because redirects were not followed.
 
 ## What DigitalOcean Gives Us
 
-DigitalOcean gives us a practical operating model for this system. A Droplet, Firewall, DNS, persistent Docker volumes, and optional Spaces backups are enough for this workload, while still being easy for maintainers to understand.
+DigitalOcean gives us a practical operating model for this system. Droplet, Firewall, DNS, persistent Docker volumes, and optional Spaces backups are enough for this workload while remaining easy for maintainers to understand.
 
-The main benefit is ownership. We can tune the stack, control upgrades, keep backups, expose the right public endpoints, and connect Pretalx to the conference website without depending on manual exports or third-party event workflows.
+The main benefit is ownership. We can tune the stack, manage upgrades, maintain backups, expose the right public endpoints, and connect Pretalx to the conference website without relying on manual exports or third-party event workflows.
 
 As the AsyncAPI Conference continues to grow across locations, this gives us a more sustainable foundation: Pretalx for conference operations, DigitalOcean for hosting, GitHub Actions for deployment and sync, and the AsyncAPI website for the public experience.
 
 ## Lessons
 
-The biggest lesson is that owning the process means owning the operational details too. Installing an open source tool is only the first part. Media routing, upload limits, email delivery, backups, TLS, health checks, and sync workflows decide whether the system is usable in practice.
+The biggest lesson is that owning the process means owning the operational details too. Installing an Open Source tool is only the first part. Media routing, upload limits, email delivery, backups, TLS, health checks, and sync workflows decide whether the system is usable in practice.
 
-The second lesson is that the website should not become the source of truth for conference operations. Pretalx should own the event workflow, and the website should consume clean generated data.
+The second lesson is that the website should not become the source of truth for conference operations. Pretalx should own the event workflow, and the website should consume clean, generated data.
 
-Finally, small infrastructure can still be production-grade if the boundaries are clear. The setup works because the stack is explicit, documented, backed up, and connected to the rest of our workflow through GitHub Actions.
+Finally, small infrastructure can still be production-grade if the boundaries are clear. The setup works because the stack is explicit, documented, backed up, and integrated with the rest of our workflow via GitHub Actions.
