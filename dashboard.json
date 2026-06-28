@@ -101,25 +101,6 @@
       ]
     },
     {
-      "id": "I_kwDOHmUTbM7m8yuY",
-      "title": "[BUG] Runtime crash when serializing AsyncApi without mandatory fields",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/kotlin-asyncapi/issues/228",
-      "repo": "asyncapi/kotlin-asyncapi",
-      "author": "Varadraj75",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOFttfzM7mELUN",
       "title": "V3 FluentBuilder validation failed when an operation references a component message",
       "isAssigned": true,
