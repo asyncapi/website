@@ -36,6 +36,53 @@ class TSCPage extends BasePage {
       });
     cy.get('input[aria-label="Search TSC members"]').clear();
   }
+
+  verifyRepoPillIsLink(memberName, repoName) {
+    cy.get('input[aria-label="Search TSC members"]').clear().type(memberName);
+    cy.contains('h3', memberName)
+      .closest('[class*="rounded-xl"]')
+      .within(() => {
+        cy.get(`a[data-testid="repo-pill"][href="https://github.com/asyncapi/${repoName}"]`).should('be.visible');
+      });
+    cy.get('input[aria-label="Search TSC members"]').clear();
+  }
+
+  expandRepos(memberName) {
+    cy.get('input[aria-label="Search TSC members"]').clear().type(memberName);
+    cy.contains('h3', memberName)
+      .closest('[class*="rounded-xl"]')
+      .within(() => {
+        cy.get('[data-testid="repo-expand-button"]').should('be.visible').click();
+      });
+  }
+
+  collapseRepos(memberName) {
+    cy.contains('h3', memberName)
+      .closest('[class*="rounded-xl"]')
+      .within(() => {
+        cy.get('[data-testid="repo-collapse-button"]').should('be.visible').click();
+      });
+  }
+
+  verifyAmbassadorBadge(memberName, githubHandle) {
+    cy.get('input[aria-label="Search TSC members"]').clear().type(memberName);
+    cy.contains('h3', memberName)
+      .closest('[class*="rounded-xl"]')
+      .within(() => {
+        cy.get('[data-testid="ambassador-badge"]')
+          .should('be.visible')
+          .and('have.attr', 'href', `/community/ambassadors/${githubHandle}`);
+      });
+    cy.get('input[aria-label="Search TSC members"]').clear();
+  }
+
+  filterByAmbassador() {
+    cy.contains('button', 'Ambassador').click();
+  }
+
+  clearFilter() {
+    cy.contains('button', 'All').click();
+  }
 }
 
 export default TSCPage;

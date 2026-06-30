@@ -12,7 +12,10 @@ import IconUsersGroup from '../../components/icons/UsersGroup';
 import GenericLayout from '../../components/layout/GenericLayout';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 import PaginationComponent from '../../components/Pagination';
+import ambassadorsList from '../../config/AMBASSADORS_MEMBERS.json';
 import tscBoardList from '../../config/TSC_BOARD_MEMBERS.json';
+
+const ambassadorGitHubHandles = new Set(ambassadorsList.map((a: any) => a.github));
 
 /**
  * @description Add additional user information to the user object having TSC data
@@ -42,7 +45,7 @@ export default function TSC() {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
-  const [filterType, setFilterType] = useState<'all' | 'maintainer' | 'available' | 'company'>('all');
+  const [filterType, setFilterType] = useState<'all' | 'maintainer' | 'available' | 'company' | 'ambassador'>('all');
   const membersPerPage = 9;
 
   const filteredMembers = tscMembers.filter((member) => {
@@ -54,7 +57,8 @@ export default function TSC() {
       filterType === 'all' ||
       (filterType === 'maintainer' && member.repos && member.repos.length > 0) ||
       (filterType === 'available' && member.availableForHire) ||
-      (filterType === 'company' && member.company);
+      (filterType === 'company' && member.company) ||
+      (filterType === 'ambassador' && ambassadorGitHubHandles.has(member.github));
 
     return matchesSearch && matchesFilter;
   });
@@ -276,6 +280,19 @@ export default function TSC() {
               >
                 Company
               </button>
+              <button
+                onClick={() => {
+                  setFilterType('ambassador');
+                  setCurrentPage(1);
+                }}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  filterType === 'ambassador'
+                    ? 'bg-primary-500 text-white'
+                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                }`}
+              >
+                Ambassador
+              </button>
             </div>
           </div>
 
@@ -293,7 +310,11 @@ export default function TSC() {
           ) : (
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12'>
               {currentMembers.map((member) => (
-                <TSCMemberCard key={member.github} member={member} />
+                <TSCMemberCard
+                  key={member.github}
+                  member={member}
+                  isAmbassador={ambassadorGitHubHandles.has(member.github)}
+                />
               ))}
             </div>
           )}
