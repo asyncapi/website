@@ -11,6 +11,10 @@ beforeEach(() => {
   homePage.goToTSCPage();
 });
 
+afterEach(() => {
+  cy.get('input[aria-label="Search TSC members"]').clear();
+});
+
 describe('TSC Page', () => {
   it('should succeed in subscribing to the newsletter', () => {
     tscPage.fillNewsletterForm('anushka', 'valid@example.com');
@@ -96,8 +100,6 @@ describe('TSC Page', () => {
         cy.get('[data-testid="repo-expand-button"]').should('not.exist');
         cy.get('[data-testid="repo-collapse-button"]').should('be.visible');
       });
-
-    cy.get('input[aria-label="Search TSC members"]').clear();
   });
 
   it('verifies Show less button collapses repos back to default', () => {
@@ -111,8 +113,6 @@ describe('TSC Page', () => {
         cy.get('[data-testid="repo-expand-button"]').should('be.visible');
         cy.get('[data-testid="repo-collapse-button"]').should('not.exist');
       });
-
-    cy.get('input[aria-label="Search TSC members"]').clear();
   });
 
   it('verifies ambassador badge is shown for TSC members who are also Ambassadors', () => {
