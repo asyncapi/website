@@ -15,7 +15,7 @@ import PaginationComponent from '../../components/Pagination';
 import ambassadorsList from '../../config/AMBASSADORS_MEMBERS.json';
 import tscBoardList from '../../config/TSC_BOARD_MEMBERS.json';
 
-const ambassadorGitHubHandles = new Set(ambassadorsList.map((a: any) => a.github));
+const ambassadorGitHubHandles = new Set(ambassadorsList.map((a: any) => a.github?.toLowerCase()));
 
 /**
  * @description Add additional user information to the user object having TSC data
@@ -58,7 +58,7 @@ export default function TSC() {
       (filterType === 'maintainer' && member.repos && member.repos.length > 0) ||
       (filterType === 'available' && member.availableForHire) ||
       (filterType === 'company' && member.company) ||
-      (filterType === 'ambassador' && ambassadorGitHubHandles.has(member.github));
+      (filterType === 'ambassador' && ambassadorGitHubHandles.has(member.github?.toLowerCase()));
 
     return matchesSearch && matchesFilter;
   });
@@ -313,7 +313,7 @@ export default function TSC() {
                 <TSCMemberCard
                   key={member.github}
                   member={member}
-                  isAmbassador={ambassadorGitHubHandles.has(member.github)}
+                  isAmbassador={ambassadorGitHubHandles.has(member.github?.toLowerCase())}
                 />
               ))}
             </div>

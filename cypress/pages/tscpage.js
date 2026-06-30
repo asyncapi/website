@@ -57,11 +57,13 @@ class TSCPage extends BasePage {
   }
 
   collapseRepos(memberName) {
+    cy.get('input[aria-label="Search TSC members"]').clear().type(memberName);
     cy.contains('h3', memberName)
       .closest('[class*="rounded-xl"]')
       .within(() => {
         cy.get('[data-testid="repo-collapse-button"]').should('be.visible').click();
       });
+    cy.get('input[aria-label="Search TSC members"]').clear();
   }
 
   verifyAmbassadorBadge(memberName, githubHandle) {

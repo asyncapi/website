@@ -82,6 +82,7 @@ describe('TSC Page', () => {
     // Aishat Muibudeen maintains the "website" repo — verify the pill is an <a> with the correct href
     tscPage.verifyRepoPillIsLink('Aishat Muibudeen', 'website');
     tscPage.verifyRepoPillIsLink('Aishat Muibudeen', 'conference-website');
+    cy.get('[data-testid="repo-pill"]').should('exist');
   });
 
   it('verifies +N button expands all remaining repos inline', () => {
@@ -95,6 +96,8 @@ describe('TSC Page', () => {
         cy.get('[data-testid="repo-expand-button"]').should('not.exist');
         cy.get('[data-testid="repo-collapse-button"]').should('be.visible');
       });
+
+    cy.get('input[aria-label="Search TSC members"]').clear();
   });
 
   it('verifies Show less button collapses repos back to default', () => {
@@ -121,6 +124,8 @@ describe('TSC Page', () => {
     ambassadorTscMembers.forEach(({ name, github }) => {
       tscPage.verifyAmbassadorBadge(name, github);
     });
+
+    cy.get('[data-testid="ambassador-badge"]').should('exist');
   });
 
   it('verifies ambassador filter shows only TSC members who are also Ambassadors', () => {
