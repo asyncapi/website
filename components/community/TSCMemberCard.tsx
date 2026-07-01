@@ -57,7 +57,7 @@ export default function TSCMemberCard({ member, isAmbassador = false }: TSCMembe
           <a
             href={`/community/ambassadors/${member.github}`}
             data-testid='ambassador-badge'
-            className='inline-flex items-center gap-1 w-fit px-3 py-1 rounded-full text-xs font-medium bg-secondary-100 dark:bg-secondary-900/30 text-secondary-600 dark:text-secondary-400 border border-secondary-300 dark:border-secondary-600 hover:bg-secondary-200 dark:hover:bg-secondary-800/30 transition-colors'
+            className='inline-flex items-center gap-1 w-fit px-3 py-1 rounded-full text-xs font-medium bg-secondary-100 dark:bg-secondary-500/20 text-secondary-600 dark:text-secondary-200 border border-secondary-300 dark:border-secondary-400 hover:bg-secondary-200 dark:hover:bg-secondary-500/35 transition-colors'
           >
             <IconStar className='w-3 h-3' />
             Ambassador
