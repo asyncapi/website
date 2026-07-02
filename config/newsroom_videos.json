@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/CUhWYHAZ65o/hqdefault.jpg",
-    "title": "AsyncAPI Docs Meeting, 16:00 UTC Wednesday June 24th 2026",
-    "description": "https://github.com/asyncapi/community/issues/3572.",
-    "videoId": "CUhWYHAZ65o"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/eQTBXG7spgk/hqdefault.jpg",
-    "title": "AsyncAPI Maintainership Program Kickoff, 12:00 UTC Tuesday June 23rd 2026",
-    "description": "https://github.com/asyncapi/community/issues/3586.",
-    "videoId": "eQTBXG7spgk"
-  },
-  {
     "image_url": "https://i.ytimg.com/vi/XF_iP5KkHC8/hqdefault.jpg",
     "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday June 16th 2026",
     "description": "https://github.com/asyncapi/community/issues/3570.",
     "videoId": "XF_iP5KkHC8"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/uIQsYEswD4s/hqdefault.jpg",
-    "title": "AsyncAPI Docs Meeting, 16:00 UTC Wednesday May 27th 2026",
-    "description": "https://github.com/asyncapi/community/issues/3549.",
-    "videoId": "uIQsYEswD4s"
+    "image_url": "https://i.ytimg.com/vi/hvUOm9OIpgI/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday March 31st 2026",
+    "description": "https://github.com/asyncapi/community/issues/2329.",
+    "videoId": "hvUOm9OIpgI"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/aS29NYITBWs/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday May 26th 2026",
-    "description": "https://github.com/asyncapi/community/issues/3548.",
-    "videoId": "aS29NYITBWs"
+    "image_url": "https://i.ytimg.com/vi/ku-WyyCT9I8/hqdefault.jpg",
+    "title": "Spec Meeting, 16:00 UTC Wednesday March 25th 2026",
+    "description": "https://github.com/asyncapi/community/issues/2319.",
+    "videoId": "ku-WyyCT9I8"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/CkfW2GAMTI0/hqdefault.jpg",
+    "title": "Docs Meeting, 15:00 UTC Wednesday March 25th 2026",
+    "description": "https://github.com/asyncapi/community/issues/2323.",
+    "videoId": "CkfW2GAMTI0"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/T8RHRCHtPhs/hqdefault.jpg",
+    "title": "AsyncAPI Website Triage Meeting, 15:30 UTC Wednesday March 18th 2026",
+    "description": "https://github.com/asyncapi/community/issues/2315.",
+    "videoId": "T8RHRCHtPhs"
   }
 ]
