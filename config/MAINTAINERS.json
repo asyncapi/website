@@ -386,7 +386,8 @@
             "website",
             "parser-js",
             "studio",
-            "openapi-schema-parser"
+            "openapi-schema-parser",
+            "optimizer"
         ],
         "githubID": 44585452
     },
@@ -682,7 +683,6 @@
         "availableForHire": false,
         "isTscMember": false,
         "repos": [
-            "optimizer",
             "bundler"
         ],
         "githubID": 16149591
