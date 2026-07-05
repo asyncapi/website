@@ -124,6 +124,9 @@ describe('TSC Page', () => {
     ambassadorTscMembers.forEach(({ name, github }) => {
       tscPage.verifyAmbassadorBadge(name, github);
     });
+
+    cy.get('input[aria-label="Search TSC members"]').clear().type('Daniel Kocot');
+    cy.get('[data-testid="ambassador-badge"]').should('be.visible');
   });
 
   it('verifies ambassador filter shows only TSC members who are also Ambassadors', () => {
