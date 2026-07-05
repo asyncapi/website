@@ -78,12 +78,21 @@ class TSCPage extends BasePage {
     cy.get('input[aria-label="Search TSC members"]').clear();
   }
 
+  openFilterDropdown() {
+    cy.get('#current-members button[aria-haspopup="true"]').click();
+  }
+
+  selectFilterOption(label) {
+    this.openFilterDropdown();
+    cy.get('[role="menuitem"]').contains(label).click();
+  }
+
   filterByAmbassador() {
-    cy.contains('button', 'Ambassador').click();
+    this.selectFilterOption('Ambassador');
   }
 
   clearFilter() {
-    cy.contains('button', 'All').click();
+    this.selectFilterOption('All');
   }
 }
 

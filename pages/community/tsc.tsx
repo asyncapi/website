@@ -62,6 +62,12 @@ export default function TSC() {
 
   const activeFilterLabel = filterOptions.find((o) => o.value === filterType)?.label ?? 'All';
 
+  const filterButtonBaseClass =
+    'inline-flex items-center gap-2 w-52 px-4 py-2 rounded-full text-sm font-medium transition-colors';
+  const filterButtonClassName =
+    filterType === 'all'
+      ? `${filterButtonBaseClass} bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700`
+      : `${filterButtonBaseClass} bg-primary-500 text-white`;
 
   const filteredMembers = tscMembers.filter((member) => {
     const matchesSearch =
@@ -90,13 +96,21 @@ export default function TSC() {
   }, [searchTerm, filterType, filteredMembers.length, totalPages, currentPage]);
 
   useEffect(() => {
-    if (!isMoreOpen) return;
+    if (!isMoreOpen) {
+      return () => {};
+    }
+
+    /**
+     * @description Closes the filter dropdown when clicking outside it.
+     */
     function handleClickOutside(event: MouseEvent) {
       if (moreDropdownRef.current && !moreDropdownRef.current.contains(event.target as Node)) {
         setIsMoreOpen(false);
       }
     }
+
     document.addEventListener('mousedown', handleClickOutside);
+
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isMoreOpen]);
 
@@ -259,11 +273,7 @@ export default function TSC() {
                 onClick={() => setIsMoreOpen((prev) => !prev)}
                 aria-haspopup='true'
                 aria-expanded={isMoreOpen}
-                className={`inline-flex items-center gap-2 w-52 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  filterType === 'all'
-                    ? 'bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'
-                    : 'bg-primary-500 text-white'
-                }`}
+                className={filterButtonClassName}
               >
                 <IconFilter className='w-4 h-4 flex-shrink-0' />
                 <span className='flex-1 text-left font-semibold truncate'>{activeFilterLabel}</span>
