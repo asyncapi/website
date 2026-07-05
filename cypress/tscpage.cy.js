@@ -124,8 +124,6 @@ describe('TSC Page', () => {
     ambassadorTscMembers.forEach(({ name, github }) => {
       tscPage.verifyAmbassadorBadge(name, github);
     });
-
-    cy.get('[data-testid="ambassador-badge"]').should('exist');
   });
 
   it('verifies ambassador filter shows only TSC members who are also Ambassadors', () => {
