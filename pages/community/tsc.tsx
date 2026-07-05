@@ -9,6 +9,7 @@ import { COMMUNITY_URLS } from '../../components/footer/FooterList';
 import IconArrowRight from '../../components/icons/ArrowRight';
 import IconChevronDown from '../../components/icons/ChevronDown';
 import IconDocument from '../../components/icons/Document';
+import IconFilter from '../../components/icons/Filter';
 import IconUsersGroup from '../../components/icons/UsersGroup';
 import GenericLayout from '../../components/layout/GenericLayout';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
@@ -258,15 +259,14 @@ export default function TSC() {
                 onClick={() => setIsMoreOpen((prev) => !prev)}
                 aria-haspopup='true'
                 aria-expanded={isMoreOpen}
-                className={`inline-flex items-center justify-between gap-2 min-w-44 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                className={`inline-flex items-center gap-2 w-52 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   filterType === 'all'
-                    ? 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                    ? 'bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'
                     : 'bg-primary-500 text-white'
                 }`}
               >
-                <span>
-                  Filter: <span className='font-semibold'>{activeFilterLabel}</span>
-                </span>
+                <IconFilter className='w-4 h-4 flex-shrink-0' />
+                <span className='flex-1 text-left font-semibold truncate'>{activeFilterLabel}</span>
                 <IconChevronDown
                   className={`w-3.5 h-3.5 flex-shrink-0 transition-transform duration-200 ${isMoreOpen ? 'rotate-180' : ''}`}
                 />

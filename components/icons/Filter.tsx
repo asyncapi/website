@@ -17,7 +17,7 @@ export default function IconFilter({ className = '' }) {
       <g clipPath='url(#clip0_894_656)'>
         <path
           d='M1.11536 0.615479H15.8846V3.38471L10.3461 7.63646V13.2309L6.65382 15.3847V7.63646L1.11536 3.38471V0.615479Z'
-          stroke='#556061'
+          stroke='currentColor'
           strokeWidth='1.5'
           strokeLinejoin='round'
         />
