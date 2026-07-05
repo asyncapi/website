@@ -51,6 +51,16 @@ export default function TSC() {
   const moreDropdownRef = useRef<HTMLDivElement>(null);
   const membersPerPage = 9;
 
+  const filterOptions: { value: typeof filterType; label: string }[] = [
+    { value: 'all', label: 'All' },
+    { value: 'maintainer', label: 'Maintainer' },
+    { value: 'available', label: 'Available to hire' },
+    { value: 'company', label: 'Company' },
+    { value: 'ambassador', label: 'Ambassador' }
+  ];
+
+  const activeFilterLabel = filterOptions.find((o) => o.value === filterType)?.label ?? 'All';
+
 
   const filteredMembers = tscMembers.filter((member) => {
     const matchesSearch =
@@ -248,24 +258,17 @@ export default function TSC() {
                 onClick={() => setIsMoreOpen((prev) => !prev)}
                 aria-haspopup='true'
                 aria-expanded={isMoreOpen}
-                className='inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors border border-gray-200 dark:border-gray-700'
+                className={`inline-flex items-center justify-between gap-2 min-w-44 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  filterType !== 'all'
+                    ? 'bg-primary-500 text-white'
+                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                }`}
               >
                 <span>
-                  Filter:{' '}
-                  <span className='font-semibold text-gray-900 dark:text-white'>
-                    {filterType === 'all'
-                      ? 'All'
-                      : filterType === 'maintainer'
-                        ? 'Maintainer'
-                        : filterType === 'available'
-                          ? 'Available to hire'
-                          : filterType === 'company'
-                            ? 'Company'
-                            : 'Ambassador'}
-                  </span>
+                  Filter: <span className='font-semibold'>{activeFilterLabel}</span>
                 </span>
                 <IconChevronDown
-                  className={`w-3.5 h-3.5 transition-transform duration-200 ${isMoreOpen ? 'rotate-180' : ''}`}
+                  className={`w-3.5 h-3.5 flex-shrink-0 transition-transform duration-200 ${isMoreOpen ? 'rotate-180' : ''}`}
                 />
               </button>
               {isMoreOpen && (
@@ -273,15 +276,7 @@ export default function TSC() {
                   role='menu'
                   className='absolute right-0 mt-2 w-44 rounded-lg bg-white dark:bg-dark-card border border-gray-200 dark:border-gray-700 shadow-lg z-20 py-1'
                 >
-                  {(
-                    [
-                      { value: 'all', label: 'All' },
-                      { value: 'maintainer', label: 'Maintainer' },
-                      { value: 'available', label: 'Available to hire' },
-                      { value: 'company', label: 'Company' },
-                      { value: 'ambassador', label: 'Ambassador' }
-                    ] as const
-                  ).map(({ value, label }) => (
+                  {filterOptions.map(({ value, label }) => (
                     <li key={value} role='none'>
                       <button
                         type='button'
