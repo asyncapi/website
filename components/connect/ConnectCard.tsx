@@ -12,12 +12,14 @@ export type ConnectCardProps = Readonly<{
  */
 export default function ConnectCard({ label, url, Icon }: ConnectCardProps) {
   const isExternalHttp = /^https?:\/\//.test(url);
+  const ariaLabel = isExternalHttp ? `${label} (opens in new tab)` : label;
 
   return (
     <Link
       href={url}
       target={isExternalHttp ? '_blank' : '_self'}
       rel='noopener noreferrer'
+      aria-label={ariaLabel}
       className='group flex min-h-[120px] items-center space-x-6 rounded-2xl border border-gray-200 bg-white px-8 py-6 shadow-sm transition-all duration-300 hover:border-primary-300 hover:shadow-md dark:border-border dark:bg-dark-card dark:hover:border-primary-500'
       data-testid={`ConnectCard-${label}`}
     >

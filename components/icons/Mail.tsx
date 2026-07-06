@@ -1,6 +1,5 @@
 import React from 'react';
 
-/* eslint-disable max-len */
 /**
  * @description Icons for asyncapi website
  */
@@ -10,7 +9,7 @@ export default function IconMail({ className = '' }) {
       className={className}
       fill='none'
       stroke='currentColor'
-      strokeWidth='2'
+      strokeWidth='1.5'
       strokeLinecap='round'
       strokeLinejoin='round'
       xmlns='http://www.w3.org/2000/svg'
