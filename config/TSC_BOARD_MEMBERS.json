@@ -276,7 +276,8 @@
             "website",
             "parser-js",
             "studio",
-            "openapi-schema-parser"
+            "openapi-schema-parser",
+            "optimizer"
         ],
         "githubID": 44585452
     },
