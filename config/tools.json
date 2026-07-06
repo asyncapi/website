@@ -130,7 +130,7 @@
       },
       {
         "title": "AsyncAPI.NET",
-        "description": "The officially maintained fork of the AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common (de)serializers to extract raw AsyncApi JSON and YAML documents from the model.",
+        "description": "The official continuation of LEGO.AsyncAPI.NET from the original author and maintainer. The SDK contains a useful object model for AsyncAPI 3.0 documents in .NET. Full JsonSchema and Avro support",
         "links": {
           "websiteUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET/",
           "repoUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET"
@@ -1080,7 +1080,7 @@
       },
       {
         "title": "AsyncAPI.NET",
-        "description": "The officially maintained fork of the AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common (de)serializers to extract raw AsyncApi JSON and YAML documents from the model.",
+        "description": "The official continuation of LEGO.AsyncAPI.NET from the original author and maintainer. The SDK contains a useful object model for AsyncAPI 3.0 documents in .NET. Full JsonSchema and Avro support",
         "links": {
           "websiteUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET/",
           "repoUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET"
@@ -2524,7 +2524,7 @@
       },
       {
         "title": "AsyncAPI.NET",
-        "description": "The officially maintained fork of the AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common (de)serializers to extract raw AsyncApi JSON and YAML documents from the model.",
+        "description": "The official continuation of LEGO.AsyncAPI.NET from the original author and maintainer. The SDK contains a useful object model for AsyncAPI 3.0 documents in .NET. Full JsonSchema and Avro support",
         "links": {
           "websiteUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET/",
           "repoUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET"
