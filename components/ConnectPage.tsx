@@ -1,5 +1,6 @@
 import React from 'react';
 
+import communityLinksConfig from '@/config/community-links.json';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
 import type { ConnectCardProps } from './connect/ConnectCard';
@@ -15,32 +16,32 @@ import Heading from './typography/Heading';
 const CONNECT_LINKS: ConnectCardProps[] = [
   {
     label: 'Slack',
-    url: 'https://asyncapi.com/slack-invite',
+    url: communityLinksConfig.slack,
     Icon: IconSlackColor
   },
   {
     label: 'Conferences',
-    url: 'https://conference.asyncapi.com',
+    url: communityLinksConfig.conferences,
     Icon: IconPodium
   },
   {
     label: 'LinkedIn',
-    url: 'https://www.linkedin.com/company/asyncapi',
+    url: communityLinksConfig.linkedin,
     Icon: IconLinkedInColor
   },
   {
     label: 'Mastodon',
-    url: 'https://fosstodon.org/@AsyncAPISpec',
+    url: communityLinksConfig.mastodon,
     Icon: IconMastodonColor
   },
   {
     label: 'Email',
-    url: 'mailto:info@asyncapi.com',
+    url: communityLinksConfig.email,
     Icon: IconMail
   },
   {
     label: 'GitHub',
-    url: 'https://github.com/asyncapi',
+    url: communityLinksConfig.github,
     Icon: IconGithubColor
   }
 ];
