@@ -66,7 +66,7 @@ export default function TSC() {
     'inline-flex items-center gap-2 w-52 px-4 py-2 rounded-full text-sm font-medium transition-colors';
   const filterButtonClassName =
     filterType === 'all'
-      ? `${filterButtonBaseClass} bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700`
+      ? `${filterButtonBaseClass} bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:bg-primary-100 dark:hover:bg-primary-500/20 hover:text-primary-600 dark:hover:text-primary-400`
       : `${filterButtonBaseClass} bg-primary-500 text-white`;
 
   const filteredMembers = tscMembers.filter((member) => {

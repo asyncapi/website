@@ -76,7 +76,7 @@ export default function TSCMemberCard({ member, isAmbassador = false }: TSCMembe
                 target='_blank'
                 rel='noreferrer'
                 data-testid='repo-pill'
-                className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-800/50 transition-colors'
+                className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 hover:bg-primary-100 dark:hover:bg-primary-500/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'
               >
                 {repoName}
               </a>
@@ -86,7 +86,7 @@ export default function TSCMemberCard({ member, isAmbassador = false }: TSCMembe
                 onClick={() => setShowAllRepos(true)}
                 data-testid='repo-expand-button'
                 aria-expanded={false}
-                className='inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer transition-colors'
+                className='inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary-100 dark:hover:bg-primary-500/20 hover:text-primary-600 dark:hover:text-primary-400 cursor-pointer transition-colors'
               >
                 +{hiddenCount}
                 <IconChevronDown className='w-3 h-3' />
@@ -97,7 +97,7 @@ export default function TSCMemberCard({ member, isAmbassador = false }: TSCMembe
                 onClick={() => setShowAllRepos(false)}
                 data-testid='repo-collapse-button'
                 aria-expanded={true}
-                className='inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer transition-colors'
+                className='inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:bg-primary-100 dark:hover:bg-primary-500/20 hover:text-primary-600 dark:hover:text-primary-400 cursor-pointer transition-colors'
               >
                 Show less
                 <IconChevronUp className='w-3 h-3' />
