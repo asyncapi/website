@@ -387,7 +387,8 @@
             "parser-js",
             "studio",
             "openapi-schema-parser",
-            "optimizer"
+            "optimizer",
+            "bundler"
         ],
         "githubID": 44585452
     },
@@ -675,17 +676,6 @@
             "website"
         ],
         "githubID": 81870866
-    },
-    {
-        "name": "Viacheslav Turovskyi",
-        "github": "aeworxet",
-        "slack": "U01G3U01SVC",
-        "availableForHire": false,
-        "isTscMember": false,
-        "repos": [
-            "bundler"
-        ],
-        "githubID": 16149591
     },
     {
         "name": "Rohit T",
