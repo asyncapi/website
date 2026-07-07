@@ -67,7 +67,7 @@ export default function TSC() {
   const filterButtonClassName =
     filterType === 'all'
       ? `${filterButtonBaseClass} bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:bg-primary-100 dark:hover:bg-primary-500/20 hover:text-primary-600 dark:hover:text-primary-400`
-      : `${filterButtonBaseClass} bg-primary-500 text-white`;
+      : `${filterButtonBaseClass} bg-primary-500 text-white hover:bg-primary-600`;
 
   const filteredMembers = tscMembers.filter((member) => {
     const matchesSearch =
