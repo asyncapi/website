@@ -988,5 +988,16 @@
             "asyncapi-react"
         ],
         "githubID": 96487647
+    },
+    {
+        "name": "aeworxet",
+        "github": "aeworxet",
+        "slack": "U01G3U01SVC",
+        "availableForHire": false,
+        "isTscMember": false,
+        "repos": [
+            "community"
+        ],
+        "githubID": 16149591
     }
 ]

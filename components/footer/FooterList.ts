@@ -1,5 +1,6 @@
 import type React from 'react';
 
+import communityLinksConfig from '../../config/community-links.json';
 import IconGithub from '../icons/Github';
 import IconLinkedIn from '../icons/LinkedIn';
 import IconSlack from '../icons/Slack';
@@ -15,32 +16,32 @@ export interface SocialMediaLink {
 
 export const socialMediaLinks: SocialMediaLink[] = [
   {
-    url: 'https://twitter.com/AsyncAPISpec',
+    url: communityLinksConfig.twitter,
     label: 'Twitter',
     icon: IconTwitter({ className: 'h-8 w-5 sm:h-4 sm:w-6' })
   },
   {
-    url: 'https://github.com/asyncapi',
+    url: communityLinksConfig.github,
     label: 'GitHub',
     icon: IconGithub({ className: 'h-8 w-8 sm:h-6 sm:w-6' })
   },
   {
-    url: 'https://linkedin.com/company/asyncapi',
+    url: communityLinksConfig.linkedin,
     label: 'LinkedIn',
     icon: IconLinkedIn({ className: 'h-8 w-8 sm:h-5 sm:w-5 ml-1' })
   },
   {
-    url: 'https://youtube.com/asyncapi',
+    url: communityLinksConfig.youtube,
     label: 'YouTube',
     icon: IconYoutubeGray({ className: 'h-8 w-8 sm:h-6 sm:w-6' })
   },
   {
-    url: 'https://asyncapi.com/slack-invite',
+    url: communityLinksConfig.slack,
     label: 'Slack',
     icon: IconSlack({ className: 'h-8 w-8 sm:h-6 sm:w-6' })
   },
   {
-    url: 'https://www.twitch.tv/asyncapi',
+    url: communityLinksConfig.twitch,
     label: 'Twitch',
     icon: IconTwitch({ className: 'h-8 w-8 sm:h-6 sm:w-6' })
   }
