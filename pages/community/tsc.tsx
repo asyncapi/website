@@ -195,8 +195,8 @@ export default function TSC() {
 
             {/* Our Governance Model Card */}
             <div className='bg-white dark:bg-dark-card rounded-2xl p-8 border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-xl transition-shadow'>
-              <div className='flex items-center justify-center w-14 h-14 rounded-full bg-pink-100 dark:bg-pink-900/30 mb-6'>
-                <IconDocument className='w-8 h-8 text-pink-600 dark:text-pink-400' />
+              <div className='flex items-center justify-center w-14 h-14 rounded-full bg-purple-100 dark:bg-purple-900/30 mb-6'>
+                <IconDocument className='w-8 h-8 text-purple-600 dark:text-purple-400' />
               </div>
               <h3 className='text-xl font-bold text-gray-900 dark:text-white mb-4'>Our governance model</h3>
               <p className='text-gray-600 dark:text-gray-400 leading-relaxed'>
