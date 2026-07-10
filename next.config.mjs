@@ -1,5 +1,5 @@
-import path from 'path';
-import { fileURLToPath } from 'url';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import frontmatter from 'remark-frontmatter';
 import images from 'remark-images';
@@ -9,14 +9,8 @@ import slug from 'remark-slug';
 import headingId from 'remark-heading-id';
 import remarkGfm from 'remark-gfm';
 import withMDX from '@next/mdx';
-import bundleAnalyzer from '@next/bundle-analyzer';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-const withBundleAnalyzer = bundleAnalyzer({
-  enabled: process.env.ANALYZE === 'true',
-  openAnalyzer: true,
-});
 
 /**
  * Lightweight shim that replaces the heavy react-syntax-highlighter (and its
@@ -28,7 +22,7 @@ const withBundleAnalyzer = bundleAnalyzer({
  */
 const rshShimPath = path.resolve(
   __dirname,
-  'components/shims/react-syntax-highlighter-shim.tsx'
+  'components/shims/react-syntax-highlighter-shim.tsx',
 );
 
 /**
@@ -37,7 +31,7 @@ const rshShimPath = path.resolve(
 const nextConfig = {
   pageExtensions: ['tsx', 'ts', 'md', 'mdx'],
   eslint: {
-    ignoreDuringBuilds: true
+    ignoreDuringBuilds: true,
   },
   output: 'export',
   webpack(config, { isServer }) {
@@ -57,16 +51,36 @@ const nextConfig = {
     };
 
     return config;
-  }
+  },
 };
 
 const mdxConfig = withMDX({
   extension: /\.mdx?$/,
-  providerImportSource: "@mdx-js/react",
+  providerImportSource: '@mdx-js/react',
   options: {
-    remarkPlugins: [frontmatter, gemoji, headingId, slug, images, a11yEmoji, remarkGfm],
-    rehypePlugins: []
-  }
+    remarkPlugins: [
+      frontmatter,
+      gemoji,
+      headingId,
+      slug,
+      images,
+      a11yEmoji,
+      remarkGfm,
+    ],
+    rehypePlugins: [],
+  },
 });
 
-export default withBundleAnalyzer(mdxConfig(nextConfig));
+export default async function () {
+  // Only load @next/bundle-analyzer when ANALYZE=true to avoid MODULE_NOT_FOUND
+  // in production environments where devDependencies are pruned.
+  const withBundleAnalyzer =
+    process.env.ANALYZE === 'true'
+      ? (await import('@next/bundle-analyzer')).default({
+          enabled: true,
+          openAnalyzer: true,
+        })
+      : (config) => config;
+
+  return withBundleAnalyzer(mdxConfig(nextConfig));
+}

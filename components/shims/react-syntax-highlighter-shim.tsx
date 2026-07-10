@@ -4,54 +4,63 @@ import React from 'react';
 const prismLightTheme = {
   plain: {
     color: '#393A34',
-    backgroundColor: '#ffffff'
+    backgroundColor: '#ffffff',
   },
   styles: [
     {
       types: ['comment', 'prolog', 'doctype', 'cdata'],
-      style: { color: '#999988', fontStyle: 'italic' as const }
+      style: { color: '#999988', fontStyle: 'italic' as const },
     },
     {
       types: ['namespace'],
-      style: { opacity: 0.7 }
+      style: { opacity: 0.7 },
     },
     {
       types: ['string', 'attr-value'],
-      style: { color: '#669900' }
+      style: { color: '#669900' },
     },
     {
       types: ['punctuation', 'operator'],
-      style: { color: '#393A34' }
+      style: { color: '#393A34' },
     },
     {
-      types: ['entity', 'url', 'symbol', 'number', 'boolean', 'variable', 'constant', 'regex', 'inserted'],
-      style: { color: '#36acaa' }
+      types: [
+        'entity',
+        'url',
+        'symbol',
+        'number',
+        'boolean',
+        'variable',
+        'constant',
+        'regex',
+        'inserted',
+      ],
+      style: { color: '#36acaa' },
     },
     {
       types: ['atrule', 'keyword', 'attr-name', 'selector'],
-      style: { color: '#00a4db' }
+      style: { color: '#00a4db' },
     },
     {
       types: ['function', 'deleted', 'tag'],
-      style: { color: '#d73a49' }
+      style: { color: '#d73a49' },
     },
     {
       types: ['function-variable'],
-      style: { color: '#6f42c1' }
+      style: { color: '#6f42c1' },
     },
     {
       types: ['tag', 'selector', 'keyword'],
-      style: { color: '#00009f' }
+      style: { color: '#00009f' },
     },
     {
       types: ['property'],
-      style: { color: '#990055' }
-    }
-  ]
+      style: { color: '#990055' },
+    },
+  ],
 };
 
 interface SyntaxHighlighterProps {
-
   /** Programming language (Schyma always passes 'json') */
   language?: string;
 
@@ -75,8 +84,8 @@ function SyntaxHighlighter({
   language = 'json',
   customStyle = {},
   showLineNumbers = false,
-  children = ''
-}: SyntaxHighlighterProps) {
+  children = '',
+}: Readonly<SyntaxHighlighterProps>) {
   return (
     <Highlight theme={prismLightTheme} code={children} language={language}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
@@ -85,11 +94,14 @@ function SyntaxHighlighter({
           style={{
             ...style,
             ...customStyle,
-            overflowX: 'auto'
+            overflowX: 'auto',
           }}
         >
           {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({ line })}>
+            <div
+              key={`line-${i}-${line[0]?.content || ''}`}
+              {...getLineProps({ line })}
+            >
               {showLineNumbers && (
                 <span
                   style={{
@@ -99,14 +111,17 @@ function SyntaxHighlighter({
                     paddingRight: '1em',
                     userSelect: 'none',
                     opacity: 0.5,
-                    color: '#999'
+                    color: '#999',
                   }}
                 >
                   {i + 1}
                 </span>
               )}
-              {line.map((token, key) => (
-                <span key={key} {...getTokenProps({ token })} />
+              {line.map((token, tokenIndex) => (
+                <span
+                  key={`token-${tokenIndex}-${token.content}`}
+                  {...getTokenProps({ token })}
+                />
               ))}
             </div>
           ))}
