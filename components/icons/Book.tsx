@@ -2,6 +2,7 @@
  * @description Icon component for Book
  */
 import React from 'react';
+
 /**
  * Book icon component
  * @param {React.SVGProps<SVGSVGElement>} props - SVG element props
