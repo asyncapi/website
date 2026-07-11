@@ -267,43 +267,17 @@ export default function CodeBlock({
   }
 
   /**
-   * @description Copies text using a textarea fallback for non-HTTPS environments.
-   */
-  function copyViaTextarea(code: string) {
-    const textarea = document.createElement('textarea');
-
-    textarea.value = code;
-    textarea.style.position = 'fixed';
-    textarea.style.opacity = '0';
-    document.body.appendChild(textarea);
-    textarea.focus();
-    textarea.select();
-    try {
-      // Fallback for browsers that do not support navigator.clipboard (non-HTTPS)
-      // eslint-disable-next-line @typescript-eslint/no-deprecated
-      document.execCommand('copy');
-    } finally {
-      textarea.remove();
-    }
-    markCopied();
-  }
-
-  /**
    * @description Handles the copy button click by writing code to the clipboard.
    */
   function onClickCopy() {
     const code = resolvedBlocks[activeBlock]?.code;
 
-    if (!code) return;
+    if (!code || !navigator?.clipboard) return;
 
-    if (navigator?.clipboard) {
-      navigator.clipboard
-        .writeText(code)
-        .then(markCopied)
-        .catch(() => copyViaTextarea(code));
-    } else {
-      copyViaTextarea(code);
-    }
+    navigator.clipboard
+      .writeText(code)
+      .then(markCopied)
+      .catch(() => {});
   }
 
   /**

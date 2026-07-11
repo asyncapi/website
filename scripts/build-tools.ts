@@ -166,19 +166,21 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     'tools-ignored.json',
   );
 
-  try {
-    await buildTools(
-      automatedToolsPath,
-      manualToolsPath,
-      toolsPath,
-      tagsPath,
-      ignorePath,
-      ignoredOutputPath,
-    );
-  } catch (err) {
-    logger.error('Failed to build tools:', err);
-    process.exit(1);
-  }
+  (async () => {
+    try {
+      await buildTools(
+        automatedToolsPath,
+        manualToolsPath,
+        toolsPath,
+        tagsPath,
+        ignorePath,
+        ignoredOutputPath,
+      );
+    } catch (err) {
+      logger.error('Failed to build tools:', err);
+      process.exit(1);
+    }
+  })();
 }
 
 export { buildTools, buildToolsManual };
