@@ -1,6 +1,6 @@
 import { CheckIcon } from '@heroicons/react/24/outline';
+import { Highlight, type Language, type Token } from 'prism-react-renderer';
 import React, { useState } from 'react';
-import Highlight from 'react-syntax-highlighter';
 
 import Caption from '../Caption';
 import IconClipboard from '../icons/Clipboard';
@@ -22,159 +22,194 @@ interface CodeBlockProps {
   title?: string;
 }
 
-interface Theme {
-  [key: string]: {
-    display?: string;
-    background?: string;
-    color?: string;
-    fontWeight?: string | number;
-    backgroundColor?: string;
-    fontStyle?: string;
-    textDecoration?: string;
-  };
+/** Maps common language aliases to valid Prism identifiers, falls back to 'plaintext'. */
+const LANGUAGE_ALIASES: Record<string, string> = {
+  yml: 'yaml',
+  sh: 'bash',
+  shell: 'bash',
+  js: 'javascript',
+  ts: 'typescript',
+  py: 'python',
+  rb: 'ruby',
+  asyncapi: 'yaml',
+  'generator-cli': 'bash',
+  mermaid: 'plaintext',
+};
+
+const SUPPORTED_LANGUAGES = new Set<string>([
+  'markup',
+  'bash',
+  'clike',
+  'c',
+  'cpp',
+  'css',
+  'javascript',
+  'jsx',
+  'coffeescript',
+  'actionscript',
+  'css-extr',
+  'diff',
+  'git',
+  'go',
+  'graphql',
+  'handlebars',
+  'json',
+  'less',
+  'makefile',
+  'markdown',
+  'objectivec',
+  'ocaml',
+  'python',
+  'reason',
+  'sass',
+  'scss',
+  'sql',
+  'stylus',
+  'tsx',
+  'typescript',
+  'wasm',
+  'yaml',
+  'plaintext',
+  'ruby',
+]);
+
+/**
+ * @description Normalizes a language string to a valid Prism identifier.
+ */
+function normalizeLanguage(lang?: string): Language {
+  if (!lang) return 'plaintext' as Language;
+  const lower = lang.toLowerCase();
+  const mapped = LANGUAGE_ALIASES[lower] || lower;
+
+  return (SUPPORTED_LANGUAGES.has(mapped) ? mapped : 'plaintext') as Language;
 }
 
-const theme: Theme = {
-  hljs: {
-    display: 'inline-block',
-    background: '#252f3f',
-    color: '#c0e2a3'
-  },
-  'hljs-subst': {
-    color: '#d6deeb'
-  },
-  'hljs-selector-tag': {
-    color: '#ff6363'
-  },
-  'hljs-selector-id': {
-    color: '#fad430',
-    fontWeight: 'bold'
-  },
-  'hljs-selector-class': {
-    color: '#7edcda'
-  },
-  'hljs-selector-attr': {
-    color: '#7edcda'
-  },
-  'hljs-selector-pseudo': {
-    color: '#74e287'
-  },
-  'hljs-addition': {
-    backgroundColor: 'rgba(163, 190, 140, 0.5)'
-  },
-  'hljs-deletion': {
-    backgroundColor: 'rgba(191, 97, 106, 0.5)'
-  },
-  'hljs-built_in': {
-    color: '#7edcda'
-  },
-  'hljs-type': {
-    color: '#7edcda'
-  },
-  'hljs-class': {
-    color: '#7edcda'
-  },
-  'hljs-function': {
-    color: '#74e287'
-  },
-  'hljs-function > .hljs-title': {
-    color: '#74e287'
-  },
-  'hljs-keyword': {
-    color: '#64a0dc'
-  },
-  'hljs-literal': {
-    color: '#64a0dc'
-  },
-  'hljs-symbol': {
-    color: '#64a0dc'
-  },
-  'hljs-number': {
-    color: '#d8da68'
-  },
-  'hljs-regexp': {
-    color: '#EBCB8B'
-  },
-  'hljs-string': {
+const customTheme = {
+  plain: {
     color: '#c0e2a3',
-    fontWeight: '500'
+    backgroundColor: '#252f3f',
   },
-  'hljs-title': {
-    color: '#7edcda'
-  },
-  'hljs-params': {
-    color: '#d6deeb'
-  },
-  'hljs-bullet': {
-    color: '#64a0dc'
-  },
-  'hljs-code': {
-    color: '#7edcda'
-  },
-  'hljs-emphasis': {
-    fontStyle: 'italic'
-  },
-  'hljs-formula': {
-    color: '#7edcda'
-  },
-  'hljs-strong': {
-    fontWeight: 'bold'
-  },
-  'hljs-link:hover': {
-    textDecoration: 'underline'
-  },
-  'hljs-quote': {
-    color: '#797f8c'
-  },
-  'hljs-comment': {
-    color: '#797f8c'
-  },
-  'hljs-doctag': {
-    color: '#7edcda'
-  },
-  'hljs-$ref': {
-    color: 'yellow'
-  },
-  'hljs-meta': {
-    color: '#5E81AC'
-  },
-  'hljs-meta-keyword': {
-    color: '#5E81AC'
-  },
-  'hljs-meta-string': {
-    color: '#c0e2a3'
-  },
-  'hljs-attr': {
-    color: '#7edcda'
-  },
-  'hljs-attribute': {
-    color: '#d6deeb'
-  },
-  'hljs-builtin-name': {
-    color: '#64a0dc'
-  },
-  'hljs-name': {
-    color: '#64a0dc'
-  },
-  'hljs-section': {
-    color: '#74e287'
-  },
-  'hljs-tag': {
-    color: '#64a0dc'
-  },
-  'hljs-variable': {
-    color: '#d6deeb'
-  },
-  'hljs-template-variable': {
-    color: '#d6deeb'
-  },
-  'hljs-template-tag': {
-    color: '#5E81AC'
-  },
-  'yaml .hljs-meta': {
-    color: '#D08770'
-  }
+  styles: [
+    {
+      types: ['comment', 'prolog', 'doctype', 'cdata'],
+      style: {
+        color: '#797f8c',
+      },
+    },
+    {
+      types: ['punctuation'],
+      style: {
+        color: '#d6deeb',
+      },
+    },
+    {
+      types: [
+        'property',
+        'tag',
+        'boolean',
+        'number',
+        'constant',
+        'symbol',
+        'deleted',
+      ],
+      style: {
+        color: '#64a0dc',
+      },
+    },
+    {
+      types: ['selector', 'attr-name', 'string', 'char', 'builtin', 'inserted'],
+      style: {
+        color: '#c0e2a3',
+        fontWeight: '500' as const,
+      },
+    },
+    {
+      types: ['operator', 'entity', 'url', 'variable'],
+      style: {
+        color: '#d6deeb',
+      },
+    },
+    {
+      types: ['atrule', 'attr-value', 'function', 'class-name'],
+      style: {
+        color: '#74e287',
+      },
+    },
+    {
+      types: ['keyword'],
+      style: {
+        color: '#64a0dc',
+      },
+    },
+    {
+      types: ['regex', 'important'],
+      style: {
+        color: '#EBCB8B',
+      },
+    },
+  ],
 };
+
+interface CodeLineProps {
+  line: Token[];
+  lineIndex: number;
+  startingLineNumber: number;
+  highlightedLines?: number[];
+  showLineNumbers: boolean;
+  getLineProps: (input: { line: Token[] }) => Record<string, unknown>;
+  getTokenProps: (input: { token: Token }) => Record<string, unknown>;
+}
+
+/**
+ * @description Renders a single highlighted line of code.
+ * Extracted to reduce function nesting depth (SonarCloud S2004).
+ */
+function CodeLine({
+  line,
+  lineIndex,
+  startingLineNumber,
+  highlightedLines,
+  showLineNumbers,
+  getLineProps,
+  getTokenProps,
+}: Readonly<CodeLineProps>) {
+  const lineNumber = lineIndex + startingLineNumber;
+  const isHighlighted = highlightedLines?.includes(lineNumber);
+
+  return (
+    <div
+      {...getLineProps({ line })}
+      style={{
+        display: 'block',
+        paddingRight: '2rem',
+        backgroundColor: isHighlighted ? '#3e4d64' : 'transparent',
+      }}
+    >
+      {showLineNumbers && (
+        <span
+          style={{
+            display: 'inline-block',
+            marginLeft: '16px',
+            paddingRight: '16px',
+            minWidth: '2em',
+            textAlign: 'right',
+            userSelect: 'none',
+            backgroundColor: isHighlighted ? '#3e4d64' : '#252f3f',
+            color: isHighlighted ? '#A3ACAD' : '#8B9394',
+          }}
+        >
+          {lineNumber}
+        </span>
+      )}
+      {line.map((token, tokenIndex) => (
+        <span
+          key={`token-${tokenIndex}-${token.content}`}
+          {...getTokenProps({ token })}
+        />
+      ))}
+    </div>
+  );
+}
 
 /**
  * @description This component displays code snippets with syntax highlighting.
@@ -209,13 +244,14 @@ export default function CodeBlock({
   caption = '',
   showLineNumbers = true,
   startingLineNumber = 1,
-  textSizeClassName = 'text-xs'
+  textSizeClassName = 'text-xs',
 }: CodeBlockProps): React.ReactNode {
   const [activeBlock, setActiveBlock] = useState<number>(0);
   const [showIsCopied, setShowIsCopied] = useState<boolean>(false);
 
-  // eslint-disable-next-line no-param-reassign
-  codeBlocks = codeBlocks && codeBlocks.length ? codeBlocks : [{ code: children.replace(/\n$/, '') }];
+  const resolvedBlocks = codeBlocks?.length
+    ? codeBlocks
+    : [{ code: children.replace(/\n$/, '') }];
 
   const tabItemsCommonClassNames =
     'inline-block border-teal-300 py-1 px-2 mx-px cursor-pointer hover:text-teal-300 font-bold';
@@ -223,34 +259,49 @@ export default function CodeBlock({
   const tabItemsActiveClassNames = `${tabItemsCommonClassNames} text-teal-300 border-b-2`;
 
   /**
-   * @description This function handles the copy button click event by copying the active code block to the clipboard.
+   * @description Marks the copy action as successful and resets after 2 seconds.
    */
-  function onClickCopy() {
-    // check if navigator with clipboard exists (fallback for older browsers)
-    if (navigator && navigator.clipboard && codeBlocks && codeBlocks[activeBlock]) {
-      navigator.clipboard.writeText(codeBlocks[activeBlock].code).then(() => {
-        setShowIsCopied(true);
-        setTimeout(() => {
-          setShowIsCopied(false);
-        }, 2000);
-      });
-    }
+  function markCopied() {
+    setShowIsCopied(true);
+    setTimeout(() => setShowIsCopied(false), 2000);
   }
 
   /**
-   * @description This function renders the syntax-highlighted code blocks.
+   * @description Handles the copy button click by writing code to the clipboard.
+   */
+  function onClickCopy() {
+    const code = resolvedBlocks[activeBlock]?.code;
+
+    if (!code || !navigator?.clipboard) return;
+
+    navigator.clipboard
+      .writeText(code)
+      .then(markCopied)
+      .catch(() => {});
+  }
+
+  /**
+   * @description Renders the syntax-highlighted code block with optional tab navigation.
    */
   function renderHighlight() {
+    const currentBlock = resolvedBlocks[activeBlock];
+    const codeLanguage = currentBlock?.language || language;
+    const codeContent = currentBlock?.code || '';
+
     return (
-      <div className='h-full max-h-screen'>
-        {codeBlocks && codeBlocks.length > 1 && (
-          <div className='pb-3 pl-1 pt-0 text-xs'>
+      <div className="h-full max-h-screen">
+        {resolvedBlocks.length > 1 && (
+          <div className="pb-3 pl-1 pt-0 text-xs">
             <nav>
               <ul>
-                {codeBlocks?.map((block, index) => (
+                {resolvedBlocks.map((block, index) => (
                   <li
-                    key={index}
-                    className={activeBlock === index ? tabItemsActiveClassNames : tabItemsClassNames}
+                    key={block.title || block.language || `tab-${index}`}
+                    className={
+                      activeBlock === index
+                        ? tabItemsActiveClassNames
+                        : tabItemsClassNames
+                    }
                     onClick={() => setActiveBlock(index)}
                   >
                     {block.title || block.language}
@@ -263,52 +314,35 @@ export default function CodeBlock({
 
         <div className={`relative overflow-y-auto pr-8 ${highlightClassName}`}>
           <Highlight
-            className={`pb-2 pt-px text-sm font-medium font-ligatures-contextual
-              ${showLineNumbers ? 'ml-0' : 'ml-3'} ${textSizeClassName}`}
-            language={codeBlocks && codeBlocks[activeBlock].language ? codeBlocks[activeBlock].language : language}
-            style={theme}
-            showLineNumbers={showLineNumbers}
-            startingLineNumber={startingLineNumber}
-            lineNumberContainerStyle={{
-              paddingLeft: '0.5em',
-              background: '#252f3f'
-            }}
-            lineNumberStyle={(lineNumber: number) => {
-              const isHighlighted = highlightedLines?.includes(lineNumber);
-
-              const styles: React.CSSProperties = {
-                display: 'inline-block',
-                marginLeft: '16px',
-                paddingRight: '16px',
-                backgroundColor: isHighlighted ? '#3e4d64' : '#252f3f',
-                color: isHighlighted ? '#A3ACAD' : '#8B9394'
-              };
-
-              return styles;
-            }}
-            wrapLines={true}
-            lineProps={(lineNumber: number) => {
-              const isHighlighted = highlightedLines?.includes(lineNumber);
-
-              const style: React.CSSProperties = {
-                paddingRight: '2rem'
-              };
-
-              if (isHighlighted) {
-                style.display = 'block';
-                style.width = '100%';
-                style.backgroundColor = '#3e4d64';
-              }
-
-              return {
-                style
-              };
-            }}
-            codeTagProps={{
-              className: 'mr-8'
-            }}
+            theme={customTheme}
+            code={codeContent}
+            language={normalizeLanguage(codeLanguage)}
           >
-            {codeBlocks ? [codeBlocks[activeBlock].code] : ''}
+            {({
+              className: codeClassName,
+              style,
+              tokens,
+              getLineProps,
+              getTokenProps,
+            }) => (
+              <pre
+                className={`pb-2 pt-px text-sm font-medium font-ligatures-contextual ${showLineNumbers ? 'ml-0' : 'ml-3'} ${textSizeClassName} ${codeClassName} mr-8`}
+                style={style}
+              >
+                {tokens.map((line, i) => (
+                  <CodeLine
+                    key={`line-${i}-${line[0]?.content || ''}`}
+                    line={line}
+                    lineIndex={i}
+                    startingLineNumber={startingLineNumber}
+                    highlightedLines={highlightedLines}
+                    showLineNumbers={showLineNumbers}
+                    getLineProps={getLineProps}
+                    getTokenProps={getTokenProps}
+                  />
+                ))}
+              </pre>
+            )}
           </Highlight>
         </div>
       </div>
@@ -317,28 +351,36 @@ export default function CodeBlock({
 
   return (
     <>
-      <div className={`relative z-10 my-8 max-w-full overflow-auto rounded bg-code-editor-dark pt-2 ${className}`}>
+      <div
+        className={`relative z-10 my-8 max-w-full overflow-auto rounded bg-code-editor-dark pt-2 ${className}`}
+      >
         {hasWindow && (
-          <div className='pb-2 pl-4'>
-            <span className='mr-2 inline-block size-2.5 rounded-full bg-mac-window-close'></span>
-            <span className='mr-2 inline-block size-2.5 rounded-full bg-mac-window-minimize'></span>
-            <span className='mr-2 inline-block size-2.5 rounded-full bg-mac-window-maximize'></span>
+          <div className="pb-2 pl-4">
+            <span className="mr-2 inline-block size-2.5 rounded-full bg-mac-window-close"></span>
+            <span className="mr-2 inline-block size-2.5 rounded-full bg-mac-window-minimize"></span>
+            <span className="mr-2 inline-block size-2.5 rounded-full bg-mac-window-maximize"></span>
           </div>
         )}
         {showCopy && (
-          <div className='z-10'>
+          <div className="z-10">
             <button
               onClick={onClickCopy}
-              className='absolute right-2 top-1 z-50 cursor-pointer bg-code-editor-dark text-xs
-                text-gray-500 hover:text-gray-300 focus:outline-none'
-              title='Copy to clipboard'
-              data-test='copy-button'
+              className="absolute right-2 top-1 z-50 cursor-pointer bg-code-editor-dark text-xs text-gray-500 hover:text-gray-300 focus:outline-none"
+              title="Copy to clipboard"
+              data-test="copy-button"
             >
-              <output className='sr-only' aria-live='polite' aria-atomic='true'>
+              <output className="sr-only" aria-live="polite" aria-atomic="true">
                 {showIsCopied ? 'Copy to clipboard' : ''}
               </output>
-              <span className='relative inline-block mt-1 size-4' aria-hidden='true'>
-                {showIsCopied ? <CheckIcon className='h-full w-full' /> : <IconClipboard className='h-full w-full' />}
+              <span
+                className="relative inline-block mt-1 size-4"
+                aria-hidden="true"
+              >
+                {showIsCopied ? (
+                  <CheckIcon className="h-full w-full" />
+                ) : (
+                  <IconClipboard className="h-full w-full" />
+                )}
               </span>
             </button>
           </div>
