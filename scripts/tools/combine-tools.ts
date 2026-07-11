@@ -74,6 +74,83 @@ function sortColorItems(
   return [...initial, ...uniqueDiscovered];
 }
 
+function resolveTag(
+  name: string,
+  list: LanguageColorItem[],
+  fuse: Fuse<LanguageColorItem>,
+  defaultColor: string,
+  defaultBorder: string,
+): { item: LanguageColorItem; fuse: Fuse<LanguageColorItem> } {
+  const results = fuse.search(name);
+
+  if (results.length > 0) {
+    return { item: results[0].item, fuse };
+  }
+
+  const newItem: LanguageColorItem = {
+    name,
+    color: defaultColor,
+    borderColor: defaultBorder,
+  };
+
+  list.push(newItem);
+
+  return { item: newItem, fuse: new Fuse(list, options) };
+}
+
+async function resolveLanguageTags(
+  language: string | string[],
+): Promise<{
+  tags: LanguageColorItem[];
+  updatedFuse: Fuse<LanguageColorItem>;
+}> {
+  const tags: LanguageColorItem[] = [];
+  let currentFuse = languageFuse;
+  const langs = typeof language === 'string' ? [language] : language;
+
+  for (const lang of langs) {
+    // eslint-disable-next-line no-await-in-loop
+    const { item, fuse } = resolveTag(
+      lang,
+      languageList,
+      currentFuse,
+      'bg-[#57f281]',
+      'border-[#37f069]',
+    );
+
+    tags.push(item);
+    currentFuse = fuse;
+  }
+
+  return { tags, updatedFuse: currentFuse };
+}
+
+async function resolveTechnologyTags(
+  technology: string[],
+): Promise<{
+  tags: LanguageColorItem[];
+  updatedFuse: Fuse<LanguageColorItem>;
+}> {
+  const tags: LanguageColorItem[] = [];
+  let currentFuse = technologyFuse;
+
+  for (const tech of technology) {
+    // eslint-disable-next-line no-await-in-loop
+    const { item, fuse } = resolveTag(
+      tech,
+      technologyList,
+      currentFuse,
+      'bg-[#61d0f2]',
+      'border-[#40ccf7]',
+    );
+
+    tags.push(item);
+    currentFuse = fuse;
+  }
+
+  return { tags, updatedFuse: currentFuse };
+}
+
 /**
  * Enriches a tool object by processing its language and technology filters for display on the website.
  *
@@ -98,79 +175,23 @@ export async function getFinalTool(
     },
   } as FinalAsyncAPITool;
 
-  // there might be a tool without language
   if (toolObject.filters.language) {
-    const languageArray: LanguageColorItem[] = [];
+    const { tags, updatedFuse } = await resolveLanguageTags(
+      toolObject.filters.language,
+    );
 
-    if (typeof toolObject.filters.language === 'string') {
-      const languageSearch = await languageFuse.search(
-        toolObject.filters.language,
-      );
-
-      if (languageSearch.length) {
-        languageArray.push(languageSearch[0].item);
-      } else {
-        // adds a new language object in the Fuse list as well as in tool object
-        // so that it isn't missed out in the UI.
-        const languageObject = {
-          name: toolObject.filters.language,
-          color: 'bg-[#57f281]',
-          borderColor: 'border-[#37f069]',
-        };
-
-        languageList.push(languageObject);
-        languageArray.push(languageObject);
-        languageFuse = new Fuse(languageList, options);
-      }
-    } else {
-      for (const language of toolObject.filters.language) {
-        // eslint-disable-next-line no-await-in-loop
-        const languageSearch = await languageFuse.search(language);
-
-        if (languageSearch.length > 0) {
-          languageArray.push(languageSearch[0].item);
-        } else {
-          // adds a new language object in the Fuse list as well as in tool object
-          // so that it isn't missed out in the UI.
-          const languageObject = {
-            name: language,
-            color: 'bg-[#57f281]',
-            borderColor: 'border-[#37f069]',
-          };
-
-          languageList.push(languageObject);
-          languageArray.push(languageObject);
-          languageFuse = new Fuse(languageList, options);
-        }
-      }
-    }
-    finalObject.filters.language = languageArray;
+    finalObject.filters.language = tags;
+    languageFuse = updatedFuse;
   }
-  const technologyArray = [];
 
   if (toolObject.filters.technology) {
-    for (const technology of toolObject.filters.technology) {
-      // eslint-disable-next-line no-await-in-loop
-      const technologySearch = await technologyFuse.search(technology);
+    const { tags, updatedFuse } = await resolveTechnologyTags(
+      toolObject.filters.technology,
+    );
 
-      if (technologySearch.length > 0) {
-        technologyArray.push(technologySearch[0].item);
-      } else {
-        // adds a new technology object in the Fuse list as well as in tool object
-        // so that it isn't missed out in the UI.
-        const technologyObject = {
-          name: technology,
-          color: 'bg-[#61d0f2]',
-          borderColor: 'border-[#40ccf7]',
-        };
-
-        technologyList.push(technologyObject);
-        technologyArray.push(technologyObject);
-        technologyFuse = new Fuse(technologyList, options);
-      }
-    }
+    finalObject.filters.technology = tags;
+    technologyFuse = updatedFuse;
   }
-  finalObject.filters.technology = technologyArray;
 
   return finalObject;
 }

@@ -71,7 +71,7 @@ const mdxConfig = withMDX({
   },
 });
 
-export default async function () {
+export default async function getNextConfig() {
   // Only load @next/bundle-analyzer when ANALYZE=true to avoid MODULE_NOT_FOUND
   // in production environments where devDependencies are pruned.
   const withBundleAnalyzer =

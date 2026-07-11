@@ -258,32 +258,57 @@ export default function CodeBlock({
   const tabItemsClassNames = `${tabItemsCommonClassNames} text-gray-300`;
   const tabItemsActiveClassNames = `${tabItemsCommonClassNames} text-teal-300 border-b-2`;
 
+  /**
+   * @description Marks the copy action as successful and resets after 2 seconds.
+   */
+  function markCopied() {
+    setShowIsCopied(true);
+    setTimeout(() => setShowIsCopied(false), 2000);
+  }
+
+  /**
+   * @description Copies text using a textarea fallback for non-HTTPS environments.
+   */
+  function copyViaTextarea(code: string) {
+    const textarea = document.createElement('textarea');
+
+    textarea.value = code;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+    try {
+      // Fallback for browsers that do not support navigator.clipboard (non-HTTPS)
+      // eslint-disable-next-line @typescript-eslint/no-deprecated
+      document.execCommand('copy');
+    } finally {
+      textarea.remove();
+    }
+    markCopied();
+  }
+
+  /**
+   * @description Handles the copy button click by writing code to the clipboard.
+   */
   function onClickCopy() {
     const code = resolvedBlocks[activeBlock]?.code;
 
     if (!code) return;
 
     if (navigator?.clipboard) {
-      navigator.clipboard.writeText(code).then(() => {
-        setShowIsCopied(true);
-        setTimeout(() => setShowIsCopied(false), 2000);
-      });
+      navigator.clipboard
+        .writeText(code)
+        .then(markCopied)
+        .catch(() => copyViaTextarea(code));
     } else {
-      const textarea = document.createElement('textarea');
-
-      textarea.value = code;
-      textarea.style.position = 'fixed';
-      textarea.style.opacity = '0';
-      document.body.appendChild(textarea);
-      textarea.focus();
-      textarea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textarea);
-      setShowIsCopied(true);
-      setTimeout(() => setShowIsCopied(false), 2000);
+      copyViaTextarea(code);
     }
   }
 
+  /**
+   * @description Renders the syntax-highlighted code block with optional tab navigation.
+   */
   function renderHighlight() {
     const currentBlock = resolvedBlocks[activeBlock];
     const codeLanguage = currentBlock?.language || language;
@@ -327,9 +352,7 @@ export default function CodeBlock({
               getTokenProps,
             }) => (
               <pre
-                className={`pb-2 pt-px text-sm font-medium font-ligatures-contextual ${
-                  showLineNumbers ? 'ml-0' : 'ml-3'
-                } ${textSizeClassName} ${codeClassName} mr-8`}
+                className={`pb-2 pt-px text-sm font-medium font-ligatures-contextual ${showLineNumbers ? 'ml-0' : 'ml-3'} ${textSizeClassName} ${codeClassName} mr-8`}
                 style={style}
               >
                 {tokens.map((line, i) => (
@@ -368,8 +391,7 @@ export default function CodeBlock({
           <div className="z-10">
             <button
               onClick={onClickCopy}
-              className="absolute right-2 top-1 z-50 cursor-pointer bg-code-editor-dark text-xs
-                text-gray-500 hover:text-gray-300 focus:outline-none"
+              className="absolute right-2 top-1 z-50 cursor-pointer bg-code-editor-dark text-xs text-gray-500 hover:text-gray-300 focus:outline-none"
               title="Copy to clipboard"
               data-test="copy-button"
             >

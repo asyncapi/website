@@ -78,7 +78,8 @@ interface SyntaxHighlighterProps {
 }
 
 /**
- * @description Lightweight syntax highlighting component.
+ * @description Lightweight syntax highlighting component that replaces react-syntax-highlighter.
+ * Acts as a shim backed by prism-react-renderer to reduce bundle size.
  */
 function SyntaxHighlighter({
   language = 'json',
@@ -91,11 +92,7 @@ function SyntaxHighlighter({
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre
           className={className}
-          style={{
-            ...style,
-            ...customStyle,
-            overflowX: 'auto',
-          }}
+          style={{ ...style, ...customStyle, overflowX: 'auto' }}
         >
           {tokens.map((line, i) => (
             <div
