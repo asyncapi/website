@@ -249,8 +249,7 @@ export default function CodeBlock({
   const [activeBlock, setActiveBlock] = useState<number>(0);
   const [showIsCopied, setShowIsCopied] = useState<boolean>(false);
 
-  // eslint-disable-next-line no-param-reassign
-  codeBlocks = codeBlocks?.length
+  const resolvedBlocks = codeBlocks?.length
     ? codeBlocks
     : [{ code: children.replace(/\n$/, '') }];
 
@@ -259,41 +258,44 @@ export default function CodeBlock({
   const tabItemsClassNames = `${tabItemsCommonClassNames} text-gray-300`;
   const tabItemsActiveClassNames = `${tabItemsCommonClassNames} text-teal-300 border-b-2`;
 
-  /**
-   * @description This function handles the copy button click event by copying the active code block to the clipboard.
-   */
   function onClickCopy() {
-    // check if navigator with clipboard exists (fallback for older browsers)
-    if (
-      navigator &&
-      navigator.clipboard &&
-      codeBlocks &&
-      codeBlocks[activeBlock]
-    ) {
-      navigator.clipboard.writeText(codeBlocks[activeBlock].code).then(() => {
+    const code = resolvedBlocks[activeBlock]?.code;
+
+    if (!code) return;
+
+    if (navigator?.clipboard) {
+      navigator.clipboard.writeText(code).then(() => {
         setShowIsCopied(true);
-        setTimeout(() => {
-          setShowIsCopied(false);
-        }, 2000);
+        setTimeout(() => setShowIsCopied(false), 2000);
       });
+    } else {
+      const textarea = document.createElement('textarea');
+
+      textarea.value = code;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      setShowIsCopied(true);
+      setTimeout(() => setShowIsCopied(false), 2000);
     }
   }
 
-  /**
-   * @description This function renders the syntax-highlighted code blocks.
-   */
   function renderHighlight() {
-    const currentBlock = codeBlocks?.[activeBlock];
+    const currentBlock = resolvedBlocks[activeBlock];
     const codeLanguage = currentBlock?.language || language;
     const codeContent = currentBlock?.code || '';
 
     return (
       <div className="h-full max-h-screen">
-        {codeBlocks?.length && codeBlocks.length > 1 && (
+        {resolvedBlocks.length > 1 && (
           <div className="pb-3 pl-1 pt-0 text-xs">
             <nav>
               <ul>
-                {codeBlocks.map((block, index) => (
+                {resolvedBlocks.map((block, index) => (
                   <li
                     key={block.title || block.language || `tab-${index}`}
                     className={

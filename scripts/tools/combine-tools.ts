@@ -11,7 +11,7 @@ import type {
   LanguageColorItem,
   ToolIgnoreEntry,
   ToolsIgnoreFile,
-  ToolsListObject
+  ToolsListObject,
 } from '@/types/scripts/tools';
 
 import { logger } from '../helpers/logger';
@@ -31,7 +31,7 @@ const finalTools: FinalToolsListObject = {};
 for (const category of categoryList) {
   finalTools[category.name] = {
     description: category.description,
-    toolsList: []
+    toolsList: [],
   };
 }
 
@@ -40,7 +40,7 @@ const options = {
   includeScore: true,
   shouldSort: true,
   threshold: 0.39,
-  keys: ['name', 'color', 'borderColor']
+  keys: ['name', 'color', 'borderColor'],
 };
 
 // Two seperate lists and Fuse objects initialised to search languages and technologies tags
@@ -52,7 +52,10 @@ const initialTechnologyCount = technologyList.length;
 let languageFuse = new Fuse(languageList, options);
 let technologyFuse = new Fuse(technologyList, options);
 
-function sortColorItems(list: LanguageColorItem[], initialCount: number): LanguageColorItem[] {
+function sortColorItems(
+  list: LanguageColorItem[],
+  initialCount: number,
+): LanguageColorItem[] {
   const initial = list.slice(0, initialCount);
   const discovered = list.slice(initialCount);
 
@@ -82,15 +85,17 @@ function sortColorItems(list: LanguageColorItem[], initialCount: number): Langua
  * @param toolObject - The original tool object containing filter tags.
  * @returns A promise that resolves to the updated tool object with enriched language and technology filters.
  */
-export async function getFinalTool(toolObject: AsyncAPITool): Promise<FinalAsyncAPITool> {
+export async function getFinalTool(
+  toolObject: AsyncAPITool,
+): Promise<FinalAsyncAPITool> {
   const finalObject: FinalAsyncAPITool = {
     ...toolObject,
     filters: {
       language: [],
       technology: [],
       categories: toolObject.filters.categories,
-      hasCommercial: toolObject.filters.hasCommercial
-    }
+      hasCommercial: toolObject.filters.hasCommercial,
+    },
   } as FinalAsyncAPITool;
 
   // there might be a tool without language
@@ -98,7 +103,9 @@ export async function getFinalTool(toolObject: AsyncAPITool): Promise<FinalAsync
     const languageArray: LanguageColorItem[] = [];
 
     if (typeof toolObject.filters.language === 'string') {
-      const languageSearch = await languageFuse.search(toolObject.filters.language);
+      const languageSearch = await languageFuse.search(
+        toolObject.filters.language,
+      );
 
       if (languageSearch.length) {
         languageArray.push(languageSearch[0].item);
@@ -108,7 +115,7 @@ export async function getFinalTool(toolObject: AsyncAPITool): Promise<FinalAsync
         const languageObject = {
           name: toolObject.filters.language,
           color: 'bg-[#57f281]',
-          borderColor: 'border-[#37f069]'
+          borderColor: 'border-[#37f069]',
         };
 
         languageList.push(languageObject);
@@ -128,7 +135,7 @@ export async function getFinalTool(toolObject: AsyncAPITool): Promise<FinalAsync
           const languageObject = {
             name: language,
             color: 'bg-[#57f281]',
-            borderColor: 'border-[#37f069]'
+            borderColor: 'border-[#37f069]',
           };
 
           languageList.push(languageObject);
@@ -154,7 +161,7 @@ export async function getFinalTool(toolObject: AsyncAPITool): Promise<FinalAsync
         const technologyObject = {
           name: technology,
           color: 'bg-[#61d0f2]',
-          borderColor: 'border-[#40ccf7]'
+          borderColor: 'border-[#40ccf7]',
         };
 
         technologyList.push(technologyObject);
@@ -178,16 +185,18 @@ const processManualTool = async (tool: AsyncAPITool) => {
         tool: tool.title,
         source: 'manual-tools.json',
         errors: validate.errors,
-        note: 'Script continues execution, error logged for investigation'
+        note: 'Script continues execution, error logged for investigation',
       }),
       null,
-      2
+      2,
     );
 
     return null;
   }
   const isAsyncAPIrepo = tool?.links?.repoUrl
-    ? new URL(tool.links.repoUrl).href.startsWith('https://github.com/asyncapi/')
+    ? new URL(tool.links.repoUrl).href.startsWith(
+        'https://github.com/asyncapi/',
+      )
     : false;
   const toolObject = await createToolObject(tool, '', '', isAsyncAPIrepo);
 
@@ -197,12 +206,19 @@ const processManualTool = async (tool: AsyncAPITool) => {
 /**
  * Checks whether a single ignore entry matches the given tool in the given category.
  */
-function doesEntryMatchTool(entry: ToolIgnoreEntry, tool: AsyncAPITool, category: string): boolean {
+function doesEntryMatchTool(
+  entry: ToolIgnoreEntry,
+  tool: AsyncAPITool,
+  category: string,
+): boolean {
   if (!entry.title && !entry.repoUrl) return false;
-  if (entry.categories?.length && !entry.categories.includes(category)) return false;
+  if (entry.categories?.length && !entry.categories.includes(category))
+    return false;
 
   const titleMatches = entry.title ? tool.title === entry.title : true;
-  const repoMatches = entry.repoUrl ? tool.links?.repoUrl === entry.repoUrl : true;
+  const repoMatches = entry.repoUrl
+    ? tool.links?.repoUrl === entry.repoUrl
+    : true;
 
   return titleMatches && repoMatches;
 }
@@ -219,8 +235,15 @@ function doesEntryMatchTool(entry: ToolIgnoreEntry, tool: AsyncAPITool, category
  * - Only `repoUrl` provided: any tool with that exact repoUrl matches.
  * - If `categories` is provided, the match only applies within those categories.
  */
-function shouldIgnoreTool(tool: AsyncAPITool, category: string, ignoreList: ToolIgnoreEntry[]): ToolIgnoreEntry | null {
-  return ignoreList.find((entry) => doesEntryMatchTool(entry, tool, category)) ?? null;
+function shouldIgnoreTool(
+  tool: AsyncAPITool,
+  category: string,
+  ignoreList: ToolIgnoreEntry[],
+): ToolIgnoreEntry | null {
+  return (
+    ignoreList.find((entry) => doesEntryMatchTool(entry, tool, category)) ??
+    null
+  );
 }
 
 /**
@@ -240,44 +263,47 @@ const combineTools = async (
   toolsPath: string,
   tagsPath: string,
   ignorePath?: string,
-  ignoredOutputPath?: string
+  ignoredOutputPath?: string,
 ): Promise<void> => {
   try {
     let ignoreList: ToolIgnoreEntry[] = [];
     const ignoredTools: IgnoredToolRecord[] = [];
 
     if (ignorePath && fs.existsSync(ignorePath)) {
-      const ignoreFile: ToolsIgnoreFile = JSON.parse(fs.readFileSync(ignorePath, 'utf-8'));
+      const ignoreFile: ToolsIgnoreFile = JSON.parse(
+        fs.readFileSync(ignorePath, 'utf-8'),
+      );
 
       ignoreList = ignoreFile.tools || [];
     }
 
-    // eslint-disable-next-line no-restricted-syntax
-    for (const key in automatedTools) {
-      if (Object.prototype.hasOwnProperty.call(automatedTools, key)) {
-        const filteredAutomated = automatedTools[key].toolsList.filter((tool) => {
-          const matchedEntry = shouldIgnoreTool(tool, key, ignoreList);
+    for (const key of Object.keys(automatedTools)) {
+      const filteredAutomated = automatedTools[key].toolsList.filter((tool) => {
+        const matchedEntry = shouldIgnoreTool(tool, key, ignoreList);
 
-          if (matchedEntry) {
-            ignoredTools.push({
-              title: tool.title,
-              repoUrl: tool.links?.repoUrl,
-              reason: matchedEntry.reason,
-              category: key,
-              source: 'automated',
-              ignoredAt: new Date().toISOString()
-            });
+        if (matchedEntry) {
+          ignoredTools.push({
+            title: tool.title,
+            repoUrl: tool.links?.repoUrl,
+            reason: matchedEntry.reason,
+            category: key,
+            source: 'automated',
+            ignoredAt: new Date().toISOString(),
+          });
 
-            return false;
-          }
+          return false;
+        }
 
-          return true;
-        });
+        return true;
+      });
 
-        // eslint-disable-next-line no-await-in-loop
-        const automatedResults = await Promise.all(filteredAutomated.map(getFinalTool));
+      // eslint-disable-next-line no-await-in-loop
+      const automatedResults = await Promise.all(
+        filteredAutomated.map(getFinalTool),
+      );
 
-        const filteredManual = (manualTools[key]?.toolsList || []).filter((tool) => {
+      const filteredManual = (manualTools[key]?.toolsList || []).filter(
+        (tool) => {
           const matchedEntry = shouldIgnoreTool(tool, key, ignoreList);
 
           if (matchedEntry) {
@@ -287,34 +313,38 @@ const combineTools = async (
               reason: matchedEntry.reason,
               category: key,
               source: 'manual',
-              ignoredAt: new Date().toISOString()
+              ignoredAt: new Date().toISOString(),
             });
 
             return false;
           }
 
           return true;
-        });
+        },
+      );
 
-        const manualResults = filteredManual.length
-          ? // eslint-disable-next-line no-await-in-loop
-            (await Promise.all(filteredManual.map(processManualTool))).filter(Boolean)
-          : [];
+      const manualResults = filteredManual.length
+        ? // eslint-disable-next-line no-await-in-loop
+          (await Promise.all(filteredManual.map(processManualTool))).filter(
+            Boolean,
+          )
+        : [];
 
-        finalTools[key].toolsList = [...automatedResults, ...manualResults].sort((tool, anotherTool) => {
+      finalTools[key].toolsList = [...automatedResults, ...manualResults].sort(
+        (tool, anotherTool) => {
           if (!tool?.title || !anotherTool?.title) {
             logger.error({
               message: 'Tool title is missing during sort',
               detail: { tool, anotherTool },
-              source: 'combine-tools.ts'
+              source: 'combine-tools.ts',
             });
 
             return 0;
           }
 
           return compareToolsDeterministic(tool, anotherTool);
-        }) as FinalAsyncAPITool[];
-      }
+        },
+      ) as FinalAsyncAPITool[];
     }
 
     fs.writeFileSync(toolsPath, JSON.stringify(finalTools, null, 2));
@@ -323,22 +353,27 @@ const combineTools = async (
       JSON.stringify(
         {
           languages: sortColorItems(languageList, initialLanguageCount),
-          technologies: sortColorItems(technologyList, initialTechnologyCount)
+          technologies: sortColorItems(technologyList, initialTechnologyCount),
         },
         null,
-        2
-      )
+        2,
+      ),
     );
 
     if (ignoredTools.length > 0) {
       logger.info(
         `Tools ignored: ${ignoredTools.length} tool(s) removed by ${ignoreList.length} ignore rule(s).\n` +
           ignoredTools
-            .map((t) => `  - "${t.title}" (${t.repoUrl || 'no repo'}) from [${t.category}]`)
-            .join('\n')
+            .map(
+              (t) =>
+                `  - "${t.title}" (${t.repoUrl || 'no repo'}) from [${t.category}]`,
+            )
+            .join('\n'),
       );
     } else if (ignoreList.length > 0) {
-      logger.info(`Tools ignored: 0 (none of the ${ignoreList.length} ignore rule(s) matched any tool).`);
+      logger.info(
+        `Tools ignored: 0 (none of the ${ignoreList.length} ignore rule(s) matched any tool).`,
+      );
     }
 
     if (ignoredOutputPath && ignoredTools.length > 0) {
@@ -346,28 +381,30 @@ const combineTools = async (
         ignoredOutputPath,
         JSON.stringify(
           {
-            description: 'Auto-generated audit log of tools ignored during the last combine run.',
+            description:
+              'Auto-generated audit log of tools ignored during the last combine run.',
             generatedAt: new Date().toISOString(),
             totalIgnored: ignoredTools.length,
-            ignoredTools
+            ignoredTools,
           },
           null,
-          2
-        )
+          2,
+        ),
       );
     } else if (ignoredOutputPath && ignoredTools.length === 0) {
       fs.writeFileSync(
         ignoredOutputPath,
         JSON.stringify(
           {
-            description: 'Auto-generated audit log of tools ignored during the last combine run.',
+            description:
+              'Auto-generated audit log of tools ignored during the last combine run.',
             generatedAt: new Date().toISOString(),
             totalIgnored: 0,
-            ignoredTools: []
+            ignoredTools: [],
           },
           null,
-          2
-        )
+          2,
+        ),
       );
     }
   } catch (err) {
