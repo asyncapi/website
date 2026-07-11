@@ -2,7 +2,11 @@
  * @description Icon component for Book
  */
 import React from 'react';
-
+/**
+ * Book icon component
+ * @param {React.SVGProps<SVGSVGElement>} props - SVG element props
+ * @returns {JSX.Element} The Book icon
+ */
 export default function IconBook({ className = '', ...props }: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
