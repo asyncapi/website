@@ -1,8 +1,13 @@
 import fs from 'fs-extra';
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'url';
 import { logger } from './helpers/logger';
 import { combineTools } from './tools/combine-tools';
 import { getData } from './tools/extract-tools-github';
 import { convertTools } from './tools/tools-object';
+
+const currentFilePath = fileURLToPath(import.meta.url);
+const currentDirPath = dirname(currentFilePath);
 
 /**
  * Combines automated and manual tools data.
@@ -138,6 +143,44 @@ async function buildToolsManual(
       `An error occurred while building tools manually: ${(err as Error).message}`,
     );
   }
+}
+
+/* istanbul ignore next */
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  const automatedToolsPath = resolve(
+    currentDirPath,
+    '../config',
+    'tools-automated.json',
+  );
+  const manualToolsPath = resolve(
+    currentDirPath,
+    '../config',
+    'tools-manual.json',
+  );
+  const toolsPath = resolve(currentDirPath, '../config', 'tools.json');
+  const tagsPath = resolve(currentDirPath, '../config', 'all-tags.json');
+  const ignorePath = resolve(currentDirPath, '../config', 'tools-ignore.json');
+  const ignoredOutputPath = resolve(
+    currentDirPath,
+    '../config',
+    'tools-ignored.json',
+  );
+
+  (async () => {
+    try {
+      await buildTools(
+        automatedToolsPath,
+        manualToolsPath,
+        toolsPath,
+        tagsPath,
+        ignorePath,
+        ignoredOutputPath,
+      );
+    } catch (err) {
+      logger.error('Failed to build tools:', err);
+      process.exit(1);
+    }
+  })();
 }
 
 export { buildTools, buildToolsManual };
