@@ -178,8 +178,7 @@
             "enterprise-patterns",
             "html-template",
             "markdown-template",
-            "nodejs-ws-template",
-            "brand"
+            "nodejs-ws-template"
         ],
         "githubID": 242119
     },
@@ -387,7 +386,9 @@
             "website",
             "parser-js",
             "studio",
-            "openapi-schema-parser"
+            "openapi-schema-parser",
+            "optimizer",
+            "bundler"
         ],
         "githubID": 44585452
     },
@@ -675,18 +676,6 @@
             "website"
         ],
         "githubID": 81870866
-    },
-    {
-        "name": "Viacheslav Turovskyi",
-        "github": "aeworxet",
-        "slack": "U01G3U01SVC",
-        "availableForHire": false,
-        "isTscMember": false,
-        "repos": [
-            "optimizer",
-            "bundler"
-        ],
-        "githubID": 16149591
     },
     {
         "name": "Rohit T",
@@ -999,5 +988,16 @@
             "asyncapi-react"
         ],
         "githubID": 96487647
+    },
+    {
+        "name": "aeworxet",
+        "github": "aeworxet",
+        "slack": "U01G3U01SVC",
+        "availableForHire": false,
+        "isTscMember": false,
+        "repos": [
+            "community"
+        ],
+        "githubID": 16149591
     }
 ]

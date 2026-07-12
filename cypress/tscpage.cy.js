@@ -11,6 +11,10 @@ beforeEach(() => {
   homePage.goToTSCPage();
 });
 
+afterEach(() => {
+  cy.get('input[aria-label="Search TSC members"]').clear();
+});
+
 describe('TSC Page', () => {
   it('should succeed in subscribing to the newsletter', () => {
     tscPage.fillNewsletterForm('anushka', 'valid@example.com');
@@ -76,5 +80,64 @@ describe('TSC Page', () => {
     tscMembers.forEach(({ name, links }) => {
       tscPage.verifyTSCMemberSocialLinks(name, links);
     });
+  });
+
+  it('verifies repo pills are clickable links to the correct GitHub repository', () => {
+    // Aishat Muibudeen maintains the "website" repo — verify the pill is an <a> with the correct href
+    tscPage.verifyRepoPillIsLink('Aishat Muibudeen', 'website');
+    tscPage.verifyRepoPillIsLink('Aishat Muibudeen', 'conference-website');
+    cy.get('[data-testid="repo-pill"]').should('exist');
+  });
+
+  it('verifies +N button expands all remaining repos inline', () => {
+    // Aishat Muibudeen has 3 repos; 2 are shown by default and 1 is hidden behind the +1 button
+    tscPage.expandRepos('Aishat Muibudeen');
+
+    cy.contains('h3', 'Aishat Muibudeen')
+      .closest('[class*="rounded-xl"]')
+      .within(() => {
+        cy.get('[data-testid="repo-pill"]').should('have.length', 3);
+        cy.get('[data-testid="repo-expand-button"]').should('not.exist');
+        cy.get('[data-testid="repo-collapse-button"]').should('be.visible');
+      });
+  });
+
+  it('verifies Show less button collapses repos back to default', () => {
+    tscPage.expandRepos('Aishat Muibudeen');
+    tscPage.collapseRepos('Aishat Muibudeen');
+
+    cy.contains('h3', 'Aishat Muibudeen')
+      .closest('[class*="rounded-xl"]')
+      .within(() => {
+        cy.get('[data-testid="repo-pill"]').should('have.length', 2);
+        cy.get('[data-testid="repo-expand-button"]').should('be.visible');
+        cy.get('[data-testid="repo-collapse-button"]').should('not.exist');
+      });
+  });
+
+  it('verifies ambassador badge is shown for TSC members who are also Ambassadors', () => {
+    const ambassadorTscMembers = [
+      { name: 'Daniel Kocot', github: 'danielkocot' },
+      { name: 'Ivan Garcia Sainz-Aja', github: 'ivangsa' },
+    ];
+
+    ambassadorTscMembers.forEach(({ name, github }) => {
+      tscPage.verifyAmbassadorBadge(name, github);
+    });
+
+    cy.get('input[aria-label="Search TSC members"]').clear().type('Daniel Kocot');
+    cy.get('[data-testid="ambassador-badge"]').should('be.visible');
+  });
+
+  it('verifies ambassador filter shows only TSC members who are also Ambassadors', () => {
+    tscPage.filterByAmbassador();
+
+    // Known ambassador+TSC member must be visible after filtering
+    cy.contains('h3', 'Daniel Kocot').should('be.visible');
+
+    // Non-ambassador TSC member must not be visible after filtering
+    cy.contains('h3', 'Akshat Nema').should('not.exist');
+
+    tscPage.clearFilter();
   });
 });

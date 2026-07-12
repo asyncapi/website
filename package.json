@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "npm run build-scripts && next dev",
     "build": "npm run build-scripts && next build",
-    "test:e2e": "npx cypress run",
+    "test:e2e": "npx cypress run --browser chrome",
     "test": "jest --passWithNoTests",
     "build:pages": "tsx scripts/build-pages.ts && npm run format:mdx",
     "build:posts": "tsx scripts/index.ts",
