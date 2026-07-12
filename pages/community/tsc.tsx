@@ -1,5 +1,5 @@
 import { sortBy } from 'lodash';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import type { Tsc } from '@/types/pages/community/Community';
 
@@ -7,12 +7,17 @@ import Button from '../../components/buttons/Button';
 import TSCMemberCard from '../../components/community/TSCMemberCard';
 import { COMMUNITY_URLS } from '../../components/footer/FooterList';
 import IconArrowRight from '../../components/icons/ArrowRight';
+import IconChevronDown from '../../components/icons/ChevronDown';
 import IconDocument from '../../components/icons/Document';
+import IconFilter from '../../components/icons/Filter';
 import IconUsersGroup from '../../components/icons/UsersGroup';
 import GenericLayout from '../../components/layout/GenericLayout';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 import PaginationComponent from '../../components/Pagination';
+import ambassadorsList from '../../config/AMBASSADORS_MEMBERS.json';
 import tscBoardList from '../../config/TSC_BOARD_MEMBERS.json';
+
+const ambassadorGitHubHandles = new Set(ambassadorsList.map((a: any) => a.github?.toLowerCase()));
 
 /**
  * @description Add additional user information to the user object having TSC data
@@ -42,8 +47,27 @@ export default function TSC() {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
-  const [filterType, setFilterType] = useState<'all' | 'maintainer' | 'available' | 'company'>('all');
+  const [filterType, setFilterType] = useState<'all' | 'maintainer' | 'available' | 'company' | 'ambassador'>('all');
+  const [isMoreOpen, setIsMoreOpen] = useState(false);
+  const moreDropdownRef = useRef<HTMLDivElement>(null);
   const membersPerPage = 9;
+
+  const filterOptions: { value: typeof filterType; label: string }[] = [
+    { value: 'all', label: 'All' },
+    { value: 'maintainer', label: 'Maintainer' },
+    { value: 'available', label: 'Available to hire' },
+    { value: 'company', label: 'Company' },
+    { value: 'ambassador', label: 'Ambassador' }
+  ];
+
+  const activeFilterLabel = filterOptions.find((o) => o.value === filterType)?.label ?? 'All';
+
+  const filterButtonBaseClass =
+    'inline-flex items-center gap-2 w-52 px-4 py-2 rounded-full text-sm font-medium transition-colors';
+  const filterButtonClassName =
+    filterType === 'all'
+      ? `${filterButtonBaseClass} bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:bg-primary-100 dark:hover:bg-primary-500/20 hover:text-primary-600 dark:hover:text-primary-400`
+      : `${filterButtonBaseClass} bg-primary-500 text-white hover:bg-primary-600`;
 
   const filteredMembers = tscMembers.filter((member) => {
     const matchesSearch =
@@ -54,7 +78,8 @@ export default function TSC() {
       filterType === 'all' ||
       (filterType === 'maintainer' && member.repos && member.repos.length > 0) ||
       (filterType === 'available' && member.availableForHire) ||
-      (filterType === 'company' && member.company);
+      (filterType === 'company' && member.company) ||
+      (filterType === 'ambassador' && ambassadorGitHubHandles.has(member.github?.toLowerCase()));
 
     return matchesSearch && matchesFilter;
   });
@@ -69,6 +94,25 @@ export default function TSC() {
       setCurrentPage(1);
     }
   }, [searchTerm, filterType, filteredMembers.length, totalPages, currentPage]);
+
+  useEffect(() => {
+    if (!isMoreOpen) {
+      return () => {};
+    }
+
+    /**
+     * @description Closes the filter dropdown when clicking outside it.
+     */
+    function handleClickOutside(event: MouseEvent) {
+      if (moreDropdownRef.current && !moreDropdownRef.current.contains(event.target as Node)) {
+        setIsMoreOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isMoreOpen]);
 
   return (
     <GenericLayout
@@ -151,8 +195,8 @@ export default function TSC() {
 
             {/* Our Governance Model Card */}
             <div className='bg-white dark:bg-dark-card rounded-2xl p-8 border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-xl transition-shadow'>
-              <div className='flex items-center justify-center w-14 h-14 rounded-full bg-pink-100 dark:bg-pink-900/30 mb-6'>
-                <IconDocument className='w-8 h-8 text-pink-600 dark:text-pink-400' />
+              <div className='flex items-center justify-center w-14 h-14 rounded-full bg-purple-100 dark:bg-purple-900/30 mb-6'>
+                <IconDocument className='w-8 h-8 text-purple-600 dark:text-purple-400' />
               </div>
               <h3 className='text-xl font-bold text-gray-900 dark:text-white mb-4'>Our governance model</h3>
               <p className='text-gray-600 dark:text-gray-400 leading-relaxed'>
@@ -223,59 +267,47 @@ export default function TSC() {
                 className='w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent'
               />
             </div>
-            <div className='flex gap-2 flex-wrap'>
+            <div className='relative' ref={moreDropdownRef}>
               <button
-                onClick={() => {
-                  setFilterType('all');
-                  setCurrentPage(1);
-                }}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  filterType === 'all'
-                    ? 'bg-primary-500 text-white'
-                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-                }`}
+                type='button'
+                onClick={() => setIsMoreOpen((prev) => !prev)}
+                aria-haspopup='true'
+                aria-expanded={isMoreOpen}
+                className={filterButtonClassName}
               >
-                All
+                <IconFilter className='w-4 h-4 flex-shrink-0' />
+                <span className='flex-1 text-left font-semibold truncate'>{activeFilterLabel}</span>
+                <IconChevronDown
+                  className={`w-3.5 h-3.5 flex-shrink-0 transition-transform duration-200 ${isMoreOpen ? 'rotate-180' : ''}`}
+                />
               </button>
-              <button
-                onClick={() => {
-                  setFilterType('maintainer');
-                  setCurrentPage(1);
-                }}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  filterType === 'maintainer'
-                    ? 'bg-primary-500 text-white'
-                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-                }`}
-              >
-                Maintainer
-              </button>
-              <button
-                onClick={() => {
-                  setFilterType('available');
-                  setCurrentPage(1);
-                }}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  filterType === 'available'
-                    ? 'bg-primary-500 text-white'
-                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-                }`}
-              >
-                Available to hire
-              </button>
-              <button
-                onClick={() => {
-                  setFilterType('company');
-                  setCurrentPage(1);
-                }}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  filterType === 'company'
-                    ? 'bg-primary-500 text-white'
-                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-                }`}
-              >
-                Company
-              </button>
+              {isMoreOpen && (
+                <ul
+                  role='menu'
+                  className='absolute right-0 mt-2 w-44 rounded-lg bg-white dark:bg-dark-card border border-gray-200 dark:border-gray-700 shadow-lg z-20 py-1'
+                >
+                  {filterOptions.map(({ value, label }) => (
+                    <li key={value} role='none'>
+                      <button
+                        type='button'
+                        role='menuitem'
+                        onClick={() => {
+                          setFilterType(value);
+                          setCurrentPage(1);
+                          setIsMoreOpen(false);
+                        }}
+                        className={`w-full text-left px-4 py-2 text-sm transition-colors ${
+                          filterType === value
+                            ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 font-medium'
+                            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                        }`}
+                      >
+                        {label}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
 
@@ -293,7 +325,11 @@ export default function TSC() {
           ) : (
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12'>
               {currentMembers.map((member) => (
-                <TSCMemberCard key={member.github} member={member} />
+                <TSCMemberCard
+                  key={member.github}
+                  member={member}
+                  isAmbassador={ambassadorGitHubHandles.has(member.github?.toLowerCase())}
+                />
               ))}
             </div>
           )}

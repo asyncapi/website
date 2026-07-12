@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import IconChevronDown from './icons/ChevronDown';
+
 type PaginationProps = Readonly<{
   currentPage: number;
   totalPages: number;
@@ -243,14 +245,9 @@ export default function Pagination({
               aria-label='Select page'
             >
               <span className='flex-1 text-left text-gray-900 dark:text-white'>{currentPage}</span>
-              <svg
+              <IconChevronDown
                 className={`w-4 h-4 flex-shrink-0 text-gray-600 dark:text-gray-400 transition-transform ${chevronRotation}`}
-                fill='none'
-                stroke='currentColor'
-                viewBox='0 0 24 24'
-              >
-                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M19 9l-7 7-7-7' />
-              </svg>
+              />
             </button>
 
             {isDropdownOpen && (
