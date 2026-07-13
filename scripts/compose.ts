@@ -168,6 +168,7 @@ export function writePost(answers: ComposePromptType): Promise<string> {
 /**
  * Runs the interactive CLI prompt and writes the new blog post file.
  */
+/* istanbul ignore next */
 async function main() {
   inquirer
     .prompt([
