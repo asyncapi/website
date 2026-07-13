@@ -170,8 +170,9 @@ export function writePost(answers: ComposePromptType): Promise<string> {
  * Runs the interactive CLI prompt and writes the new blog post file.
  *
  * @returns A Promise that resolves when the blog post is written.
- * istanbul ignore next
  */
+/* istanbul ignore next */
+// eslint-disable-next-line require-jsdoc
 async function main(): Promise<void> {
   await inquirer
     .prompt([
@@ -218,6 +219,7 @@ async function main(): Promise<void> {
 /* istanbul ignore next */
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   main().catch((error) => {
+    // NOSONAR - top-level await is unsupported in Jest's CJS transform
     logger.error(error);
   });
 }
