@@ -200,7 +200,7 @@ async function main() {
       }
     ])
     .then((answers: ComposePromptType) => {
-      writePost(answers);
+      return writePost(answers);
     })
     .catch((error) => {
       logger.error(error);
