@@ -9,11 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4.1.1
-        with:
-          fetch-depth: 0
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          ref: ${{ github.event.pull_request.head.sha }}
+          uses: actions/checkout@v4
+  with:
+    repository: ${{ github.event.pull_request.head.repo.full_name }}
+    ref: ${{ github.event.pull_request.head.sha }}
+    fetch-depth: 0
 
       - name: Get commit message
         id: commit-message
