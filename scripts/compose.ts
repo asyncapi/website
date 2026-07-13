@@ -2,11 +2,12 @@
  * Script based on https://github.com/timlrx/tailwind-nextjs-starter-blog/blob/master/scripts/compose.js
  */
 
+import { fileURLToPath } from 'node:url';
+
 import dayjs from 'dayjs';
 import dedent from 'dedent';
 import fs from 'fs';
 import inquirer from 'inquirer';
-import { fileURLToPath } from 'url';
 
 import { logger } from './helpers/logger';
 
@@ -167,10 +168,12 @@ export function writePost(answers: ComposePromptType): Promise<string> {
 
 /**
  * Runs the interactive CLI prompt and writes the new blog post file.
+ *
+ * @returns A Promise that resolves when the blog post is written.
+ * istanbul ignore next
  */
-/* istanbul ignore next */
-async function main() {
-  inquirer
+async function main(): Promise<void> {
+  await inquirer
     .prompt([
       {
         name: 'title',
@@ -214,5 +217,7 @@ async function main() {
 
 /* istanbul ignore next */
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  main();
+  main().catch((error) => {
+    logger.error(error);
+  });
 }
