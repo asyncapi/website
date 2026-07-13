@@ -6,6 +6,7 @@ import dedent from 'dedent';
 import fs from 'fs';
 import inquirer from 'inquirer';
 import dayjs from 'dayjs';
+import { fileURLToPath } from 'url';
 
 import { logger } from './helpers/logger';
 
@@ -21,6 +22,23 @@ type ComposePromptType = {
 };
 
 /**
+ * Converts a blog post title into a URL-safe kebab-case slug.
+ *
+ * Lowercases the title, strips all non-alphanumeric characters (except spaces),
+ * replaces spaces with hyphens, and collapses consecutive hyphens into one.
+ *
+ * @param title
+ * @returns
+ */
+export function getSlug(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[^a-zA-Z0-9 ]/g, '')
+    .replace(/ /g, '-')
+    .replace(/-+/g, '-');
+}
+
+/**
  * Generates a complete Markdown front matter block for a blog post.
  *
  * Constructs a YAML front matter section using the blog post details provided by the user,
@@ -31,7 +49,7 @@ type ComposePromptType = {
  * @param answers - User inputs for the blog post, including title, excerpt, comma-separated tags, type, and canonical URL.
  * @returns The generated Markdown front matter and blog post content template.
  */
-function genFrontMatter(answers: ComposePromptType): string {
+export function genFrontMatter(answers: ComposePromptType): string {
   const tagArray = answers.tags.split(',');
 
   tagArray.forEach((tag: string, index: number) => {
@@ -118,58 +136,80 @@ function genFrontMatter(answers: ComposePromptType): string {
   return frontMatter;
 }
 
-inquirer
-  .prompt([
-    {
-      name: 'title',
-      message: 'Enter post title:',
-      type: 'input'
-    },
-    {
-      name: 'excerpt',
-      message: 'Enter post excerpt:',
-      type: 'input'
-    },
-    {
-      name: 'tags',
-      message: 'Any Tags? Separate them with , or leave empty if no tags.',
-      type: 'input'
-    },
-    {
-      name: 'type',
-      message: 'Enter the post type:',
-      type: 'list',
-      choices: ['Communication', 'Community', 'Engineering', 'Marketing', 'Strategy', 'Video']
-    },
-    {
-      name: 'canonical',
-      message: 'Enter the canonical URL if any:',
-      type: 'input'
-    }
-  ])
-  .then((answers: ComposePromptType) => {
-    // Remove special characters and replace space with -
-    const fileName = answers.title
-      .toLowerCase()
-      .replace(/[^a-zA-Z0-9 ]/g, '')
-      .replace(/ /g, '-')
-      .replace(/-+/g, '-');
-    const frontMatter = genFrontMatter(answers);
-    const filePath = `pages/blog/${fileName || 'untitled'}.md`;
+/**
+ * Writes the blog post front matter to a file at the computed path.
+ *
+ * Resolves the file path from the slug generated from `answers.title` and writes
+ * the generated front matter content. Logs success on completion and throws on failure.
+ *
+ * @param answers
+ * @returns 
+ */
+export function writePost(answers: ComposePromptType): Promise<string> {
+  const slug = getSlug(answers.title);
+  const filePath = `pages/blog/${slug || 'untitled'}.md`;
+  const frontMatter = genFrontMatter(answers);
 
+  return new Promise((resolve, reject) => {
     fs.writeFile(filePath, frontMatter, { flag: 'wx' }, (err) => {
       if (err) {
-        throw err;
+        logger.error(err);
+        reject(err);
       } else {
         logger.info(`Blog post generated successfully at ${filePath}`);
+        resolve(filePath);
       }
     });
-  })
-  .catch((error) => {
-    logger.error(error);
-    if (error.isTtyError) {
-      logger.error("Prompt couldn't be rendered in the current environment");
-    } else {
-      logger.error('Something went wrong, sorry!');
-    }
   });
+}
+
+/**
+ * Runs the interactive CLI prompt and writes the new blog post file.
+ */
+async function main() {
+  inquirer
+    .prompt([
+      {
+        name: 'title',
+        message: 'Enter post title:',
+        type: 'input'
+      },
+      {
+        name: 'excerpt',
+        message: 'Enter post excerpt:',
+        type: 'input'
+      },
+      {
+        name: 'tags',
+        message: 'Any Tags? Separate them with , or leave empty if no tags.',
+        type: 'input'
+      },
+      {
+        name: 'type',
+        message: 'Enter the post type:',
+        type: 'list',
+        choices: ['Communication', 'Community', 'Engineering', 'Marketing', 'Strategy', 'Video']
+      },
+      {
+        name: 'canonical',
+        message: 'Enter the canonical URL if any:',
+        type: 'input'
+      }
+    ])
+    .then((answers: ComposePromptType) => {
+      writePost(answers);
+    })
+    .catch((error) => {
+      logger.error(error);
+      if (error.isTtyError) {
+        logger.error("Prompt couldn't be rendered in the current environment");
+      } else {
+        logger.error('Something went wrong, sorry!');
+      }
+    });
+}
+
+/* istanbul ignore next */
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  main();
+}
