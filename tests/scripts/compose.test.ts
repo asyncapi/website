@@ -1,7 +1,8 @@
-import fs from 'fs';
 import dayjs from 'dayjs';
+import fs from 'fs';
 
 import { genFrontMatter, getSlug, writePost } from '../../scripts/compose';
+import { logger } from '../../scripts/helpers/logger';
 
 jest.mock('fs');
 jest.mock('dayjs');
@@ -13,19 +14,41 @@ jest.mock('../../scripts/helpers/logger', () => ({
 }));
 
 const FIXED_DATE = '2024-01-15T3:30:00+05:30';
-
-// Provide a chainable dayjs mock that returns the fixed date on .format()
 const mockDayjsInstance = {
   format: jest.fn(() => FIXED_DATE)
 };
 
+const mockWriteFile = fs.writeFile as unknown as jest.Mock;
+const mockLogger = jest.mocked(logger);
+
 (dayjs as unknown as jest.Mock).mockReturnValue(mockDayjsInstance);
 
-// Re-import logger after mocking so we can assert on it
-import { logger } from '../../scripts/helpers/logger';
+/**
+ * Configures mockWriteFile to call its callback with no error (success path).
+ */
+function mockWriteFileSuccess() {
+  mockWriteFile.mockImplementation((_path: string, _data: string, _opts: object, cb: (err: null) => void) => {
+    cb(null);
+  });
+}
 
-const mockWriteFile = fs.writeFile as unknown as jest.Mock;
+/**
+ * Configures mockWriteFile to call its callback with the given error (failure path).
+ *
+ * @param err - The error to pass to the writeFile callback.
+ */
+function mockWriteFileError(err: Error) {
+  mockWriteFile.mockImplementation((_path: string, _data: string, _opts: object, cb: (err: Error) => void) => {
+    cb(err);
+  });
+}
 
+/**
+ * Builds a minimal valid ComposePromptType answers object for use in tests.
+ *
+ * @param overrides - Optional field overrides to customise the returned object.
+ * @returns A complete answers object suitable for passing to genFrontMatter or writePost.
+ */
 function makeAnswers(overrides: Partial<Parameters<typeof genFrontMatter>[0]> = {}) {
   return {
     title: 'My First Post',
@@ -137,7 +160,6 @@ describe('getSlug', () => {
   });
 
   it('handles unicode letters that are not a-z as special characters (stripped)', () => {
-    // Non-ASCII letters like accented chars are stripped because the regex is [^a-zA-Z0-9 ]
     expect(getSlug('café au lait')).toBe('caf-au-lait');
   });
 
@@ -153,9 +175,7 @@ describe('writePost', () => {
   });
 
   it('calls fs.writeFile with the correct file path derived from the title', async () => {
-    mockWriteFile.mockImplementation((_path: string, _data: string, _opts: object, cb: (err: null) => void) => {
-      cb(null);
-    });
+    mockWriteFileSuccess();
 
     const answers = makeAnswers({ title: 'My Test Post' });
     const filePath = await writePost(answers);
@@ -170,9 +190,7 @@ describe('writePost', () => {
   });
 
   it('uses "untitled" as the filename when the title is empty', async () => {
-    mockWriteFile.mockImplementation((_path: string, _data: string, _opts: object, cb: (err: null) => void) => {
-      cb(null);
-    });
+    mockWriteFileSuccess();
 
     const answers = makeAnswers({ title: '' });
     const filePath = await writePost(answers);
@@ -197,23 +215,19 @@ describe('writePost', () => {
   });
 
   it('logs success after a successful file write', async () => {
-    mockWriteFile.mockImplementation((_path: string, _data: string, _opts: object, cb: (err: null) => void) => {
-      cb(null);
-    });
+    mockWriteFileSuccess();
 
     await writePost(makeAnswers({ title: 'Success Post' }));
 
-    expect(logger.info).toHaveBeenCalledWith(expect.stringContaining('pages/blog/success-post.md'));
+    expect(mockLogger.info).toHaveBeenCalledWith(expect.stringContaining('pages/blog/success-post.md'));
   });
 
   it('rejects and logs the error when fs.writeFile fails', async () => {
     const writeError = new Error('EEXIST: file already exists');
 
-    mockWriteFile.mockImplementation((_path: string, _data: string, _opts: object, cb: (err: Error) => void) => {
-      cb(writeError);
-    });
+    mockWriteFileError(writeError);
 
     await expect(writePost(makeAnswers({ title: 'Duplicate Post' }))).rejects.toThrow('EEXIST: file already exists');
-    expect(logger.error).toHaveBeenCalledWith(writeError);
+    expect(mockLogger.error).toHaveBeenCalledWith(writeError);
   });
 });
