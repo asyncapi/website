@@ -1,6 +1,23 @@
+---
+title: Miasma Supply Chain Attack on AsyncAPI via Compromised CI/CD pipelines
+date: 2026-07-14T19:50:31.049Z
+type: Communication
+tags:
+  - Security
+  - Incident
+  - Postmortem
+cover: /img/posts/miasma-postmortem/miasma-postmortem-banner.webp
+authors:
+  - name: Florence Njeri
+    photo: /img/avatars/Florence-Njeri.webp
+    link: https://lu.linkedin.com/in/florencenjeri
+    byline: AsyncAPI Security Maintainer
+  excerpt: 'A postmortem of the miasma supply-chain attack that compromised 5 published AsyncAPI packages on npm.'
+---
+
 ## Executive Summary
 
-On the morning of July 14, 2026, the AsyncAPI security team responded to an active supply chain attack on two of our core Github repositories. The incident began with a coordinated PR spam storm on the [generator repository](https://github.com/asyncapi/generator) designed to spam our CI/CD pipelines with workflow builds and exhaust maintainer triage bandwidth, deliberately masking a targeted malicious pull request that already been closed at the point of spam PR discovery.
+On the morning of July 14, 2026, the AsyncAPI security team responded to an active supply chain attack on two of our core GitHub repositories. The incident began with a coordinated PR spam storm on the [generator repository](https://github.com/asyncapi/generator) designed to spam our CI/CD pipelines with workflow builds and exhaust maintainer triage bandwidth, deliberately masking a targeted malicious pull request that had already been closed at the point of spam PR discovery.
 
 By exploiting a legacy, unmerged security fix targeting a workflow utilizing `pull_request_target` that was susceptible to a **pwn request attack**, the attacker successfully exfiltrated the GitHub Personal Access Token (PAT) credential of our administrative automation bot, `asyncapi-bot` from the malicious PR in the generator repo. This compromised token was used to force-push malicious code directly to release branches, triggering our automated pipelines to publish **five trojanized package versions** to the npm registry with valid [OIDC](https://docs.npmjs.com/trusted-publishers) (OpenID Connect) Trusted Publishing provenance. 
 
@@ -70,7 +87,7 @@ The root cause consists of four systemic technical failures:
 
 ### Current Status
 
-While immediate risk mitigation has been achieved via token revocation and npm unpublishing, deleting tags popinting to the malicious releases repository cleanup tasks remain incomplete which the security maintainers are actively working through to remediate. We are collaborating directly with the GitHub Security Team to purge the attacker's rogue commits from remote branch histories to prevent downstream users from pulling malicious git refs.
+While immediate risk mitigation has been achieved via token revocation and npm unpublishing, deleting tags pointing to the malicious releases repository cleanup tasks remain incomplete which the security maintainers are actively working through to remediate. We are collaborating directly with the GitHub Security Team to purge the attacker's rogue commits from remote branch histories to prevent downstream users from pulling malicious git refs.
 
 The following table tracks the active state of forensic cleanup across the organization:
 
@@ -90,7 +107,7 @@ This incident exposed critical structural deficiencies in credential boundaries,
 3. **Deprecation of Global Personal Access Tokens:** The organization is deprecating global, administrative PATs for automation. Service accounts will transition exclusively to repository-specific GitHub App installations restricted to least-privilege permissions.
 4. **Enforcement of Global Rulesets on Administrators:** We are modifying all organizational branch protections to explicitly enable **"Include Administrators"**. This ensures that administrative automation accounts are bounded by branch rules, explicitly preventing direct force-pushes to production lineages.
 
-We acknowledge and thank our maintainers Florence, Ashish, Lukasz, Thulie, alongside independent researchers Lidor Machluf and Charlie Ericksen (Aikido Security) for their swift defensive coordination, and the security engineering teams at npm for npm rapid registry intervention.
+We acknowledge and thank our maintainers Florence, Ashish, Lukasz, Thulie, alongside independent researchers Lidor Machluf and Charlie Ericksen (Aikido Security) for their swift defensive coordination, and the security engineering teams at npm for npm’s rapid registry intervention.
 
 ### Published Security Blogs on the Attack
 For a comprehensive technical analysis of the exfiltration paths and Miasma RAT internals associated with this incident, reference the following external research:
@@ -147,7 +164,7 @@ The stage-1 loader uses `https` and file system operations (`fs.writeFileSync`) 
 
 ##### Stage-2 Network Infrastructure
 * **IPFS Content Identifier (CID):** `Qmet4fhsAaWMBUxNDfREHwgiyDeSWy4YSYs9wiKUW5jGyf`
-* **Malware Retrieval URI:** `https://ipfs.io/ipfs/Qmet4fhsAaWMBUxNDfREHwgiyDeSWy4YSYs9wiKUW5jGyf`
+* **Malware Retrieval URI:** `hxxps://ipfs[.]io/ipfs/Qmet4fhsAaWMBUxNDfREHwgiyDeSWy4YSYs9wiKUW5jGyf`
 
 ##### Host-Based Forensic Signatures (Miasma RAT Drop Paths)
 * **Windows Platforms:** `%LOCALAPPDATA%\NodeJS\sync.js`
