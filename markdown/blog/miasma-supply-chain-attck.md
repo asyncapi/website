@@ -19,9 +19,9 @@ authors:
 
 On the morning of July 14, 2026, the AsyncAPI security team responded to an active supply chain attack on two of our core GitHub repositories. The incident began with a coordinated PR spam storm on the [generator repository](https://github.com/asyncapi/generator) designed to spam our CI/CD pipelines with workflow builds and exhaust maintainer triage bandwidth, deliberately masking a targeted malicious pull request that had already been closed at the point of spam PR discovery.
 
-By exploiting a legacy, unmerged security fix targeting a workflow utilizing `pull_request_target` that was susceptible to a **pwn request attack**, the attacker successfully exfiltrated the GitHub Personal Access Token (PAT) credential of our administrative automation bot, `asyncapi-bot` from the malicious PR in the generator repo. This compromised token was used to force-push malicious code directly to release branches, triggering our automated pipelines to publish **five trojanized package versions** to the npm registry with valid [OIDC](https://docs.npmjs.com/trusted-publishers) (OpenID Connect) Trusted Publishing provenance. 
+By exploiting a legacy, unmerged security fix targeting a workflow utilizing `pull_request_target` that was susceptible to a **pwn request attack**, the attacker successfully exfiltrated the GitHub credentials of our administrative automation bot, `asyncapi-bot` from the malicious PR in the generator repo. This compromised token was used to force-push malicious code directly to release branches, triggering our automated pipelines to publish **five trojanized package versions** to the npm registry with valid [OIDC](https://docs.npmjs.com/trusted-publishers) (OpenID Connect) Trusted Publishing provenance. 
 
-Following successful lateral movement, the attacker used the same `asyncapi-bot` token to compromise our specification repository. The active distribution window spanned **approximately 4 hours and 20 minutes** before the rogue versions were thoroughly taken down and purged from the npm registry.
+Following successful lateral movement, the attacker used the same `asyncapi-bot` credential to compromise our specification repository. The active distribution window spanned **approximately 4 hours and 20 minutes** before the rogue versions were thoroughly taken down and purged from the npm registry.
 
 ## Impact
 
@@ -29,7 +29,7 @@ Following successful lateral movement, the attacker used the same `asyncapi-bot`
 
 * **Exposure Window:** Exactly **4 hours and 20 minutes**. The first malicious package push occurred at **06:58 UTC (08:58 CEST)**, and final npm registry take-down and purging were completed by **11:18 UTC (13:18 CEST)**. 
 
-* **Credentials Compromised:** The organization-wide administrative Personal Access Token (PAT) belonging to `asyncapi-bot` was successfully exfiltrated. This allowed the attacker to bypass branch protections, execute force-pushes, and pivot between separate organizational repositories. The token has since been entirely revoked and rotated.
+* **Credentials Compromised:** The organization-wide administrative `asyncapi-bot's` credential was successfully exfiltrated. This allowed the attacker to bypass branch protections, execute force-pushes, and pivot between separate organizational repositories. The token has since been entirely revoked and rotated.
 
 ### Compromised Repositories
 * `asyncapi/generator` – Initial compromise and exfiltration target.
@@ -80,7 +80,7 @@ The core of this incident tracks back to an exposed vulnerability in our CI/CD a
 
 The root cause consists of four systemic technical failures:
 
-1. **Vulnerable `pull_request_target` Implementation:** In `manual-netlify-preview.yml`, the workflow triggered on pull requests but checked out and processed untrusted code from the fork PR within a privileged context. By running arbitrary build steps on unreviewed fork code under `pull_request_target`, the attacker's [PR #2155](https://github.com/asyncapi/generator/pull/2155) successfully executed code that dumped and exfiltrated the administrative `asyncapi-bot` PAT from the runner's environment variables.
+1. **Vulnerable `pull_request_target` Implementation:** In `manual-netlify-preview.yml`, the workflow triggered on pull requests but checked out and processed untrusted code from the fork PR within a privileged context. By running arbitrary build steps on unreviewed fork code under `pull_request_target`, the attacker's [PR #2155](https://github.com/asyncapi/generator/pull/2155) successfully executed code that dumped and exfiltrated the `asyncapi-bot` credential from the runner's environment variables.
 2. **Over-Privileged Automation Credentials:** The global service account, `asyncapi-bot`, possessed cross-repository administrative write access org-wide. Because our repository configurations lacked strict branch protections enforcing constraints on administrative accounts ("Include Administrators"), the single token compromise on the generator repository allowed immediate lateral escalation into our specification repositories.
 3. **Automated OIDC Publishing with Insufficient Gates:** The organization's migration to OpenID Connect (OIDC) Trusted Publishing successfully eliminated static npm tokens from GitHub Secrets. However, the system lacked environment-based deployment gates. OIDC validates *where* a request originates (repository identity and branch context), not the *integrity* of the underlying code changes. Once the attacker possessed direct push rights via the stolen PAT, our legitimate release pipeline executed, requested a valid OIDC identity token from the registry, and authorized the trojanized releases.
 4. **Attacker Evasion Tactics:** The attacker used a dual-layered evasion technique to bypass detection. First, an automated spam-PR storm flooded active runner logs to bury the malicious execution track. Second, after exfiltrating the token, the attacker closed the PR and performed a local `git reset` to a clean baseline commit before pushing. This local rollback strategy meant that no physical code differences were surfaced in standard GitHub PR visual diffing tools, masking the initial backdoor vector.
@@ -120,7 +120,7 @@ For a comprehensive technical analysis of the exfiltration paths and Miasma RAT 
 [Initial Access: PR #2155 (pull_request_target)]
                       │
                       ▼
-[Credential Access: asyncapi-bot PAT Exfiltrated]
+[Credential Access: asyncapi-bot credential Exfiltrated]
                       │
                       ▼
 [Persistence / Lateral Movement: Direct Force-Pushes & Spec Repo Pivot]
@@ -135,11 +135,11 @@ For a comprehensive technical analysis of the exfiltration paths and Miasma RAT 
 
 ### Credential Access
 * **MITRE ATT&CK Technique:** **T1552.005 – Unsecured Credentials: Cloud Tokens**
-* **Mechanism:** During execution of the vulnerable workflow under Run `29307859879`, the attacker's code extracted the environment's `GITHUB_TOKEN` or repository-stored PAT representing the `asyncapi-bot` account. Because the workflow ran in a context with write-access secrets, the runner exposed the high-privilege administrative token directly to the execution space, allowing the payload to dump the token and exfiltrate it to an external server.
+* **Mechanism:** During execution of the vulnerable workflow under Run `29307859879`, the attacker's code extracted the `asyncapi-bot's` `GITHUB_TOKEN` or key. Because the workflow ran in a context with write-access secrets, the runner exposed the high-privilege administrative token directly to the execution space, allowing the payload to dump the token and exfiltrate it to an external server.
 
 ### Persistence & Lateral Movement
 * **MITRE ATT&CK Technique:** **T1078.004 – Valid Accounts: Cloud Accounts**
-* **Mechanism:** Armed with the stolen `asyncapi-bot` PAT, the attacker bypassed default branch protection restrictions. To clear their tracks from standard PR visual diff interfaces, the attacker executed a local history rollback trick via `git reset`, force-pushing commit `ff010ef38e1be1ffc4112c8903f43637ecbf4041` to overwrite the initial footprint of `47be3886e460107a4ea5ce88ad674a65724ac4a7`. 
+* **Mechanism:** Armed with the stolen `asyncapi-bot` credential, the attacker bypassed default branch protection restrictions. To clear their tracks from standard PR visual diff interfaces, the attacker executed a local history rollback trick via `git reset`, force-pushing commit `ff010ef38e1be1ffc4112c8903f43637ecbf4041` to overwrite the initial footprint of `47be3886e460107a4ea5ce88ad674a65724ac4a7`. 
 
 Using the identical global token, the attacker pivoted laterally across the organization to `asyncapi/spec-json-schemas`. Because the token possessed administrative write authority across multiple repositories, they successfully pushed an unsigned 11-commit chain directly to the specification repository's `master` and `alpha` branches without initiating a pull request or code review.
 
