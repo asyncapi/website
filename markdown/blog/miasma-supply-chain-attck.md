@@ -25,7 +25,7 @@ Following successful lateral movement, the attacker used the same `asyncapi-bot`
 
 ## Impact
 
-* **Severity:** **Critical (CVSSv3 9.8)**. The injected Miasma RAT variant executes immediately on library load. It does not wait for a postinstall script; the exact millisecond any of the compromised libraries are imported via `require` or `import` by a downstream application, developer machine, or build server, the payload triggers. This granted the attacker immediate, silent arbitrary code execution (ACE) and persistent backdoor capabilities on victim environments.
+* **Severity:** **Critical (CVSSv3 9.8)**. The injected **M-RED-TEAM** payload executes immediately on library load. It uses *miasma* as a branding term, but it has minimal direct association with the broader *Miasma family*, so we refer to it here as M-RED-TEAM to avoid confusion with Mini-Shai-Hulud x Miasma. It does not wait for a postinstall script; the exact millisecond any of the compromised libraries are imported via `require` or `import` by a downstream application, developer machine, or build server, the payload triggers. This granted the attacker immediate, silent arbitrary code execution (ACE) and persistent backdoor capabilities on victim environments.
 
 * **Exposure Window:** Exactly **4 hours and 20 minutes**. The first malicious package push occurred at **06:58 UTC (08:58 CEST)**, and final npm registry take-down and purging were completed by **11:18 UTC (13:18 CEST)**. 
 
@@ -110,9 +110,9 @@ This incident exposed critical structural deficiencies in credential boundaries,
 We acknowledge and thank our maintainers Florence, Ashish, Lukasz, Thulie, alongside independent researchers Lidor Machluf and Charlie Ericksen (Aikido Security) for their swift defensive coordination, and the security engineering teams at npm for npm’s rapid registry intervention.
 
 ### Published Security Blogs on the Attack
-For a comprehensive technical analysis of the exfiltration paths and Miasma RAT internals associated with this incident, reference the following external research:
+For a comprehensive technical analysis of the exfiltration paths and M-RED-TEAM payload internals associated with this incident, reference the following external research:
 * **StepSecurity Analysis:** [Compromised next branch pushes malicious @asyncapi/generator to npm](https://www.stepsecurity.io/blog/compromised-next-branch-pushes-malicious-asyncapi-generator-generator-helpers-and-generator-components-to-npm) – *Focuses on the CI/CD pipeline exploit and OIDC token minting.*
-* **Wiz Threat Research:** [M-Red-Team: AsyncAPI Supply Chain Compromise via GitHub Actions](https://www.wiz.io/blog/m-red-team-asyncapi-supply-chain-compromise-via-github-actions) – *Provides a deep-dive forensic teardown of the Miasma RAT payload signatures and its retrieval from IPFS.*
+* **Wiz Threat Research:** [M-Red-Team: AsyncAPI Supply Chain Compromise via GitHub Actions](https://www.wiz.io/blog/m-red-team-asyncapi-supply-chain-compromise-via-github-actions) – *Provides a deep-dive forensic teardown of the M-RED-TEAM payload signatures and its retrieval from IPFS.*
 
 ## PHASES OF THE ATTACK
 
@@ -126,7 +126,7 @@ For a comprehensive technical analysis of the exfiltration paths and Miasma RAT 
 [Persistence / Lateral Movement: Direct Force-Pushes & Spec Repo Pivot]
                       │
                       ▼
-[Impact / Payload Delivery: On-Load Dropper -> Miasma RAT via IPFS]
+[Impact / Payload Delivery: On-Load Dropper -> M-RED-TEAM via IPFS]
 ```
 
 ### Initial Access
@@ -151,7 +151,7 @@ Using the identical global token, the attacker pivoted laterally across the orga
 
 The payload was engineered to execute immediately on library load, rather than via traditional `postinstall` scripts. The moment a downstream system imports any compromised library, the code forks a detached child process (`node -e`), ensuring execution persists even if the parent application crashes or terminates. 
 
-The stage-1 loader uses `https` and file system operations (`fs.writeFileSync`) to reach out to the InterPlanetary File System (IPFS) gateway, pull down the stage-2 payload binary (**Miasma RAT**), write it to a hidden directory, and execute it locally.
+The stage-1 loader uses `https` and file system operations (`fs.writeFileSync`) to reach out to the InterPlanetary File System (IPFS) gateway, pull down the stage-2 payload binary (**M-RED-TEAM**), write it to a hidden directory, and execute it locally.
 
 #### Detailed Indicators of Compromise (IOCs)
 
@@ -166,7 +166,7 @@ The stage-1 loader uses `https` and file system operations (`fs.writeFileSync`) 
 * **IPFS Content Identifier (CID):** `Qmet4fhsAaWMBUxNDfREHwgiyDeSWy4YSYs9wiKUW5jGyf`
 * **Malware Retrieval URI:** `hxxps://ipfs[.]io/ipfs/Qmet4fhsAaWMBUxNDfREHwgiyDeSWy4YSYs9wiKUW5jGyf`
 
-##### Host-Based Forensic Signatures (Miasma RAT Drop Paths)
+##### Host-Based Forensic Signatures (M-RED-TEAM Drop Paths)
 * **Windows Platforms:** `%LOCALAPPDATA%\NodeJS\sync.js`
 * **macOS Platforms:** `~/Library/Application Support/NodeJS/sync.js`
 * **Linux Platforms:** `~/.local/share/NodeJS/sync.js`
