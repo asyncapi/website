@@ -94,8 +94,8 @@ The following table tracks the active state of forensic cleanup across the organ
 | Repository | Component / Asset | Target Ref / Artifact | Remediation Action Required | Current Status |
 | :--- | :--- | :--- | :--- | :--- |
 | `asyncapi/spec-json-schemas` | Branch Head | `master` | Force-restore branch head to last legitimate commit: `57f4e61c23` | **🔴 OUTSTANDING** (Still points to malicious `689f5b9669`) |
-| `asyncapi/spec-json-schemas` | Git Tags & Releases | `v6.11.2`<br>`v6.11.2-alpha.1` | Complete deletion of GitHub Release objects and underlying git tags | **🔴 OUTSTANDING** (Releases live on GitHub) |
-| `asyncapi/generator` | Git Tags & Releases | `@asyncapi/generator@3.3.1`<br>`@asyncapi/generator-helpers@1.1.1`<br>`@asyncapi/generator-components@0.7.1` | Complete deletion of GitHub Release objects and underlying git tags | **🔴 OUTSTANDING** (`3.3.1` still served as 'Latest' on GitHub Release page) |
+| `asyncapi/spec-json-schemas` | Git Tags & Releases | `v6.11.2`<br />`v6.11.2-alpha.1`<br /> | Complete deletion of GitHub Release objects and underlying git tags | **🔴 OUTSTANDING** (Releases live on GitHub) |
+| `asyncapi/generator` | Git Tags & Releases | `@asyncapi/generator@3.3.1`<br />`@asyncapi/generator-helpers@1.1.1`<br />`@asyncapi/generator-components@0.7.1` | Complete deletion of GitHub Release objects and underlying git tags | **🔴 OUTSTANDING** (`3.3.1` still served as 'Latest' on GitHub Release page) |
 | `asyncapi/generator` | Branch Head | `next` | Delete compromised branch tracking the malicious lineage | **🟢 CLEANED** (Branch deleted by maintainers at 07:44 UTC) |
 
 ## Lessons Learned and Future Security Hardening Initiative
