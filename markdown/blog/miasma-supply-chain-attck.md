@@ -1,6 +1,6 @@
 ---
-title: Miasma Supply Chain Attack on AsyncAPI via Compromised CI/CD pipelines
-date: 2026-07-14T19:50:31.049Z
+title: Miasma Supply Chain Attack on AsyncAPI via Compromised CI/CD Pipelines
+date: 2026-07-17T06:00:00+01:00
 type: Communication
 tags:
   - Security
@@ -12,7 +12,7 @@ authors:
     photo: /img/avatars/Florence-Njeri.webp
     link: https://lu.linkedin.com/in/florencenjeri
     byline: AsyncAPI Security Maintainer
-  excerpt: 'A postmortem of the miasma supply-chain attack that compromised 5 published AsyncAPI packages on npm.'
+excerpt: 'A postmortem of the miasma supply-chain attack that compromised 5 published AsyncAPI packages on npm.'
 ---
 
 ## Executive Summary
@@ -27,9 +27,9 @@ Following successful lateral movement, the attacker used the same `asyncapi-bot`
 
 * **Severity:** **Critical (CVSSv3 9.8)**. The injected **M-RED-TEAM** payload executes immediately on library load. It uses *miasma* as a branding term, but it has minimal direct association with the broader *Miasma family*, so we refer to it here as M-RED-TEAM to avoid confusion with Mini-Shai-Hulud x Miasma. It does not wait for a postinstall script; the exact millisecond any of the compromised libraries are imported via `require` or `import` by a downstream application, developer machine, or build server, the payload triggers. This granted the attacker immediate, silent arbitrary code execution (ACE) and persistent backdoor capabilities on victim environments.
 
-* **Exposure Window:** Exactly **4 hours and 20 minutes**. The first malicious package push occurred at **06:58 UTC (08:58 CEST)**, and final npm registry take-down and purging were completed by **11:18 UTC (13:18 CEST)**. 
+* **Exposure Window:** Exactly **4 hours and 20 minutes**. The first malicious package push occurred at **06:58 UTC (08:58 CEST)**, and final npm registry takedown and purging were completed by **11:18 UTC (13:18 CEST)**. 
 
-* **Credentials Compromised:** The organization-wide administrative `asyncapi-bot's` credential was successfully exfiltrated. This allowed the attacker to bypass branch protections, execute force-pushes, and pivot between separate organizational repositories. The token has since been entirely revoked and rotated.
+* **Credentials Compromised:** The organization-wide administrative `asyncapi-bot's` credentials were successfully exfiltrated. This allowed the attacker to bypass branch protections, execute force pushes, and pivot between separate organisational repositories. The token has since been entirely revoked and rotated.
 
 ### Compromised Repositories
 * `asyncapi/generator` – Initial compromise and exfiltration target.
@@ -72,7 +72,7 @@ All timestamps are standardized to **UTC** (with local CEST in parentheses) for 
 | **08:06 UTC** | 10:06 AM | The automated `if-nodejs-release.yml` pipeline in the specification repository builds and publishes the pre-release `@asyncapi/specs@6.11.2-alpha.1` to npm. |
 | **08:30 UTC** | 10:30 AM | External triage notification from Charlie Ericksen (Aikido Security) cross-verifies the lateral movement. Simultaneously, the specification pipeline finishes building and publishes the stable `@asyncapi/specs@6.11.2` package to npm. |
 | **08:40 UTC** | 10:40 AM | **Decommissioning & Credentials Rotation:** The `asyncapi-bot` account is stripped of administrative privileges organization-wide and downgraded to read-only. All active tokens are rotated and invalidated. |
-| **11:18 UTC** | 11:18 AM | npm Security team successfully unpublishes and purges all 5 malicious package versions from the public registry, concluding the active distribution window. |
+| **11:18 UTC** | 11:18 AM | The npm Security team successfully unpublishes and purges all 5 malicious package versions from the public registry, concluding the active distribution window. |
 
 ### Root Cause of the Attack
 
@@ -87,7 +87,7 @@ The root cause consists of four systemic technical failures:
 
 ### Current Status
 
-While immediate risk mitigation has been achieved via token revocation and npm unpublishing, deleting tags pointing to the malicious releases repository cleanup tasks remain incomplete which the security maintainers are actively working through to remediate. We are collaborating directly with the GitHub Security Team to purge the attacker's rogue commits from remote branch histories to prevent downstream users from pulling malicious git refs.
+While immediate risk mitigation has been achieved via token revocation and npm unpublishing, deleting tags pointing to the malicious releases repository cleanup tasks remain incomplete, which the security maintainers are actively working through to remediate. We are collaborating directly with the GitHub Security Team to purge the attacker's rogue commits from remote branch histories to prevent downstream users from pulling malicious git refs.
 
 The following table tracks the active state of forensic cleanup across the organization:
 
@@ -105,7 +105,7 @@ This incident exposed critical structural deficiencies in credential boundaries,
 1. **Isolation of Privileged Contexts:** We will completely eliminate the execution of downstream dependencies, `npm install` actions, or arbitrary build scripts inside workflows running under a `pull_request_target` context. All future preview deployments will be isolated to zero-privilege, ephemeral execution environments.
 2. **Zero-Day Backlog SLAs for Core Workflows:** Security architecture contributions—specifically remediation fixes like Florence's [PR #2092](https://github.com/asyncapi/generator/pull/2092)—will be assigned zero-day prioritization SLAs to prevent exposed vectors from remaining in the backlog.
 3. **Deprecation of Global Personal Access Tokens:** The organization is deprecating global, administrative PATs for automation. Service accounts will transition exclusively to repository-specific GitHub App installations restricted to least-privilege permissions.
-4. **Enforcement of Global Rulesets on Administrators:** We are modifying all organizational branch protections to explicitly enable **"Include Administrators"**. This ensures that administrative automation accounts are bounded by branch rules, explicitly preventing direct force-pushes to production lineages.
+4. **Enforcement of Global Rulesets on Administrators:** We are modifying all organizational branch protections to explicitly enable **"Include Administrators"**. This ensures that administrative automation accounts are bound by branch rules, explicitly preventing direct force-pushes to production lineages.
 
 We acknowledge and thank our maintainers Florence, Ashish, Lukasz, Thulie, alongside independent researchers Lidor Machluf and Charlie Ericksen (Aikido Security) for their swift defensive coordination, and the security engineering teams at npm for npm’s rapid registry intervention.
 
