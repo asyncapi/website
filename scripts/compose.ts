@@ -207,11 +207,12 @@ async function main(): Promise<void> {
     await writePost(answers);
   } catch (error) {
     logger.error(error);
-    if ((error as { isTtyError?: boolean }).isTtyError) {
+    if (error && (error as { isTtyError?: boolean }).isTtyError) {
       logger.error("Prompt couldn't be rendered in the current environment");
     } else {
       logger.error('Something went wrong, sorry!');
     }
+    process.exitCode = 1;
   }
 }
 
