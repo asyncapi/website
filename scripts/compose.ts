@@ -174,8 +174,8 @@ export function writePost(answers: ComposePromptType): Promise<string> {
 /* istanbul ignore next */
 // eslint-disable-next-line require-jsdoc
 async function main(): Promise<void> {
-  await inquirer
-    .prompt([
+  try {
+    const answers = await inquirer.prompt([
       {
         name: 'title',
         message: 'Enter post title:',
@@ -202,24 +202,20 @@ async function main(): Promise<void> {
         message: 'Enter the canonical URL if any:',
         type: 'input'
       }
-    ])
-    .then((answers: ComposePromptType) => {
-      return writePost(answers);
-    })
-    .catch((error) => {
-      logger.error(error);
-      if (error.isTtyError) {
-        logger.error("Prompt couldn't be rendered in the current environment");
-      } else {
-        logger.error('Something went wrong, sorry!');
-      }
-    });
+    ]);
+
+    await writePost(answers);
+  } catch (error) {
+    logger.error(error);
+    if ((error as { isTtyError?: boolean }).isTtyError) {
+      logger.error("Prompt couldn't be rendered in the current environment");
+    } else {
+      logger.error('Something went wrong, sorry!');
+    }
+  }
 }
 
 /* istanbul ignore next */
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  main().catch((error) => {
-    // NOSONAR - top-level await is unsupported in Jest's CJS transform
-    logger.error(error);
-  });
+  main(); // NOSONAR — top-level await is unsupported in Jest's CJS transform
 }
