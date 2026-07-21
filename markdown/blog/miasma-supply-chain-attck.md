@@ -6,7 +6,7 @@ tags:
   - Security
   - Incident
   - Postmortem
-cover: /img/posts/miasma-postmortem/miasma-postmortem-banner.webp
+cover: /img/posts/miasma_postmortem/miasma-postmortem-banner.webp
 authors:
   - name: Florence Njeri
     photo: /img/avatars/Florence-Njeri.webp
