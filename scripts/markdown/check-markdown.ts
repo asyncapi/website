@@ -189,7 +189,10 @@ const blogsFolderPath = path.resolve(currentDirPath, '../../markdown/blog');
  * validation functions. If any validation fails or an error occurs during file operations, it logs the error and terminates
  * the process with an exit code of 1.
  */
-async function main() {
+async function main(customPaths) {
+  const docsFolderPath = customPaths?.docs || path.resolve(currentDirPath, '../../markdown/docs')
+  const blogsFolderPath = customPaths?.blogs || path.resolve(currentDirPath, '../../markdown/blog')
+
   try {
     await Promise.all([
       checkMarkdownFiles(docsFolderPath, validateDocs),
