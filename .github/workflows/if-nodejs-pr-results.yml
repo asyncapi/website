@@ -152,3 +152,7 @@ jobs:
           files: ./coverage/lcov.info
           token: ${{ secrets.CODECOV_TOKEN }}
           verbose: true
+          # workflow_run context points at the default branch; tell Codecov which PR/commit this coverage belongs to
+          override_commit: ${{ github.event.workflow_run.head_sha }}
+          override_pr: ${{ steps.pr.outputs.number }}
+          override_branch: ${{ github.event.workflow_run.head_branch }}
