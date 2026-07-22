@@ -2,21 +2,6 @@
   "hotDiscussions": [],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOBW5R_c8AAAABFzEUtw",
-      "title": "Remove the Roadmap from the website",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/5572",
-      "repo": "asyncapi/website",
-      "author": "thulieblack",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ]
-    },
-    {
       "id": "I_kwDODwv8N88AAAABFFvB1w",
       "title": "[DESIGN]: Navbar & Footer Layout Issues",
       "isAssigned": true,
@@ -226,36 +211,6 @@
         {
           "name": "enhancement",
           "color": "84b6eb"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCoBobc6nflHk",
-      "title": "[BUG] Missing server.summary() function",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/parser-js/issues/1076",
-      "repo": "asyncapi/parser-js",
-      "author": "fmvilas",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCoBobc6nSxfV",
-      "title": "[BUG] Missing server.title() function",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/parser-js/issues/1075",
-      "repo": "asyncapi/parser-js",
-      "author": "fmvilas",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
         }
       ]
     },
