@@ -189,7 +189,7 @@ const blogsFolderPath = path.resolve(currentDirPath, '../../markdown/blog');
  * validation functions. If any validation fails or an error occurs during file operations, it logs the error and terminates
  * the process with an exit code of 1.
  */
-async function main(customPaths) {
+async function main(customPaths?: { docs?: string; blogs?: string }) {
   const docsFolderPath = customPaths?.docs || path.resolve(currentDirPath, '../../markdown/docs')
   const blogsFolderPath = customPaths?.blogs || path.resolve(currentDirPath, '../../markdown/blog')
 
