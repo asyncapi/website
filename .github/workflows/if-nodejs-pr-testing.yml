@@ -84,7 +84,9 @@ jobs:
         name: Run markdown checks
         id: markdown_check
         run: |
+          set +e
           ERRORS=$(npm run test:md | sed -n '/Errors in file/,$p')
+          set -e
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             mkdir -p pr-check-results
             printf '%s' "$ERRORS" > pr-check-results/markdown_output.txt

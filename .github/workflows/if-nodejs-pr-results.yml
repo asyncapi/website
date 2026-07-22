@@ -72,10 +72,11 @@ jobs:
         if: steps.pr.outputs.number != '' && steps.download_checks.outcome == 'success'
         run: |
           if [ -s pr-check-results/markdown_output.txt ]; then
-            echo "output<<EOF" >> "$GITHUB_OUTPUT"
+            DELIMITER="EOF_MARKDOWN_$(openssl rand -hex 8)"
+            echo "output<<${DELIMITER}" >> "$GITHUB_OUTPUT"
             cat pr-check-results/markdown_output.txt >> "$GITHUB_OUTPUT"
             echo >> "$GITHUB_OUTPUT"
-            echo "EOF" >> "$GITHUB_OUTPUT"
+            echo "${DELIMITER}" >> "$GITHUB_OUTPUT"
           else
             echo "output=" >> "$GITHUB_OUTPUT"
           fi
@@ -85,10 +86,11 @@ jobs:
         if: steps.pr.outputs.number != '' && steps.download_checks.outcome == 'success'
         run: |
           if [ -s pr-check-results/locale_output.txt ]; then
-            echo "output<<EOF" >> "$GITHUB_OUTPUT"
+            DELIMITER="EOF_LOCALE_$(openssl rand -hex 8)"
+            echo "output<<${DELIMITER}" >> "$GITHUB_OUTPUT"
             cat pr-check-results/locale_output.txt >> "$GITHUB_OUTPUT"
             echo >> "$GITHUB_OUTPUT"
-            echo "EOF" >> "$GITHUB_OUTPUT"
+            echo "${DELIMITER}" >> "$GITHUB_OUTPUT"
           else
             echo "output=" >> "$GITHUB_OUTPUT"
           fi
