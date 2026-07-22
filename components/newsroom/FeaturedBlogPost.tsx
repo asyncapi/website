@@ -54,7 +54,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
             <img
               className='w-full object-cover md:w-56'
               src={post.cover}
-              alt=''
+              alt={post.coverCaption || post.title}
               data-testid='FeaturedBlogPostItem-Img'
             />
             <div className='flex flex-1 flex-col justify-between border-none bg-white p-6 text-left'>
