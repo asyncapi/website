@@ -25,25 +25,47 @@ jobs:
         uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
         with:
           script: |
-            const pullRequests = context.payload.workflow_run.pull_requests || [];
-            if (pullRequests.length > 0) {
-              core.setOutput('number', String(pullRequests[0].number));
+            const wr = context.payload.workflow_run;
+            const headSha = wr.head_sha;
+            const headBranch = wr.head_branch;
+            const headOwner =
+              wr.head_repository?.owner?.login ||
+              wr.head_repository?.full_name?.split('/')[0];
+
+            if (!headSha || !headBranch || !headOwner) {
+              core.setOutput('number', '');
+              core.info(
+                `Missing required workflow_run head fields (sha=${headSha}, branch=${headBranch}, owner=${headOwner})`
+              );
               return;
             }
 
-            const headSha = context.payload.workflow_run.head_sha;
-            const { data: associated } = await github.rest.repos.listPullRequestsAssociatedWithCommit({
+            const headRef = `${headOwner}:${headBranch}`;
+            const pulls = await github.paginate(github.rest.pulls.list, {
               owner: context.repo.owner,
               repo: context.repo.repo,
-              commit_sha: headSha,
+              state: 'open',
+              head: headRef,
+              per_page: 100,
             });
-            const match = associated.find((p) => p.state === 'open') || associated[0];
-            if (!match) {
-              core.setOutput('number', '');
-              core.info(`No PR found for head SHA ${headSha}`);
+
+            const matches = pulls.filter((p) => p.head.sha === headSha);
+            if (matches.length === 1) {
+              core.setOutput('number', String(matches[0].number));
+              core.info(`Resolved PR #${matches[0].number} for ${headRef} @ ${headSha}`);
               return;
             }
-            core.setOutput('number', String(match.number));
+
+            if (matches.length > 1) {
+              core.warning(
+                `Ambiguous PR match for ${headRef} @ ${headSha}: ${matches
+                  .map((p) => '#' + p.number)
+                  .join(', ')}`
+              );
+            } else {
+              core.info(`No open PR for head ref ${headRef} with SHA ${headSha}`);
+            }
+            core.setOutput('number', '');
 
       - name: Download PR check results
         id: download_checks
