@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: Resolve pull request number
         id: pr
-        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
           script: |
             const wr = context.payload.workflow_run;
@@ -71,7 +71,7 @@ jobs:
         id: download_checks
         if: steps.pr.outputs.number != ''
         continue-on-error: true
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           name: pr-check-results
           path: pr-check-results
@@ -82,7 +82,7 @@ jobs:
         id: download_coverage
         if: steps.pr.outputs.number != ''
         continue-on-error: true
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           name: coverage-lcov
           path: coverage
@@ -119,7 +119,7 @@ jobs:
 
       - name: Comment on PR with markdown issues
         if: steps.pr.outputs.number != '' && steps.download_checks.outcome == 'success' && steps.markdown.outputs.output != ''
-        uses: marocchino/sticky-pull-request-comment@3d60a5b2dae89d44e0c6ddc69dd7536aec2071cd
+        uses: marocchino/sticky-pull-request-comment@5770ad5eb8f42dd2c4f34da00c94c5381e49af88 # v3.0.5
         with:
           number: ${{ steps.pr.outputs.number }}
           header: markdown-check-error
@@ -135,7 +135,7 @@ jobs:
 
       - name: Delete markdown check comment
         if: steps.pr.outputs.number != '' && steps.download_checks.outcome == 'success' && steps.markdown.outputs.output == ''
-        uses: marocchino/sticky-pull-request-comment@3d60a5b2dae89d44e0c6ddc69dd7536aec2071cd
+        uses: marocchino/sticky-pull-request-comment@5770ad5eb8f42dd2c4f34da00c94c5381e49af88 # v3.0.5
         with:
           number: ${{ steps.pr.outputs.number }}
           header: markdown-check-error
@@ -144,7 +144,7 @@ jobs:
 
       - name: Comment on PR with locale issues
         if: steps.pr.outputs.number != '' && steps.download_checks.outcome == 'success' && steps.locale.outputs.output != ''
-        uses: marocchino/sticky-pull-request-comment@3d60a5b2dae89d44e0c6ddc69dd7536aec2071cd
+        uses: marocchino/sticky-pull-request-comment@5770ad5eb8f42dd2c4f34da00c94c5381e49af88 # v3.0.5
         with:
           number: ${{ steps.pr.outputs.number }}
           header: locale-check-error
@@ -159,7 +159,7 @@ jobs:
 
       - name: Delete locale check comment if no issues
         if: steps.pr.outputs.number != '' && steps.download_checks.outcome == 'success' && steps.locale.outputs.output == ''
-        uses: marocchino/sticky-pull-request-comment@3d60a5b2dae89d44e0c6ddc69dd7536aec2071cd
+        uses: marocchino/sticky-pull-request-comment@5770ad5eb8f42dd2c4f34da00c94c5381e49af88 # v3.0.5
         with:
           number: ${{ steps.pr.outputs.number }}
           header: locale-check-error
@@ -168,7 +168,7 @@ jobs:
 
       - name: Upload Coverage to Codecov
         if: steps.pr.outputs.number != '' && steps.download_coverage.outcome == 'success' && hashFiles('coverage/lcov.info') != ''
-        uses: codecov/codecov-action@e28ff129e5465c2c0dcc6f003fc735cb6ae0c673
+        uses: codecov/codecov-action@fb8b3582c8e4def4969c97caa2f19720cb33a72f # v7.0.0
         with:
           fail_ci_if_error: true
           files: ./coverage/lcov.info

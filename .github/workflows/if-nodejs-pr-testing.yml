@@ -43,7 +43,7 @@ jobs:
         shell: bash
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Check if Node.js project and has package.json
@@ -62,7 +62,7 @@ jobs:
         shell: bash
       - if: steps.packagejson.outputs.exists == 'true' && steps.nvmrc.outputs.exists == 'true'
         name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: '${{ steps.nodeversion.outputs.version }}'
       - if: steps.packagejson.outputs.exists == 'true'
@@ -116,7 +116,7 @@ jobs:
 
       - if: ${{ steps.packagejson.outputs.exists == 'true' && matrix.os == 'ubuntu-latest' && github.event_name == 'pull_request' }}
         name: Upload PR check results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: pr-check-results
           path: pr-check-results/
@@ -124,7 +124,7 @@ jobs:
 
       - if: ${{ steps.packagejson.outputs.exists == 'true' && matrix.os == 'ubuntu-latest' && github.event_name == 'pull_request' }}
         name: Upload coverage artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: coverage-lcov
           path: coverage/lcov.info
@@ -133,7 +133,7 @@ jobs:
       # Trusted push to master: upload coverage with secrets in this workflow
       - if: steps.packagejson.outputs.exists == 'true' && github.event_name == 'push'
         name: Upload Coverage to Codecov
-        uses: codecov/codecov-action@e28ff129e5465c2c0dcc6f003fc735cb6ae0c673
+        uses: codecov/codecov-action@fb8b3582c8e4def4969c97caa2f19720cb33a72f # v7.0.0
         with:
           fail_ci_if_error: true
           files: ./coverage/lcov.info
