@@ -147,7 +147,7 @@
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "babel-plugin-transform-import-meta": "^2.2.1",
-    "cypress": "^14.4.0",
+    "cypress": "^15.19.0",
     "eslint": "^8",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-next": "14.1.0",
