@@ -1,8 +1,10 @@
-# It does magic only if there is package.json file in the root of the project
+# It does magic only if there is package.json file in the root of the project.
+# Runs untrusted PR code under pull_request (no secrets). Privileged follow-up
+# (comments + Codecov for PRs) lives in if-nodejs-pr-results.yml.
 name: PR testing - if Node project
 
 on:
-  pull_request_target:
+  pull_request:
     types: [opened, reopened, synchronize, ready_for_review]
   push:
     branches: [master]
@@ -41,11 +43,7 @@ jobs:
         shell: bash
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          # Checkout the merge commit instead of the pull request head commit for a pull request
-          # Fallback to the head commit if its not a pull request
-          ref: ${{ github.event.pull_request.number != '' && format('refs/pull/{0}/merge', github.event.pull_request.number) || github.ref }}
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Check if Node.js project and has package.json
@@ -64,7 +62,7 @@ jobs:
         shell: bash
       - if: steps.packagejson.outputs.exists == 'true' && steps.nvmrc.outputs.exists == 'true'
         name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: '${{ steps.nodeversion.outputs.version }}'
       - if: steps.packagejson.outputs.exists == 'true'
@@ -81,95 +79,61 @@ jobs:
         shell: bash
         run: npm run generate:assets --if-present
 
-      # Run the test:md script and capture output
+      # Run the test:md script; on PRs write results for the privileged comment workflow
       - if: ${{ steps.packagejson.outputs.exists == 'true' && matrix.os == 'ubuntu-latest' }}
         name: Run markdown checks
         id: markdown_check
         run: |
+          set +e
           ERRORS=$(npm run test:md | sed -n '/Errors in file/,$p')
-          echo "markdown_output<<EOF" >> $GITHUB_OUTPUT
-          echo "$ERRORS" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          set -e
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            mkdir -p pr-check-results
+            printf '%s' "$ERRORS" > pr-check-results/markdown_output.txt
+          fi
 
-      # Post a comment using sticky-pull-request-comment
-      - name: Comment on PR with markdown issues
-        if: ${{ steps.markdown_check.outputs.markdown_output != '' && matrix.os == 'ubuntu-latest' }}
-        uses: marocchino/sticky-pull-request-comment@3d60a5b2dae89d44e0c6ddc69dd7536aec2071cd
-        with:
-          header: markdown-check-error
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          message: |
-            ### Markdown Check Results
-
-            We found issues in the following markdown files:
-
-            ```
-            ${{ steps.markdown_check.outputs.markdown_output }}
-            ```
-
-      # Delete the comment if there are no issues
-      - if: ${{ steps.markdown_check.outputs.markdown_output == '' && matrix.os == 'ubuntu-latest' }}
-        name: Delete markdown check comment
-        uses: marocchino/sticky-pull-request-comment@3d60a5b2dae89d44e0c6ddc69dd7536aec2071cd
-        with:
-          header: markdown-check-error
-          delete: true
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-
-      # Run the test:locales script and capture output with cleaner formatting
+      # Run the test:locales script; on PRs write results for the privileged comment workflow
       - if: ${{ steps.packagejson.outputs.exists == 'true' && matrix.os == 'ubuntu-latest' }}
         name: Run locale checks
         id: locale_check
         run: |
-          # Run the test and capture any errors
           set +e
           LOCALE_OUTPUT=$(npm run test:locales 2>&1)
           EXIT_CODE=$?
           set -e
-          
-          # If the command failed, extract and format the error message
-          if [ $EXIT_CODE -ne 0 ]; then
-            # Extract the found languages
-            LANGUAGES=$(echo "$LOCALE_OUTPUT" | grep "Found" | sed 's/.*Found \(.*\) languages.*/Found \1 languages:/')
-            
-            # Extract the missing keys information without timestamps
-            MISSING_KEYS=$(echo "$LOCALE_OUTPUT" | grep -A 100 "Missing keys in" | grep -v "\[.*PM\] \|^\s*$")
-            
-            # Combine the cleaned output
-            CLEANED_OUTPUT="$LANGUAGES\n\n$MISSING_KEYS"
-            
-            echo "locale_output<<EOF" >> $GITHUB_OUTPUT
-            echo -e "$CLEANED_OUTPUT" >> $GITHUB_OUTPUT
-            echo "EOF" >> $GITHUB_OUTPUT
+
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            mkdir -p pr-check-results
+            if [ $EXIT_CODE -ne 0 ]; then
+              LANGUAGES=$(echo "$LOCALE_OUTPUT" | grep "Found" | sed 's/.*Found \(.*\) languages.*/Found \1 languages:/')
+              MISSING_KEYS=$(echo "$LOCALE_OUTPUT" | grep -A 100 "Missing keys in" | grep -v "\[.*PM\] \|^\s*$")
+              CLEANED_OUTPUT="$LANGUAGES\n\n$MISSING_KEYS"
+              echo -e "$CLEANED_OUTPUT" > pr-check-results/locale_output.txt
+            else
+              : > pr-check-results/locale_output.txt
+            fi
           fi
 
-      # Post a comment using sticky-pull-request-comment
-      - name: Comment on PR with locale issues
-        if: ${{ steps.locale_check.outputs.locale_output != '' && matrix.os == 'ubuntu-latest' }}
-        uses: marocchino/sticky-pull-request-comment@3d60a5b2dae89d44e0c6ddc69dd7536aec2071cd
+      - if: ${{ steps.packagejson.outputs.exists == 'true' && matrix.os == 'ubuntu-latest' && github.event_name == 'pull_request' }}
+        name: Upload PR check results
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          header: locale-check-error
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          message: |
-            ### Locale Check Results
-            We found issues with locale keys:
-            ```
-            ${{ steps.locale_check.outputs.locale_output }}
-            ```
-            Please make sure all locale files have the same translation keys.
+          name: pr-check-results
+          path: pr-check-results/
+          if-no-files-found: ignore
 
-      # Delete the comment if there are no issues
-      - if: ${{ steps.locale_check.outputs.locale_output == '' && steps.packagejson.outputs.exists == 'true' && matrix.os == 'ubuntu-latest' }}
-        name: Delete locale check comment if no issues
-        uses: marocchino/sticky-pull-request-comment@3d60a5b2dae89d44e0c6ddc69dd7536aec2071cd
+      - if: ${{ steps.packagejson.outputs.exists == 'true' && matrix.os == 'ubuntu-latest' && github.event_name == 'pull_request' }}
+        name: Upload coverage artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          header: locale-check-error
-          delete: true
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          name: coverage-lcov
+          path: coverage/lcov.info
+          if-no-files-found: ignore
 
-      - if: steps.packagejson.outputs.exists == 'true'
+      # Trusted push to master: upload coverage with secrets in this workflow
+      - if: steps.packagejson.outputs.exists == 'true' && github.event_name == 'push'
         name: Upload Coverage to Codecov
-        uses: codecov/codecov-action@e28ff129e5465c2c0dcc6f003fc735cb6ae0c673
+        uses: codecov/codecov-action@fb8b3582c8e4def4969c97caa2f19720cb33a72f # v7.0.0
         with:
           fail_ci_if_error: true
           files: ./coverage/lcov.info
