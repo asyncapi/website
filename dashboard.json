@@ -90,17 +90,6 @@
       "score": 10.625459783722574
     },
     {
-      "id": "PR_kwDOBW5R_c7yX8HQ",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore(blog): miasma Supply Chain Attack Postmortem Blog",
-      "author": "Florence-Njeri",
-      "resourcePath": "/asyncapi/website/pull/5628",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 10.051110606224057
-    },
-    {
       "id": "I_kwDOFdFGUs8AAAABCc6TlA",
       "isPR": false,
       "isAssigned": false,
@@ -173,6 +162,26 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 8.328063073728504
+    },
+    {
+      "id": "PR_kwDOBW5R_c7q5bzH",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: optimize bundle by replacing react-syntax-highlighter with pris…",
+      "author": "patilpratik1905",
+      "resourcePath": "/asyncapi/website/pull/5599",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "microgrant",
+          "color": "708090"
+        },
+        {
+          "name": "waiting-for-author",
+          "color": "BDDB3C"
+        }
+      ],
+      "score": 6.89219012998221
     }
   ],
   "goodFirstIssues": [
