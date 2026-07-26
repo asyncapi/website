@@ -177,8 +177,7 @@
             "bindings",
             "enterprise-patterns",
             "html-template",
-            "markdown-template",
-            "nodejs-ws-template"
+            "markdown-template"
         ],
         "githubID": 242119
     },
