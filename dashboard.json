@@ -65,7 +65,7 @@
       "resourcePath": "/asyncapi/community/issues/2236",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 13.497205671215161
+      "score": 14.07155484871368
     },
     {
       "id": "I_kwDOCHlHJM8AAAABIu0AsQ",
@@ -88,22 +88,6 @@
       "repo": "asyncapi/tck",
       "labels": [],
       "score": 10.625459783722574
-    },
-    {
-      "id": "I_kwDOFdFGUs8AAAABCc6TlA",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Record and release training video based on VIDEO_6_SCRIPT.md",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/training/issues/65",
-      "repo": "asyncapi/training",
-      "labels": [
-        {
-          "name": "microgrant",
-          "color": "708090"
-        }
-      ],
-      "score": 9.763936017474798
     },
     {
       "id": "PR_kwDOCHlHJM7cVYGh",
@@ -182,6 +166,22 @@
         }
       ],
       "score": 6.89219012998221
+    },
+    {
+      "id": "PR_kwDOE8Qh386xgCvo",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat!: release v6",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/modelina/pull/2362",
+      "repo": "asyncapi/modelina",
+      "labels": [
+        {
+          "name": "released on @next",
+          "color": "ededed"
+        }
+      ],
+      "score": 6.605015541232952
     }
   ],
   "goodFirstIssues": [
