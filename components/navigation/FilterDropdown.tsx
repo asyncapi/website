@@ -67,7 +67,7 @@ export default function FilterDropdown({ className = '', onChange, options, sele
         <div
           id={listboxId}
           data-testid='FilterDropdown-options'
-          className='absolute left-0 z-50 mt-1 max-h-72 min-w-full overflow-y-auto rounded-md border border-gray-300 bg-white py-1 shadow-lg dark:border-gray-700 dark:bg-dark-card md:min-w-64'
+          className='absolute left-0 z-40 mt-1 max-h-72 min-w-full overflow-y-auto rounded-md border border-gray-300 bg-white py-1 shadow-lg dark:border-gray-700 dark:bg-dark-card md:min-w-64'
         >
           {options.map((option) => {
             const isSelected = option.value === selected;
