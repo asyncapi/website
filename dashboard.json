@@ -1,22 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "I_kwDOFLhIt85bebeO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Meeting Banners Storage",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/issues/568",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 18.666348268701817
-    },
-    {
       "id": "I_kwDOBW5R_c6VGYzo",
       "isPR": false,
       "isAssigned": true,
@@ -38,7 +22,23 @@
           "color": "0e8a16"
         }
       ],
-      "score": 17.804824502454043
+      "score": 18.666348268701817
+    },
+    {
+      "id": "I_kwDOFLhIt85bebeO",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Meeting Banners Storage",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/issues/568",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 18.666348268701817
     },
     {
       "id": "I_kwDOBW5R_c7eanOA",
@@ -148,6 +148,17 @@
       "score": 8.328063073728504
     },
     {
+      "id": "PR_kwDOCHlHJM7tUbTp",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "fix: release and pin generator dependencies",
+      "author": "Stanzilla",
+      "resourcePath": "/asyncapi/generator/pull/2143",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 7.466539307480728
+    },
+    {
       "id": "PR_kwDOBW5R_c7q5bzH",
       "isPR": true,
       "isAssigned": false,
@@ -166,22 +177,6 @@
         }
       ],
       "score": 6.89219012998221
-    },
-    {
-      "id": "PR_kwDOE8Qh386xgCvo",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat!: release v6",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/modelina/pull/2362",
-      "repo": "asyncapi/modelina",
-      "labels": [
-        {
-          "name": "released on @next",
-          "color": "ededed"
-        }
-      ],
-      "score": 6.605015541232952
     }
   ],
   "goodFirstIssues": [
