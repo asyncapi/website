@@ -14,7 +14,7 @@ excerpt: 'AsyncAPI community and project updates for July 2026'
 featured: true
 ---
 
-As the holiday season has begun and things are slowing down, we’ve extended the Governance Board election until the 3rd of August. The extension will allow more time for all our TSC members to participate in shaping the future of the community. 
+As the holiday season has begins and things are slow down, we’ve extended the Governance Board election until the 3rd of August. The extension will allow more time for all our TSC members to participate in shaping the future of the community. 
 
 Please take time to [read the elections blog](https://www.asyncapi.com/blog/2026-governance-elections) for details on how to vote and the candidates. Don’t forget to cast your vote!
 
