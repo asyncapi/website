@@ -15,7 +15,7 @@ Elections are conducted every 12 months. Initially, 3 board members will be elec
 
 - At least 60 days prior to elections, the Governance Board (GB) must invite the community to suggest candidates. It must be done through a blog post that will be promoted via the current AsyncAPI communication channels.
 - Community members may also submit their own applications. 
-- Information about a candidate must be sent to info@asyncapi.io no later than 30 days before elections.
+- Information about a candidate must be sent to info@asyncapi.com no later than 30 days before elections.
 - Nominee must agree to be nominated.
 - The list of candidates must be published on the AsyncAPI website no later than 2 weeks before elections.
 - Concerns about candidates should be reported to the Code of Conduct Committee. 
@@ -50,7 +50,7 @@ Among others, the duties and responsibilities of the GB include:
 - Maintain a safe and inclusive environment for all AsyncAPI participants.
 - Sustain AsyncAPI’s economic viability, including sponsorship and funding strategies.
 - Securely manage credentials for all AsyncAPI services.
-- Oversee AsyncAPI employees and hiring.
+- Oversee Program Leads.
 - Ensure authorized access to AsyncAPI services.
 - Conduct regular GB succession via a transparent voting process.
 - Manage funding streams (e.g., Open Collective, GitHub Sponsors).
