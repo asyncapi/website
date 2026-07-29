@@ -25,38 +25,6 @@
       "score": 18.666348268701817
     },
     {
-      "id": "I_kwDOFLhIt85bebeO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Meeting Banners Storage",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/issues/568",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 18.666348268701817
-    },
-    {
-      "id": "I_kwDOBW5R_c7eanOA",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Proposal: regular Triage/Planning meetings and dedicated github project boards",
-      "author": "princerajpoot20",
-      "resourcePath": "/asyncapi/website/issues/4717",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 14.645904026212197
-    },
-    {
       "id": "I_kwDOFLhIt87jC_4a",
       "isPR": false,
       "isAssigned": true,
@@ -65,7 +33,7 @@
       "resourcePath": "/asyncapi/community/issues/2236",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 14.07155484871368
+      "score": 14.358729437462937
     },
     {
       "id": "I_kwDOCHlHJM8AAAABIu0AsQ",
@@ -77,6 +45,22 @@
       "repo": "asyncapi/generator",
       "labels": [],
       "score": 12.922856493716644
+    },
+    {
+      "id": "I_kwDOFdFGUs8AAAABCc6TlA",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Record and release training video based on VIDEO_6_SCRIPT.md",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/training/issues/65",
+      "repo": "asyncapi/training",
+      "labels": [
+        {
+          "name": "microgrant",
+          "color": "708090"
+        }
+      ],
+      "score": 11.199808961221091
     },
     {
       "id": "I_kwDODdpKDs7_yUer",
@@ -115,6 +99,22 @@
       "repo": "asyncapi/conference-website",
       "labels": [],
       "score": 9.476761428725538
+    },
+    {
+      "id": "I_kwDOFLhIt85bebeO",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Meeting Banners Storage",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/issues/568",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 8.996945675000958
     },
     {
       "id": "I_kwDOFDnrNc6w5oVf",
@@ -159,24 +159,20 @@
       "score": 7.466539307480728
     },
     {
-      "id": "PR_kwDOBW5R_c7q5bzH",
-      "isPR": true,
+      "id": "I_kwDOBW5R_c7eanOA",
+      "isPR": false,
       "isAssigned": false,
-      "title": "feat: optimize bundle by replacing react-syntax-highlighter with pris…",
-      "author": "patilpratik1905",
-      "resourcePath": "/asyncapi/website/pull/5599",
+      "title": "Proposal: regular Triage/Planning meetings and dedicated github project boards",
+      "author": "princerajpoot20",
+      "resourcePath": "/asyncapi/website/issues/4717",
       "repo": "asyncapi/website",
       "labels": [
         {
-          "name": "microgrant",
-          "color": "708090"
-        },
-        {
-          "name": "waiting-for-author",
-          "color": "BDDB3C"
+          "name": "stale",
+          "color": "ededed"
         }
       ],
-      "score": 6.89219012998221
+      "score": 7.059141991154598
     }
   ],
   "goodFirstIssues": [
