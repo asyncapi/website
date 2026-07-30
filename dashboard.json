@@ -22,39 +22,7 @@
           "color": "0e8a16"
         }
       ],
-      "score": 18.666348268701817
-    },
-    {
-      "id": "I_kwDOFLhIt85bebeO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Meeting Banners Storage",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/issues/568",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 18.666348268701817
-    },
-    {
-      "id": "I_kwDOBW5R_c7eanOA",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Proposal: regular Triage/Planning meetings and dedicated github project boards",
-      "author": "princerajpoot20",
-      "resourcePath": "/asyncapi/website/issues/4717",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 14.645904026212197
+      "score": 18.953522857451077
     },
     {
       "id": "I_kwDOFLhIt87jC_4a",
@@ -65,7 +33,7 @@
       "resourcePath": "/asyncapi/community/issues/2236",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 14.07155484871368
+      "score": 14.358729437462937
     },
     {
       "id": "I_kwDOCHlHJM8AAAABIu0AsQ",
@@ -79,6 +47,22 @@
       "score": 12.922856493716644
     },
     {
+      "id": "I_kwDOFdFGUs8AAAABCc6TlA",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Record and release training video based on VIDEO_6_SCRIPT.md",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/training/issues/65",
+      "repo": "asyncapi/training",
+      "labels": [
+        {
+          "name": "microgrant",
+          "color": "708090"
+        }
+      ],
+      "score": 11.199808961221091
+    },
+    {
       "id": "I_kwDODdpKDs7_yUer",
       "isPR": false,
       "isAssigned": true,
@@ -88,6 +72,17 @@
       "repo": "asyncapi/tck",
       "labels": [],
       "score": 10.625459783722574
+    },
+    {
+      "id": "PR_kwDODwv8N866EXtA",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add image gallery for past conferences",
+      "author": "kajal-jotwani",
+      "resourcePath": "/asyncapi/conference-website/pull/890",
+      "repo": "asyncapi/conference-website",
+      "labels": [],
+      "score": 9.763936017474798
     },
     {
       "id": "PR_kwDOCHlHJM7cVYGh",
@@ -106,15 +101,31 @@
       "score": 9.476761428725538
     },
     {
-      "id": "PR_kwDODwv8N866EXtA",
-      "isPR": true,
+      "id": "I_kwDOFLhIt85bebeO",
+      "isPR": false,
       "isAssigned": false,
-      "title": "feat: add image gallery for past conferences",
-      "author": "kajal-jotwani",
-      "resourcePath": "/asyncapi/conference-website/pull/890",
-      "repo": "asyncapi/conference-website",
+      "title": "Meeting Banners Storage",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/issues/568",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 8.996945675000958
+    },
+    {
+      "id": "I_kwDOFLhIt874rNRL",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "[2026 Goals][S1] Repository Audit & Consolidation (Targets O1, O2)",
+      "author": "princerajpoot20",
+      "resourcePath": "/asyncapi/community/issues/3495",
+      "repo": "asyncapi/community",
       "labels": [],
-      "score": 9.476761428725538
+      "score": 8.615237662477762
     },
     {
       "id": "I_kwDOFDnrNc6w5oVf",
@@ -137,17 +148,6 @@
       "score": 8.615237662477762
     },
     {
-      "id": "I_kwDOFLhIt874rNRL",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "[2026 Goals][S1] Repository Audit & Consolidation (Targets O1, O2)",
-      "author": "princerajpoot20",
-      "resourcePath": "/asyncapi/community/issues/3495",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 8.328063073728504
-    },
-    {
       "id": "PR_kwDOCHlHJM7tUbTp",
       "isPR": true,
       "isAssigned": true,
@@ -156,27 +156,23 @@
       "resourcePath": "/asyncapi/generator/pull/2143",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 7.466539307480728
+      "score": 8.040888484979245
     },
     {
-      "id": "PR_kwDOBW5R_c7q5bzH",
-      "isPR": true,
+      "id": "I_kwDOBW5R_c7eanOA",
+      "isPR": false,
       "isAssigned": false,
-      "title": "feat: optimize bundle by replacing react-syntax-highlighter with pris…",
-      "author": "patilpratik1905",
-      "resourcePath": "/asyncapi/website/pull/5599",
+      "title": "Proposal: regular Triage/Planning meetings and dedicated github project boards",
+      "author": "princerajpoot20",
+      "resourcePath": "/asyncapi/website/issues/4717",
       "repo": "asyncapi/website",
       "labels": [
         {
-          "name": "microgrant",
-          "color": "708090"
-        },
-        {
-          "name": "waiting-for-author",
-          "color": "BDDB3C"
+          "name": "stale",
+          "color": "ededed"
         }
       ],
-      "score": 6.89219012998221
+      "score": 7.059141991154598
     }
   ],
   "goodFirstIssues": [
@@ -405,25 +401,6 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCoBobc5zosuk",
-      "title": "Parser do not validate and throw error when `parameters` are provided but address is null",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/parser-js/issues/875",
-      "repo": "asyncapi/parser-js",
-      "author": "derberg",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "keep-open",
-          "color": "fce14b"
         }
       ]
     },
