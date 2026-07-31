@@ -74,18 +74,6 @@
         "githubID": 94157520
     },
     {
-        "name": "Anand Sunderraman",
-        "github": "anandsunderraman",
-        "linkedin": "anand-sunderraman-a6b7a131",
-        "slack": "U0231F9KXNK",
-        "availableForHire": false,
-        "isTscMember": false,
-        "repos": [
-            "go-watermill-template"
-        ],
-        "githubID": 4500774
-    },
-    {
         "name": "Ashish Padhy",
         "github": "Shurtu-gal",
         "linkedin": "ashish-padhy3023",
@@ -111,8 +99,7 @@
         "repos": [
             "spec-json-schemas",
             "bindings",
-            "java-spring-cloud-stream-template",
-            "python-paho-template"
+            "java-spring-cloud-stream-template"
         ],
         "githubID": 32455969
     },
@@ -136,18 +123,6 @@
         "githubID": 1444788
     },
     {
-        "name": "Emiliano Zublena",
-        "github": "emilianozublena",
-        "linkedin": "emilianozublena",
-        "slack": "U01LYC8PW0M",
-        "availableForHire": false,
-        "isTscMember": false,
-        "repos": [
-            "php-template"
-        ],
-        "githubID": 466639
-    },
-    {
         "name": "Fran M\u00e9ndez",
         "github": "fmvilas",
         "slack": "U34F2JRRS",
@@ -161,7 +136,6 @@
             "extensions-catalog",
             "converter-js",
             "bindings",
-            "enterprise-patterns",
             "html-template",
             "markdown-template"
         ],
@@ -259,13 +233,11 @@
             "generator",
             "extensions-catalog",
             "bindings",
-            "enterprise-patterns",
             "html-template",
             "markdown-template",
             ".github",
             "community",
-            "diff",
-            "chatbot"
+            "diff"
         ],
         "githubID": 6995927
     },
@@ -288,7 +260,6 @@
             "markdown-template",
             "modelina",
             "diff",
-            "chatbot",
             "EDAVisualiser"
         ],
         "githubID": 20404945
@@ -304,8 +275,7 @@
         "tscMemberSince": "2023-07-05",
         "repos": [
             "asyncapi-react",
-            "conference-website",
-            "chatbot"
+            "conference-website"
         ],
         "githubID": 40604284
     },
@@ -318,8 +288,7 @@
         "repos": [
             "spec-json-schemas",
             "bindings",
-            "java-spring-cloud-stream-template",
-            "python-paho-template"
+            "java-spring-cloud-stream-template"
         ],
         "githubID": 3926925
     },
@@ -412,7 +381,6 @@
         "availableForHire": false,
         "isTscMember": false,
         "repos": [
-            "go-watermill-template",
             "parser-api"
         ],
         "githubID": 1083296
@@ -587,30 +555,6 @@
             "protobuf-schema-parser"
         ],
         "githubID": 512850
-    },
-    {
-        "name": "connil",
-        "github": "connil",
-        "slack": "U03A51H8",
-        "availableForHire": false,
-        "company": "GmbH",
-        "isTscMember": false,
-        "repos": [
-            "dotnet-rabbitmq-template"
-        ],
-        "githubID": 6583798
-    },
-    {
-        "name": "mr-nuno",
-        "github": "mr-nuno",
-        "slack": "U03A5145",
-        "availableForHire": false,
-        "company": "GmbH",
-        "isTscMember": false,
-        "repos": [
-            "dotnet-rabbitmq-template"
-        ],
-        "githubID": 1067841
     },
     {
         "name": "Thulisile Sibanda",
