@@ -1,12 +1,17 @@
 /* eslint-disable no-underscore-dangle */
 import type { DocSearchHit, InternalDocSearchHit, StoredDocSearchHit } from '@docsearch/react';
-import { DocSearchModal } from '@docsearch/react';
 import clsx from 'clsx';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
+
+const DocSearchModal = dynamic(
+  () => import('@docsearch/react').then((mod) => ({ default: mod.DocSearchModal })),
+  { ssr: false }
+);
 
 export const INDEX_NAME = 'asyncapi';
 export const DOCS_INDEX_NAME = 'asyncapi-docs';
