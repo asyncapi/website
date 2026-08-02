@@ -87,7 +87,6 @@ const config: Config = {
       eventCover: "url('/img/homepage/event-cover.webp')",
       channelCover: "url('/img/homepage/slack-cover.webp')",
       usecases: "url('/img/homepage/usecases.webp')",
-      roadmapCover: "url('/img/homepage/roadmap.webp')",
       confBg: "url('/img/homepage/confBlurBg.webp')",
       ambassadorCover: "url('/img/homepage/gathering.webp')",
       mapCover: "url('/img/homepage/mapbase.webp')"

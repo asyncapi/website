@@ -2,21 +2,6 @@
   "hotDiscussions": [],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOBW5R_c8AAAABFzEUtw",
-      "title": "Remove the Roadmap from the website",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/5572",
-      "repo": "asyncapi/website",
-      "author": "thulieblack",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ]
-    },
-    {
       "id": "I_kwDODwv8N88AAAABFFvB1w",
       "title": "[DESIGN]: Navbar & Footer Layout Issues",
       "isAssigned": true,
@@ -230,36 +215,6 @@
       ]
     },
     {
-      "id": "I_kwDOCoBobc6nflHk",
-      "title": "[BUG] Missing server.summary() function",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/parser-js/issues/1076",
-      "repo": "asyncapi/parser-js",
-      "author": "fmvilas",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCoBobc6nSxfV",
-      "title": "[BUG] Missing server.title() function",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/parser-js/issues/1075",
-      "repo": "asyncapi/parser-js",
-      "author": "fmvilas",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOCoBobc5zovn3",
       "title": "Parser do not validate if channel that is referenced in reply with location has `null` in address",
       "isAssigned": false,
@@ -271,44 +226,6 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCoBobc5zosuk",
-      "title": "Parser do not validate and throw error when `parameters` are provided but address is null",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/parser-js/issues/875",
-      "repo": "asyncapi/parser-js",
-      "author": "derberg",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "keep-open",
-          "color": "fce14b"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODtTERs5wDOAH",
-      "title": "Support decimal min and max",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/java-spring-template/issues/326",
-      "repo": "asyncapi/java-spring-template",
-      "author": "Tenischev",
-      "area": "java",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
