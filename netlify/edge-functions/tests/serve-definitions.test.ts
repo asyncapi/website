@@ -1,6 +1,6 @@
 import serveDefinitions from "../serve-definitions.ts";
 import { Context } from "https://edge-bootstrap.netlify.app/v1/index.ts";
-import { stub } from "jsr:@std/testing/mock";
+import { stub } from "jsr:@std/testing@1.0.20/mock";
 import { assertEquals } from "https://deno.land/std@0.208.0/assert/assert_equals.ts";
 
 const metricURL = "https://metric-api.eu.newrelic.com/metric/v1";

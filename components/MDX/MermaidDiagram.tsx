@@ -105,7 +105,15 @@ export default function MermaidDiagram({ graph }: Readonly<MermaidDiagramProps>)
           }
 
           const { svg: rendered } = await mermaid.render(diagramId, trimmedGraph);
-          const sanitized = DOMPurify.sanitize(rendered, { USE_PROFILES: { svg: true, svgFilters: true } });
+          // USE_PROFILES svg+svgFilters covers SVG elements; html covers the HTML content
+          // inside <foreignObject> which Mermaid uses for node labels.
+          // ADD_TAGS explicitly permits <foreignObject> itself (not in DOMPurify's svg profile).
+          // ADD_ATTR permits requiredExtensions, the standard attribute on <foreignObject>.
+          const sanitized = DOMPurify.sanitize(rendered, {
+            USE_PROFILES: { svg: true, svgFilters: true, html: true },
+            ADD_TAGS: ['foreignObject'],
+            ADD_ATTR: ['requiredExtensions']
+          });
 
           if (mounted) {
             setSvg(sanitized);
