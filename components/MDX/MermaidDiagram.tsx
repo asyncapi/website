@@ -84,9 +84,10 @@ export default function MermaidDiagram({ graph }: Readonly<MermaidDiagramProps>)
   }, []);
 
   useEffect(() => {
+    const trimmedGraph = graph.trim();
     let mounted = true;
 
-    if (graph) {
+    if (trimmedGraph) {
       setHasError(false);
 
       const render = async () => {
@@ -103,7 +104,7 @@ export default function MermaidDiagram({ graph }: Readonly<MermaidDiagramProps>)
             });
           }
 
-          const { svg: rendered } = await mermaid.render(diagramId, graph.trim());
+          const { svg: rendered } = await mermaid.render(diagramId, trimmedGraph);
           const sanitized = DOMPurify.sanitize(rendered, { USE_PROFILES: { svg: true, svgFilters: true } });
 
           if (mounted) {
@@ -123,6 +124,7 @@ export default function MermaidDiagram({ graph }: Readonly<MermaidDiagramProps>)
       render();
     } else {
       setSvg(null);
+      setHasError(false);
     }
 
     return () => {
