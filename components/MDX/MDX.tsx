@@ -1,7 +1,7 @@
 import { MDXProvider as CoreMDXProvider } from '@mdx-js/react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import React, { useEffect, useId, useState } from 'react';
+import React, { useId } from 'react';
 
 // Lazy-loaded heavy dependencies via next/dynamic (ssr: false).
 // MermaidDiagram: ~1.5MB (isolated in ../MermaidDiagram.tsx)
@@ -10,7 +10,12 @@ import React, { useEffect, useId, useState } from 'react';
 // or YouTube videos — reducing initial JS bundle by ~1.8MB on typical MDX pages.
 // Fixes #5667, #3186.
 
-const MermaidDiagram = dynamic(() => import('./MermaidDiagram').then(mod => ({ default: mod.default })), { ssr: false });
+const MermaidDiagram = dynamic(
+  () => import('./MermaidDiagram').then((mod) => ({ default: mod.default })),
+  {
+    ssr: false,
+  },
+);
 
 const TwitterTweetEmbed = dynamic(
   () => import('react-twitter-embed').then((mod) => ({ default: mod.TwitterTweetEmbed })),
