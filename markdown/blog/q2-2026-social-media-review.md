@@ -10,6 +10,8 @@ authors:
   - name: Aishat Muibudeen
     photo: /img/avatars/maya_picture.webp
     link: https://github.com/Mayaleeeee
+    byline: AsyncAPI Design Lead & Code of Conduct Committee Member
+excerpt: "A five-month look (March–July 2026) at how AsyncAPI treated social media as a distributed system—matching the right content to the right channel to drive organic, multi-channel developer engagement."
 ---
 
 In open-source developer relations, there is a common misconception that social media is just a megaphone for project announcements. You build a cool feature, you write a tweet, you post a LinkedIn update, and you hope developers click. 
