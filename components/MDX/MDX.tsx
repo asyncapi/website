@@ -10,7 +10,7 @@ import React, { useEffect, useId, useState } from 'react';
 // or YouTube videos — reducing initial JS bundle by ~1.8MB on typical MDX pages.
 // Fixes #5667, #3186.
 
-const MermaidDiagram = dynamic(() => import('./MermaidDiagram'), { ssr: false });
+const MermaidDiagram = dynamic(() => import('./MermaidDiagram').then(mod => ({ default: mod.default })), { ssr: false });
 
 const TwitterTweetEmbed = dynamic(
   () => import('react-twitter-embed').then((mod) => ({ default: mod.TwitterTweetEmbed })),
@@ -76,7 +76,7 @@ function CodeComponent({ children, className = '', metastring = '', ...rest }: C
   const language = maybeLanguage && maybeLanguage.length >= 2 ? maybeLanguage[1] : undefined;
 
   if (language === 'mermaid') {
-    return React.createElement(MermaidDiagram as any, { graph: children });
+    return <MermaidDiagram graph={children} />;
   }
 
   return (
