@@ -41,7 +41,10 @@ import Sponsors from '../sponsors/PlatinumSponsors';
 import Warning from '../Warning';
 import { Table, TableBody, TableCell, TableHeader, TableRow, Thead } from './MDXTable';
 
-const MermaidDiagram = dynamic(() => import('./MermaidDiagram'), { ssr: false });
+const MermaidDiagram = dynamic(() => import('./MermaidDiagram'), {
+  ssr: false,
+  loading: () => <div className='min-h-[100px]' />
+});
 
 interface CodeComponentProps {
   children: string;

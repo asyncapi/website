@@ -41,11 +41,11 @@ const MERMAID_THEME_VARIABLES: Record<MermaidTheme, Record<string, string>> = {
   }
 };
 
-// Cache the theme Mermaid was initialized with across client-side page transitions.
+// Tracks the theme Mermaid was last initialized with to skip redundant re-initialization.
 let initializedMermaidTheme: MermaidTheme | null = null;
 
 /**
- * @description Returns the Mermaid theme that matches the current website theme.
+ * @description Returns the Mermaid theme matching the current website theme.
  */
 function getMermaidTheme(): MermaidTheme {
   return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
@@ -56,25 +56,22 @@ interface MermaidDiagramProps {
 }
 
 /**
- * @description This component renders Mermaid diagrams.
+ * @description Renders a Mermaid diagram from a graph definition string.
  *
- * Mermaid is loaded via a dynamic import inside the render effect so it is
- * never included in the initial JS bundle — it is fetched on demand only
- * when a page actually contains a diagram.
+ * Mermaid is loaded via a dynamic import so it is never included in the
+ * initial JS bundle — it is fetched on demand only when a diagram mounts.
  *
- * @param {MermaidDiagramProps} props - The props for the MermaidDiagram component.
- * @param {string} props.graph - The Mermaid graph definition to render.
+ * @param {MermaidDiagramProps} props - Component props.
+ * @param {string} props.graph - Mermaid graph definition to render.
  */
 export default function MermaidDiagram({ graph }: Readonly<MermaidDiagramProps>) {
   const [svg, setSvg] = useState<string | null>(null);
-  const [theme, setTheme] = useState<MermaidTheme>('light');
+  // Lazy initializer reads the DOM once on mount — avoids a wasted light→correct-theme re-render.
+  const [theme, setTheme] = useState<MermaidTheme>(getMermaidTheme);
   const reactId = useId();
-  // Produce a stable, DOM-safe ID for the SVG element mermaid generates.
-  const diagramId = `mermaid${reactId.replace(/:/g, '')}`;
+  const diagramId = `mermaid${reactId.replaceAll(':', '')}`;
 
   useEffect(() => {
-    setTheme(getMermaidTheme());
-
     const observer = new MutationObserver(() => {
       setTheme(getMermaidTheme());
     });
@@ -85,44 +82,42 @@ export default function MermaidDiagram({ graph }: Readonly<MermaidDiagramProps>)
   }, []);
 
   useEffect(() => {
-    if (!graph) {
-      setSvg(null);
-
-      return;
-    }
-
     let mounted = true;
 
-    async function render() {
-      try {
-        const { default: mermaid } = await import('mermaid');
+    if (!graph) {
+      setSvg(null);
+    } else {
+      const render = async () => {
+        try {
+          const { default: mermaid } = await import('mermaid');
 
-        if (initializedMermaidTheme !== theme) {
-          initializedMermaidTheme = theme;
-          mermaid.initialize({
-            startOnLoad: false,
-            theme: 'base',
-            securityLevel: 'strict',
-            // Keep Mermaid styling fully controlled by MERMAID_THEME_VARIABLES.
-            themeVariables: MERMAID_THEME_VARIABLES[theme]
-          });
-        }
+          if (initializedMermaidTheme !== theme) {
+            initializedMermaidTheme = theme;
+            mermaid.initialize({
+              startOnLoad: false,
+              theme: 'base',
+              securityLevel: 'strict',
+              themeVariables: MERMAID_THEME_VARIABLES[theme]
+            });
+          }
 
-        const { svg: rendered } = await mermaid.render(diagramId, graph.trim());
+          const { svg: rendered } = await mermaid.render(diagramId, graph.trim());
 
-        if (mounted) {
-          setSvg(rendered);
+          if (mounted) {
+            setSvg(rendered);
+          }
+        } catch (e) {
+          if (mounted) {
+            setSvg(null);
+          }
+
+          // eslint-disable-next-line no-console
+          console.error(e);
         }
-      } catch (e) {
-        if (mounted) {
-          setSvg(null);
-        }
-        // eslint-disable-next-line no-console
-        console.error(e);
-      }
+      };
+
+      render();
     }
-
-    render();
 
     return () => {
       mounted = false;
