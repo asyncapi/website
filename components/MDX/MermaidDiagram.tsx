@@ -1,3 +1,4 @@
+import DOMPurify from 'dompurify';
 import { useEffect, useId, useState } from 'react';
 
 type MermaidTheme = 'light' | 'dark';
@@ -66,6 +67,7 @@ interface MermaidDiagramProps {
  */
 export default function MermaidDiagram({ graph }: Readonly<MermaidDiagramProps>) {
   const [svg, setSvg] = useState<string | null>(null);
+  const [hasError, setHasError] = useState(false);
   // Lazy initializer reads the DOM once on mount — avoids a wasted light→correct-theme re-render.
   const [theme, setTheme] = useState<MermaidTheme>(getMermaidTheme);
   const reactId = useId();
@@ -84,9 +86,9 @@ export default function MermaidDiagram({ graph }: Readonly<MermaidDiagramProps>)
   useEffect(() => {
     let mounted = true;
 
-    if (!graph) {
-      setSvg(null);
-    } else {
+    if (graph) {
+      setHasError(false);
+
       const render = async () => {
         try {
           const { default: mermaid } = await import('mermaid');
@@ -102,13 +104,15 @@ export default function MermaidDiagram({ graph }: Readonly<MermaidDiagramProps>)
           }
 
           const { svg: rendered } = await mermaid.render(diagramId, graph.trim());
+          const sanitized = DOMPurify.sanitize(rendered, { USE_PROFILES: { svg: true, svgFilters: true } });
 
           if (mounted) {
-            setSvg(rendered);
+            setSvg(sanitized);
           }
         } catch (e) {
           if (mounted) {
             setSvg(null);
+            setHasError(true);
           }
 
           // eslint-disable-next-line no-console
@@ -117,12 +121,18 @@ export default function MermaidDiagram({ graph }: Readonly<MermaidDiagramProps>)
       };
 
       render();
+    } else {
+      setSvg(null);
     }
 
     return () => {
       mounted = false;
     };
   }, [graph, theme, diagramId]);
+
+  if (hasError) {
+    return <p className='text-red-500 text-sm'>Unable to render the diagram.</p>;
+  }
 
   return <div dangerouslySetInnerHTML={{ __html: svg ?? '' }} />;
 }
