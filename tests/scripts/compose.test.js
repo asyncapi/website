@@ -1,1 +1,0 @@
-// File: tests/scripts/compose.test.js
