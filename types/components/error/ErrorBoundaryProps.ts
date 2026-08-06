@@ -31,6 +31,10 @@ export interface ErrorBoundaryProps {
   // function. Defaults to the full-page GlobalErrorFallback when omitted.
   fallback?: ErrorFallback;
 
+  // Render the lightweight ContextualErrorFallback with this label instead of
+  // the full-page GlobalErrorFallback, when no explicit `fallback` is provided.
+  contextualLabel?: string;
+
   // Invoked with the error and error info whenever an error is caught.
   onError?: (error: Error, errorInfo: ErrorInfo) => void;
 

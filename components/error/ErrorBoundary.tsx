@@ -8,6 +8,7 @@ import type {
   ErrorFallbackProps
 } from '@/types/components/error/ErrorBoundaryProps';
 
+import ContextualErrorFallback from './ContextualErrorFallback';
 import GlobalErrorFallback from './GlobalErrorFallback';
 
 /**
@@ -97,13 +98,12 @@ export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBo
 
     if (!hasError) return;
 
-    this.setState({ hasError: false, error: null, errorInfo: null });
-    onReset?.();
+    this.setState({ hasError: false, error: null, errorInfo: null }, onReset);
   }
 
   render(): React.ReactNode {
     const { hasError, error, errorInfo } = this.state;
-    const { children, fallback } = this.props;
+    const { children, fallback, contextualLabel } = this.props;
 
     if (!hasError) return children;
 
@@ -115,6 +115,10 @@ export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBo
 
     if (fallback !== undefined && fallback !== null) {
       return fallback;
+    }
+
+    if (contextualLabel !== undefined) {
+      return <ContextualErrorFallback {...fallbackProps} label={contextualLabel} />;
     }
 
     return <GlobalErrorFallback {...fallbackProps} />;

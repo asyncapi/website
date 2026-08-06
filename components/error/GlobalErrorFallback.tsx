@@ -12,7 +12,7 @@ import IconHome from '../icons/Home';
  * layout shell around it and offers accessible recovery actions.
  * @param {ErrorFallbackProps} props - The error and the reset handler.
  */
-export default function GlobalErrorFallback({ error, reset }: ErrorFallbackProps): React.JSX.Element {
+export default function GlobalErrorFallback({ error, reset }: Readonly<ErrorFallbackProps>): React.JSX.Element {
   const isDevelopment = process.env.NODE_ENV === 'development';
 
   return (

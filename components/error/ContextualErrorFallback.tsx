@@ -18,7 +18,7 @@ type IContextualErrorFallbackProps = ErrorFallbackProps & {
 export default function ContextualErrorFallback({
   reset,
   label = 'section'
-}: IContextualErrorFallbackProps): React.JSX.Element {
+}: Readonly<IContextualErrorFallbackProps>): React.JSX.Element {
   return (
     <div
       role='alert'

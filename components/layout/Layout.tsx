@@ -6,7 +6,7 @@ import type { IPost, IPosts } from '@/types/post';
 
 import BlogContext from '../../context/BlogContext';
 import { getAllPosts, getDocBySlug, getPostBySlug } from '../../utils/api';
-import ContentErrorBoundary from '../error/ContentErrorBoundary';
+import ErrorBoundary from '../error/ErrorBoundary';
 import BlogLayout from './BlogLayout';
 import DocsLayout from './DocsLayout';
 import GenericPostLayout from './GenericPostLayout';
@@ -58,14 +58,14 @@ export default function Layout({ children }: ILayoutProps): React.JSX.Element {
   if (post) {
     return (
       <GenericPostLayout post={post as unknown as IPosts['blog'][number]}>
-        <ContentErrorBoundary label='content'>{children}</ContentErrorBoundary>
+        <ErrorBoundary contextualLabel='content'>{children}</ErrorBoundary>
       </GenericPostLayout>
     );
   }
 
   return (
     <div className='min-h-screen bg-white dark:bg-dark-background transition-colors duration-300'>
-      <ContentErrorBoundary label='page content'>{children}</ContentErrorBoundary>
+      <ErrorBoundary contextualLabel='page content'>{children}</ErrorBoundary>
     </div>
   );
 }
