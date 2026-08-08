@@ -72,7 +72,7 @@
     "dayjs": "^1.11.19",
     "dedent": "^1.5.1",
     "dotenv": "^16.4.4",
-    "dompurify": "3.4.12",
+    "dompurify": "3.4.13",
     "fs-extra": "^11.2.0",
     "fuse.js": "^7.0.0",
     "googleapis": "^133.0.0",
