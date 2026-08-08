@@ -119,7 +119,7 @@
     {
       "id": "I_kwDODou01c7kIx47",
       "title": "Governance issues is not properly allined.",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/studio/issues/1255",
       "repo": "asyncapi/studio",
       "author": "Harsh16gupta",
