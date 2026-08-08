@@ -6,6 +6,7 @@ import type { IPost, IPosts } from '@/types/post';
 
 import BlogContext from '../../context/BlogContext';
 import { getAllPosts, getDocBySlug, getPostBySlug } from '../../utils/api';
+import ErrorBoundary from '../ErrorBoundary';
 import BlogLayout from './BlogLayout';
 import DocsLayout from './DocsLayout';
 import GenericPostLayout from './GenericPostLayout';
@@ -28,9 +29,11 @@ export default function Layout({ children }: ILayoutProps): React.JSX.Element {
 
     return (
       <div data-testid='Docs-main-container'>
-        <DocsLayout post={post} navItems={allDocPosts}>
-          {children}
-        </DocsLayout>
+        <ErrorBoundary>
+          <DocsLayout post={post} navItems={allDocPosts}>
+            {children}
+          </DocsLayout>
+        </ErrorBoundary>
       </div>
     );
   }
@@ -39,24 +42,36 @@ export default function Layout({ children }: ILayoutProps): React.JSX.Element {
 
     return (
       <div data-testid='Blogs-main-container'>
-        <BlogLayout post={post as unknown as IPosts['blog'][number]} navItems={posts.blog}>
-          {children}
-        </BlogLayout>
+        <ErrorBoundary>
+          <BlogLayout post={post as unknown as IPosts['blog'][number]} navItems={posts.blog}>
+            {children}
+          </BlogLayout>
+        </ErrorBoundary>
       </div>
     );
   }
   if (pathname === '/blog') {
     return (
       <div data-testid='Blogs-sub-container'>
-        <BlogContext.Provider value={{ navItems: posts.blog }}>{children}</BlogContext.Provider>
+        <ErrorBoundary>
+          <BlogContext.Provider value={{ navItems: posts.blog }}>{children}</BlogContext.Provider>
+        </ErrorBoundary>
       </div>
     );
   }
   const post = getPostBySlug(pathname);
 
   if (post) {
-    return <GenericPostLayout post={post as unknown as IPosts['blog'][number]}>{children}</GenericPostLayout>;
+    return (
+      <ErrorBoundary>
+        <GenericPostLayout post={post as unknown as IPosts['blog'][number]}>{children}</GenericPostLayout>
+      </ErrorBoundary>
+    );
   }
 
-  return <div className='min-h-screen bg-white dark:bg-dark-background transition-colors duration-300'>{children}</div>;
+  return (
+    <div className='min-h-screen bg-white dark:bg-dark-background transition-colors duration-300'>
+      <ErrorBoundary>{children}</ErrorBoundary>
+    </div>
+  );
 }
