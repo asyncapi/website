@@ -1,0 +1,243 @@
+---
+title: API Components
+weight: 78
+---
+
+## Overview
+
+This page describes the reusable components available in the AsyncAPI Generator.
+
+## CloseConnection
+
+Renders a WebSocket close connection method with optional pre- and post-execution logic.
+
+**Example**
+```js
+import { CloseConnection } from '@asyncapi/generator-components';
+
+const language = 'java';
+const methodName = 'terminateConnection';
+const methodParams = ['String reason'];
+const preExecutionCode = '// About to terminate connection';
+const postExecutionCode = '// Connection terminated';
+const indent = 2;
+
+function renderCloseConnection() {
+  return (
+    <CloseConnection
+      language={language}
+      methodName={methodName}
+      methodParams={methodParams}
+      preExecutionCode={preExecutionCode}
+      postExecutionCode={postExecutionCode}
+      indent={indent}
+    />
+  );
+}
+
+renderCloseConnection();
+```
+
+## Connect
+
+Renders a WebSocket connection method for the specified programming language.
+
+**Example**
+```js
+import { Connect } from '@asyncapi/generator-components';
+
+const language = 'python';
+const title = 'HoppscotchEchoWebSocketClient';
+
+function renderConnect() {
+  return (
+    <Connect
+      language={language}
+      title={title}
+    />
+  );
+}
+
+renderConnect();
+```
+
+## CoreMethods
+
+Renders a list of core WebSocket client methods for a given target language.
+
+**Example**
+```js
+import { CoreMethods } from '@asyncapi/generator-components';
+
+const language = 'javascript';
+
+function renderCoreMethods() {
+  return (
+    <CoreMethods language={language} />
+  );
+}
+
+renderCoreMethods();
+```
+
+## DependencyProvider
+
+Renders the top-of-file dependency statements for the selected programming language.
+
+**Example**
+```js
+import { DependencyProvider } from '@asyncapi/generator-components';
+
+const language = 'java';
+const framework = 'quarkus';
+const role = 'client';
+const additionalDependencies = [
+  'import java.util.concurrent.CompletableFuture;',
+  'import java.time.Duration;',
+];
+
+function renderDependencyProvider() {
+  return (
+    <DependencyProvider
+      language={language}
+      framework={framework}
+      role={role}
+      additionalDependencies={additionalDependencies}
+    />
+  );
+}
+
+renderDependencyProvider();
+```
+
+## Installation
+
+Renders the installation command for a given language.
+
+**Example**
+```js
+import { Installation } from '@asyncapi/generator-components';
+
+const language = 'javascript';
+
+function renderInstallation() {
+  return (
+    <Installation language={language} />
+  );
+}
+
+renderInstallation();
+```
+
+## OnClose
+
+Renders a WebSocket onClose event handler for the specified programming language.
+
+**Example**
+```js
+import { OnClose } from '@asyncapi/generator-components';
+
+const language = 'java';
+const framework = 'quarkus';
+const title = 'HoppscotchEchoWebSocketClient';
+
+function renderOnClose() {
+  return (
+    <OnClose
+      language={language}
+      framework={framework}
+      title={title}
+    />
+  );
+}
+
+renderOnClose();
+```
+
+## OnError
+
+Renders a WebSocket onError event handler for the specified programming language.
+
+**Example**
+```js
+import { OnError } from '@asyncapi/generator-components';
+
+const language = 'javascript';
+
+function renderOnError() {
+  return (
+    <OnError language={language} />
+  );
+}
+
+renderOnError();
+```
+
+## OnMessage
+
+Renders a WebSocket onMessage event handler for the specified programming language.
+
+**Example**
+```js
+import { OnMessage } from '@asyncapi/generator-components';
+
+const language = 'javascript';
+
+function renderOnMessage() {
+  return (
+    <OnMessage language={language} />
+  );
+}
+
+renderOnMessage();
+```
+
+## OnOpen
+
+Renders a WebSocket onOpen event handler for the specified programming language.
+
+**Example**
+```js
+import { OnOpen } from '@asyncapi/generator-components';
+
+const language = 'java';
+const framework = 'quarkus';
+const title = 'HoppscotchEchoWebSocketClient';
+
+function renderOnOpen() {
+  return (
+    <OnOpen
+      language={language}
+      framework={framework}
+      title={title}
+    />
+  );
+}
+
+renderOnOpen();
+```
+
+## Usage
+
+Renders a usage example snippet for a generated WebSocket client in a given language.
+
+**Example**
+```js
+import { Usage } from '@asyncapi/generator-components';
+
+const clientName = 'MyClient';
+const clientFileName = 'myClient.js';
+const language = 'javascript';
+
+function renderUsage() {
+  return (
+    <Usage
+      clientName={clientName}
+      clientFileName={clientFileName}
+      language={language}
+    />
+  );
+}
+renderUsage();
+
+```
