@@ -90,17 +90,6 @@
       "score": 8.615237662477762
     },
     {
-      "id": "PR_kwDODou01c77onTz",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: issues related to current studio repo",
-      "author": "Shurtu-gal",
-      "resourcePath": "/asyncapi/studio/pull/1348",
-      "repo": "asyncapi/studio",
-      "labels": [],
-      "score": 8.615237662477762
-    },
-    {
       "id": "PR_kwDOCHlHJM7sZCyn",
       "isPR": true,
       "isAssigned": false,
@@ -109,7 +98,7 @@
       "resourcePath": "/asyncapi/generator/pull/2141",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 8.328063073728504
+      "score": 8.615237662477762
     },
     {
       "id": "PR_kwDOCHlHJM7srbNz",
@@ -173,6 +162,22 @@
         }
       ],
       "score": 7.059141991154598
+    },
+    {
+      "id": "I_kwDODwv8N86pj2gI",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[FEATURE] Agenda Enhancements ( download agenda as PDF )",
+      "author": "om2137",
+      "resourcePath": "/asyncapi/conference-website/issues/553",
+      "repo": "asyncapi/conference-website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 6.605015541232952
     }
   ],
   "goodFirstIssues": [
@@ -288,25 +293,6 @@
         {
           "name": "priority: normal",
           "color": "A0E245"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODou01c7kIx47",
-      "title": "Governance issues is not properly allined.",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/studio/issues/1255",
-      "repo": "asyncapi/studio",
-      "author": "Harsh16gupta",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "triaged",
-          "color": "0052cc"
         }
       ]
     },
