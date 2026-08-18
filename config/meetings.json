@@ -1,54 +1,5 @@
 [
   {
-    "title": "Spec meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=OHFvMG9icDluOXBvcTlsOG9xdDltaTZkcmcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/2319",
-    "banner": "",
-    "date": "2026-03-25T16:00:00.000Z"
-  },
-  {
-    "title": "Docs Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=Y2o0dm5xa3FtYnM1djNodml1ajBybXQ1dmsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/2323",
-    "banner": "",
-    "date": "2026-03-25T15:00:00.000Z"
-  },
-  {
-    "title": "AsyncAPI Governance Board Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=Y21zaXBzbWY1N2dlNXRpcGk4MjJjcmY0bTQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/2328",
-    "banner": "",
-    "date": "2026-03-24T15:00:00.000Z"
-  },
-  {
-    "title": "AsyncAPI Community WG Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=cDRyamVpZjFra29raGkyam4zbXBjajJuNG8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/2329",
-    "banner": "https://github.com/user-attachments/assets/b4e255b8-5c7e-4821-82c9-3bcbc18b68ef",
-    "date": "2026-03-31T15:00:00.000Z"
-  },
-  {
-    "title": "AsyncAPI Community WG Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=NmVic2libGpzbzY0ZTZoN29ramFvNWswbTggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/3498",
-    "banner": "https://github.com/user-attachments/assets/b4e255b8-5c7e-4821-82c9-3bcbc18b68ef",
-    "date": "2026-04-14T15:00:00.000Z"
-  },
-  {
-    "title": "AsyncAPI Docs Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=ZzlqcTcyYzhnYmI0bzlnbG9qbnZsczlwaGMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/3507",
-    "banner": "",
-    "date": "2026-04-29T16:00:00.000Z"
-  },
-  {
-    "title": "Let's talk about contributing The State of Maintainership ",
-    "calLink": "https://www.google.com/calendar/event?eid=OXVmaXB0djdraGthdnFoNTNzcDBxYWc2MzggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/3513",
-    "banner": "",
-    "date": "2026-04-21T14:00:00.000Z"
-  },
-  {
     "title": "AsyncAPI Community WG Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=bGxpNWJpMnF2YWltbDJ2dG1vMTVibTcwMGsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/3548",
@@ -89,5 +40,33 @@
     "url": "https://github.com/asyncapi/community/issues/3586",
     "banner": "",
     "date": "2026-06-23T12:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI Community WG Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=MjliaWcwajZia3NkNWg3bzY3bXBrZTdicjAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/3591",
+    "banner": "https://github.com/user-attachments/assets/b4e255b8-5c7e-4821-82c9-3bcbc18b68ef",
+    "date": "2026-07-07T15:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI Docs Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=NGsxYXNwZ281Z2pyYTRlZ2w3OGc2ZmdndmMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/3600",
+    "banner": "",
+    "date": "2026-07-29T16:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI Community WG Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=bmU4cmY4N2dvOWxsMGJkODRrcDJhZ2M1MGMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/3601",
+    "banner": "https://github.com/user-attachments/assets/b4e255b8-5c7e-4821-82c9-3bcbc18b68ef",
+    "date": "2026-07-28T15:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI Docs Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=ZDFkaWVnYTU4MGkwM3Q0ZTVkMnF1dTZmZWMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/3607",
+    "banner": "",
+    "date": "2026-09-02T16:00:00.000Z"
   }
 ]

@@ -1,10 +1,8 @@
 import BasePage from './BasePage';
 
 class SlackPage extends BasePage {
-  visitSlack() {
-    cy.visit(
-      'https://asyncapi.slack.com/join/shared_invite/zt-3clk6rmc0-Cujl2fChHYnHDUwFKRlQCw#/shared-invite/email',
-    );
+  visitSlack(url) {
+    cy.visit(url, { failOnStatusCode: false });
   }
 
   waitForPageLoad() {
@@ -27,9 +25,9 @@ class SlackPage extends BasePage {
   }
 
   verifyInactiveLinkMessage() {
-    cy.get('.p-refreshed_page__heading')
+    cy.get('.p-refreshed_page__heading', { timeout: 10000 })
       .should('be.visible')
-      .and('have.text', 'This link is no longer active');
+      .and('contain.text', 'This link is no longer active');
   }
 
   verifyAllLoginMethods() {
@@ -60,9 +58,10 @@ class SlackPage extends BasePage {
   }
 
   verifyContinueWithEmail() {
-    cy.get('[data-qa="join_with_email"]')
+    cy.get('[data-qa="email_field"]')
       .should('be.visible')
-      .and('have.attr', 'type', 'button');
+      .and('have.attr', 'type', 'email')
+      .and('have.attr', 'name', 'email');
   }
 
   verifyPrivacyAndTerms() {

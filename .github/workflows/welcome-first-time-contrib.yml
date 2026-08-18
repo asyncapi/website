@@ -18,14 +18,14 @@ permissions:
 jobs:
   welcome:
     name: Post welcome message
-    if: ${{ !contains(fromJson('["asyncapi-bot", "dependabot[bot]", "dependabot-preview[bot]", "allcontributors[bot]"]'), github.actor) }} # zizmor: ignore[obfuscation]
+    if: ${{ !contains(fromJson('["asyncapi-bot", "dependabot[bot]", "dependabot-preview[bot]", "allcontributors[bot]"]'), github.event.issue.user.login || github.event.pull_request.user.login) }} # zizmor: ignore[obfuscation]
     runs-on: ubuntu-latest
     permissions:
       contents: read            # Required to read repository data for checking if it's the user's first contribution
       issues: write             # Required to post welcome message on issues
       pull-requests: write      # Required to post welcome message on pull requests
     steps:
-    - uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+    - uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
       with:
         github-token: ${{ github.token }}
         script: |

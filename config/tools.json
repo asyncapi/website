@@ -130,7 +130,7 @@
       },
       {
         "title": "AsyncAPI.NET",
-        "description": "The officially maintained fork of the AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common (de)serializers to extract raw AsyncApi JSON and YAML documents from the model.",
+        "description": "The official continuation of LEGO.AsyncAPI.NET from the original author and maintainer. The SDK contains a useful object model for AsyncAPI 3.0 documents in .NET. Full JsonSchema and Avro support",
         "links": {
           "websiteUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET/",
           "repoUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET"
@@ -187,6 +187,34 @@
               "name": "ASP.NET",
               "color": "bg-[#71C2FB]",
               "borderColor": "border-[#1577BC]"
+            }
+          ],
+          "categories": [
+            "code-first"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "asyncapi3 (Go)",
+        "description": "Code-first AsyncAPI 3.0 document generation for Go: declare channels and operations as Go values, reflect payload schemas from your wire structs, validate against the embedded official meta-schema, and gate the committed document in CI.",
+        "links": {
+          "repoUrl": "https://github.com/mitresthen/asyncapi3",
+          "docsUrl": "https://pkg.go.dev/github.com/mitresthen/asyncapi3"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "Go/Golang",
+              "color": "bg-[#8ECFDF]",
+              "borderColor": "border-[#00AFD9]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "Go",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
             }
           ],
           "categories": [
@@ -636,7 +664,7 @@
       },
       {
         "title": "Zod Sockets",
-        "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
+        "description": "Socket.IO solution with I/O validation that generates AsyncAPI specs and consumer contracts.",
         "links": {
           "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
           "repoUrl": "https://github.com/RobinTail/zod-sockets"
@@ -1080,7 +1108,7 @@
       },
       {
         "title": "AsyncAPI.NET",
-        "description": "The officially maintained fork of the AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common (de)serializers to extract raw AsyncApi JSON and YAML documents from the model.",
+        "description": "The official continuation of LEGO.AsyncAPI.NET from the original author and maintainer. The SDK contains a useful object model for AsyncAPI 3.0 documents in .NET. Full JsonSchema and Avro support",
         "links": {
           "websiteUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET/",
           "repoUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET"
@@ -1155,6 +1183,40 @@
             }
           ],
           "technology": [],
+          "categories": [
+            "converter"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "Scalar AsyncAPI Upgrader",
+        "description": "Upgrade AsyncAPI documents to the latest version. Converts AsyncAPI 1.2 to 2.6, 2.6 to 3.0, and 3.0 to 3.1.",
+        "links": {
+          "websiteUrl": "https://scalar.com",
+          "docsUrl": "https://scalar.com/tools/asyncapi-upgrader/getting-started",
+          "repoUrl": "https://github.com/scalar/scalar/tree/main/packages/asyncapi-upgrader"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "TypeScript",
+              "color": "bg-[#7DBCFE]",
+              "borderColor": "border-[#2C78C7]"
+            },
+            {
+              "name": "JavaScript",
+              "color": "bg-[#F2F1C7]",
+              "borderColor": "border-[#BFBE86]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "Node.js",
+              "color": "bg-[#BDFF67]",
+              "borderColor": "border-[#84CE24]"
+            }
+          ],
           "categories": [
             "converter"
           ],
@@ -1414,7 +1476,7 @@
           ],
           "technology": [
             {
-              "name": "Django",
+              "name": "Go",
               "color": "bg-[#61d0f2]",
               "borderColor": "border-[#40ccf7]"
             },
@@ -1640,6 +1702,75 @@
           ],
           "hasCommercial": false
         }
+      },
+      {
+        "title": "Scalar",
+        "description": "Interactive API reference documentation from OpenAPI and AsyncAPI documents. Open-source, embeddable in any web page or framework, with built-in API client capabilities.",
+        "links": {
+          "websiteUrl": "https://scalar.com",
+          "docsUrl": "https://guides.scalar.com",
+          "repoUrl": "https://github.com/scalar/scalar"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "TypeScript",
+              "color": "bg-[#7DBCFE]",
+              "borderColor": "border-[#2C78C7]"
+            },
+            {
+              "name": "JavaScript",
+              "color": "bg-[#F2F1C7]",
+              "borderColor": "border-[#BFBE86]"
+            },
+            {
+              "name": "HTML",
+              "color": "bg-[#E2A291]",
+              "borderColor": "border-[#E44D26]"
+            },
+            {
+              "name": "C#",
+              "color": "bg-[#E3AFE0]",
+              "borderColor": "border-[#9B4F96]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "Node.js",
+              "color": "bg-[#BDFF67]",
+              "borderColor": "border-[#84CE24]"
+            },
+            {
+              "name": "React JS",
+              "color": "bg-[#9FECFA]",
+              "borderColor": "border-[#08D8FE]"
+            },
+            {
+              "name": "Node.js",
+              "color": "bg-[#BDFF67]",
+              "borderColor": "border-[#84CE24]"
+            },
+            {
+              "name": ".NET",
+              "color": "bg-[#A184FF]",
+              "borderColor": "border-[#5026D4]"
+            },
+            {
+              "name": "ASP.NET",
+              "color": "bg-[#71C2FB]",
+              "borderColor": "border-[#1577BC]"
+            },
+            {
+              "name": "Docker",
+              "color": "bg-[#B8E0FF]",
+              "borderColor": "border-[#2596ED]"
+            }
+          ],
+          "categories": [
+            "ui-component"
+          ],
+          "hasCommercial": true
+        }
       }
     ]
   },
@@ -1722,7 +1853,7 @@
       },
       {
         "title": "Zod Sockets",
-        "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
+        "description": "Socket.IO solution with I/O validation that generates AsyncAPI specs and consumer contracts.",
         "links": {
           "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
           "repoUrl": "https://github.com/RobinTail/zod-sockets"
@@ -1873,7 +2004,7 @@
       },
       {
         "title": "Zod Sockets",
-        "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
+        "description": "Socket.IO solution with I/O validation that generates AsyncAPI specs and consumer contracts.",
         "links": {
           "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
           "repoUrl": "https://github.com/RobinTail/zod-sockets"
@@ -2524,7 +2655,7 @@
       },
       {
         "title": "AsyncAPI.NET",
-        "description": "The officially maintained fork of the AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common (de)serializers to extract raw AsyncApi JSON and YAML documents from the model.",
+        "description": "The official continuation of LEGO.AsyncAPI.NET from the original author and maintainer. The SDK contains a useful object model for AsyncAPI 3.0 documents in .NET. Full JsonSchema and Avro support",
         "links": {
           "websiteUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET/",
           "repoUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET"
@@ -3220,43 +3351,6 @@
         }
       },
       {
-        "title": "Java Spring Template",
-        "description": "Java Spring template for the AsyncAPI Generator",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/java-spring-template"
-        },
-        "filters": {
-          "language": [
-            {
-              "name": "JavaScript",
-              "color": "bg-[#F2F1C7]",
-              "borderColor": "border-[#BFBE86]"
-            }
-          ],
-          "technology": [
-            {
-              "name": "Springboot",
-              "color": "bg-[#98E279]",
-              "borderColor": "border-[#68BC44]"
-            },
-            {
-              "name": "Maven",
-              "color": "bg-[#FF6B80]",
-              "borderColor": "border-[#CA1A33]"
-            },
-            {
-              "name": "Gradle",
-              "color": "bg-[#61d0f2]",
-              "borderColor": "border-[#40ccf7]"
-            }
-          ],
-          "categories": [
-            "generator-template"
-          ],
-          "hasCommercial": false
-        }
-      },
-      {
         "title": "Java Template",
         "description": "Java template for the AsyncAPI Generator",
         "links": {
@@ -3298,33 +3392,6 @@
             }
           ],
           "technology": [],
-          "categories": [
-            "generator-template"
-          ],
-          "hasCommercial": false
-        }
-      },
-      {
-        "title": "Node.js Multiprotocol Template",
-        "description": "This template generates a server using your AsyncAPI document. It supports multiple different protocols, like Kafka or MQTT.  It is designed in the way that generated code is a library and with it's API you can start the server, send messages or register a middleware for listening incoming messages. Runtime message validation included.",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/nodejs-template"
-        },
-        "filters": {
-          "language": [
-            {
-              "name": "JavaScript",
-              "color": "bg-[#F2F1C7]",
-              "borderColor": "border-[#BFBE86]"
-            }
-          ],
-          "technology": [
-            {
-              "name": "Node.js",
-              "color": "bg-[#BDFF67]",
-              "borderColor": "border-[#84CE24]"
-            }
-          ],
           "categories": [
             "generator-template"
           ],
@@ -3377,33 +3444,6 @@
               "name": "Socket.IO",
               "color": "bg-[#61d0f2]",
               "borderColor": "border-[#40ccf7]"
-            }
-          ],
-          "categories": [
-            "generator-template"
-          ],
-          "hasCommercial": false
-        }
-      },
-      {
-        "title": "Node.js Websockets Template",
-        "description": "Node.js WebSockets template for the AsyncAPI Generator. It showcases how from a single AsyncAPI document you can generate a server and a client at the same time.",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/nodejs-ws-template"
-        },
-        "filters": {
-          "language": [
-            {
-              "name": "JavaScript",
-              "color": "bg-[#F2F1C7]",
-              "borderColor": "border-[#BFBE86]"
-            }
-          ],
-          "technology": [
-            {
-              "name": "Node.js",
-              "color": "bg-[#BDFF67]",
-              "borderColor": "border-[#84CE24]"
             }
           ],
           "categories": [
