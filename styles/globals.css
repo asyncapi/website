@@ -1,5 +1,5 @@
-@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
-/* Algolia DocSearch CSS is loaded on demand in components/AlgoliaSearch.tsx */
+/* Fira Code: loaded non-blocking via <link> in _document.tsx (only needed for code blocks) */
+/* Algolia DocSearch CSS: loaded on demand in components/AlgoliaSearch.tsx */
 
 @import 'swiper/css';
 @import 'swiper/css/a11y';
@@ -22,11 +22,13 @@ body {
 
 html.dark,
 html.dark body {
-  background-color: #121825; /* dark-background color */
+  background-color: #121825;
+  /* dark-background color */
 }
 
 .dark .finance-chart .recharts-tooltip-cursor {
-  fill: #131e35; /* dark-card color */
+  fill: #131e35;
+  /* dark-card color */
 }
 
 /* Dark mode scrollbar styling for overflow containers */
@@ -203,6 +205,7 @@ abbr[title] {
     display: none;
   }
 }
+
 .orbit-container {
   position: relative;
   margin: 0 auto;
@@ -229,13 +232,17 @@ abbr[title] {
 .orbit > div > img {
   border-radius: 100%;
 }
+
 .title {
   line-height: 0.9;
   font-size: 60px;
 }
+
 #first-orbit {
-  --n: 6; /* number of item */
-  --d: 70s; /* duration */
+  --n: 6;
+  /* number of item */
+  --d: 70s;
+  /* duration */
   width: 600px;
   height: 600px;
   top: 165px;
@@ -248,8 +255,10 @@ abbr[title] {
 }
 
 #second-orbit {
-  --no: 7; /* number of item */
-  --de: 80s; /* duration */
+  --no: 7;
+  /* number of item */
+  --de: 80s;
+  /* duration */
   width: 800px;
   height: 800px;
   top: 75px;
@@ -261,8 +270,10 @@ abbr[title] {
 }
 
 #third-orbit {
-  --ni: 7; /* number of item */
-  --ds: 80s; /* duration */
+  --ni: 7;
+  /* number of item */
+  --ds: 80s;
+  /* duration */
   width: 1000px;
   height: 1000px;
   top: -10px;
@@ -296,6 +307,7 @@ abbr[title] {
   animation: orbit-spin3 var(--ds) linear infinite;
   transform: rotate(0) translate(500px) rotate(0);
 }
+
 @keyframes orbit-spin {
   100% {
     transform: rotate(1turn) translate(300px) rotate(-1turn);
@@ -305,18 +317,23 @@ abbr[title] {
 .item:nth-child(1) {
   animation-delay: calc(-0 * var(--d) / var(--n));
 }
+
 .item:nth-child(2) {
   animation-delay: calc(-1 * var(--d) / var(--n));
 }
+
 .item:nth-child(3) {
   animation-delay: calc(-2 * var(--d) / var(--n));
 }
+
 .item:nth-child(4) {
   animation-delay: calc(-3 * var(--d) / var(--n));
 }
+
 .item:nth-child(5) {
   animation-delay: calc(-4 * var(--d) / var(--n));
 }
+
 .item:nth-child(6) {
   animation-delay: calc(-5 * var(--d) / var(--n));
 }
@@ -330,27 +347,35 @@ abbr[title] {
 .item-2:nth-child(1) {
   animation-delay: calc(-0 * var(--de) / var(--no));
 }
+
 .item-2:nth-child(2) {
   animation-delay: calc(-1 * var(--de) / var(--no));
 }
+
 .item-2:nth-child(3) {
   animation-delay: calc(-2 * var(--de) / var(--no));
 }
+
 .item-2:nth-child(4) {
   animation-delay: calc(-3 * var(--de) / var(--no));
 }
+
 .item-2:nth-child(5) {
   animation-delay: calc(-4 * var(--de) / var(--no));
 }
+
 .item-2:nth-child(6) {
   animation-delay: calc(-5 * var(--de) / var(--no));
 }
+
 .item-2:nth-child(7) {
   animation-delay: calc(-6 * var(--de) / var(--no));
 }
+
 .item-2:nth-child(8) {
   animation-delay: calc(-7 * var(--de) / var(--no));
 }
+
 .item-2:nth-child(9) {
   animation-delay: calc(-8 * var(--de) / var(--no));
 }
@@ -364,27 +389,35 @@ abbr[title] {
 .item-3:nth-child(1) {
   animation-delay: calc(-0 * var(--ds) / var(--ni));
 }
+
 .item-3:nth-child(2) {
   animation-delay: calc(-1 * var(--ds) / var(--ni));
 }
+
 .item-3:nth-child(3) {
   animation-delay: calc(-2 * var(--ds) / var(--ni));
 }
+
 .item-3:nth-child(4) {
   animation-delay: calc(-3 * var(--ds) / var(--ni));
 }
+
 .item-3:nth-child(5) {
   animation-delay: calc(-4 * var(--ds) / var(--ni));
 }
+
 .item-3:nth-child(6) {
   animation-delay: calc(-5 * var(--ds) / var(--ni));
 }
+
 .item-3:nth-child(7) {
   animation-delay: calc(-6 * var(--ds) / var(--ni));
 }
+
 .item-3:nth-child(8) {
   animation-delay: calc(-7 * var(--ds) / var(--ni));
 }
+
 .item-3:nth-child(9) {
   animation-delay: calc(-8 * var(--ds) / var(--ni));
 }
@@ -437,6 +470,7 @@ abbr[title] {
 select {
   cursor: pointer;
 }
+
 .dark .gradient-border {
   border: 2px solid transparent;
   border-image: linear-gradient(225deg, #ad20e2 0%, #2dccfd 100%);
@@ -472,6 +506,7 @@ select {
   100% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
