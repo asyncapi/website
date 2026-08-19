@@ -22,7 +22,7 @@
           "color": "0e8a16"
         }
       ],
-      "score": 20.96374497869589
+      "score": 21.538094156194408
     },
     {
       "id": "I_kwDOCHlHJM8AAAABIu0AsQ",
@@ -86,17 +86,6 @@
       "author": "princerajpoot20",
       "resourcePath": "/asyncapi/community/issues/3495",
       "repo": "asyncapi/community",
-      "labels": [],
-      "score": 8.615237662477762
-    },
-    {
-      "id": "PR_kwDOCHlHJM7sZCyn",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: publish AI tooling guide and migrate development docs",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/generator/pull/2141",
-      "repo": "asyncapi/generator",
       "labels": [],
       "score": 8.615237662477762
     },
@@ -178,6 +167,17 @@
         }
       ],
       "score": 6.605015541232952
+    },
+    {
+      "id": "PR_kwDOCHlHJM73eAIL",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "ci: add issue approval workflows for maintainer triage",
+      "author": "batchu5",
+      "resourcePath": "/asyncapi/generator/pull/2192",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 6.317840952483692
     }
   ],
   "goodFirstIssues": [
