@@ -14,6 +14,7 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useMemo,
   useRef,
   useState,
 } from 'react';
@@ -282,9 +283,9 @@ function useDocSearchKeyboardEvents({
  */
 export default function AlgoliaSearch({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   const [isOpen, setIsOpen] = useState(false);
   const [indexName, setIndexName] = useState<string>(INDEX_NAME);
   const [initialQuery, setInitialQuery] = useState<string>();
@@ -343,7 +344,12 @@ export default function AlgoliaSearch({
           crossOrigin="anonymous"
         />
       </Head>
-      <SearchContext.Provider value={{ isOpen, onOpen, onClose, onInput }}>
+      <SearchContext.Provider
+        value={useMemo(
+          () => ({ isOpen, onOpen, onClose, onInput }),
+          [isOpen, onOpen, onClose, onInput],
+        )}
+      >
         {children}
       </SearchContext.Provider>
       {isOpen && (
@@ -379,11 +385,7 @@ export function SearchButton({
      * @returns {void}
      */
     function onKeyDown(event: KeyboardEvent) {
-      if (
-        searchButtonRef &&
-        searchButtonRef.current === document.activeElement &&
-        onInput
-      ) {
+      if (searchButtonRef.current === document.activeElement && onInput) {
         if (/[a-zA-Z0-9]/.test(event.key)) {
           onInput(event as unknown as React.KeyboardEvent);
         }
