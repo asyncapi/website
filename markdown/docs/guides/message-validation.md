@@ -75,7 +75,7 @@ Producer ->> Schema Registry: Register/checks message schema
 Schema Registry ->> Producer: Return registration result
 
 Producer ->> Kafka: Publish message
-Kafka ->> Consumer: Recieves message
+Kafka ->> Consumer: Receives message
 Consumer ->> Schema Registry: Validate message schema
 Schema Registry ->> Consumer: Return validation result
 ```

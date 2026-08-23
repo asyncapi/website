@@ -8,6 +8,7 @@ import React from 'react';
 import AlgoliaSearch from '@/components/AlgoliaSearch';
 import ScrollButton from '@/components/buttons/ScrollButton';
 import Banner from '@/components/campaigns/Banner';
+import ErrorBoundary from '@/components/error/ErrorBoundary';
 import Footer from '@/components/footer/Footer';
 import Layout from '@/components/layout/Layout';
 import NavBar from '@/components/navigation/NavBar';
@@ -43,11 +44,12 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             <NavBar className="mx-auto block max-w-screen-xl px-4 sm:px-6 lg:px-8" />
           </StickyNavbar>
 
-          <Layout>
-            <Component {...pageProps} />
-            <ScrollButton />
-          </Layout>
-
+          <ErrorBoundary>
+            <Layout>
+              <Component {...pageProps} />
+              <ScrollButton />
+            </Layout>
+          </ErrorBoundary>
           <div className="mt-auto dark:bg-dark-background">
             <Footer />
           </div>

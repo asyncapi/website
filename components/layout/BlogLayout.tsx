@@ -9,6 +9,7 @@ import type { IPosts } from '@/types/post';
 import BlogContext from '../../context/BlogContext';
 import AuthorAvatars from '../AuthorAvatars';
 import AnnouncementHero from '../campaigns/AnnouncementHero';
+import ErrorBoundary from '../error/ErrorBoundary';
 import Head from '../Head';
 import TOC from '../TOC';
 import Container from './Container';
@@ -91,7 +92,7 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
                 </HtmlHead>
               )}
               <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className='my-6 w-full' />
-              {children}
+              <ErrorBoundary contextualLabel='article'>{children}</ErrorBoundary>
             </article>
           </main>
         </Container>

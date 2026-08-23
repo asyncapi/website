@@ -1,5 +1,185 @@
 {
-  "hotDiscussions": [],
+  "hotDiscussions": [
+    {
+      "id": "I_kwDOBW5R_c6VGYzo",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "[FEATURE] Performance + Accessibility Improvement of website",
+      "author": "akshatnema",
+      "resourcePath": "/asyncapi/website/issues/3186",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "Epic",
+          "color": "3E4B9E"
+        },
+        {
+          "name": "bounty",
+          "color": "0e8a16"
+        }
+      ],
+      "score": 22.112443333692923
+    },
+    {
+      "id": "I_kwDOCHlHJM8AAAABIu0AsQ",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[SECURITY] Malicious versions published via compromised next branch - @asyncapi/generator@3.3.1, generator-helpers@1.1.1, generator-components@0.7.1",
+      "author": "LidorMachluf",
+      "resourcePath": "/asyncapi/generator/issues/2184",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 13.497205671215161
+    },
+    {
+      "id": "I_kwDOFdFGUs8AAAABCc6TlA",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Record and release training video based on VIDEO_6_SCRIPT.md",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/training/issues/65",
+      "repo": "asyncapi/training",
+      "labels": [
+        {
+          "name": "microgrant",
+          "color": "708090"
+        }
+      ],
+      "score": 11.48698354997035
+    },
+    {
+      "id": "PR_kwDODwv8N866EXtA",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add image gallery for past conferences",
+      "author": "kajal-jotwani",
+      "resourcePath": "/asyncapi/conference-website/pull/890",
+      "repo": "asyncapi/conference-website",
+      "labels": [],
+      "score": 9.763936017474798
+    },
+    {
+      "id": "I_kwDOFLhIt85bebeO",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Meeting Banners Storage",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/issues/568",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 8.996945675000958
+    },
+    {
+      "id": "I_kwDOFLhIt874rNRL",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "[2026 Goals][S1] Repository Audit & Consolidation (Targets O1, O2)",
+      "author": "princerajpoot20",
+      "resourcePath": "/asyncapi/community/issues/3495",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 8.615237662477762
+    },
+    {
+      "id": "PR_kwDOCHlHJM7srbNz",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: add query Parameters support to javascript websocket client",
+      "author": "batchu5",
+      "resourcePath": "/asyncapi/generator/pull/2142",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 8.040888484979245
+    },
+    {
+      "id": "PR_kwDOE8Qh386xgCvo",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat!: release v6",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/modelina/pull/2362",
+      "repo": "asyncapi/modelina",
+      "labels": [
+        {
+          "name": "released on @next",
+          "color": "ededed"
+        }
+      ],
+      "score": 7.179364718731469
+    },
+    {
+      "id": "PR_kwDOBW5R_c7q5bzH",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: optimize bundle by replacing react-syntax-highlighter with pris…",
+      "author": "patilpratik1905",
+      "resourcePath": "/asyncapi/website/pull/5599",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "bounty",
+          "color": "0e8a16"
+        },
+        {
+          "name": "waiting-for-author",
+          "color": "BDDB3C"
+        }
+      ],
+      "score": 7.179364718731469
+    },
+    {
+      "id": "I_kwDOBW5R_c7eanOA",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Proposal: regular Triage/Planning meetings and dedicated github project boards",
+      "author": "princerajpoot20",
+      "resourcePath": "/asyncapi/website/issues/4717",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 7.059141991154598
+    },
+    {
+      "id": "I_kwDODwv8N86pj2gI",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[FEATURE] Agenda Enhancements ( download agenda as PDF )",
+      "author": "om2137",
+      "resourcePath": "/asyncapi/conference-website/issues/553",
+      "repo": "asyncapi/conference-website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 6.605015541232952
+    },
+    {
+      "id": "PR_kwDOCHlHJM73eAIL",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "ci: add issue approval workflows for maintainer triage",
+      "author": "batchu5",
+      "resourcePath": "/asyncapi/generator/pull/2192",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 6.317840952483692
+    }
+  ],
   "goodFirstIssues": [
     {
       "id": "I_kwDODwv8N88AAAABFFvB1w",
@@ -113,25 +293,6 @@
         {
           "name": "priority: normal",
           "color": "A0E245"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODou01c7kIx47",
-      "title": "Governance issues is not properly allined.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/studio/issues/1255",
-      "repo": "asyncapi/studio",
-      "author": "Harsh16gupta",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "triaged",
-          "color": "0052cc"
         }
       ]
     },
