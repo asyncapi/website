@@ -20,7 +20,8 @@ import AppContext from '@/context/AppContext';
 function MyApp({ Component, pageProps, router }: AppProps) {
   const isProduction =
     typeof window !== 'undefined' &&
-    window.location.hostname.includes('asyncapi.com');
+    (window.location.hostname === 'asyncapi.com' ||
+      window.location.hostname.endsWith('.asyncapi.com'));
 
   return (
     <AppContext.Provider value={{ path: router.asPath }}>
