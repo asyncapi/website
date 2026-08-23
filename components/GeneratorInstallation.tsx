@@ -1,12 +1,17 @@
+import dynamic from 'next/dynamic';
 import React, { useState } from 'react';
 
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 import generatorflagList from '../config/generator-flags.json';
 import generatorTemplates from '../config/generator-templates.json';
-import CodeBlock from './editor/CodeBlock';
 import Select from './form/Select';
 import Paragraph from './typography/Paragraph';
+
+const CodeBlock = dynamic(() => import('./editor/CodeBlock'), {
+  ssr: false,
+  loading: () => <div className="min-h-[120px] rounded bg-code-editor-dark" />,
+});
 
 interface GeneratorFlagData {
   flag: string;
@@ -21,10 +26,16 @@ interface GeneratorFlags {
  * @description This component displays generator installation options.
  */
 export default function GeneratorInstallation() {
-  const [template, setTemplate] = useState<string>('@asyncapi/html-template@3.0.0');
+  const [template, setTemplate] = useState<string>(
+    '@asyncapi/html-template@3.0.0',
+  );
   // By default we will have output folder flag so its set here.
-  const [params, setParams] = useState<string>('-o example --use-new-generator');
-  const [specPath, setSpecPath] = useState<string>('https://asyncapi.com/s/asyncapiv2');
+  const [params, setParams] = useState<string>(
+    '-o example --use-new-generator',
+  );
+  const [specPath, setSpecPath] = useState<string>(
+    'https://asyncapi.com/s/asyncapiv2',
+  );
 
   const generatorflags = generatorflagList as GeneratorFlags;
 
@@ -66,31 +77,31 @@ asyncapi generate fromTemplate ${specPath} ${template} ${params}`;
   }
 
   return (
-    <div className='relative mx-auto mt-8 max-w-full'>
-      <div className='mb-4'>
-        <Paragraph typeStyle={ParagraphTypeStyle.md} className='mr-4 inline'>
+    <div className="relative mx-auto mt-8 max-w-full">
+      <div className="mb-4">
+        <Paragraph typeStyle={ParagraphTypeStyle.md} className="mr-4 inline">
           Select a Generator template:
         </Paragraph>
         <Select
           options={generatorTemplates}
           selected={template}
           onChange={onChangeTemplate}
-          className='shadow-outline-blue'
+          className="shadow-outline-blue"
         />
       </div>
       <CodeBlock
-        language='generator-cli'
-        textSizeClassName='text-sm'
-        className='shadow-lg'
+        language="generator-cli"
+        textSizeClassName="text-sm"
+        className="shadow-lg"
         codeBlocks={[
           {
             language: 'npm',
-            code: getNpmCode()
+            code: getNpmCode(),
           },
           {
             language: 'Docker',
-            code: getDockerCode()
-          }
+            code: getDockerCode(),
+          },
         ]}
       />
     </div>
