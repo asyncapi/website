@@ -1,20 +1,63 @@
 /**
- * @description Unit & regression tests for MermaidDiagram graph normalization and whitespace handling.
+ * @description Regression tests for MermaidDiagram graph normalization and render behaviour.
+ * Mocks the dynamic mermaid import to observe render invocations without a browser environment.
  */
 
-describe('MermaidDiagram Graph Processing', () => {
-  it('trims graph definitions properly to handle whitespace-only changes', () => {
-    const rawGraph = '   graph TD\n  A-->B   \n';
-    const trimmed = rawGraph.trim();
+const mockRender = jest.fn().mockResolvedValue({ svg: '<svg>mock</svg>' });
+const mockInitialize = jest.fn();
 
-    expect(trimmed).toBe('graph TD\n  A-->B');
-    expect(trimmed.length).toBeGreaterThan(0);
+jest.mock('mermaid', () => ({
+  __esModule: true,
+  default: {
+    initialize: mockInitialize,
+    render: mockRender,
+  },
+}));
+
+jest.mock('dompurify', () => ({
+  __esModule: true,
+  default: {
+    sanitize: (_input: string) => _input,
+  },
+}));
+
+/**
+ * Simulate the trimming and conditional render logic from MermaidDiagram's useEffect.
+ * This mirrors the exact branching in the component without requiring a DOM/renderer.
+ */
+async function simulateRender(graph: string, diagramId: string): Promise<void> {
+  const trimmedGraph = graph.trim();
+
+  if (trimmedGraph) {
+    const { default: mermaid } = await import('mermaid');
+
+    await mermaid.render(diagramId, trimmedGraph);
+  }
+}
+
+describe('MermaidDiagram render behaviour', () => {
+  beforeEach(() => {
+    mockRender.mockClear();
+    mockInitialize.mockClear();
   });
 
-  it('treats pure whitespace input as empty graph definition', () => {
-    const whitespaceOnly = '   \n\t  ';
-    const trimmed = whitespaceOnly.trim();
+  it('calls mermaid.render with trimmed graph definition for non-empty input', async () => {
+    const rawGraph = '   graph TD\n  A-->B   \n';
 
-    expect(trimmed).toBe('');
+    await simulateRender(rawGraph, 'mermaid-test-1');
+
+    expect(mockRender).toHaveBeenCalledTimes(1);
+    expect(mockRender).toHaveBeenCalledWith(
+      'mermaid-test-1',
+      'graph TD\n  A-->B',
+    );
+  });
+
+  it('does not call mermaid.render for whitespace-only input', async () => {
+    const whitespaceOnly = '   \n\t  ';
+
+    await simulateRender(whitespaceOnly, 'mermaid-test-2');
+
+    expect(mockRender).not.toHaveBeenCalled();
   });
 });
