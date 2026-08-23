@@ -377,7 +377,7 @@ export default function CodeBlock({
               data-test="copy-button"
             >
               <output className="sr-only" aria-live="polite" aria-atomic="true">
-                {showIsCopied ? 'Copy to clipboard' : ''}
+                {showIsCopied ? 'Copied to clipboard' : ''}
               </output>
               <span
                 className="relative inline-block mt-1 size-4"

@@ -51,12 +51,7 @@ const MermaidDiagram = dynamic(() => import('./MermaidDiagram'), {
   loading: () => <div className="min-h-[100px]" />,
 });
 
-const CodeBlock = dynamic(() => import('../editor/CodeBlock'), {
-  ssr: false,
-  loading: () => (
-    <div className="my-8 min-h-[120px] rounded bg-code-editor-dark" />
-  ),
-});
+const CodeBlock = dynamic(() => import('../editor/CodeBlock'));
 
 const Visualizer = dynamic(() => import('../docs/Visualizer'), {
   ssr: false,
@@ -83,7 +78,7 @@ function CodeComponent({
   className = '',
   metastring = '',
   ...rest
-}: CodeComponentProps) {
+}: Readonly<CodeComponentProps>) {
   let caption;
   const meta = metastring.split(/([\w]+=[\w\d\s\-_:><.]+)/) || [];
 

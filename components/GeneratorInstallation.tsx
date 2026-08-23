@@ -8,10 +8,7 @@ import generatorTemplates from '../config/generator-templates.json';
 import Select from './form/Select';
 import Paragraph from './typography/Paragraph';
 
-const CodeBlock = dynamic(() => import('./editor/CodeBlock'), {
-  ssr: false,
-  loading: () => <div className="min-h-[120px] rounded bg-code-editor-dark" />,
-});
+const CodeBlock = dynamic(() => import('./editor/CodeBlock'));
 
 interface GeneratorFlagData {
   flag: string;
