@@ -110,8 +110,6 @@ export default function MermaidDiagram({
             });
           }
 
-          document.getElementById(diagramId)?.remove();
-
           const { svg: rendered } = await mermaid.render(
             diagramId,
             trimmedGraph,

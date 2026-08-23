@@ -49,7 +49,6 @@ const TwitterTweetEmbed = dynamic(
 const YouTube = dynamic(() => import('react-youtube-embed'), { ssr: false });
 
 const CodeBlock = dynamic(() => import('../editor/CodeBlock'), {
-  ssr: false,
   loading: () => (
     <div className="my-8 min-h-[120px] rounded bg-code-editor-dark" />
   ),
@@ -80,7 +79,7 @@ function CodeComponent({
   className = '',
   metastring = '',
   ...rest
-}: CodeComponentProps) {
+}: Readonly<CodeComponentProps>) {
   let caption;
   const meta = metastring.split(/([\w]+=[\w\d\s\-_:><.]+)/) || [];
 
