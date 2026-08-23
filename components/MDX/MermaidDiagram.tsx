@@ -99,7 +99,7 @@ export default function MermaidDiagram({
   graph,
 }: Readonly<MermaidDiagramProps>) {
   const [svg, setSvg] = useState<string | null>(null);
-  const [theme, setTheme] = useState<MermaidTheme>('light');
+  const [theme, setTheme] = useState<MermaidTheme>(getMermaidTheme);
 
   useEffect(() => {
     setTheme(getMermaidTheme());
@@ -123,20 +123,24 @@ export default function MermaidDiagram({
     let mounted = true;
 
     if (graph) {
-      try {
-        initializeMermaid(theme);
-        mermaid.mermaidAPI.render(uuid(), graph.trim(), (svgGraph) => {
+      const render = async () => {
+        try {
+          initializeMermaid(theme);
+          const { svg: rendered } = await mermaid.render(uuid(), graph.trim());
+
           if (mounted) {
-            setSvg(svgGraph);
+            setSvg(rendered);
           }
-        });
-      } catch (e) {
-        if (mounted) {
-          setSvg(null);
+        } catch (e) {
+          if (mounted) {
+            setSvg(null);
+          }
+          // eslint-disable-next-line no-console
+          console.error(e);
         }
-        // eslint-disable-next-line no-console
-        console.error(e);
-      }
+      };
+
+      render();
     } else {
       setSvg(null);
     }
