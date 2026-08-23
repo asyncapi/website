@@ -1,7 +1,5 @@
-'use client';
-
-import mermaid from 'mermaid';
-import React, { useEffect, useState } from 'react';
+import DOMPurify from 'dompurify';
+import { useEffect, useId, useState } from 'react';
 
 type MermaidTheme = 'light' | 'dark';
 
@@ -44,66 +42,40 @@ const MERMAID_THEME_VARIABLES: Record<MermaidTheme, Record<string, string>> = {
   },
 };
 
-// Cache the theme Mermaid was initialized with across client-side page transitions.
+// Tracks the theme Mermaid was last initialized with to skip redundant re-initialization.
 let initializedMermaidTheme: MermaidTheme | null = null;
 
 /**
- * @description Returns the Mermaid theme that matches the current website theme.
+ * @description Returns the Mermaid theme matching the current website theme.
  */
 function getMermaidTheme(): MermaidTheme {
-  if (typeof document === 'undefined') {
-    return 'light';
-  }
-
   return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
 }
-
-/**
- * @description Initializes the Mermaid library for the selected theme.
- */
-function initializeMermaid(theme: MermaidTheme) {
-  if (initializedMermaidTheme === theme) {
-    return;
-  }
-
-  initializedMermaidTheme = theme;
-  mermaid.initialize({
-    startOnLoad: false,
-    theme: 'base',
-    securityLevel: 'strict',
-    // Keep Mermaid styling fully controlled by MERMAID_THEME_VARIABLES.
-    themeCSS: '',
-    themeVariables: MERMAID_THEME_VARIABLES[theme],
-  });
-}
-
-let currentId = 0;
-
-/**
- * @description Generates a unique identifier.
- * @returns {string} - A unique identifier.
- */
-const uuid = (): string => `mermaid-${(currentId++).toString()}`;
 
 interface MermaidDiagramProps {
   graph: string;
 }
 
 /**
- * @description This component renders Mermaid diagrams with light/dark theme support.
+ * @description Renders a Mermaid diagram from a graph definition string.
  *
- * @param {MermaidDiagramProps} props - The props for the MermaidDiagram component.
- * @param {string} props.graph - The Mermaid graph definition to render.
+ * Mermaid is loaded via a dynamic import so it is never included in the
+ * initial JS bundle — it is fetched on demand only when a diagram mounts.
+ *
+ * @param {MermaidDiagramProps} props - Component props.
+ * @param {string} props.graph - Mermaid graph definition to render.
  */
 export default function MermaidDiagram({
   graph,
 }: Readonly<MermaidDiagramProps>) {
   const [svg, setSvg] = useState<string | null>(null);
+  const [hasError, setHasError] = useState(false);
+  // Lazy initializer reads the DOM once on mount — avoids a wasted light→correct-theme re-render.
   const [theme, setTheme] = useState<MermaidTheme>(getMermaidTheme);
+  const reactId = useId();
+  const diagramId = `mermaid${reactId.replaceAll(':', '')}`;
 
   useEffect(() => {
-    setTheme(getMermaidTheme());
-
     const observer = new MutationObserver(() => {
       setTheme(getMermaidTheme());
     });
@@ -116,25 +88,47 @@ export default function MermaidDiagram({
     return () => observer.disconnect();
   }, []);
 
-  /**
-   * @description Renders the Mermaid diagram.
-   */
   useEffect(() => {
+    const trimmedGraph = graph.trim();
     let mounted = true;
 
-    if (graph) {
+    if (trimmedGraph) {
+      setHasError(false);
+
       const render = async () => {
         try {
-          initializeMermaid(theme);
-          const { svg: rendered } = await mermaid.render(uuid(), graph.trim());
+          const { default: mermaid } = await import('mermaid');
+
+          if (initializedMermaidTheme !== theme) {
+            initializedMermaidTheme = theme;
+            mermaid.initialize({
+              startOnLoad: false,
+              theme: 'base',
+              securityLevel: 'strict',
+              htmlLabels: false,
+              themeVariables: MERMAID_THEME_VARIABLES[theme],
+            });
+          }
+
+          document.getElementById(diagramId)?.remove();
+
+          const { svg: rendered } = await mermaid.render(
+            diagramId,
+            trimmedGraph,
+          );
+          const sanitized = DOMPurify.sanitize(rendered, {
+            USE_PROFILES: { svg: true, svgFilters: true },
+          });
 
           if (mounted) {
-            setSvg(rendered);
+            setSvg(sanitized);
           }
         } catch (e) {
           if (mounted) {
             setSvg(null);
+            setHasError(true);
           }
+
           // eslint-disable-next-line no-console
           console.error(e);
         }
@@ -143,12 +137,19 @@ export default function MermaidDiagram({
       render();
     } else {
       setSvg(null);
+      setHasError(false);
     }
 
     return () => {
       mounted = false;
     };
-  }, [graph, theme]);
+  }, [graph, theme, diagramId]);
 
-  return <div dangerouslySetInnerHTML={{ __html: svg || '' }} />;
+  if (hasError) {
+    return (
+      <p className="text-red-500 text-sm">Unable to render the diagram.</p>
+    );
+  }
+
+  return <div dangerouslySetInnerHTML={{ __html: svg ?? '' }} />;
 }

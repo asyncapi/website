@@ -14,8 +14,6 @@ import Button from '../buttons/Button';
 import ChapterSuggestions from '../buttons/ChapterSuggestions';
 import Caption from '../Caption';
 import DocsCards from '../docs/DocsCards';
-import Visualizer from '../docs/Visualizer';
-import CodeBlock from '../editor/CodeBlock';
 import FAQ from '../faq/FAQ';
 import Figure from '../Figure';
 import GeneratorInstallation from '../GeneratorInstallation';
@@ -37,6 +35,7 @@ import {
 
 const MermaidDiagram = dynamic(() => import('./MermaidDiagram'), {
   ssr: false,
+  loading: () => <div className="min-h-[100px]" />,
 });
 
 const TwitterTweetEmbed = dynamic(
@@ -48,6 +47,18 @@ const TwitterTweetEmbed = dynamic(
 );
 
 const YouTube = dynamic(() => import('react-youtube-embed'), { ssr: false });
+
+const CodeBlock = dynamic(() => import('../editor/CodeBlock'), {
+  ssr: false,
+  loading: () => (
+    <div className="my-8 min-h-[120px] rounded bg-code-editor-dark" />
+  ),
+});
+
+const Visualizer = dynamic(() => import('../docs/Visualizer'), {
+  ssr: false,
+  loading: () => <div className="min-h-[400px]" />,
+});
 
 interface CodeComponentProps {
   children: string;
