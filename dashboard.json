@@ -22,18 +22,7 @@
           "color": "0e8a16"
         }
       ],
-      "score": 18.953522857451077
-    },
-    {
-      "id": "I_kwDOFLhIt87jC_4a",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Code of Conduct Nomination - 2026",
-      "author": "Mayaleeeee",
-      "resourcePath": "/asyncapi/community/issues/2236",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 14.358729437462937
+      "score": 23.548316277439216
     },
     {
       "id": "I_kwDOCHlHJM8AAAABIu0AsQ",
@@ -44,7 +33,7 @@
       "resourcePath": "/asyncapi/generator/issues/2184",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 12.922856493716644
+      "score": 13.497205671215161
     },
     {
       "id": "I_kwDOFdFGUs8AAAABCc6TlA",
@@ -60,18 +49,7 @@
           "color": "708090"
         }
       ],
-      "score": 11.199808961221091
-    },
-    {
-      "id": "I_kwDODdpKDs7_yUer",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Introduce v3 compatibility tests",
-      "author": "Pakisan",
-      "resourcePath": "/asyncapi/tck/issues/247",
-      "repo": "asyncapi/tck",
-      "labels": [],
-      "score": 10.625459783722574
+      "score": 11.48698354997035
     },
     {
       "id": "PR_kwDODwv8N866EXtA",
@@ -83,22 +61,6 @@
       "repo": "asyncapi/conference-website",
       "labels": [],
       "score": 9.763936017474798
-    },
-    {
-      "id": "PR_kwDOCHlHJM7cVYGh",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "chore: hardening the GA workflows",
-      "author": "Florence-Njeri",
-      "resourcePath": "/asyncapi/generator/pull/2092",
-      "repo": "asyncapi/generator",
-      "labels": [
-        {
-          "name": "autoupdate",
-          "color": "ededed"
-        }
-      ],
-      "score": 9.476761428725538
     },
     {
       "id": "I_kwDOFLhIt85bebeO",
@@ -128,35 +90,51 @@
       "score": 8.615237662477762
     },
     {
-      "id": "I_kwDOFDnrNc6w5oVf",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[FEATURE] Reduce number of dependencies and install size (v2.17 needs 1700 dependencies, takes 1.7Gb of space)",
-      "author": "peitschie",
-      "resourcePath": "/asyncapi/cli/issues/1752",
-      "repo": "asyncapi/cli",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 8.615237662477762
-    },
-    {
-      "id": "PR_kwDOCHlHJM7tUbTp",
+      "id": "PR_kwDOCHlHJM7srbNz",
       "isPR": true,
       "isAssigned": true,
-      "title": "fix: release and pin generator dependencies",
-      "author": "Stanzilla",
-      "resourcePath": "/asyncapi/generator/pull/2143",
+      "title": "feat: add query Parameters support to javascript websocket client",
+      "author": "batchu5",
+      "resourcePath": "/asyncapi/generator/pull/2142",
       "repo": "asyncapi/generator",
       "labels": [],
       "score": 8.040888484979245
+    },
+    {
+      "id": "PR_kwDOE8Qh386xgCvo",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat!: release v6",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/modelina/pull/2362",
+      "repo": "asyncapi/modelina",
+      "labels": [
+        {
+          "name": "released on @next",
+          "color": "ededed"
+        }
+      ],
+      "score": 7.179364718731469
+    },
+    {
+      "id": "PR_kwDOBW5R_c7q5bzH",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: optimize bundle by replacing react-syntax-highlighter with pris…",
+      "author": "patilpratik1905",
+      "resourcePath": "/asyncapi/website/pull/5599",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "bounty",
+          "color": "0e8a16"
+        },
+        {
+          "name": "waiting-for-author",
+          "color": "BDDB3C"
+        }
+      ],
+      "score": 7.179364718731469
     },
     {
       "id": "I_kwDOBW5R_c7eanOA",
@@ -173,6 +151,33 @@
         }
       ],
       "score": 7.059141991154598
+    },
+    {
+      "id": "I_kwDODwv8N86pj2gI",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[FEATURE] Agenda Enhancements ( download agenda as PDF )",
+      "author": "om2137",
+      "resourcePath": "/asyncapi/conference-website/issues/553",
+      "repo": "asyncapi/conference-website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 6.605015541232952
+    },
+    {
+      "id": "PR_kwDOCHlHJM73eAIL",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "ci: add issue approval workflows for maintainer triage",
+      "author": "batchu5",
+      "resourcePath": "/asyncapi/generator/pull/2192",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 6.317840952483692
     }
   ],
   "goodFirstIssues": [
@@ -292,25 +297,6 @@
       ]
     },
     {
-      "id": "I_kwDODou01c7kIx47",
-      "title": "Governance issues is not properly allined.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/studio/issues/1255",
-      "repo": "asyncapi/studio",
-      "author": "Harsh16gupta",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOBW5R_c7gRD8m",
       "title": "Refactor(navbar): Use twMerge for z-index className management instead of template literal",
       "isAssigned": false,
@@ -401,25 +387,6 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODtTERs5wDOAH",
-      "title": "Support decimal min and max",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/java-spring-template/issues/326",
-      "repo": "asyncapi/java-spring-template",
-      "author": "Tenischev",
-      "area": "java",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },

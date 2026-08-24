@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/I6z1WC6Qo2o/hqdefault.jpg",
+    "title": "Testing Retry and DLQ Behaviour with AsyncAPI",
+    "description": "AsyncAPI has become the natural way to describe event-driven systems, but real-world reliability behaviour often lives outside the ...",
+    "videoId": "I6z1WC6Qo2o"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/Wjqwy22gHXQ/hqdefault.jpg",
     "title": "AsyncAPI Docs Meeting, 16:00 UTC Wednesday July 29th 2026",
     "description": "https://github.com/asyncapi/community/issues/3600.",
@@ -22,11 +28,5 @@
     "title": "AsyncAPI Docs Meeting, 16:00 UTC Wednesday June 24th 2026",
     "description": "https://github.com/asyncapi/community/issues/3572.",
     "videoId": "CUhWYHAZ65o"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/eQTBXG7spgk/hqdefault.jpg",
-    "title": "AsyncAPI Maintainership Program Kickoff, 12:00 UTC Tuesday June 23rd 2026",
-    "description": "https://github.com/asyncapi/community/issues/3586.",
-    "videoId": "eQTBXG7spgk"
   }
 ]
