@@ -16,13 +16,9 @@
         {
           "name": "Epic",
           "color": "3E4B9E"
-        },
-        {
-          "name": "bounty",
-          "color": "0e8a16"
         }
       ],
-      "score": 23.548316277439216
+      "score": 25.27136380993477
     },
     {
       "id": "I_kwDOCHlHJM8AAAABIu0AsQ",
@@ -101,6 +97,22 @@
       "score": 8.040888484979245
     },
     {
+      "id": "PR_kwDOBW5R_c7q5bzH",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: optimize bundle by replacing react-syntax-highlighter with pris…",
+      "author": "patilpratik1905",
+      "resourcePath": "/asyncapi/website/pull/5599",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "waiting-for-author",
+          "color": "BDDB3C"
+        }
+      ],
+      "score": 7.179364718731469
+    },
+    {
       "id": "PR_kwDOE8Qh386xgCvo",
       "isPR": true,
       "isAssigned": false,
@@ -112,26 +124,6 @@
         {
           "name": "released on @next",
           "color": "ededed"
-        }
-      ],
-      "score": 7.179364718731469
-    },
-    {
-      "id": "PR_kwDOBW5R_c7q5bzH",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: optimize bundle by replacing react-syntax-highlighter with pris…",
-      "author": "patilpratik1905",
-      "resourcePath": "/asyncapi/website/pull/5599",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "bounty",
-          "color": "0e8a16"
-        },
-        {
-          "name": "waiting-for-author",
-          "color": "BDDB3C"
         }
       ],
       "score": 7.179364718731469
