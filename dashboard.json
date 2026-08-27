@@ -94,7 +94,7 @@
       "resourcePath": "/asyncapi/generator/pull/2142",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 8.040888484979245
+      "score": 8.615237662477762
     },
     {
       "id": "PR_kwDOBW5R_c7q5bzH",
@@ -169,7 +169,7 @@
       "resourcePath": "/asyncapi/generator/pull/2192",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 6.317840952483692
+      "score": 6.605015541232952
     }
   ],
   "goodFirstIssues": [
