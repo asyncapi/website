@@ -48,33 +48,6 @@
       "score": 11.48698354997035
     },
     {
-      "id": "PR_kwDODwv8N866EXtA",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add image gallery for past conferences",
-      "author": "kajal-jotwani",
-      "resourcePath": "/asyncapi/conference-website/pull/890",
-      "repo": "asyncapi/conference-website",
-      "labels": [],
-      "score": 9.763936017474798
-    },
-    {
-      "id": "I_kwDOFLhIt85bebeO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Meeting Banners Storage",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/issues/568",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 8.996945675000958
-    },
-    {
       "id": "I_kwDOFLhIt874rNRL",
       "isPR": false,
       "isAssigned": true,
@@ -129,22 +102,6 @@
       "score": 7.179364718731469
     },
     {
-      "id": "I_kwDOBW5R_c7eanOA",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Proposal: regular Triage/Planning meetings and dedicated github project boards",
-      "author": "princerajpoot20",
-      "resourcePath": "/asyncapi/website/issues/4717",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 7.059141991154598
-    },
-    {
       "id": "I_kwDODwv8N86pj2gI",
       "isPR": false,
       "isAssigned": false,
@@ -170,6 +127,49 @@
       "repo": "asyncapi/generator",
       "labels": [],
       "score": 6.605015541232952
+    },
+    {
+      "id": "I_kwDODou01c7kI0f6",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Studio settings should be in dark mode for UI consistency",
+      "author": "Harsh16gupta",
+      "resourcePath": "/asyncapi/studio/issues/1256",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 6.030666363734434
+    },
+    {
+      "id": "I_kwDOB5hCo88AAAABIvUPKg",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[SECURITY] Malicious versions published via compromised alpha branch - @asyncapi/specs@6.11.2 (latest) and 6.11.2-alpha.1",
+      "author": "LidorMachluf",
+      "resourcePath": "/asyncapi/spec-json-schemas/issues/656",
+      "repo": "asyncapi/spec-json-schemas",
+      "labels": [],
+      "score": 5.743491774985175
+    },
+    {
+      "id": "I_kwDOFLhIt85bebeO",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Meeting Banners Storage",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/issues/568",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 5.360500887514882
     }
   ],
   "goodFirstIssues": [
