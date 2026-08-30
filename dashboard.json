@@ -18,18 +18,7 @@
           "color": "3E4B9E"
         }
       ],
-      "score": 24.984189221185513
-    },
-    {
-      "id": "I_kwDOCHlHJM8AAAABIu0AsQ",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[SECURITY] Malicious versions published via compromised next branch - @asyncapi/generator@3.3.1, generator-helpers@1.1.1, generator-components@0.7.1",
-      "author": "LidorMachluf",
-      "resourcePath": "/asyncapi/generator/issues/2184",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 13.497205671215161
+      "score": 24.697014632436254
     },
     {
       "id": "I_kwDOFdFGUs8AAAABCc6TlA",
@@ -46,17 +35,6 @@
         }
       ],
       "score": 11.48698354997035
-    },
-    {
-      "id": "I_kwDOFLhIt874rNRL",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "[2026 Goals][S1] Repository Audit & Consolidation (Targets O1, O2)",
-      "author": "princerajpoot20",
-      "resourcePath": "/asyncapi/community/issues/3495",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 8.615237662477762
     },
     {
       "id": "PR_kwDOCHlHJM7srbNz",
@@ -129,6 +107,17 @@
       "score": 6.605015541232952
     },
     {
+      "id": "I_kwDOCHlHJM8AAAABIu0AsQ",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[SECURITY] Malicious versions published via compromised next branch - @asyncapi/generator@3.3.1, generator-helpers@1.1.1, generator-components@0.7.1",
+      "author": "LidorMachluf",
+      "resourcePath": "/asyncapi/generator/issues/2184",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 6.505483795769924
+    },
+    {
       "id": "I_kwDODou01c7kI0f6",
       "isPR": false,
       "isAssigned": false,
@@ -170,6 +159,17 @@
         }
       ],
       "score": 5.360500887514882
+    },
+    {
+      "id": "PR_kwDOBW5R_c7zDz2u",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore(blog): add Q2 2026 Social Media Review blog post",
+      "author": "Mayaleeeee",
+      "resourcePath": "/asyncapi/website/pull/5632",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 5.169142597486657
     }
   ],
   "goodFirstIssues": [
