@@ -21,22 +21,6 @@
       "score": 24.697014632436254
     },
     {
-      "id": "I_kwDOFdFGUs8AAAABCc6TlA",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Record and release training video based on VIDEO_6_SCRIPT.md",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/training/issues/65",
-      "repo": "asyncapi/training",
-      "labels": [
-        {
-          "name": "microgrant",
-          "color": "708090"
-        }
-      ],
-      "score": 11.48698354997035
-    },
-    {
       "id": "PR_kwDOCHlHJM7srbNz",
       "isPR": true,
       "isAssigned": true,
@@ -134,15 +118,20 @@
       "score": 6.030666363734434
     },
     {
-      "id": "I_kwDOB5hCo88AAAABIvUPKg",
+      "id": "I_kwDOFdFGUs8AAAABCc6TlA",
       "isPR": false,
       "isAssigned": false,
-      "title": "[SECURITY] Malicious versions published via compromised alpha branch - @asyncapi/specs@6.11.2 (latest) and 6.11.2-alpha.1",
-      "author": "LidorMachluf",
-      "resourcePath": "/asyncapi/spec-json-schemas/issues/656",
-      "repo": "asyncapi/spec-json-schemas",
-      "labels": [],
-      "score": 5.743491774985175
+      "title": "Record and release training video based on VIDEO_6_SCRIPT.md",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/training/issues/65",
+      "repo": "asyncapi/training",
+      "labels": [
+        {
+          "name": "microgrant",
+          "color": "708090"
+        }
+      ],
+      "score": 5.536581953846744
     },
     {
       "id": "I_kwDOFLhIt85bebeO",
@@ -170,6 +159,17 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 5.169142597486657
+    },
+    {
+      "id": "I_kwDODdpKDs7_yUer",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Introduce v3 compatibility tests",
+      "author": "Pakisan",
+      "resourcePath": "/asyncapi/tck/issues/247",
+      "repo": "asyncapi/tck",
+      "labels": [],
+      "score": 5.121338307308238
     }
   ],
   "goodFirstIssues": [
