@@ -1,22 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "I_kwDOFLhIt85bebeO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Meeting Banners Storage",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/issues/568",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 18.666348268701817
-    },
-    {
       "id": "I_kwDOBW5R_c6VGYzo",
       "isPR": false,
       "isAssigned": true,
@@ -32,40 +16,79 @@
         {
           "name": "Epic",
           "color": "3E4B9E"
-        },
-        {
-          "name": "bounty",
-          "color": "0e8a16"
         }
       ],
-      "score": 17.804824502454043
+      "score": 24.697014632436254
     },
     {
-      "id": "I_kwDOBW5R_c7eanOA",
-      "isPR": false,
+      "id": "PR_kwDOCHlHJM7srbNz",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: add query Parameters support to javascript websocket client",
+      "author": "batchu5",
+      "resourcePath": "/asyncapi/generator/pull/2142",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 8.615237662477762
+    },
+    {
+      "id": "PR_kwDOBW5R_c7q5bzH",
+      "isPR": true,
       "isAssigned": false,
-      "title": "Proposal: regular Triage/Planning meetings and dedicated github project boards",
-      "author": "princerajpoot20",
-      "resourcePath": "/asyncapi/website/issues/4717",
+      "title": "feat: optimize bundle by replacing react-syntax-highlighter with pris…",
+      "author": "patilpratik1905",
+      "resourcePath": "/asyncapi/website/pull/5599",
       "repo": "asyncapi/website",
       "labels": [
         {
-          "name": "stale",
+          "name": "waiting-for-author",
+          "color": "BDDB3C"
+        }
+      ],
+      "score": 7.179364718731469
+    },
+    {
+      "id": "PR_kwDOE8Qh386xgCvo",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat!: release v6",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/modelina/pull/2362",
+      "repo": "asyncapi/modelina",
+      "labels": [
+        {
+          "name": "released on @next",
           "color": "ededed"
         }
       ],
-      "score": 14.645904026212197
+      "score": 7.179364718731469
     },
     {
-      "id": "I_kwDOFLhIt87jC_4a",
+      "id": "I_kwDODwv8N86pj2gI",
       "isPR": false,
-      "isAssigned": true,
-      "title": "Code of Conduct Nomination - 2026",
-      "author": "Mayaleeeee",
-      "resourcePath": "/asyncapi/community/issues/2236",
-      "repo": "asyncapi/community",
+      "isAssigned": false,
+      "title": "[FEATURE] Agenda Enhancements ( download agenda as PDF )",
+      "author": "om2137",
+      "resourcePath": "/asyncapi/conference-website/issues/553",
+      "repo": "asyncapi/conference-website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 6.605015541232952
+    },
+    {
+      "id": "PR_kwDOCHlHJM73eAIL",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "ci: add issue approval workflows for maintainer triage",
+      "author": "batchu5",
+      "resourcePath": "/asyncapi/generator/pull/2192",
+      "repo": "asyncapi/generator",
       "labels": [],
-      "score": 13.497205671215161
+      "score": 6.605015541232952
     },
     {
       "id": "I_kwDOCHlHJM8AAAABIu0AsQ",
@@ -76,29 +99,23 @@
       "resourcePath": "/asyncapi/generator/issues/2184",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 12.922856493716644
+      "score": 6.505483795769924
     },
     {
-      "id": "I_kwDODdpKDs7_yUer",
+      "id": "I_kwDODou01c7kI0f6",
       "isPR": false,
-      "isAssigned": true,
-      "title": "Introduce v3 compatibility tests",
-      "author": "Pakisan",
-      "resourcePath": "/asyncapi/tck/issues/247",
-      "repo": "asyncapi/tck",
-      "labels": [],
-      "score": 10.625459783722574
-    },
-    {
-      "id": "PR_kwDOBW5R_c7yX8HQ",
-      "isPR": true,
       "isAssigned": false,
-      "title": "chore(blog): miasma Supply Chain Attack Postmortem Blog",
-      "author": "Florence-Njeri",
-      "resourcePath": "/asyncapi/website/pull/5628",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 10.051110606224057
+      "title": "Studio settings should be in dark mode for UI consistency",
+      "author": "Harsh16gupta",
+      "resourcePath": "/asyncapi/studio/issues/1256",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 6.030666363734434
     },
     {
       "id": "I_kwDOFdFGUs8AAAABCc6TlA",
@@ -114,65 +131,45 @@
           "color": "708090"
         }
       ],
-      "score": 9.763936017474798
+      "score": 5.536581953846744
     },
     {
-      "id": "PR_kwDOCHlHJM7cVYGh",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "chore: hardening the GA workflows",
-      "author": "Florence-Njeri",
-      "resourcePath": "/asyncapi/generator/pull/2092",
-      "repo": "asyncapi/generator",
-      "labels": [
-        {
-          "name": "autoupdate",
-          "color": "ededed"
-        }
-      ],
-      "score": 9.476761428725538
-    },
-    {
-      "id": "PR_kwDODwv8N866EXtA",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add image gallery for past conferences",
-      "author": "kajal-jotwani",
-      "resourcePath": "/asyncapi/conference-website/pull/890",
-      "repo": "asyncapi/conference-website",
-      "labels": [],
-      "score": 9.476761428725538
-    },
-    {
-      "id": "I_kwDOFDnrNc6w5oVf",
+      "id": "I_kwDOFLhIt85bebeO",
       "isPR": false,
       "isAssigned": false,
-      "title": "[FEATURE] Reduce number of dependencies and install size (v2.17 needs 1700 dependencies, takes 1.7Gb of space)",
-      "author": "peitschie",
-      "resourcePath": "/asyncapi/cli/issues/1752",
-      "repo": "asyncapi/cli",
+      "title": "Meeting Banners Storage",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/issues/568",
+      "repo": "asyncapi/community",
       "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
         {
           "name": "stale",
           "color": "ededed"
         }
       ],
-      "score": 8.615237662477762
+      "score": 5.360500887514882
     },
     {
-      "id": "I_kwDOFLhIt874rNRL",
+      "id": "PR_kwDOBW5R_c7zDz2u",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore(blog): add Q2 2026 Social Media Review blog post",
+      "author": "Mayaleeeee",
+      "resourcePath": "/asyncapi/website/pull/5632",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 5.169142597486657
+    },
+    {
+      "id": "I_kwDODdpKDs7_yUer",
       "isPR": false,
       "isAssigned": true,
-      "title": "[2026 Goals][S1] Repository Audit & Consolidation (Targets O1, O2)",
-      "author": "princerajpoot20",
-      "resourcePath": "/asyncapi/community/issues/3495",
-      "repo": "asyncapi/community",
+      "title": "Introduce v3 compatibility tests",
+      "author": "Pakisan",
+      "resourcePath": "/asyncapi/tck/issues/247",
+      "repo": "asyncapi/tck",
       "labels": [],
-      "score": 8.328063073728504
+      "score": 5.121338307308238
     }
   ],
   "goodFirstIssues": [
@@ -292,25 +289,6 @@
       ]
     },
     {
-      "id": "I_kwDODou01c7kIx47",
-      "title": "Governance issues is not properly allined.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/studio/issues/1255",
-      "repo": "asyncapi/studio",
-      "author": "Harsh16gupta",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOBW5R_c7gRD8m",
       "title": "Refactor(navbar): Use twMerge for z-index className management instead of template literal",
       "isAssigned": false,
@@ -401,44 +379,6 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCoBobc5zosuk",
-      "title": "Parser do not validate and throw error when `parameters` are provided but address is null",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/parser-js/issues/875",
-      "repo": "asyncapi/parser-js",
-      "author": "derberg",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "keep-open",
-          "color": "fce14b"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODtTERs5wDOAH",
-      "title": "Support decimal min and max",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/java-spring-template/issues/326",
-      "repo": "asyncapi/java-spring-template",
-      "author": "Tenischev",
-      "area": "java",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
