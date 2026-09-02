@@ -20,7 +20,7 @@ const MERMAID_THEME_VARIABLES: Record<MermaidTheme, Record<string, string>> = {
     tertiaryBkg: '#F7F9FA',
     clusterBkg: '#F7F9FA',
     clusterBorder: '#BFC6C7',
-    edgeLabelBackground: '#FFFFFF'
+    edgeLabelBackground: '#FFFFFF',
   },
   dark: {
     primaryColor: '#1E293B',
@@ -38,8 +38,8 @@ const MERMAID_THEME_VARIABLES: Record<MermaidTheme, Record<string, string>> = {
     tertiaryBkg: '#121825',
     clusterBkg: '#121825',
     clusterBorder: '#475569',
-    edgeLabelBackground: '#1E293B'
-  }
+    edgeLabelBackground: '#1E293B',
+  },
 };
 
 // Tracks the theme Mermaid was last initialized with to skip redundant re-initialization.
@@ -65,7 +65,9 @@ interface MermaidDiagramProps {
  * @param {MermaidDiagramProps} props - Component props.
  * @param {string} props.graph - Mermaid graph definition to render.
  */
-export default function MermaidDiagram({ graph }: Readonly<MermaidDiagramProps>) {
+export default function MermaidDiagram({
+  graph,
+}: Readonly<MermaidDiagramProps>) {
   const [svg, setSvg] = useState<string | null>(null);
   const [hasError, setHasError] = useState(false);
   // Lazy initializer reads the DOM once on mount — avoids a wasted light→correct-theme re-render.
@@ -78,7 +80,10 @@ export default function MermaidDiagram({ graph }: Readonly<MermaidDiagramProps>)
       setTheme(getMermaidTheme());
     });
 
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
 
     return () => observer.disconnect();
   }, []);
@@ -101,15 +106,16 @@ export default function MermaidDiagram({ graph }: Readonly<MermaidDiagramProps>)
               theme: 'base',
               securityLevel: 'strict',
               htmlLabels: false,
-              themeVariables: MERMAID_THEME_VARIABLES[theme]
+              themeVariables: MERMAID_THEME_VARIABLES[theme],
             });
           }
 
-          document.getElementById(diagramId)?.remove();
-
-          const { svg: rendered } = await mermaid.render(diagramId, trimmedGraph);
+          const { svg: rendered } = await mermaid.render(
+            diagramId,
+            trimmedGraph,
+          );
           const sanitized = DOMPurify.sanitize(rendered, {
-            USE_PROFILES: { svg: true, svgFilters: true }
+            USE_PROFILES: { svg: true, svgFilters: true },
           });
 
           if (mounted) {
@@ -138,7 +144,9 @@ export default function MermaidDiagram({ graph }: Readonly<MermaidDiagramProps>)
   }, [graph, theme, diagramId]);
 
   if (hasError) {
-    return <p className='text-red-500 text-sm'>Unable to render the diagram.</p>;
+    return (
+      <p className="text-red-500 text-sm">Unable to render the diagram.</p>
+    );
   }
 
   return <div dangerouslySetInnerHTML={{ __html: svg ?? '' }} />;

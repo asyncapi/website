@@ -2,19 +2,6 @@ import { MDXProvider as CoreMDXProvider } from '@mdx-js/react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import React, { useId } from 'react';
-import {
-  TwitterDMButton,
-  TwitterFollowButton,
-  TwitterHashtagButton,
-  TwitterMentionButton,
-  TwitterMomentShare,
-  TwitterOnAirButton,
-  TwitterShareButton,
-  TwitterTimelineEmbed,
-  TwitterTweetEmbed,
-  TwitterVideoEmbed
-} from 'react-twitter-embed';
-import YouTube from 'react-youtube-embed';
 
 import Asyncapi3ChannelComparison from '../Asyncapi3Comparison/Asyncapi3ChannelComparison';
 import Asyncapi3IdAndAddressComparison from '../Asyncapi3Comparison/Asyncapi3IdAndAddressComparison';
@@ -27,8 +14,6 @@ import Button from '../buttons/Button';
 import ChapterSuggestions from '../buttons/ChapterSuggestions';
 import Caption from '../Caption';
 import DocsCards from '../docs/DocsCards';
-import Visualizer from '../docs/Visualizer';
-import CodeBlock from '../editor/CodeBlock';
 import FAQ from '../faq/FAQ';
 import Figure from '../Figure';
 import GeneratorInstallation from '../GeneratorInstallation';
@@ -39,11 +24,39 @@ import Profiles from '../Profiles';
 import Remember from '../Remember';
 import Sponsors from '../sponsors/PlatinumSponsors';
 import Warning from '../Warning';
-import { Table, TableBody, TableCell, TableHeader, TableRow, Thead } from './MDXTable';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHeader,
+  TableRow,
+  Thead,
+} from './MDXTable';
 
 const MermaidDiagram = dynamic(() => import('./MermaidDiagram'), {
   ssr: false,
-  loading: () => <div className='min-h-[100px]' />
+  loading: () => <div className="min-h-[100px]" />,
+});
+
+const TwitterTweetEmbed = dynamic(
+  () =>
+    import('react-twitter-embed').then((mod) => ({
+      default: mod.TwitterTweetEmbed,
+    })),
+  { ssr: false },
+);
+
+const YouTube = dynamic(() => import('react-youtube-embed'), { ssr: false });
+
+const CodeBlock = dynamic(() => import('../editor/CodeBlock'), {
+  loading: () => (
+    <div className="my-8 min-h-[120px] rounded bg-code-editor-dark" />
+  ),
+});
+
+const Visualizer = dynamic(() => import('../docs/Visualizer'), {
+  ssr: false,
+  loading: () => <div className="min-h-[400px]" />,
 });
 
 interface CodeComponentProps {
@@ -61,7 +74,12 @@ interface CodeComponentProps {
  * @param {string} [props.className] - The code block class name.
  * @param {string} [props.metastring] - The code block metastring.
  */
-function CodeComponent({ children, className = '', metastring = '', ...rest }: CodeComponentProps) {
+function CodeComponent({
+  children,
+  className = '',
+  metastring = '',
+  ...rest
+}: Readonly<CodeComponentProps>) {
   let caption;
   const meta = metastring.split(/([\w]+=[\w\d\s\-_:><.]+)/) || [];
 
@@ -74,7 +92,8 @@ function CodeComponent({ children, className = '', metastring = '', ...rest }: C
     }
   });
   const maybeLanguage = className.match(/language-([\w\d\-_]+)/);
-  const language = maybeLanguage && maybeLanguage.length >= 2 ? maybeLanguage[1] : undefined;
+  const language =
+    maybeLanguage && maybeLanguage.length >= 2 ? maybeLanguage[1] : undefined;
 
   if (language === 'mermaid') {
     return <MermaidDiagram graph={children} />;
@@ -124,7 +143,8 @@ function extractText(node: React.ReactNode): string {
   if (node == null || typeof node === 'boolean') return '';
   if (typeof node === 'string' || typeof node === 'number') return String(node);
   if (Array.isArray(node)) return node.map(extractText).join('');
-  if (React.isValidElement(node)) return extractText((node.props as { children?: React.ReactNode }).children);
+  if (React.isValidElement(node))
+    return extractText((node.props as { children?: React.ReactNode }).children);
 
   return '';
 }
@@ -152,9 +172,12 @@ const getMDXComponents = (reactId: string) => ({
       {...props}
       id={props.id || generateSlug(props.children) || `heading-${reactId}`}
       className={`${props.className || ''} my-4 font-heading text-2xl font-semibold tracking-heading dark:text-dark-heading text-gray-900 antialiased`}
-      aria-label={props['aria-label'] ?? (extractText(props.children).trim() ? undefined : 'Section title')}
+      aria-label={
+        props['aria-label'] ??
+        (extractText(props.children).trim() ? undefined : 'Section title')
+      }
     >
-      {props.children || <span className='sr-only'>Section title</span>}
+      {props.children || <span className="sr-only">Section title</span>}
     </h1>
   ),
   h2: (props: React.HTMLProps<HTMLHeadingElement>) => (
@@ -162,9 +185,12 @@ const getMDXComponents = (reactId: string) => ({
       {...props}
       id={props.id || generateSlug(props.children) || `heading-${reactId}`}
       className={`${props.className || ''} mb-4 mt-6 font-heading text-2xl font-semibold tracking-heading  dark:text-dark-heading text-gray-900 antialiased`}
-      aria-label={props['aria-label'] ?? (extractText(props.children).trim() ? undefined : 'Section title')}
+      aria-label={
+        props['aria-label'] ??
+        (extractText(props.children).trim() ? undefined : 'Section title')
+      }
     >
-      {props.children || <span className='sr-only'>Section title</span>}
+      {props.children || <span className="sr-only">Section title</span>}
     </h2>
   ),
   h3: (props: React.HTMLProps<HTMLHeadingElement>) => (
@@ -172,9 +198,12 @@ const getMDXComponents = (reactId: string) => ({
       {...props}
       id={props.id || generateSlug(props.children) || `heading-${reactId}`}
       className={`${props.className || ''} mb-4 mt-6 font-heading text-lg font-medium tracking-heading dark:text-dark-heading text-gray-900 antialiased`}
-      aria-label={props['aria-label'] ?? (extractText(props.children).trim() ? undefined : 'Section title')}
+      aria-label={
+        props['aria-label'] ??
+        (extractText(props.children).trim() ? undefined : 'Section title')
+      }
     >
-      {props.children || <span className='sr-only'>Section title</span>}
+      {props.children || <span className="sr-only">Section title</span>}
     </h3>
   ),
   h4: (props: React.HTMLProps<HTMLHeadingElement>) => (
@@ -182,9 +211,12 @@ const getMDXComponents = (reactId: string) => ({
       {...props}
       id={props.id || generateSlug(props.children) || `heading-${reactId}`}
       className={`${props.className || ''} text-md my-4 font-heading font-medium dark:text-dark-heading text-gray-900 antialiased`}
-      aria-label={props['aria-label'] ?? (extractText(props.children).trim() ? undefined : 'Section title')}
+      aria-label={
+        props['aria-label'] ??
+        (extractText(props.children).trim() ? undefined : 'Section title')
+      }
     >
-      {props.children || <span className='sr-only'>Section title</span>}
+      {props.children || <span className="sr-only">Section title</span>}
     </h4>
   ),
   h5: (props: React.HTMLProps<HTMLHeadingElement>) => (
@@ -192,9 +224,12 @@ const getMDXComponents = (reactId: string) => ({
       {...props}
       id={props.id || generateSlug(props.children) || `heading-${reactId}`}
       className={`${props.className || ''} text-md my-4 font-heading dark:text-dark-heading   font-bold antialiased`}
-      aria-label={props['aria-label'] ?? (extractText(props.children).trim() ? undefined : 'Section title')}
+      aria-label={
+        props['aria-label'] ??
+        (extractText(props.children).trim() ? undefined : 'Section title')
+      }
     >
-      {props.children || <span className='sr-only'>Section title</span>}
+      {props.children || <span className="sr-only">Section title</span>}
     </h5>
   ),
   h6: (props: React.HTMLProps<HTMLHeadingElement>) => (
@@ -202,9 +237,12 @@ const getMDXComponents = (reactId: string) => ({
       {...props}
       id={props.id || generateSlug(props.children) || `heading-${reactId}`}
       className={`${props.className || ''} my-4 font-heading text-sm font-bold uppercase dark:text-dark-heading text-gray-900 antialiased`}
-      aria-label={props['aria-label'] ?? (extractText(props.children).trim() ? undefined : 'Section title')}
+      aria-label={
+        props['aria-label'] ??
+        (extractText(props.children).trim() ? undefined : 'Section title')
+      }
     >
-      {props.children || <span className='sr-only'>Section title</span>}
+      {props.children || <span className="sr-only">Section title</span>}
     </h6>
   ),
   blockquote: (props: React.HTMLProps<HTMLQuoteElement>) => (
@@ -241,7 +279,7 @@ const getMDXComponents = (reactId: string) => ({
     <ol
       {...props}
       className={`${props.className || ''} font-normal my-4 ml-4 list-decimal font-body dark:text-dark-heading text-gray-700 antialiased`}
-      type='1'
+      type="1"
     />
   ),
   li: (props: React.HTMLProps<HTMLLIElement>) => (
@@ -250,11 +288,13 @@ const getMDXComponents = (reactId: string) => ({
       className={`${props.className || ''} my-3 font-body font-regular tracking-tight dark:text-white text-gray-700 antialiased`}
     />
   ),
-  button: Button as React.ComponentType<React.ButtonHTMLAttributes<HTMLButtonElement>>,
+  button: Button as React.ComponentType<
+    React.ButtonHTMLAttributes<HTMLButtonElement>
+  >,
   table: (props: React.HTMLProps<HTMLTableElement>) => (
     <div className={`${props.className || ''} flex flex-col`}>
-      <div className='my-2 overflow-x-auto py-2'>
-        <div className='inline-block min-w-full border-b border-gray-200 dark:border-gray-800 align-middle shadow sm:rounded-lg'>
+      <div className="my-2 overflow-x-auto py-2">
+        <div className="inline-block min-w-full border-b border-gray-200 dark:border-gray-800 align-middle shadow sm:rounded-lg">
           <table {...props} className={`${props.className || ''} w-full`} />
         </div>
       </div>
@@ -267,7 +307,10 @@ const getMDXComponents = (reactId: string) => ({
     />
   ),
   tr: (props: React.HTMLProps<HTMLTableRowElement>) => (
-    <tr {...props} className={`${props.className || ''} bg-white dark:bg-transparent`} />
+    <tr
+      {...props}
+      className={`${props.className || ''} bg-white dark:bg-transparent`}
+    />
   ),
   td: (props: React.HTMLProps<HTMLTableCellElement>) => (
     <td
@@ -275,18 +318,25 @@ const getMDXComponents = (reactId: string) => ({
       className={`${props.className || ''} border-b border-gray-200 dark:border-gray-800 px-6 py-4 text-sm leading-5 tracking-tight text-gray-700 dark:text-gray-300`}
     />
   ),
-  pre: (props: React.HTMLProps<HTMLPreElement>) => CodeComponent((props.children as React.ReactElement)?.props),
+  pre: (props: React.HTMLProps<HTMLPreElement>) =>
+    CodeComponent((props.children as React.ReactElement)?.props),
   code: (props: React.HTMLProps<HTMLElement>) => (
     <code
       {...props}
       className={`${props.className || ''} rounded bg-gray-200 dark:bg-gray-800 px-1 py-0.5 font-mono text-sm text-gray-800 dark:text-gray-300`}
     />
   ),
-  hr: (props: React.HTMLProps<HTMLHRElement>) => <hr {...props} className={`${props.className || ''} my-8`} />,
-  Link: ({ href = '/', children, ...props }: React.HTMLProps<HTMLAnchorElement>) => (
+  hr: (props: React.HTMLProps<HTMLHRElement>) => (
+    <hr {...props} className={`${props.className || ''} my-8`} />
+  ),
+  Link: ({
+    href = '/',
+    children,
+    ...props
+  }: React.HTMLProps<HTMLAnchorElement>) => (
     <Link
       href={href as string}
-      className='border-b border-secondary-400 font-body font-semibold text-gray-900 antialiased transition duration-300 ease-in-out hover:border-secondary-500'
+      className="border-b border-secondary-400 font-body font-semibold text-gray-900 antialiased transition duration-300 ease-in-out hover:border-secondary-500"
       {...props}
     >
       {children}
@@ -299,7 +349,10 @@ const getMDXComponents = (reactId: string) => ({
   Thead,
   Table,
   Dl: ({ className, ...props }: React.HTMLProps<HTMLDListElement>) => (
-    <dl {...props} className={`${className || ''} my-4 font-body antialiased`} />
+    <dl
+      {...props}
+      className={`${className || ''} my-4 font-body antialiased`}
+    />
   ),
   Dt: ({ className, ...props }: React.HTMLProps<HTMLElement>) => (
     <dt
@@ -335,18 +388,9 @@ const getMDXComponents = (reactId: string) => ({
   DocsCards,
   GeneratorInstallation,
   NewsletterSubscribe,
-  TwitterTimelineEmbed,
-  TwitterShareButton,
-  TwitterFollowButton,
-  TwitterHashtagButton,
-  TwitterMentionButton,
   TwitterTweetEmbed,
-  TwitterMomentShare,
-  TwitterDMButton,
-  TwitterVideoEmbed,
-  TwitterOnAirButton,
   Profiles,
-  Visualizer
+  Visualizer,
 });
 
 export const mdxComponents = getMDXComponents;
@@ -364,5 +408,9 @@ interface MDXProviderProps {
 export function MDXProvider({ children }: MDXProviderProps) {
   const reactId = useId();
 
-  return <CoreMDXProvider components={mdxComponents(reactId)}>{children}</CoreMDXProvider>;
+  return (
+    <CoreMDXProvider components={mdxComponents(reactId)}>
+      {children}
+    </CoreMDXProvider>
+  );
 }
