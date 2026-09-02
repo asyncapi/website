@@ -21,6 +21,17 @@
       "score": 24.697014632436254
     },
     {
+      "id": "PR_kwDOBW5R_c7zDz2u",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore(blog): add Q2 2026 Social Media Review blog post",
+      "author": "Mayaleeeee",
+      "resourcePath": "/asyncapi/website/pull/5632",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 8.902412251227021
+    },
+    {
       "id": "PR_kwDOCHlHJM7srbNz",
       "isPR": true,
       "isAssigned": true,
@@ -30,22 +41,6 @@
       "repo": "asyncapi/generator",
       "labels": [],
       "score": 8.615237662477762
-    },
-    {
-      "id": "PR_kwDOBW5R_c7q5bzH",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: optimize bundle by replacing react-syntax-highlighter with pris…",
-      "author": "patilpratik1905",
-      "resourcePath": "/asyncapi/website/pull/5599",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "waiting-for-author",
-          "color": "BDDB3C"
-        }
-      ],
-      "score": 7.179364718731469
     },
     {
       "id": "PR_kwDOE8Qh386xgCvo",
@@ -59,6 +54,22 @@
         {
           "name": "released on @next",
           "color": "ededed"
+        }
+      ],
+      "score": 7.466539307480728
+    },
+    {
+      "id": "PR_kwDOBW5R_c7q5bzH",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: optimize bundle by replacing react-syntax-highlighter with pris…",
+      "author": "patilpratik1905",
+      "resourcePath": "/asyncapi/website/pull/5599",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "waiting-for-author",
+          "color": "BDDB3C"
         }
       ],
       "score": 7.179364718731469
@@ -148,17 +159,6 @@
         }
       ],
       "score": 5.360500887514882
-    },
-    {
-      "id": "PR_kwDOBW5R_c7zDz2u",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore(blog): add Q2 2026 Social Media Review blog post",
-      "author": "Mayaleeeee",
-      "resourcePath": "/asyncapi/website/pull/5632",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 5.169142597486657
     },
     {
       "id": "I_kwDODdpKDs7_yUer",
