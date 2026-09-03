@@ -1,5 +1,17 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/jQM5mEPqiYM/hqdefault.jpg",
+    "title": "AsyncAPI Docs Meeting, 16:00 UTC Wednesday September 2nd 2026",
+    "description": "https://github.com/asyncapi/community/issues/3607.",
+    "videoId": "jQM5mEPqiYM"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/dIjVhUtKBxA/hqdefault.jpg",
+    "title": "AsyncAPI Docs Meeting, 16:00 UTC Wednesday September 2nd 2026",
+    "description": "https://github.com/asyncapi/community/issues/3607.",
+    "videoId": "dIjVhUtKBxA"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/XF_iP5KkHC8/hqdefault.jpg",
     "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday June 16th 2026",
     "description": "https://github.com/asyncapi/community/issues/3570.",
@@ -16,17 +28,5 @@
     "title": "Spec Meeting, 16:00 UTC Wednesday March 25th 2026",
     "description": "https://github.com/asyncapi/community/issues/2319.",
     "videoId": "ku-WyyCT9I8"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/CkfW2GAMTI0/hqdefault.jpg",
-    "title": "Docs Meeting, 15:00 UTC Wednesday March 25th 2026",
-    "description": "https://github.com/asyncapi/community/issues/2323.",
-    "videoId": "CkfW2GAMTI0"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/T8RHRCHtPhs/hqdefault.jpg",
-    "title": "AsyncAPI Website Triage Meeting, 15:30 UTC Wednesday March 18th 2026",
-    "description": "https://github.com/asyncapi/community/issues/2315.",
-    "videoId": "T8RHRCHtPhs"
   }
 ]
