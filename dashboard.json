@@ -145,6 +145,17 @@
       "score": 5.536581953846744
     },
     {
+      "id": "PR_kwDOCHlHJM8AAAABByb3kg",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add outgoing processor support to Dart WebSocket client using port-client-component skill",
+      "author": "Adi-204",
+      "resourcePath": "/asyncapi/generator/pull/2217",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 5.456317186235917
+    },
+    {
       "id": "I_kwDOFLhIt85bebeO",
       "isPR": false,
       "isAssigned": false,
@@ -159,17 +170,6 @@
         }
       ],
       "score": 5.360500887514882
-    },
-    {
-      "id": "I_kwDODdpKDs7_yUer",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Introduce v3 compatibility tests",
-      "author": "Pakisan",
-      "resourcePath": "/asyncapi/tck/issues/247",
-      "repo": "asyncapi/tck",
-      "labels": [],
-      "score": 5.121338307308238
     }
   ],
   "goodFirstIssues": [
