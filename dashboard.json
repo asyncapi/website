@@ -113,22 +113,6 @@
       "score": 6.505483795769924
     },
     {
-      "id": "I_kwDODou01c7kI0f6",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Studio settings should be in dark mode for UI consistency",
-      "author": "Harsh16gupta",
-      "resourcePath": "/asyncapi/studio/issues/1256",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 6.030666363734434
-    },
-    {
       "id": "I_kwDOFdFGUs8AAAABCc6TlA",
       "isPR": false,
       "isAssigned": false,
@@ -170,6 +154,17 @@
         }
       ],
       "score": 5.360500887514882
+    },
+    {
+      "id": "I_kwDODdpKDs7_yUer",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Introduce v3 compatibility tests",
+      "author": "Pakisan",
+      "resourcePath": "/asyncapi/tck/issues/247",
+      "repo": "asyncapi/tck",
+      "labels": [],
+      "score": 5.121338307308238
     }
   ],
   "goodFirstIssues": [
