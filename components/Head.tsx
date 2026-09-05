@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useContext } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import ReactGA from 'react-ga';
 import TagManager from 'react-gtm-module';
 
@@ -50,12 +50,21 @@ export default function HeadComponent({
 
   const currTitle = title ? `${title} | ${permTitle}` : permTitle;
 
-  // enable google analytics
-  if (typeof window !== 'undefined' && window.location.hostname.includes('asyncapi.com')) {
-    TagManager.initialize({ gtmId: 'GTM-T58BTVQ' });
-    ReactGA.initialize('UA-109278936-1');
+  const gaInitialized = useRef(false);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.location.hostname.includes('asyncapi.com')) {
+      return;
+    }
+
+    if (!gaInitialized.current) {
+      TagManager.initialize({ gtmId: 'GTM-T58BTVQ' });
+      ReactGA.initialize('UA-109278936-1');
+      gaInitialized.current = true;
+    }
+
     ReactGA.pageview(window.location.pathname + window.location.search);
-  }
+  }, [path]);
 
   return (
     <Head>
