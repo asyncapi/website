@@ -253,6 +253,20 @@
                     "categories": ["code-first", "framework"],
                     "hasCommercial": false
                 }
+            },
+            {
+                "title": "mqttkit",
+                "description": "Elysia-style application framework for MQTT, written for Bun and TypeScript. Compose broker adapters, ordered middleware, typed topic routes, MQTT 5 RPC, and emit AsyncAPI 3.0 documents from the same route declarations via @mqttkit/asyncapi.",
+                "links": {
+                    "websiteUrl": "https://mqttkit.keyp.dev",
+                    "repoUrl": "https://github.com/keyp-dev/mqttkit"
+                },
+                "filters": {
+                    "language": "TypeScript",
+                    "technology": ["Node.js"],
+                    "categories": ["code-first", "framework"],
+                    "hasCommercial": false
+                }
             }
         ]
     },
