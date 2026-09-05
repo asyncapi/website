@@ -4,10 +4,10 @@ import IconAmbassador from '../icons/Ambassador';
 import IconContributing from '../icons/Contributing';
 import IconDashboard from '../icons/Dashboard';
 import IconGithubOrganization from '../icons/GithubOrganization';
-import IconModelina from '../icons/Modelina';
 import IconNewsroom from '../icons/Newsroom';
 import IconSlack from '../icons/Slack';
 import IconTSC from '../icons/TSC';
+import IconUsersGroup from '../icons/UsersGroup';
 
 interface CommunityItem {
   icon: React.ComponentType<any>;
@@ -53,7 +53,7 @@ const communityItems: CommunityItem[] = [
     description: 'Passionate about APIs? Become an AsyncAPI Ambassador and help shape the future of APIs.'
   },
   {
-    icon: IconModelina,
+    icon: IconUsersGroup,
     title: 'Board Members',
     href: '/community/board',
     description: 'Get to know what is a Board member, how you can become one, and meet our current board members.'
