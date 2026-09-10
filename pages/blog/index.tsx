@@ -17,6 +17,19 @@ import type { IBlogPost } from '@/types/post';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
+const toFilter = [
+  {
+    name: 'type'
+  },
+  {
+    name: 'authors',
+    unique: 'name'
+  },
+  {
+    name: 'tags'
+  }
+];
+
 /**
  * @description The BlogIndexPage is the blog index page of the website.
  */
@@ -39,38 +52,53 @@ export default function BlogIndexPage() {
   );
   const [isClient, setIsClient] = useState(false);
   const [activeTab, setActiveTab] = useState<string>('All Posts');
-  const [currentPage, setCurrentPage] = useState(1);
+  const queryPage = router.isReady && typeof router.query.page === 'string' ? parseInt(router.query.page, 10) : 1;
+  const currentPage = Number.isNaN(queryPage) || queryPage < 1 ? 1 : queryPage;
   const [postsPerPage, setPostsPerPage] = useState(9);
+
+  const handlePageChange = useCallback(
+    (page: number) => {
+      const nextQuery = { ...router.query };
+
+      if (page <= 1) {
+        delete nextQuery.page;
+      } else {
+        nextQuery.page = page.toString();
+      }
+
+      router.push(
+        {
+          pathname: router.pathname,
+          query: nextQuery
+        },
+        undefined,
+        {
+          shallow: true
+        }
+      );
+    },
+    [router]
+  );
 
   const onFilter = useCallback(
     (data: IBlogPost[]) => {
       setPosts(data);
       // Reset tab filter to "All Posts" when dropdown filters are applied
-      if (Object.keys(router.query).length > 0) {
+      const hasFilters = Object.keys(router.query).some((key) => key !== 'page');
+
+      if (hasFilters) {
         setActiveTab('All Posts');
       }
     },
     [router.query]
   );
-  const toFilter = [
-    {
-      name: 'type'
-    },
-    {
-      name: 'authors',
-      unique: 'name'
-    },
-    {
-      name: 'tags'
-    }
-  ];
   const clearFilters = () => {
-    router.push(`${router.pathname}`, undefined, {
+    router.push(router.pathname, undefined, {
       shallow: true
     });
     setActiveTab('All Posts');
   };
-  const showClearFilters = Object.keys(router.query).length > 0;
+  const showClearFilters = Object.keys(router.query).some((key) => key !== 'page');
 
   const description = 'Find the latest and greatest stories from our community';
   const image = '/img/social/blog.webp';
@@ -93,7 +121,7 @@ export default function BlogIndexPage() {
   }, []);
 
   // Filter posts by active tab (only if no dropdown filters are active)
-  const hasDropdownFilters = Object.keys(router.query).length > 0;
+  const hasDropdownFilters = Object.keys(router.query).some((key) => key !== 'page');
   const filteredByTab = posts.filter((post) => {
     // If dropdown filters are active, show all posts (dropdown takes priority)
     if (hasDropdownFilters) return true;
@@ -109,17 +137,30 @@ export default function BlogIndexPage() {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = filteredByTab.slice(indexOfFirstPost, indexOfLastPost);
 
-  // Reset to page 1 when changing tabs, filters, or posts per page
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [activeTab, posts, postsPerPage]);
-
   // Reset tab to "All Posts" when dropdown filters change
   useEffect(() => {
     if (hasDropdownFilters) {
       setActiveTab('All Posts');
     }
   }, [router.query, hasDropdownFilters]);
+
+  // Reset page to 1 (and clean URL) when changing tabs or when filtered posts change
+  const prevActiveTab = React.useRef(activeTab);
+  const prevPosts = React.useRef(posts);
+
+  useEffect(() => {
+    const tabChanged = prevActiveTab.current !== activeTab;
+    const postsChanged = prevPosts.current !== posts;
+
+    prevActiveTab.current = activeTab;
+    prevPosts.current = posts;
+
+    if (tabChanged || postsChanged) {
+      if (router.query.page) {
+        handlePageChange(1);
+      }
+    }
+  }, [activeTab, posts, handlePageChange, router.query.page]);
 
   const tabs = ['All Posts', 'Community', 'Conference', 'Communication', 'Engineering', 'Strategy'];
 
@@ -182,7 +223,14 @@ export default function BlogIndexPage() {
                 {tabs.map((tab) => (
                   <button
                     key={tab}
-                    onClick={() => !hasDropdownFilters && setActiveTab(tab)}
+                    onClick={() => {
+                      if (!hasDropdownFilters) {
+                        setActiveTab(tab);
+                        if (router.query.page) {
+                          handlePageChange(1);
+                        }
+                      }
+                    }}
                     disabled={hasDropdownFilters}
                     className={`rounded-md px-3 py-2 text-sm font-medium transition-all duration-200 
                       whitespace-nowrap ${
@@ -221,7 +269,7 @@ export default function BlogIndexPage() {
                     {/* Mobile Pagination */}
                     <div className='flex sm:hidden items-center justify-between gap-2'>
                       <button
-                        onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                        onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
                         disabled={currentPage === 1}
                         className='flex-1 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-background disabled:opacity-50 disabled:cursor-not-allowed'
                       >
@@ -231,7 +279,7 @@ export default function BlogIndexPage() {
                         Page {currentPage} of {totalPages}
                       </span>
                       <button
-                        onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                        onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
                         disabled={currentPage === totalPages}
                         className='flex-1 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-background disabled:opacity-50 disabled:cursor-not-allowed'
                       >
@@ -244,7 +292,7 @@ export default function BlogIndexPage() {
                       <PaginationComponent
                         currentPage={currentPage}
                         totalPages={totalPages}
-                        onPageChange={setCurrentPage}
+                        onPageChange={handlePageChange}
                         variant='compact'
                       />
                     </div>

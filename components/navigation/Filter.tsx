@@ -34,7 +34,16 @@ export default function Filter<T extends DataObject = DataObject>({
   const [routeQuery, setQuery] = useState<Record<string, string>>({});
 
   useEffect(() => {
-    setQuery(route.query as Record<string, string>);
+    const validKeys = new Set(checks.map((check) => check.name));
+    const filteredQuery: Record<string, string> = {};
+
+    Object.entries(route.query).forEach(([key, value]) => {
+      if (validKeys.has(key) && typeof value === 'string') {
+        filteredQuery[key] = value;
+      }
+    });
+
+    setQuery(filteredQuery);
     applyFilterList(checks, data, setFilters);
     // route.asPath is used as a proxy for route.query because route.query is an object
     // that Next.js recreates on each render, which would cause infinite re-renders.
@@ -73,19 +82,21 @@ export default function Filter<T extends DataObject = DataObject>({
             ...query
           };
 
+          delete newQuery.page;
+
           if (e) {
             newQuery[check.name] = e;
           } else {
             // Remove a specific filter upon clicking Select Placeholder option
             delete newQuery[check.name];
           }
-          if (newQuery) {
-            const queryParams = new URLSearchParams(newQuery as { [key: string]: string }).toString();
 
-            route.push(`${route.pathname}?${queryParams}`, undefined, {
-              shallow: true
-            });
-          }
+          const queryParams = new URLSearchParams(newQuery as { [key: string]: string }).toString();
+          const targetUrl = queryParams ? `${route.pathname}?${queryParams}` : route.pathname;
+
+          route.push(targetUrl, undefined, {
+            shallow: true
+          });
         }}
         selected={selected}
         className={`${className} md:mr-4`}
