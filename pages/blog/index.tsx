@@ -144,23 +144,38 @@ export default function BlogIndexPage() {
     }
   }, [router.query, hasDropdownFilters]);
 
-  // Reset page to 1 (and clean URL) when changing tabs or when filtered posts change
+  // Reset page to 1 when the actual filters or tab change (not when only page changes or on initial load)
   const prevActiveTab = React.useRef(activeTab);
-  const prevPosts = React.useRef(posts);
+  const prevFilterQuery = React.useRef<string | null>(null);
 
   useEffect(() => {
+    if (!router.isReady) return;
+
+    const currentFilterEntries = Object.entries(router.query)
+      .filter(([key]) => key !== 'page')
+      .sort(([a], [b]) => a.localeCompare(b));
+    const currentFilterQuery = JSON.stringify(currentFilterEntries);
+
+    // On initial ready, record the current filter query without triggering a reset
+    if (prevFilterQuery.current === null) {
+      prevFilterQuery.current = currentFilterQuery;
+      prevActiveTab.current = activeTab;
+
+      return;
+    }
+
     const tabChanged = prevActiveTab.current !== activeTab;
-    const postsChanged = prevPosts.current !== posts;
+    const filterChanged = prevFilterQuery.current !== currentFilterQuery;
 
     prevActiveTab.current = activeTab;
-    prevPosts.current = posts;
+    prevFilterQuery.current = currentFilterQuery;
 
-    if (tabChanged || postsChanged) {
+    if (tabChanged || filterChanged) {
       if (router.query.page) {
         handlePageChange(1);
       }
     }
-  }, [activeTab, posts, handlePageChange, router.query.page]);
+  }, [activeTab, router.isReady, router.query, handlePageChange]);
 
   const tabs = ['All Posts', 'Community', 'Conference', 'Communication', 'Engineering', 'Strategy'];
 
