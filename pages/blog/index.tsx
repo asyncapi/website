@@ -52,7 +52,7 @@ export default function BlogIndexPage() {
   );
   const [isClient, setIsClient] = useState(false);
   const [activeTab, setActiveTab] = useState<string>('All Posts');
-  const queryPage = router.isReady && typeof router.query.page === 'string' ? parseInt(router.query.page, 10) : 1;
+  const queryPage = router.isReady && typeof router.query.page === 'string' ? Number.parseInt(router.query.page, 10) : 1;
   const currentPage = Number.isNaN(queryPage) || queryPage < 1 ? 1 : queryPage;
   const [postsPerPage, setPostsPerPage] = useState(9);
 
