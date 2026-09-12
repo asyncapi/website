@@ -80,7 +80,7 @@ export default function NavItem({
         {hasDropdown && (
           <span
             className={`inline-flex size-5 items-center justify-center transition-transform duration-200 ${
-              isOpen ? 'rotate-180' : 'rotate-0'
+              isOpen ? 'rotate-180' : 'group-hover:rotate-180'
             }`}
           >
             <NavItemDropdown />
@@ -97,7 +97,7 @@ export default function NavItem({
       {hasDropdown && (
         <span
           className={`inline-flex size-5 items-center justify-center transition-transform duration-200 ${
-            isOpen ? 'rotate-180' : 'rotate-0'
+            isOpen ? 'rotate-180' : 'group-hover:rotate-180'
           }`}
         >
           <NavItemDropdown />
