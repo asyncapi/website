@@ -1,12 +1,12 @@
 import type React from 'react';
 
-import IconExplorer from '../icons/Explorer';
 import IconGettingStarted from '../icons/GettingStarted';
+import IconLoupe from '../icons/Loupe';
 import IconGuide from '../icons/Guide';
 import IconMigration from '../icons/Migration';
 import IconSpec from '../icons/Spec';
 import IconTutorials from '../icons/Tutorials';
-import IconUseCases from '../icons/UseCases';
+import IconTools from '../icons/Tools';
 import IconUsers from '../icons/Users';
 
 export interface Bucket {
@@ -59,7 +59,7 @@ export const buckets: Bucket[] = [
     className: 'bg-primary-100 dark:bg-primary-500/20 border border-primary-500 text-primary-600 dark:text-primary-300',
     borderClassName: 'border-green-200',
     href: '/docs/tools',
-    icon: IconUseCases
+    icon: IconTools
   },
   {
     name: 'reference',
@@ -98,7 +98,7 @@ export const buckets: Bucket[] = [
     link: '/docs/reference/specification/v3.0.0-explorer',
     className: 'bg-primary-100 dark:bg-primary-500/20 border border-primary-500 text-primary-600 dark:text-primary-300',
     borderClassName: 'border-primary-200',
-    icon: IconExplorer
+    icon: IconLoupe
   }
 ].map((bucket) => {
   return {
