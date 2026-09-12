@@ -17,7 +17,7 @@ export default function IconTools({ className = '' }) {
     >
       <defs>
         <style>
-          {`.cls-1,.cls-2 {fill:none;stroke:#000;}
+          {`.cls-1,.cls-2 {fill:none;stroke:currentColor;}
             .cls-1{stroke-miterlimit:10;}.cls-2{stroke-linecap:round;stroke-linejoin:round;}`}
         </style>
       </defs>

@@ -4,7 +4,7 @@ import React from 'react';
 /**
  * @description Icons for asyncapi website
  */
-export default function IconUsers({ ...rest }) {
+export default function IconMigration({ ...rest }) {
   // <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
   return (
     <svg

@@ -3,10 +3,10 @@ import React from 'react';
 /**
  * @description Icons for asyncapi website
  */
-export default function IconTSC({ className = '' }) {
+export default function IconSpecExplorer({ className = '' }) {
   return (
     <svg
-      className={className || 'inline-block'}
+      className={className}
       width='24'
       height='24'
       viewBox='0 0 24 24'
@@ -17,9 +17,9 @@ export default function IconTSC({ className = '' }) {
       strokeLinejoin='round'
       xmlns='http://www.w3.org/2000/svg'
     >
-      <circle cx='12' cy='12' r='9' />
-      <circle cx='12' cy='12' r='2.2' />
-      <path d='M12 14.2V21M10.1 10.9L4.2 7.5M13.9 10.9l5.9-3.4' />
+      <circle cx='10' cy='10' r='6.5' />
+      <path d='M20 20l-4.3-4.3' />
+      <path d='M7.5 8h5M7.5 10.5h5M7.5 13h3' />
     </svg>
   );
 }
