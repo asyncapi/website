@@ -105,7 +105,7 @@ export default function SneakPeek() {
       </div>
       <div>
         <span className={TEAL}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type:</span>
-        <span className={WHITE}> object</span>
+        <span className={WHITE}> string</span>
       </div>
       <div>
         <span className={TEAL}>
