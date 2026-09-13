@@ -135,6 +135,37 @@ export default function BlogIndexPage() {
   const totalPages = Math.ceil(filteredByTab.length / postsPerPage);
   const rawPage = Number.isNaN(queryPage) || queryPage < 1 ? 1 : queryPage;
   const currentPage = totalPages > 0 ? Math.min(rawPage, totalPages) : 1;
+
+  useEffect(() => {
+    if (!router.isReady || typeof router.query.page !== 'string') return;
+
+    const parsedPage = Number.parseInt(router.query.page, 10);
+
+    if (Number.isNaN(parsedPage) || parsedPage < 1) {
+      const nextQuery = { ...router.query };
+
+      delete nextQuery.page;
+
+      router.replace({ pathname: router.pathname, query: nextQuery }, undefined, { shallow: true });
+
+      return;
+    }
+
+    if (totalPages > 0 && parsedPage > totalPages) {
+      router.replace(
+        {
+          pathname: router.pathname,
+          query: {
+            ...router.query,
+            page: totalPages.toString()
+          }
+        },
+        undefined,
+        { shallow: true }
+      );
+    }
+  }, [router, totalPages]);
+
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = filteredByTab.slice(indexOfFirstPost, indexOfLastPost);
