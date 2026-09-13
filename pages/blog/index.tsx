@@ -52,8 +52,8 @@ export default function BlogIndexPage() {
   );
   const [isClient, setIsClient] = useState(false);
   const [activeTab, setActiveTab] = useState<string>('All Posts');
-  const queryPage = router.isReady && typeof router.query.page === 'string' ? Number.parseInt(router.query.page, 10) : 1;
-  const currentPage = Number.isNaN(queryPage) || queryPage < 1 ? 1 : queryPage;
+  const queryPage =
+    router.isReady && typeof router.query.page === 'string' ? Number.parseInt(router.query.page, 10) : 1;
   const [postsPerPage, setPostsPerPage] = useState(9);
 
   const handlePageChange = useCallback(
@@ -133,6 +133,8 @@ export default function BlogIndexPage() {
 
   // Calculate pagination
   const totalPages = Math.ceil(filteredByTab.length / postsPerPage);
+  const rawPage = Number.isNaN(queryPage) || queryPage < 1 ? 1 : queryPage;
+  const currentPage = totalPages > 0 ? Math.min(rawPage, totalPages) : 1;
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = filteredByTab.slice(indexOfFirstPost, indexOfLastPost);
