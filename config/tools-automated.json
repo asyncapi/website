@@ -14,7 +14,8 @@
           "language": "Python",
           "technology": [
             "Socket.IO",
-            "Flask"
+            "Flask",
+            "asyncio"
           ],
           "categories": [
             "code-first",
@@ -168,7 +169,8 @@
           "language": "Python",
           "technology": [
             "Socket.IO",
-            "Flask"
+            "Flask",
+            "asyncio"
           ],
           "categories": [
             "code-first",
@@ -613,6 +615,27 @@
   "DSL": {
     "description": "Writing YAML by hand is no fun, and maybe you don't want a GUI, so use a Domain Specific Language to write AsyncAPI in your language of choice.",
     "toolsList": [
+      {
+        "title": "tsp-asyncapi",
+        "description": "A TypeSpec emitter that generates AsyncAPI 3.1 specifications. It supports multiple protocol bindings (Kafka, MQTT, AMQP, SQS, etc.) and comprehensive schema generation.",
+        "links": {
+          "websiteUrl": "https://www.npmjs.com/package/tsp-asyncapi",
+          "docsUrl": "https://tsp-asyncapi.marvinhsu.dev/",
+          "repoUrl": "https://github.com/marvin-hsu/tsp-asyncapi"
+        },
+        "filters": {
+          "language": "TypeScript",
+          "technology": [
+            "typespec",
+            "nodejs"
+          ],
+          "categories": [
+            "dsl"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
       {
         "title": "ZenWave SDK",
         "description": "DDD and API-First for Event-Driven Microservices",
