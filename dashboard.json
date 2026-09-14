@@ -16,78 +16,9 @@
         {
           "name": "Epic",
           "color": "3E4B9E"
-        },
-        {
-          "name": "bounty",
-          "color": "0e8a16"
         }
       ],
-      "score": 23.548316277439216
-    },
-    {
-      "id": "I_kwDOCHlHJM8AAAABIu0AsQ",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[SECURITY] Malicious versions published via compromised next branch - @asyncapi/generator@3.3.1, generator-helpers@1.1.1, generator-components@0.7.1",
-      "author": "LidorMachluf",
-      "resourcePath": "/asyncapi/generator/issues/2184",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 13.497205671215161
-    },
-    {
-      "id": "I_kwDOFdFGUs8AAAABCc6TlA",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Record and release training video based on VIDEO_6_SCRIPT.md",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/training/issues/65",
-      "repo": "asyncapi/training",
-      "labels": [
-        {
-          "name": "microgrant",
-          "color": "708090"
-        }
-      ],
-      "score": 11.48698354997035
-    },
-    {
-      "id": "PR_kwDODwv8N866EXtA",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add image gallery for past conferences",
-      "author": "kajal-jotwani",
-      "resourcePath": "/asyncapi/conference-website/pull/890",
-      "repo": "asyncapi/conference-website",
-      "labels": [],
-      "score": 9.763936017474798
-    },
-    {
-      "id": "I_kwDOFLhIt85bebeO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Meeting Banners Storage",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/issues/568",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 8.996945675000958
-    },
-    {
-      "id": "I_kwDOFLhIt874rNRL",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "[2026 Goals][S1] Repository Audit & Consolidation (Targets O1, O2)",
-      "author": "princerajpoot20",
-      "resourcePath": "/asyncapi/community/issues/3495",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 8.615237662477762
+      "score": 24.984189221185513
     },
     {
       "id": "PR_kwDOCHlHJM7srbNz",
@@ -98,7 +29,34 @@
       "resourcePath": "/asyncapi/generator/pull/2142",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 8.040888484979245
+      "score": 9.18958683997628
+    },
+    {
+      "id": "PR_kwDOBW5R_c7zDz2u",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore(blog): add Q2 2026 Social Media Review blog post",
+      "author": "Mayaleeeee",
+      "resourcePath": "/asyncapi/website/pull/5632",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 8.902412251227021
+    },
+    {
+      "id": "PR_kwDOBW5R_c7q5bzH",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: optimize bundle by replacing react-syntax-highlighter with pris…",
+      "author": "patilpratik1905",
+      "resourcePath": "/asyncapi/website/pull/5599",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "waiting-for-author",
+          "color": "BDDB3C"
+        }
+      ],
+      "score": 7.466539307480728
     },
     {
       "id": "PR_kwDOE8Qh386xgCvo",
@@ -114,43 +72,23 @@
           "color": "ededed"
         }
       ],
-      "score": 7.179364718731469
+      "score": 7.466539307480728
     },
     {
-      "id": "PR_kwDOBW5R_c7q5bzH",
+      "id": "PR_kwDOBW5R_c8AAAABASjS2w",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: optimize bundle by replacing react-syntax-highlighter with pris…",
+      "title": "perf: eliminate render-blocking CSS imports and reduce Google Fonts weights",
       "author": "patilpratik1905",
-      "resourcePath": "/asyncapi/website/pull/5599",
+      "resourcePath": "/asyncapi/website/pull/5712",
       "repo": "asyncapi/website",
       "labels": [
-        {
-          "name": "bounty",
-          "color": "0e8a16"
-        },
         {
           "name": "waiting-for-author",
           "color": "BDDB3C"
         }
       ],
-      "score": 7.179364718731469
-    },
-    {
-      "id": "I_kwDOBW5R_c7eanOA",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Proposal: regular Triage/Planning meetings and dedicated github project boards",
-      "author": "princerajpoot20",
-      "resourcePath": "/asyncapi/website/issues/4717",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 7.059141991154598
+      "score": 6.89219012998221
     },
     {
       "id": "I_kwDODwv8N86pj2gI",
@@ -177,25 +115,64 @@
       "resourcePath": "/asyncapi/generator/pull/2192",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 6.317840952483692
+      "score": 6.605015541232952
+    },
+    {
+      "id": "I_kwDOCHlHJM8AAAABIu0AsQ",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[SECURITY] Malicious versions published via compromised next branch - @asyncapi/generator@3.3.1, generator-helpers@1.1.1, generator-components@0.7.1",
+      "author": "LidorMachluf",
+      "resourcePath": "/asyncapi/generator/issues/2184",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 6.505483795769924
+    },
+    {
+      "id": "PR_kwDOBW5R_c74W35w",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "perf: lazy-load Mermaid, YouTube, and TwitterTweetEmbed to reduce bundle size",
+      "author": "patilpratik1905",
+      "resourcePath": "/asyncapi/website/pull/5667",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "waiting-for-author",
+          "color": "BDDB3C"
+        }
+      ],
+      "score": 6.030666363734434
+    },
+    {
+      "id": "PR_kwDOCHlHJM8AAAABByb3kg",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add outgoing processor support to Dart WebSocket client using port-client-component skill",
+      "author": "Adi-204",
+      "resourcePath": "/asyncapi/generator/pull/2217",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 6.030666363734434
+    },
+    {
+      "id": "I_kwDOFdFGUs8AAAABCc6TlA",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Record and release training video based on VIDEO_6_SCRIPT.md",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/training/issues/65",
+      "repo": "asyncapi/training",
+      "labels": [
+        {
+          "name": "microgrant",
+          "color": "708090"
+        }
+      ],
+      "score": 5.536581953846744
     }
   ],
   "goodFirstIssues": [
-    {
-      "id": "I_kwDODwv8N88AAAABFFvB1w",
-      "title": "[DESIGN]: Navbar & Footer Layout Issues",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/conference-website/issues/1029",
-      "repo": "asyncapi/conference-website",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
     {
       "id": "I_kwDOFttfzM8AAAABAGs3PA",
       "title": "Project maintenance status + request for .NET 10 support and dependency upgrades",
@@ -387,25 +364,6 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOIUldZc5XXsGH",
-      "title": "Filter out application which are not in use",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/EDAVisualiser/issues/14",
-      "repo": "asyncapi/EDAVisualiser",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     }
