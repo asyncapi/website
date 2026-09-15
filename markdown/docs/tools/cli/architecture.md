@@ -72,7 +72,7 @@ src/
 - **Core:** `validate`, `convert`, `format`, `optimize`, `diff`, `bundle`
 - **Generation:** `generate client`, `generate models`, `generate fromTemplate`
 - **Config:** `config context`, `config analytics`, `config versions`
-- **Utility:** `new file`, `new template`, `start api|studio|preview`, `pretty`
+- **Utility:** `new file`, `new template`, `start api|studio|preview`, `pretty` (Studio for `start studio`/`preview` is installed on-demand, not bundled)
 
 ### API Server
 
