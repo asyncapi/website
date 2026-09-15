@@ -91,22 +91,6 @@
       "score": 6.89219012998221
     },
     {
-      "id": "I_kwDODwv8N86pj2gI",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[FEATURE] Agenda Enhancements ( download agenda as PDF )",
-      "author": "om2137",
-      "resourcePath": "/asyncapi/conference-website/issues/553",
-      "repo": "asyncapi/conference-website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 6.605015541232952
-    },
-    {
       "id": "PR_kwDOCHlHJM73eAIL",
       "isPR": true,
       "isAssigned": false,
@@ -170,6 +154,22 @@
         }
       ],
       "score": 5.536581953846744
+    },
+    {
+      "id": "PR_kwDOBW5R_c8AAAABAo9Kqw",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "perf: defer GTM, remove react-ga, and deduplicate buttons.js script",
+      "author": "patilpratik1905",
+      "resourcePath": "/asyncapi/website/pull/5718",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "waiting-for-author",
+          "color": "BDDB3C"
+        }
+      ],
+      "score": 5.456317186235917
     }
   ],
   "goodFirstIssues": [
