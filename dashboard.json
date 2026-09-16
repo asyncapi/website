@@ -21,6 +21,17 @@
       "score": 24.984189221185513
     },
     {
+      "id": "I_kwDODdpKDs7_yUer",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Introduce v3 compatibility tests",
+      "author": "Pakisan",
+      "resourcePath": "/asyncapi/tck/issues/247",
+      "repo": "asyncapi/tck",
+      "labels": [],
+      "score": 10.625459783722574
+    },
+    {
       "id": "PR_kwDOCHlHJM7srbNz",
       "isPR": true,
       "isAssigned": true,
@@ -29,7 +40,7 @@
       "resourcePath": "/asyncapi/generator/pull/2142",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 9.18958683997628
+      "score": 9.476761428725538
     },
     {
       "id": "PR_kwDOBW5R_c7zDz2u",
@@ -154,22 +165,6 @@
         }
       ],
       "score": 5.536581953846744
-    },
-    {
-      "id": "PR_kwDOBW5R_c8AAAABAo9Kqw",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "perf: defer GTM, remove react-ga, and deduplicate buttons.js script",
-      "author": "patilpratik1905",
-      "resourcePath": "/asyncapi/website/pull/5718",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "waiting-for-author",
-          "color": "BDDB3C"
-        }
-      ],
-      "score": 5.456317186235917
     }
   ],
   "goodFirstIssues": [
