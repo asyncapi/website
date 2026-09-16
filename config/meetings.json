@@ -56,10 +56,17 @@
     "date": "2026-09-15T15:00:00.000Z"
   },
   {
-    "title": "AsyncAPI Docs Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=bjJrZnN0cXRrNWhlNGVpaXQ3cXVrOTZxNnMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/3624",
+    "title": " AsyncAPI Docs Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=YzJub2trMWY0MWtwZmo4M28wZ2luajFncnMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/3628",
     "banner": "",
-    "date": "2026-09-29T16:00:00.000Z"
+    "date": "2026-09-30T16:00:00.000Z"
+  },
+  {
+    "title": " AsyncAPI Community WG Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=NDdramFjNWdtbjdvYjBhZTZoN2Y3ZHN1ZjAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/3629",
+    "banner": "https://github.com/user-attachments/assets/b4e255b8-5c7e-4821-82c9-3bcbc18b68ef",
+    "date": "2026-10-06T15:00:00.000Z"
   }
 ]
