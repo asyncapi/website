@@ -5,6 +5,7 @@ import type { ExpenseItem, ExpensesLinkItem } from '@/types/FinancialSummary/Bar
 
 import ExpensesData from '../../config/finance/json-data/Expenses.json';
 import ExpensesLinkData from '../../config/finance/json-data/ExpensesLink.json';
+import { filterExpenses } from '../../utils/filterExpenses';
 import { getUniqueCategories } from '../../utils/getUniqueCategories';
 import CustomTooltip from './CustomTooltip';
 import ExpensesCard from './ExpensesCard';
@@ -111,11 +112,8 @@ export default function BarChartComponent() {
   }, []);
 
   // Filtering data based on selected month and category (code 2 - active)
-  const filteredData: ExpenseItem[] = Object.entries(ExpensesData).flatMap(([month, entries]) =>
-    selectedMonth === 'All Months' || selectedMonth === month
-      ? entries.filter((entry) => selectedCategory === 'All Categories' || entry.Category === selectedCategory)
-      : []
-  );
+  const filteredExpenses = filterExpenses(ExpensesData, selectedCategory, selectedMonth);
+  const filteredData: ExpenseItem[] = Object.values(filteredExpenses).flat();
 
   // // --- if previous-years support is enabled: Uncomment code block given below
   // // const filteredData: ExpenseItem[] = Object.entries(currentExpensesData).flatMap(([month, entries]) =>
@@ -245,7 +243,7 @@ export default function BarChartComponent() {
             </BarChart>
           )}
         </div>
-        {isMounted && windowWidth < 900 ? <ExpensesCard /> : null}
+        {isMounted && windowWidth < 900 ? <ExpensesCard expenses={filteredExpenses} /> : null}
       </div>
     </div>
   );
