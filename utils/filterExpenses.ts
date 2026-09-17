@@ -7,9 +7,13 @@ export function filterExpenses(expenses: Expenses, selectedCategory: string, sel
   return Object.fromEntries(
     Object.entries(expenses)
       .filter(([month]) => selectedMonth === 'All Months' || selectedMonth === month)
-      .map(([month, entries]) => [
-        month,
-        entries.filter((entry) => selectedCategory === 'All Categories' || entry.Category === selectedCategory)
-      ])
+      .map(([month, entries]) => {
+        const filteredEntries = entries.filter(
+          (entry) => selectedCategory === 'All Categories' || entry.Category === selectedCategory
+        );
+
+        return [month, filteredEntries] as const;
+      })
+      .filter(([, entries]) => entries.length > 0)
   );
 }

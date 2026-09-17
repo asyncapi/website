@@ -23,6 +23,12 @@ describe('filterExpenses', () => {
     });
   });
 
+  it('drops month groups that have no matching expenses', () => {
+    expect(filterExpenses(expenses, 'Infrastructure', 'All Months')).toEqual({
+      February: [{ Category: 'Infrastructure', Amount: '400' }]
+    });
+  });
+
   it('returns only the selected month', () => {
     expect(filterExpenses(expenses, 'All Categories', 'February')).toEqual({
       February: [
