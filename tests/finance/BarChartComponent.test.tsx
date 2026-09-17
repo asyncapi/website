@@ -78,94 +78,58 @@ function renderDesktop(selectedCategory: string, selectedMonth: string) {
   return markup;
 }
 
-describe('BarChartComponent desktop chart', () => {
+describe('BarChartComponent filter boundaries', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
 
-  it('applies the category filter to the total and chart data', () => {
-    const markup = renderDesktop('Marketing', 'All Months');
+  it.each([
+    {
+      name: 'category',
+      category: 'Marketing',
+      month: 'All Months',
+      desktopIncluded: ['$400.00', 'Marketing: 400'],
+      desktopExcluded: ['Travel:', 'Infrastructure:'],
+      mobileIncluded: ['January', 'February', '$100', '$300'],
+      mobileExcluded: ['March', 'Travel', 'Infrastructure']
+    },
+    {
+      name: 'month',
+      category: 'All Categories',
+      month: 'February',
+      desktopIncluded: ['$700.00', 'Marketing: 300', 'Infrastructure: 400'],
+      desktopExcluded: ['Travel:'],
+      mobileIncluded: ['February', 'Marketing', 'Infrastructure'],
+      mobileExcluded: ['January', 'March']
+    },
+    {
+      name: 'combined category and month',
+      category: 'Infrastructure',
+      month: 'February',
+      desktopIncluded: ['$400.00', 'Infrastructure: 400'],
+      desktopExcluded: ['Marketing:', 'Travel:'],
+      mobileIncluded: ['February', 'Infrastructure', '$400'],
+      mobileExcluded: ['Marketing']
+    },
+    {
+      name: 'All',
+      category: 'All Categories',
+      month: 'All Months',
+      desktopIncluded: ['$1500.00', 'Marketing: 400', 'Travel: 700', 'Infrastructure: 400'],
+      desktopExcluded: [],
+      mobileIncluded: ['January', 'February', 'March', 'Marketing', 'Travel', 'Infrastructure', '$100', '$500'],
+      mobileExcluded: []
+    }
+  ])(
+    'applies $name filters to both desktop and mobile output',
+    ({ category, month, desktopIncluded, desktopExcluded, mobileIncluded, mobileExcluded }) => {
+      const desktopMarkup = renderDesktop(category, month);
+      const mobileMarkup = renderMobile(category, month);
 
-    expect(markup).toContain('$400.00');
-    expect(markup).toContain('Marketing: 400');
-    expect(markup).not.toContain('Travel:');
-    expect(markup).not.toContain('Infrastructure:');
-  });
-
-  it('applies the month filter to the total and chart data', () => {
-    const markup = renderDesktop('All Categories', 'February');
-
-    expect(markup).toContain('$700.00');
-    expect(markup).toContain('Marketing: 300');
-    expect(markup).toContain('Infrastructure: 400');
-    expect(markup).not.toContain('Travel:');
-  });
-
-  it('applies combined category and month filters to the total and chart data', () => {
-    const markup = renderDesktop('Infrastructure', 'February');
-
-    expect(markup).toContain('$400.00');
-    expect(markup).toContain('Infrastructure: 400');
-    expect(markup).not.toContain('Marketing:');
-    expect(markup).not.toContain('Travel:');
-  });
-
-  it('includes every expense in the total and chart data for the All filters', () => {
-    const markup = renderDesktop('All Categories', 'All Months');
-
-    expect(markup).toContain('$1500.00');
-    expect(markup).toContain('Marketing: 400');
-    expect(markup).toContain('Travel: 700');
-    expect(markup).toContain('Infrastructure: 400');
-  });
-});
-
-describe('BarChartComponent mobile expenses', () => {
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
-
-  it('passes category-filtered expenses to the mobile cards', () => {
-    const markup = renderMobile('Marketing', 'All Months');
-
-    expect(markup).toContain('January');
-    expect(markup).toContain('February');
-    expect(markup).not.toContain('March');
-    expect(markup).toContain('$100');
-    expect(markup).toContain('$300');
-    expect(markup).not.toContain('Travel');
-    expect(markup).not.toContain('Infrastructure');
-  });
-
-  it('passes month-filtered expenses to the mobile cards', () => {
-    const markup = renderMobile('All Categories', 'February');
-
-    expect(markup).not.toContain('January');
-    expect(markup).toContain('February');
-    expect(markup).not.toContain('March');
-    expect(markup).toContain('Marketing');
-    expect(markup).toContain('Infrastructure');
-  });
-
-  it('passes combined category and month filters to the mobile cards', () => {
-    const markup = renderMobile('Infrastructure', 'February');
-
-    expect(markup).toContain('February');
-    expect(markup).toContain('Infrastructure');
-    expect(markup).toContain('$400');
-    expect(markup).not.toContain('Marketing');
-  });
-
-  it('passes every expense to the mobile cards for the All filters', () => {
-    const markup = renderMobile('All Categories', 'All Months');
-
-    expect(markup).toContain('January');
-    expect(markup).toContain('February');
-    expect(markup).toContain('March');
-    expect(markup).toContain('Marketing');
-    expect(markup).toContain('Travel');
-    expect(markup).toContain('Infrastructure');
-    expect(markup).toContain('$100');
-    expect(markup).toContain('$500');
-  });
+      desktopIncluded.forEach((value) => expect(desktopMarkup).toContain(value));
+      desktopExcluded.forEach((value) => expect(desktopMarkup).not.toContain(value));
+      mobileIncluded.forEach((value) => expect(mobileMarkup).toContain(value));
+      mobileExcluded.forEach((value) => expect(mobileMarkup).not.toContain(value));
+    }
+  );
 });
