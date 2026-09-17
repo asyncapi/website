@@ -54,6 +54,17 @@
       "score": 8.902412251227021
     },
     {
+      "id": "I_kwDOFLhIt874rNRL",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "[2026 Goals][S1] Repository Audit & Consolidation (Targets O1, O2)",
+      "author": "princerajpoot20",
+      "resourcePath": "/asyncapi/community/issues/3495",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 8.615237662477762
+    },
+    {
       "id": "PR_kwDOBW5R_c7q5bzH",
       "isPR": true,
       "isAssigned": false,
@@ -149,22 +160,6 @@
       "repo": "asyncapi/generator",
       "labels": [],
       "score": 6.030666363734434
-    },
-    {
-      "id": "I_kwDOFdFGUs8AAAABCc6TlA",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Record and release training video based on VIDEO_6_SCRIPT.md",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/training/issues/65",
-      "repo": "asyncapi/training",
-      "labels": [
-        {
-          "name": "microgrant",
-          "color": "708090"
-        }
-      ],
-      "score": 5.536581953846744
     }
   ],
   "goodFirstIssues": [
