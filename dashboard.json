@@ -18,7 +18,7 @@
           "color": "3E4B9E"
         }
       ],
-      "score": 24.984189221185513
+      "score": 25.27136380993477
     },
     {
       "id": "I_kwDODdpKDs7_yUer",
@@ -41,6 +41,26 @@
       "repo": "asyncapi/generator",
       "labels": [],
       "score": 9.476761428725538
+    },
+    {
+      "id": "I_kwDOCHlHJM61Y1X2",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "explore how to handle `reply` operation in code generation",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/generator/issues/1547",
+      "repo": "asyncapi/generator",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 8.902412251227021
     },
     {
       "id": "PR_kwDOBW5R_c7zDz2u",
@@ -113,17 +133,6 @@
       "score": 6.89219012998221
     },
     {
-      "id": "PR_kwDOCHlHJM73eAIL",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "ci: add issue approval workflows for maintainer triage",
-      "author": "batchu5",
-      "resourcePath": "/asyncapi/generator/pull/2192",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 6.605015541232952
-    },
-    {
       "id": "I_kwDOCHlHJM8AAAABIu0AsQ",
       "isPR": false,
       "isAssigned": false,
@@ -151,15 +160,20 @@
       "score": 6.030666363734434
     },
     {
-      "id": "PR_kwDOCHlHJM8AAAABByb3kg",
-      "isPR": true,
+      "id": "I_kwDOFdFGUs8AAAABCc6TlA",
+      "isPR": false,
       "isAssigned": false,
-      "title": "feat: add outgoing processor support to Dart WebSocket client using port-client-component skill",
-      "author": "Adi-204",
-      "resourcePath": "/asyncapi/generator/pull/2217",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 6.030666363734434
+      "title": "Record and release training video based on VIDEO_6_SCRIPT.md",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/training/issues/65",
+      "repo": "asyncapi/training",
+      "labels": [
+        {
+          "name": "microgrant",
+          "color": "708090"
+        }
+      ],
+      "score": 5.536581953846744
     }
   ],
   "goodFirstIssues": [
