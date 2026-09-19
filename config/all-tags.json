@@ -213,6 +213,11 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
+      "name": "asyncio",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
       "name": "Babel",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
@@ -224,6 +229,11 @@
     },
     {
       "name": "FastAPI",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "Go",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },

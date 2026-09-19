@@ -48,7 +48,6 @@ Contrary to popular belief, **contributions are not limited to code**. At AsyncA
 - If you are contributing to the community repository, review the [technical writer onboarding guide](../000-onboarding/technical-writer-onboarding-guide). 
 - For other repositories, refer to the [general contribution guidelines](https://github.com/asyncapi/community/blob/master/CONTRIBUTING.md).
 - Look through existing issues and pull requests to understand the repository better.
-- Check the [general roadmap](https://www.asyncapi.com/roadmap).
 
 ### Steps to making a good contribution
 1. Set up your workflow environment using the [git workflow guide](git-workflow).

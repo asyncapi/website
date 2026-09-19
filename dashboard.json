@@ -16,51 +16,29 @@
         {
           "name": "Epic",
           "color": "3E4B9E"
-        },
-        {
-          "name": "bounty",
-          "color": "0e8a16"
         }
       ],
-      "score": 18.953522857451077
+      "score": 25.27136380993477
     },
     {
-      "id": "I_kwDOFLhIt87jC_4a",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Code of Conduct Nomination - 2026",
-      "author": "Mayaleeeee",
-      "resourcePath": "/asyncapi/community/issues/2236",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 14.358729437462937
-    },
-    {
-      "id": "I_kwDOCHlHJM8AAAABIu0AsQ",
+      "id": "MDU6SXNzdWU4NzE2MjU2MDk=",
       "isPR": false,
       "isAssigned": false,
-      "title": "[SECURITY] Malicious versions published via compromised next branch - @asyncapi/generator@3.3.1, generator-helpers@1.1.1, generator-components@0.7.1",
-      "author": "LidorMachluf",
-      "resourcePath": "/asyncapi/generator/issues/2184",
+      "title": "Make it possible to generate only given template files",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/generator/issues/581",
       "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 12.922856493716644
-    },
-    {
-      "id": "I_kwDOFdFGUs8AAAABCc6TlA",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Record and release training video based on VIDEO_6_SCRIPT.md",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/training/issues/65",
-      "repo": "asyncapi/training",
       "labels": [
         {
-          "name": "microgrant",
-          "color": "708090"
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ],
-      "score": 11.199808961221091
+      "score": 11.48698354997035
     },
     {
       "id": "I_kwDODdpKDs7_yUer",
@@ -74,47 +52,46 @@
       "score": 10.625459783722574
     },
     {
-      "id": "PR_kwDODwv8N866EXtA",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add image gallery for past conferences",
-      "author": "kajal-jotwani",
-      "resourcePath": "/asyncapi/conference-website/pull/890",
-      "repo": "asyncapi/conference-website",
-      "labels": [],
-      "score": 9.763936017474798
-    },
-    {
-      "id": "PR_kwDOCHlHJM7cVYGh",
+      "id": "PR_kwDOCHlHJM7srbNz",
       "isPR": true,
       "isAssigned": true,
-      "title": "chore: hardening the GA workflows",
-      "author": "Florence-Njeri",
-      "resourcePath": "/asyncapi/generator/pull/2092",
+      "title": "feat: add query Parameters support to javascript websocket client",
+      "author": "batchu5",
+      "resourcePath": "/asyncapi/generator/pull/2142",
       "repo": "asyncapi/generator",
-      "labels": [
-        {
-          "name": "autoupdate",
-          "color": "ededed"
-        }
-      ],
+      "labels": [],
       "score": 9.476761428725538
     },
     {
-      "id": "I_kwDOFLhIt85bebeO",
+      "id": "I_kwDOCHlHJM61Y1X2",
       "isPR": false,
-      "isAssigned": false,
-      "title": "Meeting Banners Storage",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/issues/568",
-      "repo": "asyncapi/community",
+      "isAssigned": true,
+      "title": "explore how to handle `reply` operation in code generation",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/generator/issues/1547",
+      "repo": "asyncapi/generator",
       "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
         {
           "name": "stale",
           "color": "ededed"
         }
       ],
-      "score": 8.996945675000958
+      "score": 8.902412251227021
+    },
+    {
+      "id": "PR_kwDOBW5R_c7zDz2u",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore(blog): add Q2 2026 Social Media Review blog post",
+      "author": "Mayaleeeee",
+      "resourcePath": "/asyncapi/website/pull/5632",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 8.902412251227021
     },
     {
       "id": "I_kwDOFLhIt874rNRL",
@@ -128,69 +105,82 @@
       "score": 8.615237662477762
     },
     {
-      "id": "I_kwDOFDnrNc6w5oVf",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[FEATURE] Reduce number of dependencies and install size (v2.17 needs 1700 dependencies, takes 1.7Gb of space)",
-      "author": "peitschie",
-      "resourcePath": "/asyncapi/cli/issues/1752",
-      "repo": "asyncapi/cli",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 8.615237662477762
-    },
-    {
-      "id": "PR_kwDOCHlHJM7tUbTp",
+      "id": "PR_kwDOBW5R_c7q5bzH",
       "isPR": true,
-      "isAssigned": true,
-      "title": "fix: release and pin generator dependencies",
-      "author": "Stanzilla",
-      "resourcePath": "/asyncapi/generator/pull/2143",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 8.040888484979245
-    },
-    {
-      "id": "I_kwDOBW5R_c7eanOA",
-      "isPR": false,
       "isAssigned": false,
-      "title": "Proposal: regular Triage/Planning meetings and dedicated github project boards",
-      "author": "princerajpoot20",
-      "resourcePath": "/asyncapi/website/issues/4717",
+      "title": "feat: optimize bundle by replacing react-syntax-highlighter with pris…",
+      "author": "patilpratik1905",
+      "resourcePath": "/asyncapi/website/pull/5599",
       "repo": "asyncapi/website",
       "labels": [
         {
-          "name": "stale",
+          "name": "waiting-for-author",
+          "color": "BDDB3C"
+        }
+      ],
+      "score": 7.466539307480728
+    },
+    {
+      "id": "PR_kwDOE8Qh386xgCvo",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat!: release v6",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/modelina/pull/2362",
+      "repo": "asyncapi/modelina",
+      "labels": [
+        {
+          "name": "released on @next",
           "color": "ededed"
         }
       ],
-      "score": 7.059141991154598
+      "score": 7.466539307480728
+    },
+    {
+      "id": "PR_kwDOBW5R_c8AAAABASjS2w",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "perf: eliminate render-blocking CSS imports and reduce Google Fonts weights",
+      "author": "patilpratik1905",
+      "resourcePath": "/asyncapi/website/pull/5712",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "waiting-for-author",
+          "color": "BDDB3C"
+        }
+      ],
+      "score": 6.89219012998221
+    },
+    {
+      "id": "I_kwDOCHlHJM8AAAABIu0AsQ",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[SECURITY] Malicious versions published via compromised next branch - @asyncapi/generator@3.3.1, generator-helpers@1.1.1, generator-components@0.7.1",
+      "author": "LidorMachluf",
+      "resourcePath": "/asyncapi/generator/issues/2184",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 6.505483795769924
+    },
+    {
+      "id": "PR_kwDOBW5R_c74W35w",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "perf: lazy-load Mermaid, YouTube, and TwitterTweetEmbed to reduce bundle size",
+      "author": "patilpratik1905",
+      "resourcePath": "/asyncapi/website/pull/5667",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "waiting-for-author",
+          "color": "BDDB3C"
+        }
+      ],
+      "score": 6.030666363734434
     }
   ],
   "goodFirstIssues": [
-    {
-      "id": "I_kwDODwv8N88AAAABFFvB1w",
-      "title": "[DESIGN]: Navbar & Footer Layout Issues",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/conference-website/issues/1029",
-      "repo": "asyncapi/conference-website",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
     {
       "id": "I_kwDOFttfzM8AAAABAGs3PA",
       "title": "Project maintenance status + request for .NET 10 support and dependency upgrades",
@@ -292,25 +282,6 @@
       ]
     },
     {
-      "id": "I_kwDODou01c7kIx47",
-      "title": "Governance issues is not properly allined.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/studio/issues/1255",
-      "repo": "asyncapi/studio",
-      "author": "Harsh16gupta",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOBW5R_c7gRD8m",
       "title": "Refactor(navbar): Use twMerge for z-index className management instead of template literal",
       "isAssigned": false,
@@ -401,44 +372,6 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODtTERs5wDOAH",
-      "title": "Support decimal min and max",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/java-spring-template/issues/326",
-      "repo": "asyncapi/java-spring-template",
-      "author": "Tenischev",
-      "area": "java",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOIUldZc5XXsGH",
-      "title": "Filter out application which are not in use",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/EDAVisualiser/issues/14",
-      "repo": "asyncapi/EDAVisualiser",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     }
