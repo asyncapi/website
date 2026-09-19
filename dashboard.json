@@ -21,6 +21,26 @@
       "score": 25.27136380993477
     },
     {
+      "id": "MDU6SXNzdWU4NzE2MjU2MDk=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Make it possible to generate only given template files",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/generator/issues/581",
+      "repo": "asyncapi/generator",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 11.48698354997035
+    },
+    {
       "id": "I_kwDODdpKDs7_yUer",
       "isPR": false,
       "isAssigned": true,
@@ -158,22 +178,6 @@
         }
       ],
       "score": 6.030666363734434
-    },
-    {
-      "id": "I_kwDOFdFGUs8AAAABCc6TlA",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Record and release training video based on VIDEO_6_SCRIPT.md",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/training/issues/65",
-      "repo": "asyncapi/training",
-      "labels": [
-        {
-          "name": "microgrant",
-          "color": "708090"
-        }
-      ],
-      "score": 5.536581953846744
     }
   ],
   "goodFirstIssues": [
