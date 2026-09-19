@@ -15,7 +15,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda
     byline: Community Builder and Open Source Fanatic!
 excerpt: 'Time to present candidates for the 2026 AsyncAPI Governance Board Elections.'
-featured: true
 ---
 
 The AsyncAPI Initiative is thrilled to announce the candidates for our 2026 Governance Board elections! This is an exciting opportunity to shape the future direction of our project and community. Whether you're a long-time contributor or new to the ecosystem, your vote matters.

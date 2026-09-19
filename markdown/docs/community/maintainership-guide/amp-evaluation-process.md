@@ -51,4 +51,4 @@ _Note: If one or more contributors do not pass, their portion is redistributed a
 
 Once your evaluation is marked as “pass,” you will be eligible to request your stipend via the [AsyncAPI Mentorship Open Collective](https://opencollective.com/asyncapi/projects/asyncapi-mentorship) page.
 
-Please allow **a few business days** for your payment to be processed after submission. If you’re unsure how to submit your expense, [refer to this guide](../stipend-and-payments/disbursement).
+Please allow **a few business days** for your payment to be processed after submission. If you’re unsure how to submit your expense, [refer to this guide](https://www.asyncapi.com/docs/community/maintainership-guide/amp-payments-disbursement).

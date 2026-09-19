@@ -12,6 +12,7 @@ import DocsContext from '../../context/DocsContext';
 import { getAllPosts } from '../../utils/api';
 import Button from '../buttons/Button';
 import DocsButton from '../buttons/DocsButton';
+import ErrorBoundary from '../error/ErrorBoundary';
 import Feedback from '../Feedback';
 import Head from '../Head';
 import ArrowRight from '../icons/ArrowRight';
@@ -111,7 +112,9 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
           />
           {explorerDocMenu && <div className='explorer-menu-wrapper mt-2'>{sidebar}</div>}
         </div>
-        <article>{children}</article>
+        <article>
+          <ErrorBoundary contextualLabel='content'>{children}</ErrorBoundary>
+        </article>
       </div>
     );
   }
@@ -200,7 +203,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                   )}
                   <article className='my-12 overflow-x-auto'>
                     <Head title={post.title} description={post.excerpt} image={post.cover} />
-                    {children}
+                    <ErrorBoundary contextualLabel='content'>{children}</ErrorBoundary>
                   </article>
                   <div>
                     <DocsButton post={post} />

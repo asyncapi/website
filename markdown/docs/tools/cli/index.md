@@ -22,7 +22,7 @@ The AsyncAPI CLI offers the following key features:
 
 * Optimize: Using [Optimizer](https://github.com/asyncapi/optimizer/), the AsyncAPI CLI can be used to optimize an AsyncAPI specification file which can optimize the structure of the AsyncAPI document to make it smaller and without repetition.
 
-* Start: The AsyncAPI CLI can be used to start [AsyncAPI Studio](https://studio.asyncapi.com/) locally, which the user can use to view, edit, and test AsyncAPI documents.
+* Start: The AsyncAPI CLI can be used to start [AsyncAPI Studio](https://studio.asyncapi.com/) locally, which the user can use to view, edit, and test AsyncAPI documents. Studio is not bundled with the CLI; the first time you use it, the CLI installs it on-demand (~450MB).
   
 To summarize, the AsyncAPI CLI offers the following features and process flow, as shown in the diagram below:
 

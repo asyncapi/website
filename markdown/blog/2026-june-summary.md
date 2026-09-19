@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: Community Builder and Open Source Fanatic!
 excerpt: 'AsyncAPI community and project updates for June 2026'
-featured: true
 ---
 Now that we are wrapping up Q2 and we’re halfway through the year, it’s a good time to start thinking about taking a holiday break and recharging for a couple of days. Though things are starting to slow down in some community activities, here is a brief summary of what we were up to in June.
 
