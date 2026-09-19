@@ -4,10 +4,17 @@ import React from 'react';
 /**
  * @description Icons for asyncapi website
  */
-const NavItemDropdown = () => (
+interface NavItemDropdownProps {
+  className?: string;
+}
+
+/**
+ * @description Icon for dropdown navigation item
+ */
+const NavItemDropdown: React.FC<NavItemDropdownProps> = ({ className = '' }) => (
   <span className='inline-block'>
     <svg
-      className='size-5 text-gray-700  dark:text-dark-text duration-200 ease-in-out group-hover:text-gray-900  dark:group-hover:text-white group-focus:text-gray-500 transition-transform group-hover:rotate-180'
+      className={`size-5 text-gray-700 dark:text-dark-text duration-200 ease-in-out group-hover:text-gray-900 dark:group-hover:text-white group-focus:text-gray-500 transition-transform ${className}`}
       fill='currentColor'
       viewBox='0 0 20 20'
     >
