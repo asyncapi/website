@@ -12,7 +12,8 @@ class MyDocument extends Document {
 
   render() {
     // eslint-disable-next-line no-underscore-dangle
-    const currentLocale = this.props.__NEXT_DATA__.query.locale || i18nextConfig.i18n.defaultLocale;
+    const currentLocale =
+      this.props.__NEXT_DATA__.query.locale || i18nextConfig.i18n.defaultLocale;
 
     return (
       <Html lang={currentLocale as string}>
@@ -34,25 +35,67 @@ class MyDocument extends Document {
                     document.documentElement.classList.add('transitions-enabled');
                   } catch (e) {}
                 })();
-              `
+              `,
             }}
           />
-          {/* Load Work Sans font */}
-          <link rel='preconnect' href='https://fonts.googleapis.com' />
-          <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='anonymous' />
-          {/* eslint-disable-next-line max-len */}
+          {/* Load Inter and Work Sans fonts with optimized weights */}
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
-            href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Work+Sans:wght@200;300;400;500;600;700;800;900&display=swap'
-            rel='stylesheet'
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="anonymous"
+          />
+          {/* Reduced to actually used font weights: Inter (400,500,600,700), Work Sans (400,600,700,800) */}
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Work+Sans:wght@400;600;700;800&display=swap"
+            rel="stylesheet"
           />
 
-          {/* Icons */}
-          <link rel='icon' href='/favicon.ico' />
-          <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
-          <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
-          <link rel='icon' type='image/png' sizes='194x194' href='/favicon-194x194.png' />
+          {/* Load Fira Code non-blocking - only needed for code blocks */}
+          {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+          <link
+            rel="preload"
+            href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css"
+            as="style"
+            onLoad={(e) => {
+              const link = e.currentTarget as HTMLLinkElement;
+              link.onload = null;
+              link.rel = 'stylesheet';
+            }}
+          />
+          <noscript>
+            <link
+              rel="stylesheet"
+              href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css"
+            />
+          </noscript>
 
-          <script async defer src='https://buttons.github.io/buttons.js'></script>
+          {/* Icons */}
+          <link rel="icon" href="/favicon.ico" />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="194x194"
+            href="/favicon-194x194.png"
+          />
+
+          <script
+            async
+            defer
+            src="https://buttons.github.io/buttons.js"
+          ></script>
         </Head>
         <body>
           <Main />
