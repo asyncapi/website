@@ -6,8 +6,8 @@ import ExpensesData from '../../config/finance/json-data/Expenses.json';
 import Card from './Card';
 
 interface ExpensesCardProps {
-  selectedCategory: string;
-  selectedMonth: string;
+  readonly selectedCategory: string;
+  readonly selectedMonth: string;
 }
 
 /**
@@ -25,6 +25,8 @@ export default function ExpensesCard({ selectedCategory, selectedMonth }: Expens
           const filteredData = data.filter(
             (item) => selectedCategory === 'All Categories' || item.Category === selectedCategory
           );
+
+          if (filteredData.length === 0) return null;
 
           return <Card key={month} month={month as keyof Expenses} data={filteredData} />;
         })}
