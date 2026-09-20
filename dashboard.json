@@ -182,6 +182,36 @@
   ],
   "goodFirstIssues": [
     {
+      "id": "I_kwDOBW5R_c8AAAABRjfNEA",
+      "title": "Bug: \"Go to page\" dropdown does not correctly select pages on desktop",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/5755",
+      "repo": "asyncapi/website",
+      "author": "swarupasaroogumma",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "triaged",
+          "color": "0052cc"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c8AAAABRat9RQ",
+      "title": "Bug: Budget Analysis Category and Month dropdowns are not working on mobile",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/5752",
+      "repo": "asyncapi/website",
+      "author": "swarupasaroogumma",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "triaged",
+          "color": "0052cc"
+        }
+      ]
+    },
+    {
       "id": "I_kwDOFttfzM8AAAABAGs3PA",
       "title": "Project maintenance status + request for .NET 10 support and dependency upgrades",
       "isAssigned": true,
