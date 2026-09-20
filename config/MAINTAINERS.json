@@ -335,6 +335,7 @@
             "parser-js",
             "studio",
             "openapi-schema-parser",
+            "cli",
             "optimizer",
             "bundler"
         ],
