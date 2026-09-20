@@ -150,3 +150,18 @@ HTTP Request → Express → Controller → Domain Service → HTTP Response
 | **Core** | oclif, TypeScript, Express |
 | **AsyncAPI** | @asyncapi/parser, generator, converter, bundler, diff, optimizer |
 | **Supporting** | winston, ajv, chalk, @clack/prompts |
+
+## Workspace packages (monorepo)
+
+This repository is an npm-workspaces + [Turborepo](https://turbo.build/) monorepo. The root package is
+`@asyncapi/cli` (still published from the repo root). `workspaces` includes both `"."` and `packages/*`
+so Changesets versions the CLI the same way it does today (`npx changeset` → select `@asyncapi/cli`)
+and also versions workspace packages such as `@asyncapi/optimizer`. Additional publishable packages live under `packages/*`:
+
+| Package | Path | Notes |
+|---------|------|-------|
+| `@asyncapi/optimizer` | `packages/optimizer/` | The optimization library used by the `asyncapi optimize` command. Published independently to npm; the CLI depends on it via the workspace (`"@asyncapi/optimizer": "*"`). `@asyncapi/parser` is a `peerDependency` of this package. |
+
+Turbo orders builds so `@asyncapi/optimizer` is built before the root CLI (whose build compiles the
+`optimize` command that imports it). Use `npm run optimizer:build` / `npm run optimizer:test` to work on it
+in isolation. See [`docs/optimizer/spec.md`](/docs/optimizer/spec.md).
