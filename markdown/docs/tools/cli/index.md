@@ -20,7 +20,7 @@ The AsyncAPI CLI offers the following key features:
   
 * Generation: The AsyncAPI CLI leverages AsyncAPI libraries like [Generator](https://github.com/asyncapi/generator) and [Modelina](https://github.com/asyncapi/modelina), which allow you to generate various types of documentation, applications, and models in different programming languages. This feature can save significant time and effort when creating new APIs.
 
-* Optimize: Using [Optimizer](https://github.com/asyncapi/optimizer/), the AsyncAPI CLI can be used to optimize an AsyncAPI specification file which can optimize the structure of the AsyncAPI document to make it smaller and without repetition.
+* Optimize: Using [Optimizer](https://github.com/asyncapi/cli/tree/master/packages/optimizer) (the `@asyncapi/optimizer` library, which now lives in this monorepo under `packages/optimizer`), the AsyncAPI CLI can be used to optimize an AsyncAPI specification file which can optimize the structure of the AsyncAPI document to make it smaller and without repetition.
 
 * Start: The AsyncAPI CLI can be used to start [AsyncAPI Studio](https://studio.asyncapi.com/) locally, which the user can use to view, edit, and test AsyncAPI documents. Studio is not bundled with the CLI; the first time you use it, the CLI installs it on-demand (~450MB).
   
