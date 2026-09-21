@@ -14,25 +14,25 @@ The AsyncAPI CLI is built with [oclif](https://oclif.io/) and provides both comm
 ## Architecture Diagram
 
 ```
-┌─────────────────────────────────────────────────┐
+┌────────────────────────────────────────────────────────────┐
 │  Entry Points                                   │
 │  ┌──────────┐              ┌──────────┐         │
 │  │   CLI    │              │   API    │         │
 │  │  (oclif) │              │ (Express)│         │
-│  └────┬─────┘              └────┬─────┘         │
-└───────┼─────────────────────────┼───────────────┘
-        └───────────┬─────────────┘
+│  └────┘              └────┘         │
+└────────┴──────────────────────┴───────────────────────┘
+        └───────────┴─────────┘
                     ▼
         ┌───────────────────────┐
         │   Domain Services     │
         │  Validation, Generator│
         │  Convert, Config      │
-        └───────────┬───────────┘
+        └───────────┴───────────┘
                     ▼
         ┌───────────────────────┐
         │   Domain Models       │
         │  Specification,Context│
-        └───────────┬───────────┘
+        └───────────┴───────────┘
                     ▼
         ┌───────────────────────┐
         │   Utilities           │
@@ -164,4 +164,4 @@ and also versions workspace packages such as `@asyncapi/optimizer`. Additional p
 
 Turbo orders builds so `@asyncapi/optimizer` is built before the root CLI (whose build compiles the
 `optimize` command that imports it). Use `npm run optimizer:build` / `npm run optimizer:test` to work on it
-in isolation. See [`docs/optimizer/spec.md`](/docs/optimizer/spec.md).
+in isolation. See the package spec on GitHub: [`docs/optimizer/spec.md`](https://github.com/asyncapi/cli/blob/master/docs/optimizer/spec.md).
