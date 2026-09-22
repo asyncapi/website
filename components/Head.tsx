@@ -36,6 +36,10 @@ export default function HeadComponent({
   let currImage = image;
 
   const permalink = `${url}${path}`;
+  const normalizedPath = path.replace(/\/+$/, '') || path;
+  const hasMarkdownAlternate =
+    normalizedPath === '/docs' || normalizedPath.startsWith('/docs/') || normalizedPath.startsWith('/blog/');
+  const markdownHref = `${normalizedPath}.md`;
   let type = 'website';
 
   if (path.startsWith('/docs') || path.startsWith('/blog')) {
@@ -64,6 +68,12 @@ export default function HeadComponent({
       <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
       <meta name='description' content={description} />
       <link rel='alternate' type='application/rss+xml' title={rssTitle} href={rssLink} />
+      {hasMarkdownAlternate ? (
+        <>
+          <link rel='alternate' type='text/markdown' href={markdownHref} />
+          <link rel='describedby' href='/llms.txt' />
+        </>
+      ) : null}
 
       {/* Google / Search Engine Tags */}
       <meta itemProp='name' content={title} />
