@@ -5,9 +5,6 @@ import type { ConvertMarkdownOptions } from '@/types/scripts/build-llms';
 import { DOCS_CARD_ITEMS, INTERACTIVE_COMPONENTS, SITE_BASE_URL } from './config';
 import { canonicalMarkdownUrl } from './urls';
 
-const FRAGMENT_IMPORT_REGEX =
-  /^import\s+([A-Za-z_$][\w$]*)\s+from\s+['"](@\/assets\/docs\/fragments\/[^'"]+)['"]\s*;?\s*$/;
-const GENERIC_IMPORT_REGEX = /^import\s.+from\s+['"].+['"]\s*;?\s*$/;
 const CODE_BLOCK_REGEX = /<CodeBlock\b([^>]*)>([\s\S]*?)<\/CodeBlock>/g;
 const FIGURE_REGEX = /<Figure\b([\s\S]*?)\/>/g;
 const YOUTUBE_REGEX = /<YouTube\b([\s\S]*?)\/>/g;
@@ -21,31 +18,31 @@ const INTERNAL_HREF_REGEX = /href=(['"])(\/(?:docs|blog|about)[^'"]*)\1/g;
 const ROOT_IMAGE_REGEX = /(['"(])(\/img\/)/g;
 
 /**
- * Reads a quoted JSX/HTML attribute from a tag's attribute string.
+ * Reads a quoted attribute such as `language="yaml"`.
  *
  * @param attrs - raw attribute text
  * @param name - attribute name
  */
 function getProp(attrs: string, name: string): string | undefined {
-  const doubleQuoted = attrs.match(new RegExp(`${name}\\s*=\\s*"([^"]*)"`));
+  const doubleQuoted = new RegExp(String.raw`${name}\s*=\s*"([^"]*)"`).exec(attrs);
 
   if (doubleQuoted) {
     return doubleQuoted[1];
   }
 
-  const singleQuoted = attrs.match(new RegExp(`${name}\\s*=\\s*'([^']*)'`));
+  const singleQuoted = new RegExp(String.raw`${name}\s*=\s*'([^']*)'`).exec(attrs);
 
   return singleQuoted?.[1];
 }
 
 /**
- * Unwraps `{`template`}` JSX expressions used inside CodeBlock.
+ * Strips the JSX template wrapper CodeBlock uses around sample code.
  *
  * @param inner - CodeBlock children
  */
 function unwrapJsxTemplate(inner: string): string {
   const trimmed = inner.trim();
-  const wrapped = trimmed.match(/^\{`([\s\S]*)`\}$/);
+  const wrapped = /^\{`([\s\S]*)`\}$/.exec(trimmed);
 
   if (wrapped) {
     return wrapped[1];
@@ -88,7 +85,67 @@ function absolutizeUrl(url: string, siteBaseUrl: string): string {
 }
 
 /**
- * Pulls MDX import lines off the top of a document and inlines fragment modules.
+ * Parses `import Notes from '@/assets/docs/fragments/notes.md'`.
+ *
+ * @param line - a trimmed source line
+ */
+function parseFragmentImport(line: string): { name: string; spec: string } | undefined {
+  if (!line.startsWith('import ')) {
+    return undefined;
+  }
+
+  const fromToken = ' from ';
+  const fromIndex = line.indexOf(fromToken);
+
+  if (fromIndex === -1) {
+    return undefined;
+  }
+
+  const name = line.slice('import '.length, fromIndex).trim();
+  let specPart = line.slice(fromIndex + fromToken.length).trim();
+
+  if (specPart.endsWith(';')) {
+    specPart = specPart.slice(0, -1).trim();
+  }
+
+  const quote = specPart.charAt(0);
+
+  if ((quote !== "'" && quote !== '"') || specPart.charAt(specPart.length - 1) !== quote) {
+    return undefined;
+  }
+
+  const spec = specPart.slice(1, -1);
+
+  if (!/^\w+$/.test(name) || !spec.startsWith('@/assets/docs/fragments/')) {
+    return undefined;
+  }
+
+  return { name, spec };
+}
+
+/**
+ * True for other MDX import lines, which are omitted from the markdown output.
+ *
+ * @param line - a trimmed source line
+ */
+function isGenericImportLine(line: string): boolean {
+  if (!line.startsWith('import ')) {
+    return false;
+  }
+
+  const fromIndex = line.indexOf(' from ');
+
+  if (fromIndex === -1) {
+    return false;
+  }
+
+  const specPart = line.slice(fromIndex + ' from '.length).trim();
+
+  return specPart.startsWith("'") || specPart.startsWith('"') || specPart.startsWith('`');
+}
+
+/**
+ * Loads fragment files imported at the top of the MDX and drops the other import lines.
  *
  * @param content - markdown body after frontmatter
  * @param readFragment - optional loader for `@/assets/docs/fragments/*`
@@ -103,18 +160,18 @@ function extractImports(
 
   while (index < lines.length) {
     const trimmed = lines[index].trim();
-    const fragmentMatch = trimmed.match(FRAGMENT_IMPORT_REGEX);
+    const fragmentMatch = parseFragmentImport(trimmed);
 
     if (trimmed === '') {
       index += 1;
     } else if (fragmentMatch) {
-      const [, name, spec] = fragmentMatch;
-      const repoPath = spec.replace(/^@\//, '');
+      const { name, spec } = fragmentMatch;
+      const repoPath = spec.startsWith('@/') ? spec.slice(2) : spec;
       const fragment = readFragment?.(repoPath);
 
       fragmentMap.set(name, fragment ?? '');
       index += 1;
-    } else if (GENERIC_IMPORT_REGEX.test(trimmed)) {
+    } else if (isGenericImportLine(trimmed)) {
       index += 1;
     } else {
       break;
@@ -134,7 +191,7 @@ function inlineFragments(content: string, fragmentMap: Map<string, string>): str
   let result = content;
 
   fragmentMap.forEach((fragment, name) => {
-    const pattern = new RegExp(`<${name}\\s*(?:/>|>\\s*</${name}>)`, 'g');
+    const pattern = new RegExp(String.raw`<${name}\s*(?:/>|>\s*</${name}>)`, 'g');
 
     result = result.replace(pattern, fragment.trim());
   });
@@ -251,8 +308,8 @@ function stripInteractiveComponents(content: string, slug: string | undefined, s
   const comparisonNote = htmlUrl ? `\nSee the interactive comparison on the HTML page: ${htmlUrl}\n` : '';
 
   INTERACTIVE_COMPONENTS.forEach((name) => {
-    const paired = new RegExp(`<${name}\\b[^>]*>[\\s\\S]*?<\\/${name}>`, 'g');
-    const selfClosing = new RegExp(`<${name}\\b[^>]*\\/>`, 'g');
+    const paired = new RegExp(String.raw`<${name}\b[^>]*>[\s\S]*?</${name}>`, 'g');
+    const selfClosing = new RegExp(String.raw`<${name}\b[^>]*/>`, 'g');
     const replacement = name.includes('Comparison') ? comparisonNote : '';
 
     result = result.replace(paired, replacement).replace(selfClosing, replacement);

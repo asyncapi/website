@@ -93,18 +93,13 @@ function sortBlogPosts(posts: Details[]): Details[] {
  *
  * @param excerpt - raw excerpt from posts.json
  */
-/**
- * Truncates an excerpt to a single short sentence for llms.txt notes.
- *
- * @param excerpt - raw excerpt from posts.json
- */
 export function oneSentenceExcerpt(excerpt?: string): string {
   if (!excerpt) {
     return '';
   }
 
   const cleaned = excerpt
-    .replace(/import\s.+?from\s+['"][^'"]+['"]\s*;?/g, '')
+    .replace(/import \S+ from ['"][^'"]+['"];?/g, '')
     .replace(/\s+/g, ' ')
     .trim();
   const sentence = cleaned.split(/(?<=[.!?])\s+/)[0] || cleaned;
@@ -253,17 +248,15 @@ function resolveMarkdownSource(page: Details, markdownDir: string, siteRoot: str
   const candidates: string[] = [];
 
   if (page.id) {
-    const fromId = join(siteRoot, postIdToMarkdownSource(page.id.replace(/\\/g, '/')));
+    const fromId = join(siteRoot, postIdToMarkdownSource(page.id.replaceAll('\\', '/')));
 
-    candidates.push(fromId);
-    candidates.push(join(fromId.replace(/\.md$/, ''), 'index.md'));
+    candidates.push(fromId, join(fromId.replace(/\.md$/, ''), 'index.md'));
   }
 
   if (page.slug) {
-    const relativePath = page.slug.replace(/^\//, '');
+    const relativePath = page.slug.startsWith('/') ? page.slug.slice(1) : page.slug;
 
-    candidates.push(join(markdownDir, `${relativePath}.md`));
-    candidates.push(join(markdownDir, relativePath, 'index.md'));
+    candidates.push(join(markdownDir, `${relativePath}.md`), join(markdownDir, relativePath, 'index.md'));
   }
 
   return candidates.find((candidate) => existsSync(candidate));
@@ -412,8 +405,7 @@ export function buildLlmsTxt(posts: Result, baseUrl: string = SITE_BASE_URL, inc
   optionalPages.forEach((page) => {
     lines.push(formatLlmsItem(page, baseUrl));
   });
-  lines.push(`- [Blog RSS](${baseUrl}/rss.xml): AsyncAPI Initiative Blog RSS Feed.`);
-  lines.push('');
+  lines.push(`- [Blog RSS](${baseUrl}/rss.xml): AsyncAPI Initiative Blog RSS Feed.`, '');
 
   return `${lines.join('\n').trim()}\n`;
 }

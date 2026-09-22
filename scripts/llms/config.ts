@@ -140,7 +140,7 @@ export function isSkippedFromFull(slug?: string): boolean {
  * @param slug - public page slug
  */
 export function isOlderSpecificationPage(slug?: string): boolean {
-  if (!slug || !slug.startsWith(SPECIFICATION_PREFIX)) {
+  if (!slug?.startsWith(SPECIFICATION_PREFIX)) {
     return false;
   }
 

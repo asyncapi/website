@@ -3,14 +3,29 @@ import { join } from 'path';
 import { SITE_BASE_URL } from './config';
 
 /**
+ * Drops trailing slashes from a slug, keeping a single `/` for the root.
+ *
+ * @param slug - public HTML slug
+ */
+function stripTrailingSlashes(slug: string): string {
+  let result = slug;
+
+  while (result.length > 1 && result.endsWith('/')) {
+    result = result.slice(0, -1);
+  }
+
+  return result || '/';
+}
+
+/**
  * Converts a page slug to the relative public markdown path.
  * `/docs` → `docs.md`, `/docs/guides/validate` → `docs/guides/validate.md`
  *
  * @param slug - public HTML slug beginning with `/`
  */
 export function slugToMarkdownPath(slug: string): string {
-  const normalized = slug.replace(/\/+$/, '') || '/';
-  const withoutLeadingSlash = normalized.replace(/^\//, '');
+  const normalized = stripTrailingSlashes(slug);
+  const withoutLeadingSlash = normalized.startsWith('/') ? normalized.slice(1) : normalized;
 
   return `${withoutLeadingSlash}.md`;
 }
@@ -32,7 +47,7 @@ export function slugToPublicFile(slug: string, publicDir: string): string {
  * @param baseUrl - site origin
  */
 export function canonicalMarkdownUrl(slug: string, baseUrl: string = SITE_BASE_URL): string {
-  const normalized = slug.replace(/\/+$/, '') || '/';
+  const normalized = stripTrailingSlashes(slug);
 
   return `${baseUrl}${normalized}.md`;
 }
@@ -44,7 +59,7 @@ export function canonicalMarkdownUrl(slug: string, baseUrl: string = SITE_BASE_U
  * @param baseUrl - site origin
  */
 export function canonicalHtmlUrl(slug: string, baseUrl: string = SITE_BASE_URL): string {
-  const normalized = slug.replace(/\/+$/, '') || '/';
+  const normalized = stripTrailingSlashes(slug);
 
   return `${baseUrl}${normalized}`;
 }

@@ -14,6 +14,21 @@ interface IHeadProps {
 }
 
 /**
+ * `/docs/` and `/docs` both become `/docs`.
+ *
+ * @param value - current page path
+ */
+function stripTrailingSlashes(value: string): string {
+  let result = value;
+
+  while (result.length > 1 && result.endsWith('/')) {
+    result = result.slice(0, -1);
+  }
+
+  return result;
+}
+
+/**
  * @description The HeadComponent is the head of the page with the meta tags.
  *
  * @param {string} props.title - The title of the page
@@ -36,7 +51,7 @@ export default function HeadComponent({
   let currImage = image;
 
   const permalink = `${url}${path}`;
-  const normalizedPath = path.replace(/\/+$/, '') || path;
+  const normalizedPath = stripTrailingSlashes(path);
   const hasMarkdownAlternate =
     normalizedPath === '/docs' || normalizedPath.startsWith('/docs/') || normalizedPath.startsWith('/blog/');
   const markdownHref = `${normalizedPath}.md`;
