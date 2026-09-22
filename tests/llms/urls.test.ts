@@ -1,3 +1,5 @@
+import { join } from 'path';
+
 import { SITE_BASE_URL } from '../../scripts/llms/config';
 import {
   canonicalHtmlUrl,
@@ -23,7 +25,7 @@ describe('llms url helpers', () => {
   });
 
   it('builds public file paths and canonical URLs', () => {
-    expect(slugToPublicFile('/docs/concepts', 'public')).toBe('public/docs/concepts.md');
+    expect(slugToPublicFile('/docs/concepts', 'public')).toBe(join('public', 'docs', 'concepts.md'));
     expect(canonicalMarkdownUrl('/docs/concepts')).toBe(`${SITE_BASE_URL}/docs/concepts.md`);
     expect(canonicalHtmlUrl('/docs/concepts')).toBe(`${SITE_BASE_URL}/docs/concepts`);
   });
