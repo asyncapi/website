@@ -365,4 +365,29 @@ describe('generateLlmsFiles', () => {
       })
     ).rejects.toThrow('No markdown sources found');
   });
+
+  it('points latest.md at the same spec version as the HTML latest redirect', async () => {
+    await writeSource(
+      siteRoot,
+      'public/_redirects',
+      `# LATEST-SPEC-REDIRECTION:START
+/docs/reference/specification/latest /docs/reference/specification/v3.1.0 302!
+# LATEST-SPEC-REDIRECTION:END
+
+/docs/reference/specification/latest.md /docs/reference/specification/v3.0.0.md 302!
+`
+    );
+
+    await generateLlmsFiles({
+      posts: fixturePosts(),
+      siteRoot,
+      markdownDir: join(siteRoot, 'markdown'),
+      publicDir: join(siteRoot, 'public')
+    });
+
+    const redirects = await readFile(join(siteRoot, 'public/_redirects'), 'utf8');
+
+    expect(redirects).toContain('/docs/reference/specification/latest.md /docs/reference/specification/v3.1.0.md 302!');
+    expect(redirects).not.toContain('/docs/reference/specification/latest.md /docs/reference/specification/v3.0.0.md');
+  });
 });

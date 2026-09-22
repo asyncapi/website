@@ -53,7 +53,11 @@ export default function HeadComponent({
   const permalink = `${url}${path}`;
   const normalizedPath = stripTrailingSlashes(path);
   const hasMarkdownAlternate =
-    normalizedPath === '/docs' || normalizedPath.startsWith('/docs/') || normalizedPath.startsWith('/blog/');
+    normalizedPath === '/docs' ||
+    normalizedPath === '/about' ||
+    normalizedPath.startsWith('/docs/') ||
+    normalizedPath.startsWith('/blog/') ||
+    normalizedPath.startsWith('/about/');
   const markdownHref = `${normalizedPath}.md`;
   let type = 'website';
 

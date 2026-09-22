@@ -22,7 +22,7 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 /docs/reference/specification/latest /docs/reference/specification/v3.1.0 302!
 # LATEST-SPEC-REDIRECTION:END
 
-# Markdown twin for /docs/reference/specification/latest
+# Markdown twin of /docs/reference/specification/latest
 /docs/reference/specification/latest.md /docs/reference/specification/v3.1.0.md 302!
 
 # SPEC-REDIRECTION:START

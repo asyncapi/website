@@ -1,3 +1,7 @@
+import { readFileSync } from 'fs';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
+
 import type { LlmsContentKind } from '@/types/scripts/build-llms';
 import type { Details } from '@/types/scripts/build-posts-list';
 
@@ -20,7 +24,83 @@ export const LLMS_DETAILS = [
  */
 export const OPTIONAL_ROOT_SECTION_IDS = ['community'] as const;
 
-export const LATEST_SPEC_SLUG = '/docs/reference/specification/v3.1.0';
+const FALLBACK_LATEST_SPEC_SLUG = '/docs/reference/specification/v3.1.0';
+
+const LATEST_SPEC_REDIRECT_START = '# LATEST-SPEC-REDIRECTION:START';
+
+const LATEST_SPEC_REDIRECT_END = '# LATEST-SPEC-REDIRECTION:END';
+
+const LATEST_HTML_REDIRECT_PATTERN =
+  /\/docs\/reference\/specification\/latest\s+(\/docs\/reference\/specification\/v[\w.-]+)\s+302!/;
+
+const LATEST_MARKDOWN_REDIRECT_PATTERN = /\/docs\/reference\/specification\/latest\.md\s+\S+\s+302!/;
+
+/**
+ * Reads the latest spec path from the `/docs/reference/specification/latest` redirect.
+ *
+ * @param redirects - contents of public/_redirects
+ * @param fallback - slug used when that redirect is missing
+ */
+export function parseLatestSpecSlug(redirects: string, fallback: string = FALLBACK_LATEST_SPEC_SLUG): string {
+  const startIndex = redirects.indexOf(LATEST_SPEC_REDIRECT_START);
+  const endIndex = redirects.indexOf(LATEST_SPEC_REDIRECT_END);
+
+  if (startIndex === -1 || endIndex === -1 || endIndex <= startIndex) {
+    return fallback;
+  }
+
+  const match = LATEST_HTML_REDIRECT_PATTERN.exec(redirects.slice(startIndex, endIndex));
+
+  return match?.[1] || fallback;
+}
+
+/**
+ * Redirect line for `/docs/reference/specification/latest.md`.
+ *
+ * @param latestSlug - HTML slug of the latest spec, such as `/docs/reference/specification/v3.1.0`
+ */
+export function latestMarkdownRedirectLine(latestSlug: string): string {
+  return `/docs/reference/specification/latest.md ${latestSlug}.md 302!`;
+}
+
+/**
+ * Points `latest.md` at the same spec version as the HTML `latest` redirect.
+ *
+ * @param redirects - contents of public/_redirects
+ * @param latestSlug - HTML slug of the latest spec
+ */
+export function replaceLatestMarkdownRedirect(redirects: string, latestSlug: string): string {
+  const line = latestMarkdownRedirectLine(latestSlug);
+
+  if (LATEST_MARKDOWN_REDIRECT_PATTERN.test(redirects)) {
+    return redirects.replace(LATEST_MARKDOWN_REDIRECT_PATTERN, line);
+  }
+
+  const endIndex = redirects.indexOf(LATEST_SPEC_REDIRECT_END);
+
+  if (endIndex === -1) {
+    return redirects;
+  }
+
+  const insertAt = endIndex + LATEST_SPEC_REDIRECT_END.length;
+
+  return `${redirects.slice(0, insertAt)}\n\n# Markdown twin of /docs/reference/specification/latest\n${line}${redirects.slice(insertAt)}`;
+}
+
+/**
+ * Reads public/_redirects from this repository.
+ */
+function readLatestSpecSlug(): string {
+  try {
+    const redirectsPath = join(dirname(fileURLToPath(import.meta.url)), '../../public/_redirects');
+
+    return parseLatestSpecSlug(readFileSync(redirectsPath, 'utf8'));
+  } catch {
+    return FALLBACK_LATEST_SPEC_SLUG;
+  }
+}
+
+export const LATEST_SPEC_SLUG = readLatestSpecSlug();
 
 export const SPECIFICATION_PREFIX = '/docs/reference/specification/';
 

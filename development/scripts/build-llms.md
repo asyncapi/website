@@ -15,9 +15,9 @@ Outputs are generated files (like `rss.xml`). Do not edit them by hand. Change t
 - `/llms.txt` (`text/markdown; charset=utf-8`): index with H1, summary, `##` sections of `- [title](url.md): note`. Community and blogs are under `## Optional`.
 - `/llms-full.txt` (`text/markdown; charset=utf-8`): concatenated core pages with `Source: {url.md}` separators.
 - `/docs.md`, `/docs/**/*.md`, `/blog/*.md`, `/about.md` (`text/markdown; charset=utf-8`): clean Markdown for that page.
-- `/docs/reference/specification/latest.md`: 302 redirect to `/docs/reference/specification/v3.1.0.md`.
+- `/docs/reference/specification/latest.md`: 302 redirect to the same spec version as `/docs/reference/specification/latest` in `public/_redirects`.
 
-HTML docs and blog posts also expose hidden `<link rel="alternate" type="text/markdown">` and `<link rel="describedby" href="/llms.txt">` in `components/Head.tsx`. There is no View as Markdown button in the UI.
+HTML docs, blog, and about pages also expose hidden `<link rel="alternate" type="text/markdown">` and `<link rel="describedby" href="/llms.txt">` in `components/Head.tsx`. There is no View as Markdown button in the UI.
 
 ### Generated vs committed
 
@@ -44,7 +44,7 @@ Uses the same `rootSectionId` / `docsTree` as the docs sidebar:
 - Optional (`llms.txt` only, still get `{slug}.md`): `community`, all blog posts
 - Omitted from `llms-full.txt` only: `*-explorer` pages, `/docs/reference/specification/v2.x`, specification versions other than `LATEST_SPEC_SLUG`
 
-To move a section (for example include community in `llms-full.txt`), edit `OPTIONAL_ROOT_SECTION_IDS` or `LATEST_SPEC_SLUG` in `scripts/llms/config.ts` and update `tests/llms/config.test.ts`.
+To move a section (for example include community in `llms-full.txt`), edit `OPTIONAL_ROOT_SECTION_IDS` in `scripts/llms/config.ts` and update `tests/llms/config.test.ts`. The latest spec version follows the HTML `latest` redirect in `public/_redirects`.
 
 ### Markdown conversion
 
@@ -68,13 +68,13 @@ To support a new MDX component, add a transform in `convert-markdown.ts` and a f
 
 ### Code map
 
-- `scripts/llms/config.ts` — base URL, blurb, Optional ids, skip rules
+- `scripts/llms/config.ts` — base URL, blurb, Optional ids, skip rules. `LATEST_SPEC_SLUG` is read from the `/docs/reference/specification/latest` redirect in `public/_redirects`.
 - `scripts/llms/convert-markdown.ts` — MDX to Markdown
 - `scripts/llms/urls.ts` — slug ↔ public path ↔ canonical `.md` URL
 - `scripts/build-llms.ts` — wipe outputs, write per-page files and indexes
 - `types/scripts/build-llms.ts` — shared types
 - `netlify.toml` — `Content-Type` headers
-- `public/_redirects` — `latest.md` redirect
+- `public/_redirects` — `latest.md` redirect, kept on the same version as the HTML `latest` redirect
 
 ### How to run and test
 

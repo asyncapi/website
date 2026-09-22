@@ -11,11 +11,14 @@ import { convertDocPosts } from './build-docs';
 import {
   GENERATED_ROOT_FILES,
   isOptionalSection,
+  LATEST_SPEC_SLUG,
   LLMS_DETAILS,
   LLMS_SUMMARY,
   LLMS_TITLE,
   MARKDOWN_SOURCE_DIR,
+  parseLatestSpecSlug,
   PUBLIC_DIR,
+  replaceLatestMarkdownRedirect,
   shouldIncludeInLlmsFull,
   SITE_BASE_URL
 } from './llms/config';
@@ -299,6 +302,27 @@ async function loadPosts(siteRoot: string): Promise<Result> {
 }
 
 /**
+ * Keeps `/docs/reference/specification/latest.md` on the same version as the HTML `latest` redirect.
+ *
+ * @param siteRoot - repository root that contains public/_redirects
+ */
+async function syncLatestMarkdownRedirect(siteRoot: string): Promise<void> {
+  const redirectsPath = join(siteRoot, 'public/_redirects');
+
+  if (!existsSync(redirectsPath)) {
+    return;
+  }
+
+  const original = await readFile(redirectsPath, 'utf8');
+  const latestSlug = parseLatestSpecSlug(original, LATEST_SPEC_SLUG);
+  const updated = replaceLatestMarkdownRedirect(original, latestSlug);
+
+  if (updated !== original) {
+    await writeFile(redirectsPath, updated, 'utf8');
+  }
+}
+
+/**
  * Groups indexed pages into llms.txt sections using docsTree order.
  *
  * @param posts - posts.json inventory
@@ -461,6 +485,8 @@ export async function generateLlmsFiles(options: GenerateLlmsOptions = {}): Prom
     const siteRoot = options.siteRoot || defaultSiteRoot;
     const markdownDir = options.markdownDir || join(siteRoot, MARKDOWN_SOURCE_DIR);
     const publicDir = options.publicDir || join(siteRoot, PUBLIC_DIR);
+
+    await syncLatestMarkdownRedirect(siteRoot);
     const posts = options.posts || (await loadPosts(siteRoot));
     const contentPages = collectContentPages(posts);
     const pagesWithSources = contentPages

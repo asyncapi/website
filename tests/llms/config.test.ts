@@ -3,6 +3,8 @@ import {
   isOptionalSection,
   isSkippedFromFull,
   LATEST_SPEC_SLUG,
+  parseLatestSpecSlug,
+  replaceLatestMarkdownRedirect,
   shouldIncludeInLlmsFull
 } from '../../scripts/llms/config';
 
@@ -24,6 +26,44 @@ describe('llms classification', () => {
     expect(isOlderSpecificationPage(LATEST_SPEC_SLUG)).toBe(false);
     expect(isOlderSpecificationPage('/docs/reference/specification/v3.0.0')).toBe(true);
     expect(isOlderSpecificationPage('/docs/reference/specification')).toBe(false);
+  });
+
+  it('reads the latest spec slug from the HTML latest redirect', () => {
+    const redirects = `# LATEST-SPEC-REDIRECTION:START
+/docs/reference/specification/latest /docs/reference/specification/v9.9.9 302!
+# LATEST-SPEC-REDIRECTION:END
+`;
+
+    expect(parseLatestSpecSlug(redirects)).toBe('/docs/reference/specification/v9.9.9');
+    expect(parseLatestSpecSlug('no markers', '/docs/reference/specification/v3.1.0')).toBe(
+      '/docs/reference/specification/v3.1.0'
+    );
+  });
+
+  it('points latest.md at the same spec version as the HTML latest redirect', () => {
+    const redirects = `# LATEST-SPEC-REDIRECTION:START
+/docs/reference/specification/latest /docs/reference/specification/v9.9.9 302!
+# LATEST-SPEC-REDIRECTION:END
+
+# Markdown twin of /docs/reference/specification/latest
+/docs/reference/specification/latest.md /docs/reference/specification/v3.0.0.md 302!
+`;
+
+    expect(replaceLatestMarkdownRedirect(redirects, '/docs/reference/specification/v9.9.9')).toContain(
+      '/docs/reference/specification/latest.md /docs/reference/specification/v9.9.9.md 302!'
+    );
+    expect(replaceLatestMarkdownRedirect(redirects, '/docs/reference/specification/v9.9.9')).not.toContain('v3.0.0.md');
+  });
+
+  it('inserts the latest.md redirect when it is missing', () => {
+    const redirects = `# LATEST-SPEC-REDIRECTION:START
+/docs/reference/specification/latest /docs/reference/specification/v9.9.9 302!
+# LATEST-SPEC-REDIRECTION:END
+`;
+
+    expect(replaceLatestMarkdownRedirect(redirects, '/docs/reference/specification/v9.9.9')).toContain(
+      '/docs/reference/specification/latest.md /docs/reference/specification/v9.9.9.md 302!'
+    );
   });
 
   it('includes core docs and about pages, but not blogs or community', () => {
