@@ -1,7 +1,7 @@
-import { existsSync, readFileSync } from 'fs';
-import { mkdir, readdir, readFile, rm, stat, writeFile } from 'fs/promises';
-import { dirname, join, resolve } from 'path';
-import { fileURLToPath } from 'url';
+import { existsSync, readFileSync } from 'node:fs';
+import { mkdir, readdir, readFile, rm, stat, writeFile } from 'node:fs/promises';
+import { dirname, join, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import type { NavTree, NavTreeItem } from '@/types/scripts/build-docs';
 import type { GenerateLlmsOptions, LlmsContentKind, LlmsSection } from '@/types/scripts/build-llms';
@@ -537,9 +537,4 @@ export async function generateLlmsFiles(options: GenerateLlmsOptions = {}): Prom
   } catch (error) {
     throw new Error(`Error while generating LLM docs files: ${(error as Error).message}`, { cause: error });
   }
-}
-
-/* istanbul ignore next */
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  generateLlmsFiles();
 }

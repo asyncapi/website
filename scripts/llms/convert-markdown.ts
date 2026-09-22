@@ -110,7 +110,7 @@ function parseFragmentImport(line: string): { name: string; spec: string } | und
 
   const quote = specPart.charAt(0);
 
-  if ((quote !== "'" && quote !== '"') || specPart.charAt(specPart.length - 1) !== quote) {
+  if ((quote !== "'" && quote !== '"') || !specPart.endsWith(quote)) {
     return undefined;
   }
 

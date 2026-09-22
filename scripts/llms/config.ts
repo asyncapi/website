@@ -1,6 +1,6 @@
-import { readFileSync } from 'fs';
-import { dirname, join } from 'path';
-import { fileURLToPath } from 'url';
+import { readFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import type { LlmsContentKind } from '@/types/scripts/build-llms';
 import type { Details } from '@/types/scripts/build-posts-list';
