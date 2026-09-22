@@ -667,6 +667,18 @@
         "githubID": 114283933
     },
     {
+        "name": "Ruchi Pakhle",
+        "github": "Ruchip16",
+        "slack": "U02L0Q7JMQX",
+        "twitter": "Ruchicodess",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "vs-asyncapi-preview"
+        ],
+        "githubID": 72685035
+    },
+    {
         "name": "TenzDelek",
         "github": "TenzDelek",
         "linkedin": "tenzdelek",
