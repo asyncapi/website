@@ -16,7 +16,7 @@ interface IDocsBreadcrumbsProps {
  *
  * @param {Breadcrumb[]} props.breadcrumbs - The ordered breadcrumb trail.
  */
-export default function DocsBreadcrumbs({ breadcrumbs }: IDocsBreadcrumbsProps) {
+export default function DocsBreadcrumbs({ breadcrumbs }: Readonly<IDocsBreadcrumbsProps>) {
   if (breadcrumbs.length < 2) return null;
 
   return (
