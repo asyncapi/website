@@ -1,6 +1,5 @@
 import dayjs from 'dayjs';
 import ErrorPage from 'next/error';
-import HtmlHead from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
 
@@ -85,12 +84,7 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
               </div>
             </header>
             <article className='mb-32'>
-              <Head title={post.title} description={post.excerpt} image={post.cover} />
-              {post.canonical && (
-                <HtmlHead>
-                  <link rel='canonical' href={post.canonical} />
-                </HtmlHead>
-              )}
+              <Head title={post.title} description={post.excerpt} image={post.cover} canonical={post.canonical} />
               <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className='my-6 w-full' />
               <ErrorBoundary contextualLabel='article'>{children}</ErrorBoundary>
             </article>
