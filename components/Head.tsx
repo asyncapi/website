@@ -11,6 +11,7 @@ interface IHeadProps {
   image?: string;
   rssTitle?: string;
   rssLink?: string;
+  canonical?: string;
 }
 
 /**
@@ -36,6 +37,7 @@ function stripTrailingSlashes(value: string): string {
  * @param {string} props.image - The image of the page
  * @param {string} props.rssTitle - The RSS title of the page
  * @param {string} props.rssLink - The RSS link of the page
+ * @param {string} props.canonical - Override for the canonical URL. Defaults to the current page URL.
  */
 export default function HeadComponent({
   title,
@@ -43,7 +45,8 @@ export default function HeadComponent({
                 All powered by the AsyncAPI specification, the industry standard for defining asynchronous APIs.`,
   image = '/img/social/website-card.jpg',
   rssTitle = 'RSS Feed for AsyncAPI Initiative Blog',
-  rssLink = '/rss.xml'
+  rssLink = '/rss.xml',
+  canonical
 }: IHeadProps) {
   const url = process.env.NEXT_PUBLIC_DEPLOY_PRIME_URL || process.env.NEXT_PUBLIC_DEPLOY_URL || 'http://localhost:3000';
   const appContext = useContext(AppContext);
@@ -51,6 +54,7 @@ export default function HeadComponent({
   let currImage = image;
 
   const permalink = `${url}${path}`;
+  const canonicalUrl = canonical || permalink;
   const normalizedPath = stripTrailingSlashes(path);
   const hasMarkdownAlternate =
     normalizedPath === '/docs' ||
@@ -86,6 +90,7 @@ export default function HeadComponent({
       <meta httpEquiv='x-ua-compatible' content='ie=edge' />
       <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
       <meta name='description' content={description} />
+      <link rel='canonical' href={canonicalUrl} />
       <link rel='alternate' type='application/rss+xml' title={rssTitle} href={rssLink} />
       {hasMarkdownAlternate ? (
         <>
