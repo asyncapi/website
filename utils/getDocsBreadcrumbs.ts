@@ -30,7 +30,7 @@ export default function getDocsBreadcrumbs(docs: DocLike[], post: DocLike): Brea
 
   const crumbs: Breadcrumb[] = [{ title: 'Docs', slug: '/docs', isCurrent: false }];
 
-  if (!post.slug || !post.slug.startsWith('/docs')) {
+  if (post.slug !== '/docs' && !post.slug?.startsWith('/docs/')) {
     return crumbs;
   }
 

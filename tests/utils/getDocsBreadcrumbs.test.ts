@@ -41,5 +41,6 @@ describe('getDocsBreadcrumbs', () => {
   test('returns only the root crumb when the slug is missing or not a docs page', () => {
     expect(getDocsBreadcrumbs(docs, { title: 'Homepage', slug: '/' })).toEqual([rootCrumb]);
     expect(getDocsBreadcrumbs(docs, { title: 'No slug' })).toEqual([rootCrumb]);
+    expect(getDocsBreadcrumbs(docs, { title: 'Guides', slug: '/docs-guides/page' })).toEqual([rootCrumb]);
   });
 });

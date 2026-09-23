@@ -24,7 +24,11 @@ export default function DocsBreadcrumbs({ breadcrumbs }: IDocsBreadcrumbsProps) 
       <ol className='flex flex-wrap items-center gap-x-1 text-sm text-gray-500 dark:text-dark-text'>
         {breadcrumbs.map((crumb, index) => (
           <li key={crumb.slug} className='flex items-center gap-x-1'>
-            {index > 0 && <IconArrowRight className='size-4 shrink-0 text-gray-400 dark:text-gray-500' />}
+            {index > 0 && (
+              <span aria-hidden='true'>
+                <IconArrowRight className='size-4 shrink-0 text-gray-400 dark:text-gray-500' />
+              </span>
+            )}
             {crumb.isCurrent ? (
               <span className='font-medium text-gray-700 dark:text-dark-heading' aria-current='page'>
                 {crumb.title}
