@@ -15,6 +15,21 @@ interface IHeadProps {
 }
 
 /**
+ * `/docs/` and `/docs` both become `/docs`.
+ *
+ * @param value - current page path
+ */
+function stripTrailingSlashes(value: string): string {
+  let result = value;
+
+  while (result.length > 1 && result.endsWith('/')) {
+    result = result.slice(0, -1);
+  }
+
+  return result;
+}
+
+/**
  * @description The HeadComponent is the head of the page with the meta tags.
  *
  * @param {string} props.title - The title of the page
@@ -40,6 +55,14 @@ export default function HeadComponent({
 
   const permalink = `${url}${path}`;
   const canonicalUrl = canonical || permalink;
+  const normalizedPath = stripTrailingSlashes(path);
+  const hasMarkdownAlternate =
+    normalizedPath === '/docs' ||
+    normalizedPath === '/about' ||
+    normalizedPath.startsWith('/docs/') ||
+    normalizedPath.startsWith('/blog/') ||
+    normalizedPath.startsWith('/about/');
+  const markdownHref = `${normalizedPath}.md`;
   let type = 'website';
 
   if (path.startsWith('/docs') || path.startsWith('/blog')) {
@@ -69,6 +92,12 @@ export default function HeadComponent({
       <meta name='description' content={description} />
       <link rel='canonical' href={canonicalUrl} />
       <link rel='alternate' type='application/rss+xml' title={rssTitle} href={rssLink} />
+      {hasMarkdownAlternate ? (
+        <>
+          <link rel='alternate' type='text/markdown' href={markdownHref} />
+          <link rel='describedby' href='/llms.txt' />
+        </>
+      ) : null}
 
       {/* Google / Search Engine Tags */}
       <meta itemProp='name' content={title} />
