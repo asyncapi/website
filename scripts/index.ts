@@ -2,12 +2,13 @@ import fs from 'fs';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
-import { buildUsecasesList } from './usecases/index';
+import { generateLlmsFiles } from './build-llms';
 import { buildPostList } from './build-post-list';
 import { rssFeed } from './build-rss';
+import { buildToolsManual } from './build-tools';
 import { buildCaseStudiesList } from './casestudies/index';
 import { buildFinanceInfoList } from './finance/index';
-import { buildToolsManual } from './build-tools';
+import { buildUsecasesList } from './usecases/index';
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirPath = dirname(currentFilePath);
@@ -18,14 +19,16 @@ const tagsPath = resolve(currentDirPath, '../config', 'all-tags.json');
 const toolsIgnorePath = resolve(currentDirPath, '../config', 'tools-ignore.json');
 const toolsIgnoredOutputPath = resolve(currentDirPath, '../config', 'tools-ignored.json');
 
-
 /**
  * Initiates the build process for the project's content.
  *
- * This asynchronous function orchestrates the creation of various content lists by processing designated directories and files.
- * It builds the posts list, generates the blog RSS feed, creates the case studies list, compiles the adopters list,
+ * This asynchronous function orchestrates the creation of various content lists by processing
+ * designated directories and files.
+ * It builds the posts list, generates LLM discovery files (llms.txt, llms-full.txt, and per-page
+ * markdown), generates the blog RSS feed, creates the case studies list, compiles the adopters list,
  * and combines tools data.
- * For finance information, it reads the finance directory, filters and sorts numeric filenames representing years, and utilizes the latest year.
+ * For finance information, it reads the finance directory, filters and sorts numeric filenames
+ * representing years, and utilizes the latest year.
  * The function throws an error if no valid finance data is found.
  *
  * @throws {Error} If no numeric finance data is found in the finance directory.
@@ -40,6 +43,7 @@ async function start() {
   const writeFilePath = resolve(currentDirPath, '../config', 'posts.json');
 
   await buildPostList(postDirectories, basePath, writeFilePath);
+  await generateLlmsFiles();
   await rssFeed('blog', 'AsyncAPI Initiative Blog RSS Feed', 'AsyncAPI Initiative Blog', 'rss.xml');
   await buildCaseStudiesList('config/casestudies', resolve(currentDirPath, '../config', 'case-studies.json'));
 
@@ -52,7 +56,7 @@ async function start() {
     toolsIgnorePath,
     toolsIgnoredOutputPath
   );
-  
+
   await buildUsecasesList();
   const financeDir = resolve('.', 'config', 'finance');
 
