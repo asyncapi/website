@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/PNlbq0-nxa8/hqdefault.jpg",
+    "title": "Governance Board Meeting, 15:30 UTC Tuesday September 22nd 2026",
+    "description": "https://github.com/asyncapi/community/issues/3630.",
+    "videoId": "PNlbq0-nxa8"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/XF_iP5KkHC8/hqdefault.jpg",
     "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday June 16th 2026",
     "description": "https://github.com/asyncapi/community/issues/3570.",
@@ -10,12 +16,6 @@
     "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday March 31st 2026",
     "description": "https://github.com/asyncapi/community/issues/2329.",
     "videoId": "hvUOm9OIpgI"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/ku-WyyCT9I8/hqdefault.jpg",
-    "title": "Spec Meeting, 16:00 UTC Wednesday March 25th 2026",
-    "description": "https://github.com/asyncapi/community/issues/2319.",
-    "videoId": "ku-WyyCT9I8"
   },
   {
     "image_url": "https://i.ytimg.com/vi/CkfW2GAMTI0/hqdefault.jpg",
