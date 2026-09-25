@@ -8,9 +8,7 @@ import { logger } from '../helpers/logger';
 import { pause } from '../helpers/utils';
 
 const ignoreFiles = [
-  'reference/specification/v2.x.md',
-  'reference/specification/v3.0.0-explorer.md',
-  'reference/specification/v3.0.0.md'
+  'reference/specification/v2.x.md'
 ];
 
 interface PathObject {
@@ -120,18 +118,45 @@ function determineEditLink(
   filePath: string,
   editOptions: { value: string; href: string }[]
 ): string | null {
+  // Explorer pages do not have edit links
+  if (filePath.endsWith('-explorer.md') || urlPath.includes('-explorer')) {
+    return null;
+  }
+
   // Remove leading 'docs/' if present for matching
   const pathForMatching = urlPath.startsWith('docs/') ? urlPath.slice(5) : urlPath;
 
   const target = editOptions.find((edit) => pathForMatching.includes(edit.value));
 
+  if (!target) return null;
+
   // Handle the empty value case (fallback)
-  if (target?.value === '') {
+  if (target.value === '') {
     return `${target.href}/docs/${urlPath}.md`;
   }
 
+  const hrefList = target.href.split('/');
+  const lastListElement = hrefList[hrefList.length - 1].split('.');
+  const isHrefToFile = lastListElement.length > 1;
+
+  if (isHrefToFile) {
+    return target.href;
+  }
+
+  // Special handling for bindings directory where markdown files correspond to folders without .md
+  if (target.value === 'reference/bindings/') {
+    const base = path.basename(filePath);
+    if (base === 'index.md' || base === 'scripts.md') {
+      return target.href;
+    }
+    if (base === '2.x.x.md' || base === '3.0.0.md') {
+      return `${target.href}/sns/${base.replace('.md', '')}`;
+    }
+    return `${target.href}/${base.replace('.md', '')}`;
+  }
+
   // For other cases with specific targets
-  return target ? `${target.href}/${path.basename(filePath)}` : null;
+  return `${target.href}/${path.basename(filePath)}`;
 }
 
 /**
@@ -227,4 +252,4 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   main();
 }
 
-export { checkUrls, determineEditLink, generatePaths, main, processBatch };
+export { checkUrls, determineEditLink, generatePaths, ignoreFiles, main, processBatch };
