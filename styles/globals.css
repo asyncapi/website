@@ -1,11 +1,11 @@
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
-@import url(https://cdn.jsdelivr.net/npm/@docsearch/css@3);
+/* Algolia DocSearch CSS is loaded on demand in components/AlgoliaSearch.tsx */
 
-@import "swiper/css";
-@import "swiper/css/a11y";
-@import "swiper/css/navigation";
-@import "swiper/css/pagination";
-@import "swiper/css/scrollbar";
+@import 'swiper/css';
+@import 'swiper/css/a11y';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import 'swiper/css/scrollbar';
 
 @tailwind base;
 @tailwind components;
@@ -67,9 +67,9 @@ html:not(.transitions-enabled) *::after {
 }
 
 /* Smooth theme transitions - only enabled after page loads */
-html.transitions-enabled [class*="bg-"],
-html.transitions-enabled [class*="text-"],
-html.transitions-enabled [class*="border-"],
+html.transitions-enabled [class*='bg-'],
+html.transitions-enabled [class*='text-'],
+html.transitions-enabled [class*='border-'],
 html.transitions-enabled svg,
 html.transitions-enabled path,
 html.transitions-enabled circle,
@@ -91,7 +91,7 @@ html.transitions-enabled polygon {
   }
 }
 
-li>p {
+li > p {
   display: inline;
 }
 
@@ -118,11 +118,11 @@ abbr[title] {
 
 @keyframes GradientAnimation {
   0% {
-    background-position: 0% 50%
+    background-position: 0% 50%;
   }
 
   100% {
-    background-position: 200% 50%
+    background-position: 200% 50%;
   }
 }
 
@@ -177,7 +177,8 @@ abbr[title] {
   padding: 0;
 }
 
-.DocSearch-Help > a:focus, .DocSearch-Help > a:hover {
+.DocSearch-Help > a:focus,
+.DocSearch-Help > a:hover {
   outline: none;
   text-decoration: underline;
 }
@@ -197,8 +198,8 @@ abbr[title] {
   }
 }
 
-@media (max-width: 767px){
-  .orbits{
+@media (max-width: 767px) {
+  .orbits {
     display: none;
   }
 }
@@ -224,7 +225,6 @@ abbr[title] {
 .orbit > div {
   cursor: pointer;
 }
-
 
 .orbit > div > img {
   border-radius: 100%;
@@ -415,11 +415,11 @@ abbr[title] {
   color: white;
 }
 
-.meeting-card:hover > div:nth-child(2) > p  {
+.meeting-card:hover > div:nth-child(2) > p {
   color: white;
 }
 
-.explorer-menu-wrapper > div > div{
+.explorer-menu-wrapper > div > div {
   border: 1px solid rgb(228, 228, 228);
   border-radius: 10px;
   padding: 10px;
@@ -435,13 +435,13 @@ abbr[title] {
 }
 
 select {
-  cursor:pointer;
+  cursor: pointer;
 }
 .dark .gradient-border {
   border: 2px solid transparent;
-  border-image: linear-gradient(225deg, #AD20E2 0%, #2DCCFD 100%);
+  border-image: linear-gradient(225deg, #ad20e2 0%, #2dccfd 100%);
   border-image-slice: 1;
-  border-radius: 16px; 
+  border-radius: 16px;
 }
 
 /* Line clamp utilities for text truncation */
@@ -468,7 +468,8 @@ select {
 
 /* Smooth gradient animation for CTA section */
 @keyframes gradient-shift {
-  0%, 100% {
+  0%,
+  100% {
     background-position: 0% 50%;
   }
   50% {
@@ -491,7 +492,7 @@ select {
 }
 
 .featured-case-studies-swiper .swiper-pagination-bullet {
-  background: #8851FB;
+  background: #8851fb;
   opacity: 0.5;
   width: 10px;
   height: 10px;
@@ -510,7 +511,7 @@ select {
 
 /* Dark mode pagination bullets */
 .dark .featured-case-studies-swiper .swiper-pagination-bullet {
-  background: #A87EFC;
+  background: #a87efc;
 }
 
 /* Custom Swiper Styles for Use Cases Carousel */
@@ -523,7 +524,7 @@ select {
 }
 
 .case-studies-swiper .swiper-pagination-bullet {
-  background: #8851FB;
+  background: #8851fb;
   opacity: 0.5;
   width: 10px;
   height: 10px;
@@ -542,12 +543,12 @@ select {
 
 /* Dark mode pagination bullets */
 .dark .case-studies-swiper .swiper-pagination-bullet {
-  background: #A87EFC;
+  background: #a87efc;
 }
 
 /* Invert documentation diagrams in dark mode */
-.dark img[src*="SNS-SQS-Pub-Sub.png"],
-.dark img[src*="SNS-HTTP.png"],
-.dark img[src*="SQS-Point-To-Point.png"] {
+.dark img[src*='SNS-SQS-Pub-Sub.png'],
+.dark img[src*='SNS-HTTP.png'],
+.dark img[src*='SQS-Point-To-Point.png'] {
   filter: invert(100%) hue-rotate(180deg);
 }
