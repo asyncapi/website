@@ -46,13 +46,13 @@ function generateEditLink(post: IPost) {
   const editHref = target?.href;
   const hrefList = editHref?.split('/');
 
-  if (!hrefList) return null;
+  if (!hrefList || !target) return null;
 
   const lastListElement = hrefList[hrefList.length - 1].split('.');
   const isHrefToFile = lastListElement.length > 1;
   const EditPage = 'Edit this page on GitHub';
 
-  if (target?.value === '') {
+  if (target.value === '') {
     return (
       <a
         target='_blank'
@@ -64,10 +64,33 @@ function generateEditLink(post: IPost) {
       </a>
     );
   }
-  if (isHrefToFile) last = '';
+
+  if (isHrefToFile) {
+    return (
+      <a target='_blank' rel='noopener noreferrer' href={target.href} className='ml-1 underline'>
+        {EditPage}
+      </a>
+    );
+  }
+
+  if (target.value === 'reference/bindings/') {
+    let bindingLink = target.href;
+    if (last === 'index.md' || last === 'scripts.md') {
+      bindingLink = target.href;
+    } else if (last === '2.x.x.md' || last === '3.0.0.md') {
+      bindingLink = `${target.href}/sns/${last.replace('.md', '')}`;
+    } else {
+      bindingLink = `${target.href}/${last.replace('.md', '')}`;
+    }
+    return (
+      <a target='_blank' rel='noopener noreferrer' href={bindingLink} className='ml-1 underline'>
+        {EditPage}
+      </a>
+    );
+  }
 
   return (
-    <a target='_blank' rel='noopener noreferrer' href={`${target?.href}/${last}`} className='ml-1 underline'>
+    <a target='_blank' rel='noopener noreferrer' href={`${target.href}/${last}`} className='ml-1 underline'>
       {EditPage}
     </a>
   );
