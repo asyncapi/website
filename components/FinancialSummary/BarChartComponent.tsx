@@ -245,7 +245,9 @@ export default function BarChartComponent() {
             </BarChart>
           )}
         </div>
-        {isMounted && windowWidth < 900 ? <ExpensesCard /> : null}
+        {isMounted && windowWidth < 900 ? (
+          <ExpensesCard selectedCategory={selectedCategory} selectedMonth={selectedMonth} />
+        ) : null}
       </div>
     </div>
   );
