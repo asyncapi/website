@@ -43,18 +43,20 @@ const invalidRequests = [
   },
 ];
 
+// Counter of calls hitting the New Relic metrics endpoint, incremented by the
+// fetch stubs below. The variable itself must be module-scoped because the stub
+// closures capture it, but every test resets it before asserting, so no test
+// depends on execution order or on another test's leftover value.
+let metricCalls = 0;
+
 const context = {
   next: () => {},
   log: () => {},
 };
 
-let metricCalls = 0;
-
 function setup() {
   return stub(globalThis, "fetch", async (input: RequestInfo | URL, init?: RequestInit) => {
     const req = new Request(input, init);
-
-    console.log(req.url);
 
     if (req.url === metricURL) {
       metricCalls++;
@@ -76,9 +78,8 @@ function setup() {
 }
 
 Deno.test("serve-definitions test for validRequests", async () => {
-  metricCalls = 0;
-
   using _fetchStub = setup();
+  metricCalls = 0;
 
   for (const entry of validRequests) {
     console.log("Testing: " + entry.requestURL);
@@ -98,9 +99,8 @@ Deno.test("serve-definitions test for validRequests", async () => {
 });
 
 Deno.test("serve-definitions test for invalidRequests", async () => {
-  metricCalls = 0;
-
   using _fetchStub = setup();
+  metricCalls = 0;
 
   for (const entry of invalidRequests) {
     console.log("Testing: " + entry.requestURL);
@@ -117,15 +117,21 @@ Deno.test("serve-definitions test for invalidRequests", async () => {
 Deno.test("serve-definitions test for various response statuses", async () => {
   const testCases = [
     { requestURL: "https://asyncapi.com/definitions/2.4.0/info.json", status: 200 },
-    { requestURL: "https://asyncapi.com/definitions/2.4.0/info.json", status: 304 },
+    { requestURL: "https://asynccode.com/definitions/2.4.0/info.json", status: 304 },
     { requestURL: "https://asyncapi.com/definitions/2.4.0/info.json", status: 404 },
-    { requestURL: "https://asyncapi.com/definitions/2.4.0/info.json", status: 500 },
+    { requestURL: "https://asynccode.com/definitions/2.4.0/info.json", status: 500 },
   ];
 
   for (const { requestURL, status } of testCases) {
     console.log("Testing: " + requestURL);
 
-    using _fetchStub = stub(globalThis, "fetch", async () => {
+    using _fetchStub = stub(globalThis, "fetch", async (input: RequestInfo | URL, init?: RequestInit) => {
+      const req = new Request(input, init);
+
+      if (req.url === metricURL) {
+        metricCalls++;
+      }
+
       return new Response(status === 200 ? JSON.stringify({ url: requestURL }) : null, {
         status,
       });
@@ -142,18 +148,18 @@ Deno.test("serve-definitions test for various response statuses", async () => {
       assertEquals(response.status, status);
     }
 
-    if (status === 200 || status === 304) {
-      metricCalls++;
-    }
-
     console.log("\n");
   }
 
-  assertEquals(metricCalls, testCases.filter((testCase) => testCase.status === 200 || testCase.status === 304).length);
+  // serve-definitions.ts reports a metric for every .json file request:
+  // 200/304 as success, 404/500 as errors. The stub increments metricCalls
+  // for each NR endpoint call, so the expected total is every test case.
+  assertEquals(metricCalls, testCases.length);
 });
 
 Deno.test("serve-definitions test for schema-unrelated requests", async () => {
   using _fetchStub = setup();
+  metricCalls = 0;
 
   const schemaUnrelatedRequests = [
     "https://asyncapi.com/definitions/asyncapi.yaml",
@@ -169,11 +175,12 @@ Deno.test("serve-definitions test for schema-unrelated requests", async () => {
 
     assertEquals(response, undefined);
   }
+
+  assertEquals(metricCalls, 0);
 });
 
 Deno.test("serve-definitions test for schema-related non-JSON requests", async () => {
   using _fetchStub = setup();
-
   metricCalls = 0;
 
   const schemaRelatedNonJsonRequests = [
