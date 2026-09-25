@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/KuuKTUfMiV0/hqdefault.jpg",
+    "title": "Making AI Agents Reliable Event-Driven API Consumers with Arazzo",
+    "description": "AI agents are increasingly expected to act across any of your APIs, publishing to a queue, waiting on a webhook, correlating an ...",
+    "videoId": "KuuKTUfMiV0"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/PNlbq0-nxa8/hqdefault.jpg",
     "title": "Governance Board Meeting, 15:30 UTC Tuesday September 22nd 2026",
     "description": "https://github.com/asyncapi/community/issues/3630.",
@@ -22,11 +28,5 @@
     "title": "Docs Meeting, 15:00 UTC Wednesday March 25th 2026",
     "description": "https://github.com/asyncapi/community/issues/2323.",
     "videoId": "CkfW2GAMTI0"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/T8RHRCHtPhs/hqdefault.jpg",
-    "title": "AsyncAPI Website Triage Meeting, 15:30 UTC Wednesday March 18th 2026",
-    "description": "https://github.com/asyncapi/community/issues/2315.",
-    "videoId": "T8RHRCHtPhs"
   }
 ]
