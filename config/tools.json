@@ -522,6 +522,43 @@
         }
       },
       {
+        "title": "Pydantic-SocketIO",
+        "description": "Python-first Socket.IO runtime validation with Pydantic and code-first AsyncAPI contracts.",
+        "links": {
+          "repoUrl": "https://github.com/atomiechen/Pydantic-SocketIO"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "Python",
+              "color": "bg-[#A8D0EF]",
+              "borderColor": "border-[#3878AB]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "Socket.IO",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "FastAPI",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "asyncio",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "code-first"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "Repid",
         "description": "A simple, fast, and extensible async task queue framework, with built-in AsyncAPI 3.0 schema generation.",
         "links": {
@@ -967,6 +1004,44 @@
           ],
           "categories": [
             "code-generator"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "Pydantic-SocketIO Codegen",
+        "description": "Generate Socket.IO TypeScript event interfaces from Pydantic-SocketIO AsyncAPI contracts.",
+        "links": {
+          "repoUrl": "https://github.com/atomiechen/Pydantic-SocketIO/tree/main/packages/codegen"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "TypeScript",
+              "color": "bg-[#7DBCFE]",
+              "borderColor": "border-[#2C78C7]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "Node.js",
+              "color": "bg-[#BDFF67]",
+              "borderColor": "border-[#84CE24]"
+            },
+            {
+              "name": "TypeScript",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "Socket.IO",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "code-generator",
+            "cli"
           ],
           "hasCommercial": false
         }
@@ -3028,6 +3103,44 @@
           ],
           "categories": [
             "mocking-and-testing",
+            "cli"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "Pydantic-SocketIO Codegen",
+        "description": "Generate Socket.IO TypeScript event interfaces from Pydantic-SocketIO AsyncAPI contracts.",
+        "links": {
+          "repoUrl": "https://github.com/atomiechen/Pydantic-SocketIO/tree/main/packages/codegen"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "TypeScript",
+              "color": "bg-[#7DBCFE]",
+              "borderColor": "border-[#2C78C7]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "Node.js",
+              "color": "bg-[#BDFF67]",
+              "borderColor": "border-[#84CE24]"
+            },
+            {
+              "name": "TypeScript",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "Socket.IO",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            }
+          ],
+          "categories": [
+            "code-generator",
             "cli"
           ],
           "hasCommercial": false
