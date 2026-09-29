@@ -1,7 +1,7 @@
 ---
 title: "Your Event-Driven System Isn't Fault-Tolerant Until You've Tested It"
 date: 2026-09-22T06:00:00+01:00
-type: Community Education
+type: Community
 tags:
   - Webinar
   - Blog article
@@ -14,8 +14,7 @@ authors:
 excerpt: "A message broker can give your event-driven system decoupling and durability, but that doesn’t automatically make it fault-tolerant. What happens when a message fails, retries are exhausted, or the payload itself is invalid? This article explores how to make retry and dead-letter behavior explicit with AsyncAPI and Specmatic—and, more importantly, how to test that your system actually behaves as expected."
 ---
 
-
-#### **Why a message broker doesn't automatically make your system resilient, and how to verify failure handling with AsyncAPI and Specmatic**
+*Why a message broker doesn't automatically make your system resilient, and how to verify failure handling with AsyncAPI and Specmatic*
 
 Adding a message broker to your architecture doesn't automatically make your system fault-tolerant.
 
@@ -29,7 +28,7 @@ Retry logic and dead-letter queues (DLQs) can handle these scenarios. But implem
 
 Let's look at how you can do that with AsyncAPI and Specmatic.
 
-## **Three failures your consumer needs to handle**
+## Three failures your consumer needs to handle
 
 Consider a simple system:
 
@@ -37,7 +36,7 @@ An Order App publishes an order to a Kafka topic. A consumer processes the messa
 
 Even this simple flow has three failure scenarios.
 
-### **1\. Transient failure**
+### 1. Transient failure
 
 An SQS request times out. A database connection drops. A downstream service temporarily becomes unavailable.
 
@@ -45,13 +44,13 @@ The order isn't necessarily bad. The downstream system might just need time to r
 
 The consumer should retry, but with a backoff strategy and a maximum number of attempts. Otherwise, it can overwhelm an already struggling service or retry indefinitely.
 
-### **2\. Retries are exhausted**
+### 2. Retries are exhausted
 
 Suppose the consumer retries three times and the operation still fails.
 
 The message shouldn't disappear. It should move to a dead-letter queue, where operators can inspect the failure and potentially replay the message later.
 
-### **3\. The message is invalid**
+### 3. The message is invalid
 
 Some failures won't disappear with another attempt.
 
@@ -81,21 +80,21 @@ Retry paths only run when something has already gone wrong. That makes them easy
 
 Your application can look healthy while its failure-handling path is broken.
 
-## **Put the reliability contract in your AsyncAPI document**
+## Put the reliability contract in your AsyncAPI document
 
 AsyncAPI already describes channels, operations, messages, and payload schemas.
 
 Specmatic extends that contract with two properties for describing retry and dead-letter behavior:
 
-* `x-specmatic-retry`  
-* `x-specmatic-dlq`
+- `x-specmatic-retry`  
+- `x-specmatic-dlq`
 
 For example:
 
+```
 operations:  
   sendOrder:  
     \# ... channel, action, messages ...
-
     x-specmatic-retry:  
       channel:  
         $ref: '\#/channels/retryTopic'  
@@ -106,13 +105,13 @@ operations:
         type: exponential  
         initialDelaySeconds: 1  
         multiplier: 2
-
     x-specmatic-dlq:  
       channel:  
         $ref: '\#/channels/dlqTopic'  
       messages:  
         \- $ref: '\#/channels/dlqTopic/messages/placeOrderDlqMessage'  
       waitTimeInSeconds: 15
+```
 
 Now the expected behavior is explicit.
 
@@ -124,7 +123,7 @@ More importantly, a testing tool can read the same contract.
 
 That's where this becomes useful.
 
-## **Test the contract against the broker**
+## Test the contract against the broker
 
 Writing the behavior down isn't enough. You still need to prove that the implementation follows it.
 
@@ -132,10 +131,10 @@ For this example, you can run Kafka, an SQS-compatible endpoint, and the consume
 
 A complete test should cover four scenarios:
 
-* **Valid order:** The message reaches the SQS queue.  
-* **Invalid order:** The message goes directly to the DLQ.  
-* **Transient failure:** The message reaches the retry topic.  
-* **Repeated failure:** The message is retried and eventually reaches the DLQ.
+- **Valid order:** The message reaches the SQS queue.  
+- **Invalid order:** The message goes directly to the DLQ.  
+- **Transient failure:** The message reaches the retry topic.  
+- **Repeated failure:** The message is retried and eventually reaches the DLQ.
 
 The important part is that you're testing **observable behavior**, not implementation details.
 
@@ -157,7 +156,7 @@ A unit test might confirm that a function retries three times. It doesn't prove 
 
 For reliability testing, the final outcome matters.
 
-## **From vendor extension to standard behavior**
+## From vendor extension to standard behavior
 
 Today, `x-specmatic-retry` and `x-specmatic-dlq` are vendor extensions. Tools need to understand Specmatic's extensions to use them.
 
@@ -179,7 +178,7 @@ How many times? Which failures are retryable? What's the delay? Where does the m
 
 A machine-readable contract answers those questions before an agent writes the implementation, and a test suite can verify the result afterward.
 
-## **Conclusion**
+## Conclusion
 
 A message broker doesn't automatically make an event-driven system fault-tolerant. You still need to define what happens when messages fail.
 
