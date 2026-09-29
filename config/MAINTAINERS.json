@@ -8,6 +8,7 @@
         "availableForHire": true,
         "isTscMember": true,
         "tscMemberSince": "2023-07-13",
+        "isBoardMember": true,
         "repos": [
             "website",
             "conference-website",
@@ -38,6 +39,7 @@
         "availableForHire": true,
         "isTscMember": true,
         "tscMemberSince": "2025-01-13",
+        "isBoardMember": true,
         "repos": [
             "parser-js",
             "openapi-schema-parser",
@@ -330,6 +332,7 @@
         "availableForHire": true,
         "isTscMember": true,
         "tscMemberSince": "2023-11-30",
+        "isBoardMember": true,
         "repos": [
             "website",
             "parser-js",
