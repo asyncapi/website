@@ -41,17 +41,6 @@
       "score": 11.48698354997035
     },
     {
-      "id": "I_kwDODdpKDs7_yUer",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Introduce v3 compatibility tests",
-      "author": "Pakisan",
-      "resourcePath": "/asyncapi/tck/issues/247",
-      "repo": "asyncapi/tck",
-      "labels": [],
-      "score": 10.625459783722574
-    },
-    {
       "id": "PR_kwDOCHlHJM7srbNz",
       "isPR": true,
       "isAssigned": true,
@@ -60,7 +49,31 @@
       "resourcePath": "/asyncapi/generator/pull/2142",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 9.476761428725538
+      "score": 11.199808961221091
+    },
+    {
+      "id": "I_kwDOBW5R_c67zQdK",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[FEATURE] “Edit This Page” Button for Docs and Blog Pages",
+      "author": "Sauve9119",
+      "resourcePath": "/asyncapi/website/issues/4187",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
+          "name": "triaged",
+          "color": "0052cc"
+        }
+      ],
+      "score": 10.625459783722574
     },
     {
       "id": "I_kwDOCHlHJM61Y1X2",
@@ -153,17 +166,6 @@
       "score": 6.89219012998221
     },
     {
-      "id": "I_kwDOCHlHJM8AAAABIu0AsQ",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[SECURITY] Malicious versions published via compromised next branch - @asyncapi/generator@3.3.1, generator-helpers@1.1.1, generator-components@0.7.1",
-      "author": "LidorMachluf",
-      "resourcePath": "/asyncapi/generator/issues/2184",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 6.505483795769924
-    },
-    {
       "id": "PR_kwDOBW5R_c74W35w",
       "isPR": true,
       "isAssigned": false,
@@ -178,6 +180,22 @@
         }
       ],
       "score": 6.030666363734434
+    },
+    {
+      "id": "I_kwDODwv8N87e2ifU",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Add Gallery Section to the website",
+      "author": "kajal-jotwani",
+      "resourcePath": "/asyncapi/conference-website/issues/877",
+      "repo": "asyncapi/conference-website",
+      "labels": [
+        {
+          "name": "microgrant",
+          "color": "708090"
+        }
+      ],
+      "score": 5.743491774985175
     }
   ],
   "goodFirstIssues": [
