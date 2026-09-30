@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: Community Builder and Open Source Fanatic!
 excerpt: 'AsyncAPI community and project updates for July 2026'
-featured: true
 ---
 
 As the holiday season begins and things are slow down, we’ve extended the Governance Board election until the 3rd of August. The extension will allow more time for all our TSC members to participate in shaping the future of the community. 
