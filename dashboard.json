@@ -150,6 +150,34 @@
       "score": 7.466539307480728
     },
     {
+      "id": "I_kwDOBW5R_c6ovh9-",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[FEATURE] <Social Sharing Buttons on Blogs>",
+      "author": "cbum-dev",
+      "resourcePath": "/asyncapi/website/issues/3649",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
+          "name": "good first issue",
+          "color": "7057ff"
+        },
+        {
+          "name": "area/typescript",
+          "color": "007acc"
+        }
+      ],
+      "score": 7.179364718731469
+    },
+    {
       "id": "PR_kwDOBW5R_c8AAAABASjS2w",
       "isPR": true,
       "isAssigned": false,
@@ -180,22 +208,6 @@
         }
       ],
       "score": 6.030666363734434
-    },
-    {
-      "id": "I_kwDODwv8N87e2ifU",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Add Gallery Section to the website",
-      "author": "kajal-jotwani",
-      "resourcePath": "/asyncapi/conference-website/issues/877",
-      "repo": "asyncapi/conference-website",
-      "labels": [
-        {
-          "name": "microgrant",
-          "color": "708090"
-        }
-      ],
-      "score": 5.743491774985175
     }
   ],
   "goodFirstIssues": [
@@ -386,6 +398,10 @@
         {
           "name": "enhancement",
           "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
