@@ -92,17 +92,9 @@ jobs:
             }
 
             // ---------- swap labels ----------
-            const awaitingLabel = 'Awaiting Approval';
-            if (currentLabels.some(l => l.name === awaitingLabel)) {
-              console.log(`Removing label '${awaitingLabel}'...`);
-              await github.rest.issues.removeLabel({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                name: awaitingLabel,
-              });
-            }
-
+            // Add Approved Issue FIRST, then remove Awaiting Approval.
+            // This order prevents a gap where the issue has neither label
+            // if the add fails after the remove.
             const approvedLabel = 'Approved Issue';
             const labelColor = '0e8a16';
             const labelDescription = 'Issue has been approved by a maintainer and is ready for work';
@@ -133,6 +125,17 @@ jobs:
               repo: context.repo.repo,
               labels: [approvedLabel],
             });
+
+            const awaitingLabel = 'Awaiting Approval';
+            if (currentLabels.some(l => l.name === awaitingLabel)) {
+              console.log(`Removing label '${awaitingLabel}'...`);
+              await github.rest.issues.removeLabel({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name: awaitingLabel,
+              });
+            }
 
             // ---------- post contribution instructions ----------
             const commentBody = `👋 Thanks for your patience. This issue has been reviewed and is ready to be worked on.

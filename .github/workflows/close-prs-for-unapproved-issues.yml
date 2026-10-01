@@ -98,7 +98,7 @@ jobs:
             // ---------- check for issue references ----------
             const prBody = context.payload.pull_request.body || '';
 
-            const issuePattern = /(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?)\s#(\d+)/gi;
+            const issuePattern = /(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?):?\s+#(\d+)/gi;
             const matches = [...prBody.matchAll(issuePattern)];
 
             if (matches.length === 0) {
@@ -170,7 +170,8 @@ jobs:
                   });
                   return;
                 }
-                console.log(`Could not fetch labels for issue #${issueNumber}: ${error.message}`);
+                core.setFailed(`Could not verify labels for issue #${issueNumber}: ${error.message}`);
+                return;
               }
             }
 
