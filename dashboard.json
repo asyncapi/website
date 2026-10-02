@@ -21,6 +21,17 @@
       "score": 25.27136380993477
     },
     {
+      "id": "I_kwDOCHlHJM8AAAABIu0AsQ",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[SECURITY] Malicious versions published via compromised next branch - @asyncapi/generator@3.3.1, generator-helpers@1.1.1, generator-components@0.7.1",
+      "author": "LidorMachluf",
+      "resourcePath": "/asyncapi/generator/issues/2184",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 13.497205671215161
+    },
+    {
       "id": "PR_kwDOCHlHJM8AAAABAm3ykA",
       "isPR": true,
       "isAssigned": false,
@@ -29,7 +40,23 @@
       "resourcePath": "/asyncapi/generator/pull/2211",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 12.061332727468868
+      "score": 12.635681904967385
+    },
+    {
+      "id": "I_kwDOCoBobc6fqNYx",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[BUG] `@asyncapi/multi-parser` still depending on vulnerable version of `jsonpath-plus`",
+      "author": "BenjaminSchwendner",
+      "resourcePath": "/asyncapi/parser-js/issues/1065",
+      "repo": "asyncapi/parser-js",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ],
+      "score": 11.48698354997035
     },
     {
       "id": "MDU6SXNzdWU4NzE2MjU2MDk=",
@@ -46,22 +73,6 @@
         }
       ],
       "score": 11.48698354997035
-    },
-    {
-      "id": "I_kwDOCoBobc6fqNYx",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[BUG] `@asyncapi/multi-parser` still depending on vulnerable version of `jsonpath-plus`",
-      "author": "BenjaminSchwendner",
-      "resourcePath": "/asyncapi/parser-js/issues/1065",
-      "repo": "asyncapi/parser-js",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ],
-      "score": 11.199808961221091
     },
     {
       "id": "PR_kwDOCHlHJM7srbNz",
@@ -112,17 +123,6 @@
           "color": "a2eeef"
         }
       ],
-      "score": 8.902412251227021
-    },
-    {
-      "id": "PR_kwDOBW5R_c7zDz2u",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore(blog): add Q2 2026 Social Media Review blog post",
-      "author": "Mayaleeeee",
-      "resourcePath": "/asyncapi/website/pull/5632",
-      "repo": "asyncapi/website",
-      "labels": [],
       "score": 8.902412251227021
     },
     {
