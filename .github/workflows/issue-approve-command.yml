@@ -36,8 +36,8 @@ jobs:
             const fs = require('fs');
             const actor = process.env.ACTOR;
 
-            const commentBody = (context.payload.comment.body || '').trim();
-            if (!/^\/approve(\s.*)?$/is.test(commentBody)) {
+            const incomingComment = (context.payload.comment.body || '').trim();
+            if (!/^\/approve(\s.*)?$/is.test(incomingComment)) {
               return;
             }
 
