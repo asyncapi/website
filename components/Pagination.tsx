@@ -259,6 +259,11 @@ export default function Pagination({
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                   <button
                     key={page}
+                    onMouseDown={(e) => {
+                      // Prevent the trigger's onBlur from closing the
+                      // dropdown before this click is processed (#5755).
+                      e.preventDefault();
+                    }}
                     onClick={() => {
                       handlePageClick(page);
                       setIsDropdownOpen(false);
