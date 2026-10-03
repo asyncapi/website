@@ -1,12 +1,30 @@
 /* eslint-disable no-underscore-dangle */
-import type { DocSearchHit, InternalDocSearchHit, StoredDocSearchHit } from '@docsearch/react';
-import { DocSearchModal } from '@docsearch/react';
+import type {
+  DocSearchHit,
+  InternalDocSearchHit,
+  StoredDocSearchHit,
+} from '@docsearch/react';
 import clsx from 'clsx';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { createPortal } from 'react-dom';
+
+const DocSearchModal = dynamic(
+  () =>
+    import('@docsearch/react').then((mod) => ({ default: mod.DocSearchModal })),
+  { ssr: false },
+);
 
 export const INDEX_NAME = 'asyncapi';
 export const DOCS_INDEX_NAME = 'asyncapi-docs';
@@ -46,8 +64,17 @@ interface IUseDocSearchKeyboardEvents {
   onInput?: (e: React.KeyboardEvent) => void;
 }
 
-type ISearchButtonProps = Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'children'> & {
-  children?: React.ReactNode | (({ actionKey }: { actionKey: { shortKey: string; key: string } }) => React.ReactNode);
+type ISearchButtonProps = Omit<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  'children'
+> & {
+  children?:
+    | React.ReactNode
+    | (({
+        actionKey,
+      }: {
+        actionKey: { shortKey: string; key: string };
+      }) => React.ReactNode);
   indexName?: string;
 };
 
@@ -64,7 +91,8 @@ function transformItems(items: DocSearchHit[]) {
 
     a.href = item.url;
 
-    const hash = a.hash === '#content-wrapper' || a.hash === '#header' ? '' : a.hash;
+    const hash =
+      a.hash === '#content-wrapper' || a.hash === '#header' ? '' : a.hash;
 
     if (item.hierarchy?.lvl0) {
       // eslint-disable-next-line no-param-reassign
@@ -75,10 +103,15 @@ function transformItems(items: DocSearchHit[]) {
       ...item,
       url: `${a.pathname}${hash}`,
       __is_result: () => true,
-      __is_parent: () => item.type === 'lvl1' && items.length > 1 && index === 0,
-      __is_child: () => item.type !== 'lvl1' && items.length > 1 && items[0].type === 'lvl1' && index !== 0,
+      __is_parent: () =>
+        item.type === 'lvl1' && items.length > 1 && index === 0,
+      __is_child: () =>
+        item.type !== 'lvl1' &&
+        items.length > 1 &&
+        items[0].type === 'lvl1' &&
+        index !== 0,
       __is_first: () => index === 1,
-      __is_last: () => index === items.length - 1 && index !== 0
+      __is_last: () => index === items.length - 1 && index !== 0,
     };
   });
 }
@@ -97,7 +130,7 @@ function Hit({ hit, children }: IHitProps) {
         'DocSearch-Hit--Parent': hit.__is_parent?.(),
         'DocSearch-Hit--FirstChild': hit.__is_first?.(),
         'DocSearch-Hit--LastChild': hit.__is_last?.(),
-        'DocSearch-Hit--Child': hit.__is_child?.()
+        'DocSearch-Hit--Child': hit.__is_child?.(),
       })}
     >
       {children}
@@ -114,14 +147,18 @@ function AlgoliaModal({ onClose, initialQuery, indexName }: AlgoliaModalProps) {
   const router = useRouter();
 
   return createPortal(
-    <div className='dark:text-dark-text'>
+    <div className="dark:text-dark-text">
       <DocSearchModal
         initialQuery={initialQuery}
         initialScrollY={window.scrollY}
         searchParameters={{
-          distinct: 1
+          distinct: 1,
         }}
-        placeholder={indexName === DOCS_INDEX_NAME ? 'Search documentation' : 'Search resources'}
+        placeholder={
+          indexName === DOCS_INDEX_NAME
+            ? 'Search documentation'
+            : 'Search resources'
+        }
         onClose={onClose}
         indexName={indexName}
         apiKey={API_KEY}
@@ -130,7 +167,7 @@ function AlgoliaModal({ onClose, initialQuery, indexName }: AlgoliaModalProps) {
           navigate({ itemUrl }) {
             onClose();
             router.push(itemUrl);
-          }
+          },
         }}
         hitComponent={Hit}
         transformItems={transformItems}
@@ -139,7 +176,7 @@ function AlgoliaModal({ onClose, initialQuery, indexName }: AlgoliaModalProps) {
         }}
       />
     </div>,
-    document.body
+    document.body,
   );
 }
 
@@ -153,7 +190,10 @@ function isEditingContent(event: KeyboardEvent) {
   const { tagName } = element as HTMLElement;
 
   return (
-    (element as HTMLElement).isContentEditable || tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA'
+    (element as HTMLElement).isContentEditable ||
+    tagName === 'INPUT' ||
+    tagName === 'SELECT' ||
+    tagName === 'TEXTAREA'
   );
 }
 
@@ -163,22 +203,24 @@ function isEditingContent(event: KeyboardEvent) {
  */
 function getActionKey() {
   if (typeof navigator !== 'undefined') {
-    if (/(Mac|iPhone|iPod|iPad)/i.test(navigator.userAgent || navigator.platform)) {
+    if (
+      /(Mac|iPhone|iPod|iPad)/i.test(navigator.userAgent || navigator.platform)
+    ) {
       return {
         shortKey: '⌘',
-        key: 'Command'
+        key: 'Command',
       };
     }
 
     return {
       shortKey: 'Ctrl',
-      key: 'Control'
+      key: 'Control',
     };
   }
 
   return {
     shortKey: 'Ctrl',
-    key: 'Control'
+    key: 'Control',
   };
 }
 
@@ -187,7 +229,11 @@ function getActionKey() {
  * @description The hook used for the Algolia search keyboard events
  * @param {IUseDocSearchKeyboardEvents} props - The props of the useDocSearchKeyboardEvents hook
  */
-function useDocSearchKeyboardEvents({ isOpen, onOpen, onClose }: IUseDocSearchKeyboardEvents) {
+function useDocSearchKeyboardEvents({
+  isOpen,
+  onOpen,
+  onClose,
+}: IUseDocSearchKeyboardEvents) {
   useEffect(() => {
     /**
      * @description The function used to handle the keyboard event.
@@ -213,7 +259,9 @@ function useDocSearchKeyboardEvents({ isOpen, onOpen, onClose }: IUseDocSearchKe
           if (typeof document !== 'undefined') {
             const loc = document.location;
 
-            indexName = loc.pathname.startsWith('/docs') ? DOCS_INDEX_NAME : INDEX_NAME;
+            indexName = loc.pathname.startsWith('/docs')
+              ? DOCS_INDEX_NAME
+              : INDEX_NAME;
           }
           onOpen(indexName);
         }
@@ -233,7 +281,11 @@ function useDocSearchKeyboardEvents({ isOpen, onOpen, onClose }: IUseDocSearchKe
  * @description The Algolia search component used for searching the website
  * @param {React.ReactNode} children - The content of the page
  */
-export default function AlgoliaSearch({ children }: { children: React.ReactNode }) {
+export default function AlgoliaSearch({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   const [isOpen, setIsOpen] = useState(false);
   const [indexName, setIndexName] = useState<string>(INDEX_NAME);
   const [initialQuery, setInitialQuery] = useState<string>();
@@ -245,7 +297,7 @@ export default function AlgoliaSearch({ children }: { children: React.ReactNode 
       }
       setIsOpen(true);
     },
-    [setIsOpen, setIndexName]
+    [setIsOpen, setIndexName],
   );
 
   const onClose = useCallback(() => {
@@ -257,23 +309,56 @@ export default function AlgoliaSearch({ children }: { children: React.ReactNode 
       setIsOpen(true);
       setInitialQuery(e.key);
     },
-    [setIsOpen, setInitialQuery]
+    [setIsOpen, setInitialQuery],
   );
 
   useDocSearchKeyboardEvents({
     isOpen,
     onOpen,
     onClose,
-    onInput
+    onInput,
   });
+
+  useEffect(() => {
+    if (isOpen) {
+      // Load Algolia CSS on demand when modal first opens
+      const linkId = 'docsearch-css';
+
+      if (!document.getElementById(linkId)) {
+        const link = document.createElement('link');
+
+        link.id = linkId;
+        link.rel = 'stylesheet';
+        link.href = 'https://cdn.jsdelivr.net/npm/@docsearch/css@3';
+        document.head.appendChild(link);
+      }
+    }
+  }, [isOpen]);
 
   return (
     <>
       <Head>
-        <link rel='preconnect' href={`https://${APP_ID}-dsn.algolia.net`} crossOrigin='anonymous' />
+        <link
+          rel="preconnect"
+          href={`https://${APP_ID}-dsn.algolia.net`}
+          crossOrigin="anonymous"
+        />
       </Head>
-      <SearchContext.Provider value={{ isOpen, onOpen, onClose, onInput }}>{children}</SearchContext.Provider>
-      {isOpen && <AlgoliaModal initialQuery={initialQuery ?? ''} onClose={onClose} indexName={indexName} />}
+      <SearchContext.Provider
+        value={useMemo(
+          () => ({ isOpen, onOpen, onClose, onInput }),
+          [isOpen, onOpen, onClose, onInput],
+        )}
+      >
+        {children}
+      </SearchContext.Provider>
+      {isOpen && (
+        <AlgoliaModal
+          initialQuery={initialQuery ?? ''}
+          onClose={onClose}
+          indexName={indexName}
+        />
+      )}
     </>
   );
 }
@@ -283,7 +368,11 @@ export default function AlgoliaSearch({ children }: { children: React.ReactNode 
  * @description The search button component used for opening the Algolia search
  * @param {ISearchButtonProps} props - The props of the search button
  */
-export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISearchButtonProps) {
+export function SearchButton({
+  children,
+  indexName = INDEX_NAME,
+  ...props
+}: ISearchButtonProps) {
   const { onOpen, onInput } = useContext(SearchContext);
   const searchButtonRef = useRef<HTMLButtonElement>(null);
   const actionKey = getActionKey();
@@ -296,7 +385,7 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISe
      * @returns {void}
      */
     function onKeyDown(event: KeyboardEvent) {
-      if (searchButtonRef && searchButtonRef.current === document.activeElement && onInput) {
+      if (searchButtonRef.current === document.activeElement && onInput) {
         if (/[a-zA-Z0-9]/.test(event.key)) {
           onInput(event as unknown as React.KeyboardEvent);
         }
@@ -310,17 +399,18 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISe
     };
   }, [onInput, searchButtonRef]);
 
-  const childContent = typeof children === 'function' ? children({ actionKey }) : children;
+  const childContent =
+    typeof children === 'function' ? children({ actionKey }) : children;
 
   return (
     <button
-      type='button'
+      type="button"
       ref={searchButtonRef}
       onClick={() => {
         onOpen(indexName);
       }}
       {...props}
-      data-testid='Search-Button'
+      data-testid="Search-Button"
     >
       {childContent}
     </button>
