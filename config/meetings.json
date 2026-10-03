@@ -1,12 +1,5 @@
 [
   {
-    "title": "AsyncAPI Docs Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=YmtyMWVucjg3MTZwZzJidTRmNjVsNHBiMGcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/3572",
-    "banner": "",
-    "date": "2026-06-24T16:00:00.000Z"
-  },
-  {
     "title": "AsyncAPI Community WG Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=MjliaWcwajZia3NkNWg3bzY3bXBrZTdicjAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/3591",
