@@ -137,6 +137,17 @@
       "score": 8.615237662477762
     },
     {
+      "id": "PR_kwDOCHlHJM8AAAABE8Uohg",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "test(generator): add unit tests for conditional generation and config…",
+      "author": "devxdh",
+      "resourcePath": "/asyncapi/generator/pull/2257",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 8.040888484979245
+    },
+    {
       "id": "PR_kwDOBW5R_c7q5bzH",
       "isPR": true,
       "isAssigned": false,
@@ -167,34 +178,6 @@
         }
       ],
       "score": 7.466539307480728
-    },
-    {
-      "id": "I_kwDOBW5R_c6ovh9-",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[FEATURE] <Social Sharing Buttons on Blogs>",
-      "author": "cbum-dev",
-      "resourcePath": "/asyncapi/website/issues/3649",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "good first issue",
-          "color": "7057ff"
-        },
-        {
-          "name": "area/typescript",
-          "color": "007acc"
-        }
-      ],
-      "score": 7.179364718731469
     }
   ],
   "goodFirstIssues": [
