@@ -5,7 +5,6 @@ import { Discussion, DiscussionCategory, Reply } from './index.d';
 export namespace Slack {
   const slackClient = new WebClient(process.env.SLACK_TOKEN);
   const CHECK_MARK_REACTION = 'white_check_mark';
-  const AVATAR_URL = 'https://avatars.githubusercontent.com/u/61865014';
 
   /**
    * Opens a dialog in Slack asking for a title and a category.
@@ -128,7 +127,6 @@ export namespace Slack {
         text: message,
         as_user: true,
         thread_ts: threadTS,
-        icon_url: AVATAR_URL,
       });
     } catch (err) {
       console.error(
