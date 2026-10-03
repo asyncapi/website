@@ -97,38 +97,42 @@ jobs:
             }
 
             // ---------- swap labels ----------
-            // Add Approved Issue FIRST, then remove Awaiting Approval.
+            // Add Approved Issue and triaged FIRST, then remove Awaiting Approval.
             // This order prevents a gap where the issue has neither label
             // if the add fails after the remove.
             const approvedLabel = 'Approved Issue';
-            const labelColor = '0e8a16';
-            const labelDescription = 'Issue has been approved by a maintainer and is ready for work';
+            const triagedLabel = 'triaged';
 
             const { data: repoLabels } = await github.rest.issues.listLabelsForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
             });
 
-            if (!repoLabels.some(l => l.name === approvedLabel)) {
-              try {
-                await github.rest.issues.createLabel({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  name: approvedLabel,
-                  color: labelColor,
-                  description: labelDescription,
-                });
-              } catch (e) {
-                if (e.status !== 422) throw e;
+            async function ensureLabel(name, color, description) {
+              if (!repoLabels.some(l => l.name === name)) {
+                try {
+                  await github.rest.issues.createLabel({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    name,
+                    color,
+                    description,
+                  });
+                } catch (e) {
+                  if (e.status !== 422) throw e;
+                }
               }
             }
 
-            console.log(`Adding label '${approvedLabel}' to issue #${context.issue.number}...`);
+            await ensureLabel(approvedLabel, '0e8a16', 'Issue has been approved by a maintainer and is ready for work');
+            await ensureLabel(triagedLabel, '0052cc', 'Issue has been reviewed and discussed');
+
+            console.log(`Adding labels '${approvedLabel}' and '${triagedLabel}' to issue #${context.issue.number}...`);
             await github.rest.issues.addLabels({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: [approvedLabel],
+              labels: [approvedLabel, triagedLabel],
             });
 
             const awaitingLabel = 'Awaiting Approval';
