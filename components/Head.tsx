@@ -11,6 +11,22 @@ interface IHeadProps {
   image?: string;
   rssTitle?: string;
   rssLink?: string;
+  canonical?: string;
+}
+
+/**
+ * `/docs/` and `/docs` both become `/docs`.
+ *
+ * @param value - current page path
+ */
+function stripTrailingSlashes(value: string): string {
+  let result = value;
+
+  while (result.length > 1 && result.endsWith('/')) {
+    result = result.slice(0, -1);
+  }
+
+  return result;
 }
 
 /**
@@ -21,6 +37,7 @@ interface IHeadProps {
  * @param {string} props.image - The image of the page
  * @param {string} props.rssTitle - The RSS title of the page
  * @param {string} props.rssLink - The RSS link of the page
+ * @param {string} props.canonical - Override for the canonical URL. Defaults to the current page URL.
  */
 export default function HeadComponent({
   title,
@@ -28,7 +45,8 @@ export default function HeadComponent({
                 All powered by the AsyncAPI specification, the industry standard for defining asynchronous APIs.`,
   image = '/img/social/website-card.jpg',
   rssTitle = 'RSS Feed for AsyncAPI Initiative Blog',
-  rssLink = '/rss.xml'
+  rssLink = '/rss.xml',
+  canonical
 }: IHeadProps) {
   const url = process.env.NEXT_PUBLIC_DEPLOY_PRIME_URL || process.env.NEXT_PUBLIC_DEPLOY_URL || 'http://localhost:3000';
   const appContext = useContext(AppContext);
@@ -36,6 +54,15 @@ export default function HeadComponent({
   let currImage = image;
 
   const permalink = `${url}${path}`;
+  const canonicalUrl = canonical || permalink;
+  const normalizedPath = stripTrailingSlashes(path);
+  const hasMarkdownAlternate =
+    normalizedPath === '/docs' ||
+    normalizedPath === '/about' ||
+    normalizedPath.startsWith('/docs/') ||
+    normalizedPath.startsWith('/blog/') ||
+    normalizedPath.startsWith('/about/');
+  const markdownHref = `${normalizedPath}.md`;
   let type = 'website';
 
   if (path.startsWith('/docs') || path.startsWith('/blog')) {
@@ -63,7 +90,14 @@ export default function HeadComponent({
       <meta httpEquiv='x-ua-compatible' content='ie=edge' />
       <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
       <meta name='description' content={description} />
+      <link rel='canonical' href={canonicalUrl} />
       <link rel='alternate' type='application/rss+xml' title={rssTitle} href={rssLink} />
+      {hasMarkdownAlternate ? (
+        <>
+          <link rel='alternate' type='text/markdown' href={markdownHref} />
+          <link rel='describedby' href='/llms.txt' />
+        </>
+      ) : null}
 
       {/* Google / Search Engine Tags */}
       <meta itemProp='name' content={title} />

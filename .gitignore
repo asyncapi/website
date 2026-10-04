@@ -9,6 +9,12 @@ config/posts.json
 config/case-studies.json
 config/usecases.json
 public/rss.xml
+public/llms.txt
+public/llms-full.txt
+public/docs.md
+public/about.md
+public/docs/**/*.md
+public/blog/*.md
 .env.local
 yarn.lock
 meetings.json

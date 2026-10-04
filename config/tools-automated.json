@@ -158,6 +158,26 @@
         }
       },
       {
+        "title": "Pydantic-SocketIO",
+        "description": "Python-first Socket.IO runtime validation with Pydantic and code-first AsyncAPI contracts.",
+        "links": {
+          "repoUrl": "https://github.com/atomiechen/Pydantic-SocketIO"
+        },
+        "filters": {
+          "language": "Python",
+          "technology": [
+            "Socket.IO",
+            "FastAPI",
+            "asyncio"
+          ],
+          "categories": [
+            "code-first"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
         "title": "SIO-AsyncAPI",
         "description": "This is code-first approach to generate AsyncAPI specification from Socket.IO server.",
         "links": {
@@ -315,6 +335,27 @@
           ],
           "categories": [
             "code-generator"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "Pydantic-SocketIO Codegen",
+        "description": "Generate Socket.IO TypeScript event interfaces from Pydantic-SocketIO AsyncAPI contracts.",
+        "links": {
+          "repoUrl": "https://github.com/atomiechen/Pydantic-SocketIO/tree/main/packages/codegen"
+        },
+        "filters": {
+          "language": "TypeScript",
+          "technology": [
+            "Node.js",
+            "TypeScript",
+            "Socket.IO"
+          ],
+          "categories": [
+            "code-generator",
+            "cli"
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
@@ -1110,6 +1151,27 @@
           ],
           "categories": [
             "mocking-and-testing",
+            "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "Pydantic-SocketIO Codegen",
+        "description": "Generate Socket.IO TypeScript event interfaces from Pydantic-SocketIO AsyncAPI contracts.",
+        "links": {
+          "repoUrl": "https://github.com/atomiechen/Pydantic-SocketIO/tree/main/packages/codegen"
+        },
+        "filters": {
+          "language": "TypeScript",
+          "technology": [
+            "Node.js",
+            "TypeScript",
+            "Socket.IO"
+          ],
+          "categories": [
+            "code-generator",
             "cli"
           ],
           "hasCommercial": false,
