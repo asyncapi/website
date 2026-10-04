@@ -126,6 +126,17 @@
       "score": 8.902412251227021
     },
     {
+      "id": "PR_kwDOCHlHJM8AAAABE8Uohg",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "test(generator): add unit tests for conditional generation and config…",
+      "author": "devxdh",
+      "resourcePath": "/asyncapi/generator/pull/2257",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 8.902412251227021
+    },
+    {
       "id": "I_kwDOFLhIt874rNRL",
       "isPR": false,
       "isAssigned": true,
@@ -135,17 +146,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 8.615237662477762
-    },
-    {
-      "id": "PR_kwDOCHlHJM8AAAABE8Uohg",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "test(generator): add unit tests for conditional generation and config…",
-      "author": "devxdh",
-      "resourcePath": "/asyncapi/generator/pull/2257",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 8.040888484979245
     },
     {
       "id": "PR_kwDOBW5R_c7q5bzH",
