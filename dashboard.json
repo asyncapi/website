@@ -21,6 +21,44 @@
       "score": 25.27136380993477
     },
     {
+      "id": "I_kwDOCHlHJM8AAAABIu0AsQ",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[SECURITY] Malicious versions published via compromised next branch - @asyncapi/generator@3.3.1, generator-helpers@1.1.1, generator-components@0.7.1",
+      "author": "LidorMachluf",
+      "resourcePath": "/asyncapi/generator/issues/2184",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 13.497205671215161
+    },
+    {
+      "id": "PR_kwDOCHlHJM8AAAABAm3ykA",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore: define permissions in workflows  and pin actions to SHA",
+      "author": "Florence-Njeri",
+      "resourcePath": "/asyncapi/generator/pull/2211",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 12.635681904967385
+    },
+    {
+      "id": "I_kwDOCoBobc6fqNYx",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[BUG] `@asyncapi/multi-parser` still depending on vulnerable version of `jsonpath-plus`",
+      "author": "BenjaminSchwendner",
+      "resourcePath": "/asyncapi/parser-js/issues/1065",
+      "repo": "asyncapi/parser-js",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ],
+      "score": 11.48698354997035
+    },
+    {
       "id": "MDU6SXNzdWU4NzE2MjU2MDk=",
       "isPR": false,
       "isAssigned": false,
@@ -32,10 +70,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ],
       "score": 11.48698354997035
@@ -76,6 +110,17 @@
       "score": 10.625459783722574
     },
     {
+      "id": "PR_kwDOCHlHJM8AAAABE8Uohg",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "test(generator): add unit tests for conditional generation and config…",
+      "author": "devxdh",
+      "resourcePath": "/asyncapi/generator/pull/2257",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 9.18958683997628
+    },
+    {
       "id": "I_kwDOCHlHJM61Y1X2",
       "isPR": false,
       "isAssigned": true,
@@ -87,23 +132,8 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ],
-      "score": 8.902412251227021
-    },
-    {
-      "id": "PR_kwDOBW5R_c7zDz2u",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore(blog): add Q2 2026 Social Media Review blog post",
-      "author": "Mayaleeeee",
-      "resourcePath": "/asyncapi/website/pull/5632",
-      "repo": "asyncapi/website",
-      "labels": [],
       "score": 8.902412251227021
     },
     {
@@ -116,6 +146,30 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 8.615237662477762
+    },
+    {
+      "id": "I_kwDOBW5R_c7uh0fo",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[FEATURE] Introduce AI-facing documentation",
+      "author": "sammy200-ui",
+      "resourcePath": "/asyncapi/website/issues/5205",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
+          "name": "triaged",
+          "color": "0052cc"
+        }
+      ],
+      "score": 7.7537138962299865
     },
     {
       "id": "PR_kwDOBW5R_c7q5bzH",
@@ -132,70 +186,6 @@
         }
       ],
       "score": 7.466539307480728
-    },
-    {
-      "id": "PR_kwDOE8Qh386xgCvo",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat!: release v6",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/modelina/pull/2362",
-      "repo": "asyncapi/modelina",
-      "labels": [
-        {
-          "name": "released on @next",
-          "color": "ededed"
-        }
-      ],
-      "score": 7.466539307480728
-    },
-    {
-      "id": "PR_kwDOBW5R_c8AAAABASjS2w",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "perf: eliminate render-blocking CSS imports and reduce Google Fonts weights",
-      "author": "patilpratik1905",
-      "resourcePath": "/asyncapi/website/pull/5712",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "waiting-for-author",
-          "color": "BDDB3C"
-        }
-      ],
-      "score": 6.89219012998221
-    },
-    {
-      "id": "PR_kwDOBW5R_c74W35w",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "perf: lazy-load Mermaid, YouTube, and TwitterTweetEmbed to reduce bundle size",
-      "author": "patilpratik1905",
-      "resourcePath": "/asyncapi/website/pull/5667",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "waiting-for-author",
-          "color": "BDDB3C"
-        }
-      ],
-      "score": 6.030666363734434
-    },
-    {
-      "id": "I_kwDODwv8N87e2ifU",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Add Gallery Section to the website",
-      "author": "kajal-jotwani",
-      "resourcePath": "/asyncapi/conference-website/issues/877",
-      "repo": "asyncapi/conference-website",
-      "labels": [
-        {
-          "name": "microgrant",
-          "color": "708090"
-        }
-      ],
-      "score": 5.743491774985175
     }
   ],
   "goodFirstIssues": [
@@ -204,21 +194,6 @@
       "title": "Bug: \"Go to page\" dropdown does not correctly select pages on desktop",
       "isAssigned": false,
       "resourcePath": "/asyncapi/website/issues/5755",
-      "repo": "asyncapi/website",
-      "author": "swarupasaroogumma",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c8AAAABRat9RQ",
-      "title": "Bug: Budget Analysis Category and Month dropdowns are not working on mobile",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/5752",
       "repo": "asyncapi/website",
       "author": "swarupasaroogumma",
       "area": "Unknown",
@@ -386,6 +361,10 @@
         {
           "name": "enhancement",
           "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
