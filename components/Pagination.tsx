@@ -259,6 +259,7 @@ export default function Pagination({
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                   <button
                     key={page}
+                    onMouseDown={(e) => e.preventDefault()}
                     onClick={() => {
                       handlePageClick(page);
                       setIsDropdownOpen(false);
