@@ -1,6 +1,6 @@
 ---
 title: "Your Event-Driven System Isn't Fault-Tolerant Until You've Tested It"
-date: 2026-09-22T06:00:00+01:00
+date: 2026-10-01T06:00:00+01:00
 type: Community
 tags:
   - Webinar
@@ -94,12 +94,12 @@ For example:
 ```
 operations:  
   sendOrder:  
-    \# ... channel, action, messages ...
+    # ... channel, action, messages ...
     x-specmatic-retry:  
       channel:  
         $ref: '\#/channels/retryTopic'  
       messages:  
-        \- $ref: '\#/channels/retryTopic/messages/retryMessage'  
+        - $ref: '\#/channels/retryTopic/messages/retryMessage'  
       maxAttempts: 3  
       strategy:  
         type: exponential  
@@ -109,7 +109,7 @@ operations:
       channel:  
         $ref: '\#/channels/dlqTopic'  
       messages:  
-        \- $ref: '\#/channels/dlqTopic/messages/placeOrderDlqMessage'  
+        - $ref: '\#/channels/dlqTopic/messages/placeOrderDlqMessage'  
       waitTimeInSeconds: 15
 ```
 
@@ -190,7 +190,6 @@ By describing retry and DLQ behavior in your AsyncAPI document, you can turn tho
 
 If this way of thinking about event-driven reliability is useful to you, the best next step is to see it applied live. 
 [Join us at the next webinar](https://www.youtube.com/watch?v=KuuKTUfMiV0) to watch these techniques in action, ask questions in real time, and hear what's coming next for AsyncAPI and Specmatic.
-You can also watch the original walkthrough this article is based on, [link to livestream](https://www.youtube.com/watch?v=I6z1WC6Qo2o&t=38s).
+You can also watch the original walkthrough this article is based on, [the original walkthrough.](https://www.youtube.com/watch?v=I6z1WC6Qo2o&t=38s).
 
 Want to keep the conversation going in between sessions? Jump into the [AsyncAPI community Slack](https://join.slack.com/t/asyncapi/shared_invite/zt-4ao9kleza-fL7lTw~LSjpIR2Jhth1dug) to talk with maintainers and other practitioners, and check out [asyncapi.com](https://www.asyncapi.com/en) for the full specification, tooling, and documentation.
-
