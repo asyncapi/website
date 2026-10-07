@@ -1,32 +1,32 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/8aPUIFnVNjY/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday October 6th 2026",
+    "description": "https://github.com/asyncapi/community/issues/3629.",
+    "videoId": "8aPUIFnVNjY"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/4uILaCAAkxk/hqdefault.jpg",
+    "title": "AsyncAPI Docs Meeting, 16:00 UTC Wednesday September 30th 2026",
+    "description": "https://github.com/asyncapi/community/issues/3628.",
+    "videoId": "4uILaCAAkxk"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/KuuKTUfMiV0/hqdefault.jpg",
+    "title": "Making AI Agents Reliable Event-Driven API Consumers with Arazzo",
+    "description": "AI agents are increasingly expected to act across any of your APIs, publishing to a queue, waiting on a webhook, correlating an ...",
+    "videoId": "KuuKTUfMiV0"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/PNlbq0-nxa8/hqdefault.jpg",
     "title": "Governance Board Meeting, 15:30 UTC Tuesday September 22nd 2026",
     "description": "https://github.com/asyncapi/community/issues/3630.",
     "videoId": "PNlbq0-nxa8"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/jQM5mEPqiYM/hqdefault.jpg",
-    "title": "AsyncAPI Docs Meeting, 16:00 UTC Wednesday September 2nd 2026",
-    "description": "https://github.com/asyncapi/community/issues/3607.",
-    "videoId": "jQM5mEPqiYM"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/Wjqwy22gHXQ/hqdefault.jpg",
-    "title": "AsyncAPI Docs Meeting, 16:00 UTC Wednesday July 29th 2026",
-    "description": "https://github.com/asyncapi/community/issues/3600.",
-    "videoId": "Wjqwy22gHXQ"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/rTBeKhVLdlk/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday July 28th 2026",
-    "description": "https://github.com/asyncapi/community/issues/3601.",
-    "videoId": "rTBeKhVLdlk"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/XF_iP5KkHC8/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday June 16th 2026",
-    "description": "https://github.com/asyncapi/community/issues/3570.",
-    "videoId": "XF_iP5KkHC8"
+    "image_url": "https://i.ytimg.com/vi/SlYXfDg7dik/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday September 15th 2026",
+    "description": "https://github.com/asyncapi/community/issues/3623.",
+    "videoId": "SlYXfDg7dik"
   }
 ]
