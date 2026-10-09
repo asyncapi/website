@@ -254,6 +254,7 @@
             "parser-js",
             "studio",
             "openapi-schema-parser",
+            "conference-website",
             "cli",
             "optimizer",
             "bundler"
