@@ -33,7 +33,7 @@ export default function StickyNavbar({ children, className = '' }: StickyNavbarP
 
   return (
     <div
-      className={`sticky ${isScrolled ? 'dark:bg-transparent' : 'dark:bg-dark-background'} top-0 z-50 lg:pt-2 lg:[transform:translateZ(0)] lg:will-change-transform ${className}`}
+      className={`sticky ${isScrolled ? 'dark:bg-transparent' : 'dark:bg-dark-background'} top-0 z-[9999] lg:pt-2 lg:[transform:translateZ(0)] lg:will-change-transform ${className}`}
       data-testid='Sticky-div'
     >
       {children}
