@@ -32,6 +32,17 @@
       "score": 12.635681904967385
     },
     {
+      "id": "PR_kwDOCHlHJM7srbNz",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: add slack support to JS Client",
+      "author": "batchu5",
+      "resourcePath": "/asyncapi/generator/pull/2142",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 12.061332727468868
+    },
+    {
       "id": "I_kwDOFdFGUs8AAAABCc6TlA",
       "isPR": false,
       "isAssigned": false,
@@ -78,17 +89,6 @@
         }
       ],
       "score": 11.48698354997035
-    },
-    {
-      "id": "PR_kwDOCHlHJM7srbNz",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: add query Parameters support to javascript websocket client",
-      "author": "batchu5",
-      "resourcePath": "/asyncapi/generator/pull/2142",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 11.199808961221091
     },
     {
       "id": "I_kwDOBW5R_c67zQdK",
