@@ -1,6 +1,17 @@
 {
   "hotDiscussions": [
     {
+      "id": "PR_kwDOCHlHJM8AAAABAm3ykA",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore: define permissions in workflows  and pin actions to SHA",
+      "author": "Florence-Njeri",
+      "resourcePath": "/asyncapi/generator/pull/2211",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 12.635681904967385
+    },
+    {
       "id": "I_kwDOBW5R_c6VGYzo",
       "isPR": false,
       "isAssigned": true,
@@ -18,18 +29,7 @@
           "color": "3E4B9E"
         }
       ],
-      "score": 25.27136380993477
-    },
-    {
-      "id": "PR_kwDOCHlHJM8AAAABAm3ykA",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore: define permissions in workflows  and pin actions to SHA",
-      "author": "Florence-Njeri",
-      "resourcePath": "/asyncapi/generator/pull/2211",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 12.635681904967385
+      "score": 12.180480298462836
     },
     {
       "id": "PR_kwDOCHlHJM7srbNz",
@@ -182,17 +182,17 @@
       "score": 7.7537138962299865
     },
     {
-      "id": "PR_kwDOBW5R_c7q5bzH",
+      "id": "PR_kwDOE8Qh386xgCvo",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: optimize bundle by replacing react-syntax-highlighter with pris…",
-      "author": "patilpratik1905",
-      "resourcePath": "/asyncapi/website/pull/5599",
-      "repo": "asyncapi/website",
+      "title": "feat!: release v6",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/modelina/pull/2362",
+      "repo": "asyncapi/modelina",
       "labels": [
         {
-          "name": "waiting-for-author",
-          "color": "BDDB3C"
+          "name": "released on @next",
+          "color": "ededed"
         }
       ],
       "score": 7.466539307480728
