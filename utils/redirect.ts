@@ -20,6 +20,9 @@ export function useRedirect(to: string | undefined): any {
 
   // language detection
   useEffect(() => {
+    // wait for router hydration before redirecting
+    if (!router.isReady) return;
+
     const detectedLng = languageDetector.detect();
 
     if (toUrl.startsWith(`/${detectedLng}`) && router.route === '/404') {
@@ -31,7 +34,7 @@ export function useRedirect(to: string | undefined): any {
 
     languageDetector.cache!(detectedLng!);
     router.replace(`/${detectedLng}${toUrl}`);
-  });
+  }, [router, toUrl]);
 
   return null;
 }
