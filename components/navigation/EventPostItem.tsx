@@ -3,6 +3,7 @@ import React from 'react';
 
 import type { IEvent } from '@/types/event';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
+import { isUpcomingEvent } from '@/utils/staticHelpers';
 
 import Heading from '../typography/Heading';
 
@@ -20,8 +21,6 @@ interface EventPostItemProps {
  *
  */
 function EventPostItem({ post, className = '', id }: EventPostItemProps): React.JSX.Element {
-  const localTime = dayjs().format('YYYY-MM-DD'); // store localTime
-  const currentDate = `${localTime}T00:00:00.000Z`;
   const title = post.title || '';
   let type = '';
 
@@ -33,15 +32,8 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
     type = 'WORKSHOP';
   }
 
-  let active = true;
-  const postDate = dayjs(post.date); // Convert post.date to a dayjs object if necessary
-
-  if (!postDate.isValid()) {
-    // Handle invalid date if necessary
-    active = false;
-  } else if (currentDate > postDate.format()) {
-    active = false;
-  }
+  const postDate = dayjs(post.date);
+  const active = postDate.isValid() && isUpcomingEvent(postDate);
 
   const eventDateLabel = active ? dayjs(postDate).format('MMMM D, YYYY') : 'View Recording';
 

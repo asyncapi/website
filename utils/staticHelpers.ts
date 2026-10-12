@@ -1,6 +1,15 @@
+import type { Dayjs } from 'dayjs';
 import dayjs from 'dayjs';
 
 import type { IEvent } from '@/types/event';
+
+/**
+ * Returns true when the event's scheduled start time is still in the future.
+ * Comparison uses the full timestamp so events that already started today are not upcoming.
+ */
+export function isUpcomingEvent(date: string | Dayjs, now: Dayjs = dayjs()): boolean {
+  return dayjs(date).isAfter(now);
+}
 
 /**
  * Retrieves events sorted by date.
@@ -18,14 +27,14 @@ export function getEvents(events: IEvent[], size?: number) {
 
   if (size) {
     return meetingsWithDates
-      .filter((meeting: any) => meeting.date.isAfter(dayjs()))
+      .filter((meeting: any) => isUpcomingEvent(meeting.date))
       .slice(0, size || meetingsWithDates.length);
   }
 
   const sortedMeetings: any = [];
 
   for (const meeting of meetingsWithDates) {
-    if (meeting.date.isAfter(dayjs())) {
+    if (isUpcomingEvent(meeting.date)) {
       sortedMeetings.push(meeting);
     }
   }
@@ -35,7 +44,7 @@ export function getEvents(events: IEvent[], size?: number) {
   });
 
   for (const meeting of meetingsWithDates) {
-    if (meeting.date.isBefore(dayjs())) {
+    if (!isUpcomingEvent(meeting.date)) {
       sortedMeetings.push(meeting);
     }
   }

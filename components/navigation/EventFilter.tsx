@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 import type { IEvent } from '@/types/event';
 
-import { getEvents } from '../../utils/staticHelpers';
+import { getEvents, isUpcomingEvent } from '../../utils/staticHelpers';
 
 enum ActiveState {
   All = 'All',
@@ -23,35 +23,27 @@ interface EventFilterProps {
  * @param {React.Dispatch<React.SetStateAction<IEvent[]>>} props.setData - The function to update the filtered events.
  */
 export default function EventFilter({ data, setData }: EventFilterProps) {
-  const localTime = dayjs().format('YYYY-MM-DD');
-  const currentDate = `${localTime}T00:00:00.000Z`;
   const filterList: string[] = ['All', 'Upcoming', 'Recorded'];
   const [active, setActive] = useState<string>('All');
 
   useEffect(() => {
+    const now = dayjs();
+
     switch (active) {
       case ActiveState.All:
         setData(getEvents(data));
         break;
       case ActiveState.Upcoming:
-        setData(
-          getEvents(data).filter((event: IEvent) => {
-            return dayjs(event.date).format() > currentDate;
-          })
-        );
+        setData(getEvents(data).filter((event: IEvent) => isUpcomingEvent(event.date, now)));
         break;
       case ActiveState.Recorded:
-        setData(
-          getEvents(data).filter((event: IEvent) => {
-            return dayjs(event.date).format() < currentDate;
-          })
-        );
+        setData(getEvents(data).filter((event: IEvent) => !isUpcomingEvent(event.date, now)));
         break;
       default:
         setData(getEvents(data));
         break;
     }
-  }, [active, data, setData, currentDate]);
+  }, [active, data, setData]);
 
   return (
     <div
