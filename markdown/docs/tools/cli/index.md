@@ -16,7 +16,7 @@ The AsyncAPI CLI offers the following key features:
 
 * Conversion: The AsyncAPI CLI can convert AsyncAPI documents from one version to another, which is helpful for migrating APIs to a newer version of the AsyncAPI specification.
 
-* Difference: The AsyncAPI CLI can be used to find the differences between two AsyncAPI documents, which helps compare different versions of an API or identify changes made to an API.
+* Difference: Using [Diff](https://github.com/asyncapi/cli/tree/master/packages/diff) (the `@asyncapi/diff` library, which lives in this monorepo under `packages/diff`), the AsyncAPI CLI can find the differences between two AsyncAPI documents, which helps compare different versions of an API or identify changes made to an API.
   
 * Generation: The AsyncAPI CLI leverages AsyncAPI libraries like [Generator](https://github.com/asyncapi/generator) and [Modelina](https://github.com/asyncapi/modelina), which allow you to generate various types of documentation, applications, and models in different programming languages. This feature can save significant time and effort when creating new APIs.
 
