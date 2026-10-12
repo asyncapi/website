@@ -26,6 +26,7 @@
         "isTscMember": true,
         "tscMemberSince": "2023-07-05",
         "repos": [
+            "cli",
             "diff"
         ],
         "githubID": 54525741
@@ -167,6 +168,7 @@
             "html-template",
             "markdown-template",
             ".github",
+            "cli",
             "community",
             "diff"
         ],
@@ -190,6 +192,7 @@
             "html-template",
             "markdown-template",
             "modelina",
+            "cli",
             "diff",
             "EDAVisualiser"
         ],
